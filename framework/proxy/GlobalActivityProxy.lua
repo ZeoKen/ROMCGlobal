@@ -73,7 +73,7 @@ function GlobalActivityProxy:GetActivityTimeText(id, format)
     local actData = self.activityMap[actId]
     if actData then
       local startTime, endTime = actData:GetDuringTime()
-      text = ServantCalendarProxy.GetTimeDate(startTime, endTime, formatStr)
+      text = ClientTimeUtil.GetTimeDate(startTime, endTime, formatStr)
     end
   end, format, self)
   return text

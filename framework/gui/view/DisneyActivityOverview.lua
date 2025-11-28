@@ -70,7 +70,7 @@ local _UpdatePageBaseFunc = function(texture, nameLab, descLab, timeLab, timeLab
   _PictureMrg:SetActivityTexture(activity_data.staticData.Texture, texture)
   nameLab.text = activity_data.staticData.Name
   descLab.text = activity_data.staticData.Context
-  timeLab.text = ServantCalendarProxy.GetTimeDate(activity_data.startTime, activity_data.endTime, ZhString.DisneyOverview_Time)
+  timeLab.text = ClientTimeUtil.GetTimeDate(activity_data.startTime, activity_data.endTime, ZhString.DisneyOverview_Time)
   timeLabBg.width = timeLab.width + 20
   helpBtn:SetActive(nil ~= activity_data:GetHelpDesc())
 end

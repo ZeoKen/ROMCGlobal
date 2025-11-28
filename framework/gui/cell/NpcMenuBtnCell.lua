@@ -49,6 +49,7 @@ function NpcMenuBtnCell:Init()
   self.redTip:SetActive(false)
   self.checkmark = self:FindGO("Checkmark")
   self.lockGO = self:FindGO("Lock")
+  self.newTag = self:FindGO("NewTag")
   self:SetEvent(self.button, function()
     self:PassEvent(MouseEvent.MouseClick, self)
   end)
@@ -106,6 +107,7 @@ function NpcMenuBtnCell:SetData(data)
     else
       self.redTip:SetActive(false)
     end
+    self.newTag:SetActive(self.CheckNewTag(data.npcFuncData) == true)
   elseif menuType == Dialog_MenuData_Type.Task then
     local task = data.task
     if task.type == QuestDataType.QuestDataType_MAIN or task.type == QuestDataType.QuestDataType_WANTED then
@@ -321,4 +323,14 @@ end
 
 function NpcMenuBtnCell:UpdateRedTip()
   self.redTip:SetActive(self.CheckNpcFuncRedTip(self.data and self.data.npcFuncData) == true)
+  self.newTag:SetActive(self.CheckNewTag(self.data and self.data.npcFuncData) == true)
+end
+
+function NpcMenuBtnCell.CheckNewTag(npcFuncData)
+  if not npcFuncData then
+    return false
+  end
+  if npcFuncData.id == 10000002 then
+    return RedTipProxy.Instance:InRedTip(SceneTip_pb.EREDSYS_SHOP_APPEARANCE)
+  end
 end

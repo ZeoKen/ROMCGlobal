@@ -211,7 +211,11 @@ function ShopMallExchangeBuyView:AddEvts()
         self.safeLT = nil
         self:UpdateClassify()
       end, self)
-      self:CallClassify()
+      if RecommendCategoryType[self.currentTypeData.id] then
+        self:CallRecommendItems(RecommendCategoryType[self.currentTypeData.id])
+      else
+        self:CallClassify()
+      end
     end
   end
   

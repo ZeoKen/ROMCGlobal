@@ -65,11 +65,11 @@ function NCreatureWithPropUserdata:SetVisible(v, reason)
   NCreatureWithPropUserdata.super.SetVisible(self, v, reason)
   local hideBodyOnly = reason == LayerChangeReason.HideBodyOnly
   local nowAssetRoleInVisible = self.assetRole:GetInvisible()
-  if nowAssetRoleInVisible ~= assetRoleInVisible then
+  if nowAssetRoleInVisible ~= assetRoleInVisible or self.hideBodyOnly ~= hideBodyOnly then
     if self.buffs ~= nil then
       for k, buff in pairs(self.buffs) do
         if buff and buff:GetType() == Buff.Type.State then
-          buff:SetEffectVisible(not nowAssetRoleInVisible)
+          buff:SetEffectVisible(not nowAssetRoleInVisible or self.hideBodyOnly)
         end
       end
     end
@@ -77,22 +77,22 @@ function NCreatureWithPropUserdata:SetVisible(v, reason)
       for _, buffeffects in pairs(self.buffMultiEffect) do
         for _, buff in pairs(buffeffects) do
           if buff and buff:GetType() == Buff.Type.State then
-            buff:SetEffectVisible(not nowAssetRoleInVisible)
+            buff:SetEffectVisible(not nowAssetRoleInVisible or self.hideBodyOnly)
           end
         end
       end
     end
     if self.buffGroups ~= nil then
       for k, v in pairs(self.buffGroups) do
-        v:SetEffectVisible(not nowAssetRoleInVisible)
+        v:SetEffectVisible(not nowAssetRoleInVisible or self.hideBodyOnly)
       end
     end
     if not hideBodyOnly or not nowAssetRoleInVisible then
       if self.skill ~= nil then
-        self.skill:SetEffectVisible(not nowAssetRoleInVisible)
+        self.skill:SetEffectVisible(not nowAssetRoleInVisible or self.hideBodyOnly)
       end
       if self.skillFreeCast ~= nil then
-        self.skillFreeCast:SetEffectVisible(not nowAssetRoleInVisible)
+        self.skillFreeCast:SetEffectVisible(not nowAssetRoleInVisible or self.hideBodyOnly)
       end
     elseif hideBodyOnly then
       if self.skill ~= nil then
@@ -180,6 +180,8 @@ function NCreatureWithPropUserdata:AddBuff(buffID, init, needhit, fromID, layer,
   local buffeffect = buffInfo.BuffEffect
   local layerStateID = buffeffect.LayerState_Same or nil
   local buffStateID = self:GetBuffStateID(buffInfo, stateid, layer, fromID, active)
+  if not buffeffect or buffeffect.hidebodyonly then
+  end
   if layerStateID then
     if not self.buffMultiEffect then
       self.buffMultiEffect = {}
@@ -261,6 +263,9 @@ function NCreatureWithPropUserdata:AddBuff(buffID, init, needhit, fromID, layer,
     buff:SetLayer(layer or 1)
     buff:SetActive(active, self)
   end
+  if buffeffect.type == BuffType.BellCharge then
+    GameFacade.Instance:sendNotification(SkillEvent.BellCharge, buffeffect.sortID)
+  end
   return buff
 end
 
@@ -316,6 +321,15 @@ function NCreatureWithPropUserdata:TryHandleAddSpecialBuff(buffInfo, fromID, par
       if self.data:WeakFreeze() then
         self:Logic_Freeze(true)
       end
+    end
+    if buffeffect.FullScreenUIPath and self.data.id == Game.Myself.data.id then
+      local data = {}
+      data.effect = buffeffect.FullScreenUIPath
+      data.tip = buffeffect.tip or ""
+      GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+        view = PanelConfig.FullScreenEffectView,
+        viewdata = data
+      })
     end
     local buffType = buffeffect.type
     if buffType == BuffType.RideWolf then
@@ -385,8 +399,7 @@ function NCreatureWithPropUserdata:TryHandleAddSpecialBuff(buffInfo, fromID, par
     elseif buffType == BuffType.ShrinkTo then
       self:AddShrinkRange(buffInfo.id, buffeffect.Launch_Range)
     elseif buffType == BuffType.NoAttackedCanPveBuff then
-      self.data:SetHasNoAttackedBuff(true)
-      self:SetClickable(false)
+      self:SetClickable(not self.data:SetHasNoAttackedBuff())
     elseif buffType == BuffType.WalkEffect then
       if self == Game.Myself then
         self.playWalkEffect = true
@@ -414,6 +427,12 @@ function NCreatureWithPropUserdata:TryHandleAddSpecialBuff(buffInfo, fromID, par
     elseif buffType == BuffType.PerfectServiceTemporary then
       self.tempRange = buffeffect.TemporaryRange
       self:SetStageEffectScale()
+    elseif buffType == BuffType.BellCharge then
+      if self == Game.Myself then
+        GameFacade.Instance:sendNotification(SkillEvent.BellCharge, buffeffect.sortID)
+      end
+    elseif buffType == BuffType.AttrCanMove then
+      self.data:SetAttrCanMove(true)
     end
     if buffeffect.isStageEffect ~= nil and buffeffect.isStageEffect == 1 then
       self:SetStageEffectScale()
@@ -431,6 +450,8 @@ function NCreatureWithPropUserdata:RemoveBuff(buffID)
   end
   local buffeffect = buffInfo.BuffEffect
   local layerEffects = buffeffect.LayerState_Same or nil
+  if not buffeffect or buffeffect.hidebodyonly then
+  end
   if self.buffs ~= nil then
     local buff = self.buffs[buffID]
     if buff then
@@ -459,6 +480,9 @@ function NCreatureWithPropUserdata:RemoveBuff(buffID)
   end
   if buffeffect.isStageEffect then
     self.stageEffects[buffID] = nil
+  end
+  if buffeffect.type == BuffType.BellCharge then
+    GameFacade.Instance:sendNotification(SkillEvent.BellCharge, buffeffect.sortID)
   end
 end
 
@@ -527,6 +551,9 @@ function NCreatureWithPropUserdata:TryHandleRemoveSpecialBuff(buffInfo)
       self:Logic_Freeze(0 < self.data.props:GetPropByName("Freeze"):GetValue())
     end
   end
+  if buffeffect.FullScreenUIPath and self.data.id == Game.Myself.data.id then
+    GameFacade.Instance:sendNotification(UIEvent.RemoveFullScreenEffect)
+  end
   local buffType = buffeffect.type
   if buffType == BuffType.RideWolf then
     self:Logic_RideAction(false, RideActionReason.RideWolf)
@@ -591,8 +618,7 @@ function NCreatureWithPropUserdata:TryHandleRemoveSpecialBuff(buffInfo)
   elseif buffType == BuffType.ShrinkTo then
     self:RemoveShrinkRange(buffInfo.id)
   elseif buffType == BuffType.NoAttackedCanPveBuff then
-    self.data:SetHasNoAttackedBuff(false)
-    self:SetClickable(true)
+    self:SetClickable(not self.data:SetHasNoAttackedBuff())
   elseif buffType == BuffType.WalkEffect then
     if self == Game.Myself then
       self.playWalkEffect = false
@@ -620,6 +646,12 @@ function NCreatureWithPropUserdata:TryHandleRemoveSpecialBuff(buffInfo)
   elseif buffType == BuffType.PerfectServiceTemporary then
     self.tempRange = 0
     self:SetStageEffectScale()
+  elseif buffType == BuffType.BellCharge then
+    if self == Game.Myself then
+      GameFacade.Instance:sendNotification(SkillEvent.BellCharge, buffeffect.sortID)
+    end
+  elseif buffType == BuffType.AttrCanMove then
+    self.data:SetAttrCanMove(false)
   end
 end
 
@@ -715,8 +747,7 @@ function NCreatureWithPropUserdata:TryUpdateSpecialBuff(buffInfo, active, fromID
       self:RemoveShrinkRange(buffInfo.id)
     end
   elseif buffType == BuffType.NoAttackedCanPveBuff then
-    self.data:SetHasNoAttackedBuff(active)
-    self:SetClickable(not active)
+    self:SetClickable(not self.data:SetHasNoAttackedBuff())
   elseif buffType == BuffType.WalkEffect then
     if self == Game.Myself then
       self.playWalkEffect = active
@@ -767,6 +798,12 @@ function NCreatureWithPropUserdata:TryUpdateSpecialBuff(buffInfo, active, fromID
   elseif buffType == BuffType.PerfectServiceTemporary then
     self.tempRange = active and buffeffect.TemporaryRange or 0
     self:SetStageEffectScale()
+  elseif buffType == BuffType.BellCharge then
+    if self == Game.Myself then
+      GameFacade.Instance:sendNotification(SkillEvent.BellCharge, buffeffect.sortID)
+    end
+  elseif buffType == BuffType.AttrCanMove then
+    self.data:SetAttrCanMove(active)
   end
 end
 
@@ -952,6 +989,7 @@ function NCreatureWithPropUserdata:DoDeconstruct(asArray)
   self.stageEffects = nil
   self.tempRange = 0
   self.skillRange = 0
+  self:ClearRideRole()
 end
 
 function NCreatureWithPropUserdata:Client_StopNotifyServerAngleY()
@@ -1210,4 +1248,75 @@ end
 
 function NCreatureWithPropUserdata:IsInWarehouse()
   return self.isInWarehouse
+end
+
+local MOUNT_ROLE_CACHE = {}
+
+function NCreatureWithPropUserdata:GetMountRoleId()
+  return self.data.userdata and self.data.userdata:Get(UDEnum.MOUNT_ROLE) or 0
+end
+
+function NCreatureWithPropUserdata:UpdateRoleRide()
+  local cacheRideRole = MOUNT_ROLE_CACHE[self.data.id]
+  if cacheRideRole then
+    local ride_role = SceneCreatureProxy.FindCreature(cacheRideRole)
+    if ride_role then
+      MOUNT_ROLE_CACHE[self.data.id] = nil
+      self:TakeRole(ride_role, true)
+      ride_role:RideRole(self, true)
+    end
+  else
+    local mountId = self:GetMountRoleId()
+    if 0 < mountId then
+      local mount_role = SceneCreatureProxy.FindCreature(mountId)
+      if mount_role and mount_role.assetRole then
+        mount_role:TakeRole(self, true)
+        self:RideRole(mount_role, true)
+      else
+        MOUNT_ROLE_CACHE[mountId] = self.data.id
+      end
+    else
+      self:ClearRideRole()
+    end
+  end
+end
+
+function NCreatureWithPropUserdata:RideRole(mountRole, isOn)
+  if isOn then
+    self.mountRoleId = mountRole.data.id
+  else
+    self.mountRoleId = nil
+  end
+end
+
+function NCreatureWithPropUserdata:TakeRole(rideRole, isOn)
+  if isOn then
+    self.rideRoleId = rideRole.data.id
+    self.assetRole:PutInCreatureToCP(RoleDefines_CP.Hair, rideRole)
+    rideRole.assetRole:PlayAction_Idle()
+    rideRole:Client_SetDirCmd(AI_CMD_SetAngleY.Mode.SetAngleY, 0)
+  else
+    self.rideRoleId = nil
+    self.assetRole:TakeOutCreatureInCP(RoleDefines_CP.Hair)
+  end
+end
+
+function NCreatureWithPropUserdata:ClearRideRole()
+  if self.rideRoleId then
+    local rideRole = SceneCreatureProxy.FindCreature(self.rideRoleId)
+    if rideRole then
+      rideRole:RideRole(self, false)
+    end
+    self:TakeRole(rideRole, false)
+  elseif self.mountRoleId then
+    local mountRole = SceneCreatureProxy.FindCreature(self.mountRoleId)
+    if mountRole then
+      mountRole:TakeRole(self, false)
+    end
+    self:RideRole(mountRole, false)
+  end
+end
+
+function NCreatureWithPropUserdata:GetRideRole()
+  return SceneCreatureProxy.FindCreature(self.rideRoleId)
 end

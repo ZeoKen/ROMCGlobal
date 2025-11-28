@@ -72,3 +72,10 @@ end
 function InheritJobSkillCombineCell:GetSkillCells()
   return self.inheritSkillListCtrl:GetCells()
 end
+
+function InheritJobSkillCombineCell:UpdateDragable(enable)
+  local cells = self.inheritSkillListCtrl:GetCells()
+  for i = 1, #cells do
+    cells[i]:UpdateDragable(enable)
+  end
+end

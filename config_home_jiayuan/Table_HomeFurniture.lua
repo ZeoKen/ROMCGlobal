@@ -85,18 +85,18 @@ Table_HomeFurniture_t = {
     },
     {
       {
+        param = {OffAction = 500, OnAction = 502},
+        type = 8
+      }
+    },
+    {
+      {
         param = {ClickAction = 504, OnAction = 502},
         type = 3
       }
     },
     {
       {type = 13}
-    },
-    {
-      {
-        param = {OffAction = 500, OnAction = 502},
-        type = 8
-      }
     },
     {
       {type = 7}
@@ -120,6 +120,12 @@ Table_HomeFurniture_t = {
       {
         param = {OffAction = 508},
         type = 12
+      }
+    },
+    {
+      {
+        param = {OffAction = 502, OnAction = 500},
+        type = 8
       }
     },
     {
@@ -162,12 +168,6 @@ Table_HomeFurniture_t = {
     {
       {
         param = {OffAction = 504, OnAction = 504},
-        type = 8
-      }
-    },
-    {
-      {
-        param = {OffAction = 502, OnAction = 500},
         type = 8
       }
     },
@@ -1114,6 +1114,7 @@ Table_HomeFurniture = {
   },
   [30104] = {
     id = 30104,
+    Name = "Sakura_01_Lockers",
     NameZh = "##123220",
     EndHeight = 4,
     Height = 5,
@@ -1910,7 +1911,7 @@ Table_HomeFurniture = {
     Theme = 20002,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[14],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[15],
     HomeScore = 23,
     IdleAction = 500,
     LoadShowSize = 0.7,
@@ -2457,7 +2458,7 @@ Table_HomeFurniture = {
     Theme = 20008,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[15],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[13],
     HomeScore = 54,
     IdleAction = 500,
     LoadShowSize = 0.7,
@@ -2476,7 +2477,7 @@ Table_HomeFurniture = {
     Theme = 20008,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[13],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[14],
     HomeScore = 180,
     IdleAction = 500,
     LoadShowSize = 0.4,
@@ -2994,7 +2995,6 @@ Table_HomeFurniture = {
   },
   [30721] = {
     id = 30721,
-    Name = "School_01_Window",
     NameZh = "##123553",
     Row = 1,
     Col = 6,
@@ -3026,7 +3026,7 @@ Table_HomeFurniture = {
     Theme = 20009,
     AccessType = 1,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[14],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[15],
     HomeScore = 35,
     IdleAction = 500,
     LoadShowSize = 1,
@@ -3213,7 +3213,7 @@ Table_HomeFurniture = {
     Theme = 20011,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[13],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[14],
     HomeScore = 30,
     IdleAction = 500,
     LoadShowSize = 0.8,
@@ -3553,7 +3553,7 @@ Table_HomeFurniture = {
     Catagory = 2,
     Theme = 20010,
     AccessType = 1,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[15],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[13],
     HomeScore = 10,
     IdleAction = 500,
     LoadShowSize = 0.6,
@@ -4272,7 +4272,7 @@ Table_HomeFurniture = {
     Theme = 20012,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[15],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[13],
     HomeScore = 58,
     IdleAction = 500,
     LoadShowSize = 0.5,
@@ -4863,7 +4863,7 @@ Table_HomeFurniture = {
     Catagory = 4,
     Theme = 20016,
     AccessType = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[24],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[25],
     LoadShowPosition = Table_HomeFurniture_t.LoadShowPosition[71],
     HideInAdventure = 1,
     AreaLimit = 1
@@ -5743,7 +5743,7 @@ Table_HomeFurniture = {
     Theme = 20018,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[28],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[29],
     HomeScore = 34,
     LoadShowSize = 0.5,
     HideInAdventure = 1,
@@ -5880,7 +5880,7 @@ Table_HomeFurniture = {
     Catagory = 2,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[29],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[23],
     HomeScore = 40,
     LoadShowSize = 0.5,
     HideInAdventure = 1,
@@ -6275,7 +6275,7 @@ Table_HomeFurniture = {
     Catagory = 4,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[14],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[15],
     HomeScore = 35,
     IdleAction = 500,
     LoadShowSize = 0.7,
@@ -7299,7 +7299,7 @@ Table_HomeFurniture = {
     Catagory = 4,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[23],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[24],
     HomeScore = 72,
     LoadShowSize = 0.6,
     LoadShowPosition = Table_HomeFurniture_t.LoadShowPosition[51],
@@ -7358,7 +7358,7 @@ Table_HomeFurniture = {
     Catagory = 4,
     AccessType = 2,
     AccessRange = 3,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[27],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[28],
     HomeScore = 180,
     IdleAction = 0,
     LoadShowSize = 0.3,
@@ -7399,7 +7399,7 @@ Table_HomeFurniture = {
     Catagory = 4,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[26],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[27],
     HomeScore = 180,
     NearbyAction = 200,
     NearbyRange = 2,
@@ -7458,7 +7458,7 @@ Table_HomeFurniture = {
     Catagory = 4,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[25],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[26],
     HomeScore = 180,
     IdleAction = 500,
     LoadShowSize = 0.4,
@@ -7478,7 +7478,7 @@ Table_HomeFurniture = {
     Catagory = 2,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[15],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[13],
     HomeScore = 180,
     IdleAction = 500,
     LoadShowSize = 0.6,
@@ -7497,7 +7497,7 @@ Table_HomeFurniture = {
     Catagory = 2,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[15],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[13],
     HomeScore = 180,
     IdleAction = 500,
     LoadShowSize = 0.35,
@@ -7612,7 +7612,7 @@ Table_HomeFurniture = {
     Catagory = 2,
     AccessType = 1,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[15],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[13],
     HomeScore = 120,
     IdleAction = 500,
     LoadShowSize = 0.25,
@@ -7944,7 +7944,7 @@ Table_HomeFurniture = {
     Type = 19,
     AccessType = 2,
     AccessRange = 2,
-    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[24],
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[25],
     HomeScore = 30,
     LoadShowSize = 0.3
   },
@@ -8014,6 +8014,193 @@ Table_HomeFurniture = {
     Type = 6,
     Catagory = 2,
     HomeScore = 40,
+    LoadShowSize = 0.5
+  },
+  [39714] = {
+    id = 39714,
+    Name = "Shenyuan_03_Statue",
+    NameZh = "##44702789",
+    Row = 5,
+    Col = 5,
+    EndHeight = 4,
+    Height = 4,
+    Type = 15,
+    Catagory = 2,
+    AccessType = 2,
+    AccessRange = 2,
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[23],
+    HomeScore = 40,
+    LoadShowSize = 0.5
+  },
+  [39715] = {
+    id = 39715,
+    Name = "Shenyuan_02_Hobby",
+    NameZh = "##44702790",
+    Row = 3,
+    Col = 5,
+    EndHeight = 4,
+    Height = 4,
+    Type = 19,
+    Catagory = 2,
+    HomeScore = 30,
+    LoadShowSize = 0.5
+  },
+  [39716] = {
+    id = 39716,
+    Name = "Shenyuan_01_Bed",
+    NameZh = "##44702791",
+    Row = 6,
+    Col = 4,
+    EndHeight = 6,
+    Height = 6,
+    Type = 7,
+    AccessType = 2,
+    AccessRange = 2,
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[8],
+    HomeScore = 30,
+    LoadShowSize = 0.5,
+    MenuID = 1
+  },
+  [39717] = {
+    id = 39717,
+    Name = "Shenyuan_01_Chair",
+    NameZh = "##44702792",
+    Row = 3,
+    Height = 2,
+    AccessType = 2,
+    AccessRange = 2,
+    FurnitureFunction = Table_HomeFurniture_t.FurnitureFunction[8],
+    HomeScore = 20,
+    LoadShowSize = 0.5,
+    MenuID = 1
+  },
+  [39718] = {
+    id = 39718,
+    Name = "Shenyuan_01_Kitchen",
+    NameZh = "##44702793",
+    Row = 4,
+    Col = 4,
+    Height = 2,
+    Type = 24,
+    HomeScore = 20,
+    LoadShowSize = 0.5
+  },
+  [39719] = {
+    id = 39719,
+    Name = "Shenyuan_01_Cupboard",
+    NameZh = "##44702794",
+    Row = 3,
+    Col = 6,
+    EndHeight = 6,
+    Height = 6,
+    Type = 3,
+    HomeScore = 20,
+    LoadShowSize = 0.5
+  },
+  [39720] = {
+    id = 39720,
+    Name = "Shenyuan_01_Plant",
+    NameZh = "##44702795",
+    Col = 2,
+    EndHeight = 3,
+    Height = 3,
+    Type = 12,
+    Catagory = 2,
+    HomeScore = 10
+  },
+  [39721] = {
+    id = 39721,
+    Name = "Shenyuan_02_Plant",
+    NameZh = "##44712363",
+    Row = 5,
+    Col = 5,
+    EndHeight = 5,
+    Height = 5,
+    Type = 12,
+    Catagory = 2,
+    HomeScore = 20,
+    LoadShowSize = 0.5
+  },
+  [39722] = {
+    id = 39722,
+    Name = "Shenyuan_02_Art",
+    NameZh = "##44712364",
+    Row = 8,
+    Col = 11,
+    EndHeight = 5,
+    Height = 5,
+    Type = 22,
+    Catagory = 2,
+    HomeScore = 100,
+    LoadShowSize = 0.5,
+    AreaLimit = 2,
+    AreaForceLimit = 2
+  },
+  [39723] = {
+    id = 39723,
+    Name = "Shenyuan_04_Statue",
+    NameZh = "##44712365",
+    Col = 2,
+    EndHeight = 7,
+    Height = 7,
+    Type = 15,
+    Catagory = 2,
+    HomeScore = 30,
+    LoadShowSize = 0.5,
+    AreaLimit = 2,
+    AreaForceLimit = 2
+  },
+  [39724] = {
+    id = 39724,
+    Name = "Shenyuan_02_Lighting",
+    NameZh = "##44712366",
+    Row = 3,
+    EndHeight = 5,
+    Height = 5,
+    Type = 4,
+    Catagory = 4,
+    HomeScore = 20,
+    LoadShowSize = 0.5,
+    AreaLimit = 2,
+    AreaForceLimit = 2
+  },
+  [39725] = {
+    id = 39725,
+    Name = "Shenyuan_03_Lighting",
+    NameZh = "##44712367",
+    Row = 8,
+    Col = 6,
+    EndHeight = 7,
+    Height = 7,
+    Type = 4,
+    Catagory = 4,
+    HomeScore = 40,
+    LoadShowSize = 0.5,
+    AreaLimit = 2,
+    AreaForceLimit = 2
+  },
+  [39726] = {
+    id = 39726,
+    Name = "Shenyuan_02_Chair",
+    NameZh = "##44712368",
+    Row = 3,
+    EndHeight = 6,
+    Height = 6,
+    Catagory = 4,
+    HomeScore = 50,
+    LoadShowSize = 0.5
+  },
+  [39727] = {
+    id = 39727,
+    Name = "Shenyuan_01_Varia",
+    NameZh = "##283736",
+    Row = 4,
+    Col = 4,
+    EndHeight = 4,
+    Height = 4,
+    Type = 25,
+    Catagory = 2,
+    HomeScore = 20,
     LoadShowSize = 0.5
   },
   [3000708] = {
@@ -8175,7 +8362,7 @@ local cell_mt = {
     FurnitureFunction = _EmptyTable,
     HomeScore = 65,
     LoadShowPosition = _EmptyTable,
-    Name = "Sakura_01_Lockers",
+    Name = "School_01_Window",
     NameZh = "##1134421",
     NormalType = 1,
     Npc = _EmptyTable,

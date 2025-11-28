@@ -6,6 +6,7 @@ function BalanceModeSkillCell:Init()
   self.skillName = self:FindGO("SkillName"):GetComponent(UILabel)
   self.nameBg = self:FindGO("NameBg"):GetComponent(UIMultiSprite)
   self.skillIcon = self:FindGO("SkillIcon"):GetComponent(UISprite)
+  self.qualityBg = self:FindGO("CircleBg"):GetComponent(UISprite)
   self.clickCell = self:FindGO("SkillBg")
   self.dragDrop = DragDropCell.new(self.clickCell:GetComponent(UIDragItem), 0.1)
   self.dragDrop.dragDropComponent.data = self
@@ -64,17 +65,44 @@ function BalanceModeSkillCell:SetData(data)
     local memoryStaticData = Table_ItemMemoryEffect[self.id]
     self.skillName.text = memoryStaticData and memoryStaticData.PreviewDesc or ""
     local groupType = self.data.groupType
-    local itemID = EquipMemoryProxy.PosEnumItemID[groupType]
+    local itemID
+    if self.data.isUpgradeMemory then
+      itemID = EquipMemoryProxy.PosEnumUpgradeItemID[groupType]
+    else
+      itemID = EquipMemoryProxy.PosEnumItemID[groupType]
+    end
     local staticData = Table_Item[itemID]
     if staticData then
       IconManager:SetItemIcon(staticData and staticData.Icon, self.skillIcon)
       itemData = ItemData.new("DragItem", itemID)
       itemData.hideMemoryCorner = true
+      self:SetQualityBg(staticData.Quality)
     end
   end
   local isChoose = data.isChoose or false
   self.chooseSymbol:SetActive(isChoose)
   self.dragDrop.dragDropComponent.data.itemdata = itemData
+end
+
+function BalanceModeSkillCell:SetQualityBg(quality)
+  if quality == 1 then
+    local spName = "com_icon_bottom3"
+    self.qualityBg.atlas = RO.AtlasMap.GetAtlas("NewCom")
+    self.qualityBg.spriteName = spName
+  else
+    self.qualityBg.atlas = RO.AtlasMap.GetAtlas("NEWUI_Equip")
+    if quality == 2 then
+      self.qualityBg.spriteName = "refine_bg_green"
+    elseif quality == 3 then
+      self.qualityBg.spriteName = "refine_bg_blue"
+    elseif quality == 4 then
+      self.qualityBg.spriteName = "refine_bg_purple"
+    elseif quality == 5 then
+      self.qualityBg.spriteName = "refine_bg_orange"
+    elseif quality == 6 then
+      self.qualityBg.spriteName = "refine_bg_red"
+    end
+  end
 end
 
 function BalanceModeSkillCell:UpdateDragable()

@@ -23,6 +23,9 @@ function HeadLotteryData:SetData(server_data)
   _ArrayClear(self.yearFilterConfig)
   _TableClear(self.monthFilterConfigMap)
   _ArrayClear(self.lotteryDataList)
+  if #server_data.infos == 0 then
+    redlog("[扭蛋] 头饰扭蛋后端未同步头饰扭蛋内容,QueryLotteryInfo协议infos为空,错误扭蛋类型:1")
+  end
   self.isSingleMonth = #server_data.infos == 1
   for i = 1, #server_data.infos do
     local data = LotteryData.new(server_data.infos[i], LotteryType.Head)

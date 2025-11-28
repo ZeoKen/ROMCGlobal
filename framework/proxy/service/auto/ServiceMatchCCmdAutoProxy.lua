@@ -234,6 +234,9 @@ function ServiceMatchCCmdAutoProxy:onRegister()
   self:Listen(61, 74, function(data)
     self:RecvChampionPvpRewardStatusCmd(data)
   end)
+  self:Listen(61, 75, function(data)
+    self:RecvAbyssRoomStateNtfMatchCCmd(data)
+  end)
 end
 
 function ServiceMatchCCmdAutoProxy:CallReqMyRoomMatchCCmd(type, brief_info)
@@ -611,7 +614,7 @@ function ServiceMatchCCmdAutoProxy:CallReqRoomDetailCCmd(type, roomid, datail_in
   end
 end
 
-function ServiceMatchCCmdAutoProxy:CallJoinRoomCCmd(type, roomid, name, isquick, teamid, teammember, ret, guildid, users, matcher, charid, zoneid, serverid, teamexptype, only_myserver, entranceid, need_robot_npc, need_heal_profession)
+function ServiceMatchCCmdAutoProxy:CallJoinRoomCCmd(type, roomid, name, isquick, teamid, teammember, ret, guildid, users, matcher, charid, zoneid, serverid, teamexptype, only_myserver, entranceid, need_robot_npc, need_heal_profession, abyss_option)
   if not NetConfig.PBC then
     local msg = MatchCCmd_pb.JoinRoomCCmd()
     if type ~= nil then
@@ -756,6 +759,15 @@ function ServiceMatchCCmdAutoProxy:CallJoinRoomCCmd(type, roomid, name, isquick,
     end
     if need_heal_profession ~= nil then
       msg.need_heal_profession = need_heal_profession
+    end
+    if abyss_option ~= nil and abyss_option.state ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.abyss_option == nil then
+        msg.abyss_option = {}
+      end
+      msg.abyss_option.state = abyss_option.state
     end
     self:SendProto(msg)
   else
@@ -903,6 +915,15 @@ function ServiceMatchCCmdAutoProxy:CallJoinRoomCCmd(type, roomid, name, isquick,
     end
     if need_heal_profession ~= nil then
       msgParam.need_heal_profession = need_heal_profession
+    end
+    if abyss_option ~= nil and abyss_option.state ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.abyss_option == nil then
+        msgParam.abyss_option = {}
+      end
+      msgParam.abyss_option.state = abyss_option.state
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -4967,6 +4988,23 @@ function ServiceMatchCCmdAutoProxy:CallChampionPvpRewardStatusCmd(rewards)
   end
 end
 
+function ServiceMatchCCmdAutoProxy:CallAbyssRoomStateNtfMatchCCmd(state)
+  if not NetConfig.PBC then
+    local msg = MatchCCmd_pb.AbyssRoomStateNtfMatchCCmd()
+    if state ~= nil then
+      msg.state = state
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.AbyssRoomStateNtfMatchCCmd.id
+    local msgParam = {}
+    if state ~= nil then
+      msgParam.state = state
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceMatchCCmdAutoProxy:RecvReqMyRoomMatchCCmd(data)
   self:Notify(ServiceEvent.MatchCCmdReqMyRoomMatchCCmd, data)
 end
@@ -5259,6 +5297,10 @@ function ServiceMatchCCmdAutoProxy:RecvChampionPvpRewardStatusCmd(data)
   self:Notify(ServiceEvent.MatchCCmdChampionPvpRewardStatusCmd, data)
 end
 
+function ServiceMatchCCmdAutoProxy:RecvAbyssRoomStateNtfMatchCCmd(data)
+  self:Notify(ServiceEvent.MatchCCmdAbyssRoomStateNtfMatchCCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.MatchCCmdReqMyRoomMatchCCmd = "ServiceEvent_MatchCCmdReqMyRoomMatchCCmd"
 ServiceEvent.MatchCCmdReqRoomListCCmd = "ServiceEvent_MatchCCmdReqRoomListCCmd"
@@ -5333,3 +5375,4 @@ ServiceEvent.MatchCCmdTriplePvpPickRewardCmd = "ServiceEvent_MatchCCmdTriplePvpP
 ServiceEvent.MatchCCmdTriplePvpRewardStatusCmd = "ServiceEvent_MatchCCmdTriplePvpRewardStatusCmd"
 ServiceEvent.MatchCCmdChampionPvpPickRewardCmd = "ServiceEvent_MatchCCmdChampionPvpPickRewardCmd"
 ServiceEvent.MatchCCmdChampionPvpRewardStatusCmd = "ServiceEvent_MatchCCmdChampionPvpRewardStatusCmd"
+ServiceEvent.MatchCCmdAbyssRoomStateNtfMatchCCmd = "ServiceEvent_MatchCCmdAbyssRoomStateNtfMatchCCmd"

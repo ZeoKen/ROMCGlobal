@@ -3,7 +3,7 @@ autoImport("SkillBeingData")
 autoImport("BeingInfoData")
 autoImport("ShortCutData")
 autoImport("MasterSkillProfessData")
-autoImport("InheritSkillItemData")
+autoImport("InheritSkillProfessData")
 SkillSaveData = class("SkillSaveData")
 
 function SkillSaveData:ctor(serverSkillData, pro, jobLv)
@@ -11,6 +11,11 @@ function SkillSaveData:ctor(serverSkillData, pro, jobLv)
   self.beingSkillList = {}
   self.equipedSkills = {}
   self.equipedAutoSkills = {}
+  self.inheritSkillProfessDatas = {}
+  self.inheritLoadSkills = {}
+  self.extendCostPointBuffEffects = {}
+  self.extendCostPointCurBuffEffect = {}
+  self.extendCostPointAttrs = {}
   self.beinginfo = {}
   self.jobLevel = jobLv
   self.left_point = serverSkillData.left_point
@@ -111,7 +116,10 @@ function SkillSaveData:ctor(serverSkillData, pro, jobLv)
         local familyId = serverSkills[i].id // 1000
         local skill = InheritSkillItemData.new(familyId)
         skill:UpdateSkill(serverSkills[i])
+        local pro = InheritSkillProxy.GetSkillProfess(familyId)
+        self:AddInheritSkill(pro, skill)
         if skill.isLoad then
+          self:AddLoadSkill(skill)
           self:LearnedSkill(skill)
         end
         if self:_CheckPosInShortCut(skill) then
@@ -122,6 +130,15 @@ function SkillSaveData:ctor(serverSkillData, pro, jobLv)
         end
       end
     end
+    for familyId, data in pairs(Table_SkillInherit) do
+      local pro = self:FindInheritSkillByFamilyId(familyId)
+      if not pro then
+        local skill = InheritSkillItemData.new(familyId)
+        self:AddInheritSkill(0, skill)
+      end
+    end
+    self.extendCostPoints = serverSkillData.inherit.extendpoints or 0
+    self:InitCostPointAttr()
   end
 end
 
@@ -360,4 +377,104 @@ end
 
 function SkillSaveData:GetEquipMasterSkillFamilyId()
   return self.equipMasterSkillFamilyId
+end
+
+function SkillSaveData:AddInheritSkill(pro, skill)
+  if not pro then
+    return
+  end
+  local professData = self.inheritSkillProfessDatas[pro]
+  if not professData then
+    professData = InheritSkillProfessData.new(pro)
+    self.inheritSkillProfessDatas[pro] = professData
+  end
+  professData:AddSkill(skill)
+end
+
+function SkillSaveData:AddLoadSkill(skill)
+  if TableUtility.ArrayFindIndex(self.inheritLoadSkills, skill) == 0 then
+    self.inheritLoadSkills[#self.inheritLoadSkills + 1] = skill
+  end
+end
+
+function SkillSaveData:GetInheritSkillProfessDatas()
+  local datas = {}
+  for pro, professData in pairs(self.inheritSkillProfessDatas) do
+    if not professData:IsEmpty() then
+      datas[#datas + 1] = professData
+    end
+  end
+  return datas
+end
+
+function SkillSaveData:GetInheritSkillLoadSkills()
+  return self.inheritLoadSkills
+end
+
+function SkillSaveData:FindInheritSkillByFamilyId(familyId)
+  for pro, professData in pairs(self.inheritSkillProfessDatas) do
+    local skill = professData:FindSkill(familyId)
+    if skill then
+      return pro, skill
+    end
+  end
+  return nil
+end
+
+function SkillSaveData:GetExtendedCostPoints()
+  return self.extendCostPoints
+end
+
+local sortFunc = function(l, r)
+  local configl = Game.Config_PropName[l.name]
+  local configr = Game.Config_PropName[r.name]
+  return configl.id < configr.id
+end
+
+function SkillSaveData:GetTotalCostPointAttrs(costPoint)
+  if costPoint > #self.extendCostPointBuffEffects then
+    return
+  end
+  local attrs = self.extendCostPointBuffEffects[#self.extendCostPointBuffEffects]
+  local curAttrs = self.extendCostPointBuffEffects[costPoint]
+  local datas = self.extendCostPointAttrs[costPoint]
+  if not datas then
+    datas = {}
+    self.extendCostPointAttrs[costPoint] = datas
+    for k in pairs(attrs) do
+      local data = {}
+      data.name = k
+      data.value = curAttrs and curAttrs[k] and curAttrs[k] or 0
+      datas[#datas + 1] = data
+    end
+    table.sort(datas, sortFunc)
+  end
+  return datas
+end
+
+function SkillSaveData:InitCostPointAttr()
+  local extendPointCost = GameConfig.SkillInherit and GameConfig.SkillInherit.PointExtendCost
+  if extendPointCost then
+    local buffEffects = {}
+    for i = 1, #extendPointCost do
+      self.extendCostPointBuffEffects[i] = {}
+      self.extendCostPointCurBuffEffect[i] = {}
+      local config = extendPointCost[i]
+      if config.Buffs then
+        for _, buffId in ipairs(config.Buffs) do
+          local buffConf = Table_Buffer[buffId]
+          for k, v in pairs(buffConf.BuffEffect) do
+            if Game.Config_PropName[k] then
+              buffEffects[k] = buffEffects[k] or 0
+              buffEffects[k] = buffEffects[k] + v
+              self.extendCostPointCurBuffEffect[i][k] = buffEffects[k]
+            end
+          end
+        end
+        for k, v in pairs(buffEffects) do
+          self.extendCostPointBuffEffects[i][k] = v
+        end
+      end
+    end
+  end
 end

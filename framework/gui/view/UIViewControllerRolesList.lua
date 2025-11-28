@@ -321,8 +321,8 @@ function UIViewControllerRolesList:RefreshPreCreatePart()
   local openTime = serverData.opentime or 0
   local loginData = FunctionLogin.Me():getLoginData()
   local flag = loginData ~= nil and loginData.flag or 0
-  local curTime = ServerTime and ServerTime.CurServerTime() or 0
-  if openTime == 0 or openTime < curTime / 1000 then
+  local curTime = ServerTime and ServerTime.CurServerTime() and ServerTime.CurServerTime() / 1000 or os.time() or 0
+  if openTime == 0 or openTime < curTime then
     self.preCreatePart:SetActive(false)
     self.labTimeLeft.gameObject:SetActive(false)
     self.bcButtonStartGame.enabled = true

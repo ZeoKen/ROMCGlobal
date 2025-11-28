@@ -205,7 +205,7 @@ function AI_Myself:TryStopBaseAction(creature)
     return
   end
   local creatureData = creature.data
-  if creatureData:Freeze() or creatureData:NoAct() then
+  if creatureData:Freeze() or creatureData:NoAct() or creatureData:DeepFreeze() then
     return
   end
   creature:Logic_StopBaseAction()
@@ -220,7 +220,7 @@ function AI_Myself:_StopMove(time, deltaTime, creature)
     return
   end
   local creatureData = creature.data
-  if creatureData:Freeze() or creatureData:NoAct() then
+  if creatureData:Freeze() or creatureData:NoAct() or creatureData:DeepFreeze() then
     return
   end
   if not self.currentCmd.concurrent then
@@ -355,6 +355,16 @@ function AI_Myself:_NextSkillCmdCanUse(creature, nextCmd)
   return false
 end
 
+function AI_Myself:_NextMoveCmdCanUse(creature, nextCmd)
+  if nil == nextCmd then
+    return false
+  end
+  if AI_CMD_Myself_MoveTo ~= nextCmd.AIClass and AI_CMD_Myself_DirMove ~= nextCmd.AIClass and AI_CMD_Myself_DirMoveEnd ~= nextCmd.AIClass then
+    return false
+  end
+  return creature.data:IsAttrCanMove() and not creature.data:DeepFreeze()
+end
+
 function AI_Myself:_NextSkillCmdCanBreakWeakFreeze(creature, nextCmd)
   if nil == nextCmd then
     return false
@@ -384,14 +394,14 @@ function AI_Myself:_TrySwitchCommand(time, deltaTime, creature)
       breakWeakFreeze = true
     end
   end
-  if creatureData:Freeze() then
+  if creatureData:Freeze() or creatureData:DeepFreeze() then
     local nextCmd = self.nextCmd or self.nextCmd1
-    if self:_NextSkillCmdCanUse(creature, nextCmd) == false then
+    if self:_NextSkillCmdCanUse(creature, nextCmd) == false and self:_NextMoveCmdCanUse(creature, nextCmd) == false then
       return
     end
   elseif creatureData:NoAct() or creatureData:FearRun() then
     local nextCmd = self.nextCmd or self.nextCmd1
-    if nil == self.dieCmd and (nil == nextCmd or AI_CMD_Myself_Hit ~= nextCmd.AIClass or AI_CMD_Myself_Die ~= nextCmd.AIClass) and false == self:_NextSkillCmdCanUse(creature, nextCmd) then
+    if nil == self.dieCmd and (nil == nextCmd or AI_CMD_Myself_Hit ~= nextCmd.AIClass or AI_CMD_Myself_Die ~= nextCmd.AIClass) and false == self:_NextSkillCmdCanUse(creature, nextCmd) and false == self:_NextMoveCmdCanUse(creature, nextCmd) then
       return
     end
   end
@@ -835,9 +845,10 @@ function AI_Myself:SetAuto_SkillOverAction(endAction)
   self.autoAI_SkillOverAction:Request_Set(endAction)
 end
 
-function AI_Myself:TryBreakAll(time, deltaTime, creature, ignoreSkill)
+function AI_Myself:TryBreakAll(time, deltaTime, creature, ignoreSkill, ignoreMove)
   self:BreakAll(time, deltaTime, creature)
   self.ignoreSkill = ignoreSkill
+  self.ignoreMove = ignoreMove
   return true
 end
 
@@ -870,12 +881,13 @@ function AI_Myself:_BreakAll(time, deltaTime, creature)
     self.currentCmd:Destroy()
     self.currentCmd = nil
   end
-  if self.moveCmd ~= nil then
+  if self.moveCmd ~= nil and not self.ignoreMove then
     self.moveCmd:End(time, deltaTime, creature)
     self.moveCmd:Destroy()
     self.moveCmd = nil
   end
   self.ignoreSkill = nil
+  self.ignoreMove = nil
 end
 
 function AI_Myself:_WeakBreak(time, deltaTime, creature)

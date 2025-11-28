@@ -687,7 +687,7 @@ Table_PrestigeLevel = {
     id = 501,
     Type = 5,
     UnlockCondition = {501},
-    Effect = {2204},
+    Effect = {2204, 2181},
     Reward = 8321,
     Level = 1
   },
@@ -696,7 +696,7 @@ Table_PrestigeLevel = {
     Type = 5,
     UnlockCondition = {502},
     Effect = {
-      2181,
+      2182,
       2193,
       2205
     },
@@ -716,7 +716,7 @@ Table_PrestigeLevel = {
     Type = 5,
     UnlockCondition = {504},
     Effect = {
-      2182,
+      2183,
       2195,
       2187,
       2207
@@ -737,7 +737,7 @@ Table_PrestigeLevel = {
     Type = 5,
     UnlockCondition = {506},
     Effect = {
-      2183,
+      2184,
       2197,
       2188,
       2209
@@ -758,7 +758,7 @@ Table_PrestigeLevel = {
     Type = 5,
     UnlockCondition = {508},
     Effect = {
-      2184,
+      2185,
       2199,
       2189
     },
@@ -777,7 +777,7 @@ Table_PrestigeLevel = {
     id = 510,
     Type = 5,
     UnlockCondition = {510},
-    Effect = {2185, 2190},
+    Effect = {2186, 2190},
     Reward = 8330,
     Level = 10
   },
@@ -819,6 +819,144 @@ Table_PrestigeLevel = {
     UnlockCondition = {515},
     Effect = {2203},
     Reward = 8335,
+    Level = 15
+  },
+  [601] = {
+    id = 601,
+    Type = 6,
+    UnlockCondition = {601},
+    Effect = {2210, 2233},
+    Reward = 8361,
+    Level = 1
+  },
+  [602] = {
+    id = 602,
+    Type = 6,
+    UnlockCondition = {602},
+    Effect = {
+      2211,
+      2222,
+      2234
+    },
+    Reward = 8362,
+    Level = 2
+  },
+  [603] = {
+    id = 603,
+    Type = 6,
+    UnlockCondition = {603},
+    Effect = {2223, 2235},
+    Reward = 8363,
+    Level = 3
+  },
+  [604] = {
+    id = 604,
+    Type = 6,
+    UnlockCondition = {604},
+    Effect = {
+      2212,
+      2216,
+      2224,
+      2236
+    },
+    Reward = 8364,
+    Level = 4
+  },
+  [605] = {
+    id = 605,
+    Type = 6,
+    UnlockCondition = {605},
+    Effect = {2225, 2237},
+    Reward = 8365,
+    Level = 5
+  },
+  [606] = {
+    id = 606,
+    Type = 6,
+    UnlockCondition = {606},
+    Effect = {
+      2213,
+      2217,
+      2226,
+      2238
+    },
+    Reward = 8366,
+    Level = 6
+  },
+  [607] = {
+    id = 607,
+    Type = 6,
+    UnlockCondition = {607},
+    Effect = {2227},
+    Reward = 8367,
+    Level = 7
+  },
+  [608] = {
+    id = 608,
+    Type = 6,
+    UnlockCondition = {608},
+    Effect = {
+      2214,
+      2218,
+      2228
+    },
+    Reward = 8368,
+    Level = 8
+  },
+  [609] = {
+    id = 609,
+    Type = 6,
+    UnlockCondition = {609},
+    Effect = {2229},
+    Reward = 8369,
+    Level = 9
+  },
+  [610] = {
+    id = 610,
+    Type = 6,
+    UnlockCondition = {610},
+    Effect = {2215, 2219},
+    Reward = 8370,
+    Level = 10
+  },
+  [611] = {
+    id = 611,
+    Type = 6,
+    UnlockCondition = {611},
+    Effect = {2230},
+    Reward = 8371,
+    Level = 11
+  },
+  [612] = {
+    id = 612,
+    Type = 6,
+    UnlockCondition = {612},
+    Effect = {2220},
+    Reward = 8372,
+    Level = 12
+  },
+  [613] = {
+    id = 613,
+    Type = 6,
+    UnlockCondition = {613},
+    Effect = {2231},
+    Reward = 8373,
+    Level = 13
+  },
+  [614] = {
+    id = 614,
+    Type = 6,
+    UnlockCondition = {614},
+    Effect = {2221},
+    Reward = 8374,
+    Level = 14
+  },
+  [615] = {
+    id = 615,
+    Type = 6,
+    UnlockCondition = {615},
+    Effect = {2232},
+    Reward = 8375,
     Level = 15
   }
 }

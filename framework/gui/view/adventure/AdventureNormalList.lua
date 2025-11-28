@@ -226,9 +226,10 @@ function AdventureNormalList:resetSelectState(datas, noResetPos)
   end
 end
 
-function AdventureNormalList:SetPropData(propData, keys)
+function AdventureNormalList:SetPropData(propData, keys, customProps)
   self.propData = propData
   self.keys = keys
+  self.customProps = customProps
 end
 
 function AdventureNormalList:SetData(datas, noResetPos)
@@ -385,7 +386,7 @@ function AdventureNormalList:setCategoryAndTab(category, tab)
   self.category = category
   self.tab = tab
   if self.propData and self.propData.extraType == "myprofession" then
-    self:SetPropData(nil, nil)
+    self:SetPropData(nil, nil, nil)
   end
 end
 
@@ -431,7 +432,7 @@ function AdventureNormalList:GetTabDatas()
             listItems[#listItems + 1] = weapons[i]
           end
         end
-        listItems = AdventureDataProxy.Instance:getItemsByFilterData(type, listItems, self.propData, self.keys)
+        listItems = AdventureDataProxy.Instance:getItemsByFilterData(type, listItems, self.propData, self.keys, self.customProps)
         return listItems
       end
     end
@@ -444,7 +445,7 @@ function AdventureNormalList:GetTabDatas()
             listItems[#listItems + 1] = weapons[i]
           end
         end
-        listItems = AdventureDataProxy.Instance:getItemsByFilterData(type, listItems, self.propData, self.keys)
+        listItems = AdventureDataProxy.Instance:getItemsByFilterData(type, listItems, self.propData, self.keys, self.customProps)
         return listItems
       end
     end
@@ -517,7 +518,7 @@ function AdventureNormalList:GetTabDatas()
             end
           end
           table.sort(listItems, sortFunc)
-          listItems = AdventureDataProxy.Instance:getItemsByFilterData(type, listItems, self.propData, self.keys)
+          listItems = AdventureDataProxy.Instance:getItemsByFilterData(type, listItems, self.propData, self.keys, self.customProps)
         elseif self.propData then
           TableUtility.ArrayClear(listItems)
         end
@@ -550,11 +551,11 @@ function AdventureNormalList:GetTabDatas()
           end
         end
       end
-      items = AdventureDataProxy.Instance:getItemsByFilterData(type, items, self.propData, self.keys)
+      items = AdventureDataProxy.Instance:getItemsByFilterData(type, items, self.propData, self.keys, self.customProps)
       if (self.tab and self.tab.id) == 50003 then
-        items = AdventureDataProxy.Instance:getItemsByFilterData(type, items, {extraType = "locked"}, self.keys)
+        items = AdventureDataProxy.Instance:getItemsByFilterData(type, items, {extraType = "locked"}, self.keys, self.customProps)
       else
-        items = AdventureDataProxy.Instance:getItemsByFilterData(type, items, self.propData, self.keys)
+        items = AdventureDataProxy.Instance:getItemsByFilterData(type, items, self.propData, self.keys, self.customProps)
       end
       return items
     end

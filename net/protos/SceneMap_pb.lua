@@ -253,6 +253,7 @@ MAPNPC_SE_MAXDISTANCE_FIELD = protobuf.FieldDescriptor()
 MAPNPC_MASTER_PVP_CAMP_FIELD = protobuf.FieldDescriptor()
 MAPNPC_PVP_CHAMPION_STATUE_FIELD = protobuf.FieldDescriptor()
 MAPNPC_SYNCBUFF_FIELD = protobuf.FieldDescriptor()
+MAPNPC_BOX_OPENED_FIELD = protobuf.FieldDescriptor()
 ADDMAPNPC = protobuf.Descriptor()
 ADDMAPNPC_CMD_FIELD = protobuf.FieldDescriptor()
 ADDMAPNPC_PARAM_FIELD = protobuf.FieldDescriptor()
@@ -2407,6 +2408,15 @@ MAPNPC_SYNCBUFF_FIELD.default_value = {}
 MAPNPC_SYNCBUFF_FIELD.message_type = SceneUser2_pb.SYNCBUFFFROMDATA
 MAPNPC_SYNCBUFF_FIELD.type = 11
 MAPNPC_SYNCBUFF_FIELD.cpp_type = 10
+MAPNPC_BOX_OPENED_FIELD.name = "box_opened"
+MAPNPC_BOX_OPENED_FIELD.full_name = ".Cmd.MapNpc.box_opened"
+MAPNPC_BOX_OPENED_FIELD.number = 52
+MAPNPC_BOX_OPENED_FIELD.index = 47
+MAPNPC_BOX_OPENED_FIELD.label = 1
+MAPNPC_BOX_OPENED_FIELD.has_default_value = false
+MAPNPC_BOX_OPENED_FIELD.default_value = false
+MAPNPC_BOX_OPENED_FIELD.type = 8
+MAPNPC_BOX_OPENED_FIELD.cpp_type = 7
 MAPNPC.name = "MapNpc"
 MAPNPC.full_name = ".Cmd.MapNpc"
 MAPNPC.nested_types = {}
@@ -2458,7 +2468,8 @@ MAPNPC.fields = {
   MAPNPC_SE_MAXDISTANCE_FIELD,
   MAPNPC_MASTER_PVP_CAMP_FIELD,
   MAPNPC_PVP_CHAMPION_STATUE_FIELD,
-  MAPNPC_SYNCBUFF_FIELD
+  MAPNPC_SYNCBUFF_FIELD,
+  MAPNPC_BOX_OPENED_FIELD
 }
 MAPNPC.is_extendable = false
 MAPNPC.extensions = {}

@@ -1,6 +1,7 @@
 autoImport("BossComposeCardCell")
 autoImport("MvpCardComposeMaterialCell")
 autoImport("CardMakeRateUpCell")
+autoImport("BossCardComposeNewPage")
 MvpCardComposeNewPage = class("MvpCardComposeNewPage", BossCardComposeNewPage)
 local skipType = SKIPTYPE.MvpCardCompose
 local Prefab_Path = ResourcePathHelper.UIView("MvpCardComposeNewPage")

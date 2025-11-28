@@ -4,7 +4,6 @@ autoImport("TeamMemberCell")
 autoImport("GroupMemberCell")
 
 function TeamMemberListPopUp:Init()
-  TeamProxy.Instance:InitTeamGoals()
   self:InitView()
   self:MapEvent()
   self.tabEmpty = {}

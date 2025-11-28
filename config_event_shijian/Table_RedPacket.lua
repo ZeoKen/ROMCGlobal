@@ -994,6 +994,26 @@ Table_RedPacket = {
     context = Table_RedPacket_t.context[1],
     thanksContext = Table_RedPacket_t.thanksContext[1]
   },
+  [3013901] = {
+    id = 3013901,
+    returnItem = 3013904,
+    channel = Table_RedPacket_t.channel[1],
+    moneyID = 100,
+    totalMoneyLimit = Table_RedPacket_t.totalMoneyLimit[4],
+    totalNumLimit = Table_RedPacket_t.totalNumLimit[1],
+    context = Table_RedPacket_t.context[1],
+    thanksContext = Table_RedPacket_t.thanksContext[1]
+  },
+  [3013902] = {
+    id = 3013902,
+    returnItem = 3013905,
+    channel = Table_RedPacket_t.channel[2],
+    moneyID = 100,
+    totalMoneyLimit = Table_RedPacket_t.totalMoneyLimit[4],
+    totalNumLimit = Table_RedPacket_t.totalNumLimit[1],
+    context = Table_RedPacket_t.context[1],
+    thanksContext = Table_RedPacket_t.thanksContext[1]
+  },
   [10000133] = {
     id = 10000133,
     channel = Table_RedPacket_t.channel[2],

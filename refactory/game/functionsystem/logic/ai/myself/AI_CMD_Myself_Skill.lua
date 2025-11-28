@@ -212,6 +212,11 @@ function AI_CMD_Myself_Skill:Start(time, deltaTime, creature)
   forceDelay = forceDelay and forceDelay / 1000
   if isAttackSkill or isFakeNormalAttack or forceDelay then
     local attackInterval = forceDelay or creature.data:GetAttackInterval()
+    local useNewFunc = SkillProxy.Instance:GetLearnedSkillLevelBySortID(4781) >= 7
+    if useNewFunc then
+      local attackSpeed = creature.data:GetAttackSpeed_Adjusted_Bell()
+      attackInterval = 1 / attackSpeed
+    end
     if not info:NoAttackSpeed() or forceDelay then
       local interval = time - lastAttackTime
       if attackInterval > interval then
@@ -221,7 +226,7 @@ function AI_CMD_Myself_Skill:Start(time, deltaTime, creature)
     end
   end
   local interval = time - lastSkillTime
-  if not creature:IsNoSkillDelay() and interval < SkillInterval and not isFakeNormalAttack and not info:IsKnightSkill() then
+  if not creature:IsNoSkillDelay() and interval < SkillInterval and not isFakeNormalAttack and not info:IsKnightSkill() and not info:AffectedByAtkSpd() then
     if not skill.info or not skill.info:NoAttackWait(creature) then
       creature.ai:SetIdleAction(Asset_Role.ActionName.AttackIdle)
     end

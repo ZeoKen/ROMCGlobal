@@ -9,6 +9,7 @@ local bgStandardHeight = 103
 
 function TitleTip:Init()
   self.titleName = self:FindComponent("titleName", UILabel)
+  self.propDesGO = self:FindGO("propDes")
   self.propDesLab = self:FindComponent("propDesLab", UILabel)
   self.unlockDes = self:FindComponent("unlockDes", UILabel)
   self.DesLab = self:FindComponent("DesLab", UILabel)
@@ -16,9 +17,13 @@ function TitleTip:Init()
   self.UseBtn = self:FindComponent("useBtn", UISprite)
   self.useBtnLab = self:FindComponent("useBtnLab", UILabel)
   self.DescFrame = self:FindComponent("Des", UISprite)
+  self.bg = self:FindComponent("bg", UISprite)
+  self.bgFrame = self:FindComponent("BgFrame", UISprite)
   self:_AddAnchor(self:FindComponent("useBtn", UISprite))
   self:_AddAnchor(self:FindComponent("BgButtomFrame", UISprite))
   self:_AddAnchor(self:FindComponent("bg", UISprite))
+  self:_AddAnchor(self.bgFrame)
+  self:_AddAnchor(self.titleName)
   self:AddButtonEvent("useBtn", function(obj)
     self:ClickUseBtn()
   end)
@@ -52,39 +57,62 @@ function TitleTip:SetData(data)
   self.titleName.text = name
   local achieveId = self.data:GetAchievemnetIDByTitle(self.id)
   local unlockDes
-  if achieveId and 0 ~= achieveId then
+  if self.data:bActivityHideLock() then
+    self.unlockDes.text = ZhString.UnlockActivityAppellation
+    self:Hide(self.ArrowBtn)
+  elseif achieveId and 0 ~= achieveId then
     self:Show(self.ArrowBtn)
     unlockDes = Table_Achievement[achieveId] and Table_Achievement[achieveId].Name or ""
     self.unlockDes.text = string.format(ZhString.UnlockAchievenment, unlockDes)
-  else
+  elseif GameConfig.QuestAppellationIDs and GameConfig.QuestAppellationIDs[self.id] then
     unlockDes = GameConfig.QuestAppellationIDs and GameConfig.QuestAppellationIDs[self.id] or ""
     self.unlockDes.text = string.format(ZhString.UnlockQuestAchievenment, unlockDes)
     self:Hide(self.ArrowBtn)
+  else
+    self:Hide(self.ArrowBtn)
+    self.unlockDes.text = ZhString.UnlockActivityAppellation
   end
   local content = Table_Item[self.id].Desc
   self.DesLab.text = content
   local prop = staticData.BaseProp
   local propDesc
+  local hasProp = false
   for k, v in pairs(prop) do
+    hasProp = true
     if propDesc then
       propDesc = propDesc .. " , " .. tostring(k) .. "+" .. tostring(v)
     else
       propDesc = tostring(k) .. "+" .. tostring(v)
     end
   end
+  if hasProp and propDesc then
+    self.propDesGO:SetActive(true)
+    self.propDesLab.text = propDesc
+  else
+    self.propDesGO:SetActive(false)
+    self.propDesLab.text = ""
+  end
   self.callbackParam = data.callbackParam
-  self.propDesLab.text = propDesc
   self:_CalculateBgHeight()
   self:_UpdateAnchor()
 end
 
 function TitleTip:_CalculateBgHeight()
-  local labelHeight = self.DesLab.height
+  local labelHeight = self.DesLab.height or 0
   local delta = labelHeight - standardHeight
   if 0 < delta then
     self.DescFrame.height = bgStandardHeight + delta
   else
     self.DescFrame.height = bgStandardHeight
+  end
+  if self.bg and self.bg.topAnchor and self.propDesGO then
+    local isPropDesVisible = self.propDesGO.activeInHierarchy
+    if isPropDesVisible then
+      self.bg.topAnchor.absolute = 126
+    else
+      self.bg.topAnchor.absolute = 59
+    end
+    self.bg:ResetAndUpdateAnchors()
   end
 end
 
@@ -128,8 +156,11 @@ end
 
 function TitleTip:SetArrowBtnState()
   local bVisibily = self.data:bVisibilyAchievement()
+  local bActivityHideLock = self.data:bActivityHideLock()
   local unlock = FunctionUnLockFunc.Me():CheckCanOpen(23)
   if not unlock or self.data.hideFlag then
+    self.ArrowBtn.gameObject:SetActive(false)
+  elseif bActivityHideLock then
     self.ArrowBtn.gameObject:SetActive(false)
   elseif bVisibily and not self.unlocked then
     self.ArrowBtn.gameObject:SetActive(false)

@@ -116,6 +116,8 @@ function GuildInfoView:TabChangeHandler(key)
     FunctionGuild.Me():QueryGuildItemList()
     GvgProxy.Instance:DoQueryGvgZoneGroup()
   elseif PanelConfig.GuildAssetPage.tab == key then
+  elseif PanelConfig.GuildFindPage.tab == key then
+    GvgProxy.Instance:DoQueryGvgZoneGroup()
   end
   if ret and not GameConfig.SystemForbid.TabNameTip then
     local tab = self.coreTabMap[key]

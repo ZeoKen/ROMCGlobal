@@ -322,6 +322,9 @@ function PvePassInfo:CheckPublishShow()
   if self.staticEntranceData:IsHeadWear() then
     return false
   end
+  if self.staticEntranceData:IsFairyTale() then
+    return false
+  end
   local goal = self.staticEntranceData.staticData.Goal
   if not goal or goal <= 0 then
     return false

@@ -72,7 +72,7 @@ function GVGRankPopUp_Gvg:InitView()
   _Fixed_GuildLeader.text = ZhString.NewGvg_Rank_FixedGuildLeader
   _Fixed_TotalPoint.text = ZhString.NewGvg_Rank_FixedTotalPoint
   if GvgProxy.Instance:HasMoreGroupZone() then
-    _Fixed_Line.text = string.format(ZhString.NewGvg_Rank_FixedLineRange, GvgProxy.Instance:GetClientMaxGroup())
+    _Fixed_Line.text = string.format(ZhString.NewGvg_Rank_FixedLineRange, GvgProxy.Instance:GetGroupCnt())
   else
     _Fixed_Line.text = ZhString.NewGvg_Rank_FixedLine
   end

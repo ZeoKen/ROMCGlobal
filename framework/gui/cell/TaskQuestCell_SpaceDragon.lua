@@ -4,9 +4,11 @@ TaskQuestCell_SpaceDragon = class("TaskQuestCell_SpaceDragon", TaskQuestCell)
 local MaxRewardNum = 8
 local Yellow = LuaColor.New(1, 0.796078431372549, 0.40784313725490196, 1)
 local Grey = LuaColor.New(0.4, 0.4235294117647059, 0.48627450980392156, 1)
+local NumFormat = "%d/%d"
 
 function TaskQuestCell_SpaceDragon:ctor(go)
   self.gameObject = go
+  MaxRewardNum = GameConfig.AbyssDragon.SharedRewardGroup and GameConfig.AbyssDragon.SharedRewardGroup.StageReward.Max or MaxRewardNum
   self:Init()
 end
 
@@ -17,27 +19,22 @@ function TaskQuestCell_SpaceDragon:Init()
   self.cdSlider = self:FindComponent("CountDown", UISlider)
   self.cdTime = self:FindComponent("CountdownTime", UILabel)
   self.tipScroll = self:FindComponent("StageTipPanel", UIScrollView)
-  self.stageTip = self:FindComponent("StageTip", UILabel)
-  self.stageTipCtrl = UIAutoScrollCtrl.new(self.tipScroll, self.stageTip, 8, 40)
   self:SetEvent(self.bgSprite.gameObject, function()
     self:sendNotification(MainViewEvent.SpaceDragonCellClick, {cellCtrl = self})
-    self:OnClick()
   end)
   self.taskQuestType = "SpaceDragon"
   self.data = {}
   self.data.type = QuestDataType.QuestDataType_SPACEDRAGON
-  self.rewardSps = {}
-  for i = 1, MaxRewardNum do
-    local sp = self:FindGO("AbyssRewardIcon" .. i):GetComponent(UISprite)
-    self.rewardSps[i] = sp
-  end
   self.rewardLabel = self:FindComponent("RewardLabel", UILabel)
-  self.rewardLabel.text = string.format("%d/%d", 0, MaxRewardNum)
+  self.rewardLabel.text = string.format(NumFormat, 0, MaxRewardNum)
   self.rewardProgressGO = self:FindGO("RewardProgress")
   self.rewardProgressSlider = self:FindComponent("RewardProgress", UISlider)
   local dragonGO = self:FindGO("DragonProgress")
   self.dragon_fg = self:FindComponent("fg", UISprite, dragonGO)
   self.dragon_icon = self:FindComponent("icon", UISprite, dragonGO)
+  self.rewardProgress2 = self:FindComponent("RewardProgress2", UISlider)
+  self.participateRewardProgress = self:FindComponent("ParticipateRewardProgress", UISlider)
+  self.participateRewardLabel = self:FindComponent("ParticipateRewardLabel", UILabel)
 end
 
 function TaskQuestCell_SpaceDragon:AddLongPress()
@@ -110,31 +107,22 @@ function TaskQuestCell_SpaceDragon:SetData(data)
   self:SetDetail()
 end
 
+function TaskQuestCell_SpaceDragon:SetQuestTraceSymbol(bool)
+  TaskQuestCell_SpaceDragon.super.SetQuestTraceSymbol(self, true)
+end
+
 function TaskQuestCell_SpaceDragon:SetDetail()
   local dragonConfig = GameConfig.AbyssDragon
   local info = AbyssFakeDragonProxy.Instance:GetDragonInfos()
   self:UpdateHp()
   if info then
     self.curPhase = info.dragonStage or 1
-    if self.curPhase == 3 then
+    if self.curPhase == 2 then
       self.dragon_fg.color = Grey
       IconManager:SetUIIcon("miniro_icon_shikonglong_zhihui", self.dragon_icon)
     else
       self.dragon_fg.color = Yellow
       IconManager:SetUIIcon("miniro_icon_shikonglong", self.dragon_icon)
-    end
-    if self.curPhase == 2 then
-      local bp = info.endBp or 12
-      local format = dragonConfig.StageDesc[self.curPhase]
-      local bpName = GameConfig.AbyssDragon.bpName or {}
-      local mapConfig = Table_BWMapZone[bpName[bp] or 61]
-      local mapName = mapConfig.NameZh
-      self.stageTip.text = string.format(format, mapName)
-    else
-      self.stageTip.text = dragonConfig.StageDesc[self.curPhase]
-    end
-    if self.stageTipCtrl then
-      self.stageTipCtrl:Start(true, true)
     end
     self:SetTimeTick()
   end
@@ -147,7 +135,7 @@ function TaskQuestCell_SpaceDragon:UpdateHp()
   self.gradonSlider.value = hpPercent
   self.dragonHp.text = string.format("%d%%", dragon_hp / dragon_maxhp * 100)
   local rewardNum = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_ABYSS_DRAGON_STAGE_REWARD) or 0
-  self.rewardProgressGO:SetActive(rewardNum < MaxRewardNum and 0 < hpPercent and self.curPhase ~= 3)
+  self.rewardProgressGO:SetActive(rewardNum < MaxRewardNum and 0 < hpPercent and self.curPhase ~= 2)
   if rewardNum < MaxRewardNum then
     local value = 0
     if 0.1 < hpPercent then
@@ -160,8 +148,8 @@ function TaskQuestCell_SpaceDragon:UpdateHp()
 end
 
 function TaskQuestCell_SpaceDragon:SetTimeTick()
-  local duration = AbyssFakeDragonProxy.Instance:GetCountDownTime()
-  if not duration then
+  local targetTime = AbyssFakeDragonProxy.Instance:GetTargetTime()
+  if not targetTime then
     if self.tick then
       self.cdSlider.value = 0
       self.cdTime.text = ""
@@ -170,7 +158,7 @@ function TaskQuestCell_SpaceDragon:SetTimeTick()
     end
     return
   end
-  self.targetTime = duration + ServerTime.CurServerTime() / 1000
+  self.targetTime = targetTime
   self.tick = TimeTickManager.Me():CreateTick(0, 1000, function()
     self:UpdateTime()
   end, self)
@@ -178,8 +166,8 @@ end
 
 function TaskQuestCell_SpaceDragon:UpdateTime()
   local duration = AbyssFakeDragonProxy.Instance:GetCountDownTime()
-  local passedTime = AbyssFakeDragonProxy.Instance:GetPassedTime()
   local remainTime = self.targetTime - ServerTime.CurServerTime() / 1000
+  remainTime = math.max(0, remainTime)
   local minutes = math.floor(remainTime / 60)
   local seconds = remainTime % 60
   self.cdTime.text = string.format("%d:%02d", minutes, seconds)
@@ -191,21 +179,23 @@ function TaskQuestCell_SpaceDragon:DestroySelf()
     GameObject.Destroy(self.gameObject)
     self.gameObject = nil
   end
+  self:OnExit()
+end
+
+function TaskQuestCell_SpaceDragon:OnExit()
   if self.tick then
     TimeTickManager.Me():ClearTick(self)
     self.tick = nil
   end
   TableUtility.TableClear(self)
-  if self.stageTipCtrl then
-    self.stageTipCtrl:Destroy()
-    self.stageTipCtrl = nil
-  end
 end
 
 function TaskQuestCell_SpaceDragon:SetRewardGrid()
   local rewardNum = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_ABYSS_DRAGON_STAGE_REWARD) or 0
-  for i = 1, MaxRewardNum do
-    self.rewardSps[i].alpha = i <= rewardNum and 1 or 0.4
-  end
-  self.rewardLabel.text = string.format("%d/%d", rewardNum, MaxRewardNum)
+  self.rewardProgress2.value = rewardNum / MaxRewardNum
+  self.rewardLabel.text = string.format(NumFormat, rewardNum, MaxRewardNum)
+  local participateRewardNum = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_ABYSS_DRAGON_PASS_REWARD) or 0
+  local maxParticipateRewardNum = GameConfig.AbyssDragon.SharedRewardGroup and GameConfig.AbyssDragon.SharedRewardGroup.JoinReward.Max or 0
+  self.participateRewardProgress.value = participateRewardNum / maxParticipateRewardNum
+  self.participateRewardLabel.text = string.format(NumFormat, participateRewardNum, maxParticipateRewardNum)
 end

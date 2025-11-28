@@ -115,6 +115,8 @@ function MainViewTraceInfoPage:AddViewEvts()
   self:AddListenEvt(PVEEvent.Astral_Shutdown, self.HandleAstralRaidShutdown)
   self:AddListenEvt(PVEEvent.SpeceTimeIllusion_Launch, self.HandleSpaceTimeIllusionLaunch)
   self:AddListenEvt(PVEEvent.SpeceTimeIllusion_Shutdown, self.HandleSpaceTimeIllusionShutdown)
+  self:AddListenEvt(PVEEvent.FairyTale_Launch, self.HandleFairyTaleRaidLaunch)
+  self:AddListenEvt(PVEEvent.FairyTale_Shutdown, self.HandleFairyTaleRaidShutdown)
 end
 
 function MainViewTraceInfoPage:HandleAddDungeonInfoBord(data)
@@ -151,9 +153,8 @@ function MainViewTraceInfoPage:_ShowMetalGVG()
   if not self.gvgBord then
     self.gvgBord = self:AddSubView("MainViewGvgPage", MainViewGvgPage)
     self.gvgBord:ResetParent(self.traceInfoBord)
-  elseif self.gvgBord then
-    self.gvgBord:Show()
   end
+  self.gvgBord:Show()
   self.taskBord:Hide()
   self.curBord = self.gvgBord
 end
@@ -898,4 +899,12 @@ function MainViewTraceInfoPage:HandleSpaceTimeIllusionShutdown()
     self.spaceTimeIllusionPage = nil
   end
   self.curBord = nil
+end
+
+function MainViewTraceInfoPage:HandleFairyTaleRaidLaunch()
+  self.taskBord:Hide()
+end
+
+function MainViewTraceInfoPage:HandleFairyTaleRaidShutdown()
+  self.taskBord:Show()
 end

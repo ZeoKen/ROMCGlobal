@@ -117,9 +117,6 @@ function ServiceNUserProxy:ShowSysMsg(data)
       end
     end
   end
-  if data.id == 43423 then
-    redlog("sysMsg id = ", data.id)
-  end
   if data.type == SceneUser2_pb.EMESSAGETYPE_FRAME then
     if data.act == SceneUser2_pb.EMESSAGEACT_DEL then
       MsgManager.RemoveMsgByIDTable(data.id)

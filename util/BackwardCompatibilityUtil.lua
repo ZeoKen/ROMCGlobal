@@ -28,6 +28,10 @@ function BackwardCompatibilityUtil.CompatibilityMode(v)
   return v >= currentVersion
 end
 
+function BackwardCompatibilityUtil.CompatibilityModeExceptEditor(v)
+  return BackwardCompatibilityUtil.CompatibilityMode(v) and not ApplicationInfo.IsRunOnEditor()
+end
+
 local SelfClass = BackwardCompatibilityUtil
 SelfClass.CompatibilityMode_V9 = SelfClass.CompatibilityMode(SelfClass.V9)
 SelfClass.CompatibilityMode_V10 = SelfClass.CompatibilityMode(SelfClass.V10)
@@ -111,4 +115,7 @@ SelfClass.CompatibilityMode_V87 = SelfClass.CompatibilityMode(87)
 SelfClass.CompatibilityMode_V88 = SelfClass.CompatibilityMode(88)
 SelfClass.CompatibilityMode_V89 = SelfClass.CompatibilityMode(89)
 SelfClass.CompatibilityMode_V90 = SelfClass.CompatibilityMode(90)
+SelfClass.CompatibilityMode_V91 = SelfClass.CompatibilityMode(91)
+SelfClass.CompatibilityMode_V92 = SelfClass.CompatibilityMode(92)
+SelfClass.CompatibilityMode_V93 = SelfClass.CompatibilityMode(93)
 SelfClass.CompatibilityMode_Vspeech = SelfClass.CompatibilityMode(99)

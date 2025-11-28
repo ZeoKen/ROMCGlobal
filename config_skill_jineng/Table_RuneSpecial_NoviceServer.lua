@@ -4651,7 +4651,7 @@ Table_RuneSpecial = {
     RuneName = "金刚不坏-幻影",
     SkillID = Table_RuneSpecial_t.SkillID[89],
     Runetip = 12301,
-    SkillTipParm = Table_RuneSpecial_t.SkillTipParm[9]
+    SkillTipParm = Table_RuneSpecial_t.SkillTipParm[10]
   },
   [123020] = {
     id = 123020,

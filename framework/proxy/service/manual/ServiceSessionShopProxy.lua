@@ -65,6 +65,7 @@ function ServiceSessionShopProxy:RecvBuyShopItem(data)
   HappyShopProxy.Instance:RecvBuyShopItem(data)
   SupplyDepotProxy.Instance:RecvBuyShopItem(data)
   ShopProxy.Instance:updateWeekLimitNum(data)
+  PeddlerShopProxy.Instance:OnShopItemBought(data)
   self:Notify(ServiceEvent.SessionShopBuyShopItem, data)
   EventManager.Me():PassEvent(ServiceEvent.SessionShopBuyShopItem, data)
 end
@@ -154,4 +155,28 @@ function ServiceSessionShopProxy:RecvOpenShopTypeShopCmd(data)
     })
   end
   ServiceSessionShopProxy.super.RecvOpenShopTypeShopCmd(self, data)
+end
+
+function ServiceSessionShopProxy:RecvRewardSafetyQueryShopCmd(data)
+  NewRechargeProxy.Instance:RecvRewardSafetyQueryShopCmd(data)
+  self:Notify(ServiceEvent.SessionShopRewardSafetyQueryShopCmd, data)
+  EventManager.Me():PassEvent(ServiceEvent.SessionShopRewardSafetyQueryShopCmd, data)
+end
+
+function ServiceSessionShopProxy:RecvExtraBonusQueryShopCmd(data)
+  PeddlerShopProxy.Instance:UpdateExtraBonusData(data)
+  self:Notify(ServiceEvent.SessionShopExtraBonusQueryShopCmd, data)
+  EventManager.Me():PassEvent(ServiceEvent.SessionShopExtraBonusQueryShopCmd, data)
+end
+
+function ServiceSessionShopProxy:RecvExtraBonusResetShopCmd(data)
+  PeddlerShopProxy.Instance:OnExtraBonusReset(data)
+  self:Notify(ServiceEvent.SessionShopExtraBonusResetShopCmd, data)
+  EventManager.Me():PassEvent(ServiceEvent.SessionShopExtraBonusResetShopCmd, data)
+end
+
+function ServiceSessionShopProxy:RecvExtraBonusRewardShopCmd(data)
+  PeddlerShopProxy.Instance:OnExtraBonusReward(data)
+  self:Notify(ServiceEvent.SessionShopExtraBonusRewardShopCmd, data)
+  EventManager.Me():PassEvent(ServiceEvent.SessionShopExtraBonusRewardShopCmd, data)
 end

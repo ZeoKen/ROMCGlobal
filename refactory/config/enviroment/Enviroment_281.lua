@@ -1,9 +1,9 @@
 local Enviroment_281 = {
   global = {
     sunDir = {
-      0.874405801296234,
-      -0.458188086748123,
-      0.159619390964508,
+      0.877470076084137,
+      -0.453990638256073,
+      0.154721707105637,
       0
     },
     sunColor = {
@@ -143,32 +143,32 @@ local Enviroment_281 = {
         weight = 1,
         blendDuration = 0.5,
         fogMode = 1,
-        fogStartDistance = 0,
-        fogEndDistance = 150,
+        fogStartDistance = 10,
+        fogEndDistance = 180,
         globalFogTuner = 0,
         heightFogMode = 1,
         heightFogCutoff = 9.99999974737875E-6,
         heightFogStart = -100,
-        heightFogEnd = 700,
+        heightFogEnd = 400,
         scatteringDensity = 0,
         scatteringFalloff = 1,
         scatteringExponent = 0,
         heightFogMinOpacity = 0,
         radiusFogFactor = 1,
         nearFogColor = {
-          0.792156934738159,
-          0.768627524375916,
-          0.623529434204102,
+          0.811320781707764,
+          0.599623203277588,
+          0.0880206674337387,
           1
         },
-        nearFogDistance = 0,
+        nearFogDistance = 30,
         farFogColor = {
-          0.517647087574005,
-          0.509803950786591,
-          0.560784339904785,
+          0.126384600996971,
+          0.350615322589874,
+          0.370999991893768,
           0
         },
-        farFogDistance = 90,
+        farFogDistance = 100,
         enableLocalHeightFog = 0,
         localHeightFogStart = 160,
         localHeightFogEnd = 175,
@@ -178,6 +178,20 @@ local Enviroment_281 = {
           0.141176477074623,
           0
         }
+      },
+      skybox = {
+        texPath = "Enviroment/CustomSkyboxes/sky_sc_syzh_02",
+        tint = {
+          1,
+          1,
+          1,
+          1
+        },
+        rotation = 0,
+        exposure = 1,
+        finite = true,
+        sunSize = 0,
+        applyFog = false
       }
     },
     [2] = {
@@ -233,32 +247,32 @@ local Enviroment_281 = {
         weight = 1,
         blendDuration = 0.5,
         fogMode = 1,
-        fogStartDistance = 0,
-        fogEndDistance = 150,
+        fogStartDistance = 10,
+        fogEndDistance = 180,
         globalFogTuner = 0,
         heightFogMode = 1,
         heightFogCutoff = 9.99999974737875E-6,
         heightFogStart = -100,
-        heightFogEnd = 700,
+        heightFogEnd = 400,
         scatteringDensity = 0,
         scatteringFalloff = 1,
         scatteringExponent = 0,
         heightFogMinOpacity = 0,
         radiusFogFactor = 1,
         nearFogColor = {
-          0.792156934738159,
-          0.768627524375916,
-          0.623529434204102,
+          0.811320781707764,
+          0.599623203277588,
+          0.0880206674337387,
           1
         },
-        nearFogDistance = 0,
+        nearFogDistance = 30,
         farFogColor = {
-          0.517647087574005,
-          0.509803950786591,
-          0.560784339904785,
+          0.126384600996971,
+          0.350615322589874,
+          0.370999991893768,
           0
         },
-        farFogDistance = 90,
+        farFogDistance = 100,
         enableLocalHeightFog = 0,
         localHeightFogStart = 160,
         localHeightFogEnd = 175,
@@ -268,6 +282,20 @@ local Enviroment_281 = {
           0.141176477074623,
           0
         }
+      },
+      skybox = {
+        texPath = "Enviroment/CustomSkyboxes/sky_sc_syzh_02",
+        tint = {
+          1,
+          1,
+          1,
+          1
+        },
+        rotation = 0,
+        exposure = 1,
+        finite = true,
+        sunSize = 0,
+        applyFog = false
       }
     },
     [3] = {
@@ -323,32 +351,32 @@ local Enviroment_281 = {
         weight = 1,
         blendDuration = 0.5,
         fogMode = 1,
-        fogStartDistance = 0,
-        fogEndDistance = 150,
+        fogStartDistance = 10,
+        fogEndDistance = 180,
         globalFogTuner = 0,
         heightFogMode = 1,
         heightFogCutoff = 9.99999974737875E-6,
         heightFogStart = -100,
-        heightFogEnd = 700,
+        heightFogEnd = 400,
         scatteringDensity = 0,
         scatteringFalloff = 1,
         scatteringExponent = 0,
         heightFogMinOpacity = 0,
         radiusFogFactor = 1,
         nearFogColor = {
-          0.794000029563904,
-          0.769644200801849,
-          0.623509228229523,
+          0.811320781707764,
+          0.599623203277588,
+          0.0880206674337387,
           1
         },
-        nearFogDistance = 0,
+        nearFogDistance = 30,
         farFogColor = {
-          0.518688499927521,
-          0.509508192539215,
-          0.560000002384186,
+          0.129538998007774,
+          0.372696340084076,
+          0.386792480945587,
           0
         },
-        farFogDistance = 90,
+        farFogDistance = 100,
         enableLocalHeightFog = 0,
         localHeightFogStart = 160,
         localHeightFogEnd = 175,
@@ -358,6 +386,20 @@ local Enviroment_281 = {
           0.141176477074623,
           0
         }
+      },
+      skybox = {
+        texPath = "Enviroment/CustomSkyboxes/sky_sc_syzh_02",
+        tint = {
+          1,
+          1,
+          1,
+          1
+        },
+        rotation = 0,
+        exposure = 1,
+        finite = true,
+        sunSize = 0,
+        applyFog = false
       }
     },
     [4] = {
@@ -413,41 +455,55 @@ local Enviroment_281 = {
         weight = 1,
         blendDuration = 0.5,
         fogMode = 1,
-        fogStartDistance = 5,
-        fogEndDistance = 150,
+        fogStartDistance = 10,
+        fogEndDistance = 200,
         globalFogTuner = 0,
         heightFogMode = 1,
         heightFogCutoff = 9.99999974737875E-6,
         heightFogStart = -100,
-        heightFogEnd = 600,
-        scatteringDensity = 0,
+        heightFogEnd = 300,
+        scatteringDensity = 0.899999976158142,
         scatteringFalloff = 1,
-        scatteringExponent = 0,
-        heightFogMinOpacity = 0,
+        scatteringExponent = 11.3999996185303,
+        heightFogMinOpacity = 0.0719999969005585,
         radiusFogFactor = 1,
         nearFogColor = {
-          0,
-          0.345098048448563,
+          0.0500622913241386,
+          0.424528300762177,
+          0.419847458600998,
+          1
+        },
+        nearFogDistance = 20,
+        farFogColor = {
+          0.905660390853882,
+          0.606711804866791,
+          0.192239254713058,
+          1
+        },
+        farFogDistance = 140,
+        enableLocalHeightFog = 0,
+        localHeightFogStart = -0.870000004768372,
+        localHeightFogEnd = 7.21999979019165,
+        localHeightFogColor = {
+          0.792452812194824,
+          0.523868143558502,
+          0.437344253063202,
+          0
+        }
+      },
+      skybox = {
+        texPath = "Enviroment/CustomSkyboxes/sky_sc_syzh_04",
+        tint = {
+          1,
+          1,
           1,
           1
         },
-        nearFogDistance = 0,
-        farFogColor = {
-          0.803921639919281,
-          1,
-          0.454901993274689,
-          0
-        },
-        farFogDistance = 60,
-        enableLocalHeightFog = 0,
-        localHeightFogStart = 160,
-        localHeightFogEnd = 175,
-        localHeightFogColor = {
-          0.91372549533844,
-          0.328186810016632,
-          0.141176477074623,
-          0
-        }
+        rotation = 0,
+        exposure = 1,
+        finite = true,
+        sunSize = 0,
+        applyFog = false
       }
     },
     [5] = {
@@ -1231,7 +1287,7 @@ local Enviroment_281 = {
         weight = 1,
         blendDuration = 0.5,
         fogMode = 1,
-        fogStartDistance = 0,
+        fogStartDistance = 5,
         fogEndDistance = 250,
         globalFogTuner = 0,
         heightFogMode = 1,
@@ -1335,7 +1391,7 @@ local Enviroment_281 = {
         weight = 1,
         blendDuration = 0.5,
         fogMode = 1,
-        fogStartDistance = 0,
+        fogStartDistance = 5,
         fogEndDistance = 250,
         globalFogTuner = 0,
         heightFogMode = 1,
@@ -1439,8 +1495,8 @@ local Enviroment_281 = {
         weight = 1,
         blendDuration = 0.5,
         fogMode = 1,
-        fogStartDistance = 0,
-        fogEndDistance = 250,
+        fogStartDistance = 10,
+        fogEndDistance = 130,
         globalFogTuner = 0,
         heightFogMode = 1,
         heightFogCutoff = 9.99999974737875E-6,
@@ -1452,16 +1508,16 @@ local Enviroment_281 = {
         heightFogMinOpacity = 0,
         radiusFogFactor = 1,
         nearFogColor = {
-          0.91372549533844,
-          0.329411774873734,
-          0.141176477074623,
+          0.839622616767883,
+          0.611694931983948,
+          0.352483063936234,
           1
         },
         nearFogDistance = 0,
         farFogColor = {
-          0.156862750649452,
-          0.196078434586525,
-          0.34901961684227,
+          0.126384600996971,
+          0.350615322589874,
+          0.370999991893768,
           0
         },
         farFogDistance = 110,

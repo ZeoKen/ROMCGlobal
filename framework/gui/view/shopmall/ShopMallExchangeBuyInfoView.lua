@@ -5,7 +5,9 @@ ShopMallExchangeBuyInfoView = class("ShopMallExchangeBuyInfoView", ContainerView
 ShopMallExchangeBuyInfoView.ViewType = UIViewType.PopUpLayer
 
 function ShopMallExchangeBuyInfoView:OnExit()
-  self.cell:Exit()
+  if self.cell then
+    self.cell:OnDestroy()
+  end
   if self.introCell then
     self.introCell:OnDestroy()
   end

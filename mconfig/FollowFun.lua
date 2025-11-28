@@ -44,6 +44,7 @@ FollowFun.Action.EFOLLOWACTION_MAP_TO_RAID = 6
 FollowFun.Action.EFOLLOWACTION_RAID_TO_MAP_POS = 7
 FollowFun.Action.EFOLLOWACTION_RAID_TO_RAID = 8
 FollowFun.Action.EFOLLOWACTION_TO_CLONEMAP = 9
+FollowFun.Action.EFOLLOWACTION_MAP_TO_MAP_POS = 10
 FollowFun.Result = {msgid = 0, action = 0}
 
 function FollowFun.parseTime(date)
@@ -98,7 +99,7 @@ function FollowFun.checkRaidCanFollow(beraidcfg)
   local follower = FollowFun.follower
   local befollower = FollowFun.befollower
   if beraidcfg.Restrict == 1 or beraidcfg.Restrict == 3 or beraidcfg.Restrict == 7 then
-    if beraidcfg.Type ~= 32 and beraidcfg.Type ~= 44 then
+    if beraidcfg.Type ~= 32 and beraidcfg.Type ~= 44 and beraidcfg.Type ~= 83 then
       return FollowFun.updateResult(329, FollowFun.Action.EFOLLOWACTION_NONE)
     end
   elseif beraidcfg.Restrict == 4 then
@@ -253,6 +254,9 @@ function FollowFun.checkFollow()
     if beraidcfg.Restrict == 4 then
       return FollowFun.updateResult(0, FollowFun.Action.EFOLLOWACTION_MAP_TO_GUILD)
     end
+    if beraidcfg.Type == 83 then
+      return FollowFun.updateResult(0, FollowFun.Action.EFOLLOWACTION_MAP_TO_MAP_POS)
+    end
     return FollowFun.updateResult(0, FollowFun.Action.EFOLLOWACTION_MAP_TO_RAID)
   end
   if raidcfg ~= nil and beraidcfg == nil then
@@ -279,7 +283,7 @@ function FollowFun.checkFollow()
     if raidcfg.Restrict == 9 then
       return FollowFun.updateResult(39207, FollowFun.Action.EFOLLOWACTION_NONE)
     end
-    if raidcfg.Restrict == 28 then
+    if raidcfg.Type == 28 then
       return FollowFun.updateResult(39207, FollowFun.Action.EFOLLOWACTION_NONE)
     end
     if beraidcfg ~= nil then
@@ -289,7 +293,7 @@ function FollowFun.checkFollow()
       if beraidcfg.Type == 43 or beraidcfg.Type == 50 then
         return FollowFun.updateResult(38197, FollowFun.Action.EFOLLOWACTION_NONE)
       end
-      if beraidcfg.Type == 76 then
+      if beraidcfg.Type == 76 or beraidcfg.Type == 83 then
         return FollowFun.updateResult(38197, FollowFun.Action.EFOLLOWACTION_NONE)
       end
       local teamgroup = FollowFun.getTeamGroupCFG(raidcfg.id)

@@ -88,6 +88,10 @@ function NewRechargeHeroCell:Init()
   self.topackButton_sp = self.topackButton:GetComponent(UIMultiSprite)
   self.topackButton_collider = self.topackButton:GetComponent(BoxCollider)
   self.topackButton_lb = self.topackButton:GetComponentInChildren(UILabel)
+  self.lotteryShortCutBtn = self:FindGO("LotteryShortCut")
+  self:AddClickEvent(self.lotteryShortCutBtn, function(go)
+    FunctionLottery.Me():OpenNewLotteryByType(LotteryType.SpaceTime)
+  end)
 end
 
 function NewRechargeHeroCell:SetBuyType(t)
@@ -218,6 +222,16 @@ function NewRechargeHeroCell:SetData(data)
     end
   else
     self.topackButton:SetActive(false)
+  end
+  if branchid == 821 then
+    local isLotteryOpen = LotteryProxy.Instance:CheckLotteryOpen(LotteryType.SpaceTime)
+    if isLotteryOpen then
+      self.lotteryShortCutBtn:SetActive(true)
+    else
+      self.lotteryShortCutBtn:SetActive(false)
+    end
+  else
+    self.lotteryShortCutBtn:SetActive(false)
   end
   IconManager:SetNewProfessionIcon(data.classicon, self.classIcon)
   IconManager:SetItemIcon(data.costicon, self.priceIcon)

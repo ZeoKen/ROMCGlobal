@@ -542,6 +542,156 @@ Table_ActPersonalTimer = {
     Cycle = "",
     Name = "月圆之礼",
     Misc = {ExchangeNumPerDay = 10}
+  },
+  [105832] = {
+    id = 105832,
+    Type = "new_server_challenge",
+    Servers = _EmptyTable,
+    TfStartTime = "2025-09-08 05:00:00",
+    TfEndTime = "2025-09-22 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2025-09-15 05:00:00",
+    EndTime = "2025-09-29 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "异界挑战",
+    Misc = {
+      ShopType = 650,
+      ShopId = 23,
+      ShopShowID = 1013
+    }
+  },
+  [107015] = {
+    id = 107015,
+    Type = "exchange_gifts",
+    Servers = _EmptyTable,
+    TfStartTime = "2025-10-07 05:00:00",
+    TfEndTime = "2025-10-14 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2025-10-14 05:00:00",
+    EndTime = "2025-10-21 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "共享盛宴",
+    Misc = {ExchangeNumPerDay = 10}
+  },
+  [105834] = {
+    id = 105834,
+    Type = "new_server_challenge",
+    Servers = _EmptyTable,
+    TfStartTime = "2025-09-29 05:00:00",
+    TfEndTime = "2025-10-13 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2025-09-29 05:00:00",
+    EndTime = "2025-10-13 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "英灵挑战",
+    Misc = {
+      ShopType = 650,
+      ShopId = 25,
+      ShopShowID = 1015
+    }
+  },
+  [105833] = {
+    id = 105833,
+    Type = "new_server_challenge",
+    Servers = _EmptyTable,
+    TfStartTime = "2025-10-13 05:00:00",
+    TfEndTime = "2025-10-27 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2025-10-20 05:00:00",
+    EndTime = "2025-11-03 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "异界挑战",
+    Misc = {
+      ShopType = 650,
+      ShopId = 24,
+      ShopShowID = 1014
+    }
+  },
+  [107016] = {
+    id = 107016,
+    Type = "exchange_gifts",
+    Servers = _EmptyTable,
+    TfStartTime = "2025-11-17 05:00:00",
+    TfEndTime = "2025-11-24 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2025-11-24 05:00:00",
+    EndTime = "2025-12-01 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "以物换物",
+    Misc = {ExchangeNumPerDay = 10}
+  },
+  [105835] = {
+    id = 105835,
+    Type = "new_server_challenge",
+    Servers = _EmptyTable,
+    TfStartTime = "2025-11-03 05:00:00",
+    TfEndTime = "2025-11-17 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2025-11-10 05:00:00",
+    EndTime = "2025-11-24 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "副本大挑战",
+    Misc = {
+      ShopType = 650,
+      ShopId = 30,
+      ShopShowID = 1016
+    }
+  },
+  [105836] = {
+    id = 105836,
+    Type = "new_server_challenge",
+    Servers = _EmptyTable,
+    TfStartTime = "2025-11-03 05:00:00",
+    TfEndTime = "2025-11-17 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2025-11-10 05:00:00",
+    EndTime = "2025-11-24 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "英灵挑战",
+    Misc = {
+      ShopType = 650,
+      ShopId = 31,
+      ShopShowID = 1017
+    }
+  },
+  [105837] = {
+    id = 105837,
+    Type = "new_server_challenge",
+    Servers = _EmptyTable,
+    TfStartTime = "2025-11-10 05:00:00",
+    TfEndTime = "2025-11-24 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2025-11-17 05:00:00",
+    EndTime = "2025-12-01 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "异界挑战",
+    Misc = {
+      ShopType = 650,
+      ShopId = 32,
+      ShopShowID = 1018
+    }
+  },
+  [107017] = {
+    id = 107017,
+    Type = "exchange_gifts",
+    Servers = _EmptyTable,
+    TfStartTime = "2025-12-08 05:00:00",
+    TfEndTime = "2025-12-15 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2025-12-15 05:00:00",
+    EndTime = "2025-12-22 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "以物换物",
+    Misc = {ExchangeNumPerDay = 10}
   }
 }
 Table_ActPersonalTimer_fields = {

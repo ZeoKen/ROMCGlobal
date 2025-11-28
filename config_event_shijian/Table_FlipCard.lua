@@ -89,7 +89,13 @@ Table_FlipCard_t = {
     {3013076, 1},
     {3013114, 1},
     {3013121, 1},
-    {3013116, 1}
+    {3013116, 1},
+    {3013814, 1},
+    {3013823, 1},
+    {3013816, 1},
+    {3013847, 1},
+    {3013851, 1},
+    {3013849, 1}
   }
 }
 Table_FlipCard = {
@@ -2805,6 +2811,216 @@ Table_FlipCard = {
     Type = 4,
     Index = 13,
     Reward = Table_FlipCard_t.Reward[90]
+  },
+  [417] = {
+    id = 417,
+    ActID = 105727,
+    Index = 1,
+    Reward = Table_FlipCard_t.Reward[1]
+  },
+  [418] = {
+    id = 418,
+    ActID = 105727,
+    Index = 2,
+    Reward = Table_FlipCard_t.Reward[2]
+  },
+  [419] = {
+    id = 419,
+    ActID = 105727,
+    Index = 3,
+    Reward = Table_FlipCard_t.Reward[3]
+  },
+  [420] = {
+    id = 420,
+    ActID = 105727,
+    Index = 4,
+    Reward = Table_FlipCard_t.Reward[4]
+  },
+  [421] = {
+    id = 421,
+    ActID = 105727,
+    Index = 5,
+    Reward = Table_FlipCard_t.Reward[5]
+  },
+  [422] = {
+    id = 422,
+    ActID = 105727,
+    Index = 6,
+    Reward = Table_FlipCard_t.Reward[6]
+  },
+  [423] = {
+    id = 423,
+    ActID = 105727,
+    Type = 2,
+    Index = 1,
+    Reward = Table_FlipCard_t.Reward[2]
+  },
+  [424] = {
+    id = 424,
+    ActID = 105727,
+    Type = 2,
+    Index = 2,
+    Reward = Table_FlipCard_t.Reward[7]
+  },
+  [425] = {
+    id = 425,
+    ActID = 105727,
+    Type = 2,
+    Index = 3,
+    Reward = Table_FlipCard_t.Reward[8]
+  },
+  [426] = {
+    id = 426,
+    ActID = 105727,
+    Type = 2,
+    Index = 4,
+    Reward = Table_FlipCard_t.Reward[9]
+  },
+  [427] = {
+    id = 427,
+    ActID = 105727,
+    Type = 2,
+    Index = 5,
+    Reward = Table_FlipCard_t.Reward[10]
+  },
+  [428] = {
+    id = 428,
+    ActID = 105727,
+    Type = 2,
+    Index = 6,
+    Reward = Table_FlipCard_t.Reward[11]
+  },
+  [429] = {
+    id = 429,
+    ActID = 105727,
+    Type = 3,
+    Reward = Table_FlipCard_t.Reward[12]
+  },
+  [430] = {
+    id = 430,
+    ActID = 105727,
+    Type = 4,
+    Index = 3,
+    Reward = Table_FlipCard_t.Reward[91]
+  },
+  [431] = {
+    id = 431,
+    ActID = 105727,
+    Type = 4,
+    Index = 7,
+    Reward = Table_FlipCard_t.Reward[92]
+  },
+  [432] = {
+    id = 432,
+    ActID = 105727,
+    Type = 4,
+    Index = 13,
+    Reward = Table_FlipCard_t.Reward[93]
+  },
+  [433] = {
+    id = 433,
+    ActID = 105728,
+    Index = 1,
+    Reward = Table_FlipCard_t.Reward[1]
+  },
+  [434] = {
+    id = 434,
+    ActID = 105728,
+    Index = 2,
+    Reward = Table_FlipCard_t.Reward[2]
+  },
+  [435] = {
+    id = 435,
+    ActID = 105728,
+    Index = 3,
+    Reward = Table_FlipCard_t.Reward[3]
+  },
+  [436] = {
+    id = 436,
+    ActID = 105728,
+    Index = 4,
+    Reward = Table_FlipCard_t.Reward[4]
+  },
+  [437] = {
+    id = 437,
+    ActID = 105728,
+    Index = 5,
+    Reward = Table_FlipCard_t.Reward[5]
+  },
+  [438] = {
+    id = 438,
+    ActID = 105728,
+    Index = 6,
+    Reward = Table_FlipCard_t.Reward[6]
+  },
+  [439] = {
+    id = 439,
+    ActID = 105728,
+    Type = 2,
+    Index = 1,
+    Reward = Table_FlipCard_t.Reward[2]
+  },
+  [440] = {
+    id = 440,
+    ActID = 105728,
+    Type = 2,
+    Index = 2,
+    Reward = Table_FlipCard_t.Reward[7]
+  },
+  [441] = {
+    id = 441,
+    ActID = 105728,
+    Type = 2,
+    Index = 3,
+    Reward = Table_FlipCard_t.Reward[8]
+  },
+  [442] = {
+    id = 442,
+    ActID = 105728,
+    Type = 2,
+    Index = 4,
+    Reward = Table_FlipCard_t.Reward[9]
+  },
+  [443] = {
+    id = 443,
+    ActID = 105728,
+    Type = 2,
+    Index = 5,
+    Reward = Table_FlipCard_t.Reward[10]
+  },
+  [444] = {
+    id = 444,
+    ActID = 105728,
+    Type = 2,
+    Index = 6,
+    Reward = Table_FlipCard_t.Reward[11]
+  },
+  [445] = {
+    id = 445,
+    ActID = 105728,
+    Type = 3,
+    Reward = Table_FlipCard_t.Reward[12]
+  },
+  [446] = {
+    id = 446,
+    ActID = 105728,
+    Type = 4,
+    Index = 3,
+    Reward = Table_FlipCard_t.Reward[94]
+  },
+  [447] = {
+    id = 447,
+    ActID = 105728,
+    Type = 4,
+    Index = 7,
+    Reward = Table_FlipCard_t.Reward[95]
+  },
+  [448] = {
+    id = 448,
+    ActID = 105728,
+    Type = 4,
+    Index = 13,
+    Reward = Table_FlipCard_t.Reward[96]
   }
 }
 local cell_mt = {

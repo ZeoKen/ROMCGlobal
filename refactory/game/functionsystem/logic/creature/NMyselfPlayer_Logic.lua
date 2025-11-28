@@ -5,7 +5,8 @@ local CannotUseSkillProp = {
   FearRun = 1,
   Freeze = 1,
   NoMagicSkill = 1,
-  NoPhySkill = 1
+  NoPhySkill = 1,
+  DeepFreeze = 1
 }
 local CheckCanUseSkillProp = {
   StateEffect = 1,
@@ -131,9 +132,16 @@ end
 
 function NMyselfPlayer:Logic_Freeze(on)
   if on then
-    FunctionSystem.InterruptMyself(self:IsNoBreakSkill() == true)
+    FunctionSystem.InterruptMyself(self:IsNoBreakSkill() == true, self.data:IsAttrCanMove())
   end
   NMyselfPlayer.super.Logic_Freeze(self, on)
+end
+
+function NMyselfPlayer:Logic_DeepFreeze(on)
+  if on then
+    FunctionSystem.InterruptMyself(self:IsNoBreakSkill() == true, self.data:IsAttrCanMove())
+  end
+  NMyselfPlayer.super.Logic_DeepFreeze(self, on)
 end
 
 function NMyselfPlayer:Logic_BreakWeakFreeze()
@@ -145,7 +153,7 @@ end
 
 function NMyselfPlayer:Logic_NoAct(on)
   if on then
-    FunctionSystem.InterruptMyself(self:IsNoBreakSkill() == true)
+    FunctionSystem.InterruptMyself(self:IsNoBreakSkill() == true, self.data:IsAttrCanMove())
   end
   NMyselfPlayer.super.Logic_NoAct(self, on)
 end

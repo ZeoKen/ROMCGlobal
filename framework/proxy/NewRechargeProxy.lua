@@ -57,6 +57,7 @@ function NewRechargeProxy:ctor(proxyName, data)
   NewRechargeProxy.CDeposit = NewRechargeProxy.Ins.DepositItemCtrl
   NewRechargeProxy.CCard = NewRechargeProxy.Ins.CardItemCtrl
   NewRechargeProxy.CShop = NewRechargeProxy.Ins.ShopItemCtrl
+  self.bagGiftItemShowInfos = {}
 end
 
 function NewRechargeProxy:GetTabConfig(tab)
@@ -581,11 +582,13 @@ local FSort_ItemShowInfo = function(a, b)
   return a.itemid < b.itemid
 end
 
-function NewRechargeProxy.ParseItemShowInfo(server_ItemShowInfo)
-  local retLists = {
+function NewRechargeProxy.ParseItemShowInfo(server_ItemShowInfo, targetList)
+  local retLists = targetList or {
     {},
     {}
   }
+  retLists[1] = retLists[1] or {}
+  retLists[2] = retLists[2] or {}
   local itemShowInfo, guaranteed
   for i = 1, #server_ItemShowInfo do
     itemShowInfo = server_ItemShowInfo[i]
@@ -994,4 +997,20 @@ function NewRechargeProxy:mUpdateDirtyRedTip(redId)
       RedTipProxy.Instance:SeenNew(redId, goodId)
     end
   end
+end
+
+function NewRechargeProxy:RecvRewardSafetyQueryShopCmd(data)
+  local itemShowInfos = self.bagGiftItemShowInfos[data.itemid]
+  if not itemShowInfos then
+    itemShowInfos = NewRechargeProxy.ParseItemShowInfo(data.infos)
+    self.bagGiftItemShowInfos[data.itemid] = itemShowInfos
+  else
+    TableUtility.ArrayClear(itemShowInfos[1])
+    TableUtility.ArrayClear(itemShowInfos[2])
+    NewRechargeProxy.ParseItemShowInfo(data.infos, itemShowInfos)
+  end
+end
+
+function NewRechargeProxy:GetBagGiftItemShowInfos(itemid)
+  return self.bagGiftItemShowInfos[itemid]
 end

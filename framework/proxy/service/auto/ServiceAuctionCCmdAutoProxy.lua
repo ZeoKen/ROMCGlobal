@@ -2207,6 +2207,15 @@ function ServiceAuctionCCmdAutoProxy:CallUpdateAuctionInfoCCmd(iteminfo, batchid
       end
       msg.iteminfo.itemdata.memory.lv = iteminfo.itemdata.memory.lv
     end
+    if iteminfo.itemdata.memory ~= nil and iteminfo.itemdata.memory.excess_lv ~= nil then
+      if msg.iteminfo.itemdata == nil then
+        msg.iteminfo.itemdata = {}
+      end
+      if msg.iteminfo.itemdata.memory == nil then
+        msg.iteminfo.itemdata.memory = {}
+      end
+      msg.iteminfo.itemdata.memory.excess_lv = iteminfo.itemdata.memory.excess_lv
+    end
     if iteminfo ~= nil and iteminfo.itemdata.memory.effects ~= nil then
       if msg.iteminfo.itemdata.memory == nil then
         msg.iteminfo.itemdata.memory = {}
@@ -4114,6 +4123,15 @@ function ServiceAuctionCCmdAutoProxy:CallUpdateAuctionInfoCCmd(iteminfo, batchid
         msgParam.iteminfo.itemdata.memory = {}
       end
       msgParam.iteminfo.itemdata.memory.lv = iteminfo.itemdata.memory.lv
+    end
+    if iteminfo.itemdata.memory ~= nil and iteminfo.itemdata.memory.excess_lv ~= nil then
+      if msgParam.iteminfo.itemdata == nil then
+        msgParam.iteminfo.itemdata = {}
+      end
+      if msgParam.iteminfo.itemdata.memory == nil then
+        msgParam.iteminfo.itemdata.memory = {}
+      end
+      msgParam.iteminfo.itemdata.memory.excess_lv = iteminfo.itemdata.memory.excess_lv
     end
     if iteminfo ~= nil and iteminfo.itemdata.memory.effects ~= nil then
       if msgParam.iteminfo.itemdata.memory == nil then

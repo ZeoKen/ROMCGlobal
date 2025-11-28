@@ -35,7 +35,10 @@ function PvpCustomRoomData:SetData(data, homeMembers, awayMembers, obMembers)
     self.artifact = data.guidartifact
     self.server = data.serverid
     self.password = data.password
-    self.bancardsList = data.forbidcards
+    self.bancardsList = {}
+    if data.forbidcards then
+      TableUtil.ArrayCopy(self.bancardsList, data.forbidcards)
+    end
     self.isforbidcard = data.isforbidcard
   end
   if homeMembers then

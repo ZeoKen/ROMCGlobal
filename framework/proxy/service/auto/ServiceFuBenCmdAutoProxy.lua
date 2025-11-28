@@ -492,6 +492,27 @@ function ServiceFuBenCmdAutoProxy:onRegister()
   self:Listen(11, 178, function(data)
     self:RecvSTIDropSkillCmd(data)
   end)
+  self:Listen(11, 179, function(data)
+    self:RecvFairyTaleRaidSyncCmd(data)
+  end)
+  self:Listen(11, 180, function(data)
+    self:RecvRaidStartFightCmd(data)
+  end)
+  self:Listen(11, 182, function(data)
+    self:RecvFairyTaleRaidRewardSyncCmd(data)
+  end)
+  self:Listen(11, 183, function(data)
+    self:RecvFairyTaleRaidGetRewardCmd(data)
+  end)
+  self:Listen(11, 184, function(data)
+    self:RecvSyncMemoryEquipRewardInfo(data)
+  end)
+  self:Listen(11, 185, function(data)
+    self:RecvChooseMemoryEquipRewardInfo(data)
+  end)
+  self:Listen(11, 181, function(data)
+    self:RecvGvgDateBattleInfoSyncCmd(data)
+  end)
 end
 
 function ServiceFuBenCmdAutoProxy:CallTrackFuBenUserCmd(data, dmapid, endtime)
@@ -8183,6 +8204,243 @@ function ServiceFuBenCmdAutoProxy:CallSTIDropSkillCmd(skill_id)
   end
 end
 
+function ServiceFuBenCmdAutoProxy:CallFairyTaleRaidSyncCmd(train_arrival_count, train_damaged_count, next_wave_type, next_wave_time)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.FairyTaleRaidSyncCmd()
+    if train_arrival_count ~= nil then
+      msg.train_arrival_count = train_arrival_count
+    end
+    if train_damaged_count ~= nil then
+      msg.train_damaged_count = train_damaged_count
+    end
+    if next_wave_type ~= nil then
+      msg.next_wave_type = next_wave_type
+    end
+    if next_wave_time ~= nil then
+      msg.next_wave_time = next_wave_time
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.FairyTaleRaidSyncCmd.id
+    local msgParam = {}
+    if train_arrival_count ~= nil then
+      msgParam.train_arrival_count = train_arrival_count
+    end
+    if train_damaged_count ~= nil then
+      msgParam.train_damaged_count = train_damaged_count
+    end
+    if next_wave_type ~= nil then
+      msgParam.next_wave_type = next_wave_type
+    end
+    if next_wave_time ~= nil then
+      msgParam.next_wave_time = next_wave_time
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceFuBenCmdAutoProxy:CallRaidStartFightCmd()
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.RaidStartFightCmd()
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.RaidStartFightCmd.id
+    local msgParam = {}
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceFuBenCmdAutoProxy:CallFairyTaleRaidRewardSyncCmd(reward_count)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.FairyTaleRaidRewardSyncCmd()
+    if reward_count ~= nil then
+      msg.reward_count = reward_count
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.FairyTaleRaidRewardSyncCmd.id
+    local msgParam = {}
+    if reward_count ~= nil then
+      msgParam.reward_count = reward_count
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceFuBenCmdAutoProxy:CallFairyTaleRaidGetRewardCmd()
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.FairyTaleRaidGetRewardCmd()
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.FairyTaleRaidGetRewardCmd.id
+    local msgParam = {}
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceFuBenCmdAutoProxy:CallSyncMemoryEquipRewardInfo(infos, endtime)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.SyncMemoryEquipRewardInfo()
+    if infos ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.infos == nil then
+        msg.infos = {}
+      end
+      for i = 1, #infos do
+        table.insert(msg.infos, infos[i])
+      end
+    end
+    if endtime ~= nil then
+      msg.endtime = endtime
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SyncMemoryEquipRewardInfo.id
+    local msgParam = {}
+    if infos ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.infos == nil then
+        msgParam.infos = {}
+      end
+      for i = 1, #infos do
+        table.insert(msgParam.infos, infos[i])
+      end
+    end
+    if endtime ~= nil then
+      msgParam.endtime = endtime
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceFuBenCmdAutoProxy:CallChooseMemoryEquipRewardInfo(index)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.ChooseMemoryEquipRewardInfo()
+    if index ~= nil then
+      msg.index = index
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.ChooseMemoryEquipRewardInfo.id
+    local msgParam = {}
+    if index ~= nil then
+      msgParam.index = index
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceFuBenCmdAutoProxy:CallGvgDateBattleInfoSyncCmd(battle_type, death_info, blood_info)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.GvgDateBattleInfoSyncCmd()
+    if battle_type ~= nil then
+      msg.battle_type = battle_type
+    end
+    if death_info ~= nil and death_info.death_count ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.death_info == nil then
+        msg.death_info = {}
+      end
+      msg.death_info.death_count = death_info.death_count
+    end
+    if death_info ~= nil and death_info.death_limit ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.death_info == nil then
+        msg.death_info = {}
+      end
+      msg.death_info.death_limit = death_info.death_limit
+    end
+    if blood_info ~= nil and blood_info.atk_kill_count ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.blood_info == nil then
+        msg.blood_info = {}
+      end
+      msg.blood_info.atk_kill_count = blood_info.atk_kill_count
+    end
+    if blood_info ~= nil and blood_info.def_kill_count ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.blood_info == nil then
+        msg.blood_info = {}
+      end
+      msg.blood_info.def_kill_count = blood_info.def_kill_count
+    end
+    if blood_info ~= nil and blood_info.kill_target ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.blood_info == nil then
+        msg.blood_info = {}
+      end
+      msg.blood_info.kill_target = blood_info.kill_target
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.GvgDateBattleInfoSyncCmd.id
+    local msgParam = {}
+    if battle_type ~= nil then
+      msgParam.battle_type = battle_type
+    end
+    if death_info ~= nil and death_info.death_count ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.death_info == nil then
+        msgParam.death_info = {}
+      end
+      msgParam.death_info.death_count = death_info.death_count
+    end
+    if death_info ~= nil and death_info.death_limit ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.death_info == nil then
+        msgParam.death_info = {}
+      end
+      msgParam.death_info.death_limit = death_info.death_limit
+    end
+    if blood_info ~= nil and blood_info.atk_kill_count ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.blood_info == nil then
+        msgParam.blood_info = {}
+      end
+      msgParam.blood_info.atk_kill_count = blood_info.atk_kill_count
+    end
+    if blood_info ~= nil and blood_info.def_kill_count ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.blood_info == nil then
+        msgParam.blood_info = {}
+      end
+      msgParam.blood_info.def_kill_count = blood_info.def_kill_count
+    end
+    if blood_info ~= nil and blood_info.kill_target ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.blood_info == nil then
+        msgParam.blood_info = {}
+      end
+      msgParam.blood_info.kill_target = blood_info.kill_target
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceFuBenCmdAutoProxy:RecvTrackFuBenUserCmd(data)
   self:Notify(ServiceEvent.FuBenCmdTrackFuBenUserCmd, data)
 end
@@ -8819,6 +9077,34 @@ function ServiceFuBenCmdAutoProxy:RecvSTIDropSkillCmd(data)
   self:Notify(ServiceEvent.FuBenCmdSTIDropSkillCmd, data)
 end
 
+function ServiceFuBenCmdAutoProxy:RecvFairyTaleRaidSyncCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdFairyTaleRaidSyncCmd, data)
+end
+
+function ServiceFuBenCmdAutoProxy:RecvRaidStartFightCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdRaidStartFightCmd, data)
+end
+
+function ServiceFuBenCmdAutoProxy:RecvFairyTaleRaidRewardSyncCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdFairyTaleRaidRewardSyncCmd, data)
+end
+
+function ServiceFuBenCmdAutoProxy:RecvFairyTaleRaidGetRewardCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdFairyTaleRaidGetRewardCmd, data)
+end
+
+function ServiceFuBenCmdAutoProxy:RecvSyncMemoryEquipRewardInfo(data)
+  self:Notify(ServiceEvent.FuBenCmdSyncMemoryEquipRewardInfo, data)
+end
+
+function ServiceFuBenCmdAutoProxy:RecvChooseMemoryEquipRewardInfo(data)
+  self:Notify(ServiceEvent.FuBenCmdChooseMemoryEquipRewardInfo, data)
+end
+
+function ServiceFuBenCmdAutoProxy:RecvGvgDateBattleInfoSyncCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdGvgDateBattleInfoSyncCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.FuBenCmdTrackFuBenUserCmd = "ServiceEvent_FuBenCmdTrackFuBenUserCmd"
 ServiceEvent.FuBenCmdFailFuBenUserCmd = "ServiceEvent_FuBenCmdFailFuBenUserCmd"
@@ -8979,3 +9265,10 @@ ServiceEvent.FuBenCmdSyncSpaceTimeIllusionInfoFuBenCmd = "ServiceEvent_FuBenCmdS
 ServiceEvent.FuBenCmdSyncSpaceTimeIllusionExpLevelFuBenCmd = "ServiceEvent_FuBenCmdSyncSpaceTimeIllusionExpLevelFuBenCmd"
 ServiceEvent.FuBenCmdSTIRefreshUpgradeOptionsCmd = "ServiceEvent_FuBenCmdSTIRefreshUpgradeOptionsCmd"
 ServiceEvent.FuBenCmdSTIDropSkillCmd = "ServiceEvent_FuBenCmdSTIDropSkillCmd"
+ServiceEvent.FuBenCmdFairyTaleRaidSyncCmd = "ServiceEvent_FuBenCmdFairyTaleRaidSyncCmd"
+ServiceEvent.FuBenCmdRaidStartFightCmd = "ServiceEvent_FuBenCmdRaidStartFightCmd"
+ServiceEvent.FuBenCmdFairyTaleRaidRewardSyncCmd = "ServiceEvent_FuBenCmdFairyTaleRaidRewardSyncCmd"
+ServiceEvent.FuBenCmdFairyTaleRaidGetRewardCmd = "ServiceEvent_FuBenCmdFairyTaleRaidGetRewardCmd"
+ServiceEvent.FuBenCmdSyncMemoryEquipRewardInfo = "ServiceEvent_FuBenCmdSyncMemoryEquipRewardInfo"
+ServiceEvent.FuBenCmdChooseMemoryEquipRewardInfo = "ServiceEvent_FuBenCmdChooseMemoryEquipRewardInfo"
+ServiceEvent.FuBenCmdGvgDateBattleInfoSyncCmd = "ServiceEvent_FuBenCmdGvgDateBattleInfoSyncCmd"

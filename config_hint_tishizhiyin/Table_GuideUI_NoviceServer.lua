@@ -280,6 +280,60 @@ Table_GuideUI = {
       type = {1, 2}
     },
     Sysmsg = 43463
+  },
+  [32] = {
+    id = 32,
+    GroupID = 10,
+    MainTitle = "获取暗爪营声望，提升暗爪营等级",
+    Text = "每日冒险",
+    Desc = "每日前往深渊之湖萨尔瓦托雷处完成暗爪营任务可获取大量声望",
+    Icon = "DispatchComplete",
+    Shortcutpower = {8369},
+    complete_con = "WorldQuest",
+    Params = {mapid = 154},
+    Sysmsg = 43462
+  },
+  [33] = {
+    id = 33,
+    GroupID = 10,
+    MainTitle = "获取暗爪营声望，提升暗爪营等级",
+    Text = "魔物营地",
+    Desc = "首通地图上的魔物营地{mapicon=map_icon_jingying02}可获取声望，还可获取声望货币",
+    Icon = "mvp_dead_100",
+    Shortcutpower = {8359},
+    complete_con = "WildMvp",
+    Params = {
+      mapid = 154,
+      type = {1, 2}
+    },
+    Sysmsg = 43463
+  },
+  [34] = {
+    id = 34,
+    GroupID = 11,
+    MainTitle = "获取鸢尾团声望，提升鸢尾团等级",
+    Text = "每日冒险",
+    Desc = "每日前往深渊之湖艾德琳处完成鸢尾团任务可获取大量声望",
+    Icon = "DispatchComplete",
+    Shortcutpower = {8375},
+    complete_con = "WorldQuest",
+    Params = {mapid = 154},
+    Sysmsg = 43462
+  },
+  [35] = {
+    id = 35,
+    GroupID = 11,
+    MainTitle = "获取鸢尾团声望，提升鸢尾团等级",
+    Text = "魔物营地",
+    Desc = "首通地图上的魔物营地{mapicon=map_icon_jingying02}可获取声望，还可获取声望货币",
+    Icon = "mvp_dead_100",
+    Shortcutpower = {8359},
+    complete_con = "WildMvp",
+    Params = {
+      mapid = 154,
+      type = {1, 2}
+    },
+    Sysmsg = 43463
   }
 }
 Table_GuideUI_fields = {

@@ -642,6 +642,62 @@ Table_PaySign = {
     Day = 7,
     ItemID = {id = 52913, num = 2},
     FemaleItemID = _EmptyTable
+  },
+  [78] = {
+    id = 78,
+    ActivityID = 12010,
+    ServerID = _EmptyTable,
+    Day = 1,
+    ItemID = {id = 7300, num = 10},
+    FemaleItemID = _EmptyTable
+  },
+  [79] = {
+    id = 79,
+    ActivityID = 12010,
+    ServerID = _EmptyTable,
+    Day = 2,
+    ItemID = {id = 3720, num = 3},
+    FemaleItemID = _EmptyTable
+  },
+  [80] = {
+    id = 80,
+    ActivityID = 12010,
+    ServerID = _EmptyTable,
+    Day = 3,
+    ItemID = {id = 5263, num = 5},
+    FemaleItemID = _EmptyTable
+  },
+  [81] = {
+    id = 81,
+    ActivityID = 12010,
+    ServerID = _EmptyTable,
+    Day = 4,
+    ItemID = {id = 141, num = 1000},
+    FemaleItemID = _EmptyTable
+  },
+  [82] = {
+    id = 82,
+    ActivityID = 12010,
+    ServerID = _EmptyTable,
+    Day = 5,
+    ItemID = {id = 52901, num = 5},
+    FemaleItemID = _EmptyTable
+  },
+  [83] = {
+    id = 83,
+    ActivityID = 12010,
+    ServerID = _EmptyTable,
+    Day = 6,
+    ItemID = {id = 6996, num = 1},
+    FemaleItemID = _EmptyTable
+  },
+  [84] = {
+    id = 84,
+    ActivityID = 12010,
+    ServerID = _EmptyTable,
+    Day = 7,
+    ItemID = {id = 52836, num = 100},
+    FemaleItemID = _EmptyTable
   }
 }
 Table_PaySign_fields = {

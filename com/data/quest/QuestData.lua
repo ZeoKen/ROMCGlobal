@@ -47,7 +47,8 @@ QuestData.AutoExecuteQuestAtInit = {
   "remove_local_interact",
   "waitui",
   "battlefield_area",
-  "abyss_dragon"
+  "abyss_dragon",
+  "client_delay"
 }
 QuestData.AutoTriggerQuest = {
   QuestDataStepType.QuestDataStepType_SELFIE,

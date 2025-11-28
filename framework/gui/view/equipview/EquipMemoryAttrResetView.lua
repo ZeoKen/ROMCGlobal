@@ -2,7 +2,6 @@ autoImport("ItemNewCell")
 autoImport("EquipNewChooseBord")
 autoImport("MaterialItemNewCell")
 autoImport("EquipMemoryAttrCell")
-autoImport("EquipMemoryAttrChangeCell")
 autoImport("EquipMemoryAttrCombineCell")
 autoImport("EquipMemoryAttrResultBord")
 autoImport("EquipMemoryFullBodyChangeCell")
@@ -162,6 +161,7 @@ function EquipMemoryAttrResetView:GetChooseBordDataFunc()
     if l_power ~= r_power then
       return l_power > r_power
     end
+    return l.staticData.id > r.staticData.id
   end)
   return result
 end
@@ -323,9 +323,15 @@ function EquipMemoryAttrResetView:AddEvts()
     local staticData = staticID and Table_ItemMemory[staticID]
     local groups = {}
     if staticData then
-      local randomAttr = staticData.RandomAttr
+      local targetStaticData = staticData
+      if staticData.UpgradeID then
+        local upgradeStaticData = Table_ItemMemory[staticData.UpgradeID]
+        if upgradeStaticData then
+          targetStaticData = upgradeStaticData
+        end
+      end
+      local randomAttr = targetStaticData.RandomAttr
       for _, info in pairs(randomAttr) do
-        xdlog("group", info.group)
         table.insert(groups, info.group)
       end
     end
@@ -501,6 +507,19 @@ function EquipMemoryAttrResetView:updateTargetMemoryInfo()
       local _tempData = {
         id = attrs[i].id
       }
+      local curExcess = memoryData.excess_lv or 0
+      local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
+      if type(excessCfg) == "table" and curExcess and 0 < curExcess then
+        for stageKey, mappedKey in pairs(excessCfg) do
+          local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
+          if slotIndex and slotIndex == i then
+            if stageKey <= curExcess then
+              _tempData.excess_lv = curExcess
+            end
+            break
+          end
+        end
+      end
       if i == maxAttrCount then
         _tempData.text = ZhString.EquipMemory_NotChosen
         _tempData.CanUnlock = true
@@ -652,11 +671,30 @@ function EquipMemoryAttrResetView:_UpdateMemoryPreviewResult()
       return
     else
       local curAttrID = attrs[self.targetEffectIndex].id
+      local passExcess
+      do
+        local curExcess = self.targetData.equipMemoryData.excess_lv or 0
+        local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
+        if type(excessCfg) == "table" and curExcess and 0 < curExcess then
+          for stageKey, mappedKey in pairs(excessCfg) do
+            local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
+            if slotIndex and slotIndex == self.targetEffectIndex then
+              if stageKey <= curExcess then
+                passExcess = curExcess
+              end
+              break
+            end
+          end
+        end
+      end
       for i = 1, #previewids do
         if previewids[i] ~= curAttrID then
           local _tempData = {
             id = previewids[i]
           }
+          if passExcess then
+            _tempData.excess_lv = passExcess
+          end
           table.insert(chooseList, _tempData)
         end
       end
@@ -664,10 +702,29 @@ function EquipMemoryAttrResetView:_UpdateMemoryPreviewResult()
   elseif cacheIndex and attrs[cacheIndex] then
     local previewids = attrs[cacheIndex].previewid
     if previewids and 0 < #previewids then
+      local passExcess
+      do
+        local curExcess = self.targetData.equipMemoryData.excess_lv or 0
+        local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
+        if type(excessCfg) == "table" and curExcess and 0 < curExcess then
+          for stageKey, mappedKey in pairs(excessCfg) do
+            local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
+            if slotIndex and cacheIndex and slotIndex == cacheIndex then
+              if stageKey <= curExcess then
+                passExcess = curExcess
+              end
+              break
+            end
+          end
+        end
+      end
       for i = 1, #previewids do
         local _tempData = {
           id = previewids[i]
         }
+        if passExcess then
+          _tempData.excess_lv = passExcess
+        end
         table.insert(chooseList, _tempData)
       end
     end
@@ -697,150 +754,6 @@ function EquipMemoryAttrResetView:_UpdateMemoryPreviewResult()
     self.memoryPreviewScrollView:ResetPosition()
   end
   self:SetActionBtnActive()
-end
-
-function EquipMemoryAttrResetView:ResetSingleResetChangeResult()
-  local attrs = self.targetData.equipMemoryData.memoryAttrs
-  local _changeList = {}
-  for i = 1, #attrs do
-    if attrs[i].previewid and #attrs[i].previewid > 0 then
-      _changeList[attrs[i].id] = {
-        level = attrs[i].level * -1,
-        wax_level = attrs[i].wax_level * -1
-      }
-      for j = 1, #attrs[i].previewid do
-        if 0 < TableUtility.ArrayFindIndex(attrs[i].previewid, self.chosenEffectId) then
-          xdlog("确认选中的单个替换词条", self.chosenEffectId, attrs[i].level)
-          _changeList[self.chosenEffectId] = {
-            level = attrs[i].level,
-            wax_level = attrs[i].wax_level
-          }
-          break
-        end
-      end
-    end
-  end
-  self:UpdateChangeList(_changeList)
-end
-
-function EquipMemoryAttrResetView:RefreshMultiResetChangeResult()
-  local attrs = self.targetData.equipMemoryData.memoryAttrs
-  local _changeList = {}
-  for i = 1, #attrs do
-    if attrs[i].previewid and #attrs[i].previewid > 0 then
-      _changeList[attrs[i].id] = {
-        level = attrs[i].level * -1,
-        wax_level = attrs[i].wax_level * -1
-      }
-      _changeList[attrs[i].previewid[1]] = {
-        level = attrs[i].level,
-        wax_level = attrs[i].wax_level
-      }
-      xdlog("-" .. attrs[i].id, "+", attrs[i].previewid[1])
-    end
-  end
-  self:UpdateChangeList(_changeList)
-end
-
-function EquipMemoryAttrResetView:UpdateChangeList(changeList)
-  local memoryLevels = bagIns:GetTotalEquipMemoryLevels()
-  local result = {}
-  for _attrid, _offsetData in pairs(changeList) do
-    local _levels = memoryLevels[_attrid] and memoryLevels[_attrid].levels
-    if memoryLevels[_attrid] then
-      local _levels = memoryLevels[_attrid].levels
-      local _tempChangeData = {
-        id = _attrid,
-        levels = {}
-      }
-      local _levels = memoryLevels[_attrid].levels
-      local _offsetLevel = _offsetData.level
-      if 0 < _offsetLevel then
-        _tempChangeData.sort = 3
-        local _effective = false
-        if #_levels < 3 then
-          _effective = true
-        else
-          for i = 1, #_levels do
-            if i <= 3 and _offsetLevel > _levels[i] then
-              _effective = true
-              break
-            end
-          end
-        end
-        if _effective then
-          table.insert(_tempChangeData.levels, {level = _offsetLevel, status = 1})
-          for i = 1, #_levels do
-            if #_tempChangeData.levels < 3 then
-              table.insert(_tempChangeData.levels, {
-                level = _levels[i]
-              })
-            end
-          end
-        else
-          for i = 1, #_levels do
-            if #_tempChangeData.levels < 3 then
-              table.insert(_tempChangeData.levels, {
-                level = _levels[i]
-              })
-            end
-          end
-        end
-        if 0 < _offsetData.wax_level then
-          if 3 > memoryLevels[_attrid].wax_level then
-            _tempChangeData.wax_level = memoryLevels[_attrid].wax_level + 1
-            _tempChangeData.waxStatus = 1
-          end
-        else
-          _tempChangeData.wax_level = memoryLevels[_attrid].wax_level
-        end
-      else
-        _tempChangeData.sort = 1
-        local _tempLevel = {}
-        TableUtility.ArrayShallowCopy(_tempLevel, _levels)
-        redlog("移除属性", _offsetLevel)
-        TableUtility.ArrayRemove(_tempLevel, _offsetLevel * -1)
-        for i = 1, 3 do
-          if _levels[i] then
-            if _levels[i] == _tempLevel[i] then
-              xdlog("属性未动")
-              table.insert(_tempChangeData.levels, {
-                level = _levels[i]
-              })
-            elseif _tempLevel[i] and _levels[i] < _tempLevel[i] then
-              table.insert(_tempChangeData.levels, {
-                level = _levels[i],
-                status = 0
-              })
-            elseif not _tempLevel[i] then
-              table.insert(_tempChangeData.levels, {level = 0, status = 0})
-            end
-          end
-        end
-      end
-      table.insert(result, _tempChangeData)
-    else
-      xdlog("新属性添加", _attrid)
-      local _tempChangeData = {
-        id = _attrid,
-        levels = {},
-        sort = 2
-      }
-      local _offsetLevel = _offsetData.level
-      if 0 < _offsetLevel then
-        table.insert(_tempChangeData.levels, {level = _offsetLevel, status = 1})
-      end
-      table.insert(result, _tempChangeData)
-    end
-  end
-  table.sort(result, function(l, r)
-    local l_sort = l.sort or 0
-    local r_sort = r.sort or 0
-    if l_sort ~= r_sort then
-      return l_sort > r_sort
-    end
-  end)
-  self.memoryChangeCtrl:ResetDatas(result)
 end
 
 function EquipMemoryAttrResetView:HasRefreshAttr()

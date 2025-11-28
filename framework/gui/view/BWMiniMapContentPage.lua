@@ -166,7 +166,6 @@ function BWMiniMapContentPage:EnLargeBigMap(b, notCenterMyPos)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.ServerNpc, true)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.ScenicSpot, true)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.Yahaha, true)
-    self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.FakeDragon, true)
     self.window:ActiveFocusArrowUpdate(true)
     self.window:ForceUpdateFocusArrowPos()
   else
@@ -186,6 +185,9 @@ function BWMiniMapContentPage:EnLargeBigMap(b, notCenterMyPos)
     self.window:ActiveFocusArrowUpdate(true)
     self.window:ForceUpdateFocusArrowPos()
     self.window:ActiveFocusArrowUpdate(false)
+  end
+  if self.abyssDragonDatas then
+    self.window:UpdateAbyssDragonSymbol(self.abyssDragonDatas, true)
   end
 end
 
@@ -276,7 +278,8 @@ function BWMiniMapContentPage:InitEvents()
   self:AddListenEvt(LoadSceneEvent.BWTransmitFinished, self.UpdateTransmitFinished)
   self:AddDispatcherEvt(WildMvpEvent.OnMiniMapMonsterUpdated, self.UpdateWildMvpMonsters)
   self:AddListenEvt(ServiceEvent.MessCCmdSyncMapStepForeverRewardInfo, self.UpdateZoneTipsProgress)
-  self:AddListenEvt(FakeDragonEvent.UpdateFakeDragonPoses, self.UpdateFakeDragonSymbol)
+  self:AddListenEvt(PVEEvent.AbyssDragon_UpdateArea, self.UpdateAbyssDragonMapInfo)
+  self:AddListenEvt(PVEEvent.AbyssDragon_Shutdown, self.ClearAbyssDragonMapInfo)
 end
 
 function BWMiniMapContentPage:HandleUpdateDestPos(note)
@@ -311,7 +314,7 @@ function BWMiniMapContentPage:ResetWindow()
     self:UpdateShowNpcPos()
     self:UpdateShowingCircleAreaMap()
     self:RefreshYahahaSymbol()
-    self:UpdateFakeDragonSymbol()
+    self:UpdateAbyssDragonMapInfo()
     self.window:UpdateQuestFocuses(self.focusMap)
     self:UpdateTransmitter()
     self:UpdateBigMapButton()
@@ -526,6 +529,9 @@ function BWMiniMapContentPage:_UpdateSceneSpot(scenicSpot, forceUpdate)
     if spotConfig and (spotConfig.Type == 1 or spotConfig.Type == 3) then
       local p = scenicSpot.position
       if p then
+        if self.window and not self.window:IsScenePosInUnlockedZone(p[1], p[2], p[3]) then
+          return
+        end
         local guid = scenicSpot.ID
         if scenicSpot.guid then
           guid = scenicSpot.ID .. "_" .. scenicSpot.guid
@@ -885,20 +891,6 @@ function BWMiniMapContentPage:UpdateNearlyMonsters()
   end
   self.window:UpdateMonstersPoses(self.monsterDataMap, true)
   self.window:UpdateMvpPoses(self.bossDataMap, true)
-  local data = self.fakeDragonDatas and self.fakeDragonDatas[1]
-  local uniqueID, fakeDragonPos = AbyssFakeDragonProxy.Instance:GetFakeDragonPosition()
-  if data and uniqueID then
-    data:SetPos(fakeDragonPos[1], fakeDragonPos[2], fakeDragonPos[3])
-  elseif uniqueID then
-    local data = MiniMapData.CreateAsTable(uniqueID)
-    data:SetParama("Symbol", "map_icon_shikonglong")
-    data:SetPos(fakeDragonPos[1], fakeDragonPos[2], fakeDragonPos[3])
-    if not self.fakeDragonDatas then
-      self.fakeDragonDatas = {}
-    end
-    self.fakeDragonDatas[1] = data
-  end
-  self.window:UpdateFakeDragonPoses(self.fakeDragonDatas, true)
 end
 
 function BWMiniMapContentPage:ClearMonsterDatas()
@@ -1000,6 +992,7 @@ function BWMiniMapContentPage:UpdateTransmitter()
   else
     self.window:RemoveTransmitterPoints()
   end
+  self:RefreshScenicSpots()
 end
 
 function BWMiniMapContentPage:HandleUpdateTransmitter()
@@ -1181,32 +1174,44 @@ function BWMiniMapContentPage:InitQuestFocus()
   focusData:SetShowRange(-1)
 end
 
-function BWMiniMapContentPage:_UpdateFakeDragonDatas()
-  if self.fakeDragonDatas then
-    _TableClearByDeleter(self.fakeDragonDatas, miniMapDataDeleteFunc)
-  else
-    self.fakeDragonDatas = {}
+function BWMiniMapContentPage:UpdateAbyssDragonMapInfo()
+  local mapId = Game.MapManager:GetMapID()
+  if mapId ~= 154 then
+    self:ClearAbyssDragonMapInfo()
+    return
   end
-  local uniqueID, fakeDragonPos = AbyssFakeDragonProxy.Instance:GetFakeDragonPosition()
-  local data = self.fakeDragonDatas[1]
-  if fakeDragonPos then
-    if not data then
-      data = MiniMapData.CreateAsTable(uniqueID)
-      self.fakeDragonDatas[1] = data
-      data:SetParama("Depth", 32)
+  if FunctionAbyssDragon.CheckTimeValid() then
+    if not self.abyssDragonDatas then
+      self.abyssDragonDatas = {}
+      local raidInfo = GameConfig.AbyssDragon and GameConfig.AbyssDragon.RaidInfo
+      if raidInfo then
+        for id, info in pairs(raidInfo) do
+          local miniMapData = self.abyssDragonDatas[id]
+          if not miniMapData then
+            miniMapData = MiniMapData.CreateAsTable(id)
+            self.abyssDragonDatas[id] = miniMapData
+            local bpID = info.BpPoint
+            local bp = Game.MapManager:FindBornPoint(bpID)
+            if bp then
+              miniMapData:SetPos(bp.position[1], bp.position[2], bp.position[3])
+              if info.MapEffect then
+                miniMapData:SetParama("effect", info.MapEffect)
+              end
+            end
+          end
+        end
+      end
     end
-    data:SetPos(fakeDragonPos[1], fakeDragonPos[2], fakeDragonPos[3])
-    data:SetParama("Symbol", "map_icon_shikonglong")
+    self.window:UpdateAbyssDragonSymbol(self.abyssDragonDatas, true)
   else
-    if data ~= nil then
-      data:Destroy()
-    end
-    self.fakeDragonDatas[1] = nil
+    self:ClearAbyssDragonMapInfo()
   end
 end
 
-function BWMiniMapContentPage:UpdateFakeDragonSymbol()
-  self:_UpdateFakeDragonDatas()
-  redlog("UpdateFakeDragonSymbol", self.fakeDragonDatas)
-  self.window:UpdateFakeDragonSymbol(self.fakeDragonDatas, true)
+function BWMiniMapContentPage:ClearAbyssDragonMapInfo()
+  if self.abyssDragonDatas then
+    _TableClearByDeleter(self.abyssDragonDatas, miniMapDataDeleteFunc)
+    self.window:UpdateAbyssDragonSymbol(self.abyssDragonDatas, true)
+    self.abyssDragonDatas = nil
+  end
 end

@@ -205,18 +205,3 @@ function ServiceQuestProxy:RecvUpdateAbyssHelpCountQuestCmd(data)
   AbyssQuestProxy.Instance:UpdateAbyssHelpCount(data)
   self:Notify(ServiceEvent.QuestUpdateAbyssHelpCountQuestCmd, data)
 end
-
-function ServiceQuestProxy:RecvAbyssDragonInfoNtfQuestCmd(data)
-  AbyssFakeDragonProxy.Instance:UpdateAbyssDragonInfo(data)
-  self:Notify(ServiceEvent.QuestAbyssDragonInfoNtfQuestCmd, data)
-end
-
-function ServiceQuestProxy:RecvAbyssDragonHpUpdateQuestCmd(data)
-  AbyssFakeDragonProxy.Instance:RecvAbyssDragonHpUpdateQuestCmd(data)
-  self:Notify(ServiceEvent.QuestAbyssDragonHpUpdateQuestCmd, data)
-end
-
-function ServiceQuestProxy:RecvAbyssDragonOnOffQuestCmd(data)
-  AbyssFakeDragonProxy.Instance:RecvAbyssDragonOnOffQuestCmd(data)
-  self:Notify(ServiceEvent.QuestAbyssDragonOnOffQuestCmd, data)
-end

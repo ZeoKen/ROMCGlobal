@@ -168,9 +168,6 @@ function WarbandOpponentView:OnClickGroupTab(cell)
   if not data then
     return
   end
-  if self.curTabData and self.curTabData.index == data.index then
-    return
-  end
   self.curTabData = data
   self:UpdateBattleLine(true)
 end

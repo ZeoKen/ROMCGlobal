@@ -119,9 +119,11 @@ function SetViewEffectState:FindObj()
     l_labLodWarningExtraSet.text = ZhString.SetView_HightFpsHint
     self.objLodWarningMoveRoot = self:FindGO("LodWarningMoveRoot")
     self.objFpsWarningMoveRoot = self:FindGO("FpsWarningMoveRoot", self.objLodWarningMoveRoot)
-    TimeTickManager.Me():CreateOnceDelayTick(100, function(owner, deltaTime)
-      self.resolutionSetTempSprite:SetActive(true)
-    end, self)
+    if self.resolutionSetTempSprite then
+      TimeTickManager.Me():CreateOnceDelayTick(100, function(owner, deltaTime)
+        self.resolutionSetTempSprite:SetActive(true)
+      end, self)
+    end
     self.peakSet = self:FindGO("PeakToggle"):GetComponent("UIToggle")
     self.qualitySetRoot = self:FindGO("QualitySet")
     self.resetBtn = self:FindGO("Reset", self.qualitySetRoot)

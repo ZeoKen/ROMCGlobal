@@ -83,7 +83,7 @@ function CrowdfundingActProxy:GetParticipateTimeText(id)
       else
         LogUtility.WarningFormat("Cannot get participate end time with id = {0}. Real end time will replace.", actId)
       end
-      text = ServantCalendarProxy.GetTimeDate(startTime, endTime, ZhString.CrowdfundingAct_ParticipateTime)
+      text = ClientTimeUtil.GetTimeDate(startTime, endTime, ZhString.CrowdfundingAct_ParticipateTime)
     end
   end, self)
   return text

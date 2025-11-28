@@ -50,3 +50,10 @@ function CupMode6v6Proxy_MultiServer:CheckMatchValid()
     return results
   end
 end
+
+function CupMode6v6Proxy_MultiServer:SetOpponentStatus(treeOpen)
+  if treeOpen ~= self.opponentStatus then
+    self.opponentStatus = treeOpen
+    ServiceMatchCCmdProxy.Instance:CallSyncMatchBoardOpenStateMatchCCmd(treeOpen, self.CupModeType, true)
+  end
+end

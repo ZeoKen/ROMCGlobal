@@ -202,6 +202,11 @@ local classProcessConfig = {
     GameForbidden = {
       type = "extraction_forbidden"
     }
+  },
+  InheritSkillStatus = {
+    Icon = "new-com_icon_inherit",
+    order = 9,
+    Name = ZhString.ProfessionPage_InheritSkillStatus
   }
 }
 
@@ -375,12 +380,17 @@ function ProfessionPageBasePart:FindObjs()
       data.go = self:FindGO(k, self.classProcess)
       data.Icon = self:FindGO("Icon", data.go):GetComponent(UISprite)
       IconManager:SetUIIcon(v.Icon, data.Icon)
+      if k == "InheritSkillStatus" then
+        data.Icon.width = 40
+        data.Icon.height = 40
+      end
       data.ProcessLabel = self:FindGO("ProcessLabel", data.go):GetComponent(UILabel)
       data.Name = self:FindGO("Name", data.go):GetComponent(UILabel)
       data.Name.text = v.Name
       self.classProcessCells[v.order] = data
     end
   end
+  self.processBg = self:FindComponent("ProcessBg", UISprite, self.classProcess)
   self.previewTip = self:FindGO("PreviewTip")
   self.previewTipLabel = self.previewTip:GetComponent(UILabel)
   self.tweensGO = {}
@@ -470,11 +480,11 @@ function ProfessionPageBasePart:AddEvts()
       EventManager.Me():DispatchEvent(MultiProfessionEvent.ClickAdvanceClass, targetJob)
     end)
   end
-  for i = 1, #self.classProcessCells do
-    self:AddClickEvent(self.classProcessCells[i].go, function()
-      if self.classProcessCells[i].clickFunc then
+  for k, v in pairs(self.classProcessCells) do
+    self:AddClickEvent(v.go, function()
+      if v.clickFunc then
         self.container:SetPushToStack(true)
-        self.classProcessCells[i].clickFunc(self.classProcessCells[i].owner, self.classProcessCells[i].funcParams)
+        v.clickFunc(v.owner, v.funcParams)
       end
     end)
   end
@@ -1071,26 +1081,27 @@ function ProfessionPageBasePart:ShowPlayerEquipTip(data, ignoreBound, offset, is
 end
 
 function ProfessionPageBasePart:UpdateClassProcess(list, type)
-  if not list or #list == 0 then
-    for i = 1, #self.classProcessCells do
-      self.classProcessCells[i].go:SetActive(false)
+  if not list or next(list) == nil then
+    for k, v in pairs(self.classProcessCells) do
+      v.go:SetActive(false)
     end
     self.previewTip:SetActive(false)
+    self.processBg.gameObject:SetActive(false)
     return
   end
   local activeCount = 0
-  for i = 1, #self.classProcessCells do
-    if list[i] then
-      self.classProcessCells[i].go:SetActive(true)
-      local curValue = list[i].curValue
-      local maxValue = list[i].maxValue
+  for k, v in pairs(self.classProcessCells) do
+    if list[k] then
+      v.go:SetActive(true)
+      local curValue = list[k].curValue
+      local maxValue = list[k].maxValue
       local process = maxValue and curValue .. "/" .. maxValue or curValue .. "%"
-      self.classProcessCells[i].ProcessLabel.text = process
-      self.classProcessCells[i].clickFunc = list[i].clickFunc
-      self.classProcessCells[i].funcParams = list[i].funcParams
+      v.ProcessLabel.text = process
+      v.clickFunc = list[k].clickFunc
+      v.funcParams = list[k].funcParams
       activeCount = activeCount + 1
     else
-      self.classProcessCells[i].go:SetActive(false)
+      v.go:SetActive(false)
     end
   end
   self.classProcessGrid:Reposition()
@@ -1105,6 +1116,8 @@ function ProfessionPageBasePart:UpdateClassProcess(list, type)
   else
     self.previewTip:SetActive(false)
   end
+  self.processBg.gameObject:SetActive(true)
+  self.processBg.height = math.min(self.classProcessGrid.cellHeight * activeCount + 20, 518)
 end
 
 function ProfessionPageBasePart:SetSwitchNodeActive(active)

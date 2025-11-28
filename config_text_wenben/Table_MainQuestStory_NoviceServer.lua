@@ -390,8 +390,8 @@ Table_MainQuestStory = {
     id = 48,
     version = "17.0",
     index = 3,
-    QuestName = "敬请期待",
-    Mstory = {664636},
+    QuestName = "黑炎与白骨",
+    Mstory = {508897},
     PuzzleReward = _EmptyTable,
     LvRange = {110}
   },
@@ -399,8 +399,8 @@ Table_MainQuestStory = {
     id = 49,
     version = "17.0",
     index = 4,
-    QuestName = "敬请期待",
-    Mstory = {664636},
+    QuestName = "巨龙的回响",
+    Mstory = {509198},
     PuzzleReward = _EmptyTable,
     LvRange = {110}
   }

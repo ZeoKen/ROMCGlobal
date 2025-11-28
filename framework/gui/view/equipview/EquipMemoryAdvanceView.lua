@@ -1,6 +1,5 @@
 autoImport("EquipChooseBord")
 autoImport("MaterialItemCell")
-autoImport("EquipMemoryAttrChangeCell")
 autoImport("EquipMemoryAttrResultBord")
 autoImport("EquipMemoryAttrUnlockCell")
 EquipMemoryAdvanceView = class("EquipMemoryAdvanceView", ContainerView)
@@ -465,11 +464,25 @@ function EquipMemoryAdvanceView:UpdateEquipMemoryInfo()
   for i = 1, #tempLvs do
     unlockLvs[i] = tempLvs[i]
   end
+  local passExcessForSlot = {}
+  do
+    local curExcess = memoryInfo.excess_lv or 0
+    local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
+    if type(excessCfg) == "table" and curExcess and 0 < curExcess then
+      for stageKey, mappedKey in pairs(excessCfg) do
+        local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
+        if slotIndex and stageKey <= curExcess then
+          passExcessForSlot[slotIndex] = curExcess
+        end
+      end
+    end
+  end
   local maxAttrCount = memoryInfo.maxAttrCount or 1
   for i = 1, maxAttrCount do
     if attrs[i] and attrs[i].previewid ~= nil and 0 < #attrs[i].previewid then
       local _tempData = {
         id = attrs[i].id,
+        excess_lv = passExcessForSlot[i],
         text = ZhString.EquipMemory_NotChosen,
         canUnlock = attrs[i].id == 0 and true or false,
         isFourth = i == maxAttrCount
@@ -478,6 +491,7 @@ function EquipMemoryAdvanceView:UpdateEquipMemoryInfo()
     else
       local _tempData = {
         id = 0,
+        excess_lv = passExcessForSlot[i],
         unlockLv = unlockLvs[i],
         canUnlock = false
       }

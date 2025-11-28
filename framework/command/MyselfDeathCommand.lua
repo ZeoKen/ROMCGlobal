@@ -20,7 +20,7 @@ function MyselfDeathCommand:execute(note)
       return
     end
     if DungeonProxy.CanShowDeathPopView() then
-      if Game.MapManager:IsPVPMode_GVGDetailed() and GvgProxy.Instance:IHaveGuildPoint() then
+      if Game.MapManager:IsPVPMode_GVGDetailed() then
         self:sendNotification(UIEvent.ShowUI, {
           viewname = "GvgDeathPopView"
         })

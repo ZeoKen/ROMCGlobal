@@ -44,7 +44,7 @@ end
 function ChatRoomPage:Init()
   if BranchMgr.IsSEA() or BranchMgr.IsNO() then
     InputLimitMaxCount = 60
-  elseif AppBundleConfig.GetSDKLang() == "en" or AppBundleConfig.GetSDKLang() == "pt" then
+  elseif AppBundleConfig.GetSDKLang() == "en" or AppBundleConfig.GetSDKLang() == "pt" or AppBundleConfig.GetSDKLang() == "es" then
     InputLimitMaxCount = 60
   end
   self:InitShow()

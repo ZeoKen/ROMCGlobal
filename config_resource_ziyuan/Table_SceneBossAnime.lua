@@ -2778,6 +2778,71 @@ Table_SceneBossAnime = {
     id = 645,
     ObjID = 18,
     Name = "state4002"
+  },
+  [646] = {
+    id = 646,
+    ObjID = 26,
+    Name = "state2001"
+  },
+  [647] = {
+    id = 647,
+    ObjID = 26,
+    Name = "state2002"
+  },
+  [648] = {
+    id = 648,
+    ObjID = 27,
+    Name = "state2001"
+  },
+  [649] = {
+    id = 649,
+    ObjID = 27,
+    Name = "state2002"
+  },
+  [650] = {
+    id = 650,
+    ObjID = 28,
+    Name = "mfx_syzh_skfyjt_state1001"
+  },
+  [651] = {
+    id = 651,
+    ObjID = 28,
+    Name = "mfx_syzh_skfyjt_state6002"
+  },
+  [652] = {
+    id = 652,
+    ObjID = 29,
+    Name = "mfx_syzh_skfyjt_state1001"
+  },
+  [653] = {
+    id = 653,
+    ObjID = 29,
+    Name = "mfx_syzh_skfyjt_state6002"
+  },
+  [654] = {
+    id = 654,
+    ObjID = 30,
+    Name = "mfx_syzh_skfyjt_state1001"
+  },
+  [655] = {
+    id = 655,
+    ObjID = 30,
+    Name = "mfx_syzh_skfyjt_state6002"
+  },
+  [656] = {
+    id = 656,
+    ObjID = 31,
+    Name = "mfx_syzh_skfyjt_state1001"
+  },
+  [657] = {
+    id = 657,
+    ObjID = 31,
+    Name = "mfx_syzh_skfyjt_state6002"
+  },
+  [658] = {
+    id = 658,
+    ObjID = 18,
+    Name = "state5002"
   }
 }
 Table_SceneBossAnime_fields = {

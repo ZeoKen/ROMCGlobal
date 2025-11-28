@@ -87,6 +87,9 @@ function ProfessionProxy:ParseStaticInfo()
   ProfessionProxy.Sunshine = 775
   ProfessionProxy.Nameless = 785
   ProfessionProxy.Kafra = 795
+  ProfessionProxy.Ais = 815
+  ProfessionProxy.Bell = 805
+  ProfessionProxy.Oscar = 825
   ProfessionProxy.specialDepthJobs = {
     ProfessionProxy.moshentandoushiJob,
     ProfessionProxy.shenlongdoushiJob,
@@ -114,7 +117,10 @@ function ProfessionProxy:ParseStaticInfo()
     ProfessionProxy.Morocc,
     ProfessionProxy.Sunshine,
     ProfessionProxy.Nameless,
-    ProfessionProxy.Kafra
+    ProfessionProxy.Kafra,
+    ProfessionProxy.Ais,
+    ProfessionProxy.Bell,
+    ProfessionProxy.Oscar
   }
   ProfessionProxy.specialJobs = {
     ProfessionProxy.superNovice,
@@ -144,7 +150,10 @@ function ProfessionProxy:ParseStaticInfo()
     ProfessionProxy.Morocc,
     ProfessionProxy.Sunshine,
     ProfessionProxy.Nameless,
-    ProfessionProxy.Kafra
+    ProfessionProxy.Kafra,
+    ProfessionProxy.Ais,
+    ProfessionProxy.Bell,
+    ProfessionProxy.Oscar
   }
   for i = #ProfessionProxy.specialJobs, 1, -1 do
     if not Table_Class[ProfessionProxy.specialJobs[i]] then
@@ -2325,8 +2334,10 @@ function ProfessionProxy:UpdateRechargeHeroList(heroShowUserCmd)
     local branchid = heroProfessionInfo.branch
     if _GameConfigHeroShop[branchid] then
       local d = NewRechargeHeroData.new(branchid)
-      d:UpdateServerInfo(heroProfessionInfo)
-      table.insert(self.rechargeHeroList, d)
+      if d.sort then
+        d:UpdateServerInfo(heroProfessionInfo)
+        table.insert(self.rechargeHeroList, d)
+      end
     else
       LogUtility.Error(string.format("GameConfig中未找到英雄职业Branch的配置:%s", branchid))
     end

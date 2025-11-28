@@ -2026,6 +2026,48 @@ Table_MatchRaid = {
     RaidConfigID = 6,
     EnterLevel = 90,
     NoviceCanJoin = 1
+  },
+  [400100] = {
+    id = 400100,
+    Type = 46,
+    RaidConfigID = 1000461,
+    EnterLevel = 1,
+    NoviceCanJoin = 1
+  },
+  [400200] = {
+    id = 400200,
+    Type = 47,
+    RaidConfigID = 1000462,
+    EnterLevel = 1,
+    NoviceCanJoin = 1
+  },
+  [400300] = {
+    id = 400300,
+    Type = 48,
+    RaidConfigID = 1000463,
+    EnterLevel = 1,
+    NoviceCanJoin = 1
+  },
+  [400400] = {
+    id = 400400,
+    Type = 49,
+    RaidConfigID = 1000464,
+    EnterLevel = 1,
+    NoviceCanJoin = 1
+  },
+  [2006700] = {
+    id = 2006700,
+    Type = 45,
+    RaidConfigID = 1004250,
+    EnterLevel = 100,
+    NoviceCanJoin = 1
+  },
+  [2006701] = {
+    id = 2006701,
+    Type = 45,
+    RaidConfigID = 1004251,
+    EnterLevel = 100,
+    NoviceCanJoin = 1
   }
 }
 Table_MatchRaid_fields = {

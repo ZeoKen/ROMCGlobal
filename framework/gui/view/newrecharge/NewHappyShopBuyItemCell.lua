@@ -403,7 +403,7 @@ function NewHappyShopBuyItemCell:getRealPrice()
   end
   local a, b = math.modf(price)
   if 0 < b then
-    b = math.floor(b * 100) / 100
+    b = math.floor(b * 100 + 0.5) / 100
   end
   return a + b
 end
@@ -508,6 +508,10 @@ function NewHappyShopBuyItemCell:SetItemGetCount(data)
     return
   end
   if self.soldCount_Set then
+    return
+  end
+  local sources = data.sources
+  if sources and TableUtility.ArrayFindIndex(sources, ProtoCommon_pb.ESOURCE_SHOP) == 0 then
     return
   end
   if data.itemid == self.itemData.goodsID then

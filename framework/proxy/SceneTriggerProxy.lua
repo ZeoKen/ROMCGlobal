@@ -24,6 +24,7 @@ function SceneTriggerProxy:ctor(proxyName, data)
   self.typeFunc[AreaTrigger_Common_ClientType.EndlessBattleField_EventArea] = self.EndlessBattleField_EventArea_Handle
   self.typeFunc[AreaTrigger_Common_ClientType.EndlessBattleField_Occupy] = self.EndlessBattle_OccupyArea_Handle
   self.typeFunc[AreaTrigger_Common_ClientType.AybssLake_BattlePoint] = self.AybssLake_BattlePoint_Handle
+  self.typeFunc[AreaTrigger_Common_ClientType.AbyssDragon_Area] = self.AbyssDragon_Area_Handle
 end
 
 function SceneTriggerProxy:Reset()
@@ -206,6 +207,15 @@ function SceneTriggerProxy:EndlessBattle_OccupyArea_Handle(data)
 end
 
 function SceneTriggerProxy:AybssLake_BattlePoint_Handle(data)
+  local result = ReusableTable.CreateTable()
+  result.id = data.id
+  result.pos = LuaVector3(data.pos[1], data.pos[2], data.pos[3])
+  result.reachDis = data.range
+  result.type = data.type
+  return result
+end
+
+function SceneTriggerProxy:AbyssDragon_Area_Handle(data)
   local result = ReusableTable.CreateTable()
   result.id = data.id
   result.pos = LuaVector3(data.pos[1], data.pos[2], data.pos[3])

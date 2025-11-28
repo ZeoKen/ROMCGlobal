@@ -1755,6 +1755,26 @@ Table_RoleData = {
     order = 24,
     DataDesc = "##44701523"
   },
+  [490] = {
+    id = 490,
+    PropName = "##44706534",
+    VarName = "PerfectFlee",
+    IsPercent = 0,
+    Default = 0,
+    IsClientPercent = 0,
+    RuneName = "",
+    DataDesc = ""
+  },
+  [491] = {
+    id = 491,
+    PropName = "##44706535",
+    VarName = "DebuffFlee",
+    IsPercent = 0,
+    Default = 0,
+    IsClientPercent = 0,
+    RuneName = "",
+    DataDesc = ""
+  },
   [500] = {
     id = 500,
     PropName = "##149506",
@@ -2365,6 +2385,28 @@ Table_RoleData = {
     id = 622,
     PropName = "##149494",
     VarName = "AttrEffect3",
+    IsPercent = 0,
+    Default = 0,
+    IsClientPercent = 0,
+    RuneName = "",
+    AdjTag = 4,
+    DataDesc = ""
+  },
+  [623] = {
+    id = 623,
+    PropName = "##44710464",
+    VarName = "ForbidMove",
+    IsPercent = 0,
+    Default = 0,
+    IsClientPercent = 0,
+    RuneName = "",
+    AdjTag = 4,
+    DataDesc = ""
+  },
+  [624] = {
+    id = 624,
+    PropName = "##44712491",
+    VarName = "DeepFreeze",
     IsPercent = 0,
     Default = 0,
     IsClientPercent = 0,
@@ -3520,7 +3562,7 @@ Table_RoleData = {
     Default = 0,
     IsClientPercent = 1,
     RuneName = "",
-    BaseTag = 4096,
+    BaseTag = 6144,
     CombatTag = 2049,
     DataDesc = ""
   },
@@ -3532,7 +3574,7 @@ Table_RoleData = {
     Default = 0,
     IsClientPercent = 1,
     RuneName = "",
-    BaseTag = 4096,
+    BaseTag = 6144,
     CombatTag = 1026,
     DataDesc = ""
   },
@@ -3544,7 +3586,7 @@ Table_RoleData = {
     Default = 0,
     IsClientPercent = 1,
     RuneName = "",
-    BaseTag = 2048,
+    BaseTag = 6144,
     CombatTag = 2049,
     DataDesc = ""
   },
@@ -3556,7 +3598,7 @@ Table_RoleData = {
     Default = 0,
     IsClientPercent = 1,
     RuneName = "",
-    BaseTag = 2048,
+    BaseTag = 6144,
     CombatTag = 1026,
     DataDesc = ""
   },
@@ -4399,6 +4441,26 @@ Table_RoleData = {
     IsPercent = 1,
     Default = 0,
     IsClientPercent = 1,
+    RuneName = "",
+    DataDesc = ""
+  },
+  [1219] = {
+    id = 1219,
+    PropName = "##44713692",
+    VarName = "HpLoseSpeed",
+    IsPercent = 0,
+    Default = 0,
+    IsClientPercent = 0,
+    RuneName = "",
+    DataDesc = ""
+  },
+  [1220] = {
+    id = 1220,
+    PropName = "##44713693",
+    VarName = "HpLoseCleanse",
+    IsPercent = 0,
+    Default = 0,
+    IsClientPercent = 0,
     RuneName = "",
     DataDesc = ""
   }

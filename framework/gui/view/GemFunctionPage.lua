@@ -114,6 +114,62 @@ local _BtnSprite = {
   Blue = "com_btn_1",
   Grey = "com_btn_13"
 }
+local multiComposeClickDisablePredicate = function(gemCell, self)
+  if GemProxy.CheckIsFavorite(gemCell.data) and self.pageState ~= GemFunctionState.UpdateAttr then
+    return true
+  end
+  if gemCell.selectedCount > 0 then
+    return false
+  end
+  local flag
+  if self.pageState == GemFunctionState.UpdateAttr then
+    local quality = GemProxy.GetSkillQualityFromItemData(gemCell.data)
+    if quality == 1 or quality == 2 then
+      flag = true
+    end
+  elseif self.pageState ~= GemFunctionState.SameName then
+    local _, compareData = next(self.multiFunctionMaterialData)
+    flag = gemCell.data and compareData and gemProxyIns:GetSkillQualityGroupFromItemData(gemCell.data) ~= gemProxyIns:GetSkillQualityGroupFromItemData(compareData)
+    if self.pageState == GemFunctionState.CurrentProf and not flag and self.targetProfession and ProfessionProxy.IsHero(self.targetProfession) then
+      local quality = GemProxy.GetSkillQualityFromItemData(gemCell.data)
+      if quality == 1 or quality == 2 then
+        flag = true
+      end
+    end
+  end
+  return flag
+end
+local singleComposeClickDisablePredicate = function(gemCell, self)
+  if GemProxy.CheckIsFavorite(gemCell.data) then
+    return true
+  end
+  if gemCell.selectedCount > 0 then
+    return false
+  end
+  local flag
+  if self.pageState == GemFunctionState.SameName then
+    flag = gemCell.data and gemCell.selectedCount == 0 and 0 < #self.selectedMaterialData and gemCell.data.staticData.id ~= self.selectedMaterialData[1].staticData.id
+  else
+    flag = gemCell.data and 0 < #self.selectedMaterialData and gemProxyIns:GetSkillQualityGroupFromItemData(gemCell.data) ~= gemProxyIns:GetSkillQualityGroupFromItemData(self.selectedMaterialData[1])
+    if self.pageState == GemFunctionState.CurrentProf and not flag and self.targetProfession and ProfessionProxy.IsHero(self.targetProfession) then
+      local quality = GemProxy.GetSkillQualityFromItemData(gemCell.data)
+      if quality == 1 or quality == 2 then
+        flag = true
+      end
+    end
+  end
+  return flag
+end
+local smeltClickDisablePredicate = function(gemCell, self)
+  if GemProxy.CheckIsFavorite(gemCell.data) then
+    return true
+  end
+  if gemCell.selectedCount > 0 then
+    return false
+  end
+  local isDifferentGroup = gemCell.data and self.targetGemStaticId and gemProxyIns:GetSkillQualityGroupFromItemData(gemCell.data) ~= gemProxyIns:GetSkillQualityGroupByStaticId(self.targetGemStaticId)
+  return isDifferentGroup
+end
 
 function GemFunctionPage:Init(npc_entrance)
   self.entrances = _GetEntranceState(npc_entrance)
@@ -144,6 +200,7 @@ function GemFunctionPage:AddEvents()
 end
 
 function GemFunctionPage:OnProfessionChanged()
+  self:ResetDecompose()
   self.curSkillProfessionFilterPopData = GemProxy.Instance:GetCurNewProfessionFilterData()
   local curProfressionName = GemProxy.Instance:GetCurProfressionName()
   if self.TargetSelect.activeInHierarchy then
@@ -153,6 +210,7 @@ function GemFunctionPage:OnProfessionChanged()
     self.curProfessionFilterLab.text = curProfressionName
     self:UpdateMaterialSelectList()
   end
+  self:SwitchMultiFunction(self.isMultiActive)
 end
 
 function GemFunctionPage:OnChooseTargetProfession(classId)
@@ -163,6 +221,7 @@ function GemFunctionPage:OnChooseTargetProfession(classId)
   local skillConfig = Table_Class[self.targetProfession]
   IconManager:SetProfessionIcon(skillConfig.icon, self.targetProfessionIcon)
   self:SwitchMultiFunction(self.isMultiActive)
+  self:ResetDecompose()
 end
 
 function GemFunctionPage:InitData()
@@ -231,6 +290,12 @@ function GemFunctionPage:InitRight()
   self:AddClickEvent(self.autoSelectLab.gameObject, function()
     self:AutoChooseGem()
   end)
+  self.decomposeAllLab = self:FindComponent("DecomposeAllLab", UILabel)
+  self.decomposeAllLab.text = ZhString.Gem_AllAdd
+  self.decomposeAllToggle = self:FindComponent("DecomposeAllToggle", UIToggle)
+  EventDelegate.Add(self.decomposeAllToggle.onChange, function()
+    self:OnClickDecomposeAll()
+  end)
   self.titleLabel = self:FindComponent("TitleLabel", UILabel)
   self.effectContainer = self:FindGO("EffectContainer")
   self.needGemSps = {}
@@ -271,19 +336,38 @@ function GemFunctionPage:InitSkillQualityFilter()
       if self.curSkillClassFilterPopData == key then
         return
       end
+      self:ResetDecompose()
       if key == 0 then
         self.curSkillClassFilterPopData = self.pageState == GemFunctionState.UpdateAttr and _UpdateAttrQualities or 0
       else
         self.curSkillClassFilterPopData = key
       end
       self:UpdateMaterialSelectList()
+      self:UpdateProfSelectCells()
       self:UpdateAutoSelect()
     end)
   end
 end
 
+function GemFunctionPage:UpdateProfSelectCells()
+  if self.pageState == GemFunctionState.RandomProf or self.pageState == GemFunctionState.CurrentProf and self.materialSelectCells then
+    local selectedReference = self.isMultiActive and self.multiFunctionMaterialData or self.selectedMaterialData
+    local clickDisablePredicate = self.isMultiActive and multiComposeClickDisablePredicate or singleComposeClickDisablePredicate
+    for _, cell in pairs(self.materialSelectCells) do
+      cell:SetShowDeleteIcon(true)
+      cell:SetMultiSelectStyle(GemCell.MultiSelectStyle.HideSelectedCount)
+      cell:SetMultiSelectModel(selectedReference)
+      cell:SetClickDisablePredicate(clickDisablePredicate, self)
+      cell:UpdateDeleteIcon()
+    end
+  end
+end
+
 function GemFunctionPage:UpdateAutoSelect()
-  self.autoSelectLab.gameObject:SetActive(self.curSkillClassFilterPopData ~= 0 and 0 < #self.materialSelectCtrl:GetDatas() and self.pageState == GemFunctionState.RandomProf)
+  local hasDatas = #self.materialSelectCtrl:GetDatas() > 0
+  local showOnRandom = self.pageState == GemFunctionState.RandomProf and self.curSkillClassFilterPopData ~= 0 and hasDatas
+  local showOnDecompose = self.pageState == GemFunctionState.Decompose and hasDatas
+  self.autoSelectLab.gameObject:SetActive(showOnRandom)
 end
 
 function GemFunctionPage:InitProfessionFilter()
@@ -663,7 +747,6 @@ function GemFunctionPage:OnGemUpdate()
 end
 
 function GemFunctionPage:OnItemUpdate()
-  redlog("OnItemUpdate")
   if not self.gameObject.activeInHierarchy then
     return
   end
@@ -719,6 +802,10 @@ function GemFunctionPage:UpdatePage()
   self.mainLabel.text = GemFunctionMainLabel[self.pageState]
   self.costGO = self:FindGO("Cost", self.curCtrl)
   self.costLabel = self:FindComponent("CostLabel", UILabel, self.costGO)
+  if self.costGO and GemFunctionCostZeny[self.pageState] then
+    self.smeltCostIcon = self:FindComponent("Sprite", UISprite, self.costGO)
+    IconManager:SetItemIcon(Table_Item[100].Icon, self.smeltCostIcon)
+  end
   self.sculptWorkbench = self:FindGO("SculptWorkbench", self.curCtrl)
   self.chooseSymbol = self.sculptWorkbench and self:FindGO("ChooseSymbol", self.sculptWorkbench)
   self:SetFunctionBtnActive()
@@ -969,6 +1056,10 @@ function GemFunctionPage:UpdateMaterialSelectList(noResetPos)
     GemProxy.RemoveEmbedded(gems)
   end
   table.sort(gems, materialSelectComparer)
+  local isDecompose = self.pageState == GemFunctionState.Decompose
+  for _, cell in pairs(self.materialSelectCells) do
+    cell:SetShowDeleteIcon(not isDecompose)
+  end
   self.materialSelectCtrl:ResetDatas(gems, not noResetPos)
 end
 
@@ -1035,64 +1126,10 @@ function GemFunctionPage:UpdateSculptCost()
   self.costLabel.color = costNum > realNum and ColorUtil.Red or costLabelColor
 end
 
-local multiComposeClickDisablePredicate = function(gemCell, self)
-  if GemProxy.CheckIsFavorite(gemCell.data) and self.pageState ~= GemFunctionState.UpdateAttr then
-    return true
-  end
-  if gemCell.selectedCount > 0 then
-    return false
-  end
-  local flag
-  if self.pageState == GemFunctionState.UpdateAttr then
-    local quality = GemProxy.GetSkillQualityFromItemData(gemCell.data)
-    if quality == 1 or quality == 2 then
-      flag = true
-    end
-  elseif self.pageState ~= GemFunctionState.SameName then
-    local _, compareData = next(self.multiFunctionMaterialData)
-    flag = gemCell.data and compareData and gemProxyIns:GetSkillQualityGroupFromItemData(gemCell.data) ~= gemProxyIns:GetSkillQualityGroupFromItemData(compareData)
-    if self.pageState == GemFunctionState.CurrentProf and not flag and self.targetProfession and ProfessionProxy.IsHero(self.targetProfession) then
-      local quality = GemProxy.GetSkillQualityFromItemData(gemCell.data)
-      if quality == 1 or quality == 2 then
-        flag = true
-      end
-    end
-  end
-  return flag
-end
-local singleComposeClickDisablePredicate = function(gemCell, self)
-  if GemProxy.CheckIsFavorite(gemCell.data) then
-    return true
-  end
-  if gemCell.selectedCount > 0 then
-    return false
-  end
-  local flag
-  if self.pageState == GemFunctionState.SameName then
-    flag = gemCell.data and gemCell.selectedCount == 0 and 0 < #self.selectedMaterialData and gemCell.data.staticData.id ~= self.selectedMaterialData[1].staticData.id
-  else
-    flag = gemCell.data and 0 < #self.selectedMaterialData and gemProxyIns:GetSkillQualityGroupFromItemData(gemCell.data) ~= gemProxyIns:GetSkillQualityGroupFromItemData(self.selectedMaterialData[1])
-    if self.pageState == GemFunctionState.CurrentProf and not flag and self.targetProfession and ProfessionProxy.IsHero(self.targetProfession) then
-      local quality = GemProxy.GetSkillQualityFromItemData(gemCell.data)
-      if quality == 1 or quality == 2 then
-        flag = true
-      end
-    end
-  end
-  return flag
-end
-local smeltClickDisablePredicate = function(gemCell, self)
-  if GemProxy.CheckIsFavorite(gemCell.data) then
-    return true
-  end
-  if gemCell.selectedCount > 0 then
-    return false
-  end
-  local isDifferentGroup = gemCell.data and self.targetGemStaticId and gemProxyIns:GetSkillQualityGroupFromItemData(gemCell.data) ~= gemProxyIns:GetSkillQualityGroupByStaticId(self.targetGemStaticId)
-  return isDifferentGroup
-end
-
 function GemFunctionPage:SwitchMultiFunction(isMultiActive)
+  if not self.curMultiFunctionGO then
+    return
+  end
   self.isMultiActive = isMultiActive or false
   self.curMultiFunctionGO:SetActive(self.isMultiActive)
   self.material5GO_TargetRoot:SetActive(self.pageState == GemFunctionState.CurrentProf)
@@ -1125,6 +1162,50 @@ function GemFunctionPage:SwitchMultiFunction(isMultiActive)
     TableUtility.TableClear(self.multiFunctionMaterialData)
   end
   self:UpdateMaterialSelectList()
+end
+
+function GemFunctionPage:OnClickDecomposeAll()
+  if self.pageState ~= GemFunctionState.Decompose then
+    return
+  end
+  if self.decomposeAllToggle.value then
+    local maxCount = GameConfig.GemNew and GameConfig.GemNew.MaxDecomposeCount or 50
+    local datas = self.materialSelectCtrl:GetDatas() or _EmptyTable
+    local addedCount = 0
+    for i = 1, #datas do
+      local gemDatas = datas[i]
+      if gemDatas then
+        for j = 1, #gemDatas do
+          if maxCount <= self.decomposeSelectMaterialCount then
+            break
+          end
+          if self.decomposeSelectMaterials[gemDatas[j].id] then
+          elseif GemProxy.CheckIsFavorite(gemDatas[j]) then
+          else
+            local hasStars = false
+            if gemDatas[j].gemSkillData and gemDatas[j].gemSkillData.GetStarCounts then
+              local goldStars, silverStars = gemDatas[j].gemSkillData:GetStarCounts()
+              if 0 < goldStars or 0 < silverStars then
+                hasStars = true
+              end
+            end
+            if not hasStars then
+              self:AddItemToDecompose(gemDatas[j])
+              addedCount = addedCount + 1
+            end
+          end
+        end
+      end
+    end
+    self:SetFunctionBtnActive(0 < addedCount)
+    if addedCount == 0 then
+      MsgManager.ShowMsg(nil, ZhString.Gem_AllAddTip, 1)
+      self.decomposeAllToggle.value = false
+    end
+  else
+    self:ResetDecompose()
+    self:SetFunctionBtnActive(false)
+  end
 end
 
 function GemFunctionPage:AutoChooseGem()
@@ -1493,7 +1574,7 @@ function GemFunctionPage:AddItemToDecompose(data)
   end
   self.decomposeSelectMaterials[data.id] = data
   self.decomposeSelectMaterialCount = self.decomposeSelectMaterialCount + 1
-  self.decomposeMaterialCtrl:ResetDatas(TableUtil.HashToArray(self.decomposeSelectMaterials))
+  self.decomposeMaterialCtrl:ResetDatas(TableUtil.HashToArray(self.decomposeSelectMaterials), true)
   self:UpdateDecomposeMaterials()
   self:CalcDecomposeReward()
   self:CalDecomposeCost()
@@ -1511,13 +1592,17 @@ function GemFunctionPage:DelItemToDecompose(data)
   self.decomposeMaterialCtrl:ResetDatas(TableUtil.HashToArray(self.decomposeSelectMaterials))
   self:UpdateDecomposeMaterials()
   self:UpdateDecomposeRewardCost()
+  if nil == next(self.decomposeSelectMaterials) then
+    self:ResetDecompose()
+  end
 end
 
 function GemFunctionPage:ResetDecompose()
   TableUtility.TableClear(self.decomposeSelectMaterials)
   self.decomposeSelectMaterialCount = 0
+  self.decomposeAllToggle.value = false
   self:UpdateDecomposeSelectMaterials()
-  self.decomposeMaterialCtrl:ResetDatas(self.decomposeSelectMaterials)
+  self.decomposeMaterialCtrl:ResetDatas(self.decomposeSelectMaterials, true)
   self:UpdateDecomposeRewardCost()
 end
 

@@ -13,7 +13,7 @@ function EquipMemoryAttrGroupSingleCell:SetData(data)
     local staticData = staticId and Table_ItemMemoryEffect[staticId]
     if staticData then
       local buffid = staticData.BuffID
-      if buffid and 0 < #buffid then
+      if buffid and buffid ~= _EmptyTable then
         self.text.width = 180
       end
       local waxBuffid = staticData.WaxBuffID

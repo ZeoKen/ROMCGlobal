@@ -500,3 +500,28 @@ function WorldMapProxy:GetUnlockBWZoneByMapID(targetMapID)
   end
   return unlockedZone
 end
+
+function WorldMapProxy:GetZoneGroupIdByPos(pos)
+  if not self.zoneMap or not pos then
+    return nil
+  end
+  local minDist = math.huge
+  local closestGroupId
+  for k, zoneData in pairs(self.zoneMap) do
+    local blockCenter = zoneData:GetBlockCenter()
+    if not blockCenter or #blockCenter ~= 3 then
+      blockCenter = zoneData:GetCenter()
+    end
+    if blockCenter and #blockCenter == 3 then
+      local dx = blockCenter[1] - pos[1]
+      local dy = blockCenter[2] - pos[2]
+      local dz = blockCenter[3] - pos[3]
+      local dist = dx * dx + dy * dy + dz * dz
+      if minDist > dist then
+        minDist = dist
+        closestGroupId = zoneData:GetGroupId()
+      end
+    end
+  end
+  return closestGroupId
+end

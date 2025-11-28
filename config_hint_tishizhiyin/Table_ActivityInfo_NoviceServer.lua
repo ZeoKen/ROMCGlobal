@@ -16,6 +16,15 @@ Table_ActivityInfo = {
     Size = 9,
     HelpID = 35269,
     Share = 1
+  },
+  [46] = {
+    id = 46,
+    ActivityName = "地城邂逅",
+    PuzzlePic = "Puzzle_dicheng",
+    ActivityTitle = "地城邂逅",
+    Size = 9,
+    HelpID = 35261,
+    Share = 1
   }
 }
 Table_ActivityInfo_fields = {

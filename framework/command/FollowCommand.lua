@@ -122,6 +122,8 @@ function FollowCommand:TryFollow(targetId, noConfirm)
     if result.action == FollowFun.Action.EFOLLOWACTION_JUMPZONE then
       xdlog("同服 - 切线疲劳警告")
       MsgManager.DontAgainConfirmMsgByID(27016, callFollow)
+    elseif result.action == FollowFun.Action.EFOLLOWACTION_MAP_TO_MAP_POS then
+      ServiceNUserProxy.Instance:CallFollowerUser(teamMemberData.id)
     else
       callFollow()
     end

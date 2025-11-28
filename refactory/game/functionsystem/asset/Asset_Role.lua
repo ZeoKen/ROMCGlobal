@@ -1757,7 +1757,7 @@ function Asset_Role:GetFullAction(name, ignoreMount)
   local nameSuffix = self:GetActionSuffix()
   if not ignoreMount and self:MountDisplaying() then
     local mountID = self.partIDs[PartIndex.Mount] or 0
-    namePrefix = self:GetRidePrefix(mountID)
+    namePrefix = Asset_Role.GetRidePrefix(mountID)
   elseif nil == nameSuffix then
     return name
   end
@@ -1768,7 +1768,7 @@ function Asset_Role:GetFullAction(name, ignoreMount)
   return ActionUtility.BuildName(name, namePrefix, nameSuffix)
 end
 
-function Asset_Role:GetRidePrefix(mountID)
+function Asset_Role.GetRidePrefix(mountID)
   local config = Table_Mount[mountID]
   local interactConfig = Table_InteractMount[mountId]
   if config then
@@ -1818,7 +1818,7 @@ function Asset_Role:ConvertActionName(name, ignoreWeapon, ignoreMount)
   end
   local objMount = self.partObjs[PartIndex.Mount]
   local mountID = self.partIDs[PartIndex.Mount] or 0
-  local ridePrefix = self:GetRidePrefix(mountID)
+  local ridePrefix = Asset_Role.GetRidePrefix(mountID)
   if (not noMount or ignoreMount) and nil ~= objMount then
     local tempName = ActionUtility.BuildName(name, ridePrefix)
     if self.actionHideMount then

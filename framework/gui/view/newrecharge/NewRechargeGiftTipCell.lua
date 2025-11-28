@@ -341,7 +341,9 @@ function NewRechargeGiftTipCell:UpdateAttriContext()
 end
 
 function NewRechargeGiftTipCell:Exit()
-  self.m_itemListCtrl:Destroy()
+  if self.m_itemListCtrl then
+    self.m_itemListCtrl:Destroy()
+  end
   if self.itemNameLabelCtrl then
     self.itemNameLabelCtrl:Destroy()
   end

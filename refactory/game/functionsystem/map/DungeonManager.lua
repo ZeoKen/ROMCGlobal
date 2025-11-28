@@ -136,6 +136,14 @@ local PVERaidConfig = {
   PVE_SpaceTimeIllusion = {
     Type = FuBenCmd_pb.ERAIDTYPE_SPACETIME_ILLUSION,
     DungeonSpawner = PVEFactory.GetSpaceTimeIllusion
+  },
+  PVE_AbyssDragon = {
+    Type = FuBenCmd_pb.ERAIDTYPE_ABYSS_DRAGON,
+    DungeonSpawner = PVEFactory.GetAbyssDragon
+  },
+  PVE_FairyTaleRaid = {
+    Type = FuBenCmd_pb.ERAIDTYPE_FAIRY_TALE,
+    DungeonSpawner = PVEFactory.GetFairyTaleRaid
   }
 }
 local PVPRaidConfig = {
@@ -397,6 +405,10 @@ function DungeonManager:IsPVEMode_SpaceTimeIllusion()
   return self.currentDungeon ~= nil and self.currentDungeon.isSpaceTimeIllusionRaid or false
 end
 
+function DungeonManager:IsPVEMode_FairyTaleRaid()
+  return self.currentDungeon ~= nil and self.currentDungeon.isFairyTaleRaid or false
+end
+
 function DungeonManager:IsPveMode_Arena()
   local currentDungeon = self.currentDungeon
   if currentDungeon ~= nil then
@@ -471,6 +483,10 @@ end
 
 function DungeonManager:IsPVEMode_AstralRaid()
   return self.currentDungeon and self.currentDungeon.isAstralRaid or false
+end
+
+function DungeonManager:IsPVEMode_AbyssDragon()
+  return self.currentDungeon and self.currentDungeon.isAbyssDragonRaid or false
 end
 
 function DungeonManager:GetRaidType()

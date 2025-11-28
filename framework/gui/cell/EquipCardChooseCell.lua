@@ -30,7 +30,7 @@ function EquipCardChooseCell:SetData(data)
     self.itemName.text = data:GetName()
     self:SetUse(data.used == true)
     local descStr = ""
-    local bufferIds = data.cardInfo.BuffEffect.buff
+    local bufferIds = data:GetCardBufferIds()
     if bufferIds then
       for i = 1, #bufferIds do
         local str = ItemUtil.getBufferDescById(bufferIds[i])

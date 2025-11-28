@@ -138,7 +138,7 @@ function ServiceUserProxy:CallSelect(id)
   end
   local runtimePlatform = ApplicationInfo.GetRunPlatform()
   if runtimePlatform == RuntimePlatform.WindowsEditor or runtimePlatform == RuntimePlatform.OSXEditor then
-    self.deviceInfo = "editor"
+    self.deviceInfo = DeviceInfo.GetUserIp()
   end
   if not self.isReSelecting then
     self.isSelecting = true

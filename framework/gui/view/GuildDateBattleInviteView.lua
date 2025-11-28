@@ -128,11 +128,11 @@ function GuildDateBattleInviteView:FindObjs()
   self.texture = self:FindComponent("Texture", UITexture, right)
   self.offensiveSideLab = self:FindComponent("OffensiveSide", UILabel)
   self.defensiveSideLab = self:FindComponent("DefensiveSide", UILabel)
-  self.defChatBtn = self:FindGO("DefChatBtn", right)
+  self.defChatBtn = self:FindGO("DefChatBtn")
   self:AddClickEvent(self.defChatBtn, function()
     self:OnClickChatBtn(self.data.defLeaderId, self.data.defGuildName)
   end)
-  self.offChatBtn = self:FindGO("OffChatBtn", right)
+  self.offChatBtn = self:FindGO("OffChatBtn")
   self:AddClickEvent(self.offChatBtn, function()
     self:OnClickChatBtn(self.data.offLeaderId, self.data.atkGuildName)
   end)
@@ -160,10 +160,180 @@ function GuildDateBattleInviteView:FindObjs()
   _PictureManager:SetPVP(_LoseTextureName, self.loseTexture)
   _PictureManager:SetPVP(_LoseTextureName1, self.loseTexture1)
   self.determinedColorSuccess, self.determinedColor = ColorUtil.TryParseHexString(_determinedColor)
-  self.banCardTitle = self:FindComponent("BanCardTitle", UILabel)
+  self.banCardTitle = self:FindComponent("Fixed_BanCard", UILabel)
   self.banCardTitle.text = ZhString.GuildDateBattle_BanCardTitle
   self.banCardGO = self:FindGO("BanCardCombineCell")
   self.banCardCell = BanCardCombineCell.new(self.banCardGO)
+  self:InitGameMode()
+  self.uiTable = self:FindComponent("Fixed", UITable)
+end
+
+function GuildDateBattleInviteView:InitGameMode()
+  self.unDatedGameMode = self:FindComponent("UnDatedGameMode", UILabel)
+  self.unDatedGameMode.text = ZhString.GuildDateBattle_Record_GameMode
+  self.baseModeLab = self:FindComponent("Base_Mode", UILabel)
+  self.baseModeLab.text = ZhString.GuildDateBattle_Mode_Base
+  self.baseModeToggle = self:FindComponent("BaseToggle", UIToggle)
+  if self.baseModeToggle then
+    EventDelegate.Add(self.baseModeToggle.onChange, function()
+      if self.baseModeToggle.value then
+        self:OnBaseModeChoosed()
+      end
+    end)
+  end
+  self.deathModeLab = self:FindComponent("Death_Mode", UILabel)
+  self.deathModeLab.text = ZhString.GuildDateBattle_Mode_Death
+  self.deathModeDesc = self:FindComponent("Death_Mode_Desc", UILabel)
+  self.deathModeToggle = self:FindComponent("DeathToggle", UIToggle)
+  if self.deathModeToggle then
+    EventDelegate.Add(self.deathModeToggle.onChange, function()
+      if self.deathModeToggle.value then
+        self:OnDeathModeChoosed()
+      end
+    end)
+  end
+  self.bloodModeLab = self:FindComponent("Blood_Mode", UILabel)
+  self.bloodModeDesc = self:FindComponent("Blood_Mode_Desc", UILabel)
+  self.bloodModeLab.text = ZhString.GuildDateBattle_Mode_Blood
+  self.bloodModeToggle = self:FindComponent("BloodToggle", UIToggle)
+  if self.bloodModeToggle then
+    EventDelegate.Add(self.bloodModeToggle.onChange, function()
+      if self.bloodModeToggle.value then
+        self:OnBloodModeChoosed()
+      end
+    end)
+  end
+  self.datedGameMode = self:FindComponent("DatedGameMode", UILabel)
+  self.datedGameMode.text = ZhString.GuildDateBattle_Record_GameMode
+  self.datedGameMode_Base = self:FindGO("BaseMode", self.datedGameMode.gameObject)
+  self.datedGameMode_Base_Mode_Desc = self:FindComponent("Base_Mode_Desc", UILabel, self.datedGameMode_Base)
+  self.datedGameMode_Other = self:FindGO("OtherMode", self.datedGameMode.gameObject)
+  self.datedGameMode_Other_Mode_Desc = self:FindComponent("Other_Mode_Desc", UILabel, self.datedGameMode_Other)
+  self.currentSelectedMode = GuildCmd_pb.EGUILDDATEBATTLETYPE_BASE
+  local config = GameConfig.GuildDateBattle.type_rule
+  self.filterBloodCount = math.floor(config[GuildCmd_pb.EGUILDDATEBATTLETYPE_BLOOD][1])
+  self.filterDeathCount = math.floor(config[GuildCmd_pb.EGUILDDATEBATTLETYPE_DEATH][1])
+  self:InitDeathFilter()
+  self:InitBloodFilter()
+  self:UpdateModeUIGrayState()
+end
+
+function GuildDateBattleInviteView:OnBaseModeChoosed()
+  self.currentSelectedMode = GuildCmd_pb.EGUILDDATEBATTLETYPE_BASE
+  self:UpdateModeUIGrayState()
+end
+
+function GuildDateBattleInviteView:OnDeathModeChoosed()
+  self.currentSelectedMode = GuildCmd_pb.EGUILDDATEBATTLETYPE_DEATH
+  self:UpdateModeUIGrayState()
+end
+
+function GuildDateBattleInviteView:OnBloodModeChoosed()
+  self.currentSelectedMode = GuildCmd_pb.EGUILDDATEBATTLETYPE_BLOOD
+  self:UpdateModeUIGrayState()
+end
+
+function GuildDateBattleInviteView:InitDeathFilter()
+  self.deathPopupObj = self:FindGO("DeathPopupList")
+  self.deathlistContainer = self:FindGO("listContainer", self.deathPopupObj)
+  self.deathFilterColider = self.deathPopupObj:GetComponent(BoxCollider)
+  if not self.deathPopupList then
+    self.deathPopupList = PopupGridList.new(self.deathPopupObj, function(self, data)
+      if self.selectDeathTabData ~= data then
+        self.selectDeathTabData = data
+        self.filterDeathCount = math.floor(data.num)
+      end
+    end, self, self:FindComponent("DeathFilterPanel", UIPanel).depth + 2, nil, nil, true, 150, true)
+    self:SetDeathFilter()
+  end
+end
+
+local deathListPopUpItems = {}
+
+function GuildDateBattleInviteView:SetDeathFilter()
+  TableUtility.ArrayClear(deathListPopUpItems)
+  local options = GameConfig.GuildDateBattle.type_rule[GuildCmd_pb.EGUILDDATEBATTLETYPE_DEATH]
+  for i = 1, #options do
+    local data = {}
+    data.name = tostring(options[i])
+    data.num = options[i]
+    table.insert(deathListPopUpItems, data)
+  end
+  self.deathPopupList:SetData(deathListPopUpItems)
+end
+
+function GuildDateBattleInviteView:InitBloodFilter()
+  self.bloodPopupObj = self:FindGO("BloodPopupList")
+  self.bloodlistContainer = self:FindGO("listContainer", self.bloodPopupObj)
+  self.bloodFilterColider = self.bloodPopupObj:GetComponent(BoxCollider)
+  if not self.bloodPopupList then
+    self.bloodPopupList = PopupGridList.new(self.bloodPopupObj, function(self, data)
+      if self.selectBloodTabData ~= data then
+        self.selectBloodTabData = data
+        self.filterBloodCount = math.floor(data.num)
+      end
+    end, self, self:FindComponent("BloodFilterPanel", UIPanel).depth + 2, nil, nil, true, 150, true)
+    self:SetBloodFilter()
+  end
+end
+
+local bloodListPopUpItems = {}
+
+function GuildDateBattleInviteView:SetBloodFilter()
+  TableUtility.ArrayClear(bloodListPopUpItems)
+  local options = GameConfig.GuildDateBattle.type_rule[GuildCmd_pb.EGUILDDATEBATTLETYPE_BLOOD]
+  for i = 1, #options do
+    local data = {}
+    data.name = tostring(options[i])
+    data.num = options[i]
+    table.insert(bloodListPopUpItems, data)
+  end
+  self.bloodPopupList:SetData(bloodListPopUpItems)
+end
+
+function GuildDateBattleInviteView:SetUILabelGray(label, isGray)
+  if not label then
+    return
+  end
+  if isGray then
+    label.color = ColorUtil.NGUIGray
+  else
+    label.color = ColorUtil.PVPBlackLabel
+  end
+end
+
+function GuildDateBattleInviteView:UpdateModeUIGrayState()
+  if self.currentSelectedMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_DEATH then
+    self:SetUILabelGray(self.bloodModeLab, true)
+    self:SetUILabelGray(self.bloodModeDesc, true)
+    self:SetUILabelGray(self.deathPopupList.labCurrent, false)
+    self:SetUILabelGray(self.bloodPopupList.labCurrent, true)
+    self:SetUILabelGray(self.deathModeLab, false)
+    self:SetUILabelGray(self.deathModeDesc, false)
+    self:SetUILabelGray(self.baseModeLab, true)
+    self.bloodFilterColider.enabled = false
+    self.deathFilterColider.enabled = true
+  elseif self.currentSelectedMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_BLOOD then
+    self:SetUILabelGray(self.baseModeLab, true)
+    self:SetUILabelGray(self.deathModeLab, true)
+    self:SetUILabelGray(self.deathModeDesc, true)
+    self:SetUILabelGray(self.bloodPopupList.labCurrent, false)
+    self:SetUILabelGray(self.deathPopupList.labCurrent, true)
+    self:SetUILabelGray(self.bloodModeLab, false)
+    self:SetUILabelGray(self.bloodModeDesc, false)
+    self.deathFilterColider.enabled = false
+    self.bloodFilterColider.enabled = true
+  elseif self.currentSelectedMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_BASE then
+    self:SetUILabelGray(self.deathModeLab, true)
+    self:SetUILabelGray(self.deathModeDesc, true)
+    self:SetUILabelGray(self.bloodModeLab, true)
+    self:SetUILabelGray(self.bloodModeDesc, true)
+    self:SetUILabelGray(self.baseModeLab, false)
+    self:SetUILabelGray(self.bloodPopupList.labCurrent, true)
+    self:SetUILabelGray(self.deathPopupList.labCurrent, true)
+    self.deathFilterColider.enabled = false
+    self.bloodFilterColider.enabled = false
+  end
 end
 
 function GuildDateBattleInviteView:CombineBanCards()
@@ -303,7 +473,13 @@ function GuildDateBattleInviteView:OnClickInviteBtn()
   })
   self.data.stamp = math.floor(stamp)
   local ban_cards = self:CombineBanCards()
-  _DateProxy:CallInvite(def_guild_id, ban_cards)
+  local target_count = 0
+  if self.currentSelectedMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_DEATH then
+    target_count = self.filterDeathCount
+  elseif self.currentSelectedMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_BLOOD then
+    target_count = self.filterBloodCount
+  end
+  _DateProxy:CallInvite(def_guild_id, ban_cards, self.currentSelectedMode, target_count)
 end
 
 function GuildDateBattleInviteView:OnClickAgreeBtn()
@@ -436,6 +612,7 @@ function GuildDateBattleInviteView:SetData()
   self:SetByConfig()
   self:SetGuild()
   self:SetBanCard()
+  self.uiTable:Reposition()
 end
 
 function GuildDateBattleInviteView:SetBanCard()
@@ -479,10 +656,22 @@ function GuildDateBattleInviteView:SetState()
   self.fixed_DateArrow:SetActive(not isDated)
   self.fixed_ClockArrow:SetActive(not isDated)
   self.fixed_ModeArrow:SetActive(not isDated and self.baseModeOpen)
+  self.unDatedGameMode.gameObject:SetActive(not isDated)
+  self.datedGameMode.gameObject:SetActive(isDated)
   if isDated then
     self:Hide(self.inviteBtn)
     self:Show(self.dateRoot)
     self:SetDateState()
+    local gameMode = self.data:GetGameMode()
+    if gameMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_BASE then
+      self.datedGameMode_Base:SetActive(true)
+      self.datedGameMode_Other:SetActive(false)
+      self.datedGameMode_Base_Mode_Desc.text = self.data:GetDatedModeDesc()
+    elseif gameMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_DEATH or gameMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_BLOOD then
+      self.datedGameMode_Base:SetActive(false)
+      self.datedGameMode_Other:SetActive(true)
+      self.datedGameMode_Other_Mode_Desc.text = self.data:GetDatedModeDesc()
+    end
   else
     _DateProxy:QueryTargetGuild(self.data.defGuildid)
     self:Hide(self.dateRoot)

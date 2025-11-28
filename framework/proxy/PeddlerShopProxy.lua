@@ -14,9 +14,8 @@ function PeddlerShopProxy:ctor(proxyName, data)
   end
 end
 
-function PeddlerShopProxy:QueryShopConfig()
-  ShopProxy.Instance:CallQueryShopConfig(MysticalShopType, MysticalShopId)
-  ShopProxy.Instance:CallQueryShopConfig(shopType, shopId)
+function PeddlerShopProxy:QueryShopConfig(force)
+  ShopProxy.Instance:CallQueryShopConfig(shopType, shopId, force)
 end
 
 function PeddlerShopProxy:UpdateShopConfig(data)
@@ -95,6 +94,62 @@ end
 
 function PeddlerShopProxy:CheckOpen()
   return self.shopList and #self.shopList > 0 or false
+end
+
+function PeddlerShopProxy:CheckShopOpen()
+  local extraBonusBatch = self:CheckExtraBonusActivity()
+  if 0 < extraBonusBatch then
+    return true, extraBonusBatch
+  end
+  return self:CheckOpen()
+end
+
+function PeddlerShopProxy:CheckExtraBonusActivity()
+  if not Table_ShopExtraBonus then
+    return 0
+  end
+  local currentTime = ServerTime.CurServerTime() / 1000
+  local isTFBranch = EnvChannel.IsTFBranch()
+  for id, config in pairs(Table_ShopExtraBonus) do
+    local addDateStr, removeDateStr
+    if isTFBranch then
+      addDateStr = config.TFAddDate
+      removeDateStr = config.TFRemoveDate
+    else
+      addDateStr = config.AddDate
+      removeDateStr = config.RemoveDate
+    end
+    if addDateStr and removeDateStr then
+      local addTime = self:ParseDateStringToRefreshTime(addDateStr)
+      local removeTime = self:ParseDateStringToRefreshTime(removeDateStr)
+      if addTime and removeTime and currentTime >= addTime and currentTime <= removeTime then
+        return config.id
+      end
+    end
+  end
+  return 0
+end
+
+function PeddlerShopProxy:ParseDateStringToRefreshTime(dateStr)
+  if not dateStr then
+    return nil
+  end
+  local year, month, day = dateStr:match("(%d+)/(%d+)/(%d+)")
+  if not (year and month) or not day then
+    return nil
+  end
+  year = tonumber(year)
+  month = tonumber(month)
+  day = tonumber(day)
+  local targetTime = os.time({
+    year = year,
+    month = month,
+    day = day,
+    hour = 5,
+    min = 0,
+    sec = 0
+  })
+  return targetTime
 end
 
 local getTime = function(delta)
@@ -192,4 +247,213 @@ end
 
 function PeddlerShopProxy:GetShopDataByTypeId(id)
   return ShopProxy.Instance:GetShopItemDataByTypeId(MysticalShopType, MysticalShopId, id)
+end
+
+function PeddlerShopProxy:UpdateExtraBonusData(data)
+  xdlog("PeddlerShopProxy:UpdateExtraBonusData", TableUtil.Print(data))
+  if not data then
+    return
+  end
+  self.extraBonusData = {
+    batch = data.batch or 0,
+    buyTimes = data.buytimes or 0,
+    resetTimes = data.resettimes or 0,
+    rewardIds = data.rewardids or {}
+  }
+  local tableData = Table_ShopExtraBonus[data.batch or 0]
+  if tableData then
+    self.extraBonusConfig = tableData
+  else
+    xdlog("PeddlerShopProxy:UpdateExtraBonusData", "找不到额外奖励配置", data.batch)
+  end
+end
+
+function PeddlerShopProxy:OnExtraBonusReset(data)
+  xdlog("PeddlerShopProxy:OnExtraBonusReset", TableUtil.Print(data))
+  if self.extraBonusData and data.success then
+    self.extraBonusData.resetTimes = (self.extraBonusData.resetTimes or 0) + 1
+    self:QueryShopConfig(true)
+  end
+end
+
+function PeddlerShopProxy:OnExtraBonusReward(data)
+  xdlog("PeddlerShopProxy:OnExtraBonusReward", TableUtil.Print(data))
+  if self.extraBonusData and data.rewardid then
+    if not self.extraBonusData.rewardIds then
+      self.extraBonusData.rewardIds = {}
+    end
+    table.insert(self.extraBonusData.rewardIds, data.rewardid)
+  end
+end
+
+function PeddlerShopProxy:GetExtraBonusData()
+  return self.extraBonusData
+end
+
+function PeddlerShopProxy:GetExtraBonusConfig()
+  return self.extraBonusConfig
+end
+
+function PeddlerShopProxy:IsExtraBonusRewardReceived(rewardId)
+  if not self.extraBonusData or not self.extraBonusData.rewardIds then
+    return false
+  end
+  for _, receivedId in ipairs(self.extraBonusData.rewardIds) do
+    if receivedId == rewardId then
+      return true
+    end
+  end
+  return false
+end
+
+function PeddlerShopProxy:IsExtraBonusRewardReachable(rewardId)
+  if not self.extraBonusData then
+    return false
+  end
+  local currentBuyTimes = self.extraBonusData.buyTimes or 0
+  return rewardId <= currentBuyTimes
+end
+
+function PeddlerShopProxy:IsAllExtraBonusRewardsReceived()
+  if not self.extraBonusConfig or not self.extraBonusConfig.ExtraBonus then
+    return true
+  end
+  for rewardId, _ in pairs(self.extraBonusConfig.ExtraBonus) do
+    if not self:IsExtraBonusRewardReceived(rewardId) then
+      return false
+    end
+  end
+  return true
+end
+
+function PeddlerShopProxy:HasResetTimesLeft()
+  if not self.extraBonusData or not self.extraBonusConfig then
+    return false
+  end
+  local currentResetTimes = self.extraBonusData.resetTimes or 0
+  local maxResetTimes = self.extraBonusConfig.ResetTimesLimit or 0
+  return currentResetTimes < maxResetTimes
+end
+
+function PeddlerShopProxy:IsAllShopItemsSoldOut()
+  if not (self.extraBonusConfig and self.extraBonusConfig.ShopID) or not self.allGoodsList then
+    return false
+  end
+  for _, shopId in ipairs(self.extraBonusConfig.ShopID) do
+    local shopItemData = self:GetPeddlerShopItemData(shopId)
+    if shopItemData then
+      local canBuyCount, limitType = HappyShopProxy.Instance:GetCanBuyCount(shopItemData)
+      if 0 < canBuyCount then
+        return false
+      end
+    else
+      xdlog("PeddlerShopProxy:IsAllShopItemsSoldOut", "找不到商品数据", shopId)
+    end
+  end
+  return true
+end
+
+function PeddlerShopProxy:CanResetExtraBonus()
+  return self:IsAllShopItemsSoldOut() and self:HasResetTimesLeft()
+end
+
+function PeddlerShopProxy:GetExtraBonusDisplayData()
+  if not (self.extraBonusConfig and self.extraBonusConfig.ExtraBonus) or not self.extraBonusData then
+    return {}
+  end
+  local displayData = {}
+  local sortedRewards = {}
+  for rewardId, rewardInfo in pairs(self.extraBonusConfig.ExtraBonus) do
+    table.insert(sortedRewards, {id = rewardId, info = rewardInfo})
+  end
+  table.sort(sortedRewards, function(a, b)
+    return a.id < b.id
+  end)
+  local currentBuyTimes = self.extraBonusData.buyTimes or 0
+  local previousTarget = 0
+  for i, reward in ipairs(sortedRewards) do
+    local targetAmount = reward.id
+    local rewardItemId = reward.info[1] or 0
+    local rewardCount = reward.info[2] or 0
+    local status = "pending"
+    if self:IsExtraBonusRewardReceived(targetAmount) then
+      status = "received"
+    elseif self:IsExtraBonusRewardReachable(targetAmount) then
+      status = "complete"
+    end
+    local progressCurrent = math.max(0, currentBuyTimes - previousTarget)
+    local progressTarget = targetAmount - previousTarget
+    progressCurrent = math.min(progressCurrent, progressTarget)
+    local cellData = {
+      targetAmount = targetAmount,
+      currentAmount = currentBuyTimes,
+      rewardId = rewardItemId,
+      rewardCount = rewardCount,
+      status = status,
+      progressCurrent = progressCurrent,
+      progressTarget = progressTarget,
+      index = i
+    }
+    table.insert(displayData, cellData)
+    previousTarget = targetAmount
+  end
+  return displayData
+end
+
+function PeddlerShopProxy:QueryExtraBonusData()
+  ServiceSessionShopProxy.Instance:CallExtraBonusQueryShopCmd()
+end
+
+function PeddlerShopProxy:RequestResetExtraBonus()
+  if not self:CanResetExtraBonus() then
+    xdlog("PeddlerShopProxy:RequestResetExtraBonus", "不满足重置条件")
+    return
+  end
+  if self.extraBonusConfig then
+    local batch = self.extraBonusConfig.id or 0
+    ServiceSessionShopProxy.Instance:CallExtraBonusResetShopCmd(batch)
+  end
+end
+
+function PeddlerShopProxy:RequestReceiveExtraBonus(rewardId)
+  if not self:IsExtraBonusRewardReachable(rewardId) or self:IsExtraBonusRewardReceived(rewardId) then
+    xdlog("PeddlerShopProxy:RequestReceiveExtraBonus", "奖励不可领取", rewardId)
+    return
+  end
+  if self.extraBonusConfig then
+    local batch = self.extraBonusConfig.id or 0
+    ServiceSessionShopProxy.Instance:CallExtraBonusRewardShopCmd(rewardId)
+  end
+end
+
+function PeddlerShopProxy:OnShopItemBought(data)
+  if not data or not data.success then
+    return
+  end
+  if not self.extraBonusConfig or not self.extraBonusConfig.ShopID then
+    return
+  end
+  local shopId = data.id
+  local isInShopIdList = false
+  for _, configShopId in ipairs(self.extraBonusConfig.ShopID) do
+    if shopId == configShopId then
+      isInShopIdList = true
+      break
+    end
+  end
+  if not isInShopIdList then
+    return
+  end
+  if not self.extraBonusData then
+    self.extraBonusData = {
+      batch = self.extraBonusConfig.id or 0,
+      buyTimes = 0,
+      resetTimes = 0,
+      rewardIds = {}
+    }
+  end
+  local count = data.count or 0
+  self.extraBonusData.buyTimes = (self.extraBonusData.buyTimes or 0) + count
+  xdlog("PeddlerShopProxy:OnShopItemBought", "更新buyTimes", "shopId:", shopId, "count:", count, "新的buyTimes:", self.extraBonusData.buyTimes)
+  EventManager.Me():PassEvent(ServiceEvent.SessionShopBuyShopItem, data)
 end

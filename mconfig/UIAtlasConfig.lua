@@ -257,6 +257,27 @@ UIAtlasConfig.IconAtlas = {
     [4] = "GUI/atlas/preferb/Skill_yxzy",
     [5] = "GUI/atlas/preferb/Skill_yxzy3"
   },
+  SkillProfess_80 = {
+    [1] = "GUI/atlas/preferb/Skill_1",
+    [2] = "GUI/atlas/preferb/Skill_2",
+    [3] = "GUI/atlas/preferb/Skill_buff",
+    [4] = "GUI/atlas/preferb/Skill_yxzy",
+    [5] = "GUI/atlas/preferb/Skill_yxzy3"
+  },
+  SkillProfess_81 = {
+    [1] = "GUI/atlas/preferb/Skill_1",
+    [2] = "GUI/atlas/preferb/Skill_2",
+    [3] = "GUI/atlas/preferb/Skill_buff",
+    [4] = "GUI/atlas/preferb/Skill_yxzy",
+    [5] = "GUI/atlas/preferb/Skill_yxzy3"
+  },
+  SkillProfess_82 = {
+    [1] = "GUI/atlas/preferb/Skill_1",
+    [2] = "GUI/atlas/preferb/Skill_2",
+    [3] = "GUI/atlas/preferb/Skill_buff",
+    [4] = "GUI/atlas/preferb/Skill_yxzy",
+    [5] = "GUI/atlas/preferb/Skill_yxzy3"
+  },
   Action = {
     [1] = "GUI/atlas/preferb/action"
   },
@@ -319,7 +340,8 @@ UIAtlasConfig.IconAtlas = {
     [16] = "GUI/atlas/preferb/Assesories_Front_16",
     [17] = "GUI/atlas/preferb/Assesories_Front_17",
     [18] = "GUI/atlas/preferb/Assesories_Front_18",
-    [19] = "GUI/atlas/preferb/Assesories_Front_19"
+    [19] = "GUI/atlas/preferb/Assesories_Front_19",
+    [20] = "GUI/atlas/preferb/Assesories_Front_20"
   },
   HeadAccessoryBack = {
     [1] = "GUI/atlas/preferb/Assesories_Back_1",
@@ -327,7 +349,8 @@ UIAtlasConfig.IconAtlas = {
     [3] = "GUI/atlas/preferb/Assesories_Back_3",
     [4] = "GUI/atlas/preferb/Assesories_Back_4",
     [5] = "GUI/atlas/preferb/Assesories_Back_5",
-    [6] = "GUI/atlas/preferb/Assesories_Back_6"
+    [6] = "GUI/atlas/preferb/Assesories_Back_6",
+    [7] = "GUI/atlas/preferb/Assesories_Back_7"
   },
   HeadFaceMouth = {
     [1] = "GUI/atlas/preferb/Aface_1",

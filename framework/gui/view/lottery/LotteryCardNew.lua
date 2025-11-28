@@ -196,18 +196,12 @@ function LotteryCardNew:CallLottery(price, times, freecnt)
   local _callLottery = function()
     self.container:CallLottery(price, nil, nil, times, freecnt)
   end
+  if BranchMgr.IsJapan() then
+    _callLottery()
+    return
+  end
   local _confirmHandler = function()
     self.container:OpenLotteryPray()
-  end
-  local data = LotteryProxy.Instance:GetCardPrayData(self.lotteryType)
-  local card_id = data:GetPrayInfo()
-  if BranchMgr.IsJapan() then
-    if card_id == 0 then
-      MsgManager.ConfirmMsgByID(43632, _confirmHandler, _callLottery)
-    else
-      _callLottery()
-    end
-    return
   end
   local _cancelHandler = function()
     local dont = LocalSaveProxy.Instance:GetDontShowAgain(_AgainConfirmMsgID)
@@ -219,6 +213,8 @@ function LotteryCardNew:CallLottery(price, times, freecnt)
     end
     _callLottery()
   end
+  local data = LotteryProxy.Instance:GetCardPrayData(self.lotteryType)
+  local card_id = data and data:GetPrayInfo() or 0
   if card_id == 0 then
     MsgManager.ConfirmMsgByID(43632, _confirmHandler, _cancelHandler)
   else

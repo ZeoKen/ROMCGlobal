@@ -1162,7 +1162,7 @@ function SkillTip:_AskSetMultiSkillOption(opt, selectList, param1)
     needAsk = true
   end
   if needAsk then
-    _SkillOptionManager:AskSetMultiSkillOption(self.funcOptions_opt, id, selectList, nil, nil, param1)
+    _SkillOptionManager:AskSetMultiSkillOption(self.funcOptions_opt or opt, id, selectList, nil, nil, param1)
   end
 end
 

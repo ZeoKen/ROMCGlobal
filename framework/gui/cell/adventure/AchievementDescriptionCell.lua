@@ -390,10 +390,19 @@ function AchievementDescriptionCell:SetRewardData()
   local attrStr = ""
   for k, v in pairs(attrRewardList) do
     local prop = Game.Config_PropName[k]
+    local attrValue = v
+    local unit = ""
+    if prop and prop.IsPercent == 1 then
+      attrValue = v * 100
+      unit = "%"
+    end
+    if attrValue == math.floor(attrValue) then
+      attrValue = math.floor(attrValue)
+    end
     if attrStr == "" then
-      attrStr = attrStr .. k .. "+" .. v
+      attrStr = attrStr .. k .. "+" .. attrValue .. unit
     else
-      attrStr = attrStr .. "\n" .. k .. "+" .. v
+      attrStr = attrStr .. "\n" .. k .. "+" .. attrValue .. unit
     end
   end
   if attrStr ~= "" then

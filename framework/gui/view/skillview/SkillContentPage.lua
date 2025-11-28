@@ -464,6 +464,11 @@ function SkillContentPage:ShowCommon()
   self:Hide(self.professBtnGrid.gameObject)
   self:SetEditMode(false)
   self.commonGrid:Reposition()
+  if self.inheritSkillGO.activeSelf then
+    local x = LuaGameObject.GetLocalPositionGO(self.inheritSkillGO)
+    self.comContentUSV:MoveRelative(LuaVector3(-x, 0, 0))
+    self.comContentUSV:RestrictWithinBounds(true)
+  end
 end
 
 function SkillContentPage:ShowProfess()
@@ -503,9 +508,6 @@ function SkillContentPage:SetCommonSkills()
     if self.inheritSkillGO.activeSelf then
       self.inheritSkillGO.transform.localPosition = pos
       pos.x = pos.x + self.inheritSperate.transform.localPosition.x + 50
-      local x = LuaGameObject.GetLocalPositionGO(self.inheritSkillGO)
-      self.comContentUSV:MoveRelative(LuaVector3(-x, 0, 0))
-      self.comContentUSV:RestrictWithinBounds(true)
     end
     self.commonSkillGO.transform.localPosition = pos
     self.commonList:ResetDatas(filteredSkill, nil, true)
@@ -1066,11 +1068,13 @@ end
 function SkillContentPage:SetInheritSkills()
   local loadInheritSkills = InheritSkillProxy.Instance:GetLoadSkills()
   local count = #loadInheritSkills
-  self.inheritSkillGO:SetActive(0 < count)
+  local menuUnlock = FunctionUnLockFunc.Me():CheckCanOpen(19390) or false
+  self.inheritSkillGO:SetActive(menuUnlock)
   self.inheritSkillList:ResetDatas(loadInheritSkills)
   self.inheritGrid.repositionNow = true
-  self.inheritSperate:SetActive(0 < count)
+  self.inheritSperate:SetActive(menuUnlock)
   local x, y, z = LuaGameObject.GetLocalPositionGO(self.inheritSperate)
+  count = math.max(count, 1)
   if 0 < count then
     x = self.inheritGrid.transform.localPosition.x + ((count - 1) // 3 + 1) * self.inheritGrid.cellWidth
   else
@@ -1080,7 +1084,11 @@ function SkillContentPage:SetInheritSkills()
 end
 
 function SkillContentPage:OnInheritSkillGotoBtnClick()
-  MsgManager.DontAgainConfirmMsgByID(43614, function()
-    FuncShortCutFunc.Me():CallByID(8362)
-  end)
+  if not FunctionUnLockFunc.Me():CheckCanOpen(19390) then
+    MsgManager.ShowMsgByID(43661)
+    return
+  end
+  self:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.InheritSkillView
+  })
 end

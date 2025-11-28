@@ -910,6 +910,26 @@ function ProfessionNewPage:UpdateClassProcess(classid)
       }
       result[data.order] = data
     end
+    local initPoint = GameConfig.SkillInherit and GameConfig.SkillInherit.InitPointMax or 0
+    local extendPointCost = GameConfig.SkillInherit and GameConfig.SkillInherit.PointExtendCost
+    local max = initPoint
+    if extendPointCost then
+      max = max + #extendPointCost
+    end
+    local loadSkills = InheritSkillProxy.Instance:GetLoadSkills()
+    local costPoints = 0
+    for i = 1, #loadSkills do
+      local skill = loadSkills[i]
+      costPoints = costPoints + skill:GetCostPoint()
+    end
+    data = {
+      order = 9,
+      curValue = costPoints,
+      maxValue = max
+    }
+    data.clickFunc = self.OnInheritSkillBtnClick
+    data.owner = self
+    result[data.order] = data
   elseif state == 3 or state == 1 then
     local typeBranch = ProfessionProxy.GetTypeBranchFromProf(classid)
     local _BranchInfoSaveProxy = BranchInfoSaveProxy.Instance
@@ -1046,6 +1066,29 @@ function ProfessionNewPage:UpdateClassProcess(classid)
         }
         result[7] = data
       end
+      local initPoint = GameConfig.SkillInherit and GameConfig.SkillInherit.InitPointMax or 0
+      local extendPointCost = GameConfig.SkillInherit and GameConfig.SkillInherit.PointExtendCost
+      local max = initPoint
+      if extendPointCost then
+        max = max + #extendPointCost
+      end
+      local loadSkills = _BranchInfoSaveProxy:GetInheritSkillLoadSkills(typeBranch)
+      local costPoints = 0
+      for i = 1, #loadSkills do
+        local skill = loadSkills[i]
+        costPoints = costPoints + skill:GetCostPoint()
+      end
+      data = {
+        order = 9,
+        curValue = costPoints,
+        maxValue = max
+      }
+      data.clickFunc = self.OnInheritSkillBtnClick
+      data.owner = self
+      data.funcParams = {
+        branchid = ProfessionProxy.GetTypeBranchFromProf(classid)
+      }
+      result[data.order] = data
     end
   end
   self.container:UpdateClassProcess(result, classid ~= MyselfProxy.Instance:GetMyProfession() and 1 or nil)
@@ -1544,6 +1587,27 @@ function ProfessionNewPage:HandleUpdateBranchInfo(note)
         end
       end
     end
+  end
+end
+
+function ProfessionNewPage:OnInheritSkillBtnClick(params)
+  if not FunctionUnLockFunc.Me():CheckCanOpen(19390) then
+    MsgManager.ShowMsgByID(43661)
+    return
+  end
+  local branchid = params and params.branchid
+  if not branchid then
+    GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+      view = PanelConfig.InheritSkillView
+    })
+  else
+    GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+      view = PanelConfig.InheritSkillView,
+      viewdata = {
+        saveId = branchid,
+        saveType = SaveInfoEnum.Branch
+      }
+    })
   end
 end
 

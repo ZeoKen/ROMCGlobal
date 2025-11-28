@@ -1611,8 +1611,6 @@ function FunctionQuest:handleAutoTrigger(questData)
     end
     local curImageId = ServicePlayerProxy.Instance:GetCurMapImageId() or 0
     self.triggerCheck:AddCallBackCheck(questData.id, questData.map, questData.pos, questData.params.distance, qData, nil, enterFunc, exitFunc, curImageId, qData.params.rectPos, qData.params.waittime)
-  elseif questData.questDataStepType == "abyss_stage" then
-    AbyssFakeDragonProxy.Instance:SetFakeDragonStepInfo(questData)
   end
 end
 

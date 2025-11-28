@@ -539,3 +539,21 @@ function GroupRaidProxy:GetAstralRecordFilter()
   end
   return filterconfig
 end
+
+function GroupRaidProxy:GetFairyTaleRecordFilter()
+  local raidId = Game.MapManager:GetRaidID()
+  local raidConfig = Table_MapRaid[raidId]
+  local name = raidConfig and raidConfig.NameZh or ""
+  local filterconfig = {}
+  if self.elementRecord then
+    for i = 1, #self.elementRecord do
+      local bossIndex = self.elementRecord[i].boss_index
+      if GroupRaidTeamShowData.ElementTotalIndex == bossIndex then
+        table.insert(filterconfig, string.format(filterformat, i, ZhString.GroupRaidProxy_Total))
+      else
+        table.insert(filterconfig, string.format(filterformat, i, name))
+      end
+    end
+  end
+  return filterconfig
+end

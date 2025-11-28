@@ -199,19 +199,21 @@ function EquipRecoverView:InitView()
   self.chooseBord:Hide()
   self.targetCell = BaseItemCell.new(self.targetBtn)
   self.targetCell:AddEventListener(MouseEvent.MouseClick, self.ClickTargetCell, self)
-  local recoverGrid = self:FindComponent("RecoverGrid", UITable)
-  self.recoverCtl = UIGridListCtrl.new(recoverGrid, EquipRecoverCell, "EquipRecoverCell")
+  self.recoverGrid = self:FindComponent("RecoverGrid", UITable)
+  self.recoverCtl = UIGridListCtrl.new(self.recoverGrid, EquipRecoverCell, "EquipRecoverCell")
   self.recoverCtl:AddEventListener(EquipRecoverEvent.Select, self.HandleSelect, self)
 end
 
 function EquipRecoverView:ChooseItem(itemData)
   self.nowdata = itemData
   self.targetCell:SetData(itemData)
-  self.recoverCtl:ResetDatas(EquipRecoverProxy.Instance:GetRecoverToggle(itemData))
   self.chooseBord:Hide()
   self.targetBtn:SetActive(itemData ~= nil)
   self.addItemButton:SetActive(itemData == nil)
   self.materialPart:SetActive(itemData ~= nil)
+  self.recoverCtl:ResetDatas(EquipRecoverProxy.Instance:GetRecoverToggle(itemData))
+  self.recoverGrid:Reposition()
+  self:HandleSelect()
 end
 
 function EquipRecoverView:ClickTargetCell()

@@ -124,16 +124,27 @@ function DailyLoginProxy:UpdateRedtips()
     return
   end
   local config = GameConfig.FestivalSignin
-  local redtipID
+  local redtipID = SceneTip_pb.EREDSYS_SIGNACTIVITY_NORMAL
+  local addSubTipIDs = {}
+  local removeSubTipIDs = {}
+  local hasMainRedTip = false
   for k, v in pairs(self.hotPotIcon) do
-    if config[k] and config[k].Newbie and config[k].Newbie == 1 then
-      redtipID = SceneTip_pb.EREDSYS_SIGNACTIVITY_NOVICE
-      if v.redtip then
-        RedTipProxy.Instance:UpdateRedTip(redtipID)
-      else
-        RedTipProxy.Instance:RemoveWholeTip(redtipID)
-      end
+    if config[k] and (not config[k].Newbie or config[k].Newbie ~= 1) and v.redtip then
+      table.insert(addSubTipIDs, k)
+      hasMainRedTip = true
+    else
+      table.insert(removeSubTipIDs, k)
     end
+  end
+  if hasMainRedTip then
+    if 0 < #removeSubTipIDs then
+      RedTipProxy.Instance:RemoveRedTip(redtipID, removeSubTipIDs)
+    end
+    if 0 < #addSubTipIDs then
+      RedTipProxy.Instance:UpdateRedTip(redtipID, addSubTipIDs)
+    end
+  else
+    RedTipProxy.Instance:RemoveWholeTip(redtipID)
   end
 end
 

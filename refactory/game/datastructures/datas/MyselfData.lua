@@ -1848,3 +1848,7 @@ function MyselfData:NoMove()
   end
   return MyselfData.super.NoMove(self)
 end
+
+function MyselfData:GetManualLevel()
+  return AdventureDataProxy.Instance:getManualLevel() or 0
+end

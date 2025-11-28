@@ -312,6 +312,7 @@ end
 
 function EnchantNewView:OnEnchant(data)
   self.enchantComplete = true
+  self.curChooseResultID = nil
 end
 
 function EnchantNewView:OnClickTargetCell()

@@ -182,7 +182,7 @@ function BokiProxy:InitStatic()
     end
     if #v.SpecBuff > 0 then
       local specBuffTable = {
-        desc = Table_Buffer[v.SpecBuff[1]].Dsc,
+        desc = OverSea.LangManager.Instance():GetLangByKey(Table_Buffer[v.SpecBuff[1]].Dsc),
         lv = v.Level
       }
       table.insert(self.specBuff[v.Pos], specBuffTable)
@@ -453,7 +453,7 @@ function BokiEquipData:ctor(pos, lv, unlock)
   local nextLvID = GetEquipID(pos, lv + 1)
   self.nextLvStaticData = Table_BoKiEquip[nextLvID]
   local specBuff = self:GetNewSpecBuff()
-  self.newSpecDesc = specBuff and Table_Buffer[specBuff].Dsc
+  self.newSpecDesc = specBuff and Table_Buffer[specBuff] and OverSea.LangManager.Instance():GetLangByKey(Table_Buffer[specBuff].Dsc)
   self.itemId = self.staticData.ItemID
   if nil == self.itemId or nil == Table_Item[self.itemId] then
     redlog("Table_BoKiEquip ItemID 配置错误 ，id: ", self.BoKiEquipId)

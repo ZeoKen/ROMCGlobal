@@ -3773,6 +3773,13 @@ PanelConfig = {
     class = "TicketPreview",
     hideCollider = true
   },
+  GiftDetailPreview = {
+    id = 1752,
+    name = "礼包详情预览界面",
+    desc = "",
+    prefab = "TicketPreview",
+    class = "GiftDetailPreview"
+  },
   ExpRaidMapView = {
     id = 1761,
     tab = nil,
@@ -5232,6 +5239,14 @@ PanelConfig = {
     prefab = "EnchantTransferSubView",
     class = "EnchantTransferSubView"
   },
+  RecallIntegrationView = {
+    id = 2970,
+    tab = nil,
+    name = "常驻回归活动整合",
+    desc = "",
+    prefab = "ActivityIntegrationView",
+    class = "RecallIntegrationView"
+  },
   LotteryDollView = {
     id = 3001,
     tab = nil,
@@ -5434,6 +5449,14 @@ PanelConfig = {
     desc = "",
     prefab = "UniqueConfirmView_Hotfix",
     class = "UniqueConfirmView_Hotfix"
+  },
+  RecallWelcomePopup = {
+    id = 3100,
+    tab = nil,
+    name = "回归欢迎弹窗",
+    desc = "",
+    prefab = "RecallWelcomePopup",
+    class = "RecallWelcomePopup"
   },
   DisneyActivityOverview = {
     id = 3111,
@@ -6550,6 +6573,38 @@ PanelConfig = {
     desc = "",
     prefab = "RoguelikeSkillHandbookView",
     class = "RoguelikeSkillHandbookView"
+  },
+  FairyTaleRaidRankPopup = {
+    id = 30060,
+    tab = nil,
+    name = "童话王国排名",
+    desc = "",
+    prefab = "FairyTaleRaidRankPopup",
+    class = "FairyTaleRaidRankPopup"
+  },
+  FairyTaleStaticsView = {
+    id = 30061,
+    tab = nil,
+    name = "童话王国统计",
+    desc = "",
+    prefab = "RaidStatistics",
+    class = "FairyTaleStaticsView"
+  },
+  RecallMvpCardSelfChooseView = {
+    id = 30071,
+    tab = nil,
+    name = "回忆MVP卡牌合成选择",
+    desc = "",
+    prefab = "RecallMvpCardSelfChooseView",
+    class = "RecallMvpCardSelfChooseView"
+  },
+  MemoryEquipRewardPopUp = {
+    id = 30080,
+    tab = nil,
+    name = "记忆装备奖励",
+    desc = "",
+    prefab = "MemoryEquipRewardPopUp",
+    class = "MemoryEquipRewardPopUp"
   },
   FaceBookFavPanel = {
     id = 100001,

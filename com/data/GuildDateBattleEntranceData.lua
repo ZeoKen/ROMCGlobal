@@ -14,6 +14,9 @@ function GuildDateBattleEntranceData:SetEntrance(srv_data)
   self.def_member_count = srv_data.def_member_count
   self.hp = srv_data.boss_hp or 1000
   self.perfect_end_time = GvGPerfectTimeInfo.new(srv_data.perfect_time)
+  self.death_count = srv_data.death_count or 0
+  self.atk_kill_count = srv_data.atk_kill_count or 0
+  self.def_kill_count = srv_data.def_kill_count or 0
 end
 
 function GuildDateBattleEntranceData:GetEndTime()
@@ -54,4 +57,12 @@ end
 
 function GuildDateBattleEntranceData:GetBanCardIds()
   return self.recordData:GetBanCardIds(true)
+end
+
+function GuildDateBattleEntranceData:GetGameMode()
+  return self.recordData:GetGameMode()
+end
+
+function GuildDateBattleEntranceData:GetDatedModeDesc()
+  return self.recordData:GetDatedModeDesc()
 end

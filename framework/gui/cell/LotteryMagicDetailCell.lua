@@ -27,18 +27,22 @@ function LotteryMagicDetailCell:SetData(data)
     LotteryMagicDetailCell.super.SetData(self, data)
   end
   self.data = data
-  self:_setRate(self.rate)
-  self:_setRate(self.magicLotteryRate)
+  self:SetRate(self.rate)
+  self:SetRate(self.magicLotteryRate)
   self:UpdateDressLab()
 end
 
-function LotteryMagicDetailCell:_setRate(lab)
+function LotteryMagicDetailCell:GetRateShowConfig()
+  return GameConfig.Lottery.MagicLotteryRateShow
+end
+
+function LotteryMagicDetailCell:SetRate(lab)
   if not lab then
     return
   end
   if not self.data then
     lab.text = ""
   else
-    lab.text = GameConfig.Lottery.MagicLotteryRateShow == 1 and self.data:GetUIRate() or ""
+    lab.text = self:GetRateShowConfig() == 1 and self.data:GetUIRate() or ""
   end
 end

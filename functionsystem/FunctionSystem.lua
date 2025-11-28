@@ -11,16 +11,16 @@ FunctionSystem = {
   extraInputListener = DelegateUtil.new()
 }
 
-function FunctionSystem.InterruptMyself(ignoreSkill)
+function FunctionSystem.InterruptMyself(ignoreSkill, ignoreMove)
   local myself = Game.Myself
   if myself == nil or myself:IsDead() then
     return false
   end
   local inputManager = InputManager.Instance
-  if nil ~= inputManager then
+  if nil ~= inputManager and not ignoreMove then
     inputManager:Interrupt()
   end
-  myself.ai:TryBreakAll(UnityTime, UnityDeltaTime, myself, ignoreSkill)
+  myself.ai:TryBreakAll(UnityTime, UnityDeltaTime, myself, ignoreSkill, ignoreMove)
   return true
 end
 
@@ -197,3 +197,4 @@ autoImport("FunctionTrainEscort")
 autoImport("FunctionAnonymous")
 autoImport("FunctionAstral")
 autoImport("FunctionAbyssLake")
+autoImport("FunctionAbyssDragon")

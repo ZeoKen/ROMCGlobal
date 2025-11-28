@@ -1,52 +1,53 @@
 ProtoFileList = {
-  "xCmd",
-  "ClientPrivateChatIO",
   "ProtoCommon",
-  "Var",
   "descriptor",
+  "ClientPrivateChatIO",
+  "Var",
+  "xCmd",
+  "SceneFood",
+  "SceneAugury",
+  "InfiniteTower",
+  "FamilyCmd",
+  "Tutor",
+  "SessionWeather",
   "PuzzleCmd",
   "PveCard",
-  "NoviceNotebook",
-  "InfiniteTower",
-  "SessionWeather",
-  "UserShow",
-  "Tutor",
-  "SceneTip",
   "QueueEnterCmd",
-  "SceneAugury",
-  "SceneFood",
-  "FamilyCmd",
-  "Authorize",
-  "ActMiniRoCmd",
-  "AstrolabeCmd",
+  "SceneTip",
+  "NoviceNotebook",
   "BattlePass",
   "ActHitPolly",
-  "AchieveCmd",
+  "ActMiniRoCmd",
+  "AstrolabeCmd",
   "ErrorUserCmd",
-  "SceneInterlocution",
-  "BossCmd",
-  "CarrierCmd",
-  "SceneManor",
-  "SceneChatRoom",
+  "UserShow",
+  "AchieveCmd",
+  "Authorize",
   "WeddingCCmd",
+  "SceneInterlocution",
+  "SceneChatRoom",
   "SceneSeal",
+  "SceneManor",
+  "CarrierCmd",
   "SessionSociality",
-  "SessionShop",
+  "DisneyActivity",
   "TechTreeCmd",
   "TeamGroupRaid",
-  "MiniGameCmd",
+  "SessionShop",
+  "BossCmd",
   "OverseasTaiwanCmd",
-  "DisneyActivity",
+  "MiniGameCmd",
   "SceneUser",
   "SceneSkill",
   "SceneItem",
+  "RecallCCmd",
   "Dojo",
-  "SceneBeing",
   "AuctionCCmd",
+  "SceneBeing",
   "SceneQuest",
-  "RecordTrade",
-  "ScenePet",
   "RoguelikeCmd",
+  "ScenePet",
+  "RecordTrade",
   "SceneManual",
   "HomeCmd",
   "SceneUser2",
@@ -2399,6 +2400,48 @@ ProtoReqInfoList = {
     ack = "Cmd.STIDropSkillCmd",
     from = "FuBenCmd"
   },
+  FairyTaleRaidSyncCmd = {
+    id = 110179,
+    req = "Cmd.FairyTaleRaidSyncCmd",
+    ack = "Cmd.FairyTaleRaidSyncCmd",
+    from = "FuBenCmd"
+  },
+  RaidStartFightCmd = {
+    id = 110180,
+    req = "Cmd.RaidStartFightCmd",
+    ack = "Cmd.RaidStartFightCmd",
+    from = "FuBenCmd"
+  },
+  FairyTaleRaidRewardSyncCmd = {
+    id = 110182,
+    req = "Cmd.FairyTaleRaidRewardSyncCmd",
+    ack = "Cmd.FairyTaleRaidRewardSyncCmd",
+    from = "FuBenCmd"
+  },
+  FairyTaleRaidGetRewardCmd = {
+    id = 110183,
+    req = "Cmd.FairyTaleRaidGetRewardCmd",
+    ack = "Cmd.FairyTaleRaidGetRewardCmd",
+    from = "FuBenCmd"
+  },
+  SyncMemoryEquipRewardInfo = {
+    id = 110184,
+    req = "Cmd.SyncMemoryEquipRewardInfo",
+    ack = "Cmd.SyncMemoryEquipRewardInfo",
+    from = "FuBenCmd"
+  },
+  ChooseMemoryEquipRewardInfo = {
+    id = 110185,
+    req = "Cmd.ChooseMemoryEquipRewardInfo",
+    ack = "Cmd.ChooseMemoryEquipRewardInfo",
+    from = "FuBenCmd"
+  },
+  GvgDateBattleInfoSyncCmd = {
+    id = 110181,
+    req = "Cmd.GvgDateBattleInfoSyncCmd",
+    ack = "Cmd.GvgDateBattleInfoSyncCmd",
+    from = "FuBenCmd"
+  },
   QueryGuildListGuildCmd = {
     id = 500001,
     req = "Cmd.QueryGuildListGuildCmd",
@@ -3485,12 +3528,6 @@ ProtoReqInfoList = {
     ack = "Cmd.SetMaxScopeUserCmd",
     from = "LoginUserCmd"
   },
-  ReqLoginOutGateCmd = {
-    id = 10034,
-    req = "Cmd.ReqLoginOutGateCmd",
-    ack = "Cmd.ReqLoginOutGateCmd",
-    from = "LoginUserCmd"
-  },
   ReqMyRoomMatchCCmd = {
     id = 610001,
     req = "Cmd.ReqMyRoomMatchCCmd",
@@ -3507,6 +3544,12 @@ ProtoReqInfoList = {
     id = 610003,
     req = "Cmd.ReqRoomDetailCCmd",
     ack = "Cmd.ReqRoomDetailCCmd",
+    from = "MatchCCmd"
+  },
+  JoinRoomAbyssOption = {
+    id = 1,
+    req = "Cmd.JoinRoomAbyssOption",
+    ack = "Cmd.JoinRoomAbyssOption",
     from = "MatchCCmd"
   },
   JoinRoomCCmd = {
@@ -3933,6 +3976,12 @@ ProtoReqInfoList = {
     id = 610074,
     req = "Cmd.ChampionPvpRewardStatusCmd",
     ack = "Cmd.ChampionPvpRewardStatusCmd",
+    from = "MatchCCmd"
+  },
+  AbyssRoomStateNtfMatchCCmd = {
+    id = 610075,
+    req = "Cmd.AbyssRoomStateNtfMatchCCmd",
+    ack = "Cmd.AbyssRoomStateNtfMatchCCmd",
     from = "MatchCCmd"
   },
   ChooseNewProfessionMessCCmd = {
@@ -4780,6 +4829,132 @@ ProtoReqInfoList = {
     req = "Cmd.RaidNewResetCmd",
     ack = "Cmd.RaidNewResetCmd",
     from = "RaidCmd"
+  },
+  AbyssDragonInfoNtfRaidCmd = {
+    id = 760031,
+    req = "Cmd.AbyssDragonInfoNtfRaidCmd",
+    ack = "Cmd.AbyssDragonInfoNtfRaidCmd",
+    from = "RaidCmd"
+  },
+  AbyssDragonHpUpdateRaidCmd = {
+    id = 760032,
+    req = "Cmd.AbyssDragonHpUpdateRaidCmd",
+    ack = "Cmd.AbyssDragonHpUpdateRaidCmd",
+    from = "RaidCmd"
+  },
+  AbyssDragonOnOffRaidCmd = {
+    id = 760033,
+    req = "Cmd.AbyssDragonOnOffRaidCmd",
+    ack = "Cmd.AbyssDragonOnOffRaidCmd",
+    from = "RaidCmd"
+  },
+  AbyssDragonDamageRankRaidCmd = {
+    id = 760034,
+    req = "Cmd.AbyssDragonDamageRankRaidCmd",
+    ack = "Cmd.AbyssDragonDamageRankRaidCmd",
+    from = "RaidCmd"
+  },
+  QueryRecallInfoRecallCmd = {
+    id = 840001,
+    req = "Cmd.QueryRecallInfoRecallCmd",
+    ack = "Cmd.QueryRecallInfoRecallCmd",
+    from = "RecallCCmd"
+  },
+  SignQueryInfoRecallCmd = {
+    id = 840002,
+    req = "Cmd.SignQueryInfoRecallCmd",
+    ack = "Cmd.SignQueryInfoRecallCmd",
+    from = "RecallCCmd"
+  },
+  SignInRecallCmd = {
+    id = 840003,
+    req = "Cmd.SignInRecallCmd",
+    ack = "Cmd.SignInRecallCmd",
+    from = "RecallCCmd"
+  },
+  BattlePassQueryInfoRecallCmd = {
+    id = 840004,
+    req = "Cmd.BattlePassQueryInfoRecallCmd",
+    ack = "Cmd.BattlePassQueryInfoRecallCmd",
+    from = "RecallCCmd"
+  },
+  BattlePassQuickLvUpRecallCmd = {
+    id = 840005,
+    req = "Cmd.BattlePassQuickLvUpRecallCmd",
+    ack = "Cmd.BattlePassQuickLvUpRecallCmd",
+    from = "RecallCCmd"
+  },
+  GetBattlePassRewardRecallCmd = {
+    id = 840006,
+    req = "Cmd.GetBattlePassRewardRecallCmd",
+    ack = "Cmd.GetBattlePassRewardRecallCmd",
+    from = "RecallCCmd"
+  },
+  GetAllBattlePassRewardRecallCmd = {
+    id = 840012,
+    req = "Cmd.GetAllBattlePassRewardRecallCmd",
+    ack = "Cmd.GetAllBattlePassRewardRecallCmd",
+    from = "RecallCCmd"
+  },
+  WeeklyTaskQueryInfoRecallCmd = {
+    id = 840008,
+    req = "Cmd.WeeklyTaskQueryInfoRecallCmd",
+    ack = "Cmd.WeeklyTaskQueryInfoRecallCmd",
+    from = "RecallCCmd"
+  },
+  WeeklyTaskGetRewardRecallCmd = {
+    id = 840009,
+    req = "Cmd.WeeklyTaskGetRewardRecallCmd",
+    ack = "Cmd.WeeklyTaskGetRewardRecallCmd",
+    from = "RecallCCmd"
+  },
+  FundQueryInfoRecallCmd = {
+    id = 840010,
+    req = "Cmd.FundQueryInfoRecallCmd",
+    ack = "Cmd.FundQueryInfoRecallCmd",
+    from = "RecallCCmd"
+  },
+  FundGetRewardRecallCmd = {
+    id = 840011,
+    req = "Cmd.FundGetRewardRecallCmd",
+    ack = "Cmd.FundGetRewardRecallCmd",
+    from = "RecallCCmd"
+  },
+  ShopQueryInfoRecallCmd = {
+    id = 840013,
+    req = "Cmd.ShopQueryInfoRecallCmd",
+    ack = "Cmd.ShopQueryInfoRecallCmd",
+    from = "RecallCCmd"
+  },
+  BuyShopGoodRecallCmd = {
+    id = 840014,
+    req = "Cmd.BuyShopGoodRecallCmd",
+    ack = "Cmd.BuyShopGoodRecallCmd",
+    from = "RecallCCmd"
+  },
+  CatchUpQueryInfoRecallCmd = {
+    id = 840015,
+    req = "Cmd.CatchUpQueryInfoRecallCmd",
+    ack = "Cmd.CatchUpQueryInfoRecallCmd",
+    from = "RecallCCmd"
+  },
+  MvpCardQueryInfoRecallCmd = {
+    id = 840016,
+    req = "Cmd.MvpCardQueryInfoRecallCmd",
+    ack = "Cmd.MvpCardQueryInfoRecallCmd",
+    from = "RecallCCmd"
+  },
+  MvpCardSetUpCardRecallCmd = {
+    id = 840017,
+    req = "Cmd.MvpCardSetUpCardRecallCmd",
+    ack = "Cmd.MvpCardSetUpCardRecallCmd",
+    from = "RecallCCmd"
+  },
+  MvpCardRandCardRecallCmd = {
+    id = 840018,
+    req = "Cmd.MvpCardRandCardRecallCmd",
+    ack = "Cmd.MvpCardRandCardRecallCmd",
+    from = "RecallCCmd"
   },
   SearchCond = {
     id = 1,
@@ -6425,6 +6600,12 @@ ProtoReqInfoList = {
     ack = "Cmd.BalanceModeMemoryUpdateItemCmd",
     from = "SceneItem"
   },
+  MemoryExcessItemCmd = {
+    id = 60169,
+    req = "Cmd.MemoryExcessItemCmd",
+    ack = "Cmd.MemoryExcessItemCmd",
+    from = "SceneItem"
+  },
   BuildDataNtfManorCmd = {
     id = 2330001,
     req = "Cmd.BuildDataNtfManorCmd",
@@ -7467,24 +7648,6 @@ ProtoReqInfoList = {
     id = 80055,
     req = "Cmd.UpdateAbyssHelpCountQuestCmd",
     ack = "Cmd.UpdateAbyssHelpCountQuestCmd",
-    from = "SceneQuest"
-  },
-  AbyssDragonInfoNtfQuestCmd = {
-    id = 80056,
-    req = "Cmd.AbyssDragonInfoNtfQuestCmd",
-    ack = "Cmd.AbyssDragonInfoNtfQuestCmd",
-    from = "SceneQuest"
-  },
-  AbyssDragonHpUpdateQuestCmd = {
-    id = 80057,
-    req = "Cmd.AbyssDragonHpUpdateQuestCmd",
-    ack = "Cmd.AbyssDragonHpUpdateQuestCmd",
-    from = "SceneQuest"
-  },
-  AbyssDragonOnOffQuestCmd = {
-    id = 80058,
-    req = "Cmd.AbyssDragonOnOffQuestCmd",
-    ack = "Cmd.AbyssDragonOnOffQuestCmd",
     from = "SceneQuest"
   },
   SealItem = {
@@ -9725,6 +9888,12 @@ ProtoReqInfoList = {
     ack = "Cmd.WareHouseOperationCmd",
     from = "SceneUser3"
   },
+  FairyTaleRankQueryCmd = {
+    id = 820055,
+    req = "Cmd.FairyTaleRankQueryCmd",
+    ack = "Cmd.FairyTaleRankQueryCmd",
+    from = "SceneUser3"
+  },
   QueryAllMail = {
     id = 550001,
     req = "Cmd.QueryAllMail",
@@ -9843,6 +10012,30 @@ ProtoReqInfoList = {
     id = 520014,
     req = "Cmd.BuyDepositProductShopCmd",
     ack = "Cmd.BuyDepositProductShopCmd",
+    from = "SessionShop"
+  },
+  RewardSafetyQueryShopCmd = {
+    id = 520015,
+    req = "Cmd.RewardSafetyQueryShopCmd",
+    ack = "Cmd.RewardSafetyQueryShopCmd",
+    from = "SessionShop"
+  },
+  ExtraBonusQueryShopCmd = {
+    id = 520016,
+    req = "Cmd.ExtraBonusQueryShopCmd",
+    ack = "Cmd.ExtraBonusQueryShopCmd",
+    from = "SessionShop"
+  },
+  ExtraBonusResetShopCmd = {
+    id = 520017,
+    req = "Cmd.ExtraBonusResetShopCmd",
+    ack = "Cmd.ExtraBonusResetShopCmd",
+    from = "SessionShop"
+  },
+  ExtraBonusRewardShopCmd = {
+    id = 520018,
+    req = "Cmd.ExtraBonusRewardShopCmd",
+    ack = "Cmd.ExtraBonusRewardShopCmd",
     from = "SessionShop"
   },
   QuerySocialData = {
@@ -11656,6 +11849,13 @@ ProtoReqInfoList[110175] = ProtoReqInfoList.SyncSpaceTimeIllusionInfoFuBenCmd
 ProtoReqInfoList[110176] = ProtoReqInfoList.SyncSpaceTimeIllusionExpLevelFuBenCmd
 ProtoReqInfoList[110177] = ProtoReqInfoList.STIRefreshUpgradeOptionsCmd
 ProtoReqInfoList[110178] = ProtoReqInfoList.STIDropSkillCmd
+ProtoReqInfoList[110179] = ProtoReqInfoList.FairyTaleRaidSyncCmd
+ProtoReqInfoList[110180] = ProtoReqInfoList.RaidStartFightCmd
+ProtoReqInfoList[110182] = ProtoReqInfoList.FairyTaleRaidRewardSyncCmd
+ProtoReqInfoList[110183] = ProtoReqInfoList.FairyTaleRaidGetRewardCmd
+ProtoReqInfoList[110184] = ProtoReqInfoList.SyncMemoryEquipRewardInfo
+ProtoReqInfoList[110185] = ProtoReqInfoList.ChooseMemoryEquipRewardInfo
+ProtoReqInfoList[110181] = ProtoReqInfoList.GvgDateBattleInfoSyncCmd
 ProtoReqInfoList[500001] = ProtoReqInfoList.QueryGuildListGuildCmd
 ProtoReqInfoList[500002] = ProtoReqInfoList.CreateGuildGuildCmd
 ProtoReqInfoList[500003] = ProtoReqInfoList.EnterGuildGuildCmd
@@ -11837,10 +12037,10 @@ ProtoReqInfoList[10029] = ProtoReqInfoList.AttachLoginUserCmd
 ProtoReqInfoList[10030] = ProtoReqInfoList.AttachSyncCmdUserCmd
 ProtoReqInfoList[10031] = ProtoReqInfoList.PingUserCmd
 ProtoReqInfoList[10033] = ProtoReqInfoList.SetMaxScopeUserCmd
-ProtoReqInfoList[10034] = ProtoReqInfoList.ReqLoginOutGateCmd
 ProtoReqInfoList[610001] = ProtoReqInfoList.ReqMyRoomMatchCCmd
 ProtoReqInfoList[610002] = ProtoReqInfoList.ReqRoomListCCmd
 ProtoReqInfoList[610003] = ProtoReqInfoList.ReqRoomDetailCCmd
+ProtoReqInfoList[1] = ProtoReqInfoList.JoinRoomAbyssOption
 ProtoReqInfoList[610004] = ProtoReqInfoList.JoinRoomCCmd
 ProtoReqInfoList[610005] = ProtoReqInfoList.LeaveRoomCCmd
 ProtoReqInfoList[610007] = ProtoReqInfoList.NtfRoomStateCCmd
@@ -11912,6 +12112,7 @@ ProtoReqInfoList[610071] = ProtoReqInfoList.TriplePvpPickRewardCmd
 ProtoReqInfoList[610072] = ProtoReqInfoList.TriplePvpRewardStatusCmd
 ProtoReqInfoList[610073] = ProtoReqInfoList.ChampionPvpPickRewardCmd
 ProtoReqInfoList[610074] = ProtoReqInfoList.ChampionPvpRewardStatusCmd
+ProtoReqInfoList[610075] = ProtoReqInfoList.AbyssRoomStateNtfMatchCCmd
 ProtoReqInfoList[830001] = ProtoReqInfoList.ChooseNewProfessionMessCCmd
 ProtoReqInfoList[830002] = ProtoReqInfoList.InviterSendLoveConfessionMessCCmd
 ProtoReqInfoList[830003] = ProtoReqInfoList.InviteeReceiveLoveConfessionMessCCmd
@@ -12053,6 +12254,27 @@ ProtoReqInfoList[760027] = ProtoReqInfoList.RaidSelectCardResultRes
 ProtoReqInfoList[760028] = ProtoReqInfoList.RaidSelectCardHistoryResultCmd
 ProtoReqInfoList[760029] = ProtoReqInfoList.RaidSelectCardResetCmd
 ProtoReqInfoList[760030] = ProtoReqInfoList.RaidNewResetCmd
+ProtoReqInfoList[760031] = ProtoReqInfoList.AbyssDragonInfoNtfRaidCmd
+ProtoReqInfoList[760032] = ProtoReqInfoList.AbyssDragonHpUpdateRaidCmd
+ProtoReqInfoList[760033] = ProtoReqInfoList.AbyssDragonOnOffRaidCmd
+ProtoReqInfoList[760034] = ProtoReqInfoList.AbyssDragonDamageRankRaidCmd
+ProtoReqInfoList[840001] = ProtoReqInfoList.QueryRecallInfoRecallCmd
+ProtoReqInfoList[840002] = ProtoReqInfoList.SignQueryInfoRecallCmd
+ProtoReqInfoList[840003] = ProtoReqInfoList.SignInRecallCmd
+ProtoReqInfoList[840004] = ProtoReqInfoList.BattlePassQueryInfoRecallCmd
+ProtoReqInfoList[840005] = ProtoReqInfoList.BattlePassQuickLvUpRecallCmd
+ProtoReqInfoList[840006] = ProtoReqInfoList.GetBattlePassRewardRecallCmd
+ProtoReqInfoList[840012] = ProtoReqInfoList.GetAllBattlePassRewardRecallCmd
+ProtoReqInfoList[840008] = ProtoReqInfoList.WeeklyTaskQueryInfoRecallCmd
+ProtoReqInfoList[840009] = ProtoReqInfoList.WeeklyTaskGetRewardRecallCmd
+ProtoReqInfoList[840010] = ProtoReqInfoList.FundQueryInfoRecallCmd
+ProtoReqInfoList[840011] = ProtoReqInfoList.FundGetRewardRecallCmd
+ProtoReqInfoList[840013] = ProtoReqInfoList.ShopQueryInfoRecallCmd
+ProtoReqInfoList[840014] = ProtoReqInfoList.BuyShopGoodRecallCmd
+ProtoReqInfoList[840015] = ProtoReqInfoList.CatchUpQueryInfoRecallCmd
+ProtoReqInfoList[840016] = ProtoReqInfoList.MvpCardQueryInfoRecallCmd
+ProtoReqInfoList[840017] = ProtoReqInfoList.MvpCardSetUpCardRecallCmd
+ProtoReqInfoList[840018] = ProtoReqInfoList.MvpCardRandCardRecallCmd
 ProtoReqInfoList[1] = ProtoReqInfoList.SearchCond
 ProtoReqInfoList[570001] = ProtoReqInfoList.BriefPendingListRecordTradeCmd
 ProtoReqInfoList[570003] = ProtoReqInfoList.DetailPendingListRecordTradeCmd
@@ -12327,6 +12549,7 @@ ProtoReqInfoList[60165] = ProtoReqInfoList.MemoryUpgradeItemCmd
 ProtoReqInfoList[60166] = ProtoReqInfoList.CardLevelupItemCmd
 ProtoReqInfoList[60167] = ProtoReqInfoList.BalanceModeMemorySetItemCmd
 ProtoReqInfoList[60168] = ProtoReqInfoList.BalanceModeMemoryUpdateItemCmd
+ProtoReqInfoList[60169] = ProtoReqInfoList.MemoryExcessItemCmd
 ProtoReqInfoList[2330001] = ProtoReqInfoList.BuildDataNtfManorCmd
 ProtoReqInfoList[2330002] = ProtoReqInfoList.BuildQueryManorCmd
 ProtoReqInfoList[2330003] = ProtoReqInfoList.BuildLevelUpManorCmd
@@ -12501,9 +12724,6 @@ ProtoReqInfoList[80052] = ProtoReqInfoList.UpdateOnceRewardQuestCmd
 ProtoReqInfoList[80053] = ProtoReqInfoList.SyncTreasureBoxNumCmd
 ProtoReqInfoList[80054] = ProtoReqInfoList.QueryAbyssQuestListQuestCmd
 ProtoReqInfoList[80055] = ProtoReqInfoList.UpdateAbyssHelpCountQuestCmd
-ProtoReqInfoList[80056] = ProtoReqInfoList.AbyssDragonInfoNtfQuestCmd
-ProtoReqInfoList[80057] = ProtoReqInfoList.AbyssDragonHpUpdateQuestCmd
-ProtoReqInfoList[80058] = ProtoReqInfoList.AbyssDragonOnOffQuestCmd
 ProtoReqInfoList[1] = ProtoReqInfoList.SealItem
 ProtoReqInfoList[210001] = ProtoReqInfoList.QuerySeal
 ProtoReqInfoList[210002] = ProtoReqInfoList.UpdateSeal
@@ -12877,6 +13097,7 @@ ProtoReqInfoList[820048] = ProtoReqInfoList.GvgExcellectRewardUserCmd
 ProtoReqInfoList[820052] = ProtoReqInfoList.BattleTimeOffUserCmd
 ProtoReqInfoList[820053] = ProtoReqInfoList.PlayTimeOffUserCmd
 ProtoReqInfoList[820054] = ProtoReqInfoList.WareHouseOperationCmd
+ProtoReqInfoList[820055] = ProtoReqInfoList.FairyTaleRankQueryCmd
 ProtoReqInfoList[550001] = ProtoReqInfoList.QueryAllMail
 ProtoReqInfoList[550002] = ProtoReqInfoList.MailUpdate
 ProtoReqInfoList[550003] = ProtoReqInfoList.GetMailAttach
@@ -12897,6 +13118,10 @@ ProtoReqInfoList[520011] = ProtoReqInfoList.OpenShopTypeShopCmd
 ProtoReqInfoList[520012] = ProtoReqInfoList.BulkBuyShopItem
 ProtoReqInfoList[520013] = ProtoReqInfoList.BuyPackageSaleShopCmd
 ProtoReqInfoList[520014] = ProtoReqInfoList.BuyDepositProductShopCmd
+ProtoReqInfoList[520015] = ProtoReqInfoList.RewardSafetyQueryShopCmd
+ProtoReqInfoList[520016] = ProtoReqInfoList.ExtraBonusQueryShopCmd
+ProtoReqInfoList[520017] = ProtoReqInfoList.ExtraBonusResetShopCmd
+ProtoReqInfoList[520018] = ProtoReqInfoList.ExtraBonusRewardShopCmd
 ProtoReqInfoList[560001] = ProtoReqInfoList.QuerySocialData
 ProtoReqInfoList[560002] = ProtoReqInfoList.FindUser
 ProtoReqInfoList[560003] = ProtoReqInfoList.SocialUpdate

@@ -191,6 +191,39 @@ function RedTipProxy:RemoveRedTip(id, paramIds)
   end
 end
 
+function RedTipProxy:AddRedTipParam(id, paramId)
+  if Table_RedTip[id] == nil then
+    return
+  end
+  local tip = self:GetOrCreateRedTip(id)
+  if not tip.enable then
+    tip:SetEnable(true)
+    GameFacade.Instance:sendNotification(RedTipProxy.UpdateRedTipEvent, {
+      id = id,
+      paramIds = {paramId}
+    })
+  end
+  tip:AddParam(paramId)
+  GameFacade.Instance:sendNotification(RedTipProxy.UpdateParamEvent, {
+    id = id,
+    paramIds = {paramId}
+  })
+end
+
+function RedTipProxy:RemoveRedTipParam(id, paramId)
+  if Table_RedTip[id] == nil then
+    return
+  end
+  local tip = self:GetOrCreateRedTip(id)
+  if tip then
+    tip:RemoveParam(paramId)
+    if not tip:HasParamID() then
+      tip:SetEnable(false)
+      GameFacade.Instance:sendNotification(RedTipProxy.RemoveRedTipEvent, {id = id})
+    end
+  end
+end
+
 function RedTipProxy:RegisterUIs(id, uis)
   if Table_RedTip[id] == nil then
     return
@@ -406,6 +439,20 @@ function RedTip:AddParams(params)
     for i = 1, #params do
       self.params[params[i]] = 1
     end
+  end
+  self:UpdateUIDatas()
+end
+
+function RedTip:AddParam(paramId)
+  if paramId then
+    self.params[paramId] = 1
+  end
+  self:UpdateUIDatas()
+end
+
+function RedTip:RemoveParam(paramId)
+  if paramId then
+    self.params[paramId] = nil
   end
   self:UpdateUIDatas()
 end

@@ -26,9 +26,10 @@ function BalanceModeSkillTip:FindCurrentUI()
       if isArtifact then
         SkillProxy.Instance:CallBalanceModeChooseMess(nil, nil, 0)
       elseif self.data.isMemory then
-        local effect = {index = 2, effect_id = 0}
+        local index = self.data.isUpgradeMemory and 3 or 2
+        local effect = {index = index, effect_id = 0}
         ServiceItemProxy.Instance:CallBalanceModeMemorySetItemCmd(EnumToTempPos[self.data.groupType], effect)
-        xdlog("申请移除记忆", EnumToTempPos[self.data.groupType])
+        xdlog("申请移除记忆", EnumToTempPos[self.data.groupType], "index:", index)
       elseif type == 1 then
         SkillProxy.Instance:CallBalanceModeChooseMess(0)
       elseif type == 2 then
@@ -37,12 +38,13 @@ function BalanceModeSkillTip:FindCurrentUI()
     elseif isArtifact then
       SkillProxy.Instance:CallBalanceModeChooseMess(nil, nil, self.data.id)
     elseif self.data.isMemory then
+      local index = self.data.isUpgradeMemory and 3 or 2
       local effect = {
-        index = 2,
+        index = index,
         effect_id = self.data.effectId
       }
       ServiceItemProxy.Instance:CallBalanceModeMemorySetItemCmd(EnumToTempPos[self.data.groupType], effect)
-      xdlog("申请选择记忆", EnumToTempPos[self.data.groupType], self.data.effectId)
+      xdlog("申请选择记忆", EnumToTempPos[self.data.groupType], self.data.effectId, "index:", index)
     elseif type == 1 then
       SkillProxy.Instance:CallBalanceModeChooseMess(self.data.id, nil, nil)
     elseif type == 2 then
@@ -83,7 +85,11 @@ function BalanceModeSkillTip:UpdateCurrentInfo(data)
   local isArtifact = data.isArtifact or false
   local itemID = data.id
   if data.isMemory then
-    itemID = EquipMemoryProxy.PosEnumItemID[data.groupType]
+    if data.isUpgradeMemory then
+      itemID = EquipMemoryProxy.PosEnumUpgradeItemID[data.groupType]
+    else
+      itemID = EquipMemoryProxy.PosEnumItemID[data.groupType]
+    end
   end
   local itemData = Table_Item[itemID]
   if itemData then
@@ -112,20 +118,62 @@ function BalanceModeSkillTip:UpdateCurrentInfo(data)
     local descStr = ""
     local memoryStaticData = Table_ItemMemoryEffect[data.id]
     xdlog("memoryStaticData", data.id)
+    local getBuffDescByStage = function(buffIds, stageIndex, isUpgrade)
+      if not buffIds then
+        return nil
+      end
+      local targetBuffIds
+      if type(buffIds) == "table" then
+        if buffIds[stageIndex] ~= nil then
+          targetBuffIds = buffIds[stageIndex]
+        elseif buffIds[0] ~= nil then
+          targetBuffIds = buffIds[0]
+        else
+          targetBuffIds = buffIds[1]
+        end
+      end
+      local buffId
+      if type(targetBuffIds) == "table" then
+        buffId = next(targetBuffIds) and targetBuffIds[next(targetBuffIds)]
+      else
+        buffId = targetBuffIds
+      end
+      local buffData = buffId and Table_Buffer[buffId]
+      local desc = buffData and buffData.Dsc
+      if type(desc) == "string" then
+        if isUpgrade then
+          desc = string.gsub(desc, "(%d+)", function(match)
+            local num = tonumber(match)
+            return tostring(num * 3)
+          end)
+        end
+        desc = string.gsub(desc, "%[AttrValue%]", "")
+      end
+      return desc
+    end
     if memoryStaticData then
-      local waxBuffId = memoryStaticData.WaxBuffID
-      if waxBuffId and 0 < #waxBuffId then
-        for i = 1, #waxBuffId do
-          local buffData = Table_Buffer[waxBuffId[i]]
-          if buffData and buffData.BuffEffect and not buffData.BuffEffect.NoShow then
-            local dsc = buffData and buffData.Dsc
-            if dsc and dsc ~= "" then
-              if descStr ~= "" then
-                descStr = descStr .. "\n"
+      if memoryStaticData.WaxBuffID and memoryStaticData.WaxBuffID ~= _EmptyTable then
+        local buffIds = memoryStaticData.WaxBuffID
+        if type(buffIds) == "table" and 0 < #buffIds then
+          for i = 1, #buffIds do
+            local buffId = buffIds[i]
+            local buffData = Table_Buffer[buffId]
+            if buffData and buffData.BuffEffect and not buffData.BuffEffect.NoShow then
+              local dsc = getBuffDescByStage({buffId}, 0, data.isUpgradeMemory)
+              if dsc and dsc ~= "" then
+                if descStr ~= "" then
+                  descStr = descStr .. "\n"
+                end
+                descStr = descStr .. dsc
               end
-              descStr = descStr .. dsc
             end
           end
+        end
+      elseif memoryStaticData.BuffID and memoryStaticData.BuffID ~= _EmptyTable then
+        local buffIds = memoryStaticData.BuffID
+        local dsc = getBuffDescByStage(buffIds, 0, data.isUpgradeMemory)
+        if dsc and dsc ~= "" then
+          descStr = descStr .. dsc
         end
       end
     end

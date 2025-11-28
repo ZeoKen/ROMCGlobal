@@ -214,6 +214,9 @@ function GemEmbedPreviewPage:_OnActivate()
 end
 
 function GemEmbedPreviewPage:OnExit()
+  if self.gemTipCell then
+    self.gemTipCell:OnDestroy()
+  end
   GemProxy.Instance.choosePageCellID = nil
   GemEmbedPreviewPage.super.OnExit(self)
   TimeTickManager.Me():ClearTick(self)

@@ -90,8 +90,28 @@ Table_ServantCalendar = {
       {texture = "bcat3", desc = "##296823"}
     },
     TimeUnit = 2,
-    StartTime = "18:00",
-    EndTime = "18:30",
+    StartTime = "20:00",
+    EndTime = "20:30",
+    Wday = "Wed",
+    GotoMode = {5005},
+    Location = "##119339",
+    Reward = "##3501088",
+    Desc = "##119325",
+    FuncState = 3,
+    frequency = _EmptyTable
+  },
+  [111] = {
+    id = 111,
+    Icon = "catIntrusion",
+    Name = "##119303",
+    TextureName = {
+      {texture = "bcat1", desc = "##296836"},
+      {texture = "bcat2", desc = "##296839"},
+      {texture = "bcat3", desc = "##296823"}
+    },
+    TimeUnit = 2,
+    StartTime = "12:00",
+    EndTime = "12:30",
     Wday = "Wed",
     GotoMode = {5005},
     Location = "##119339",

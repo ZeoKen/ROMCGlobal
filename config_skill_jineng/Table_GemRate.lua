@@ -75,6 +75,10 @@ Table_GemRate_t = {
       185
     },
     {45},
+    {675},
+    {825},
+    {685},
+    {815},
     {
       72,
       73,
@@ -82,6 +86,8 @@ Table_GemRate_t = {
       75
     },
     {85},
+    {695},
+    {805},
     {
       102,
       103,
@@ -90,7 +96,6 @@ Table_GemRate_t = {
     },
     {795},
     {115},
-    {695},
     {705},
     {785},
     {
@@ -137,8 +142,6 @@ Table_GemRate_t = {
       205
     },
     {55},
-    {675},
-    {685},
     {
       22,
       23,
@@ -274,70 +277,70 @@ Table_GemRate = {
   [360010] = {
     id = 360010,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [360020] = {
     id = 360020,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     NeedGem = Table_GemRate_t.NeedGem[10]
   },
   [360030] = {
     id = 360030,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [360040] = {
     id = 360040,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [360050] = {
     id = 360050,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [360060] = {
     id = 360060,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     NeedGem = Table_GemRate_t.NeedGem[10]
   },
   [360070] = {
     id = 360070,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [360080] = {
     id = 360080,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[59],
+    ClassType = Table_GemRate_t.ClassType[62],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [360090] = {
     id = 360090,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[59],
+    ClassType = Table_GemRate_t.ClassType[62],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [360091] = {
     id = 360091,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[59],
+    ClassType = Table_GemRate_t.ClassType[62],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
   [360110] = {
     id = 360110,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[11]
@@ -345,7 +348,7 @@ Table_GemRate = {
   [360120] = {
     id = 360120,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -353,7 +356,7 @@ Table_GemRate = {
   [360130] = {
     id = 360130,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -361,7 +364,7 @@ Table_GemRate = {
   [360140] = {
     id = 360140,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[13]
@@ -369,7 +372,7 @@ Table_GemRate = {
   [360210] = {
     id = 360210,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[11]
@@ -377,7 +380,7 @@ Table_GemRate = {
   [360220] = {
     id = 360220,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[11]
@@ -385,7 +388,7 @@ Table_GemRate = {
   [360230] = {
     id = 360230,
     ClassJudge = 1,
-    ClassType = Table_GemRate_t.ClassType[50],
+    ClassType = Table_GemRate_t.ClassType[53],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[5]
@@ -393,70 +396,70 @@ Table_GemRate = {
   [361010] = {
     id = 361010,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[47],
+    ClassType = Table_GemRate_t.ClassType[50],
     NeedGem = Table_GemRate_t.NeedGem[8]
   },
   [361020] = {
     id = 361020,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[49],
+    ClassType = Table_GemRate_t.ClassType[52],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [361030] = {
     id = 361030,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[47],
+    ClassType = Table_GemRate_t.ClassType[50],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [361040] = {
     id = 361040,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[49],
+    ClassType = Table_GemRate_t.ClassType[52],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [361050] = {
     id = 361050,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[49],
+    ClassType = Table_GemRate_t.ClassType[52],
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [361060] = {
     id = 361060,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[49],
+    ClassType = Table_GemRate_t.ClassType[52],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [361070] = {
     id = 361070,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[47],
+    ClassType = Table_GemRate_t.ClassType[50],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [361080] = {
     id = 361080,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[56],
+    ClassType = Table_GemRate_t.ClassType[59],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [361090] = {
     id = 361090,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[56],
+    ClassType = Table_GemRate_t.ClassType[59],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [361091] = {
     id = 361091,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[58],
+    ClassType = Table_GemRate_t.ClassType[61],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [361110] = {
     id = 361110,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[47],
+    ClassType = Table_GemRate_t.ClassType[50],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[7]
@@ -464,7 +467,7 @@ Table_GemRate = {
   [361120] = {
     id = 361120,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[47],
+    ClassType = Table_GemRate_t.ClassType[50],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -472,7 +475,7 @@ Table_GemRate = {
   [361130] = {
     id = 361130,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[49],
+    ClassType = Table_GemRate_t.ClassType[52],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -480,7 +483,7 @@ Table_GemRate = {
   [361140] = {
     id = 361140,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[49],
+    ClassType = Table_GemRate_t.ClassType[52],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[5]
@@ -488,7 +491,7 @@ Table_GemRate = {
   [361210] = {
     id = 361210,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[47],
+    ClassType = Table_GemRate_t.ClassType[50],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -496,7 +499,7 @@ Table_GemRate = {
   [361220] = {
     id = 361220,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[49],
+    ClassType = Table_GemRate_t.ClassType[52],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[13]
@@ -504,121 +507,121 @@ Table_GemRate = {
   [361230] = {
     id = 361230,
     ClassJudge = 2,
-    ClassType = Table_GemRate_t.ClassType[47],
+    ClassType = Table_GemRate_t.ClassType[50],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [362010] = {
     id = 362010,
-    ClassType = Table_GemRate_t.ClassType[43],
+    ClassType = Table_GemRate_t.ClassType[48],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [362020] = {
     id = 362020,
-    ClassType = Table_GemRate_t.ClassType[43],
+    ClassType = Table_GemRate_t.ClassType[48],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [362030] = {
     id = 362030,
-    ClassType = Table_GemRate_t.ClassType[43],
+    ClassType = Table_GemRate_t.ClassType[48],
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [362040] = {
     id = 362040,
-    ClassType = Table_GemRate_t.ClassType[43],
+    ClassType = Table_GemRate_t.ClassType[48],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [362050] = {
     id = 362050,
-    ClassType = Table_GemRate_t.ClassType[43],
+    ClassType = Table_GemRate_t.ClassType[48],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [362060] = {
     id = 362060,
-    ClassType = Table_GemRate_t.ClassType[43],
+    ClassType = Table_GemRate_t.ClassType[48],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [362070] = {
     id = 362070,
-    ClassType = Table_GemRate_t.ClassType[43],
+    ClassType = Table_GemRate_t.ClassType[48],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [362080] = {
     id = 362080,
-    ClassType = Table_GemRate_t.ClassType[53],
+    ClassType = Table_GemRate_t.ClassType[56],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [362090] = {
     id = 362090,
-    ClassType = Table_GemRate_t.ClassType[53],
+    ClassType = Table_GemRate_t.ClassType[56],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [362091] = {
     id = 362091,
-    ClassType = Table_GemRate_t.ClassType[55],
+    ClassType = Table_GemRate_t.ClassType[58],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [362092] = {
     id = 362092,
-    ClassType = Table_GemRate_t.ClassType[55],
+    ClassType = Table_GemRate_t.ClassType[58],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[3]
   },
   [362093] = {
     id = 362093,
-    ClassType = Table_GemRate_t.ClassType[55],
+    ClassType = Table_GemRate_t.ClassType[58],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [362110] = {
     id = 362110,
-    ClassType = Table_GemRate_t.ClassType[57],
+    ClassType = Table_GemRate_t.ClassType[60],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[13]
   },
   [362120] = {
     id = 362120,
-    ClassType = Table_GemRate_t.ClassType[57],
+    ClassType = Table_GemRate_t.ClassType[60],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [362130] = {
     id = 362130,
-    ClassType = Table_GemRate_t.ClassType[57],
+    ClassType = Table_GemRate_t.ClassType[60],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [362140] = {
     id = 362140,
-    ClassType = Table_GemRate_t.ClassType[57],
+    ClassType = Table_GemRate_t.ClassType[60],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[11]
   },
   [362210] = {
     id = 362210,
-    ClassType = Table_GemRate_t.ClassType[57],
+    ClassType = Table_GemRate_t.ClassType[60],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [362220] = {
     id = 362220,
-    ClassType = Table_GemRate_t.ClassType[57],
+    ClassType = Table_GemRate_t.ClassType[60],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [362230] = {
     id = 362230,
-    ClassType = Table_GemRate_t.ClassType[57],
+    ClassType = Table_GemRate_t.ClassType[60],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -626,70 +629,70 @@ Table_GemRate = {
   [363010] = {
     id = 363010,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[37],
+    ClassType = Table_GemRate_t.ClassType[42],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [363020] = {
     id = 363020,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[37],
+    ClassType = Table_GemRate_t.ClassType[42],
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [363030] = {
     id = 363030,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[37],
+    ClassType = Table_GemRate_t.ClassType[42],
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [363040] = {
     id = 363040,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[37],
+    ClassType = Table_GemRate_t.ClassType[42],
     NeedGem = Table_GemRate_t.NeedGem[8]
   },
   [363050] = {
     id = 363050,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[37],
+    ClassType = Table_GemRate_t.ClassType[42],
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [363060] = {
     id = 363060,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[37],
+    ClassType = Table_GemRate_t.ClassType[42],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [363070] = {
     id = 363070,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[37],
+    ClassType = Table_GemRate_t.ClassType[42],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [363080] = {
     id = 363080,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[51],
+    ClassType = Table_GemRate_t.ClassType[54],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
   [363090] = {
     id = 363090,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[52],
+    ClassType = Table_GemRate_t.ClassType[55],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [363091] = {
     id = 363091,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[52],
+    ClassType = Table_GemRate_t.ClassType[55],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
   [363110] = {
     id = 363110,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[54],
+    ClassType = Table_GemRate_t.ClassType[57],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -697,7 +700,7 @@ Table_GemRate = {
   [363120] = {
     id = 363120,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[37],
+    ClassType = Table_GemRate_t.ClassType[42],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[5]
@@ -705,7 +708,7 @@ Table_GemRate = {
   [363130] = {
     id = 363130,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[37],
+    ClassType = Table_GemRate_t.ClassType[42],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[13]
@@ -713,7 +716,7 @@ Table_GemRate = {
   [363140] = {
     id = 363140,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[54],
+    ClassType = Table_GemRate_t.ClassType[57],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -721,7 +724,7 @@ Table_GemRate = {
   [363210] = {
     id = 363210,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[37],
+    ClassType = Table_GemRate_t.ClassType[42],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -729,7 +732,7 @@ Table_GemRate = {
   [363220] = {
     id = 363220,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[37],
+    ClassType = Table_GemRate_t.ClassType[42],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -737,7 +740,7 @@ Table_GemRate = {
   [363230] = {
     id = 363230,
     ClassJudge = 4,
-    ClassType = Table_GemRate_t.ClassType[37],
+    ClassType = Table_GemRate_t.ClassType[42],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[15]
@@ -745,70 +748,70 @@ Table_GemRate = {
   [364010] = {
     id = 364010,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     NeedGem = Table_GemRate_t.NeedGem[3]
   },
   [364020] = {
     id = 364020,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [364030] = {
     id = 364030,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [364040] = {
     id = 364040,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [364050] = {
     id = 364050,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [364060] = {
     id = 364060,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [364070] = {
     id = 364070,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [364080] = {
     id = 364080,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[48],
+    ClassType = Table_GemRate_t.ClassType[51],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [364090] = {
     id = 364090,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[48],
+    ClassType = Table_GemRate_t.ClassType[51],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [364091] = {
     id = 364091,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[48],
+    ClassType = Table_GemRate_t.ClassType[51],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [364110] = {
     id = 364110,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[13]
@@ -816,7 +819,7 @@ Table_GemRate = {
   [364120] = {
     id = 364120,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[11]
@@ -824,7 +827,7 @@ Table_GemRate = {
   [364130] = {
     id = 364130,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[5]
@@ -832,7 +835,7 @@ Table_GemRate = {
   [364140] = {
     id = 364140,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -840,7 +843,7 @@ Table_GemRate = {
   [364210] = {
     id = 364210,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[11]
@@ -848,7 +851,7 @@ Table_GemRate = {
   [364220] = {
     id = 364220,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[11]
@@ -856,7 +859,7 @@ Table_GemRate = {
   [364230] = {
     id = 364230,
     ClassJudge = 5,
-    ClassType = Table_GemRate_t.ClassType[33],
+    ClassType = Table_GemRate_t.ClassType[38],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[13]
@@ -864,77 +867,77 @@ Table_GemRate = {
   [365010] = {
     id = 365010,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [365020] = {
     id = 365020,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [365030] = {
     id = 365030,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [365040] = {
     id = 365040,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     NeedGem = Table_GemRate_t.NeedGem[16]
   },
   [365050] = {
     id = 365050,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [365060] = {
     id = 365060,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [365070] = {
     id = 365070,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [365080] = {
     id = 365080,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[44],
+    ClassType = Table_GemRate_t.ClassType[49],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
   [365090] = {
     id = 365090,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[44],
+    ClassType = Table_GemRate_t.ClassType[49],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [365091] = {
     id = 365091,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[44],
+    ClassType = Table_GemRate_t.ClassType[49],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [365092] = {
     id = 365092,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[44],
+    ClassType = Table_GemRate_t.ClassType[49],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [365110] = {
     id = 365110,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[11]
@@ -942,7 +945,7 @@ Table_GemRate = {
   [365120] = {
     id = 365120,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -950,7 +953,7 @@ Table_GemRate = {
   [365130] = {
     id = 365130,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[15]
@@ -958,7 +961,7 @@ Table_GemRate = {
   [365140] = {
     id = 365140,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[11]
@@ -966,7 +969,7 @@ Table_GemRate = {
   [365210] = {
     id = 365210,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[11]
@@ -974,7 +977,7 @@ Table_GemRate = {
   [365220] = {
     id = 365220,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -982,7 +985,7 @@ Table_GemRate = {
   [365230] = {
     id = 365230,
     ClassJudge = 6,
-    ClassType = Table_GemRate_t.ClassType[27],
+    ClassType = Table_GemRate_t.ClassType[32],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[11]
@@ -990,70 +993,70 @@ Table_GemRate = {
   [366010] = {
     id = 366010,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [366020] = {
     id = 366020,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     NeedGem = Table_GemRate_t.NeedGem[3]
   },
   [366030] = {
     id = 366030,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [366040] = {
     id = 366040,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [366050] = {
     id = 366050,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [366060] = {
     id = 366060,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [366070] = {
     id = 366070,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [366080] = {
     id = 366080,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[39],
+    ClassType = Table_GemRate_t.ClassType[44],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [366090] = {
     id = 366090,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[39],
+    ClassType = Table_GemRate_t.ClassType[44],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
   [366091] = {
     id = 366091,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[39],
+    ClassType = Table_GemRate_t.ClassType[44],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
   [366110] = {
     id = 366110,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[5]
@@ -1061,7 +1064,7 @@ Table_GemRate = {
   [366120] = {
     id = 366120,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -1069,7 +1072,7 @@ Table_GemRate = {
   [366130] = {
     id = 366130,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[5]
@@ -1077,7 +1080,7 @@ Table_GemRate = {
   [366140] = {
     id = 366140,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[5]
@@ -1085,7 +1088,7 @@ Table_GemRate = {
   [366210] = {
     id = 366210,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[11]
@@ -1093,7 +1096,7 @@ Table_GemRate = {
   [366220] = {
     id = 366220,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -1101,7 +1104,7 @@ Table_GemRate = {
   [366230] = {
     id = 366230,
     ClassJudge = 7,
-    ClassType = Table_GemRate_t.ClassType[21],
+    ClassType = Table_GemRate_t.ClassType[27],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[5]
@@ -1109,70 +1112,70 @@ Table_GemRate = {
   [367010] = {
     id = 367010,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [367020] = {
     id = 367020,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [367030] = {
     id = 367030,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [367040] = {
     id = 367040,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     NeedGem = Table_GemRate_t.NeedGem[10]
   },
   [367050] = {
     id = 367050,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [367060] = {
     id = 367060,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [367070] = {
     id = 367070,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [367080] = {
     id = 367080,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[34],
+    ClassType = Table_GemRate_t.ClassType[39],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [367090] = {
     id = 367090,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[34],
+    ClassType = Table_GemRate_t.ClassType[39],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [367091] = {
     id = 367091,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[34],
+    ClassType = Table_GemRate_t.ClassType[39],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [367110] = {
     id = 367110,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[13]
@@ -1180,7 +1183,7 @@ Table_GemRate = {
   [367120] = {
     id = 367120,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[13]
@@ -1188,7 +1191,7 @@ Table_GemRate = {
   [367130] = {
     id = 367130,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -1196,7 +1199,7 @@ Table_GemRate = {
   [367140] = {
     id = 367140,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     Quality = 2,
     CheckWeight = 3,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -1204,7 +1207,7 @@ Table_GemRate = {
   [367210] = {
     id = 367210,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[9]
@@ -1212,7 +1215,7 @@ Table_GemRate = {
   [367220] = {
     id = 367220,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[5]
@@ -1220,7 +1223,7 @@ Table_GemRate = {
   [367230] = {
     id = 367230,
     ClassJudge = 8,
-    ClassType = Table_GemRate_t.ClassType[19],
+    ClassType = Table_GemRate_t.ClassType[23],
     Quality = 1,
     CheckWeight = 16,
     NeedGem = Table_GemRate_t.NeedGem[11]
@@ -1270,21 +1273,21 @@ Table_GemRate = {
   [368080] = {
     id = 368080,
     ClassJudge = 9,
-    ClassType = Table_GemRate_t.ClassType[29],
+    ClassType = Table_GemRate_t.ClassType[34],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [368090] = {
     id = 368090,
     ClassJudge = 9,
-    ClassType = Table_GemRate_t.ClassType[29],
+    ClassType = Table_GemRate_t.ClassType[34],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [368091] = {
     id = 368091,
     ClassJudge = 9,
-    ClassType = Table_GemRate_t.ClassType[29],
+    ClassType = Table_GemRate_t.ClassType[34],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
@@ -1389,21 +1392,21 @@ Table_GemRate = {
   [369080] = {
     id = 369080,
     ClassJudge = 10,
-    ClassType = Table_GemRate_t.ClassType[23],
+    ClassType = Table_GemRate_t.ClassType[29],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [369090] = {
     id = 369090,
     ClassJudge = 10,
-    ClassType = Table_GemRate_t.ClassType[23],
+    ClassType = Table_GemRate_t.ClassType[29],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
   [369091] = {
     id = 369091,
     ClassJudge = 10,
-    ClassType = Table_GemRate_t.ClassType[23],
+    ClassType = Table_GemRate_t.ClassType[29],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
@@ -1508,21 +1511,21 @@ Table_GemRate = {
   [370080] = {
     id = 370080,
     ClassJudge = 11,
-    ClassType = Table_GemRate_t.ClassType[20],
+    ClassType = Table_GemRate_t.ClassType[24],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [370090] = {
     id = 370090,
     ClassJudge = 11,
-    ClassType = Table_GemRate_t.ClassType[20],
+    ClassType = Table_GemRate_t.ClassType[24],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [370091] = {
     id = 370091,
     ClassJudge = 11,
-    ClassType = Table_GemRate_t.ClassType[20],
+    ClassType = Table_GemRate_t.ClassType[24],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
@@ -2235,21 +2238,21 @@ Table_GemRate = {
   [376080] = {
     id = 376080,
     ClassJudge = 17,
-    ClassType = Table_GemRate_t.ClassType[65],
+    ClassType = Table_GemRate_t.ClassType[68],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[1]
   },
   [376090] = {
     id = 376090,
     ClassJudge = 17,
-    ClassType = Table_GemRate_t.ClassType[65],
+    ClassType = Table_GemRate_t.ClassType[68],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [376091] = {
     id = 376091,
     ClassJudge = 17,
-    ClassType = Table_GemRate_t.ClassType[65],
+    ClassType = Table_GemRate_t.ClassType[68],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
@@ -2354,21 +2357,21 @@ Table_GemRate = {
   [377080] = {
     id = 377080,
     ClassJudge = 18,
-    ClassType = Table_GemRate_t.ClassType[64],
+    ClassType = Table_GemRate_t.ClassType[67],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
   [377090] = {
     id = 377090,
     ClassJudge = 18,
-    ClassType = Table_GemRate_t.ClassType[64],
+    ClassType = Table_GemRate_t.ClassType[67],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
   [377091] = {
     id = 377091,
     ClassJudge = 18,
-    ClassType = Table_GemRate_t.ClassType[64],
+    ClassType = Table_GemRate_t.ClassType[67],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[2]
   },
@@ -2473,28 +2476,28 @@ Table_GemRate = {
   [378080] = {
     id = 378080,
     ClassJudge = 19,
-    ClassType = Table_GemRate_t.ClassType[63],
+    ClassType = Table_GemRate_t.ClassType[66],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
   [378090] = {
     id = 378090,
     ClassJudge = 19,
-    ClassType = Table_GemRate_t.ClassType[63],
+    ClassType = Table_GemRate_t.ClassType[66],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[4]
   },
   [378091] = {
     id = 378091,
     ClassJudge = 19,
-    ClassType = Table_GemRate_t.ClassType[63],
+    ClassType = Table_GemRate_t.ClassType[66],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
   [378092] = {
     id = 378092,
     ClassJudge = 19,
-    ClassType = Table_GemRate_t.ClassType[63],
+    ClassType = Table_GemRate_t.ClassType[66],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[6]
   },
@@ -2557,79 +2560,79 @@ Table_GemRate = {
   [379010] = {
     id = 379010,
     ClassJudge = 20,
-    ClassType = Table_GemRate_t.ClassType[62],
+    ClassType = Table_GemRate_t.ClassType[65],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379020] = {
     id = 379020,
     ClassJudge = 20,
-    ClassType = Table_GemRate_t.ClassType[62],
+    ClassType = Table_GemRate_t.ClassType[65],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379030] = {
     id = 379030,
     ClassJudge = 20,
-    ClassType = Table_GemRate_t.ClassType[62],
+    ClassType = Table_GemRate_t.ClassType[65],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379040] = {
     id = 379040,
     ClassJudge = 20,
-    ClassType = Table_GemRate_t.ClassType[62],
+    ClassType = Table_GemRate_t.ClassType[65],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379050] = {
     id = 379050,
     ClassJudge = 20,
-    ClassType = Table_GemRate_t.ClassType[62],
+    ClassType = Table_GemRate_t.ClassType[65],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379060] = {
     id = 379060,
     ClassJudge = 20,
-    ClassType = Table_GemRate_t.ClassType[62],
+    ClassType = Table_GemRate_t.ClassType[65],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379110] = {
     id = 379110,
     ClassJudge = 21,
-    ClassType = Table_GemRate_t.ClassType[61],
+    ClassType = Table_GemRate_t.ClassType[64],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379120] = {
     id = 379120,
     ClassJudge = 21,
-    ClassType = Table_GemRate_t.ClassType[61],
+    ClassType = Table_GemRate_t.ClassType[64],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379130] = {
     id = 379130,
     ClassJudge = 21,
-    ClassType = Table_GemRate_t.ClassType[61],
+    ClassType = Table_GemRate_t.ClassType[64],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379140] = {
     id = 379140,
     ClassJudge = 21,
-    ClassType = Table_GemRate_t.ClassType[61],
+    ClassType = Table_GemRate_t.ClassType[64],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379150] = {
     id = 379150,
     ClassJudge = 21,
-    ClassType = Table_GemRate_t.ClassType[61],
+    ClassType = Table_GemRate_t.ClassType[64],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379160] = {
     id = 379160,
     ClassJudge = 21,
-    ClassType = Table_GemRate_t.ClassType[61],
+    ClassType = Table_GemRate_t.ClassType[64],
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379210] = {
@@ -2674,664 +2677,781 @@ Table_GemRate = {
   [379310] = {
     id = 379310,
     ClassJudge = 23,
-    ClassType = Table_GemRate_t.ClassType[60],
+    ClassType = Table_GemRate_t.ClassType[63],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379320] = {
     id = 379320,
     ClassJudge = 23,
-    ClassType = Table_GemRate_t.ClassType[60],
+    ClassType = Table_GemRate_t.ClassType[63],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379330] = {
     id = 379330,
     ClassJudge = 23,
-    ClassType = Table_GemRate_t.ClassType[60],
+    ClassType = Table_GemRate_t.ClassType[63],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379340] = {
     id = 379340,
     ClassJudge = 23,
-    ClassType = Table_GemRate_t.ClassType[60],
+    ClassType = Table_GemRate_t.ClassType[63],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379350] = {
     id = 379350,
     ClassJudge = 23,
-    ClassType = Table_GemRate_t.ClassType[60],
+    ClassType = Table_GemRate_t.ClassType[63],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379360] = {
     id = 379360,
     ClassJudge = 23,
-    ClassType = Table_GemRate_t.ClassType[60],
+    ClassType = Table_GemRate_t.ClassType[63],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379370] = {
     id = 379370,
     ClassJudge = 24,
-    ClassType = Table_GemRate_t.ClassType[40],
+    ClassType = Table_GemRate_t.ClassType[45],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379371] = {
     id = 379371,
     ClassJudge = 24,
-    ClassType = Table_GemRate_t.ClassType[40],
+    ClassType = Table_GemRate_t.ClassType[45],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379372] = {
     id = 379372,
     ClassJudge = 24,
-    ClassType = Table_GemRate_t.ClassType[40],
+    ClassType = Table_GemRate_t.ClassType[45],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379373] = {
     id = 379373,
     ClassJudge = 24,
-    ClassType = Table_GemRate_t.ClassType[40],
+    ClassType = Table_GemRate_t.ClassType[45],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379374] = {
     id = 379374,
     ClassJudge = 24,
-    ClassType = Table_GemRate_t.ClassType[40],
+    ClassType = Table_GemRate_t.ClassType[45],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379375] = {
     id = 379375,
     ClassJudge = 24,
-    ClassType = Table_GemRate_t.ClassType[40],
+    ClassType = Table_GemRate_t.ClassType[45],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379376] = {
     id = 379376,
     ClassJudge = 25,
-    ClassType = Table_GemRate_t.ClassType[41],
+    ClassType = Table_GemRate_t.ClassType[46],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379377] = {
     id = 379377,
     ClassJudge = 25,
-    ClassType = Table_GemRate_t.ClassType[41],
+    ClassType = Table_GemRate_t.ClassType[46],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379378] = {
     id = 379378,
     ClassJudge = 25,
-    ClassType = Table_GemRate_t.ClassType[41],
+    ClassType = Table_GemRate_t.ClassType[46],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379379] = {
     id = 379379,
     ClassJudge = 25,
-    ClassType = Table_GemRate_t.ClassType[41],
+    ClassType = Table_GemRate_t.ClassType[46],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379380] = {
     id = 379380,
     ClassJudge = 25,
-    ClassType = Table_GemRate_t.ClassType[41],
+    ClassType = Table_GemRate_t.ClassType[46],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379381] = {
     id = 379381,
     ClassJudge = 25,
-    ClassType = Table_GemRate_t.ClassType[41],
+    ClassType = Table_GemRate_t.ClassType[46],
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379382] = {
     id = 379382,
     ClassJudge = 26,
-    ClassType = Table_GemRate_t.ClassType[42],
+    ClassType = Table_GemRate_t.ClassType[47],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379383] = {
     id = 379383,
     ClassJudge = 26,
-    ClassType = Table_GemRate_t.ClassType[42],
+    ClassType = Table_GemRate_t.ClassType[47],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379384] = {
     id = 379384,
     ClassJudge = 26,
-    ClassType = Table_GemRate_t.ClassType[42],
+    ClassType = Table_GemRate_t.ClassType[47],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379385] = {
     id = 379385,
     ClassJudge = 26,
-    ClassType = Table_GemRate_t.ClassType[42],
+    ClassType = Table_GemRate_t.ClassType[47],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379386] = {
     id = 379386,
     ClassJudge = 26,
-    ClassType = Table_GemRate_t.ClassType[42],
+    ClassType = Table_GemRate_t.ClassType[47],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379387] = {
     id = 379387,
     ClassJudge = 26,
-    ClassType = Table_GemRate_t.ClassType[42],
+    ClassType = Table_GemRate_t.ClassType[47],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379388] = {
     id = 379388,
     ClassJudge = 27,
-    ClassType = Table_GemRate_t.ClassType[45],
+    ClassType = Table_GemRate_t.ClassType[19],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379389] = {
     id = 379389,
     ClassJudge = 27,
-    ClassType = Table_GemRate_t.ClassType[45],
+    ClassType = Table_GemRate_t.ClassType[19],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379390] = {
     id = 379390,
     ClassJudge = 27,
-    ClassType = Table_GemRate_t.ClassType[45],
+    ClassType = Table_GemRate_t.ClassType[19],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379391] = {
     id = 379391,
     ClassJudge = 27,
-    ClassType = Table_GemRate_t.ClassType[45],
+    ClassType = Table_GemRate_t.ClassType[19],
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379392] = {
     id = 379392,
     ClassJudge = 27,
-    ClassType = Table_GemRate_t.ClassType[45],
+    ClassType = Table_GemRate_t.ClassType[19],
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379393] = {
     id = 379393,
     ClassJudge = 27,
-    ClassType = Table_GemRate_t.ClassType[45],
+    ClassType = Table_GemRate_t.ClassType[19],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379394] = {
     id = 379394,
     ClassJudge = 28,
-    ClassType = Table_GemRate_t.ClassType[46],
+    ClassType = Table_GemRate_t.ClassType[21],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379395] = {
     id = 379395,
     ClassJudge = 28,
-    ClassType = Table_GemRate_t.ClassType[46],
+    ClassType = Table_GemRate_t.ClassType[21],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379396] = {
     id = 379396,
     ClassJudge = 28,
-    ClassType = Table_GemRate_t.ClassType[46],
+    ClassType = Table_GemRate_t.ClassType[21],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379397] = {
     id = 379397,
     ClassJudge = 28,
-    ClassType = Table_GemRate_t.ClassType[46],
+    ClassType = Table_GemRate_t.ClassType[21],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379398] = {
     id = 379398,
     ClassJudge = 28,
-    ClassType = Table_GemRate_t.ClassType[46],
+    ClassType = Table_GemRate_t.ClassType[21],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379399] = {
     id = 379399,
     ClassJudge = 28,
-    ClassType = Table_GemRate_t.ClassType[46],
+    ClassType = Table_GemRate_t.ClassType[21],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379400] = {
     id = 379400,
     ClassJudge = 29,
-    ClassType = Table_GemRate_t.ClassType[24],
+    ClassType = Table_GemRate_t.ClassType[25],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379401] = {
     id = 379401,
     ClassJudge = 29,
-    ClassType = Table_GemRate_t.ClassType[24],
+    ClassType = Table_GemRate_t.ClassType[25],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379402] = {
     id = 379402,
     ClassJudge = 29,
-    ClassType = Table_GemRate_t.ClassType[24],
+    ClassType = Table_GemRate_t.ClassType[25],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379403] = {
     id = 379403,
     ClassJudge = 29,
-    ClassType = Table_GemRate_t.ClassType[24],
+    ClassType = Table_GemRate_t.ClassType[25],
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379404] = {
     id = 379404,
     ClassJudge = 29,
-    ClassType = Table_GemRate_t.ClassType[24],
+    ClassType = Table_GemRate_t.ClassType[25],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379405] = {
     id = 379405,
     ClassJudge = 29,
-    ClassType = Table_GemRate_t.ClassType[24],
+    ClassType = Table_GemRate_t.ClassType[25],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379406] = {
     id = 379406,
     ClassJudge = 30,
-    ClassType = Table_GemRate_t.ClassType[25],
+    ClassType = Table_GemRate_t.ClassType[30],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379407] = {
     id = 379407,
     ClassJudge = 30,
-    ClassType = Table_GemRate_t.ClassType[25],
+    ClassType = Table_GemRate_t.ClassType[30],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379408] = {
     id = 379408,
     ClassJudge = 30,
-    ClassType = Table_GemRate_t.ClassType[25],
+    ClassType = Table_GemRate_t.ClassType[30],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379409] = {
     id = 379409,
     ClassJudge = 30,
-    ClassType = Table_GemRate_t.ClassType[25],
+    ClassType = Table_GemRate_t.ClassType[30],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379410] = {
     id = 379410,
     ClassJudge = 30,
-    ClassType = Table_GemRate_t.ClassType[25],
+    ClassType = Table_GemRate_t.ClassType[30],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379411] = {
     id = 379411,
     ClassJudge = 30,
-    ClassType = Table_GemRate_t.ClassType[25],
+    ClassType = Table_GemRate_t.ClassType[30],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379412] = {
     id = 379412,
     ClassJudge = 31,
-    ClassType = Table_GemRate_t.ClassType[28],
+    ClassType = Table_GemRate_t.ClassType[33],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379413] = {
     id = 379413,
     ClassJudge = 31,
-    ClassType = Table_GemRate_t.ClassType[28],
+    ClassType = Table_GemRate_t.ClassType[33],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379414] = {
     id = 379414,
     ClassJudge = 31,
-    ClassType = Table_GemRate_t.ClassType[28],
+    ClassType = Table_GemRate_t.ClassType[33],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379415] = {
     id = 379415,
     ClassJudge = 31,
-    ClassType = Table_GemRate_t.ClassType[28],
+    ClassType = Table_GemRate_t.ClassType[33],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379416] = {
     id = 379416,
     ClassJudge = 31,
-    ClassType = Table_GemRate_t.ClassType[28],
+    ClassType = Table_GemRate_t.ClassType[33],
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379417] = {
     id = 379417,
     ClassJudge = 31,
-    ClassType = Table_GemRate_t.ClassType[28],
+    ClassType = Table_GemRate_t.ClassType[33],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379418] = {
     id = 379418,
     ClassJudge = 32,
-    ClassType = Table_GemRate_t.ClassType[31],
+    ClassType = Table_GemRate_t.ClassType[36],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379419] = {
     id = 379419,
     ClassJudge = 32,
-    ClassType = Table_GemRate_t.ClassType[31],
+    ClassType = Table_GemRate_t.ClassType[36],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379420] = {
     id = 379420,
     ClassJudge = 32,
-    ClassType = Table_GemRate_t.ClassType[31],
+    ClassType = Table_GemRate_t.ClassType[36],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379421] = {
     id = 379421,
     ClassJudge = 32,
-    ClassType = Table_GemRate_t.ClassType[31],
+    ClassType = Table_GemRate_t.ClassType[36],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379422] = {
     id = 379422,
     ClassJudge = 32,
-    ClassType = Table_GemRate_t.ClassType[31],
+    ClassType = Table_GemRate_t.ClassType[36],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379423] = {
     id = 379423,
     ClassJudge = 32,
-    ClassType = Table_GemRate_t.ClassType[31],
+    ClassType = Table_GemRate_t.ClassType[36],
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379424] = {
     id = 379424,
     ClassJudge = 33,
-    ClassType = Table_GemRate_t.ClassType[36],
+    ClassType = Table_GemRate_t.ClassType[41],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379425] = {
     id = 379425,
     ClassJudge = 33,
-    ClassType = Table_GemRate_t.ClassType[36],
+    ClassType = Table_GemRate_t.ClassType[41],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379426] = {
     id = 379426,
     ClassJudge = 33,
-    ClassType = Table_GemRate_t.ClassType[36],
+    ClassType = Table_GemRate_t.ClassType[41],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379427] = {
     id = 379427,
     ClassJudge = 33,
-    ClassType = Table_GemRate_t.ClassType[36],
+    ClassType = Table_GemRate_t.ClassType[41],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379428] = {
     id = 379428,
     ClassJudge = 33,
-    ClassType = Table_GemRate_t.ClassType[36],
+    ClassType = Table_GemRate_t.ClassType[41],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379429] = {
     id = 379429,
     ClassJudge = 33,
-    ClassType = Table_GemRate_t.ClassType[36],
+    ClassType = Table_GemRate_t.ClassType[41],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379430] = {
     id = 379430,
     ClassJudge = 34,
-    ClassType = Table_GemRate_t.ClassType[38],
+    ClassType = Table_GemRate_t.ClassType[43],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379431] = {
     id = 379431,
     ClassJudge = 34,
-    ClassType = Table_GemRate_t.ClassType[38],
+    ClassType = Table_GemRate_t.ClassType[43],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379432] = {
     id = 379432,
     ClassJudge = 34,
-    ClassType = Table_GemRate_t.ClassType[38],
+    ClassType = Table_GemRate_t.ClassType[43],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379433] = {
     id = 379433,
     ClassJudge = 34,
-    ClassType = Table_GemRate_t.ClassType[38],
+    ClassType = Table_GemRate_t.ClassType[43],
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379434] = {
     id = 379434,
     ClassJudge = 34,
-    ClassType = Table_GemRate_t.ClassType[38],
+    ClassType = Table_GemRate_t.ClassType[43],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379435] = {
     id = 379435,
     ClassJudge = 34,
-    ClassType = Table_GemRate_t.ClassType[38],
+    ClassType = Table_GemRate_t.ClassType[43],
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379436] = {
     id = 379436,
     ClassJudge = 35,
-    ClassType = Table_GemRate_t.ClassType[35],
+    ClassType = Table_GemRate_t.ClassType[40],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379437] = {
     id = 379437,
     ClassJudge = 35,
-    ClassType = Table_GemRate_t.ClassType[35],
+    ClassType = Table_GemRate_t.ClassType[40],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379438] = {
     id = 379438,
     ClassJudge = 35,
-    ClassType = Table_GemRate_t.ClassType[35],
+    ClassType = Table_GemRate_t.ClassType[40],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379439] = {
     id = 379439,
     ClassJudge = 35,
-    ClassType = Table_GemRate_t.ClassType[35],
+    ClassType = Table_GemRate_t.ClassType[40],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379440] = {
     id = 379440,
     ClassJudge = 35,
-    ClassType = Table_GemRate_t.ClassType[35],
+    ClassType = Table_GemRate_t.ClassType[40],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379441] = {
     id = 379441,
     ClassJudge = 35,
-    ClassType = Table_GemRate_t.ClassType[35],
+    ClassType = Table_GemRate_t.ClassType[40],
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379442] = {
     id = 379442,
     ClassJudge = 36,
-    ClassType = Table_GemRate_t.ClassType[32],
+    ClassType = Table_GemRate_t.ClassType[37],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379443] = {
     id = 379443,
     ClassJudge = 36,
-    ClassType = Table_GemRate_t.ClassType[32],
+    ClassType = Table_GemRate_t.ClassType[37],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379444] = {
     id = 379444,
     ClassJudge = 36,
-    ClassType = Table_GemRate_t.ClassType[32],
+    ClassType = Table_GemRate_t.ClassType[37],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379445] = {
     id = 379445,
     ClassJudge = 36,
-    ClassType = Table_GemRate_t.ClassType[32],
+    ClassType = Table_GemRate_t.ClassType[37],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379446] = {
     id = 379446,
     ClassJudge = 36,
-    ClassType = Table_GemRate_t.ClassType[32],
+    ClassType = Table_GemRate_t.ClassType[37],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379447] = {
     id = 379447,
     ClassJudge = 36,
-    ClassType = Table_GemRate_t.ClassType[32],
+    ClassType = Table_GemRate_t.ClassType[37],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379448] = {
     id = 379448,
     ClassJudge = 37,
-    ClassType = Table_GemRate_t.ClassType[30],
+    ClassType = Table_GemRate_t.ClassType[35],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379449] = {
     id = 379449,
     ClassJudge = 37,
-    ClassType = Table_GemRate_t.ClassType[30],
+    ClassType = Table_GemRate_t.ClassType[35],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379450] = {
     id = 379450,
     ClassJudge = 37,
-    ClassType = Table_GemRate_t.ClassType[30],
+    ClassType = Table_GemRate_t.ClassType[35],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379451] = {
     id = 379451,
     ClassJudge = 37,
-    ClassType = Table_GemRate_t.ClassType[30],
+    ClassType = Table_GemRate_t.ClassType[35],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379452] = {
     id = 379452,
     ClassJudge = 37,
-    ClassType = Table_GemRate_t.ClassType[30],
+    ClassType = Table_GemRate_t.ClassType[35],
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379453] = {
     id = 379453,
     ClassJudge = 37,
-    ClassType = Table_GemRate_t.ClassType[30],
+    ClassType = Table_GemRate_t.ClassType[35],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379454] = {
     id = 379454,
     ClassJudge = 38,
-    ClassType = Table_GemRate_t.ClassType[26],
+    ClassType = Table_GemRate_t.ClassType[31],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379455] = {
     id = 379455,
     ClassJudge = 38,
-    ClassType = Table_GemRate_t.ClassType[26],
+    ClassType = Table_GemRate_t.ClassType[31],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379456] = {
     id = 379456,
     ClassJudge = 38,
-    ClassType = Table_GemRate_t.ClassType[26],
+    ClassType = Table_GemRate_t.ClassType[31],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379457] = {
     id = 379457,
     ClassJudge = 38,
-    ClassType = Table_GemRate_t.ClassType[26],
+    ClassType = Table_GemRate_t.ClassType[31],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379458] = {
     id = 379458,
     ClassJudge = 38,
-    ClassType = Table_GemRate_t.ClassType[26],
+    ClassType = Table_GemRate_t.ClassType[31],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379459] = {
     id = 379459,
     ClassJudge = 38,
-    ClassType = Table_GemRate_t.ClassType[26],
+    ClassType = Table_GemRate_t.ClassType[31],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379460] = {
     id = 379460,
     ClassJudge = 39,
-    ClassType = Table_GemRate_t.ClassType[22],
+    ClassType = Table_GemRate_t.ClassType[28],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   },
   [379461] = {
     id = 379461,
     ClassJudge = 39,
-    ClassType = Table_GemRate_t.ClassType[22],
+    ClassType = Table_GemRate_t.ClassType[28],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379462] = {
     id = 379462,
     ClassJudge = 39,
-    ClassType = Table_GemRate_t.ClassType[22],
+    ClassType = Table_GemRate_t.ClassType[28],
     Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379463] = {
     id = 379463,
     ClassJudge = 39,
-    ClassType = Table_GemRate_t.ClassType[22],
+    ClassType = Table_GemRate_t.ClassType[28],
     NeedGem = Table_GemRate_t.NeedGem[5]
   },
   [379464] = {
     id = 379464,
     ClassJudge = 39,
-    ClassType = Table_GemRate_t.ClassType[22],
+    ClassType = Table_GemRate_t.ClassType[28],
     NeedGem = Table_GemRate_t.NeedGem[15]
   },
   [379465] = {
     id = 379465,
     ClassJudge = 39,
+    ClassType = Table_GemRate_t.ClassType[28],
+    NeedGem = Table_GemRate_t.NeedGem[9]
+  },
+  [379466] = {
+    id = 379466,
+    ClassJudge = 40,
+    ClassType = Table_GemRate_t.ClassType[26],
+    Quality = 4,
+    NeedGem = Table_GemRate_t.NeedGem[9]
+  },
+  [379467] = {
+    id = 379467,
+    ClassJudge = 40,
+    ClassType = Table_GemRate_t.ClassType[26],
+    Quality = 4,
+    NeedGem = Table_GemRate_t.NeedGem[9]
+  },
+  [379468] = {
+    id = 379468,
+    ClassJudge = 40,
+    ClassType = Table_GemRate_t.ClassType[26],
+    Quality = 4,
+    NeedGem = Table_GemRate_t.NeedGem[15]
+  },
+  [379469] = {
+    id = 379469,
+    ClassJudge = 40,
+    ClassType = Table_GemRate_t.ClassType[26],
+    NeedGem = Table_GemRate_t.NeedGem[5]
+  },
+  [379470] = {
+    id = 379470,
+    ClassJudge = 40,
+    ClassType = Table_GemRate_t.ClassType[26],
+    NeedGem = Table_GemRate_t.NeedGem[15]
+  },
+  [379471] = {
+    id = 379471,
+    ClassJudge = 40,
+    ClassType = Table_GemRate_t.ClassType[26],
+    NeedGem = Table_GemRate_t.NeedGem[5]
+  },
+  [379472] = {
+    id = 379472,
+    ClassJudge = 41,
     ClassType = Table_GemRate_t.ClassType[22],
+    Quality = 4,
+    NeedGem = Table_GemRate_t.NeedGem[9]
+  },
+  [379473] = {
+    id = 379473,
+    ClassJudge = 41,
+    ClassType = Table_GemRate_t.ClassType[22],
+    Quality = 4,
+    NeedGem = Table_GemRate_t.NeedGem[9]
+  },
+  [379474] = {
+    id = 379474,
+    ClassJudge = 41,
+    ClassType = Table_GemRate_t.ClassType[22],
+    Quality = 4,
+    NeedGem = Table_GemRate_t.NeedGem[15]
+  },
+  [379475] = {
+    id = 379475,
+    ClassJudge = 41,
+    ClassType = Table_GemRate_t.ClassType[22],
+    NeedGem = Table_GemRate_t.NeedGem[5]
+  },
+  [379476] = {
+    id = 379476,
+    ClassJudge = 41,
+    ClassType = Table_GemRate_t.ClassType[22],
+    NeedGem = Table_GemRate_t.NeedGem[15]
+  },
+  [379477] = {
+    id = 379477,
+    ClassJudge = 41,
+    ClassType = Table_GemRate_t.ClassType[22],
+    NeedGem = Table_GemRate_t.NeedGem[5]
+  },
+  [379478] = {
+    id = 379478,
+    ClassJudge = 42,
+    ClassType = Table_GemRate_t.ClassType[20],
+    Quality = 4,
+    NeedGem = Table_GemRate_t.NeedGem[9]
+  },
+  [379479] = {
+    id = 379479,
+    ClassJudge = 42,
+    ClassType = Table_GemRate_t.ClassType[20],
+    NeedGem = Table_GemRate_t.NeedGem[5]
+  },
+  [379480] = {
+    id = 379480,
+    ClassJudge = 42,
+    ClassType = Table_GemRate_t.ClassType[20],
+    NeedGem = Table_GemRate_t.NeedGem[15]
+  },
+  [379481] = {
+    id = 379481,
+    ClassJudge = 42,
+    ClassType = Table_GemRate_t.ClassType[20],
+    Quality = 4,
+    NeedGem = Table_GemRate_t.NeedGem[15]
+  },
+  [379482] = {
+    id = 379482,
+    ClassJudge = 42,
+    ClassType = Table_GemRate_t.ClassType[20],
+    NeedGem = Table_GemRate_t.NeedGem[5]
+  },
+  [379483] = {
+    id = 379483,
+    ClassJudge = 42,
+    ClassType = Table_GemRate_t.ClassType[20],
+    Quality = 4,
     NeedGem = Table_GemRate_t.NeedGem[9]
   }
 }

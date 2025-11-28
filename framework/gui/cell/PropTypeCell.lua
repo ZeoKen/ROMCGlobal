@@ -30,6 +30,9 @@ end
 
 function PropTypeCell:SetData(data)
   self.data = data
+  if self.data.id then
+    self.id = self.data.id
+  end
   if self.data.name then
     self.name.text = self.data.name
   end

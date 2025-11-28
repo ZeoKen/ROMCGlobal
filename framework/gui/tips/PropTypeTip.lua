@@ -6,6 +6,7 @@ local tempVector3 = LuaVector3.Zero()
 function PropTypeTip:Init()
   PropTypeTip.super.Init(self)
   self.propDatas = {}
+  self.customProps = {}
   self:initView()
 end
 
@@ -41,6 +42,11 @@ function PropTypeTip:initView()
 end
 
 function PropTypeTip:initPropGrid()
+  self.customContent = self:FindGO("customContent")
+  self.customContentLabel = self:FindComponent("title", UILabel, self.customContent)
+  local grid = self:FindComponent("customPropGrid", UIGrid)
+  self.customPropGrid = UIGridListCtrl.new(grid, PropTypeCell, "PropTypeCell")
+  self.customPropGrid:AddEventListener(MouseEvent.MouseClick, self.CustomPropClick, self)
   local grid = self:FindComponent("PropTypeGrid", UIGrid)
   self.propGrid = UIGridListCtrl.new(grid, PropTypeCell, "PropTypeCell")
   self.propGrid:AddEventListener(MouseEvent.MouseClick, self.PropClick, self)
@@ -50,7 +56,15 @@ function PropTypeTip:initPropGrid()
 end
 
 function PropTypeTip:ChooseEvent()
-  local cells = self.keyworkGrid:GetCells()
+  local cells = self.customPropGrid:GetCells()
+  local customs = {}
+  for i = 1, #cells do
+    local cell = cells[i]
+    if cell.isSelected then
+      customs[#customs + 1] = cell.id
+    end
+  end
+  cells = self.keyworkGrid:GetCells()
   local tb = {}
   for i = 1, #cells do
     local single = cells[i]
@@ -59,7 +73,7 @@ function PropTypeTip:ChooseEvent()
     end
   end
   if self.callback then
-    self.callback(self.callbackParam, self.PropData, tb)
+    self.callback(self.callbackParam, customs, self.PropData, tb)
   end
 end
 
@@ -105,6 +119,13 @@ function PropTypeTip:SetKeyWords(propData)
   self.PropData = datas
 end
 
+function PropTypeTip:CustomPropClick(cell)
+  if cell and cell.data then
+    cell:SetIsSelect(not cell.isSelected)
+  end
+  self:ChooseEvent()
+end
+
 function PropTypeTip:KeyworkClick(ctr)
   if ctr and ctr.data then
     ctr:SetIsSelect(not ctr.isSelected)
@@ -123,15 +144,34 @@ function PropTypeTip:SetPos(pos)
 end
 
 function PropTypeTip:SetData(data)
+  TableUtility.ArrayClear(self.customProps)
   self.callback = data.callback
   self.callbackParam = data.param
+  self.customContentLabel.text = data.customTitle or ""
+  for id, name in pairs(data.customProps or {}) do
+    self.customProps[#self.customProps + 1] = {id = id, name = name}
+  end
   self.type = data.type
   self.tabID = data.tabID
   self:initData()
-  self:SelectValues(data.curPropData, data.curKeys)
+  self:SelectProps(data.curCustomProps, data.curPropData, data.curKeys)
 end
 
 function PropTypeTip:initData()
+  if self.customProps and #self.customProps > 0 then
+    self.customContent:SetActive(true)
+    self.customPropGrid:ResetDatas(self.customProps)
+  else
+    self.customContent:SetActive(false)
+    self.customPropGrid:ResetDatas({})
+  end
+  local bd = NGUIMath.CalculateRelativeWidgetBounds(self.customContent.transform)
+  local height = bd.size.y
+  local x, y, z = LuaGameObject.GetLocalPosition(self.customContent.transform)
+  y = y - height - 30
+  local x1, y1, z1 = LuaGameObject.GetLocalPosition(self.firstContent.transform)
+  LuaVector3.Better_Set(tempVector3, x1, y, z1)
+  self.firstContent.transform.localPosition = tempVector3
   TableUtility.ArrayClear(self.propDatas)
   local config = GameConfig.AdventurePropClassify
   local single
@@ -142,11 +182,11 @@ function PropTypeTip:initData()
     end
   end
   self.propGrid:ResetDatas(self.propDatas)
-  local bd = NGUIMath.CalculateRelativeWidgetBounds(self.firstContent.transform)
-  local height = bd.size.y
-  local x, y, z = LuaGameObject.GetLocalPosition(self.firstContent.transform)
+  bd = NGUIMath.CalculateRelativeWidgetBounds(self.firstContent.transform)
+  height = bd.size.y
+  x, y, z = LuaGameObject.GetLocalPosition(self.firstContent.transform)
   y = y - height - 30
-  local x1, y1, z1 = LuaGameObject.GetLocalPosition(self.secondContent.transform)
+  x1, y1, z1 = LuaGameObject.GetLocalPosition(self.secondContent.transform)
   LuaVector3.Better_Set(tempVector3, x1, y, z1)
   self.secondContent.transform.localPosition = tempVector3
 end
@@ -208,8 +248,25 @@ function PropTypeTip:DestroySelf()
   end
 end
 
+function PropTypeTip:SelectProps(curCustomProps, props, keys)
+  if curCustomProps then
+    local cells = self.customPropGrid:GetCells()
+    for i = 1, #cells do
+      local cell = cells[i]
+      if TableUtility.ArrayFindIndex(curCustomProps, cell.id) > 0 then
+        cell:SetIsSelect(true)
+      end
+    end
+  end
+  self:SelectValues(props, keys)
+end
+
 function PropTypeTip:OnResetBtnClick()
-  local cells = self.propGrid:GetCells()
+  local cells = self.customPropGrid:GetCells()
+  for i = 1, #cells do
+    cells[i]:SetIsSelect(false)
+  end
+  cells = self.propGrid:GetCells()
   for i = 1, #cells do
     cells[i]:SetIsSelect(false)
   end

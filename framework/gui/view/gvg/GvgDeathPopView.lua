@@ -41,6 +41,8 @@ function GvgDeathPopView:FindObjs()
       self:OnToggleClicked()
     end)
   end
+  self.safeAreaLab = self:FindComponent("SafeAreaLab", UILabel)
+  self.safeAreaLab.text = ZhString.DeathPopView_SafeArea
 end
 
 function GvgDeathPopView:AddViewEvts()
@@ -49,8 +51,19 @@ function GvgDeathPopView:AddViewEvts()
 end
 
 function GvgDeathPopView:UpdateView()
+  self:UpdateByPoint()
   self:UpdateDeathHint()
   self:UpdateCountDown()
+end
+
+function GvgDeathPopView:UpdateByPoint()
+  if GvgProxy.Instance:IHaveGuildPoint() then
+    self:Hide(self.safeAreaLab)
+    self:Show(self.toggleGroupGO)
+  else
+    self:Show(self.safeAreaLab)
+    self:Hide(self.toggleGroupGO)
+  end
 end
 
 function GvgDeathPopView:StartCountDown()

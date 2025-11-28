@@ -110,6 +110,9 @@ function PostData:SetAttach(blobAttach)
           local tempItem = ItemData.new("Post", itemInfo.id)
           tempItem.num = itemInfo.count
           tempItem.attach = self:IsAttachStatus()
+          if tempItem:IsCard() then
+            tempItem:SetCardLevel(itemInfo.card_info and itemInfo.card_info.lv or 0)
+          end
           table.insert(self.postItems, tempItem)
         end
         for i = 1, #mailattach.itemdatas do

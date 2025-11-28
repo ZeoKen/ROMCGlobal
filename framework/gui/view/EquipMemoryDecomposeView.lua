@@ -194,6 +194,14 @@ function EquipMemoryDecomposeView:GetEquipMemoryList()
       table.insert(result, single)
     end
   end
+  table.sort(result, function(l, r)
+    local l_power = l.equipMemoryData and l.equipMemoryData:GetValuePower() or 0
+    local r_power = r.equipMemoryData and r.equipMemoryData:GetValuePower() or 0
+    if l_power ~= r_power then
+      return l_power < r_power
+    end
+    return l.staticData.id > r.staticData.id
+  end)
   return result
 end
 

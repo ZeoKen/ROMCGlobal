@@ -218,7 +218,7 @@ local RefineNewCostItem = function()
   end
   return _RefineNewCostItem
 end
-EquipInfo.MaxRefineVal = 9999
+EquipInfo.MaxRefineVal = math.huge
 
 function EquipInfo.SGetSafeRefineCostConfig(equipId, inDiscount)
   local equipData = Table_Equip[equipId]

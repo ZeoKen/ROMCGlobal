@@ -30,9 +30,7 @@ function ChangeGvgLineView:ClickChangeBtn()
       MsgManager.ShowMsgByID(3084)
       return
     end
-    local curServer = FunctionLogin.Me():getCurServerData()
-    local serverID = curServer and curServer.linegroup or 1
-    local targetBattleLine = num - 1 + serverID * 10000
+    local targetBattleLine = GvgProxy.Instance:GetServerGroupId(num)
     xdlog("当前输入线", targetBattleLine)
     if not GvgProxy.Instance:CheckGroupValid(num) then
       MsgManager.ShowMsgByID(3097)
@@ -60,9 +58,7 @@ function ChangeGvgLineView:CallExchangeGvgGroupGuildCmd(num, cancel)
   if not num then
     return
   end
-  local curServer = FunctionLogin.Me():getCurServerData()
-  local serverID = curServer and curServer.linegroup or 1
-  local targetBattleLine = num - 1 + serverID * 10000
+  local targetBattleLine = GvgProxy.Instance:GetServerGroupId(num)
   xdlog("CallExchangeGvgGroupGuildCmd", targetBattleLine, cancel)
   ServiceGuildCmdProxy.Instance:CallExchangeGvgGroupGuildCmd(targetBattleLine, cancel)
   self.container:CloseSelf()

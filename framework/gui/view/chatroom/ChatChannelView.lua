@@ -210,7 +210,11 @@ function ChatChannelView:InitUI()
     end
   end
   local flag = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_USERRETURN_FLAG) or 0
-  self.ChannelToggle_return.gameObject:SetActive(flag ~= 0)
+  if flag ~= 0 then
+    self.ChannelToggle_return.gameObject:SetActive(true)
+  else
+    self.ChannelToggle_return.gameObject:SetActive(false)
+  end
   local isShowGVG = self:IsShowGVG()
   self:UpdateGVG(isShowGVG)
   if channel ~= nil then

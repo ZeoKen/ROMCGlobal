@@ -208,3 +208,6 @@ end
 function HeadwearRaidShop:OnExit()
   HeadwearRaidShop.super.OnExit(self)
 end
+
+function HeadwearRaidShop:ReInitShopInfo()
+end

@@ -57,6 +57,18 @@ function ServiceSessionShopAutoProxy:onRegister()
   self:Listen(52, 14, function(data)
     self:RecvBuyDepositProductShopCmd(data)
   end)
+  self:Listen(52, 15, function(data)
+    self:RecvRewardSafetyQueryShopCmd(data)
+  end)
+  self:Listen(52, 16, function(data)
+    self:RecvExtraBonusQueryShopCmd(data)
+  end)
+  self:Listen(52, 17, function(data)
+    self:RecvExtraBonusResetShopCmd(data)
+  end)
+  self:Listen(52, 18, function(data)
+    self:RecvExtraBonusRewardShopCmd(data)
+  end)
 end
 
 function ServiceSessionShopAutoProxy:CallBuyShopItem(id, count, price, price2, success, grid, accweeklimitshow)
@@ -655,6 +667,136 @@ function ServiceSessionShopAutoProxy:CallBuyDepositProductShopCmd(id, product_id
   end
 end
 
+function ServiceSessionShopAutoProxy:CallRewardSafetyQueryShopCmd(itemid, infos)
+  if not NetConfig.PBC then
+    local msg = SessionShop_pb.RewardSafetyQueryShopCmd()
+    if itemid ~= nil then
+      msg.itemid = itemid
+    end
+    if infos ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.infos == nil then
+        msg.infos = {}
+      end
+      for i = 1, #infos do
+        table.insert(msg.infos, infos[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.RewardSafetyQueryShopCmd.id
+    local msgParam = {}
+    if itemid ~= nil then
+      msgParam.itemid = itemid
+    end
+    if infos ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.infos == nil then
+        msgParam.infos = {}
+      end
+      for i = 1, #infos do
+        table.insert(msgParam.infos, infos[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSessionShopAutoProxy:CallExtraBonusQueryShopCmd(batch, buytimes, resettimes, rewardids)
+  if not NetConfig.PBC then
+    local msg = SessionShop_pb.ExtraBonusQueryShopCmd()
+    if batch ~= nil then
+      msg.batch = batch
+    end
+    if buytimes ~= nil then
+      msg.buytimes = buytimes
+    end
+    if resettimes ~= nil then
+      msg.resettimes = resettimes
+    end
+    if rewardids ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.rewardids == nil then
+        msg.rewardids = {}
+      end
+      for i = 1, #rewardids do
+        table.insert(msg.rewardids, rewardids[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.ExtraBonusQueryShopCmd.id
+    local msgParam = {}
+    if batch ~= nil then
+      msgParam.batch = batch
+    end
+    if buytimes ~= nil then
+      msgParam.buytimes = buytimes
+    end
+    if resettimes ~= nil then
+      msgParam.resettimes = resettimes
+    end
+    if rewardids ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.rewardids == nil then
+        msgParam.rewardids = {}
+      end
+      for i = 1, #rewardids do
+        table.insert(msgParam.rewardids, rewardids[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSessionShopAutoProxy:CallExtraBonusResetShopCmd(success)
+  if not NetConfig.PBC then
+    local msg = SessionShop_pb.ExtraBonusResetShopCmd()
+    if success ~= nil then
+      msg.success = success
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.ExtraBonusResetShopCmd.id
+    local msgParam = {}
+    if success ~= nil then
+      msgParam.success = success
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSessionShopAutoProxy:CallExtraBonusRewardShopCmd(rewardid, success)
+  if not NetConfig.PBC then
+    local msg = SessionShop_pb.ExtraBonusRewardShopCmd()
+    if rewardid ~= nil then
+      msg.rewardid = rewardid
+    end
+    if success ~= nil then
+      msg.success = success
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.ExtraBonusRewardShopCmd.id
+    local msgParam = {}
+    if rewardid ~= nil then
+      msgParam.rewardid = rewardid
+    end
+    if success ~= nil then
+      msgParam.success = success
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceSessionShopAutoProxy:RecvBuyShopItem(data)
   self:Notify(ServiceEvent.SessionShopBuyShopItem, data)
 end
@@ -711,6 +853,22 @@ function ServiceSessionShopAutoProxy:RecvBuyDepositProductShopCmd(data)
   self:Notify(ServiceEvent.SessionShopBuyDepositProductShopCmd, data)
 end
 
+function ServiceSessionShopAutoProxy:RecvRewardSafetyQueryShopCmd(data)
+  self:Notify(ServiceEvent.SessionShopRewardSafetyQueryShopCmd, data)
+end
+
+function ServiceSessionShopAutoProxy:RecvExtraBonusQueryShopCmd(data)
+  self:Notify(ServiceEvent.SessionShopExtraBonusQueryShopCmd, data)
+end
+
+function ServiceSessionShopAutoProxy:RecvExtraBonusResetShopCmd(data)
+  self:Notify(ServiceEvent.SessionShopExtraBonusResetShopCmd, data)
+end
+
+function ServiceSessionShopAutoProxy:RecvExtraBonusRewardShopCmd(data)
+  self:Notify(ServiceEvent.SessionShopExtraBonusRewardShopCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.SessionShopBuyShopItem = "ServiceEvent_SessionShopBuyShopItem"
 ServiceEvent.SessionShopQueryShopConfigCmd = "ServiceEvent_SessionShopQueryShopConfigCmd"
@@ -726,3 +884,7 @@ ServiceEvent.SessionShopOpenShopTypeShopCmd = "ServiceEvent_SessionShopOpenShopT
 ServiceEvent.SessionShopBulkBuyShopItem = "ServiceEvent_SessionShopBulkBuyShopItem"
 ServiceEvent.SessionShopBuyPackageSaleShopCmd = "ServiceEvent_SessionShopBuyPackageSaleShopCmd"
 ServiceEvent.SessionShopBuyDepositProductShopCmd = "ServiceEvent_SessionShopBuyDepositProductShopCmd"
+ServiceEvent.SessionShopRewardSafetyQueryShopCmd = "ServiceEvent_SessionShopRewardSafetyQueryShopCmd"
+ServiceEvent.SessionShopExtraBonusQueryShopCmd = "ServiceEvent_SessionShopExtraBonusQueryShopCmd"
+ServiceEvent.SessionShopExtraBonusResetShopCmd = "ServiceEvent_SessionShopExtraBonusResetShopCmd"
+ServiceEvent.SessionShopExtraBonusRewardShopCmd = "ServiceEvent_SessionShopExtraBonusRewardShopCmd"

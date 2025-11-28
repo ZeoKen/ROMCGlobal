@@ -1078,6 +1078,51 @@ Table_ItemDisplay = {
     id = 10000315,
     Type = 1,
     NoDisplay = _EmptyTable
+  },
+  [3012848] = {
+    id = 3012848,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [3012857] = {
+    id = 3012857,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000449] = {
+    id = 10000449,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000450] = {
+    id = 10000450,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000451] = {
+    id = 10000451,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000452] = {
+    id = 10000452,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000453] = {
+    id = 10000453,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000456] = {
+    id = 10000456,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000457] = {
+    id = 10000457,
+    Type = 1,
+    NoDisplay = _EmptyTable
   }
 }
 Table_ItemDisplay_fields = {

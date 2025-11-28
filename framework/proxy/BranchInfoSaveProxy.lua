@@ -264,6 +264,34 @@ function BranchInfoSaveProxy:GetEquipMasterSkillFamilyId(id)
   return self.recordDatas[id]:GetEquipMasterSkillFamilyId()
 end
 
+function BranchInfoSaveProxy:GetInheritSkillProfessDatas(id)
+  if not self.recordDatas[id] then
+    return
+  end
+  return self.recordDatas[id]:GetInheritSkillProfessDatas()
+end
+
+function BranchInfoSaveProxy:GetInheritSkillLoadSkills(id)
+  if not self.recordDatas[id] then
+    return
+  end
+  return self.recordDatas[id]:GetInheritSkillLoadSkills()
+end
+
+function BranchInfoSaveProxy:GetExtendedCostPoints(id)
+  if not self.recordDatas[id] then
+    return
+  end
+  return self.recordDatas[id]:GetExtendedCostPoints()
+end
+
+function BranchInfoSaveProxy:GetTotalCostPointAttrs(id, costPoint)
+  if not self.recordDatas[id] then
+    return
+  end
+  return self.recordDatas[id]:GetTotalCostPointAttrs(costPoint)
+end
+
 function BranchInfoSaveProxy:GetRecordEquipUnloadCards(id)
   local equipInfo = self:GetEquipInfo(id, BagProxy.BagType.RoleEquip)
   local unloadCards = FunctionMultiProfession.Me():GetEquipsUnloadCards(equipInfo)

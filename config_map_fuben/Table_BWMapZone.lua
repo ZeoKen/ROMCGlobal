@@ -159,6 +159,16 @@ Table_BWMapZone_t = {
       329.67,
       171.3,
       168.76
+    },
+    {
+      254.52,
+      171.3,
+      -264.03
+    },
+    {
+      238.28,
+      171.3,
+      -165.69
     }
   },
   Center = {
@@ -366,6 +376,21 @@ Table_BWMapZone_t = {
       341.62,
       179.08,
       233.78
+    },
+    {
+      281.58,
+      175,
+      -193
+    },
+    {
+      339.66,
+      168.58,
+      -305.94
+    },
+    {
+      276.26,
+      164.32,
+      -63.72
     }
   },
   Event = {
@@ -817,6 +842,35 @@ Table_BWMapZone_t = {
         1014340001,
         1014430001
       }
+    },
+    {
+      Quest = {
+        1014470001,
+        1014490001,
+        1014520001,
+        1014530001,
+        1014560001,
+        1015750002
+      }
+    },
+    {
+      MapStep = {
+        271,
+        272,
+        273,
+        274,
+        275
+      },
+      Quest = {
+        1014510001,
+        1014450001,
+        1014460001,
+        1014480001,
+        1014500001,
+        1014540001,
+        1014550001,
+        1015760002
+      }
     }
   }
 }
@@ -1024,6 +1078,7 @@ Table_BWMapZone = {
   },
   [24] = {
     id = 24,
+    NameZh = "##2843931",
     RegionId = 21,
     GroupId = 11,
     Center = Table_BWMapZone_t.Center[14],
@@ -1033,6 +1088,7 @@ Table_BWMapZone = {
   },
   [25] = {
     id = 25,
+    NameZh = "##2843931",
     Type = 3,
     RegionId = 22,
     GroupId = 11,
@@ -1128,7 +1184,6 @@ Table_BWMapZone = {
   },
   [36] = {
     id = 36,
-    NameZh = "##3449462",
     RegionId = 31,
     GroupId = 16,
     Center = Table_BWMapZone_t.Center[21],
@@ -1138,7 +1193,6 @@ Table_BWMapZone = {
   },
   [37] = {
     id = 37,
-    NameZh = "##3449462",
     Type = 3,
     RegionId = 32,
     GroupId = 16,
@@ -1499,6 +1553,54 @@ Table_BWMapZone = {
     GroupId = 11,
     BGM = "bgm_100",
     Desc = "##44698240"
+  },
+  [74] = {
+    id = 74,
+    MapId = 154,
+    NameZh = "##44712775",
+    Type = 1,
+    Center = Table_BWMapZone_t.Center[42],
+    BGM = ""
+  },
+  [75] = {
+    id = 75,
+    MapId = 154,
+    RegionId = 23,
+    GroupId = 12,
+    Center = Table_BWMapZone_t.Center[43],
+    BlockCenter = Table_BWMapZone_t.BlockCenter[33],
+    Event = Table_BWMapZone_t.Event[33],
+    BGM = "bgm_sinkingintotheabyss"
+  },
+  [76] = {
+    id = 76,
+    MapId = 154,
+    Type = 3,
+    RegionId = 24,
+    GroupId = 12,
+    BGM = "AtharStone",
+    Desc = "##44707875"
+  },
+  [77] = {
+    id = 77,
+    MapId = 154,
+    NameZh = "##44707876",
+    RegionId = 25,
+    GroupId = 13,
+    Center = Table_BWMapZone_t.Center[44],
+    BlockCenter = Table_BWMapZone_t.BlockCenter[34],
+    Event = Table_BWMapZone_t.Event[34],
+    BGM = "bgm_sinkingintotheabyss"
+  },
+  [78] = {
+    id = 78,
+    MapId = 154,
+    NameZh = "##44707876",
+    Type = 3,
+    RegionId = 26,
+    GroupId = 13,
+    BGM = "AtharStone",
+    Desc = "##44707878"
   }
 }
 local cell_mt = {
@@ -1509,7 +1611,7 @@ local cell_mt = {
     Desc = "",
     Event = _EmptyTable,
     MapId = 149,
-    NameZh = "##2843931",
+    NameZh = "##3449462",
     Type = 2,
     id = 1
   }

@@ -20358,6 +20358,226 @@ Table_EffectLodMap = {
     id = 104110,
     Path = "Skill/sfx_kafra_wmfw_buff_prf",
     LodPaths = "Skill/sfx_kafra_wmfw_buff_prf,Skill/sfx_kafra_wmfw_buff_lod1_prf,Skill/sfx_kafra_wmfw_buff_lod2_prf"
+  },
+  [104111] = {
+    id = 104111,
+    Path = "Skill/sfx_danmachibell_ykky_buff_02_prf",
+    LodPaths = "Skill/sfx_danmachibell_ykky_buff_02_prf,Skill/sfx_danmachibell_ykky_buff_02_lod1_prf,Skill/sfx_danmachibell_ykky_buff_02_lod1_prf"
+  },
+  [104112] = {
+    id = 104112,
+    Path = "Skill/sfx_danmachibell_fhjxq_atk_prf",
+    LodPaths = "Skill/sfx_danmachibell_fhjxq_atk_prf,Skill/sfx_danmachibell_fhjxq_atk_lod1_prf,Skill/sfx_danmachibell_fhjxq_atk_lod2_prf"
+  },
+  [104113] = {
+    id = 104113,
+    Path = "Skill/sfx_danmachibell_ykky_buff_04_prf",
+    LodPaths = "Skill/sfx_danmachibell_ykky_buff_04_prf,Skill/sfx_danmachibell_ykky_buff_04_lod1_prf,Skill/sfx_danmachibell_ykky_buff_04_lod1_prf"
+  },
+  [104114] = {
+    id = 104114,
+    Path = "Skill/sfx_danmachibell_fhjxq_floor_prf",
+    LodPaths = "Skill/sfx_danmachibell_fhjxq_floor_prf,Skill/sfx_danmachibell_fhjxq_floor_lod1_prf,Skill/sfx_danmachibell_fhjxq_floor_lod2_prf"
+  },
+  [104115] = {
+    id = 104115,
+    Path = "Skill/sfx_danmachibell_ykky_buff_03_prf",
+    LodPaths = "Skill/sfx_danmachibell_ykky_buff_03_prf,Skill/sfx_danmachibell_ykky_buff_03_lod1_prf,Skill/sfx_danmachibell_ykky_buff_03_lod1_prf"
+  },
+  [104116] = {
+    id = 104116,
+    Path = "Skill/sfx_danmachibell_weapon_prf",
+    LodPaths = "Skill/sfx_danmachibell_weapon_prf,Skill/sfx_danmachibell_weapon_prf,Skill/sfx_danmachibell_weapon_prf"
+  },
+  [104117] = {
+    id = 104117,
+    Path = "Skill/sfx_danmachibell_sjlx_atk_prf",
+    LodPaths = "Skill/sfx_danmachibell_sjlx_atk_prf,Skill/sfx_danmachibell_sjlx_atk_lod1_prf,Skill/sfx_danmachibell_sjlx_atk_lod2_prf"
+  },
+  [104118] = {
+    id = 104118,
+    Path = "Skill/sfx_danmachibell_shjf_buff_prf",
+    LodPaths = "Skill/sfx_danmachibell_shjf_buff_prf,Skill/sfx_danmachibell_shjf_buff_lod1_prf,Skill/sfx_danmachibell_shjf_buff_lod1_prf"
+  },
+  [104119] = {
+    id = 104119,
+    Path = "Skill/sfx_danmachibell_ykky_atk_prf",
+    LodPaths = "Skill/sfx_danmachibell_ykky_atk_prf,Skill/sfx_danmachibell_ykky_atk_lod1_prf,Skill/sfx_danmachibell_ykky_atk_lod2_prf"
+  },
+  [104120] = {
+    id = 104120,
+    Path = "Skill/sfx_danmachibell_hysd_atk_prf",
+    LodPaths = "Skill/sfx_danmachibell_hysd_atk_prf,Skill/sfx_danmachibell_hysd_atk_lod1_prf,Skill/sfx_danmachibell_hysd_atk_lod2_prf"
+  },
+  [104121] = {
+    id = 104121,
+    Path = "Skill/sfx_danmachibell_hysd_floor_prf",
+    LodPaths = "Skill/sfx_danmachibell_hysd_floor_prf,Skill/sfx_danmachibell_hysd_floor_lod1_prf,Skill/sfx_danmachibell_hysd_floor_lod2_prf"
+  },
+  [104122] = {
+    id = 104122,
+    Path = "Skill/sfx_danmachibell_shjf_atk_prf",
+    LodPaths = "Skill/sfx_danmachibell_shjf_atk_prf,Skill/sfx_danmachibell_shjf_atk_lod1_prf,Skill/sfx_danmachibell_shjf_atk_lod2_prf"
+  },
+  [104123] = {
+    id = 104123,
+    Path = "Skill/sfx_danmachibell_hysd_bullet_prf",
+    LodPaths = "Skill/sfx_danmachibell_hysd_bullet_prf,Skill/sfx_danmachibell_hysd_bullet_lod1_prf,Skill/sfx_danmachibell_hysd_bullet_lod2_prf"
+  },
+  [104124] = {
+    id = 104124,
+    Path = "Skill/sfx_danmachibell_ykky_buff_01_prf",
+    LodPaths = "Skill/sfx_danmachibell_ykky_buff_01_prf,Skill/sfx_danmachibell_ykky_buff_01_lod1_prf,Skill/sfx_danmachibell_ykky_buff_01_lod1_prf"
+  },
+  [104125] = {
+    id = 104125,
+    Path = "Skill/sfx_danmachibell_cszr_floor_prf",
+    LodPaths = "Skill/sfx_danmachibell_cszr_floor_prf,Skill/sfx_danmachibell_cszr_floor_lod1_prf,Skill/sfx_danmachibell_cszr_floor_lod1_prf"
+  },
+  [104126] = {
+    id = 104126,
+    Path = "Skill/sfx_danmachibell_yxcj_atk_prf",
+    LodPaths = "Skill/sfx_danmachibell_yxcj_atk_prf,Skill/sfx_danmachibell_yxcj_atk_lod1_prf,Skill/sfx_danmachibell_yxcj_atk_lod2_prf"
+  },
+  [104127] = {
+    id = 104127,
+    Path = "Skill/sfx_danmachibell_yxdyj_atk_prf",
+    LodPaths = "Skill/sfx_danmachibell_yxdyj_atk_prf,Skill/sfx_danmachibell_yxdyj_atk_lod1_prf,Skill/sfx_danmachibell_yxdyj_atk_lod2_prf"
+  },
+  [104128] = {
+    id = 104128,
+    Path = "Skill/sfx_danmachibell_yxdyj_buff_prf",
+    LodPaths = "Skill/sfx_danmachibell_yxdyj_buff_prf,Skill/sfx_danmachibell_yxdyj_buff_lod1_prf,Skill/sfx_danmachibell_yxdyj_buff_lod2_prf"
+  },
+  [104129] = {
+    id = 104129,
+    Path = "Skill/sfx_danmachibell_yxyw_buff_01_prf",
+    LodPaths = "Skill/sfx_danmachibell_yxyw_buff_01_prf,Skill/sfx_danmachibell_yxyw_buff_01_lod1_prf,Skill/sfx_danmachibell_yxyw_buff_01_lod2_prf"
+  },
+  [104130] = {
+    id = 104130,
+    Path = "Skill/sfx_danmachibell_yxyw_buff_02_prf",
+    LodPaths = "Skill/sfx_danmachibell_yxyw_buff_02_prf,Skill/sfx_danmachibell_yxyw_buff_02_lod1_prf,Skill/sfx_danmachibell_yxyw_buff_02_lod2_prf"
+  },
+  [104131] = {
+    id = 104131,
+    Path = "Skill/sfx_danmachibell_yxyw_buff_03_prf",
+    LodPaths = "Skill/sfx_danmachibell_yxyw_buff_03_prf,Skill/sfx_danmachibell_yxyw_buff_03_lod1_prf,Skill/sfx_danmachibell_yxyw_buff_03_lod2_prf"
+  },
+  [104132] = {
+    id = 104132,
+    Path = "Skill/sfx_danmachibell_yxyw_buff_04_prf",
+    LodPaths = "Skill/sfx_danmachibell_yxyw_buff_04_prf,Skill/sfx_danmachibell_yxyw_buff_04_lod1_prf,Skill/sfx_danmachibell_yxyw_buff_04_lod2_prf"
+  },
+  [104133] = {
+    id = 104133,
+    Path = "Skill/sfx_danmachiais_bflx_atk_prf",
+    LodPaths = "Skill/sfx_danmachiais_bflx_atk_prf,Skill/sfx_danmachiais_bflx_atk_lod1_prf,Skill/sfx_danmachiais_bflx_atk_lod2_prf"
+  },
+  [104134] = {
+    id = 104134,
+    Path = "Skill/sfx_danmachiais_fd_buff_prf",
+    LodPaths = "Skill/sfx_danmachiais_fd_buff_prf,Skill/sfx_danmachiais_fd_buff_lod1_prf,Skill/sfx_danmachiais_fd_buff_lod2_prf"
+  },
+  [104135] = {
+    id = 104135,
+    Path = "Skill/sfx_danmachiais_fhjxq_atk_prf",
+    LodPaths = "Skill/sfx_danmachiais_fhjxq_atk_prf,Skill/sfx_danmachiais_fhjxq_atk_lod1_prf,Skill/sfx_danmachiais_fhjxq_atk_lod2_prf"
+  },
+  [104136] = {
+    id = 104136,
+    Path = "Skill/sfx_danmachiais_fhjxq_floor_01_prf",
+    LodPaths = "Skill/sfx_danmachiais_fhjxq_floor_01_prf,Skill/sfx_danmachiais_fhjxq_floor_01_lod1_prf,Skill/sfx_danmachiais_fhjxq_floor_01_lod1_prf"
+  },
+  [104137] = {
+    id = 104137,
+    Path = "Skill/sfx_danmachiais_djcz_atk_prf",
+    LodPaths = "Skill/sfx_danmachiais_djcz_atk_prf,Skill/sfx_danmachiais_djcz_atk_lod1_prf,Skill/sfx_danmachiais_djcz_atk_lod1_prf"
+  },
+  [104138] = {
+    id = 104138,
+    Path = "Skill/sfx_danmachiais_dszz_buff_prf",
+    LodPaths = "Skill/sfx_danmachiais_dszz_buff_prf,Skill/sfx_danmachiais_dszz_buff_lod1_prf,Skill/sfx_danmachiais_dszz_buff_lod2_prf"
+  },
+  [104139] = {
+    id = 104139,
+    Path = "Skill/sfx_danmachiais_bflx_floor_prf",
+    LodPaths = "Skill/sfx_danmachiais_bflx_floor_prf,Skill/sfx_danmachiais_bflx_floor_lod1_prf,Skill/sfx_danmachiais_bflx_floor_lod2_prf"
+  },
+  [104140] = {
+    id = 104140,
+    Path = "Skill/sfx_danmachiais_dszz_atk_prf",
+    LodPaths = "Skill/sfx_danmachiais_dszz_atk_prf,Skill/sfx_danmachiais_dszz_atk_lod1_prf,Skill/sfx_danmachiais_dszz_atk_lod2_prf"
+  },
+  [104141] = {
+    id = 104141,
+    Path = "Skill/sfx_danmachiais_fhjxq_floor_prf",
+    LodPaths = "Skill/sfx_danmachiais_fhjxq_floor_prf,Skill/sfx_danmachiais_fhjxq_floor_lod1_prf,Skill/sfx_danmachiais_fhjxq_floor_lod2_prf"
+  },
+  [104142] = {
+    id = 104142,
+    Path = "Skill/sfx_danmachiais_fljz_atk_prf",
+    LodPaths = "Skill/sfx_danmachiais_fljz_atk_prf,Skill/sfx_danmachiais_fljz_atk_lod1_prf,Skill/sfx_danmachiais_fljz_atk_lod2_prf"
+  },
+  [104143] = {
+    id = 104143,
+    Path = "Skill/sfx_danmachiais_fljz_buff_prf",
+    LodPaths = "Skill/sfx_danmachiais_fljz_buff_prf,Skill/sfx_danmachiais_fljz_buff_lod1_prf,Skill/sfx_danmachiais_fljz_buff_lod2_prf"
+  },
+  [104144] = {
+    id = 104144,
+    Path = "Skill/sfx_danmachiais_frcj_atk_prf",
+    LodPaths = "Skill/sfx_danmachiais_frcj_atk_prf,Skill/sfx_danmachiais_frcj_atk_lod1_prf,Skill/sfx_danmachiais_frcj_atk_lod2_prf"
+  },
+  [104145] = {
+    id = 104145,
+    Path = "Skill/sfx_danmachiais_fzgz_buff_01_prf",
+    LodPaths = "Skill/sfx_danmachiais_fzgz_buff_01_prf,Skill/sfx_danmachiais_fzgz_buff_01_prf,Skill/sfx_danmachiais_fzgz_buff_01_prf"
+  },
+  [104146] = {
+    id = 104146,
+    Path = "Skill/sfx_danmachiais_fzgz_buff_02_prf",
+    LodPaths = "Skill/sfx_danmachiais_fzgz_buff_02_prf,Skill/sfx_danmachiais_fzgz_buff_02_prf,Skill/sfx_danmachiais_fzgz_buff_02_prf"
+  },
+  [104147] = {
+    id = 104147,
+    Path = "Skill/sfx_danmachiais_fzgz_buff_03_prf",
+    LodPaths = "Skill/sfx_danmachiais_fzgz_buff_03_prf,Skill/sfx_danmachiais_fzgz_buff_03_prf,Skill/sfx_danmachiais_fzgz_buff_03_prf"
+  },
+  [104148] = {
+    id = 104148,
+    Path = "Skill/sfx_danmachiais_fzgz_buff_04_prf",
+    LodPaths = "Skill/sfx_danmachiais_fzgz_buff_04_prf,Skill/sfx_danmachiais_fzgz_buff_04_prf,Skill/sfx_danmachiais_fzgz_buff_04_prf"
+  },
+  [104149] = {
+    id = 104149,
+    Path = "Skill/sfx_danmachiais_fzgz_buff_prf",
+    LodPaths = "Skill/sfx_danmachiais_fzgz_buff_prf,Skill/sfx_danmachiais_fzgz_buff_lod1_prf,Skill/sfx_danmachiais_fzgz_buff_lod2_prf"
+  },
+  [104150] = {
+    id = 104150,
+    Path = "Skill/sfx_danmachiais_fzr_atk_prf",
+    LodPaths = "Skill/sfx_danmachiais_fzr_atk_prf,Skill/sfx_danmachiais_fzr_atk_lod1_prf,Skill/sfx_danmachiais_fzr_atk_lod2_prf"
+  },
+  [104151] = {
+    id = 104151,
+    Path = "Skill/sfx_danmachiais_fzr_floor_prf",
+    LodPaths = "Skill/sfx_danmachiais_fzr_floor_prf,Skill/sfx_danmachiais_fzr_floor_lod1_prf,Skill/sfx_danmachiais_fzr_floor_lod2_prf"
+  },
+  [104152] = {
+    id = 104152,
+    Path = "Skill/sfx_danmachiais_shjf_atk_prf",
+    LodPaths = "Skill/sfx_danmachiais_shjf_atk_prf,Skill/sfx_danmachiais_shjf_atk_lod1_prf,Skill/sfx_danmachiais_shjf_atk_lod2_prf"
+  },
+  [104153] = {
+    id = 104153,
+    Path = "Skill/sfx_danmachiais_shjf_buff_prf",
+    LodPaths = "Skill/sfx_danmachiais_shjf_buff_prf,Skill/sfx_danmachiais_shjf_buff_lod1_prf,Skill/sfx_danmachiais_shjf_buff_lod2_prf"
+  },
+  [104154] = {
+    id = 104154,
+    Path = "Skill/sfx_danmachiais_weapon_prf",
+    LodPaths = "Skill/sfx_danmachiais_weapon_prf,Skill/sfx_danmachiais_weapon_prf,Skill/sfx_danmachiais_weapon_prf"
   }
 }
 Table_EffectLodMap_fields = {

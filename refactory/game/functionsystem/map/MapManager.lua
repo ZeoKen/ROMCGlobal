@@ -495,6 +495,14 @@ function MapManager:IsPVEMode_SpaceTimeIllusion()
   return self.dungeonManager:IsPVEMode_SpaceTimeIllusion()
 end
 
+function MapManager:IsPVEMode_AbyssDragon()
+  return self.dungeonManager:IsPVEMode_AbyssDragon()
+end
+
+function MapManager:IsPVEMode_FairyTaleRaid()
+  return self.dungeonManager:IsPVEMode_FairyTaleRaid()
+end
+
 function MapManager:IsInDungeon()
   return self.dungeonManager:IsRunning()
 end
@@ -627,6 +635,7 @@ function MapManager:SetCurrentMap(serverData, force)
   local currentRaidID = self.mapInfo[6]
   local mapID = serverData.mapID
   local raidID = serverData.dmapID
+  redlog("SetCurrentMap", tostring(currentMapID), tostring(mapID), tostring(currentRaidID), tostring(raidID))
   if not force and currentMapID == mapID and currentRaidID == raidID then
     return
   end
@@ -1081,6 +1090,7 @@ function MapManager:Launch()
   QuestUseFuncManager.Me():Launch()
   FunctionAstral.Me():Launch()
   FunctionAbyssLake.Me():Launch(self.mapInfo[1])
+  FunctionAbyssDragon.Me():Launch()
   if MapManager.Mode.Raid == self.mode then
     self.dungeonManager:SetRaidID(self.curActiveMapID)
   else
@@ -1186,7 +1196,7 @@ function MapManager:Shutdown()
   Game.EffectManager:ClearAllStat()
   self.dynamicObjectManager:Shutdown()
   self.questMiniMapEffectManager:Shutdown()
-  self.plotStoryManager:Shutdown(nil, true)
+  self.plotStoryManager:Shutdown(nil, true, true)
   self.pictureWallManager:Shutdown()
   self.weddingWallPicManager:Shutdown()
   self.homeWallPicManager:Shutdown()
@@ -1216,6 +1226,7 @@ function MapManager:Shutdown()
   self.bigWorldManager:Shutdown()
   QuestUseFuncManager.Me():Shutdown()
   FunctionAstral.Me():Shutdown()
+  FunctionAbyssDragon.Me():Shutdown()
   self:OnPreviewStop()
   self.sceneAnimation = nil
   self.sceneAnimationAnimator = nil

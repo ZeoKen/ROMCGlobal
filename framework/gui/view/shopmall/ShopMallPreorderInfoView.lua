@@ -84,6 +84,9 @@ function ShopMallPreorderInfoView:SetCardDetail(preorderItemData)
 end
 
 function ShopMallPreorderInfoView:OnExit()
+  if self.cell then
+    self.cell:OnDestroy()
+  end
   if self.attriCtl then
     self.attriCtl:Destroy()
   end

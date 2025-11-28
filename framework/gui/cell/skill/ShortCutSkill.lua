@@ -15,6 +15,27 @@ local CanDoubleClick = function(staticData)
   end
   return staticData.SkillType == SkillType_SpaceLeap
 end
+local _EffectShow = function(effectHandle, owner, assetEffect)
+  if not owner then
+    return
+  end
+  owner.FindObjects(owner, effectHandle.gameObject)
+  owner.SetAnimator(owner, effectHandle)
+end
+
+function ShortCutSkill:FindObjects(effectGO)
+  if effectGO and self.effectGO ~= effectGO then
+    self.effectGO = effectGO
+    self.animator = effectGO:GetComponent(Animator)
+  end
+end
+
+function ShortCutSkill:SetAnimator(effectHandle)
+  if self.duration and self.duration > 0 then
+    self.animator.speed = 1 / self.duration
+    self.animator:Play("ufx_danmachibell_xuli_prf")
+  end
+end
 
 function ShortCutSkill:Init()
   self.notFitCheck = ConditionCheckWithDirty.new()
@@ -48,6 +69,7 @@ function ShortCutSkill:Init()
   self.replaceEffMask = self:FindGO("replaceEffMask")
   self.replaceEffSp = self.replaceEff:GetComponent(UISprite)
   self.replaceEffMaskSp = self.replaceEffMask:GetComponent(UISprite)
+  self.leadEffectContainer = self:FindGO("leadEffect")
   self.switchEffectContainer = self:FindGO("switchEffect")
   self:DestroySwitchEffect()
   self:ResetCdEffect()
@@ -111,6 +133,7 @@ function ShortCutSkill:Init()
   EventManager.Me():AddEventListener(MyselfEvent.OnMountFormChange, self.UpdateIcon, self)
   self.breakEffectContainer = self:FindGO("breakEffect")
   self.hotKeyTipContainer = self:FindComponent("HotKeyTipContainer", UIWidget)
+  self.chargeTimes = self:FindComponent("chargeTimes", UILabel)
 end
 
 function ShortCutSkill:ClickSkill(auto)
@@ -265,6 +288,7 @@ function ShortCutSkill:SetData(obj)
   self:UpdateLeftCDtimes()
   self:UpdateForgetState()
   self:UpdateLeadMask()
+  self:UpdateChargeBuff()
 end
 
 function ShortCutSkill:ClickBtnAlpha(a)
@@ -561,13 +585,23 @@ function ShortCutSkill:GuideBegin(skillInfo)
   if skillInfo == nil then
     skillInfo = Game.LogicManager_Skill:GetSkillInfo(self.data:GetID())
   end
-  local duration = skillInfo:GetCastInfo(Game.Myself)
-  LeanTween.fillAmountNGUI(self.leadMask, 1, 0, duration)
+  self.duration = skillInfo:GetCastInfo(Game.Myself)
+  if not skillInfo:UseLeadUIEffect() then
+    LeanTween.fillAmountNGUI(self.leadMask, 1, 0, self.duration)
+    return
+  end
+  if not self.leadEffect then
+    self.leadEffect = self:PlayUIEffect(EffectMap.UI.LeadEffect, self.leadEffectContainer, true, _EffectShow, self)
+  end
 end
 
 function ShortCutSkill:GuideEnd()
   self.leadMask.fillAmount = 0
   LeanTween.cancel(self.leadMask.gameObject)
+  if self.leadEffect then
+    self.leadEffect:Destroy()
+    self.leadEffect = nil
+  end
 end
 
 function ShortCutSkill:UpdateExpireTime()
@@ -743,4 +777,21 @@ end
 
 function ShortCutSkill:UpdateCDTimes()
   self:UpdateLeftCDtimes()
+end
+
+local chargebuffID = 0
+
+function ShortCutSkill:UpdateChargeBuff()
+  chargebuffID = self.data and self.data.staticData and self.data.staticData.Logic_Param and self.data.staticData.Logic_Param.charge_buffid
+  if chargebuffID then
+    local layer = Game.Myself:GetBuffLayer(chargebuffID)
+    if 0 < layer then
+      self.chargeTimes.text = layer
+      self:Show(self.chargeTimes)
+    else
+      self:Hide(self.chargeTimes)
+    end
+  else
+    self:Hide(self.chargeTimes)
+  end
 end

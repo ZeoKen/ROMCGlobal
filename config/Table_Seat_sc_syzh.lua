@@ -281,84 +281,9 @@ Table_Seat_sc_syzh_t = {
       -292.29
     },
     {
-      -245.33,
-      161.61,
-      -272.07
-    },
-    {
-      -246.27,
-      160.61,
-      -271.78
-    },
-    {
-      -220.49,
-      158.57,
-      -285.04
-    },
-    {
-      -221.32,
-      158.51,
-      -285.68
-    },
-    {
-      -221.8,
-      158.46,
-      -284.54
-    },
-    {
-      -221.29,
-      161.8,
-      -247.25
-    },
-    {
-      -222.33,
-      161.88,
-      -247.69
-    },
-    {
-      -223.43,
-      161.9,
-      -247.87
-    },
-    {
-      -256.52,
-      164.07,
-      -264.93
-    },
-    {
-      -255.57,
-      162.4,
-      -265.62
-    },
-    {
-      -257.23,
-      162.16,
-      -263.25
-    },
-    {
       -274.61,
       156.34,
       -251.99
-    },
-    {
-      -282.07,
-      156.09,
-      -208.06
-    },
-    {
-      -282.66,
-      155.69,
-      -208.55
-    },
-    {
-      -267.35,
-      155.21,
-      -207.83
-    },
-    {
-      -266.01,
-      156.75,
-      -205.89
     },
     {
       -273.04,
@@ -1564,6 +1489,476 @@ Table_Seat_sc_syzh_t = {
       285.91,
       162.66,
       10.25
+    },
+    {
+      325.18,
+      176.72,
+      -102.7
+    },
+    {
+      327.97,
+      177.76,
+      -103.86
+    },
+    {
+      331.65,
+      177.23,
+      -105.33
+    },
+    {
+      334.01,
+      174.11,
+      -106.51
+    },
+    {
+      445.4,
+      170.95,
+      -157.49
+    },
+    {
+      446.23,
+      171.13,
+      -160.03
+    },
+    {
+      456.65,
+      174.42,
+      -187.51
+    },
+    {
+      460.12,
+      175.82,
+      -190.87
+    },
+    {
+      462.57,
+      175.88,
+      -191.65
+    },
+    {
+      460.59,
+      177.74,
+      -187.45
+    },
+    {
+      427.12,
+      174.73,
+      -212.34
+    },
+    {
+      428.08,
+      174.73,
+      -209.82
+    },
+    {
+      274.61,
+      177.89,
+      -334.12
+    },
+    {
+      282.22,
+      181.52,
+      -345.37
+    },
+    {
+      265.36,
+      173.24,
+      -95.86
+    },
+    {
+      261.96,
+      172.52,
+      -94.84
+    },
+    {
+      260.32,
+      173.28,
+      -93.72
+    },
+    {
+      263.29,
+      172.29,
+      -95.01
+    },
+    {
+      258.87,
+      174.41,
+      -93.08
+    },
+    {
+      257.48,
+      173.28,
+      -92.23
+    },
+    {
+      256.0,
+      172.7,
+      -91.7
+    },
+    {
+      254.47,
+      172.27,
+      -90.79
+    },
+    {
+      257.86,
+      166.41,
+      -82.92
+    },
+    {
+      212.89,
+      168.34,
+      -100.07
+    },
+    {
+      210.89,
+      169.68,
+      -99.39
+    },
+    {
+      208.5,
+      168.27,
+      -98.11
+    },
+    {
+      206.52,
+      169.77,
+      -97.43
+    },
+    {
+      206.86,
+      170.74,
+      -99.51
+    },
+    {
+      206.56,
+      169.77,
+      -97.37
+    },
+    {
+      207.72,
+      167.77,
+      -94.8
+    },
+    {
+      205.53,
+      168.47,
+      -93.68
+    },
+    {
+      204.23,
+      167.2,
+      -91.23
+    },
+    {
+      202.39,
+      169.7,
+      -92.76
+    },
+    {
+      204.23,
+      167.19,
+      -91.25
+    },
+    {
+      200.33,
+      167.85,
+      -91.76
+    },
+    {
+      202.82,
+      171.33,
+      -95.11
+    },
+    {
+      182.91,
+      166.19,
+      -75.61
+    },
+    {
+      185.48,
+      165.32,
+      -69.88
+    },
+    {
+      171.01,
+      178.77,
+      -74.79
+    },
+    {
+      222.49,
+      168.33,
+      -78.44
+    },
+    {
+      223.12,
+      169.63,
+      -76.2
+    },
+    {
+      228.23,
+      167.75,
+      -78.3
+    },
+    {
+      240.55,
+      171.72,
+      -155.86
+    },
+    {
+      240.83,
+      178.23,
+      -197.84
+    },
+    {
+      243.89,
+      182.32,
+      -236.79
+    },
+    {
+      202.92,
+      170.28,
+      -259.53
+    },
+    {
+      218.68,
+      172.42,
+      -71.01
+    },
+    {
+      215.13,
+      170.44,
+      -67.36
+    },
+    {
+      212.36,
+      173.31,
+      -253.64
+    },
+    {
+      199.73,
+      170.32,
+      -258.77
+    },
+    {
+      317.04,
+      176.33,
+      -278.19
+    },
+    {
+      242.93,
+      170.21,
+      -267.55
+    },
+    {
+      289.46,
+      177.91,
+      -330.53
+    },
+    {
+      315.33,
+      176.47,
+      -281.82
+    },
+    {
+      299.04,
+      178.97,
+      -220.28
+    },
+    {
+      265.03,
+      178.05,
+      -224.51
+    },
+    {
+      344.23,
+      172.99,
+      -322.03
+    },
+    {
+      445.59,
+      167.03,
+      -319.25
+    },
+    {
+      447.66,
+      167.55,
+      -320.03
+    },
+    {
+      381.01,
+      175.88,
+      -260.43
+    },
+    {
+      405.29,
+      170.29,
+      -170.25
+    },
+    {
+      399.1,
+      172.66,
+      -168.77
+    },
+    {
+      399.17,
+      171.63,
+      -166.35
+    },
+    {
+      213.1,
+      168.6,
+      -268.88
+    },
+    {
+      211.49,
+      168.63,
+      -268.7
+    },
+    {
+      219.89,
+      169.15,
+      -266.0
+    },
+    {
+      314.3,
+      176.34,
+      -282.99
+    },
+    {
+      308.56,
+      176.4,
+      -268.72
+    },
+    {
+      463.76,
+      161.6,
+      -348.23
+    },
+    {
+      405.76,
+      162.18,
+      -427.12
+    },
+    {
+      409.2,
+      161.56,
+      -426.45
+    },
+    {
+      472.45,
+      162.14,
+      -454.27
+    },
+    {
+      470.31,
+      161.41,
+      -455.43
+    },
+    {
+      466.9,
+      162.78,
+      -455.2
+    },
+    {
+      445.88,
+      162.88,
+      -443.23
+    },
+    {
+      240.37,
+      170.92,
+      -264.58
+    },
+    {
+      246.97,
+      171.72,
+      -267.53
+    },
+    {
+      249.62,
+      172.29,
+      -268.77
+    },
+    {
+      231.78,
+      166.97,
+      -108.02
+    },
+    {
+      232.0,
+      166.11,
+      -105.88
+    },
+    {
+      229.73,
+      165.75,
+      -80.59
+    },
+    {
+      231.58,
+      168.47,
+      -77.2
+    },
+    {
+      212.26,
+      168.71,
+      -66.95
+    },
+    {
+      368.89,
+      173.17,
+      -125.77
+    },
+    {
+      409.05,
+      171.18,
+      -222.55
+    },
+    {
+      458.19,
+      174.34,
+      -188.49
+    },
+    {
+      460.01,
+      177.74,
+      -186.24
+    },
+    {
+      469.99,
+      170.84,
+      -209.81
+    },
+    {
+      420.2,
+      173.55,
+      -136.97
+    },
+    {
+      396.2,
+      171.69,
+      -159.99
+    },
+    {
+      393.72,
+      174.28,
+      -155.59
+    },
+    {
+      379.24,
+      163.89,
+      -334.21
+    },
+    {
+      277.45,
+      178.63,
+      -230.29
+    },
+    {
+      275.56,
+      177.55,
+      -221.27
     }
   },
   StandPot = {
@@ -1798,49 +2193,9 @@ Table_Seat_sc_syzh_t = {
       -292.22
     },
     {
-      -246.12,
-      159.06,
-      -271.11
-    },
-    {
-      -220.47,
-      154.71,
-      -287.07
-    },
-    {
-      -222.51,
-      156.0,
-      -282.67
-    },
-    {
-      -220.9,
-      159.43,
-      -249.4
-    },
-    {
-      -255.03,
-      159.68,
-      -263.48
-    },
-    {
       -273.47,
       156.35,
       -251.87
-    },
-    {
-      -281.07,
-      154.41,
-      -209.07
-    },
-    {
-      -267.97,
-      154.14,
-      -207.76
-    },
-    {
-      -264.7,
-      153.83,
-      -208.43
     },
     {
       -272.45,
@@ -2591,6 +2946,306 @@ Table_Seat_sc_syzh_t = {
       287.42,
       159.49,
       11.41
+    },
+    {
+      324.51,
+      169.54,
+      -108.83
+    },
+    {
+      331.77,
+      169.56,
+      -110.91
+    },
+    {
+      442.99,
+      167.73,
+      -159.59
+    },
+    {
+      456.13,
+      170.27,
+      -194.69
+    },
+    {
+      458.8,
+      170.56,
+      -195.1
+    },
+    {
+      428.54,
+      170.19,
+      -211.77
+    },
+    {
+      275.51,
+      176.52,
+      -334.64
+    },
+    {
+      278.61,
+      180.26,
+      -347.52
+    },
+    {
+      259.97,
+      164.18,
+      -91.05
+    },
+    {
+      259.55,
+      164.19,
+      -91.9
+    },
+    {
+      258.35,
+      164.13,
+      -81.95
+    },
+    {
+      214.92,
+      164.31,
+      -96.47
+    },
+    {
+      183.69,
+      164.18,
+      -77.37
+    },
+    {
+      186.27,
+      164.18,
+      -71.84
+    },
+    {
+      184.25,
+      164.18,
+      -76.74
+    },
+    {
+      220.7,
+      164.03,
+      -79.97
+    },
+    {
+      237.36,
+      167.99,
+      -155.07
+    },
+    {
+      243.94,
+      171.43,
+      -202.39
+    },
+    {
+      235.7,
+      169.12,
+      -237.48
+    },
+    {
+      203.86,
+      167.61,
+      -259.96
+    },
+    {
+      214.5,
+      164.24,
+      -75.8
+    },
+    {
+      209.59,
+      164.19,
+      -72.19
+    },
+    {
+      214.79,
+      167.61,
+      -256.83
+    },
+    {
+      198.29,
+      167.64,
+      -258.69
+    },
+    {
+      313.22,
+      174.96,
+      -276.74
+    },
+    {
+      237.9,
+      168.08,
+      -266.15
+    },
+    {
+      288.11,
+      174.64,
+      -329.16
+    },
+    {
+      313.0,
+      174.94,
+      -279.17
+    },
+    {
+      297.93,
+      176.37,
+      -222.15
+    },
+    {
+      267.42,
+      173.69,
+      -218.8
+    },
+    {
+      344.97,
+      168.86,
+      -319.2
+    },
+    {
+      446.34,
+      159.74,
+      -324.61
+    },
+    {
+      385.55,
+      167.35,
+      -258.02
+    },
+    {
+      407.6,
+      167.92,
+      -169.52
+    },
+    {
+      400.22,
+      169.95,
+      -168.47
+    },
+    {
+      212.42,
+      167.43,
+      -268.48
+    },
+    {
+      220.6,
+      167.61,
+      -264.85
+    },
+    {
+      313.66,
+      174.91,
+      -278.87
+    },
+    {
+      307.93,
+      175.21,
+      -269.39
+    },
+    {
+      458.91,
+      157.26,
+      -351.21
+    },
+    {
+      404.41,
+      157.16,
+      -427.39
+    },
+    {
+      470.65,
+      160.63,
+      -453.71
+    },
+    {
+      466.69,
+      160.63,
+      -454.79
+    },
+    {
+      446.04,
+      160.63,
+      -442.92
+    },
+    {
+      238.5,
+      168.13,
+      -266.03
+    },
+    {
+      243.86,
+      169.09,
+      -270.08
+    },
+    {
+      230.15,
+      164.7,
+      -108.28
+    },
+    {
+      229.98,
+      164.68,
+      -106.47
+    },
+    {
+      228.81,
+      163.93,
+      -81.39
+    },
+    {
+      209.96,
+      164.36,
+      -70.03
+    },
+    {
+      366.24,
+      169.32,
+      -127.53
+    },
+    {
+      409.95,
+      167.77,
+      -227.46
+    },
+    {
+      456.75,
+      170.29,
+      -194.9
+    },
+    {
+      454.82,
+      170.34,
+      -194.01
+    },
+    {
+      469.3,
+      170.0,
+      -209.49
+    },
+    {
+      417.17,
+      168.26,
+      -143.04
+    },
+    {
+      397.81,
+      169.07,
+      -157.82
+    },
+    {
+      378.38,
+      160.78,
+      -332.3
+    },
+    {
+      281.76,
+      176.13,
+      -230.53
+    },
+    {
+      270.88,
+      173.74,
+      -218.32
     }
   }
 }
@@ -2934,1542 +3589,2016 @@ Table_Seat_sc_syzh = {
     id = 57,
     StandPot = Table_Seat_sc_syzh_t.StandPot[47],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[57],
-    Dir = 38.99684
+    Dir = 243.3005
   },
   [58] = {
     id = 58,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[47],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[48],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[58],
-    Dir = 357.1659
+    Dir = 131.8204
   },
   [59] = {
     id = 59,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[48],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[49],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[59],
-    Dir = 142.0861
+    Dir = 120.5021
   },
   [60] = {
     id = 60,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[48],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[50],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[60],
-    Dir = 151.7366
+    Dir = 120.5021
   },
   [61] = {
     id = 61,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[49],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[51],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[61],
-    Dir = 318.2285
+    Dir = 122.8888
   },
   [62] = {
     id = 62,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[50],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[52],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[62],
-    Dir = 146.4603
+    Dir = 122.8888
   },
   [63] = {
     id = 63,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[50],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[53],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[63],
-    Dir = 166.3766
+    Dir = 308.6558
   },
   [64] = {
     id = 64,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[50],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[54],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[64],
-    Dir = 161.9518
+    Dir = 304.4444
   },
   [65] = {
     id = 65,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[51],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[55],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[65],
-    Dir = 69.10373
+    Dir = 304.4444
   },
   [66] = {
     id = 66,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[51],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[56],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[66],
-    Dir = 96.72778
+    Dir = 304.4444
   },
   [67] = {
     id = 67,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[51],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[57],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[67],
-    Dir = 19.62966
+    Dir = 304.4444
   },
   [68] = {
     id = 68,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[52],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[58],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[68],
-    Dir = 243.3005
+    Dir = 71.97493
   },
   [69] = {
     id = 69,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[53],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[59],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[69],
-    Dir = 115.9775
+    Dir = 76.64417
   },
   [70] = {
     id = 70,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[53],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[60],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[70],
-    Dir = 127.7399
+    Dir = 212.0185
   },
   [71] = {
     id = 71,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[54],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[61],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[71],
-    Dir = 274.4586
+    Dir = 172.7589
   },
   [72] = {
     id = 72,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[55],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[62],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[72],
-    Dir = 67.81004
+    Dir = 197.7282
   },
   [73] = {
     id = 73,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[56],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[63],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[73],
-    Dir = 131.8204
+    Dir = 197.7282
   },
   [74] = {
     id = 74,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[57],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[64],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[74],
-    Dir = 120.5021
+    Dir = 197.7282
   },
   [75] = {
     id = 75,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[58],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[65],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[75],
-    Dir = 120.5021
+    Dir = 197.7282
   },
   [76] = {
     id = 76,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[59],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[66],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[76],
-    Dir = 122.8888
+    Dir = 197.7282
   },
   [77] = {
     id = 77,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[60],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[67],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[77],
-    Dir = 122.8888
+    Dir = 20.33476
   },
   [78] = {
     id = 78,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[61],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[68],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[78],
-    Dir = 308.6558
+    Dir = 20.33476
   },
   [79] = {
     id = 79,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[62],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[69],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[79],
-    Dir = 304.4444
+    Dir = 19.92112
   },
   [80] = {
     id = 80,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[63],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[70],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[80],
-    Dir = 304.4444
+    Dir = 19.92112
   },
   [81] = {
     id = 81,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[64],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[71],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[81],
-    Dir = 304.4444
+    Dir = 19.92112
   },
   [82] = {
     id = 82,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[65],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[72],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[82],
-    Dir = 304.4444
+    Dir = 170.8236
   },
   [83] = {
     id = 83,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[66],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[73],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[83],
-    Dir = 71.97493
+    Dir = 76.56167
   },
   [84] = {
     id = 84,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[67],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[74],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[84],
-    Dir = 76.64417
+    Dir = 155.8443
   },
   [85] = {
     id = 85,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[68],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[74],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[85],
-    Dir = 212.0185
+    Dir = 155.8443
   },
   [86] = {
     id = 86,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[69],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[74],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[86],
-    Dir = 172.7589
+    Dir = 155.8443
   },
   [87] = {
     id = 87,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[70],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[75],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[87],
-    Dir = 197.7282
+    Dir = 189.0181
   },
   [88] = {
     id = 88,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[71],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[76],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[88],
-    Dir = 197.7282
+    Dir = 277.712
   },
   [89] = {
     id = 89,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[72],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[77],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[89],
-    Dir = 197.7282
+    Dir = 317.2739
   },
   [90] = {
     id = 90,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[73],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[78],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[90],
-    Dir = 197.7282
+    Dir = 150.1257
   },
   [91] = {
     id = 91,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[74],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[78],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[91],
-    Dir = 197.7282
+    Dir = 190.1654
   },
   [92] = {
     id = 92,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[75],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[78],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[92],
-    Dir = 20.33476
+    Dir = 175.0946
   },
   [93] = {
     id = 93,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[76],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[79],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[93],
-    Dir = 20.33476
+    Dir = 100.9263
   },
   [94] = {
     id = 94,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[77],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[79],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[94],
-    Dir = 19.92112
+    Dir = 103.0392
   },
   [95] = {
     id = 95,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[78],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[79],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[95],
-    Dir = 19.92112
+    Dir = 96.25767
   },
   [96] = {
     id = 96,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[79],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[80],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[96],
-    Dir = 19.92112
+    Dir = 79.28884
   },
   [97] = {
     id = 97,
     StandPot = Table_Seat_sc_syzh_t.StandPot[80],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[97],
-    Dir = 170.8236
+    Dir = 85.51406
   },
   [98] = {
     id = 98,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[81],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[80],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[98],
-    Dir = 76.56167
+    Dir = 85.51406
   },
   [99] = {
     id = 99,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[82],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[81],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[99],
-    Dir = 155.8443
+    Dir = 140.8076
   },
   [100] = {
     id = 100,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[82],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[81],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[100],
-    Dir = 155.8443
+    Dir = 140.8076
   },
   [101] = {
     id = 101,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[82],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[81],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[101],
-    Dir = 155.8443
+    Dir = 140.8076
   },
   [102] = {
     id = 102,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[83],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[82],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[102],
-    Dir = 189.0181
+    Dir = 167.4255
   },
   [103] = {
     id = 103,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[84],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[82],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[103],
-    Dir = 277.712
+    Dir = 159.2258
   },
   [104] = {
     id = 104,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[85],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[82],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[104],
-    Dir = 317.2739
+    Dir = 155.1514
   },
   [105] = {
     id = 105,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[86],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[83],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[105],
-    Dir = 150.1257
+    Dir = 220.0956
   },
   [106] = {
     id = 106,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[86],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[83],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[106],
-    Dir = 190.1654
+    Dir = 138.39
   },
   [107] = {
     id = 107,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[86],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[84],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[107],
-    Dir = 175.0946
+    Dir = 263.8885
   },
   [108] = {
     id = 108,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[87],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[85],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[108],
-    Dir = 100.9263
+    Dir = 216.0101
   },
   [109] = {
     id = 109,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[87],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[86],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[109],
-    Dir = 103.0392
+    Dir = 32.52457
   },
   [110] = {
     id = 110,
     StandPot = Table_Seat_sc_syzh_t.StandPot[87],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[110],
-    Dir = 96.25767
+    Dir = 20.55372
   },
   [111] = {
     id = 111,
     StandPot = Table_Seat_sc_syzh_t.StandPot[88],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[111],
-    Dir = 79.28884
+    Dir = 348.6129
   },
   [112] = {
     id = 112,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[88],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[89],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[112],
-    Dir = 85.51406
+    Dir = 67.86955
   },
   [113] = {
     id = 113,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[88],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[89],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[113],
-    Dir = 85.51406
+    Dir = 67.86955
   },
   [114] = {
     id = 114,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[89],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[90],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[114],
-    Dir = 140.8076
+    Dir = 288.4863
   },
   [115] = {
     id = 115,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[89],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[90],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[115],
-    Dir = 140.8076
+    Dir = 288.4863
   },
   [116] = {
     id = 116,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[89],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[91],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[116],
-    Dir = 140.8076
+    Dir = 296.8495
   },
   [117] = {
     id = 117,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[90],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[91],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[117],
-    Dir = 167.4255
+    Dir = 296.8495
   },
   [118] = {
     id = 118,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[90],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[92],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[118],
-    Dir = 159.2258
+    Dir = 169.7941
   },
   [119] = {
     id = 119,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[90],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[93],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[119],
-    Dir = 155.1514
+    Dir = 259.9628
   },
   [120] = {
     id = 120,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[91],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[94],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[120],
-    Dir = 220.0956
+    Dir = 254.8788
   },
   [121] = {
     id = 121,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[91],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[95],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[121],
-    Dir = 138.39
+    Dir = 257.6519
   },
   [122] = {
     id = 122,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[92],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[96],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[122],
-    Dir = 263.8885
+    Dir = 135.7859
   },
   [123] = {
     id = 123,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[93],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[97],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[123],
-    Dir = 216.0101
+    Dir = 11.27793
   },
   [124] = {
     id = 124,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[94],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[98],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[124],
-    Dir = 32.52457
+    Dir = 152.6633
   },
   [125] = {
     id = 125,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[95],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[99],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[125],
-    Dir = 20.55372
+    Dir = 303.9884
   },
   [126] = {
     id = 126,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[96],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[99],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[126],
-    Dir = 348.6129
+    Dir = 275.5836
   },
   [127] = {
     id = 127,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[97],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[99],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[127],
-    Dir = 67.86955
+    Dir = 232.7663
   },
   [128] = {
     id = 128,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[97],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[100],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[128],
-    Dir = 67.86955
+    Dir = 333.2039
   },
   [129] = {
     id = 129,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[98],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[101],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[129],
-    Dir = 288.4863
+    Dir = 250.3083
   },
   [130] = {
     id = 130,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[98],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[102],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[130],
-    Dir = 288.4863
+    Dir = 4.046857
   },
   [131] = {
     id = 131,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[99],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[102],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[131],
-    Dir = 296.8495
+    Dir = 319.2998
   },
   [132] = {
     id = 132,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[99],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[103],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[132],
-    Dir = 296.8495
+    Dir = 140.3188
   },
   [133] = {
     id = 133,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[100],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[103],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[133],
-    Dir = 169.7941
+    Dir = 136.2545
   },
   [134] = {
     id = 134,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[101],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[103],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[134],
-    Dir = 259.9628
+    Dir = 136.2545
   },
   [135] = {
     id = 135,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[102],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[104],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[135],
-    Dir = 254.8788
+    Dir = 34.17136
   },
   [136] = {
     id = 136,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[103],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[104],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[136],
-    Dir = 257.6519
+    Dir = 13.01972
   },
   [137] = {
     id = 137,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[104],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[105],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[137],
-    Dir = 135.7859
+    Dir = 225.4689
   },
   [138] = {
     id = 138,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[105],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[106],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[138],
-    Dir = 11.27793
+    Dir = 140.9972
   },
   [139] = {
     id = 139,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[106],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[107],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[139],
-    Dir = 152.6633
+    Dir = 145.5686
   },
   [140] = {
     id = 140,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[107],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[108],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[140],
-    Dir = 303.9884
+    Dir = 182.0904
   },
   [141] = {
     id = 141,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[107],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[108],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[141],
-    Dir = 275.5836
+    Dir = 216.0698
   },
   [142] = {
     id = 142,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[107],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[109],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[142],
-    Dir = 232.7663
+    Dir = 318.3376
   },
   [143] = {
     id = 143,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[108],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[109],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[143],
-    Dir = 333.2039
+    Dir = 2.885842
   },
   [144] = {
     id = 144,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[109],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[110],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[144],
-    Dir = 250.3083
+    Dir = 169.4739
   },
   [145] = {
     id = 145,
     StandPot = Table_Seat_sc_syzh_t.StandPot[110],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[145],
-    Dir = 4.046857
+    Dir = 134.5628
   },
   [146] = {
     id = 146,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[110],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[111],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[146],
-    Dir = 319.2998
+    Dir = 251.0283
   },
   [147] = {
     id = 147,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[111],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[112],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[147],
-    Dir = 140.3188
+    Dir = 220.6317
   },
   [148] = {
     id = 148,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[111],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[113],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[148],
-    Dir = 136.2545
+    Dir = 151.0616
   },
   [149] = {
     id = 149,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[111],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[114],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[149],
-    Dir = 136.2545
+    Dir = 311.806
   },
   [150] = {
     id = 150,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[112],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[115],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[150],
-    Dir = 34.17136
+    Dir = 311.806
   },
   [151] = {
     id = 151,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[112],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[116],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[151],
-    Dir = 13.01972
+    Dir = 67.00719
   },
   [152] = {
     id = 152,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[113],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[117],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[152],
-    Dir = 225.4689
+    Dir = 335.9448
   },
   [153] = {
     id = 153,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[114],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[118],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[153],
-    Dir = 140.9972
+    Dir = 196.344
   },
   [154] = {
     id = 154,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[115],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[118],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[154],
-    Dir = 145.5686
+    Dir = 193.6971
   },
   [155] = {
     id = 155,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[116],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[118],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[155],
-    Dir = 182.0904
+    Dir = 193.6971
   },
   [156] = {
     id = 156,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[116],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[119],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[156],
-    Dir = 216.0698
+    Dir = 102.8234
   },
   [157] = {
     id = 157,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[117],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[119],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[157],
-    Dir = 318.3376
+    Dir = 102.8234
   },
   [158] = {
     id = 158,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[117],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[119],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[158],
-    Dir = 2.885842
+    Dir = 102.8234
   },
   [159] = {
     id = 159,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[118],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[120],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[159],
-    Dir = 169.4739
+    Dir = 194.1446
   },
   [160] = {
     id = 160,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[118],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[120],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[160],
-    Dir = 134.5628
+    Dir = 194.1446
   },
   [161] = {
     id = 161,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[119],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[120],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[161],
-    Dir = 251.0283
+    Dir = 194.1446
   },
   [162] = {
     id = 162,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[120],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[121],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[162],
-    Dir = 220.6317
+    Dir = 282.9508
   },
   [163] = {
     id = 163,
     StandPot = Table_Seat_sc_syzh_t.StandPot[121],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[163],
-    Dir = 151.0616
+    Dir = 282.9508
   },
   [164] = {
     id = 164,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[122],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[121],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[164],
-    Dir = 311.806
+    Dir = 282.9508
   },
   [165] = {
     id = 165,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[123],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[122],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[165],
-    Dir = 311.806
+    Dir = 160.38
   },
   [166] = {
     id = 166,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[124],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[123],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[166],
-    Dir = 67.00719
+    Dir = 35.78493
   },
   [167] = {
     id = 167,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[125],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[123],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[167],
-    Dir = 335.9448
+    Dir = 35.78493
   },
   [168] = {
     id = 168,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[126],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[123],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[168],
-    Dir = 196.344
+    Dir = 35.78493
   },
   [169] = {
     id = 169,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[126],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[124],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[169],
-    Dir = 193.6971
+    Dir = 21.05404
   },
   [170] = {
     id = 170,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[126],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[125],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[170],
-    Dir = 193.6971
+    Dir = 18.13256
   },
   [171] = {
     id = 171,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[127],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[126],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[171],
-    Dir = 102.8234
+    Dir = 62.74512
   },
   [172] = {
     id = 172,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[127],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[126],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[172],
-    Dir = 102.8234
+    Dir = 47.35793
   },
   [173] = {
     id = 173,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[127],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[126],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[173],
-    Dir = 102.8234
+    Dir = 47.35793
   },
   [174] = {
     id = 174,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[128],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[127],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[174],
-    Dir = 194.1446
+    Dir = 120.2471
   },
   [175] = {
     id = 175,
     StandPot = Table_Seat_sc_syzh_t.StandPot[128],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[175],
-    Dir = 194.1446
+    Dir = 205.2261
   },
   [176] = {
     id = 176,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[128],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[129],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[176],
-    Dir = 194.1446
+    Dir = 217.8977
   },
   [177] = {
     id = 177,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[129],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[130],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[177],
-    Dir = 282.9508
+    Dir = 261.1061
   },
   [178] = {
     id = 178,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[129],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[131],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[178],
-    Dir = 282.9508
+    Dir = 227.8786
   },
   [179] = {
     id = 179,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[129],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[132],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[179],
-    Dir = 282.9508
+    Dir = 178.2462
   },
   [180] = {
     id = 180,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[130],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[133],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[180],
-    Dir = 160.38
+    Dir = 202.0631
   },
   [181] = {
     id = 181,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[131],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[134],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[181],
-    Dir = 35.78493
+    Dir = 248.8663
   },
   [182] = {
     id = 182,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[131],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[135],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[182],
-    Dir = 35.78493
+    Dir = 320.4128
   },
   [183] = {
     id = 183,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[131],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[135],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[183],
-    Dir = 35.78493
+    Dir = 313.9148
   },
   [184] = {
     id = 184,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[132],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[135],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[184],
-    Dir = 21.05404
+    Dir = 303.4287
   },
   [185] = {
     id = 185,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[133],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[136],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[185],
-    Dir = 18.13256
+    Dir = 90.26909
   },
   [186] = {
     id = 186,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[134],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[137],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[186],
-    Dir = 62.74512
+    Dir = 50.21761
   },
   [187] = {
     id = 187,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[134],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[138],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[187],
-    Dir = 47.35793
+    Dir = 38.143
   },
   [188] = {
     id = 188,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[134],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[139],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[188],
-    Dir = 47.35793
+    Dir = -117.8077
   },
   [189] = {
     id = 189,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[135],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[140],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[189],
-    Dir = 120.2471
+    Dir = 106.4753
   },
   [190] = {
     id = 190,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[136],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[141],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[190],
-    Dir = 205.2261
+    Dir = 178.6769
   },
   [191] = {
     id = 191,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[137],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[142],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[191],
-    Dir = 217.8977
+    Dir = -10.73981
   },
   [192] = {
     id = 192,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[138],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[143],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[192],
-    Dir = 261.1061
+    Dir = -40.09125
   },
   [193] = {
     id = 193,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[139],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[144],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[193],
-    Dir = 227.8786
+    Dir = 172.2687
   },
   [194] = {
     id = 194,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[140],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[145],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[194],
-    Dir = 178.2462
+    Dir = 153.1304
   },
   [195] = {
     id = 195,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[141],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[146],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[195],
-    Dir = 202.0631
+    Dir = 145.4735
   },
   [196] = {
     id = 196,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[142],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[147],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[196],
-    Dir = 248.8663
+    Dir = 139.1562
   },
   [197] = {
     id = 197,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[143],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[148],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[197],
-    Dir = 320.4128
+    Dir = -89.77948
   },
   [198] = {
     id = 198,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[143],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[149],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[198],
-    Dir = 313.9148
+    Dir = -79.84094
   },
   [199] = {
     id = 199,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[143],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[150],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[199],
-    Dir = 303.4287
+    Dir = -27.83524
   },
   [200] = {
     id = 200,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[144],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[151],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[200],
-    Dir = 90.26909
+    Dir = 331.59
   },
   [201] = {
     id = 201,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[145],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[151],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[201],
-    Dir = 50.21761
+    Dir = 330.56
   },
   [202] = {
     id = 202,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[146],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[152],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[202],
-    Dir = 38.143
+    Dir = 122.7
   },
   [203] = {
     id = 203,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[147],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[152],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[203],
-    Dir = -117.8077
+    Dir = 122.7
   },
   [204] = {
     id = 204,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[148],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[153],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[204],
-    Dir = 106.4753
+    Dir = 272.99
   },
   [205] = {
     id = 205,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[149],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[154],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[205],
-    Dir = 178.6769
+    Dir = 225.33
   },
   [206] = {
     id = 206,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[150],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[155],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[206],
-    Dir = -10.73981
+    Dir = 144.6
   },
   [207] = {
     id = 207,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[151],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[207],
-    Dir = -40.09125
+    StandPot = Table_Seat_sc_syzh_t.StandPot[155],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[206],
+    Dir = 144.6
   },
   [208] = {
     id = 208,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[152],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[208],
-    Dir = 172.2687
+    StandPot = Table_Seat_sc_syzh_t.StandPot[155],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[207],
+    Dir = 144.6
   },
   [209] = {
     id = 209,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[153],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[209],
-    Dir = 153.1304
+    StandPot = Table_Seat_sc_syzh_t.StandPot[155],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[208],
+    Dir = 144.6
   },
   [210] = {
     id = 210,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[154],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[210],
-    Dir = 145.4735
+    StandPot = Table_Seat_sc_syzh_t.StandPot[155],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[209],
+    Dir = 153.5
   },
   [211] = {
     id = 211,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[155],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[211],
-    Dir = 139.1562
+    StandPot = Table_Seat_sc_syzh_t.StandPot[156],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[210],
+    Dir = 136.83
   },
   [212] = {
     id = 212,
     StandPot = Table_Seat_sc_syzh_t.StandPot[156],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[212],
-    Dir = -89.77948
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[211],
+    Dir = 136.83
   },
   [213] = {
     id = 213,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[157],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[213],
-    Dir = -79.84094
+    StandPot = Table_Seat_sc_syzh_t.StandPot[156],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[212],
+    Dir = 136.83
   },
   [214] = {
     id = 214,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[158],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[214],
-    Dir = -27.83524
+    StandPot = Table_Seat_sc_syzh_t.StandPot[156],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[213],
+    Dir = 119.63
   },
   [215] = {
     id = 215,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[159],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[215],
-    Dir = 331.59
+    StandPot = Table_Seat_sc_syzh_t.StandPot[156],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[214],
+    Dir = 150.65
   },
   [216] = {
     id = 216,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[159],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[216],
-    Dir = 330.56
+    StandPot = Table_Seat_sc_syzh_t.StandPot[156],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[215],
+    Dir = 150.16
   },
   [217] = {
     id = 217,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[160],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[217],
-    Dir = 122.7
+    StandPot = Table_Seat_sc_syzh_t.StandPot[156],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[216],
+    Dir = 125.9
   },
   [218] = {
     id = 218,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[160],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[218],
-    Dir = 122.7
+    StandPot = Table_Seat_sc_syzh_t.StandPot[156],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[217],
+    Dir = 161.95
   },
   [219] = {
     id = 219,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[161],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[219],
-    Dir = 272.99
+    StandPot = Table_Seat_sc_syzh_t.StandPot[157],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[218],
+    Dir = 144.07
   },
   [220] = {
     id = 220,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[162],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[220],
-    Dir = 225.33
+    StandPot = Table_Seat_sc_syzh_t.StandPot[157],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[219],
+    Dir = 144.07
   },
   [221] = {
     id = 221,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[163],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[221],
-    Dir = 144.6
+    StandPot = Table_Seat_sc_syzh_t.StandPot[157],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[220],
+    Dir = 144.07
   },
   [222] = {
     id = 222,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[163],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[157],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[221],
-    Dir = 144.6
+    Dir = 145.99
   },
   [223] = {
     id = 223,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[163],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[157],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[222],
-    Dir = 144.6
+    Dir = 145.99
   },
   [224] = {
     id = 224,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[163],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[158],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[223],
-    Dir = 144.6
+    Dir = 45.42
   },
   [225] = {
     id = 225,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[163],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[158],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[224],
-    Dir = 153.5
+    Dir = 139
   },
   [226] = {
     id = 226,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[164],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[158],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[225],
-    Dir = 136.83
+    Dir = 139
   },
   [227] = {
     id = 227,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[164],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[158],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[226],
-    Dir = 136.83
+    Dir = 139
   },
   [228] = {
     id = 228,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[164],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[158],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[227],
-    Dir = 136.83
+    Dir = 73.45
   },
   [229] = {
     id = 229,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[164],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[158],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[228],
-    Dir = 119.63
+    Dir = 73.45
   },
   [230] = {
     id = 230,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[164],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[158],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[229],
-    Dir = 150.65
+    Dir = 82.31
   },
   [231] = {
     id = 231,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[164],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[158],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[230],
-    Dir = 150.16
+    Dir = 82.31
   },
   [232] = {
     id = 232,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[164],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[158],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[231],
-    Dir = 125.9
+    Dir = 56.66
   },
   [233] = {
     id = 233,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[164],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[158],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[232],
-    Dir = 161.95
+    Dir = 61.75
   },
   [234] = {
     id = 234,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[165],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[159],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[233],
-    Dir = 144.07
+    Dir = 14.5
   },
   [235] = {
     id = 235,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[165],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[159],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[234],
-    Dir = 144.07
+    Dir = 14.5
   },
   [236] = {
     id = 236,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[165],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[160],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[235],
-    Dir = 144.07
+    Dir = 8.9
   },
   [237] = {
     id = 237,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[165],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[160],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[236],
-    Dir = 145.99
+    Dir = 8.9
   },
   [238] = {
     id = 238,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[165],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[161],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[237],
-    Dir = 145.99
+    Dir = 1.86
   },
   [239] = {
     id = 239,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[166],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[161],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[238],
-    Dir = 45.42
+    Dir = 1.86
   },
   [240] = {
     id = 240,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[166],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[161],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[239],
-    Dir = 139
+    Dir = 351.8
   },
   [241] = {
     id = 241,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[166],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[162],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[240],
-    Dir = 139
+    Dir = 275.54
   },
   [242] = {
     id = 242,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[166],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[163],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[241],
-    Dir = 139
+    Dir = 245.9
   },
   [243] = {
     id = 243,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[166],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[163],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[242],
-    Dir = 73.45
+    Dir = 146.3
   },
   [244] = {
     id = 244,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[166],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[164],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[243],
-    Dir = 73.45
+    Dir = 82.49
   },
   [245] = {
     id = 245,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[166],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[164],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[244],
-    Dir = 82.31
+    Dir = 352.68
   },
   [246] = {
     id = 246,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[166],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[165],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[245],
-    Dir = 82.31
+    Dir = 279.47
   },
   [247] = {
     id = 247,
     StandPot = Table_Seat_sc_syzh_t.StandPot[166],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[246],
-    Dir = 56.66
+    Dir = 203.72
   },
   [248] = {
     id = 248,
     StandPot = Table_Seat_sc_syzh_t.StandPot[166],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[247],
-    Dir = 61.75
+    Dir = 203.72
   },
   [249] = {
     id = 249,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[167],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[166],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[248],
-    Dir = 14.5
+    Dir = 203.42
   },
   [250] = {
     id = 250,
     StandPot = Table_Seat_sc_syzh_t.StandPot[167],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[249],
-    Dir = 14.5
+    Dir = 329
   },
   [251] = {
     id = 251,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[167],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[250],
-    Dir = 8.9
+    Dir = 329
   },
   [252] = {
     id = 252,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[167],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[251],
-    Dir = 8.9
+    Dir = 46.62
   },
   [253] = {
     id = 253,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[169],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[252],
-    Dir = 1.86
+    Dir = 67.12
   },
   [254] = {
     id = 254,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[169],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[253],
-    Dir = 1.86
+    Dir = 67.12
   },
   [255] = {
     id = 255,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[169],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[254],
-    Dir = 351.8
+    Dir = 67.12
   },
   [256] = {
     id = 256,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[170],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[255],
-    Dir = 275.54
+    Dir = 67.12
   },
   [257] = {
     id = 257,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[171],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[256],
-    Dir = 245.9
+    Dir = 67.12
   },
   [258] = {
     id = 258,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[171],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[257],
-    Dir = 146.3
+    Dir = 67.12
   },
   [259] = {
     id = 259,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[172],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[258],
-    Dir = 82.49
+    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[258]
   },
   [260] = {
     id = 260,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[172],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[259],
-    Dir = 352.68
+    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[259]
   },
   [261] = {
     id = 261,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[173],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[260],
-    Dir = 279.47
+    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[260]
   },
   [262] = {
     id = 262,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[174],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[261],
-    Dir = 203.72
+    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[261]
   },
   [263] = {
     id = 263,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[174],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[262],
-    Dir = 203.72
+    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[262]
   },
   [264] = {
     id = 264,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[174],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[263],
-    Dir = 203.42
+    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[263]
   },
   [265] = {
     id = 265,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[175],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[264],
-    Dir = 329
+    StandPot = Table_Seat_sc_syzh_t.StandPot[168],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[264]
   },
   [266] = {
     id = 266,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[175],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[169],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[265],
-    Dir = 329
+    Dir = 322.85
   },
   [267] = {
     id = 267,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[175],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[170],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[266],
-    Dir = 46.62
+    Dir = 327.44
   },
   [268] = {
     id = 268,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[176],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[171],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[267],
-    Dir = 67.12
+    Dir = 331.31
   },
   [269] = {
     id = 269,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[176],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[172],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[268],
-    Dir = 67.12
+    Dir = 327.02
   },
   [270] = {
     id = 270,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[176],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[173],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[269],
-    Dir = 67.12
+    Dir = 304.96
   },
   [271] = {
     id = 271,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[176],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[174],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[270],
-    Dir = 67.12
+    Dir = 353.65
   },
   [272] = {
     id = 272,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[176],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[175],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[271],
-    Dir = 67.12
+    Dir = 340.2
   },
   [273] = {
     id = 273,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[176],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[175],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[272],
-    Dir = 67.12
+    Dir = 352.91
   },
   [274] = {
     id = 274,
     StandPot = Table_Seat_sc_syzh_t.StandPot[176],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[273]
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[273],
+    Dir = 352.49
   },
   [275] = {
     id = 275,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[176],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[274]
+    StandPot = Table_Seat_sc_syzh_t.StandPot[177],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[274],
+    Dir = 9.72
   },
   [276] = {
     id = 276,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[176],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[275]
+    StandPot = Table_Seat_sc_syzh_t.StandPot[178],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[275],
+    Dir = 333.7
   },
   [277] = {
     id = 277,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[176],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[276]
+    StandPot = Table_Seat_sc_syzh_t.StandPot[178],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[276],
+    Dir = 341.42
   },
   [278] = {
     id = 278,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[176],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[277]
+    StandPot = Table_Seat_sc_syzh_t.StandPot[179],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[277],
+    Dir = 136.76
   },
   [279] = {
     id = 279,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[176],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[278]
+    StandPot = Table_Seat_sc_syzh_t.StandPot[180],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[278],
+    Dir = 103.55
   },
   [280] = {
     id = 280,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[176],
-    SeatPot = Table_Seat_sc_syzh_t.SeatPot[279]
+    StandPot = Table_Seat_sc_syzh_t.StandPot[181],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[279],
+    Dir = 86.09
   },
   [281] = {
     id = 281,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[177],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[181],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[280],
-    Dir = 322.85
+    Dir = 95.18
   },
   [282] = {
     id = 282,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[178],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[182],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[281],
-    Dir = 327.44
+    Dir = 78.34
   },
   [283] = {
     id = 283,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[179],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[183],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[282],
-    Dir = 331.31
+    Dir = 59.03
   },
   [284] = {
     id = 284,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[180],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[184],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[283],
-    Dir = 327.02
+    Dir = 31.61
   },
   [285] = {
     id = 285,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[181],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[185],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[284],
-    Dir = 304.96
+    Dir = 32.64
   },
   [286] = {
     id = 286,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[182],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[186],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[285],
-    Dir = 353.65
+    Dir = 110.89
   },
   [287] = {
     id = 287,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[183],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[187],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[286],
-    Dir = 340.2
+    Dir = 94.53
   },
   [288] = {
     id = 288,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[183],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[188],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[287],
-    Dir = 352.91
+    Dir = 218.82
   },
   [289] = {
     id = 289,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[184],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[189],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[288],
-    Dir = 352.49
+    Dir = 2.72
   },
   [290] = {
     id = 290,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[185],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[190],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[289],
-    Dir = 9.72
+    Dir = 133.02
   },
   [291] = {
     id = 291,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[186],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[190],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[290],
-    Dir = 333.7
+    Dir = 138.47
   },
   [292] = {
     id = 292,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[186],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[191],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[291],
-    Dir = 341.42
+    Dir = 179.34
   },
   [293] = {
     id = 293,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[187],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[192],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[292],
-    Dir = 136.76
+    Dir = 175.2
   },
   [294] = {
     id = 294,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[188],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[193],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[293],
-    Dir = 103.55
+    Dir = 245.09
   },
   [295] = {
     id = 295,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[189],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[194],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[294],
-    Dir = 86.09
+    Dir = 245.44
   },
   [296] = {
     id = 296,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[189],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[195],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[295],
-    Dir = 95.18
+    Dir = 308.23
   },
   [297] = {
     id = 297,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[190],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[195],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[296],
-    Dir = 78.34
+    Dir = 308.23
   },
   [298] = {
     id = 298,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[191],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[196],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[297],
-    Dir = 59.03
+    Dir = 349.92
   },
   [299] = {
     id = 299,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[192],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[197],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[298],
-    Dir = 31.61
+    Dir = 4.22
   },
   [300] = {
     id = 300,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[193],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[198],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[299],
-    Dir = 32.64
+    Dir = 189.87
   },
   [301] = {
     id = 301,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[194],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[198],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[300],
-    Dir = 110.89
+    Dir = 197.7
   },
   [302] = {
     id = 302,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[195],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[199],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[301],
-    Dir = 94.53
+    Dir = 207.78
   },
   [303] = {
     id = 303,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[196],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[199],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[302],
-    Dir = 218.82
+    Dir = 212.24
   },
   [304] = {
     id = 304,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[197],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[200],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[303],
-    Dir = 2.72
+    Dir = 260.22
   },
   [305] = {
     id = 305,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[198],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[200],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[304],
-    Dir = 133.02
+    Dir = 260.22
   },
   [306] = {
     id = 306,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[198],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[201],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[305],
-    Dir = 138.47
+    Dir = 248.69
   },
   [307] = {
     id = 307,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[199],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[202],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[306],
-    Dir = 179.34
+    Dir = 238.39
   },
   [308] = {
     id = 308,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[200],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[202],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[307],
-    Dir = 175.2
+    Dir = 169.96
   },
   [309] = {
     id = 309,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[201],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[202],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[308],
-    Dir = 245.09
+    Dir = 249.97
   },
   [310] = {
     id = 310,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[202],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[203],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[309],
-    Dir = 245.44
+    Dir = 107.72
   },
   [311] = {
     id = 311,
     StandPot = Table_Seat_sc_syzh_t.StandPot[203],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[310],
-    Dir = 308.23
+    Dir = 107.72
   },
   [312] = {
     id = 312,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[203],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[204],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[311],
-    Dir = 308.23
+    Dir = 93.28
   },
   [313] = {
     id = 313,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[204],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[205],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[312],
-    Dir = 349.92
+    Dir = 346.65
   },
   [314] = {
     id = 314,
-    StandPot = Table_Seat_sc_syzh_t.StandPot[205],
+    StandPot = Table_Seat_sc_syzh_t.StandPot[206],
     SeatPot = Table_Seat_sc_syzh_t.SeatPot[313],
-    Dir = 4.22
+    Dir = 24.22
+  },
+  [315] = {
+    id = 315,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[207],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[314],
+    Dir = 24.22
+  },
+  [316] = {
+    id = 316,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[207],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[315],
+    Dir = 24.19
+  },
+  [317] = {
+    id = 317,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[207],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[316],
+    Dir = 14.99
+  },
+  [318] = {
+    id = 318,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[207],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[317],
+    Dir = 32.56
+  },
+  [319] = {
+    id = 319,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[207],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[318],
+    Dir = 32.24
+  },
+  [320] = {
+    id = 320,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[207],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[319],
+    Dir = 32.24
+  },
+  [321] = {
+    id = 321,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[207],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[320],
+    Dir = 32.24
+  },
+  [322] = {
+    id = 322,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[208],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[321],
+    Dir = 34.02
+  },
+  [323] = {
+    id = 323,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[209],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[322],
+    Dir = 51.95
+  },
+  [324] = {
+    id = 324,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[209],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[323],
+    Dir = 51.95
+  },
+  [325] = {
+    id = 325,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[209],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[324],
+    Dir = 29.49
+  },
+  [326] = {
+    id = 326,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[209],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[325],
+    Dir = 51.18
+  },
+  [327] = {
+    id = 327,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[209],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[326],
+    Dir = 51.18
+  },
+  [328] = {
+    id = 328,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[209],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[327],
+    Dir = 51.18
+  },
+  [329] = {
+    id = 329,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[209],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[328],
+    Dir = 51.18
+  },
+  [330] = {
+    id = 330,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[209],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[329],
+    Dir = 51.18
+  },
+  [331] = {
+    id = 331,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[209],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[330],
+    Dir = 51.18
+  },
+  [332] = {
+    id = 332,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[209],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[331],
+    Dir = 33.39
+  },
+  [333] = {
+    id = 333,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[209],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[332],
+    Dir = 51.18
+  },
+  [334] = {
+    id = 334,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[209],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[333],
+    Dir = 33.39
+  },
+  [335] = {
+    id = 335,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[209],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[334],
+    Dir = 40.28
+  },
+  [336] = {
+    id = 336,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[210],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[335],
+    Dir = 116.79
+  },
+  [337] = {
+    id = 337,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[211],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[336],
+    Dir = 136.77
+  },
+  [338] = {
+    id = 338,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[212],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[337],
+    Dir = 96.33
+  },
+  [339] = {
+    id = 339,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[213],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[338],
+    Dir = 219.35
+  },
+  [340] = {
+    id = 340,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[213],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[339],
+    Dir = 219.35
+  },
+  [341] = {
+    id = 341,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[213],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[340],
+    Dir = 219.35
+  },
+  [342] = {
+    id = 342,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[214],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[341],
+    Dir = 275.24
+  },
+  [343] = {
+    id = 343,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[215],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[342],
+    Dir = 166
+  },
+  [344] = {
+    id = 344,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[216],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[343],
+    Dir = 292.34
+  },
+  [345] = {
+    id = 345,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[217],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[344],
+    Dir = 115.88
+  },
+  [346] = {
+    id = 346,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[218],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[345],
+    Dir = 221.56
+  },
+  [347] = {
+    id = 347,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[219],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[346],
+    Dir = 237.71
+  },
+  [348] = {
+    id = 348,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[220],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[347],
+    Dir = 203.81
+  },
+  [349] = {
+    id = 349,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[221],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[348],
+    Dir = 292.74
+  },
+  [350] = {
+    id = 350,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[222],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[349],
+    Dir = 280.68
+  },
+  [351] = {
+    id = 351,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[223],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[350],
+    Dir = 229.43
+  },
+  [352] = {
+    id = 352,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[224],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[351],
+    Dir = 321.26
+  },
+  [353] = {
+    id = 353,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[225],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[352],
+    Dir = 318.26
+  },
+  [354] = {
+    id = 354,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[226],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[353],
+    Dir = 203.74
+  },
+  [355] = {
+    id = 355,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[227],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[354],
+    Dir = 27.18
+  },
+  [356] = {
+    id = 356,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[228],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[355],
+    Dir = 25.86
+  },
+  [357] = {
+    id = 357,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[229],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[356],
+    Dir = 191.03
+  },
+  [358] = {
+    id = 358,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[229],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[357],
+    Dir = 201.39
+  },
+  [359] = {
+    id = 359,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[230],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[358],
+    Dir = 55.5
+  },
+  [360] = {
+    id = 360,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[231],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[359],
+    Dir = 94.66
+  },
+  [361] = {
+    id = 361,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[232],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[360],
+    Dir = 89.48
+  },
+  [362] = {
+    id = 362,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[232],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[361],
+    Dir = 110.94
+  },
+  [363] = {
+    id = 363,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[233],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[362],
+    Dir = 354.48
+  },
+  [364] = {
+    id = 364,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[233],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[363],
+    Dir = 359.55
+  },
+  [365] = {
+    id = 365,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[234],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[364],
+    Dir = 350.68
+  },
+  [366] = {
+    id = 366,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[235],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[365],
+    Dir = 314.12
+  },
+  [367] = {
+    id = 367,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[236],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[366],
+    Dir = 232.55
+  },
+  [368] = {
+    id = 368,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[237],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[367],
+    Dir = 238.02
+  },
+  [369] = {
+    id = 369,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[238],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[368],
+    Dir = 343.26
+  },
+  [370] = {
+    id = 370,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[238],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[369],
+    Dir = 343.07
+  },
+  [371] = {
+    id = 371,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[239],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[370],
+    Dir = 302.28
+  },
+  [372] = {
+    id = 372,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[239],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[371],
+    Dir = 302.28
+  },
+  [373] = {
+    id = 373,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[240],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[372],
+    Dir = 345.33
+  },
+  [374] = {
+    id = 374,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[241],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[373],
+    Dir = 50.8
+  },
+  [375] = {
+    id = 375,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[242],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[374],
+    Dir = 225.44
+  },
+  [376] = {
+    id = 376,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[243],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[375],
+    Dir = 212.71
+  },
+  [377] = {
+    id = 377,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[243],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[376],
+    Dir = 212.94
+  },
+  [378] = {
+    id = 378,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[244],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[377],
+    Dir = 260.67
+  },
+  [379] = {
+    id = 379,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[245],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[378],
+    Dir = 244.32
+  },
+  [380] = {
+    id = 380,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[246],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[379],
+    Dir = 221.13
+  },
+  [381] = {
+    id = 381,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[246],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[380],
+    Dir = 195.27
+  },
+  [382] = {
+    id = 382,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[247],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[381],
+    Dir = 220.03
+  },
+  [383] = {
+    id = 383,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[248],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[382],
+    Dir = 256.73
+  },
+  [384] = {
+    id = 384,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[249],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[383],
+    Dir = 225.13
+  },
+  [385] = {
+    id = 385,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[250],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[384],
+    Dir = 211.31
+  },
+  [386] = {
+    id = 386,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[251],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[385],
+    Dir = 263.91
+  },
+  [387] = {
+    id = 387,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[252],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[386],
+    Dir = 271.24
+  },
+  [388] = {
+    id = 388,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[253],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[387],
+    Dir = 136.3
+  },
+  [389] = {
+    id = 389,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[254],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[388],
+    Dir = 85.92
+  },
+  [390] = {
+    id = 390,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[254],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[389],
+    Dir = 96.23
+  },
+  [391] = {
+    id = 391,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[255],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[390],
+    Dir = 160.41
+  },
+  [392] = {
+    id = 392,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[256],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[391],
+    Dir = 89.38
+  },
+  [393] = {
+    id = 393,
+    StandPot = Table_Seat_sc_syzh_t.StandPot[257],
+    SeatPot = Table_Seat_sc_syzh_t.SeatPot[392],
+    Dir = 333.54
   }
 }
 local cell_mt = {

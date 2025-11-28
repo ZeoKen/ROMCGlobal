@@ -360,6 +360,9 @@ function FunctionNpcFunc:ctor()
   self.funcMap.OpenInheritSkillView = FunctionNpcFunc.OpenInheritSkillView
   self.funcMap.OpenInheritSkillExtendCostPointPopUp = FunctionNpcFunc.OpenInheritSkillExtendCostPointPopUp
   self.funcMap.OpenAchieveRewardView = FunctionNpcFunc.OpenAchieveRewardView
+  self.funcMap.RaidStartFight = FunctionNpcFunc.RaidStartFight
+  self.funcMap.GetFairyTaleRaidReward = FunctionNpcFunc.GetFairyTaleRaidReward
+  self.funcMap.ExitFairyTaleRaid = FunctionNpcFunc.ExitFairyTaleRaid
   self.checkMap.CreateGuild = FunctionNpcFunc.CheckCreateGuild
   self.checkMap.ApplyGuild = FunctionNpcFunc.CheckCreateGuild
   self.checkMap.QuickTeam = FunctionNpcFunc.CheckQuickTeam
@@ -486,6 +489,7 @@ function FunctionNpcFunc:ctor()
   self.checkMap.OpenInheritSkillView = FunctionNpcFunc.CheckOpenInheritSkillView
   self.checkMap.CardUpgrade = FunctionNpcFunc.CheckCardUpgrade
   self.checkMap.OpenInheritSkillExtendCostPointPopUp = FunctionNpcFunc.CheckOpenInheritSkillExtendCostPointPopUp
+  self.checkMap.ExitFairyTaleRaid = FunctionNpcFunc.CheckExitFairyTaleRaid
   self.updateCheckCache = {}
 end
 
@@ -684,6 +688,9 @@ function FunctionNpcFunc.TypeFunc_Shop(nnpc, params, npcFunctionData, exitCall, 
       onExit = exitCall,
       onExitParam = exitCallParam
     })
+    if fId == 10000002 then
+      RedTipProxy.Instance:SeenNew(SceneTip_pb.EREDSYS_SHOP_APPEARANCE)
+    end
   end
 end
 
@@ -4834,4 +4841,38 @@ function FunctionNpcFunc.CheckCardUpgrade(npc, param, npcFunctionData)
     return NpcFuncState.InActive
   end
   return NpcFuncState.Active
+end
+
+function FunctionNpcFunc.RaidStartFight(npc, param, npcFunctionData)
+  ServiceFuBenCmdProxy.Instance:CallRaidStartFightCmd()
+end
+
+function FunctionNpcFunc.GetFairyTaleRaidReward(npc, param, npcFunctionData)
+  local curRewardCount = FairyTaleProxy.Instance:GetRewardCount()
+  if curRewardCount == 0 then
+    MsgManager.ShowMsgByID(43645)
+    return
+  end
+  local dailyToken = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_FAIRY_TALE_DAILY_COIN) or 0
+  local tokenLimit = GameConfig.FairyTaleRaid and GameConfig.FairyTaleRaid.CoinDayMax or 0
+  if dailyToken >= tokenLimit then
+    MsgManager.ShowMsgByID(43634)
+    return
+  end
+  ServiceFuBenCmdProxy.Instance:CallFairyTaleRaidGetRewardCmd()
+end
+
+function FunctionNpcFunc.ExitFairyTaleRaid(npc, param, npcFunctionData)
+  MsgManager.ConfirmMsgByID(7, function()
+    redlog("---------CallExitMapFubenCmd")
+    ServiceFuBenCmdProxy.Instance:CallExitMapFubenCmd()
+  end, nil)
+end
+
+function FunctionNpcFunc.CheckExitFairyTaleRaid(npc, param, npcFunctionData)
+  local inRaid = Game.MapManager:IsPVEMode_FairyTaleRaid()
+  if inRaid then
+    return NpcFuncState.Active
+  end
+  return NpcFuncState.InActive
 end

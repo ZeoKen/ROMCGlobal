@@ -2,7 +2,6 @@ autoImport("ServantContainerData")
 ServantCalendarProxy = class("ServantCalendarProxy", pm.Proxy)
 ServantCalendarProxy.Instance = nil
 ServantCalendarProxy.NAME = "ServantCalendarProxy"
-local MATCH_FORMAT = "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)"
 local DAY_SECOND = 86400
 ServantCalendarProxy.WeekSingleContainerSize = 50
 ServantCalendarProxy.reservation_day = GameConfig.Servant.reservation_day or 2
@@ -537,16 +536,4 @@ function ServantCalendarProxy:AddQueryArray(url)
   else
     return false
   end
-end
-
-function ServantCalendarProxy.GetTimeDate(st, et, strFormat)
-  local startMonth = os.date("%m", st)
-  local startDay = os.date("%d", st)
-  local startHour = os.date("%H", st)
-  local startMin = os.date("%M", st)
-  local endMonth = os.date("%m", et)
-  local endDay = os.date("%d", et)
-  local endHour = os.date("%H", et)
-  local endMin = os.date("%M", et)
-  return string.format(strFormat, startMonth, startDay, startHour, startMin, endMonth, endDay, endHour, endMin)
 end

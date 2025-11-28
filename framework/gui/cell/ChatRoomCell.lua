@@ -94,6 +94,9 @@ function ChatRoomCell:FindObjs()
   self.top = self:FindGO("Top"):GetComponent(UIWidget)
   self.Voice = self:FindGO("Voice")
   self.emojiRoot = self:FindGO("EmojiRoot")
+  self:AddClickEvent(self.emojiRoot, function()
+    self:UpdateTipoff()
+  end)
   for i = 1, 4 do
     self["bgDecorate" .. i] = self:FindGO("bgDecorate" .. i)
     if self["bgDecorate" .. i] then
@@ -394,10 +397,6 @@ function ChatRoomCell:SetData(data)
     local charId = self.data:GetId()
     if self.contentSpriteBg.width < 127 then
       self.contentSpriteBg.width = 127
-    end
-    if self.tipoffBtn then
-      LuaGameObject.SetLocalPositionGO(self.tipoffBtn, self.contentSpriteBg.width * 0.56, 37, 0)
-      self.tipoffBtn:SetActive(false)
     end
     if GVoiceProxy.Instance:IsThisCharIdRealtimeVoiceAvailable(charId) then
       self.Voice.gameObject:SetActive(true)

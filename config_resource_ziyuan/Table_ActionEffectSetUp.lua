@@ -2616,6 +2616,90 @@ Table_ActionEffectSetUp = {
     EPID = 2,
     EPFollow = 1,
     Loop = 1
+  },
+  [386] = {
+    id = 386,
+    Path = "Common/cfx_danmachibell_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [387] = {
+    id = 387,
+    Path = "Common/cfx_danmachiais_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [388] = {
+    id = 388,
+    Path = "Common/cfx_danmachibell_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [389] = {
+    id = 389,
+    Path = "Common/cfx_danmachiais_004_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [390] = {
+    id = 390,
+    Path = "Common/cfx_specterrequiem_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [391] = {
+    id = 391,
+    Path = "Common/cfx_specterrequiem_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [392] = {
+    id = 392,
+    Path = "Common/cfx_specterrequiem_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [393] = {
+    id = 393,
+    Path = "Common/cfx_specterrequiem_004_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [394] = {
+    id = 394,
+    Path = "Common/cfx_synthoid_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [395] = {
+    id = 395,
+    Path = "Common/cfx_synthoid_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [396] = {
+    id = 396,
+    Path = "Common/cfx_synthoid_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [397] = {
+    id = 397,
+    Path = "Common/cfx_synthoid_004_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
   }
 }
 Table_ActionEffectSetUp_fields = {

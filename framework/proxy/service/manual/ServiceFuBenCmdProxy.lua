@@ -640,6 +640,11 @@ function ServiceFuBenCmdProxy:RecvEBFKickTimeCmd(data)
   self:Notify(ServiceEvent.FuBenCmdEBFKickTimeCmd, data)
 end
 
+function ServiceFuBenCmdProxy:RecvGvgDateBattleInfoSyncCmd(data)
+  GuildDateBattleProxy.Instance:HandleGvgDateBattleInfoSync(data)
+  self:Notify(ServiceEvent.FuBenCmdGvgDateBattleInfoSyncCmd, data)
+end
+
 function ServiceFuBenCmdProxy:RecvSyncStarArkInfoFuBenCmd(data)
   DungeonProxy.Instance:RecvSyncStarArkInfoFuBenCmd(data)
   self:Notify(ServiceEvent.FuBenCmdSyncStarArkInfoFuBenCmd, data)
@@ -735,4 +740,19 @@ function ServiceFuBenCmdProxy:RecvSTIRetUpgradeOptionsCmd(data)
   redlog("ServiceFuBenCmdProxy:RecvSTIRetUpgradeOptionsCmd", data.skill_options and #data.skill_options or "nil", data.available_refresh_all_skill_number)
   RoguelikeSkillProxy.Instance:UpdateAlternativeSkillList(data.skill_options, data.available_refresh_all_skill_number)
   self:Notify(ServiceEvent.FuBenCmdSTIRetUpgradeOptionsCmd, data)
+end
+
+function ServiceFuBenCmdProxy:RecvFairyTaleRaidRewardSyncCmd(data)
+  FairyTaleProxy.Instance:UpdateRewardInfo(data.reward_count)
+  self:Notify(ServiceEvent.FuBenCmdFairyTaleRaidRewardSyncCmd, data)
+  EventManager.Me():PassEvent(ServiceEvent.FuBenCmdFairyTaleRaidRewardSyncCmd, data.reward_count)
+end
+
+function ServiceFuBenCmdProxy:RecvSyncMemoryEquipRewardInfo(data)
+  redlog("ServiceFuBenCmdProxy:RecvSyncMemoryEquipRewardInfo")
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.MemoryEquipRewardPopUp,
+    viewdata = data
+  })
+  self:Notify(ServiceEvent.FuBenCmdSyncMemoryEquipRewardInfo, data)
 end

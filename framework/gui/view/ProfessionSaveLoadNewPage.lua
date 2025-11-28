@@ -341,6 +341,27 @@ function ProfessionSaveLoadNewPage:SetProcess()
     data.funcParams = self.curSaveId
     result[data.order] = data
   end
+  local initPoint = GameConfig.SkillInherit and GameConfig.SkillInherit.InitPointMax or 0
+  local extendPointCost = GameConfig.SkillInherit and GameConfig.SkillInherit.PointExtendCost
+  local max = initPoint
+  if extendPointCost then
+    max = max + #extendPointCost
+  end
+  local loadSkills = MultiProfessionSaveProxy.Instance:GetInheritSkillLoadSkills(self.curSaveId)
+  local costPoints = 0
+  for i = 1, #loadSkills do
+    local skill = loadSkills[i]
+    costPoints = costPoints + skill:GetCostPoint()
+  end
+  data = {
+    order = 9,
+    curValue = costPoints,
+    maxValue = max
+  }
+  data.clickFunc = self.OnInheritSkillBtnClick
+  data.owner = self
+  data.funcParams = self.curSaveId
+  result[data.order] = data
   self.container:UpdateClassProcess(result, 2)
   ReusableTable.DestroyAndClearArray(result)
 end
@@ -649,6 +670,20 @@ function ProfessionSaveLoadNewPage:OnExtractBtnClick(param)
     MsgManager.DontAgainConfirmMsgByID(25395, function()
     end)
   end
+end
+
+function ProfessionSaveLoadNewPage:OnInheritSkillBtnClick(param)
+  if not FunctionUnLockFunc.Me():CheckCanOpen(19390) then
+    MsgManager.ShowMsgByID(43661)
+    return
+  end
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.InheritSkillView,
+    viewdata = {
+      saveId = param,
+      saveType = SaveInfoEnum.Record
+    }
+  })
 end
 
 function ProfessionSaveLoadNewPage:IsMyCurrentRole(saveId)

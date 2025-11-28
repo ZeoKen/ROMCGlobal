@@ -454,6 +454,22 @@ Table_DepositProducts = {
     ProductID = "com.gravity.romg.noen.pack_no_31",
     CurrencyType = "USD",
     Rmb = 89.99
+  },
+  [58] = {
+    id = 58,
+    DepositID = 400033,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pack_no_33",
+    CurrencyType = "USD",
+    Rmb = 45.99
+  },
+  [59] = {
+    id = 59,
+    DepositID = 400034,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pack_no_34",
+    CurrencyType = "USD",
+    Rmb = 29.99
   }
 }
 Table_DepositProducts_fields = {

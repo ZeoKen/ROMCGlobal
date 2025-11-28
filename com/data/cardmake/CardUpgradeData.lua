@@ -73,3 +73,19 @@ function CardUpgradeData:GetAttrs(level)
   end
   return attrs
 end
+
+function CardUpgradeData:IsTimeValid()
+  if not self.levelConfigs then
+    return
+  end
+  local validDate = self.levelConfigs[1].ValidDate
+  if EnvChannel.IsTFBranch() then
+    validDate = self.levelConfigs[1].TFValidDate
+  end
+  local validTime = ClientTimeUtil.GetOSDateTime(validDate)
+  if validTime then
+    local curTime = ServerTime.CurServerTime() / 1000
+    return validTime <= curTime
+  end
+  return true
+end

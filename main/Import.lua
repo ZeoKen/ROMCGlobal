@@ -5,8 +5,9 @@ mConfig_Special = {
   GameConfig = true,
   MapTeleport = true,
   CommonFun = true,
+  ItemFun = true,
   TransferTeleport = true,
-  ItemFun = true
+  SkillHelperFunc = true
 }
 
 function reAutoImport(moduleName)

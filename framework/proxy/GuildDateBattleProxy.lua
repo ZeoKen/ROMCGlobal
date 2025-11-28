@@ -567,7 +567,7 @@ function GuildDateBattleProxy:GetFlagData(map_id, guid)
   end
 end
 
-function GuildDateBattleProxy:CallInvite(guild_id, ban_cards)
+function GuildDateBattleProxy:CallInvite(guild_id, ban_cards, game_mode, target_num)
   if not GuildProxy.Instance:ImGuildChairman() then
     return
   end
@@ -583,20 +583,21 @@ function GuildDateBattleProxy:CallInvite(guild_id, ban_cards)
     sec = 0
   })
   if not self:HasApproveData(stamp) then
-    self:CallDateInvite(guild_id, stamp, self.curMode, ban_cards)
+    self:CallDateInvite(guild_id, stamp, self.curMode, game_mode, target_num, ban_cards)
   else
     MsgManager.ConfirmMsgByID(43551, function()
-      self:CallDateInvite(guild_id, stamp, self.curMode, ban_cards)
+      self:CallDateInvite(guild_id, stamp, self.curMode, game_mode, target_num, ban_cards)
     end, nil, nil)
   end
 end
 
-function GuildDateBattleProxy:CallDateInvite(guild_id, stamp, mode, ban_cards)
+function GuildDateBattleProxy:CallDateInvite(guild_id, stamp, mode, game_mode, target_num, ban_cards)
   mode = mode or 1
   stamp = math.floor(stamp)
-  self:Debug("[公会约战] 发起邀请CallDateBattleInviteGuildCmd guild_id | stamp | mode ", guild_id, stamp, mode)
+  self:Debug("[公会约战] 发起邀请CallDateBattleInviteGuildCmd guild_id | stamp | mode | game_mode | target_num ", guild_id, stamp, mode, game_mode, target_num)
   local info = ReusableTable.CreateTable()
-  info.type = _DefaultMode
+  info.type = game_mode or _DefaultMode
+  info.target_num = target_num or 0
   info.cardids = ban_cards
   ServiceGuildCmdProxy.Instance:CallDateBattleInviteGuildCmd(guild_id, stamp, mode, nil, info)
   ReusableTable.DestroyAndClearTable(info)
@@ -646,6 +647,17 @@ function GuildDateBattleProxy:HandleDateBattleOpen(server_data)
   else
     self.entranceData = nil
   end
+end
+
+function GuildDateBattleProxy:HandleGvgDateBattleInfoSync(server_data)
+  self:Debug("公会战-约战模式相关信息 RecvGvgDateBattleInfoSyncCmd")
+  GuildDateBattleProxyDebug(server_data)
+  self.raid_battle_type = server_data.battle_type
+  self.raid_death_count = server_data.death_info.death_count
+  self.raid_death_limit = server_data.death_info.death_limit
+  self.raid_blood_atk_kill_count = server_data.blood_info.atk_kill_count
+  self.raid_blood_def_kill_count = server_data.blood_info.def_kill_count
+  self.raid_blood_kill_target = server_data.blood_info.kill_target
 end
 
 function GuildDateBattleProxy:IsInPreview()

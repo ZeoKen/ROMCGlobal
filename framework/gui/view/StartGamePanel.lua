@@ -1072,7 +1072,9 @@ function StartGamePanel:TryPlayBgVideo(isNoviceServer)
       path = Application.streamingAssetsPath .. "/Videos/" .. StartGamePanel.BgVideoName
     end
   end
-  self.bgVideoPlayer:OpenVideo(path, true)
+  if self.bgVideoPlayer then
+    self.bgVideoPlayer:OpenVideo(path, true)
+  end
 end
 
 function StartGamePanel:SwitchLoginBg(isNoviceServer)

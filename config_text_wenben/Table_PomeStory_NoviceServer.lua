@@ -1902,7 +1902,6 @@ Table_PomeStory = {
     id = 24,
     QuestID = Table_PomeStory_t.QuestID[24],
     version = Table_PomeStory_t.version[6],
-    QuestName = "无名者",
     Npcid = 1232,
     Pstory = Table_PomeStory_t.Pstory[24],
     NpcSpace = 8
@@ -2074,6 +2073,7 @@ Table_PomeStory = {
     id = 44,
     QuestID = Table_PomeStory_t.QuestID[44],
     version = Table_PomeStory_t.version[7],
+    QuestName = "瑟西",
     Npcid = 3088,
     Pstory = Table_PomeStory_t.Pstory[44]
   },
@@ -2119,7 +2119,7 @@ local cell_mt = {
     Npcid = 1595,
     Pstory = _EmptyTable,
     QuestID = _EmptyTable,
-    QuestName = "瑟西",
+    QuestName = "无名者",
     id = 1,
     version = _EmptyTable
   }

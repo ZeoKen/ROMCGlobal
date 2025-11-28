@@ -47,7 +47,6 @@ function CardUpgradePage:UpdateCardMap()
       for i = 1, #items do
         local data = CardUpgradeData.new(items[i])
         self.cardMap[data.guid] = data
-        redlog("CardUpgradePage:UpdateCardMap", data.guid, id, tostring(items[i].cardLv))
       end
     else
       local itemData = ItemData.new(id, id)
@@ -223,15 +222,17 @@ function CardUpgradePage:FilterCardByTypes(types)
   _ArrayClear(self.lockedCardList)
   if not types or #types == 0 then
     for k, v in pairs(self.cardMap) do
-      if v:IsLocked() then
-        _ArrayPushBack(self.lockedCardList, v)
-      else
-        _ArrayPushBack(self.filterCardList, v)
+      if v:IsTimeValid() then
+        if v:IsLocked() then
+          _ArrayPushBack(self.lockedCardList, v)
+        else
+          _ArrayPushBack(self.filterCardList, v)
+        end
       end
     end
   else
     for k, v in pairs(self.cardMap) do
-      if 0 < _ArrayFindIndex(types, v.itemData.staticData.Type) then
+      if v:IsTimeValid() and 0 < _ArrayFindIndex(types, v.itemData.staticData.Type) then
         if v:IsLocked() then
           _ArrayPushBack(self.lockedCardList, v)
         else

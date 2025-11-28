@@ -467,6 +467,7 @@ function FunctionChangeScene:ClearScene(loadOtherScene)
   Game.GOLuaPoolManager:ClearAllPools()
   GameObjPool.Instance:ClearAll()
   GvgProxy.Instance:ClearRuleGuildInfos()
+  FunctionAbyssDragon.Me():Shutdown()
 end
 
 function FunctionChangeScene:RunMapActivityBossAnime(mapId)

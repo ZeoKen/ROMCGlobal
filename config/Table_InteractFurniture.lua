@@ -858,6 +858,13 @@ Table_InteractFurniture = {
     },
     DoramOffset = _EmptyTable
   },
+  [39726] = {
+    id = 39726,
+    MountInfo = {
+      [1] = 57
+    },
+    DoramOffset = _EmptyTable
+  },
   [3000708] = {
     id = 3000708,
     MountInfo = {

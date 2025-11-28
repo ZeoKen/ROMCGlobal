@@ -7,7 +7,6 @@ function InheritSkillProfessData:ctor(profession)
 end
 
 function InheritSkillProfessData:AddSkill(skillItemData)
-  redlog("InheritSkillProfessData:AddSkill", self.profession, skillItemData.id)
   self.skills[#self.skills + 1] = skillItemData
 end
 

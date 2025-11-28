@@ -4,7 +4,7 @@ local iteminfo = {}
 
 function AuctionSignUpDetailView:OnExit()
   if self.itemTipCell then
-    self.itemTipCell:Exit()
+    self.itemTipCell:OnDestroy()
   end
   if self.timeTick then
     TimeTickManager.Me():ClearTick(self)

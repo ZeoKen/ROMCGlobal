@@ -1510,6 +1510,174 @@ Table_MobileScreenAdaption = {
     offset_left = 51,
     offset_bottom = 0,
     offset_right = 94
+  },
+  [73] = {
+    id = 73,
+    IsValid = 1,
+    DeviceInfo = "iPhone18,3",
+    SpecialView = {
+      WebviewPanel = {
+        SavedInsets = {
+          40,
+          80,
+          20,
+          80
+        }
+      },
+      GuildBuildingMatSubmitCell = {InfoPosY = 20}
+    },
+    RotationType = 1,
+    offset_top = 0,
+    offset_left = 140,
+    offset_bottom = 0,
+    offset_right = 100
+  },
+  [74] = {
+    id = 74,
+    IsValid = 1,
+    DeviceInfo = "iPhone18,3",
+    SpecialView = {
+      WebviewPanel = {
+        SavedInsets = {
+          40,
+          80,
+          20,
+          80
+        }
+      },
+      GuildBuildingMatSubmitCell = {InfoPosY = 20}
+    },
+    RotationType = 2,
+    offset_top = 0,
+    offset_left = 100,
+    offset_bottom = 0,
+    offset_right = 140
+  },
+  [75] = {
+    id = 75,
+    IsValid = 1,
+    DeviceInfo = "iPhone18,4",
+    SpecialView = {
+      WebviewPanel = {
+        SavedInsets = {
+          40,
+          80,
+          20,
+          80
+        }
+      },
+      GuildBuildingMatSubmitCell = {InfoPosY = 20}
+    },
+    RotationType = 1,
+    offset_top = 0,
+    offset_left = 153,
+    offset_bottom = 0,
+    offset_right = 100
+  },
+  [76] = {
+    id = 76,
+    IsValid = 1,
+    DeviceInfo = "iPhone18,4",
+    SpecialView = {
+      WebviewPanel = {
+        SavedInsets = {
+          40,
+          80,
+          20,
+          80
+        }
+      },
+      GuildBuildingMatSubmitCell = {InfoPosY = 20}
+    },
+    RotationType = 2,
+    offset_top = 0,
+    offset_left = 100,
+    offset_bottom = 0,
+    offset_right = 153
+  },
+  [77] = {
+    id = 77,
+    IsValid = 1,
+    DeviceInfo = "iPhone18,1",
+    SpecialView = {
+      WebviewPanel = {
+        SavedInsets = {
+          40,
+          80,
+          20,
+          80
+        }
+      },
+      GuildBuildingMatSubmitCell = {InfoPosY = 20}
+    },
+    RotationType = 1,
+    offset_top = 0,
+    offset_left = 153,
+    offset_bottom = 0,
+    offset_right = 100
+  },
+  [78] = {
+    id = 78,
+    IsValid = 1,
+    DeviceInfo = "iPhone18,1",
+    SpecialView = {
+      WebviewPanel = {
+        SavedInsets = {
+          40,
+          80,
+          20,
+          80
+        }
+      },
+      GuildBuildingMatSubmitCell = {InfoPosY = 20}
+    },
+    RotationType = 2,
+    offset_top = 0,
+    offset_left = 100,
+    offset_bottom = 0,
+    offset_right = 153
+  },
+  [79] = {
+    id = 79,
+    IsValid = 1,
+    DeviceInfo = "iPhone18,2",
+    SpecialView = {
+      WebviewPanel = {
+        SavedInsets = {
+          40,
+          80,
+          20,
+          80
+        }
+      },
+      GuildBuildingMatSubmitCell = {InfoPosY = 20}
+    },
+    RotationType = 1,
+    offset_top = 0,
+    offset_left = 153,
+    offset_bottom = 0,
+    offset_right = 100
+  },
+  [80] = {
+    id = 80,
+    IsValid = 1,
+    DeviceInfo = "iPhone18,2",
+    SpecialView = {
+      WebviewPanel = {
+        SavedInsets = {
+          40,
+          80,
+          20,
+          80
+        }
+      },
+      GuildBuildingMatSubmitCell = {InfoPosY = 20}
+    },
+    RotationType = 2,
+    offset_top = 0,
+    offset_left = 100,
+    offset_bottom = 0,
+    offset_right = 153
   }
 }
 Table_MobileScreenAdaption_fields = {

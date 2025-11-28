@@ -345,3 +345,10 @@ function PlayerTipData:SetByPippiData()
   self.guildname = " "
   self.level = nil
 end
+
+function PlayerTipData:SetByFairyTaleRankData(data)
+  self.id = data.charId
+  self.name = data.name
+  self.headData = clone(data.headData)
+  self.guildname = data.guildName
+end

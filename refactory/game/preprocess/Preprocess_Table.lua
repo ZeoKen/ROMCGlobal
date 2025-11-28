@@ -1473,6 +1473,9 @@ function Game.Preprocess_ItemMemory()
   local groupToEffectIds = {}
   local effectToMemoryIds = {}
   local posGroupMap = {}
+  local upgradeGroupToEffectIds = {}
+  local upgradeEffectToMemoryIds = {}
+  local upgradePosGroupMap = {}
   for _, v in pairs(Table_ItemMemoryLibrary) do
     local effectID = v.EffectID
     local type = v.Type
@@ -1484,7 +1487,15 @@ function Game.Preprocess_ItemMemory()
       }
     end
     _colors[effectID].group[groupID] = 1
-    if type == "special" and groupID and effectID then
+    local isUpgradeMemory = groupID and math.floor(groupID / 1000) == 4
+    if isUpgradeMemory then
+      if groupID and effectID then
+        if not upgradeGroupToEffectIds[groupID] then
+          upgradeGroupToEffectIds[groupID] = {}
+        end
+        upgradeGroupToEffectIds[groupID][effectID] = true
+      end
+    elseif type == "special" and groupID and effectID then
       if not groupToEffectIds[groupID] then
         groupToEffectIds[groupID] = {}
       end
@@ -1503,10 +1514,18 @@ function Game.Preprocess_ItemMemory()
     local level = v.Level or 1
     itemMemoryEffect[effectId].level[level] = k
     if effectId and v.PreviewDesc and v.PreviewDesc ~= "" then
-      if not effectToMemoryIds[effectId] then
-        effectToMemoryIds[effectId] = {}
+      local isUpgradeEffectId = 40000 <= effectId
+      if isUpgradeEffectId then
+        if not upgradeEffectToMemoryIds[effectId] then
+          upgradeEffectToMemoryIds[effectId] = {}
+        end
+        upgradeEffectToMemoryIds[effectId][k] = true
+      else
+        if not effectToMemoryIds[effectId] then
+          effectToMemoryIds[effectId] = {}
+        end
+        effectToMemoryIds[effectId][k] = true
       end
-      effectToMemoryIds[effectId][k] = true
     end
   end
   for itemId, config in pairs(Table_ItemMemory) do
@@ -1523,6 +1542,13 @@ function Game.Preprocess_ItemMemory()
               posGroupMap[groupEnum] = {}
             end
             posGroupMap[groupEnum][groupId] = true
+          end
+          if config.Quality == 5 and randomAttr and randomAttr[999] and randomAttr[999].group then
+            local upgradeGroupId = randomAttr[999].group
+            if not upgradePosGroupMap[groupEnum] then
+              upgradePosGroupMap[groupEnum] = {}
+            end
+            upgradePosGroupMap[groupEnum][upgradeGroupId] = true
           end
         end
       end
@@ -1547,9 +1573,29 @@ function Game.Preprocess_ItemMemory()
     table.sort(memoryIds)
     specialEffectMap[groupEnum] = memoryIds
   end
+  local upgradeSpecialEffectMap = {}
+  for groupEnum, groups in pairs(upgradePosGroupMap) do
+    local memoryIds = {}
+    for groupId, _ in pairs(groups) do
+      local effectIds = upgradeGroupToEffectIds[groupId]
+      if effectIds then
+        for effectId, _ in pairs(effectIds) do
+          local memoryIdMap = upgradeEffectToMemoryIds[effectId]
+          if memoryIdMap then
+            for memoryId, _ in pairs(memoryIdMap) do
+              table.insert(memoryIds, memoryId)
+            end
+          end
+        end
+      end
+    end
+    table.sort(memoryIds)
+    upgradeSpecialEffectMap[groupEnum] = memoryIds
+  end
   Game.ItemMemoryEffect = itemMemoryEffect
   Game.EquipPosGroup = EquipPosGroup
   Game.EquipMemorySpecialEffectMap = specialEffectMap
+  Game.EquipMemoryUpgradeSpecialEffectMap = upgradeSpecialEffectMap
   Game.GetEquipPosGroupEnum = GetEquipPosGroupEnum
   
   function Game.GetSpecialEffectIdsByEnum(groupEnum)
@@ -1560,6 +1606,18 @@ function Game.Preprocess_ItemMemory()
     local groupEnum = GetEquipPosGroupEnum(equipPos)
     if groupEnum then
       return specialEffectMap[groupEnum] or {}
+    end
+    return {}
+  end
+  
+  function Game.GetUpgradeSpecialEffectIdsByEnum(groupEnum)
+    return upgradeSpecialEffectMap[groupEnum] or {}
+  end
+  
+  function Game.GetUpgradeSpecialEffectIds(equipPos)
+    local groupEnum = GetEquipPosGroupEnum(equipPos)
+    if groupEnum then
+      return upgradeSpecialEffectMap[groupEnum] or {}
     end
     return {}
   end

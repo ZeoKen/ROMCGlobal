@@ -395,3 +395,7 @@ function TeamMemberData:GetName()
   end
   return self.name
 end
+
+function TeamMemberData:GetProfession()
+  return self.profession
+end

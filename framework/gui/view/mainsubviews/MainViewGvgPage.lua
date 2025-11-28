@@ -82,6 +82,29 @@ function MainViewGvgPage:SetData()
   self:UpdateSmallMetalCtn()
   self.updateTick = self.tickMg:CreateTick(0, 1000, self.updateCountTime, self, 101)
   self:UpdatePerfectDefense()
+  self:UpdateTargetLab()
+end
+
+function MainViewGvgPage:UpdateTargetLab()
+  if not self.isGuildDate then
+    return
+  end
+  local _proxy = GuildDateBattleProxy.Instance
+  local game_mode = _proxy.raid_battle_type
+  if game_mode <= GuildCmd_pb.EGUILDDATEBATTLETYPE_BASE then
+    self:Hide(self.targetLab)
+  else
+    self:Show(self.targetLab)
+    if game_mode == GuildCmd_pb.EGUILDDATEBATTLETYPE_DEATH then
+      self:Hide(self.killRoot)
+      self.targetLab.text = string.format(ZhString.MainViewGvgPage_TargetDeath, _proxy.raid_death_count, _proxy.raid_death_limit)
+    else
+      self:Show(self.killRoot)
+      self.kill_atk_lab.text = _proxy.raid_blood_atk_kill_count or 0
+      self.kill_def_lab.text = _proxy.raid_blood_def_kill_count or 0
+      self.targetLab.text = string.format(ZhString.MainViewGvgPage_TargetKill, _proxy.raid_blood_kill_target or 0)
+    end
+  end
 end
 
 function MainViewGvgPage:UpdatePerfectDefense()
@@ -212,6 +235,15 @@ function MainViewGvgPage:initView()
     self:Hide(self.GvgHonorTraceInfo)
   end
   self:InitTraceHonor()
+  self.targetLab = self:FindComponent("TargetLab", UILabel)
+  if self.isGuildDate then
+    self:Show(self.targetLab)
+    self.killRoot = self:FindGO("KillRoot", self.targetLab.gameObject)
+    self.kill_atk_lab = self:FindComponent("KillAtkLab", UILabel, self.killRoot)
+    self.kill_def_lab = self:FindComponent("KillDefLab", UILabel, self.killRoot)
+  else
+    self:Hide(self.targetLab)
+  end
 end
 
 function MainViewGvgPage:OnClickTaskBordFold()
@@ -297,6 +329,7 @@ function MainViewGvgPage:AddViewEvts()
   self:AddListenEvt(GVGEvent.ShowNewAchievemnetEffect, self.HandleAchieveEffect)
   self:AddListenEvt(GVGEvent.GVG_SmallMetalCntUpdate, self.UpdateSmallMetalCtn)
   self:AddListenEvt(ServiceEvent.FuBenCmdGvgPerfectStateUpdateFubenCmd, self.UpdatePerfectDefense)
+  self:AddListenEvt(ServiceEvent.FuBenCmdGvgDateBattleInfoSyncCmd, self.UpdateTargetLab)
   self:AddListenEvt(GVGEvent.GVG_PerfectDefenseSuccess, self.HandleDefensePerfectSuccess)
   self:AddListenEvt(GVGEvent.GVG_PerfectDefensePause, self.TrySetPausePerfectTime)
   self:AddListenEvt(GVGEvent.GVG_PerfectDefenseResume, self.ResumePerfectDefenseTick)
@@ -376,6 +409,7 @@ end
 function MainViewGvgPage:UpdateNewDef()
   self.isDefSide = self.gvgIns:IsDefSide()
   self:updatehpper()
+  self:UpdateTargetLab()
 end
 
 function MainViewGvgPage:stopDelayRemoveEffect()

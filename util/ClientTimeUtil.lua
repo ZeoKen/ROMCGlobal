@@ -1,5 +1,6 @@
 ClientTimeUtil = {}
 DATA_FORMAT = "%y-%m-%d %H:%M:%S"
+local _calendarFormat = "%s/%s %s:%s - %s/%s %s:%s"
 local _DateMatchFormat = "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)"
 
 function ClientTimeUtil.IsCurTimeInRegion(startStrTime, endStrTime)
@@ -309,4 +310,33 @@ function ClientTimeUtil.GetServerHourMinStr()
   local serverTime = ServerTime.CurServerTime() / 1000
   local now = os.date("*t", serverTime)
   return string.format("%02d:%02d", now.hour, now.min)
+end
+
+function ClientTimeUtil.GetDailyRefreshTimeByTimeStamp(timestamp)
+  if not timestamp then
+    return nil
+  end
+  local targetDate = os.date("*t", timestamp)
+  local refreshTime = os.time({
+    year = targetDate.year,
+    month = targetDate.month,
+    day = targetDate.day,
+    hour = 5,
+    min = 0,
+    sec = 0
+  })
+  return refreshTime
+end
+
+function ClientTimeUtil.GetTimeDate(st, et, strFormat)
+  local startMonth = os.date("%m", st)
+  local startDay = os.date("%d", st)
+  local startHour = os.date("%H", st)
+  local startMin = os.date("%M", st)
+  local endMonth = os.date("%m", et)
+  local endDay = os.date("%d", et)
+  local endHour = os.date("%H", et)
+  local endMin = os.date("%M", et)
+  strFormat = strFormat or _calendarFormat
+  return string.format(strFormat, startMonth, startDay, startHour, startMin, endMonth, endDay, endHour, endMin)
 end

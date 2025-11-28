@@ -51,9 +51,10 @@ function AdventureSceneList:Init()
   end
 end
 
-function AdventureSceneList:SetPropData(propData, keys)
+function AdventureSceneList:SetPropData(propData, keys, customProps)
   self.propData = propData
   self.keys = keys
+  self.customProps = customProps
 end
 
 function AdventureSceneList:GetPersonPicThumbnail(cellCtl)
@@ -296,7 +297,7 @@ function AdventureSceneList:GetTabDatas()
     local bag = AdventureDataProxy.Instance.bagMap[type]
     if bag then
       local items = bag:GetItems(tab)
-      items = AdventureDataProxy.Instance:getItemsByFilterData(type, items, self.propData, self.keys)
+      items = AdventureDataProxy.Instance:getItemsByFilterData(type, items, self.propData, self.keys, self.customProps)
       TableUtility.ArrayClear(tempArray)
       for i = 1, #items do
         local single = items[i]

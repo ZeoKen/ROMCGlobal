@@ -12,7 +12,10 @@ function AI_CMD_MoveToHelper:Start(time, deltaTime, creature, p, ignoreNavMesh, 
   if creature.ai.parent ~= nil then
     return false
   end
-  if creature.data:NoAct() then
+  if creature.data:DeepFreeze() then
+    return false
+  end
+  if creature.data:NoAct() and not creature.data:IsAttrCanMove() then
     return false
   end
   if nil ~= range and VectorUtility.DistanceXZ_Square(creature:GetPosition(), p) <= range * range then

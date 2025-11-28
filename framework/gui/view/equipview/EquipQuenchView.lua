@@ -32,6 +32,9 @@ function EquipQuenchView:OnShow()
 end
 
 function EquipQuenchView:OnExit()
+  if self.infoTipCell then
+    self.infoTipCell:OnDestroy()
+  end
   self:CameraReset()
   PictureManager.Instance:UnLoadUI("anying_cuilian_bg_cuillian_", self.bg3Texture)
   TipsView.Me():HideCurrent()

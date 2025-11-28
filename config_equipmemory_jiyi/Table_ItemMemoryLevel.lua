@@ -899,6 +899,186 @@ Table_ItemMemoryLevel_t = {
         MDef = 60,
         MaxHp = 3000
       }
+    },
+    {
+      [4] = {
+        Atk = 63,
+        BaseHp = 225,
+        Def = 31.5,
+        MAtk = 63,
+        MDef = 31.5,
+        MaxHp = 1575
+      },
+      [5] = {
+        Atk = 126,
+        BaseHp = 450,
+        Def = 63,
+        MAtk = 126,
+        MDef = 63,
+        MaxHp = 3150
+      }
+    },
+    {
+      [4] = {
+        Atk = 66,
+        BaseHp = 450,
+        Def = 33,
+        MAtk = 66,
+        MDef = 33,
+        MaxHp = 1650
+      },
+      [5] = {
+        Atk = 132,
+        BaseHp = 900,
+        Def = 66,
+        MAtk = 132,
+        MDef = 66,
+        MaxHp = 3300
+      }
+    },
+    {
+      [4] = {
+        Atk = 69,
+        BaseHp = 675,
+        Def = 34.5,
+        MAtk = 69,
+        MDef = 34.5,
+        MaxHp = 1725
+      },
+      [5] = {
+        Atk = 138,
+        BaseHp = 1350,
+        Def = 69,
+        MAtk = 138,
+        MDef = 69,
+        MaxHp = 3450
+      }
+    },
+    {
+      [4] = {
+        Atk = 72,
+        BaseHp = 900,
+        Def = 36,
+        MAtk = 72,
+        MDef = 36,
+        MaxHp = 1800
+      },
+      [5] = {
+        Atk = 144,
+        BaseHp = 1800,
+        Def = 72,
+        MAtk = 144,
+        MDef = 72,
+        MaxHp = 3600
+      }
+    },
+    {
+      [4] = {
+        Atk = 75,
+        BaseHp = 1125,
+        Def = 37.5,
+        MAtk = 75,
+        MDef = 37.5,
+        MaxHp = 1875
+      },
+      [5] = {
+        Atk = 150,
+        BaseHp = 2250,
+        Def = 75,
+        MAtk = 150,
+        MDef = 75,
+        MaxHp = 3750
+      }
+    },
+    {
+      [4] = {
+        Atk = 78,
+        BaseHp = 1350,
+        Def = 39,
+        MAtk = 78,
+        MDef = 39,
+        MaxHp = 1950
+      },
+      [5] = {
+        Atk = 156,
+        BaseHp = 2700,
+        Def = 78,
+        MAtk = 156,
+        MDef = 78,
+        MaxHp = 3900
+      }
+    },
+    {
+      [4] = {
+        Atk = 81,
+        BaseHp = 1575,
+        Def = 40.5,
+        MAtk = 81,
+        MDef = 40.5,
+        MaxHp = 2025
+      },
+      [5] = {
+        Atk = 162,
+        BaseHp = 3150,
+        Def = 81,
+        MAtk = 162,
+        MDef = 81,
+        MaxHp = 4050
+      }
+    },
+    {
+      [4] = {
+        Atk = 84,
+        BaseHp = 1800,
+        Def = 42,
+        MAtk = 84,
+        MDef = 42,
+        MaxHp = 2100
+      },
+      [5] = {
+        Atk = 168,
+        BaseHp = 3600,
+        Def = 84,
+        MAtk = 168,
+        MDef = 84,
+        MaxHp = 4200
+      }
+    },
+    {
+      [4] = {
+        Atk = 87,
+        BaseHp = 2025,
+        Def = 43.5,
+        MAtk = 87,
+        MDef = 43.5,
+        MaxHp = 2175
+      },
+      [5] = {
+        Atk = 174,
+        BaseHp = 4050,
+        Def = 87,
+        MAtk = 174,
+        MDef = 87,
+        MaxHp = 4350
+      }
+    },
+    {
+      [4] = {
+        Atk = 90,
+        BaseHp = 2250,
+        Def = 45,
+        MAtk = 90,
+        MDef = 45,
+        MaxHp = 2250
+      },
+      [5] = {
+        Atk = 180,
+        BaseHp = 4500,
+        Def = 90,
+        MAtk = 180,
+        MDef = 90,
+        MaxHp = 4500
+      }
     }
   },
   DecomposeItem = {
@@ -1261,6 +1441,66 @@ Table_ItemMemoryLevel_t = {
         {52901, 297},
         {52902, 1}
       }
+    },
+    {
+      [4] = {
+        {52901, 316},
+        {52902, 1}
+      }
+    },
+    {
+      [4] = {
+        {52901, 335},
+        {52902, 1}
+      }
+    },
+    {
+      [4] = {
+        {52901, 354},
+        {52902, 1}
+      }
+    },
+    {
+      [4] = {
+        {52901, 373},
+        {52902, 1}
+      }
+    },
+    {
+      [4] = {
+        {52901, 393},
+        {52902, 1}
+      }
+    },
+    {
+      [4] = {
+        {52901, 412},
+        {52902, 1}
+      }
+    },
+    {
+      [4] = {
+        {52901, 431},
+        {52902, 1}
+      }
+    },
+    {
+      [4] = {
+        {52901, 450},
+        {52902, 1}
+      }
+    },
+    {
+      [4] = {
+        {52901, 469},
+        {52902, 1}
+      }
+    },
+    {
+      [4] = {
+        {52901, 489},
+        {52902, 1}
+      }
     }
   },
   EffectLevel = {
@@ -1300,6 +1540,16 @@ Table_ItemMemoryLevel_t = {
       3
     }
   },
+  ExcessCost = {
+    {
+      [4] = {
+        {52902, 40}
+      },
+      [5] = {
+        {52902, 40}
+      }
+    }
+  },
   NeedItem = {
     {
       [2] = {52901, 1},
@@ -1318,6 +1568,10 @@ Table_ItemMemoryLevel_t = {
       [3] = {52901, 12},
       [4] = {52901, 24},
       [5] = {52901, 24}
+    },
+    {
+      [4] = {52901, 96},
+      [5] = {52901, 96}
     }
   }
 }
@@ -1547,7 +1801,78 @@ Table_ItemMemoryLevel = {
     id = 30,
     EffectLevel = Table_ItemMemoryLevel_t.EffectLevel[7],
     Attr = Table_ItemMemoryLevel_t.Attr[30],
+    NeedItem = Table_ItemMemoryLevel_t.NeedItem[4],
     DecomposeItem = Table_ItemMemoryLevel_t.DecomposeItem[30]
+  },
+  [31] = {
+    id = 31,
+    EffectLevel = Table_ItemMemoryLevel_t.EffectLevel[7],
+    Attr = Table_ItemMemoryLevel_t.Attr[31],
+    NeedItem = Table_ItemMemoryLevel_t.NeedItem[4],
+    DecomposeItem = Table_ItemMemoryLevel_t.DecomposeItem[31]
+  },
+  [32] = {
+    id = 32,
+    EffectLevel = Table_ItemMemoryLevel_t.EffectLevel[7],
+    Attr = Table_ItemMemoryLevel_t.Attr[32],
+    NeedItem = Table_ItemMemoryLevel_t.NeedItem[4],
+    DecomposeItem = Table_ItemMemoryLevel_t.DecomposeItem[32]
+  },
+  [33] = {
+    id = 33,
+    EffectLevel = Table_ItemMemoryLevel_t.EffectLevel[7],
+    Attr = Table_ItemMemoryLevel_t.Attr[33],
+    NeedItem = Table_ItemMemoryLevel_t.NeedItem[4],
+    DecomposeItem = Table_ItemMemoryLevel_t.DecomposeItem[33]
+  },
+  [34] = {
+    id = 34,
+    EffectLevel = Table_ItemMemoryLevel_t.EffectLevel[7],
+    Attr = Table_ItemMemoryLevel_t.Attr[34],
+    NeedItem = Table_ItemMemoryLevel_t.NeedItem[4],
+    DecomposeItem = Table_ItemMemoryLevel_t.DecomposeItem[34]
+  },
+  [35] = {
+    id = 35,
+    EffectLevel = Table_ItemMemoryLevel_t.EffectLevel[7],
+    Attr = Table_ItemMemoryLevel_t.Attr[35],
+    NeedItem = Table_ItemMemoryLevel_t.NeedItem[4],
+    DecomposeItem = Table_ItemMemoryLevel_t.DecomposeItem[35]
+  },
+  [36] = {
+    id = 36,
+    EffectLevel = Table_ItemMemoryLevel_t.EffectLevel[7],
+    Attr = Table_ItemMemoryLevel_t.Attr[36],
+    NeedItem = Table_ItemMemoryLevel_t.NeedItem[4],
+    DecomposeItem = Table_ItemMemoryLevel_t.DecomposeItem[36]
+  },
+  [37] = {
+    id = 37,
+    EffectLevel = Table_ItemMemoryLevel_t.EffectLevel[7],
+    Attr = Table_ItemMemoryLevel_t.Attr[37],
+    NeedItem = Table_ItemMemoryLevel_t.NeedItem[4],
+    DecomposeItem = Table_ItemMemoryLevel_t.DecomposeItem[37]
+  },
+  [38] = {
+    id = 38,
+    EffectLevel = Table_ItemMemoryLevel_t.EffectLevel[7],
+    Attr = Table_ItemMemoryLevel_t.Attr[38],
+    NeedItem = Table_ItemMemoryLevel_t.NeedItem[4],
+    DecomposeItem = Table_ItemMemoryLevel_t.DecomposeItem[38]
+  },
+  [39] = {
+    id = 39,
+    EffectLevel = Table_ItemMemoryLevel_t.EffectLevel[7],
+    Attr = Table_ItemMemoryLevel_t.Attr[39],
+    NeedItem = Table_ItemMemoryLevel_t.NeedItem[4],
+    DecomposeItem = Table_ItemMemoryLevel_t.DecomposeItem[39]
+  },
+  [40] = {
+    id = 40,
+    EffectLevel = Table_ItemMemoryLevel_t.EffectLevel[7],
+    Attr = Table_ItemMemoryLevel_t.Attr[40],
+    DecomposeItem = Table_ItemMemoryLevel_t.DecomposeItem[40],
+    ExcessCost = Table_ItemMemoryLevel_t.ExcessCost[1]
   }
 }
 local cell_mt = {
@@ -1556,6 +1881,8 @@ local cell_mt = {
     AttrUnlock = 3,
     DecomposeItem = _EmptyTable,
     EffectLevel = _EmptyTable,
+    ExcessCost = _EmptyTable,
+    NeedExcessLv = 1,
     NeedItem = _EmptyTable,
     id = 1
   }

@@ -19,7 +19,7 @@ Table_SchoolPaper = {
     Numeral = {2, 6},
     Title = "##312115",
     Question = "##781431",
-    Answer = "##788789",
+    Answer = "##44704739",
     UI = 1,
     PaperEffect = {
       {type = "action", id = 502}
@@ -33,7 +33,7 @@ Table_SchoolPaper = {
     Numeral = {2, 6},
     Title = "##312115",
     Question = "##781431",
-    Answer = "##781430",
+    Answer = "##44704740",
     UI = 1,
     PaperEffect = {
       {type = "action", id = 502}
@@ -159,7 +159,7 @@ Table_SchoolPaper = {
     Numeral = {4, 6},
     Title = "##312115",
     Question = "##781458",
-    Answer = "##781457",
+    Answer = "##44704741",
     UI = 1,
     PaperEffect = {
       {type = "action", id = 506}
@@ -187,7 +187,7 @@ Table_SchoolPaper = {
     Numeral = {4, 6},
     Title = "##312115",
     Question = "##781458",
-    Answer = "##781462",
+    Answer = "##44704742",
     UI = 1,
     PaperEffect = {
       {type = "action", id = 506}

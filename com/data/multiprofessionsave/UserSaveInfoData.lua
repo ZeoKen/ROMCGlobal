@@ -299,3 +299,19 @@ end
 function UserSaveInfoData:GetEquipMasterSkillFamilyId()
   return self.skills:GetEquipMasterSkillFamilyId()
 end
+
+function UserSaveInfoData:GetInheritSkillProfessDatas()
+  return self.skills:GetInheritSkillProfessDatas()
+end
+
+function UserSaveInfoData:GetInheritSkillLoadSkills()
+  return self.skills:GetInheritSkillLoadSkills()
+end
+
+function UserSaveInfoData:GetExtendedCostPoints()
+  return self.skills:GetExtendedCostPoints()
+end
+
+function UserSaveInfoData:GetTotalCostPointAttrs(costPoint)
+  return self.skills:GetTotalCostPointAttrs(costPoint)
+end

@@ -49,7 +49,7 @@ function InteractMount:GetOn(cpid, charid, npcid, masterid, ncreature)
   end
   if creature then
     creature:Client_NoAction(true)
-    creature.logicTransform:SetAngleY(0)
+    creature.logicTransform:SetAngleY(0, true)
     creature:Logic_LockRotation(true)
   end
   if self.cpMap[cpid] == Game.Myself.data.id then
@@ -86,6 +86,9 @@ function InteractMount:GetOff(charid, lastNpc)
 end
 
 function InteractMount:PlayOnAction(creature, name)
+  local ridePrefix = Asset_Role.GetRidePrefix(self.staticData.id)
+  name = name:match("ride_(.*)") or name
+  name = ActionUtility.BuildName(name, ridePrefix)
   creature.assetRole:PlayAction_Simple(name)
 end
 
@@ -113,7 +116,7 @@ function InteractMount:TryChangeSeat()
     MsgManager.ShowMsgByID(40565)
     return
   end
-  ServiceNUserProxy.Instance:CallRideMultiMountUserCmd(self.id, cpid)
+  ServiceNUserProxy.Instance:CallMultiMountChangePosUserCmd()
 end
 
 function InteractMount:CheckPosition(npc)

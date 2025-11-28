@@ -5,6 +5,7 @@ autoImport("WildMvpMapSymbol")
 autoImport("GvgStrongHoldMapSymbol")
 autoImport("MiniMapSymbol")
 autoImport("GvgSymbol")
+autoImport("MiniMapSymbol_FairyTale")
 MiniMapWindow.MiniMapSymbolPath = ResourcePathHelper.UICell("MiniMapSymbol")
 MiniMapWindow.MiniMapCustomGuildIconPath = ResourcePathHelper.UICell("MiniMapCustomGuildIcon")
 MiniMapWindow.GvgSymbolPath = ResourcePathHelper.UICell("MiniMapSymbol_GvgSymbol")
@@ -72,7 +73,9 @@ MiniMapWindow.Type = {
   GvgFriendLeaderPoint = 43,
   GvgEnemyLeaderPoint = 44,
   GvgFriendChairmanPoint = 45,
-  GvgEnemyChairmanPoint = 46
+  GvgEnemyChairmanPoint = 46,
+  AbyssDragon = 47,
+  FairyTale = 48
 }
 local Type = MiniMapWindow.Type
 local MiniMapDataRemoveFunc = function(data)
@@ -111,6 +114,8 @@ function MiniMapWindow:InitDatas()
   self.puzzleRoomsObjAreaMap = {}
   self.puzzleRoomsColliderMap = {}
   self.puzzleRoomsStatusMap = {}
+  self.abyssDragonEffectMap = {}
+  self.fairyTaleSymbolMap = {}
   self:RegisterAllMapInfos()
 end
 
@@ -157,6 +162,7 @@ function MiniMapWindow:RegisterAllMapInfos()
   self:RegisterMapInfo(Type.GvgFriendChairmanPoint, MiniMapWindow._CreateGvgFriendChairmanPointSymbol)
   self:RegisterMapInfo(Type.GvgEnemyChairmanPoint, MiniMapWindow._CreateGvgEnemyChairmanPointSymbol)
   self:RegisterMapInfo(Type.FakeDragon, MiniMapWindow._CreateFakeDragonSymbol, MiniMapWindow._UpdateFakeDragonSymbol, MiniMapWindow._RemoveFakeDragonSymbol)
+  self:RegisterMapInfo(Type.FairyTale, MiniMapWindow._CreateFairyTaleSymbol, MiniMapWindow._UpdateFairyTaleSymbol, MiniMapWindow._RemoveFairyTaleSymbol)
 end
 
 function MiniMapWindow:RegisterMapInfo(type, createFunc, updateFunc, removeFunc)
@@ -180,6 +186,7 @@ function MiniMapWindow:ActiveSymbolsByType(type, value)
     return
   end
   mapInfo.hide = not value
+  redlog("ActiveSymbolsByType", type, mapInfo.hide)
   self:RefreshSymbolsByType(type)
 end
 
@@ -553,8 +560,6 @@ function MiniMapWindow:ClearFixedInfo()
   if self.fakeDragonDatas then
     TableUtility.TableClearByDeleter(self.fakeDragonDatas, MiniMapDataRemoveFunc)
   end
-  self.allMapDatas[Type.FakeDragon] = {}
-  self:RemoveAllSymbolsByType(Type.FakeDragon)
 end
 
 local miniMapPrefab = GameConfig.MiniMapPrefab or {}
@@ -713,6 +718,23 @@ function MiniMapWindow:IsScenePosValid(posX, posZ)
     return
   end
   return posX >= self.mapSceneMinPos[1] and posX <= self.mapSceneMinPos[1] + self.mapSceneSize[1] and posZ >= self.mapSceneMinPos[2] and posZ <= self.mapSceneMinPos[2] + self.mapSceneSize[2]
+end
+
+function MiniMapWindow:IsScenePosInUnlockedZone(posX, posY, posZ)
+  if not self.blockUnlockInfo then
+    return true
+  end
+  local pos = {
+    posX,
+    posY or 0,
+    posZ
+  }
+  local groupId = WorldMapProxy.Instance:GetZoneGroupIdByPos(pos)
+  if groupId then
+    local isUnlocked = self.blockUnlockInfo[groupId]
+    return isUnlocked ~= false
+  end
+  return true
 end
 
 function MiniMapWindow:SceneSizeToMap(sizeX, sizeZ)
@@ -1682,6 +1704,10 @@ function MiniMapWindow:RemoveQuestFocusByQuestId(questId)
 end
 
 function MiniMapWindow:_CreateScenicSpot(data)
+  local pos = data.pos
+  if pos and not self:IsScenePosInUnlockedZone(pos[1], pos[2], pos[3]) then
+    return nil
+  end
   local symbol = data:GetParama("Symbol")
   local obj = self:GetMapSymbol(symbol, 6, nil, self.d_symbolParent)
   obj.name = symbol
@@ -1689,6 +1715,13 @@ function MiniMapWindow:_CreateScenicSpot(data)
 end
 
 function MiniMapWindow:_UpdateScenicSpot(obj, data)
+  local pos = data.pos
+  if pos and not self:IsScenePosInUnlockedZone(pos[1], pos[2], pos[3]) then
+    if not IsNull(obj) then
+      self:RemoveMiniMapSymbol(obj)
+    end
+    return nil
+  end
   if not IsNull(obj) then
     local symbol = data:GetParama("Symbol")
     if symbol ~= obj.name then
@@ -2741,6 +2774,9 @@ function MiniMapWindow:UpdateAreaTips(datas)
 end
 
 function MiniMapWindow:_CreateAreaTips(data)
+  if not self:IsAreaTipsUnlocked(data) then
+    return nil
+  end
   local symbol = _Game.AssetManager_UI:CreateAsset(AreaTips_Path, self.s_symbolParent)
   if not IsNull(symbol) then
     symbol:SetActive(true)
@@ -2752,6 +2788,12 @@ function MiniMapWindow:_CreateAreaTips(data)
 end
 
 function MiniMapWindow:_UpdateAreaTips(symbolObj, data)
+  if not self:IsAreaTipsUnlocked(data) then
+    if not IsNull(symbolObj) then
+      LuaGameObject.DestroyObject(symbolObj)
+    end
+    return nil
+  end
   local scale = math.min(self.mapsize.x, self.mapsize.y) / self.DefaultMapTextureSize
   local tempV3 = LuaGeometry.GetTempVector3()
   LuaVector3.Better_Mul(data.pos, scale, tempV3)
@@ -2759,6 +2801,39 @@ function MiniMapWindow:_UpdateAreaTips(symbolObj, data)
   local label = symbolObj:GetComponent(UILabel)
   label.text = data:GetParama("Text") or ""
   label.fontSize = math.floor(14 * scale)
+end
+
+function MiniMapWindow:IsAreaTipsUnlocked(data)
+  if not self.blockUnlockInfo then
+    return true
+  end
+  local pos = data.pos
+  if not pos then
+    return true
+  end
+  local zoneMap = WorldMapProxy.Instance:GetZoneMap()
+  if not zoneMap then
+    return true
+  end
+  local checkRadius = 500
+  local hasUnlockedZone = false
+  for id, zoneData in pairs(zoneMap) do
+    local center = zoneData:GetCenter()
+    if center and #center == 3 then
+      local dx = center[1] - pos[1]
+      local dy = center[2] - pos[2]
+      local dz = center[3] - pos[3]
+      local dist = math.sqrt(dx * dx + dy * dy + dz * dz)
+      if checkRadius > dist then
+        local groupId = zoneData:GetGroupId()
+        if groupId and self.blockUnlockInfo[groupId] ~= false then
+          hasUnlockedZone = true
+          break
+        end
+      end
+    end
+  end
+  return hasUnlockedZone
 end
 
 function MiniMapWindow:_RemoveAreaTips(symbolObj)
@@ -2880,6 +2955,18 @@ function MiniMapWindow:UpdateZoneBlocks()
   end
   self:UpdateMapSymbolDatas(Type.ZoneBlock, self.zoneBlockMap, true, -1)
   self:UpdateMapBorderUnlock()
+  self:RefreshScenicSpotsByUnlockChange()
+end
+
+function MiniMapWindow:RefreshScenicSpotsByUnlockChange()
+  local scenicSpotDatas = self.allMapDatas[Type.ScenicSpot]
+  if scenicSpotDatas then
+    self:UpdateMapSymbolDatas(Type.ScenicSpot, scenicSpotDatas, true, -1)
+  end
+  if self.areaTipsCacheMap then
+    for key, symbol in pairs(self.areaTipsCacheMap) do
+    end
+  end
 end
 
 function MiniMapWindow:RemoveZoneBlocks()
@@ -3350,6 +3437,82 @@ function MiniMapWindow:_UpdateFakeDragonSymbol(obj, data)
   return obj
 end
 
+function MiniMapWindow:UpdateAbyssDragonSymbol(datas, isRemoveOther)
+  for id, effect in pairs(self.abyssDragonEffectMap) do
+    if not datas[id] then
+      self:_RemoveAbyssDragonSymbol(id, effect)
+    end
+  end
+  for id, data in pairs(datas) do
+    if not self.abyssDragonEffectMap[id] then
+      self:_CreateAbyssDragonSymbol(data)
+    else
+      self:_UpdateAbyssDragonSymbol(self.abyssDragonEffectMap[id], data)
+    end
+  end
+end
+
+function MiniMapWindow:_CreateAbyssDragonSymbol(data)
+  local path = data:GetParama("effect")
+  local pos = data:GetPos()
+  if path then
+    local effect = self:PlayUIEffect(path, self.myselfPanel.gameObject, false)
+    self.abyssDragonEffectMap[data.id] = effect
+    pos = self:ScenePosToMap(pos)
+    if pos then
+      effect:ResetLocalPosition(pos)
+    end
+  end
+end
+
+function MiniMapWindow:_UpdateAbyssDragonSymbol(effect, data)
+  local pos = data:GetPos()
+  pos = self:ScenePosToMap(pos)
+  if effect and pos then
+    effect:ResetLocalPosition(pos)
+  end
+end
+
+function MiniMapWindow:_RemoveAbyssDragonSymbol(id, effect)
+  if effect then
+    effect:Destroy()
+    self.abyssDragonEffectMap[id] = nil
+  end
+end
+
 function MiniMapWindow:UpdateFakeDragonSymbol(datas, isRemoveOther)
   self:UpdateMapSymbolDatas(Type.FakeDragon, datas, isRemoveOther)
+end
+
+function MiniMapWindow:UpdateFairyTaleSymbol(datas, isRemoveOther)
+  self:UpdateMapSymbolDatas(Type.FairyTale, datas, isRemoveOther)
+end
+
+local FairyTaleMapSymbolPath = ResourcePathHelper.UICell("MiniMapSymbol_FairyTale")
+
+function MiniMapWindow:_CreateFairyTaleSymbol(data)
+  local resultGO = _Game.AssetManager_UI:CreateAsset(FairyTaleMapSymbolPath, self.d_symbolParent)
+  resultGO:SetActive(true)
+  SetLocalPositionObj(resultGO, 0, 0, 0)
+  SetLocalRotationObj(resultGO, 0, 0, 0, 1)
+  SetLocalScaleObj(resultGO, 1, 1, 1)
+  local symbol = MiniMapSymbol_FairyTale.new(resultGO)
+  symbol:SetData(data)
+  self.fairyTaleSymbolMap[data.id] = symbol
+  return resultGO
+end
+
+function MiniMapWindow:_UpdateFairyTaleSymbol(symbolObj, data)
+  local symbol = self.fairyTaleSymbolMap[data.id]
+  if symbol then
+    symbol:SetData(data)
+  end
+  return symbolObj
+end
+
+function MiniMapWindow:_RemoveFairyTaleSymbol(key, symbolObj)
+  if not IsNull(symbolObj) then
+    GameObject.DestroyImmediate(symbolObj)
+  end
+  self.fairyTaleSymbolMap[key] = nil
 end

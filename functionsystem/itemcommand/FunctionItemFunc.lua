@@ -82,6 +82,8 @@ function FunctionItemFunc:ctor()
   self.funcMap.InlayMemory = FunctionItemFunc.MemoryInlayEvt
   self.funcMap.MemoryUpgrade = FunctionItemFunc.MemoryUpgradeEvt
   self.funcMap.UseAnonymousItem = FunctionItemFunc.UseAnonymousItem
+  self.funcMap.OpenVideo = FunctionItemFunc.OpenVideo
+  self.checkMap.OpenVideo = FunctionItemFunc.CheckOpenVideo
   self.checkMap.Inlay = FunctionItemFunc.CheckInlay
   self.checkMap.Combine = FunctionItemFunc.CheckCombine
   self.checkMap.MakePic = FunctionItemFunc.CheckMakePic
@@ -2113,6 +2115,25 @@ function FunctionItemFunc.CheckStrength(itemData)
       return ItemFuncState.Active
     end
     return ItemFuncState.InActive
+  end
+  return ItemFuncState.InActive
+end
+
+function FunctionItemFunc.OpenVideo(itemData)
+  local url = itemData.staticData.id and GameConfig.TwelvePvpVideo and GameConfig.TwelvePvpVideo[itemData.staticData.id]
+  if not url then
+    redlog("奖励预览视频未配置 ID ： ", itemData.staticData.id)
+    return
+  end
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.VideoPreview,
+    viewdata = {url = url, hideInfo = true}
+  })
+end
+
+function FunctionItemFunc.CheckOpenVideo(itemData)
+  if itemData and itemData.staticData and GameConfig.TwelvePvpVideo[itemData.staticData.id] then
+    return ItemFuncState.Active
   end
   return ItemFuncState.InActive
 end

@@ -45,6 +45,7 @@ function LogicManager_Creature_Userdata:ctor()
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_DOWN_CHARID, self.UpdatePlayerRider_Down)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_DOWN_CHARID_RIDE, self.UpdatePlayerRider_DownRide)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_PVP_CAMP, self.UpdatePvpCamp)
+  self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_MOUNT_ROLE, self.UpdateRoleRide)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_DIR, self.UpdateDir)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_NAME, self.UpdateName)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_BODYSCALE, self.UpdateScale)
@@ -75,6 +76,7 @@ function LogicManager_Creature_Userdata:ctor()
   self:AddDirtyCall(ProtoCommon_pb.EUSERDATATYPE_UP_CHARID, self.UpdatePlayerRider_Up)
   self:AddDirtyCall(ProtoCommon_pb.EUSERDATATYPE_DOWN_CHARID, self.UpdatePlayerRider_Down)
   self:AddDirtyCall(ProtoCommon_pb.EUSERDATATYPE_DOWN_CHARID_RIDE, self.UpdatePlayerRider_DownRide)
+  self:AddDirtyCall(ProtoCommon_pb.EUSERDATATYPE_MOUNT_ROLE, self.UpdateRoleRide)
   for i = 1, #ChangeDressData do
     self:AddDirtyCall(ChangeDressData[i], self.SetChangeDressDirty)
   end
@@ -433,4 +435,8 @@ function LogicManager_Creature_Userdata:UpdatePvpCamp(ncreature, userDataID, old
     end
     GameFacade.Instance:sendNotification(PVPEvent.PVP_CampChange, ncreature)
   end
+end
+
+function LogicManager_Creature_Userdata:UpdateRoleRide(ncreature, userDataID, oldValue, newValue)
+  ncreature:UpdateRoleRide()
 end

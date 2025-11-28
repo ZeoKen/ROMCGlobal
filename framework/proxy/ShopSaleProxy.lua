@@ -150,23 +150,33 @@ function ShopSaleProxy:GetBagItemDatas(tabConfig)
   local bagData = self:GetBagData()
   if bagData then
     self.bagItemDatas = {}
-    local datas = bagData:GetItems(tabConfig)
-    local walletCfg, WalletType = Game.Config_Wallet, BagProxy.BagType.Wallet
-    if datas and #datas == 0 then
-      return false
-    end
-    if datas then
-      for k, v in pairs(datas) do
-        if 0 < v.num then
-          if tabConfig and self.bagType == WalletType then
-            if walletCfg[v.staticData.id].Type == tabConfig.index then
-              table.insert(self.bagItemDatas, v)
-            end
-          else
+    if tabConfig and self.bagType == BagProxy.BagType.Wallet then
+      local datas = bagData.wholeTab:GetItems()
+      local walletCfg = Game.Config_Wallet
+      for i = 1, #datas do
+        if datas[i].num > 0 and datas[i].staticData and datas[i].staticData.id then
+          local itemId = datas[i].staticData.id
+          local walletType = walletCfg[itemId] and walletCfg[itemId].Type
+          if walletType == tabConfig.index then
+            table.insert(self.bagItemDatas, datas[i])
+          end
+        end
+      end
+    else
+      local datas = bagData:GetItems(tabConfig)
+      if datas and #datas == 0 then
+        return false
+      end
+      if datas then
+        for k, v in pairs(datas) do
+          if v.num > 0 then
             table.insert(self.bagItemDatas, v)
           end
         end
       end
+    end
+    if #self.bagItemDatas == 0 then
+      return false
     end
   end
   return self.bagItemDatas

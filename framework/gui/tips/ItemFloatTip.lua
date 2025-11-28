@@ -4,6 +4,7 @@ autoImport("FashionPreviewTip")
 autoImport("ItemTipComCell")
 autoImport("UseWayTip")
 autoImport("FramePreviewTip")
+autoImport("GiftDetailTip")
 local getTempV3 = LuaGeometry.GetTempVector3
 
 function ItemFloatTip:Init()
@@ -56,6 +57,7 @@ function ItemFloatTip:InitCells()
       self.cells[i]:AddEventListener(ItemTipEvent.ClickItemUrl, self.ClickItemUrl, self)
       self.cells[i]:AddEventListener(ItemTipEvent.ShowAncientRandom, self.ShowAncientRandom, self)
       self.cells[i]:AddEventListener(ItemTipEvent.ClickBufferUrl, self.ClickBufferUrl, self)
+      self.cells[i]:AddEventListener(ItemTipEvent.ShowGiftDetail, self.ShowGiftDetail, self)
     end
   end
   local cellTop = self:FindGO("3_Cell1")
@@ -85,6 +87,7 @@ function ItemFloatTip:ShowGetPath(cell)
   if cell and cell.gameObject then
     self:CloseGotouseBord()
     self:CloseFashionPreview()
+    self:CloseGiftDetail()
     self.foldButton:SetActive(false)
     if not self.bdt then
       self.gpContainer.transform.localScale = LuaGeometry.Const_V3_one
@@ -171,6 +174,7 @@ function ItemFloatTip:ShowFashionPreview(cell)
     end
     self:CloseGotouseBord()
     self:CloseGetPath()
+    self:CloseGiftDetail()
     self.foldButton:SetActive(false)
     if not self.sfp then
       local scale = 1
@@ -243,6 +247,7 @@ function ItemFloatTip:ShowDoGotoUse(cell)
   if cell and cell.gameObject then
     self:CloseFashionPreview()
     self:CloseGetPath()
+    self:CloseGiftDetail()
     self.foldButton:SetActive(false)
     for i = 1, #self.cells do
       if self.cells[i] ~= cell then
@@ -392,6 +397,7 @@ function ItemFloatTip:Reset()
   self.data = nil
   self:CloseGetPath()
   self:CloseFashionPreview()
+  self:CloseGiftDetail()
   self.closecomp:ClearTarget()
   TimeTickManager.Me():ClearTick(self)
 end
@@ -564,6 +570,7 @@ function ItemFloatTip:ShowPortraitFramePreview(cell)
     end
     self:CloseGotouseBord()
     self:CloseGetPath()
+    self:CloseGiftDetail()
     self.foldButton:SetActive(false)
     if not self.sfp then
       local scale = 1
@@ -618,6 +625,7 @@ function ItemFloatTip:DefaultClickItemUrl(id, pivot)
   self:CloseGetPath()
   self:CloseFashionPreview()
   self:CloseGotouseBord()
+  self:CloseGiftDetail()
   self.foldButton:SetActive(false)
   if not itemClickUrlData then
     itemClickUrlData = ItemData.new()
@@ -637,6 +645,7 @@ function ItemFloatTip:ClickBufferUrl(id)
   self:CloseGetPath()
   self:CloseFashionPreview()
   self:CloseGotouseBord()
+  self:CloseGiftDetail()
   self.foldButton:SetActive(false)
   GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
     view = PanelConfig.EnchantInfoPopup,
@@ -709,4 +718,29 @@ function ItemFloatTip:ShowAncientRandom(cell)
     OnClickChooseBordCell_data = cell.data
   }, nil, true)
   self:CloseSelf()
+end
+
+function ItemFloatTip:ShowGiftDetail(cell)
+  if cell and cell.data then
+    if not self.giftDetailTip then
+      local _, y, z = LuaGameObject.GetLocalPositionGO(self.gpContainer)
+      LuaGameObject.SetLocalPositionGO(self.gpContainer, 230, y, z)
+      local depth = cell.beforePanel:GetComponent(UIPanel).depth
+      self.giftDetailTip = GiftDetailTip.new("GiftDetailTip", self.gpContainer, depth + 1)
+      self.giftDetailTip:SetData(cell.data.staticData.id)
+      self.giftDetailTip:AddEventListener(GiftDetailTip.Close, self.CloseGiftDetail, self)
+      self.giftDetailTip:AddIgnoreBounds(self.gameObject)
+      self:AddIgnoreBounds(self.giftDetailTip.gameObject)
+      self.giftDetailTip:SetPos(LuaGeometry.Const_V3_zero)
+    else
+      self:CloseGiftDetail()
+    end
+  end
+end
+
+function ItemFloatTip:CloseGiftDetail()
+  if self.giftDetailTip then
+    self.giftDetailTip:OnExit()
+    self.giftDetailTip = nil
+  end
 end

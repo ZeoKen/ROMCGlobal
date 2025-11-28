@@ -388,11 +388,14 @@ function SkadaSettingView:ClickBtnSave()
     local creature = self.myNpcID and NSceneNpcProxy.Instance:Find(self.myNpcID)
     if creature then
       local zoneType = NpcData.ZoneType.ZONE_FIELD
+      local damReduceType = 0
       if self.curSettingType == SettingType.Boss then
         local staticData = Table_Monster[self.curMonsterId]
         zoneType = NpcData.GetZoneTypeByStaticData(staticData)
+        damReduceType = NpcData.GetDamReduceTypeByStaticData(staticData)
       end
       creature.data.zoneType = zoneType
+      creature.data.damReduceType = damReduceType
     end
   end
   MsgManager.ShowMsgByID(34009)

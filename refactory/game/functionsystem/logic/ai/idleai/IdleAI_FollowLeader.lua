@@ -273,6 +273,9 @@ function IdleAI_FollowLeader:MoveToMap(mapID, pos)
   tempMissionCommandArgs.targetMapID = mapID
   tempMissionCommandArgs.targetPos = pos
   tempMissionCommandArgs.customType = AccessCustomType.Follow
+  if Game.MapManager:IsPVPMode_GVGDetailed() then
+    tempMissionCommandArgs.allowExitPoint = true
+  end
   local cmd = MissionCommandFactory.CreateCommand(tempMissionCommandArgs, MissionCommandMove)
   TableUtility.TableClear(tempMissionCommandArgs)
   self:ResetMoveCMD(cmd)
@@ -378,6 +381,8 @@ function IdleAI_FollowLeader:TryAttack(time, myTeam, leader, creature)
   return self:Attack(creature, targetCreature)
 end
 
+local BpPos = LuaVector3.Zero()
+
 function IdleAI_FollowLeader:Follow(time, deltaTime, creature, action)
   if self.skipTeamCheck then
     local leaderCreature = SceneCreatureProxy.FindCreature(self.leaderID)
@@ -393,8 +398,36 @@ function IdleAI_FollowLeader:Follow(time, deltaTime, creature, action)
     return true
   end
   if action ~= FollowFun.Action.EFOLLOWACTION_WALK then
-    self:TryCallGoMap(leader, time)
-    return true
+    if action == FollowFun.Action.EFOLLOWACTION_MAP_TO_MAP_POS then
+      local leaderMapID = leader.mapid
+      if self.moveToMap ~= 154 then
+        local raidInfo = GameConfig.AbyssDragon and GameConfig.AbyssDragon.RaidInfo
+        local info = raidInfo and TableUtility.TableFindByPredicate(raidInfo, function(k, v, args)
+          return v.RaidID == args
+        end, leaderMapID)
+        if info then
+          local bpID = info.BpPoint
+          local mapConf = Table_Map[154]
+          if mapConf then
+            local sceneName = mapConf.NameEn
+            local sceneInfoName = "Scene_" .. sceneName
+            local sceneInfo = autoImport(sceneInfoName)
+            local bps = sceneInfo and sceneInfo.PVE and sceneInfo.PVE.bps
+            local bp = TableUtility.ArrayFindByPredicate(bps, function(v, args)
+              return v.ID == args
+            end, bpID)
+            if bp then
+              LuaVector3.Better_Set(BpPos, bp.position[1], bp.position[2], bp.position[3])
+              self:MoveToMap(154, BpPos)
+              return true
+            end
+          end
+        end
+      end
+    else
+      self:TryCallGoMap(leader, time)
+      return true
+    end
   elseif self:TryCallGoMap(leader, time) then
     return true
   end
@@ -436,6 +469,8 @@ function IdleAI_FollowLeader:Follow(time, deltaTime, creature, action)
     leaderPos = leaderCreature:GetPosition()
   elseif leader.pos_seted then
     leaderPos = leader.pos
+  elseif action == FollowFun.Action.EFOLLOWACTION_MAP_TO_MAP_POS then
+    leaderPos = BpPos
   end
   return self:FollowMove(time, deltaTime, creature, leaderPos)
 end

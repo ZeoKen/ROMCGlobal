@@ -59,11 +59,11 @@ function GuildDateBattlePreEnterView:FindObjs()
   self.texture = self:FindComponent("Texture", UITexture, right)
   self.offensiveSideLab = self:FindComponent("OffensiveSide", UILabel)
   self.defensiveSideLab = self:FindComponent("DefensiveSide", UILabel)
-  self.defChatBtn = self:FindGO("DefChatBtn", right)
+  self.defChatBtn = self:FindGO("DefChatBtn")
   self:AddClickEvent(self.defChatBtn, function()
     self:OnClickChatBtn(self.data.defLeaderId, self.data.defGuildName)
   end)
-  self.offChatBtn = self:FindGO("OffChatBtn", right)
+  self.offChatBtn = self:FindGO("OffChatBtn")
   self:AddClickEvent(self.offChatBtn, function()
     self:OnClickChatBtn(self.data.offLeaderId, self.data.atkGuildName)
   end)
@@ -76,6 +76,16 @@ function GuildDateBattlePreEnterView:FindObjs()
   self.banCardTitle.text = ZhString.GuildDateBattle_BanCardTitle
   self.banCardGO = self:FindGO("BanCardCombineCell")
   self.banCardCell = BanCardCombineCell.new(self.banCardGO)
+  self:InitGameMode()
+end
+
+function GuildDateBattlePreEnterView:InitGameMode()
+  self.datedGameMode = self:FindComponent("DatedGameMode", UILabel)
+  self.datedGameMode.text = ZhString.GuildDateBattle_Record_GameMode
+  self.datedGameMode_Base = self:FindGO("BaseMode", self.datedGameMode.gameObject)
+  self.datedGameMode_Base_Mode_Desc = self:FindComponent("Base_Mode_Desc", UILabel, self.datedGameMode_Base)
+  self.datedGameMode_Other = self:FindGO("OtherMode", self.datedGameMode.gameObject)
+  self.datedGameMode_Other_Mode_Desc = self:FindComponent("Other_Mode_Desc", UILabel, self.datedGameMode_Other)
 end
 
 function GuildDateBattlePreEnterView:OnEnter()
@@ -115,6 +125,7 @@ function GuildDateBattlePreEnterView:SetData()
   self:SetByConfig()
   self:SetGuild()
   self:SetBanCard()
+  self:SetGameMode()
 end
 
 function GuildDateBattlePreEnterView:SetBanCard()
@@ -123,6 +134,19 @@ function GuildDateBattlePreEnterView:SetBanCard()
   end
   self.banCardCell:SetData(self.data:GetBanCardIds(true))
   self.banCardCell:SetOptionEnable(false)
+end
+
+function GuildDateBattlePreEnterView:SetGameMode()
+  local gameMode = self.data:GetGameMode()
+  if gameMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_BASE then
+    self.datedGameMode_Base:SetActive(true)
+    self.datedGameMode_Other:SetActive(false)
+    self.datedGameMode_Base_Mode_Desc.text = self.data:GetDatedModeDesc()
+  elseif gameMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_DEATH or gameMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_BLOOD then
+    self.datedGameMode_Base:SetActive(false)
+    self.datedGameMode_Other:SetActive(true)
+    self.datedGameMode_Other_Mode_Desc.text = self.data:GetDatedModeDesc()
+  end
 end
 
 function GuildDateBattlePreEnterView:SetDatedTime()

@@ -792,7 +792,7 @@ Table_Class_t = {
       1412001,
       1421001,
       1413001,
-      1411001
+      3400001
     },
     {
       1429001,
@@ -897,7 +897,7 @@ Table_Class_t = {
       1363001,
       1371001,
       1362001,
-      1361001
+      3500001
     },
     {
       1379001,
@@ -1352,7 +1352,6 @@ Table_Class = {
   },
   [14] = {
     id = 14,
-    NameZh = "符文骑士",
     NameEn = "RuneKnight",
     MaleBody = 9,
     FemaleBody = 10,
@@ -1572,6 +1571,7 @@ Table_Class = {
   [33] = {
     id = 33,
     NameZh = "十字刺客",
+    NameEn = "AssassinCross",
     MaleBody = 23,
     FemaleBody = 24,
     MaleEye = 1,
@@ -1694,7 +1694,6 @@ Table_Class = {
   [43] = {
     id = 43,
     NameZh = "神射手",
-    NameEn = "Sniper",
     MaleBody = 31,
     FemaleBody = 32,
     MaleEye = 1,
@@ -2110,7 +2109,6 @@ Table_Class = {
     AdvanceClass = Table_Class_t.AdvanceClass[12],
     Type = 2,
     TypeBranch = 22,
-    icon = "icon_11_1",
     InitialAttr = Table_Class_t.InitialAttr[6],
     AddPointSolution = Table_Class_t.AddPointSolution[7],
     SkillPointSolution = Table_Class_t.SkillPointSolution[5],
@@ -2170,6 +2168,7 @@ Table_Class = {
     AdvanceClass = Table_Class_t.AdvanceClass[38],
     Type = 2,
     TypeBranch = 22,
+    icon = "icon_11_3",
     InitialAttr = Table_Class_t.InitialAttr[6],
     AddPointSolution = Table_Class_t.AddPointSolution[7],
     SkillPointSolution = Table_Class_t.SkillPointSolution[5],
@@ -2607,6 +2606,7 @@ Table_Class = {
   },
   [134] = {
     id = 134,
+    NameZh = "基因学者",
     NameEn = "Genetic",
     MaleBody = 71,
     FemaleBody = 72,
@@ -2664,9 +2664,9 @@ local cell_mt = {
     LimitMasterSkills = _EmptyTable,
     MasterSkills = _EmptyTable,
     MaxJobLevel = 130,
-    NameEn = "AssassinCross",
+    NameEn = "Sniper",
     NameEnFemale = "",
-    NameZh = "基因学者",
+    NameZh = "符文骑士",
     NameZhFemale = "",
     ProfessionalFashion = _EmptyTable,
     ShowEndTime = "",
@@ -2681,7 +2681,7 @@ local cell_mt = {
     TypeBranch = 61,
     UnlockAttr = _EmptyTable,
     UnlockTips = "",
-    icon = "icon_11_3",
+    icon = "icon_11_1",
     id = 1
   }
 }

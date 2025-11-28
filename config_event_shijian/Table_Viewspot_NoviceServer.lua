@@ -2634,6 +2634,96 @@ Table_Viewspot_t = {
       -287.21,
       228.15,
       354.49
+    },
+    {
+      249.38,
+      174.39,
+      88.01
+    },
+    {
+      175.38,
+      159.85,
+      122.43
+    },
+    {
+      222.35,
+      157.62,
+      36.07
+    },
+    {
+      347.37,
+      163.49,
+      4.67
+    },
+    {
+      399.9,
+      193.86,
+      221.53
+    },
+    {
+      336.39,
+      180.45,
+      182.8
+    },
+    {
+      331.2,
+      190.12,
+      271.85
+    },
+    {
+      366.16,
+      192.16,
+      271.41
+    },
+    {
+      259.15,
+      167.61,
+      -92.26
+    },
+    {
+      192.15,
+      164.29,
+      -78.34
+    },
+    {
+      239.32,
+      169.01,
+      -157.46
+    },
+    {
+      270.91,
+      173.72,
+      -218.19
+    },
+    {
+      246.21,
+      174.45,
+      -291.19
+    },
+    {
+      264.32,
+      176.84,
+      -318.99
+    },
+    {
+      468.43,
+      161.83,
+      -459.37
+    },
+    {
+      482.33,
+      172.56,
+      -217.29
+    },
+    {
+      338.55,
+      170.42,
+      -321.1
+    },
+    {
+      282.93,
+      192.82,
+      -366.29
     }
   }
 }
@@ -2649,6 +2739,7 @@ Table_Viewspot = {
     id = 2,
     MapName = 1,
     MapNum = 2,
+    SpotName = "普隆德拉大教堂",
     Coordinate = Table_Viewspot_t.Coordinate[2],
     AdventureSort = 6,
     AdventureValue = 85
@@ -5680,7 +5771,6 @@ Table_Viewspot = {
     id = 358,
     MapName = 104,
     MapNum = 4,
-    SpotName = "无垠冰雪",
     Coordinate = Table_Viewspot_t.Coordinate[352],
     AdventureSort = 358
   },
@@ -7035,6 +7125,150 @@ Table_Viewspot = {
     SpotName = "霞照王座",
     Coordinate = Table_Viewspot_t.Coordinate[527],
     AdventureSort = 533
+  },
+  [534] = {
+    id = 534,
+    MapName = 154,
+    MapNum = 14,
+    SpotName = "龙寂山丘",
+    Coordinate = Table_Viewspot_t.Coordinate[528],
+    AdventureSort = 534
+  },
+  [535] = {
+    id = 535,
+    MapName = 154,
+    MapNum = 15,
+    SpotName = "未亡人之径",
+    Coordinate = Table_Viewspot_t.Coordinate[529],
+    AdventureSort = 535
+  },
+  [536] = {
+    id = 536,
+    MapName = 154,
+    MapNum = 16,
+    SpotName = "芦苇芳地",
+    Coordinate = Table_Viewspot_t.Coordinate[530],
+    AdventureSort = 536
+  },
+  [537] = {
+    id = 537,
+    MapName = 154,
+    MapNum = 17,
+    SpotName = "轰鸣战线",
+    Coordinate = Table_Viewspot_t.Coordinate[531],
+    AdventureSort = 537
+  },
+  [538] = {
+    id = 538,
+    MapName = 154,
+    MapNum = 18,
+    SpotName = "蚀骨泥渊",
+    Coordinate = Table_Viewspot_t.Coordinate[532],
+    AdventureSort = 538
+  },
+  [539] = {
+    id = 539,
+    MapName = 154,
+    MapNum = 19,
+    SpotName = "寂萼枯野",
+    Coordinate = Table_Viewspot_t.Coordinate[533],
+    AdventureSort = 539
+  },
+  [540] = {
+    id = 540,
+    MapName = 154,
+    MapNum = 20,
+    SpotName = "残垣碑林",
+    Coordinate = Table_Viewspot_t.Coordinate[534],
+    AdventureSort = 540
+  },
+  [541] = {
+    id = 541,
+    MapName = 154,
+    MapNum = 21,
+    SpotName = "苍白之塔",
+    Coordinate = Table_Viewspot_t.Coordinate[535],
+    AdventureSort = 541
+  },
+  [542] = {
+    id = 542,
+    MapName = 154,
+    MapNum = 22,
+    SpotName = "雾蕈的沉默石碑",
+    Coordinate = Table_Viewspot_t.Coordinate[536],
+    AdventureSort = 542
+  },
+  [543] = {
+    id = 543,
+    MapName = 154,
+    MapNum = 23,
+    SpotName = "赫格尼剑冢",
+    Coordinate = Table_Viewspot_t.Coordinate[537],
+    AdventureSort = 543
+  },
+  [544] = {
+    id = 544,
+    MapName = 154,
+    MapNum = 24,
+    SpotName = "花葬",
+    Coordinate = Table_Viewspot_t.Coordinate[538],
+    AdventureSort = 544
+  },
+  [545] = {
+    id = 545,
+    MapName = 154,
+    MapNum = 25,
+    SpotName = "馈赠之憩",
+    Coordinate = Table_Viewspot_t.Coordinate[539],
+    AdventureSort = 545
+  },
+  [546] = {
+    id = 546,
+    MapName = 154,
+    MapNum = 26,
+    SpotName = "坠落尘世",
+    Coordinate = Table_Viewspot_t.Coordinate[540],
+    AdventureSort = 546
+  },
+  [547] = {
+    id = 547,
+    MapName = 154,
+    MapNum = 27,
+    SpotName = "回眸根畔",
+    Coordinate = Table_Viewspot_t.Coordinate[541],
+    AdventureSort = 547
+  },
+  [548] = {
+    id = 548,
+    MapName = 154,
+    MapNum = 28,
+    SpotName = "终末哨点",
+    Coordinate = Table_Viewspot_t.Coordinate[542],
+    AdventureSort = 548
+  },
+  [549] = {
+    id = 549,
+    MapName = 154,
+    MapNum = 29,
+    SpotName = "远方的桅",
+    Coordinate = Table_Viewspot_t.Coordinate[543],
+    AdventureSort = 549
+  },
+  [550] = {
+    id = 550,
+    MapName = 154,
+    MapNum = 30,
+    SpotName = "沉眠之地",
+    Coordinate = Table_Viewspot_t.Coordinate[544],
+    AdventureSort = 550
+  },
+  [551] = {
+    id = 551,
+    MapName = 154,
+    MapNum = 31,
+    SpotName = "黄金树",
+    Coordinate = Table_Viewspot_t.Coordinate[545],
+    AdventureSort = 551
   }
 }
 local cell_mt = {
@@ -7046,7 +7280,7 @@ local cell_mt = {
     Coordinate = _EmptyTable,
     MapName = 149,
     MapNum = 1,
-    SpotName = "普隆德拉大教堂",
+    SpotName = "无垠冰雪",
     Type = 1,
     id = 1
   }

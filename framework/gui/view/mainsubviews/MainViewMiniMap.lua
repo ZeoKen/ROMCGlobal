@@ -82,6 +82,7 @@ function MainViewMiniMap:InitData()
   self.gvgEnemyLeaderDatas = {}
   self.gvgFriendChairmanDatas = {}
   self.gvgEnemyChairmanDatas = {}
+  self.abyssDragonMapInfo = {}
 end
 
 local tempArgs = {}
@@ -272,7 +273,7 @@ function MainViewMiniMap:TryExitRaid()
     MsgManager.ShowMsgByIDTable(25923)
     return
   end
-  if MapManager:IsPVEMode_HeadwearRaid() or isObRunning or MapManager:IsPVEMode_ExpRaid() or MapManager:IsPVPMode_TransferFight() or MapManager:IsPVeMode_EndlessTowerPrivate() then
+  if MapManager:IsPVEMode_HeadwearRaid() or isObRunning or MapManager:IsPVEMode_ExpRaid() or MapManager:IsPVPMode_TransferFight() or MapManager:IsPVeMode_EndlessTowerPrivate() or MapManager:IsPVEMode_FairyTaleRaid() then
     MsgManager.ConfirmMsgByID(7, function()
       redlog("---------CallExitMapFubenCmd")
       ServiceFuBenCmdProxy.Instance:CallExitMapFubenCmd()
@@ -671,13 +672,11 @@ function MainViewMiniMap:OnEnter()
     self:ShowPoringFightMapItems()
   end
   self:ActiveCheckMonstersPoses(true)
-  self:ActiveCheckFakeDragonPoses(true)
 end
 
 function MainViewMiniMap:OnExit()
   self.minimapWindow:Hide()
   self:ActiveCheckMonstersPoses(false)
-  self:ActiveCheckFakeDragonPoses(false)
   self:ClearPoringFightMapItems()
   self:ClearOutScreenDatas()
   self:ClearObjActiveMap()
@@ -1578,7 +1577,7 @@ function MainViewMiniMap:UpdateMapAllInfo(map2d)
     self:UpdateTransmitter()
     self:UpdateShowAreaTips()
     self:RefreshYahahaSymbol()
-    self:RefreshFakeDragonSymbol()
+    self:UpdateAbyssDragonMapInfo()
     if mapIdChanged then
       _TableClear(self.showNpcs, miniMapDataDeleteFunc)
       if cache_servershowNpcMap ~= nil then
@@ -1736,13 +1735,18 @@ function MainViewMiniMap:MapEvent()
   self:AddListenEvt(PVPEvent.EndlessBattleField_Launch, self.LaunchEBFEventAreaMapInfo)
   self:AddListenEvt(PVPEvent.EndlessBattleField_Shutdown, self.ClearEBFEventAreaMapInfo)
   self:AddListenEvt(ServiceEvent.MapSkillWeatherSyncCmd, self.UpdateSkillWeather)
-  self:AddListenEvt(FakeDragonEvent.UpdateFakeDragonPoses, self.RefreshFakeDragonSymbol)
+  self:AddListenEvt(PVEEvent.AbyssDragon_UpdateArea, self.UpdateAbyssDragonMapInfo)
+  self:AddListenEvt(PVEEvent.AbyssDragon_Shutdown, self.ClearAbyssDragonMapInfo)
+  self:AddListenEvt(PVEEvent.FairyTale_AddTrainNpc, self.HandleFairyTaleAddTrainNpc)
+  self:AddListenEvt(PVEEvent.FairyTale_RemoveTrainNpc, self.HandleFairyTaleRemoveTrainNpc)
+  self:AddListenEvt(PVEEvent.FairyTale_Launch, self.HandleFairyTaleLaunch)
+  self:AddListenEvt(PVEEvent.FairyTale_Shutdown, self.HandleFairyTaleShutdown)
 end
 
 function MainViewMiniMap:HandleChangeMap(note)
   self:UpdateTeamMembersPos(true)
   self:RefreshYahahaSymbol()
-  self:RefreshFakeDragonSymbol()
+  self:UpdateAbyssDragonMapInfo()
   self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.ClearSymbolHintParam)
   self:UpdateTeamMembersPos(true)
   self:TrySetupBigWorldWildMvpPassDayRefresh()
@@ -4313,10 +4317,6 @@ function MainViewMiniMap:RefreshYahahaSymbol()
   self:UpdateYahahaSymbol()
 end
 
-function MainViewMiniMap:RefreshFakeDragonSymbol()
-  self:UpdateFakeDragonSymbol()
-end
-
 function MainViewMiniMap:_UpdateYahahaDatas()
   if self.yahahaDatas then
     _TableClearByDeleter(self.yahahaDatas, miniMapDataDeleteFunc)
@@ -4355,43 +4355,6 @@ end
 function MainViewMiniMap:UpdateYahahaSymbol()
   self:_UpdateYahahaDatas()
   self:WindowInvoke(self.minimapWindow, self.minimapWindow.UpdateYahahaSymbol, self.yahahaDatas, true)
-end
-
-function MainViewMiniMap:UpdateFakeDragonSymbol()
-  self:_UpdateFakeDragonDatas()
-  self:WindowInvoke(self.minimapWindow, self.minimapWindow.UpdateFakeDragonSymbol, self.fakeDragonDatas, true)
-end
-
-function MainViewMiniMap:_UpdateFakeDragonDatas()
-  if self.fakeDragonDatas then
-    _TableClearByDeleter(self.fakeDragonDatas, miniMapDataDeleteFunc)
-  else
-    self.fakeDragonDatas = {}
-  end
-  local uniqueID, fakeDragonPos = AbyssFakeDragonProxy.Instance:GetFakeDragonPosition()
-  local data = self.fakeDragonDatas[1]
-  if fakeDragonPos then
-    if not data then
-      data = MiniMapData.CreateAsTable(uniqueID)
-      self.fakeDragonDatas[1] = data
-      data:SetParama("Depth", 32)
-    end
-    data:SetPos(fakeDragonPos[1], fakeDragonPos[2], fakeDragonPos[3])
-    data:SetParama("Symbol", "map_icon_shikonglong")
-  else
-    if data ~= nil then
-      data:Destroy()
-    end
-    self.fakeDragonDatas[1] = nil
-  end
-end
-
-function MainViewMiniMap:ActiveCheckFakeDragonPoses(open)
-  if open then
-    TimeTickManager.Me():CreateTick(0, 1000, self.UpdateFakeDragonSymbol, self, 14)
-  else
-    TimeTickManager.Me():ClearTick(self, 14)
-  end
 end
 
 function MainViewMiniMap:UpdateCameraSymbol()
@@ -4695,7 +4658,6 @@ function MainViewMiniMap:HandleSyncGvgLeaderPos(note)
   self:WindowInvoke(self.minimapWindow, self.minimapWindow.UpdateGvgFriendChairmanPointSymbol, self.gvgFriendChairmanDatas, true)
   self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.UpdateGvgEnemyChairmanPointSymbol, self.gvgEnemyChairmanDatas, true)
   self:WindowInvoke(self.minimapWindow, self.minimapWindow.UpdateGvgEnemyChairmanPointSymbol, self.gvgEnemyChairmanDatas, true)
-  helplog("GVG Point Leader CPU cost", os.clock() - clock_tag)
 end
 
 function MainViewMiniMap:_clearGvGFightPointLeader()
@@ -4740,5 +4702,121 @@ function MainViewMiniMap:UpdateGvgLeaderMapData(mapDataArray, posCache, count, s
     end
     pos = posCache[i]
     mapData:SetPos(pos.x, pos.y, pos.z)
+  end
+end
+
+function MainViewMiniMap:UpdateAbyssDragonMapInfo()
+  local mapId = Game.MapManager:GetMapID()
+  if mapId ~= 154 then
+    self:ClearAbyssDragonMapInfo()
+    return
+  end
+  if FunctionAbyssDragon.CheckTimeValid() then
+    if not next(self.abyssDragonMapInfo) then
+      local raidInfo = GameConfig.AbyssDragon and GameConfig.AbyssDragon.RaidInfo
+      if raidInfo then
+        for id, info in pairs(raidInfo) do
+          local bpID = info.BpPoint
+          local bp = Game.MapManager:FindBornPoint(bpID)
+          if bp then
+            local miniMapData = self.abyssDragonMapInfo[id]
+            if not miniMapData then
+              miniMapData = MiniMapData.CreateAsTable(id)
+              self.abyssDragonMapInfo[id] = miniMapData
+              miniMapData:SetPos(bp.position[1], bp.position[2], bp.position[3])
+              if info.MapEffect then
+                miniMapData:SetParama("effect", info.MapEffect)
+              end
+            end
+          end
+        end
+      end
+    end
+    self:WindowInvoke(self.minimapWindow, self.minimapWindow.UpdateAbyssDragonSymbol, self.abyssDragonMapInfo, true)
+  else
+    self:ClearAbyssDragonMapInfo()
+  end
+end
+
+function MainViewMiniMap:ClearAbyssDragonMapInfo()
+  _TableClearByDeleter(self.abyssDragonMapInfo, miniMapDataDeleteFunc)
+  self:WindowInvoke(self.minimapWindow, self.minimapWindow.UpdateAbyssDragonSymbol, self.abyssDragonMapInfo, true)
+end
+
+function MainViewMiniMap:HandleFairyTaleAddTrainNpc(note)
+  local trainNpcs = note.body
+  if not trainNpcs then
+    return
+  end
+  for i = 1, #trainNpcs do
+    local npc = trainNpcs[i]
+    local miniMapData = self.fairyTaleMapInfo[npc.data.id]
+    if not miniMapData then
+      miniMapData = MiniMapData.CreateAsTable(npc.data.id)
+      self.fairyTaleMapInfo[npc.data.id] = miniMapData
+    end
+    local rider = npc:GetRideRole()
+    if rider then
+      miniMapData:SetParama("RiderId", rider.data.staticData.id)
+    end
+    miniMapData:SetParama("hp", npc.data:GetHP())
+    miniMapData:SetParama("maxHp", npc.data.props:GetPropByName("MaxHp"):GetValue())
+    local pos = npc:GetPosition()
+    miniMapData:SetPos(pos[1], pos[2], pos[3])
+  end
+  self:WindowInvoke(self.minimapWindow, self.minimapWindow.UpdateFairyTaleSymbol, self.fairyTaleMapInfo, true)
+end
+
+function MainViewMiniMap:HandleFairyTaleRemoveTrainNpc(note)
+  local npcs = note.body
+  if not npcs then
+    return
+  end
+  for i = 1, #npcs do
+    local id = npcs[i]
+    local miniMapData = self.fairyTaleMapInfo[id]
+    if miniMapData then
+      miniMapData:Destroy()
+      self.fairyTaleMapInfo[id] = nil
+    end
+  end
+  self:WindowInvoke(self.minimapWindow, self.minimapWindow.UpdateFairyTaleSymbol, self.fairyTaleMapInfo, true)
+  self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.UpdateFairyTaleSymbol, self.fairyTaleMapInfo, true)
+end
+
+function MainViewMiniMap:HandleFairyTaleLaunch()
+  self.fairyTaleMapInfo = {}
+  self.fairyTaleTimeTick = TimeTickManager.Me():CreateTick(0, 1000, function()
+    for id, miniMapData in pairs(self.fairyTaleMapInfo) do
+      local npc = _NSceneNpcProxy:Find(id)
+      if npc then
+        local hp = npc.data:GetHP()
+        miniMapData:SetParama("hp", hp)
+        local pos = npc:GetPosition()
+        miniMapData:SetPos(pos[1], pos[2], pos[3])
+        local rider = npc:GetRideRole()
+        if rider then
+          miniMapData:SetParama("RiderId", rider.data.staticData.id)
+        end
+      else
+        miniMapData:Destroy()
+        self.fairyTaleMapInfo[id] = nil
+      end
+    end
+    self:WindowInvoke(self.minimapWindow, self.minimapWindow.UpdateFairyTaleSymbol, self.fairyTaleMapInfo, true)
+    self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.UpdateFairyTaleSymbol, self.fairyTaleMapInfo, true)
+  end, self, 1001)
+end
+
+function MainViewMiniMap:HandleFairyTaleShutdown()
+  if self.fairyTaleMapInfo then
+    _TableClearByDeleter(self.fairyTaleMapInfo, miniMapDataDeleteFunc)
+    self:WindowInvoke(self.minimapWindow, self.minimapWindow.UpdateFairyTaleSymbol, self.fairyTaleMapInfo, true)
+    self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.UpdateFairyTaleSymbol, self.fairyTaleMapInfo, true)
+    self.fairyTaleMapInfo = nil
+  end
+  if self.fairyTaleTimeTick then
+    TimeTickManager.Me():ClearTick(self, 1001)
+    self.fairyTaleTimeTick = nil
   end
 end

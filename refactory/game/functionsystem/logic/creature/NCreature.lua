@@ -1892,6 +1892,7 @@ function NCreature:DoConstruct(asArray, data)
   self.stopChantID = 0
   self.allowConcurrent = false
   self.isHideHp = false
+  self.hideBodyOnly = false
 end
 
 function NCreature:GetUpIDReset()
@@ -1961,6 +1962,7 @@ function NCreature:DoDeconstruct(asArray)
   self.freezeHold = false
   self.maskMap = nil
   self.isHideHp = false
+  self.hideBodyOnly = false
 end
 
 function NCreature:OnObserverDestroyed(k, obj)

@@ -332,6 +332,7 @@ function InteractNpcManager:OnCreatureRecycle(id)
   if passengerMap then
     passengerMap[id] = nil
   end
+  GameFacade:sendNotification(InteractNpcEvent.MyselfPassengerChange)
 end
 
 function InteractNpcManager:UpdateMultiMountStatus(creature)
@@ -341,7 +342,7 @@ function InteractNpcManager:UpdateMultiMountStatus(creature)
   local charid = creature.data.id
   local masterid = creature.data.userdata:Get(UDEnum.RIDING_CHARID) or 0
   local cachedMasterID = self.interactMountRideMap[charid]
-  local ridingNpc = creature.data.userdata:Get(UDEnum.RIDING_NPC)
+  local ridingNpc = creature.data.userdata:Get(UDEnum.RIDING_NPC) or 0
   if masterid ~= 0 then
     local passengerMap = self.interactMountLinkMap[masterid]
     if not passengerMap then
@@ -368,12 +369,12 @@ function InteractNpcManager:UpdateMultiMountStatus(creature)
     end
   elseif ridingNpc == 0 then
     local interactMount = self:GetInteractMount(charid)
-    if interactMount and interactMount.npcid ~= 0 then
+    if interactMount and interactMount.npcid and interactMount.npcid ~= 0 then
       interactMount:RequestGetOff(charid, not self:IsMyselfPassenger())
       GameFacade:sendNotification(InteractNpcEvent.MyselfPassengerChange)
     end
   end
-  if not (masterid ~= 0 or cachedMasterID) or masterid == cachedMasterID then
+  if masterid == 0 and (not cachedMasterID or masterid == cachedMasterID) then
     return
   end
   local interactMount = self:GetInteractMount(masterid)

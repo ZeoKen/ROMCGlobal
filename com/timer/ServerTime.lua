@@ -29,6 +29,12 @@ function os.time(date)
   if date then
     date.isdst = false
   end
+  if date ~= nil and date.year ~= nil then
+    local year = tonumber(date.year)
+    if year and 2038 < year then
+      date.year = 2037
+    end
+  end
   local result = ServerTime.Ori_OsTime(date)
   if not date or not ServerTime.SERVER_TIMEZONE then
     return result

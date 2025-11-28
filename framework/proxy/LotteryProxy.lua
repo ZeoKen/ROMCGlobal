@@ -1,5 +1,6 @@
 autoImport("HeadLotteryData")
 autoImport("LotteryMagicData")
+autoImport("LotterySpaceTimeData")
 autoImport("LotteryRecoverData")
 autoImport("LotteryExtraBonusData")
 autoImport("LotteryInfoData")
@@ -28,7 +29,8 @@ LotteryType = {
   MixedFourth = SceneItem_pb.ELotteryType_MIX4,
   NewMix = SceneItem_pb.ELotteryType_NEW_MIX,
   NewCard = SceneItem_pb.ELotteryType_Card_New,
-  NewCard_Activity = SceneItem_pb.ELotteryType_Card_Activity
+  NewCard_Activity = SceneItem_pb.ELotteryType_Card_Activity,
+  SpaceTime = SceneItem_pb.ELotteryType_SpaceTime or 15
 }
 LotteryHeadwearType = {
   Magic_Min = 1,
@@ -205,12 +207,16 @@ function LotteryProxy.IsHeadLottery(t)
   return t == LotteryType.Head
 end
 
+function LotteryProxy.IsSpaceTimeLottery(t)
+  return t == LotteryType.SpaceTime
+end
+
 function LotteryProxy.IsRecoverType(t)
   return LotteryProxy.IsMagicLottery(t) or LotteryType.Head == t
 end
 
 function LotteryProxy.IsNewLottery(t)
-  return LotteryProxy.IsHeadLottery(t) or LotteryProxy.IsNewCardLottery(t) or LotteryProxy.IsMixLottery(t) or LotteryProxy.IsMagicLottery(t)
+  return LotteryProxy.IsHeadLottery(t) or LotteryProxy.IsNewCardLottery(t) or LotteryProxy.IsMixLottery(t) or LotteryProxy.IsMagicLottery(t) or LotteryProxy.IsSpaceTimeLottery(t)
 end
 
 function LotteryProxy.IsSSR(itemData)
@@ -233,13 +239,15 @@ function LotteryProxy.IsSSR(itemData)
   end
 end
 
-function LotteryProxy.TypeField(t)
+function LotteryProxy.DressTypeFieldName(t)
   if LotteryProxy.IsMagicLottery(t) then
     return "Magic"
   elseif LotteryProxy.IsHeadLottery(t) then
     return "Head"
   elseif LotteryProxy.IsMixLottery(t) then
     return "Mix"
+  elseif LotteryProxy.IsSpaceTimeLottery(t) then
+    return "SpaceTime"
   end
 end
 
@@ -292,9 +300,9 @@ function LotteryProxy:Init()
   self:ProcessNewCardLotteryDiscountCnt()
   self:InitDailyReward()
   self:InitMix()
-  self.vipFreeMap = {}
   self.ssrCardMap = {}
   self.cardLotteryPrayMap = {}
+  self.vipFreeMap = {}
 end
 
 function LotteryProxy:CheckForbiddenByNoviceServer(t)
@@ -343,15 +351,17 @@ function LotteryProxy:PreProcessTicket()
   self.activityLotteryTickets = {}
   self.lotteryTypesTicket = {}
   for ltype, v in pairs(tickets) do
-    if v.itemid == 5800 then
-      self.magicLotteryItemMap[#self.magicLotteryItemMap + 1] = ltype
+    if v.itemid then
+      if v.itemid == 5800 then
+        self.magicLotteryItemMap[#self.magicLotteryItemMap + 1] = ltype
+      end
+      local types = self.lotteryTypesTicket[v.itemid]
+      if not types then
+        types = {}
+        self.lotteryTypesTicket[v.itemid] = types
+      end
+      types[#types + 1] = ltype
     end
-    local types = self.lotteryTypesTicket[v.itemid]
-    if not types then
-      types = {}
-      self.lotteryTypesTicket[v.itemid] = types
-    end
-    types[#types + 1] = ltype
     if v.actItemId then
       for i = 1, #v.actItemId do
         local actTicketId = v.actItemId[i]
@@ -471,6 +481,8 @@ end
 
 function LotteryProxy:RecvQueryLotteryInfo(servicedata)
   local type = servicedata.type
+  helplog("[扭蛋] 打印服务器扭蛋QueryLotteryInfo数据,type ", type)
+  TableUtil.Print(servicedata)
   if type == LotteryType.Head then
     self:SetNextValidTime(type, 60)
     if self.infoMap[type] == nil then
@@ -495,6 +507,9 @@ function LotteryProxy:RecvQueryLotteryInfo(servicedata)
     elseif type == LotteryType.Card then
       local data = LotteryData.new(info)
       data:SortItemsByQuality()
+      self.infoMap[type] = data
+    elseif LotteryProxy.IsSpaceTimeLottery(type) then
+      local data = LotterySpaceTimeData.new(info, type)
       self.infoMap[type] = data
     end
   end
@@ -521,7 +536,7 @@ function LotteryProxy:RecvQueryLotteryInfo(servicedata)
   if servicedata.safetyinfo and info.SetSafetyInfo then
     info:SetSafetyInfo(servicedata.safetyinfo)
   end
-  helplog("RecvQueryLotteryInfo 单次抽取最大次数 | 今日十连次数 | 今日十连上限", servicedata.once_max_cnt, servicedata.today_ten_cnt, servicedata.max_ten_cnt)
+  helplog("RecvQueryLotteryInfo 单次抽取最大次数 | 今日十连次数 | 今日十连上限 | 免费次数 ", servicedata.once_max_cnt, servicedata.today_ten_cnt, servicedata.max_ten_cnt, servicedata.free_cnt)
 end
 
 function LotteryProxy:CheckTenLottery(t)
@@ -848,7 +863,7 @@ function LotteryProxy:GetInitializedDressData(t)
     if data then
       return data:GetInitializedDressData()
     end
-  elseif LotteryProxy.IsMagicLottery(t) then
+  elseif LotteryProxy.IsMagicLottery(t) or LotteryProxy.IsSpaceTimeLottery(t) then
     local data = self.infoMap[t]
     if data then
       return data:GetInitializedDressData()
@@ -1196,31 +1211,30 @@ function LotteryProxy:FilterCard(quality)
   return self.filterCardList
 end
 
+local LOTTERY_TO_SKIP_TYPE_MAP
+
 function LotteryProxy:GetSkipType(lotteryType)
-  if lotteryType == LotteryType.Head then
-    return SKIPTYPE.LotteryHeadwear
-  elseif lotteryType == LotteryType.Equip then
-    return SKIPTYPE.LotteryEquip
-  elseif lotteryType == LotteryType.Card then
-    return SKIPTYPE.LotteryCard
-  elseif lotteryType == LotteryType.Magic then
-    return SKIPTYPE.LotteryMagic
-  elseif lotteryType == LotteryType.MagicSec then
-    return SKIPTYPE.LotteryMagicSec
-  elseif lotteryType == LotteryType.MagicThird then
-    return SKIPTYPE.LotteryMagicThird
-  elseif lotteryType == LotteryType.Mixed then
-    return SKIPTYPE.LotteryMixed
-  elseif lotteryType == LotteryType.MixedSec then
-    return SKIPTYPE.LotteryMixedSec
-  elseif lotteryType == LotteryType.MixedThird then
-    return SKIPTYPE.LotteryMixedThird
-  elseif lotteryType == LotteryType.MixedFourth then
-    return SKIPTYPE.LotteryMixedFourth
-  elseif lotteryType == LotteryType.NewMix then
-    return SKIPTYPE.LotteryNewMixed
-  elseif LotteryProxy.IsNewCardLottery(lotteryType) then
-    return SKIPTYPE.LotteryCard_New
+  if not LOTTERY_TO_SKIP_TYPE_MAP then
+    LOTTERY_TO_SKIP_TYPE_MAP = {
+      [LotteryType.Head] = SKIPTYPE.LotteryHeadwear,
+      [LotteryType.Equip] = SKIPTYPE.LotteryEquip,
+      [LotteryType.Card] = SKIPTYPE.LotteryCard,
+      [LotteryType.Magic] = SKIPTYPE.LotteryMagic,
+      [LotteryType.MagicSec] = SKIPTYPE.LotteryMagicSec,
+      [LotteryType.MagicThird] = SKIPTYPE.LotteryMagicThird,
+      [LotteryType.Mixed] = SKIPTYPE.LotteryMixed,
+      [LotteryType.MixedSec] = SKIPTYPE.LotteryMixedSec,
+      [LotteryType.MixedThird] = SKIPTYPE.LotteryMixedThird,
+      [LotteryType.MixedFourth] = SKIPTYPE.LotteryMixedFourth,
+      [LotteryType.NewMix] = SKIPTYPE.LotteryNewMixed,
+      [LotteryType.NewCard] = SKIPTYPE.LotteryCard_New,
+      [LotteryType.NewCard_Activity] = SKIPTYPE.LotteryCard_New,
+      [LotteryType.SpaceTime] = SKIPTYPE.LotterySpaceTime
+    }
+  end
+  local skipType = LOTTERY_TO_SKIP_TYPE_MAP[lotteryType]
+  if skipType then
+    return skipType
   end
   return nil
 end
@@ -1556,6 +1570,14 @@ function LotteryProxy:GetCurrentExtraCount(lotteryType)
   return self.extraCount[lotteryType]
 end
 
+function LotteryProxy:GetSpaceTimeLotteryData()
+  local info = self.infoMap[LotteryType.SpaceTime]
+  if info ~= nil then
+    return info.items
+  end
+  return _EmptyTable
+end
+
 function LotteryProxy:FilterMagic(type, filterType)
   local info = self.infoMap[type]
   if info ~= nil then
@@ -1789,7 +1811,11 @@ function LotteryProxy:SetMixDressData()
   for period, _ in pairs(seriesMap) do
     _ArrayPushBack(periodList, period)
   end
-  local random_period_index = math.random(1, #periodList)
+  local periodCount = #periodList
+  if periodCount < 1 then
+    return
+  end
+  local random_period_index = math.random(1, periodCount)
   local random_period = periodList[random_period_index]
   local randomSeries = self.seriesMap[random_period]
   local random_fashion = randomSeries:GetRandomFashion()
@@ -2092,6 +2118,19 @@ end
 
 function LotteryProxy:GetAllActiveLottery()
   return self.allLotteryActs
+end
+
+function LotteryProxy:IsOpen(type)
+  local acts = self.openingLotteryActs
+  if not acts then
+    return false
+  end
+  for i = 1, #acts do
+    if acts[i].lotteryType == type then
+      return true
+    end
+  end
+  return false
 end
 
 function LotteryProxy:IsActOpen(t)

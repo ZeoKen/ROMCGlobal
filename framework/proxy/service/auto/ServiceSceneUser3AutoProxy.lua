@@ -171,6 +171,9 @@ function ServiceSceneUser3AutoProxy:onRegister()
   self:Listen(82, 54, function(data)
     self:RecvWareHouseOperationCmd(data)
   end)
+  self:Listen(82, 55, function(data)
+    self:RecvFairyTaleRankQueryCmd(data)
+  end)
 end
 
 function ServiceSceneUser3AutoProxy:CallFirstDepositInfo(end_time, got_gear, accumlated_deposit, first_deposit_rewarded, version)
@@ -2813,6 +2816,63 @@ function ServiceSceneUser3AutoProxy:CallWareHouseOperationCmd(opr, guid)
   end
 end
 
+function ServiceSceneUser3AutoProxy:CallFairyTaleRankQueryCmd(charid, zoneid, serverid, datas, is_end)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.FairyTaleRankQueryCmd()
+    if charid ~= nil then
+      msg.charid = charid
+    end
+    if zoneid ~= nil then
+      msg.zoneid = zoneid
+    end
+    if serverid ~= nil then
+      msg.serverid = serverid
+    end
+    if datas ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.datas == nil then
+        msg.datas = {}
+      end
+      for i = 1, #datas do
+        table.insert(msg.datas, datas[i])
+      end
+    end
+    if is_end ~= nil then
+      msg.is_end = is_end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.FairyTaleRankQueryCmd.id
+    local msgParam = {}
+    if charid ~= nil then
+      msgParam.charid = charid
+    end
+    if zoneid ~= nil then
+      msgParam.zoneid = zoneid
+    end
+    if serverid ~= nil then
+      msgParam.serverid = serverid
+    end
+    if datas ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.datas == nil then
+        msgParam.datas = {}
+      end
+      for i = 1, #datas do
+        table.insert(msgParam.datas, datas[i])
+      end
+    end
+    if is_end ~= nil then
+      msgParam.is_end = is_end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceSceneUser3AutoProxy:RecvFirstDepositInfo(data)
   self:Notify(ServiceEvent.SceneUser3FirstDepositInfo, data)
 end
@@ -3021,6 +3081,10 @@ function ServiceSceneUser3AutoProxy:RecvWareHouseOperationCmd(data)
   self:Notify(ServiceEvent.SceneUser3WareHouseOperationCmd, data)
 end
 
+function ServiceSceneUser3AutoProxy:RecvFairyTaleRankQueryCmd(data)
+  self:Notify(ServiceEvent.SceneUser3FairyTaleRankQueryCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.SceneUser3FirstDepositInfo = "ServiceEvent_SceneUser3FirstDepositInfo"
 ServiceEvent.SceneUser3FirstDepositReward = "ServiceEvent_SceneUser3FirstDepositReward"
@@ -3074,3 +3138,4 @@ ServiceEvent.SceneUser3GvgExcellectRewardUserCmd = "ServiceEvent_SceneUser3GvgEx
 ServiceEvent.SceneUser3BattleTimeOffUserCmd = "ServiceEvent_SceneUser3BattleTimeOffUserCmd"
 ServiceEvent.SceneUser3PlayTimeOffUserCmd = "ServiceEvent_SceneUser3PlayTimeOffUserCmd"
 ServiceEvent.SceneUser3WareHouseOperationCmd = "ServiceEvent_SceneUser3WareHouseOperationCmd"
+ServiceEvent.SceneUser3FairyTaleRankQueryCmd = "ServiceEvent_SceneUser3FairyTaleRankQueryCmd"

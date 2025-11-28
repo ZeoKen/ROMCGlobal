@@ -87,12 +87,12 @@ Table_DateBattleCity = {
     id = 20001,
     Name = "##42631227",
     MapId = 2,
-    Text = "##42631228",
+    Text = "##44710446",
     TelePort = {2, 6},
     RaidId = 9101,
     LobbyRaidID = 9100,
     Point = {
-      [1] = {
+      [2] = {
         pos = {
           65.46,
           -0.9,
@@ -101,6 +101,24 @@ Table_DateBattleCity = {
         range = 7,
         calc_ratio = 8,
         protect_metal = 1
+      },
+      [1] = {
+        pos = {
+          14.32,
+          -5.09,
+          -18.11
+        },
+        range = 5,
+        calc_ratio = 8
+      },
+      [3] = {
+        pos = {
+          -40.99,
+          -0.95,
+          99.21
+        },
+        range = 7,
+        calc_ratio = 8
       }
     },
     CityType = 3,
@@ -112,12 +130,12 @@ Table_DateBattleCity = {
     id = 30001,
     Name = "##42631229",
     MapId = 33,
-    Text = "##42631228",
+    Text = "##44710446",
     TelePort = {33, 6},
     RaidId = 9131,
     LobbyRaidID = 9130,
     Point = {
-      [1] = {
+      [2] = {
         pos = {
           33.53,
           0.34,
@@ -126,6 +144,24 @@ Table_DateBattleCity = {
         range = 7,
         calc_ratio = 8,
         protect_metal = 1
+      },
+      [1] = {
+        pos = {
+          103.89,
+          -2.09,
+          -75.18
+        },
+        range = 5,
+        calc_ratio = 8
+      },
+      [3] = {
+        pos = {
+          -94.85,
+          4.56,
+          57.75
+        },
+        range = 7,
+        calc_ratio = 8
       }
     },
     CityType = 3,
@@ -137,12 +173,12 @@ Table_DateBattleCity = {
     id = 40001,
     Name = "##42631231",
     MapId = 19,
-    Text = "##42631228",
+    Text = "##44710446",
     TelePort = {19, 7},
     RaidId = 9133,
     LobbyRaidID = 9132,
     Point = {
-      [1] = {
+      [2] = {
         pos = {
           82.71,
           2.87,
@@ -151,6 +187,24 @@ Table_DateBattleCity = {
         range = 7,
         calc_ratio = 8,
         protect_metal = 1
+      },
+      [1] = {
+        pos = {
+          82.05,
+          5.8,
+          -69.14
+        },
+        range = 7,
+        calc_ratio = 8
+      },
+      [3] = {
+        pos = {
+          -87.38,
+          2.9,
+          76.17
+        },
+        range = 5,
+        calc_ratio = 8
       }
     },
     CityType = 3,
@@ -162,12 +216,12 @@ Table_DateBattleCity = {
     id = 50001,
     Name = "##42631233",
     MapId = 42,
-    Text = "##42631228",
+    Text = "##44710446",
     TelePort = {42, 8},
     RaidId = 9135,
     LobbyRaidID = 9134,
     Point = {
-      [1] = {
+      [2] = {
         pos = {
           135.04,
           0.05,
@@ -176,6 +230,24 @@ Table_DateBattleCity = {
         range = 7,
         calc_ratio = 8,
         protect_metal = 1
+      },
+      [1] = {
+        pos = {
+          76.58,
+          0.05,
+          -87.9
+        },
+        range = 7,
+        calc_ratio = 8
+      },
+      [3] = {
+        pos = {
+          36.09,
+          0.03,
+          -31.02
+        },
+        range = 5,
+        calc_ratio = 8
       }
     },
     CityType = 3,

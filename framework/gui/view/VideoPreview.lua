@@ -108,6 +108,9 @@ function VideoPreview:UpdatePreview()
   elseif self.data.title then
     self:SetTitleAndDesc(self.data.title, self.data.desc)
   end
+  if self.data.hideInfo then
+    self.addon:SetActive(false)
+  end
 end
 
 function VideoPreview:SetAddon(isActive)

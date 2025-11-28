@@ -13184,7 +13184,7 @@ Table_MapStep_t = {
           [11] = "mfx_syzh_skfyjt_state1001"
         }
       },
-      sec_process = 1,
+      sec_process = 2,
       total = 2500
     },
     {
@@ -13291,7 +13291,7 @@ Table_MapStep_t = {
           [13] = "mfx_syzh_skfyjt_state1001"
         }
       },
-      sec_process = 1,
+      sec_process = 2,
       total = 2500
     },
     {
@@ -13391,7 +13391,7 @@ Table_MapStep_t = {
           [10] = "mfx_syzh_skfyjt_state1001"
         }
       },
-      sec_process = 1,
+      sec_process = 2,
       total = 2500
     },
     {
@@ -13491,7 +13491,7 @@ Table_MapStep_t = {
           [12] = "mfx_syzh_skfyjt_state1001"
         }
       },
-      sec_process = 1,
+      sec_process = 2,
       total = 2500
     },
     {
@@ -13563,7 +13563,7 @@ Table_MapStep_t = {
         [203] = 700,
         [204] = 700
       },
-      sec_process = 1,
+      sec_process = 2,
       total = 6000
     },
     {
@@ -14080,13 +14080,14 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8101,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8151,
       forever_box_reward_id = 5664,
       group_ids = {1}
     },
+    {time = 60},
     {
       client_mapshow = 1,
       dir = 33,
@@ -14165,7 +14166,7 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8102,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8152,
@@ -14266,7 +14267,7 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8104,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8154,
@@ -14335,7 +14336,7 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8105,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8155,
@@ -14420,7 +14421,7 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8106,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8156,
@@ -14489,7 +14490,7 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8107,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8157,
@@ -14590,7 +14591,7 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8108,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8158,
@@ -14691,7 +14692,7 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8109,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8159,
@@ -14760,7 +14761,7 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8110,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8160,
@@ -14813,196 +14814,12 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8103,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8153,
       forever_box_reward_id = 5664,
       group_ids = {1}
-    },
-    {time = 420},
-    {
-      SubQuestID = {11}
-    },
-    {time = 840},
-    {
-      SubQuestID = {21}
-    },
-    {
-      dragonid = 276614,
-      id = 5051,
-      source = 22,
-      type = "reward"
-    },
-    {
-      dragonid = 276614,
-      id = 5052,
-      source = 22,
-      type = "reward"
-    },
-    {id = 276614},
-    {
-      npcid = {
-        276616,
-        276617,
-        276618,
-        276619,
-        276620,
-        276621,
-        276622,
-        276623,
-        276624,
-        276625,
-        276626,
-        276627,
-        276628,
-        2055030,
-        2055031,
-        2055032,
-        2055033,
-        2055034,
-        2055035,
-        2055036,
-        2055037
-      }
-    },
-    {
-      anim = {50041},
-      stage = 1,
-      time = 60
-    },
-    {hpper = 50, id = 276614},
-    {
-      SubQuestID = {1}
-    },
-    {
-      dead_disp_time = 5,
-      group_id = 1,
-      id = 276627,
-      pos = {
-        122.0999,
-        183.1,
-        327.3999
-      }
-    },
-    {
-      anim = {50042},
-      stage = 2,
-      time = 60
-    },
-    {id = 276628},
-    {
-      npcid = {276614},
-      num = 1
-    },
-    {
-      SubQuestID = {2}
-    },
-    {
-      SubQuestID = {32}
-    },
-    {
-      anim = {50043},
-      stage = 3,
-      time = 15
-    },
-    {
-      SubQuestID = {31}
-    },
-    {
-      anim = {50044},
-      stage = 3,
-      time = 15
-    },
-    {
-      hpper = 90,
-      range = 15,
-      reward = {
-        5063,
-        5074,
-        5075
-      }
-    },
-    {
-      hpper = 80,
-      range = 15,
-      reward = {
-        5063,
-        5074,
-        5075
-      }
-    },
-    {
-      hpper = 70,
-      range = 15,
-      reward = {
-        5063,
-        5074,
-        5075
-      }
-    },
-    {
-      hpper = 60,
-      range = 15,
-      reward = {
-        5063,
-        5074,
-        5075
-      }
-    },
-    {
-      hpper = 50,
-      range = 15,
-      reward = {
-        5063,
-        5074,
-        5075
-      }
-    },
-    {
-      hpper = 40,
-      range = 15,
-      reward = {
-        5063,
-        5074,
-        5075
-      }
-    },
-    {
-      hpper = 30,
-      range = 15,
-      reward = {
-        5063,
-        5074,
-        5075
-      }
-    },
-    {
-      hpper = 20,
-      range = 15,
-      reward = {
-        5063,
-        5074,
-        5075
-      }
-    },
-    {
-      hpper = 10,
-      range = 15,
-      reward = {
-        5063,
-        5074,
-        5075
-      }
-    },
-    {
-      hpper = 0,
-      range = 15,
-      reward = {
-        5063,
-        5074,
-        5075
-      }
     },
     {
       kill_monsters = {
@@ -15039,7 +14856,7 @@ Table_MapStep_t = {
           [15] = "mfx_syzh_skfyjt_state1001"
         }
       },
-      sec_process = 1,
+      sec_process = 2,
       total = 2500
     },
     {
@@ -15139,7 +14956,7 @@ Table_MapStep_t = {
           [16] = "mfx_syzh_skfyjt_state1001"
         }
       },
-      sec_process = 1,
+      sec_process = 2,
       total = 2500
     },
     {
@@ -15239,7 +15056,7 @@ Table_MapStep_t = {
           [14] = "mfx_syzh_skfyjt_state1001"
         }
       },
-      sec_process = 1,
+      sec_process = 2,
       total = 2500
     },
     {
@@ -15339,7 +15156,7 @@ Table_MapStep_t = {
           [17] = "mfx_syzh_skfyjt_state1001"
         }
       },
-      sec_process = 1,
+      sec_process = 2,
       total = 2500
     },
     {
@@ -15411,7 +15228,7 @@ Table_MapStep_t = {
         [208] = 700,
         [209] = 700
       },
-      sec_process = 1,
+      sec_process = 2,
       total = 6000
     },
     {
@@ -15458,6 +15275,465 @@ Table_MapStep_t = {
         -324.13,
         185.75,
         97.13
+      },
+      pursue = 10,
+      search = 0,
+      territory = 0
+    },
+    {
+      kill_monsters = {
+        [54628] = 1,
+        [54629] = 1,
+        [54630] = 1,
+        [54631] = 5,
+        [54632] = 5,
+        [54633] = 5,
+        [852283] = 3
+      },
+      mapstep_quests = {
+        [317] = 5,
+        [318] = 3,
+        [319] = 3
+      },
+      process_state = {
+        [0] = {
+          [24] = "mfx_syzh_skfyjt_state6002"
+        },
+        [500] = {
+          [24] = "mfx_syzh_skfyjt_state5002"
+        },
+        [1000] = {
+          [24] = "mfx_syzh_skfyjt_state4002"
+        },
+        [1500] = {
+          [24] = "mfx_syzh_skfyjt_state3002"
+        },
+        [2000] = {
+          [24] = "mfx_syzh_skfyjt_state2002"
+        },
+        [2500] = {
+          [24] = "mfx_syzh_skfyjt_state1001"
+        }
+      },
+      sec_process = 2,
+      total = 2500
+    },
+    {
+      disappeartime = 10,
+      group_id = 10,
+      id = 1203119,
+      pos = {
+        388.89,
+        155.62,
+        1.36
+      },
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 266,
+      group_id = 1,
+      id = 54615,
+      pos = {
+        388.89,
+        155.62,
+        1.36
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 266,
+      group_id = 1,
+      id = 54616,
+      pos = {
+        388.89,
+        155.62,
+        1.36
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 266,
+      group_id = 1,
+      id = 54617,
+      pos = {
+        388.89,
+        155.62,
+        1.36
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      group_ids = {1},
+      process_state = {
+        [0] = {
+          [24] = "mfx_syzh_skfyjt_state6001"
+        }
+      }
+    },
+    {
+      kill_monsters = {
+        [54634] = 1,
+        [54635] = 1,
+        [54636] = 1,
+        [54637] = 5,
+        [54638] = 5,
+        [54639] = 5,
+        [852284] = 3
+      },
+      mapstep_quests = {
+        [320] = 5,
+        [321] = 3,
+        [322] = 3
+      },
+      process_state = {
+        [0] = {
+          [23] = "mfx_syzh_skfyjt_state6002"
+        },
+        [500] = {
+          [23] = "mfx_syzh_skfyjt_state5002"
+        },
+        [1000] = {
+          [23] = "mfx_syzh_skfyjt_state4002"
+        },
+        [1500] = {
+          [23] = "mfx_syzh_skfyjt_state3002"
+        },
+        [2000] = {
+          [23] = "mfx_syzh_skfyjt_state2002"
+        },
+        [2500] = {
+          [23] = "mfx_syzh_skfyjt_state1001"
+        }
+      },
+      sec_process = 2,
+      total = 2500
+    },
+    {
+      disappeartime = 10,
+      group_id = 10,
+      id = 1203119,
+      pos = {
+        387.22,
+        160.07,
+        49.96
+      },
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 133,
+      group_id = 1,
+      id = 54618,
+      pos = {
+        387.22,
+        160.07,
+        49.96
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 133,
+      group_id = 1,
+      id = 54619,
+      pos = {
+        387.22,
+        160.07,
+        49.96
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 133,
+      group_id = 1,
+      id = 54620,
+      pos = {
+        387.22,
+        160.07,
+        49.96
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      group_ids = {1},
+      process_state = {
+        [0] = {
+          [23] = "mfx_syzh_skfyjt_state6001"
+        }
+      }
+    },
+    {
+      kill_monsters = {
+        [54640] = 1,
+        [54641] = 1,
+        [54642] = 1,
+        [54643] = 5,
+        [54644] = 5,
+        [54645] = 5,
+        [852285] = 3
+      },
+      mapstep_quests = {
+        [323] = 5,
+        [324] = 3,
+        [325] = 3
+      },
+      process_state = {
+        [0] = {
+          [21] = "mfx_syzh_skfyjt_state6002"
+        },
+        [500] = {
+          [21] = "mfx_syzh_skfyjt_state5002"
+        },
+        [1000] = {
+          [21] = "mfx_syzh_skfyjt_state4002"
+        },
+        [1500] = {
+          [21] = "mfx_syzh_skfyjt_state3002"
+        },
+        [2000] = {
+          [21] = "mfx_syzh_skfyjt_state2002"
+        },
+        [2500] = {
+          [21] = "mfx_syzh_skfyjt_state1001"
+        }
+      },
+      sec_process = 2,
+      total = 2500
+    },
+    {
+      disappeartime = 10,
+      group_id = 10,
+      id = 1203119,
+      pos = {
+        435.11,
+        162.58,
+        55.33
+      },
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 240,
+      group_id = 1,
+      id = 54621,
+      pos = {
+        435.11,
+        162.58,
+        55.33
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 240,
+      group_id = 1,
+      id = 54622,
+      pos = {
+        435.11,
+        162.58,
+        55.33
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 240,
+      group_id = 1,
+      id = 54623,
+      pos = {
+        435.11,
+        162.58,
+        55.33
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      group_ids = {1},
+      process_state = {
+        [0] = {
+          [21] = "mfx_syzh_skfyjt_state6001"
+        }
+      }
+    },
+    {
+      kill_monsters = {
+        [54646] = 1,
+        [54647] = 1,
+        [54648] = 1,
+        [54649] = 5,
+        [54650] = 5,
+        [54651] = 5,
+        [852286] = 3
+      },
+      mapstep_quests = {
+        [326] = 5,
+        [327] = 3,
+        [328] = 3
+      },
+      process_state = {
+        [0] = {
+          [22] = "mfx_syzh_skfyjt_state6002"
+        },
+        [500] = {
+          [22] = "mfx_syzh_skfyjt_state5002"
+        },
+        [1000] = {
+          [22] = "mfx_syzh_skfyjt_state4002"
+        },
+        [1500] = {
+          [22] = "mfx_syzh_skfyjt_state3002"
+        },
+        [2000] = {
+          [22] = "mfx_syzh_skfyjt_state2002"
+        },
+        [2500] = {
+          [22] = "mfx_syzh_skfyjt_state1001"
+        }
+      },
+      sec_process = 2,
+      total = 2500
+    },
+    {
+      disappeartime = 10,
+      group_id = 10,
+      id = 1203119,
+      pos = {
+        447.41,
+        158.47,
+        2.59
+      },
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 264,
+      group_id = 1,
+      id = 54624,
+      pos = {
+        447.41,
+        158.47,
+        2.59
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 264,
+      group_id = 1,
+      id = 54625,
+      pos = {
+        447.41,
+        158.47,
+        2.59
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 264,
+      group_id = 1,
+      id = 54626,
+      pos = {
+        447.41,
+        158.47,
+        2.59
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      group_ids = {1},
+      process_state = {
+        [0] = {
+          [22] = "mfx_syzh_skfyjt_state6001"
+        }
+      }
+    },
+    {
+      mapstep_quests = {
+        [211] = 700,
+        [212] = 700,
+        [213] = 700,
+        [214] = 700
+      },
+      sec_process = 2,
+      total = 6000
+    },
+    {
+      effect = "Skill/Eff_chase_Lingting_atk_Red",
+      index = 1,
+      opt = "play",
+      pos = {
+        395.5,
+        157.93,
+        28.5
+      },
+      sync = 1,
+      times = 1,
+      type = "effect"
+    },
+    {
+      effect = "Skill/DarkEnd_atk",
+      pos = {
+        395.5,
+        157.93,
+        28.5
+      },
+      sync = 1,
+      times = 1,
+      type = "effect"
+    },
+    {
+      effect = "Skill/DarkTraction",
+      pos = {
+        395.5,
+        157.93,
+        28.5
+      },
+      sync = 1,
+      times = 1,
+      type = "effect"
+    },
+    {
+      dead_disp_time = 20,
+      dir = 264,
+      group_id = 1,
+      id = 54627,
+      pos = {
+        395.5,
+        157.93,
+        28.5
       },
       pursue = 10,
       search = 0,
@@ -15917,7 +16193,7 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8111,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8161,
@@ -15986,7 +16262,7 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8112,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8162,
@@ -16071,7 +16347,7 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8113,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8163,
@@ -16156,7 +16432,7 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8114,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8164,
@@ -16241,12 +16517,2125 @@ Table_MapStep_t = {
     },
     {
       acc_forever_box_reward_id = 8115,
-      box_clear_delay = 180,
+      box_clear_delay = 60,
       box_group_id = 1,
       box_mapstep_group = 2,
       day_box_reward_id = 8165,
       forever_box_reward_id = 5664,
       group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = -70.87,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        350.83,
+        170.26,
+        70.55
+      }
+    },
+    {
+      ai_groupid = 52,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 15.8,
+      group_id = 1,
+      id = 601147,
+      pos = {
+        350.24,
+        169.58,
+        66.45
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 52,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -160.3,
+      group_id = 1,
+      id = 19213,
+      pos = {
+        352.26,
+        169.58,
+        74.58
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 52,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 111.4,
+      group_id = 1,
+      id = 19219,
+      pos = {
+        347.37,
+        170.27,
+        71.7
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 52,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -79.2,
+      group_id = 1,
+      id = 19219,
+      pos = {
+        354.14,
+        170.27,
+        69.64
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_forever_box_reward_id = 8116,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      day_box_reward_id = 8166,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = -24,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        272.56,
+        160.71,
+        0.26
+      }
+    },
+    {
+      ai_groupid = 53,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -27.91,
+      group_id = 1,
+      id = 601148,
+      pos = {
+        271,
+        160.25,
+        5.77
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 53,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -81.1,
+      group_id = 1,
+      id = 19219,
+      pos = {
+        268.04,
+        160.25,
+        2.61
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 53,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 6.47,
+      group_id = 1,
+      id = 19219,
+      pos = {
+        274.41,
+        160.25,
+        5.83
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 53,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 0,
+      group_id = 1,
+      id = 19213,
+      pos = {
+        273.4,
+        160.19,
+        2.28
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_forever_box_reward_id = 8117,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      day_box_reward_id = 8167,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = -22.8,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        250.76,
+        156.51,
+        123.04
+      }
+    },
+    {
+      ai_groupid = 54,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -30,
+      group_id = 1,
+      id = 601149,
+      pos = {
+        251,
+        155.94,
+        126.38
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 54,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -30.1,
+      group_id = 1,
+      id = 19213,
+      pos = {
+        247.9,
+        155.82,
+        124.75
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 54,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -30,
+      group_id = 1,
+      id = 19213,
+      pos = {
+        254.19,
+        155.82,
+        125.13
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 54,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -30,
+      group_id = 1,
+      id = 19213,
+      pos = {
+        246.91,
+        155.94,
+        121.96
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_forever_box_reward_id = 8118,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      day_box_reward_id = 8168,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = -100,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        158.8,
+        157.1,
+        59.86
+      }
+    },
+    {
+      ai_groupid = 55,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -42.6,
+      group_id = 1,
+      id = 601150,
+      pos = {
+        159.05,
+        157.1,
+        62.44
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 55,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -42.6,
+      group_id = 1,
+      id = 19213,
+      pos = {
+        160.46,
+        156.76,
+        64.25
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 55,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -160,
+      group_id = 1,
+      id = 19219,
+      pos = {
+        159.95,
+        157.1,
+        57.16
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 55,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -160,
+      group_id = 1,
+      id = 19213,
+      pos = {
+        162.18,
+        156.76,
+        55.72
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_forever_box_reward_id = 8119,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      day_box_reward_id = 8169,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = -148.2,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        284.78,
+        155.81,
+        202.41
+      }
+    },
+    {
+      ai_groupid = 56,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 78.09,
+      group_id = 1,
+      id = 601151,
+      pos = {
+        281.59,
+        155.34,
+        203.84
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 56,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 49.87,
+      group_id = 1,
+      id = 19219,
+      pos = {
+        281.82,
+        155.25,
+        200.96
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 56,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 17.4,
+      group_id = 1,
+      id = 19219,
+      pos = {
+        284.1,
+        155.33,
+        199.04
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 56,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -13.63,
+      group_id = 1,
+      id = 19213,
+      pos = {
+        287.05,
+        155.87,
+        199.64
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_forever_box_reward_id = 8120,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      day_box_reward_id = 8170,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = -84.09,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        343.69,
+        169.4,
+        156.03
+      }
+    },
+    {
+      ai_groupid = 57,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 127.6,
+      group_id = 1,
+      id = 601152,
+      pos = {
+        341.06,
+        169.12,
+        158.86
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 57,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 59.6,
+      group_id = 1,
+      id = 19219,
+      pos = {
+        340.54,
+        168.01,
+        154.78
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 57,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 178.32,
+      group_id = 1,
+      id = 19219,
+      pos = {
+        344.12,
+        170.48,
+        160.36
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 57,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 19.8,
+      group_id = 1,
+      id = 19219,
+      pos = {
+        342.62,
+        168.57,
+        151.49
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_forever_box_reward_id = 8121,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      day_box_reward_id = 8171,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {monster = 852283, num = 1},
+    {monster = 852284, num = 1},
+    {monster = 852285, num = 1},
+    {monster = 852286, num = 1},
+    {
+      dir = 306,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        406.05,
+        155.73,
+        -10.95
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 289,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        408.11,
+        155.73,
+        -7.54
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 335,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        403.04,
+        155.73,
+        -13.25
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 307,
+      id = 852260,
+      pos = {
+        409.6,
+        156.52,
+        -13.95
+      }
+    },
+    {
+      dir = 137,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        382.02,
+        155.35,
+        15.2
+      }
+    },
+    {
+      dir = 137,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        382.02,
+        155.35,
+        15.2
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 154,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        386.55,
+        155.35,
+        17.75
+      }
+    },
+    {
+      dir = 154,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        386.55,
+        155.35,
+        17.75
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 246,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        399.42,
+        159.5,
+        59.17
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 220,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        397.55,
+        159.5,
+        62.73
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 260,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        400.84,
+        159.5,
+        55.37
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 246,
+      id = 852260,
+      pos = {
+        403.64,
+        159.64,
+        61.23
+      }
+    },
+    {
+      dir = 113,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        370.17,
+        159.45,
+        59.05
+      }
+    },
+    {
+      dir = 113,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        370.17,
+        159.45,
+        59.05
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 136,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        372.41,
+        159.45,
+        62.62
+      }
+    },
+    {
+      dir = 136,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        372.41,
+        159.45,
+        62.62
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 311,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        451.03,
+        161.98,
+        49.89
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 255,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        453.55,
+        161.98,
+        56.33
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 295,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        452.81,
+        161.98,
+        52.84
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 312,
+      id = 852260,
+      pos = {
+        456.4,
+        162.47,
+        51.33
+      }
+    },
+    {
+      dir = 149,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        432,
+        162.31,
+        69.66
+      }
+    },
+    {
+      dir = 149,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        432,
+        162.31,
+        69.66
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 167,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        435.74,
+        162.31,
+        71.04
+      }
+    },
+    {
+      dir = 167,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        435.74,
+        162.31,
+        71.04
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 288,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        463.09,
+        158.27,
+        -5.34
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 255,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        465.33,
+        158.33,
+        -2.28
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 311,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        463.6,
+        158.27,
+        -8.64
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 287,
+      id = 852260,
+      pos = {
+        468.7,
+        158.98,
+        -6.77
+      }
+    },
+    {
+      dir = 208,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        458.35,
+        158.3,
+        15.94
+      }
+    },
+    {
+      dir = 208,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        458.35,
+        158.3,
+        15.94
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 229,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        462.08,
+        158.3,
+        13.47
+      }
+    },
+    {
+      dir = 229,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        462.08,
+        158.3,
+        13.47
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      boss_type = 1,
+      dead_disp_time = 20,
+      dir = 124,
+      group_id = 1,
+      id = 30073,
+      pos = {
+        246.76622,
+        155.257324,
+        221.171722
+      },
+      pursue = 15,
+      search = 0,
+      territory = 5
+    },
+    {
+      client_mapshow = 1,
+      dir = -103.4,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        233.21,
+        165.71,
+        -128.47
+      }
+    },
+    {
+      ai_groupid = 58,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -110.8,
+      group_id = 1,
+      id = 601153,
+      pos = {
+        229.31,
+        165.4,
+        -129.73
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 58,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -76.59,
+      group_id = 1,
+      id = 19211,
+      pos = {
+        229.16,
+        165.4,
+        -125.83
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 58,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -146.26,
+      group_id = 1,
+      id = 19211,
+      pos = {
+        231.65,
+        165.4,
+        -133.25
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_forever_box_reward_id = 8122,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      day_box_reward_id = 8172,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = 134.14,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        243.45,
+        171.52,
+        -206.68
+      }
+    },
+    {
+      ai_groupid = 59,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -51.36,
+      group_id = 1,
+      id = 601154,
+      pos = {
+        246.02,
+        171.52,
+        -209.47
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 59,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 10.02,
+      group_id = 1,
+      id = 19211,
+      pos = {
+        242.59,
+        171.52,
+        -211.2
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 59,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -121.33,
+      group_id = 1,
+      id = 19211,
+      pos = {
+        247.69,
+        171.33,
+        -205.25
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_forever_box_reward_id = 8123,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      day_box_reward_id = 8173,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = 155.3,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        212.97,
+        167.7,
+        -262.47
+      }
+    },
+    {
+      ai_groupid = 60,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 157.06,
+      group_id = 1,
+      id = 601155,
+      pos = {
+        211.78,
+        167.7,
+        -259.64
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 60,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -21.66,
+      group_id = 1,
+      id = 19219,
+      pos = {
+        214.25,
+        167.7,
+        -265.81
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 60,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 68.57,
+      group_id = 1,
+      id = 19219,
+      pos = {
+        210.14,
+        167.7,
+        -263.92
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 60,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -115.17,
+      group_id = 1,
+      id = 19219,
+      pos = {
+        216.29,
+        167.7,
+        -261.48
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_forever_box_reward_id = 8124,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      day_box_reward_id = 8174,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = -102.75,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        307.47,
+        175.11,
+        -273.14
+      }
+    },
+    {
+      ai_groupid = 61,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -101.01,
+      group_id = 1,
+      id = 601156,
+      pos = {
+        302.83,
+        175.11,
+        -274.31
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 61,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -41.2,
+      group_id = 1,
+      id = 19211,
+      pos = {
+        303.04,
+        175.37,
+        -269.88
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 61,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -165.02,
+      group_id = 1,
+      id = 19211,
+      pos = {
+        305.07,
+        175.11,
+        -278.24
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_forever_box_reward_id = 8125,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      day_box_reward_id = 8175,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = 179.05,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        330.17,
+        169.63,
+        -114.54
+      }
+    },
+    {
+      ai_groupid = 62,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 136.75,
+      group_id = 1,
+      id = 601157,
+      pos = {
+        327.26,
+        169.63,
+        -112.02
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 62,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -132.58,
+      group_id = 1,
+      id = 19211,
+      pos = {
+        333.56,
+        169.63,
+        -112.18
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 62,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 61.35,
+      group_id = 1,
+      id = 19211,
+      pos = {
+        326.98,
+        169.63,
+        -117.57
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 62,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -49.1,
+      group_id = 1,
+      id = 19211,
+      pos = {
+        333.55,
+        169.63,
+        -117.35
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_forever_box_reward_id = 8126,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      day_box_reward_id = 8176,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      kill_monsters = {
+        [54667] = 1,
+        [54668] = 1,
+        [54669] = 1,
+        [54670] = 5,
+        [54671] = 5,
+        [54672] = 5,
+        [852292] = 3
+      },
+      mapstep_quests = {
+        [333] = 5,
+        [334] = 3,
+        [335] = 3
+      },
+      process_state = {
+        [0] = {
+          [26] = "mfx_syzh_skfyjt_state6002"
+        },
+        [500] = {
+          [26] = "mfx_syzh_skfyjt_state5002"
+        },
+        [1000] = {
+          [26] = "mfx_syzh_skfyjt_state4002"
+        },
+        [1500] = {
+          [26] = "mfx_syzh_skfyjt_state3002"
+        },
+        [2000] = {
+          [26] = "mfx_syzh_skfyjt_state2002"
+        },
+        [2500] = {
+          [26] = "mfx_syzh_skfyjt_state1001"
+        }
+      },
+      sec_process = 2,
+      total = 2500
+    },
+    {
+      disappeartime = 10,
+      group_id = 10,
+      id = 1203119,
+      pos = {
+        419.62,
+        167.42,
+        -163.38
+      },
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 270,
+      group_id = 1,
+      id = 54654,
+      pos = {
+        419.62,
+        167.42,
+        -163.38
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 270,
+      group_id = 1,
+      id = 54655,
+      pos = {
+        419.62,
+        167.42,
+        -163.38
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 270,
+      group_id = 1,
+      id = 54656,
+      pos = {
+        419.62,
+        167.42,
+        -163.38
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      group_ids = {1},
+      process_state = {
+        [0] = {
+          [26] = "mfx_syzh_skfyjt_state6001"
+        }
+      }
+    },
+    {
+      kill_monsters = {
+        [54673] = 1,
+        [54674] = 1,
+        [54675] = 1,
+        [54676] = 5,
+        [54677] = 5,
+        [54678] = 5,
+        [852293] = 3
+      },
+      mapstep_quests = {
+        [336] = 5,
+        [337] = 3,
+        [338] = 3
+      },
+      process_state = {
+        [0] = {
+          [27] = "mfx_syzh_skfyjt_state6002"
+        },
+        [500] = {
+          [27] = "mfx_syzh_skfyjt_state5002"
+        },
+        [1000] = {
+          [27] = "mfx_syzh_skfyjt_state4002"
+        },
+        [1500] = {
+          [27] = "mfx_syzh_skfyjt_state3002"
+        },
+        [2000] = {
+          [27] = "mfx_syzh_skfyjt_state2002"
+        },
+        [2500] = {
+          [27] = "mfx_syzh_skfyjt_state1001"
+        }
+      },
+      sec_process = 2,
+      total = 2500
+    },
+    {
+      disappeartime = 10,
+      group_id = 10,
+      id = 1203119,
+      pos = {
+        444.07,
+        170.22,
+        -211.86
+      },
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 270,
+      group_id = 1,
+      id = 54657,
+      pos = {
+        444.07,
+        170.22,
+        -211.86
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 270,
+      group_id = 1,
+      id = 54658,
+      pos = {
+        444.07,
+        170.22,
+        -211.86
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 270,
+      group_id = 1,
+      id = 54659,
+      pos = {
+        444.07,
+        170.22,
+        -211.86
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      group_ids = {1},
+      process_state = {
+        [0] = {
+          [27] = "mfx_syzh_skfyjt_state6001"
+        }
+      }
+    },
+    {
+      kill_monsters = {
+        [54679] = 1,
+        [54680] = 1,
+        [54681] = 1,
+        [54682] = 5,
+        [54683] = 5,
+        [54684] = 5,
+        [852294] = 3
+      },
+      mapstep_quests = {
+        [339] = 5,
+        [340] = 3,
+        [341] = 3
+      },
+      process_state = {
+        [0] = {
+          [28] = "mfx_syzh_skfyjt_state6002"
+        },
+        [500] = {
+          [28] = "mfx_syzh_skfyjt_state5002"
+        },
+        [1000] = {
+          [28] = "mfx_syzh_skfyjt_state4002"
+        },
+        [1500] = {
+          [28] = "mfx_syzh_skfyjt_state3002"
+        },
+        [2000] = {
+          [28] = "mfx_syzh_skfyjt_state2002"
+        },
+        [2500] = {
+          [28] = "mfx_syzh_skfyjt_state1001"
+        }
+      },
+      sec_process = 2,
+      total = 2500
+    },
+    {
+      disappeartime = 10,
+      group_id = 10,
+      id = 1203119,
+      pos = {
+        392.37,
+        167.15,
+        -247
+      },
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 270,
+      group_id = 1,
+      id = 54660,
+      pos = {
+        392.37,
+        167.15,
+        -247
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 270,
+      group_id = 1,
+      id = 54661,
+      pos = {
+        392.37,
+        167.15,
+        -247
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 270,
+      group_id = 1,
+      id = 54662,
+      pos = {
+        392.37,
+        167.15,
+        -247
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      group_ids = {1},
+      process_state = {
+        [0] = {
+          [28] = "mfx_syzh_skfyjt_state6001"
+        }
+      }
+    },
+    {
+      kill_monsters = {
+        [54685] = 1,
+        [54686] = 1,
+        [54687] = 1,
+        [54688] = 5,
+        [54689] = 5,
+        [54690] = 5,
+        [852295] = 3
+      },
+      mapstep_quests = {
+        [342] = 5,
+        [343] = 3,
+        [344] = 3
+      },
+      process_state = {
+        [0] = {
+          [29] = "mfx_syzh_skfyjt_state6002"
+        },
+        [500] = {
+          [29] = "mfx_syzh_skfyjt_state5002"
+        },
+        [1000] = {
+          [29] = "mfx_syzh_skfyjt_state4002"
+        },
+        [1500] = {
+          [29] = "mfx_syzh_skfyjt_state3002"
+        },
+        [2000] = {
+          [29] = "mfx_syzh_skfyjt_state2002"
+        },
+        [2500] = {
+          [29] = "mfx_syzh_skfyjt_state1001"
+        }
+      },
+      sec_process = 2,
+      total = 2500
+    },
+    {
+      disappeartime = 10,
+      group_id = 10,
+      id = 1203119,
+      pos = {
+        432.01,
+        161.43,
+        -288.51
+      },
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 270,
+      group_id = 1,
+      id = 54663,
+      pos = {
+        432.01,
+        161.43,
+        -288.51
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 270,
+      group_id = 1,
+      id = 54664,
+      pos = {
+        432.01,
+        161.43,
+        -288.51
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      dead_disp_time = 10,
+      dir = 270,
+      group_id = 1,
+      id = 54665,
+      pos = {
+        432.01,
+        161.43,
+        -288.51
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0
+    },
+    {
+      group_ids = {1},
+      process_state = {
+        [0] = {
+          [29] = "mfx_syzh_skfyjt_state6001"
+        }
+      }
+    },
+    {
+      mapstep_quests = {
+        [216] = 700,
+        [217] = 700,
+        [218] = 700,
+        [219] = 700
+      },
+      sec_process = 2,
+      total = 6000
+    },
+    {
+      effect = "Skill/Eff_chase_Lingting_atk_Red",
+      index = 1,
+      opt = "play",
+      pos = {
+        425.21,
+        168.45,
+        -228.53
+      },
+      sync = 1,
+      times = 1,
+      type = "effect"
+    },
+    {
+      effect = "Skill/DarkEnd_atk",
+      pos = {
+        425.21,
+        168.45,
+        -228.53
+      },
+      sync = 1,
+      times = 1,
+      type = "effect"
+    },
+    {
+      effect = "Skill/DarkTraction",
+      pos = {
+        425.21,
+        168.45,
+        -228.53
+      },
+      sync = 1,
+      times = 1,
+      type = "effect"
+    },
+    {
+      dead_disp_time = 20,
+      dir = 0,
+      group_id = 1,
+      id = 54666,
+      pos = {
+        425.21,
+        168.45,
+        -228.53
+      },
+      pursue = 10,
+      search = 0,
+      territory = 0
+    },
+    {monster = 852292, num = 1},
+    {monster = 852293, num = 1},
+    {monster = 852294, num = 1},
+    {monster = 852295, num = 1},
+    {
+      dir = 234,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        436.81,
+        167.53,
+        -156.23
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 223,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        436.64,
+        167.53,
+        -153.23
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 207,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        433.7,
+        167.53,
+        -152.9
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 221,
+      id = 852260,
+      pos = {
+        439,
+        167.74,
+        -150.73
+      }
+    },
+    {
+      dir = 76,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        408.71,
+        167.54,
+        -166.63
+      }
+    },
+    {
+      dir = 76,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        408.71,
+        167.54,
+        -166.63
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 91,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        408.4,
+        167.54,
+        -162.11
+      }
+    },
+    {
+      dir = 154,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        408.4,
+        167.54,
+        -162.11
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 357,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        451.38,
+        170.32,
+        -224.02
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 346,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        453.99,
+        170.32,
+        -225.51
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 330,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        455.87,
+        170.32,
+        -223.23
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 344,
+      id = 852260,
+      pos = {
+        454.8,
+        170.93,
+        -228.85
+      }
+    },
+    {
+      dir = 189,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        455.11,
+        170.06,
+        -195.47
+      }
+    },
+    {
+      dir = 189,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        455.11,
+        170.06,
+        -195.47
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 174,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        448.41,
+        170.06,
+        -195.1
+      }
+    },
+    {
+      dir = 174,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        448.41,
+        170.06,
+        -195.1
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 29,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        392.53,
+        167.32,
+        -259.88
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 18,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        393.93,
+        167.32,
+        -262.54
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 3,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        396.74,
+        167.32,
+        -261.62
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 16,
+      id = 852260,
+      pos = {
+        392.82,
+        167.93,
+        -265.79
+      }
+    },
+    {
+      dir = 207,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        408.1,
+        167.18,
+        -232
+      }
+    },
+    {
+      dir = 207,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        408.1,
+        167.18,
+        -232
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 192,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        401.84,
+        167.18,
+        -229.58
+      }
+    },
+    {
+      dir = 192,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        401.84,
+        167.18,
+        -229.58
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 345,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        455.08,
+        170.05,
+        -224.81
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 334,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        457.9,
+        170.05,
+        -225.74
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 318,
+      group_id = 1,
+      id = 54554,
+      pos = {
+        459.31,
+        170.05,
+        -223.13
+      },
+      pursue = 5,
+      search = 0,
+      territory = 0,
+      waitaction = "skill_ready"
+    },
+    {
+      dir = 332,
+      id = 852260,
+      pos = {
+        459.4,
+        170.66,
+        -228.85
+      }
+    },
+    {
+      dir = 172,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        447.84,
+        169.96,
+        -194.92
+      }
+    },
+    {
+      dir = 172,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        447.84,
+        169.96,
+        -194.92
+      },
+      waitaction = "functional_action31"
+    },
+    {
+      dir = 131,
+      group_id = 1,
+      id = 852258,
+      pos = {
+        437.16,
+        169.99,
+        -200.1
+      }
+    },
+    {
+      dir = 131,
+      group_id = 2,
+      id = 852320,
+      pos = {
+        437.16,
+        169.99,
+        -200.1
+      },
+      waitaction = "functional_action31"
     },
     {
       group_ids = {103}
@@ -16933,25 +19322,10 @@ Table_MapStep_t = {
     {after_kill_elite = 3000},
     {after_open_server = 13},
     {
-      AbortTime = "2030-09-01 00:00:00",
-      Cycle = "periodly",
-      EndTime = "2025-03-24 00:00:00",
-      StartTime = "2025-03-23 14:00:00",
-      TFAbortTime = "2030-08-25 00:00:00",
-      TFEndTime = "2025-03-24 00:00:00",
-      TFStartTime = "2025-03-23 14:00:00",
-      WeekTime = {
-        endtime = {hour = 24, min = 0},
-        intervalTime = 36000,
-        starttime = {hour = 14, min = 0},
-        weekday = {0}
-      }
-    },
-    {
-      EndTime = "2023-12-18 05:00:00",
-      StartTime = "2023-12-11 05:00:00",
-      TFEndTime = "2023-12-11 05:00:00",
-      TFStartTime = "2023-12-04 05:00:00",
+      EndTime = "2026-01-01 05:00:00",
+      StartTime = "2025-12-22 05:00:00",
+      TFEndTime = "2025-12-25 05:00:00",
+      TFStartTime = "2025-12-15 05:00:00",
       WeekTime = {
         endtime = {hour = 23, min = 1},
         starttime = {hour = 8, min = 0},
@@ -24125,5206 +26499,7027 @@ Table_MapStep = {
   },
   [1264] = {
     id = 1264,
-    Params = Table_MapStep_t.Params[768]
+    Params = Table_MapStep_t.Params[768],
+    MapID = 149
   },
   [1265] = {
     id = 1265,
-    Params = Table_MapStep_t.Params[769]
+    Params = Table_MapStep_t.Params[769],
+    MapID = 149
   },
   [1266] = {
     id = 1266,
-    Params = Table_MapStep_t.Params[770]
+    Params = Table_MapStep_t.Params[770],
+    MapID = 149
   },
   [1267] = {
     id = 1267,
-    Params = Table_MapStep_t.Params[771]
+    Params = Table_MapStep_t.Params[771],
+    MapID = 149
   },
   [1268] = {
     id = 1268,
-    Params = Table_MapStep_t.Params[772]
+    Params = Table_MapStep_t.Params[772],
+    MapID = 149
   },
   [1269] = {
     id = 1269,
-    Params = Table_MapStep_t.Params[773]
+    Params = Table_MapStep_t.Params[773],
+    MapID = 149
   },
   [1270] = {
     id = 1270,
-    Params = Table_MapStep_t.Params[774]
+    Params = Table_MapStep_t.Params[774],
+    MapID = 149
   },
   [1271] = {
     id = 1271,
-    Params = Table_MapStep_t.Params[775]
+    Params = Table_MapStep_t.Params[775],
+    MapID = 149
   },
   [1272] = {
     id = 1272,
-    Params = Table_MapStep_t.Params[776]
+    Params = Table_MapStep_t.Params[776],
+    MapID = 149
   },
   [1273] = {
     id = 1273,
-    Params = Table_MapStep_t.Params[777]
+    Params = Table_MapStep_t.Params[777],
+    MapID = 149
   },
   [1274] = {
     id = 1274,
-    Params = Table_MapStep_t.Params[778]
+    Params = Table_MapStep_t.Params[778],
+    MapID = 149
   },
   [1275] = {
     id = 1275,
-    Params = Table_MapStep_t.Params[779]
+    Params = Table_MapStep_t.Params[779],
+    MapID = 149
   },
   [1276] = {
     id = 1276,
-    Params = Table_MapStep_t.Params[780]
+    Params = Table_MapStep_t.Params[780],
+    MapID = 149
   },
   [1277] = {
     id = 1277,
-    Params = Table_MapStep_t.Params[781]
+    Params = Table_MapStep_t.Params[781],
+    MapID = 149
   },
   [1278] = {
     id = 1278,
     Content = "killall",
-    Params = Table_MapStep_t.Params[782]
+    Params = Table_MapStep_t.Params[782],
+    MapID = 149
   },
-  [1279] = {id = 1279, Content = "stop_other"},
+  [1279] = {
+    id = 1279,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1280] = {
     id = 1280,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1281] = {
     id = 1281,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[783]
+    Params = Table_MapStep_t.Params[783],
+    MapID = 149
   },
   [1282] = {
     id = 1282,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[16]
+    Params = Table_MapStep_t.Params[16],
+    MapID = 149
   },
   [1283] = {
     id = 1283,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1284] = {
     id = 1284,
-    Params = Table_MapStep_t.Params[785]
+    Params = Table_MapStep_t.Params[785],
+    MapID = 149
   },
   [1285] = {
     id = 1285,
-    Params = Table_MapStep_t.Params[786]
+    Params = Table_MapStep_t.Params[786],
+    MapID = 149
   },
   [1286] = {
     id = 1286,
-    Params = Table_MapStep_t.Params[787]
+    Params = Table_MapStep_t.Params[787],
+    MapID = 149
   },
   [1287] = {
     id = 1287,
-    Params = Table_MapStep_t.Params[788]
+    Params = Table_MapStep_t.Params[788],
+    MapID = 149
   },
   [1288] = {
     id = 1288,
-    Params = Table_MapStep_t.Params[789]
+    Params = Table_MapStep_t.Params[789],
+    MapID = 149
   },
   [1289] = {
     id = 1289,
-    Params = Table_MapStep_t.Params[790]
+    Params = Table_MapStep_t.Params[790],
+    MapID = 149
   },
   [1290] = {
     id = 1290,
-    Params = Table_MapStep_t.Params[791]
+    Params = Table_MapStep_t.Params[791],
+    MapID = 149
   },
   [1291] = {
     id = 1291,
-    Params = Table_MapStep_t.Params[792]
+    Params = Table_MapStep_t.Params[792],
+    MapID = 149
   },
   [1292] = {
     id = 1292,
-    Params = Table_MapStep_t.Params[793]
+    Params = Table_MapStep_t.Params[793],
+    MapID = 149
   },
   [1293] = {
     id = 1293,
-    Params = Table_MapStep_t.Params[794]
+    Params = Table_MapStep_t.Params[794],
+    MapID = 149
   },
   [1294] = {
     id = 1294,
     Content = "killall",
-    Params = Table_MapStep_t.Params[795]
+    Params = Table_MapStep_t.Params[795],
+    MapID = 149
   },
-  [1295] = {id = 1295, Content = "stop_other"},
+  [1295] = {
+    id = 1295,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1296] = {
     id = 1296,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1297] = {
     id = 1297,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[783]
+    Params = Table_MapStep_t.Params[783],
+    MapID = 149
   },
   [1298] = {
     id = 1298,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[16]
+    Params = Table_MapStep_t.Params[16],
+    MapID = 149
   },
   [1299] = {
     id = 1299,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1300] = {
     id = 1300,
-    Params = Table_MapStep_t.Params[796]
+    Params = Table_MapStep_t.Params[796],
+    MapID = 149
   },
   [1301] = {
     id = 1301,
-    Params = Table_MapStep_t.Params[797]
+    Params = Table_MapStep_t.Params[797],
+    MapID = 149
   },
   [1302] = {
     id = 1302,
-    Params = Table_MapStep_t.Params[798]
+    Params = Table_MapStep_t.Params[798],
+    MapID = 149
   },
   [1303] = {
     id = 1303,
-    Params = Table_MapStep_t.Params[799]
+    Params = Table_MapStep_t.Params[799],
+    MapID = 149
   },
   [1304] = {
     id = 1304,
-    Params = Table_MapStep_t.Params[800]
+    Params = Table_MapStep_t.Params[800],
+    MapID = 149
   },
   [1305] = {
     id = 1305,
-    Params = Table_MapStep_t.Params[801]
+    Params = Table_MapStep_t.Params[801],
+    MapID = 149
   },
   [1306] = {
     id = 1306,
-    Params = Table_MapStep_t.Params[802]
+    Params = Table_MapStep_t.Params[802],
+    MapID = 149
   },
   [1307] = {
     id = 1307,
-    Params = Table_MapStep_t.Params[803]
+    Params = Table_MapStep_t.Params[803],
+    MapID = 149
   },
   [1308] = {
     id = 1308,
-    Params = Table_MapStep_t.Params[804]
+    Params = Table_MapStep_t.Params[804],
+    MapID = 149
   },
   [1309] = {
     id = 1309,
-    Params = Table_MapStep_t.Params[805]
+    Params = Table_MapStep_t.Params[805],
+    MapID = 149
   },
   [1310] = {
     id = 1310,
-    Params = Table_MapStep_t.Params[806]
+    Params = Table_MapStep_t.Params[806],
+    MapID = 149
   },
   [1311] = {
     id = 1311,
     Content = "killall",
-    Params = Table_MapStep_t.Params[807]
+    Params = Table_MapStep_t.Params[807],
+    MapID = 149
   },
-  [1312] = {id = 1312, Content = "stop_other"},
+  [1312] = {
+    id = 1312,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1313] = {
     id = 1313,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16]
+    Params = Table_MapStep_t.Params[16],
+    MapID = 149
   },
   [1314] = {
     id = 1314,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1315] = {
     id = 1315,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1316] = {
     id = 1316,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1317] = {
     id = 1317,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1318] = {
     id = 1318,
-    Params = Table_MapStep_t.Params[809]
+    Params = Table_MapStep_t.Params[809],
+    MapID = 149
   },
   [1319] = {
     id = 1319,
-    Params = Table_MapStep_t.Params[810]
+    Params = Table_MapStep_t.Params[810],
+    MapID = 149
   },
   [1320] = {
     id = 1320,
-    Params = Table_MapStep_t.Params[811]
+    Params = Table_MapStep_t.Params[811],
+    MapID = 149
   },
   [1321] = {
     id = 1321,
-    Params = Table_MapStep_t.Params[812]
+    Params = Table_MapStep_t.Params[812],
+    MapID = 149
   },
   [1322] = {
     id = 1322,
-    Params = Table_MapStep_t.Params[813]
+    Params = Table_MapStep_t.Params[813],
+    MapID = 149
   },
   [1323] = {
     id = 1323,
-    Params = Table_MapStep_t.Params[814]
+    Params = Table_MapStep_t.Params[814],
+    MapID = 149
   },
   [1324] = {
     id = 1324,
-    Params = Table_MapStep_t.Params[815]
+    Params = Table_MapStep_t.Params[815],
+    MapID = 149
   },
   [1325] = {
     id = 1325,
-    Params = Table_MapStep_t.Params[816]
+    Params = Table_MapStep_t.Params[816],
+    MapID = 149
   },
   [1326] = {
     id = 1326,
-    Params = Table_MapStep_t.Params[817]
+    Params = Table_MapStep_t.Params[817],
+    MapID = 149
   },
   [1327] = {
     id = 1327,
-    Params = Table_MapStep_t.Params[818]
+    Params = Table_MapStep_t.Params[818],
+    MapID = 149
   },
   [1328] = {
     id = 1328,
-    Params = Table_MapStep_t.Params[819]
+    Params = Table_MapStep_t.Params[819],
+    MapID = 149
   },
   [1329] = {
     id = 1329,
-    Params = Table_MapStep_t.Params[820]
+    Params = Table_MapStep_t.Params[820],
+    MapID = 149
   },
   [1330] = {
     id = 1330,
-    Params = Table_MapStep_t.Params[821]
+    Params = Table_MapStep_t.Params[821],
+    MapID = 149
   },
   [1331] = {
     id = 1331,
     Content = "killall",
-    Params = Table_MapStep_t.Params[822]
+    Params = Table_MapStep_t.Params[822],
+    MapID = 149
   },
   [1332] = {
     id = 1332,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[26]
+    Params = Table_MapStep_t.Params[26],
+    MapID = 149
   },
-  [1333] = {id = 1333, Content = "stop_other"},
+  [1333] = {
+    id = 1333,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1334] = {
     id = 1334,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1335] = {
     id = 1335,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1336] = {
     id = 1336,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1337] = {
     id = 1337,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1338] = {
     id = 1338,
-    Params = Table_MapStep_t.Params[823]
+    Params = Table_MapStep_t.Params[823],
+    MapID = 149
   },
   [1339] = {
     id = 1339,
-    Params = Table_MapStep_t.Params[824]
+    Params = Table_MapStep_t.Params[824],
+    MapID = 149
   },
   [1340] = {
     id = 1340,
-    Params = Table_MapStep_t.Params[825]
+    Params = Table_MapStep_t.Params[825],
+    MapID = 149
   },
   [1341] = {
     id = 1341,
-    Params = Table_MapStep_t.Params[826]
+    Params = Table_MapStep_t.Params[826],
+    MapID = 149
   },
   [1342] = {
     id = 1342,
-    Params = Table_MapStep_t.Params[827]
+    Params = Table_MapStep_t.Params[827],
+    MapID = 149
   },
   [1343] = {
     id = 1343,
-    Params = Table_MapStep_t.Params[828]
+    Params = Table_MapStep_t.Params[828],
+    MapID = 149
   },
   [1344] = {
     id = 1344,
-    Params = Table_MapStep_t.Params[829]
+    Params = Table_MapStep_t.Params[829],
+    MapID = 149
   },
   [1345] = {
     id = 1345,
-    Params = Table_MapStep_t.Params[830]
+    Params = Table_MapStep_t.Params[830],
+    MapID = 149
   },
   [1346] = {
     id = 1346,
-    Params = Table_MapStep_t.Params[831]
+    Params = Table_MapStep_t.Params[831],
+    MapID = 149
   },
   [1347] = {
     id = 1347,
     Content = "killall",
-    Params = Table_MapStep_t.Params[832]
+    Params = Table_MapStep_t.Params[832],
+    MapID = 149
   },
-  [1348] = {id = 1348, Content = "stop_other"},
+  [1348] = {
+    id = 1348,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1349] = {
     id = 1349,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1350] = {
     id = 1350,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1351] = {
     id = 1351,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1352] = {
     id = 1352,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1353] = {
     id = 1353,
-    Params = Table_MapStep_t.Params[833]
+    Params = Table_MapStep_t.Params[833],
+    MapID = 149
   },
   [1354] = {
     id = 1354,
-    Params = Table_MapStep_t.Params[834]
+    Params = Table_MapStep_t.Params[834],
+    MapID = 149
   },
   [1355] = {
     id = 1355,
-    Params = Table_MapStep_t.Params[835]
+    Params = Table_MapStep_t.Params[835],
+    MapID = 149
   },
   [1356] = {
     id = 1356,
-    Params = Table_MapStep_t.Params[836]
+    Params = Table_MapStep_t.Params[836],
+    MapID = 149
   },
   [1357] = {
     id = 1357,
-    Params = Table_MapStep_t.Params[837]
+    Params = Table_MapStep_t.Params[837],
+    MapID = 149
   },
   [1358] = {
     id = 1358,
-    Params = Table_MapStep_t.Params[838]
+    Params = Table_MapStep_t.Params[838],
+    MapID = 149
   },
   [1359] = {
     id = 1359,
-    Params = Table_MapStep_t.Params[839]
+    Params = Table_MapStep_t.Params[839],
+    MapID = 149
   },
   [1360] = {
     id = 1360,
-    Params = Table_MapStep_t.Params[840]
+    Params = Table_MapStep_t.Params[840],
+    MapID = 149
   },
   [1361] = {
     id = 1361,
-    Params = Table_MapStep_t.Params[841]
+    Params = Table_MapStep_t.Params[841],
+    MapID = 149
   },
   [1362] = {
     id = 1362,
-    Params = Table_MapStep_t.Params[842]
+    Params = Table_MapStep_t.Params[842],
+    MapID = 149
   },
   [1363] = {
     id = 1363,
-    Params = Table_MapStep_t.Params[841]
+    Params = Table_MapStep_t.Params[841],
+    MapID = 149
   },
   [1364] = {
     id = 1364,
-    Params = Table_MapStep_t.Params[843]
+    Params = Table_MapStep_t.Params[843],
+    MapID = 149
   },
   [1365] = {
     id = 1365,
     Content = "killall",
-    Params = Table_MapStep_t.Params[844]
+    Params = Table_MapStep_t.Params[844],
+    MapID = 149
   },
-  [1366] = {id = 1366, Content = "stop_other"},
+  [1366] = {
+    id = 1366,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1367] = {
     id = 1367,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1368] = {
     id = 1368,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1369] = {
     id = 1369,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1370] = {
     id = 1370,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1371] = {
     id = 1371,
-    Params = Table_MapStep_t.Params[845]
+    Params = Table_MapStep_t.Params[845],
+    MapID = 149
   },
   [1372] = {
     id = 1372,
-    Params = Table_MapStep_t.Params[846]
+    Params = Table_MapStep_t.Params[846],
+    MapID = 149
   },
   [1373] = {
     id = 1373,
-    Params = Table_MapStep_t.Params[847]
+    Params = Table_MapStep_t.Params[847],
+    MapID = 149
   },
   [1374] = {
     id = 1374,
-    Params = Table_MapStep_t.Params[848]
+    Params = Table_MapStep_t.Params[848],
+    MapID = 149
   },
   [1375] = {
     id = 1375,
-    Params = Table_MapStep_t.Params[849]
+    Params = Table_MapStep_t.Params[849],
+    MapID = 149
   },
   [1376] = {
     id = 1376,
-    Params = Table_MapStep_t.Params[850]
+    Params = Table_MapStep_t.Params[850],
+    MapID = 149
   },
   [1377] = {
     id = 1377,
-    Params = Table_MapStep_t.Params[851]
+    Params = Table_MapStep_t.Params[851],
+    MapID = 149
   },
   [1378] = {
     id = 1378,
-    Params = Table_MapStep_t.Params[852]
+    Params = Table_MapStep_t.Params[852],
+    MapID = 149
   },
   [1379] = {
     id = 1379,
-    Params = Table_MapStep_t.Params[853]
+    Params = Table_MapStep_t.Params[853],
+    MapID = 149
   },
   [1380] = {
     id = 1380,
     Content = "killall",
-    Params = Table_MapStep_t.Params[854]
+    Params = Table_MapStep_t.Params[854],
+    MapID = 149
   },
-  [1381] = {id = 1381, Content = "stop_other"},
+  [1381] = {
+    id = 1381,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1382] = {
     id = 1382,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1383] = {
     id = 1383,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1384] = {
     id = 1384,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1385] = {
     id = 1385,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1386] = {
     id = 1386,
-    Params = Table_MapStep_t.Params[855]
+    Params = Table_MapStep_t.Params[855],
+    MapID = 149
   },
   [1387] = {
     id = 1387,
-    Params = Table_MapStep_t.Params[856]
+    Params = Table_MapStep_t.Params[856],
+    MapID = 149
   },
   [1388] = {
     id = 1388,
-    Params = Table_MapStep_t.Params[857]
+    Params = Table_MapStep_t.Params[857],
+    MapID = 149
   },
   [1389] = {
     id = 1389,
-    Params = Table_MapStep_t.Params[858]
+    Params = Table_MapStep_t.Params[858],
+    MapID = 149
   },
   [1390] = {
     id = 1390,
-    Params = Table_MapStep_t.Params[859]
+    Params = Table_MapStep_t.Params[859],
+    MapID = 149
   },
   [1391] = {
     id = 1391,
-    Params = Table_MapStep_t.Params[860]
+    Params = Table_MapStep_t.Params[860],
+    MapID = 149
   },
   [1392] = {
     id = 1392,
-    Params = Table_MapStep_t.Params[861]
+    Params = Table_MapStep_t.Params[861],
+    MapID = 149
   },
   [1393] = {
     id = 1393,
-    Params = Table_MapStep_t.Params[862]
+    Params = Table_MapStep_t.Params[862],
+    MapID = 149
   },
   [1394] = {
     id = 1394,
-    Params = Table_MapStep_t.Params[863]
+    Params = Table_MapStep_t.Params[863],
+    MapID = 149
   },
   [1395] = {
     id = 1395,
-    Params = Table_MapStep_t.Params[864]
+    Params = Table_MapStep_t.Params[864],
+    MapID = 149
   },
   [1396] = {
     id = 1396,
-    Params = Table_MapStep_t.Params[865]
+    Params = Table_MapStep_t.Params[865],
+    MapID = 149
   },
   [1397] = {
     id = 1397,
     Content = "killall",
-    Params = Table_MapStep_t.Params[866]
+    Params = Table_MapStep_t.Params[866],
+    MapID = 149
   },
-  [1398] = {id = 1398, Content = "stop_other"},
+  [1398] = {
+    id = 1398,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1399] = {
     id = 1399,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1400] = {
     id = 1400,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1401] = {
     id = 1401,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1402] = {
     id = 1402,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1403] = {
     id = 1403,
-    Params = Table_MapStep_t.Params[867]
+    Params = Table_MapStep_t.Params[867],
+    MapID = 149
   },
   [1404] = {
     id = 1404,
-    Params = Table_MapStep_t.Params[868]
+    Params = Table_MapStep_t.Params[868],
+    MapID = 149
   },
   [1405] = {
     id = 1405,
-    Params = Table_MapStep_t.Params[869]
+    Params = Table_MapStep_t.Params[869],
+    MapID = 149
   },
   [1406] = {
     id = 1406,
-    Params = Table_MapStep_t.Params[870]
+    Params = Table_MapStep_t.Params[870],
+    MapID = 149
   },
   [1407] = {
     id = 1407,
-    Params = Table_MapStep_t.Params[871]
+    Params = Table_MapStep_t.Params[871],
+    MapID = 149
   },
   [1408] = {
     id = 1408,
-    Params = Table_MapStep_t.Params[872]
+    Params = Table_MapStep_t.Params[872],
+    MapID = 149
   },
   [1409] = {
     id = 1409,
-    Params = Table_MapStep_t.Params[873]
+    Params = Table_MapStep_t.Params[873],
+    MapID = 149
   },
   [1410] = {
     id = 1410,
-    Params = Table_MapStep_t.Params[874]
+    Params = Table_MapStep_t.Params[874],
+    MapID = 149
   },
   [1411] = {
     id = 1411,
     Content = "killall",
-    Params = Table_MapStep_t.Params[875]
+    Params = Table_MapStep_t.Params[875],
+    MapID = 149
   },
-  [1412] = {id = 1412, Content = "stop_other"},
+  [1412] = {
+    id = 1412,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1413] = {
     id = 1413,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1414] = {
     id = 1414,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1415] = {
     id = 1415,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1416] = {
     id = 1416,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1417] = {
     id = 1417,
-    Params = Table_MapStep_t.Params[876]
+    Params = Table_MapStep_t.Params[876],
+    MapID = 149
   },
   [1418] = {
     id = 1418,
-    Params = Table_MapStep_t.Params[877]
+    Params = Table_MapStep_t.Params[877],
+    MapID = 149
   },
   [1419] = {
     id = 1419,
-    Params = Table_MapStep_t.Params[878]
+    Params = Table_MapStep_t.Params[878],
+    MapID = 149
   },
   [1420] = {
     id = 1420,
-    Params = Table_MapStep_t.Params[879]
+    Params = Table_MapStep_t.Params[879],
+    MapID = 149
   },
   [1421] = {
     id = 1421,
-    Params = Table_MapStep_t.Params[880]
+    Params = Table_MapStep_t.Params[880],
+    MapID = 149
   },
   [1422] = {
     id = 1422,
-    Params = Table_MapStep_t.Params[881]
+    Params = Table_MapStep_t.Params[881],
+    MapID = 149
   },
   [1423] = {
     id = 1423,
-    Params = Table_MapStep_t.Params[882]
+    Params = Table_MapStep_t.Params[882],
+    MapID = 149
   },
   [1424] = {
     id = 1424,
-    Params = Table_MapStep_t.Params[883]
+    Params = Table_MapStep_t.Params[883],
+    MapID = 149
   },
   [1425] = {
     id = 1425,
-    Params = Table_MapStep_t.Params[884]
+    Params = Table_MapStep_t.Params[884],
+    MapID = 149
   },
   [1426] = {
     id = 1426,
     Content = "killall",
-    Params = Table_MapStep_t.Params[885]
+    Params = Table_MapStep_t.Params[885],
+    MapID = 149
   },
-  [1427] = {id = 1427, Content = "stop_other"},
+  [1427] = {
+    id = 1427,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1428] = {
     id = 1428,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1429] = {
     id = 1429,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1430] = {
     id = 1430,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1431] = {
     id = 1431,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1432] = {
     id = 1432,
-    Params = Table_MapStep_t.Params[886]
+    Params = Table_MapStep_t.Params[886],
+    MapID = 149
   },
   [1433] = {
     id = 1433,
-    Params = Table_MapStep_t.Params[887]
+    Params = Table_MapStep_t.Params[887],
+    MapID = 149
   },
   [1434] = {
     id = 1434,
-    Params = Table_MapStep_t.Params[888]
+    Params = Table_MapStep_t.Params[888],
+    MapID = 149
   },
   [1435] = {
     id = 1435,
-    Params = Table_MapStep_t.Params[889]
+    Params = Table_MapStep_t.Params[889],
+    MapID = 149
   },
   [1436] = {
     id = 1436,
-    Params = Table_MapStep_t.Params[890]
+    Params = Table_MapStep_t.Params[890],
+    MapID = 149
   },
   [1437] = {
     id = 1437,
-    Params = Table_MapStep_t.Params[891]
+    Params = Table_MapStep_t.Params[891],
+    MapID = 149
   },
   [1438] = {
     id = 1438,
-    Params = Table_MapStep_t.Params[892]
+    Params = Table_MapStep_t.Params[892],
+    MapID = 149
   },
   [1439] = {
     id = 1439,
-    Params = Table_MapStep_t.Params[893]
+    Params = Table_MapStep_t.Params[893],
+    MapID = 149
   },
   [1440] = {
     id = 1440,
-    Params = Table_MapStep_t.Params[894]
+    Params = Table_MapStep_t.Params[894],
+    MapID = 149
   },
   [1441] = {
     id = 1441,
     Content = "killall",
-    Params = Table_MapStep_t.Params[895]
+    Params = Table_MapStep_t.Params[895],
+    MapID = 149
   },
-  [1442] = {id = 1442, Content = "stop_other"},
+  [1442] = {
+    id = 1442,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1443] = {
     id = 1443,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1444] = {
     id = 1444,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1445] = {
     id = 1445,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1446] = {
     id = 1446,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1447] = {
     id = 1447,
-    Params = Table_MapStep_t.Params[896]
+    Params = Table_MapStep_t.Params[896],
+    MapID = 149
   },
   [1448] = {
     id = 1448,
-    Params = Table_MapStep_t.Params[897]
+    Params = Table_MapStep_t.Params[897],
+    MapID = 149
   },
   [1449] = {
     id = 1449,
-    Params = Table_MapStep_t.Params[898]
+    Params = Table_MapStep_t.Params[898],
+    MapID = 149
   },
   [1450] = {
     id = 1450,
-    Params = Table_MapStep_t.Params[899]
+    Params = Table_MapStep_t.Params[899],
+    MapID = 149
   },
   [1451] = {
     id = 1451,
-    Params = Table_MapStep_t.Params[900]
+    Params = Table_MapStep_t.Params[900],
+    MapID = 149
   },
   [1452] = {
     id = 1452,
-    Params = Table_MapStep_t.Params[901]
+    Params = Table_MapStep_t.Params[901],
+    MapID = 149
   },
   [1453] = {
     id = 1453,
-    Params = Table_MapStep_t.Params[902]
+    Params = Table_MapStep_t.Params[902],
+    MapID = 149
   },
   [1454] = {
     id = 1454,
-    Params = Table_MapStep_t.Params[903]
+    Params = Table_MapStep_t.Params[903],
+    MapID = 149
   },
   [1455] = {
     id = 1455,
-    Params = Table_MapStep_t.Params[904]
+    Params = Table_MapStep_t.Params[904],
+    MapID = 149
   },
   [1456] = {
     id = 1456,
-    Params = Table_MapStep_t.Params[905]
+    Params = Table_MapStep_t.Params[905],
+    MapID = 149
   },
   [1457] = {
     id = 1457,
     Content = "killall",
-    Params = Table_MapStep_t.Params[906]
+    Params = Table_MapStep_t.Params[906],
+    MapID = 149
   },
-  [1458] = {id = 1458, Content = "stop_other"},
+  [1458] = {
+    id = 1458,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1459] = {
     id = 1459,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1460] = {
     id = 1460,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1461] = {
     id = 1461,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1462] = {
     id = 1462,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1463] = {
     id = 1463,
-    Params = Table_MapStep_t.Params[907]
+    Params = Table_MapStep_t.Params[907],
+    MapID = 149
   },
   [1464] = {
     id = 1464,
     Content = "killall",
-    Params = Table_MapStep_t.Params[908]
+    Params = Table_MapStep_t.Params[908],
+    MapID = 149
   },
-  [1465] = {id = 1465, Content = "stop_other"},
+  [1465] = {
+    id = 1465,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1466] = {
     id = 1466,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1467] = {
     id = 1467,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1468] = {
     id = 1468,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1469] = {
     id = 1469,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1470] = {
     id = 1470,
-    Params = Table_MapStep_t.Params[909]
+    Params = Table_MapStep_t.Params[909],
+    MapID = 149
   },
   [1471] = {
     id = 1471,
     Content = "killall",
-    Params = Table_MapStep_t.Params[910]
+    Params = Table_MapStep_t.Params[910],
+    MapID = 149
   },
-  [1472] = {id = 1472, Content = "stop_other"},
+  [1472] = {
+    id = 1472,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1473] = {
     id = 1473,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1474] = {
     id = 1474,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1475] = {
     id = 1475,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1476] = {
     id = 1476,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1477] = {
     id = 1477,
-    Params = Table_MapStep_t.Params[911]
+    Params = Table_MapStep_t.Params[911],
+    MapID = 149
   },
   [1478] = {
     id = 1478,
-    Params = Table_MapStep_t.Params[912]
+    Params = Table_MapStep_t.Params[912],
+    MapID = 149
   },
   [1479] = {
     id = 1479,
-    Params = Table_MapStep_t.Params[913]
+    Params = Table_MapStep_t.Params[913],
+    MapID = 149
   },
   [1480] = {
     id = 1480,
-    Params = Table_MapStep_t.Params[914]
+    Params = Table_MapStep_t.Params[914],
+    MapID = 149
   },
   [1481] = {
     id = 1481,
-    Params = Table_MapStep_t.Params[915]
+    Params = Table_MapStep_t.Params[915],
+    MapID = 149
   },
   [1482] = {
     id = 1482,
-    Params = Table_MapStep_t.Params[916]
+    Params = Table_MapStep_t.Params[916],
+    MapID = 149
   },
   [1483] = {
     id = 1483,
-    Params = Table_MapStep_t.Params[917]
+    Params = Table_MapStep_t.Params[917],
+    MapID = 149
   },
   [1484] = {
     id = 1484,
-    Params = Table_MapStep_t.Params[918]
+    Params = Table_MapStep_t.Params[918],
+    MapID = 149
   },
   [1485] = {
     id = 1485,
-    Params = Table_MapStep_t.Params[919]
+    Params = Table_MapStep_t.Params[919],
+    MapID = 149
   },
   [1486] = {
     id = 1486,
-    Params = Table_MapStep_t.Params[920]
+    Params = Table_MapStep_t.Params[920],
+    MapID = 149
   },
   [1487] = {
     id = 1487,
     Content = "killall",
-    Params = Table_MapStep_t.Params[921]
+    Params = Table_MapStep_t.Params[921],
+    MapID = 149
   },
-  [1488] = {id = 1488, Content = "stop_other"},
+  [1488] = {
+    id = 1488,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1489] = {
     id = 1489,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1490] = {
     id = 1490,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1491] = {
     id = 1491,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1492] = {
     id = 1492,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1493] = {
     id = 1493,
     Content = "killmonster",
-    Params = Table_MapStep_t.Params[922]
+    Params = Table_MapStep_t.Params[922],
+    MapID = 149
   },
   [1494] = {
     id = 1494,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[26]
+    Params = Table_MapStep_t.Params[26],
+    MapID = 149
   },
   [1495] = {
     id = 1495,
-    Params = Table_MapStep_t.Params[923]
+    Params = Table_MapStep_t.Params[923],
+    MapID = 149
   },
   [1496] = {
     id = 1496,
-    Params = Table_MapStep_t.Params[924]
+    Params = Table_MapStep_t.Params[924],
+    MapID = 149
   },
   [1497] = {
     id = 1497,
-    Params = Table_MapStep_t.Params[925]
+    Params = Table_MapStep_t.Params[925],
+    MapID = 149
   },
   [1498] = {
     id = 1498,
-    Params = Table_MapStep_t.Params[926]
+    Params = Table_MapStep_t.Params[926],
+    MapID = 149
   },
   [1499] = {
     id = 1499,
-    Params = Table_MapStep_t.Params[927]
+    Params = Table_MapStep_t.Params[927],
+    MapID = 149
   },
   [1500] = {
     id = 1500,
-    Params = Table_MapStep_t.Params[928]
+    Params = Table_MapStep_t.Params[928],
+    MapID = 149
   },
   [1501] = {
     id = 1501,
-    Params = Table_MapStep_t.Params[929]
+    Params = Table_MapStep_t.Params[929],
+    MapID = 149
   },
   [1502] = {
     id = 1502,
-    Params = Table_MapStep_t.Params[930]
+    Params = Table_MapStep_t.Params[930],
+    MapID = 149
   },
   [1503] = {
     id = 1503,
-    Params = Table_MapStep_t.Params[931]
+    Params = Table_MapStep_t.Params[931],
+    MapID = 149
   },
   [1504] = {
     id = 1504,
-    Params = Table_MapStep_t.Params[932]
+    Params = Table_MapStep_t.Params[932],
+    MapID = 149
   },
   [1505] = {
     id = 1505,
     Content = "killall",
-    Params = Table_MapStep_t.Params[933]
+    Params = Table_MapStep_t.Params[933],
+    MapID = 149
   },
   [1506] = {
     id = 1506,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[26]
+    Params = Table_MapStep_t.Params[26],
+    MapID = 149
   },
-  [1507] = {id = 1507, Content = "stop_other"},
+  [1507] = {
+    id = 1507,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1508] = {
     id = 1508,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1509] = {
     id = 1509,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1510] = {
     id = 1510,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1511] = {
     id = 1511,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1512] = {
     id = 1512,
-    Params = Table_MapStep_t.Params[934]
+    Params = Table_MapStep_t.Params[934],
+    MapID = 149
   },
   [1513] = {
     id = 1513,
-    Params = Table_MapStep_t.Params[935]
+    Params = Table_MapStep_t.Params[935],
+    MapID = 149
   },
   [1514] = {
     id = 1514,
-    Params = Table_MapStep_t.Params[936]
+    Params = Table_MapStep_t.Params[936],
+    MapID = 149
   },
   [1515] = {
     id = 1515,
-    Params = Table_MapStep_t.Params[937]
+    Params = Table_MapStep_t.Params[937],
+    MapID = 149
   },
   [1516] = {
     id = 1516,
-    Params = Table_MapStep_t.Params[938]
+    Params = Table_MapStep_t.Params[938],
+    MapID = 149
   },
   [1517] = {
     id = 1517,
-    Params = Table_MapStep_t.Params[939]
+    Params = Table_MapStep_t.Params[939],
+    MapID = 149
   },
   [1518] = {
     id = 1518,
-    Params = Table_MapStep_t.Params[940]
+    Params = Table_MapStep_t.Params[940],
+    MapID = 149
   },
   [1519] = {
     id = 1519,
-    Params = Table_MapStep_t.Params[941]
+    Params = Table_MapStep_t.Params[941],
+    MapID = 149
   },
   [1520] = {
     id = 1520,
     Content = "killall",
-    Params = Table_MapStep_t.Params[942]
+    Params = Table_MapStep_t.Params[942],
+    MapID = 149
   },
-  [1521] = {id = 1521, Content = "stop_other"},
+  [1521] = {
+    id = 1521,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1522] = {
     id = 1522,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1523] = {
     id = 1523,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1524] = {
     id = 1524,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1525] = {
     id = 1525,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1526] = {
     id = 1526,
-    Params = Table_MapStep_t.Params[943]
+    Params = Table_MapStep_t.Params[943],
+    MapID = 149
   },
   [1527] = {
     id = 1527,
-    Params = Table_MapStep_t.Params[944]
+    Params = Table_MapStep_t.Params[944],
+    MapID = 149
   },
   [1528] = {
     id = 1528,
-    Params = Table_MapStep_t.Params[945]
+    Params = Table_MapStep_t.Params[945],
+    MapID = 149
   },
   [1529] = {
     id = 1529,
-    Params = Table_MapStep_t.Params[946]
+    Params = Table_MapStep_t.Params[946],
+    MapID = 149
   },
   [1530] = {
     id = 1530,
-    Params = Table_MapStep_t.Params[947]
+    Params = Table_MapStep_t.Params[947],
+    MapID = 149
   },
   [1531] = {
     id = 1531,
-    Params = Table_MapStep_t.Params[948]
+    Params = Table_MapStep_t.Params[948],
+    MapID = 149
   },
   [1532] = {
     id = 1532,
-    Params = Table_MapStep_t.Params[949]
+    Params = Table_MapStep_t.Params[949],
+    MapID = 149
   },
   [1533] = {
     id = 1533,
-    Params = Table_MapStep_t.Params[950]
+    Params = Table_MapStep_t.Params[950],
+    MapID = 149
   },
   [1534] = {
     id = 1534,
-    Params = Table_MapStep_t.Params[951]
+    Params = Table_MapStep_t.Params[951],
+    MapID = 149
   },
   [1535] = {
     id = 1535,
-    Params = Table_MapStep_t.Params[952]
+    Params = Table_MapStep_t.Params[952],
+    MapID = 149
   },
   [1536] = {
     id = 1536,
-    Params = Table_MapStep_t.Params[953]
+    Params = Table_MapStep_t.Params[953],
+    MapID = 149
   },
   [1537] = {
     id = 1537,
-    Params = Table_MapStep_t.Params[954]
+    Params = Table_MapStep_t.Params[954],
+    MapID = 149
   },
   [1538] = {
     id = 1538,
     Content = "killall",
-    Params = Table_MapStep_t.Params[955]
+    Params = Table_MapStep_t.Params[955],
+    MapID = 149
   },
-  [1539] = {id = 1539, Content = "stop_other"},
+  [1539] = {
+    id = 1539,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1540] = {
     id = 1540,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1541] = {
     id = 1541,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1542] = {
     id = 1542,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1543] = {
     id = 1543,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1544] = {
     id = 1544,
     Content = "killmonster",
-    Params = Table_MapStep_t.Params[956]
+    Params = Table_MapStep_t.Params[956],
+    MapID = 149
   },
   [1545] = {
     id = 1545,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[26]
+    Params = Table_MapStep_t.Params[26],
+    MapID = 149
   },
   [1546] = {
     id = 1546,
     Content = "killmonster",
-    Params = Table_MapStep_t.Params[957]
+    Params = Table_MapStep_t.Params[957],
+    MapID = 149
   },
   [1547] = {
     id = 1547,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[46]
+    Params = Table_MapStep_t.Params[46],
+    MapID = 149
   },
   [1548] = {
     id = 1548,
-    Params = Table_MapStep_t.Params[958]
+    Params = Table_MapStep_t.Params[958],
+    MapID = 149
   },
   [1549] = {
     id = 1549,
     Content = "killall",
-    Params = Table_MapStep_t.Params[959]
+    Params = Table_MapStep_t.Params[959],
+    MapID = 149
   },
-  [1550] = {id = 1550, Content = "stop_other"},
+  [1550] = {
+    id = 1550,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1551] = {
     id = 1551,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1552] = {
     id = 1552,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1553] = {
     id = 1553,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1554] = {
     id = 1554,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1555] = {
     id = 1555,
-    Params = Table_MapStep_t.Params[960]
+    Params = Table_MapStep_t.Params[960],
+    MapID = 149
   },
   [1556] = {
     id = 1556,
     Content = "killall",
-    Params = Table_MapStep_t.Params[961]
+    Params = Table_MapStep_t.Params[961],
+    MapID = 149
   },
-  [1557] = {id = 1557, Content = "stop_other"},
+  [1557] = {
+    id = 1557,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1558] = {
     id = 1558,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1559] = {
     id = 1559,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1560] = {
     id = 1560,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1561] = {
     id = 1561,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1562] = {
     id = 1562,
-    Params = Table_MapStep_t.Params[962]
+    Params = Table_MapStep_t.Params[962],
+    MapID = 149
   },
   [1563] = {
     id = 1563,
     Content = "killall",
-    Params = Table_MapStep_t.Params[963]
+    Params = Table_MapStep_t.Params[963],
+    MapID = 149
   },
-  [1564] = {id = 1564, Content = "stop_other"},
+  [1564] = {
+    id = 1564,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1565] = {
     id = 1565,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1566] = {
     id = 1566,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1567] = {
     id = 1567,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1568] = {
     id = 1568,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1569] = {
     id = 1569,
     Content = "set_patrol_route",
-    Params = Table_MapStep_t.Params[964]
+    Params = Table_MapStep_t.Params[964],
+    MapID = 149
   },
   [1570] = {
     id = 1570,
-    Params = Table_MapStep_t.Params[965]
+    Params = Table_MapStep_t.Params[965],
+    MapID = 149
   },
   [1571] = {
     id = 1571,
-    Params = Table_MapStep_t.Params[966]
+    Params = Table_MapStep_t.Params[966],
+    MapID = 149
   },
   [1572] = {
     id = 1572,
-    Params = Table_MapStep_t.Params[967]
+    Params = Table_MapStep_t.Params[967],
+    MapID = 149
   },
   [1573] = {
     id = 1573,
-    Params = Table_MapStep_t.Params[968]
+    Params = Table_MapStep_t.Params[968],
+    MapID = 149
   },
   [1574] = {
     id = 1574,
-    Params = Table_MapStep_t.Params[969]
+    Params = Table_MapStep_t.Params[969],
+    MapID = 149
   },
   [1575] = {
     id = 1575,
-    Params = Table_MapStep_t.Params[970]
+    Params = Table_MapStep_t.Params[970],
+    MapID = 149
   },
   [1576] = {
     id = 1576,
     Content = "killall",
-    Params = Table_MapStep_t.Params[971]
+    Params = Table_MapStep_t.Params[971],
+    MapID = 149
   },
-  [1577] = {id = 1577, Content = "stop_other"},
+  [1577] = {
+    id = 1577,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1578] = {
     id = 1578,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1579] = {
     id = 1579,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1580] = {
     id = 1580,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1581] = {
     id = 1581,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1582] = {
     id = 1582,
-    Params = Table_MapStep_t.Params[972]
+    Params = Table_MapStep_t.Params[972],
+    MapID = 149
   },
   [1583] = {
     id = 1583,
     Content = "killall",
-    Params = Table_MapStep_t.Params[973]
+    Params = Table_MapStep_t.Params[973],
+    MapID = 149
   },
-  [1584] = {id = 1584, Content = "stop_other"},
+  [1584] = {
+    id = 1584,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1585] = {
     id = 1585,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1586] = {
     id = 1586,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1587] = {
     id = 1587,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1588] = {
     id = 1588,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1589] = {
     id = 1589,
     Content = "set_patrol_route",
-    Params = Table_MapStep_t.Params[974]
+    Params = Table_MapStep_t.Params[974],
+    MapID = 149
   },
   [1590] = {
     id = 1590,
-    Params = Table_MapStep_t.Params[975]
+    Params = Table_MapStep_t.Params[975],
+    MapID = 149
   },
   [1591] = {
     id = 1591,
-    Params = Table_MapStep_t.Params[976]
+    Params = Table_MapStep_t.Params[976],
+    MapID = 149
   },
   [1592] = {
     id = 1592,
-    Params = Table_MapStep_t.Params[977]
+    Params = Table_MapStep_t.Params[977],
+    MapID = 149
   },
   [1593] = {
     id = 1593,
     Content = "killall",
-    Params = Table_MapStep_t.Params[978]
+    Params = Table_MapStep_t.Params[978],
+    MapID = 149
   },
-  [1594] = {id = 1594, Content = "stop_other"},
+  [1594] = {
+    id = 1594,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1595] = {
     id = 1595,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1596] = {
     id = 1596,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1597] = {
     id = 1597,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1598] = {
     id = 1598,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1599] = {
     id = 1599,
-    Params = Table_MapStep_t.Params[979]
+    Params = Table_MapStep_t.Params[979],
+    MapID = 149
   },
   [1600] = {
     id = 1600,
     Content = "killall",
-    Params = Table_MapStep_t.Params[980]
+    Params = Table_MapStep_t.Params[980],
+    MapID = 149
   },
-  [1601] = {id = 1601, Content = "stop_other"},
+  [1601] = {
+    id = 1601,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1602] = {
     id = 1602,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1603] = {
     id = 1603,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1604] = {
     id = 1604,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1605] = {
     id = 1605,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1606] = {
     id = 1606,
     Content = "set_patrol_route",
-    Params = Table_MapStep_t.Params[981]
+    Params = Table_MapStep_t.Params[981],
+    MapID = 149
   },
   [1607] = {
     id = 1607,
-    Params = Table_MapStep_t.Params[982]
+    Params = Table_MapStep_t.Params[982],
+    MapID = 149
   },
   [1608] = {
     id = 1608,
-    Params = Table_MapStep_t.Params[983]
+    Params = Table_MapStep_t.Params[983],
+    MapID = 149
   },
   [1609] = {
     id = 1609,
-    Params = Table_MapStep_t.Params[984]
+    Params = Table_MapStep_t.Params[984],
+    MapID = 149
   },
   [1610] = {
     id = 1610,
-    Params = Table_MapStep_t.Params[985]
+    Params = Table_MapStep_t.Params[985],
+    MapID = 149
   },
   [1611] = {
     id = 1611,
     Content = "killall",
-    Params = Table_MapStep_t.Params[986]
+    Params = Table_MapStep_t.Params[986],
+    MapID = 149
   },
-  [1612] = {id = 1612, Content = "stop_other"},
+  [1612] = {
+    id = 1612,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1613] = {
     id = 1613,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1614] = {
     id = 1614,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1615] = {
     id = 1615,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1616] = {
     id = 1616,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1617] = {
     id = 1617,
     Content = "set_patrol_route",
-    Params = Table_MapStep_t.Params[987]
+    Params = Table_MapStep_t.Params[987],
+    MapID = 149
   },
   [1618] = {
     id = 1618,
-    Params = Table_MapStep_t.Params[988]
+    Params = Table_MapStep_t.Params[988],
+    MapID = 149
   },
   [1619] = {
     id = 1619,
-    Params = Table_MapStep_t.Params[989]
+    Params = Table_MapStep_t.Params[989],
+    MapID = 149
   },
   [1620] = {
     id = 1620,
-    Params = Table_MapStep_t.Params[990]
+    Params = Table_MapStep_t.Params[990],
+    MapID = 149
   },
   [1621] = {
     id = 1621,
     Content = "killall",
-    Params = Table_MapStep_t.Params[991]
+    Params = Table_MapStep_t.Params[991],
+    MapID = 149
   },
-  [1622] = {id = 1622, Content = "stop_other"},
+  [1622] = {
+    id = 1622,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1623] = {
     id = 1623,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1624] = {
     id = 1624,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1625] = {
     id = 1625,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1626] = {
     id = 1626,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1627] = {
     id = 1627,
     Content = "set_patrol_route",
-    Params = Table_MapStep_t.Params[992]
+    Params = Table_MapStep_t.Params[992],
+    MapID = 149
   },
   [1628] = {
     id = 1628,
-    Params = Table_MapStep_t.Params[993]
+    Params = Table_MapStep_t.Params[993],
+    MapID = 149
   },
   [1629] = {
     id = 1629,
-    Params = Table_MapStep_t.Params[994]
+    Params = Table_MapStep_t.Params[994],
+    MapID = 149
   },
   [1630] = {
     id = 1630,
-    Params = Table_MapStep_t.Params[995]
+    Params = Table_MapStep_t.Params[995],
+    MapID = 149
   },
   [1631] = {
     id = 1631,
-    Params = Table_MapStep_t.Params[996]
+    Params = Table_MapStep_t.Params[996],
+    MapID = 149
   },
   [1632] = {
     id = 1632,
     Content = "killall",
-    Params = Table_MapStep_t.Params[997]
+    Params = Table_MapStep_t.Params[997],
+    MapID = 149
   },
-  [1633] = {id = 1633, Content = "stop_other"},
+  [1633] = {
+    id = 1633,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1634] = {
     id = 1634,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1635] = {
     id = 1635,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1636] = {
     id = 1636,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1637] = {
     id = 1637,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1638] = {
     id = 1638,
     Content = "set_patrol_route",
-    Params = Table_MapStep_t.Params[998]
+    Params = Table_MapStep_t.Params[998],
+    MapID = 149
   },
   [1639] = {
     id = 1639,
-    Params = Table_MapStep_t.Params[999]
+    Params = Table_MapStep_t.Params[999],
+    MapID = 149
   },
   [1640] = {
     id = 1640,
-    Params = Table_MapStep_t.Params[1000]
+    Params = Table_MapStep_t.Params[1000],
+    MapID = 149
   },
   [1641] = {
     id = 1641,
-    Params = Table_MapStep_t.Params[1001]
+    Params = Table_MapStep_t.Params[1001],
+    MapID = 149
   },
   [1642] = {
     id = 1642,
-    Params = Table_MapStep_t.Params[1002]
+    Params = Table_MapStep_t.Params[1002],
+    MapID = 149
   },
   [1643] = {
     id = 1643,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1003]
+    Params = Table_MapStep_t.Params[1003],
+    MapID = 149
   },
-  [1644] = {id = 1644, Content = "stop_other"},
+  [1644] = {
+    id = 1644,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1645] = {
     id = 1645,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1646] = {
     id = 1646,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1647] = {
     id = 1647,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1648] = {
     id = 1648,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1649] = {
     id = 1649,
-    Params = Table_MapStep_t.Params[1004]
+    Params = Table_MapStep_t.Params[1004],
+    MapID = 149
   },
   [1650] = {
     id = 1650,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
-  [1651] = {id = 1651, Content = "stop_other"},
+  [1651] = {
+    id = 1651,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1652] = {
     id = 1652,
     Content = "wait",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1653] = {
     id = 1653,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[62]
+    Params = Table_MapStep_t.Params[62],
+    MapID = 149
   },
   [1654] = {
     id = 1654,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1655] = {
     id = 1655,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1656] = {
     id = 1656,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1657] = {
     id = 1657,
-    Params = Table_MapStep_t.Params[1005]
+    Params = Table_MapStep_t.Params[1005],
+    MapID = 149
   },
   [1658] = {
     id = 1658,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
-  [1659] = {id = 1659, Content = "stop_other"},
+  [1659] = {
+    id = 1659,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1660] = {
     id = 1660,
     Content = "wait",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1661] = {
     id = 1661,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[62]
+    Params = Table_MapStep_t.Params[62],
+    MapID = 149
   },
   [1662] = {
     id = 1662,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1663] = {
     id = 1663,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1664] = {
     id = 1664,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1665] = {
     id = 1665,
-    Params = Table_MapStep_t.Params[1006]
+    Params = Table_MapStep_t.Params[1006],
+    MapID = 149
   },
   [1666] = {
     id = 1666,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1667] = {
     id = 1667,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[190]
+    Params = Table_MapStep_t.Params[190],
+    MapID = 149
   },
   [1668] = {
     id = 1668,
-    Params = Table_MapStep_t.Params[1007]
+    Params = Table_MapStep_t.Params[1007],
+    MapID = 149
   },
   [1669] = {
     id = 1669,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1670] = {
     id = 1670,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[190]
+    Params = Table_MapStep_t.Params[190],
+    MapID = 149
   },
   [1671] = {
     id = 1671,
-    Params = Table_MapStep_t.Params[1008]
+    Params = Table_MapStep_t.Params[1008],
+    MapID = 149
   },
   [1672] = {
     id = 1672,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1673] = {
     id = 1673,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[190]
+    Params = Table_MapStep_t.Params[190],
+    MapID = 149
   },
   [1674] = {
     id = 1674,
     Content = "set_patrol_route",
-    Params = Table_MapStep_t.Params[1009]
+    Params = Table_MapStep_t.Params[1009],
+    MapID = 149
   },
   [1675] = {
     id = 1675,
-    Params = Table_MapStep_t.Params[1010]
+    Params = Table_MapStep_t.Params[1010],
+    MapID = 149
   },
   [1676] = {
     id = 1676,
-    Params = Table_MapStep_t.Params[1011]
+    Params = Table_MapStep_t.Params[1011],
+    MapID = 149
   },
   [1677] = {
     id = 1677,
-    Params = Table_MapStep_t.Params[1012]
+    Params = Table_MapStep_t.Params[1012],
+    MapID = 149
   },
   [1678] = {
     id = 1678,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1013]
+    Params = Table_MapStep_t.Params[1013],
+    MapID = 149
   },
-  [1679] = {id = 1679, Content = "stop_other"},
+  [1679] = {
+    id = 1679,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1680] = {
     id = 1680,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1681] = {
     id = 1681,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1682] = {
     id = 1682,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1683] = {
     id = 1683,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1684] = {
     id = 1684,
     Content = "set_patrol_route",
-    Params = Table_MapStep_t.Params[1014]
+    Params = Table_MapStep_t.Params[1014],
+    MapID = 149
   },
   [1685] = {
     id = 1685,
-    Params = Table_MapStep_t.Params[1015]
+    Params = Table_MapStep_t.Params[1015],
+    MapID = 149
   },
   [1686] = {
     id = 1686,
-    Params = Table_MapStep_t.Params[1016]
+    Params = Table_MapStep_t.Params[1016],
+    MapID = 149
   },
   [1687] = {
     id = 1687,
-    Params = Table_MapStep_t.Params[1017]
+    Params = Table_MapStep_t.Params[1017],
+    MapID = 149
   },
   [1688] = {
     id = 1688,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1018]
+    Params = Table_MapStep_t.Params[1018],
+    MapID = 149
   },
-  [1689] = {id = 1689, Content = "stop_other"},
+  [1689] = {
+    id = 1689,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1690] = {
     id = 1690,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1691] = {
     id = 1691,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1692] = {
     id = 1692,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1693] = {
     id = 1693,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1694] = {
     id = 1694,
     Content = "set_patrol_route",
-    Params = Table_MapStep_t.Params[1019]
+    Params = Table_MapStep_t.Params[1019],
+    MapID = 149
   },
   [1695] = {
     id = 1695,
-    Params = Table_MapStep_t.Params[1020]
+    Params = Table_MapStep_t.Params[1020],
+    MapID = 149
   },
   [1696] = {
     id = 1696,
-    Params = Table_MapStep_t.Params[1021]
+    Params = Table_MapStep_t.Params[1021],
+    MapID = 149
   },
   [1697] = {
     id = 1697,
-    Params = Table_MapStep_t.Params[1022]
+    Params = Table_MapStep_t.Params[1022],
+    MapID = 149
   },
   [1698] = {
     id = 1698,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1023]
+    Params = Table_MapStep_t.Params[1023],
+    MapID = 149
   },
-  [1699] = {id = 1699, Content = "stop_other"},
+  [1699] = {
+    id = 1699,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1700] = {
     id = 1700,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1701] = {
     id = 1701,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1702] = {
     id = 1702,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1703] = {
     id = 1703,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1704] = {
     id = 1704,
-    Params = Table_MapStep_t.Params[1024]
+    Params = Table_MapStep_t.Params[1024],
+    MapID = 149
   },
   [1705] = {
     id = 1705,
-    Params = Table_MapStep_t.Params[1025]
+    Params = Table_MapStep_t.Params[1025],
+    MapID = 149
   },
   [1706] = {
     id = 1706,
-    Params = Table_MapStep_t.Params[1026]
+    Params = Table_MapStep_t.Params[1026],
+    MapID = 149
   },
   [1707] = {
     id = 1707,
-    Params = Table_MapStep_t.Params[1027]
+    Params = Table_MapStep_t.Params[1027],
+    MapID = 149
   },
   [1708] = {
     id = 1708,
-    Params = Table_MapStep_t.Params[1028]
+    Params = Table_MapStep_t.Params[1028],
+    MapID = 149
   },
   [1709] = {
     id = 1709,
-    Params = Table_MapStep_t.Params[1029]
+    Params = Table_MapStep_t.Params[1029],
+    MapID = 149
   },
   [1710] = {
     id = 1710,
-    Params = Table_MapStep_t.Params[1030]
+    Params = Table_MapStep_t.Params[1030],
+    MapID = 149
   },
   [1711] = {
     id = 1711,
-    Params = Table_MapStep_t.Params[1031]
+    Params = Table_MapStep_t.Params[1031],
+    MapID = 149
   },
   [1712] = {
     id = 1712,
-    Params = Table_MapStep_t.Params[1032]
+    Params = Table_MapStep_t.Params[1032],
+    MapID = 149
   },
   [1713] = {
     id = 1713,
-    Params = Table_MapStep_t.Params[1033]
+    Params = Table_MapStep_t.Params[1033],
+    MapID = 149
   },
   [1714] = {
     id = 1714,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1034]
+    Params = Table_MapStep_t.Params[1034],
+    MapID = 149
   },
-  [1715] = {id = 1715, Content = "stop_other"},
+  [1715] = {
+    id = 1715,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1716] = {
     id = 1716,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1717] = {
     id = 1717,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1718] = {
     id = 1718,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1719] = {
     id = 1719,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1720] = {
     id = 1720,
-    Params = Table_MapStep_t.Params[1035]
+    Params = Table_MapStep_t.Params[1035],
+    MapID = 149
   },
   [1721] = {
     id = 1721,
-    Params = Table_MapStep_t.Params[1036]
+    Params = Table_MapStep_t.Params[1036],
+    MapID = 149
   },
   [1722] = {
     id = 1722,
-    Params = Table_MapStep_t.Params[1037]
+    Params = Table_MapStep_t.Params[1037],
+    MapID = 149
   },
   [1723] = {
     id = 1723,
-    Params = Table_MapStep_t.Params[1038]
+    Params = Table_MapStep_t.Params[1038],
+    MapID = 149
   },
   [1724] = {
     id = 1724,
-    Params = Table_MapStep_t.Params[1039]
+    Params = Table_MapStep_t.Params[1039],
+    MapID = 149
   },
   [1725] = {
     id = 1725,
-    Params = Table_MapStep_t.Params[1040]
+    Params = Table_MapStep_t.Params[1040],
+    MapID = 149
   },
   [1726] = {
     id = 1726,
-    Params = Table_MapStep_t.Params[1041]
+    Params = Table_MapStep_t.Params[1041],
+    MapID = 149
   },
   [1727] = {
     id = 1727,
-    Params = Table_MapStep_t.Params[1042]
+    Params = Table_MapStep_t.Params[1042],
+    MapID = 149
   },
   [1728] = {
     id = 1728,
-    Params = Table_MapStep_t.Params[1043]
+    Params = Table_MapStep_t.Params[1043],
+    MapID = 149
   },
   [1729] = {
     id = 1729,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1044]
+    Params = Table_MapStep_t.Params[1044],
+    MapID = 149
   },
-  [1730] = {id = 1730, Content = "stop_other"},
+  [1730] = {
+    id = 1730,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1731] = {
     id = 1731,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1732] = {
     id = 1732,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1733] = {
     id = 1733,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1734] = {
     id = 1734,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1735] = {
     id = 1735,
-    Params = Table_MapStep_t.Params[1045]
+    Params = Table_MapStep_t.Params[1045],
+    MapID = 149
   },
   [1736] = {
     id = 1736,
-    Params = Table_MapStep_t.Params[1046]
+    Params = Table_MapStep_t.Params[1046],
+    MapID = 149
   },
   [1737] = {
     id = 1737,
-    Params = Table_MapStep_t.Params[1047]
+    Params = Table_MapStep_t.Params[1047],
+    MapID = 149
   },
   [1738] = {
     id = 1738,
-    Params = Table_MapStep_t.Params[1048]
+    Params = Table_MapStep_t.Params[1048],
+    MapID = 149
   },
   [1739] = {
     id = 1739,
-    Params = Table_MapStep_t.Params[1049]
+    Params = Table_MapStep_t.Params[1049],
+    MapID = 149
   },
   [1740] = {
     id = 1740,
-    Params = Table_MapStep_t.Params[1050]
+    Params = Table_MapStep_t.Params[1050],
+    MapID = 149
   },
   [1741] = {
     id = 1741,
-    Params = Table_MapStep_t.Params[1051]
+    Params = Table_MapStep_t.Params[1051],
+    MapID = 149
   },
   [1742] = {
     id = 1742,
-    Params = Table_MapStep_t.Params[1052]
+    Params = Table_MapStep_t.Params[1052],
+    MapID = 149
   },
   [1743] = {
     id = 1743,
-    Params = Table_MapStep_t.Params[1053]
+    Params = Table_MapStep_t.Params[1053],
+    MapID = 149
   },
   [1744] = {
     id = 1744,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1054]
+    Params = Table_MapStep_t.Params[1054],
+    MapID = 149
   },
-  [1745] = {id = 1745, Content = "stop_other"},
+  [1745] = {
+    id = 1745,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1746] = {
     id = 1746,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1747] = {
     id = 1747,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1748] = {
     id = 1748,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1749] = {
     id = 1749,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1750] = {
     id = 1750,
-    Params = Table_MapStep_t.Params[1055]
+    Params = Table_MapStep_t.Params[1055],
+    MapID = 149
   },
   [1751] = {
     id = 1751,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1752] = {
     id = 1752,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[190]
+    Params = Table_MapStep_t.Params[190],
+    MapID = 149
   },
   [1753] = {
     id = 1753,
-    Params = Table_MapStep_t.Params[1056]
+    Params = Table_MapStep_t.Params[1056],
+    MapID = 149
   },
   [1754] = {
     id = 1754,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
-  [1755] = {id = 1755, Content = "stop_other"},
+  [1755] = {
+    id = 1755,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1756] = {
     id = 1756,
     Content = "wait",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1757] = {
     id = 1757,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[62]
+    Params = Table_MapStep_t.Params[62],
+    MapID = 149
   },
   [1758] = {
     id = 1758,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1759] = {
     id = 1759,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1760] = {
     id = 1760,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1761] = {
     id = 1761,
     Content = "set_patrol_route",
-    Params = Table_MapStep_t.Params[1057]
+    Params = Table_MapStep_t.Params[1057],
+    MapID = 149
   },
   [1762] = {
     id = 1762,
-    Params = Table_MapStep_t.Params[1058]
+    Params = Table_MapStep_t.Params[1058],
+    MapID = 149
   },
   [1763] = {
     id = 1763,
-    Params = Table_MapStep_t.Params[1059]
+    Params = Table_MapStep_t.Params[1059],
+    MapID = 149
   },
   [1764] = {
     id = 1764,
-    Params = Table_MapStep_t.Params[1060]
+    Params = Table_MapStep_t.Params[1060],
+    MapID = 149
   },
   [1765] = {
     id = 1765,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1061]
+    Params = Table_MapStep_t.Params[1061],
+    MapID = 149
   },
-  [1766] = {id = 1766, Content = "stop_other"},
+  [1766] = {
+    id = 1766,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1767] = {
     id = 1767,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1768] = {
     id = 1768,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1769] = {
     id = 1769,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1770] = {
     id = 1770,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1771] = {
     id = 1771,
     Content = "set_patrol_route",
-    Params = Table_MapStep_t.Params[1062]
+    Params = Table_MapStep_t.Params[1062],
+    MapID = 149
   },
   [1772] = {
     id = 1772,
-    Params = Table_MapStep_t.Params[1063]
+    Params = Table_MapStep_t.Params[1063],
+    MapID = 149
   },
   [1773] = {
     id = 1773,
-    Params = Table_MapStep_t.Params[1064]
+    Params = Table_MapStep_t.Params[1064],
+    MapID = 149
   },
   [1774] = {
     id = 1774,
-    Params = Table_MapStep_t.Params[1065]
+    Params = Table_MapStep_t.Params[1065],
+    MapID = 149
   },
   [1775] = {
     id = 1775,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1066]
+    Params = Table_MapStep_t.Params[1066],
+    MapID = 149
   },
-  [1776] = {id = 1776, Content = "stop_other"},
+  [1776] = {
+    id = 1776,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1777] = {
     id = 1777,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1778] = {
     id = 1778,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1779] = {
     id = 1779,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1780] = {
     id = 1780,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1781] = {
     id = 1781,
-    Params = Table_MapStep_t.Params[1067]
+    Params = Table_MapStep_t.Params[1067],
+    MapID = 149
   },
   [1782] = {
     id = 1782,
-    Params = Table_MapStep_t.Params[1068]
+    Params = Table_MapStep_t.Params[1068],
+    MapID = 149
   },
   [1783] = {
     id = 1783,
-    Params = Table_MapStep_t.Params[1069]
+    Params = Table_MapStep_t.Params[1069],
+    MapID = 149
   },
   [1784] = {
     id = 1784,
-    Params = Table_MapStep_t.Params[1070]
+    Params = Table_MapStep_t.Params[1070],
+    MapID = 149
   },
   [1785] = {
     id = 1785,
-    Params = Table_MapStep_t.Params[1071]
+    Params = Table_MapStep_t.Params[1071],
+    MapID = 149
   },
   [1786] = {
     id = 1786,
-    Params = Table_MapStep_t.Params[1072]
+    Params = Table_MapStep_t.Params[1072],
+    MapID = 149
   },
   [1787] = {
     id = 1787,
-    Params = Table_MapStep_t.Params[1073]
+    Params = Table_MapStep_t.Params[1073],
+    MapID = 149
   },
   [1788] = {
     id = 1788,
-    Params = Table_MapStep_t.Params[1074]
+    Params = Table_MapStep_t.Params[1074],
+    MapID = 149
   },
   [1789] = {
     id = 1789,
-    Params = Table_MapStep_t.Params[1075]
+    Params = Table_MapStep_t.Params[1075],
+    MapID = 149
   },
   [1790] = {
     id = 1790,
-    Params = Table_MapStep_t.Params[1076]
+    Params = Table_MapStep_t.Params[1076],
+    MapID = 149
   },
   [1791] = {
     id = 1791,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1077]
+    Params = Table_MapStep_t.Params[1077],
+    MapID = 149
   },
-  [1792] = {id = 1792, Content = "stop_other"},
+  [1792] = {
+    id = 1792,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1793] = {
     id = 1793,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1794] = {
     id = 1794,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1795] = {
     id = 1795,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1796] = {
     id = 1796,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1797] = {
     id = 1797,
-    Params = Table_MapStep_t.Params[1078]
+    Params = Table_MapStep_t.Params[1078],
+    MapID = 149
   },
   [1798] = {
     id = 1798,
-    Params = Table_MapStep_t.Params[1079]
+    Params = Table_MapStep_t.Params[1079],
+    MapID = 149
   },
   [1799] = {
     id = 1799,
-    Params = Table_MapStep_t.Params[1080]
+    Params = Table_MapStep_t.Params[1080],
+    MapID = 149
   },
   [1800] = {
     id = 1800,
-    Params = Table_MapStep_t.Params[1081]
+    Params = Table_MapStep_t.Params[1081],
+    MapID = 149
   },
   [1801] = {
     id = 1801,
-    Params = Table_MapStep_t.Params[1082]
+    Params = Table_MapStep_t.Params[1082],
+    MapID = 149
   },
   [1802] = {
     id = 1802,
-    Params = Table_MapStep_t.Params[1083]
+    Params = Table_MapStep_t.Params[1083],
+    MapID = 149
   },
   [1803] = {
     id = 1803,
-    Params = Table_MapStep_t.Params[1084]
+    Params = Table_MapStep_t.Params[1084],
+    MapID = 149
   },
   [1804] = {
     id = 1804,
-    Params = Table_MapStep_t.Params[1085]
+    Params = Table_MapStep_t.Params[1085],
+    MapID = 149
   },
   [1805] = {
     id = 1805,
-    Params = Table_MapStep_t.Params[1086]
+    Params = Table_MapStep_t.Params[1086],
+    MapID = 149
   },
   [1806] = {
     id = 1806,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1087]
+    Params = Table_MapStep_t.Params[1087],
+    MapID = 149
   },
-  [1807] = {id = 1807, Content = "stop_other"},
+  [1807] = {
+    id = 1807,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1808] = {
     id = 1808,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1809] = {
     id = 1809,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1810] = {
     id = 1810,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1811] = {
     id = 1811,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1812] = {
     id = 1812,
-    Params = Table_MapStep_t.Params[1088]
+    Params = Table_MapStep_t.Params[1088],
+    MapID = 149
   },
   [1813] = {
     id = 1813,
-    Params = Table_MapStep_t.Params[1089]
+    Params = Table_MapStep_t.Params[1089],
+    MapID = 149
   },
   [1814] = {
     id = 1814,
-    Params = Table_MapStep_t.Params[1090]
+    Params = Table_MapStep_t.Params[1090],
+    MapID = 149
   },
   [1815] = {
     id = 1815,
-    Params = Table_MapStep_t.Params[1091]
+    Params = Table_MapStep_t.Params[1091],
+    MapID = 149
   },
   [1816] = {
     id = 1816,
-    Params = Table_MapStep_t.Params[1092]
+    Params = Table_MapStep_t.Params[1092],
+    MapID = 149
   },
   [1817] = {
     id = 1817,
-    Params = Table_MapStep_t.Params[1093]
+    Params = Table_MapStep_t.Params[1093],
+    MapID = 149
   },
   [1818] = {
     id = 1818,
-    Params = Table_MapStep_t.Params[1094]
+    Params = Table_MapStep_t.Params[1094],
+    MapID = 149
   },
   [1819] = {
     id = 1819,
-    Params = Table_MapStep_t.Params[1095]
+    Params = Table_MapStep_t.Params[1095],
+    MapID = 149
   },
   [1820] = {
     id = 1820,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1096]
+    Params = Table_MapStep_t.Params[1096],
+    MapID = 149
   },
-  [1821] = {id = 1821, Content = "stop_other"},
+  [1821] = {
+    id = 1821,
+    Content = "stop_other",
+    MapID = 149
+  },
   [1822] = {
     id = 1822,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620]
+    Params = Table_MapStep_t.Params[620],
+    MapID = 149
   },
   [1823] = {
     id = 1823,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808]
+    Params = Table_MapStep_t.Params[808],
+    MapID = 149
   },
   [1824] = {
     id = 1824,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1825] = {
     id = 1825,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784]
+    Params = Table_MapStep_t.Params[784],
+    MapID = 149
   },
   [1826] = {
     id = 1826,
-    Params = Table_MapStep_t.Params[1097]
+    Params = Table_MapStep_t.Params[1097],
+    MapID = 149
   },
   [1827] = {
     id = 1827,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5]
+    Params = Table_MapStep_t.Params[5],
+    MapID = 149
   },
   [1828] = {
     id = 1828,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[190]
+    Params = Table_MapStep_t.Params[190],
+    MapID = 149
   },
   [1829] = {
     id = 1829,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[1098],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1098]
   },
   [1830] = {
     id = 1830,
-    Params = Table_MapStep_t.Params[1099],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1099]
   },
   [1831] = {
     id = 1831,
-    Params = Table_MapStep_t.Params[1100],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1100]
   },
   [1832] = {
     id = 1832,
-    Params = Table_MapStep_t.Params[1101],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1101]
   },
   [1833] = {
     id = 1833,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [1834] = {
     id = 1834,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[190],
-    MapID = 154
+    Params = Table_MapStep_t.Params[190]
   },
   [1835] = {
     id = 1835,
     Content = "finish_mapstep",
-    Params = Table_MapStep_t.Params[1102],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1102]
   },
   [1836] = {
     id = 1836,
-    Params = Table_MapStep_t.Params[1103],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1103]
   },
   [1837] = {
     id = 1837,
     Content = "wait",
-    Params = Table_MapStep_t.Params[32],
-    MapID = 154
+    Params = Table_MapStep_t.Params[32]
   },
   [1838] = {
     id = 1838,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[1104],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1104]
   },
   [1839] = {
     id = 1839,
-    Params = Table_MapStep_t.Params[1105],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1105]
   },
   [1840] = {
     id = 1840,
-    Params = Table_MapStep_t.Params[1106],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1106]
   },
   [1841] = {
     id = 1841,
-    Params = Table_MapStep_t.Params[1107],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1107]
   },
   [1842] = {
     id = 1842,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1108],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1108]
   },
   [1843] = {
     id = 1843,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Params = Table_MapStep_t.Params[253]
   },
   [1844] = {
     id = 1844,
     Content = "finish_mapstep",
-    Params = Table_MapStep_t.Params[1109],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1109]
   },
   [1845] = {
     id = 1845,
-    Params = Table_MapStep_t.Params[1110],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1110]
   },
   [1846] = {
     id = 1846,
     Content = "wait",
-    Params = Table_MapStep_t.Params[32],
-    MapID = 154
+    Params = Table_MapStep_t.Params[32]
   },
   [1847] = {
     id = 1847,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[1104],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1104]
   },
   [1848] = {
     id = 1848,
-    Params = Table_MapStep_t.Params[1111],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1111]
   },
   [1849] = {
     id = 1849,
-    Params = Table_MapStep_t.Params[1112],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1112]
   },
   [1850] = {
     id = 1850,
-    Params = Table_MapStep_t.Params[1113],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1113]
   },
   [1851] = {
     id = 1851,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1114],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1114]
   },
   [1852] = {
     id = 1852,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Params = Table_MapStep_t.Params[253]
   },
   [1853] = {
     id = 1853,
     Content = "finish_mapstep",
-    Params = Table_MapStep_t.Params[1115],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1115]
   },
   [1854] = {
     id = 1854,
-    Params = Table_MapStep_t.Params[1116],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1116]
   },
   [1855] = {
     id = 1855,
     Content = "wait",
-    Params = Table_MapStep_t.Params[32],
-    MapID = 154
+    Params = Table_MapStep_t.Params[32]
   },
   [1856] = {
     id = 1856,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[1104],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1104]
   },
   [1857] = {
     id = 1857,
-    Params = Table_MapStep_t.Params[1117],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1117]
   },
   [1858] = {
     id = 1858,
-    Params = Table_MapStep_t.Params[1118],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1118]
   },
   [1859] = {
     id = 1859,
-    Params = Table_MapStep_t.Params[1119],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1119]
   },
   [1860] = {
     id = 1860,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1120],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1120]
   },
   [1861] = {
     id = 1861,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Params = Table_MapStep_t.Params[253]
   },
   [1862] = {
     id = 1862,
     Content = "finish_mapstep",
-    Params = Table_MapStep_t.Params[1121],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1121]
   },
   [1863] = {
     id = 1863,
-    Params = Table_MapStep_t.Params[1122],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1122]
   },
   [1864] = {
     id = 1864,
     Content = "wait",
-    Params = Table_MapStep_t.Params[32],
-    MapID = 154
+    Params = Table_MapStep_t.Params[32]
   },
   [1865] = {
     id = 1865,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[1104],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1104]
   },
   [1866] = {
     id = 1866,
-    Params = Table_MapStep_t.Params[1123],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1123]
   },
   [1867] = {
     id = 1867,
-    Params = Table_MapStep_t.Params[1124],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1124]
   },
   [1868] = {
     id = 1868,
-    Params = Table_MapStep_t.Params[1125],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1125]
   },
   [1869] = {
     id = 1869,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1126],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1126]
   },
   [1870] = {
     id = 1870,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Params = Table_MapStep_t.Params[253]
   },
   [1871] = {
     id = 1871,
     Content = "finish_mapstep",
-    Params = Table_MapStep_t.Params[1127],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1127]
   },
   [1872] = {
     id = 1872,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1128],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1128]
   },
   [1873] = {
     id = 1873,
     Content = "wait",
-    Params = Table_MapStep_t.Params[32],
-    MapID = 154
+    Params = Table_MapStep_t.Params[32]
   },
   [1874] = {
     id = 1874,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1129],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1129]
   },
   [1875] = {
     id = 1875,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1130],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1130]
   },
   [1876] = {
     id = 1876,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1131],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1131]
   },
   [1877] = {
     id = 1877,
     Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Params = Table_MapStep_t.Params[34]
   },
   [1878] = {
     id = 1878,
-    Params = Table_MapStep_t.Params[1132],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1132]
   },
   [1879] = {
     id = 1879,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [1880] = {
     id = 1880,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Params = Table_MapStep_t.Params[253]
   },
   [1881] = {
     id = 1881,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1133],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1133]
   },
   [1882] = {
     id = 1882,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Params = Table_MapStep_t.Params[253]
   },
   [1883] = {
     id = 1883,
-    Params = Table_MapStep_t.Params[1134],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1134]
   },
   [1884] = {
     id = 1884,
-    Params = Table_MapStep_t.Params[1135],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1135]
   },
   [1885] = {
     id = 1885,
-    Params = Table_MapStep_t.Params[1136],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1136]
   },
   [1886] = {
     id = 1886,
-    Params = Table_MapStep_t.Params[1137],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1137]
   },
   [1887] = {
     id = 1887,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [1888] = {
     id = 1888,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1138],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1138]
   },
   [1889] = {
     id = 1889,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1139]
   },
   [1890] = {
     id = 1890,
-    Params = Table_MapStep_t.Params[1140],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1140]
   },
   [1891] = {
     id = 1891,
-    Params = Table_MapStep_t.Params[1141],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1141]
   },
   [1892] = {
     id = 1892,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1142]
   },
   [1893] = {
     id = 1893,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1143]
   },
   [1894] = {
     id = 1894,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1144]
   },
   [1895] = {
     id = 1895,
     Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Params = Table_MapStep_t.Params[34]
   },
   [1896] = {
     id = 1896,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[16]
   },
   [1897] = {
     id = 1897,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1139]
   },
   [1898] = {
     id = 1898,
-    Params = Table_MapStep_t.Params[1145],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1145]
   },
   [1899] = {
     id = 1899,
-    Params = Table_MapStep_t.Params[1146],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1146]
   },
   [1900] = {
     id = 1900,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1142]
   },
   [1901] = {
     id = 1901,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1143]
   },
   [1902] = {
     id = 1902,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1144]
   },
   [1903] = {
     id = 1903,
     Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Params = Table_MapStep_t.Params[34]
   },
   [1904] = {
     id = 1904,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[16]
   },
   [1905] = {
     id = 1905,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1139]
   },
   [1906] = {
     id = 1906,
-    Params = Table_MapStep_t.Params[1147],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1147]
   },
   [1907] = {
     id = 1907,
-    Params = Table_MapStep_t.Params[1148],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1148]
   },
   [1908] = {
     id = 1908,
-    Params = Table_MapStep_t.Params[1149],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1149]
   },
   [1909] = {
     id = 1909,
-    Params = Table_MapStep_t.Params[1150],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1150]
   },
   [1910] = {
     id = 1910,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [1911] = {
     id = 1911,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1138],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1138]
   },
   [1912] = {
     id = 1912,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1139]
   },
   [1913] = {
     id = 1913,
-    Params = Table_MapStep_t.Params[1151],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1151]
   },
   [1914] = {
     id = 1914,
-    Params = Table_MapStep_t.Params[1152],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1152]
   },
   [1915] = {
     id = 1915,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1142]
   },
   [1916] = {
     id = 1916,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1143]
   },
   [1917] = {
     id = 1917,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1144]
   },
   [1918] = {
     id = 1918,
     Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Params = Table_MapStep_t.Params[34]
   },
   [1919] = {
     id = 1919,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[16]
   },
   [1920] = {
     id = 1920,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1139]
   },
   [1921] = {
     id = 1921,
-    Params = Table_MapStep_t.Params[1153],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1153]
   },
   [1922] = {
     id = 1922,
-    Params = Table_MapStep_t.Params[1154],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1154]
   },
   [1923] = {
     id = 1923,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1142]
   },
   [1924] = {
     id = 1924,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1143]
   },
   [1925] = {
     id = 1925,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1144]
   },
   [1926] = {
     id = 1926,
     Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Params = Table_MapStep_t.Params[34]
   },
   [1927] = {
     id = 1927,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[16]
   },
   [1928] = {
     id = 1928,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1139]
   },
   [1929] = {
     id = 1929,
-    Params = Table_MapStep_t.Params[1155],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1155]
   },
   [1930] = {
     id = 1930,
-    Params = Table_MapStep_t.Params[1156],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1156]
   },
   [1931] = {
     id = 1931,
-    Params = Table_MapStep_t.Params[1157],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1157]
   },
   [1932] = {
     id = 1932,
-    Params = Table_MapStep_t.Params[1158],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1158]
   },
   [1933] = {
     id = 1933,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [1934] = {
     id = 1934,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1138],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1138]
   },
   [1935] = {
     id = 1935,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1139]
   },
   [1936] = {
     id = 1936,
-    Params = Table_MapStep_t.Params[1159],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1159]
   },
   [1937] = {
     id = 1937,
-    Params = Table_MapStep_t.Params[1160],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1160]
   },
   [1938] = {
     id = 1938,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1142]
   },
   [1939] = {
     id = 1939,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1143]
   },
   [1940] = {
     id = 1940,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1144]
   },
   [1941] = {
     id = 1941,
     Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Params = Table_MapStep_t.Params[34]
   },
   [1942] = {
     id = 1942,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[16]
   },
   [1943] = {
     id = 1943,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1139]
   },
   [1944] = {
     id = 1944,
-    Params = Table_MapStep_t.Params[1161],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1161]
   },
   [1945] = {
     id = 1945,
-    Params = Table_MapStep_t.Params[1162],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1162]
   },
   [1946] = {
     id = 1946,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1142]
   },
   [1947] = {
     id = 1947,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1143]
   },
   [1948] = {
     id = 1948,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1144]
   },
   [1949] = {
     id = 1949,
     Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Params = Table_MapStep_t.Params[34]
   },
   [1950] = {
     id = 1950,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[16]
   },
   [1951] = {
     id = 1951,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1139]
   },
   [1952] = {
     id = 1952,
-    Params = Table_MapStep_t.Params[1163],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1163]
   },
   [1953] = {
     id = 1953,
-    Params = Table_MapStep_t.Params[1164],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1164]
   },
   [1954] = {
     id = 1954,
-    Params = Table_MapStep_t.Params[1165],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1165]
   },
   [1955] = {
     id = 1955,
-    Params = Table_MapStep_t.Params[1166],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1166]
   },
   [1956] = {
     id = 1956,
     Content = "killall",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [1957] = {
     id = 1957,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1138],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1138]
   },
   [1958] = {
     id = 1958,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1139]
   },
   [1959] = {
     id = 1959,
-    Params = Table_MapStep_t.Params[1167],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1167]
   },
   [1960] = {
     id = 1960,
-    Params = Table_MapStep_t.Params[1168],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1168]
   },
   [1961] = {
     id = 1961,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1142]
   },
   [1962] = {
     id = 1962,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1143]
   },
   [1963] = {
     id = 1963,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1144]
   },
   [1964] = {
     id = 1964,
     Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Params = Table_MapStep_t.Params[34]
   },
   [1965] = {
     id = 1965,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[16]
   },
   [1966] = {
     id = 1966,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1139]
   },
   [1967] = {
     id = 1967,
-    Params = Table_MapStep_t.Params[1169],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1169]
   },
   [1968] = {
     id = 1968,
-    Params = Table_MapStep_t.Params[1170],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1170]
   },
   [1969] = {
     id = 1969,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1142]
   },
   [1970] = {
     id = 1970,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1143]
   },
   [1971] = {
     id = 1971,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1144]
   },
   [1972] = {
     id = 1972,
     Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Params = Table_MapStep_t.Params[34]
   },
   [1973] = {
     id = 1973,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[16]
   },
   [1974] = {
     id = 1974,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1139]
   },
   [1975] = {
     id = 1975,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1171],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1171]
   },
   [1976] = {
     id = 1976,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Params = Table_MapStep_t.Params[253]
   },
   [1977] = {
     id = 1977,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1172],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1172]
   },
   [1978] = {
     id = 1978,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Params = Table_MapStep_t.Params[253]
   },
   [1979] = {
     id = 1979,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1173],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1173]
   },
   [1980] = {
     id = 1980,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Params = Table_MapStep_t.Params[253]
   },
   [1981] = {
     id = 1981,
-    Params = Table_MapStep_t.Params[1174],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1174]
   },
   [1982] = {
     id = 1982,
-    Params = Table_MapStep_t.Params[1175],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1175]
   },
   [1983] = {
     id = 1983,
-    Params = Table_MapStep_t.Params[1176],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1176]
   },
   [1984] = {
     id = 1984,
-    Params = Table_MapStep_t.Params[1177],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1177]
   },
   [1985] = {
     id = 1985,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1178],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1178]
   },
-  [1986] = {
-    id = 1986,
-    Content = "stop_other",
-    MapID = 154
-  },
+  [1986] = {id = 1986, Content = "stop_other"},
   [1987] = {
     id = 1987,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1179]
   },
   [1988] = {
     id = 1988,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[808]
   },
   [1989] = {
     id = 1989,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [1990] = {
     id = 1990,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[784]
   },
   [1991] = {
     id = 1991,
-    Params = Table_MapStep_t.Params[1179],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1180]
   },
   [1992] = {
     id = 1992,
-    Params = Table_MapStep_t.Params[1180],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1181]
   },
   [1993] = {
     id = 1993,
-    Params = Table_MapStep_t.Params[1181],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1182]
   },
   [1994] = {
     id = 1994,
-    Params = Table_MapStep_t.Params[1182],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1183]
   },
   [1995] = {
     id = 1995,
-    Params = Table_MapStep_t.Params[1183],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1184]
   },
   [1996] = {
     id = 1996,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1184],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1185]
   },
-  [1997] = {
-    id = 1997,
-    Content = "stop_other",
-    MapID = 154
-  },
+  [1997] = {id = 1997, Content = "stop_other"},
   [1998] = {
     id = 1998,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1179]
   },
   [1999] = {
     id = 1999,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[808]
   },
   [2000] = {
     id = 2000,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [2001] = {
     id = 2001,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[784]
   },
   [2002] = {
     id = 2002,
-    Params = Table_MapStep_t.Params[1185],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1186]
   },
   [2003] = {
     id = 2003,
-    Params = Table_MapStep_t.Params[1186],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1187]
   },
   [2004] = {
     id = 2004,
-    Params = Table_MapStep_t.Params[1187],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1188]
   },
   [2005] = {
     id = 2005,
-    Params = Table_MapStep_t.Params[1188],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1189]
   },
   [2006] = {
     id = 2006,
-    Params = Table_MapStep_t.Params[1189],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1190]
   },
   [2007] = {
     id = 2007,
-    Params = Table_MapStep_t.Params[1190],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1191]
   },
   [2008] = {
     id = 2008,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1191],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1192]
   },
-  [2009] = {
-    id = 2009,
-    Content = "stop_other",
-    MapID = 154
-  },
+  [2009] = {id = 2009, Content = "stop_other"},
   [2010] = {
     id = 2010,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1179]
   },
   [2011] = {
     id = 2011,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[808]
   },
   [2012] = {
     id = 2012,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [2013] = {
     id = 2013,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[784]
   },
   [2014] = {
     id = 2014,
-    Params = Table_MapStep_t.Params[1192],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1193]
   },
   [2015] = {
     id = 2015,
-    Params = Table_MapStep_t.Params[1193],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1194]
   },
   [2016] = {
     id = 2016,
-    Params = Table_MapStep_t.Params[1194],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1195]
   },
   [2017] = {
     id = 2017,
-    Params = Table_MapStep_t.Params[1195],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1196]
   },
   [2018] = {
     id = 2018,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1196],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1197]
   },
-  [2019] = {
-    id = 2019,
-    Content = "stop_other",
-    MapID = 154
-  },
+  [2019] = {id = 2019, Content = "stop_other"},
   [2020] = {
     id = 2020,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1179]
   },
   [2021] = {
     id = 2021,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[808]
   },
   [2022] = {
     id = 2022,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [2023] = {
     id = 2023,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[784]
   },
   [2024] = {
     id = 2024,
-    Params = Table_MapStep_t.Params[1197],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1198]
   },
   [2025] = {
     id = 2025,
-    Params = Table_MapStep_t.Params[1198],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1199]
   },
   [2026] = {
     id = 2026,
-    Params = Table_MapStep_t.Params[1199],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1200]
   },
   [2027] = {
     id = 2027,
-    Params = Table_MapStep_t.Params[1200],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1201]
   },
   [2028] = {
     id = 2028,
-    Params = Table_MapStep_t.Params[1201],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1202]
   },
   [2029] = {
     id = 2029,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1202],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1203]
   },
-  [2030] = {
-    id = 2030,
-    Content = "stop_other",
-    MapID = 154
-  },
+  [2030] = {id = 2030, Content = "stop_other"},
   [2031] = {
     id = 2031,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1179]
   },
   [2032] = {
     id = 2032,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[808]
   },
   [2033] = {
     id = 2033,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [2034] = {
     id = 2034,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[784]
   },
   [2035] = {
     id = 2035,
-    Params = Table_MapStep_t.Params[1203],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1204]
   },
   [2036] = {
     id = 2036,
-    Params = Table_MapStep_t.Params[1204],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1205]
   },
   [2037] = {
     id = 2037,
-    Params = Table_MapStep_t.Params[1205],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1206]
   },
   [2038] = {
     id = 2038,
-    Params = Table_MapStep_t.Params[1206],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1207]
   },
   [2039] = {
     id = 2039,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1207],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1208]
   },
-  [2040] = {
-    id = 2040,
-    Content = "stop_other",
-    MapID = 154
-  },
+  [2040] = {id = 2040, Content = "stop_other"},
   [2041] = {
     id = 2041,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1179]
   },
   [2042] = {
     id = 2042,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[808]
   },
   [2043] = {
     id = 2043,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [2044] = {
     id = 2044,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[784]
   },
   [2045] = {
     id = 2045,
-    Params = Table_MapStep_t.Params[1208],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1209]
   },
   [2046] = {
     id = 2046,
-    Params = Table_MapStep_t.Params[1209],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1210]
   },
   [2047] = {
     id = 2047,
-    Params = Table_MapStep_t.Params[1210],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1211]
   },
   [2048] = {
     id = 2048,
-    Params = Table_MapStep_t.Params[1211],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1212]
   },
   [2049] = {
     id = 2049,
-    Params = Table_MapStep_t.Params[1212],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1213]
   },
   [2050] = {
     id = 2050,
-    Params = Table_MapStep_t.Params[1213],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1214]
   },
   [2051] = {
     id = 2051,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1214],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1215]
   },
-  [2052] = {
-    id = 2052,
-    Content = "stop_other",
-    MapID = 154
-  },
+  [2052] = {id = 2052, Content = "stop_other"},
   [2053] = {
     id = 2053,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1179]
   },
   [2054] = {
     id = 2054,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[808]
   },
   [2055] = {
     id = 2055,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [2056] = {
     id = 2056,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[784]
   },
   [2057] = {
     id = 2057,
-    Params = Table_MapStep_t.Params[1215],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1216]
   },
   [2058] = {
     id = 2058,
-    Params = Table_MapStep_t.Params[1216],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1217]
   },
   [2059] = {
     id = 2059,
-    Params = Table_MapStep_t.Params[1217],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1218]
   },
   [2060] = {
     id = 2060,
-    Params = Table_MapStep_t.Params[1218],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1219]
   },
   [2061] = {
     id = 2061,
-    Params = Table_MapStep_t.Params[1219],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1220]
   },
   [2062] = {
     id = 2062,
-    Params = Table_MapStep_t.Params[1220],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1221]
   },
   [2063] = {
     id = 2063,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1221],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1222]
   },
-  [2064] = {
-    id = 2064,
-    Content = "stop_other",
-    MapID = 154
-  },
+  [2064] = {id = 2064, Content = "stop_other"},
   [2065] = {
     id = 2065,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1179]
   },
   [2066] = {
     id = 2066,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[808]
   },
   [2067] = {
     id = 2067,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [2068] = {
     id = 2068,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[784]
   },
   [2069] = {
     id = 2069,
-    Params = Table_MapStep_t.Params[1222],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1223]
   },
   [2070] = {
     id = 2070,
-    Params = Table_MapStep_t.Params[1223],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1224]
   },
   [2071] = {
     id = 2071,
-    Params = Table_MapStep_t.Params[1224],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1225]
   },
   [2072] = {
     id = 2072,
-    Params = Table_MapStep_t.Params[1225],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1226]
   },
   [2073] = {
     id = 2073,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1226],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1227]
   },
-  [2074] = {
-    id = 2074,
-    Content = "stop_other",
-    MapID = 154
-  },
+  [2074] = {id = 2074, Content = "stop_other"},
   [2075] = {
     id = 2075,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1179]
   },
   [2076] = {
     id = 2076,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[808]
   },
   [2077] = {
     id = 2077,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [2078] = {
     id = 2078,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[784]
   },
   [2079] = {
     id = 2079,
-    Params = Table_MapStep_t.Params[1227],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1228]
   },
   [2080] = {
     id = 2080,
-    Params = Table_MapStep_t.Params[1228],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1229]
   },
   [2081] = {
     id = 2081,
-    Params = Table_MapStep_t.Params[1229],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1230]
   },
   [2082] = {
     id = 2082,
     Content = "killall",
-    Params = Table_MapStep_t.Params[1230],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1231]
   },
-  [2083] = {
-    id = 2083,
-    Content = "stop_other",
-    MapID = 154
-  },
+  [2083] = {id = 2083, Content = "stop_other"},
   [2084] = {
     id = 2084,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1179]
   },
   [2085] = {
     id = 2085,
     Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[808]
   },
   [2086] = {
     id = 2086,
     Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[5]
   },
   [2087] = {
     id = 2087,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[784]
   },
   [2088] = {
     id = 2088,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[1231],
-    MapID = 154,
-    StartCondition = Table_MapStep_t.StartCondition[7]
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1232]
   },
   [2089] = {
     id = 2089,
-    Content = "finish_subquest",
-    Params = Table_MapStep_t.Params[1232],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1233]
   },
   [2090] = {
     id = 2090,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1233],
-    MapID = 154
+    Params = Table_MapStep_t.Params[32]
   },
   [2091] = {
     id = 2091,
-    Content = "finish_subquest",
-    Params = Table_MapStep_t.Params[1234],
-    MapID = 154
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[1104]
   },
   [2092] = {
     id = 2092,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[97],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1234]
   },
   [2093] = {
     id = 2093,
-    Content = "wait_refresh",
-    MapID = 154
+    Params = Table_MapStep_t.Params[1235]
   },
   [2094] = {
     id = 2094,
-    Content = "abyss_reward",
-    Params = Table_MapStep_t.Params[1235],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1236]
   },
   [2095] = {
     id = 2095,
-    Content = "abyss_reward",
-    Params = Table_MapStep_t.Params[1236],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1237]
   },
   [2096] = {
     id = 2096,
-    Content = "abyss_clear_dragon",
-    Params = Table_MapStep_t.Params[1237],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
   },
   [2097] = {
     id = 2097,
-    Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1238],
-    MapID = 154
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1238]
   },
   [2098] = {
     id = 2098,
-    Content = "abyss_stage",
-    Params = Table_MapStep_t.Params[1239],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1239]
   },
   [2099] = {
     id = 2099,
-    Content = "abyss_clear_dragon",
-    Params = Table_MapStep_t.Params[1237],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
   },
   [2100] = {
     id = 2100,
-    Content = "abyss_summon_dragon",
-    Params = Table_MapStep_t.Params[1237],
-    MapID = 154
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[1104]
   },
   [2101] = {
     id = 2101,
-    Content = "abyss_dragon_hp",
-    Params = Table_MapStep_t.Params[1240],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1240]
   },
   [2102] = {
     id = 2102,
-    Content = "finish_subquest",
-    Params = Table_MapStep_t.Params[1241],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1241]
   },
   [2103] = {
     id = 2103,
-    Content = "abyss_clear_dragon",
-    Params = Table_MapStep_t.Params[1237],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1242]
   },
   [2104] = {
     id = 2104,
-    Params = Table_MapStep_t.Params[1242],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1243]
   },
   [2105] = {
     id = 2105,
-    Content = "abyss_stage",
-    Params = Table_MapStep_t.Params[1243],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
   },
   [2106] = {
     id = 2106,
-    Content = "abyss_summon_dragon",
-    Params = Table_MapStep_t.Params[1237],
-    MapID = 154
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1244]
   },
   [2107] = {
     id = 2107,
-    Content = "abyss_summon",
-    Params = Table_MapStep_t.Params[1244],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1245]
   },
   [2108] = {
     id = 2108,
-    Content = "killmonster",
-    Params = Table_MapStep_t.Params[1245],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
   },
   [2109] = {
     id = 2109,
-    Content = "finish_subquest",
-    Params = Table_MapStep_t.Params[1246],
-    MapID = 154
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[1104]
   },
   [2110] = {
     id = 2110,
-    Content = "abyss_clear_dragon",
-    Params = Table_MapStep_t.Params[1237],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1246]
   },
   [2111] = {
     id = 2111,
-    Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1238],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1247]
   },
   [2112] = {
     id = 2112,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[1233],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1248]
   },
   [2113] = {
     id = 2113,
-    Content = "finish_subquest",
-    Params = Table_MapStep_t.Params[1247],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1249]
   },
   [2114] = {
     id = 2114,
-    Content = "abyss_stage",
-    Params = Table_MapStep_t.Params[1248],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
   },
   [2115] = {
     id = 2115,
-    Content = "killmonster",
-    Params = Table_MapStep_t.Params[1245],
-    MapID = 154
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1250]
   },
   [2116] = {
     id = 2116,
-    Content = "finish_subquest",
-    Params = Table_MapStep_t.Params[1249],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1251]
   },
   [2117] = {
     id = 2117,
-    Content = "abyss_stage",
-    Params = Table_MapStep_t.Params[1250],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
   },
   [2118] = {
     id = 2118,
-    Content = "abyss_stage_reward",
-    Params = Table_MapStep_t.Params[1251],
-    MapID = 154
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[1104]
   },
   [2119] = {
     id = 2119,
-    Content = "abyss_stage_reward",
-    Params = Table_MapStep_t.Params[1252],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1252]
   },
   [2120] = {
     id = 2120,
-    Content = "abyss_stage_reward",
-    Params = Table_MapStep_t.Params[1253],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1253]
   },
   [2121] = {
     id = 2121,
-    Content = "abyss_stage_reward",
-    Params = Table_MapStep_t.Params[1254],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1254]
   },
   [2122] = {
     id = 2122,
-    Content = "abyss_stage_reward",
-    Params = Table_MapStep_t.Params[1255],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1255]
   },
   [2123] = {
     id = 2123,
-    Content = "abyss_stage_reward",
-    Params = Table_MapStep_t.Params[1256],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
   },
   [2124] = {
     id = 2124,
-    Content = "abyss_stage_reward",
-    Params = Table_MapStep_t.Params[1257],
-    MapID = 154
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1256]
   },
   [2125] = {
     id = 2125,
-    Content = "abyss_stage_reward",
-    Params = Table_MapStep_t.Params[1258],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1257]
   },
   [2126] = {
     id = 2126,
-    Content = "abyss_stage_reward",
-    Params = Table_MapStep_t.Params[1259],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
   },
   [2127] = {
     id = 2127,
-    Content = "abyss_stage_reward",
-    Params = Table_MapStep_t.Params[1260],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1129]
   },
   [2128] = {
     id = 2128,
-    Content = "finish_mapstep",
-    Params = Table_MapStep_t.Params[1261],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1258]
   },
   [2129] = {
     id = 2129,
-    Params = Table_MapStep_t.Params[1262],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1259]
   },
   [2130] = {
     id = 2130,
     Content = "wait",
-    Params = Table_MapStep_t.Params[32],
-    MapID = 154
+    Params = Table_MapStep_t.Params[34]
   },
   [2131] = {
     id = 2131,
-    Content = "random_jump",
-    Params = Table_MapStep_t.Params[1104],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1260]
   },
   [2132] = {
     id = 2132,
-    Params = Table_MapStep_t.Params[1263],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
   },
   [2133] = {
     id = 2133,
-    Params = Table_MapStep_t.Params[1264],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
   },
   [2134] = {
     id = 2134,
-    Params = Table_MapStep_t.Params[1265],
-    MapID = 154
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1261]
   },
   [2135] = {
     id = 2135,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[1266],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1262]
   },
   [2136] = {
     id = 2136,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
   },
   [2137] = {
     id = 2137,
-    Content = "finish_mapstep",
-    Params = Table_MapStep_t.Params[1267],
-    MapID = 154
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[1104]
   },
   [2138] = {
     id = 2138,
-    Params = Table_MapStep_t.Params[1268],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1263]
   },
   [2139] = {
     id = 2139,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[32],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1264]
   },
   [2140] = {
     id = 2140,
-    Content = "random_jump",
-    Params = Table_MapStep_t.Params[1104],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1265]
   },
   [2141] = {
     id = 2141,
-    Params = Table_MapStep_t.Params[1269],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1266]
   },
   [2142] = {
     id = 2142,
-    Params = Table_MapStep_t.Params[1270],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
   },
   [2143] = {
     id = 2143,
-    Params = Table_MapStep_t.Params[1271],
-    MapID = 154
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1267]
   },
   [2144] = {
     id = 2144,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[1272],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1268]
   },
   [2145] = {
     id = 2145,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
   },
   [2146] = {
     id = 2146,
-    Content = "finish_mapstep",
-    Params = Table_MapStep_t.Params[1273],
-    MapID = 154
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[1104]
   },
   [2147] = {
     id = 2147,
-    Params = Table_MapStep_t.Params[1274],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1269]
   },
   [2148] = {
     id = 2148,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[32],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1270]
   },
   [2149] = {
     id = 2149,
-    Content = "random_jump",
-    Params = Table_MapStep_t.Params[1104],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1271]
   },
   [2150] = {
     id = 2150,
-    Params = Table_MapStep_t.Params[1275],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1272]
   },
   [2151] = {
     id = 2151,
-    Params = Table_MapStep_t.Params[1276],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
   },
   [2152] = {
     id = 2152,
-    Params = Table_MapStep_t.Params[1277],
-    MapID = 154
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1273]
   },
   [2153] = {
     id = 2153,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[1278],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1274]
   },
   [2154] = {
     id = 2154,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
   },
   [2155] = {
     id = 2155,
-    Content = "finish_mapstep",
-    Params = Table_MapStep_t.Params[1279],
-    MapID = 154
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[1104]
   },
   [2156] = {
     id = 2156,
-    Params = Table_MapStep_t.Params[1280],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1275]
   },
   [2157] = {
     id = 2157,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[32],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1276]
   },
   [2158] = {
     id = 2158,
-    Content = "random_jump",
-    Params = Table_MapStep_t.Params[1104],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1277]
   },
   [2159] = {
     id = 2159,
-    Params = Table_MapStep_t.Params[1281],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1278]
   },
   [2160] = {
     id = 2160,
-    Params = Table_MapStep_t.Params[1282],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
   },
   [2161] = {
     id = 2161,
-    Params = Table_MapStep_t.Params[1283],
-    MapID = 154
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1279]
   },
   [2162] = {
     id = 2162,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[1284],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1280]
   },
   [2163] = {
     id = 2163,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
   },
   [2164] = {
     id = 2164,
-    Content = "finish_mapstep",
-    Params = Table_MapStep_t.Params[1285],
-    MapID = 154
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[1104]
   },
   [2165] = {
     id = 2165,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1286],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1281]
   },
   [2166] = {
     id = 2166,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[32],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1282]
   },
   [2167] = {
     id = 2167,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1129],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1283]
   },
   [2168] = {
     id = 2168,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1287],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1284]
   },
   [2169] = {
     id = 2169,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1288],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
   },
   [2170] = {
     id = 2170,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1285]
   },
   [2171] = {
     id = 2171,
-    Params = Table_MapStep_t.Params[1289],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1286]
   },
   [2172] = {
     id = 2172,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
   },
   [2173] = {
     id = 2173,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1129]
   },
   [2174] = {
     id = 2174,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1290],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1287]
   },
   [2175] = {
     id = 2175,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1288]
   },
   [2176] = {
     id = 2176,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1291],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
   },
   [2177] = {
     id = 2177,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1289]
   },
   [2178] = {
     id = 2178,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1292],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
   },
   [2179] = {
     id = 2179,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Params = Table_MapStep_t.Params[253]
   },
   [2180] = {
     id = 2180,
     Content = "collect",
-    Params = Table_MapStep_t.Params[1293],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1290]
   },
   [2181] = {
     id = 2181,
     Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[253],
-    MapID = 154
+    Params = Table_MapStep_t.Params[253]
   },
   [2182] = {
     id = 2182,
-    Params = Table_MapStep_t.Params[1294],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1291]
   },
   [2183] = {
     id = 2183,
-    Params = Table_MapStep_t.Params[1295],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
   },
   [2184] = {
     id = 2184,
-    Params = Table_MapStep_t.Params[1296],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1292]
   },
   [2185] = {
     id = 2185,
-    Params = Table_MapStep_t.Params[1297],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
   },
   [2186] = {
     id = 2186,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1293]
   },
   [2187] = {
     id = 2187,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1138],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
   },
   [2188] = {
     id = 2188,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1294]
   },
   [2189] = {
     id = 2189,
-    Params = Table_MapStep_t.Params[1298],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1295]
   },
   [2190] = {
     id = 2190,
-    Params = Table_MapStep_t.Params[1299],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1296]
   },
   [2191] = {
     id = 2191,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1297]
   },
   [2192] = {
     id = 2192,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
   },
   [2193] = {
     id = 2193,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1138]
   },
   [2194] = {
     id = 2194,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
   },
   [2195] = {
     id = 2195,
-    Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1298]
   },
   [2196] = {
     id = 2196,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1299]
   },
   [2197] = {
     id = 2197,
-    Params = Table_MapStep_t.Params[1300],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
   },
   [2198] = {
     id = 2198,
-    Params = Table_MapStep_t.Params[1301],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
   },
   [2199] = {
     id = 2199,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
   },
   [2200] = {
     id = 2200,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
   },
   [2201] = {
     id = 2201,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
   },
   [2202] = {
     id = 2202,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
   },
   [2203] = {
     id = 2203,
-    Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1300]
   },
   [2204] = {
     id = 2204,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1301]
   },
   [2205] = {
     id = 2205,
-    Params = Table_MapStep_t.Params[1302],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
   },
   [2206] = {
     id = 2206,
-    Params = Table_MapStep_t.Params[1303],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
   },
   [2207] = {
     id = 2207,
-    Params = Table_MapStep_t.Params[1304],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
   },
   [2208] = {
     id = 2208,
-    Params = Table_MapStep_t.Params[1305],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
   },
   [2209] = {
     id = 2209,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
   },
   [2210] = {
     id = 2210,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1138],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
   },
   [2211] = {
     id = 2211,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1302]
   },
   [2212] = {
     id = 2212,
-    Params = Table_MapStep_t.Params[1306],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1303]
   },
   [2213] = {
     id = 2213,
-    Params = Table_MapStep_t.Params[1307],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1304]
   },
   [2214] = {
     id = 2214,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1305]
   },
   [2215] = {
     id = 2215,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
   },
   [2216] = {
     id = 2216,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1138]
   },
   [2217] = {
     id = 2217,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
   },
   [2218] = {
     id = 2218,
-    Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1306]
   },
   [2219] = {
     id = 2219,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1307]
   },
   [2220] = {
     id = 2220,
-    Params = Table_MapStep_t.Params[1308],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
   },
   [2221] = {
     id = 2221,
-    Params = Table_MapStep_t.Params[1309],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
   },
   [2222] = {
     id = 2222,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
   },
   [2223] = {
     id = 2223,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
   },
   [2224] = {
     id = 2224,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
   },
   [2225] = {
     id = 2225,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
   },
   [2226] = {
     id = 2226,
-    Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1308]
   },
   [2227] = {
     id = 2227,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1309]
   },
   [2228] = {
     id = 2228,
-    Params = Table_MapStep_t.Params[1310],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
   },
   [2229] = {
     id = 2229,
-    Params = Table_MapStep_t.Params[1311],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
   },
   [2230] = {
     id = 2230,
-    Params = Table_MapStep_t.Params[1312],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
   },
   [2231] = {
     id = 2231,
-    Params = Table_MapStep_t.Params[1313],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
   },
   [2232] = {
     id = 2232,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
   },
   [2233] = {
     id = 2233,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1138],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
   },
   [2234] = {
     id = 2234,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1310]
   },
   [2235] = {
     id = 2235,
-    Params = Table_MapStep_t.Params[1314],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1311]
   },
   [2236] = {
     id = 2236,
-    Params = Table_MapStep_t.Params[1315],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1312]
   },
   [2237] = {
     id = 2237,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1313]
   },
   [2238] = {
     id = 2238,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
   },
   [2239] = {
     id = 2239,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1138]
   },
   [2240] = {
     id = 2240,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
   },
   [2241] = {
     id = 2241,
-    Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1314]
   },
   [2242] = {
     id = 2242,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1315]
   },
   [2243] = {
     id = 2243,
-    Params = Table_MapStep_t.Params[1316],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
   },
   [2244] = {
     id = 2244,
-    Params = Table_MapStep_t.Params[1317],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
   },
   [2245] = {
     id = 2245,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
   },
   [2246] = {
     id = 2246,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
   },
   [2247] = {
     id = 2247,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
   },
   [2248] = {
     id = 2248,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
   },
   [2249] = {
     id = 2249,
-    Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1316]
   },
   [2250] = {
     id = 2250,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1317]
   },
   [2251] = {
     id = 2251,
-    Params = Table_MapStep_t.Params[1318],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
   },
   [2252] = {
     id = 2252,
-    Params = Table_MapStep_t.Params[1319],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
   },
   [2253] = {
     id = 2253,
-    Params = Table_MapStep_t.Params[1320],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
   },
   [2254] = {
     id = 2254,
-    Params = Table_MapStep_t.Params[1321],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
   },
   [2255] = {
     id = 2255,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
   },
   [2256] = {
     id = 2256,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1138],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
   },
   [2257] = {
     id = 2257,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1318]
   },
   [2258] = {
     id = 2258,
-    Params = Table_MapStep_t.Params[1322],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1319]
   },
   [2259] = {
     id = 2259,
-    Params = Table_MapStep_t.Params[1323],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1320]
   },
   [2260] = {
     id = 2260,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1321]
   },
   [2261] = {
     id = 2261,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
   },
   [2262] = {
     id = 2262,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1138]
   },
   [2263] = {
     id = 2263,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
   },
   [2264] = {
     id = 2264,
-    Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1322]
   },
   [2265] = {
     id = 2265,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1323]
   },
   [2266] = {
     id = 2266,
-    Params = Table_MapStep_t.Params[1324],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
   },
   [2267] = {
     id = 2267,
-    Params = Table_MapStep_t.Params[1325],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
   },
   [2268] = {
     id = 2268,
-    Content = "collect",
-    Params = Table_MapStep_t.Params[1142],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
   },
   [2269] = {
     id = 2269,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1143],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
   },
   [2270] = {
     id = 2270,
-    Content = "multigm",
-    Params = Table_MapStep_t.Params[1144],
-    MapID = 154
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
   },
   [2271] = {
     id = 2271,
-    Content = "wait",
-    Params = Table_MapStep_t.Params[34],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
   },
   [2272] = {
     id = 2272,
-    Content = "clearnpc",
-    Params = Table_MapStep_t.Params[16],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1324]
   },
   [2273] = {
     id = 2273,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[1139],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1325]
   },
   [2274] = {
     id = 2274,
-    Params = Table_MapStep_t.Params[1326],
-    MapID = 154
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
   },
   [2275] = {
     id = 2275,
-    Params = Table_MapStep_t.Params[1327],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
   },
   [2276] = {
     id = 2276,
-    Params = Table_MapStep_t.Params[1328],
-    MapID = 154
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
   },
   [2277] = {
     id = 2277,
-    Params = Table_MapStep_t.Params[1329],
-    MapID = 154
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
   },
   [2278] = {
     id = 2278,
-    Params = Table_MapStep_t.Params[1330],
-    MapID = 154
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
   },
   [2279] = {
     id = 2279,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[1331],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
   },
   [2280] = {
     id = 2280,
-    Content = "stop_other",
-    MapID = 154
+    Params = Table_MapStep_t.Params[1326]
   },
   [2281] = {
     id = 2281,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1327]
   },
   [2282] = {
     id = 2282,
-    Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1328]
   },
   [2283] = {
     id = 2283,
-    Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1329]
   },
   [2284] = {
     id = 2284,
-    Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1330]
   },
   [2285] = {
     id = 2285,
-    Params = Table_MapStep_t.Params[1332],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1331]
   },
-  [2286] = {
-    id = 2286,
-    Params = Table_MapStep_t.Params[1333],
-    MapID = 154
-  },
+  [2286] = {id = 2286, Content = "stop_other"},
   [2287] = {
     id = 2287,
-    Params = Table_MapStep_t.Params[1334],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
   },
   [2288] = {
     id = 2288,
-    Params = Table_MapStep_t.Params[1335],
-    MapID = 154
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
   },
   [2289] = {
     id = 2289,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[1336],
-    MapID = 154
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
   },
   [2290] = {
     id = 2290,
-    Content = "stop_other",
-    MapID = 154
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
   },
   [2291] = {
     id = 2291,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1332]
   },
   [2292] = {
     id = 2292,
-    Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1333]
   },
   [2293] = {
     id = 2293,
-    Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1334]
   },
   [2294] = {
     id = 2294,
-    Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1335]
   },
   [2295] = {
     id = 2295,
-    Params = Table_MapStep_t.Params[1337],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1336]
   },
-  [2296] = {
-    id = 2296,
-    Params = Table_MapStep_t.Params[1338],
-    MapID = 154
-  },
+  [2296] = {id = 2296, Content = "stop_other"},
   [2297] = {
     id = 2297,
-    Params = Table_MapStep_t.Params[1339],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
   },
   [2298] = {
     id = 2298,
-    Params = Table_MapStep_t.Params[1340],
-    MapID = 154
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
   },
   [2299] = {
     id = 2299,
-    Params = Table_MapStep_t.Params[1341],
-    MapID = 154
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
   },
   [2300] = {
     id = 2300,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[1342],
-    MapID = 154
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
   },
   [2301] = {
     id = 2301,
-    Content = "stop_other",
-    MapID = 154
+    Params = Table_MapStep_t.Params[1337]
   },
   [2302] = {
     id = 2302,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1338]
   },
   [2303] = {
     id = 2303,
-    Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1339]
   },
   [2304] = {
     id = 2304,
-    Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1340]
   },
   [2305] = {
     id = 2305,
-    Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1341]
   },
   [2306] = {
     id = 2306,
-    Params = Table_MapStep_t.Params[1343],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1342]
   },
-  [2307] = {
-    id = 2307,
-    Params = Table_MapStep_t.Params[1344],
-    MapID = 154
-  },
+  [2307] = {id = 2307, Content = "stop_other"},
   [2308] = {
     id = 2308,
-    Params = Table_MapStep_t.Params[1345],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
   },
   [2309] = {
     id = 2309,
-    Params = Table_MapStep_t.Params[1346],
-    MapID = 154
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
   },
   [2310] = {
     id = 2310,
-    Params = Table_MapStep_t.Params[1347],
-    MapID = 154
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
   },
   [2311] = {
     id = 2311,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[1348],
-    MapID = 154
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
   },
   [2312] = {
     id = 2312,
-    Content = "stop_other",
-    MapID = 154
+    Params = Table_MapStep_t.Params[1343]
   },
   [2313] = {
     id = 2313,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1344]
   },
   [2314] = {
     id = 2314,
-    Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1345]
   },
   [2315] = {
     id = 2315,
-    Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1346]
   },
   [2316] = {
     id = 2316,
-    Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1347]
   },
   [2317] = {
     id = 2317,
-    Params = Table_MapStep_t.Params[1349],
-    MapID = 154
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1348]
   },
-  [2318] = {
-    id = 2318,
-    Params = Table_MapStep_t.Params[1350],
-    MapID = 154
-  },
+  [2318] = {id = 2318, Content = "stop_other"},
   [2319] = {
     id = 2319,
-    Params = Table_MapStep_t.Params[1351],
-    MapID = 154
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
   },
   [2320] = {
     id = 2320,
-    Params = Table_MapStep_t.Params[1352],
-    MapID = 154
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
   },
   [2321] = {
     id = 2321,
-    Params = Table_MapStep_t.Params[1353],
-    MapID = 154
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
   },
   [2322] = {
     id = 2322,
-    Content = "killall",
-    Params = Table_MapStep_t.Params[1354],
-    MapID = 154
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
   },
   [2323] = {
     id = 2323,
-    Content = "stop_other",
-    MapID = 154
+    Params = Table_MapStep_t.Params[1349]
   },
   [2324] = {
     id = 2324,
-    Content = "wait_refresh",
-    Params = Table_MapStep_t.Params[620],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1350]
   },
   [2325] = {
     id = 2325,
-    Content = "check_off_fire",
-    Params = Table_MapStep_t.Params[808],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1351]
   },
   [2326] = {
     id = 2326,
-    Content = "reset_monster",
-    Params = Table_MapStep_t.Params[5],
-    MapID = 154
+    Params = Table_MapStep_t.Params[1352]
   },
   [2327] = {
     id = 2327,
+    Params = Table_MapStep_t.Params[1353]
+  },
+  [2328] = {
+    id = 2328,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1354]
+  },
+  [2329] = {id = 2329, Content = "stop_other"},
+  [2330] = {
+    id = 2330,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
+  },
+  [2331] = {
+    id = 2331,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
+  },
+  [2332] = {
+    id = 2332,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2333] = {
+    id = 2333,
     Content = "random_jump",
-    Params = Table_MapStep_t.Params[784],
-    MapID = 154
+    Params = Table_MapStep_t.Params[784]
+  },
+  [2334] = {
+    id = 2334,
+    Params = Table_MapStep_t.Params[1355]
+  },
+  [2335] = {
+    id = 2335,
+    Params = Table_MapStep_t.Params[1356]
+  },
+  [2336] = {
+    id = 2336,
+    Params = Table_MapStep_t.Params[1357]
+  },
+  [2337] = {
+    id = 2337,
+    Params = Table_MapStep_t.Params[1358]
+  },
+  [2338] = {
+    id = 2338,
+    Params = Table_MapStep_t.Params[1359]
+  },
+  [2339] = {
+    id = 2339,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1360]
+  },
+  [2340] = {id = 2340, Content = "stop_other"},
+  [2341] = {
+    id = 2341,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
+  },
+  [2342] = {
+    id = 2342,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
+  },
+  [2343] = {
+    id = 2343,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2344] = {
+    id = 2344,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
+  },
+  [2345] = {
+    id = 2345,
+    Params = Table_MapStep_t.Params[1361]
+  },
+  [2346] = {
+    id = 2346,
+    Params = Table_MapStep_t.Params[1362]
+  },
+  [2347] = {
+    id = 2347,
+    Params = Table_MapStep_t.Params[1363]
+  },
+  [2348] = {
+    id = 2348,
+    Params = Table_MapStep_t.Params[1364]
+  },
+  [2349] = {
+    id = 2349,
+    Params = Table_MapStep_t.Params[1365]
+  },
+  [2350] = {
+    id = 2350,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1366]
+  },
+  [2351] = {id = 2351, Content = "stop_other"},
+  [2352] = {
+    id = 2352,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
+  },
+  [2353] = {
+    id = 2353,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
+  },
+  [2354] = {
+    id = 2354,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2355] = {
+    id = 2355,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
+  },
+  [2356] = {
+    id = 2356,
+    Params = Table_MapStep_t.Params[1367]
+  },
+  [2357] = {
+    id = 2357,
+    Params = Table_MapStep_t.Params[1368]
+  },
+  [2358] = {
+    id = 2358,
+    Params = Table_MapStep_t.Params[1369]
+  },
+  [2359] = {
+    id = 2359,
+    Params = Table_MapStep_t.Params[1370]
+  },
+  [2360] = {
+    id = 2360,
+    Params = Table_MapStep_t.Params[1371]
+  },
+  [2361] = {
+    id = 2361,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1372]
+  },
+  [2362] = {id = 2362, Content = "stop_other"},
+  [2363] = {
+    id = 2363,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
+  },
+  [2364] = {
+    id = 2364,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
+  },
+  [2365] = {
+    id = 2365,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2366] = {
+    id = 2366,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
+  },
+  [2367] = {
+    id = 2367,
+    Params = Table_MapStep_t.Params[1373]
+  },
+  [2368] = {
+    id = 2368,
+    Params = Table_MapStep_t.Params[1374]
+  },
+  [2369] = {
+    id = 2369,
+    Params = Table_MapStep_t.Params[1375]
+  },
+  [2370] = {
+    id = 2370,
+    Params = Table_MapStep_t.Params[1376]
+  },
+  [2371] = {
+    id = 2371,
+    Params = Table_MapStep_t.Params[1377]
+  },
+  [2372] = {
+    id = 2372,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1378]
+  },
+  [2373] = {id = 2373, Content = "stop_other"},
+  [2374] = {
+    id = 2374,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
+  },
+  [2375] = {
+    id = 2375,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
+  },
+  [2376] = {
+    id = 2376,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2377] = {
+    id = 2377,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
+  },
+  [2378] = {
+    id = 2378,
+    Params = Table_MapStep_t.Params[1379]
+  },
+  [2379] = {
+    id = 2379,
+    Params = Table_MapStep_t.Params[1380]
+  },
+  [2380] = {
+    id = 2380,
+    Params = Table_MapStep_t.Params[1381]
+  },
+  [2381] = {
+    id = 2381,
+    Params = Table_MapStep_t.Params[1382]
+  },
+  [2382] = {
+    id = 2382,
+    Params = Table_MapStep_t.Params[1383]
+  },
+  [2383] = {
+    id = 2383,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1384]
+  },
+  [2384] = {id = 2384, Content = "stop_other"},
+  [2385] = {
+    id = 2385,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
+  },
+  [2386] = {
+    id = 2386,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
+  },
+  [2387] = {
+    id = 2387,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2388] = {
+    id = 2388,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
+  },
+  [2389] = {
+    id = 2389,
+    Params = Table_MapStep_t.Params[1385]
+  },
+  [2390] = {
+    id = 2390,
+    Params = Table_MapStep_t.Params[1386]
+  },
+  [2391] = {
+    id = 2391,
+    Params = Table_MapStep_t.Params[1387]
+  },
+  [2392] = {
+    id = 2392,
+    Params = Table_MapStep_t.Params[1388]
+  },
+  [2393] = {
+    id = 2393,
+    Params = Table_MapStep_t.Params[1389]
+  },
+  [2394] = {
+    id = 2394,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1390]
+  },
+  [2395] = {id = 2395, Content = "stop_other"},
+  [2396] = {
+    id = 2396,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
+  },
+  [2397] = {
+    id = 2397,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
+  },
+  [2398] = {
+    id = 2398,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2399] = {
+    id = 2399,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
+  },
+  [2400] = {
+    id = 2400,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1391]
+  },
+  [2401] = {
+    id = 2401,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
+  },
+  [2402] = {
+    id = 2402,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1392]
+  },
+  [2403] = {
+    id = 2403,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
+  },
+  [2404] = {
+    id = 2404,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1393]
+  },
+  [2405] = {
+    id = 2405,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
+  },
+  [2406] = {
+    id = 2406,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1394]
+  },
+  [2407] = {
+    id = 2407,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
+  },
+  [2408] = {
+    id = 2408,
+    Params = Table_MapStep_t.Params[1395]
+  },
+  [2409] = {
+    id = 2409,
+    Params = Table_MapStep_t.Params[1396]
+  },
+  [2410] = {
+    id = 2410,
+    Params = Table_MapStep_t.Params[1397]
+  },
+  [2411] = {
+    id = 2411,
+    Params = Table_MapStep_t.Params[1398]
+  },
+  [2412] = {
+    id = 2412,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2413] = {
+    id = 2413,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1138]
+  },
+  [2414] = {
+    id = 2414,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2415] = {
+    id = 2415,
+    Params = Table_MapStep_t.Params[1399]
+  },
+  [2416] = {
+    id = 2416,
+    Params = Table_MapStep_t.Params[1400]
+  },
+  [2417] = {
+    id = 2417,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2418] = {
+    id = 2418,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2419] = {
+    id = 2419,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2420] = {
+    id = 2420,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2421] = {
+    id = 2421,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2422] = {
+    id = 2422,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2423] = {
+    id = 2423,
+    Params = Table_MapStep_t.Params[1401]
+  },
+  [2424] = {
+    id = 2424,
+    Params = Table_MapStep_t.Params[1402]
+  },
+  [2425] = {
+    id = 2425,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2426] = {
+    id = 2426,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2427] = {
+    id = 2427,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2428] = {
+    id = 2428,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2429] = {
+    id = 2429,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2430] = {
+    id = 2430,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2431] = {
+    id = 2431,
+    Params = Table_MapStep_t.Params[1403]
+  },
+  [2432] = {
+    id = 2432,
+    Params = Table_MapStep_t.Params[1404]
+  },
+  [2433] = {
+    id = 2433,
+    Params = Table_MapStep_t.Params[1405]
+  },
+  [2434] = {
+    id = 2434,
+    Params = Table_MapStep_t.Params[1406]
+  },
+  [2435] = {
+    id = 2435,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2436] = {
+    id = 2436,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1138]
+  },
+  [2437] = {
+    id = 2437,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2438] = {
+    id = 2438,
+    Params = Table_MapStep_t.Params[1407]
+  },
+  [2439] = {
+    id = 2439,
+    Params = Table_MapStep_t.Params[1408]
+  },
+  [2440] = {
+    id = 2440,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2441] = {
+    id = 2441,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2442] = {
+    id = 2442,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2443] = {
+    id = 2443,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2444] = {
+    id = 2444,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2445] = {
+    id = 2445,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2446] = {
+    id = 2446,
+    Params = Table_MapStep_t.Params[1409]
+  },
+  [2447] = {
+    id = 2447,
+    Params = Table_MapStep_t.Params[1410]
+  },
+  [2448] = {
+    id = 2448,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2449] = {
+    id = 2449,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2450] = {
+    id = 2450,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2451] = {
+    id = 2451,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2452] = {
+    id = 2452,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2453] = {
+    id = 2453,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2454] = {
+    id = 2454,
+    Params = Table_MapStep_t.Params[1411]
+  },
+  [2455] = {
+    id = 2455,
+    Params = Table_MapStep_t.Params[1412]
+  },
+  [2456] = {
+    id = 2456,
+    Params = Table_MapStep_t.Params[1413]
+  },
+  [2457] = {
+    id = 2457,
+    Params = Table_MapStep_t.Params[1414]
+  },
+  [2458] = {
+    id = 2458,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2459] = {
+    id = 2459,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1138]
+  },
+  [2460] = {
+    id = 2460,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2461] = {
+    id = 2461,
+    Params = Table_MapStep_t.Params[1415]
+  },
+  [2462] = {
+    id = 2462,
+    Params = Table_MapStep_t.Params[1416]
+  },
+  [2463] = {
+    id = 2463,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2464] = {
+    id = 2464,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2465] = {
+    id = 2465,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2466] = {
+    id = 2466,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2467] = {
+    id = 2467,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2468] = {
+    id = 2468,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2469] = {
+    id = 2469,
+    Params = Table_MapStep_t.Params[1417]
+  },
+  [2470] = {
+    id = 2470,
+    Params = Table_MapStep_t.Params[1418]
+  },
+  [2471] = {
+    id = 2471,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2472] = {
+    id = 2472,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2473] = {
+    id = 2473,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2474] = {
+    id = 2474,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2475] = {
+    id = 2475,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2476] = {
+    id = 2476,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2477] = {
+    id = 2477,
+    Params = Table_MapStep_t.Params[1419]
+  },
+  [2478] = {
+    id = 2478,
+    Params = Table_MapStep_t.Params[1420]
+  },
+  [2479] = {
+    id = 2479,
+    Params = Table_MapStep_t.Params[1421]
+  },
+  [2480] = {
+    id = 2480,
+    Params = Table_MapStep_t.Params[1422]
+  },
+  [2481] = {
+    id = 2481,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2482] = {
+    id = 2482,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1138]
+  },
+  [2483] = {
+    id = 2483,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2484] = {
+    id = 2484,
+    Params = Table_MapStep_t.Params[1423]
+  },
+  [2485] = {
+    id = 2485,
+    Params = Table_MapStep_t.Params[1424]
+  },
+  [2486] = {
+    id = 2486,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2487] = {
+    id = 2487,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2488] = {
+    id = 2488,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2489] = {
+    id = 2489,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2490] = {
+    id = 2490,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2491] = {
+    id = 2491,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2492] = {
+    id = 2492,
+    Params = Table_MapStep_t.Params[1425]
+  },
+  [2493] = {
+    id = 2493,
+    Params = Table_MapStep_t.Params[1426]
+  },
+  [2494] = {
+    id = 2494,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2495] = {
+    id = 2495,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2496] = {
+    id = 2496,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2497] = {
+    id = 2497,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2498] = {
+    id = 2498,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2499] = {
+    id = 2499,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2500] = {
+    id = 2500,
+    Params = Table_MapStep_t.Params[1427]
+  },
+  [2501] = {
+    id = 2501,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2502] = {
+    id = 2502,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[190]
+  },
+  [2503] = {
+    id = 2503,
+    Params = Table_MapStep_t.Params[1428]
+  },
+  [2504] = {
+    id = 2504,
+    Params = Table_MapStep_t.Params[1429]
+  },
+  [2505] = {
+    id = 2505,
+    Params = Table_MapStep_t.Params[1430]
+  },
+  [2506] = {
+    id = 2506,
+    Params = Table_MapStep_t.Params[1431]
+  },
+  [2507] = {
+    id = 2507,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1432]
+  },
+  [2508] = {id = 2508, Content = "stop_other"},
+  [2509] = {
+    id = 2509,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
+  },
+  [2510] = {
+    id = 2510,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
+  },
+  [2511] = {
+    id = 2511,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2512] = {
+    id = 2512,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
+  },
+  [2513] = {
+    id = 2513,
+    Params = Table_MapStep_t.Params[1433]
+  },
+  [2514] = {
+    id = 2514,
+    Params = Table_MapStep_t.Params[1434]
+  },
+  [2515] = {
+    id = 2515,
+    Params = Table_MapStep_t.Params[1435]
+  },
+  [2516] = {
+    id = 2516,
+    Params = Table_MapStep_t.Params[1436]
+  },
+  [2517] = {
+    id = 2517,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1437]
+  },
+  [2518] = {id = 2518, Content = "stop_other"},
+  [2519] = {
+    id = 2519,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
+  },
+  [2520] = {
+    id = 2520,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
+  },
+  [2521] = {
+    id = 2521,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2522] = {
+    id = 2522,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
+  },
+  [2523] = {
+    id = 2523,
+    Params = Table_MapStep_t.Params[1438]
+  },
+  [2524] = {
+    id = 2524,
+    Params = Table_MapStep_t.Params[1439]
+  },
+  [2525] = {
+    id = 2525,
+    Params = Table_MapStep_t.Params[1440]
+  },
+  [2526] = {
+    id = 2526,
+    Params = Table_MapStep_t.Params[1441]
+  },
+  [2527] = {
+    id = 2527,
+    Params = Table_MapStep_t.Params[1442]
+  },
+  [2528] = {
+    id = 2528,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1443]
+  },
+  [2529] = {id = 2529, Content = "stop_other"},
+  [2530] = {
+    id = 2530,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
+  },
+  [2531] = {
+    id = 2531,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
+  },
+  [2532] = {
+    id = 2532,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2533] = {
+    id = 2533,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
+  },
+  [2534] = {
+    id = 2534,
+    Params = Table_MapStep_t.Params[1444]
+  },
+  [2535] = {
+    id = 2535,
+    Params = Table_MapStep_t.Params[1445]
+  },
+  [2536] = {
+    id = 2536,
+    Params = Table_MapStep_t.Params[1446]
+  },
+  [2537] = {
+    id = 2537,
+    Params = Table_MapStep_t.Params[1447]
+  },
+  [2538] = {
+    id = 2538,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1448]
+  },
+  [2539] = {id = 2539, Content = "stop_other"},
+  [2540] = {
+    id = 2540,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
+  },
+  [2541] = {
+    id = 2541,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
+  },
+  [2542] = {
+    id = 2542,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2543] = {
+    id = 2543,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
+  },
+  [2544] = {
+    id = 2544,
+    Params = Table_MapStep_t.Params[1449]
+  },
+  [2545] = {
+    id = 2545,
+    Params = Table_MapStep_t.Params[1450]
+  },
+  [2546] = {
+    id = 2546,
+    Params = Table_MapStep_t.Params[1451]
+  },
+  [2547] = {
+    id = 2547,
+    Params = Table_MapStep_t.Params[1452]
+  },
+  [2548] = {
+    id = 2548,
+    Params = Table_MapStep_t.Params[1453]
+  },
+  [2549] = {
+    id = 2549,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1454]
+  },
+  [2550] = {id = 2550, Content = "stop_other"},
+  [2551] = {
+    id = 2551,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179]
+  },
+  [2552] = {
+    id = 2552,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808]
+  },
+  [2553] = {
+    id = 2553,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2554] = {
+    id = 2554,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784]
+  },
+  [2555] = {
+    id = 2555,
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1455]
+  },
+  [2556] = {
+    id = 2556,
+    Params = Table_MapStep_t.Params[1456]
+  },
+  [2557] = {
+    id = 2557,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
+  },
+  [2558] = {
+    id = 2558,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[1104]
+  },
+  [2559] = {
+    id = 2559,
+    Params = Table_MapStep_t.Params[1457]
+  },
+  [2560] = {
+    id = 2560,
+    Params = Table_MapStep_t.Params[1458]
+  },
+  [2561] = {
+    id = 2561,
+    Params = Table_MapStep_t.Params[1459]
+  },
+  [2562] = {
+    id = 2562,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1460]
+  },
+  [2563] = {
+    id = 2563,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
+  },
+  [2564] = {
+    id = 2564,
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1461]
+  },
+  [2565] = {
+    id = 2565,
+    Params = Table_MapStep_t.Params[1462]
+  },
+  [2566] = {
+    id = 2566,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
+  },
+  [2567] = {
+    id = 2567,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[1104]
+  },
+  [2568] = {
+    id = 2568,
+    Params = Table_MapStep_t.Params[1463]
+  },
+  [2569] = {
+    id = 2569,
+    Params = Table_MapStep_t.Params[1464]
+  },
+  [2570] = {
+    id = 2570,
+    Params = Table_MapStep_t.Params[1465]
+  },
+  [2571] = {
+    id = 2571,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1466]
+  },
+  [2572] = {
+    id = 2572,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
+  },
+  [2573] = {
+    id = 2573,
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1467]
+  },
+  [2574] = {
+    id = 2574,
+    Params = Table_MapStep_t.Params[1468]
+  },
+  [2575] = {
+    id = 2575,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
+  },
+  [2576] = {
+    id = 2576,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[1104]
+  },
+  [2577] = {
+    id = 2577,
+    Params = Table_MapStep_t.Params[1469]
+  },
+  [2578] = {
+    id = 2578,
+    Params = Table_MapStep_t.Params[1470]
+  },
+  [2579] = {
+    id = 2579,
+    Params = Table_MapStep_t.Params[1471]
+  },
+  [2580] = {
+    id = 2580,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1472]
+  },
+  [2581] = {
+    id = 2581,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
+  },
+  [2582] = {
+    id = 2582,
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1473]
+  },
+  [2583] = {
+    id = 2583,
+    Params = Table_MapStep_t.Params[1474]
+  },
+  [2584] = {
+    id = 2584,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
+  },
+  [2585] = {
+    id = 2585,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[1104]
+  },
+  [2586] = {
+    id = 2586,
+    Params = Table_MapStep_t.Params[1475]
+  },
+  [2587] = {
+    id = 2587,
+    Params = Table_MapStep_t.Params[1476]
+  },
+  [2588] = {
+    id = 2588,
+    Params = Table_MapStep_t.Params[1477]
+  },
+  [2589] = {
+    id = 2589,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1478]
+  },
+  [2590] = {
+    id = 2590,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
+  },
+  [2591] = {
+    id = 2591,
+    Content = "finish_mapstep",
+    Params = Table_MapStep_t.Params[1479]
+  },
+  [2592] = {
+    id = 2592,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1480]
+  },
+  [2593] = {
+    id = 2593,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[32]
+  },
+  [2594] = {
+    id = 2594,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1129]
+  },
+  [2595] = {
+    id = 2595,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1481]
+  },
+  [2596] = {
+    id = 2596,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1482]
+  },
+  [2597] = {
+    id = 2597,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2598] = {
+    id = 2598,
+    Params = Table_MapStep_t.Params[1483]
+  },
+  [2599] = {
+    id = 2599,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2600] = {
+    id = 2600,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
+  },
+  [2601] = {
+    id = 2601,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1484]
+  },
+  [2602] = {
+    id = 2602,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
+  },
+  [2603] = {
+    id = 2603,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1485]
+  },
+  [2604] = {
+    id = 2604,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
+  },
+  [2605] = {
+    id = 2605,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1486]
+  },
+  [2606] = {
+    id = 2606,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
+  },
+  [2607] = {
+    id = 2607,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1487]
+  },
+  [2608] = {
+    id = 2608,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[253]
+  },
+  [2609] = {
+    id = 2609,
+    Params = Table_MapStep_t.Params[1488]
+  },
+  [2610] = {
+    id = 2610,
+    Params = Table_MapStep_t.Params[1489]
+  },
+  [2611] = {
+    id = 2611,
+    Params = Table_MapStep_t.Params[1490]
+  },
+  [2612] = {
+    id = 2612,
+    Params = Table_MapStep_t.Params[1491]
+  },
+  [2613] = {
+    id = 2613,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2614] = {
+    id = 2614,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1138]
+  },
+  [2615] = {
+    id = 2615,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2616] = {
+    id = 2616,
+    Params = Table_MapStep_t.Params[1492]
+  },
+  [2617] = {
+    id = 2617,
+    Params = Table_MapStep_t.Params[1493]
+  },
+  [2618] = {
+    id = 2618,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2619] = {
+    id = 2619,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2620] = {
+    id = 2620,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2621] = {
+    id = 2621,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2622] = {
+    id = 2622,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2623] = {
+    id = 2623,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2624] = {
+    id = 2624,
+    Params = Table_MapStep_t.Params[1494]
+  },
+  [2625] = {
+    id = 2625,
+    Params = Table_MapStep_t.Params[1495]
+  },
+  [2626] = {
+    id = 2626,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2627] = {
+    id = 2627,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2628] = {
+    id = 2628,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2629] = {
+    id = 2629,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2630] = {
+    id = 2630,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2631] = {
+    id = 2631,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2632] = {
+    id = 2632,
+    Params = Table_MapStep_t.Params[1496]
+  },
+  [2633] = {
+    id = 2633,
+    Params = Table_MapStep_t.Params[1497]
+  },
+  [2634] = {
+    id = 2634,
+    Params = Table_MapStep_t.Params[1498]
+  },
+  [2635] = {
+    id = 2635,
+    Params = Table_MapStep_t.Params[1499]
+  },
+  [2636] = {
+    id = 2636,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2637] = {
+    id = 2637,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1138]
+  },
+  [2638] = {
+    id = 2638,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2639] = {
+    id = 2639,
+    Params = Table_MapStep_t.Params[1500]
+  },
+  [2640] = {
+    id = 2640,
+    Params = Table_MapStep_t.Params[1501]
+  },
+  [2641] = {
+    id = 2641,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2642] = {
+    id = 2642,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2643] = {
+    id = 2643,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2644] = {
+    id = 2644,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2645] = {
+    id = 2645,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2646] = {
+    id = 2646,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2647] = {
+    id = 2647,
+    Params = Table_MapStep_t.Params[1502]
+  },
+  [2648] = {
+    id = 2648,
+    Params = Table_MapStep_t.Params[1503]
+  },
+  [2649] = {
+    id = 2649,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2650] = {
+    id = 2650,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2651] = {
+    id = 2651,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2652] = {
+    id = 2652,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2653] = {
+    id = 2653,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2654] = {
+    id = 2654,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2655] = {
+    id = 2655,
+    Params = Table_MapStep_t.Params[1504]
+  },
+  [2656] = {
+    id = 2656,
+    Params = Table_MapStep_t.Params[1505]
+  },
+  [2657] = {
+    id = 2657,
+    Params = Table_MapStep_t.Params[1506]
+  },
+  [2658] = {
+    id = 2658,
+    Params = Table_MapStep_t.Params[1507]
+  },
+  [2659] = {
+    id = 2659,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2660] = {
+    id = 2660,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1138]
+  },
+  [2661] = {
+    id = 2661,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2662] = {
+    id = 2662,
+    Params = Table_MapStep_t.Params[1508]
+  },
+  [2663] = {
+    id = 2663,
+    Params = Table_MapStep_t.Params[1509]
+  },
+  [2664] = {
+    id = 2664,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2665] = {
+    id = 2665,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2666] = {
+    id = 2666,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2667] = {
+    id = 2667,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2668] = {
+    id = 2668,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2669] = {
+    id = 2669,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2670] = {
+    id = 2670,
+    Params = Table_MapStep_t.Params[1510]
+  },
+  [2671] = {
+    id = 2671,
+    Params = Table_MapStep_t.Params[1511]
+  },
+  [2672] = {
+    id = 2672,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2673] = {
+    id = 2673,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2674] = {
+    id = 2674,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2675] = {
+    id = 2675,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2676] = {
+    id = 2676,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2677] = {
+    id = 2677,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2678] = {
+    id = 2678,
+    Params = Table_MapStep_t.Params[1512]
+  },
+  [2679] = {
+    id = 2679,
+    Params = Table_MapStep_t.Params[1513]
+  },
+  [2680] = {
+    id = 2680,
+    Params = Table_MapStep_t.Params[1514]
+  },
+  [2681] = {
+    id = 2681,
+    Params = Table_MapStep_t.Params[1515]
+  },
+  [2682] = {
+    id = 2682,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5]
+  },
+  [2683] = {
+    id = 2683,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1138]
+  },
+  [2684] = {
+    id = 2684,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2685] = {
+    id = 2685,
+    Params = Table_MapStep_t.Params[1516]
+  },
+  [2686] = {
+    id = 2686,
+    Params = Table_MapStep_t.Params[1517]
+  },
+  [2687] = {
+    id = 2687,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2688] = {
+    id = 2688,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2689] = {
+    id = 2689,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2690] = {
+    id = 2690,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2691] = {
+    id = 2691,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2692] = {
+    id = 2692,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
+  },
+  [2693] = {
+    id = 2693,
+    Params = Table_MapStep_t.Params[1518]
+  },
+  [2694] = {
+    id = 2694,
+    Params = Table_MapStep_t.Params[1519]
+  },
+  [2695] = {
+    id = 2695,
+    Content = "collect",
+    Params = Table_MapStep_t.Params[1142]
+  },
+  [2696] = {
+    id = 2696,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1143]
+  },
+  [2697] = {
+    id = 2697,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1144]
+  },
+  [2698] = {
+    id = 2698,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34]
+  },
+  [2699] = {
+    id = 2699,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16]
+  },
+  [2700] = {
+    id = 2700,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1139]
   },
   [10001] = {
     id = 10001,
     Content = "broadcast_msg",
-    Params = Table_MapStep_t.Params[1376],
+    Params = Table_MapStep_t.Params[1541],
     MapID = 62,
-    StartCondition = Table_MapStep_t.StartCondition[9]
+    StartCondition = Table_MapStep_t.StartCondition[8]
   },
   [10002] = {
     id = 10002,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1444],
+    Params = Table_MapStep_t.Params[1609],
     MapID = 62
   },
   [10003] = {
     id = 10003,
     Content = "broadcast_msg",
-    Params = Table_MapStep_t.Params[1443],
+    Params = Table_MapStep_t.Params[1608],
     MapID = 62
   },
   [10004] = {
@@ -29335,48 +33530,48 @@ Table_MapStep = {
   },
   [10005] = {
     id = 10005,
-    Params = Table_MapStep_t.Params[1442],
+    Params = Table_MapStep_t.Params[1607],
     MapID = 62
   },
   [10006] = {
     id = 10006,
-    Params = Table_MapStep_t.Params[1441],
+    Params = Table_MapStep_t.Params[1606],
     MapID = 62
   },
   [10007] = {
     id = 10007,
-    Params = Table_MapStep_t.Params[1440],
+    Params = Table_MapStep_t.Params[1605],
     MapID = 62
   },
   [10008] = {
     id = 10008,
-    Params = Table_MapStep_t.Params[1439],
+    Params = Table_MapStep_t.Params[1604],
     MapID = 62
   },
   [10009] = {
     id = 10009,
-    Params = Table_MapStep_t.Params[1438],
+    Params = Table_MapStep_t.Params[1603],
     MapID = 62
   },
   [10010] = {
     id = 10010,
-    Params = Table_MapStep_t.Params[1437],
+    Params = Table_MapStep_t.Params[1602],
     MapID = 62
   },
   [10011] = {
     id = 10011,
-    Params = Table_MapStep_t.Params[1436],
+    Params = Table_MapStep_t.Params[1601],
     MapID = 62
   },
   [10012] = {
     id = 10012,
-    Params = Table_MapStep_t.Params[1435],
+    Params = Table_MapStep_t.Params[1600],
     MapID = 62
   },
   [10013] = {
     id = 10013,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1434],
+    Params = Table_MapStep_t.Params[1599],
     MapID = 62
   },
   [10014] = {
@@ -29388,13 +33583,13 @@ Table_MapStep = {
   [10015] = {
     id = 10015,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1433],
+    Params = Table_MapStep_t.Params[1598],
     MapID = 62
   },
   [10016] = {
     id = 10016,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1432],
+    Params = Table_MapStep_t.Params[1597],
     MapID = 62
   },
   [10017] = {
@@ -29406,7 +33601,7 @@ Table_MapStep = {
   [10018] = {
     id = 10018,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1431],
+    Params = Table_MapStep_t.Params[1596],
     MapID = 62
   },
   [10019] = {
@@ -29418,7 +33613,7 @@ Table_MapStep = {
   [10020] = {
     id = 10020,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1430],
+    Params = Table_MapStep_t.Params[1595],
     MapID = 62
   },
   [10021] = {
@@ -29430,7 +33625,7 @@ Table_MapStep = {
   [10022] = {
     id = 10022,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1429],
+    Params = Table_MapStep_t.Params[1594],
     MapID = 62
   },
   [10023] = {
@@ -29442,27 +33637,27 @@ Table_MapStep = {
   [10024] = {
     id = 10024,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1428],
+    Params = Table_MapStep_t.Params[1593],
     MapID = 62
   },
   [10025] = {
     id = 10025,
-    Params = Table_MapStep_t.Params[1427],
+    Params = Table_MapStep_t.Params[1592],
     MapID = 62
   },
   [10026] = {
     id = 10026,
-    Params = Table_MapStep_t.Params[1426],
+    Params = Table_MapStep_t.Params[1591],
     MapID = 62
   },
   [10027] = {
     id = 10027,
-    Params = Table_MapStep_t.Params[1425],
+    Params = Table_MapStep_t.Params[1590],
     MapID = 62
   },
   [10028] = {
     id = 10028,
-    Params = Table_MapStep_t.Params[1424],
+    Params = Table_MapStep_t.Params[1589],
     MapID = 62
   },
   [10029] = {
@@ -29474,25 +33669,25 @@ Table_MapStep = {
   [10030] = {
     id = 10030,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1408],
+    Params = Table_MapStep_t.Params[1573],
     MapID = 62
   },
   [10031] = {
     id = 10031,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1423],
+    Params = Table_MapStep_t.Params[1588],
     MapID = 62
   },
   [10032] = {
     id = 10032,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1406],
+    Params = Table_MapStep_t.Params[1571],
     MapID = 62
   },
   [10033] = {
     id = 10033,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1422],
+    Params = Table_MapStep_t.Params[1587],
     MapID = 62
   },
   [10034] = {
@@ -29504,37 +33699,37 @@ Table_MapStep = {
   [10035] = {
     id = 10035,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1421],
+    Params = Table_MapStep_t.Params[1586],
     MapID = 62
   },
   [10036] = {
     id = 10036,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1420],
+    Params = Table_MapStep_t.Params[1585],
     MapID = 62
   },
   [10037] = {
     id = 10037,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1408],
+    Params = Table_MapStep_t.Params[1573],
     MapID = 62
   },
   [10038] = {
     id = 10038,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1419],
+    Params = Table_MapStep_t.Params[1584],
     MapID = 62
   },
   [10039] = {
     id = 10039,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1406],
+    Params = Table_MapStep_t.Params[1571],
     MapID = 62
   },
   [10040] = {
     id = 10040,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1418],
+    Params = Table_MapStep_t.Params[1583],
     MapID = 62
   },
   [10041] = {
@@ -29552,31 +33747,31 @@ Table_MapStep = {
   [10043] = {
     id = 10043,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1408],
+    Params = Table_MapStep_t.Params[1573],
     MapID = 62
   },
   [10044] = {
     id = 10044,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1417],
+    Params = Table_MapStep_t.Params[1582],
     MapID = 62
   },
   [10045] = {
     id = 10045,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1406],
+    Params = Table_MapStep_t.Params[1571],
     MapID = 62
   },
   [10046] = {
     id = 10046,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1416],
+    Params = Table_MapStep_t.Params[1581],
     MapID = 62
   },
   [10047] = {
     id = 10047,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1415],
+    Params = Table_MapStep_t.Params[1580],
     MapID = 62
   },
   [10048] = {
@@ -29587,51 +33782,51 @@ Table_MapStep = {
   },
   [10049] = {
     id = 10049,
-    Params = Table_MapStep_t.Params[1414],
+    Params = Table_MapStep_t.Params[1579],
     MapID = 62
   },
   [10050] = {
     id = 10050,
-    Params = Table_MapStep_t.Params[1413],
+    Params = Table_MapStep_t.Params[1578],
     MapID = 62
   },
   [10051] = {
     id = 10051,
-    Params = Table_MapStep_t.Params[1412],
+    Params = Table_MapStep_t.Params[1577],
     MapID = 62
   },
   [10052] = {
     id = 10052,
-    Params = Table_MapStep_t.Params[1411],
+    Params = Table_MapStep_t.Params[1576],
     MapID = 62
   },
   [10053] = {
     id = 10053,
-    Params = Table_MapStep_t.Params[1410],
+    Params = Table_MapStep_t.Params[1575],
     MapID = 62
   },
   [10054] = {
     id = 10054,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1409],
+    Params = Table_MapStep_t.Params[1574],
     MapID = 62
   },
   [10055] = {
     id = 10055,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1408],
+    Params = Table_MapStep_t.Params[1573],
     MapID = 62
   },
   [10056] = {
     id = 10056,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1407],
+    Params = Table_MapStep_t.Params[1572],
     MapID = 62
   },
   [10057] = {
     id = 10057,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1406],
+    Params = Table_MapStep_t.Params[1571],
     MapID = 62
   },
   [10058] = {
@@ -29643,19 +33838,19 @@ Table_MapStep = {
   [10059] = {
     id = 10059,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1405],
+    Params = Table_MapStep_t.Params[1570],
     MapID = 62
   },
   [10060] = {
     id = 10060,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1401],
+    Params = Table_MapStep_t.Params[1566],
     MapID = 62
   },
   [10061] = {
     id = 10061,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1383],
+    Params = Table_MapStep_t.Params[1548],
     MapID = 62
   },
   [10062] = {
@@ -29667,13 +33862,13 @@ Table_MapStep = {
   [10063] = {
     id = 10063,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1404],
+    Params = Table_MapStep_t.Params[1569],
     MapID = 62
   },
   [10064] = {
     id = 10064,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1400],
+    Params = Table_MapStep_t.Params[1565],
     MapID = 62
   },
   [10065] = {
@@ -29685,7 +33880,7 @@ Table_MapStep = {
   [10066] = {
     id = 10066,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1403],
+    Params = Table_MapStep_t.Params[1568],
     MapID = 62
   },
   [10067] = {
@@ -29697,7 +33892,7 @@ Table_MapStep = {
   [10068] = {
     id = 10068,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1402],
+    Params = Table_MapStep_t.Params[1567],
     MapID = 62
   },
   [10069] = {
@@ -29709,7 +33904,7 @@ Table_MapStep = {
   [10070] = {
     id = 10070,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1401],
+    Params = Table_MapStep_t.Params[1566],
     MapID = 62
   },
   [10071] = {
@@ -29721,7 +33916,7 @@ Table_MapStep = {
   [10072] = {
     id = 10072,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1400],
+    Params = Table_MapStep_t.Params[1565],
     MapID = 62
   },
   [10073] = {
@@ -29733,25 +33928,25 @@ Table_MapStep = {
   [10074] = {
     id = 10074,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1399],
+    Params = Table_MapStep_t.Params[1564],
     MapID = 62
   },
   [10075] = {
     id = 10075,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1398],
+    Params = Table_MapStep_t.Params[1563],
     MapID = 62
   },
   [10076] = {
     id = 10076,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1397],
+    Params = Table_MapStep_t.Params[1562],
     MapID = 62
   },
   [10077] = {
     id = 10077,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1396],
+    Params = Table_MapStep_t.Params[1561],
     MapID = 62
   },
   [10078] = {
@@ -29763,19 +33958,19 @@ Table_MapStep = {
   [10079] = {
     id = 10079,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1395],
+    Params = Table_MapStep_t.Params[1560],
     MapID = 62
   },
   [10080] = {
     id = 10080,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1394],
+    Params = Table_MapStep_t.Params[1559],
     MapID = 62
   },
   [10081] = {
     id = 10081,
     Content = "cutscene",
-    Params = Table_MapStep_t.Params[1393],
+    Params = Table_MapStep_t.Params[1558],
     MapID = 62,
     Auto = 1
   },
@@ -29787,30 +33982,30 @@ Table_MapStep = {
   },
   [10083] = {
     id = 10083,
-    Params = Table_MapStep_t.Params[1392],
+    Params = Table_MapStep_t.Params[1557],
     MapID = 62
   },
   [10084] = {
     id = 10084,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1391],
+    Params = Table_MapStep_t.Params[1556],
     MapID = 62
   },
   [10085] = {
     id = 10085,
-    Params = Table_MapStep_t.Params[1390],
+    Params = Table_MapStep_t.Params[1555],
     MapID = 62
   },
   [10086] = {
     id = 10086,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1389],
+    Params = Table_MapStep_t.Params[1554],
     MapID = 62
   },
   [10087] = {
     id = 10087,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1388],
+    Params = Table_MapStep_t.Params[1553],
     MapID = 62
   },
   [10088] = {
@@ -29822,19 +34017,19 @@ Table_MapStep = {
   [10089] = {
     id = 10089,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1387],
+    Params = Table_MapStep_t.Params[1552],
     MapID = 62
   },
   [10090] = {
     id = 10090,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1386],
+    Params = Table_MapStep_t.Params[1551],
     MapID = 62
   },
   [10091] = {
     id = 10091,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1385],
+    Params = Table_MapStep_t.Params[1550],
     MapID = 62
   },
   [10092] = {
@@ -29846,19 +34041,19 @@ Table_MapStep = {
   [10093] = {
     id = 10093,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1384],
+    Params = Table_MapStep_t.Params[1549],
     MapID = 62
   },
   [10094] = {
     id = 10094,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1383],
+    Params = Table_MapStep_t.Params[1548],
     MapID = 62
   },
   [10095] = {
     id = 10095,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1382],
+    Params = Table_MapStep_t.Params[1547],
     MapID = 62
   },
   [10096] = {
@@ -29870,13 +34065,13 @@ Table_MapStep = {
   [10097] = {
     id = 10097,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1381],
+    Params = Table_MapStep_t.Params[1546],
     MapID = 62
   },
   [10098] = {
     id = 10098,
     Content = "killmonster",
-    Params = Table_MapStep_t.Params[1380],
+    Params = Table_MapStep_t.Params[1545],
     MapID = 62
   },
   [10099] = {
@@ -29887,7 +34082,7 @@ Table_MapStep = {
   [10100] = {
     id = 10100,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1379],
+    Params = Table_MapStep_t.Params[1544],
     MapID = 62
   },
   [10101] = {
@@ -29899,13 +34094,13 @@ Table_MapStep = {
   [10102] = {
     id = 10102,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1378],
+    Params = Table_MapStep_t.Params[1543],
     MapID = 62
   },
   [10103] = {
     id = 10103,
     Content = "cutscene",
-    Params = Table_MapStep_t.Params[1377],
+    Params = Table_MapStep_t.Params[1542],
     MapID = 62,
     Auto = 1
   },
@@ -29918,25 +34113,25 @@ Table_MapStep = {
   [10105] = {
     id = 10105,
     Content = "broadcast_msg",
-    Params = Table_MapStep_t.Params[1376],
+    Params = Table_MapStep_t.Params[1541],
     MapID = 42,
-    StartCondition = Table_MapStep_t.StartCondition[8]
+    StartCondition = Table_MapStep_t.StartCondition[7]
   },
   [10106] = {
     id = 10106,
-    Params = Table_MapStep_t.Params[1375],
+    Params = Table_MapStep_t.Params[1540],
     MapID = 42
   },
   [10107] = {
     id = 10107,
     Content = "multi_summon",
-    Params = Table_MapStep_t.Params[1374],
+    Params = Table_MapStep_t.Params[1539],
     MapID = 42
   },
   [10108] = {
     id = 10108,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1373],
+    Params = Table_MapStep_t.Params[1538],
     MapID = 42
   },
   [10110] = {
@@ -29953,10 +34148,10 @@ Table_MapStep = {
   [10112] = {
     id = 10112,
     Content = "cutscene",
-    Params = Table_MapStep_t.Params[1372],
+    Params = Table_MapStep_t.Params[1537],
     MapID = 42,
     Auto = 1,
-    StartCondition = Table_MapStep_t.StartCondition[8]
+    StartCondition = Table_MapStep_t.StartCondition[7]
   },
   [10113] = {
     id = 10113,
@@ -29966,13 +34161,13 @@ Table_MapStep = {
   },
   [10114] = {
     id = 10114,
-    Params = Table_MapStep_t.Params[1371],
+    Params = Table_MapStep_t.Params[1536],
     MapID = 42
   },
   [10115] = {
     id = 10115,
     Content = "multi_summon",
-    Params = Table_MapStep_t.Params[1370],
+    Params = Table_MapStep_t.Params[1535],
     MapID = 42
   },
   [10116] = {
@@ -29984,7 +34179,7 @@ Table_MapStep = {
   [10117] = {
     id = 10117,
     Content = "cutscene",
-    Params = Table_MapStep_t.Params[1369],
+    Params = Table_MapStep_t.Params[1534],
     MapID = 42,
     Auto = 1
   },
@@ -30002,13 +34197,13 @@ Table_MapStep = {
   [10120] = {
     id = 10120,
     Content = "multi_summon",
-    Params = Table_MapStep_t.Params[1368],
+    Params = Table_MapStep_t.Params[1533],
     MapID = 42
   },
   [10121] = {
     id = 10121,
     Content = "multi_summon",
-    Params = Table_MapStep_t.Params[1367],
+    Params = Table_MapStep_t.Params[1532],
     MapID = 42
   },
   [10122] = {
@@ -30020,7 +34215,7 @@ Table_MapStep = {
   [10123] = {
     id = 10123,
     Content = "end_escort_train_event",
-    Params = Table_MapStep_t.Params[1366],
+    Params = Table_MapStep_t.Params[1531],
     MapID = 42
   },
   [10124] = {
@@ -30031,7 +34226,7 @@ Table_MapStep = {
   [10125] = {
     id = 10125,
     Content = "multi_summon",
-    Params = Table_MapStep_t.Params[1365],
+    Params = Table_MapStep_t.Params[1530],
     MapID = 42
   },
   [10126] = {
@@ -30043,7 +34238,7 @@ Table_MapStep = {
   [10127] = {
     id = 10127,
     Content = "end_escort_train_event",
-    Params = Table_MapStep_t.Params[1364],
+    Params = Table_MapStep_t.Params[1529],
     MapID = 42
   },
   [10128] = {
@@ -30054,25 +34249,25 @@ Table_MapStep = {
   [10129] = {
     id = 10129,
     Content = "multi_summon",
-    Params = Table_MapStep_t.Params[1363],
+    Params = Table_MapStep_t.Params[1528],
     MapID = 42
   },
   [10130] = {
     id = 10130,
     Content = "collect_goods",
-    Params = Table_MapStep_t.Params[1362],
+    Params = Table_MapStep_t.Params[1527],
     MapID = 42
   },
   [10131] = {
     id = 10131,
     Content = "end_escort_train_event",
-    Params = Table_MapStep_t.Params[1356],
+    Params = Table_MapStep_t.Params[1521],
     MapID = 42
   },
   [10132] = {
     id = 10132,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1361],
+    Params = Table_MapStep_t.Params[1526],
     MapID = 42
   },
   [10133] = {
@@ -30083,7 +34278,7 @@ Table_MapStep = {
   [10134] = {
     id = 10134,
     Content = "multi_summon",
-    Params = Table_MapStep_t.Params[1360],
+    Params = Table_MapStep_t.Params[1525],
     MapID = 42
   },
   [10135] = {
@@ -30095,7 +34290,7 @@ Table_MapStep = {
   [10136] = {
     id = 10136,
     Content = "end_escort_train_event",
-    Params = Table_MapStep_t.Params[1356],
+    Params = Table_MapStep_t.Params[1521],
     MapID = 42
   },
   [10137] = {
@@ -30106,7 +34301,7 @@ Table_MapStep = {
   [10138] = {
     id = 10138,
     Content = "multi_summon",
-    Params = Table_MapStep_t.Params[1359],
+    Params = Table_MapStep_t.Params[1524],
     MapID = 42
   },
   [10139] = {
@@ -30118,7 +34313,7 @@ Table_MapStep = {
   [10140] = {
     id = 10140,
     Content = "end_escort_train_event",
-    Params = Table_MapStep_t.Params[1356],
+    Params = Table_MapStep_t.Params[1521],
     MapID = 42
   },
   [10141] = {
@@ -30129,25 +34324,25 @@ Table_MapStep = {
   [10142] = {
     id = 10142,
     Content = "multi_summon",
-    Params = Table_MapStep_t.Params[1358],
+    Params = Table_MapStep_t.Params[1523],
     MapID = 42
   },
   [10143] = {
     id = 10143,
     Content = "collect_goods",
-    Params = Table_MapStep_t.Params[1357],
+    Params = Table_MapStep_t.Params[1522],
     MapID = 42
   },
   [10144] = {
     id = 10144,
     Content = "end_escort_train_event",
-    Params = Table_MapStep_t.Params[1356],
+    Params = Table_MapStep_t.Params[1521],
     MapID = 42
   },
   [10145] = {
     id = 10145,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1355],
+    Params = Table_MapStep_t.Params[1520],
     MapID = 42
   }
 }
@@ -30155,7 +34350,7 @@ local cell_mt = {
   __index = {
     Auto = 0,
     Content = "summon",
-    MapID = 149,
+    MapID = 154,
     Params = _EmptyTable,
     StartCondition = _EmptyTable,
     id = 1

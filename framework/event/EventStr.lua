@@ -231,7 +231,15 @@ PVEEvent = {
   Astral_Launch = "Astral_Launch",
   Astral_Shutdown = "Astral_Shutdown",
   SpeceTimeIllusion_Launch = "SpeceTimeIllusion_Launch",
-  SpeceTimeIllusion_Shutdown = "SpeceTimeIllusion_Shutdown"
+  SpeceTimeIllusion_Shutdown = "SpeceTimeIllusion_Shutdown",
+  AbyssDragon_Launch = "AbyssDragon_Launch",
+  AbyssDragon_Shutdown = "AbyssDragon_Shutdown",
+  AbyssDragon_UpdateArea = "AbyssDragon_UpdateArea",
+  AbyssDragon_ClientWait = "AbyssDragon_ClientWait",
+  FairyTale_Launch = "FairyTale_Launch",
+  FairyTale_Shutdown = "FairyTale_Shutdown",
+  FairyTale_AddTrainNpc = "FairyTale_AddTrainNpc",
+  FairyTale_RemoveTrainNpc = "FairyTale_RemoveTrainNpc"
 }
 GVGEvent = {
   GVGDungeonLaunch = "GVGEvent_GVGDungeonLaunch",
@@ -384,7 +392,8 @@ MyselfEvent = {
   SpecialHideBuffRemove = "MyselfEvent_SpecialHideBuffRemove",
   RidePlayerChange = "MyselfEvent_RidePlayerChange",
   MyPippiChange = "MyselfEvent_MyPippiChange",
-  AsEquipChange = "MyselfEvent_AsEquipChange"
+  AsEquipChange = "MyselfEvent_AsEquipChange",
+  RecallTimeChange = "MyselfEvent_RecallTimeChange"
 }
 ItemEvent = {
   ItemCmd = "ItemEvent_ItemCmd",
@@ -472,7 +481,8 @@ ItemTipEvent = {
   ShowPortraitFramePreview = "ItemTipEvent_ShowPortraitFramePreview",
   ClickItemUrl = "ItemTipEvent_ClickItemUrl",
   ShowAncientRandom = "ItemTipEvent_ShowAncientRandom",
-  ClickBufferUrl = "ItemTipEvent_ClickBufferUrl"
+  ClickBufferUrl = "ItemTipEvent_ClickBufferUrl",
+  ShowGiftDetail = "ItemTipEvent_ShowGiftDetail"
 }
 LoadSceneEvent = {
   StartLoad = "LoadSceneEvent_StartLoad",
@@ -573,7 +583,8 @@ SkillEvent = {
   UpdateCDTimes = "SkillEvent_UpdateCDTimes",
   CheckSkillForbid = "SkillEvent_CheckSkillForbid",
   EnterWarehouse = "SkillEvent_EnterWarehouse",
-  LeaveWarehouse = "SkillEvent_LeaveWarehouse"
+  LeaveWarehouse = "SkillEvent_LeaveWarehouse",
+  BellCharge = "SkillEvent_BellCharge"
 }
 QuestEvent = {
   QuestDelete = "QuestEvent_QuestDelete",
@@ -731,7 +742,8 @@ RefineEvent = {
 }
 HappyShopEvent = {
   SelectIconSprite = "HappyShopEvent_SelectIconSprite",
-  ExchangeBtnClick = "HappyShopEvent_ExchangeBtnClick"
+  ExchangeBtnClick = "HappyShopEvent_ExchangeBtnClick",
+  GiftItemClick = "HappyShopEvent_GiftItemClick"
 }
 TriggerEvent = {
   AddTrigger = "TriggerEvent_AddTrigger",
@@ -756,7 +768,10 @@ TriggerEvent = {
   Remove_EndlessBattle_OccupyArea = "TriggerEvent_Remove_EndlessBattle_OccupyArea",
   EnterAybssLakeBattleArea = "TriggerEvent_EnterAybssLakeBattleArea",
   LeaveAybssLakeBattleArea = "TriggerEvent_LeaveAybssLakeBattleArea",
-  RemoveAybssLakeBattleArea = "TriggerEvent_RemoveAybssLakeBattleArea"
+  RemoveAybssLakeBattleArea = "TriggerEvent_RemoveAybssLakeBattleArea",
+  EnterAbyssDragonArea = "TriggerEvent_EnterAbyssDragonArea",
+  LeaveAbyssDragonArea = "TriggerEvent_LeaveAbyssDragonArea",
+  RemoveAbyssDragonArea = "TriggerEvent_RemoveAbyssDragonArea"
 }
 ChatRoomEvent = {
   HavePrivateChatMsg = "ChatRoomEvent_HavePrivateChatMsg",

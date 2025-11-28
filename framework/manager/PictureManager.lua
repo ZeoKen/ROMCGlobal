@@ -77,7 +77,8 @@ PictureManager.Config = {
     ChatRoom = "GUI/pic/ChatRoom/",
     MasterSkill = "GUI/pic/MasterSkill/",
     Abyss = "GUI/pic/Abyss/",
-    InheritSkill = "GUI/pic/InheritSkill/"
+    InheritSkill = "GUI/pic/InheritSkill/",
+    EquipMemory = "GUI/pic/EquipMemory/"
   }
 }
 PictureManager.Instance = nil
@@ -160,6 +161,7 @@ function PictureManager:ctor()
   self.masterSkillCache = {}
   self.abyssCache = {}
   self.inheritSkillCache = {}
+  self.equipMemoryCache = {}
   PictureManager.Instance = self
 end
 
@@ -472,6 +474,10 @@ end
 
 function PictureManager:SetInheritSkillTexture(sName, uiTexture)
   return self:SetTexture(sName, uiTexture, PictureManager.Config.Pic.InheritSkill, self.inheritSkillCache)
+end
+
+function PictureManager:SetEquipMemoryTexture(sName, uiTexture)
+  return self:SetTexture(sName, uiTexture, PictureManager.Config.Pic.EquipMemory, self.equipMemoryCache)
 end
 
 function PictureManager:SetTexture(sName, uiTexture, path, cache)
@@ -828,6 +834,10 @@ end
 
 function PictureManager:UnloadInheritSkillTexture(sName, uiTexture)
   self:UnLoadTexture(self.inheritSkillCache, sName, uiTexture)
+end
+
+function PictureManager:UnloadEquipMemoryTexture(sName, uiTexture)
+  self:UnLoadTexture(self.equipMemoryCache, sName, uiTexture)
 end
 
 function PictureManager:UnLoadTexture(cache, sName, uiTexture)

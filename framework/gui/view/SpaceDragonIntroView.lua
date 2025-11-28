@@ -25,29 +25,35 @@ function SpaceDragonIntroView:addViewEventListener()
   end)
   self:AddButtonEvent("Goto", function()
     self:Goto()
-    self:CloseSelf()
   end)
 end
 
 function SpaceDragonIntroView:Goto(note)
-  local curMapId = Game.MapManager:GetMapID()
-  if curMapId ~= 154 then
-    FuncShortCutFunc.Me():MoveToPos({
-      Event = {mapid = 154}
-    })
-    return
-  end
-  local data = AbyssFakeDragonProxy.Instance:GetDragonInfos()
-  if not data then
-    self:CloseSelf()
-    return
-  end
-  local targetMap, targetPos = AbyssFakeDragonProxy.Instance:GetTracePos()
-  targetPos = targetPos and LuaVector3.New(targetPos.x, targetPos.y, targetPos.z)
-  if targetMap and targetPos then
-    FuncShortCutFunc.Me():MoveToPos({
-      Event = {mapid = targetMap, pos = targetPos}
-    })
+  if not self.gainWayTip then
+    local parentPanel = self.gameObject:GetComponent(UIPanel)
+    self.gainWayTip = GainWayTip.new(self.gameObject, parentPanel.depth + 2)
+    if not self.gainWayTipDatas then
+      self.gainWayTipDatas = {}
+      local raidInfo = GameConfig.AbyssDragon and GameConfig.AbyssDragon.RaidInfo
+      if raidInfo then
+        for id, info in pairs(raidInfo) do
+          local data = GainWayItemCellData.new(id)
+          data:ParseSingleNormalGainWay(info.AddwayID)
+          TableUtility.InsertSort(self.gainWayTipDatas, data, function(a, b)
+            return a.staticID > b.staticID
+          end)
+        end
+      end
+    end
+    self.gainWayTip:SetTitle(ZhString.SpaceDragonIntroView_Title)
+    self.gainWayTip:SetPivotOffset(0, 278)
+    self.gainWayTip:SetListDatas(self.gainWayTipDatas)
+    self.gainWayTip:AddEventListener(ItemEvent.GoTraceItem, function()
+      self:CloseSelf()
+    end, self)
+    self.gainWayTip:AddEventListener(GainWayTip.CloseGainWay, function()
+      self.gainWayTip = nil
+    end, self)
   end
 end
 
@@ -57,7 +63,7 @@ end
 
 function SpaceDragonIntroView:addEventListener()
   self:AddListenEvt(ServiceEvent.PlayerMapChange, self.SceneLoadFinishHandler)
-  self:AddListenEvt(ServiceEvent.QuestAbyssDragonOnOffQuestCmd, self.SetView)
+  self:AddListenEvt(ServiceEvent.RaidCmdAbyssDragonOnOffRaidCmd, self.SetView)
 end
 
 function SpaceDragonIntroView:AddHelpButtonEvent()
@@ -83,4 +89,8 @@ end
 
 function SpaceDragonIntroView:OnExit()
   PictureManager.Instance:UnloadAbyssTexture("equip_drawings_icon_AbyssDragon", self.icon)
+  if self.gainWayTip then
+    self.gainWayTip:OnExit()
+    self.gainWayTip = nil
+  end
 end

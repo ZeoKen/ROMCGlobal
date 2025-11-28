@@ -212,6 +212,7 @@ function FunctionLottery:InitDefaultDress(t)
   local dressList = random_config[random_index]
   local result = {}
   local displayRace = MyselfProxy.Instance:GetMyRace()
+  local isMale = _MyGender == ProtoCommon_pb.EGENDER_MALE
   for i = 1, #dressList do
     local partIndex = ItemUtil.getItemRolePartIndex(dressList[i])
     if partIndex == Asset_Role.PartIndex.Body then

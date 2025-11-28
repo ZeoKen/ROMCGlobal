@@ -267,7 +267,8 @@ Table_HighRefine_t = {
           765,
           795,
           805,
-          815
+          815,
+          825
         },
         MRefine = 6
       }
@@ -390,7 +391,8 @@ Table_HighRefine_t = {
           765,
           795,
           805,
-          815
+          815,
+          825
         },
         MRefine = 2
       }
@@ -513,7 +515,8 @@ Table_HighRefine_t = {
           765,
           795,
           805,
-          815
+          815,
+          825
         },
         MRefine = 4
       }
@@ -636,7 +639,8 @@ Table_HighRefine_t = {
           765,
           795,
           805,
-          815
+          815,
+          825
         },
         MRefine = 8
       }
@@ -759,7 +763,8 @@ Table_HighRefine_t = {
           765,
           795,
           805,
-          815
+          815,
+          825
         },
         MRefine = 10
       }

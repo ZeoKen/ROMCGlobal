@@ -536,7 +536,11 @@ end
 
 function MsgManager.MidMsgTableParam(title, text, param)
   local data = {}
-  data.text = string.format(text, param)
+  if type(param) == "table" then
+    data.text = string.format(text, unpack(param))
+  else
+    data.text = string.format(text, param)
+  end
   local midMsg = FloatingPanel.Instance:GetMidMsg()
   midMsg:SetData(data)
 end

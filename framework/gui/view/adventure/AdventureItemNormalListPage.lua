@@ -48,8 +48,17 @@ function AdventureItemNormalListPage:initView()
       type = self.data and self.data.staticData.id,
       tabID = self.selectTabData and self.selectTabData.id,
       curPropData = self.itemlist.propData,
-      curKeys = self.itemlist.keys
+      curKeys = self.itemlist.keys,
+      curCustomProps = self.itemlist.customProps
     }
+    if self.data.staticData.id == SceneManual_pb.EMANUALTYPE_CARD then
+      xdlog("卡片页签筛选机制")
+      tipData.customTitle = ZhString.AdventurePanel_CardType
+      tipData.customProps = {
+        [2] = "MINI",
+        [3] = "MVP"
+      }
+    end
     TipManager.Instance:ShowPropTypeTip(tipData, selectbg, NGUIUtil.AnchorSide.AnchorSide, {-90, -50})
   end)
   local tipHolder = self:FindGO("tipHolder", listObj)
@@ -64,13 +73,13 @@ function AdventureItemNormalListPage:initView()
   self.FilterConditionLabel.text = ZhString.AdventurePanel_FilterOnlyLocked
   self:AddClickEvent(self.FilterCondition.gameObject, function(obj)
     self.professionSelected = self.FilterCondition.value
-    self.itemlist:SetPropData(self.professionSelected and AdventureItemNormalListPage.SceneryProp or nil)
+    self.itemlist:SetPropData(self.professionSelected and AdventureItemNormalListPage.SceneryProp or nil, nil, nil)
     self:tabClick(self.selectTabData)
   end)
 end
 
-function AdventureItemNormalListPage:filterPropCallback(propData, keys)
-  self.itemlist:SetPropData(propData, keys)
+function AdventureItemNormalListPage:filterPropCallback(customProps, propData, keys)
+  self.itemlist:SetPropData(propData, keys, customProps)
   self:UpdateList()
 end
 
@@ -129,7 +138,7 @@ function AdventureItemNormalListPage:setCategoryData(data)
   self.data = data
   local list = {}
   if self.itemlist then
-    self.itemlist:SetPropData(nil, nil)
+    self.itemlist:SetPropData(nil, nil, nil)
   end
   local itemTabGO = self:FindGO("ItemTabs", self.gameObject)
   itemTabGO:SetActive(false)

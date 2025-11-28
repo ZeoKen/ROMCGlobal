@@ -142,6 +142,11 @@ function ShopItemData:SetData(data)
   self.cycleGiftType = data.cyclegifttype
   self.cycleGiftCycle = data.cyclegiftcycle
   self.refinelv = data.refinelv
+  if data.gift and 0 < data.gift.itemid then
+    self.giftItem = ItemData.new("gift", data.gift.itemid)
+    self.giftItem.num = data.gift.count
+    self.giftItem.isReceived = data.gift.isbuy
+  end
 end
 
 function ShopItemData:RefreshMenuUnlock()
@@ -486,4 +491,10 @@ end
 
 function ShopItemData:GetRealItemID()
   return self.goodsID
+end
+
+function ShopItemData:SetGiftState(isReceived)
+  if self.giftItem then
+    self.giftItem.isReceived = isReceived
+  end
 end

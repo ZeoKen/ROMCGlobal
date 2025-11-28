@@ -2087,8 +2087,7 @@ Table_PoemStep = {
     Questid = 601940001,
     name = "##173036",
     step = 3,
-    Descrip = Table_PoemStep_t.Descrip[48],
-    TraceInfo = "##172989"
+    Descrip = Table_PoemStep_t.Descrip[48]
   },
   [49] = {
     id = 49,
@@ -2279,7 +2278,6 @@ Table_PoemStep = {
   [73] = {
     id = 73,
     Questid = 311120011,
-    name = "##173235",
     step = 7,
     Descrip = Table_PoemStep_t.Descrip[73],
     TraceInfo = "##173159"
@@ -2385,7 +2383,8 @@ Table_PoemStep = {
     Questid = 311140011,
     name = "##173146",
     step = 5,
-    Descrip = Table_PoemStep_t.Descrip[86]
+    Descrip = Table_PoemStep_t.Descrip[86],
+    TraceInfo = "##172985"
   },
   [87] = {
     id = 87,
@@ -2625,6 +2624,7 @@ Table_PoemStep = {
   [117] = {
     id = 117,
     Questid = 311190021,
+    name = "##173162",
     step = 9,
     Descrip = Table_PoemStep_t.Descrip[117],
     TraceInfo = "##173110"
@@ -2796,9 +2796,9 @@ local cell_mt = {
   __index = {
     Descrip = _EmptyTable,
     Questid = 311150001,
-    TraceInfo = "##172985",
+    TraceInfo = "##172989",
     id = 1,
-    name = "##173162",
+    name = "##173235",
     step = 0
   }
 }

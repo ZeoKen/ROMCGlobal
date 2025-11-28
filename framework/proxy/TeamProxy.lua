@@ -111,10 +111,6 @@ function TeamProxy:CheckWarbandFitGroupMemberValid_CupMode6v6(isMultiServer)
 end
 
 function TeamProxy:InitTeamGoals()
-  if self._teamGoalInited == true then
-    return
-  end
-  self._teamGoalInited = true
   local fatherGoals = {}
   local childGoals = {}
   local grandGoals = {}
@@ -138,7 +134,10 @@ function TeamProxy:InitTeamGoals()
       end
     end
   end
-  self.goals = {}
+  if not self.goals then
+    self.goals = {}
+  end
+  TableUtility.ArrayClear(self.goals)
   local combine = {
     fatherGoal = {
       id = 0,
@@ -156,7 +155,10 @@ function TeamProxy:InitTeamGoals()
   table.sort(self.goals, function(a, b)
     return a.fatherGoal.id < b.fatherGoal.id
   end)
-  self.grandGoals = {}
+  if not self.grandGoals then
+    self.grandGoals = {}
+  end
+  TableUtility.ArrayClear(self.grandGoals)
   local grandcombine = {
     groupid = 0,
     fatherid = 0,

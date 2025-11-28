@@ -1,6 +1,5 @@
 autoImport("SkillPrecondCheck")
 autoImport("SkillReplacePrecondCheck")
-autoImport("SkillHelperFunc")
 FunctionSkillEnableCheck = class("FunctionSkillEnableCheck")
 local mAutoSkillGroup
 
@@ -312,8 +311,14 @@ function FunctionSkillEnableCheck:OnRemoveStateCheckSkill(preCondtionCheck)
   end
 end
 
+local importedSkillFunc = false
+
 function FunctionSkillEnableCheck:AddOrUpdateTypeCheck(skill, preCondtionCheck)
   self:RemoveTypeCheck(skill)
+  if not importedSkillFunc then
+    autoImport("SkillHelperFunc")
+    importedSkillFunc = true
+  end
   local preCondition = skill:GetPreCondition()
   if not preCondition then
     return false
@@ -371,6 +376,10 @@ end
 function FunctionSkillEnableCheck:CheckSkill(conditionCheck)
   local skill = conditionCheck.skillItemData
   local preCondition = skill:GetPreCondition()
+  if not importedSkillFunc then
+    autoImport("SkillHelperFunc")
+    importedSkillFunc = true
+  end
   if preCondition then
     if preCondition.ProType then
       local res = SkillHelperFunc.CheckPrecondtionByProType(preCondition.ProType, Game.Myself.data, skill:GetID())
@@ -405,6 +414,10 @@ function FunctionSkillEnableCheck:UpdateReason(check, state, skill, reason)
 end
 
 function FunctionSkillEnableCheck:_ProCheckSkillPreCond(conditionCheck)
+  if not importedSkillFunc then
+    autoImport("SkillHelperFunc")
+    importedSkillFunc = true
+  end
   local skill = conditionCheck.skillItemData
   local preCondition = skill:GetPreCondition()
   if preCondition and preCondition.ProType then

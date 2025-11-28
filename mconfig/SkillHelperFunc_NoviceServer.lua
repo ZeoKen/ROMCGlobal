@@ -165,7 +165,7 @@ function SkillHelperFunc.POISON(srcuser)
 end
 
 function SkillHelperFunc.SOLO(srcuser)
-  if srcuser:HasBuffID(119301) or srcuser:GetEquipedWeaponType() ~= 260 and srcuser:GetEquipedWeaponType() ~= 270 then
+  if srcuser:GetEquipedWeaponType() ~= 260 and srcuser:GetEquipedWeaponType() ~= 270 then
     return false
   end
   return true

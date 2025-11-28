@@ -747,6 +747,25 @@ function ItemTipBaseCell:UpdateNormalItemInfo(data)
     end
     ServiceItemProxy.Instance:CallGetCountItemCmd(itemid, nil, source)
   end
+  local group = GameConfig.AbyssDragon.SharedRewardGroup
+  if group then
+    for k, v in pairs(group) do
+      local itemIds = v.ItemIds
+      if itemIds and 0 < #itemIds and 0 < TableUtility.ArrayFindIndex(itemIds, sData.id) then
+        local getLimitData = {}
+        local limitCount = v.Max
+        local count = 0
+        if k == "JoinReward" then
+          count = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_ABYSS_DRAGON_PASS_REWARD) or 0
+        elseif k == "MvpReward" then
+          count = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_ABYSS_DRAGON_MVP) or 0
+        end
+        getLimitData.label = string.format("%s%s %s/%s", ZhString.ItemTip_GetLimit_Week, ZhString.ItemTip_GetLimit, count, limitCount)
+        self.contextDatas[ItemTipAttriType.UseLimit] = getLimitData
+        break
+      end
+    end
+  end
   local needManualShow, inManualStr, inManualRefineStrs, unlockManualStr = false
   local inManual, unlockManual = false, false
   if data:IsFashion() then
@@ -1698,8 +1717,26 @@ function ItemTipBaseCell:UpdateMemoryAttrInfo(data)
     namevaluepair = {}
   }
   local memoryLv = memoryData.level
-  local maxLv = 30
   local quality = Table_Item[itemId].Quality
+  local getAvailableMaxLevel = function(memoryInfo, quality)
+    local curLv = memoryInfo.level or 0
+    local excessLv = memoryInfo.excess_lv or 0
+    local lastReachable = curLv
+    for i = curLv + 1, #Table_ItemMemoryLevel do
+      local lvCfg = Table_ItemMemoryLevel[i]
+      if not (lvCfg and lvCfg.Attr and lvCfg.Attr[quality]) then
+        break
+      end
+      lastReachable = i
+      local hasExcessCost = lvCfg.ExcessCost and next(lvCfg.ExcessCost) ~= nil
+      local needExcessLv = lvCfg.NeedExcessLv
+      if hasExcessCost and needExcessLv and excessLv < needExcessLv then
+        break
+      end
+    end
+    return lastReachable
+  end
+  local maxLv = getAvailableMaxLevel(memoryData, quality)
   local lvConfig = Table_ItemMemoryLevel[memoryLv]
   if not lvConfig then
     redlog("等级数据缺失", memoryLv)
@@ -1707,53 +1744,68 @@ function ItemTipBaseCell:UpdateMemoryAttrInfo(data)
   end
   local baseAttrs = lvConfig.Attr and lvConfig.Attr[quality]
   if baseAttrs then
-    local attrList = {}
+    local mergableAttrs = {}
+    local separateAttrs = {}
     local orderList = {}
     local order = 0
-    for _attr, _value in pairs(baseAttrs) do
+    local getAttrDisplayName = function(propName)
+      return propName == "MaxHp" and ZhString.EquipMemory_MaxHp or propName
+    end
+    local isHpAttr = function(propName)
+      return propName == "MaxHp" or propName == "BaseHp"
+    end
+    local createAttrData = function(name, value, order)
+      return {
+        name = name .. "+" .. value,
+        isMemory = true,
+        order = order
+      }
+    end
+    for attrId, value in pairs(baseAttrs) do
       order = order + 1
-      local attrConfig = Game.Config_PropName[_attr]
+      local attrConfig = Game.Config_PropName[attrId]
       if attrConfig then
-        if not attrList[_value] then
-          attrList[_value] = {}
-        end
-        if attrConfig.PropName == "MaxHp" then
-          table.insert(attrList[_value], ZhString.EquipMemory_MaxHp)
-          orderList[attrConfig.PropName] = ZhString.EquipMemory_MaxHp
+        local propName = attrConfig.PropName
+        local displayName = getAttrDisplayName(propName)
+        if isHpAttr(attrConfig.VarName) then
+          local hpOrder = attrConfig.VarName == "MaxHp" and 998 or 999
+          table.insert(separateAttrs, createAttrData(displayName, value, hpOrder))
         else
-          table.insert(attrList[_value], attrConfig.PropName)
-          orderList[attrConfig.PropName] = order
+          mergableAttrs[value] = mergableAttrs[value] or {}
+          table.insert(mergableAttrs[value], propName)
+          orderList[propName] = order
         end
       end
     end
-    local result = {}
-    for _value, _nameList in pairs(attrList) do
-      local _nameStr = ""
-      local order
-      for i = 1, #_nameList do
-        _nameStr = _nameStr .. _nameList[i]
-        if i < #_nameList then
-          _nameStr = _nameStr .. ZhString.ItemTip_ChAnd
-        end
-        order = orderList[_nameList[i]] or 999
-      end
-      _nameStr = _nameStr .. "+" .. _value
-      if _nameStr ~= "" then
-        local _tempData = {
-          name = _nameStr,
-          isMemory = true,
-          order = order
-        }
-        table.insert(memory.namevaluepair, _tempData)
-      end
+    for value, nameList in pairs(mergableAttrs) do
+      local combinedName = table.concat(nameList, ZhString.ItemTip_ChAnd)
+      local attrOrder = orderList[nameList[1]] or 999
+      xdlog("attrOrder", nameList[1], attrOrder)
+      table.insert(memory.namevaluepair, createAttrData(combinedName, value, attrOrder))
     end
-    table.sort(memory.namevaluepair, function(l, r)
-      return l.order < r.order
+    for _, attrData in ipairs(separateAttrs) do
+      table.insert(memory.namevaluepair, attrData)
+    end
+    table.sort(memory.namevaluepair, function(a, b)
+      return a.order < b.order
     end)
     memory.namevaluepair[1].value = memoryLv == maxLv and "Lv." .. memoryLv or string.format("[c][4D7CFF]Lv.%s/%s[-][/c]", memoryLv, maxLv)
   end
   local maxAttrCount = memoryData.maxAttrCount or 1
   local attrs = memoryData.memoryAttrs
+  local passExcessForSlot = {}
+  do
+    local curExcess = memoryData.excess_lv or 0
+    local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
+    if type(excessCfg) == "table" and curExcess and 0 < curExcess then
+      for stageKey, mappedKey in pairs(excessCfg) do
+        local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
+        if slotIndex and stageKey <= curExcess then
+          passExcessForSlot[slotIndex] = curExcess
+        end
+      end
+    end
+  end
   for i = 1, maxAttrCount do
     if attrs[i] then
       local attrConfig = Game.ItemMemoryEffect[attrs[i].id]
@@ -1761,7 +1813,38 @@ function ItemTipBaseCell:UpdateMemoryAttrInfo(data)
         local level = 1
         local staticId = attrConfig.level and attrConfig.level[level]
         local staticData = staticId and Table_ItemMemoryEffect[staticId]
-        buffDesc = staticData and staticData.WaxDesc
+        local getBuffDescByStage = function(buffIds, stageIndex)
+          if not buffIds then
+            return nil
+          end
+          local targetBuffIds
+          if type(buffIds) == "table" then
+            if buffIds[stageIndex] ~= nil then
+              targetBuffIds = buffIds[stageIndex]
+            elseif buffIds[0] ~= nil then
+              targetBuffIds = buffIds[0]
+            else
+              targetBuffIds = buffIds[1]
+            end
+          end
+          local buffId
+          if type(targetBuffIds) == "table" then
+            buffId = next(targetBuffIds) and targetBuffIds[next(targetBuffIds)]
+          else
+            buffId = targetBuffIds
+          end
+          local buffData = buffId and Table_Buffer[buffId]
+          local desc = buffData and buffData.Dsc and OverSea.LangManager.Instance():GetLangByKey(buffData.Dsc)
+          if type(desc) == "string" then
+            desc = string.gsub(desc, "%[AttrValue%]", "")
+          end
+          return desc
+        end
+        local stageIndexCurrent = passExcessForSlot[i] or 0
+        local buffDesc = staticData and getBuffDescByStage(staticData.BuffID, stageIndexCurrent)
+        if (not buffDesc or buffDesc == "") and staticData then
+          buffDesc = staticData.WaxDesc
+        end
         table.insert(memory.namevaluepair, {
           isMemory = true,
           name = buffDesc,
@@ -1769,7 +1852,7 @@ function ItemTipBaseCell:UpdateMemoryAttrInfo(data)
           color = attrConfig.Color
         })
       end
-    else
+    elseif maxAttrCount > i then
       table.insert(memory.namevaluepair, {
         isMemory = true,
         name = string.format(ZhString.EquipMemory_AttrResetUnlockTip, i * 10),
@@ -1965,6 +2048,10 @@ function ItemTipBaseCell:ActiveCountChooseBord(b, countChoose_maxCount)
 end
 
 function ItemTipBaseCell:Exit()
+  self:ClearTimeTick()
+end
+
+function ItemTipBaseCell:ClearTimeTick()
   TimeTickManager.Me():ClearTick(self, 11)
   TimeTickManager.Me():ClearTick(self, 12)
 end
@@ -2070,6 +2157,7 @@ function ItemTipBaseCell:UpdateGetCodItem(data)
 end
 
 function ItemTipBaseCell:OnDestroy()
+  self:Exit()
   if self.attriCtl then
     self.attriCtl:Destroy()
   end
@@ -3920,8 +4008,7 @@ function ItemTipBaseCell:OnClickItem4CardPreview(cellCtl)
       },
       hideGetPath = true
     }
-    local tempV3 = LuaGeometry.GetTempVector3(LuaGameObject.GetPosition(self.gameObject.transform.parent.parent))
-    TipManager.Instance:ShowItemFloatTipWAbsPos(sdata, tempV3)
+    TipManager.Instance:ShowItemFloatTipWAbsPos(sdata, self.gameObject.transform.parent.parent.position)
   end
 end
 

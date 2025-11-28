@@ -262,6 +262,7 @@ function GainWayTip:FindObjs()
   self.contentScrollView = self:FindGO("contentScrollView"):GetComponent(UIScrollView)
   self.contentGrid = self:FindGO("contentGrid"):GetComponent(UIGrid)
   self.panel = self.gameObject:GetComponent(UIPanel)
+  self.title = self:FindComponent("Title", UILabel)
 end
 
 function GainWayTip:InitContentList()
@@ -435,4 +436,8 @@ end
 
 function GainWayTip:SetLocalPos(x, y, z)
   LuaGameObject.SetLocalPositionGO(self.gameObject, x, y, z)
+end
+
+function GainWayTip:SetTitle(title)
+  self.title.text = title
 end

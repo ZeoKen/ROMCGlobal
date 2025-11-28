@@ -12,27 +12,14 @@ function AbyssFakeDragonProxy:ctor(proxyName, data)
 end
 
 function AbyssFakeDragonProxy:UpdateAbyssDragonInfo(data)
+  redlog("AbyssFakeDragonProxy:UpdateAbyssDragonInfo")
   self:SetFakeDragonInfo(data)
 end
 
-function AbyssFakeDragonProxy:SetFakeDragonStepInfo(data)
-  local info = self.abyssFakeDragonInfo
-  local params = data.params
-  local anim = params.anim and params.anim[1]
-  info.map = data.map
-  info.animDuration = params.time
-  info.stepRecvTime = ServerTime.CurServerTime() / 1000
-  if info.anim ~= anim then
-    info.anim = anim
-  end
-  self:TryStartPlayFakeDragonAnim()
-end
-
 function AbyssFakeDragonProxy:SetFakeDragonInfo(data)
+  redlog("dragon_stage, stage_start_time, activity_start_time", tostring(data.dragon_stage), tostring(data.stage_start_time), tostring(data.activity_start_time))
   local info = self.abyssFakeDragonInfo
-  info.startBp = data.dragon_from_bp
-  info.endBp = data.dragon_to_bp
-  info.animStartTime = data.anim_start_time
+  info.stageStartTime = data.stage_start_time
   info.infoRecvTime = ServerTime.CurServerTime() / 1000
   info.dragonStage = data.dragon_stage
   if info.dragonStage == 1 then
@@ -44,77 +31,9 @@ function AbyssFakeDragonProxy:SetFakeDragonInfo(data)
   end
   info.stepRecvTime = ServerTime.CurServerTime() / 1000
   info.activityStartTime = data.activity_start_time
-  if info.startBp and info.endBp then
-    local mapId = info.map or 154
-    local mapName = Table_Map[mapId] and Table_Map[mapId].NameEn
-    if mapName == nil then
-      return
-    end
-    local fName = "Scene_" .. mapName
-    local sceneInfo = autoImport(fName)
-    local bps = sceneInfo.PVE.bps
-    for _, v in pairs(bps) do
-      if v.ID == info.startBp then
-        info.startPos = LuaVector3.New(v.position[1], v.position[2], v.position[3])
-        break
-      end
-    end
-    for _, v in pairs(bps) do
-      if v.ID == info.endBp then
-        info.endPos = LuaVector3.New(v.position[1], v.position[2], v.position[3])
-        break
-      end
-    end
-  end
-  GameFacade.Instance:sendNotification(FakeDragonEvent.UpdateFakeDragonPoses)
-end
-
-function AbyssFakeDragonProxy:IsFakeDragonAnimInfoReady()
-  local info = self.abyssFakeDragonInfo
-  if info.anim and info.stepRecvTime and info.infoRecvTime then
-    return math.abs(info.stepRecvTime - info.infoRecvTime) <= 100
-  end
-end
-
-function AbyssFakeDragonProxy:TryStartPlayFakeDragonAnim()
-  if self:IsFakeDragonAnimInfoReady() then
-    local info = self.abyssFakeDragonInfo
-    local curTime = ServerTime.CurServerTime() / 1000
-    local pctElapsed = (curTime - info.animStartTime) / info.animDuration
-    if pctElapsed < 0.99 then
-      local extraParams
-      if info.startPos and info.endPos then
-        extraParams = {
-          start = info.startPos,
-          ["end"] = info.endPos
-        }
-      end
-      Game.PlotStoryManager:Launch()
-      local result = Game.PlotStoryManager:Start_PQTLP(info.anim, nil, nil, nil, false, nil, extraParams, nil, pctElapsed)
-    end
-  end
 end
 
 function AbyssFakeDragonProxy:NotifyFakeDragonPhaseChange(phase)
-end
-
-function AbyssFakeDragonProxy:GetFakeDragonPosition()
-  local info = self.abyssFakeDragonInfo
-  if not info then
-    return
-  end
-  if info.startPos and info.endPos and info.animStartTime and info.animDuration then
-    local pctElapsed = (ServerTime.CurServerTime() / 1000 - info.animStartTime) / info.animDuration
-    if 1 < pctElapsed then
-      if info.dragonStage > 0 and info.dragonStage < 3 then
-        return info.animStartTime, info.endPos
-      end
-      return nil
-    end
-    local result = LuaVector3.Lerp(info.startPos, info.endPos, pctElapsed)
-    return info.animStartTime, result
-  end
-  return nil
 end
 
 function AbyssFakeDragonProxy:GetCountDownTime()
@@ -123,8 +42,13 @@ function AbyssFakeDragonProxy:GetCountDownTime()
   end
   local info = self.abyssFakeDragonInfo
   local activityStartTime = info.activityStartTime
-  local passedTime = info.animStartTime - activityStartTime
-  local duration = GameConfig.AbyssDragon.StageCountDown[info.dragonStage or 1] - passedTime
+  local passedTime = info.stageStartTime - activityStartTime
+  local duration = 0
+  if info.dragonStage == 1 then
+    duration = GameConfig.AbyssDragon.StageCountDown[info.dragonStage]
+  else
+    duration = GameConfig.AbyssDragon.StageCountDown[info.dragonStage or 2] - passedTime
+  end
   return duration
 end
 
@@ -136,8 +60,17 @@ function AbyssFakeDragonProxy:GetPassedTime()
   local activityStartTime = info.activityStartTime
   local now = ServerTime.CurServerTime() / 1000
   local passedTime = now - activityStartTime
-  local duration = GameConfig.AbyssDragon.StageCountDown[info.dragonStage or 1] - passedTime
   return passedTime
+end
+
+function AbyssFakeDragonProxy:GetTargetTime()
+  if not self.abyssFakeDragonInfo then
+    return
+  end
+  local info = self.abyssFakeDragonInfo
+  local activityStartTime = info.activityStartTime
+  local duration = GameConfig.AbyssDragon.StageCountDown[info.dragonStage or 1]
+  return activityStartTime + duration
 end
 
 function AbyssFakeDragonProxy:GetTraceDesc()

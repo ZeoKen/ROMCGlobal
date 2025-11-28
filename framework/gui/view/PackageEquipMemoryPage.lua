@@ -1,7 +1,6 @@
 PackageEquipMemoryPage = class("PackageEquipMemoryPage", SubView)
 PackageEquipMemoryPage.PfbPath = "view/PackageEquipMemoryPage"
 autoImport("EquipMemoryAttrCell")
-autoImport("EquipMemoryAttrDetailCell")
 
 function PackageEquipMemoryPage:Init()
   self:AddEvts()
@@ -46,13 +45,20 @@ function PackageEquipMemoryPage:UpdateActiveEffect()
   local result2 = {}
   local fullfire = PvpProxy.Instance:IsFreeFire()
   local memoryLevels = EquipMemoryProxy.Instance:GetTotalEquipMemoryLevels(fullfire) or {}
-  for _attrid, _level in pairs(memoryLevels) do
-    local _tempData = {id = _attrid, level = _level}
-    xdlog("attrid", _attrid, _level)
+  for _attrid, stageMap in pairs(memoryLevels) do
+    local totalLevel = 0
+    for _excess_lv, _level in pairs(stageMap) do
+      totalLevel = totalLevel + _level
+    end
+    local _tempData = {
+      id = _attrid,
+      level = totalLevel,
+      stages = stageMap
+    }
     local attrConfig = Game.ItemMemoryEffect[_attrid]
     if attrConfig then
-      local level = 3 < _level and 3 or _level
-      local staticId = attrConfig.level and attrConfig.level[level]
+      local lvCap = 3 < totalLevel and 3 or totalLevel
+      local staticId = attrConfig.level and attrConfig.level[lvCap]
       local staticData = staticId and Table_ItemMemoryEffect[staticId]
       local waxBuffId = staticData and staticData.WaxBuffID
       if waxBuffId and 0 < #waxBuffId then

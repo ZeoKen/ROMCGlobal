@@ -12461,6 +12461,87 @@ Table_MapRaid = {
     EndWait = 0,
     ShowAllNpc = 1
   },
+  [1000459] = {
+    id = 1000459,
+    NameZh = "记忆中",
+    NameEn = "sc_syzh",
+    CameraAdj = 0,
+    EndWait = 0,
+    ShowAllNpc = 1
+  },
+  [1000460] = {
+    id = 1000460,
+    NameZh = "时空矩阵",
+    NameEn = "sc_syzh",
+    CameraAdj = 0,
+    EndWait = 0,
+    ShowAllNpc = 1
+  },
+  [1000461] = {
+    id = 1000461,
+    NameZh = "龙毁世界·初心",
+    NameEn = "sc_syzh",
+    Type = 83,
+    CameraAdj = 0,
+    EndWait = 0,
+    Restrict = 7,
+    ShowAllNpc = 1,
+    ServerMergeTime = "2024-08-01 05:00:00",
+    TFServerMergeTime = "2024-08-01 05:00:00"
+  },
+  [1000462] = {
+    id = 1000462,
+    NameZh = "龙毁世界·勇士",
+    NameEn = "sc_syzh",
+    Type = 83,
+    CameraAdj = 0,
+    EndWait = 0,
+    Restrict = 7,
+    ShowAllNpc = 1,
+    ServerMergeTime = "2024-08-01 05:00:00",
+    TFServerMergeTime = "2024-08-01 05:00:00"
+  },
+  [1000463] = {
+    id = 1000463,
+    NameZh = "龙毁世界·英灵",
+    NameEn = "sc_syzh",
+    Type = 83,
+    CameraAdj = 0,
+    EndWait = 0,
+    Restrict = 7,
+    ShowAllNpc = 1,
+    ServerMergeTime = "2024-08-01 05:00:00",
+    TFServerMergeTime = "2024-08-01 05:00:00"
+  },
+  [1000464] = {
+    id = 1000464,
+    NameZh = "龙毁世界·噩梦",
+    NameEn = "sc_syzh",
+    Type = 83,
+    CameraAdj = 0,
+    EndWait = 0,
+    Restrict = 7,
+    ShowAllNpc = 1,
+    ServerMergeTime = "2024-08-01 05:00:00",
+    TFServerMergeTime = "2024-08-01 05:00:00"
+  },
+  [1000465] = {
+    id = 1000465,
+    NameZh = "时空乱流回收站",
+    NameEn = "room_T9",
+    Type = 2,
+    CameraAdj = 0,
+    EndWait = 0,
+    ShowAllNpc = 1
+  },
+  [1000466] = {
+    id = 1000466,
+    NameZh = "沉眠之地",
+    NameEn = "sc_syzh",
+    CameraAdj = 0,
+    EndWait = 0,
+    ShowAllNpc = 1
+  },
   [1001000] = {
     id = 1001000,
     NameZh = "荒境",
@@ -19409,6 +19490,28 @@ Table_MapRaid = {
     CameraAdj = 0,
     EndWait = 0,
     ShowAllNpc = 1
+  },
+  [1004250] = {
+    id = 1004250,
+    NameZh = "彩虹巡游守护战",
+    NameEn = "sc_hswf_001",
+    Type = 82,
+    CameraAdj = 0,
+    EndWait = 600,
+    Restrict = 2,
+    ShowAllNpc = 1,
+    ForbidAritfact = 1
+  },
+  [1004251] = {
+    id = 1004251,
+    NameZh = "彩虹巡游守护战",
+    NameEn = "sc_hswf_001",
+    Type = 82,
+    CameraAdj = 0,
+    EndWait = 600,
+    Restrict = 2,
+    ShowAllNpc = 1,
+    ForbidAritfact = 1
   },
   [1900000] = {
     id = 1900000,

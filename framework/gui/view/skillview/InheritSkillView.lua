@@ -7,8 +7,11 @@ InheritSkillView = class("InheritSkillView", ContainerView)
 InheritSkillView.ViewType = UIViewType.NormalLayer
 local BgName = "skill_inherit_bg_00"
 local SkillBgName = "skill_inherit_bg_04"
+local EnabledLabelEffectColor = Color(0.6196078431372549, 0.33725490196078434, 0, 1)
 
 function InheritSkillView:Init()
+  self.multiSaveId = self.viewdata and self.viewdata.viewdata and self.viewdata.viewdata.saveId
+  self.multiSaveType = self.viewdata and self.viewdata.viewdata and self.viewdata.viewdata.saveType
   self:FindObjs()
   self:AddListenEvts()
   self.tipData = {}
@@ -35,6 +38,7 @@ function InheritSkillView:FindObjs()
   self:AddClickEvent(gotoBtn, function()
     self:OnGotoBtnClick()
   end)
+  gotoBtn:SetActive(not self.multiSaveId)
   self.skillScrollView = self:FindComponent("SkillPanel", UIScrollView)
   grid = self:FindGO("SkillGrid")
   self.skillListCtrl = ListCtrl.new(grid, InheritJobSkillCombineCell, "InheritJobSkillCombineCell")
@@ -57,11 +61,24 @@ function InheritSkillView:FindObjs()
   grid = self:FindComponent("MaterialGrid", UIGrid)
   self.materialListCtrl = UIGridListCtrl.new(grid, InheritSkillMaterialCell, "InheritSkillMaterialCell")
   self.materialListCtrl:AddEventListener(MouseEvent.MouseClick, self.OnMaterialItemClick, self)
+  self.inheritBtn = self:FindGO("InheritBtn")
+  self:AddClickEvent(self.inheritBtn, function()
+    self:OnUpgradeBtnClick()
+  end)
+  self.equipUpgradeBtns = self:FindGO("EquipUpgradeBtns")
   self.upgradeBtn = self:FindGO("UpgradeBtn")
   self:AddClickEvent(self.upgradeBtn, function()
     self:OnUpgradeBtnClick()
   end)
   self.upgradeLabel = self:FindComponent("Label", UILabel, self.upgradeBtn)
+  self.equipBtn = self:FindGO("EquipBtn")
+  self:AddClickEvent(self.equipBtn, function()
+    self:OnEquipBtnClick()
+  end)
+  self.unequipBtn = self:FindGO("UnequipBtn")
+  self:AddClickEvent(self.unequipBtn, function()
+    self:OnUnequipBtnClick()
+  end)
   self.upgradeTipLabel = self:FindComponent("UpgradeTip", UILabel)
   self.upgradeTip = self:FindGO("UpgradeTipBg")
   local helpBtn = self:FindGO("HelpBtn")
@@ -186,10 +203,10 @@ function InheritSkillView:RefreshCostPoint()
   if extendPointCost then
     max = max + #extendPointCost
   end
-  local extendedCostPoints = InheritSkillProxy.Instance:GetExtendedCostPoints()
+  local extendedCostPoints = self.multiSaveId and SaveInfoProxy.Instance:GetExtendedCostPoints(self.multiSaveId, self.multiSaveType) or InheritSkillProxy.Instance:GetExtendedCostPoints()
   redlog("InheritSkillView:RefreshCostPoint", extendedCostPoints)
   local costPoints = extendedCostPoints + initPoint
-  local loadSkills = InheritSkillProxy.Instance:GetLoadSkills()
+  local loadSkills = self.multiSaveId and SaveInfoProxy.Instance:GetInheritSkillLoadSkills(self.multiSaveId, self.multiSaveType) or InheritSkillProxy.Instance:GetLoadSkills()
   local loadCostPoint = 0
   for i = 1, #loadSkills do
     local loadSkill = loadSkills[i]
@@ -201,10 +218,10 @@ function InheritSkillView:RefreshCostPoint()
   end
   self.costPointListCtrl:ResetDatas(datas)
   self.costPointLabel.text = string.format("(%d/%d)", loadCostPoint, costPoints)
-  local attrs = InheritSkillProxy.Instance:GetTotalCostPointAttrs(extendedCostPoints)
+  local attrs = self.multiSaveId and SaveInfoProxy.Instance:GetTotalCostPointAttrs(self.multiSaveId, self.multiSaveType, extendedCostPoints) or InheritSkillProxy.Instance:GetTotalCostPointAttrs(extendedCostPoints)
   self.costPointAttrListCtrl:ResetDatas(attrs)
   self.costPointMax:SetActive(max <= costPoints)
-  self.addCostBtn:SetActive(max > costPoints)
+  self.addCostBtn:SetActive(not self.multiSaveId and max > costPoints)
 end
 
 local sortFunc = function(l, r)
@@ -215,9 +232,15 @@ local sortFunc = function(l, r)
 end
 
 function InheritSkillView:RefreshSkills()
-  local professDatas = InheritSkillProxy.Instance:GetSkillProfessDatas()
+  local professDatas = self.multiSaveId and SaveInfoProxy.Instance:GetInheritSkillProfessDatas(self.multiSaveId, self.multiSaveType) or InheritSkillProxy.Instance:GetSkillProfessDatas()
   table.sort(professDatas, sortFunc)
   self.skillListCtrl:ResetDatas(professDatas, nil, false)
+  if self.multiSaveId then
+    local cells = self.skillListCtrl:GetCells()
+    for i = 1, #cells do
+      cells[i]:UpdateDragable(false)
+    end
+  end
   self:LayoutSkills()
   self:RefreshLoadSkills()
 end
@@ -236,13 +259,20 @@ end
 
 function InheritSkillView:RefreshLoadSkills()
   local datas = {}
-  local skills = InheritSkillProxy.Instance:GetLoadSkills()
+  local skills = self.multiSaveId and SaveInfoProxy.Instance:GetInheritSkillLoadSkills(self.multiSaveId, self.multiSaveType) or InheritSkillProxy.Instance:GetLoadSkills()
   local count = #skills < 3 and 3 or math.min(#skills + 1, 8)
   for i = 1, count do
     local data = skills[i] or InheritSkillDragCell.Empty
     datas[#datas + 1] = data
   end
   self.equipSkillListCtrl:ResetDatas(datas)
+  local cells = self.equipSkillListCtrl:GetCells()
+  for i = 1, #cells do
+    cells[i]:SetSelect(false)
+    if self.multiSaveId then
+      cells[i]:UpdateDragable(false)
+    end
+  end
 end
 
 function InheritSkillView:OnInheritSkillSelect(cell)
@@ -260,6 +290,14 @@ function InheritSkillView:OnInheritSkillSelect(cell)
     end
   end
   self:RefreshSelectSkillInfo(cell.data)
+  local cells = self.equipSkillListCtrl:GetCells()
+  for i = 1, #cells do
+    if cells[i].data ~= cell.data then
+      cells[i]:SetSelect(false)
+    else
+      cells[i]:SetSelect(true)
+    end
+  end
 end
 
 function InheritSkillView:OnExpendSkill(cell)
@@ -275,11 +313,16 @@ function InheritSkillView:RefreshSelectSkillInfo(data)
   self.upgradePart:SetActive(not isMaxLv)
   self.maxLvPart:SetActive(isMaxLv)
   self.materialPart:SetActive(not isMaxLv and data.isUnlock or false)
-  self.upgradeTip:SetActive(isMaxLv or not data.isUnlock)
+  self.upgradeTip:SetActive(not data.isUnlock)
   self.noEffectTip:SetActive(not data.isInherited)
-  self.upgradeLabel.text = data.isInherited and ZhString.InheritSkill_Upgrade or ZhString.InheritSkill_Inherit
+  self.upgradeLabel.text = ZhString.InheritSkill_Upgrade
+  self.inheritBtn:SetActive(not self.multiSaveId and data.isUnlock and not data.isInherited)
+  self.equipUpgradeBtns:SetActive(not self.multiSaveId and data.isInherited)
+  self:SetButtonEnable(self.upgradeBtn, not isMaxLv, EnabledLabelEffectColor)
+  self.equipBtn:SetActive(not data.isLoad)
+  self.unequipBtn:SetActive(data.isLoad)
   if isMaxLv then
-    self.upgradeTipLabel.text = ZhString.InheritSkill_MaxLevel
+    self.upgradeLabel.text = ZhString.InheritSkill_MaxLevel
     self.maxLv.text = string.format(ZhString.InheritSkill_MaxLv, data.maxLevel)
     self.maxLvDesc.text = SkillProxy.GetDesc(data.id)
   elseif not data.isUnlock then
@@ -439,5 +482,38 @@ function InheritSkillView:ScrollToSkill(familyId)
     if selectCell then
       self:OnInheritSkillSelect(selectCell)
     end
+  end
+end
+
+function InheritSkillView:OnEquipBtnClick()
+  if self.selectSkillItemData then
+    if self.selectSkillItemData:IsProfessionForbid() then
+      MsgManager.ShowMsgByID(43612)
+      return
+    end
+    local costPoint = self.selectSkillItemData:GetCostPoint()
+    if not InheritSkillProxy.Instance:IsCostPointsEnough(costPoint) then
+      MsgManager.ShowMsgByID(43613)
+      local cells = self.costPointListCtrl:GetCells()
+      for i = 1, #cells do
+        local cell = cells[i]
+        if cell.data == 0 or cell.data == 1 then
+          cell:PlayEffect(EffectMap.UI.SkillInherit_CostPointRed)
+        end
+      end
+      return
+    end
+    local skills = InheritSkillProxy.Instance:GetLoadSkills()
+    if 8 <= #skills then
+      MsgManager.ShowMsgByID(43660)
+      return
+    end
+    ServiceSkillProxy.Instance:CallLoadInheritSkillCmd(self.selectSkillItemData.id, nil, 0)
+  end
+end
+
+function InheritSkillView:OnUnequipBtnClick()
+  if self.selectSkillItemData and self.selectSkillItemData.isLoad then
+    ServiceSkillProxy.Instance:CallLoadInheritSkillCmd(self.selectSkillItemData.id, nil, 1)
   end
 end

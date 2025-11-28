@@ -1,11 +1,11 @@
-local _format = "%s/%s %s:%s - %s/%s %s:%s"
 LotteryActivityData = class("LotteryActivityData")
 LotteryActivityData.ESortID = {
   ActiveMagic = 1,
   Card = 2,
   Head = 3,
   Mix = 4,
-  Magic = 5
+  Magic = 5,
+  SpaceTime = 6
 }
 
 function LotteryActivityData:ctor(type, open, st, et)
@@ -27,7 +27,7 @@ function LotteryActivityData:SetData()
       if config.always then
         self.time = ""
       else
-        self.time = ServantCalendarProxy.GetTimeDate(self.startTime, self.endTime, _format)
+        self.time = ClientTimeUtil.GetTimeDate(self.startTime, self.endTime)
       end
       self.maunalTimeDesc = config.maunalTimeDesc
       self.isInLotteryEntrance = config.inLotteryEntrance == true
@@ -56,5 +56,7 @@ function LotteryActivityData:SetSortId(config)
     self.sortId = LotteryActivityData.ESortID.Mix
   elseif LotteryProxy.IsMagicLottery(self.lotteryType) then
     self.sortId = LotteryActivityData.ESortID.Magic
+  elseif LotteryProxy.IsSpaceTimeLottery(self.lotteryType) then
+    self.sortId = LotteryActivityData.ESortID.SpaceTime
   end
 end

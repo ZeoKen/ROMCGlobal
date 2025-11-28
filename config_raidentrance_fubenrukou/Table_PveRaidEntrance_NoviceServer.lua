@@ -4,7 +4,8 @@ Table_PveRaidEntrance_t = {
     {2},
     {1},
     {4},
-    {5}
+    {5},
+    {6}
   },
   ClientRewards = {
     {
@@ -365,6 +366,12 @@ Table_PveRaidEntrance_t = {
       {
         rewards = {60006465},
         type = 3
+      }
+    },
+    {
+      {
+        rewards = {60006469},
+        type = 4
       }
     },
     {
@@ -807,6 +814,18 @@ Table_PveRaidEntrance_t = {
     },
     {
       {
+        rewards = {60006803},
+        type = 1
+      }
+    },
+    {
+      {
+        rewards = {60006802},
+        type = 1
+      }
+    },
+    {
+      {
         rewards = {60006371},
         type = 1
       }
@@ -955,6 +974,8 @@ Table_PveRaidEntrance_t = {
     {3, 10001},
     {3, 10002},
     {3, 10003},
+    {23, 2},
+    {23, 1},
     {18, 12},
     {18, 11},
     {18, 10},
@@ -1091,6 +1112,28 @@ Table_PveRaidEntrance_t = {
     {276430, 276500},
     {276600},
     {
+      2055211,
+      2055212,
+      2055213,
+      2055214,
+      2055215,
+      2055216,
+      2055217,
+      2055218,
+      2055219,
+      2055220,
+      2055221,
+      2055222,
+      2055223,
+      2055224,
+      2055225
+    },
+    {
+      2055204,
+      2055209,
+      2055210
+    },
+    {
       452010,
       452040,
       452070
@@ -1196,7 +1239,8 @@ Table_PveRaidEntrance_t = {
   },
   Shop = {
     {shopid = 1, type = 3244},
-    {shopid = 1, type = 3272}
+    {shopid = 1, type = 3272},
+    {shopid = 1, type = 20737}
   },
   ShowAchievement = {
     {
@@ -2007,7 +2051,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[44],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[45],
     WeekLimit = 5
   },
   [74] = {
@@ -2023,7 +2067,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[45],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[46],
     WeekLimit = 5
   },
   [75] = {
@@ -2039,7 +2083,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[46],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[47],
     WeekLimit = 5
   },
   [76] = {
@@ -2054,7 +2098,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[47],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[48],
     WeekLimit = 5
   },
   [77] = {
@@ -2070,7 +2114,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[48],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[49],
     WeekLimit = 5
   },
   [78] = {
@@ -2086,7 +2130,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[49],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[50],
     WeekLimit = 5
   },
   [79] = {
@@ -2102,7 +2146,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[50],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[51],
     WeekLimit = 5
   },
   [80] = {
@@ -2118,7 +2162,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[51],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[52],
     WeekLimit = 5
   },
   [81] = {
@@ -2134,7 +2178,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[52],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[53],
     WeekLimit = 5
   },
   [82] = {
@@ -2150,7 +2194,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[53],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[54],
     WeekLimit = 5
   },
   [83] = {
@@ -2166,7 +2210,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[54],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[55],
     WeekLimit = 5
   },
   [85] = {
@@ -2183,7 +2227,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[55],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[56],
     WeekLimit = 5
   },
   [86] = {
@@ -2199,7 +2243,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[56],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[57],
     WeekLimit = 5
   },
   [87] = {
@@ -2215,7 +2259,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[57],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[58],
     WeekLimit = 5
   },
   [88] = {
@@ -2231,7 +2275,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[58],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[59],
     WeekLimit = 5
   },
   [89] = {
@@ -2247,7 +2291,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[59],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[60],
     WeekLimit = 5
   },
   [90] = {
@@ -2263,7 +2307,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[60],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[61],
     WeekLimit = 5
   },
   [91] = {
@@ -2279,7 +2323,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[61],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[62],
     WeekLimit = 5
   },
   [92] = {
@@ -2295,7 +2339,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[62],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[63],
     WeekLimit = 5
   },
   [93] = {
@@ -2311,7 +2355,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[63],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[64],
     WeekLimit = 5
   },
   [94] = {
@@ -2327,7 +2371,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[64],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[65],
     WeekLimit = 5
   },
   [95] = {
@@ -2343,7 +2387,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 20,
     FreeBattleTimeCount = 1,
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[65],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[66],
     WeekLimit = 5
   },
   [100] = {
@@ -2564,7 +2608,7 @@ Table_PveRaidEntrance = {
     FreeBattleTimeCount = 1,
     Monster = Table_PveRaidEntrance_t.Monster[20],
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[66],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[67],
     ShowKillBoss = 1,
     WeekLimit = 9
   },
@@ -2586,7 +2630,7 @@ Table_PveRaidEntrance = {
     FreeBattleTimeCount = 1,
     Monster = Table_PveRaidEntrance_t.Monster[20],
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[67],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[68],
     ShowKillBoss = 1,
     WeekLimit = 9
   },
@@ -2609,7 +2653,7 @@ Table_PveRaidEntrance = {
     FreeBattleTimeCount = 1,
     Monster = Table_PveRaidEntrance_t.Monster[21],
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[68],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[69],
     ShowKillBoss = 1,
     WeekLimit = 9
   },
@@ -2632,7 +2676,7 @@ Table_PveRaidEntrance = {
     FreeBattleTimeCount = 1,
     Monster = Table_PveRaidEntrance_t.Monster[21],
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[69],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[70],
     ShowKillBoss = 1,
     WeekLimit = 9
   },
@@ -2655,7 +2699,7 @@ Table_PveRaidEntrance = {
     FreeBattleTimeCount = 1,
     Monster = Table_PveRaidEntrance_t.Monster[22],
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[70],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[71],
     ShowKillBoss = 1,
     WeekLimit = 9
   },
@@ -2678,7 +2722,7 @@ Table_PveRaidEntrance = {
     FreeBattleTimeCount = 1,
     Monster = Table_PveRaidEntrance_t.Monster[22],
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[71],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[72],
     ShowKillBoss = 1,
     WeekLimit = 9
   },
@@ -2698,7 +2742,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 1,
     ShowSweep = 0,
     Monster = Table_PveRaidEntrance_t.Monster[13],
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[72],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[73],
     Shop = Table_PveRaidEntrance_t.Shop[2]
   },
   [131] = {
@@ -2717,7 +2761,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 1,
     ShowSweep = 0,
     Monster = Table_PveRaidEntrance_t.Monster[13],
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[73],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[74],
     Shop = Table_PveRaidEntrance_t.Shop[2]
   },
   [132] = {
@@ -2736,7 +2780,7 @@ Table_PveRaidEntrance = {
     ChallengeCount = 1,
     ShowSweep = 0,
     Monster = Table_PveRaidEntrance_t.Monster[14],
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[74],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[75],
     Shop = Table_PveRaidEntrance_t.Shop[2]
   },
   [171] = {
@@ -2754,7 +2798,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 5,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[75],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[76],
     WeekLimit = 7
   },
   [172] = {
@@ -2773,7 +2817,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 5,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[75],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[76],
     WeekLimit = 7
   },
   [173] = {
@@ -2791,7 +2835,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 5,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[75],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[76],
     WeekLimit = 7
   },
   [174] = {
@@ -2810,7 +2854,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 5,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[75],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[76],
     WeekLimit = 7
   },
   [175] = {
@@ -2829,7 +2873,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 5,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[75],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[76],
     WeekLimit = 7
   },
   [177] = {
@@ -2848,7 +2892,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 5,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[75],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[76],
     WeekLimit = 7
   },
   [178] = {
@@ -2867,7 +2911,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 5,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[75],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[76],
     WeekLimit = 7
   },
   [179] = {
@@ -2886,7 +2930,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 5,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[75],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[76],
     WeekLimit = 7
   },
   [180] = {
@@ -2905,7 +2949,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 5,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[75],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[76],
     WeekLimit = 7
   },
   [181] = {
@@ -2924,7 +2968,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 5,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[75],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[76],
     WeekLimit = 7
   },
   [241] = {
@@ -2943,9 +2987,9 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 7,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[23],
+    Monster = Table_PveRaidEntrance_t.Monster[25],
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[76],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[79],
     WeekLimit = 8
   },
   [242] = {
@@ -2965,9 +3009,9 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 7,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[24],
+    Monster = Table_PveRaidEntrance_t.Monster[26],
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[77],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[80],
     WeekLimit = 8
   },
   [243] = {
@@ -2987,9 +3031,9 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 7,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[25],
+    Monster = Table_PveRaidEntrance_t.Monster[27],
     TimeCost = 3600,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[78],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[81],
     WeekLimit = 8
   },
   [250] = {
@@ -3000,16 +3044,16 @@ Table_PveRaidEntrance = {
     Goal = 91501,
     Catalog = Table_PveRaidEntrance_t.Catalog[1],
     RaidType = 73,
-    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[70],
+    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[72],
     Difficulty = 1004200,
     UnlockMsgId = 43500,
     UnlockLv = 20,
     RecommendLv = 20,
     PlayerNumCount = 30,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[31],
+    Monster = Table_PveRaidEntrance_t.Monster[33],
     TimeCost = 1800,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[84]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[87]
   },
   [251] = {
     id = 251,
@@ -3019,16 +3063,16 @@ Table_PveRaidEntrance = {
     Goal = 91502,
     Catalog = Table_PveRaidEntrance_t.Catalog[1],
     RaidType = 73,
-    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[71],
+    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[73],
     Difficulty = 1004201,
     UnlockMsgId = 43501,
     UnlockLv = 30,
     RecommendLv = 30,
     PlayerNumCount = 30,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[32],
+    Monster = Table_PveRaidEntrance_t.Monster[34],
     TimeCost = 1800,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[85]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[88]
   },
   [252] = {
     id = 252,
@@ -3038,16 +3082,16 @@ Table_PveRaidEntrance = {
     Goal = 91503,
     Catalog = Table_PveRaidEntrance_t.Catalog[1],
     RaidType = 73,
-    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[72],
+    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[74],
     Difficulty = 1004202,
     UnlockMsgId = 43502,
     UnlockLv = 40,
     RecommendLv = 40,
     PlayerNumCount = 30,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[33],
+    Monster = Table_PveRaidEntrance_t.Monster[35],
     TimeCost = 1800,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[86]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[89]
   },
   [253] = {
     id = 253,
@@ -3057,16 +3101,16 @@ Table_PveRaidEntrance = {
     Goal = 91504,
     Catalog = Table_PveRaidEntrance_t.Catalog[1],
     RaidType = 73,
-    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[73],
+    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[75],
     Difficulty = 1004203,
     UnlockMsgId = 43503,
     UnlockLv = 50,
     RecommendLv = 50,
     PlayerNumCount = 30,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[34],
+    Monster = Table_PveRaidEntrance_t.Monster[36],
     TimeCost = 1800,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[87]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[90]
   },
   [254] = {
     id = 254,
@@ -3076,16 +3120,16 @@ Table_PveRaidEntrance = {
     Goal = 91505,
     Catalog = Table_PveRaidEntrance_t.Catalog[1],
     RaidType = 73,
-    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[74],
+    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[76],
     Difficulty = 1004204,
     UnlockMsgId = 43504,
     UnlockLv = 60,
     RecommendLv = 60,
     PlayerNumCount = 30,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[35],
+    Monster = Table_PveRaidEntrance_t.Monster[37],
     TimeCost = 1800,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[88]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[91]
   },
   [255] = {
     id = 255,
@@ -3112,16 +3156,16 @@ Table_PveRaidEntrance = {
     Goal = 91507,
     Catalog = Table_PveRaidEntrance_t.Catalog[1],
     RaidType = 73,
-    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[75],
+    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[77],
     Difficulty = 1004206,
     UnlockMsgId = 43506,
     UnlockLv = 80,
     RecommendLv = 80,
     PlayerNumCount = 30,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[36],
+    Monster = Table_PveRaidEntrance_t.Monster[38],
     TimeCost = 1800,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[89]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[92]
   },
   [257] = {
     id = 257,
@@ -3131,16 +3175,16 @@ Table_PveRaidEntrance = {
     Goal = 91508,
     Catalog = Table_PveRaidEntrance_t.Catalog[1],
     RaidType = 73,
-    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[69],
+    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[71],
     Difficulty = 1004207,
     UnlockMsgId = 43507,
     UnlockLv = 90,
     RecommendLv = 90,
     PlayerNumCount = 30,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[30],
+    Monster = Table_PveRaidEntrance_t.Monster[32],
     TimeCost = 1800,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[83]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[86]
   },
   [258] = {
     id = 258,
@@ -3150,16 +3194,16 @@ Table_PveRaidEntrance = {
     Goal = 91509,
     Catalog = Table_PveRaidEntrance_t.Catalog[1],
     RaidType = 73,
-    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[68],
+    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[70],
     Difficulty = 1004208,
     UnlockMsgId = 43508,
     UnlockLv = 100,
     RecommendLv = 100,
     PlayerNumCount = 30,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[29],
+    Monster = Table_PveRaidEntrance_t.Monster[31],
     TimeCost = 1800,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[82]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[85]
   },
   [259] = {
     id = 259,
@@ -3169,16 +3213,16 @@ Table_PveRaidEntrance = {
     Goal = 91510,
     Catalog = Table_PveRaidEntrance_t.Catalog[1],
     RaidType = 73,
-    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[67],
+    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[69],
     Difficulty = 1004209,
     UnlockMsgId = 43508,
     UnlockLv = 100,
     RecommendLv = 100,
     PlayerNumCount = 30,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[28],
+    Monster = Table_PveRaidEntrance_t.Monster[30],
     TimeCost = 1800,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[81]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[84]
   },
   [260] = {
     id = 260,
@@ -3188,16 +3232,16 @@ Table_PveRaidEntrance = {
     Goal = 91511,
     Catalog = Table_PveRaidEntrance_t.Catalog[1],
     RaidType = 73,
-    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[66],
+    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[68],
     Difficulty = 1004210,
     UnlockMsgId = 43508,
     UnlockLv = 100,
     RecommendLv = 100,
     PlayerNumCount = 30,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[27],
+    Monster = Table_PveRaidEntrance_t.Monster[29],
     TimeCost = 1800,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[80]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[83]
   },
   [261] = {
     id = 261,
@@ -3207,16 +3251,16 @@ Table_PveRaidEntrance = {
     Goal = 91512,
     Catalog = Table_PveRaidEntrance_t.Catalog[1],
     RaidType = 73,
-    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[65],
+    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[67],
     Difficulty = 74100,
     UnlockMsgId = 43563,
     UnlockLv = 110,
     RecommendLv = 110,
     PlayerNumCount = 30,
     FreeBattleTimeCount = 1,
-    Monster = Table_PveRaidEntrance_t.Monster[26],
+    Monster = Table_PveRaidEntrance_t.Monster[28],
     TimeCost = 1800,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[79]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[82]
   },
   [262] = {
     id = 262,
@@ -3564,7 +3608,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 1,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[40]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[43]
   },
   [321] = {
     id = 321,
@@ -3583,7 +3627,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 1,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[40]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[43]
   },
   [322] = {
     id = 322,
@@ -3602,7 +3646,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 1,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[40]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[43]
   },
   [323] = {
     id = 323,
@@ -3621,7 +3665,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 1,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[40]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[43]
   },
   [324] = {
     id = 324,
@@ -3640,7 +3684,7 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 1,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[40]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[43]
   },
   [325] = {
     id = 325,
@@ -3659,7 +3703,47 @@ Table_PveRaidEntrance = {
     ChallengeContent = 2,
     ChallengeCount = 1,
     ShowSweep = 0,
-    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[43]
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[44]
+  },
+  [2100] = {
+    id = 2100,
+    GroupId = 45,
+    Name = "彩虹巡游守护战",
+    HelpID = 32642,
+    Goal = 92201,
+    Catalog = Table_PveRaidEntrance_t.Catalog[6],
+    RaidType = 82,
+    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[66],
+    Difficulty = 1004250,
+    UnlockMsgId = 43502,
+    UnlockLv = 40,
+    RecommendLv = 100,
+    RecommendPlayerNum = 5,
+    PlayerNumCount = 200,
+    ShowSweep = 0,
+    Monster = Table_PveRaidEntrance_t.Monster[24],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[78],
+    Shop = Table_PveRaidEntrance_t.Shop[3]
+  },
+  [2101] = {
+    id = 2101,
+    GroupId = 45,
+    Name = "彩虹巡游守护战",
+    HelpID = 32642,
+    Goal = 92202,
+    Catalog = Table_PveRaidEntrance_t.Catalog[6],
+    RaidType = 82,
+    DifficultyName = Table_PveRaidEntrance_t.DifficultyName[65],
+    Difficulty = 1004251,
+    UnlockMsgId = 43502,
+    UnlockLv = 40,
+    RecommendLv = 100,
+    RecommendPlayerNum = 5,
+    PlayerNumCount = 200,
+    ShowSweep = 0,
+    Monster = Table_PveRaidEntrance_t.Monster[23],
+    ClientRewards = Table_PveRaidEntrance_t.ClientRewards[77],
+    Shop = Table_PveRaidEntrance_t.Shop[3]
   }
 }
 local cell_mt = {

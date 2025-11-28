@@ -743,6 +743,19 @@ function SkillTip:GetHeroDesc(staticData, heroFeatureLv)
     local totalDesc = desc .. _addLine .. desc2 .. _addLine .. desc3 .. "\n"
     result = string.format(_descColor, totalDesc)
   end
+  local attrEffect = GameConfig.Bell_AttrEffect and GameConfig.Bell_AttrEffect[staticData.id // 1000]
+  if attrEffect then
+    result = result .. "\n"
+    local attrConfig, tempDesc, tempParam = attrEffect[1], "", 0
+    local attrFunc = attrConfig.attrFunc
+    for i = 1, #attrEffect do
+      attrConfig = attrEffect[i]
+      attrFunc = attrConfig.attrFunc
+      tempParam = CommonFun.calcBuffValue(Game.Myself.data, nil, attrFunc.type, attrFunc.a, attrFunc.b, attrFunc.c, attrFunc.d)
+      tempDesc = string.format(attrConfig.desc, tempParam)
+      result = result .. "\n" .. tempDesc
+    end
+  end
   return result
 end
 

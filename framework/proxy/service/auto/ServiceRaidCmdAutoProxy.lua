@@ -105,6 +105,18 @@ function ServiceRaidCmdAutoProxy:onRegister()
   self:Listen(76, 30, function(data)
     self:RecvRaidNewResetCmd(data)
   end)
+  self:Listen(76, 31, function(data)
+    self:RecvAbyssDragonInfoNtfRaidCmd(data)
+  end)
+  self:Listen(76, 32, function(data)
+    self:RecvAbyssDragonHpUpdateRaidCmd(data)
+  end)
+  self:Listen(76, 33, function(data)
+    self:RecvAbyssDragonOnOffRaidCmd(data)
+  end)
+  self:Listen(76, 34, function(data)
+    self:RecvAbyssDragonDamageRankRaidCmd(data)
+  end)
 end
 
 function ServiceRaidCmdAutoProxy:CallQueryRaidPuzzleListRaidCmd(raidid, data)
@@ -1167,6 +1179,108 @@ function ServiceRaidCmdAutoProxy:CallRaidNewResetCmd()
   end
 end
 
+function ServiceRaidCmdAutoProxy:CallAbyssDragonInfoNtfRaidCmd(dragon_stage, stage_start_time, activity_start_time)
+  if not NetConfig.PBC then
+    local msg = RaidCmd_pb.AbyssDragonInfoNtfRaidCmd()
+    if dragon_stage ~= nil then
+      msg.dragon_stage = dragon_stage
+    end
+    if stage_start_time ~= nil then
+      msg.stage_start_time = stage_start_time
+    end
+    if activity_start_time ~= nil then
+      msg.activity_start_time = activity_start_time
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.AbyssDragonInfoNtfRaidCmd.id
+    local msgParam = {}
+    if dragon_stage ~= nil then
+      msgParam.dragon_stage = dragon_stage
+    end
+    if stage_start_time ~= nil then
+      msgParam.stage_start_time = stage_start_time
+    end
+    if activity_start_time ~= nil then
+      msgParam.activity_start_time = activity_start_time
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceRaidCmdAutoProxy:CallAbyssDragonHpUpdateRaidCmd(dragon_hp, dragon_maxhp)
+  if not NetConfig.PBC then
+    local msg = RaidCmd_pb.AbyssDragonHpUpdateRaidCmd()
+    if dragon_hp ~= nil then
+      msg.dragon_hp = dragon_hp
+    end
+    if dragon_maxhp ~= nil then
+      msg.dragon_maxhp = dragon_maxhp
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.AbyssDragonHpUpdateRaidCmd.id
+    local msgParam = {}
+    if dragon_hp ~= nil then
+      msgParam.dragon_hp = dragon_hp
+    end
+    if dragon_maxhp ~= nil then
+      msgParam.dragon_maxhp = dragon_maxhp
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceRaidCmdAutoProxy:CallAbyssDragonOnOffRaidCmd(onoff)
+  if not NetConfig.PBC then
+    local msg = RaidCmd_pb.AbyssDragonOnOffRaidCmd()
+    if onoff ~= nil then
+      msg.onoff = onoff
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.AbyssDragonOnOffRaidCmd.id
+    local msgParam = {}
+    if onoff ~= nil then
+      msgParam.onoff = onoff
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceRaidCmdAutoProxy:CallAbyssDragonDamageRankRaidCmd(rank_data)
+  if not NetConfig.PBC then
+    local msg = RaidCmd_pb.AbyssDragonDamageRankRaidCmd()
+    if rank_data ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.rank_data == nil then
+        msg.rank_data = {}
+      end
+      for i = 1, #rank_data do
+        table.insert(msg.rank_data, rank_data[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.AbyssDragonDamageRankRaidCmd.id
+    local msgParam = {}
+    if rank_data ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.rank_data == nil then
+        msgParam.rank_data = {}
+      end
+      for i = 1, #rank_data do
+        table.insert(msgParam.rank_data, rank_data[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceRaidCmdAutoProxy:RecvQueryRaidPuzzleListRaidCmd(data)
   self:Notify(ServiceEvent.RaidCmdQueryRaidPuzzleListRaidCmd, data)
 end
@@ -1287,6 +1401,22 @@ function ServiceRaidCmdAutoProxy:RecvRaidNewResetCmd(data)
   self:Notify(ServiceEvent.RaidCmdRaidNewResetCmd, data)
 end
 
+function ServiceRaidCmdAutoProxy:RecvAbyssDragonInfoNtfRaidCmd(data)
+  self:Notify(ServiceEvent.RaidCmdAbyssDragonInfoNtfRaidCmd, data)
+end
+
+function ServiceRaidCmdAutoProxy:RecvAbyssDragonHpUpdateRaidCmd(data)
+  self:Notify(ServiceEvent.RaidCmdAbyssDragonHpUpdateRaidCmd, data)
+end
+
+function ServiceRaidCmdAutoProxy:RecvAbyssDragonOnOffRaidCmd(data)
+  self:Notify(ServiceEvent.RaidCmdAbyssDragonOnOffRaidCmd, data)
+end
+
+function ServiceRaidCmdAutoProxy:RecvAbyssDragonDamageRankRaidCmd(data)
+  self:Notify(ServiceEvent.RaidCmdAbyssDragonDamageRankRaidCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.RaidCmdQueryRaidPuzzleListRaidCmd = "ServiceEvent_RaidCmdQueryRaidPuzzleListRaidCmd"
 ServiceEvent.RaidCmdRaidPuzzleActionRaidCmd = "ServiceEvent_RaidCmdRaidPuzzleActionRaidCmd"
@@ -1318,3 +1448,7 @@ ServiceEvent.RaidCmdRaidSelectCardResultRes = "ServiceEvent_RaidCmdRaidSelectCar
 ServiceEvent.RaidCmdRaidSelectCardHistoryResultCmd = "ServiceEvent_RaidCmdRaidSelectCardHistoryResultCmd"
 ServiceEvent.RaidCmdRaidSelectCardResetCmd = "ServiceEvent_RaidCmdRaidSelectCardResetCmd"
 ServiceEvent.RaidCmdRaidNewResetCmd = "ServiceEvent_RaidCmdRaidNewResetCmd"
+ServiceEvent.RaidCmdAbyssDragonInfoNtfRaidCmd = "ServiceEvent_RaidCmdAbyssDragonInfoNtfRaidCmd"
+ServiceEvent.RaidCmdAbyssDragonHpUpdateRaidCmd = "ServiceEvent_RaidCmdAbyssDragonHpUpdateRaidCmd"
+ServiceEvent.RaidCmdAbyssDragonOnOffRaidCmd = "ServiceEvent_RaidCmdAbyssDragonOnOffRaidCmd"
+ServiceEvent.RaidCmdAbyssDragonDamageRankRaidCmd = "ServiceEvent_RaidCmdAbyssDragonDamageRankRaidCmd"

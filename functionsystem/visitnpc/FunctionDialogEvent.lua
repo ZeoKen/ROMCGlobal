@@ -818,10 +818,10 @@ function FunctionDialogEvent.ShowUpgradeItemEvent(viewPreferb, param)
   upTipCell:HidePreviewButton()
   IconManager:SetArtFontIcon("tips_bg_tex", upTipCell:FindComponent("UpgradeTip", UISprite))
   local hideFunc = function()
+    upTipCell:OnDestroy()
+    nowTipCell:OnDestroy()
     GameObject.Destroy(tipObj)
     GameObject.Destroy(upObj)
-    upTipCell:Exit()
-    nowTipCell:Exit()
   end
   return hideFunc
 end
@@ -1162,7 +1162,8 @@ end
 
 function FunctionDialogEvent.Func_ReturnActivityReward(npcInfo)
   local flag = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_USERRETURN_FLAG) or 0
-  if 0 < flag then
+  local recall_time = Game.Myself.data.userdata:Get(UDEnum.RECALL_TIME) or 0
+  if 0 < flag or 0 < recall_time then
     FunctionDialogEvent.Me():SetEventDialog(1001, nil, npcInfo)
   else
     FunctionDialogEvent.Me():SetEventDialog(1000, nil, npcInfo)

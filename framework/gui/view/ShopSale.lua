@@ -23,6 +23,8 @@ end
 function ShopSale:FindObjects()
   self.gold = self:FindGO("Gold"):GetComponent(UILabel)
   self.silver = self:FindGO("silver"):GetComponent(UILabel)
+  self.sliderIcon = self:FindGO("silverSp"):GetComponent(UISprite)
+  IconManager:SetItemIcon(Table_Item[100].Icon, self.sliderIcon)
 end
 
 function ShopSale:AddViewListeners()

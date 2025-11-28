@@ -449,6 +449,10 @@ function HappyShopBuyItemCell:SetItemGetCount(data)
   if self.soldCount_Set then
     return
   end
+  local sources = data.sources
+  if sources and TableUtility.ArrayFindIndex(sources, ProtoCommon_pb.ESOURCE_SHOP) == 0 then
+    return
+  end
   if data.itemid == self.itemData.goodsID then
     self.canBuy = true
     local left = math.max(0, ItemData.Get_GetLimitCount(self.itemData.goodsID) - data.count)

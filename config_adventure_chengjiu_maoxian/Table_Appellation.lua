@@ -12,14 +12,14 @@ Table_Appellation_t = {
     {MaxHp = 10},
     {Atk = 2},
     {MaxHp = 8},
+    {Atk = 3, MAtk = 3},
     {MAtk = 6},
+    {Atk = 1, MAtk = 1},
+    {MaxHp = 9},
     {Atk = 1.5},
     {MAtk = 1.5},
     {Atk = 3},
     {Atk = 6},
-    {Atk = 1, MAtk = 1},
-    {MaxHp = 9},
-    {Atk = 3, MAtk = 3},
     {Atk = 4},
     {MAtk = 4},
     {
@@ -80,7 +80,6 @@ Table_Appellation = {
   },
   [1005] = {
     id = 1005,
-    Name = "##106483",
     GroupID = 1,
     PostID = 1006,
     Level = "D",
@@ -104,6 +103,7 @@ Table_Appellation = {
   },
   [1008] = {
     id = 1008,
+    Name = "##106396",
     GroupID = 1,
     PostID = 1009,
     Level = "A",
@@ -279,42 +279,42 @@ Table_Appellation = {
     Name = "##106466",
     TitleSort = 1101,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[14]
+    BaseProp = Table_Appellation_t.BaseProp[17]
   },
   [1102] = {
     id = 1102,
     Name = "##106509",
     TitleSort = 1102,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[14]
+    BaseProp = Table_Appellation_t.BaseProp[17]
   },
   [1103] = {
     id = 1103,
     Name = "##106482",
     TitleSort = 1103,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[15]
+    BaseProp = Table_Appellation_t.BaseProp[18]
   },
   [1104] = {
     id = 1104,
     Name = "##106422",
     TitleSort = 1104,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[15]
+    BaseProp = Table_Appellation_t.BaseProp[18]
   },
   [1105] = {
     id = 1105,
     Name = "##106381",
     TitleSort = 1105,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[14]
+    BaseProp = Table_Appellation_t.BaseProp[17]
   },
   [1106] = {
     id = 1106,
     Name = "##106512",
     TitleSort = 1106,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[14]
+    BaseProp = Table_Appellation_t.BaseProp[17]
   },
   [1107] = {
     id = 1107,
@@ -384,7 +384,7 @@ Table_Appellation = {
     Name = "##106397",
     TitleSort = 1116,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[13]
+    BaseProp = Table_Appellation_t.BaseProp[14]
   },
   [1117] = {
     id = 1117,
@@ -398,7 +398,7 @@ Table_Appellation = {
     Name = "##106417",
     TitleSort = 1118,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[15]
+    BaseProp = Table_Appellation_t.BaseProp[18]
   },
   [1119] = {
     id = 1119,
@@ -456,7 +456,7 @@ Table_Appellation = {
     GroupID = 3,
     TitleSort = 1126,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[16]
+    BaseProp = Table_Appellation_t.BaseProp[19]
   },
   [1127] = {
     id = 1127,
@@ -470,14 +470,14 @@ Table_Appellation = {
     Name = "##106501",
     TitleSort = 1128,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[16]
+    BaseProp = Table_Appellation_t.BaseProp[19]
   },
   [1129] = {
     id = 1129,
     Name = "##106413",
     TitleSort = 1129,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[17]
+    BaseProp = Table_Appellation_t.BaseProp[20]
   },
   [1130] = {
     id = 1130,
@@ -702,7 +702,6 @@ Table_Appellation = {
   },
   [1203] = {
     id = 1203,
-    Name = "##106483",
     GroupID = 3,
     TitleSort = 1203,
     PostID = 1204,
@@ -863,7 +862,7 @@ Table_Appellation = {
     Name = "##106449",
     TitleSort = 1225,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[16]
+    BaseProp = Table_Appellation_t.BaseProp[19]
   },
   [1226] = {
     id = 1226,
@@ -1057,14 +1056,14 @@ Table_Appellation = {
     Name = "##106387",
     TitleSort = 1259,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[13]
+    BaseProp = Table_Appellation_t.BaseProp[14]
   },
   [1260] = {
     id = 1260,
     Name = "##106447",
     TitleSort = 1260,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[17]
+    BaseProp = Table_Appellation_t.BaseProp[20]
   },
   [1261] = {
     id = 1261,
@@ -1105,7 +1104,7 @@ Table_Appellation = {
     Name = "##106502",
     TitleSort = 1266,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[16]
+    BaseProp = Table_Appellation_t.BaseProp[19]
   },
   [1267] = {
     id = 1267,
@@ -1164,7 +1163,6 @@ Table_Appellation = {
     BaseProp = Table_Appellation_t.BaseProp[1]
   },
   [1275] = {
-    id = 1275,
     Name = "##303554",
     TitleSort = 1275,
     OrderType = 0,
@@ -1196,14 +1194,14 @@ Table_Appellation = {
     Name = "##1133172",
     TitleSort = 1279,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[20]
+    BaseProp = Table_Appellation_t.BaseProp[13]
   },
   [1280] = {
     id = 1280,
     Name = "##1164257",
     TitleSort = 1280,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[16]
+    BaseProp = Table_Appellation_t.BaseProp[19]
   },
   [1281] = {
     id = 1281,
@@ -1231,14 +1229,14 @@ Table_Appellation = {
     Name = "##1193831",
     TitleSort = 1284,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[15]
+    BaseProp = Table_Appellation_t.BaseProp[18]
   },
   [1285] = {
     id = 1285,
     Name = "##1218521",
     TitleSort = 1285,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[16]
+    BaseProp = Table_Appellation_t.BaseProp[19]
   },
   [1286] = {
     id = 1286,
@@ -1270,6 +1268,7 @@ Table_Appellation = {
   },
   [1290] = {
     id = 1290,
+    Name = "##106396",
     GroupID = 3,
     TitleSort = 1290,
     OrderType = 0,
@@ -1315,7 +1314,7 @@ Table_Appellation = {
     Name = "##1252989",
     TitleSort = 1297,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[13]
+    BaseProp = Table_Appellation_t.BaseProp[14]
   },
   [1298] = {
     id = 1298,
@@ -1336,28 +1335,49 @@ Table_Appellation = {
     Name = "##1252992",
     TitleSort = 1300,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[17]
+    BaseProp = Table_Appellation_t.BaseProp[20]
   },
   [1301] = {
     id = 1301,
     Name = "##1291449",
     TitleSort = 1301,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[20]
+    BaseProp = Table_Appellation_t.BaseProp[13]
   },
   [1302] = {
     id = 1302,
     Name = "##2809226",
     TitleSort = 1302,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[20]
+    BaseProp = Table_Appellation_t.BaseProp[13]
   },
   [1303] = {
     id = 1303,
     Name = "##245227",
     TitleSort = 1303,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[20]
+    BaseProp = Table_Appellation_t.BaseProp[13]
+  },
+  [1381] = {
+    id = 1381,
+    Name = "##44709778",
+    TitleSort = 1381,
+    OrderType = 0,
+    HideLock = 1
+  },
+  [1382] = {
+    id = 1382,
+    Name = "##44709779",
+    TitleSort = 1382,
+    OrderType = 0,
+    HideLock = 1
+  },
+  [1383] = {
+    id = 1383,
+    Name = "##44709780",
+    TitleSort = 1383,
+    OrderType = 0,
+    HideLock = 1
   },
   [1401] = {
     id = 1401,
@@ -1431,6 +1451,30 @@ Table_Appellation = {
     TitleSort = 1412,
     OrderType = 0
   },
+  [1431] = {
+    id = 1431,
+    Name = "##44704054",
+    TitleSort = 1431,
+    OrderType = 0
+  },
+  [1432] = {
+    id = 1432,
+    Name = "##44704056",
+    TitleSort = 1432,
+    OrderType = 0
+  },
+  [1433] = {
+    id = 1433,
+    Name = "##44704058",
+    TitleSort = 1433,
+    OrderType = 0
+  },
+  [1434] = {
+    id = 1434,
+    Name = "##44704060",
+    TitleSort = 1434,
+    OrderType = 0
+  },
   [3000709] = {
     id = 3000709,
     Name = "##101304",
@@ -1478,7 +1522,7 @@ Table_Appellation = {
     Name = "##102256",
     TitleSort = 3001611,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[19]
+    BaseProp = Table_Appellation_t.BaseProp[16]
   },
   [3001876] = {
     id = 3001876,
@@ -1506,7 +1550,7 @@ Table_Appellation = {
     Name = "##289283",
     TitleSort = 3002127,
     OrderType = 0,
-    BaseProp = Table_Appellation_t.BaseProp[18]
+    BaseProp = Table_Appellation_t.BaseProp[15]
   },
   [3002298] = {
     id = 3002298,
@@ -1544,6 +1588,7 @@ Table_Appellation = {
     BaseProp = Table_Appellation_t.BaseProp[3]
   },
   [3003135] = {
+    id = 3003135,
     Name = "2021",
     TitleSort = 3003135,
     OrderType = 0,
@@ -1659,8 +1704,8 @@ local cell_mt = {
     BaseProp = _EmptyTable,
     GroupID = 2,
     Level = "",
-    Name = "##106396",
-    id = 3003135
+    Name = "##106483",
+    id = 1275
   }
 }
 for _, d in pairs(Table_Appellation) do

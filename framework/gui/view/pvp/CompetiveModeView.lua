@@ -546,7 +546,7 @@ function CompetiveModeView:HandleCupModeStepChoose(forceRefresh)
     self.finalRoundBtn:SetActive(hasMainRound)
     self.stepGrid.gameObject:SetActive(hasPreRound or hasMainRound)
     self.stepBg:SetActive(hasPreRound or hasMainRound)
-    self.cupModeArrow.gameObject:SetActive(hasPreRound or hasMainRound)
+    self.cupModeArrow.gameObject:SetActive(hasPreRound or hasMainRound or hasFinalRound)
     local curStage = proxy:GetCurStage() or 0
     if 3 < curStage then
       self:SwitchToStep(3, forceRefresh)

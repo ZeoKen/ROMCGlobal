@@ -4651,7 +4651,7 @@ Table_RuneSpecial = {
     RuneName = "##168353",
     SkillID = Table_RuneSpecial_t.SkillID[89],
     Runetip = 12301,
-    SkillTipParm = Table_RuneSpecial_t.SkillTipParm[9]
+    SkillTipParm = Table_RuneSpecial_t.SkillTipParm[10]
   },
   [123020] = {
     id = 123020,

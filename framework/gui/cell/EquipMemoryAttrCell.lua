@@ -25,10 +25,39 @@ function EquipMemoryAttrCell:SetData(data)
   local attrId = data.id
   local attrConfig = Game.ItemMemoryEffect[attrId]
   if attrConfig then
-    local buffDesc
+    local descStr = ""
     local staticId = attrConfig.level and attrConfig.level[level]
     local staticData = staticId and Table_ItemMemoryEffect[staticId]
-    self.attrName.text = staticData and staticData.WaxDesc
+    if staticData then
+      local targetStage = self.data and self.data.excess_lv or 0
+      local buffId
+      local buffIds = staticData.BuffID
+      if type(buffIds) == "table" then
+        if not buffIds[0] and 0 < #buffIds then
+          buffId = buffIds[1]
+        else
+          local maxKey
+          for k, _ in pairs(buffIds) do
+            if type(k) == "number" and k <= targetStage and (not maxKey or k > maxKey) then
+              maxKey = k
+            end
+          end
+          local targetBuffId = maxKey ~= nil and buffIds[maxKey] or buffIds[0] or buffIds[1]
+          if type(targetBuffId) == "table" then
+            buffId = next(targetBuffId) and targetBuffId[next(targetBuffId)]
+          else
+            buffId = targetBuffId
+          end
+        end
+      end
+      local buffData = buffId and Table_Buffer[buffId]
+      local dsc = buffData and buffData.Dsc and OverSea.LangManager.Instance():GetLangByKey(buffData.Dsc)
+      if type(dsc) == "string" then
+        dsc = string.gsub(dsc, "%[AttrValue%]", "")
+      end
+      descStr = dsc or staticData and staticData.WaxDesc or ""
+    end
+    self.attrName.text = descStr
     local color = attrConfig.Color or "attack"
     local _iconName = GameConfig.EquipMemory.AttrTypeIcon and GameConfig.EquipMemory.AttrTypeIcon[color].Icon
     self.colorSymbol.spriteName = _iconName
@@ -74,9 +103,39 @@ function EquipMemoryAttrCellType2:SetData(data)
   local attrId = data.id
   local attrConfig = Game.ItemMemoryEffect[attrId]
   if attrConfig then
+    local descStr = ""
     local staticId = attrConfig.level and attrConfig.level[level]
     local staticData = staticId and Table_ItemMemoryEffect[staticId]
-    self.attrName.text = staticData and staticData.WaxDesc
+    if staticData then
+      local targetStage = self.data and self.data.excess_lv or 0
+      local buffId
+      local buffIds = staticData.BuffID
+      if type(buffIds) == "table" then
+        if not buffIds[0] and 0 < #buffIds then
+          buffId = buffIds[1]
+        else
+          local maxKey
+          for k, _ in pairs(buffIds) do
+            if type(k) == "number" and k <= targetStage and (not maxKey or k > maxKey) then
+              maxKey = k
+            end
+          end
+          local targetBuffId = maxKey ~= nil and buffIds[maxKey] or buffIds[0] or buffIds[1]
+          if type(targetBuffId) == "table" then
+            buffId = next(targetBuffId) and targetBuffId[next(targetBuffId)]
+          else
+            buffId = targetBuffId
+          end
+        end
+      end
+      local buffData = buffId and Table_Buffer[buffId]
+      local dsc = buffData and buffData.Dsc and OverSea.LangManager.Instance():GetLangByKey(buffData.Dsc)
+      if type(dsc) == "string" then
+        dsc = string.gsub(dsc, "%[AttrValue%]", "")
+      end
+      descStr = dsc or staticData and staticData.WaxDesc or ""
+    end
+    self.attrName.text = descStr
     local color = attrConfig.Color or "red"
     local _iconName = GameConfig.EquipMemory.AttrTypeIcon and GameConfig.EquipMemory.AttrTypeIcon[color].Icon
     self.colorSymbol.spriteName = _iconName .. "s"
@@ -107,15 +166,22 @@ function EquipMemoryAttrCellType3:SetData(data)
   self.attrValue.text = level
   local attrId = data.id
   local descStr = ""
-  local attrInfo = ItemUtil.GetMemoryEffectInfo(attrId)
+  local attrInfoAgg
+  if self.data and self.data.stages then
+    attrInfoAgg = ItemUtil.BuildMemoryEffectAggregate(attrId, self.data.stages)
+  end
+  local attrInfo = attrInfoAgg or ItemUtil.GetMemoryEffectInfo(attrId, self.data and self.data.excess_lv)
   if attrInfo then
-    local _formatStr = attrInfo[1] and attrInfo[1].FormatStr
-    local _valueList = attrInfo[1] and attrInfo[1].AttrValue
+    local _formatStr = attrInfo[1] and attrInfo[1].FormatStr or attrInfo.FormatStr
+    local _valueList = attrInfo[1] and attrInfo[1].AttrValue or attrInfo.AttrValue
+    local isAggregate = attrInfoAgg ~= nil
+    local multiplier = isAggregate and 1 or level or 1
     if _formatStr and _valueList then
       for m in _formatStr:gmatch("[AttrValue]") do
         local _replaceValue = table.remove(_valueList, 1)
         if _replaceValue then
-          _formatStr = _formatStr:gsub("%[.-]", _replaceValue * level, 1)
+          local numVal = tonumber(_replaceValue) or 0
+          _formatStr = _formatStr:gsub("%[.-]", numVal * multiplier, 1)
         end
       end
       descStr = descStr .. _formatStr

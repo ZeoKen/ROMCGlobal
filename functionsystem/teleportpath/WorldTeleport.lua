@@ -3,6 +3,15 @@ autoImport("TransferTeleport")
 local TransferTeleport = TransferTeleport
 autoImport("MapTeleportUtil")
 local MapTeleportUtil = MapTeleportUtil
+local checkEPValid = function(ep_type)
+  if not ep_type or ep_type == 0 then
+    return true
+  end
+  if Game.MapManager:IsPVPMode_GVGDetailed() and ep_type == 1 then
+    return GvgProxy.Instance:IsDefSide()
+  end
+  return true
+end
 WorldTeleport.DESTINATION_VALID_RANGE = 5
 local PositionLockedCountLimit = 60
 local tempBPArray = {}
@@ -89,7 +98,7 @@ function WorldTeleport.CreateInnerTeleportInfo(sourcePos, targetPos)
         local ep = exitPointMap[k]
         local canArrive = false
         local path
-        if ep then
+        if ep and checkEPValid(ep.exitType) then
           canArrive, path = NavMeshUtils.CanArrived(sourcePos, ep.position, WorldTeleport.DESTINATION_VALID_RANGE, true, nil)
           if canArrive then
             local cost = NavMeshUtils.GetPathDistance(path) + v[bpInfo.bornPoint.ID].totalCost + bpInfo.cost

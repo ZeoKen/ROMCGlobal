@@ -30,7 +30,8 @@ local EContentType = {
   RecommendPlayerNum = 1,
   LeftRewardCount = 2,
   CostTime = 3,
-  EquipRate = 4
+  EquipRate = 4,
+  DailyTokenLimit = 5
 }
 autoImport("PveEntranceData")
 autoImport("PveTypeCell")
@@ -294,6 +295,12 @@ function PveView:FindObj()
       view = PanelConfig.RoguelikeSkillHandbookView
     })
   end)
+  self.fairyTaleRaidRankBtn = self:FindGO("FairyTaleRaidRankBtn")
+  self:AddClickEvent(self.fairyTaleRaidRankBtn, function()
+    self:sendNotification(UIEvent.JumpPanel, {
+      view = PanelConfig.FairyTaleRaidRankPopup
+    })
+  end)
 end
 
 function PveView:InitContentFunc()
@@ -302,6 +309,7 @@ function PveView:InitContentFunc()
   self.setContentFunc[EContentType.LeftRewardCount] = self._SetContent_LeftRewardCount
   self.setContentFunc[EContentType.CostTime] = self._SetContent_CostTime
   self.setContentFunc[EContentType.EquipRate] = self._SetContent_EquipRate
+  self.setContentFunc[EContentType.DailyTokenLimit] = self._SetContent_DailyTokenLimit
 end
 
 function PveView:OnDragModelTexture(go, delta)
@@ -995,7 +1003,7 @@ function PveView:OnTabChange(selectTab)
   else
     result = _EntranceProxy:GetCatalogData(catalog)
   end
-  if 0 < #result then
+  if result and 0 < #result then
     local crack_retEntranceId, guide_retEntranceGroupId = self:addGuideData(result)
     self.pveWraplist:ResetDatas(result)
     self:_TryResetPveGridCellDragSv()
@@ -1042,10 +1050,12 @@ end
 function PveView:InitFilter()
   TableUtility.ArrayClear(_PopUpItemConfig)
   for k, v in pairs(_PveConfig.Catalog) do
-    local data = {}
-    data.Name = v
-    data.Catalog = k
-    table.insert(_PopUpItemConfig, data)
+    if k == 0 or _EntranceProxy:GetCatalogData(k) then
+      local data = {}
+      data.Name = v
+      data.Catalog = k
+      table.insert(_PopUpItemConfig, data)
+    end
   end
   self.raidTypeTabs:SetData(_PopUpItemConfig)
   local vCatalog = self.viewdata.viewdata and self.viewdata.viewdata.catalog
@@ -1163,6 +1173,8 @@ function PveView:UpdateViewData(data)
     self:UpdateAstral()
     self:UpdateActivityInfo()
     self.roguelikeSkillHandbookBtn:SetActive(data.staticEntranceData:IsSpaceTimeIllusion())
+    self.fairyTaleRaidRankBtn:SetActive(data.staticEntranceData:IsFairyTale())
+    self.leftTimeTip:SetActive(not data.staticEntranceData:IsFairyTale())
   end
 end
 
@@ -1245,6 +1257,16 @@ function PveView:_SetContent_EquipRate(param, label)
   if max_challengeCount <= server_challengeCount then
     label.color = _ChallengeRedColor
   end
+end
+
+function PveView:_SetContent_DailyTokenLimit(param, label)
+  label.color = _NewBlackColor
+  local dailyToken = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_FAIRY_TALE_DAILY_COIN) or 0
+  label.text = string.format(ZhString.FairyTaleRaid_DailyTokenLimit, dailyToken, param)
+  if param <= dailyToken then
+    label.color = _ChallengeRedColor
+  end
+  self.pveCard_addMaxCountBtn.gameObject:SetActive(false)
 end
 
 function PveView:SetContentLabel(type, param, label)

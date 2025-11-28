@@ -13,6 +13,11 @@ function DayloginContainerView.CanShow()
 end
 
 function DayloginContainerView:Init()
+  local customMediatorName = self.viewdata and self.viewdata.viewdata and self.viewdata.viewdata.mediatorName
+  if customMediatorName and self.uiMediator then
+    xdlog("DayloginContainerView 使用自定义 MediatorName:", customMediatorName)
+    self.uiMediator.mediatorName = customMediatorName
+  end
   self:FindObjs()
   self:AddViewEvts()
   self:AddEvts()
@@ -274,7 +279,7 @@ function DayloginContainerView:HandleClickReward(cellCtrl)
   xdlog("recv HandleClickReward")
   if cellCtrl and cellCtrl.data then
     self.tipData.itemdata = cellCtrl.data.itemData
-    self:ShowItemTip(self.tipData, cellCtrl.icon, NGUIUtil.AnchorSide.Center, {-300, 0})
+    self:ShowItemTip(self.tipData, cellCtrl.icon, NGUIUtil.AnchorSide.Left, {-200, 0})
   end
 end
 

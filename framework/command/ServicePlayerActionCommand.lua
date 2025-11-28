@@ -9,15 +9,15 @@ function ServicePlayerActionCommand:execute(note)
     local once = data.once
     if delay and 0 < delay then
       TimeTickManager.Me():CreateOnceDelayTick(delay, function(owner, deltaTime)
-        self:DoServerPlayerBeheavior(data.charid, type, value, once)
+        self:DoServerPlayerBeheavior(data.charid, type, value, once, data.box_opened)
       end, self)
     else
-      self:DoServerPlayerBeheavior(data.charid, type, value, once)
+      self:DoServerPlayerBeheavior(data.charid, type, value, once, data.box_opened)
     end
   end
 end
 
-function ServicePlayerActionCommand:DoServerPlayerBeheavior(playerid, type, value, once)
+function ServicePlayerActionCommand:DoServerPlayerBeheavior(playerid, type, value, once, boxOpened)
   local player
   if 0 == playerid then
     player = Game.Myself
@@ -26,6 +26,9 @@ function ServicePlayerActionCommand:DoServerPlayerBeheavior(playerid, type, valu
   end
   if not player then
     return
+  end
+  if player.data then
+    player.data.boxOpened = boxOpened
   end
   if type == SceneUser2_pb.EUSERACTIONTYPE_ADDHP then
     player:PlayHpUp()

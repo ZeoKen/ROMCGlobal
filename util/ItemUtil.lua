@@ -191,9 +191,7 @@ function ItemUtil.CheckDateValid(validArray)
     return true
   end
   local validDate
-  if EnvChannel.IsReleaseBranch() or not BranchMgr.IsChina() then
-    validDate = validArray[1]
-  elseif EnvChannel.IsTFBranch() then
+  if EnvChannel.IsTFBranch() then
     validDate = validArray[2]
   else
     validDate = validArray[1]
@@ -415,7 +413,7 @@ function ItemUtil.getItemRolePartIndex(itemid)
     if EquipType2BodyIndex[typeId] then
       return EquipType2BodyIndex[typeId]
     end
-    if equipData.Body then
+    if equipData.Body and nil ~= next(equipData.Body) then
       return Asset_Role.PartIndex.Body
     end
     local mtype = equipData.Type
@@ -663,7 +661,7 @@ function ItemUtil.CheckCardCanGetByTime(cardId, tfkey, releaseKey)
   local timeKey
   if EnvChannel.IsTFBranch() then
     timeKey = tfkey
-  elseif EnvChannel.IsReleaseBranch() then
+  else
     timeKey = releaseKey
   end
   if timeKey == nil then
@@ -699,10 +697,10 @@ function ItemUtil.CheckRecipeCanUseByTime(recipeId, tfKey, releaseKey, searchTab
     return false
   end
   local timeKey
-  if EnvChannel.IsReleaseBranch() or not BranchMgr.IsChina() then
-    timeKey = releaseKey
-  elseif EnvChannel.IsTFBranch() then
+  if EnvChannel.IsTFBranch() then
     timeKey = tfKey
+  else
+    timeKey = releaseKey
   end
   if timeKey == nil then
     return true
@@ -1197,7 +1195,7 @@ end
 local _Seperator = "[AttrValue]"
 local _SeperatorWax = "[WaxEffect]"
 
-function ItemUtil.GetMemoryEffectInfo(attrId)
+function ItemUtil.GetMemoryEffectInfo(attrId, excess_lv)
   local attrConfig = Game.ItemMemoryEffect[attrId]
   if attrConfig then
     local attrInfo = {}
@@ -1208,34 +1206,116 @@ function ItemUtil.GetMemoryEffectInfo(attrId)
         local _attrValue = {}
         local staticData = Table_ItemMemoryEffect[_staticId]
         local buffids = staticData and staticData.BuffID
-        if buffids and 0 < #buffids then
-          for i = 1, #buffids do
-            local buffInfo = Table_Buffer[buffids[i]]
-            _buffName = _buffName or buffInfo.BuffName
-            local _desc = string.split(OverSea.LangManager.Instance():GetLangByKey(buffInfo.Dsc), _Seperator)
-            for j = 1, #_desc do
-              if tonumber(_desc[j]) ~= nil then
-                table.insert(_attrValue, _desc[j])
+        if buffids then
+          local chosenBuffIds = {}
+          if type(buffids) == "table" then
+            if not buffids[0] and 0 < #buffids then
+              for i = 1, #buffids do
+                table.insert(chosenBuffIds, buffids[i])
               end
-            end
-            if _buffFormatStr == "" then
-              for j = 1, #_desc do
-                if tonumber(_desc[j]) ~= nil then
-                  _buffFormatStr = _buffFormatStr .. "[AttrValue]"
+            else
+              local targetStage = tonumber(excess_lv) or 0
+              local maxKey
+              for k, _ in pairs(buffids) do
+                if type(k) == "number" and k <= targetStage and (not maxKey or k > maxKey) then
+                  maxKey = k
+                end
+              end
+              if maxKey ~= nil then
+                local targetBuffIds = buffids[maxKey]
+                if type(targetBuffIds) == "table" then
+                  local firstBuffId = next(targetBuffIds) and targetBuffIds[next(targetBuffIds)]
+                  if firstBuffId then
+                    table.insert(chosenBuffIds, firstBuffId)
+                  end
                 else
-                  _buffFormatStr = _buffFormatStr .. _desc[j]
+                  table.insert(chosenBuffIds, targetBuffIds)
+                end
+              elseif buffids[0] ~= nil then
+                local targetBuffIds = buffids[0]
+                if type(targetBuffIds) == "table" then
+                  local firstBuffId = next(targetBuffIds) and targetBuffIds[next(targetBuffIds)]
+                  if firstBuffId then
+                    table.insert(chosenBuffIds, firstBuffId)
+                  end
+                else
+                  table.insert(chosenBuffIds, targetBuffIds)
+                end
+              elseif buffids[1] ~= nil then
+                local targetBuffIds = buffids[1]
+                if type(targetBuffIds) == "table" then
+                  local firstBuffId = next(targetBuffIds) and targetBuffIds[next(targetBuffIds)]
+                  if firstBuffId then
+                    table.insert(chosenBuffIds, firstBuffId)
+                  end
+                else
+                  table.insert(chosenBuffIds, targetBuffIds)
                 end
               end
             end
           end
-          attrInfo[_level] = {BuffName = _buffName, FormatStr = _buffFormatStr}
-          attrInfo[_level].AttrValue = {}
-          TableUtility.ArrayShallowCopy(attrInfo[_level].AttrValue, _attrValue)
+          if 0 < #chosenBuffIds then
+            for i = 1, #chosenBuffIds do
+              local buffInfo = Table_Buffer[chosenBuffIds[i]]
+              _buffName = _buffName or buffInfo.BuffName
+              local _desc = string.split(OverSea.LangManager.Instance():GetLangByKey(buffInfo.Dsc), _Seperator)
+              for j = 1, #_desc do
+                if tonumber(_desc[j]) ~= nil then
+                  table.insert(_attrValue, _desc[j])
+                end
+              end
+              if _buffFormatStr == "" then
+                for j = 1, #_desc do
+                  if tonumber(_desc[j]) ~= nil then
+                    _buffFormatStr = _buffFormatStr .. "[AttrValue]"
+                  else
+                    _buffFormatStr = _buffFormatStr .. _desc[j]
+                  end
+                end
+              end
+            end
+            attrInfo[_level] = {BuffName = _buffName, FormatStr = _buffFormatStr}
+            attrInfo[_level].AttrValue = {}
+            TableUtility.ArrayShallowCopy(attrInfo[_level].AttrValue, _attrValue)
+          end
         end
       end
     end
     return attrInfo
   end
+end
+
+function ItemUtil.BuildMemoryEffectAggregate(attrId, stages)
+  local attrConfig = Game.ItemMemoryEffect[attrId]
+  if not attrConfig then
+    return nil
+  end
+  if not stages or type(stages) ~= "table" then
+    return nil
+  end
+  local aggregate = {
+    BuffName = nil,
+    FormatStr = nil,
+    AttrValue = {}
+  }
+  for stage, count in pairs(stages) do
+    local info = ItemUtil.GetMemoryEffectInfo(attrId, stage)
+    if info and info[1] then
+      if not aggregate.BuffName then
+        aggregate.BuffName = info[1].BuffName
+      end
+      if not aggregate.FormatStr then
+        aggregate.FormatStr = info[1].FormatStr
+      end
+      if info[1].AttrValue then
+        for idx, v in ipairs(info[1].AttrValue) do
+          local addVal = (tonumber(v) or 0) * (tonumber(count) or 0)
+          aggregate.AttrValue[idx] = (aggregate.AttrValue[idx] or 0) + addVal
+        end
+      end
+    end
+  end
+  return aggregate
 end
 
 function ItemUtil.GetMemoryWaxDesc(attrId, wax_level, enablecolor, disablecolor)

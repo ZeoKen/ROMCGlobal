@@ -1,6 +1,7 @@
 autoImport("ShopItemCell")
 autoImport("HappyShopBuyItemCell")
 autoImport("ServantHeadCell")
+autoImport("ShopItemWithGiftCell")
 HappyShop = class("HappyShop", ContainerView)
 HappyShop.ViewType = UIViewType.NormalLayer
 ShopInfoType = {
@@ -246,32 +247,59 @@ end
 function HappyShop:InitShopInfo()
   local isGuildMaterialType = HappyShopProxy.Instance:isGuildMaterialType()
   self.itemContainer = isGuildMaterialType and self:FindGO("shop_itemContainerSpecial") or self:FindGO("shop_itemContainer")
+  self:ReInitShopInfo()
+  self.CloseWhenClickOtherPlace:AddTarget(self.itemContainer.transform)
+end
+
+function HappyShop:ReInitShopInfo()
+  local isGuildMaterialType = HappyShopProxy.Instance:isGuildMaterialType()
+  local hasGift = HappyShopProxy.Instance:HasGift() or false
+  if self.hasGift == hasGift and self.isGuildMaterialType == isGuildMaterialType then
+    return
+  end
+  self.hasGift = hasGift
+  self.isGuildMaterialType = isGuildMaterialType
+  local wrap = self.itemContainer:GetComponent(UIWrapContent)
+  wrap.itemSize = hasGift and 150 or 115
+  local cellName = hasGift and "ShopItemWithGiftCell" or "ShopItemCell"
+  local control = hasGift and ShopItemWithGiftCell or ShopItemCell
   local wrapConfig = {
     wrapObj = self.itemContainer,
     pfbNum = 6,
-    cellName = "ShopItemCell",
-    control = ShopItemCell,
+    cellName = cellName,
+    control = control,
     dir = 1,
     disableDragIfFit = true
   }
   if isGuildMaterialType then
     if self.specialItemWrapHelper then
-      return
+      local cells = self.specialItemWrapHelper:GetCellCtls()
+      for _, cell in pairs(cells) do
+        GameObject.DestroyImmediate(cell.gameObject)
+      end
+      self.specialItemWrapHelper:__OnViewDestroy()
+      self.specialItemWrapHelper = nil
     end
     self.specialItemWrapHelper = WrapCellHelper.new(wrapConfig)
     self.specialItemWrapHelper:AddEventListener(MouseEvent.MouseClick, self.HandleClickItem, self)
     self.specialItemWrapHelper:AddEventListener(HappyShopEvent.SelectIconSprite, self.HandleClickIconSprite, self)
     self.specialItemWrapHelper:AddEventListener(HappyShopEvent.ExchangeBtnClick, self.HandleClickItemExchange, self)
+    self.specialItemWrapHelper:AddEventListener(HappyShopEvent.GiftItemClick, self.HandleClickGiftItem, self)
   else
     if self.itemWrapHelper then
-      return
+      local cells = self.itemWrapHelper:GetCellCtls()
+      for _, cell in pairs(cells) do
+        GameObject.DestroyImmediate(cell.gameObject)
+      end
+      self.itemWrapHelper:__OnViewDestroy()
+      self.itemWrapHelper = nil
     end
     self.itemWrapHelper = WrapCellHelper.new(wrapConfig)
     self.itemWrapHelper:AddEventListener(MouseEvent.MouseClick, self.HandleClickItem, self)
     self.itemWrapHelper:AddEventListener(HappyShopEvent.SelectIconSprite, self.HandleClickIconSprite, self)
     self.itemWrapHelper:AddEventListener(HappyShopEvent.ExchangeBtnClick, self.HandleClickItemExchange, self)
+    self.itemWrapHelper:AddEventListener(HappyShopEvent.GiftItemClick, self.HandleClickGiftItem, self)
   end
-  self.CloseWhenClickOtherPlace:AddTarget(self.itemContainer.transform)
 end
 
 function HappyShop:InitScreen()
@@ -426,6 +454,17 @@ function HappyShop:HandleClickIconSprite(cellctl)
   self:ShowHappyItemTip(data)
   self.buyCell.gameObject:SetActive(false)
   self.selectGo = nil
+end
+
+function HappyShop:HandleClickGiftItem(cellctl)
+  local data = HappyShopProxy.Instance:GetShopItemDataByTypeId(cellctl.data)
+  if data.giftItem then
+    self.tipData.itemdata = data.giftItem
+    self.tipData.ignoreBounds = {
+      self.itemContainer
+    }
+    self:ShowItemTip(self.tipData, self.LeftStick)
+  end
 end
 
 function HappyShop:ShowHappyItemTip(data)
@@ -667,6 +706,7 @@ end
 function HappyShop:RecvQueryShopConfig(note)
   self:InitScreen()
   self:InitShowtoggle()
+  self:ReInitShopInfo()
   self:UpdateShopInfo(true)
   self:InitLeftUpIcon()
   self:InitFilter()

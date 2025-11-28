@@ -42,7 +42,8 @@ BWMiniMapWindow.Type = {
   ZoneTips = 34,
   ZoneBlock = 35,
   Yahaha = 36,
-  FakeDragon = 37
+  FakeDragon = 37,
+  AbyssDragon = 38
 }
 local Type = BWMiniMapWindow.Type
 local _Game = Game
@@ -99,6 +100,7 @@ function BWMiniMapWindow:InitDatas()
   self.puzzleRoomsObjAreaMap = {}
   self.puzzleRoomsColliderMap = {}
   self.puzzleRoomsStatusMap = {}
+  self.abyssDragonEffectMap = {}
   self:RegisterAllMapInfos()
 end
 
@@ -125,7 +127,6 @@ function BWMiniMapWindow:RegisterAllMapInfos()
   self:RegisterMapInfo(Type.ZoneBlock, BWMiniMapWindow._CreateZoneBlock, BWMiniMapWindow._UpdateZoneBlock, BWMiniMapWindow._RemoveZoneBlock)
   self:RegisterMapInfo(Type.WildMvp, BWMiniMapWindow._CreateWildMvpSymbol, BWMiniMapWindow._UpdateWildMvpSymbol, BWMiniMapWindow._RemoveWildMvpSymbol)
   self:RegisterMapInfo(Type.Yahaha, BWMiniMapWindow._CreateYahahaSymbol, BWMiniMapWindow._UpdateYahahaSymbol)
-  self:RegisterMapInfo(Type.FakeDragon, BWMiniMapWindow._CreateFakeDragonSymbol, BWMiniMapWindow._UpdateFakeDragonSymbol, BWMiniMapWindow._RemoveFakeDragonSymbol)
 end
 
 function BWMiniMapWindow:RegisterMapInfo(type, createFunc, updateFunc, removeFunc)
@@ -459,7 +460,6 @@ function BWMiniMapWindow:UpdateMapTexture(data, size, map2D, setSide)
   self:UpdateFixedInfo()
   self.iMoved = true
   self:RefreshMapSymbols()
-  self:UpdateFakeDragonSymbol()
 end
 
 function BWMiniMapWindow:ClearFixedInfo()
@@ -529,6 +529,23 @@ function BWMiniMapWindow:IsScenePosValid(posX, posZ)
     return
   end
   return posX >= self.mapSceneMinPos[1] and posX <= self.mapSceneMinPos[1] + self.mapSceneSize[1] and posZ >= self.mapSceneMinPos[2] and posZ <= self.mapSceneMinPos[2] + self.mapSceneSize[2]
+end
+
+function BWMiniMapWindow:IsScenePosInUnlockedZone(posX, posY, posZ)
+  if not self.blockUnlockInfo then
+    return true
+  end
+  local pos = {
+    posX,
+    posY or 0,
+    posZ
+  }
+  local groupId = WorldMapProxy.Instance:GetZoneGroupIdByPos(pos)
+  if groupId then
+    local isUnlocked = self.blockUnlockInfo[groupId]
+    return isUnlocked ~= false
+  end
+  return true
 end
 
 function BWMiniMapWindow:UpdateExitPoints()
@@ -1353,6 +1370,10 @@ function BWMiniMapWindow:UpdateScenicSpotSymbol(datas, isRemoveOther)
 end
 
 function BWMiniMapWindow:_CreateScenicSpot(data)
+  local pos = data.pos
+  if pos and not self:IsScenePosInUnlockedZone(pos[1], pos[2], pos[3]) then
+    return nil
+  end
   local symbol = data:GetParama("Symbol")
   local obj = self:GetMapSymbol(symbol, 6, nil, self.d_symbolParent)
   obj.name = symbol
@@ -1360,6 +1381,13 @@ function BWMiniMapWindow:_CreateScenicSpot(data)
 end
 
 function BWMiniMapWindow:_UpdateScenicSpot(obj, data)
+  local pos = data.pos
+  if pos and not self:IsScenePosInUnlockedZone(pos[1], pos[2], pos[3]) then
+    if not IsNull(obj) then
+      self:RemoveMiniMapSymbol(obj)
+    end
+    return nil
+  end
   if not IsNull(obj) then
     local symbol = data:GetParama("Symbol")
     if symbol ~= obj.name then
@@ -1493,10 +1521,6 @@ end
 
 function BWMiniMapWindow:UpdateMvpPoses(datas, isRemoveOther)
   self:UpdateMapSymbolDatas(Type.MVP, datas, isRemoveOther, 1)
-end
-
-function BWMiniMapWindow:UpdateFakeDragonPoses(datas, isRemoveOther)
-  self:UpdateMapSymbolDatas(Type.FakeDragon, datas, isRemoveOther, 1)
 end
 
 function BWMiniMapWindow:UpdateFixedTreasurePoses(datas, isRemoveOther)
@@ -1649,6 +1673,18 @@ function BWMiniMapWindow:UpdateTransmitterPoints()
     end
   end
   self:UpdateTransmitterButton(self.transmitterButtons, nil, true)
+  self:RefreshScenicSpotsByUnlockChange()
+end
+
+function BWMiniMapWindow:RefreshScenicSpotsByUnlockChange()
+  local scenicSpotDatas = self.allMapDatas[Type.ScenicSpot]
+  if scenicSpotDatas then
+    self:UpdateMapSymbolDatas(Type.ScenicSpot, scenicSpotDatas, true, -1)
+  end
+  local areaTipDatas = self.allMapDatas[Type.AreaTips]
+  if areaTipDatas then
+    self:UpdateMapSymbolDatas(Type.AreaTips, areaTipDatas, true, -1)
+  end
 end
 
 function BWMiniMapWindow:RemoveTransmitterPoints()
@@ -1701,6 +1737,9 @@ end
 local AreaTips_Path = ResourcePathHelper.UICell("MiniMapSymbol_AreaTips")
 
 function BWMiniMapWindow:_CreateAreaTips(data)
+  if not self:IsAreaTipsUnlocked(data) then
+    return nil
+  end
   local symbol = _Game.AssetManager_UI:CreateAsset(AreaTips_Path, self.d_symbolParent)
   if not IsNull(symbol) then
     if IsRunOnEditor then
@@ -1715,11 +1754,50 @@ function BWMiniMapWindow:_CreateAreaTips(data)
 end
 
 function BWMiniMapWindow:_UpdateAreaTips(symbolObj, data)
+  if not self:IsAreaTipsUnlocked(data) then
+    if not IsNull(symbolObj) then
+      self:RemoveMiniMapSymbol(symbolObj)
+    end
+    return nil
+  end
   local label = symbolObj:GetComponent(UILabel)
   label.text = data:GetParama("Text") or ""
   label.depth = data:GetParama("depth") or 10
   label.fontSize = 18
   return symbolObj
+end
+
+function BWMiniMapWindow:IsAreaTipsUnlocked(data)
+  if not self.blockUnlockInfo then
+    return true
+  end
+  local pos = data.pos
+  if not pos then
+    return true
+  end
+  local zoneMap = WorldMapProxy.Instance:GetZoneMap()
+  if not zoneMap then
+    return true
+  end
+  local checkRadius = 500
+  local hasUnlockedZone = false
+  for id, zoneData in pairs(zoneMap) do
+    local center = zoneData:GetCenter()
+    if center and #center == 3 then
+      local dx = center[1] - pos[1]
+      local dy = center[2] - pos[2]
+      local dz = center[3] - pos[3]
+      local dist = math.sqrt(dx * dx + dy * dy + dz * dz)
+      if checkRadius > dist then
+        local groupId = zoneData:GetGroupId()
+        if groupId and self.blockUnlockInfo[groupId] ~= false then
+          hasUnlockedZone = true
+          break
+        end
+      end
+    end
+  end
+  return hasUnlockedZone
 end
 
 local ZoneTips_Path = ResourcePathHelper.UICell("MiniMapSymbol_AreaTips")
@@ -2242,6 +2320,42 @@ function BWMiniMapWindow:UpdateCameraSymbol()
   end
 end
 
-function BWMiniMapWindow:UpdateFakeDragonSymbol(datas, isRemoveOther)
-  self:UpdateMapSymbolDatas(Type.FakeDragon, datas, isRemoveOther)
+function BWMiniMapWindow:UpdateAbyssDragonSymbol(datas, isRemoveOther)
+  for id, effect in pairs(self.abyssDragonEffectMap) do
+    if not datas[id] then
+      self:_RemoveAbyssDragonSymbol(id, effect)
+    end
+  end
+  for id, data in pairs(datas) do
+    if not self.abyssDragonEffectMap[id] then
+      self:_CreateAbyssDragonSymbol(data)
+    else
+      self:_UpdateAbyssDragonSymbol(self.abyssDragonEffectMap[id], data)
+    end
+  end
+end
+
+function BWMiniMapWindow:_CreateAbyssDragonSymbol(data)
+  local path = data:GetParama("effect")
+  local pos = data:GetPos()
+  local effect = self:PlayUIEffect(path, self.myselfPanel.gameObject, false)
+  self.abyssDragonEffectMap[data.id] = effect
+  pos = self:ScenePosToMap(pos)
+  effect:ResetLocalPosition(pos)
+  return effect.effectObj
+end
+
+function BWMiniMapWindow:_UpdateAbyssDragonSymbol(effect, data)
+  local pos = data:GetPos()
+  pos = self:ScenePosToMap(pos)
+  if effect and pos then
+    effect:ResetLocalPosition(pos)
+  end
+end
+
+function BWMiniMapWindow:_RemoveAbyssDragonSymbol(id, effect)
+  if effect then
+    effect:Destroy()
+    self.abyssDragonEffectMap[id] = nil
+  end
 end

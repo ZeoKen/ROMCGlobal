@@ -145,6 +145,35 @@ Table_ServantCalendar = {
     FuncState = 3,
     frequency = _EmptyTable
   },
+  [111] = {
+    id = 111,
+    Icon = "catIntrusion",
+    Name = "B格猫入侵",
+    TextureName = {
+      {
+        texture = "bcat1",
+        desc = "周三西门定时开启"
+      },
+      {
+        texture = "bcat2",
+        desc = "击杀B格猫先遣队迫使飞碟降落"
+      },
+      {
+        texture = "bcat3",
+        desc = "击杀飞碟猫获得稀有奖励"
+      }
+    },
+    TimeUnit = 2,
+    StartTime = "12:00",
+    EndTime = "12:30",
+    Wday = "Wed",
+    GotoMode = {5005},
+    Location = "普隆德拉西门",
+    Reward = "稀有材料、黑猫雷蒙盖顿、珍稀时装等",
+    Desc = "“注意，注意，B格猫星人入侵！”“救命啊！那是B格猫星人的飞船”，冒险者！为了守护我们的大陆，战斗吧！",
+    FuncState = 3,
+    frequency = _EmptyTable
+  },
   [14] = {
     id = 14,
     Icon = "teamfight",

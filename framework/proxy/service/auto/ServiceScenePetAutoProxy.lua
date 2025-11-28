@@ -2298,6 +2298,15 @@ function ServiceScenePetAutoProxy:CallEquipUpdatePetCmd(petid, update, del)
       end
       msg.update.memory.lv = update.memory.lv
     end
+    if update.memory ~= nil and update.memory.excess_lv ~= nil then
+      if msg.update == nil then
+        msg.update = {}
+      end
+      if msg.update.memory == nil then
+        msg.update.memory = {}
+      end
+      msg.update.memory.excess_lv = update.memory.excess_lv
+    end
     if update ~= nil and update.memory.effects ~= nil then
       if msg.update.memory == nil then
         msg.update.memory = {}
@@ -4100,6 +4109,15 @@ function ServiceScenePetAutoProxy:CallEquipUpdatePetCmd(petid, update, del)
         msgParam.update.memory = {}
       end
       msgParam.update.memory.lv = update.memory.lv
+    end
+    if update.memory ~= nil and update.memory.excess_lv ~= nil then
+      if msgParam.update == nil then
+        msgParam.update = {}
+      end
+      if msgParam.update.memory == nil then
+        msgParam.update.memory = {}
+      end
+      msgParam.update.memory.excess_lv = update.memory.excess_lv
     end
     if update ~= nil and update.memory.effects ~= nil then
       if msgParam.update.memory == nil then

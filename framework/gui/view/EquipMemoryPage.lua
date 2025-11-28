@@ -35,6 +35,7 @@ function EquipMemoryPage:AddViewInterest()
   self:AddListenEvt(ServiceEvent.ItemUpdateMemoryPosItemCmd, self.UpdateEquip)
   self:AddListenEvt(MyselfEvent.MyProfessionChange, self.UpdateEquip)
   self:AddListenEvt(ItemEvent.Equip, self.CancelChoose)
+  self:AddDispatcherEvt(PVPEvent.OnFreeFireStateChanged, self.UpdateEquip)
 end
 
 function EquipMemoryPage:OnEnter()

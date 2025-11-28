@@ -478,7 +478,8 @@ EffectMap.UI = {
   SkillInherit_CostPointRed = "ufx_inherit_energy_icon_red_prf",
   CardUpgrade_Normal = "ufx_card_upgrade_prf",
   CardUpgrade_Advanced = "ufx_card_upgrade_01_prf",
-  RoguelikeSkill_Reset = "ufx_cards_refresh"
+  RoguelikeSkill_Reset = "ufx_cards_refresh",
+  LeadEffect = "ufx_danmachibell_xuli_ui_prf"
 }
 EffectMap.UIEffect_IdMap = {
   [76] = "76BigCat_Warnning",

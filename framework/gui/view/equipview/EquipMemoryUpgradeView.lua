@@ -1,6 +1,5 @@
 autoImport("EquipChooseBord")
 autoImport("MaterialItemCell")
-autoImport("EquipMemoryAttrChangeCell")
 autoImport("EquipMemoryAttrResultBord")
 autoImport("EquipMemoryAttrUnlockCell")
 EquipMemoryUpgradeView = class("EquipMemoryUpgradeView", ContainerView)
@@ -27,6 +26,25 @@ function EquipMemoryUpgradeView:OnEnter()
   else
     self:ClickTargetCell()
   end
+end
+
+function EquipMemoryUpgradeView:GetAvailableMaxLevel(memoryInfo, quality)
+  local curLv = memoryInfo.level or 0
+  local excessLv = memoryInfo.excess_lv or 0
+  local lastReachable = curLv
+  for i = curLv + 1, #Table_ItemMemoryLevel do
+    local lvCfg = Table_ItemMemoryLevel[i]
+    if not (lvCfg and lvCfg.Attr and lvCfg.Attr[quality]) then
+      break
+    end
+    lastReachable = i
+    local hasExcessCost = lvCfg.ExcessCost and next(lvCfg.ExcessCost) ~= nil
+    local needExcessLv = lvCfg.NeedExcessLv
+    if hasExcessCost and needExcessLv and excessLv < needExcessLv then
+      break
+    end
+  end
+  return lastReachable
 end
 
 function EquipMemoryUpgradeView:OnShow()
@@ -135,12 +153,17 @@ function EquipMemoryUpgradeView:FindObjs()
   self.nextEffectLv_Label = self:FindGO("CurLevel", self.upgradeEffect):GetComponent(UILabel)
   self.nextEffect_Label = self:FindGO("LevelLabel", self.upgradeEffect):GetComponent(UILabel)
   self.nextEffect_Label.overflowMethod = 3
+  self.upgradePart = self:FindGO("UpgradePart")
   self.levelUpTip = self:FindGO("LevelUpTip")
   self.curLevel_Label = self:FindGO("CurLevel", self.levelUpTip):GetComponent(UILabel)
   self.nextLevel_Label = self:FindGO("NextLevel", self.levelUpTip):GetComponent(UILabel)
   self.upgradeBtn = self:FindGO("UpgradeBtn")
   self.upgradeBtn_BoxCollider = self.upgradeBtn:GetComponent(BoxCollider)
   self.upgradeBtn_Label = self:FindGO("UpgradeLabel", self.upgradeBtn):GetComponent(UILabel)
+  self.excessPart = self:FindGO("ExcessPart")
+  self.curExcessLv = self:FindGO("CurExcessLv", self.excessPart):GetComponent(UILabel)
+  self.nextExcessLv = self:FindGO("NextExcessLv", self.excessPart):GetComponent(UILabel)
+  self.excessLv = self:FindGO("ExcessLv", self.excessPart):GetComponent(UILabel)
   self.finishPart = self:FindGO("FinishPart")
   self.finish_Label = self:FindGO("Label", self.finishPart):GetComponent(UILabel)
   self.endSymbol = self:FindGO("EndSymbol", self.finishPart)
@@ -163,9 +186,10 @@ function EquipMemoryUpgradeView:FindObjs()
   self.upgradeResult = self:FindGO("UpgradeResult")
   self.upgradeResultScrollView = self:FindGO("ScrollView", self.upgradeResult):GetComponent(UIScrollView)
   self.upgradeResultGrid = self:FindGO("ResultGrid", self.upgradeResult):GetComponent(UITable)
+  self.baseAttrChangePart = self:FindGO("BaseAttrChange"):GetComponent(UISprite)
   self.baseAttriGrid = self:FindGO("BaseAttrGrid", self.upgradeResult):GetComponent(UIGrid)
   self.baseAttris = {}
-  for i = 1, 3 do
+  for i = 1, 4 do
     local attriGO = self:FindGO("AttriCell" .. i, self.baseAttriGrid.gameObject)
     local name = self:FindGO("Name", attriGO):GetComponent(UILabel)
     local oldValue = self:FindGO("OldValue", attriGO):GetComponent(UILabel)
@@ -271,8 +295,23 @@ function EquipMemoryUpgradeView:AddEvts()
     local memoryInfo = self.nowdata and self.nowdata.equipMemoryData
     if memoryInfo then
       local curLv = memoryInfo.level
-      local maxLv = 30
-      self.countInput.value = maxLv - curLv
+      local quality = Table_Item[memoryInfo.staticId].Quality or 2
+      local availableMaxLv = self:GetAvailableMaxLevel(memoryInfo, quality)
+      local curLvConfig = Table_ItemMemoryLevel[curLv]
+      local needBreakthrough = false
+      if curLvConfig then
+        local excessCost = curLvConfig.ExcessCost
+        local hasExcessCost = excessCost and next(excessCost) ~= nil
+        local needExcessLv = curLvConfig.NeedExcessLv
+        if hasExcessCost and needExcessLv and needExcessLv > (memoryInfo.excess_lv or 0) then
+          needBreakthrough = true
+        end
+      end
+      if needBreakthrough then
+        self.countInput.value = 1
+      else
+        self.countInput.value = availableMaxLv - curLv
+      end
     end
   end)
 end
@@ -360,8 +399,21 @@ function EquipMemoryUpgradeView:UpdateEquipMemoryInfo()
   end
   local quality = Table_Item[memoryInfo.staticId].Quality or 2
   local curLv = memoryInfo.level
-  local maxLv = 30
-  if curLv == maxLv then
+  local maxLv = self:GetAvailableMaxLevel(memoryInfo, quality)
+  local curLvConfig = Table_ItemMemoryLevel[curLv]
+  local needBreakthrough = false
+  local needExcessStage
+  if curLvConfig then
+    local excessCost = curLvConfig.ExcessCost
+    local hasExcessCost = excessCost and next(excessCost) ~= nil
+    local needExcessLv = curLvConfig.NeedExcessLv
+    if hasExcessCost and needExcessLv and needExcessLv > (memoryInfo.excess_lv or 0) then
+      needBreakthrough = true
+      needExcessStage = needExcessLv
+    end
+  end
+  self._needBreakthrough = needBreakthrough
+  if curLv == maxLv and not needBreakthrough then
     self.finishPart:SetActive(true)
     self.upgradeActivePart:SetActive(false)
     self.endSymbol:SetActive(true)
@@ -374,15 +426,20 @@ function EquipMemoryUpgradeView:UpdateEquipMemoryInfo()
     self.countInput.gameObject:SetActive(true)
     self.maxBtn:SetActive(true)
   end
-  local target_lv = curLv + tonumber(self.countInput.value)
+  local target_lv
+  if needBreakthrough then
+    target_lv = curLv
+  else
+    target_lv = curLv + tonumber(self.countInput.value)
+  end
   if maxLv < target_lv then
     target_lv = maxLv
   end
-  self.maxcount = maxLv - curLv
+  self.maxcount = needBreakthrough and 1 or maxLv - curLv
   self.curLevel_Label.text = curLv == 0 and 0 or curLv
   self.nextLevel_Label.text = target_lv
   self.nextEffectLv_Label.text = target_lv
-  local canUpgrade = curLv < maxLv or false
+  local canUpgrade = needBreakthrough or curLv < maxLv
   self.upgradeBtn_BoxCollider.enabled = canUpgrade
   if not canUpgrade then
     self:SetTextureGrey(self.upgradeBtn)
@@ -394,7 +451,59 @@ function EquipMemoryUpgradeView:UpdateEquipMemoryInfo()
     redlog("异常 升级表Table_ItemMemoryLevel缺失")
     return
   end
-  if curLv < target_lv then
+  self.upgradePart:SetActive(not needBreakthrough)
+  self.excessPart:SetActive(needBreakthrough)
+  if needBreakthrough then
+    local curExcess = memoryInfo.excess_lv or 0
+    local nextExcess = needExcessStage or curExcess + 1
+    self.curExcessLv.text = tostring(curExcess)
+    self.nextExcessLv.text = tostring(nextExcess)
+    local computeAfterMaxLv = function(stageAfter, quality)
+      local lastReachable = 0
+      for i = 1, #Table_ItemMemoryLevel do
+        local lvCfg = Table_ItemMemoryLevel[i]
+        if not (lvCfg and lvCfg.Attr and lvCfg.Attr[quality]) then
+          break
+        end
+        lastReachable = i
+        local hasExcessCost = lvCfg.ExcessCost and next(lvCfg.ExcessCost) ~= nil
+        local needExcessLv2 = lvCfg.NeedExcessLv
+        if hasExcessCost and needExcessLv2 and stageAfter < needExcessLv2 then
+          break
+        end
+      end
+      return lastReachable
+    end
+    local afterMaxLv = computeAfterMaxLv(nextExcess, quality)
+    self.excessLv.text = string.format(ZhString.EquipMemory_ExcessLv, curLv, afterMaxLv)
+  end
+  if needBreakthrough then
+    local excess = curLvConfig and curLvConfig.ExcessCost and curLvConfig.ExcessCost[quality]
+    if excess and 0 < #excess then
+      for i = 1, #excess do
+        local _itemId = excess[i][1]
+        local _itemCount = excess[i][2]
+        local costItem = ItemData.new(MaterialItemCell.MaterialType.Material, _itemId)
+        costItem.num = BagProxy.Instance:GetItemNumByStaticID(_itemId, _PACKAGECHECK)
+        costItem.neednum = _itemCount
+        table.insert(_costs, costItem)
+      end
+    end
+    self.materialCtrl:ResetDatas(_costs)
+    local cells = self.materialCtrl:GetCells()
+    for i = 1, #cells do
+      local dragScrollView = cells[i].gameObject:GetComponent(UIDragScrollView)
+      if not dragScrollView then
+        cells[i].gameObject:AddComponent(UIDragScrollView)
+      end
+    end
+    if cells and 5 <= #cells then
+      self.materialScrollView.contentPivot = UIWidget.Pivot.Left
+    else
+      self.materialScrollView.contentPivot = UIWidget.Pivot.Center
+    end
+    self.materialScrollView:ResetPosition()
+  elseif curLv < target_lv then
     local _costList = {}
     for i = curLv, target_lv - 1 do
       local _levelConfig = Table_ItemMemoryLevel[i]
@@ -433,72 +542,89 @@ function EquipMemoryUpgradeView:UpdateEquipMemoryInfo()
     self.materialScrollView:ResetPosition()
   end
   self.upgradeResult:SetActive(true)
-  local curBaseLvAttrConfig = Table_ItemMemoryLevel[curLv].Attr[quality]
-  local targetLvAttrConfig = Table_ItemMemoryLevel[target_lv].Attr[quality]
-  local attrList = {}
-  local order = 0
+  local curBaseLvAttrConfig = Table_ItemMemoryLevel[curLv] and Table_ItemMemoryLevel[curLv].Attr and Table_ItemMemoryLevel[curLv].Attr[quality] or {}
+  local targetLvAttrConfig = Table_ItemMemoryLevel[target_lv] and Table_ItemMemoryLevel[target_lv].Attr and Table_ItemMemoryLevel[target_lv].Attr[quality] or {}
+  local mergableAttrs = {}
+  local separateAttrs = {}
   local orderList = {}
-  for _attr, _value in pairs(targetLvAttrConfig) do
+  local order = 0
+  local getAttrDisplayName = function(propName)
+    return propName == "MaxHp" and ZhString.EquipMemory_MaxHp or propName
+  end
+  local isHpAttr = function(propName)
+    return propName == "MaxHp" or propName == "BaseHp"
+  end
+  local createAttrData = function(name, curValue, targetValue, order)
+    return {
+      name = name,
+      curValue = curValue or "",
+      targetValue = targetValue or "",
+      order = order
+    }
+  end
+  local formatAttrValue = function(value, isPercent)
+    if isPercent == 1 then
+      return value * 100 .. "%"
+    else
+      return value
+    end
+  end
+  for attrId, targetValue in pairs(targetLvAttrConfig) do
     order = order + 1
-    local _tempData = {}
-    local attrConfig = Game.Config_PropName[_attr]
+    local attrConfig = Game.Config_PropName[attrId]
     if attrConfig then
-      if attrConfig.PropName == "MaxHp" then
-        _tempData.name = ZhString.EquipMemory_MaxHp
-        orderList[ZhString.EquipMemory_MaxHp] = order
+      local propName = attrConfig.PropName
+      local displayName = getAttrDisplayName(propName)
+      local formattedTargetValue = formatAttrValue(targetValue, attrConfig.IsPercent)
+      local curValue = curBaseLvAttrConfig[attrId]
+      local formattedCurValue = curValue and formatAttrValue(curValue, attrConfig.IsPercent) or nil
+      if isHpAttr(attrConfig.VarName) then
+        local hpOrder = attrConfig.VarName == "MaxHp" and 998 or 999
+        table.insert(separateAttrs, createAttrData(displayName, formattedCurValue, formattedTargetValue, hpOrder))
       else
-        _tempData.name = attrConfig.PropName
-        orderList[attrConfig.PropName] = order
+        local curKey = formattedCurValue ~= nil and tostring(formattedCurValue) or "__nil__"
+        local targetKey = formattedTargetValue ~= nil and tostring(formattedTargetValue) or "__nil__"
+        if not mergableAttrs[curKey] then
+          mergableAttrs[curKey] = {}
+        end
+        if not mergableAttrs[curKey][targetKey] then
+          mergableAttrs[curKey][targetKey] = {}
+        end
+        table.insert(mergableAttrs[curKey][targetKey], propName)
+        orderList[propName] = attrConfig.id
       end
-      if attrConfig.IsPercent == 1 then
-        _tempData.targetValue = _value * 100 .. "%"
-      else
-        _tempData.targetValue = _value
-      end
-      if curBaseLvAttrConfig[_attr] then
-        _tempData.curValue = curBaseLvAttrConfig[_attr]
-      end
-      if _tempData.curValue and not attrList[_tempData.curValue] then
-        attrList[_tempData.curValue] = {}
-      end
-      if _tempData.targetValue and not attrList[_tempData.curValue][_tempData.targetValue] then
-        attrList[_tempData.curValue][_tempData.targetValue] = {}
-      end
-      table.insert(attrList[_tempData.curValue][_tempData.targetValue], _tempData.name)
     end
   end
   local attrResult = {}
-  for _curValue, _info in pairs(attrList) do
-    for _targetValue, _nameList in pairs(_info) do
-      local order
-      local _tempData = {curValue = _curValue, targetValue = _targetValue}
-      local _nameStr = ""
-      for i = 1, #_nameList do
-        _nameStr = _nameStr .. _nameList[i]
-        if i < #_nameList then
-          _nameStr = _nameStr .. ZhString.ItemTip_ChAnd
-        end
-        order = order or orderList[_nameList[i]] or 999
-      end
-      _tempData.order = order
-      _tempData.name = _nameStr
-      table.insert(attrResult, _tempData)
+  for curValue, targetInfo in pairs(mergableAttrs) do
+    for targetValue, nameList in pairs(targetInfo) do
+      local combinedName = table.concat(nameList, ZhString.ItemTip_ChAnd)
+      local attrOrder = orderList[nameList[1]] or 999
+      local displayCurValue = curValue ~= "__nil__" and curValue or ""
+      local displayTargetValue = targetValue ~= "__nil__" and targetValue or ""
+      table.insert(attrResult, createAttrData(combinedName, displayCurValue, displayTargetValue, attrOrder))
     end
   end
-  table.sort(attrResult, function(l, r)
-    return l.order < r.order
+  for _, attrData in ipairs(separateAttrs) do
+    table.insert(attrResult, attrData)
+  end
+  table.sort(attrResult, function(a, b)
+    return a.order < b.order
   end)
-  for i = 1, 3 do
+  local attrNum = 0
+  for i = 1, 4 do
     if attrResult[i] then
       self.baseAttris[i].go:SetActive(true)
       self.baseAttris[i].name.text = attrResult[i].name
       self.baseAttris[i].targetValue.text = attrResult[i].targetValue
       self.baseAttris[i].oldValue.text = attrResult[i].curValue ~= attrResult[i].targetValue and attrResult[i].curValue or ""
       self.baseAttris[i].arrow:SetActive(attrResult[i].curValue ~= attrResult[i].targetValue)
+      attrNum = attrNum + 1
     else
       self.baseAttris[i].go:SetActive(false)
     end
   end
+  self.baseAttrChangePart.height = attrNum * 35 + 53
   local curEffectLevel = Table_ItemMemoryLevel[curLv].EffectLevel
   local targetEffectLevel = Table_ItemMemoryLevel[target_lv].EffectLevel
   local effectList = {}
@@ -516,35 +642,85 @@ function EquipMemoryUpgradeView:UpdateEquipMemoryInfo()
     unlockLvs[i] = tempLvs[i]
   end
   local maxAttrCount = memoryInfo.maxAttrCount or 1
-  for i = 1, maxAttrCount do
-    if attrs[i] and attrs[i].previewid ~= nil and 0 < #attrs[i].previewid then
-      local _tempData = {
-        id = attrs[i].id,
-        canUnlock = attrs[i].id == 0 and true or false,
-        text = ZhString.EquipMemory_NotChosen,
-        isFourth = i == 4
-      }
-      table.insert(effectList, _tempData)
-    elseif i == maxAttrCount and quality == 5 then
-      local _tempData = {
-        id = 0,
-        canUnlock = false,
-        text = ZhString.EquipMemory_MemoryAdvanceUnlockAttr
-      }
-      table.insert(effectList, _tempData)
-    else
-      local _tempData = {
-        id = 0,
-        unlockLv = unlockLvs[i],
-        canUnlock = target_lv >= unlockLvs[i]
-      }
-      table.insert(effectList, _tempData)
+  if needBreakthrough then
+    local breakthroughStage = needExcessStage or (memoryInfo.excess_lv or 0) + 1
+    local upgradeAttrIndex
+    local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
+    local mappedKey = excessCfg and excessCfg[breakthroughStage]
+    if type(mappedKey) == "number" and 10 <= mappedKey then
+      upgradeAttrIndex = math.floor(mappedKey / 10)
+    end
+    local passExcessForSlot = {}
+    do
+      local curExcess = memoryInfo.excess_lv or 0
+      local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
+      if type(excessCfg) == "table" and curExcess and 0 < curExcess then
+        for stageKey, mappedKey in pairs(excessCfg) do
+          local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
+          if slotIndex and stageKey <= curExcess then
+            passExcessForSlot[slotIndex] = curExcess
+          end
+        end
+      end
+    end
+    for i = 1, maxAttrCount do
+      if attrs[i] and attrs[i].id and attrs[i].id ~= 0 then
+        local _tempData = {
+          id = attrs[i].id,
+          excess_lv = passExcessForSlot[i],
+          isExcessMode = upgradeAttrIndex ~= nil and i == upgradeAttrIndex or false,
+          excess_stage = upgradeAttrIndex ~= nil and i == upgradeAttrIndex and breakthroughStage or nil,
+          isFourth = i == 4
+        }
+        table.insert(effectList, _tempData)
+      end
+    end
+  else
+    local passExcessForSlot = {}
+    do
+      local curExcess = memoryInfo.excess_lv or 0
+      local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
+      if type(excessCfg) == "table" and curExcess and 0 < curExcess then
+        for stageKey, mappedKey in pairs(excessCfg) do
+          local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
+          if slotIndex and stageKey <= curExcess then
+            passExcessForSlot[slotIndex] = curExcess
+          end
+        end
+      end
+    end
+    for i = 1, maxAttrCount do
+      if attrs[i] and attrs[i].previewid ~= nil and 0 < #attrs[i].previewid then
+        local _tempData = {
+          id = attrs[i].id,
+          excess_lv = passExcessForSlot[i],
+          canUnlock = attrs[i].id == 0 and true or false,
+          text = ZhString.EquipMemory_NotChosen,
+          isFourth = i == 4
+        }
+        table.insert(effectList, _tempData)
+      elseif i == maxAttrCount and quality == 5 then
+        local _tempData = {
+          id = 0,
+          canUnlock = false,
+          text = ZhString.EquipMemory_MemoryAdvanceUnlockAttr
+        }
+        table.insert(effectList, _tempData)
+      else
+        local _tempData = {
+          id = 0,
+          unlockLv = unlockLvs[i],
+          canUnlock = target_lv >= unlockLvs[i]
+        }
+        table.insert(effectList, _tempData)
+      end
     end
   end
   self.memoryAttriCtrl:ResetDatas(effectList)
   self:handleClickMemoryEffect()
-  self.upgradeBtn_Label.text = ZhString.EquipUpgradePopUp_Upgrade
+  self.upgradeBtn_Label.text = needBreakthrough and ZhString.EquipMemory_Breakthrough or ZhString.EquipUpgradePopUp_Upgrade
   ReusableTable.DestroyAndClearArray(_costs)
+  self.upgradeResultGrid:Reposition()
   self.upgradeResultScrollView:ResetPosition()
 end
 
@@ -582,6 +758,7 @@ function EquipMemoryUpgradeView:GetValidEquip()
     if l_power ~= r_power then
       return l_power > r_power
     end
+    return l.staticData.id > r.staticData.id
   end)
   xdlog("装备记忆数量", #result)
   return result
@@ -621,7 +798,15 @@ function EquipMemoryUpgradeView:_DoUpgrade()
     xdlog("强化目标", self.nowdata.id, self.nextLevel_Label.text)
     local memoryData = self.nowdata.equipMemoryData
     local equipGuid = memoryData.itemGuid
-    if not self.nowdata.sitePos then
+    if self._needBreakthrough then
+      if not self.nowdata.sitePos then
+        xdlog("记忆本体突破", equipGuid)
+        ServiceItemProxy.Instance:CallMemoryExcessItemCmd(equipGuid, nil)
+      else
+        xdlog("装备记忆突破", self.nowdata.sitePos)
+        ServiceItemProxy.Instance:CallMemoryExcessItemCmd(nil, self.nowdata.sitePos)
+      end
+    elseif not self.nowdata.sitePos then
       xdlog("记忆本体升级", equipGuid)
       ServiceItemProxy.Instance:CallMemoryLevelupItemCmd(equipGuid, nil, self.nextLevel_Label.text)
     else

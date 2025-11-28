@@ -70,7 +70,7 @@ function DeathPopView:initView()
   self.ReliveInSituBtnCt = self:FindGO("ReliveInSituBtnCt")
   self.DeathHint = self:FindComponent("DeathHint", UILabel)
   self:UpdateDeathHint()
-  if self.isPvpMap or self.mapMng:IsRaidPuzzle() or self.mapMng:IsPVEMode_ComodoRaid() or self.mapMng:IsPVEMode_MultiBossRaid() or self.mapMng:IsPVEMode_Element() or self.mapMng:IsPVEMode_StarArk() or self.mapMng:IsPVPMode_EndlessBattleField() then
+  if self.isPvpMap or self.mapMng:IsRaidPuzzle() or self.mapMng:IsPVEMode_ComodoRaid() or self.mapMng:IsPVEMode_MultiBossRaid() or self.mapMng:IsPVEMode_Element() or self.mapMng:IsPVEMode_StarArk() or self.mapMng:IsPVPMode_EndlessBattleField() or self.mapMng:IsPVEMode_AbyssDragon() then
     self:Hide(self.ReliveInSituBtnCt)
     if self.isOthelloMap or self.isTransferFight then
       self:StartOthelloReliveCd()
@@ -448,5 +448,5 @@ end
 
 function DeathPopView:CanHideReliveInSavePoint()
   local MapManager = Game.MapManager
-  return MapManager:IsGvgMode_Droiyan() or MapManager:IsPVPMode_TeamPws() or MapManager:IsPveMode_Thanatos() or MapManager:IsPVEMode_Roguelike() or MapManager:IsPvPMode_TeamTwelve() or MapManager:IsPVEMode_DeadBoss() or self.isTransferFight or MapManager:IsRaidPuzzle() or MapManager:IsPVEMode_ComodoRaid() or MapManager:IsPVEMode_MultiBossRaid() or MapManager:IsPVEMode_Element() or MapManager:IsPvpMode_DesertWolf() or MapManager:IsPVEMode_StarArk() or MapManager:IsPVPMode_3Teams() or MapManager:IsPVPMode_EndlessBattleField()
+  return MapManager:IsGvgMode_Droiyan() or MapManager:IsPVPMode_TeamPws() or MapManager:IsPveMode_Thanatos() or MapManager:IsPVEMode_Roguelike() or MapManager:IsPvPMode_TeamTwelve() or MapManager:IsPVEMode_DeadBoss() or self.isTransferFight or MapManager:IsRaidPuzzle() or MapManager:IsPVEMode_ComodoRaid() or MapManager:IsPVEMode_MultiBossRaid() or MapManager:IsPVEMode_Element() or MapManager:IsPvpMode_DesertWolf() or MapManager:IsPVEMode_StarArk() or MapManager:IsPVPMode_3Teams() or MapManager:IsPVPMode_EndlessBattleField() or MapManager:IsPVEMode_AbyssDragon()
 end

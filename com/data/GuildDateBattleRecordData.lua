@@ -1,13 +1,53 @@
-GvGDateBattleExtraInfo = class("GvGDateBattleExtraInfo")
+local _modeName
+local GetModeName = function(type)
+  if not _modeName then
+    _modeName = {
+      [GuildCmd_pb.EGUILDDATEBATTLETYPE_BASE] = ZhString.GuildDateBattle_Mode_Base,
+      [GuildCmd_pb.EGUILDDATEBATTLETYPE_DEATH] = ZhString.GuildDateBattle_Mode_Death,
+      [GuildCmd_pb.EGUILDDATEBATTLETYPE_BLOOD] = ZhString.GuildDateBattle_Mode_Blood
+    }
+  end
+  return _modeName[type]
+end
+local GvGDateBattleExtraInfo = class("GvGDateBattleExtraInfo")
 
 function GvGDateBattleExtraInfo:ctor(srv_info)
-  self.type = srv_info.type or 1
-  self.cardids = srv_info.cardids or {}
+  self.type = srv_info.type or 0
+  self.isBaseMode = self.type == GuildCmd_pb.EGUILDDATEBATTLETYPE_BASE
+  self.type_name = GetModeName(self.type)
+  self.cardids = {}
+  if srv_info.cardids then
+    for i = 1, #srv_info.cardids do
+      self.cardids[#self.cardids + 1] = srv_info.cardids[i]
+    end
+  end
   self.target_num = srv_info.target_num or 0
+  self:SetTypeDesc()
+end
+
+function GvGDateBattleExtraInfo:SetTypeDesc()
+  if self.type == GuildCmd_pb.EGUILDDATEBATTLETYPE_DEATH then
+    self.type_desc = string.format(ZhString.GuildDateBattle_Mode_Death_Desc, self.target_num)
+  elseif self.type == GuildCmd_pb.EGUILDDATEBATTLETYPE_BLOOD then
+    self.type_desc = string.format(ZhString.GuildDateBattle_Mode_Blood_Desc, self.target_num)
+  else
+    self.type_desc = ""
+  end
 end
 
 function GvGDateBattleExtraInfo:GetBanCardIds()
   return self.cardids
+end
+
+function GvGDateBattleExtraInfo:GetModeName()
+  return self.type_name
+end
+
+function GvGDateBattleExtraInfo:GetDatedModeDesc()
+  if self.isBaseMode then
+    return self.type_name
+  end
+  return self.type_name .. "\n" .. self.type_desc
 end
 
 autoImport("GuildHeadData")
@@ -121,6 +161,17 @@ function GuildDateBattleRecordData:SetExtraInfo(info)
     return
   end
   self.extraInfo = GvGDateBattleExtraInfo.new(info)
+end
+
+function GuildDateBattleRecordData:GetDatedModeDesc()
+  if self.extraInfo then
+    return self.extraInfo:GetDatedModeDesc()
+  end
+  return ""
+end
+
+function GuildDateBattleRecordData:GetGameMode()
+  return self.extraInfo and self.extraInfo.type or 0
 end
 
 function GuildDateBattleRecordData:GetBanCardIds(forceGetFromGvGRecord)

@@ -62,14 +62,25 @@ function PvpTalentContentPage:InitEquipMemoryUI()
   self.memoryType[2] = self:FindGO("Memory_Set2", self.objBalanceModeContent)
   self.memoryType[3] = self:FindGO("Memory_Set3", self.objBalanceModeContent)
   self.memoryType[4] = self:FindGO("Memory_Set4", self.objBalanceModeContent)
+  self.memoryUpgradeType = {}
+  self.memoryUpgradeType[1] = self:FindGO("MemoryUprade_Set1", self.objBalanceModeContent)
+  self.memoryUpgradeType[2] = self:FindGO("MemoryUprade_Set2", self.objBalanceModeContent)
+  self.memoryUpgradeType[3] = self:FindGO("MemoryUprade_Set3", self.objBalanceModeContent)
+  self.memoryUpgradeType[4] = self:FindGO("MemoryUprade_Set4", self.objBalanceModeContent)
   if ISNoviceServerType then
     self.memoryType[3]:SetActive(false)
+    self.memoryUpgradeType[3]:SetActive(false)
     local bg4 = self:FindGO("Bg", self.memoryType[4]):GetComponent(UISprite)
     bg4.color = LuaGeometry.GetTempVector4(1, 1, 1, 0.00392156862745098)
     local labLayer = self:FindGO("labLayer", self.memoryType[4]):GetComponent(UILabel)
     labLayer.text = ZhString.EquipMemory_SetName_SP
+    local upgradeBg4 = self:FindGO("Bg", self.memoryUpgradeType[4]):GetComponent(UISprite)
+    upgradeBg4.color = LuaGeometry.GetTempVector4(1, 1, 1, 0.00392156862745098)
+    local upgradeLabLayer = self:FindGO("labLayer", self.memoryUpgradeType[4]):GetComponent(UILabel)
+    upgradeLabLayer.text = ZhString.EquipMemory_SetName_SP_Upgrade
   end
   self:InitModeTypeUI(self.memoryType, 4, "memory")
+  self:InitModeTypeUI(self.memoryUpgradeType, 4, "memoryUpgrade")
 end
 
 function PvpTalentContentPage:InitModeTypeUI(typeTable, count, prefix)
@@ -123,6 +134,15 @@ function PvpTalentContentPage:InitModeTypeUI(typeTable, count, prefix)
     self.memoryCurSkillCell_HightLight = self[curSkillCellHighlightKey]
     self.memorySkillCtrl = self[skillCtrlKey]
     self.memoryDragDrop = self[dragDropKey]
+  elseif prefix == "memoryUpgrade" then
+    self.memoryUpgradeScrollView = self[scrollViewKey]
+    self.memoryUpgradeCurSkillCell = self[curSkillCellKey]
+    self.memoryUpgradeCurSkillCell_Bg = self[curSkillCellBgKey]
+    self.memoryUpgradeCurSkillCell_Icon = self[curSkillCellIconKey]
+    self.memoryUpgradeCurSkillCell_Empty = self[curSkillCellEmptyKey]
+    self.memoryUpgradeCurSkillCell_HightLight = self[curSkillCellHighlightKey]
+    self.memoryUpgradeSkillCtrl = self[skillCtrlKey]
+    self.memoryUpgradeDragDrop = self[dragDropKey]
   end
   for i = 1, count do
     self[scrollViewKey][i] = self:FindGO("TalentScrollView", typeTable[i]):GetComponent(UIScrollView)
@@ -137,16 +157,21 @@ function PvpTalentContentPage:InitModeTypeUI(typeTable, count, prefix)
     if prefix == "balance" then
       self[skillCtrlKey][i]:AddEventListener(MouseEvent.MouseClick, self.ShowBalanceModeSkillTipHandler, self)
       self[skillCtrlKey][i]:AddEventListener(MouseEvent.DoubleClick, self.HandleBalanceModelSkillDoubleClick, self)
-    else
+    elseif prefix == "memory" then
       self[skillCtrlKey][i]:AddEventListener(MouseEvent.MouseClick, self.ShowMemorySkillTipHandler, self)
       self[skillCtrlKey][i]:AddEventListener(MouseEvent.DoubleClick, self.HandleMemorySkillDoubleClick, self)
+    elseif prefix == "memoryUpgrade" then
+      self[skillCtrlKey][i]:AddEventListener(MouseEvent.MouseClick, self.ShowMemoryUpgradeSkillTipHandler, self)
+      self[skillCtrlKey][i]:AddEventListener(MouseEvent.DoubleClick, self.HandleMemoryUpgradeSkillDoubleClick, self)
     end
     self[dragDropKey][i] = DragDropCell.new(self[curSkillCellKey][i]:GetComponent(UIDragItem), 0.01)
     self[dragDropKey][i].dragDropComponent.OnCursor = DragCursorPanel.Instance.ShowItemCell_NoQuality
     if prefix == "balance" then
       self:SetupBalanceModeCallbacks(self[dragDropKey][i], i)
-    else
+    elseif prefix == "memory" then
       self:SetupMemoryCallbacks(self[dragDropKey][i], i)
+    elseif prefix == "memoryUpgrade" then
+      self:SetupMemoryUpgradeCallbacks(self[dragDropKey][i], i)
     end
     self[dragDropKey][i].dragDropComponent.GetObserved = function()
       return self
@@ -156,18 +181,47 @@ function PvpTalentContentPage:InitModeTypeUI(typeTable, count, prefix)
     self:AddClickEvent(self[curSkillCellKey][i], function()
       if prefix == "balance" then
         self:HandleBalanceSkillCellClick(i)
-      else
+      elseif prefix == "memory" then
         self:HandleMemorySkillCellClick(i)
+      elseif prefix == "memoryUpgrade" then
+        self:HandleMemoryUpgradeSkillCellClick(i)
       end
     end)
     self:AddDoubleClickEvent(self[curSkillCellKey][i], function()
       if prefix == "balance" then
         self:HandleBalanceSkillCellDoubleClick(i)
-      else
+      elseif prefix == "memory" then
         self:HandleMemorySkillCellDoubleClick(i)
+      elseif prefix == "memoryUpgrade" then
+        self:HandleMemoryUpgradeSkillCellDoubleClick(i)
       end
     end)
   end
+end
+
+function PvpTalentContentPage:SetQualityBg(qualityBgSprite, quality)
+  if not qualityBgSprite then
+    return
+  end
+  if quality == 1 then
+    local spName = "com_icon_bottom3"
+    qualityBgSprite.atlas = RO.AtlasMap.GetAtlas("NewCom")
+    qualityBgSprite.spriteName = spName
+  else
+    qualityBgSprite.atlas = RO.AtlasMap.GetAtlas("NEWUI_Equip")
+    if quality == 2 then
+      qualityBgSprite.spriteName = "refine_bg_green"
+    elseif quality == 3 then
+      qualityBgSprite.spriteName = "refine_bg_blue"
+    elseif quality == 4 then
+      qualityBgSprite.spriteName = "refine_bg_purple"
+    elseif quality == 5 then
+      qualityBgSprite.spriteName = "refine_bg_orange"
+    elseif quality == 6 then
+      qualityBgSprite.spriteName = "refine_bg_red"
+    end
+  end
+  qualityBgSprite.color = LuaColor.White()
 end
 
 function PvpTalentContentPage:SetupBalanceModeCallbacks(dragDrop, index)
@@ -228,6 +282,33 @@ function PvpTalentContentPage:SetupMemoryCallbacks(dragDrop, index)
       ServiceItemProxy.Instance:CallBalanceModeMemorySetItemCmd(EnumToTempPos[index], effect)
     end
     xdlog("装备记忆OnDropEmpty", index)
+  end
+end
+
+function PvpTalentContentPage:SetupMemoryUpgradeCallbacks(dragDrop, index)
+  function dragDrop.dragDropComponent.OnReplace(obj)
+    if obj and obj.data then
+      xdlog("升级记忆OnReplace", index)
+      
+      if obj.data and obj.data.groupType and obj.data.groupType ~= index then
+        return
+      end
+      xdlog("升级记忆OnReplace", index, EnumToTempPos[index], obj.data.effectId)
+      local effect = {
+        index = 3,
+        effect_id = obj.data.effectId
+      }
+      ServiceItemProxy.Instance:CallBalanceModeMemorySetItemCmd(EnumToTempPos[index], effect)
+    end
+  end
+  
+  function dragDrop.dragDropComponent.OnDropEmpty(obj)
+    if obj then
+      redlog("升级记忆OnDropEmpty", index, EnumToTempPos[index])
+      local effect = {index = 3, effect_id = 0}
+      ServiceItemProxy.Instance:CallBalanceModeMemorySetItemCmd(EnumToTempPos[index], effect)
+    end
+    xdlog("升级记忆OnDropEmpty", index)
   end
 end
 
@@ -295,6 +376,50 @@ function PvpTalentContentPage:HandleMemorySkillCellDoubleClick(index)
     xdlog("装备记忆双击移除", index, EnumToTempPos[index])
   else
     xdlog("装备记忆双击", index, "当前槽位无数据")
+  end
+end
+
+function PvpTalentContentPage:HandleMemoryUpgradeSkillCellClick(index)
+  local equipedEffectId = EquipMemoryProxy.Instance:GetUpgradeMemory(index)
+  if equipedEffectId and equipedEffectId ~= 0 then
+    local effectConfig = Game.ItemMemoryEffect and Game.ItemMemoryEffect[equipedEffectId]
+    if effectConfig and effectConfig.level then
+      local memoryId = effectConfig.level[1]
+      if memoryId then
+        local memoryConfig = Table_ItemMemoryEffect and Table_ItemMemoryEffect[memoryId]
+        if memoryConfig then
+          local data = {
+            id = memoryConfig.id,
+            effectId = memoryConfig.EffectID,
+            groupType = index,
+            isMemory = true,
+            isUpgradeMemory = true,
+            isChoose = true,
+            previewDesc = memoryConfig.PreviewDesc,
+            waxDesc = memoryConfig.WaxDesc,
+            level = memoryConfig.Level or 1
+          }
+          self:ShowCurEquipedBalanceModeSkill(self.memoryUpgradeCurSkillCell_Icon[index], data)
+        end
+      end
+    end
+  end
+end
+
+function PvpTalentContentPage:HandleMemoryUpgradeSkillCellDoubleClick(index)
+  local equipedEffectId = EquipMemoryProxy.Instance:GetUpgradeMemory(index)
+  if equipedEffectId and equipedEffectId ~= 0 then
+    local EnumToTempPos = {
+      [1] = 5,
+      [2] = 2,
+      [3] = 8,
+      [4] = 1
+    }
+    local effect = {index = 3, effect_id = 0}
+    ServiceItemProxy.Instance:CallBalanceModeMemorySetItemCmd(EnumToTempPos[index], effect)
+    xdlog("升级记忆双击移除", index, EnumToTempPos[index])
+  else
+    xdlog("升级记忆双击", index, "当前槽位无数据")
   end
 end
 
@@ -410,6 +535,7 @@ function PvpTalentContentPage:InitShow()
   end
   for i = 1, 4 do
     self.memoryScrollView[i]:ResetPosition()
+    self.memoryUpgradeScrollView[i]:ResetPosition()
   end
 end
 
@@ -433,6 +559,7 @@ function PvpTalentContentPage:RefreshSkills()
   self:SetTalentSkills()
   self:SetBalanceModeSkill(true)
   self:SetMemorySkill(true)
+  self:SetMemoryUpgradeSkill(true)
   self:UpdateCurrentTalentSkillPoints()
 end
 
@@ -787,7 +914,10 @@ function PvpTalentContentPage:SetMemorySkill(resetPos)
           end
         end
         if self.memoryCurSkillCell_Bg[i] then
-          self.memoryCurSkillCell_Bg[i].color = LuaColor.White()
+          local staticData = Table_Item[itemID]
+          if staticData then
+            self:SetQualityBg(self.memoryCurSkillCell_Bg[i], staticData.Quality)
+          end
         end
         if self.memoryCurSkillCell_Empty[i] then
           self.memoryCurSkillCell_Empty[i]:SetActive(false)
@@ -824,6 +954,118 @@ function PvpTalentContentPage:SetMemorySkill(resetPos)
   if resetPos then
     for i = 1, 4 do
       self.memoryScrollView[i]:ResetPosition()
+    end
+  end
+end
+
+function PvpTalentContentPage:SetMemoryUpgradeSkill(resetPos)
+  local memoryUpgradeSkillList = {}
+  for i = 1, 4 do
+    memoryUpgradeSkillList[i] = {}
+    local equipedEffectId = EquipMemoryProxy.Instance:GetUpgradeMemory(i)
+    local memoryIds = EquipMemoryProxy.GetUpgradeSpecialEffectIdsByEnum(i)
+    if memoryIds and 0 < #memoryIds then
+      for j = 1, #memoryIds do
+        local memoryId = memoryIds[j]
+        local effectConfig = Table_ItemMemoryEffect and Table_ItemMemoryEffect[memoryId]
+        if effectConfig and effectConfig.Level and effectConfig.Level == 1 then
+          local tempSkill = {
+            id = memoryId,
+            effectId = effectConfig.EffectID,
+            previewDesc = effectConfig.PreviewDesc,
+            waxDesc = effectConfig.WaxDesc,
+            level = effectConfig.Level or 1,
+            groupType = i,
+            isChoose = equipedEffectId and equipedEffectId == effectConfig.EffectID or false,
+            isMemory = true,
+            isUpgradeMemory = true
+          }
+          table.insert(memoryUpgradeSkillList[i], tempSkill)
+        end
+      end
+    else
+      redlog("该升级记忆种类不存在or没有投放")
+    end
+  end
+  for i = 1, 4 do
+    self.memoryUpgradeSkillCtrl[i]:ResetDatas(memoryUpgradeSkillList[i])
+    local equipedEffectId = EquipMemoryProxy.Instance:GetUpgradeMemory(i)
+    if equipedEffectId and equipedEffectId ~= 0 then
+      local memoryConfig
+      local memoryIds = EquipMemoryProxy.GetUpgradeSpecialEffectIdsByEnum(i)
+      if memoryIds and 0 < #memoryIds then
+        for j = 1, #memoryIds do
+          local memoryId = memoryIds[j]
+          local effectConfig = Table_ItemMemoryEffect and Table_ItemMemoryEffect[memoryId]
+          if effectConfig and effectConfig.EffectID == equipedEffectId then
+            memoryConfig = effectConfig
+            break
+          end
+        end
+      end
+      if memoryConfig then
+        local itemID = EquipMemoryProxy.PosEnumUpgradeItemID[i]
+        local itemData = ItemData.new("DragItem", itemID)
+        itemData.hideMemoryCorner = true
+        if self.memoryUpgradeDragDrop[i] then
+          self.memoryUpgradeDragDrop[i].dragDropComponent.data = {
+            groupType = i,
+            id = memoryConfig.id,
+            effectId = memoryConfig.EffectID,
+            itemdata = itemData,
+            isMemory = true,
+            isUpgradeMemory = true
+          }
+          self.memoryUpgradeDragDrop[i]:SetDragEnable(true)
+        end
+        if self.memoryUpgradeCurSkillCell_Icon[i] then
+          local staticData = Table_Item[itemID]
+          if staticData then
+            IconManager:SetItemIcon(staticData and staticData.Icon, self.memoryUpgradeCurSkillCell_Icon[i])
+            self.memoryUpgradeCurSkillCell_Icon[i].gameObject.transform.localScale = LuaGeometry.GetTempVector3(0.8, 0.8, 0.8)
+          end
+        end
+        if self.memoryUpgradeCurSkillCell_Bg[i] then
+          local staticData = Table_Item[itemID]
+          if staticData then
+            self:SetQualityBg(self.memoryUpgradeCurSkillCell_Bg[i], staticData.Quality)
+          end
+        end
+        if self.memoryUpgradeCurSkillCell_Empty[i] then
+          self.memoryUpgradeCurSkillCell_Empty[i]:SetActive(false)
+        end
+      else
+        if self.memoryUpgradeDragDrop[i] then
+          self.memoryUpgradeDragDrop[i]:SetDragEnable(false)
+        end
+        if self.memoryUpgradeCurSkillCell_Icon[i] then
+          self.memoryUpgradeCurSkillCell_Icon[i].spriteName = ""
+        end
+        if self.memoryUpgradeCurSkillCell_Bg[i] then
+          self.memoryUpgradeCurSkillCell_Bg[i].color = LuaGeometry.GetTempVector4(0.00392156862745098, 0.00784313725490196, 0.011764705882352941, 1)
+        end
+        if self.memoryUpgradeCurSkillCell_Empty[i] then
+          self.memoryUpgradeCurSkillCell_Empty[i]:SetActive(true)
+        end
+      end
+    else
+      if self.memoryUpgradeDragDrop[i] then
+        self.memoryUpgradeDragDrop[i]:SetDragEnable(false)
+      end
+      if self.memoryUpgradeCurSkillCell_Icon[i] then
+        self.memoryUpgradeCurSkillCell_Icon[i].spriteName = ""
+      end
+      if self.memoryUpgradeCurSkillCell_Bg[i] then
+        self.memoryUpgradeCurSkillCell_Bg[i].color = LuaGeometry.GetTempVector4(0.00392156862745098, 0.00784313725490196, 0.011764705882352941, 1)
+      end
+      if self.memoryUpgradeCurSkillCell_Empty[i] then
+        self.memoryUpgradeCurSkillCell_Empty[i]:SetActive(true)
+      end
+    end
+  end
+  if resetPos then
+    for i = 1, 4 do
+      self.memoryUpgradeScrollView[i]:ResetPosition()
     end
   end
 end
@@ -940,6 +1182,7 @@ end
 function PvpTalentContentPage:HandleBalanceMemoryUpdate()
   xdlog("火力全开记忆更新")
   self:SetMemorySkill()
+  self:SetMemoryUpgradeSkill()
 end
 
 function PvpTalentContentPage:HandleBalanceSkillDragStart(note)
@@ -953,7 +1196,17 @@ function PvpTalentContentPage:HandleBalanceSkillDragStart(note)
     self.curSkillCell_HightLight[i]:SetActive(i == type)
   end
   for i = 1, 4 do
-    self.memoryCurSkillCell_HightLight[i]:SetActive(false)
+    local shouldHighlightMemory = false
+    local shouldHighlightUpgrade = false
+    if data and data.groupType and data.groupType == i then
+      if data.isUpgradeMemory then
+        shouldHighlightUpgrade = true
+      elseif data.isMemory then
+        shouldHighlightMemory = true
+      end
+    end
+    self.memoryCurSkillCell_HightLight[i]:SetActive(shouldHighlightMemory)
+    self.memoryUpgradeCurSkillCell_HightLight[i]:SetActive(shouldHighlightUpgrade)
   end
 end
 
@@ -964,6 +1217,7 @@ function PvpTalentContentPage:HandleBalanceSkillDragEnd(note)
   end
   for i = 1, 4 do
     self.memoryCurSkillCell_HightLight[i]:SetActive(false)
+    self.memoryUpgradeCurSkillCell_HightLight[i]:SetActive(false)
   end
 end
 
@@ -976,4 +1230,15 @@ function PvpTalentContentPage:HandleMemorySkillDoubleClick(cell)
   local data = cell.data
   local id = cell.id
   xdlog("装备记忆双击", id)
+end
+
+function PvpTalentContentPage:ShowMemoryUpgradeSkillTipHandler(cell)
+  xdlog("显示升级记忆技能提示", cell.data)
+  self:ShowCurEquipedBalanceModeSkill(cell.skillIcon, cell.data)
+end
+
+function PvpTalentContentPage:HandleMemoryUpgradeSkillDoubleClick(cell)
+  local data = cell.data
+  local id = cell.id
+  xdlog("升级记忆双击", id)
 end

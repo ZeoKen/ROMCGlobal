@@ -1696,6 +1696,22 @@ Table_SkillDynamicEffect = {
       }
     },
     Profession = 12
+  },
+  [1065] = {
+    id = 1065,
+    ItemID = 848,
+    SkillID = 4846,
+    SkillEffect = _EmptyTable,
+    BuffID = 141857,
+    Profession = 825
+  },
+  [1066] = {
+    id = 1066,
+    ItemID = 848,
+    SkillID = 4846,
+    SkillEffect = _EmptyTable,
+    BuffID = 141854,
+    Profession = 825
   }
 }
 Table_SkillDynamicEffect_fields = {

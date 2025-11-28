@@ -357,7 +357,6 @@ function NMyselfPlayer:SetNightmareLevel(level)
   self.nightmareLevel = level
 end
 
-local option_team = SceneUser2_pb.EMULTIMOUNT_OPTION_TEAM
 local IsTargetMultiMountCanRide = function(player)
   local userdata = player.data.userdata
   if not userdata then
@@ -366,8 +365,7 @@ local IsTargetMultiMountCanRide = function(player)
   if not _Game.InteractNpcManager:TryCheckInteraceMountPosition(player.data.id) then
     return false
   end
-  local opt = userdata:Get(_UDEnum.MULTIMOUNT_OPT) or 0
-  if 0 < opt & option_team and player:IsInMyTeam() then
+  if player:IsInMyTeam() then
     return true
   end
   return false
@@ -384,11 +382,7 @@ local IsMultiMountRidable = function(teamPlayer)
     end
     return false
   end
-  local opt = userdata:Get(_UDEnum.MULTIMOUNT_OPT) or 0
-  if 0 < opt & option_team then
-    return true
-  end
-  return false
+  return true
 end
 
 function NMyselfPlayer:CheckInteractMount()

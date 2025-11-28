@@ -1377,7 +1377,7 @@ function ServiceNUserAutoProxy:CallUserNineSyncCmd(guid, datas, attrs)
   end
 end
 
-function ServiceNUserAutoProxy:CallUserActionNtf(charid, value, type, delay, once)
+function ServiceNUserAutoProxy:CallUserActionNtf(charid, value, type, delay, once, box_opened)
   if not NetConfig.PBC then
     local msg = SceneUser2_pb.UserActionNtf()
     if charid ~= nil then
@@ -1394,6 +1394,9 @@ function ServiceNUserAutoProxy:CallUserActionNtf(charid, value, type, delay, onc
     end
     if once ~= nil then
       msg.once = once
+    end
+    if box_opened ~= nil then
+      msg.box_opened = box_opened
     end
     self:SendProto(msg)
   else
@@ -1413,6 +1416,9 @@ function ServiceNUserAutoProxy:CallUserActionNtf(charid, value, type, delay, onc
     end
     if once ~= nil then
       msgParam.once = once
+    end
+    if box_opened ~= nil then
+      msgParam.box_opened = box_opened
     end
     self:SendProto2(msgId, msgParam)
   end

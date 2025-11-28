@@ -2,7 +2,6 @@ autoImport("EquipCardChooseCell")
 autoImport("EquipCardEditCell")
 autoImport("EquipChooseBord")
 autoImport("EquipMemoryEditCell")
-autoImport("EquipMemoryAttrDetailCell")
 autoImport("EquipMemorySiteChooseCell")
 EquipMemoryEmbedView = class("EquipMemoryEmbedView", ContainerView)
 EquipMemoryEmbedView.BrotherView = EquipMemoryCombineView
@@ -110,8 +109,6 @@ function EquipMemoryEmbedView:InitView()
   self.effectScrollView = self:FindGO("ScrollView", self.fullBodyEffect):GetComponent(UIScrollView)
   self.effectScrollView_Panel = self:FindGO("ScrollView", self.fullBodyEffect):GetComponent(UIPanel)
   self.effectGrid = self:FindGO("EffectGrid", self.fullBodyEffect):GetComponent(UITable)
-  self.effectCtrl = UIGridListCtrl.new(self.effectGrid, EquipMemoryAttrDetailCell, "EquipMemoryAttrDetailCell")
-  self.effectCtrl:AddEventListener(MouseEvent.MouseClick, self.HandleSwitchSingle, self)
   self:AddClickEvent(self.extendBtn, function()
     self.isEffectExtend = not self.isEffectExtend
     if self.isEffectExtend then
@@ -329,6 +326,7 @@ function EquipMemoryEmbedView:HandleOpenMemoryList()
     if l_power ~= r_power then
       return l_power > r_power
     end
+    return l.staticData.id > r.staticData.id
   end)
   if 0 < #result then
     self.memoryChooseBord:Show()
@@ -395,27 +393,6 @@ function EquipMemoryEmbedView:HandleEmbedSuc(note)
     local _tempData = {site = curSite}
     self:UpdateView(_tempData)
   end
-end
-
-function EquipMemoryEmbedView:UpdateActiveEffect()
-  local result = {}
-  local memoryLevel = BagProxy.Instance:GetTotalEquipMemoryLevels()
-  for _attrid, _info in pairs(memoryLevel) do
-    local _tempData = {
-      attrid = _attrid,
-      levels = {},
-      wax_level = _info.wax_level
-    }
-    local _levels = _info.levels
-    for i = 1, #_levels do
-      if i <= 3 then
-        table.insert(_tempData.levels, _levels[i])
-      end
-    end
-    table.insert(result, _tempData)
-  end
-  self.effectCtrl:ResetDatas(result)
-  self.effectScrollView:ResetPosition()
 end
 
 function EquipMemoryEmbedView:HandleSwitchSingle(cell)

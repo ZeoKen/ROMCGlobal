@@ -75,6 +75,7 @@ function EnchantTransferView:InitData()
   self.isNextGen = self:GetNextGen()
   self.tipData = {}
   self.isCombine = self.viewdata.viewdata and self.viewdata.viewdata.isCombine
+  self.m_helpId = 1590
 end
 
 function EnchantTransferView:FindObjs()

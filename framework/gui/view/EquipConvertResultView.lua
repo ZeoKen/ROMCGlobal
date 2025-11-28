@@ -72,6 +72,9 @@ function EquipConvertResultView:OnEnter()
 end
 
 function EquipConvertResultView:OnExit()
+  if self.infoTipCell then
+    self.infoTipCell:OnDestroy()
+  end
   tickManager:ClearTick(self)
   EquipConvertResultView.super.OnExit(self)
 end

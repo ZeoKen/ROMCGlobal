@@ -518,6 +518,7 @@ end
 function CreatureDataWithPropUserdata:SetAttackSpeed(s)
   self.attackSpeed = s
   self.attackSpeedAdjusted = 1 / (1 / s + 0.1) * 1.05
+  self.attackSpeedAdjusted_Bell = 0.083 * s * s + 0.68 * s + 0.4
 end
 
 function CreatureDataWithPropUserdata:GetAttackSpeed()
@@ -526,6 +527,10 @@ end
 
 function CreatureDataWithPropUserdata:GetAttackSpeed_Adjusted()
   return self.attackSpeedAdjusted
+end
+
+function CreatureDataWithPropUserdata:GetAttackSpeed_Adjusted_Bell()
+  return self.attackSpeedAdjusted_Bell
 end
 
 function CreatureDataWithPropUserdata:GetAttackInterval()
@@ -569,7 +574,13 @@ function CreatureDataWithPropUserdata:NoAccessable()
 end
 
 function CreatureDataWithPropUserdata:NoMove()
-  return 0 < self.noMove
+  if self:DeepFreeze() then
+    return true
+  end
+  if self:IsAttrCanMove() then
+    return false
+  end
+  return 0 < self.noMove or self:DeepFreeze()
 end
 
 function CreatureDataWithPropUserdata:NoAttacked()
@@ -589,14 +600,18 @@ function CreatureDataWithPropUserdata:NoMoveAction()
 end
 
 function CreatureDataWithPropUserdata:NoAct()
-  return 0 < self.props:GetPropByName("NoAct"):GetValue()
+  return 0 < self.props:GetPropByName("NoAct"):GetValue() or 0 < self.props:GetPropByName("DeepFreeze"):GetValue()
 end
 
 function CreatureDataWithPropUserdata:Freeze()
   if self:WeakFreeze() then
     return true
   end
-  return 0 < self.props:GetPropByName("Freeze"):GetValue()
+  return 0 < self.props:GetPropByName("Freeze"):GetValue() or 0 < self.props:GetPropByName("DeepFreeze"):GetValue()
+end
+
+function CreatureDataWithPropUserdata:DeepFreeze()
+  return 0 < self.props:GetPropByName("DeepFreeze"):GetValue()
 end
 
 function CreatureDataWithPropUserdata:WeakFreeze()
@@ -1930,8 +1945,10 @@ function CreatureDataWithPropUserdata:IsPippiNoMove()
   return (self.userdata:Get(UDEnum.RIDE_PIPPI_NOMOVE) or 0) ~= 0
 end
 
-function CreatureDataWithPropUserdata:SetHasNoAttackedBuff(val)
-  self.hasNoattackedBuff = val
+function CreatureDataWithPropUserdata:SetHasNoAttackedBuff()
+  local buffeffect = self:GetBuffEffectActiveByType(BuffType.NoAttackedCanPveBuff)
+  self.hasNoattackedBuff = buffeffect ~= nil
+  return self.hasNoattackedBuff
 end
 
 function CreatureDataWithPropUserdata:HasNoAttackedBuff()
@@ -1950,6 +1967,15 @@ function CreatureDataWithPropUserdata:GetNormalPVPCamp()
 end
 
 function CreatureDataWithPropUserdata:IsAnonymous()
+  return false
+end
+
+function CreatureDataWithPropUserdata:IsReturnPlayer()
+  local recall_time = self.userdata and self.userdata:Get(UDEnum.RECALL_TIME) or 0
+  if 0 < recall_time then
+    local curServerTime = ServerTime.CurServerTime() / 1000
+    return recall_time > curServerTime
+  end
   return false
 end
 
@@ -2003,6 +2029,30 @@ function CreatureDataWithPropUserdata:IsWarehouseNpc()
   return false
 end
 
+function CreatureDataWithPropUserdata:IsForceShowHp()
+  return false
+end
+
+function CreatureDataWithPropUserdata:getEndlessLayer()
+  return self.userdata:Get(UDEnum.RAID_LAYER) or 0
+end
+
+function CreatureDataWithPropUserdata:SetAttrCanMove(val)
+  self.attrCanMove = val
+end
+
+function CreatureDataWithPropUserdata:IsAttrCanMove()
+  return not self:ForbidMove() and self.attrCanMove or false
+end
+
+function CreatureDataWithPropUserdata:GetManualLevel(val)
+  return 0
+end
+
+function CreatureDataWithPropUserdata:ForbidMove()
+  return self.props:GetPropByName("ForbidMove"):GetValue() > 0
+end
+
 function CreatureDataWithPropUserdata:DoConstruct(asArray, parts)
   self:SetAttackSpeed(1)
   self.bodyScale = self:GetDefaultScale()
@@ -2030,4 +2080,5 @@ function CreatureDataWithPropUserdata:DoDeconstruct(asArray)
   self.downID = nil
   self.buffSources = nil
   self.stageBuffLayer = nil
+  self.attrCanMove = false
 end

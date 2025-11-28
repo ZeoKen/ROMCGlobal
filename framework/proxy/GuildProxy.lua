@@ -130,10 +130,10 @@ end
 
 function GuildProxy:GetAllGvgGroupFilterConfig()
   if not self.gvgGroupFilterNameConfig then
-    local min, max = GvgProxy.Instance:GetClientGroupRange()
+    local max = GvgProxy.Instance:GetGroupCnt()
     local guild = self:GetMyGuildClientGvgGroup()
     self.gvgGroupFilterNameConfig = {
-      [1] = string.format(ZhString.GuildFindPage_AllGvgGroup, min, max),
+      [1] = string.format(ZhString.GuildFindPage_AllGvgGroup, max),
       [2] = string.format(ZhString.GuildFindPage_CurGvgGroup, guild)
     }
   end

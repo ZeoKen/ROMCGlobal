@@ -291,7 +291,24 @@ function FunctionVisitNpc:AccessTarget(target, custom, customType)
         MsgManager.ShowMsgByID(43345)
       end
     else
-      self:TryCallVisitNpcUserCmd(target.data.id)
+      local confirmConfig = GameConfig.VisitNpcConfirmMsg and GameConfig.VisitNpcConfirmMsg[target.data.staticData.id]
+      if confirmConfig and not target.data:IsBoxOpened() then
+        if confirmConfig.mapId and 0 < #confirmConfig.mapId then
+          if 0 < TableUtility.ArrayFindIndex(confirmConfig.mapId, Game.MapManager:GetMapID()) then
+            MsgManager.ConfirmMsgByID(confirmConfig.msgId, function()
+              self:TryCallVisitNpcUserCmd(target.data.id)
+            end)
+          else
+            self:TryCallVisitNpcUserCmd(target.data.id)
+          end
+        else
+          MsgManager.ConfirmMsgByID(confirmConfig.msgId, function()
+            self:TryCallVisitNpcUserCmd(target.data.id)
+          end)
+        end
+      else
+        self:TryCallVisitNpcUserCmd(target.data.id)
+      end
       for _, trapId in pairs(GameConfig.TrapNpcID) do
         if npcData.id == trapId then
           return

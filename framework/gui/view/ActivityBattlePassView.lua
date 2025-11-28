@@ -256,8 +256,7 @@ function ActivityBattlePassView:SetExpPanel()
 end
 
 function ActivityBattlePassView:SetInfoPanel()
-  local gameConfig = GameConfig.ActivityBattlePass[self.activityId]
-  self.titleLabel.text = self.isTaskState and gameConfig.TaskTitle or gameConfig.Title
+  self:SetTaskTitle()
   self.taskBtnSelect:SetActive(self.isTaskState)
   self.taskBtnIcon:SetActive(not self.isTaskState)
   self.taskBtnIcon_Back:SetActive(self.isTaskState)
@@ -285,6 +284,11 @@ end
 function ActivityBattlePassView:SetRewardPanel()
   self:OnRewardUpdate()
   self:UpdateShowNextLevelReward(true)
+end
+
+function ActivityBattlePassView:SetTaskTitle()
+  local gameConfig = GameConfig.ActivityBattlePass[self.activityId]
+  self.titleLabel.text = self.isTaskState and gameConfig.TaskTitle or gameConfig.Title
 end
 
 function ActivityBattlePassView:RefreshRemainTimeLabel(remainTime)

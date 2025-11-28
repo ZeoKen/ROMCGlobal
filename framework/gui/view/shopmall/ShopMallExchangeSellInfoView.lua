@@ -6,7 +6,7 @@ ShopMallExchangeSellInfoView.ViewType = UIViewType.PopUpLayer
 
 function ShopMallExchangeSellInfoView:OnExit()
   if self.sellCell then
-    self.sellCell:Exit()
+    self.sellCell:OnDestroy()
   end
   if self.introCell then
     self.introCell:OnDestroy()

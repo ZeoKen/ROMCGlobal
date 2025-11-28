@@ -39,6 +39,10 @@ function EquipMemoryAttrResultBord:InitStaticData()
   self.groupMap = {}
   for k, v in pairs(Table_ItemMemoryLibrary) do
     local type = v.Type
+    local groupID = v.GroupID
+    if groupID and math.floor(groupID / 1000) == 4 then
+      type = "legend"
+    end
     if type then
       if not self.groupMap[type] then
         self.groupMap[type] = {}
@@ -56,12 +60,18 @@ function EquipMemoryAttrResultBord:UpdateValidAttrs(groups)
   end
   local result = {}
   for _type, _effectList in pairs(self.groupMap) do
-    local name = GameConfig.EquipMemory and GameConfig.EquipMemory.AttrTypeIcon[_type].Name or "???"
+    local name, displayName
+    if _type == "legend" then
+      displayName = string.format(ZhString.EquipMemory_AttrGroup, ZhString.EquipMemory_Legend)
+    else
+      name = GameConfig.EquipMemory and GameConfig.EquipMemory.AttrTypeIcon[_type].Name or "???"
+      displayName = string.format(ZhString.EquipMemory_AttrGroup, name)
+    end
     local _tempData = {
       validgroup = groups,
       color = _type,
       list = _effectList,
-      name = string.format(ZhString.EquipMemory_AttrGroup, name)
+      name = displayName
     }
     table.insert(result, _tempData)
   end

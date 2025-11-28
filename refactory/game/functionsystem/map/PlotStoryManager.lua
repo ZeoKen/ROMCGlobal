@@ -640,7 +640,7 @@ function PlotStoryManager:Update(time, deltaTime)
   end
 end
 
-function PlotStoryManager:Shutdown(isSkipBreak, doNotRestore)
+function PlotStoryManager:Shutdown(isSkipBreak, doNotRestore, clearAll)
   if not self.running then
     return
   end
@@ -651,6 +651,10 @@ function PlotStoryManager:Shutdown(isSkipBreak, doNotRestore)
   TableUtility.TableClear(self.multiPlayingPQTL)
   TableUtility.ArrayClear(self.branchPendingPlots)
   self:ClearUIView(true)
+  if clearAll then
+    self:ClearNpcMap()
+    self:ClearButtonStates()
+  end
 end
 
 function PlotStoryManager:DoSkip()

@@ -760,6 +760,7 @@ function FunctionLoginBase:SetLoginDataByServerRegion(serverData)
   if self.loginData then
     local accid = tonumber(serverData.accid)
     self.loginData.accid = accid
+    BuglyManager.GetInstance():SetUserId(tostring(accid))
     self.loginData.sha1 = serverData.sha1
     if not StringUtil.IsEmpty(serverData.timestamp) or serverData.timestamp == 0 then
       self.loginData.timestamp = serverData.timestamp

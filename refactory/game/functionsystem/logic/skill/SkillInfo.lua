@@ -1174,7 +1174,7 @@ function SkillInfo:GetTargetsMaxCount(creature)
 end
 
 function SkillInfo:GetTargetRange(creature)
-  local range = self.logicParam.range or 0
+  local range = self.logicParam.range or self.logicParam.multi_range and self.logicParam.multi_range[1] or 0
   local dynamicSkillInfo = creature.data:GetDynamicSkillInfo(self.staticData.id)
   if dynamicSkillInfo ~= nil then
     range = range + dynamicSkillInfo:GetTargetRange()
@@ -1419,7 +1419,10 @@ function SkillInfo:CheckEnsembleSkill(creature, targetCreature)
     end
   end
   local data = targetCreature.data
-  if data:IsSolo() or data:IsEnsemble() then
+  if data:IsSolo() then
+    return false
+  end
+  if not ISNoviceServerType and data:IsEnsemble() then
     return false
   end
   local weaponType = self.logicParam.weapon_type
@@ -1674,6 +1677,9 @@ function SkillInfo:NoMoveAction(creature)
 end
 
 function SkillInfo:GetIndicatorRange(creature)
+  if self.logicParam.multi_range then
+    return self.logicParam.multi_range[1]
+  end
   if not self.LogicClass or not self.LogicClass.GetIndicatorRange then
     return (self:GetLaunchRange(creature) or 0) * 2
   end
@@ -2184,6 +2190,9 @@ function SkillInfo:HasCustomWarningEffect()
 end
 
 function SkillInfo:GetCustomWarningEffectPath()
-  redlog("GetCustomWarningEffectPath", self.logicParam.displayWarningEffect, self.logicParam.displayRange)
   return self.logicParam.displayWarningEffect, self.logicParam.displayRange
+end
+
+function SkillInfo:UseLeadUIEffect()
+  return self.logicParam.leadUIEffect == 1
 end

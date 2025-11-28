@@ -41,6 +41,7 @@ function EquipMemoryData:SetMyServerData(serverData)
     end
     table.insert(self.memoryAttrs, _singleAttrData)
   end
+  self.excess_lv = serverData.excess_lv or 0
 end
 
 function EquipMemoryData:HasCacheRefreshAttr()
@@ -83,9 +84,13 @@ function EquipMemoryData:IsHighValue()
   end
   if not isHighValue and self.memoryAttrs and #self.memoryAttrs > 0 then
     for i = 1, #self.memoryAttrs do
-      if self.memoryAttrs[i].wax_level and 0 < self.memoryAttrs[i].wax_level then
-        xdlog("有高价值")
-        isHighValue = true
+      local attrId = self.memoryAttrs[i].id
+      if attrId and Game.ItemMemoryEffect and Game.ItemMemoryEffect[attrId] then
+        local effectType = Game.ItemMemoryEffect[attrId].Color
+        if effectType == "special" then
+          isHighValue = true
+          break
+        end
       end
     end
   end
@@ -95,16 +100,23 @@ end
 function EquipMemoryData:GetValuePower()
   local finalValue = 0
   local staticData = Table_Item[self.staticId]
+  if self.level and 0 < self.level then
+    finalValue = finalValue + self.level * 100
+  end
+  if self.excess_lv and 0 < self.excess_lv then
+    finalValue = finalValue + self.excess_lv * 10
+  end
   if staticData and staticData.Quality then
     finalValue = finalValue + staticData.Quality * 1000
   end
   if self.memoryAttrs and 0 < #self.memoryAttrs then
     for i = 1, #self.memoryAttrs do
-      if self.memoryAttrs[i].level and 0 < self.memoryAttrs[i].level then
-        finalValue = finalValue + self.memoryAttrs[i].level * 100
-      end
-      if self.memoryAttrs[i].wax_level and 0 < self.memoryAttrs[i].wax_level then
-        finalValue = finalValue + self.memoryAttrs[i].wax_level * 1000
+      local attrId = self.memoryAttrs[i].id
+      if attrId and Game.ItemMemoryEffect and Game.ItemMemoryEffect[attrId] then
+        local effectType = Game.ItemMemoryEffect[attrId].Color
+        if effectType == "special" then
+          finalValue = finalValue + 10000
+        end
       end
     end
   end
@@ -145,6 +157,7 @@ function EquipMemoryData:Clone()
   equipMemoryData.level = self.level
   equipMemoryData.maxLevel = self.maxLevel
   equipMemoryData.maxAttrCount = self.maxAttrCount
+  equipMemoryData.excess_lv = self.excess_lv
   for i = 1, #self.memoryAttrs do
     local _singleAttrData = {}
     local _singleAttr = self.memoryAttrs[i]

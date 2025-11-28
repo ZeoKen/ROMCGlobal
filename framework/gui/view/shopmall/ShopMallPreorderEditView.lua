@@ -9,7 +9,9 @@ local TradeTipPos = {
 }
 
 function ShopMallPreorderEditView:OnExit()
-  self.cell:Exit()
+  if self.cell then
+    self.cell:OnDestroy()
+  end
   if self.introCell then
     self.introCell:OnDestroy()
   end

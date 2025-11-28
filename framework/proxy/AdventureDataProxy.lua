@@ -2388,8 +2388,11 @@ function AdventureDataProxy:getItemsByExtraProp(items, extraType)
   return retDatas
 end
 
-function AdventureDataProxy:getItemsByFilterData(type, items, propData, keys)
+function AdventureDataProxy:getItemsByFilterData(type, items, propData, keys, customProps)
   if not propData or #items == 0 then
+    if customProps then
+      return self:getItemsByCustomFilter(type, items, customProps)
+    end
     return items
   end
   if propData.extraType then
@@ -2399,6 +2402,63 @@ function AdventureDataProxy:getItemsByFilterData(type, items, propData, keys)
   else
     items = self:getNorItemsByFilterData(items, propData, keys)
   end
+  if customProps then
+    items = self:getItemsByCustomFilter(type, items, customProps)
+  end
+  return items
+end
+
+function AdventureDataProxy:getItemsByCustomFilter(type, items, customProps)
+  if not customProps or #customProps == 0 then
+    return items
+  end
+  if type == SceneManual_pb.EMANUALTYPE_CARD then
+    return self:getCardItemsByCustomProps(items, customProps)
+  elseif type == SceneManual_pb.EMANUALTYPE_FASHION then
+    return self:getFashionItemsByCustomProps(items, customProps)
+  elseif type == SceneManual_pb.EMANUALTYPE_COLLECTION then
+    return self:getCollectionItemsByCustomProps(items, customProps)
+  elseif type == SceneManual_pb.EMANUALTYPE_FURNITURE then
+    return self:getFurnitureItemsByCustomProps(items, customProps)
+  else
+    return items
+  end
+end
+
+function AdventureDataProxy:getCardItemsByCustomProps(items, customProps)
+  xdlog("卡片自定义机制")
+  local retDatas = {}
+  for i = 1, #items do
+    local single = items[i]
+    local shouldInclude = false
+    for j = 1, #customProps do
+      local customPropId = customProps[j]
+      if customPropId == 2 then
+        if single.cardInfo and single.cardInfo.ComposeCardType == 2 then
+          shouldInclude = true
+          break
+        end
+      elseif customPropId == 3 and single.cardInfo and single.cardInfo.ComposeCardType == 3 then
+        shouldInclude = true
+        break
+      end
+    end
+    if shouldInclude then
+      retDatas[#retDatas + 1] = single
+    end
+  end
+  return retDatas
+end
+
+function AdventureDataProxy:getFashionItemsByCustomProps(items, customProps)
+  return items
+end
+
+function AdventureDataProxy:getCollectionItemsByCustomProps(items, customProps)
+  return items
+end
+
+function AdventureDataProxy:getFurnitureItemsByCustomProps(items, customProps)
   return items
 end
 

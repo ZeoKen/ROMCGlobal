@@ -162,15 +162,6 @@ function ServiceQuestAutoProxy:onRegister()
   self:Listen(8, 55, function(data)
     self:RecvUpdateAbyssHelpCountQuestCmd(data)
   end)
-  self:Listen(8, 56, function(data)
-    self:RecvAbyssDragonInfoNtfQuestCmd(data)
-  end)
-  self:Listen(8, 57, function(data)
-    self:RecvAbyssDragonHpUpdateQuestCmd(data)
-  end)
-  self:Listen(8, 58, function(data)
-    self:RecvAbyssDragonOnOffQuestCmd(data)
-  end)
 end
 
 function ServiceQuestAutoProxy:CallQuestList(type, id, list, clear, over)
@@ -3084,93 +3075,6 @@ function ServiceQuestAutoProxy:CallUpdateAbyssHelpCountQuestCmd(area, count)
   end
 end
 
-function ServiceQuestAutoProxy:CallAbyssDragonInfoNtfQuestCmd(dragon_from_bp, dragon_to_bp, dragon_hp, dragon_stage, anim_start_time, activity_start_time)
-  if not NetConfig.PBC then
-    local msg = SceneQuest_pb.AbyssDragonInfoNtfQuestCmd()
-    if dragon_from_bp ~= nil then
-      msg.dragon_from_bp = dragon_from_bp
-    end
-    if dragon_to_bp ~= nil then
-      msg.dragon_to_bp = dragon_to_bp
-    end
-    if dragon_hp ~= nil then
-      msg.dragon_hp = dragon_hp
-    end
-    if dragon_stage ~= nil then
-      msg.dragon_stage = dragon_stage
-    end
-    if anim_start_time ~= nil then
-      msg.anim_start_time = anim_start_time
-    end
-    if activity_start_time ~= nil then
-      msg.activity_start_time = activity_start_time
-    end
-    self:SendProto(msg)
-  else
-    local msgId = ProtoReqInfoList.AbyssDragonInfoNtfQuestCmd.id
-    local msgParam = {}
-    if dragon_from_bp ~= nil then
-      msgParam.dragon_from_bp = dragon_from_bp
-    end
-    if dragon_to_bp ~= nil then
-      msgParam.dragon_to_bp = dragon_to_bp
-    end
-    if dragon_hp ~= nil then
-      msgParam.dragon_hp = dragon_hp
-    end
-    if dragon_stage ~= nil then
-      msgParam.dragon_stage = dragon_stage
-    end
-    if anim_start_time ~= nil then
-      msgParam.anim_start_time = anim_start_time
-    end
-    if activity_start_time ~= nil then
-      msgParam.activity_start_time = activity_start_time
-    end
-    self:SendProto2(msgId, msgParam)
-  end
-end
-
-function ServiceQuestAutoProxy:CallAbyssDragonHpUpdateQuestCmd(dragon_hp, dragon_maxhp)
-  if not NetConfig.PBC then
-    local msg = SceneQuest_pb.AbyssDragonHpUpdateQuestCmd()
-    if dragon_hp ~= nil then
-      msg.dragon_hp = dragon_hp
-    end
-    if dragon_maxhp ~= nil then
-      msg.dragon_maxhp = dragon_maxhp
-    end
-    self:SendProto(msg)
-  else
-    local msgId = ProtoReqInfoList.AbyssDragonHpUpdateQuestCmd.id
-    local msgParam = {}
-    if dragon_hp ~= nil then
-      msgParam.dragon_hp = dragon_hp
-    end
-    if dragon_maxhp ~= nil then
-      msgParam.dragon_maxhp = dragon_maxhp
-    end
-    self:SendProto2(msgId, msgParam)
-  end
-end
-
-function ServiceQuestAutoProxy:CallAbyssDragonOnOffQuestCmd(onoff)
-  if not NetConfig.PBC then
-    local msg = SceneQuest_pb.AbyssDragonOnOffQuestCmd()
-    if onoff ~= nil then
-      msg.onoff = onoff
-    end
-    self:SendProto(msg)
-  else
-    local msgId = ProtoReqInfoList.AbyssDragonOnOffQuestCmd.id
-    local msgParam = {}
-    if onoff ~= nil then
-      msgParam.onoff = onoff
-    end
-    self:SendProto2(msgId, msgParam)
-  end
-end
-
 function ServiceQuestAutoProxy:RecvQuestList(data)
   self:Notify(ServiceEvent.QuestQuestList, data)
 end
@@ -3367,18 +3271,6 @@ function ServiceQuestAutoProxy:RecvUpdateAbyssHelpCountQuestCmd(data)
   self:Notify(ServiceEvent.QuestUpdateAbyssHelpCountQuestCmd, data)
 end
 
-function ServiceQuestAutoProxy:RecvAbyssDragonInfoNtfQuestCmd(data)
-  self:Notify(ServiceEvent.QuestAbyssDragonInfoNtfQuestCmd, data)
-end
-
-function ServiceQuestAutoProxy:RecvAbyssDragonHpUpdateQuestCmd(data)
-  self:Notify(ServiceEvent.QuestAbyssDragonHpUpdateQuestCmd, data)
-end
-
-function ServiceQuestAutoProxy:RecvAbyssDragonOnOffQuestCmd(data)
-  self:Notify(ServiceEvent.QuestAbyssDragonOnOffQuestCmd, data)
-end
-
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.QuestQuestList = "ServiceEvent_QuestQuestList"
 ServiceEvent.QuestQuestUpdate = "ServiceEvent_QuestQuestUpdate"
@@ -3429,6 +3321,3 @@ ServiceEvent.QuestUpdateOnceRewardQuestCmd = "ServiceEvent_QuestUpdateOnceReward
 ServiceEvent.QuestSyncTreasureBoxNumCmd = "ServiceEvent_QuestSyncTreasureBoxNumCmd"
 ServiceEvent.QuestQueryAbyssQuestListQuestCmd = "ServiceEvent_QuestQueryAbyssQuestListQuestCmd"
 ServiceEvent.QuestUpdateAbyssHelpCountQuestCmd = "ServiceEvent_QuestUpdateAbyssHelpCountQuestCmd"
-ServiceEvent.QuestAbyssDragonInfoNtfQuestCmd = "ServiceEvent_QuestAbyssDragonInfoNtfQuestCmd"
-ServiceEvent.QuestAbyssDragonHpUpdateQuestCmd = "ServiceEvent_QuestAbyssDragonHpUpdateQuestCmd"
-ServiceEvent.QuestAbyssDragonOnOffQuestCmd = "ServiceEvent_QuestAbyssDragonOnOffQuestCmd"

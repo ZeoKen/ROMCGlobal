@@ -102,9 +102,6 @@ function ServiceLoginUserCmdAutoProxy:onRegister()
   self:Listen(1, 33, function(data)
     self:RecvSetMaxScopeUserCmd(data)
   end)
-  self:Listen(1, 34, function(data)
-    self:RecvReqLoginOutGateCmd(data)
-  end)
 end
 
 function ServiceLoginUserCmdAutoProxy:CallRegResultUserCmd(id, ret)
@@ -1732,23 +1729,6 @@ function ServiceLoginUserCmdAutoProxy:CallSetMaxScopeUserCmd(num)
   end
 end
 
-function ServiceLoginUserCmdAutoProxy:CallReqLoginOutGateCmd(accid)
-  if not NetConfig.PBC then
-    local msg = LoginUserCmd_pb.ReqLoginOutGateCmd()
-    if accid ~= nil then
-      msg.accid = accid
-    end
-    self:SendProto(msg)
-  else
-    local msgId = ProtoReqInfoList.ReqLoginOutGateCmd.id
-    local msgParam = {}
-    if accid ~= nil then
-      msgParam.accid = accid
-    end
-    self:SendProto2(msgId, msgParam)
-  end
-end
-
 function ServiceLoginUserCmdAutoProxy:RecvRegResultUserCmd(data)
   self:Notify(ServiceEvent.LoginUserCmdRegResultUserCmd, data)
 end
@@ -1865,10 +1845,6 @@ function ServiceLoginUserCmdAutoProxy:RecvSetMaxScopeUserCmd(data)
   self:Notify(ServiceEvent.LoginUserCmdSetMaxScopeUserCmd, data)
 end
 
-function ServiceLoginUserCmdAutoProxy:RecvReqLoginOutGateCmd(data)
-  self:Notify(ServiceEvent.LoginUserCmdReqLoginOutGateCmd, data)
-end
-
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.LoginUserCmdRegResultUserCmd = "ServiceEvent_LoginUserCmdRegResultUserCmd"
 ServiceEvent.LoginUserCmdCreateCharUserCmd = "ServiceEvent_LoginUserCmdCreateCharUserCmd"
@@ -1899,4 +1875,3 @@ ServiceEvent.LoginUserCmdAttachLoginUserCmd = "ServiceEvent_LoginUserCmdAttachLo
 ServiceEvent.LoginUserCmdAttachSyncCmdUserCmd = "ServiceEvent_LoginUserCmdAttachSyncCmdUserCmd"
 ServiceEvent.LoginUserCmdPingUserCmd = "ServiceEvent_LoginUserCmdPingUserCmd"
 ServiceEvent.LoginUserCmdSetMaxScopeUserCmd = "ServiceEvent_LoginUserCmdSetMaxScopeUserCmd"
-ServiceEvent.LoginUserCmdReqLoginOutGateCmd = "ServiceEvent_LoginUserCmdReqLoginOutGateCmd"

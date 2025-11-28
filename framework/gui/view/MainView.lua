@@ -26,6 +26,7 @@ autoImport("MainView3TeamsPage")
 autoImport("AdventureItemData")
 autoImport("SignInCatEncounterView")
 autoImport("AppStoreCodeRewardPopup")
+autoImport("RecallWelcomePopup")
 autoImport("CharacterEncounterView")
 autoImport("CameraSelectView")
 autoImport("OverseaHostHelper")
@@ -39,6 +40,8 @@ autoImport("DayloginAnniversaryPanel")
 autoImport("DayloginNewbiePanel")
 autoImport("MainViewAstralPage")
 autoImport("MainViewAbyssLakePage")
+autoImport("MainViewAbyssDragonPage")
+autoImport("MainViewFairyTaleRaidPage")
 MainViewShortCutBord = {
   "ShortCutGrid",
   "SkillBord"
@@ -142,6 +145,9 @@ function MainView:LaunchLoginViewSequence()
   if CharacterEncounterView.CanShow() then
     self.loginViewSequence:Append("CharacterEncounterView")
   end
+  if RecallWelcomePopup.CanShow() then
+    self.loginViewSequence:Append("RecallWelcomePopup")
+  end
   if ActivityDetailPanel.CanShow() then
     local activities = ActivityDataProxy.Instance:getActiveActivitys()
     if type(activities) == "table" and next(activities) then
@@ -173,9 +179,14 @@ function MainView:LaunchLoginViewSequence()
   if lotterycanshow then
     self.loginViewSequence:Append("LotteryBannerView")
   end
-  local newbieLoginID = DayloginNewbiePanel.CanShow()
-  if newbieLoginID then
-    self.loginViewSequence:Append("DayloginNewbiePanel", {id = newbieLoginID})
+  local newbieLoginIDs = DayloginNewbiePanel.CanShow()
+  if newbieLoginIDs then
+    for i = 1, #newbieLoginIDs do
+      self.loginViewSequence:Append("DayloginNewbiePanel", {
+        id = newbieLoginIDs[i],
+        mediatorName = "DayloginNewbiePanel_" .. newbieLoginIDs[i]
+      })
+    end
   end
   if NoviceBattlePassProxy.Instance:GetReturnRewardItems() ~= nil and NoviceBattlePassProxy.Instance:IsReturnBPAvailable() then
     self.loginViewSequence:Append("ReturnRewardView")
@@ -240,6 +251,12 @@ function MainView:MapViewListener()
   self:AddListenEvt(TriggerEvent.RemoveAybssLakeBattleArea, self.AbyssLakeBoardShutDown)
   self:AddListenEvt(TriggerEvent.LeaveAybssLakeBattleArea, self.AbyssLakeBoardShutDown)
   self:AddListenEvt(ServiceEvent.MapAbyssBossUpdateCmd, self.AbyssLakeBoardUpdate)
+  self:AddListenEvt(ServiceEvent.RaidCmdAbyssDragonInfoNtfRaidCmd, self.HandleUpdateAbyssDragonInfo)
+  self:AddListenEvt(PVEEvent.AbyssDragon_Shutdown, self.HandleAbyssDragonRaidShutdown)
+  self:AddListenEvt(ServiceEvent.RaidCmdAbyssDragonHpUpdateRaidCmd, self.HandleUpdateAbyssDragonHp)
+  self:AddListenEvt(PVEEvent.FairyTale_Launch, self.HandleFairyTaleRaidLaunch)
+  self:AddListenEvt(PVEEvent.FairyTale_Shutdown, self.HandleFairyTaleRaidShutdown)
+  self:AddListenEvt(ServiceEvent.FuBenCmdFairyTaleRaidSyncCmd, self.HandleFairyTaleRaidSync)
 end
 
 function MainView:SceneLoadHandler()
@@ -598,6 +615,9 @@ function MainView:HandleDayLoginPopup(note)
     redlog("不用弹窗")
     return
   end
+  if UIManagerProxy.Instance:HasUINodeByName(PanelConfig.DayloginNewbiePanel) then
+    return
+  end
   if not self.loginViewSequence then
     self.loginViewSequence = ViewSequenceManager.Me():CreateViewSequence(self)
   end
@@ -606,12 +626,28 @@ function MainView:HandleDayLoginPopup(note)
     local newIncome = false
     for i = 1, #infos do
       local single = infos[i]
-      if not DailyLoginProxy.Instance:GetDaySignInActivity(single.activityid) or single.novicetype then
-      elseif not self.loginViewSequence:IsHaveView("DayloginNewbiePanel") then
-        newIncome = true
-        self.loginViewSequence:Append("DayloginNewbiePanel", {
-          id = single.activityid
-        })
+      local activity = DailyLoginProxy.Instance:GetDaySignInActivity(single.activityid)
+      if not activity or single.novicetype then
+      elseif activity.redtip then
+        local alreadyInSequence = false
+        if self.loginViewSequence.sequence and self.loginViewSequence.sequenceViewDatas then
+          for j = 1, #self.loginViewSequence.sequence do
+            if self.loginViewSequence.sequence[j] == "DayloginNewbiePanel" then
+              local vdata = self.loginViewSequence.sequenceViewDatas[j]
+              if vdata and vdata.id == single.activityid then
+                alreadyInSequence = true
+                break
+              end
+            end
+          end
+        end
+        if not alreadyInSequence then
+          newIncome = true
+          self.loginViewSequence:Append("DayloginNewbiePanel", {
+            id = single.activityid,
+            mediatorName = "DayloginNewbiePanel_" .. single.activityid
+          })
+        end
       end
     end
     if newIncome and ViewSequenceManager.Me():GetWorkingViewSequenceCount() == 0 then
@@ -729,6 +765,39 @@ function MainView:CheckAybssLakeBoard()
   else
     self.abyssLakeBord:Show()
   end
+end
+
+function MainView:HandleUpdateAbyssDragonInfo()
+  if not self.abyssDragonPage then
+    self.abyssDragonPage = self:AddSubView("AbyssDragonPage", MainViewAbyssDragonPage)
+  end
+  self.abyssDragonPage:RefreshView()
+end
+
+function MainView:HandleAbyssDragonRaidShutdown()
+  if self.abyssDragonPage then
+    self:RemoveSubView("AbyssDragonPage")
+    self.abyssDragonPage = nil
+  end
+end
+
+function MainView:HandleUpdateAbyssDragonHp()
+end
+
+function MainView:HandleFairyTaleRaidLaunch()
+  if not self.fairyTaleRaidPage then
+    self.fairyTaleRaidPage = self:AddSubView("FairyTaleRaidPage", MainViewFairyTaleRaidPage)
+  end
+end
+
+function MainView:HandleFairyTaleRaidShutdown()
+  if self.fairyTaleRaidPage then
+    self:RemoveSubView("FairyTaleRaidPage")
+    self.fairyTaleRaidPage = nil
+  end
+end
+
+function MainView:HandleFairyTaleRaidSync(note)
 end
 
 return MainView

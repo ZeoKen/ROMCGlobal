@@ -301,6 +301,10 @@ function GemCell:UpdateDeleteIcon()
   if not self.deleteGO then
     return
   end
+  if self.forceShowDeleteIcon and not self:CheckDataIsNilOrEmpty() then
+    self.deleteGO:SetActive(true)
+    return
+  end
   self.deleteGO:SetActive(self.isShowDeleteIcon and not self:CheckDataIsNilOrEmpty() and self.multiSelectStyle ~= GemCell.MultiSelectStyle.None and self.selectedCount and self.selectedCount > 0)
 end
 
@@ -388,6 +392,7 @@ function GemCell:ForceShowDeleteIcon()
   if not self.deleteGO then
     return
   end
+  self.forceShowDeleteIcon = true
   self.deleteGO:SetActive(true)
 end
 
@@ -395,6 +400,7 @@ function GemCell:ForceHideDeleteIcon()
   if not self.deleteGO then
     return
   end
+  self.forceShowDeleteIcon = false
   self.deleteGO:SetActive(false)
 end
 

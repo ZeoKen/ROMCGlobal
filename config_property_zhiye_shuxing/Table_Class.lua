@@ -792,7 +792,7 @@ Table_Class_t = {
       1412001,
       1421001,
       1413001,
-      1411001
+      3400001
     },
     {
       1429001,
@@ -897,7 +897,7 @@ Table_Class_t = {
       1363001,
       1371001,
       1362001,
-      1361001
+      3500001
     },
     {
       1379001,
@@ -1233,7 +1233,6 @@ Table_Class = {
   [12] = {
     id = 12,
     NameZh = "##103961",
-    NameEn = "Knight",
     MaleBody = 5,
     FemaleBody = 6,
     MaleEye = 1,
@@ -1389,7 +1388,6 @@ Table_Class = {
   },
   [23] = {
     id = 23,
-    NameZh = "##145567",
     NameEn = "HighWizard",
     MaleBody = 15,
     FemaleBody = 16,
@@ -1403,6 +1401,7 @@ Table_Class = {
     AdvanceClass = Table_Class_t.AdvanceClass[16],
     Type = 2,
     TypeBranch = 21,
+    icon = "icon_2_3",
     InitialAttr = Table_Class_t.InitialAttr[7],
     AddPointSolution = Table_Class_t.AddPointSolution[9],
     SkillPointSolution = Table_Class_t.SkillPointSolution[6],
@@ -1989,7 +1988,6 @@ Table_Class = {
     AdvanceClass = Table_Class_t.AdvanceClass[7],
     Type = 1,
     TypeBranch = 12,
-    icon = "icon_7_3",
     InitialAttr = Table_Class_t.InitialAttr[4],
     AddPointSolution = Table_Class_t.AddPointSolution[4],
     SkillPointSolution = Table_Class_t.SkillPointSolution[3],
@@ -2219,6 +2217,7 @@ Table_Class = {
   },
   [102] = {
     id = 102,
+    NameZh = "##145630",
     NameEn = "Bard",
     MaleBody = 79,
     FemaleBody = 80,
@@ -2336,6 +2335,7 @@ Table_Class = {
   [113] = {
     id = 113,
     NameZh = "##146022",
+    NameEn = "Gypsy",
     MaleBody = 81,
     FemaleBody = 82,
     MaleEye = 1,
@@ -2607,9 +2607,9 @@ local cell_mt = {
     LimitMasterSkills = _EmptyTable,
     MasterSkills = _EmptyTable,
     MaxJobLevel = 130,
-    NameEn = "Gypsy",
+    NameEn = "Knight",
     NameEnFemale = "",
-    NameZh = "##145630",
+    NameZh = "##145567",
     NameZhFemale = "",
     ProfessionalFashion = _EmptyTable,
     ShowEndTime = "",
@@ -2624,7 +2624,7 @@ local cell_mt = {
     TypeBranch = 61,
     UnlockAttr = _EmptyTable,
     UnlockTips = "",
-    icon = "icon_2_3",
+    icon = "icon_7_3",
     id = 1
   }
 }

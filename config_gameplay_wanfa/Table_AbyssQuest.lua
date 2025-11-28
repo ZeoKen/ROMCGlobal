@@ -274,6 +274,78 @@ Table_AbyssQuest = {
     Area = 5,
     Reward = 8004,
     HelpReward = 8005
+  },
+  [1015770001] = {
+    id = 1015770001,
+    Area = 6,
+    Reward = 8006,
+    HelpReward = 8007
+  },
+  [1015770002] = {
+    id = 1015770002,
+    Area = 6,
+    Reward = 8006,
+    HelpReward = 8007
+  },
+  [1015770003] = {
+    id = 1015770003,
+    Area = 6,
+    Reward = 8006,
+    HelpReward = 8007
+  },
+  [1015770004] = {
+    id = 1015770004,
+    Area = 6,
+    Reward = 8006,
+    HelpReward = 8007
+  },
+  [1015770005] = {
+    id = 1015770005,
+    Area = 6,
+    Reward = 8006,
+    HelpReward = 8007
+  },
+  [1015770006] = {
+    id = 1015770006,
+    Area = 6,
+    Reward = 8006,
+    HelpReward = 8007
+  },
+  [1015770007] = {
+    id = 1015770007,
+    Area = 6,
+    Reward = 8006,
+    HelpReward = 8007
+  },
+  [1015770008] = {
+    id = 1015770008,
+    Area = 6,
+    Reward = 8006,
+    HelpReward = 8007
+  },
+  [1015770009] = {
+    id = 1015770009,
+    Area = 6,
+    Reward = 8006,
+    HelpReward = 8007
+  },
+  [1015770010] = {
+    id = 1015770010,
+    Area = 6,
+    Reward = 8006,
+    HelpReward = 8007
+  },
+  [1015770011] = {
+    id = 1015770011,
+    Area = 6,
+    Reward = 8006,
+    HelpReward = 8007
+  },
+  [1015770012] = {
+    id = 1015770012,
+    Area = 6,
+    Reward = 8006,
+    HelpReward = 8007
   }
 }
 Table_AbyssQuest_fields = {

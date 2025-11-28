@@ -67,3 +67,11 @@ function PetWorkSpaceEmoji:SetFavorData(data)
   self:Show(self.icon)
   self.icon.spriteName = "pet_icon_touch"
 end
+
+function PetWorkSpaceEmoji:ShowRedPoint(show)
+  self.redPoint:SetActive(show)
+end
+
+function PetWorkSpaceEmoji:SetNum(num)
+  self.num.text = string.format(strFormat, num)
+end

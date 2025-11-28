@@ -483,6 +483,9 @@ function ServiceItemAutoProxy:onRegister()
   self:Listen(6, 168, function(data)
     self:RecvBalanceModeMemoryUpdateItemCmd(data)
   end)
+  self:Listen(6, 169, function(data)
+    self:RecvMemoryExcessItemCmd(data)
+  end)
 end
 
 function ServiceItemAutoProxy:CallPackageItem(type, data, maxslot)
@@ -8395,6 +8398,29 @@ function ServiceItemAutoProxy:CallBalanceModeMemoryUpdateItemCmd(balance_memory)
   end
 end
 
+function ServiceItemAutoProxy:CallMemoryExcessItemCmd(memory_guid, equip_pos)
+  if not NetConfig.PBC then
+    local msg = SceneItem_pb.MemoryExcessItemCmd()
+    if memory_guid ~= nil then
+      msg.memory_guid = memory_guid
+    end
+    if equip_pos ~= nil then
+      msg.equip_pos = equip_pos
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.MemoryExcessItemCmd.id
+    local msgParam = {}
+    if memory_guid ~= nil then
+      msgParam.memory_guid = memory_guid
+    end
+    if equip_pos ~= nil then
+      msgParam.equip_pos = equip_pos
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceItemAutoProxy:RecvPackageItem(data)
   self:Notify(ServiceEvent.ItemPackageItem, data)
 end
@@ -9019,6 +9045,10 @@ function ServiceItemAutoProxy:RecvBalanceModeMemoryUpdateItemCmd(data)
   self:Notify(ServiceEvent.ItemBalanceModeMemoryUpdateItemCmd, data)
 end
 
+function ServiceItemAutoProxy:RecvMemoryExcessItemCmd(data)
+  self:Notify(ServiceEvent.ItemMemoryExcessItemCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.ItemPackageItem = "ServiceEvent_ItemPackageItem"
 ServiceEvent.ItemPackageUpdate = "ServiceEvent_ItemPackageUpdate"
@@ -9176,3 +9206,4 @@ ServiceEvent.ItemMemoryUpgradeItemCmd = "ServiceEvent_ItemMemoryUpgradeItemCmd"
 ServiceEvent.ItemCardLevelupItemCmd = "ServiceEvent_ItemCardLevelupItemCmd"
 ServiceEvent.ItemBalanceModeMemorySetItemCmd = "ServiceEvent_ItemBalanceModeMemorySetItemCmd"
 ServiceEvent.ItemBalanceModeMemoryUpdateItemCmd = "ServiceEvent_ItemBalanceModeMemoryUpdateItemCmd"
+ServiceEvent.ItemMemoryExcessItemCmd = "ServiceEvent_ItemMemoryExcessItemCmd"

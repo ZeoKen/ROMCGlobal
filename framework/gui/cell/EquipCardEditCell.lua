@@ -52,7 +52,7 @@ function EquipCardEditCell:SetData(data)
     local cardInfo = data.cardInfo
     self.cardName.text = data:GetName()
     local descStr = ""
-    local bufferIds = data.cardInfo.BuffEffect.buff
+    local bufferIds = data:GetCardBufferIds()
     if bufferIds then
       for i = 1, #bufferIds do
         local str = ItemUtil.getBufferDescById(bufferIds[i])

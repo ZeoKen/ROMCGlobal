@@ -263,7 +263,7 @@ function ItemFormulaTip:AddIgnoreBounds(obj)
 end
 
 function ItemFormulaTip:CloseSelf()
-  self:Exit()
+  self:OnDestroy()
   if not self:ObjIsNil(self.gameObject) then
     GameObject.Destroy(self.gameObject)
     TipManager.Instance.formularTip = nil

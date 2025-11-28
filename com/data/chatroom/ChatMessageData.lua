@@ -73,6 +73,7 @@ function ChatMessageData:SetData(data)
     self[30] = data.roomid
     self[35] = data.isreturnuser
     self[36] = data.chat_frame
+    self[41] = data.recall_time
     if data.postcard and data.postcard.url and data.postcard.url ~= "" then
       self[37] = PostcardData.new()
       self[37]:Server_SetData(data.postcard)
@@ -629,7 +630,7 @@ function ChatMessageData:GetExpressionId()
 end
 
 function ChatMessageData:IsReturnUser()
-  return self[35] or false
+  return self[35] or self[41] and self[41] > ServerTime.CurServerTime() / 1000 or false
 end
 
 function ChatMessageData:GetChatframeId()

@@ -21,11 +21,14 @@ local styleConfig = {
   }
 }
 
-function PopupGridList:ctor(gameObject, funcOnChange, owner, depth, popupAsset, styleConfigID)
+function PopupGridList:ctor(gameObject, funcOnChange, owner, depth, popupAsset, styleConfigID, isFixedSize, height, needHideParent)
   self.gameObject = gameObject
   self.trans = gameObject.transform
   self.funcOnChange = funcOnChange
   self.owner = owner
+  self.isFixedSize = isFixedSize or false
+  self.paramHeight = height
+  self.needHideParent = needHideParent or false
   self.anchors = {}
   self.datas = {}
   self.redIDs = {}
@@ -96,7 +99,7 @@ function PopupGridList:InitList(depth, popupAsset, styleConfigID)
   end
   
   if self.sprTabsBG then
-    self:SetListSize(self.sprTabsBG.width)
+    self:SetListSize(self.sprTabsBG.width, self.paramHeight, self.isFixedSize)
   end
   self:ShowList(false, true)
 end
@@ -246,6 +249,9 @@ function PopupGridList:ShowList(isShow, immediate)
     for i = 1, #cells do
       cells[i]:CheckRedTip()
     end
+  end
+  if self.needHideParent then
+    self.objListContainer:SetActive(self.isShowList)
   end
 end
 

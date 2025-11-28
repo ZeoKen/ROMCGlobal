@@ -93,6 +93,9 @@ function QuickMfrPopUp:OnEnter()
 end
 
 function QuickMfrPopUp:OnExit()
+  if self.infoTipCell then
+    self.infoTipCell:OnDestroy()
+  end
   QuickMfrPopUp.super.OnExit(self)
   self.infoTipCell = nil
 end

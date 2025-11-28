@@ -783,6 +783,10 @@ function HappyShopProxy:RecvBuyShopItem(data)
       end
     end
   end
+  local shopData = ShopProxy.Instance:GetShopDataByTypeId(self.shopType, self.params)
+  if shopData then
+    shopData:UpdateGiftState(data.id, data.success)
+  end
 end
 
 function HappyShopProxy:NeedQueryAutoQuestComplete()
@@ -866,4 +870,16 @@ function HappyShopProxy:GetTotalCost(shopType, shopId)
     end
   end
   return costList
+end
+
+function HappyShopProxy:HasGift(shopType, shopId)
+  shopType = shopType or self.shopType
+  shopId = shopId or self.params
+  local goods = ShopProxy.Instance:GetConfigByTypeId(shopType, shopId)
+  for id, shopItemData in pairs(goods) do
+    if shopItemData.giftItem then
+      return true
+    end
+  end
+  return false
 end

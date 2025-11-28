@@ -300,3 +300,8 @@ function ServiceSceneUser3Proxy:RecvEffectInfoUseUserCmd(data)
   PvpProxy.Instance:RecvEffectInfoUseUserCmd(data)
   self:Notify(ServiceEvent.SceneUser3EffectInfoUseUserCmd, data)
 end
+
+function ServiceSceneUser3Proxy:RecvFairyTaleRankQueryCmd(data)
+  FairyTaleProxy.Instance:UpdateRankInfo(data)
+  self:Notify(ServiceEvent.SceneUser3FairyTaleRankQueryCmd, data)
+end

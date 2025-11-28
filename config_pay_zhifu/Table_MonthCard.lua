@@ -166,6 +166,54 @@ Table_MonthCard = {
     Picture = "recharge_bg_December_2020",
     NpcPicture = "Kapla",
     HeadDress = 3002906
+  },
+  [10000392] = {
+    id = 10000392,
+    Year = 2026,
+    Month = 1,
+    Picture = "recharge_bg_January_2021",
+    NpcPicture = "Kapla",
+    HeadDress = 3003066
+  },
+  [10000393] = {
+    id = 10000393,
+    Year = 2026,
+    Month = 2,
+    Picture = "recharge_bg_February_2021",
+    NpcPicture = "Kapla",
+    HeadDress = 3003156
+  },
+  [10000394] = {
+    id = 10000394,
+    Year = 2026,
+    Month = 3,
+    Picture = "recharge_bg_March_2021",
+    NpcPicture = "Kapla",
+    HeadDress = 3003286
+  },
+  [10000395] = {
+    id = 10000395,
+    Year = 2026,
+    Month = 4,
+    Picture = "recharge_bg_April_2021",
+    NpcPicture = "Kapla",
+    HeadDress = 3003536
+  },
+  [10000396] = {
+    id = 10000396,
+    Year = 2026,
+    Month = 5,
+    Picture = "recharge_bg_May_2021",
+    NpcPicture = "Kapla",
+    HeadDress = 3003396
+  },
+  [10000397] = {
+    id = 10000397,
+    Year = 2026,
+    Month = 6,
+    Picture = "recharge_bg_June_2021",
+    NpcPicture = "Kapla",
+    HeadDress = 3003886
   }
 }
 Table_MonthCard_fields = {

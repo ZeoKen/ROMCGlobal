@@ -89,6 +89,6 @@ function FoodRecipeTip:DestroySelf()
 end
 
 function FoodRecipeTip:OnExit()
-  self.itemTipComCell:Exit()
+  self.itemTipComCell:OnDestroy()
   return true
 end

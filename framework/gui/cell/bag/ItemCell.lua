@@ -1090,6 +1090,7 @@ function ItemCell:SetMemoryInfo(data)
       self.memoryGO = self:LoadCellPart("Memory", self.normalItem)
       if self.memoryGO then
         self.memoryLvLabel = self:FindGO("MemoryLevel", self.memoryGO):GetComponent(UILabel)
+        self.memoryExcess = self:FindGO("MemoryExcess", self.memoryGO):GetComponent(UILabel)
       end
     else
       self.memoryGO:SetActive(true)
@@ -1097,6 +1098,8 @@ function ItemCell:SetMemoryInfo(data)
     if self.memoryGO then
       local level = data.equipMemoryData and data.equipMemoryData.level or 1
       self.memoryLvLabel.text = string.format("Lv.%s", level)
+      local excessStage = data.equipMemoryData and data.equipMemoryData.excess_lv or 0
+      self.memoryExcess.text = StringUtil.IntToRoman(excessStage)
     end
   elseif self.memoryGO then
     self.memoryGO:SetActive(false)

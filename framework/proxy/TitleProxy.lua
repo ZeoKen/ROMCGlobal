@@ -59,7 +59,7 @@ function TitleProxy:_InitStaticData()
     if not CheckInvalid(v.id) then
       if v.GroupID == TITLETYPE.NORMAL then
         data = self:_CreateTitleData(TITLETYPE.NORMAL, v)
-        if not data:bVisibilyAchievement() then
+        if not data:bShouldHide() then
           self.titles[#self.titles + 1] = data
         end
       elseif v.GroupID == TITLETYPE.GROUP and self.allTitleConfig[v.id] == nil then
@@ -116,7 +116,7 @@ function TitleProxy:SetServiceData(data)
         lastGroupLock = titledata.groupData.unlocked
       end
       if titledata and titledata:Unlock(true) then
-        if titledata.titleType == TITLETYPE.NORMAL and titledata:bVisibilyAchievement() then
+        if titledata.titleType == TITLETYPE.NORMAL and (titledata:bVisibilyAchievement() or titledata:bActivityHideLock()) then
           self.titles[#self.titles + 1] = titledata
         end
         local config = titledata.config

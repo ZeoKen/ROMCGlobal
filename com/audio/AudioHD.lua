@@ -42,6 +42,8 @@ function AudioHD:ctor()
   self.serverAudioInfo = {}
   self.localAudioInfo = {}
   self.hdDownLoaders = {}
+  self.doneSize = 0
+  self.allSize = 0
 end
 
 function AudioHD:InitInfo()
@@ -402,6 +404,9 @@ function AudioHD:GetTotalSize()
 end
 
 function AudioHD:GetPercent()
+  if self.allSize == 0 then
+    return 0
+  end
   return 1.0 * self.doneSize / self.allSize
 end
 

@@ -1880,6 +1880,15 @@ function ServiceChatCmdAutoProxy:CallQueryItemData(guid, data)
       end
       msg.data.memory.lv = data.memory.lv
     end
+    if data.memory ~= nil and data.memory.excess_lv ~= nil then
+      if msg.data == nil then
+        msg.data = {}
+      end
+      if msg.data.memory == nil then
+        msg.data.memory = {}
+      end
+      msg.data.memory.excess_lv = data.memory.excess_lv
+    end
     if data ~= nil and data.memory.effects ~= nil then
       if msg.data.memory == nil then
         msg.data.memory = {}
@@ -3680,6 +3689,15 @@ function ServiceChatCmdAutoProxy:CallQueryItemData(guid, data)
       end
       msgParam.data.memory.lv = data.memory.lv
     end
+    if data.memory ~= nil and data.memory.excess_lv ~= nil then
+      if msgParam.data == nil then
+        msgParam.data = {}
+      end
+      if msgParam.data.memory == nil then
+        msgParam.data.memory = {}
+      end
+      msgParam.data.memory.excess_lv = data.memory.excess_lv
+    end
     if data ~= nil and data.memory.effects ~= nil then
       if msgParam.data.memory == nil then
         msgParam.data.memory = {}
@@ -4424,7 +4442,7 @@ function ServiceChatCmdAutoProxy:CallChatCmd(channel, str, desID, voice, voiceti
   end
 end
 
-function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, frame, baselevel, voiceid, voicetime, hair, haircolor, body, appellation, msgid, head, face, mouth, eye, roomid, portrait_frame, serverid, channel, rolejob, gender, blink, str, name, guildname, sysmsgid, photo, expression, redpacketret, isreturnuser, chat_frame, items, share_data, love_confession, postcard, timestamp)
+function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, frame, baselevel, voiceid, voicetime, hair, haircolor, body, appellation, msgid, head, face, mouth, eye, roomid, portrait_frame, serverid, channel, rolejob, gender, blink, str, name, guildname, sysmsgid, photo, expression, redpacketret, isreturnuser, chat_frame, items, share_data, love_confession, postcard, timestamp, recall_time)
   if not NetConfig.PBC then
     local msg = ChatCmd_pb.ChatRetCmd()
     if msg == nil then
@@ -4835,6 +4853,9 @@ function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, f
     end
     if timestamp ~= nil then
       msg.timestamp = timestamp
+    end
+    if recall_time ~= nil then
+      msg.recall_time = recall_time
     end
     self:SendProto(msg)
   else
@@ -5248,6 +5269,9 @@ function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, f
     end
     if timestamp ~= nil then
       msgParam.timestamp = timestamp
+    end
+    if recall_time ~= nil then
+      msgParam.recall_time = recall_time
     end
     self:SendProto2(msgId, msgParam)
   end

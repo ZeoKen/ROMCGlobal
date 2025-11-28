@@ -849,6 +849,7 @@ function NNpc:DoConstruct(asArray, serverData)
   self.delayRemoveTimeFlag = nil
   self.deadTimeFlag = nil
   self:TrySetComodoBuildingData()
+  self:UpdateRoleRide()
 end
 
 function NNpc:ResetCamp()

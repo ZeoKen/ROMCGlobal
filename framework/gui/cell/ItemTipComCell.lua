@@ -115,6 +115,12 @@ function ItemTipComCell:Init()
       self:PassEvent(ItemTipEvent.ClickTipFuncEvent, self)
     end)
   end
+  self.giftDetailBtn = self:FindGO("GiftDetailButton")
+  if self.giftDetailBtn then
+    self:AddClickEvent(self.giftDetailBtn, function()
+      self:PassEvent(ItemTipEvent.ShowGiftDetail, self)
+    end)
+  end
   self:AddListener()
 end
 
@@ -213,6 +219,7 @@ function ItemTipComCell:SetData(data, showFrom, showFullAttr, equipBuffUpSource,
     self:UpdateCardPreviewBtn()
     self:UpdateShowTpBtn()
     self:UpdateHelpInfoButton()
+    self:UpdateGiftDetailButton()
   else
     self.gameObject:SetActive(false)
   end
@@ -847,4 +854,12 @@ function ItemTipComCell:TrySetCloseBtn(bool)
   if self.closeBtn then
     self.closeBtn:SetActive(bool)
   end
+end
+
+function ItemTipComCell:UpdateGiftDetailButton()
+  if self.giftDetailBtn then
+    local itemType = self.data and self.data.staticData and self.data.staticData.Type
+    self.giftDetailBtn:SetActive(itemType == 30 and not self.cardPreviewBtn.gameObject.activeSelf and not GameConfig.SystemForbid.GiftDetail)
+  end
+  self:TryResetBtnGrid()
 end

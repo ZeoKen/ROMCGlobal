@@ -121,6 +121,9 @@ function SkillProfessData:SortSkills()
       else
         return false
       end
+      if lstaticData.id == 50061001 or rstaticData.id == 50061001 then
+        return lstaticData.id == 50061001
+      end
       if lstaticData.SkillType ~= rstaticData.SkillType then
         if GameConfig.SkillType[lstaticData.SkillType].isPassive then
           return false

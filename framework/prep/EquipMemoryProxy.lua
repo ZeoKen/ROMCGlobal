@@ -5,7 +5,8 @@ autoImport("EquipMemoryData")
 EquipMemoryProxy.SortValue = {
   attack = 1,
   defence = 2,
-  special = 3
+  special = 3,
+  legend = 4
 }
 EquipMemoryProxy.EquipPosGroup = nil
 EquipMemoryProxy.PosEnumItemID = {
@@ -13,6 +14,12 @@ EquipMemoryProxy.PosEnumItemID = {
   [2] = 4706,
   [3] = 4709,
   [4] = 4714
+}
+EquipMemoryProxy.PosEnumUpgradeItemID = {
+  [1] = 4753,
+  [2] = 4756,
+  [3] = 4759,
+  [4] = 4764
 }
 
 function EquipMemoryProxy.GetEquipPosGroupEnum(equipPos)
@@ -32,6 +39,20 @@ end
 function EquipMemoryProxy.GetSpecialEffectIdsByEnum(groupEnum)
   if Game and Game.GetSpecialEffectIdsByEnum then
     return Game.GetSpecialEffectIdsByEnum(groupEnum)
+  end
+  return {}
+end
+
+function EquipMemoryProxy.GetUpgradeSpecialEffectIdsByEnum(groupEnum)
+  if Game and Game.GetUpgradeSpecialEffectIdsByEnum then
+    return Game.GetUpgradeSpecialEffectIdsByEnum(groupEnum)
+  end
+  return {}
+end
+
+function EquipMemoryProxy.GetUpgradeSpecialEffectIds(equipPos)
+  if Game and Game.GetUpgradeSpecialEffectIds then
+    return Game.GetUpgradeSpecialEffectIds(equipPos)
   end
   return {}
 end
@@ -78,17 +99,37 @@ end
 
 function EquipMemoryProxy:GetTotalEquipMemoryLevels(fullfire)
   local memoryLevels = {}
-  local addMemoryLevel = function(attrid)
-    if attrid and attrid ~= 0 then
-      memoryLevels[attrid] = (memoryLevels[attrid] or 0) + 1
+  local addMemoryLevel = function(attrid, excess_lv)
+    if not attrid or attrid == 0 then
+      return
     end
+    local stage = excess_lv or 0
+    if not memoryLevels[attrid] then
+      memoryLevels[attrid] = {}
+    end
+    memoryLevels[attrid][stage] = (memoryLevels[attrid][stage] or 0) + 1
   end
   local processMemoryAttrs = function(posData)
-    if posData then
-      local attrs = posData.memoryAttrs or {}
-      for i = 1, #attrs do
-        addMemoryLevel(attrs[i].id)
+    if not posData then
+      return
+    end
+    local attrs = posData.memoryAttrs or {}
+    local passExcessForSlot = {}
+    do
+      local curExcess = posData.excess_lv or 0
+      local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
+      if type(excessCfg) == "table" and curExcess and 0 < curExcess then
+        for stageKey, mappedKey in pairs(excessCfg) do
+          local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
+          if slotIndex and stageKey <= curExcess then
+            passExcessForSlot[slotIndex] = curExcess
+          end
+        end
       end
+    end
+    for i = 1, #attrs do
+      local stageForThis = passExcessForSlot[i] or 0
+      addMemoryLevel(attrs[i].id, stageForThis)
     end
   end
   if fullfire then
@@ -100,7 +141,9 @@ function EquipMemoryProxy:GetTotalEquipMemoryLevels(fullfire)
       else
         local posEnum = EquipMemoryProxy.GetEquipPosGroupEnum(i)
         local balanceMemory = self:GetBalanceMemory(posEnum)
-        addMemoryLevel(balanceMemory)
+        addMemoryLevel(balanceMemory, 0)
+        local upgradeMemory = self:GetUpgradeMemory(posEnum)
+        addMemoryLevel(upgradeMemory, 0)
       end
     end
   else
@@ -134,6 +177,51 @@ function EquipMemoryProxy:GetPosData(pos, fullFire)
           baseMemoryData.memoryAttrs = {
             {id = balanceMemory, level = 1}
           }
+        end
+      end
+      local upgradeMemory = self:GetUpgradeMemory(posEnum)
+      if upgradeMemory and upgradeMemory ~= 0 then
+        local memoryAttrs = baseMemoryData.memoryAttrs
+        if memoryAttrs then
+          while #memoryAttrs < 4 do
+            table.insert(memoryAttrs, {id = 0, level = 1})
+          end
+          memoryAttrs[4].id = upgradeMemory
+          memoryAttrs[4].level = 1
+        else
+          baseMemoryData.memoryAttrs = {
+            {id = 0, level = 1},
+            {id = 0, level = 1},
+            {
+              id = balanceMemory or 0,
+              level = 1
+            },
+            {id = upgradeMemory, level = 1}
+          }
+        end
+      end
+      if upgradeMemory and upgradeMemory ~= 0 then
+        local upgradeItemId = EquipMemoryProxy.PosEnumUpgradeItemID[posEnum]
+        if upgradeItemId then
+          baseMemoryData.staticId = upgradeItemId
+          local upgradeStaticData = Table_ItemMemory[upgradeItemId]
+          if upgradeStaticData then
+            baseMemoryData.maxLevel = upgradeStaticData.MaxLevel or baseMemoryData.maxLevel
+            local randomAttrLv = upgradeStaticData.RandomAttr
+            if randomAttrLv then
+              local _attrCount = 0
+              for _stepLv, _ in pairs(randomAttrLv) do
+                _attrCount = _attrCount + 1
+              end
+              baseMemoryData.maxAttrCount = _attrCount
+            end
+          end
+        end
+      end
+      local attrs = baseMemoryData.memoryAttrs
+      if attrs and 4 < #attrs then
+        while 4 < #attrs do
+          table.remove(attrs)
         end
       end
       return baseMemoryData
@@ -175,15 +263,25 @@ function EquipMemoryProxy:RecvBalanceModeMemoryUpdateItemCmd(data)
         local index = effects[j].index
         local effectid = effects[j].effect_id
         if index == 2 then
-          self.balanceMemorys[posEnum] = effectid
+          self.balanceMemorys[posEnum][2] = effectid
+        elseif index == 3 then
+          self.balanceMemorys[posEnum][3] = effectid
         end
       end
     end
   end
 end
 
-function EquipMemoryProxy:GetBalanceMemory(posEnum)
+function EquipMemoryProxy:GetBalanceMemory(posEnum, index)
   if self.balanceMemorys and self.balanceMemorys[posEnum] then
-    return self.balanceMemorys[posEnum]
+    if index then
+      return self.balanceMemorys[posEnum][index]
+    else
+      return self.balanceMemorys[posEnum][2]
+    end
   end
+end
+
+function EquipMemoryProxy:GetUpgradeMemory(posEnum)
+  return self:GetBalanceMemory(posEnum, 3)
 end

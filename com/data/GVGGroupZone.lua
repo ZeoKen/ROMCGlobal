@@ -1,9 +1,10 @@
 local zoneSeparator = ","
 GVGGroupZone = class("GVGGroupZone")
 
-function GVGGroupZone:ctor(groupid, zoneids)
-  self.groupid = GvgProxy.ClientGroupId(groupid)
+function GVGGroupZone:ctor(groupid, zoneids, client_group_index)
   self.server_groupid = groupid
+  self.server_id = GvgProxy.GetServerIdByGroupId(groupid)
+  self.groupid = client_group_index
   self.uiGroupId = string.format(ZhString.NewGVG_GroupID, self.groupid)
   self.zoneMap = {}
   self.simplyZoneMap = {}

@@ -33,6 +33,7 @@ function InheritSkillItemData:ctor(familyId)
   end
   self.isUnlock = false
   self.isInherited = false
+  self.isLoad = false
 end
 
 function InheritSkillItemData:UpdateSkill(serverSkill)

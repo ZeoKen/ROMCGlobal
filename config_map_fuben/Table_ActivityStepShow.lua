@@ -148,6 +148,7 @@ Table_ActivityStepShow = {
   },
   [2070000] = {
     id = 2070000,
+    Trace_Title = "21:00~21:30",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -155,6 +156,7 @@ Table_ActivityStepShow = {
   },
   [2080000] = {
     id = 2080000,
+    Trace_Title = "21:00~21:30",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -162,6 +164,7 @@ Table_ActivityStepShow = {
   },
   [2090000] = {
     id = 2090000,
+    Trace_Title = "21:00~21:30",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -169,6 +172,7 @@ Table_ActivityStepShow = {
   },
   [2100000] = {
     id = 2100000,
+    Trace_Title = "21:00~21:30",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -176,6 +180,7 @@ Table_ActivityStepShow = {
   },
   [2110000] = {
     id = 2110000,
+    Trace_Title = "21:00~21:30",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -183,6 +188,7 @@ Table_ActivityStepShow = {
   },
   [2120000] = {
     id = 2120000,
+    Trace_Title = "21:00~21:30",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -190,6 +196,7 @@ Table_ActivityStepShow = {
   },
   [2130000] = {
     id = 2130000,
+    Trace_Title = "21:00~21:30",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -197,6 +204,7 @@ Table_ActivityStepShow = {
   },
   [2140000] = {
     id = 2140000,
+    Trace_Title = "21:00~21:30",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -204,6 +212,7 @@ Table_ActivityStepShow = {
   },
   [2150000] = {
     id = 2150000,
+    Trace_Title = "21:00~21:30",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -211,6 +220,7 @@ Table_ActivityStepShow = {
   },
   [2170000] = {
     id = 2170000,
+    Trace_Title = "21:00~21:30",
     Trace_Text = "##138389",
     TraceId = 5042,
     HideMapName = 1
@@ -286,14 +296,12 @@ Table_ActivityStepShow = {
   },
   [5340000] = {
     id = 5340000,
-    Trace_Title = "20:30~21:00",
     Trace_Text = "##138422",
     TraceId = 5042,
     HideMapName = 1
   },
   [5350000] = {
     id = 5350000,
-    Trace_Title = "20:30~21:00",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -301,7 +309,6 @@ Table_ActivityStepShow = {
   },
   [5360000] = {
     id = 5360000,
-    Trace_Title = "20:30~21:00",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -309,7 +316,6 @@ Table_ActivityStepShow = {
   },
   [5370000] = {
     id = 5370000,
-    Trace_Title = "20:30~21:00",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -317,7 +323,6 @@ Table_ActivityStepShow = {
   },
   [5380000] = {
     id = 5380000,
-    Trace_Title = "20:30~21:00",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -325,7 +330,6 @@ Table_ActivityStepShow = {
   },
   [5390000] = {
     id = 5390000,
-    Trace_Title = "20:30~21:00",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -333,7 +337,6 @@ Table_ActivityStepShow = {
   },
   [5400000] = {
     id = 5400000,
-    Trace_Title = "20:30~21:00",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -341,7 +344,6 @@ Table_ActivityStepShow = {
   },
   [5410000] = {
     id = 5410000,
-    Trace_Title = "20:30~21:00",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -349,7 +351,6 @@ Table_ActivityStepShow = {
   },
   [5420000] = {
     id = 5420000,
-    Trace_Title = "20:30~21:00",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -357,7 +358,6 @@ Table_ActivityStepShow = {
   },
   [5430000] = {
     id = 5430000,
-    Trace_Title = "20:30~21:00",
     TraceId = 5042,
     HideMapName = 1,
     Trace_Progress = Table_ActivityStepShow_t.Trace_Progress[2],
@@ -855,7 +855,7 @@ local cell_mt = {
     Trace_Icon = "celebration_icon_01",
     Trace_Progress = _EmptyTable,
     Trace_Text = "##138412",
-    Trace_Title = "21:00~21:30",
+    Trace_Title = "20:30~21:00",
     UnShowMaps = _EmptyTable,
     id = 6080000
   }

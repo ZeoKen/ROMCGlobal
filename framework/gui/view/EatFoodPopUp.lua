@@ -185,6 +185,9 @@ function EatFoodPopUp:OnEnter()
 end
 
 function EatFoodPopUp:OnExit()
+  if self.foodCell then
+    self.foodCell:OnDestroy()
+  end
   EatFoodPopUp.super.OnExit(self)
   self.editPowerBord:SetActive(false)
 end

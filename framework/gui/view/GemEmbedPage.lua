@@ -111,6 +111,9 @@ function GemEmbedPage:DoChange()
 end
 
 function GemEmbedPage:OnExit()
+  if self.gemTipCellForCompare then
+    self.gemTipCellForCompare:OnDestroy()
+  end
   PictureManager.Instance:UnLoadUI(_TexName, self.texture)
   PictureManager.Instance:UnLoadUI(_BgTexture, self.bgTexture)
   GemEmbedPage.super.OnExit(self)

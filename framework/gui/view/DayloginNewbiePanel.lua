@@ -22,14 +22,20 @@ local returnTextureNameMap = {
 local picIns = PictureManager.Instance
 
 function DayloginNewbiePanel.CanShow()
-  local activeSignIn = DailyLoginProxy.Instance.activeSignIn
-  for k, v in pairs(activeSignIn) do
-    if not v.novicetype then
-      xdlog("纪念签到")
-      return k
+  local hotPotIcon = DailyLoginProxy.Instance.hotPotIcon
+  local validActivityIDs = {}
+  if hotPotIcon then
+    for k, v in pairs(hotPotIcon) do
+      if v.redtip and GameConfig.FestivalSignin[k] and (not GameConfig.FestivalSignin[k].Newbie or GameConfig.FestivalSignin[k].Newbie ~= 1) then
+        table.insert(validActivityIDs, k)
+      end
     end
   end
-  return false
+  if 0 < #validActivityIDs then
+    return validActivityIDs
+  end
+  redlog("没有可以签到的活动")
+  return nil
 end
 
 function DayloginNewbiePanel:FindObjs()
@@ -47,7 +53,7 @@ function DayloginNewbiePanel:FindObjs()
 end
 
 function DayloginNewbiePanel:InitData()
-  DayloginAnniversaryPanel.super.InitData(self)
+  DayloginNewbiePanel.super.InitData(self)
   self:ShowRewardPreview()
 end
 

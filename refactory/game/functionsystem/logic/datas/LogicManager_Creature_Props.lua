@@ -17,6 +17,7 @@ function LogicManager_Creature_Props:ctor()
   self:AddDirtyCall("FearRun", self.UpdateFearRun)
   self:AddDirtyCall("NoAct", self.UpdateNoAct)
   self:AddDirtyCall("Freeze", self.UpdateFreeze)
+  self:AddDirtyCall("DeepFreeze", self.UpdateDeepFreeze)
   self:AddUpdateCall("AtkSpd", self.UpdateAtkSpd)
   self:AddUpdateCall("MoveSpd", self.UpdateMoveSpd)
   self:AddUpdateCall("NoStiff", self.UpdateNoStiff)
@@ -161,6 +162,10 @@ end
 
 function LogicManager_Creature_Props:UpdateFreeze(ncreature, propName, oldValue, p)
   ncreature:Logic_Freeze(0 < p:GetValue())
+end
+
+function LogicManager_Creature_Props:UpdateDeepFreeze(ncreature, propName, oldValue, p)
+  ncreature:Logic_DeepFreeze(0 < p:GetValue())
 end
 
 function LogicManager_Creature_Props:UpdateAttrEffect(ncreature, propName, oldValue, p)

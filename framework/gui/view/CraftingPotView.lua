@@ -371,7 +371,7 @@ function CraftingPotView:GetTargetMat()
     local materials = self.slotMaterials[self.selectedSlotIndex]
     for i = 1, #materials do
       local material = materials[i]
-      local itemData = ItemData.new(nil, material.itemid)
+      local itemData = ItemData.new(material.itemid, material.itemid)
       result[#result + 1] = itemData
     end
     return result

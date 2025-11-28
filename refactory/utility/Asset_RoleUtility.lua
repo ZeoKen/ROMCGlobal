@@ -278,8 +278,17 @@ function Asset_RoleUtility.SetFashionPreviewParts(id, class, sex, hideOther, par
       parts[partIndex.LeftWeapon] = 0
     end
     parts[partIndex.RightWeapon] = id
-  elseif class == 685 and HeinrichWeaponType[equiptype] and parts[partIndex.LeftWeapon] == 0 then
-    parts[partIndex.LeftWeapon] = id
+  elseif class == 685 and HeinrichWeaponType[equiptype] then
+    if parts[partIndex.LeftWeapon] == 0 then
+      parts[partIndex.LeftWeapon] = id
+    end
+  elseif class == 805 then
+    if parts[partIndex.LeftWeapon] == 0 then
+      parts[partIndex.LeftWeapon] = 40720
+    end
+    if parts[partIndex.RightWeapon] == 0 then
+      parts[partIndex.RightWeapon] = id
+    end
   end
 end
 

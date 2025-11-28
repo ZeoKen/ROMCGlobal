@@ -838,6 +838,111 @@ Table_PrestigeUnlockCondition = {
     TargetNum = 37500,
     Param = _EmptyTable,
     Desc = "##44702758"
+  },
+  [601] = {
+    id = 601,
+    Condition = "prestige",
+    TargetNum = 500,
+    Param = _EmptyTable,
+    Desc = "##44713785"
+  },
+  [602] = {
+    id = 602,
+    Condition = "prestige",
+    TargetNum = 1000,
+    Param = _EmptyTable,
+    Desc = "##44713786"
+  },
+  [603] = {
+    id = 603,
+    Condition = "prestige",
+    TargetNum = 2000,
+    Param = _EmptyTable,
+    Desc = "##44713787"
+  },
+  [604] = {
+    id = 604,
+    Condition = "prestige",
+    TargetNum = 3500,
+    Param = _EmptyTable,
+    Desc = "##44713788"
+  },
+  [605] = {
+    id = 605,
+    Condition = "prestige",
+    TargetNum = 5500,
+    Param = _EmptyTable,
+    Desc = "##44713789"
+  },
+  [606] = {
+    id = 606,
+    Condition = "prestige",
+    TargetNum = 7500,
+    Param = _EmptyTable,
+    Desc = "##44713790"
+  },
+  [607] = {
+    id = 607,
+    Condition = "prestige",
+    TargetNum = 10000,
+    Param = _EmptyTable,
+    Desc = "##44713791"
+  },
+  [608] = {
+    id = 608,
+    Condition = "prestige",
+    TargetNum = 12500,
+    Param = _EmptyTable,
+    Desc = "##44713792"
+  },
+  [609] = {
+    id = 609,
+    Condition = "prestige",
+    TargetNum = 15500,
+    Param = _EmptyTable,
+    Desc = "##44713793"
+  },
+  [610] = {
+    id = 610,
+    Condition = "prestige",
+    TargetNum = 18500,
+    Param = _EmptyTable,
+    Desc = "##44713794"
+  },
+  [611] = {
+    id = 611,
+    Condition = "prestige",
+    TargetNum = 21500,
+    Param = _EmptyTable,
+    Desc = "##44713795"
+  },
+  [612] = {
+    id = 612,
+    Condition = "prestige",
+    TargetNum = 25500,
+    Param = _EmptyTable,
+    Desc = "##44713796"
+  },
+  [613] = {
+    id = 613,
+    Condition = "prestige",
+    TargetNum = 29500,
+    Param = _EmptyTable,
+    Desc = "##44713797"
+  },
+  [614] = {
+    id = 614,
+    Condition = "prestige",
+    TargetNum = 33500,
+    Param = _EmptyTable,
+    Desc = "##44713798"
+  },
+  [615] = {
+    id = 615,
+    Condition = "prestige",
+    TargetNum = 37500,
+    Param = _EmptyTable,
+    Desc = "##44713799"
   }
 }
 Table_PrestigeUnlockCondition_fields = {

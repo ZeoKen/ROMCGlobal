@@ -959,6 +959,10 @@ Table_HeadImage = {
     id = 56893,
     Picture = "n_lostdragon_003"
   },
+  [56894] = {
+    id = 56894,
+    Picture = "n_dragonblackflame"
+  },
   [56901] = {id = 56901, Picture = "Red_Plant"},
   [56902] = {
     id = 56902,
@@ -1150,6 +1154,34 @@ Table_HeadImage = {
   [3012589] = {
     id = 3012589,
     Picture = "head_3012589"
+  },
+  [3012764] = {
+    id = 3012764,
+    Picture = "head_3012764"
+  },
+  [3012765] = {
+    id = 3012765,
+    Picture = "head_3012765"
+  },
+  [3012766] = {
+    id = 3012766,
+    Picture = "head_3012766"
+  },
+  [3012852] = {
+    id = 3012852,
+    Picture = "item_3012852"
+  },
+  [3012853] = {
+    id = 3012853,
+    Picture = "item_3012853"
+  },
+  [3012854] = {
+    id = 3012854,
+    Picture = "item_3012854"
+  },
+  [3012855] = {
+    id = 3012855,
+    Picture = "item_3012855"
   },
   [3033924] = {
     id = 3033924,

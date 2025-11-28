@@ -72,7 +72,7 @@ function AI_Base:_Idle(time, deltaTime, creature)
     return false
   end
   local creatureData = creature.data
-  if creatureData:Freeze() or creatureData:NoAct() then
+  if creatureData:Freeze() or creatureData:NoAct() or creatureData:DeepFreeze() then
     return false
   end
   if not self.idle then

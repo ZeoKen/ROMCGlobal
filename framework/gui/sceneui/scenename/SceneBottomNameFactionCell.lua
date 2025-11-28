@@ -46,6 +46,7 @@ function SceneBottomNameFactionCell:DoConstruct(asArray, args)
   self:initNameView()
   self:initFactionView()
   self:initCampView()
+  self:initRecallPart()
   self:SetName(creature)
   self:SetFaction(creature)
   self:ChangeNameFactionForServant(creature)
@@ -101,6 +102,9 @@ function SceneBottomNameFactionCell:Deconstruct(asArray)
   self.factionTable = nil
   self.factionAnchor = nil
   self.uiname = nil
+  self.extraIconRoot = nil
+  self.recallIcon = nil
+  self.campIcon = nil
   self.gameObject = nil
   self.transform = nil
   self.factionInfoRectTrans = nil
@@ -133,8 +137,31 @@ function SceneBottomNameFactionCell:initNameView()
 end
 
 function SceneBottomNameFactionCell:initCampView()
+  self.extraIconRoot = self:FindGO("ExtraIcon")
   self.campIcon = self:FindComponent("campIcon", Image)
   self:Hide(self.campIcon)
+end
+
+function SceneBottomNameFactionCell:updateExtraIconRootPosition(hasFactionIcon)
+  if self:ObjIsNil(self.extraIconRoot) then
+    return
+  end
+  local extraIconRootRectTrans = self.extraIconRoot:GetComponent(RectTransform)
+  if self:ObjIsNil(extraIconRootRectTrans) then
+    return
+  end
+  local targetPos
+  if hasFactionIcon then
+    targetPos = LuaGeometry.GetTempVector2(-56, 2)
+  else
+    targetPos = LuaGeometry.GetTempVector2(-25, 10)
+  end
+  extraIconRootRectTrans.anchoredPosition = targetPos
+end
+
+function SceneBottomNameFactionCell:initRecallPart()
+  self.recallIcon = self:FindGO("returnIcon")
+  self:Hide(self.recallIcon)
 end
 
 function SceneBottomNameFactionCell:SetName(creature)
@@ -151,6 +178,7 @@ function SceneBottomNameFactionCell:SetName(creature)
   local isPetEnemy = creatureType == Creature_Type.Pet and camp == RoleDefines_Camp.ENEMY
   local color = self.uiname.color
   self:Hide(self.campIcon)
+  self:Hide(self.recallIcon)
   if Game.MapManager:IsPVPMode_3Teams() then
     local creatureId = creatureType == Creature_Type.Pet and creature:GetOwner() or creature.data.id
     local tripleUser = PvpProxy.Instance:GetTripleUserInfo(creatureId)
@@ -214,6 +242,9 @@ function SceneBottomNameFactionCell:SetName(creature)
     self.uiname.text = FunctionAnonymous.Me():GetAnonymousName(pro)
   else
     self.uiname.text = name
+  end
+  if creatureData:IsReturnPlayer() then
+    self:Show(self.recallIcon)
   end
 end
 
@@ -380,9 +411,11 @@ function SceneBottomNameFactionCell:SetFaction(creature)
         self:Show(self.factionIcon)
       end
     end
+    self:updateExtraIconRootPosition(true)
   else
     self:Hide(self.factionIcon)
     self:Hide(self.factionIcon_)
+    self:updateExtraIconRootPosition(false)
   end
 end
 

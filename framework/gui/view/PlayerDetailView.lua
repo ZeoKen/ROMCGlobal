@@ -827,13 +827,15 @@ function PlayerDetailView:GetTotalEquipMemoryLevels()
   local memoryLevels = {}
   for _pos, _itemData in pairs(self.playerEquipMemoryDatas) do
     local _memoryData = _itemData.equipMemoryData
-    local _attrs = _memoryData and _memoryData.memoryAttrs
+    local _attrs = _memoryData and _memoryData.memoryAttrs or {}
+    local stage = _memoryData and _memoryData.excess_lv or 0
     for i = 1, #_attrs do
       local attrid = _attrs[i].id
-      if not memoryLevels[attrid] then
-        memoryLevels[attrid] = 1
-      else
-        memoryLevels[attrid] = memoryLevels[attrid] + 1
+      if attrid and attrid ~= 0 then
+        if not memoryLevels[attrid] then
+          memoryLevels[attrid] = {}
+        end
+        memoryLevels[attrid][stage] = (memoryLevels[attrid][stage] or 0) + 1
       end
     end
   end

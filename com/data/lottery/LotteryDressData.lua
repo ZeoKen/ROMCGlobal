@@ -5,7 +5,8 @@ local _genderField = {
 LotteryDressType = {
   Magic = 1,
   Head = 2,
-  Mix = 3
+  Mix = 3,
+  SpaceTime = 4
 }
 LotteryDressData = class("LotteryDressData")
 
@@ -14,7 +15,7 @@ function LotteryDressData.CheckValid(lotterytype, headwearType)
   if not _filter_config then
     return false
   end
-  local _type_field = LotteryProxy.TypeField(lotterytype)
+  local _type_field = LotteryProxy.DressTypeFieldName(lotterytype)
   if not _type_field then
     return false
   end

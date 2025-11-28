@@ -2594,6 +2594,15 @@ function ServiceRecordTradeAutoProxy:CallTakeLogCmd(log, success)
       end
       msg.log.itemdata.memory.lv = log.itemdata.memory.lv
     end
+    if log.itemdata.memory ~= nil and log.itemdata.memory.excess_lv ~= nil then
+      if msg.log.itemdata == nil then
+        msg.log.itemdata = {}
+      end
+      if msg.log.itemdata.memory == nil then
+        msg.log.itemdata.memory = {}
+      end
+      msg.log.itemdata.memory.excess_lv = log.itemdata.memory.excess_lv
+    end
     if log ~= nil and log.itemdata.memory.effects ~= nil then
       if msg.log.itemdata.memory == nil then
         msg.log.itemdata.memory = {}
@@ -4710,6 +4719,15 @@ function ServiceRecordTradeAutoProxy:CallTakeLogCmd(log, success)
         msgParam.log.itemdata.memory = {}
       end
       msgParam.log.itemdata.memory.lv = log.itemdata.memory.lv
+    end
+    if log.itemdata.memory ~= nil and log.itemdata.memory.excess_lv ~= nil then
+      if msgParam.log.itemdata == nil then
+        msgParam.log.itemdata = {}
+      end
+      if msgParam.log.itemdata.memory == nil then
+        msgParam.log.itemdata.memory = {}
+      end
+      msgParam.log.itemdata.memory.excess_lv = log.itemdata.memory.excess_lv
     end
     if log ~= nil and log.itemdata.memory.effects ~= nil then
       if msgParam.log.itemdata.memory == nil then
@@ -6834,6 +6852,15 @@ function ServiceRecordTradeAutoProxy:CallAddNewLog(charid, log, total_page_count
       end
       msg.log.itemdata.memory.lv = log.itemdata.memory.lv
     end
+    if log.itemdata.memory ~= nil and log.itemdata.memory.excess_lv ~= nil then
+      if msg.log.itemdata == nil then
+        msg.log.itemdata = {}
+      end
+      if msg.log.itemdata.memory == nil then
+        msg.log.itemdata.memory = {}
+      end
+      msg.log.itemdata.memory.excess_lv = log.itemdata.memory.excess_lv
+    end
     if log ~= nil and log.itemdata.memory.effects ~= nil then
       if msg.log.itemdata.memory == nil then
         msg.log.itemdata.memory = {}
@@ -8954,6 +8981,15 @@ function ServiceRecordTradeAutoProxy:CallAddNewLog(charid, log, total_page_count
       end
       msgParam.log.itemdata.memory.lv = log.itemdata.memory.lv
     end
+    if log.itemdata.memory ~= nil and log.itemdata.memory.excess_lv ~= nil then
+      if msgParam.log.itemdata == nil then
+        msgParam.log.itemdata = {}
+      end
+      if msgParam.log.itemdata.memory == nil then
+        msgParam.log.itemdata.memory = {}
+      end
+      msgParam.log.itemdata.memory.excess_lv = log.itemdata.memory.excess_lv
+    end
     if log ~= nil and log.itemdata.memory.effects ~= nil then
       if msgParam.log.itemdata.memory == nil then
         msgParam.log.itemdata.memory = {}
@@ -10943,6 +10979,15 @@ function ServiceRecordTradeAutoProxy:CallReqServerPriceRecordTradeCmd(charid, it
       end
       msg.itemData.memory.lv = itemData.memory.lv
     end
+    if itemData.memory ~= nil and itemData.memory.excess_lv ~= nil then
+      if msg.itemData == nil then
+        msg.itemData = {}
+      end
+      if msg.itemData.memory == nil then
+        msg.itemData.memory = {}
+      end
+      msg.itemData.memory.excess_lv = itemData.memory.excess_lv
+    end
     if itemData ~= nil and itemData.memory.effects ~= nil then
       if msg.itemData.memory == nil then
         msg.itemData.memory = {}
@@ -12763,6 +12808,15 @@ function ServiceRecordTradeAutoProxy:CallReqServerPriceRecordTradeCmd(charid, it
         msgParam.itemData.memory = {}
       end
       msgParam.itemData.memory.lv = itemData.memory.lv
+    end
+    if itemData.memory ~= nil and itemData.memory.excess_lv ~= nil then
+      if msgParam.itemData == nil then
+        msgParam.itemData = {}
+      end
+      if msgParam.itemData.memory == nil then
+        msgParam.itemData.memory = {}
+      end
+      msgParam.itemData.memory.excess_lv = itemData.memory.excess_lv
     end
     if itemData ~= nil and itemData.memory.effects ~= nil then
       if msgParam.itemData.memory == nil then
@@ -14656,6 +14710,15 @@ function ServiceRecordTradeAutoProxy:CallBuyItemRecordTradeCmd(item_info, charid
         msg.item_info.item_data.memory = {}
       end
       msg.item_info.item_data.memory.lv = item_info.item_data.memory.lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.excess_lv ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.memory == nil then
+        msg.item_info.item_data.memory = {}
+      end
+      msg.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msg.item_info.item_data.memory == nil then
@@ -16615,6 +16678,15 @@ function ServiceRecordTradeAutoProxy:CallBuyItemRecordTradeCmd(item_info, charid
         msgParam.item_info.item_data.memory = {}
       end
       msgParam.item_info.item_data.memory.lv = item_info.item_data.memory.lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.excess_lv ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.memory == nil then
+        msgParam.item_info.item_data.memory = {}
+      end
+      msgParam.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msgParam.item_info.item_data.memory == nil then
@@ -18578,6 +18650,15 @@ function ServiceRecordTradeAutoProxy:CallSellItemRecordTradeCmd(item_info, chari
       end
       msg.item_info.item_data.memory.lv = item_info.item_data.memory.lv
     end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.excess_lv ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.memory == nil then
+        msg.item_info.item_data.memory = {}
+      end
+      msg.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
+    end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msg.item_info.item_data.memory == nil then
         msg.item_info.item_data.memory = {}
@@ -20536,6 +20617,15 @@ function ServiceRecordTradeAutoProxy:CallSellItemRecordTradeCmd(item_info, chari
         msgParam.item_info.item_data.memory = {}
       end
       msgParam.item_info.item_data.memory.lv = item_info.item_data.memory.lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.excess_lv ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.memory == nil then
+        msgParam.item_info.item_data.memory = {}
+      end
+      msgParam.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msgParam.item_info.item_data.memory == nil then
@@ -22498,6 +22588,15 @@ function ServiceRecordTradeAutoProxy:CallCancelItemRecordTrade(item_info, charid
         msg.item_info.item_data.memory = {}
       end
       msg.item_info.item_data.memory.lv = item_info.item_data.memory.lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.excess_lv ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.memory == nil then
+        msg.item_info.item_data.memory = {}
+      end
+      msg.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msg.item_info.item_data.memory == nil then
@@ -24466,6 +24565,15 @@ function ServiceRecordTradeAutoProxy:CallCancelItemRecordTrade(item_info, charid
         msgParam.item_info.item_data.memory = {}
       end
       msgParam.item_info.item_data.memory.lv = item_info.item_data.memory.lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.excess_lv ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.memory == nil then
+        msgParam.item_info.item_data.memory = {}
+      end
+      msgParam.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msgParam.item_info.item_data.memory == nil then
@@ -26438,6 +26546,15 @@ function ServiceRecordTradeAutoProxy:CallResellPendingRecordTrade(item_info, cha
       end
       msg.item_info.item_data.memory.lv = item_info.item_data.memory.lv
     end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.excess_lv ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.memory == nil then
+        msg.item_info.item_data.memory = {}
+      end
+      msg.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
+    end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msg.item_info.item_data.memory == nil then
         msg.item_info.item_data.memory = {}
@@ -28402,6 +28519,15 @@ function ServiceRecordTradeAutoProxy:CallResellPendingRecordTrade(item_info, cha
         msgParam.item_info.item_data.memory = {}
       end
       msgParam.item_info.item_data.memory.lv = item_info.item_data.memory.lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.excess_lv ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.memory == nil then
+        msgParam.item_info.item_data.memory = {}
+      end
+      msgParam.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msgParam.item_info.item_data.memory == nil then
@@ -30585,6 +30711,15 @@ function ServiceRecordTradeAutoProxy:CallReqGiveItemInfoCmd(id, iteminfo)
       end
       msg.iteminfo.itemdata.memory.lv = iteminfo.itemdata.memory.lv
     end
+    if iteminfo.itemdata.memory ~= nil and iteminfo.itemdata.memory.excess_lv ~= nil then
+      if msg.iteminfo.itemdata == nil then
+        msg.iteminfo.itemdata = {}
+      end
+      if msg.iteminfo.itemdata.memory == nil then
+        msg.iteminfo.itemdata.memory = {}
+      end
+      msg.iteminfo.itemdata.memory.excess_lv = iteminfo.itemdata.memory.excess_lv
+    end
     if iteminfo ~= nil and iteminfo.itemdata.memory.effects ~= nil then
       if msg.iteminfo.itemdata.memory == nil then
         msg.iteminfo.itemdata.memory = {}
@@ -32501,6 +32636,15 @@ function ServiceRecordTradeAutoProxy:CallReqGiveItemInfoCmd(id, iteminfo)
         msgParam.iteminfo.itemdata.memory = {}
       end
       msgParam.iteminfo.itemdata.memory.lv = iteminfo.itemdata.memory.lv
+    end
+    if iteminfo.itemdata.memory ~= nil and iteminfo.itemdata.memory.excess_lv ~= nil then
+      if msgParam.iteminfo.itemdata == nil then
+        msgParam.iteminfo.itemdata = {}
+      end
+      if msgParam.iteminfo.itemdata.memory == nil then
+        msgParam.iteminfo.itemdata.memory = {}
+      end
+      msgParam.iteminfo.itemdata.memory.excess_lv = iteminfo.itemdata.memory.excess_lv
     end
     if iteminfo ~= nil and iteminfo.itemdata.memory.effects ~= nil then
       if msgParam.iteminfo.itemdata.memory == nil then
@@ -34869,6 +35013,15 @@ function ServiceRecordTradeAutoProxy:CallUpdateOrderTradeCmd(charid, info, type)
       end
       msg.info.item_data.memory.lv = info.item_data.memory.lv
     end
+    if info.item_data.memory ~= nil and info.item_data.memory.excess_lv ~= nil then
+      if msg.info.item_data == nil then
+        msg.info.item_data = {}
+      end
+      if msg.info.item_data.memory == nil then
+        msg.info.item_data.memory = {}
+      end
+      msg.info.item_data.memory.excess_lv = info.item_data.memory.excess_lv
+    end
     if info ~= nil and info.item_data.memory.effects ~= nil then
       if msg.info.item_data.memory == nil then
         msg.info.item_data.memory = {}
@@ -36824,6 +36977,15 @@ function ServiceRecordTradeAutoProxy:CallUpdateOrderTradeCmd(charid, info, type)
         msgParam.info.item_data.memory = {}
       end
       msgParam.info.item_data.memory.lv = info.item_data.memory.lv
+    end
+    if info.item_data.memory ~= nil and info.item_data.memory.excess_lv ~= nil then
+      if msgParam.info.item_data == nil then
+        msgParam.info.item_data = {}
+      end
+      if msgParam.info.item_data.memory == nil then
+        msgParam.info.item_data.memory = {}
+      end
+      msgParam.info.item_data.memory.excess_lv = info.item_data.memory.excess_lv
     end
     if info ~= nil and info.item_data.memory.effects ~= nil then
       if msgParam.info.item_data.memory == nil then

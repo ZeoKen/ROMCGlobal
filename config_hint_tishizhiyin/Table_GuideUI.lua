@@ -280,6 +280,60 @@ Table_GuideUI = {
       type = {1, 2}
     },
     Sysmsg = 43463
+  },
+  [32] = {
+    id = 32,
+    GroupID = 10,
+    MainTitle = "##44702759",
+    Text = "##2857142",
+    Desc = "##44702760",
+    Icon = "DispatchComplete",
+    Shortcutpower = {8369},
+    complete_con = "WorldQuest",
+    Params = {mapid = 154},
+    Sysmsg = 43462
+  },
+  [33] = {
+    id = 33,
+    GroupID = 10,
+    MainTitle = "##44702759",
+    Text = "##2857145",
+    Desc = "##42635952",
+    Icon = "mvp_dead_100",
+    Shortcutpower = {8359},
+    complete_con = "WildMvp",
+    Params = {
+      mapid = 154,
+      type = {1, 2}
+    },
+    Sysmsg = 43463
+  },
+  [34] = {
+    id = 34,
+    GroupID = 11,
+    MainTitle = "##44713800",
+    Text = "##2857142",
+    Desc = "##44713801",
+    Icon = "DispatchComplete",
+    Shortcutpower = {8375},
+    complete_con = "WorldQuest",
+    Params = {mapid = 154},
+    Sysmsg = 43462
+  },
+  [35] = {
+    id = 35,
+    GroupID = 11,
+    MainTitle = "##44713800",
+    Text = "##2857145",
+    Desc = "##42635952",
+    Icon = "mvp_dead_100",
+    Shortcutpower = {8359},
+    complete_con = "WildMvp",
+    Params = {
+      mapid = 154,
+      type = {1, 2}
+    },
+    Sysmsg = 43463
   }
 }
 Table_GuideUI_fields = {

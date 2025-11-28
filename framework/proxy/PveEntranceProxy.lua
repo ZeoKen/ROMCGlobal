@@ -18,7 +18,8 @@ PveRaidType = {
   MemoryPalace = FuBenCmd_pb.ERAIDTYPE_MEMORY_RAID or 80,
   Astral = FuBenCmd_pb.ERAIDTYPE_ASTRAL or 79,
   MemoryRaid = FuBenCmd_pb.ERAIDTYPE_MEMORY_RAID or 80,
-  SpaceTimeIllusion = FuBenCmd_pb.ERAIDTYPE_SPACETIME_ILLUSION or 81
+  SpaceTimeIllusion = FuBenCmd_pb.ERAIDTYPE_SPACETIME_ILLUSION or 81,
+  FairyTale = FuBenCmd_pb.ERAIDTYPE_FAIRY_TALE or 82
 }
 RaidType2AERewardMode = {
   [PveRaidType.Crack] = ActivityEvent_pb.EAEREWARDMODE_SEAL,
@@ -126,6 +127,7 @@ function PveEntranceProxy:Init()
   self.catalogAll_RoadOfHero = {}
   self.catalogAll_Astral = {}
   self.catalogAll_Memory = {}
+  self.catalogAll_FairyTale = {}
   self.catalogMap = {}
   self.catalogMap_raid = {}
   self.catalogMap_crack = {}
@@ -134,6 +136,7 @@ function PveEntranceProxy:Init()
   self.catalogMap_Astral = {}
   self.catalogMap_Memory = {}
   self.catalogMap_SpaceTimeIllusion = {}
+  self.catalogMap_FairyTale = {}
   self.passInfoMap = {}
   self.targetMap = {}
   self.dropMap = {}
@@ -157,6 +160,7 @@ function PveEntranceProxy:TryResetCatalogAll()
   _ArrayClear(self.catalogAll_RoadOfHero)
   _ArrayClear(self.catalogAll_Astral)
   _ArrayClear(self.catalogAll_Memory)
+  _ArrayClear(self.catalogAll_FairyTale)
   _TableClear(self.catalogMap_raid)
   self:SetAllCatalogByRaidMap()
   _TableClear(self.dirtyRaidForbiddenMap)
@@ -187,6 +191,10 @@ function PveEntranceProxy:SetAllCatalogByRaidMap()
       _ArrayPushBack(self.catalogAll_Astral, firstPveData)
     elseif firstPveData.staticEntranceData:IsMemoryRaid() then
       _ArrayPushBack(self.catalogAll_Memory, firstPveData)
+    elseif firstPveData.staticEntranceData:IsFairyTale() then
+      if not firstPveData:Forbidden() then
+        _ArrayPushBack(self.catalogAll_FairyTale, firstPveData)
+      end
     else
       local catalogs = firstPveData.staticEntranceData.staticData.Catalog
       for i = 1, #catalogs do
@@ -290,6 +298,20 @@ function PveEntranceProxy:PreprocessMemoryRaidEntrance()
   end
 end
 
+function PveEntranceProxy:PreprocessFairyTaleEntrance()
+  _TableClear(self.catalogMap_FairyTale)
+  self.fairyTaleFirstPveData = self.catalogAll_FairyTale[1]
+  if self.fairyTaleFirstPveData then
+    local catalogs = self.fairyTaleFirstPveData.staticEntranceData.staticData.Catalog
+    for i = 1, #catalogs do
+      local catalogData = self.catalogMap_FairyTale[catalogs[i]]
+      catalogData = catalogData or {}
+      catalogData[#catalogData + 1] = self.fairyTaleFirstPveData
+      self.catalogMap_FairyTale[catalogs[i]] = catalogData
+    end
+  end
+end
+
 function PveEntranceProxy:_setCatalogMap(targetMap)
   for catalog, list in pairs(targetMap) do
     local catalogData = self.catalogMap[catalog]
@@ -310,6 +332,7 @@ function PveEntranceProxy:SetCatalogMap()
   self:_setCatalogMap(self.catalogMap_Astral)
   self:_setCatalogMap(self.catalogMap_Memory)
   self:_setCatalogMap(self.catalogMap_SpaceTimeIllusion)
+  self:_setCatalogMap(self.catalogMap_FairyTale)
 end
 
 function PveEntranceProxy:SetCatalogAll()
@@ -323,6 +346,7 @@ function PveEntranceProxy:SetCatalogAll()
   _ArrayPushBack(self.catalogAll, self.astralFirstPveData)
   _ArrayPushBack(self.catalogAll, self.memoryFirstPveData)
   _ArrayPushBack(self.catalogAll, self.spaceTimeIllusionFirstPveData)
+  _ArrayPushBack(self.catalogAll, self.fairyTaleFirstPveData)
 end
 
 function PveEntranceProxy:GetCatalogAll()
@@ -411,6 +435,10 @@ function PveEntranceProxy:GetAllMemoryRaidData()
   return self.catalogAll_Memory
 end
 
+function PveEntranceProxy:GetAllFairyTaleData()
+  return self.catalogAll_FairyTale
+end
+
 function PveEntranceProxy:StaticSortEntrance()
   table.sort(self.catalogAll_raid, _SortFunc)
   table.sort(self.catalogAll_crack, _SortFunc)
@@ -419,6 +447,7 @@ function PveEntranceProxy:StaticSortEntrance()
   table.sort(self.catalogAll_RoadOfHero, _SortFunc)
   table.sort(self.catalogAll_Astral, _SortFunc)
   table.sort(self.catalogAll_Memory, _SortFunc)
+  table.sort(self.catalogAll_FairyTale, _SortFunc)
 end
 
 function PveEntranceProxy:SortEntrance()
@@ -536,6 +565,7 @@ function PveEntranceProxy:HandleCombinePveData()
   self:PreprocessHeroRoadEntrance()
   self:PreprocessAstralEntrance()
   self:PreprocessMemoryRaidEntrance()
+  self:PreprocessFairyTaleEntrance()
   self:SetCatalogAll()
   self:SetCatalogMap()
   self:SortEntrance()
@@ -757,6 +787,10 @@ end
 
 function PveEntranceProxy:GetCurMemoryFirstPveData()
   return self.memoryFirstPveData
+end
+
+function PveEntranceProxy:GetCurFairyTaleFirstPveData()
+  return self.fairyTaleFirstPveData
 end
 
 function PveEntranceProxy:HandleSyncPveRaidAchieveFubenCmd(server_data)

@@ -242,6 +242,36 @@ Table_UserEffectInfo = {
     VideoPath = "cfx_GVG_win_03_04_prf.mp4",
     SoundEffectPath = "Common/sfx_3v3v3_award_defeat_firework",
     Item = 762
+  },
+  [28] = {
+    id = 28,
+    Type = 2,
+    EffectPath = {
+      "Common/cfx_K16_PVP_win_01_prf"
+    },
+    VideoPath = "6V6S2_Kill01.mp4",
+    SoundEffectPath = "UI/UI_6V6_Defeat",
+    Item = 704
+  },
+  [29] = {
+    id = 29,
+    Type = 2,
+    EffectPath = {
+      "Common/cfx_K16_PVP_win_02_prf"
+    },
+    VideoPath = "6V6S2_Kill02.mp4",
+    SoundEffectPath = "UI/UI_6V6_Defeat",
+    Item = 705
+  },
+  [30] = {
+    id = 30,
+    Type = 2,
+    EffectPath = {
+      "Common/cfx_K16_PVP_win_03_prf"
+    },
+    VideoPath = "6V6S2_Kill03.mp4",
+    SoundEffectPath = "UI/UI_6V6_Defeat",
+    Item = 706
   }
 }
 Table_UserEffectInfo_fields = {

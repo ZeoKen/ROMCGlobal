@@ -4071,12 +4071,12 @@ Table_Assesories = {
   },
   [48704] = {
     id = 48704,
-    Back = "0",
+    Back = "Cross_face_48704_back",
     Front = "Cross_face_48704"
   },
   [48705] = {
     id = 48705,
-    Back = "0",
+    Back = "Steel_mask_48705_back",
     Front = "Steel_mask_48705"
   },
   [48706] = {
@@ -6289,6 +6289,16 @@ Table_Assesories = {
     Back = "h_redflame_49735_back",
     Front = "h_redflame_49735"
   },
+  [49736] = {
+    id = 49736,
+    Back = "h_dragonhelmet_49736_back",
+    Front = "h_dragonhelmet_49736"
+  },
+  [49738] = {
+    id = 49738,
+    Back = "h_stonerealm_49738back",
+    Front = "h_stonerealm_49738"
+  },
   [49739] = {
     id = 49739,
     Back = "h_redflame_a_49739_back",
@@ -6309,10 +6319,10 @@ Table_Assesories = {
     Back = "h_resentment_49747_back",
     Front = "h_resentment_49747"
   },
-  [149747] = {
-    id = 149747,
-    Back = "h_resentment_49747_back",
-    Front = "h_resentment_49747"
+  [49748] = {
+    id = 49748,
+    Back = "h_oscar_001_49748_back",
+    Front = "h_oscar_001_49748"
   },
   [51720] = {
     id = 51720,
@@ -7831,7 +7841,7 @@ Table_Assesories = {
   },
   [145856] = {
     id = 145856,
-    Back = "0",
+    Back = "Minstrel_Hat_45856_back",
     Front = "Minstrel_Hat_45856"
   },
   [145857] = {
@@ -8151,7 +8161,7 @@ Table_Assesories = {
   },
   [149006] = {
     id = 149006,
-    Back = "0",
+    Back = "Disir_head_49006_back",
     Front = "Disir_head_49006"
   },
   [149007] = {
@@ -8246,7 +8256,7 @@ Table_Assesories = {
   },
   [149090] = {
     id = 149090,
-    Back = "0",
+    Back = "Key_head_49090_back",
     Front = "Key_head_49090"
   },
   [149091] = {
@@ -8256,7 +8266,7 @@ Table_Assesories = {
   },
   [149102] = {
     id = 149102,
-    Back = "0",
+    Back = "Light_Knight_Cap_49102_back",
     Front = "Light_Knight_Cap_49102"
   },
   [149103] = {
@@ -8306,7 +8316,7 @@ Table_Assesories = {
   },
   [149141] = {
     id = 149141,
-    Back = "0",
+    Back = "Cover_head_49141_back",
     Front = "Cover_head_49141"
   },
   [149142] = {
@@ -8386,7 +8396,7 @@ Table_Assesories = {
   },
   [149157] = {
     id = 149157,
-    Back = "0",
+    Back = "Evilgod_crown_49157_back",
     Front = "Evilgod_crown_49157"
   },
   [149158] = {
@@ -9008,6 +9018,16 @@ Table_Assesories = {
     id = 149742,
     Back = "h_dragonegg_a_49742_back",
     Front = "h_dragonegg_a_49742"
+  },
+  [149747] = {
+    id = 149747,
+    Back = "h_resentment_49747_back",
+    Front = "h_resentment_49747"
+  },
+  [149749] = {
+    id = 149749,
+    Back = "h_dragonblackflame_001_49749_back",
+    Front = "h_dragonblackflame_001_49749"
   },
   [400064] = {
     id = 400064,
@@ -12113,6 +12133,11 @@ Table_Assesories = {
     id = 3003856,
     Back = "Disney_Citizen_Head5_F3_back",
     Front = "Disney_Citizen_Head5_F3"
+  },
+  [3003857] = {
+    id = 3003857,
+    Back = "Disney_Citizen_Head_M_3003857_back",
+    Front = "Disney_Citizen_Head_M_3003857"
   },
   [3003858] = {
     id = 3003858,
@@ -15649,6 +15674,11 @@ Table_Assesories = {
     Back = "m_dragonlollipop_3009451_back",
     Front = "m_dragonlollipop_3009451"
   },
+  [3009503] = {
+    id = 3009503,
+    Back = "h_doublepapa_3009503_back",
+    Front = "h_doublepapa_3009503"
+  },
   [3009552] = {
     id = 3009552,
     Back = "m_sweetkiss_3009552_back",
@@ -16564,6 +16594,41 @@ Table_Assesories = {
     Back = "h_bathat_3011753_back",
     Front = "h_bathat_3011753"
   },
+  [3011760] = {
+    id = 3011760,
+    Back = "f_appleeye_3011760_back",
+    Front = "f_appleeye_3011760"
+  },
+  [3011761] = {
+    id = 3011761,
+    Back = "h_applehat_3011761_back",
+    Front = "h_applehat_3011761"
+  },
+  [3011763] = {
+    id = 3011763,
+    Back = "m_biscuitcoffee_3011763_back",
+    Front = "m_biscuitcoffee_3011763"
+  },
+  [3011765] = {
+    id = 3011765,
+    Back = "m_chickenleg_3011765_back",
+    Front = "m_chickenleg_3011765"
+  },
+  [3011770] = {
+    id = 3011770,
+    Back = "h_penguinhat_3011770_back",
+    Front = "h_penguinhat_3011770"
+  },
+  [3011771] = {
+    id = 3011771,
+    Back = "f_sealpup_3011771_back",
+    Front = "f_sealpup_3011771"
+  },
+  [3011773] = {
+    id = 3011773,
+    Back = "m_icebowknot_3011773_back",
+    Front = "m_icebowknot_3011773"
+  },
   [3011790] = {
     id = 3011790,
     Back = "h_8thanniversary_001_3011790_back",
@@ -17104,6 +17169,106 @@ Table_Assesories = {
     Back = "m_swissroll_3012238_back",
     Front = "m_swissroll_3012238"
   },
+  [3012255] = {
+    id = 3012255,
+    Back = "h_specterrequiem_001_3012255_back",
+    Front = "h_specterrequiem_001_3012255"
+  },
+  [3012256] = {
+    id = 3012256,
+    Back = "h_specterrequiem_001a_3012256_back",
+    Front = "h_specterrequiem_001a_3012256"
+  },
+  [3012257] = {
+    id = 3012257,
+    Back = "h_specterrequiem_001b_3012257_back",
+    Front = "h_specterrequiem_001b_3012257"
+  },
+  [3012258] = {
+    id = 3012258,
+    Back = "h_specterrequiem_001c_3012258_back",
+    Front = "h_specterrequiem_001c_3012258"
+  },
+  [3012260] = {
+    id = 3012260,
+    Back = "h_specterrequiem_002_3012260_back",
+    Front = "h_specterrequiem_002_3012260"
+  },
+  [3012261] = {
+    id = 3012261,
+    Back = "h_specterrequiem_002a_3012261_back",
+    Front = "h_specterrequiem_002a_3012261"
+  },
+  [3012262] = {
+    id = 3012262,
+    Back = "h_specterrequiem_002b_3012262_back",
+    Front = "h_specterrequiem_002b_3012262"
+  },
+  [3012263] = {
+    id = 3012263,
+    Back = "h_specterrequiem_002c_3012263_back",
+    Front = "h_specterrequiem_002c_3012263"
+  },
+  [3012267] = {
+    id = 3012267,
+    Back = "f_cybergoggles_3012267_back",
+    Front = "f_cybergoggles_3012267"
+  },
+  [3012268] = {
+    id = 3012268,
+    Back = "m_cyberstop_3012268_back",
+    Front = "m_cyberstop_3012268"
+  },
+  [3012285] = {
+    id = 3012285,
+    Back = "h_synthoid_001_3012285_back",
+    Front = "h_synthoid_001_3012285"
+  },
+  [3012286] = {
+    id = 3012286,
+    Back = "h_synthoid_001a_3012286_back",
+    Front = "h_synthoid_001a_3012286"
+  },
+  [3012287] = {
+    id = 3012287,
+    Back = "h_synthoid_001b_3012287_back",
+    Front = "h_synthoid_001b_3012287"
+  },
+  [3012288] = {
+    id = 3012288,
+    Back = "h_synthoid_001c_3012288_back",
+    Front = "h_synthoid_001c_3012288"
+  },
+  [3012290] = {
+    id = 3012290,
+    Back = "h_synthoid_002_3012290_back",
+    Front = "h_synthoid_002_3012290"
+  },
+  [3012291] = {
+    id = 3012291,
+    Back = "h_synthoid_002a_3012291_back",
+    Front = "h_synthoid_002a_3012291"
+  },
+  [3012292] = {
+    id = 3012292,
+    Back = "h_synthoid_002b_3012292_back",
+    Front = "h_synthoid_002b_3012292"
+  },
+  [3012293] = {
+    id = 3012293,
+    Back = "h_synthoid_002c_3012293_back",
+    Front = "h_synthoid_002c_3012293"
+  },
+  [3012297] = {
+    id = 3012297,
+    Back = "f_cybergoggles_3012297_back",
+    Front = "f_cybergoggles_3012297"
+  },
+  [3012298] = {
+    id = 3012298,
+    Back = "m_cyberstop_3012298_back",
+    Front = "m_cyberstop_3012298"
+  },
   [3012300] = {
     id = 3012300,
     Back = "h_bigcathat_3012300_back",
@@ -17159,6 +17324,21 @@ Table_Assesories = {
     Back = "m_greenhillteacup_3012317_back",
     Front = "m_greenhillteacup_3012317"
   },
+  [3012320] = {
+    id = 3012320,
+    Back = "m_flowerlipstick_3012320_back",
+    Front = "m_flowerlipstick_3012320"
+  },
+  [3012321] = {
+    id = 3012321,
+    Back = "h_flowerhairband_3012321_back",
+    Front = "h_flowerhairband_3012321"
+  },
+  [3012323] = {
+    id = 3012323,
+    Back = "f_frostflowers _3012323_back",
+    Front = "f_frostflowers _3012323"
+  },
   [3012374] = {
     id = 3012374,
     Back = "h_heartfeltarsonist_001_3012374_back",
@@ -17194,6 +17374,36 @@ Table_Assesories = {
     Back = "h_buildingblocktowe_3012744_back",
     Front = "h_buildingblocktowe_3012744"
   },
+  [3012838] = {
+    id = 3012838,
+    Back = "h_danmachibell_001_3012838_back",
+    Front = "h_danmachibell_001_3012838"
+  },
+  [3012839] = {
+    id = 3012839,
+    Back = "h_danmachihestia_002_3012839_back",
+    Front = "h_danmachihestia_002_3012839"
+  },
+  [3012840] = {
+    id = 3012840,
+    Back = "h_danmachiais_002_3012840_back",
+    Front = "h_danmachiais_002_3012840"
+  },
+  [3012841] = {
+    id = 3012841,
+    Back = "h_danmachifreya_002_3012841_back",
+    Front = "h_danmachifreya_002_3012841"
+  },
+  [3012844] = {
+    id = 3012844,
+    Back = "h_danmachihestiapapa_3012844_back",
+    Front = "h_danmachihestiapapa_3012844"
+  },
+  [3012846] = {
+    id = 3012846,
+    Back = "h_danmachifreyapapa_3012846_back",
+    Front = "h_danmachifreyapapa_3012846"
+  },
   [3013013] = {
     id = 3013013,
     Back = "h_schooluniform_001_3013013_back",
@@ -17204,6 +17414,16 @@ Table_Assesories = {
     Back = "h_schooluniform_002_3013014_back",
     Front = "h_schooluniform_002_3013014"
   },
+  [3013100] = {
+    id = 3013100,
+    Back = "m_hotdog_3013100_back",
+    Front = "m_hotdog_3013100"
+  },
+  [3013101] = {
+    id = 3013101,
+    Back = "h_clover_3013101_back",
+    Front = "h_clover_3013101"
+  },
   [3013143] = {
     id = 3013143,
     Back = "h_osmanthus_001_3013143_back",
@@ -17213,6 +17433,91 @@ Table_Assesories = {
     id = 3013144,
     Back = "h_osmanthus_002_3013144_back",
     Front = "h_osmanthus_002_3013144"
+  },
+  [3013160] = {
+    id = 3013160,
+    Back = "m_dumplingsoup_3013160_back",
+    Front = "m_dumplingsoup_3013160"
+  },
+  [3013161] = {
+    id = 3013161,
+    Back = "h_dumplinghat_3013161_back",
+    Front = "h_dumplinghat_3013161"
+  },
+  [3013164] = {
+    id = 3013164,
+    Back = "f_papercuttings_3013164_back",
+    Front = "f_papercuttings_3013164"
+  },
+  [3013165] = {
+    id = 3013165,
+    Back = "h_starfirecrackers_3013165_back",
+    Front = "h_starfirecrackers_3013165"
+  },
+  [3013170] = {
+    id = 3013170,
+    Back = "h_dogtag_3013170_back",
+    Front = "h_dogtag_3013170"
+  },
+  [3013280] = {
+    id = 3013280,
+    Back = "h_circularcrown_3013280_back",
+    Front = "h_circularcrown_3013280"
+  },
+  [3013281] = {
+    id = 3013281,
+    Back = "f_gummybear_3013281_back",
+    Front = "f_gummybear_3013281"
+  },
+  [3013325] = {
+    id = 3013325,
+    Back = "h_bathrobe_001_3013325_back",
+    Front = "h_bathrobe_001_3013325"
+  },
+  [3013326] = {
+    id = 3013326,
+    Back = "h_bathrobe_001a_3013326_back",
+    Front = "h_bathrobe_001a_3013326"
+  },
+  [3013327] = {
+    id = 3013327,
+    Back = "h_bathrobe_001b_3013327_back",
+    Front = "h_bathrobe_001b_3013327"
+  },
+  [3013328] = {
+    id = 3013328,
+    Back = "h_bathrobe_001c_3013328_back",
+    Front = "h_bathrobe_001c_3013328"
+  },
+  [3013330] = {
+    id = 3013330,
+    Back = "h_bathrobe_002_3013330_back",
+    Front = "h_bathrobe_002_3013330"
+  },
+  [3013331] = {
+    id = 3013331,
+    Back = "h_bathrobe_002a_3013331_back",
+    Front = "h_bathrobe_002a_3013331"
+  },
+  [3013332] = {
+    id = 3013332,
+    Back = "h_bathrobe_002b_3013332_back",
+    Front = "h_bathrobe_002b_3013332"
+  },
+  [3013333] = {
+    id = 3013333,
+    Back = "h_bathrobe_002c_3013333_back",
+    Front = "h_bathrobe_002c_3013333"
+  },
+  [3013337] = {
+    id = 3013337,
+    Back = "f_eyeshade_3013337_back",
+    Front = "f_eyeshade_3013337"
+  },
+  [3013338] = {
+    id = 3013338,
+    Back = "m_wineporing_3013338_back",
+    Front = "m_wineporing_3013338"
   },
   [3031167] = {
     id = 3031167,
@@ -17383,6 +17688,11 @@ Table_Assesories = {
     id = 3034266,
     Back = "Redpocket_mouth_3034266_back",
     Front = "Redpocket_mouth_3034266"
+  },
+  [3012709] = {
+    id = 3012709,
+    Back = "m_galaxynecklace_back",
+    Front = "m_galaxynecklace"
   }
 }
 Table_Assesories_fields = {

@@ -821,3 +821,134 @@ end
 function PVEFactory.GetSpaceTimeIllusion()
   return SpaceTimeIllusionRaid.new()
 end
+
+local AbyssDragonRaid = class("AbyssDragonRaid", Dungeon_Handle)
+local EffectPathPrefix = "Common/"
+local EffectPos = LuaVector3.Zero()
+
+function AbyssDragonRaid:ctor()
+  self.isAbyssDragonRaid = true
+end
+
+function AbyssDragonRaid:Launch()
+  notify(PVEEvent.AbyssDragon_Launch)
+  self:CreateSceneEffect()
+end
+
+function AbyssDragonRaid:Shutdown()
+  notify(PVEEvent.AbyssDragon_Shutdown)
+  self:DestroySceneEffect()
+end
+
+function AbyssDragonRaid:CreateSceneEffect()
+  local mapId = Game.MapManager:GetMapID()
+  local effectPath, bpID
+  local areaRaidInfo = GameConfig.AbyssDragon and GameConfig.AbyssDragon.RaidInfo
+  if areaRaidInfo then
+    for _, info in pairs(areaRaidInfo) do
+      if info.RaidID == mapId then
+        effectPath = EffectPathPrefix .. info.SceneEffect
+        bpID = info.BpPoint
+        break
+      end
+    end
+  end
+  if effectPath and bpID then
+    local bp = Game.MapManager:FindBornPoint(bpID)
+    if bp then
+      LuaVector3.Better_Set(EffectPos, bp.position[1], bp.position[2], bp.position[3])
+      self.sceneEffect = Asset_Effect.PlayAt(effectPath, EffectPos)
+    end
+  end
+end
+
+function AbyssDragonRaid:DestroySceneEffect()
+  if self.sceneEffect then
+    self.sceneEffect:Destroy()
+    self.sceneEffect = nil
+  end
+end
+
+function PVEFactory.GetAbyssDragon()
+  return AbyssDragonRaid.new()
+end
+
+local FairyTaleRaid = class("FairyTaleRaid", Dungeon_Handle)
+
+function FairyTaleRaid:ctor()
+  self.isFairyTaleRaid = true
+  self.trainNpcIds = {2055150, 2055151}
+end
+
+function FairyTaleRaid:Launch()
+  notify(PVEEvent.FairyTale_Launch)
+  EventManager.Me():AddEventListener(SceneUserEvent.SceneAddNpcs, self.HandleAddNpcs, self)
+  EventManager.Me():AddEventListener(SceneUserEvent.SceneRemoveNpcs, self.HandleRemoveNpcs, self)
+  EventManager.Me():AddEventListener(ServiceEvent.FuBenCmdFairyTaleRaidRewardSyncCmd, self.HandleRewardSync, self)
+end
+
+function FairyTaleRaid:Shutdown()
+  self.npcguid = nil
+  FunctionVisitNpc.Me():RemoveDirectDoNpcFuncList(12018)
+  notify(PVEEvent.FairyTale_Shutdown)
+  EventManager.Me():RemoveEventListener(SceneUserEvent.SceneAddNpcs, self.HandleAddNpcs, self)
+  EventManager.Me():RemoveEventListener(SceneUserEvent.SceneRemoveNpcs, self.HandleRemoveNpcs, self)
+  EventManager.Me():RemoveEventListener(ServiceEvent.FuBenCmdFairyTaleRaidRewardSyncCmd, self.HandleRewardSync, self)
+end
+
+function FairyTaleRaid:HandleAddNpcs(npcs)
+  local trainNpcs = {}
+  for i = 1, #npcs do
+    local npc = npcs[i]
+    if npc.data and npc.data.staticData and npc.data.staticData.id == 851999 then
+      self.npcguid = npc.data.id
+      self:UpdateRewardCount()
+      FunctionVisitNpc.Me():AddDirectDoNpcFuncList(12018)
+    end
+    if npc.data and npc.data.staticData and TableUtility.ArrayFindIndex(self.trainNpcIds, npc.data.staticData.id) > 0 then
+      table.insert(trainNpcs, npc)
+    end
+  end
+  if 0 < #trainNpcs then
+    GameFacade.Instance:sendNotification(PVEEvent.FairyTale_AddTrainNpc, trainNpcs)
+  end
+end
+
+function FairyTaleRaid:HandleRemoveNpcs(npcs)
+  for i = 1, #npcs do
+    local guid = npcs[i]
+    if self.npcguid == guid then
+      self.npcguid = nil
+    end
+  end
+  GameFacade.Instance:sendNotification(PVEEvent.FairyTale_RemoveTrainNpc, npcs)
+end
+
+function FairyTaleRaid:HandleRewardSync()
+  redlog("FairyTaleRaid:HandleRewardSync")
+  self:UpdateRewardCount()
+end
+
+function FairyTaleRaid:UpdateRewardCount()
+  if self.npcguid then
+    local npc = SceneCreatureProxy.FindCreature(self.npcguid)
+    if not npc then
+      return
+    end
+    local rewardCount = FairyTaleProxy.Instance:GetRewardCount()
+    redlog("FairyTaleRaid:UpdateRewardCount", rewardCount)
+    if not self.rewardIcon then
+      local rewardItem = GameConfig.FairyTaleRaid and GameConfig.FairyTaleRaid.CoinID
+      local config = Table_Item[rewardItem]
+      self.rewardIcon = config and config.Icon or ""
+    end
+    local roleTopUI = npc:GetSceneUI().roleTopUI
+    if roleTopUI then
+      roleTopUI:UpdateGetReward(self.rewardIcon, rewardCount)
+    end
+  end
+end
+
+function PVEFactory.GetFairyTaleRaid()
+  return FairyTaleRaid.new()
+end

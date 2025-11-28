@@ -106,3 +106,19 @@ function ServiceRaidCmdProxy:RecvRaidNewResetCmd(data)
   QuestProxy.Instance:clearFubenQuestData()
   self:Notify(ServiceEvent.RaidCmdRaidNewResetCmd, data)
 end
+
+function ServiceRaidCmdProxy:RecvAbyssDragonInfoNtfRaidCmd(data)
+  AbyssFakeDragonProxy.Instance:UpdateAbyssDragonInfo(data)
+  self:Notify(ServiceEvent.RaidCmdAbyssDragonInfoNtfRaidCmd, data)
+end
+
+function ServiceRaidCmdProxy:RecvAbyssDragonHpUpdateRaidCmd(data)
+  AbyssFakeDragonProxy.Instance:RecvAbyssDragonHpUpdateQuestCmd(data)
+  self:Notify(ServiceEvent.RaidCmdAbyssDragonHpUpdateRaidCmd, data)
+end
+
+function ServiceRaidCmdProxy:RecvAbyssDragonOnOffRaidCmd(data)
+  AbyssFakeDragonProxy.Instance:RecvAbyssDragonOnOffQuestCmd(data)
+  self:Notify(ServiceEvent.RaidCmdAbyssDragonOnOffRaidCmd, data)
+  EventManager.Me():PassEvent(ServiceEvent.RaidCmdAbyssDragonOnOffRaidCmd, data)
+end

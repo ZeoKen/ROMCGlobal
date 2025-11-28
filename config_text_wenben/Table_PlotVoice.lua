@@ -348,6 +348,286 @@ Table_PlotVoice = {
     Dialog = "##302672",
     StoryVoice = 100038,
     BgmKeep = 1
+  },
+  [78] = {
+    id = 78,
+    Version = "9.0",
+    Map = 109,
+    QuestID = 603430001,
+    QuestName = "##543145",
+    Dialog = "##788778",
+    StoryVoice = 100050,
+    BgmKeep = 1
+  },
+  [79] = {
+    id = 79,
+    Version = "9.0",
+    Map = 109,
+    QuestID = 603440001,
+    QuestName = "##543152",
+    Dialog = "##788768",
+    StoryVoice = 100051,
+    BgmKeep = 1
+  },
+  [80] = {
+    id = 80,
+    Version = "9.0",
+    Map = 109,
+    QuestID = 603450001,
+    QuestName = "##530195",
+    Dialog = "##788777",
+    StoryVoice = 100052,
+    BgmKeep = 1
+  },
+  [81] = {
+    id = 81,
+    Version = "9.0",
+    Map = 109,
+    QuestID = 603460001,
+    QuestName = "##542429",
+    Dialog = "##788773",
+    StoryVoice = 100053,
+    BgmKeep = 1
+  },
+  [82] = {
+    id = 82,
+    Version = "9.0",
+    Map = 109,
+    QuestID = 603470001,
+    QuestName = "##530662",
+    Dialog = "##788762",
+    StoryVoice = 100054,
+    BgmKeep = 1
+  },
+  [83] = {
+    id = 83,
+    Version = "9.0",
+    Map = 109,
+    QuestID = 603480001,
+    QuestName = "##543142",
+    Dialog = "##788786",
+    StoryVoice = 100055,
+    BgmKeep = 1
+  },
+  [84] = {
+    id = 84,
+    Version = "9.0",
+    Map = 109,
+    QuestID = 603490001,
+    QuestName = "##543138",
+    Dialog = "##788765",
+    StoryVoice = 100056,
+    BgmKeep = 1
+  },
+  [85] = {
+    id = 85,
+    Version = "9.0",
+    Map = 109,
+    QuestID = 603500001,
+    QuestName = "##543129",
+    Dialog = "##788781",
+    StoryVoice = 100057,
+    BgmKeep = 1
+  },
+  [86] = {
+    id = 86,
+    Version = "9.0",
+    Map = 109,
+    QuestID = 603510001,
+    QuestName = "##151010",
+    Dialog = "##788783",
+    StoryVoice = 100058,
+    BgmKeep = 1
+  },
+  [87] = {
+    id = 87,
+    Version = "9.0",
+    Map = 109,
+    QuestID = 603520001,
+    QuestName = "##309978",
+    Dialog = "##788784",
+    StoryVoice = 100059,
+    BgmKeep = 1
+  },
+  [88] = {
+    id = 88,
+    Version = "9.0",
+    Map = 109,
+    QuestID = 603530001,
+    QuestName = "##530214",
+    Dialog = "##788763",
+    StoryVoice = 100060,
+    BgmKeep = 1
+  },
+  [89] = {
+    id = 89,
+    Version = "9.0",
+    Map = 109,
+    QuestID = 603540001,
+    QuestName = "##114345",
+    Dialog = "##788779",
+    StoryVoice = 100061,
+    BgmKeep = 1
+  },
+  [90] = {
+    id = 90,
+    Version = "9.0",
+    Map = 109,
+    QuestID = 603550001,
+    QuestName = "##130578",
+    Dialog = "##788766",
+    StoryVoice = 100062,
+    BgmKeep = 1
+  },
+  [91] = {
+    id = 91,
+    Version = "9.0",
+    Map = 120,
+    QuestID = 603560001,
+    QuestName = "##531278",
+    Dialog = "##788770",
+    StoryVoice = 100063,
+    BgmKeep = 1
+  },
+  [92] = {
+    id = 92,
+    Version = "9.0",
+    Map = 120,
+    QuestID = 603570001,
+    QuestName = "##531689",
+    Dialog = "##788767",
+    StoryVoice = 100064,
+    BgmKeep = 1
+  },
+  [93] = {
+    id = 93,
+    Version = "9.0",
+    Map = 120,
+    QuestID = 603580001,
+    QuestName = "##543150",
+    Dialog = "##788785",
+    StoryVoice = 100065,
+    BgmKeep = 1
+  },
+  [94] = {
+    id = 94,
+    Version = "9.0",
+    Map = 120,
+    QuestID = 603590001,
+    QuestName = "##529791",
+    Dialog = "##788788",
+    StoryVoice = 100066,
+    BgmKeep = 1
+  },
+  [95] = {
+    id = 95,
+    Version = "9.0",
+    Map = 120,
+    QuestID = 603600001,
+    QuestName = "##529790",
+    Dialog = "##788780",
+    StoryVoice = 100067,
+    BgmKeep = 1
+  },
+  [96] = {
+    id = 96,
+    Version = "9.0",
+    Map = 120,
+    QuestID = 603610001,
+    QuestName = "##529748",
+    Dialog = "##788772",
+    StoryVoice = 100068,
+    BgmKeep = 1
+  },
+  [97] = {
+    id = 97,
+    Version = "9.0",
+    Map = 120,
+    QuestID = 603620001,
+    QuestName = "##531279",
+    Dialog = "##788769",
+    StoryVoice = 100069,
+    BgmKeep = 1
+  },
+  [98] = {
+    id = 98,
+    Version = "9.0",
+    Map = 110,
+    QuestID = 603630001,
+    QuestName = "##531318",
+    Dialog = "##788774",
+    StoryVoice = 100070,
+    BgmKeep = 1
+  },
+  [99] = {
+    id = 99,
+    Version = "9.0",
+    Map = 110,
+    QuestID = 603640001,
+    QuestName = "##529754",
+    Dialog = "##788764",
+    StoryVoice = 100071,
+    BgmKeep = 1
+  },
+  [100] = {
+    id = 100,
+    Version = "9.0",
+    Map = 110,
+    QuestID = 603650001,
+    QuestName = "##543147",
+    Dialog = "##788775",
+    StoryVoice = 100072,
+    BgmKeep = 1
+  },
+  [101] = {
+    id = 101,
+    Version = "9.0",
+    Map = 110,
+    QuestID = 603660001,
+    QuestName = "##543136",
+    Dialog = "##788787",
+    StoryVoice = 100073,
+    BgmKeep = 1
+  },
+  [102] = {
+    id = 102,
+    Version = "9.0",
+    Map = 110,
+    QuestID = 603670001,
+    QuestName = "##532013",
+    Dialog = "##788782",
+    StoryVoice = 100074,
+    BgmKeep = 1
+  },
+  [103] = {
+    id = 103,
+    Version = "9.0",
+    Map = 110,
+    QuestID = 603680001,
+    QuestName = "##543134",
+    Dialog = "##788771",
+    StoryVoice = 100075,
+    BgmKeep = 1
+  },
+  [104] = {
+    id = 104,
+    Version = "9.0",
+    Map = 110,
+    QuestID = 603690001,
+    QuestName = "##532225",
+    Dialog = "##788761",
+    StoryVoice = 100076,
+    BgmKeep = 1
+  },
+  [105] = {
+    id = 105,
+    Version = "9.0",
+    Map = 110,
+    QuestID = 603700001,
+    QuestName = "##103905",
+    Dialog = "##788776",
+    StoryVoice = 100077,
+    BgmKeep = 1
   }
 }
 Table_PlotVoice_fields = {

@@ -138,6 +138,10 @@ function ChatSimplifyView:UpdateChat()
   if not isShowGVG then
     TableUtility.ArrayRemove(self.list, ChatChannelEnum.GVG)
   end
+  local isReturn = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_USERRETURN_FLAG) or 0
+  if isReturn == 0 then
+    TableUtility.ArrayRemove(self.list, ChatChannelEnum.Return)
+  end
   self.chatCtl:ResetDatas(self.list)
 end
 

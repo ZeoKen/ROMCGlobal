@@ -16,6 +16,7 @@ autoImport("SceneNpcAlert")
 autoImport("SceneTopGvGCooking")
 autoImport("SceneCoinCell")
 autoImport("SceneSummonProgress")
+autoImport("SceneGetReward")
 local FindCreature = function(id)
   local creature = NSceneNpcProxy.Instance:GetClientNpc(id)
   if not creature then
@@ -973,6 +974,35 @@ local accessFunc = function(self)
   Game.Myself:Client_AccessTarget(FindCreature(self.creatureId))
 end
 
+function Creature_SceneTopUI:CreateGetReward()
+  if not self.sceneGetReward then
+    local follow = self:GetSceneUITopFollow(SceneUIType.RoleTopInfo)
+    if not follow then
+      return
+    end
+    local args = ReusableTable.CreateArray()
+    args[1] = follow
+    args[2] = accessFunc
+    args[3] = self
+    self.sceneGetReward = SceneGetReward.CreateAsArray(args)
+    ReusableTable.DestroyAndClearArray(args)
+  end
+end
+
+function Creature_SceneTopUI:UpdateGetReward(icon, rewardCount)
+  if not self.sceneGetReward then
+    self:CreateGetReward()
+  end
+  self.sceneGetReward:SetData(icon, rewardCount)
+end
+
+function Creature_SceneTopUI:RemoveGetReward()
+  if self.sceneGetReward then
+    self.sceneGetReward:Destroy()
+    self.sceneGetReward = nil
+  end
+end
+
 function Creature_SceneTopUI:DoConstruct(asArray, creature)
   self:SetCreature(creature)
   self.emojiActive = true
@@ -1016,6 +1046,7 @@ function Creature_SceneTopUI:DoDeconstruct(asArray)
   self:RemoveGvGCookingInfo()
   self:RemoveEBFCoinSceneUI()
   self:RemoveSummonProgress()
+  self:RemoveGetReward()
   self:UnregisterSceneUITopFollows()
 end
 

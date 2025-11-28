@@ -40606,5 +40606,23 @@ ModelShowConfig = {
       1,
       1
     }
+  },
+  h_dragonblackflame_001_prf = {
+    localPosition = {
+      0,
+      0.25,
+      0
+    },
+    localRotation = {
+      0,
+      0,
+      0,
+      1
+    },
+    localScale = {
+      1,
+      1,
+      1
+    }
   }
 }

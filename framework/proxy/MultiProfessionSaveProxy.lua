@@ -360,6 +360,34 @@ function MultiProfessionSaveProxy:GetEquipMasterSkillFamilyId(id)
   return self.recordDatas[id]:GetEquipMasterSkillFamilyId()
 end
 
+function MultiProfessionSaveProxy:GetInheritSkillProfessDatas(id)
+  if not self.recordDatas[id] then
+    return
+  end
+  return self.recordDatas[id]:GetInheritSkillProfessDatas()
+end
+
+function MultiProfessionSaveProxy:GetInheritSkillLoadSkills(id)
+  if not self.recordDatas[id] then
+    return
+  end
+  return self.recordDatas[id]:GetInheritSkillLoadSkills()
+end
+
+function MultiProfessionSaveProxy:GetExtendedCostPoints(id)
+  if not self.recordDatas[id] then
+    return
+  end
+  return self.recordDatas[id]:GetExtendedCostPoints()
+end
+
+function MultiProfessionSaveProxy:GetTotalCostPointAttrs(id, costPoint)
+  if not self.recordDatas[id] then
+    return
+  end
+  return self.recordDatas[id]:GetTotalCostPointAttrs(costPoint)
+end
+
 function MultiProfessionSaveProxy:GetGemCountDesc(id)
   local skillCount, attrCount = GemProxy.GetSkillAndAttrGemCountDescFromItemDatas(self:GetGemData(id))
   return string.format(ZhString.Gem_CountLabelFormat, skillCount, GemProxy.Instance.pageSkillGemMaxCount), string.format(ZhString.Gem_CountLabelFormat, attrCount, GemProxy.Instance.pageAttrGemMaxCount)

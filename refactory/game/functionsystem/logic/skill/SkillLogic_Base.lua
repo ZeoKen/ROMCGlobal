@@ -514,11 +514,43 @@ function SkillLogic_Base:Attack(creature, isAttackSkill, isTriggerSkill, noAttac
       if isTriggerSkill == true and creature == Game.Myself and KickSkillsMap[skillInfo:GetSkillID() // 1000] then
         kickSpeedUp = Game.Myself.data.KickSkillSpeedUp == true
       end
+      local useNewFunc = SkillProxy.Instance:GetLearnedSkillLevelBySortID(4781) >= 7
       if not (not isAttackSkill or skillInfo:NoAttackSpeed()) or skillInfo:AffectedByAtkSpd() then
         if not isTriggerSkill or isTriggerSkill and kickSpeedUp then
-          attackSpeed = creature.data:GetAttackSpeed_Adjusted() * logicTransform:GetFastForwardSpeed()
-          local attackDuration = 1 / attackSpeed
-          attackSpeed = attackSpeed * ((attackDuration + 3.3 / ApplicationInfo.GetTargetFrameRate()) / attackDuration)
+          if not useNewFunc then
+            attackSpeed = creature.data:GetAttackSpeed_Adjusted() * logicTransform:GetFastForwardSpeed()
+          elseif 3 <= attackSpeed then
+            attackSpeed = creature.data:GetAttackSpeed_Adjusted_Bell()
+          else
+            attackSpeed = creature.data:GetAttackSpeed()
+          end
+          if useNewFunc then
+            local actualFrameTime = Time.smoothDeltaTime
+            if actualFrameTime <= 0 or 0.1 < actualFrameTime then
+              actualFrameTime = 1 / ApplicationInfo.GetTargetFrameRate()
+            end
+            local frameDelayCount = 2.38
+            if ApplicationInfo.IsMobile() then
+              local targetFPS = ApplicationInfo.GetTargetFrameRate()
+              if targetFPS <= 30 then
+                frameDelayCount = 3.5
+              elseif targetFPS <= 45 then
+                frameDelayCount = 3.4
+              else
+                frameDelayCount = 3.3
+              end
+            end
+            local totalDelay = frameDelayCount * actualFrameTime
+            local denominator = 1 - attackSpeed * totalDelay
+            if 0.05 < denominator then
+              attackSpeed = attackSpeed / denominator
+            else
+              attackSpeed = attackSpeed * 20
+            end
+          else
+            local attackDuration = 1 / attackSpeed
+            attackSpeed = attackSpeed * ((attackDuration + 3.3 / ApplicationInfo.GetTargetFrameRate()) / attackDuration)
+          end
         else
           attackSpeed = logicTransform:GetFastForwardSpeed()
         end

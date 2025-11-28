@@ -86,7 +86,8 @@ NpcData.ZoneType = {
   ZONE_MemoryPalace = 25,
   ZONE_MemoryRaid = 26,
   ZONE_MemoryThird = 27,
-  ZONE_ABYSSDRAGON = 28
+  ZONE_ABYSSDRAGON = 28,
+  ZONE_FairyTale = 29
 }
 NpcData.BossType = {
   Mvp = 1,
@@ -644,6 +645,10 @@ function NpcData:GetFeature_IgnoreDress()
   return self:GetFeature(16777216)
 end
 
+function NpcData:IsForceShowHp()
+  return self:GetFeature(33554432)
+end
+
 function NpcData:WithPrefixName(isInScene)
   if self.affixs ~= nil then
     return NpcData.WithAffixName(self.affixs, isInScene)
@@ -725,6 +730,8 @@ function NpcData.GetZoneTypeByStaticData(staticData)
     return NpcData.ZoneType.ZONE_MemoryThird
   elseif str == "AbyssDragon" then
     return NpcData.ZoneType.ZONE_ABYSSDRAGON
+  elseif str == "FairyTale" then
+    return NpcData.ZoneType.ZONE_FairyTale
   end
 end
 
@@ -1177,6 +1184,7 @@ function NpcData:InitByClient(clientData)
   self.skillOwner = nil
   self.field = true
   self.star = self.staticData.IsStar == 1
+  self.damReduceType = self:GetDamReduceType()
 end
 
 function NpcData:IsInitedByServer()
@@ -1243,7 +1251,7 @@ function NpcData:InitByServerData(serverData)
       end
     end
   end
-  if not isMercenaryCat and not self:IsNpc() then
+  if not (isMercenaryCat or self:IsNpc()) or self:IsPhantom() then
     if self.teamid and not self.campHandler then
       self.campHandler = CampHandler.new(self.camp)
     end
@@ -1296,6 +1304,8 @@ function NpcData:InitByServerData(serverData)
   self.born_se = serverData.se
   self.born_se_loop = serverData.se_loop
   self.postcard = serverData.postcard
+  self.damReduceType = self:GetDamReduceType()
+  self.boxOpened = serverData.box_opened
 end
 
 function NpcData:SetNoAutoLock(val)
@@ -1304,6 +1314,18 @@ end
 
 function NpcData:GetNoAutoLock(val)
   return self.noAutoLock
+end
+
+function NpcData:GetDamReduceType()
+  self.damReduceType = self.userdata:Get(UDEnum.DAM_REDUCE_TYPE)
+  if not self.damReduceType or self.damReduceType <= 0 then
+    return NpcData.GetDamReduceTypeByStaticData(self.staticData)
+  end
+  return self.damReduceType
+end
+
+function NpcData.GetDamReduceTypeByStaticData(staticData)
+  return staticData and staticData.DamReduceType or 0
 end
 
 function NpcData:DoDeconstruct(asArray)
@@ -1470,4 +1492,8 @@ end
 
 function NpcData:IsPerfectPhantom()
   return self.detailedType == NpcData.NpcDetailedType.PerfectPhantom
+end
+
+function NpcData:IsBoxOpened()
+  return self.boxOpened
 end

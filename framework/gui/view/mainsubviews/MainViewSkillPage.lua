@@ -394,6 +394,8 @@ function MainViewSkillPage:AddViewEvts()
   self:AddListenEvt(SkillEvent.UpdateCDTimes, self.UpdateCDTimes)
   self:AddListenEvt(MyselfEvent.CheckInvalidSkill, self.UpdateSkills)
   self:AddListenEvt(SkillEvent.CheckSkillForbid, self.CheckSkillForbid)
+  self:AddListenEvt(SkillEvent.BellCharge, self.HandleBellCharge)
+  self:AddListenEvt(ServiceEvent.SkillUpSkillInfoSkillCmd, self.UpdateSkills)
 end
 
 function MainViewSkillPage:OnObservationModeStart()
@@ -1018,6 +1020,16 @@ function MainViewSkillPage:UpdateCDTimes(note)
   for _, o in pairs(cells) do
     if o.data ~= nil and o.data:GetSortID() == skillSortID then
       o:UpdateCDTimes()
+    end
+  end
+end
+
+function MainViewSkillPage:HandleBellCharge(note)
+  local skillSortID = note.body
+  local cells = self.skillShotCutList:GetCells()
+  for _, o in pairs(cells) do
+    if o.data ~= nil and o.data:GetSortID() == skillSortID then
+      o:UpdateChargeBuff()
     end
   end
 end

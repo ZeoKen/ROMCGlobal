@@ -77,3 +77,9 @@ function ShopData:UpdateMenu()
     end
   end
 end
+
+function ShopData:UpdateGiftState(id, isReceived)
+  if self.goods[id] then
+    self.goods[id]:SetGiftState(isReceived)
+  end
+end

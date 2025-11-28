@@ -120,7 +120,8 @@ function Creature_SceneBottomUI:isHpSpVisible(creature)
   local isEBFRobot = detailedType == NpcData.NpcDetailedType.EBF_Robot
   local isTripleTeamRobot = detailedType == NpcData.NpcDetailedType.TriplePvpRobot
   local isHideHp = creature:IsHideHp()
-  if not (not mapVisible or isOb) and (isFarmingNpc or isPlayer or isEBFRobot or isTripleTeamRobot) or isSanityNPC then
+  local isForceShowHp = creature.data:IsForceShowHp()
+  if not (not mapVisible or isOb) and (isFarmingNpc or isPlayer or isEBFRobot or isTripleTeamRobot or isForceShowHp) or isSanityNPC then
     if mapVisible == 0 then
       return false
     elseif mapVisible == 1 then

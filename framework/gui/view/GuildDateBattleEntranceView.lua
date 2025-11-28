@@ -68,6 +68,16 @@ function GuildDateBattleEntranceView:FindObjs()
   self.banCardTitle.text = ZhString.GuildDateBattle_BanCardTitle
   self.banCardGO = self:FindGO("BanCardCombineCell")
   self.banCardCell = BanCardCombineCell.new(self.banCardGO)
+  self:InitGameMode()
+end
+
+function GuildDateBattleEntranceView:InitGameMode()
+  self.datedGameMode = self:FindComponent("DatedGameMode", UILabel)
+  self.datedGameMode.text = ZhString.GuildDateBattle_Record_GameMode
+  self.datedGameMode_Base = self:FindGO("BaseMode", self.datedGameMode.gameObject)
+  self.datedGameMode_Base_Mode_Desc = self:FindComponent("Base_Mode_Desc", UILabel, self.datedGameMode_Base)
+  self.datedGameMode_Other = self:FindGO("OtherMode", self.datedGameMode.gameObject)
+  self.datedGameMode_Other_Mode_Desc = self:FindComponent("Other_Mode_Desc", UILabel, self.datedGameMode_Other)
 end
 
 function GuildDateBattleEntranceView:AddViewEvts()
@@ -162,7 +172,21 @@ function GuildDateBattleEntranceView:UpdateView()
   _PictureManager:SetMiniMap(self.mapTextureName, self.mapTexture)
   self:UpdatePerfectDefense()
   self:UpdateBtn()
+  self:SetGameMode()
   self:SetBanCard()
+end
+
+function GuildDateBattleEntranceView:SetGameMode()
+  local gameMode = self.entranceData:GetGameMode()
+  if gameMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_BASE then
+    self.datedGameMode_Base:SetActive(true)
+    self.datedGameMode_Other:SetActive(false)
+    self.datedGameMode_Base_Mode_Desc.text = self.entranceData:GetDatedModeDesc()
+  elseif gameMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_DEATH or gameMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_BLOOD then
+    self.datedGameMode_Base:SetActive(false)
+    self.datedGameMode_Other:SetActive(true)
+    self.datedGameMode_Other_Mode_Desc.text = self.entranceData:GetDatedModeDesc()
+  end
 end
 
 function GuildDateBattleEntranceView:SetBanCard()

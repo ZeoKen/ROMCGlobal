@@ -1,11 +1,14 @@
 autoImport("BossComposeCardCell")
 autoImport("BossCardComposeMaterialCell")
+autoImport("PetWorkSpaceEmoji")
 BossCardComposeNewPage = class("BossCardComposeNewPage", SubView)
 local maxCount = GameConfig.Card.exchangecard_boss
 local maxComposeNum = 100
 local skipType = SKIPTYPE.BossCardCompose
 local Prefab_Path = ResourcePathHelper.UIView("BossCardComposeNewPage")
 local BgName = "preview_bg_figure_03"
+local tipData = {}
+tipData.funcConfig = {}
 
 function BossCardComposeNewPage:Init(initParam)
   local chooseData = CardMakeData.new(2000)
@@ -62,6 +65,19 @@ function BossCardComposeNewPage:FindObjs()
   self:AddClickEvent(helpBtn, function()
     self:OnHelpBtnClick()
   end)
+  self.extraReward = self:FindGO("ExtraReward")
+  if self.extraReward then
+    self.extraReward:SetActive(GameConfig.Card.BossCardComposeExtra ~= nil)
+  end
+  self.extraRewardTip = self:FindComponent("Tip", UILabel, self.extraReward)
+end
+
+function BossCardComposeNewPage:OnExtraRewardClick(cellCtl)
+  local data = cellCtl.data
+  if data then
+    tipData.itemdata = data
+    self:ShowItemTip(tipData, cellCtl.icon, NGUIUtil.AnchorSide.Left, {-220, 0})
+  end
 end
 
 function BossCardComposeNewPage:AddViewEvts()
@@ -125,6 +141,34 @@ function BossCardComposeNewPage:InitMaterial()
     end
   end
   self:UpdateMaterial()
+end
+
+function BossCardComposeNewPage:UpdateExtraReward()
+  local config = GameConfig.Card.BossCardComposeExtra
+  if not config then
+    return
+  end
+  local reward = config[1]
+  if not reward then
+    return
+  end
+  local itemId = reward[1]
+  local num = reward[2]
+  num = num * self.composeNum
+  if not self.extraRewardEmoji then
+    local bubble = self:FindGO("Bubble")
+    local emoji = self:LoadPreferb_ByFullPath(ResourcePathHelper.UICell("PetWorkSpaceEmoji"), bubble)
+    self.extraRewardEmoji = PetWorkSpaceEmoji.new(emoji)
+    self.extraRewardEmoji:AddEventListener(MouseEvent.MouseClick, self.OnExtraRewardClick, self)
+    local itemData = ItemData.new(itemId, itemId)
+    itemData.num = num
+    self.extraRewardEmoji:SetData(itemData)
+    self.extraRewardEmoji:ShowRedPoint(false)
+  end
+  self.extraRewardEmoji:SetNum(num)
+  local itemConfig = Table_Item[itemId]
+  local name = itemConfig and itemConfig.NameZh or ""
+  self.extraRewardTip.text = string.format(ZhString.CardMake_ExtraRewardTip, name, num)
 end
 
 function BossCardComposeNewPage:FilterPropCallback(customProp, propData, keys)
@@ -274,6 +318,7 @@ function BossCardComposeNewPage:UpdateComposeNum()
   self.composeNum = math.min(count, self.composeNum)
   self.composeNum = math.clamp(self.composeNum, 1, maxComposeNum)
   self.composeNumLabel.text = self.composeNum
+  self:UpdateExtraReward()
 end
 
 function BossCardComposeNewPage:OnHelpBtnClick()

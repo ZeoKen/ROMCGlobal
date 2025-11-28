@@ -13,12 +13,11 @@ Table_ServerList = {
   },
   [2] = {
     id = 2,
-    name = "##44697011",
+    name = "##44707933",
     type = 2,
     serverid = 60002,
     servertype = "novice",
     state = 1,
-    linegroup = 2,
     serverip = {
       "172.26.31.11"
     },
@@ -38,12 +37,11 @@ Table_ServerList = {
   },
   [4] = {
     id = 4,
-    name = "##44697013",
+    name = "##44707934",
     type = 2,
     serverid = 60004,
     servertype = "novice",
     state = 1,
-    linegroup = 2,
     serverip = {
       "172.26.31.13"
     },

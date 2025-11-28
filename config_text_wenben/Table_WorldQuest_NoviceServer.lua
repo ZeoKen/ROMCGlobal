@@ -338,6 +338,296 @@ Table_WorldQuest = {
     StartCondition = _EmptyTable,
     Map = 154,
     Version = 9
+  },
+  [1015630001] = {
+    id = 1015630001,
+    Type = 150,
+    Describe = "被时空废气侵蚀的诺博斯会发出诡异的吟唱，据说那是它们模仿亡者灵魂的声音。许多战士因听到这些声音而陷入幻觉——请将它们彻底清除！",
+    Name = "恶魔的低语",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015630002] = {
+    id = 1015630002,
+    Type = 150,
+    Describe = "一场恶战过后，许多龙战士倒下，他们的武器也被炸成碎片。如今这些断刃散落在战场上，只有将它们回收，才能唤醒昏迷的战士。",
+    Name = "断刃回响",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015630003] = {
+    id = 1015630003,
+    Type = 150,
+    Describe = "黑暗在孕育邪恶，我们必须扼杀它于萌芽之中。深入营地，击败所有拦路的敌人，为龙战士扫清道路！",
+    Name = "清剿魔物营地",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015630004] = {
+    id = 1015630004,
+    Type = 150,
+    Describe = "苍白之塔附近的营地中出现大量魔物，需要彻底清除。",
+    Name = "驱逐监视者",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015630005] = {
+    id = 1015630005,
+    Type = 150,
+    Describe = "时空垃圾在徘徊之地的入口竖起了信标，他们似乎正在密谋什么行动，夺取信标，阻止更多的时空垃圾前往徘徊之地！",
+    Name = "夺取敌人的信标",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015630006] = {
+    id = 1015630006,
+    Type = 150,
+    Describe = "阵亡战士的徽章象征着荣誉与忠诚。如今它们散落在战场上，被时空废气腐蚀，必须尽快回收。",
+    Name = "回收暗爪营徽章",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015630007] = {
+    id = 1015630007,
+    Type = 150,
+    Describe = "时空废气污染了水源，唯有生长在龙骨缝隙中的幽光萼能中和毒性。时间紧迫，必须尽快采集。",
+    Name = "获取幽光萼",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015630008] = {
+    id = 1015630008,
+    Type = 150,
+    Describe = "千年前陨落的古龙仍残留着力量，藏在其骸骨之中。如今我们需要它的力量来治愈受伤的战士。",
+    Name = "汲取古龙的力量",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015630009] = {
+    id = 1015630009,
+    Type = 150,
+    Describe = "一具被黑色废气包裹的龙骨被发现，似乎有人曾在此提取过晶粉。为了研究其来源，需要留下影像资料。",
+    Name = "拍摄暴露的龙骨",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015630010] = {
+    id = 1015630010,
+    Type = 150,
+    Describe = "一批身份不明的“新兵”出现在苍白之塔区域，行踪诡秘，疑似被时空垃圾操控的伪装者。拍下他们的轨迹，供上级参考。",
+    Name = "抓拍奇怪的龙战士",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015630011] = {
+    id = 1015630011,
+    Type = 150,
+    Describe = "寂萼枯野曾是一支时空垃圾军团的聚集地，直到黑炎龙降临，释放黑炎将其焚毁。如今那里依旧焦黑一片。拍下那片焦土——让时空垃圾们永远记住龙族的力量不容小觑！",
+    Name = "记录黑炎龙之怒",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015630012] = {
+    id = 1015630012,
+    Type = 150,
+    Describe = "残垣碑林深处立着一块由黑炎龙亲手点燃炎火的石碑，上面刻着暗爪营最初的誓言，拍下它，炎火将在影像中永不熄灭。",
+    Name = "为誓言石碑留影",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015700002] = {
+    id = 1015700002,
+    Type = 150,
+    Describe = "死而复活的“龙族”已经成为时空垃圾的帮凶。请终结这些以“龙族”外表活着的堕龙们！",
+    Name = "断刃归巢",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015710002] = {
+    id = 1015710002,
+    Type = 150,
+    Describe = "‘吞噬魔’会侵蚀受伤的战士，清除这些魔物，越快越好！",
+    Name = "泥沼吞噬魔",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015720002] = {
+    id = 1015720002,
+    Type = 150,
+    Describe = "每颗胚胎都在吸收无相沼泽的能量，野蛮生长。如果不摧毁它们，它们会孵化出比时空垃圾更可怕的东西。",
+    Name = "裂隙胚胎",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015730002] = {
+    id = 1015730002,
+    Type = 150,
+    Describe = "引爆摧毁黑炎龙大人意识的装置的核心！",
+    Name = "保护黑炎龙意识",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015740002] = {
+    id = 1015740002,
+    Type = 150,
+    Describe = "小心这片沼泽沉睡的主脑，一旦它苏醒，整片区域都会塌陷！请悄悄靠近，把他们救出来……",
+    Name = "泥沼困兽",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015770001] = {
+    id = 1015770001,
+    Type = 150,
+    Describe = "受赐福密林混乱时间的影响，诺博斯们陷入了异常狂暴的状态，并频繁攻击过路行人。请尽快将它们击退！",
+    Name = "密林净狩令",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015770002] = {
+    id = 1015770002,
+    Type = 150,
+    Describe = "隐藏在密林各处的狂暴邪恶箱们贪婪狡黠，专偷过路士兵们的财货。击败这些怪物，收回失窃珍藏！",
+    Name = "财货保卫战",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015770003] = {
+    id = 1015770003,
+    Type = 150,
+    Describe = "跟随时空垃圾而来的时空魔物们在篝火边建立起营地，不断侵扰驻守的鸢尾团士兵。请清剿这些据点，削弱魔物们的力量！",
+    Name = "魔物据点肃清",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015770004] = {
+    id = 1015770004,
+    Type = 150,
+    Describe = "黄金树的外围徘徊着不少绿俄希托斯，它们虎视眈眈，意图破坏根须，夺取力量。为了女王的安眠，请尽快将它们清除！",
+    Name = "保卫黄金树",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015770005] = {
+    id = 1015770005,
+    Type = 150,
+    Describe = "古木之门附近生长着一种独特的曼曼花，是制作麻醉类药物的第一原料，请帮鸢尾团的巫医们采集一些吧！",
+    Name = "获取曼曼花",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015770006] = {
+    id = 1015770006,
+    Type = 150,
+    Describe = "“绮雯带了好多好吃的苹果来祭拜女王陛下……可篮子不知道什么时候破了个洞，苹果都不见了……”，快帮绮雯把苹果找回来吧！",
+    Name = "遗失的苹果",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015770007] = {
+    id = 1015770007,
+    Type = 150,
+    Describe = "为了抵抗时空垃圾，守卫密林与女王，鸢尾团已经付出了巨大的牺牲。请带回那些阵亡士兵们的盔甲，祭奠他们的灵魂吧……",
+    Name = "祭奠亡魂",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015770008] = {
+    id = 1015770008,
+    Type = 150,
+    Describe = "剑冢中散落着曾经捍卫了女王与密林荣光的古老利刃，传说将它们收集起来，便能得到先祖的庇护。",
+    Name = "利刃拾遗",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015770009] = {
+    id = 1015770009,
+    Type = 150,
+    Describe = "龙族的研究员们正在调查古木之门令观看者产生幻觉的原因，拍下他们工作的状态，方便相关上级进行监督考察。",
+    Name = "工作考察",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015770010] = {
+    id = 1015770010,
+    Type = 150,
+    Describe = "每当暮色降临，剑冢附近便会出现一种稀有的蓝色花朵，据说那是勇士的灵魂在最后一刻的记忆。拍下它们，将勇士遗志封存。",
+    Name = "勇士之花",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015770011] = {
+    id = 1015770011,
+    Type = 150,
+    Describe = "又到了为女王陛下举行祝祷仪式的时候，但因为时空垃圾的闯入，鸢尾团祭司们近期不能轻易进入密林。快去拍下现在黄金树的情况，好让他们进行祝祷前的准备。",
+    Name = "祝祷前的准备",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
+  },
+  [1015770012] = {
+    id = 1015770012,
+    Type = 150,
+    Describe = "已有多人反映在战场上空目击到了奇怪的六芒星图案，但他们无一例外，都未能留下影像资料，“像是有什么在阻止我们一样……”，你，要不要也去尝试一下？",
+    Name = "神秘六芒星",
+    Weight = 10,
+    StartCondition = _EmptyTable,
+    Map = 154,
+    Version = 9
   }
 }
 Table_WorldQuest_fields = {

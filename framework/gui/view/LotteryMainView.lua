@@ -1,5 +1,6 @@
 autoImport("LotteryMixed")
 autoImport("LotteryMagic")
+autoImport("LotterySpaceTime")
 autoImport("LotteryCardNew")
 autoImport("LotteryCard")
 autoImport("LotteryHeadwear")
@@ -38,7 +39,8 @@ local extraBonusProgressGridMap = {
       0.177,
       0.583,
       1
-    }
+    },
+    progressGridLocalYPos = 170
   },
   [4] = {
     cellHeight = 130,
@@ -48,7 +50,8 @@ local extraBonusProgressGridMap = {
       0.423,
       0.72,
       1
-    }
+    },
+    progressGridLocalYPos = 170
   },
   [5] = {
     cellHeight = 130,
@@ -59,7 +62,8 @@ local extraBonusProgressGridMap = {
       0.569,
       0.783,
       1
-    }
+    },
+    progressGridLocalYPos = 170
   },
   [6] = {
     cellHeight = 130,
@@ -71,8 +75,20 @@ local extraBonusProgressGridMap = {
       0.569,
       0.783,
       1
-    }
+    },
+    progressGridLocalYPos = 170
   }
+}
+local spaceTimeExtraBonusConfig = {
+  cellHeight = 125,
+  sliderHeight = 435,
+  progressNode = {
+    0,
+    0.269,
+    0.57,
+    1
+  },
+  progressGridLocalYPos = 235
 }
 local _ReUniteCellData = function(datas, perRowNum)
   local newData = {}
@@ -194,6 +210,7 @@ function LotteryMainView:Init()
   self.tipData = {
     funcConfig = {}
   }
+  self.cardPrayCtl = {}
   self:FindObjs()
   self:InitLotteryType()
   self:InitMoney()
@@ -202,35 +219,57 @@ function LotteryMainView:Init()
   self:InitShow()
 end
 
+local LOTTERY_SUBVIEW_CONFIG = {
+  {
+    checkFunc = LotteryProxy.IsMixLottery,
+    viewKey = "mixLottery",
+    viewName = "LotteryMixed",
+    viewClass = LotteryMixed
+  },
+  {
+    checkFunc = LotteryProxy.IsMagicLottery,
+    viewKey = "magicLottery",
+    viewName = "LotteryMagic",
+    viewClass = LotteryMagic
+  },
+  {
+    checkFunc = LotteryProxy.IsNewCardLottery,
+    viewKey = "cardLottery",
+    viewName = "LotteryCardNew",
+    viewClass = LotteryCardNew
+  },
+  {
+    checkFunc = LotteryProxy.IsOldCardLottery,
+    viewKey = "oldCardLottery",
+    viewName = "LotteryCard",
+    viewClass = LotteryCard
+  },
+  {
+    checkFunc = LotteryProxy.IsHeadLottery,
+    viewKey = "headwearLottery",
+    viewName = "LotteryHeadwear",
+    viewClass = LotteryHeadwear
+  },
+  {
+    checkFunc = LotteryProxy.IsSpaceTimeLottery,
+    viewKey = "spaceTimeLottery",
+    viewName = "LotterySpaceTime",
+    viewClass = LotterySpaceTime
+  }
+}
+
 function LotteryMainView:SetLotterySubView()
   if not self.lotteryType then
     return
   end
-  if LotteryProxy.IsMixLottery(self.lotteryType) then
-    if not self.mixLottery then
-      self.mixLottery = self:AddSubView("LotteryMixed", LotteryMixed)
+  for _, config in ipairs(LOTTERY_SUBVIEW_CONFIG) do
+    if config.checkFunc(self.lotteryType) then
+      if not self[config.viewKey] then
+        self[config.viewKey] = self:AddSubView(config.viewName, config.viewClass)
+      end
+      self.curSubView = self[config.viewKey]
+      break
     end
-    self.curSubView = self.mixLottery
-  elseif LotteryProxy.IsMagicLottery(self.lotteryType) then
-    if not self.magicLottery then
-      self.magicLottery = self:AddSubView("LotteryMagic", LotteryMagic)
-    end
-    self.curSubView = self.magicLottery
-  elseif LotteryProxy.IsNewCardLottery(self.lotteryType) then
-    if not self.cardLottery then
-      self.cardLottery = self:AddSubView("LotteryCardNew", LotteryCardNew)
-    end
-    self.curSubView = self.cardLottery
-  elseif LotteryProxy.IsOldCardLottery(self.lotteryType) then
-    if not self.oldCardLottery then
-      self.oldCardLottery = self:AddSubView("LotteryCard", LotteryCard)
-    end
-    self.curSubView = self.oldCardLottery
-  elseif LotteryProxy.IsHeadLottery(self.lotteryType) then
-    if not self.headwearLottery then
-      self.headwearLottery = self:AddSubView("LotteryHeadwear", LotteryHeadwear)
-    end
-    self.curSubView = self.headwearLottery
   end
   self.skipType = LotteryProxy.Instance:GetSkipType(self.lotteryType)
 end
@@ -413,7 +452,6 @@ function LotteryMainView:FindObjs()
     self.progressSliderSp = self:FindComponent("ProgressSlider", UISprite, self.extraBonusRoot)
     self.progressBackground = self:FindComponent("ProgressBackground", UISprite, self.progressSlider.gameObject)
     self.progressGrid = self:FindComponent("progressGrid", UIGrid, self.extraBonusRoot)
-    self.progressGrid.gameObject.transform.localPosition = LuaGeometry.GetTempVector3(0, 170, 0)
     self.progressScrollView = self:FindComponent("ProgressScrollView", UIScrollView, self.extraBonusRoot)
     self.centerOnChild = self:FindComponent("ProgressScrollView", MyUICenterOnChild, self.extraBonusRoot)
   end
@@ -605,21 +643,27 @@ function LotteryMainView:UpdateLotteryPray()
   else
     self:Hide(self.cardPrayRoot)
   end
-  if self.cardPrayCtl then
-    self.cardPrayCtl:HandleUpdateLotteryPray()
+  local class = self:GetLotteryPrayCtrlClass()
+  if self.cardPrayCtl[class] then
+    self.cardPrayCtl[class]:HandleUpdateLotteryPray()
   end
   if self.curSubView and self.curSubView.UpdateLotteryPray then
     self.curSubView:UpdateLotteryPray()
   end
 end
 
-function LotteryMainView:OpenLotteryPray()
+function LotteryMainView:GetLotteryPrayCtrlClass()
   local cardUpData = _LotteryProxy:GetCardUpData(self.lotteryType)
-  local class = 3 < #cardUpData and LotteryPrayMulti or LotteryPray
-  if not self.cardPrayCtl then
-    self.cardPrayCtl = class.new(self.cardPrayBord)
+  local class = not (not (cardUpData and 3 < #cardUpData) or GameConfig.SystemForbid.MultiPrayLottery) and LotteryPrayMulti or LotteryPray
+  return class
+end
+
+function LotteryMainView:OpenLotteryPray()
+  local class = self:GetLotteryPrayCtrlClass()
+  if not self.cardPrayCtl[class] then
+    self.cardPrayCtl[class] = class.new(self.cardPrayBord)
   end
-  self.cardPrayCtl:UpdateByLotteryType(self.lotteryType)
+  self.cardPrayCtl[class]:UpdateByLotteryType(self.lotteryType)
 end
 
 function LotteryMainView:UpdateNewTip(lottery_type, obj)
@@ -1642,7 +1686,11 @@ function LotteryMainView:OnRecvExtraBonusCfgCmd()
 end
 
 function LotteryMainView:GetExtraBonusProgressGridCfg(index)
-  return extraBonusProgressGridMap[index]
+  if self.lotteryType == LotteryType.SpaceTime then
+    return spaceTimeExtraBonusConfig
+  else
+    return extraBonusProgressGridMap[index]
+  end
 end
 
 function LotteryMainView:ShowExtraBonus()
@@ -1663,6 +1711,9 @@ function LotteryMainView:ShowExtraBonus()
   end
   if self.progressBackground then
     self.progressBackground.height = gridconfig.sliderHeight
+  end
+  if self.progressGrid then
+    self.progressGrid.gameObject.transform.localPosition = LuaGeometry.GetTempVector3(0, gridconfig.progressGridLocalYPos or 170, 0)
   end
   self.stepMap = self.stepMap or {}
   TableUtility.TableClear(self.stepMap)
@@ -1685,7 +1736,7 @@ function LotteryMainView:ShowExtraBonus()
     if self.progressScrollView then
       self.progressScrollView:ResetPosition()
     end
-    if index and 3 < index then
+    if index and 3 < index and self.lotteryType ~= LotteryType.SpaceTime then
       local curCell = self.progressCtrl:GetCells()[index]
       if curCell then
         self.centerOnChild:CenterOn(curCell.gameObject.transform)
@@ -1729,13 +1780,17 @@ function LotteryMainView:UpdateExtraBonus()
     local currentAmount = 0
     if 0 < current then
       for i = 1, #keylist do
-        if current >= keylist[i] then
-          currentAmount = i / #keylist
+        local prevMilestone = keylist[i - 1] or 0
+        local curMilestone = keylist[i]
+        local stepValue = self.stepMap[curMilestone]
+        if not stepValue then
+          break
+        end
+        if current >= curMilestone then
+          currentAmount = currentAmount + stepValue * (curMilestone - prevMilestone)
         else
-          local static_interval = keylist[i] - (keylist[i - 1] or 0)
-          local cur_interval = current - (keylist[i - 1] or 0)
-          local ratio = cur_interval / static_interval * (1 / #keylist)
-          currentAmount = currentAmount + ratio
+          local partialProgress = current - prevMilestone
+          currentAmount = currentAmount + stepValue * partialProgress
           break
         end
       end
@@ -1862,5 +1917,10 @@ function LotteryMainView:ShowRewardItemTip(itemId, stick)
     rewardTipData.itemdata = ItemData.new()
   end
   rewardTipData.itemdata:ResetData("Reward", itemId)
+  if GameConfig.TwelvePvpVideo and GameConfig.TwelvePvpVideo[itemId] then
+    rewardTipData.funcConfig = {83}
+  else
+    rewardTipData.funcConfig = _EmptyTable
+  end
   self:ShowItemTip(rewardTipData, stick, NGUIUtil.AnchorSide.Right, rewardTipOffset)
 end

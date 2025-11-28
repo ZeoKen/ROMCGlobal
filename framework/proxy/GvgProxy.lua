@@ -1,6 +1,7 @@
 autoImport("GvgDefenseData")
 autoImport("GvgSettleInfo")
 autoImport("GVGPointInfoData")
+autoImport("GVGGroupZone4Server")
 autoImport("GVGGroupZone")
 autoImport("NewGvgRankData")
 autoImport("GuildInfoForQuery")
@@ -134,7 +135,21 @@ function GvgProxy.Print(msg)
 end
 
 function GvgProxy.ClientGroupId(id)
-  return math.fmod(id, 10000) + 1
+  return GvgProxy.Instance.server_group2client[id] or 0
+end
+
+function GvgProxy:GetServerGroupId(client_id)
+  if not self.serverGroupId then
+    self.serverGroupId = {}
+    for s, c in pairs(self.server_group2client) do
+      self.serverGroupId[c] = s
+    end
+  end
+  return self.serverGroupId[client_id] or 0
+end
+
+function GvgProxy.GetServerIdByGroupId(gId)
+  return gId // 10000
 end
 
 function GvgProxy:InitProxy()
@@ -185,6 +200,8 @@ function GvgProxy:InitNewGVG()
     [EGvgState.Calm] = GvgProxy.OnEnterCalmState,
     [EGvgState.PerfectDefense] = GvgProxy.OnEnterPerfect
   }
+  self.server_group2client = {}
+  self.server_groupZoneList = {}
   self.groupZoneList = {}
   self.pointInfoMap = {}
   self.myGuildPoints = {}
@@ -257,12 +274,11 @@ end
 
 function GvgProxy:SeasonDirtyCall()
   self.queryGroupZoneTime = nil
-  _ArrayClear(self.groupZoneList)
+  self:ClearGroupZoneData()
   self:ClearCurPerfectDefenseState()
   self:ClearRank()
   self.scoreInfo = nil
   _TableClear(self.losePointMap)
-  self.groupCnt = 0
   _TableClear(self.lobbyFlagData)
 end
 
@@ -284,6 +300,13 @@ function GvgProxy:GetWeekBattleCount()
     self.weekBattleCnt = GameConfig.GVGConfig.season_week_count
   end
   return self.weekBattleCnt
+end
+
+function GvgProxy:ClearGroupZoneData()
+  _ArrayClear(self.server_groupZoneList)
+  _ArrayClear(self.groupZoneList)
+  _TableClear(self.server_group2client)
+  self.groupCnt = 0
 end
 
 function GvgProxy:RecvQueryGvgZoneGroupGuildCCmd(data)
@@ -313,7 +336,7 @@ function GvgProxy:RecvQueryGvgZoneGroupGuildCCmd(data)
     end
   end
   self:_debugSeasonTime()
-  _ArrayClear(self.groupZoneList)
+  self:ClearGroupZoneData()
   local infos = data.infos
   if not infos or #infos == 0 then
     self:Debug("NewGVG 后端未推送战线分组信息")
@@ -321,13 +344,22 @@ function GvgProxy:RecvQueryGvgZoneGroupGuildCCmd(data)
   end
   self:Debug("NewGVG 后端推送战线分组信息 infoCount ", #infos)
   GvgProxy.Print(infos)
-  self.groupCnt = #infos
-  self:Debug("NewGVG 公会线分组数: ", self.groupCnt)
   for i = 1, #infos do
-    local groupid = infos[i].groupid
+    local server_group_zone = GVGGroupZone4Server.new(infos[i].groupid, infos[i].zoneids)
+    _ArrayPushBack(self.server_groupZoneList, server_group_zone)
+  end
+  table.sort(self.server_groupZoneList, function(a, b)
+    return a.groupid < b.groupid
+  end)
+  local server_groups_beenSort = self.server_groupZoneList
+  self.groupCnt = #server_groups_beenSort
+  self:Debug("NewGVG 公会线分组数: ", self.groupCnt)
+  for i = 1, #server_groups_beenSort do
+    local groupid = server_groups_beenSort[i].groupid
     self:Debug("NewGVG 战线分组id: ", groupid)
-    local zoneids = infos[i].zoneids
-    self.groupZoneList[#self.groupZoneList + 1] = GVGGroupZone.new(groupid, zoneids)
+    local zoneids = server_groups_beenSort[i].zoneids
+    self.groupZoneList[#self.groupZoneList + 1] = GVGGroupZone.new(groupid, zoneids, i)
+    self.server_group2client[groupid] = i
   end
   table.sort(self.groupZoneList, function(a, b)
     return a.groupid < b.groupid
@@ -448,20 +480,6 @@ end
 
 function GvgProxy:HasMoreGroupZone()
   return self.groupCnt and self.groupCnt > 1
-end
-
-function GvgProxy:GetClientMaxGroup()
-  local max = self.groupZoneList[#self.groupZoneList].groupid
-  return max
-end
-
-function GvgProxy:GetClientGroupRange()
-  if not self:HasMoreGroupZone() then
-    return
-  end
-  local min = self.groupZoneList[1].groupid
-  local max = self:GetClientMaxGroup()
-  return min, max
 end
 
 function GvgProxy:CheckGroupValid(groupid)
@@ -2350,12 +2368,14 @@ function GvgProxy:RefreshExcellentRewardRedTip()
     return
   end
   local hasUnRecv = false
-  local curExcellent = Game.Myself.data.userdata:Get(UDEnum.EXCELLECT) or 0
-  for _id, _info in pairs(Table_GuildGvgProgressReward) do
-    local curRewardId = self.rewardid or 0
-    if curExcellent >= _info.Excellent and _id > curRewardId then
-      hasUnRecv = true
-      break
+  if not self.isLeisure then
+    local curExcellent = Game.Myself.data.userdata:Get(UDEnum.EXCELLECT) or 0
+    for _id, _info in pairs(Table_GuildGvgProgressReward) do
+      local curRewardId = self.rewardid or 0
+      if curExcellent >= _info.Excellent and _id > curRewardId then
+        hasUnRecv = true
+        break
+      end
     end
   end
   if hasUnRecv then

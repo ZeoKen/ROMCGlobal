@@ -473,3 +473,13 @@ function MyselfTeamData:GetMemberCountInRange(range, filter, filterArgs)
   end
   return count
 end
+
+function MyselfTeamData:HasTeamProfession(classID)
+  local memList = self:GetPlayerMemberList(true, true)
+  for i = 1, #memList do
+    if memList[i]:GetProfession() == classID then
+      return true
+    end
+  end
+  return false
+end

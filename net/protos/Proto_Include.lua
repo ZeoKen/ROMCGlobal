@@ -34,6 +34,7 @@ autoImport("PuzzleCmd_pb")
 autoImport("PveCard_pb")
 autoImport("QueueEnterCmd_pb")
 autoImport("RaidCmd_pb")
+autoImport("RecallCCmd_pb")
 autoImport("RecordTrade_pb")
 autoImport("RoguelikeCmd_pb")
 autoImport("SceneAugury_pb")
@@ -264,6 +265,7 @@ Proto_Include = {
     [51] = MatchCCmd_pb.EnterObservationMatchCCmd,
     [39] = MatchCCmd_pb.TwelveWarbandDeleteMatchCCmd,
     [65] = MatchCCmd_pb.DesertWolfStatQueryCmd,
+    [75] = MatchCCmd_pb.AbyssRoomStateNtfMatchCCmd,
     [38] = MatchCCmd_pb.TwelveWarbandLeaveMatchCCmd,
     [73] = MatchCCmd_pb.ChampionPvpPickRewardCmd,
     [72] = MatchCCmd_pb.TriplePvpRewardStatusCmd,
@@ -685,6 +687,7 @@ Proto_Include = {
     [35] = SceneUser3_pb.PrestigeLevelUpNotifyCmd,
     [34] = SceneUser3_pb.QueryPrestigeCmd,
     [33] = SceneUser3_pb.ActionStatUserCmd,
+    [55] = SceneUser3_pb.FairyTaleRankQueryCmd,
     [32] = SceneUser3_pb.AuthUpdateUserCmd,
     [50] = SceneUser3_pb.EffectInfoUpdateUserCmd
   },
@@ -742,7 +745,6 @@ Proto_Include = {
     [18] = LoginUserCmd_pb.ClientFrameUserCmd,
     [31] = LoginUserCmd_pb.PingUserCmd,
     [30] = LoginUserCmd_pb.AttachSyncCmdUserCmd,
-    [34] = LoginUserCmd_pb.ReqLoginOutGateCmd,
     [33] = LoginUserCmd_pb.SetMaxScopeUserCmd
   },
   [2] = {
@@ -781,6 +783,25 @@ Proto_Include = {
     [50] = SceneUser_pb.UserRejectSettingNotifyServiceCmd,
     [53] = SceneUser_pb.ObservationModeUserCmd,
     [52] = SceneUser_pb.ReqHideUserCmd
+  },
+  [84] = {
+    [11] = RecallCCmd_pb.FundGetRewardRecallCmd,
+    [10] = RecallCCmd_pb.FundQueryInfoRecallCmd,
+    [13] = RecallCCmd_pb.ShopQueryInfoRecallCmd,
+    [12] = RecallCCmd_pb.GetAllBattlePassRewardRecallCmd,
+    [15] = RecallCCmd_pb.CatchUpQueryInfoRecallCmd,
+    [14] = RecallCCmd_pb.BuyShopGoodRecallCmd,
+    [17] = RecallCCmd_pb.MvpCardSetUpCardRecallCmd,
+    [16] = RecallCCmd_pb.MvpCardQueryInfoRecallCmd,
+    [18] = RecallCCmd_pb.MvpCardRandCardRecallCmd,
+    [1] = RecallCCmd_pb.QueryRecallInfoRecallCmd,
+    [3] = RecallCCmd_pb.SignInRecallCmd,
+    [2] = RecallCCmd_pb.SignQueryInfoRecallCmd,
+    [5] = RecallCCmd_pb.BattlePassQuickLvUpRecallCmd,
+    [4] = RecallCCmd_pb.BattlePassQueryInfoRecallCmd,
+    [6] = RecallCCmd_pb.GetBattlePassRewardRecallCmd,
+    [9] = RecallCCmd_pb.WeeklyTaskGetRewardRecallCmd,
+    [8] = RecallCCmd_pb.WeeklyTaskQueryInfoRecallCmd
   },
   [7] = {
     [24] = SceneSkill_pb.ClearOptionSkillCmd,
@@ -926,6 +947,7 @@ Proto_Include = {
     [99] = SceneItem_pb.EquipPowerInputItemCmd,
     [98] = SceneItem_pb.EquipRefineTransferItemCmd,
     [168] = SceneItem_pb.BalanceModeMemoryUpdateItemCmd,
+    [169] = SceneItem_pb.MemoryExcessItemCmd,
     [91] = SceneItem_pb.MixLotteryArchiveCmd,
     [90] = SceneItem_pb.PersonalArtifactAppraisalItemCmd,
     [93] = SceneItem_pb.MagicSuitApply,
@@ -1218,7 +1240,6 @@ Proto_Include = {
     [227] = SceneUser2_pb.UserSyncBuffFromUserCmd
   },
   [8] = {
-    [56] = SceneQuest_pb.AbyssDragonInfoNtfQuestCmd,
     [54] = SceneQuest_pb.QueryAbyssQuestListQuestCmd,
     [42] = SceneQuest_pb.CompleteAvailableQueryQuestCmd,
     [43] = SceneQuest_pb.WorldCountListQuestCmd,
@@ -1246,7 +1267,6 @@ Proto_Include = {
     [51] = SceneQuest_pb.UpdateQuestStoryIndexQuestCmd,
     [39] = SceneQuest_pb.CloseUICmd,
     [38] = SceneQuest_pb.EnlightSecretCmd,
-    [58] = SceneQuest_pb.AbyssDragonOnOffQuestCmd,
     [11] = SceneQuest_pb.VisitNpcUserCmd,
     [10] = SceneQuest_pb.QuestCanAcceptListChange,
     [13] = SceneQuest_pb.QueryWantedInfoQuestCmd,
@@ -1265,8 +1285,7 @@ Proto_Include = {
     [34] = SceneQuest_pb.UnlockEvidenceMessageCmd,
     [33] = SceneQuest_pb.EvidenceQueryCmd,
     [55] = SceneQuest_pb.UpdateAbyssHelpCountQuestCmd,
-    [32] = SceneQuest_pb.BottleUpdateQuestCmd,
-    [57] = SceneQuest_pb.AbyssDragonHpUpdateQuestCmd
+    [32] = SceneQuest_pb.BottleUpdateQuestCmd
   },
   [68] = {
     [1] = PuzzleCmd_pb.QueryActPuzzleCmd,
@@ -1317,7 +1336,11 @@ Proto_Include = {
     [16] = RaidCmd_pb.ClientRaidAchRewardCmd,
     [19] = RaidCmd_pb.HeadwearActivityTowerUserCmd,
     [18] = RaidCmd_pb.HeadwearActivityRoundUserCmd,
-    [30] = RaidCmd_pb.RaidNewResetCmd
+    [31] = RaidCmd_pb.AbyssDragonInfoNtfRaidCmd,
+    [30] = RaidCmd_pb.RaidNewResetCmd,
+    [34] = RaidCmd_pb.AbyssDragonDamageRankRaidCmd,
+    [33] = RaidCmd_pb.AbyssDragonOnOffRaidCmd,
+    [32] = RaidCmd_pb.AbyssDragonHpUpdateRaidCmd
   },
   [74] = {
     [1] = UserAfkCmd_pb.ReqAfkUserAfkCmd,
@@ -1479,6 +1502,7 @@ Proto_Include = {
     [53] = FuBenCmd_pb.TeamReliveCountFubenCmd,
     [52] = FuBenCmd_pb.TeamExpSyncFubenCmd,
     [164] = FuBenCmd_pb.GvgMvpInfoUpdateCmd,
+    [179] = FuBenCmd_pb.FairyTaleRaidSyncCmd,
     [178] = FuBenCmd_pb.STIDropSkillCmd,
     [177] = FuBenCmd_pb.STIRefreshUpgradeOptionsCmd,
     [88] = FuBenCmd_pb.ReqEnterTowerPrivate,
@@ -1530,9 +1554,15 @@ Proto_Include = {
     [172] = FuBenCmd_pb.STIGetUpgradeOptionsCmd,
     [171] = FuBenCmd_pb.STISyncAvailableUpgradeNumberCmd,
     [170] = FuBenCmd_pb.STISyncSkillCmd,
+    [181] = FuBenCmd_pb.GvgDateBattleInfoSyncCmd,
+    [182] = FuBenCmd_pb.FairyTaleRaidRewardSyncCmd,
+    [183] = FuBenCmd_pb.FairyTaleRaidGetRewardCmd,
+    [180] = FuBenCmd_pb.RaidStartFightCmd,
     [2] = FuBenCmd_pb.FailFuBenUserCmd,
     [162] = FuBenCmd_pb.EBFEventAreaUpdateCmd,
+    [184] = FuBenCmd_pb.SyncMemoryEquipRewardInfo,
     [6] = FuBenCmd_pb.StageStepUserCmd,
+    [185] = FuBenCmd_pb.ChooseMemoryEquipRewardInfo,
     [99] = FuBenCmd_pb.TeamPwsStateSyncFubenCmd,
     [98] = FuBenCmd_pb.QueryComodoTeamRaidStat,
     [168] = FuBenCmd_pb.SyncGvgLeaderPosCmd,
@@ -2013,7 +2043,11 @@ Proto_Include = {
     [10] = SessionShop_pb.FreyExchangeShopCmd,
     [13] = SessionShop_pb.BuyPackageSaleShopCmd,
     [12] = SessionShop_pb.BulkBuyShopItem,
+    [15] = SessionShop_pb.RewardSafetyQueryShopCmd,
     [14] = SessionShop_pb.BuyDepositProductShopCmd,
+    [17] = SessionShop_pb.ExtraBonusResetShopCmd,
+    [16] = SessionShop_pb.ExtraBonusQueryShopCmd,
+    [18] = SessionShop_pb.ExtraBonusRewardShopCmd,
     [1] = SessionShop_pb.BuyShopItem,
     [3] = SessionShop_pb.QueryQuickBuyConfigCmd,
     [2] = SessionShop_pb.QueryShopConfigCmd,

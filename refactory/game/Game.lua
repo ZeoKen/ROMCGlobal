@@ -282,6 +282,60 @@ function Game:InitResolutions()
   end
 end
 
+function Game:PrepareCompitibleVideoPlayer()
+  if BackwardCompatibilityUtil.CompatibilityModeExceptEditor(91) then
+    local root = table.concat({
+      ApplicationHelper.persistentDataPath,
+      "/",
+      ApplicationHelper.platformFolder,
+      "/",
+      "resources/gui/v1/"
+    })
+    local path = root .. "cell/newrechargeherocell_old.unity3d"
+    local newpath = root .. "cell/newrechargeherocell.unity3d"
+    if FileHelper.ExistFile(path) then
+      FileHelper.DeleteFile(newpath)
+      FileHelper.MoveFile(path, newpath)
+    end
+    path = root .. "part/startgamebgvideoplayer_old.unity3d"
+    newpath = root .. "part/startgamebgvideoplayer.unity3d"
+    if FileHelper.ExistFile(path) then
+      FileHelper.DeleteFile(newpath)
+      FileHelper.MoveFile(path, newpath)
+    end
+    path = root .. "prefab/plot/plotstoryedvideoplayer_old.unity3d"
+    newpath = root .. "prefab/plot/plotstoryedvideoplayer.unity3d"
+    if FileHelper.ExistFile(path) then
+      FileHelper.DeleteFile(newpath)
+      FileHelper.MoveFile(path, newpath)
+    end
+    path = root .. "view/rewardeffectview_old.unity3d"
+    newpath = root .. "view/rewardeffectview.unity3d"
+    if FileHelper.ExistFile(path) then
+      FileHelper.DeleteFile(newpath)
+      FileHelper.MoveFile(path, newpath)
+    end
+    path = root .. "view/videopanel_old.unity3d"
+    newpath = root .. "view/videopanel.unity3d"
+    if FileHelper.ExistFile(path) then
+      FileHelper.DeleteFile(newpath)
+      FileHelper.MoveFile(path, newpath)
+    end
+    path = root .. "view/videopreview_old.unity3d"
+    newpath = root .. "view/videopreview.unity3d"
+    if FileHelper.ExistFile(path) then
+      FileHelper.DeleteFile(newpath)
+      FileHelper.MoveFile(path, newpath)
+    end
+    path = root .. "view/videoplayer_old.unity3d"
+    newpath = root .. "view/videoplayer.unity3d"
+    if FileHelper.ExistFile(path) then
+      FileHelper.DeleteFile(newpath)
+      FileHelper.MoveFile(path, newpath)
+    end
+  end
+end
+
 function Game:ctor(param)
   Buglylog("Game:ctor")
   self:XDELogin()
@@ -408,6 +462,7 @@ function Game:ctor(param)
   GameFacade.Instance:sendNotification(StartEvent.StartUp)
   AppStorePurchase.Ins():AddListener()
   if param == nil then
+    self:PrepareCompitibleVideoPlayer()
     Game.OpenScene_CharacterChoose(function()
       GameFacade.Instance:sendNotification(UIEvent.ShowUI, {
         viewname = "StartGamePanel"

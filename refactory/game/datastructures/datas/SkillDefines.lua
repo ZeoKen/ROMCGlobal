@@ -89,7 +89,9 @@ BuffType = {
   SignAssassinate = "SignAssassinate",
   PerfectService = "PerfectService",
   InWarehouse = "InWarehouse",
-  PerfectServiceTemporary = "PerfectServiceTemporary"
+  PerfectServiceTemporary = "PerfectServiceTemporary",
+  BellCharge = "BellCharge",
+  AttrCanMove = "AttrCanMove"
 }
 SkillTargetType = {
   None = 1,

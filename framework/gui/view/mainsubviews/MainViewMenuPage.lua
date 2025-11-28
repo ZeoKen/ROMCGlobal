@@ -269,6 +269,7 @@ function MainViewMenuPage:InitUI()
   self.antiAddictionSp = self:FindGO("AntiAddiction")
   self:InitTripleTeamPwsMatchBtn()
   self:InitAbyssDragonBtn()
+  self:InitRecallActivityBtn()
 end
 
 function MainViewMenuPage:UpdateDisneyMusicState()
@@ -415,6 +416,7 @@ function MainViewMenuPage:InitActivityBtn()
   end
   self:RegisterRedTipCheck(45, self.DoujinshiButton, 17)
   self:RegisterRedTipCheck(PeddlerShopProxy.WholeRedTipID, self.DoujinshiButton, 17)
+  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_SHOP_EXTRA_BONUS, self.DoujinshiButton, 17)
   self:RegisterRedTipCheck(702, self.DoujinshiButton, 17)
   self:RegisterRedTipCheck(703, self.DoujinshiButton, 17)
   self:RegisterRedTipCheck(704, self.DoujinshiButton, 17)
@@ -485,12 +487,18 @@ function MainViewMenuPage:InitActivityBtn()
     end)
   end
   self:ActivitySignInBut()
-  local pCfg = PeddlerShopProxy.Instance:GetCfg()
-  if pCfg then
-    self.peddlerShopBtn = self.container.activityPage:CreateDoujinshiButton(pCfg.name, pCfg.icon, function()
-      self:ToView(PanelConfig.PeddlerShop)
+  local cfg = PeddlerShopProxy.Instance:GetCfg()
+  if cfg then
+    self.peddlerShopBtn = self.container.activityPage:CreateDoujinshiButton(cfg.name, cfg.icon, function()
+      if self:CheckPeddlerShopOpen() then
+        self:ToView(PanelConfig.PeddlerShop)
+      else
+        MsgManager.ShowMsgByID(40973)
+        self.peddlerShopBtn:SetActive(false)
+      end
     end)
     self:RegisterRedTipCheck(PeddlerShopProxy.WholeRedTipID, self.peddlerShopBtn, 39)
+    self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_SHOP_EXTRA_BONUS, self.peddlerShopBtn, 39)
   end
   self.activityRecallObj = Game.AssetManager_UI:CreateAsset(ResourcePathHelper.UICell("ActivityButtonCell"))
   self.activityRecallObj.transform:SetParent(self.doujinshiGrid.transform, false)
@@ -872,12 +880,7 @@ function MainViewMenuPage:RefreshDailyLoginBtn()
         end
         self.dailyLoginBtn[k]:SetActive(true)
       end
-      self:RegisterRedTipCheck(redtipID, self.dailyLoginBtn[k], 39)
-      if hotPotInfo.redtip then
-        RedTipProxy.Instance:UpdateRedTip(redtipID)
-      else
-        RedTipProxy.Instance:RemoveWholeTip(redtipID)
-      end
+      self:RegisterRedTipCheck(redtipID, self.dailyLoginBtn[k], 39, nil, nil, k)
     elseif self.dailyLoginBtn[k] then
       self.dailyLoginBtn[k]:SetActive(false)
       RedTipProxy.Instance:RemoveWholeTip(redtipID)
@@ -1100,7 +1103,6 @@ function MainViewMenuPage:HandlePlayerMapChange()
   self:InitSevenRoyalFamiliesEvidenceBookButton()
   self:InitSevenRoyalFamilyTreeButton()
   self:RefreshTechTreeBtn()
-  self:RefreshNewbieTechTreeBtn()
   self:RefreshWildMvpBtn()
   self:RefreshNoviceRechargeBtn()
   self:RefreshAnniversary2023Btn()
@@ -2038,7 +2040,54 @@ function MainViewMenuPage:MapViewInterests()
   self:AddListenEvt(ServiceEvent.QuestUpdateQuestHeroQuestCmd, self.PreviewSaleRole)
   self:AddListenEvt(ServiceEvent.ActivityCmdMissionRewardInfoSyncCmd, self.UpdateTimeLimitQuestReward, self)
   self:AddListenEvt(ServiceEvent.QuestUpdateQuestStoryIndexQuestCmd, self.UpdateTimeLimitQuestReward, self)
+  self:AddListenEvt(ServiceEvent.RaidCmdAbyssDragonOnOffRaidCmd, self.InitAbyssDragonBtn)
   self:AddListenEvt(ServiceEvent.QuestAbyssDragonOnOffQuestCmd, self.InitAbyssDragonBtn)
+  self:AddListenEvt(PVEEvent.AbyssDragon_ClientWait, self.RefreshAbyssDragonBtn)
+  self:AddListenEvt(ServiceEvent.RecallCCmdQueryRecallInfoRecallCmd, self.RefreshRecallActivityBtn)
+  self:AddListenEvt(ServiceEvent.RecallCCmdUpdateRecallInfoRecallCmd, self.RefreshRecallActivityBtn)
+  self:AddListenEvt(MyselfEvent.RecallTimeChange, self.RefreshRecallActivityBtn)
+end
+
+function MainViewMenuPage:InitRecallActivityBtn()
+  self:RefreshRecallActivityBtn()
+end
+
+function MainViewMenuPage:RefreshRecallActivityBtn()
+  local hasRecallActivity = RecallInfoProxy.Instance:GetTotalBatchCount() > 0
+  local recall_time = Game.Myself.data.userdata:Get(UDEnum.RECALL_TIME) or 0
+  local isReturnPlayer = recall_time > ServerTime.CurServerTime() / 1000
+  if hasRecallActivity and isReturnPlayer then
+    if not self.recallActivityBtn then
+      self.recallActivityBtn = self:CopyGameObject(self.signInButton, self.topRFuncGrid2)
+      self.recallActivityBtn.name = "RecallActivityBtn"
+      local recallSprite = self:FindGO("Sprite", self.recallActivityBtn):GetComponent(UISprite)
+      IconManager:SetUIIcon("new-main_icon_huigui", recallSprite)
+      local recallLabel = self:FindGO("Label", self.recallActivityBtn):GetComponent(UILabel)
+      recallLabel.text = ZhString.RecallActivity_ButtonName
+      self:AddClickEvent(self.recallActivityBtn, function()
+        self:_onClickRecallActivity()
+      end)
+      self:RegisterRedTipCheck(10778, self.recallActivityBtn, 42)
+    end
+    if self.recallActivityBtn then
+      self.recallActivityBtn:SetActive(true)
+    end
+  elseif self.recallActivityBtn then
+    self.recallActivityBtn:SetActive(false)
+  end
+  self.topRFuncGrid2:Reposition()
+end
+
+function MainViewMenuPage:_onClickRecallActivity()
+  if RecallInfoProxy.Instance:GetTotalBatchCount() > 0 then
+    self:ToView(PanelConfig.RecallIntegrationView)
+  else
+    MsgManager.ShowMsgByID(40973)
+    if self.recallActivityBtn then
+      self.recallActivityBtn:SetActive(false)
+      self.topRFuncGrid2:Reposition()
+    end
+  end
 end
 
 function MainViewMenuPage:HandleRedTipUpdate(note)
@@ -2290,13 +2339,13 @@ function MainViewMenuPage:HandleUnlockMenu()
   self:InitSevenRoyalFamiliesEvidenceBookButton()
   self:InitSevenRoyalFamilyTreeButton()
   self:RefreshTechTreeBtn()
-  self:RefreshNewbieTechTreeBtn()
   self:RefreshWildMvpBtn()
   self:RefreshNoviceRechargeBtn()
   self:RefreshAnniversary2023Btn()
   self:InitBattlePassBtn()
   self:UpdateLotteryActBtn()
   self:UpdateActivityIntegrationBtns()
+  self:RefreshRecallActivityBtn()
 end
 
 function MainViewMenuPage:HandleLockMenu()
@@ -2306,7 +2355,6 @@ function MainViewMenuPage:HandleLockMenu()
   self:InitSevenRoyalFamiliesEvidenceBookButton()
   self:RefreshTechTreeBtn()
   self:UpdateTopic()
-  self:RefreshNewbieTechTreeBtn()
   self:RefreshWildMvpBtn()
   self:RefreshNoviceRechargeBtn()
   self:RefreshAnniversary2023Btn()
@@ -3307,6 +3355,10 @@ function MainViewMenuPage:CheckActivityRecallOpen()
 end
 
 function MainViewMenuPage:CheckPeddlerShopOpen()
+  local extraBonusBatch = PeddlerShopProxy.Instance:CheckExtraBonusActivity()
+  if 0 < extraBonusBatch then
+    return true, extraBonusBatch
+  end
   PeddlerShopProxy.Instance:QueryShopConfig()
   return PeddlerShopProxy.Instance:CheckOpen()
 end
@@ -4921,18 +4973,22 @@ end
 function MainViewMenuPage:InitAbyssDragonBtn()
   if self.abyssDragonBtn == nil then
     self.abyssDragonBtn = self:FindGO("AbyssDragonBtn")
-  end
-  local isOn = AbyssFakeDragonProxy.Instance:GetOnOff()
-  if isOn then
-    local label = self:FindComponent("Label", UILabel, self.abyssDragonBtn)
-    label.text = GameConfig.AbyssDragon.activityTitle
-    self.abyssDragonBtn:SetActive(true)
-    self:RepositionTopRFuncGrid2()
+    self.abyssDragonLabel = self:FindComponent("Label", UILabel, self.abyssDragonBtn)
+    self.abyssDragonLabel.text = GameConfig.AbyssDragon.activityTitle
     self:AddClickEvent(self.abyssDragonBtn, function()
+      if FunctionAbyssDragon.Me():Check_Client_IsWaiting() then
+        FunctionAbyssDragon.Me():Do_AbyssRoomState_Wait()
+        return
+      end
       self:ToView(PanelConfig.SpaceDragonIntroView)
     end)
-  else
-    self.abyssDragonBtn:SetActive(false)
-    self:RepositionTopRFuncGrid2()
   end
+  local isOn = AbyssFakeDragonProxy.Instance:GetOnOff()
+  self.abyssDragonBtn:SetActive(isOn or false)
+  self:RepositionTopRFuncGrid2()
+end
+
+function MainViewMenuPage:RefreshAbyssDragonBtn()
+  local str = FunctionAbyssDragon.Me():Check_Client_IsWaiting() and ZhString.AbyssDragon_ClientWait or GameConfig.AbyssDragon.activityTitle
+  self.abyssDragonLabel.text = str
 end

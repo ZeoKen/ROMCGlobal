@@ -36,6 +36,7 @@ function InheritSkillDragCell:FindObjs()
   self:AddClickEvent(self.gameObject, function()
     self:OnCellClick()
   end)
+  self.selectSp = self:FindComponent("Select", UIMultiSprite)
 end
 
 function InheritSkillDragCell:SetData(data)
@@ -71,5 +72,15 @@ end
 function InheritSkillDragCell:OnCellClick()
   if self.data and self.data ~= InheritSkillDragCell.Empty then
     self:PassEvent(MouseEvent.MouseClick, self)
+  end
+end
+
+function InheritSkillDragCell:SetSelect(select)
+  self.selectSp.gameObject:SetActive(select)
+  if select then
+    local isPassive = GameConfig.SkillType[self.data.staticData.SkillType].isPassive
+    self.selectSp.CurrentState = isPassive and 1 or 0
+    self.selectSp.width = isPassive and 70 or 75
+    self.selectSp.height = isPassive and 70 or 75
   end
 end

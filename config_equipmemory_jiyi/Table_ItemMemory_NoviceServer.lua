@@ -51,7 +51,7 @@ Table_ItemMemory = {
       [20] = {group = 2001},
       [30] = {group = 3001}
     },
-    MaxLevel = 30
+    MaxLevel = 40
   },
   [4753] = {
     id = 4753,
@@ -70,7 +70,7 @@ Table_ItemMemory = {
       [30] = {group = 3001},
       [999] = {group = 4001}
     },
-    MaxLevel = 30
+    MaxLevel = 40
   },
   [4704] = {
     id = 4704,
@@ -124,7 +124,7 @@ Table_ItemMemory = {
       [20] = {group = 2011},
       [30] = {group = 3011}
     },
-    MaxLevel = 30
+    MaxLevel = 40
   },
   [4756] = {
     id = 4756,
@@ -143,7 +143,7 @@ Table_ItemMemory = {
       [30] = {group = 3011},
       [999] = {group = 4011}
     },
-    MaxLevel = 30
+    MaxLevel = 40
   },
   [4712] = {
     id = 4712,
@@ -197,7 +197,7 @@ Table_ItemMemory = {
       [20] = {group = 2031},
       [30] = {group = 3031}
     },
-    MaxLevel = 30
+    MaxLevel = 40
   },
   [4764] = {
     id = 4764,
@@ -216,7 +216,7 @@ Table_ItemMemory = {
       [30] = {group = 3031},
       [999] = {group = 4031}
     },
-    MaxLevel = 30
+    MaxLevel = 40
   }
 }
 Table_ItemMemory_fields = {

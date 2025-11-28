@@ -17,7 +17,7 @@ function NCreature:CheckAction(action)
 end
 
 function NCreature:Logic_PlayAction(params, force)
-  if not force and self.data and (self.data:Freeze() or self.data:NoAction()) then
+  if not force and self.data and (self.data:Freeze() or self.data:NoAction() or self.data:DeepFreeze()) then
     return false
   end
   if self.data:IsOb() then
@@ -40,7 +40,7 @@ function NCreature:Logic_PlayAction(params, force)
 end
 
 function NCreature:Logic_PlayAction_Simple(name, defaultName, speed)
-  if self.data and self.data:Freeze() then
+  if self.data and (self.data:Freeze() or self.data:DeepFreeze()) then
     return false
   end
   if not self:CheckAction(name or defaultName) then
@@ -87,7 +87,7 @@ end
 
 function NCreature:Logic_PlayAction_Move(customMoveActionName, force, callback)
   local data = self.data
-  if data and (data:Freeze() or data:NoMoveAction() or data:NoAct()) then
+  if data and (data:Freeze() or data:NoMoveAction() or data:NoAct() or data:DeepFreeze()) then
     if data and data:NoMoveAction() and self.skill:IsCastingSkill() then
       self:PlayWalkEffect(RoleDefines_EP.Bottom)
     end
@@ -222,8 +222,16 @@ function NCreature:Logic_Freeze(on)
   end
 end
 
+function NCreature:Logic_DeepFreeze(on)
+  if on then
+    self.assetRole:SetActionSpeed(0)
+  else
+    self.assetRole:SetActionSpeed(1)
+  end
+end
+
 function NCreature:Logic_NoAct(on)
-  if on and not self.data:Freeze() then
+  if on and not self.data:Freeze() and not self.data:DeepFreeze() then
     self:Logic_StopBlendAction()
     self:Logic_PlayAction_Idle()
   end

@@ -60,7 +60,7 @@ function ServiceMatchCCmdProxy:CallFightConfirmCCmd(type, roomid, teamid, reply)
   ServiceMatchCCmdProxy.super.CallFightConfirmCCmd(self, type, roomid, teamid, reply)
 end
 
-function ServiceMatchCCmdProxy:CallJoinRoomCCmd(type, roomid, name, isquick, teamid, teammember, ret, guildid, users, matcher, charid, zoneid, serverid, teamexptype, onlymyserver, entranceid, need_robot_npc, need_heal_profession)
+function ServiceMatchCCmdProxy:CallJoinRoomCCmd(type, roomid, name, isquick, teamid, teammember, ret, guildid, users, matcher, charid, zoneid, serverid, teamexptype, onlymyserver, entranceid, need_robot_npc, need_heal_profession, abyss_option)
   local logStr = string.format("type:%s, roomid:%s, teamid:%s", tostring(type), tostring(roomid), tostring(teamid))
   helplog("MatchCCmd Call JoinRoomCCmd", logStr)
   if nil == need_robot_npc then
@@ -71,7 +71,7 @@ function ServiceMatchCCmdProxy:CallJoinRoomCCmd(type, roomid, name, isquick, tea
     local var_healProfession = MyselfProxy.Instance:getVarValueByType(Var_pb.EVARTYPE_NEED_HEAL_PROFESSION) or 0
     need_heal_profession = var_healProfession == 1
   end
-  ServiceMatchCCmdProxy.super.CallJoinRoomCCmd(self, type, roomid, name, isquick, teamid, teammember, ret, guildid, users, matcher, charid, zoneid, serverid, teamexptype, onlymyserver, entranceid, need_robot_npc, need_heal_profession)
+  ServiceMatchCCmdProxy.super.CallJoinRoomCCmd(self, type, roomid, name, isquick, teamid, teammember, ret, guildid, users, matcher, charid, zoneid, serverid, teamexptype, onlymyserver, entranceid, need_robot_npc, need_heal_profession, abyss_option)
 end
 
 function ServiceMatchCCmdProxy:CallLeaveRoomCCmd(type, guid)
@@ -451,4 +451,9 @@ end
 function ServiceMatchCCmdProxy:RecvChampionPvpRewardStatusCmd(data)
   PvpProxy.Instance:UpdateChampionPvpRewardStatusCmd(data)
   self:Notify(ServiceEvent.MatchCCmdChampionPvpRewardStatusCmd, data)
+end
+
+function ServiceMatchCCmdProxy:RecvAbyssRoomStateNtfMatchCCmd(data)
+  FunctionAbyssDragon.Me():HandleAbyssRoomState(data.state)
+  self:Notify(ServiceEvent.MatchCCmdAbyssRoomStateNtfMatchCCmd, data)
 end

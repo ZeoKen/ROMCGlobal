@@ -44,6 +44,24 @@ function TitleData:bVisibilyAchievement()
   return false
 end
 
+function TitleData:bActivityHideLock()
+  local config = Table_Appellation[self.id]
+  if config and config.HideLock and config.HideLock == 1 then
+    return true
+  end
+  return false
+end
+
+function TitleData:bShouldHide()
+  if self:bActivityHideLock() and not self.unlocked then
+    return true
+  end
+  if self:bVisibilyAchievement() and not self.unlocked then
+    return true
+  end
+  return false
+end
+
 function TitleData:GetAchievemnetIDByTitle()
   local data = Game.Config_TitleAchievemnet[self.id]
   if data then
@@ -115,6 +133,24 @@ end
 function TitleLevelGroupData:bVisibilyAchievement()
   local data = Game.Config_TitleAchievemnet[self.activeTitleData.id]
   if data and data.Visibility and data.Visibility == 1 then
+    return true
+  end
+  return false
+end
+
+function TitleLevelGroupData:bActivityHideLock()
+  local config = Table_Appellation[self.activeTitleData.id]
+  if config and config.HideLock and config.HideLock == 1 then
+    return true
+  end
+  return false
+end
+
+function TitleLevelGroupData:bShouldHide()
+  if self:bActivityHideLock() and not self.unlocked then
+    return true
+  end
+  if self:bVisibilyAchievement() and not self.unlocked then
     return true
   end
   return false

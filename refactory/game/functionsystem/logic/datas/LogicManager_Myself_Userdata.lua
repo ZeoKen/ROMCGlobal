@@ -50,6 +50,7 @@ function LogicManager_Myself_Userdata:ctor()
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_AUTOSELL, self.UpdateAutoSell)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_SKILL_POINT, self.UpdateAddPointNotice)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_TOTALPOINT, self.UpdateAddPointNotice)
+  self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_RECALL_TIME, self.UpdateRecallTime)
   self.spProfessionHandler = {
     [111] = self.TryShowBullets,
     [601] = self.TryShowFrenzy,
@@ -430,6 +431,10 @@ function LogicManager_Myself_Userdata:UpdateAddPointNotice(ncreature, userDataID
   if oldValue ~= newValue then
     GameFacade.Instance:sendNotification(MyselfEvent.LevelUp)
   end
+end
+
+function LogicManager_Myself_Userdata:UpdateRecallTime()
+  GameFacade.Instance:sendNotification(MyselfEvent.RecallTimeChange)
 end
 
 local Hero_SolarBuff = 139610

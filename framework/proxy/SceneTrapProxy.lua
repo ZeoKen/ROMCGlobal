@@ -53,6 +53,9 @@ function SceneTrapProxy:Add(data)
   else
     trap:Refresh(data)
   end
+  if self.trapRemoveCaches[id] then
+    self.trapRemoveCaches[id] = nil
+  end
   return nil
 end
 

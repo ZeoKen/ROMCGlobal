@@ -189,3 +189,7 @@ end
 function PveEntranceData:IsSpaceTimeIllusion()
   return self.raidType == PveRaidType.SpaceTimeIllusion
 end
+
+function PveEntranceData:IsFairyTale()
+  return self.raidType == PveRaidType.FairyTale
+end

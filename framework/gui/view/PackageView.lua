@@ -520,7 +520,7 @@ function PackageView:OnDestroy()
 end
 
 function PackageView:OnBagItemDragStart(itemData)
-  if not itemData then
+  if not itemData or itemData == BagItemEmptyType.Empty or itemData == BagItemEmptyType.Grey then
     return
   end
   local isMemory = itemData:HasMemoryInfo()

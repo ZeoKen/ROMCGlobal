@@ -41,12 +41,12 @@ function InheritSkillCell:SetData(data)
     self.checkGO:SetActive(data.isLoad or false)
     self:UpdateSkillNameBg(data.staticData)
   end
-  self:UpdateDragable()
+  self:UpdateDragable(self.data and self.data.isUnlock and self.data.isInherited or false)
   self:UpdateLock()
 end
 
-function InheritSkillCell:UpdateDragable()
-  self.dragDrop:SetDragEnable(self.data and self.data.isUnlock and self.data.isInherited or false)
+function InheritSkillCell:UpdateDragable(enable)
+  self.dragDrop:SetDragEnable(enable)
 end
 
 function InheritSkillCell:UpdateLock()

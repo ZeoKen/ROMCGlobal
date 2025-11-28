@@ -268,3 +268,35 @@ function SaveInfoProxy:GetEquipMasterSkillFamilyId(id, type)
     return _MultiProfessionSaveProxy.Instance:GetEquipMasterSkillFamilyId(id)
   end
 end
+
+function SaveInfoProxy:GetInheritSkillProfessDatas(id, type)
+  if type == SaveInfoEnum.Branch then
+    return _BranchInfoSaveProxy.Instance:GetInheritSkillProfessDatas(id)
+  elseif type == SaveInfoEnum.Record then
+    return _MultiProfessionSaveProxy.Instance:GetInheritSkillProfessDatas(id)
+  end
+end
+
+function SaveInfoProxy:GetInheritSkillLoadSkills(id, type)
+  if type == SaveInfoEnum.Branch then
+    return _BranchInfoSaveProxy.Instance:GetInheritSkillLoadSkills(id)
+  elseif type == SaveInfoEnum.Record then
+    return _MultiProfessionSaveProxy.Instance:GetInheritSkillLoadSkills(id)
+  end
+end
+
+function SaveInfoProxy:GetExtendedCostPoints(id, type)
+  if type == SaveInfoEnum.Branch then
+    return _BranchInfoSaveProxy.Instance:GetExtendedCostPoints(id)
+  elseif type == SaveInfoEnum.Record then
+    return _MultiProfessionSaveProxy.Instance:GetExtendedCostPoints(id)
+  end
+end
+
+function SaveInfoProxy:GetTotalCostPointAttrs(id, type, costPoint)
+  if type == SaveInfoEnum.Branch then
+    return _BranchInfoSaveProxy.Instance:GetTotalCostPointAttrs(id, costPoint)
+  elseif type == SaveInfoEnum.Record then
+    return _MultiProfessionSaveProxy.Instance:GetTotalCostPointAttrs(id, costPoint)
+  end
+end

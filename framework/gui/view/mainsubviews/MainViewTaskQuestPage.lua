@@ -294,8 +294,6 @@ function MainViewTaskQuestPage:AddViewEvts()
     eventManager:AddEventListener(ServantImproveEvent.GotomodeTrace, self.ShowServantImproveQuestTraceBorad, self)
   end
   self:AddListenEvt(MyselfEvent.LevelUp, self.NewPointNotice)
-  self:AddListenEvt(ServiceEvent.QuestAbyssDragonInfoNtfQuestCmd, self.ResetDatas_extraInfoTrace)
-  self:AddListenEvt(ServiceEvent.QuestAbyssDragonHpUpdateQuestCmd, self.SetDragonHp)
   self:AddListenEvt(ServiceEvent.NUserVarUpdate, self.HandleVarUpdate)
   self:AddListenEvt(MainViewEvent.SpaceDragonCellClick, self.OnClickDragonCell)
 end
@@ -2022,7 +2020,6 @@ end
 
 function MainViewTaskQuestPage:ResetDatas_extraInfoTrace()
   self:UpdateExtraInfoTrace_TypeEscort()
-  self:UpdateExtraInfoTrace_TypeSpaceDragon()
   if self:GetCount_extraInfoTrace() > 0 then
     self:Show(self.taskQuestBG)
     self:Hide(self.noTracingTip)
@@ -2151,7 +2148,9 @@ end
 function MainViewTaskQuestPage:UpdateExtraInfoTrace_TypeSpaceDragon()
   local data = AbyssFakeDragonProxy.Instance:GetDragonInfos()
   local curMap = Game.MapManager:GetMapID()
-  if not data or curMap ~= 154 then
+  local raidId = Game.MapManager:GetRaidID()
+  redlog("UpdateExtraInfoTrace_TypeSpaceDragon", curMap, raidId, tostring(Game.MapManager:IsPVEMode_AbyssDragon()))
+  if not Game.MapManager:IsPVEMode_AbyssDragon() then
     if self.extraInfoCells and self.extraInfoCells.SpaceDragon then
       self.extraInfoCells.SpaceDragon:DestroySelf()
       self.extraInfoCells.SpaceDragon = nil
