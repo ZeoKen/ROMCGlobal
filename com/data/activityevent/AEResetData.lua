@@ -1,0 +1,18 @@
+AEResetData = class("AEResetData")
+
+function AEResetData:ctor(data)
+  self.map = {}
+end
+
+function AEResetData:SetData(data)
+  if data ~= nil then
+    local mode = data.mode
+    if mode == AERewardType.Tower and self.rewardMap[mode] == nil then
+      self.rewardMap[mode] = data.times
+    end
+  end
+end
+
+function AEResetData:GetDataByType(type)
+  return self.map[type]
+end

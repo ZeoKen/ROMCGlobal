@@ -1,0 +1,19 @@
+Table_Skill_ClsBranch_0 = {
+  [10001] = "{id=10001,Level=1,Icon='skill_10000',Cost=0,Contidion={menu=17},Desc={{id=10000,params={100}}},RollType=1,Launch_Type=1,SkillType='Attack',Camps='Enemy',Launch_Range=1.5,Fire_EP=4,Target_EP=3,Attack_EP=2,CD=0,Logic='SkillLockedTarget',Damage={{damChangePer=1,type=18}},DamTime={type=1,value=1},AttackAct={'attack','attack2','attack3'},}",
+  [11001] = "{id=11001,NameZh='紧急治疗',Level=1,Icon='skill_11001',Cost=0,Contidion={menu=16},Desc={{id=229000,params={100}}},SkillType='Heal',Camps='Friend',Launch_Range=1,Fire_EP=3,Target_EP=2,Attack_EP=3,CD=10,AutoCondition={{no_target=1,type=3,value=100}},NoTargetAutoCast=1,Logic='SkillSelfRange',Logic_Param={range=0.3},Damage={{damChangePer=0,damChangePer1=0,elementparam=6,type=5101}},DamTime={type=1,value=1},AttackAct={'use_magic'},SE_cast='Common/Magic_cast',SE_hit='Common/Heal',}",
+  [11002] = "{id=11002,NameZh='紧急治疗',Level=1,Icon='skill_11001',Cost=0,Contidion={menu=16},Desc={{id=229000,params={100}}},SkillType='Heal',Camps='Friend',Launch_Range=1,Fire_EP=3,Target_EP=2,Attack_EP=3,CD=10,AutoCondition={{no_target=1,type=3,value=100}},NoTargetAutoCast=1,Logic='SkillNone',Damage={{damChangePer=0,damChangePer1=0,elementparam=6,type=5101}},DamTime={type=1,value=1},AttackAct={'use_magic'},SE_cast='Common/Magic_cast',SE_hit='Common/Heal',}",
+  [10020001] = "{id=10020001,NameZh='装死',Level=1,Icon='skill_10020001',Cost=0,Contidion={menu=21},Desc={{id=10020000,params={5,10,10}}},SkillType='FakeDead',Camps='Friend',Launch_Range=1,Fire_EP=3,Target_EP=3,Attack_EP=3,CD=10,AutoCondition={{type=2}},Logic='SkillNone',Logic_Param={no_action=1},Buff={self={120060,120061,120062,120063,120065,120067,120068,135165}},Pvp_buff={self={120060,120061,120062,120063,120065,120067,135165}},ForbidUse=1,AttackStatus=1,AttackAct={'die'},}",
+  [10020002] = "{id=10020002,NameZh='装死',Level=1,Icon='skill_10020001',Cost=0,Desc={{id=10020000,params={1,10,10}}},SkillType='FakeDead',Camps='Friend',Launch_Range=1,Fire_EP=3,Target_EP=3,Attack_EP=3,CD=10,AutoCondition={{type=2}},Logic='SkillNone',Logic_Param={no_action=1},Buff={self={120059}},Pvp_buff={self={120059}},ForbidUse=1,AttackStatus=1,AttackAct={'die'},}",
+  [30000001] = "{id=30000001,NameZh='原地休息',Level=1,Icon='skill_30000001',Desc={{id=30000000,params={5,10}}},Buff={self={400000,400001}},Pvp_buff={self={400000,400001}},}",
+  [50006001] = "{id=50006001,NameZh='自由视角',Level=1,Icon='skill_50006001',Cost=0,Contidion={menu=6},Desc={{id=50006000,params=_EmptyTable}},}",
+  [50007001] = "{id=50007001,NameZh='广角镜头',Level=1,Icon='skill_50007001',Cost=0,Contidion={menu=6},Desc={{id=50007000,params=_EmptyTable}},Logic_Param={minfov=24},}",
+  [50008001] = "{id=50008001,NameZh='特写镜头',Level=1,Icon='skill_50008001',Cost=0,Contidion={menu=6},Desc={{id=50008000,params=_EmptyTable}},Logic_Param={maxfov=200},}",
+  [50012001] = "{id=50012001,NameZh='高级构图',Level=1,Icon='skill_50012001',Cost=0,Contidion={menu=6},Desc={{id=50012000,params=_EmptyTable}},}",
+  [50018001] = "{id=50018001,NameZh='魔物锁定',Level=1,Icon='skill_50018001',Cost=1,Desc={{id=50018000,params=_EmptyTable}},}",
+  [50023001] = "{id=50023001,NameZh='力量领域',Level=1,Icon='skill_50023001',Cost=1,Desc={{id=50023000,params=_EmptyTable}},}",
+  [50025001] = "{id=50025001,NameZh='保护队友',Level=1,Icon='skill_50025001',Cost=1,Desc={{id=50025000,params=_EmptyTable}},}",
+  [50030001] = "{id=50030001,NameZh='波利自拍杆',Level=1,Icon='skill_50030001',Cost=0,Contidion={menu=6},Desc={{id=50030000,params=_EmptyTable}},}",
+  [50044001] = "{id=50044001,NameZh='预备技能',Level=1,Icon='skill_50044001',Cost=1,Desc={{id=50044001,params=_EmptyTable}},}",
+  [50060001] = "{id=50060001,NameZh='快速骑乘',Level=1,Icon='skill_50060001',Cost=1,Desc={{id=50060000,params=_EmptyTable}},SkillType='Function',AutoCondition={{type=2}},AutoCondition_Groove=1,Logic='SkillNone',Logic_Param={select_mount=1},}"
+}
+Table_Skill_ClsBranch_0.count = 16

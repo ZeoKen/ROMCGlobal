@@ -1,0 +1,29845 @@
+Table_Sysmsg_bk = {
+  [1] = {
+    id = 1,
+    Type = 8388608,
+    Title = "",
+    Text = "Zeny不足",
+    button = "",
+    buttonF = ""
+  },
+  [2] = {
+    id = 2,
+    Type = 1,
+    Title = "",
+    Text = "Gold不足",
+    button = "",
+    buttonF = ""
+  },
+  [3] = {
+    id = 3,
+    Type = 129,
+    Title = "",
+    Text = "获得[63cd4e]%s[-]Job经验",
+    button = "",
+    buttonF = ""
+  },
+  [4] = {
+    id = 4,
+    Type = 129,
+    Title = "",
+    Text = "获得[63cd4e]%s[-]Base经验",
+    button = "",
+    buttonF = ""
+  },
+  [5] = {
+    id = 5,
+    Type = 2,
+    Title = "VIP提示",
+    Text = "今日已购买[b]%s/%s[/b]次\n提升vip等级即可提升购买次数的上限",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [6] = {
+    id = 6,
+    Type = 129,
+    Title = "",
+    Text = "获得{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [7] = {
+    id = 7,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "是否离开这里？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [8] = {
+    id = 8,
+    Type = 1,
+    Title = "",
+    Text = "材料不足",
+    button = "",
+    buttonF = ""
+  },
+  [9] = {
+    id = 9,
+    Type = 1,
+    Title = "",
+    Text = "钻石不足",
+    button = "",
+    buttonF = ""
+  },
+  [10] = {
+    id = 10,
+    Type = 1,
+    Title = "",
+    Text = "%s",
+    button = "",
+    buttonF = ""
+  },
+  [11] = {
+    id = 11,
+    Type = 129,
+    Title = "",
+    Text = "获得{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [13] = {
+    id = 13,
+    Type = 512,
+    Title = "",
+    Text = "%sBase",
+    button = "",
+    buttonF = ""
+  },
+  [14] = {
+    id = 14,
+    Type = 512,
+    Title = "",
+    Text = "%sJob",
+    button = "",
+    buttonF = ""
+  },
+  [15] = {
+    id = 15,
+    Type = 640,
+    Title = "",
+    Text = "{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [16] = {
+    id = 16,
+    Type = 512,
+    Title = "",
+    Text = "%sBase,%sJob",
+    button = "",
+    buttonF = ""
+  },
+  [17] = {
+    id = 17,
+    Type = 129,
+    Title = "",
+    Text = "获得[63cd4e]%s[-]Base,[63cd4e]%s[-]Job经验",
+    button = "",
+    buttonF = ""
+  },
+  [18] = {
+    id = 18,
+    Type = 1,
+    Title = "",
+    Text = "职业不符，无法使用",
+    button = "",
+    buttonF = ""
+  },
+  [20] = {
+    id = 20,
+    Type = 1,
+    Title = "",
+    Text = "请先对人物分配点数，再确认",
+    button = "",
+    buttonF = ""
+  },
+  [21] = {
+    id = 21,
+    Type = 640,
+    Title = "",
+    Text = "积分+%s",
+    button = "",
+    buttonF = ""
+  },
+  [22] = {
+    id = 22,
+    Type = 4096,
+    Title = "itemicon=item_50001",
+    Text = "%s·传送点开启",
+    button = "",
+    buttonF = ""
+  },
+  [23] = {
+    id = 23,
+    Type = 4096,
+    Title = "uiicon=Pet",
+    Text = "%s·服务激活",
+    button = "",
+    buttonF = ""
+  },
+  [24] = {
+    id = 24,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "习得·%s",
+    button = "",
+    buttonF = ""
+  },
+  [25] = {
+    id = 25,
+    Type = 4096,
+    Title = "uiicon=Housekeeper",
+    Text = "%s已开放",
+    button = "",
+    buttonF = ""
+  },
+  [37] = {
+    id = 37,
+    Type = 1,
+    Title = "",
+    Text = "该装备已插卡片[%s]，不可存入通用仓库",
+    button = "",
+    buttonF = ""
+  },
+  [38] = {
+    id = 38,
+    Type = 1,
+    Title = "",
+    Text = "该物品不可存入仓库",
+    button = "",
+    buttonF = ""
+  },
+  [39] = {
+    id = 39,
+    Type = 1,
+    Title = "",
+    Text = "此任务无法追踪",
+    button = "",
+    buttonF = ""
+  },
+  [40] = {
+    id = 40,
+    Type = 1,
+    Title = "",
+    Text = "需要Base%s级才能使用",
+    button = "",
+    buttonF = ""
+  },
+  [41] = {
+    id = 41,
+    Type = 1,
+    Title = "",
+    Text = "没有正在进行的聊天",
+    button = "",
+    buttonF = ""
+  },
+  [42] = {
+    id = 42,
+    Type = 32896,
+    Title = "1",
+    Text = "%s+%s",
+    button = "",
+    buttonF = ""
+  },
+  [43] = {
+    id = 43,
+    Type = 32896,
+    Title = "2",
+    Text = "人物技能点+%s",
+    button = "",
+    buttonF = ""
+  },
+  [44] = {
+    id = 44,
+    Type = 32896,
+    Title = "3",
+    Text = "冒险经验+%s",
+    button = "",
+    buttonF = ""
+  },
+  [45] = {
+    id = 45,
+    Type = 32768,
+    Title = "4",
+    Text = "冒险能力%s",
+    button = "",
+    buttonF = ""
+  },
+  [46] = {
+    id = 46,
+    Type = 1,
+    Title = "",
+    Text = "邮件已失效，账号下只可一个角色可领取此封邮件",
+    button = "",
+    buttonF = ""
+  },
+  [47] = {
+    id = 47,
+    Type = 1,
+    Title = "",
+    Text = "角色命名成功",
+    button = "",
+    buttonF = ""
+  },
+  [48] = {
+    id = 48,
+    Type = 1,
+    Title = "",
+    Text = "打赏成功，请通过邮件领取奖励",
+    button = "",
+    buttonF = ""
+  },
+  [49] = {
+    id = 49,
+    Type = 1,
+    Title = "",
+    Text = "点的太快了，请稍后尝试。",
+    button = "",
+    buttonF = ""
+  },
+  [50] = {
+    id = 50,
+    Type = 1,
+    Title = "",
+    Text = "你所在的地图无法进行寻路",
+    button = "",
+    buttonF = ""
+  },
+  [51] = {
+    id = 51,
+    Type = 1,
+    Title = "",
+    Text = "目标地图无法寻路前往",
+    button = "",
+    buttonF = ""
+  },
+  [52] = {
+    id = 52,
+    Type = 1,
+    Title = "",
+    Text = "这里有奇异的魔力保护，无法进行寻路",
+    button = "",
+    buttonF = ""
+  },
+  [53] = {
+    id = 53,
+    Type = 1,
+    Title = "",
+    Text = "%s不符，装备失败",
+    button = "",
+    buttonF = ""
+  },
+  [54] = {
+    id = 54,
+    Type = 1,
+    Title = "",
+    Text = "邮件已过期",
+    button = "",
+    buttonF = ""
+  },
+  [55] = {
+    id = 55,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否消耗%s立即完成此任务？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [56] = {
+    id = 56,
+    Type = 1,
+    Title = "",
+    Text = "无法使用，恩德勒斯塔还未开放",
+    button = "",
+    buttonF = ""
+  },
+  [57] = {
+    id = 57,
+    Type = 1,
+    Title = "",
+    Text = "无法使用，对应层数已通关",
+    button = "",
+    buttonF = ""
+  },
+  [58] = {
+    id = 58,
+    Type = 1,
+    Title = "",
+    Text = "无法使用，今日已挑战过研究所",
+    button = "",
+    buttonF = ""
+  },
+  [59] = {
+    id = 59,
+    Type = 1,
+    Title = "",
+    Text = "无法使用，此区间层数您从未进行过挑战",
+    button = "",
+    buttonF = ""
+  },
+  [60] = {
+    id = 60,
+    Type = 131072,
+    Title = "",
+    Text = "%s",
+    button = "",
+    buttonF = ""
+  },
+  [61] = {
+    id = 61,
+    Type = 1,
+    Title = "",
+    Text = "今日使用该道具的次数已达上限。",
+    button = "",
+    buttonF = ""
+  },
+  [62] = {
+    id = 62,
+    Type = 1,
+    Title = "",
+    Text = "本周使用该道具的次数已达上限。",
+    button = "",
+    buttonF = ""
+  },
+  [63] = {
+    id = 63,
+    Type = 1,
+    Title = "",
+    Text = "本周可获得%s数量已达上限。",
+    button = "",
+    buttonF = ""
+  },
+  [64] = {
+    id = 64,
+    Type = 1,
+    Title = "",
+    Text = "今日可获得%s数量已达上限。",
+    button = "",
+    buttonF = ""
+  },
+  [65] = {
+    id = 65,
+    Type = 2,
+    Title = "",
+    Text = "可对%s层立即通关，确认使用？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [66] = {
+    id = 66,
+    Type = 1,
+    Title = "",
+    Text = "解锁失败，未达到解锁要求",
+    button = "",
+    buttonF = ""
+  },
+  [67] = {
+    id = 67,
+    Type = 1,
+    Title = "",
+    Text = "无法使用，研究所还未开启",
+    button = "",
+    buttonF = ""
+  },
+  [68] = {
+    id = 68,
+    Type = 2,
+    Title = "",
+    Text = "可立即通过本周所有未通关层，确认使用？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [70] = {
+    id = 70,
+    Type = 1,
+    Title = "",
+    Text = "队友已经使用绝对领域不得重复使用",
+    button = "",
+    buttonF = ""
+  },
+  [71] = {
+    id = 71,
+    Type = 1,
+    Title = "",
+    Text = "该道具部分地图不可用",
+    button = "",
+    buttonF = ""
+  },
+  [72] = {
+    id = 72,
+    Type = 1,
+    Title = "",
+    Text = "您正在音乐盒附近，无法使用此道具",
+    button = "",
+    buttonF = ""
+  },
+  [73] = {
+    id = 73,
+    Type = 256,
+    Title = "",
+    Text = "您将于{countDown=%s}秒后离开绝对领域",
+    button = "",
+    buttonF = ""
+  },
+  [74] = {
+    id = 74,
+    Type = 1,
+    Title = "",
+    Text = "禁言中，%s分钟后才能正常使用聊天功能",
+    button = "",
+    buttonF = ""
+  },
+  [75] = {
+    id = 75,
+    Type = 129,
+    Title = "",
+    Text = "消耗{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [76] = {
+    id = 76,
+    Type = 1,
+    Title = "",
+    Text = "今日已购买至上限",
+    button = "",
+    buttonF = ""
+  },
+  [77] = {
+    id = 77,
+    Type = 1,
+    Title = "",
+    Text = "到达十级才能在世界频道发言哦",
+    button = "",
+    buttonF = ""
+  },
+  [78] = {
+    id = 78,
+    Type = 1,
+    Title = "",
+    Text = "购买次数已达上限",
+    button = "",
+    buttonF = ""
+  },
+  [80] = {
+    id = 80,
+    Type = 1,
+    Title = "",
+    Text = "您没有可以更换的魔物头像",
+    button = "",
+    buttonF = ""
+  },
+  [81] = {
+    id = 81,
+    Type = 1,
+    Title = "",
+    Text = "你的角色等级未到%s，无法在世界频道发言",
+    button = "",
+    buttonF = ""
+  },
+  [82] = {
+    id = 82,
+    Type = 129,
+    Title = "",
+    Text = "其中{itemicon=%s}{item=%s,%s}来自手推车空间",
+    button = "",
+    buttonF = ""
+  },
+  [83] = {
+    id = 83,
+    Type = 129,
+    Title = "",
+    Text = "其中{itemicon=%s}{item=%s,%s}来自个人仓库",
+    button = "",
+    buttonF = ""
+  },
+  [84] = {
+    id = 84,
+    Type = 1,
+    Title = "",
+    Text = "您的发言太快了，稍微休息一下吧！",
+    button = "",
+    buttonF = ""
+  },
+  [85] = {
+    id = 85,
+    Type = 1,
+    Title = "",
+    Text = "您的发言太快了，稍微休息一下吧！",
+    button = "",
+    buttonF = ""
+  },
+  [86] = {
+    id = 86,
+    Type = 129,
+    Title = "",
+    Text = "其中{itemicon=%s}{item=%s,%s}来自通用仓库",
+    button = "",
+    buttonF = ""
+  },
+  [89] = {
+    id = 89,
+    Type = 1,
+    Title = "",
+    Text = "您的网络存在异常，上次购买的物品还未送达，无法继续购买物品。请您稍后哦~",
+    button = "",
+    buttonF = ""
+  },
+  [90] = {
+    id = 90,
+    Type = 1,
+    Title = "",
+    Text = "该玩家已删除/不存在",
+    button = "",
+    buttonF = ""
+  },
+  [91] = {
+    id = 91,
+    Type = 1,
+    Title = "",
+    Text = "禁言中，%s分钟后才能正常使用露天商店技能",
+    button = "",
+    buttonF = ""
+  },
+  [92] = {
+    id = 92,
+    Type = 1,
+    Title = "",
+    Text = "禁言中，%s分钟后才能正常使用聊天室功能",
+    button = "",
+    buttonF = ""
+  },
+  [93] = {
+    id = 93,
+    Type = 129,
+    Title = "",
+    Text = "获得{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [94] = {
+    id = 94,
+    Type = 128,
+    Title = "",
+    Text = "系统自动出售{itemicon=%s}{item=%s,%s}，获得了{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [95] = {
+    id = 95,
+    Type = 128,
+    Title = "",
+    Text = "消耗{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [96] = {
+    id = 96,
+    Type = 128,
+    Title = "",
+    Text = "[u][c][ffaa19][url=skillcost;%s]%s[-][/c]数量不足，无法释放，点击此处可快速购买[/url][/u]",
+    button = "",
+    buttonF = ""
+  },
+  [97] = {
+    id = 97,
+    Type = 1,
+    Title = "",
+    Text = "技能消耗道具[c][ffaa19]%s[-][/c]数量不足，可在系统聊天频道快速购买",
+    button = "",
+    buttonF = ""
+  },
+  [98] = {
+    id = 98,
+    Type = 1,
+    Title = "",
+    Text = "该宠物所在区域尚未解锁，无法前往",
+    button = "",
+    buttonF = ""
+  },
+  [101] = {
+    id = 101,
+    Type = 1,
+    Title = "",
+    Text = "该副本暂未开启，您必须完成任务%s。",
+    button = "",
+    buttonF = ""
+  },
+  [102] = {
+    id = 102,
+    Type = 1,
+    Title = "",
+    Text = "该副本暂未开启，您必须通关%s中的%s。",
+    button = "",
+    buttonF = ""
+  },
+  [103] = {
+    id = 103,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "体力不足无法进行挑战",
+    button = "购买体力",
+    buttonF = "取消"
+  },
+  [104] = {
+    id = 104,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "是否要离开副本？\n[c][ffaa19]*离开副本将不会返还已扣除的体力[-][/c]",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [105] = {
+    id = 105,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "是否要离开副本？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [106] = {
+    id = 106,
+    Type = 1,
+    Title = "",
+    Text = "[c][ffaa19]你的星星不足，不能领取此宝箱。[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [107] = {
+    id = 107,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "扫荡还未开启\n需要三星通关才能开启扫荡功能",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [108] = {
+    id = 108,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "您当前的vip等级：%s\n升级VIP，每天可获得更多挑战",
+    button = "vip入口",
+    buttonF = "取消"
+  },
+  [109] = {
+    id = 109,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "花费%s钻石可重置挑战次数\n今日还可重置%s/%s",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [110] = {
+    id = 110,
+    Type = 1,
+    Title = "",
+    Text = "今日已经不能进行挑战了",
+    button = "",
+    buttonF = ""
+  },
+  [111] = {
+    id = 111,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "钻石不足，购买钻石同时还能提升VIP等级哦~！",
+    button = "购买钻石",
+    buttonF = "取消"
+  },
+  [112] = {
+    id = 112,
+    Type = 1,
+    Title = "",
+    Text = "此场景无法使用该道具",
+    button = "",
+    buttonF = ""
+  },
+  [113] = {
+    id = 113,
+    Type = 2,
+    Title = "任务道具销毁",
+    Text = "是否确定销毁%s？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [114] = {
+    id = 114,
+    Type = 1,
+    Title = "",
+    Text = "请勾选同意下方游戏许可及服务协议，方可进入游戏哦！",
+    button = "",
+    buttonF = ""
+  },
+  [115] = {
+    id = 115,
+    Type = 2,
+    Title = "",
+    Text = "是否接受邀请，进入神谕副本",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [116] = {
+    id = 116,
+    Type = 1,
+    Title = "",
+    Text = "必须在队伍中，并且队伍中玩家都在60级以上才能进入副本",
+    button = "",
+    buttonF = ""
+  },
+  [117] = {
+    id = 117,
+    Type = 1,
+    Title = "",
+    Text = "副本重置期间，无法进入",
+    button = "",
+    buttonF = ""
+  },
+  [118] = {
+    id = 118,
+    Type = 1,
+    Title = "",
+    Text = "你所在的小队正在副本战斗中，无法加入副本",
+    button = "",
+    buttonF = ""
+  },
+  [119] = {
+    id = 119,
+    Type = 1,
+    Title = "",
+    Text = "神谕副本中禁止使用神器！",
+    button = "",
+    buttonF = ""
+  },
+  [120] = {
+    id = 120,
+    Type = 2,
+    Title = "",
+    Text = "是否接受邀请，进入副本",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [121] = {
+    id = 121,
+    Type = 1,
+    Title = "",
+    Text = "卡普拉保卫战活动无法跟随哦~",
+    button = "",
+    buttonF = ""
+  },
+  [122] = {
+    id = 122,
+    Type = 256,
+    Title = "",
+    Text = "{countDown=%s}",
+    button = "",
+    buttonF = ""
+  },
+  [123] = {
+    id = 123,
+    Type = 1,
+    Title = "",
+    Text = "您本周已领取过奖励",
+    button = "",
+    buttonF = ""
+  },
+  [124] = {
+    id = 124,
+    Type = 1,
+    Title = "",
+    Text = "需通关过神谕副本才能领取奖励",
+    button = "",
+    buttonF = ""
+  },
+  [125] = {
+    id = 125,
+    Type = 1,
+    Title = "",
+    Text = "您上周未领取奖励，本周需通关神谕副本才能领取奖励",
+    button = "",
+    buttonF = ""
+  },
+  [130] = {
+    id = 130,
+    Type = 1,
+    Title = "",
+    Text = "无法使用，尚未通关恩德勒斯塔",
+    button = "",
+    buttonF = ""
+  },
+  [131] = {
+    id = 131,
+    Type = 1,
+    Title = "",
+    Text = "该模式不支持跨服邀请好友进入战队，请重新选择相同服务器的好友！",
+    button = "",
+    buttonF = ""
+  },
+  [200] = {
+    id = 200,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "切换职业后您当前所使用的武器会失效，是否确认切换？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [201] = {
+    id = 201,
+    Type = 2,
+    Title = "逼格猫的询问",
+    Text = "喵~冒险者哟，需要逼格猫亲自带走你的打赏喵？",
+    button = "快来",
+    buttonF = "不要"
+  },
+  [202] = {
+    id = 202,
+    Type = 1,
+    Title = "",
+    Text = "逼格猫带走了你的打赏，奖励将通过邮件发送",
+    button = "",
+    buttonF = ""
+  },
+  [203] = {
+    id = 203,
+    Type = 2,
+    Title = "",
+    Text = "喵~冒险告一段落，挪爪前往评论页写下冒险日记吧！",
+    button = "这就前往",
+    buttonF = "残忍拒绝"
+  },
+  [204] = {
+    id = 204,
+    Type = 1,
+    Title = "",
+    Text = "你的等级不足，无法进入",
+    button = "",
+    buttonF = ""
+  },
+  [205] = {
+    id = 205,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否消耗%d金币抽取本次扭蛋？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [206] = {
+    id = 206,
+    Type = 2,
+    Title = "",
+    Text = "即将消耗{itemicon=%s}{item=%s,%s}购买以下物品，是否确认？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [209] = {
+    id = 209,
+    Type = 2048,
+    Title = "",
+    Text = "暴击！强化等级+%s\n[c][00ff00]%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [210] = {
+    id = 210,
+    Type = 1,
+    Title = "",
+    Text = "强化等级达到上限",
+    button = "",
+    buttonF = ""
+  },
+  [211] = {
+    id = 211,
+    Type = 2048,
+    Title = "",
+    Text = "强化等级+%s\n[c][00ff00]%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [212] = {
+    id = 212,
+    Type = 2048,
+    Title = "",
+    Text = "强化%s次，暴击%s次，\n[c][00ff00]%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [213] = {
+    id = 213,
+    Type = 2048,
+    Title = "",
+    Text = "强化%s次，\n[c][00ff00]%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [214] = {
+    id = 214,
+    Type = 2048,
+    Title = "",
+    Text = "Zeny不足，只强化了%s次，暴击%s次，\n[c][00ff00]%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [215] = {
+    id = 215,
+    Type = 2048,
+    Title = "",
+    Text = "Zeny不足，只强化了%s次，\n[c][00ff00]%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [216] = {
+    id = 216,
+    Type = 1,
+    Title = "",
+    Text = "请选择装备",
+    button = "",
+    buttonF = ""
+  },
+  [217] = {
+    id = 217,
+    Type = 1,
+    Title = "",
+    Text = "精炼等级达到上限",
+    button = "",
+    buttonF = ""
+  },
+  [218] = {
+    id = 218,
+    Type = 1,
+    Title = "",
+    Text = "缺少{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [219] = {
+    id = 219,
+    Type = 2048,
+    Title = "",
+    Text = "精炼经验+%s",
+    button = "",
+    buttonF = ""
+  },
+  [220] = {
+    id = 220,
+    Type = 1,
+    Title = "",
+    Text = "缺少%s",
+    button = "",
+    buttonF = ""
+  },
+  [221] = {
+    id = 221,
+    Type = 1,
+    Title = "",
+    Text = "%s修复成功！",
+    button = "",
+    buttonF = ""
+  },
+  [222] = {
+    id = 222,
+    Type = 2048,
+    Title = "",
+    Text = "精炼暴击%s倍",
+    button = "",
+    buttonF = ""
+  },
+  [223] = {
+    id = 223,
+    Type = 2048,
+    Title = "",
+    Text = "精炼升级",
+    button = "",
+    buttonF = ""
+  },
+  [224] = {
+    id = 224,
+    Type = 1,
+    Title = "",
+    Text = "请先选择需要修复的装备",
+    button = "",
+    buttonF = ""
+  },
+  [225] = {
+    id = 225,
+    Type = 1,
+    Title = "",
+    Text = "包包里没有修复所需材料",
+    button = "",
+    buttonF = ""
+  },
+  [226] = {
+    id = 226,
+    Type = 1,
+    Title = "",
+    Text = "50级开启精炼功能",
+    button = "",
+    buttonF = ""
+  },
+  [227] = {
+    id = 227,
+    Type = 1,
+    Title = "",
+    Text = "损坏的装备无法进行强化，需尽快修理",
+    button = "",
+    buttonF = ""
+  },
+  [228] = {
+    id = 228,
+    Type = 1,
+    Title = "",
+    Text = "装备破损了，需要修理！",
+    button = "",
+    buttonF = ""
+  },
+  [229] = {
+    id = 229,
+    Type = 1,
+    Title = "",
+    Text = "精炼成功！",
+    button = "",
+    buttonF = ""
+  },
+  [230] = {
+    id = 230,
+    Type = 1,
+    Title = "",
+    Text = "[c][b3100e]精炼失败！请先进行修理[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [231] = {
+    id = 231,
+    Type = 2,
+    Title = "",
+    Text = "所选装备插有卡片，是否确认作为修理材料？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [232] = {
+    id = 232,
+    Type = 1,
+    Title = "",
+    Text = "精炼/附魔的装备无法作为材料",
+    button = "",
+    buttonF = ""
+  },
+  [233] = {
+    id = 233,
+    Type = 1,
+    Title = "",
+    Text = "喜好品无法作为修理材料",
+    button = "",
+    buttonF = ""
+  },
+  [234] = {
+    id = 234,
+    Type = 2,
+    Title = "",
+    Text = "装备已有附魔，是否作为开洞材料？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [240] = {
+    id = 240,
+    Type = 1,
+    Title = "",
+    Text = "抱歉！头饰和坐骑不能强化哦～",
+    button = "",
+    buttonF = ""
+  },
+  [241] = {
+    id = 241,
+    Type = 1,
+    Title = "",
+    Text = "精炼+12以上的装备无法作为修理材料",
+    button = "",
+    buttonF = ""
+  },
+  [242] = {
+    id = 242,
+    Type = 2,
+    Title = "",
+    Text = "该装备已有附魔，是否作为修理材料？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [243] = {
+    id = 243,
+    Type = 1,
+    Title = "",
+    Text = "此装备栏不可进行强化！",
+    button = "",
+    buttonF = ""
+  },
+  [244] = {
+    id = 244,
+    Type = 1,
+    Title = "",
+    Text = "选择数量已满",
+    button = "",
+    buttonF = ""
+  },
+  [245] = {
+    id = 245,
+    Type = 2,
+    Title = "",
+    Text = "消耗装备中存在已附魔/精炼装备，是否继续？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [246] = {
+    id = 246,
+    Type = 65536,
+    Title = "材料还原提示",
+    Text = "选用的材料中%s装备可能已附魔/插卡/升级，是否进行自动还原？\n需消耗Zeny×%s",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [247] = {
+    id = 247,
+    Type = 2,
+    Title = "",
+    Text = "选用的材料中有精炼+%s装备，是否作为材料？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [248] = {
+    id = 248,
+    Type = 1,
+    Title = "",
+    Text = "需要{item=%s,%s},可在打赏商店购买",
+    button = "",
+    buttonF = ""
+  },
+  [250] = {
+    id = 250,
+    Type = 2048,
+    Title = "",
+    Text = "%s等级+1",
+    button = "",
+    buttonF = ""
+  },
+  [251] = {
+    id = 251,
+    Type = 2048,
+    Title = "",
+    Text = "%s+%s",
+    button = "",
+    buttonF = ""
+  },
+  [252] = {
+    id = 252,
+    Type = 1,
+    Title = "",
+    Text = "尚未拥有该道具，无法放入",
+    button = "",
+    buttonF = ""
+  },
+  [253] = {
+    id = 253,
+    Type = 2,
+    Title = "",
+    Text = "材料装备进行过升级，是否选用升级装备进行修复？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [290] = {
+    id = 290,
+    Type = 1,
+    Title = "",
+    Text = "所选择的分类中没有任何符合条件的装备",
+    button = "",
+    buttonF = ""
+  },
+  [291] = {
+    id = 291,
+    Type = 65536,
+    Title = "",
+    Text = "扭蛋头饰附魔转移将会将原附魔完全转出至另一件扭蛋头饰上，是否要进行附魔转移？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [292] = {
+    id = 292,
+    Type = 1,
+    Title = "",
+    Text = "材料不足，无法进行扭蛋头饰附魔转移",
+    button = "",
+    buttonF = ""
+  },
+  [293] = {
+    id = 293,
+    Type = 1,
+    Title = "",
+    Text = "扭蛋头饰附魔转移完成",
+    button = "",
+    buttonF = ""
+  },
+  [294] = {
+    id = 294,
+    Type = 65536,
+    Title = "友情提示",
+    Text = "是否消耗 %d 金币启动本次扭蛋？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [295] = {
+    id = 295,
+    Type = 65536,
+    Title = "友情提示",
+    Text = "是否消耗 %s 金币启动本次扭蛋？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [296] = {
+    id = 296,
+    Type = 2,
+    Title = "提示",
+    Text = "您即将转职为[c][ff0000]%s[-][/c],转职后您暂时无法转职为其他职业（当前职业二转进阶后，也可以尝试其他职业），是否继续？",
+    button = "确定转职",
+    buttonF = "我再想想"
+  },
+  [297] = {
+    id = 297,
+    Type = 2,
+    Title = "提示",
+    Text = "[c][ff0000]多兰族[-][/c]当前版本只能转职为[c][ff0000]契约灵[-][/c]，是否继续？",
+    button = "确定创建",
+    buttonF = "我再想想"
+  },
+  [298] = {
+    id = 298,
+    Type = 1,
+    Title = "",
+    Text = "任务加入失败。进行中的任务已到达上限，无法继续添加。",
+    button = "",
+    buttonF = ""
+  },
+  [300] = {
+    id = 300,
+    Type = 1,
+    Title = "",
+    Text = "你不是队长，不能邀请玩家入队",
+    button = "",
+    buttonF = ""
+  },
+  [301] = {
+    id = 301,
+    Type = 1,
+    Title = "",
+    Text = "该玩家已有组队",
+    button = "",
+    buttonF = ""
+  },
+  [302] = {
+    id = 302,
+    Type = 1,
+    Title = "",
+    Text = "对方组队人数已满",
+    button = "",
+    buttonF = ""
+  },
+  [303] = {
+    id = 303,
+    Type = 1,
+    Title = "",
+    Text = "[c][ffff00]%s[-][/c]拒绝了你的加入请求",
+    button = "",
+    buttonF = ""
+  },
+  [304] = {
+    id = 304,
+    Type = 1,
+    Title = "",
+    Text = "[c][ffff00]%s[-][/c]没有响应您的组队邀请",
+    button = "",
+    buttonF = ""
+  },
+  [305] = {
+    id = 305,
+    Type = 1,
+    Title = "",
+    Text = "你不满足对方组队等级要求",
+    button = "",
+    buttonF = ""
+  },
+  [306] = {
+    id = 306,
+    Type = 1,
+    Title = "",
+    Text = "你已被[c][ffff00]%s[-][/c]拉黑，无法申请组队",
+    button = "",
+    buttonF = ""
+  },
+  [307] = {
+    id = 307,
+    Type = 1,
+    Title = "",
+    Text = "已向对方发出过组队邀请",
+    button = "",
+    buttonF = ""
+  },
+  [308] = {
+    id = 308,
+    Type = 1,
+    Title = "",
+    Text = "对方邀请已达上限，请稍后再试",
+    button = "",
+    buttonF = ""
+  },
+  [309] = {
+    id = 309,
+    Type = 1,
+    Title = "",
+    Text = "[c][ffff00]%s[-][/c]拒绝了你的邀请",
+    button = "",
+    buttonF = ""
+  },
+  [310] = {
+    id = 310,
+    Type = 1,
+    Title = "",
+    Text = "[c][ffff00]%s[-][/c]已经加入了其他组队",
+    button = "",
+    buttonF = ""
+  },
+  [311] = {
+    id = 311,
+    Type = 1,
+    Title = "",
+    Text = "[c][ffff00]%s[-][/c]已下线",
+    button = "",
+    buttonF = ""
+  },
+  [312] = {
+    id = 312,
+    Type = 1,
+    Title = "",
+    Text = "你已成功加入了[c][ffff00]%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [313] = {
+    id = 313,
+    Type = 1,
+    Title = "",
+    Text = "你已离开了队伍",
+    button = "",
+    buttonF = ""
+  },
+  [314] = {
+    id = 314,
+    Type = 1,
+    Title = "",
+    Text = "你被队长踢出了队伍",
+    button = "",
+    buttonF = ""
+  },
+  [315] = {
+    id = 315,
+    Type = 17,
+    Title = "",
+    Text = "队伍名字变更为[c][ffff00]%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [316] = {
+    id = 316,
+    Type = 1,
+    Title = "",
+    Text = "队伍目标变更为[c][ffff00]%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [317] = {
+    id = 317,
+    Type = 17,
+    Title = "",
+    Text = "[c][ffff00]%s[-][/c]加入了队伍",
+    button = "",
+    buttonF = ""
+  },
+  [318] = {
+    id = 318,
+    Type = 17,
+    Title = "",
+    Text = "[c][ffff00]%s[-][/c]离开了队伍",
+    button = "",
+    buttonF = ""
+  },
+  [319] = {
+    id = 319,
+    Type = 17,
+    Title = "",
+    Text = "你将队长交接给了[c][ffff00]%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [320] = {
+    id = 320,
+    Type = 17,
+    Title = "",
+    Text = "[c][ffff00]%s[-][/c]将队长交接给了你",
+    button = "",
+    buttonF = ""
+  },
+  [321] = {
+    id = 321,
+    Type = 17,
+    Title = "",
+    Text = "[c][ffff00]%s[-][/c]成为了新的队长",
+    button = "",
+    buttonF = ""
+  },
+  [322] = {
+    id = 322,
+    Type = 1,
+    Title = "",
+    Text = "[c][ffff00]%s[-][/c]申请加入你的组队",
+    button = "",
+    buttonF = ""
+  },
+  [323] = {
+    id = 323,
+    Type = 2,
+    Title = "组队邀请",
+    Text = "[c][ffc514]%s[-][/c]\n[c][f5f5ae]%s[-][/c][c][f5f5ae]发来邀请[-][/c]",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [324] = {
+    id = 324,
+    Type = 1,
+    Title = "",
+    Text = "必须组队才能进入此区域",
+    button = "",
+    buttonF = ""
+  },
+  [325] = {
+    id = 325,
+    Type = 1,
+    Title = "",
+    Text = "已向[c][ffff00]%s[-][/c]发出组队请求",
+    button = "",
+    buttonF = ""
+  },
+  [326] = {
+    id = 326,
+    Type = 2,
+    Title = "队伍提示",
+    Text = "是否将[c][1f74bf]%s[-][/c]踢出队伍",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [327] = {
+    id = 327,
+    Type = 2,
+    Title = "队伍提示",
+    Text = "是否将队长移交给[c][1f74bf]%s[-][/c]",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [328] = {
+    id = 328,
+    Type = 2,
+    Title = "队伍提示",
+    Text = "是否要退出当前组队？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [329] = {
+    id = 329,
+    Type = 1,
+    Title = "队伍提示",
+    Text = "[c][ffff00]对方所在地图无法跟随[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [330] = {
+    id = 330,
+    Type = 1,
+    Title = "队伍提示",
+    Text = "[c][ffff00]无法跟随前往对方[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [331] = {
+    id = 331,
+    Type = 1,
+    Title = "队伍提示",
+    Text = "您的队伍人数已满",
+    button = "",
+    buttonF = ""
+  },
+  [332] = {
+    id = 332,
+    Type = 1,
+    Title = "",
+    Text = "您还没有组队",
+    button = "",
+    buttonF = ""
+  },
+  [333] = {
+    id = 333,
+    Type = 1,
+    Title = "",
+    Text = "该成员已在你的队伍中",
+    button = "",
+    buttonF = ""
+  },
+  [334] = {
+    id = 334,
+    Type = 1,
+    Title = "",
+    Text = "双方都有队伍，无法进行组队",
+    button = "",
+    buttonF = ""
+  },
+  [335] = {
+    id = 335,
+    Type = 1,
+    Title = "",
+    Text = "已申请对方组队",
+    button = "",
+    buttonF = ""
+  },
+  [336] = {
+    id = 336,
+    Type = 1,
+    Title = "",
+    Text = "[c][ffff00]%s[-][/c]已经加入了其他组队。",
+    button = "",
+    buttonF = ""
+  },
+  [337] = {
+    id = 337,
+    Type = 17,
+    Title = "",
+    Text = "组队拾取为“自由拾取”，有效范围为10米范围内",
+    button = "",
+    buttonF = ""
+  },
+  [338] = {
+    id = 338,
+    Type = 17,
+    Title = "",
+    Text = "组队拾取为“随机获得”，有效范围为全地图范围",
+    button = "",
+    buttonF = ""
+  },
+  [339] = {
+    id = 339,
+    Type = 17,
+    Title = "",
+    Text = "成功创建组队“%s”",
+    button = "",
+    buttonF = ""
+  },
+  [340] = {
+    id = 340,
+    Type = 17,
+    Title = "",
+    Text = "队伍成员 %s已上线",
+    button = "",
+    buttonF = ""
+  },
+  [341] = {
+    id = 341,
+    Type = 17,
+    Title = "",
+    Text = "队伍成员 %s已下线",
+    button = "",
+    buttonF = ""
+  },
+  [342] = {
+    id = 342,
+    Type = 1,
+    Title = "",
+    Text = "一键上车的邀请已发送",
+    button = "",
+    buttonF = ""
+  },
+  [343] = {
+    id = 343,
+    Type = 1,
+    Title = "",
+    Text = "一键上车的邀请无法频繁发送，请稍后再试",
+    button = "",
+    buttonF = ""
+  },
+  [344] = {
+    id = 344,
+    Type = 2,
+    Title = "一键上车",
+    Text = "[c][f5f5ae]队长[-][/c][c][ffc514]%s[-][/c]\n[c][f5f5ae]邀请你进行跟随战斗[-][/c]",
+    button = "上车",
+    buttonF = "取消"
+  },
+  [345] = {
+    id = 345,
+    Type = 1,
+    Title = "",
+    Text = "您还没有队友，先邀请队友吧",
+    button = "",
+    buttonF = ""
+  },
+  [346] = {
+    id = 346,
+    Type = 1,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]被任命为临时队长。",
+    button = "",
+    buttonF = ""
+  },
+  [347] = {
+    id = 347,
+    Type = 1,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]将临时队长交接给%s。",
+    button = "",
+    buttonF = ""
+  },
+  [348] = {
+    id = 348,
+    Type = 1,
+    Title = "",
+    Text = "队长[c][f5f5ae]%s[-][/c]已上线，已撤销临时队长",
+    button = "",
+    buttonF = ""
+  },
+  [349] = {
+    id = 349,
+    Type = 1,
+    Title = "",
+    Text = "自动批准申请模式已变更",
+    button = "",
+    buttonF = ""
+  },
+  [350] = {
+    id = 350,
+    Type = 1,
+    Title = "",
+    Text = "对方与你不在同一条世界线",
+    button = "",
+    buttonF = ""
+  },
+  [351] = {
+    id = 351,
+    Type = 1,
+    Title = "",
+    Text = "只有队长可以发起一键上车",
+    button = "",
+    buttonF = ""
+  },
+  [352] = {
+    id = 352,
+    Type = 1,
+    Title = "",
+    Text = "当前没有队伍，无法使用组队传送",
+    button = "",
+    buttonF = ""
+  },
+  [353] = {
+    id = 353,
+    Type = 1,
+    Title = "",
+    Text = "离线玩家不能成为临时队长",
+    button = "",
+    buttonF = ""
+  },
+  [354] = {
+    id = 354,
+    Type = 1,
+    Title = "",
+    Text = "%s使用了巨大蝴蝶翅膀",
+    button = "",
+    buttonF = ""
+  },
+  [355] = {
+    id = 355,
+    Type = 1,
+    Title = "",
+    Text = "需要学习[%s]才能使用",
+    button = "",
+    buttonF = ""
+  },
+  [356] = {
+    id = 356,
+    Type = 1,
+    Title = "",
+    Text = "%s使用了巨大苍蝇翅膀",
+    button = "",
+    buttonF = ""
+  },
+  [357] = {
+    id = 357,
+    Type = 1,
+    Title = "",
+    Text = "该场景无法使用大苍蝇翅膀",
+    button = "",
+    buttonF = ""
+  },
+  [358] = {
+    id = 358,
+    Type = 1,
+    Title = "",
+    Text = "需要学习[苍蝇飞行技巧]才能使用",
+    button = "",
+    buttonF = ""
+  },
+  [359] = {
+    id = 359,
+    Type = 1,
+    Title = "",
+    Text = "团队邀请状态已变更",
+    button = "",
+    buttonF = ""
+  },
+  [360] = {
+    id = 360,
+    Type = 1,
+    Title = "",
+    Text = "请选择指定副本",
+    button = "",
+    buttonF = ""
+  },
+  [361] = {
+    id = 361,
+    Type = 1,
+    Title = "",
+    Text = "当前处于未及时准备的处罚时间中，请稍后再试",
+    button = "",
+    buttonF = ""
+  },
+  [362] = {
+    id = 362,
+    Type = 1,
+    Title = "",
+    Text = "超过最大申请数量",
+    button = "",
+    buttonF = ""
+  },
+  [363] = {
+    id = 363,
+    Type = 1,
+    Title = "",
+    Text = "未满足自动匹配等级限制",
+    button = "",
+    buttonF = ""
+  },
+  [364] = {
+    id = 364,
+    Type = 1,
+    Title = "",
+    Text = "只有队长才能发布队伍",
+    button = "",
+    buttonF = ""
+  },
+  [365] = {
+    id = 365,
+    Type = 1,
+    Title = "",
+    Text = "当前不是该活动的开放时间",
+    button = "",
+    buttonF = ""
+  },
+  [366] = {
+    id = 366,
+    Type = 129,
+    Title = "",
+    Text = "申请的队伍目标改变，入队申请已取消",
+    button = "",
+    buttonF = ""
+  },
+  [367] = {
+    id = 367,
+    Type = 129,
+    Title = "",
+    Text = "申请的队伍已解散",
+    button = "",
+    buttonF = ""
+  },
+  [368] = {
+    id = 368,
+    Type = 3,
+    Title = "协助邀请",
+    Text = "[c][ffc514]%s[-][/c][c][f5f5ae]需要你的协助，是否前往？[-][/c]",
+    button = "确定",
+    buttonF = ""
+  },
+  [370] = {
+    id = 370,
+    Type = 2,
+    Title = "",
+    Text = "确定取消申请吗？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [371] = {
+    id = 371,
+    Type = 2,
+    Title = "",
+    Text = "确定修改吗？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [372] = {
+    id = 372,
+    Type = 1,
+    Title = "",
+    Text = "只有队长可以发起匹配",
+    button = "",
+    buttonF = ""
+  },
+  [373] = {
+    id = 373,
+    Type = 1,
+    Title = "",
+    Text = "正在匹配中，不能重复匹配",
+    button = "",
+    buttonF = ""
+  },
+  [374] = {
+    id = 374,
+    Type = 1,
+    Title = "",
+    Text = "只有队长可以取消",
+    button = "",
+    buttonF = ""
+  },
+  [375] = {
+    id = 375,
+    Type = 1,
+    Title = "",
+    Text = "有队伍成员正处于未准备惩罚时间中，请稍后再试",
+    button = "",
+    buttonF = ""
+  },
+  [377] = {
+    id = 377,
+    Type = 1,
+    Title = "",
+    Text = "队伍中有成员尚未通关60层",
+    button = "",
+    buttonF = ""
+  },
+  [378] = {
+    id = 378,
+    Type = 1,
+    Title = "",
+    Text = "该副本需要小队成员全部转职后才能匹配",
+    button = "",
+    buttonF = ""
+  },
+  [379] = {
+    id = 379,
+    Type = 129,
+    Title = "",
+    Text = "当队伍满员且有队员在当前副本中时，无法发起匹配",
+    button = "",
+    buttonF = ""
+  },
+  [380] = {
+    id = 380,
+    Type = 1,
+    Title = "",
+    Text = "当前队伍有成员在魔物研究所副本中，无法发起匹配",
+    button = "",
+    buttonF = ""
+  },
+  [381] = {
+    id = 381,
+    Type = 1,
+    Title = "",
+    Text = "您已退出队伍，无法进入当前副本",
+    button = "",
+    buttonF = ""
+  },
+  [382] = {
+    id = 382,
+    Type = 1,
+    Title = "",
+    Text = "满员队伍不能进行中途匹配",
+    button = "",
+    buttonF = ""
+  },
+  [383] = {
+    id = 383,
+    Type = 2,
+    Title = "投票踢人",
+    Text = "队友正在发起投票将%s踢出队伍",
+    button = "赞成",
+    buttonF = "反对"
+  },
+  [384] = {
+    id = 384,
+    Type = 2,
+    Title = "队伍人数减少",
+    Text = "目前队伍名额不满，是否自动匹配队员补充人数？",
+    button = "确定",
+    buttonF = ""
+  },
+  [385] = {
+    id = 385,
+    Type = 1,
+    Title = "",
+    Text = "成功发起投票",
+    button = "",
+    buttonF = ""
+  },
+  [386] = {
+    id = 386,
+    Type = 1,
+    Title = "",
+    Text = "投票踢人处于冷却中，请稍后再试",
+    button = "",
+    buttonF = ""
+  },
+  [387] = {
+    id = 387,
+    Type = 1,
+    Title = "",
+    Text = "队伍人数大于等于3人时才可以发起投票",
+    button = "",
+    buttonF = ""
+  },
+  [388] = {
+    id = 388,
+    Type = 1,
+    Title = "",
+    Text = "被投票者已退出，投票中止",
+    button = "",
+    buttonF = ""
+  },
+  [389] = {
+    id = 389,
+    Type = 1,
+    Title = "",
+    Text = "正在投票中，不能发起新的投票",
+    button = "",
+    buttonF = ""
+  },
+  [390] = {
+    id = 390,
+    Type = 1,
+    Title = "",
+    Text = "您没有可以还原的装备",
+    button = "",
+    buttonF = ""
+  },
+  [391] = {
+    id = 391,
+    Type = 1,
+    Title = "",
+    Text = "您没有可以分解的卡片",
+    button = "",
+    buttonF = ""
+  },
+  [392] = {
+    id = 392,
+    Type = 1,
+    Title = "",
+    Text = "%s拒绝了你的动作邀请",
+    button = "",
+    buttonF = ""
+  },
+  [393] = {
+    id = 393,
+    Type = 2,
+    Title = "",
+    Text = "%s想与你双人互动",
+    button = "同意",
+    buttonF = ""
+  },
+  [394] = {
+    id = 394,
+    Type = 1,
+    Title = "",
+    Text = "对方正在进行其他动作，请稍候再邀请吧！",
+    button = "",
+    buttonF = ""
+  },
+  [395] = {
+    id = 395,
+    Type = 1,
+    Title = "",
+    Text = "你正在进行其他动作，请稍后再邀请吧！",
+    button = "",
+    buttonF = ""
+  },
+  [396] = {
+    id = 396,
+    Type = 1,
+    Title = "",
+    Text = "同性之间可不能做这样的举动哟！",
+    button = "",
+    buttonF = ""
+  },
+  [397] = {
+    id = 397,
+    Type = 1,
+    Title = "",
+    Text = "对方与你不在同一地图中",
+    button = "",
+    buttonF = ""
+  },
+  [398] = {
+    id = 398,
+    Type = 17,
+    Title = "",
+    Text = "%s获得了[c][ed76ff]%s×%s[-][/c]",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [399] = {
+    id = 399,
+    Type = 1,
+    Title = "队伍提示",
+    Text = "[c][ffff00]冒险者当前未解锁目标所在地图，无法进行跟随[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [400] = {
+    id = 400,
+    Type = 1,
+    Title = "",
+    Text = "请先选择想要还原的装备",
+    button = "",
+    buttonF = ""
+  },
+  [401] = {
+    id = 401,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "该装备的精炼等级为+%s，是否进行还原？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [402] = {
+    id = 402,
+    Type = 1,
+    Title = "",
+    Text = "您和载具不在一张地图，无法乘坐",
+    button = "",
+    buttonF = ""
+  },
+  [403] = {
+    id = 403,
+    Type = 1,
+    Title = "",
+    Text = "发起人取消了本次乘坐",
+    button = "",
+    buttonF = ""
+  },
+  [404] = {
+    id = 404,
+    Type = 1,
+    Title = "",
+    Text = "抱歉哦~您现在的状态无法进行观光",
+    button = "",
+    buttonF = ""
+  },
+  [405] = {
+    id = 405,
+    Type = 2,
+    Title = "队伍信息",
+    Text = "[c][ffc514]%s[-][/c]\n[c][f5f5ae]邀请你一起乘坐[-][/c][c][ffc514]%s[-][/c]",
+    button = "同意",
+    buttonF = "取消"
+  },
+  [406] = {
+    id = 406,
+    Type = 2,
+    Title = "队伍信息",
+    Text = "[c][ffc514]%s[-][/c]\n[c][f5f5ae]召唤队友一起进入[-][/c][c][ffc515]%s[-][/c]",
+    button = "跟随",
+    buttonF = "取消"
+  },
+  [407] = {
+    id = 407,
+    Type = 1,
+    Title = "温馨提示",
+    Text = "[c][ffff00]对方正在忙(︶︹︺)[-][/c]",
+    button = "点X",
+    buttonF = ""
+  },
+  [408] = {
+    id = 408,
+    Type = 1,
+    Title = "",
+    Text = "还原成功！",
+    button = "",
+    buttonF = ""
+  },
+  [409] = {
+    id = 409,
+    Type = 1,
+    Title = "",
+    Text = "您没有可以分解的装备",
+    button = "",
+    buttonF = ""
+  },
+  [410] = {
+    id = 410,
+    Type = 1,
+    Title = "",
+    Text = "没有强化等级，需要勾选还原精炼等级才能还原",
+    button = "",
+    buttonF = ""
+  },
+  [411] = {
+    id = 411,
+    Type = 1,
+    Title = "",
+    Text = "对方在乘坐观光浏览载具，无法进行跟随",
+    button = "",
+    buttonF = ""
+  },
+  [415] = {
+    id = 415,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "从好友名册中删除好友？\n[c][1f74bf]%s[-][/c]",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [416] = {
+    id = 416,
+    Type = 1,
+    Title = "",
+    Text = "不能添加自己",
+    button = "",
+    buttonF = ""
+  },
+  [417] = {
+    id = 417,
+    Type = 1,
+    Title = "",
+    Text = "该玩家已在你的好友名册中",
+    button = "",
+    buttonF = ""
+  },
+  [418] = {
+    id = 418,
+    Type = 1,
+    Title = "",
+    Text = "请先输入要搜索的内容。",
+    button = "",
+    buttonF = ""
+  },
+  [419] = {
+    id = 419,
+    Type = 1,
+    Title = "",
+    Text = "无此玩家相关信息，无法添加。",
+    button = "",
+    buttonF = ""
+  },
+  [420] = {
+    id = 420,
+    Type = 1,
+    Title = "",
+    Text = "添加%s成功",
+    button = "",
+    buttonF = ""
+  },
+  [421] = {
+    id = 421,
+    Type = 1,
+    Title = "",
+    Text = "该玩家离线，无法收到组队邀请",
+    button = "",
+    buttonF = ""
+  },
+  [422] = {
+    id = 422,
+    Type = 16384,
+    Title = "",
+    Text = "该玩家不在线，可能无法及时回复消息。",
+    button = "",
+    buttonF = ""
+  },
+  [423] = {
+    id = 423,
+    Type = 1,
+    Title = "",
+    Text = "没有好友申请",
+    button = "",
+    buttonF = ""
+  },
+  [424] = {
+    id = 424,
+    Type = 1,
+    Title = "",
+    Text = "连接已失效，无法查看了",
+    button = "",
+    buttonF = ""
+  },
+  [425] = {
+    id = 425,
+    Type = 2,
+    Title = "",
+    Text = "是否确认将%s加入黑名单？\n加入黑名单后将无法收到该玩家任何信息与组队申请",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [426] = {
+    id = 426,
+    Type = 2,
+    Title = "",
+    Text = "是否将%s设为永久黑名单成员？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [427] = {
+    id = 427,
+    Type = 2,
+    Title = "",
+    Text = "%s在你的黑名单中\n是否将其移出并添加为好友？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [428] = {
+    id = 428,
+    Type = 1,
+    Title = "",
+    Text = "无法添加该玩家为好友",
+    button = "",
+    buttonF = ""
+  },
+  [429] = {
+    id = 429,
+    Type = 1,
+    Title = "",
+    Text = "好友数量已达上限",
+    button = "",
+    buttonF = ""
+  },
+  [433] = {
+    id = 433,
+    Type = 1,
+    Title = "",
+    Text = "达成友情事件！\n贡献值+0(本周已达上限)",
+    button = "",
+    buttonF = ""
+  },
+  [451] = {
+    id = 451,
+    Type = 128,
+    Title = "",
+    Text = "已恢复3分钟疲劳时间",
+    button = "",
+    buttonF = ""
+  },
+  [460] = {
+    id = 460,
+    Type = 1,
+    Title = "",
+    Text = "已将%s成功添加至黑名单",
+    button = "",
+    buttonF = ""
+  },
+  [461] = {
+    id = 461,
+    Type = 1,
+    Title = "",
+    Text = "你已将%s移出黑名单",
+    button = "",
+    buttonF = ""
+  },
+  [462] = {
+    id = 462,
+    Type = 1,
+    Title = "",
+    Text = "该玩家在你的黑名单中，需要先移出才能愉快聊天",
+    button = "",
+    buttonF = ""
+  },
+  [463] = {
+    id = 463,
+    Type = 1,
+    Title = "",
+    Text = "1名玩家将你添加至黑名单",
+    button = "",
+    buttonF = ""
+  },
+  [464] = {
+    id = 464,
+    Type = 1,
+    Title = "",
+    Text = "该玩家已在你的黑名单中",
+    button = "",
+    buttonF = ""
+  },
+  [470] = {
+    id = 470,
+    Type = 2,
+    Title = "房间提示",
+    Text = "是否将[c][1f74bf]%s[-][/c]踢出房间",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [471] = {
+    id = 471,
+    Type = 2,
+    Title = "房间提示",
+    Text = "是否要退出当前房间？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [472] = {
+    id = 472,
+    Type = 1,
+    Title = "房间提示",
+    Text = "当前房间人数已满",
+    button = "",
+    buttonF = ""
+  },
+  [473] = {
+    id = 473,
+    Type = 1,
+    Title = "房间提示",
+    Text = "火力全开：装备精炼+15，公会祈祷，冒险手册，女神祈祷，星辰殿全部解锁。",
+    button = "",
+    buttonF = ""
+  },
+  [474] = {
+    id = 474,
+    Type = 1,
+    Title = "房间提示",
+    Text = "当前房间已被解散。",
+    button = "",
+    buttonF = ""
+  },
+  [475] = {
+    id = 475,
+    Type = 1,
+    Title = "房间提示",
+    Text = "当前处于房间中，无法进行操作",
+    button = "",
+    buttonF = ""
+  },
+  [476] = {
+    id = 476,
+    Type = 1,
+    Title = "房间提示",
+    Text = "当前处于匹配或副本中，无法进行操作",
+    button = "",
+    buttonF = ""
+  },
+  [477] = {
+    id = 477,
+    Type = 2,
+    Title = "房间提示",
+    Text = "是否要退出当前房间？（房间将被解散）",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [478] = {
+    id = 478,
+    Type = 1,
+    Title = "房间提示",
+    Text = "该玩家已在房间中，无法邀请",
+    button = "",
+    buttonF = ""
+  },
+  [479] = {
+    id = 479,
+    Type = 1,
+    Title = "房间提示",
+    Text = "该玩家正在匹配或副本中，无法邀请",
+    button = "",
+    buttonF = ""
+  },
+  [480] = {
+    id = 480,
+    Type = 2,
+    Title = "房间提示",
+    Text = "%s邀请你加入房间",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [490] = {
+    id = 490,
+    Type = 2,
+    Title = "团队提示",
+    Text = "是否更改团队构成？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [491] = {
+    id = 491,
+    Type = 1,
+    Title = "团队提示",
+    Text = "目标为队伍最后一人，无法移动。",
+    button = "",
+    buttonF = ""
+  },
+  [500] = {
+    id = 500,
+    Type = 1,
+    Title = "",
+    Text = "Zeny不足，%s未更换成功！",
+    button = "",
+    buttonF = ""
+  },
+  [501] = {
+    id = 501,
+    Type = 1,
+    Title = "",
+    Text = "必须要收集到所有位置碎片才能合成",
+    button = "",
+    buttonF = ""
+  },
+  [502] = {
+    id = 502,
+    Type = 1,
+    Title = "",
+    Text = "已镶嵌了该卡片，不能重复镶嵌",
+    button = "",
+    buttonF = ""
+  },
+  [503] = {
+    id = 503,
+    Type = 1,
+    Title = "",
+    Text = "卡槽已满，请先卸下卡片再进行镶嵌",
+    button = "",
+    buttonF = ""
+  },
+  [504] = {
+    id = 504,
+    Type = 1,
+    Title = "",
+    Text = "镶嵌成功",
+    button = "",
+    buttonF = ""
+  },
+  [505] = {
+    id = 505,
+    Type = 1,
+    Title = "",
+    Text = "卡片数量不足无法进行镶嵌",
+    button = "",
+    buttonF = ""
+  },
+  [506] = {
+    id = 506,
+    Type = 1,
+    Title = "",
+    Text = "升级成功，获得[c][ffff00]Lv.%s[%s][-][/c]一张",
+    button = "",
+    buttonF = ""
+  },
+  [507] = {
+    id = 507,
+    Type = 1,
+    Title = "",
+    Text = "合成成功，获得[%s]一张",
+    button = "",
+    buttonF = ""
+  },
+  [508] = {
+    id = 508,
+    Type = 1,
+    Title = "",
+    Text = "卡片卸载成功",
+    button = "",
+    buttonF = ""
+  },
+  [510] = {
+    id = 510,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，没有符合插卡条件的装备",
+    button = "",
+    buttonF = ""
+  },
+  [511] = {
+    id = 511,
+    Type = 2,
+    Title = "插卡提示",
+    Text = "是否将%s插至%s装备？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [512] = {
+    id = 512,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，没有符合的卡片",
+    button = "",
+    buttonF = ""
+  },
+  [513] = {
+    id = 513,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，卡槽已插满",
+    button = "",
+    buttonF = ""
+  },
+  [515] = {
+    id = 515,
+    Type = 1,
+    Title = "",
+    Text = "已触发掠夺卡效果",
+    button = "",
+    buttonF = ""
+  },
+  [516] = {
+    id = 516,
+    Type = 1,
+    Title = "",
+    Text = "已获得锁链雷锭效果",
+    button = "",
+    buttonF = ""
+  },
+  [517] = {
+    id = 517,
+    Type = 1,
+    Title = "",
+    Text = "已激活【限定特典】效果",
+    button = "",
+    buttonF = ""
+  },
+  [518] = {
+    id = 518,
+    Type = 128,
+    Title = "",
+    Text = "已进入疲劳期，锁链雷锭暂停生效，还剩余加速战斗时长%s分钟",
+    button = "",
+    buttonF = ""
+  },
+  [519] = {
+    id = 519,
+    Type = 1,
+    Title = "",
+    Text = "已获得锁链德洛米效果",
+    button = "",
+    buttonF = ""
+  },
+  [520] = {
+    id = 520,
+    Type = 1,
+    Title = "",
+    Text = "已触发锁链雷锭效果，无法再使用锁链德洛米",
+    button = "",
+    buttonF = ""
+  },
+  [521] = {
+    id = 521,
+    Type = 1,
+    Title = "",
+    Text = "已触发锁链德洛米效果，无法再使用锁链雷锭",
+    button = "",
+    buttonF = ""
+  },
+  [540] = {
+    id = 540,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，同时只可追踪10个道具",
+    button = "",
+    buttonF = ""
+  },
+  [541] = {
+    id = 541,
+    Type = 1,
+    Title = "",
+    Text = "对%s开始进行了追踪",
+    button = "",
+    buttonF = ""
+  },
+  [542] = {
+    id = 542,
+    Type = 1,
+    Title = "",
+    Text = "材料数量已满",
+    button = "",
+    buttonF = ""
+  },
+  [544] = {
+    id = 544,
+    Type = 65536,
+    Title = "提示",
+    Text = "本次升级消耗的装备为有精炼等级的装备，消耗后精炼等级不会退还，是否继续使用该装备升级，或手动选择其他装备",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [549] = {
+    id = 549,
+    Type = 1,
+    Title = "",
+    Text = "插卡/升级过的装备需要还原才能存入哦~",
+    button = "",
+    buttonF = ""
+  },
+  [550] = {
+    id = 550,
+    Type = 2,
+    Title = "",
+    Text = "冒险经验已满，是否前往冒险公会处升级？",
+    button = "前往升级",
+    buttonF = "取消",
+    Confirm = 10
+  },
+  [551] = {
+    id = 551,
+    Type = 32896,
+    Title = "3",
+    Text = "冒险技能点+%s",
+    button = "",
+    buttonF = ""
+  },
+  [552] = {
+    id = 552,
+    Type = 4224,
+    Title = "uiicon=forever",
+    Text = "永久增加%s",
+    button = "",
+    buttonF = ""
+  },
+  [553] = {
+    id = 553,
+    Type = 1,
+    Title = "",
+    Text = "更新了手册照片",
+    button = "",
+    buttonF = ""
+  },
+  [554] = {
+    id = 554,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，冒险技能点不足",
+    button = "",
+    buttonF = ""
+  },
+  [555] = {
+    id = 555,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，图片信息丢失，请再拍一次",
+    button = "",
+    buttonF = ""
+  },
+  [556] = {
+    id = 556,
+    Type = 1,
+    Title = "",
+    Text = "需学习冒险技能·牵手，才能发起邀请",
+    button = "",
+    buttonF = ""
+  },
+  [557] = {
+    id = 557,
+    Type = 1,
+    Title = "",
+    Text = "需学习冒险技能·自由视角，才可使用",
+    button = "",
+    buttonF = ""
+  },
+  [558] = {
+    id = 558,
+    Type = 1,
+    Title = "",
+    Text = "请对魔物进行拍照来解锁魔物详情",
+    button = "",
+    buttonF = ""
+  },
+  [559] = {
+    id = 559,
+    Type = 1,
+    Title = "",
+    Text = "图片加载失败或丢失，无法分享",
+    button = "",
+    buttonF = ""
+  },
+  [560] = {
+    id = 560,
+    Type = 1,
+    Title = "",
+    Text = "获取了%s的魔物详情",
+    button = "",
+    buttonF = ""
+  },
+  [561] = {
+    id = 561,
+    Type = 1,
+    Title = "",
+    Text = "设备上未找到“微信”",
+    button = "",
+    buttonF = ""
+  },
+  [562] = {
+    id = 562,
+    Type = 1,
+    Title = "",
+    Text = "设备上未找到“腾讯QQ”",
+    button = "",
+    buttonF = ""
+  },
+  [563] = {
+    id = 563,
+    Type = 1,
+    Title = "",
+    Text = "设备上未找到“新浪微博”",
+    button = "",
+    buttonF = ""
+  },
+  [564] = {
+    id = 564,
+    Type = 1,
+    Title = "",
+    Text = "成功分享至微信",
+    button = "",
+    buttonF = ""
+  },
+  [565] = {
+    id = 565,
+    Type = 1,
+    Title = "",
+    Text = "成功分享至腾讯QQ",
+    button = "",
+    buttonF = ""
+  },
+  [566] = {
+    id = 566,
+    Type = 1,
+    Title = "",
+    Text = "成功分享至新浪微博",
+    button = "",
+    buttonF = ""
+  },
+  [567] = {
+    id = 567,
+    Type = 1,
+    Title = "",
+    Text = "您在聊天室中，不能进行战斗哦。",
+    button = "",
+    buttonF = ""
+  },
+  [568] = {
+    id = 568,
+    Type = 128,
+    Title = "",
+    Text = "永久增加%s",
+    button = "",
+    buttonF = ""
+  },
+  [569] = {
+    id = 569,
+    Type = 1,
+    Title = "",
+    Text = "需要成为%s",
+    button = "",
+    buttonF = ""
+  },
+  [570] = {
+    id = 570,
+    Type = 1,
+    Title = "",
+    Text = "请检查包包，未找到{item=%s}",
+    button = "",
+    buttonF = ""
+  },
+  [571] = {
+    id = 571,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，已使用过此珍藏品",
+    button = "",
+    buttonF = ""
+  },
+  [572] = {
+    id = 572,
+    Type = 1,
+    Title = "",
+    Text = "已登录冒险手册，请前往激活",
+    button = "",
+    buttonF = ""
+  },
+  [580] = {
+    id = 580,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，冒险手册·成就尚未开放。",
+    button = "",
+    buttonF = ""
+  },
+  [581] = {
+    id = 581,
+    Type = 1,
+    Title = "",
+    Text = "激活【限定特典】后解锁",
+    button = "",
+    buttonF = ""
+  },
+  [601] = {
+    id = 601,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，被动技能不可进行装备",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [602] = {
+    id = 602,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "还有未确认的技能加点，是否放弃加点？",
+    button = "确定",
+    buttonF = "取消",
+    showInPVP = 1
+  },
+  [603] = {
+    id = 603,
+    Type = 1,
+    Title = "",
+    Text = "升级需%s职业Job%s级",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [604] = {
+    id = 604,
+    Type = 1,
+    Title = "",
+    Text = "所需技能点不足",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [605] = {
+    id = 605,
+    Type = 1,
+    Title = "",
+    Text = "升级%s职业技能，需%s职业消耗40个技能点",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [606] = {
+    id = 606,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "减去当前技能等级，会使%s职业技能点全部返还，是否减去？",
+    button = "确定",
+    buttonF = "取消",
+    showInPVP = 1
+  },
+  [607] = {
+    id = 607,
+    Type = 1,
+    Title = "",
+    Text = "操作无效，请查看关联的%s技能",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [608] = {
+    id = 608,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，技能在编辑状态下，无法放入技能",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [609] = {
+    id = 609,
+    Type = 1,
+    Title = "",
+    Text = "技能释放条件不足",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [610] = {
+    id = 610,
+    Type = 129,
+    Title = "",
+    Text = "已储存为传送之阵目标",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [611] = {
+    id = 611,
+    Type = 129,
+    Title = "",
+    Text = "此地图无法储存",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [612] = {
+    id = 612,
+    Type = 1,
+    Title = "",
+    Text = "无法施放，生命体已死亡或未被召唤",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [613] = {
+    id = 613,
+    Type = 1,
+    Title = "",
+    Text = "未召唤任何生命体，无法使用",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [614] = {
+    id = 614,
+    Type = 1,
+    Title = "",
+    Text = "生命体数量已达上限，需要回收才能召唤其他",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [615] = {
+    id = 615,
+    Type = 536871040,
+    Title = "",
+    Text = "你的【[c][ffc514]{equippos=%s}[-][/c]】被【[c][ffc514]%s[-][/c]】脱卸了",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [616] = {
+    id = 616,
+    Type = 536871040,
+    Title = "",
+    Text = "你脱卸了【[c][ffc514]%s[-][/c]】的【[c][ffc514]{equippos=%s}[-][/c]】",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [617] = {
+    id = 617,
+    Type = 536871040,
+    Title = "",
+    Text = "你的【[c][ffc514]{equippos=%s}[-][/c]】被【[c][ffc514]%s[-][/c]】破坏了",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [618] = {
+    id = 618,
+    Type = 536871040,
+    Title = "",
+    Text = "你破坏了【[c][ffc514]%s[-][/c]】的【[c][ffc514]{equippos=%s}[-][/c]】",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [619] = {
+    id = 619,
+    Type = 1,
+    Title = "",
+    Text = "需要另一名诗人/舞娘才能使用合奏",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [620] = {
+    id = 620,
+    Type = 1,
+    Title = "",
+    Text = "对方没有学习该合奏技能",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [621] = {
+    id = 621,
+    Type = 1,
+    Title = "",
+    Text = "对方没有装备正确的武器",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [622] = {
+    id = 622,
+    Type = 129,
+    Title = "",
+    Text = "制作成功[c][ffc514]%s[-][/c]次，失败[c][ffc514]%s[-][/c]次",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [623] = {
+    id = 623,
+    Type = 536871040,
+    Title = "",
+    Text = "你的【[c][ffc514]{item=%s}[-][/c]】被【[c][ffc514]%s[-][/c]】禁用了",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [624] = {
+    id = 624,
+    Type = 536871040,
+    Title = "",
+    Text = "你禁用了【[c][ffc514]%s[-][/c]】的【[c][ffc514]{item=%s}[-][/c]】",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [625] = {
+    id = 625,
+    Type = 1,
+    Title = "",
+    Text = "和目标距离过远，无法释放",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [626] = {
+    id = 626,
+    Type = 2,
+    Title = "提示",
+    Text = "“%s”正在进行中，是否放弃任务改用助力完成？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [700] = {
+    id = 700,
+    Type = 1,
+    Title = "",
+    Text = "%s不足，请购买",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [701] = {
+    id = 701,
+    Type = 2,
+    Title = "净化弹窗",
+    Text = "净化能源 %s/%s",
+    button = "净化%s",
+    buttonF = "取消"
+  },
+  [702] = {
+    id = 702,
+    Type = 1,
+    Title = "",
+    Text = "净化能源不足，无法进行净化",
+    button = "",
+    buttonF = ""
+  },
+  [703] = {
+    id = 703,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，没有可制作的头饰",
+    button = "",
+    buttonF = ""
+  },
+  [704] = {
+    id = 704,
+    Type = 1,
+    Title = "",
+    Text = "请完成抗击魔潮，再来接取",
+    button = "",
+    buttonF = ""
+  },
+  [705] = {
+    id = 705,
+    Type = 1,
+    Title = "",
+    Text = "接取次数已用完，请明日再来！",
+    button = "",
+    buttonF = ""
+  },
+  [710] = {
+    id = 710,
+    Type = 1,
+    Title = "",
+    Text = "请选择使用目标",
+    button = "",
+    buttonF = ""
+  },
+  [711] = {
+    id = 711,
+    Type = 1,
+    Title = "",
+    Text = "无法对该目标使用",
+    button = "",
+    buttonF = ""
+  },
+  [712] = {
+    id = 712,
+    Type = 1,
+    Title = "",
+    Text = "无法对死亡目标使用",
+    button = "",
+    buttonF = ""
+  },
+  [713] = {
+    id = 713,
+    Type = 1,
+    Title = "",
+    Text = "当前视野内没有可锁定的敌方单位",
+    button = "",
+    buttonF = ""
+  },
+  [797] = {
+    id = 797,
+    Type = 1,
+    Title = "",
+    Text = "这是冒险家专属头饰哦！",
+    button = "",
+    buttonF = ""
+  },
+  [798] = {
+    id = 798,
+    Type = 1,
+    Title = "",
+    Text = "帮助微笑小姐达成心愿后解锁",
+    button = "",
+    buttonF = ""
+  },
+  [799] = {
+    id = 799,
+    Type = 1,
+    Title = "",
+    Text = "完成吟游诗人的任务后解锁",
+    button = "",
+    buttonF = ""
+  },
+  [800] = {
+    id = 800,
+    Type = 1,
+    Title = "",
+    Text = "功能未开启",
+    button = "",
+    buttonF = ""
+  },
+  [801] = {
+    id = 801,
+    Type = 1,
+    Title = "",
+    Text = "转职后，功能开启",
+    button = "",
+    buttonF = ""
+  },
+  [802] = {
+    id = 802,
+    Type = 1,
+    Title = "",
+    Text = "角色达到%s级时，功能开启",
+    button = "",
+    buttonF = ""
+  },
+  [803] = {
+    id = 803,
+    Type = 1,
+    Title = "",
+    Text = "Base等级达到15级后开启",
+    button = "",
+    buttonF = ""
+  },
+  [804] = {
+    id = 804,
+    Type = 1,
+    Title = "",
+    Text = "密码错误，请重新输入",
+    button = "",
+    buttonF = ""
+  },
+  [805] = {
+    id = 805,
+    Type = 1,
+    Title = "",
+    Text = "密码需为六个数字哦",
+    button = "",
+    buttonF = ""
+  },
+  [806] = {
+    id = 806,
+    Type = 1,
+    Title = "",
+    Text = "聊天室名称不能为空",
+    button = "",
+    buttonF = ""
+  },
+  [807] = {
+    id = 807,
+    Type = 1,
+    Title = "",
+    Text = "聊天输入内容为空",
+    button = "",
+    buttonF = ""
+  },
+  [808] = {
+    id = 808,
+    Type = 1,
+    Title = "",
+    Text = "当前房间人数已满员",
+    button = "",
+    buttonF = ""
+  },
+  [809] = {
+    id = 809,
+    Type = 1,
+    Title = "",
+    Text = "当前该玩家已退出聊天室",
+    button = "",
+    buttonF = ""
+  },
+  [810] = {
+    id = 810,
+    Type = 2,
+    Title = "",
+    Text = "正在聊天室中，是否离开？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [811] = {
+    id = 811,
+    Type = 1,
+    Title = "",
+    Text = "成功进入聊天室",
+    button = "",
+    buttonF = ""
+  },
+  [812] = {
+    id = 812,
+    Type = 1,
+    Title = "",
+    Text = "离开聊天室",
+    button = "",
+    buttonF = ""
+  },
+  [813] = {
+    id = 813,
+    Type = 1,
+    Title = "",
+    Text = "你已在聊天室中了",
+    button = "",
+    buttonF = ""
+  },
+  [814] = {
+    id = 814,
+    Type = 1,
+    Title = "",
+    Text = "抱歉！语音功能尚未实装完毕，敬请期待~",
+    button = "",
+    buttonF = ""
+  },
+  [815] = {
+    id = 815,
+    Type = 1,
+    Title = "",
+    Text = "您被房主请离聊天室，请稍候再进入。",
+    button = "",
+    buttonF = ""
+  },
+  [816] = {
+    id = 816,
+    Type = 1,
+    Title = "",
+    Text = "成为F级冒险家解锁美瞳商店",
+    button = "",
+    buttonF = ""
+  },
+  [818] = {
+    id = 818,
+    Type = 1,
+    Title = "",
+    Text = "包包已满，无法取出。",
+    button = "",
+    buttonF = ""
+  },
+  [819] = {
+    id = 819,
+    Type = 1,
+    Title = "",
+    Text = "仓库已满，无法存入。",
+    button = "",
+    buttonF = ""
+  },
+  [820] = {
+    id = 820,
+    Type = 2048,
+    Title = "",
+    Text = "+%s",
+    button = "",
+    buttonF = ""
+  },
+  [821] = {
+    id = 821,
+    Type = 7,
+    Title = "点播歌曲",
+    Text = "消耗一张[c][ffc514]【%s】[-][/c]来点播该曲，确认吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [822] = {
+    id = 822,
+    Type = 1,
+    Title = "系统提示",
+    Text = "牵手状态下无法使用该道具",
+    button = "",
+    buttonF = ""
+  },
+  [823] = {
+    id = 823,
+    Type = 1,
+    Title = "系统提示",
+    Text = "被牵手状态下无法使用该技能",
+    button = "",
+    buttonF = ""
+  },
+  [824] = {
+    id = 824,
+    Type = 1,
+    Title = "系统提示",
+    Text = "被牵手状态下无法使用该功能",
+    button = "",
+    buttonF = ""
+  },
+  [825] = {
+    id = 825,
+    Type = 2,
+    Title = "牵手邀请",
+    Text = "[c][ffc514]%s[-][/c]\n发来牵手邀请带你飞",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [826] = {
+    id = 826,
+    Type = 7,
+    Title = "警告！",
+    Text = "即将解除牵手状态！是否确认？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [827] = {
+    id = 827,
+    Type = 1,
+    Title = "系统提示",
+    Text = "只能向在同一队伍内的玩家发起牵手邀请",
+    button = "",
+    buttonF = ""
+  },
+  [828] = {
+    id = 828,
+    Type = 1,
+    Title = "系统提示",
+    Text = "目前状态下无法邀请其他玩家牵手！",
+    button = "",
+    buttonF = ""
+  },
+  [829] = {
+    id = 829,
+    Type = 1,
+    Title = "系统提示",
+    Text = "没人想和变成魔物的家伙牵手！",
+    button = "",
+    buttonF = ""
+  },
+  [830] = {
+    id = 830,
+    Type = 1,
+    Title = "魔物语言",
+    Text = "乌拉拉~我是只小怪兽，不会用这些哦！",
+    button = "",
+    buttonF = ""
+  },
+  [831] = {
+    id = 831,
+    Type = 1,
+    Title = "系统提示",
+    Text = "魔力效果好像消失了，你变回了人类。",
+    button = "",
+    buttonF = ""
+  },
+  [832] = {
+    id = 832,
+    Type = 1,
+    Title = "系统提示",
+    Text = "该状态下无法使用此功能。",
+    button = "",
+    buttonF = ""
+  },
+  [833] = {
+    id = 833,
+    Type = 1,
+    Title = "系统提示",
+    Text = "该物品只能对玩家使用！",
+    button = "",
+    buttonF = ""
+  },
+  [834] = {
+    id = 834,
+    Type = 1,
+    Title = "系统提示",
+    Text = "完成主线任务后可查看",
+    button = "",
+    buttonF = ""
+  },
+  [850] = {
+    id = 850,
+    Type = 1,
+    Title = "系统提示",
+    Text = "您输入的名字已存在！",
+    button = "",
+    buttonF = ""
+  },
+  [851] = {
+    id = 851,
+    Type = 1,
+    Title = "系统提示",
+    Text = "角色名必须为2至12个字符！",
+    button = "",
+    buttonF = ""
+  },
+  [852] = {
+    id = 852,
+    Type = 1,
+    Title = "系统提示",
+    Text = "目标距离太远无法进行牵手",
+    button = "",
+    buttonF = ""
+  },
+  [853] = {
+    id = 853,
+    Type = 1,
+    Title = "系统提示",
+    Text = "取景镜头%s",
+    button = "",
+    buttonF = ""
+  },
+  [854] = {
+    id = 854,
+    Type = 1,
+    Title = "系统提示",
+    Text = "该功能暂未开放，敬请谅解！",
+    button = "",
+    buttonF = ""
+  },
+  [855] = {
+    id = 855,
+    Type = 1,
+    Title = "系统提示",
+    Text = "对方不想让你看哦~并羞涩地转过了头去~(*/ω＼*)",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [856] = {
+    id = 856,
+    Type = 1,
+    Title = "系统提示",
+    Text = "正处于无法使用该功能的状态！",
+    button = "",
+    buttonF = ""
+  },
+  [857] = {
+    id = 857,
+    Type = 1,
+    Title = "系统提示",
+    Text = "对方还没加你为好友！快先去勾搭一下让TA加你为好友吧！ (｡･ω･)ﾉﾞ",
+    button = "",
+    buttonF = ""
+  },
+  [858] = {
+    id = 858,
+    Type = 1,
+    Title = "系统提示",
+    Text = "对方正处于无法牵手的状态！",
+    button = "",
+    buttonF = ""
+  },
+  [859] = {
+    id = 859,
+    Type = 1,
+    Title = "系统提示",
+    Text = "牵手的人不是同一公会的，无法进入公会地图",
+    button = "",
+    buttonF = ""
+  },
+  [860] = {
+    id = 860,
+    Type = 1,
+    Title = "系统提示",
+    Text = "对方距离太远，无法使用哦！",
+    button = "",
+    buttonF = ""
+  },
+  [861] = {
+    id = 861,
+    Type = 1,
+    Title = "",
+    Text = "被牵者所以无法创建聊天室",
+    button = "",
+    buttonF = ""
+  },
+  [862] = {
+    id = 862,
+    Type = 1,
+    Title = "",
+    Text = "已停止跟随",
+    button = "",
+    buttonF = ""
+  },
+  [863] = {
+    id = 863,
+    Type = 1,
+    Title = "系统提示",
+    Text = "您所处的位置无法使用本道具！",
+    button = "",
+    buttonF = ""
+  },
+  [864] = {
+    id = 864,
+    Type = 1,
+    Title = "系统提示",
+    Text = "该玩家目前不在线",
+    button = "",
+    buttonF = ""
+  },
+  [865] = {
+    id = 865,
+    Type = 1,
+    Title = "系统提示",
+    Text = "这份充满爱慕之心的信件正在投递中！",
+    button = "",
+    buttonF = ""
+  },
+  [866] = {
+    id = 866,
+    Type = 1,
+    Title = "系统提示",
+    Text = "对方正在忙碌中，请稍候再邀请吧！",
+    button = "",
+    buttonF = ""
+  },
+  [867] = {
+    id = 867,
+    Type = 1,
+    Title = "系统提示",
+    Text = "…也许你的内心还不够真挚，对方你的邀请十动然拒…",
+    button = "",
+    buttonF = ""
+  },
+  [868] = {
+    id = 868,
+    Type = 1,
+    Title = "系统提示",
+    Text = "…您的这份心意尚没能传达到哦，不要灰心，再试试看！",
+    button = "",
+    buttonF = ""
+  },
+  [869] = {
+    id = 869,
+    Type = 1,
+    Title = "系统提示",
+    Text = "对方回应了您的感情！正在前往【%s】！",
+    button = "",
+    buttonF = ""
+  },
+  [870] = {
+    id = 870,
+    Type = 1,
+    Title = "系统提示",
+    Text = "请先使用【放大镜】功能搜索并选择玩家，或者使用【好友】按钮选择好友。",
+    button = "",
+    buttonF = ""
+  },
+  [871] = {
+    id = 871,
+    Type = 2,
+    Title = "收到情书",
+    Text = "[c][ffc514]%s[-][/c]\n[c][f5f5ae]充满爱慕地寄来一份情书",
+    button = "阅读",
+    buttonF = ""
+  },
+  [872] = {
+    id = 872,
+    Type = 1,
+    Title = "系统提示",
+    Text = "您已发送了一份情书，请先耐心等待对方回复哦！",
+    button = "",
+    buttonF = ""
+  },
+  [873] = {
+    id = 873,
+    Type = 1,
+    Title = "系统提示",
+    Text = "抱歉，暂时无法邀请同性的玩家哦~",
+    button = "",
+    buttonF = ""
+  },
+  [874] = {
+    id = 874,
+    Type = 1,
+    Title = "系统提示",
+    Text = "您尚未拥有【幻想之证·银】，需要消耗一枚【幻想之证·银】才能邀请其他玩家前往【%s】哦~",
+    button = "",
+    buttonF = ""
+  },
+  [875] = {
+    id = 875,
+    Type = 1,
+    Title = "系统提示",
+    Text = "不可以自己邀请自己哦！",
+    button = "",
+    buttonF = ""
+  },
+  [876] = {
+    id = 876,
+    Type = 7,
+    Title = "路德维希",
+    Text = "哦呀~看来你正牵着你所爱慕的人呢，真叫人羡慕，那么现在就让你们两人前往【%s】吧？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [877] = {
+    id = 877,
+    Type = 131200,
+    Title = "",
+    Text = "哦，天哪！冒险者[c][ffc514]%s[-][/c]使用了幽灵灯，[c][ffc514]%s[-][/c]即将发生幽灵暴走事件！",
+    button = "",
+    buttonF = ""
+  },
+  [878] = {
+    id = 878,
+    Type = 131072,
+    Title = "",
+    Text = "…幽灵的气息淡去了，看来没能成功探知真相…",
+    button = "",
+    buttonF = ""
+  },
+  [879] = {
+    id = 879,
+    Type = 1,
+    Title = "系统提示",
+    Text = "该地图正在面临巨大危机！无法在此时使用该物品！",
+    button = "",
+    buttonF = ""
+  },
+  [880] = {
+    id = 880,
+    Type = 1,
+    Title = "系统提示",
+    Text = "该道具不可连续使用哦！",
+    button = "",
+    buttonF = ""
+  },
+  [881] = {
+    id = 881,
+    Type = 1,
+    Title = "系统提示",
+    Text = "很遗憾，您未能及时做出选择，邀请失败了…",
+    button = "",
+    buttonF = ""
+  },
+  [882] = {
+    id = 882,
+    Type = 131200,
+    Title = "系统提示",
+    Text = "愚蠢的人类！[c][ffc514]%s[-][/c]很快就会被我们【B格猫㍿】占领啦！喵！ฅ(=ΦωΦ=)ฅ",
+    button = "",
+    buttonF = ""
+  },
+  [883] = {
+    id = 883,
+    Type = 1,
+    Title = "无法创建",
+    Text = "抱歉，只支持2~12个字的空间",
+    button = "",
+    buttonF = ""
+  },
+  [884] = {
+    id = 884,
+    Type = 65536,
+    Title = "关于【恋之摩天轮·星环】",
+    Text = "关于【恋之摩天轮·星环】，有几个游玩注意事项希望客人您能稍微聆听一下。\n只要心中满含对那个TA的思念和爱恋，就一定能将恋之波纹传递到哦！\n当TA也对你的爱慕产生共鸣时，就能驱动【恋之摩天轮·星环】了！",
+    button = "明白了",
+    buttonF = ""
+  },
+  [885] = {
+    id = 885,
+    Type = 1,
+    Title = "系统提示",
+    Text = "你愉悦地和[c][ffc514]%s[-][/c]\n[c][f5f5ae]牵起了小手！",
+    button = "",
+    buttonF = ""
+  },
+  [886] = {
+    id = 886,
+    Type = 1,
+    Title = "系统提示",
+    Text = "你和[c][ffc514]%s[-][/c]\n[c][f5f5ae]放开了牵着的小手…",
+    button = "",
+    buttonF = ""
+  },
+  [887] = {
+    id = 887,
+    Type = 131200,
+    Title = "系统提示",
+    Text = "喵~愚蠢的人类！[c][ffc514]%s[-][/c]的小鱼干我们就不客气啦！拜拜~喵~ฅ(=ΦωΦ=)ฅ",
+    button = "",
+    buttonF = ""
+  },
+  [888] = {
+    id = 888,
+    Type = 131200,
+    Title = "系统提示",
+    Text = "恭喜！成功退治B格猫入侵！这次的MVP是冒险者：[c][ffc514]%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [889] = {
+    id = 889,
+    Type = 1,
+    Title = "系统提示",
+    Text = "时空现在很不稳定，目前无法使用…",
+    button = "",
+    buttonF = ""
+  },
+  [890] = {
+    id = 890,
+    Type = 131200,
+    Title = "系统提示",
+    Text = "恭喜！幽灵暴走事件被平息了！这次的MVP是冒险者：[c][ffc514]%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [897] = {
+    id = 897,
+    Type = 1,
+    Title = "",
+    Text = "%s已经完成了任务%s",
+    button = "",
+    buttonF = ""
+  },
+  [898] = {
+    id = 898,
+    Type = 1,
+    Title = "",
+    Text = "%s接取委托任务%s",
+    button = "",
+    buttonF = ""
+  },
+  [899] = {
+    id = 899,
+    Type = 1,
+    Title = "",
+    Text = "%s正在帮助任务%s",
+    button = "",
+    buttonF = ""
+  },
+  [900] = {
+    id = 900,
+    Type = 1,
+    Title = "",
+    Text = "需要完成已接的悬赏任务才能接新的任务",
+    button = "",
+    buttonF = ""
+  },
+  [901] = {
+    id = 901,
+    Type = 1,
+    Title = "",
+    Text = "今天的悬赏已经不能再接了，明天再来吧。",
+    button = "",
+    buttonF = ""
+  },
+  [902] = {
+    id = 902,
+    Type = 1,
+    Title = "",
+    Text = "获得任务奖励",
+    button = "",
+    buttonF = ""
+  },
+  [903] = {
+    id = 903,
+    Type = 2,
+    Title = "放弃任务选择",
+    Text = "是否要放弃悬赏任务？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [904] = {
+    id = 904,
+    Type = 1,
+    Title = "",
+    Text = "景点：【%s】已收入冒险者手册！",
+    button = "",
+    buttonF = ""
+  },
+  [905] = {
+    id = 905,
+    Type = 1,
+    Title = "",
+    Text = "照片拍摄已完成",
+    button = "",
+    buttonF = ""
+  },
+  [906] = {
+    id = 906,
+    Type = 1,
+    Title = "运输任务提示",
+    Text = "已获得运输品",
+    button = "",
+    buttonF = ""
+  },
+  [907] = {
+    id = 907,
+    Type = 1,
+    Title = "系统提示",
+    Text = "照片已保存到本地",
+    button = "",
+    buttonF = ""
+  },
+  [908] = {
+    id = 908,
+    Type = 262144,
+    Title = "系统提示",
+    Text = "夜幕正浓…一年一度的万圣节又到了，伟大的世袭男爵·德古拉貌似正在普隆德拉城内举行派对。",
+    button = "",
+    buttonF = ""
+  },
+  [909] = {
+    id = 909,
+    Type = 262144,
+    Title = "系统提示",
+    Text = "日历正向着11.11这个看上去就极度悲伤的日子走去，还没有找到妹（汉）子的你，可以去普隆德拉城内找单身汪星人聊一聊了。",
+    button = "",
+    buttonF = ""
+  },
+  [910] = {
+    id = 910,
+    Type = 131200,
+    Title = "系统提示",
+    Text = "感应到米德加尔特大陆对于金钱的渴望，特地前来的【财之神】即将降临各大主城！请冒险者们准备好卖萌表情！",
+    button = "",
+    buttonF = ""
+  },
+  [911] = {
+    id = 911,
+    Type = 131072,
+    Title = "系统提示",
+    Text = "恭喜冒险者：[c][ffc514]%s[-][/c]！成为[c][ffc514]%s[-][/c]本次活动最强幸运人，共计获得【财之神】的打赏：[c][ffc514]%s[-][/c]Zeny！",
+    button = "",
+    buttonF = ""
+  },
+  [912] = {
+    id = 912,
+    Type = 131200,
+    Title = "系统提示",
+    Text = "危机！极恶！极凶！东方古老神话中所记载的恶兽：【年】，即将入侵各大城市！请冒险者们做好准备！迎战吧！",
+    button = "",
+    buttonF = ""
+  },
+  [913] = {
+    id = 913,
+    Type = 131072,
+    Title = "系统提示",
+    Text = "太棒了！凶恶的巨兽【年】已经被驱赶了，幸运获得年兽的最强头饰的冒险者是：[c][ffc514]%s[-][/c]。",
+    button = "",
+    buttonF = ""
+  },
+  [914] = {
+    id = 914,
+    Type = 129,
+    Title = "系统提示",
+    Text = "恭喜你华丽地被财之神的金钱攻击砸中！获得了[c][ffc514]%s[-][/c]Zeny！赞！",
+    button = "",
+    buttonF = ""
+  },
+  [915] = {
+    id = 915,
+    Type = 1048576,
+    Title = "情书",
+    Text = "来自[c][c65394]%s[-][/c]的一份最真诚的心意，在这个节日里，只愿这份最美丽的味道能奉献给你。",
+    button = "",
+    buttonF = "",
+    PrefabType = 1
+  },
+  [916] = {
+    id = 916,
+    Type = 129,
+    Title = "情谊巧克力",
+    Text = "您收到了来自冒险者[c][ffc514]%s[-][/c]送来的情谊巧克力，并且开心愉快地吃了下去！",
+    button = "",
+    buttonF = ""
+  },
+  [917] = {
+    id = 917,
+    Type = 129,
+    Title = "本命巧克力",
+    Text = "您收到了来自冒险者[c][ffc514]%s[-][/c]送来的本命巧克力，幸福的飞起来~一口融化在心。",
+    button = "",
+    buttonF = ""
+  },
+  [918] = {
+    id = 918,
+    Type = 129,
+    Title = "情人节牵手提示",
+    Text = "在这个浪漫时节，您已经和[c][c65394]%s[-][/c]愉快地牵着小手[c][c65394]%s[-][/c]分钟了呢！",
+    button = "",
+    buttonF = ""
+  },
+  [919] = {
+    id = 919,
+    Type = 129,
+    Title = "情人节牵手获得巧克力",
+    Text = "太棒了！感应到您和[c][c65394]%s[-][/c]已经持续牵手[c][c65394]%s[-][/c]分钟，爱神赐予你们一份小礼物！",
+    button = "",
+    buttonF = ""
+  },
+  [921] = {
+    id = 921,
+    Type = 1,
+    Title = "系统提示",
+    Text = "你距离【座位】太远了！",
+    button = "",
+    buttonF = ""
+  },
+  [922] = {
+    id = 922,
+    Type = 1,
+    Title = "系统提示",
+    Text = "咦…【座位】上已经有别人在坐了…(,,Ծ‸Ծ,,)",
+    button = "",
+    buttonF = ""
+  },
+  [923] = {
+    id = 923,
+    Type = 1,
+    Title = "系统提示",
+    Text = "哎呦！你从【座位】上跳了下来！(。>︿<)",
+    button = "",
+    buttonF = ""
+  },
+  [924] = {
+    id = 924,
+    Type = 7,
+    Title = "系统提示",
+    Text = "即将解除变身状态！确定吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [925] = {
+    id = 925,
+    Type = 1,
+    Title = "系统提示",
+    Text = "该动作只能在处于特殊座位点上时才可以使用哦！",
+    button = "",
+    buttonF = ""
+  },
+  [926] = {
+    id = 926,
+    Type = 1,
+    Title = "系统提示",
+    Text = "哎呀呀~抱歉呢~客人，为了证明你的诚意，占卜还是要带点小意思意思的呦~嘻嘻嘻嘻~",
+    button = "",
+    buttonF = ""
+  },
+  [927] = {
+    id = 927,
+    Type = 1,
+    Title = "系统提示",
+    Text = "哦吼？客人，孤身一人前来的吗？还有请你把重要的那个人[c][c65394]牵手[-][/c]带来吧~",
+    button = "",
+    buttonF = ""
+  },
+  [928] = {
+    id = 928,
+    Type = 1,
+    Title = "系统提示",
+    Text = "冒险者[c][c65394]%s[-][/c]的邀请\n一起来做【双人占卜】吧！",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [929] = {
+    id = 929,
+    Type = 7,
+    Title = "系统提示",
+    Text = "即将退出哦！是否确认？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [930] = {
+    id = 930,
+    Type = 1,
+    Title = "系统提示",
+    Text = "喵~您的好友已经进行了选择哦，正在翘首以盼你的答案呢！",
+    button = "",
+    buttonF = ""
+  },
+  [931] = {
+    id = 931,
+    Type = 1048576,
+    Title = "情书2",
+    Text = "来自[c][c65394]%s[-][/c]\n的一份最真诚的恋之寄语签，打开看看吧！",
+    button = "",
+    buttonF = "",
+    PrefabType = 2
+  },
+  [932] = {
+    id = 932,
+    Type = 1,
+    Title = "系统提示",
+    Text = "你的牵手小伙伴已经发起了活动邀请了哦！",
+    button = "",
+    buttonF = ""
+  },
+  [933] = {
+    id = 933,
+    Type = 1,
+    Title = "系统提示",
+    Text = "本物品目前无法使用！",
+    button = "",
+    buttonF = ""
+  },
+  [934] = {
+    id = 934,
+    Type = 2,
+    Title = "系统提示",
+    Text = "该装备精炼等级为+%s，是否确认做为修理材料？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [935] = {
+    id = 935,
+    Type = 1,
+    Title = "系统提示",
+    Text = "哦呀~这位客人，您今天已经占卜过命运了哦~还请明天再来呢~(。>︿<)",
+    button = "",
+    buttonF = ""
+  },
+  [936] = {
+    id = 936,
+    Type = 1,
+    Title = "系统提示",
+    Text = "你已经做出了你的选择~",
+    button = "",
+    buttonF = ""
+  },
+  [937] = {
+    id = 937,
+    Type = 2,
+    Title = "系统提示",
+    Text = "你已经参加过今天的运势占卜了哦~还想再玩一次吗？",
+    button = "确认",
+    buttonF = ""
+  },
+  [938] = {
+    id = 938,
+    Type = 65536,
+    Title = "关于【约束之丘·花海】",
+    Text = "关于【约束之丘·花海】，有几个游玩注意事项希望客人您能稍微聆听一下。\n只要心中满含对那个TA的思念和爱恋，就一定能将恋之波纹传递到哦！\n当TA也对你的爱慕产生共鸣时，就能驱动童话故事里所描述的【约束之丘·花海】了！",
+    button = "明白了",
+    buttonF = ""
+  },
+  [939] = {
+    id = 939,
+    Type = 65536,
+    Title = "关于【占卜·星座的指引】",
+    Text = "关于【占卜·星座的指引】，有几个游玩注意事项希望客人您能稍微聆听一下。\n每位冒险者每天都可以有一次占卜的机会来和牵着手的TA获得星座的指引。如果已经获得过星座指引给予的物品，当天即使继续游玩占卜也不能再获得了哦~\n特别的福利：每个冒险者每天还有一次改运的机会，不过那就需要购买星座商店里的特殊物品【来自星星的邀请】了哦，只要发起占卜的冒险者拥有该物品，即使被邀请的冒险者没有该物品也可以再次活动一份星座指引的物品呢。不过通过此方法，每个冒险者也最多只能获得一次改运的机会哦。\n特别提示：第二天的05：00星星改变了方向，这时再来就又可以获得星座指引的物品啦~",
+    button = "明白了",
+    buttonF = ""
+  },
+  [940] = {
+    id = 940,
+    Type = 65536,
+    Title = "关于【猫猫之家·BIGCAT】",
+    Text = "关于【猫猫之家·BIGCAT】，有几个游玩注意事项希望客人您能稍微聆听一下。\n只要心中满含对那个TA的思念和爱恋，就一定能将恋之波纹传递到哦！\n当TA也对你的爱慕产生共鸣时，就能驱动童话故事里所描述的【猫猫之家·BIGCAT】了！",
+    button = "明白了",
+    buttonF = ""
+  },
+  [941] = {
+    id = 941,
+    Type = 1,
+    Title = "系统提示",
+    Text = "你和你的小伙伴离得太远了哦！",
+    button = "",
+    buttonF = ""
+  },
+  [942] = {
+    id = 942,
+    Type = 1,
+    Title = "系统提示",
+    Text = "哦呀~这位客人，您今天已经占卜过了哦~还请明天再来呢~(。>︿<)",
+    button = "",
+    buttonF = ""
+  },
+  [943] = {
+    id = 943,
+    Type = 1,
+    Title = "系统提示",
+    Text = "消耗1个命运宝石",
+    button = "",
+    buttonF = ""
+  },
+  [950] = {
+    id = 950,
+    Type = 1,
+    Title = "",
+    Text = "哎呦...这个斗技场里简直人满为患！姑且换一个去战好了... (;¬_¬)",
+    button = "",
+    buttonF = ""
+  },
+  [951] = {
+    id = 951,
+    Type = 1,
+    Title = "",
+    Text = "喂！你已经在斗技场里了，还在想什么呢？",
+    button = "",
+    buttonF = ""
+  },
+  [952] = {
+    id = 952,
+    Type = 1,
+    Title = "",
+    Text = "不要这么心急啊，请耐心等待片刻。",
+    button = "",
+    buttonF = ""
+  },
+  [953] = {
+    id = 953,
+    Type = 129,
+    Title = "",
+    Text = "看来阁下还需要多多磨炼呢，非常期待你回来揍扁他们哦 (๑•̀ω•́ ๑)",
+    button = "",
+    buttonF = ""
+  },
+  [954] = {
+    id = 954,
+    Type = 1,
+    Title = "",
+    Text = "只有队长才可以发起挑战哟，阁下请回吧。",
+    button = "",
+    buttonF = ""
+  },
+  [955] = {
+    id = 955,
+    Type = 1,
+    Title = "",
+    Text = "只有队长才可以报名哟，阁下请回吧。",
+    button = "",
+    buttonF = ""
+  },
+  [956] = {
+    id = 956,
+    Type = 256,
+    Title = "",
+    Text = "已发起挑战，{countDown=%s}秒后进入准备阶段。",
+    button = "",
+    buttonF = ""
+  },
+  [957] = {
+    id = 957,
+    Type = 1,
+    Title = "",
+    Text = "对方似乎十分畏惧阁下的实力，完全不敢应战呢(´･_･`)",
+    button = "",
+    buttonF = ""
+  },
+  [958] = {
+    id = 958,
+    Type = 1,
+    Title = "",
+    Text = "(・▽・。)这个名字是被禁止的！",
+    button = "",
+    buttonF = ""
+  },
+  [959] = {
+    id = 959,
+    Type = 1,
+    Title = "",
+    Text = "只有队长才可以加入房间哟，阁下请回吧。",
+    button = "",
+    buttonF = ""
+  },
+  [960] = {
+    id = 960,
+    Type = 1,
+    Title = "",
+    Text = "已加入华丽金属抢夺战的房间等待，各位一定要加油哦。",
+    button = "",
+    buttonF = ""
+  },
+  [961] = {
+    id = 961,
+    Type = 1,
+    Title = "",
+    Text = "还有%s秒，即将进入华丽金属抢夺战。",
+    button = "",
+    buttonF = ""
+  },
+  [962] = {
+    id = 962,
+    Type = 129,
+    Title = "",
+    Text = "[c][ffc514]%s[-][/c]击破了华丽金属。",
+    button = "",
+    buttonF = ""
+  },
+  [963] = {
+    id = 963,
+    Type = 129,
+    Title = "",
+    Text = "你被[c][ffc514]%s[-][/c]击倒了。",
+    button = "",
+    buttonF = ""
+  },
+  [964] = {
+    id = 964,
+    Type = 129,
+    Title = "",
+    Text = "你击倒了[c][ffc514]%s[-][/c]。",
+    button = "",
+    buttonF = ""
+  },
+  [965] = {
+    id = 965,
+    Type = 129,
+    Title = "",
+    Text = "你协助[c][ffc514]%s[-][/c]击倒了[c][ffc514]%s[-][/c]。",
+    button = "",
+    buttonF = ""
+  },
+  [966] = {
+    id = 966,
+    Type = 129,
+    Title = "",
+    Text = "[c][ffc514]%s[-][/c]连续击倒了%s人。",
+    button = "",
+    buttonF = ""
+  },
+  [967] = {
+    id = 967,
+    Type = 129,
+    Title = "",
+    Text = "你成功拯救了[c][ffc514]%s[-][/c]。",
+    button = "",
+    buttonF = ""
+  },
+  [968] = {
+    id = 968,
+    Type = 129,
+    Title = "",
+    Text = "你成功反击了[c][ffc514]%s[-][/c]的攻击。",
+    button = "",
+    buttonF = ""
+  },
+  [969] = {
+    id = 969,
+    Type = 2,
+    Title = "确认挑战",
+    Text = "队长挑战了\n[c][ffc514]%s[-][/c]",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [970] = {
+    id = 970,
+    Type = 1,
+    Title = "",
+    Text = "当前无法继续匹配",
+    button = "",
+    buttonF = ""
+  },
+  [971] = {
+    id = 971,
+    Type = 1,
+    Title = "",
+    Text = "创建房间失败。",
+    button = "",
+    buttonF = ""
+  },
+  [972] = {
+    id = 972,
+    Type = 8192,
+    Title = "平局",
+    Text = "时间结束，本局为平局，请继续加油哦！",
+    button = "确认",
+    buttonF = ""
+  },
+  [973] = {
+    id = 973,
+    Type = 1,
+    Title = "",
+    Text = "击倒对手，拿到30分就能获得胜利哦！请各位多多加油！",
+    button = "",
+    buttonF = ""
+  },
+  [974] = {
+    id = 974,
+    Type = 1,
+    Title = "",
+    Text = "击破华丽金属的队伍将获得胜利！请各位多多加油！",
+    button = "",
+    buttonF = ""
+  },
+  [975] = {
+    id = 975,
+    Type = 1,
+    Title = "",
+    Text = "[c][ffc514]%s[-][/c]击破了华丽金属，[c][ffc514]%s[-][/c]获得了本局游戏的胜利，恭喜恭喜。",
+    button = "",
+    buttonF = ""
+  },
+  [976] = {
+    id = 976,
+    Type = 1,
+    Title = "",
+    Text = "[c][ffc514]%s[-][/c]这么快就拿到了%s分，真是厉害的不得了哟★~★，恭喜[c][ffc514]%s[-][/c]获得了本局比赛的胜利。",
+    button = "",
+    buttonF = ""
+  },
+  [977] = {
+    id = 977,
+    Type = 1,
+    Title = "",
+    Text = "很遗憾，华丽金属没有被击破，本局游戏没有人胜出，请大家继续加油吧！",
+    button = "",
+    buttonF = ""
+  },
+  [978] = {
+    id = 978,
+    Type = 1,
+    Title = "",
+    Text = "你的队伍已经开始战斗了，请不要重复挑战，快去跟小伙伴们一起战斗吧！",
+    button = "",
+    buttonF = ""
+  },
+  [979] = {
+    id = 979,
+    Type = 2,
+    Title = "确认挑战",
+    Text = "队长接受了\n[c][ffc514]%s[-][/c]的挑战。",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [980] = {
+    id = 980,
+    Type = 1,
+    Title = "",
+    Text = "溜溜猴大乱斗正在施工中，请先去看看别的斗技场吧！",
+    button = "",
+    buttonF = ""
+  },
+  [981] = {
+    id = 981,
+    Type = 1,
+    Title = "",
+    Text = "沙漠之狼斗技场正在施工中，请先去看看别的斗技场吧！",
+    button = "",
+    buttonF = ""
+  },
+  [982] = {
+    id = 982,
+    Type = 1,
+    Title = "",
+    Text = "华丽金属抢夺战正在施工中，请先去看看别的斗技场吧！",
+    button = "",
+    buttonF = ""
+  },
+  [983] = {
+    id = 983,
+    Type = 1,
+    Title = "",
+    Text = "你正在公会领地中，无法与斗技场建立通讯，请退出后再试哦~",
+    button = "",
+    buttonF = ""
+  },
+  [984] = {
+    id = 984,
+    Type = 1,
+    Title = "",
+    Text = "你目前身处的地图，无法返回公会领地！请退出后再试哦~",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [985] = {
+    id = 985,
+    Type = 1,
+    Title = "",
+    Text = "无法选择更多卡片了~！",
+    button = "",
+    buttonF = ""
+  },
+  [986] = {
+    id = 986,
+    Type = 1,
+    Title = "",
+    Text = "自动战斗技能栏+1",
+    button = "",
+    buttonF = ""
+  },
+  [987] = {
+    id = 987,
+    Type = 2,
+    Title = "确认兑换",
+    Text = "即将使用[ffc514]%s[-]份[ffc514]%s[-]兑换[ffc514]%s[-]",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [988] = {
+    id = 988,
+    Type = 1,
+    Title = "",
+    Text = "学习冒险技能、转职、激活限定特典可解锁",
+    button = "",
+    buttonF = ""
+  },
+  [989] = {
+    id = 989,
+    Type = 1,
+    Title = "",
+    Text = "您的背包已满，请清理后再进行操作哟~",
+    button = "",
+    buttonF = ""
+  },
+  [990] = {
+    id = 990,
+    Type = 1,
+    Title = "",
+    Text = "您购买的货物已经下架，请看看别的吧~",
+    button = "",
+    buttonF = ""
+  },
+  [991] = {
+    id = 991,
+    Type = 1,
+    Title = "",
+    Text = "照片已保存到个人相册",
+    button = "",
+    buttonF = ""
+  },
+  [992] = {
+    id = 992,
+    Type = 2,
+    Title = "确认替换",
+    Text = "确定要删除并替换掉该照片吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [993] = {
+    id = 993,
+    Type = 2,
+    Title = "确认删除",
+    Text = "确定要删除选中的照片吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [994] = {
+    id = 994,
+    Type = 1,
+    Title = "",
+    Text = "个人相册已经满了，请扩充相册或删除部分照片。",
+    button = "",
+    buttonF = ""
+  },
+  [995] = {
+    id = 995,
+    Type = 1,
+    Title = "",
+    Text = "照片上传失败。",
+    button = "",
+    buttonF = ""
+  },
+  [996] = {
+    id = 996,
+    Type = 1,
+    Title = "",
+    Text = "个人相册存储空间+%s",
+    button = "",
+    buttonF = ""
+  },
+  [997] = {
+    id = 997,
+    Type = 1,
+    Title = "",
+    Text = "当前无法上传照片哦~",
+    button = "",
+    buttonF = ""
+  },
+  [998] = {
+    id = 998,
+    Type = 1,
+    Title = "",
+    Text = "您没有上传照片的权限哦，请找会长大人帮忙开通吧~",
+    button = "",
+    buttonF = ""
+  },
+  [999] = {
+    id = 999,
+    Type = 1,
+    Title = "",
+    Text = "无法上传这么多照片~",
+    button = "",
+    buttonF = ""
+  },
+  [1001] = {
+    id = 1001,
+    Type = 1,
+    Title = "",
+    Text = "帐号/密码输入错误，请检查后再试",
+    button = "",
+    buttonF = ""
+  },
+  [1002] = {
+    id = 1002,
+    Type = 1,
+    Title = "",
+    Text = "该职业即将开放！详情请留意官方公告！",
+    button = "",
+    buttonF = ""
+  },
+  [1003] = {
+    id = 1003,
+    Type = 8192,
+    Title = "系统提示",
+    Text = "登录超时，请稍后再试",
+    button = "返回登录",
+    buttonF = ""
+  },
+  [1004] = {
+    id = 1004,
+    Type = 524288,
+    Title = "提示",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，已断开连接，请重新登录。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/",
+    button = "返回登录",
+    buttonF = ""
+  },
+  [1005] = {
+    id = 1005,
+    Type = 1,
+    Title = "无法创建",
+    Text = "名字中含有非法字符",
+    button = "",
+    buttonF = ""
+  },
+  [1006] = {
+    id = 1006,
+    Type = 1,
+    Title = "无法创建",
+    Text = "名字不能为空",
+    button = "",
+    buttonF = ""
+  },
+  [1007] = {
+    id = 1007,
+    Type = 1,
+    Title = "无法创建",
+    Text = "抱歉，只支持2~8个字的空间",
+    button = "",
+    buttonF = ""
+  },
+  [1008] = {
+    id = 1008,
+    Type = 8192,
+    Title = "系统提示",
+    Text = "帐号在其他设备登录，如有疑问请及时联系官方客服",
+    button = "返回登录",
+    buttonF = ""
+  },
+  [1009] = {
+    id = 1009,
+    Type = 1,
+    Title = "无法创建",
+    Text = "抱歉，名字已被占用",
+    button = "",
+    buttonF = ""
+  },
+  [1010] = {
+    id = 1010,
+    Type = 524288,
+    Title = "",
+    Text = "服务器维护中，请稍后尝试",
+    button = "",
+    buttonF = ""
+  },
+  [1011] = {
+    id = 1011,
+    Type = 8192,
+    Title = "更新提示",
+    Text = "有更新内容，请重新登录",
+    button = "返回登录",
+    buttonF = ""
+  },
+  [1012] = {
+    id = 1012,
+    Type = 8192,
+    Title = "更新提示",
+    Text = "更新失败，请检查网络",
+    button = "返回登录",
+    buttonF = ""
+  },
+  [1013] = {
+    id = 1013,
+    Type = 8192,
+    Title = "更新提示",
+    Text = "有新的版本可以更新了，大小%sM，请点击更新",
+    button = "更新",
+    buttonF = ""
+  },
+  [1014] = {
+    id = 1014,
+    Type = 8192,
+    Title = "",
+    Text = "次元魔法未能同步，请检查网络... Σ( ° △ °|||)︴",
+    button = "确定",
+    buttonF = ""
+  },
+  [1015] = {
+    id = 1015,
+    Type = 1,
+    Title = "",
+    Text = "连接失败，请重新尝试",
+    button = "",
+    buttonF = ""
+  },
+  [1016] = {
+    id = 1016,
+    Type = 1,
+    Title = "",
+    Text = "连接超时，请重新尝试",
+    button = "",
+    buttonF = ""
+  },
+  [1017] = {
+    id = 1017,
+    Type = 524288,
+    Title = "发生错误",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，代号：\"%s\"，致使你的连接失败了。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/",
+    button = "",
+    buttonF = ""
+  },
+  [1018] = {
+    id = 1018,
+    Type = 524288,
+    Title = "发生错误",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，代号：\"100\"，致使你的连接失败了。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/",
+    button = "",
+    buttonF = ""
+  },
+  [1019] = {
+    id = 1019,
+    Type = 524288,
+    Title = "发生错误",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，代号：\"101\"，致使你的连接失败了。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/",
+    button = "",
+    buttonF = ""
+  },
+  [1020] = {
+    id = 1020,
+    Type = 524288,
+    Title = "发生错误",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，代号：\"102\"，致使你的连接失败了。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/",
+    button = "",
+    buttonF = ""
+  },
+  [1021] = {
+    id = 1021,
+    Type = 524288,
+    Title = "发生错误",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，代号：\"103\"，致使你的连接失败了。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/",
+    button = "",
+    buttonF = ""
+  },
+  [1022] = {
+    id = 1022,
+    Type = 524288,
+    Title = "发生错误",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，代号：\"104\"，致使你的连接失败了。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/",
+    button = "",
+    buttonF = ""
+  },
+  [1023] = {
+    id = 1023,
+    Type = 524288,
+    Title = "发生错误",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，代号：\"105\"，致使你的连接失败了。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/",
+    button = "",
+    buttonF = ""
+  },
+  [1024] = {
+    id = 1024,
+    Type = 524288,
+    Title = "发生错误",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，代号：\"106\"，致使你的连接失败了。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/",
+    button = "",
+    buttonF = ""
+  },
+  [1025] = {
+    id = 1025,
+    Type = 8192,
+    Title = "",
+    Text = "很抱歉，您的冒险许可被封停...请联系客服卡普拉妹子们呦~ (；′⌒`)\n官方论坛：http://ro.xd.com/bbs/",
+    button = "",
+    buttonF = ""
+  },
+  [1026] = {
+    id = 1026,
+    Type = 524288,
+    Title = "发生错误",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，代号：\"108\"，致使你的连接失败了。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/",
+    button = "",
+    buttonF = ""
+  },
+  [1027] = {
+    id = 1027,
+    Type = 524288,
+    Title = "发生错误",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，代号：\"109\"，致使你的连接失败了。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/",
+    button = "",
+    buttonF = ""
+  },
+  [1028] = {
+    id = 1028,
+    Type = 2,
+    Title = "",
+    Text = "确定返回登录画面？",
+    button = "返回登录",
+    buttonF = "继续连接"
+  },
+  [1029] = {
+    id = 1029,
+    Type = 129,
+    Title = "",
+    Text = "特典效果新增%s天，持续时间至%s到期，共%s天。",
+    button = "",
+    buttonF = ""
+  },
+  [1030] = {
+    id = 1030,
+    Type = 129,
+    Title = "",
+    Text = "特典即将到期，%s后特典失效。",
+    button = "",
+    buttonF = ""
+  },
+  [1031] = {
+    id = 1031,
+    Type = 8192,
+    Title = "",
+    Text = "帐号验证失败，请重新登录",
+    button = "",
+    buttonF = ""
+  },
+  [1032] = {
+    id = 1032,
+    Type = 8192,
+    Title = "",
+    Text = "角色无法删除，请重新登录！",
+    button = "",
+    buttonF = ""
+  },
+  [1034] = {
+    id = 1034,
+    Type = 524288,
+    Title = "提示",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，已断开连接，请重新登录。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/\n\n错误原因：\n%s",
+    button = "返回登录",
+    buttonF = ""
+  },
+  [1037] = {
+    id = 1037,
+    Type = 524288,
+    Title = "发生错误",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，代号：\"%s\"，致使你的连接失败了。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/\n\n错误原因：\n%s",
+    button = "",
+    buttonF = ""
+  },
+  [1038] = {
+    id = 1038,
+    Type = 2,
+    Title = "",
+    Text = "很抱歉，您的账号已被封停...封停到期时间%s年%s月%s日，有疑问请联系客服卡普拉妹子们呦！ヾ(๑❛▿◠๑)",
+    button = "申诉",
+    buttonF = "取消",
+    Confirm = 10001
+  },
+  [1050] = {
+    id = 1050,
+    Type = 1,
+    Title = "",
+    Text = "输入的礼包码超出使用范围！",
+    button = "",
+    buttonF = ""
+  },
+  [1051] = {
+    id = 1051,
+    Type = 8192,
+    Title = "",
+    Text = "您输入的激活码无效或已被使用！请核对您的激活码！",
+    button = "",
+    buttonF = ""
+  },
+  [1052] = {
+    id = 1052,
+    Type = 1,
+    Title = "",
+    Text = "激活成功！",
+    button = "",
+    buttonF = ""
+  },
+  [1053] = {
+    id = 1053,
+    Type = 1,
+    Title = "",
+    Text = "激活码不可为空",
+    button = "",
+    buttonF = ""
+  },
+  [1054] = {
+    id = 1054,
+    Type = 524288,
+    Title = "公告",
+    Text = "冒险者你好\n吉芬魔法阵发生紊乱导致游戏异常，代号：\"1054\"，致使你的连接失败了。\n\n有任何问题都可通过论坛发帖反馈哦。\n官方论坛：http://ro.xd.com/bbs/\n",
+    button = "",
+    buttonF = ""
+  },
+  [1055] = {
+    id = 1055,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，名字至少需要2个字",
+    button = "",
+    buttonF = ""
+  },
+  [1056] = {
+    id = 1056,
+    Type = 1,
+    Title = "",
+    Text = "服务器异常，请稍后再试",
+    button = "",
+    buttonF = ""
+  },
+  [1057] = {
+    id = 1057,
+    Type = 1,
+    Title = "",
+    Text = "该批次的礼包码已过期啦，下次要早一点啦！",
+    button = "",
+    buttonF = ""
+  },
+  [1058] = {
+    id = 1058,
+    Type = 1,
+    Title = "",
+    Text = "请输入正确礼包码，再核实一下吧！",
+    button = "",
+    buttonF = ""
+  },
+  [1059] = {
+    id = 1059,
+    Type = 1,
+    Title = "",
+    Text = "呜…礼包码已被别人使用了呢！",
+    button = "",
+    buttonF = ""
+  },
+  [1060] = {
+    id = 1060,
+    Type = 1,
+    Title = "",
+    Text = "您已使用过该批次的礼包码啦，不如送给你的冒险伙伴吧！",
+    button = "",
+    buttonF = ""
+  },
+  [1061] = {
+    id = 1061,
+    Type = 1,
+    Title = "",
+    Text = "礼包码数据异常，请联系客服！",
+    button = "",
+    buttonF = ""
+  },
+  [1062] = {
+    id = 1062,
+    Type = 1,
+    Title = "",
+    Text = "兑换成功！",
+    button = "",
+    buttonF = ""
+  },
+  [1063] = {
+    id = 1063,
+    Type = 1,
+    Title = "",
+    Text = "礼包码不可为空！",
+    button = "",
+    buttonF = ""
+  },
+  [1064] = {
+    id = 1064,
+    Type = 1,
+    Title = "",
+    Text = "暂未开放栏位",
+    button = "",
+    buttonF = ""
+  },
+  [1065] = {
+    id = 1065,
+    Type = 1,
+    Title = "",
+    Text = "达成二转进阶即可解锁栏位！",
+    button = "",
+    buttonF = ""
+  },
+  [1066] = {
+    id = 1066,
+    Type = 1,
+    Title = "",
+    Text = "删除角色成功！",
+    button = "",
+    buttonF = ""
+  },
+  [1067] = {
+    id = 1067,
+    Type = 1,
+    Title = "",
+    Text = "删除角色频率过高，需要等待24小时后才可进行删除。",
+    button = "",
+    buttonF = ""
+  },
+  [1068] = {
+    id = 1068,
+    Type = 1,
+    Title = "",
+    Text = "您正在执行删除%s角色哦，不能同时执行删除两个角色。",
+    button = "",
+    buttonF = ""
+  },
+  [1069] = {
+    id = 1069,
+    Type = 1,
+    Title = "",
+    Text = "创建失败，非法创建！",
+    button = "",
+    buttonF = ""
+  },
+  [1070] = {
+    id = 1070,
+    Type = 1,
+    Title = "",
+    Text = "请正确输入DELETE，才可删除角色。",
+    button = "",
+    buttonF = ""
+  },
+  [1071] = {
+    id = 1071,
+    Type = 1,
+    Title = "",
+    Text = "进入角色删除倒计时！",
+    button = "",
+    buttonF = ""
+  },
+  [1072] = {
+    id = 1072,
+    Type = 1,
+    Title = "",
+    Text = "您使用的该批次的礼包码已达上限啦，不如送给你的冒险伙伴吧！",
+    button = "",
+    buttonF = ""
+  },
+  [1073] = {
+    id = 1073,
+    Type = 1,
+    Title = "",
+    Text = "您已成功删除角色，下次删除操作将在%s后开放。",
+    button = "",
+    buttonF = ""
+  },
+  [1074] = {
+    id = 1074,
+    Type = 1,
+    Title = "",
+    Text = "信息没填完哦",
+    button = "",
+    buttonF = ""
+  },
+  [1075] = {
+    id = 1075,
+    Type = 1,
+    Title = "",
+    Text = "身份证号长度不对哦",
+    button = "",
+    buttonF = ""
+  },
+  [1076] = {
+    id = 1076,
+    Type = 8192,
+    Title = "成功！",
+    Text = "实名制认证成功啦！感谢你的配合❤",
+    button = "确定",
+    buttonF = ""
+  },
+  [1077] = {
+    id = 1077,
+    Type = 1,
+    Title = "",
+    Text = "认证失败！请检查你输入的信息",
+    button = "",
+    buttonF = ""
+  },
+  [1078] = {
+    id = 1078,
+    Type = 8192,
+    Title = "",
+    Text = "此角色已被封，不可进行删除",
+    button = "",
+    buttonF = ""
+  },
+  [1099] = {
+    id = 1099,
+    Type = 8192,
+    Title = "",
+    Text = "需重新下载最新客户端方可打赏",
+    button = "确定",
+    buttonF = ""
+  },
+  [1101] = {
+    id = 1101,
+    Type = 1,
+    Title = "",
+    Text = "SP不足，技能无法释放",
+    button = "",
+    buttonF = ""
+  },
+  [1102] = {
+    id = 1102,
+    Type = 2,
+    Title = "",
+    Text = "特典效果已过期，是否前往打赏续费？",
+    button = "前往续费",
+    buttonF = "暂时不续"
+  },
+  [1103] = {
+    id = 1103,
+    Type = 2,
+    Title = "",
+    Text = "您已经解锁这个美瞳了~是否还要继续购买？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1104] = {
+    id = 1104,
+    Type = 2,
+    Title = "",
+    Text = "您已经解锁这个发型了~是否还要继续购买？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1105] = {
+    id = 1105,
+    Type = 2,
+    Title = "购买确认",
+    Text = "距离活动结束不足%s天，是否确定购买？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1150] = {
+    id = 1150,
+    Type = 2,
+    Title = "确认制作",
+    Text = "选择的卡片里有紫色卡片，确定要制作吗？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1151] = {
+    id = 1151,
+    Type = 65536,
+    Title = "确认分解",
+    Text = "所选卡片即将被分解，玩家将获得古拉姆晶末，本次操作不可撤销，为避免造成无法挽回的损失，请玩家再次确认是否分解所选卡片。",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [1201] = {
+    id = 1201,
+    Type = 256,
+    Title = "秒数倒计时",
+    Text = "还有[c][ffff00]{countDown=%s}[-][/c]秒进入下一层",
+    button = "",
+    buttonF = ""
+  },
+  [1202] = {
+    id = 1202,
+    Type = 256,
+    Title = "秒数倒计时",
+    Text = "[c][ffff00]{countDown=%s}[-][/c]秒后进入下个区域",
+    button = "",
+    buttonF = ""
+  },
+  [1280] = {
+    id = 1280,
+    Type = 1,
+    Title = "",
+    Text = "%s个道具未能使用成功",
+    button = "",
+    buttonF = ""
+  },
+  [1281] = {
+    id = 1281,
+    Type = 1,
+    Title = "",
+    Text = "已经到达该道具一次可以使用数量的上限",
+    button = "",
+    buttonF = ""
+  },
+  [1282] = {
+    id = 1282,
+    Type = 1,
+    Title = "",
+    Text = "%s数量不足",
+    button = "",
+    buttonF = ""
+  },
+  [1301] = {
+    id = 1301,
+    Type = 1,
+    Title = "",
+    Text = "你不是队长无法开启恩德勒斯塔挑战",
+    button = "",
+    buttonF = ""
+  },
+  [1302] = {
+    id = 1302,
+    Type = 1,
+    Title = "",
+    Text = "必须要组队才能进入恩德勒斯塔",
+    button = "",
+    buttonF = ""
+  },
+  [1303] = {
+    id = 1303,
+    Type = 1,
+    Title = "",
+    Text = "你已从此场战斗脱离，稍后再试",
+    button = "",
+    buttonF = ""
+  },
+  [1304] = {
+    id = 1304,
+    Type = 1,
+    Title = "",
+    Text = "队伍正在进行战斗，需要等待下场战斗才能加入",
+    button = "",
+    buttonF = ""
+  },
+  [1305] = {
+    id = 1305,
+    Type = 2,
+    Title = "组队提示",
+    Text = "脱离队伍会离开恩德勒斯塔，是否确认离队？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1306] = {
+    id = 1306,
+    Type = 1,
+    Title = "",
+    Text = "进入第%s层",
+    button = "",
+    buttonF = ""
+  },
+  [1307] = {
+    id = 1307,
+    Type = 1,
+    Title = "",
+    Text = "清完这层魔物才能前行",
+    button = "",
+    buttonF = ""
+  },
+  [1308] = {
+    id = 1308,
+    Type = 1,
+    Title = "",
+    Text = "队长取消了恩德勒斯塔的挑战",
+    button = "",
+    buttonF = ""
+  },
+  [1309] = {
+    id = 1309,
+    Type = 1,
+    Title = "",
+    Text = "52级开启恩德勒斯塔",
+    button = "",
+    buttonF = ""
+  },
+  [1310] = {
+    id = 1310,
+    Type = 1,
+    Title = "",
+    Text = "此层尚未开放，无法进行挑战",
+    button = "",
+    buttonF = ""
+  },
+  [1311] = {
+    id = 1311,
+    Type = 2,
+    Title = "",
+    Text = "是否跟随队长挑战恩德勒斯塔？",
+    button = "跟随",
+    buttonF = ""
+  },
+  [1312] = {
+    id = 1312,
+    Type = 2,
+    Title = "",
+    Text = "队友已经进入了恩德勒斯塔，是否加入？",
+    button = "跟随进入",
+    buttonF = "取消"
+  },
+  [1313] = {
+    id = 1313,
+    Type = 1,
+    Title = "",
+    Text = "无法加入，恩德勒斯塔尚未开启或已经结束。",
+    button = "",
+    buttonF = ""
+  },
+  [1314] = {
+    id = 1314,
+    Type = 1,
+    Title = "",
+    Text = "无法进入此场景",
+    button = "",
+    buttonF = ""
+  },
+  [1315] = {
+    id = 1315,
+    Type = 1,
+    Title = "",
+    Text = "您的等级未到52级，进入恩德勒斯塔太过危险，请先提升自己等级",
+    button = "",
+    buttonF = ""
+  },
+  [1316] = {
+    id = 1316,
+    Type = 1,
+    Title = "",
+    Text = "恭喜你已经完成恩德勒塔最高挑战！",
+    button = "",
+    buttonF = ""
+  },
+  [1317] = {
+    id = 1317,
+    Type = 1,
+    Title = "",
+    Text = "队伍正在挑战恩德勒斯塔，暂时无法加入成员",
+    button = "",
+    buttonF = ""
+  },
+  [1318] = {
+    id = 1318,
+    Type = 1,
+    Title = "",
+    Text = "一股神秘的力量袭来，恩德勒斯塔还有%s分钟即将关闭。",
+    button = "",
+    buttonF = ""
+  },
+  [1351] = {
+    id = 1351,
+    Type = 2,
+    Title = "",
+    Text = "此券本月可兑换%s，是否使用？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1352] = {
+    id = 1352,
+    Type = 2,
+    Title = "",
+    Text = "已没有可激活的白色图签，是否愿意转换成5个冒险家硬币？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1353] = {
+    id = 1353,
+    Type = 2,
+    Title = "",
+    Text = "已没有可激活的绿色图签，是否愿意转换成10个冒险家硬币？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1354] = {
+    id = 1354,
+    Type = 2,
+    Title = "",
+    Text = "已没有可激活的蓝色图签，是否愿意转换成25个冒险家硬币？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1355] = {
+    id = 1355,
+    Type = 2,
+    Title = "",
+    Text = "已没有可激活的Mini图鉴，是否愿意转换成30个冒险家硬币？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1356] = {
+    id = 1356,
+    Type = 2,
+    Title = "",
+    Text = "已没有可激活的MVP图鉴，是否愿意转换成40个冒险家硬币？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1357] = {
+    id = 1357,
+    Type = 2,
+    Title = "",
+    Text = "已没有可激活的MVP/MINI图鉴，是否愿意转换成35个冒险家硬币？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1358] = {
+    id = 1358,
+    Type = 1,
+    Title = "",
+    Text = "使用无效，穿戴的装备可能无法精炼/精炼等级上限不足/精炼等级高于此券。",
+    button = "",
+    buttonF = ""
+  },
+  [1359] = {
+    id = 1359,
+    Type = 2,
+    Title = "",
+    Text = "是否提升穿戴中%s的精炼等级至%s？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1360] = {
+    id = 1360,
+    Type = 1,
+    Title = "",
+    Text = "使用成功",
+    button = "",
+    buttonF = ""
+  },
+  [1361] = {
+    id = 1361,
+    Type = 1,
+    Title = "",
+    Text = "使用无效，当前穿戴的装备不满足此券的使用条件。",
+    button = "",
+    buttonF = ""
+  },
+  [1402] = {
+    id = 1402,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "你所出售物品有可交易的道具/宠物蛋，确定要出售吗？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1403] = {
+    id = 1403,
+    Type = 1,
+    Title = "出售",
+    Text = "请前往梦罗克精炼回收商处理该装备",
+    button = "",
+    buttonF = ""
+  },
+  [1404] = {
+    id = 1404,
+    Type = 2,
+    Title = "出售",
+    Text = "该装备插有卡片，确定要出售吗？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1405] = {
+    id = 1405,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "你出售的物品里有些道具比较贵重，确定要出售吗？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1500] = {
+    id = 1500,
+    Type = 2,
+    Title = "",
+    Text = "当前共有[c][ffc514]%s[-][/c]条解锁提示，\n查看耗时较长，是否跳过？",
+    button = "跳过",
+    buttonF = "查看全部",
+    Close = 1
+  },
+  [1501] = {
+    id = 1501,
+    Type = 256,
+    Title = "秒数倒计时",
+    Text = "还有[c][ffff00]{countDown=%s}[-][/c]秒开始新一轮战斗",
+    button = "",
+    buttonF = ""
+  },
+  [1502] = {
+    id = 1502,
+    Type = 1,
+    Title = "",
+    Text = "你的积分不够兑换此件商品",
+    button = "",
+    buttonF = ""
+  },
+  [1503] = {
+    id = 1503,
+    Type = 256,
+    Title = "熊本熊倒计时",
+    Text = "[c][ffff00]{countDown=%s}[-][/c]秒后开始战斗，击败拉链熊可以增加积分，击败熊本熊将被扣除积分哦~",
+    button = "",
+    buttonF = ""
+  },
+  [1504] = {
+    id = 1504,
+    Type = 256,
+    Title = "熊本熊2倒计时",
+    Text = "[c][ffff00]{countDown=%s}[-][/c]秒后开始战斗，击败拉链熊造型的熊熊可以增加积分，击败穿时装的熊熊将被扣除积分哦~",
+    button = "",
+    buttonF = ""
+  },
+  [1505] = {
+    id = 1505,
+    Type = 256,
+    Title = "铠传倒计时",
+    Text = "[c][ffff00]{countDown=%s}[-][/c]秒后开始战斗，击败妖邪帝王的幻影可以增加积分，击败妖邪帝王的虚影将被扣除积分哦~",
+    button = "",
+    buttonF = ""
+  },
+  [1600] = {
+    id = 1600,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否立即完全修复此裂隙？（每次裂隙奖励领取需消耗「冒险丸子」x2）",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [1601] = {
+    id = 1601,
+    Type = 17,
+    Title = "",
+    Text = "%s队员正在修复时空裂隙，请前往协助。",
+    button = "",
+    buttonF = ""
+  },
+  [1602] = {
+    id = 1602,
+    Type = 1,
+    Title = "",
+    Text = "你进入了时空位面",
+    button = "",
+    buttonF = ""
+  },
+  [1603] = {
+    id = 1603,
+    Type = 256,
+    Title = "",
+    Text = "[c][ffff00]{countDown=%s}[-][/c]秒后将离开时空位面",
+    button = "",
+    buttonF = ""
+  },
+  [1604] = {
+    id = 1604,
+    Type = 1,
+    Title = "",
+    Text = "附近已有正在修复的时空裂隙，请先去协助修复",
+    button = "",
+    buttonF = ""
+  },
+  [1605] = {
+    id = 1605,
+    Type = 1,
+    Title = "",
+    Text = "今天已经领取很多时空裂隙奖励了，不能再领取了。",
+    button = "",
+    buttonF = ""
+  },
+  [1606] = {
+    id = 1606,
+    Type = 2,
+    Title = "修复时间裂隙",
+    Text = "时空裂隙非常不稳定，是否进行修复？    ",
+    button = "修复时空裂隙",
+    buttonF = "取消"
+  },
+  [1607] = {
+    id = 1607,
+    Type = 1,
+    Title = "系统提示",
+    Text = "时空裂隙修复十分危险，需要组队才能进行！",
+    button = "",
+    buttonF = ""
+  },
+  [1608] = {
+    id = 1608,
+    Type = 1,
+    Title = "",
+    Text = "无法放弃正在被修复的时空裂隙",
+    button = "",
+    buttonF = ""
+  },
+  [1609] = {
+    id = 1609,
+    Type = 2,
+    Title = "系统提示",
+    Text = "是否要放弃修复？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1610] = {
+    id = 1610,
+    Type = 1,
+    Title = "",
+    Text = "附近又出现了新的时空裂隙",
+    button = "",
+    buttonF = ""
+  },
+  [1611] = {
+    id = 1611,
+    Type = 1,
+    Title = "",
+    Text = "你不是队长无法接取/放弃修复任务",
+    button = "",
+    buttonF = ""
+  },
+  [1612] = {
+    id = 1612,
+    Type = 2,
+    Title = "",
+    Text = "你不是队长无法接取/放弃修复任务",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1613] = {
+    id = 1613,
+    Type = 1,
+    Title = "",
+    Text = "组队修复任务仅队长可接",
+    button = "",
+    buttonF = ""
+  },
+  [1614] = {
+    id = 1614,
+    Type = 1,
+    Title = "",
+    Text = "已接受“%s”任务",
+    button = "",
+    buttonF = ""
+  },
+  [1615] = {
+    id = 1615,
+    Type = 1,
+    Title = "",
+    Text = "已放弃“%s”任务",
+    button = "",
+    buttonF = ""
+  },
+  [1616] = {
+    id = 1616,
+    Type = 1,
+    Title = "",
+    Text = "队长无法获得此地修复任务",
+    button = "",
+    buttonF = ""
+  },
+  [1617] = {
+    id = 1617,
+    Type = 1,
+    Title = "",
+    Text = "此地修复任务未开启，无法获得修复任务",
+    button = "",
+    buttonF = ""
+  },
+  [1618] = {
+    id = 1618,
+    Type = 256,
+    Title = "",
+    Text = "{countDown=%s}秒后离开时空位面。",
+    button = "",
+    buttonF = ""
+  },
+  [1619] = {
+    id = 1619,
+    Type = 256,
+    Title = "",
+    Text = "{countDown=%s}秒后离开时空位面。",
+    button = "",
+    buttonF = ""
+  },
+  [1620] = {
+    id = 1620,
+    Type = 262144,
+    Title = "",
+    Text = "时空裂隙修复完成[今日已完成%s/%s]",
+    button = "",
+    buttonF = ""
+  },
+  [1621] = {
+    id = 1621,
+    Type = 262144,
+    Title = "",
+    Text = "时空裂隙修复完成[已完成修复上限]",
+    button = "",
+    buttonF = ""
+  },
+  [1622] = {
+    id = 1622,
+    Type = 1,
+    Title = "",
+    Text = "今日已获得%s/%s次奖励",
+    button = "",
+    buttonF = ""
+  },
+  [1623] = {
+    id = 1623,
+    Type = 1,
+    Title = "",
+    Text = "今日已达到奖励上限",
+    button = "",
+    buttonF = ""
+  },
+  [1624] = {
+    id = 1624,
+    Type = 1,
+    Title = "",
+    Text = "通关一次后解锁同账号下所有角色对该裂隙副本的快速完成功能",
+    button = "",
+    buttonF = ""
+  },
+  [1625] = {
+    id = 1625,
+    Type = 1,
+    Title = "",
+    Text = "已达到今日裂隙副本奖励上限",
+    button = "",
+    buttonF = ""
+  },
+  [1701] = {
+    id = 1701,
+    Type = 1,
+    Title = "系统提示",
+    Text = "组队修复任务仅队长可接",
+    button = "",
+    buttonF = ""
+  },
+  [1702] = {
+    id = 1702,
+    Type = 128,
+    Title = "系统提示",
+    Text = "强化已继承至新的装备，返还Zeny×%s",
+    button = "",
+    buttonF = ""
+  },
+  [1703] = {
+    id = 1703,
+    Type = 128,
+    Title = "系统提示",
+    Text = "强化已继承至新的装备",
+    button = "",
+    buttonF = ""
+  },
+  [1704] = {
+    id = 1704,
+    Type = 2,
+    Title = "继承提示",
+    Text = "是否将强化等级继承至该装备？",
+    button = "继承",
+    buttonF = "不继承"
+  },
+  [1710] = {
+    id = 1710,
+    Type = 2,
+    Title = "自动战斗",
+    Text = "是否将普通攻击移出自动技能栏？该操作会使自动挂机时不再使用普通攻击",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [1711] = {
+    id = 1711,
+    Type = 65536,
+    Title = "自动战斗提示",
+    Text = "自动技能栏中无任何攻击型技能，无法自动打怪，是否确认这样设置？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [1712] = {
+    id = 1712,
+    Type = 65536,
+    Title = "自动战斗提示",
+    Text = "自动技能栏中没有[攻击型技能]，无法自动战斗哦，请前往技能界面调整",
+    button = "前往调整",
+    buttonF = "继续发呆",
+    Confirm = 2001,
+    TimeInterval = 0,
+    Close = 1,
+    DontShowAgainDefaultOpt = 2
+  },
+  [1713] = {
+    id = 1713,
+    Type = 1,
+    Title = "",
+    Text = "跟随状态下无法锁敌",
+    button = "",
+    buttonF = ""
+  },
+  [1800] = {
+    id = 1800,
+    Type = 256,
+    Title = "秒数倒计",
+    Text = "   冥想[c][ffff00]{countDown=%s}[-][/c]秒后完成试炼",
+    button = "",
+    buttonF = ""
+  },
+  [1900] = {
+    id = 1900,
+    Type = 2097152,
+    Title = "魔物通用倒记",
+    Text = "剩余魔物:%s",
+    button = "",
+    buttonF = ""
+  },
+  [1950] = {
+    id = 1950,
+    Type = 1,
+    Title = "",
+    Text = "该技能无法放入自动技能栏",
+    button = "",
+    buttonF = ""
+  },
+  [1951] = {
+    id = 1951,
+    Type = 1,
+    Title = "",
+    Text = "至少需要留1个技能在自动栏中",
+    button = "",
+    buttonF = ""
+  },
+  [2000] = {
+    id = 2000,
+    Type = 1,
+    Title = "",
+    Text = "该物品无法存入仓库",
+    button = "",
+    buttonF = ""
+  },
+  [2001] = {
+    id = 2001,
+    Type = 1,
+    Title = "",
+    Text = "已强化过的装备无法放入通用仓库或家园仓库",
+    button = "",
+    buttonF = ""
+  },
+  [2100] = {
+    id = 2100,
+    Type = 1,
+    Title = "",
+    Text = "种子已不知去向了",
+    button = "",
+    buttonF = ""
+  },
+  [2101] = {
+    id = 2101,
+    Type = 262144,
+    Title = "",
+    Text = "似乎出现了珍稀的曼陀罗种子",
+    button = "",
+    buttonF = ""
+  },
+  [2199] = {
+    id = 2199,
+    Type = 2,
+    Title = "",
+    Text = "公会战开始前与城池结算期结束后均占领城池将会被判定为【连续占领】并获得对应奖励，放弃城池将中断【连续占领】。\n放弃城池倒计时%s",
+    button = "确认放弃",
+    buttonF = "关闭"
+  },
+  [2200] = {
+    id = 2200,
+    Type = 2,
+    Title = "",
+    Text = "是否取消放弃城池？\n剩余时间%s",
+    button = "取消放弃",
+    buttonF = "关闭"
+  },
+  [2201] = {
+    id = 2201,
+    Type = 256,
+    Title = "",
+    Text = "%s公会的%s成功击破华丽水晶！{countDown=%s}秒后开始新一轮公会战！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2202] = {
+    id = 2202,
+    Type = 256,
+    Title = "",
+    Text = "防守方开始防守华丽水晶！{countDown=3}",
+    button = "",
+    buttonF = "HideTime",
+    showInPVP = 1
+  },
+  [2203] = {
+    id = 2203,
+    Type = 256,
+    Title = "",
+    Text = "开始新一轮公会战！！{countDown=3}",
+    button = "",
+    buttonF = "HideTime",
+    showInPVP = 1
+  },
+  [2204] = {
+    id = 2204,
+    Type = 256,
+    Title = "",
+    Text = "防守方完美胜利，本轮公会战提前结束。{countDown=30}",
+    button = "",
+    buttonF = "HideTime",
+    showInPVP = 1
+  },
+  [2205] = {
+    id = 2205,
+    Type = 256,
+    Title = "",
+    Text = "防守方胜利，{countDown=%s}秒后战斗结束。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2206] = {
+    id = 2206,
+    Type = 256,
+    Title = "",
+    Text = "公会战还有{countDown=%s}秒开始，请做好战斗准备",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2207] = {
+    id = 2207,
+    Type = 256,
+    Title = "",
+    Text = "公会战正式开始！！{countDown=3}",
+    button = "",
+    buttonF = "HideTime",
+    showInPVP = 1
+  },
+  [2208] = {
+    id = 2208,
+    Type = 1,
+    Title = "",
+    Text = "没有公会城池，无法传送",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2209] = {
+    id = 2209,
+    Type = 1,
+    Title = "",
+    Text = "没有城池，参加公会战可占领公会城池。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2210] = {
+    id = 2210,
+    Type = 256,
+    Title = "",
+    Text = "%s击破华丽金属，由于在本线没有公会，{countDown=%s}秒后将变为魔物城池！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2211] = {
+    id = 2211,
+    Type = 33,
+    Title = "",
+    Text = "[%s]%s申请放弃公会城池成功，公会城池将在2小时后消失。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2212] = {
+    id = 2212,
+    Type = 32,
+    Title = "",
+    Text = "公会城池已放弃",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2213] = {
+    id = 2213,
+    Type = 1,
+    Title = "",
+    Text = "公会战斗中无法使用此类道具",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2214] = {
+    id = 2214,
+    Type = 1,
+    Title = "",
+    Text = "你正处于复活倒计时中",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2215] = {
+    id = 2215,
+    Type = 2,
+    Title = "",
+    Text = "无公会的冒险者或与公会线与当前世界线不同的冒险者将无法对华丽水晶造成伤害，确定要前往吗？",
+    button = "前往",
+    buttonF = "取消",
+    showInPVP = 1
+  },
+  [2216] = {
+    id = 2216,
+    Type = 1,
+    Title = "",
+    Text = "该目标处于复活CD中",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2217] = {
+    id = 2217,
+    Type = 2,
+    Title = "",
+    Text = "当前城池人数已满，是否进行排队？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [2218] = {
+    id = 2218,
+    Type = 1,
+    Title = "",
+    Text = "请注意：赛季装备仅为租用，将在公会战新赛季开始时自动归还贩卖机。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2219] = {
+    id = 2219,
+    Type = 8192,
+    Title = "系统提示",
+    Text = "由于赛季已经结束，您的赛季装备已经被贩卖机回收了哦~",
+    button = "确认",
+    buttonF = ""
+  },
+  [2220] = {
+    id = 2220,
+    Type = 256,
+    Title = "",
+    Text = "当前城池正处于冷静期，{countDown=%s}秒后将再次开放。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2221] = {
+    id = 2221,
+    Type = 256,
+    Title = "",
+    Text = "防守方放弃了当前城池，城池进入冷静期，并在{countDown=%s}秒后将再次开放。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2222] = {
+    id = 2222,
+    Type = 1,
+    Title = "",
+    Text = "该传送阵只供防守方使用。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2223] = {
+    id = 2223,
+    Type = 1,
+    Title = "",
+    Text = "当前城池正处于冷静期，请稍后再进入。",
+    button = "",
+    buttonF = ""
+  },
+  [2224] = {
+    id = 2224,
+    Type = 1,
+    Title = "",
+    Text = "您不属于当前公会战线，无法对该城池的据点进行占领。",
+    button = "",
+    buttonF = ""
+  },
+  [2225] = {
+    id = 2225,
+    Type = 256,
+    Title = "",
+    Text = "您将于{countDown=%s}秒后，在最近的据点处复活。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2226] = {
+    id = 2226,
+    Type = 1,
+    Title = "",
+    Text = "当前轮次赛季排名第一的公会为%s战线的%s公会。该公会总积分为%s，当前占领城池为%s。",
+    button = "",
+    buttonF = ""
+  },
+  [2227] = {
+    id = 2227,
+    Type = 1,
+    Title = "",
+    Text = "该公会中的%s完成了%s次击杀，一共造成了%s伤害。",
+    button = "",
+    buttonF = ""
+  },
+  [2228] = {
+    id = 2228,
+    Type = 1,
+    Title = "",
+    Text = "该公会完成最多击杀的%s为%s，共完成了%s击杀。",
+    button = "",
+    buttonF = ""
+  },
+  [2229] = {
+    id = 2229,
+    Type = 1,
+    Title = "",
+    Text = "该公会造成最多伤害的%s为%s，共造成了%s伤害。",
+    button = "",
+    buttonF = ""
+  },
+  [2230] = {
+    id = 2230,
+    Type = 1,
+    Title = "",
+    Text = "本轮公会战中赛季积分增加最多的为%s，共获得%s积分，其中进攻积分为%s。该公会目前处于%s战线，占领的城池为%s。",
+    button = "",
+    buttonF = ""
+  },
+  [2231] = {
+    id = 2231,
+    Type = 1,
+    Title = "",
+    Text = "本轮公会战中，最激烈的城池争夺发生在%s战线的%s城池，一共发生了%s次城池的易主。",
+    button = "",
+    buttonF = ""
+  },
+  [2232] = {
+    id = 2232,
+    Type = 1,
+    Title = "",
+    Text = "以下公会均参与到了这个城池的争夺中：%s，最终由%s公会拿下了城池的所有权。",
+    button = "",
+    buttonF = ""
+  },
+  [2233] = {
+    id = 2233,
+    Type = 1,
+    Title = "",
+    Text = "%s战线的%s公会，仅用时%s秒，就获得了本轮公会战的第一份进攻奖励。",
+    button = "",
+    buttonF = ""
+  },
+  [2234] = {
+    id = 2234,
+    Type = 1,
+    Title = "",
+    Text = "%s战线的%s公会，仅用时%s秒，就获得了全部五份进攻奖励。",
+    button = "",
+    buttonF = ""
+  },
+  [2235] = {
+    id = 2235,
+    Type = 1,
+    Title = "",
+    Text = "%s战线的%s公会的%s在本轮公会战中最先攻陷了华丽水晶，占领了%s战线的%s城池。",
+    button = "",
+    buttonF = ""
+  },
+  [2236] = {
+    id = 2236,
+    Type = 1,
+    Title = "",
+    Text = "当前城池已达成完美防守，进攻方不可进入。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2237] = {
+    id = 2237,
+    Type = 1,
+    Title = "",
+    Text = "当前处于公会战城池结算期，所有城池暂时不可进入。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2238] = {
+    id = 2238,
+    Type = 2,
+    Title = "",
+    Text = "是否确认立刻直接占领【%s】城池？",
+    button = "确认",
+    buttonF = "取消",
+    showInPVP = 1
+  },
+  [2239] = {
+    id = 2239,
+    Type = 2,
+    Title = "",
+    Text = "当%s公会放弃占领【%s】城池时，我方可占领；否则，我方将最终占领【%s】城池。是否确认？",
+    button = "确认",
+    buttonF = "取消",
+    showInPVP = 1
+  },
+  [2240] = {
+    id = 2240,
+    Type = 1,
+    Title = "",
+    Text = "这里有奇异的魔力保护，无法进行传送",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2241] = {
+    id = 2241,
+    Type = 1073741824,
+    Title = "",
+    Text = "战报！已成功占领【%s】城池中的【%s】号据点并获得本场第【%s】份进攻奖励！",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1,
+    showInPVP = 1
+  },
+  [2242] = {
+    id = 2242,
+    Type = 1073741824,
+    Title = "",
+    Text = "战报！已成功占领【%s】城池中的【%s】号据点！",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1,
+    showInPVP = 1
+  },
+  [2243] = {
+    id = 2243,
+    Type = 1073741824,
+    Title = "",
+    Text = "战报！【%s】骁勇善战，已击破【%s】城池华丽水晶！",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1,
+    showInPVP = 1
+  },
+  [2244] = {
+    id = 2244,
+    Type = 1073741824,
+    Title = "",
+    Text = "战报！公会城池【%s】中的华丽水晶已被【%s】公会的【%s】击破！",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1,
+    showInPVP = 1
+  },
+  [2245] = {
+    id = 2245,
+    Type = 1,
+    Title = "",
+    Text = "无法传送，你已经在这张地图中了！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2246] = {
+    id = 2246,
+    Type = 1,
+    Title = "",
+    Text = "开始传送至【%s】！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2247] = {
+    id = 2247,
+    Type = 1,
+    Title = "",
+    Text = "点击过快，请稍候！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2248] = {
+    id = 2248,
+    Type = 1,
+    Title = "",
+    Text = "当前已临时占领多个城池，请在GVG信息界面中选择并快捷传送",
+    button = "",
+    buttonF = ""
+  },
+  [2249] = {
+    id = 2249,
+    Type = 1,
+    Title = "",
+    Text = "%s战线的%s公会本场公会战临时占领城池最多，总共临时占领了%s个城池。",
+    button = "",
+    buttonF = ""
+  },
+  [2250] = {
+    id = 2250,
+    Type = 32,
+    Title = "",
+    Text = "本场公会战中成功占领大型城池，公会奖励[c][ffff00]{item=%s,%s}[-][/c]已加入公会仓库。",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [2251] = {
+    id = 2251,
+    Type = 32,
+    Title = "",
+    Text = "本场公会战中成功[c][ffff00]完美防守[-][/c]大型城池，公会奖励[c][ffff00]{item=%s,%s}[-][/c]已加入公会仓库。",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [2252] = {
+    id = 2252,
+    Type = 32,
+    Title = "",
+    Text = "本场公会战中成功占领中型城池，公会奖励[c][ffff00]{item=%s,%s}[-][/c]已加入公会仓库。",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [2253] = {
+    id = 2253,
+    Type = 32,
+    Title = "",
+    Text = "本场公会战中成功[c][ffff00]完美防守[-][/c]中型城池，公会奖励[c][ffff00]{item=%s,%s}[-][/c]已加入公会仓库。",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [2254] = {
+    id = 2254,
+    Type = 32,
+    Title = "",
+    Text = "本场公会战中成功占领小型城池，公会奖励[c][ffff00]{item=%s,%s}[-][/c]已加入公会仓库。",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [2255] = {
+    id = 2255,
+    Type = 32,
+    Title = "",
+    Text = "本场公会战中成功[c][ffff00]完美防守[-][/c]小型城池，公会奖励[c][ffff00]{item=%s,%s}[-][/c]已加入公会仓库。",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [2256] = {
+    id = 2256,
+    Type = 1,
+    Title = "",
+    Text = "公会战新赛季即将开启，暂时不可申请战线搬家！",
+    button = "",
+    buttonF = ""
+  },
+  [2500] = {
+    id = 2500,
+    Type = 1,
+    Title = "",
+    Text = "死亡状态下无法进行操作",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2501] = {
+    id = 2501,
+    Type = 128,
+    Title = "",
+    Text = "抱歉！您因死亡扣除了[63cd4e]%s[-]点Base经验。",
+    button = "",
+    buttonF = ""
+  },
+  [2502] = {
+    id = 2502,
+    Type = 128,
+    Title = "",
+    Text = "本次离线时间为[63cd4e]%s[-]分钟，共获得[63cd4e]%s[-]点Base经验和[63cd4e]%s[-]点Job经验。",
+    button = "",
+    buttonF = ""
+  },
+  [2503] = {
+    id = 2503,
+    Type = 128,
+    Title = "",
+    Text = "今日战斗时长已达[63cd4e]%s[-]分钟，战斗时长超过[63cd4e]%s[-]分钟后，野外普通魔物经验和掉落概率将逐渐衰减。",
+    button = "",
+    buttonF = ""
+  },
+  [2504] = {
+    id = 2504,
+    Type = 128,
+    Title = "",
+    Text = "本次离线挂机时间为[63cd4e]%s[-]分钟，您当前的Job等级已满，共获得了[63cd4e]%s[-]点Base经验。",
+    button = "",
+    buttonF = ""
+  },
+  [2505] = {
+    id = 2505,
+    Type = 128,
+    Title = "",
+    Text = "本次离线挂机时间为[63cd4e]%s[-]分钟，您的Base等级已满，共获得了[63cd4e]%s[-]点Job经验。",
+    button = "",
+    buttonF = ""
+  },
+  [2506] = {
+    id = 2506,
+    Type = 128,
+    Title = "",
+    Text = "您使用了不死之证进行复活，死亡扣除的[63cd4e]%s[-]点Base经验现已返还。",
+    button = "",
+    buttonF = ""
+  },
+  [2507] = {
+    id = 2507,
+    Type = 128,
+    Title = "",
+    Text = "好心的冒险者[63cd4e]%s[-]将您复活了，死亡扣除的[63cd4e]%s[-]点Base经验现已返还。",
+    button = "",
+    buttonF = ""
+  },
+  [2508] = {
+    id = 2508,
+    Type = 2,
+    Title = "",
+    Text = "冒险者[c][63cd4e]%s[-][/c]死亡了，是否使用天地树叶子将其复活？",
+    button = "复活",
+    buttonF = "取消"
+  },
+  [2509] = {
+    id = 2509,
+    Type = 1,
+    Title = "",
+    Text = "该玩家正在被其他玩家复活中。",
+    button = "",
+    buttonF = ""
+  },
+  [2510] = {
+    id = 2510,
+    Type = 1,
+    Title = "",
+    Text = "你使用了太多了，请掠夺一些再来使用吧。",
+    button = "",
+    buttonF = ""
+  },
+  [2511] = {
+    id = 2511,
+    Type = 128,
+    Title = "",
+    Text = "今日战斗时长已达[63cd4e]%s[-]分钟。",
+    button = "",
+    buttonF = ""
+  },
+  [2512] = {
+    id = 2512,
+    Type = 128,
+    Title = "",
+    Text = "您刚刚将冒险者[63cd4e]%s[-]复活了。",
+    button = "",
+    buttonF = ""
+  },
+  [2513] = {
+    id = 2513,
+    Type = 2,
+    Title = "",
+    Text = "冒险者[c][63cd4e]%s[-][/c]死亡了，是否使用复活术将其复活？",
+    button = "复活",
+    buttonF = "取消"
+  },
+  [2514] = {
+    id = 2514,
+    Type = 128,
+    Title = "",
+    Text = "【限定特典】额外增加[63cd4e]%s[-]分钟战斗时长。",
+    button = "",
+    buttonF = ""
+  },
+  [2515] = {
+    id = 2515,
+    Type = 128,
+    Title = "",
+    Text = "已恢复[63cd4e]%s[-]分钟战斗时长。",
+    button = "",
+    buttonF = ""
+  },
+  [2516] = {
+    id = 2516,
+    Type = 128,
+    Title = "",
+    Text = "增加累积剩余[63cd4e]%s[-]分钟战斗时长，共%s分钟。",
+    button = "",
+    buttonF = ""
+  },
+  [2517] = {
+    id = 2517,
+    Type = 128,
+    Title = "",
+    Text = "今日战斗时长已达[63cd4e]%s[-]分钟，野外普通魔物经验和掉率逐渐衰减。",
+    button = "",
+    buttonF = ""
+  },
+  [2518] = {
+    id = 2518,
+    Type = 1,
+    Title = "",
+    Text = "该魔物没有多余的Zeny可偷取",
+    button = "",
+    buttonF = ""
+  },
+  [2599] = {
+    id = 2599,
+    Type = 1,
+    Title = "",
+    Text = "已取消解散公会！",
+    button = "",
+    buttonF = ""
+  },
+  [2600] = {
+    id = 2600,
+    Type = 1,
+    Title = "",
+    Text = "等级没有到20级哦~还不能创建公会呢",
+    button = "",
+    buttonF = ""
+  },
+  [2601] = {
+    id = 2601,
+    Type = 1,
+    Title = "",
+    Text = "必须要有“华丽金属”才能创建公会哦。",
+    button = "",
+    buttonF = ""
+  },
+  [2602] = {
+    id = 2602,
+    Type = 1,
+    Title = "",
+    Text = "你的Zeny不足，无法创建呢。",
+    button = "",
+    buttonF = ""
+  },
+  [2603] = {
+    id = 2603,
+    Type = 1,
+    Title = "",
+    Text = "公会需要一个好听的名字哦",
+    button = "",
+    buttonF = ""
+  },
+  [2604] = {
+    id = 2604,
+    Type = 1,
+    Title = "",
+    Text = "输入中含有非法字符，检查下再试试吧。",
+    button = "",
+    buttonF = ""
+  },
+  [2605] = {
+    id = 2605,
+    Type = 128,
+    Title = "",
+    Text = "恭喜%s正式创建了公会%s",
+    button = "",
+    buttonF = ""
+  },
+  [2606] = {
+    id = 2606,
+    Type = 1,
+    Title = "",
+    Text = "已向%s公会发出入会申请",
+    button = "",
+    buttonF = ""
+  },
+  [2607] = {
+    id = 2607,
+    Type = 1,
+    Title = "",
+    Text = "公会人数已经满了，不能再加入成员了。",
+    button = "",
+    buttonF = ""
+  },
+  [2608] = {
+    id = 2608,
+    Type = 1,
+    Title = "",
+    Text = "对方已经加入其他公会了",
+    button = "",
+    buttonF = ""
+  },
+  [2609] = {
+    id = 2609,
+    Type = 32,
+    Title = "",
+    Text = "%s加入了本公会。",
+    button = "",
+    buttonF = ""
+  },
+  [2610] = {
+    id = 2610,
+    Type = 1,
+    Title = "",
+    Text = "你已加入了%s公会",
+    button = "",
+    buttonF = ""
+  },
+  [2611] = {
+    id = 2611,
+    Type = 32,
+    Title = "",
+    Text = "%s离开了本公会。",
+    button = "",
+    buttonF = ""
+  },
+  [2612] = {
+    id = 2612,
+    Type = 1,
+    Title = "",
+    Text = "你离开了公会",
+    button = "",
+    buttonF = ""
+  },
+  [2613] = {
+    id = 2613,
+    Type = 32,
+    Title = "",
+    Text = "[%s]%s上线了",
+    button = "",
+    buttonF = ""
+  },
+  [2614] = {
+    id = 2614,
+    Type = 33,
+    Title = "",
+    Text = "公会等级提升成功！等级由 %s → %s",
+    button = "",
+    buttonF = ""
+  },
+  [2615] = {
+    id = 2615,
+    Type = 1,
+    Title = "",
+    Text = "您没有权限修改公会图标",
+    button = "",
+    buttonF = ""
+  },
+  [2616] = {
+    id = 2616,
+    Type = 1,
+    Title = "",
+    Text = "公会图标已经变更",
+    button = "",
+    buttonF = ""
+  },
+  [2617] = {
+    id = 2617,
+    Type = 1,
+    Title = "",
+    Text = "公会经验不足，无法进行升级。",
+    button = "",
+    buttonF = ""
+  },
+  [2618] = {
+    id = 2618,
+    Type = 1,
+    Title = "",
+    Text = "%s不足无法进行升级",
+    button = "",
+    buttonF = ""
+  },
+  [2619] = {
+    id = 2619,
+    Type = 32,
+    Title = "",
+    Text = "由于公会经验不足，公会等级下降%s→%s。",
+    button = "",
+    buttonF = ""
+  },
+  [2620] = {
+    id = 2620,
+    Type = 1,
+    Title = "",
+    Text = "您还没有公会。",
+    button = "",
+    buttonF = ""
+  },
+  [2621] = {
+    id = 2621,
+    Type = 32,
+    Title = "",
+    Text = "成员%s被[%s]%s变更为[%s]。",
+    button = "",
+    buttonF = ""
+  },
+  [2623] = {
+    id = 2623,
+    Type = 32,
+    Title = "",
+    Text = "成员%s被[%s]%s驱逐出了公会。",
+    button = "",
+    buttonF = ""
+  },
+  [2624] = {
+    id = 2624,
+    Type = 1,
+    Title = "",
+    Text = "你被[%s]%s驱逐出了公会。",
+    button = "",
+    buttonF = ""
+  },
+  [2625] = {
+    id = 2625,
+    Type = 1,
+    Title = "",
+    Text = "提升公会等级可以增加祈祷上限。",
+    button = "",
+    buttonF = ""
+  },
+  [2626] = {
+    id = 2626,
+    Type = 32,
+    Title = "",
+    Text = "会长交接，%s为公会新任会长",
+    button = "",
+    buttonF = ""
+  },
+  [2627] = {
+    id = 2627,
+    Type = 32,
+    Title = "",
+    Text = "公告更新",
+    button = "",
+    buttonF = ""
+  },
+  [2628] = {
+    id = 2628,
+    Type = 32,
+    Title = "",
+    Text = "解散公会审核中，距公会解散还有%s小时%s分钟",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [2629] = {
+    id = 2629,
+    Type = 1,
+    Title = "",
+    Text = "公会已经解散",
+    button = "",
+    buttonF = ""
+  },
+  [2630] = {
+    id = 2630,
+    Type = 1,
+    Title = "",
+    Text = "此公会名字已被占用了。",
+    button = "",
+    buttonF = ""
+  },
+  [2631] = {
+    id = 2631,
+    Type = 1,
+    Title = "",
+    Text = "公会创建成功",
+    button = "",
+    buttonF = ""
+  },
+  [2632] = {
+    id = 2632,
+    Type = 2,
+    Title = "",
+    Text = "%s邀请你加入公会\n[-][/c][c][ffc514]%s[-][/c]",
+    button = "加入",
+    buttonF = "取消"
+  },
+  [2633] = {
+    id = 2633,
+    Type = 32,
+    Title = "",
+    Text = "公会解散审核中，距公会解散还有%s小时",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [2634] = {
+    id = 2634,
+    Type = 129,
+    Title = "",
+    Text = "您的公会“%s”已解散",
+    button = "",
+    buttonF = ""
+  },
+  [2635] = {
+    id = 2635,
+    Type = 1,
+    Title = "",
+    Text = "每天只能进行一次会长交接哦！",
+    button = "",
+    buttonF = ""
+  },
+  [2636] = {
+    id = 2636,
+    Type = 1,
+    Title = "",
+    Text = "只有会长才能更改公会标志",
+    button = "",
+    buttonF = ""
+  },
+  [2637] = {
+    id = 2637,
+    Type = 1,
+    Title = "",
+    Text = "公会已达到最高等级",
+    button = "",
+    buttonF = ""
+  },
+  [2638] = {
+    id = 2638,
+    Type = 1,
+    Title = "",
+    Text = "不能进入别人的公会领地哦！",
+    button = "",
+    buttonF = ""
+  },
+  [2640] = {
+    id = 2640,
+    Type = 129,
+    Title = "",
+    Text = "缴纳{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [2641] = {
+    id = 2641,
+    Type = 1,
+    Title = "",
+    Text = "公会增加经验 %s",
+    button = "",
+    buttonF = ""
+  },
+  [2642] = {
+    id = 2642,
+    Type = 1,
+    Title = "",
+    Text = "公会获得材料 {item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [2643] = {
+    id = 2643,
+    Type = 1,
+    Title = "",
+    Text = "获得贡献 %s",
+    button = "",
+    buttonF = ""
+  },
+  [2644] = {
+    id = 2644,
+    Type = 1,
+    Title = "",
+    Text = "要缴纳的材料不足",
+    button = "",
+    buttonF = ""
+  },
+  [2645] = {
+    id = 2645,
+    Type = 1,
+    Title = "",
+    Text = "已购买到上限，每个角色每月只可购买%s张限定特典",
+    button = "",
+    buttonF = ""
+  },
+  [2646] = {
+    id = 2646,
+    Type = 1,
+    Title = "",
+    Text = "获得了新的公会图标",
+    button = "",
+    buttonF = ""
+  },
+  [2647] = {
+    id = 2647,
+    Type = 1,
+    Title = "",
+    Text = "还没有捐赠的订单哦~加入公会1天后才会有捐赠订单。",
+    button = "",
+    buttonF = ""
+  },
+  [2648] = {
+    id = 2648,
+    Type = 1,
+    Title = "",
+    Text = "您的图库已满，请删除一些后再进行操作哟~",
+    button = "",
+    buttonF = ""
+  },
+  [2649] = {
+    id = 2649,
+    Type = 2,
+    Title = "",
+    Text = "需要更新游戏版本才能上传自定义图片哦~",
+    button = "前往下载",
+    buttonF = "取消"
+  },
+  [2650] = {
+    id = 2650,
+    Type = 1,
+    Title = "",
+    Text = "该成员加入公会未满24小时，不能被分配神器哦",
+    button = "",
+    buttonF = ""
+  },
+  [2651] = {
+    id = 2651,
+    Type = 1,
+    Title = "",
+    Text = "捐赠过于频繁，请稍后再试",
+    button = "",
+    buttonF = ""
+  },
+  [2652] = {
+    id = 2652,
+    Type = 2048,
+    Title = "",
+    Text = "强化%s",
+    button = "",
+    buttonF = ""
+  },
+  [2653] = {
+    id = 2653,
+    Type = 2048,
+    Title = "",
+    Text = "强化精炼攻击 + %s",
+    button = "",
+    buttonF = ""
+  },
+  [2654] = {
+    id = 2654,
+    Type = 1,
+    Title = "",
+    Text = "输入中疑似含有广告内容，修改下再试试吧。",
+    button = "",
+    buttonF = ""
+  },
+  [2655] = {
+    id = 2655,
+    Type = 1,
+    Title = "",
+    Text = "由于多次输入违规内容，您已被禁言，等待一段时间后可正常发送消息。",
+    button = "",
+    buttonF = ""
+  },
+  [2656] = {
+    id = 2656,
+    Type = 32,
+    Title = "",
+    Text = "在本场公会战中公会成员表现卓越，共达成：%s\n[c][ffff00]%s[-][/c]个随机战后重建红包已被发送至公会会长【%s】的邮箱中。",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [2657] = {
+    id = 2657,
+    Type = 32,
+    Title = "",
+    Text = "在本场公会战中公会成员表现卓越，1个{ilitem=%s}已被发送至公会会长【%s】的邮箱中。",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [2658] = {
+    id = 2658,
+    Type = 32,
+    Title = "",
+    Text = "本场公会战已结束，公会%s【%s】已在邮箱中领取：\n[c][ffff00]{multiitemnum=%d}{ilitem=%s}*%s[-][/c]",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [2659] = {
+    id = 2659,
+    Type = 1,
+    Title = "",
+    Text = "对方已将你加入黑名单，无法发送邀请",
+    button = "",
+    buttonF = ""
+  },
+  [2660] = {
+    id = 2660,
+    Type = 1,
+    Title = "",
+    Text = "对方公会职位不可成为佣兵",
+    button = "",
+    buttonF = ""
+  },
+  [2661] = {
+    id = 2661,
+    Type = 1,
+    Title = "",
+    Text = "当前公会职位不可成为佣兵",
+    button = "",
+    buttonF = ""
+  },
+  [2662] = {
+    id = 2662,
+    Type = 32,
+    Title = "",
+    Text = "我方【%s】城池的【%s】号据点已被【%s】公会占领，华丽水晶可以被攻击！",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1,
+    showInPVP = 1
+  },
+  [2663] = {
+    id = 2663,
+    Type = 32,
+    Title = "",
+    Text = "我方【%s】城池的【%s】据点已全部夺回，华丽水晶恢复无敌状态！",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1,
+    showInPVP = 1
+  },
+  [2664] = {
+    id = 2664,
+    Type = 32,
+    Title = "",
+    Text = "当前城池【%s】中【%s】号据点已被【%s】公会占领，华丽水晶可以被攻击！",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1,
+    showInPVP = 1
+  },
+  [2665] = {
+    id = 2665,
+    Type = 32,
+    Title = "",
+    Text = "当前城池【%s】中的【%s】据点已全部被防守方夺回，华丽水晶已恢复无敌状态！",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1,
+    showInPVP = 1
+  },
+  [2666] = {
+    id = 2666,
+    Type = 128,
+    Title = "",
+    Text = "当前未加入公会， 不可对华丽水晶造成伤害",
+    button = "",
+    buttonF = ""
+  },
+  [2667] = {
+    id = 2667,
+    Type = 128,
+    Title = "",
+    Text = "公会所属战线与当前战线不一致，不可对华丽水晶造成伤害",
+    button = "",
+    buttonF = ""
+  },
+  [2668] = {
+    id = 2668,
+    Type = 128,
+    Title = "",
+    Text = "当前城池的【%s】号据点归属情况未解除华丽水晶无敌状态，不可对华丽水晶造成伤害",
+    button = "",
+    buttonF = ""
+  },
+  [2669] = {
+    id = 2669,
+    Type = 1,
+    Title = "",
+    Text = "对方为公会佣兵，暂不可查看其信息面板",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2670] = {
+    id = 2670,
+    Type = 1,
+    Title = "",
+    Text = "请会长先授予参战成员祝福~",
+    button = "",
+    buttonF = ""
+  },
+  [2671] = {
+    id = 2671,
+    Type = 2,
+    Title = "",
+    Text = "包包中仍有公会红包未发放，退出公会将回收这些红包，是否确认退出公会？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [2672] = {
+    id = 2672,
+    Type = 129,
+    Title = "",
+    Text = "【消极战斗】状态已解除！",
+    button = "",
+    buttonF = ""
+  },
+  [2673] = {
+    id = 2673,
+    Type = 256,
+    Title = "",
+    Text = "你正处于【消极战斗】状态，[c][ffff00]{countDown=%s}[-][/c]秒后将被请离【当前地图】！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2674] = {
+    id = 2674,
+    Type = 1,
+    Title = "",
+    Text = "通过公会战占领城池后，才能进行GVG防守方案规划~",
+    button = "",
+    buttonF = ""
+  },
+  [2675] = {
+    id = 2675,
+    Type = 1,
+    Title = "",
+    Text = "GVG开战前10分钟起，才能查看各城池的防守方案规划~",
+    button = "",
+    buttonF = ""
+  },
+  [2676] = {
+    id = 2676,
+    Type = 1,
+    Title = "",
+    Text = "GVG即将开始，当前无法修改防守方案",
+    button = "",
+    buttonF = ""
+  },
+  [2677] = {
+    id = 2677,
+    Type = 1,
+    Title = "",
+    Text = "加入公会后才可通过传送阵进入备战营地",
+    button = "",
+    buttonF = ""
+  },
+  [2678] = {
+    id = 2678,
+    Type = 1,
+    Title = "",
+    Text = "城池结算期中不可变更【选城权限】！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2679] = {
+    id = 2679,
+    Type = 1,
+    Title = "",
+    Text = "该城池未设置防守方案",
+    button = "",
+    buttonF = ""
+  },
+  [2680] = {
+    id = 2680,
+    Type = 32,
+    Title = "",
+    Text = "【%s】【%s】已提交城池选择方案！\n首选占领【%s】，备选占领【%s】！",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1,
+    showInPVP = 1
+  },
+  [2681] = {
+    id = 2681,
+    Type = 32,
+    Title = "",
+    Text = "【%s】【%s】已提交城池选择方案！\n直接占领【%s】！",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1,
+    showInPVP = 1
+  },
+  [2682] = {
+    id = 2682,
+    Type = 1,
+    Title = "",
+    Text = "副会长职位有【选城权限】，城池结算期中不可变更人员构成！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [2700] = {
+    id = 2700,
+    Type = 1,
+    Title = "",
+    Text = "只有会长才可以对公会进行改名。",
+    button = "",
+    buttonF = ""
+  },
+  [2701] = {
+    id = 2701,
+    Type = 1,
+    Title = "",
+    Text = "短时间内不能连续改名。",
+    button = "",
+    buttonF = ""
+  },
+  [2702] = {
+    id = 2702,
+    Type = 1,
+    Title = "",
+    Text = "更改名称成功。",
+    button = "",
+    buttonF = ""
+  },
+  [2703] = {
+    id = 2703,
+    Type = 1,
+    Title = "",
+    Text = "您没有%s，如果需要请去狄丝·瓦尔那里购买。",
+    button = "",
+    buttonF = ""
+  },
+  [2704] = {
+    id = 2704,
+    Type = 160,
+    Title = "",
+    Text = "%s将公会%s正式更名为%s",
+    button = "",
+    buttonF = ""
+  },
+  [2705] = {
+    id = 2705,
+    Type = 32,
+    Title = "",
+    Text = "公会玩家%s将自己的昵称更改为%s。",
+    button = "",
+    buttonF = ""
+  },
+  [2706] = {
+    id = 2706,
+    Type = 32,
+    Title = "",
+    Text = "会长%s将公会改名为%s",
+    button = "",
+    buttonF = ""
+  },
+  [2710] = {
+    id = 2710,
+    Type = 1,
+    Title = "",
+    Text = "兑换已达到上限，无法继续添加材料。",
+    button = "",
+    buttonF = ""
+  },
+  [2711] = {
+    id = 2711,
+    Type = 2,
+    Title = "",
+    Text = "是否确认购买该商品？\n[c][ffcc00]*注意：卡普拉订单商品只能从三种订单中选择一种进行购买，请慎重选择[-][/c]",
+    button = "确认购买",
+    buttonF = "取消"
+  },
+  [2712] = {
+    id = 2712,
+    Type = 2,
+    Title = "",
+    Text = "是否确认购买该商品？",
+    button = "确认购买",
+    buttonF = "取消"
+  },
+  [2720] = {
+    id = 2720,
+    Type = 1,
+    Title = "",
+    Text = "等级达到上限",
+    button = "",
+    buttonF = ""
+  },
+  [2800] = {
+    id = 2800,
+    Type = 2,
+    Title = "",
+    Text = "是否确认从公会逐出此成员？\nLv.%s %s",
+    button = "逐出公会",
+    buttonF = "取消"
+  },
+  [2801] = {
+    id = 2801,
+    Type = 2,
+    Title = "",
+    Text = "是否将会长职位转交给该成员？\nLv.%s %s\n公会每日只能进行一次会长交接",
+    button = "会长交接",
+    buttonF = "取消"
+  },
+  [2802] = {
+    id = 2802,
+    Type = 65536,
+    Title = "提示",
+    Text = "是否确认要退出公会？\n%s\n退出公会将无法使用公会建筑\n清空包包与仓库中的未发放的GVG红包\n并且在8小时内无法加入其他公会！！！",
+    button = "确认退出",
+    buttonF = "取消"
+  },
+  [2803] = {
+    id = 2803,
+    Type = 65536,
+    Title = "提示",
+    Text = "解散公会会导致您和公会成员的所有努力都化为乌有。\n%s\n创建时间：%s\n是否要解散公会？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [2804] = {
+    id = 2804,
+    Type = 65536,
+    Title = "提示",
+    Text = "*解散公会将会使会员全部被踢出\n解散公会将无法再提升信仰/天赋\n解散公会将无法使用公会科技\n解散后的公会建筑等级将全部清除\n是否要解散公会？\n%s\n解散公会将有%s小时的审核/反悔时间",
+    button = "确认解散",
+    buttonF = "取消"
+  },
+  [2805] = {
+    id = 2805,
+    Type = 1024,
+    Title = "事件描述",
+    Text = "即将开启异界大门\n讨伐异界强大魔物可以获得大量贡献与奖励\n即将开启\n[c][ffcc00]%s[-][/c]",
+    button = "召集成员",
+    buttonF = "开启事件"
+  },
+  [2806] = {
+    id = 2806,
+    Type = 1,
+    Title = "",
+    Text = "使用失败，请前往公会据点内使用。",
+    button = "",
+    buttonF = ""
+  },
+  [2807] = {
+    id = 2807,
+    Type = 32,
+    Title = "",
+    Text = "【%s】【%s】在被分配公会神器[c][ffff00]{ilitem=%s}[-][/c]后72小时内未登录，[c][ffff00]{ilitem=%s}[-][/c]已自动归还至公会仓库中。",
+    button = "",
+    buttonF = ""
+  },
+  [2820] = {
+    id = 2820,
+    Type = 1,
+    Title = "",
+    Text = "贡献不足",
+    button = "",
+    buttonF = ""
+  },
+  [2821] = {
+    id = 2821,
+    Type = 1,
+    Title = "",
+    Text = "你已经在公会领地中",
+    button = "",
+    buttonF = ""
+  },
+  [2850] = {
+    id = 2850,
+    Type = 32896,
+    Title = "1",
+    Text = "激活！%s",
+    button = "",
+    buttonF = ""
+  },
+  [2851] = {
+    id = 2851,
+    Type = 32896,
+    Title = "1",
+    Text = "重置！%s",
+    button = "",
+    buttonF = ""
+  },
+  [2852] = {
+    id = 2852,
+    Type = 1,
+    Title = "",
+    Text = "该卢恩符文点需完成[c][ffff00]开始神碑之力[-][/c]后才能激活",
+    button = "",
+    buttonF = ""
+  },
+  [2853] = {
+    id = 2853,
+    Type = 8192,
+    Title = "",
+    Text = "冒险者，你的卢恩符文与当前职业不匹配，我们已为你免费重置并返还所有消耗",
+    button = "",
+    buttonF = ""
+  },
+  [2868] = {
+    id = 2868,
+    Type = 1,
+    Title = "",
+    Text = "建筑已经达到当前的最大等级无法继续升级",
+    button = "",
+    buttonF = ""
+  },
+  [2869] = {
+    id = 2869,
+    Type = 1,
+    Title = "",
+    Text = "建造猫咪睡眠枕需要魔法缝纫机建筑等级达到Lv.10",
+    button = "",
+    buttonF = ""
+  },
+  [2870] = {
+    id = 2870,
+    Type = 1,
+    Title = "",
+    Text = "获得新称号！%s",
+    button = "",
+    buttonF = ""
+  },
+  [2871] = {
+    id = 2871,
+    Type = 1,
+    Title = "",
+    Text = "已获得进阶称号 %s！",
+    button = "",
+    buttonF = ""
+  },
+  [2891] = {
+    id = 2891,
+    Type = 1,
+    Title = "",
+    Text = "已是此款美瞳",
+    button = "",
+    buttonF = ""
+  },
+  [2900] = {
+    id = 2900,
+    Type = 1,
+    Title = "",
+    Text = "需要完成%s才能进入此道场",
+    button = "",
+    buttonF = ""
+  },
+  [2901] = {
+    id = 2901,
+    Type = 1,
+    Title = "",
+    Text = "发送文字不能为空",
+    button = "",
+    buttonF = ""
+  },
+  [2902] = {
+    id = 2902,
+    Type = 2,
+    Title = "队伍信息",
+    Text = "[c][63cd4e]%s[-][/c]\n[c][63cd4e]邀请你参加道场挑战[-][/c][c][63cd4e]%s[-][/c]",
+    button = "同意",
+    buttonF = "取消"
+  },
+  [2903] = {
+    id = 2903,
+    Type = 2,
+    Title = "",
+    Text = "[c][63cd4e]%s[-][/c]\n[c][63cd4e]已经开始了道场挑战，是否加入？",
+    button = "跟随进入",
+    buttonF = "取消"
+  },
+  [2904] = {
+    id = 2904,
+    Type = 1,
+    Title = "",
+    Text = "发起人取消了本次挑战",
+    button = "",
+    buttonF = ""
+  },
+  [2905] = {
+    id = 2905,
+    Type = 2,
+    Title = "",
+    Text = "队友已经开始了道场挑战，是否加入？",
+    button = "跟随进入",
+    buttonF = "取消"
+  },
+  [2906] = {
+    id = 2906,
+    Type = 1,
+    Title = "",
+    Text = "无法加入，道场尚未开启或已经结束。",
+    button = "",
+    buttonF = ""
+  },
+  [2907] = {
+    id = 2907,
+    Type = 256,
+    Title = "",
+    Text = "您的队伍已被全部打败，将于{countDown=%s}秒后离开…",
+    button = "",
+    buttonF = ""
+  },
+  [2908] = {
+    id = 2908,
+    Type = 1,
+    Title = "",
+    Text = "您不是队长无法发起道场挑战",
+    button = "",
+    buttonF = ""
+  },
+  [2909] = {
+    id = 2909,
+    Type = 1,
+    Title = "",
+    Text = "开始道场挑战，打败道场内所有的魔物吧",
+    button = "",
+    buttonF = ""
+  },
+  [2910] = {
+    id = 2910,
+    Type = 1,
+    Title = "",
+    Text = "阻隔道路的光壁关闭了",
+    button = "",
+    buttonF = ""
+  },
+  [2911] = {
+    id = 2911,
+    Type = 1,
+    Title = "",
+    Text = "通往另一层的传送阵开启了",
+    button = "",
+    buttonF = ""
+  },
+  [2912] = {
+    id = 2912,
+    Type = 1,
+    Title = "",
+    Text = "魔物出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2913] = {
+    id = 2913,
+    Type = 1,
+    Title = "",
+    Text = "蛙王出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2914] = {
+    id = 2914,
+    Type = 1,
+    Title = "",
+    Text = "海神出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2915] = {
+    id = 2915,
+    Type = 1,
+    Title = "",
+    Text = "直升机哥布灵出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2916] = {
+    id = 2916,
+    Type = 1,
+    Title = "",
+    Text = "蜂后出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2917] = {
+    id = 2917,
+    Type = 1,
+    Title = "",
+    Text = "流浪之狼出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2918] = {
+    id = 2918,
+    Type = 1,
+    Title = "",
+    Text = "蚁后出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2919] = {
+    id = 2919,
+    Type = 1,
+    Title = "",
+    Text = "枯树精出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2920] = {
+    id = 2920,
+    Type = 1,
+    Title = "",
+    Text = "阿特罗斯出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2921] = {
+    id = 2921,
+    Type = 1,
+    Title = "",
+    Text = "狮鹫兽出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2922] = {
+    id = 2922,
+    Type = 1,
+    Title = "",
+    Text = "俄赛里斯出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2923] = {
+    id = 2923,
+    Type = 1,
+    Title = "",
+    Text = "妖君出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2924] = {
+    id = 2924,
+    Type = 1,
+    Title = "",
+    Text = "兽人英雄出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2925] = {
+    id = 2925,
+    Type = 1,
+    Title = "",
+    Text = "道场里隐藏的魔物即将出现",
+    button = "",
+    buttonF = ""
+  },
+  [2926] = {
+    id = 2926,
+    Type = 1,
+    Title = "",
+    Text = "离开道场的传送阵开启了",
+    button = "",
+    buttonF = ""
+  },
+  [2927] = {
+    id = 2927,
+    Type = 1,
+    Title = "",
+    Text = "最后一群魔物出现了，胜利在即",
+    button = "",
+    buttonF = ""
+  },
+  [2928] = {
+    id = 2928,
+    Type = 1,
+    Title = "",
+    Text = "南瓜先生出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2929] = {
+    id = 2929,
+    Type = 1,
+    Title = "",
+    Text = "白幽灵★出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2930] = {
+    id = 2930,
+    Type = 1,
+    Title = "",
+    Text = "人鱼★出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2931] = {
+    id = 2931,
+    Type = 1,
+    Title = "",
+    Text = "喷射哥布灵★出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2932] = {
+    id = 2932,
+    Type = 1,
+    Title = "",
+    Text = "蜂兵★出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2933] = {
+    id = 2933,
+    Type = 1,
+    Title = "",
+    Text = "兵蚁★出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2934] = {
+    id = 2934,
+    Type = 1,
+    Title = "",
+    Text = "魔锅蛋★出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2935] = {
+    id = 2935,
+    Type = 1,
+    Title = "",
+    Text = "巨石怪★出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2936] = {
+    id = 2936,
+    Type = 1,
+    Title = "",
+    Text = "蛇女伊丝★出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2937] = {
+    id = 2937,
+    Type = 1,
+    Title = "",
+    Text = "鬼火★出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2938] = {
+    id = 2938,
+    Type = 1,
+    Title = "",
+    Text = "米诺斯★出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2939] = {
+    id = 2939,
+    Type = 1,
+    Title = "",
+    Text = "鬼女★出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2940] = {
+    id = 2940,
+    Type = 1,
+    Title = "",
+    Text = "兽人战士长★出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2941] = {
+    id = 2941,
+    Type = 1,
+    Title = "",
+    Text = "傀儡娃娃★出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [2950] = {
+    id = 2950,
+    Type = 1,
+    Title = "",
+    Text = "等级不足，无法挑战",
+    button = "",
+    buttonF = ""
+  },
+  [2951] = {
+    id = 2951,
+    Type = 1,
+    Title = "",
+    Text = "道场无法越级挑战",
+    button = "",
+    buttonF = ""
+  },
+  [2952] = {
+    id = 2952,
+    Type = 1,
+    Title = "",
+    Text = "道场尚未开启，火热施工中",
+    button = "",
+    buttonF = ""
+  },
+  [2953] = {
+    id = 2953,
+    Type = 1,
+    Title = "",
+    Text = "一声巨响后魔力人偶化为了魔物",
+    button = "",
+    buttonF = ""
+  },
+  [2954] = {
+    id = 2954,
+    Type = 1,
+    Title = "",
+    Text = "加入公会时间少于24小时，无法领取该任务",
+    button = "",
+    buttonF = ""
+  },
+  [2955] = {
+    id = 2955,
+    Type = 1,
+    Title = "",
+    Text = "已拍摄成功",
+    button = "",
+    buttonF = ""
+  },
+  [2956] = {
+    id = 2956,
+    Type = 1,
+    Title = "",
+    Text = "已拍摄[c][63cd4e]敲萌家族·匹格[-][/c]成功",
+    button = "",
+    buttonF = ""
+  },
+  [2957] = {
+    id = 2957,
+    Type = 1,
+    Title = "",
+    Text = "已拍摄[c][63cd4e]敲萌家族·贝蒂[-][/c]成功",
+    button = "",
+    buttonF = ""
+  },
+  [2958] = {
+    id = 2958,
+    Type = 1,
+    Title = "",
+    Text = "已拍摄[c][63cd4e]敲萌家族·卡隆[-][/c]成功",
+    button = "",
+    buttonF = ""
+  },
+  [2959] = {
+    id = 2959,
+    Type = 1,
+    Title = "",
+    Text = "已拍摄[c][63cd4e]敲萌家族·基诺[-][/c]成功",
+    button = "",
+    buttonF = ""
+  },
+  [2960] = {
+    id = 2960,
+    Type = 1,
+    Title = "",
+    Text = "已拍摄[c][63cd4e]敲萌家族·凯瑞[-][/c]成功",
+    button = "",
+    buttonF = ""
+  },
+  [2961] = {
+    id = 2961,
+    Type = 1,
+    Title = "",
+    Text = "已拍摄[c][63cd4e]敲萌家族·艾西[-][/c]成功",
+    button = "",
+    buttonF = ""
+  },
+  [2962] = {
+    id = 2962,
+    Type = 1,
+    Title = "",
+    Text = "已拍摄[c][63cd4e]敲萌家族·玛雅[-][/c]成功",
+    button = "",
+    buttonF = ""
+  },
+  [2963] = {
+    id = 2963,
+    Type = 1,
+    Title = "",
+    Text = "权限编辑成功",
+    button = "",
+    buttonF = ""
+  },
+  [2964] = {
+    id = 2964,
+    Type = 1,
+    Title = "",
+    Text = "您当前没有编辑权限",
+    button = "",
+    buttonF = ""
+  },
+  [2965] = {
+    id = 2965,
+    Type = 1,
+    Title = "",
+    Text = "缺少%s%s的材料",
+    button = "",
+    buttonF = ""
+  },
+  [2966] = {
+    id = 2966,
+    Type = 1,
+    Title = "",
+    Text = "交易所花费%sZeny。\n您的Zeny总额为%s",
+    button = "",
+    buttonF = ""
+  },
+  [2967] = {
+    id = 2967,
+    Type = 1,
+    Title = "",
+    Text = "花费%sZeny，%s个乐园币，%s个B格猫金币购买了所需要的材料",
+    button = "",
+    buttonF = ""
+  },
+  [2968] = {
+    id = 2968,
+    Type = 1,
+    Title = "",
+    Text = "快速购买过程中有%s种商品购买失败",
+    button = "",
+    buttonF = ""
+  },
+  [2969] = {
+    id = 2969,
+    Type = 1,
+    Title = "",
+    Text = "货币不足，无法快速购买道具",
+    button = "",
+    buttonF = ""
+  },
+  [3000] = {
+    id = 3000,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "技能重置会将所有已分配的技能点还原，是否确认使用？",
+    button = "使用",
+    buttonF = "取消"
+  },
+  [3001] = {
+    id = 3001,
+    Type = 129,
+    Title = "",
+    Text = "祝贺你！技能点重置成功，请谨慎分配。",
+    button = "",
+    buttonF = ""
+  },
+  [3002] = {
+    id = 3002,
+    Type = 129,
+    Title = "",
+    Text = "祝贺你！素质点重置成功，请谨慎分配。",
+    button = "",
+    buttonF = ""
+  },
+  [3003] = {
+    id = 3003,
+    Type = 1,
+    Title = "",
+    Text = "正在忙，无法使用苍蝇翅膀！",
+    button = "",
+    buttonF = ""
+  },
+  [3004] = {
+    id = 3004,
+    Type = 1,
+    Title = "",
+    Text = "抱歉！合成所需的材料不足。",
+    button = "",
+    buttonF = ""
+  },
+  [3005] = {
+    id = 3005,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "素质点重置会将所有已分配的素质点还原，是否确认使用？",
+    button = "使用",
+    buttonF = "取消"
+  },
+  [3006] = {
+    id = 3006,
+    Type = 129,
+    Title = "",
+    Text = "素质点重置成功，请谨慎分配。",
+    button = "",
+    buttonF = ""
+  },
+  [3007] = {
+    id = 3007,
+    Type = 129,
+    Title = "",
+    Text = "使用失败。素质点还未分配请分配后再使用",
+    button = "",
+    buttonF = ""
+  },
+  [3050] = {
+    id = 3050,
+    Type = 1,
+    Title = "",
+    Text = "需要【元素箭矢】等级达到要求",
+    button = "",
+    buttonF = ""
+  },
+  [3051] = {
+    id = 3051,
+    Type = 1,
+    Title = "",
+    Text = "需要装备弓类、乐器类、鞭子类武器时才可使用",
+    button = "",
+    buttonF = ""
+  },
+  [3052] = {
+    id = 3052,
+    Type = 1,
+    Title = "",
+    Text = "需要消耗%s×%s",
+    button = "",
+    buttonF = ""
+  },
+  [3053] = {
+    id = 3053,
+    Type = 1,
+    Title = "选中队友",
+    Text = "距离队友过远，无法选中",
+    button = "",
+    buttonF = ""
+  },
+  [3054] = {
+    id = 3054,
+    Type = 1,
+    Title = "",
+    Text = "消耗%s×%s",
+    button = "",
+    buttonF = ""
+  },
+  [3055] = {
+    id = 3055,
+    Type = 128,
+    Title = "通服",
+    Text = "消耗%s×%s",
+    button = "",
+    buttonF = ""
+  },
+  [3056] = {
+    id = 3056,
+    Type = 1,
+    Title = "通服",
+    Text = "请先前往依斯鲁得寻找世界线传送师",
+    button = "",
+    buttonF = ""
+  },
+  [3057] = {
+    id = 3057,
+    Type = 32,
+    Title = "公会搬家",
+    Text = "各位公会成员请注意，会长使用了公会搬家功能，[f5f5ae]2[-]小时后公会即将搬迁至[f5f5ae]世界线%s[-]",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [3058] = {
+    id = 3058,
+    Type = 32,
+    Title = "公会搬家",
+    Text = "各位公会成员请注意，会长取消了本次公会搬家的请求",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [3059] = {
+    id = 3059,
+    Type = 1,
+    Title = "通服",
+    Text = "你的等级超过了目标世界线内最高等级的冒险者，无法进行切换",
+    button = "",
+    buttonF = ""
+  },
+  [3060] = {
+    id = 3060,
+    Type = 2,
+    Title = "",
+    Text = "你随机出的附魔属性中有较好的属性，真的不想保存吗？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [3070] = {
+    id = 3070,
+    Type = 1,
+    Title = "",
+    Text = "当前该部位未穿戴装备，无法进行置换",
+    button = "",
+    buttonF = ""
+  },
+  [3071] = {
+    id = 3071,
+    Type = 1,
+    Title = "",
+    Text = "当前部位的装备无法进行置换",
+    button = "",
+    buttonF = ""
+  },
+  [3079] = {
+    id = 3079,
+    Type = 1,
+    Title = "",
+    Text = "公会战开始前2小时至城池结算期结束期间不可进行放弃城池",
+    button = "",
+    buttonF = ""
+  },
+  [3080] = {
+    id = 3080,
+    Type = 1,
+    Title = "",
+    Text = "公会战开始前2小时至城池结算期结束期间不可进行公会搬家",
+    button = "",
+    buttonF = ""
+  },
+  [3081] = {
+    id = 3081,
+    Type = 2,
+    Title = "公会搬家",
+    Text = "公会已搬家至世界线：[c][63cd4e]%s[-][/c]，现\n在就随同前往[c][63cd4e]%s[-][/c]吗？",
+    button = "前往",
+    buttonF = "取消"
+  },
+  [3082] = {
+    id = 3082,
+    Type = 1,
+    Title = "公会搬家",
+    Text = "公会已搬家",
+    button = "",
+    buttonF = ""
+  },
+  [3083] = {
+    id = 3083,
+    Type = 1,
+    Title = "公会搬家",
+    Text = "公会华丽金属不足",
+    button = "",
+    buttonF = ""
+  },
+  [3084] = {
+    id = 3084,
+    Type = 1,
+    Title = "通服",
+    Text = "你已在该世界线冒险中",
+    button = "",
+    buttonF = ""
+  },
+  [3085] = {
+    id = 3085,
+    Type = 1,
+    Title = "通服",
+    Text = "无法向不在同一世界线的角色提出邀请",
+    button = "",
+    buttonF = ""
+  },
+  [3086] = {
+    id = 3086,
+    Type = 1,
+    Title = "通服",
+    Text = "无法向该玩家提出邀请",
+    button = "",
+    buttonF = ""
+  },
+  [3087] = {
+    id = 3087,
+    Type = 1,
+    Title = "通服",
+    Text = "请先输入目标的世界线编号",
+    button = "",
+    buttonF = ""
+  },
+  [3088] = {
+    id = 3088,
+    Type = 1,
+    Title = "通服",
+    Text = "该世界线不存在，请重新输入",
+    button = "",
+    buttonF = ""
+  },
+  [3089] = {
+    id = 3089,
+    Type = 1,
+    Title = "通服",
+    Text = "该世界线冒险者过多，无法搬家",
+    button = "",
+    buttonF = ""
+  },
+  [3090] = {
+    id = 3090,
+    Type = 2,
+    Title = "通服",
+    Text = "取消搬家不会返还搬家费用，是否继续？",
+    button = "继续",
+    buttonF = "取消"
+  },
+  [3091] = {
+    id = 3091,
+    Type = 1,
+    Title = "通服",
+    Text = "公会解散期间不能进行搬家",
+    button = "",
+    buttonF = ""
+  },
+  [3092] = {
+    id = 3092,
+    Type = 1,
+    Title = "通服",
+    Text = "无法加入",
+    button = "",
+    buttonF = ""
+  },
+  [3093] = {
+    id = 3093,
+    Type = 65536,
+    Title = "",
+    Text = "每条时间线都有独立的魔物生态链，冒险者前往其他世界线后，未来的半小时内受到世界线秩序的影响，无法猎取野外生态链顶端的魔物（MVP/MINI）。是否要继续切换？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [3094] = {
+    id = 3094,
+    Type = 1,
+    Title = "",
+    Text = "当前处于换线疲劳状态，无法攻击MVP/MINI",
+    button = "",
+    buttonF = ""
+  },
+  [3095] = {
+    id = 3095,
+    Type = 1,
+    Title = "",
+    Text = "公会即将在2小时后变更至[%s]战线！",
+    button = "",
+    buttonF = ""
+  },
+  [3096] = {
+    id = 3096,
+    Type = 1,
+    Title = "",
+    Text = "请先输入目标的战线编号",
+    button = "",
+    buttonF = ""
+  },
+  [3097] = {
+    id = 3097,
+    Type = 1,
+    Title = "",
+    Text = "该战线不存在，请重新输入",
+    button = "",
+    buttonF = ""
+  },
+  [3098] = {
+    id = 3098,
+    Type = 32,
+    Title = "",
+    Text = "各位公会成员请注意，会长使用了公会战线搬家功能，[f5f5ae]2[-]小时后公会即将搬迁至[f5f5ae]战线%s[-]",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [3099] = {
+    id = 3099,
+    Type = 1,
+    Title = "",
+    Text = "公会搬家期间不可解散公会",
+    button = "",
+    buttonF = ""
+  },
+  [3100] = {
+    id = 3100,
+    Type = 2,
+    Title = "",
+    Text = "想要花费[c][63cd4e]%s[-][/c]来增加[c][63cd4e]5[-][/c]格包包的存储空间吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3101] = {
+    id = 3101,
+    Type = 1,
+    Title = "",
+    Text = "包包已满",
+    button = "",
+    buttonF = ""
+  },
+  [3102] = {
+    id = 3102,
+    Type = 1,
+    Title = "",
+    Text = "临时包包中存入了{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [3103] = {
+    id = 3103,
+    Type = 1,
+    Title = "",
+    Text = "包包格子+%s",
+    button = "",
+    buttonF = ""
+  },
+  [3104] = {
+    id = 3104,
+    Type = 1,
+    Title = "",
+    Text = "手推车已满，无法存入",
+    button = "",
+    buttonF = ""
+  },
+  [3105] = {
+    id = 3105,
+    Type = 129,
+    Title = "",
+    Text = "制作成功，获得{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [3106] = {
+    id = 3106,
+    Type = 129,
+    Title = "",
+    Text = "制作失败，损失制作材料",
+    button = "",
+    buttonF = ""
+  },
+  [3107] = {
+    id = 3107,
+    Type = 1,
+    Title = "",
+    Text = "到达%s级，为您解锁%s个包包格子",
+    button = "",
+    buttonF = ""
+  },
+  [3108] = {
+    id = 3108,
+    Type = 1,
+    Title = "",
+    Text = "到达%s级，为您解锁%s个个人仓库格子",
+    button = "",
+    buttonF = ""
+  },
+  [3109] = {
+    id = 3109,
+    Type = 1,
+    Title = "",
+    Text = "个人仓库格子+%s",
+    button = "",
+    buttonF = ""
+  },
+  [3130] = {
+    id = 3130,
+    Type = 1,
+    Title = "",
+    Text = "一键领取共领取金额为%sZeny，领取道具数量为%s个",
+    button = "",
+    buttonF = ""
+  },
+  [3131] = {
+    id = 3131,
+    Type = 1,
+    Title = "",
+    Text = "一键领取共领取金额为%sZeny，领取道具数量为%s个 \n 未能成功领取的金额为%sZeny，未能成功领取的道具数量为%s个",
+    button = "",
+    buttonF = ""
+  },
+  [3150] = {
+    id = 3150,
+    Type = 2,
+    Title = "公告",
+    Text = "冒险者，我们调整了你的职业技能，并已为你重置。是否现在就前往技能界面重新学习？",
+    button = "前往",
+    buttonF = "取消",
+    Confirm = 2001
+  },
+  [3200] = {
+    id = 3200,
+    Type = 1,
+    Title = "",
+    Text = "Base等级低于10级,导师系统尚未解锁",
+    button = "",
+    buttonF = ""
+  },
+  [3201] = {
+    id = 3201,
+    Type = 1,
+    Title = "",
+    Text = "Base等级低于%s,无法成为导师",
+    button = "",
+    buttonF = ""
+  },
+  [3202] = {
+    id = 3202,
+    Type = 1,
+    Title = "",
+    Text = "Base等级≥%s，无法成为其他玩家的学生",
+    button = "",
+    buttonF = ""
+  },
+  [3203] = {
+    id = 3203,
+    Type = 1,
+    Title = "",
+    Text = "该玩家Base等级低于%s，无法成为他的学生",
+    button = "",
+    buttonF = ""
+  },
+  [3204] = {
+    id = 3204,
+    Type = 1,
+    Title = "",
+    Text = "信息已发送",
+    button = "",
+    buttonF = ""
+  },
+  [3205] = {
+    id = 3205,
+    Type = 1,
+    Title = "",
+    Text = "该玩家的学生已达上限，无法成为他的学生",
+    button = "",
+    buttonF = ""
+  },
+  [3206] = {
+    id = 3206,
+    Type = 1,
+    Title = "",
+    Text = "该玩家没有登记为导师，无法成为他的学生",
+    button = "",
+    buttonF = ""
+  },
+  [3207] = {
+    id = 3207,
+    Type = 1,
+    Title = "",
+    Text = "该玩家Base等级低于%s，无法成为他的导师",
+    button = "",
+    buttonF = ""
+  },
+  [3208] = {
+    id = 3208,
+    Type = 1,
+    Title = "",
+    Text = "该玩家已拥有导师，无法成为他的导师",
+    button = "",
+    buttonF = ""
+  },
+  [3209] = {
+    id = 3209,
+    Type = 1,
+    Title = "",
+    Text = "你的学生已达上限，无法成为他的导师",
+    button = "",
+    buttonF = ""
+  },
+  [3210] = {
+    id = 3210,
+    Type = 1,
+    Title = "",
+    Text = "发送间隔过短，请等待",
+    button = "",
+    buttonF = ""
+  },
+  [3211] = {
+    id = 3211,
+    Type = 1,
+    Title = "",
+    Text = "该玩家已多次拒绝你的申请，发送失败",
+    button = "",
+    buttonF = ""
+  },
+  [3212] = {
+    id = 3212,
+    Type = 1,
+    Title = "",
+    Text = "%s已成为了你的学生",
+    button = "",
+    buttonF = ""
+  },
+  [3213] = {
+    id = 3213,
+    Type = 1,
+    Title = "",
+    Text = "你成为了%s的学生",
+    button = "",
+    buttonF = ""
+  },
+  [3214] = {
+    id = 3214,
+    Type = 128,
+    Title = "",
+    Text = "你成为了%s的学生",
+    button = "",
+    buttonF = ""
+  },
+  [3215] = {
+    id = 3215,
+    Type = 1,
+    Title = "",
+    Text = "%s已成为了你的导师。",
+    button = "",
+    buttonF = ""
+  },
+  [3216] = {
+    id = 3216,
+    Type = 1,
+    Title = "",
+    Text = "你成为了%s的导师。",
+    button = "",
+    buttonF = ""
+  },
+  [3217] = {
+    id = 3217,
+    Type = 1,
+    Title = "",
+    Text = "你已经拥有导师",
+    button = "",
+    buttonF = ""
+  },
+  [3218] = {
+    id = 3218,
+    Type = 2,
+    Title = "",
+    Text = "是否添加%s为好友？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3219] = {
+    id = 3219,
+    Type = 2,
+    Title = "",
+    Text = "是否解除师生关系？若对方离线时间小于72小时，解除关系后24小时内将无法寻找新的导师。",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3220] = {
+    id = 3220,
+    Type = 2,
+    Title = "",
+    Text = "是否解除师生关系？若对方离线时间小于72小时，解除关系后24小时内将无法寻找新的学生。",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3221] = {
+    id = 3221,
+    Type = 1,
+    Title = "",
+    Text = "24小时内强制解除过师生关系，无法寻找新的导师",
+    button = "",
+    buttonF = ""
+  },
+  [3222] = {
+    id = 3222,
+    Type = 1,
+    Title = "",
+    Text = "24小时内强制解除过师生关系，无法寻找新的学生",
+    button = "",
+    buttonF = ""
+  },
+  [3223] = {
+    id = 3223,
+    Type = 1,
+    Title = "",
+    Text = "该玩家处于关系解除惩罚状态，无法成为你的导师",
+    button = "",
+    buttonF = ""
+  },
+  [3224] = {
+    id = 3224,
+    Type = 1,
+    Title = "",
+    Text = "该玩家处于关系解除惩罚状态，无法成为你的学生",
+    button = "",
+    buttonF = ""
+  },
+  [3225] = {
+    id = 3225,
+    Type = 1,
+    Title = "",
+    Text = "该道具只能对你的学生使用",
+    button = "",
+    buttonF = ""
+  },
+  [3226] = {
+    id = 3226,
+    Type = 1,
+    Title = "",
+    Text = "你的学生已经是资深的冒险者了，无法获得道具效果",
+    button = "",
+    buttonF = ""
+  },
+  [3227] = {
+    id = 3227,
+    Type = 1,
+    Title = "",
+    Text = "%s生效中，使用失败",
+    button = "",
+    buttonF = ""
+  },
+  [3228] = {
+    id = 3228,
+    Type = 1,
+    Title = "",
+    Text = "获得%s的效果",
+    button = "",
+    buttonF = ""
+  },
+  [3229] = {
+    id = 3229,
+    Type = 1,
+    Title = "",
+    Text = "没有领取委托看板任务，使用失败",
+    button = "",
+    buttonF = ""
+  },
+  [3230] = {
+    id = 3230,
+    Type = 1,
+    Title = "",
+    Text = "Base等级不足，无法完成毕业",
+    button = "",
+    buttonF = ""
+  },
+  [3231] = {
+    id = 3231,
+    Type = 1,
+    Title = "",
+    Text = "在当前导师下学习少于%s天，无法完成毕业",
+    button = "",
+    buttonF = ""
+  },
+  [3232] = {
+    id = 3232,
+    Type = 1,
+    Title = "",
+    Text = "没有新的招募信息",
+    button = "",
+    buttonF = ""
+  },
+  [3233] = {
+    id = 3233,
+    Type = 1,
+    Title = "",
+    Text = "无法向自己发送招募信息",
+    button = "",
+    buttonF = ""
+  },
+  [3234] = {
+    id = 3234,
+    Type = 1,
+    Title = "",
+    Text = "%s已完成，使用失败",
+    button = "",
+    buttonF = ""
+  },
+  [3235] = {
+    id = 3235,
+    Type = 1,
+    Title = "",
+    Text = "寻找的间隔过短，请等待片刻后发送",
+    button = "",
+    buttonF = ""
+  },
+  [3236] = {
+    id = 3236,
+    Type = 1,
+    Title = "",
+    Text = "你已经与%s解除师生关系",
+    button = "",
+    buttonF = ""
+  },
+  [3237] = {
+    id = 3237,
+    Type = 1,
+    Title = "",
+    Text = "当前已经处于师生关系",
+    button = "",
+    buttonF = ""
+  },
+  [3238] = {
+    id = 3238,
+    Type = 1,
+    Title = "",
+    Text = "尚未完成[导师任务]，招收失败",
+    button = "",
+    buttonF = ""
+  },
+  [3239] = {
+    id = 3239,
+    Type = 1,
+    Title = "",
+    Text = "[冒险教程]已生效",
+    button = "",
+    buttonF = ""
+  },
+  [3240] = {
+    id = 3240,
+    Type = 1,
+    Title = "",
+    Text = "[守护卷轴]已生效",
+    button = "",
+    buttonF = ""
+  },
+  [3241] = {
+    id = 3241,
+    Type = 1,
+    Title = "",
+    Text = "[佣兵猫]任务完了",
+    button = "",
+    buttonF = ""
+  },
+  [3242] = {
+    id = 3242,
+    Type = 1,
+    Title = "",
+    Text = "正在获取上限，请等待",
+    button = "",
+    buttonF = ""
+  },
+  [3243] = {
+    id = 3243,
+    Type = 1,
+    Title = "",
+    Text = "该玩家Base低于%s，无法成为你的学生",
+    button = "",
+    buttonF = ""
+  },
+  [3244] = {
+    id = 3244,
+    Type = 128,
+    Title = "",
+    Text = "你的学生%s完成了冒险任务[%s]。",
+    button = "",
+    buttonF = ""
+  },
+  [3245] = {
+    id = 3245,
+    Type = 1,
+    Title = "",
+    Text = "奖励领取失败，将于每日5时通过邮件发放。",
+    button = "",
+    buttonF = ""
+  },
+  [3246] = {
+    id = 3246,
+    Type = 1,
+    Title = "",
+    Text = "你的学生已经是资深的冒险者，无法进行冒险任务。",
+    button = "",
+    buttonF = ""
+  },
+  [3247] = {
+    id = 3247,
+    Type = 1,
+    Title = "",
+    Text = "对方不在线",
+    button = "",
+    buttonF = ""
+  },
+  [3248] = {
+    id = 3248,
+    Type = 1,
+    Title = "",
+    Text = "对方申请列表已满，申请失败",
+    button = "",
+    buttonF = ""
+  },
+  [3249] = {
+    id = 3249,
+    Type = 1,
+    Title = "",
+    Text = "对方申请列表已满，申请失败",
+    button = "",
+    buttonF = ""
+  },
+  [3250] = {
+    id = 3250,
+    Type = 1,
+    Title = "",
+    Text = "Base等级不足",
+    button = "",
+    buttonF = ""
+  },
+  [3251] = {
+    id = 3251,
+    Type = 1,
+    Title = "",
+    Text = "该玩家已是导师，无法成为你的学生",
+    button = "",
+    buttonF = ""
+  },
+  [3252] = {
+    id = 3252,
+    Type = 1,
+    Title = "",
+    Text = "您已经是导师，无法再申请成为他人的学生",
+    button = "",
+    buttonF = ""
+  },
+  [3300] = {
+    id = 3300,
+    Type = 1,
+    Title = "",
+    Text = "%s对你使用了%s",
+    button = "",
+    buttonF = ""
+  },
+  [3301] = {
+    id = 3301,
+    Type = 1,
+    Title = "",
+    Text = "%s已完成",
+    button = "",
+    buttonF = ""
+  },
+  [3398] = {
+    id = 3398,
+    Type = 1,
+    Title = "",
+    Text = "用的太多了，不要浪费哦~",
+    button = "",
+    buttonF = ""
+  },
+  [3399] = {
+    id = 3399,
+    Type = 2,
+    Title = "",
+    Text = "继续使用将会超过上限，是否需要继续使用？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [3400] = {
+    id = 3400,
+    Type = 1,
+    Title = "",
+    Text = "无限塔还未开放，不能使用%s",
+    button = "",
+    buttonF = ""
+  },
+  [3401] = {
+    id = 3401,
+    Type = 1,
+    Title = "",
+    Text = "你从未进入过无限塔，无法使用%s",
+    button = "",
+    buttonF = ""
+  },
+  [3402] = {
+    id = 3402,
+    Type = 1,
+    Title = "",
+    Text = "无限塔层数已经开放，不需要使用%s",
+    button = "",
+    buttonF = ""
+  },
+  [3403] = {
+    id = 3403,
+    Type = 2,
+    Title = "",
+    Text = "使用%s将会为你开放所有历史最高层数及以下的层数（最高开放至70层）\n是否确定使用？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3404] = {
+    id = 3404,
+    Type = 1,
+    Title = "",
+    Text = "已为您开放无限塔层数，1-%s层",
+    button = "",
+    buttonF = ""
+  },
+  [3405] = {
+    id = 3405,
+    Type = 1,
+    Title = "",
+    Text = "背包中没有%s，无法进行快速完成",
+    button = "",
+    buttonF = ""
+  },
+  [3406] = {
+    id = 3406,
+    Type = 1,
+    Title = "",
+    Text = "该裂隙需要%s级才能进行快速完成，队伍中有玩家等级未达到要求",
+    button = "",
+    buttonF = ""
+  },
+  [3407] = {
+    id = 3407,
+    Type = 1,
+    Title = "",
+    Text = "只有组队状态下才可以使用%s",
+    button = "",
+    buttonF = ""
+  },
+  [3430] = {
+    id = 3430,
+    Type = 2,
+    Title = "",
+    Text = "技能的等级得到了更多的强化，可以投入更多的技能点来升级技能了",
+    button = "确认",
+    buttonF = ""
+  },
+  [3431] = {
+    id = 3431,
+    Type = 2,
+    Title = "",
+    Text = "减去当前技能等级，将会使突破技能上限的技能等级全部返还，是否减去？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [3432] = {
+    id = 3432,
+    Type = 1,
+    Title = "",
+    Text = "必须将当前技能点数实际投入后才能使用巅峰技能点",
+    button = "",
+    buttonF = ""
+  },
+  [3433] = {
+    id = 3433,
+    Type = 1,
+    Title = "",
+    Text = "在跟随状态下无法选择“自动战斗至下一层”",
+    button = "",
+    buttonF = ""
+  },
+  [3434] = {
+    id = 3434,
+    Type = 1,
+    Title = "",
+    Text = "职业等级上限得到提升了",
+    button = "",
+    buttonF = ""
+  },
+  [3435] = {
+    id = 3435,
+    Type = 1,
+    Title = "",
+    Text = "职业等级上限提升至%s级",
+    button = "",
+    buttonF = ""
+  },
+  [3436] = {
+    id = 3436,
+    Type = 1,
+    Title = "",
+    Text = "已购买至上限，无法购买",
+    button = "",
+    buttonF = ""
+  },
+  [3437] = {
+    id = 3437,
+    Type = 1,
+    Title = "",
+    Text = "巅峰碎片最多仅需81个即可解锁至等级上限，无须购买更多",
+    button = "",
+    buttonF = ""
+  },
+  [3499] = {
+    id = 3499,
+    Type = 1,
+    Title = "",
+    Text = "职业等级的上限已解锁至%s级",
+    button = "",
+    buttonF = ""
+  },
+  [3500] = {
+    id = 3500,
+    Type = 1,
+    Title = "",
+    Text = "%s烹饪熟练度+%s",
+    button = "",
+    buttonF = ""
+  },
+  [3501] = {
+    id = 3501,
+    Type = 1,
+    Title = "",
+    Text = "%s品尝熟练度+%s",
+    button = "",
+    buttonF = ""
+  },
+  [3502] = {
+    id = 3502,
+    Type = 1,
+    Title = "",
+    Text = "%s食材熟练度+1",
+    button = "",
+    buttonF = ""
+  },
+  [3503] = {
+    id = 3503,
+    Type = 1,
+    Title = "",
+    Text = "%s修改了品尝权限",
+    button = "",
+    buttonF = ""
+  },
+  [3504] = {
+    id = 3504,
+    Type = 1,
+    Title = "",
+    Text = "你没有品尝权限哟~",
+    button = "",
+    buttonF = ""
+  },
+  [3505] = {
+    id = 3505,
+    Type = 1,
+    Title = "",
+    Text = "你已经吃的太多了，先休息一会吧~",
+    button = "",
+    buttonF = ""
+  },
+  [3506] = {
+    id = 3506,
+    Type = 1,
+    Title = "",
+    Text = "饱腹度+%s",
+    button = "",
+    buttonF = ""
+  },
+  [3507] = {
+    id = 3507,
+    Type = 1,
+    Title = "",
+    Text = "您不是美食家，食用料理时将无法获得经验~",
+    button = "",
+    buttonF = ""
+  },
+  [3508] = {
+    id = 3508,
+    Type = 1,
+    Title = "",
+    Text = "厨师经验+%s",
+    button = "",
+    buttonF = ""
+  },
+  [3509] = {
+    id = 3509,
+    Type = 1,
+    Title = "",
+    Text = "美食家经验+%s",
+    button = "",
+    buttonF = ""
+  },
+  [3510] = {
+    id = 3510,
+    Type = 1,
+    Title = "",
+    Text = "您最多只能同时摆放5个料理哟~请先吃掉它们吧！",
+    button = "",
+    buttonF = ""
+  },
+  [3511] = {
+    id = 3511,
+    Type = 1,
+    Title = "",
+    Text = "您最多只能同时摆放3个野餐垫哟~",
+    button = "",
+    buttonF = ""
+  },
+  [3512] = {
+    id = 3512,
+    Type = 1,
+    Title = "",
+    Text = "当前等级经验已满，请先前往料理协会升级才可继续获得经验哟~",
+    button = "",
+    buttonF = ""
+  },
+  [3513] = {
+    id = 3513,
+    Type = 1,
+    Title = "",
+    Text = "料理包包已满，清理背包后再尝试",
+    button = "",
+    buttonF = ""
+  },
+  [3550] = {
+    id = 3550,
+    Type = 2,
+    Title = "",
+    Text = "本月活动限时折扣已结束，您将使用原价抽取了~",
+    button = "确认",
+    buttonF = ""
+  },
+  [3551] = {
+    id = 3551,
+    Type = 2,
+    Title = "",
+    Text = "B格猫金币不足，您可以通过打赏从卡普拉公司换取一些，是否前往？",
+    button = "前往",
+    buttonF = "取消"
+  },
+  [3552] = {
+    id = 3552,
+    Type = 2,
+    Title = "",
+    Text = "是否要回收选中的物品，您将获得[c][63cd4e]%s[-][/c]张%s。",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3553] = {
+    id = 3553,
+    Type = 1,
+    Title = "",
+    Text = "获得B格猫金币[63cd4e]%s[-]个",
+    button = "",
+    buttonF = ""
+  },
+  [3554] = {
+    id = 3554,
+    Type = 1,
+    Title = "",
+    Text = "%s数量不足",
+    button = "",
+    buttonF = ""
+  },
+  [3555] = {
+    id = 3555,
+    Type = 2,
+    Title = "",
+    Text = "亲爱的冒险者，请您先更新游戏，才能进行购买哟~",
+    button = "前往",
+    buttonF = "取消"
+  },
+  [3556] = {
+    id = 3556,
+    Type = 65536,
+    Title = "确认回收",
+    Text = "是否要回收选中的物品？(已插卡将返还所有卡片，已精炼的物品将根据精炼等级额外返还回收代币)",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3600] = {
+    id = 3600,
+    Type = 1,
+    Title = "",
+    Text = "只有一转及以上职业的冒险者才能够开启礼包哟~",
+    button = "",
+    buttonF = ""
+  },
+  [3601] = {
+    id = 3601,
+    Type = 1,
+    Title = "",
+    Text = "只有二转及以上职业的冒险者才能够开启礼包哟~",
+    button = "",
+    buttonF = ""
+  },
+  [3602] = {
+    id = 3602,
+    Type = 1,
+    Title = "",
+    Text = "只有进阶二转冒险者才能够开启礼包哟~",
+    button = "",
+    buttonF = ""
+  },
+  [3603] = {
+    id = 3603,
+    Type = 1,
+    Title = "",
+    Text = "完成全部猫狗活动任务后才可购买",
+    button = "",
+    buttonF = ""
+  },
+  [3604] = {
+    id = 3604,
+    Type = 1,
+    Title = "",
+    Text = "不可以自己送情书给自己哟~勇敢地跟其他人表白吧！",
+    button = "",
+    buttonF = ""
+  },
+  [3605] = {
+    id = 3605,
+    Type = 1,
+    Title = "",
+    Text = "活动还没有开始哟~",
+    button = "",
+    buttonF = ""
+  },
+  [3606] = {
+    id = 3606,
+    Type = 1,
+    Title = "",
+    Text = "咕啵~咕啵~信号不同步",
+    button = "",
+    buttonF = ""
+  },
+  [3607] = {
+    id = 3607,
+    Type = 1,
+    Title = "",
+    Text = "对方跟你不在一个世界线哦~",
+    button = "",
+    buttonF = ""
+  },
+  [3608] = {
+    id = 3608,
+    Type = 256,
+    Title = "",
+    Text = "游戏还有{countDown=%s}秒开始，请多多加油啵~！",
+    button = "",
+    buttonF = ""
+  },
+  [3609] = {
+    id = 3609,
+    Type = 1,
+    Title = "",
+    Text = "已在匹配队列中",
+    button = "",
+    buttonF = ""
+  },
+  [3610] = {
+    id = 3610,
+    Type = 2,
+    Title = "",
+    Text = "确定要取消报名吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3611] = {
+    id = 3611,
+    Type = 2,
+    Title = "",
+    Text = "你将要购买的是有性别限制的道具，请仔细确认哦~",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3612] = {
+    id = 3612,
+    Type = 1,
+    Title = "",
+    Text = "您今天已经品尝过圣诞蛋糕了~小心吃撑哟~",
+    button = "",
+    buttonF = ""
+  },
+  [3613] = {
+    id = 3613,
+    Type = 1,
+    Title = "",
+    Text = "现在没有空位，等稍等片刻(#^.^#)",
+    button = "",
+    buttonF = ""
+  },
+  [3614] = {
+    id = 3614,
+    Type = 128,
+    Title = "",
+    Text = "你获得了%s点欢乐值",
+    button = "",
+    buttonF = ""
+  },
+  [3615] = {
+    id = 3615,
+    Type = 1,
+    Title = "",
+    Text = "今天不能通过此项目获取更多欢乐值了，请试试其它游乐项目吧(#^.^#)",
+    button = "",
+    buttonF = ""
+  },
+  [3616] = {
+    id = 3616,
+    Type = 1,
+    Title = "",
+    Text = "道具使用失败，你已经拥有该发型了~",
+    button = "",
+    buttonF = ""
+  },
+  [3617] = {
+    id = 3617,
+    Type = 1,
+    Title = "",
+    Text = "没有符合条件的契约签订人",
+    button = "",
+    buttonF = ""
+  },
+  [3618] = {
+    id = 3618,
+    Type = 1,
+    Title = "",
+    Text = "对方不符合契约条件",
+    button = "",
+    buttonF = ""
+  },
+  [3619] = {
+    id = 3619,
+    Type = 1,
+    Title = "",
+    Text = "你已经成功与%s达成持续30天的召回契约",
+    button = "",
+    buttonF = ""
+  },
+  [3620] = {
+    id = 3620,
+    Type = 1,
+    Title = "",
+    Text = "您已经向该玩家发起召回邀请",
+    button = "",
+    buttonF = ""
+  },
+  [3621] = {
+    id = 3621,
+    Type = 2,
+    Title = "",
+    Text = "本次活动期间，你已经与10名玩家达成过召回契约，无法与更多玩家达成契约，是否继续召回？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3622] = {
+    id = 3622,
+    Type = 131200,
+    Title = "",
+    Text = "本日的皇家庆典即将在5分钟后结束~祝各位玩得开心(*^▽^*)",
+    button = "",
+    buttonF = ""
+  },
+  [3623] = {
+    id = 3623,
+    Type = 131200,
+    Title = "",
+    Text = "本日的皇家庆典即将在1分钟后结束~祝各位玩得开心(*^▽^*)",
+    button = "",
+    buttonF = ""
+  },
+  [3624] = {
+    id = 3624,
+    Type = 131200,
+    Title = "",
+    Text = "皇家庆典正在普隆德拉举办，欢迎各位冒险者前往参加~",
+    button = "",
+    buttonF = ""
+  },
+  [3625] = {
+    id = 3625,
+    Type = 1,
+    Title = "",
+    Text = "【重拾初心】任务已添加至追踪栏",
+    button = "",
+    buttonF = ""
+  },
+  [3626] = {
+    id = 3626,
+    Type = 1,
+    Title = "",
+    Text = "啊哦~商品库存不足了，请期待下一次补货吧~MUA~",
+    button = "",
+    buttonF = ""
+  },
+  [3627] = {
+    id = 3627,
+    Type = 1,
+    Title = "",
+    Text = "这个道具已经不在包包里了哟~",
+    button = "",
+    buttonF = ""
+  },
+  [3628] = {
+    id = 3628,
+    Type = 131200,
+    Title = "",
+    Text = "本日的皇家庆典和烟花表演即将在30分钟后开始，请各位冒险者准时参加~喵~",
+    button = "",
+    buttonF = ""
+  },
+  [3629] = {
+    id = 3629,
+    Type = 131200,
+    Title = "",
+    Text = "本日的皇家庆典和烟花表演即将在10分钟后开始，请各位冒险者准时参加~喵~",
+    button = "",
+    buttonF = ""
+  },
+  [3630] = {
+    id = 3630,
+    Type = 131200,
+    Title = "",
+    Text = "本日的皇家庆典和烟花表演即将在1分钟后开始，请各位冒险者准时参加~喵~",
+    button = "",
+    buttonF = ""
+  },
+  [3631] = {
+    id = 3631,
+    Type = 131200,
+    Title = "",
+    Text = "本日的首场烟花表演现在开始了~请与身边的同伴一同享受此刻吧~",
+    button = "",
+    buttonF = ""
+  },
+  [3632] = {
+    id = 3632,
+    Type = 131200,
+    Title = "",
+    Text = "本日的第二场烟花表演现在开始了~请与身边的同伴一同享受此刻吧~",
+    button = "",
+    buttonF = ""
+  },
+  [3633] = {
+    id = 3633,
+    Type = 131200,
+    Title = "",
+    Text = "本日的最后一场烟花表演现在开始了~请与身边的同伴一同享受此刻吧~",
+    button = "",
+    buttonF = ""
+  },
+  [3634] = {
+    id = 3634,
+    Type = 1,
+    Title = "",
+    Text = "B格猫金币不足无法购买",
+    button = "",
+    buttonF = ""
+  },
+  [3635] = {
+    id = 3635,
+    Type = 1,
+    Title = "",
+    Text = "复制成功啦~请前往周边商城兑换可爱的包包吧~",
+    button = "",
+    buttonF = ""
+  },
+  [3636] = {
+    id = 3636,
+    Type = 1,
+    Title = "",
+    Text = "这个兑换码还没有兑换过，无法出售给商店哟~",
+    button = "",
+    buttonF = ""
+  },
+  [3637] = {
+    id = 3637,
+    Type = 1,
+    Title = "",
+    Text = "您额外获得了%s公会贡献",
+    button = "",
+    buttonF = ""
+  },
+  [3638] = {
+    id = 3638,
+    Type = 1,
+    Title = "",
+    Text = "啊哦~你已经解锁过这个美瞳了哟~",
+    button = "",
+    buttonF = ""
+  },
+  [3639] = {
+    id = 3639,
+    Type = 1,
+    Title = "",
+    Text = "没有契约对象，无法签订哟",
+    button = "",
+    buttonF = ""
+  },
+  [3640] = {
+    id = 3640,
+    Type = 1,
+    Title = "",
+    Text = "已恢复%s秒疲劳时间",
+    button = "",
+    buttonF = ""
+  },
+  [3641] = {
+    id = 3641,
+    Type = 1,
+    Title = "",
+    Text = "啊哦！今天在本机的扭蛋次数已经用完了~",
+    button = "",
+    buttonF = ""
+  },
+  [3642] = {
+    id = 3642,
+    Type = 1,
+    Title = "",
+    Text = "你的宠物有此款皮肤了哦~",
+    button = "",
+    buttonF = ""
+  },
+  [3643] = {
+    id = 3643,
+    Type = 1,
+    Title = "",
+    Text = "这是为选择了今天作为重要一日的二人准备的哟~",
+    button = "",
+    buttonF = ""
+  },
+  [3644] = {
+    id = 3644,
+    Type = 1,
+    Title = "",
+    Text = "啊哦~你已经解锁过这个色系了哟~",
+    button = "",
+    buttonF = ""
+  },
+  [3700] = {
+    id = 3700,
+    Type = 1,
+    Title = "",
+    Text = "已有设施处于建造/升级中，开启失败",
+    button = "",
+    buttonF = ""
+  },
+  [3701] = {
+    id = 3701,
+    Type = 1,
+    Title = "",
+    Text = "设施等级无法超过公会等级，开启失败",
+    button = "",
+    buttonF = ""
+  },
+  [3702] = {
+    id = 3702,
+    Type = 1,
+    Title = "",
+    Text = "已达到每日提交上限，请明天再来吧",
+    button = "",
+    buttonF = ""
+  },
+  [3703] = {
+    id = 3703,
+    Type = 1,
+    Title = "",
+    Text = "材料不足",
+    button = "",
+    buttonF = ""
+  },
+  [3704] = {
+    id = 3704,
+    Type = 1,
+    Title = "",
+    Text = "当前建筑已升级完毕",
+    button = "",
+    buttonF = ""
+  },
+  [3705] = {
+    id = 3705,
+    Type = 1,
+    Title = "",
+    Text = "建造/升级的太快了，请等待一段时间再来吧？",
+    button = "",
+    buttonF = ""
+  },
+  [3706] = {
+    id = 3706,
+    Type = 1,
+    Title = "",
+    Text = "此照片不符合上传条件，上传失败",
+    button = "",
+    buttonF = ""
+  },
+  [3707] = {
+    id = 3707,
+    Type = 1,
+    Title = "",
+    Text = "%s开始建造了喵！大家一起提供材料，努力把他造好吧喵！",
+    button = "",
+    buttonF = ""
+  },
+  [3708] = {
+    id = 3708,
+    Type = 1,
+    Title = "",
+    Text = "%s开始升级了喵！大家一起提供材料，一起努力让他变得更好用吧喵！",
+    button = "",
+    buttonF = ""
+  },
+  [3709] = {
+    id = 3709,
+    Type = 1,
+    Title = "",
+    Text = "%s完成建造了喵！都是大家的功劳喵！",
+    button = "",
+    buttonF = ""
+  },
+  [3710] = {
+    id = 3710,
+    Type = 1,
+    Title = "",
+    Text = "%s完成升级了喵！都是大家的功劳喵！",
+    button = "",
+    buttonF = ""
+  },
+  [3711] = {
+    id = 3711,
+    Type = 1,
+    Title = "",
+    Text = "公会仓库中的%s数量不足，无法开启",
+    button = "",
+    buttonF = ""
+  },
+  [3712] = {
+    id = 3712,
+    Type = 1,
+    Title = "",
+    Text = "设施大厅 已开启",
+    button = "",
+    buttonF = ""
+  },
+  [3713] = {
+    id = 3713,
+    Type = 4096,
+    Title = "uiicon=Guild",
+    Text = "设施大厅 已开启",
+    button = "",
+    buttonF = ""
+  },
+  [3714] = {
+    id = 3714,
+    Type = 1,
+    Title = "",
+    Text = "%s 已开始%s",
+    button = "",
+    buttonF = ""
+  },
+  [3715] = {
+    id = 3715,
+    Type = 1,
+    Title = "",
+    Text = "%s 已开始建造",
+    button = "",
+    buttonF = ""
+  },
+  [3716] = {
+    id = 3716,
+    Type = 1,
+    Title = "",
+    Text = "提交 %s*%s",
+    button = "",
+    buttonF = ""
+  },
+  [3717] = {
+    id = 3717,
+    Type = 1,
+    Title = "",
+    Text = "已完成[%s]",
+    button = "",
+    buttonF = ""
+  },
+  [3718] = {
+    id = 3718,
+    Type = 129,
+    Title = "",
+    Text = "获得公会资金x%s",
+    button = "",
+    buttonF = ""
+  },
+  [3719] = {
+    id = 3719,
+    Type = 129,
+    Title = "",
+    Text = "获得公会资金x%s",
+    button = "",
+    buttonF = ""
+  },
+  [3720] = {
+    id = 3720,
+    Type = 1,
+    Title = "",
+    Text = "设施建设进度增加",
+    button = "",
+    buttonF = ""
+  },
+  [3721] = {
+    id = 3721,
+    Type = 4096,
+    Title = "itemicon=item_41596",
+    Text = "雷神之锤Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3722] = {
+    id = 3722,
+    Type = 4096,
+    Title = "itemicon=item_40696",
+    Text = "万神的注视Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3723] = {
+    id = 3723,
+    Type = 4096,
+    Title = "itemicon=item_40697",
+    Text = "金枝Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3724] = {
+    id = 3724,
+    Type = 4096,
+    Title = "itemicon=item_40971",
+    Text = "万物安息Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3725] = {
+    id = 3725,
+    Type = 4096,
+    Title = "itemicon=item_40400",
+    Text = "提尔锋Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3726] = {
+    id = 3726,
+    Type = 4096,
+    Title = "itemicon=item_40796",
+    Text = "银槲之剑Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3727] = {
+    id = 3727,
+    Type = 4096,
+    Title = "itemicon=item_40086",
+    Text = "永恒之枪Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3728] = {
+    id = 3728,
+    Type = 4096,
+    Title = "itemicon=item_62529",
+    Text = "湮灭者Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3729] = {
+    id = 3729,
+    Type = 4096,
+    Title = "itemicon=item_41898",
+    Text = "硝烟终结者Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3730] = {
+    id = 3730,
+    Type = 4096,
+    Title = "itemicon=item_41286",
+    Text = "凛冬结晶Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3731] = {
+    id = 3731,
+    Type = 4096,
+    Title = "itemicon=item_62860",
+    Text = "拂晓之光Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3732] = {
+    id = 3732,
+    Type = 4096,
+    Title = "itemicon=item_63162",
+    Text = "月神的呢喃Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3733] = {
+    id = 3733,
+    Type = 4096,
+    Title = "itemicon=item_63483",
+    Text = "全知魔神书Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3734] = {
+    id = 3734,
+    Type = 4096,
+    Title = "itemicon=item_44351",
+    Text = "天后的恸哭Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3735] = {
+    id = 3735,
+    Type = 4096,
+    Title = "itemicon=item_44646",
+    Text = "百鬼封尽Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3736] = {
+    id = 3736,
+    Type = 4096,
+    Title = "itemicon=item_63639",
+    Text = "白银凶星Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3737] = {
+    id = 3737,
+    Type = 4096,
+    Title = "itemicon=item_63939",
+    Text = "尤佩雷斯灭龙炮Ⅳ 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3750] = {
+    id = 3750,
+    Type = 4096,
+    Title = "itemicon=item_41551",
+    Text = "雷神之锤 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3751] = {
+    id = 3751,
+    Type = 4096,
+    Title = "itemicon=item_41552",
+    Text = "雷神之锤II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3752] = {
+    id = 3752,
+    Type = 4096,
+    Title = "itemicon=item_41553",
+    Text = "雷神之锤III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3753] = {
+    id = 3753,
+    Type = 4096,
+    Title = "itemicon=item_40644",
+    Text = "万神的注视 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3754] = {
+    id = 3754,
+    Type = 4096,
+    Title = "itemicon=item_40646",
+    Text = "万神的注视II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3755] = {
+    id = 3755,
+    Type = 4096,
+    Title = "itemicon=item_40648",
+    Text = "万神的注视III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3756] = {
+    id = 3756,
+    Type = 4096,
+    Title = "itemicon=item_40645",
+    Text = "金枝 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3757] = {
+    id = 3757,
+    Type = 4096,
+    Title = "itemicon=item_40647",
+    Text = "金枝II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3758] = {
+    id = 3758,
+    Type = 4096,
+    Title = "itemicon=item_40649",
+    Text = "金枝III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3759] = {
+    id = 3759,
+    Type = 4096,
+    Title = "itemicon=item_40932",
+    Text = "万物安息 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3760] = {
+    id = 3760,
+    Type = 4096,
+    Title = "itemicon=item_40933",
+    Text = "万物安息II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3761] = {
+    id = 3761,
+    Type = 4096,
+    Title = "itemicon=item_40934",
+    Text = "万物安息III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3762] = {
+    id = 3762,
+    Type = 4096,
+    Title = "itemicon=item_40347",
+    Text = "提尔锋 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3763] = {
+    id = 3763,
+    Type = 4096,
+    Title = "itemicon=item_40348",
+    Text = "提尔锋II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3764] = {
+    id = 3764,
+    Type = 4096,
+    Title = "itemicon=item_40349",
+    Text = "提尔锋III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3765] = {
+    id = 3765,
+    Type = 4096,
+    Title = "itemicon=item_40752",
+    Text = "银槲之剑 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3766] = {
+    id = 3766,
+    Type = 4096,
+    Title = "itemicon=item_40753",
+    Text = "银槲之剑II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3767] = {
+    id = 3767,
+    Type = 4096,
+    Title = "itemicon=item_40754",
+    Text = "银槲之剑III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3768] = {
+    id = 3768,
+    Type = 4096,
+    Title = "itemicon=item_40042",
+    Text = "永恒之枪 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3769] = {
+    id = 3769,
+    Type = 4096,
+    Title = "itemicon=item_40043",
+    Text = "永恒之枪II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3770] = {
+    id = 3770,
+    Type = 4096,
+    Title = "itemicon=item_40044",
+    Text = "永恒之枪III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3771] = {
+    id = 3771,
+    Type = 4096,
+    Title = "itemicon=item_62528",
+    Text = "湮灭者 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3772] = {
+    id = 3772,
+    Type = 4096,
+    Title = "itemicon=item_62529",
+    Text = "湮灭者II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3773] = {
+    id = 3773,
+    Type = 4096,
+    Title = "itemicon=item_62530",
+    Text = "湮灭者III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3774] = {
+    id = 3774,
+    Type = 4096,
+    Title = "itemicon=item_41855",
+    Text = "硝烟终结者 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3775] = {
+    id = 3775,
+    Type = 4096,
+    Title = "itemicon=item_41856",
+    Text = "硝烟终结者II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3776] = {
+    id = 3776,
+    Type = 4096,
+    Title = "itemicon=item_41857",
+    Text = "硝烟终结者III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3777] = {
+    id = 3777,
+    Type = 4096,
+    Title = "itemicon=item_41241",
+    Text = "凛冬结晶 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3778] = {
+    id = 3778,
+    Type = 4096,
+    Title = "itemicon=item_41242",
+    Text = "凛冬结晶II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3779] = {
+    id = 3779,
+    Type = 4096,
+    Title = "itemicon=item_41243",
+    Text = "凛冬结晶III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3780] = {
+    id = 3780,
+    Type = 129,
+    Title = "",
+    Text = "任务%s已被其他成功会员完成",
+    button = "",
+    buttonF = ""
+  },
+  [3781] = {
+    id = 3781,
+    Type = 129,
+    Title = "",
+    Text = "你的公会权限已变更，任务%s已被清除",
+    button = "",
+    buttonF = ""
+  },
+  [3782] = {
+    id = 3782,
+    Type = 1,
+    Title = "",
+    Text = "公会仓库内材料不足",
+    button = "",
+    buttonF = ""
+  },
+  [3783] = {
+    id = 3783,
+    Type = 1,
+    Title = "",
+    Text = "只有会长/副会长可以打造神器",
+    button = "",
+    buttonF = ""
+  },
+  [3784] = {
+    id = 3784,
+    Type = 1,
+    Title = "",
+    Text = "已达神器数量上限，请提升建筑等级",
+    button = "",
+    buttonF = ""
+  },
+  [3785] = {
+    id = 3785,
+    Type = 1,
+    Title = "",
+    Text = "已达%s数量上限，请提升建筑等级",
+    button = "",
+    buttonF = ""
+  },
+  [3786] = {
+    id = 3786,
+    Type = 2,
+    Title = "",
+    Text = "神器分配已变更，是否确认?",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3787] = {
+    id = 3787,
+    Type = 1,
+    Title = "",
+    Text = "没有需要归还的神器",
+    button = "",
+    buttonF = ""
+  },
+  [3788] = {
+    id = 3788,
+    Type = 129,
+    Title = "",
+    Text = "%s 已归还%s",
+    button = "",
+    buttonF = ""
+  },
+  [3789] = {
+    id = 3789,
+    Type = 1,
+    Title = "",
+    Text = "暂时没有可制作的神器",
+    button = "",
+    buttonF = ""
+  },
+  [3790] = {
+    id = 3790,
+    Type = 1,
+    Title = "",
+    Text = "凭借大家的努力，%s终于在%s的手中重获新生！",
+    button = "",
+    buttonF = ""
+  },
+  [3791] = {
+    id = 3791,
+    Type = 1,
+    Title = "",
+    Text = "当前未装备同类装备，无法装备该神器。",
+    button = "",
+    buttonF = ""
+  },
+  [3792] = {
+    id = 3792,
+    Type = 1,
+    Title = "",
+    Text = "当前未装备同类装备，已解除神器。",
+    button = "",
+    buttonF = ""
+  },
+  [3793] = {
+    id = 3793,
+    Type = 1,
+    Title = "",
+    Text = "每件神器每日分配次数不得超过%s次",
+    button = "",
+    buttonF = ""
+  },
+  [3794] = {
+    id = 3794,
+    Type = 1,
+    Title = "",
+    Text = "无法分配该神器，对方无法使用该神器",
+    button = "",
+    buttonF = ""
+  },
+  [3795] = {
+    id = 3795,
+    Type = 1,
+    Title = "",
+    Text = "该道具无法在当前地图使用",
+    button = "",
+    buttonF = ""
+  },
+  [3796] = {
+    id = 3796,
+    Type = 2,
+    Title = "",
+    Text = "是否将该神器分配给当前玩家？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3797] = {
+    id = 3797,
+    Type = 2,
+    Title = "",
+    Text = "是否回收该神器？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3798] = {
+    id = 3798,
+    Type = 2,
+    Title = "",
+    Text = "是否取消回收该神器？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [3799] = {
+    id = 3799,
+    Type = 1,
+    Title = "",
+    Text = "已成功收回神器，神器将在%s秒后存放至公会资产",
+    button = "",
+    buttonF = ""
+  },
+  [3800] = {
+    id = 3800,
+    Type = 1,
+    Title = "",
+    Text = "冒险者，您已经拥有了这件物品了呢~",
+    button = "",
+    buttonF = ""
+  },
+  [3801] = {
+    id = 3801,
+    Type = 129,
+    Title = "",
+    Text = "%s已被%s回收，神器将在%s秒后存放至公会资产",
+    button = "",
+    buttonF = ""
+  },
+  [3802] = {
+    id = 3802,
+    Type = 1,
+    Title = "",
+    Text = "已成功分配神器",
+    button = "",
+    buttonF = ""
+  },
+  [3803] = {
+    id = 3803,
+    Type = 129,
+    Title = "",
+    Text = "获得了 %s分配的%s",
+    button = "",
+    buttonF = ""
+  },
+  [3804] = {
+    id = 3804,
+    Type = 1,
+    Title = "",
+    Text = "已成功取消收回神器",
+    button = "",
+    buttonF = ""
+  },
+  [3805] = {
+    id = 3805,
+    Type = 129,
+    Title = "",
+    Text = "%s取消了对%s的回收",
+    button = "",
+    buttonF = ""
+  },
+  [3806] = {
+    id = 3806,
+    Type = 1,
+    Title = "",
+    Text = "当前没有可以分配与回收的神器",
+    button = "",
+    buttonF = ""
+  },
+  [3807] = {
+    id = 3807,
+    Type = 1,
+    Title = "",
+    Text = "不可存入%s仓库",
+    button = "",
+    buttonF = ""
+  },
+  [3808] = {
+    id = 3808,
+    Type = 1,
+    Title = "",
+    Text = "需要公会的会长和副会长才可以进行兑换哦！",
+    button = "",
+    buttonF = ""
+  },
+  [3809] = {
+    id = 3809,
+    Type = 1,
+    Title = "",
+    Text = " 消耗{item=%s}x%s个，成功兑换了{item=%s}x%s个，已添加到公会仓库！",
+    button = "",
+    buttonF = ""
+  },
+  [3810] = {
+    id = 3810,
+    Type = 1,
+    Title = "",
+    Text = "当前传奇冶炼屋已被占用，请稍后再试。",
+    button = "",
+    buttonF = ""
+  },
+  [3900] = {
+    id = 3900,
+    Type = 4096,
+    Title = "itemicon=item_45551",
+    Text = "太阳头盔 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3901] = {
+    id = 3901,
+    Type = 4096,
+    Title = "itemicon=item_45552",
+    Text = "太阳神头盔II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3902] = {
+    id = 3902,
+    Type = 4096,
+    Title = "itemicon=item_45553",
+    Text = "光耀太阳神头盔III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3903] = {
+    id = 3903,
+    Type = 4096,
+    Title = "itemicon=item_45554",
+    Text = "月亮头盔 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3904] = {
+    id = 3904,
+    Type = 4096,
+    Title = "itemicon=item_45555",
+    Text = "月神头盔II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3905] = {
+    id = 3905,
+    Type = 4096,
+    Title = "itemicon=item_45556",
+    Text = "胧月神头盔III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3906] = {
+    id = 3906,
+    Type = 4096,
+    Title = "itemicon=item_45557",
+    Text = "星辰头盔 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3907] = {
+    id = 3907,
+    Type = 4096,
+    Title = "itemicon=item_45558",
+    Text = "星神头盔II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3908] = {
+    id = 3908,
+    Type = 4096,
+    Title = "itemicon=item_45559",
+    Text = "璀璨星神头盔III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3909] = {
+    id = 3909,
+    Type = 4096,
+    Title = "itemicon=item_45606",
+    Text = "焰耀头盔 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3912] = {
+    id = 3912,
+    Type = 4096,
+    Title = "itemicon=item_47067",
+    Text = "太阳背饰 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3913] = {
+    id = 3913,
+    Type = 4096,
+    Title = "itemicon=item_47068",
+    Text = "太阳神背饰II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3914] = {
+    id = 3914,
+    Type = 4096,
+    Title = "itemicon=item_47069",
+    Text = "光耀太阳神背饰III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3915] = {
+    id = 3915,
+    Type = 4096,
+    Title = "itemicon=item_47070",
+    Text = "月亮背饰 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3916] = {
+    id = 3916,
+    Type = 4096,
+    Title = "itemicon=item_47071",
+    Text = "月神背饰II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3917] = {
+    id = 3917,
+    Type = 4096,
+    Title = "itemicon=item_47072",
+    Text = "胧月神背饰III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3918] = {
+    id = 3918,
+    Type = 4096,
+    Title = "itemicon=item_47073",
+    Text = "星辰背饰 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3919] = {
+    id = 3919,
+    Type = 4096,
+    Title = "itemicon=item_47074",
+    Text = "星神背饰II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3920] = {
+    id = 3920,
+    Type = 4096,
+    Title = "itemicon=item_47075",
+    Text = "璀璨星神背饰III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3950] = {
+    id = 3950,
+    Type = 4096,
+    Title = "itemicon=item_62803",
+    Text = "拂晓之光 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3951] = {
+    id = 3951,
+    Type = 4096,
+    Title = "itemicon=item_62804",
+    Text = "拂晓之光II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3952] = {
+    id = 3952,
+    Type = 4096,
+    Title = "itemicon=item_62805",
+    Text = "拂晓之光III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3953] = {
+    id = 3953,
+    Type = 4096,
+    Title = "itemicon=item_63103",
+    Text = "月神的呢喃 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3954] = {
+    id = 3954,
+    Type = 4096,
+    Title = "itemicon=item_63104",
+    Text = "月神的呢喃II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3955] = {
+    id = 3955,
+    Type = 4096,
+    Title = "itemicon=item_63105",
+    Text = "月神的呢喃III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3956] = {
+    id = 3956,
+    Type = 4096,
+    Title = "itemicon=item_63402",
+    Text = "全知魔神书 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3957] = {
+    id = 3957,
+    Type = 4096,
+    Title = "itemicon=item_63403",
+    Text = "全知魔神书II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3958] = {
+    id = 3958,
+    Type = 4096,
+    Title = "itemicon=item_63404",
+    Text = "全知魔神书III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3959] = {
+    id = 3959,
+    Type = 4096,
+    Title = "itemicon=item_44340",
+    Text = "天后的恸哭 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3960] = {
+    id = 3960,
+    Type = 4096,
+    Title = "itemicon=item_44341",
+    Text = "天后的恸哭II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3961] = {
+    id = 3961,
+    Type = 4096,
+    Title = "itemicon=item_44342",
+    Text = "天后的恸哭III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3962] = {
+    id = 3962,
+    Type = 4096,
+    Title = "itemicon=item_44607",
+    Text = "百鬼封尽 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3963] = {
+    id = 3963,
+    Type = 4096,
+    Title = "itemicon=item_44608",
+    Text = "百鬼封尽II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3964] = {
+    id = 3964,
+    Type = 4096,
+    Title = "itemicon=item_44609",
+    Text = "百鬼封尽III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3965] = {
+    id = 3965,
+    Type = 4096,
+    Title = "itemicon=item_63609",
+    Text = "白银凶星 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3966] = {
+    id = 3966,
+    Type = 4096,
+    Title = "itemicon=item_63610",
+    Text = "白银凶星II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3967] = {
+    id = 3967,
+    Type = 4096,
+    Title = "itemicon=item_63611",
+    Text = "白银凶星III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3968] = {
+    id = 3968,
+    Type = 4096,
+    Title = "itemicon=item_63909",
+    Text = "尤佩雷斯灭龙炮 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3969] = {
+    id = 3969,
+    Type = 4096,
+    Title = "itemicon=item_63910",
+    Text = "尤佩雷斯灭龙炮II 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3970] = {
+    id = 3970,
+    Type = 4096,
+    Title = "itemicon=item_63911",
+    Text = "尤佩雷斯灭龙炮III 已开放制作",
+    button = "",
+    buttonF = ""
+  },
+  [3998] = {
+    id = 3998,
+    Type = 128,
+    Title = "",
+    Text = "%s被击杀了，以下冒险者获得了奖励：\n%s",
+    button = "",
+    buttonF = ""
+  },
+  [3999] = {
+    id = 3999,
+    Type = 128,
+    Title = "",
+    Text = "以下冒险家获得了%s的掉落：\n%s",
+    button = "",
+    buttonF = ""
+  },
+  [4000] = {
+    id = 4000,
+    Type = 128,
+    Title = "",
+    Text = "%s击杀了%s成为了MVP",
+    button = "",
+    buttonF = ""
+  },
+  [4001] = {
+    id = 4001,
+    Type = 128,
+    Title = "",
+    Text = "我的表现:\n%s",
+    button = "",
+    buttonF = ""
+  },
+  [4002] = {
+    id = 4002,
+    Type = 129,
+    Title = "",
+    Text = "祝贺你！冒险技能点重置成功，请谨慎分配。",
+    button = "",
+    buttonF = ""
+  },
+  [4003] = {
+    id = 4003,
+    Type = 128,
+    Title = "",
+    Text = "[63cd4e]%s[-]技能遗忘，返还冒险技能点[63cd4e]%s[-]和[63cd4e]%s[-]Zeny",
+    button = "",
+    buttonF = ""
+  },
+  [4004] = {
+    id = 4004,
+    Type = 128,
+    Title = "",
+    Text = "共返还[63cd4e]%s[-]点冒险技能点和[63cd4e]%s[-]Zeny。",
+    button = "",
+    buttonF = ""
+  },
+  [4005] = {
+    id = 4005,
+    Type = 128,
+    Title = "",
+    Text = "冒险技能[63cd4e]大型背包[-]，学习点从2降至1，返还[63cd4e]1[-]点冒险技能点",
+    button = "",
+    buttonF = ""
+  },
+  [4006] = {
+    id = 4006,
+    Type = 128,
+    Title = "",
+    Text = "冒险技能[63cd4e]收纳小能手[-]，学习点从2降至1，返还[63cd4e]1[-]点冒险技能点",
+    button = "",
+    buttonF = ""
+  },
+  [4007] = {
+    id = 4007,
+    Type = 128,
+    Title = "",
+    Text = "冒险技能[63cd4e]双面夹层[-]，学习点从3降至1，返还[63cd4e]2[-]点冒险技能点",
+    button = "",
+    buttonF = ""
+  },
+  [4008] = {
+    id = 4008,
+    Type = 128,
+    Title = "",
+    Text = "冒险技能[63cd4e]收纳达人[-]，学习点从3降至1，返还[63cd4e]2[-]点冒险技能点",
+    button = "",
+    buttonF = ""
+  },
+  [4009] = {
+    id = 4009,
+    Type = 2,
+    Title = "",
+    Text = "[63cd4e]%s[-]\n协助你领取任务[63cd4e]%s[-]",
+    button = "领取",
+    buttonF = "取消"
+  },
+  [4010] = {
+    id = 4010,
+    Type = 2,
+    Title = "",
+    Text = "[63cd4e]%s[-]\n协助你完成任务[63cd4e]%s[-]",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [4011] = {
+    id = 4011,
+    Type = 2,
+    Title = "",
+    Text = "[63cd4e]%s[-]组队接取了任务：\n[63cd4e]%s[-]，是否替换？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [4012] = {
+    id = 4012,
+    Type = 1,
+    Title = "",
+    Text = "已完成拍摄",
+    button = "",
+    buttonF = ""
+  },
+  [4013] = {
+    id = 4013,
+    Type = 1,
+    Title = "",
+    Text = "%s已经完成提交",
+    button = "",
+    buttonF = ""
+  },
+  [4014] = {
+    id = 4014,
+    Type = 1,
+    Title = "",
+    Text = "%s已经完成访问",
+    button = "",
+    buttonF = ""
+  },
+  [4015] = {
+    id = 4015,
+    Type = 129,
+    Title = "",
+    Text = "成功占据了%s",
+    button = "",
+    buttonF = ""
+  },
+  [4016] = {
+    id = 4016,
+    Type = 129,
+    Title = "",
+    Text = "连续%s次成功占据了%s",
+    button = "",
+    buttonF = ""
+  },
+  [4017] = {
+    id = 4017,
+    Type = 129,
+    Title = "",
+    Text = "公会 获得%s*%s ",
+    button = "",
+    buttonF = ""
+  },
+  [4018] = {
+    id = 4018,
+    Type = 1,
+    Title = "",
+    Text = "当前未拥有神器",
+    button = "",
+    buttonF = ""
+  },
+  [4019] = {
+    id = 4019,
+    Type = 1,
+    Title = "",
+    Text = "没有制作神器的权限",
+    button = "",
+    buttonF = ""
+  },
+  [4020] = {
+    id = 4020,
+    Type = 1,
+    Title = "",
+    Text = "该神器已被分配",
+    button = "",
+    buttonF = ""
+  },
+  [4021] = {
+    id = 4021,
+    Type = 1,
+    Title = "",
+    Text = "没有分配该神器的权限",
+    button = "",
+    buttonF = ""
+  },
+  [4022] = {
+    id = 4022,
+    Type = 1,
+    Title = "",
+    Text = "请选中归还的神器",
+    button = "",
+    buttonF = ""
+  },
+  [4023] = {
+    id = 4023,
+    Type = 1,
+    Title = "",
+    Text = "当前神器已被收回",
+    button = "",
+    buttonF = ""
+  },
+  [4024] = {
+    id = 4024,
+    Type = 1,
+    Title = "",
+    Text = "无法对当前成员进行操作",
+    button = "",
+    buttonF = ""
+  },
+  [4025] = {
+    id = 4025,
+    Type = 129,
+    Title = "",
+    Text = "从%s开启的%s中，获得了%s*%s",
+    button = "",
+    buttonF = ""
+  },
+  [4026] = {
+    id = 4026,
+    Type = 256,
+    Title = "秒数倒计",
+    Text = "   飞行[c][ffff00]{countDown=%s}[-][/c]秒内到达终点",
+    button = "",
+    buttonF = ""
+  },
+  [4030] = {
+    id = 4030,
+    Type = 1,
+    Title = "",
+    Text = "本周已经不能使用B格猫币开启更多的华丽宝箱了哦！",
+    button = "",
+    buttonF = ""
+  },
+  [4031] = {
+    id = 4031,
+    Type = 1,
+    Title = "",
+    Text = "本周已经不能使用公会资金开启更多的华丽宝箱了哦！",
+    button = "",
+    buttonF = ""
+  },
+  [4032] = {
+    id = 4032,
+    Type = 1,
+    Title = "",
+    Text = "公会资金不足",
+    button = "",
+    buttonF = ""
+  },
+  [4033] = {
+    id = 4033,
+    Type = 1,
+    Title = "",
+    Text = "当前正有人进行操作",
+    button = "",
+    buttonF = ""
+  },
+  [4034] = {
+    id = 4034,
+    Type = 1,
+    Title = "",
+    Text = "只有会长/副会长才能开启",
+    button = "",
+    buttonF = ""
+  },
+  [4035] = {
+    id = 4035,
+    Type = 1,
+    Title = "",
+    Text = "%s已开启",
+    button = "",
+    buttonF = ""
+  },
+  [4036] = {
+    id = 4036,
+    Type = 129,
+    Title = "",
+    Text = "公会获得了%s*%s",
+    button = "",
+    buttonF = ""
+  },
+  [4037] = {
+    id = 4037,
+    Type = 129,
+    Title = "",
+    Text = "华丽宝箱的成员奖励已发放，请前往猫管家处领取。（新加入成员需要下一次重置后才可以享受宝箱额外奖励）",
+    button = "",
+    buttonF = ""
+  },
+  [4038] = {
+    id = 4038,
+    Type = 1,
+    Title = "",
+    Text = "%s使用了%s%s开启了%s！[c][ff8a00]{ts=%s}[u][/u][-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [4039] = {
+    id = 4039,
+    Type = 1,
+    Title = "",
+    Text = "%s使用了%s%s开启了%s！%s获得了%s的%s，真是幸运！",
+    button = "",
+    buttonF = ""
+  },
+  [4040] = {
+    id = 4040,
+    Type = 2,
+    Title = "",
+    Text = "是否开启%s？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [4041] = {
+    id = 4041,
+    Type = 1,
+    Title = "",
+    Text = "当前城池已失去，无法开启该华丽宝箱",
+    button = "",
+    buttonF = ""
+  },
+  [4042] = {
+    id = 4042,
+    Type = 1,
+    Title = "",
+    Text = "没有可以开启的据点宝箱",
+    button = "",
+    buttonF = ""
+  },
+  [4043] = {
+    id = 4043,
+    Type = 1,
+    Title = "",
+    Text = "新建公会和新加入公会的玩家， 需要在下一次重置后可以购买宝箱！",
+    button = "",
+    buttonF = ""
+  },
+  [4044] = {
+    id = 4044,
+    Type = 1,
+    Title = "",
+    Text = "非当前公会成员，查看失败",
+    button = "",
+    buttonF = ""
+  },
+  [4045] = {
+    id = 4045,
+    Type = 1,
+    Title = "",
+    Text = "邀请的玩家正处于退出公会时间惩罚中，暂时无法加入其他公会！",
+    button = "",
+    buttonF = ""
+  },
+  [4046] = {
+    id = 4046,
+    Type = 1,
+    Title = "",
+    Text = "你当前处于退出公会时间处罚中，暂时无法加入其他公会！",
+    button = "",
+    buttonF = ""
+  },
+  [4047] = {
+    id = 4047,
+    Type = 2,
+    Title = "确认购买",
+    Text = "您是否要购买%s？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [4048] = {
+    id = 4048,
+    Type = 1,
+    Title = "",
+    Text = "消耗%s*%s",
+    button = "",
+    buttonF = ""
+  },
+  [4049] = {
+    id = 4049,
+    Type = 1,
+    Title = "",
+    Text = "本周购买已经达到上限，无法继续购买",
+    button = "",
+    buttonF = ""
+  },
+  [4052] = {
+    id = 4052,
+    Type = 1,
+    Title = "",
+    Text = "已购买%s*%s,在公会仓库中查看",
+    button = "",
+    buttonF = ""
+  },
+  [4053] = {
+    id = 4053,
+    Type = 1,
+    Title = "",
+    Text = "公会战期间无法购买宝箱哦~",
+    button = "",
+    buttonF = ""
+  },
+  [4100] = {
+    id = 4100,
+    Type = 1,
+    Title = "",
+    Text = "材料已满",
+    button = "",
+    buttonF = ""
+  },
+  [4101] = {
+    id = 4101,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，%s已达到本月购买上限！",
+    button = "",
+    buttonF = ""
+  },
+  [4102] = {
+    id = 4102,
+    Type = 2,
+    Title = "",
+    Text = "是否要立刻使用限定特典？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [4103] = {
+    id = 4103,
+    Type = 65536,
+    Title = "关于【梦幻水族馆】",
+    Text = "关于【梦幻水族馆】，有几个游玩注意事项希望客人您能稍微聆听一下。\n当你满含对心中那个TA的思念和快乐才能化为信之波纹，不管你的那位TA在大陆的何处，想必都一定能传递到呢！\n当TA也同样饱含对于你的快乐产生共鸣时，就能驱动童话故事里所描述的【梦幻水族馆】了！",
+    button = "明白了",
+    buttonF = ""
+  },
+  [4200] = {
+    id = 4200,
+    Type = 1,
+    Title = "",
+    Text = "扣除%s个【神秘佣兵券】",
+    button = "",
+    buttonF = ""
+  },
+  [4201] = {
+    id = 4201,
+    Type = 1,
+    Title = "",
+    Text = "扣除%sZeny",
+    button = "",
+    buttonF = ""
+  },
+  [4202] = {
+    id = 4202,
+    Type = 1,
+    Title = "",
+    Text = "由于您的【神秘佣兵券】不足，扣除%s佣兵券，并由%sZeny补足",
+    button = "",
+    buttonF = ""
+  },
+  [4203] = {
+    id = 4203,
+    Type = 1,
+    Title = "",
+    Text = "佣兵猫已达雇佣数量上限，无法再进行雇佣",
+    button = "",
+    buttonF = ""
+  },
+  [4204] = {
+    id = 4204,
+    Type = 1,
+    Title = "",
+    Text = "您的Zeny数量不足，无法雇佣",
+    button = "",
+    buttonF = ""
+  },
+  [4300] = {
+    id = 4300,
+    Type = 65536,
+    Title = "提示",
+    Text = "继续操作代表放弃保存本次重置结果，是否确认继续",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [4301] = {
+    id = 4301,
+    Type = 2,
+    Title = "提示",
+    Text = "当前刷新出来的附魔属性中有较好的属性，是否确认重置",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [4302] = {
+    id = 4302,
+    Type = 1,
+    Title = "",
+    Text = "当前所有属性已达到最大值无法继续提升",
+    button = "",
+    buttonF = ""
+  },
+  [4303] = {
+    id = 4303,
+    Type = 1,
+    Title = "提示",
+    Text = "该装备有还未保存的重置属性，请先保存或者放弃",
+    button = "",
+    buttonF = ""
+  },
+  [4304] = {
+    id = 4304,
+    Type = 2,
+    Title = "提示",
+    Text = "锁定材料不足，是否取消锁定第三属性进行附魔",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [4305] = {
+    id = 4305,
+    Type = 2,
+    Title = "提示",
+    Text = "该装备有还未保存的重置属性，请先前往保存或者放弃",
+    button = "前往",
+    buttonF = "取消"
+  },
+  [4999] = {
+    id = 4999,
+    Type = 65536,
+    Title = "",
+    Text = "已锁定强大的魔物，使用苍蝇翅膀可能会离开锁定范围，是否要使用？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [5001] = {
+    id = 5001,
+    Type = 1,
+    Title = "",
+    Text = "只有队长才能邀请佣兵猫入队",
+    button = "",
+    buttonF = ""
+  },
+  [5002] = {
+    id = 5002,
+    Type = 2,
+    Title = "",
+    Text = "你确定要解雇这位佣兵猫吗？",
+    button = "解雇",
+    buttonF = "取消"
+  },
+  [5003] = {
+    id = 5003,
+    Type = 1,
+    Title = "",
+    Text = "不能邀请，能同时参战的猫数量已达上限",
+    button = "",
+    buttonF = ""
+  },
+  [5004] = {
+    id = 5004,
+    Type = 1,
+    Title = "",
+    Text = "无法邀请其他玩家的佣兵猫牵手",
+    button = "",
+    buttonF = ""
+  },
+  [5005] = {
+    id = 5005,
+    Type = 1,
+    Title = "",
+    Text = "目前状态下无法邀请佣兵猫牵手",
+    button = "",
+    buttonF = ""
+  },
+  [5020] = {
+    id = 5020,
+    Type = 1,
+    Title = "",
+    Text = "不能使用，需要【改装手推车】Lv.5",
+    button = "",
+    buttonF = ""
+  },
+  [5030] = {
+    id = 5030,
+    Type = 1,
+    Title = "",
+    Text = "MVP信息已逾期，请重新打开MVP面板。",
+    button = "",
+    buttonF = ""
+  },
+  [5200] = {
+    id = 5200,
+    Type = 131072,
+    Title = "",
+    Text = "☢警报☢检测到六只不明巨型物体，正在逼近各大主城！请各位冒险者火速前往附近的主城进行警戒！",
+    button = "",
+    buttonF = ""
+  },
+  [5201] = {
+    id = 5201,
+    Type = 131072,
+    Title = "",
+    Text = "经过奥特曼的不休奋战，怪兽招架不住逃走了！但危机的气氛似乎远未散去……",
+    button = "",
+    buttonF = ""
+  },
+  [5202] = {
+    id = 5202,
+    Type = 131072,
+    Title = "",
+    Text = "在奥特曼和各位冒险者的努力下，我们的家园终于保住了！",
+    button = "",
+    buttonF = ""
+  },
+  [5203] = {
+    id = 5203,
+    Type = 1,
+    Title = "",
+    Text = "当前评级：%s",
+    button = "",
+    buttonF = ""
+  },
+  [5204] = {
+    id = 5204,
+    Type = 1,
+    Title = "",
+    Text = "当前评级过低",
+    button = "",
+    buttonF = ""
+  },
+  [5205] = {
+    id = 5205,
+    Type = 131072,
+    Title = "",
+    Text = "！危险！梦罗克地区受到异世界力量的影响，出现了可怕的【异世界·裂痕】，请各位冒险者火速前往修复！",
+    button = "",
+    buttonF = ""
+  },
+  [5206] = {
+    id = 5206,
+    Type = 131072,
+    Title = "",
+    Text = "【异世界·裂痕】暂时被修复了，魔王梦罗克的气息却久未散去……",
+    button = "",
+    buttonF = ""
+  },
+  [5207] = {
+    id = 5207,
+    Type = 1,
+    Title = "",
+    Text = "你的波利需要休息啦~请改天再来哦~",
+    button = "",
+    buttonF = ""
+  },
+  [5208] = {
+    id = 5208,
+    Type = 256,
+    Title = "",
+    Text = "您将于{countDown=%s}秒后离开【异世界·裂痕】",
+    button = "",
+    buttonF = ""
+  },
+  [5209] = {
+    id = 5209,
+    Type = 1,
+    Title = "",
+    Text = "哎呀，活动已经结束啦~",
+    button = "",
+    buttonF = ""
+  },
+  [5210] = {
+    id = 5210,
+    Type = 131072,
+    Title = "",
+    Text = "！危险！异世界的力量正在凝聚，一大批来自异世界的魔物即将穿越【异世界·黑洞】入侵梦罗克，请各位冒险者火速前往！",
+    button = "",
+    buttonF = ""
+  },
+  [5211] = {
+    id = 5211,
+    Type = 131072,
+    Title = "",
+    Text = "来自异世界的魔物暂时被击退了，魔王梦罗克的气息却愈加浓烈了起来……",
+    button = "",
+    buttonF = ""
+  },
+  [5212] = {
+    id = 5212,
+    Type = 131072,
+    Title = "",
+    Text = "！危险！异世界的力量达到了巅峰，魔王梦罗克穿越虚空，降临在了古老的梦罗克！",
+    button = "",
+    buttonF = ""
+  },
+  [5213] = {
+    id = 5213,
+    Type = 131072,
+    Title = "",
+    Text = "在联盟公会的齐力下，魔王梦罗克终于被击退，但是恐惧的气息却似乎并未完全退散……",
+    button = "",
+    buttonF = ""
+  },
+  [5214] = {
+    id = 5214,
+    Type = 131072,
+    Title = "",
+    Text = "异世界的力量渐渐消散，勇敢的冒险者守卫住了自己的家园，魔王梦罗克的气息却似乎并未完全消散……",
+    button = "",
+    buttonF = ""
+  },
+  [5215] = {
+    id = 5215,
+    Type = 131072,
+    Title = "",
+    Text = "！危险！苏克拉特沙漠地区受到异世界力量的影响，出现了可怕的【异世界·裂痕】，请各位冒险者火速前往修复！",
+    button = "",
+    buttonF = ""
+  },
+  [5216] = {
+    id = 5216,
+    Type = 131072,
+    Title = "",
+    Text = "！危险！金字塔1F地区受到异世界力量的影响，出现了可怕的【异世界·裂痕】，请各位冒险者火速前往修复！",
+    button = "",
+    buttonF = ""
+  },
+  [5217] = {
+    id = 5217,
+    Type = 131072,
+    Title = "",
+    Text = "！危险！发乐斯灯塔地区受到异世界力量的影响，出现了可怕的【异世界·裂痕】，请各位冒险者火速前往修复！",
+    button = "",
+    buttonF = ""
+  },
+  [5218] = {
+    id = 5218,
+    Type = 131072,
+    Title = "",
+    Text = "！危险！异世界的力量正在凝聚，一大批来自异世界的魔物即将穿越【异世界·黑洞】入侵苏克拉沙漠，请各位冒险者火速前往！",
+    button = "",
+    buttonF = ""
+  },
+  [5219] = {
+    id = 5219,
+    Type = 131072,
+    Title = "",
+    Text = "！危险！异世界的力量正在凝聚，一大批来自异世界的魔物即将穿越【异世界·黑洞】入侵金字塔1F，请各位冒险者火速前往！",
+    button = "",
+    buttonF = ""
+  },
+  [5220] = {
+    id = 5220,
+    Type = 131072,
+    Title = "",
+    Text = "！危险！异世界的力量正在凝聚，一大批来自异世界的魔物即将穿越【异世界·黑洞】入侵发乐斯灯塔，请各位冒险者火速前往！",
+    button = "",
+    buttonF = ""
+  },
+  [5221] = {
+    id = 5221,
+    Type = 131072,
+    Title = "",
+    Text = "！危险！异世界的力量正在凝聚，一大批来自异世界的魔物即将穿越【异世界·黑洞】入侵普隆德拉南门，请各位冒险者火速前往！",
+    button = "",
+    buttonF = ""
+  },
+  [5222] = {
+    id = 5222,
+    Type = 131072,
+    Title = "",
+    Text = "！危险！异世界的力量正在凝聚，一大批来自异世界的魔物即将穿越【异世界·黑洞】入侵哥布灵森林，请各位冒险者火速前往！",
+    button = "",
+    buttonF = ""
+  },
+  [5223] = {
+    id = 5223,
+    Type = 131072,
+    Title = "",
+    Text = "异世界的力量凝聚到了巅峰，强大的异世界男爵降临在了【异世界·黑洞】！",
+    button = "",
+    buttonF = ""
+  },
+  [5224] = {
+    id = 5224,
+    Type = 1,
+    Title = "",
+    Text = "您已经揭示过今日运势啦~请明日再来哦~！",
+    button = "",
+    buttonF = ""
+  },
+  [5225] = {
+    id = 5225,
+    Type = 1,
+    Title = "",
+    Text = "活动还没有开始哟~请晚一些再来吧~",
+    button = "",
+    buttonF = ""
+  },
+  [5226] = {
+    id = 5226,
+    Type = 131072,
+    Title = "",
+    Text = "来自异世界的魔物暂时被击退了，危险的气息却愈加浓烈了起来……",
+    button = "",
+    buttonF = ""
+  },
+  [5227] = {
+    id = 5227,
+    Type = 131072,
+    Title = "",
+    Text = "经过各位冒险者的不懈努力，%s的重建进度已经达到了%s！",
+    button = "",
+    buttonF = ""
+  },
+  [5228] = {
+    id = 5228,
+    Type = 1,
+    Title = "",
+    Text = "今日捐献次数已满，明天再来出力哦~",
+    button = "",
+    buttonF = ""
+  },
+  [5229] = {
+    id = 5229,
+    Type = 131072,
+    Title = "",
+    Text = "姜饼城要被圣诞礼物攻陷啦~冒险者们快去寻找属于自己的圣诞礼物吧~！",
+    button = "",
+    buttonF = ""
+  },
+  [5230] = {
+    id = 5230,
+    Type = 131072,
+    Title = "",
+    Text = "圣诞礼物都已经被瓜分完了，姜饼城又恢复了往日的宁静……",
+    button = "",
+    buttonF = ""
+  },
+  [5231] = {
+    id = 5231,
+    Type = 131072,
+    Title = "",
+    Text = "！惊喜！哥布灵森林地区受到圣诞气息的影响，出现了【异世界·裂痕】，通关副本可以获得圣诞礼物哦！",
+    button = "",
+    buttonF = ""
+  },
+  [5232] = {
+    id = 5232,
+    Type = 131072,
+    Title = "",
+    Text = "【异世界·裂痕】暂时被修复了，圣诞的气息却愈发浓郁了起来……",
+    button = "",
+    buttonF = ""
+  },
+  [5233] = {
+    id = 5233,
+    Type = 131072,
+    Title = "",
+    Text = "普隆德拉北门出现了【异世界·裂痕】，似乎有什么异常，请冒险者前往一探究竟……",
+    button = "",
+    buttonF = ""
+  },
+  [5234] = {
+    id = 5234,
+    Type = 131072,
+    Title = "",
+    Text = "【异世界·裂痕】暂时被修复了，本源的响应愈发强烈起来……",
+    button = "",
+    buttonF = ""
+  },
+  [5235] = {
+    id = 5235,
+    Type = 131072,
+    Title = "",
+    Text = "倒霉孩子维德在哥布灵森林触发了【异世界·裂痕】，请冒险者前往协助关闭……",
+    button = "",
+    buttonF = ""
+  },
+  [5236] = {
+    id = 5236,
+    Type = 131072,
+    Title = "",
+    Text = "经过冒险者们的协助，【异世界·裂痕】暂时被修复了……",
+    button = "",
+    buttonF = ""
+  },
+  [5237] = {
+    id = 5237,
+    Type = 131072,
+    Title = "",
+    Text = "！惊喜！哥布灵森林地区出现了【异世界·裂痕】，通关副本可以获得咖啵的礼物哦！",
+    button = "",
+    buttonF = ""
+  },
+  [5238] = {
+    id = 5238,
+    Type = 131072,
+    Title = "",
+    Text = "【异世界·裂痕】暂时被修复了，咖啵马上就可以回家啦！",
+    button = "",
+    buttonF = ""
+  },
+  [5239] = {
+    id = 5239,
+    Type = 131072,
+    Title = "",
+    Text = "斐扬南部地区出现了【异世界·裂痕】，喵喵怪盗跑出来啦~请冒险们前去击败他们！",
+    button = "",
+    buttonF = ""
+  },
+  [5240] = {
+    id = 5240,
+    Type = 131072,
+    Title = "",
+    Text = "【异世界·裂痕】暂时被修复了，米娅马上就可以回家啦！",
+    button = "",
+    buttonF = ""
+  },
+  [6000] = {
+    id = 6000,
+    Type = 1,
+    Title = "",
+    Text = "安全密码需要由%s - %s位数字与字母组成",
+    button = "",
+    buttonF = ""
+  },
+  [6001] = {
+    id = 6001,
+    Type = 1,
+    Title = "",
+    Text = "密码不一致，请重新输入",
+    button = "",
+    buttonF = ""
+  },
+  [6002] = {
+    id = 6002,
+    Type = 1,
+    Title = "",
+    Text = "安全密码设置成功",
+    button = "",
+    buttonF = ""
+  },
+  [6003] = {
+    id = 6003,
+    Type = 2,
+    Title = "",
+    Text = "重置后安全密码失效，是否重置？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [6004] = {
+    id = 6004,
+    Type = 1,
+    Title = "",
+    Text = "安全密码开始重置",
+    button = "",
+    buttonF = ""
+  },
+  [6005] = {
+    id = 6005,
+    Type = 1,
+    Title = "",
+    Text = "安全密码修改成功",
+    button = "",
+    buttonF = ""
+  },
+  [6006] = {
+    id = 6006,
+    Type = 1,
+    Title = "",
+    Text = "输入的密码错误，请重新输入",
+    button = "",
+    buttonF = ""
+  },
+  [6007] = {
+    id = 6007,
+    Type = 1,
+    Title = "",
+    Text = "安全密码需要由6 - 12位数字与字母组成",
+    button = "",
+    buttonF = ""
+  },
+  [6008] = {
+    id = 6008,
+    Type = 2,
+    Title = "",
+    Text = "是否取消安全密码重置？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [6009] = {
+    id = 6009,
+    Type = 1,
+    Title = "",
+    Text = "安全密码已取消重置",
+    button = "",
+    buttonF = ""
+  },
+  [6010] = {
+    id = 6010,
+    Type = 1,
+    Title = "",
+    Text = "你的安全密码正在重置中",
+    button = "",
+    buttonF = ""
+  },
+  [6011] = {
+    id = 6011,
+    Type = 1,
+    Title = "",
+    Text = "输入安全密码成功",
+    button = "",
+    buttonF = ""
+  },
+  [6012] = {
+    id = 6012,
+    Type = 1,
+    Title = "",
+    Text = "输入安全密码错误，请重新输入",
+    button = "",
+    buttonF = ""
+  },
+  [6013] = {
+    id = 6013,
+    Type = 1,
+    Title = "",
+    Text = "输入错误次数过多，请等待一段时间后输入",
+    button = "",
+    buttonF = ""
+  },
+  [6014] = {
+    id = 6014,
+    Type = 1,
+    Title = "",
+    Text = "旧密码与新密码相同，请重新输入",
+    button = "",
+    buttonF = ""
+  },
+  [7001] = {
+    id = 7001,
+    Type = 1,
+    Title = "",
+    Text = "试练已经开始！消灭所有魔物，才能继续前进！",
+    button = "",
+    buttonF = ""
+  },
+  [7002] = {
+    id = 7002,
+    Type = 1,
+    Title = "",
+    Text = "干的漂亮！这是你应得的奖励！",
+    button = "",
+    buttonF = ""
+  },
+  [7003] = {
+    id = 7003,
+    Type = 1,
+    Title = "",
+    Text = "出现了离开的大门",
+    button = "",
+    buttonF = ""
+  },
+  [7004] = {
+    id = 7004,
+    Type = 1,
+    Title = "",
+    Text = "消灭所有魔物，才能继续前进",
+    button = "",
+    buttonF = ""
+  },
+  [7005] = {
+    id = 7005,
+    Type = 1,
+    Title = "",
+    Text = "某处的门已出现",
+    button = "",
+    buttonF = ""
+  },
+  [7006] = {
+    id = 7006,
+    Type = 1,
+    Title = "",
+    Text = "似乎需要打开什么才能前进",
+    button = "",
+    buttonF = ""
+  },
+  [7200] = {
+    id = 7200,
+    Type = 1,
+    Title = "",
+    Text = "大门非常不稳定，不能解锁/开启",
+    button = "",
+    buttonF = ""
+  },
+  [7201] = {
+    id = 7201,
+    Type = 1,
+    Title = "",
+    Text = "您没有40个“银质勋章”无法打开大门",
+    button = "",
+    buttonF = ""
+  },
+  [7202] = {
+    id = 7202,
+    Type = 1,
+    Title = "",
+    Text = "大门没有开启无法进入",
+    button = "",
+    buttonF = ""
+  },
+  [7203] = {
+    id = 7203,
+    Type = 1,
+    Title = "",
+    Text = "消耗银质勋章，大门开启。",
+    button = "",
+    buttonF = ""
+  },
+  [7204] = {
+    id = 7204,
+    Type = 1,
+    Title = "",
+    Text = "等级不足，无法开启大门",
+    button = "",
+    buttonF = ""
+  },
+  [7205] = {
+    id = 7205,
+    Type = 1,
+    Title = "",
+    Text = "变更公会后需要等到大门再次刷新才能开启。",
+    button = "",
+    buttonF = ""
+  },
+  [7300] = {
+    id = 7300,
+    Type = 1,
+    Title = "",
+    Text = "MVP争夺战尚未开启",
+    button = "",
+    buttonF = ""
+  },
+  [7301] = {
+    id = 7301,
+    Type = 1,
+    Title = "",
+    Text = "当前Base等级不足%s，加入失败",
+    button = "",
+    buttonF = ""
+  },
+  [7302] = {
+    id = 7302,
+    Type = 1,
+    Title = "",
+    Text = "前方危险，请在组队状态下进入",
+    button = "",
+    buttonF = ""
+  },
+  [7303] = {
+    id = 7303,
+    Type = 1,
+    Title = "",
+    Text = "只能队长才能够进入",
+    button = "",
+    buttonF = ""
+  },
+  [7304] = {
+    id = 7304,
+    Type = 1,
+    Title = "",
+    Text = "队伍人数不足%s人，加入失败",
+    button = "",
+    buttonF = ""
+  },
+  [7305] = {
+    id = 7305,
+    Type = 1,
+    Title = "",
+    Text = "队伍成员Base等级不足%s，加入失败",
+    button = "",
+    buttonF = ""
+  },
+  [7306] = {
+    id = 7306,
+    Type = 1,
+    Title = "",
+    Text = "%s取消了匹配",
+    button = "",
+    buttonF = ""
+  },
+  [7307] = {
+    id = 7307,
+    Type = 2,
+    Title = "",
+    Text = "退出当前队伍后将离开该场景，是否确认？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [7308] = {
+    id = 7308,
+    Type = 1,
+    Title = "",
+    Text = "MVP与Mini已全部被击败，冒险者们请抓紧离开吧！",
+    button = "",
+    buttonF = ""
+  },
+  [7309] = {
+    id = 7309,
+    Type = 129,
+    Title = "",
+    Text = "已加入[MVP争夺战]匹配队列",
+    button = "",
+    buttonF = ""
+  },
+  [7310] = {
+    id = 7310,
+    Type = 129,
+    Title = "",
+    Text = "%s取消了[MVP争夺战]的匹配",
+    button = "",
+    buttonF = ""
+  },
+  [7311] = {
+    id = 7311,
+    Type = 2,
+    Title = "",
+    Text = "取消匹配后，队伍内所有队员都将退出匹配队列，是否依旧退出？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [7312] = {
+    id = 7312,
+    Type = 2,
+    Title = "",
+    Text = "退出组队将会同时离开当前场景，是否依旧退出？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [7313] = {
+    id = 7313,
+    Type = 129,
+    Title = "",
+    Text = "队伍已解散，已退出匹配队列",
+    button = "",
+    buttonF = ""
+  },
+  [7314] = {
+    id = 7314,
+    Type = 129,
+    Title = "",
+    Text = "MVP剩余击杀次数已达上限，无法获得奖励。",
+    button = "",
+    buttonF = ""
+  },
+  [7315] = {
+    id = 7315,
+    Type = 129,
+    Title = "",
+    Text = "Mini剩余击杀次数已达上限，无法获得奖励。",
+    button = "",
+    buttonF = ""
+  },
+  [7316] = {
+    id = 7316,
+    Type = 129,
+    Title = "",
+    Text = "已成功击败%s，MVP剩余击杀次数-1。",
+    button = "",
+    buttonF = ""
+  },
+  [7317] = {
+    id = 7317,
+    Type = 129,
+    Title = "",
+    Text = "已成功击败%s，Mini剩余击杀次数-1。",
+    button = "",
+    buttonF = ""
+  },
+  [7318] = {
+    id = 7318,
+    Type = 2,
+    Title = "",
+    Text = "由于活动时间与周期变更，您的预约已失效，请重新预约。",
+    button = "确认",
+    buttonF = ""
+  },
+  [8001] = {
+    id = 8001,
+    Type = 1,
+    Title = "",
+    Text = "缺少目标装备，请穿戴上需要精炼的装备。",
+    button = "",
+    buttonF = ""
+  },
+  [8010] = {
+    id = 8010,
+    Type = 1,
+    Title = "",
+    Text = "冒险时长不足，无法进行冒险",
+    button = "",
+    buttonF = ""
+  },
+  [8011] = {
+    id = 8011,
+    Type = 1,
+    Title = "",
+    Text = "冒险丸子数量不足，无法进行冒险",
+    button = "",
+    buttonF = ""
+  },
+  [8012] = {
+    id = 8012,
+    Type = 1,
+    Title = "",
+    Text = "本次冒险的宠物数量不能超过%s只",
+    button = "",
+    buttonF = ""
+  },
+  [8013] = {
+    id = 8013,
+    Type = 1,
+    Title = "",
+    Text = "冒险队列已满，无法进行冒险",
+    button = "",
+    buttonF = ""
+  },
+  [8014] = {
+    id = 8014,
+    Type = 1,
+    Title = "",
+    Text = "探索新区域需要更多的伙伴一同前往哦！",
+    button = "",
+    buttonF = ""
+  },
+  [8015] = {
+    id = 8015,
+    Type = 1,
+    Title = "",
+    Text = "未达到条件，无法进行冒险",
+    button = "",
+    buttonF = ""
+  },
+  [8016] = {
+    id = 8016,
+    Type = 1,
+    Title = "",
+    Text = "冒险已完成，冒险奖励领取成功",
+    button = "",
+    buttonF = ""
+  },
+  [8017] = {
+    id = 8017,
+    Type = 1,
+    Title = "",
+    Text = "%s已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [8018] = {
+    id = 8018,
+    Type = 1,
+    Title = "",
+    Text = "未选择宠物，无法进行冒险",
+    button = "",
+    buttonF = ""
+  },
+  [8019] = {
+    id = 8019,
+    Type = 1,
+    Title = "",
+    Text = "没有可用于冒险的宠物",
+    button = "",
+    buttonF = ""
+  },
+  [8020] = {
+    id = 8020,
+    Type = 1,
+    Title = "",
+    Text = "%s获得了%s经验",
+    button = "",
+    buttonF = ""
+  },
+  [8021] = {
+    id = 8021,
+    Type = 1,
+    Title = "",
+    Text = "当前没有宠物在身边，无法使用",
+    button = "",
+    buttonF = ""
+  },
+  [8022] = {
+    id = 8022,
+    Type = 1,
+    Title = "",
+    Text = "该区域尚未解锁，无法选择",
+    button = "",
+    buttonF = ""
+  },
+  [8023] = {
+    id = 8023,
+    Type = 1,
+    Title = "",
+    Text = "冒险开始！",
+    button = "",
+    buttonF = ""
+  },
+  [8024] = {
+    id = 8024,
+    Type = 2,
+    Title = "",
+    Text = "该宠物等级大于你的base等级，取出时宠物等级将临时降低至%s级，是否取出？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [8025] = {
+    id = 8025,
+    Type = 2,
+    Title = "",
+    Text = "该宠物等级大于你的base等级，出战时宠物等级将临时降低至%s级，是否取出？",
+    button = "",
+    buttonF = ""
+  },
+  [8026] = {
+    id = 8026,
+    Type = 65536,
+    Title = "",
+    Text = "当您的宠物等级大于您的Base等级，宠物等级将会与您的当前等级适配，请注意。",
+    button = "",
+    buttonF = ""
+  },
+  [8101] = {
+    id = 8101,
+    Type = 1,
+    Title = "",
+    Text = "无法派遣，已在出战/派遣中",
+    button = "",
+    buttonF = ""
+  },
+  [8102] = {
+    id = 8102,
+    Type = 1,
+    Title = "",
+    Text = "转换工作过于频繁，每只宠物每日只可转换%s次",
+    button = "",
+    buttonF = ""
+  },
+  [8103] = {
+    id = 8103,
+    Type = 1,
+    Title = "",
+    Text = "无法派遣，此宠物不适合此处打工",
+    button = "",
+    buttonF = ""
+  },
+  [8104] = {
+    id = 8104,
+    Type = 1,
+    Title = "",
+    Text = "同时打工场所达到上限，可通过冒险技能/特典卡增加上限",
+    button = "",
+    buttonF = ""
+  },
+  [8105] = {
+    id = 8105,
+    Type = 1,
+    Title = "",
+    Text = "无法打工，请选择1只宠物进行打工",
+    button = "",
+    buttonF = ""
+  },
+  [8106] = {
+    id = 8106,
+    Type = 2,
+    Title = "",
+    Text = "是否结束%s的打工？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [8107] = {
+    id = 8107,
+    Type = 1,
+    Title = "",
+    Text = "未达到开启条件",
+    button = "",
+    buttonF = ""
+  },
+  [8108] = {
+    id = 8108,
+    Type = 1,
+    Title = "",
+    Text = "同时打工场所已达到上限",
+    button = "",
+    buttonF = ""
+  },
+  [8109] = {
+    id = 8109,
+    Type = 1,
+    Title = "",
+    Text = "请先领取完打工奖励，再进行召回",
+    button = "",
+    buttonF = ""
+  },
+  [8110] = {
+    id = 8110,
+    Type = 1,
+    Title = "",
+    Text = "抱歉无法打工，请重新孵化宠物来获得新的打工技能",
+    button = "",
+    buttonF = ""
+  },
+  [8111] = {
+    id = 8111,
+    Type = 129,
+    Title = "",
+    Text = "获得“卡普拉公会”宠物打工场所",
+    button = "",
+    buttonF = ""
+  },
+  [8112] = {
+    id = 8112,
+    Type = 129,
+    Title = "",
+    Text = "宠物同时打工的场所+1",
+    button = "",
+    buttonF = ""
+  },
+  [8113] = {
+    id = 8113,
+    Type = 129,
+    Title = "",
+    Text = "派遣的%s宠物因打工场所关闭，回到了您身边",
+    button = "",
+    buttonF = ""
+  },
+  [9000] = {
+    id = 9000,
+    Type = 1,
+    Title = "",
+    Text = "背包里没有找到%s这个道具~",
+    button = "",
+    buttonF = ""
+  },
+  [9001] = {
+    id = 9001,
+    Type = 1,
+    Title = "",
+    Text = "不用再送咯~牠已经迷失在礼物中了，抓紧时间捕获~",
+    button = "",
+    buttonF = ""
+  },
+  [9002] = {
+    id = 9002,
+    Type = 2,
+    Title = "",
+    Text = "交易宠物蛋将会把宠物装备卸载",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [9003] = {
+    id = 9003,
+    Type = 1,
+    Title = "",
+    Text = "只能携带一只宠物，需要回收才能孵化",
+    button = "",
+    buttonF = ""
+  },
+  [9004] = {
+    id = 9004,
+    Type = 1,
+    Title = "",
+    Text = "今天已经送了很多礼物了，不能再送了",
+    button = "",
+    buttonF = ""
+  },
+  [9005] = {
+    id = 9005,
+    Type = 2,
+    Title = "",
+    Text = "是否要让宠物恢复成宠物蛋？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [9006] = {
+    id = 9006,
+    Type = 2,
+    Title = "",
+    Text = "更换主人将会重置魔物等级和名字，是否继续？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [9007] = {
+    id = 9007,
+    Type = 1,
+    Title = "",
+    Text = "您的宠物已死亡，请先等待复活",
+    button = "",
+    buttonF = ""
+  },
+  [9008] = {
+    id = 9008,
+    Type = 1,
+    Title = "",
+    Text = "继续离开将超过捕获距离，捕获即将终止",
+    button = "",
+    buttonF = ""
+  },
+  [9009] = {
+    id = 9009,
+    Type = 1,
+    Title = "",
+    Text = "你离开太远了，宠物已经离开",
+    button = "",
+    buttonF = ""
+  },
+  [9010] = {
+    id = 9010,
+    Type = 1,
+    Title = "",
+    Text = "您的宠物非常优秀，不需要使用该道具。",
+    button = "",
+    buttonF = ""
+  },
+  [9011] = {
+    id = 9011,
+    Type = 65536,
+    Title = "",
+    Text = "是否使用%s将所携带的宠物技能进行重置？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [9012] = {
+    id = 9012,
+    Type = 1,
+    Title = "",
+    Text = "您没有%s，如果需要请去宠物商人处购买。",
+    button = "",
+    buttonF = ""
+  },
+  [9013] = {
+    id = 9013,
+    Type = 1,
+    Title = "",
+    Text = "只能为携带的%s增加新时装",
+    button = "",
+    buttonF = ""
+  },
+  [9014] = {
+    id = 9014,
+    Type = 1,
+    Title = "",
+    Text = "您的宠物获得了新时装",
+    button = "",
+    buttonF = ""
+  },
+  [9015] = {
+    id = 9015,
+    Type = 65536,
+    Title = "",
+    Text = "是否将道具%s赠送给宠物%s？\n赠送道具将获得宠物好感。",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [9016] = {
+    id = 9016,
+    Type = 1,
+    Title = "",
+    Text = "有冒险者正在捕获此魔物",
+    button = "",
+    buttonF = ""
+  },
+  [9017] = {
+    id = 9017,
+    Type = 1,
+    Title = "",
+    Text = "%s对你的好感度增加了",
+    button = "",
+    buttonF = ""
+  },
+  [9300] = {
+    id = 9300,
+    Type = 1,
+    Title = "",
+    Text = "恭喜，您的生命体获得了新的形态\n您可以通过宠物信息界面中的头像选择更换生命体形态",
+    button = "",
+    buttonF = ""
+  },
+  [9501] = {
+    id = 9501,
+    Type = 2,
+    Title = "",
+    Text = "是否将此道具上架报名？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [9502] = {
+    id = 9502,
+    Type = 1,
+    Title = "",
+    Text = "背包中没有该道具或该道具被标记为喜好",
+    button = "",
+    buttonF = ""
+  },
+  [9503] = {
+    id = 9503,
+    Type = 1,
+    Title = "",
+    Text = "您不能竞拍自己的商品",
+    button = "",
+    buttonF = ""
+  },
+  [9504] = {
+    id = 9504,
+    Type = 1,
+    Title = "",
+    Text = "没有之前的拍卖记录",
+    button = "",
+    buttonF = ""
+  },
+  [9505] = {
+    id = 9505,
+    Type = 1,
+    Title = "",
+    Text = "不是报名阶段不能进行上架",
+    button = "",
+    buttonF = ""
+  },
+  [9506] = {
+    id = 9506,
+    Type = 1,
+    Title = "",
+    Text = "该物品不能上架报名",
+    button = "",
+    buttonF = ""
+  },
+  [9507] = {
+    id = 9507,
+    Type = 1,
+    Title = "",
+    Text = "相同物品不能重复上架",
+    button = "",
+    buttonF = ""
+  },
+  [9508] = {
+    id = 9508,
+    Type = 1,
+    Title = "",
+    Text = "现在不是竞拍时间，无法完成出价",
+    button = "",
+    buttonF = ""
+  },
+  [9509] = {
+    id = 9509,
+    Type = 1,
+    Title = "",
+    Text = "出价低于竞拍最高价",
+    button = "",
+    buttonF = ""
+  },
+  [9510] = {
+    id = 9510,
+    Type = 1,
+    Title = "",
+    Text = "出价被锁住",
+    button = "",
+    buttonF = ""
+  },
+  [9511] = {
+    id = 9511,
+    Type = 1,
+    Title = "",
+    Text = "报名上架成功",
+    button = "",
+    buttonF = ""
+  },
+  [9512] = {
+    id = 9512,
+    Type = 1,
+    Title = "",
+    Text = "本次拍卖已经全部结束！",
+    button = "",
+    buttonF = ""
+  },
+  [9513] = {
+    id = 9513,
+    Type = 1,
+    Title = "",
+    Text = "您的B格猫金币不足，请先前往打赏",
+    button = "",
+    buttonF = ""
+  },
+  [9514] = {
+    id = 9514,
+    Type = 1,
+    Title = "",
+    Text = "请勿频繁出价",
+    button = "",
+    buttonF = ""
+  },
+  [9515] = {
+    id = 9515,
+    Type = 2,
+    Title = "",
+    Text = "在当前竞价%s上加价[c][63cd4e]%s[-][/c]B格猫金币？\n此次总加价[c][63cd4e]%s[-][/c]B格猫金币。\n注：竞拍失败后返还B格猫金币。",
+    button = "确定出价",
+    buttonF = "取消"
+  },
+  [9516] = {
+    id = 9516,
+    Type = 1,
+    Title = "",
+    Text = "拍卖已超过%s分钟，无法进行该次出价。",
+    button = "",
+    buttonF = ""
+  },
+  [9600] = {
+    id = 9600,
+    Type = 1,
+    Title = "",
+    Text = "排期需要2个人同意哦~ 请和你的伴侣牵手来预约吧！",
+    button = "",
+    buttonF = ""
+  },
+  [9601] = {
+    id = 9601,
+    Type = 1,
+    Title = "",
+    Text = "等等，NTR是不被允许的哦！",
+    button = "",
+    buttonF = ""
+  },
+  [9602] = {
+    id = 9602,
+    Type = 1,
+    Title = "",
+    Text = "您还在强制离婚惩罚时间内，再过%s天才能结婚哦~",
+    button = "",
+    buttonF = ""
+  },
+  [9603] = {
+    id = 9603,
+    Type = 1,
+    Title = "",
+    Text = "您的zeny不足，无法订婚哦~",
+    button = "",
+    buttonF = ""
+  },
+  [9604] = {
+    id = 9604,
+    Type = 2,
+    Title = "",
+    Text = "确认消耗%s预订%s月%s日%s:00-%s:00的结婚时段么",
+    button = "预订",
+    buttonF = "取消"
+  },
+  [9605] = {
+    id = 9605,
+    Type = 1,
+    Title = "",
+    Text = "有玩家正在预订该日期哦~",
+    button = "",
+    buttonF = ""
+  },
+  [9606] = {
+    id = 9606,
+    Type = 1,
+    Title = "",
+    Text = "请等待伴侣确认排期……",
+    button = "",
+    buttonF = ""
+  },
+  [9607] = {
+    id = 9607,
+    Type = 1,
+    Title = "",
+    Text = "%s拒绝了该婚期~请重新选择",
+    button = "",
+    buttonF = ""
+  },
+  [9608] = {
+    id = 9608,
+    Type = 1,
+    Title = "",
+    Text = "您的伴侣已经同意该婚期，付款成功~！",
+    button = "",
+    buttonF = ""
+  },
+  [9609] = {
+    id = 9609,
+    Type = 2,
+    Title = "[f57b7b]%s婚期确认",
+    Text = "已预约%s月%s日%s:00~%s:00\n%s线的婚礼排期，你同意吗~？",
+    button = "同意",
+    buttonF = ""
+  },
+  [9610] = {
+    id = 9610,
+    Type = 1,
+    Title = "",
+    Text = "查看婚期界面不可进行预约哦~",
+    button = "",
+    buttonF = ""
+  },
+  [9611] = {
+    id = 9611,
+    Type = 2,
+    Title = "",
+    Text = "确定放弃已预约的婚期吗？（已付费内容均不会退还）",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [9612] = {
+    id = 9612,
+    Type = 2,
+    Title = "协议离婚申请",
+    Text = "%s申请离婚\n并邀请你乘坐离婚过山车",
+    button = "同意",
+    buttonF = ""
+  },
+  [9613] = {
+    id = 9613,
+    Type = 2,
+    Title = "",
+    Text = "确定要结束曾经的回忆，与%s离婚吗？",
+    button = "离婚",
+    buttonF = "取消"
+  },
+  [9614] = {
+    id = 9614,
+    Type = 2,
+    Title = "",
+    Text = "确定交付128B格猫金币并强制与%s离婚吗",
+    button = "离婚",
+    buttonF = "取消"
+  },
+  [9615] = {
+    id = 9615,
+    Type = 1,
+    Title = "",
+    Text = "预订信息已过期",
+    button = "",
+    buttonF = ""
+  },
+  [9616] = {
+    id = 9616,
+    Type = 131200,
+    Title = "",
+    Text = "%s和%s即将在普隆德拉大教堂举办神圣仪式，让我们给予他们最真诚的祝福！✿✿ヽ(°▽°)ノ✿",
+    button = "",
+    buttonF = ""
+  },
+  [9617] = {
+    id = 9617,
+    Type = 1,
+    Title = "",
+    Text = "您的伴侣还在强制离婚惩罚时间内，再过%s天才能订婚哦~",
+    button = "",
+    buttonF = ""
+  },
+  [9618] = {
+    id = 9618,
+    Type = 1,
+    Title = "",
+    Text = "确认花费%s购买%s吗？ \n购买后会替换已经拥有的婚戒！",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [9619] = {
+    id = 9619,
+    Type = 1,
+    Title = "",
+    Text = "您受邀参加的婚礼不在本条世界线哦，请确认婚礼邀请函上的信息~",
+    button = "",
+    buttonF = ""
+  },
+  [9620] = {
+    id = 9620,
+    Type = 1,
+    Title = "",
+    Text = "您的%s不足，无法购买",
+    button = "",
+    buttonF = ""
+  },
+  [9621] = {
+    id = 9621,
+    Type = 2,
+    Title = "",
+    Text = "确认与%s解除婚姻关系吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [9622] = {
+    id = 9622,
+    Type = 1,
+    Title = "",
+    Text = "需和伴侣在双人组队状态完成此操作",
+    button = "",
+    buttonF = ""
+  },
+  [9623] = {
+    id = 9623,
+    Type = 1,
+    Title = "",
+    Text = "和伴侣之间距离过远",
+    button = "",
+    buttonF = ""
+  },
+  [9624] = {
+    id = 9624,
+    Type = 1,
+    Title = "",
+    Text = "对方已下线，无法执行该操作",
+    button = "",
+    buttonF = ""
+  },
+  [9625] = {
+    id = 9625,
+    Type = 1,
+    Title = "",
+    Text = "您已和%s成功解除婚姻关系",
+    button = "",
+    buttonF = ""
+  },
+  [9626] = {
+    id = 9626,
+    Type = 1,
+    Title = "",
+    Text = "对方拒绝了乘坐过山车的邀请",
+    button = "",
+    buttonF = ""
+  },
+  [9627] = {
+    id = 9627,
+    Type = 1,
+    Title = "",
+    Text = "已成功取消婚期预约",
+    button = "",
+    buttonF = ""
+  },
+  [9628] = {
+    id = 9628,
+    Type = 1,
+    Title = "",
+    Text = "只有主牵手者可以选择预订哦~",
+    button = "",
+    buttonF = ""
+  },
+  [9629] = {
+    id = 9629,
+    Type = 1,
+    Title = "",
+    Text = "恭喜购买【%s】成功，盛大的婚礼已经向你们迈进✿✿ヽ(°▽°)ノ✿",
+    button = "",
+    buttonF = ""
+  },
+  [9630] = {
+    id = 9630,
+    Type = 1,
+    Title = "",
+    Text = "确认花费%s购买%s吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [9631] = {
+    id = 9631,
+    Type = 129,
+    Title = "",
+    Text = "婚纱成功送出，记得提醒对方查收邮件哦",
+    button = "",
+    buttonF = ""
+  },
+  [9632] = {
+    id = 9632,
+    Type = 129,
+    Title = "",
+    Text = "对方走太远了，求婚取消",
+    button = "",
+    buttonF = ""
+  },
+  [9633] = {
+    id = 9633,
+    Type = 129,
+    Title = "",
+    Text = "你走太远了，求婚无法继续",
+    button = "",
+    buttonF = ""
+  },
+  [9634] = {
+    id = 9634,
+    Type = 4,
+    Title = "",
+    Text = "恭喜【%s】向【%s】求婚成功啦！一起祝福他们吧~喵~✿✿ヽ(°▽°)ノ✿",
+    button = "",
+    buttonF = ""
+  },
+  [9635] = {
+    id = 9635,
+    Type = 2,
+    Title = "提示",
+    Text = "退出相机并移动后求婚动作就结束了，要退出吗？",
+    button = "退出",
+    buttonF = "取消"
+  },
+  [9636] = {
+    id = 9636,
+    Type = 129,
+    Title = "",
+    Text = "对方没有及时回答，求婚取消",
+    button = "",
+    buttonF = ""
+  },
+  [9637] = {
+    id = 9637,
+    Type = 2,
+    Title = "%s的求婚",
+    Text = "对方正在向你求婚，要接受吗？\n（移动后会结束求婚演出）",
+    button = "接受",
+    buttonF = ""
+  },
+  [9638] = {
+    id = 9638,
+    Type = 2,
+    Title = "神圣仪式开始！",
+    Text = "请新人牵手微笑~",
+    button = "开始",
+    buttonF = ""
+  },
+  [9639] = {
+    id = 9639,
+    Type = 1,
+    Title = "",
+    Text = "婚礼的钟声即将敲响，请带上邀请函前往普隆德拉大教堂观礼哦！",
+    button = "",
+    buttonF = ""
+  },
+  [9640] = {
+    id = 9640,
+    Type = 1,
+    Title = "",
+    Text = "婚礼仪式已经开启，快点去参加吧！",
+    button = "",
+    buttonF = ""
+  },
+  [9641] = {
+    id = 9641,
+    Type = 1,
+    Title = "",
+    Text = "双方尚未全部完成订婚前置任务，无法预订婚期",
+    button = "",
+    buttonF = ""
+  },
+  [9642] = {
+    id = 9642,
+    Type = 1,
+    Title = "",
+    Text = "当前选择的婚戒已经拥有！",
+    button = "",
+    buttonF = ""
+  },
+  [9643] = {
+    id = 9643,
+    Type = 1,
+    Title = "",
+    Text = "从即刻起你们已成为夫妻，以奥丁之名祝福你们两心永相伴！",
+    button = "",
+    buttonF = ""
+  },
+  [9644] = {
+    id = 9644,
+    Type = 1,
+    Title = "",
+    Text = "请与你的伴侣牵起小手！",
+    button = "",
+    buttonF = ""
+  },
+  [9645] = {
+    id = 9645,
+    Type = 1,
+    Title = "",
+    Text = "所邀请的婚礼已经失效了！！！！",
+    button = "",
+    buttonF = ""
+  },
+  [9646] = {
+    id = 9646,
+    Type = 1,
+    Title = "",
+    Text = "请选择要赠送的玩家哦~",
+    button = "",
+    buttonF = ""
+  },
+  [9647] = {
+    id = 9647,
+    Type = 1,
+    Title = "甜蜜的思念",
+    Text = "时空的距离无法阻隔我们的羁\n绊，快来到我身边吧！",
+    button = "好的",
+    buttonF = ""
+  },
+  [9648] = {
+    id = 9648,
+    Type = 1,
+    Title = "",
+    Text = "不要乱点啦~您已经订婚完毕了哦！（＞д＜）",
+    button = "",
+    buttonF = ""
+  },
+  [9649] = {
+    id = 9649,
+    Type = 1,
+    Title = "",
+    Text = "该区域无法使用此技能",
+    button = "",
+    buttonF = ""
+  },
+  [9650] = {
+    id = 9650,
+    Type = 1,
+    Title = "",
+    Text = "您预约的婚礼不在本条世界线哦，请确认结婚手册上的信息~",
+    button = "",
+    buttonF = ""
+  },
+  [9651] = {
+    id = 9651,
+    Type = 1,
+    Title = "",
+    Text = "您的婚礼套餐中尚未购买此项目哦~",
+    button = "",
+    buttonF = ""
+  },
+  [9652] = {
+    id = 9652,
+    Type = 1,
+    Title = "",
+    Text = "只能和异性伴侣一起步入婚姻殿堂哦~",
+    button = "",
+    buttonF = ""
+  },
+  [9653] = {
+    id = 9653,
+    Type = 1,
+    Title = "",
+    Text = "对方不在线，技能无效",
+    button = "",
+    buttonF = ""
+  },
+  [9654] = {
+    id = 9654,
+    Type = 1,
+    Title = "",
+    Text = "前置任务未完成，无法进入蜜月房间",
+    button = "",
+    buttonF = ""
+  },
+  [9655] = {
+    id = 9655,
+    Type = 1,
+    Title = "",
+    Text = "由于世界线等级限制，无法使用此技能",
+    button = "",
+    buttonF = ""
+  },
+  [9656] = {
+    id = 9656,
+    Type = 33554432,
+    Title = "",
+    Text = "猫尾草日出",
+    button = "",
+    buttonF = ""
+  },
+  [9657] = {
+    id = 9657,
+    Type = 33554432,
+    Title = "",
+    Text = "落日畅想",
+    button = "",
+    buttonF = ""
+  },
+  [9658] = {
+    id = 9658,
+    Type = 33554432,
+    Title = "",
+    Text = "七色彩虹",
+    button = "",
+    buttonF = ""
+  },
+  [9659] = {
+    id = 9659,
+    Type = 33554432,
+    Title = "",
+    Text = "夕阳心跳",
+    button = "",
+    buttonF = ""
+  },
+  [9660] = {
+    id = 9660,
+    Type = 33554432,
+    Title = "",
+    Text = "璀璨辰星",
+    button = "",
+    buttonF = ""
+  },
+  [9661] = {
+    id = 9661,
+    Type = 33554432,
+    Title = "",
+    Text = "蒲公英的思念",
+    button = "",
+    buttonF = ""
+  },
+  [9662] = {
+    id = 9662,
+    Type = 33554432,
+    Title = "",
+    Text = "人鱼之泪",
+    button = "",
+    buttonF = ""
+  },
+  [9663] = {
+    id = 9663,
+    Type = 33554432,
+    Title = "",
+    Text = "荒境之吻",
+    button = "",
+    buttonF = ""
+  },
+  [9664] = {
+    id = 9664,
+    Type = 33554432,
+    Title = "",
+    Text = "琥珀之梦",
+    button = "",
+    buttonF = ""
+  },
+  [9665] = {
+    id = 9665,
+    Type = 33554432,
+    Title = "",
+    Text = "满天星",
+    button = "",
+    buttonF = ""
+  },
+  [9666] = {
+    id = 9666,
+    Type = 33554432,
+    Title = "",
+    Text = "粉雪洛阳",
+    button = "",
+    buttonF = ""
+  },
+  [9667] = {
+    id = 9667,
+    Type = 33554432,
+    Title = "",
+    Text = "幸福风铃",
+    button = "",
+    buttonF = ""
+  },
+  [9668] = {
+    id = 9668,
+    Type = 33554432,
+    Title = "",
+    Text = "甜蜜午后",
+    button = "",
+    buttonF = ""
+  },
+  [9669] = {
+    id = 9669,
+    Type = 33554432,
+    Title = "",
+    Text = "聆听枫忆",
+    button = "",
+    buttonF = ""
+  },
+  [9670] = {
+    id = 9670,
+    Type = 33554432,
+    Title = "",
+    Text = "收藏爱情",
+    button = "",
+    buttonF = ""
+  },
+  [9671] = {
+    id = 9671,
+    Type = 33554432,
+    Title = "",
+    Text = "坠入蔚蓝",
+    button = "",
+    buttonF = ""
+  },
+  [9672] = {
+    id = 9672,
+    Type = 33554432,
+    Title = "",
+    Text = "祈愿苍穹",
+    button = "",
+    buttonF = ""
+  },
+  [9673] = {
+    id = 9673,
+    Type = 33554432,
+    Title = "",
+    Text = "小确幸",
+    button = "",
+    buttonF = ""
+  },
+  [9674] = {
+    id = 9674,
+    Type = 1,
+    Title = "",
+    Text = "对方在副本中, 技能无效",
+    button = "",
+    buttonF = ""
+  },
+  [9675] = {
+    id = 9675,
+    Type = 129,
+    Title = "",
+    Text = "无法向其他服务器玩家发送订婚邀请",
+    button = "",
+    buttonF = ""
+  },
+  [10000] = {
+    id = 10000,
+    Type = 1,
+    Title = "",
+    Text = "数据异常。",
+    button = "",
+    buttonF = ""
+  },
+  [10001] = {
+    id = 10001,
+    Type = 1,
+    Title = "",
+    Text = "数据库操作失败。",
+    button = "",
+    buttonF = ""
+  },
+  [10002] = {
+    id = 10002,
+    Type = 1,
+    Title = "",
+    Text = "系统异常。",
+    button = "",
+    buttonF = ""
+  },
+  [10100] = {
+    id = 10100,
+    Type = 1,
+    Title = "",
+    Text = "出售失败：出售的数量不正确。",
+    button = "",
+    buttonF = ""
+  },
+  [10101] = {
+    id = 10101,
+    Type = 1,
+    Title = "",
+    Text = "出售失败：出售的价格不正确。",
+    button = "",
+    buttonF = ""
+  },
+  [10102] = {
+    id = 10102,
+    Type = 1,
+    Title = "",
+    Text = "出售失败：不可交易此物品。",
+    button = "",
+    buttonF = ""
+  },
+  [10103] = {
+    id = 10103,
+    Type = 1,
+    Title = "",
+    Text = "对不起，B格猫星人开小差了，请刷新交易所界面后再试哦~",
+    button = "",
+    buttonF = ""
+  },
+  [10104] = {
+    id = 10104,
+    Type = 1,
+    Title = "",
+    Text = "无法出售：出售的挂单数已达上限。",
+    button = "",
+    buttonF = ""
+  },
+  [10105] = {
+    id = 10105,
+    Type = 1,
+    Title = "",
+    Text = "无法出售：插卡的物品不可出售。",
+    button = "",
+    buttonF = ""
+  },
+  [10106] = {
+    id = 10106,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "无法出售：强化的装备不可出售，是否前往分解？",
+    button = "前往",
+    buttonF = "取消"
+  },
+  [10107] = {
+    id = 10107,
+    Type = 1,
+    Title = "",
+    Text = "无法出售：包包查找不到该物品。",
+    button = "",
+    buttonF = ""
+  },
+  [10108] = {
+    id = 10108,
+    Type = 1,
+    Title = "",
+    Text = "无法出售：物品数据同步异常。",
+    button = "",
+    buttonF = ""
+  },
+  [10109] = {
+    id = 10109,
+    Type = 1,
+    Title = "",
+    Text = "无法出售：货币不足。",
+    button = "",
+    buttonF = ""
+  },
+  [10110] = {
+    id = 10110,
+    Type = 2,
+    Title = "",
+    Text = "您所出售的装备经过特殊处理，上架将进行初始化。初始化会返还所有费用和卡片，但会保留精炼等级，是否确认上架？",
+    button = "确认上架",
+    buttonF = "取消"
+  },
+  [10111] = {
+    id = 10111,
+    Type = 2,
+    Title = "",
+    Text = "您所出售的物品中包括特殊处理的装备，出售将会返还其所有材料、费用和卡片，是否确认出售？",
+    button = "确认出售",
+    buttonF = "取消"
+  },
+  [10112] = {
+    id = 10112,
+    Type = 2,
+    Title = "",
+    Text = "您所出售的物品中包括特殊处理的装备及其他贵重物品，出售将会返还装备处理的所有材料、费用和卡片，是否确认出售？",
+    button = "确认出售",
+    buttonF = "取消"
+  },
+  [10113] = {
+    id = 10113,
+    Type = 2,
+    Title = "",
+    Text = "您所出售的装备中包括精炼的装备，需前往魔力铁炉还原后才可出售。",
+    button = "前往",
+    buttonF = "取消",
+    Confirm = 20
+  },
+  [10114] = {
+    id = 10114,
+    Type = 1,
+    Title = "",
+    Text = "请选择具体商品进行购买。",
+    button = "",
+    buttonF = ""
+  },
+  [10115] = {
+    id = 10115,
+    Type = 1,
+    Title = "",
+    Text = "上架成功，返还[63cd4e]%s[-]Zeny。",
+    button = "",
+    buttonF = ""
+  },
+  [10150] = {
+    id = 10150,
+    Type = 1,
+    Title = "",
+    Text = "无法购买：购买的数量不正确。",
+    button = "",
+    buttonF = ""
+  },
+  [10151] = {
+    id = 10151,
+    Type = 1,
+    Title = "",
+    Text = "无法购买：查找不到相应的挂单。",
+    button = "",
+    buttonF = ""
+  },
+  [10152] = {
+    id = 10152,
+    Type = 1,
+    Title = "",
+    Text = "无法购买：该挂单已被锁定。",
+    button = "",
+    buttonF = ""
+  },
+  [10153] = {
+    id = 10153,
+    Type = 1,
+    Title = "",
+    Text = "对不起，B格猫星人开小差了，请刷新交易所界面后再试哦~",
+    button = "",
+    buttonF = ""
+  },
+  [10154] = {
+    id = 10154,
+    Type = 1,
+    Title = "",
+    Text = "无法购买：货币不足。",
+    button = "",
+    buttonF = ""
+  },
+  [10155] = {
+    id = 10155,
+    Type = 2,
+    Title = "",
+    Text = "注意！您正在购买一件破损的物品，是否确认购买？",
+    button = "购买",
+    buttonF = "取消"
+  },
+  [10156] = {
+    id = 10156,
+    Type = 1,
+    Title = "",
+    Text = "无法购买：购买的价格不正确，请刷新重试。",
+    button = "",
+    buttonF = ""
+  },
+  [10157] = {
+    id = 10157,
+    Type = 129,
+    Title = "",
+    Text = "您从[c][63cd4e]%s[-][/c]手中购买了[c][63cd4e]%s[-][/c]。",
+    button = "",
+    buttonF = ""
+  },
+  [10158] = {
+    id = 10158,
+    Type = 1,
+    Title = "",
+    Text = "无法购买：购买数量已超出库存。",
+    button = "",
+    buttonF = ""
+  },
+  [10159] = {
+    id = 10159,
+    Type = 129,
+    Title = "",
+    Text = "您成功购买了[63cd4e]%s[-]个[63cd4e]%s[-]，共扣除[63cd4e]%s[-]Zeny，请在[63cd4e]交易记录[-]中领取商品，处于公示期的物品需抢购成功才可领取。",
+    button = "",
+    buttonF = ""
+  },
+  [10200] = {
+    id = 10200,
+    Type = 1,
+    Title = "",
+    Text = "无法下架：该挂单已出售。",
+    button = "",
+    buttonF = ""
+  },
+  [10201] = {
+    id = 10201,
+    Type = 1,
+    Title = "",
+    Text = "无法下架：该挂单已被锁定。",
+    button = "",
+    buttonF = ""
+  },
+  [10202] = {
+    id = 10202,
+    Type = 129,
+    Title = "",
+    Text = "[63cd4e]%s[-]现已无法在交易所中上架出售，请在【我要出售】界面取回您的上架物品和上架费用",
+    button = "",
+    buttonF = ""
+  },
+  [10250] = {
+    id = 10250,
+    Type = 129,
+    Title = "",
+    Text = "恭喜！您成功地售出了[63cd4e]%s[-]个[63cd4e]%s[-]，共扣除交易税[63cd4e]%s[-]Zeny，共获得了[63cd4e]%s[-]Zeny，请在[63cd4e]交易记录[-]中领取。",
+    button = "",
+    buttonF = ""
+  },
+  [10251] = {
+    id = 10251,
+    Type = 1,
+    Title = "",
+    Text = "重新上架失败，该挂单尚未过期。",
+    button = "",
+    buttonF = ""
+  },
+  [10252] = {
+    id = 10252,
+    Type = 1,
+    Title = "",
+    Text = "没有匹配的商品在出售，请重新输入。",
+    button = "",
+    buttonF = ""
+  },
+  [10253] = {
+    id = 10253,
+    Type = 1,
+    Title = "",
+    Text = "抱歉！该商品目前被禁止上架交易。",
+    button = "",
+    buttonF = ""
+  },
+  [10254] = {
+    id = 10254,
+    Type = 1,
+    Title = "",
+    Text = "抱歉！您现在被禁止操作交易所出售功能。",
+    button = "",
+    buttonF = ""
+  },
+  [10255] = {
+    id = 10255,
+    Type = 1,
+    Title = "",
+    Text = "抱歉！您现在被禁止操作交易所购买功能。",
+    button = "",
+    buttonF = ""
+  },
+  [10300] = {
+    id = 10300,
+    Type = 65536,
+    Title = "上架成功",
+    Text = "商品上架出售期为[63cd4e]%s[-]小时，未售出的商品将会自动下架。\n今日税率：[63cd4e]%s[-]",
+    button = "确认",
+    buttonF = "",
+    TimeInterval = 7
+  },
+  [10301] = {
+    id = 10301,
+    Type = 65536,
+    Title = "注意",
+    Text = "商品的价格会随市场情况浮动，成功售出时价格可能和上架价格不一致！",
+    button = "继续上架",
+    buttonF = "取消上架",
+    TimeInterval = 0
+  },
+  [10302] = {
+    id = 10302,
+    Type = 129,
+    Title = "",
+    Text = "升级装备不能进入相关交易，是否花费[63cd4e]%s[-]Zeny移除升级状态，将返还所有材料",
+    button = "移除",
+    buttonF = "取消"
+  },
+  [10400] = {
+    id = 10400,
+    Type = 128,
+    Title = "",
+    Text = "[63cd4e]%s[-]进入了抢购期，冒险者们快来抢购！",
+    button = "",
+    buttonF = ""
+  },
+  [10401] = {
+    id = 10401,
+    Type = 129,
+    Title = "",
+    Text = "您在抢购期抢购中成功购买[63cd4e]%s[-]个[63cd4e]%s[-]，共扣除[63cd4e]%s[-]Zeny，返还[63cd4e]%s[-]Zeny，请在[63cd4e]交易记录[-]中领取退款。",
+    button = "",
+    buttonF = ""
+  },
+  [10402] = {
+    id = 10402,
+    Type = 129,
+    Title = "",
+    Text = "您在抢购期期间抢购了[63cd4e]%s[-]个[63cd4e]%s[-]，共预先扣除[63cd4e]%s[-]Zeny。",
+    button = "",
+    buttonF = ""
+  },
+  [10403] = {
+    id = 10403,
+    Type = 129,
+    Title = "",
+    Text = "购买失败：您抢购的数量已达抢购期最大数量。",
+    button = "",
+    buttonF = ""
+  },
+  [10404] = {
+    id = 10404,
+    Type = 1,
+    Title = "",
+    Text = "购买失败：该物品抢购期已结束，请刷新后购买。",
+    button = "",
+    buttonF = ""
+  },
+  [10405] = {
+    id = 10405,
+    Type = 129,
+    Title = "",
+    Text = "您在抢购期期间抢购[63cd4e]%s[-]失败，返还[63cd4e]%s[-]Zeny，请在[63cd4e]交易记录[-]中领取退款。",
+    button = "",
+    buttonF = ""
+  },
+  [10406] = {
+    id = 10406,
+    Type = 1,
+    Title = "",
+    Text = "商品已提交至柜台",
+    button = "",
+    buttonF = ""
+  },
+  [10407] = {
+    id = 10407,
+    Type = 1,
+    Title = "",
+    Text = "你所上架的物品正在结算公示，请稍后上架",
+    button = "",
+    buttonF = ""
+  },
+  [11000] = {
+    id = 11000,
+    Type = 1,
+    Title = "",
+    Text = "开始前往公会领地-瓦尔基里处",
+    button = "",
+    buttonF = ""
+  },
+  [11001] = {
+    id = 11001,
+    Type = 1,
+    Title = "",
+    Text = "对不起，您当前并没有公会",
+    button = "",
+    buttonF = ""
+  },
+  [12000] = {
+    id = 12000,
+    Type = 1,
+    Title = "",
+    Text = "魔物所携带的可抄袭技能等级高于你的抄袭技能等级，无法抄袭",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [12001] = {
+    id = 12001,
+    Type = 1,
+    Title = "",
+    Text = "魔物没有携带可抄袭的技能，无法抄袭",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [12002] = {
+    id = 12002,
+    Type = 1,
+    Title = "",
+    Text = "成功抄袭到%s技能",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [12003] = {
+    id = 12003,
+    Type = 1,
+    Title = "",
+    Text = "魔物的等级太高无法抄袭技能",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [12004] = {
+    id = 12004,
+    Type = 1,
+    Title = "",
+    Text = "未抄袭任何技能，请先进行技能抄袭",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [12005] = {
+    id = 12005,
+    Type = 1,
+    Title = "",
+    Text = "无法从其他玩家身上抄袭技能",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [12010] = {
+    id = 12010,
+    Type = 1,
+    Title = "",
+    Text = "未复制任何技能，请先进行技能复制",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [12011] = {
+    id = 12011,
+    Type = 1,
+    Title = "",
+    Text = "成功复制到%s技能",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [12012] = {
+    id = 12012,
+    Type = 1,
+    Title = "",
+    Text = "复制技能失败",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [12100] = {
+    id = 12100,
+    Type = 1,
+    Title = "",
+    Text = "需起源转职后才可领取",
+    button = "",
+    buttonF = ""
+  },
+  [12101] = {
+    id = 12101,
+    Type = 1,
+    Title = "",
+    Text = "每个角色仅限领取一次",
+    button = "",
+    buttonF = ""
+  },
+  [12200] = {
+    id = 12200,
+    Type = 1,
+    Title = "",
+    Text = "正在为您打开同人社区链接，请您稍等……",
+    button = "",
+    buttonF = ""
+  },
+  [13000] = {
+    id = 13000,
+    Type = 1,
+    Title = "",
+    Text = "商品已售罄，下一次早点来哦~",
+    button = "",
+    buttonF = ""
+  },
+  [13010] = {
+    id = 13010,
+    Type = 2,
+    Title = "",
+    Text = "是否确认切换角色？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [13011] = {
+    id = 13011,
+    Type = 1,
+    Title = "",
+    Text = "该角色正在被删除，无法切换",
+    button = "",
+    buttonF = ""
+  },
+  [13012] = {
+    id = 13012,
+    Type = 1,
+    Title = "",
+    Text = "没有可切换的角色",
+    button = "",
+    buttonF = ""
+  },
+  [13200] = {
+    id = 13200,
+    Type = 4096,
+    Title = "uiicon=MaleAssistant",
+    Text = "执事·德图拉已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [13201] = {
+    id = 13201,
+    Type = 4096,
+    Title = "uiicon=Kafra7",
+    Text = "执事·克米莉娅已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [13202] = {
+    id = 13202,
+    Type = 4096,
+    Title = "uiicon=Maid5",
+    Text = "执事·可可已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [13203] = {
+    id = 13203,
+    Type = 4096,
+    Title = "uiicon=butler5",
+    Text = "执事·米勒已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [13204] = {
+    id = 13204,
+    Type = 4096,
+    Title = "uiicon=Maid2",
+    Text = "执事·西西卡丽康娜已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [13205] = {
+    id = 13205,
+    Type = 4096,
+    Title = "uiicon=Maid1",
+    Text = "执事·西西卡丽蕾娜已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [13206] = {
+    id = 13206,
+    Type = 4096,
+    Title = "uiicon=butler2",
+    Text = "执事·伊斯菲尔已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [13207] = {
+    id = 13207,
+    Type = 4096,
+    Title = "uiicon=butler1",
+    Text = "执事·星络已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [13208] = {
+    id = 13208,
+    Type = 4096,
+    Title = "uiicon=Stefanie",
+    Text = "执事·孙燕姿已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [13209] = {
+    id = 13209,
+    Type = 4096,
+    Title = "uiicon=Stefanie",
+    Text = "执事·Lisa已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [14000] = {
+    id = 14000,
+    Type = 129,
+    Title = "",
+    Text = "%s达成！女仆好感度已增加%s",
+    button = "",
+    buttonF = ""
+  },
+  [15000] = {
+    id = 15000,
+    Type = 1,
+    Title = "",
+    Text = "调试消息：%s",
+    button = "",
+    buttonF = ""
+  },
+  [16000] = {
+    id = 16000,
+    Type = 1,
+    Title = "",
+    Text = "神父请假，暂时停止婚礼预约，敬请谅解。",
+    button = "",
+    buttonF = ""
+  },
+  [16001] = {
+    id = 16001,
+    Type = 1,
+    Title = "",
+    Text = "使用失败，不可以向其他服务器的冒险者求婚。",
+    button = "",
+    buttonF = ""
+  },
+  [20000] = {
+    id = 20000,
+    Type = 1,
+    Title = "",
+    Text = "获得%s(任务物品)",
+    button = "",
+    buttonF = ""
+  },
+  [20001] = {
+    id = 20001,
+    Type = 1,
+    Title = "",
+    Text = "交出%s(任务物品)",
+    button = "",
+    buttonF = ""
+  },
+  [20002] = {
+    id = 20002,
+    Type = 1,
+    Title = "",
+    Text = "已开启“省电模式”",
+    button = "",
+    buttonF = ""
+  },
+  [20003] = {
+    id = 20003,
+    Type = 1,
+    Title = "",
+    Text = "已退出“省电模式”",
+    button = "",
+    buttonF = ""
+  },
+  [20004] = {
+    id = 20004,
+    Type = 1,
+    Title = "",
+    Text = "由于你的力量过于强大，%s已被乐园团收回，独自踏上冒险之旅吧",
+    button = "",
+    buttonF = ""
+  },
+  [20005] = {
+    id = 20005,
+    Type = 1,
+    Title = "",
+    Text = "未达到任务要求，任务接取失败",
+    button = "",
+    buttonF = ""
+  },
+  [20006] = {
+    id = 20006,
+    Type = 1,
+    Title = "",
+    Text = "任务已添加至追踪栏",
+    button = "",
+    buttonF = ""
+  },
+  [20007] = {
+    id = 20007,
+    Type = 1,
+    Title = "",
+    Text = "该道具为重要物品，无法存入仓库",
+    button = "",
+    buttonF = ""
+  },
+  [20008] = {
+    id = 20008,
+    Type = 1,
+    Title = "",
+    Text = "【骑士的起源】任务已添加至追踪栏",
+    button = "",
+    buttonF = ""
+  },
+  [21000] = {
+    id = 21000,
+    Type = 128,
+    Title = "",
+    Text = "您正处于负债状态，拥有[63cd4e]%s[-]Zeny负债。",
+    button = "",
+    buttonF = ""
+  },
+  [21001] = {
+    id = 21001,
+    Type = 128,
+    Title = "",
+    Text = "您的背包Zeny达到上限，将进行负债偿还。",
+    button = "",
+    buttonF = ""
+  },
+  [22000] = {
+    id = 22000,
+    Type = 1,
+    Title = "",
+    Text = "为了定期维护。5秒后，要关闭所有的服务器",
+    button = "",
+    buttonF = ""
+  },
+  [22001] = {
+    id = 22001,
+    Type = 1,
+    Title = "",
+    Text = "神秘箱子里的杰勒比结晶，就是我放的…",
+    button = "",
+    buttonF = ""
+  },
+  [22002] = {
+    id = 22002,
+    Type = 1,
+    Title = "",
+    Text = "在南门行走一定要穿好鞋子，小心满地的碎波利",
+    button = "",
+    buttonF = ""
+  },
+  [22003] = {
+    id = 22003,
+    Type = 1,
+    Title = "",
+    Text = "这个不是Bug，我的台词就是这样的，下次再优化吧",
+    button = "",
+    buttonF = ""
+  },
+  [22004] = {
+    id = 22004,
+    Type = 1,
+    Title = "",
+    Text = "忽克连！你和猫小友真的不是心动的吗",
+    button = "",
+    buttonF = ""
+  },
+  [22005] = {
+    id = 22005,
+    Type = 1,
+    Title = "",
+    Text = "听说经验宝宝被砍了，有人带我升级吗，我会唱金先生",
+    button = "",
+    buttonF = ""
+  },
+  [22006] = {
+    id = 22006,
+    Type = 1,
+    Title = "",
+    Text = "艾斯恩魔女，你要来给我伴舞吗？爱丽丝女仆，你也来吧",
+    button = "",
+    buttonF = ""
+  },
+  [22007] = {
+    id = 22007,
+    Type = 1,
+    Title = "",
+    Text = "听说普隆德拉广场有一台机器，你一靠近，金币就会被偷光",
+    button = "",
+    buttonF = ""
+  },
+  [22008] = {
+    id = 22008,
+    Type = 1,
+    Title = "",
+    Text = "老忽你要不要洗一下技能点呀！是不是点了精炼一级和武器破坏十级？",
+    button = "",
+    buttonF = ""
+  },
+  [22009] = {
+    id = 22009,
+    Type = 1,
+    Title = "",
+    Text = "有人和我一起去占卜吗，你全左，我全右",
+    button = "",
+    buttonF = ""
+  },
+  [22010] = {
+    id = 22010,
+    Type = 1,
+    Title = "",
+    Text = "我也想骑狼，讲道理我也会射箭",
+    button = "",
+    buttonF = ""
+  },
+  [22011] = {
+    id = 22011,
+    Type = 1,
+    Title = "",
+    Text = "希望你们喜欢我的笑话，毕竟这个技能没什么卵用",
+    button = "",
+    buttonF = ""
+  },
+  [22012] = {
+    id = 22012,
+    Type = 1,
+    Title = "",
+    Text = "嘿！冒险者，能不能帮我击杀300个黑暗之王",
+    button = "",
+    buttonF = ""
+  },
+  [22013] = {
+    id = 22013,
+    Type = 1,
+    Title = "",
+    Text = "我讨厌马克，还有马克卡片",
+    button = "",
+    buttonF = ""
+  },
+  [22014] = {
+    id = 22014,
+    Type = 1,
+    Title = "",
+    Text = "下面~~~请开始你的表演",
+    button = "",
+    buttonF = ""
+  },
+  [22015] = {
+    id = 22015,
+    Type = 1,
+    Title = "",
+    Text = "这个世界需要救世主。而我就是…歌颂救世主的人",
+    button = "",
+    buttonF = ""
+  },
+  [22016] = {
+    id = 22016,
+    Type = 1,
+    Title = "",
+    Text = "好想捉一只摇滚蝗虫做宠物",
+    button = "",
+    buttonF = ""
+  },
+  [22017] = {
+    id = 22017,
+    Type = 1,
+    Title = "",
+    Text = "让我看看是谁在那里把钱",
+    button = "",
+    buttonF = ""
+  },
+  [22018] = {
+    id = 22018,
+    Type = 1,
+    Title = "",
+    Text = "总有一天我会开世界线巡回演唱会，你们要多多捧场噢",
+    button = "",
+    buttonF = ""
+  },
+  [22019] = {
+    id = 22019,
+    Type = 1,
+    Title = "",
+    Text = "安静点~你们吵到我守护爱了",
+    button = "",
+    buttonF = ""
+  },
+  [22020] = {
+    id = 22020,
+    Type = 1,
+    Title = "",
+    Text = "当初我们说好的你输出我辅助，现在你却嫌我太能吸。",
+    button = "",
+    buttonF = ""
+  },
+  [22021] = {
+    id = 22021,
+    Type = 1,
+    Title = "",
+    Text = "一个不会讲冷笑话的舞娘不是好贤者！对吧？那边那个拎油诗人！",
+    button = "",
+    buttonF = ""
+  },
+  [22022] = {
+    id = 22022,
+    Type = 1,
+    Title = "",
+    Text = "我的法师和巨佬已经没多大差距了，因为我们都秒不了木桩",
+    button = "",
+    buttonF = ""
+  },
+  [22023] = {
+    id = 22023,
+    Type = 1,
+    Title = "",
+    Text = "会长爬塔日常：领主光环、集中攻击、剑速增加、附魔之刃...牧师拉我起来谢谢",
+    button = "",
+    buttonF = ""
+  },
+  [22024] = {
+    id = 22024,
+    Type = 1,
+    Title = "",
+    Text = "咦？那个跳舞的，好像不是舞娘？还骑着大嘴鸟的？",
+    button = "",
+    buttonF = ""
+  },
+  [22025] = {
+    id = 22025,
+    Type = 1,
+    Title = "",
+    Text = "史汀为什么只有两个哥哥？因为除了史㳌和史㲸找不到第三个了…",
+    button = "",
+    buttonF = ""
+  },
+  [22026] = {
+    id = 22026,
+    Type = 1,
+    Title = "",
+    Text = "我口味向来很重，因为我是咸者",
+    button = "",
+    buttonF = ""
+  },
+  [22027] = {
+    id = 22027,
+    Type = 1,
+    Title = "",
+    Text = "忽克连：比盔甲更坚固的，是同伴的守护！所以有个小红锤也没事的啦",
+    button = "",
+    buttonF = ""
+  },
+  [22028] = {
+    id = 22028,
+    Type = 1,
+    Title = "",
+    Text = "我曾经也是个舞娘，直到我不小心点了扭蛋机旁边的npc(ó﹏ò｡)",
+    button = "",
+    buttonF = ""
+  },
+  [22029] = {
+    id = 22029,
+    Type = 1,
+    Title = "",
+    Text = "当初你们说玩ro不花钱，现在家里的矿都没了",
+    button = "",
+    buttonF = ""
+  },
+  [22030] = {
+    id = 22030,
+    Type = 1,
+    Title = "",
+    Text = "不想转职的骑士不是好炼金",
+    button = "",
+    buttonF = ""
+  },
+  [22031] = {
+    id = 22031,
+    Type = 1,
+    Title = "",
+    Text = "魔锅蛋！你能为我煎个魔锅蛋吗？",
+    button = "",
+    buttonF = ""
+  },
+  [22032] = {
+    id = 22032,
+    Type = 1,
+    Title = "",
+    Text = "无论你多强，你也秒不掉三个木桩和不射猎",
+    button = "",
+    buttonF = ""
+  },
+  [22033] = {
+    id = 22033,
+    Type = 1,
+    Title = "",
+    Text = "不带妖耳怎么证明你是（猎人）精灵呐？",
+    button = "",
+    buttonF = ""
+  },
+  [24000] = {
+    id = 24000,
+    Type = 2,
+    Title = "",
+    Text = "未手机验证或身份证验证的账号不能使用该功能，请先完成验证哦~",
+    button = "进行验证",
+    buttonF = "取消"
+  },
+  [24001] = {
+    id = 24001,
+    Type = 1,
+    Title = "",
+    Text = "该道具需要解锁了冒险手册后才可以使用哦~",
+    button = "",
+    buttonF = ""
+  },
+  [24002] = {
+    id = 24002,
+    Type = 1,
+    Title = "",
+    Text = "成为E级冒险家学习冒险技能时空断裂后解锁",
+    button = "",
+    buttonF = ""
+  },
+  [25000] = {
+    id = 25000,
+    Type = 129,
+    Title = "",
+    Text = "您的好友[63cd4e]%s[-]已经成功签收了你的礼物！扣除[63cd4e]%s[-]积分，剩余[63cd4e]%s[-]积分。",
+    button = "",
+    buttonF = ""
+  },
+  [25001] = {
+    id = 25001,
+    Type = 129,
+    Title = "",
+    Text = "非常遗憾，您的好友[63cd4e]%s[-]拒绝了你的礼物！礼物将返回至交易所交易记录。",
+    button = "",
+    buttonF = ""
+  },
+  [25002] = {
+    id = 25002,
+    Type = 129,
+    Title = "",
+    Text = "非常遗憾，礼物送出后因长时间未被领取，现已返回至交易所交易记录。",
+    button = "",
+    buttonF = ""
+  },
+  [25003] = {
+    id = 25003,
+    Type = 1,
+    Title = "",
+    Text = "您的打赏积分不足，无法进行赠送。",
+    button = "",
+    buttonF = ""
+  },
+  [25004] = {
+    id = 25004,
+    Type = 1,
+    Title = "",
+    Text = "该物品即将到期，无法进行赠送，请尽快领取。",
+    button = "",
+    buttonF = ""
+  },
+  [25005] = {
+    id = 25005,
+    Type = 1,
+    Title = "",
+    Text = "您已有礼物正在赠送。",
+    button = "",
+    buttonF = ""
+  },
+  [25006] = {
+    id = 25006,
+    Type = 1,
+    Title = "",
+    Text = "请选择您需要赠送的好友。",
+    button = "",
+    buttonF = ""
+  },
+  [25007] = {
+    id = 25007,
+    Type = 1,
+    Title = "",
+    Text = "您的礼物已成功赠出。",
+    button = "",
+    buttonF = ""
+  },
+  [25008] = {
+    id = 25008,
+    Type = 1,
+    Title = "",
+    Text = "[63cd4e]%s[-]之后的交易记录才可进行赠送。",
+    button = "",
+    buttonF = ""
+  },
+  [25009] = {
+    id = 25009,
+    Type = 1,
+    Title = "",
+    Text = "打赏积分不足，无法出价。",
+    button = "",
+    buttonF = ""
+  },
+  [25010] = {
+    id = 25010,
+    Type = 1,
+    Title = "",
+    Text = "打赏积分不足，无法购买",
+    button = "",
+    buttonF = ""
+  },
+  [25100] = {
+    id = 25100,
+    Type = 129,
+    Title = "",
+    Text = "您好！你有一份赠礼送达，请在身边的[63cd4e]%s[-]处领取礼物。",
+    button = "",
+    buttonF = ""
+  },
+  [25101] = {
+    id = 25101,
+    Type = 2,
+    Title = "",
+    Text = "确定拒绝该份赠礼吗？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [25102] = {
+    id = 25102,
+    Type = 129,
+    Title = "",
+    Text = "您的礼物已送达了许久，请尽快领取，姜饼人将在1分钟后消失！",
+    button = "",
+    buttonF = ""
+  },
+  [25103] = {
+    id = 25103,
+    Type = 129,
+    Title = "",
+    Text = "由于您长时间未进行领取，姜饼人带着礼物消失了(/ω＼)…",
+    button = "",
+    buttonF = ""
+  },
+  [25104] = {
+    id = 25104,
+    Type = 1,
+    Title = "",
+    Text = "缺少琴和蓝色乐章",
+    button = "",
+    buttonF = ""
+  },
+  [25105] = {
+    id = 25105,
+    Type = 1,
+    Title = "",
+    Text = "缺少琴和绿色乐章",
+    button = "",
+    buttonF = ""
+  },
+  [25106] = {
+    id = 25106,
+    Type = 1,
+    Title = "",
+    Text = "缺少琴和红色乐章",
+    button = "",
+    buttonF = ""
+  },
+  [25107] = {
+    id = 25107,
+    Type = 1,
+    Title = "",
+    Text = "缺少琴和紫色乐章",
+    button = "",
+    buttonF = ""
+  },
+  [25108] = {
+    id = 25108,
+    Type = 1,
+    Title = "",
+    Text = "缺少蓝色乐章",
+    button = "",
+    buttonF = ""
+  },
+  [25109] = {
+    id = 25109,
+    Type = 1,
+    Title = "",
+    Text = "缺少绿色乐章",
+    button = "",
+    buttonF = ""
+  },
+  [25110] = {
+    id = 25110,
+    Type = 1,
+    Title = "",
+    Text = "缺少红色乐章",
+    button = "",
+    buttonF = ""
+  },
+  [25111] = {
+    id = 25111,
+    Type = 1,
+    Title = "",
+    Text = "缺少紫色乐章",
+    button = "",
+    buttonF = ""
+  },
+  [25112] = {
+    id = 25112,
+    Type = 1,
+    Title = "",
+    Text = "缺少琴",
+    button = "",
+    buttonF = ""
+  },
+  [25201] = {
+    id = 25201,
+    Type = 2,
+    Title = "",
+    Text = "当前版本无法使用交易所赠送功能，请更新客户端",
+    button = "前往下载",
+    buttonF = "取消"
+  },
+  [25202] = {
+    id = 25202,
+    Type = 2,
+    Title = "",
+    Text = "当前设备还未验证为安全设备，无法使用交易所赠送功能",
+    button = "进行验证",
+    buttonF = "取消"
+  },
+  [25203] = {
+    id = 25203,
+    Type = 1,
+    Title = "",
+    Text = "【时空罪恶】任务已添加至追踪栏",
+    button = "",
+    buttonF = ""
+  },
+  [25301] = {
+    id = 25301,
+    Type = 512,
+    Title = "",
+    Text = "无任何异常需要应对",
+    button = "",
+    buttonF = ""
+  },
+  [25302] = {
+    id = 25302,
+    Type = 512,
+    Title = "",
+    Text = "装备穿戴成功",
+    button = "",
+    buttonF = ""
+  },
+  [25303] = {
+    id = 25303,
+    Type = 512,
+    Title = "",
+    Text = "使用武器修理合金成功",
+    button = "",
+    buttonF = ""
+  },
+  [25304] = {
+    id = 25304,
+    Type = 512,
+    Title = "",
+    Text = "武器修理合金不足",
+    button = "",
+    buttonF = ""
+  },
+  [25305] = {
+    id = 25305,
+    Type = 512,
+    Title = "",
+    Text = "武器修理合金冷却中",
+    button = "",
+    buttonF = ""
+  },
+  [25306] = {
+    id = 25306,
+    Type = 512,
+    Title = "",
+    Text = "万能药使用成功",
+    button = "",
+    buttonF = ""
+  },
+  [25307] = {
+    id = 25307,
+    Type = 512,
+    Title = "",
+    Text = "万能药不足",
+    button = "",
+    buttonF = ""
+  },
+  [25308] = {
+    id = 25308,
+    Type = 1,
+    Title = "",
+    Text = "给好友写一些赠言吧~",
+    button = "",
+    buttonF = ""
+  },
+  [25309] = {
+    id = 25309,
+    Type = 129,
+    Title = "",
+    Text = "您的好友[63cd4e]%s[-]已经成功签收了你的礼物！",
+    button = "",
+    buttonF = ""
+  },
+  [25310] = {
+    id = 25310,
+    Type = 129,
+    Title = "",
+    Text = "您有一份[63cd4e]%s年%s月扭蛋因长时间未领取，已自动加入背包",
+    button = "",
+    buttonF = ""
+  },
+  [25311] = {
+    id = 25311,
+    Type = 1,
+    Title = "",
+    Text = "GVG中无法使用聊天室",
+    button = "",
+    buttonF = ""
+  },
+  [25312] = {
+    id = 25312,
+    Type = 1,
+    Title = "",
+    Text = "已达购买上限",
+    button = "",
+    buttonF = ""
+  },
+  [25313] = {
+    id = 25313,
+    Type = 1,
+    Title = "",
+    Text = "请在交易所道具赠送完成后再进行扭蛋赠送哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25314] = {
+    id = 25314,
+    Type = 2,
+    Title = "",
+    Text = "扭蛋有活动变化啦！点击确定刷新界面！",
+    button = "确定",
+    buttonF = ""
+  },
+  [25315] = {
+    id = 25315,
+    Type = 7,
+    Title = "",
+    Text = "你还没有相关权限，是否前往设置中开启通知",
+    button = "去开启",
+    buttonF = "下次吧"
+  },
+  [25316] = {
+    id = 25316,
+    Type = 1,
+    Title = "",
+    Text = "未在可使用时间范围内",
+    button = "",
+    buttonF = ""
+  },
+  [25317] = {
+    id = 25317,
+    Type = 1,
+    Title = "",
+    Text = "请在交易所道具赠送完成后再开启公会宝箱哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25318] = {
+    id = 25318,
+    Type = 1,
+    Title = "",
+    Text = "请在交易所道具赠送完成后再赠送婚纱哦~~",
+    button = "",
+    buttonF = ""
+  },
+  [25385] = {
+    id = 25385,
+    Type = 129,
+    Title = "",
+    Text = "未在包包中找到%s，更换失败！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25386] = {
+    id = 25386,
+    Type = 129,
+    Title = "",
+    Text = "Zeny不足，%s未更换成功！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25387] = {
+    id = 25387,
+    Type = 65536,
+    Title = "",
+    Text = "即将切换职业/读取存档，是否消耗Zeny*%s卸下或变更装备中的卡片？（选择【否】则无需消耗Zeny且不变更卡片）",
+    button = "是",
+    buttonF = "否",
+    TimeInterval = 1,
+    Close = 1,
+    showInPVP = 1,
+    SaveOpt = 1
+  },
+  [25388] = {
+    id = 25388,
+    Type = 1,
+    Title = "",
+    Text = "当前副本中不可读取该存档的装备信息！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25389] = {
+    id = 25389,
+    Type = 1,
+    Title = "",
+    Text = "当前副本中不支持购买、保存、删除、修改存档操作！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25390] = {
+    id = 25390,
+    Type = 2,
+    Title = "",
+    Text = "即将覆盖存档【%s】，是否确认？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [25391] = {
+    id = 25391,
+    Type = 128,
+    Title = "",
+    Text = "【%s】正在冷却中，更换失败！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25392] = {
+    id = 25392,
+    Type = 128,
+    Title = "",
+    Text = "已读取伊米尔的记事簿【%s】存档中的装备信息！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25393] = {
+    id = 25393,
+    Type = 128,
+    Title = "",
+    Text = "伊米尔的记事簿中，【%s】方案切换成功！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25394] = {
+    id = 25394,
+    Type = 128,
+    Title = "",
+    Text = "职业【%s】切换成功！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25395] = {
+    id = 25395,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "正在预览伊米尔的记事簿存档中的记录，当前不可进行更改操作",
+    button = "确定",
+    buttonF = "",
+    TimeInterval = 0
+  },
+  [25396] = {
+    id = 25396,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "正在预览其他职业的记录，当前不可进行更改操作",
+    button = "确定",
+    buttonF = "",
+    TimeInterval = 0
+  },
+  [25397] = {
+    id = 25397,
+    Type = 128,
+    Title = "",
+    Text = "%s装备未在背包中检测到，以上装备替换失效",
+    button = "",
+    buttonF = ""
+  },
+  [25398] = {
+    id = 25398,
+    Type = 128,
+    Title = "",
+    Text = "%s装备处于冷却状态，以上装备替换失效",
+    button = "",
+    buttonF = ""
+  },
+  [25399] = {
+    id = 25399,
+    Type = 2,
+    Title = "",
+    Text = "你的星盘或符文发生过变化，可能会导致重置或更换，是否继续？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [25400] = {
+    id = 25400,
+    Type = 1,
+    Title = "",
+    Text = "%s不足无法切换",
+    button = "",
+    buttonF = ""
+  },
+  [25401] = {
+    id = 25401,
+    Type = 1,
+    Title = "",
+    Text = "赠送失败，对方未加你为好友",
+    button = "",
+    buttonF = ""
+  },
+  [25402] = {
+    id = 25402,
+    Type = 2,
+    Title = "",
+    Text = "升级后此装备将变成%s，精炼等级会下降2级，剩余精炼值将被清空；若装备中已插入卡片，卡片会自动卸下放入包包。",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [25403] = {
+    id = 25403,
+    Type = 1,
+    Title = "",
+    Text = "你没有删除权限",
+    button = "",
+    buttonF = ""
+  },
+  [25404] = {
+    id = 25404,
+    Type = 2,
+    Title = "",
+    Text = "确认删除照片？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [25405] = {
+    id = 25405,
+    Type = 2,
+    Title = "",
+    Text = "当前尚未拥有执事，是否前往雇佣？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [25406] = {
+    id = 25406,
+    Type = 2,
+    Title = "",
+    Text = "我的性转魔法在同一账号下所有角色仅能使用一次呦，确定使用当前的角色进行么？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [25407] = {
+    id = 25407,
+    Type = 1,
+    Title = "",
+    Text = "伊米尔的记事簿只能在主城、公会领地、家园和GVG备战区域使用哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25408] = {
+    id = 25408,
+    Type = 1,
+    Title = "",
+    Text = "仅二转及二转以上职业才可进行存储操作哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25409] = {
+    id = 25409,
+    Type = 1,
+    Title = "",
+    Text = "存档名字不能超过九个字哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25410] = {
+    id = 25410,
+    Type = 2,
+    Title = "",
+    Text = "是否购买该存档位？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [25411] = {
+    id = 25411,
+    Type = 2,
+    Title = "",
+    Text = "你的金章少于%s，公会贡献少于%s，切换将会导致星盘重置，是否切换？",
+    button = "切换",
+    buttonF = "再想想"
+  },
+  [25412] = {
+    id = 25412,
+    Type = 4096,
+    Title = "uiicon=Part",
+    Text = "获得职业位·%s",
+    button = "",
+    buttonF = ""
+  },
+  [25413] = {
+    id = 25413,
+    Type = 1,
+    Title = "",
+    Text = "多职业功能将在达成进阶二转阶段后解锁",
+    button = "",
+    buttonF = ""
+  },
+  [25414] = {
+    id = 25414,
+    Type = 2,
+    Title = "",
+    Text = "多职业版本来袭，首次登录游戏的角色将视为主号，将享有补偿奖励，达到要求的副号角色会复刻至主号，确认使用该角色进入游戏？",
+    button = "确定",
+    buttonF = "我再想想"
+  },
+  [25415] = {
+    id = 25415,
+    Type = 2,
+    Title = "",
+    Text = "你的选择是Base等级为%s的%s，是否确认你的选择？",
+    button = "确定",
+    buttonF = "算了吧"
+  },
+  [25416] = {
+    id = 25416,
+    Type = 2,
+    Title = "",
+    Text = "你的本次操作将不可撤销，请慎重做出你的选择？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [25417] = {
+    id = 25417,
+    Type = 1,
+    Title = "",
+    Text = "主人，在这里无法召唤我哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25418] = {
+    id = 25418,
+    Type = 1,
+    Title = "",
+    Text = "%s不足",
+    button = "",
+    buttonF = ""
+  },
+  [25419] = {
+    id = 25419,
+    Type = 1,
+    Title = "",
+    Text = "%s不足无法购买",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25420] = {
+    id = 25420,
+    Type = 1,
+    Title = "",
+    Text = "时空正在修复，请%s秒后再尝试吧~",
+    button = "",
+    buttonF = ""
+  },
+  [25421] = {
+    id = 25421,
+    Type = 1,
+    Title = "",
+    Text = "你切换的太频繁了，请10秒后再尝试吧~",
+    button = "",
+    buttonF = ""
+  },
+  [25422] = {
+    id = 25422,
+    Type = 1,
+    Title = "",
+    Text = "可在二转职业处进行切换操作哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25423] = {
+    id = 25423,
+    Type = 1,
+    Title = "",
+    Text = "还未到活动时间哦，请耐心等待",
+    button = "",
+    buttonF = ""
+  },
+  [25424] = {
+    id = 25424,
+    Type = 65536,
+    Title = "",
+    Text = "是否将背包中与仓库一样可叠加的道具快速存入？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [25425] = {
+    id = 25425,
+    Type = 1,
+    Title = "",
+    Text = "将{itemicon=%s}{item=%s,%s}存放至仓库",
+    button = "",
+    buttonF = ""
+  },
+  [25426] = {
+    id = 25426,
+    Type = 1,
+    Title = "",
+    Text = "仓库中没有与背包相同且可堆叠的道具",
+    button = "",
+    buttonF = ""
+  },
+  [25427] = {
+    id = 25427,
+    Type = 2,
+    Title = "",
+    Text = "将背包中有使用等级、不可升级、不可在交易所交易的装备进行一键出售。",
+    button = "确认",
+    buttonF = "取消",
+    PrefabType = 0
+  },
+  [25428] = {
+    id = 25428,
+    Type = 1,
+    Title = "",
+    Text = "当前没有可一键出售的装备",
+    button = "",
+    buttonF = ""
+  },
+  [25429] = {
+    id = 25429,
+    Type = 1,
+    Title = "",
+    Text = "宠物只能品尝1个料理",
+    button = "",
+    buttonF = ""
+  },
+  [25430] = {
+    id = 25430,
+    Type = 2,
+    Title = "",
+    Text = "删除后将无法读取该存档，确认删除？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [25431] = {
+    id = 25431,
+    Type = 1,
+    Title = "",
+    Text = "尚未学习时空断裂，伊米尔的记事簿的魔力正在消逝",
+    button = "",
+    buttonF = ""
+  },
+  [25432] = {
+    id = 25432,
+    Type = 1,
+    Title = "",
+    Text = "还没有相关角色信息哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25433] = {
+    id = 25433,
+    Type = 1,
+    Title = "",
+    Text = "还没有星盘信息哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25434] = {
+    id = 25434,
+    Type = 1,
+    Title = "",
+    Text = "还没有装备信息哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25435] = {
+    id = 25435,
+    Type = 1,
+    Title = "",
+    Text = "还没有技能信息哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25436] = {
+    id = 25436,
+    Type = 1,
+    Title = "",
+    Text = "请先选择你的主号后，再进行创建角色操作哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25437] = {
+    id = 25437,
+    Type = 1,
+    Title = "",
+    Text = "只能在主城、公会领地、家园、GVG备战区域进行切换操作哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25438] = {
+    id = 25438,
+    Type = 1,
+    Title = "",
+    Text = "当前职业未达到二转，无法打开阿萨神碑",
+    button = "",
+    buttonF = ""
+  },
+  [25439] = {
+    id = 25439,
+    Type = 65536,
+    Title = "",
+    Text = "苍蝇翅膀可在地图上移动至任意位置，确定要使用么？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [25440] = {
+    id = 25440,
+    Type = 65536,
+    Title = "",
+    Text = "蝴蝶翅膀可在地图上移动至储存的位置，确定要使用么？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [25441] = {
+    id = 25441,
+    Type = 1,
+    Title = "",
+    Text = "请等待其他队员确认完成",
+    button = "",
+    buttonF = ""
+  },
+  [25442] = {
+    id = 25442,
+    Type = 1,
+    Title = "",
+    Text = "当前职业阶段不可缴纳巅峰碎片哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25443] = {
+    id = 25443,
+    Type = 2,
+    Title = "一键完成委托",
+    Text = "[c][f5f5ae]队长[-][/c][c][ffc514]%s[-][/c]\n[c][f5f5ae]邀请你一同使用佣兵宅急便[-][/c]",
+    button = "拒绝",
+    buttonF = ""
+  },
+  [25444] = {
+    id = 25444,
+    Type = 1,
+    Title = "",
+    Text = "%s数量不足",
+    button = "",
+    buttonF = ""
+  },
+  [25445] = {
+    id = 25445,
+    Type = 256,
+    Title = "秒数倒计时",
+    Text = "还有[c][ffff00]{countDown=%s}[-][/c]秒开始修复时空裂隙",
+    button = "",
+    buttonF = ""
+  },
+  [25446] = {
+    id = 25446,
+    Type = 1,
+    Title = "",
+    Text = "寻找导师中无法打开申请列表",
+    button = "",
+    buttonF = ""
+  },
+  [25447] = {
+    id = 25447,
+    Type = 1,
+    Title = "",
+    Text = "%s成为了你的导师",
+    button = "",
+    buttonF = ""
+  },
+  [25448] = {
+    id = 25448,
+    Type = 1,
+    Title = "",
+    Text = "%s成为了你的学生",
+    button = "",
+    buttonF = ""
+  },
+  [25449] = {
+    id = 25449,
+    Type = 1,
+    Title = "",
+    Text = "%s拒绝成为你的导师",
+    button = "",
+    buttonF = ""
+  },
+  [25450] = {
+    id = 25450,
+    Type = 1,
+    Title = "",
+    Text = "%s拒绝成为你的学生",
+    button = "",
+    buttonF = ""
+  },
+  [25452] = {
+    id = 25452,
+    Type = 1,
+    Title = "",
+    Text = "%s在你的黑名单中，无法建议师生关系",
+    button = "",
+    buttonF = ""
+  },
+  [25453] = {
+    id = 25453,
+    Type = 1,
+    Title = "",
+    Text = "寻找%s中，无法改变性别",
+    button = "",
+    buttonF = ""
+  },
+  [25454] = {
+    id = 25454,
+    Type = 1,
+    Title = "",
+    Text = "最高",
+    button = "",
+    buttonF = ""
+  },
+  [25455] = {
+    id = 25455,
+    Type = 1,
+    Title = "",
+    Text = "秒",
+    button = "",
+    buttonF = ""
+  },
+  [25456] = {
+    id = 25456,
+    Type = 1,
+    Title = "",
+    Text = "达成",
+    button = "",
+    buttonF = ""
+  },
+  [25457] = {
+    id = 25457,
+    Type = 1,
+    Title = "",
+    Text = "系统",
+    button = "",
+    buttonF = ""
+  },
+  [25458] = {
+    id = 25458,
+    Type = 1,
+    Title = "",
+    Text = "交易所",
+    button = "",
+    buttonF = ""
+  },
+  [25459] = {
+    id = 25459,
+    Type = 1,
+    Title = "",
+    Text = "离线邮件",
+    button = "",
+    buttonF = ""
+  },
+  [25460] = {
+    id = 25460,
+    Type = 1,
+    Title = "",
+    Text = "充值",
+    button = "",
+    buttonF = ""
+  },
+  [25461] = {
+    id = 25461,
+    Type = 1,
+    Title = "",
+    Text = "充值获得",
+    button = "",
+    buttonF = ""
+  },
+  [25462] = {
+    id = 25462,
+    Type = 1,
+    Title = "",
+    Text = "婚礼消息",
+    button = "",
+    buttonF = ""
+  },
+  [25463] = {
+    id = 25463,
+    Type = 1,
+    Title = "",
+    Text = "婚礼管理员",
+    button = "",
+    buttonF = ""
+  },
+  [25464] = {
+    id = 25464,
+    Type = 1,
+    Title = "",
+    Text = "事件邮件",
+    button = "",
+    buttonF = ""
+  },
+  [25465] = {
+    id = 25465,
+    Type = 1,
+    Title = "",
+    Text = "天",
+    button = "",
+    buttonF = ""
+  },
+  [25466] = {
+    id = 25466,
+    Type = 1,
+    Title = "",
+    Text = "小时",
+    button = "",
+    buttonF = ""
+  },
+  [25467] = {
+    id = 25467,
+    Type = 1,
+    Title = "",
+    Text = "击倒玩家：",
+    button = "",
+    buttonF = ""
+  },
+  [25468] = {
+    id = 25468,
+    Type = 1,
+    Title = "",
+    Text = "助攻：",
+    button = "",
+    buttonF = ""
+  },
+  [25469] = {
+    id = 25469,
+    Type = 1,
+    Title = "",
+    Text = "Combo：",
+    button = "",
+    buttonF = ""
+  },
+  [25470] = {
+    id = 25470,
+    Type = 1,
+    Title = "",
+    Text = "无畏者：",
+    button = "",
+    buttonF = ""
+  },
+  [25471] = {
+    id = 25471,
+    Type = 1,
+    Title = "",
+    Text = "救世主：",
+    button = "",
+    buttonF = ""
+  },
+  [25472] = {
+    id = 25472,
+    Type = 1,
+    Title = "",
+    Text = "伤害：",
+    button = "",
+    buttonF = ""
+  },
+  [25473] = {
+    id = 25473,
+    Type = 1,
+    Title = "",
+    Text = "有效治疗：",
+    button = "",
+    buttonF = ""
+  },
+  [25474] = {
+    id = 25474,
+    Type = 1,
+    Title = "",
+    Text = "全场治疗",
+    button = "",
+    buttonF = ""
+  },
+  [25475] = {
+    id = 25475,
+    Type = 1,
+    Title = "",
+    Text = "无",
+    button = "",
+    buttonF = ""
+  },
+  [25476] = {
+    id = 25476,
+    Type = 1,
+    Title = "",
+    Text = "这",
+    button = "",
+    buttonF = ""
+  },
+  [25477] = {
+    id = 25477,
+    Type = 1,
+    Title = "",
+    Text = "枚",
+    button = "",
+    buttonF = ""
+  },
+  [25478] = {
+    id = 25478,
+    Type = 1,
+    Title = "",
+    Text = "是我的小小心意~",
+    button = "",
+    buttonF = ""
+  },
+  [25479] = {
+    id = 25479,
+    Type = 1,
+    Title = "",
+    Text = "扭蛋赠送",
+    button = "",
+    buttonF = ""
+  },
+  [25480] = {
+    id = 25480,
+    Type = 1,
+    Title = "",
+    Text = "离线补偿获得",
+    button = "",
+    buttonF = ""
+  },
+  [25481] = {
+    id = 25481,
+    Type = 1,
+    Title = "",
+    Text = "艾娃",
+    button = "",
+    buttonF = ""
+  },
+  [25482] = {
+    id = 25482,
+    Type = 1,
+    Title = "",
+    Text = "求婚戒指",
+    button = "",
+    buttonF = ""
+  },
+  [25483] = {
+    id = 25483,
+    Type = 1,
+    Title = "",
+    Text = "向",
+    button = "",
+    buttonF = ""
+  },
+  [25484] = {
+    id = 25484,
+    Type = 1,
+    Title = "",
+    Text = "求婚成功",
+    button = "",
+    buttonF = ""
+  },
+  [25485] = {
+    id = 25485,
+    Type = 1,
+    Title = "",
+    Text = "斗技场线",
+    button = "",
+    buttonF = ""
+  },
+  [25486] = {
+    id = 25486,
+    Type = 1,
+    Title = "",
+    Text = "人",
+    button = "",
+    buttonF = ""
+  },
+  [25487] = {
+    id = 25487,
+    Type = 1,
+    Title = "",
+    Text = "全场最高",
+    button = "",
+    buttonF = ""
+  },
+  [25488] = {
+    id = 25488,
+    Type = 1,
+    Title = "",
+    Text = "加入队伍语音",
+    button = "",
+    buttonF = ""
+  },
+  [25489] = {
+    id = 25489,
+    Type = 1,
+    Title = "",
+    Text = "离开队伍语音",
+    button = "",
+    buttonF = ""
+  },
+  [25490] = {
+    id = 25490,
+    Type = 1,
+    Title = "",
+    Text = "开启队伍麦克风",
+    button = "",
+    buttonF = ""
+  },
+  [25491] = {
+    id = 25491,
+    Type = 1,
+    Title = "",
+    Text = "关闭队伍麦克风",
+    button = "",
+    buttonF = ""
+  },
+  [25492] = {
+    id = 25492,
+    Type = 1,
+    Title = "",
+    Text = "加入公会语音",
+    button = "",
+    buttonF = ""
+  },
+  [25493] = {
+    id = 25493,
+    Type = 1,
+    Title = "",
+    Text = "离开公会语音",
+    button = "",
+    buttonF = ""
+  },
+  [25494] = {
+    id = 25494,
+    Type = 1,
+    Title = "",
+    Text = "开启公会麦克风",
+    button = "",
+    buttonF = ""
+  },
+  [25495] = {
+    id = 25495,
+    Type = 1,
+    Title = "",
+    Text = "关闭公会麦克风",
+    button = "",
+    buttonF = ""
+  },
+  [25496] = {
+    id = 25496,
+    Type = 1,
+    Title = "",
+    Text = "您当前没有公会语音权限",
+    button = "",
+    buttonF = ""
+  },
+  [25501] = {
+    id = 25501,
+    Type = 129,
+    Title = "",
+    Text = "GVG决战的入围判定时间快到了，没有达成资格的公会加油防守哦~",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25502] = {
+    id = 25502,
+    Type = 1,
+    Title = "",
+    Text = "公会战决战将在本周日21点开启，彼时仍占领城池的公会将获取参赛资格，参战者可以提前3分钟在公会领地决战引路人处进入副本。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25503] = {
+    id = 25503,
+    Type = 128,
+    Title = "",
+    Text = "您的公会在本次公会战中成功占领城池！公会战决战将在本周日21点开启，彼时仍占领城池的公会将获取参赛资格，参战者可以提前3分钟在公会领地决战引路人处进入副本。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25504] = {
+    id = 25504,
+    Type = 256,
+    Title = "",
+    Text = "战斗将在{countDown=%s}后开始…",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25505] = {
+    id = 25505,
+    Type = 536871040,
+    Title = "",
+    Text = "[%s]%s[-]已占领%s，水晶+%s",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25506] = {
+    id = 25506,
+    Type = 536871040,
+    Title = "",
+    Text = "MVP已现身…",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25507] = {
+    id = 25507,
+    Type = 536871040,
+    Title = "",
+    Text = "北方平台MVP即将现身…",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25508] = {
+    id = 25508,
+    Type = 536871040,
+    Title = "",
+    Text = "南方平台MVP即将现身…",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25509] = {
+    id = 25509,
+    Type = 536871040,
+    Title = "",
+    Text = "[%s]%s[-]的[%s]%s[-]击杀了北方平台MVP",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25510] = {
+    id = 25510,
+    Type = 536871040,
+    Title = "",
+    Text = "[%s]%s[-]的[%s]%s[-]击杀了南方平台MVP",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25511] = {
+    id = 25511,
+    Type = 536871040,
+    Title = "",
+    Text = "[%s]%s[-]收集了4个MVP碎片，合成了一颗华丽水晶",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25512] = {
+    id = 25512,
+    Type = 536871040,
+    Title = "",
+    Text = "[%s]%s[-]正在攻打[%s]%s[-]的华丽水晶！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25513] = {
+    id = 25513,
+    Type = 536871040,
+    Title = "",
+    Text = "[%s]%s[-]击破了[%s]%s[-]的公会据点华丽水晶，[%s]%s[-]水晶-1，30s内角色死亡立刻返回基地",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25514] = {
+    id = 25514,
+    Type = 536871040,
+    Title = "",
+    Text = "[%s]%s[-]已收集到4个华丽水晶，即将获胜！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25515] = {
+    id = 25515,
+    Type = 129,
+    Title = "",
+    Text = "您尚无资格进入诸神遗迹决战战场",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25516] = {
+    id = 25516,
+    Type = 129,
+    Title = "",
+    Text = "决战战场将在周日20点57分开放，请耐心等待",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25517] = {
+    id = 25517,
+    Type = 128,
+    Title = "",
+    Text = "公会战决战将在本周日21点开启，彼时仍占领城池的公会将获取参赛资格，参战者可以提前3分钟在公会领地决战引路人处进入副本。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25518] = {
+    id = 25518,
+    Type = 1,
+    Title = "",
+    Text = "您的公会正在参与公会决战，尚无法修改名称和图标",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25519] = {
+    id = 25519,
+    Type = 129,
+    Title = "",
+    Text = "战斗开始！占领区域将在3分钟后开放！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25520] = {
+    id = 25520,
+    Type = 256,
+    Title = "",
+    Text = "占领区域还有{countDown=%s}秒开放！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25521] = {
+    id = 25521,
+    Type = 2,
+    Title = "集结糖浆",
+    Text = "队友正在使用集结糖浆召唤你，要传送到他的附近吗？",
+    button = "传送",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25522] = {
+    id = 25522,
+    Type = 1,
+    Title = "",
+    Text = "无法在MVP争夺战中使用",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25523] = {
+    id = 25523,
+    Type = 1,
+    Title = "",
+    Text = "正在排队进入中,请耐心等待...",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25524] = {
+    id = 25524,
+    Type = 1,
+    Title = "",
+    Text = "此时无法使用该道具",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25525] = {
+    id = 25525,
+    Type = 1,
+    Title = "",
+    Text = "此时无法响应集结糖浆效果",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25526] = {
+    id = 25526,
+    Type = 1,
+    Title = "",
+    Text = "只有双人组队时才可使用此装舞台哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25527] = {
+    id = 25527,
+    Type = 1,
+    Title = "",
+    Text = "代币不足是无法使用的哦",
+    button = "",
+    buttonF = ""
+  },
+  [25528] = {
+    id = 25528,
+    Type = 1,
+    Title = "",
+    Text = "只有队长才可以点击进入哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25529] = {
+    id = 25529,
+    Type = 1,
+    Title = "",
+    Text = "距离太远无法传送至双人舞台",
+    button = "",
+    buttonF = ""
+  },
+  [25530] = {
+    id = 25530,
+    Type = 1,
+    Title = "",
+    Text = "队友正在换装中，无法使用双人换装",
+    button = "",
+    buttonF = ""
+  },
+  [25531] = {
+    id = 25531,
+    Type = 1,
+    Title = "",
+    Text = "距离太远无法使用换装舞台",
+    button = "",
+    buttonF = ""
+  },
+  [25532] = {
+    id = 25532,
+    Type = 1,
+    Title = "",
+    Text = "货币不足，无法使用~",
+    button = "",
+    buttonF = ""
+  },
+  [25533] = {
+    id = 25533,
+    Type = 1,
+    Title = "",
+    Text = "使用换装舞台功能中，无法创建聊天室~",
+    button = "",
+    buttonF = ""
+  },
+  [25534] = {
+    id = 25534,
+    Type = 1,
+    Title = "",
+    Text = "队伍成员目前处于无法使用换装舞台的状态~",
+    button = "",
+    buttonF = ""
+  },
+  [25535] = {
+    id = 25535,
+    Type = 1,
+    Title = "",
+    Text = "放弃城池即将完成",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25536] = {
+    id = 25536,
+    Type = 128,
+    Title = "",
+    Text = "您的公会在本次公会战中成功占领城池！公会战决战将在本周日21点开启，彼时仍占领城池的公会将获取参赛资格，参战者可以提前3分钟在公会领地决战引路人处进入副本。",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25537] = {
+    id = 25537,
+    Type = 128,
+    Title = "",
+    Text = "%s击破了%s的华丽水晶并占领，公会原%s已自动成为中立城池",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25540] = {
+    id = 25540,
+    Type = 65536,
+    Title = "购买提示",
+    Text = "是否使用%s购买此职业？\n(注意：不使用兑换券购买将以此职业原有价格购买。)",
+    button = "使用",
+    buttonF = "不使用",
+    TimeInterval = 0,
+    Close = 1
+  },
+  [25601] = {
+    id = 25601,
+    Type = 1,
+    Title = "",
+    Text = "%s在匹配CD期间,无法重新匹配",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25602] = {
+    id = 25602,
+    Type = 1,
+    Title = "",
+    Text = "本场MVP争夺战尚未结束，非原匹配成员无法进入副本",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25603] = {
+    id = 25603,
+    Type = 1,
+    Title = "",
+    Text = "队长%s带领的队伍，成功击杀了%s!",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25604] = {
+    id = 25604,
+    Type = 129,
+    Title = "",
+    Text = "匹配超时，请稍后再试",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25605] = {
+    id = 25605,
+    Type = 1,
+    Title = "",
+    Text = "亲爱的冒险者，该道具只有在到达三转后才能使用哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25606] = {
+    id = 25606,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，您今天的卡片重制次数已经用完了！",
+    button = "",
+    buttonF = ""
+  },
+  [25607] = {
+    id = 25607,
+    Type = 1,
+    Title = "",
+    Text = "暂无达到报名条件的装备",
+    button = "",
+    buttonF = ""
+  },
+  [25608] = {
+    id = 25608,
+    Type = 1,
+    Title = "",
+    Text = "只有队长才能匹配哦",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25609] = {
+    id = 25609,
+    Type = 1,
+    Title = "",
+    Text = "您的上一场MVP争夺战已结束",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25610] = {
+    id = 25610,
+    Type = 1,
+    Title = "",
+    Text = "该联动活动已经结束，不可再抽取。",
+    button = "",
+    buttonF = ""
+  },
+  [25692] = {
+    id = 25692,
+    Type = 1,
+    Title = "",
+    Text = "对不起！摆摊功能正在维护，请稍后再试哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25693] = {
+    id = 25693,
+    Type = 1,
+    Title = "",
+    Text = "只能在主城、公会领地、家园和GVG备战区域进行购买职业哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25694] = {
+    id = 25694,
+    Type = 129,
+    Title = "",
+    Text = "您在抢购期抢购中成功购买[63cd4e]%s[-]个[63cd4e]%s[-]，共扣除[63cd4e]%s[-]Zeny，[63cd4e]%s[-]打赏积分，请在[63cd4e]交易记录[-]中领取退款。",
+    button = "",
+    buttonF = ""
+  },
+  [25695] = {
+    id = 25695,
+    Type = 129,
+    Title = "",
+    Text = "您在抢购期期间抢购了[63cd4e]%s[-]个[63cd4e]%s[-]，共预先扣除[63cd4e]%s[-]Zeny，并冻结[63cd4e]%s[-]打赏积分。",
+    button = "",
+    buttonF = ""
+  },
+  [25696] = {
+    id = 25696,
+    Type = 129,
+    Title = "",
+    Text = "您在抢购期期间抢购[63cd4e]%s[-]失败，返还[63cd4e]%s[-]Zeny，解冻[63cd4e]%s[-]打赏积分，请在[63cd4e]交易记录[-]中领取退款。",
+    button = "",
+    buttonF = ""
+  },
+  [25697] = {
+    id = 25697,
+    Type = 1,
+    Title = "",
+    Text = "消耗{itemicon=5529}打赏积分%s！",
+    button = "",
+    buttonF = ""
+  },
+  [25698] = {
+    id = 25698,
+    Type = 1,
+    Title = "",
+    Text = "冻结{itemicon=5529}打赏积分%s！",
+    button = "",
+    buttonF = ""
+  },
+  [25699] = {
+    id = 25699,
+    Type = 1,
+    Title = "",
+    Text = "解冻{itemicon=5529}打赏积分%s！",
+    button = "",
+    buttonF = ""
+  },
+  [25700] = {
+    id = 25700,
+    Type = 1,
+    Title = "",
+    Text = "店铺名不可为空，请重新输入",
+    button = "",
+    buttonF = ""
+  },
+  [25701] = {
+    id = 25701,
+    Type = 2,
+    Title = "",
+    Text = "确定收摊？",
+    button = "我要收摊",
+    buttonF = "继续摆摊"
+  },
+  [25702] = {
+    id = 25702,
+    Type = 1,
+    Title = "",
+    Text = "啊哦~你的手速慢了，商品库存不足啦~",
+    button = "",
+    buttonF = ""
+  },
+  [25703] = {
+    id = 25703,
+    Type = 1,
+    Title = "",
+    Text = "无法购买：{itemicon=5529}打赏积分不足。",
+    button = "",
+    buttonF = ""
+  },
+  [25704] = {
+    id = 25704,
+    Type = 1,
+    Title = "",
+    Text = "对不起，小店已经打烊了，下次请早点来哦！",
+    button = "",
+    buttonF = ""
+  },
+  [25705] = {
+    id = 25705,
+    Type = 1,
+    Title = "",
+    Text = "摆摊期间不能使用聊天室，请专心摆摊",
+    button = "",
+    buttonF = ""
+  },
+  [25706] = {
+    id = 25706,
+    Type = 1,
+    Title = "",
+    Text = "获得店铺积分%s!",
+    button = "",
+    buttonF = ""
+  },
+  [25707] = {
+    id = 25707,
+    Type = 1,
+    Title = "",
+    Text = "你目前的摆摊位置距离其他摆摊玩家过近，可能会发生遮挡！",
+    button = "",
+    buttonF = ""
+  },
+  [25708] = {
+    id = 25708,
+    Type = 1,
+    Title = "",
+    Text = "你目前正在摆摊，无法使用该功能！",
+    button = "",
+    buttonF = ""
+  },
+  [25709] = {
+    id = 25709,
+    Type = 1,
+    Title = "",
+    Text = "你修改名字太频繁了，请5s后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [25710] = {
+    id = 25710,
+    Type = 1,
+    Title = "",
+    Text = "请专心摆摊，不要交头接耳哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25711] = {
+    id = 25711,
+    Type = 1,
+    Title = "",
+    Text = "对方正在摆摊，无法回应你的牵手请求~",
+    button = "",
+    buttonF = ""
+  },
+  [25712] = {
+    id = 25712,
+    Type = 1,
+    Title = "",
+    Text = "当前正在摆摊，无法进行牵手动作~",
+    button = "",
+    buttonF = ""
+  },
+  [25713] = {
+    id = 25713,
+    Type = 65536,
+    Title = "宠物融合",
+    Text = "融合仪式即将开始，您选择的宠物将作为融合素材被消耗，本次操作不可撤销，为避免产生不必要的损失，请您再次确认融合素材。",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [25714] = {
+    id = 25714,
+    Type = 1,
+    Title = "",
+    Text = "恭喜您，宠物融合成功。",
+    button = "",
+    buttonF = ""
+  },
+  [25715] = {
+    id = 25715,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，没有符合条件的宠物。",
+    button = "",
+    buttonF = ""
+  },
+  [25716] = {
+    id = 25716,
+    Type = 1,
+    Title = "",
+    Text = "亲爱的初心者，该活动已结束，未及时领取的奖励连同宠物会以邮件的形式发送给您。",
+    button = "",
+    buttonF = ""
+  },
+  [25717] = {
+    id = 25717,
+    Type = 1,
+    Title = "",
+    Text = "对不起，该功能尚未支持此系统版本，程序大佬们正在努力研发中~~",
+    button = "",
+    buttonF = ""
+  },
+  [25718] = {
+    id = 25718,
+    Type = 1,
+    Title = "",
+    Text = "捕捉成功，获得{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [25719] = {
+    id = 25719,
+    Type = 1,
+    Title = "",
+    Text = "捕捉竟然失败了，真是一只骄傲的小魔物呢~~",
+    button = "",
+    buttonF = ""
+  },
+  [25792] = {
+    id = 25792,
+    Type = 1,
+    Title = "",
+    Text = "你已解开生命体研究所地下3F的奇异力量，苍蝇翅膀可使用",
+    button = "",
+    buttonF = ""
+  },
+  [25793] = {
+    id = 25793,
+    Type = 1,
+    Title = "",
+    Text = "你已解开生命体研究所地下2F东区的奇异力量，苍蝇翅膀可使用",
+    button = "",
+    buttonF = ""
+  },
+  [25794] = {
+    id = 25794,
+    Type = 1,
+    Title = "",
+    Text = "你已解开生命体研究所地下1F的奇异力量，苍蝇翅膀可使用",
+    button = "",
+    buttonF = ""
+  },
+  [25795] = {
+    id = 25795,
+    Type = 1,
+    Title = "",
+    Text = "生命体研究所地下3F被奇异力量阻挡，暂时无法飞行~",
+    button = "",
+    buttonF = ""
+  },
+  [25796] = {
+    id = 25796,
+    Type = 1,
+    Title = "",
+    Text = "生命体研究所地下2F东区被奇异力量阻挡，暂时无法飞行~",
+    button = "",
+    buttonF = ""
+  },
+  [25797] = {
+    id = 25797,
+    Type = 1,
+    Title = "",
+    Text = "生命体研究所地下1F被奇异力量阻挡，暂时无法飞行~",
+    button = "",
+    buttonF = ""
+  },
+  [25798] = {
+    id = 25798,
+    Type = 1,
+    Title = "",
+    Text = "你的队伍内有人未解锁传送功能，传送失败",
+    button = "",
+    buttonF = ""
+  },
+  [25799] = {
+    id = 25799,
+    Type = 1,
+    Title = "",
+    Text = "死亡气息笼罩斯凯领顿，禁止低空飞行~",
+    button = "",
+    buttonF = ""
+  },
+  [25800] = {
+    id = 25800,
+    Type = 1,
+    Title = "",
+    Text = "当前传送器未激活，无法使用传送功能~",
+    button = "",
+    buttonF = ""
+  },
+  [25801] = {
+    id = 25801,
+    Type = 1,
+    Title = "",
+    Text = "该区域传送器未全部激活，不可传送至该传送器~",
+    button = "",
+    buttonF = ""
+  },
+  [25802] = {
+    id = 25802,
+    Type = 1,
+    Title = "",
+    Text = "死亡气息笼罩雾之森林，禁止低空飞行~",
+    button = "",
+    buttonF = ""
+  },
+  [25803] = {
+    id = 25803,
+    Type = 1,
+    Title = "",
+    Text = "雾之森林结界已解开，苍蝇翅膀可使用",
+    button = "",
+    buttonF = ""
+  },
+  [25804] = {
+    id = 25804,
+    Type = 1,
+    Title = "",
+    Text = "斯凯领顿结界已解开，苍蝇翅膀可使用",
+    button = "",
+    buttonF = ""
+  },
+  [25805] = {
+    id = 25805,
+    Type = 1,
+    Title = "",
+    Text = "灵光一闪~~似乎品尝出了[63cd4e]%s[-]的配方！！",
+    button = "",
+    buttonF = ""
+  },
+  [25806] = {
+    id = 25806,
+    Type = 1,
+    Title = "",
+    Text = "今天已经吃了太多[63cd4e]%s[-]了，尝试下别的料理吧~",
+    button = "",
+    buttonF = ""
+  },
+  [25807] = {
+    id = 25807,
+    Type = 128,
+    Title = "",
+    Text = "GVG额外奖励活动期间，您的公会成功占领了%s城池，特此奖励您%s，请通过邮件查收~",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25808] = {
+    id = 25808,
+    Type = 128,
+    Title = "",
+    Text = "GVG额外奖励活动期间，您的公会参与了%s段位的GVG巅峰决战，特此奖励您%s，请通过邮件查收~",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25809] = {
+    id = 25809,
+    Type = 129,
+    Title = "",
+    Text = "您收到了来自[63cd4e]%s[-]的祝福语~",
+    button = "",
+    buttonF = ""
+  },
+  [25810] = {
+    id = 25810,
+    Type = 1,
+    Title = "",
+    Text = "地下研究所1F结界已解开，苍蝇翅膀可使用",
+    button = "",
+    buttonF = ""
+  },
+  [25811] = {
+    id = 25811,
+    Type = 1,
+    Title = "",
+    Text = "地下研究所2F东区结界已解开，苍蝇翅膀可使用",
+    button = "",
+    buttonF = ""
+  },
+  [25812] = {
+    id = 25812,
+    Type = 1,
+    Title = "",
+    Text = "电波干扰生命体研究所1F，禁止低空飞行~",
+    button = "",
+    buttonF = ""
+  },
+  [25813] = {
+    id = 25813,
+    Type = 1,
+    Title = "",
+    Text = "电波干扰生命体研究所2F东区，禁止低空飞行~",
+    button = "",
+    buttonF = ""
+  },
+  [25814] = {
+    id = 25814,
+    Type = 1,
+    Title = "",
+    Text = "电波干扰生命体研究所3F，禁止低空飞行~",
+    button = "",
+    buttonF = ""
+  },
+  [25815] = {
+    id = 25815,
+    Type = 1,
+    Title = "",
+    Text = "此区域禁止低空飞行。",
+    button = "",
+    buttonF = ""
+  },
+  [25820] = {
+    id = 25820,
+    Type = 1,
+    Title = "",
+    Text = "仅限三转以下的冒险家使用！",
+    button = "",
+    buttonF = ""
+  },
+  [25821] = {
+    id = 25821,
+    Type = 65536,
+    Title = "",
+    Text = "关闭逛街模式将无法查看摆摊信息，确认关闭？",
+    button = "逛累了！",
+    buttonF = "还想逛逛",
+    TimeInterval = 7
+  },
+  [25822] = {
+    id = 25822,
+    Type = 1,
+    Title = "",
+    Text = "长度限制为20个汉字~",
+    button = "",
+    buttonF = ""
+  },
+  [25823] = {
+    id = 25823,
+    Type = 1,
+    Title = "",
+    Text = "你还没有解锁这个外框哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25824] = {
+    id = 25824,
+    Type = 1,
+    Title = "",
+    Text = "背包中的[63cd4e]%s[-]数量不足！",
+    button = "",
+    buttonF = ""
+  },
+  [25825] = {
+    id = 25825,
+    Type = 1,
+    Title = "",
+    Text = "天空弹幕墙，欢迎各位冒险者畅所欲言~",
+    button = "",
+    buttonF = ""
+  },
+  [25826] = {
+    id = 25826,
+    Type = 1,
+    Title = "",
+    Text = "魔王来袭，保护卡普拉小姐姐！ヽ(｀Д´)ﾉ",
+    button = "",
+    buttonF = ""
+  },
+  [25827] = {
+    id = 25827,
+    Type = 1,
+    Title = "",
+    Text = "天空弹幕墙，欢迎各位冒险者畅所欲言~",
+    button = "",
+    buttonF = ""
+  },
+  [25828] = {
+    id = 25828,
+    Type = 1,
+    Title = "",
+    Text = "天空弹幕墙，欢迎各位冒险者畅所欲言~",
+    button = "",
+    buttonF = ""
+  },
+  [25829] = {
+    id = 25829,
+    Type = 1,
+    Title = "",
+    Text = "天空弹幕墙，欢迎各位冒险者畅所欲言~",
+    button = "",
+    buttonF = ""
+  },
+  [25830] = {
+    id = 25830,
+    Type = 1,
+    Title = "",
+    Text = "今晚8点整，会有大批不明生物入侵南门~",
+    button = "",
+    buttonF = ""
+  },
+  [25831] = {
+    id = 25831,
+    Type = 1,
+    Title = "",
+    Text = "快乐周末，找上公会的小伙伴们一起聚餐吧！",
+    button = "",
+    buttonF = ""
+  },
+  [25832] = {
+    id = 25832,
+    Type = 1,
+    Title = "",
+    Text = "活动已经结束了哦~请期待下场活动吧！",
+    button = "",
+    buttonF = ""
+  },
+  [25833] = {
+    id = 25833,
+    Type = 1,
+    Title = "",
+    Text = "该商品已经下架了哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25834] = {
+    id = 25834,
+    Type = 1,
+    Title = "",
+    Text = "同账号下，每天只可使用一次哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25835] = {
+    id = 25835,
+    Type = 1,
+    Title = "",
+    Text = "附近出现了一个似乎很危险的时空裂隙！",
+    button = "",
+    buttonF = ""
+  },
+  [25836] = {
+    id = 25836,
+    Type = 1,
+    Title = "",
+    Text = "地下研究所3F结界已解开，苍蝇翅膀可使用",
+    button = "",
+    buttonF = ""
+  },
+  [25837] = {
+    id = 25837,
+    Type = 1,
+    Title = "",
+    Text = "扣除道具失败，请检查该道具是否可存入冒险手册。",
+    button = "",
+    buttonF = ""
+  },
+  [25850] = {
+    id = 25850,
+    Type = 2,
+    Title = "",
+    Text = "您想要进入哪个实时语音频道？",
+    button = "公会频道",
+    buttonF = "队伍频道"
+  },
+  [25851] = {
+    id = 25851,
+    Type = 2,
+    Title = "",
+    Text = "您当前并未加入队伍中，是否创建队伍？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [25852] = {
+    id = 25852,
+    Type = 1,
+    Title = "",
+    Text = "您已进入队伍语音频道。",
+    button = "",
+    buttonF = ""
+  },
+  [25853] = {
+    id = 25853,
+    Type = 1,
+    Title = "",
+    Text = "您已进入公会语音频道。",
+    button = "",
+    buttonF = ""
+  },
+  [25854] = {
+    id = 25854,
+    Type = 1,
+    Title = "",
+    Text = "麦克风已关闭",
+    button = "",
+    buttonF = ""
+  },
+  [25855] = {
+    id = 25855,
+    Type = 1,
+    Title = "",
+    Text = "麦克风已开启",
+    button = "",
+    buttonF = ""
+  },
+  [25856] = {
+    id = 25856,
+    Type = 1,
+    Title = "",
+    Text = "您还没有公会语音权限，麦克风关闭",
+    button = "",
+    buttonF = ""
+  },
+  [25857] = {
+    id = 25857,
+    Type = 1,
+    Title = "",
+    Text = "您当前还没有加入公会。",
+    button = "",
+    buttonF = ""
+  },
+  [25858] = {
+    id = 25858,
+    Type = 1,
+    Title = "",
+    Text = "您已退出实时语音频道。",
+    button = "",
+    buttonF = ""
+  },
+  [25859] = {
+    id = 25859,
+    Type = 2,
+    Title = "",
+    Text = "您没有使用麦克风的权限，请在本机设置中开启。",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [25860] = {
+    id = 25860,
+    Type = 1,
+    Title = "",
+    Text = "当前公会语音权限人数已达到上限。",
+    button = "",
+    buttonF = ""
+  },
+  [25861] = {
+    id = 25861,
+    Type = 13,
+    Title = "",
+    Text = "正在切换语音频道…请稍等…",
+    button = "确定",
+    buttonF = ""
+  },
+  [25862] = {
+    id = 25862,
+    Type = 13,
+    Title = "",
+    Text = "检测到您的系统为android9.0,android9.0及以上暂时不支持语音合成功能。",
+    button = "确定",
+    buttonF = ""
+  },
+  [25900] = {
+    id = 25900,
+    Type = 1,
+    Title = "",
+    Text = "有队伍成员等级不足，需要大于90级才可以匹配哦~",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25901] = {
+    id = 25901,
+    Type = 1,
+    Title = "",
+    Text = "仅有队长才可以组织竞技赛匹配哦",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25902] = {
+    id = 25902,
+    Type = 1,
+    Title = "",
+    Text = "有成员达到匹配次数上限，无法继续匹配",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25903] = {
+    id = 25903,
+    Type = 1,
+    Title = "",
+    Text = "队伍中有玩家离线，无法开始匹配",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25904] = {
+    id = 25904,
+    Type = 2,
+    Title = "",
+    Text = "队伍成员不足，如继续匹配，系统将为您随机组入其他玩家参加组队竞技赛。",
+    button = "继续",
+    buttonF = "取消",
+    showInPVP = 1
+  },
+  [25905] = {
+    id = 25905,
+    Type = 1,
+    Title = "",
+    Text = "暂时无法搜索到同分段队伍，请稍后重试",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25906] = {
+    id = 25906,
+    Type = 1,
+    Title = "",
+    Text = "您已达到本周排位赛次数上限",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25907] = {
+    id = 25907,
+    Type = 1,
+    Title = "",
+    Text = "暂时无法搜索到休闲模式的比赛，请稍后重试",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25908] = {
+    id = 25908,
+    Type = 256,
+    Title = "",
+    Text = "副本将在{countDown=%s}秒后开始，请做好准备！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25909] = {
+    id = 25909,
+    Type = 1,
+    Title = "",
+    Text = "竞技副本内无法移除队友",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25910] = {
+    id = 25910,
+    Type = 2,
+    Title = "",
+    Text = "退出队伍后将传出副本，计算次数，并受到退出惩罚。是否确定退出？",
+    button = "确定",
+    buttonF = "取消",
+    showInPVP = 1
+  },
+  [25911] = {
+    id = 25911,
+    Type = 1,
+    Title = "",
+    Text = "竞技副本内无法加入其它成员",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25912] = {
+    id = 25912,
+    Type = 536871040,
+    Title = "",
+    Text = "%s队伍已召唤出法术%s",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25913] = {
+    id = 25913,
+    Type = 536871040,
+    Title = "",
+    Text = "%s已死亡，法球%s返回祭坛",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25914] = {
+    id = 25914,
+    Type = 536871040,
+    Title = "",
+    Text = "%s队伍召唤的%s已失效",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25915] = {
+    id = 25915,
+    Type = 536871040,
+    Title = "",
+    Text = "%s队伍即将获得胜利",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25916] = {
+    id = 25916,
+    Type = 536871040,
+    Title = "",
+    Text = "%s拾取了中央%sBUFF，获得%s点资源",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25917] = {
+    id = 25917,
+    Type = 1,
+    Title = "",
+    Text = "已在匹配中，无法继续匹配",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25918] = {
+    id = 25918,
+    Type = 1,
+    Title = "",
+    Text = "目前暂无可匹配的队伍，请稍后再试",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25919] = {
+    id = 25919,
+    Type = 536871040,
+    Title = "",
+    Text = "法球将在30秒后刷新！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25920] = {
+    id = 25920,
+    Type = 536871040,
+    Title = "",
+    Text = "buff法球将在1分钟后刷新，此后每30秒刷新一次",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25921] = {
+    id = 25921,
+    Type = 2,
+    Title = "神秘诗篇",
+    Text = "队长正在邀请你召唤亡者MVP",
+    button = "同意",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25922] = {
+    id = 25922,
+    Type = 1,
+    Title = "",
+    Text = "您本周已经进行过了召唤！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25923] = {
+    id = 25923,
+    Type = 1,
+    Title = "",
+    Text = "竞技赛中无法直接离开副本，如要离开请退出组队~",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25924] = {
+    id = 25924,
+    Type = 1,
+    Title = "",
+    Text = "请先创建队伍再开始匹配！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25925] = {
+    id = 25925,
+    Type = 1,
+    Title = "",
+    Text = "暂时无法搜索到队友，请稍后重试！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25926] = {
+    id = 25926,
+    Type = 536871040,
+    Title = "",
+    Text = "%s队伍持有法球已超过2个",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25927] = {
+    id = 25927,
+    Type = 256,
+    Title = "",
+    Text = "法球将在{countDown=%s}秒后出现！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25928] = {
+    id = 25928,
+    Type = 1,
+    Title = "",
+    Text = "非持球玩家无法拾取此buff",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25929] = {
+    id = 25929,
+    Type = 1,
+    Title = "",
+    Text = "无法加入正在组队竞技赛中的队伍!",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25930] = {
+    id = 25930,
+    Type = 1,
+    Title = "",
+    Text = "组队竞技赛中无法添加队友！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25931] = {
+    id = 25931,
+    Type = 1,
+    Title = "",
+    Text = "正在退队惩罚CD中，无法继续匹配",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25932] = {
+    id = 25932,
+    Type = 1,
+    Title = "",
+    Text = "竞技场内无法更改天赋",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25933] = {
+    id = 25933,
+    Type = 2,
+    Title = "",
+    Text = "确定重置当前天赋吗",
+    button = "确定",
+    buttonF = "取消",
+    showInPVP = 1
+  },
+  [25934] = {
+    id = 25934,
+    Type = 1,
+    Title = "",
+    Text = "下一层尚有天赋，无法回退此天赋",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25935] = {
+    id = 25935,
+    Type = 1,
+    Title = "",
+    Text = "此副本已召唤过亡者MVP，不可再次召唤",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25936] = {
+    id = 25936,
+    Type = 1,
+    Title = "",
+    Text = "每层最多可以投入4个天赋点哦~",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25937] = {
+    id = 25937,
+    Type = 129,
+    Title = "",
+    Text = "PVP天赋已开启！请在技能面板选择您的天赋技能！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25938] = {
+    id = 25938,
+    Type = 129,
+    Title = "",
+    Text = "PVP技能点+2",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25939] = {
+    id = 25939,
+    Type = 1,
+    Title = "",
+    Text = "无法持球进入复活区哦~",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25940] = {
+    id = 25940,
+    Type = 1,
+    Title = "",
+    Text = "有队友尚在副本中，无法继续匹配",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25941] = {
+    id = 25941,
+    Type = 129,
+    Title = "",
+    Text = "%s队伍队长可以前往魔法管理者处选择法球组合！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25942] = {
+    id = 25942,
+    Type = 1,
+    Title = "",
+    Text = "团长仅可交接给同队成员和其他队伍的队长哦！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25943] = {
+    id = 25943,
+    Type = 2,
+    Title = "团队邀请",
+    Text = "[c][f5f5ae]%s[-][/c][c][f5f5ae]发来邀请[-][/c]",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [25944] = {
+    id = 25944,
+    Type = 1,
+    Title = "",
+    Text = "无法邀请没有队伍的玩家组成团队",
+    button = "",
+    buttonF = ""
+  },
+  [25945] = {
+    id = 25945,
+    Type = 2,
+    Title = "团队提示",
+    Text = "是否将团长移交给[c][1f74bf]%s[-][/c]",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [25946] = {
+    id = 25946,
+    Type = 1,
+    Title = "",
+    Text = "已成功创建团队",
+    button = "",
+    buttonF = ""
+  },
+  [25947] = {
+    id = 25947,
+    Type = 2,
+    Title = "团队提示",
+    Text = "确认要解散团队关系么？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [25948] = {
+    id = 25948,
+    Type = 256,
+    Title = "",
+    Text = "挑战失败，团队将于{countDown=%s}秒后复活",
+    button = "",
+    buttonF = ""
+  },
+  [25949] = {
+    id = 25949,
+    Type = 1,
+    Title = "",
+    Text = "只有团长才可以选择难度哦！",
+    button = "",
+    buttonF = ""
+  },
+  [25950] = {
+    id = 25950,
+    Type = 1,
+    Title = "",
+    Text = "目前无法组成团队",
+    button = "",
+    buttonF = ""
+  },
+  [25951] = {
+    id = 25951,
+    Type = 1,
+    Title = "",
+    Text = "本赛季可获得历战币已达到上限",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [25952] = {
+    id = 25952,
+    Type = 2,
+    Title = "经验超出",
+    Text = "经验已超过上限，是否确认升级",
+    button = "确认",
+    buttonF = "取消",
+    showInPVP = 1
+  },
+  [25953] = {
+    id = 25953,
+    Type = 1,
+    Title = "",
+    Text = "当前无法解散团队",
+    button = "",
+    buttonF = ""
+  },
+  [25954] = {
+    id = 25954,
+    Type = 1,
+    Title = "",
+    Text = "当前无法跟随进入团队副本",
+    button = "",
+    buttonF = ""
+  },
+  [25955] = {
+    id = 25955,
+    Type = 17,
+    Title = "",
+    Text = "[c][ffff00]%s[-][/c]成为了新的团长",
+    button = "",
+    buttonF = ""
+  },
+  [25956] = {
+    id = 25956,
+    Type = 17,
+    Title = "",
+    Text = "[c][ffff00]%s[-][/c]成为了新的副团长",
+    button = "",
+    buttonF = ""
+  },
+  [25957] = {
+    id = 25957,
+    Type = 1,
+    Title = "",
+    Text = "团队模式只可在团队副本页签下发布队伍",
+    button = "",
+    buttonF = ""
+  },
+  [25958] = {
+    id = 25958,
+    Type = 1,
+    Title = "",
+    Text = "只有团长才能发布队伍",
+    button = "",
+    buttonF = ""
+  },
+  [25959] = {
+    id = 25959,
+    Type = 1,
+    Title = "",
+    Text = "团队模式只能匹配12人副本初心难度哦",
+    button = "",
+    buttonF = ""
+  },
+  [25960] = {
+    id = 25960,
+    Type = 1,
+    Title = "",
+    Text = "当前无法组建团队",
+    button = "",
+    buttonF = ""
+  },
+  [25961] = {
+    id = 25961,
+    Type = 256,
+    Title = "",
+    Text = "比赛结束，将于{countDown=%s}秒后离开地图",
+    button = "",
+    buttonF = ""
+  },
+  [25962] = {
+    id = 25962,
+    Type = 1,
+    Title = "",
+    Text = "上层尚未开启",
+    button = "",
+    buttonF = ""
+  },
+  [25963] = {
+    id = 25963,
+    Type = 1,
+    Title = "",
+    Text = "有队伍成员等级不足，需要大于80级才可以匹配哦~",
+    button = "",
+    buttonF = ""
+  },
+  [25964] = {
+    id = 25964,
+    Type = 1,
+    Title = "",
+    Text = "有队伍成员还未退出副本！",
+    button = "",
+    buttonF = ""
+  },
+  [25965] = {
+    id = 25965,
+    Type = 1,
+    Title = "",
+    Text = "该副本内无法使用神器！",
+    button = "",
+    buttonF = ""
+  },
+  [25966] = {
+    id = 25966,
+    Type = 1,
+    Title = "",
+    Text = "复活次数已用完！",
+    button = "",
+    buttonF = ""
+  },
+  [25967] = {
+    id = 25967,
+    Type = 2,
+    Title = "",
+    Text = "离开后将传出副本并退出队伍，是否确认离开",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [25968] = {
+    id = 25968,
+    Type = 1,
+    Title = "",
+    Text = "必须组团才能进入此区域",
+    button = "",
+    buttonF = ""
+  },
+  [25969] = {
+    id = 25969,
+    Type = 1,
+    Title = "",
+    Text = "就位确认中无法进入副本",
+    button = "",
+    buttonF = ""
+  },
+  [25970] = {
+    id = 25970,
+    Type = 1,
+    Title = "",
+    Text = "只有团长才可使用该功能",
+    button = "",
+    buttonF = ""
+  },
+  [25971] = {
+    id = 25971,
+    Type = 17,
+    Title = "",
+    Text = "队伍聊天频道已切换为团队聊天频道",
+    button = "",
+    buttonF = ""
+  },
+  [25972] = {
+    id = 25972,
+    Type = 17,
+    Title = "",
+    Text = "队伍聊天频道已还原",
+    button = "",
+    buttonF = ""
+  },
+  [25973] = {
+    id = 25973,
+    Type = 1,
+    Title = "",
+    Text = "有团队成员重新进入副本，副本已重置",
+    button = "",
+    buttonF = ""
+  },
+  [25974] = {
+    id = 25974,
+    Type = 129,
+    Title = "",
+    Text = "传送功能还在充能中！",
+    button = "",
+    buttonF = ""
+  },
+  [25975] = {
+    id = 25975,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s的队伍[-][/c]成为第一支通关了英灵难度之拉丝格瑞丝的队伍，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25976] = {
+    id = 25976,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s公会[-][/c]成为第一个通关了英灵难度之拉丝格瑞丝的公会，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25977] = {
+    id = 25977,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s的队伍[-][/c]成为第一支通关了英灵难度之奥术魔方的队伍，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25978] = {
+    id = 25978,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s公会[-][/c]成为第一个通关了英灵难度之奥术魔方的公会，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25979] = {
+    id = 25979,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s的队伍[-][/c]成为第一支通关了英灵难度之意志囚笼的队伍，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25980] = {
+    id = 25980,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s公会[-][/c]成为第一个通关了英灵难度之意志囚笼的公会，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25981] = {
+    id = 25981,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s的队伍[-][/c]成为第一支通关了英灵难度之封印之间的队伍，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25982] = {
+    id = 25982,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s公会[-][/c]成为第一个通关了英灵难度之封印之间的公会，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25983] = {
+    id = 25983,
+    Type = 2,
+    Title = "",
+    Text = "是否传送到封印之间？传送一次需要20s充能冷却",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [25984] = {
+    id = 25984,
+    Type = 1,
+    Title = "",
+    Text = "准备期间无法执行此操作",
+    button = "",
+    buttonF = ""
+  },
+  [25985] = {
+    id = 25985,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s的队伍[-][/c]成为第一支通关了英灵难度之幻龙加利厄隆坦的队伍，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25986] = {
+    id = 25986,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s公会[-][/c]成为第一个通关了英灵难度之幻龙加利厄隆坦的公会，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25987] = {
+    id = 25987,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s的队伍[-][/c]成为第一支通关了英灵难度之先王棋士团的队伍，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25988] = {
+    id = 25988,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s公会[-][/c]成为第一个通关了英灵难度之先王棋士团的公会，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25989] = {
+    id = 25989,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s的队伍[-][/c]成为第一支通关了英灵难度之英雄试炼的队伍，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25990] = {
+    id = 25990,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s公会[-][/c]成为第一个通关了英灵难度之英雄试炼的公会，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25991] = {
+    id = 25991,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s的队伍[-][/c]成为第一支通关了英灵难度之熔石巨像的队伍，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25992] = {
+    id = 25992,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s公会[-][/c]成为第一个通关了英灵难度之熔石巨像的公会，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25993] = {
+    id = 25993,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s的队伍[-][/c]成为第一支通关了英灵难度之海灵图腾的队伍，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25994] = {
+    id = 25994,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s公会[-][/c]成为第一个通关了英灵难度之海灵图腾的公会，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25995] = {
+    id = 25995,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s的队伍[-][/c]成为第一支通关了英灵难度之妖灵提督的队伍，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [25996] = {
+    id = 25996,
+    Type = 131200,
+    Title = "",
+    Text = "[c][ffff00]%s公会[-][/c]成为第一个通关了英灵难度之妖灵提督的公会，恭喜他们！",
+    button = "",
+    buttonF = ""
+  },
+  [26001] = {
+    id = 26001,
+    Type = 65536,
+    Title = "确认",
+    Text = "魔能重铸即将开始，重铸完成之后，作为素材的装备和材料将会被消耗，此过程不可逆，为避免产生不必要的损失，请玩家再次确认所选素材。",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [26009] = {
+    id = 26009,
+    Type = 1,
+    Title = "",
+    Text = "请根据已有的线索，尝试自行探索完成任务吧！",
+    button = "",
+    buttonF = ""
+  },
+  [26010] = {
+    id = 26010,
+    Type = 1,
+    Title = "",
+    Text = "主人，加油哦，没有我的引导你也能完成这个任务吧",
+    button = "",
+    buttonF = ""
+  },
+  [26011] = {
+    id = 26011,
+    Type = 1,
+    Title = "",
+    Text = "更多内容，敬请期待哦！",
+    button = "",
+    buttonF = ""
+  },
+  [26015] = {
+    id = 26015,
+    Type = 2,
+    Title = "",
+    Text = "抗击魔潮上限为6次，当前剩余%s次，确认使用该道具？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [26016] = {
+    id = 26016,
+    Type = 1,
+    Title = "",
+    Text = "抗击魔潮次数+%s",
+    button = "",
+    buttonF = ""
+  },
+  [26017] = {
+    id = 26017,
+    Type = 1,
+    Title = "",
+    Text = "抗击魔潮次数已经达到6次，无法使用",
+    button = "",
+    buttonF = ""
+  },
+  [26100] = {
+    id = 26100,
+    Type = 1,
+    Title = "",
+    Text = "把鬼火交给奥立芬",
+    button = "",
+    buttonF = ""
+  },
+  [26101] = {
+    id = 26101,
+    Type = 129,
+    Title = "",
+    Text = "插入卡片的装备不能作为注能素材，是否花费%szeny取出插入的卡片，此操作将返还插入的卡片。",
+    button = "移除",
+    buttonF = "取消"
+  },
+  [26102] = {
+    id = 26102,
+    Type = 2,
+    Title = "",
+    Text = "插入卡片的装备不能作为融解素材，是否花费%szeny取出插入的卡片，此操作将返还插入的卡片。",
+    button = "移除",
+    buttonF = "取消"
+  },
+  [26103] = {
+    id = 26103,
+    Type = 2,
+    Title = "",
+    Text = "是否确认进行炉心融解？此操作不可逆，请玩家谨慎操作",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [26104] = {
+    id = 26104,
+    Type = 1,
+    Title = "",
+    Text = "当前部位的融解次数不足",
+    button = "",
+    buttonF = ""
+  },
+  [26105] = {
+    id = 26105,
+    Type = 1,
+    Title = "",
+    Text = "有附魔属性的装备无法进行融解，请先清除附魔~",
+    button = "",
+    buttonF = ""
+  },
+  [26106] = {
+    id = 26106,
+    Type = 1,
+    Title = "",
+    Text = "损坏的装备无法使用+15精炼券，需尽快修理",
+    button = "",
+    buttonF = ""
+  },
+  [26110] = {
+    id = 26110,
+    Type = 1,
+    Title = "",
+    Text = "确定购买该职业？",
+    button = "",
+    buttonF = ""
+  },
+  [26111] = {
+    id = 26111,
+    Type = 1,
+    Title = "",
+    Text = "魔能灌注失败 ",
+    button = "",
+    buttonF = ""
+  },
+  [26112] = {
+    id = 26112,
+    Type = 133,
+    Title = "",
+    Text = "召唤玩法超时，亡者MVP已逃脱！下次记得手脚快点儿！你们只有15分钟的时间！",
+    button = "",
+    buttonF = ""
+  },
+  [26113] = {
+    id = 26113,
+    Type = 1,
+    Title = "",
+    Text = "功能未被激活，去尼夫海姆寻找伊斯塔娜或许她有办法！（110级可接取任务）",
+    button = "",
+    buttonF = ""
+  },
+  [26114] = {
+    id = 26114,
+    Type = 13,
+    Title = "",
+    Text = "%s成为全世界第一个打开亡灵监狱大门的勇者，向勇敢的冒险者致敬！",
+    button = "",
+    buttonF = ""
+  },
+  [26115] = {
+    id = 26115,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "使用还原功能将卸下当前宠物当前部位上已装备的装扮，包括孵化时随机生成的永久装扮，随机装扮将会永久消失，请玩家慎重使用此功能。",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [26116] = {
+    id = 26116,
+    Type = 1,
+    Title = "",
+    Text = "当前部位无可卸下装扮",
+    button = "",
+    buttonF = ""
+  },
+  [26117] = {
+    id = 26117,
+    Type = 1,
+    Title = "",
+    Text = "今天已经从恶魔们身上抢了一个[c][ffff00]伯爵的万圣夜礼盒[-][/c]了，抢的太多的话，会惹众怒的！！明天再来吧~",
+    button = "",
+    buttonF = ""
+  },
+  [26118] = {
+    id = 26118,
+    Type = 1,
+    Title = "",
+    Text = "珍藏品【四海至宝】下一阶段已触发，请在小地图继续寻找任务。",
+    button = "",
+    buttonF = ""
+  },
+  [26119] = {
+    id = 26119,
+    Type = 1,
+    Title = "",
+    Text = "珍藏品【四海至宝】最终阶段已触发，请与珍珠公主交谈进入最终阶段。",
+    button = "",
+    buttonF = ""
+  },
+  [26120] = {
+    id = 26120,
+    Type = 1,
+    Title = "",
+    Text = "今天已经从恶魔波利身上抢了一个[c][ffff00]波利祝福礼盒[-][/c]了，不要贪心哦！！明天再来吧~！",
+    button = "",
+    buttonF = ""
+  },
+  [26121] = {
+    id = 26121,
+    Type = 128,
+    Title = "",
+    Text = "天启MVP及天启亡者将在1分钟后刷新",
+    button = "",
+    buttonF = ""
+  },
+  [26122] = {
+    id = 26122,
+    Type = 128,
+    Title = "",
+    Text = "您参与击杀天启MVP：%s。获得以下奖励\n%s",
+    button = "",
+    buttonF = ""
+  },
+  [26123] = {
+    id = 26123,
+    Type = 1,
+    Title = "",
+    Text = "base等级达到80级解锁",
+    button = "",
+    buttonF = ""
+  },
+  [26124] = {
+    id = 26124,
+    Type = 8,
+    Title = "",
+    Text = "天启MVP及天启亡者已出现在世界各地，参与击杀它们可获得丰厚的奖励",
+    button = "",
+    buttonF = ""
+  },
+  [26125] = {
+    id = 26125,
+    Type = 1,
+    Title = "",
+    Text = "当前角色性别与目标职业分支不符，无法执行读档操作哦~",
+    button = "",
+    buttonF = ""
+  },
+  [26126] = {
+    id = 26126,
+    Type = 129,
+    Title = "",
+    Text = "%s消失在虚空中",
+    button = "",
+    buttonF = ""
+  },
+  [26127] = {
+    id = 26127,
+    Type = 129,
+    Title = "",
+    Text = "%s即将在5分钟后消失在虚空中",
+    button = "",
+    buttonF = ""
+  },
+  [26128] = {
+    id = 26128,
+    Type = 256,
+    Title = "",
+    Text = "%s即将在{countDown=10}秒后消失在虚空中",
+    button = "",
+    buttonF = ""
+  },
+  [26129] = {
+    id = 26129,
+    Type = 256,
+    Title = "",
+    Text = "快优先击败海神的召唤物！{countDown=5}",
+    button = "",
+    buttonF = "HideTime"
+  },
+  [26200] = {
+    id = 26200,
+    Type = 536871040,
+    Title = "",
+    Text = "秩序结晶已被摧毁",
+    button = "",
+    buttonF = ""
+  },
+  [26201] = {
+    id = 26201,
+    Type = 536871040,
+    Title = "",
+    Text = "狂热结晶已被摧毁",
+    button = "",
+    buttonF = ""
+  },
+  [26202] = {
+    id = 26202,
+    Type = 536871040,
+    Title = "",
+    Text = "秩序结晶护盾已被打破",
+    button = "",
+    buttonF = ""
+  },
+  [26203] = {
+    id = 26203,
+    Type = 536871040,
+    Title = "",
+    Text = "狂热结晶护盾已被打破",
+    button = "",
+    buttonF = ""
+  },
+  [26206] = {
+    id = 26206,
+    Type = 536871040,
+    Title = "",
+    Text = "圣殿修复者已出生，请尽快击杀",
+    button = "",
+    buttonF = ""
+  },
+  [26207] = {
+    id = 26207,
+    Type = 536871040,
+    Title = "",
+    Text = "女武神即将狂暴！",
+    button = "",
+    buttonF = ""
+  },
+  [26208] = {
+    id = 26208,
+    Type = 536871040,
+    Title = "",
+    Text = "结晶献祭者已出生，请尽快击杀",
+    button = "",
+    buttonF = ""
+  },
+  [26209] = {
+    id = 26209,
+    Type = 129,
+    Title = "",
+    Text = "女武神处于无敌状态，请迅速击破所有圣殿结晶！",
+    button = "",
+    buttonF = ""
+  },
+  [26210] = {
+    id = 26210,
+    Type = 536871040,
+    Title = "",
+    Text = "魔方已进入攻击者阶段！",
+    button = "",
+    buttonF = ""
+  },
+  [26211] = {
+    id = 26211,
+    Type = 536871040,
+    Title = "",
+    Text = "魔方已进入控制者阶段！",
+    button = "",
+    buttonF = ""
+  },
+  [26212] = {
+    id = 26212,
+    Type = 536871040,
+    Title = "",
+    Text = "魔方已进入防御者阶段！",
+    button = "",
+    buttonF = ""
+  },
+  [26213] = {
+    id = 26213,
+    Type = 536871040,
+    Title = "",
+    Text = "已成功交付一枚奥术之钥碎片",
+    button = "",
+    buttonF = ""
+  },
+  [26214] = {
+    id = 26214,
+    Type = 256,
+    Title = "",
+    Text = "团队将于{countDown=%s}秒后传至下一区",
+    button = "",
+    buttonF = ""
+  },
+  [26215] = {
+    id = 26215,
+    Type = 129,
+    Title = "",
+    Text = "绝望壁垒会阻挡移动，只有悲哀之心方可短暂破坏",
+    button = "",
+    buttonF = ""
+  },
+  [26216] = {
+    id = 26216,
+    Type = 536871040,
+    Title = "",
+    Text = "悲哀之心已出生，请尽快击破",
+    button = "",
+    buttonF = ""
+  },
+  [26217] = {
+    id = 26217,
+    Type = 536871040,
+    Title = "",
+    Text = "负面意志将与冒险者共鸣！",
+    button = "",
+    buttonF = ""
+  },
+  [26218] = {
+    id = 26218,
+    Type = 536871040,
+    Title = "",
+    Text = "负面意志的共鸣已被暂时打断",
+    button = "",
+    buttonF = ""
+  },
+  [26219] = {
+    id = 26219,
+    Type = 536871040,
+    Title = "",
+    Text = "封印宝珠已刷新，击破之后可以清除狂乱值",
+    button = "",
+    buttonF = ""
+  },
+  [26220] = {
+    id = 26220,
+    Type = 536871040,
+    Title = "",
+    Text = "梦魇内部已开启，快去阻止其中的魔物",
+    button = "",
+    buttonF = ""
+  },
+  [26221] = {
+    id = 26221,
+    Type = 129,
+    Title = "",
+    Text = "塞壬的结界圈外会被狂乱快速侵蚀！",
+    button = "",
+    buttonF = ""
+  },
+  [26222] = {
+    id = 26222,
+    Type = 536871040,
+    Title = "",
+    Text = "塞壬正在挣脱束缚，冒险者快为他争取时间！",
+    button = "",
+    buttonF = ""
+  },
+  [26223] = {
+    id = 26223,
+    Type = 536871040,
+    Title = "",
+    Text = "塞壬挣脱了束缚击退了女祭司，女祭司带着魔剑消失在虚空中",
+    button = "",
+    buttonF = ""
+  },
+  [26224] = {
+    id = 26224,
+    Type = 129,
+    Title = "",
+    Text = "忍耐之柱已出现，请尽快击破",
+    button = "",
+    buttonF = ""
+  },
+  [26225] = {
+    id = 26225,
+    Type = 129,
+    Title = "",
+    Text = "%s队伍已占领%s棋子",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26226] = {
+    id = 26226,
+    Type = 129,
+    Title = "",
+    Text = "%s秒后棋盘四边中间的棋子开启占领",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26227] = {
+    id = 26227,
+    Type = 129,
+    Title = "",
+    Text = "%s棋子恢复为未占领状态",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26228] = {
+    id = 26228,
+    Type = 1,
+    Title = "",
+    Text = "有队伍成员在副本内，无法开启新副本",
+    button = "",
+    buttonF = ""
+  },
+  [26229] = {
+    id = 26229,
+    Type = 2,
+    Title = "",
+    Text = "现在只有一名队伍成员，是否以单人模式开始副本",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [26230] = {
+    id = 26230,
+    Type = 1,
+    Title = "",
+    Text = "请先退出该副本再进行操作",
+    button = "",
+    buttonF = ""
+  },
+  [26231] = {
+    id = 26231,
+    Type = 1,
+    Title = "",
+    Text = "只有队长才能进行购买和刷新商店道具",
+    button = "",
+    buttonF = ""
+  },
+  [26232] = {
+    id = 26232,
+    Type = 129,
+    Title = "",
+    Text = "重复获得常驻属性道具，已自动兑换为等额金币",
+    button = "",
+    buttonF = ""
+  },
+  [26233] = {
+    id = 26233,
+    Type = 256,
+    Title = "",
+    Text = "当前已是副本最高层，请前往离开房间结束副本{countDown=3}",
+    button = "",
+    buttonF = "HideTime"
+  },
+  [26234] = {
+    id = 26234,
+    Type = 1,
+    Title = "",
+    Text = "多人组队模式下不能携带佣兵猫进入哦",
+    button = "",
+    buttonF = ""
+  },
+  [26235] = {
+    id = 26235,
+    Type = 1,
+    Title = "",
+    Text = "当前无法召唤佣兵猫",
+    button = "",
+    buttonF = ""
+  },
+  [26236] = {
+    id = 26236,
+    Type = 129,
+    Title = "",
+    Text = "休息房间内可以切换职业",
+    button = "",
+    buttonF = ""
+  },
+  [26237] = {
+    id = 26237,
+    Type = 129,
+    Title = "",
+    Text = "恭喜获得本难度及其下所有难度的副本通关奖励",
+    button = "",
+    buttonF = ""
+  },
+  [26238] = {
+    id = 26238,
+    Type = 256,
+    Title = "",
+    Text = "剩余战斗时长不足，将无法获得通关奖励{countDown=10}",
+    button = "",
+    buttonF = "HideTime"
+  },
+  [26239] = {
+    id = 26239,
+    Type = 256,
+    Title = "",
+    Text = "本周通关次数已满，将无法获得通关奖励{countDown=10}",
+    button = "",
+    buttonF = "HideTime"
+  },
+  [26240] = {
+    id = 26240,
+    Type = 133,
+    Title = "",
+    Text = "队伍中有成员处于离线状态，此时无法前往下一层",
+    button = "",
+    buttonF = ""
+  },
+  [26241] = {
+    id = 26241,
+    Type = 129,
+    Title = "",
+    Text = "该难度已经挑战完毕，继续战斗也无法获得奖励，是否确定再次挑战？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [26242] = {
+    id = 26242,
+    Type = 129,
+    Title = "",
+    Text = "该难度的亡者MVP挑战次数已用完。",
+    button = "",
+    buttonF = ""
+  },
+  [26243] = {
+    id = 26243,
+    Type = 129,
+    Title = "",
+    Text = "当前无法改动队伍成员",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26244] = {
+    id = 26244,
+    Type = 256,
+    Title = "",
+    Text = "匹配成功！将在{countDown=%s}秒后进入比赛",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26245] = {
+    id = 26245,
+    Type = 129,
+    Title = "",
+    Text = "当前处于邀请队员中，无法参与其他匹配",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26246] = {
+    id = 26246,
+    Type = 129,
+    Title = "",
+    Text = "%s基地已升级至%s级",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26247] = {
+    id = 26247,
+    Type = 129,
+    Title = "",
+    Text = "点击右侧界面金币处可消耗金币购买专用道具",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26248] = {
+    id = 26248,
+    Type = 129,
+    Title = "",
+    Text = "%s已被摧毁",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26249] = {
+    id = 26249,
+    Type = 129,
+    Title = "",
+    Text = "%s已击败梦罗克",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26250] = {
+    id = 26250,
+    Type = 129,
+    Title = "",
+    Text = "精炼等级已调整至+15，冒险手册、女神祈祷、星辰殿属性已全部解锁",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26251] = {
+    id = 26251,
+    Type = 129,
+    Title = "",
+    Text = "练习模式无法完成目标",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26252] = {
+    id = 26252,
+    Type = 129,
+    Title = "",
+    Text = "%s获胜！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26253] = {
+    id = 26253,
+    Type = 129,
+    Title = "",
+    Text = "此时无法解散团队",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26254] = {
+    id = 26254,
+    Type = 129,
+    Title = "",
+    Text = "%s的%s已拾取梦罗克变身卷轴",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26255] = {
+    id = 26255,
+    Type = 129,
+    Title = "",
+    Text = "购买冷却中，请等待冷却结束后购买",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26256] = {
+    id = 26256,
+    Type = 129,
+    Title = "",
+    Text = "传送冷却中，光柱升起方可再次传送",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26257] = {
+    id = 26257,
+    Type = 129,
+    Title = "",
+    Text = "当前正处于圣域之战中，无法前往其他竞技赛哦",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26258] = {
+    id = 26258,
+    Type = 129,
+    Title = "",
+    Text = "阿萨神碑已全部解锁，无需重置",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26259] = {
+    id = 26259,
+    Type = 129,
+    Title = "",
+    Text = "当前副本内内冒险手册属性已全部解锁，目前无法点击查看",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26260] = {
+    id = 26260,
+    Type = 129,
+    Title = "",
+    Text = "队长已开启无限回廊周常模式",
+    button = "",
+    buttonF = ""
+  },
+  [26261] = {
+    id = 26261,
+    Type = 129,
+    Title = "",
+    Text = "当前团队成员正在进行圣域之战，暂时不能解散团队",
+    button = "",
+    buttonF = ""
+  },
+  [26262] = {
+    id = 26262,
+    Type = 129,
+    Title = "",
+    Text = "队长未开启无限回廊周常模式，通关后将不会获得周常奖励",
+    button = "",
+    buttonF = ""
+  },
+  [26263] = {
+    id = 26263,
+    Type = 1,
+    Title = "",
+    Text = "本层已经进行过充能",
+    button = "",
+    buttonF = ""
+  },
+  [26264] = {
+    id = 26264,
+    Type = 1,
+    Title = "",
+    Text = "神圣宝瓶已满，无需充能",
+    button = "",
+    buttonF = ""
+  },
+  [26265] = {
+    id = 26265,
+    Type = 1,
+    Title = "",
+    Text = "神圣宝瓶已充满",
+    button = "",
+    buttonF = ""
+  },
+  [26266] = {
+    id = 26266,
+    Type = 1,
+    Title = "",
+    Text = "只有队长才能进行操作",
+    button = "",
+    buttonF = ""
+  },
+  [26267] = {
+    id = 26267,
+    Type = 1,
+    Title = "",
+    Text = "队长当前正在选择塔罗牌，无法传送",
+    button = "",
+    buttonF = ""
+  },
+  [26268] = {
+    id = 26268,
+    Type = 1,
+    Title = "",
+    Text = "接受塔罗牌的命运吧",
+    button = "",
+    buttonF = ""
+  },
+  [26269] = {
+    id = 26269,
+    Type = 128,
+    Title = "",
+    Text = "%s已降级",
+    button = "",
+    buttonF = ""
+  },
+  [26270] = {
+    id = 26270,
+    Type = 128,
+    Title = "",
+    Text = "%s已丢失",
+    button = "",
+    buttonF = ""
+  },
+  [26271] = {
+    id = 26271,
+    Type = 2,
+    Title = "",
+    Text = "是否确定选择%s",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [26272] = {
+    id = 26272,
+    Type = 129,
+    Title = "",
+    Text = "馆长被异变产生的狂乱吞噬，挑战失败",
+    button = "",
+    buttonF = ""
+  },
+  [26273] = {
+    id = 26273,
+    Type = 129,
+    Title = "",
+    Text = "队伍成员base等级不足%s级，无法进入",
+    button = "",
+    buttonF = ""
+  },
+  [26274] = {
+    id = 26274,
+    Type = 1,
+    Title = "",
+    Text = "匹配或副本中无法开启观战",
+    button = "",
+    buttonF = ""
+  },
+  [26275] = {
+    id = 26275,
+    Type = 1,
+    Title = "",
+    Text = "队伍正与副本MVP战斗中，暂时不能传送进副本！",
+    button = "",
+    buttonF = ""
+  },
+  [26276] = {
+    id = 26276,
+    Type = 128,
+    Title = "",
+    Text = "%s %s %s击杀了%s成为了MVP",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26277] = {
+    id = 26277,
+    Type = 129,
+    Title = "",
+    Text = "该地图内可以进一步放大视距来提升战斗体验哦",
+    button = "",
+    buttonF = ""
+  },
+  [26278] = {
+    id = 26278,
+    Type = 256,
+    Title = "",
+    Text = "下一波魔物将在{countDown=3}秒后出现",
+    button = "",
+    buttonF = ""
+  },
+  [26279] = {
+    id = 26279,
+    Type = 2,
+    Title = "",
+    Text = "是否重置当前副本的奖励进度？（如果有未获得奖励将会一并重置）",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [26280] = {
+    id = 26280,
+    Type = 536871040,
+    Title = "",
+    Text = "获得了远古勇士战团的守护！",
+    button = "",
+    buttonF = ""
+  },
+  [26281] = {
+    id = 26281,
+    Type = 536871040,
+    Title = "",
+    Text = "幻龙重新打乱了远古勇士战团的守护力量！",
+    button = "",
+    buttonF = ""
+  },
+  [26282] = {
+    id = 26282,
+    Type = 536871040,
+    Title = "",
+    Text = "幻龙召唤了水晶！",
+    button = "",
+    buttonF = ""
+  },
+  [26283] = {
+    id = 26283,
+    Type = 536871040,
+    Title = "",
+    Text = "有新的魔物出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [26284] = {
+    id = 26284,
+    Type = 536871040,
+    Title = "",
+    Text = "英雄努卡出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [26285] = {
+    id = 26285,
+    Type = 536871040,
+    Title = "",
+    Text = "英雄卡摩拉出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [26286] = {
+    id = 26286,
+    Type = 536871040,
+    Title = "",
+    Text = "英雄祖尔和珀卡拉尼出现了！",
+    button = "",
+    buttonF = ""
+  },
+  [26287] = {
+    id = 26287,
+    Type = 256,
+    Title = "",
+    Text = "魔物将在{countDown=%s}秒后出现",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [26288] = {
+    id = 26288,
+    Type = 536871040,
+    Title = "",
+    Text = "有哥布灵正要攻击动力炉，注意保护！",
+    button = "",
+    buttonF = ""
+  },
+  [26289] = {
+    id = 26289,
+    Type = 536871040,
+    Title = "",
+    Text = "注意后方！史汀正要偷窃物资！",
+    button = "",
+    buttonF = ""
+  },
+  [26293] = {
+    id = 26293,
+    Type = 129,
+    Title = "",
+    Text = "比赛匹配中无法切换职业，请先取消匹配再尝试操作",
+    button = "",
+    buttonF = ""
+  },
+  [26294] = {
+    id = 26294,
+    Type = 129,
+    Title = "",
+    Text = "队伍中相同职业人数超过%s个，无法匹配",
+    button = "",
+    buttonF = ""
+  },
+  [27000] = {
+    id = 27000,
+    Type = 2,
+    Title = "退出游戏",
+    Text = "您是否确定退出“仙境传说RO”？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [27001] = {
+    id = 27001,
+    Type = 1,
+    Title = "",
+    Text = "该按键暂时无法使用",
+    button = "",
+    buttonF = ""
+  },
+  [27002] = {
+    id = 27002,
+    Type = 1,
+    Title = "",
+    Text = "您当前正在副本中，无法进行其他任务寻路操作。请退出副本后尝试。",
+    button = "",
+    buttonF = ""
+  },
+  [27006] = {
+    id = 27006,
+    Type = 1,
+    Title = "",
+    Text = "变身状态下无法切换职业哦~",
+    button = "",
+    buttonF = ""
+  },
+  [27007] = {
+    id = 27007,
+    Type = 1,
+    Title = "",
+    Text = "骑狼状态下无法使用伊米尔的记事簿哦~",
+    button = "",
+    buttonF = ""
+  },
+  [27008] = {
+    id = 27008,
+    Type = 1,
+    Title = "",
+    Text = "请先脱卸机甲哦~",
+    button = "",
+    buttonF = ""
+  },
+  [27009] = {
+    id = 27009,
+    Type = 1,
+    Title = "",
+    Text = "请先解除变身状态哦~",
+    button = "",
+    buttonF = ""
+  },
+  [27010] = {
+    id = 27010,
+    Type = 1,
+    Title = "",
+    Text = "zeny不足，无法切换世界线哦！",
+    button = "",
+    buttonF = ""
+  },
+  [27011] = {
+    id = 27011,
+    Type = 1,
+    Title = "",
+    Text = "请先离开当前副本，再进行相关操作哦~",
+    button = "",
+    buttonF = ""
+  },
+  [27012] = {
+    id = 27012,
+    Type = 65536,
+    Title = "",
+    Text = "队长正在召唤您前往他的世界线，此次世界线切换将会受到换线惩罚，是否切换？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [27013] = {
+    id = 27013,
+    Type = 1,
+    Title = "",
+    Text = "对方和你不在同一条世界线，请切换世界线后再试吧",
+    button = "",
+    buttonF = ""
+  },
+  [27014] = {
+    id = 27014,
+    Type = 1,
+    Title = "",
+    Text = "队长%s正在召唤你前往他的世界线？",
+    button = "",
+    buttonF = ""
+  },
+  [27015] = {
+    id = 27015,
+    Type = 1,
+    Title = "",
+    Text = "请先离开当前副本，再尝试跟随操作！",
+    button = "",
+    buttonF = ""
+  },
+  [27016] = {
+    id = 27016,
+    Type = 65536,
+    Title = "",
+    Text = "是否前往队友所在世界线？\n温馨提示：本次切换世界线将会承受换线疲劳",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [27017] = {
+    id = 27017,
+    Type = 1,
+    Title = "",
+    Text = "公会领地无法跟随，请离开后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [27018] = {
+    id = 27018,
+    Type = 1,
+    Title = "",
+    Text = "抱歉！当前副本不允许跟随进入",
+    button = "",
+    buttonF = ""
+  },
+  [27019] = {
+    id = 27019,
+    Type = 1,
+    Title = "",
+    Text = "对方与你不在同一等级副本内！请离开副本后重试",
+    button = "",
+    buttonF = ""
+  },
+  [27020] = {
+    id = 27020,
+    Type = 1,
+    Title = "",
+    Text = "请先开启瓦尔哈拉遗迹之门，再尝试跟随操作",
+    button = "",
+    buttonF = ""
+  },
+  [27030] = {
+    id = 27030,
+    Type = 1,
+    Title = "",
+    Text = "还未到开启时间哦~请倒计时结束后再试",
+    button = "",
+    buttonF = ""
+  },
+  [27031] = {
+    id = 27031,
+    Type = 1,
+    Title = "",
+    Text = "贪婪宝箱魔力已用尽，宝箱正在消逝~",
+    button = "",
+    buttonF = ""
+  },
+  [27101] = {
+    id = 27101,
+    Type = 1,
+    Title = "",
+    Text = "您距离该玩家太远，请靠近后再试~",
+    button = "",
+    buttonF = ""
+  },
+  [27102] = {
+    id = 27102,
+    Type = 1,
+    Title = "",
+    Text = "您暂时无法使用该功能",
+    button = "",
+    buttonF = ""
+  },
+  [27103] = {
+    id = 27103,
+    Type = 1,
+    Title = "",
+    Text = "该玩家拒绝了您的邀请",
+    button = "",
+    buttonF = ""
+  },
+  [27104] = {
+    id = 27104,
+    Type = 1,
+    Title = "",
+    Text = "无法对该玩家发出邀请",
+    button = "",
+    buttonF = ""
+  },
+  [27105] = {
+    id = 27105,
+    Type = 1,
+    Title = "",
+    Text = "该玩家正忙，请稍后再试~",
+    button = "",
+    buttonF = ""
+  },
+  [27106] = {
+    id = 27106,
+    Type = 1,
+    Title = "",
+    Text = "您已离开互动状态",
+    button = "",
+    buttonF = ""
+  },
+  [27107] = {
+    id = 27107,
+    Type = 1,
+    Title = "",
+    Text = "您无法在此区域中使用该功能",
+    button = "",
+    buttonF = ""
+  },
+  [27140] = {
+    id = 27140,
+    Type = 1,
+    Title = "",
+    Text = "该佣兵猫刚刚被更换，请之后再试",
+    button = "",
+    buttonF = ""
+  },
+  [27141] = {
+    id = 27141,
+    Type = 1,
+    Title = "",
+    Text = "该佣兵猫未处于出战状态，请出战后重试",
+    button = "",
+    buttonF = ""
+  },
+  [27142] = {
+    id = 27142,
+    Type = 2,
+    Title = "",
+    Text = "您是否确认更换此佣兵猫？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [27143] = {
+    id = 27143,
+    Type = 1,
+    Title = "",
+    Text = "该佣兵猫暂未解锁",
+    button = "",
+    buttonF = ""
+  },
+  [27144] = {
+    id = 27144,
+    Type = 1,
+    Title = "",
+    Text = "该佣兵猫与其他的佣兵猫有冲突",
+    button = "",
+    buttonF = ""
+  },
+  [27145] = {
+    id = 27145,
+    Type = 1,
+    Title = "",
+    Text = "该佣兵猫未到期",
+    button = "",
+    buttonF = ""
+  },
+  [27180] = {
+    id = 27180,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "游戏卡顿？高帧率模式设置就在设置页-效果页面中！",
+    button = "确认",
+    buttonF = ""
+  },
+  [27181] = {
+    id = 27181,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "感到卡顿？\n优化同屏人数可使游戏更加流畅哦\n[c][848484]（可在 设置-效果 中随时修改）[-][/c]",
+    button = "立即优化",
+    buttonF = "算了吧"
+  },
+  [27182] = {
+    id = 27182,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "感到卡顿？\n使用GVG推荐配置可使游戏更加流畅哦\n[c][848484]（可在 设置-效果 中随时修改）[-][/c]",
+    button = "立即优化",
+    buttonF = "算了吧",
+    showInPVP = nil
+  },
+  [27201] = {
+    id = 27201,
+    Type = 1,
+    Title = "",
+    Text = "当前职业无法使用此装备，不能进行预览",
+    button = "",
+    buttonF = ""
+  },
+  [27202] = {
+    id = 27202,
+    Type = 1,
+    Title = "",
+    Text = "您的宠物坐骑好感等级不够，无法存入手册",
+    button = "",
+    buttonF = ""
+  },
+  [27203] = {
+    id = 27203,
+    Type = 1,
+    Title = "",
+    Text = "需要装备坐骑",
+    button = "",
+    buttonF = ""
+  },
+  [27204] = {
+    id = 27204,
+    Type = 1,
+    Title = "",
+    Text = "该宠物不能被存入",
+    button = "",
+    buttonF = ""
+  },
+  [27205] = {
+    id = 27205,
+    Type = 1,
+    Title = "",
+    Text = "当前好感度尚未达到满级哦",
+    button = "",
+    buttonF = ""
+  },
+  [27206] = {
+    id = 27206,
+    Type = 1,
+    Title = "",
+    Text = "需要装备手推车",
+    button = "",
+    buttonF = ""
+  },
+  [27207] = {
+    id = 27207,
+    Type = 1,
+    Title = "",
+    Text = "背包内已拥有，无法取出",
+    button = "",
+    buttonF = ""
+  },
+  [28000] = {
+    id = 28000,
+    Type = 1,
+    Title = "",
+    Text = "已经被其他玩家使用，等一会在过来吧",
+    button = "",
+    buttonF = ""
+  },
+  [28001] = {
+    id = 28001,
+    Type = 1,
+    Title = "",
+    Text = "你已离开互动状态",
+    button = "",
+    buttonF = ""
+  },
+  [28002] = {
+    id = 28002,
+    Type = 1,
+    Title = "",
+    Text = "载具现在正在休整， 等一会再来试试吧",
+    button = "",
+    buttonF = ""
+  },
+  [28003] = {
+    id = 28003,
+    Type = 1,
+    Title = "",
+    Text = "等级未达到要求，请努力升级吧~",
+    button = "",
+    buttonF = ""
+  },
+  [28004] = {
+    id = 28004,
+    Type = 1,
+    Title = "",
+    Text = "金币商城无法打开",
+    button = "",
+    buttonF = ""
+  },
+  [28005] = {
+    id = 28005,
+    Type = 1,
+    Title = "",
+    Text = "您的job等级不符，使用失败",
+    button = "",
+    buttonF = ""
+  },
+  [28007] = {
+    id = 28007,
+    Type = 1,
+    Title = "",
+    Text = "对方已下线，你不能向对方做动作啦~",
+    button = "",
+    buttonF = ""
+  },
+  [28008] = {
+    id = 28008,
+    Type = 1,
+    Title = "",
+    Text = "今日图片发送数量已达到该频道上限",
+    button = "",
+    buttonF = ""
+  },
+  [28009] = {
+    id = 28009,
+    Type = 1,
+    Title = "",
+    Text = "图片发送过于频繁，请稍后再试",
+    button = "",
+    buttonF = ""
+  },
+  [28010] = {
+    id = 28010,
+    Type = 1,
+    Title = "",
+    Text = "输入字符超过上限，请酌情增减~",
+    button = "",
+    buttonF = ""
+  },
+  [28011] = {
+    id = 28011,
+    Type = 1,
+    Title = "",
+    Text = "签到失败",
+    button = "",
+    buttonF = ""
+  },
+  [28012] = {
+    id = 28012,
+    Type = 1,
+    Title = "",
+    Text = "回答正确！路障移除，可以签到啦~",
+    button = "",
+    buttonF = ""
+  },
+  [28013] = {
+    id = 28013,
+    Type = 1,
+    Title = "",
+    Text = "回答错误！路障移除失败，不能进行签到哦~",
+    button = "",
+    buttonF = ""
+  },
+  [28014] = {
+    id = 28014,
+    Type = 2,
+    Title = "定位服务未开启",
+    Text = "请在系统设置中开启定位服务",
+    button = "关闭",
+    buttonF = ""
+  },
+  [28015] = {
+    id = 28015,
+    Type = 1,
+    Title = "",
+    Text = "你已经参加过活动了",
+    button = "",
+    buttonF = ""
+  },
+  [28016] = {
+    id = 28016,
+    Type = 1,
+    Title = "",
+    Text = "你的输入信息有误",
+    button = "",
+    buttonF = ""
+  },
+  [28017] = {
+    id = 28017,
+    Type = 1,
+    Title = "",
+    Text = "请先输入手机号相关信息在参与活动哦",
+    button = "",
+    buttonF = ""
+  },
+  [28018] = {
+    id = 28018,
+    Type = 2,
+    Title = "相机服务未开启",
+    Text = "请在系统设置中开启相机服务",
+    button = "关闭",
+    buttonF = ""
+  },
+  [28019] = {
+    id = 28019,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "每个账号只能签到一次哦~确定用此角色进行签到吗？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [28020] = {
+    id = 28020,
+    Type = 1,
+    Title = "经验副本时长不足",
+    Text = "注意！注意！玩家战斗时长不足，本次副本结算时将无法获得奖励！",
+    button = "",
+    buttonF = ""
+  },
+  [28021] = {
+    id = 28021,
+    Type = 1,
+    Title = "经验副本时长不足",
+    Text = "奖励剩余次数或剩余战斗时长不足，本次副本将无法获得奖励！",
+    button = "",
+    buttonF = ""
+  },
+  [28022] = {
+    id = 28022,
+    Type = 2,
+    Title = "确认进去",
+    Text = "奖励剩余次数或剩余战斗时长不足，本次副本无法获得奖励，是否确认要进入？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [28030] = {
+    id = 28030,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "该装备需先还原强化等级才能存入冒险手册，是否还原？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [28040] = {
+    id = 28040,
+    Type = 1,
+    Title = "",
+    Text = "该珍藏品当前无法登入",
+    button = "",
+    buttonF = ""
+  },
+  [28041] = {
+    id = 28041,
+    Type = 1,
+    Title = "",
+    Text = "你目前处于变身状态，请解除变身状态后再来吧！",
+    button = "",
+    buttonF = ""
+  },
+  [28042] = {
+    id = 28042,
+    Type = 256,
+    Title = "",
+    Text = "副本将于{countDown=%s}秒后重置",
+    button = "",
+    buttonF = ""
+  },
+  [28043] = {
+    id = 28043,
+    Type = 129,
+    Title = "",
+    Text = "副本重置已取消",
+    button = "",
+    buttonF = ""
+  },
+  [28044] = {
+    id = 28044,
+    Type = 129,
+    Title = "",
+    Text = "公会大门暂未解锁，需要公会至%s级",
+    button = "",
+    buttonF = ""
+  },
+  [28045] = {
+    id = 28045,
+    Type = 129,
+    Title = "",
+    Text = "本周新加入公会或者切换过公会，无法进入",
+    button = "",
+    buttonF = ""
+  },
+  [28046] = {
+    id = 28046,
+    Type = 129,
+    Title = "",
+    Text = "非同一公会成员，无法跟随进入",
+    button = "",
+    buttonF = ""
+  },
+  [28047] = {
+    id = 28047,
+    Type = 2,
+    Title = "",
+    Text = "是否确认移除队员%s",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [28048] = {
+    id = 28048,
+    Type = 2,
+    Title = "",
+    Text = "是否确认离开战队",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [28049] = {
+    id = 28049,
+    Type = 129,
+    Title = "",
+    Text = "人数不足，无法报名",
+    button = "",
+    buttonF = ""
+  },
+  [28050] = {
+    id = 28050,
+    Type = 129,
+    Title = "",
+    Text = "存在尚未准备的队员，无法报名",
+    button = "",
+    buttonF = ""
+  },
+  [28051] = {
+    id = 28051,
+    Type = 129,
+    Title = "",
+    Text = "处于移除队员操作中无法离开战队",
+    button = "",
+    buttonF = ""
+  },
+  [28052] = {
+    id = 28052,
+    Type = 2,
+    Title = "",
+    Text = "%s邀请你加入圣域之战战队",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [28053] = {
+    id = 28053,
+    Type = 129,
+    Title = "",
+    Text = "杯赛报名成功！",
+    button = "",
+    buttonF = ""
+  },
+  [28054] = {
+    id = 28054,
+    Type = 129,
+    Title = "",
+    Text = "战队已报名成功，无法再次进行操作",
+    button = "",
+    buttonF = ""
+  },
+  [28055] = {
+    id = 28055,
+    Type = 129,
+    Title = "",
+    Text = "该成员已经加入其它战队，无法进行邀请",
+    button = "",
+    buttonF = ""
+  },
+  [28056] = {
+    id = 28056,
+    Type = 129,
+    Title = "",
+    Text = "该成员被其它战队邀请中，暂时无法进行邀请",
+    button = "",
+    buttonF = ""
+  },
+  [28057] = {
+    id = 28057,
+    Type = 129,
+    Title = "",
+    Text = "%s已同意邀请，加入了战队",
+    button = "",
+    buttonF = ""
+  },
+  [28058] = {
+    id = 28058,
+    Type = 129,
+    Title = "",
+    Text = "%s已拒绝加入战队的邀请",
+    button = "",
+    buttonF = ""
+  },
+  [28059] = {
+    id = 28059,
+    Type = 129,
+    Title = "",
+    Text = "尚未到报名时间，无法报名",
+    button = "",
+    buttonF = ""
+  },
+  [28060] = {
+    id = 28060,
+    Type = 129,
+    Title = "",
+    Text = "成功加入圣域之战战队，请前往组队竞技赛查看",
+    button = "",
+    buttonF = ""
+  },
+  [28061] = {
+    id = 28061,
+    Type = 129,
+    Title = "",
+    Text = "对方战队人数已满，加入失败",
+    button = "",
+    buttonF = ""
+  },
+  [28062] = {
+    id = 28062,
+    Type = 129,
+    Title = "",
+    Text = "当前队伍或团队中存在非战队成员，无法参与匹配",
+    button = "",
+    buttonF = ""
+  },
+  [28063] = {
+    id = 28063,
+    Type = 129,
+    Title = "",
+    Text = "当前队伍或团队人数未满足参与匹配的最低人数要求（%s人），无法参与匹配",
+    button = "",
+    buttonF = ""
+  },
+  [28064] = {
+    id = 28064,
+    Type = 129,
+    Title = "",
+    Text = "当前队伍或团队中存在离线成员，无法参与匹配",
+    button = "",
+    buttonF = ""
+  },
+  [28065] = {
+    id = 28065,
+    Type = 129,
+    Title = "",
+    Text = "抱歉，只支持2-12个字的空间",
+    button = "",
+    buttonF = ""
+  },
+  [28066] = {
+    id = 28066,
+    Type = 129,
+    Title = "",
+    Text = "杯赛已开启，参赛成员请组好队伍或团队后准备匹配",
+    button = "",
+    buttonF = ""
+  },
+  [28067] = {
+    id = 28067,
+    Type = 129,
+    Title = "",
+    Text = "您已被移除杯赛战队",
+    button = "",
+    buttonF = ""
+  },
+  [28068] = {
+    id = 28068,
+    Type = 129,
+    Title = "",
+    Text = "您已退出杯赛战队",
+    button = "",
+    buttonF = ""
+  },
+  [28069] = {
+    id = 28069,
+    Type = 129,
+    Title = "",
+    Text = "已将成员%s移除杯赛战队",
+    button = "",
+    buttonF = ""
+  },
+  [28070] = {
+    id = 28070,
+    Type = 129,
+    Title = "",
+    Text = "成员%s退出了杯赛战队",
+    button = "",
+    buttonF = ""
+  },
+  [28071] = {
+    id = 28071,
+    Type = 129,
+    Title = "",
+    Text = "base等级不足%s，无法参加杯赛",
+    button = "",
+    buttonF = ""
+  },
+  [28072] = {
+    id = 28072,
+    Type = 129,
+    Title = "",
+    Text = "%s未准备，匹配失败",
+    button = "",
+    buttonF = ""
+  },
+  [28073] = {
+    id = 28073,
+    Type = 129,
+    Title = "",
+    Text = "非团队团长，无法发起匹配",
+    button = "",
+    buttonF = ""
+  },
+  [28074] = {
+    id = 28074,
+    Type = 129,
+    Title = "",
+    Text = "杯赛匹配中，无法进入其他副本区域",
+    button = "",
+    buttonF = ""
+  },
+  [28075] = {
+    id = 28075,
+    Type = 129,
+    Title = "",
+    Text = "未到匹配时间，第一轮比赛开始前15分钟开始匹配",
+    button = "",
+    buttonF = ""
+  },
+  [28076] = {
+    id = 28076,
+    Type = 129,
+    Title = "",
+    Text = "已登录该道具，无法再次使用",
+    button = "",
+    buttonF = ""
+  },
+  [28077] = {
+    id = 28077,
+    Type = 129,
+    Title = "",
+    Text = "已加入战队，无法再次接受战队邀请，请退出战队再进行操作",
+    button = "",
+    buttonF = ""
+  },
+  [28078] = {
+    id = 28078,
+    Type = 131200,
+    Title = "",
+    Text = "因特殊原因，即将开始的一轮杯赛比赛时间将推迟至半小时后的下一轮开始，请参赛者耐心等待",
+    button = "",
+    buttonF = ""
+  },
+  [28079] = {
+    id = 28079,
+    Type = 131200,
+    Title = "",
+    Text = "因特殊原因，您所在战队的杯赛本轮比赛结果作废，即将在下一轮开始后重新进行",
+    button = "",
+    buttonF = ""
+  },
+  [28080] = {
+    id = 28080,
+    Type = 131200,
+    Title = "",
+    Text = "因特殊原因，本次杯赛剩余比赛场次将推迟至下周进行，请各位参赛者下周六晚8点之前提前做好匹配准备",
+    button = "",
+    buttonF = ""
+  },
+  [28081] = {
+    id = 28081,
+    Type = 131200,
+    Title = "",
+    Text = "因特殊原因，您所在战队的杯赛本轮比赛结果作废，剩余场次将在下周进行",
+    button = "",
+    buttonF = ""
+  },
+  [28082] = {
+    id = 28082,
+    Type = 2,
+    Title = "提示",
+    Text = "我们即将获取相机权限，用于游戏内定制活动的AR相机功能",
+    button = "确认",
+    buttonF = ""
+  },
+  [28083] = {
+    id = 28083,
+    Type = 2,
+    Title = "提示",
+    Text = "我们即将获取照片、文件存储权限，用于存储游戏内拍照功能的图片至手机相册",
+    button = "确认",
+    buttonF = ""
+  },
+  [28084] = {
+    id = 28084,
+    Type = 2,
+    Title = "提示",
+    Text = "我们即将获取麦克风权限，用于游戏内聊天功能发送语音",
+    button = "确认",
+    buttonF = ""
+  },
+  [28085] = {
+    id = 28085,
+    Type = 2,
+    Title = "提示",
+    Text = "我们即将获取位置权限，用于游戏内定制活动获取定位使用",
+    button = "确认",
+    buttonF = ""
+  },
+  [28086] = {
+    id = 28086,
+    Type = 129,
+    Title = "",
+    Text = "非队长，无法发起匹配",
+    button = "",
+    buttonF = ""
+  },
+  [28087] = {
+    id = 28087,
+    Type = 129,
+    Title = "",
+    Text = "杯赛已开启，参赛成员请组队后准备匹配",
+    button = "",
+    buttonF = ""
+  },
+  [28088] = {
+    id = 28088,
+    Type = 2,
+    Title = "提示",
+    Text = "本赛季杯赛禁用职业如下：%s，禁用职业无法参与杯赛匹配",
+    button = "确认",
+    buttonF = ""
+  },
+  [28090] = {
+    id = 28090,
+    Type = 129,
+    Title = "",
+    Text = "您尚未达到推荐等级，暂时不能快速前往哦",
+    button = "",
+    buttonF = ""
+  },
+  [28091] = {
+    id = 28091,
+    Type = 1,
+    Title = "",
+    Text = "没有找到符合条件的玩家",
+    button = "",
+    buttonF = ""
+  },
+  [28092] = {
+    id = 28092,
+    Type = 2,
+    Title = "",
+    Text = "因剧情数据量较大，使用后如果出现卡顿或成就延迟解锁等属于正常情况，请耐心等待",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [28093] = {
+    id = 28093,
+    Type = 1,
+    Title = "",
+    Text = "检测到该道具相关联的任务您已全部完成，无法进行购买",
+    button = "",
+    buttonF = ""
+  },
+  [28094] = {
+    id = 28094,
+    Type = 2,
+    Title = "",
+    Text = "检测到该道具相关联的任务您目前已全部完成，无法进行使用，请联系官方处理",
+    button = "确认",
+    buttonF = "",
+    Confirm = 10003
+  },
+  [28095] = {
+    id = 28095,
+    Type = 1,
+    Title = "",
+    Text = "完成%s任务来解锁功能吧",
+    button = "",
+    buttonF = ""
+  },
+  [28096] = {
+    id = 28096,
+    Type = 129,
+    Title = "",
+    Text = "你还未拥有神奇菜谱哦~",
+    button = "",
+    buttonF = ""
+  },
+  [28097] = {
+    id = 28097,
+    Type = 129,
+    Title = "",
+    Text = "神奇的菜谱已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [28098] = {
+    id = 28098,
+    Type = 129,
+    Title = "",
+    Text = "麦克唐的好感度上升了！",
+    button = "",
+    buttonF = ""
+  },
+  [28099] = {
+    id = 28099,
+    Type = 129,
+    Title = "",
+    Text = "司平塔的好感度上升了！",
+    button = "",
+    buttonF = ""
+  },
+  [28100] = {
+    id = 28100,
+    Type = 1,
+    Title = "",
+    Text = "您的队伍当前并未发布副本求组信息，无法一键喊话",
+    button = "",
+    buttonF = ""
+  },
+  [28101] = {
+    id = 28101,
+    Type = 1,
+    Title = "",
+    Text = "已在招募频道发布求组信息",
+    button = "",
+    buttonF = ""
+  },
+  [28102] = {
+    id = 28102,
+    Type = 129,
+    Title = "",
+    Text = "当前职业不符合申请队伍的职能要求",
+    button = "",
+    buttonF = ""
+  },
+  [28103] = {
+    id = 28103,
+    Type = 129,
+    Title = "",
+    Text = "队伍成员已满，无需编辑职能",
+    button = "",
+    buttonF = ""
+  },
+  [28104] = {
+    id = 28104,
+    Type = 129,
+    Title = "",
+    Text = "队伍/团队成员已满，无需发布",
+    button = "",
+    buttonF = ""
+  },
+  [28105] = {
+    id = 28105,
+    Type = 129,
+    Title = "",
+    Text = "队伍/团队中存在成员未到副本限制进入等级%s级，无法发布",
+    button = "",
+    buttonF = ""
+  },
+  [28106] = {
+    id = 28106,
+    Type = 1,
+    Title = "",
+    Text = "请选择指定队伍目标",
+    button = "",
+    buttonF = ""
+  },
+  [28107] = {
+    id = 28107,
+    Type = 2,
+    Title = "提示",
+    Text = "队伍内有相同职业，无法进行杯赛匹配。",
+    button = "确认",
+    buttonF = ""
+  },
+  [28108] = {
+    id = 28108,
+    Type = 2,
+    Title = "提示",
+    Text = "切换职业会导致当前匹配停止，是否确定切换职业？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [28109] = {
+    id = 28109,
+    Type = 1,
+    Title = "",
+    Text = "由于小队成员职业发生变更，当前比赛匹配已经停止。",
+    button = "",
+    buttonF = ""
+  },
+  [28110] = {
+    id = 28110,
+    Type = 2,
+    Title = "",
+    Text = "接下来将和冒险者小队一起进入副本，是否继续",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [28111] = {
+    id = 28111,
+    Type = 1,
+    Title = "",
+    Text = "冒险者小队准备中",
+    button = "",
+    buttonF = ""
+  },
+  [28112] = {
+    id = 28112,
+    Type = 65536,
+    Title = "提示",
+    Text = "是否消耗一次奖励次数对%s难度进行扫荡？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [28113] = {
+    id = 28113,
+    Type = 1,
+    Title = "",
+    Text = "队伍内有相同职业，无法开赛",
+    button = "",
+    buttonF = ""
+  },
+  [28114] = {
+    id = 28114,
+    Type = 1,
+    Title = "",
+    Text = "密码错误，请尝试重新输入或刷新房间列表",
+    button = "",
+    buttonF = ""
+  },
+  [28115] = {
+    id = 28115,
+    Type = 129,
+    Title = "",
+    Text = "您已被移出房间",
+    button = "",
+    buttonF = ""
+  },
+  [28116] = {
+    id = 28116,
+    Type = 1,
+    Title = "",
+    Text = "达到150级并完成克魔岛主线第一阶段以及云海的初遇任务来解锁功能吧",
+    button = "",
+    buttonF = ""
+  },
+  [28117] = {
+    id = 28117,
+    Type = 1,
+    Title = "",
+    Text = "未拥有“万物之石”或“浓缩万物之石”",
+    button = "",
+    buttonF = ""
+  },
+  [28118] = {
+    id = 28118,
+    Type = 1,
+    Title = "",
+    Text = "材料已满或无需使用“万物之石”与“浓缩万物之石”",
+    button = "",
+    buttonF = ""
+  },
+  [29999] = {
+    id = 29999,
+    Type = 2,
+    Title = "[f57b7b]%s婚期确认",
+    Text = "已预约%s月%s日%s:00~%s:00\n的婚礼排期，你同意吗~？",
+    button = "同意",
+    buttonF = ""
+  },
+  [30000] = {
+    id = 30000,
+    Type = 1,
+    Title = "婚礼预定",
+    Text = "大礼堂正在修缮中，请两周后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [30001] = {
+    id = 30001,
+    Type = 1,
+    Title = "",
+    Text = "此账号已在其他服使用，无法在此服登录",
+    button = "",
+    buttonF = ""
+  },
+  [30002] = {
+    id = 30002,
+    Type = 1,
+    Title = "",
+    Text = "对方与你不在同一服务器，无法发送该请求；",
+    button = "",
+    buttonF = ""
+  },
+  [30003] = {
+    id = 30003,
+    Type = 1,
+    Title = "",
+    Text = "您输入的世界线错误，请重新输入；",
+    button = "",
+    buttonF = ""
+  },
+  [30004] = {
+    id = 30004,
+    Type = 65536,
+    Title = "提示",
+    Text = "是否消耗一次奖励次数对白星飞空艇%s难度进行扫荡，获取%s评价的奖励？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [31000] = {
+    id = 31000,
+    Type = 1,
+    Title = "",
+    Text = "今日合成次数已达上限",
+    button = "",
+    buttonF = ""
+  },
+  [31001] = {
+    id = 31001,
+    Type = 1,
+    Title = "",
+    Text = "该宠物头饰已解锁，无法再次解锁。",
+    button = "",
+    buttonF = ""
+  },
+  [31002] = {
+    id = 31002,
+    Type = 129,
+    Title = "",
+    Text = "冒险家，由于当前主城线较拥挤，为了你的游戏体验，已自动将您分配至较为宽松的主城线，你依然可以通过跟随队友强制进入队友所在主城线！",
+    button = "",
+    buttonF = ""
+  },
+  [31010] = {
+    id = 31010,
+    Type = 1,
+    Title = "系统提示",
+    Text = "您尚未拥有【幻想之证·银】或【摩天轮门票】，需要消耗一枚【幻想之证·银】或【摩天轮门票】才能邀请其他玩家前往【摩天轮】哦~",
+    button = "",
+    buttonF = ""
+  },
+  [31011] = {
+    id = 31011,
+    Type = 1,
+    Title = "",
+    Text = "任务完成",
+    button = "",
+    buttonF = ""
+  },
+  [31020] = {
+    id = 31020,
+    Type = 1,
+    Title = "",
+    Text = "限购次数已达上限！",
+    button = "",
+    buttonF = ""
+  },
+  [31021] = {
+    id = 31021,
+    Type = 1,
+    Title = "",
+    Text = "必须将当前技能点数实际投入后才能使用剩余技能点",
+    button = "",
+    buttonF = ""
+  },
+  [31031] = {
+    id = 31031,
+    Type = 1,
+    Title = "",
+    Text = "对方已成为其他公会佣兵，无法邀请",
+    button = "",
+    buttonF = ""
+  },
+  [31032] = {
+    id = 31032,
+    Type = 1,
+    Title = "",
+    Text = "对方为我方公会成员，无法邀请",
+    button = "",
+    buttonF = ""
+  },
+  [31033] = {
+    id = 31033,
+    Type = 1,
+    Title = "",
+    Text = "我方公会佣兵数量已达上限",
+    button = "",
+    buttonF = ""
+  },
+  [31034] = {
+    id = 31034,
+    Type = 1,
+    Title = "",
+    Text = "已向%s公会发出佣兵申请",
+    button = "",
+    buttonF = ""
+  },
+  [31035] = {
+    id = 31035,
+    Type = 1,
+    Title = "",
+    Text = "对方与你不在同一服务器，无法发送该请求",
+    button = "",
+    buttonF = ""
+  },
+  [31036] = {
+    id = 31036,
+    Type = 1,
+    Title = "",
+    Text = "对不起，该公会已关闭佣兵申请了哦~",
+    button = "",
+    buttonF = ""
+  },
+  [31037] = {
+    id = 31037,
+    Type = 2,
+    Title = "",
+    Text = "%s招募你成为佣兵\n[-][/c][c][ffc514]%s[-][/c]",
+    button = "同意",
+    buttonF = "取消"
+  },
+  [31038] = {
+    id = 31038,
+    Type = 2,
+    Title = "",
+    Text = "是否确认解雇该佣兵？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [31039] = {
+    id = 31039,
+    Type = 2,
+    Title = "",
+    Text = "是否确认与雇主公会解除雇佣关系？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [31040] = {
+    id = 31040,
+    Type = 1,
+    Title = "",
+    Text = "%s解除了与本公会的雇佣关系",
+    button = "",
+    buttonF = ""
+  },
+  [31041] = {
+    id = 31041,
+    Type = 1,
+    Title = "",
+    Text = "你被[%s]%s解除了雇佣关系",
+    button = "",
+    buttonF = ""
+  },
+  [31042] = {
+    id = 31042,
+    Type = 1,
+    Title = "",
+    Text = "你已被%s公会雇佣",
+    button = "",
+    buttonF = ""
+  },
+  [31043] = {
+    id = 31043,
+    Type = 1,
+    Title = "",
+    Text = "本场公会战已结束！",
+    button = "",
+    buttonF = ""
+  },
+  [31044] = {
+    id = 31044,
+    Type = 1,
+    Title = "",
+    Text = "公会战开始前30分钟至公会战城池期结算结束，不可进行雇佣关系申请与变更！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [31045] = {
+    id = 31045,
+    Type = 1,
+    Title = "",
+    Text = "对方已有公会，不可招募为会员！",
+    button = "",
+    buttonF = ""
+  },
+  [31046] = {
+    id = 31046,
+    Type = 1,
+    Title = "",
+    Text = "操作过于频繁，请稍后再试",
+    button = "",
+    buttonF = ""
+  },
+  [31047] = {
+    id = 31047,
+    Type = 1,
+    Title = "",
+    Text = "修改成功",
+    button = "",
+    buttonF = ""
+  },
+  [31048] = {
+    id = 31048,
+    Type = 1,
+    Title = "",
+    Text = "公会城池失守，公会成员对华丽水晶进攻状态已自动调整为【可攻击】",
+    button = "",
+    buttonF = ""
+  },
+  [31049] = {
+    id = 31049,
+    Type = 1,
+    Title = "",
+    Text = "你已加入该公会，不可被其雇佣",
+    button = "",
+    buttonF = ""
+  },
+  [31050] = {
+    id = 31050,
+    Type = 1,
+    Title = "",
+    Text = "战术沙盘刷新冷却中，请稍后再试",
+    button = "",
+    buttonF = ""
+  },
+  [31051] = {
+    id = 31051,
+    Type = 1,
+    Title = "",
+    Text = "对方审核中，请耐心等待",
+    button = "",
+    buttonF = ""
+  },
+  [31052] = {
+    id = 31052,
+    Type = 1,
+    Title = "",
+    Text = "对方已被本公会雇佣",
+    button = "",
+    buttonF = ""
+  },
+  [31053] = {
+    id = 31053,
+    Type = 32,
+    Title = "",
+    Text = "佣兵%s被[%s]%s解除了雇佣关系。",
+    button = "",
+    buttonF = ""
+  },
+  [31054] = {
+    id = 31054,
+    Type = 1,
+    Title = "",
+    Text = "当前没有公会城池，不可进行调整",
+    button = "",
+    buttonF = ""
+  },
+  [31055] = {
+    id = 31055,
+    Type = 1,
+    Title = "",
+    Text = "雇佣成功！",
+    button = "",
+    buttonF = ""
+  },
+  [31056] = {
+    id = 31056,
+    Type = 1,
+    Title = "",
+    Text = "已经达到当前美味度分数上限，不可烹饪",
+    button = "",
+    buttonF = ""
+  },
+  [31057] = {
+    id = 31057,
+    Type = 1,
+    Title = "",
+    Text = "达到加食材分数上限！本次烹饪超出上限的分数无效",
+    button = "",
+    buttonF = ""
+  },
+  [31058] = {
+    id = 31058,
+    Type = 1,
+    Title = "",
+    Text = "达到加火候分数上限！本次烹饪超出上限的分数无效",
+    button = "",
+    buttonF = ""
+  },
+  [31059] = {
+    id = 31059,
+    Type = 1,
+    Title = "",
+    Text = "达到加调料分数上限！本次烹饪超出上限的分数无效",
+    button = "",
+    buttonF = ""
+  },
+  [31060] = {
+    id = 31060,
+    Type = 1,
+    Title = "",
+    Text = "达到加食材分数上限，不可进行该项烹饪",
+    button = "",
+    buttonF = ""
+  },
+  [31061] = {
+    id = 31061,
+    Type = 1,
+    Title = "",
+    Text = "达到加火候分数上限，不可进行该项烹饪",
+    button = "",
+    buttonF = ""
+  },
+  [31062] = {
+    id = 31062,
+    Type = 1,
+    Title = "",
+    Text = "达到加调料分数上限，不可进行该项烹饪",
+    button = "",
+    buttonF = ""
+  },
+  [31063] = {
+    id = 31063,
+    Type = 1,
+    Title = "",
+    Text = "已达到加食材烹饪次数上限，不可操作",
+    button = "",
+    buttonF = ""
+  },
+  [31064] = {
+    id = 31064,
+    Type = 1,
+    Title = "",
+    Text = "已达到加火候烹饪次数上限，不可操作",
+    button = "",
+    buttonF = ""
+  },
+  [31065] = {
+    id = 31065,
+    Type = 1,
+    Title = "",
+    Text = "已达到加调料烹饪次数上限，不可操作",
+    button = "",
+    buttonF = ""
+  },
+  [31066] = {
+    id = 31066,
+    Type = 1,
+    Title = "",
+    Text = "刚刚才享用过公会大乱炖，请稍后再来",
+    button = "",
+    buttonF = ""
+  },
+  [31067] = {
+    id = 31067,
+    Type = 1,
+    Title = "",
+    Text = "雇主公会已解散，即将解除雇佣关系",
+    button = "",
+    buttonF = ""
+  },
+  [31068] = {
+    id = 31068,
+    Type = 1,
+    Title = "",
+    Text = "对方公会佣兵人数已达上限，不可申请",
+    button = "",
+    buttonF = ""
+  },
+  [31069] = {
+    id = 31069,
+    Type = 1,
+    Title = "",
+    Text = "加入公会后才可以使用公会大炖锅~",
+    button = "",
+    buttonF = ""
+  },
+  [31070] = {
+    id = 31070,
+    Type = 1,
+    Title = "",
+    Text = "操作过于频繁，请%s秒后再试",
+    button = "",
+    buttonF = ""
+  },
+  [31071] = {
+    id = 31071,
+    Type = 1,
+    Title = "",
+    Text = "对方不在线，发送失败",
+    button = "",
+    buttonF = ""
+  },
+  [31072] = {
+    id = 31072,
+    Type = 1,
+    Title = "",
+    Text = "对方没有公会，无法申请成为对方公会的佣兵",
+    button = "",
+    buttonF = ""
+  },
+  [31073] = {
+    id = 31073,
+    Type = 1,
+    Title = "",
+    Text = "你当前拥有公会神器，不可申请成为佣兵",
+    button = "",
+    buttonF = ""
+  },
+  [31074] = {
+    id = 31074,
+    Type = 1,
+    Title = "",
+    Text = "对方当前已拥有公会神器，不可批准成为本公会佣兵",
+    button = "",
+    buttonF = ""
+  },
+  [31075] = {
+    id = 31075,
+    Type = 1,
+    Title = "",
+    Text = "对方当前已拥有公会神器，不可邀请成为本公会佣兵",
+    button = "",
+    buttonF = ""
+  },
+  [31076] = {
+    id = 31076,
+    Type = 1,
+    Title = "",
+    Text = "对方当前身份为佣兵，不可分配神器",
+    button = "",
+    buttonF = ""
+  },
+  [31077] = {
+    id = 31077,
+    Type = 1,
+    Title = "",
+    Text = "更改成功",
+    button = "",
+    buttonF = ""
+  },
+  [31078] = {
+    id = 31078,
+    Type = 1,
+    Title = "",
+    Text = "变身状态下不可更改动作~",
+    button = "",
+    buttonF = ""
+  },
+  [32000] = {
+    id = 32000,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否将该道具标记为喜好道具？\n[c][848484]注意：被标记喜好的道具不可出售且装备、头饰、卡片类道具将不可作为材料被消耗[-][/c]",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [32001] = {
+    id = 32001,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否取消该道具喜好标记？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [32002] = {
+    id = 32002,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否执行以上标记操作？\n[c][848484]注意：被标记喜好的道具不可出售且装备、头饰、卡片类道具将不可作为材料被消耗[-][/c]",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [32003] = {
+    id = 32003,
+    Type = 1,
+    Title = "",
+    Text = "得到[c][ffff00]怪盗面具[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [32004] = {
+    id = 32004,
+    Type = 1,
+    Title = "",
+    Text = "得到[c][ffff00]怪盗礼帽[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [32005] = {
+    id = 32005,
+    Type = 1,
+    Title = "",
+    Text = "获得[c][ffff00]治愈灵石[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [32006] = {
+    id = 32006,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "缺少宅急便道具，可使用冒险丸子兑换该道具，是否前往兑换？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [32500] = {
+    id = 32500,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "你已进入快速标记喜好道具模式，点击背包中相应道具（功能类道具除外）可快速将其标记为喜好道具，此时无法进行除喜好标记以外操作，再次点击保存按钮，完成标记操作",
+    button = "确定",
+    buttonF = "",
+    TimeInterval = 0
+  },
+  [32600] = {
+    id = 32600,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否执行以上标记操作？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [32601] = {
+    id = 32601,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "你已进入快速标记关注好友模式，点击相应好友可将其快速标记为关注好友，此时无法进行除关注标记以外操作，再次点击保存按钮，完成关注操作。",
+    button = "确定",
+    buttonF = "",
+    TimeInterval = 0
+  },
+  [33000] = {
+    id = 33000,
+    Type = 1,
+    Title = "",
+    Text = "新服准备中",
+    button = "",
+    buttonF = ""
+  },
+  [33001] = {
+    id = 33001,
+    Type = 1,
+    Title = "",
+    Text = "需Base等级达到100开启",
+    button = "",
+    buttonF = ""
+  },
+  [33002] = {
+    id = 33002,
+    Type = 1,
+    Title = "",
+    Text = "已完成当前所有版本任务",
+    button = "",
+    buttonF = ""
+  },
+  [33003] = {
+    id = 33003,
+    Type = 2,
+    Title = "放弃委托选择",
+    Text = "是否要放弃委托任务？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [33004] = {
+    id = 33004,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "亲爱的冒险者，委托看板任务可选数量变为五个，每天您只能从中选择三个完成，请根据奖励谨慎选择哦！",
+    button = "确定",
+    buttonF = ""
+  },
+  [33005] = {
+    id = 33005,
+    Type = 1,
+    Title = "",
+    Text = "需Base等级达到100开启",
+    button = "",
+    buttonF = ""
+  },
+  [33006] = {
+    id = 33006,
+    Type = 1,
+    Title = "",
+    Text = "需Base等级达到150开启",
+    button = "",
+    buttonF = ""
+  },
+  [33100] = {
+    id = 33100,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "你确定要删除选中的%s封邮件？\n未读、未领取的邮件不会出现在删除模式\n注意：删除后不能恢复",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [33101] = {
+    id = 33101,
+    Type = 1,
+    Title = "",
+    Text = "送你的信件和礼物全都没有看，不要删除哦～",
+    button = "",
+    buttonF = ""
+  },
+  [33102] = {
+    id = 33102,
+    Type = 1,
+    Title = "",
+    Text = "无可删除邮件~",
+    button = "",
+    buttonF = ""
+  },
+  [33500] = {
+    id = 33500,
+    Type = 1,
+    Title = "",
+    Text = "不好意思，排队失败了~",
+    button = "",
+    buttonF = ""
+  },
+  [33501] = {
+    id = 33501,
+    Type = 2,
+    Title = "",
+    Text = "该操作将关闭游戏并删除本地游戏补丁，然后请重新打开游戏下载最新游戏补丁",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [33999] = {
+    id = 33999,
+    Type = 1,
+    Title = "",
+    Text = "已经达到本周领取上限，无法获得更高的奖励了哦~",
+    button = "",
+    buttonF = ""
+  },
+  [34000] = {
+    id = 34000,
+    Type = 1,
+    Title = "",
+    Text = "已经是最开始了哦~",
+    button = "",
+    buttonF = ""
+  },
+  [34001] = {
+    id = 34001,
+    Type = 1,
+    Title = "",
+    Text = "精彩活动，敬请期待~",
+    button = "",
+    buttonF = ""
+  },
+  [34002] = {
+    id = 34002,
+    Type = 1,
+    Title = "",
+    Text = "无法查看已过期的活动哦~",
+    button = "",
+    buttonF = ""
+  },
+  [34003] = {
+    id = 34003,
+    Type = 2,
+    Title = "",
+    Text = "本次刷新需消耗%szeny，是否继续？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [34004] = {
+    id = 34004,
+    Type = 1,
+    Title = "",
+    Text = "对不起，你选择的活动已过期或正在进行中，请重新打开界面再试~",
+    button = "",
+    buttonF = ""
+  },
+  [34005] = {
+    id = 34005,
+    Type = 1,
+    Title = "",
+    Text = "对不起，未搜索到相应结果，请检查装备名称",
+    button = "",
+    buttonF = ""
+  },
+  [34006] = {
+    id = 34006,
+    Type = 1,
+    Title = "",
+    Text = "你已完成今日指标，没有更多任务啦~",
+    button = "",
+    buttonF = ""
+  },
+  [34007] = {
+    id = 34007,
+    Type = 5,
+    Title = "",
+    Text = "相关任务已完成，[63cd4e]%s[-]已转化为[63cd4e]%s[-]zeny",
+    button = "",
+    buttonF = ""
+  },
+  [34008] = {
+    id = 34008,
+    Type = 1,
+    Title = "",
+    Text = "此滤镜不可实时预览，玩家可在拍照后获得附加此滤镜的照片",
+    button = "",
+    buttonF = ""
+  },
+  [34009] = {
+    id = 34009,
+    Type = 1,
+    Title = "",
+    Text = "保存成功！",
+    button = "",
+    buttonF = ""
+  },
+  [34010] = {
+    id = 34010,
+    Type = 1,
+    Title = "",
+    Text = "(≧3≦)",
+    button = "",
+    buttonF = ""
+  },
+  [34011] = {
+    id = 34011,
+    Type = 2,
+    Title = "",
+    Text = "本次重置需消耗%sB格猫金币，是否继续？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [34012] = {
+    id = 34012,
+    Type = 128,
+    Title = "",
+    Text = "当前职业的养成隐藏分为：%s",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [34020] = {
+    id = 34020,
+    Type = 1,
+    Title = "",
+    Text = "你将要预约的时间已经预约其他活动啦，请取消后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [34021] = {
+    id = 34021,
+    Type = 1,
+    Title = "",
+    Text = "今日推荐任务刷新成功~",
+    button = "",
+    buttonF = ""
+  },
+  [34022] = {
+    id = 34022,
+    Type = 1,
+    Title = "",
+    Text = "队伍中有成员达到每日通关上限，无法进入魔物研究所",
+    button = "",
+    buttonF = ""
+  },
+  [34023] = {
+    id = 34023,
+    Type = 1,
+    Title = "",
+    Text = "未消耗晶片，无需重置",
+    button = "",
+    buttonF = ""
+  },
+  [34024] = {
+    id = 34024,
+    Type = 129,
+    Title = "",
+    Text = "暂时无法编辑哦~",
+    button = "",
+    buttonF = ""
+  },
+  [35001] = {
+    id = 35001,
+    Type = 1,
+    Title = "",
+    Text = "数据出错啦！",
+    button = "",
+    buttonF = ""
+  },
+  [36001] = {
+    id = 36001,
+    Type = 1,
+    Title = "",
+    Text = "同类符文数量超过限制",
+    button = "",
+    buttonF = ""
+  },
+  [36002] = {
+    id = 36002,
+    Type = 1,
+    Title = "",
+    Text = "已更换%s",
+    button = "",
+    buttonF = ""
+  },
+  [36003] = {
+    id = 36003,
+    Type = 1,
+    Title = "",
+    Text = "已卸下%s",
+    button = "",
+    buttonF = ""
+  },
+  [36004] = {
+    id = 36004,
+    Type = 2,
+    Title = "",
+    Text = "是否确定将所有%s级符文融合",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [36005] = {
+    id = 36005,
+    Type = 1,
+    Title = "",
+    Text = "技能符文包包空间不足",
+    button = "",
+    buttonF = ""
+  },
+  [36006] = {
+    id = 36006,
+    Type = 1,
+    Title = "",
+    Text = "不能镶嵌同名符文",
+    button = "",
+    buttonF = ""
+  },
+  [36007] = {
+    id = 36007,
+    Type = 129,
+    Title = "",
+    Text = "二转及以上职业及超级初心者才能精准融炼",
+    button = "",
+    buttonF = ""
+  },
+  [36008] = {
+    id = 36008,
+    Type = 1,
+    Title = "",
+    Text = "完成80级符文的力量任务后开启此功能",
+    button = "",
+    buttonF = ""
+  },
+  [36009] = {
+    id = 36009,
+    Type = 2,
+    Title = "",
+    Text = "该技能符文已被雕刻，是否确定进行还原？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [36010] = {
+    id = 36010,
+    Type = 2,
+    Title = "",
+    Text = "即将消耗1个虚空刻刀，将%s激活条件调整为“不限”，是否确认？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [36011] = {
+    id = 36011,
+    Type = 2,
+    Title = "",
+    Text = "背包中的符文已发生变化，变化的属性符文将镶嵌同类型最高等级符文，无同类型符文的位置将放空，是否继续？",
+    button = "继续",
+    buttonF = "取消"
+  },
+  [36012] = {
+    id = 36012,
+    Type = 2,
+    Title = "",
+    Text = "该符文与目标置换符文相同，是否确认消耗该符文进行置换？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [36013] = {
+    id = 36013,
+    Type = 129,
+    Title = "",
+    Text = "四转职业才能精准融炼四转符文",
+    button = "",
+    buttonF = ""
+  },
+  [36014] = {
+    id = 36014,
+    Type = 1,
+    Title = "",
+    Text = "当前职业无可合成的星符文",
+    button = "",
+    buttonF = ""
+  },
+  [36015] = {
+    id = 36015,
+    Type = 129,
+    Title = "",
+    Text = "属性符文背包空间不足",
+    button = "",
+    buttonF = ""
+  },
+  [36016] = {
+    id = 36016,
+    Type = 1,
+    Title = "",
+    Text = "背包里无相同的小符文可整理",
+    button = "",
+    buttonF = ""
+  },
+  [36017] = {
+    id = 36017,
+    Type = 1,
+    Title = "",
+    Text = "当前升级经验已溢出，不可再填充素材",
+    button = "",
+    buttonF = ""
+  },
+  [36018] = {
+    id = 36018,
+    Type = 1,
+    Title = "",
+    Text = "当前符文已满级，不可再进行融合升级",
+    button = "",
+    buttonF = ""
+  },
+  [36019] = {
+    id = 36019,
+    Type = 2,
+    Title = "",
+    Text = "即将消耗1个神王的右眼，该符文将获得其完整词条以及对应的最大属性值，是否确认？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [37000] = {
+    id = 37000,
+    Type = 1,
+    Title = "",
+    Text = "扭蛋正在休整，开放时间等待公告通知~~~",
+    button = "",
+    buttonF = ""
+  },
+  [37001] = {
+    id = 37001,
+    Type = 1,
+    Title = "",
+    Text = "商店正在休整，开放时间等待公告通知~~~",
+    button = "",
+    buttonF = ""
+  },
+  [37010] = {
+    id = 37010,
+    Type = 1,
+    Title = "",
+    Text = "请专心战斗，不要小瞧对手哦~",
+    button = "",
+    buttonF = ""
+  },
+  [37999] = {
+    id = 37999,
+    Type = 128,
+    Title = "",
+    Text = "对方正在建造模式中，请稍后再试~",
+    button = "",
+    buttonF = ""
+  },
+  [38000] = {
+    id = 38000,
+    Type = 1,
+    Title = "",
+    Text = "当前宠物房已经满员了哦~",
+    button = "",
+    buttonF = ""
+  },
+  [38001] = {
+    id = 38001,
+    Type = 1,
+    Title = "",
+    Text = "该宠物已寄养，请尝试操作其他宠物~",
+    button = "",
+    buttonF = ""
+  },
+  [38002] = {
+    id = 38002,
+    Type = 1,
+    Title = "",
+    Text = "对方家园正在努力建造中，请稍后再试哦~",
+    button = "",
+    buttonF = ""
+  },
+  [38003] = {
+    id = 38003,
+    Type = 1,
+    Title = "",
+    Text = "已经有人在使用了，请稍后再试哦~",
+    button = "",
+    buttonF = ""
+  },
+  [38004] = {
+    id = 38004,
+    Type = 256,
+    Title = "",
+    Text = "正在清理房间，{countDown=%s}秒后进入建造模式",
+    button = "",
+    buttonF = ""
+  },
+  [38005] = {
+    id = 38005,
+    Type = 256,
+    Title = "",
+    Text = "正在清理房间，{countDown=%s}秒后离开家园",
+    button = "",
+    buttonF = ""
+  },
+  [38006] = {
+    id = 38006,
+    Type = 1,
+    Title = "",
+    Text = "当前房屋已经满员了，请稍后再试哦~",
+    button = "",
+    buttonF = ""
+  },
+  [38007] = {
+    id = 38007,
+    Type = 1,
+    Title = "",
+    Text = "已经在使用中了哦~",
+    button = "",
+    buttonF = ""
+  },
+  [38008] = {
+    id = 38008,
+    Type = 1,
+    Title = "",
+    Text = "蓝图制作成功！",
+    button = "",
+    buttonF = ""
+  },
+  [38009] = {
+    id = 38009,
+    Type = 1,
+    Title = "",
+    Text = "检测到当前房间布局与蓝图一致，请尝试其他蓝图制作",
+    button = "",
+    buttonF = ""
+  },
+  [38010] = {
+    id = 38010,
+    Type = 1,
+    Title = "",
+    Text = "只能在自己家园内进入建造模式哦~",
+    button = "",
+    buttonF = ""
+  },
+  [38011] = {
+    id = 38011,
+    Type = 1,
+    Title = "",
+    Text = "请先雇佣执事，再尝试预约操作！",
+    button = "",
+    buttonF = ""
+  },
+  [38012] = {
+    id = 38012,
+    Type = 129,
+    Title = "",
+    Text = "成功解锁第三个宠物房空位！",
+    button = "",
+    buttonF = ""
+  },
+  [38013] = {
+    id = 38013,
+    Type = 1,
+    Title = "",
+    Text = "宠物房已经满员了！请解锁新的空间或者卸下其他宠物",
+    button = "",
+    buttonF = ""
+  },
+  [38014] = {
+    id = 38014,
+    Type = 1,
+    Title = "",
+    Text = "请解除变身状态后再尝试互动操作！",
+    button = "",
+    buttonF = ""
+  },
+  [38018] = {
+    id = 38018,
+    Type = 1,
+    Title = "",
+    Text = "你已达到每日上限，无法快速完成！",
+    button = "",
+    buttonF = ""
+  },
+  [38019] = {
+    id = 38019,
+    Type = 1,
+    Title = "",
+    Text = "对不起，对方对陌生人设置了家园拜访权限，暂时无法访问！",
+    button = "",
+    buttonF = ""
+  },
+  [38020] = {
+    id = 38020,
+    Type = 2,
+    Title = "",
+    Text = "一键拆卸将清除当前房屋的所有家具，该操作不可逆，是否继续？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [38021] = {
+    id = 38021,
+    Type = 1,
+    Title = "",
+    Text = "家园签名不能为空！",
+    button = "",
+    buttonF = ""
+  },
+  [38022] = {
+    id = 38022,
+    Type = 1,
+    Title = "",
+    Text = "家园签名中含有非法字符！",
+    button = "",
+    buttonF = ""
+  },
+  [38023] = {
+    id = 38023,
+    Type = 1,
+    Title = "",
+    Text = "家园签名不能超过%s个字！",
+    button = "",
+    buttonF = ""
+  },
+  [38024] = {
+    id = 38024,
+    Type = 1,
+    Title = "",
+    Text = "对方在家园中，无法使用前往跟随！",
+    button = "",
+    buttonF = ""
+  },
+  [38025] = {
+    id = 38025,
+    Type = 1,
+    Title = "",
+    Text = "你当前所在的地图，无法进入家园！请退出后再试哦~",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [38026] = {
+    id = 38026,
+    Type = 1,
+    Title = "",
+    Text = "你已经解锁过该物品了哦，无法重复解锁同一物品~",
+    button = "",
+    buttonF = ""
+  },
+  [38197] = {
+    id = 38197,
+    Type = 1,
+    Title = "",
+    Text = "目标副本无法跟随哦~请离开副本后再试",
+    button = "",
+    buttonF = ""
+  },
+  [38198] = {
+    id = 38198,
+    Type = 1,
+    Title = "",
+    Text = "你已经在裂隙副本中了，无法使用快速完成！",
+    button = "",
+    buttonF = ""
+  },
+  [38199] = {
+    id = 38199,
+    Type = 1,
+    Title = "",
+    Text = "冒险丸子不足，请稍后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [38200] = {
+    id = 38200,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·飞吻",
+    button = "",
+    buttonF = ""
+  },
+  [38201] = {
+    id = 38201,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·鼓掌",
+    button = "",
+    buttonF = ""
+  },
+  [38202] = {
+    id = 38202,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·鞠躬",
+    button = "",
+    buttonF = ""
+  },
+  [38203] = {
+    id = 38203,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·跑步",
+    button = "",
+    buttonF = ""
+  },
+  [38204] = {
+    id = 38204,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·被击",
+    button = "",
+    buttonF = ""
+  },
+  [38205] = {
+    id = 38205,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·战斗",
+    button = "",
+    buttonF = ""
+  },
+  [38206] = {
+    id = 38206,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·普通攻击",
+    button = "",
+    buttonF = ""
+  },
+  [38207] = {
+    id = 38207,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·吟唱",
+    button = "",
+    buttonF = ""
+  },
+  [38208] = {
+    id = 38208,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·睡觉",
+    button = "",
+    buttonF = ""
+  },
+  [38209] = {
+    id = 38209,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·采集",
+    button = "",
+    buttonF = ""
+  },
+  [38210] = {
+    id = 38210,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·胜利",
+    button = "",
+    buttonF = ""
+  },
+  [38211] = {
+    id = 38211,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·投掷",
+    button = "",
+    buttonF = ""
+  },
+  [38212] = {
+    id = 38212,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·摆拍动作-职业专属",
+    button = "",
+    buttonF = ""
+  },
+  [38213] = {
+    id = 38213,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·食用Ⅰ",
+    button = "",
+    buttonF = ""
+  },
+  [38214] = {
+    id = 38214,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·食用Ⅱ",
+    button = "",
+    buttonF = ""
+  },
+  [38215] = {
+    id = 38215,
+    Type = 10,
+    Title = "",
+    Text = "习得动作·食用Ⅲ",
+    button = "",
+    buttonF = ""
+  },
+  [38216] = {
+    id = 38216,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·大爱心",
+    button = "",
+    buttonF = ""
+  },
+  [38217] = {
+    id = 38217,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·○",
+    button = "",
+    buttonF = ""
+  },
+  [38218] = {
+    id = 38218,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·×",
+    button = "",
+    buttonF = ""
+  },
+  [38219] = {
+    id = 38219,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·剪刀",
+    button = "",
+    buttonF = ""
+  },
+  [38220] = {
+    id = 38220,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·石头",
+    button = "",
+    buttonF = ""
+  },
+  [38221] = {
+    id = 38221,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·布",
+    button = "",
+    buttonF = ""
+  },
+  [38222] = {
+    id = 38222,
+    Type = 10,
+    Title = "",
+    Text = "习得6个新表情和1个新动作",
+    button = "",
+    buttonF = ""
+  },
+  [38223] = {
+    id = 38223,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·高兴",
+    button = "",
+    buttonF = ""
+  },
+  [38224] = {
+    id = 38224,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·无奈",
+    button = "",
+    buttonF = ""
+  },
+  [38225] = {
+    id = 38225,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·出发",
+    button = "",
+    buttonF = ""
+  },
+  [38226] = {
+    id = 38226,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·哭泣",
+    button = "",
+    buttonF = ""
+  },
+  [38227] = {
+    id = 38227,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·一级棒",
+    button = "",
+    buttonF = ""
+  },
+  [38228] = {
+    id = 38228,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·亲吻",
+    button = "",
+    buttonF = ""
+  },
+  [38229] = {
+    id = 38229,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·求救",
+    button = "",
+    buttonF = ""
+  },
+  [38230] = {
+    id = 38230,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·寻找",
+    button = "",
+    buttonF = ""
+  },
+  [38231] = {
+    id = 38231,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·喷汗",
+    button = "",
+    buttonF = ""
+  },
+  [38232] = {
+    id = 38232,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·睡觉",
+    button = "",
+    buttonF = ""
+  },
+  [38233] = {
+    id = 38233,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·惊讶",
+    button = "",
+    buttonF = ""
+  },
+  [38234] = {
+    id = 38234,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·冷汗",
+    button = "",
+    buttonF = ""
+  },
+  [38235] = {
+    id = 38235,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·双眼爱心",
+    button = "",
+    buttonF = ""
+  },
+  [38236] = {
+    id = 38236,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·摸头",
+    button = "",
+    buttonF = ""
+  },
+  [38237] = {
+    id = 38237,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·口水",
+    button = "",
+    buttonF = ""
+  },
+  [38238] = {
+    id = 38238,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·坏笑",
+    button = "",
+    buttonF = ""
+  },
+  [38239] = {
+    id = 38239,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·呼",
+    button = "",
+    buttonF = ""
+  },
+  [38240] = {
+    id = 38240,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·迷惑",
+    button = "",
+    buttonF = ""
+  },
+  [38241] = {
+    id = 38241,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·害怕",
+    button = "",
+    buttonF = ""
+  },
+  [38242] = {
+    id = 38242,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·接吻",
+    button = "",
+    buttonF = ""
+  },
+  [38243] = {
+    id = 38243,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·爱心",
+    button = "",
+    buttonF = ""
+  },
+  [38244] = {
+    id = 38244,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·感叹号",
+    button = "",
+    buttonF = ""
+  },
+  [38245] = {
+    id = 38245,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·问号",
+    button = "",
+    buttonF = ""
+  },
+  [38246] = {
+    id = 38246,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·灵感",
+    button = "",
+    buttonF = ""
+  },
+  [38247] = {
+    id = 38247,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·金钱",
+    button = "",
+    buttonF = ""
+  },
+  [38248] = {
+    id = 38248,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·品客好吃美味",
+    button = "",
+    buttonF = ""
+  },
+  [38249] = {
+    id = 38249,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·害羞",
+    button = "",
+    buttonF = ""
+  },
+  [38250] = {
+    id = 38250,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·鼓掌",
+    button = "",
+    buttonF = ""
+  },
+  [38251] = {
+    id = 38251,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·闭嘴",
+    button = "",
+    buttonF = ""
+  },
+  [38252] = {
+    id = 38252,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·点赞",
+    button = "",
+    buttonF = ""
+  },
+  [38253] = {
+    id = 38253,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·泪奔",
+    button = "",
+    buttonF = ""
+  },
+  [38254] = {
+    id = 38254,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·蛋黄哥无聊了",
+    button = "",
+    buttonF = ""
+  },
+  [38255] = {
+    id = 38255,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·蛋黄哥瞎毁？",
+    button = "",
+    buttonF = ""
+  },
+  [38256] = {
+    id = 38256,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·蛋黄哥思考中",
+    button = "",
+    buttonF = ""
+  },
+  [38257] = {
+    id = 38257,
+    Type = 1,
+    Title = "",
+    Text = "当前副本中宠物无法出战",
+    button = "",
+    buttonF = ""
+  },
+  [38258] = {
+    id = 38258,
+    Type = 1,
+    Title = "",
+    Text = "已达到常用表情&动作标记数量上限",
+    button = "",
+    buttonF = ""
+  },
+  [38300] = {
+    id = 38300,
+    Type = 1,
+    Title = "",
+    Text = "您还没有选择卡牌哦！",
+    button = "",
+    buttonF = ""
+  },
+  [39001] = {
+    id = 39001,
+    Type = 1,
+    Title = "",
+    Text = "Base40级以上或使用了月卡才能存入和取出武器哦！",
+    button = "",
+    buttonF = ""
+  },
+  [39002] = {
+    id = 39002,
+    Type = 1,
+    Title = "",
+    Text = "解除机甲后才可以使用幻化功能哦~",
+    button = "",
+    buttonF = ""
+  },
+  [39003] = {
+    id = 39003,
+    Type = 1,
+    Title = "",
+    Text = "装备机甲时不能展示坐骑动作哦~",
+    button = "",
+    buttonF = ""
+  },
+  [39010] = {
+    id = 39010,
+    Type = 1,
+    Title = "",
+    Text = "您现在还不是导师，暂时无法使用哦~",
+    button = "",
+    buttonF = ""
+  },
+  [39011] = {
+    id = 39011,
+    Type = 1,
+    Title = "",
+    Text = "您今天获得的导师专属战斗时长已达上限哦~",
+    button = "",
+    buttonF = ""
+  },
+  [39012] = {
+    id = 39012,
+    Type = 2,
+    Title = "",
+    Text = "使用后回复的战斗时长会溢出，多余时长将不会保留，确定要使用吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [39016] = {
+    id = 39016,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "当前宠物冒险券不足，会进行普通冒险，确定要出发冒险吗？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [39100] = {
+    id = 39100,
+    Type = 1,
+    Title = "",
+    Text = "您不是现任队长，不能进行此操作",
+    button = "",
+    buttonF = ""
+  },
+  [39101] = {
+    id = 39101,
+    Type = 1,
+    Title = "",
+    Text = "只有团长可以取消",
+    button = "",
+    buttonF = ""
+  },
+  [39102] = {
+    id = 39102,
+    Type = 1,
+    Title = "",
+    Text = "准备过程中不能进行此操作",
+    button = "",
+    buttonF = ""
+  },
+  [39103] = {
+    id = 39103,
+    Type = 1,
+    Title = "",
+    Text = "目标队伍已离开当前副本，传送失败",
+    button = "",
+    buttonF = ""
+  },
+  [39104] = {
+    id = 39104,
+    Type = 1,
+    Title = "",
+    Text = "队伍正与团本MVP战斗中，暂时不能传送进副本！",
+    button = "",
+    buttonF = ""
+  },
+  [39105] = {
+    id = 39105,
+    Type = 65536,
+    Title = "注意",
+    Text = "通过匹配组成的队伍进入团本后，将转化成中途匹配队伍，队长会失去踢人权限，全体队员可以发起投票踢人。通关副本后，将会恢复成普通队伍。",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [39106] = {
+    id = 39106,
+    Type = 1,
+    Title = "",
+    Text = "队伍已转化为匹配队伍，无法行使踢人权限",
+    button = "",
+    buttonF = ""
+  },
+  [39107] = {
+    id = 39107,
+    Type = 1,
+    Title = "",
+    Text = "离开副本后才能使用匹配功能",
+    button = "",
+    buttonF = ""
+  },
+  [39108] = {
+    id = 39108,
+    Type = 1,
+    Title = "",
+    Text = "满员队伍不能匹配团队副本",
+    button = "",
+    buttonF = ""
+  },
+  [39201] = {
+    id = 39201,
+    Type = 2,
+    Title = "",
+    Text = "当前战斗时长不足或本周奖励次数已满，通关副本将不能获得奖励，是否继续？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [39202] = {
+    id = 39202,
+    Type = 1,
+    Title = "",
+    Text = "防御塔等级已达上限，不能放入水晶",
+    button = "",
+    buttonF = ""
+  },
+  [39203] = {
+    id = 39203,
+    Type = 1,
+    Title = "",
+    Text = "队伍成员的Base等级不足，不能进入副本",
+    button = "",
+    buttonF = ""
+  },
+  [39204] = {
+    id = 39204,
+    Type = 1,
+    Title = "",
+    Text = "此种类型的水晶放置已达上限",
+    button = "",
+    buttonF = ""
+  },
+  [39205] = {
+    id = 39205,
+    Type = 1,
+    Title = "",
+    Text = "队伍成员还未准备就绪，无法进入副本",
+    button = "",
+    buttonF = ""
+  },
+  [39206] = {
+    id = 39206,
+    Type = 1,
+    Title = "",
+    Text = "当前水晶不足，无法释放技能",
+    button = "",
+    buttonF = ""
+  },
+  [39207] = {
+    id = 39207,
+    Type = 1,
+    Title = "",
+    Text = "当前场景无法跟随传送到其他地图中",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [39208] = {
+    id = 39208,
+    Type = 1,
+    Title = "",
+    Text = "有队伍成员离线，无法出发",
+    button = "",
+    buttonF = ""
+  },
+  [39209] = {
+    id = 39209,
+    Type = 256,
+    Title = "",
+    Text = "MVP还有{countDown=%s}秒来袭，请多多加油喵~！",
+    button = "",
+    buttonF = ""
+  },
+  [39210] = {
+    id = 39210,
+    Type = 1,
+    Title = "",
+    Text = "当前奖励次数已用完，无法进行扫荡",
+    button = "",
+    buttonF = ""
+  },
+  [40001] = {
+    id = 40001,
+    Type = 1,
+    Title = "",
+    Text = "声望等级已达上限",
+    button = "",
+    buttonF = ""
+  },
+  [40002] = {
+    id = 40002,
+    Type = 1,
+    Title = "",
+    Text = "所选礼物数量不足",
+    button = "",
+    buttonF = ""
+  },
+  [40003] = {
+    id = 40003,
+    Type = 1,
+    Title = "",
+    Text = "公会战尚未开放，敬请期待哦！",
+    button = "",
+    buttonF = ""
+  },
+  [40004] = {
+    id = 40004,
+    Type = 1,
+    Title = "",
+    Text = "搜索条件不能为空",
+    button = "",
+    buttonF = ""
+  },
+  [40005] = {
+    id = 40005,
+    Type = 1,
+    Title = "",
+    Text = "加固装备不可做为灌注素材，请将装备还原！",
+    button = "",
+    buttonF = ""
+  },
+  [40006] = {
+    id = 40006,
+    Type = 1,
+    Title = "",
+    Text = "需要选中一个礼物！",
+    button = "",
+    buttonF = ""
+  },
+  [40008] = {
+    id = 40008,
+    Type = 1,
+    Title = "",
+    Text = "对方已组成了团队",
+    button = "",
+    buttonF = ""
+  },
+  [40009] = {
+    id = 40009,
+    Type = 1,
+    Title = "",
+    Text = "对方的队伍状态已变化",
+    button = "",
+    buttonF = ""
+  },
+  [40010] = {
+    id = 40010,
+    Type = 2,
+    Title = "",
+    Text = "Windows客户端登录现已关闭，请使用其他客户端登录游戏",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [40011] = {
+    id = 40011,
+    Type = 1,
+    Title = "",
+    Text = "玩家已拥有基础装备及所需升级材料，请手动升级！注意：精炼损坏的装备无法作为灌注材料！",
+    button = "",
+    buttonF = ""
+  },
+  [40012] = {
+    id = 40012,
+    Type = 1,
+    Title = "",
+    Text = "已有进度时不能以队长或个人身份参与匹配！",
+    button = "",
+    buttonF = ""
+  },
+  [40013] = {
+    id = 40013,
+    Type = 1,
+    Title = "",
+    Text = "灌注素材已拥有，请手动添加灌注消耗的装备",
+    button = "",
+    buttonF = ""
+  },
+  [40014] = {
+    id = 40014,
+    Type = 1,
+    Title = "",
+    Text = "zeny不足，无法自动升级到指定等级",
+    button = "",
+    buttonF = ""
+  },
+  [40015] = {
+    id = 40015,
+    Type = 1,
+    Title = "",
+    Text = "达到%s转职业后可继续升级",
+    button = "",
+    buttonF = ""
+  },
+  [40016] = {
+    id = 40016,
+    Type = 1,
+    Title = "",
+    Text = "需要快捷道具栏内有道具才可切换至附加快捷道具栏",
+    button = "",
+    buttonF = ""
+  },
+  [40017] = {
+    id = 40017,
+    Type = 1,
+    Title = "",
+    Text = "对不起，该公会已关闭申请了哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40018] = {
+    id = 40018,
+    Type = 1,
+    Title = "",
+    Text = "你还不满足该公会的申请条件哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40019] = {
+    id = 40019,
+    Type = 65536,
+    Title = "一键领取说明",
+    Text = "每周通过学生冒险任务获取的名师之证将存储在奖励盒中，可一键领取。超出每周获取数量上限的部分，将不会存入奖励盒中。每周一5:00将清除未领取的奖励。",
+    button = "确定",
+    buttonF = "",
+    TimeInterval = 0
+  },
+  [40020] = {
+    id = 40020,
+    Type = 1,
+    Title = "",
+    Text = "当前并没有可领取的导师奖励",
+    button = "",
+    buttonF = ""
+  },
+  [40021] = {
+    id = 40021,
+    Type = 1,
+    Title = "",
+    Text = "喜好道具不可作为魔能灌注的材料！请先取消喜好道具标记。",
+    button = "",
+    buttonF = ""
+  },
+  [40022] = {
+    id = 40022,
+    Type = 1,
+    Title = "",
+    Text = "加固装备不可融解，请将装备还原！",
+    button = "",
+    buttonF = ""
+  },
+  [40100] = {
+    id = 40100,
+    Type = 1,
+    Title = "",
+    Text = "请先取消视角锁定的设置",
+    button = "",
+    buttonF = ""
+  },
+  [40101] = {
+    id = 40101,
+    Type = 1,
+    Title = "",
+    Text = "%s不足，无法购买",
+    button = "",
+    buttonF = ""
+  },
+  [40102] = {
+    id = 40102,
+    Type = 1,
+    Title = "",
+    Text = "队伍内有成员处于活动副本中，暂时不能传送进副本！",
+    button = "",
+    buttonF = ""
+  },
+  [40200] = {
+    id = 40200,
+    Type = 1,
+    Title = "",
+    Text = "角色ID复制成功",
+    button = "",
+    buttonF = ""
+  },
+  [40205] = {
+    id = 40205,
+    Type = 1,
+    Title = "",
+    Text = "该副本仅双人才可进入哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40301] = {
+    id = 40301,
+    Type = 1,
+    Title = "",
+    Text = "未获得黑曜石魂晶或黑曜石魂晶已被收回，使用失败",
+    button = "",
+    buttonF = ""
+  },
+  [40302] = {
+    id = 40302,
+    Type = 1,
+    Title = "",
+    Text = "今日已完成全部每日任务，使用失败",
+    button = "",
+    buttonF = ""
+  },
+  [40303] = {
+    id = 40303,
+    Type = 1,
+    Title = "",
+    Text = "亡者气息已达上限，使用失败",
+    button = "",
+    buttonF = ""
+  },
+  [40304] = {
+    id = 40304,
+    Type = 2,
+    Title = "",
+    Text = "使用此道具后，亡者气息将会溢出，是否继续使用",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [40309] = {
+    id = 40309,
+    Type = 1,
+    Title = "",
+    Text = "对不起，当前还没有符文信息哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40310] = {
+    id = 40310,
+    Type = 1,
+    Title = "",
+    Text = "非常抱歉，该道具外观当前版本暂未实装，敬请期待~",
+    button = "",
+    buttonF = ""
+  },
+  [40311] = {
+    id = 40311,
+    Type = 1,
+    Title = "",
+    Text = "对不起，你已升至该职业分支的高阶职业，无法切换至低阶职业！",
+    button = "",
+    buttonF = ""
+  },
+  [40320] = {
+    id = 40320,
+    Type = 1,
+    Title = "",
+    Text = "非常抱歉，公会搬迁还在12小时冷却时间中，请稍后查看(*/ω＼*)",
+    button = "确认",
+    buttonF = ""
+  },
+  [40401] = {
+    id = 40401,
+    Type = 129,
+    Title = "",
+    Text = "S6组队竞技赛头像框已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40402] = {
+    id = 40402,
+    Type = 129,
+    Title = "",
+    Text = "S6组队竞技赛背景板已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40403] = {
+    id = 40403,
+    Type = 129,
+    Title = "",
+    Text = "S6组队竞技赛头像框已失效！",
+    button = "",
+    buttonF = ""
+  },
+  [40404] = {
+    id = 40404,
+    Type = 129,
+    Title = "",
+    Text = "S6组队竞技赛背景板已失效！",
+    button = "",
+    buttonF = ""
+  },
+  [40405] = {
+    id = 40405,
+    Type = 129,
+    Title = "",
+    Text = "S7组队竞技赛头像框已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40406] = {
+    id = 40406,
+    Type = 129,
+    Title = "",
+    Text = "S7组队竞技赛背景板已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40407] = {
+    id = 40407,
+    Type = 129,
+    Title = "",
+    Text = "S7组队竞技赛头像框已失效！",
+    button = "",
+    buttonF = ""
+  },
+  [40408] = {
+    id = 40408,
+    Type = 129,
+    Title = "",
+    Text = "S7组队竞技赛背景板已失效！",
+    button = "",
+    buttonF = ""
+  },
+  [40409] = {
+    id = 40409,
+    Type = 129,
+    Title = "",
+    Text = "S8组队竞技赛头像框已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40410] = {
+    id = 40410,
+    Type = 129,
+    Title = "",
+    Text = "S8组队竞技赛背景板已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40411] = {
+    id = 40411,
+    Type = 129,
+    Title = "",
+    Text = "S8组队竞技赛头像框已失效！",
+    button = "",
+    buttonF = ""
+  },
+  [40412] = {
+    id = 40412,
+    Type = 129,
+    Title = "",
+    Text = "S8组队竞技赛背景板已失效！",
+    button = "",
+    buttonF = ""
+  },
+  [40413] = {
+    id = 40413,
+    Type = 129,
+    Title = "",
+    Text = "S9组队竞技赛头像框已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40414] = {
+    id = 40414,
+    Type = 129,
+    Title = "",
+    Text = "S9组队竞技赛背景板已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40415] = {
+    id = 40415,
+    Type = 129,
+    Title = "",
+    Text = "S10组队竞技赛头像框已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40416] = {
+    id = 40416,
+    Type = 129,
+    Title = "",
+    Text = "S10组队竞技赛背景板已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40417] = {
+    id = 40417,
+    Type = 129,
+    Title = "",
+    Text = "转生头像框已解锁！",
+    button = "",
+    buttonF = ""
+  },
+  [40418] = {
+    id = 40418,
+    Type = 129,
+    Title = "",
+    Text = "S11组队竞技赛头像框已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40419] = {
+    id = 40419,
+    Type = 129,
+    Title = "",
+    Text = "S11组队竞技赛背景板已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40420] = {
+    id = 40420,
+    Type = 129,
+    Title = "",
+    Text = "皇家庆典头像框已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40421] = {
+    id = 40421,
+    Type = 129,
+    Title = "",
+    Text = "组队竞技赛头像框已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40422] = {
+    id = 40422,
+    Type = 129,
+    Title = "",
+    Text = "组队竞技赛背景板已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [40423] = {
+    id = 40423,
+    Type = 129,
+    Title = "",
+    Text = "聊天框已激活，可在头像幻化界面切换聊天框页签进行装备",
+    button = "",
+    buttonF = ""
+  },
+  [40501] = {
+    id = 40501,
+    Type = 8192,
+    Title = "系统提示",
+    Text = "请点击查询手机号验证结果",
+    button = "确定",
+    buttonF = ""
+  },
+  [40502] = {
+    id = 40502,
+    Type = 1,
+    Title = "",
+    Text = "认证成功",
+    button = "",
+    buttonF = ""
+  },
+  [40503] = {
+    id = 40503,
+    Type = 1,
+    Title = "",
+    Text = "手机号码认证失败",
+    button = "",
+    buttonF = ""
+  },
+  [40504] = {
+    id = 40504,
+    Type = 1,
+    Title = "",
+    Text = "修改成功",
+    button = "",
+    buttonF = ""
+  },
+  [40505] = {
+    id = 40505,
+    Type = 1,
+    Title = "",
+    Text = "请填写正确格式的手机号码",
+    button = "",
+    buttonF = ""
+  },
+  [40506] = {
+    id = 40506,
+    Type = 1,
+    Title = "",
+    Text = "请填写手机验证码",
+    button = "",
+    buttonF = ""
+  },
+  [40507] = {
+    id = 40507,
+    Type = 1,
+    Title = "",
+    Text = "请填写姓名",
+    button = "",
+    buttonF = ""
+  },
+  [40508] = {
+    id = 40508,
+    Type = 1,
+    Title = "",
+    Text = "验证码已发送, 请注意查收",
+    button = "",
+    buttonF = ""
+  },
+  [40509] = {
+    id = 40509,
+    Type = 1,
+    Title = "",
+    Text = "获取手机验证码失败,请稍后尝试",
+    button = "",
+    buttonF = ""
+  },
+  [40510] = {
+    id = 40510,
+    Type = 1,
+    Title = "",
+    Text = "手机号码认证成功",
+    button = "",
+    buttonF = ""
+  },
+  [40511] = {
+    id = 40511,
+    Type = 1,
+    Title = "",
+    Text = "实名认证成功",
+    button = "",
+    buttonF = ""
+  },
+  [40512] = {
+    id = 40512,
+    Type = 1,
+    Title = "",
+    Text = "实名认证失败",
+    button = "",
+    buttonF = ""
+  },
+  [40513] = {
+    id = 40513,
+    Type = 1,
+    Title = "",
+    Text = "游客账号无法使用该功能，请先进行账号升级",
+    button = "",
+    buttonF = ""
+  },
+  [40516] = {
+    id = 40516,
+    Type = 1,
+    Title = "",
+    Text = "很抱歉，您没有权限进行编辑",
+    button = "",
+    buttonF = ""
+  },
+  [40530] = {
+    id = 40530,
+    Type = 1,
+    Title = "",
+    Text = "很抱歉，您本周该副本的通关次数已达上限，请下周再试哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40531] = {
+    id = 40531,
+    Type = 1,
+    Title = "",
+    Text = "很抱歉，检测到您的信誉积分过低，本周内将限制您进入相关副本~",
+    button = "",
+    buttonF = ""
+  },
+  [40532] = {
+    id = 40532,
+    Type = 17,
+    Title = "",
+    Text = "检测到队伍内的%s信誉积分过低，本周将限制其进入相关副本，请确认后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [40533] = {
+    id = 40533,
+    Type = 17,
+    Title = "",
+    Text = "很抱歉，您队伍内的%s已达本周副本通关次数上限，本周将无法进入该副本，请确认后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [40534] = {
+    id = 40534,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "本次购买将消耗%s，是否确认购买此商品？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [40540] = {
+    id = 40540,
+    Type = 2,
+    Title = "",
+    Text = "该操作将清空该木桩的记录数据，是否继续？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [40541] = {
+    id = 40541,
+    Type = 1,
+    Title = "",
+    Text = "对方正在施工，无法进入目标区域",
+    button = "",
+    buttonF = ""
+  },
+  [40542] = {
+    id = 40542,
+    Type = 1,
+    Title = "",
+    Text = "储存已经顺利完成咯~",
+    button = "",
+    buttonF = ""
+  },
+  [40543] = {
+    id = 40543,
+    Type = 1,
+    Title = "温馨提示",
+    Text = "请更新版本后再使用此功能",
+    button = "确认",
+    buttonF = ""
+  },
+  [40544] = {
+    id = 40544,
+    Type = 1,
+    Title = "温馨提示",
+    Text = "目标APP被停用，请重新启用后再尝试",
+    button = "确认",
+    buttonF = ""
+  },
+  [40545] = {
+    id = 40545,
+    Type = 1,
+    Title = "",
+    Text = "签到成功",
+    button = "",
+    buttonF = ""
+  },
+  [40546] = {
+    id = 40546,
+    Type = 1,
+    Title = "",
+    Text = "本期签到活动已全部完成，无需再用~",
+    button = "",
+    buttonF = ""
+  },
+  [40547] = {
+    id = 40547,
+    Type = 1,
+    Title = "",
+    Text = "需要签到成功后，才能使用签到券哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40548] = {
+    id = 40548,
+    Type = 1,
+    Title = "",
+    Text = "当前队伍人数不少于三人，无法发布队伍",
+    button = "",
+    buttonF = ""
+  },
+  [40549] = {
+    id = 40549,
+    Type = 1,
+    Title = "",
+    Text = "有人在你的家园留言板留言了，快去看看吧！",
+    button = "",
+    buttonF = ""
+  },
+  [40550] = {
+    id = 40550,
+    Type = 1,
+    Title = "",
+    Text = "主人寄语不能为空！",
+    button = "",
+    buttonF = ""
+  },
+  [40551] = {
+    id = 40551,
+    Type = 1,
+    Title = "",
+    Text = "主人寄语中含有非法字符！",
+    button = "",
+    buttonF = ""
+  },
+  [40552] = {
+    id = 40552,
+    Type = 1,
+    Title = "",
+    Text = "主人寄语不能超过%s个字！",
+    button = "",
+    buttonF = ""
+  },
+  [40553] = {
+    id = 40553,
+    Type = 1,
+    Title = "",
+    Text = "这里快写不下了，无法超过%s个字哦！",
+    button = "",
+    buttonF = ""
+  },
+  [40554] = {
+    id = 40554,
+    Type = 1,
+    Title = "",
+    Text = "这张纸已经被写满了，没有剩余的地方了哦！",
+    button = "",
+    buttonF = ""
+  },
+  [40555] = {
+    id = 40555,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·熊本熊要抱抱",
+    button = "",
+    buttonF = ""
+  },
+  [40556] = {
+    id = 40556,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·熊本熊快乐玩耍",
+    button = "",
+    buttonF = ""
+  },
+  [40557] = {
+    id = 40557,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·熊本熊为你点赞",
+    button = "",
+    buttonF = ""
+  },
+  [40558] = {
+    id = 40558,
+    Type = 1,
+    Title = "",
+    Text = "该蓝图不可适用在此场景上！",
+    button = "",
+    buttonF = ""
+  },
+  [40559] = {
+    id = 40559,
+    Type = 1,
+    Title = "",
+    Text = "您的job等级不符，使用失败",
+    button = "",
+    buttonF = ""
+  },
+  [40560] = {
+    id = 40560,
+    Type = 2,
+    Title = "",
+    Text = "使用后您的job等级会升级至3转job等级40，确定要使用吗",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [40561] = {
+    id = 40561,
+    Type = 1,
+    Title = "",
+    Text = "当前版本冒险录已结束或者多次使用进阶卡，返还您%sB格猫金币作以补偿",
+    button = "",
+    buttonF = ""
+  },
+  [40562] = {
+    id = 40562,
+    Type = 128,
+    Title = "",
+    Text = "您已被从座位上请离",
+    button = "",
+    buttonF = ""
+  },
+  [40563] = {
+    id = 40563,
+    Type = 1,
+    Title = "",
+    Text = "您刚刚被请离了座位，请稍后再试",
+    button = "",
+    buttonF = ""
+  },
+  [40564] = {
+    id = 40564,
+    Type = 128,
+    Title = "",
+    Text = "乘客%s已从座位上离开",
+    button = "",
+    buttonF = ""
+  },
+  [40565] = {
+    id = 40565,
+    Type = 1,
+    Title = "",
+    Text = "无其他空余座位",
+    button = "",
+    buttonF = ""
+  },
+  [40567] = {
+    id = 40567,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·熊本熊悄悄话",
+    button = "",
+    buttonF = ""
+  },
+  [40568] = {
+    id = 40568,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·熊本熊撒花",
+    button = "",
+    buttonF = ""
+  },
+  [40569] = {
+    id = 40569,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·熊本熊大吃一惊",
+    button = "",
+    buttonF = ""
+  },
+  [40570] = {
+    id = 40570,
+    Type = 1,
+    Title = "",
+    Text = "变身状态下无法骑乘坐骑，请取消变身状态再进行尝试",
+    button = "",
+    buttonF = ""
+  },
+  [40571] = {
+    id = 40571,
+    Type = 1,
+    Title = "",
+    Text = "对方设置了留言权限，你暂时无法使用留言功能！",
+    button = "",
+    buttonF = ""
+  },
+  [40572] = {
+    id = 40572,
+    Type = 1,
+    Title = "",
+    Text = "该赛季已结束，无法进阶卡普拉冒险录哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40573] = {
+    id = 40573,
+    Type = 2,
+    Title = "",
+    Text = "是否确认删除该留言？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [40574] = {
+    id = 40574,
+    Type = 1,
+    Title = "",
+    Text = "对不起，该留言已被删除，请确认后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [40575] = {
+    id = 40575,
+    Type = 1,
+    Title = "",
+    Text = "是否确认删除所有留言？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [40576] = {
+    id = 40576,
+    Type = 2,
+    Title = "",
+    Text = "喵~这位冒险者的头饰真多呀~想好给哪个头饰+15了吗？挪爪前往评论页分享下你的想法吧！",
+    button = "这就前往",
+    buttonF = "残忍拒绝"
+  },
+  [40577] = {
+    id = 40577,
+    Type = 65536,
+    Title = "",
+    Text = "是否将其设为重点关注，重点关注后可将其置顶。",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [40578] = {
+    id = 40578,
+    Type = 65536,
+    Title = "",
+    Text = "是否取消重点关注？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 0
+  },
+  [40580] = {
+    id = 40580,
+    Type = 1,
+    Title = "",
+    Text = "复制成功",
+    button = "",
+    buttonF = ""
+  },
+  [40590] = {
+    id = 40590,
+    Type = 1,
+    Title = "",
+    Text = "卡普拉冒险录经验*%s",
+    button = "",
+    buttonF = ""
+  },
+  [40591] = {
+    id = 40591,
+    Type = 1,
+    Title = "",
+    Text = "执事荣誉勋章已达本周上限，无法获得更多了哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40592] = {
+    id = 40592,
+    Type = 1,
+    Title = "",
+    Text = "卡普拉冒险录经验已达本周上限，无法获得更多了哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40594] = {
+    id = 40594,
+    Type = 1,
+    Title = "",
+    Text = "精炼/附魔/插卡/标记喜好的装备无法作为材料",
+    button = "",
+    buttonF = ""
+  },
+  [40600] = {
+    id = 40600,
+    Type = 1,
+    Title = "",
+    Text = "该佣兵猫尚未解锁，部分功能无法显示",
+    button = "",
+    buttonF = ""
+  },
+  [40601] = {
+    id = 40601,
+    Type = 1,
+    Title = "",
+    Text = "变身状态下无法骑乘坐骑，请取消变身状态再进行尝试。",
+    button = "",
+    buttonF = ""
+  },
+  [40602] = {
+    id = 40602,
+    Type = 1,
+    Title = "",
+    Text = "骑乘多人/单人坐骑状态下，无法幻化为单人/多人坐骑",
+    button = "",
+    buttonF = ""
+  },
+  [40603] = {
+    id = 40603,
+    Type = 1,
+    Title = "",
+    Text = "当前状态下不可骑乘坐骑",
+    button = "",
+    buttonF = ""
+  },
+  [40604] = {
+    id = 40604,
+    Type = 1,
+    Title = "",
+    Text = "当前状态下无法切换技能组合",
+    button = "",
+    buttonF = ""
+  },
+  [40605] = {
+    id = 40605,
+    Type = 129,
+    Title = "",
+    Text = "率先到达终点，恭喜获胜！",
+    button = "",
+    buttonF = ""
+  },
+  [40606] = {
+    id = 40606,
+    Type = 129,
+    Title = "",
+    Text = "啊哦，输掉了,下次继续努力~",
+    button = "",
+    buttonF = ""
+  },
+  [40607] = {
+    id = 40607,
+    Type = 129,
+    Title = "",
+    Text = "比赛开始，要比司平塔先跑到终点哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40700] = {
+    id = 40700,
+    Type = 1,
+    Title = "",
+    Text = "该物品不可在该地图使用，请确认后再试！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [40701] = {
+    id = 40701,
+    Type = 128,
+    Title = "",
+    Text = "获得钥匙",
+    button = "",
+    buttonF = ""
+  },
+  [40702] = {
+    id = 40702,
+    Type = 256,
+    Title = "",
+    Text = "已获得足够钥匙，可前往下一层{countDown=3}",
+    button = "",
+    buttonF = "HideTime"
+  },
+  [40703] = {
+    id = 40703,
+    Type = 129,
+    Title = "",
+    Text = "从随机事件中获得了%s",
+    button = "",
+    buttonF = ""
+  },
+  [40704] = {
+    id = 40704,
+    Type = 129,
+    Title = "",
+    Text = "坚持20秒即可获胜",
+    button = "",
+    buttonF = ""
+  },
+  [40705] = {
+    id = 40705,
+    Type = 129,
+    Title = "",
+    Text = "触发了随机事件！",
+    button = "",
+    buttonF = ""
+  },
+  [40706] = {
+    id = 40706,
+    Type = 129,
+    Title = "",
+    Text = "在30秒内沿着补给站到达目的地吧",
+    button = "",
+    buttonF = ""
+  },
+  [40707] = {
+    id = 40707,
+    Type = 129,
+    Title = "",
+    Text = "可在休息处可以自由切换职业",
+    button = "",
+    buttonF = ""
+  },
+  [40708] = {
+    id = 40708,
+    Type = 129,
+    Title = "",
+    Text = "可在商店购买心仪的道具",
+    button = "",
+    buttonF = ""
+  },
+  [40709] = {
+    id = 40709,
+    Type = 129,
+    Title = "",
+    Text = "机关挑战成功！",
+    button = "",
+    buttonF = ""
+  },
+  [40710] = {
+    id = 40710,
+    Type = 129,
+    Title = "",
+    Text = "机关挑战失败！",
+    button = "",
+    buttonF = ""
+  },
+  [40711] = {
+    id = 40711,
+    Type = 129,
+    Title = "",
+    Text = "队伍中存在其他成员，无法单人进入！",
+    button = "",
+    buttonF = ""
+  },
+  [40712] = {
+    id = 40712,
+    Type = 2,
+    Title = "",
+    Text = "冒险者[c][63cd4e]%s[-][/c]死亡了，是否使用灵魂石将其复活？",
+    button = "复活",
+    buttonF = "取消"
+  },
+  [40713] = {
+    id = 40713,
+    Type = 129,
+    Title = "",
+    Text = "探险记录已保存！",
+    button = "",
+    buttonF = ""
+  },
+  [40714] = {
+    id = 40714,
+    Type = 129,
+    Title = "",
+    Text = "队伍成员与记录不符，无法读取！",
+    button = "",
+    buttonF = ""
+  },
+  [40715] = {
+    id = 40715,
+    Type = 129,
+    Title = "",
+    Text = "随机事件已由%s触发，无法再次访问！",
+    button = "",
+    buttonF = ""
+  },
+  [40716] = {
+    id = 40716,
+    Type = 2,
+    Title = "",
+    Text = "是否确认开启积分模式？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [40717] = {
+    id = 40717,
+    Type = 129,
+    Title = "",
+    Text = "队伍人数超过3人，无法进入副本！",
+    button = "",
+    buttonF = ""
+  },
+  [40718] = {
+    id = 40718,
+    Type = 1,
+    Title = "",
+    Text = "时之流沙数量不足，无法加点",
+    button = "",
+    buttonF = ""
+  },
+  [40719] = {
+    id = 40719,
+    Type = 129,
+    Title = "",
+    Text = "当前正在副本内，请先离开副本再进行操作",
+    button = "",
+    buttonF = ""
+  },
+  [40720] = {
+    id = 40720,
+    Type = 129,
+    Title = "",
+    Text = "该层已开启多个房间，无法再次存档！",
+    button = "",
+    buttonF = ""
+  },
+  [40721] = {
+    id = 40721,
+    Type = 129,
+    Title = "",
+    Text = "队伍中没有阵亡，无需使用",
+    button = "",
+    buttonF = ""
+  },
+  [40722] = {
+    id = 40722,
+    Type = 129,
+    Title = "",
+    Text = "罗盘指向了某个神秘的地方……",
+    button = "",
+    buttonF = ""
+  },
+  [40723] = {
+    id = 40723,
+    Type = 129,
+    Title = "",
+    Text = "指针指向了某个神秘的地方……",
+    button = "",
+    buttonF = ""
+  },
+  [40724] = {
+    id = 40724,
+    Type = 2,
+    Title = "",
+    Text = "即将花费%s重置本页面全部技能，是否重置？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [40725] = {
+    id = 40725,
+    Type = 129,
+    Title = "",
+    Text = "恭喜通关！当前已是副本最高层，无法继续前进。",
+    button = "",
+    buttonF = ""
+  },
+  [40726] = {
+    id = 40726,
+    Type = 256,
+    Title = "",
+    Text = "wait指令测试",
+    button = "",
+    buttonF = ""
+  },
+  [40727] = {
+    id = 40727,
+    Type = 129,
+    Title = "",
+    Text = "wait指令测试222",
+    button = "",
+    buttonF = ""
+  },
+  [40728] = {
+    id = 40728,
+    Type = 129,
+    Title = "",
+    Text = "获得50金币",
+    button = "",
+    buttonF = ""
+  },
+  [40729] = {
+    id = 40729,
+    Type = 129,
+    Title = "",
+    Text = "获得100金币",
+    button = "",
+    buttonF = ""
+  },
+  [40730] = {
+    id = 40730,
+    Type = 129,
+    Title = "",
+    Text = "获得200金币",
+    button = "",
+    buttonF = ""
+  },
+  [40731] = {
+    id = 40731,
+    Type = 129,
+    Title = "",
+    Text = "倒计时20秒",
+    button = "",
+    buttonF = ""
+  },
+  [40732] = {
+    id = 40732,
+    Type = 129,
+    Title = "",
+    Text = "倒计时10秒",
+    button = "",
+    buttonF = ""
+  },
+  [40733] = {
+    id = 40733,
+    Type = 129,
+    Title = "",
+    Text = "躲避地上的陷阱，坚持20秒即可获胜，小心减速！",
+    button = "",
+    buttonF = ""
+  },
+  [40734] = {
+    id = 40734,
+    Type = 129,
+    Title = "",
+    Text = "进入绿色保护圈可免疫全屏伤害，坚持20秒即可获胜。",
+    button = "",
+    buttonF = ""
+  },
+  [40735] = {
+    id = 40735,
+    Type = 129,
+    Title = "",
+    Text = "躲避移动的诅咒，坚持20秒即可获胜。",
+    button = "",
+    buttonF = ""
+  },
+  [40736] = {
+    id = 40736,
+    Type = 129,
+    Title = "",
+    Text = "积分模式已经开启！",
+    button = "",
+    buttonF = ""
+  },
+  [40737] = {
+    id = 40737,
+    Type = 129,
+    Title = "",
+    Text = "检测到当前已有游戏记录，无法开启积分模式",
+    button = "",
+    buttonF = ""
+  },
+  [40738] = {
+    id = 40738,
+    Type = 129,
+    Title = "",
+    Text = "只有队长才可以开启积分模式哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40739] = {
+    id = 40739,
+    Type = 129,
+    Title = "",
+    Text = "该存档已失效。",
+    button = "",
+    buttonF = ""
+  },
+  [40800] = {
+    id = 40800,
+    Type = 1,
+    Title = "",
+    Text = "完成70级神谕镜鉴任务后开启此功能",
+    button = "",
+    buttonF = ""
+  },
+  [40801] = {
+    id = 40801,
+    Type = 1,
+    Title = "",
+    Text = "该佣兵猫头饰已解锁，无法再次解锁。",
+    button = "",
+    buttonF = ""
+  },
+  [40802] = {
+    id = 40802,
+    Type = 1,
+    Title = "",
+    Text = "解锁了[63cd4e]%s[-]，[63cd4e]%s[-]的[63cd4e]%s[-]技能等级+1",
+    button = "",
+    buttonF = ""
+  },
+  [40803] = {
+    id = 40803,
+    Type = 1,
+    Title = "",
+    Text = "Zeny不足",
+    button = "",
+    buttonF = ""
+  },
+  [40900] = {
+    id = 40900,
+    Type = 1,
+    Title = "",
+    Text = "该地图上未探测出宝藏，请确认后再试~",
+    button = "",
+    buttonF = ""
+  },
+  [40901] = {
+    id = 40901,
+    Type = 1,
+    Title = "",
+    Text = "该技能已失效，请确认后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [40902] = {
+    id = 40902,
+    Type = 16777216,
+    Title = "",
+    Text = "冒险任务已完成！",
+    button = "",
+    buttonF = ""
+  },
+  [40903] = {
+    id = 40903,
+    Type = 1,
+    Title = "",
+    Text = "当前地图无可猎杀目标，请稍后再试。",
+    button = "",
+    buttonF = ""
+  },
+  [40904] = {
+    id = 40904,
+    Type = 2,
+    Title = "",
+    Text = "开启该选项可能会降低游戏性能，你确定开启吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [40905] = {
+    id = 40905,
+    Type = 33554432,
+    Title = "",
+    Text = "天气即将改变，请冒险家注意",
+    button = "",
+    buttonF = ""
+  },
+  [40906] = {
+    id = 40906,
+    Type = 33554432,
+    Title = "",
+    Text = "异境魔扉已经刷新，请冒险家注意",
+    button = "",
+    buttonF = ""
+  },
+  [40907] = {
+    id = 40907,
+    Type = 1,
+    Title = "",
+    Text = "当前地图不可使用该技能，请确认后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [40908] = {
+    id = 40908,
+    Type = 1,
+    Title = "",
+    Text = "已取得荒境异宝%s，请前往冒险技能页签查看！",
+    button = "",
+    buttonF = ""
+  },
+  [40909] = {
+    id = 40909,
+    Type = 1,
+    Title = "",
+    Text = "成功取得%s，你的力量暂时得到了强化~",
+    button = "",
+    buttonF = ""
+  },
+  [40910] = {
+    id = 40910,
+    Type = 1,
+    Title = "",
+    Text = "该道具价格异常，无法出售，请稍后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [40911] = {
+    id = 40911,
+    Type = 1,
+    Title = "",
+    Text = "获得徽记x1",
+    button = "",
+    buttonF = ""
+  },
+  [40912] = {
+    id = 40912,
+    Type = 1,
+    Title = "",
+    Text = "移除徽记x1",
+    button = "",
+    buttonF = ""
+  },
+  [40913] = {
+    id = 40913,
+    Type = 33554432,
+    Title = "",
+    Text = "异境魔扉已经开启，请冒险家注意",
+    button = "",
+    buttonF = ""
+  },
+  [40914] = {
+    id = 40914,
+    Type = 1,
+    Title = "",
+    Text = "%s不足，重置失败",
+    button = "",
+    buttonF = ""
+  },
+  [40915] = {
+    id = 40915,
+    Type = 1,
+    Title = "",
+    Text = "当前属性正处于激活状态，无法删除",
+    button = "",
+    buttonF = ""
+  },
+  [40916] = {
+    id = 40916,
+    Type = 1,
+    Title = "",
+    Text = "萃取成功",
+    button = "",
+    buttonF = ""
+  },
+  [40917] = {
+    id = 40917,
+    Type = 1,
+    Title = "",
+    Text = "此栏位中无存储属性，激活失败",
+    button = "",
+    buttonF = ""
+  },
+  [40918] = {
+    id = 40918,
+    Type = 1,
+    Title = "",
+    Text = "激活成功！",
+    button = "",
+    buttonF = ""
+  },
+  [40919] = {
+    id = 40919,
+    Type = 2,
+    Title = "",
+    Text = "是否替换/删除存储中的属性，本次操作不可撤销。",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [40920] = {
+    id = 40920,
+    Type = 1,
+    Title = "",
+    Text = "本操作需要在主城内进行，请玩家回到主城完成操作。",
+    button = "",
+    buttonF = ""
+  },
+  [40921] = {
+    id = 40921,
+    Type = 1,
+    Title = "",
+    Text = "%s已解锁，请前往神树之灵图纸一览中查看与制作",
+    button = "",
+    buttonF = ""
+  },
+  [40922] = {
+    id = 40922,
+    Type = 1,
+    Title = "",
+    Text = "当前职业无可突破技能，使用失败。",
+    button = "",
+    buttonF = ""
+  },
+  [40923] = {
+    id = 40923,
+    Type = 65536,
+    Title = "",
+    Text = "本次操作将消耗起源之书提升该技能等级上限，起源之书在技能重置后将不会返还，是否执行操作？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [40924] = {
+    id = 40924,
+    Type = 1,
+    Title = "",
+    Text = "小游戏已结束",
+    button = "",
+    buttonF = ""
+  },
+  [40925] = {
+    id = 40925,
+    Type = 1,
+    Title = "",
+    Text = "暂时无法模仿该对象哦，请确认后再试~",
+    button = "",
+    buttonF = ""
+  },
+  [40926] = {
+    id = 40926,
+    Type = 1,
+    Title = "",
+    Text = "您已购买所有的卡普拉冒险录，感谢您的支持~",
+    button = "",
+    buttonF = ""
+  },
+  [40927] = {
+    id = 40927,
+    Type = 1,
+    Title = "",
+    Text = "请先解除变身状态，再使用该物品~",
+    button = "",
+    buttonF = ""
+  },
+  [40928] = {
+    id = 40928,
+    Type = 1,
+    Title = "",
+    Text = "取消激活",
+    button = "",
+    buttonF = ""
+  },
+  [40929] = {
+    id = 40929,
+    Type = 1,
+    Title = "",
+    Text = "清除成功",
+    button = "",
+    buttonF = ""
+  },
+  [40930] = {
+    id = 40930,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《莲花中的身影》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40931] = {
+    id = 40931,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《银鱼湖的公主》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40932] = {
+    id = 40932,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《影枫司》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40933] = {
+    id = 40933,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《锦衣卫守则·序》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40934] = {
+    id = 40934,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《锦衣卫守则·一》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40935] = {
+    id = 40935,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《锦衣卫守则·二》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40936] = {
+    id = 40936,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《锦衣卫守则·三》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40937] = {
+    id = 40937,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《锦衣卫守则·四》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40938] = {
+    id = 40938,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《锦衣卫守则·五》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40939] = {
+    id = 40939,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《神龙祭坛》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40940] = {
+    id = 40940,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《洛阳花楼》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40941] = {
+    id = 40941,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《小青的日记·一》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40942] = {
+    id = 40942,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《小青的日记·二》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40943] = {
+    id = 40943,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《小青的日记·三》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40944] = {
+    id = 40944,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《小青的日记·四》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40945] = {
+    id = 40945,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《最初的巨人》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40946] = {
+    id = 40946,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《洛阳的巨龙》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40947] = {
+    id = 40947,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《大蛇乌洛》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40948] = {
+    id = 40948,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《花楼的常客》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40949] = {
+    id = 40949,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《万年冰山》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40950] = {
+    id = 40950,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《白素贞》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40951] = {
+    id = 40951,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《毒牙族风情》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40952] = {
+    id = 40952,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《花魁的舞衣》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [40953] = {
+    id = 40953,
+    Type = 1,
+    Title = "",
+    Text = "卡普拉冒险录已更新新一章~",
+    button = "",
+    buttonF = ""
+  },
+  [40954] = {
+    id = 40954,
+    Type = 1,
+    Title = "",
+    Text = "当前版本卡普拉冒险录已结束，敬请期待新篇章~",
+    button = "",
+    buttonF = ""
+  },
+  [40955] = {
+    id = 40955,
+    Type = 1,
+    Title = "",
+    Text = "犹豫，就会被人抢先哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40956] = {
+    id = 40956,
+    Type = 1,
+    Title = "",
+    Text = "进阶版卡普拉冒险录已解锁，快去看看吧~",
+    button = "",
+    buttonF = ""
+  },
+  [40957] = {
+    id = 40957,
+    Type = 1,
+    Title = "",
+    Text = "典藏版卡普拉冒险录已解锁，快去看看吧~",
+    button = "",
+    buttonF = ""
+  },
+  [40958] = {
+    id = 40958,
+    Type = 1,
+    Title = "",
+    Text = "当前角色已达该游戏今日次数上限，稍作休息，明天再来吧！",
+    button = "",
+    buttonF = ""
+  },
+  [40959] = {
+    id = 40959,
+    Type = 1,
+    Title = "",
+    Text = "文字最多不能超过25个哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40960] = {
+    id = 40960,
+    Type = 1,
+    Title = "",
+    Text = "文字最多不能超过50个哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40961] = {
+    id = 40961,
+    Type = 129,
+    Title = "",
+    Text = "距离过远，罗盘没有反应……请到荒境内再使用罗盘。",
+    button = "",
+    buttonF = ""
+  },
+  [40962] = {
+    id = 40962,
+    Type = 129,
+    Title = "",
+    Text = "距离过远，指针没有反应……请到荒境内再使用指针。",
+    button = "",
+    buttonF = ""
+  },
+  [40963] = {
+    id = 40963,
+    Type = 1,
+    Title = "",
+    Text = "你仔细聆听，海螺里已经没有任何回响…",
+    button = "",
+    buttonF = ""
+  },
+  [40964] = {
+    id = 40964,
+    Type = 1,
+    Title = "",
+    Text = "你凑耳聆听，一段关于逝去枫叶的往事重新被揭开…",
+    button = "",
+    buttonF = ""
+  },
+  [40965] = {
+    id = 40965,
+    Type = 1,
+    Title = "",
+    Text = "荒境的魔力遮蔽全部解开，苍蝇翅膀已可使用",
+    button = "",
+    buttonF = ""
+  },
+  [40966] = {
+    id = 40966,
+    Type = 1,
+    Title = "",
+    Text = "需要装备手推车",
+    button = "",
+    buttonF = ""
+  },
+  [40967] = {
+    id = 40967,
+    Type = 1,
+    Title = "",
+    Text = "",
+    button = "",
+    buttonF = ""
+  },
+  [40968] = {
+    id = 40968,
+    Type = 1,
+    Title = "",
+    Text = "背包内已拥有，无法取出",
+    button = "",
+    buttonF = ""
+  },
+  [40969] = {
+    id = 40969,
+    Type = 33554432,
+    Title = "",
+    Text = "时空发生错乱，%s已重置刷新",
+    button = "",
+    buttonF = ""
+  },
+  [40970] = {
+    id = 40970,
+    Type = 1,
+    Title = "",
+    Text = "一个记忆星枝已激活。",
+    button = "",
+    buttonF = ""
+  },
+  [40971] = {
+    id = 40971,
+    Type = 129,
+    Title = "",
+    Text = "获得额外素质点奖励",
+    button = "",
+    buttonF = ""
+  },
+  [40972] = {
+    id = 40972,
+    Type = 1,
+    Title = "",
+    Text = "「锤子」数量不足，无法击碎波利~",
+    button = "",
+    buttonF = ""
+  },
+  [40973] = {
+    id = 40973,
+    Type = 1,
+    Title = "",
+    Text = "活动已结束！",
+    button = "",
+    buttonF = ""
+  },
+  [40974] = {
+    id = 40974,
+    Type = 2,
+    Title = "神秘提示",
+    Text = "看来你还不够努力呢，只有为你开启「神秘通道」了！\n当期「锤子」可使用Zeny购买，每日可购买2次",
+    button = "确认",
+    buttonF = ""
+  },
+  [40975] = {
+    id = 40975,
+    Type = 1,
+    Title = "",
+    Text = "使用成功，获得效果：瞬息龙影。",
+    button = "",
+    buttonF = ""
+  },
+  [40976] = {
+    id = 40976,
+    Type = 1,
+    Title = "",
+    Text = "使用成功，获得效果：回音勋章。",
+    button = "",
+    buttonF = ""
+  },
+  [40977] = {
+    id = 40977,
+    Type = 1,
+    Title = "",
+    Text = "使用成功，获得效果：坚毅徽记。",
+    button = "",
+    buttonF = ""
+  },
+  [40978] = {
+    id = 40978,
+    Type = 1,
+    Title = "",
+    Text = "使用成功，获得效果：治愈之证。",
+    button = "",
+    buttonF = ""
+  },
+  [40979] = {
+    id = 40979,
+    Type = 1,
+    Title = "",
+    Text = "使用成功，获得效果：疾行者。",
+    button = "",
+    buttonF = ""
+  },
+  [40980] = {
+    id = 40980,
+    Type = 1,
+    Title = "",
+    Text = "使用成功，暂时清除了周围的威胁。",
+    button = "",
+    buttonF = ""
+  },
+  [40981] = {
+    id = 40981,
+    Type = 1,
+    Title = "",
+    Text = "使用成功，背包上限增加30。",
+    button = "",
+    buttonF = ""
+  },
+  [40982] = {
+    id = 40982,
+    Type = 1,
+    Title = "",
+    Text = "暂时无法使用哦~",
+    button = "",
+    buttonF = ""
+  },
+  [40983] = {
+    id = 40983,
+    Type = 65536,
+    Title = "",
+    Text = "即将消耗%s对当前生效精炼等级进行刷新操作？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [40984] = {
+    id = 40984,
+    Type = 65536,
+    Title = "",
+    Text = "%s不足，是否使用%d%s对当前生效精炼等级进行刷新操作，是否继续？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [40985] = {
+    id = 40985,
+    Type = 1,
+    Title = "",
+    Text = "刷新后生效精炼等级小于当前生效精炼等级，不保存。",
+    button = "",
+    buttonF = ""
+  },
+  [40986] = {
+    id = 40986,
+    Type = 1,
+    Title = "",
+    Text = "当前属性处于激活状态，无法删除。",
+    button = "",
+    buttonF = ""
+  },
+  [40987] = {
+    id = 40987,
+    Type = 2,
+    Title = "",
+    Text = "是否删除所选中的属性，本次操作不可撤销，请慎重选择。",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [40988] = {
+    id = 40988,
+    Type = 2,
+    Title = "",
+    Text = "当前操作将会摧毁所选装备，本次操作不可撤销，是否继续？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [40989] = {
+    id = 40989,
+    Type = 1,
+    Title = "",
+    Text = "萃取成功！",
+    button = "",
+    buttonF = ""
+  },
+  [40990] = {
+    id = 40990,
+    Type = 129,
+    Title = "",
+    Text = "距离过远，罗盘没有反应……请到枫叶彼岸内再使用罗盘。",
+    button = "",
+    buttonF = ""
+  },
+  [40991] = {
+    id = 40991,
+    Type = 129,
+    Title = "",
+    Text = "距离过远，指针没有反应……请到枫叶彼岸内再使用指针。",
+    button = "",
+    buttonF = ""
+  },
+  [40992] = {
+    id = 40992,
+    Type = 1,
+    Title = "",
+    Text = "轮次错误",
+    button = "",
+    buttonF = ""
+  },
+  [40993] = {
+    id = 40993,
+    Type = 1,
+    Title = "",
+    Text = "选择位置错误",
+    button = "",
+    buttonF = ""
+  },
+  [40994] = {
+    id = 40994,
+    Type = 1,
+    Title = "",
+    Text = "该位置的波利已经被击碎",
+    button = "",
+    buttonF = ""
+  },
+  [40995] = {
+    id = 40995,
+    Type = 1,
+    Title = "",
+    Text = "配置错误",
+    button = "",
+    buttonF = ""
+  },
+  [40996] = {
+    id = 40996,
+    Type = 1,
+    Title = "",
+    Text = "小木锤不足！",
+    button = "",
+    buttonF = ""
+  },
+  [40997] = {
+    id = 40997,
+    Type = 1,
+    Title = "",
+    Text = "活动还未开启",
+    button = "",
+    buttonF = ""
+  },
+  [40998] = {
+    id = 40998,
+    Type = 1,
+    Title = "",
+    Text = "上一轮小波利还未全部击碎，无法点击该轮波利！",
+    button = "",
+    buttonF = ""
+  },
+  [40999] = {
+    id = 40999,
+    Type = 1,
+    Title = "",
+    Text = "枫叶彼岸的魔力遮蔽全部解开，苍蝇翅膀已可使用",
+    button = "",
+    buttonF = ""
+  },
+  [41000] = {
+    id = 41000,
+    Type = 128,
+    Title = "",
+    Text = "【隐枫司急讯】%s已将深渊龙骸驱逐！所有冒险者现都可前往月光岩洞寻找战士尤里奥，他将给予诸位胜利的酬谢。",
+    button = "",
+    buttonF = ""
+  },
+  [41001] = {
+    id = 41001,
+    Type = 128,
+    Title = "",
+    Text = "【隐枫司急讯】%s已将元灵武士驱逐！所有冒险者现都可前往冰霜领域寻找刀之魂，他将给予诸位胜利的酬谢。",
+    button = "",
+    buttonF = ""
+  },
+  [41002] = {
+    id = 41002,
+    Type = 1,
+    Title = "",
+    Text = "购买失败！当日小木锤的购买次数已达上限",
+    button = "",
+    buttonF = ""
+  },
+  [41003] = {
+    id = 41003,
+    Type = 33554432,
+    Title = "",
+    Text = "时空发生错位，%s已重置刷新。",
+    button = "",
+    buttonF = ""
+  },
+  [41004] = {
+    id = 41004,
+    Type = 1,
+    Title = "",
+    Text = "已达今日冒险次数上限，无法进行冒险",
+    button = "",
+    buttonF = ""
+  },
+  [41005] = {
+    id = 41005,
+    Type = 1,
+    Title = "",
+    Text = "运动会比赛无法组队，请确保你不在队伍中！",
+    button = "",
+    buttonF = ""
+  },
+  [41006] = {
+    id = 41006,
+    Type = 512,
+    Title = "",
+    Text = "%s竞技点",
+    button = "",
+    buttonF = ""
+  },
+  [41007] = {
+    id = 41007,
+    Type = 1,
+    Title = "",
+    Text = "已获得任务《被诅咒的孩子》的线索，请继续探索吧。",
+    button = "",
+    buttonF = ""
+  },
+  [41008] = {
+    id = 41008,
+    Type = 1,
+    Title = "",
+    Text = "已获得任务《清晨歌声》的线索，请继续探索吧。",
+    button = "",
+    buttonF = ""
+  },
+  [41009] = {
+    id = 41009,
+    Type = 1,
+    Title = "",
+    Text = "已获得任务《落雪时》的线索，请继续探索吧。",
+    button = "",
+    buttonF = ""
+  },
+  [41010] = {
+    id = 41010,
+    Type = 1,
+    Title = "",
+    Text = "即将出现金苹果，快点抢夺吧！",
+    button = "",
+    buttonF = ""
+  },
+  [41011] = {
+    id = 41011,
+    Type = 1,
+    Title = "",
+    Text = "共获得[63cd4e]%s[-]件道具，可在系统信息中查看详细信息",
+    button = "",
+    buttonF = ""
+  },
+  [41012] = {
+    id = 41012,
+    Type = 1,
+    Title = "",
+    Text = "将[63cd4e]%s[-]件物品存放至仓库",
+    button = "",
+    buttonF = ""
+  },
+  [41013] = {
+    id = 41013,
+    Type = 1,
+    Title = "",
+    Text = "枫叶彼岸传送器已开启",
+    button = "",
+    buttonF = ""
+  },
+  [41014] = {
+    id = 41014,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《龙魂之门》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41015] = {
+    id = 41015,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《奥格米尔之花》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41016] = {
+    id = 41016,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《水中的精灵》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41017] = {
+    id = 41017,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《波伊塔塔》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41018] = {
+    id = 41018,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《银鱼》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41019] = {
+    id = 41019,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《咸鱼也有梦想》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41020] = {
+    id = 41020,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《黑市商人》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41021] = {
+    id = 41021,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《熊猫波利》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41022] = {
+    id = 41022,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《预备队的试炼》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41023] = {
+    id = 41023,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《断裂的时空》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41024] = {
+    id = 41024,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《非男非女的狐仙》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41025] = {
+    id = 41025,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《蛇妖戈耳工》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41026] = {
+    id = 41026,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《冈格尼尔》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41027] = {
+    id = 41027,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《希里德斯卡夫》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41028] = {
+    id = 41028,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《福金和雾尼》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41029] = {
+    id = 41029,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《智慧之泉》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41030] = {
+    id = 41030,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《月狼芬里尔》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41031] = {
+    id = 41031,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《卢恩文字》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41032] = {
+    id = 41032,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《格莱普尼尔》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41033] = {
+    id = 41033,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《兄弟往事》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41034] = {
+    id = 41034,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《尘世巨蟒》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41035] = {
+    id = 41035,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《月之湖》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41036] = {
+    id = 41036,
+    Type = 1,
+    Title = "",
+    Text = "任务手册《奥丁神殿》已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [41037] = {
+    id = 41037,
+    Type = 1,
+    Title = "",
+    Text = "该场景尚未解锁，须完成【第十章】主线任务",
+    button = "",
+    buttonF = ""
+  },
+  [41038] = {
+    id = 41038,
+    Type = 1,
+    Title = "",
+    Text = "【星月之旅头饰商店】已开启",
+    button = "",
+    buttonF = ""
+  },
+  [41039] = {
+    id = 41039,
+    Type = 1,
+    Title = "",
+    Text = "获得道具[c][ffff00]海鲜小饼干[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41040] = {
+    id = 41040,
+    Type = 1,
+    Title = "",
+    Text = "获得[c][ffff00]金色绒毛[-][/c]x3",
+    button = "",
+    buttonF = ""
+  },
+  [41100] = {
+    id = 41100,
+    Type = 1,
+    Title = "",
+    Text = "获得[c][ffff00]%s秒加时[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41101] = {
+    id = 41101,
+    Type = 1,
+    Title = "",
+    Text = "获得[c][ffff00]快速完成×%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41102] = {
+    id = 41102,
+    Type = 1,
+    Title = "",
+    Text = "获得[c][ffff00]提示×%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41103] = {
+    id = 41103,
+    Type = 2,
+    Title = "",
+    Text = "当前操作将会退出本关游戏并判定游戏失败，是否继续？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41104] = {
+    id = 41104,
+    Type = 1,
+    Title = "",
+    Text = "活动已结束，无法领取奖励",
+    button = "",
+    buttonF = ""
+  },
+  [41105] = {
+    id = 41105,
+    Type = 1,
+    Title = "",
+    Text = "活动已结束，无法进行购买",
+    button = "",
+    buttonF = ""
+  },
+  [41106] = {
+    id = 41106,
+    Type = 256,
+    Title = "",
+    Text = "{countDown=%s}秒内未返回游戏范围则游戏失败。",
+    button = "",
+    buttonF = ""
+  },
+  [41107] = {
+    id = 41107,
+    Type = 1,
+    Title = "",
+    Text = "尚不可使用技能",
+    button = "",
+    buttonF = ""
+  },
+  [41108] = {
+    id = 41108,
+    Type = 1,
+    Title = "",
+    Text = "镜子里仿佛隐藏着什么，你凑眼看去......",
+    button = "",
+    buttonF = ""
+  },
+  [41109] = {
+    id = 41109,
+    Type = 1,
+    Title = "",
+    Text = "你凝视着镜子，但仿佛什么也看不见了......",
+    button = "",
+    buttonF = ""
+  },
+  [41110] = {
+    id = 41110,
+    Type = 1,
+    Title = "",
+    Text = "当前属性处于激活状态，无法刷新精炼等级。",
+    button = "",
+    buttonF = ""
+  },
+  [41120] = {
+    id = 41120,
+    Type = 2,
+    Title = "",
+    Text = "你的金章少于%s，切换将会导致星盘重置，是否切换？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41121] = {
+    id = 41121,
+    Type = 2,
+    Title = "",
+    Text = "你的公会贡献少于%s，切换将会导致星盘重置，是否切换？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41130] = {
+    id = 41130,
+    Type = 65536,
+    Title = "进阶确认",
+    Text = "坐骑进阶即将开始，进阶完成后，作为素材的坐骑将会消失，为避免产生不必要的损失，请您再次确认进阶素材。",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [41131] = {
+    id = 41131,
+    Type = 1,
+    Title = "",
+    Text = "与已装备属性冲突，激活失败。",
+    button = "",
+    buttonF = ""
+  },
+  [41132] = {
+    id = 41132,
+    Type = 1,
+    Title = "",
+    Text = "装备属性与已激活萃取属性冲突，已取消激活。",
+    button = "",
+    buttonF = ""
+  },
+  [41133] = {
+    id = 41133,
+    Type = 2,
+    Title = "",
+    Text = "使用一键点亮功能，将会消耗玩家全部贡献与金质勋章为玩家尽可能点亮星盘，玩家无法自主选择需要的加点路线，请玩家慎重考虑是否继续？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41134] = {
+    id = 41134,
+    Type = 128,
+    Title = "",
+    Text = "混沌气息数量已达上限，达到上限后将无法继续累加混沌气息，请及时消耗。",
+    button = "",
+    buttonF = ""
+  },
+  [41135] = {
+    id = 41135,
+    Type = 1,
+    Title = "",
+    Text = "今日参与次数已达上限，请明天再来哦~",
+    button = "",
+    buttonF = ""
+  },
+  [41136] = {
+    id = 41136,
+    Type = 1,
+    Title = "",
+    Text = "今日参与次数已不足10次，请选择单次施法哦~",
+    button = "",
+    buttonF = ""
+  },
+  [41137] = {
+    id = 41137,
+    Type = 1,
+    Title = "",
+    Text = "您还没有足够的代币哦~",
+    button = "",
+    buttonF = ""
+  },
+  [41138] = {
+    id = 41138,
+    Type = 65536,
+    Title = "",
+    Text = "零钱包中可被存入公共/家园仓库的道具，将在同账号下所有角色都登录过后被准确记录为账号所拥有的总数，此后其获取与消耗均在账号总数基础上增减",
+    button = "确认",
+    buttonF = "",
+    TimeInterval = 0
+  },
+  [41139] = {
+    id = 41139,
+    Type = 1,
+    Title = "",
+    Text = "进阶卡购买次数超过上限或进阶卡未解锁，请重新检查购买。",
+    button = "",
+    buttonF = ""
+  },
+  [41140] = {
+    id = 41140,
+    Type = 2,
+    Title = "",
+    Text = "检测到当前角色可能有未脱卸的装备/宠物/符文，确定要继续删除该角色吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41141] = {
+    id = 41141,
+    Type = 1,
+    Title = "",
+    Text = "当前时装未匹配表情功能，敬请期待！",
+    button = "",
+    buttonF = ""
+  },
+  [41142] = {
+    id = 41142,
+    Type = 1,
+    Title = "",
+    Text = "今天已经从嘉宾身上抢了一个[c][ffff00]礼物[-][/c]了，抢的太多的话，会惹众怒的！！明天再来吧~",
+    button = "",
+    buttonF = ""
+  },
+  [41143] = {
+    id = 41143,
+    Type = 1,
+    Title = "",
+    Text = "检测到当前角色身上有负债信息，请偿还负债余额后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [41144] = {
+    id = 41144,
+    Type = 1,
+    Title = "",
+    Text = "当前礼包售价已更新！请重新打开活动界面！",
+    button = "",
+    buttonF = ""
+  },
+  [41145] = {
+    id = 41145,
+    Type = 1,
+    Title = "",
+    Text = "分享失败！到达10级才能在世界频道发言哦~",
+    button = "",
+    buttonF = ""
+  },
+  [41146] = {
+    id = 41146,
+    Type = 1,
+    Title = "",
+    Text = "接下来是一场艰苦的战斗，我不能丢下你一个人。",
+    button = "",
+    buttonF = ""
+  },
+  [41147] = {
+    id = 41147,
+    Type = 2,
+    Title = "",
+    Text = "进入离线模式将会退出到登录界面，是否继续？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41148] = {
+    id = 41148,
+    Type = 1,
+    Title = "",
+    Text = "玩家未开启离线战斗功能，购买月卡后将激活离线战斗功能。",
+    button = "",
+    buttonF = ""
+  },
+  [41149] = {
+    id = 41149,
+    Type = 2,
+    Title = "",
+    Text = "该账号下已有一个正在使用离线战斗功能的角色，登录任意角色将会使其退出离线战斗状态，请问是否登录？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41150] = {
+    id = 41150,
+    Type = 1,
+    Title = "",
+    Text = "当前地图不可离线战斗，请玩家前往正确地图使用离线战斗功能！",
+    button = "",
+    buttonF = ""
+  },
+  [41151] = {
+    id = 41151,
+    Type = 128,
+    Title = "",
+    Text = "离线战斗达到[c][63cd4e]%s[-][/c]分钟",
+    button = "",
+    buttonF = ""
+  },
+  [41152] = {
+    id = 41152,
+    Type = 128,
+    Title = "",
+    Text = "获得[c][1ed2f8]%s*%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41153] = {
+    id = 41153,
+    Type = 128,
+    Title = "",
+    Text = "离线战斗期间获得[c][f077f1]Zeny*%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41154] = {
+    id = 41154,
+    Type = 128,
+    Title = "",
+    Text = "离线战斗期间获得[c][ffa729]Base*%s[-][/c]，获得[c][1ed2f8]Job*%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41155] = {
+    id = 41155,
+    Type = 1,
+    Title = "",
+    Text = "处于异常状态中，无法自动战斗。",
+    button = "",
+    buttonF = ""
+  },
+  [41156] = {
+    id = 41156,
+    Type = 1,
+    Title = "",
+    Text = "进入离线状态失败。",
+    button = "",
+    buttonF = ""
+  },
+  [41157] = {
+    id = 41157,
+    Type = 128,
+    Title = "",
+    Text = "被[c][ffa729]%s[-][/c]击杀",
+    button = "",
+    buttonF = ""
+  },
+  [41158] = {
+    id = 41158,
+    Type = 128,
+    Title = "",
+    Text = "击杀[c][ffa729]%s*%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41159] = {
+    id = 41159,
+    Type = 1,
+    Title = "",
+    Text = "非常抱歉，属性激活处于冷却状态，请一分钟后再次尝试激活。",
+    button = "",
+    buttonF = ""
+  },
+  [41160] = {
+    id = 41160,
+    Type = 128,
+    Title = "",
+    Text = "上一分钟击杀[c][ffa729]%s*%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41161] = {
+    id = 41161,
+    Type = 128,
+    Title = "",
+    Text = "上一分钟获得[c][1ed2f8]%s*%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41162] = {
+    id = 41162,
+    Type = 1,
+    Title = "",
+    Text = "已激活相同类型属性，激活失败！",
+    button = "",
+    buttonF = ""
+  },
+  [41163] = {
+    id = 41163,
+    Type = 1,
+    Title = "因为",
+    Text = "未选择挂机魔物，请选择魔物后再使用离线战斗功能",
+    button = "",
+    buttonF = ""
+  },
+  [41164] = {
+    id = 41164,
+    Type = 2,
+    Title = "",
+    Text = "即将跳转到打赏界面，是否继续？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41165] = {
+    id = 41165,
+    Type = 1,
+    Title = "",
+    Text = "离线战斗剩余天数增加%s天",
+    button = "",
+    buttonF = ""
+  },
+  [41166] = {
+    id = 41166,
+    Type = 1,
+    Title = "",
+    Text = "必须和跟随的人处于同一地图才可以进行离线战斗",
+    button = "",
+    buttonF = ""
+  },
+  [41167] = {
+    id = 41167,
+    Type = 1,
+    Title = "",
+    Text = "当前地图不支持离线挂机",
+    button = "",
+    buttonF = ""
+  },
+  [41168] = {
+    id = 41168,
+    Type = 128,
+    Title = "",
+    Text = "达到设置的离线战斗时长，已退出离线战斗",
+    button = "",
+    buttonF = ""
+  },
+  [41169] = {
+    id = 41169,
+    Type = 128,
+    Title = "",
+    Text = "因角色超过[c][f077f1]30[-][/c]分钟未消耗疲劳，已退出离线战斗",
+    button = "",
+    buttonF = ""
+  },
+  [41170] = {
+    id = 41170,
+    Type = 128,
+    Title = "",
+    Text = "因服务器异常，已退出离线战斗",
+    button = "",
+    buttonF = ""
+  },
+  [41200] = {
+    id = 41200,
+    Type = 2,
+    Title = "",
+    Text = "当前女神祝福对应属性等级已达上限，继续使用将无任何效果，确认使用？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41230] = {
+    id = 41230,
+    Type = 1,
+    Title = "",
+    Text = "「新生奖章」数量不足",
+    button = "",
+    buttonF = ""
+  },
+  [41236] = {
+    id = 41236,
+    Type = 2,
+    Title = "",
+    Text = "使用后，%s的等级将超过上限，溢出部分将无法生效，是否继续使用？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41237] = {
+    id = 41237,
+    Type = 1,
+    Title = "",
+    Text = "获得了女神真挚的祝福，你的相应属性已经得到了提升。",
+    button = "",
+    buttonF = ""
+  },
+  [41238] = {
+    id = 41238,
+    Type = 1,
+    Title = "",
+    Text = "请先加入公会后再使用该物品哦~",
+    button = "",
+    buttonF = ""
+  },
+  [41239] = {
+    id = 41239,
+    Type = 1,
+    Title = "",
+    Text = "当前无法重置，请尝试点击阿萨神碑中心点进行重置操作~",
+    button = "",
+    buttonF = ""
+  },
+  [41240] = {
+    id = 41240,
+    Type = 1,
+    Title = "",
+    Text = "面部表情功能暂不支持进行喜爱设置，敬请期待！",
+    button = "",
+    buttonF = ""
+  },
+  [41241] = {
+    id = 41241,
+    Type = 1,
+    Title = "",
+    Text = "灵体状态无法取消跟随状态",
+    button = "",
+    buttonF = ""
+  },
+  [41242] = {
+    id = 41242,
+    Type = 2,
+    Title = "",
+    Text = "本次操作会使副本进度重置，不会影响之前获得的一次性奖励，但会影响获得的buff奖励，是否继续",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41243] = {
+    id = 41243,
+    Type = 1,
+    Title = "",
+    Text = "阿萨神碑还未解锁，请先解锁阿萨神碑后尝试",
+    button = "",
+    buttonF = ""
+  },
+  [41244] = {
+    id = 41244,
+    Type = 2,
+    Title = "",
+    Text = "波姬死亡了，是否使用复活术将她复活？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41245] = {
+    id = 41245,
+    Type = 1,
+    Title = "",
+    Text = "检测当前阿萨神碑未开启完全，请先解锁阿萨神碑对应阶段后，再尝试使用该券！",
+    button = "",
+    buttonF = ""
+  },
+  [41246] = {
+    id = 41246,
+    Type = 1,
+    Title = "",
+    Text = "死亡状态无法进行该操作",
+    button = "",
+    buttonF = ""
+  },
+  [41274] = {
+    id = 41274,
+    Type = 1,
+    Title = "",
+    Text = "您还没有足够的代币哦~",
+    button = "",
+    buttonF = ""
+  },
+  [41311] = {
+    id = 41311,
+    Type = 129,
+    Title = "",
+    Text = "离线挂机功能新增%s天，持续时间至%s到期，共%s天。",
+    button = "",
+    buttonF = ""
+  },
+  [41312] = {
+    id = 41312,
+    Type = 1,
+    Title = "",
+    Text = "获得猫猫布偶型魔法通信器！",
+    button = "",
+    buttonF = ""
+  },
+  [41313] = {
+    id = 41313,
+    Type = 1,
+    Title = "",
+    Text = "【终结的梦魇】任务已添加至追踪栏",
+    button = "",
+    buttonF = ""
+  },
+  [41314] = {
+    id = 41314,
+    Type = 1,
+    Title = "",
+    Text = "【坚定的征途】任务已添加至追踪栏",
+    button = "",
+    buttonF = ""
+  },
+  [41315] = {
+    id = 41315,
+    Type = 1,
+    Title = "",
+    Text = "【最后的战斗】任务已添加至追踪栏",
+    button = "",
+    buttonF = ""
+  },
+  [41316] = {
+    id = 41316,
+    Type = 1,
+    Title = "",
+    Text = "【遗落的初心】任务已添加至追踪栏",
+    button = "",
+    buttonF = ""
+  },
+  [41317] = {
+    id = 41317,
+    Type = 1,
+    Title = "",
+    Text = "【曙光的叹息】任务已添加至追踪栏",
+    button = "",
+    buttonF = ""
+  },
+  [41318] = {
+    id = 41318,
+    Type = 1,
+    Title = "",
+    Text = "身体无法动弹了……",
+    button = "",
+    buttonF = ""
+  },
+  [41319] = {
+    id = 41319,
+    Type = 1,
+    Title = "",
+    Text = "想让这堵火墙消失，必须先同时破坏5个图腾。",
+    button = "",
+    buttonF = ""
+  },
+  [41320] = {
+    id = 41320,
+    Type = 1,
+    Title = "",
+    Text = "隐匿技能能让你立即进入隐身状态不被敌方单位发现。",
+    button = "",
+    buttonF = ""
+  },
+  [41321] = {
+    id = 41321,
+    Type = 1,
+    Title = "",
+    Text = "[c][ffff00]希格德莉法[-][/c]已加入队伍。",
+    button = "",
+    buttonF = ""
+  },
+  [41322] = {
+    id = 41322,
+    Type = 1,
+    Title = "",
+    Text = "获得了奇怪的小瓶子",
+    button = "",
+    buttonF = ""
+  },
+  [41323] = {
+    id = 41323,
+    Type = 65536,
+    Title = "",
+    Text = "本次刷新需消耗Zeny x %s,是否消耗？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [41324] = {
+    id = 41324,
+    Type = 1,
+    Title = "",
+    Text = "刷新次数不够！",
+    button = "",
+    buttonF = ""
+  },
+  [41325] = {
+    id = 41325,
+    Type = 1,
+    Title = "",
+    Text = "Zeny不够，刷新失败！",
+    button = "",
+    buttonF = ""
+  },
+  [41326] = {
+    id = 41326,
+    Type = 2,
+    Title = "",
+    Text = "是否前往打赏界面购买Zeny？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41327] = {
+    id = 41327,
+    Type = 1,
+    Title = "",
+    Text = "购买失败！",
+    button = "",
+    buttonF = ""
+  },
+  [41328] = {
+    id = 41328,
+    Type = 1,
+    Title = "",
+    Text = "活动已结束！购买失败！",
+    button = "",
+    buttonF = ""
+  },
+  [41329] = {
+    id = 41329,
+    Type = 1,
+    Title = "",
+    Text = "啊哦~你已经解锁过这个发型了哟~",
+    button = "",
+    buttonF = ""
+  },
+  [41330] = {
+    id = 41330,
+    Type = 2,
+    Title = "",
+    Text = "稍后将进行剧情CG的播放，是否要下载高清视频资源？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41331] = {
+    id = 41331,
+    Type = 2,
+    Title = "",
+    Text = "检测到当前为非wifi网络，继续下载需要消耗流量，是否继续？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41332] = {
+    id = 41332,
+    Type = 1,
+    Title = "",
+    Text = "未选择置换目标",
+    button = "",
+    buttonF = ""
+  },
+  [41333] = {
+    id = 41333,
+    Type = 1,
+    Title = "",
+    Text = "上古遗物背包已满",
+    button = "",
+    buttonF = ""
+  },
+  [41334] = {
+    id = 41334,
+    Type = 1,
+    Title = "",
+    Text = "无可分解的上古遗物和碎片",
+    button = "",
+    buttonF = ""
+  },
+  [41335] = {
+    id = 41335,
+    Type = 2,
+    Title = "",
+    Text = "分解上古遗物和碎片将会获得一定数量的瓦特阿尔凡尘，此操作不可撤销，是否执行此操作",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41336] = {
+    id = 41336,
+    Type = 1,
+    Title = "",
+    Text = "上古遗物背包已满，操作失败",
+    button = "",
+    buttonF = ""
+  },
+  [41337] = {
+    id = 41337,
+    Type = 1,
+    Title = "",
+    Text = "zeny不足",
+    button = "",
+    buttonF = ""
+  },
+  [41338] = {
+    id = 41338,
+    Type = 1,
+    Title = "",
+    Text = "未满足合成需求",
+    button = "",
+    buttonF = ""
+  },
+  [41339] = {
+    id = 41339,
+    Type = 1,
+    Title = "",
+    Text = "上古遗物背包已满，请清理背包再进行操作",
+    button = "",
+    buttonF = ""
+  },
+  [41340] = {
+    id = 41340,
+    Type = 1,
+    Title = "",
+    Text = "重塑成功",
+    button = "",
+    buttonF = ""
+  },
+  [41341] = {
+    id = 41341,
+    Type = 1,
+    Title = "",
+    Text = "重塑所需消耗道具不足",
+    button = "",
+    buttonF = ""
+  },
+  [41342] = {
+    id = 41342,
+    Type = 65536,
+    Title = "",
+    Text = "有较好的属性，是否需要放弃？",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [41343] = {
+    id = 41343,
+    Type = 1,
+    Title = "",
+    Text = "当前地图不可乘坐多人坐骑。",
+    button = "",
+    buttonF = ""
+  },
+  [41344] = {
+    id = 41344,
+    Type = 1,
+    Title = "",
+    Text = "由于您或对方当前所在的特殊副本,暂时无法进行该操作。",
+    button = "",
+    buttonF = ""
+  },
+  [41345] = {
+    id = 41345,
+    Type = 1,
+    Title = "",
+    Text = "普通骰子的存储已达上限，请使用后再来领取！",
+    button = "",
+    buttonF = ""
+  },
+  [41346] = {
+    id = 41346,
+    Type = 1,
+    Title = "",
+    Text = "活动已结束！",
+    button = "",
+    buttonF = ""
+  },
+  [41347] = {
+    id = 41347,
+    Type = 2,
+    Title = "组队邀请",
+    Text = "[c][f5f5ae]%s[-][/c][c][f5f5ae]发来邀请[-][/c]",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41348] = {
+    id = 41348,
+    Type = 129,
+    Title = "",
+    Text = "虹色奇遇·时光头像框已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [41349] = {
+    id = 41349,
+    Type = 129,
+    Title = "",
+    Text = "虹色奇遇·童梦头像框已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [41350] = {
+    id = 41350,
+    Type = 129,
+    Title = "",
+    Text = "虹色奇遇头像框已装备！",
+    button = "",
+    buttonF = ""
+  },
+  [41351] = {
+    id = 41351,
+    Type = 1,
+    Title = "",
+    Text = "每次停留此处时，将获得一份神秘奖励！",
+    button = "",
+    buttonF = ""
+  },
+  [41352] = {
+    id = 41352,
+    Type = 1,
+    Title = "",
+    Text = "这里会出现一个特殊事件，究竟是什么呢？",
+    button = "",
+    buttonF = ""
+  },
+  [41353] = {
+    id = 41353,
+    Type = 1,
+    Title = "",
+    Text = "天使波利奖励已经被领过了~只剩一个孤孤零零的格子了！",
+    button = "",
+    buttonF = ""
+  },
+  [41354] = {
+    id = 41354,
+    Type = 1,
+    Title = "",
+    Text = "同账号下，此道具只可使用一次哦~",
+    button = "",
+    buttonF = ""
+  },
+  [41355] = {
+    id = 41355,
+    Type = 1,
+    Title = "",
+    Text = "回答错误！不能获得奖励哦~",
+    button = "",
+    buttonF = ""
+  },
+  [41356] = {
+    id = 41356,
+    Type = 1,
+    Title = "",
+    Text = "%s存储已达上限，有%s个领取失败！请尽快使用！",
+    button = "",
+    buttonF = ""
+  },
+  [41357] = {
+    id = 41357,
+    Type = 65536,
+    Title = "",
+    Text = "确认消耗%s猫币，参加活动吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41358] = {
+    id = 41358,
+    Type = 2,
+    Title = "",
+    Text = "当前非wifi网络，是否确认下载",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41359] = {
+    id = 41359,
+    Type = 256,
+    Title = "",
+    Text = "{countDown=%s}秒后完成第%s层魔物召唤，请做好准备。",
+    button = "",
+    buttonF = ""
+  },
+  [41360] = {
+    id = 41360,
+    Type = 2,
+    Title = "",
+    Text = "即将删除已下载的资源，是否确认删除",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41361] = {
+    id = 41361,
+    Type = 1,
+    Title = "",
+    Text = "选择答案后，才能进行下一步哦~",
+    button = "",
+    buttonF = ""
+  },
+  [41362] = {
+    id = 41362,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·咖波-么么哒",
+    button = "",
+    buttonF = ""
+  },
+  [41363] = {
+    id = 41363,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·咖波-要抱抱",
+    button = "",
+    buttonF = ""
+  },
+  [41364] = {
+    id = 41364,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·咖波-抓狂ing",
+    button = "",
+    buttonF = ""
+  },
+  [41365] = {
+    id = 41365,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·咖波-吃饭饭",
+    button = "",
+    buttonF = ""
+  },
+  [41366] = {
+    id = 41366,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·咖波-数钱钱",
+    button = "",
+    buttonF = ""
+  },
+  [41367] = {
+    id = 41367,
+    Type = 2,
+    Title = "",
+    Text = "网络连接错误，是否重试",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41368] = {
+    id = 41368,
+    Type = 2,
+    Title = "",
+    Text = "下载失败，是否重试",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41369] = {
+    id = 41369,
+    Type = 2,
+    Title = "",
+    Text = "高清视频已在设置界面下载中，点击确定将暂停后台下载并先行下载此高清CG，点击取消则自动播放非高清CG",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41399] = {
+    id = 41399,
+    Type = 1,
+    Title = "",
+    Text = "遗物属性到达上限无法继续重塑",
+    button = "",
+    buttonF = ""
+  },
+  [41400] = {
+    id = 41400,
+    Type = 256,
+    Title = "",
+    Text = "恭喜你已经通过考验，秘境将于{countDown=%s}秒后自动关闭。",
+    button = "",
+    buttonF = ""
+  },
+  [41401] = {
+    id = 41401,
+    Type = 129,
+    Title = "",
+    Text = "勇者试炼塔只能单人进入，请退出队伍后，重新进入",
+    button = "",
+    buttonF = ""
+  },
+  [41402] = {
+    id = 41402,
+    Type = 1,
+    Title = "",
+    Text = "对不起，此发型无法更换为其他颜色",
+    button = "",
+    buttonF = ""
+  },
+  [41404] = {
+    id = 41404,
+    Type = 1,
+    Title = "",
+    Text = "完成120级上古遗物任务后开启此功能",
+    button = "",
+    buttonF = ""
+  },
+  [41405] = {
+    id = 41405,
+    Type = 1,
+    Title = "",
+    Text = "夏基处于无敌状态，暂时无法使用打断技能",
+    button = "",
+    buttonF = ""
+  },
+  [41406] = {
+    id = 41406,
+    Type = 2,
+    Title = "",
+    Text = "你已出色完成卡成长手册的所有任务，快去和帕普金先生聊聊吧~",
+    button = "这就去",
+    buttonF = "先不去"
+  },
+  [41407] = {
+    id = 41407,
+    Type = 256,
+    Title = "",
+    Text = "{countDown=%s}秒内摧毁房间中心的装置",
+    button = "",
+    buttonF = ""
+  },
+  [41408] = {
+    id = 41408,
+    Type = 1,
+    Title = "",
+    Text = "已达到魔物召唤数量上限啦，先打败它们再继续召唤吧~",
+    button = "",
+    buttonF = ""
+  },
+  [41409] = {
+    id = 41409,
+    Type = 1,
+    Title = "",
+    Text = "需完整探索上一张副本后才可进入该层！",
+    button = "",
+    buttonF = ""
+  },
+  [41410] = {
+    id = 41410,
+    Type = 1,
+    Title = "",
+    Text = "恭喜你已搜寻所有的该类宝箱！",
+    button = "",
+    buttonF = ""
+  },
+  [41411] = {
+    id = 41411,
+    Type = 2,
+    Title = "",
+    Text = "「%s」已全部获得，「重逢之证」获取概率提升%s%%",
+    button = "确定",
+    buttonF = ""
+  },
+  [41412] = {
+    id = 41412,
+    Type = 1,
+    Title = "",
+    Text = "时装无法选择品质！",
+    button = "",
+    buttonF = ""
+  },
+  [41413] = {
+    id = 41413,
+    Type = 256,
+    Title = "",
+    Text = "坚持存活{countDown=%s}秒",
+    button = "",
+    buttonF = ""
+  },
+  [41414] = {
+    id = 41414,
+    Type = 1,
+    Title = "",
+    Text = "请先收集齐波姬的纹章后再尝试进入第二层",
+    button = "",
+    buttonF = ""
+  },
+  [41415] = {
+    id = 41415,
+    Type = 1,
+    Title = "",
+    Text = "请先收集齐所有通关奖励宝箱再尝试进入第二层",
+    button = "",
+    buttonF = ""
+  },
+  [41416] = {
+    id = 41416,
+    Type = 1,
+    Title = "",
+    Text = "这里已经通关过了，还是去别的层数看看吧！",
+    button = "",
+    buttonF = ""
+  },
+  [41417] = {
+    id = 41417,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【任务名字N个字】",
+    button = "",
+    buttonF = ""
+  },
+  [41418] = {
+    id = 41418,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【任务名字XXXX个字】",
+    button = "",
+    buttonF = ""
+  },
+  [41419] = {
+    id = 41419,
+    Type = 1,
+    Title = "",
+    Text = "请先完成上一层所有故事内容后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [41420] = {
+    id = 41420,
+    Type = 1,
+    Title = "",
+    Text = "该区域无法使用此道具",
+    button = "",
+    buttonF = ""
+  },
+  [41421] = {
+    id = 41421,
+    Type = 256,
+    Title = "",
+    Text = "{countDown=%s}秒内找出并打开宝箱",
+    button = "",
+    buttonF = ""
+  },
+  [41422] = {
+    id = 41422,
+    Type = 1,
+    Title = "",
+    Text = "前方有危险的魔力涌动，最好不要过去。",
+    button = "",
+    buttonF = ""
+  },
+  [41423] = {
+    id = 41423,
+    Type = 1,
+    Title = "",
+    Text = "逃脱功能在20秒内仅能使用一次！",
+    button = "",
+    buttonF = ""
+  },
+  [41424] = {
+    id = 41424,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，该区域不允许使用逃脱技能！",
+    button = "",
+    buttonF = ""
+  },
+  [41425] = {
+    id = 41425,
+    Type = 1,
+    Title = "",
+    Text = "当前位置不可使用逃脱技能，请在房间区域尝试！",
+    button = "",
+    buttonF = ""
+  },
+  [41426] = {
+    id = 41426,
+    Type = 1,
+    Title = "",
+    Text = "该功能仅在美之宫内部使用！",
+    button = "",
+    buttonF = ""
+  },
+  [41427] = {
+    id = 41427,
+    Type = 1,
+    Title = "",
+    Text = "死亡时无法使用该技能！",
+    button = "",
+    buttonF = ""
+  },
+  [41428] = {
+    id = 41428,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·嗒啦啦 - 摸摸头",
+    button = "",
+    buttonF = ""
+  },
+  [41429] = {
+    id = 41429,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·嗒啦啦 - 星星眼",
+    button = "",
+    buttonF = ""
+  },
+  [41430] = {
+    id = 41430,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·嗒啦啦 - 一脸问号",
+    button = "",
+    buttonF = ""
+  },
+  [41431] = {
+    id = 41431,
+    Type = 10,
+    Title = "",
+    Text = "习得表情·嗒啦啦 - 好家伙",
+    button = "",
+    buttonF = ""
+  },
+  [41432] = {
+    id = 41432,
+    Type = 129,
+    Title = "",
+    Text = "你已成功消耗{itemicon=%s}{item=%s,%s}，可前往阿萨神碑中查看详情",
+    button = "",
+    buttonF = ""
+  },
+  [41433] = {
+    id = 41433,
+    Type = 129,
+    Title = "",
+    Text = "你已成功消耗{itemicon=%s}{item=%s,%s}，可前往公会祈祷中查看详情",
+    button = "",
+    buttonF = ""
+  },
+  [41434] = {
+    id = 41434,
+    Type = 128,
+    Title = "",
+    Text = "检测到阿萨神碑中已有加点，本次使用共返还{item=%s,%s}和{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [41435] = {
+    id = 41435,
+    Type = 1,
+    Title = "",
+    Text = "尝试修复【%s】成功",
+    button = "",
+    buttonF = ""
+  },
+  [41436] = {
+    id = 41436,
+    Type = 1,
+    Title = "",
+    Text = "尝试修复【%s】失败，请求助客服。",
+    button = "",
+    buttonF = ""
+  },
+  [41437] = {
+    id = 41437,
+    Type = 1,
+    Title = "",
+    Text = "获得临时技能[c][ff0000]【咒书回音·do】[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41438] = {
+    id = 41438,
+    Type = 1,
+    Title = "",
+    Text = "获得临时技能[c][ffa500]【咒书回音·re】[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41439] = {
+    id = 41439,
+    Type = 1,
+    Title = "",
+    Text = "获得临时技能[c][ffff00]【咒书回音·mi】[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41440] = {
+    id = 41440,
+    Type = 1,
+    Title = "",
+    Text = "获得临时技能[c][32cd32]【咒书回音·fa】[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41441] = {
+    id = 41441,
+    Type = 1,
+    Title = "",
+    Text = "获得临时技能[c][00ced1]【咒书回音·sol】[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41442] = {
+    id = 41442,
+    Type = 1,
+    Title = "",
+    Text = "获得临时技能[c][1e90ff]【咒书回音·la】[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41443] = {
+    id = 41443,
+    Type = 1,
+    Title = "",
+    Text = "获得临时技能[c][9932cc]【咒书回音·xi】[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41444] = {
+    id = 41444,
+    Type = 1,
+    Title = "",
+    Text = "获得任务道具[c][ffff00]【丝碧卡的照片】[-][/c]，可在背包中查看",
+    button = "",
+    buttonF = ""
+  },
+  [41445] = {
+    id = 41445,
+    Type = 1,
+    Title = "",
+    Text = "获得任务道具[c][ffff00]【丝碧卡童年的照片】[-][/c]，可在背包中查看",
+    button = "",
+    buttonF = ""
+  },
+  [41446] = {
+    id = 41446,
+    Type = 1,
+    Title = "",
+    Text = "获得任务道具[c][ffff00]【丝碧卡旅行时的照片】[-][/c]，可在背包中查看",
+    button = "",
+    buttonF = ""
+  },
+  [41447] = {
+    id = 41447,
+    Type = 1,
+    Title = "",
+    Text = "获得任务道具[c][ffff00]【有了变化的照片】[-][/c]，可在背包中查看",
+    button = "",
+    buttonF = ""
+  },
+  [41448] = {
+    id = 41448,
+    Type = 1,
+    Title = "",
+    Text = "获得临时技能[c][ffff00]【记忆深处的旋律】[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41449] = {
+    id = 41449,
+    Type = 1,
+    Title = "",
+    Text = "占坑",
+    button = "",
+    buttonF = ""
+  },
+  [41450] = {
+    id = 41450,
+    Type = 1,
+    Title = "",
+    Text = "占坑",
+    button = "",
+    buttonF = ""
+  },
+  [41451] = {
+    id = 41451,
+    Type = 2,
+    Title = "",
+    Text = "确定要关闭吗，关闭后重新打开可以继续上色哦",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [41452] = {
+    id = 41452,
+    Type = 2,
+    Title = "",
+    Text = "重置会失去所有文本和颜色哦，确定要重新开始吗？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [41453] = {
+    id = 41453,
+    Type = 1,
+    Title = "",
+    Text = "请先选择颜色后再进行上色",
+    button = "",
+    buttonF = ""
+  },
+  [41454] = {
+    id = 41454,
+    Type = 2,
+    Title = "",
+    Text = "检测到当前客户端不是最新版本，是否立即更新",
+    button = "立即更新",
+    buttonF = "15分钟后更新"
+  },
+  [41455] = {
+    id = 41455,
+    Type = 129,
+    Title = "",
+    Text = "距离更新还剩%s分钟，请合理安排游戏时间",
+    button = "",
+    buttonF = ""
+  },
+  [41457] = {
+    id = 41457,
+    Type = 256,
+    Title = "",
+    Text = "{countDown=%s}秒内将3个箱子推至指定位置",
+    button = "",
+    buttonF = ""
+  },
+  [41459] = {
+    id = 41459,
+    Type = 1,
+    Title = "",
+    Text = "啊哦！今天在本机的「十连抽」扭蛋次数已经用完了~",
+    button = "",
+    buttonF = ""
+  },
+  [41460] = {
+    id = 41460,
+    Type = 1,
+    Title = "",
+    Text = "啊哦！今天在本机的「单抽」扭蛋次数已经用完了~",
+    button = "",
+    buttonF = ""
+  },
+  [41466] = {
+    id = 41466,
+    Type = 1,
+    Title = "",
+    Text = "填色之后才能分享哦",
+    button = "",
+    buttonF = ""
+  },
+  [41467] = {
+    id = 41467,
+    Type = 1,
+    Title = "",
+    Text = "界面信息已失效，请重新打开活动捐献界面~",
+    button = "",
+    buttonF = ""
+  },
+  [41468] = {
+    id = 41468,
+    Type = 1,
+    Title = "",
+    Text = "背包已满，请清理背包后再捐献哦~",
+    button = "",
+    buttonF = ""
+  },
+  [41469] = {
+    id = 41469,
+    Type = 65536,
+    Title = "提示",
+    Text = "确定【%s日内】不再播放骰子动画吗？\n勾选后，点击骰子直接开始波利的移动",
+    button = "不看了",
+    buttonF = "再看看",
+    TimeInterval = 7
+  },
+  [41470] = {
+    id = 41470,
+    Type = 256,
+    Title = "",
+    Text = "游戏将在{countDown=%s}秒后紧急更新，请玩家尽快下线",
+    button = "",
+    buttonF = ""
+  },
+  [41471] = {
+    id = 41471,
+    Type = 1,
+    Title = "",
+    Text = "清理了部分垃圾，房间变得更加整洁了！",
+    button = "",
+    buttonF = ""
+  },
+  [41472] = {
+    id = 41472,
+    Type = 1,
+    Title = "",
+    Text = "你转动了文森特物品的方向！",
+    button = "",
+    buttonF = ""
+  },
+  [41473] = {
+    id = 41473,
+    Type = 1,
+    Title = "",
+    Text = "你移动了文森特物品的位置！",
+    button = "",
+    buttonF = ""
+  },
+  [41474] = {
+    id = 41474,
+    Type = 1,
+    Title = "",
+    Text = "仔细考虑后，你认为自己拿到了一条线索！",
+    button = "",
+    buttonF = ""
+  },
+  [41475] = {
+    id = 41475,
+    Type = 1,
+    Title = "",
+    Text = "放置记忆碎片激活法阵，你目前还没有记忆碎片！",
+    button = "",
+    buttonF = ""
+  },
+  [41476] = {
+    id = 41476,
+    Type = 1,
+    Title = "",
+    Text = "你已经激活了一座法阵！",
+    button = "",
+    buttonF = ""
+  },
+  [41477] = {
+    id = 41477,
+    Type = 1,
+    Title = "",
+    Text = "你已经激活了全部法阵！",
+    button = "",
+    buttonF = ""
+  },
+  [41478] = {
+    id = 41478,
+    Type = 1,
+    Title = "",
+    Text = "找到了一件店老板的精美礼品",
+    button = "",
+    buttonF = ""
+  },
+  [41479] = {
+    id = 41479,
+    Type = 1,
+    Title = "",
+    Text = "5秒",
+    button = "",
+    buttonF = ""
+  },
+  [41480] = {
+    id = 41480,
+    Type = 1,
+    Title = "",
+    Text = "4秒",
+    button = "",
+    buttonF = ""
+  },
+  [41481] = {
+    id = 41481,
+    Type = 1,
+    Title = "",
+    Text = "3秒",
+    button = "",
+    buttonF = ""
+  },
+  [41482] = {
+    id = 41482,
+    Type = 1,
+    Title = "",
+    Text = "2秒",
+    button = "",
+    buttonF = ""
+  },
+  [41483] = {
+    id = 41483,
+    Type = 1,
+    Title = "",
+    Text = "1秒",
+    button = "",
+    buttonF = ""
+  },
+  [41484] = {
+    id = 41484,
+    Type = 1,
+    Title = "",
+    Text = "猫老板把你变回原形。",
+    button = "",
+    buttonF = ""
+  },
+  [41485] = {
+    id = 41485,
+    Type = 1,
+    Title = "",
+    Text = "猫老板：15秒",
+    button = "",
+    buttonF = ""
+  },
+  [41486] = {
+    id = 41486,
+    Type = 1,
+    Title = "",
+    Text = "受到魔女仪式的威压，你的移动速度降低了！",
+    button = "",
+    buttonF = ""
+  },
+  [41487] = {
+    id = 41487,
+    Type = 1,
+    Title = "",
+    Text = "魔女仪式的威压更重了，你的移动速度降低了！",
+    button = "",
+    buttonF = ""
+  },
+  [41488] = {
+    id = 41488,
+    Type = 1,
+    Title = "",
+    Text = "获得[c][ffff00]感压地雷 * 3[-][/c]、[c][ffff00]迷惑烟花 * 1[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41489] = {
+    id = 41489,
+    Type = 1,
+    Title = "",
+    Text = "获得应援头饰 * 6",
+    button = "",
+    buttonF = ""
+  },
+  [41490] = {
+    id = 41490,
+    Type = 1,
+    Title = "",
+    Text = "失去应援头饰 * 6",
+    button = "",
+    buttonF = ""
+  },
+  [41491] = {
+    id = 41491,
+    Type = 1,
+    Title = "",
+    Text = "本机型无法播放CG哦~",
+    button = "",
+    buttonF = ""
+  },
+  [41492] = {
+    id = 41492,
+    Type = 65536,
+    Title = "续订",
+    Text = "是否立即续订「%s」包月服务？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [41493] = {
+    id = 41493,
+    Type = 1,
+    Title = "",
+    Text = "漂流瓶在海边可以捡到哦~捡到再来吧~",
+    button = "",
+    buttonF = ""
+  },
+  [41494] = {
+    id = 41494,
+    Type = 1,
+    Title = "",
+    Text = "放弃的漂流瓶会重新漂回海边哦~",
+    button = "",
+    buttonF = ""
+  },
+  [41500] = {
+    id = 41500,
+    Type = 1,
+    Title = "",
+    Text = "当前派遣次数不足，请确认后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [41501] = {
+    id = 41501,
+    Type = 1,
+    Title = "",
+    Text = "谢谢你的礼物，%s对你的喜爱度增加了！",
+    button = "",
+    buttonF = ""
+  },
+  [41502] = {
+    id = 41502,
+    Type = 1,
+    Title = "",
+    Text = "当前派遣次数为0，请明天再来吧！",
+    button = "",
+    buttonF = ""
+  },
+  [41503] = {
+    id = 41503,
+    Type = 2,
+    Title = "",
+    Text = "赠送的礼物已超出好感度上限，确认使用？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [41504] = {
+    id = 41504,
+    Type = 129,
+    Title = "",
+    Text = "%s装备未在背包中检测到，以上装备替换失效",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [41505] = {
+    id = 41505,
+    Type = 129,
+    Title = "",
+    Text = "%s装备处于冷却状态，以上装备替换失效",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [41506] = {
+    id = 41506,
+    Type = 1,
+    Title = "",
+    Text = "涅拉的意识被困在了什么地方，似乎很痛苦。",
+    button = "",
+    buttonF = ""
+  },
+  [41507] = {
+    id = 41507,
+    Type = 129,
+    Title = "",
+    Text = "HP自动消耗道具已耗尽，请补充道具或重新设置自动消耗道具",
+    button = "",
+    buttonF = ""
+  },
+  [41508] = {
+    id = 41508,
+    Type = 129,
+    Title = "",
+    Text = "SP自动消耗道具已耗尽，请补充道具或重新设置自动消耗道具",
+    button = "",
+    buttonF = ""
+  },
+  [41510] = {
+    id = 41510,
+    Type = 1,
+    Title = "",
+    Text = "下一个区域的传送阵已开启",
+    button = "",
+    buttonF = ""
+  },
+  [41511] = {
+    id = 41511,
+    Type = 1,
+    Title = "",
+    Text = "[c][ffff00]恭喜您已完成全部解密，计时结束。[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [41512] = {
+    id = 41512,
+    Type = 1,
+    Title = "",
+    Text = "当前位置会造成颜色重复出现，换一种颜色试试吧",
+    button = "",
+    buttonF = ""
+  },
+  [41514] = {
+    id = 41514,
+    Type = 2,
+    Title = "",
+    Text = "观看视频需要「%s」Mb空间，是否下载资源？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41515] = {
+    id = 41515,
+    Type = 2,
+    Title = "",
+    Text = "您已获取当前版本任务的所有奖励，请确认是否继续购买记忆药水？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [41999] = {
+    id = 41999,
+    Type = 1,
+    Title = "",
+    Text = "已是此款发型",
+    button = "",
+    buttonF = ""
+  },
+  [42000] = {
+    id = 42000,
+    Type = 1,
+    Title = "",
+    Text = "更换成功！",
+    button = "",
+    buttonF = ""
+  },
+  [42001] = {
+    id = 42001,
+    Type = 128,
+    Title = "",
+    Text = "当前临时背包已满，请及时清理背包空间，接下来获得道具将会以限时邮件的形式发放，请及时领取",
+    button = "",
+    buttonF = ""
+  },
+  [42002] = {
+    id = 42002,
+    Type = 1,
+    Title = "",
+    Text = "占坑",
+    button = "",
+    buttonF = ""
+  },
+  [42003] = {
+    id = 42003,
+    Type = 1,
+    Title = "",
+    Text = "好感度已达上限！不会获得更多好感啦~",
+    button = "",
+    buttonF = ""
+  },
+  [42004] = {
+    id = 42004,
+    Type = 1,
+    Title = "",
+    Text = "缆车已损坏，请修复后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [42005] = {
+    id = 42005,
+    Type = 1,
+    Title = "",
+    Text = "激活羁绊\"力大如牛\"后解锁",
+    button = "",
+    buttonF = ""
+  },
+  [42006] = {
+    id = 42006,
+    Type = 1,
+    Title = "",
+    Text = "仓库内存不足，清自行选取物品存入",
+    button = "",
+    buttonF = ""
+  },
+  [42007] = {
+    id = 42007,
+    Type = 1,
+    Title = "",
+    Text = "礼包码错误，请检查一下！",
+    button = "",
+    buttonF = ""
+  },
+  [42008] = {
+    id = 42008,
+    Type = 1,
+    Title = "",
+    Text = "兑换冷却中，请1s后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [42009] = {
+    id = 42009,
+    Type = 1,
+    Title = "",
+    Text = "数据库异常",
+    button = "",
+    buttonF = ""
+  },
+  [42010] = {
+    id = 42010,
+    Type = 1,
+    Title = "",
+    Text = "礼包码不存在",
+    button = "",
+    buttonF = ""
+  },
+  [42011] = {
+    id = 42011,
+    Type = 1,
+    Title = "",
+    Text = "礼包码已过期",
+    button = "",
+    buttonF = ""
+  },
+  [42012] = {
+    id = 42012,
+    Type = 1,
+    Title = "",
+    Text = "该帐号不符合CDKEY使用条件哦~",
+    button = "",
+    buttonF = ""
+  },
+  [42013] = {
+    id = 42013,
+    Type = 1,
+    Title = "",
+    Text = "超出服使用范围",
+    button = "",
+    buttonF = ""
+  },
+  [42014] = {
+    id = 42014,
+    Type = 1,
+    Title = "",
+    Text = "已经被使用",
+    button = "",
+    buttonF = ""
+  },
+  [42015] = {
+    id = 42015,
+    Type = 1,
+    Title = "",
+    Text = "您已经领取过该批次的兑换码",
+    button = "",
+    buttonF = ""
+  },
+  [42016] = {
+    id = 42016,
+    Type = 1,
+    Title = "",
+    Text = "错误的物品配置",
+    button = "",
+    buttonF = ""
+  },
+  [42017] = {
+    id = 42017,
+    Type = 1,
+    Title = "",
+    Text = "恭喜您，礼包码兑换成功,请注意查收邮件",
+    button = "",
+    buttonF = ""
+  },
+  [42018] = {
+    id = 42018,
+    Type = 1,
+    Title = "",
+    Text = "礼包码兑换失败",
+    button = "",
+    buttonF = ""
+  },
+  [42019] = {
+    id = 42019,
+    Type = 1,
+    Title = "",
+    Text = "该批次的礼包码，您的兑换次数达到上限！",
+    button = "",
+    buttonF = ""
+  },
+  [42020] = {
+    id = 42020,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【「寻宝」踏上旅程】，距离8888 B格猫金币近了一步！",
+    button = "",
+    buttonF = ""
+  },
+  [42021] = {
+    id = 42021,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【「寻宝」新的裙装】，距离8888 B格猫金币近了一步！",
+    button = "",
+    buttonF = ""
+  },
+  [42022] = {
+    id = 42022,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【「寻宝」未知旅行】，距离8888 B格猫金币近了一步！",
+    button = "",
+    buttonF = ""
+  },
+  [42023] = {
+    id = 42023,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【「寻宝」新的发现】，距离8888 B格猫金币近了一步！",
+    button = "",
+    buttonF = ""
+  },
+  [42024] = {
+    id = 42024,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【「寻宝」家主忧愁】，距离8888 B格猫金币近了一步！",
+    button = "",
+    buttonF = ""
+  },
+  [42025] = {
+    id = 42025,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【「寻宝」再接再厉】，距离8888 B格猫金币近了一步！",
+    button = "",
+    buttonF = ""
+  },
+  [42026] = {
+    id = 42026,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【「寻宝」淘气精灵】，距离8888 B格猫金币近了一步！",
+    button = "",
+    buttonF = ""
+  },
+  [42027] = {
+    id = 42027,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【「寻宝」双生梦想】，距离8888 B格猫金币近了一步！",
+    button = "",
+    buttonF = ""
+  },
+  [42028] = {
+    id = 42028,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【「寻宝」家主心事】，距离8888 B格猫金币近了一步！",
+    button = "",
+    buttonF = ""
+  },
+  [42029] = {
+    id = 42029,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【「寻宝」梦想终章】，距离8888 B格猫金币近了一步！",
+    button = "",
+    buttonF = ""
+  },
+  [42030] = {
+    id = 42030,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【「寻宝」最终旅途】，距离8888 B格猫金币近了一步！",
+    button = "",
+    buttonF = ""
+  },
+  [42031] = {
+    id = 42031,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]率先完成了【寻宝任务】，距离8888 B格猫金币近了一步！",
+    button = "",
+    buttonF = ""
+  },
+  [42035] = {
+    id = 42035,
+    Type = 65536,
+    Title = "",
+    Text = "您还没有提交本次问卷哦，是否确认要关闭？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [42036] = {
+    id = 42036,
+    Type = 65536,
+    Title = "",
+    Text = "提交之后将不可再对本次问卷的内容进行更改，是否确定提交？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [42037] = {
+    id = 42037,
+    Type = 1,
+    Title = "",
+    Text = "选择已达上限，请先取消已选项，再进行选择！",
+    button = "",
+    buttonF = ""
+  },
+  [42038] = {
+    id = 42038,
+    Type = 1,
+    Title = "",
+    Text = "已达道具获取上限！",
+    button = "",
+    buttonF = ""
+  },
+  [42039] = {
+    id = 42039,
+    Type = 1,
+    Title = "",
+    Text = "礼包码已达到最大使用次数",
+    button = "",
+    buttonF = ""
+  },
+  [42040] = {
+    id = 42040,
+    Type = 1,
+    Title = "",
+    Text = "抱歉，该附魔组合无法被转移",
+    button = "",
+    buttonF = ""
+  },
+  [42041] = {
+    id = 42041,
+    Type = 1,
+    Title = "",
+    Text = "该副本不支持跨服匹配，请调整队伍后再次进入",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [42042] = {
+    id = 42042,
+    Type = 1,
+    Title = "",
+    Text = "该副本不支持跨服组队，请调整队伍后再次进入",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [42043] = {
+    id = 42043,
+    Type = 129,
+    Title = "",
+    Text = "检测当前背包空间不足，已领取部分道具至背包，请清理背包后再尝试领取其他道具~",
+    button = "",
+    buttonF = ""
+  },
+  [42044] = {
+    id = 42044,
+    Type = 1,
+    Title = "",
+    Text = "跟随目标当前所在区域不支持跨服跟随",
+    button = "",
+    buttonF = ""
+  },
+  [42045] = {
+    id = 42045,
+    Type = 1,
+    Title = "",
+    Text = "道具暂时无法使用",
+    button = "",
+    buttonF = ""
+  },
+  [42046] = {
+    id = 42046,
+    Type = 1,
+    Title = "",
+    Text = "暂时找不到当前小伙伴~",
+    button = "",
+    buttonF = ""
+  },
+  [42047] = {
+    id = 42047,
+    Type = 1,
+    Title = "",
+    Text = "当前小伙伴已用蓝点显示在小地图处~",
+    button = "",
+    buttonF = ""
+  },
+  [42048] = {
+    id = 42048,
+    Type = 1,
+    Title = "",
+    Text = "有%s件衣装无法性转",
+    button = "",
+    buttonF = ""
+  },
+  [42049] = {
+    id = 42049,
+    Type = 1,
+    Title = "",
+    Text = "背包中衣装不能性转",
+    button = "",
+    buttonF = ""
+  },
+  [42050] = {
+    id = 42050,
+    Type = 1,
+    Title = "",
+    Text = "只有队长可以报名参加舞台剧哎！",
+    button = "",
+    buttonF = ""
+  },
+  [42051] = {
+    id = 42051,
+    Type = 1,
+    Title = "",
+    Text = "必须组队才能站上舞台呦~",
+    button = "",
+    buttonF = ""
+  },
+  [42052] = {
+    id = 42052,
+    Type = 1,
+    Title = "",
+    Text = "舞台剧现在还没有开放哦~精彩的表演值得足够的等待！",
+    button = "",
+    buttonF = ""
+  },
+  [42053] = {
+    id = 42053,
+    Type = 2,
+    Title = "队伍提示",
+    Text = "是要离开舞台了吗？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [42054] = {
+    id = 42054,
+    Type = 1,
+    Title = "",
+    Text = "这位公主角色已经被队伍里的其他小伙伴选走了~",
+    button = "",
+    buttonF = ""
+  },
+  [42055] = {
+    id = 42055,
+    Type = 1,
+    Title = "",
+    Text = "该邀请码已被其他玩家使用",
+    button = "",
+    buttonF = ""
+  },
+  [42056] = {
+    id = 42056,
+    Type = 1,
+    Title = "",
+    Text = "请绑定同服冒险家",
+    button = "",
+    buttonF = ""
+  },
+  [42057] = {
+    id = 42057,
+    Type = 1,
+    Title = "",
+    Text = "当前处于岩石化身状态下，请放置岩石后再离开此地",
+    button = "",
+    buttonF = ""
+  },
+  [42058] = {
+    id = 42058,
+    Type = 1,
+    Title = "",
+    Text = "活动结束，您即将离开副本。",
+    button = "",
+    buttonF = ""
+  },
+  [42059] = {
+    id = 42059,
+    Type = 129,
+    Title = "",
+    Text = "%s已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [42060] = {
+    id = 42060,
+    Type = 1,
+    Title = "",
+    Text = "舞台剧已经开始了哦~请期待下一场吧~",
+    button = "",
+    buttonF = ""
+  },
+  [42061] = {
+    id = 42061,
+    Type = 1,
+    Title = "",
+    Text = "舞台剧只针对队伍开放，请先解散当前团队~",
+    button = "",
+    buttonF = ""
+  },
+  [42062] = {
+    id = 42062,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "已经离开舞台断线重连…请稍后再试！",
+    button = "确定",
+    buttonF = ""
+  },
+  [42063] = {
+    id = 42063,
+    Type = 1,
+    Title = "",
+    Text = "舞台剧已经结束了哦~请期待未来新的表演吧。",
+    button = "",
+    buttonF = ""
+  },
+  [42070] = {
+    id = 42070,
+    Type = 1,
+    Title = "",
+    Text = "灵感因子不足，请通过主线任务进行收集！",
+    button = "",
+    buttonF = ""
+  },
+  [42071] = {
+    id = 42071,
+    Type = 1,
+    Title = "",
+    Text = "你的小伙伴正在表演舞台剧噢~等表演完再进行跟随吧！",
+    button = "",
+    buttonF = ""
+  },
+  [42072] = {
+    id = 42072,
+    Type = 1,
+    Title = "",
+    Text = "emmm…让我思考一下",
+    button = "",
+    buttonF = ""
+  },
+  [42073] = {
+    id = 42073,
+    Type = 1,
+    Title = "",
+    Text = "获得证据{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [42074] = {
+    id = 42074,
+    Type = 1,
+    Title = "",
+    Text = "弹药已用尽，请前往武器箱补充",
+    button = "",
+    buttonF = ""
+  },
+  [42075] = {
+    id = 42075,
+    Type = 1,
+    Title = "",
+    Text = "地上好像有东西了，换个位置吧！",
+    button = "",
+    buttonF = ""
+  },
+  [42076] = {
+    id = 42076,
+    Type = 1,
+    Title = "",
+    Text = "已经解开谜题了，好像没有搬动的必要了！",
+    button = "",
+    buttonF = ""
+  },
+  [42077] = {
+    id = 42077,
+    Type = 1,
+    Title = "",
+    Text = "吹箭已经用完了！",
+    button = "",
+    buttonF = ""
+  },
+  [42078] = {
+    id = 42078,
+    Type = 1,
+    Title = "",
+    Text = "金额不足，请确认后重新输入！",
+    button = "",
+    buttonF = ""
+  },
+  [42079] = {
+    id = 42079,
+    Type = 1,
+    Title = "",
+    Text = "领取失败！你错过了这个红包！",
+    button = "",
+    buttonF = ""
+  },
+  [42080] = {
+    id = 42080,
+    Type = 1,
+    Title = "",
+    Text = "习得技能[c][ff0000]【附身】[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [42081] = {
+    id = 42081,
+    Type = 65536,
+    Title = "",
+    Text = "确认发送「红包」吗？发出后将不可收回",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [42082] = {
+    id = 42082,
+    Type = 1,
+    Title = "",
+    Text = "可输入的总金额最多%s",
+    button = "",
+    buttonF = ""
+  },
+  [42083] = {
+    id = 42083,
+    Type = 1,
+    Title = "",
+    Text = "该技能仅能在敌人背后使用",
+    button = "",
+    buttonF = ""
+  },
+  [42084] = {
+    id = 42084,
+    Type = 1,
+    Title = "",
+    Text = "受到强烈魔法波动，暂时无法打开背包！",
+    button = "",
+    buttonF = ""
+  },
+  [42085] = {
+    id = 42085,
+    Type = 65536,
+    Title = "",
+    Text = "与「拉文」对话，还有奖励可领取哦！\n你确认现在离开吗？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [42086] = {
+    id = 42086,
+    Type = 129,
+    Title = "",
+    Text = "使用失败，已超过留声机的播放目录上限",
+    button = "",
+    buttonF = ""
+  },
+  [42087] = {
+    id = 42087,
+    Type = 4096,
+    Title = "",
+    Text = "技能·洞察已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [42088] = {
+    id = 42088,
+    Type = 1,
+    Title = "",
+    Text = "获得[c][ffff00]水壶 * 1[-][/c]，[c][ffff00]肥料 * 1[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [42089] = {
+    id = 42089,
+    Type = 1,
+    Title = "",
+    Text = "失去[c][ffff00]肥料 * 1[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [42090] = {
+    id = 42090,
+    Type = 1,
+    Title = "",
+    Text = "失去[c][ffff00]水壶 * 1[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [42091] = {
+    id = 42091,
+    Type = 1,
+    Title = "",
+    Text = "获得[c][ffff00]双子星[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [42092] = {
+    id = 42092,
+    Type = 1,
+    Title = "",
+    Text = "准备！",
+    button = "",
+    buttonF = ""
+  },
+  [42093] = {
+    id = 42093,
+    Type = 1,
+    Title = "",
+    Text = "3",
+    button = "",
+    buttonF = ""
+  },
+  [42094] = {
+    id = 42094,
+    Type = 1,
+    Title = "",
+    Text = "2",
+    button = "",
+    buttonF = ""
+  },
+  [42095] = {
+    id = 42095,
+    Type = 1,
+    Title = "",
+    Text = "1",
+    button = "",
+    buttonF = ""
+  },
+  [42096] = {
+    id = 42096,
+    Type = 1,
+    Title = "",
+    Text = "开始！",
+    button = "",
+    buttonF = ""
+  },
+  [42097] = {
+    id = 42097,
+    Type = 1,
+    Title = "",
+    Text = "获得应援头饰 * 6",
+    button = "",
+    buttonF = ""
+  },
+  [42099] = {
+    id = 42099,
+    Type = 1,
+    Title = "",
+    Text = "今日领取红包的次数已达上限。",
+    button = "",
+    buttonF = ""
+  },
+  [42100] = {
+    id = 42100,
+    Type = 1,
+    Title = "",
+    Text = "由于您长时间未进行查看，该红包已经失效了(/ω＼)…",
+    button = "",
+    buttonF = ""
+  },
+  [42101] = {
+    id = 42101,
+    Type = 1,
+    Title = "",
+    Text = "是否进入心象世界？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [42102] = {
+    id = 42102,
+    Type = 1,
+    Title = "",
+    Text = "上次我就应该拔下控制器的钥匙的，不然也不会弄丢了",
+    button = "",
+    buttonF = ""
+  },
+  [42103] = {
+    id = 42103,
+    Type = 1,
+    Title = "",
+    Text = "那些可恶的碎砖块老是咯吱作响，打扰我的睡眠。",
+    button = "",
+    buttonF = ""
+  },
+  [42104] = {
+    id = 42104,
+    Type = 1,
+    Title = "",
+    Text = "该死，控制器的钥匙被斯嘎尔拿走了",
+    button = "",
+    buttonF = ""
+  },
+  [42105] = {
+    id = 42105,
+    Type = 1,
+    Title = "",
+    Text = "南厅的门上少了一块符文石，或许是被谁拿走了！",
+    button = "",
+    buttonF = ""
+  },
+  [42106] = {
+    id = 42106,
+    Type = 1,
+    Title = "",
+    Text = "就没人过来修一下地上的碎砖块吗？",
+    button = "",
+    buttonF = ""
+  },
+  [42107] = {
+    id = 42107,
+    Type = 1,
+    Title = "",
+    Text = "得找到玛尔哈，让他交出符文石，害的我现在都没法进入南厅了。",
+    button = "",
+    buttonF = ""
+  },
+  [42108] = {
+    id = 42108,
+    Type = 1,
+    Title = "",
+    Text = "太无聊了，得找个人聊聊天解解闷！",
+    button = "",
+    buttonF = ""
+  },
+  [42109] = {
+    id = 42109,
+    Type = 1,
+    Title = "",
+    Text = "%s正在与其他玩家进行双人动作",
+    button = "",
+    buttonF = ""
+  },
+  [42110] = {
+    id = 42110,
+    Type = 1,
+    Title = "",
+    Text = "在开启发言功能前请先开启收听功能哦",
+    button = "",
+    buttonF = ""
+  },
+  [42111] = {
+    id = 42111,
+    Type = 1,
+    Title = "",
+    Text = "哇哦~获得了1个超棒的奖励！\n前往评论页，给个好评吧！",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [42112] = {
+    id = 42112,
+    Type = 1,
+    Title = "",
+    Text = "单人组队时无法开启实时语音功能，请与其他冒险者一起组队吧~",
+    button = "",
+    buttonF = ""
+  },
+  [42113] = {
+    id = 42113,
+    Type = 1,
+    Title = "",
+    Text = "已进入双人动作(%s)准备状态",
+    button = "",
+    buttonF = ""
+  },
+  [42114] = {
+    id = 42114,
+    Type = 1,
+    Title = "",
+    Text = "该动作无法跨种族进行",
+    button = "",
+    buttonF = ""
+  },
+  [42115] = {
+    id = 42115,
+    Type = 1,
+    Title = "",
+    Text = "获得了%s的秘密，快去证据手册看看吧！",
+    button = "",
+    buttonF = ""
+  },
+  [42116] = {
+    id = 42116,
+    Type = 65536,
+    Title = "",
+    Text = "愿望一旦提交，则无法进行修改哦~",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [42117] = {
+    id = 42117,
+    Type = 1,
+    Title = "",
+    Text = "emmm…得让我再思考一下！",
+    button = "",
+    buttonF = ""
+  },
+  [42118] = {
+    id = 42118,
+    Type = 1,
+    Title = "",
+    Text = "已经找到所有的疑点了！",
+    button = "",
+    buttonF = ""
+  },
+  [42119] = {
+    id = 42119,
+    Type = 1,
+    Title = "",
+    Text = "获得{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [42120] = {
+    id = 42120,
+    Type = 129,
+    Title = "",
+    Text = "神秘卷轴已更新！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [42121] = {
+    id = 42121,
+    Type = 1,
+    Title = "",
+    Text = "对不起，您已被队长禁言，暂时无法开启实时语音功能哦",
+    button = "",
+    buttonF = ""
+  },
+  [42122] = {
+    id = 42122,
+    Type = 1,
+    Title = "",
+    Text = "配音音量已经开启~",
+    button = "",
+    buttonF = ""
+  },
+  [42123] = {
+    id = 42123,
+    Type = 2,
+    Title = "",
+    Text = "是否开启配音音量？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [42124] = {
+    id = 42124,
+    Type = 1,
+    Title = "",
+    Text = "请取消洞察状态后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [42125] = {
+    id = 42125,
+    Type = 1,
+    Title = "",
+    Text = "剩余:%d",
+    button = "",
+    buttonF = ""
+  },
+  [42136] = {
+    id = 42136,
+    Type = 1,
+    Title = "",
+    Text = "附身状态下禁止弹奏",
+    button = "",
+    buttonF = ""
+  },
+  [42137] = {
+    id = 42137,
+    Type = 2,
+    Title = "",
+    Text = "确定要将此装备精炼到[c][ff0000]%s[-][/c]吗？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [42138] = {
+    id = 42138,
+    Type = 1,
+    Title = "",
+    Text = "可能还有乐谱没有搜集齐，再检查一下呢？",
+    button = "",
+    buttonF = ""
+  },
+  [43000] = {
+    id = 43000,
+    Type = 1,
+    Title = "",
+    Text = "当前已有副本正在准备中",
+    button = "",
+    buttonF = ""
+  },
+  [43001] = {
+    id = 43001,
+    Type = 1,
+    Title = "",
+    Text = "%s未解锁该副本，操作失败",
+    button = "",
+    buttonF = ""
+  },
+  [43003] = {
+    id = 43003,
+    Type = 1,
+    Title = "",
+    Text = "%s拒绝了该副本邀请",
+    button = "",
+    buttonF = ""
+  },
+  [43004] = {
+    id = 43004,
+    Type = 1,
+    Title = "",
+    Text = "队伍人数超过%s人，无法进入副本",
+    button = "",
+    buttonF = ""
+  },
+  [43005] = {
+    id = 43005,
+    Type = 1,
+    Title = "",
+    Text = "需要达到50级",
+    button = "",
+    buttonF = ""
+  },
+  [43006] = {
+    id = 43006,
+    Type = 1,
+    Title = "",
+    Text = "需要达到60级",
+    button = "",
+    buttonF = ""
+  },
+  [43007] = {
+    id = 43007,
+    Type = 1,
+    Title = "",
+    Text = "需要达到45级",
+    button = "",
+    buttonF = ""
+  },
+  [43008] = {
+    id = 43008,
+    Type = 1,
+    Title = "",
+    Text = "需要达到150级",
+    button = "",
+    buttonF = ""
+  },
+  [43009] = {
+    id = 43009,
+    Type = 1,
+    Title = "",
+    Text = "需要通关上个难度",
+    button = "",
+    buttonF = ""
+  },
+  [43010] = {
+    id = 43010,
+    Type = 1,
+    Title = "",
+    Text = "暂未开启，敬请期待",
+    button = "",
+    buttonF = ""
+  },
+  [43011] = {
+    id = 43011,
+    Type = 1,
+    Title = "",
+    Text = "当前版本初心试炼已结束或者多次使用豪华版，返还您%sB格猫金币作以补偿",
+    button = "",
+    buttonF = ""
+  },
+  [43019] = {
+    id = 43019,
+    Type = 1,
+    Title = "",
+    Text = "%s",
+    button = "",
+    buttonF = ""
+  },
+  [43020] = {
+    id = 43020,
+    Type = 1,
+    Title = "",
+    Text = "点击「更多」中的「照相机」进入拍摄模式，拍到景点还能存入冒险手册噢",
+    button = "",
+    buttonF = ""
+  },
+  [43021] = {
+    id = 43021,
+    Type = 1,
+    Title = "",
+    Text = "记得明天登录游戏噢~",
+    button = "",
+    buttonF = ""
+  },
+  [43022] = {
+    id = 43022,
+    Type = 1,
+    Title = "",
+    Text = "%s的获得数量已达上限。",
+    button = "",
+    buttonF = ""
+  },
+  [43023] = {
+    id = 43023,
+    Type = 1,
+    Title = "",
+    Text = "当前的游戏版本无法启动实时语音功能，请安装最新包体后重试",
+    button = "",
+    buttonF = ""
+  },
+  [43024] = {
+    id = 43024,
+    Type = 1,
+    Title = "",
+    Text = "职业二转之后即可获得阿萨神碑",
+    button = "",
+    buttonF = ""
+  },
+  [43025] = {
+    id = 43025,
+    Type = 1,
+    Title = "",
+    Text = "需要达到140级",
+    button = "",
+    buttonF = ""
+  },
+  [43026] = {
+    id = 43026,
+    Type = 1,
+    Title = "",
+    Text = "需要达到130级",
+    button = "",
+    buttonF = ""
+  },
+  [43027] = {
+    id = 43027,
+    Type = 1,
+    Title = "",
+    Text = "剩余战斗时长不足，无法获得奖励",
+    button = "",
+    buttonF = ""
+  },
+  [43028] = {
+    id = 43028,
+    Type = 1,
+    Title = "",
+    Text = "需要达到20级",
+    button = "",
+    buttonF = ""
+  },
+  [43029] = {
+    id = 43029,
+    Type = 1,
+    Title = "",
+    Text = "需要达到40级",
+    button = "",
+    buttonF = ""
+  },
+  [43030] = {
+    id = 43030,
+    Type = 1,
+    Title = "",
+    Text = "需要达到60级",
+    button = "",
+    buttonF = ""
+  },
+  [43031] = {
+    id = 43031,
+    Type = 1,
+    Title = "",
+    Text = "需要达到80级",
+    button = "",
+    buttonF = ""
+  },
+  [43032] = {
+    id = 43032,
+    Type = 1,
+    Title = "",
+    Text = "需要达到100级",
+    button = "",
+    buttonF = ""
+  },
+  [43033] = {
+    id = 43033,
+    Type = 1,
+    Title = "",
+    Text = "需要Base达到120级",
+    button = "",
+    buttonF = ""
+  },
+  [43034] = {
+    id = 43034,
+    Type = 1,
+    Title = "",
+    Text = "需要神树之灵达到32级或base达到160级",
+    button = "",
+    buttonF = ""
+  },
+  [43035] = {
+    id = 43035,
+    Type = 1,
+    Title = "",
+    Text = "需要base达到160级",
+    button = "",
+    buttonF = ""
+  },
+  [43041] = {
+    id = 43041,
+    Type = 2,
+    Title = "",
+    Text = "当前Base等级已达最大值，且当前职业不符合本物品的Job经验获取加速条件，购买后暂无效果，是否确认购买？（每个角色仅能购买一次，购买后立即生效）",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43042] = {
+    id = 43042,
+    Type = 2,
+    Title = "",
+    Text = "当前职业不符合本物品的Job经验获取加速条件，购买后仅Base经验获取加速效果生效，是否确认购买？（每个角色仅能购买一次，购买后立即生效）",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43043] = {
+    id = 43043,
+    Type = 2,
+    Title = "",
+    Text = "当前Base等级已达最大值，购买后仅Job经验获取加速效果生效，是否确认购买？（每个角色仅能购买一次，购买后立即生效）",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43044] = {
+    id = 43044,
+    Type = 2,
+    Title = "",
+    Text = "购买后将立即获得Base与Job经验获取加速效果，是否确认购买？（每个角色仅能购买一次，购买后立即生效）",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43045] = {
+    id = 43045,
+    Type = 1,
+    Title = "",
+    Text = "Base与当前职业Job等级均已满级，无法使用该物品",
+    button = "",
+    buttonF = ""
+  },
+  [43046] = {
+    id = 43046,
+    Type = 2,
+    Title = "",
+    Text = "当前Base已满级，使用后无法获得Base增速；当前职业为【%s】，使用后当前角色所有【%s】冒险职业Job经验获取速度将增加%s，是否确认使用？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43047] = {
+    id = 43047,
+    Type = 2,
+    Title = "",
+    Text = "当前Base已满级，使用后无法获得Base增速；当前职业为【%s】，使用后【%s】Job经验获取速度将增加%s，是否确认使用？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43048] = {
+    id = 43048,
+    Type = 2,
+    Title = "",
+    Text = "当前职业Job等级已满级，使用后无法获得Job增速，建议您更换其他职业后再使用；使用后Base经验获取速度将增加%s，是否确认使用？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43049] = {
+    id = 43049,
+    Type = 2,
+    Title = "",
+    Text = "使用后Base经验获取速度将增加%s[c][fb725f]%s[-][/c]；当前职业为【%s】，使用后当前角色所有【%s】冒险职业Job经验获取速度将增加%s，是否确认使用？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43050] = {
+    id = 43050,
+    Type = 2,
+    Title = "",
+    Text = "使用后Base经验获取速度将增加%s[c][fb725f]%s[-][/c]；当前职业为【%s】，使用后【%s】Job经验获取速度将增加%s，是否确认使用？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43051] = {
+    id = 43051,
+    Type = 1,
+    Title = "",
+    Text = "当前职业【经验飓能药水】生效中，暂不可使用",
+    button = "",
+    buttonF = ""
+  },
+  [43052] = {
+    id = 43052,
+    Type = 1,
+    Title = "",
+    Text = "初心者无法使用该物品，请先转职",
+    button = "",
+    buttonF = ""
+  },
+  [43053] = {
+    id = 43053,
+    Type = 1,
+    Title = "",
+    Text = "需要达到165级",
+    button = "",
+    buttonF = ""
+  },
+  [43054] = {
+    id = 43054,
+    Type = 1,
+    Title = "",
+    Text = "需要神树之灵达到32级或base达到150级",
+    button = "",
+    buttonF = ""
+  },
+  [43055] = {
+    id = 43055,
+    Type = 1,
+    Title = "",
+    Text = "需要神树之灵达到32级或base达到155级",
+    button = "",
+    buttonF = ""
+  },
+  [43100] = {
+    id = 43100,
+    Type = 2,
+    Title = "",
+    Text = "技能重置会将所有已分配的技能点还原，是否确认消耗一个技能重置棒进行重置？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43101] = {
+    id = 43101,
+    Type = 2,
+    Title = "",
+    Text = "技能重置会将所有已分配的技能点还原，是否确认消耗%dzeny进行重置？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43102] = {
+    id = 43102,
+    Type = 1,
+    Title = "",
+    Text = "当前zeny不足",
+    button = "",
+    buttonF = ""
+  },
+  [43103] = {
+    id = 43103,
+    Type = 1,
+    Title = "",
+    Text = "当前无已用技能点，无法重置技能",
+    button = "",
+    buttonF = ""
+  },
+  [43104] = {
+    id = 43104,
+    Type = 2,
+    Title = "",
+    Text = "素质点重置会将所有已分配的素质点还原，是否确认消耗一个轮回之石进行重置？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43105] = {
+    id = 43105,
+    Type = 2,
+    Title = "",
+    Text = "素质点重置会将所有已分配的素质点还原，是否确认消耗%dzeny进行重置？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43106] = {
+    id = 43106,
+    Type = 1,
+    Title = "",
+    Text = "当前无已用素质点，无法重置素质点",
+    button = "",
+    buttonF = ""
+  },
+  [43107] = {
+    id = 43107,
+    Type = 1,
+    Title = "",
+    Text = "所有重塑属性低于当前属性值，本次重塑属性不保存。",
+    button = "",
+    buttonF = ""
+  },
+  [43108] = {
+    id = 43108,
+    Type = 1,
+    Title = "",
+    Text = "您当前已开启实时语音，单条语音功能暂时无法使用哦",
+    button = "",
+    buttonF = ""
+  },
+  [43109] = {
+    id = 43109,
+    Type = 1,
+    Title = "",
+    Text = "当前麦克风权限未开启，请开启权限后重试",
+    button = "",
+    buttonF = ""
+  },
+  [43110] = {
+    id = 43110,
+    Type = 1,
+    Title = "",
+    Text = "当前赛季已经结束，暂时无法使用该道具~",
+    button = "",
+    buttonF = ""
+  },
+  [43111] = {
+    id = 43111,
+    Type = 1,
+    Title = "",
+    Text = "卡普拉冒险录等级已达到满级，暂时无法使用该道具~",
+    button = "",
+    buttonF = ""
+  },
+  [43112] = {
+    id = 43112,
+    Type = 256,
+    Title = "秒数倒计时",
+    Text = "还有[c][ffff00]{countDown=%s}[-][/c]秒开始新一轮战斗",
+    button = "",
+    buttonF = ""
+  },
+  [43113] = {
+    id = 43113,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否消耗%s分钟的战斗时长进行扫荡？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [43114] = {
+    id = 43114,
+    Type = 1,
+    Title = "",
+    Text = "尚未通关此难度，无法进行扫荡",
+    button = "",
+    buttonF = ""
+  },
+  [43115] = {
+    id = 43115,
+    Type = 1,
+    Title = "",
+    Text = "剩余时长不足，无法进行扫荡",
+    button = "",
+    buttonF = ""
+  },
+  [43116] = {
+    id = 43116,
+    Type = 1,
+    Title = "",
+    Text = "需要达到120级",
+    button = "",
+    buttonF = ""
+  },
+  [43117] = {
+    id = 43117,
+    Type = 1,
+    Title = "",
+    Text = "需要达到70级",
+    button = "",
+    buttonF = ""
+  },
+  [43118] = {
+    id = 43118,
+    Type = 1,
+    Title = "",
+    Text = "需要达到120级",
+    button = "",
+    buttonF = ""
+  },
+  [43119] = {
+    id = 43119,
+    Type = 2,
+    Title = "提示",
+    Text = "成功参与！前往公会领地，与马丁对话，完成集结！",
+    button = "前往",
+    buttonF = "取消"
+  },
+  [43120] = {
+    id = 43120,
+    Type = 1,
+    Title = "",
+    Text = "若无法完成请尝试重新登录",
+    button = "",
+    buttonF = ""
+  },
+  [43121] = {
+    id = 43121,
+    Type = 1,
+    Title = "",
+    Text = "尝试对您的宠物进行抚摸、喂养、领取丸子、抱起或牵手操作",
+    button = "",
+    buttonF = ""
+  },
+  [43122] = {
+    id = 43122,
+    Type = 1,
+    Title = "",
+    Text = "神谕副本、交易所、卡片扭蛋机、野外挂机都有机会获取卡片哦",
+    button = "",
+    buttonF = ""
+  },
+  [43123] = {
+    id = 43123,
+    Type = 1,
+    Title = "",
+    Text = "请前往野外地图或参与各类副本玩法",
+    button = "",
+    buttonF = ""
+  },
+  [43124] = {
+    id = 43124,
+    Type = 1,
+    Title = "",
+    Text = "从背包界面最左侧的「幻化」按钮处可进入幻化界面",
+    button = "",
+    buttonF = ""
+  },
+  [43125] = {
+    id = 43125,
+    Type = 2,
+    Title = "提示",
+    Text = "正在进行「公会集结」活动！\n立即加入公会，参与活动吧！",
+    button = "知道了",
+    buttonF = ""
+  },
+  [43126] = {
+    id = 43126,
+    Type = 1,
+    Title = "",
+    Text = "您已领取过「邀请码」奖励",
+    button = "",
+    buttonF = ""
+  },
+  [43127] = {
+    id = 43127,
+    Type = 1,
+    Title = "",
+    Text = "邀请码错误，请确认后再输入！",
+    button = "",
+    buttonF = ""
+  },
+  [43133] = {
+    id = 43133,
+    Type = 2,
+    Title = "提示",
+    Text = "是否使用该角色参与集结？\n每个账号仅能参与1次集结",
+    button = "确定",
+    buttonF = "再想想"
+  },
+  [43134] = {
+    id = 43134,
+    Type = 1,
+    Title = "",
+    Text = "已使用其他角色参与集结！",
+    button = "",
+    buttonF = ""
+  },
+  [43135] = {
+    id = 43135,
+    Type = 1,
+    Title = "",
+    Text = "已在其他公会完成集结！",
+    button = "",
+    buttonF = ""
+  },
+  [43136] = {
+    id = 43136,
+    Type = 1,
+    Title = "",
+    Text = "药品数量不足",
+    button = "",
+    buttonF = ""
+  },
+  [43138] = {
+    id = 43138,
+    Type = 129,
+    Title = "",
+    Text = "由于祈祷点数重复，退还%s信仰之证和%s绑定公会贡献！",
+    button = "",
+    buttonF = ""
+  },
+  [43139] = {
+    id = 43139,
+    Type = 129,
+    Title = "",
+    Text = "获得了女武神的祝福，祈祷之力提升到了%s级！",
+    button = "",
+    buttonF = ""
+  },
+  [43140] = {
+    id = 43140,
+    Type = 2,
+    Title = "",
+    Text = "高级消耗材料不足，是否清空所选的高级消耗材料进行附魔？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [43143] = {
+    id = 43143,
+    Type = 1,
+    Title = "",
+    Text = "已达到本周购买次数上限，暂不支持继续购买！",
+    button = "",
+    buttonF = ""
+  },
+  [43144] = {
+    id = 43144,
+    Type = 1,
+    Title = "",
+    Text = "当前战斗时长不足，请确认后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43146] = {
+    id = 43146,
+    Type = 65536,
+    Title = "",
+    Text = "是否确认购买该商品？",
+    button = "确认购买",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [43147] = {
+    id = 43147,
+    Type = 1,
+    Title = "",
+    Text = "邀请码活动已结束！",
+    button = "",
+    buttonF = ""
+  },
+  [43148] = {
+    id = 43148,
+    Type = 129,
+    Title = "",
+    Text = "由于公会祈祷前置点未加点导致使用道具【女神福音书】失败，故退回等量绑定公会贡献和信仰之证，数量为绑定公会贡献%s，信仰之证%s，请前往背包内查看！",
+    button = "",
+    buttonF = ""
+  },
+  [43149] = {
+    id = 43149,
+    Type = 65536,
+    Title = "",
+    Text = "是否前往「镜界」场景以提高挂机效率？\n\n[c][848484]※「镜界」是目标地图的镜像版本，仅存在普通魔物和少量npc，若要提交任务请前往原场景[-][/c]",
+    button = "前往「镜界」",
+    buttonF = "前往原场景",
+    Close = 1
+  },
+  [43150] = {
+    id = 43150,
+    Type = 1,
+    Title = "系统提示",
+    Text = "无法在公会战地图使用玩具，这里可是个严肃神圣的地方！",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [43151] = {
+    id = 43151,
+    Type = 65536,
+    Title = "",
+    Text = "是否激活「基金活动」，领取多倍B格猫金币返利？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [43152] = {
+    id = 43152,
+    Type = 1,
+    Title = "",
+    Text = "未解锁该难度，无法跟随",
+    button = "",
+    buttonF = ""
+  },
+  [43153] = {
+    id = 43153,
+    Type = 1,
+    Title = "",
+    Text = "传送失败，请尝试切换其余「镜界」场景哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43154] = {
+    id = 43154,
+    Type = 65536,
+    Title = "",
+    Text = "您已成功购买，请至「邮箱」领取激活后，即可领取B格猫金币返利",
+    button = "确认",
+    buttonF = ""
+  },
+  [43155] = {
+    id = 43155,
+    Type = 1,
+    Title = "",
+    Text = "二转及以上职业及超级初心者才能打开哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43156] = {
+    id = 43156,
+    Type = 256,
+    Title = "",
+    Text = "恭喜你已通关！{countDown=%s}秒后将自动开启下一个波利的考验。",
+    button = "",
+    buttonF = ""
+  },
+  [43157] = {
+    id = 43157,
+    Type = 256,
+    Title = "",
+    Text = "恭喜你已通关！由于尚未解锁下一个波利的考验，将于{countDown=%s}秒后自动退出。",
+    button = "",
+    buttonF = ""
+  },
+  [43158] = {
+    id = 43158,
+    Type = 256,
+    Title = "",
+    Text = "恭喜你已完成全部波利的考验，将于{countDown=%s}秒后自动退出。",
+    button = "",
+    buttonF = ""
+  },
+  [43159] = {
+    id = 43159,
+    Type = 1,
+    Title = "",
+    Text = "尚未解锁，需要完成当前课题",
+    button = "",
+    buttonF = ""
+  },
+  [43160] = {
+    id = 43160,
+    Type = 1,
+    Title = "",
+    Text = "这是冒险者个人的考验哦，请退出队伍后重试~",
+    button = "",
+    buttonF = ""
+  },
+  [43161] = {
+    id = 43161,
+    Type = 1,
+    Title = "",
+    Text = "您已转职成功，请继续冒险吧！",
+    button = "",
+    buttonF = ""
+  },
+  [43162] = {
+    id = 43162,
+    Type = 1,
+    Title = "",
+    Text = "雇佣执事后解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43163] = {
+    id = 43163,
+    Type = 1,
+    Title = "",
+    Text = "需要达到150级",
+    button = "",
+    buttonF = ""
+  },
+  [43164] = {
+    id = 43164,
+    Type = 1,
+    Title = "",
+    Text = "需要达到160级",
+    button = "",
+    buttonF = ""
+  },
+  [43165] = {
+    id = 43165,
+    Type = 1,
+    Title = "",
+    Text = "抱歉！该佣兵暂时无法支持分配！",
+    button = "",
+    buttonF = ""
+  },
+  [43166] = {
+    id = 43166,
+    Type = 1,
+    Title = "",
+    Text = "抱歉！当前团队有佣兵存在，暂不支持相关操作！",
+    button = "",
+    buttonF = ""
+  },
+  [43167] = {
+    id = 43167,
+    Type = 2,
+    Title = "",
+    Text = "生日信息每3天仅能修改1次哦，是否确认修改？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [43168] = {
+    id = 43168,
+    Type = 1,
+    Title = "",
+    Text = "当前的套装已保存",
+    button = "",
+    buttonF = ""
+  },
+  [43169] = {
+    id = 43169,
+    Type = 1,
+    Title = "",
+    Text = "套装切换成功",
+    button = "",
+    buttonF = ""
+  },
+  [43170] = {
+    id = 43170,
+    Type = 1,
+    Title = "",
+    Text = "需要达到170级",
+    button = "",
+    buttonF = ""
+  },
+  [43177] = {
+    id = 43177,
+    Type = 129,
+    Title = "",
+    Text = "获得{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [43178] = {
+    id = 43178,
+    Type = 1,
+    Title = "",
+    Text = "未参与击杀精英魔物，暂无开启资格！",
+    button = "",
+    buttonF = ""
+  },
+  [43179] = {
+    id = 43179,
+    Type = 1,
+    Title = "",
+    Text = "手忙脚乱的一番操作打翻了调料瓶，调料变化%d点…",
+    button = "",
+    buttonF = ""
+  },
+  [43180] = {
+    id = 43180,
+    Type = 1,
+    Title = "",
+    Text = "不小心切到了手指，痛的大叫，食材变化%d点…",
+    button = "",
+    buttonF = ""
+  },
+  [43181] = {
+    id = 43181,
+    Type = 1,
+    Title = "",
+    Text = "没注意把受潮的木头也一并丢了进去，火候变化%d点…",
+    button = "",
+    buttonF = ""
+  },
+  [43182] = {
+    id = 43182,
+    Type = 1,
+    Title = "",
+    Text = "时机精准的投入了适宜的调料，汤汁变得更加醇厚香浓，调料增加%d点！",
+    button = "",
+    buttonF = ""
+  },
+  [43183] = {
+    id = 43183,
+    Type = 1,
+    Title = "",
+    Text = "精湛的刀工将食材好似复活一般，使食材增加%d点！",
+    button = "",
+    buttonF = ""
+  },
+  [43184] = {
+    id = 43184,
+    Type = 1,
+    Title = "",
+    Text = "将温度调节的恰到好处，火候增加%d点！",
+    button = "",
+    buttonF = ""
+  },
+  [43185] = {
+    id = 43185,
+    Type = 1,
+    Title = "",
+    Text = "这锅肉炖的软烂入味，汤醇厚可口，仿佛获得了无穷的力量！对接下来的公会战都充满了信心呢！",
+    button = "",
+    buttonF = ""
+  },
+  [43186] = {
+    id = 43186,
+    Type = 1,
+    Title = "",
+    Text = "暂时还没有冒险任务哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43187] = {
+    id = 43187,
+    Type = 1,
+    Title = "",
+    Text = "分享成功！",
+    button = "",
+    buttonF = ""
+  },
+  [43188] = {
+    id = 43188,
+    Type = 1,
+    Title = "",
+    Text = "抱歉！无法预设装备栏的装备。",
+    button = "",
+    buttonF = ""
+  },
+  [43189] = {
+    id = 43189,
+    Type = 1,
+    Title = "",
+    Text = "请在%s秒内击杀所有魔物！",
+    button = "",
+    buttonF = ""
+  },
+  [43191] = {
+    id = 43191,
+    Type = 1,
+    Title = "",
+    Text = "到达20级后解锁精炼功能",
+    button = "",
+    buttonF = ""
+  },
+  [43192] = {
+    id = 43192,
+    Type = 1,
+    Title = "",
+    Text = "完成任务“附魔！”后解锁附魔功能",
+    button = "",
+    buttonF = ""
+  },
+  [43193] = {
+    id = 43193,
+    Type = 1,
+    Title = "",
+    Text = "当前无法操作，请离开副本",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [43194] = {
+    id = 43194,
+    Type = 1,
+    Title = "",
+    Text = "宝箱已经空了！",
+    button = "",
+    buttonF = ""
+  },
+  [43195] = {
+    id = 43195,
+    Type = 1,
+    Title = "",
+    Text = "有队员与你不属于同公会成员，请确认后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43196] = {
+    id = 43196,
+    Type = 1,
+    Title = "",
+    Text = "加入公会不足一周，请稍后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43197] = {
+    id = 43197,
+    Type = 1,
+    Title = "",
+    Text = "队伍内有成员加入公会不足一周，请确认后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43198] = {
+    id = 43198,
+    Type = 1,
+    Title = "",
+    Text = "队伍内有成员与你不属于一个公会，请确认后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43199] = {
+    id = 43199,
+    Type = 2,
+    Title = "",
+    Text = "你还没有加入任何公会，无法前往挑战，尝试加入一个公会吧！",
+    button = "这就看看",
+    buttonF = "我再想想"
+  },
+  [43200] = {
+    id = 43200,
+    Type = 131072,
+    Title = "",
+    Text = "[c][f5f5ae]%s[-][/c]欧皇附体，通过【%s】获得了[c][f5f5ae]%s[-][/c]！",
+    button = "",
+    buttonF = ""
+  },
+  [43201] = {
+    id = 43201,
+    Type = 1,
+    Title = "",
+    Text = "清除%s/100只魔物后召唤魔王",
+    button = "",
+    buttonF = ""
+  },
+  [43202] = {
+    id = 43202,
+    Type = 1,
+    Title = "",
+    Text = "击杀%s/100只魔物后召唤魔王",
+    button = "",
+    buttonF = ""
+  },
+  [43203] = {
+    id = 43203,
+    Type = 65536,
+    Title = "",
+    Text = "是否消耗一个%s来激活遗物的力量，使用后%s消失",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [43204] = {
+    id = 43204,
+    Type = 128,
+    Title = "",
+    Text = "%s击杀了%s成为了MVP，由于受到虚空领域的侵蚀，此次战斗消耗%s分钟时长！",
+    button = "",
+    buttonF = ""
+  },
+  [43205] = {
+    id = 43205,
+    Type = 128,
+    Title = "",
+    Text = "%s击杀了%s成为了MVP，作为参战队员获得同等奖励，由于受到虚空领域的侵蚀，此次战斗消耗%s分钟时长！",
+    button = "",
+    buttonF = ""
+  },
+  [43206] = {
+    id = 43206,
+    Type = 128,
+    Title = "",
+    Text = "%s击杀了%s成为了MVP，由于时长不足以抗衡虚空的侵蚀，此次战斗无法获得奖励！",
+    button = "",
+    buttonF = ""
+  },
+  [43207] = {
+    id = 43207,
+    Type = 128,
+    Title = "",
+    Text = "%s击杀了%s成为了MVP，由于时长不足以抗衡虚空的侵蚀，作为参战队员此次战斗无法获得奖励！",
+    button = "",
+    buttonF = ""
+  },
+  [43208] = {
+    id = 43208,
+    Type = 129,
+    Title = "",
+    Text = "由于时空冒险药水的效力，你的玩法时长增加了%s点。",
+    button = "",
+    buttonF = ""
+  },
+  [43209] = {
+    id = 43209,
+    Type = 1,
+    Title = "",
+    Text = "签名不可以为空哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43210] = {
+    id = 43210,
+    Type = 1,
+    Title = "",
+    Text = "您的当前着装与欲保存的套装记录完全一致，无需保存~",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [43211] = {
+    id = 43211,
+    Type = 1,
+    Title = "",
+    Text = "您欲切换的套装与当前着装完全一致，无需切换~",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [43212] = {
+    id = 43212,
+    Type = 1,
+    Title = "",
+    Text = "您欲切换的套装内无装备记录，请穿着欲存储的装备套装并选择保存后再试~",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [43213] = {
+    id = 43213,
+    Type = 1,
+    Title = "",
+    Text = "本周玩法时长已达上限，暂时无法使用额外的时空冒险药水，请下周再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43214] = {
+    id = 43214,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否消耗%s分钟的玩法时长进行扫荡？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [43215] = {
+    id = 43215,
+    Type = 1,
+    Title = "",
+    Text = "恭喜您激活了新的【个性标签】！",
+    button = "",
+    buttonF = ""
+  },
+  [43217] = {
+    id = 43217,
+    Type = 1,
+    Title = "",
+    Text = "获得[c][ffff00]{itemicon=13605}秩序之碎片[-][/c]！",
+    button = "",
+    buttonF = ""
+  },
+  [43218] = {
+    id = 43218,
+    Type = 1,
+    Title = "",
+    Text = "获得[c][ffff00]{itemicon=13606}乐理之碎片[-][/c]！",
+    button = "",
+    buttonF = ""
+  },
+  [43219] = {
+    id = 43219,
+    Type = 1,
+    Title = "",
+    Text = "获得[c][ffff00]{itemicon=13607}符文之碎片[-][/c]！",
+    button = "",
+    buttonF = ""
+  },
+  [43220] = {
+    id = 43220,
+    Type = 1,
+    Title = "",
+    Text = "获得[c][ffff00]{itemicon=13608}彩绘之碎片[-][/c]！",
+    button = "",
+    buttonF = ""
+  },
+  [43221] = {
+    id = 43221,
+    Type = 1,
+    Title = "",
+    Text = "双击屏幕任意位置即可唤出UI",
+    button = "",
+    buttonF = ""
+  },
+  [43222] = {
+    id = 43222,
+    Type = 1,
+    Title = "",
+    Text = "只能选择3个标签哦，请取消后继续勾选~",
+    button = "",
+    buttonF = ""
+  },
+  [43223] = {
+    id = 43223,
+    Type = 1,
+    Title = "",
+    Text = "当前欲保存的装备套装中无任何装备，请至少装备一件装备后再试~",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [43224] = {
+    id = 43224,
+    Type = 128,
+    Title = "",
+    Text = "由于十胜石祭坛的效果，你刚获得的【%s】自动提升1级！",
+    button = "",
+    buttonF = ""
+  },
+  [43225] = {
+    id = 43225,
+    Type = 128,
+    Title = "",
+    Text = "由于十胜石祭坛的效果，你身上的以下效果等级下降：%s，累计击杀精英魔物可提升此类效果等级。",
+    button = "",
+    buttonF = ""
+  },
+  [43226] = {
+    id = 43226,
+    Type = 128,
+    Title = "",
+    Text = "检测当前身上无可降低等级的效果，十胜石祭坛的效果失去了效力！",
+    button = "",
+    buttonF = ""
+  },
+  [43227] = {
+    id = 43227,
+    Type = 128,
+    Title = "",
+    Text = "由于十胜石祭坛的效果，击杀精英魔物达到条件，【%s】效果提升1级！",
+    button = "",
+    buttonF = ""
+  },
+  [43228] = {
+    id = 43228,
+    Type = 1,
+    Title = "",
+    Text = "获得线索{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [43229] = {
+    id = 43229,
+    Type = 1,
+    Title = "",
+    Text = "受到时间乱流的影响，魔物回到了原本的世界！",
+    button = "",
+    buttonF = ""
+  },
+  [43230] = {
+    id = 43230,
+    Type = 2,
+    Title = "",
+    Text = "该操作会重置心象世界的流程从头开始，确认重置吗？",
+    button = "确认",
+    buttonF = "我再想想"
+  },
+  [43231] = {
+    id = 43231,
+    Type = 1,
+    Title = "",
+    Text = "一道金光闪过，你失去了【感知】的能力！",
+    button = "",
+    buttonF = ""
+  },
+  [43235] = {
+    id = 43235,
+    Type = 67108864,
+    Title = "",
+    Text = "击败皮里恩的手下波利",
+    button = "",
+    buttonF = ""
+  },
+  [43236] = {
+    id = 43236,
+    Type = 67108864,
+    Title = "",
+    Text = "将皮里恩引诱进雷霆裁决",
+    button = "",
+    buttonF = ""
+  },
+  [43237] = {
+    id = 43237,
+    Type = 67108864,
+    Title = "",
+    Text = "攻击失去防护罩的皮里恩",
+    button = "",
+    buttonF = ""
+  },
+  [43239] = {
+    id = 43239,
+    Type = 1,
+    Title = "",
+    Text = "请尝试转动摄像机，对准拍摄目标~",
+    button = "",
+    buttonF = ""
+  },
+  [43240] = {
+    id = 43240,
+    Type = 128,
+    Title = "",
+    Text = "本次通关消耗%s分%s秒战斗时长，%s分%s秒玩法时长。",
+    button = "",
+    buttonF = ""
+  },
+  [43241] = {
+    id = 43241,
+    Type = 128,
+    Title = "",
+    Text = "本次参与虚空领域MVP玩法消耗%s分%s秒战斗时长，%s分%s秒玩法时长。",
+    button = "",
+    buttonF = ""
+  },
+  [43242] = {
+    id = 43242,
+    Type = 2,
+    Title = "",
+    Text = "当前玩法时长不足，本次通关将额外消耗%s战斗时长进行补充，是否前往？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [43243] = {
+    id = 43243,
+    Type = 2,
+    Title = "",
+    Text = "当前战斗时长不足，本次通关将额外消耗%s玩法时长进行补充，是否前往？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [43244] = {
+    id = 43244,
+    Type = 128,
+    Title = "",
+    Text = "恭喜你在此次战斗中成为了幸运玩家，由于受到虚空领域的侵蚀，此次战斗消耗了6分钟时长，以下为本次幸运掉落：",
+    button = "",
+    buttonF = ""
+  },
+  [43245] = {
+    id = 43245,
+    Type = 17,
+    Title = "",
+    Text = "幸运玩家%s获得了[c][ed76ff]%s×%s[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [43246] = {
+    id = 43246,
+    Type = 2,
+    Title = "",
+    Text = "检测当前处于换线疲劳状态，是否继续使用？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [43247] = {
+    id = 43247,
+    Type = 1,
+    Title = "",
+    Text = "请先解锁英雄职业",
+    button = "",
+    buttonF = ""
+  },
+  [43248] = {
+    id = 43248,
+    Type = 1,
+    Title = "",
+    Text = "您已解锁该道具",
+    button = "",
+    buttonF = ""
+  },
+  [43249] = {
+    id = 43249,
+    Type = 128,
+    Title = "",
+    Text = "%s击杀了%s成为了MVP，由于处于换线疲劳阶段，作为参战队员此次战斗无法获得奖励！",
+    button = "",
+    buttonF = ""
+  },
+  [43250] = {
+    id = 43250,
+    Type = 2,
+    Title = "",
+    Text = "活动结束！\n已领取完所有奖励",
+    button = "知道了",
+    buttonF = ""
+  },
+  [43251] = {
+    id = 43251,
+    Type = 1,
+    Title = "",
+    Text = "暂未开启，敬请期待",
+    button = "",
+    buttonF = ""
+  },
+  [43252] = {
+    id = 43252,
+    Type = 1,
+    Title = "",
+    Text = "有队伍成员未通关上个难度，挑战失败",
+    button = "",
+    buttonF = ""
+  },
+  [43253] = {
+    id = 43253,
+    Type = 1,
+    Title = "",
+    Text = "打赏失败！\n该照片已下架，请刷新界面！",
+    button = "",
+    buttonF = ""
+  },
+  [43254] = {
+    id = 43254,
+    Type = 1,
+    Title = "",
+    Text = "你的坐骑抖动了一下，什么都没有发生！",
+    button = "",
+    buttonF = ""
+  },
+  [43256] = {
+    id = 43256,
+    Type = 1,
+    Title = "",
+    Text = "Base等级达到15级时开启强化功能！",
+    button = "",
+    buttonF = ""
+  },
+  [43257] = {
+    id = 43257,
+    Type = 1,
+    Title = "",
+    Text = "Base等级达到10级时开启精炼功能！",
+    button = "",
+    buttonF = ""
+  },
+  [43258] = {
+    id = 43258,
+    Type = 1,
+    Title = "",
+    Text = "Base等级达到55级时完成附魔任务解锁该功能！",
+    button = "",
+    buttonF = ""
+  },
+  [43259] = {
+    id = 43259,
+    Type = 2,
+    Title = "",
+    Text = "以下类型的道具不会占用背包及仓库空间：\n武器卡片、副手卡片、盔甲卡片、披风卡片、鞋子卡片、饰品卡片、头饰卡片",
+    button = "知道了",
+    buttonF = ""
+  },
+  [43260] = {
+    id = 43260,
+    Type = 2,
+    Title = "",
+    Text = "以下类型的道具不会占用背包及仓库空间：\n图纸、家具图纸、制作材料、宠物材料",
+    button = "知道了",
+    buttonF = ""
+  },
+  [43262] = {
+    id = 43262,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否消耗%s金币再次抽取？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [43263] = {
+    id = 43263,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "恭喜您获得新的英雄职业，是否立即切换职业？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43264] = {
+    id = 43264,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否消耗%s金币重置转盘奖励？重置后将清空当前抽取进度。",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [43265] = {
+    id = 43265,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "抽取前需要先揭晓奖励，是否揭晓属于您的幸运奖励？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43266] = {
+    id = 43266,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "真遗憾，抽取到重复奖励，本轮转盘结束！",
+    button = "确定",
+    buttonF = ""
+  },
+  [43267] = {
+    id = 43267,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "恭喜您，获得了本轮转盘中的所有奖励！",
+    button = "确定",
+    buttonF = ""
+  },
+  [43268] = {
+    id = 43268,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否消耗%s金币参与活动？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [43269] = {
+    id = 43269,
+    Type = 1,
+    Title = "",
+    Text = "您已获得该奖励！",
+    button = "",
+    buttonF = ""
+  },
+  [43272] = {
+    id = 43272,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否消耗波利币进行兑换？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [43274] = {
+    id = 43274,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "确定支付[ed76ff]%sB格猫金币[-]，打赏该作者吗？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43275] = {
+    id = 43275,
+    Type = 1,
+    Title = "",
+    Text = "作者稍后会收到打赏，感谢支持~",
+    button = "",
+    buttonF = ""
+  },
+  [43276] = {
+    id = 43276,
+    Type = 1,
+    Title = "",
+    Text = "职业阶段达到二转以上才可进行升级操作哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43277] = {
+    id = 43277,
+    Type = 1,
+    Title = "",
+    Text = "请解锁公会建筑魔法缝纫机后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43278] = {
+    id = 43278,
+    Type = 1,
+    Title = "",
+    Text = "杜拉俾斯大人开启了虚空领域的庆典，你额外获得了一份虚空遗藏奖励：%s",
+    button = "",
+    buttonF = ""
+  },
+  [43279] = {
+    id = 43279,
+    Type = 1,
+    Title = "",
+    Text = "有附魔/卡片/升级档的装备无法分解，请先进行装备还原~",
+    button = "",
+    buttonF = ""
+  },
+  [43280] = {
+    id = 43280,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "您的投喂中有蓝色品质以上的卡片，确认重置吗？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [43282] = {
+    id = 43282,
+    Type = 1,
+    Title = "",
+    Text = "该好友在黑名单内，无法发送红包哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43283] = {
+    id = 43283,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "是否开启幸运冒险家？开启后需至少等待60分钟后方可关闭该功能",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43284] = {
+    id = 43284,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "是否关闭幸运冒险家？关闭后需至少等待60分钟后方可开启该功能",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43285] = {
+    id = 43285,
+    Type = 1,
+    Title = "",
+    Text = "距离下次开关幸运冒险家功能还需等待%s分钟",
+    button = "",
+    buttonF = ""
+  },
+  [43286] = {
+    id = 43286,
+    Type = 1,
+    Title = "",
+    Text = "今天已经从恶魔们身上抢了一个[c][ffff00]德古拉的珍藏[-][/c]了，抢的太多的话，会惹众怒的！！",
+    button = "",
+    buttonF = ""
+  },
+  [43287] = {
+    id = 43287,
+    Type = 2,
+    Title = "提示",
+    Text = "是否消耗一个【%s】来完成本次转职？",
+    button = "确定转职",
+    buttonF = "我再想想"
+  },
+  [43288] = {
+    id = 43288,
+    Type = 1,
+    Title = "",
+    Text = "未满足条件，无法进行转职",
+    button = "",
+    buttonF = ""
+  },
+  [43289] = {
+    id = 43289,
+    Type = 1,
+    Title = "",
+    Text = "当前时长不足%s分钟，无法获得奖励，可购买并使用时空冒险药水后再试~",
+    button = "",
+    buttonF = ""
+  },
+  [43290] = {
+    id = 43290,
+    Type = 1,
+    Title = "",
+    Text = "Mini魔物还在研究中，暂时未开启哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43291] = {
+    id = 43291,
+    Type = 1,
+    Title = "",
+    Text = "您还没有组队，无法发送该红包！",
+    button = "",
+    buttonF = ""
+  },
+  [43292] = {
+    id = 43292,
+    Type = 1,
+    Title = "",
+    Text = "本周奖励次数已耗尽，本次战斗无法获得奖励",
+    button = "",
+    buttonF = ""
+  },
+  [43293] = {
+    id = 43293,
+    Type = 2,
+    Title = "",
+    Text = "本次出售的道具中含有高精炼等级装备，本次操作不可撤销，为避免造成无法挽回的损失，请玩家再次确认是否出售所选装备？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43294] = {
+    id = 43294,
+    Type = 2,
+    Title = "",
+    Text = "本次分解的装备中含有高精炼等级装备，本次操作不可撤销，为避免造成无法挽回的损失，请玩家再次确认是否分解所选装备？",
+    button = "确定",
+    buttonF = "取消"
+  },
+  [43295] = {
+    id = 43295,
+    Type = 1,
+    Title = "",
+    Text = "已自动消耗精炼值修复破损状态",
+    button = "",
+    buttonF = ""
+  },
+  [43296] = {
+    id = 43296,
+    Type = 1,
+    Title = "",
+    Text = "该精炼券不可提升当前穿戴装备的精炼等级",
+    button = "",
+    buttonF = ""
+  },
+  [43297] = {
+    id = 43297,
+    Type = 2,
+    Title = "",
+    Text = "是否将[c][ffff00]+%s[-][/c]精炼等级提升至[c][ffff00]+%s[-][/c]？",
+    button = "是",
+    buttonF = "否"
+  },
+  [43298] = {
+    id = 43298,
+    Type = 1,
+    Title = "",
+    Text = "精炼材料不足",
+    button = "",
+    buttonF = ""
+  },
+  [43299] = {
+    id = 43299,
+    Type = 1,
+    Title = "",
+    Text = "精炼值已达最大值",
+    button = "",
+    buttonF = ""
+  },
+  [43300] = {
+    id = 43300,
+    Type = 2,
+    Title = "",
+    Text = "已超过精炼等级提升至+%s需要的精炼值，超出部分会继承到此装备上用于下次安全精炼或是修复破损状态，是否继续？",
+    button = "是",
+    buttonF = "否"
+  },
+  [43301] = {
+    id = 43301,
+    Type = 2,
+    Title = "",
+    Text = "用于修复的装备精炼值有剩余，超出部分会继承到此装备上用于下次安全精炼或是自动修复破损状态，是否继续？",
+    button = "是",
+    buttonF = "否"
+  },
+  [43302] = {
+    id = 43302,
+    Type = 2,
+    Title = "",
+    Text = "含有精炼值的装备上架交易所时会暂时清空精炼值（若未成功卖出，下架后会返还），是否暂时清空此装备精炼值并进行上架？",
+    button = "是",
+    buttonF = "否"
+  },
+  [43303] = {
+    id = 43303,
+    Type = 2,
+    Title = "",
+    Text = "当前操作将会清空所有精炼值，本次操作不可撤销，是否继续？",
+    button = "是",
+    buttonF = "否"
+  },
+  [43304] = {
+    id = 43304,
+    Type = 2,
+    Title = "",
+    Text = "设备存储空间已满，请及时释放空间以便继续下载游戏数据。\n您仍可以继续游戏，但部分未下载资源会被临时资源代替。",
+    button = "知道了",
+    buttonF = ""
+  },
+  [43305] = {
+    id = 43305,
+    Type = 2,
+    Title = "",
+    Text = "将返回下载完整资源界面，完整资源下载过程中无法进行游戏，支持后台下载。",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [43306] = {
+    id = 43306,
+    Type = 1,
+    Title = "",
+    Text = "此奖励已被该账号下的其余角色领取",
+    button = "",
+    buttonF = ""
+  },
+  [43307] = {
+    id = 43307,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "距离大奖不远啦！“手气一转”到重复奖励将结束本轮，推荐使用不重置的“幸运一转”哦~",
+    button = "手气一转",
+    buttonF = "幸运一转",
+    TimeInterval = 1
+  },
+  [43308] = {
+    id = 43308,
+    Type = 1,
+    Title = "",
+    Text = "该宠物不支持改名哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43309] = {
+    id = 43309,
+    Type = 256,
+    Title = "",
+    Text = "  [c][ffff00]{countDown=%s}[-][/c]秒后魔物降临",
+    button = "",
+    buttonF = ""
+  },
+  [43310] = {
+    id = 43310,
+    Type = 1,
+    Title = "",
+    Text = "请先完成前置任务【混沌入侵】",
+    button = "",
+    buttonF = ""
+  },
+  [43311] = {
+    id = 43311,
+    Type = 1,
+    Title = "",
+    Text = "当前技能受海拉的【遗忘蜜酒】作用，暂不可用",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [43312] = {
+    id = 43312,
+    Type = 256,
+    Title = "",
+    Text = "  [c][ffff00]{countDown=%s}[-][/c]秒后魔物降临",
+    button = "",
+    buttonF = ""
+  },
+  [43313] = {
+    id = 43313,
+    Type = 1,
+    Title = "",
+    Text = "受职业【海拉】影响，复活冷却剩余%s秒",
+    button = "",
+    buttonF = "",
+    showInPVP = 1
+  },
+  [43314] = {
+    id = 43314,
+    Type = 1,
+    Title = "",
+    Text = "当前任务为多兰族专属剧情,请切换成多兰族后体验~",
+    button = "",
+    buttonF = ""
+  },
+  [43316] = {
+    id = 43316,
+    Type = 1,
+    Title = "",
+    Text = "请等待对方接受挑战",
+    button = "",
+    buttonF = ""
+  },
+  [43317] = {
+    id = 43317,
+    Type = 1,
+    Title = "",
+    Text = "您的爱情挑战被拒绝啦~！",
+    button = "",
+    buttonF = ""
+  },
+  [43318] = {
+    id = 43318,
+    Type = 1,
+    Title = "",
+    Text = "这场爱情挑战已经超时啦~",
+    button = "",
+    buttonF = ""
+  },
+  [43319] = {
+    id = 43319,
+    Type = 1,
+    Title = "",
+    Text = "爱情的信号飞远了！",
+    button = "",
+    buttonF = ""
+  },
+  [43320] = {
+    id = 43320,
+    Type = 1,
+    Title = "",
+    Text = "您已做出选择，正在等待对方选择",
+    button = "",
+    buttonF = ""
+  },
+  [43321] = {
+    id = 43321,
+    Type = 1,
+    Title = "",
+    Text = "您赢得了本场挑战！",
+    button = "",
+    buttonF = ""
+  },
+  [43322] = {
+    id = 43322,
+    Type = 1,
+    Title = "",
+    Text = "请先完成当前的挑战哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43323] = {
+    id = 43323,
+    Type = 1,
+    Title = "",
+    Text = "对方正在进行挑战，过会再来吧！",
+    button = "",
+    buttonF = ""
+  },
+  [43324] = {
+    id = 43324,
+    Type = 1,
+    Title = "",
+    Text = "获得信息{itemicon=%s}{item=%s,%s}",
+    button = "",
+    buttonF = ""
+  },
+  [43325] = {
+    id = 43325,
+    Type = 1,
+    Title = "",
+    Text = "该部位暂未开放，敬请期待！",
+    button = "",
+    buttonF = ""
+  },
+  [43326] = {
+    id = 43326,
+    Type = 1,
+    Title = "",
+    Text = "不可在同部位栏装配两件同名装备！",
+    button = "",
+    buttonF = ""
+  },
+  [43327] = {
+    id = 43327,
+    Type = 1,
+    Title = "",
+    Text = "当前材料不足，是否前往【影子秘境】获取指定素材？",
+    button = "",
+    buttonF = ""
+  },
+  [43328] = {
+    id = 43328,
+    Type = 2,
+    Title = "",
+    Text = "装备升级后会清空所有精炼值，是否继续？",
+    button = "是",
+    buttonF = "否"
+  },
+  [43329] = {
+    id = 43329,
+    Type = 1,
+    Title = "",
+    Text = "艾尔贝塔主线【寒风中的港湾】后完成支线【失落记忆的馈赠】后解锁！",
+    button = "",
+    buttonF = ""
+  },
+  [43332] = {
+    id = 43332,
+    Type = 2,
+    Title = "",
+    Text = "影子装备需还原后才可上架交易所，是否前往还原？",
+    button = "前往还原",
+    buttonF = "我再想想"
+  },
+  [43333] = {
+    id = 43333,
+    Type = 1,
+    Title = "",
+    Text = "破损装备无法使用精炼券！请修复后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43334] = {
+    id = 43334,
+    Type = 1,
+    Title = "",
+    Text = "该装备暂时无法穿戴至该栏位，请影子淬炼后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43335] = {
+    id = 43335,
+    Type = 1,
+    Title = "",
+    Text = "需要达到110级",
+    button = "",
+    buttonF = ""
+  },
+  [43336] = {
+    id = 43336,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "普隆德拉微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43339] = {
+    id = 43339,
+    Type = 1,
+    Title = "",
+    Text = "珍藏品已激活，可前往冒险手册查看~",
+    button = "",
+    buttonF = ""
+  },
+  [43340] = {
+    id = 43340,
+    Type = 129,
+    Title = "",
+    Text = "主副装备栏同部位无法装配两件远古装备或灌注装备！",
+    button = "",
+    buttonF = ""
+  },
+  [43341] = {
+    id = 43341,
+    Type = 1,
+    Title = "",
+    Text = "恭喜您，获得了活动冒险录经验 [c][ffff00]x%s[-][/c]！",
+    button = "",
+    buttonF = ""
+  },
+  [43342] = {
+    id = 43342,
+    Type = 1,
+    Title = "",
+    Text = "未找到可以进行影子淬炼的装备，请确认后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43343] = {
+    id = 43343,
+    Type = 1,
+    Title = "",
+    Text = "艾尔贝塔主线【寒风中的港湾】后完成支线【失落记忆的馈赠】后解锁！",
+    button = "",
+    buttonF = ""
+  },
+  [43344] = {
+    id = 43344,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "本次操作将消耗%s金币，是否继续？",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 1
+  },
+  [43345] = {
+    id = 43345,
+    Type = 1,
+    Title = "",
+    Text = "看起来好像聊的很火热，暂时还是不要打扰的好~",
+    button = "",
+    buttonF = ""
+  },
+  [43347] = {
+    id = 43347,
+    Type = 1,
+    Title = "古老的龟甲",
+    Text = "刻着不知名的文字以及各种图案，似乎记录着文献，这里应该曾有过文明。",
+    button = "",
+    buttonF = ""
+  },
+  [43348] = {
+    id = 43348,
+    Type = 1,
+    Title = "祭祀器皿",
+    Text = "祭祀用的器皿，上面刻着乌龟形状的的图腾，还有一些看不懂的文字。",
+    button = "",
+    buttonF = ""
+  },
+  [43349] = {
+    id = 43349,
+    Type = 1,
+    Title = "赛尔的讲述信息",
+    Text = "船上的所有人一个不少地出现在这未知之地",
+    button = "",
+    buttonF = ""
+  },
+  [43350] = {
+    id = 43350,
+    Type = 1,
+    Title = "穆奇的讲述信息",
+    Text = "巨大的海浪掀翻了船只,，众人落水后被被水流带至此处",
+    button = "",
+    buttonF = ""
+  },
+  [43351] = {
+    id = 43351,
+    Type = 1,
+    Title = "粘液",
+    Text = "难闻的气味，诡异的颜色，让人产生不好的联想",
+    button = "",
+    buttonF = ""
+  },
+  [43352] = {
+    id = 43352,
+    Type = 1,
+    Title = "天神古籍",
+    Text = "安格尔伯达的冰霜之杖的意外坠落，导致了人类历史上罕见的寒潮，这对人类而言是一场灾难。",
+    button = "",
+    buttonF = ""
+  },
+  [43353] = {
+    id = 43353,
+    Type = 1,
+    Title = "远航者的日记",
+    Text = "阿卡蕾娅亲眼见证了空无一物的海面上，一只巨型乌龟的突然出现。",
+    button = "",
+    buttonF = ""
+  },
+  [43354] = {
+    id = 43354,
+    Type = 1,
+    Title = "《远航者回忆录》",
+    Text = "巨型乌龟出现后，就开始在海面上缓慢的游动，并且在那之后从未停止。",
+    button = "",
+    buttonF = ""
+  },
+  [43355] = {
+    id = 43355,
+    Type = 1,
+    Title = "《灯塔观测日志》",
+    Text = "根据长期观察，乌龟岛的移动存在一定的规律，它的移动路线永远围绕着冰霜之杖。",
+    button = "",
+    buttonF = ""
+  },
+  [43356] = {
+    id = 43356,
+    Type = 1,
+    Title = "阿伦的调查报告",
+    Text = "根据阿伦的调查，乌龟岛周围的雾气是由于岛屿内部的高温导致冰块的融化而造成的。",
+    button = "",
+    buttonF = ""
+  },
+  [43357] = {
+    id = 43357,
+    Type = 1,
+    Title = "",
+    Text = "检测副装备栏已穿戴灌注装备，请尝试穿戴不同类型的装备！",
+    button = "",
+    buttonF = ""
+  },
+  [43358] = {
+    id = 43358,
+    Type = 1,
+    Title = "",
+    Text = "检测副装备栏已穿戴远古装备，请尝试穿戴不同类型的装备！",
+    button = "",
+    buttonF = ""
+  },
+  [43359] = {
+    id = 43359,
+    Type = 1,
+    Title = "",
+    Text = "副装备栏仅能穿戴已激活影子能力的远古和灌注装备！",
+    button = "",
+    buttonF = ""
+  },
+  [43360] = {
+    id = 43360,
+    Type = 1,
+    Title = "",
+    Text = "检测主装备栏已穿戴远古装备，请尝试穿戴不同类型的装备！",
+    button = "",
+    buttonF = ""
+  },
+  [43361] = {
+    id = 43361,
+    Type = 1,
+    Title = "",
+    Text = "检测主装备栏已穿戴非远古装备，副装备栏仅能穿戴已激活影子能力的远古装备！",
+    button = "",
+    buttonF = ""
+  },
+  [43364] = {
+    id = 43364,
+    Type = 1,
+    Title = "影子装备出售",
+    Text = "这是一件激活了影子能力的装备，需要还原后才能出售！",
+    button = "",
+    buttonF = ""
+  },
+  [43365] = {
+    id = 43365,
+    Type = 2,
+    Title = "提示",
+    Text = "寄出的明信片将无法撤回哦~\n确定要这样寄出去吗？",
+    button = "寄出",
+    buttonF = "我再想想"
+  },
+  [43366] = {
+    id = 43366,
+    Type = 2,
+    Title = "提示",
+    Text = "关闭界面将会丢失已编辑的内容哦~",
+    button = "关闭",
+    buttonF = "取消"
+  },
+  [43367] = {
+    id = 43367,
+    Type = 2,
+    Title = "提示",
+    Text = "【明信片】保存已达上限，请前往整理",
+    button = "前往",
+    buttonF = "确认"
+  },
+  [43368] = {
+    id = 43368,
+    Type = 1,
+    Title = "",
+    Text = "明信片已保存到个人相册 - 明信片",
+    button = "",
+    buttonF = ""
+  },
+  [43369] = {
+    id = 43369,
+    Type = 2,
+    Title = "提示",
+    Text = "确定要删除选中的明信片吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [43370] = {
+    id = 43370,
+    Type = 1,
+    Title = "",
+    Text = "点击此处，切换显示内容",
+    button = "",
+    buttonF = ""
+  },
+  [43371] = {
+    id = 43371,
+    Type = 131072,
+    Title = "",
+    Text = "！危险！宝石灵兽即将带领三角兽军团入侵艾卡拉奇！",
+    button = "",
+    buttonF = ""
+  },
+  [43372] = {
+    id = 43372,
+    Type = 131072,
+    Title = "",
+    Text = "宝石灵兽被击退了，艾卡拉奇恢复了往日的宁静！",
+    button = "",
+    buttonF = ""
+  },
+  [43373] = {
+    id = 43373,
+    Type = 131072,
+    Title = "",
+    Text = "邪恶的力量凝聚到了巅峰，宝石灵兽降临在了【异世界·黑洞】！",
+    button = "",
+    buttonF = ""
+  },
+  [43374] = {
+    id = 43374,
+    Type = 2,
+    Title = "提示",
+    Text = "确定要删除并替换掉该明信片吗？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [43375] = {
+    id = 43375,
+    Type = 1,
+    Title = "",
+    Text = "要使用【实时语音】功能，请依次启动“设置”>“权限”>“麦克风”",
+    button = "前往",
+    buttonF = "关闭"
+  },
+  [43376] = {
+    id = 43376,
+    Type = 1,
+    Title = "",
+    Text = "要使用【拍照存储】功能，请依次启动“设置”>“权限”>“存储”",
+    button = "前往",
+    buttonF = "关闭"
+  },
+  [43377] = {
+    id = 43377,
+    Type = 1,
+    Title = "",
+    Text = "请选择具体商品进行预购。",
+    button = "",
+    buttonF = ""
+  },
+  [43378] = {
+    id = 43378,
+    Type = 2,
+    Title = "温馨提示",
+    Text = "系统将自动上架以下道具：\n%s",
+    button = "确认",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [43379] = {
+    id = 43379,
+    Type = 1,
+    Title = "",
+    Text = "验证码错误，请确认后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43380] = {
+    id = 43380,
+    Type = 129,
+    Title = "",
+    Text = "预购订单建立成功~当前预付金额不等于实际交易花费哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43381] = {
+    id = 43381,
+    Type = 1,
+    Title = "",
+    Text = "喵呜~不在活动时间哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43382] = {
+    id = 43382,
+    Type = 1,
+    Title = "",
+    Text = "当前预购订单已达上限，本订单建立失败",
+    button = "",
+    buttonF = ""
+  },
+  [43383] = {
+    id = 43383,
+    Type = 1,
+    Title = "",
+    Text = "限定特典时间不足，功能无法使用，请使用月卡后再试~",
+    button = "",
+    buttonF = ""
+  },
+  [43384] = {
+    id = 43384,
+    Type = 131072,
+    Title = "",
+    Text = "危险！魔鬼大乌贼即将带领魔物军团入侵【克魔岛】！",
+    button = "",
+    buttonF = ""
+  },
+  [43385] = {
+    id = 43385,
+    Type = 131072,
+    Title = "",
+    Text = "魔鬼大乌贼被击退了，克魔岛恢复了往日的宁静！",
+    button = "",
+    buttonF = ""
+  },
+  [43386] = {
+    id = 43386,
+    Type = 131072,
+    Title = "",
+    Text = "邪恶的力量凝聚到了巅峰，魔鬼大乌贼降临在了【异世界·黑洞】！",
+    button = "",
+    buttonF = ""
+  },
+  [43387] = {
+    id = 43387,
+    Type = 1,
+    Title = "",
+    Text = "破损装备无法进行打洞操作！请至忽克连处修复后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43389] = {
+    id = 43389,
+    Type = 1,
+    Title = "",
+    Text = "当前精炼券不适用于该装备",
+    button = "",
+    buttonF = ""
+  },
+  [43391] = {
+    id = 43391,
+    Type = 1,
+    Title = "",
+    Text = "神树之灵尚未觉醒，请先唤醒神树之灵后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43392] = {
+    id = 43392,
+    Type = 131072,
+    Title = "",
+    Text = "危险！拉链熊皮纳塔即将带领皮纳塔军团入侵【梦幻城】！",
+    button = "",
+    buttonF = ""
+  },
+  [43393] = {
+    id = 43393,
+    Type = 131072,
+    Title = "",
+    Text = "拉链熊皮纳塔被击退了，梦幻城恢复了往日的宁静！",
+    button = "",
+    buttonF = ""
+  },
+  [43394] = {
+    id = 43394,
+    Type = 131072,
+    Title = "",
+    Text = "皮纳塔的力量凝聚到了巅峰，拉链熊皮纳塔降临在了【异世界·黑洞】！",
+    button = "",
+    buttonF = ""
+  },
+  [43395] = {
+    id = 43395,
+    Type = 1,
+    Title = "",
+    Text = "道具{itemicon=%s}{item=%s,%s}使用期限仅剩30分钟",
+    button = "",
+    buttonF = ""
+  },
+  [43396] = {
+    id = 43396,
+    Type = 1,
+    Title = "",
+    Text = "道具{itemicon=%s}{item=%s,%s}已经到期",
+    button = "",
+    buttonF = ""
+  },
+  [43403] = {
+    id = 43403,
+    Type = 1,
+    Title = "",
+    Text = "【时空相框】还未收录你的作品哦~请先去投稿啦~",
+    button = "",
+    buttonF = ""
+  },
+  [43404] = {
+    id = 43404,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "依斯鲁得微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43405] = {
+    id = 43405,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "吉芬微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43406] = {
+    id = 43406,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "梦罗克微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43407] = {
+    id = 43407,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "斐扬微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43408] = {
+    id = 43408,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "古城微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43409] = {
+    id = 43409,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "艾尔帕兰微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43410] = {
+    id = 43410,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "姜饼城微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43411] = {
+    id = 43411,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "天津町微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43412] = {
+    id = 43412,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "朱诺微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43413] = {
+    id = 43413,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "尼夫海姆微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43414] = {
+    id = 43414,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "里希塔乐微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43415] = {
+    id = 43415,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "拉赫微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43416] = {
+    id = 43416,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "洛阳微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43417] = {
+    id = 43417,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "月之湖微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43418] = {
+    id = 43418,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "艾卡拉齐微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43419] = {
+    id = 43419,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "克魔岛微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43420] = {
+    id = 43420,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "普隆德拉王宫微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43421] = {
+    id = 43421,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "罗扎纳微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43422] = {
+    id = 43422,
+    Type = 4096,
+    Title = "uiicon=Skill",
+    Text = "艾尔贝塔微笑小姐商店·%s 已解锁",
+    button = "",
+    buttonF = ""
+  },
+  [43423] = {
+    id = 43423,
+    Type = 32,
+    Title = "",
+    Text = "[回归玩家][c][2986cc][u][url=playername]%s[/url][/u][-][/c]上线了，和Ta一起完成周常副本可以获得额外奖励！",
+    button = "",
+    buttonF = "",
+    ShowInSimplify = 1
+  },
+  [43424] = {
+    id = 43424,
+    Type = 1,
+    Title = "",
+    Text = "死亡骑士已经被释放",
+    button = "",
+    buttonF = ""
+  },
+  [43425] = {
+    id = 43425,
+    Type = 1,
+    Title = "",
+    Text = "虚空典狱长吸收了死亡骑士的力量",
+    button = "",
+    buttonF = ""
+  },
+  [43426] = {
+    id = 43426,
+    Type = 1,
+    Title = "",
+    Text = "灵魂奏者已经被释放",
+    button = "",
+    buttonF = ""
+  },
+  [43427] = {
+    id = 43427,
+    Type = 1,
+    Title = "",
+    Text = "虚空典狱长吸收了灵魂奏者的力量",
+    button = "",
+    buttonF = ""
+  },
+  [43428] = {
+    id = 43428,
+    Type = 1,
+    Title = "",
+    Text = "灾厄魔女已经被释放",
+    button = "",
+    buttonF = ""
+  },
+  [43429] = {
+    id = 43429,
+    Type = 1,
+    Title = "",
+    Text = "虚空典狱长吸收了灾厄魔女的力量",
+    button = "",
+    buttonF = ""
+  },
+  [43430] = {
+    id = 43430,
+    Type = 1,
+    Title = "",
+    Text = "当前目标距离过远，无法选中",
+    button = "",
+    buttonF = ""
+  },
+  [43431] = {
+    id = 43431,
+    Type = 2,
+    Title = "",
+    Text = "是否花费%sB格猫币进行100层古塔弹射？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [43432] = {
+    id = 43432,
+    Type = 131072,
+    Title = "",
+    Text = "危险！暴怒的捣蛋鬼即将带领魔物军团入侵【依斯鲁得岛】！",
+    button = "",
+    buttonF = ""
+  },
+  [43433] = {
+    id = 43433,
+    Type = 131072,
+    Title = "",
+    Text = "暴怒的捣蛋鬼被击退了，依斯鲁得岛恢复了往日的宁静！",
+    button = "",
+    buttonF = ""
+  },
+  [43434] = {
+    id = 43434,
+    Type = 128,
+    Title = "",
+    Text = "！危险！大批魔物即将在60秒后入侵天津町！请各位冒险者前往协助！",
+    button = "",
+    buttonF = ""
+  },
+  [43435] = {
+    id = 43435,
+    Type = 128,
+    Title = "",
+    Text = "！危险！大批魔物即将在10秒后入侵天津町！请各位冒险者前往协助！",
+    button = "",
+    buttonF = ""
+  },
+  [43436] = {
+    id = 43436,
+    Type = 1,
+    Title = "",
+    Text = "您的job等级未满，转职失败！",
+    button = "",
+    buttonF = ""
+  },
+  [43437] = {
+    id = 43437,
+    Type = 2,
+    Title = "",
+    Text = "检测当前上架拍卖的道具指导价格和交易所实际价格差距较大，建议仔细斟酌后确认是否继续上架拍卖行？",
+    button = "确认上架",
+    buttonF = "我再想想"
+  },
+  [43438] = {
+    id = 43438,
+    Type = 2,
+    Title = "",
+    Text = "取消许愿后仍可重新许愿，但当前已积累的[c][fb725f]愿力值将清零[-][/c]。是否确认取消许愿？",
+    button = "是",
+    buttonF = "否"
+  },
+  [43439] = {
+    id = 43439,
+    Type = 131072,
+    Title = "",
+    Text = "邪恶的力量凝聚到了巅峰，暴怒的捣蛋鬼降临在了【依斯鲁得岛】！",
+    button = "",
+    buttonF = ""
+  },
+  [43440] = {
+    id = 43440,
+    Type = 2,
+    Title = "",
+    Text = "当前装备的附魔属性[c][fb725f]优于预保存[-][/c]的附魔属性。是否确认保存？",
+    button = "确认保存",
+    buttonF = "我再想想"
+  },
+  [43441] = {
+    id = 43441,
+    Type = 1,
+    Title = "",
+    Text = "本月您已成功绑定，记得下个月再来试试领取绑定奖励哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43442] = {
+    id = 43442,
+    Type = 1,
+    Title = "",
+    Text = "恭喜您完成了今日所有看板挑战，可以尝试其他获取经验的途径~",
+    button = "",
+    buttonF = ""
+  },
+  [43443] = {
+    id = 43443,
+    Type = 1,
+    Title = "",
+    Text = "任意古城之泪精英宝箱首次开启时获得",
+    button = "",
+    buttonF = ""
+  },
+  [43444] = {
+    id = 43444,
+    Type = 1,
+    Title = "",
+    Text = "剑法密卷不足，无法升级该技能",
+    button = "",
+    buttonF = ""
+  },
+  [43445] = {
+    id = 43445,
+    Type = 65536,
+    Title = "提示",
+    Text = "确定要消耗B格猫金币进行购买吗？",
+    button = "确定",
+    buttonF = "我再想想",
+    TimeInterval = 30
+  },
+  [43446] = {
+    id = 43446,
+    Type = 1,
+    Title = "",
+    Text = "%s不足，无法点亮！",
+    button = "",
+    buttonF = ""
+  },
+  [43447] = {
+    id = 43447,
+    Type = 129,
+    Title = "",
+    Text = "[回归加成]获得[63cd4e]%s[-]Base,[63cd4e]%s[-]Job经验",
+    button = "",
+    buttonF = ""
+  },
+  [43448] = {
+    id = 43448,
+    Type = 2,
+    Title = "",
+    Text = "当前待提升的经验已超过等级上限，请先提升等级上限后再试！",
+    button = "前往提升",
+    buttonF = "我再想想"
+  },
+  [43450] = {
+    id = 43450,
+    Type = 1,
+    Title = "",
+    Text = "同类型的符文最多装备两个！",
+    button = "",
+    buttonF = ""
+  },
+  [43452] = {
+    id = 43452,
+    Type = 1,
+    Title = "",
+    Text = "当前标记的目标是一只无害的小怪兽哦~不能锁定",
+    button = "",
+    buttonF = ""
+  },
+  [43453] = {
+    id = 43453,
+    Type = 1,
+    Title = "",
+    Text = "今日已获得过该宝箱奖励，请明日再来噢~",
+    button = "",
+    buttonF = ""
+  },
+  [43454] = {
+    id = 43454,
+    Type = 2,
+    Title = "提示",
+    Text = "购买所有礼包，将享受最大折扣！\n当前选择将错过优惠，是否确认购买？",
+    button = "确认",
+    buttonF = "我再想想"
+  },
+  [43455] = {
+    id = 43455,
+    Type = 1,
+    Title = "",
+    Text = "Base%s级解锁此课题",
+    button = "",
+    buttonF = ""
+  },
+  [43456] = {
+    id = 43456,
+    Type = 1,
+    Title = "",
+    Text = "本周尚未抵挡住15波怪物，无法进行扫荡",
+    button = "",
+    buttonF = ""
+  },
+  [43457] = {
+    id = 43457,
+    Type = 2,
+    Title = "",
+    Text = "是否要回收选中的物品？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [43458] = {
+    id = 43458,
+    Type = 1,
+    Title = "",
+    Text = "当前声望已达上限，超额的声望将不会记录",
+    button = "",
+    buttonF = ""
+  },
+  [43459] = {
+    id = 43459,
+    Type = 1,
+    Title = "",
+    Text = "注意地图上的奇怪现象并积极探索吧！",
+    button = "",
+    buttonF = ""
+  },
+  [43460] = {
+    id = 43460,
+    Type = 1,
+    Title = "",
+    Text = "此按键不可更改",
+    button = "",
+    buttonF = ""
+  },
+  [43461] = {
+    id = 43461,
+    Type = 1,
+    Title = "",
+    Text = "当前没有可完成的骑士任务，请尝试提升骑士等级或解开地图迷雾！",
+    button = "",
+    buttonF = ""
+  },
+  [43462] = {
+    id = 43462,
+    Type = 1,
+    Title = "",
+    Text = "今日冒险任务已完成！请明日再试~",
+    button = "",
+    buttonF = ""
+  },
+  [43463] = {
+    id = 43463,
+    Type = 1,
+    Title = "",
+    Text = "当前没有可挑战的魔物营地，请明天再试或解开地图迷雾！",
+    button = "",
+    buttonF = ""
+  },
+  [43464] = {
+    id = 43464,
+    Type = 1,
+    Title = "",
+    Text = "尽情探索地图，留意地图上的异常，发现地图上的趣事！",
+    button = "",
+    buttonF = ""
+  },
+  [43465] = {
+    id = 43465,
+    Type = 1,
+    Title = "",
+    Text = "宠物蛋包包已满，无法执行当前操作",
+    button = "",
+    buttonF = ""
+  },
+  [43466] = {
+    id = 43466,
+    Type = 1,
+    Title = "",
+    Text = "请前往移动客户端购买",
+    button = "",
+    buttonF = ""
+  },
+  [43467] = {
+    id = 43467,
+    Type = 2,
+    Title = "",
+    Text = "即将前往网页进行充值，是否确认？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [43468] = {
+    id = 43468,
+    Type = 1,
+    Title = "",
+    Text = "本周尚未通关此副本，无法进行扫荡",
+    button = "",
+    buttonF = ""
+  },
+  [43469] = {
+    id = 43469,
+    Type = 1,
+    Title = "",
+    Text = "%s键无法被设置为快捷键 ",
+    button = "",
+    buttonF = ""
+  },
+  [43470] = {
+    id = 43470,
+    Type = 65536,
+    Title = "",
+    Text = "是否禁止npc乘客上车?",
+    button = "确定",
+    buttonF = "取消",
+    TimeInterval = 7
+  },
+  [43471] = {
+    id = 43471,
+    Type = 1,
+    Title = "",
+    Text = "申请该队伍的人数过多，请稍后再试！",
+    button = "",
+    buttonF = ""
+  },
+  [43472] = {
+    id = 43472,
+    Type = 1,
+    Title = "",
+    Text = "烟花筒距离太近，无法放置哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43473] = {
+    id = 43473,
+    Type = 1,
+    Title = "",
+    Text = "您最多只能同时放置10个烟花筒哟~",
+    button = "",
+    buttonF = ""
+  },
+  [43474] = {
+    id = 43474,
+    Type = 1,
+    Title = "",
+    Text = "同屏内放置烟花筒太多啦~请换个地方试试！",
+    button = "",
+    buttonF = ""
+  },
+  [43475] = {
+    id = 43475,
+    Type = 1,
+    Title = "",
+    Text = "距离烟花筒太远啦~烟花筒将在30s后移除！",
+    button = "",
+    buttonF = ""
+  },
+  [43476] = {
+    id = 43476,
+    Type = 1,
+    Title = "",
+    Text = "非常抱歉，功能未开放，该栏位已锁定~",
+    button = "",
+    buttonF = ""
+  },
+  [43477] = {
+    id = 43477,
+    Type = 65536,
+    Title = "",
+    Text = "即将切换职业/读取存档，当前月卡特权激活中，是否要免费卸下或变更装备中的卡片？（选择【否】则无需消耗Zeny且不变更卡片）",
+    button = "是",
+    buttonF = "否",
+    TimeInterval = 1,
+    Close = 1,
+    showInPVP = 1,
+    SaveOpt = 1
+  },
+  [43478] = {
+    id = 43478,
+    Type = 1,
+    Title = "",
+    Text = "请至少选择1个年度关键点哦~",
+    button = "",
+    buttonF = ""
+  },
+  [43480] = {
+    id = 43480,
+    Type = 2,
+    Title = "",
+    Text = "您是否确定退出“仙境传说RO”？",
+    button = "确认",
+    buttonF = "取消"
+  },
+  [43481] = {
+    id = 43481,
+    Type = 1,
+    Title = "",
+    Text = "剩余玩法时长不足，无法扫荡获取奖励",
+    button = "",
+    buttonF = ""
+  },
+  [43482] = {
+    id = 43482,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否消耗%s分钟玩法时长，为工作中的%s加油，以直接获得%s次的打工报酬？\n\n[c][666666]剩余玩法时长：%s分钟[-][/c]",
+    button = "确认",
+    buttonF = "我再想想",
+    TimeInterval = 7
+  },
+  [43483] = {
+    id = 43483,
+    Type = 1,
+    Title = "",
+    Text = "剩余扫荡次数不足",
+    button = "",
+    buttonF = ""
+  },
+  [43484] = {
+    id = 43484,
+    Type = 129,
+    Title = "",
+    Text = "头像框已激活，可在头像幻化界面切换头像框页签进行装备",
+    button = "",
+    buttonF = ""
+  },
+  [43485] = {
+    id = 43485,
+    Type = 129,
+    Title = "",
+    Text = "背景板已激活，可在头像幻化界面切换背景板页签进行装备",
+    button = "",
+    buttonF = ""
+  },
+  [43486] = {
+    id = 43486,
+    Type = 1,
+    Title = "",
+    Text = "请前往移动客户端分享",
+    button = "",
+    buttonF = ""
+  },
+  [43489] = {
+    id = 43489,
+    Type = 1,
+    Title = "",
+    Text = "您没有可升级的装备，请检查背包！",
+    button = "",
+    buttonF = ""
+  },
+  [43492] = {
+    id = 43492,
+    Type = 256,
+    Title = "",
+    Text = "[c][ffff00]{countDown=%s}[-][/c]",
+    button = "",
+    buttonF = ""
+  },
+  [43494] = {
+    id = 43494,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "当前合成的卡片中含有不可交易的卡片，合成之后的卡片也将是【不可交易】，是否确认合成？",
+    button = "确定",
+    buttonF = "取消",
+    showInPVP = 1
+  },
+  [43499] = {
+    id = 43499,
+    Type = 65536,
+    Title = "温馨提示",
+    Text = "是否选择当前道具作为本次活动的最终奖励？奖励一旦领取，活动将提前结束！",
+    button = "确定",
+    buttonF = "取消",
+    showInPVP = 1
+  },
+  [1000004] = {
+    id = 1000004,
+    Type = 1,
+    Title = "",
+    Text = "背包中没有此分类的道具",
+    button = "",
+    buttonF = ""
+  },
+  [1000005] = {
+    id = 1000005,
+    Type = 1,
+    Title = "",
+    Text = "输入中含有非法字符，检查下再试试吧。",
+    button = "",
+    buttonF = ""
+  },
+  [1000008] = {
+    id = 1000008,
+    Type = 1,
+    Title = "",
+    Text = "获得[c][ffff00]《店铺传单》《紧急文件》《卢恩律法》[-][/c]！",
+    button = "",
+    buttonF = ""
+  },
+  [1000010] = {
+    id = 1000010,
+    Type = 2,
+    Title = "",
+    Text = "模拟器内存不足，请将模拟器内存设置为4G以上",
+    button = "确认",
+    buttonF = ""
+  }
+}
+Table_Sysmsg_bk_fields = {
+  "id",
+  "Type",
+  "Title",
+  "Text",
+  "button",
+  "buttonF",
+  "Confirm",
+  "TimeInterval",
+  "Close",
+  "PrefabType",
+  "ShowInSimplify",
+  "showInPVP",
+  "DontShowAgainDefaultOpt",
+  "SaveOpt"
+}
+return Table_Sysmsg_bk
