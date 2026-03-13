@@ -63,7 +63,7 @@ function GVGRankPopUp_Gvg:InitView()
   local _Fixed_GuildLeader = self:FindComponent("Fixed_GuildLeader", UILabel, self.fixedLabRoot)
   local _Fixed_TotalPoint = self:FindComponent("Fixed_TotalPoint", UILabel, self.fixedLabRoot)
   local _Fixed_AttackPoint = self:FindComponent("Fixed_AttackPoint", UILabel, self.fixedLabRoot)
-  local _Fixed_Line = self:FindComponent("Fixed_Line", UILabel, self.fixedLabRoot)
+  self.Fixed_Line = self:FindComponent("Fixed_Line", UILabel, self.fixedLabRoot)
   if _Fixed_AttackPoint then
     self:Hide(_Fixed_AttackPoint)
   end
@@ -71,11 +71,7 @@ function GVGRankPopUp_Gvg:InitView()
   _Fixed_GuildName.text = ZhString.NewGvg_Rank_FixedGuildName
   _Fixed_GuildLeader.text = ZhString.NewGvg_Rank_FixedGuildLeader
   _Fixed_TotalPoint.text = ZhString.NewGvg_Rank_FixedTotalPoint
-  if GvgProxy.Instance:HasMoreGroupZone() then
-    _Fixed_Line.text = string.format(ZhString.NewGvg_Rank_FixedLineRange, GvgProxy.Instance:GetGroupCnt())
-  else
-    _Fixed_Line.text = ZhString.NewGvg_Rank_FixedLine
-  end
+  self:UpdateFixedLine()
   self.currentSeasonScrollView = self:FindComponent("ScrollView", UIScrollView, self.currentRoot)
   self.rankwrapGo = self:FindGO("Wrap", self.currentSeasonScrollView.gameObject)
   local wraps = {
@@ -99,6 +95,15 @@ function GVGRankPopUp_Gvg:InitView()
   self.seasonToggle_historyLab = self:FindComponent("Label", UILabel, self.seasonToggle_historyTog.gameObject)
   self:AddToggleChange(self.seasonToggle_currentTog, self.seasonToggle_currentLab, self.seasonToggle_currentSp, self.UpdateCurrentSeason)
   self:AddToggleChange(self.seasonToggle_historyTog, self.seasonToggle_historyLab, self.seasonToggle_historySp, self.UpdateHistoricalSeason)
+end
+
+function GVGRankPopUp_Gvg:UpdateFixedLine()
+  local lineIds = GvgProxy.Instance:GetHistoryRankRange()
+  if lineIds and 0 < #lineIds then
+    self.Fixed_Line.text = string.format(ZhString.NewGvg_Rank_FixedLineRange, lineIds[1], lineIds[#lineIds])
+  else
+    self.Fixed_Line.text = ZhString.NewGvg_Rank_FixedLine
+  end
 end
 
 function GVGRankPopUp_Gvg:ClickHistoryArrow()
@@ -228,6 +233,7 @@ function GVGRankPopUp_Gvg:_UpdateHistoryData()
   self:Show(self.historyCtl)
   local data = GvgProxy.Instance:GetGvgHistoryRankData()
   self.historyCtl:ResetDatas(data, nil, true)
+  self:UpdateFixedLine()
   self.container.emptyRoot:SetActive(#data == 0)
   self.fixedLabRoot:SetActive(0 < #data)
   self.historyScrollView:ResetPosition()

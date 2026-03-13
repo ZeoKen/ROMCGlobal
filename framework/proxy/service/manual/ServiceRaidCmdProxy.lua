@@ -122,3 +122,8 @@ function ServiceRaidCmdProxy:RecvAbyssDragonOnOffRaidCmd(data)
   self:Notify(ServiceEvent.RaidCmdAbyssDragonOnOffRaidCmd, data)
   EventManager.Me():PassEvent(ServiceEvent.RaidCmdAbyssDragonOnOffRaidCmd, data)
 end
+
+function ServiceRaidCmdProxy:RecvAbyssDragonDamageRankRaidCmd(data)
+  AbyssFakeDragonProxy.Instance:UpdateDamageRank(data.rank_data)
+  self:Notify(ServiceEvent.RaidCmdAbyssDragonDamageRankRaidCmd, data)
+end

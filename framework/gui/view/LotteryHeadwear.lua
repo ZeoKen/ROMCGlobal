@@ -117,10 +117,20 @@ function LotteryHeadwear:InitMonthData()
   self:InitDressModel()
   self.yearPopUpCtrl:SetData(_LotteryProxy:GetHeadLotteryFilter(), true)
   self.yearGoal = self.yearPopUpCtrl.goal
-  self.curYear = self.yearPopUpCtrl:GetCurConfigValue().year
+  local curConfigValue = self.yearPopUpCtrl:GetCurConfigValue()
+  if not curConfigValue then
+    redlog("【扭蛋】服务器协议QueryLotteryInfo未返回年份数据")
+    return
+  end
+  self.curYear = curConfigValue.year
   self.monthPopUpCtrl:SetData(_LotteryProxy:GetHeadLotteryMonthFilter(self.curYear), true)
   self.monthGoal = self.monthPopUpCtrl.goal
-  self.curMonth = self.monthPopUpCtrl:GetCurConfigValue().month
+  local monthConfigValue = self.monthPopUpCtrl:GetCurConfigValue()
+  if not monthConfigValue then
+    redlog("【扭蛋】服务器协议QueryLotteryInfo未返回月份数据")
+    return
+  end
+  self.curMonth = monthConfigValue.month
   local isSingle = LotteryProxy.Instance:IsHeadWearSingleMonth()
   self.yearPopUpCtrl:SetFatherColliderState(not isSingle)
   self.monthPopUpCtrl:SetFatherColliderState(not isSingle)

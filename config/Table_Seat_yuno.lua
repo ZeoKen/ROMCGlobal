@@ -1884,49 +1884,49 @@ Table_Seat_yuno = {
     id = 70,
     StandPot = Table_Seat_yuno_t.StandPot[31],
     SeatPot = Table_Seat_yuno_t.SeatPot[69],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [71] = {
     id = 71,
     StandPot = Table_Seat_yuno_t.StandPot[31],
     SeatPot = Table_Seat_yuno_t.SeatPot[70],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [72] = {
     id = 72,
     StandPot = Table_Seat_yuno_t.StandPot[31],
     SeatPot = Table_Seat_yuno_t.SeatPot[71],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [73] = {
     id = 73,
     StandPot = Table_Seat_yuno_t.StandPot[31],
     SeatPot = Table_Seat_yuno_t.SeatPot[72],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [74] = {
     id = 74,
     StandPot = Table_Seat_yuno_t.StandPot[32],
     SeatPot = Table_Seat_yuno_t.SeatPot[73],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [75] = {
     id = 75,
     StandPot = Table_Seat_yuno_t.StandPot[32],
     SeatPot = Table_Seat_yuno_t.SeatPot[74],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [76] = {
     id = 76,
     StandPot = Table_Seat_yuno_t.StandPot[32],
     SeatPot = Table_Seat_yuno_t.SeatPot[75],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [77] = {
     id = 77,
     StandPot = Table_Seat_yuno_t.StandPot[32],
     SeatPot = Table_Seat_yuno_t.SeatPot[76],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [78] = {
     id = 78,
@@ -2044,49 +2044,49 @@ Table_Seat_yuno = {
     id = 98,
     StandPot = Table_Seat_yuno_t.StandPot[40],
     SeatPot = Table_Seat_yuno_t.SeatPot[97],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [99] = {
     id = 99,
     StandPot = Table_Seat_yuno_t.StandPot[40],
     SeatPot = Table_Seat_yuno_t.SeatPot[98],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [100] = {
     id = 100,
     StandPot = Table_Seat_yuno_t.StandPot[40],
     SeatPot = Table_Seat_yuno_t.SeatPot[99],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [101] = {
     id = 101,
     StandPot = Table_Seat_yuno_t.StandPot[40],
     SeatPot = Table_Seat_yuno_t.SeatPot[100],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [102] = {
     id = 102,
     StandPot = Table_Seat_yuno_t.StandPot[41],
     SeatPot = Table_Seat_yuno_t.SeatPot[101],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [103] = {
     id = 103,
     StandPot = Table_Seat_yuno_t.StandPot[41],
     SeatPot = Table_Seat_yuno_t.SeatPot[102],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [104] = {
     id = 104,
     StandPot = Table_Seat_yuno_t.StandPot[41],
     SeatPot = Table_Seat_yuno_t.SeatPot[103],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [105] = {
     id = 105,
     StandPot = Table_Seat_yuno_t.StandPot[41],
     SeatPot = Table_Seat_yuno_t.SeatPot[104],
-    Dir = 0.345083
+    Dir = 0.3450831
   },
   [106] = {
     id = 106,

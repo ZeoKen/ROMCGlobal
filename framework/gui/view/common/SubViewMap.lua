@@ -2,7 +2,6 @@ SubViewMap = class("SubViewMap")
 SubViewMap.Instance = nil
 autoImport("ProfessionInfoPanel")
 autoImport("SkyWheelInviteView")
-autoImport("ChangeGuildZoneView")
 autoImport("TransSexPreView")
 autoImport("ServantSubView")
 autoImport("ManorPartnerGiftPopUp")
@@ -13,7 +12,6 @@ function SubViewMap:ctor()
   self.subMap = {}
   self.subMap[1] = SkyWheelInviteView
   self.subMap[2] = ProfessionInfoPanel
-  self.subMap[3] = ChangeGuildZoneView
   self.subMap[4] = SkyWheelInviteView
   self.subMap[5] = SkyWheelInviteView
   self.subMap[6] = TransSexPreView
@@ -22,7 +20,6 @@ function SubViewMap:ctor()
   self.subMap[9] = ManorPartnerGiftPopUp
   self.subMap[10] = SkyWheelInviteView
   self.subMap[11] = DialogPurchaseConfirmView
-  self.subMap[12] = ChangeGvgLineView
   SubViewMap.Instance = self
 end
 

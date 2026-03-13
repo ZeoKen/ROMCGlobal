@@ -2278,6 +2278,7 @@ Table_PoemStep = {
   [73] = {
     id = 73,
     Questid = 311120011,
+    name = "##173235",
     step = 7,
     Descrip = Table_PoemStep_t.Descrip[73],
     TraceInfo = "##173159"
@@ -2449,7 +2450,6 @@ Table_PoemStep = {
   [95] = {
     id = 95,
     Questid = 311150011,
-    name = "##173044",
     step = 7,
     Descrip = Table_PoemStep_t.Descrip[95],
     TraceInfo = "##173261"
@@ -2798,7 +2798,7 @@ local cell_mt = {
     Questid = 311150001,
     TraceInfo = "##172989",
     id = 1,
-    name = "##173235",
+    name = "##173044",
     step = 0
   }
 }

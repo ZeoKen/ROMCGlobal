@@ -111,7 +111,8 @@ function AstralDestinyGraphPointTip:SetData(data)
       LuaGameObject.SetLocalScaleGO(costCells[i].gameObject, 0.7, 0.7, 1)
     end
     if data:IsLocked() then
-      local config = Game.AstralDestinyGraphSeasonPointMap and Game.AstralDestinyGraphSeasonPointMap[season] and Game.AstralDestinyGraphSeasonPointMap[season][index]
+      local configSeason = AstralProxy.GetConfigSeason(season)
+      local config = Game.AstralDestinyGraphSeasonPointMap and Game.AstralDestinyGraphSeasonPointMap[configSeason] and Game.AstralDestinyGraphSeasonPointMap[configSeason][index]
       local unlockNum = config and config.UnlockPassNum or ""
       local str = season < curSeason and ZhString.AstralGraph_NewSeasonUnlock or string.format(ZhString.AstralGraph_PassLevelUnlock, unlockNum)
       self.tipLabel.text = str

@@ -2753,13 +2753,13 @@ Table_Seat_sc_gczc = {
     id = 197,
     StandPot = Table_Seat_sc_gczc_t.StandPot[82],
     SeatPot = Table_Seat_sc_gczc_t.SeatPot[197],
-    Dir = 0.807411
+    Dir = 0.8074108
   },
   [198] = {
     id = 198,
     StandPot = Table_Seat_sc_gczc_t.StandPot[82],
     SeatPot = Table_Seat_sc_gczc_t.SeatPot[198],
-    Dir = 0.807411
+    Dir = 0.8074108
   },
   [199] = {
     id = 199,

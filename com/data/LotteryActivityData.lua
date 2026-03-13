@@ -5,7 +5,8 @@ LotteryActivityData.ESortID = {
   Head = 3,
   Mix = 4,
   Magic = 5,
-  SpaceTime = 6
+  SpaceTime = 6,
+  _ERROR = 999
 }
 
 function LotteryActivityData:ctor(type, open, st, et)
@@ -32,6 +33,9 @@ function LotteryActivityData:SetData()
       self.maunalTimeDesc = config.maunalTimeDesc
       self.isInLotteryEntrance = config.inLotteryEntrance == true
       self:SetSortId(config)
+    else
+      redlog("【扭蛋】GameConfig.Lottery.activity,活动配置未找到，扭蛋类型 : ", self.lotteryType)
+      self.sortId = LotteryActivityData.ESortID._ERROR
     end
   end
 end

@@ -113,6 +113,11 @@ function SceneLoader:LoadSceneAsync(name, mode, callBack, callBackArgs)
       end
     end
     mode = mode or SceneManagement.LoadSceneMode.Single
+    pcall(function()
+      if CompatibilityVersion.IsABSpb() then
+        name = string.lower(name)
+      end
+    end)
     local asyncLoad = SceneManagement.SceneManager.LoadSceneAsync(name, mode)
     asyncLoad.allowSceneActivation = false
     if callBack then

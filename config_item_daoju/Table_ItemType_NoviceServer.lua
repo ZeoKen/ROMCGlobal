@@ -451,6 +451,12 @@ Table_ItemType = {
     Function = Table_ItemType_t.Function[2]
   },
   [104] = {id = 104, icon = "65"},
+  [106] = {
+    id = 106,
+    Name = "九界神器",
+    icon = "65",
+    Function = Table_ItemType_t.Function[2]
+  },
   [110] = {
     id = 110,
     Name = "卡片碎片",

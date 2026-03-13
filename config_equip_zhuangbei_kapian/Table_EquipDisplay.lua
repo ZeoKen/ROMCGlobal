@@ -290,10 +290,13 @@ Table_EquipDisplay_t = {
     {600362, 600362},
     {600363, 600363},
     {600076, 600076},
+    {600671, 600671},
     {600365, 600365},
     {600366, 600366},
     {600340, 600340},
     {600599, 600599},
+    {600675, 600675},
+    {600676, 600676},
     {600369, 600369},
     {600062, 600062},
     {600603, 600603},
@@ -377,10 +380,14 @@ Table_EquipDisplay_t = {
     {600130, 600130},
     {600131, 600131},
     {600132, 600132},
+    {600537, 600537},
+    {600490, 600490},
+    {600489, 600489},
     {600400, 600400},
     {600401, 600401},
     {600402, 600402},
     {600403, 600403},
+    {600488, 600488},
     {600065, 600065},
     {600066, 600066},
     {600406, 600406},
@@ -392,13 +399,14 @@ Table_EquipDisplay_t = {
     {600452, 600452},
     {600454, 600454},
     {600075, 600075},
-    {600063, 600063},
-    {600537, 600537},
-    {600490, 600490},
-    {600489, 600489},
-    {600488, 600488},
     {600487, 600487},
+    {600063, 600063},
     {600486, 600486},
+    {600678, 600678},
+    {600677, 600677},
+    {600674, 600674},
+    {600673, 600673},
+    {600672, 600672},
     {600640, 600640},
     {600639, 600639},
     {600642, 600642},
@@ -621,31 +629,31 @@ Table_EquipDisplay_t = {
 Table_EquipDisplay = {
   [25233] = {
     id = 25233,
-    Display = Table_EquipDisplay_t.Display[302]
+    Display = Table_EquipDisplay_t.Display[305]
   },
   [25238] = {
     id = 25238,
-    Display = Table_EquipDisplay_t.Display[306]
+    Display = Table_EquipDisplay_t.Display[309]
   },
   [25570] = {
     id = 25570,
-    Display = Table_EquipDisplay_t.Display[575]
+    Display = Table_EquipDisplay_t.Display[583]
   },
   [25571] = {
     id = 25571,
-    Display = Table_EquipDisplay_t.Display[576]
+    Display = Table_EquipDisplay_t.Display[584]
   },
   [25572] = {
     id = 25572,
-    Display = Table_EquipDisplay_t.Display[577]
+    Display = Table_EquipDisplay_t.Display[585]
   },
   [25573] = {
     id = 25573,
-    Display = Table_EquipDisplay_t.Display[578]
+    Display = Table_EquipDisplay_t.Display[586]
   },
   [25574] = {
     id = 25574,
-    Display = Table_EquipDisplay_t.Display[579]
+    Display = Table_EquipDisplay_t.Display[587]
   },
   [25575] = {
     Display = Table_EquipDisplay_t.Display[1]
@@ -668,43 +676,43 @@ Table_EquipDisplay = {
   },
   [45810] = {
     id = 45810,
-    Display = Table_EquipDisplay_t.Display[358]
+    Display = Table_EquipDisplay_t.Display[365]
   },
   [45811] = {
     id = 45811,
-    Display = Table_EquipDisplay_t.Display[359]
+    Display = Table_EquipDisplay_t.Display[366]
   },
   [45869] = {
     id = 45869,
-    Display = Table_EquipDisplay_t.Display[415]
+    Display = Table_EquipDisplay_t.Display[423]
   },
   [45870] = {
     id = 45870,
-    Display = Table_EquipDisplay_t.Display[416]
+    Display = Table_EquipDisplay_t.Display[424]
   },
   [45871] = {
     id = 45871,
-    Display = Table_EquipDisplay_t.Display[417]
+    Display = Table_EquipDisplay_t.Display[425]
   },
   [45872] = {
     id = 45872,
-    Display = Table_EquipDisplay_t.Display[418]
+    Display = Table_EquipDisplay_t.Display[426]
   },
   [45873] = {
     id = 45873,
-    Display = Table_EquipDisplay_t.Display[419]
+    Display = Table_EquipDisplay_t.Display[427]
   },
   [45874] = {
     id = 45874,
-    Display = Table_EquipDisplay_t.Display[420]
+    Display = Table_EquipDisplay_t.Display[428]
   },
   [45875] = {
     id = 45875,
-    Display = Table_EquipDisplay_t.Display[421]
+    Display = Table_EquipDisplay_t.Display[429]
   },
   [45876] = {
     id = 45876,
-    Display = Table_EquipDisplay_t.Display[422]
+    Display = Table_EquipDisplay_t.Display[430]
   },
   [45885] = {
     id = 45885,
@@ -712,19 +720,19 @@ Table_EquipDisplay = {
   },
   [45991] = {
     id = 45991,
-    Display = Table_EquipDisplay_t.Display[536]
+    Display = Table_EquipDisplay_t.Display[544]
   },
   [45992] = {
     id = 45992,
-    Display = Table_EquipDisplay_t.Display[537]
+    Display = Table_EquipDisplay_t.Display[545]
   },
   [45993] = {
     id = 45993,
-    Display = Table_EquipDisplay_t.Display[538]
+    Display = Table_EquipDisplay_t.Display[546]
   },
   [45994] = {
     id = 45994,
-    Display = Table_EquipDisplay_t.Display[539]
+    Display = Table_EquipDisplay_t.Display[547]
   },
   [46614] = {
     id = 46614,
@@ -768,35 +776,35 @@ Table_EquipDisplay = {
   },
   [48709] = {
     id = 48709,
-    Display = Table_EquipDisplay_t.Display[284]
+    Display = Table_EquipDisplay_t.Display[287]
   },
   [48765] = {
     id = 48765,
-    Display = Table_EquipDisplay_t.Display[304]
+    Display = Table_EquipDisplay_t.Display[307]
   },
   [48799] = {
     id = 48799,
-    Display = Table_EquipDisplay_t.Display[328]
+    Display = Table_EquipDisplay_t.Display[331]
   },
   [48839] = {
     id = 48839,
-    Display = Table_EquipDisplay_t.Display[343]
+    Display = Table_EquipDisplay_t.Display[346]
   },
   [49032] = {
     id = 49032,
-    Display = Table_EquipDisplay_t.Display[508]
+    Display = Table_EquipDisplay_t.Display[516]
   },
   [49034] = {
     id = 49034,
-    Display = Table_EquipDisplay_t.Display[510]
+    Display = Table_EquipDisplay_t.Display[518]
   },
   [49040] = {
     id = 49040,
-    Display = Table_EquipDisplay_t.Display[516]
+    Display = Table_EquipDisplay_t.Display[524]
   },
   [49043] = {
     id = 49043,
-    Display = Table_EquipDisplay_t.Display[519]
+    Display = Table_EquipDisplay_t.Display[527]
   },
   [49170] = {
     id = 49170,
@@ -892,19 +900,19 @@ Table_EquipDisplay = {
   },
   [49728] = {
     id = 49728,
-    Display = Table_EquipDisplay_t.Display[282]
+    Display = Table_EquipDisplay_t.Display[283]
   },
   [49743] = {
     id = 49743,
-    Display = Table_EquipDisplay_t.Display[285]
+    Display = Table_EquipDisplay_t.Display[288]
   },
   [49746] = {
     id = 49746,
-    Display = Table_EquipDisplay_t.Display[286]
+    Display = Table_EquipDisplay_t.Display[289]
   },
   [49748] = {
     id = 49748,
-    Display = Table_EquipDisplay_t.Display[287]
+    Display = Table_EquipDisplay_t.Display[290]
   },
   [145050] = {
     id = 145050,
@@ -916,11 +924,11 @@ Table_EquipDisplay = {
   },
   [149211] = {
     id = 149211,
-    Display = Table_EquipDisplay_t.Display[433]
+    Display = Table_EquipDisplay_t.Display[441]
   },
   [149212] = {
     id = 149212,
-    Display = Table_EquipDisplay_t.Display[434]
+    Display = Table_EquipDisplay_t.Display[442]
   },
   [149516] = {
     id = 149516,
@@ -940,31 +948,31 @@ Table_EquipDisplay = {
   },
   [3000100] = {
     id = 3000100,
-    Display = Table_EquipDisplay_t.Display[295]
+    Display = Table_EquipDisplay_t.Display[298]
   },
   [3000101] = {
     id = 3000101,
-    Display = Table_EquipDisplay_t.Display[296]
+    Display = Table_EquipDisplay_t.Display[299]
   },
   [3000102] = {
     id = 3000102,
-    Display = Table_EquipDisplay_t.Display[297]
+    Display = Table_EquipDisplay_t.Display[300]
   },
   [3000103] = {
     id = 3000103,
-    Display = Table_EquipDisplay_t.Display[298]
+    Display = Table_EquipDisplay_t.Display[301]
   },
   [3000245] = {
     id = 3000245,
-    Display = Table_EquipDisplay_t.Display[368]
+    Display = Table_EquipDisplay_t.Display[375]
   },
   [3000247] = {
     id = 3000247,
-    Display = Table_EquipDisplay_t.Display[369]
+    Display = Table_EquipDisplay_t.Display[377]
   },
   [3000453] = {
     id = 3000453,
-    Display = Table_EquipDisplay_t.Display[574]
+    Display = Table_EquipDisplay_t.Display[582]
   },
   [3000462] = {
     id = 3000462,
@@ -996,23 +1004,23 @@ Table_EquipDisplay = {
   },
   [3001111] = {
     id = 3001111,
-    Display = Table_EquipDisplay_t.Display[289]
+    Display = Table_EquipDisplay_t.Display[292]
   },
   [3001375] = {
     id = 3001375,
-    Display = Table_EquipDisplay_t.Display[473]
+    Display = Table_EquipDisplay_t.Display[481]
   },
   [3001376] = {
     id = 3001376,
-    Display = Table_EquipDisplay_t.Display[474]
+    Display = Table_EquipDisplay_t.Display[482]
   },
   [3001377] = {
     id = 3001377,
-    Display = Table_EquipDisplay_t.Display[475]
+    Display = Table_EquipDisplay_t.Display[483]
   },
   [3001378] = {
     id = 3001378,
-    Display = Table_EquipDisplay_t.Display[476]
+    Display = Table_EquipDisplay_t.Display[484]
   },
   [3001582] = {
     id = 3001582,
@@ -1020,7 +1028,7 @@ Table_EquipDisplay = {
   },
   [3001900] = {
     id = 3001900,
-    Display = Table_EquipDisplay_t.Display[580]
+    Display = Table_EquipDisplay_t.Display[588]
   },
   [3001994] = {
     id = 3001994,
@@ -1040,7 +1048,7 @@ Table_EquipDisplay = {
   },
   [3002073] = {
     id = 3002073,
-    Display = Table_EquipDisplay_t.Display[556]
+    Display = Table_EquipDisplay_t.Display[564]
   },
   [3002079] = {
     id = 3002079,
@@ -1052,11 +1060,11 @@ Table_EquipDisplay = {
   },
   [3002081] = {
     id = 3002081,
-    Display = Table_EquipDisplay_t.Display[572]
+    Display = Table_EquipDisplay_t.Display[580]
   },
   [3002082] = {
     id = 3002082,
-    Display = Table_EquipDisplay_t.Display[458]
+    Display = Table_EquipDisplay_t.Display[466]
   },
   [3002083] = {
     id = 3002083,
@@ -1068,87 +1076,87 @@ Table_EquipDisplay = {
   },
   [3002195] = {
     id = 3002195,
-    Display = Table_EquipDisplay_t.Display[324]
+    Display = Table_EquipDisplay_t.Display[327]
   },
   [3002196] = {
     id = 3002196,
-    Display = Table_EquipDisplay_t.Display[325]
+    Display = Table_EquipDisplay_t.Display[328]
   },
   [3002197] = {
     id = 3002197,
-    Display = Table_EquipDisplay_t.Display[326]
+    Display = Table_EquipDisplay_t.Display[329]
   },
   [3002198] = {
     id = 3002198,
-    Display = Table_EquipDisplay_t.Display[327]
+    Display = Table_EquipDisplay_t.Display[330]
   },
   [3002260] = {
     id = 3002260,
-    Display = Table_EquipDisplay_t.Display[346]
+    Display = Table_EquipDisplay_t.Display[349]
   },
   [3002261] = {
     id = 3002261,
-    Display = Table_EquipDisplay_t.Display[347]
+    Display = Table_EquipDisplay_t.Display[350]
   },
   [3002262] = {
     id = 3002262,
-    Display = Table_EquipDisplay_t.Display[348]
+    Display = Table_EquipDisplay_t.Display[351]
   },
   [3002263] = {
     id = 3002263,
-    Display = Table_EquipDisplay_t.Display[349]
+    Display = Table_EquipDisplay_t.Display[352]
   },
   [3002265] = {
     id = 3002265,
-    Display = Table_EquipDisplay_t.Display[350]
+    Display = Table_EquipDisplay_t.Display[353]
   },
   [3002266] = {
     id = 3002266,
-    Display = Table_EquipDisplay_t.Display[351]
+    Display = Table_EquipDisplay_t.Display[354]
   },
   [3002267] = {
     id = 3002267,
-    Display = Table_EquipDisplay_t.Display[352]
+    Display = Table_EquipDisplay_t.Display[355]
   },
   [3002268] = {
     id = 3002268,
-    Display = Table_EquipDisplay_t.Display[353]
+    Display = Table_EquipDisplay_t.Display[356]
   },
   [3002286] = {
     id = 3002286,
-    Display = Table_EquipDisplay_t.Display[364]
+    Display = Table_EquipDisplay_t.Display[371]
   },
   [3002374] = {
     id = 3002374,
-    Display = Table_EquipDisplay_t.Display[449]
+    Display = Table_EquipDisplay_t.Display[457]
   },
   [3002375] = {
     id = 3002375,
-    Display = Table_EquipDisplay_t.Display[450]
+    Display = Table_EquipDisplay_t.Display[458]
   },
   [3002376] = {
     id = 3002376,
-    Display = Table_EquipDisplay_t.Display[451]
+    Display = Table_EquipDisplay_t.Display[459]
   },
   [3002377] = {
     id = 3002377,
-    Display = Table_EquipDisplay_t.Display[452]
+    Display = Table_EquipDisplay_t.Display[460]
   },
   [3002485] = {
     id = 3002485,
-    Display = Table_EquipDisplay_t.Display[560]
+    Display = Table_EquipDisplay_t.Display[568]
   },
   [3002486] = {
     id = 3002486,
-    Display = Table_EquipDisplay_t.Display[561]
+    Display = Table_EquipDisplay_t.Display[569]
   },
   [3002487] = {
     id = 3002487,
-    Display = Table_EquipDisplay_t.Display[562]
+    Display = Table_EquipDisplay_t.Display[570]
   },
   [3002488] = {
     id = 3002488,
-    Display = Table_EquipDisplay_t.Display[563]
+    Display = Table_EquipDisplay_t.Display[571]
   },
   [3002540] = {
     id = 3002540,
@@ -1192,127 +1200,127 @@ Table_EquipDisplay = {
   },
   [3003151] = {
     id = 3003151,
-    Display = Table_EquipDisplay_t.Display[288]
+    Display = Table_EquipDisplay_t.Display[291]
   },
   [3003190] = {
     id = 3003190,
-    Display = Table_EquipDisplay_t.Display[305]
+    Display = Table_EquipDisplay_t.Display[308]
   },
   [3003191] = {
     id = 3003191,
-    Display = Table_EquipDisplay_t.Display[570]
+    Display = Table_EquipDisplay_t.Display[578]
   },
   [3003192] = {
     id = 3003192,
-    Display = Table_EquipDisplay_t.Display[307]
+    Display = Table_EquipDisplay_t.Display[310]
   },
   [3003193] = {
     id = 3003193,
-    Display = Table_EquipDisplay_t.Display[308]
+    Display = Table_EquipDisplay_t.Display[311]
   },
   [3003195] = {
     id = 3003195,
-    Display = Table_EquipDisplay_t.Display[309]
+    Display = Table_EquipDisplay_t.Display[312]
   },
   [3003196] = {
     id = 3003196,
-    Display = Table_EquipDisplay_t.Display[310]
+    Display = Table_EquipDisplay_t.Display[313]
   },
   [3003197] = {
     id = 3003197,
-    Display = Table_EquipDisplay_t.Display[311]
+    Display = Table_EquipDisplay_t.Display[314]
   },
   [3003198] = {
     id = 3003198,
-    Display = Table_EquipDisplay_t.Display[312]
+    Display = Table_EquipDisplay_t.Display[315]
   },
   [3003210] = {
     id = 3003210,
-    Display = Table_EquipDisplay_t.Display[317]
+    Display = Table_EquipDisplay_t.Display[320]
   },
   [3003282] = {
     id = 3003282,
-    Display = Table_EquipDisplay_t.Display[345]
+    Display = Table_EquipDisplay_t.Display[348]
   },
   [3003285] = {
     id = 3003285,
-    Display = Table_EquipDisplay_t.Display[569]
+    Display = Table_EquipDisplay_t.Display[577]
   },
   [3003286] = {
     id = 3003286,
-    Display = Table_EquipDisplay_t.Display[568]
+    Display = Table_EquipDisplay_t.Display[576]
   },
   [3003340] = {
     id = 3003340,
-    Display = Table_EquipDisplay_t.Display[393]
+    Display = Table_EquipDisplay_t.Display[401]
   },
   [3003341] = {
     id = 3003341,
-    Display = Table_EquipDisplay_t.Display[394]
+    Display = Table_EquipDisplay_t.Display[402]
   },
   [3003342] = {
     id = 3003342,
-    Display = Table_EquipDisplay_t.Display[395]
+    Display = Table_EquipDisplay_t.Display[403]
   },
   [3003343] = {
     id = 3003343,
-    Display = Table_EquipDisplay_t.Display[396]
+    Display = Table_EquipDisplay_t.Display[404]
   },
   [3003345] = {
     id = 3003345,
-    Display = Table_EquipDisplay_t.Display[398]
+    Display = Table_EquipDisplay_t.Display[406]
   },
   [3003346] = {
     id = 3003346,
-    Display = Table_EquipDisplay_t.Display[399]
+    Display = Table_EquipDisplay_t.Display[407]
   },
   [3003347] = {
     id = 3003347,
-    Display = Table_EquipDisplay_t.Display[400]
+    Display = Table_EquipDisplay_t.Display[408]
   },
   [3003348] = {
     id = 3003348,
-    Display = Table_EquipDisplay_t.Display[401]
+    Display = Table_EquipDisplay_t.Display[409]
   },
   [3003352] = {
     id = 3003352,
-    Display = Table_EquipDisplay_t.Display[405]
+    Display = Table_EquipDisplay_t.Display[413]
   },
   [3003355] = {
     id = 3003355,
-    Display = Table_EquipDisplay_t.Display[408]
+    Display = Table_EquipDisplay_t.Display[416]
   },
   [3003370] = {
     id = 3003370,
-    Display = Table_EquipDisplay_t.Display[423]
+    Display = Table_EquipDisplay_t.Display[431]
   },
   [3003410] = {
     id = 3003410,
-    Display = Table_EquipDisplay_t.Display[462]
+    Display = Table_EquipDisplay_t.Display[470]
   },
   [3003411] = {
     id = 3003411,
-    Display = Table_EquipDisplay_t.Display[463]
+    Display = Table_EquipDisplay_t.Display[471]
   },
   [3003412] = {
     id = 3003412,
-    Display = Table_EquipDisplay_t.Display[464]
+    Display = Table_EquipDisplay_t.Display[472]
   },
   [3003413] = {
     id = 3003413,
-    Display = Table_EquipDisplay_t.Display[465]
+    Display = Table_EquipDisplay_t.Display[473]
   },
   [3003431] = {
     id = 3003431,
-    Display = Table_EquipDisplay_t.Display[483]
+    Display = Table_EquipDisplay_t.Display[491]
   },
   [3003490] = {
     id = 3003490,
-    Display = Table_EquipDisplay_t.Display[542]
+    Display = Table_EquipDisplay_t.Display[550]
   },
   [3003491] = {
     id = 3003491,
-    Display = Table_EquipDisplay_t.Display[543]
+    Display = Table_EquipDisplay_t.Display[551]
   },
   [3003631] = {
     id = 3003631,
@@ -1340,15 +1348,15 @@ Table_EquipDisplay = {
   },
   [3004205] = {
     id = 3004205,
-    Display = Table_EquipDisplay_t.Display[301]
+    Display = Table_EquipDisplay_t.Display[304]
   },
   [3004450] = {
     id = 3004450,
-    Display = Table_EquipDisplay_t.Display[479]
+    Display = Table_EquipDisplay_t.Display[487]
   },
   [3004451] = {
     id = 3004451,
-    Display = Table_EquipDisplay_t.Display[480]
+    Display = Table_EquipDisplay_t.Display[488]
   },
   [3004910] = {
     id = 3004910,
@@ -1368,55 +1376,55 @@ Table_EquipDisplay = {
   },
   [3005285] = {
     id = 3005285,
-    Display = Table_EquipDisplay_t.Display[337]
+    Display = Table_EquipDisplay_t.Display[340]
   },
   [3005286] = {
     id = 3005286,
-    Display = Table_EquipDisplay_t.Display[338]
+    Display = Table_EquipDisplay_t.Display[341]
   },
   [3005287] = {
     id = 3005287,
-    Display = Table_EquipDisplay_t.Display[339]
+    Display = Table_EquipDisplay_t.Display[342]
   },
   [3005288] = {
     id = 3005288,
-    Display = Table_EquipDisplay_t.Display[340]
+    Display = Table_EquipDisplay_t.Display[343]
   },
   [3005540] = {
     id = 3005540,
-    Display = Table_EquipDisplay_t.Display[546]
+    Display = Table_EquipDisplay_t.Display[554]
   },
   [3005541] = {
     id = 3005541,
-    Display = Table_EquipDisplay_t.Display[547]
+    Display = Table_EquipDisplay_t.Display[555]
   },
   [3005542] = {
     id = 3005542,
-    Display = Table_EquipDisplay_t.Display[548]
+    Display = Table_EquipDisplay_t.Display[556]
   },
   [3005543] = {
     id = 3005543,
-    Display = Table_EquipDisplay_t.Display[549]
+    Display = Table_EquipDisplay_t.Display[557]
   },
   [3005545] = {
     id = 3005545,
-    Display = Table_EquipDisplay_t.Display[551]
+    Display = Table_EquipDisplay_t.Display[559]
   },
   [3005546] = {
     id = 3005546,
-    Display = Table_EquipDisplay_t.Display[552]
+    Display = Table_EquipDisplay_t.Display[560]
   },
   [3005547] = {
     id = 3005547,
-    Display = Table_EquipDisplay_t.Display[553]
+    Display = Table_EquipDisplay_t.Display[561]
   },
   [3005548] = {
     id = 3005548,
-    Display = Table_EquipDisplay_t.Display[554]
+    Display = Table_EquipDisplay_t.Display[562]
   },
   [3005554] = {
     id = 3005554,
-    Display = Table_EquipDisplay_t.Display[567]
+    Display = Table_EquipDisplay_t.Display[575]
   },
   [3005802] = {
     id = 3005802,
@@ -1468,7 +1476,7 @@ Table_EquipDisplay = {
   },
   [3006153] = {
     id = 3006153,
-    Display = Table_EquipDisplay_t.Display[566]
+    Display = Table_EquipDisplay_t.Display[574]
   },
   [3006155] = {
     id = 3006155,
@@ -1476,7 +1484,7 @@ Table_EquipDisplay = {
   },
   [3006156] = {
     id = 3006156,
-    Display = Table_EquipDisplay_t.Display[459]
+    Display = Table_EquipDisplay_t.Display[467]
   },
   [3006157] = {
     id = 3006157,
@@ -1488,91 +1496,91 @@ Table_EquipDisplay = {
   },
   [3006164] = {
     id = 3006164,
-    Display = Table_EquipDisplay_t.Display[460]
+    Display = Table_EquipDisplay_t.Display[468]
   },
   [3006275] = {
     id = 3006275,
-    Display = Table_EquipDisplay_t.Display[313]
+    Display = Table_EquipDisplay_t.Display[316]
   },
   [3006276] = {
     id = 3006276,
-    Display = Table_EquipDisplay_t.Display[314]
+    Display = Table_EquipDisplay_t.Display[317]
   },
   [3006277] = {
     id = 3006277,
-    Display = Table_EquipDisplay_t.Display[315]
+    Display = Table_EquipDisplay_t.Display[318]
   },
   [3006278] = {
     id = 3006278,
-    Display = Table_EquipDisplay_t.Display[316]
+    Display = Table_EquipDisplay_t.Display[319]
   },
   [3006460] = {
     id = 3006460,
-    Display = Table_EquipDisplay_t.Display[443]
+    Display = Table_EquipDisplay_t.Display[451]
   },
   [3006461] = {
     id = 3006461,
-    Display = Table_EquipDisplay_t.Display[444]
+    Display = Table_EquipDisplay_t.Display[452]
   },
   [3006462] = {
     id = 3006462,
-    Display = Table_EquipDisplay_t.Display[445]
+    Display = Table_EquipDisplay_t.Display[453]
   },
   [3006463] = {
     id = 3006463,
-    Display = Table_EquipDisplay_t.Display[446]
+    Display = Table_EquipDisplay_t.Display[454]
   },
   [3006465] = {
     id = 3006465,
-    Display = Table_EquipDisplay_t.Display[448]
+    Display = Table_EquipDisplay_t.Display[456]
   },
   [3006466] = {
     id = 3006466,
-    Display = Table_EquipDisplay_t.Display[468]
+    Display = Table_EquipDisplay_t.Display[476]
   },
   [3006467] = {
     id = 3006467,
-    Display = Table_EquipDisplay_t.Display[469]
+    Display = Table_EquipDisplay_t.Display[477]
   },
   [3006468] = {
     id = 3006468,
-    Display = Table_EquipDisplay_t.Display[470]
+    Display = Table_EquipDisplay_t.Display[478]
   },
   [3006543] = {
     id = 3006543,
-    Display = Table_EquipDisplay_t.Display[526]
+    Display = Table_EquipDisplay_t.Display[534]
   },
   [3006590] = {
     id = 3006590,
-    Display = Table_EquipDisplay_t.Display[573]
+    Display = Table_EquipDisplay_t.Display[581]
   },
   [3006591] = {
     id = 3006591,
-    Display = Table_EquipDisplay_t.Display[555]
+    Display = Table_EquipDisplay_t.Display[563]
   },
   [3006592] = {
     id = 3006592,
-    Display = Table_EquipDisplay_t.Display[550]
+    Display = Table_EquipDisplay_t.Display[558]
   },
   [3006593] = {
     id = 3006593,
-    Display = Table_EquipDisplay_t.Display[545]
+    Display = Table_EquipDisplay_t.Display[553]
   },
   [3006595] = {
     id = 3006595,
-    Display = Table_EquipDisplay_t.Display[544]
+    Display = Table_EquipDisplay_t.Display[552]
   },
   [3006596] = {
     id = 3006596,
-    Display = Table_EquipDisplay_t.Display[541]
+    Display = Table_EquipDisplay_t.Display[549]
   },
   [3006597] = {
     id = 3006597,
-    Display = Table_EquipDisplay_t.Display[540]
+    Display = Table_EquipDisplay_t.Display[548]
   },
   [3006598] = {
     id = 3006598,
-    Display = Table_EquipDisplay_t.Display[535]
+    Display = Table_EquipDisplay_t.Display[543]
   },
   [3006720] = {
     id = 3006720,
@@ -1712,7 +1720,7 @@ Table_EquipDisplay = {
   },
   [3007150] = {
     id = 3007150,
-    Display = Table_EquipDisplay_t.Display[534]
+    Display = Table_EquipDisplay_t.Display[542]
   },
   [3007151] = {
     id = 3007151,
@@ -1728,7 +1736,7 @@ Table_EquipDisplay = {
   },
   [3007155] = {
     id = 3007155,
-    Display = Table_EquipDisplay_t.Display[533]
+    Display = Table_EquipDisplay_t.Display[541]
   },
   [3007156] = {
     id = 3007156,
@@ -1748,59 +1756,59 @@ Table_EquipDisplay = {
   },
   [3007220] = {
     id = 3007220,
-    Display = Table_EquipDisplay_t.Display[281]
+    Display = Table_EquipDisplay_t.Display[282]
   },
   [3007251] = {
     id = 3007251,
-    Display = Table_EquipDisplay_t.Display[290]
+    Display = Table_EquipDisplay_t.Display[293]
   },
   [3007264] = {
     id = 3007264,
-    Display = Table_EquipDisplay_t.Display[532]
+    Display = Table_EquipDisplay_t.Display[540]
   },
   [3007271] = {
     id = 3007271,
-    Display = Table_EquipDisplay_t.Display[300]
+    Display = Table_EquipDisplay_t.Display[303]
   },
   [3007280] = {
     id = 3007280,
-    Display = Table_EquipDisplay_t.Display[303]
+    Display = Table_EquipDisplay_t.Display[306]
   },
   [3007422] = {
     id = 3007422,
-    Display = Table_EquipDisplay_t.Display[383]
+    Display = Table_EquipDisplay_t.Display[391]
   },
   [3007470] = {
     id = 3007470,
-    Display = Table_EquipDisplay_t.Display[531]
+    Display = Table_EquipDisplay_t.Display[539]
   },
   [3007471] = {
     id = 3007471,
-    Display = Table_EquipDisplay_t.Display[431]
+    Display = Table_EquipDisplay_t.Display[439]
   },
   [3007472] = {
     id = 3007472,
-    Display = Table_EquipDisplay_t.Display[432]
+    Display = Table_EquipDisplay_t.Display[440]
   },
   [3007473] = {
     id = 3007473,
-    Display = Table_EquipDisplay_t.Display[530]
+    Display = Table_EquipDisplay_t.Display[538]
   },
   [3007475] = {
     id = 3007475,
-    Display = Table_EquipDisplay_t.Display[435]
+    Display = Table_EquipDisplay_t.Display[443]
   },
   [3007476] = {
     id = 3007476,
-    Display = Table_EquipDisplay_t.Display[436]
+    Display = Table_EquipDisplay_t.Display[444]
   },
   [3007477] = {
     id = 3007477,
-    Display = Table_EquipDisplay_t.Display[437]
+    Display = Table_EquipDisplay_t.Display[445]
   },
   [3007478] = {
     id = 3007478,
-    Display = Table_EquipDisplay_t.Display[438]
+    Display = Table_EquipDisplay_t.Display[446]
   },
   [3007820] = {
     id = 3007820,
@@ -1900,7 +1908,7 @@ Table_EquipDisplay = {
   },
   [3008236] = {
     id = 3008236,
-    Display = Table_EquipDisplay_t.Display[529]
+    Display = Table_EquipDisplay_t.Display[537]
   },
   [3008237] = {
     id = 3008237,
@@ -1912,63 +1920,63 @@ Table_EquipDisplay = {
   },
   [3008239] = {
     id = 3008239,
-    Display = Table_EquipDisplay_t.Display[528]
+    Display = Table_EquipDisplay_t.Display[536]
   },
   [3008241] = {
     id = 3008241,
-    Display = Table_EquipDisplay_t.Display[279]
+    Display = Table_EquipDisplay_t.Display[280]
   },
   [3008242] = {
     id = 3008242,
-    Display = Table_EquipDisplay_t.Display[280]
+    Display = Table_EquipDisplay_t.Display[281]
   },
   [3008243] = {
     id = 3008243,
-    Display = Table_EquipDisplay_t.Display[527]
+    Display = Table_EquipDisplay_t.Display[535]
   },
   [3008244] = {
     id = 3008244,
-    Display = Table_EquipDisplay_t.Display[471]
+    Display = Table_EquipDisplay_t.Display[479]
   },
   [3008247] = {
     id = 3008247,
-    Display = Table_EquipDisplay_t.Display[283]
+    Display = Table_EquipDisplay_t.Display[286]
   },
   [3008326] = {
     id = 3008326,
-    Display = Table_EquipDisplay_t.Display[318]
+    Display = Table_EquipDisplay_t.Display[321]
   },
   [3008327] = {
     id = 3008327,
-    Display = Table_EquipDisplay_t.Display[319]
+    Display = Table_EquipDisplay_t.Display[322]
   },
   [3008328] = {
     id = 3008328,
-    Display = Table_EquipDisplay_t.Display[320]
+    Display = Table_EquipDisplay_t.Display[323]
   },
   [3008329] = {
     id = 3008329,
-    Display = Table_EquipDisplay_t.Display[321]
+    Display = Table_EquipDisplay_t.Display[324]
   },
   [3008331] = {
     id = 3008331,
-    Display = Table_EquipDisplay_t.Display[322]
+    Display = Table_EquipDisplay_t.Display[325]
   },
   [3008332] = {
     id = 3008332,
-    Display = Table_EquipDisplay_t.Display[323]
+    Display = Table_EquipDisplay_t.Display[326]
   },
   [3008333] = {
     id = 3008333,
-    Display = Table_EquipDisplay_t.Display[472]
+    Display = Table_EquipDisplay_t.Display[480]
   },
   [3008334] = {
     id = 3008334,
-    Display = Table_EquipDisplay_t.Display[481]
+    Display = Table_EquipDisplay_t.Display[489]
   },
   [3008553] = {
     id = 3008553,
-    Display = Table_EquipDisplay_t.Display[490]
+    Display = Table_EquipDisplay_t.Display[498]
   },
   [3008716] = {
     id = 3008716,
@@ -2008,11 +2016,11 @@ Table_EquipDisplay = {
   },
   [3008750] = {
     id = 3008750,
-    Display = Table_EquipDisplay_t.Display[486]
+    Display = Table_EquipDisplay_t.Display[494]
   },
   [3008751] = {
     id = 3008751,
-    Display = Table_EquipDisplay_t.Display[521]
+    Display = Table_EquipDisplay_t.Display[529]
   },
   [3008763] = {
     id = 3008763,
@@ -2036,7 +2044,7 @@ Table_EquipDisplay = {
   },
   [3009061] = {
     id = 3009061,
-    Display = Table_EquipDisplay_t.Display[487]
+    Display = Table_EquipDisplay_t.Display[495]
   },
   [3009063] = {
     id = 3009063,
@@ -2044,307 +2052,307 @@ Table_EquipDisplay = {
   },
   [3009064] = {
     id = 3009064,
-    Display = Table_EquipDisplay_t.Display[489]
+    Display = Table_EquipDisplay_t.Display[497]
   },
   [3009134] = {
     id = 3009134,
-    Display = Table_EquipDisplay_t.Display[491]
+    Display = Table_EquipDisplay_t.Display[499]
   },
   [3009436] = {
     id = 3009436,
-    Display = Table_EquipDisplay_t.Display[354]
+    Display = Table_EquipDisplay_t.Display[360]
   },
   [3009437] = {
     id = 3009437,
-    Display = Table_EquipDisplay_t.Display[355]
+    Display = Table_EquipDisplay_t.Display[361]
   },
   [3009438] = {
     id = 3009438,
-    Display = Table_EquipDisplay_t.Display[356]
+    Display = Table_EquipDisplay_t.Display[362]
   },
   [3009439] = {
     id = 3009439,
-    Display = Table_EquipDisplay_t.Display[357]
+    Display = Table_EquipDisplay_t.Display[363]
   },
   [3009441] = {
     id = 3009441,
-    Display = Table_EquipDisplay_t.Display[515]
+    Display = Table_EquipDisplay_t.Display[523]
   },
   [3009442] = {
     id = 3009442,
-    Display = Table_EquipDisplay_t.Display[514]
+    Display = Table_EquipDisplay_t.Display[522]
   },
   [3009443] = {
     id = 3009443,
-    Display = Table_EquipDisplay_t.Display[360]
+    Display = Table_EquipDisplay_t.Display[367]
   },
   [3009444] = {
     id = 3009444,
-    Display = Table_EquipDisplay_t.Display[361]
+    Display = Table_EquipDisplay_t.Display[368]
   },
   [3010326] = {
     id = 3010326,
-    Display = Table_EquipDisplay_t.Display[291]
+    Display = Table_EquipDisplay_t.Display[294]
   },
   [3010327] = {
     id = 3010327,
-    Display = Table_EquipDisplay_t.Display[292]
+    Display = Table_EquipDisplay_t.Display[295]
   },
   [3010328] = {
     id = 3010328,
-    Display = Table_EquipDisplay_t.Display[293]
+    Display = Table_EquipDisplay_t.Display[296]
   },
   [3010329] = {
     id = 3010329,
-    Display = Table_EquipDisplay_t.Display[294]
+    Display = Table_EquipDisplay_t.Display[297]
   },
   [3010331] = {
     id = 3010331,
-    Display = Table_EquipDisplay_t.Display[513]
+    Display = Table_EquipDisplay_t.Display[521]
   },
   [3010332] = {
     id = 3010332,
-    Display = Table_EquipDisplay_t.Display[512]
+    Display = Table_EquipDisplay_t.Display[520]
   },
   [3010333] = {
     id = 3010333,
-    Display = Table_EquipDisplay_t.Display[511]
+    Display = Table_EquipDisplay_t.Display[519]
   },
   [3010334] = {
     id = 3010334,
-    Display = Table_EquipDisplay_t.Display[299]
+    Display = Table_EquipDisplay_t.Display[302]
   },
   [3010386] = {
     id = 3010386,
-    Display = Table_EquipDisplay_t.Display[329]
+    Display = Table_EquipDisplay_t.Display[332]
   },
   [3010387] = {
     id = 3010387,
-    Display = Table_EquipDisplay_t.Display[330]
+    Display = Table_EquipDisplay_t.Display[333]
   },
   [3010388] = {
     id = 3010388,
-    Display = Table_EquipDisplay_t.Display[331]
+    Display = Table_EquipDisplay_t.Display[334]
   },
   [3010389] = {
     id = 3010389,
-    Display = Table_EquipDisplay_t.Display[332]
+    Display = Table_EquipDisplay_t.Display[335]
   },
   [3010391] = {
     id = 3010391,
-    Display = Table_EquipDisplay_t.Display[333]
+    Display = Table_EquipDisplay_t.Display[336]
   },
   [3010392] = {
     id = 3010392,
-    Display = Table_EquipDisplay_t.Display[334]
+    Display = Table_EquipDisplay_t.Display[337]
   },
   [3010393] = {
     id = 3010393,
-    Display = Table_EquipDisplay_t.Display[335]
+    Display = Table_EquipDisplay_t.Display[338]
   },
   [3010394] = {
     id = 3010394,
-    Display = Table_EquipDisplay_t.Display[336]
+    Display = Table_EquipDisplay_t.Display[339]
   },
   [3010466] = {
     id = 3010466,
-    Display = Table_EquipDisplay_t.Display[509]
+    Display = Table_EquipDisplay_t.Display[517]
   },
   [3010467] = {
     id = 3010467,
-    Display = Table_EquipDisplay_t.Display[507]
+    Display = Table_EquipDisplay_t.Display[515]
   },
   [3010468] = {
     id = 3010468,
-    Display = Table_EquipDisplay_t.Display[362]
+    Display = Table_EquipDisplay_t.Display[369]
   },
   [3010469] = {
     id = 3010469,
-    Display = Table_EquipDisplay_t.Display[363]
+    Display = Table_EquipDisplay_t.Display[370]
   },
   [3010471] = {
     id = 3010471,
-    Display = Table_EquipDisplay_t.Display[365]
+    Display = Table_EquipDisplay_t.Display[372]
   },
   [3010472] = {
     id = 3010472,
-    Display = Table_EquipDisplay_t.Display[366]
+    Display = Table_EquipDisplay_t.Display[373]
   },
   [3010473] = {
     id = 3010473,
-    Display = Table_EquipDisplay_t.Display[506]
+    Display = Table_EquipDisplay_t.Display[514]
   },
   [3010474] = {
     id = 3010474,
-    Display = Table_EquipDisplay_t.Display[367]
+    Display = Table_EquipDisplay_t.Display[374]
   },
   [3010506] = {
     id = 3010506,
-    Display = Table_EquipDisplay_t.Display[505]
+    Display = Table_EquipDisplay_t.Display[513]
   },
   [3010507] = {
     id = 3010507,
-    Display = Table_EquipDisplay_t.Display[504]
+    Display = Table_EquipDisplay_t.Display[512]
   },
   [3010508] = {
     id = 3010508,
-    Display = Table_EquipDisplay_t.Display[503]
+    Display = Table_EquipDisplay_t.Display[511]
   },
   [3010509] = {
     id = 3010509,
-    Display = Table_EquipDisplay_t.Display[502]
+    Display = Table_EquipDisplay_t.Display[510]
   },
   [3010511] = {
     id = 3010511,
-    Display = Table_EquipDisplay_t.Display[403]
+    Display = Table_EquipDisplay_t.Display[411]
   },
   [3010512] = {
     id = 3010512,
-    Display = Table_EquipDisplay_t.Display[404]
+    Display = Table_EquipDisplay_t.Display[412]
   },
   [3010513] = {
     id = 3010513,
-    Display = Table_EquipDisplay_t.Display[501]
+    Display = Table_EquipDisplay_t.Display[509]
   },
   [3010514] = {
     id = 3010514,
-    Display = Table_EquipDisplay_t.Display[406]
+    Display = Table_EquipDisplay_t.Display[414]
   },
   [3010546] = {
     id = 3010546,
-    Display = Table_EquipDisplay_t.Display[500]
+    Display = Table_EquipDisplay_t.Display[508]
   },
   [3010547] = {
     id = 3010547,
-    Display = Table_EquipDisplay_t.Display[499]
+    Display = Table_EquipDisplay_t.Display[507]
   },
   [3010548] = {
     id = 3010548,
-    Display = Table_EquipDisplay_t.Display[439]
+    Display = Table_EquipDisplay_t.Display[447]
   },
   [3010549] = {
     id = 3010549,
-    Display = Table_EquipDisplay_t.Display[440]
+    Display = Table_EquipDisplay_t.Display[448]
   },
   [3010551] = {
     id = 3010551,
-    Display = Table_EquipDisplay_t.Display[442]
+    Display = Table_EquipDisplay_t.Display[450]
   },
   [3010552] = {
     id = 3010552,
-    Display = Table_EquipDisplay_t.Display[498]
+    Display = Table_EquipDisplay_t.Display[506]
   },
   [3010553] = {
     id = 3010553,
-    Display = Table_EquipDisplay_t.Display[497]
+    Display = Table_EquipDisplay_t.Display[505]
   },
   [3010554] = {
     id = 3010554,
-    Display = Table_EquipDisplay_t.Display[496]
+    Display = Table_EquipDisplay_t.Display[504]
   },
   [3010560] = {
     id = 3010560,
-    Display = Table_EquipDisplay_t.Display[495]
+    Display = Table_EquipDisplay_t.Display[503]
   },
   [3010586] = {
     id = 3010586,
-    Display = Table_EquipDisplay_t.Display[477]
+    Display = Table_EquipDisplay_t.Display[485]
   },
   [3010587] = {
     id = 3010587,
-    Display = Table_EquipDisplay_t.Display[478]
+    Display = Table_EquipDisplay_t.Display[486]
   },
   [3010588] = {
     id = 3010588,
-    Display = Table_EquipDisplay_t.Display[494]
+    Display = Table_EquipDisplay_t.Display[502]
   },
   [3010589] = {
     id = 3010589,
-    Display = Table_EquipDisplay_t.Display[493]
+    Display = Table_EquipDisplay_t.Display[501]
   },
   [3010591] = {
     id = 3010591,
-    Display = Table_EquipDisplay_t.Display[482]
+    Display = Table_EquipDisplay_t.Display[490]
   },
   [3010592] = {
     id = 3010592,
-    Display = Table_EquipDisplay_t.Display[492]
+    Display = Table_EquipDisplay_t.Display[500]
   },
   [3010593] = {
     id = 3010593,
-    Display = Table_EquipDisplay_t.Display[484]
+    Display = Table_EquipDisplay_t.Display[492]
   },
   [3010594] = {
     id = 3010594,
-    Display = Table_EquipDisplay_t.Display[485]
+    Display = Table_EquipDisplay_t.Display[493]
   },
   [3010626] = {
     id = 3010626,
-    Display = Table_EquipDisplay_t.Display[517]
+    Display = Table_EquipDisplay_t.Display[525]
   },
   [3010627] = {
     id = 3010627,
-    Display = Table_EquipDisplay_t.Display[518]
+    Display = Table_EquipDisplay_t.Display[526]
   },
   [3010628] = {
     id = 3010628,
-    Display = Table_EquipDisplay_t.Display[488]
+    Display = Table_EquipDisplay_t.Display[496]
   },
   [3010629] = {
     id = 3010629,
-    Display = Table_EquipDisplay_t.Display[520]
+    Display = Table_EquipDisplay_t.Display[528]
   },
   [3010631] = {
     id = 3010631,
-    Display = Table_EquipDisplay_t.Display[522]
+    Display = Table_EquipDisplay_t.Display[530]
   },
   [3010632] = {
     id = 3010632,
-    Display = Table_EquipDisplay_t.Display[523]
+    Display = Table_EquipDisplay_t.Display[531]
   },
   [3010633] = {
     id = 3010633,
-    Display = Table_EquipDisplay_t.Display[524]
+    Display = Table_EquipDisplay_t.Display[532]
   },
   [3010634] = {
     id = 3010634,
-    Display = Table_EquipDisplay_t.Display[525]
+    Display = Table_EquipDisplay_t.Display[533]
   },
   [3010666] = {
     id = 3010666,
-    Display = Table_EquipDisplay_t.Display[557]
+    Display = Table_EquipDisplay_t.Display[565]
   },
   [3010667] = {
     id = 3010667,
-    Display = Table_EquipDisplay_t.Display[558]
+    Display = Table_EquipDisplay_t.Display[566]
   },
   [3010668] = {
     id = 3010668,
-    Display = Table_EquipDisplay_t.Display[559]
+    Display = Table_EquipDisplay_t.Display[567]
   },
   [3010669] = {
     id = 3010669,
-    Display = Table_EquipDisplay_t.Display[467]
+    Display = Table_EquipDisplay_t.Display[475]
   },
   [3010671] = {
     id = 3010671,
-    Display = Table_EquipDisplay_t.Display[466]
+    Display = Table_EquipDisplay_t.Display[474]
   },
   [3010672] = {
     id = 3010672,
-    Display = Table_EquipDisplay_t.Display[461]
+    Display = Table_EquipDisplay_t.Display[469]
   },
   [3010673] = {
     id = 3010673,
-    Display = Table_EquipDisplay_t.Display[564]
+    Display = Table_EquipDisplay_t.Display[572]
   },
   [3010674] = {
     id = 3010674,
-    Display = Table_EquipDisplay_t.Display[565]
+    Display = Table_EquipDisplay_t.Display[573]
   },
   [3010680] = {
     id = 3010680,
-    Display = Table_EquipDisplay_t.Display[571]
+    Display = Table_EquipDisplay_t.Display[579]
   },
   [3010706] = {
     id = 3010706,
@@ -2440,11 +2448,11 @@ Table_EquipDisplay = {
   },
   [3011234] = {
     id = 3011234,
-    Display = Table_EquipDisplay_t.Display[457]
+    Display = Table_EquipDisplay_t.Display[465]
   },
   [3011235] = {
     id = 3011235,
-    Display = Table_EquipDisplay_t.Display[456]
+    Display = Table_EquipDisplay_t.Display[464]
   },
   [3011284] = {
     id = 3011284,
@@ -2456,7 +2464,7 @@ Table_EquipDisplay = {
   },
   [3011674] = {
     id = 3011674,
-    Display = Table_EquipDisplay_t.Display[455]
+    Display = Table_EquipDisplay_t.Display[463]
   },
   [3011722] = {
     id = 3011722,
@@ -2468,15 +2476,15 @@ Table_EquipDisplay = {
   },
   [3011790] = {
     id = 3011790,
-    Display = Table_EquipDisplay_t.Display[454]
+    Display = Table_EquipDisplay_t.Display[462]
   },
   [3011791] = {
     id = 3011791,
-    Display = Table_EquipDisplay_t.Display[453]
+    Display = Table_EquipDisplay_t.Display[461]
   },
   [3011804] = {
     id = 3011804,
-    Display = Table_EquipDisplay_t.Display[447]
+    Display = Table_EquipDisplay_t.Display[455]
   },
   [3011810] = {
     id = 3011810,
@@ -2532,7 +2540,7 @@ Table_EquipDisplay = {
   },
   [3011988] = {
     id = 3011988,
-    Display = Table_EquipDisplay_t.Display[441]
+    Display = Table_EquipDisplay_t.Display[449]
   },
   [3011990] = {
     id = 3011990,
@@ -2552,11 +2560,11 @@ Table_EquipDisplay = {
   },
   [3012015] = {
     id = 3012015,
-    Display = Table_EquipDisplay_t.Display[430]
+    Display = Table_EquipDisplay_t.Display[438]
   },
   [3012016] = {
     id = 3012016,
-    Display = Table_EquipDisplay_t.Display[429]
+    Display = Table_EquipDisplay_t.Display[437]
   },
   [3012017] = {
     id = 3012017,
@@ -2592,15 +2600,15 @@ Table_EquipDisplay = {
   },
   [3012047] = {
     id = 3012047,
-    Display = Table_EquipDisplay_t.Display[428]
+    Display = Table_EquipDisplay_t.Display[436]
   },
   [3012048] = {
     id = 3012048,
-    Display = Table_EquipDisplay_t.Display[427]
+    Display = Table_EquipDisplay_t.Display[435]
   },
   [3012050] = {
     id = 3012050,
-    Display = Table_EquipDisplay_t.Display[426]
+    Display = Table_EquipDisplay_t.Display[434]
   },
   [3012051] = {
     id = 3012051,
@@ -2624,15 +2632,15 @@ Table_EquipDisplay = {
   },
   [3012077] = {
     id = 3012077,
-    Display = Table_EquipDisplay_t.Display[425]
+    Display = Table_EquipDisplay_t.Display[433]
   },
   [3012078] = {
     id = 3012078,
-    Display = Table_EquipDisplay_t.Display[424]
+    Display = Table_EquipDisplay_t.Display[432]
   },
   [3012080] = {
     id = 3012080,
-    Display = Table_EquipDisplay_t.Display[414]
+    Display = Table_EquipDisplay_t.Display[422]
   },
   [3012081] = {
     id = 3012081,
@@ -2640,11 +2648,11 @@ Table_EquipDisplay = {
   },
   [3012082] = {
     id = 3012082,
-    Display = Table_EquipDisplay_t.Display[413]
+    Display = Table_EquipDisplay_t.Display[421]
   },
   [3012083] = {
     id = 3012083,
-    Display = Table_EquipDisplay_t.Display[412]
+    Display = Table_EquipDisplay_t.Display[420]
   },
   [3012105] = {
     id = 3012105,
@@ -2676,7 +2684,7 @@ Table_EquipDisplay = {
   },
   [3012113] = {
     id = 3012113,
-    Display = Table_EquipDisplay_t.Display[411]
+    Display = Table_EquipDisplay_t.Display[419]
   },
   [3012135] = {
     id = 3012135,
@@ -2704,7 +2712,7 @@ Table_EquipDisplay = {
   },
   [3012142] = {
     id = 3012142,
-    Display = Table_EquipDisplay_t.Display[410]
+    Display = Table_EquipDisplay_t.Display[418]
   },
   [3012143] = {
     id = 3012143,
@@ -2748,7 +2756,7 @@ Table_EquipDisplay = {
   },
   [3012196] = {
     id = 3012196,
-    Display = Table_EquipDisplay_t.Display[409]
+    Display = Table_EquipDisplay_t.Display[417]
   },
   [3012197] = {
     id = 3012197,
@@ -2768,11 +2776,11 @@ Table_EquipDisplay = {
   },
   [3012202] = {
     id = 3012202,
-    Display = Table_EquipDisplay_t.Display[407]
+    Display = Table_EquipDisplay_t.Display[415]
   },
   [3012203] = {
     id = 3012203,
-    Display = Table_EquipDisplay_t.Display[402]
+    Display = Table_EquipDisplay_t.Display[410]
   },
   [3012225] = {
     id = 3012225,
@@ -2800,15 +2808,15 @@ Table_EquipDisplay = {
   },
   [3012232] = {
     id = 3012232,
-    Display = Table_EquipDisplay_t.Display[397]
+    Display = Table_EquipDisplay_t.Display[405]
   },
   [3012233] = {
     id = 3012233,
-    Display = Table_EquipDisplay_t.Display[392]
+    Display = Table_EquipDisplay_t.Display[400]
   },
   [3012255] = {
     id = 3012255,
-    Display = Table_EquipDisplay_t.Display[391]
+    Display = Table_EquipDisplay_t.Display[399]
   },
   [3012256] = {
     id = 3012256,
@@ -2816,15 +2824,15 @@ Table_EquipDisplay = {
   },
   [3012257] = {
     id = 3012257,
-    Display = Table_EquipDisplay_t.Display[390]
+    Display = Table_EquipDisplay_t.Display[398]
   },
   [3012258] = {
     id = 3012258,
-    Display = Table_EquipDisplay_t.Display[389]
+    Display = Table_EquipDisplay_t.Display[397]
   },
   [3012260] = {
     id = 3012260,
-    Display = Table_EquipDisplay_t.Display[388]
+    Display = Table_EquipDisplay_t.Display[396]
   },
   [3012261] = {
     id = 3012261,
@@ -2852,15 +2860,15 @@ Table_EquipDisplay = {
   },
   [3012288] = {
     id = 3012288,
-    Display = Table_EquipDisplay_t.Display[387]
+    Display = Table_EquipDisplay_t.Display[395]
   },
   [3012290] = {
     id = 3012290,
-    Display = Table_EquipDisplay_t.Display[386]
+    Display = Table_EquipDisplay_t.Display[394]
   },
   [3012291] = {
     id = 3012291,
-    Display = Table_EquipDisplay_t.Display[385]
+    Display = Table_EquipDisplay_t.Display[393]
   },
   [3012292] = {
     id = 3012292,
@@ -2868,27 +2876,27 @@ Table_EquipDisplay = {
   },
   [3012293] = {
     id = 3012293,
-    Display = Table_EquipDisplay_t.Display[384]
+    Display = Table_EquipDisplay_t.Display[392]
   },
   [3012374] = {
     id = 3012374,
-    Display = Table_EquipDisplay_t.Display[382]
+    Display = Table_EquipDisplay_t.Display[390]
   },
   [3012375] = {
     id = 3012375,
-    Display = Table_EquipDisplay_t.Display[381]
+    Display = Table_EquipDisplay_t.Display[389]
   },
   [3012594] = {
     id = 3012594,
-    Display = Table_EquipDisplay_t.Display[380]
+    Display = Table_EquipDisplay_t.Display[388]
   },
   [3012595] = {
     id = 3012595,
-    Display = Table_EquipDisplay_t.Display[379]
+    Display = Table_EquipDisplay_t.Display[387]
   },
   [3012838] = {
     id = 3012838,
-    Display = Table_EquipDisplay_t.Display[378]
+    Display = Table_EquipDisplay_t.Display[386]
   },
   [3012839] = {
     id = 3012839,
@@ -2904,47 +2912,79 @@ Table_EquipDisplay = {
   },
   [3013013] = {
     id = 3013013,
-    Display = Table_EquipDisplay_t.Display[377]
+    Display = Table_EquipDisplay_t.Display[385]
   },
   [3013014] = {
     id = 3013014,
-    Display = Table_EquipDisplay_t.Display[376]
+    Display = Table_EquipDisplay_t.Display[384]
+  },
+  [3013355] = {
+    id = 3013355,
+    Display = Table_EquipDisplay_t.Display[279]
+  },
+  [3013356] = {
+    id = 3013356,
+    Display = Table_EquipDisplay_t.Display[383]
+  },
+  [3013357] = {
+    id = 3013357,
+    Display = Table_EquipDisplay_t.Display[382]
+  },
+  [3013358] = {
+    id = 3013358,
+    Display = Table_EquipDisplay_t.Display[381]
+  },
+  [3013360] = {
+    id = 3013360,
+    Display = Table_EquipDisplay_t.Display[284]
+  },
+  [3013361] = {
+    id = 3013361,
+    Display = Table_EquipDisplay_t.Display[285]
+  },
+  [3013362] = {
+    id = 3013362,
+    Display = Table_EquipDisplay_t.Display[380]
+  },
+  [3013363] = {
+    id = 3013363,
+    Display = Table_EquipDisplay_t.Display[379]
   },
   [3033908] = {
     id = 3033908,
-    Display = Table_EquipDisplay_t.Display[375]
+    Display = Table_EquipDisplay_t.Display[378]
   },
   [3033909] = {
     id = 3033909,
-    Display = Table_EquipDisplay_t.Display[374]
+    Display = Table_EquipDisplay_t.Display[376]
   },
   [3033910] = {
     id = 3033910,
-    Display = Table_EquipDisplay_t.Display[373]
+    Display = Table_EquipDisplay_t.Display[364]
   },
   [3033911] = {
     id = 3033911,
-    Display = Table_EquipDisplay_t.Display[372]
+    Display = Table_EquipDisplay_t.Display[359]
   },
   [3033915] = {
     id = 3033915,
-    Display = Table_EquipDisplay_t.Display[371]
+    Display = Table_EquipDisplay_t.Display[358]
   },
   [3033940] = {
     id = 3033940,
-    Display = Table_EquipDisplay_t.Display[341]
+    Display = Table_EquipDisplay_t.Display[344]
   },
   [3033941] = {
     id = 3033941,
-    Display = Table_EquipDisplay_t.Display[342]
+    Display = Table_EquipDisplay_t.Display[345]
   },
   [3033953] = {
     id = 3033953,
-    Display = Table_EquipDisplay_t.Display[370]
+    Display = Table_EquipDisplay_t.Display[357]
   },
   [3033957] = {
     id = 3033957,
-    Display = Table_EquipDisplay_t.Display[344]
+    Display = Table_EquipDisplay_t.Display[347]
   }
 }
 local cell_mt = {

@@ -195,8 +195,12 @@ function DialogCell:GetDialogText(dialogData)
     return out_text
   end
   local params = {}
+  local param_str
   for i = 1, #cfg do
-    table.insert(params, self:ParseReplaceParam(cfg[i], self.npcguid))
+    param_str = self:ParseReplaceParam(cfg[i], self.npcguid)
+    if param_str then
+      table.insert(params, param_str)
+    end
   end
   return string.format(out_text, unpack(params))
 end
@@ -250,7 +254,7 @@ ReplaceParam_FuncMap[DialogParamType_GvgSeason] = function()
   return info and info.season or ""
 end
 ReplaceParam_FuncMap[DialogParamType_GvgStatueBattleLine] = function(guid)
-  return GvgProxy.Instance:GetCurMapStatueBattleClientGroupID()
+  return GvgProxy.Instance:GetCurMapStatueBattleClientGroupStr()
 end
 ReplaceParam_FuncMap[DialogParamType_GvgStatueCity] = function(guid)
   local city_id = TryGetGVGStatueCityID(guid)
@@ -298,7 +302,7 @@ end
 function DialogCell:ParseReplaceParam(param, npcguid)
   local func = ReplaceParam_FuncMap[param]
   if func then
-    return ReplaceParam_FuncMap[param](npcguid)
+    return func(npcguid)
   end
   return ""
 end

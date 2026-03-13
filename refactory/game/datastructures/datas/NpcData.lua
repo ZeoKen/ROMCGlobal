@@ -553,6 +553,12 @@ function NpcData:GetName(isInScene)
 end
 
 function NpcData:GetNpcID()
+  if HomeManager.Me():IsAtHome() and not StringUtil.IsEmpty(self.furnitureID) then
+    local furnitureData = HomeProxy.Instance:FindFurnitureData(self.furnitureID)
+    if furnitureData and furnitureData.woodType == EWOODTYPE.EWOODTYPE_PLAYER then
+      return 0
+    end
+  end
   return self.staticData.id
 end
 

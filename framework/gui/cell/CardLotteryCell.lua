@@ -1,14 +1,11 @@
 local IconMap = {
   [2] = "mall_twistedegg_card_02"
 }
-local _CurBatchIcon = {
-  "mall_icon_exclamationpoint",
-  "recharge_icon_up"
-}
 autoImport("LotteryCell")
 CardLotteryCell = class("CardLotteryCell", LotteryCell)
 
 function CardLotteryCell:FindObjs()
+  self.batchConfigField = GameConfig.Lottery and GameConfig.Lottery.BatchIcon and GameConfig.Lottery.BatchIcon.cardUpBatchIcon or "up"
   CardLotteryCell.super.FindObjs(self)
   self.rate = self:FindGO("rate"):GetComponent(UILabel)
   self.extraRate = self:FindGO("extraRate"):GetComponent(UILabel)
@@ -32,17 +29,4 @@ function CardLotteryCell:SetData(data)
   self.up:SetActive(0 < safatyRate)
   self.quality.spriteName = IconMap[data.itemType] or ""
   self.data = data
-end
-
-function CardLotteryCell:UpdateCurBranch()
-  if not self.curBatch then
-    return
-  end
-  if self.data and self.data.isCurBatch == 1 then
-    self.curBatch.gameObject:SetActive(true)
-    self.curBatch.spriteName = BranchMgr.IsJapan() and _CurBatchIcon[1] or _CurBatchIcon[2]
-    self.curBatch:MakePixelPerfect()
-  else
-    self.curBatch.gameObject:SetActive(false)
-  end
 end

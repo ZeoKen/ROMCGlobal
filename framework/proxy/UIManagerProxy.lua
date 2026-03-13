@@ -478,6 +478,9 @@ function UIManagerProxy:NeedEnableAndroidKey(needEnable, callBack)
     if ApplicationInfo.IsRunOnWindowns() then
       needEnable = false
       callBack = nil
+    else
+      needEnable = true
+      callBack = UIManagerProxy.GetDefaultNeedEnableAndroidKeyCallback()
     end
     AndroidKey.Instance:NeedEnableAndroidKey(needEnable, function()
       if UIManagerProxy.Instance:CheckForbiddenAndroidKeyView() then

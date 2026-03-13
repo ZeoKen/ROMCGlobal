@@ -7,8 +7,9 @@ function AstralDestinyGraphData:ctor(season)
 end
 
 function AstralDestinyGraphData:InitPoints()
-  if Game.AstralDestinyGraphSeasonPointMap and Game.AstralDestinyGraphSeasonPointMap[self.season] then
-    for i = 1, #Game.AstralDestinyGraphSeasonPointMap[self.season] do
+  local configSeason = AstralProxy.GetConfigSeason(self.season)
+  if Game.AstralDestinyGraphSeasonPointMap and Game.AstralDestinyGraphSeasonPointMap[configSeason] then
+    for i = 1, #Game.AstralDestinyGraphSeasonPointMap[configSeason] do
       local pointData = AstralDestinyGraphPointData.new(self.season, i, self)
       self.points[i] = pointData
     end
@@ -47,7 +48,8 @@ AstralDestinyGraphPointData = class("AstralDestinyGraphPointData")
 function AstralDestinyGraphPointData:ctor(season, index, graph)
   self.season = season
   self.index = index
-  self.staticData = Game.AstralDestinyGraphSeasonPointMap and Game.AstralDestinyGraphSeasonPointMap[season] and Game.AstralDestinyGraphSeasonPointMap[season][index]
+  local configSeason = AstralProxy.GetConfigSeason(season)
+  self.staticData = Game.AstralDestinyGraphSeasonPointMap and Game.AstralDestinyGraphSeasonPointMap[configSeason] and Game.AstralDestinyGraphSeasonPointMap[configSeason][index]
   self.state = MessCCmd_pb.EGRAPH_POINT_STATE_LOCKED
   self.graph = graph
 end

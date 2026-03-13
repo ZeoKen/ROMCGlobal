@@ -170,7 +170,7 @@ function SetViewSystemState:FindObj()
   end
   self.objMultiMountLimit = self:FindGO("MultiMountLimit")
   self.togMultiMountTeamOnly = self:FindComponent("togTeamOnly", UIToggle, self.objMultiMountLimit)
-  if GameConfig.SystemForbid.MultiMount and self.objMultiMountLimit then
+  if self.objMultiMountLimit then
     self.objMultiMountLimit:SetActive(false)
   end
   self.objVoicePartShowingSet = self:FindGO("VoicePartShowingSet")

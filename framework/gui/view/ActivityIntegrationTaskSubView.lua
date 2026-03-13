@@ -4,6 +4,7 @@ autoImport("NewRechargeGiftTipCell")
 autoImport("NewHappyShopBuyItemCell")
 autoImport("NewRechargeRecommendTShopGoodsCell")
 autoImport("ActivityIntegrationShopItemCell")
+autoImport("ActivityChallengeProxy")
 local Prefab_Path = ResourcePathHelper.UIView("ActivityIntegrationTaskSubView")
 local picIns = PictureManager.Instance
 local tempVector3 = LuaVector3.Zero()
@@ -147,26 +148,49 @@ function ActivityIntegrationTaskSubView:RefreshPage(id)
   local helpID = self.staticData.HelpID
   self.helpBtn:SetActive(helpID ~= nil or false)
   self.endTime = nil
-  local actPersonalData = Table_ActPersonalTimer[self.activityID]
-  local baseOnCreate = ActivityIntegrationProxy.Instance:IsActBasedOnCreateDay(self.activityID)
-  if not baseOnCreate then
-    local isTF = EnvChannel.IsTFBranch()
-    local duration = isTF and self.staticData.TFDuration or self.staticData.Duration
-    self.startTime = duration[1] and KFCARCameraProxy.Instance:GetSelfCustomDate(duration[1])
-    self.endTime = duration[2] and KFCARCameraProxy.Instance:GetSelfCustomDate(duration[2])
-  else
-    local closeOnDay = actPersonalData and actPersonalData.CloseOnAccDay
+  if self.isNewConfig then
+    local actPersonalInfo = ActivityIntegrationProxy.Instance:GetActPersonalActInfo(self.activityID)
+    if actPersonalInfo then
+      self.startTime = actPersonalInfo.starttime
+      self.endTime = actPersonalInfo.endtime
+    end
+    local misc = self.staticData.Misc
+    local closeOnDay = misc and misc.CloseOnAccDay
+    local closeDay = misc and misc.CloseDay
     if closeOnDay then
       local createDay = ActivityIntegrationProxy.Instance.createDay or 1
       if closeOnDay < createDay then
         redlog("时间错误  应该关闭")
       end
       self.endTime = ClientTimeUtil.GetNextDailyRefreshTimeByTimeStamp(ServerTime.CurServerTime() / 1000 + 86400 * (closeOnDay - createDay))
-    elseif actPersonalData and actPersonalData.CloseDay then
+    elseif closeDay then
       local allFinish = ActivityIntegrationProxy.Instance:IsChallengeAllFinish(self.activityID)
       if allFinish then
-        local actPersonalInfo = ActivityIntegrationProxy.Instance:GetActPersonalActInfo(self.activityID)
         self.endTime = actPersonalInfo and actPersonalInfo.endtime
+      end
+    end
+  else
+    local actPersonalData = Table_ActPersonalTimer[self.activityID]
+    local baseOnCreate = ActivityIntegrationProxy.Instance:IsActBasedOnCreateDay(self.activityID)
+    if not baseOnCreate then
+      local isTF = EnvChannel.IsTFBranch()
+      local duration = isTF and self.staticData.TFDuration or self.staticData.Duration
+      self.startTime = duration[1] and KFCARCameraProxy.Instance:GetSelfCustomDate(duration[1])
+      self.endTime = duration[2] and KFCARCameraProxy.Instance:GetSelfCustomDate(duration[2])
+    else
+      local closeOnDay = actPersonalData and actPersonalData.CloseOnAccDay
+      if closeOnDay then
+        local createDay = ActivityIntegrationProxy.Instance.createDay or 1
+        if closeOnDay < createDay then
+          redlog("时间错误  应该关闭")
+        end
+        self.endTime = ClientTimeUtil.GetNextDailyRefreshTimeByTimeStamp(ServerTime.CurServerTime() / 1000 + 86400 * (closeOnDay - createDay))
+      elseif actPersonalData and actPersonalData.CloseDay then
+        local allFinish = ActivityIntegrationProxy.Instance:IsChallengeAllFinish(self.activityID)
+        if allFinish then
+          local actPersonalInfo = ActivityIntegrationProxy.Instance:GetActPersonalActInfo(self.activityID)
+          self.endTime = actPersonalInfo and actPersonalInfo.endtime
+        end
       end
     end
   end
@@ -186,7 +210,7 @@ function ActivityIntegrationTaskSubView:RefreshPage(id)
   local _HappyShopProxy = HappyShopProxy.Instance
   local result = {}
   for id, info in pairs(processList) do
-    local config = Table_NewServerChallengeTarget[id]
+    local config = ActivityChallengeProxy.Instance:GetChallengeConfig(id)
     info.canBuy = false
     local shopItemID = config and config.ShopItemID
     local _shopItemData = shopItemID and ShopProxy.Instance:GetShopItemDataByTypeId(self.shopType, self.shopId, shopItemID)
@@ -246,7 +270,7 @@ function ActivityIntegrationTaskSubView:RefreshPage(id)
       allFinish = false
     end
     local id = cells[i].id
-    local config = Table_NewServerChallengeTarget[id]
+    local config = ActivityChallengeProxy.Instance:GetChallengeConfig(id)
     if config then
       if config.TargetType == "gem_activate" then
         if activeGem == 0 or activeGem < cells[i].process then
@@ -340,7 +364,7 @@ function ActivityIntegrationTaskSubView:UpdateTaskCellShopInfo()
   if cells and 0 < #cells then
     for i = 1, #cells do
       local single = cells[i]
-      local config = Table_NewServerChallengeTarget[single.id]
+      local config = ActivityChallengeProxy.Instance:GetChallengeConfig(single.id)
       if config and config.ShopItemID then
         if shopDatas and shopDatas[config.ShopItemID] then
           single:SetShopItemData()
@@ -668,29 +692,48 @@ function ActivityIntegrationTaskSubView:ShowClickItemUrlTip(data)
 end
 
 function ActivityIntegrationTaskSubView:OnEnter(id)
-  self.staticData = Table_ActivityIntegration[id]
-  if not self.staticData then
-    redlog("Table_ActivityIntegration缺少配置", id)
+  local staticData = Table_ActivityIntegration[id] or Table_ActivityNew[id]
+  if not staticData then
+    redlog("Table_ActivityIntegration/Table_ActivityNew缺少配置", id)
     return
   end
+  self.staticData = staticData
   ActivityIntegrationTaskSubView.super.OnEnter(self)
-  self.activityID = self.staticData.Params and self.staticData.Params.ActivityId
-  if not self.activityID then
-    redlog("活动ID不存在")
-    return
+  self.isNewConfig = Table_ActivityNew and Table_ActivityNew[id] ~= nil
+  local isNewConfig = self.isNewConfig
+  if isNewConfig then
+    self.activityID = id
+    self.shopType = self.staticData.ShopType
+    self.shopId = self.staticData.ShopId
+    local misc = self.staticData.Misc
+    self.shopShowID = misc and misc.ShopShowID
+    self.shopItemID = misc and misc.ShopItemID
+    self.showShopID = misc and misc.ShopShowID
+    self.targetType = misc and misc.TargetType
+    self.descStr = self.staticData.Desc and OverSea.LangManager.Instance():GetLangByKey(self.staticData.Desc)
+  else
+    self.activityID = self.staticData.Params and self.staticData.Params.ActivityId
+    if not self.activityID then
+      redlog("活动ID不存在")
+      return
+    end
+    local actPersonConfig = Table_ActPersonalTimer[self.activityID]
+    local params = actPersonConfig and actPersonConfig.Misc
+    self.shopShowID = params and params.ShopShowID
+    self.shopType = params and params.ShopType
+    self.shopId = params and params.ShopId
+    self.shopItemID = params and params.ShopItemID
+    self.descStr = params and params.Des and OverSea.LangManager.Instance():GetLangByKey(params.Des)
+    self.showShopID = params and params.ShopShowID
+    self.targetType = params and params.TargetType
   end
-  local actPersonConfig = Table_ActPersonalTimer[self.activityID]
-  local params = actPersonConfig and actPersonConfig.Misc
-  self.shopShowID = params and params.ShopShowID
-  self.shopType = params and params.ShopType
-  self.shopId = params and params.ShopId
-  self.shopItemID = params and params.ShopItemID
   xdlog("ShopShow", self.shopShowID, self.shopType, self.shopId)
-  self.descStr = params and params.Des and OverSea.LangManager.Instance():GetLangByKey(params.Des)
-  self.showShopID = params and params.ShopShowID
-  self.targetType = params and params.TargetType
-  local params = self.staticData.Params
-  self.textureName = params and params.Texture
+  if isNewConfig then
+    self.textureName = self.staticData and self.staticData.Params_Inte and self.staticData.Params_Inte.Texture
+  else
+    local params = self.staticData.Params
+    self.textureName = params and params.Texture
+  end
   picIns:SetUI(self.textureName, self.bgTexture)
   picIns:SetUI("openactivity_bottom_01", self.shopBg)
   ServiceUserEventProxy.Instance:CallQueryChargeCnt()
@@ -704,7 +747,14 @@ function ActivityIntegrationTaskSubView:OnEnter(id)
   end
   self.buyCell.gameObject:SetActive(false)
   self.giftCell.gameObject:SetActive(false)
-  local colorTheme = params and params.ColorTheme or 1
+  local colorTheme = 1
+  if isNewConfig then
+    local param = self.staticData.Params_Inte
+    colorTheme = param and param.ColorTheme or 1
+  else
+    local params = self.staticData.Params
+    colorTheme = params and params.ColorTheme or 1
+  end
   if not self.colorTheme or colorTheme ~= self.colorTheme then
     self.colorTheme = colorTheme
     self:ResetColorTheme()

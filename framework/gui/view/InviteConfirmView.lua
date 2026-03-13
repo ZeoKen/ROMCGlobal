@@ -78,6 +78,7 @@ function InviteConfirmView:MapViewListen()
   self:AddListenEvt(ServiceEvent.MatchCCmdReserveRoomInviterMatchCCmd, self.HandleCustomRoomInvite)
   self:AddListenEvt(ServiceEvent.SessionTeamPublishReqHelpTeamCmd, self.HandleAssistantInvite)
   self:AddListenEvt(ServiceEvent.MessCCmdInviteeReceiveLoveConfessionMessCCmd, self.HandleLoveChallengeInvite)
+  self:AddListenEvt(ServiceEvent.FuBenCmdGvgInviteTransferToMeCmd, self.HandleGvgInviteTransferToMeCmd)
 end
 
 function InviteConfirmView:HandleRemoveMidMatch()
@@ -1285,4 +1286,32 @@ function InviteConfirmView:HandleLoveChallengeInvite(note)
   end
   
   self.conformCtl:AddInvite(InviteType.LoveChallenge, inviteData)
+end
+
+function InviteConfirmView:HandleGvgInviteTransferToMeCmd(note)
+  local serverData = note.body
+  local messageId = GameConfig.ArtifactConsumable.MemberAssembleInviteMsgID or 2697
+  if Table_Sysmsg[messageId] == nil then
+    messageId = 969
+    errorLog("Message ID: 2694 is not exist")
+  end
+  local data = {
+    playerid = serverData.host,
+    time = serverData.wait_time,
+    msgId = messageId
+  }
+  
+  function data.yesevt(id)
+    ServiceFuBenCmdProxy.Instance:CallGvgInviteTransferToMeCmd(serverData.host, serverData.start_time, serverData.wait_time, true)
+  end
+  
+  function data.noevt(id)
+    ServiceFuBenCmdProxy.Instance:CallGvgInviteTransferToMeCmd(serverData.host, serverData.start_time, serverData.wait_time, false)
+  end
+  
+  function data.endevt(id)
+    ServiceFuBenCmdProxy.Instance:CallGvgInviteTransferToMeCmd(serverData.host, serverData.start_time, serverData.wait_time, false)
+  end
+  
+  self.conformCtl:AddInvite(InviteType.GvgInviteTransferToMe, data)
 end

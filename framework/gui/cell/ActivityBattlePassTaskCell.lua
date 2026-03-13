@@ -47,7 +47,7 @@ end
 function ActivityBattlePassTaskCell:SetCellData(info, staticData)
   if staticData then
     self.descLabel.text = staticData.Description
-    self.typeNameLabel.text = TypeName[staticData.Type]
+    self.typeNameLabel.text = staticData.TypeName or TypeName[staticData.Type] or ""
     self.extraDescLabel.text = staticData.Title
     local targetNum = staticData.TargetNum
     local progress = info.progress
@@ -58,12 +58,14 @@ function ActivityBattlePassTaskCell:SetCellData(info, staticData)
     self.progressLabel.text = progress .. "/" .. targetNum
     local datas = ReusableTable.CreateArray()
     if staticData.Exp then
-      local expItem = GameConfig.ActivityBattlePass[staticData.ActID].ExpItem
-      local itemData = ItemData.new("Reward", expItem)
-      if itemData then
-        itemData:SetItemNum(staticData.Exp)
+      local expItem = self:GetExpItem(staticData.ActID)
+      if expItem then
+        local itemData = ItemData.new("Reward", expItem)
+        if itemData then
+          itemData:SetItemNum(staticData.Exp)
+        end
+        datas[#datas + 1] = itemData
       end
-      datas[#datas + 1] = itemData
     end
     if staticData.Reward then
       for i = 1, #staticData.Reward do
@@ -92,10 +94,10 @@ function ActivityBattlePassTaskCell:SetTaskState(type, state, hideGoTo)
     self.locker:SetActive(false)
   else
     local config = Table_ActBpTarget[self.id]
-    local isPro = ActivityBattlePassProxy.Instance.isPro[config.ActID]
-    self.gotoBtn:SetActive(state == EACTQUESTSTATE.EACT_QUEST_DOING and isPro and not hideGoTo)
-    self.receivedCheck:SetActive(state == EACTQUESTSTATE.EACT_QUEST_REWARDED and isPro)
-    self.locker:SetActive(not isPro)
+    local isPro = ActivityBattlePassProxy.Instance.isPro[config.ActID] or false
+    self.gotoBtn:SetActive(state == EACTQUESTSTATE.EACT_QUEST_DOING and isPro and not hideGoTo or false)
+    self.receivedCheck:SetActive(state == EACTQUESTSTATE.EACT_QUEST_REWARDED and isPro or false)
+    self.locker:SetActive(not isPro or false)
   end
 end
 
@@ -124,4 +126,18 @@ function ActivityBattlePassTaskCell:SetReward(rewardId, list)
       end
     end
   end
+end
+
+function ActivityBattlePassTaskCell:GetExpItem(actID)
+  local expItem
+  local config = Table_ActivityNew and Table_ActivityNew[actID] and Table_ActivityNew[actID].Misc
+  if config then
+    expItem = config.ExpItem
+  else
+    expItem = GameConfig.ActivityBattlePass and GameConfig.ActivityBattlePass[actID] and GameConfig.ActivityBattlePass[actID].ExpItem
+  end
+  if not expItem then
+    redlog("无经验道具配置，请检查ActivityNew表的Misc或GameConfig.ActivityBattlePass，activityId: " .. actID)
+  end
+  return expItem
 end

@@ -345,7 +345,6 @@ Table_TeamGoals = {
   },
   [10725] = {
     id = 10725,
-    NameZh = "神谕精英Ⅴ",
     RaidType = 100117,
     FuncState = 108,
     RaidID = 64608,
@@ -984,6 +983,7 @@ Table_TeamGoals = {
   },
   [91500] = {
     id = 91500,
+    NameZh = "狂想寓言",
     type = 91500,
     Filter = 53,
     Level = 20,
@@ -1561,7 +1561,7 @@ local cell_mt = {
     Difficulty = _EmptyTable,
     Filter = 7,
     Level = 40,
-    NameZh = "狂想寓言",
+    NameZh = "神谕精英Ⅴ",
     RootRaidDesc = "",
     SetShow = 1,
     id = 10710,

@@ -398,8 +398,7 @@ end
 
 function GVGSandTablePanel:HandleGvgSandTableUpdate()
   local sandTableInfo = GvgProxy.Instance.GvgSandTableInfo
-  local gvgGroup = sandTableInfo.group and GvgProxy.ClientGroupId(sandTableInfo.group)
-  self.battleLineLabel.text = string.format(ZhString.GVGSandTable_GVGGroup, gvgGroup)
+  self.battleLineLabel.text = GuildProxy.ParseServerGroupID(sandTableInfo.group)
   self.endTimeStamp = sandTableInfo.endtime
   TimeTickManager.Me():ClearTick(self, 1)
   TimeTickManager.Me():CreateTick(0, 1000, self.RefreshTimeCountDown, self, 1)

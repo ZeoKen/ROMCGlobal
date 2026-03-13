@@ -8,6 +8,6 @@ end
 
 function ZoneGroupCell:SetData(data)
   self.data = data
-  self.groupIDLab.text = data:GetGroupIdStr()
+  self.groupIDLab.text = data:GetDisplayStr()
   self.zoneLab.text = data:GetZoneStr()
 end

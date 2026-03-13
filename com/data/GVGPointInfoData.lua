@@ -32,6 +32,7 @@ function GVGPointInfoData:ctor(data)
   end
   self:UpdateFlag()
   self:SetEffect()
+  self.transfer_forbidden = data.transfer_forbidden
 end
 
 function GVGPointInfoData:InitConfig()
@@ -70,6 +71,7 @@ function GVGPointInfoData:Update(data)
     self.score = data.score
   end
   self:SetEffect()
+  self.transfer_forbidden = data.transfer_forbidden
 end
 
 function GVGPointInfoData:CheckScore()
@@ -290,4 +292,8 @@ function GVGPointInfoData:CanGetRewardFromThisHold()
     return false
   end
   return true
+end
+
+function GVGPointInfoData:IsTransferForbidden()
+  return self.transfer_forbidden == true
 end

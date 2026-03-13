@@ -49,7 +49,7 @@ end
 
 function ActivityFlipCardBuyChanceCell:SetData(data)
   self.activityId = data
-  local config = Table_ActPersonalTimer[self.activityId]
+  local config = ActivityConfigHelper.GetActPersonalConfig(self.activityId)
   if config then
     self.itemId = config.Misc.chance_token
     self.data = ItemData.new("chanceToken", self.itemId)

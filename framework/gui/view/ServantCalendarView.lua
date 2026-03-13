@@ -104,7 +104,8 @@ function ServantCalendarView:OnClickMonthTog()
   self:ShowMonth()
 end
 
-function ServantCalendarView:RefreshCurrentTimeLine(minValue, maxValue)
+function ServantCalendarView:RefreshCurrentTimeLine(minValue, maxValue, activeTimePoints)
+  TableUtil.Print(activeTimePoints)
   if not (ServantCalendarProxy.Instance:IsTodayForeachWeek() and minValue) or not maxValue then
     self.curTimeLine:SetActive(false)
     return
@@ -114,10 +115,35 @@ function ServantCalendarView:RefreshCurrentTimeLine(minValue, maxValue)
   local hour = tonumber(os.date("%H", curServerTime))
   local min = tonumber(os.date("%M", curServerTime))
   local cur = hour + min / 60
-  if minValue < cur and cur < maxValue + 1 then
-    self.curTimeLine:SetActive(true)
-    local y = self.initCurTimeLinePos - (cur - minValue) * 220
-    self.curTimeLine.transform.localPosition = LuaGeometry.GetTempVector3(0, y, 0)
+  if activeTimePoints and 0 < #activeTimePoints then
+    local weekData = ServantCalendarProxy.Instance:GetCurWeekData()
+    local found = false
+    local isLastTimePoint = false
+    local timeIndex, timeNextIndex = 0, 0
+    if cur >= activeTimePoints[#activeTimePoints] and cur < activeTimePoints[#activeTimePoints] + 1 then
+      timeIndex = #activeTimePoints
+      isLastTimePoint = true
+      found = true
+    else
+      for i = 1, #activeTimePoints do
+        if cur >= activeTimePoints[i] and activeTimePoints[i + 1] and cur < activeTimePoints[i + 1] then
+          timeIndex = i
+          timeNextIndex = i + 1
+          found = true
+          break
+        end
+      end
+    end
+    if found then
+      self.curTimeLine:SetActive(true)
+      local timePoint = activeTimePoints[timeIndex]
+      local offsetInHour = cur - timePoint
+      local interval = isLastTimePoint and 1 or activeTimePoints[timeNextIndex] - activeTimePoints[timeIndex]
+      local y = self.initCurTimeLinePos - 220 * (timeIndex - 1) - offsetInHour / interval * 220
+      self.curTimeLine.transform.localPosition = LuaGeometry.GetTempVector3(0, y, 0)
+    else
+      self.curTimeLine:SetActive(false)
+    end
   else
     self.curTimeLine:SetActive(false)
   end
@@ -212,26 +238,22 @@ function ServantCalendarView:ShowWeek()
   self.weekBgCtl:ResetDatas(viewdata)
   local weekConsoleActData, maxNum = ServantCalendarProxy.Instance:GetWeekConsoleData()
   self.weekConsoleCtl:ResetDatas(weekConsoleActData)
+  local activeTimePoints = ServantCalendarProxy.Instance:GetActiveTimePoints(viewdata)
   local minValue, maxValue = ServantCalendarProxy.Instance:GetMinMaxTimeGap(viewdata)
-  self:RefreshCurrentTimeLine(minValue, maxValue)
-  local gap = maxValue - minValue
+  self:RefreshCurrentTimeLine(minValue, maxValue, activeTimePoints)
   local timelineDatas = {}
   local hasWeekConolseData = 0 < maxNum
   maxNum = math.min(maxNum, 3)
-  local cal_minTime
-  if hasWeekConolseData then
-    cal_minTime = minValue
-  else
-    cal_minTime = minValue + 1
+  if 2 < #activeTimePoints then
+    for i = 2, #activeTimePoints do
+      timelineDatas[#timelineDatas + 1] = activeTimePoints[i]
+    end
   end
+  self.timeLineCtl:ResetDatas(timelineDatas)
   self.weekContainerPos.transform.localPosition = LuaGeometry.GetTempVector3(0, -(maxNum - 3) * 70, 0)
   local y = hasWeekConolseData and -15 or -215
   local x = self.lineTimeGrid.gameObject.transform.localPosition.x
   self.lineTimeGrid.gameObject.transform.localPosition = LuaGeometry.GetTempVector3(x, y, 0)
-  for i = cal_minTime, maxValue do
-    timelineDatas[#timelineDatas + 1] = i
-  end
-  self.timeLineCtl:ResetDatas(timelineDatas)
   local days = ServantCalendarProxy.Instance:GetWeekDays()
   for i = 1, 7 do
     self.weekdayLab[i].text = days[i]

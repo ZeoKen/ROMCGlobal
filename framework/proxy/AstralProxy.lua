@@ -198,18 +198,11 @@ end
 
 function AstralProxy:InitDestinyGraphInfo(curSeason)
   if Game.AstralDestinyGraphSeasonPointMap then
-    for season, points in pairs(Game.AstralDestinyGraphSeasonPointMap) do
-      if season <= curSeason then
-        local graphData = self.graphInfos[season]
-        if not graphData then
-          graphData = AstralDestinyGraphData.new(season)
-          self.graphInfos[season] = graphData
-          for i = 1, #points do
-            local pointData = graphData:GetPointData(i)
-            local state = MessCCmd_pb.EGRAPH_POINT_STATE_LOCKED
-            pointData:SetState(state)
-          end
-        end
+    for i = 1, curSeason do
+      local graphData = self.graphInfos[i]
+      if not graphData then
+        graphData = AstralDestinyGraphData.new(i)
+        self.graphInfos[i] = graphData
       end
     end
   end
@@ -321,4 +314,11 @@ end
 
 function AstralProxy:GetPrayedBranches(astral_pray_group)
   return self.prayGroupInfos[astral_pray_group]
+end
+
+function AstralProxy.GetConfigSeason(rawSeason)
+  if not rawSeason then
+    return 0
+  end
+  return Game.AstralDestinyGraphSeasonPointMap[rawSeason] ~= nil and rawSeason or 10000
 end

@@ -24,9 +24,9 @@ function NewGvgRankCell:FindObj()
   self.totalPointLab = self:FindComponent("TotalPointLab", UILabel)
   self.rankSp = self:FindComponent("RankSp", UISprite)
   self.rankLab = self:FindComponent("RankLab", UILabel)
-  self.zoneObj = self:FindGO("ZoneLab")
-  if self.zoneObj then
-    self.zoneLab = self.zoneObj:GetComponent(UILabel)
+  self.battlelineObj = self:FindGO("ZoneLab")
+  if self.battlelineObj then
+    self.battlelineLab = self.battlelineObj:GetComponent(UILabel)
   end
   self.serverIDLab = self:FindComponent("ServerId", UILabel)
   self.hasRewardSp = self:FindComponent("HasRewardSp", UISprite)
@@ -43,8 +43,8 @@ function NewGvgRankCell:SetData(data)
   if self.guildNameLab then
     self.guildNameLab.text = data:GetGuildName()
   end
-  if self.zoneLab then
-    self.zoneLab.text = tostring(data:GetZoneId())
+  if self.battlelineLab then
+    self.battlelineLab.text = data:GetBattlelineStr()
   end
   if self.serverIDLab and data.GetServerId and data:GetServerId() ~= 0 then
     if GvgProxy.Instance:CheckDiffServerValid() then

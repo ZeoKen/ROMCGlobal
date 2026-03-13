@@ -214,9 +214,6 @@ function CupModeProxy:ShutDown()
   _TableClear(self.preRoundOpponentGroup)
   self:_resetForbiddenPro()
   self:ClearMemberMap()
-  if self.seasonRunning then
-    self:DoQuerySeasonRank()
-  end
   self.seasonRunning = false
   self:SetSchedule(WarbandProxy.ESchedule.END)
 end

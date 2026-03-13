@@ -5,6 +5,8 @@ GuildProxy.Instance = nil
 GuildProxy.NAME = "GuildProxy"
 autoImport("MyselfGuildData")
 GuildItemConfig = {GuildItemId = 5500}
+GuildProxy.NewVersionServerGroupIDBase = 10000000
+GuildProxy.OldVersionServerGroupIDBase = 10000
 GuildAuthorityMap = {
   InviteJoin = 1,
   PermitJoin = 2,
@@ -131,10 +133,10 @@ end
 function GuildProxy:GetAllGvgGroupFilterConfig()
   if not self.gvgGroupFilterNameConfig then
     local max = GvgProxy.Instance:GetGroupCnt()
-    local guild = self:GetMyGuildClientGvgGroup()
+    local battlelineStr = self:GetMyGuildClientGvgGroupStr()
     self.gvgGroupFilterNameConfig = {
       [1] = string.format(ZhString.GuildFindPage_AllGvgGroup, max),
-      [2] = string.format(ZhString.GuildFindPage_CurGvgGroup, guild)
+      [2] = string.format(ZhString.GuildFindPage_CurGvgGroup, battlelineStr)
     }
   end
   if not self.gvgGroupFilterValueConfig then
@@ -182,17 +184,40 @@ function GuildProxy:InitMyGuildData(guildData)
   end
   self.myGuildData = MyselfGuildData.new(guildData)
   self.guildId = self.myGuildData.id
+  if not self.myMercenaryGuild then
+    GvgProxy.Instance:Debug("[NewGVG时区相关] 没有雇佣公会，使用自身公会时区请求服务器同步开战状态及时间,时区id:", self:GetMyGuildTimeZoneID())
+    self:QueryGvgOpenFireStateByTimezone()
+  end
   UnionLogo.Ins():SetUnionID(self.myGuildData.id)
   GvgProxy.Instance:DoQueryGvgZoneGroup(true)
   GvgProxy.Instance:QueryCityInfo()
 end
 
-function GuildProxy:UpdateMyGuildData(data)
-  if self.myGuildData ~= nil and self.guildId == data.guildid then
-    self.myGuildData:UpdateData(data.updates)
+local _updateGuildAndCheckTimezone = function(guildData, targetGuildId, server_updates)
+  if not guildData or targetGuildId ~= guildData.id then
+    return nil
   end
-  if self.myMercenaryGuild ~= nil and self.myMercenaryGuildId == data.guildid then
-    self.myMercenaryGuild:UpdateData(data.updates)
+  local oldTimezoneId = guildData:GetTimeZoneID()
+  guildData:UpdateData(server_updates)
+  local newTimezoneId = guildData:GetTimeZoneID()
+  if oldTimezoneId ~= newTimezoneId then
+    return newTimezoneId
+  end
+  return false
+end
+
+function GuildProxy:UpdateMyGuildData(data)
+  local guildid = data.guildid
+  if not guildid then
+    return
+  end
+  local changedTimezoneId = _updateGuildAndCheckTimezone(self.myGuildData, guildid, data.updates)
+  if nil == changedTimezoneId then
+    changedTimezoneId = _updateGuildAndCheckTimezone(self.myMercenaryGuild, guildid, data.updates)
+  end
+  if changedTimezoneId then
+    GvgProxy.Instance:Debug("[NewGVG时区相关] 时区ID变化，重新请求开战状态,时区id:", changedTimezoneId)
+    self:QueryGvgOpenFireStateByTimezone(changedTimezoneId)
   end
 end
 
@@ -283,11 +308,15 @@ end
 function GuildProxy:ExitGuild(guildid)
   if guildid and self:IsMyMercenaryGuild(guildid) then
     self:ExitMercenaryGuild()
+    GvgProxy.Instance:Debug("[NewGVG时区相关] 退出雇主公会，使用自身公会时区请求服务器同步开战状态及时间,时区id:", self:GetMyGuildTimeZoneID())
+    self:QueryGvgOpenFireStateByTimezone()
     return
   end
   if self.myGuildData then
     ArtifactProxy.Instance:ClearData()
     self.myGuildData:Exit()
+    GvgProxy.Instance:Debug("[NewGVG时区相关] 退出自身公会，尝试使用雇主公会时区请求服务器同步开战状态及时间,时区id:", self:GetMyMercenaryTimeZoneID())
+    self:QueryGvgOpenFireStateByTimezone(self:GetMyMercenaryTimeZoneID())
   end
   UnionLogo.Ins():SetUnionID(nil)
   FunctionGuild.Me():ResetGuildItemQueryState()
@@ -1032,6 +1061,17 @@ function GuildProxy:InitMyMercenaryGuildData(guildData)
   end
   self.myMercenaryGuild = MyselfGuildData.new(guildData)
   self.myMercenaryGuildId = self.myMercenaryGuild.id
+  if not self:IHaveGuild() then
+    local myMercenaryTimeZoneID = self:GetMyMercenaryTimeZoneID()
+    GvgProxy.Instance:Debug("自身没有公会时，用雇主公会时区ID请求服务器同步开战状态及时间,时区id:", myMercenaryTimeZoneID)
+    self:QueryGvgOpenFireStateByTimezone(myMercenaryTimeZoneID)
+  end
+end
+
+function GuildProxy:QueryGvgOpenFireStateByTimezone(queryTimeZoneID)
+  queryTimeZoneID = queryTimeZoneID or self:GetMyGuildTimeZoneID()
+  GvgProxy.Instance:Debug("[NewGVG时区相关] CallGvgOpenFireGuildCmd  timezoneid:", queryTimeZoneID)
+  ServiceGuildCmdProxy.Instance:CallGvgOpenFireGuildCmd(nil, nil, nil, queryTimeZoneID)
 end
 
 function GuildProxy:UpdateMyMercenaryGuildData(serverData)
@@ -1062,15 +1102,30 @@ function GuildProxy:DoIHaveMercenaryGuild()
 end
 
 function GuildProxy:GetMyGuildGvgGroup()
-  return self.myGuildData and self.myGuildData.battle_group or 0
+  return self.myGuildData and self.myGuildData:GetGvgGroupID() or 0
 end
 
 function GuildProxy:GetMyMercenaryGvgGroup()
-  return self.myMercenaryGuild and self.myMercenaryGuild.battle_group or 0
+  return self.myMercenaryGuild and self.myMercenaryGuild:GetGvgGroupID() or 0
+end
+
+function GuildProxy:GetMyGuildTimeZoneID()
+  if self:IHaveGuild() then
+    return self.myGuildData:GetTimeZoneID()
+  end
+  return 0
+end
+
+function GuildProxy:GetMyMercenaryTimeZoneID()
+  return self.myMercenaryGuild and self.myMercenaryGuild:GetTimeZoneID() or 0
 end
 
 function GuildProxy:GetMyGuildClientGvgGroup()
-  return GvgProxy.ClientGroupId(self:GetMyGuildGvgGroup())
+  return GvgProxy.Instance:GetBattlelineIdByServerGroup(self:GetMyGuildGvgGroup())
+end
+
+function GuildProxy:GetMyGuildClientGvgGroupStr()
+  return GuildProxy.ParseServerGroupID(self:GetMyGuildGvgGroup())
 end
 
 function GuildProxy:GetMyGuildMercenaryNum()
@@ -1084,6 +1139,13 @@ end
 function GuildProxy:IsGuildDataBattleMvp()
   if self.myGuildData then
     return self.myGuildData.datebattle_mvp == true
+  end
+  return false
+end
+
+function GuildProxy:IsMyGuildChangingGroup()
+  if self.myGuildData then
+    return self.myGuildData:IsChangingGroupLine()
   end
   return false
 end
@@ -1226,4 +1288,26 @@ end
 function GuildProxy:DoMyGuildHaveOccupyCity()
   local myCity = self:GetMyGuildOccupiedCity()
   return myCity and myCity ~= 0
+end
+
+function GuildProxy.ParseServerGroupID(server_group_id, use_simple_format)
+  local timeZoneId = server_group_id // GuildProxy.NewVersionServerGroupIDBase
+  local server_id = server_group_id // 10000 % 1000
+  local battleLineId = server_group_id % 10000 + 1
+  local displayStr = ""
+  if server_group_id < GuildProxy.NewVersionServerGroupIDBase then
+    local formatStr = use_simple_format and ZhString.NewGVG_GroupID_Simple or ZhString.NewGVG_GroupID
+    displayStr = string.format(formatStr, battleLineId)
+    return displayStr, 0, server_id, battleLineId, nil
+  end
+  local timeZoneLetter
+  if 0 < timeZoneId then
+    timeZoneLetter = string.char(64 + timeZoneId)
+    local formatStr = use_simple_format and ZhString.NewGVG_GroupID_Oversea_Simple or ZhString.NewGVG_GroupID_Oversea
+    displayStr = string.format(formatStr, timeZoneLetter, battleLineId)
+  else
+    local formatStr = use_simple_format and ZhString.NewGVG_GroupID_Simple or ZhString.NewGVG_GroupID
+    displayStr = string.format(formatStr, battleLineId)
+  end
+  return displayStr, timeZoneId, server_id, battleLineId, timeZoneLetter
 end

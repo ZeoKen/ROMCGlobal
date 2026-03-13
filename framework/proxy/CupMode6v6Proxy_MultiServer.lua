@@ -17,15 +17,6 @@ function CupMode6v6Proxy_MultiServer:ctor(proxyName, data)
   end
 end
 
-function CupMode6v6Proxy_MultiServer:DoQuerySeasonRank()
-  assert(self.CupModeType, "必须在实现类中赋值")
-  if self.seasonRunning and self.seasonRank and #self.seasonRank > 0 then
-    return
-  end
-  xdlog("请求rank数据", self.isCrossServer, self.proxyName)
-  ServiceMatchCCmdProxy.Instance:CallTwelveWarbandSortMatchCCmd(nil, self.CupModeType, true)
-end
-
 function CupMode6v6Proxy_MultiServer:CheckMatchValid()
   local results = CupMode6v6Proxy.super.CheckMatchValid(self)
   if results then
@@ -48,12 +39,5 @@ function CupMode6v6Proxy_MultiServer:CheckMatchValid()
       end
     end
     return results
-  end
-end
-
-function CupMode6v6Proxy_MultiServer:SetOpponentStatus(treeOpen)
-  if treeOpen ~= self.opponentStatus then
-    self.opponentStatus = treeOpen
-    ServiceMatchCCmdProxy.Instance:CallSyncMatchBoardOpenStateMatchCCmd(treeOpen, self.CupModeType, true)
   end
 end

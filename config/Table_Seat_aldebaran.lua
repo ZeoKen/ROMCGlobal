@@ -2456,7 +2456,7 @@ Table_Seat_aldebaran = {
     id = 178,
     StandPot = Table_Seat_aldebaran_t.StandPot[91],
     SeatPot = Table_Seat_aldebaran_t.SeatPot[178],
-    Dir = -0.193848
+    Dir = -0.1938477
   },
   [179] = {
     id = 179,
@@ -2468,7 +2468,7 @@ Table_Seat_aldebaran = {
     id = 180,
     StandPot = Table_Seat_aldebaran_t.StandPot[92],
     SeatPot = Table_Seat_aldebaran_t.SeatPot[180],
-    Dir = -0.193848
+    Dir = -0.1938477
   },
   [181] = {
     id = 181,

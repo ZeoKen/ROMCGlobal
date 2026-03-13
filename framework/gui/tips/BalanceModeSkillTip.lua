@@ -139,7 +139,7 @@ function BalanceModeSkillTip:UpdateCurrentInfo(data)
         buffId = targetBuffIds
       end
       local buffData = buffId and Table_Buffer[buffId]
-      local desc = buffData and buffData.Dsc
+      local desc = buffData and buffData.Dsc and OverSea.LangManager.Instance():GetLangByKey(buffData.Dsc)
       if type(desc) == "string" then
         if isUpgrade then
           desc = string.gsub(desc, "(%d+)", function(match)

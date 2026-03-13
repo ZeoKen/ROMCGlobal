@@ -285,39 +285,19 @@ function GuildFindPage:InitUI()
   end
   self.lineGroupGO:SetActive(false)
   self.selectedLineTab = 1
-  self:UpdateLineTabs()
-  self:UpdateMyLineTab()
 end
 
 function GuildFindPage:OnLineTabClicked(tabIndex)
   if self.selectedLineTab ~= tabIndex then
     self.selectedLineTab = tabIndex
-    self:UpdateLineTabs()
     self:ClearAndDoSearch()
   end
 end
 
 function GuildFindPage:UpdateLineTabs()
-  if not GuildProxy.Instance:IHaveGuild() then
-    return
-  end
-  for i, tab in ipairs(self.lineTabs) do
-    if i == self.selectedLineTab then
-      tab.selectedGO:SetActive(true)
-      tab.lineIcon.color = Line_Color_Selected
-      tab.lineLab.color = Line_Color_Selected
-      self:AddSearchCond(tab.searchCond)
-    else
-      tab.selectedGO:SetActive(false)
-      tab.lineIcon.color = Line_Color_Normal
-      tab.lineLab.color = Line_Color_Normal
-      self:RemoveSearchCond(tab.searchCond)
-    end
-  end
 end
 
 function GuildFindPage:HandleGuildDataUpdate()
-  self:UpdateMyLineTab()
 end
 
 function GuildFindPage:UpdateDateBattleCount()
@@ -327,16 +307,6 @@ function GuildFindPage:UpdateDateBattleCount()
   local max = GameConfig.GuildDateBattle and GameConfig.GuildDateBattle.max_count or 12
   local cur = GuildDateBattleProxy.Instance:GetCurDateCount()
   self.guildDateBattleTitle.text = string.format(ZhString.GuildDateBattle_GuildFind, cur, max)
-end
-
-function GuildFindPage:UpdateMyLineTab()
-  if not GuildProxy.Instance:IHaveGuild() then
-    return
-  end
-  local lineTab = self.lineTabs and self.lineTabs[2]
-  if lineTab then
-    lineTab.lineLab.text = GuildProxy.Instance:GetMyGuildClientGvgGroup()
-  end
 end
 
 function GuildFindPage:ClearAndDoSearch()
@@ -437,7 +407,7 @@ function GuildFindPage:HandleClickCell(data, forceRefresh)
     if targetGroup and targetGroup ~= 0 then
       self.battle_group_arrow:SetActive(true)
       self.battle_group_targetLabel.gameObject:SetActive(true)
-      self.battle_group_targetLabel.text = GvgProxy.ClientGroupId(targetGroup)
+      self.battle_group_targetLabel.text = GuildProxy.ParseServerGroupID(targetGroup, true)
       self.battle_group_changeTip.gameObject:SetActive(true)
     else
       self.battle_group_arrow:SetActive(false)
@@ -445,7 +415,7 @@ function GuildFindPage:HandleClickCell(data, forceRefresh)
       self.battle_group_changeTip.gameObject:SetActive(false)
     end
     if self.battle_groupLab then
-      self.battle_groupLab.text = GvgProxy.ClientGroupId(data.battle_group)
+      self.battle_groupLab.text = GuildProxy.ParseServerGroupID(data.battle_group, true)
     end
   end
   self.cityName.text = self.selectedGuildData:GetOccupiedCityName()

@@ -1363,6 +1363,97 @@ Table_AstralDestinyGraph = {
     Buff = {5320},
     Scale = 1,
     IsSpecial = 1
+  },
+  [151] = {
+    id = 151,
+    Season = 10000,
+    Point = 1,
+    UnlockPassNum = 0,
+    LightenNum = 8,
+    Buff = {5300},
+    Scale = 0.7
+  },
+  [152] = {
+    id = 152,
+    Season = 10000,
+    Point = 2,
+    UnlockPassNum = 0,
+    LightenNum = 12,
+    Buff = {5310},
+    Scale = 1
+  },
+  [153] = {
+    id = 153,
+    Season = 10000,
+    Point = 3,
+    UnlockPassNum = 0,
+    LightenNum = 8,
+    Buff = {5300},
+    Scale = 0.7
+  },
+  [154] = {
+    id = 154,
+    Season = 10000,
+    Point = 4,
+    UnlockPassNum = 5,
+    LightenNum = 24,
+    Buff = {5310},
+    Scale = 1
+  },
+  [155] = {
+    id = 155,
+    Season = 10000,
+    Point = 5,
+    UnlockPassNum = 5,
+    LightenNum = 12,
+    Buff = {5310},
+    Scale = 1
+  },
+  [156] = {
+    id = 156,
+    Season = 10000,
+    Point = 6,
+    UnlockPassNum = 5,
+    LightenNum = 12,
+    Buff = {5310},
+    Scale = 1
+  },
+  [157] = {
+    id = 157,
+    Season = 10000,
+    Point = 7,
+    UnlockPassNum = 10,
+    LightenNum = 24,
+    Buff = {5320},
+    Scale = 1
+  },
+  [158] = {
+    id = 158,
+    Season = 10000,
+    Point = 8,
+    UnlockPassNum = 10,
+    LightenNum = 24,
+    Buff = {5310},
+    Scale = 1
+  },
+  [159] = {
+    id = 159,
+    Season = 10000,
+    Point = 9,
+    UnlockPassNum = 15,
+    LightenNum = 24,
+    Buff = {5310},
+    Scale = 1
+  },
+  [160] = {
+    id = 160,
+    Season = 10000,
+    Point = 10,
+    UnlockPassNum = 15,
+    LightenNum = 48,
+    Buff = {5320},
+    Scale = 1,
+    IsSpecial = 1
   }
 }
 Table_AstralDestinyGraph_fields = {

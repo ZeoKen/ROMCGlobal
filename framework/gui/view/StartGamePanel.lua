@@ -297,6 +297,9 @@ function StartGamePanel:InitBg()
     self.bgVideoPlayer.gameObject:SetActive(true)
     
     function self.bgVideoPlayer.onFirstFrameReady()
+      if not self.bgVideoPlayer then
+        return
+      end
       local ratio = self.bgVideoPlayer.width / self.bgVideoPlayer.height
       self.bgVideoPlayer:SetTextureSize(720 * ratio, 720)
       TweenColor.Begin(self.videoBG.gameObject, 1, LuaGeometry.GetTempVector4(1, 1, 1, 1))

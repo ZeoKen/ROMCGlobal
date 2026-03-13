@@ -36,7 +36,7 @@ function ActivityDungeonMvpCardView:FindObjs()
   self.gotoBtn = self:FindGO("GoToBtn")
   self:AddClickEvent(self.gotoBtn, function()
     FuncShortCutFunc.Me():CallByID(self.gotoMode)
-    self.container:CloseSelf()
+    GameFacade.Instance:sendNotification(UIEvent.CloseUI, UIViewType.NormalLayer)
   end)
   self.titleLabel = self:FindComponent("TitleLabel", UILabel)
   self.titleShadowLabel = self:FindComponent("TitleLabelShadow", UILabel)
@@ -47,26 +47,55 @@ function ActivityDungeonMvpCardView:FindObjs()
 end
 
 function ActivityDungeonMvpCardView:OnEnter(id)
-  local staticData = Table_ActivityIntegration[id]
+  local staticData = Table_ActivityNew and Table_ActivityNew[id]
+  local isNewTable = staticData ~= nil
+  staticData = staticData or Table_ActivityIntegration and Table_ActivityIntegration[id]
   if staticData then
     self.titleLabel.text = staticData.TitleName
     self.titleShadowLabel.text = staticData.TitleName
-    self.descLabel.gameObject:SetActive(not StringUtil.IsEmpty(staticData.Desc))
-    self.descLabel.text = staticData.Desc
-    local duration = EnvChannel.IsTFBranch() and staticData.TFDuration or staticData.Duration
-    self.timeLabel.gameObject:SetActive(duration ~= nil)
-    if duration then
-      local startTimeStr, endTimeStr = duration[1], duration[2]
-      local startTime = ClientTimeUtil.GetOSDateTime(startTimeStr)
-      local endTime = ClientTimeUtil.GetOSDateTime(endTimeStr)
+    local startTime, endTime
+    if isNewTable then
+      if ActivityIntegrationProxy and ActivityIntegrationProxy.Instance then
+        local actPersonalTime = ActivityIntegrationProxy.Instance:GetActPersonalActInfo(id)
+        if actPersonalTime then
+          startTime = actPersonalTime.starttime
+          endTime = actPersonalTime.endtime
+        end
+      end
+    else
+      local duration = EnvChannel.IsTFBranch() and staticData.TFDuration or staticData.Duration
+      if duration then
+        local startTimeStr = duration[1]
+        local endTimeStr = duration[2]
+        startTime = ClientTimeUtil.GetOSDateTime(startTimeStr)
+        endTime = ClientTimeUtil.GetOSDateTime(endTimeStr)
+      end
+    end
+    self.timeLabel.gameObject:SetActive(endTime ~= nil)
+    if endTime then
       local curTime = ServerTime.CurServerTime() / 1000
-      if startTime <= curTime then
+      if endTime > curTime then
         TimeTickManager.Me():CreateTick(0, 1000, function()
           self:RefreshRemainTime(endTime)
         end, self)
       else
         self.timeLabel.text = ZhString.RememberLoginView_OntimeEnd
       end
+    end
+    if startTime and endTime and self.cardId then
+      local cardConfig = Table_Card[self.cardId]
+      if cardConfig and cardConfig.Name then
+        local startDate = os.date("*t", startTime)
+        local endDate = os.date("*t", endTime)
+        local timeStr = string.format("%02d/%02d~%02d/%02d", startDate.month, startDate.day, endDate.month, endDate.day)
+        local descText = string.format(ZhString.ActivityIntegration_MVPCardRateUpTip, timeStr, cardConfig.Name)
+        self.descLabel.gameObject:SetActive(true)
+        self.descLabel.text = descText
+      else
+        self.descLabel.gameObject:SetActive(false)
+      end
+    else
+      self.descLabel.gameObject:SetActive(false)
     end
     self:RegistShowGeneralHelpByHelpID(staticData.HelpID, self.helpBtn)
   end

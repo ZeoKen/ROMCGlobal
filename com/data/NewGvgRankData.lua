@@ -144,6 +144,10 @@ function NewGvgRankData:GetServerId()
   return self.guildInfo.serverId
 end
 
-function NewGvgRankData:GetZoneId()
-  return GvgProxy.ClientGroupId(self.guildInfo.gvgGroup)
+function NewGvgRankData:GetBattlelineStr()
+  return self.guildInfo.battlelineStr
+end
+
+function NewGvgRankData:GetBattlelineId()
+  return self.guildInfo.battleLineId
 end

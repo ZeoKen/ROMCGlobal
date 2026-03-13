@@ -29,6 +29,7 @@ function NearlyCreatureCell:SetData(data)
   self.isExitPoint = data:GetParama("isExitPoint")
   if self.isExitPoint then
     self.pos = data.pos:Clone()
+    self.access_range = data:GetParama("access_range")
     self.nextSceneID = data:GetParama("nextSceneID")
     local name = ""
     local spName = data:GetParama("StaticName")

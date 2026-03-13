@@ -18340,578 +18340,684 @@ Table_CameraPlot_t = {
 Table_CameraPlot = {
   [1] = {
     groupid = 1000,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "回到默认end前置"
   },
   [2] = {
     id = 2,
     groupid = 1000,
-    param = Table_CameraPlot_t.param[2]
+    param = Table_CameraPlot_t.param[2],
+    DescInfo = "回到默认end前置"
   },
   [3] = {
     id = 3,
     groupid = 1001,
-    param = Table_CameraPlot_t.param[2]
+    param = Table_CameraPlot_t.param[2],
+    DescInfo = "回到默认end后置"
   },
   [4] = {
     id = 4,
     groupid = 1001,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "回到默认end后置"
   },
   [5] = {
     id = 5,
     groupid = 1002,
-    param = Table_CameraPlot_t.param[3]
+    param = Table_CameraPlot_t.param[3],
+    DescInfo = "回到默认end后置秒切"
   },
   [6] = {
     id = 6,
     groupid = 1002,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "回到默认end后置秒切"
   },
   [7] = {
     id = 7,
     groupid = 1003,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "回到默认end前置秒切"
   },
   [8] = {
     id = 8,
     groupid = 1003,
-    param = Table_CameraPlot_t.param[3]
+    param = Table_CameraPlot_t.param[3],
+    DescInfo = "回到默认end前置秒切"
   },
   [9] = {
     id = 9,
     groupid = 1004,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "快速回到默认end前置"
   },
   [10] = {
     id = 10,
     groupid = 1004,
-    param = Table_CameraPlot_t.param[4]
+    param = Table_CameraPlot_t.param[4],
+    DescInfo = "快速回到默认end前置"
   },
   [11] = {
     id = 11,
     groupid = 1005,
-    param = Table_CameraPlot_t.param[4]
+    param = Table_CameraPlot_t.param[4],
+    DescInfo = "快速回到默认end后置"
   },
   [12] = {
     id = 12,
     groupid = 1005,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "快速回到默认end后置"
   },
   [13] = {
     id = 13,
     groupid = 1,
     focus = Table_CameraPlot_t.focus[1],
-    param = Table_CameraPlot_t.param[5]
+    param = Table_CameraPlot_t.param[5],
+    DescInfo = "测试任务"
   },
   [14] = {
     id = 14,
     groupid = 1,
-    param = Table_CameraPlot_t.param[6]
+    param = Table_CameraPlot_t.param[6],
+    DescInfo = "测试任务"
   },
   [15] = {
     id = 15,
     groupid = 2,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "镜头测试（不配开始结束）"
   },
   [16] = {
     id = 16,
     groupid = 2,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[7]
+    param = Table_CameraPlot_t.param[7],
+    DescInfo = "镜头测试（不配开始结束回到默认）"
   },
   [17] = {
     id = 17,
     groupid = 2,
-    param = Table_CameraPlot_t.param[8]
+    param = Table_CameraPlot_t.param[8],
+    DescInfo = "镜头测试（不配开始结束）"
   },
   [18] = {
     id = 18,
     groupid = 2,
-    param = Table_CameraPlot_t.param[9]
+    param = Table_CameraPlot_t.param[9],
+    DescInfo = "镜头测试（不配开始结束）"
   },
   [19] = {
     id = 19,
     groupid = 3,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "镜头测试（配置开始回到默认秒切）"
   },
   [20] = {
     id = 20,
     groupid = 3,
-    param = Table_CameraPlot_t.param[3]
+    param = Table_CameraPlot_t.param[3],
+    DescInfo = "镜头测试（配置开始回到默认秒切）"
   },
   [21] = {
     id = 21,
     groupid = 3,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[7]
+    param = Table_CameraPlot_t.param[7],
+    DescInfo = "镜头测试（配置开始回到默认秒切）"
   },
   [22] = {
     id = 22,
     groupid = 3,
     focus = Table_CameraPlot_t.focus[3],
-    param = Table_CameraPlot_t.param[8]
+    param = Table_CameraPlot_t.param[8],
+    DescInfo = "镜头测试（配置开始回到默认秒切）"
   },
   [23] = {
     id = 23,
     groupid = 3,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[9]
+    param = Table_CameraPlot_t.param[9],
+    DescInfo = "镜头测试（配置开始回到默认秒切）"
   },
   [24] = {
     id = 24,
     groupid = 4,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "镜头测试（配置开始回到默认秒切）"
   },
   [25] = {
     id = 25,
     groupid = 4,
-    param = Table_CameraPlot_t.param[2]
+    param = Table_CameraPlot_t.param[2],
+    DescInfo = "镜头测试（配置开始回到默认1秒）"
   },
   [26] = {
     id = 26,
     groupid = 4,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[7]
+    param = Table_CameraPlot_t.param[7],
+    DescInfo = "镜头测试（配置开始回到默认1秒）"
   },
   [27] = {
     id = 27,
     groupid = 4,
     focus = Table_CameraPlot_t.focus[3],
-    param = Table_CameraPlot_t.param[8]
+    param = Table_CameraPlot_t.param[8],
+    DescInfo = "镜头测试（配置开始回到默认1秒）"
   },
   [28] = {
     id = 28,
     groupid = 4,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[9]
+    param = Table_CameraPlot_t.param[9],
+    DescInfo = "镜头测试（配置开始回到默认1秒）"
   },
   [29] = {
     id = 29,
     groupid = 5,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "镜头测试（配置结束回到默认1秒）"
   },
   [30] = {
     id = 30,
     groupid = 5,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[7]
+    param = Table_CameraPlot_t.param[7],
+    DescInfo = "镜头测试（配置结束回到默认1秒）"
   },
   [31] = {
     id = 31,
     groupid = 5,
     focus = Table_CameraPlot_t.focus[3],
-    param = Table_CameraPlot_t.param[8]
+    param = Table_CameraPlot_t.param[8],
+    DescInfo = "镜头测试（配置结束回到默认1秒）"
   },
   [32] = {
     id = 32,
     groupid = 5,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[9]
+    param = Table_CameraPlot_t.param[9],
+    DescInfo = "镜头测试（配置结束回到默认1秒）"
   },
   [33] = {
     id = 33,
     groupid = 5,
-    param = Table_CameraPlot_t.param[10]
+    param = Table_CameraPlot_t.param[10],
+    DescInfo = "镜头测试（配置结束回到默认1秒）"
   },
   [34] = {
     id = 34,
     groupid = 6,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "镜头测试（配置结束回到默认秒切）"
   },
   [35] = {
     id = 35,
     groupid = 6,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[7]
+    param = Table_CameraPlot_t.param[7],
+    DescInfo = "镜头测试（配置结束回到默认秒切）"
   },
   [36] = {
     id = 36,
     groupid = 6,
     focus = Table_CameraPlot_t.focus[3],
-    param = Table_CameraPlot_t.param[8]
+    param = Table_CameraPlot_t.param[8],
+    DescInfo = "镜头测试（配置结束回到默认秒切）"
   },
   [37] = {
     id = 37,
     groupid = 6,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[9]
+    param = Table_CameraPlot_t.param[9],
+    DescInfo = "镜头测试（配置结束回到默认秒切）"
   },
   [38] = {
     id = 38,
     groupid = 6,
-    param = Table_CameraPlot_t.param[11]
+    param = Table_CameraPlot_t.param[11],
+    DescInfo = "镜头测试（配置结束回到默认秒切）"
   },
   [39] = {
     id = 39,
     groupid = 7,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "镜头测试（开始和结束都默认）"
   },
   [40] = {
     id = 40,
     groupid = 7,
-    param = Table_CameraPlot_t.param[2]
+    param = Table_CameraPlot_t.param[2],
+    DescInfo = "镜头测试（开始和结束都默认）"
   },
   [41] = {
     id = 41,
     groupid = 7,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[7]
+    param = Table_CameraPlot_t.param[7],
+    DescInfo = "镜头测试（开始和结束都默认）"
   },
   [42] = {
     id = 42,
     groupid = 7,
     focus = Table_CameraPlot_t.focus[3],
-    param = Table_CameraPlot_t.param[8]
+    param = Table_CameraPlot_t.param[8],
+    DescInfo = "镜头测试（开始和结束都默认）"
   },
   [43] = {
     id = 43,
     groupid = 7,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[9]
+    param = Table_CameraPlot_t.param[9],
+    DescInfo = "镜头测试（开始和结束都默认）"
   },
   [44] = {
     id = 44,
     groupid = 7,
-    param = Table_CameraPlot_t.param[10]
+    param = Table_CameraPlot_t.param[10],
+    DescInfo = "镜头测试（开始和结束都默认）"
   },
   [45] = {
     id = 45,
     groupid = 8,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "拍玩家自己"
   },
   [46] = {
     id = 46,
     groupid = 8,
-    param = Table_CameraPlot_t.param[2]
+    param = Table_CameraPlot_t.param[2],
+    DescInfo = "拍玩家自己"
   },
   [47] = {
     id = 47,
     groupid = 8,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[7]
+    param = Table_CameraPlot_t.param[7],
+    DescInfo = "拍玩家自己"
   },
   [48] = {
     id = 48,
     groupid = 8,
     focus = Table_CameraPlot_t.focus[3],
-    param = Table_CameraPlot_t.param[8]
+    param = Table_CameraPlot_t.param[8],
+    DescInfo = "拍玩家自己"
   },
   [49] = {
     id = 49,
     groupid = 8,
-    param = Table_CameraPlot_t.param[9]
+    param = Table_CameraPlot_t.param[9],
+    DescInfo = "拍玩家自己"
   },
   [50] = {
     id = 50,
     groupid = 8,
-    param = Table_CameraPlot_t.param[10]
+    param = Table_CameraPlot_t.param[10],
+    DescInfo = "拍玩家自己"
   },
   [51] = {
     id = 51,
     groupid = 9,
-    param = Table_CameraPlot_t.param[2]
+    param = Table_CameraPlot_t.param[2],
+    DescInfo = "end后置"
   },
   [52] = {
     id = 52,
     groupid = 9,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[7]
+    param = Table_CameraPlot_t.param[7],
+    DescInfo = "end后置"
   },
   [53] = {
     id = 53,
     groupid = 9,
     focus = Table_CameraPlot_t.focus[3],
-    param = Table_CameraPlot_t.param[8]
+    param = Table_CameraPlot_t.param[8],
+    DescInfo = "end后置"
   },
   [54] = {
     id = 54,
     groupid = 9,
-    param = Table_CameraPlot_t.param[9]
+    param = Table_CameraPlot_t.param[9],
+    DescInfo = "end后置"
   },
   [55] = {
     id = 55,
     groupid = 9,
-    param = Table_CameraPlot_t.param[10]
+    param = Table_CameraPlot_t.param[10],
+    DescInfo = "end后置"
   },
   [56] = {
     id = 56,
     groupid = 9,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "end后置"
   },
   [57] = {
     id = 57,
     groupid = 10,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "完整测试"
   },
   [58] = {
     id = 58,
     groupid = 10,
-    param = Table_CameraPlot_t.param[2]
+    param = Table_CameraPlot_t.param[2],
+    DescInfo = "完整测试"
   },
   [59] = {
     id = 59,
     groupid = 10,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[7]
+    param = Table_CameraPlot_t.param[7],
+    DescInfo = "完整测试"
   },
   [60] = {
     id = 60,
     groupid = 10,
     focus = Table_CameraPlot_t.focus[4],
-    param = Table_CameraPlot_t.param[12]
+    param = Table_CameraPlot_t.param[12],
+    DescInfo = "完整测试"
   },
   [61] = {
     id = 61,
     groupid = 10,
     focus = Table_CameraPlot_t.focus[3],
-    param = Table_CameraPlot_t.param[13]
+    param = Table_CameraPlot_t.param[13],
+    DescInfo = "完整测试"
   },
   [62] = {
     id = 62,
     groupid = 10,
-    param = Table_CameraPlot_t.param[14]
+    param = Table_CameraPlot_t.param[14],
+    DescInfo = "完整测试"
   },
   [63] = {
     id = 63,
     groupid = 10,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[14]
+    param = Table_CameraPlot_t.param[14],
+    DescInfo = "完整测试"
   },
   [64] = {
     id = 64,
     groupid = 10,
     focus = Table_CameraPlot_t.focus[4],
-    param = Table_CameraPlot_t.param[15]
+    param = Table_CameraPlot_t.param[15],
+    DescInfo = "完整测试"
   },
   [65] = {
     id = 65,
     groupid = 10,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[16]
+    param = Table_CameraPlot_t.param[16],
+    DescInfo = "完整测试"
   },
   [66] = {
     id = 66,
     groupid = 10,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[17]
+    param = Table_CameraPlot_t.param[17],
+    DescInfo = "完整测试"
   },
   [67] = {
     id = 67,
     groupid = 10,
     focus = Table_CameraPlot_t.focus[2],
-    param = Table_CameraPlot_t.param[18]
+    param = Table_CameraPlot_t.param[18],
+    DescInfo = "完整测试"
   },
   [68] = {
     id = 68,
     groupid = 10,
-    param = Table_CameraPlot_t.param[19]
+    param = Table_CameraPlot_t.param[19],
+    DescInfo = "完整测试"
   },
   [69] = {
     id = 69,
     groupid = 10,
-    param = Table_CameraPlot_t.param[10]
+    param = Table_CameraPlot_t.param[10],
+    DescInfo = "完整测试"
   },
   [70] = {
     id = 70,
     groupid = 11,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0开场起始镜头"
   },
   [71] = {
     id = 71,
     groupid = 11,
-    param = Table_CameraPlot_t.param[20]
+    param = Table_CameraPlot_t.param[20],
+    DescInfo = "8.0开场起始镜头"
   },
   [72] = {
     id = 72,
     groupid = 11,
-    param = Table_CameraPlot_t.param[21]
+    param = Table_CameraPlot_t.param[21],
+    DescInfo = "8.0开场起始镜头"
   },
   [73] = {
     id = 73,
     groupid = 11,
-    param = Table_CameraPlot_t.param[22]
+    param = Table_CameraPlot_t.param[22],
+    DescInfo = "8.0开场起始镜头"
   },
   [74] = {
     id = 74,
     groupid = 12,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0开场镜头白素贞"
   },
   [75] = {
     id = 75,
     groupid = 12,
     focus = Table_CameraPlot_t.focus[5],
-    param = Table_CameraPlot_t.param[23]
+    param = Table_CameraPlot_t.param[23],
+    DescInfo = "8.0开场镜头白素贞"
   },
   [76] = {
     id = 76,
     groupid = 12,
-    param = Table_CameraPlot_t.param[24]
+    param = Table_CameraPlot_t.param[24],
+    DescInfo = "8.0开场镜头白素贞"
   },
   [77] = {
     id = 77,
     groupid = 13,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0开场镜头法海"
   },
   [78] = {
     id = 78,
     groupid = 13,
     focus = Table_CameraPlot_t.focus[6],
-    param = Table_CameraPlot_t.param[25]
+    param = Table_CameraPlot_t.param[25],
+    DescInfo = "8.0开场镜头法海"
   },
   [79] = {
     id = 79,
     groupid = 13,
-    param = Table_CameraPlot_t.param[26]
+    param = Table_CameraPlot_t.param[26],
+    DescInfo = "8.0开场镜头法海"
   },
   [80] = {
     id = 80,
     groupid = 14,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0开场镜头树枝断裂"
   },
   [81] = {
     id = 81,
     groupid = 14,
     focus = Table_CameraPlot_t.focus[7],
-    param = Table_CameraPlot_t.param[27]
+    param = Table_CameraPlot_t.param[27],
+    DescInfo = "8.0开场镜头树枝断裂"
   },
   [82] = {
     id = 82,
     groupid = 14,
-    param = Table_CameraPlot_t.param[10]
+    param = Table_CameraPlot_t.param[10],
+    DescInfo = "8.0开场镜头树枝断裂"
   },
   [83] = {
     id = 83,
     groupid = 15,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0开场镜头龙眼"
   },
   [84] = {
     id = 84,
     groupid = 15,
     focus = Table_CameraPlot_t.focus[8],
-    param = Table_CameraPlot_t.param[28]
+    param = Table_CameraPlot_t.param[28],
+    DescInfo = "8.0开场镜头龙眼"
   },
   [85] = {
     id = 85,
     groupid = 15,
-    param = Table_CameraPlot_t.param[29]
+    param = Table_CameraPlot_t.param[29],
+    DescInfo = "8.0开场镜头龙眼"
   },
   [86] = {
     id = 86,
     groupid = 16,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0开场起始镜头"
   },
   [87] = {
     id = 87,
     groupid = 16,
-    param = Table_CameraPlot_t.param[20]
+    param = Table_CameraPlot_t.param[20],
+    DescInfo = "8.0开场起始镜头"
   },
   [88] = {
     id = 88,
     groupid = 16,
-    param = Table_CameraPlot_t.param[30]
+    param = Table_CameraPlot_t.param[30],
+    DescInfo = "8.0开场起始镜头"
   },
   [89] = {
     id = 89,
     groupid = 17,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0开场镜头白素贞"
   },
   [90] = {
     id = 90,
     groupid = 17,
     focus = Table_CameraPlot_t.focus[9],
-    param = Table_CameraPlot_t.param[31]
+    param = Table_CameraPlot_t.param[31],
+    DescInfo = "8.0开场镜头白素贞"
   },
   [91] = {
     id = 91,
     groupid = 18,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0开场镜头法海"
   },
   [92] = {
     id = 92,
     groupid = 18,
     focus = Table_CameraPlot_t.focus[10],
-    param = Table_CameraPlot_t.param[32]
+    param = Table_CameraPlot_t.param[32],
+    DescInfo = "8.0开场镜头法海"
   },
   [93] = {
     id = 93,
     groupid = 19,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0树枝断裂"
   },
   [94] = {
     id = 94,
     groupid = 19,
     focus = Table_CameraPlot_t.focus[11],
-    param = Table_CameraPlot_t.param[33]
+    param = Table_CameraPlot_t.param[33],
+    DescInfo = "8.0树枝断裂"
   },
   [95] = {
     id = 95,
     groupid = 20,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0开场镜头龙眼"
   },
   [96] = {
     id = 96,
     groupid = 20,
     focus = Table_CameraPlot_t.focus[8],
     param = Table_CameraPlot_t.param[34],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0开场镜头龙眼"
   },
   [97] = {
     id = 97,
     groupid = 20,
     focus = Table_CameraPlot_t.focus[8],
     param = Table_CameraPlot_t.param[35],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0开场镜头龙眼"
   },
   [98] = {
     id = 98,
     groupid = 21,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "四转引导任务"
   },
   [99] = {
     id = 99,
     groupid = 21,
     focus = Table_CameraPlot_t.focus[12],
-    param = Table_CameraPlot_t.param[36]
+    param = Table_CameraPlot_t.param[36],
+    DescInfo = "四转引导任务"
   },
   [100] = {
     id = 100,
     groupid = 22,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "四转引导任务"
   },
   [101] = {
     id = 101,
     groupid = 22,
     focus = Table_CameraPlot_t.focus[13],
-    param = Table_CameraPlot_t.param[37]
+    param = Table_CameraPlot_t.param[37],
+    DescInfo = "四转引导任务"
   },
   [102] = {
     id = 102,
     groupid = 23,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0开场引导"
   },
   [103] = {
     id = 103,
     groupid = 23,
     focus = Table_CameraPlot_t.focus[14],
-    param = Table_CameraPlot_t.param[38]
+    param = Table_CameraPlot_t.param[38],
+    DescInfo = "8.0开场引导"
   },
   [104] = {
     id = 104,
     groupid = 25,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0树枝断裂龙尾"
   },
   [105] = {
     id = 105,
     groupid = 25,
     focus = Table_CameraPlot_t.focus[15],
-    param = Table_CameraPlot_t.param[39]
+    param = Table_CameraPlot_t.param[39],
+    DescInfo = "8.0树枝断裂龙尾"
   },
   [106] = {
     id = 106,
     groupid = 25,
     focus = Table_CameraPlot_t.focus[11],
-    param = Table_CameraPlot_t.param[40]
+    param = Table_CameraPlot_t.param[40],
+    DescInfo = "8.0树枝断裂龙尾"
   },
   [107] = {
     id = 107,
@@ -18919,7 +19025,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[16],
     param = Table_CameraPlot_t.param[41],
     hideMainView = 1,
-    show = 1
+    show = 1,
+    DescInfo = "8.0主线一许仙登场"
   },
   [108] = {
     id = 108,
@@ -18927,14 +19034,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[17],
     param = Table_CameraPlot_t.param[42],
     hideMainView = 1,
-    show = 1
+    show = 1,
+    DescInfo = "8.0主线一许仙登场"
   },
   [109] = {
     id = 109,
     groupid = 26,
     param = Table_CameraPlot_t.param[1],
     hideMainView = 1,
-    show = 1
+    show = 1,
+    DescInfo = "8.0主线一许仙登场"
   },
   [110] = {
     id = 110,
@@ -18943,7 +19052,8 @@ Table_CameraPlot = {
     param = Table_CameraPlot_t.param[43],
     sceneFilter = 20,
     hideMainView = 1,
-    show = 1
+    show = 1,
+    DescInfo = "8.0主线法海许仙对峙"
   },
   [111] = {
     id = 111,
@@ -18951,7 +19061,8 @@ Table_CameraPlot = {
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 20,
     hideMainView = 1,
-    show = 1
+    show = 1,
+    DescInfo = "8.0主线法海许仙对峙"
   },
   [112] = {
     id = 112,
@@ -18960,7 +19071,8 @@ Table_CameraPlot = {
     param = Table_CameraPlot_t.param[44],
     sceneFilter = 20,
     hideMainView = 1,
-    show = 1
+    show = 1,
+    DescInfo = "8.0主线法海许仙对峙"
   },
   [113] = {
     id = 113,
@@ -18968,7 +19080,8 @@ Table_CameraPlot = {
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 20,
     hideMainView = 1,
-    show = 1
+    show = 1,
+    DescInfo = "8.0主线法海许仙对峙"
   },
   [114] = {
     id = 114,
@@ -18977,7 +19090,8 @@ Table_CameraPlot = {
     param = Table_CameraPlot_t.param[45],
     sceneFilter = 20,
     hideMainView = 1,
-    show = 1
+    show = 1,
+    DescInfo = "8.0主线法海许仙对峙"
   },
   [115] = {
     id = 115,
@@ -18985,7 +19099,8 @@ Table_CameraPlot = {
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 20,
     hideMainView = 1,
-    show = 1
+    show = 1,
+    DescInfo = "8.0主线法海许仙对峙"
   },
   [116] = {
     id = 116,
@@ -18994,7 +19109,8 @@ Table_CameraPlot = {
     param = Table_CameraPlot_t.param[46],
     sceneFilter = 20,
     hideMainView = 1,
-    show = 1
+    show = 1,
+    DescInfo = "8.0主线法海许仙对峙"
   },
   [117] = {
     id = 117,
@@ -19002,277 +19118,324 @@ Table_CameraPlot = {
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 20,
     hideMainView = 1,
-    show = 1
+    show = 1,
+    DescInfo = "8.0主线法海许仙对峙"
   },
   [118] = {
     id = 118,
     groupid = 31,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线影枫司特写"
   },
   [119] = {
     id = 119,
     groupid = 31,
     focus = Table_CameraPlot_t.focus[21],
     param = Table_CameraPlot_t.param[47],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线影枫司特写"
   },
   [120] = {
     id = 120,
     groupid = 31,
     focus = Table_CameraPlot_t.focus[22],
     param = Table_CameraPlot_t.param[48],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线影枫司特写"
   },
   [121] = {
     id = 121,
     groupid = 32,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线光辉之途特写"
   },
   [122] = {
     id = 122,
     groupid = 32,
     focus = Table_CameraPlot_t.focus[23],
     param = Table_CameraPlot_t.param[49],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线光辉之途特写"
   },
   [123] = {
     id = 123,
     groupid = 32,
     focus = Table_CameraPlot_t.focus[24],
     param = Table_CameraPlot_t.param[50],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线光辉之途特写"
   },
   [124] = {
     id = 124,
     groupid = 33,
     focus = Table_CameraPlot_t.focus[25],
     param = Table_CameraPlot_t.param[51],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线龙特写"
   },
   [125] = {
     id = 125,
     groupid = 33,
     focus = Table_CameraPlot_t.focus[26],
     param = Table_CameraPlot_t.param[52],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线龙特写"
   },
   [126] = {
     id = 126,
     groupid = 33,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线龙特写"
   },
   [127] = {
     id = 127,
     groupid = 34,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线巴风特特写"
   },
   [128] = {
     id = 128,
     groupid = 34,
     focus = Table_CameraPlot_t.focus[27],
-    param = Table_CameraPlot_t.param[53]
+    param = Table_CameraPlot_t.param[53],
+    DescInfo = "8.0主线巴风特特写"
   },
   [129] = {
     id = 129,
     groupid = 35,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线巴风特传送门"
   },
   [130] = {
     id = 130,
     groupid = 35,
     focus = Table_CameraPlot_t.focus[27],
-    param = Table_CameraPlot_t.param[54]
+    param = Table_CameraPlot_t.param[54],
+    DescInfo = "8.0主线巴风特传送门"
   },
   [131] = {
     id = 131,
     groupid = 36,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线花街"
   },
   [132] = {
     id = 132,
     groupid = 36,
     focus = Table_CameraPlot_t.focus[28],
     param = Table_CameraPlot_t.param[55],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线花街"
   },
   [133] = {
     id = 133,
     groupid = 36,
     focus = Table_CameraPlot_t.focus[28],
     param = Table_CameraPlot_t.param[56],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线花街"
   },
   [134] = {
     id = 134,
     groupid = 37,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0小青镜头"
   },
   [135] = {
     id = 135,
     groupid = 37,
     focus = Table_CameraPlot_t.focus[29],
-    param = Table_CameraPlot_t.param[57]
+    param = Table_CameraPlot_t.param[57],
+    DescInfo = "8.0小青镜头"
   },
   [136] = {
     id = 136,
     groupid = 38,
     focus = Table_CameraPlot_t.focus[30],
-    param = Table_CameraPlot_t.param[58]
+    param = Table_CameraPlot_t.param[58],
+    DescInfo = "8.0花楼镜头1"
   },
   [137] = {
     id = 137,
     groupid = 38,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0花楼镜头1"
   },
   [138] = {
     id = 138,
     groupid = 39,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0花楼镜头2"
   },
   [139] = {
     id = 139,
     groupid = 39,
     focus = Table_CameraPlot_t.focus[31],
-    param = Table_CameraPlot_t.param[59]
+    param = Table_CameraPlot_t.param[59],
+    DescInfo = "8.0花楼镜头2"
   },
   [140] = {
     id = 140,
     groupid = 40,
     focus = Table_CameraPlot_t.focus[32],
-    param = Table_CameraPlot_t.param[60]
+    param = Table_CameraPlot_t.param[60],
+    DescInfo = "8.0花楼大镜头"
   },
   [141] = {
     id = 141,
     groupid = 40,
     focus = Table_CameraPlot_t.focus[33],
-    param = Table_CameraPlot_t.param[61]
+    param = Table_CameraPlot_t.param[61],
+    DescInfo = "8.0花楼大镜头"
   },
   [142] = {
     id = 142,
     groupid = 40,
-    param = Table_CameraPlot_t.param[3]
+    param = Table_CameraPlot_t.param[3],
+    DescInfo = "8.0花楼大镜头"
   },
   [143] = {
     id = 143,
     groupid = 40,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0花楼大镜头"
   },
   [144] = {
     id = 144,
     groupid = 41,
     focus = Table_CameraPlot_t.focus[34],
-    param = Table_CameraPlot_t.param[62]
+    param = Table_CameraPlot_t.param[62],
+    DescInfo = "8.0花楼大镜头2"
   },
   [145] = {
     id = 145,
     groupid = 41,
     focus = Table_CameraPlot_t.focus[34],
-    param = Table_CameraPlot_t.param[63]
+    param = Table_CameraPlot_t.param[63],
+    DescInfo = "8.0花楼大镜头2"
   },
   [146] = {
     id = 146,
     groupid = 41,
-    param = Table_CameraPlot_t.param[64]
+    param = Table_CameraPlot_t.param[64],
+    DescInfo = "8.0花楼大镜头2"
   },
   [147] = {
     id = 147,
     groupid = 41,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0花楼大镜头2"
   },
   [148] = {
     id = 148,
     groupid = 42,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线玩家跳舞"
   },
   [149] = {
     id = 149,
     groupid = 42,
-    param = Table_CameraPlot_t.param[65]
+    param = Table_CameraPlot_t.param[65],
+    DescInfo = "8.0主线玩家跳舞"
   },
   [150] = {
     id = 150,
     groupid = 42,
-    param = Table_CameraPlot_t.param[66]
+    param = Table_CameraPlot_t.param[66],
+    DescInfo = "8.0主线玩家跳舞"
   },
   [151] = {
     id = 151,
     groupid = 43,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线玩家跳舞观众"
   },
   [152] = {
     id = 152,
     groupid = 43,
     focus = Table_CameraPlot_t.focus[34],
-    param = Table_CameraPlot_t.param[67]
+    param = Table_CameraPlot_t.param[67],
+    DescInfo = "8.0主线玩家跳舞观众"
   },
   [153] = {
     id = 153,
     groupid = 43,
     focus = Table_CameraPlot_t.focus[34],
-    param = Table_CameraPlot_t.param[68]
+    param = Table_CameraPlot_t.param[68],
+    DescInfo = "8.0主线玩家跳舞观众"
   },
   [154] = {
     id = 154,
     groupid = 44,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线茶铺"
   },
   [155] = {
     id = 155,
     groupid = 44,
     focus = Table_CameraPlot_t.focus[35],
-    param = Table_CameraPlot_t.param[69]
+    param = Table_CameraPlot_t.param[69],
+    DescInfo = "8.0主线茶铺"
   },
   [156] = {
     id = 156,
     groupid = 45,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线书画店"
   },
   [157] = {
     id = 157,
     groupid = 45,
     focus = Table_CameraPlot_t.focus[36],
-    param = Table_CameraPlot_t.param[70]
+    param = Table_CameraPlot_t.param[70],
+    DescInfo = "8.0主线书画店"
   },
   [158] = {
     id = 158,
     groupid = 46,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线花灯"
   },
   [159] = {
     id = 159,
     groupid = 46,
     focus = Table_CameraPlot_t.focus[37],
-    param = Table_CameraPlot_t.param[71]
+    param = Table_CameraPlot_t.param[71],
+    DescInfo = "8.0主线花灯"
   },
   [160] = {
     id = 160,
     groupid = 46,
     focus = Table_CameraPlot_t.focus[37],
-    param = Table_CameraPlot_t.param[72]
+    param = Table_CameraPlot_t.param[72],
+    DescInfo = "8.0主线花灯"
   },
   [161] = {
     id = 161,
     groupid = 47,
     focus = Table_CameraPlot_t.focus[38],
     param = Table_CameraPlot_t.param[73],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线花灯升起"
   },
   [162] = {
     id = 162,
     groupid = 47,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线花灯升起"
   },
   [163] = {
     id = 163,
     groupid = 48,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线相遇"
   },
   [164] = {
     id = 164,
@@ -19280,14 +19443,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[39],
     param = Table_CameraPlot_t.param[74],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线相遇"
   },
   [165] = {
     id = 165,
     groupid = 49,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线白素贞离开"
   },
   [166] = {
     id = 166,
@@ -19295,141 +19460,166 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[40],
     param = Table_CameraPlot_t.param[75],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线白素贞离开"
   },
   [167] = {
     id = 167,
     groupid = 50,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线白素贞小青对话"
   },
   [168] = {
     id = 168,
     groupid = 50,
     focus = Table_CameraPlot_t.focus[41],
-    param = Table_CameraPlot_t.param[76]
+    param = Table_CameraPlot_t.param[76],
+    DescInfo = "8.0主线白素贞小青对话"
   },
   [169] = {
     id = 169,
     groupid = 51,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线白素贞小青对话2"
   },
   [170] = {
     id = 170,
     groupid = 51,
     focus = Table_CameraPlot_t.focus[41],
-    param = Table_CameraPlot_t.param[77]
+    param = Table_CameraPlot_t.param[77],
+    DescInfo = "8.0主线白素贞小青对话2"
   },
   [171] = {
     id = 171,
     groupid = 52,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线选秀镜头"
   },
   [172] = {
     id = 172,
     groupid = 52,
     focus = Table_CameraPlot_t.focus[42],
-    param = Table_CameraPlot_t.param[78]
+    param = Table_CameraPlot_t.param[78],
+    DescInfo = "8.0主线选秀镜头"
   },
   [173] = {
     id = 173,
     groupid = 52,
     focus = Table_CameraPlot_t.focus[42],
-    param = Table_CameraPlot_t.param[79]
+    param = Table_CameraPlot_t.param[79],
+    DescInfo = "8.0主线选秀镜头"
   },
   [174] = {
     id = 174,
     groupid = 53,
     focus = Table_CameraPlot_t.focus[43],
-    param = Table_CameraPlot_t.param[80]
+    param = Table_CameraPlot_t.param[80],
+    DescInfo = "8.0主线卡米特写"
   },
   [175] = {
     id = 175,
     groupid = 53,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线卡米特写"
   },
   [176] = {
     id = 176,
     groupid = 54,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "转生镜头"
   },
   [177] = {
     id = 177,
     groupid = 54,
     focus = Table_CameraPlot_t.focus[44],
     param = Table_CameraPlot_t.param[81],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "转生镜头"
   },
   [178] = {
     id = 178,
     groupid = 55,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "巫师四转"
   },
   [179] = {
     id = 179,
     groupid = 55,
     focus = Table_CameraPlot_t.focus[45],
-    param = Table_CameraPlot_t.param[82]
+    param = Table_CameraPlot_t.param[82],
+    DescInfo = "巫师四转"
   },
   [180] = {
     id = 180,
     groupid = 56,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "刺客四转"
   },
   [181] = {
     id = 181,
     groupid = 56,
-    param = Table_CameraPlot_t.param[83]
+    param = Table_CameraPlot_t.param[83],
+    DescInfo = "刺客四转"
   },
   [182] = {
     id = 182,
     groupid = 57,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线大闹影枫司"
   },
   [183] = {
     id = 183,
     groupid = 57,
     focus = Table_CameraPlot_t.focus[46],
-    param = Table_CameraPlot_t.param[84]
+    param = Table_CameraPlot_t.param[84],
+    DescInfo = "8.0主线大闹影枫司"
   },
   [184] = {
     id = 184,
     groupid = 58,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "十字军转职"
   },
   [185] = {
     id = 185,
     groupid = 58,
     focus = Table_CameraPlot_t.focus[47],
-    param = Table_CameraPlot_t.param[85]
+    param = Table_CameraPlot_t.param[85],
+    DescInfo = "十字军转职"
   },
   [186] = {
     id = 186,
     groupid = 59,
     focus = Table_CameraPlot_t.focus[48],
-    param = Table_CameraPlot_t.param[86]
+    param = Table_CameraPlot_t.param[86],
+    DescInfo = "8.0花楼大镜头"
   },
   [187] = {
     id = 187,
     groupid = 59,
     focus = Table_CameraPlot_t.focus[49],
-    param = Table_CameraPlot_t.param[87]
+    param = Table_CameraPlot_t.param[87],
+    DescInfo = "8.0花楼大镜头"
   },
   [188] = {
     id = 188,
     groupid = 59,
-    param = Table_CameraPlot_t.param[3]
+    param = Table_CameraPlot_t.param[3],
+    DescInfo = "8.0花楼大镜头"
   },
   [189] = {
     id = 189,
     groupid = 59,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0花楼大镜头"
   },
   [190] = {
     id = 190,
     groupid = 60,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "转生镜头"
   },
   [191] = {
     id = 191,
@@ -19448,7 +19638,8 @@ Table_CameraPlot = {
   [193] = {
     id = 193,
     groupid = 61,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "武僧四转"
   },
   [194] = {
     id = 194,
@@ -19460,18 +19651,21 @@ Table_CameraPlot = {
     id = 195,
     groupid = 62,
     focus = Table_CameraPlot_t.focus[52],
-    param = Table_CameraPlot_t.param[91]
+    param = Table_CameraPlot_t.param[91],
+    DescInfo = "8.0主线白素贞回答问题"
   },
   [196] = {
     id = 196,
     groupid = 62,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线白素贞回答问题"
   },
   [197] = {
     id = 197,
     groupid = 63,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "转生镜头"
   },
   [198] = {
     id = 198,
@@ -19482,93 +19676,109 @@ Table_CameraPlot = {
   [199] = {
     id = 199,
     groupid = 64,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "超初四转"
   },
   [200] = {
     id = 200,
     groupid = 64,
     focus = Table_CameraPlot_t.focus[53],
-    param = Table_CameraPlot_t.param[93]
+    param = Table_CameraPlot_t.param[93],
+    DescInfo = "超初四转"
   },
   [201] = {
     id = 201,
     groupid = 65,
-    param = Table_CameraPlot_t.param[94]
+    param = Table_CameraPlot_t.param[94],
+    DescInfo = "超初四转"
   },
   [202] = {
     id = 202,
     groupid = 65,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "超初四转"
   },
   [203] = {
     id = 203,
     groupid = 66,
     focus = Table_CameraPlot_t.focus[54],
-    param = Table_CameraPlot_t.param[95]
+    param = Table_CameraPlot_t.param[95],
+    DescInfo = "8.0第二场选拔1"
   },
   [204] = {
     id = 204,
     groupid = 66,
     focus = Table_CameraPlot_t.focus[55],
-    param = Table_CameraPlot_t.param[96]
+    param = Table_CameraPlot_t.param[96],
+    DescInfo = "8.0第二场选拔1"
   },
   [205] = {
     id = 205,
     groupid = 66,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0第二场选拔1"
   },
   [206] = {
     id = 206,
     groupid = 67,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0第二场选拔2"
   },
   [207] = {
     id = 207,
     groupid = 67,
     focus = Table_CameraPlot_t.focus[56],
-    param = Table_CameraPlot_t.param[97]
+    param = Table_CameraPlot_t.param[97],
+    DescInfo = "8.0第二场选拔2"
   },
   [208] = {
     id = 208,
     groupid = 68,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0第二场选拔3"
   },
   [209] = {
     id = 209,
     groupid = 68,
     focus = Table_CameraPlot_t.focus[57],
-    param = Table_CameraPlot_t.param[98]
+    param = Table_CameraPlot_t.param[98],
+    DescInfo = "8.0第二场选拔3"
   },
   [210] = {
     id = 210,
     groupid = 69,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "骑士四转"
   },
   [211] = {
     id = 211,
     groupid = 69,
     focus = Table_CameraPlot_t.focus[58],
-    param = Table_CameraPlot_t.param[99]
+    param = Table_CameraPlot_t.param[99],
+    DescInfo = "骑士四转"
   },
   [212] = {
     id = 212,
     groupid = 70,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0海滩白素贞"
   },
   [213] = {
     id = 213,
     groupid = 70,
     focus = Table_CameraPlot_t.focus[59],
     param = Table_CameraPlot_t.param[100],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0海滩白素贞"
   },
   [214] = {
     id = 214,
     groupid = 71,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0海滩背影1"
   },
   [215] = {
     id = 215,
@@ -19576,14 +19786,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[60],
     param = Table_CameraPlot_t.param[101],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0海滩背影1"
   },
   [216] = {
     id = 216,
     groupid = 72,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0海滩背影2"
   },
   [217] = {
     id = 217,
@@ -19591,7 +19803,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[61],
     param = Table_CameraPlot_t.param[102],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0海滩背影2"
   },
   [218] = {
     id = 218,
@@ -19599,64 +19812,75 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[62],
     param = Table_CameraPlot_t.param[103],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0海滩背影3"
   },
   [219] = {
     id = 219,
     groupid = 73,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0海滩背影3"
   },
   [220] = {
     id = 220,
     groupid = 74,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0花楼卡米镜头"
   },
   [221] = {
     id = 221,
     groupid = 74,
     focus = Table_CameraPlot_t.focus[63],
-    param = Table_CameraPlot_t.param[104]
+    param = Table_CameraPlot_t.param[104],
+    DescInfo = "8.0花楼卡米镜头"
   },
   [222] = {
     id = 222,
     groupid = 75,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0花楼繁繁镜头"
   },
   [223] = {
     id = 223,
     groupid = 75,
     focus = Table_CameraPlot_t.focus[64],
-    param = Table_CameraPlot_t.param[105]
+    param = Table_CameraPlot_t.param[105],
+    DescInfo = "8.0花楼繁繁镜头"
   },
   [224] = {
     id = 224,
     groupid = 76,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0花楼白素贞镜头"
   },
   [225] = {
     id = 225,
     groupid = 76,
     focus = Table_CameraPlot_t.focus[65],
-    param = Table_CameraPlot_t.param[105]
+    param = Table_CameraPlot_t.param[105],
+    DescInfo = "8.0花楼白素贞镜头"
   },
   [226] = {
     id = 226,
     groupid = 77,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0花楼阿祥镜头"
   },
   [227] = {
     id = 227,
     groupid = 77,
     focus = Table_CameraPlot_t.focus[66],
-    param = Table_CameraPlot_t.param[106]
+    param = Table_CameraPlot_t.param[106],
+    DescInfo = "8.0花楼阿祥镜头"
   },
   [228] = {
     id = 228,
     groupid = 78,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "副本内第一个转职"
   },
   [229] = {
     id = 229,
@@ -19669,7 +19893,8 @@ Table_CameraPlot = {
     id = 230,
     groupid = 79,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "副本内第二个转职"
   },
   [231] = {
     id = 231,
@@ -19682,7 +19907,8 @@ Table_CameraPlot = {
     id = 232,
     groupid = 80,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "副本内第三个转职"
   },
   [233] = {
     id = 233,
@@ -19695,7 +19921,8 @@ Table_CameraPlot = {
     id = 234,
     groupid = 81,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "副本内第四个转职"
   },
   [235] = {
     id = 235,
@@ -19707,84 +19934,99 @@ Table_CameraPlot = {
   [236] = {
     id = 236,
     groupid = 82,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "铁匠四转"
   },
   [237] = {
     id = 237,
     groupid = 82,
     focus = Table_CameraPlot_t.focus[71],
-    param = Table_CameraPlot_t.param[111]
+    param = Table_CameraPlot_t.param[111],
+    DescInfo = "铁匠四转"
   },
   [238] = {
     id = 238,
     groupid = 83,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "铁匠四转"
   },
   [239] = {
     id = 239,
     groupid = 83,
     focus = Table_CameraPlot_t.focus[72],
-    param = Table_CameraPlot_t.param[112]
+    param = Table_CameraPlot_t.param[112],
+    DescInfo = "铁匠四转"
   },
   [240] = {
     id = 240,
     groupid = 84,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "炼金四转"
   },
   [241] = {
     id = 241,
     groupid = 84,
     focus = Table_CameraPlot_t.focus[73],
-    param = Table_CameraPlot_t.param[113]
+    param = Table_CameraPlot_t.param[113],
+    DescInfo = "炼金四转"
   },
   [242] = {
     id = 242,
     groupid = 85,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "铁匠四转"
   },
   [243] = {
     id = 243,
     groupid = 85,
     focus = Table_CameraPlot_t.focus[74],
-    param = Table_CameraPlot_t.param[114]
+    param = Table_CameraPlot_t.param[114],
+    DescInfo = "铁匠四转"
   },
   [244] = {
     id = 244,
     groupid = 86,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0开场引导"
   },
   [245] = {
     id = 245,
     groupid = 86,
     focus = Table_CameraPlot_t.focus[75],
-    param = Table_CameraPlot_t.param[115]
+    param = Table_CameraPlot_t.param[115],
+    DescInfo = "8.0开场引导"
   },
   [246] = {
     id = 246,
     groupid = 87,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "流氓四转"
   },
   [247] = {
     id = 247,
     groupid = 87,
     focus = Table_CameraPlot_t.focus[76],
-    param = Table_CameraPlot_t.param[116]
+    param = Table_CameraPlot_t.param[116],
+    DescInfo = "流氓四转"
   },
   [248] = {
     id = 248,
     groupid = 88,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "流氓四转"
   },
   [249] = {
     id = 249,
     groupid = 88,
     focus = Table_CameraPlot_t.focus[77],
-    param = Table_CameraPlot_t.param[117]
+    param = Table_CameraPlot_t.param[117],
+    DescInfo = "流氓四转"
   },
   [250] = {
     id = 250,
     groupid = 89,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "贤者4转"
   },
   [251] = {
     id = 251,
@@ -19795,7 +20037,8 @@ Table_CameraPlot = {
   [252] = {
     id = 252,
     groupid = 90,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "贤者4转"
   },
   [253] = {
     id = 253,
@@ -19807,23 +20050,27 @@ Table_CameraPlot = {
     id = 254,
     groupid = 91,
     focus = Table_CameraPlot_t.focus[79],
-    param = Table_CameraPlot_t.param[120]
+    param = Table_CameraPlot_t.param[120],
+    DescInfo = "8.0主线香香"
   },
   [255] = {
     id = 255,
     groupid = 91,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线香香"
   },
   [256] = {
     id = 256,
     groupid = 92,
     focus = Table_CameraPlot_t.focus[80],
-    param = Table_CameraPlot_t.param[121]
+    param = Table_CameraPlot_t.param[121],
+    DescInfo = "8.0主线香香小青"
   },
   [257] = {
     id = 257,
     groupid = 92,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线香香小青"
   },
   [258] = {
     id = 258,
@@ -19831,7 +20078,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[81],
     param = Table_CameraPlot_t.param[122],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线花魁出场1"
   },
   [259] = {
     id = 259,
@@ -19839,14 +20087,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[82],
     param = Table_CameraPlot_t.param[123],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线花魁出场1"
   },
   [260] = {
     id = 260,
     groupid = 93,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线花魁出场1"
   },
   [261] = {
     id = 261,
@@ -19854,7 +20104,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[83],
     param = Table_CameraPlot_t.param[124],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线花魁出场2"
   },
   [262] = {
     id = 262,
@@ -19862,21 +20113,24 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[84],
     param = Table_CameraPlot_t.param[125],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线花魁出场2"
   },
   [263] = {
     id = 263,
     groupid = 94,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线花魁出场2"
   },
   [264] = {
     id = 264,
     groupid = 95,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线花魁出场3"
   },
   [265] = {
     id = 265,
@@ -19884,243 +20138,286 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[85],
     param = Table_CameraPlot_t.param[126],
     sceneFilter = 20,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "8.0主线花魁出场3"
   },
   [266] = {
     id = 266,
     groupid = 96,
     focus = Table_CameraPlot_t.focus[86],
-    param = Table_CameraPlot_t.param[127]
+    param = Table_CameraPlot_t.param[127],
+    DescInfo = "荒境主线1-3"
   },
   [267] = {
     id = 267,
     groupid = 96,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线1-3"
   },
   [268] = {
     id = 268,
     groupid = 97,
     focus = Table_CameraPlot_t.focus[87],
-    param = Table_CameraPlot_t.param[128]
+    param = Table_CameraPlot_t.param[128],
+    DescInfo = "语音任务-最初的巨人"
   },
   [269] = {
     id = 269,
     groupid = 97,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-最初的巨人"
   },
   [270] = {
     id = 270,
     groupid = 98,
     focus = Table_CameraPlot_t.focus[88],
-    param = Table_CameraPlot_t.param[129]
+    param = Table_CameraPlot_t.param[129],
+    DescInfo = "语音任务-毒牙族风情"
   },
   [271] = {
     id = 271,
     groupid = 98,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-毒牙族风情"
   },
   [272] = {
     id = 272,
     groupid = 99,
     focus = Table_CameraPlot_t.focus[89],
-    param = Table_CameraPlot_t.param[130]
+    param = Table_CameraPlot_t.param[130],
+    DescInfo = "语音任务-洛阳的巨龙"
   },
   [273] = {
     id = 273,
     groupid = 99,
     focus = Table_CameraPlot_t.focus[90],
-    param = Table_CameraPlot_t.param[131]
+    param = Table_CameraPlot_t.param[131],
+    DescInfo = "语音任务-洛阳的巨龙"
   },
   [274] = {
     id = 274,
     groupid = 99,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-洛阳的巨龙"
   },
   [275] = {
     id = 275,
     groupid = 100,
     focus = Table_CameraPlot_t.focus[91],
-    param = Table_CameraPlot_t.param[132]
+    param = Table_CameraPlot_t.param[132],
+    DescInfo = "语音任务-花楼的常客"
   },
   [276] = {
     id = 276,
     groupid = 100,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-花楼的常客"
   },
   [277] = {
     id = 277,
     groupid = 101,
     focus = Table_CameraPlot_t.focus[92],
-    param = Table_CameraPlot_t.param[133]
+    param = Table_CameraPlot_t.param[133],
+    DescInfo = "语音任务-花魁的舞衣"
   },
   [278] = {
     id = 278,
     groupid = 101,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-花魁的舞衣"
   },
   [279] = {
     id = 279,
     groupid = 102,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-莲花中的身影"
   },
   [280] = {
     id = 280,
     groupid = 102,
     focus = Table_CameraPlot_t.focus[93],
-    param = Table_CameraPlot_t.param[134]
+    param = Table_CameraPlot_t.param[134],
+    DescInfo = "语音任务-莲花中的身影"
   },
   [281] = {
     id = 281,
     groupid = 103,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-银鱼湖的公主"
   },
   [282] = {
     id = 282,
     groupid = 103,
     focus = Table_CameraPlot_t.focus[94],
-    param = Table_CameraPlot_t.param[135]
+    param = Table_CameraPlot_t.param[135],
+    DescInfo = "语音任务-银鱼湖的公主"
   },
   [283] = {
     id = 283,
     groupid = 104,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-影枫司"
   },
   [284] = {
     id = 284,
     groupid = 104,
     focus = Table_CameraPlot_t.focus[95],
-    param = Table_CameraPlot_t.param[136]
+    param = Table_CameraPlot_t.param[136],
+    DescInfo = "语音任务-影枫司"
   },
   [285] = {
     id = 285,
     groupid = 104,
     focus = Table_CameraPlot_t.focus[95],
-    param = Table_CameraPlot_t.param[137]
+    param = Table_CameraPlot_t.param[137],
+    DescInfo = "语音任务-影枫司"
   },
   [286] = {
     id = 286,
     groupid = 105,
     focus = Table_CameraPlot_t.focus[96],
-    param = Table_CameraPlot_t.param[138]
+    param = Table_CameraPlot_t.param[138],
+    DescInfo = "语音任务-龙神祭坛"
   },
   [287] = {
     id = 287,
     groupid = 105,
     focus = Table_CameraPlot_t.focus[96],
-    param = Table_CameraPlot_t.param[139]
+    param = Table_CameraPlot_t.param[139],
+    DescInfo = "语音任务-龙神祭坛"
   },
   [288] = {
     id = 288,
     groupid = 105,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-龙神祭坛"
   },
   [289] = {
     id = 289,
     groupid = 106,
     focus = Table_CameraPlot_t.focus[97],
-    param = Table_CameraPlot_t.param[140]
+    param = Table_CameraPlot_t.param[140],
+    DescInfo = "语音任务-洛阳花楼"
   },
   [290] = {
     id = 290,
     groupid = 106,
     focus = Table_CameraPlot_t.focus[98],
-    param = Table_CameraPlot_t.param[141]
+    param = Table_CameraPlot_t.param[141],
+    DescInfo = "语音任务-洛阳花楼"
   },
   [291] = {
     id = 291,
     groupid = 106,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-洛阳花楼"
   },
   [292] = {
     id = 292,
     groupid = 107,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "流氓四转"
   },
   [293] = {
     id = 293,
     groupid = 107,
     focus = Table_CameraPlot_t.focus[99],
-    param = Table_CameraPlot_t.param[142]
+    param = Table_CameraPlot_t.param[142],
+    DescInfo = "流氓四转"
   },
   [294] = {
     id = 294,
     groupid = 108,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "流氓四转"
   },
   [295] = {
     id = 295,
     groupid = 108,
     focus = Table_CameraPlot_t.focus[100],
-    param = Table_CameraPlot_t.param[143]
+    param = Table_CameraPlot_t.param[143],
+    DescInfo = "流氓四转"
   },
   [296] = {
     id = 296,
     groupid = 109,
     focus = Table_CameraPlot_t.focus[101],
-    param = Table_CameraPlot_t.param[144]
+    param = Table_CameraPlot_t.param[144],
+    DescInfo = "荒境主线1-1"
   },
   [297] = {
     id = 297,
     groupid = 109,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线1-1"
   },
   [298] = {
     id = 298,
     groupid = 110,
     focus = Table_CameraPlot_t.focus[102],
-    param = Table_CameraPlot_t.param[145]
+    param = Table_CameraPlot_t.param[145],
+    DescInfo = "荒境主线1-2"
   },
   [299] = {
     id = 299,
     groupid = 110,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线1-2"
   },
   [300] = {
     id = 300,
     groupid = 111,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线1-2"
   },
   [301] = {
     id = 301,
     groupid = 111,
     focus = Table_CameraPlot_t.focus[102],
-    param = Table_CameraPlot_t.param[146]
+    param = Table_CameraPlot_t.param[146],
+    DescInfo = "荒境主线1-2"
   },
   [302] = {
     id = 302,
     groupid = 112,
     focus = Table_CameraPlot_t.focus[103],
     param = Table_CameraPlot_t.param[147],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "主线许仙花灯"
   },
   [303] = {
     id = 303,
     groupid = 112,
     focus = Table_CameraPlot_t.focus[104],
     param = Table_CameraPlot_t.param[148],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "主线许仙花灯"
   },
   [304] = {
     id = 304,
     groupid = 112,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "主线许仙花灯"
   },
   [305] = {
     id = 305,
     groupid = 113,
     focus = Table_CameraPlot_t.focus[105],
-    param = Table_CameraPlot_t.param[149]
+    param = Table_CameraPlot_t.param[149],
+    DescInfo = "语音任务-花楼的常客"
   },
   [306] = {
     id = 306,
     groupid = 113,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-花楼的常客"
   },
   [307] = {
     id = 307,
     groupid = 114,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "诗人转职"
   },
   [308] = {
     id = 308,
@@ -20133,57 +20430,66 @@ Table_CameraPlot = {
     groupid = 115,
     focus = Table_CameraPlot_t.focus[107],
     param = Table_CameraPlot_t.param[151],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-5"
   },
   [310] = {
     id = 310,
     groupid = 115,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-5"
   },
   [311] = {
     id = 311,
     groupid = 116,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-5"
   },
   [312] = {
     id = 312,
     groupid = 116,
     focus = Table_CameraPlot_t.focus[107],
     param = Table_CameraPlot_t.param[152],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-5"
   },
   [313] = {
     id = 313,
     groupid = 117,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-5"
   },
   [314] = {
     id = 314,
     groupid = 117,
     focus = Table_CameraPlot_t.focus[107],
     param = Table_CameraPlot_t.param[153],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-5"
   },
   [315] = {
     id = 315,
     groupid = 118,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-5"
   },
   [316] = {
     id = 316,
     groupid = 118,
     focus = Table_CameraPlot_t.focus[107],
     param = Table_CameraPlot_t.param[154],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-5"
   },
   [317] = {
     id = 317,
     groupid = 119,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "诗人转职"
   },
   [318] = {
     id = 318,
@@ -20196,69 +20502,80 @@ Table_CameraPlot = {
     groupid = 120,
     focus = Table_CameraPlot_t.focus[109],
     param = Table_CameraPlot_t.param[156],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-6"
   },
   [320] = {
     id = 320,
     groupid = 120,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-6"
   },
   [321] = {
     id = 321,
     groupid = 121,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-6"
   },
   [322] = {
     id = 322,
     groupid = 121,
     focus = Table_CameraPlot_t.focus[109],
     param = Table_CameraPlot_t.param[157],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-6"
   },
   [323] = {
     id = 323,
     groupid = 122,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-6"
   },
   [324] = {
     id = 324,
     groupid = 122,
     focus = Table_CameraPlot_t.focus[109],
     param = Table_CameraPlot_t.param[158],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-6"
   },
   [325] = {
     id = 325,
     groupid = 123,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-6"
   },
   [326] = {
     id = 326,
     groupid = 123,
     focus = Table_CameraPlot_t.focus[109],
     param = Table_CameraPlot_t.param[159],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "荒境主线1-6"
   },
   [327] = {
     id = 327,
     groupid = 124,
     focus = Table_CameraPlot_t.focus[110],
-    param = Table_CameraPlot_t.param[160]
+    param = Table_CameraPlot_t.param[160],
+    DescInfo = "神使转职"
   },
   [328] = {
     id = 328,
     groupid = 124,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "神使转职"
   },
   [329] = {
     id = 329,
     groupid = 125,
     focus = Table_CameraPlot_t.focus[111],
-    param = Table_CameraPlot_t.param[161]
+    param = Table_CameraPlot_t.param[161],
+    DescInfo = "诗人舞娘大副本分镜日月1"
   },
   [330] = {
     id = 330,
@@ -20269,7 +20586,8 @@ Table_CameraPlot = {
     id = 331,
     groupid = 126,
     focus = Table_CameraPlot_t.focus[112],
-    param = Table_CameraPlot_t.param[162]
+    param = Table_CameraPlot_t.param[162],
+    DescInfo = "诗人舞娘大副本分镜日月2"
   },
   [332] = {
     id = 332,
@@ -20280,7 +20598,8 @@ Table_CameraPlot = {
     id = 333,
     groupid = 127,
     focus = Table_CameraPlot_t.focus[113],
-    param = Table_CameraPlot_t.param[163]
+    param = Table_CameraPlot_t.param[163],
+    DescInfo = "诗人舞娘大副本分镜日3"
   },
   [334] = {
     id = 334,
@@ -20297,7 +20616,8 @@ Table_CameraPlot = {
     id = 336,
     groupid = 128,
     focus = Table_CameraPlot_t.focus[115],
-    param = Table_CameraPlot_t.param[165]
+    param = Table_CameraPlot_t.param[165],
+    DescInfo = "诗人舞娘大副本分镜日4"
   },
   [337] = {
     id = 337,
@@ -20313,13 +20633,15 @@ Table_CameraPlot = {
     id = 339,
     groupid = 129,
     focus = Table_CameraPlot_t.focus[116],
-    param = Table_CameraPlot_t.param[166]
+    param = Table_CameraPlot_t.param[166],
+    DescInfo = "诗人舞娘大副本分镜日月5"
   },
   [340] = {
     id = 340,
     groupid = 130,
     focus = Table_CameraPlot_t.focus[117],
-    param = Table_CameraPlot_t.param[167]
+    param = Table_CameraPlot_t.param[167],
+    DescInfo = "诗人舞娘大副本分镜月4"
   },
   [341] = {
     id = 341,
@@ -20336,7 +20658,8 @@ Table_CameraPlot = {
     id = 343,
     groupid = 131,
     focus = Table_CameraPlot_t.focus[119],
-    param = Table_CameraPlot_t.param[169]
+    param = Table_CameraPlot_t.param[169],
+    DescInfo = "游洛阳塞拉姑娘"
   },
   [344] = {
     id = 344,
@@ -20347,7 +20670,8 @@ Table_CameraPlot = {
     id = 345,
     groupid = 132,
     focus = Table_CameraPlot_t.focus[120],
-    param = Table_CameraPlot_t.param[170]
+    param = Table_CameraPlot_t.param[170],
+    DescInfo = "游洛阳舞娘们"
   },
   [346] = {
     id = 346,
@@ -20358,7 +20682,8 @@ Table_CameraPlot = {
     id = 347,
     groupid = 133,
     focus = Table_CameraPlot_t.focus[121],
-    param = Table_CameraPlot_t.param[171]
+    param = Table_CameraPlot_t.param[171],
+    DescInfo = "游洛阳许仙家"
   },
   [348] = {
     id = 348,
@@ -20369,7 +20694,8 @@ Table_CameraPlot = {
     id = 349,
     groupid = 134,
     focus = Table_CameraPlot_t.focus[122],
-    param = Table_CameraPlot_t.param[172]
+    param = Table_CameraPlot_t.param[172],
+    DescInfo = "游洛阳许仙家"
   },
   [350] = {
     id = 350,
@@ -20380,7 +20706,8 @@ Table_CameraPlot = {
     id = 351,
     groupid = 135,
     focus = Table_CameraPlot_t.focus[121],
-    param = Table_CameraPlot_t.param[173]
+    param = Table_CameraPlot_t.param[173],
+    DescInfo = "游洛阳人鱼"
   },
   [352] = {
     id = 352,
@@ -20391,7 +20718,8 @@ Table_CameraPlot = {
     id = 353,
     groupid = 136,
     focus = Table_CameraPlot_t.focus[123],
-    param = Table_CameraPlot_t.param[174]
+    param = Table_CameraPlot_t.param[174],
+    DescInfo = "游洛阳人鱼"
   },
   [354] = {
     id = 354,
@@ -20402,7 +20730,8 @@ Table_CameraPlot = {
     id = 355,
     groupid = 137,
     focus = Table_CameraPlot_t.focus[124],
-    param = Table_CameraPlot_t.param[175]
+    param = Table_CameraPlot_t.param[175],
+    DescInfo = "游洛阳人鱼"
   },
   [356] = {
     id = 356,
@@ -20413,13 +20742,15 @@ Table_CameraPlot = {
     id = 357,
     groupid = 138,
     focus = Table_CameraPlot_t.focus[125],
-    param = Table_CameraPlot_t.param[176]
+    param = Table_CameraPlot_t.param[176],
+    DescInfo = "游洛阳演武台"
   },
   [358] = {
     id = 358,
     groupid = 138,
     focus = Table_CameraPlot_t.focus[126],
-    param = Table_CameraPlot_t.param[177]
+    param = Table_CameraPlot_t.param[177],
+    DescInfo = "游洛阳演武台"
   },
   [359] = {
     id = 359,
@@ -20429,24 +20760,28 @@ Table_CameraPlot = {
   [360] = {
     id = 360,
     groupid = 139,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "十字军四转"
   },
   [361] = {
     id = 361,
     groupid = 139,
     focus = Table_CameraPlot_t.focus[127],
-    param = Table_CameraPlot_t.param[178]
+    param = Table_CameraPlot_t.param[178],
+    DescInfo = "十字军四转"
   },
   [362] = {
     id = 362,
     groupid = 140,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "召唤师四转"
   },
   [363] = {
     id = 363,
     groupid = 140,
     focus = Table_CameraPlot_t.focus[128],
-    param = Table_CameraPlot_t.param[179]
+    param = Table_CameraPlot_t.param[179],
+    DescInfo = "召唤师四转"
   },
   [364] = {
     id = 364,
@@ -20457,328 +20792,387 @@ Table_CameraPlot = {
     id = 365,
     groupid = 141,
     focus = Table_CameraPlot_t.focus[129],
-    param = Table_CameraPlot_t.param[180]
+    param = Table_CameraPlot_t.param[180],
+    DescInfo = "神使转职"
   },
   [366] = {
     id = 366,
     groupid = 142,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "主线流云法海"
   },
   [367] = {
     id = 367,
     groupid = 142,
     focus = Table_CameraPlot_t.focus[130],
-    param = Table_CameraPlot_t.param[181]
+    param = Table_CameraPlot_t.param[181],
+    DescInfo = "主线流云法海"
   },
   [368] = {
     id = 368,
     groupid = 142,
     focus = Table_CameraPlot_t.focus[130],
-    param = Table_CameraPlot_t.param[182]
+    param = Table_CameraPlot_t.param[182],
+    DescInfo = "主线流云法海"
   },
   [369] = {
     id = 369,
     groupid = 143,
     focus = Table_CameraPlot_t.focus[131],
-    param = Table_CameraPlot_t.param[183]
+    param = Table_CameraPlot_t.param[183],
+    DescInfo = "荒境主线2-6"
   },
   [370] = {
     id = 370,
     groupid = 143,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线2-6"
   },
   [371] = {
     id = 371,
     groupid = 144,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线2-6"
   },
   [372] = {
     id = 372,
     groupid = 144,
     focus = Table_CameraPlot_t.focus[131],
-    param = Table_CameraPlot_t.param[184]
+    param = Table_CameraPlot_t.param[184],
+    DescInfo = "荒境主线2-6"
   },
   [373] = {
     id = 373,
     groupid = 145,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "神使转职"
   },
   [374] = {
     id = 374,
     groupid = 145,
     focus = Table_CameraPlot_t.focus[132],
-    param = Table_CameraPlot_t.param[185]
+    param = Table_CameraPlot_t.param[185],
+    DescInfo = "神使转职"
   },
   [375] = {
     id = 375,
     groupid = 146,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线白素贞回答问题卡米"
   },
   [376] = {
     id = 376,
     groupid = 146,
     focus = Table_CameraPlot_t.focus[133],
-    param = Table_CameraPlot_t.param[186]
+    param = Table_CameraPlot_t.param[186],
+    DescInfo = "8.0主线白素贞回答问题卡米"
   },
   [377] = {
     id = 377,
     groupid = 147,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线许仙捣乱"
   },
   [378] = {
     id = 378,
     groupid = 147,
     focus = Table_CameraPlot_t.focus[134],
-    param = Table_CameraPlot_t.param[187]
+    param = Table_CameraPlot_t.param[187],
+    DescInfo = "8.0主线许仙捣乱"
   },
   [379] = {
     id = 379,
     groupid = 148,
     focus = Table_CameraPlot_t.focus[135],
-    param = Table_CameraPlot_t.param[188]
+    param = Table_CameraPlot_t.param[188],
+    DescInfo = "荒境主线3-1狸猫"
   },
   [380] = {
     id = 380,
     groupid = 148,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线3-1狸猫"
   },
   [381] = {
     id = 381,
     groupid = 149,
     focus = Table_CameraPlot_t.focus[136],
-    param = Table_CameraPlot_t.param[84]
+    param = Table_CameraPlot_t.param[84],
+    DescInfo = "8.0主线大闹影枫司烧门"
   },
   [382] = {
     id = 382,
     groupid = 149,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "8.0主线大闹影枫司烧门"
   },
   [383] = {
     id = 383,
     groupid = 150,
     focus = Table_CameraPlot_t.focus[137],
-    param = Table_CameraPlot_t.param[189]
+    param = Table_CameraPlot_t.param[189],
+    DescInfo = "荒境主线3-6"
   },
   [384] = {
     id = 384,
     groupid = 150,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线3-6"
   },
   [385] = {
     id = 385,
     groupid = 151,
     focus = Table_CameraPlot_t.focus[137],
-    param = Table_CameraPlot_t.param[190]
+    param = Table_CameraPlot_t.param[190],
+    DescInfo = "荒境主线3-6"
   },
   [386] = {
     id = 386,
     groupid = 151,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线3-6"
   },
   [387] = {
     id = 387,
     groupid = 152,
     focus = Table_CameraPlot_t.focus[138],
-    param = Table_CameraPlot_t.param[191]
+    param = Table_CameraPlot_t.param[191],
+    DescInfo = "荒境主线3-7"
   },
   [388] = {
     id = 388,
     groupid = 152,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线3-7"
   },
   [389] = {
     id = 389,
     groupid = 153,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线3-7"
   },
   [390] = {
     id = 390,
     groupid = 153,
     focus = Table_CameraPlot_t.focus[138],
-    param = Table_CameraPlot_t.param[192]
+    param = Table_CameraPlot_t.param[192],
+    DescInfo = "荒境主线3-7"
   },
   [391] = {
     id = 391,
     groupid = 154,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [392] = {
     id = 392,
     groupid = 154,
     focus = Table_CameraPlot_t.focus[139],
-    param = Table_CameraPlot_t.param[193]
+    param = Table_CameraPlot_t.param[193],
+    DescInfo = "荒境主线4-2"
   },
   [393] = {
     id = 393,
     groupid = 155,
     focus = Table_CameraPlot_t.focus[139],
-    param = Table_CameraPlot_t.param[194]
+    param = Table_CameraPlot_t.param[194],
+    DescInfo = "荒境主线4-2"
   },
   [394] = {
     id = 394,
     groupid = 155,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [395] = {
     id = 395,
     groupid = 156,
     focus = Table_CameraPlot_t.focus[139],
-    param = Table_CameraPlot_t.param[195]
+    param = Table_CameraPlot_t.param[195],
+    DescInfo = "荒境主线4-2"
   },
   [396] = {
     id = 396,
     groupid = 156,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [397] = {
     id = 397,
     groupid = 157,
     focus = Table_CameraPlot_t.focus[139],
-    param = Table_CameraPlot_t.param[196]
+    param = Table_CameraPlot_t.param[196],
+    DescInfo = "荒境主线4-2"
   },
   [398] = {
     id = 398,
     groupid = 157,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [399] = {
     id = 399,
     groupid = 158,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [400] = {
     id = 400,
     groupid = 158,
     focus = Table_CameraPlot_t.focus[140],
-    param = Table_CameraPlot_t.param[197]
+    param = Table_CameraPlot_t.param[197],
+    DescInfo = "荒境主线4-2"
   },
   [401] = {
     id = 401,
     groupid = 159,
     focus = Table_CameraPlot_t.focus[140],
-    param = Table_CameraPlot_t.param[198]
+    param = Table_CameraPlot_t.param[198],
+    DescInfo = "荒境主线4-2"
   },
   [402] = {
     id = 402,
     groupid = 159,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [403] = {
     id = 403,
     groupid = 160,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [404] = {
     id = 404,
     groupid = 160,
     focus = Table_CameraPlot_t.focus[141],
-    param = Table_CameraPlot_t.param[199]
+    param = Table_CameraPlot_t.param[199],
+    DescInfo = "荒境主线4-2"
   },
   [405] = {
     id = 405,
     groupid = 161,
     focus = Table_CameraPlot_t.focus[141],
-    param = Table_CameraPlot_t.param[200]
+    param = Table_CameraPlot_t.param[200],
+    DescInfo = "荒境主线4-2"
   },
   [406] = {
     id = 406,
     groupid = 161,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [407] = {
     id = 407,
     groupid = 162,
     focus = Table_CameraPlot_t.focus[141],
-    param = Table_CameraPlot_t.param[201]
+    param = Table_CameraPlot_t.param[201],
+    DescInfo = "荒境主线4-2"
   },
   [408] = {
     id = 408,
     groupid = 162,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [409] = {
     id = 409,
     groupid = 163,
     focus = Table_CameraPlot_t.focus[142],
-    param = Table_CameraPlot_t.param[202]
+    param = Table_CameraPlot_t.param[202],
+    DescInfo = "荒境主线4-2"
   },
   [410] = {
     id = 410,
     groupid = 163,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [411] = {
     id = 411,
     groupid = 164,
     focus = Table_CameraPlot_t.focus[143],
-    param = Table_CameraPlot_t.param[203]
+    param = Table_CameraPlot_t.param[203],
+    DescInfo = "荒境主线4-2"
   },
   [412] = {
     id = 412,
     groupid = 164,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [413] = {
     id = 413,
     groupid = 165,
     focus = Table_CameraPlot_t.focus[144],
-    param = Table_CameraPlot_t.param[204]
+    param = Table_CameraPlot_t.param[204],
+    DescInfo = "荒境主线4-2"
   },
   [414] = {
     id = 414,
     groupid = 165,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [415] = {
     id = 415,
     groupid = 166,
     focus = Table_CameraPlot_t.focus[145],
-    param = Table_CameraPlot_t.param[205]
+    param = Table_CameraPlot_t.param[205],
+    DescInfo = "荒境主线4-2"
   },
   [416] = {
     id = 416,
     groupid = 166,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [417] = {
     id = 417,
     groupid = 167,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [418] = {
     id = 418,
     groupid = 167,
     focus = Table_CameraPlot_t.focus[145],
-    param = Table_CameraPlot_t.param[206]
+    param = Table_CameraPlot_t.param[206],
+    DescInfo = "荒境主线4-2"
   },
   [419] = {
     id = 419,
     groupid = 168,
     focus = Table_CameraPlot_t.focus[146],
-    param = Table_CameraPlot_t.param[207]
+    param = Table_CameraPlot_t.param[207],
+    DescInfo = "荒境主线4-2"
   },
   [420] = {
     id = 420,
     groupid = 168,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [421] = {
     id = 421,
     groupid = 169,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [422] = {
     id = 422,
     groupid = 169,
     focus = Table_CameraPlot_t.focus[146],
-    param = Table_CameraPlot_t.param[208]
+    param = Table_CameraPlot_t.param[208],
+    DescInfo = "荒境主线4-2"
   },
   [423] = {
     id = 423,
     groupid = 170,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线二阶段莲灯舞"
   },
   [424] = {
     id = 424,
@@ -20786,7 +21180,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[147],
     param = Table_CameraPlot_t.param[209],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线二阶段莲灯舞"
   },
   [425] = {
     id = 425,
@@ -20855,46 +21250,54 @@ Table_CameraPlot = {
     id = 433,
     groupid = 172,
     focus = Table_CameraPlot_t.focus[151],
-    param = Table_CameraPlot_t.param[214]
+    param = Table_CameraPlot_t.param[214],
+    DescInfo = "荒境主线4-2"
   },
   [434] = {
     id = 434,
     groupid = 172,
     focus = Table_CameraPlot_t.focus[151],
-    param = Table_CameraPlot_t.param[215]
+    param = Table_CameraPlot_t.param[215],
+    DescInfo = "荒境主线4-2"
   },
   [435] = {
     id = 435,
     groupid = 172,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [436] = {
     id = 436,
     groupid = 173,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "荒境主线4-2"
   },
   [437] = {
     id = 437,
     groupid = 173,
     focus = Table_CameraPlot_t.focus[152],
-    param = Table_CameraPlot_t.param[216]
+    param = Table_CameraPlot_t.param[216],
+    DescInfo = "荒境主线4-2"
   },
   [438] = {
     id = 438,
     groupid = 174,
     focus = Table_CameraPlot_t.focus[153],
-    param = Table_CameraPlot_t.param[217]
+    param = Table_CameraPlot_t.param[217],
+    DescInfo = "辛德拉-苦恼的小唯"
   },
   [439] = {
     id = 439,
     groupid = 174,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "辛德拉-苦恼的小唯"
   },
   [440] = {
     id = 440,
     groupid = 175,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线二阶段看古恩"
   },
   [441] = {
     id = 441,
@@ -20908,7 +21311,8 @@ Table_CameraPlot = {
     groupid = 176,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线二阶段面对白素贞"
   },
   [443] = {
     id = 443,
@@ -20931,7 +21335,8 @@ Table_CameraPlot = {
     groupid = 177,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线二阶段面对许仙法海"
   },
   [446] = {
     id = 446,
@@ -20953,7 +21358,8 @@ Table_CameraPlot = {
     id = 448,
     groupid = 178,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线二阶段修复神花"
   },
   [449] = {
     id = 449,
@@ -20973,7 +21379,8 @@ Table_CameraPlot = {
     id = 451,
     groupid = 179,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线二阶段远景震动"
   },
   [452] = {
     id = 452,
@@ -20994,33 +21401,38 @@ Table_CameraPlot = {
     groupid = 180,
     focus = Table_CameraPlot_t.focus[160],
     param = Table_CameraPlot_t.param[226],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "火焰神三转（魔神坛）"
   },
   [455] = {
     id = 455,
     groupid = 180,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "火焰神三转（魔神坛）"
   },
   [456] = {
     id = 456,
     groupid = 181,
     focus = Table_CameraPlot_t.focus[161],
     param = Table_CameraPlot_t.param[227],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "火焰神三转（魔神坛）"
   },
   [457] = {
     id = 457,
     groupid = 181,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "火焰神三转（魔神坛）"
   },
   [458] = {
     id = 458,
     groupid = 182,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线二阶段看白素贞走掉"
   },
   [459] = {
     id = 459,
@@ -21042,7 +21454,8 @@ Table_CameraPlot = {
     id = 461,
     groupid = 183,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "偷窥白素贞"
   },
   [462] = {
     id = 462,
@@ -21056,19 +21469,22 @@ Table_CameraPlot = {
     groupid = 184,
     focus = Table_CameraPlot_t.focus[165],
     param = Table_CameraPlot_t.param[231],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "火焰神四转（魔神坛）"
   },
   [464] = {
     id = 464,
     groupid = 184,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "火焰神四转（魔神坛）"
   },
   [465] = {
     id = 465,
     groupid = 185,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "许仙说话"
   },
   [466] = {
     id = 466,
@@ -21088,7 +21504,8 @@ Table_CameraPlot = {
     id = 468,
     groupid = 186,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "许仙说话第二段"
   },
   [469] = {
     id = 469,
@@ -21122,7 +21539,8 @@ Table_CameraPlot = {
     id = 473,
     groupid = 187,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秒切放灯1"
   },
   [474] = {
     id = 474,
@@ -21142,7 +21560,8 @@ Table_CameraPlot = {
     id = 476,
     groupid = 188,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秒切放灯2"
   },
   [477] = {
     id = 477,
@@ -21162,7 +21581,8 @@ Table_CameraPlot = {
     id = 479,
     groupid = 189,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秒切放灯3"
   },
   [480] = {
     id = 480,
@@ -21182,7 +21602,8 @@ Table_CameraPlot = {
     id = 482,
     groupid = 190,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秒切放灯4"
   },
   [483] = {
     id = 483,
@@ -21202,7 +21623,8 @@ Table_CameraPlot = {
     id = 485,
     groupid = 191,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秒切放灯5"
   },
   [486] = {
     id = 486,
@@ -21223,7 +21645,8 @@ Table_CameraPlot = {
     groupid = 192,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "白素贞高声说话"
   },
   [489] = {
     id = 489,
@@ -21252,7 +21675,8 @@ Table_CameraPlot = {
     groupid = 193,
     focus = Table_CameraPlot_t.focus[184],
     param = Table_CameraPlot_t.param[246],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-对视镜头"
   },
   [493] = {
     id = 493,
@@ -21267,7 +21691,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[185],
     param = Table_CameraPlot_t.param[247],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-移动镜头"
   },
   [495] = {
     id = 495,
@@ -21282,7 +21707,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[186],
     param = Table_CameraPlot_t.param[248],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-镜子破碎"
   },
   [497] = {
     id = 497,
@@ -21295,7 +21721,8 @@ Table_CameraPlot = {
     groupid = 196,
     focus = Table_CameraPlot_t.focus[187],
     param = Table_CameraPlot_t.param[249],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-全景"
   },
   [499] = {
     id = 499,
@@ -21310,13 +21737,15 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[188],
     param = Table_CameraPlot_t.param[250],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-施法镜头"
   },
   [501] = {
     id = 501,
     groupid = 198,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "最后副本看优比1"
   },
   [502] = {
     id = 502,
@@ -21337,7 +21766,8 @@ Table_CameraPlot = {
     groupid = 199,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "最后看优比2"
   },
   [505] = {
     id = 505,
@@ -21360,7 +21790,8 @@ Table_CameraPlot = {
     groupid = 200,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "最后看优比3"
   },
   [508] = {
     id = 508,
@@ -21383,7 +21814,8 @@ Table_CameraPlot = {
     groupid = 201,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "决战镜头"
   },
   [511] = {
     id = 511,
@@ -21398,7 +21830,8 @@ Table_CameraPlot = {
     groupid = 202,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看许仙被捅"
   },
   [513] = {
     id = 513,
@@ -21413,7 +21846,8 @@ Table_CameraPlot = {
     groupid = 203,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看许仙被捅完了以后"
   },
   [515] = {
     id = 515,
@@ -21435,21 +21869,24 @@ Table_CameraPlot = {
     id = 517,
     groupid = 204,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "hrz龙之幻境支线1"
   },
   [518] = {
     id = 518,
     groupid = 204,
     focus = Table_CameraPlot_t.focus[196],
     param = Table_CameraPlot_t.param[260],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "hrz龙之幻境支线1"
   },
   [519] = {
     id = 519,
     groupid = 205,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看白素贞跳舞修改1"
   },
   [520] = {
     id = 520,
@@ -21457,7 +21894,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[197],
     param = Table_CameraPlot_t.param[261],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "开始镜头，交代空间关系"
   },
   [521] = {
     id = 521,
@@ -21472,7 +21910,8 @@ Table_CameraPlot = {
     groupid = 206,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看白素贞跳舞修改2"
   },
   [523] = {
     id = 523,
@@ -21480,7 +21919,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[198],
     param = Table_CameraPlot_t.param[263],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秒切镜头，从下看到上"
   },
   [524] = {
     id = 524,
@@ -21488,14 +21928,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[199],
     param = Table_CameraPlot_t.param[264],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "特写"
   },
   [525] = {
     id = 525,
     groupid = 207,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看白素贞跳舞修改3"
   },
   [526] = {
     id = 526,
@@ -21503,7 +21945,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[200],
     param = Table_CameraPlot_t.param[265],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秒切"
   },
   [527] = {
     id = 527,
@@ -21511,7 +21954,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[200],
     param = Table_CameraPlot_t.param[266],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "小弧度"
   },
   [528] = {
     id = 528,
@@ -21519,14 +21963,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[200],
     param = Table_CameraPlot_t.param[267],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "小弧度"
   },
   [529] = {
     id = 529,
     groupid = 208,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看白素贞跳舞修改4"
   },
   [530] = {
     id = 530,
@@ -21534,7 +21980,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[201],
     param = Table_CameraPlot_t.param[268],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "从下往上抬升再拉到许仙视角"
   },
   [531] = {
     id = 531,
@@ -21565,7 +22012,8 @@ Table_CameraPlot = {
     groupid = 209,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看白素贞跳舞修改5"
   },
   [535] = {
     id = 535,
@@ -21573,7 +22021,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[204],
     param = Table_CameraPlot_t.param[272],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "拉近看白素贞放技能"
   },
   [536] = {
     id = 536,
@@ -21588,7 +22037,8 @@ Table_CameraPlot = {
     groupid = 210,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "拉回来"
   },
   [538] = {
     id = 538,
@@ -21610,7 +22060,8 @@ Table_CameraPlot = {
     id = 540,
     groupid = 211,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "新月瀑布"
   },
   [541] = {
     id = 541,
@@ -21637,7 +22088,8 @@ Table_CameraPlot = {
     id = 544,
     groupid = 212,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "洛阳皇城"
   },
   [545] = {
     id = 545,
@@ -21657,7 +22109,8 @@ Table_CameraPlot = {
     id = 547,
     groupid = 213,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙祭坛"
   },
   [548] = {
     id = 548,
@@ -21685,7 +22138,8 @@ Table_CameraPlot = {
     groupid = 214,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-初见莲花"
   },
   [552] = {
     id = 552,
@@ -21700,7 +22154,8 @@ Table_CameraPlot = {
     groupid = 215,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-莲花开"
   },
   [554] = {
     id = 554,
@@ -21715,7 +22170,8 @@ Table_CameraPlot = {
     groupid = 216,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-莲花开"
   },
   [556] = {
     id = 556,
@@ -21730,7 +22186,8 @@ Table_CameraPlot = {
     groupid = 217,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-莲花开"
   },
   [558] = {
     id = 558,
@@ -21745,7 +22202,8 @@ Table_CameraPlot = {
     groupid = 218,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-莲花开"
   },
   [560] = {
     id = 560,
@@ -21768,7 +22226,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[217],
     param = Table_CameraPlot_t.param[289],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-希默梅思视角"
   },
   [563] = {
     id = 563,
@@ -21783,7 +22242,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[217],
     param = Table_CameraPlot_t.param[290],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-希默梅思特写"
   },
   [565] = {
     id = 565,
@@ -21798,7 +22258,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[218],
     param = Table_CameraPlot_t.param[291],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-白素贞特写"
   },
   [567] = {
     id = 567,
@@ -21813,138 +22274,159 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[217],
     param = Table_CameraPlot_t.param[292],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-对话"
   },
   [569] = {
     id = 569,
     groupid = 223,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙之幻境主线"
   },
   [570] = {
     id = 570,
     groupid = 223,
     focus = Table_CameraPlot_t.focus[219],
     param = Table_CameraPlot_t.param[293],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙之幻境主线"
   },
   [571] = {
     id = 571,
     groupid = 224,
     focus = Table_CameraPlot_t.focus[138],
     param = Table_CameraPlot_t.param[191],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙之幻境主线"
   },
   [572] = {
     id = 572,
     groupid = 224,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙之幻境主线"
   },
   [573] = {
     id = 573,
     groupid = 225,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙之幻境主线"
   },
   [574] = {
     id = 574,
     groupid = 225,
     focus = Table_CameraPlot_t.focus[220],
     param = Table_CameraPlot_t.param[192],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙之幻境主线"
   },
   [575] = {
     id = 575,
     groupid = 226,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四天地树"
   },
   [576] = {
     id = 576,
     groupid = 226,
     focus = Table_CameraPlot_t.focus[221],
     param = Table_CameraPlot_t.param[294],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四天地树"
   },
   [577] = {
     id = 577,
     groupid = 227,
     focus = Table_CameraPlot_t.focus[222],
     param = Table_CameraPlot_t.param[295],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四天地树"
   },
   [578] = {
     id = 578,
     groupid = 227,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四天地树"
   },
   [579] = {
     id = 579,
     groupid = 228,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤低头"
   },
   [580] = {
     id = 580,
     groupid = 228,
     focus = Table_CameraPlot_t.focus[223],
     param = Table_CameraPlot_t.param[296],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤低头"
   },
   [581] = {
     id = 581,
     groupid = 229,
     focus = Table_CameraPlot_t.focus[224],
     param = Table_CameraPlot_t.param[297],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤寻找希默梅思"
   },
   [582] = {
     id = 582,
     groupid = 229,
     focus = Table_CameraPlot_t.focus[224],
     param = Table_CameraPlot_t.param[298],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤寻找希默梅思"
   },
   [583] = {
     id = 583,
     groupid = 229,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤寻找希默梅思"
   },
   [584] = {
     id = 584,
     groupid = 230,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤寻找希默梅思"
   },
   [585] = {
     id = 585,
     groupid = 230,
     focus = Table_CameraPlot_t.focus[224],
     param = Table_CameraPlot_t.param[299],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤寻找希默梅思"
   },
   [586] = {
     id = 586,
     groupid = 231,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤寻找希默梅思2"
   },
   [587] = {
     id = 587,
     groupid = 231,
     focus = Table_CameraPlot_t.focus[225],
     param = Table_CameraPlot_t.param[300],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤寻找希默梅思2"
   },
   [588] = {
     id = 588,
     groupid = 232,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤最终镜头1"
   },
   [589] = {
     id = 589,
@@ -21952,14 +22434,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[226],
     param = Table_CameraPlot_t.param[301],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤最终镜头1"
   },
   [590] = {
     id = 590,
     groupid = 233,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤最终镜头2"
   },
   [591] = {
     id = 591,
@@ -21967,14 +22451,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[227],
     param = Table_CameraPlot_t.param[302],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤最终镜头2"
   },
   [592] = {
     id = 592,
     groupid = 234,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤最终镜头3"
   },
   [593] = {
     id = 593,
@@ -21982,14 +22468,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[228],
     param = Table_CameraPlot_t.param[303],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤最终镜头3"
   },
   [594] = {
     id = 594,
     groupid = 235,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤最终镜头3"
   },
   [595] = {
     id = 595,
@@ -21997,169 +22485,199 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[229],
     param = Table_CameraPlot_t.param[304],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤最终镜头3"
   },
   [596] = {
     id = 596,
     groupid = 236,
     focus = Table_CameraPlot_t.focus[230],
-    param = Table_CameraPlot_t.param[305]
+    param = Table_CameraPlot_t.param[305],
+    DescInfo = "龙魂之门"
   },
   [597] = {
     id = 597,
     groupid = 236,
     focus = Table_CameraPlot_t.focus[230],
-    param = Table_CameraPlot_t.param[306]
+    param = Table_CameraPlot_t.param[306],
+    DescInfo = "龙魂之门"
   },
   [598] = {
     id = 598,
     groupid = 236,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "龙魂之门"
   },
   [599] = {
     id = 599,
     groupid = 237,
     focus = Table_CameraPlot_t.focus[231],
-    param = Table_CameraPlot_t.param[307]
+    param = Table_CameraPlot_t.param[307],
+    DescInfo = "奥格米尔之花"
   },
   [600] = {
     id = 600,
     groupid = 237,
     focus = Table_CameraPlot_t.focus[231],
-    param = Table_CameraPlot_t.param[308]
+    param = Table_CameraPlot_t.param[308],
+    DescInfo = "奥格米尔之花"
   },
   [601] = {
     id = 601,
     groupid = 237,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "奥格米尔之花"
   },
   [602] = {
     id = 602,
     groupid = 238,
     focus = Table_CameraPlot_t.focus[232],
-    param = Table_CameraPlot_t.param[309]
+    param = Table_CameraPlot_t.param[309],
+    DescInfo = "水中的精灵"
   },
   [603] = {
     id = 603,
     groupid = 238,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "水中的精灵"
   },
   [604] = {
     id = 604,
     groupid = 239,
     focus = Table_CameraPlot_t.focus[233],
-    param = Table_CameraPlot_t.param[310]
+    param = Table_CameraPlot_t.param[310],
+    DescInfo = "波伊塔塔"
   },
   [605] = {
     id = 605,
     groupid = 239,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "波伊塔塔"
   },
   [606] = {
     id = 606,
     groupid = 240,
     focus = Table_CameraPlot_t.focus[234],
-    param = Table_CameraPlot_t.param[311]
+    param = Table_CameraPlot_t.param[311],
+    DescInfo = "银鱼"
   },
   [607] = {
     id = 607,
     groupid = 240,
     focus = Table_CameraPlot_t.focus[234],
-    param = Table_CameraPlot_t.param[312]
+    param = Table_CameraPlot_t.param[312],
+    DescInfo = "银鱼"
   },
   [608] = {
     id = 608,
     groupid = 240,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "银鱼"
   },
   [609] = {
     id = 609,
     groupid = 241,
     focus = Table_CameraPlot_t.focus[235],
-    param = Table_CameraPlot_t.param[313]
+    param = Table_CameraPlot_t.param[313],
+    DescInfo = "咸鱼也有梦想"
   },
   [610] = {
     id = 610,
     groupid = 241,
     focus = Table_CameraPlot_t.focus[236],
-    param = Table_CameraPlot_t.param[314]
+    param = Table_CameraPlot_t.param[314],
+    DescInfo = "咸鱼也有梦想"
   },
   [611] = {
     id = 611,
     groupid = 241,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "咸鱼也有梦想"
   },
   [612] = {
     id = 612,
     groupid = 242,
     focus = Table_CameraPlot_t.focus[237],
-    param = Table_CameraPlot_t.param[315]
+    param = Table_CameraPlot_t.param[315],
+    DescInfo = "语音任务-黑市商人"
   },
   [613] = {
     id = 613,
     groupid = 242,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-黑市商人"
   },
   [614] = {
     id = 614,
     groupid = 243,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-熊猫波利"
   },
   [615] = {
     id = 615,
     groupid = 243,
     focus = Table_CameraPlot_t.focus[238],
-    param = Table_CameraPlot_t.param[316]
+    param = Table_CameraPlot_t.param[316],
+    DescInfo = "语音任务-熊猫波利"
   },
   [616] = {
     id = 616,
     groupid = 244,
     focus = Table_CameraPlot_t.focus[239],
-    param = Table_CameraPlot_t.param[317]
+    param = Table_CameraPlot_t.param[317],
+    DescInfo = "语音任务-预备队的试炼"
   },
   [617] = {
     id = 617,
     groupid = 244,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-预备队的试炼"
   },
   [618] = {
     id = 618,
     groupid = 245,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-断裂的时空"
   },
   [619] = {
     id = 619,
     groupid = 245,
     focus = Table_CameraPlot_t.focus[240],
-    param = Table_CameraPlot_t.param[318]
+    param = Table_CameraPlot_t.param[318],
+    DescInfo = "语音任务-断裂的时空"
   },
   [620] = {
     id = 620,
     groupid = 245,
     focus = Table_CameraPlot_t.focus[241],
-    param = Table_CameraPlot_t.param[319]
+    param = Table_CameraPlot_t.param[319],
+    DescInfo = "语音任务-断裂的时空"
   },
   [621] = {
     id = 621,
     groupid = 246,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-非男非女的狐仙"
   },
   [622] = {
     id = 622,
     groupid = 246,
     focus = Table_CameraPlot_t.focus[242],
-    param = Table_CameraPlot_t.param[320]
+    param = Table_CameraPlot_t.param[320],
+    DescInfo = "语音任务-非男非女的狐仙"
   },
   [623] = {
     id = 623,
     groupid = 247,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-蛇妖戈耳工"
   },
   [624] = {
     id = 624,
     groupid = 247,
     focus = Table_CameraPlot_t.focus[243],
-    param = Table_CameraPlot_t.param[321]
+    param = Table_CameraPlot_t.param[321],
+    DescInfo = "语音任务-蛇妖戈耳工"
   },
   [625] = {
     id = 625,
@@ -22167,21 +22685,24 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[244],
     param = Table_CameraPlot_t.param[322],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四希默梅斯"
   },
   [626] = {
     id = 626,
     groupid = 248,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四希默梅斯"
   },
   [627] = {
     id = 627,
     groupid = 249,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四发现沙拉艾琳"
   },
   [628] = {
     id = 628,
@@ -22189,18 +22710,21 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[245],
     param = Table_CameraPlot_t.param[323],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四发现沙拉艾琳"
   },
   [629] = {
     id = 629,
     groupid = 250,
     focus = Table_CameraPlot_t.focus[246],
-    param = Table_CameraPlot_t.param[324]
+    param = Table_CameraPlot_t.param[324],
+    DescInfo = "测试任务镜头"
   },
   [630] = {
     id = 630,
     groupid = 250,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "测试任务镜头"
   },
   [631] = {
     id = 631,
@@ -22208,14 +22732,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[247],
     param = Table_CameraPlot_t.param[325],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四发现沙拉艾琳镜头推进"
   },
   [632] = {
     id = 632,
     groupid = 251,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四发现沙拉艾琳镜头推进"
   },
   [633] = {
     id = 633,
@@ -22223,21 +22749,24 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[248],
     param = Table_CameraPlot_t.param[326],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四希默梅思特写"
   },
   [634] = {
     id = 634,
     groupid = 252,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四希默梅思特写"
   },
   [635] = {
     id = 635,
     groupid = 253,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四对视"
   },
   [636] = {
     id = 636,
@@ -22245,7 +22774,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[249],
     param = Table_CameraPlot_t.param[327],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四对视"
   },
   [637] = {
     id = 637,
@@ -22253,14 +22783,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[250],
     param = Table_CameraPlot_t.param[328],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四对视"
   },
   [638] = {
     id = 638,
     groupid = 254,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0第三阶段-银鱼白素贞"
   },
   [639] = {
     id = 639,
@@ -22268,14 +22800,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[251],
     param = Table_CameraPlot_t.param[329],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0第三阶段-银鱼白素贞"
   },
   [640] = {
     id = 640,
     groupid = 255,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0第三阶段-银鱼白素贞"
   },
   [641] = {
     id = 641,
@@ -22283,14 +22817,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[251],
     param = Table_CameraPlot_t.param[330],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0第三阶段-银鱼白素贞"
   },
   [642] = {
     id = 642,
     groupid = 256,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0第三阶段-银鱼白素贞"
   },
   [643] = {
     id = 643,
@@ -22298,14 +22834,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[251],
     param = Table_CameraPlot_t.param[331],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0第三阶段-银鱼白素贞"
   },
   [644] = {
     id = 644,
     groupid = 257,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0第三阶段-银鱼白素贞"
   },
   [645] = {
     id = 645,
@@ -22313,14 +22851,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[251],
     param = Table_CameraPlot_t.param[332],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0第三阶段-银鱼白素贞"
   },
   [646] = {
     id = 646,
     groupid = 258,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线冲击波蓄力"
   },
   [647] = {
     id = 647,
@@ -22328,14 +22868,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[252],
     param = Table_CameraPlot_t.param[333],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线冲击波蓄力"
   },
   [648] = {
     id = 648,
     groupid = 259,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线冲击波蓄力"
   },
   [649] = {
     id = 649,
@@ -22343,14 +22885,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[252],
     param = Table_CameraPlot_t.param[334],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线冲击波蓄力"
   },
   [650] = {
     id = 650,
     groupid = 260,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线大招"
   },
   [651] = {
     id = 651,
@@ -22358,14 +22902,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[253],
     param = Table_CameraPlot_t.param[335],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线大招"
   },
   [652] = {
     id = 652,
     groupid = 261,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-傀儡"
   },
   [653] = {
     id = 653,
@@ -22380,7 +22926,8 @@ Table_CameraPlot = {
     groupid = 262,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-决战远景"
   },
   [655] = {
     id = 655,
@@ -22395,7 +22942,8 @@ Table_CameraPlot = {
     groupid = 263,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-决战近景"
   },
   [657] = {
     id = 657,
@@ -22410,7 +22958,8 @@ Table_CameraPlot = {
     groupid = 264,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-决战对峙"
   },
   [659] = {
     id = 659,
@@ -22425,7 +22974,8 @@ Table_CameraPlot = {
     groupid = 265,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四希默梅思躺尸"
   },
   [661] = {
     id = 661,
@@ -22433,7 +22983,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[257],
     param = Table_CameraPlot_t.param[340],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四希默梅思躺尸"
   },
   [662] = {
     id = 662,
@@ -22441,7 +22992,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[258],
     param = Table_CameraPlot_t.param[341],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四沙拉艾琳特写"
   },
   [663] = {
     id = 663,
@@ -22449,21 +23001,24 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[259],
     param = Table_CameraPlot_t.param[342],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四沙拉艾琳特写"
   },
   [664] = {
     id = 664,
     groupid = 266,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四沙拉艾琳特写"
   },
   [665] = {
     id = 665,
     groupid = 267,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-海底远景"
   },
   [666] = {
     id = 666,
@@ -22478,7 +23033,8 @@ Table_CameraPlot = {
     groupid = 268,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-海底近景"
   },
   [668] = {
     id = 668,
@@ -22493,7 +23049,8 @@ Table_CameraPlot = {
     groupid = 269,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-巡逻近景"
   },
   [670] = {
     id = 670,
@@ -22508,7 +23065,8 @@ Table_CameraPlot = {
     groupid = 270,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-巡逻远景"
   },
   [672] = {
     id = 672,
@@ -22523,7 +23081,8 @@ Table_CameraPlot = {
     groupid = 271,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-聚焦毕尤"
   },
   [674] = {
     id = 674,
@@ -22538,7 +23097,8 @@ Table_CameraPlot = {
     groupid = 272,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-聚焦平安"
   },
   [676] = {
     id = 676,
@@ -22553,7 +23113,8 @@ Table_CameraPlot = {
     groupid = 273,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-大丽花"
   },
   [678] = {
     id = 678,
@@ -22568,7 +23129,8 @@ Table_CameraPlot = {
     groupid = 274,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-花楼"
   },
   [680] = {
     id = 680,
@@ -22583,7 +23145,8 @@ Table_CameraPlot = {
     groupid = 275,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-花楼2"
   },
   [682] = {
     id = 682,
@@ -22598,7 +23161,8 @@ Table_CameraPlot = {
     groupid = 276,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-薇安"
   },
   [684] = {
     id = 684,
@@ -22613,7 +23177,8 @@ Table_CameraPlot = {
     groupid = 277,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-鱼群"
   },
   [686] = {
     id = 686,
@@ -22628,7 +23193,8 @@ Table_CameraPlot = {
     groupid = 278,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-薇安2"
   },
   [688] = {
     id = 688,
@@ -22643,7 +23209,8 @@ Table_CameraPlot = {
     groupid = 279,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-洛阳1背景"
   },
   [690] = {
     id = 690,
@@ -22658,7 +23225,8 @@ Table_CameraPlot = {
     groupid = 280,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-洛阳2背景2"
   },
   [692] = {
     id = 692,
@@ -22673,7 +23241,8 @@ Table_CameraPlot = {
     groupid = 281,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-洛阳3砸鸡蛋"
   },
   [694] = {
     id = 694,
@@ -22688,7 +23257,8 @@ Table_CameraPlot = {
     groupid = 282,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-洛阳4法海出来"
   },
   [696] = {
     id = 696,
@@ -22703,7 +23273,8 @@ Table_CameraPlot = {
     groupid = 283,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-洛阳5最终"
   },
   [698] = {
     id = 698,
@@ -22718,7 +23289,8 @@ Table_CameraPlot = {
     groupid = 284,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-蛇人鱼人1"
   },
   [700] = {
     id = 700,
@@ -22733,7 +23305,8 @@ Table_CameraPlot = {
     groupid = 285,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-蛇人鱼人2"
   },
   [702] = {
     id = 702,
@@ -22748,7 +23321,8 @@ Table_CameraPlot = {
     groupid = 286,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-蛇人鱼人3"
   },
   [704] = {
     id = 704,
@@ -22762,7 +23336,8 @@ Table_CameraPlot = {
     id = 705,
     groupid = 287,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-最终镜头"
   },
   [706] = {
     id = 706,
@@ -22776,7 +23351,8 @@ Table_CameraPlot = {
     groupid = 288,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-海滩平安拉远"
   },
   [708] = {
     id = 708,
@@ -22791,7 +23367,8 @@ Table_CameraPlot = {
     groupid = 289,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-聚焦法海和平安"
   },
   [710] = {
     id = 710,
@@ -22806,7 +23383,8 @@ Table_CameraPlot = {
     groupid = 290,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-聚焦法海和希默梅思"
   },
   [712] = {
     id = 712,
@@ -22821,59 +23399,68 @@ Table_CameraPlot = {
     groupid = 291,
     focus = Table_CameraPlot_t.focus[224],
     param = Table_CameraPlot_t.param[367],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤寻找希默梅思"
   },
   [714] = {
     id = 714,
     groupid = 291,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四毕尤寻找希默梅思"
   },
   [715] = {
     id = 715,
     groupid = 292,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-白素贞湖底"
   },
   [716] = {
     id = 716,
     groupid = 292,
     focus = Table_CameraPlot_t.focus[271],
     param = Table_CameraPlot_t.param[368],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-白素贞湖底"
   },
   [717] = {
     id = 717,
     groupid = 293,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-白素贞倒地"
   },
   [718] = {
     id = 718,
     groupid = 293,
     focus = Table_CameraPlot_t.focus[272],
     param = Table_CameraPlot_t.param[369],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-白素贞倒地"
   },
   [719] = {
     id = 719,
     groupid = 294,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-希默梅思"
   },
   [720] = {
     id = 720,
     groupid = 294,
     focus = Table_CameraPlot_t.focus[273],
     param = Table_CameraPlot_t.param[370],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-希默梅思"
   },
   [721] = {
     id = 721,
     groupid = 295,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-希默梅思倒地"
   },
   [722] = {
     id = 722,
@@ -22881,14 +23468,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[273],
     param = Table_CameraPlot_t.param[371],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-希默梅思倒地"
   },
   [723] = {
     id = 723,
     groupid = 296,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-门"
   },
   [724] = {
     id = 724,
@@ -22896,14 +23485,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[274],
     param = Table_CameraPlot_t.param[372],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-门"
   },
   [725] = {
     id = 725,
     groupid = 297,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-平安"
   },
   [726] = {
     id = 726,
@@ -22911,14 +23502,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[275],
     param = Table_CameraPlot_t.param[373],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-平安"
   },
   [727] = {
     id = 727,
     groupid = 298,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-法海和平安"
   },
   [728] = {
     id = 728,
@@ -22926,14 +23519,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[276],
     param = Table_CameraPlot_t.param[374],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-法海和平安"
   },
   [729] = {
     id = 729,
     groupid = 299,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-法海和平安1"
   },
   [730] = {
     id = 730,
@@ -22941,7 +23536,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[277],
     param = Table_CameraPlot_t.param[375],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-法海和平安1"
   },
   [731] = {
     id = 731,
@@ -22949,14 +23545,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[277],
     param = Table_CameraPlot_t.param[376],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-法海和平安2"
   },
   [732] = {
     id = 732,
     groupid = 300,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-法海和平安2"
   },
   [733] = {
     id = 733,
@@ -22964,21 +23562,24 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[277],
     param = Table_CameraPlot_t.param[377],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [734] = {
     id = 734,
     groupid = 301,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [735] = {
     id = 735,
     groupid = 302,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [736] = {
     id = 736,
@@ -22986,14 +23587,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[278],
     param = Table_CameraPlot_t.param[378],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [737] = {
     id = 737,
     groupid = 303,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [738] = {
     id = 738,
@@ -23001,7 +23604,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[279],
     param = Table_CameraPlot_t.param[379],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [739] = {
     id = 739,
@@ -23009,14 +23613,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[280],
     param = Table_CameraPlot_t.param[380],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [740] = {
     id = 740,
     groupid = 304,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [741] = {
     id = 741,
@@ -23024,14 +23630,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[281],
     param = Table_CameraPlot_t.param[380],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [742] = {
     id = 742,
     groupid = 305,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [743] = {
     id = 743,
@@ -23039,14 +23647,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[282],
     param = Table_CameraPlot_t.param[381],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [744] = {
     id = 744,
     groupid = 306,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [745] = {
     id = 745,
@@ -23054,21 +23664,24 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[283],
     param = Table_CameraPlot_t.param[382],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [746] = {
     id = 746,
     groupid = 307,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段-"
   },
   [747] = {
     id = 747,
     groupid = 308,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙之幻境主线二阶段"
   },
   [748] = {
     id = 748,
@@ -23076,14 +23689,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[284],
     param = Table_CameraPlot_t.param[383],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙之幻境主线二阶段"
   },
   [749] = {
     id = 749,
     groupid = 309,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四白素贞走路"
   },
   [750] = {
     id = 750,
@@ -23091,14 +23706,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[285],
     param = Table_CameraPlot_t.param[384],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四白素贞走路"
   },
   [751] = {
     id = 751,
     groupid = 310,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四白素贞背影"
   },
   [752] = {
     id = 752,
@@ -23106,14 +23723,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[60],
     param = Table_CameraPlot_t.param[101],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四白素贞背影"
   },
   [753] = {
     id = 753,
     groupid = 311,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四白素贞正面"
   },
   [754] = {
     id = 754,
@@ -23121,14 +23740,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[286],
     param = Table_CameraPlot_t.param[385],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四白素贞正面"
   },
   [755] = {
     id = 755,
     groupid = 312,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四夕阳"
   },
   [756] = {
     id = 756,
@@ -23136,14 +23757,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[286],
     param = Table_CameraPlot_t.param[386],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四夕阳"
   },
   [757] = {
     id = 757,
     groupid = 313,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四环顾花街"
   },
   [758] = {
     id = 758,
@@ -23151,7 +23774,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[287],
     param = Table_CameraPlot_t.param[387],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四环顾花街"
   },
   [759] = {
     id = 759,
@@ -23159,7 +23783,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[287],
     param = Table_CameraPlot_t.param[388],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四环顾花街"
   },
   [760] = {
     id = 760,
@@ -23167,21 +23792,24 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[288],
     param = Table_CameraPlot_t.param[389],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四最后看花灯"
   },
   [761] = {
     id = 761,
     groupid = 314,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四最后看花灯"
   },
   [762] = {
     id = 762,
     groupid = 315,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四最后看花灯"
   },
   [763] = {
     id = 763,
@@ -23189,20 +23817,23 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[289],
     param = Table_CameraPlot_t.param[390],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线四最后看花灯"
   },
   [764] = {
     id = 764,
     groupid = 316,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段"
   },
   [765] = {
     id = 765,
     groupid = 316,
     focus = Table_CameraPlot_t.focus[290],
     param = Table_CameraPlot_t.param[391],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.0主线第三阶段"
   },
   [766] = {
     id = 766,
@@ -23210,21 +23841,24 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[291],
     param = Table_CameraPlot_t.param[392],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖镜子"
   },
   [767] = {
     id = 767,
     groupid = 317,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖镜子"
   },
   [768] = {
     id = 768,
     groupid = 318,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖镜子"
   },
   [769] = {
     id = 769,
@@ -23232,14 +23866,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[292],
     param = Table_CameraPlot_t.param[393],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖镜子"
   },
   [770] = {
     id = 770,
     groupid = 319,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "奥丁神殿·耶梦加得"
   },
   [771] = {
     id = 771,
@@ -23247,7 +23883,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[293],
     param = Table_CameraPlot_t.param[394],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "奥丁神殿·耶梦加得"
   },
   [772] = {
     id = 772,
@@ -23255,7 +23892,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[294],
     param = Table_CameraPlot_t.param[395],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "奥丁神殿环绕视角"
   },
   [773] = {
     id = 773,
@@ -23263,125 +23901,146 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[294],
     param = Table_CameraPlot_t.param[396],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "奥丁神殿环绕视角"
   },
   [774] = {
     id = 774,
     groupid = 320,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "奥丁神殿环绕视角"
   },
   [775] = {
     id = 775,
     groupid = 321,
     focus = Table_CameraPlot_t.focus[295],
     param = Table_CameraPlot_t.param[397],
-    sceneFilter = 39
+    sceneFilter = 39,
+    DescInfo = "语音任务-月之湖"
   },
   [776] = {
     id = 776,
     groupid = 321,
     focus = Table_CameraPlot_t.focus[296],
     param = Table_CameraPlot_t.param[398],
-    sceneFilter = 39
+    sceneFilter = 39,
+    DescInfo = "语音任务-月之湖"
   },
   [777] = {
     id = 777,
     groupid = 321,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-月之湖"
   },
   [778] = {
     id = 778,
     groupid = 322,
     focus = Table_CameraPlot_t.focus[297],
     param = Table_CameraPlot_t.param[399],
-    sceneFilter = 12
+    sceneFilter = 12,
+    DescInfo = "语音任务-希里德斯卡夫"
   },
   [779] = {
     id = 779,
     groupid = 322,
     focus = Table_CameraPlot_t.focus[297],
     param = Table_CameraPlot_t.param[400],
-    sceneFilter = 12
+    sceneFilter = 12,
+    DescInfo = "语音任务-希里德斯卡夫"
   },
   [780] = {
     id = 780,
     groupid = 322,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-希里德斯卡夫"
   },
   [781] = {
     id = 781,
     groupid = 323,
     focus = Table_CameraPlot_t.focus[298],
-    param = Table_CameraPlot_t.param[401]
+    param = Table_CameraPlot_t.param[401],
+    DescInfo = "语音任务-冈格尼尔"
   },
   [782] = {
     id = 782,
     groupid = 323,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-冈格尼尔"
   },
   [783] = {
     id = 783,
     groupid = 324,
     focus = Table_CameraPlot_t.focus[299],
-    param = Table_CameraPlot_t.param[402]
+    param = Table_CameraPlot_t.param[402],
+    DescInfo = "语音任务-福金和雾尼"
   },
   [784] = {
     id = 784,
     groupid = 324,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-福金和雾尼"
   },
   [785] = {
     id = 785,
     groupid = 325,
     focus = Table_CameraPlot_t.focus[300],
-    param = Table_CameraPlot_t.param[403]
+    param = Table_CameraPlot_t.param[403],
+    DescInfo = "语音任务-智慧之泉"
   },
   [786] = {
     id = 786,
     groupid = 325,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-智慧之泉"
   },
   [787] = {
     id = 787,
     groupid = 326,
     focus = Table_CameraPlot_t.focus[301],
-    param = Table_CameraPlot_t.param[404]
+    param = Table_CameraPlot_t.param[404],
+    DescInfo = "语音任务-月狼芬里尔"
   },
   [788] = {
     id = 788,
     groupid = 326,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-月狼芬里尔"
   },
   [789] = {
     id = 789,
     groupid = 327,
     focus = Table_CameraPlot_t.focus[302],
-    param = Table_CameraPlot_t.param[405]
+    param = Table_CameraPlot_t.param[405],
+    DescInfo = "语音任务-卢恩文字"
   },
   [790] = {
     id = 790,
     groupid = 327,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-卢恩文字"
   },
   [791] = {
     id = 791,
     groupid = 328,
     focus = Table_CameraPlot_t.focus[303],
-    param = Table_CameraPlot_t.param[406]
+    param = Table_CameraPlot_t.param[406],
+    DescInfo = "语音任务-格莱普尼尔"
   },
   [792] = {
     id = 792,
     groupid = 328,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "语音任务-格莱普尼尔"
   },
   [793] = {
     id = 793,
     groupid = 329,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "语音任务-兄弟往事"
   },
   [794] = {
     id = 794,
@@ -23389,7 +24048,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[304],
     param = Table_CameraPlot_t.param[407],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "语音任务-兄弟往事"
   },
   [795] = {
     id = 795,
@@ -23397,41 +24057,48 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[304],
     param = Table_CameraPlot_t.param[408],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "语音任务-兄弟往事"
   },
   [796] = {
     id = 796,
     groupid = 330,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "忍者转职"
   },
   [797] = {
     id = 797,
     groupid = 330,
     focus = Table_CameraPlot_t.focus[305],
-    param = Table_CameraPlot_t.param[409]
+    param = Table_CameraPlot_t.param[409],
+    DescInfo = "忍者转职"
   },
   [798] = {
     id = 798,
     groupid = 331,
     focus = Table_CameraPlot_t.focus[306],
-    param = Table_CameraPlot_t.param[410]
+    param = Table_CameraPlot_t.param[410],
+    DescInfo = "梅丽尔第一处回忆镜头·1"
   },
   [799] = {
     id = 799,
     groupid = 331,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "梅丽尔第一处回忆镜头·1"
   },
   [800] = {
     id = 800,
     groupid = 332,
     focus = Table_CameraPlot_t.focus[307],
     param = Table_CameraPlot_t.param[411],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "梅丽尔第二处回忆镜头·1"
   },
   [801] = {
     id = 801,
     groupid = 332,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "梅丽尔第二处回忆镜头·1"
   },
   [802] = {
     id = 802,
@@ -23439,7 +24106,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[308],
     param = Table_CameraPlot_t.param[412],
     sceneFilter = 39,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5主线-引导月之阵"
   },
   [803] = {
     id = 803,
@@ -23447,352 +24115,414 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[309],
     param = Table_CameraPlot_t.param[413],
     sceneFilter = 39,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5主线-引导月之阵"
   },
   [804] = {
     id = 804,
     groupid = 333,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-引导月之阵"
   },
   [805] = {
     id = 805,
     groupid = 334,
     focus = Table_CameraPlot_t.focus[310],
-    param = Table_CameraPlot_t.param[414]
+    param = Table_CameraPlot_t.param[414],
+    DescInfo = "7.5主线-神殿教学开场"
   },
   [806] = {
     id = 806,
     groupid = 334,
     focus = Table_CameraPlot_t.focus[310],
-    param = Table_CameraPlot_t.param[415]
+    param = Table_CameraPlot_t.param[415],
+    DescInfo = "7.5主线-神殿教学开场"
   },
   [807] = {
     id = 807,
     groupid = 334,
     focus = Table_CameraPlot_t.focus[310],
-    param = Table_CameraPlot_t.param[416]
+    param = Table_CameraPlot_t.param[416],
+    DescInfo = "7.5主线-神殿教学开场"
   },
   [808] = {
     id = 808,
     groupid = 334,
     focus = Table_CameraPlot_t.focus[311],
-    param = Table_CameraPlot_t.param[417]
+    param = Table_CameraPlot_t.param[417],
+    DescInfo = "7.5主线-神殿教学开场"
   },
   [809] = {
     id = 809,
     groupid = 334,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-神殿教学开场"
   },
   [810] = {
     id = 810,
     groupid = 335,
     focus = Table_CameraPlot_t.focus[312],
-    param = Table_CameraPlot_t.param[418]
+    param = Table_CameraPlot_t.param[418],
+    DescInfo = "7.5主线-神殿教学观察四周"
   },
   [811] = {
     id = 811,
     groupid = 335,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-神殿教学观察四周"
   },
   [812] = {
     id = 812,
     groupid = 336,
     focus = Table_CameraPlot_t.focus[313],
-    param = Table_CameraPlot_t.param[419]
+    param = Table_CameraPlot_t.param[419],
+    DescInfo = "7.5主线封印石门特写"
   },
   [813] = {
     id = 813,
     groupid = 336,
     focus = Table_CameraPlot_t.focus[314],
-    param = Table_CameraPlot_t.param[420]
+    param = Table_CameraPlot_t.param[420],
+    DescInfo = "7.5主线封印石门特写"
   },
   [814] = {
     id = 814,
     groupid = 336,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线封印石门特写"
   },
   [815] = {
     id = 815,
     groupid = 337,
     focus = Table_CameraPlot_t.focus[315],
-    param = Table_CameraPlot_t.param[421]
+    param = Table_CameraPlot_t.param[421],
+    DescInfo = "7.5主线-点火装置特写"
   },
   [816] = {
     id = 816,
     groupid = 337,
     focus = Table_CameraPlot_t.focus[316],
-    param = Table_CameraPlot_t.param[422]
+    param = Table_CameraPlot_t.param[422],
+    DescInfo = "7.5主线-点火装置特写"
   },
   [817] = {
     id = 817,
     groupid = 337,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-点火装置特写"
   },
   [818] = {
     id = 818,
     groupid = 338,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-蛇眼镜头"
   },
   [819] = {
     id = 819,
     groupid = 338,
     focus = Table_CameraPlot_t.focus[317],
-    param = Table_CameraPlot_t.param[423]
+    param = Table_CameraPlot_t.param[423],
+    DescInfo = "7.5主线-蛇眼镜头1"
   },
   [820] = {
     id = 820,
     groupid = 338,
     focus = Table_CameraPlot_t.focus[317],
-    param = Table_CameraPlot_t.param[424]
+    param = Table_CameraPlot_t.param[424],
+    DescInfo = "7.5主线-蛇眼镜头1"
   },
   [821] = {
     id = 821,
     groupid = 339,
     focus = Table_CameraPlot_t.focus[318],
-    param = Table_CameraPlot_t.param[425]
+    param = Table_CameraPlot_t.param[425],
+    DescInfo = "7.5主线-神殿教学探索深渊"
   },
   [822] = {
     id = 822,
     groupid = 339,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-神殿教学探索深渊"
   },
   [823] = {
     id = 823,
     groupid = 340,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-蛇眼镜头2"
   },
   [824] = {
     id = 824,
     groupid = 340,
     focus = Table_CameraPlot_t.focus[319],
-    param = Table_CameraPlot_t.param[426]
+    param = Table_CameraPlot_t.param[426],
+    DescInfo = "7.5主线-蛇眼镜头2"
   },
   [825] = {
     id = 825,
     groupid = 340,
     focus = Table_CameraPlot_t.focus[319],
-    param = Table_CameraPlot_t.param[427]
+    param = Table_CameraPlot_t.param[427],
+    DescInfo = "7.5主线-蛇眼镜头2"
   },
   [826] = {
     id = 826,
     groupid = 341,
     focus = Table_CameraPlot_t.focus[320],
     param = Table_CameraPlot_t.param[428],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "梅丽尔第二处回忆镜头·2"
   },
   [827] = {
     id = 827,
     groupid = 341,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "梅丽尔第二处回忆镜头·2"
   },
   [828] = {
     id = 828,
     groupid = 342,
     focus = Table_CameraPlot_t.focus[321],
-    param = Table_CameraPlot_t.param[429]
+    param = Table_CameraPlot_t.param[429],
+    DescInfo = "梅丽尔第三处回忆镜头·1"
   },
   [829] = {
     id = 829,
     groupid = 342,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "梅丽尔第三处回忆镜头·1"
   },
   [830] = {
     id = 830,
     groupid = 343,
     focus = Table_CameraPlot_t.focus[322],
-    param = Table_CameraPlot_t.param[430]
+    param = Table_CameraPlot_t.param[430],
+    DescInfo = "梅丽尔p4镜头·1"
   },
   [831] = {
     id = 831,
     groupid = 343,
     focus = Table_CameraPlot_t.focus[323],
-    param = Table_CameraPlot_t.param[431]
+    param = Table_CameraPlot_t.param[431],
+    DescInfo = "梅丽尔p4镜头·1"
   },
   [832] = {
     id = 832,
     groupid = 343,
     focus = Table_CameraPlot_t.focus[324],
-    param = Table_CameraPlot_t.param[432]
+    param = Table_CameraPlot_t.param[432],
+    DescInfo = "梅丽尔p4镜头·1"
   },
   [833] = {
     id = 833,
     groupid = 343,
     focus = Table_CameraPlot_t.focus[325],
-    param = Table_CameraPlot_t.param[433]
+    param = Table_CameraPlot_t.param[433],
+    DescInfo = "梅丽尔p4镜头·1"
   },
   [834] = {
     id = 834,
     groupid = 343,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "梅丽尔p4镜头·1"
   },
   [835] = {
     id = 835,
     groupid = 344,
     focus = Table_CameraPlot_t.focus[326],
     param = Table_CameraPlot_t.param[434],
-    sceneFilter = 12
+    sceneFilter = 12,
+    DescInfo = "梅丽尔p4镜头·2"
   },
   [836] = {
     id = 836,
     groupid = 344,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 12
+    sceneFilter = 12,
+    DescInfo = "梅丽尔p4镜头·2"
   },
   [837] = {
     id = 837,
     groupid = 345,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "忍者转职"
   },
   [838] = {
     id = 838,
     groupid = 345,
     focus = Table_CameraPlot_t.focus[327],
-    param = Table_CameraPlot_t.param[435]
+    param = Table_CameraPlot_t.param[435],
+    DescInfo = "忍者转职"
   },
   [839] = {
     id = 839,
     groupid = 346,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "忍者转职"
   },
   [840] = {
     id = 840,
     groupid = 346,
     focus = Table_CameraPlot_t.focus[327],
-    param = Table_CameraPlot_t.param[436]
+    param = Table_CameraPlot_t.param[436],
+    DescInfo = "忍者转职"
   },
   [841] = {
     id = 841,
     groupid = 347,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-蛇眼镜头3"
   },
   [842] = {
     id = 842,
     groupid = 347,
     focus = Table_CameraPlot_t.focus[328],
-    param = Table_CameraPlot_t.param[437]
+    param = Table_CameraPlot_t.param[437],
+    DescInfo = "7.5主线-蛇眼镜头3"
   },
   [843] = {
     id = 843,
     groupid = 347,
     focus = Table_CameraPlot_t.focus[328],
-    param = Table_CameraPlot_t.param[438]
+    param = Table_CameraPlot_t.param[438],
+    DescInfo = "7.5主线-蛇眼镜头3"
   },
   [844] = {
     id = 844,
     groupid = 348,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-蛇眼镜头总"
   },
   [845] = {
     id = 845,
     groupid = 348,
     focus = Table_CameraPlot_t.focus[317],
-    param = Table_CameraPlot_t.param[423]
+    param = Table_CameraPlot_t.param[423],
+    DescInfo = "7.5主线-蛇眼镜头总"
   },
   [846] = {
     id = 846,
     groupid = 349,
     focus = Table_CameraPlot_t.focus[329],
-    param = Table_CameraPlot_t.param[439]
+    param = Table_CameraPlot_t.param[439],
+    DescInfo = "7.5主线-神殿一看向房间"
   },
   [847] = {
     id = 847,
     groupid = 349,
     focus = Table_CameraPlot_t.focus[329],
-    param = Table_CameraPlot_t.param[440]
+    param = Table_CameraPlot_t.param[440],
+    DescInfo = "7.5主线-神殿一看向房间"
   },
   [848] = {
     id = 848,
     groupid = 349,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-神殿一看向房间"
   },
   [849] = {
     id = 849,
     groupid = 350,
     focus = Table_CameraPlot_t.focus[330],
-    param = Table_CameraPlot_t.param[441]
+    param = Table_CameraPlot_t.param[441],
+    DescInfo = "7.5主线-神殿一查看机关"
   },
   [850] = {
     id = 850,
     groupid = 350,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-神殿一查看机关"
   },
   [851] = {
     id = 851,
     groupid = 351,
     focus = Table_CameraPlot_t.focus[331],
-    param = Table_CameraPlot_t.param[442]
+    param = Table_CameraPlot_t.param[442],
+    DescInfo = "7.5主线-神殿一镶嵌符文黄"
   },
   [852] = {
     id = 852,
     groupid = 351,
     focus = Table_CameraPlot_t.focus[331],
-    param = Table_CameraPlot_t.param[443]
+    param = Table_CameraPlot_t.param[443],
+    DescInfo = "7.5主线-神殿一镶嵌符文黄"
   },
   [853] = {
     id = 853,
     groupid = 351,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-神殿一镶嵌符文黄"
   },
   [854] = {
     id = 854,
     groupid = 352,
     focus = Table_CameraPlot_t.focus[332],
-    param = Table_CameraPlot_t.param[444]
+    param = Table_CameraPlot_t.param[444],
+    DescInfo = "7.5主线-神殿一看等离子体"
   },
   [855] = {
     id = 855,
     groupid = 352,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-神殿一看等离子体"
   },
   [856] = {
     id = 856,
     groupid = 353,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-神殿一机关下沉"
   },
   [857] = {
     id = 857,
     groupid = 353,
     focus = Table_CameraPlot_t.focus[333],
-    param = Table_CameraPlot_t.param[445]
+    param = Table_CameraPlot_t.param[445],
+    DescInfo = "7.5主线-神殿一机关下沉"
   },
   [858] = {
     id = 858,
     groupid = 354,
     focus = Table_CameraPlot_t.focus[334],
-    param = Table_CameraPlot_t.param[446]
+    param = Table_CameraPlot_t.param[446],
+    DescInfo = "7.5主线-神殿一点亮宝石一"
   },
   [859] = {
     id = 859,
     groupid = 354,
     focus = Table_CameraPlot_t.focus[335],
-    param = Table_CameraPlot_t.param[447]
+    param = Table_CameraPlot_t.param[447],
+    DescInfo = "7.5主线-神殿一点亮宝石一"
   },
   [860] = {
     id = 860,
     groupid = 354,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-神殿一点亮宝石一"
   },
   [861] = {
     id = 861,
     groupid = 355,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-神殿一看向断路"
   },
   [862] = {
     id = 862,
     groupid = 355,
     focus = Table_CameraPlot_t.focus[336],
-    param = Table_CameraPlot_t.param[448]
+    param = Table_CameraPlot_t.param[448],
+    DescInfo = "7.5主线-神殿一看向断路"
   },
   [863] = {
     id = 863,
     groupid = 356,
     focus = Table_CameraPlot_t.focus[325],
-    param = Table_CameraPlot_t.param[449]
+    param = Table_CameraPlot_t.param[449],
+    DescInfo = "梅丽尔p4镜头·1重试"
   },
   [864] = {
     id = 864,
     groupid = 356,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "梅丽尔p4镜头·1重试"
   },
   [865] = {
     id = 865,
@@ -23800,14 +24530,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[337],
     param = Table_CameraPlot_t.param[450],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-耶梦加得出场"
   },
   [866] = {
     id = 866,
     groupid = 357,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-耶梦加得出场"
   },
   [867] = {
     id = 867,
@@ -23815,21 +24547,24 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[338],
     param = Table_CameraPlot_t.param[451],
     sceneFilter = 0,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-侧面对话镜头"
   },
   [868] = {
     id = 868,
     groupid = 358,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 0,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-侧面对话镜头"
   },
   [869] = {
     id = 869,
     groupid = 359,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-耶梦加得走向镜面"
   },
   [870] = {
     id = 870,
@@ -23837,7 +24572,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[339],
     param = Table_CameraPlot_t.param[452],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-耶梦加得走向镜面"
   },
   [871] = {
     id = 871,
@@ -23845,14 +24581,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[340],
     param = Table_CameraPlot_t.param[453],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-耶梦加得走向镜面"
   },
   [872] = {
     id = 872,
     groupid = 360,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-耶梦加得举球全景"
   },
   [873] = {
     id = 873,
@@ -23860,7 +24598,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[341],
     param = Table_CameraPlot_t.param[454],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-耶梦加得举球全景"
   },
   [874] = {
     id = 874,
@@ -23868,7 +24607,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[342],
     param = Table_CameraPlot_t.param[455],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-耶梦加得背后全景"
   },
   [875] = {
     id = 875,
@@ -23876,81 +24616,94 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[343],
     param = Table_CameraPlot_t.param[456],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-耶梦加得背后全景"
   },
   [876] = {
     id = 876,
     groupid = 361,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-耶梦加得背后全景"
   },
   [877] = {
     id = 877,
     groupid = 362,
     param = Table_CameraPlot_t.param[457],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "梅丽尔第二处回忆镜头·1修改版本"
   },
   [878] = {
     id = 878,
     groupid = 362,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "梅丽尔第二处回忆镜头·1修改版本"
   },
   [879] = {
     id = 879,
     groupid = 363,
     focus = Table_CameraPlot_t.focus[344],
-    param = Table_CameraPlot_t.param[458]
+    param = Table_CameraPlot_t.param[458],
+    DescInfo = "梅丽尔p4镜头·1重试"
   },
   [880] = {
     id = 880,
     groupid = 363,
     focus = Table_CameraPlot_t.focus[345],
-    param = Table_CameraPlot_t.param[459]
+    param = Table_CameraPlot_t.param[459],
+    DescInfo = "梅丽尔p4镜头·1重试"
   },
   [881] = {
     id = 881,
     groupid = 363,
     focus = Table_CameraPlot_t.focus[346],
-    param = Table_CameraPlot_t.param[460]
+    param = Table_CameraPlot_t.param[460],
+    DescInfo = "梅丽尔p4镜头·1重试"
   },
   [882] = {
     id = 882,
     groupid = 363,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "梅丽尔p4镜头·1重试"
   },
   [883] = {
     id = 883,
     groupid = 364,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者四转"
   },
   [884] = {
     id = 884,
     groupid = 364,
     focus = Table_CameraPlot_t.focus[347],
     param = Table_CameraPlot_t.param[461],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者四转"
   },
   [885] = {
     id = 885,
     groupid = 365,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者四转"
   },
   [886] = {
     id = 886,
     groupid = 365,
     focus = Table_CameraPlot_t.focus[347],
     param = Table_CameraPlot_t.param[462],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者四转"
   },
   [887] = {
     id = 887,
     groupid = 365,
     focus = Table_CameraPlot_t.focus[347],
     param = Table_CameraPlot_t.param[463],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者四转"
   },
   [888] = {
     id = 888,
@@ -23958,50 +24711,58 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[348],
     param = Table_CameraPlot_t.param[464],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-镜子破碎定格"
   },
   [889] = {
     id = 889,
     groupid = 366,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-镜子破碎定格"
   },
   [890] = {
     id = 890,
     groupid = 367,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线一测试镜头"
   },
   [891] = {
     id = 891,
     groupid = 367,
     focus = Table_CameraPlot_t.focus[349],
-    param = Table_CameraPlot_t.param[465]
+    param = Table_CameraPlot_t.param[465],
+    DescInfo = "7.5主线一测试镜头"
   },
   [892] = {
     id = 892,
     groupid = 367,
     focus = Table_CameraPlot_t.focus[349],
-    param = Table_CameraPlot_t.param[466]
+    param = Table_CameraPlot_t.param[466],
+    DescInfo = "7.5主线一测试镜头"
   },
   [893] = {
     id = 893,
     groupid = 367,
     focus = Table_CameraPlot_t.focus[350],
-    param = Table_CameraPlot_t.param[467]
+    param = Table_CameraPlot_t.param[467],
+    DescInfo = "7.5主线一测试镜头"
   },
   [894] = {
     id = 894,
     groupid = 367,
     focus = Table_CameraPlot_t.focus[350],
-    param = Table_CameraPlot_t.param[468]
+    param = Table_CameraPlot_t.param[468],
+    DescInfo = "7.5主线一测试镜头"
   },
   [895] = {
     id = 895,
     groupid = 368,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-耶梦加得出场仰视"
   },
   [896] = {
     id = 896,
@@ -24009,167 +24770,196 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[351],
     param = Table_CameraPlot_t.param[469],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖-耶梦加得出场仰视"
   },
   [897] = {
     id = 897,
     groupid = 369,
-    param = Table_CameraPlot_t.param[4]
+    param = Table_CameraPlot_t.param[4],
+    DescInfo = "7.5主线一回到默认end后置"
   },
   [898] = {
     id = 898,
     groupid = 369,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线一回到默认end后置"
   },
   [899] = {
     id = 899,
     groupid = 370,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "魔神英雄传三转"
   },
   [900] = {
     id = 900,
     groupid = 370,
     param = Table_CameraPlot_t.param[470],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "魔神英雄传三转"
   },
   [901] = {
     id = 901,
     groupid = 372,
     focus = Table_CameraPlot_t.focus[352],
     param = Table_CameraPlot_t.param[471],
-    sceneFilter = 22
+    sceneFilter = 22,
+    DescInfo = "英灵副本2step1镜头"
   },
   [902] = {
     id = 902,
     groupid = 372,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "英灵副本2step1镜头"
   },
   [903] = {
     id = 903,
     groupid = 373,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "忍者四转"
   },
   [904] = {
     id = 904,
     groupid = 373,
     focus = Table_CameraPlot_t.focus[353],
-    param = Table_CameraPlot_t.param[472]
+    param = Table_CameraPlot_t.param[472],
+    DescInfo = "忍者四转"
   },
   [905] = {
     id = 905,
     groupid = 374,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "忍者四转"
   },
   [906] = {
     id = 906,
     groupid = 374,
     focus = Table_CameraPlot_t.focus[354],
-    param = Table_CameraPlot_t.param[473]
+    param = Table_CameraPlot_t.param[473],
+    DescInfo = "忍者四转"
   },
   [907] = {
     id = 907,
     groupid = 375,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "忍者四转"
   },
   [908] = {
     id = 908,
     groupid = 375,
     focus = Table_CameraPlot_t.focus[355],
-    param = Table_CameraPlot_t.param[474]
+    param = Table_CameraPlot_t.param[474],
+    DescInfo = "忍者四转"
   },
   [909] = {
     id = 909,
     groupid = 376,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "忍者四转"
   },
   [910] = {
     id = 910,
     groupid = 376,
     focus = Table_CameraPlot_t.focus[356],
-    param = Table_CameraPlot_t.param[475]
+    param = Table_CameraPlot_t.param[475],
+    DescInfo = "忍者四转"
   },
   [911] = {
     id = 911,
     groupid = 376,
     focus = Table_CameraPlot_t.focus[357],
-    param = Table_CameraPlot_t.param[476]
+    param = Table_CameraPlot_t.param[476],
+    DescInfo = "忍者四转"
   },
   [912] = {
     id = 912,
     groupid = 376,
     focus = Table_CameraPlot_t.focus[358],
-    param = Table_CameraPlot_t.param[477]
+    param = Table_CameraPlot_t.param[477],
+    DescInfo = "忍者四转"
   },
   [913] = {
     id = 913,
     groupid = 377,
     focus = Table_CameraPlot_t.focus[359],
-    param = Table_CameraPlot_t.param[478]
+    param = Table_CameraPlot_t.param[478],
+    DescInfo = "英灵副本3step1镜头"
   },
   [914] = {
     id = 914,
     groupid = 377,
     focus = Table_CameraPlot_t.focus[359],
-    param = Table_CameraPlot_t.param[479]
+    param = Table_CameraPlot_t.param[479],
+    DescInfo = "英灵副本3step1镜头"
   },
   [915] = {
     id = 915,
     groupid = 377,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "英灵副本3step1镜头"
   },
   [916] = {
     id = 916,
     groupid = 378,
     focus = Table_CameraPlot_t.focus[359],
-    param = Table_CameraPlot_t.param[480]
+    param = Table_CameraPlot_t.param[480],
+    DescInfo = "英灵副本3step2镜头"
   },
   [917] = {
     id = 917,
     groupid = 378,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "英灵副本3step2镜头"
   },
   [918] = {
     id = 918,
     groupid = 379,
     focus = Table_CameraPlot_t.focus[360],
-    param = Table_CameraPlot_t.param[481]
+    param = Table_CameraPlot_t.param[481],
+    DescInfo = "7.5主线-神殿一女神像特写"
   },
   [919] = {
     id = 919,
     groupid = 379,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5主线-神殿一女神像特写"
   },
   [920] = {
     id = 920,
     groupid = 380,
     focus = Table_CameraPlot_t.focus[361],
-    param = Table_CameraPlot_t.param[482]
+    param = Table_CameraPlot_t.param[482],
+    DescInfo = "英灵副本2step5镜头"
   },
   [921] = {
     id = 921,
     groupid = 380,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "英灵副本2step5镜头"
   },
   [922] = {
     id = 922,
     groupid = 381,
     focus = Table_CameraPlot_t.focus[361],
-    param = Table_CameraPlot_t.param[483]
+    param = Table_CameraPlot_t.param[483],
+    DescInfo = "英灵副本2step5镜头2"
   },
   [923] = {
     id = 923,
     groupid = 381,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "英灵副本2step5镜头2"
   },
   [924] = {
     id = 924,
     groupid = 382,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看蛇1"
   },
   [925] = {
     id = 925,
@@ -24184,7 +24974,8 @@ Table_CameraPlot = {
     groupid = 383,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看蛇2"
   },
   [927] = {
     id = 927,
@@ -24199,7 +24990,8 @@ Table_CameraPlot = {
     groupid = 384,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "鱼眼看世界~"
   },
   [929] = {
     id = 929,
@@ -24230,7 +25022,8 @@ Table_CameraPlot = {
     groupid = 385,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看闪电消失"
   },
   [933] = {
     id = 933,
@@ -24245,7 +25038,8 @@ Table_CameraPlot = {
     groupid = 386,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看闪电消失2"
   },
   [935] = {
     id = 935,
@@ -24260,7 +25054,8 @@ Table_CameraPlot = {
     groupid = 387,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看耶梦加得走过来"
   },
   [937] = {
     id = 937,
@@ -24282,7 +25077,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[370],
     param = Table_CameraPlot_t.param[492],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看女神像"
   },
   [940] = {
     id = 940,
@@ -24304,46 +25100,53 @@ Table_CameraPlot = {
     id = 942,
     groupid = 389,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看女神像播动作和特效"
   },
   [943] = {
     id = 943,
     groupid = 389,
     focus = Table_CameraPlot_t.focus[371],
     param = Table_CameraPlot_t.param[495],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看女神像播动作和特效"
   },
   [944] = {
     id = 944,
     groupid = 390,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看女神像说话"
   },
   [945] = {
     id = 945,
     groupid = 390,
     focus = Table_CameraPlot_t.focus[372],
     param = Table_CameraPlot_t.param[496],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看女神像说话"
   },
   [946] = {
     id = 946,
     groupid = 391,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看诺曼和芬里尔"
   },
   [947] = {
     id = 947,
     groupid = 391,
     focus = Table_CameraPlot_t.focus[373],
     param = Table_CameraPlot_t.param[497],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看诺曼和芬里尔"
   },
   [948] = {
     id = 948,
     groupid = 392,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看点灯"
   },
   [949] = {
     id = 949,
@@ -24363,7 +25166,8 @@ Table_CameraPlot = {
     id = 951,
     groupid = 393,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看桥"
   },
   [952] = {
     id = 952,
@@ -24377,7 +25181,8 @@ Table_CameraPlot = {
     groupid = 394,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看最后一波闪电消失"
   },
   [954] = {
     id = 954,
@@ -24392,7 +25197,8 @@ Table_CameraPlot = {
     groupid = 395,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看耶梦加得走过去"
   },
   [956] = {
     id = 956,
@@ -24414,468 +25220,541 @@ Table_CameraPlot = {
     id = 958,
     groupid = 396,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5主线-神殿教学开场"
   },
   [959] = {
     id = 959,
     groupid = 396,
     focus = Table_CameraPlot_t.focus[311],
     param = Table_CameraPlot_t.param[504],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5主线-神殿教学开场"
   },
   [960] = {
     id = 960,
     groupid = 396,
     focus = Table_CameraPlot_t.focus[380],
     param = Table_CameraPlot_t.param[505],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5主线-神殿教学开场"
   },
   [961] = {
     id = 961,
     groupid = 397,
     focus = Table_CameraPlot_t.focus[381],
     param = Table_CameraPlot_t.param[506],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [962] = {
     id = 962,
     groupid = 397,
     focus = Table_CameraPlot_t.focus[382],
     param = Table_CameraPlot_t.param[507],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [963] = {
     id = 963,
     groupid = 397,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [964] = {
     id = 964,
     groupid = 398,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [965] = {
     id = 965,
     groupid = 398,
     focus = Table_CameraPlot_t.focus[383],
     param = Table_CameraPlot_t.param[508],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [966] = {
     id = 966,
     groupid = 398,
     focus = Table_CameraPlot_t.focus[384],
     param = Table_CameraPlot_t.param[509],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [967] = {
     id = 967,
     groupid = 399,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [968] = {
     id = 968,
     groupid = 399,
     focus = Table_CameraPlot_t.focus[385],
     param = Table_CameraPlot_t.param[510],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [969] = {
     id = 969,
     groupid = 400,
     focus = Table_CameraPlot_t.focus[386],
     param = Table_CameraPlot_t.param[511],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "大事件引导任务阶段一普隆德拉"
   },
   [970] = {
     id = 970,
     groupid = 400,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "大事件引导任务阶段一"
   },
   [971] = {
     id = 971,
     groupid = 401,
     focus = Table_CameraPlot_t.focus[387],
-    param = Table_CameraPlot_t.param[512]
+    param = Table_CameraPlot_t.param[512],
+    DescInfo = "英灵副本3镜头1"
   },
   [972] = {
     id = 972,
     groupid = 401,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "英灵副本3镜头1"
   },
   [973] = {
     id = 973,
     groupid = 402,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [974] = {
     id = 974,
     groupid = 402,
     focus = Table_CameraPlot_t.focus[388],
     param = Table_CameraPlot_t.param[513],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [975] = {
     id = 975,
     groupid = 403,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [976] = {
     id = 976,
     groupid = 403,
     focus = Table_CameraPlot_t.focus[389],
     param = Table_CameraPlot_t.param[514],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [977] = {
     id = 977,
     groupid = 404,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-看向水晶灯"
   },
   [978] = {
     id = 978,
     groupid = 404,
     focus = Table_CameraPlot_t.focus[390],
     param = Table_CameraPlot_t.param[515],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-看向水晶灯"
   },
   [979] = {
     id = 979,
     groupid = 405,
     focus = Table_CameraPlot_t.focus[391],
     param = Table_CameraPlot_t.param[516],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-看向女神像"
   },
   [980] = {
     id = 980,
     groupid = 405,
     focus = Table_CameraPlot_t.focus[392],
     param = Table_CameraPlot_t.param[517],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-看向女神像"
   },
   [981] = {
     id = 981,
     groupid = 405,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-看向女神像"
   },
   [982] = {
     id = 982,
     groupid = 406,
     focus = Table_CameraPlot_t.focus[393],
     param = Table_CameraPlot_t.param[518],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-看向金乌鸦"
   },
   [983] = {
     id = 983,
     groupid = 406,
     focus = Table_CameraPlot_t.focus[394],
     param = Table_CameraPlot_t.param[519],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-看向金乌鸦"
   },
   [984] = {
     id = 984,
     groupid = 406,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-看向金乌鸦"
   },
   [985] = {
     id = 985,
     groupid = 407,
     focus = Table_CameraPlot_t.focus[395],
     param = Table_CameraPlot_t.param[520],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-看向银乌鸦"
   },
   [986] = {
     id = 986,
     groupid = 407,
     focus = Table_CameraPlot_t.focus[396],
     param = Table_CameraPlot_t.param[521],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-看向银乌鸦"
   },
   [987] = {
     id = 987,
     groupid = 407,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-看向银乌鸦"
   },
   [988] = {
     id = 988,
     groupid = 408,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-调查女神像"
   },
   [989] = {
     id = 989,
     groupid = 408,
     focus = Table_CameraPlot_t.focus[397],
     param = Table_CameraPlot_t.param[522],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-调查女神像"
   },
   [990] = {
     id = 990,
     groupid = 409,
     focus = Table_CameraPlot_t.focus[398],
     param = Table_CameraPlot_t.param[523],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-端详房间1的踏板"
   },
   [991] = {
     id = 991,
     groupid = 409,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-端详房间1的踏板"
   },
   [992] = {
     id = 992,
     groupid = 410,
     focus = Table_CameraPlot_t.focus[399],
     param = Table_CameraPlot_t.param[524],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-第一个房间点火"
   },
   [993] = {
     id = 993,
     groupid = 410,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-第一个房间点火"
   },
   [994] = {
     id = 994,
     groupid = 411,
     focus = Table_CameraPlot_t.focus[400],
     param = Table_CameraPlot_t.param[525],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-过了等离子体看银乌鸦"
   },
   [995] = {
     id = 995,
     groupid = 411,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-过了等离子体看银乌鸦"
   },
   [996] = {
     id = 996,
     groupid = 412,
     focus = Table_CameraPlot_t.focus[401],
     param = Table_CameraPlot_t.param[526],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-第二个房间点火"
   },
   [997] = {
     id = 997,
     groupid = 412,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-第二个房间点火"
   },
   [998] = {
     id = 998,
     groupid = 413,
     focus = Table_CameraPlot_t.focus[402],
     param = Table_CameraPlot_t.param[527],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-放完雕像再看女神像"
   },
   [999] = {
     id = 999,
     groupid = 413,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-放完雕像再看女神像"
   },
   [1000] = {
     id = 1000,
     groupid = 414,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-完成踏板任务"
   },
   [1001] = {
     id = 1001,
     groupid = 414,
     focus = Table_CameraPlot_t.focus[403],
     param = Table_CameraPlot_t.param[528],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-完成踏板任务"
   },
   [1002] = {
     id = 1002,
     groupid = 414,
     focus = Table_CameraPlot_t.focus[403],
     param = Table_CameraPlot_t.param[529],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-完成踏板任务"
   },
   [1003] = {
     id = 1003,
     groupid = 416,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-镜头推向第二个断路"
   },
   [1004] = {
     id = 1004,
     groupid = 416,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-镜头推向第二个断路"
   },
   [1005] = {
     id = 1005,
     groupid = 416,
     focus = Table_CameraPlot_t.focus[404],
     param = Table_CameraPlot_t.param[530],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-镜头推向第二个断路"
   },
   [1006] = {
     id = 1006,
     groupid = 416,
     focus = Table_CameraPlot_t.focus[405],
     param = Table_CameraPlot_t.param[531],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-镜头推向第二个断路"
   },
   [1007] = {
     id = 1007,
     groupid = 415,
     focus = Table_CameraPlot_t.focus[406],
     param = Table_CameraPlot_t.param[532],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-最后看向水晶灯"
   },
   [1008] = {
     id = 1008,
     groupid = 415,
     focus = Table_CameraPlot_t.focus[406],
     param = Table_CameraPlot_t.param[533],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5第二阶段-最后看向水晶灯"
   },
   [1009] = {
     id = 1009,
     groupid = 417,
     focus = Table_CameraPlot_t.focus[407],
     param = Table_CameraPlot_t.param[534],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "大事件引导任务阶段二-剑"
   },
   [1010] = {
     id = 1010,
     groupid = 417,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "大事件引导任务阶段二-剑"
   },
   [1011] = {
     id = 1011,
     groupid = 418,
     focus = Table_CameraPlot_t.focus[408],
     param = Table_CameraPlot_t.param[535],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "大事件引导任务阶段二-妙勒尼"
   },
   [1012] = {
     id = 1012,
     groupid = 418,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "大事件引导任务阶段二-妙勒尼"
   },
   [1013] = {
     id = 1013,
     groupid = 419,
     focus = Table_CameraPlot_t.focus[409],
     param = Table_CameraPlot_t.param[536],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "大事件引导任务阶段二-伊达平原"
   },
   [1014] = {
     id = 1014,
     groupid = 419,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "大事件引导任务阶段二-伊达平原"
   },
   [1015] = {
     id = 1015,
     groupid = 420,
     focus = Table_CameraPlot_t.focus[410],
     param = Table_CameraPlot_t.param[537],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "大事件引导任务阶段二-樱花"
   },
   [1016] = {
     id = 1016,
     groupid = 420,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "大事件引导任务阶段二-樱花"
   },
   [1017] = {
     id = 1017,
     groupid = 421,
     focus = Table_CameraPlot_t.focus[411],
     param = Table_CameraPlot_t.param[538],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "大事件引导任务阶段二-斐扬"
   },
   [1018] = {
     id = 1018,
     groupid = 421,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "大事件引导任务阶段二-斐扬"
   },
   [1019] = {
     id = 1019,
     groupid = 422,
     focus = Table_CameraPlot_t.focus[412],
-    param = Table_CameraPlot_t.param[539]
+    param = Table_CameraPlot_t.param[539],
+    DescInfo = "7.5教学阶段点火镜头"
   },
   [1020] = {
     id = 1020,
     groupid = 422,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5教学阶段点火镜头"
   },
   [1021] = {
     id = 1021,
     groupid = 423,
     focus = Table_CameraPlot_t.focus[413],
-    param = Table_CameraPlot_t.param[540]
+    param = Table_CameraPlot_t.param[540],
+    DescInfo = "7.5教学阶段点火镜头2"
   },
   [1022] = {
     id = 1022,
     groupid = 423,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5教学阶段点火镜头2"
   },
   [1023] = {
     id = 1023,
     groupid = 424,
     focus = Table_CameraPlot_t.focus[414],
-    param = Table_CameraPlot_t.param[541]
+    param = Table_CameraPlot_t.param[541],
+    DescInfo = "7.5一阶段通关点火镜头"
   },
   [1024] = {
     id = 1024,
     groupid = 424,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5一阶段通关点火镜头"
   },
   [1025] = {
     id = 1025,
     groupid = 425,
     focus = Table_CameraPlot_t.focus[415],
-    param = Table_CameraPlot_t.param[542]
+    param = Table_CameraPlot_t.param[542],
+    DescInfo = "英灵副本3镜头2"
   },
   [1026] = {
     id = 1026,
     groupid = 425,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "英灵副本3镜头2"
   },
   [1027] = {
     id = 1027,
     groupid = 426,
     focus = Table_CameraPlot_t.focus[416],
-    param = Table_CameraPlot_t.param[543]
+    param = Table_CameraPlot_t.param[543],
+    DescInfo = "英灵副本3镜头3"
   },
   [1028] = {
     id = 1028,
     groupid = 426,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "英灵副本3镜头3"
   },
   [1029] = {
     id = 1029,
     groupid = 427,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [1030] = {
     id = 1030,
     groupid = 427,
     focus = Table_CameraPlot_t.focus[385],
     param = Table_CameraPlot_t.param[544],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者转职"
   },
   [1031] = {
     id = 1031,
@@ -24883,14 +25762,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[417],
     param = Table_CameraPlot_t.param[545],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙王丸镜头1"
   },
   [1032] = {
     id = 1032,
     groupid = 428,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙王丸镜头1"
   },
   [1033] = {
     id = 1033,
@@ -24898,14 +25779,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[418],
     param = Table_CameraPlot_t.param[546],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙王丸镜头2"
   },
   [1034] = {
     id = 1034,
     groupid = 429,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙王丸镜头2"
   },
   [1035] = {
     id = 1035,
@@ -24913,21 +25796,24 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[419],
     param = Table_CameraPlot_t.param[547],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙王丸镜头3"
   },
   [1036] = {
     id = 1036,
     groupid = 430,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙王丸镜头3"
   },
   [1037] = {
     id = 1037,
     groupid = 431,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙王丸特写镜头"
   },
   [1038] = {
     id = 1038,
@@ -24935,7 +25821,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[420],
     param = Table_CameraPlot_t.param[548],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙王丸特写镜头"
   },
   [1039] = {
     id = 1039,
@@ -24943,14 +25830,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[421],
     param = Table_CameraPlot_t.param[549],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙王丸特写镜头"
   },
   [1040] = {
     id = 1040,
     groupid = 432,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "转职特写镜头"
   },
   [1041] = {
     id = 1041,
@@ -24958,7 +25847,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[422],
     param = Table_CameraPlot_t.param[550],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "转职特写镜头"
   },
   [1042] = {
     id = 1042,
@@ -24966,14 +25856,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[422],
     param = Table_CameraPlot_t.param[551],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "转职特写镜头"
   },
   [1043] = {
     id = 1043,
     groupid = 433,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙斗士二转"
   },
   [1044] = {
     id = 1044,
@@ -24981,14 +25873,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[423],
     param = Table_CameraPlot_t.param[552],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙斗士二转"
   },
   [1045] = {
     id = 1045,
     groupid = 434,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙斗士二转"
   },
   [1046] = {
     id = 1046,
@@ -24996,14 +25890,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[424],
     param = Table_CameraPlot_t.param[553],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙斗士二转"
   },
   [1047] = {
     id = 1047,
     groupid = 435,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙斗士二转"
   },
   [1048] = {
     id = 1048,
@@ -25011,14 +25907,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[425],
     param = Table_CameraPlot_t.param[554],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙斗士二转"
   },
   [1049] = {
     id = 1049,
     groupid = 436,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙斗士二转"
   },
   [1050] = {
     id = 1050,
@@ -25026,32 +25924,37 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[426],
     param = Table_CameraPlot_t.param[555],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙斗士二转"
   },
   [1051] = {
     id = 1051,
     groupid = 437,
     focus = Table_CameraPlot_t.focus[427],
-    param = Table_CameraPlot_t.param[556]
+    param = Table_CameraPlot_t.param[556],
+    DescInfo = "7.5二阶段通关开门镜头"
   },
   [1052] = {
     id = 1052,
     groupid = 437,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5二阶段通关开门镜头"
   },
   [1053] = {
     id = 1053,
     groupid = 438,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙王丸特写镜头"
   },
   [1054] = {
     id = 1054,
     groupid = 438,
     focus = Table_CameraPlot_t.focus[421],
     param = Table_CameraPlot_t.param[557],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "龙王丸特写镜头"
   },
   [1055] = {
     id = 1055,
@@ -25059,40 +25962,46 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[428],
     param = Table_CameraPlot_t.param[558],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5月之湖引导-全景"
   },
   [1056] = {
     id = 1056,
     groupid = 439,
     focus = Table_CameraPlot_t.focus[428],
     param = Table_CameraPlot_t.param[559],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5月之湖引导-全景"
   },
   [1057] = {
     id = 1057,
     groupid = 439,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5月之湖引导-全景"
   },
   [1058] = {
     id = 1058,
     groupid = 440,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5月之湖引导-驱散迷雾"
   },
   [1059] = {
     id = 1059,
     groupid = 440,
     focus = Table_CameraPlot_t.focus[429],
     param = Table_CameraPlot_t.param[560],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "7.5月之湖引导-驱散迷雾"
   },
   [1060] = {
     id = 1060,
     groupid = 441,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙斗士san转"
   },
   [1061] = {
     id = 1061,
@@ -25100,14 +26009,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[430],
     param = Table_CameraPlot_t.param[561],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙斗士san转"
   },
   [1062] = {
     id = 1062,
     groupid = 442,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙斗士san转"
   },
   [1063] = {
     id = 1063,
@@ -25115,7 +26026,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[422],
     param = Table_CameraPlot_t.param[550],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙斗士san转"
   },
   [1064] = {
     id = 1064,
@@ -25123,12 +26035,14 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[422],
     param = Table_CameraPlot_t.param[551],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "神龙斗士san转"
   },
   [1065] = {
     id = 1065,
     groupid = 443,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "看点火装置播最后一个动作"
   },
   [1066] = {
     id = 1066,
@@ -25139,7 +26053,8 @@ Table_CameraPlot = {
   [1067] = {
     id = 1067,
     groupid = 444,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "看点火装置播最后一个动作打下去"
   },
   [1068] = {
     id = 1068,
@@ -25151,7 +26066,8 @@ Table_CameraPlot = {
     id = 1069,
     groupid = 445,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "看门"
   },
   [1070] = {
     id = 1070,
@@ -25171,7 +26087,8 @@ Table_CameraPlot = {
     id = 1072,
     groupid = 446,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "看耶梦加得"
   },
   [1073] = {
     id = 1073,
@@ -25184,7 +26101,8 @@ Table_CameraPlot = {
     id = 1074,
     groupid = 447,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "看耶梦加得走进去"
   },
   [1075] = {
     id = 1075,
@@ -25197,7 +26115,8 @@ Table_CameraPlot = {
     id = 1076,
     groupid = 448,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "boss战看芬里尔"
   },
   [1077] = {
     id = 1077,
@@ -25224,7 +26143,8 @@ Table_CameraPlot = {
     id = 1080,
     groupid = 449,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "秒切耶梦加得"
   },
   [1081] = {
     id = 1081,
@@ -25237,7 +26157,8 @@ Table_CameraPlot = {
     id = 1082,
     groupid = 450,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "秒切狼型芬里尔"
   },
   [1083] = {
     id = 1083,
@@ -25250,7 +26171,8 @@ Table_CameraPlot = {
     id = 1084,
     groupid = 451,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "看侧面"
   },
   [1085] = {
     id = 1085,
@@ -25263,7 +26185,8 @@ Table_CameraPlot = {
     id = 1086,
     groupid = 452,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "拉远"
   },
   [1087] = {
     id = 1087,
@@ -25276,7 +26199,8 @@ Table_CameraPlot = {
     id = 1088,
     groupid = 453,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "看奥丁"
   },
   [1089] = {
     id = 1089,
@@ -25289,7 +26213,8 @@ Table_CameraPlot = {
     id = 1090,
     groupid = 454,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "看耶梦加得变大"
   },
   [1091] = {
     id = 1091,
@@ -25302,7 +26227,8 @@ Table_CameraPlot = {
     id = 1092,
     groupid = 455,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "秒切耶梦加得变大"
   },
   [1093] = {
     id = 1093,
@@ -25315,7 +26241,8 @@ Table_CameraPlot = {
     id = 1094,
     groupid = 456,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "看耶梦加得走过奥丁前"
   },
   [1095] = {
     id = 1095,
@@ -25328,7 +26255,8 @@ Table_CameraPlot = {
     id = 1096,
     groupid = 457,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "切镜看耶梦加得对质奥丁"
   },
   [1097] = {
     id = 1097,
@@ -25341,7 +26269,8 @@ Table_CameraPlot = {
     id = 1098,
     groupid = 458,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "秒切看耶梦加得特写对质奥丁"
   },
   [1099] = {
     id = 1099,
@@ -25354,7 +26283,8 @@ Table_CameraPlot = {
     id = 1100,
     groupid = 459,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "看芬里尔和耶梦加得对质"
   },
   [1101] = {
     id = 1101,
@@ -25367,7 +26297,8 @@ Table_CameraPlot = {
     id = 1102,
     groupid = 460,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "看芬里尔挡在奥丁前面特写"
   },
   [1103] = {
     id = 1103,
@@ -25380,13 +26311,15 @@ Table_CameraPlot = {
     id = 1104,
     groupid = 461,
     focus = Table_CameraPlot_t.focus[452],
-    param = Table_CameraPlot_t.param[583]
+    param = Table_CameraPlot_t.param[583],
+    DescInfo = "学院教学副本场景战士rongjiang"
   },
   [1105] = {
     id = 1105,
     groupid = 461,
     focus = Table_CameraPlot_t.focus[452],
-    param = Table_CameraPlot_t.param[584]
+    param = Table_CameraPlot_t.param[584],
+    DescInfo = "学院教学副本场景战士"
   },
   [1106] = {
     id = 1106,
@@ -25396,32 +26329,37 @@ Table_CameraPlot = {
   [1107] = {
     id = 1107,
     groupid = 462,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "学院教学副本boss"
   },
   [1108] = {
     id = 1108,
     groupid = 462,
     focus = Table_CameraPlot_t.focus[453],
-    param = Table_CameraPlot_t.param[585]
+    param = Table_CameraPlot_t.param[585],
+    DescInfo = "学院教学副本boss"
   },
   [1109] = {
     id = 1109,
     groupid = 463,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 12
+    sceneFilter = 12,
+    DescInfo = "学院教学副本boss"
   },
   [1110] = {
     id = 1110,
     groupid = 463,
     focus = Table_CameraPlot_t.focus[454],
     param = Table_CameraPlot_t.param[586],
-    sceneFilter = 12
+    sceneFilter = 12,
+    DescInfo = "学院教学副本boss"
   },
   [1111] = {
     id = 1111,
     groupid = 464,
     focus = Table_CameraPlot_t.focus[455],
-    param = Table_CameraPlot_t.param[587]
+    param = Table_CameraPlot_t.param[587],
+    DescInfo = "学院教学副本场景战士bingdong"
   },
   [1112] = {
     id = 1112,
@@ -25438,7 +26376,8 @@ Table_CameraPlot = {
     id = 1114,
     groupid = 465,
     focus = Table_CameraPlot_t.focus[457],
-    param = Table_CameraPlot_t.param[589]
+    param = Table_CameraPlot_t.param[589],
+    DescInfo = "学院教学副本场景战士lvlin"
   },
   [1115] = {
     id = 1115,
@@ -25462,208 +26401,241 @@ Table_CameraPlot = {
     groupid = 466,
     focus = Table_CameraPlot_t.focus[460],
     param = Table_CameraPlot_t.param[592],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "忍者出场"
   },
   [1119] = {
     id = 1119,
     groupid = 466,
     focus = Table_CameraPlot_t.focus[461],
     param = Table_CameraPlot_t.param[593],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "忍者出场"
   },
   [1120] = {
     id = 1120,
     groupid = 466,
     focus = Table_CameraPlot_t.focus[462],
     param = Table_CameraPlot_t.param[594],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "忍者出场"
   },
   [1121] = {
     id = 1121,
     groupid = 466,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "忍者出场"
   },
   [1122] = {
     id = 1122,
     groupid = 467,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "忍者出场"
   },
   [1123] = {
     id = 1123,
     groupid = 467,
     focus = Table_CameraPlot_t.focus[463],
     param = Table_CameraPlot_t.param[595],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "忍者出场"
   },
   [1124] = {
     id = 1124,
     groupid = 467,
     focus = Table_CameraPlot_t.focus[464],
     param = Table_CameraPlot_t.param[596],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "忍者出场"
   },
   [1125] = {
     id = 1125,
     groupid = 468,
     focus = Table_CameraPlot_t.focus[465],
     param = Table_CameraPlot_t.param[597],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "忍者出场"
   },
   [1126] = {
     id = 1126,
     groupid = 468,
     focus = Table_CameraPlot_t.focus[466],
     param = Table_CameraPlot_t.param[598],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "忍者出场"
   },
   [1127] = {
     id = 1127,
     groupid = 468,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "忍者出场"
   },
   [1128] = {
     id = 1128,
     groupid = 469,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "忍者出场"
   },
   [1129] = {
     id = 1129,
     groupid = 469,
     focus = Table_CameraPlot_t.focus[467],
     param = Table_CameraPlot_t.param[599],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "忍者出场"
   },
   [1130] = {
     id = 1130,
     groupid = 469,
     focus = Table_CameraPlot_t.focus[467],
     param = Table_CameraPlot_t.param[600],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "忍者出场"
   },
   [1131] = {
     id = 1131,
     groupid = 470,
     focus = Table_CameraPlot_t.focus[468],
-    param = Table_CameraPlot_t.param[601]
+    param = Table_CameraPlot_t.param[601],
+    DescInfo = "7.5大事件氛围镜头"
   },
   [1132] = {
     id = 1132,
     groupid = 470,
     focus = Table_CameraPlot_t.focus[469],
-    param = Table_CameraPlot_t.param[602]
+    param = Table_CameraPlot_t.param[602],
+    DescInfo = "7.5大事件氛围镜头"
   },
   [1133] = {
     id = 1133,
     groupid = 470,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5大事件氛围镜头"
   },
   [1134] = {
     id = 1134,
     groupid = 471,
     focus = Table_CameraPlot_t.focus[470],
-    param = Table_CameraPlot_t.param[603]
+    param = Table_CameraPlot_t.param[603],
+    DescInfo = "7.5大事件氛围镜头"
   },
   [1135] = {
     id = 1135,
     groupid = 471,
     focus = Table_CameraPlot_t.focus[470],
-    param = Table_CameraPlot_t.param[604]
+    param = Table_CameraPlot_t.param[604],
+    DescInfo = "7.5大事件氛围镜头"
   },
   [1136] = {
     id = 1136,
     groupid = 471,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "7.5大事件氛围镜头"
   },
   [1137] = {
     id = 1137,
     groupid = 472,
     focus = Table_CameraPlot_t.focus[471],
-    param = Table_CameraPlot_t.param[605]
+    param = Table_CameraPlot_t.param[605],
+    DescInfo = "大事件引导任务阶段三-墓碑"
   },
   [1138] = {
     id = 1138,
     groupid = 472,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "大事件引导任务阶段三-墓碑"
   },
   [1139] = {
     id = 1139,
     groupid = 473,
     focus = Table_CameraPlot_t.focus[472],
-    param = Table_CameraPlot_t.param[605]
+    param = Table_CameraPlot_t.param[605],
+    DescInfo = "大事件引导任务阶段三-阿卡娜"
   },
   [1140] = {
     id = 1140,
     groupid = 473,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "大事件引导任务阶段三-阿卡娜"
   },
   [1141] = {
     id = 1141,
     groupid = 474,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者坐骑-巧巧出场"
   },
   [1142] = {
     id = 1142,
     groupid = 474,
     focus = Table_CameraPlot_t.focus[473],
     param = Table_CameraPlot_t.param[606],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者坐骑-巧巧出场"
   },
   [1143] = {
     id = 1143,
     groupid = 475,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者坐骑-巧巧在犹豫"
   },
   [1144] = {
     id = 1144,
     groupid = 475,
     focus = Table_CameraPlot_t.focus[474],
     param = Table_CameraPlot_t.param[607],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者坐骑-巧巧在犹豫"
   },
   [1145] = {
     id = 1145,
     groupid = 476,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者坐骑-马琳出场"
   },
   [1146] = {
     id = 1146,
     groupid = 476,
     focus = Table_CameraPlot_t.focus[475],
     param = Table_CameraPlot_t.param[608],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者坐骑-马琳出场"
   },
   [1147] = {
     id = 1147,
     groupid = 477,
     focus = Table_CameraPlot_t.focus[476],
     param = Table_CameraPlot_t.param[609],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者坐骑-小鸡出场"
   },
   [1148] = {
     id = 1148,
     groupid = 477,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者坐骑-小鸡出场"
   },
   [1149] = {
     id = 1149,
     groupid = 478,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者坐骑"
   },
   [1150] = {
     id = 1150,
     groupid = 479,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看芬里尔挣脱"
   },
   [1151] = {
     id = 1151,
@@ -25671,14 +26643,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[477],
     param = Table_CameraPlot_t.param[610],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看芬里尔挣脱"
   },
   [1152] = {
     id = 1152,
     groupid = 480,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看芬里尔嚎叫"
   },
   [1153] = {
     id = 1153,
@@ -25686,68 +26660,80 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[478],
     param = Table_CameraPlot_t.param[611],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看芬里尔嚎叫"
   },
   [1154] = {
     id = 1154,
     groupid = 481,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "学院一转招人"
   },
   [1155] = {
     id = 1155,
     groupid = 481,
     focus = Table_CameraPlot_t.focus[479],
-    param = Table_CameraPlot_t.param[612]
+    param = Table_CameraPlot_t.param[612],
+    DescInfo = "学院一转招人"
   },
   [1156] = {
     id = 1156,
     groupid = 482,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "学院一转招人"
   },
   [1157] = {
     id = 1157,
     groupid = 482,
     focus = Table_CameraPlot_t.focus[480],
-    param = Table_CameraPlot_t.param[613]
+    param = Table_CameraPlot_t.param[613],
+    DescInfo = "学院一转招人"
   },
   [1158] = {
     id = 1158,
     groupid = 483,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "学院一转招玩家"
   },
   [1159] = {
     id = 1159,
     groupid = 483,
     focus = Table_CameraPlot_t.focus[481],
-    param = Table_CameraPlot_t.param[614]
+    param = Table_CameraPlot_t.param[614],
+    DescInfo = "学院一转招玩家"
   },
   [1160] = {
     id = 1160,
     groupid = 484,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "学院一转招玩家"
   },
   [1161] = {
     id = 1161,
     groupid = 484,
     focus = Table_CameraPlot_t.focus[482],
-    param = Table_CameraPlot_t.param[615]
+    param = Table_CameraPlot_t.param[615],
+    DescInfo = "学院一转招玩家"
   },
   [1162] = {
     id = 1162,
     groupid = 485,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "学院一转回到默认end前置"
   },
   [1163] = {
     id = 1163,
     groupid = 485,
-    param = Table_CameraPlot_t.param[616]
+    param = Table_CameraPlot_t.param[616],
+    DescInfo = "学院一转回到默认end前置"
   },
   [1164] = {
     id = 1164,
     groupid = 486,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看耶梦加得发波"
   },
   [1165] = {
     id = 1165,
@@ -25755,14 +26741,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[483],
     param = Table_CameraPlot_t.param[617],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看耶梦加得发波"
   },
   [1166] = {
     id = 1166,
     groupid = 487,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "鱼眼看世界回归~"
   },
   [1167] = {
     id = 1167,
@@ -25775,30 +26763,35 @@ Table_CameraPlot = {
     id = 1168,
     groupid = 488,
     focus = Table_CameraPlot_t.focus[484],
-    param = Table_CameraPlot_t.param[619]
+    param = Table_CameraPlot_t.param[619],
+    DescInfo = "2.0新服签到异界梦罗克"
   },
   [1169] = {
     id = 1169,
     groupid = 488,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0新服签到异界梦罗克"
   },
   [1170] = {
     id = 1170,
     groupid = 489,
     focus = Table_CameraPlot_t.focus[485],
-    param = Table_CameraPlot_t.param[620]
+    param = Table_CameraPlot_t.param[620],
+    DescInfo = "2.0新服签到梦罗克"
   },
   [1171] = {
     id = 1171,
     groupid = 489,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0新服签到梦罗克"
   },
   [1172] = {
     id = 1172,
     groupid = 490,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖尾声镜头1"
   },
   [1173] = {
     id = 1173,
@@ -25806,7 +26799,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[486],
     param = Table_CameraPlot_t.param[621],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖尾声镜头"
   },
   [1174] = {
     id = 1174,
@@ -25814,14 +26808,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[487],
     param = Table_CameraPlot_t.param[622],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖尾声镜头"
   },
   [1175] = {
     id = 1175,
     groupid = 491,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖尾声镜头2"
   },
   [1176] = {
     id = 1176,
@@ -25829,7 +26825,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[488],
     param = Table_CameraPlot_t.param[623],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖尾声镜头"
   },
   [1177] = {
     id = 1177,
@@ -25837,14 +26834,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[489],
     param = Table_CameraPlot_t.param[624],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖尾声镜头"
   },
   [1178] = {
     id = 1178,
     groupid = 492,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖尾声镜头3"
   },
   [1179] = {
     id = 1179,
@@ -25852,7 +26851,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[490],
     param = Table_CameraPlot_t.param[625],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖尾声镜头"
   },
   [1180] = {
     id = 1180,
@@ -25860,14 +26860,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[491],
     param = Table_CameraPlot_t.param[626],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "月之湖尾声镜头"
   },
   [1181] = {
     id = 1181,
     groupid = 493,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段-看赫蒂"
   },
   [1182] = {
     id = 1182,
@@ -25875,151 +26877,174 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[492],
     param = Table_CameraPlot_t.param[627],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段-看赫蒂"
   },
   [1183] = {
     id = 1183,
     groupid = 494,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段-莎拉艾琳出场特写1"
   },
   [1184] = {
     id = 1184,
     groupid = 494,
     focus = Table_CameraPlot_t.focus[493],
     param = Table_CameraPlot_t.param[628],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段-莎拉艾琳出场特写1"
   },
   [1185] = {
     id = 1185,
     groupid = 495,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段-莎拉艾琳出场特写2"
   },
   [1186] = {
     id = 1186,
     groupid = 495,
     focus = Table_CameraPlot_t.focus[493],
     param = Table_CameraPlot_t.param[629],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段-莎拉艾琳出场特写2"
   },
   [1187] = {
     id = 1187,
     groupid = 496,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段-废弃"
   },
   [1188] = {
     id = 1188,
     groupid = 497,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-莎拉艾琳开门"
   },
   [1189] = {
     id = 1189,
     groupid = 497,
     focus = Table_CameraPlot_t.focus[494],
     param = Table_CameraPlot_t.param[630],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-莎拉艾琳开门"
   },
   [1190] = {
     id = 1190,
     groupid = 497,
     focus = Table_CameraPlot_t.focus[494],
     param = Table_CameraPlot_t.param[631],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-莎拉艾琳开门"
   },
   [1191] = {
     id = 1191,
     groupid = 498,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-开门"
   },
   [1192] = {
     id = 1192,
     groupid = 498,
     focus = Table_CameraPlot_t.focus[383],
     param = Table_CameraPlot_t.param[632],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-开门"
   },
   [1193] = {
     id = 1193,
     groupid = 498,
     focus = Table_CameraPlot_t.focus[384],
     param = Table_CameraPlot_t.param[509],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-开门"
   },
   [1194] = {
     id = 1194,
     groupid = 498,
     param = Table_CameraPlot_t.param[633],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-开门"
   },
   [1195] = {
     id = 1195,
     groupid = 499,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-主角开门1"
   },
   [1196] = {
     id = 1196,
     groupid = 499,
     focus = Table_CameraPlot_t.focus[495],
     param = Table_CameraPlot_t.param[634],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-主角开门1"
   },
   [1197] = {
     id = 1197,
     groupid = 500,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-主角开门2"
   },
   [1198] = {
     id = 1198,
     groupid = 500,
     focus = Table_CameraPlot_t.focus[495],
     param = Table_CameraPlot_t.param[635],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-主角开门2"
   },
   [1199] = {
     id = 1199,
     groupid = 501,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-主角开门3"
   },
   [1200] = {
     id = 1200,
     groupid = 501,
     focus = Table_CameraPlot_t.focus[496],
     param = Table_CameraPlot_t.param[636],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-主角开门3"
   },
   [1201] = {
     id = 1201,
     groupid = 501,
     focus = Table_CameraPlot_t.focus[496],
     param = Table_CameraPlot_t.param[637],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-主角开门3"
   },
   [1202] = {
     id = 1202,
     groupid = 502,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-锁视角T10"
   },
   [1203] = {
     id = 1203,
     groupid = 502,
     focus = Table_CameraPlot_t.focus[497],
     param = Table_CameraPlot_t.param[638],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-锁视角T10"
   },
   [1204] = {
     id = 1204,
     groupid = 503,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-金发少女出场"
   },
   [1205] = {
     id = 1205,
@@ -26027,7 +27052,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[492],
     param = Table_CameraPlot_t.param[627],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-金发少女出场"
   },
   [1206] = {
     id = 1206,
@@ -26035,208 +27061,241 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[498],
     param = Table_CameraPlot_t.param[639],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-金发少女出场"
   },
   [1207] = {
     id = 1207,
     groupid = 504,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-秒锁视角T10"
   },
   [1208] = {
     id = 1208,
     groupid = 504,
     focus = Table_CameraPlot_t.focus[497],
     param = Table_CameraPlot_t.param[640],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-秒锁视角T10"
   },
   [1209] = {
     id = 1209,
     groupid = 505,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-贞奴比亚出场"
   },
   [1210] = {
     id = 1210,
     groupid = 505,
     focus = Table_CameraPlot_t.focus[499],
     param = Table_CameraPlot_t.param[641],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-贞奴比亚出场"
   },
   [1211] = {
     id = 1211,
     groupid = 505,
     focus = Table_CameraPlot_t.focus[500],
     param = Table_CameraPlot_t.param[642],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-贞奴比亚出场"
   },
   [1212] = {
     id = 1212,
     groupid = 506,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-银发少年"
   },
   [1213] = {
     id = 1213,
     groupid = 506,
     focus = Table_CameraPlot_t.focus[501],
     param = Table_CameraPlot_t.param[627],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-银发少年"
   },
   [1214] = {
     id = 1214,
     groupid = 506,
     focus = Table_CameraPlot_t.focus[502],
     param = Table_CameraPlot_t.param[639],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-银发少年"
   },
   [1215] = {
     id = 1215,
     focus = Table_CameraPlot_t.focus[503],
     param = Table_CameraPlot_t.param[643],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1216] = {
     id = 1216,
     focus = Table_CameraPlot_t.focus[504],
     param = Table_CameraPlot_t.param[644],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1217] = {
     id = 1217,
     focus = Table_CameraPlot_t.focus[505],
     param = Table_CameraPlot_t.param[645],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1218] = {
     id = 1218,
     focus = Table_CameraPlot_t.focus[505],
     param = Table_CameraPlot_t.param[646],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1219] = {
     id = 1219,
     focus = Table_CameraPlot_t.focus[506],
     param = Table_CameraPlot_t.param[647],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1220] = {
     id = 1220,
     focus = Table_CameraPlot_t.focus[506],
     param = Table_CameraPlot_t.param[648],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1221] = {
     id = 1221,
     focus = Table_CameraPlot_t.focus[507],
     param = Table_CameraPlot_t.param[649],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1222] = {
     id = 1222,
     focus = Table_CameraPlot_t.focus[507],
     param = Table_CameraPlot_t.param[650],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1223] = {
     id = 1223,
     focus = Table_CameraPlot_t.focus[508],
     param = Table_CameraPlot_t.param[651],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1224] = {
     id = 1224,
     focus = Table_CameraPlot_t.focus[508],
     param = Table_CameraPlot_t.param[652],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1225] = {
     id = 1225,
     focus = Table_CameraPlot_t.focus[509],
     param = Table_CameraPlot_t.param[653],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1226] = {
     id = 1226,
     focus = Table_CameraPlot_t.focus[509],
     param = Table_CameraPlot_t.param[654],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1227] = {
     id = 1227,
     focus = Table_CameraPlot_t.focus[510],
     param = Table_CameraPlot_t.param[655],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1228] = {
     id = 1228,
     focus = Table_CameraPlot_t.focus[510],
     param = Table_CameraPlot_t.param[656],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1229] = {
     id = 1229,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-初入精灵主城"
   },
   [1230] = {
     id = 1230,
     groupid = 508,
     focus = Table_CameraPlot_t.focus[511],
     param = Table_CameraPlot_t.param[657],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-雷电法阵"
   },
   [1231] = {
     id = 1231,
     groupid = 508,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-雷电法阵"
   },
   [1232] = {
     id = 1232,
     groupid = 509,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-晨曦"
   },
   [1233] = {
     id = 1233,
     groupid = 509,
     focus = Table_CameraPlot_t.focus[512],
     param = Table_CameraPlot_t.param[658],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-晨曦"
   },
   [1234] = {
     id = 1234,
     groupid = 510,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段-克莱尔出场特写"
   },
   [1235] = {
     id = 1235,
     groupid = 510,
     focus = Table_CameraPlot_t.focus[513],
     param = Table_CameraPlot_t.param[659],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段-克莱尔出场特写"
   },
   [1236] = {
     id = 1236,
     groupid = 511,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-花开"
   },
   [1237] = {
     id = 1237,
     groupid = 511,
     focus = Table_CameraPlot_t.focus[514],
     param = Table_CameraPlot_t.param[660],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-花开"
   },
   [1238] = {
     id = 1238,
     groupid = 511,
     focus = Table_CameraPlot_t.focus[515],
     param = Table_CameraPlot_t.param[661],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-花开"
   },
   [1239] = {
     id = 1239,
@@ -26244,20 +27303,23 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[516],
     param = Table_CameraPlot_t.param[662],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-看阿卡娜死"
   },
   [1240] = {
     id = 1240,
     groupid = 512,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0主线一阶段占坑-看阿卡娜死"
   },
   [1241] = {
     id = 1241,
     groupid = 513,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "看耶梦加得走过奥丁前"
   },
   [1242] = {
     id = 1242,
@@ -26278,7 +27340,8 @@ Table_CameraPlot = {
     groupid = 543,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "学院教学本占坑boss最后登场1"
   },
   [1245] = {
     id = 1245,
@@ -26301,7 +27364,8 @@ Table_CameraPlot = {
     groupid = 544,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "学院教学本占坑boss最后登场2"
   },
   [1248] = {
     id = 1248,
@@ -26309,93 +27373,109 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[521],
     param = Table_CameraPlot_t.param[667],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "学院教学本占坑boss最后登场2"
   },
   [1249] = {
     id = 1249,
     groupid = 576,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "忍者四转"
   },
   [1250] = {
     id = 1250,
     groupid = 576,
     focus = Table_CameraPlot_t.focus[522],
-    param = Table_CameraPlot_t.param[668]
+    param = Table_CameraPlot_t.param[668],
+    DescInfo = "忍者四转"
   },
   [1251] = {
     id = 1251,
     groupid = 577,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "忍者四转"
   },
   [1252] = {
     id = 1252,
     groupid = 577,
     focus = Table_CameraPlot_t.focus[523],
-    param = Table_CameraPlot_t.param[668]
+    param = Table_CameraPlot_t.param[668],
+    DescInfo = "忍者四转"
   },
   [1253] = {
     id = 1253,
     groupid = 578,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "忍者四转"
   },
   [1254] = {
     id = 1254,
     groupid = 578,
     focus = Table_CameraPlot_t.focus[524],
-    param = Table_CameraPlot_t.param[669]
+    param = Table_CameraPlot_t.param[669],
+    DescInfo = "忍者四转"
   },
   [1255] = {
     id = 1255,
     groupid = 579,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "忍者四转"
   },
   [1256] = {
     id = 1256,
     groupid = 579,
     focus = Table_CameraPlot_t.focus[525],
-    param = Table_CameraPlot_t.param[670]
+    param = Table_CameraPlot_t.param[670],
+    DescInfo = "忍者四转"
   },
   [1257] = {
     id = 1257,
     groupid = 580,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "忍者四转"
   },
   [1258] = {
     id = 1258,
     groupid = 580,
     focus = Table_CameraPlot_t.focus[526],
-    param = Table_CameraPlot_t.param[671]
+    param = Table_CameraPlot_t.param[671],
+    DescInfo = "忍者四转"
   },
   [1259] = {
     id = 1259,
     groupid = 581,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "忍者四转"
   },
   [1260] = {
     id = 1260,
     groupid = 581,
     focus = Table_CameraPlot_t.focus[527],
-    param = Table_CameraPlot_t.param[672]
+    param = Table_CameraPlot_t.param[672],
+    DescInfo = "忍者四转"
   },
   [1261] = {
     id = 1261,
     groupid = 582,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者四转"
   },
   [1262] = {
     id = 1262,
     groupid = 582,
     focus = Table_CameraPlot_t.focus[347],
     param = Table_CameraPlot_t.param[673],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "忍者四转"
   },
   [1263] = {
     id = 1263,
     groupid = 583,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 43,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "学院三转看雕像然后拉回的镜头，入场就放"
   },
   [1264] = {
     id = 1264,
@@ -26450,7 +27530,8 @@ Table_CameraPlot = {
     groupid = 584,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 43,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "学院三转转职定格"
   },
   [1271] = {
     id = 1271,
@@ -26465,7 +27546,8 @@ Table_CameraPlot = {
     groupid = 585,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 43,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "学院三转转职定格旋转"
   },
   [1273] = {
     id = 1273,
@@ -26480,7 +27562,8 @@ Table_CameraPlot = {
     groupid = 586,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 43,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "教堂秒切1"
   },
   [1275] = {
     id = 1275,
@@ -26495,7 +27578,8 @@ Table_CameraPlot = {
     groupid = 587,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 43,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "教堂秒切2"
   },
   [1277] = {
     id = 1277,
@@ -26510,7 +27594,8 @@ Table_CameraPlot = {
     groupid = 588,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 43,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看雕像，然后拉回"
   },
   [1279] = {
     id = 1279,
@@ -26533,7 +27618,8 @@ Table_CameraPlot = {
     groupid = 589,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 43,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "运镜拉到雕像上"
   },
   [1282] = {
     id = 1282,
@@ -26548,7 +27634,8 @@ Table_CameraPlot = {
     groupid = 590,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 43,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "学院三转转职定格慢慢拉回"
   },
   [1284] = {
     id = 1284,
@@ -26563,7 +27650,8 @@ Table_CameraPlot = {
     groupid = 591,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看伊莱·雪耳"
   },
   [1286] = {
     id = 1286,
@@ -26577,7 +27665,8 @@ Table_CameraPlot = {
     id = 1287,
     groupid = 592,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看头饰表演"
   },
   [1288] = {
     id = 1288,
@@ -26590,7 +27679,8 @@ Table_CameraPlot = {
     id = 1289,
     groupid = 593,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "一转镜头定格玩家"
   },
   [1290] = {
     id = 1290,
@@ -26603,7 +27693,8 @@ Table_CameraPlot = {
     id = 1291,
     groupid = 594,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "一转镜头定格导师"
   },
   [1292] = {
     id = 1292,
@@ -26616,7 +27707,8 @@ Table_CameraPlot = {
     id = 1293,
     groupid = 595,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "一转镜头定格学院小精灵"
   },
   [1294] = {
     id = 1294,
@@ -26630,7 +27722,8 @@ Table_CameraPlot = {
     groupid = 596,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看维托"
   },
   [1296] = {
     id = 1296,
@@ -26645,7 +27738,8 @@ Table_CameraPlot = {
     groupid = 597,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看希达"
   },
   [1298] = {
     id = 1298,
@@ -26660,7 +27754,8 @@ Table_CameraPlot = {
     groupid = 598,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看克鲁鲁"
   },
   [1300] = {
     id = 1300,
@@ -26675,7 +27770,8 @@ Table_CameraPlot = {
     groupid = 599,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看镜子"
   },
   [1302] = {
     id = 1302,
@@ -26697,7 +27793,8 @@ Table_CameraPlot = {
     id = 1304,
     groupid = 600,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看镜子"
   },
   [1305] = {
     id = 1305,
@@ -26711,7 +27808,8 @@ Table_CameraPlot = {
     groupid = 616,
     focus = Table_CameraPlot_t.focus[549],
     param = Table_CameraPlot_t.param[696],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士4转"
   },
   [1307] = {
     id = 1307,
@@ -26724,7 +27822,8 @@ Table_CameraPlot = {
     groupid = 617,
     focus = Table_CameraPlot_t.focus[550],
     param = Table_CameraPlot_t.param[697],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "美之宫1F扫镜子"
   },
   [1309] = {
     id = 1309,
@@ -26744,7 +27843,8 @@ Table_CameraPlot = {
     groupid = 618,
     focus = Table_CameraPlot_t.focus[551],
     param = Table_CameraPlot_t.param[699],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "箱子移动视角"
   },
   [1312] = {
     id = 1312,
@@ -26757,7 +27857,8 @@ Table_CameraPlot = {
     groupid = 619,
     focus = Table_CameraPlot_t.focus[552],
     param = Table_CameraPlot_t.param[700],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士三转"
   },
   [1314] = {
     id = 1314,
@@ -26770,7 +27871,8 @@ Table_CameraPlot = {
     groupid = 620,
     focus = Table_CameraPlot_t.focus[553],
     param = Table_CameraPlot_t.param[701],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "美之宫1F扫BOSS房间"
   },
   [1316] = {
     id = 1316,
@@ -26790,7 +27892,8 @@ Table_CameraPlot = {
     groupid = 621,
     focus = Table_CameraPlot_t.focus[555],
     param = Table_CameraPlot_t.param[703],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士三转莉娜放魔法1"
   },
   [1319] = {
     id = 1319,
@@ -26803,7 +27906,8 @@ Table_CameraPlot = {
     groupid = 622,
     focus = Table_CameraPlot_t.focus[556],
     param = Table_CameraPlot_t.param[704],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "美之宫1F打开1号门"
   },
   [1321] = {
     id = 1321,
@@ -26822,14 +27926,16 @@ Table_CameraPlot = {
     groupid = 623,
     focus = Table_CameraPlot_t.focus[556],
     param = Table_CameraPlot_t.param[705],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "美之宫1F打开1号路"
   },
   [1324] = {
     id = 1324,
     groupid = 624,
     focus = Table_CameraPlot_t.focus[557],
     param = Table_CameraPlot_t.param[706],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士三转莉娜放魔法2"
   },
   [1325] = {
     id = 1325,
@@ -26842,7 +27948,8 @@ Table_CameraPlot = {
     groupid = 625,
     focus = Table_CameraPlot_t.focus[557],
     param = Table_CameraPlot_t.param[706],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士三转莉娜放魔法3"
   },
   [1327] = {
     id = 1327,
@@ -26855,93 +27962,107 @@ Table_CameraPlot = {
     groupid = 626,
     focus = Table_CameraPlot_t.focus[558],
     param = Table_CameraPlot_t.param[707],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士三转副本1"
   },
   [1329] = {
     id = 1329,
     groupid = 626,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士三转"
   },
   [1330] = {
     id = 1330,
     groupid = 627,
     focus = Table_CameraPlot_t.focus[558],
     param = Table_CameraPlot_t.param[708],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士三转右边瞬切"
   },
   [1331] = {
     id = 1331,
     groupid = 627,
     focus = Table_CameraPlot_t.focus[558],
     param = Table_CameraPlot_t.param[709],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士三转转到正面"
   },
   [1332] = {
     id = 1332,
     groupid = 627,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士三转"
   },
   [1333] = {
     id = 1333,
     groupid = 628,
     focus = Table_CameraPlot_t.focus[559],
     param = Table_CameraPlot_t.param[710],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士三转拉远转到左边"
   },
   [1334] = {
     id = 1334,
     groupid = 628,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士三转"
   },
   [1335] = {
     id = 1335,
     groupid = 629,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "美之宫1F阳光镜头"
   },
   [1336] = {
     id = 1336,
     groupid = 629,
     focus = Table_CameraPlot_t.focus[560],
     param = Table_CameraPlot_t.param[711],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "美之宫1F阳光镜头"
   },
   [1337] = {
     id = 1337,
     groupid = 629,
     focus = Table_CameraPlot_t.focus[561],
     param = Table_CameraPlot_t.param[712],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "美之宫1F阳光镜头"
   },
   [1338] = {
     id = 1338,
     groupid = 630,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "美之宫1F阳光镜头"
   },
   [1339] = {
     id = 1339,
     groupid = 630,
     focus = Table_CameraPlot_t.focus[562],
     param = Table_CameraPlot_t.param[713],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "美之宫1F阳光镜头"
   },
   [1340] = {
     id = 1340,
     groupid = 630,
     focus = Table_CameraPlot_t.focus[562],
     param = Table_CameraPlot_t.param[714],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "美之宫1F阳光镜头"
   },
   [1341] = {
     id = 1341,
     groupid = 631,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 17,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士2转"
   },
   [1342] = {
     id = 1342,
@@ -26949,893 +28070,1037 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[563],
     param = Table_CameraPlot_t.param[715],
     sceneFilter = 17,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士2转"
   },
   [1343] = {
     id = 1343,
     groupid = 632,
     focus = Table_CameraPlot_t.focus[564],
     param = Table_CameraPlot_t.param[716],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士2转"
   },
   [1344] = {
     id = 1344,
     groupid = 632,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士2转"
   },
   [1345] = {
     id = 1345,
     groupid = 633,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士2转"
   },
   [1346] = {
     id = 1346,
     groupid = 633,
     focus = Table_CameraPlot_t.focus[564],
     param = Table_CameraPlot_t.param[717],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士2转"
   },
   [1347] = {
     id = 1347,
     groupid = 633,
     focus = Table_CameraPlot_t.focus[564],
     param = Table_CameraPlot_t.param[718],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士2转"
   },
   [1348] = {
     id = 1348,
     groupid = 634,
     focus = Table_CameraPlot_t.focus[559],
     param = Table_CameraPlot_t.param[719],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士2转"
   },
   [1349] = {
     id = 1349,
     groupid = 634,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士2转"
   },
   [1350] = {
     id = 1350,
     groupid = 640,
     focus = Table_CameraPlot_t.focus[565],
     param = Table_CameraPlot_t.param[720],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头精灵大祭司"
   },
   [1351] = {
     id = 1351,
     groupid = 640,
     focus = Table_CameraPlot_t.focus[566],
     param = Table_CameraPlot_t.param[721],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头精灵大祭司"
   },
   [1352] = {
     id = 1352,
     groupid = 640,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头精灵大祭司"
   },
   [1353] = {
     id = 1353,
     groupid = 641,
     focus = Table_CameraPlot_t.focus[567],
     param = Table_CameraPlot_t.param[722],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头时之轮"
   },
   [1354] = {
     id = 1354,
     groupid = 641,
     focus = Table_CameraPlot_t.focus[567],
     param = Table_CameraPlot_t.param[723],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头时之轮"
   },
   [1355] = {
     id = 1355,
     groupid = 641,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头时之轮"
   },
   [1356] = {
     id = 1356,
     groupid = 642,
     focus = Table_CameraPlot_t.focus[568],
     param = Table_CameraPlot_t.param[724],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头辰星殿堂"
   },
   [1357] = {
     id = 1357,
     groupid = 642,
     focus = Table_CameraPlot_t.focus[568],
     param = Table_CameraPlot_t.param[725],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头辰星殿堂"
   },
   [1358] = {
     id = 1358,
     groupid = 642,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头辰星殿堂"
   },
   [1359] = {
     id = 1359,
     groupid = 643,
     focus = Table_CameraPlot_t.focus[569],
     param = Table_CameraPlot_t.param[726],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头艾卡拉奇"
   },
   [1360] = {
     id = 1360,
     groupid = 643,
     focus = Table_CameraPlot_t.focus[570],
     param = Table_CameraPlot_t.param[727],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头艾卡拉奇"
   },
   [1361] = {
     id = 1361,
     groupid = 643,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头艾卡拉奇"
   },
   [1362] = {
     id = 1362,
     groupid = 644,
     focus = Table_CameraPlot_t.focus[571],
     param = Table_CameraPlot_t.param[728],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头风栖幼龙"
   },
   [1363] = {
     id = 1363,
     groupid = 644,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头风栖幼龙"
   },
   [1364] = {
     id = 1364,
     groupid = 645,
     focus = Table_CameraPlot_t.focus[572],
     param = Table_CameraPlot_t.param[729],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头雪翼鸟"
   },
   [1365] = {
     id = 1365,
     groupid = 645,
     focus = Table_CameraPlot_t.focus[572],
     param = Table_CameraPlot_t.param[730],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头雪翼鸟"
   },
   [1366] = {
     id = 1366,
     groupid = 645,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头雪翼鸟"
   },
   [1367] = {
     id = 1367,
     groupid = 646,
     focus = Table_CameraPlot_t.focus[573],
     param = Table_CameraPlot_t.param[731],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头星降瀑布"
   },
   [1368] = {
     id = 1368,
     groupid = 646,
     focus = Table_CameraPlot_t.focus[574],
     param = Table_CameraPlot_t.param[732],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头星降瀑布"
   },
   [1369] = {
     id = 1369,
     groupid = 646,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头星降瀑布"
   },
   [1370] = {
     id = 1370,
     groupid = 647,
     focus = Table_CameraPlot_t.focus[575],
     param = Table_CameraPlot_t.param[733],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头蔚云之海"
   },
   [1371] = {
     id = 1371,
     groupid = 647,
     focus = Table_CameraPlot_t.focus[575],
     param = Table_CameraPlot_t.param[734],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头蔚云之海"
   },
   [1372] = {
     id = 1372,
     groupid = 647,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头蔚云之海"
   },
   [1373] = {
     id = 1373,
     groupid = 648,
     focus = Table_CameraPlot_t.focus[576],
     param = Table_CameraPlot_t.param[735],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头时间花园"
   },
   [1374] = {
     id = 1374,
     groupid = 648,
     focus = Table_CameraPlot_t.focus[577],
     param = Table_CameraPlot_t.param[736],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头时间花园"
   },
   [1375] = {
     id = 1375,
     groupid = 648,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头时间花园"
   },
   [1376] = {
     id = 1376,
     groupid = 649,
     focus = Table_CameraPlot_t.focus[578],
     param = Table_CameraPlot_t.param[737],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头蔚云之海"
   },
   [1377] = {
     id = 1377,
     groupid = 649,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0异闻任务镜头蔚云之海"
   },
   [1378] = {
     id = 1378,
     groupid = 636,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士4转"
   },
   [1379] = {
     id = 1379,
     groupid = 636,
     focus = Table_CameraPlot_t.focus[579],
     param = Table_CameraPlot_t.param[738],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士4转"
   },
   [1380] = {
     id = 1380,
     groupid = 637,
     focus = Table_CameraPlot_t.focus[580],
     param = Table_CameraPlot_t.param[739],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士4转·腿"
   },
   [1381] = {
     id = 1381,
     groupid = 637,
     focus = Table_CameraPlot_t.focus[581],
     param = Table_CameraPlot_t.param[740],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士4转·头上球"
   },
   [1382] = {
     id = 1382,
     groupid = 637,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士4转"
   },
   [1383] = {
     id = 1383,
     groupid = 638,
     focus = Table_CameraPlot_t.focus[582],
     param = Table_CameraPlot_t.param[741],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士4转·侧脸"
   },
   [1384] = {
     id = 1384,
     groupid = 638,
     focus = Table_CameraPlot_t.focus[583],
     param = Table_CameraPlot_t.param[742],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士4转·展示球"
   },
   [1385] = {
     id = 1385,
     groupid = 638,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士4转"
   },
   [1386] = {
     id = 1386,
     groupid = 639,
     focus = Table_CameraPlot_t.focus[584],
     param = Table_CameraPlot_t.param[743],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士4转·扔球"
   },
   [1387] = {
     id = 1387,
     groupid = 639,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "秀逗魔导士4转"
   },
   [1388] = {
     id = 1388,
     groupid = 635,
     focus = Table_CameraPlot_t.focus[585],
     param = Table_CameraPlot_t.param[744],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0二阶段赫蒂线-3167副本"
   },
   [1389] = {
     id = 1389,
     groupid = 635,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0二阶段赫蒂线-3167副本"
   },
   [1390] = {
     id = 1390,
     groupid = 650,
     focus = Table_CameraPlot_t.focus[586],
     param = Table_CameraPlot_t.param[745],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0二阶段赫蒂线-丢石头看法阵"
   },
   [1391] = {
     id = 1391,
     groupid = 650,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0二阶段赫蒂线-丢石头看法阵"
   },
   [1392] = {
     id = 1392,
     groupid = 651,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0二阶段赫蒂线-第一次到云海"
   },
   [1393] = {
     id = 1393,
     groupid = 651,
     focus = Table_CameraPlot_t.focus[587],
-    param = Table_CameraPlot_t.param[746]
+    param = Table_CameraPlot_t.param[746],
+    DescInfo = "2.0二阶段赫蒂线-第一次到云海"
   },
   [1394] = {
     id = 1394,
     groupid = 651,
     focus = Table_CameraPlot_t.focus[588],
-    param = Table_CameraPlot_t.param[747]
+    param = Table_CameraPlot_t.param[747],
+    DescInfo = "2.0二阶段赫蒂线-第一次到云海"
   },
   [1395] = {
     id = 1395,
     groupid = 651,
     focus = Table_CameraPlot_t.focus[589],
-    param = Table_CameraPlot_t.param[748]
+    param = Table_CameraPlot_t.param[748],
+    DescInfo = "2.0二阶段赫蒂线-第一次到云海"
   },
   [1396] = {
     id = 1396,
     groupid = 651,
     focus = Table_CameraPlot_t.focus[589],
-    param = Table_CameraPlot_t.param[749]
+    param = Table_CameraPlot_t.param[749],
+    DescInfo = "2.0二阶段赫蒂线-第一次到云海"
   },
   [1397] = {
     id = 1397,
     groupid = 652,
     focus = Table_CameraPlot_t.focus[590],
-    param = Table_CameraPlot_t.param[750]
+    param = Table_CameraPlot_t.param[750],
+    DescInfo = "2.0二阶段赫蒂线-看法阵注入彩虹桥"
   },
   [1398] = {
     id = 1398,
     groupid = 652,
     focus = Table_CameraPlot_t.focus[590],
-    param = Table_CameraPlot_t.param[751]
+    param = Table_CameraPlot_t.param[751],
+    DescInfo = "2.0二阶段赫蒂线-看法阵注入彩虹桥"
   },
   [1399] = {
     id = 1399,
     groupid = 652,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0二阶段赫蒂线-陨落的彩虹3"
   },
   [1400] = {
     id = 1400,
     groupid = 653,
     focus = Table_CameraPlot_t.focus[591],
-    param = Table_CameraPlot_t.param[752]
+    param = Table_CameraPlot_t.param[752],
+    DescInfo = "2.0二阶段赫蒂线-白雪的翎羽"
   },
   [1401] = {
     id = 1401,
     groupid = 653,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0二阶段赫蒂线-白雪的翎羽"
   },
   [1402] = {
     id = 1402,
     groupid = 654,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0二阶段赫蒂线-云海惊变"
   },
   [1403] = {
     id = 1403,
     groupid = 654,
     focus = Table_CameraPlot_t.focus[592],
     param = Table_CameraPlot_t.param[753],
-    sceneFilter = 17
+    sceneFilter = 17,
+    DescInfo = "2.0二阶段赫蒂线-云海惊变"
   },
   [1404] = {
     id = 1404,
     groupid = 655,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0二阶段赫蒂线"
   },
   [1405] = {
     id = 1405,
     groupid = 655,
     focus = Table_CameraPlot_t.focus[592],
     param = Table_CameraPlot_t.param[754],
-    sceneFilter = 17
+    sceneFilter = 17,
+    DescInfo = "2.0二阶段赫蒂线-云海惊变"
   },
   [1406] = {
     id = 1406,
     groupid = 656,
     focus = Table_CameraPlot_t.focus[593],
-    param = Table_CameraPlot_t.param[755]
+    param = Table_CameraPlot_t.param[755],
+    DescInfo = "2.0二阶段赫蒂线-看赫蒂方倒下"
   },
   [1407] = {
     id = 1407,
     groupid = 656,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0二阶段赫蒂线-看赫蒂方倒下"
   },
   [1408] = {
     id = 1408,
     groupid = 657,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "2.0二阶段赫蒂线"
   },
   [1409] = {
     id = 1409,
     groupid = 657,
     focus = Table_CameraPlot_t.focus[594],
     param = Table_CameraPlot_t.param[756],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "2.0二阶段赫蒂线"
   },
   [1410] = {
     id = 1410,
     groupid = 658,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0二阶段赫蒂线-看雪翼鸟"
   },
   [1411] = {
     id = 1411,
     groupid = 658,
     focus = Table_CameraPlot_t.focus[595],
-    param = Table_CameraPlot_t.param[757]
+    param = Table_CameraPlot_t.param[757],
+    DescInfo = "2.0二阶段赫蒂线-看雪翼鸟"
   },
   [1412] = {
     id = 1412,
     groupid = 659,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "2.0二阶段赫蒂线"
   },
   [1413] = {
     id = 1413,
     groupid = 659,
     focus = Table_CameraPlot_t.focus[596],
     param = Table_CameraPlot_t.param[758],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "2.0二阶段赫蒂线"
   },
   [1414] = {
     id = 1414,
     groupid = 660,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0二阶段赫蒂线"
   },
   [1415] = {
     id = 1415,
     groupid = 660,
     focus = Table_CameraPlot_t.focus[596],
-    param = Table_CameraPlot_t.param[759]
+    param = Table_CameraPlot_t.param[759],
+    DescInfo = "2.0二阶段赫蒂线"
   },
   [1416] = {
     id = 1416,
     groupid = 661,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线-捕虫堇浇花"
   },
   [1417] = {
     id = 1417,
     groupid = 661,
     focus = Table_CameraPlot_t.focus[597],
-    param = Table_CameraPlot_t.param[760]
+    param = Table_CameraPlot_t.param[760],
+    DescInfo = "2.0小布线-捕虫堇浇花"
   },
   [1418] = {
     id = 1418,
     groupid = 662,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线-捕虫堇一个人"
   },
   [1419] = {
     id = 1419,
     groupid = 662,
     focus = Table_CameraPlot_t.focus[598],
-    param = Table_CameraPlot_t.param[761]
+    param = Table_CameraPlot_t.param[761],
+    DescInfo = "2.0小布线-捕虫堇一个人"
   },
   [1420] = {
     id = 1420,
     groupid = 663,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线-看玩家玩"
   },
   [1421] = {
     id = 1421,
     groupid = 663,
     focus = Table_CameraPlot_t.focus[599],
-    param = Table_CameraPlot_t.param[762]
+    param = Table_CameraPlot_t.param[762],
+    DescInfo = "2.0小布线-看玩家玩"
   },
   [1422] = {
     id = 1422,
     groupid = 664,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线-第一次到云海"
   },
   [1423] = {
     id = 1423,
     groupid = 664,
     focus = Table_CameraPlot_t.focus[587],
     param = Table_CameraPlot_t.param[746],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "2.0小布线-第一次到云海"
   },
   [1424] = {
     id = 1424,
     groupid = 664,
     focus = Table_CameraPlot_t.focus[588],
     param = Table_CameraPlot_t.param[747],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "2.0小布线-第一次到云海"
   },
   [1425] = {
     id = 1425,
     groupid = 664,
     focus = Table_CameraPlot_t.focus[589],
     param = Table_CameraPlot_t.param[748],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "2.0小布线-第一次到云海"
   },
   [1426] = {
     id = 1426,
     groupid = 664,
     focus = Table_CameraPlot_t.focus[589],
     param = Table_CameraPlot_t.param[749],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "2.0小布线-第一次到云海"
   },
   [1427] = {
     id = 1427,
     groupid = 665,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "2.0小布线-小布动手啦"
   },
   [1428] = {
     id = 1428,
     groupid = 665,
     focus = Table_CameraPlot_t.focus[596],
     param = Table_CameraPlot_t.param[758],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "2.0小布线-小布动手啦"
   },
   [1429] = {
     id = 1429,
     groupid = 666,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1430] = {
     id = 1430,
     groupid = 666,
     focus = Table_CameraPlot_t.focus[600],
     param = Table_CameraPlot_t.param[763],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1431] = {
     id = 1431,
     groupid = 666,
     focus = Table_CameraPlot_t.focus[600],
     param = Table_CameraPlot_t.param[764],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1432] = {
     id = 1432,
     groupid = 667,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1433] = {
     id = 1433,
     groupid = 667,
     focus = Table_CameraPlot_t.focus[601],
     param = Table_CameraPlot_t.param[765],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1434] = {
     id = 1434,
     groupid = 668,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1435] = {
     id = 1435,
     groupid = 668,
     focus = Table_CameraPlot_t.focus[602],
     param = Table_CameraPlot_t.param[766],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1436] = {
     id = 1436,
     groupid = 668,
     focus = Table_CameraPlot_t.focus[603],
     param = Table_CameraPlot_t.param[767],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1437] = {
     id = 1437,
     groupid = 669,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1438] = {
     id = 1438,
     groupid = 669,
     focus = Table_CameraPlot_t.focus[604],
     param = Table_CameraPlot_t.param[768],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1439] = {
     id = 1439,
     groupid = 670,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1440] = {
     id = 1440,
     groupid = 670,
     focus = Table_CameraPlot_t.focus[605],
     param = Table_CameraPlot_t.param[769],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1441] = {
     id = 1441,
     groupid = 671,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1442] = {
     id = 1442,
     groupid = 671,
     focus = Table_CameraPlot_t.focus[604],
     param = Table_CameraPlot_t.param[770],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0小布线"
   },
   [1443] = {
     id = 1443,
     groupid = 672,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "3*5看向蛋糕"
   },
   [1444] = {
     id = 1444,
     groupid = 672,
     focus = Table_CameraPlot_t.focus[606],
     param = Table_CameraPlot_t.param[771],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "3*5看向蛋糕"
   },
   [1445] = {
     id = 1445,
     groupid = 673,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "3*5最后看向蛋糕"
   },
   [1446] = {
     id = 1446,
     groupid = 673,
     focus = Table_CameraPlot_t.focus[606],
     param = Table_CameraPlot_t.param[772],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "3*5最后看向蛋糕"
   },
   [1447] = {
     id = 1447,
     groupid = 674,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "3*5最后看向蛋糕"
   },
   [1448] = {
     id = 1448,
     groupid = 674,
     focus = Table_CameraPlot_t.focus[607],
     param = Table_CameraPlot_t.param[773],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "3*5最后看向蛋糕"
   },
   [1449] = {
     id = 1449,
     groupid = 675,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1450] = {
     id = 1450,
     groupid = 676,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1451] = {
     id = 1451,
     groupid = 677,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1452] = {
     id = 1452,
     groupid = 678,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1453] = {
     id = 1453,
     groupid = 679,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1454] = {
     id = 1454,
     groupid = 680,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1455] = {
     id = 1455,
     groupid = 681,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1456] = {
     id = 1456,
     groupid = 682,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1457] = {
     id = 1457,
     groupid = 683,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1458] = {
     id = 1458,
     groupid = 684,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1459] = {
     id = 1459,
     groupid = 685,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1460] = {
     id = 1460,
     groupid = 686,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1461] = {
     id = 1461,
     groupid = 687,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1462] = {
     id = 1462,
     groupid = 688,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1463] = {
     id = 1463,
     groupid = 689,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1464] = {
     id = 1464,
     groupid = 690,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1465] = {
     id = 1465,
     groupid = 691,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1466] = {
     id = 1466,
     groupid = 692,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1467] = {
     id = 1467,
     groupid = 693,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1468] = {
     id = 1468,
     groupid = 694,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1469] = {
     id = 1469,
     groupid = 695,
-    param = Table_CameraPlot_t.param[1]
+    param = Table_CameraPlot_t.param[1],
+    DescInfo = "2.0小布线"
   },
   [1470] = {
     id = 1470,
     groupid = 696,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1471] = {
     id = 1471,
     groupid = 696,
     focus = Table_CameraPlot_t.focus[608],
     param = Table_CameraPlot_t.param[774],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1472] = {
     id = 1472,
     groupid = 697,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1473] = {
     id = 1473,
     groupid = 697,
     focus = Table_CameraPlot_t.focus[609],
     param = Table_CameraPlot_t.param[775],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1474] = {
     id = 1474,
     groupid = 697,
     focus = Table_CameraPlot_t.focus[610],
     param = Table_CameraPlot_t.param[776],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1475] = {
     id = 1475,
     groupid = 698,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1476] = {
     id = 1476,
     groupid = 698,
     focus = Table_CameraPlot_t.focus[611],
     param = Table_CameraPlot_t.param[777],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1477] = {
     id = 1477,
     groupid = 699,
     focus = Table_CameraPlot_t.focus[612],
     param = Table_CameraPlot_t.param[778],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1478] = {
     id = 1478,
     groupid = 699,
     focus = Table_CameraPlot_t.focus[613],
     param = Table_CameraPlot_t.param[779],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1479] = {
     id = 1479,
     groupid = 699,
     focus = Table_CameraPlot_t.focus[614],
     param = Table_CameraPlot_t.param[780],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1480] = {
     id = 1480,
     groupid = 699,
     focus = Table_CameraPlot_t.focus[615],
     param = Table_CameraPlot_t.param[781],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1481] = {
     id = 1481,
     groupid = 699,
     focus = Table_CameraPlot_t.focus[616],
     param = Table_CameraPlot_t.param[782],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1482] = {
     id = 1482,
     groupid = 699,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1483] = {
     id = 1483,
     groupid = 700,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1484] = {
     id = 1484,
     groupid = 700,
     focus = Table_CameraPlot_t.focus[617],
     param = Table_CameraPlot_t.param[783],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手转职"
   },
   [1485] = {
     id = 1485,
     groupid = 701,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂"
   },
   [1486] = {
     id = 1486,
@@ -27843,7 +29108,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[618],
     param = Table_CameraPlot_t.param[784],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂"
   },
   [1487] = {
     id = 1487,
@@ -27851,14 +29117,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[619],
     param = Table_CameraPlot_t.param[785],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂"
   },
   [1488] = {
     id = 1488,
     groupid = 702,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂侧写"
   },
   [1489] = {
     id = 1489,
@@ -27873,7 +29141,8 @@ Table_CameraPlot = {
     groupid = 703,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂die了"
   },
   [1491] = {
     id = 1491,
@@ -27888,7 +29157,8 @@ Table_CameraPlot = {
     groupid = 704,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂坏女人出场"
   },
   [1493] = {
     id = 1493,
@@ -27919,14 +29189,16 @@ Table_CameraPlot = {
     groupid = 705,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂给坏女人特写"
   },
   [1497] = {
     id = 1497,
     groupid = 706,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂坏女人walk"
   },
   [1498] = {
     id = 1498,
@@ -27949,7 +29221,8 @@ Table_CameraPlot = {
     groupid = 707,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂米米怪视角"
   },
   [1501] = {
     id = 1501,
@@ -27964,7 +29237,8 @@ Table_CameraPlot = {
     groupid = 708,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂对峙"
   },
   [1503] = {
     id = 1503,
@@ -27979,7 +29253,8 @@ Table_CameraPlot = {
     groupid = 709,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂表情特写"
   },
   [1505] = {
     id = 1505,
@@ -28002,7 +29277,8 @@ Table_CameraPlot = {
     groupid = 710,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂哭泣"
   },
   [1508] = {
     id = 1508,
@@ -28010,14 +29286,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[629],
     param = Table_CameraPlot_t.param[797],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂"
   },
   [1509] = {
     id = 1509,
     groupid = 711,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 7,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂走远"
   },
   [1510] = {
     id = 1510,
@@ -28032,7 +29310,8 @@ Table_CameraPlot = {
     groupid = 712,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂圣光"
   },
   [1512] = {
     id = 1512,
@@ -28040,14 +29319,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[631],
     param = Table_CameraPlot_t.param[799],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂"
   },
   [1513] = {
     id = 1513,
     groupid = 713,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 22,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂赫蒂被锁了"
   },
   [1514] = {
     id = 1514,
@@ -28055,7 +29336,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[632],
     param = Table_CameraPlot_t.param[800],
     sceneFilter = 22,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂赫蒂被锁了"
   },
   [1515] = {
     id = 1515,
@@ -28063,14 +29345,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[632],
     param = Table_CameraPlot_t.param[801],
     sceneFilter = 22,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂赫蒂被锁了"
   },
   [1516] = {
     id = 1516,
     groupid = 714,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 22,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂赫蒂又die"
   },
   [1517] = {
     id = 1517,
@@ -28078,7 +29362,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[633],
     param = Table_CameraPlot_t.param[802],
     sceneFilter = 22,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段赫蒂赫蒂又die"
   },
   [1518] = {
     id = 1518,
@@ -28086,21 +29371,24 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[634],
     param = Table_CameraPlot_t.param[803],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂哥哥起来了"
   },
   [1519] = {
     id = 1519,
     groupid = 715,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂哥哥起来了"
   },
   [1520] = {
     id = 1520,
     groupid = 716,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂哥哥起来了"
   },
   [1521] = {
     id = 1521,
@@ -28108,7 +29396,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[635],
     param = Table_CameraPlot_t.param[804],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂哥哥起来了"
   },
   [1522] = {
     id = 1522,
@@ -28116,14 +29405,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[636],
     param = Table_CameraPlot_t.param[805],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂哥哥起来了"
   },
   [1523] = {
     id = 1523,
     groupid = 717,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂赫蒂送走克莱尔"
   },
   [1524] = {
     id = 1524,
@@ -28131,14 +29422,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[637],
     param = Table_CameraPlot_t.param[806],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂赫蒂送走克莱尔"
   },
   [1525] = {
     id = 1525,
     groupid = 718,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂赫蒂送走克莱尔"
   },
   [1526] = {
     id = 1526,
@@ -28146,14 +29439,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[638],
     param = Table_CameraPlot_t.param[807],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂赫蒂送走克莱尔"
   },
   [1527] = {
     id = 1527,
     groupid = 719,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂赫蒂送走克莱尔"
   },
   [1528] = {
     id = 1528,
@@ -28161,7 +29456,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[639],
     param = Table_CameraPlot_t.param[808],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂赫蒂送走克莱尔"
   },
   [1529] = {
     id = 1529,
@@ -28169,14 +29465,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[639],
     param = Table_CameraPlot_t.param[809],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂赫蒂送走克莱尔"
   },
   [1530] = {
     id = 1530,
     groupid = 720,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂对峙"
   },
   [1531] = {
     id = 1531,
@@ -28184,14 +29482,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[640],
     param = Table_CameraPlot_t.param[810],
     sceneFilter = 44,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂对峙"
   },
   [1532] = {
     id = 1532,
     groupid = 721,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 44,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂对峙"
   },
   [1533] = {
     id = 1533,
@@ -28199,14 +29499,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[641],
     param = Table_CameraPlot_t.param[811],
     sceneFilter = 44,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0四阶段赫蒂对峙"
   },
   [1534] = {
     id = 1534,
     groupid = 722,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段赫蒂开门镜头"
   },
   [1535] = {
     id = 1535,
@@ -28229,7 +29531,8 @@ Table_CameraPlot = {
     groupid = 723,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段赫蒂芙蕾雅出场"
   },
   [1538] = {
     id = 1538,
@@ -28252,7 +29555,8 @@ Table_CameraPlot = {
     groupid = 724,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段赫蒂时间花园漆黑人影"
   },
   [1541] = {
     id = 1541,
@@ -28267,7 +29571,8 @@ Table_CameraPlot = {
     groupid = 725,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段赫蒂艾卡拉奇漆黑人影"
   },
   [1543] = {
     id = 1543,
@@ -28282,7 +29587,8 @@ Table_CameraPlot = {
     groupid = 726,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段赫蒂艾卡拉奇莱拉"
   },
   [1545] = {
     id = 1545,
@@ -28297,7 +29603,8 @@ Table_CameraPlot = {
     groupid = 727,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段赫蒂辰星殿堂门口"
   },
   [1547] = {
     id = 1547,
@@ -28328,7 +29635,8 @@ Table_CameraPlot = {
     groupid = 728,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段赫蒂DK的蔑视"
   },
   [1551] = {
     id = 1551,
@@ -28351,7 +29659,8 @@ Table_CameraPlot = {
     groupid = 729,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段赫蒂开门"
   },
   [1554] = {
     id = 1554,
@@ -28366,7 +29675,8 @@ Table_CameraPlot = {
     groupid = 730,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 36,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段赫蒂贞奴比亚出场"
   },
   [1556] = {
     id = 1556,
@@ -28397,7 +29707,8 @@ Table_CameraPlot = {
     groupid = 731,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 44,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP迪士尼一阶段涅拉互动"
   },
   [1560] = {
     id = 1560,
@@ -28405,14 +29716,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[655],
     param = Table_CameraPlot_t.param[828],
     sceneFilter = 43,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP迪士尼一阶段涅拉互动"
   },
   [1561] = {
     id = 1561,
     groupid = 732,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 22,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP迪士尼一阶段营地搜索"
   },
   [1562] = {
     id = 1562,
@@ -28420,7 +29733,8 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[656],
     param = Table_CameraPlot_t.param[829],
     sceneFilter = 44,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP迪士尼一阶段营地搜索"
   },
   [1563] = {
     id = 1563,
@@ -28428,14 +29742,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[657],
     param = Table_CameraPlot_t.param[830],
     sceneFilter = 43,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP迪士尼一阶段营地搜索"
   },
   [1564] = {
     id = 1564,
     groupid = 733,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 44,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP迪士尼一阶段打开荆棘"
   },
   [1565] = {
     id = 1565,
@@ -28443,283 +29759,326 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[658],
     param = Table_CameraPlot_t.param[831],
     sceneFilter = 44,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP迪士尼一阶段打开荆棘"
   },
   [1566] = {
     id = 1566,
     groupid = 734,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP迪士尼一阶段看到封印之地"
   },
   [1567] = {
     id = 1567,
     groupid = 734,
     focus = Table_CameraPlot_t.focus[659],
     param = Table_CameraPlot_t.param[832],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP迪士尼一阶段看到封印之地"
   },
   [1568] = {
     id = 1568,
     groupid = 734,
     focus = Table_CameraPlot_t.focus[659],
     param = Table_CameraPlot_t.param[833],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP迪士尼一阶段看到封印之地"
   },
   [1569] = {
     id = 1569,
     groupid = 741,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段布兰迪斯"
   },
   [1570] = {
     id = 1570,
     groupid = 741,
     focus = Table_CameraPlot_t.focus[660],
     param = Table_CameraPlot_t.param[834],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0三阶段布兰迪斯"
   },
   [1571] = {
     id = 1571,
     groupid = 742,
     focus = Table_CameraPlot_t.focus[661],
     param = Table_CameraPlot_t.param[835],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "美之宫2F"
   },
   [1572] = {
     id = 1572,
     groupid = 742,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "美之宫2F"
   },
   [1573] = {
     id = 1573,
     groupid = 743,
     focus = Table_CameraPlot_t.focus[662],
     param = Table_CameraPlot_t.param[836],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段布兰迪斯"
   },
   [1574] = {
     id = 1574,
     groupid = 743,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段布兰迪斯"
   },
   [1575] = {
     id = 1575,
     groupid = 744,
     focus = Table_CameraPlot_t.focus[663],
     param = Table_CameraPlot_t.param[837],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段布兰迪斯"
   },
   [1576] = {
     id = 1576,
     groupid = 744,
     focus = Table_CameraPlot_t.focus[663],
     param = Table_CameraPlot_t.param[838],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段布兰迪斯"
   },
   [1577] = {
     id = 1577,
     groupid = 744,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段布兰迪斯"
   },
   [1578] = {
     id = 1578,
     groupid = 745,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段卡德死"
   },
   [1579] = {
     id = 1579,
     groupid = 745,
     focus = Table_CameraPlot_t.focus[664],
     param = Table_CameraPlot_t.param[839],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段卡德死"
   },
   [1580] = {
     id = 1580,
     groupid = 745,
     focus = Table_CameraPlot_t.focus[664],
     param = Table_CameraPlot_t.param[840],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段卡德死"
   },
   [1581] = {
     id = 1581,
     groupid = 746,
     focus = Table_CameraPlot_t.focus[665],
     param = Table_CameraPlot_t.param[841],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段卡德死"
   },
   [1582] = {
     id = 1582,
     groupid = 746,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段卡德死"
   },
   [1583] = {
     id = 1583,
     groupid = 747,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段卡德死"
   },
   [1584] = {
     id = 1584,
     groupid = 747,
     focus = Table_CameraPlot_t.focus[665],
     param = Table_CameraPlot_t.param[842],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段卡德死"
   },
   [1585] = {
     id = 1585,
     groupid = 748,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段卡德死"
   },
   [1586] = {
     id = 1586,
     groupid = 748,
     focus = Table_CameraPlot_t.focus[666],
     param = Table_CameraPlot_t.param[843],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段卡德死"
   },
   [1587] = {
     id = 1587,
     groupid = 748,
     focus = Table_CameraPlot_t.focus[666],
     param = Table_CameraPlot_t.param[844],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "2.0五阶段卡德死"
   },
   [1588] = {
     id = 1588,
     groupid = 750,
     focus = Table_CameraPlot_t.focus[667],
     param = Table_CameraPlot_t.param[845],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "迪士尼3*5 1-1解谜成功"
   },
   [1589] = {
     id = 1589,
     groupid = 750,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "迪士尼3*5 1-1解谜成功"
   },
   [1590] = {
     id = 1590,
     groupid = 751,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "迪士尼3*5 1-2解谜成功"
   },
   [1591] = {
     id = 1591,
     groupid = 751,
     focus = Table_CameraPlot_t.focus[668],
     param = Table_CameraPlot_t.param[846],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "迪士尼3*5 1-2解谜成功"
   },
   [1592] = {
     id = 1592,
     groupid = 752,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "迪士尼3*5 1-3解谜成功"
   },
   [1593] = {
     id = 1593,
     groupid = 752,
     focus = Table_CameraPlot_t.focus[669],
     param = Table_CameraPlot_t.param[847],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "迪士尼3*5 1-3解谜成功"
   },
   [1594] = {
     id = 1594,
     groupid = 753,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "迪士尼3*5 1-4解谜成功"
   },
   [1595] = {
     id = 1595,
     groupid = 753,
     focus = Table_CameraPlot_t.focus[670],
     param = Table_CameraPlot_t.param[848],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "迪士尼3*5 1-4解谜成功"
   },
   [1596] = {
     id = 1596,
     groupid = 754,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "迪士尼3*5 裙子飞出"
   },
   [1597] = {
     id = 1597,
     groupid = 754,
     focus = Table_CameraPlot_t.focus[671],
     param = Table_CameraPlot_t.param[849],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "迪士尼3*5 裙子飞出"
   },
   [1598] = {
     id = 1598,
     groupid = 755,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手三转转头看警车"
   },
   [1599] = {
     id = 1599,
     groupid = 755,
     focus = Table_CameraPlot_t.focus[672],
     param = Table_CameraPlot_t.param[850],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手三转转头看警车"
   },
   [1600] = {
     id = 1600,
     groupid = 756,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手三转转头看警车"
   },
   [1601] = {
     id = 1601,
     groupid = 756,
     focus = Table_CameraPlot_t.focus[673],
     param = Table_CameraPlot_t.param[851],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手三转最后转职"
   },
   [1602] = {
     id = 1602,
     groupid = 757,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手三转1000359"
   },
   [1603] = {
     id = 1603,
     groupid = 757,
     focus = Table_CameraPlot_t.focus[674],
     param = Table_CameraPlot_t.param[852],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手三转1000359"
   },
   [1604] = {
     id = 1604,
     groupid = 758,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手三转转职副本1"
   },
   [1605] = {
     id = 1605,
     groupid = 758,
     focus = Table_CameraPlot_t.focus[609],
     param = Table_CameraPlot_t.param[775],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手三转转职副本1"
   },
   [1606] = {
     id = 1606,
     groupid = 758,
     focus = Table_CameraPlot_t.focus[610],
     param = Table_CameraPlot_t.param[776],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "枪手三转转职副本1"
   },
   [1607] = {
     id = 1607,
     groupid = 760,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "幻境看涅拉"
   },
   [1608] = {
     id = 1608,
@@ -28741,7 +30100,8 @@ Table_CameraPlot = {
     id = 1610,
     groupid = 761,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "幻光战场开头"
   },
   [1611] = {
     id = 1611,
@@ -28761,7 +30121,8 @@ Table_CameraPlot = {
     id = 1613,
     groupid = 762,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "第一个大门"
   },
   [1614] = {
     id = 1614,
@@ -28774,7 +30135,8 @@ Table_CameraPlot = {
     id = 1615,
     groupid = 763,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "魔女之影倒下"
   },
   [1616] = {
     id = 1616,
@@ -28788,7 +30150,8 @@ Table_CameraPlot = {
     groupid = 764,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "星光进入涅拉身体"
   },
   [1618] = {
     id = 1618,
@@ -28834,7 +30197,8 @@ Table_CameraPlot = {
     groupid = 766,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看涅拉"
   },
   [1625] = {
     id = 1625,
@@ -28849,7 +30213,8 @@ Table_CameraPlot = {
     groupid = 767,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看魔女"
   },
   [1627] = {
     id = 1627,
@@ -28863,103 +30228,119 @@ Table_CameraPlot = {
     id = 1628,
     groupid = 771,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看向光点"
   },
   [1629] = {
     id = 1629,
     groupid = 771,
     focus = Table_CameraPlot_t.focus[687],
     param = Table_CameraPlot_t.param[866],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看向光点"
   },
   [1630] = {
     id = 1630,
     groupid = 772,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看向恶魔们"
   },
   [1631] = {
     id = 1631,
     groupid = 772,
     focus = Table_CameraPlot_t.focus[688],
     param = Table_CameraPlot_t.param[867],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看向恶魔们"
   },
   [1632] = {
     id = 1632,
     groupid = 772,
     focus = Table_CameraPlot_t.focus[689],
     param = Table_CameraPlot_t.param[868],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看向恶魔们"
   },
   [1633] = {
     id = 1633,
     groupid = 772,
     focus = Table_CameraPlot_t.focus[689],
     param = Table_CameraPlot_t.param[869],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "看向恶魔们"
   },
   [1634] = {
     id = 1634,
     groupid = 773,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "QTE"
   },
   [1635] = {
     id = 1635,
     groupid = 773,
     focus = Table_CameraPlot_t.focus[690],
     param = Table_CameraPlot_t.param[870],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "QTE"
   },
   [1636] = {
     id = 1636,
     groupid = 774,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP二阶段主线"
   },
   [1637] = {
     id = 1637,
     groupid = 775,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP二阶段主线"
   },
   [1638] = {
     id = 1638,
     groupid = 776,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP二阶段主线"
   },
   [1639] = {
     id = 1639,
     groupid = 777,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP二阶段主线"
   },
   [1640] = {
     id = 1640,
     groupid = 778,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP二阶段主线"
   },
   [1641] = {
     id = 1641,
     groupid = 779,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP二阶段主线"
   },
   [1642] = {
     id = 1642,
     groupid = 780,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "SP二阶段主线"
   },
   [1643] = {
     id = 1643,
     groupid = 781,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "20219月签到镜头"
   },
   [1644] = {
     id = 1644,
@@ -28967,132 +30348,152 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[691],
     param = Table_CameraPlot_t.param[871],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "20219月签到镜头"
   },
   [1645] = {
     id = 1645,
     groupid = 786,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "3*5三阶段裙子罩子"
   },
   [1646] = {
     id = 1646,
     groupid = 786,
     focus = Table_CameraPlot_t.focus[692],
     param = Table_CameraPlot_t.param[872],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "3*5三阶段裙子罩子"
   },
   [1647] = {
     id = 1647,
     groupid = 786,
     focus = Table_CameraPlot_t.focus[692],
     param = Table_CameraPlot_t.param[873],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "3*5三阶段裙子罩子"
   },
   [1648] = {
     id = 1648,
     groupid = 787,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士进阶二转转职"
   },
   [1649] = {
     id = 1649,
     groupid = 787,
     focus = Table_CameraPlot_t.focus[693],
     param = Table_CameraPlot_t.param[874],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士进阶二转转职"
   },
   [1650] = {
     id = 1650,
     groupid = 788,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士进阶二转转职"
   },
   [1651] = {
     id = 1651,
     groupid = 788,
     focus = Table_CameraPlot_t.focus[693],
     param = Table_CameraPlot_t.param[875],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士进阶二转转职"
   },
   [1652] = {
     id = 1652,
     groupid = 789,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士进阶二转转职"
   },
   [1653] = {
     id = 1653,
     groupid = 789,
     focus = Table_CameraPlot_t.focus[694],
     param = Table_CameraPlot_t.param[876],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士进阶二转转职"
   },
   [1654] = {
     id = 1654,
     groupid = 790,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士三转转职"
   },
   [1655] = {
     id = 1655,
     groupid = 790,
     focus = Table_CameraPlot_t.focus[695],
     param = Table_CameraPlot_t.param[877],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士三转转职"
   },
   [1656] = {
     id = 1656,
     groupid = 791,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士三转转职"
   },
   [1657] = {
     id = 1657,
     groupid = 791,
     focus = Table_CameraPlot_t.focus[696],
     param = Table_CameraPlot_t.param[878],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士三转转职"
   },
   [1658] = {
     id = 1658,
     groupid = 792,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士三转转职"
   },
   [1659] = {
     id = 1659,
     groupid = 792,
     focus = Table_CameraPlot_t.focus[697],
     param = Table_CameraPlot_t.param[879],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士三转转职"
   },
   [1660] = {
     id = 1660,
     groupid = 793,
     param = Table_CameraPlot_t.param[1],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士三转转职"
   },
   [1661] = {
     id = 1661,
     groupid = 793,
     focus = Table_CameraPlot_t.focus[698],
     param = Table_CameraPlot_t.param[880],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士三转转职"
   },
   [1662] = {
     id = 1662,
     groupid = 793,
     focus = Table_CameraPlot_t.focus[699],
     param = Table_CameraPlot_t.param[881],
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "悟灵士三转转职"
   },
   [1663] = {
     id = 1663,
     groupid = 795,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "质问界面——马丁"
   },
   [1664] = {
     id = 1664,
@@ -29100,14 +30501,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[700],
     param = Table_CameraPlot_t.param[163],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "质问界面——马丁"
   },
   [1665] = {
     id = 1665,
     groupid = 796,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "质问界面——爱丽丝"
   },
   [1666] = {
     id = 1666,
@@ -29115,14 +30518,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[701],
     param = Table_CameraPlot_t.param[882],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "质问界面——爱丽丝"
   },
   [1667] = {
     id = 1667,
     groupid = 801,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "质问界面—海尔穆特"
   },
   [1668] = {
     id = 1668,
@@ -29130,14 +30535,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[702],
     param = Table_CameraPlot_t.param[883],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "质问界面—海尔穆特"
   },
   [1669] = {
     id = 1669,
     groupid = 802,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "质问界面—paite"
   },
   [1670] = {
     id = 1670,
@@ -29145,21 +30552,24 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[703],
     param = Table_CameraPlot_t.param[884],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "质问界面—paite"
   },
   [1671] = {
     id = 1671,
     groupid = 797,
     focus = Table_CameraPlot_t.focus[704],
     param = Table_CameraPlot_t.param[885],
-    sceneFilter = 51
+    sceneFilter = 51,
+    DescInfo = "书柜解谜"
   },
   [1672] = {
     id = 1672,
     groupid = 798,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "质问界面——凯瑟琳"
   },
   [1673] = {
     id = 1673,
@@ -29167,40 +30577,46 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[705],
     param = Table_CameraPlot_t.param[886],
     sceneFilter = 12,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "质问界面——凯瑟琳"
   },
   [1674] = {
     id = 1674,
     groupid = 803,
     focus = Table_CameraPlot_t.focus[706],
     param = Table_CameraPlot_t.param[887],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "新荒境主线"
   },
   [1675] = {
     id = 1675,
     groupid = 803,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "新荒境主线"
   },
   [1676] = {
     id = 1676,
     groupid = 804,
     param = Table_CameraPlot_t.param[1],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "新荒境主线"
   },
   [1677] = {
     id = 1677,
     groupid = 804,
     focus = Table_CameraPlot_t.focus[707],
     param = Table_CameraPlot_t.param[888],
-    sceneFilter = 42
+    sceneFilter = 42,
+    DescInfo = "新荒境主线"
   },
   [1678] = {
     id = 1678,
     groupid = 806,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--尼德霍格"
   },
   [1679] = {
     id = 1679,
@@ -29208,14 +30624,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[708],
     param = Table_CameraPlot_t.param[889],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--尼德霍格"
   },
   [1680] = {
     id = 1680,
     groupid = 812,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "艾尔贝塔预热"
   },
   [1681] = {
     id = 1681,
@@ -29223,14 +30641,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[709],
     param = Table_CameraPlot_t.param[890],
     sceneFilter = 41,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "艾尔贝塔预热"
   },
   [1682] = {
     id = 1682,
     groupid = 807,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--忽克连"
   },
   [1683] = {
     id = 1683,
@@ -29238,14 +30658,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[710],
     param = Table_CameraPlot_t.param[891],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--忽克连"
   },
   [1684] = {
     id = 1684,
     groupid = 808,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--韦伯"
   },
   [1685] = {
     id = 1685,
@@ -29253,14 +30675,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[711],
     param = Table_CameraPlot_t.param[892],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--韦伯"
   },
   [1686] = {
     id = 1686,
     groupid = 809,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "选择箱子"
   },
   [1687] = {
     id = 1687,
@@ -29268,14 +30692,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[712],
     param = Table_CameraPlot_t.param[893],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "选择箱子"
   },
   [1688] = {
     id = 1688,
     groupid = 810,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--忽克连"
   },
   [1689] = {
     id = 1689,
@@ -29283,14 +30709,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[713],
     param = Table_CameraPlot_t.param[894],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--忽克连"
   },
   [1690] = {
     id = 1690,
     groupid = 811,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--忽克连"
   },
   [1691] = {
     id = 1691,
@@ -29298,14 +30726,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[714],
     param = Table_CameraPlot_t.param[895],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--忽克连"
   },
   [1692] = {
     id = 1692,
     groupid = 813,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--蒙面女人"
   },
   [1693] = {
     id = 1693,
@@ -29313,14 +30743,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[715],
     param = Table_CameraPlot_t.param[896],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--蒙面女人"
   },
   [1694] = {
     id = 1694,
     groupid = 814,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--阿诺"
   },
   [1695] = {
     id = 1695,
@@ -29328,14 +30760,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[716],
     param = Table_CameraPlot_t.param[897],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "出示线索--阿诺"
   },
   [1696] = {
     id = 1696,
     groupid = 816,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "古城第一阶段-施密特"
   },
   [1697] = {
     id = 1697,
@@ -29343,14 +30777,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[717],
     param = Table_CameraPlot_t.param[898],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "古城第一阶段-施密特"
   },
   [1698] = {
     id = 1698,
     groupid = 817,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "古城第三阶段-海因里希"
   },
   [1699] = {
     id = 1699,
@@ -29358,14 +30794,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[718],
     param = Table_CameraPlot_t.param[899],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "古城第三阶段-海因里希"
   },
   [1700] = {
     id = 1700,
     groupid = 818,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "古城第三阶段-施密特"
   },
   [1701] = {
     id = 1701,
@@ -29373,14 +30811,16 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[719],
     param = Table_CameraPlot_t.param[900],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "古城第三阶段-施密特"
   },
   [1702] = {
     id = 1702,
     groupid = 819,
     param = Table_CameraPlot_t.param[1],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "萨克莱-路克斯线索"
   },
   [1703] = {
     id = 1703,
@@ -29388,11 +30828,13 @@ Table_CameraPlot = {
     focus = Table_CameraPlot_t.focus[720],
     param = Table_CameraPlot_t.param[901],
     sceneFilter = 42,
-    hideMainView = 1
+    hideMainView = 1,
+    DescInfo = "萨克莱-路克斯线索"
   }
 }
 local cell_mt = {
   __index = {
+    DescInfo = "",
     focus = _EmptyTable,
     groupid = 507,
     id = 1,

@@ -1902,6 +1902,7 @@ Table_PomeStory = {
     id = 24,
     QuestID = Table_PomeStory_t.QuestID[24],
     version = Table_PomeStory_t.version[6],
+    QuestName = "无名者",
     Npcid = 1232,
     Pstory = Table_PomeStory_t.Pstory[24],
     NpcSpace = 8
@@ -2107,7 +2108,6 @@ Table_PomeStory = {
     id = 48,
     QuestID = Table_PomeStory_t.QuestID[48],
     version = Table_PomeStory_t.version[8],
-    QuestName = "雷根贝勒秘闻",
     Npcid = 800057,
     Pstory = Table_PomeStory_t.Pstory[48]
   }
@@ -2119,7 +2119,7 @@ local cell_mt = {
     Npcid = 1595,
     Pstory = _EmptyTable,
     QuestID = _EmptyTable,
-    QuestName = "无名者",
+    QuestName = "雷根贝勒秘闻",
     id = 1,
     version = _EmptyTable
   }

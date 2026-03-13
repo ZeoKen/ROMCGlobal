@@ -583,8 +583,10 @@ function MainViewMenuPage:ShowDoujinContent()
   self:UpdateAfricanPoringBtn()
   self:ActivitySignInBut()
   self:UpdateActivityIntegrationBtns()
+  self:UpdateLoopActIntegrationBtns()
   self:UpdateCommunityIntegrationBtn()
   self:UpdateTimeLimitQuestReward()
+  self:RefreshDailyLoginBtn()
   if self.DoujinshiNode.gameObject.activeInHierarchy then
     self.DoujinshiNode.gameObject:SetActive(false)
   else
@@ -785,9 +787,9 @@ function MainViewMenuPage:RefreshRememberLoginBtn()
     return nil
   end
   if not self.rememberLoginBtn then
-    local config = GameConfig.FestivalSignin[RememberLoginUtil.ConfigID]
+    local config = self:GetFestivalSigninConfig(RememberLoginUtil.ConfigID)
     if not config then
-      LogUtility.Error(string.format("[%s] RefreshRememberLoginBtn() Error : GameConfig.FestivalSignin[%d] == nil!", self.__cname, RememberLoginUtil.ConfigID))
+      LogUtility.Error(string.format("[%s] RefreshRememberLoginBtn() Error : FestivalSignin[%d] == nil!", self.__cname, RememberLoginUtil.ConfigID))
       return nil
     end
     self.rememberLoginBtn = self.container.activityPage:CreateDoujinshiButton(config.ActivityName, config.ActivityIcon, function(go)
@@ -844,46 +846,97 @@ function MainViewMenuPage:_onClickPlayerSurvey()
   end
 end
 
+function MainViewMenuPage:GetFestivalSigninConfig(activityId)
+  if DailyLoginProxy and DailyLoginProxy.Instance then
+    local config, isNewTable = DailyLoginProxy.Instance:GetFestivalSigninConfig(activityId)
+    return config
+  end
+  if GameConfig.FestivalSignin and GameConfig.FestivalSignin[activityId] then
+    return GameConfig.FestivalSignin[activityId]
+  end
+  return nil
+end
+
+function MainViewMenuPage:GetAllFestivalSigninIds()
+  if DailyLoginProxy and DailyLoginProxy.Instance then
+    return DailyLoginProxy.Instance:GetAllFestivalSigninIds()
+  end
+  local allIds = {}
+  if Table_FestivalSignin then
+    for k, v in pairs(Table_FestivalSignin) do
+      if type(k) == "number" and v.ActID then
+        allIds[k] = v.ActID
+      end
+    end
+  end
+  if GameConfig.FestivalSignin then
+    for k, v in pairs(GameConfig.FestivalSignin) do
+      if type(k) == "number" then
+        allIds[k] = k
+      end
+    end
+  end
+  return allIds
+end
+
 function MainViewMenuPage:HandleRecvDaySignInActivityCmd()
   self:RefreshDailyLoginBtn()
   self:RefreshNoviceRechargeBtn()
 end
 
 function MainViewMenuPage:RefreshDailyLoginBtn()
-  if not GameConfig.FestivalSignin then
+  local allIds = self:GetAllFestivalSigninIds()
+  if not next(allIds) then
     return
   end
   if not self.dailyLoginBtn then
     self.dailyLoginBtn = {}
   end
-  for k, v in pairs(GameConfig.FestivalSignin) do
-    local redtipID
-    if v.Newbie and v.Newbie == 1 then
-      redtipID = SceneTip_pb.EREDSYS_SIGNACTIVITY_NOVICE
-    else
-      redtipID = SceneTip_pb.EREDSYS_SIGNACTIVITY_NORMAL
-    end
-    local hotPotInfo = DailyLoginProxy.Instance:GetDaySignInActivity(k)
-    if (not v.Newbie or v.Newbie ~= 1) and hotPotInfo then
-      if not self.dailyLoginBtn[k] then
-        if not BranchMgr.IsJapan() then
-          self.dailyLoginBtn[k] = self.container.activityPage:CreateDoujinshiButton(v.ActivityName, v.ActivityIcon, function(go)
-            self:_onClickDailyLoginBtn(k)
-          end)
-          self.doujinshiGrid:Reposition()
-        else
-          self.dailyLoginBtn[k] = self:CreatePocketLotteryButton(v.ActivityName, v.ActivityIcon)
-          self:AddClickEvent(self.dailyLoginBtn[k], function(go)
-            self:_onClickDailyLoginBtn(k)
-          end)
-          self.addCreditGrid:Reposition()
-        end
-        self.dailyLoginBtn[k]:SetActive(true)
+  local validConfigIds = {}
+  for configId, actID in pairs(allIds) do
+    validConfigIds[configId] = true
+    local v = Table_FestivalSignin and Table_FestivalSignin[configId] or self:GetFestivalSigninConfig(actID)
+    if v then
+      local redtipID
+      if v.Newbie and v.Newbie == 1 then
+        redtipID = SceneTip_pb.EREDSYS_SIGNACTIVITY_NOVICE
+      else
+        redtipID = SceneTip_pb.EREDSYS_SIGNACTIVITY_NORMAL
       end
-      self:RegisterRedTipCheck(redtipID, self.dailyLoginBtn[k], 39, nil, nil, k)
-    elseif self.dailyLoginBtn[k] then
-      self.dailyLoginBtn[k]:SetActive(false)
-      RedTipProxy.Instance:RemoveWholeTip(redtipID)
+      local hotPotInfo = DailyLoginProxy.Instance:GetDaySignInActivity(actID)
+      local globalActInfo = DailyLoginProxy.Instance:GetGlobalActData(actID)
+      local timeValid = globalActInfo and globalActInfo.endtime and globalActInfo.endtime > ServerTime.CurServerTime() / 1000 and globalActInfo.starttime and globalActInfo.starttime < ServerTime.CurServerTime() / 1000
+      if (not v.Newbie or v.Newbie ~= 1) and hotPotInfo and timeValid then
+        if not self.dailyLoginBtn[configId] then
+          if not BranchMgr.IsJapan() then
+            self.dailyLoginBtn[configId] = self.container.activityPage:CreateDoujinshiButton(v.ActivityName, v.ActivityIcon, function(go)
+              self:_onClickDailyLoginBtn(actID)
+            end)
+            self.doujinshiGrid:Reposition()
+          else
+            self.dailyLoginBtn[configId] = self:CreatePocketLotteryButton(v.ActivityName, v.ActivityIcon)
+            self:AddClickEvent(self.dailyLoginBtn[configId], function(go)
+              self:_onClickDailyLoginBtn(actID)
+            end)
+            self.addCreditGrid:Reposition()
+          end
+          self.dailyLoginBtn[configId]:SetActive(true)
+        else
+          self.dailyLoginBtn[configId]:SetActive(true)
+        end
+        self:RegisterRedTipCheck(redtipID, self.dailyLoginBtn[configId], 39, nil, nil, actID)
+      elseif self.dailyLoginBtn[configId] then
+        self.dailyLoginBtn[configId]:SetActive(false)
+        RedTipProxy.Instance:RemoveWholeTip(redtipID)
+      end
+    end
+  end
+  for oldConfigId, btn in pairs(self.dailyLoginBtn) do
+    if not validConfigIds[oldConfigId] then
+      if btn and btn.SetActive then
+        btn:SetActive(false)
+      end
+      self.dailyLoginBtn[oldConfigId] = nil
     end
   end
 end
@@ -900,8 +953,8 @@ function MainViewMenuPage:_onClickDailyLoginBtn(activityid)
       return
     end
   end
-  local config = GameConfig.FestivalSignin[activityid]
-  local isNewbie = config.Newbie and config.Newbie == 1 or false
+  local config = self:GetFestivalSigninConfig(activityid)
+  local isNewbie = config and config.Newbie and config.Newbie == 1 or false
   if isNewbie then
     self:ToView(PanelConfig.DayloginAnniversaryPanel, {id = activityid})
   else
@@ -2345,6 +2398,7 @@ function MainViewMenuPage:HandleUnlockMenu()
   self:InitBattlePassBtn()
   self:UpdateLotteryActBtn()
   self:UpdateActivityIntegrationBtns()
+  self:UpdateLoopActIntegrationBtns()
   self:RefreshRecallActivityBtn()
 end
 
@@ -4618,6 +4672,15 @@ function MainViewMenuPage:UpdateActivityIntegrationBtns()
           end
         end
       end
+      local paySignActId = ActivityIntegrationProxy.Instance:GetPaySignActID(groupid)
+      if paySignActId then
+        local isNew = RedTipProxy.Instance:InRedTip(SceneTip_pb.EREDSYS_ACT_PAY_SIGN)
+        if isNew then
+          self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.actIntegerBtns[groupid], 39)
+        else
+          self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.actIntegerBtns[groupid])
+        end
+      end
     elseif self.actIntegerBtns[groupid] then
       self.actIntegerBtns[groupid]:SetActive(false)
     end
@@ -4636,6 +4699,113 @@ function MainViewMenuPage:_onClickActivityIntegrationBtn(groupid)
     end
   end
   self:ToView(PanelConfig.ActivityIntegrationView, {group = groupid})
+end
+
+function MainViewMenuPage:UpdateLoopActIntegrationBtns()
+  if not LoopActIntegrationProxy.Instance then
+    return
+  end
+  if not self.loopActIntegerBtns then
+    self.loopActIntegerBtns = {}
+  end
+  if not self.loopActIntegerBtnActivityIDs then
+    self.loopActIntegerBtnActivityIDs = {}
+  end
+  local groupShowInfos = LoopActIntegrationProxy.Instance:GetAllGroupShowInfo()
+  if not groupShowInfos or not next(groupShowInfos) then
+    for groupid, btn in pairs(self.loopActIntegerBtns) do
+      if btn then
+        btn:SetActive(false)
+      end
+    end
+    return
+  end
+  for groupid, showInfo in pairs(groupShowInfos) do
+    if showInfo and showInfo.activityName and showInfo.activityIcon then
+      local isValid = LoopActIntegrationProxy.Instance:CheckGroupValid(groupid)
+      if isValid then
+        local currentActivityID = showInfo.activityID
+        local cachedActivityID = self.loopActIntegerBtnActivityIDs[groupid]
+        local needRecreate = false
+        if cachedActivityID and currentActivityID and cachedActivityID ~= currentActivityID then
+          needRecreate = true
+          if self.loopActIntegerBtns[groupid] then
+            GameObject.Destroy(self.loopActIntegerBtns[groupid])
+            self.loopActIntegerBtns[groupid] = nil
+          end
+        end
+        if not self.loopActIntegerBtns[groupid] or needRecreate then
+          if not BranchMgr.IsJapan() then
+            self.loopActIntegerBtns[groupid] = self.container.activityPage:CreateDoujinshiButton(showInfo.activityName, showInfo.activityIcon, function(go)
+              self:_onClickLoopActIntegrationBtn(groupid)
+            end)
+            self.doujinshiGrid:Reposition()
+          else
+            self.loopActIntegerBtns[groupid] = self:CreatePocketLotteryButton(showInfo.activityName, showInfo.activityIcon)
+            self:AddClickEvent(self.loopActIntegerBtns[groupid], function(go)
+              self:_onClickLoopActIntegrationBtn(groupid)
+            end)
+            self.addCreditGrid:Reposition()
+          end
+          self.loopActIntegerBtnActivityIDs[groupid] = currentActivityID
+        end
+        if self.loopActIntegerBtns[groupid] then
+          self.loopActIntegerBtns[groupid]:SetActive(true)
+        end
+        local allActivityIDs = LoopActIntegrationProxy.Instance:GetAllActivityIDsInGroup(groupid)
+        if allActivityIDs and 0 < #allActivityIDs then
+          self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_ACT_BP, self.loopActIntegerBtns[groupid])
+          self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_NEW_SERVER_CHALLENGE, self.loopActIntegerBtns[groupid])
+          self:UnRegisterSingleRedTipCheck(ActivityFlipCardProxy.RedTipId, self.loopActIntegerBtns[groupid])
+          for i = 1, #allActivityIDs do
+            local activityID = allActivityIDs[i]
+            local staticData = Table_ActivityNew[activityID]
+            if staticData then
+              local subType = LoopActIntegrationProxy.Instance:GetSubType(staticData)
+              local activityId = staticData.Params and staticData.Params.ActivityId or staticData.id
+              if subType == 1 then
+                local isNew = RedTipProxy.Instance:IsNew(SceneTip_pb.EREDSYS_ACT_BP, activityId)
+                if isNew then
+                  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ACT_BP, self.loopActIntegerBtns[groupid], 39, nil, nil, activityId)
+                end
+              elseif subType == 2 then
+                local isNew = RedTipProxy.Instance:IsNew(SceneTip_pb.EREDSYS_NEW_SERVER_CHALLENGE, activityId)
+                if isNew then
+                  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_NEW_SERVER_CHALLENGE, self.loopActIntegerBtns[groupid], 39, nil, nil, activityId)
+                end
+              elseif subType == 3 then
+                local isNew = RedTipProxy.Instance:IsNew(ActivityFlipCardProxy.RedTipId, activityId)
+                if isNew then
+                  self:RegisterRedTipCheck(ActivityFlipCardProxy.RedTipId, self.loopActIntegerBtns[groupid], 39, nil, nil, activityId)
+                end
+              end
+            end
+          end
+        end
+      elseif self.loopActIntegerBtns[groupid] then
+        self.loopActIntegerBtns[groupid]:SetActive(false)
+      end
+    end
+  end
+  for groupid, btn in pairs(self.loopActIntegerBtns) do
+    if not groupShowInfos[groupid] and btn then
+      btn:SetActive(false)
+    end
+  end
+end
+
+function MainViewMenuPage:_onClickLoopActIntegrationBtn(groupid)
+  if not groupid then
+    return
+  end
+  if not LoopActIntegrationProxy.Instance then
+    return
+  end
+  if not LoopActIntegrationProxy.Instance:CheckGroupValid(groupid) and self.loopActIntegerBtns[groupid] then
+    self.loopActIntegerBtns[groupid]:SetActive(false)
+    return
+  end
+  self:ToView(PanelConfig.LoopActIntegrationView, {group = groupid})
 end
 
 function MainViewMenuPage:UpdateCommunityIntegrationBtn()

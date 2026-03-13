@@ -137,10 +137,6 @@ function AssetManagerRefactory:LoadByTypeAsync(path, type, callback, assetName)
   end
 end
 
-function AssetManagerRefactory:PreloadAsset(path, type)
-  return self.resManager:SLoadByType(path, type)
-end
-
 function AssetManagerRefactory:PreloadAssetAsync(path, type, callback, assetName)
   self:LoadByTypeAsync(path, type, callback, assetName)
 end

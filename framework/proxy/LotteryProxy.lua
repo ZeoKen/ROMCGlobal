@@ -303,6 +303,7 @@ function LotteryProxy:Init()
   self.ssrCardMap = {}
   self.cardLotteryPrayMap = {}
   self.vipFreeMap = {}
+  self.hasDressData = {}
 end
 
 function LotteryProxy:CheckForbiddenByNoviceServer(t)
@@ -481,7 +482,7 @@ end
 
 function LotteryProxy:RecvQueryLotteryInfo(servicedata)
   local type = servicedata.type
-  helplog("[扭蛋] 打印服务器扭蛋QueryLotteryInfo数据,type ", type)
+  helplog("[扭蛋] QueryLotteryInfo 打印服务器返回扭蛋类型 | 扭蛋数量 ", type, #servicedata.infos)
   TableUtil.Print(servicedata)
   if type == LotteryType.Head then
     self:SetNextValidTime(type, 60)
@@ -536,7 +537,25 @@ function LotteryProxy:RecvQueryLotteryInfo(servicedata)
   if servicedata.safetyinfo and info.SetSafetyInfo then
     info:SetSafetyInfo(servicedata.safetyinfo)
   end
+  self:CacheDressFlag(type)
   helplog("RecvQueryLotteryInfo 单次抽取最大次数 | 今日十连次数 | 今日十连上限 | 免费次数 ", servicedata.once_max_cnt, servicedata.today_ten_cnt, servicedata.max_ten_cnt, servicedata.free_cnt)
+end
+
+function LotteryProxy:CacheDressFlag(type)
+  if LotteryProxy.IsSpaceTimeLottery(type) then
+    local dressData = self:GetInitializedDressData(type)
+    self.hasDressData[type] = nil ~= dressData and nil ~= next(dressData)
+  end
+end
+
+function LotteryProxy:HasDressData(t)
+  if LotteryProxy.IsCardLottery(t) then
+    return false
+  end
+  if LotteryProxy.IsSpaceTimeLottery(t) then
+    return self.hasDressData[t] == true
+  end
+  return true
 end
 
 function LotteryProxy:CheckTenLottery(t)
@@ -2219,17 +2238,25 @@ end
 
 function LotteryProxy:RecvLotteryBannerInfo(infoList)
   self.lotteryBanner = self.lotteryBanner or {}
-  local open, ltype, starttime
+  local open, ltype, starttime, single
   for i = 1, #infoList do
-    open = infoList[i].open
-    ltype = infoList[i].type
-    starttime = infoList[i].starttime
+    single = infoList[i]
+    open = single.open
+    ltype = single.type
+    starttime = single.starttime
     if ltype then
       if open then
-        redlog("ltype", ltype, starttime)
-        self.lotteryBanner[ltype] = starttime
+        self.lotteryBanner[ltype] = {
+          activitytime = single.activitytime,
+          starttime = single.starttime,
+          endtime = single.endtime
+        }
       else
-        self.lotteryBanner[ltype] = 0
+        self.lotteryBanner[ltype] = {
+          activitytime = 0,
+          starttime = 0,
+          endtime = 0
+        }
       end
     end
   end
@@ -2245,47 +2272,22 @@ function LotteryProxy:GetBannerList()
   end
   local validDate, validEnd = "", ""
   if self.lotteryBanner then
-    local BannerConfig = GameConfig.LotteryBanner
-    for lotterytype, starttime in pairs(self.lotteryBanner) do
-      if 0 < starttime then
-        local typeConfig = BannerConfig[lotterytype]
+    local BannerConfig = Game.Config_LotteryBanner
+    if not BannerConfig then
+      return self.bannerList
+    end
+    for ltype, v in pairs(self.lotteryBanner) do
+      if v.activitytime > 0 and self.freeTypes[ltype] then
+        local typeConfig = BannerConfig[ltype]
         if typeConfig then
-          for i = 1, #typeConfig do
-            if EnvChannel.IsReleaseBranch() then
-              validDate = typeConfig[i].ValidDate
-              validEnd = typeConfig[i].EndDate
-            elseif EnvChannel.IsTFBranch() then
-              validDate = typeConfig[i].TFValidDate
-              validEnd = typeConfig[i].TFEndDate
-            end
-            if not StringUtil.IsEmpty(validDate) and not StringUtil.IsEmpty(validEnd) and self.freeTypes[lotterytype] then
-              local year, month, day, hour, min, sec = validDate:match(DateStr)
-              local startDate = os.time({
-                day = day,
-                month = month,
-                year = year,
-                hour = hour,
-                min = min,
-                sec = sec
-              })
-              year, month, day, hour, min, sec = validEnd:match(DateStr)
-              local endData = os.time({
-                day = day,
-                month = month,
-                year = year,
-                hour = hour,
-                min = min,
-                sec = sec
-              })
-              if starttime >= startDate and starttime < endData then
-                local single = {}
-                single.type = lotterytype
-                single.styleID = typeConfig[i].styleID
-                single.validDate = validDate
-                single.validEnd = validEnd
-                table.insert(self.bannerList, single)
-              end
-            end
+          local bannerConfig = typeConfig[v.activitytime]
+          if bannerConfig then
+            local single = {}
+            single.type = ltype
+            single.styleID = bannerConfig.id
+            single.validDate = v.starttime
+            single.validEnd = v.endtime
+            table.insert(self.bannerList, single)
           end
         end
       end

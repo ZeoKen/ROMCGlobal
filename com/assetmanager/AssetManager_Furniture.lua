@@ -198,9 +198,17 @@ end
 
 function AssetManager_Furniture:GetFurnitureShader(containsAlpha, callBack, callBackArgs)
   if containsAlpha then
-    return self:FindShader(AssetManager_Furniture.TransparentShaderName, "Public/Shader/Furniture", "FurnitureAlpha", callBack, callBackArgs)
+    local shaderAssetName = "FurnitureAlpha"
+    if not Application.isEditor then
+      shaderAssetName = "Assets/Resources/Public/Shader/Furniture/FurnitureAlpha.shader"
+    end
+    return self:FindShader(AssetManager_Furniture.TransparentShaderName, "Public/Shader/Furniture", shaderAssetName, callBack, callBackArgs)
   else
-    return self:FindShader(AssetManager_Furniture.OutlineShaderName, "Public/Shader/Furniture", "Furniture", callBack, callBackArgs)
+    local shaderAssetName = "Furniture"
+    if not Application.isEditor then
+      shaderAssetName = "Assets/Resources/Public/Shader/Furniture/FurnitureAlpha.shader"
+    end
+    return self:FindShader(AssetManager_Furniture.OutlineShaderName, "Public/Shader/Furniture", shaderAssetName, callBack, callBackArgs)
   end
 end
 

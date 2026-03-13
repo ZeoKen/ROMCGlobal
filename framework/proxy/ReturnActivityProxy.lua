@@ -202,11 +202,15 @@ end
 function ReturnActivityProxy:GetActivityEnterValid()
   local flag = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_USERRETURN_FLAG) or 0
   if flag ~= 0 then
+    local config = GameConfig.Return.Feature[flag]
+    if not config then
+      return false
+    end
     self.curActID = flag
-    self.shopID = GameConfig.Return.Feature[self.curActID] and GameConfig.Return.Feature[self.curActID].ShopID or 1
-    self.costID = GameConfig.Return.Feature[self.curActID] and GameConfig.Return.Feature[self.curActID].ShopItemID or 3004942
-    self.shopType = GameConfig.Return.Feature[self.curActID] and GameConfig.Return.Feature[self.curActID].ShopType or 20262
-    self.shopType2 = GameConfig.Return.Feature[self.curActID] and GameConfig.Return.Feature[self.curActID].ShopType2 or 20262
+    self.shopID = config.ShopID or 1
+    self.costID = config.ShopItemID or 3004942
+    self.shopType = config.ShopType or 20262
+    self.shopType2 = config.ShopType2 or 20262
     return true
   end
   self.curActID = nil

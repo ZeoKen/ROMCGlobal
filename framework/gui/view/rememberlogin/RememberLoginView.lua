@@ -128,9 +128,9 @@ end
 
 function RememberLoginView:InitConfig()
   self:RemoveConfig()
-  local configData = GameConfig.FestivalSignin[RememberLoginUtil.ConfigID]
+  local configData = DailyLoginProxy.Instance:GetFestivalSigninConfig(RememberLoginUtil.ConfigID)
   if not configData then
-    LogUtility.Error(string.format("[%s] InitConfig() Error : GameConfig.FestivalSignin[%d] == nil!", self.__cname, RememberLoginUtil.ConfigID))
+    LogUtility.Error(string.format("[%s] InitConfig() Error : FestivalSignin[%d] == nil!", self.__cname, RememberLoginUtil.ConfigID))
     return nil
   end
   self.m_helpId = configData.HelpID

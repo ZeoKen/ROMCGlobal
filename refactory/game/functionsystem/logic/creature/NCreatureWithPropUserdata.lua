@@ -182,6 +182,12 @@ function NCreatureWithPropUserdata:AddBuff(buffID, init, needhit, fromID, layer,
   local buffStateID = self:GetBuffStateID(buffInfo, stateid, layer, fromID, active)
   if not buffeffect or buffeffect.hidebodyonly then
   end
+  local buffStateID
+  if buffeffect.enemyBuffState and self.data:IsEnemy(Game.Myself.data) then
+    buffStateID = buffeffect.enemyBuffState
+  else
+    buffStateID = self:GetBuffStateID(buffInfo, stateid, layer, fromID, active)
+  end
   if layerStateID then
     if not self.buffMultiEffect then
       self.buffMultiEffect = {}

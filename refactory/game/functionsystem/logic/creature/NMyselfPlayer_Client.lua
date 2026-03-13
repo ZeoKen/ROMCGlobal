@@ -140,7 +140,7 @@ end
 
 local zone_display_time = GameConfig.Weather and GameConfig.Weather.zone_display_time
 
-function NMyselfPlayer:Client_MoveHandler(destination)
+function NMyselfPlayer:Client_MoveHandler(destination, forceSync)
   if Game.LogicManager_HandInHand then
     Game.LogicManager_HandInHand:TryBreakMyDoubleAction()
   end
@@ -153,7 +153,7 @@ function NMyselfPlayer:Client_MoveHandler(destination)
   end
   EventManager.Me():PassEvent(MyselfEvent.StartToMove)
   if FunctionCheck.Me():CanSyncMove() then
-    self:SyncServer_MoveTo(destination)
+    self:SyncServer_MoveTo(destination, forceSync)
   end
   self:Client_EnterARegion()
 end
@@ -192,12 +192,12 @@ function NMyselfPlayer:Client_EnterARegion(force)
   end
 end
 
-function NMyselfPlayer:SyncServer_MoveTo(destination)
+function NMyselfPlayer:SyncServer_MoveTo(destination, forceSync)
   self.dstV3 = self.dstV3 or {}
   self.dstV3[1] = destination[1]
   self.dstV3[2] = destination[2]
   self.dstV3[3] = destination[3]
-  if self.syncTimeTick and UnityTime - self.syncTimeTick < 0.15 then
+  if not forceSync and self.syncTimeTick and UnityTime - self.syncTimeTick < 0.15 then
     if not self.waitTick then
       self.waitTick = TimeTickManager.Me():CreateOnceDelayTick(150, function()
         self.waitTick = nil

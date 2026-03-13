@@ -1,11 +1,9 @@
 local zoneSeparator = ","
 GVGGroupZone = class("GVGGroupZone")
 
-function GVGGroupZone:ctor(groupid, zoneids, client_group_index)
-  self.server_groupid = groupid
-  self.server_id = GvgProxy.GetServerIdByGroupId(groupid)
-  self.groupid = client_group_index
-  self.uiGroupId = string.format(ZhString.NewGVG_GroupID, self.groupid)
+function GVGGroupZone:ctor(server_group_id, zoneids)
+  self.server_groupid = server_group_id
+  self.displayStr, self.timeZoneId, self.server_id, self.battleLineId = GuildProxy.ParseServerGroupID(server_group_id)
   self.zoneMap = {}
   self.simplyZoneMap = {}
   self.uiZones = ""
@@ -26,8 +24,8 @@ function GVGGroupZone:ctor(groupid, zoneids, client_group_index)
   end
 end
 
-function GVGGroupZone:GetGroupIdStr()
-  return self.uiGroupId
+function GVGGroupZone:GetDisplayStr()
+  return self.displayStr
 end
 
 function GVGGroupZone:GetZoneStr()

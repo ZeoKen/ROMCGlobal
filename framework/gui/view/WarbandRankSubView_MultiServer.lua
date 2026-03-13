@@ -5,7 +5,6 @@ local Texture_Name = "12pvp_bg_pic_Ranking"
 
 function WarbandRankSubView_MultiServer:OnEnter()
   WarbandRankSubView_MultiServer.super.super.OnEnter(self)
-  WarbandProxy_MultiServer.Instance:DoQuerySeasonRank()
 end
 
 function WarbandRankSubView_MultiServer:_loadPrafab()

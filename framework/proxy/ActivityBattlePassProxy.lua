@@ -28,20 +28,46 @@ function ActivityBattlePassProxy:Init()
   self.maxBPLevel = {}
   self.startTime = {}
   self.endTime = {}
+  self.levelData = {}
   self:InitLevelData()
 end
 
 function ActivityBattlePassProxy:InitLevelData()
-  self.levelData = {}
-  for i, data in pairs(Table_ActBpReward) do
-    local datas = self.levelData[data.ActID]
+  for activityId, config in pairs(Game.Config_ActBpReward) do
+    local datas = self.levelData[activityId]
     if not datas then
       datas = {}
-      self.levelData[data.ActID] = datas
-      self.maxBPLevel[data.ActID] = data.Level
+      self.levelData[activityId] = datas
+      self.maxBPLevel[activityId] = 0
     end
-    datas[data.Level] = data
-    self.maxBPLevel[data.ActID] = math.max(self.maxBPLevel[data.ActID], data.Level)
+    local templateData = config[0]
+    if templateData then
+      for level, v in pairs(templateData) do
+        datas[level] = v
+        self.maxBPLevel[activityId] = math.max(self.maxBPLevel[activityId], level)
+      end
+    end
+  end
+end
+
+function ActivityBattlePassProxy:BatchLevelData(activityId, batchID)
+  local datas = self.levelData[activityId]
+  if not datas then
+    datas = {}
+    self.levelData[activityId] = datas
+    self.maxBPLevel[activityId] = 0
+  end
+  local config = Game.Config_ActBpReward[activityId]
+  if not config then
+    redlog("ActBpReward表中无活动数据：", activityId)
+    return
+  end
+  local batchData = config[batchID]
+  if batchData then
+    for level, v in pairs(batchData) do
+      datas[level] = v
+      self.maxBPLevel[activityId] = math.max(self.maxBPLevel[activityId], level)
+    end
   end
 end
 
@@ -156,7 +182,7 @@ function ActivityBattlePassProxy:IsTaskAvailable(activityId, taskId)
       end
       local curtime = ServerTime.CurServerTime() / 1000
       local preTask = taskData[config.PreID]
-      if (not preTask or preTask.state ~= EACTQUESTSTATE.EACT_QUEST_DOING) and starttime <= curtime and endtime >= curtime then
+      if (not preTask or preTask.state ~= EACTQUESTSTATE.EACT_QUEST_DOING) and (not (starttime and endtime) or starttime <= curtime and endtime >= curtime) then
         return true
       end
     end

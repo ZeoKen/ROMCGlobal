@@ -146,9 +146,9 @@ function HappyShop:AddEvts()
     end)
   end
   local config = Table_NpcFunction[HappyShopProxy.Instance:GetShopType()]
-  self.npcFuctionID = config.id
+  self.npcFuctionID = config and config.id
   self.toggleOffset = 0
-  if config.Parama.ItemID then
+  if config and config.Parama and config.Parama.ItemID then
     if self.money1tg then
       self:AddClickEvent(self.money1tg.gameObject, function(g)
         self.tabid = 1
@@ -323,6 +323,11 @@ function HappyShop:InitShowtoggle()
   self.tabid = 1
   if HappyShopProxy.Instance:GetTab() then
     local config = Table_NpcFunction[HappyShopProxy.Instance:GetShopType()]
+    if not config or not config.Parama then
+      self.showtoggle:SetActive(false)
+      self.customToggleRoot:SetActive(false)
+      return
+    end
     local itemid = config.Parama.ItemID
     if config.Parama.TabCustomIcon then
       self:InitCustomToggle()
@@ -357,10 +362,10 @@ end
 function HappyShop:InitLeftUpIcon()
   local _HappyShopProxy = HappyShopProxy
   local config = Table_NpcFunction[_HappyShopProxy.Instance:GetShopType()]
-  self.shopSource = config and config.Parama.Source
+  self.shopSource = config and config.Parama and config.Parama.Source
   if self.shopSource == _HappyShopProxy.SourceType.Guild then
     FunctionGuild.Me():QueryGuildItemList()
-    if config.Parama.ShowGuildPack ~= 1 then
+    if config and config.Parama and config.Parama.ShowGuildPack ~= 1 then
       for i = 1, #self.moneySprite do
         self.moneySprite[i].gameObject:SetActive(false)
       end
@@ -423,7 +428,7 @@ function HappyShop:HandleClickItem(cellctl)
     end
     local _HappyShopProxy = HappyShopProxy
     local config = Table_NpcFunction[_HappyShopProxy.Instance:GetShopType()]
-    if config ~= nil and config.Parama.Source == _HappyShopProxy.SourceType.Guild and not GuildProxy.Instance:CanIDoAuthority(GuildAuthorityMap.Shop) then
+    if config ~= nil and config.Parama and config.Parama.Source == _HappyShopProxy.SourceType.Guild and not GuildProxy.Instance:CanIDoAuthority(GuildAuthorityMap.Shop) then
       MsgManager.ShowMsgByID(3808)
       self.buyCell.gameObject:SetActive(false)
       return
@@ -588,7 +593,7 @@ function HappyShop:UpdateShopInfo(isReset)
     datas = HappyShopProxy.Instance:GetTabItem(self.tabid)
   end
   local config = Table_NpcFunction[HappyShopProxy.Instance:GetShopType()]
-  local tabSystemIDConfig = config.Parama.TabSystemID
+  local tabSystemIDConfig = config and config.Parama and config.Parama.TabSystemID
   local tabSysID = tabSystemIDConfig and self.tabid and tabSystemIDConfig[self.tabid]
   if tabSysID then
     MsgManager.ShowMsgByID(tabSysID)
@@ -765,7 +770,7 @@ end
 function HappyShop:HandleSpecial(on)
   local _HappyShopProxy = HappyShopProxy
   local config = Table_NpcFunction[_HappyShopProxy.Instance:GetShopType()]
-  if config ~= nil and config.Parama.Source == _HappyShopProxy.SourceType.Guild then
+  if config ~= nil and config.Parama and config.Parama.Source == _HappyShopProxy.SourceType.Guild then
     ServiceGuildCmdProxy.Instance:CallFrameStatusGuildCmd(on)
   end
 end
@@ -817,6 +822,12 @@ local onRotation, offRotation = Quaternion.Euler(0, 0, 90), Quaternion.Euler(0, 
 
 function HappyShop:InitServantList()
   local config = Table_NpcFunction[HappyShopProxy.Instance:GetShopType()]
+  if not config or not config.Parama then
+    if self.servantExp then
+      self.servantExp:SetActive(false)
+    end
+    return
+  end
   local myServantid = MyselfProxy.Instance:GetMyServantID()
   local isShowList = config.Parama.ShowType
   local npcstaticid = HappyShopProxy.Instance:GetNPCStaticid()
@@ -915,6 +926,10 @@ end
 
 function HappyShop:InitCustomToggle()
   local config = Table_NpcFunction[HappyShopProxy.Instance:GetShopType()]
+  if not config or not config.Parama then
+    self.customToggleRoot:SetActive(false)
+    return
+  end
   local TabCustomIcon = config.Parama.TabCustomIcon
   if not TabCustomIcon then
     self.customToggleRoot:SetActive(false)
@@ -947,7 +962,7 @@ end
 
 function HappyShop:InitSearchToggle()
   local config = Table_NpcFunction[HappyShopProxy.Instance:GetShopType()]
-  local searchOn = config.Parama.Search
+  local searchOn = config and config.Parama and config.Parama.Search
   if searchOn and searchOn == 1 then
     self.searchToggle:SetActive(true)
   else
@@ -973,6 +988,10 @@ end
 
 function HappyShop:RefreshIndicator()
   local config = Table_NpcFunction[HappyShopProxy.Instance:GetShopType()]
+  if not config or not config.Parama then
+    self.customToggleRoot:SetActive(false)
+    return
+  end
   local TabCustomIcon = config.Parama.TabCustomIcon
   if not TabCustomIcon then
     self.customToggleRoot:SetActive(false)
@@ -996,6 +1015,10 @@ end
 
 function HappyShop:ClickIndicator()
   local config = Table_NpcFunction[HappyShopProxy.Instance:GetShopType()]
+  if not config or not config.Parama then
+    self.customToggleRoot:SetActive(false)
+    return
+  end
   local TabCustomIcon = config.Parama.TabCustomIcon
   if not TabCustomIcon then
     self.customToggleRoot:SetActive(false)

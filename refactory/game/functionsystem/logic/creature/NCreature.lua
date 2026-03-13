@@ -468,6 +468,12 @@ function NCreature:GetIdleAction()
       return soloAction
     end
   end
+  if self.skillEnsemble ~= nil then
+    local ensembleAction = self.skillEnsemble:GetSoloAction()
+    if ensembleAction ~= nil then
+      return ensembleAction
+    end
+  end
   if self.data:GetDownID() ~= 0 then
     return Asset_Role.ActionName.Idle
   end
@@ -1136,6 +1142,15 @@ end
 
 function NCreature:Server_SetSolo(value)
   if 0 < value then
+    if self.skillEnsemble then
+      self.skillEnsemble:EndSolo(self)
+      self:ClearSkillEnsemble()
+      NSceneUserProxy.Instance:RemoveLoopSfxUser(self.data.id)
+    end
+    if self.skillSolo then
+      self.skillSolo:EndSolo(self)
+      self:ClearSkillSolo()
+    end
     if self.skillSolo == nil then
       self.skillSolo = SkillSolo.Create()
     end
@@ -1144,7 +1159,34 @@ function NCreature:Server_SetSolo(value)
   elseif self.skillSolo ~= nil then
     self.skillSolo:EndSolo(self)
     self:ClearSkillSolo()
-    NSceneUserProxy.Instance:RemoveLoopSfxUser(self.data.id)
+    if self.skillEnsemble == nil then
+      NSceneUserProxy.Instance:RemoveLoopSfxUser(self.data.id)
+    end
+  end
+end
+
+function NCreature:Server_SetEnsemble(value)
+  if 0 < value then
+    if self.skillSolo then
+      self.skillSolo:EndSolo(self)
+      self:ClearSkillSolo()
+      NSceneUserProxy.Instance:RemoveLoopSfxUser(self.data.id)
+    end
+    if self.skillEnsemble then
+      self.skillEnsemble:EndSolo(self)
+      self:ClearSkillEnsemble()
+    end
+    if self.skillEnsemble == nil then
+      self.skillEnsemble = SkillSolo.Create()
+    end
+    self.skillEnsemble:StartSolo(self, value)
+    NSceneUserProxy.Instance:AddLoopSfxUser(self.data.id)
+  elseif self.skillEnsemble ~= nil then
+    self.skillEnsemble:EndSolo(self)
+    self:ClearSkillEnsemble()
+    if self.skillSolo == nil then
+      NSceneUserProxy.Instance:RemoveLoopSfxUser(self.data.id)
+    end
   end
 end
 
@@ -1155,9 +1197,19 @@ function NCreature:ClearSkillSolo()
   end
 end
 
+function NCreature:ClearSkillEnsemble()
+  if self.skillEnsemble ~= nil then
+    self.skillEnsemble:Destroy()
+    self.skillEnsemble = nil
+  end
+end
+
 function NCreature:UpdateVolume(volume)
   if self.skillSolo then
     self.skillSolo:UpdateVolume(volume)
+  end
+  if self.skillEnsemble then
+    self.skillEnsemble:UpdateVolume(volume)
   end
   if self.assetRole then
     self.assetRole:UpdateVolume(volume)
@@ -1944,6 +1996,7 @@ function NCreature:DoDeconstruct(asArray)
   self:RemoveHandNpc()
   self:ClearExpressNpc()
   self:ClearSkillSolo()
+  self:ClearSkillEnsemble()
   if self.skillFreeCast then
     self.skillFreeCast:Destroy()
     self.skillFreeCast = nil

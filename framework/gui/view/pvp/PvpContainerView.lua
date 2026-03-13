@@ -253,10 +253,10 @@ function PvpContainerView:OnEnter()
 end
 
 function PvpContainerView:PreQuerySome()
-  ServiceMatchCCmdProxy.Instance:CallQueryTwelveSeasonInfoMatchCCmd(PvpProxy.Type.TwelvePVPChampion)
-  ServiceMatchCCmdProxy.Instance:CallQueryTwelveSeasonInfoMatchCCmd(PvpProxy.Type.TwelvePVPBattle)
-  ServiceMatchCCmdProxy.Instance:CallQueryTwelveSeasonInfoMatchCCmd(PvpProxy.Type.TeamPwsChampion)
+  ServiceMatchCCmdProxy.Instance:CallQueryTwelveSeasonInfoMatchCCmd()
   ServiceMatchCCmdProxy.Instance:CallQueryTeamPwsTeamInfoMatchCCmd()
+  ServiceMatchCCmdProxy.Instance:CallSyncMatchBoardOpenStateMatchCCmd(true)
+  ServiceMatchCCmdProxy.Instance:CallTwelveWarbandSortMatchCCmd()
 end
 
 function PvpContainerView:OnExit()
@@ -266,6 +266,7 @@ function PvpContainerView:OnExit()
   PictureManager.Instance:UnLoadPVP(PVPTYPE[13].name, self.classicModeToggle_Texture)
   PictureManager.Instance:UnLoadPVP("sports_bg_bottom", self.bgTexture1)
   PictureManager.Instance:UnLoadUI("calendar_bg1_picture2", self.bgTexture2)
+  ServiceMatchCCmdProxy.Instance:CallSyncMatchBoardOpenStateMatchCCmd(false)
   TimeTickManager.Me():ClearTick(self)
 end
 

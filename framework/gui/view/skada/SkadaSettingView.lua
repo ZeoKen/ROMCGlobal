@@ -15,12 +15,14 @@ local OperSourceID = {
 }
 local SettingType = {
   Custom = EWOODTYPE.EWOODTYPE_NORMAL,
-  Boss = EWOODTYPE.EWOODTYPE_SPEC_MONSTER
+  Boss = EWOODTYPE.EWOODTYPE_SPEC_MONSTER,
+  Player = EWOODTYPE.EWOODTYPE_PLAYER
 }
 local BossType = {
   Normal = 0,
   MVP = 1,
-  Mini = 2
+  Mini = 2,
+  Player = 3
 }
 local _, c = ColorUtil.TryParseHexString("B36B24")
 local SelectedLabelCol = c
@@ -37,7 +39,11 @@ end
 function SkadaSettingView:FindObjs()
   self.customBtn = self:FindGO("CustomBtn")
   self:AddClickEvent(self.customBtn, function()
-    self:SelectSettingType(SettingType.Custom)
+    local settingType = SettingType.Custom
+    if self.curTypeCell and self.curTypeCell.id == BossType.Player then
+      settingType = SettingType.Player
+    end
+    self:SelectSettingType(settingType)
   end)
   self.customBtnSp = self.customBtn:GetComponent(UIMultiSprite)
   self.customBtnLabel = self:FindComponent("Label", UILabel, self.customBtn)
@@ -160,7 +166,11 @@ function SkadaSettingView:InitSettings()
     singleTable = ReusableTable.CreateTable()
     singleTable.id = id
     singleTable.NameEn = nameEn
-    singleTable.NameZh = nameConfig.BossType[nameEn]
+    if id == BossType.Player then
+      singleTable.NameZh = ZhString.SkadaSettingView_Player
+    else
+      singleTable.NameZh = nameConfig.BossType[nameEn]
+    end
     self.typeDatas[#self.typeDatas + 1] = singleTable
   end
   table.sort(self.typeDatas, function(a, b)
@@ -202,6 +212,7 @@ end
 
 function SkadaSettingView:LoadCurSettings()
   local furnitureData = HomeProxy.Instance:FindFurnitureData(self.myFurnitureID)
+  self.curSettingType = furnitureData and furnitureData.woodType or SettingType.Custom
   local curSettingID = furnitureData and furnitureData.woodRace
   local cells = self.listRace:GetCells()
   if curSettingID then
@@ -233,6 +244,9 @@ function SkadaSettingView:LoadCurSettings()
     end
   end
   curSettingID = furnitureData and furnitureData.woodBossType or 0
+  if self.curSettingType == SettingType.Player then
+    curSettingID = BossType.Player
+  end
   cells = self.listType:GetCells()
   if curSettingID then
     for i = 1, #cells do
@@ -244,7 +258,6 @@ function SkadaSettingView:LoadCurSettings()
   end
   self:SetNatureLv(furnitureData and furnitureData.woodNatureLv or 1)
   self:SetPower(furnitureData and furnitureData.woodDamageReduce or 1)
-  self.curSettingType = furnitureData and furnitureData.woodType or SettingType.Custom
   self.curMonsterId = furnitureData and furnitureData.woodMonsterId or 0
 end
 
@@ -278,6 +291,11 @@ function SkadaSettingView:ClickType(cellCtl)
   end
   self.curTypeCell = cellCtl
   self.curTypeCell:SetIsSelect(true)
+  if self.curTypeCell.id == BossType.Player then
+    self.curSettingType = SettingType.Player
+  else
+    self.curSettingType = SettingType.Custom
+  end
 end
 
 function SkadaSettingView:SetPower(configIndex)
@@ -374,7 +392,7 @@ function SkadaSettingView:ClickBtnSave()
   if newSetting and newSetting ~= oldSetting then
     isDirty = true
   end
-  if self.curSettingType == SettingType.Custom then
+  if self.curSettingType ~= SettingType.Boss then
     self.curMonsterId = 0
   end
   newSetting = self.curMonsterId
@@ -405,7 +423,7 @@ end
 function SkadaSettingView:SelectSettingType(type)
   self.curSettingType = type
   local x, y, z = LuaGameObject.GetLocalPositionGO(self.btnSave)
-  if type == SettingType.Custom then
+  if type == SettingType.Custom or type == SettingType.Player then
     self.customBtnSp.CurrentState = 1
     self.bossBtnSp.CurrentState = 0
     self.customBtnLabel.color = SelectedLabelCol

@@ -64,6 +64,40 @@ GameConfig.ArtifactType = {
     [488] = "背饰"
   }
 }
+GameConfig.ArtifactConsumable = {
+  ShopMainID = 1,
+  ShopRandomID = 2,
+  Random2HideShopItemID = {
+    [1907410] = 1907310,
+    [1907420] = 1907320,
+    [1907430] = 1907330,
+    [1907440] = 1907340,
+    [1907450] = 1907350
+  },
+  RandomWeight = {
+    [1907410] = 8,
+    [1907420] = 16,
+    [1907430] = 11,
+    [1907440] = 16,
+    [1907450] = 32
+  },
+  MemberAssembleInviteMsgID = 2697,
+  MemberAssembleUseFailedMsgID = 25524,
+  MemberAssembleAcceptFailedMsgID = 2699,
+  MemberAssembleWaitTime = 10,
+  MemberAssembleTransferRange = 3,
+  MemberAssembleMapMsgID = 2694,
+  PointIllusionBuffID = 12030,
+  PointIllusionMultiplier = 3,
+  PointIllusionDuration = 40,
+  PointIllusionMapMsgID = 2695,
+  PointTransferForbidMapMsgID = 2696,
+  PointTransferForbidNoticeMsgID = 2698,
+  PointTransferForbidDuration = 15,
+  PointTransferForbidMonsterID = 310080,
+  HeartOfFortressBuffID = 12010,
+  HeartOfFortressDuration = 30
+}
 GameConfig.AutoQuestCompleteItems = {
   6826,
   6827,
@@ -4129,6 +4163,7 @@ GameConfig.AbyssDragon = {
       Hard = 1
     }
   },
+  DragonDamageRank = {MaxCount = 3, RankTick = 10},
   StageDesc = {
     [1] = "前往[时空隙谷]抵御时空龙(1/2)",
     [2] = "前往[%s]抵御时空龙(2/2)",
@@ -18976,447 +19011,6 @@ GameConfig.CrackRaidReward = {
         22,
         23,
         24
-      },
-      battleTime = 1800
-    },
-    [7081] = {
-      groupId = 14,
-      difficulty = 1,
-      recommendLv = 135,
-      rewardA = 74101,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74010,
-      achieveIds = {
-        7,
-        8,
-        9
-      },
-      battleTime = 1800
-    },
-    [7082] = {
-      groupId = 14,
-      difficulty = 2,
-      recommendLv = 135,
-      rewardA = 74111,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74020,
-      achieveIds = {
-        7,
-        8,
-        9
-      },
-      battleTime = 1800
-    },
-    [7083] = {
-      groupId = 14,
-      difficulty = 3,
-      recommendLv = 135,
-      rewardA = 74112,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74030,
-      achieveIds = {
-        7,
-        8,
-        9
-      },
-      battleTime = 1800
-    },
-    [7084] = {
-      groupId = 15,
-      difficulty = 1,
-      recommendLv = 145,
-      rewardA = 74101,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74040,
-      achieveIds = {
-        4,
-        5,
-        6
-      },
-      battleTime = 1800
-    },
-    [7085] = {
-      groupId = 15,
-      difficulty = 2,
-      recommendLv = 145,
-      rewardA = 74121,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74050,
-      achieveIds = {
-        4,
-        5,
-        6
-      },
-      battleTime = 1800
-    },
-    [7086] = {
-      groupId = 15,
-      difficulty = 3,
-      recommendLv = 145,
-      rewardA = 74122,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74060,
-      achieveIds = {
-        4,
-        5,
-        6
-      },
-      battleTime = 1800
-    },
-    [7087] = {
-      groupId = 16,
-      difficulty = 1,
-      recommendLv = 160,
-      rewardA = 74101,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74070,
-      achieveIds = {
-        1,
-        2,
-        3
-      },
-      battleTime = 1800
-    },
-    [7088] = {
-      groupId = 16,
-      difficulty = 2,
-      recommendLv = 160,
-      rewardA = 74131,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74080,
-      achieveIds = {
-        1,
-        2,
-        3
-      },
-      battleTime = 1800
-    },
-    [7089] = {
-      groupId = 16,
-      difficulty = 3,
-      recommendLv = 160,
-      rewardA = 74132,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74090,
-      achieveIds = {
-        1,
-        2,
-        3
-      },
-      battleTime = 1800
-    },
-    [7090] = {
-      groupId = 9,
-      difficulty = 4,
-      recommendLv = 120,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74602,
-      achieveIds = {
-        10,
-        11,
-        12
-      },
-      battleTime = 1800
-    },
-    [7091] = {
-      groupId = 10,
-      difficulty = 4,
-      recommendLv = 120,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74612,
-      achieveIds = {
-        13,
-        14,
-        15
-      },
-      battleTime = 1800
-    },
-    [7092] = {
-      groupId = 11,
-      difficulty = 4,
-      recommendLv = 120,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74622,
-      achieveIds = {
-        16,
-        17,
-        18
-      },
-      battleTime = 1800
-    },
-    [7093] = {
-      groupId = 12,
-      difficulty = 4,
-      recommendLv = 120,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74632,
-      achieveIds = {
-        19,
-        20,
-        21
-      },
-      battleTime = 1800
-    },
-    [7094] = {
-      groupId = 13,
-      difficulty = 4,
-      recommendLv = 120,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74642,
-      achieveIds = {
-        22,
-        23,
-        24
-      },
-      battleTime = 1800
-    },
-    [7130] = {
-      groupId = 23,
-      difficulty = 1,
-      recommendLv = 130,
-      rewardA = 74531,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74865,
-      achieveIds = {
-        31,
-        32,
-        33
-      },
-      battleTime = 1800
-    },
-    [7131] = {
-      groupId = 23,
-      difficulty = 2,
-      recommendLv = 130,
-      rewardA = 74561,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74875,
-      rewardD = 0,
-      achieveIds = {
-        31,
-        32,
-        33
-      },
-      battleTime = 1800
-    },
-    [7132] = {
-      groupId = 23,
-      difficulty = 3,
-      recommendLv = 130,
-      rewardA = 74561,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74885,
-      rewardD = 0,
-      achieveIds = {
-        31,
-        32,
-        33
-      },
-      battleTime = 1800
-    },
-    [7133] = {
-      groupId = 23,
-      difficulty = 4,
-      recommendLv = 130,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74910,
-      achieveIds = {
-        31,
-        32,
-        33
-      },
-      battleTime = 1800
-    },
-    [7095] = {
-      groupId = 14,
-      difficulty = 4,
-      recommendLv = 160,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74662,
-      achieveIds = {
-        7,
-        8,
-        9
-      },
-      battleTime = 1800
-    },
-    [7096] = {
-      groupId = 15,
-      difficulty = 4,
-      recommendLv = 160,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74672,
-      achieveIds = {
-        4,
-        5,
-        6
-      },
-      battleTime = 1800
-    },
-    [7097] = {
-      groupId = 16,
-      difficulty = 4,
-      recommendLv = 160,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74682,
-      achieveIds = {
-        1,
-        2,
-        3
-      },
-      battleTime = 1800
-    },
-    [7098] = {
-      groupId = 17,
-      difficulty = 1,
-      recommendLv = 170,
-      rewardA = 74742,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74710,
-      achieveIds = {
-        25,
-        26,
-        27
-      },
-      battleTime = 1800
-    },
-    [7099] = {
-      groupId = 17,
-      difficulty = 2,
-      recommendLv = 170,
-      rewardA = 74743,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74720,
-      rewardD = 74715,
-      achieveIds = {
-        25,
-        26,
-        27
-      },
-      battleTime = 1800
-    },
-    [7100] = {
-      groupId = 17,
-      difficulty = 3,
-      recommendLv = 170,
-      rewardA = 74744,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74730,
-      rewardD = 74725,
-      achieveIds = {
-        25,
-        26,
-        27
-      },
-      battleTime = 1800
-    },
-    [7101] = {
-      groupId = 17,
-      difficulty = 4,
-      recommendLv = 170,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74843,
-      achieveIds = {
-        25,
-        26,
-        27
-      },
-      battleTime = 1800
-    },
-    [7102] = {
-      groupId = 18,
-      difficulty = 1,
-      recommendLv = 170,
-      rewardA = 74752,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74810,
-      achieveIds = {
-        28,
-        29,
-        30
-      },
-      battleTime = 1800
-    },
-    [7103] = {
-      groupId = 18,
-      difficulty = 2,
-      recommendLv = 170,
-      rewardA = 74753,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74820,
-      rewardD = 74815,
-      achieveIds = {
-        28,
-        29,
-        30
-      },
-      battleTime = 1800
-    },
-    [7104] = {
-      groupId = 18,
-      difficulty = 3,
-      recommendLv = 170,
-      rewardA = 74754,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74830,
-      rewardD = 74825,
-      achieveIds = {
-        28,
-        29,
-        30
-      },
-      battleTime = 1800
-    },
-    [7105] = {
-      groupId = 18,
-      difficulty = 4,
-      recommendLv = 170,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74853,
-      achieveIds = {
-        28,
-        29,
-        30
       },
       battleTime = 1800
     }
@@ -37723,6 +37317,22 @@ GameConfig.SkillType = {
   SummonCompanion = {
     type = "SummonCompanion",
     name = "主动技能"
+  },
+  GvgPointIllusion = {
+    type = "GvgPointIllusion",
+    name = "主动技能"
+  },
+  GvgHeartOfFortress = {
+    type = "GvgHeartOfFortress",
+    name = "主动技能"
+  },
+  GvgInviteTransferToMe = {
+    type = "GvgInviteTransferToMe",
+    name = "主动技能"
+  },
+  GvgPointForbidTransfer = {
+    type = "GvgPointForbidTransfer",
+    name = "主动技能"
   }
 }
 GameConfig.NormalSerialSkills = {
@@ -38542,7 +38152,7 @@ GameConfig.SkillInherit = {
       MaxLvPoint = 3
     },
     [3] = {
-      Point = 7,
+      Point = 6,
       LvUpCost = {
         60,
         10,
@@ -38555,7 +38165,7 @@ GameConfig.SkillInherit = {
         140,
         200
       },
-      MaxLvPoint = 6
+      MaxLvPoint = 5
     }
   }
 }
@@ -39688,7 +39298,7 @@ GameConfig.Team = {
   reply_kick_time = 20,
   mid_match_time = 20,
   mid_match_time_cd = 60,
-  Roguelike_maxmember = 3,
+  Roguelike_maxmember = 6,
   defaultQueryType = 0,
   chatTeamIntervalTime = 30,
   max_publish_time = 1800,
@@ -52031,6 +51641,10 @@ GameConfig.ActivityIntegration = {
   [69] = {
     ActivityIcon = "tab_icon_101",
     ActivityName = "彩虹巡游"
+  },
+  [67] = {
+    ActivityIcon = "tab_icon_101",
+    ActivityName = "付费签到"
   }
 }
 GameConfig.Altman = {
@@ -54344,6 +53958,28 @@ GameConfig.PaySign = {
     entryBgTexture = "recall_bg_bottom",
     isfree = 1,
     ShopInfo = {DepositID = 400001}
+  },
+  [12011] = {
+    activityIcon = "tab_icon_122",
+    activityName = "庆典宝库",
+    noviceMode = false,
+    entryDesc1 = "庆典宝库",
+    entryDesc2 = "",
+    entryDesc3 = "累积登录领好礼",
+    entryBgTexture = "recall_bg_bottom",
+    isfree = 1,
+    ShopInfo = {DepositID = 400024}
+  },
+  [12012] = {
+    activityIcon = "tab_icon_122",
+    activityName = "情人节宝库",
+    noviceMode = false,
+    entryDesc1 = "情人节宝库",
+    entryDesc2 = "",
+    entryDesc3 = "累积登录领好礼",
+    entryBgTexture = "recall_bg_bottom",
+    isfree = 1,
+    ShopInfo = {DepositID = 400025}
   }
 }
 GameConfig.Doll = {
@@ -57114,6 +56750,24 @@ GameConfig.LocalActivity = {
       Param = {PlotId = "40036"},
       RestrictMap = {109}
     }
+  },
+  CycleActivityList = {
+    [1] = {
+      RunTime = {
+        Day = {
+          5,
+          6,
+          7
+        },
+        StartTime = "19:00",
+        EndTime = "21:00",
+        Interval = 300,
+        Duration = 150
+      },
+      Type = "Plot_Action",
+      Param = {PlotId = "937477"},
+      RestrictMap = {1}
+    }
   }
 }
 GameConfig.GiftTimeLimit = {
@@ -59330,8 +58984,8 @@ GameConfig.ActivityPuzzle = {
       }
     }
   },
-  labelText = "联动拼图",
-  iconSprite = "tab_icon_dicheng_2"
+  labelText = "新春拼图",
+  iconSprite = "tab_icon_70"
 }
 GameConfig.ActivitySignIn = {
   [1] = {
@@ -60293,6 +59947,33 @@ GameConfig.AfricanPoring = {
       NormalFreeCount = {ctype = "day", count = 3},
       SecurityLotteryCount = 3,
       BestRewardID = 23350,
+      ShopType = 20364,
+      ShopId = 1
+    },
+    [105330] = {
+      ActivityIcon = "tab_icon_152",
+      ActivityName = "庆典转盘",
+      CoinID1 = 3007410,
+      CoinID2 = 3007411,
+      ResetCost = {ItemID = 151, ItemNum = 6},
+      NormalCost = {151, 6},
+      LotteryCost = {
+        [0] = {151, 6},
+        [1] = {151, 12},
+        [2] = {151, 12},
+        [3] = {151, 12},
+        [4] = {151, 12},
+        [5] = {151, 24},
+        [6] = {151, 24},
+        [7] = {151, 24},
+        [8] = {151, 48},
+        [9] = {151, 48},
+        [10] = {151, 48},
+        [11] = {151, 96}
+      },
+      NormalFreeCount = {ctype = "day", count = 3},
+      SecurityLotteryCount = 3,
+      BestRewardID = 23372,
       ShopType = 20364,
       ShopId = 1
     }
@@ -66757,8 +66438,15 @@ GameConfig.CommonMaterialsRaid = {
 GameConfig.GVGConfig.start_time = {
   {
     day = 4,
-    hour = 18,
-    min = 0
+    hour = 13,
+    min = 0,
+    timezoneid = 1
+  },
+  {
+    day = 4,
+    hour = 20,
+    min = 0,
+    timezoneid = 2
   },
   {
     day = 7,
@@ -67137,6 +66825,10 @@ GameConfig.ActivityIntegration = {
   [69] = {
     ActivityIcon = "tab_icon_101",
     ActivityName = "彩虹巡游"
+  },
+  [67] = {
+    ActivityIcon = "tab_icon_101",
+    ActivityName = "付费签到"
   }
 }
 GameConfig.Altman = {
@@ -69450,6 +69142,28 @@ GameConfig.PaySign = {
     entryBgTexture = "recall_bg_bottom",
     isfree = 1,
     ShopInfo = {DepositID = 400001}
+  },
+  [12011] = {
+    activityIcon = "tab_icon_122",
+    activityName = "庆典宝库",
+    noviceMode = false,
+    entryDesc1 = "庆典宝库",
+    entryDesc2 = "",
+    entryDesc3 = "累积登录领好礼",
+    entryBgTexture = "recall_bg_bottom",
+    isfree = 1,
+    ShopInfo = {DepositID = 400024}
+  },
+  [12012] = {
+    activityIcon = "tab_icon_122",
+    activityName = "情人节宝库",
+    noviceMode = false,
+    entryDesc1 = "情人节宝库",
+    entryDesc2 = "",
+    entryDesc3 = "累积登录领好礼",
+    entryBgTexture = "recall_bg_bottom",
+    isfree = 1,
+    ShopInfo = {DepositID = 400025}
   }
 }
 GameConfig.Doll = {
@@ -72220,6 +71934,24 @@ GameConfig.LocalActivity = {
       Param = {PlotId = "40036"},
       RestrictMap = {109}
     }
+  },
+  CycleActivityList = {
+    [1] = {
+      RunTime = {
+        Day = {
+          5,
+          6,
+          7
+        },
+        StartTime = "19:00",
+        EndTime = "21:00",
+        Interval = 300,
+        Duration = 150
+      },
+      Type = "Plot_Action",
+      Param = {PlotId = "937477"},
+      RestrictMap = {1}
+    }
   }
 }
 GameConfig.GiftTimeLimit = {
@@ -74436,8 +74168,8 @@ GameConfig.ActivityPuzzle = {
       }
     }
   },
-  labelText = "联动拼图",
-  iconSprite = "tab_icon_dicheng_2"
+  labelText = "新春拼图",
+  iconSprite = "tab_icon_70"
 }
 GameConfig.ActivitySignIn = {
   [1] = {
@@ -74596,6 +74328,28 @@ GameConfig.PaySign = {
     entryBgTexture = "recall_bg_bottom",
     isfree = 1,
     ShopInfo = {DepositID = 400033}
+  },
+  [12011] = {
+    activityIcon = "tab_icon_122",
+    activityName = "庆典宝库",
+    noviceMode = false,
+    entryDesc1 = "庆典宝库",
+    entryDesc2 = "",
+    entryDesc3 = "累积登录领好礼",
+    entryBgTexture = "recall_bg_bottom",
+    isfree = 1,
+    ShopInfo = {DepositID = 400035}
+  },
+  [12012] = {
+    activityIcon = "tab_icon_122",
+    activityName = "情人节宝库",
+    noviceMode = false,
+    entryDesc1 = "情人节宝库",
+    entryDesc2 = "",
+    entryDesc3 = "累积登录领好礼",
+    entryBgTexture = "recall_bg_bottom",
+    isfree = 1,
+    ShopInfo = {DepositID = 400036}
   }
 }
 GameConfig.DonationActivity = {
@@ -75561,6 +75315,33 @@ GameConfig.AfricanPoring = {
       NormalFreeCount = {ctype = "day", count = 3},
       SecurityLotteryCount = 3,
       BestRewardID = 23350,
+      ShopType = 20364,
+      ShopId = 1
+    },
+    [105330] = {
+      ActivityIcon = "tab_icon_152",
+      ActivityName = "庆典转盘",
+      CoinID1 = 3007410,
+      CoinID2 = 3007411,
+      ResetCost = {ItemID = 151, ItemNum = 6},
+      NormalCost = {151, 6},
+      LotteryCost = {
+        [0] = {151, 6},
+        [1] = {151, 12},
+        [2] = {151, 12},
+        [3] = {151, 12},
+        [4] = {151, 12},
+        [5] = {151, 24},
+        [6] = {151, 24},
+        [7] = {151, 24},
+        [8] = {151, 48},
+        [9] = {151, 48},
+        [10] = {151, 48},
+        [11] = {151, 96}
+      },
+      NormalFreeCount = {ctype = "day", count = 3},
+      SecurityLotteryCount = 3,
+      BestRewardID = 23372,
       ShopType = 20364,
       ShopId = 1
     }

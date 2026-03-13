@@ -2053,6 +2053,10 @@ function CreatureDataWithPropUserdata:ForbidMove()
   return self.props:GetPropByName("ForbidMove"):GetValue() > 0
 end
 
+function CreatureDataWithPropUserdata:GetDamReduceType()
+  return 0
+end
+
 function CreatureDataWithPropUserdata:DoConstruct(asArray, parts)
   self:SetAttackSpeed(1)
   self.bodyScale = self:GetDefaultScale()

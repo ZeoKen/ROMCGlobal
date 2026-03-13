@@ -140,10 +140,12 @@ function ServiceActivityCmdProxy:RecvStartGlobalActCmd(data)
       local activityID = data.id
       local startTime = data.starttime
       local endTime = data.endtime
+      local batchID = data.batch_id
       local activityData = {
         [1] = activityID,
         [2] = startTime,
-        [3] = endTime
+        [3] = endTime,
+        [4] = batchID
       }
       MiniROProxy.Instance:SetActivityData(activityData)
       FunctionActivity.Me():Launch(data.type, nil, data.starttime, data.endtime)
@@ -609,4 +611,9 @@ function ServiceActivityCmdProxy:RecvActCardLevelUpInfoSyncCmd(data)
   redlog("ServiceActivityCmdProxy:RecvActCardLevelUpInfoSyncCmd", data.act_id, data.info.used_discount_count)
   CardMakeProxy.Instance:SetCardUpgradeUsedDiscountCount(data.act_id, data.info.used_discount_count)
   self:Notify(ServiceEvent.ActivityCmdActCardLevelUpInfoSyncCmd, data)
+end
+
+function ServiceActivityCmdProxy:RecvPaySignSyncActCmd(data)
+  ActivityPaySignProxy.Instance:UpdatePaySignDatas(data.info)
+  self:Notify(ServiceEvent.ActivityCmdPaySignSyncActCmd, data)
 end

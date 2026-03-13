@@ -20,10 +20,10 @@ function NewSuperGvgRankCell:SetSpriteLab()
     return
   end
   local guildName = self.data:GetGuildName()
-  local gvgGroup = self.data:GetZoneId()
+  local battlelineStr = self.data:GetBattlelineStr()
   if self.data.serverId and self.data.serverId > 0 and GvgProxy.Instance:CheckDiffServerValid() then
-    self.guildNameGvgGroupLabSp:SetText(string.format(ZhString.NewGVG_GroupServerIDSP, guildName, self.data.serverId, gvgGroup))
+    self.guildNameGvgGroupLabSp:SetText(string.format(ZhString.NewGVG_GroupServerIDSP, guildName, self.data.serverId, battlelineStr))
   else
-    self.guildNameGvgGroupLabSp:SetText(string.format(ZhString.NewGVG_GroupIDSP, guildName, gvgGroup))
+    self.guildNameGvgGroupLabSp:SetText(string.format(ZhString.NewGVG_GroupIDSP, guildName, battlelineStr))
   end
 end

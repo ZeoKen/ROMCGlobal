@@ -117,7 +117,7 @@ function FunctionLoginTDSG:GetTDSG_ClientID()
   return AppBundleConfig.TDSG_Config[BundleID] or ""
 end
 
-function FunctionLoginTDSG:requestAuthGetUrlHost(novice)
+function FunctionLoginTDSG:requestAuthGetUrlHost()
   local phoneplat = ApplicationInfo.GetRunPlatformStr()
   local appPreVersion = CompatibilityVersion.appPreVersion
   local accToken = self:getToken()
@@ -125,77 +125,99 @@ function FunctionLoginTDSG:requestAuthGetUrlHost(novice)
   local version = self:getServerVersion()
   local plat = self:GetPlat()
   local clientCode = CompatibilityVersion.version
-  local url
   local macKey = self:GetTDSG_MacKey()
   local old_deviceId = self:GetOld_DeviceID()
   local new_deviceId = self:GetNew_DeviceID()
-  local host
-  if novice then
-    host = NetConfig.AuthHostNovice
-  else
-    host = NetConfig.NewAccessTokenAuthHost[1]
+  local hosts = NetConfig.NewAccessTokenAuthHost or {}
+  local hostCount = #hosts
+  if hostCount == 0 then
+    helplog("FunctionLoginTDSG:requestAuthGetUrlHost NewAccessTokenAuthHost is empty")
+    self.hasHandleResp = true
+    GameFacade.Instance:sendNotification(NewLoginEvent.StopShowWaitingView)
+    self:LoginDataHandler(FunctionLogin.AuthStatus.OherError, "", self.callback)
+    return
   end
-  url = string.format("%s/auth?sid=%s&p=%s&sver=%s&cver=%s&client_id=%s&mac_key=%s&lang=%s", host, accToken, plat, version, clientCode, self:GetTDSG_ClientID(), macKey, ApplicationInfo.GetSystemLanguage())
-  url = string.format("%s&old_deviceid=%s&new_deviceid=%s", url, old_deviceId, new_deviceId)
-  url = string.format("%s&appPreVersion=%s&phoneplat=%s", url, appPreVersion, phoneplat)
-  url = string.format("%s&ver=6.x", url)
-  url = self:HandleUrl(url, host)
-  local finger_print = BuglyManager.GetInstance():GetOneidData()
-  local form = WWWForm()
-  form:AddField("finger_print", finger_print)
-  OverseaHostHelper.lastAuthUrl = url
-  Debug.LogFormat("Oversea RequestAuthAccToken url : {0}", url)
-  local order = HttpWWWRequestOrder(url, NetConfig.HttpRequestTimeOut, form, false, true)
-  if order then
-    if novice then
-      self.hasHandleResp_Nov = false
-    else
-      self.hasHandleResp = false
+  
+  local function doRequest(hostIndex, lastErrorCode)
+    local host = hosts[hostIndex]
+    if not host or host == "" then
+      helplog("FunctionLoginTDSG:requestAuthGetUrlHost invalid host index:", hostIndex)
+      if hostIndex < hostCount then
+        doRequest(hostIndex + 1, lastErrorCode)
+      else
+        self.hasHandleResp = true
+        GameFacade.Instance:sendNotification(NewLoginEvent.StopShowWaitingView)
+        self:LoginDataHandler(lastErrorCode or FunctionLogin.AuthStatus.OherError, "", self.callback)
+      end
+      return
     end
-    order:SetCallBacks(function(response)
-      GameFacade.Instance:sendNotification(NewLoginEvent.StopShowWaitingView)
-      if novice then
-        self.hasHandleResp_Nov = true
+    local url = string.format("%s/auth?sid=%s&p=%s&sver=%s&cver=%s&client_id=%s&mac_key=%s&lang=%s", host, accToken, plat, version, clientCode, self:GetTDSG_ClientID(), macKey, ApplicationInfo.GetSystemLanguage())
+    url = string.format("%s&old_deviceid=%s&new_deviceid=%s", url, old_deviceId, new_deviceId)
+    url = string.format("%s&appPreVersion=%s&phoneplat=%s", url, appPreVersion, phoneplat)
+    url = string.format("%s&ver=6.x", url)
+    url = self:HandleUrl(url, host)
+    local finger_print = BuglyManager.GetInstance():GetOneidData()
+    local form = WWWForm()
+    form:AddField("finger_print", finger_print)
+    OverseaHostHelper.lastAuthUrl = url
+    helplog(" RequestAuthAccToken url ", url, hostIndex)
+    local order = HttpWWWRequestOrder(url, NetConfig.HttpRequestTimeOut, form, false, true)
+    if order then
+      self.hasHandleResp = false
+      order:SetCallBacks(function(response)
+        self.hasHandleResp = true
+        GameFacade.Instance:sendNotification(NewLoginEvent.StopShowWaitingView)
+        self:LoginDataHandler(NetConfig.ResponseCodeOk, response.resString, self.callback)
+      end, function(order)
+        helplog("FunctionLoginTDSG:requestAuthGetUrlHost timeout, hostIndex:", hostIndex, " host:", tostring(host))
+        local errorCode = FunctionLogin.AuthStatus.OverTime
+        if hostIndex < hostCount then
+          doRequest(hostIndex + 1, errorCode)
+        else
+          self.hasHandleResp = true
+          GameFacade.Instance:sendNotification(NewLoginEvent.StopShowWaitingView)
+          self:LoginDataHandler(errorCode, "", self.callback)
+        end
+      end, function(order)
+        local errorCode = FunctionLogin.AuthStatus.OherError
+        if nil ~= order and order.errorWraper then
+          errorCode = order.errorWraper.ErrorCode
+          local errorMsg = order.errorWraper.ErrorMessage
+          helplog("RequestAuthAccToken lerrorMsg:", errorMsg, " hostIndex:", hostIndex, " host:", tostring(host))
+        else
+          helplog("RequestAuthAccToken unknown error, hostIndex:", hostIndex, " host:", tostring(host))
+        end
+        if hostIndex < hostCount then
+          doRequest(hostIndex + 1, errorCode)
+        else
+          self.hasHandleResp = true
+          GameFacade.Instance:sendNotification(NewLoginEvent.StopShowWaitingView)
+          self:LoginDataHandler(errorCode, "", self.callback)
+        end
+      end)
+      Game.HttpWWWRequest:RequestByOrder(order)
+    else
+      helplog("FunctionLoginTDSG:requestAuthGetUrlHost create order failed, hostIndex:", hostIndex, " host:", tostring(host))
+      local errorCode = lastErrorCode or FunctionLogin.AuthStatus.OherError
+      if hostIndex < hostCount then
+        doRequest(hostIndex + 1, errorCode)
       else
         self.hasHandleResp = true
+        GameFacade.Instance:sendNotification(NewLoginEvent.StopShowWaitingView)
+        self:LoginDataHandler(errorCode, "", self.callback)
       end
-      self:LoginDataHandler(NetConfig.ResponseCodeOk, response.resString, self.callback, novice)
-    end, function(order)
-      if novice then
-        self.hasHandleResp_Nov = true
-      else
-        self.hasHandleResp = true
-      end
-      GameFacade.Instance:sendNotification(NewLoginEvent.StopShowWaitingView)
-      self:LoginDataHandler(FunctionLogin.AuthStatus.OverTime, "", self.callback, novice)
-    end, function(order)
-      if novice then
-        self.hasHandleResp_Nov = true
-      else
-        self.hasHandleResp = true
-      end
-      GameFacade.Instance:sendNotification(NewLoginEvent.StopShowWaitingView)
-      local errorCode = FunctionLogin.AuthStatus.OherError
-      if nil ~= order then
-        errorCode = order.errorWraper.ErrorCode
-        local errorMsg = order.errorWraper.ErrorMessage
-        helplog("RequestAuthAccToken lerrorMsg:", errorMsg)
-      end
-      self:LoginDataHandler(errorCode, "", self.callback, novice)
-    end)
-    Game.HttpWWWRequest:RequestByOrder(order)
+    end
   end
+  
+  doRequest(1, nil)
 end
 
-function FunctionLoginTDSG:RequestAuthAccToken(novice)
+function FunctionLoginTDSG:RequestAuthAccToken()
   FunctionTyrantdb.Instance:trackEvent("#GameAuthVerifyStart", nil)
   local accToken = self:getToken()
   if accToken then
     OverseaHostHelper:RefreshPriceInfo()
-    self:requestAuthGetUrlHost(false)
-    if self:EnableNoviceServer() then
-      self:requestAuthGetUrlHost(true)
-    end
+    self:requestAuthGetUrlHost()
   else
     MsgManager.ShowMsgByIDTable(1017, {
       FunctionLogin.ErrorCode.RequestAuthAccToken_NoneToken

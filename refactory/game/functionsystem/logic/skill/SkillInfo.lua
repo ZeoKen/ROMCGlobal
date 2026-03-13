@@ -2196,3 +2196,11 @@ end
 function SkillInfo:UseLeadUIEffect()
   return self.logicParam.leadUIEffect == 1
 end
+
+function SkillInfo:ReplaceIcon()
+  return self.logicParam.replace_icon ~= nil
+end
+
+function SkillInfo:GetReplaceIcon()
+  return self.logicParam.replace_icon
+end

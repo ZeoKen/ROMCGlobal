@@ -1,7 +1,6 @@
 autoImport("GvgDefenseData")
 autoImport("GvgSettleInfo")
 autoImport("GVGPointInfoData")
-autoImport("GVGGroupZone4Server")
 autoImport("GVGGroupZone")
 autoImport("NewGvgRankData")
 autoImport("GuildInfoForQuery")
@@ -120,7 +119,7 @@ function GvgProxy:ctor(proxyName, data)
   self:InitProxy()
 end
 
-GvgProxy.newGVGDebug = false
+GvgProxy.newGVGDebug = true
 
 function GvgProxy:Debug(...)
   if GvgProxy.newGVGDebug then
@@ -134,22 +133,12 @@ function GvgProxy.Print(msg)
   end
 end
 
-function GvgProxy.ClientGroupId(id)
-  return GvgProxy.Instance.server_group2client[id] or 0
+function GvgProxy:GetServerGroupIdByBattleline(id)
+  return self.battleLineId2ServerGroupId[id] or 0
 end
 
-function GvgProxy:GetServerGroupId(client_id)
-  if not self.serverGroupId then
-    self.serverGroupId = {}
-    for s, c in pairs(self.server_group2client) do
-      self.serverGroupId[c] = s
-    end
-  end
-  return self.serverGroupId[client_id] or 0
-end
-
-function GvgProxy.GetServerIdByGroupId(gId)
-  return gId // 10000
+function GvgProxy:GetBattlelineIdByServerGroup(id)
+  return self.serverGroupId2Battleline[id] or 0
 end
 
 function GvgProxy:InitProxy()
@@ -200,8 +189,8 @@ function GvgProxy:InitNewGVG()
     [EGvgState.Calm] = GvgProxy.OnEnterCalmState,
     [EGvgState.PerfectDefense] = GvgProxy.OnEnterPerfect
   }
-  self.server_group2client = {}
-  self.server_groupZoneList = {}
+  self.serverGroupId2Battleline = {}
+  self.battleLineId2ServerGroupId = {}
   self.groupZoneList = {}
   self.pointInfoMap = {}
   self.myGuildPoints = {}
@@ -303,9 +292,9 @@ function GvgProxy:GetWeekBattleCount()
 end
 
 function GvgProxy:ClearGroupZoneData()
-  _ArrayClear(self.server_groupZoneList)
   _ArrayClear(self.groupZoneList)
-  _TableClear(self.server_group2client)
+  _TableClear(self.serverGroupId2Battleline)
+  _TableClear(self.battleLineId2ServerGroupId)
   self.groupCnt = 0
 end
 
@@ -344,26 +333,23 @@ function GvgProxy:RecvQueryGvgZoneGroupGuildCCmd(data)
   end
   self:Debug("NewGVG 后端推送战线分组信息 infoCount ", #infos)
   GvgProxy.Print(infos)
-  for i = 1, #infos do
-    local server_group_zone = GVGGroupZone4Server.new(infos[i].groupid, infos[i].zoneids)
-    _ArrayPushBack(self.server_groupZoneList, server_group_zone)
+  self.groupCnt = #infos
+  local _server_group_id, _server_zoneids
+  for i = 1, self.groupCnt do
+    _server_group_id = infos[i].groupid
+    if not GuildProxy.CurrentServerGroupIDBase then
+      if _server_group_id >= GuildProxy.OldVersionServerGroupIDBase and _server_group_id < GuildProxy.NewVersionServerGroupIDBase then
+        GuildProxy.CurrentServerGroupIDBase = GuildProxy.OldVersionServerGroupIDBase
+      else
+        GuildProxy.CurrentServerGroupIDBase = GuildProxy.NewVersionServerGroupIDBase
+      end
+    end
+    _server_zoneids = infos[i].zoneids
+    local gvgGroupZoneData = GVGGroupZone.new(_server_group_id, _server_zoneids)
+    _ArrayPushBack(self.groupZoneList, gvgGroupZoneData)
+    self.serverGroupId2Battleline[_server_group_id] = gvgGroupZoneData.battleLineId
+    self.battleLineId2ServerGroupId[gvgGroupZoneData.battleLineId] = _server_group_id
   end
-  table.sort(self.server_groupZoneList, function(a, b)
-    return a.groupid < b.groupid
-  end)
-  local server_groups_beenSort = self.server_groupZoneList
-  self.groupCnt = #server_groups_beenSort
-  self:Debug("NewGVG 公会线分组数: ", self.groupCnt)
-  for i = 1, #server_groups_beenSort do
-    local groupid = server_groups_beenSort[i].groupid
-    self:Debug("NewGVG 战线分组id: ", groupid)
-    local zoneids = server_groups_beenSort[i].zoneids
-    self.groupZoneList[#self.groupZoneList + 1] = GVGGroupZone.new(groupid, zoneids, i)
-    self.server_group2client[groupid] = i
-  end
-  table.sort(self.groupZoneList, function(a, b)
-    return a.groupid < b.groupid
-  end)
   ServiceSceneUser3Proxy.Instance:CallGvgExcellectQueryUserCmd()
 end
 
@@ -401,7 +387,7 @@ function GvgProxy:GetCurMapGvgGroupDesc()
   local result = ""
   local groupId = self:GetCurMapGvgGroupID()
   if groupId and 0 < groupId then
-    result = string.format(ZhString.NewGVG_GroupID, GvgProxy.ClientGroupId(groupId))
+    result = GVGGroupZone.GetDisplayStr(groupId)
   end
   return result
 end
@@ -474,25 +460,8 @@ function GvgProxy:CheckIsCurMapGvgGroupID(groupid)
   return self:GetCurMapGvgGroupID() == groupid
 end
 
-function GvgProxy:GetGroupZoneList()
-  return self.groupZoneList
-end
-
 function GvgProxy:HasMoreGroupZone()
   return self.groupCnt and self.groupCnt > 1
-end
-
-function GvgProxy:CheckGroupValid(groupid)
-  if not self.groupZoneList then
-    return false
-  end
-  for i = 1, #self.groupZoneList do
-    local single = self.groupZoneList[i]
-    if single.groupid == groupid then
-      return true
-    end
-  end
-  return false
 end
 
 local _GLandfilterMap = {}
@@ -512,7 +481,7 @@ function GvgProxy:GetGLandGroupZoneFilter()
     _GLandfilterMap[myGuildGvgGroup * 1000] = ZhString.GLandStatusListView_Guild
   end
   for i = 1, #self.groupZoneList do
-    _GLandfilterMap[self.groupZoneList[i].server_groupid * 10000] = self.groupZoneList[i]:GetGroupIdStr()
+    _GLandfilterMap[self.groupZoneList[i].server_groupid * 10000] = self.groupZoneList[i]:GetDisplayStr()
   end
   return _GLandfilterMap
 end
@@ -757,6 +726,8 @@ function GvgProxy:ClearRank()
     self.historyRankList = nil
   end
   _ArrayClear(self.currentSeaonRankList)
+  _TableClear(self.historyRankBattlelineIdMap)
+  _ArrayClear(self.historyRankBattlelineIds)
 end
 
 function GvgProxy:HandleQueryHistoryGvgRank(data)
@@ -765,13 +736,19 @@ function GvgProxy:HandleQueryHistoryGvgRank(data)
     return
   end
   self.historyRankMap = {}
-  local _tempRankData
+  self.historyRankBattlelineIdMap = {}
+  self.historyRankBattlelineIds = {}
+  local _tempRankData, battlelineId
   for i = 1, #server_data do
     local season = server_data[i].season
     local seasonRanks = {}
     local championCnt = 0
     for j = 1, #server_data[i].infos do
       _tempRankData = NewGvgRankData.new(server_data[i].infos[j])
+      battlelineId = _tempRankData:GetBattlelineId()
+      if battlelineId and 0 < battlelineId then
+        self.historyRankBattlelineIdMap[battlelineId] = battlelineId
+      end
       if _tempRankData:IsTop3() then
         seasonRanks[#seasonRanks + 1] = _tempRankData
       end
@@ -781,6 +758,19 @@ function GvgProxy:HandleQueryHistoryGvgRank(data)
     end
     self.historyRankMap[season] = {seasonRanks, championCnt}
   end
+end
+
+function GvgProxy:GetHistoryRankRange()
+  if not self.historyRankBattlelineIdMap or not next(self.historyRankBattlelineIdMap) then
+    return
+  end
+  if not self.historyRankBattlelineIds or nil == next(self.historyRankBattlelineIds) then
+    TableUtil.HashToArray(self.historyRankBattlelineIdMap, self.historyRankBattlelineIds)
+  end
+  if self.historyRankBattlelineIds then
+    table.sort(self.historyRankBattlelineIds)
+  end
+  return self.historyRankBattlelineIds
 end
 
 function GvgProxy:GetGvgCurrentSeasonRankData()
@@ -1059,9 +1049,9 @@ function GvgProxy:GetCurMapStatueBattleGroupID()
   return id
 end
 
-function GvgProxy:GetCurMapStatueBattleClientGroupID()
+function GvgProxy:GetCurMapStatueBattleClientGroupStr()
   local id = self:GetCurMapStatueBattleGroupID()
-  return GvgProxy.ClientGroupId(id)
+  return GuildProxy.ParseServerGroupID(id)
 end
 
 function GvgProxy:GetNewStatueNpc()
@@ -1226,17 +1216,49 @@ function GvgProxy:ClearRuleGuildInfos()
   _TableClear(self.ruleGuild_Map)
 end
 
-function GvgProxy:IsInFightingTime()
-  return self.gvg_isopen
+function GvgProxy:CheckInLobbyGvgIsOpen()
+  return self.inLobby_gvg_isopen
 end
 
-function GvgProxy:SetGvgOpenTime(isOpen, starttime)
-  self.gvg_isopen = isOpen
-  self.gvg_opentime = starttime
+function GvgProxy:SetGvgOpenTimeInLobbyMap(open, starttime, timezone)
+  self:Debug("[NewGVG] 处于联通图时，请求服务器询问gvg开战时间及开战状态 open | starttime | timezone", open, starttime, timezone)
+  self.inLobby_gvg_isopen = open
+  self.inLobby_gvg_opentime = starttime
+  self.inLobby_gvg_timezone = timezone
 end
 
-function GvgProxy:GetGvgOpenTime()
-  return self.gvg_opentime
+function GvgProxy:GetGvgStartTimeByTimeZoneID(timezoneid)
+  if not self.staticStartTimeConfigMap then
+    self.staticStartTimeConfigMap = {}
+    local configs = GameConfig.GVGConfig.start_time
+    if configs then
+      local timezoneid = 0
+      for i = 1, #configs do
+        local config = configs[i]
+        if config.super ~= 1 then
+          timezoneid = config.timezoneid or 0
+          self.staticStartTimeConfigMap[timezoneid] = config
+        end
+      end
+    end
+  end
+  return self.staticStartTimeConfigMap[timezoneid]
+end
+
+function GvgProxy:GetGvgStartTimeStrByTimeZoneID(timezoneid)
+  local config = self:GetGvgStartTimeByTimeZoneID(timezoneid)
+  if not config then
+    return ""
+  end
+  local day = config.day or 0
+  local weekDay = ZhString["Week_Day_" .. tostring(day)] or ""
+  local hour = config.hour or 0
+  local min = config.min or 0
+  return string.format("%s %d:%02d", weekDay, hour, min)
+end
+
+function GvgProxy:GetInLobbyGvgOpenTime()
+  return self.inLobby_gvg_opentime
 end
 
 function GvgProxy:RecvGuildFireMetalHpFubenCmd(data)
@@ -1471,8 +1493,8 @@ end
 function GvgProxy:ClearRoadBlock()
 end
 
-function GvgProxy:UpdateCurMapGvgGroupId(id)
-  self.curMapGvgGroupId = id
+function GvgProxy:UpdateCurMapGvgGroupId(server_group_id)
+  self.curMapGvgGroupId = server_group_id
 end
 
 function GvgProxy:HandleRoadBlockChange(data)
@@ -2106,15 +2128,24 @@ end
 function GvgProxy:HandleSyncGvgLeaderPos(friend_leaders, enemy_leaders)
 end
 
-function GvgProxy:SetGvgOpenFireState(data)
+function GvgProxy:HandleGvgOpenFireState(data)
+  local server_timezoneid = data.timezoneid
+  GvgProxy.Instance:Debug("[NewGVG时区相关] 服务器同步GVG状态及时间 时区id:", server_timezoneid)
+  GvgProxy.Print(data)
+  local myGuildTimeZoneID = GuildProxy.Instance:GetMyGuildTimeZoneID()
+  if myGuildTimeZoneID ~= 0 and server_timezoneid and myGuildTimeZoneID ~= server_timezoneid then
+    GvgProxy.Instance:Debug("[NewGVG时区相关] 服务器同步GVG状态及时间 时区id不一致，忽略服务器同步结果")
+    return false
+  end
   self.gvgOpenFireState = data.fire or false
   self.gvgFireSettleTime = data.settle_time
   self.gvgStartTime = data.start_time
-  if self.gvgStartTime and self.gvgStartTime > 0 and self.gvgStartTime - ServerTime.CurServerTime() / 1000 <= 300 then
+  if self.gvgStartTime and 0 < self.gvgStartTime and self.gvgStartTime - ServerTime.CurServerTime() / 1000 <= 300 then
     RedTipProxy.Instance:UpdateRedTip(10773)
   end
-  self:Debug("[NewGVG] GvgOpenFireGuildCmd fire | settleTime ", self.gvgOpenFireState, os.date("%Y-%m-%d-%H-%M-%S", self.gvgFireSettleTime), os.date("%Y-%m-%d-%H-%M-%S", self.gvgStartTime))
+  self:Debug("[NewGVG] GvgOpenFireGuildCmd fire | settleTime | startTime", self.gvgOpenFireState, os.date("%Y-%m-%d-%H-%M-%S", self.gvgFireSettleTime), os.date("%Y-%m-%d-%H-%M-%S", self.gvgStartTime))
   self:ManualQuerySettleInfo()
+  return true
 end
 
 function GvgProxy:ManualQuerySettleInfo()

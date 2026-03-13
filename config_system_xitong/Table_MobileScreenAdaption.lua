@@ -1678,6 +1678,48 @@ Table_MobileScreenAdaption = {
     offset_left = 100,
     offset_bottom = 0,
     offset_right = 153
+  },
+  [81] = {
+    id = 81,
+    IsValid = 1,
+    DeviceInfo = "gts8u",
+    SpecialView = {
+      WebviewPanel = {
+        SavedInsets = {
+          40,
+          80,
+          20,
+          80
+        }
+      },
+      GuildBuildingMatSubmitCell = {InfoPosY = 20}
+    },
+    RotationType = 1,
+    offset_top = 0,
+    offset_left = 0,
+    offset_bottom = 0,
+    offset_right = 50
+  },
+  [82] = {
+    id = 82,
+    IsValid = 1,
+    DeviceInfo = "gts8u",
+    SpecialView = {
+      WebviewPanel = {
+        SavedInsets = {
+          40,
+          80,
+          20,
+          80
+        }
+      },
+      GuildBuildingMatSubmitCell = {InfoPosY = 20}
+    },
+    RotationType = 2,
+    offset_top = 0,
+    offset_left = 50,
+    offset_bottom = 0,
+    offset_right = 0
   }
 }
 Table_MobileScreenAdaption_fields = {

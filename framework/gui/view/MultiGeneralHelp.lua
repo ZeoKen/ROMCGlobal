@@ -30,7 +30,12 @@ function MultiGeneralHelp:SetToggle(index)
   for i = 1, #cells do
     cells[i]:SetActive(self.toggleIndex == i)
   end
-  self.contentLabel:SetText(self.datas[index].Desc)
+  if self.datas[index].id == 35290 then
+    local timeStr = GvgProxy.Instance:GetGvgTimeStr() or ""
+    self.contentLabel:SetText(string.format(self.datas[index].Desc, timeStr))
+  else
+    self.contentLabel:SetText(self.datas[index].Desc)
+  end
   self.contentScrollView:ResetPosition()
 end
 

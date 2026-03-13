@@ -37,7 +37,8 @@ InviteType = {
   NewbieCollegeFake = "NewbieCollegeFake",
   CustomRoom = "CustomRoom",
   AssistantInvite = "AssistantInvite",
-  LoveChallenge = "LoveChallenge"
+  LoveChallenge = "LoveChallenge",
+  GvgInviteTransferToMe = "GvgInviteTransferToMe"
 }
 
 function InviteConfirmCtl:ctor(go)

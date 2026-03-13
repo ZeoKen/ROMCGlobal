@@ -131,7 +131,6 @@ function GuildData:SetData(gdata)
     self:_updateCityGiveupCD(gdata.citygiveuptime)
     self:SetMembers(gdata.members)
     self:SetApplys(gdata.applys)
-    GvgProxy.Instance:Debug("NewGVG 自己公会zoneid : ", self.zoneid)
   end
 end
 
@@ -228,11 +227,6 @@ end
 
 function GuildData:GetCitys()
   return self.cityids
-end
-
-function GuildData:GetClientGvgGroup()
-  local group = self.battle_group or 0
-  return GvgProxy.ClientGroupId(group)
 end
 
 function GuildData:GetGiveupCityTime()
@@ -566,4 +560,13 @@ end
 function GuildData:GetOccupiedCityName()
   local config = self:GetOccupiedCityConfig()
   return config and config.Name or ""
+end
+
+function GuildData:GetGvgGroupID()
+  return self.battle_group or 0
+end
+
+function GuildData:GetTimeZoneID()
+  local timeZone = self.battle_group // 10000000
+  return timeZone
 end

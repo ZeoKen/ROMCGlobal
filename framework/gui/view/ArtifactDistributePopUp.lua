@@ -11,14 +11,23 @@ function ArtifactDistributePopUp:Init(parent)
 end
 
 function ArtifactDistributePopUp:InitView()
+  self.callBackWhenClickOtherPlace = self.gameObject:GetComponent(CallBackWhenClickOtherPlace)
+  if self.callBackWhenClickOtherPlace then
+    function self.callBackWhenClickOtherPlace.call()
+      self:CloseSelf()
+    end
+  end
   self.title = self:FindComponent("title", UILabel)
   self.distTog = self:FindGO("DistTog")
   self.distTog_Toggle = self:FindComponent("Tog", UIToggle, self.distTog)
   self.retrieveTog = self:FindGO("RetrieveTog")
   self.retrieveTog_Toggle = self:FindComponent("Tog", UIToggle, self.retrieveTog)
+  self.consumeTog = self:FindGO("ConsumeTog")
+  self.consumeTog_Toggle = self:FindComponent("Tog", UIToggle, self.consumeTog)
   self.toggles = {
     self.retrieveTog_Toggle,
-    self.distTog_Toggle
+    self.distTog_Toggle,
+    self.consumeTog_Toggle
   }
   self:AddClickEvent(self.distTog, function()
     self:SwitchPage(2)
@@ -26,14 +35,22 @@ function ArtifactDistributePopUp:InitView()
   self:AddClickEvent(self.retrieveTog, function()
     self:SwitchPage(1)
   end)
+  self:AddClickEvent(self.consumeTog, function()
+    self:SwitchPage(3)
+  end)
   local grid = self:FindGO("Wrap"):GetComponent(UIGrid)
   self.artifactCtrl = UIGridListCtrl.new(grid, ArtifactDistributeCell, "ArtifactDistributeCell")
   self.artifactCtrl:AddEventListener(MouseEvent.MouseClick, self.handleClickCellTog, self)
+  self.artifactCtrl:SetDisableDragIfFit()
   self.funcGrid = self:FindComponent("FuncGrid", UIGrid)
   self.confirmBtn = self:FindGO("ConfirmBtn")
   self.confirmBtn_Label = self:FindComponent("ConfirmLabel", UILabel, self.confirmBtn)
   self:AddClickEvent(self.confirmBtn, function()
     self:DoConfirm()
+  end)
+  self.changeBtn = self:FindGO("ChangeBtn")
+  self:AddClickEvent(self.changeBtn, function()
+    self:DoChange()
   end)
   self.noneTip = self:FindGO("NoneTip")
   self.noneTipLabel = self.noneTip:GetComponent(UILabel)
@@ -52,6 +69,7 @@ function ArtifactDistributePopUp:SwitchPage(pageIndex)
   self.pageIndex = pageIndex
   self.toggles[pageIndex].value = true
   self:UpdateView()
+  self.artifactCtrl:ResetPosition()
 end
 
 function ArtifactDistributePopUp:Option(cellctl)
@@ -96,6 +114,7 @@ end
 function ArtifactDistributePopUp:UpdateView()
   if self.artiData then
     local result = {}
+    local isDistributed = false
     if self.pageIndex == 1 then
       for i = 1, #self.artiData do
         if self.artiData[i].ownerID and self.artiData[i].ownerID ~= 0 then
@@ -104,16 +123,40 @@ function ArtifactDistributePopUp:UpdateView()
       end
     elseif self.pageIndex == 2 then
       for i = 1, #self.artiData do
-        if self.artiData[i].ownerID and self.artiData[i].ownerID == 0 then
+        if self.artiData[i].ownerID and self.artiData[i].ownerID == 0 and self.artiData[i].itemType ~= 106 then
           table.insert(result, self.artiData[i])
+        end
+      end
+    elseif self.pageIndex == 3 then
+      for i = 1, #self.artiData do
+        if self.artiData[i].ownerID and self.artiData[i].ownerID == 0 and self.artiData[i].itemType == 106 then
+          table.insert(result, self.artiData[i])
+        end
+        if self.artiData[i].ownerID and self.artiData[i].ownerID ~= 0 and self.artiData[i].itemType == 106 then
+          isDistributed = true
         end
       end
     end
     self.artifactCtrl:ResetDatas(result)
+    local cells = self.artifactCtrl:GetCells()
+    if self.pageIndex == 3 then
+      if 0 < #cells then
+        self.selectData = self.selectData or cells[1].data
+        for i = 1, #cells do
+          cells[i]:SetSelect(cells[i].data == self.selectData)
+          cells[i]:SetCheckBtn(false)
+        end
+      end
+    else
+      for i = 1, #cells do
+        cells[i]:SetSelect(false)
+        cells[i]:SetCheckBtn(true)
+      end
+    end
     self.noneTip:SetActive(#result == 0)
-    if self.pageIndex == 2 then
+    if self.pageIndex == 2 or self.pageIndex == 3 then
       self.confirmBtn_Label.text = ZhString.ArtifactMake_Dist
-      self.title.text = ZhString.ArtifactMake_ChooseDistTarget
+      self.title.text = self.pageIndex == 2 and ZhString.ArtifactMake_ChooseDistEquip or ZhString.ArtifactMake_ChooseDistConsume
       self.noneTipLabel.text = ZhString.ArtifactMake_DistEmpty
       self.checkBtn.gameObject:SetActive(false)
       self.checkBtn.value = false
@@ -123,7 +166,8 @@ function ArtifactDistributePopUp:UpdateView()
       self.noneTipLabel.text = ZhString.ArtifactMake_RetrieveEmpty
       self.checkBtn.gameObject:SetActive(#result ~= 0 and true or false)
     end
-    self.confirmBtn:SetActive(#result ~= 0)
+    self.confirmBtn:SetActive(#result ~= 0 and not isDistributed)
+    self.changeBtn:SetActive(isDistributed)
   end
   self.funcGrid:Reposition()
 end
@@ -134,17 +178,29 @@ end
 function ArtifactDistributePopUp:DoConfirm()
   local hasChange = false
   local optList = {}
-  local cells = self.artifactCtrl:GetCells()
-  if cells and 0 < #cells then
-    for i = 1, #cells do
-      if cells[i].checkBtn.value then
-        hasChange = true
-        local data = cells[i].data
-        local optType = data.Phase
-        if not optList[optType] then
-          optList[optType] = {}
+  if self.pageIndex == 3 then
+    if self.selectData then
+      hasChange = true
+      local data = self.selectData
+      local optType = data.Phase
+      if not optList[optType] then
+        optList[optType] = {}
+      end
+      table.insert(optList[optType], data.guid)
+    end
+  else
+    local cells = self.artifactCtrl:GetCells()
+    if cells and 0 < #cells then
+      for i = 1, #cells do
+        if cells[i].checkBtn.value then
+          hasChange = true
+          local data = cells[i].data
+          local optType = data.Phase
+          if not optList[optType] then
+            optList[optType] = {}
+          end
+          table.insert(optList[optType], data.guid)
         end
-        table.insert(optList[optType], data.guid)
       end
     end
   end
@@ -169,6 +225,26 @@ function ArtifactDistributePopUp:DoConfirm()
   end
 end
 
+function ArtifactDistributePopUp:DoChange()
+  xdlog("更换")
+  if self.pageIndex ~= 3 then
+    return
+  end
+  if not self.selectData then
+    return
+  end
+  local optList = {}
+  local optType = self.selectData.Phase
+  if not optList[optType] then
+    optList[optType] = {}
+  end
+  table.insert(optList[optType], self.selectData.guid)
+  MsgManager.ConfirmMsgByID(3813, function()
+    ServiceGuildCmdProxy:CallArtifactOptGuildCmd(optType, optList[optType], self.charID)
+    self:CloseSelf()
+  end, nil, nil)
+end
+
 function ArtifactDistributePopUp:DoRestrieveAll()
   xdlog("收回所有")
   local status = self.checkBtn.value
@@ -183,6 +259,12 @@ end
 function ArtifactDistributePopUp:handleClickCellTog(cellCtrl)
   if self.pageIndex == 1 then
     self:ResetCheckBtn()
+  elseif self.pageIndex == 3 then
+    local cells = self.artifactCtrl:GetCells()
+    for i = 1, #cells do
+      cells[i]:SetSelect(cells[i] == cellCtrl)
+    end
+    self.selectData = cellCtrl.data
   end
 end
 
@@ -200,5 +282,9 @@ function ArtifactDistributePopUp:ResetCheckBtn()
 end
 
 function ArtifactDistributePopUp:OnExit()
+  if self.callBackWhenClickOtherPlace then
+    self.callBackWhenClickOtherPlace.call = nil
+    self.callBackWhenClickOtherPlace = nil
+  end
   ArtifactDistributePopUp.super.OnExit(self)
 end

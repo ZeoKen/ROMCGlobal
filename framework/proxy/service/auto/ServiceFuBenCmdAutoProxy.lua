@@ -513,6 +513,9 @@ function ServiceFuBenCmdAutoProxy:onRegister()
   self:Listen(11, 181, function(data)
     self:RecvGvgDateBattleInfoSyncCmd(data)
   end)
+  self:Listen(11, 186, function(data)
+    self:RecvGvgInviteTransferToMeCmd(data)
+  end)
 end
 
 function ServiceFuBenCmdAutoProxy:CallTrackFuBenUserCmd(data, dmapid, endtime)
@@ -1473,7 +1476,7 @@ function ServiceFuBenCmdAutoProxy:CallGuildFireRestartFubenCmd()
   end
 end
 
-function ServiceFuBenCmdAutoProxy:CallGuildFireStatusFubenCmd(open, starttime, cityid, cityopen)
+function ServiceFuBenCmdAutoProxy:CallGuildFireStatusFubenCmd(open, starttime, cityid, cityopen, timezoneid)
   if not NetConfig.PBC then
     local msg = FuBenCmd_pb.GuildFireStatusFubenCmd()
     if open ~= nil then
@@ -1488,6 +1491,9 @@ function ServiceFuBenCmdAutoProxy:CallGuildFireStatusFubenCmd(open, starttime, c
     msg.cityid = cityid
     if cityopen ~= nil then
       msg.cityopen = cityopen
+    end
+    if timezoneid ~= nil then
+      msg.timezoneid = timezoneid
     end
     self:SendProto(msg)
   else
@@ -1505,6 +1511,9 @@ function ServiceFuBenCmdAutoProxy:CallGuildFireStatusFubenCmd(open, starttime, c
     msgParam.cityid = cityid
     if cityopen ~= nil then
       msgParam.cityopen = cityopen
+    end
+    if timezoneid ~= nil then
+      msgParam.timezoneid = timezoneid
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -8441,6 +8450,41 @@ function ServiceFuBenCmdAutoProxy:CallGvgDateBattleInfoSyncCmd(battle_type, deat
   end
 end
 
+function ServiceFuBenCmdAutoProxy:CallGvgInviteTransferToMeCmd(host, start_time, wait_time, reply)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.GvgInviteTransferToMeCmd()
+    if host ~= nil then
+      msg.host = host
+    end
+    if start_time ~= nil then
+      msg.start_time = start_time
+    end
+    if wait_time ~= nil then
+      msg.wait_time = wait_time
+    end
+    if reply ~= nil then
+      msg.reply = reply
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.GvgInviteTransferToMeCmd.id
+    local msgParam = {}
+    if host ~= nil then
+      msgParam.host = host
+    end
+    if start_time ~= nil then
+      msgParam.start_time = start_time
+    end
+    if wait_time ~= nil then
+      msgParam.wait_time = wait_time
+    end
+    if reply ~= nil then
+      msgParam.reply = reply
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceFuBenCmdAutoProxy:RecvTrackFuBenUserCmd(data)
   self:Notify(ServiceEvent.FuBenCmdTrackFuBenUserCmd, data)
 end
@@ -9105,6 +9149,10 @@ function ServiceFuBenCmdAutoProxy:RecvGvgDateBattleInfoSyncCmd(data)
   self:Notify(ServiceEvent.FuBenCmdGvgDateBattleInfoSyncCmd, data)
 end
 
+function ServiceFuBenCmdAutoProxy:RecvGvgInviteTransferToMeCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdGvgInviteTransferToMeCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.FuBenCmdTrackFuBenUserCmd = "ServiceEvent_FuBenCmdTrackFuBenUserCmd"
 ServiceEvent.FuBenCmdFailFuBenUserCmd = "ServiceEvent_FuBenCmdFailFuBenUserCmd"
@@ -9272,3 +9320,4 @@ ServiceEvent.FuBenCmdFairyTaleRaidGetRewardCmd = "ServiceEvent_FuBenCmdFairyTale
 ServiceEvent.FuBenCmdSyncMemoryEquipRewardInfo = "ServiceEvent_FuBenCmdSyncMemoryEquipRewardInfo"
 ServiceEvent.FuBenCmdChooseMemoryEquipRewardInfo = "ServiceEvent_FuBenCmdChooseMemoryEquipRewardInfo"
 ServiceEvent.FuBenCmdGvgDateBattleInfoSyncCmd = "ServiceEvent_FuBenCmdGvgDateBattleInfoSyncCmd"
+ServiceEvent.FuBenCmdGvgInviteTransferToMeCmd = "ServiceEvent_FuBenCmdGvgInviteTransferToMeCmd"

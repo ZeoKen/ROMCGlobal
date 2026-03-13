@@ -26,7 +26,8 @@ function DayloginNewbiePanel.CanShow()
   local validActivityIDs = {}
   if hotPotIcon then
     for k, v in pairs(hotPotIcon) do
-      if v.redtip and GameConfig.FestivalSignin[k] and (not GameConfig.FestivalSignin[k].Newbie or GameConfig.FestivalSignin[k].Newbie ~= 1) then
+      local config = DailyLoginProxy.Instance:GetFestivalSigninConfig(k)
+      if v.redtip and config and (not config.Newbie or config.Newbie ~= 1) then
         table.insert(validActivityIDs, k)
       end
     end

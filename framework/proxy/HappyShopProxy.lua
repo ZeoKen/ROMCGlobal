@@ -12,7 +12,8 @@ HappyShopProxy.LimitType = {
   AccMonth = SessionShop_pb.ESHOPLIMITTYPE_ACC_MONTH,
   GuildMaterialWeek = SessionShop_pb.ESHOPLIMITTYPE_GUILD_MATERIAL_MAXCOUNT,
   UserAlways = SessionShop_pb.ESHOPLIMITTYPE_USER_ALWAYS,
-  GVGSeasonLimit = SessionShop_pb.ESHOPLIMITTYPE_GVG_SEASON
+  GVGSeasonLimit = SessionShop_pb.ESHOPLIMITTYPE_GVG_SEASON,
+  EveryGVGLimit = SessionShop_pb.ESHOPLIMITTYPE_EVERY_GVG
 }
 HappyShopProxy.SourceType = {
   User = SessionShop_pb.ESHOPSOURCE_USER,
@@ -104,6 +105,9 @@ function HappyShopProxy:InitShopData(shopType)
     for k, v in pairs(config) do
       if not v.menuHide then
         TableUtility.ArrayPushBack(self.shopItems, k)
+      end
+      if v:CheckLimitType(self.LimitType.EveryGVGLimit) then
+        self:CachedHaveBoughtItemCount(k, v.sum_count or 0)
       end
     end
     table.sort(self.shopItems, HappyShopProxy._SortItem)
@@ -467,6 +471,8 @@ function HappyShopProxy:GetTodayCanBuyCountStr(data)
       repStr = ZhString.HappyShop_AccUserWeekCanBuy
     elseif limitType == HappyShopProxy.LimitType.GVGSeasonLimit then
       repStr = ZhString.HappyShop_SeasonCanBuy
+    elseif limitType == HappyShopProxy.LimitType.EveryGVGLimit then
+      repStr = ZhString.HappyShop_EveryGVGLimit
     end
     if repStr then
       local maxLimitStr = ""
@@ -489,6 +495,7 @@ function HappyShopProxy:GetCanBuyCount(data)
   local isGuildMaterial = data:CheckLimitType(self.LimitType.GuildMaterialWeek)
   local isUserAlways = data:CheckLimitType(self.LimitType.UserAlways)
   local isGVGSeason = data:CheckLimitType(self.LimitType.GVGSeasonLimit)
+  local isEveryGVGLimit = data:CheckLimitType(self.LimitType.EveryGVGLimit)
   local myGuildData = GuildProxy.Instance.myGuildData
   if myGuildData and isGuildMaterial then
     local limitCount = GuildBuildingProxy.Instance:GetGuildMaterialLimitCount()
@@ -496,7 +503,7 @@ function HappyShopProxy:GetCanBuyCount(data)
       return limitCount - myGuildData.material_machine_count, self.LimitType.GuildMaterialWeek
     end
   end
-  if data.LimitNum ~= 0 and (isOneDay or isAccUser or isAccUserAlways or isUserWeek or isAccWeek or isAccMonth or isUserAlways or isGVGSeason) then
+  if data.LimitNum ~= 0 and (isOneDay or isAccUser or isAccUserAlways or isUserWeek or isAccWeek or isAccMonth or isUserAlways or isGVGSeason or isEveryGVGLimit) then
     local boughtCount = 0
     local haveBoughtItemCount = self:GetCachedHaveBoughtItemCount()
     if haveBoughtItemCount ~= nil then
@@ -522,6 +529,8 @@ function HappyShopProxy:GetCanBuyCount(data)
       return count, self.LimitType.UserAlways
     elseif isGVGSeason then
       return count, self.LimitType.GVGSeasonLimit
+    elseif isEveryGVGLimit then
+      return count, self.LimitType.EveryGVGLimit
     end
   end
   return nil
@@ -786,6 +795,10 @@ function HappyShopProxy:RecvBuyShopItem(data)
   local shopData = ShopProxy.Instance:GetShopDataByTypeId(self.shopType, self.params)
   if shopData then
     shopData:UpdateGiftState(data.id, data.success)
+    local shopItemData = shopData:GetGoods()[data.id]
+    if shopItemData and shopItemData:CheckLimitType(self.LimitType.EveryGVGLimit) then
+      self:CachedHaveBoughtItemCount(data.id, data.count or 0)
+    end
   end
 end
 

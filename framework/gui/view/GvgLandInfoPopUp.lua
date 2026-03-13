@@ -87,7 +87,7 @@ function GvgLandInfoPopUp:UpdatePopUp()
     self.guildLevel.text = ZhString.GvgLandInfoPopUp_None
     self.guildHeadCell:SetData()
   end
-  if GvgProxy.Instance:IsInFightingTime() then
+  if GvgProxy.Instance:CheckInLobbyGvgIsOpen() then
     self.fightButton_label.text = ZhString.GvgLandInfoPopUp_JoinFight
   else
     self.fightButton_label.text = ZhString.GvgLandInfoPopUp_EnterArea
@@ -110,7 +110,7 @@ function GvgLandInfoPopUp:UpdateFightState(note)
   end
   self.buttons:SetActive(open)
   self.noOpenTip:SetActive(not open)
-  if GvgProxy.Instance:IsInFightingTime() then
+  if GvgProxy.Instance:CheckInLobbyGvgIsOpen() then
     self:ActiveFightButton(true)
   else
     self:ActiveFightButton(false)
@@ -132,8 +132,8 @@ function GvgLandInfoPopUp:UpdateFightState(note)
     self.errorTip.text = ZhString.GvgLandInfoPopUp_MyLandTip
     return
   end
-  if not GvgProxy.Instance:IsInFightingTime() then
-    local openTime = GvgProxy.Instance:GetGvgOpenTime()
+  if not GvgProxy.Instance:CheckInLobbyGvgIsOpen() then
+    local openTime = GvgProxy.Instance:GetInLobbyGvgOpenTime()
     local timeDateInfo = os.date("*t", openTime)
     self.errorTip.text = string.format(ZhString.GvgLandInfoPopUp_OpenTip, timeDateInfo.month, timeDateInfo.day, timeDateInfo.hour)
     return
@@ -166,7 +166,8 @@ function GvgLandInfoPopUp:OnEnter()
   self:UpdatePopUp()
   self.hideDownInfo = self.viewdata.viewdata.hide_downinfo
   self:ActiveDownInfo(self.hideDownInfo ~= true)
-  ServiceFuBenCmdProxy.Instance:CallGuildFireStatusFubenCmd(nil, nil, self.flagid)
+  local myGuildTimeZoneID = GuildProxy.Instance:GetMyGuildTimeZoneID()
+  ServiceFuBenCmdProxy.Instance:CallGuildFireStatusFubenCmd(nil, nil, self.flagid, myGuildTimeZoneID)
 end
 
 function GvgLandInfoPopUp:OnExit()

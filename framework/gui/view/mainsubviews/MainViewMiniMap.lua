@@ -345,6 +345,9 @@ function MainViewMiniMap:ClickNearlyCell(cellCtl)
       tempArgs.targetPos = cellCtl.pos
       tempArgs.showClickGround = true
       tempArgs.allowExitPoint = true
+      if cellCtl.access_range then
+        tempArgs.access_range = cellCtl.access_range
+      end
       local cmd = MissionCommandFactory.CreateCommand(tempArgs, MissionCommandMove)
       if cmd then
         Game.Myself:TryUseQuickRide()
@@ -894,6 +897,9 @@ function MainViewMiniMap:UpdateNearlyCreature(tog, forceUpdate)
           data:SetParama("nextSceneID", edata.nextSceneID)
           data:SetParama("index", i)
           data:SetPos(edata.position[1], edata.position[2], edata.position[3])
+          if edata.range then
+            data:SetParama("access_range", edata.range)
+          end
           if edata.nextSceneID == 0 then
             if _InnerTransShow[curMap] and _InnerTransShow[curMap][i] then
               xdlog("特殊地图配置")

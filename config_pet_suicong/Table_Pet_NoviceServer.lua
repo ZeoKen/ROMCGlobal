@@ -899,6 +899,7 @@ Table_Pet = {
   },
   [500140] = {
     id = 500140,
+    Name = "白犬·天照",
     PetFriend = 5,
     HobbyItem = Table_Pet_t.HobbyItem[8],
     ComPetItemValue = 2000,
@@ -1927,7 +1928,6 @@ Table_Pet = {
   },
   [501040] = {
     id = 501040,
-    Name = "墓碑怪人",
     PetFriend = 5,
     Star = 2,
     EggID = 900198,
@@ -2216,7 +2216,7 @@ local cell_mt = {
     EquipFake = _EmptyTable,
     EquipID = _EmptyTable,
     HobbyItem = _EmptyTable,
-    Name = "白犬·天照",
+    Name = "墓碑怪人",
     PetFriend = 3,
     Skill_1 = _EmptyTable,
     Skill_2 = _EmptyTable,

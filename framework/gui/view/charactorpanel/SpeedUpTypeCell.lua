@@ -17,6 +17,7 @@ function SpeedUpTypeCell:FindObjs()
   self.sp = self.gameObject:GetComponent(UISprite)
   self.select = self:FindGO("select")
   self.ratioLabel = self:FindComponent("ratio", UILabel)
+  self.ratioLabel.gameObject:SetActive(false)
   self:AddCellClickEvent()
 end
 

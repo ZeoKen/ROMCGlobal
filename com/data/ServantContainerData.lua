@@ -376,13 +376,14 @@ function ServantContainerData:GetWeekDisplayData(includeConsole)
     end
   end
   local weekData = ServantCalendarProxy.Instance:GetCurWeekData()
-  local minValue, maxValue = ServantCalendarProxy.Instance:GetMinMaxTimeGap(weekData)
-  if minValue and maxValue then
-    for i = minValue, maxValue do
-      if nil == self.weekActiveData[i] then
+  local activeTimePoints = ServantCalendarProxy.Instance:GetActiveTimePoints(weekData)
+  if 0 < #activeTimePoints then
+    for i = 1, #activeTimePoints do
+      local timePoint = activeTimePoints[i]
+      if nil == self.weekActiveData[timePoint] then
         intervalData[#intervalData + 1] = {}
       else
-        intervalData[#intervalData + 1] = self.weekActiveData[i]
+        intervalData[#intervalData + 1] = self.weekActiveData[timePoint]
       end
     end
   end

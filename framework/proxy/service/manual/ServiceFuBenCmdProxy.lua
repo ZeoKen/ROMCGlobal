@@ -144,7 +144,7 @@ function ServiceFuBenCmdProxy:RecvGuildFireNewDefFubenCmd(data)
 end
 
 function ServiceFuBenCmdProxy:RecvGuildFireStatusFubenCmd(data)
-  GvgProxy.Instance:SetGvgOpenTime(data.open, data.starttime)
+  GvgProxy.Instance:SetGvgOpenTimeInLobbyMap(data.open, data.starttime, data.timezoneid)
   self:Notify(ServiceEvent.FuBenCmdGuildFireStatusFubenCmd, data)
 end
 

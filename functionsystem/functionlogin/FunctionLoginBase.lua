@@ -36,9 +36,6 @@ function FunctionLoginBase:EnableNoviceServer()
   else
     self.EnableNovServer = GameConfig.TFOpenNovServer == 1
   end
-  if BranchMgr.IsNOEN() then
-    self.EnableNovServer = true
-  end
   return self.EnableNovServer
 end
 

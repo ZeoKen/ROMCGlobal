@@ -105,7 +105,7 @@ function GVGPortalView:RebuildHelpData(helpid)
       helpData.rebuild = true
     elseif helpid == 35290 then
       local timeStr = GvgProxy.Instance:GetGvgTimeStr() or ""
-      helpData.Desc = string.format(helpData.Desc, timeStr)
+      helpData.Desc = BranchMgr.IsChina() and string.format(helpData.Desc, timeStr) or helpData.Desc
       helpData.rebuild = true
     end
   end

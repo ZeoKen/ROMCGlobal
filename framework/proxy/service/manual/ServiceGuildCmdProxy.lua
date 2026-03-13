@@ -414,14 +414,15 @@ end
 
 function ServiceGuildCmdProxy:RecvUpdateMapCityGuildCmd(data)
   helplog("[Debug 旗帜] Recv--> UpdateMapCityGuildCmd")
-  TableUtil.Print(data)
   GvgProxy.Instance:UpdateLobbyMapCityGuild(data)
   self:Notify(ServiceEvent.GuildCmdUpdateMapCityGuildCmd, data)
 end
 
 function ServiceGuildCmdProxy:RecvGvgOpenFireGuildCmd(data)
-  GvgProxy.Instance:SetGvgOpenFireState(data)
-  self:Notify(ServiceEvent.GuildCmdGvgOpenFireGuildCmd, data)
+  GvgProxy.Instance:Debug("[NewGVG] RecvGvgOpenFireGuildCmd fire | settleTime | startTime | timezoneId", data.fire, data.settle_time, data.start_time, data.timezoneid)
+  if GvgProxy.Instance:HandleGvgOpenFireState(data) then
+    self:Notify(ServiceEvent.GuildCmdGvgOpenFireGuildCmd, data)
+  end
 end
 
 function ServiceGuildCmdProxy:RecvEnterPunishTimeNtfGuildCmd(data)

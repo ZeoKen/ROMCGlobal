@@ -7,7 +7,8 @@ function MiniRORewardView:InitWrap()
   if activityData == nil then
     return
   end
-  local turnCount = #activityData.featureData.circleRewards
+  local circleRewards = MiniROProxy.Instance:GetCircleRewards()
+  local turnCount = #circleRewards
   local container = self:FindGO("ItemContainer")
   local wrapConfig = {
     wrapObj = container,
@@ -29,9 +30,10 @@ function MiniRORewardView:UpdateView()
   else
     TableUtility.TableClear(self.listData)
   end
-  local turnCount = #activityData.featureData.circleRewards
+  local circleRewards = MiniROProxy.Instance:GetCircleRewards()
+  local turnCount = #circleRewards
   for i = 1, turnCount do
-    local listRewardId = activityData.featureData.circleRewards[i]
+    local listRewardId = circleRewards[i]
     local data = {}
     data[1] = i
     data[2] = string.format(ZhString.MiniRORewardCellTitle, i)

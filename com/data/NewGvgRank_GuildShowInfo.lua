@@ -21,5 +21,6 @@ function NewGvgRank_GuildShowInfo:ctor(gid, data)
     self.gvgGroup = data.gvg_group or 0
     self.serverId = data.serverid
   end
+  self.battlelineStr, _, _, self.battleLineId = GuildProxy.ParseServerGroupID(self.gvgGroup, true)
   GvgProxy.Instance:SetDiffServer(self.serverId)
 end

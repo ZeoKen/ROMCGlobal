@@ -202,7 +202,7 @@ function LogicManager_Creature_Props:UpdateSolo(ncreature, propName, oldValue, p
 end
 
 function LogicManager_Creature_Props:UpdateEnsemble(ncreature, propName, oldValue, p)
-  ncreature:Server_SetSolo(p:GetValue())
+  ncreature:Server_SetEnsemble(p:GetValue())
 end
 
 function LogicManager_Creature_Props:UpdateDefAttr(ncreature, propName, oldValue, p)

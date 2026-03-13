@@ -272,6 +272,36 @@ Table_UserEffectInfo = {
     VideoPath = "6V6S2_Kill03.mp4",
     SoundEffectPath = "UI/UI_6V6_Defeat",
     Item = 706
+  },
+  [31] = {
+    id = 31,
+    Type = 2,
+    EffectPath = {
+      "Common/cfx_K22_PVP_win_01_prf"
+    },
+    VideoPath = "6V6S3_Kill01.mp4",
+    SoundEffectPath = "UI/UI_6V6_Defeat",
+    Item = 707
+  },
+  [32] = {
+    id = 32,
+    Type = 2,
+    EffectPath = {
+      "Common/cfx_K22_PVP_win_02_prf"
+    },
+    VideoPath = "6V6S3_Kill02.mp4",
+    SoundEffectPath = "UI/UI_6V6_Defeat",
+    Item = 708
+  },
+  [33] = {
+    id = 33,
+    Type = 2,
+    EffectPath = {
+      "Common/cfx_K22_PVP_win_03_prf"
+    },
+    VideoPath = "6V6S3_Kill03.mp4",
+    SoundEffectPath = "UI/UI_6V6_Defeat",
+    Item = 709
   }
 }
 Table_UserEffectInfo_fields = {

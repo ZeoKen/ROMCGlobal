@@ -15,15 +15,101 @@ function DailyLoginProxy:Init()
   self.hotPotIcon = {}
   self.activeSignIn = {}
   self.globalActivityData = {}
+  self.activityMonthMap = {}
+end
+
+function DailyLoginProxy:GetFestivalSigninConfig(activityId)
+  if Table_FestivalSignin then
+    local month = self.activityMonthMap[activityId]
+    if month then
+      for id, config in pairs(Table_FestivalSignin) do
+        if config.ActID == activityId and config.Month == month then
+          return config, true
+        end
+      end
+    else
+      for id, config in pairs(Table_FestivalSignin) do
+        if config.ActID == activityId and config.Month == nil then
+          return config, true
+        end
+      end
+    end
+  end
+  if GameConfig.FestivalSignin and GameConfig.FestivalSignin[activityId] then
+    return GameConfig.FestivalSignin[activityId], false
+  end
+  return nil, false
+end
+
+function DailyLoginProxy:GetSigninReward(activityId, day, sex)
+  local config, isNewConfig = self:GetFestivalSigninConfig(activityId)
+  if not config or not config.SigninReward then
+    return nil
+  end
+  local rewardData = config.SigninReward[day]
+  if not rewardData then
+    return nil
+  end
+  if isNewConfig then
+    local rewards = rewardData
+    if sex == 2 and config.SigninRewardFemale and config.SigninRewardFemale[day] then
+      rewards = config.SigninRewardFemale[day]
+    end
+    return rewards
+  elseif sex == 2 and rewardData.FemaleItem then
+    return rewardData.FemaleItem
+  else
+    return rewardData.Item
+  end
+end
+
+function DailyLoginProxy:GetAllFestivalSigninIds()
+  local allIds = {}
+  if Table_FestivalSignin then
+    for id, config in pairs(Table_FestivalSignin) do
+      if type(id) == "number" and config.ActID and config.Month then
+        local month = self.activityMonthMap[config.ActID]
+        if month and month == config.Month then
+          allIds[id] = config.ActID
+        end
+      elseif config.Month == nil then
+        allIds[id] = config.ActID
+      end
+    end
+  end
+  if GameConfig.FestivalSignin then
+    for k, v in pairs(GameConfig.FestivalSignin) do
+      if type(k) == "number" then
+        allIds[k] = k
+      end
+    end
+  end
+  return allIds
 end
 
 function DailyLoginProxy:StartAct(data)
   local id = data.id
-  if not self.globalActivityData[id] then
+  if not self.globalActivityData[id] or self.globalActivityData[id].batch_id ~= data.batch_id then
     self.globalActivityData[id] = {
       starttime = data.starttime,
-      endtime = data.endtime
+      endtime = data.endtime,
+      batch_id = data.batch_id
     }
+  end
+  if data.batch_id then
+    local batch_id_str = tostring(data.batch_id)
+    if #batch_id_str == 8 then
+      local month = tonumber(string.sub(batch_id_str, 5, 6))
+      if month and 1 <= month and month <= 12 then
+        self.activityMonthMap[id] = month
+        xdlog("活动月份记录", id, month, batch_id_str)
+      else
+        redlog("无效的月份", id, batch_id_str, month)
+      end
+    else
+      redlog("batch_id格式错误", id, batch_id_str)
+    end
+    self:UpdateRedtips()
   end
 end
 
@@ -91,6 +177,7 @@ function DailyLoginProxy:RecvDaySigninActivityCmd(data)
         redtip = single.redtip,
         endtime = single.end_time
       }
+      xdlog("DaySigninActivityCm活动入口开启", single.activityid, single.redtip, single.end_time)
     end
   end
   self:UpdateRedtips()
@@ -107,9 +194,9 @@ function DailyLoginProxy:isNoviceLoginOpen()
   if not self.hotPotIcon then
     return false
   end
-  local config = GameConfig.FestivalSignin
   for k, v in pairs(self.hotPotIcon) do
-    if config[k] and config[k].Newbie and config[k].Newbie == 1 then
+    local config = self:GetFestivalSigninConfig(k)
+    if config and config.Newbie and config.Newbie == 1 then
       local endTime = v.endtime
       if endTime and endTime > ServerTime.CurServerTime() / 1000 then
         return true, v.activityid
@@ -123,13 +210,13 @@ function DailyLoginProxy:UpdateRedtips()
   if not self.hotPotIcon then
     return
   end
-  local config = GameConfig.FestivalSignin
   local redtipID = SceneTip_pb.EREDSYS_SIGNACTIVITY_NORMAL
   local addSubTipIDs = {}
   local removeSubTipIDs = {}
   local hasMainRedTip = false
   for k, v in pairs(self.hotPotIcon) do
-    if config[k] and (not config[k].Newbie or config[k].Newbie ~= 1) and v.redtip then
+    local config = self:GetFestivalSigninConfig(k)
+    if config and (not config.Newbie or config.Newbie ~= 1) and v.redtip then
       table.insert(addSubTipIDs, k)
       hasMainRedTip = true
     else

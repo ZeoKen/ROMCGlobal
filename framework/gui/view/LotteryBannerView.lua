@@ -121,8 +121,13 @@ function LotteryBannerView:UpdateView()
   if styleConfig and curStyle then
     self.title.text = styleConfig.Name
     if not (BranchMgr.IsJapan() and styleConfig.JPShowTime) or styleConfig.JPShowTime == "" then
-      local _, monthS, dayS = curStyle.validDate:match(DateStr)
-      local _, monthE, dayE = curStyle.validEnd:match(DateStr)
+      local monthS, dayS, monthE, dayE
+      local dateTableS = os.date("*t", curStyle.validDate)
+      monthS = dateTableS.month
+      dayS = dateTableS.day
+      local dateTableE = os.date("*t", curStyle.validEnd)
+      monthE = dateTableE.month
+      dayE = dateTableE.day
       self.duration.text = string.format(ZhString.LotteryBanner_Duration, monthS, dayS, monthE, dayE)
       self.cardTime.text = string.format(ZhString.LotteryBanner_CardDuration, monthS, dayS, monthE, dayE)
     else

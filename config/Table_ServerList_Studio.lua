@@ -750,31 +750,6 @@ Table_ServerList_Studio = {
   },
   [61] = {
     id = 61,
-    name = "##1060470",
-    type = 2,
-    serverid = 10066,
-    servertype = "",
-    state = 1,
-    serverip = {
-      "172.26.31.209"
-    },
-    port = 8888
-  },
-  [62] = {
-    id = 62,
-    name = "##1060473",
-    type = 2,
-    serverid = 10066,
-    servertype = "",
-    state = 1,
-    linegroup = 2,
-    serverip = {
-      "172.26.31.209"
-    },
-    port = 8888
-  },
-  [63] = {
-    id = 63,
     name = "##3470087",
     type = 2,
     serverid = 10066,
@@ -785,8 +760,8 @@ Table_ServerList_Studio = {
     },
     port = 8888
   },
-  [64] = {
-    id = 64,
+  [62] = {
+    id = 62,
     name = "##1060472",
     type = 2,
     serverid = 10067,
@@ -797,8 +772,8 @@ Table_ServerList_Studio = {
     },
     port = 8888
   },
-  [65] = {
-    id = 65,
+  [63] = {
+    id = 63,
     name = "##1060471",
     type = 2,
     serverid = 10067,
@@ -810,8 +785,8 @@ Table_ServerList_Studio = {
     },
     port = 8888
   },
-  [66] = {
-    id = 66,
+  [64] = {
+    id = 64,
     name = "##1304506",
     type = 2,
     serverid = 10067,
@@ -823,8 +798,8 @@ Table_ServerList_Studio = {
     },
     port = 8888
   },
-  [67] = {
-    id = 67,
+  [65] = {
+    id = 65,
     name = "##3349661",
     type = 2,
     serverid = 10067,
@@ -836,8 +811,8 @@ Table_ServerList_Studio = {
     },
     port = 8888
   },
-  [68] = {
-    id = 68,
+  [66] = {
+    id = 66,
     name = "##280522",
     type = 2,
     serverid = 10068,
@@ -848,8 +823,8 @@ Table_ServerList_Studio = {
     },
     port = 8888
   },
-  [69] = {
-    id = 69,
+  [67] = {
+    id = 67,
     name = "##3349662",
     type = 2,
     serverid = 10068,
@@ -861,8 +836,8 @@ Table_ServerList_Studio = {
     },
     port = 8888
   },
-  [70] = {
-    id = 70,
+  [68] = {
+    id = 68,
     name = "##2816017",
     type = 2,
     serverid = 10068,
@@ -874,8 +849,8 @@ Table_ServerList_Studio = {
     },
     port = 8888
   },
-  [71] = {
-    id = 71,
+  [69] = {
+    id = 69,
     name = "##3501929",
     type = 2,
     serverid = 10071,
@@ -886,8 +861,8 @@ Table_ServerList_Studio = {
     },
     port = 8888
   },
-  [72] = {
-    id = 72,
+  [70] = {
+    id = 70,
     name = "##3501930",
     type = 2,
     serverid = 10081,
@@ -898,8 +873,8 @@ Table_ServerList_Studio = {
     },
     port = 8888
   },
-  [73] = {
-    id = 73,
+  [71] = {
+    id = 71,
     name = "##3501931",
     type = 2,
     serverid = 10082,
@@ -910,8 +885,8 @@ Table_ServerList_Studio = {
     },
     port = 8888
   },
-  [74] = {
-    id = 74,
+  [72] = {
+    id = 72,
     name = "##3501932",
     type = 2,
     serverid = 10083,

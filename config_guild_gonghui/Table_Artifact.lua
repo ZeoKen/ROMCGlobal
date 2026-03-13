@@ -1292,7 +1292,6 @@ Table_Artifact = {
   },
   [41898] = {
     id = 41898,
-    Name = "##1242157",
     NextLevelID = 0,
     Type = 9,
     Level = 4,
@@ -1472,6 +1471,7 @@ Table_Artifact = {
   },
   [47368] = {
     id = 47368,
+    Name = "##42628062",
     Type = 120,
     Level = 4,
     BuildingType = 6,
@@ -1631,7 +1631,7 @@ local cell_mt = {
     DistributeCount = 999,
     Level = 1,
     Material = _EmptyTable,
-    Name = "##42628062",
+    Name = "##1242157",
     Type = 1,
     id = 47371
   }

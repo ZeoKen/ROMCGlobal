@@ -15,10 +15,6 @@ function ActivityBattlePassView:GetEndTime()
   return ActivityBattlePassProxy.Instance:GetEndTime(self.activityId)
 end
 
-function ActivityBattlePassView:GetWarningTime()
-  return GameConfig.ActivityBattlePass and GameConfig.ActivityBattlePass.WarningTime or 0
-end
-
 function ActivityBattlePassView:GetCurBPLevel()
   return ActivityBattlePassProxy.Instance:GetCurBPLevel(self.activityId)
 end
@@ -114,8 +110,11 @@ function ActivityBattlePassView:FindObjs()
   self.costLabel = self:FindComponent("num", UILabel, self.cost)
   self.costIcon = self:FindComponent("icon", UISprite, self.cost)
   if not self.isBasic then
-    IconManager:SetItemIconById(GameConfig.ActivityBattlePass[self.activityId].UpgradeItem, self.costIcon)
-    self.costLabel.text = GameConfig.ActivityBattlePass[self.activityId].UpgradePrice
+    local upgradeItem, upgradePrice = self:GetUpgradeItem()
+    if upgradeItem and upgradePrice then
+      IconManager:SetItemIconById(upgradeItem, self.costIcon)
+      self.costLabel.text = upgradePrice
+    end
   end
   self.receiveAllBtn = self:FindGO("onekeyBtn", self.rewardPanel)
   self:AddClickEvent(self.receiveAllBtn, function()
@@ -287,8 +286,8 @@ function ActivityBattlePassView:SetRewardPanel()
 end
 
 function ActivityBattlePassView:SetTaskTitle()
-  local gameConfig = GameConfig.ActivityBattlePass[self.activityId]
-  self.titleLabel.text = self.isTaskState and gameConfig.TaskTitle or gameConfig.Title
+  local title = self:GetTitle()
+  self.titleLabel.text = title or ""
 end
 
 function ActivityBattlePassView:RefreshRemainTimeLabel(remainTime)
@@ -344,13 +343,17 @@ function ActivityBattlePassView:SetLevelReward()
 end
 
 function ActivityBattlePassView:SetUpgradePanel()
-  self.upgradeTitle.text = GameConfig.ActivityBattlePass[self.activityId].UpgradeTitle
+  local upgradeTitle = self:GetUpgradeTitle()
+  self.upgradeTitle.text = upgradeTitle or ""
   local datas = ReusableTable.CreateArray()
   datas = self:GetProReward(datas)
   self.proItemList:ResetDatas(datas)
   ReusableTable.DestroyAndClearArray(datas)
-  IconManager:SetItemIconById(GameConfig.ActivityBattlePass[self.activityId].UpgradeItem, self.priceIcon)
-  self.priceLabel.text = GameConfig.ActivityBattlePass[self.activityId].UpgradePrice
+  local upgradeItem, upgradePrice = self:GetUpgradeItem()
+  if upgradeItem and upgradePrice then
+    IconManager:SetItemIconById(upgradeItem, self.priceIcon)
+    self.priceLabel.text = upgradePrice
+  end
 end
 
 function ActivityBattlePassView:OpenUpgradePanel()
@@ -390,15 +393,17 @@ end
 
 function ActivityBattlePassView:OnBuyBtnClick()
   local myCatGold = MyselfProxy.Instance:GetLottery()
-  local needCatGold = GameConfig.ActivityBattlePass[self.activityId].UpgradePrice
-  if myCatGold < needCatGold then
-    MsgManager.ConfirmMsgByID(3551, function()
-      FunctionNewRecharge.Instance():OpenUI(PanelConfig.NewRecharge_TDeposit)
-    end)
-  else
-    OverseaHostHelper:GachaUseComfirm(needCatGold, function()
-      self:ShopItemPurchase()
-    end)
+  local _, needCatGold = self:GetUpgradeItem()
+  if needCatGold then
+    if myCatGold < needCatGold then
+      MsgManager.ConfirmMsgByID(3551, function()
+        FunctionNewRecharge.Instance():OpenUI(PanelConfig.NewRecharge_TDeposit)
+      end)
+    else
+      OverseaHostHelper:GachaUseComfirm(needCatGold, function()
+        self:ShopItemPurchase()
+      end)
+    end
   end
 end
 
@@ -429,8 +434,10 @@ function ActivityBattlePassView:OnBuyLevelBtnClick()
 end
 
 function ActivityBattlePassView:ShopItemPurchase()
-  local shopId = GameConfig.ActivityBattlePass[self.activityId].ShopId
-  ServiceSessionShopProxy.Instance:CallBuyShopItem(shopId, 1)
+  local shopId = self:GetShopId()
+  if shopId then
+    ServiceSessionShopProxy.Instance:CallBuyShopItem(shopId, 1)
+  end
   self:CloseUpgradePanel()
 end
 
@@ -693,4 +700,65 @@ function ActivityBattlePassView:Invoke_DepositConfirmPanel(cb)
       end
     end)
   end
+end
+
+function ActivityBattlePassView:GetUpgradeItem()
+  local upgradeItem, upgradePrice
+  local config = Table_ActivityNew and Table_ActivityNew[self.activityId] and Table_ActivityNew[self.activityId].Misc
+  if config then
+    upgradeItem = config.ProPrice and config.ProPrice.itemid
+    upgradePrice = config.ProPrice and config.ProPrice.num
+  else
+    upgradeItem = GameConfig.ActivityBattlePass[self.activityId].UpgradeItem
+    upgradePrice = GameConfig.ActivityBattlePass[self.activityId].UpgradePrice
+  end
+  if not upgradeItem or not upgradePrice then
+    redlog("无购买进阶版配置，请检查ActivityNew表的Misc或GameConfig.ActivityBattlePass，activityId: " .. self.activityId)
+  end
+  return upgradeItem, upgradePrice
+end
+
+function ActivityBattlePassView:GetTitle()
+  local title
+  local config = Table_ActivityNew and Table_ActivityNew[self.activityId]
+  if config then
+    title = config.TitleName
+  else
+    local gameConfig = GameConfig.ActivityBattlePass and GameConfig.ActivityBattlePass[self.activityId]
+    if gameConfig then
+      title = self.isTaskState and gameConfig.TaskTitle or gameConfig.Title
+    end
+  end
+  if not title then
+    redlog("无标题配置，请检查ActivityNew表的TitleName或GameConfig.ActivityBattlePass，activityId: " .. self.activityId)
+  end
+  return title
+end
+
+function ActivityBattlePassView:GetUpgradeTitle()
+  local upgradeTitle
+  local config = Table_ActivityNew and Table_ActivityNew[self.activityId]
+  if config then
+    upgradeTitle = config.TitleName
+  else
+    upgradeTitle = GameConfig.ActivityBattlePass and GameConfig.ActivityBattlePass[self.activityId] and GameConfig.ActivityBattlePass[self.activityId].UpgradeTitle
+  end
+  if not upgradeTitle then
+    redlog("无进阶版标题配置，请检查ActivityNew表的TitleName或GameConfig.ActivityBattlePass，activityId: " .. self.activityId)
+  end
+  return upgradeTitle
+end
+
+function ActivityBattlePassView:GetShopId()
+  local shopId
+  local config = Table_ActivityNew and Table_ActivityNew[self.activityId] and Table_ActivityNew[self.activityId].Misc
+  if config then
+    shopId = config.ShopItemId
+  else
+    shopId = GameConfig.ActivityBattlePass and GameConfig.ActivityBattlePass[self.activityId] and GameConfig.ActivityBattlePass[self.activityId].ShopId
+  end
+  if not shopId then
+    redlog("无购买进阶版ShopId，请检查ActivityNew表的Misc或GameConfig.ActivityBattlePass，activityId: " .. self.activityId)
+  end
+  return shopId
 end

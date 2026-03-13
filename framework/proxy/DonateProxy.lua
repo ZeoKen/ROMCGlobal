@@ -12,29 +12,26 @@ function DonateProxy:ctor(proxyName, data)
   if data ~= nil then
     self:setData(data)
   end
-  self:ProcessActivityId()
+  self.npcFuncMap = {}
   self.activityMap = {}
 end
 
-function DonateProxy:ProcessActivityId()
-  self.npcFuncMap = {}
-  local gameConfig_Donate = GameConfig.Donate
-  if not gameConfig_Donate then
-    return
-  end
-  for k, v in pairs(gameConfig_Donate) do
-    self.npcFuncMap[v.npcfunction] = k
-  end
-end
-
-function DonateProxy:AddActivity(actType, id, startTime, endTime)
-  local activityData = self.activityMap[id]
+function DonateProxy:AddActivity(actType, actId, startTime, endTime)
+  local activityData = self.activityMap[actId]
   if not activityData then
     activityData = ActivityData.new(actType, nil, startTime, endTime)
-    self.activityMap[id] = activityData
+    self.activityMap[actId] = activityData
+    local npcFuncId = Table_ActivityNew[actId] and Table_ActivityNew[actId].Misc and Table_ActivityNew[actId].Misc.npcfunction
+    if npcFuncId then
+      self.npcFuncMap[npcFuncId] = actId
+    end
   else
     activityData:UpdateInfo(nil, startTime, endTime)
   end
+end
+
+function DonateProxy:GetActivityIDByNpcFunctionId(npcFunctionId)
+  return self.npcFuncMap[npcFunctionId]
 end
 
 function DonateProxy:CheckActivityValid(npcFunctionId)
@@ -55,8 +52,8 @@ function DonateProxy:InitByAct(npcFunctionId)
   if not activeId then
     return
   end
-  local gameConfigStatic = GameConfig.Donate[activeId]
-  if not gameConfigStatic then
+  local config = Table_ActivityNew[activeId]
+  if not config or not config.Misc then
     return
   end
   local cfgStatic = {}
@@ -67,9 +64,9 @@ function DonateProxy:InitByAct(npcFunctionId)
     end
   end
   self.curActivity = activeId
-  self.donateActivityName = gameConfigStatic.donate_name
-  self.donateTotalCount = gameConfigStatic.donate_limit
-  self.bgTex = gameConfigStatic.donate_background
+  self.donateActivityName = config.Misc.donate_name
+  self.donateTotalCount = config.Misc.donate_limit
+  self.bgTex = config.Misc.donate_background
   self.donateActivity = cfgStatic
 end
 
@@ -188,8 +185,31 @@ function DonateProxy:GetExchangeCount(activityid)
 end
 
 function DonateProxy:GetExchangeLimit(activityid)
-  if activityid and Table_ActPersonalTimer[activityid] and Table_ActPersonalTimer[activityid].Misc then
-    return Table_ActPersonalTimer[activityid].Misc.ExchangeNumPerDay
+  if not activityid then
+    return 0
+  end
+  local actConfig = Table_ActivityNew[activityid]
+  if actConfig and actConfig.Misc then
+    return actConfig.Misc.ExchangeNumPerDay
+  end
+  actConfig = Table_ActPersonalTimer[activityid]
+  if actConfig and actConfig.Misc then
+    return actConfig.Misc.ExchangeNumPerDay
   end
   return 0
+end
+
+function DonateProxy:GetActivityName(activityid)
+  if not activityid then
+    return ""
+  end
+  local actConfig = Table_ActivityNew[activityid]
+  if actConfig then
+    return actConfig.TitleName
+  end
+  actConfig = Table_ActPersonalTimer[activityid]
+  if actConfig then
+    return actConfig.Name
+  end
+  return ""
 end

@@ -654,6 +654,9 @@ function FunctionItemFunc.TryUseItem(data, target, count)
     return
   end
   if data:IsLimitUse() then
+    if sdata.Type == 106 then
+      MsgManager.ShowMsgByID(3795)
+    end
     return
   end
   if DungeonProxy.Instance:CheckRoguelikeItemUsable(sdata.id) then

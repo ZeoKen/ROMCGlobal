@@ -7733,6 +7733,54 @@ Table_Card = {
     ComposeCardType = 1,
     ForbidCards = _EmptyTable
   },
+  [23363] = {
+    id = 23363,
+    Name = "##3480569",
+    Quality = 4,
+    Position = 3,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_23363",
+    monsterID = {31390},
+    BuffEffect = {
+      buff = {58080}
+    },
+    NoShow = 1,
+    Weight = 0,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable,
+    ComposeCardType = 3,
+    MVPCardDecompose = 3,
+    SelectToForbid = 1,
+    ForbidCards = _EmptyTable
+  },
+  [23419] = {
+    id = 23419,
+    Name = "##42629599",
+    Quality = 4,
+    Position = 1,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_23430",
+    monsterID = {31529},
+    BuffEffect = {
+      buff = {59110, 59111}
+    },
+    NoShow = 1,
+    Weight = 0,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable,
+    ComposeCardType = 3,
+    MVPCardDecompose = 3,
+    SelectToForbid = 1,
+    ForbidCards = _EmptyTable
+  },
   [23442] = {
     id = 23442,
     Name = "##44705422",
@@ -11317,7 +11365,7 @@ Table_Card = {
     ForbidCards = {23016}
   }
 }
-Table_Card.MD5 = "--md5:{'primarymd5':'7e824fe70909c0e4450936d0435512fd'}"
+Table_Card.MD5 = "--md5:{'primarymd5':'bcb3476df3ccd1ff38a537766eaf6d2f'}"
 Table_Card_fields = {
   "id",
   "Name",

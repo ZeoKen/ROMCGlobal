@@ -156,11 +156,7 @@ function MiniROView:AddEvents()
       return
     end
     local featureData = activityData.featureData
-    if self.dice1Count < featureData.diceItem.normalMax then
-      ServiceActMiniRoCmdProxy.Instance:CallActMiniRoGetOneKey()
-    else
-      MsgManager.ShowMsgByID(41345)
-    end
+    ServiceActMiniRoCmdProxy.Instance:CallActMiniRoGetOneKey()
   end)
   self:AddButtonEvent("btnUseDirectDice", function(go)
     self.useDirectDice = not self.useDirectDice
@@ -295,12 +291,9 @@ function MiniROView:RefreshView()
     MiniROProxy.Instance:SetIsNewTurn(false)
   end
   self:RefreshDiceCount(featureData)
-  if self.dice1Count < featureData.diceItem.normalMax then
-  else
-    MsgManager.ShowMsgByID(41345)
-  end
-  if MiniROProxy.Instance:GetCurCompleteTurns() < #featureData.circleRewards then
-    self.txtRewardTip.text = string.format(ZhString.MiniRORewardTip1, MiniROProxy.Instance:GetCurCompleteTurns(), #featureData.circleRewards)
+  local circleRewards = MiniROProxy.Instance:GetCircleRewards()
+  if MiniROProxy.Instance:GetCurCompleteTurns() < #circleRewards then
+    self.txtRewardTip.text = string.format(ZhString.MiniRORewardTip1, MiniROProxy.Instance:GetCurCompleteTurns(), #circleRewards)
   else
     self.txtRewardTip.text = ZhString.MiniRORewardTip2
   end
@@ -317,13 +310,13 @@ function MiniROView:RefreshDiceCount(featureData, diceType)
   self.dice2Count = MiniROProxy.Instance:GetDiceCount(EACTMINIRODICETYPE.EACTMINIRODICETYPE_ASSIGN)
   if diceType then
     if diceType == EACTMINIRODICETYPE.EACTMINIRODICETYPE_NORMAL then
-      self.txtDice1Count.text = self.dice1Count .. "/" .. featureData.diceItem.normalMax
+      self.txtDice1Count.text = self.dice1Count
     elseif diceType == EACTMINIRODICETYPE.EACTMINIRODICETYPE_ASSIGN then
-      self.txtDice2Count.text = self.dice2Count .. "/" .. featureData.diceItem.advanceMax
+      self.txtDice2Count.text = self.dice2Count
     end
   else
-    self.txtDice1Count.text = self.dice1Count .. "/" .. featureData.diceItem.normalMax
-    self.txtDice2Count.text = self.dice2Count .. "/" .. featureData.diceItem.advanceMax
+    self.txtDice1Count.text = self.dice1Count
+    self.txtDice2Count.text = self.dice2Count
   end
 end
 

@@ -60,7 +60,7 @@ function ActivityBattlePassLevelRewardCell:SetData(data)
     local basicRewardItem = data.RewardItems[1]
     local proRewardItem = data.ProRewardItems[1]
     if not self.basicItemCell then
-      self.basicItemCell = self:SetRewardIcon(basicRewardItem, self.basicHolder)
+      self.basicItemCell = self:SetRewardIcon(basicRewardItem and basicRewardItem.itemid, basicRewardItem and basicRewardItem.num, self.basicHolder)
     else
       local data = self.basicItemCell.data
       data:ResetData(basicRewardItem.itemid, basicRewardItem.itemid)
@@ -68,7 +68,7 @@ function ActivityBattlePassLevelRewardCell:SetData(data)
       self.basicItemCell:SetData(data)
     end
     if not self.advItemCell then
-      self.advItemCell = self:SetRewardIcon(proRewardItem, self.advHolder)
+      self.advItemCell = self:SetRewardIcon(proRewardItem and proRewardItem.itemid, proRewardItem and proRewardItem.num, self.advHolder)
     else
       local data = self.advItemCell.data
       data:ResetData(proRewardItem.itemid, proRewardItem.itemid)
@@ -79,14 +79,14 @@ function ActivityBattlePassLevelRewardCell:SetData(data)
   end
 end
 
-function ActivityBattlePassLevelRewardCell:SetRewardIcon(data, holder)
-  if not data then
+function ActivityBattlePassLevelRewardCell:SetRewardIcon(itemid, num, holder)
+  if not itemid then
     return
   end
   local itemCell = ActivityBattlePassItemCell.new(holder)
   itemCell:AddCellClickEvent()
-  local itemData = ItemData.new(data.itemid, data.itemid)
-  itemData:SetItemNum(data.num)
+  local itemData = ItemData.new(itemid, itemid)
+  itemData:SetItemNum(num or 1)
   itemCell:SetData(itemData)
   return itemCell
 end
@@ -158,7 +158,7 @@ function ActivityBattlePassLevelRewardCell:UpdateBuyInfo()
       end
     end
   elseif self.data.ShopItemID then
-    local shopInfo = GameConfig.ActivityBattlePass and GameConfig.ActivityBattlePass[self.data.ActID] and GameConfig.ActivityBattlePass[self.data.ActID].ShopInfo
+    local shopInfo = self:GetShopInfo()
     if not shopInfo then
       redlog("未配置ShopInfo", self.data.ActID)
       return
@@ -217,5 +217,14 @@ function ActivityBattlePassLevelRewardCell:HandleClickRewardIcon(cellCtrl)
     else
       self:ShowItemTip(self.tipData, cellCtrl.icon, NGUIUtil.AnchorSide.Right, {280, 0})
     end
+  end
+end
+
+function ActivityBattlePassLevelRewardCell:GetShopInfo()
+  local config = Table_ActivityNew and Table_ActivityNew[self.activityId] and Table_ActivityNew[self.activityId].Misc
+  if config then
+    return config.ShopInfo
+  else
+    return GameConfig.ActivityBattlePass and GameConfig.ActivityBattlePass[self.activityId] and GameConfig.ActivityBattlePass[self.activityId].ShopInfo
   end
 end

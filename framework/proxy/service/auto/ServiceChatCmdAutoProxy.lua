@@ -1496,6 +1496,15 @@ function ServiceChatCmdAutoProxy:CallQueryItemData(guid, data)
       end
       msg.data.furniture.npc.monster_id = data.furniture.npc.monster_id
     end
+    if data.furniture.npc ~= nil and data.furniture.npc.damage_reduce_type ~= nil then
+      if msg.data.furniture == nil then
+        msg.data.furniture = {}
+      end
+      if msg.data.furniture.npc == nil then
+        msg.data.furniture.npc = {}
+      end
+      msg.data.furniture.npc.damage_reduce_type = data.furniture.npc.damage_reduce_type
+    end
     if data.attr ~= nil and data.attr.id ~= nil then
       if msg.data == nil then
         msg.data = {}
@@ -1888,6 +1897,15 @@ function ServiceChatCmdAutoProxy:CallQueryItemData(guid, data)
         msg.data.memory = {}
       end
       msg.data.memory.excess_lv = data.memory.excess_lv
+    end
+    if data.memory ~= nil and data.memory.guid ~= nil then
+      if msg.data == nil then
+        msg.data = {}
+      end
+      if msg.data.memory == nil then
+        msg.data.memory = {}
+      end
+      msg.data.memory.guid = data.memory.guid
     end
     if data ~= nil and data.memory.effects ~= nil then
       if msg.data.memory == nil then
@@ -3305,6 +3323,15 @@ function ServiceChatCmdAutoProxy:CallQueryItemData(guid, data)
       end
       msgParam.data.furniture.npc.monster_id = data.furniture.npc.monster_id
     end
+    if data.furniture.npc ~= nil and data.furniture.npc.damage_reduce_type ~= nil then
+      if msgParam.data.furniture == nil then
+        msgParam.data.furniture = {}
+      end
+      if msgParam.data.furniture.npc == nil then
+        msgParam.data.furniture.npc = {}
+      end
+      msgParam.data.furniture.npc.damage_reduce_type = data.furniture.npc.damage_reduce_type
+    end
     if data.attr ~= nil and data.attr.id ~= nil then
       if msgParam.data == nil then
         msgParam.data = {}
@@ -3697,6 +3724,15 @@ function ServiceChatCmdAutoProxy:CallQueryItemData(guid, data)
         msgParam.data.memory = {}
       end
       msgParam.data.memory.excess_lv = data.memory.excess_lv
+    end
+    if data.memory ~= nil and data.memory.guid ~= nil then
+      if msgParam.data == nil then
+        msgParam.data = {}
+      end
+      if msgParam.data.memory == nil then
+        msgParam.data.memory = {}
+      end
+      msgParam.data.memory.guid = data.memory.guid
     end
     if data ~= nil and data.memory.effects ~= nil then
       if msgParam.data.memory == nil then

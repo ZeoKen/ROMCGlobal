@@ -6,7 +6,6 @@ local viewName = "CupModeRankSubview"
 
 function CupModeRankSubview:OnEnter()
   CupModeRankSubview.super.OnEnter(self)
-  CupMode6v6Proxy.Instance:DoQuerySeasonRank()
 end
 
 function CupModeRankSubview:OnDestroy()

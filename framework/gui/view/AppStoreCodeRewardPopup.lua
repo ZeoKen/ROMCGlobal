@@ -2,7 +2,7 @@ AppStoreCodeRewardPopup = class("AppStoreCodeRewardPopup", ContainerView)
 AppStoreCodeRewardPopup.ViewType = UIViewType.SystemOpenLayer
 
 function AppStoreCodeRewardPopup.CanShow()
-  if GameConfig.ForbidAppStoreRedemptionCode then
+  if Game.inAppStoreReview or GameConfig.ForbidAppStoreRedemptionCode then
     return false
   end
   local restorePays = FunctionLogin.Me():getRestorePays()

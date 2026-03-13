@@ -363,6 +363,7 @@ function FunctionNpcFunc:ctor()
   self.funcMap.RaidStartFight = FunctionNpcFunc.RaidStartFight
   self.funcMap.GetFairyTaleRaidReward = FunctionNpcFunc.GetFairyTaleRaidReward
   self.funcMap.ExitFairyTaleRaid = FunctionNpcFunc.ExitFairyTaleRaid
+  self.funcMap.FashionTrader = FunctionNpcFunc.FashionTrader
   self.checkMap.CreateGuild = FunctionNpcFunc.CheckCreateGuild
   self.checkMap.ApplyGuild = FunctionNpcFunc.CheckCreateGuild
   self.checkMap.QuickTeam = FunctionNpcFunc.CheckQuickTeam
@@ -490,6 +491,7 @@ function FunctionNpcFunc:ctor()
   self.checkMap.CardUpgrade = FunctionNpcFunc.CheckCardUpgrade
   self.checkMap.OpenInheritSkillExtendCostPointPopUp = FunctionNpcFunc.CheckOpenInheritSkillExtendCostPointPopUp
   self.checkMap.ExitFairyTaleRaid = FunctionNpcFunc.CheckExitFairyTaleRaid
+  self.checkMap.CheckFashionTrader = FunctionNpcFunc.CheckFashionTrader
   self.updateCheckCache = {}
 end
 
@@ -1606,23 +1608,17 @@ function FunctionNpcFunc.ChangeGuildLine(nnpc, params)
     return
   end
   ServiceNUserProxy.Instance:CallQueryZoneStatusUserCmd()
-  local count = GuildProxy.Instance:GetGuildPackItemNumByItemid(GameConfig.Zone.guild_zone_exchange.cost[1][1])
-  local dialogStr = DialogUtil.GetDialogData(8230).Text
-  local str = string.format(dialogStr, count)
-  local dialoglist = {str}
-  local viewdata = {
-    viewname = "DialogView",
-    dialoglist = dialoglist,
-    npcinfo = nnpc,
-    subViewId = 3
-  }
-  FunctionNpcFunc.ShowUI(viewdata)
+  GameFacade.Instance:sendNotification(UIEvent.CloseUI, UIViewType.DialogLayer)
+  FunctionNpcFunc.JumpPanel(PanelConfig.ChangeGuildZoneView)
   return true
 end
 
 function FunctionNpcFunc.ChangeGvgLine(nnpc, params)
   local guildData = GuildProxy.Instance.myGuildData
-  if guildData and guildData.dismisstime and guildData.dismisstime ~= 0 then
+  if not guildData then
+    return
+  end
+  if guildData.dismisstime and guildData.dismisstime ~= 0 then
     MsgManager.ShowMsgByID(3091)
     return
   end
@@ -1634,40 +1630,9 @@ function FunctionNpcFunc.ChangeGvgLine(nnpc, params)
       return
     end
   end
-  local ownCountList = {}
-  local costArray = GameConfig.GvgNewConfig and GameConfig.GvgNewConfig.change_group_cost
-  if not costArray then
-    return
-  end
-  local costStr = ""
-  for i = 1, #costArray do
-    local itemid = costArray[i][1]
-    local num = costArray[i][2]
-    local itemData = Table_Item[itemid]
-    if itemData then
-      local count = GuildProxy.Instance:GetGuildPackItemNumByItemid(itemid)
-      costStr = costStr .. itemData.NameZh .. count .. "/" .. num
-      if i ~= #costArray then
-        costStr = costStr .. ZhString.GuildDonateConfirmTip_And
-      end
-    end
-  end
-  local timeStr = ""
-  local timeNeed = GameConfig.GvgNewConfig and GameConfig.GvgNewConfig.change_group_time
-  if timeNeed then
-    local leftHour = math.floor(timeNeed / 3600)
-    timeStr = leftHour .. ZhString.ItemTip_DelRefreshTip_Hour
-  end
-  local dialogStr = DialogUtil.GetDialogData(396621).Text
-  local str = string.format(dialogStr, costStr, timeStr)
-  local dialoglist = {str}
-  local viewdata = {
-    viewname = "DialogView",
-    dialoglist = dialoglist,
-    npcinfo = nnpc,
-    subViewId = 12
-  }
-  FunctionNpcFunc.ShowUI(viewdata)
+  GameFacade.Instance:sendNotification(UIEvent.CloseUI, UIViewType.DialogLayer)
+  local view = 0 < guildData.battle_group // 10000000 and PanelConfig.ChangeGvgLineView_MultyZone or PanelConfig.ChangeGvgLineView
+  FunctionNpcFunc.JumpPanel(view)
   return true
 end
 
@@ -2705,6 +2670,38 @@ end
 function FunctionNpcFunc.Prestige_Shop(nnpc, params, npcFunctionData)
   HappyShopProxy.Instance:InitShop(nnpc, params, npcFunctionData.id)
   FunctionNpcFunc.JumpPanel(PanelConfig.PrestigeShopView, {npcdata = nnpc})
+end
+
+function FunctionNpcFunc.FashionTrader(nnpc, params, npcFunctionData)
+  local fashionTraderActID
+  if Table_ActivityNew then
+    for actID, config in pairs(Table_ActivityNew) do
+      if config.Type == "fashion_trader" and config.Npcs and config.Npcs[1] and config.Npcs[1].id == nnpc.data.staticData.id then
+        fashionTraderActID = config.id
+        break
+      end
+    end
+  end
+  if not fashionTraderActID then
+    redlog("FashionTrader: 找不到fashion_trader类型的活动配置")
+    return
+  end
+  local batchID = ActivityIntegrationProxy.Instance:GetActivityBatchID(fashionTraderActID)
+  local config
+  for _, _config in pairs(Table_FashionTrader) do
+    if _config.BatchID == batchID then
+      config = _config
+      break
+    end
+  end
+  local shopType = config.ShopType
+  local shopID = config.ShopID
+  if not shopType or not shopID then
+    redlog("FashionTrader: ShopType或ShopID配置缺失, actID:", fashionTraderActID)
+    return
+  end
+  HappyShopProxy.Instance:InitShop(nnpc, shopID, shopType)
+  FunctionNpcFunc.JumpPanel(PanelConfig.HappyShop, {npcdata = nnpc})
 end
 
 function FunctionNpcFunc.HomeEnterEditMode(npc, params)
@@ -4766,26 +4763,6 @@ function FunctionNpcFunc.ChangeMaterial(npc, param, funcStaticId)
   return true
 end
 
-function FunctionNpcFunc.CheckDungeonMvpCardCompose(npc, param, npcFunctionData)
-  local activitys = {}
-  for _, v in pairs(Table_ActivityIntegration) do
-    if v.Type == 12 then
-      activitys[#activitys + 1] = v
-    end
-  end
-  local isUp = false
-  for i = 1, #activitys do
-    if ActivityIntegrationProxy.Instance:CheckGroupValid(activitys[i].Group) then
-      isUp = true
-      break
-    end
-  end
-  if isUp then
-    return NpcFuncState.Active
-  end
-  return NpcFuncState.InActive
-end
-
 function FunctionNpcFunc.OpenAbyssQuestBoard(npc, param, npcFunctionData)
   GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
     view = PanelConfig.AbyssDailyQuestBoardView,
@@ -4819,6 +4796,40 @@ function FunctionNpcFunc.CheckOpenInheritSkillView(npc, param, npcFunctionData)
   local menuId = param and param.menuid
   redlog("FunctionNpcFunc.CheckOpenInheritSkillView", tostring(menuId), tostring(FunctionUnLockFunc.Me():CheckCanOpen(menuId)))
   if FunctionUnLockFunc.Me():CheckCanOpen(menuId) then
+    return NpcFuncState.Active
+  end
+  return NpcFuncState.InActive
+end
+
+function FunctionNpcFunc.CheckDungeonMvpCardCompose(npc, param, npcFunctionData)
+  local activitys = {}
+  for _, v in pairs(Table_ActivityIntegration) do
+    if v.Type == 12 then
+      activitys[#activitys + 1] = v
+    end
+  end
+  local isUp = false
+  for i = 1, #activitys do
+    if ActivityIntegrationProxy.Instance:CheckGroupValid(activitys[i].Group) then
+      isUp = true
+      break
+    end
+  end
+  local activityNewID
+  for _, v in pairs(Table_ActivityNew) do
+    if v.Type == "boss_scene_season" then
+      activityNewID = v.id
+      break
+    end
+  end
+  local activityInfo = ActivityIntegrationProxy.Instance:GetActPersonalActInfo(activityNewID)
+  if activityInfo then
+    local curTime = ServerTime.CurServerTime() / 1000
+    if curTime >= activityInfo.starttime and curTime <= activityInfo.endtime then
+      isUp = true
+    end
+  end
+  if isUp then
     return NpcFuncState.Active
   end
   return NpcFuncState.InActive
@@ -4872,6 +4883,29 @@ end
 function FunctionNpcFunc.CheckExitFairyTaleRaid(npc, param, npcFunctionData)
   local inRaid = Game.MapManager:IsPVEMode_FairyTaleRaid()
   if inRaid then
+    return NpcFuncState.Active
+  end
+  return NpcFuncState.InActive
+end
+
+function FunctionNpcFunc.CheckFashionTrader(npcdata, param, funcStaticId)
+  local fashionTraderActID
+  if Table_ActivityNew then
+    for actID, config in pairs(Table_ActivityNew) do
+      if config.Type == "fashion_trader" and config.Npcs and config.Npcs[1] and config.Npcs[1].id == npcdata.data.staticData.id then
+        fashionTraderActID = config.id
+        break
+      end
+    end
+  end
+  local batchID = ActivityIntegrationProxy.Instance:GetActivityBatchID(fashionTraderActID)
+  if not batchID then
+    return NpcFuncState.InActive
+  end
+  if not fashionTraderActID then
+    return NpcFuncState.InActive
+  end
+  if ActivityIntegrationProxy.Instance and ActivityIntegrationProxy.Instance:CheckActPersinalActValid(fashionTraderActID) then
     return NpcFuncState.Active
   end
   return NpcFuncState.InActive

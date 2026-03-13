@@ -106,7 +106,7 @@ end
 
 function NMyselfPlayer:Logic_StopMove()
   NMyselfPlayer.super.Logic_StopMove(self)
-  self:Client_MoveHandler(self:GetPosition())
+  self:Client_MoveHandler(self:GetPosition(), true)
 end
 
 function NMyselfPlayer:Logic_SetSkillState(lockTargetGUID)

@@ -29216,6 +29216,20 @@ Table_Compose = {
     },
     Type = 1
   },
+  [4000217] = {
+    id = 4000217,
+    ROB = 0,
+    BeCostItem = {
+      {id = 3041406, num = 1}
+    },
+    RandomProduct = {
+      {id = 25276, weight = 100}
+    },
+    FemaleRandomProduct = {
+      {id = 25276, weight = 100}
+    },
+    Type = 1
+  },
   [4200013] = {
     id = 4200013,
     BeCostItem = {

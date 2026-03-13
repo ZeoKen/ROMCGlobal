@@ -52,10 +52,3 @@ end
 function CupMode6v6Proxy:CheckHasPreRound()
   return true
 end
-
-function CupMode6v6Proxy:SetOpponentStatus(treeOpen)
-  if treeOpen ~= self.opponentStatus then
-    self.opponentStatus = treeOpen
-    ServiceMatchCCmdProxy.Instance:CallSyncMatchBoardOpenStateMatchCCmd(treeOpen, self.CupModeType, false)
-  end
-end

@@ -66,36 +66,11 @@ function SingleGiftRewardView:InitData()
   end
   self.giftStaticId = viewData.gift
   self.giftStaticData = Table_Item[self.giftStaticId]
-  local headwears = Game.HeadwearBoxItems[self.giftStaticId]
-  if not (self.giftStaticId and self.giftStaticData and headwears) or not next(headwears) then
+  if not self.giftStaticId or not self.giftStaticData then
     LogUtility.Error("Cannot find valid viewData while initializing SingleGiftRewardView!")
     return
   end
-  self.rewards = {}
-  local myGender = MyselfProxy.Instance:GetMySex()
-  local configEquipGender = Game.Config_EquipGender
-  for i = 1, #headwears do
-    local itemId = headwears[i]
-    local config = Table_HeadwearRepair[itemId]
-    if config then
-      if myGender == 2 and configEquipGender[itemId] then
-        itemId = configEquipGender[itemId]
-      end
-      self.rewards[i] = {itemId, 1}
-    end
-  end
-  if GameConfig.HeadwearBoxExtraItems and GameConfig.HeadwearBoxExtraItems.ExtraItem then
-    local extraItems = GameConfig.HeadwearBoxExtraItems.ExtraItem[self.giftStaticData.Quality]
-    if extraItems then
-      for i = 1, #extraItems do
-        local extra = extraItems[i]
-        self.rewards[#self.rewards + 1] = {
-          extra[1],
-          extra[2]
-        }
-      end
-    end
-  end
+  self.rewards = ItemUtil.GetRewardSelectContent(self.giftStaticId)
 end
 
 function SingleGiftRewardView:OnEnter()

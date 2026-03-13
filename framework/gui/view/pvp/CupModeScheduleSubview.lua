@@ -489,11 +489,9 @@ function CupModeScheduleSubview:UpdateSignupTeamList()
 end
 
 function CupModeScheduleSubview:SwitchSignup(isSignup)
-  xdlog("SwitchSignup", isSignup)
   self.signupRoot:SetActive(isSignup)
   self.opponentRoot:SetActive(not isSignup)
   self:UpdateBtnByMyband()
-  self.proxy:SetOpponentStatus(not isSignup)
   if isSignup then
     self:UpdateSignupTeamList()
     self.proxy:DoQueryTeamList()
@@ -553,7 +551,6 @@ function CupModeScheduleSubview:OnEnter()
 end
 
 function CupModeScheduleSubview:OnExit()
-  self.proxy:SetOpponentStatus(false)
   CupModeScheduleSubview.super.OnExit(self)
   self.cupModeForbiddenPro:OnCellDestroy()
 end

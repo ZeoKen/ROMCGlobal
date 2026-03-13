@@ -79,3 +79,7 @@ end
 function MiniMapGvgStrongHoldData:GetProgress()
   return self.data and self.data:GetOccupyProcess() or 0
 end
+
+function MiniMapGvgStrongHoldData:IsTransferForbidden()
+  return self.data and self.data:IsTransferForbidden() or false
+end

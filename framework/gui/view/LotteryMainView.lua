@@ -70,10 +70,10 @@ local extraBonusProgressGridMap = {
     sliderHeight = 736,
     progressNode = {
       0.136,
-      0.2,
-      0.349,
-      0.569,
-      0.783,
+      0.32,
+      0.5,
+      0.67,
+      0.87,
       1
     },
     progressGridLocalYPos = 170
@@ -286,7 +286,7 @@ function LotteryMainView:InitLotteryType()
   self.tick = TimeTickManager.Me():CreateTick(0, 1000, self.OnTick, self)
   self.modelCtl = self:AddSubView("LotteryModel", LotteryModel, t)
   self:UpdateInfo()
-  self:ShowRandomNpcModel()
+  self:ResetModelTexture()
   self:SetLotterySubView()
 end
 
@@ -338,7 +338,6 @@ function LotteryMainView:UpdateSkip()
 end
 
 function LotteryMainView:FindObjs()
-  self.dressRoot = self:FindGO("DressRoot")
   self.colliderMaskObj = self:FindGO("ColliderMaskObj")
   self.colliderMaskObj:SetActive(false)
   self.helpBtn = self:FindGO("LotteryHelpButton")
@@ -681,7 +680,7 @@ function LotteryMainView:OnServerUpdateRedTip()
   self:UpdateNewTip(self.lotteryType, self.currentLotteryNew)
 end
 
-function LotteryMainView:ShowRandomNpcModel()
+function LotteryMainView:ResetModelTexture()
   self.modelLoadSuccess = self.modelCtl:NeedShowModel()
   self.bgTexture.enabled = not self.modelLoadSuccess
   self.lottery2DTexture.gameObject:SetActive(not self.modelLoadSuccess)
@@ -736,6 +735,23 @@ function LotteryMainView:ShowModel()
   end
 end
 
+function LotteryMainView:UpdateNextPrevLotteryName()
+  local nextActData = _LotteryProxy:GetNextLottery(true)
+  local preActData = _LotteryProxy:GetNextLottery(false)
+  if nextActData then
+    self.nextLotteryName.text = nextActData.name
+    self:UpdateNewTip(nextActData.lotteryType, self.nextLotteryNew)
+  else
+    self.nextLotteryName.text = ""
+  end
+  if preActData then
+    self.previousLotteryName.text = preActData.name
+    self:UpdateNewTip(preActData.lotteryType, self.preLotteryNew)
+  else
+    self.previousLotteryName.text = ""
+  end
+end
+
 function LotteryMainView:UpdateInfo()
   self.activityData = LotteryProxy.Instance:GetActivityLotteryData()
   if not self.activityData then
@@ -749,12 +765,7 @@ function LotteryMainView:UpdateInfo()
   self:loadLotteryTexture()
   self.maunalTimeDesc = self.activityData.maunalTimeDesc
   self:SetLotteryTime(self.maunalTimeDesc or self.activityData.time)
-  local nextActData = _LotteryProxy:GetNextLottery(true)
-  self.nextLotteryName.text = nextActData and nextActData.name or ""
-  self:UpdateNewTip(nextActData.lotteryType, self.nextLotteryNew)
-  local preActData = _LotteryProxy:GetNextLottery(false)
-  self:UpdateNewTip(preActData.lotteryType, self.preLotteryNew)
-  self.previousLotteryName.text = preActData and preActData.name or ""
+  self:UpdateNextPrevLotteryName()
   if RedTipProxy.Instance:IsNew(_RedTip_LOTTERY_ACTIVITY, cur_lotteryType) then
     RedTipProxy.Instance:SeenNew(_RedTip_LOTTERY_ACTIVITY, cur_lotteryType)
   end
@@ -795,7 +806,7 @@ function LotteryMainView:ChangeLottery(isPre)
   self:QueryLotteryExtraBonus()
   self.modelCtl:ResetType(self.lotteryType)
   self.curSubView:Show()
-  self:ShowRandomNpcModel()
+  self:ResetModelTexture()
   self:UpdateHelpBtn()
   self.toRecoverBtn:SetActive(self:IsRecoverType())
   self:UpdateSkip()
@@ -976,6 +987,10 @@ function LotteryMainView:UpdateViewByLotteryType()
   self:UpdateCost()
   self:UpdateTicketCost()
   self:UpdateFreeInfo()
+  if self.modelCtl and self.modelCtl:TryResetNeedShowModel() then
+    self:ResetModelTexture()
+    self:ShowModel()
+  end
 end
 
 function LotteryMainView:JumpZenyShop()
@@ -1693,6 +1708,8 @@ function LotteryMainView:GetExtraBonusProgressGridCfg(index)
   end
 end
 
+local maxExtraBonusCount = 4
+
 function LotteryMainView:ShowExtraBonus()
   local extraDatas = LotteryProxy.Instance:GetExtraBonusList(self.lotteryType)
   if not extraDatas or not next(extraDatas) then
@@ -1736,7 +1753,7 @@ function LotteryMainView:ShowExtraBonus()
     if self.progressScrollView then
       self.progressScrollView:ResetPosition()
     end
-    if index and 3 < index and self.lotteryType ~= LotteryType.SpaceTime then
+    if index and index > maxExtraBonusCount and self.lotteryType ~= LotteryType.SpaceTime then
       local curCell = self.progressCtrl:GetCells()[index]
       if curCell then
         self.centerOnChild:CenterOn(curCell.gameObject.transform)

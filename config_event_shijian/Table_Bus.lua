@@ -7,7 +7,8 @@ Table_Bus = {
   [2] = {
     id = 2,
     NameZh = "##113914",
-    Camera = 3
+    Camera = 3,
+    param = 103
   },
   [3] = {
     id = 3,
@@ -143,6 +144,7 @@ Table_Bus = {
 Table_Bus_fields = {
   "id",
   "NameZh",
-  "Camera"
+  "Camera",
+  "param"
 }
 return Table_Bus

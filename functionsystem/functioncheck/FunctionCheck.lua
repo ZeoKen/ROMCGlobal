@@ -7,7 +7,8 @@ FunctionCheck.CannotSyncMoveReason = {
   Skill_Transport = 3,
   ExitPoint = 4,
   AttachOb = 5,
-  StealthGame = 6
+  StealthGame = 6,
+  Skill_Moving = 8
 }
 
 function FunctionCheck.Me()

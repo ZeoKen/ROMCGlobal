@@ -32,301 +32,301 @@ ItemAtlasConfig = {
     Atlas = {
       "GUI/atlas/preferb/item_5"
     },
-    StartIndex = 3883
+    StartIndex = 3869
   },
   [6] = {
     id = 6,
     Atlas = {
       "GUI/atlas/preferb/item_6"
     },
-    StartIndex = 5665
+    StartIndex = 5606
   },
   [7] = {
     id = 7,
     Atlas = {
       "GUI/atlas/preferb/item_7"
     },
-    StartIndex = 6021
+    StartIndex = 5990
   },
   [8] = {
     id = 8,
     Atlas = {
       "GUI/atlas/preferb/item_8"
     },
-    StartIndex = 6547
+    StartIndex = 6504
   },
   [9] = {
     id = 9,
     Atlas = {
       "GUI/atlas/preferb/item_9"
     },
-    StartIndex = 7015
+    StartIndex = 6952
   },
   [10] = {
     id = 10,
     Atlas = {
       "GUI/atlas/preferb/item_10"
     },
-    StartIndex = 12063
+    StartIndex = 11063
   },
   [11] = {
     id = 11,
     Atlas = {
       "GUI/atlas/preferb/item_11"
     },
-    StartIndex = 12910
+    StartIndex = 12640
   },
   [12] = {
     id = 12,
     Atlas = {
       "GUI/atlas/preferb/item_12"
     },
-    StartIndex = 24520
+    StartIndex = 16084
   },
   [13] = {
     id = 13,
     Atlas = {
       "GUI/atlas/preferb/item_13"
     },
-    StartIndex = 25530
+    StartIndex = 25504
   },
   [14] = {
     id = 14,
     Atlas = {
       "GUI/atlas/preferb/item_14"
     },
-    StartIndex = 30501
+    StartIndex = 30408
   },
   [15] = {
     id = 15,
     Atlas = {
       "GUI/atlas/preferb/item_15"
     },
-    StartIndex = 31340
+    StartIndex = 31228
   },
   [16] = {
     id = 16,
     Atlas = {
       "GUI/atlas/preferb/item_16"
     },
-    StartIndex = 39004
+    StartIndex = 38072
   },
   [17] = {
     id = 17,
     Atlas = {
       "GUI/atlas/preferb/item_17"
     },
-    StartIndex = 40332
+    StartIndex = 40086
   },
   [18] = {
     id = 18,
     Atlas = {
       "GUI/atlas/preferb/item_18"
     },
-    StartIndex = 40692
+    StartIndex = 40661
   },
   [19] = {
     id = 19,
     Atlas = {
       "GUI/atlas/preferb/item_19"
     },
-    StartIndex = 41267
+    StartIndex = 41241
   },
   [20] = {
     id = 20,
     Atlas = {
       "GUI/atlas/preferb/item_20"
     },
-    StartIndex = 41880
+    StartIndex = 41849
   },
   [21] = {
     id = 21,
     Atlas = {
       "GUI/atlas/preferb/item_21"
     },
-    StartIndex = 42522
+    StartIndex = 42179
   },
   [22] = {
     id = 22,
     Atlas = {
       "GUI/atlas/preferb/item_22"
     },
-    StartIndex = 43507
+    StartIndex = 43059
   },
   [23] = {
     id = 23,
     Atlas = {
       "GUI/atlas/preferb/item_23"
     },
-    StartIndex = 44327
+    StartIndex = 44149
   },
   [24] = {
     id = 24,
     Atlas = {
       "GUI/atlas/preferb/item_24"
     },
-    StartIndex = 45203
+    StartIndex = 45178
   },
   [25] = {
     id = 25,
     Atlas = {
       "GUI/atlas/preferb/item_25"
     },
-    StartIndex = 45620
+    StartIndex = 45590
   },
   [26] = {
     id = 26,
     Atlas = {
       "GUI/atlas/preferb/item_26"
     },
-    StartIndex = 46614
+    StartIndex = 45980
   },
   [27] = {
     id = 27,
     Atlas = {
       "GUI/atlas/preferb/item_27"
     },
-    StartIndex = 47229
+    StartIndex = 47199
   },
   [28] = {
     id = 28,
     Atlas = {
       "GUI/atlas/preferb/item_28"
     },
-    StartIndex = 48066
+    StartIndex = 48044
   },
   [29] = {
     id = 29,
     Atlas = {
       "GUI/atlas/preferb/item_29"
     },
-    StartIndex = 48600
+    StartIndex = 48559
   },
   [30] = {
     id = 30,
     Atlas = {
       "GUI/atlas/preferb/item_30"
     },
-    StartIndex = 49055
+    StartIndex = 49020
   },
   [31] = {
     id = 31,
     Atlas = {
       "GUI/atlas/preferb/item_31"
     },
-    StartIndex = 49565
+    StartIndex = 49534
   },
   [32] = {
     id = 32,
     Atlas = {
       "GUI/atlas/preferb/item_32"
     },
-    StartIndex = 51255
+    StartIndex = 51144
   },
   [33] = {
     id = 33,
     Atlas = {
       "GUI/atlas/preferb/item_33"
     },
-    StartIndex = 52313
+    StartIndex = 52165
   },
   [34] = {
     id = 34,
     Atlas = {
       "GUI/atlas/preferb/item_34"
     },
-    StartIndex = 53781
+    StartIndex = 53187
   },
   [35] = {
     id = 35,
     Atlas = {
       "GUI/atlas/preferb/item_35"
     },
-    StartIndex = 62832
+    StartIndex = 62803
   },
   [36] = {
     id = 36,
     Atlas = {
       "GUI/atlas/preferb/item_36"
     },
-    StartIndex = 63919
+    StartIndex = 63624
   },
   [37] = {
     id = 37,
     Atlas = {
       "GUI/atlas/preferb/item_37"
     },
-    StartIndex = 384005
+    StartIndex = 379870
   },
   [38] = {
     id = 38,
     Atlas = {
       "GUI/atlas/preferb/item_38"
     },
-    StartIndex = 500591
+    StartIndex = 500538
   },
   [39] = {
     id = 39,
     Atlas = {
       "GUI/atlas/preferb/item_39"
     },
-    StartIndex = 700168
+    StartIndex = 700119
   },
   [40] = {
     id = 40,
     Atlas = {
       "GUI/atlas/preferb/item_40"
     },
-    StartIndex = 810002
+    StartIndex = 800803
   },
   [41] = {
     id = 41,
     Atlas = {
       "GUI/atlas/preferb/item_41"
     },
-    StartIndex = 900237
+    StartIndex = 900220
   },
   [42] = {
     id = 42,
     Atlas = {
       "GUI/atlas/preferb/item_42"
     },
-    StartIndex = 920018
+    StartIndex = 913121
   },
   [43] = {
     id = 43,
     Atlas = {
       "GUI/atlas/preferb/item_43"
     },
-    StartIndex = 1000757
+    StartIndex = 1000694
   },
   [44] = {
     id = 44,
     Atlas = {
       "GUI/atlas/preferb/item_44"
     },
-    StartIndex = 3000317
+    StartIndex = 3000296
   },
   [45] = {
     id = 45,
     Atlas = {
       "GUI/atlas/preferb/item_45"
     },
-    StartIndex = 3000913
+    StartIndex = 3000880
   },
   [46] = {
     id = 46,
     Atlas = {
       "GUI/atlas/preferb/item_46"
     },
-    StartIndex = 3001632
+    StartIndex = 3001584
   },
   [47] = {
     id = 47,
     Atlas = {
       "GUI/atlas/preferb/item_47"
     },
-    StartIndex = 3002102
+    StartIndex = 3002100
   },
   [48] = {
     id = 48,
@@ -375,49 +375,49 @@ ItemAtlasConfig = {
     Atlas = {
       "GUI/atlas/preferb/item_54"
     },
-    StartIndex = 3007205
+    StartIndex = 3007201
   },
   [55] = {
     id = 55,
     Atlas = {
       "GUI/atlas/preferb/item_55"
     },
-    StartIndex = 3008141
+    StartIndex = 3008126
   },
   [56] = {
     id = 56,
     Atlas = {
       "GUI/atlas/preferb/item_56"
     },
-    StartIndex = 3009171
+    StartIndex = 3009144
   },
   [57] = {
     id = 57,
     Atlas = {
       "GUI/atlas/preferb/item_57"
     },
-    StartIndex = 3010650
+    StartIndex = 3010579
   },
   [58] = {
     id = 58,
     Atlas = {
       "GUI/atlas/preferb/item_58"
     },
-    StartIndex = 3011705
+    StartIndex = 3011652
   },
   [59] = {
     id = 59,
     Atlas = {
       "GUI/atlas/preferb/item_59"
     },
-    StartIndex = 3012302
+    StartIndex = 3012244
   },
   [60] = {
     id = 60,
     Atlas = {
       "GUI/atlas/preferb/item_60"
     },
-    StartIndex = 3033766
+    StartIndex = 3013379
   }
 }
 ItemAtlasConfig.Special = {

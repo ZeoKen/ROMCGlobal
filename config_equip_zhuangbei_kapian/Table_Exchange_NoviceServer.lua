@@ -17202,6 +17202,46 @@ Table_Exchange = {
       Param = {count = 2}
     }
   },
+  [23363] = {
+    id = 23363,
+    NameZh = "灵魂之刃卡片",
+    Trade = 1,
+    Overlap = 1,
+    Category = 1012,
+    ShowTime = 7200,
+    TFTradeTime = "",
+    TFUnTradeTime = "",
+    TradeTime = "",
+    UnTradeTime = "",
+    BuyLimit = {
+      type = "Count",
+      Param = {count = 10}
+    },
+    SellLimit = {
+      type = "Count",
+      Param = {count = 2}
+    }
+  },
+  [23419] = {
+    id = 23419,
+    NameZh = "月光梦魇卡片",
+    Trade = 1,
+    Overlap = 1,
+    Category = 1010,
+    ShowTime = 7200,
+    TFTradeTime = "",
+    TFUnTradeTime = "",
+    TradeTime = "",
+    UnTradeTime = "",
+    BuyLimit = {
+      type = "Count",
+      Param = {count = 10}
+    },
+    SellLimit = {
+      type = "Count",
+      Param = {count = 2}
+    }
+  },
   [23442] = {
     id = 23442,
     NameZh = "地城邂逅联动卡片",
@@ -59893,6 +59933,26 @@ Table_Exchange = {
       Param = {count = 10}
     }
   },
+  [3041406] = {
+    id = 3041406,
+    NameZh = "喵航·波利号契约",
+    Trade = 1,
+    Overlap = 1,
+    Category = 1020,
+    ShowTime = 7200,
+    TFTradeTime = "",
+    TFUnTradeTime = "",
+    TradeTime = "",
+    UnTradeTime = "",
+    BuyLimit = {
+      type = "Count",
+      Param = {count = 99}
+    },
+    SellLimit = {
+      type = "Count",
+      Param = {count = 10}
+    }
+  },
   [10000186] = {
     id = 10000186,
     NameZh = "卡普拉心动印章·Ⅰ",
@@ -60079,6 +60139,26 @@ Table_Exchange = {
     Trade = 1,
     Overlap = 1,
     Category = 1020,
+    ShowTime = 7200,
+    TFTradeTime = "",
+    TFUnTradeTime = "",
+    TradeTime = "",
+    UnTradeTime = "",
+    BuyLimit = {
+      type = "Count",
+      Param = {count = 99}
+    },
+    SellLimit = {
+      type = "Count",
+      Param = {count = 10}
+    }
+  },
+  [3013897] = {
+    id = 3013897,
+    NameZh = "情人节限定外观礼盒",
+    Trade = 1,
+    Overlap = 1,
+    Category = 1045,
     ShowTime = 7200,
     TFTradeTime = "",
     TFUnTradeTime = "",

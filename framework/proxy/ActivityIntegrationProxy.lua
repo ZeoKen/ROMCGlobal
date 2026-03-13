@@ -18,6 +18,7 @@ function ActivityIntegrationProxy:Init()
   self.activitySignInInfo = {}
   self.activitySignInActMap = {}
   self.activityQuestInfo = {}
+  self.activityBatchIdMap = {}
   self.inited = false
   self.createDay = 1
   self:InitGroupData()
@@ -66,11 +67,15 @@ function ActivityIntegrationProxy:InitGroupData()
       if v.Params then
         self.activityIntegrationGroup[groupID].SelfChooseActId = v.Params.ActivityId
       end
-    elseif v.Type == 11 and v.Params and v.Params.ActivityId then
-      if not self.activityIntegrationGroup[groupID].ExchangeActIds then
-        self.activityIntegrationGroup[groupID].ExchangeActIds = {}
+    elseif v.Type == 11 then
+      if v.Params and v.Params.ActivityId then
+        if not self.activityIntegrationGroup[groupID].ExchangeActIds then
+          self.activityIntegrationGroup[groupID].ExchangeActIds = {}
+        end
+        table.insert(self.activityIntegrationGroup[groupID].ExchangeActIds, v.Params.ActivityId)
       end
-      table.insert(self.activityIntegrationGroup[groupID].ExchangeActIds, v.Params.ActivityId)
+    elseif v.Type == 13 and v.Params and v.Params.ActivityId then
+      self.activityIntegrationGroup[groupID].PaySignActId = v.Params.ActivityId
     end
   end
 end
@@ -138,6 +143,10 @@ end
 
 function ActivityIntegrationProxy:GetExchangeActIDs(groupid)
   return self.activityIntegrationGroup[groupid] and self.activityIntegrationGroup[groupid].ExchangeActIds
+end
+
+function ActivityIntegrationProxy:GetPaySignActID(groupid)
+  return self.activityIntegrationGroup[groupid] and self.activityIntegrationGroup[groupid].PaySignActId
 end
 
 function ActivityIntegrationProxy:AddSuperSignIn(actid, starttime, endtime)
@@ -318,6 +327,12 @@ function ActivityIntegrationProxy:RecvActPersonalTimeSyncCmd(data)
         starttime = single.start_time,
         endtime = single.end_time
       }
+      xdlog("活动时间同步", single.act_id, single.start_time, single.end_time)
+      self.activityBatchIdMap[single.act_id] = single.batch_id
+      ActivityBattlePassProxy.Instance:BatchLevelData(single.act_id, single.batch_id)
+      if ActivityChallengeProxy and ActivityChallengeProxy.Instance then
+        ActivityChallengeProxy.Instance:BatchChallengeData(single.act_id, single.batch_id)
+      end
     end
   end
   local createDay = data.acc_create_char_day or 1
@@ -684,4 +699,8 @@ function ActivityIntegrationProxy:CheckSubTabValid(tabid)
   else
     return true
   end
+end
+
+function ActivityIntegrationProxy:GetActivityBatchID(activityId)
+  return self.activityBatchIdMap[activityId]
 end

@@ -171,7 +171,7 @@ function ExchangeGiftView:UpdataUI()
     end
   end
   self:_showClickMat(false)
-  self.name.text = Table_ActPersonalTimer[self.activityID].Name or ""
+  self.name.text = DonateProxy.Instance:GetActivityName(self.activityID)
   local icon = DonateProxy.Instance.bgTex
   IconManager:SetUIIcon(icon, self.icon)
   self:UpdateSubmitTime()

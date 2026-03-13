@@ -29,7 +29,7 @@ function ActivityBattlePassBasicLevelRewardCell:SetData(data)
   self.levelLabel.text = "Lv." .. self.level
   local basicRewardItem = data.RewardItems[1]
   if not self.basicItemCell then
-    self.basicItemCell = self:SetRewardIcon(basicRewardItem, self.basicHolder)
+    self.basicItemCell = self:SetRewardIcon(basicRewardItem.itemid, basicRewardItem.num, self.basicHolder)
   else
     local data = self.basicItemCell.data
     data:ResetData(basicRewardItem.itemid, basicRewardItem.itemid)

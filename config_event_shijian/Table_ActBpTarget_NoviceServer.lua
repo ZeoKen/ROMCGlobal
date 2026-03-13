@@ -1506,6 +1506,17 @@ Table_ActBpTarget_t = {
   }
 }
 Table_ActBpTarget = {
+  [100001] = {
+    id = 100001,
+    ActID = 105636,
+    Type = 3,
+    TypeName = "【基础任务】",
+    Exp = 150,
+    TFGoStartTime = "",
+    TFGoEndTime = "",
+    GoStartTime = "",
+    GoEndTime = ""
+  },
   [105601001] = {
     id = 105601001,
     ActID = 105601,
@@ -21468,6 +21479,7 @@ local cell_mt = {
     TargetType = "login",
     Title = "今日登录",
     Type = 0,
+    TypeName = "",
     id = 105617012
   }
 }

@@ -382,7 +382,6 @@ function WarbandOpponentView:SwitchSignup(isSignup)
   self.signupRoot:SetActive(isSignup)
   self.opponentRoot:SetActive(not isSignup)
   self:UpdateBtnByMyband()
-  warbandProxy:SetOpponentStatus(not isSignup)
   if isSignup then
     self:UpdateSignupTeamList()
     ServiceMatchCCmdProxy.Instance:CallTwelveWarbandTeamListMatchCCmd()
@@ -474,7 +473,6 @@ end
 function WarbandOpponentView:OnExit()
   PictureManager.Instance:UnLoadPVP(PVP_LINE_TEXTURE_NAME, self.tex1)
   PictureManager.Instance:UnLoadPVP(PVP_LINE_TEXTURE_NAME, self.tex2)
-  warbandProxy:SetOpponentStatus(false)
   WarbandOpponentView.super.OnExit(self)
 end
 

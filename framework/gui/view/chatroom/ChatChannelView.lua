@@ -641,7 +641,7 @@ function ChatChannelView:UpdateGVGName()
   local data = _GuildProxy:GetMyMercenaryGuildData() or _GuildProxy.myGuildData
   self.guildMercenaryName.text = data.name
   if self.guildMercenaryLine then
-    self.guildMercenaryLine.text = string.format(ZhString.NewGVG_Group, GvgProxy.ClientGroupId(data.battle_group))
+    self.guildMercenaryLine.text = GuildProxy.ParseServerGroupID(data.battle_group)
   end
 end
 

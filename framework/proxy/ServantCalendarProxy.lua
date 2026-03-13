@@ -453,25 +453,94 @@ function ServantCalendarProxy:GetMinMaxTimeGap(weekData)
   if 0 < #minArray and 0 < #maxArray then
     local gapMin = math.min(unpack(minArray))
     local gapMax = math.max(unpack(maxArray))
-    return math.min(unpack(minArray)), math.max(unpack(maxArray))
+    return gapMin, gapMax
   end
   return nil
+end
+
+function ServantCalendarProxy:GetActiveTimePoints(weekData)
+  if not weekData then
+    return {}
+  end
+  local timePointSet = {}
+  for i = 1, #weekData do
+    if weekData[i]:HasActData() then
+      local timeIntervalArray = weekData[i].timeIntervalArray
+      if timeIntervalArray then
+        for j = 1, #timeIntervalArray do
+          local timePoint = timeIntervalArray[j]
+          timePointSet[timePoint] = true
+        end
+      end
+    end
+  end
+  local timePoints = {}
+  for timePoint, _ in pairs(timePointSet) do
+    timePoints[#timePoints + 1] = timePoint
+  end
+  table.sort(timePoints)
+  local originalPoints = timePoints
+  if 0 < #originalPoints then
+    for i = 1, #originalPoints - 1 do
+      local curr = originalPoints[i]
+      local nextP = originalPoints[i + 1]
+      if nextP and 1 < nextP - curr then
+        timePoints[#timePoints + 1] = curr + 1
+        break
+      end
+    end
+  end
+  table.sort(timePoints)
+  return timePoints
+end
+
+function ServantCalendarProxy:GetCurrentTimeActivity(weekData, curTimeStamp, curHour)
+  if not weekData or not curTimeStamp then
+    return nil, nil, nil
+  end
+  local curYear = tonumber(os.date("%Y", curTimeStamp))
+  local curMonth = tonumber(os.date("%m", curTimeStamp))
+  local curDay = tonumber(os.date("%d", curTimeStamp))
+  for i = 1, #weekData do
+    local dayData = weekData[i]
+    if dayData.year == curYear and dayData.month == curMonth and dayData.day == curDay then
+      local activeData = dayData:GetActiveData()
+      for j = 1, #activeData do
+        local act = activeData[j]
+        if curTimeStamp >= act.startStamp and curTimeStamp < act.endStamp then
+          local startHour = act.startHour + act.startMin / 60
+          local activeTimePoints = self:GetActiveTimePoints(weekData)
+          local timeIndex = 0
+          for k = 1, #activeTimePoints do
+            if activeTimePoints[k] == act.startHour then
+              timeIndex = k
+              break
+            end
+          end
+          return act, startHour, timeIndex
+        end
+      end
+      break
+    end
+  end
+  return nil, nil, nil
 end
 
 function ServantCalendarProxy:GetWeekDayIntervalDatas()
   local weekDisplayData = {}
   local weekData = self:GetWeekCalendar(self.viewWeekIndex)
-  local minValue, maxValue = self:GetMinMaxTimeGap(weekData)
-  if not minValue or not maxValue then
+  local activeTimePoints = self:GetActiveTimePoints(weekData)
+  if #activeTimePoints == 0 then
     return weekDisplayData
   end
   for i = 1, #weekData do
     local weekActiveData = weekData[i].weekActiveData
-    for j = minValue, maxValue do
-      if nil == weekActiveData[j] then
+    for j = 1, #activeTimePoints do
+      local timePoint = activeTimePoints[j]
+      if nil == weekActiveData[timePoint] then
         weekDisplayData[i] = {}
       else
-        weekDisplayData[i] = weekActiveData[j]
+        weekDisplayData[i] = weekActiveData[timePoint]
       end
     end
   end

@@ -13,6 +13,7 @@ function ArtifactItemData:SetItemData(data)
     errorLog("ArtifactItemData ----> cannot find staticData,error ID: " .. self.itemID)
   end
   self.type = self.staticData and self.staticData.Type or 1
+  self.itemType = self.itemStaticData and self.itemStaticData.Type
   self.distributeCount = data.distributecount
   self.retrieveTime = data.retrievetime
   self.ownerID = data.ownerid

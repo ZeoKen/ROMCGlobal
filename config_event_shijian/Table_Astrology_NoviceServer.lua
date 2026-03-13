@@ -646,6 +646,30 @@ Table_Astrology = {
     Pic = "constellation_bg_water1",
     Title = "百味巧克力",
     Reward = 70000053
+  },
+  [82] = {
+    id = 82,
+    Type = 2,
+    Group = 28,
+    Pic = "constellation_constellation_bg_fire1",
+    Title = "小天使的祝福",
+    Reward = 61004690
+  },
+  [83] = {
+    id = 83,
+    Type = 2,
+    Group = 28,
+    Pic = "constellation_constellation_bg_fire1",
+    Title = "小天使的祝福",
+    Reward = 61004690
+  },
+  [84] = {
+    id = 84,
+    Type = 2,
+    Group = 28,
+    Pic = "constellation_constellation_bg_fire1",
+    Title = "小天使的祝福",
+    Reward = 61004690
   }
 }
 Table_Astrology_fields = {

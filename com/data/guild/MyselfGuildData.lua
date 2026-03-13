@@ -289,6 +289,7 @@ function MyselfGuildData:SetGuildPackItems(serverItems)
         local itemdata = self.guildPack[guid]
         if not itemdata then
           itemdata = ItemData.new(guid, itemid)
+          itemdata:ParseFromServerData(serverItems[i])
           self.guildPack[guid] = itemdata
         end
         itemdata.num = serverItem.count
@@ -380,4 +381,8 @@ end
 
 function MyselfGuildData:Exit()
   self:ResetGuildEventList()
+end
+
+function MyselfGuildData:IsChangingGroupLine()
+  return self.change_group_time and self.change_group_time > 0
 end

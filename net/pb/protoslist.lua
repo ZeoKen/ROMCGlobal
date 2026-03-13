@@ -654,6 +654,18 @@ ProtoReqInfoList = {
     ack = "Cmd.ActCardLevelUpInfoSyncCmd",
     from = "ActivityCmd"
   },
+  PaySignSyncActCmd = {
+    id = 600085,
+    req = "Cmd.PaySignSyncActCmd",
+    ack = "Cmd.PaySignSyncActCmd",
+    from = "ActivityCmd"
+  },
+  PaySignRewardActCmd = {
+    id = 600086,
+    req = "Cmd.PaySignRewardActCmd",
+    ack = "Cmd.PaySignRewardActCmd",
+    from = "ActivityCmd"
+  },
   ActivityEventNtf = {
     id = 640001,
     req = "Cmd.ActivityEventNtf",
@@ -2442,6 +2454,12 @@ ProtoReqInfoList = {
     ack = "Cmd.GvgDateBattleInfoSyncCmd",
     from = "FuBenCmd"
   },
+  GvgInviteTransferToMeCmd = {
+    id = 110186,
+    req = "Cmd.GvgInviteTransferToMeCmd",
+    ack = "Cmd.GvgInviteTransferToMeCmd",
+    from = "FuBenCmd"
+  },
   QueryGuildListGuildCmd = {
     id = 500001,
     req = "Cmd.QueryGuildListGuildCmd",
@@ -3526,6 +3544,12 @@ ProtoReqInfoList = {
     id = 10033,
     req = "Cmd.SetMaxScopeUserCmd",
     ack = "Cmd.SetMaxScopeUserCmd",
+    from = "LoginUserCmd"
+  },
+  ReqLoginOutGateCmd = {
+    id = 10034,
+    req = "Cmd.ReqLoginOutGateCmd",
+    ack = "Cmd.ReqLoginOutGateCmd",
     from = "LoginUserCmd"
   },
   ReqMyRoomMatchCCmd = {
@@ -11558,6 +11582,8 @@ ProtoReqInfoList[600079] = ProtoReqInfoList.ActExchangeInfoCmd
 ProtoReqInfoList[600080] = ProtoReqInfoList.EnterBigCatInvadeCmd
 ProtoReqInfoList[600081] = ProtoReqInfoList.LeaveActStaticMapCmd
 ProtoReqInfoList[600084] = ProtoReqInfoList.ActCardLevelUpInfoSyncCmd
+ProtoReqInfoList[600085] = ProtoReqInfoList.PaySignSyncActCmd
+ProtoReqInfoList[600086] = ProtoReqInfoList.PaySignRewardActCmd
 ProtoReqInfoList[640001] = ProtoReqInfoList.ActivityEventNtf
 ProtoReqInfoList[640002] = ProtoReqInfoList.ActivityEventUserDataNtf
 ProtoReqInfoList[640003] = ProtoReqInfoList.ActivityEventNtfEventCntCmd
@@ -11856,6 +11882,7 @@ ProtoReqInfoList[110183] = ProtoReqInfoList.FairyTaleRaidGetRewardCmd
 ProtoReqInfoList[110184] = ProtoReqInfoList.SyncMemoryEquipRewardInfo
 ProtoReqInfoList[110185] = ProtoReqInfoList.ChooseMemoryEquipRewardInfo
 ProtoReqInfoList[110181] = ProtoReqInfoList.GvgDateBattleInfoSyncCmd
+ProtoReqInfoList[110186] = ProtoReqInfoList.GvgInviteTransferToMeCmd
 ProtoReqInfoList[500001] = ProtoReqInfoList.QueryGuildListGuildCmd
 ProtoReqInfoList[500002] = ProtoReqInfoList.CreateGuildGuildCmd
 ProtoReqInfoList[500003] = ProtoReqInfoList.EnterGuildGuildCmd
@@ -12037,6 +12064,7 @@ ProtoReqInfoList[10029] = ProtoReqInfoList.AttachLoginUserCmd
 ProtoReqInfoList[10030] = ProtoReqInfoList.AttachSyncCmdUserCmd
 ProtoReqInfoList[10031] = ProtoReqInfoList.PingUserCmd
 ProtoReqInfoList[10033] = ProtoReqInfoList.SetMaxScopeUserCmd
+ProtoReqInfoList[10034] = ProtoReqInfoList.ReqLoginOutGateCmd
 ProtoReqInfoList[610001] = ProtoReqInfoList.ReqMyRoomMatchCCmd
 ProtoReqInfoList[610002] = ProtoReqInfoList.ReqRoomListCCmd
 ProtoReqInfoList[610003] = ProtoReqInfoList.ReqRoomDetailCCmd

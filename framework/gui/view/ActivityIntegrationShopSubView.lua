@@ -80,8 +80,12 @@ function ActivityIntegrationShopSubView:RefreshPage(id)
   self.helpBtn:SetActive(helpID ~= nil or false)
   local isTF = EnvChannel.IsTFBranch()
   local duration = isTF and self.staticData.TFDuration or self.staticData.Duration
-  self.startTime = duration[1] and KFCARCameraProxy.Instance:GetSelfCustomDate(duration[1])
-  self.endTime = duration[2] and KFCARCameraProxy.Instance:GetSelfCustomDate(duration[2])
+  if duration then
+    self.startTime = duration[1] and KFCARCameraProxy.Instance:GetSelfCustomDate(duration[1])
+    self.endTime = duration[2] and KFCARCameraProxy.Instance:GetSelfCustomDate(duration[2])
+  else
+    self.startTime, self.endTime = LoopActIntegrationProxy.Instance:GetActivityTime(self.staticData)
+  end
   self.timeLabel.gameObject:SetActive(true)
   TimeTickManager.Me():ClearTick(self, 1)
   TimeTickManager.Me():CreateTick(0, 10000, self.UpdateLeftTime, self)
@@ -443,14 +447,14 @@ function ActivityIntegrationShopSubView:UpdateBalance()
 end
 
 function ActivityIntegrationShopSubView:OnEnter(id)
-  self.staticData = Table_ActivityIntegration[id]
+  self.staticData = Table_ActivityIntegration[id] or Table_ActivityNew[id]
   if not self.staticData then
-    redlog("Table_ActivityIntegration缺少配置", id)
+    redlog("Table_ActivityIntegration或Table_ActivityNew缺少配置", id)
     return
   end
-  local params = self.staticData.Params
-  self.shopType = params and params.ShopType
-  self.shopId = params and params.ShopId
+  local params = self.staticData.Params or self.staticData.Misc
+  self.shopType = params and params.ShopType and params.ShopType or self.staticData.ShopType
+  self.shopId = params and params.ShopId and params.ShopId or self.staticData.ShopId
   self.shopItemID = params and params.ShopItemID or 151
   self.shopItemID2 = params and params.ShopItemID2
   local depositIDs = params and params.DepositIDs

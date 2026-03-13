@@ -4152,7 +4152,7 @@ function ServiceGuildCmdAutoProxy:CallQueryGCityShowInfoGuildCmd(infos, groupid,
   end
 end
 
-function ServiceGuildCmdAutoProxy:CallGvgOpenFireGuildCmd(fire, settle_time, start_time)
+function ServiceGuildCmdAutoProxy:CallGvgOpenFireGuildCmd(fire, settle_time, start_time, timezoneid)
   if not NetConfig.PBC then
     local msg = GuildCmd_pb.GvgOpenFireGuildCmd()
     if fire ~= nil then
@@ -4163,6 +4163,9 @@ function ServiceGuildCmdAutoProxy:CallGvgOpenFireGuildCmd(fire, settle_time, sta
     end
     if start_time ~= nil then
       msg.start_time = start_time
+    end
+    if timezoneid ~= nil then
+      msg.timezoneid = timezoneid
     end
     self:SendProto(msg)
   else
@@ -4176,6 +4179,9 @@ function ServiceGuildCmdAutoProxy:CallGvgOpenFireGuildCmd(fire, settle_time, sta
     end
     if start_time ~= nil then
       msgParam.start_time = start_time
+    end
+    if timezoneid ~= nil then
+      msgParam.timezoneid = timezoneid
     end
     self:SendProto2(msgId, msgParam)
   end

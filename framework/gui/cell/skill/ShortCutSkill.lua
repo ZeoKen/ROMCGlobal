@@ -361,9 +361,13 @@ function ShortCutSkill:UpdateIcon(fromServer)
   end
   local icon = Game.SkillDynamicManager:GetDynamicConfig(Game.Myself.data.id, staticData.id, SkillDynamicManager.Config.Icon)
   icon = icon or self.data:GetAltIcon(Game.Myself)
-  icon = icon or staticData.Icon
-  self:SetSkillIcon(icon, MyselfProxy.Instance:GetMyProfessionType())
   local skillInfo = Game.LogicManager_Skill:GetSkillInfo(self.data:GetID())
+  if skillInfo:ReplaceIcon() then
+    icon = skillInfo:GetReplaceIcon()
+  else
+    icon = icon or staticData.Icon
+  end
+  self:SetSkillIcon(icon, MyselfProxy.Instance:GetMyProfessionType())
   local showReplaceEff = skillInfo:ShowReplaceEffect()
   if showReplaceEff ~= nil then
     IconManager:SetUIIcon(showReplaceEff, self.replaceEffSp)

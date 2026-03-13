@@ -49,13 +49,16 @@ function WorldTeleport.CanArriveMap(sourceMapID, targetMapID)
   return true
 end
 
-function WorldTeleport.CreateInnerTeleportInfo(sourcePos, targetPos)
+function WorldTeleport.CreateInnerTeleportInfo(sourcePos, targetPos, access_range)
   local currentMapID = Game.MapManager:GetMapID()
   if NavMeshUtils.CanArrived(sourcePos, targetPos, WorldTeleport.DESTINATION_VALID_RANGE, true, nil) then
     local innerTeleportInfo = ReusableTable.CreateInnerTeleportInfo()
     innerTeleportInfo.mapID = currentMapID
     if nil ~= targetPos then
       innerTeleportInfo.targetPos = targetPos:Clone()
+    end
+    if access_range then
+      innerTeleportInfo.access_range = access_range
     end
     return innerTeleportInfo
   end
@@ -130,6 +133,9 @@ function WorldTeleport.CreateInnerTeleportInfo(sourcePos, targetPos)
   innerTeleportInfo.ep = startEP
   innerTeleportInfo.nextEP = nextEP
   innerTeleportInfo.targetBPID = endBP.ID
+  if access_range then
+    innerTeleportInfo.access_range = access_range
+  end
   return innerTeleportInfo
 end
 
@@ -137,7 +143,7 @@ function WorldTeleport.DestroyInnerTeleportInfo(info)
   ReusableTable.DestroyInnerTeleportInfo(info)
 end
 
-function WorldTeleport.CreateOutterTeleportInfo(sourcePos, targetMapID, targetBPID, targetPos)
+function WorldTeleport.CreateOutterTeleportInfo(sourcePos, targetMapID, targetBPID, targetPos, access_range)
   local currentMapID = Game.MapManager:GetMapID()
   if nil == MapOutterTeleport[currentMapID] then
     LogUtility.InfoFormat("<color=red>WorldTeleport.CreateOutterTeleportInfo failed: </color>MapOutterTeleport[{0}] is nil", LogUtility.ToString(currentMapID))
@@ -156,9 +162,12 @@ function WorldTeleport.CreateOutterTeleportInfo(sourcePos, targetMapID, targetBP
       local p = outterEP.position
       LuaVector3.Better_Set(tempVector3, p[1], p[2], p[3])
       if not innerTeleportInfo then
-        innerTeleportInfo = WorldTeleport.CreateInnerTeleportInfo(sourcePos, tempVector3)
+        innerTeleportInfo = WorldTeleport.CreateInnerTeleportInfo(sourcePos, tempVector3, access_range)
       else
         innerTeleportInfo.ep = outterEP
+        if access_range then
+          innerTeleportInfo.access_range = access_range
+        end
       end
       outterTeleportInfo = ReusableTable.CreateOutterTeleportInfo()
       outterTeleportInfo.targetMapID = targetMapID
@@ -183,7 +192,7 @@ function WorldTeleport.CreateOutterTeleportInfo(sourcePos, targetMapID, targetBP
         if p then
           local targetPos = LuaVector3.New(p[1], p[2], p[3])
           if not innerTeleportInfo then
-            innerTeleportInfo = WorldTeleport.CreateInnerTeleportInfo(sourcePos, targetPos)
+            innerTeleportInfo = WorldTeleport.CreateInnerTeleportInfo(sourcePos, targetPos, access_range)
             if innerTeleportInfo == nil then
               redlog("寻路失败，当前地图传送npc无法寻路过去.", npcMapID, npcUID)
               return outterTeleportInfo, innerTeleportInfo
@@ -201,7 +210,7 @@ function WorldTeleport.CreateOutterTeleportInfo(sourcePos, targetMapID, targetBP
       if exitPointMap and exitPointMap[npcOutterEP] then
         local p = exitPointMap[npcOutterEP].position
         local targetPos = LuaVector3.New(p[1], p[2], p[3])
-        innerTeleportInfo = innerTeleportInfo or WorldTeleport.CreateInnerTeleportInfo(sourcePos, targetPos)
+        innerTeleportInfo = innerTeleportInfo or WorldTeleport.CreateInnerTeleportInfo(sourcePos, targetPos, access_range)
         if innerTeleportInfo then
           innerTeleportInfo.ep = exitPointMap[npcOutterEP]
         end
@@ -261,6 +270,7 @@ function WorldTeleport:Reset()
     self.prevPosition = nil
   end
   self.positionLockedCount = 0
+  self.access_range = nil
 end
 
 function WorldTeleport:ResetPath()
@@ -277,7 +287,7 @@ function WorldTeleport:ResetPath()
   local currentMapID = Game.MapManager:GetMapID()
   if currentMapID == self.targetMapID then
     if nil ~= self.targetPos then
-      self.innerTeleportInfo = WorldTeleport.CreateInnerTeleportInfo(myPosition, self.targetPos)
+      self.innerTeleportInfo = WorldTeleport.CreateInnerTeleportInfo(myPosition, self.targetPos, self.access_range)
       if nil == self.innerTeleportInfo then
         return false
       end
@@ -285,7 +295,7 @@ function WorldTeleport:ResetPath()
       return false
     end
   else
-    local outterTeleportInfo, innerTeleportInfo = WorldTeleport.CreateOutterTeleportInfo(myPosition, self.targetMapID, self.targetBPID, self.targetPos)
+    local outterTeleportInfo, innerTeleportInfo = WorldTeleport.CreateOutterTeleportInfo(myPosition, self.targetMapID, self.targetBPID, self.targetPos, self.access_range)
     redlog("<color=green>WorldTeleport:ResetPath</color> outter", outterTeleportInfo, innerTeleportInfo)
     if nil == outterTeleportInfo or nil == innerTeleportInfo then
       return false
@@ -314,11 +324,12 @@ function WorldTeleport:ResetTarget(targetMapID, targetBPID, targetPos, showClick
   end
 end
 
-function WorldTeleport:Launch(targetMapID, targetBPID, targetPos, showClickGround, allowExitPoint, customMoveAction)
+function WorldTeleport:Launch(targetMapID, targetBPID, targetPos, showClickGround, allowExitPoint, customMoveAction, access_range)
   if self.running then
     self:Shutdown()
   end
   self.realTargetMapID = targetMapID
+  self.access_range = access_range
   self.running = self:TryTransferToDestination(targetMapID, targetBPID, targetPos, showClickGround)
   if self.running then
     if not allowExitPoint then

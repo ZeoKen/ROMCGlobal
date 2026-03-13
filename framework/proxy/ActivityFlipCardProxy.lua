@@ -1,10 +1,11 @@
 ActivityFlipCardProxy = class("ActivityFlipCardProxy", pm.Proxy)
 ActivityFlipCardProxy.Instance = nil
 ActivityFlipCardProxy.NAME = "ActivityFlipCardProxy"
+autoImport("ActivityConfigHelper")
 ActivityFlipCardProxy.RedTipId = 10754
 
 function ActivityFlipCardProxy.GetGridIndexByRowAndCol(act_id, row, column)
-  local config = Table_ActPersonalTimer[act_id]
+  local config = ActivityConfigHelper.GetActPersonalConfig(act_id)
   if not config then
     return
   end
@@ -28,7 +29,7 @@ function ActivityFlipCardProxy:Init()
 end
 
 function ActivityFlipCardProxy:SyncFlipCardInfo(data)
-  local config = Table_ActPersonalTimer[data.act_id]
+  local config = ActivityConfigHelper.GetActPersonalConfig(data.act_id)
   if not config then
     return
   end
@@ -37,10 +38,6 @@ function ActivityFlipCardProxy:SyncFlipCardInfo(data)
     info = {}
     info.grids = {}
     info.rewards = {}
-    local isTFBranch = EnvChannel.IsTFBranch()
-    local phaseTime = StringUtil.FormatTime2TimeStamp2
-    info.startTime = isTFBranch and phaseTime(config.TfStartTime) or phaseTime(config.StartTime)
-    info.endTime = isTFBranch and phaseTime(config.TfEndTime) or phaseTime(config.EndTime)
     self.flipCardInfo[data.act_id] = info
     local maxLength = config.Misc.side_length or 6
     for i = 1, maxLength do
@@ -71,7 +68,7 @@ function ActivityFlipCardProxy:SyncFlipCardInfo(data)
 end
 
 function ActivityFlipCardProxy:UpdateFlipCardInfo(data)
-  local config = Table_ActPersonalTimer[data.act_id]
+  local config = ActivityConfigHelper.GetActPersonalConfig(data.act_id)
   if not config then
     return
   end
@@ -152,13 +149,15 @@ function ActivityFlipCardProxy:GetMaxChanceCanBuy(act_id)
 end
 
 function ActivityFlipCardProxy:GetStartTime(act_id)
-  local info = self.flipCardInfo[act_id]
-  return info and info.startTime or 0
+  local actInfo = ActivityIntegrationProxy.Instance:GetActPersonalActInfo(act_id)
+  local startTime = actInfo and actInfo.starttime
+  return startTime or 0
 end
 
 function ActivityFlipCardProxy:GetEndTime(act_id)
-  local info = self.flipCardInfo[act_id]
-  return info and info.endTime or 0
+  local actInfo = ActivityIntegrationProxy.Instance:GetActPersonalActInfo(act_id)
+  local endTime = actInfo and actInfo.endtime
+  return endTime or 0
 end
 
 function ActivityFlipCardProxy:IsActivityAvailable(act_id)
@@ -169,7 +168,7 @@ function ActivityFlipCardProxy:IsActivityAvailable(act_id)
 end
 
 function ActivityFlipCardProxy:CheckIfLinkRowLine(act_id, row)
-  local config = Table_ActPersonalTimer[act_id]
+  local config = ActivityConfigHelper.GetActPersonalConfig(act_id)
   if not config then
     return false
   end
@@ -188,7 +187,7 @@ function ActivityFlipCardProxy:CheckIfLinkRowLine(act_id, row)
 end
 
 function ActivityFlipCardProxy:CheckIfLinkColumnLine(act_id, column)
-  local config = Table_ActPersonalTimer[act_id]
+  local config = ActivityConfigHelper.GetActPersonalConfig(act_id)
   if not config then
     return false
   end
@@ -207,7 +206,7 @@ function ActivityFlipCardProxy:CheckIfLinkColumnLine(act_id, column)
 end
 
 function ActivityFlipCardProxy:CheckIfLinkDiagonal(act_id)
-  local config = Table_ActPersonalTimer[act_id]
+  local config = ActivityConfigHelper.GetActPersonalConfig(act_id)
   if not config then
     return false
   end
@@ -229,7 +228,7 @@ function ActivityFlipCardProxy:GetLinkLineCount(act_id)
   local count = 0
   local info = self.flipCardInfo[act_id]
   if info then
-    local config = Table_ActPersonalTimer[act_id]
+    local config = ActivityConfigHelper.GetActPersonalConfig(act_id)
     if config then
       local maxLength = config.Misc.side_length or 6
       local rows, columns = {}, {}

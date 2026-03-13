@@ -2711,9 +2711,9 @@ Table_Viewspot_t = {
       -459.37
     },
     {
-      482.33,
+      460.93,
       172.56,
-      -217.29
+      -215.66
     },
     {
       338.55,
@@ -3122,7 +3122,6 @@ Table_Viewspot = {
   [45] = {
     id = 45,
     MapName = 15,
-    SpotName = "遗迹·虫王的陵寝",
     Type = 2,
     Coordinate = Table_Viewspot_t.Coordinate[45],
     AdventureSort = 47,
@@ -5771,6 +5770,7 @@ Table_Viewspot = {
     id = 358,
     MapName = 104,
     MapNum = 4,
+    SpotName = "无垠冰雪",
     Coordinate = Table_Viewspot_t.Coordinate[352],
     AdventureSort = 358
   },
@@ -7280,7 +7280,7 @@ local cell_mt = {
     Coordinate = _EmptyTable,
     MapName = 149,
     MapNum = 1,
-    SpotName = "无垠冰雪",
+    SpotName = "遗迹·虫王的陵寝",
     Type = 1,
     id = 1
   }

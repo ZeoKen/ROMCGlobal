@@ -14,7 +14,7 @@ local typeBranchNameIdMap = GameConfig.NewClassEquip and GameConfig.NewClassEqui
 function NewRechargeHeroCell:Init()
   self.heroTexture = self:FindComponent("herotexture", UITexture)
   self.classIcon = self:FindComponent("classicon", UISprite)
-  self.classNameSprite = SpriteLabel.new(self:FindGO("classname"), nil, 40, 40, true)
+  self.classNameSprite = SpriteLabel.new(self:FindGO("classname"), 300, 40, 40, true)
   self.classDesc = self:FindComponent("classdesc", UILabel)
   self.u_leftTimeGO = self:FindGO("lefttimeicon")
   self.u_leftTime = self:FindComponent("lefttimeicon/lefttime", UILabel)
@@ -274,9 +274,8 @@ function NewRechargeHeroCell:UpdateLeftTime(rePos)
       self.u_leftTimeGO.gameObject:SetActive(true)
       if rePos then
         local spGO = self.classNameSprite:GetSprite(0)
-        local sx = LuaGameObject.InverseTransformPointByTransform(self.trans, spGO.transform, Space.World)
-        local x, y, z = LuaGameObject.GetLocalPositionGO(self.u_leftTimeGO)
-        LuaGameObject.SetLocalPositionGO(self.u_leftTimeGO, sx + 40, y, z)
+        local sx, sy, sz = LuaGameObject.InverseTransformPointByTransform(self.trans, spGO.transform, Space.World)
+        LuaGameObject.SetLocalPositionGO(self.u_leftTimeGO, sx + 40, sy + 20.0, sz)
       else
         LuaGameObject.SetLocalPositionGO(self.u_leftTimeGO, 40, 217, 0)
       end

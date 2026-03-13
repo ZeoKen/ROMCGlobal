@@ -9,36 +9,6 @@ NetConfig.PrivateGameServerUrl = "47.102.102.204"
 NetConfig.PrivateGameServerUrlPort = 6001
 NetConfig.AnnounceAddress = "jp-cdn.ro.com/notice"
 if HttpOperationJson.Instance then
-  NetConfig.OverseasAuth = StringUtil.Json2Lua(HttpOperationJson.Instance.rawString).urls[1]
+  local urls = StringUtil.Json2Lua(HttpOperationJson.Instance.rawString).urls
+  NetConfig.NewAccessTokenAuthHost = urls
 end
-NetConfig.AccessTokenAuthHost = {
-  CN = {
-    NetConfig.OverseasAuth,
-    NetConfig.OverseasAuth
-  },
-  EN = {
-    NetConfig.OverseasAuth
-  }
-}
-NetConfig.NewAccessTokenAuthHost = {
-  NetConfig.OverseasAuth,
-  NetConfig.OverseasAuth,
-  NetConfig.OverseasAuth
-}
-NetConfig.GateHost = {
-  CN = {
-    "kr-devel-gateway.ro.com",
-    "kr-devel-gateway.ro.com"
-  },
-  EN = {
-    "kr-devel-gateway.ro.com"
-  }
-}
-NetConfig.NewGateHost = {
-  "kr-devel-gateway.ro.com",
-  "kr-devel-gateway.ro.com",
-  "kr-devel-gateway.ro.com"
-}
-NetConfig.NewGateHost_NOTEST = {
-  "kr-devel-gateway.ro.com"
-}

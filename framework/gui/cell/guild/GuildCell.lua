@@ -8,7 +8,7 @@ function GuildCell:Init()
   self.headCell:SetCallIndex(UnionLogo.CallerIndex.UnionList)
   self.lv = self:FindComponent("Lv", UILabel)
   self.lvname = self:FindComponent("LvName", UILabel)
-  self.zoneid = self:FindComponent("ZoneId", UILabel)
+  self.battleLineLab = self:FindComponent("ZoneId", UILabel)
   self.memberNum = self:FindComponent("MemberNum", UILabel)
   self.recruitInfo = self:FindComponent("RecruitInfo", UILabel)
   self.chooseFlag = self:FindGO("Choosed")
@@ -38,7 +38,7 @@ function GuildCell:SetData(data)
   if data then
     self.gameObject:SetActive(true)
     self.lvname.text = data.guildname
-    self.zoneid.text = string.format(ZhString.NewGVG_Group, data:GetClientGvgGroup())
+    self.battleLineLab.text = GuildProxy.ParseServerGroupID(data.battle_group)
     self.memberNum.text = string.format("%s/%s", tostring(data.curmember), tostring(data.maxmember))
     self.recruitInfo.text = data.recruitinfo or ""
     self.headCell:SetData(self:GetMyGuildHeadData())

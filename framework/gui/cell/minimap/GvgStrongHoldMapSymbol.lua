@@ -39,6 +39,7 @@ function GvgStrongHoldMapSymbol:FindObjs()
     self.pointScoreProgressBg = self:FindComponent("bg", UISprite, self.pointScoreProgressBar.gameObject)
     self.pointScoreSp = self:FindComponent("PointScore", UISprite)
   end
+  self.forbid = self:FindGO("Forbid")
 end
 
 function GvgStrongHoldMapSymbol:SetColliderEnabled(b)
@@ -92,10 +93,17 @@ function GvgStrongHoldMapSymbol:SetData(data)
     self.battleIcon.gameObject:SetActive(data:IsScrambling())
   end
   self:UpdateProgress()
+  if self.forbid then
+    self.forbid.gameObject:SetActive(self.data:IsTransferForbidden())
+  end
 end
 
 function GvgStrongHoldMapSymbol:OnSymbolClicked()
   local guildId = self.data and self.data:GetHoldGuildId()
+  if self.data and self.data:IsTransferForbidden() then
+    MsgManager.ShowMsgByID(GameConfig.ArtifactConsumable.PointTransferForbidNoticeMsgID)
+    return
+  end
   if guildId and self.data:IsOccupied() and GuildProxy.Instance:IsMyGuildUnion(guildId) then
     if Game.Myself.data:HasBuffID(GameConfig.GVGConfig.go_point_cd_buff) then
       if self.clickCallback then

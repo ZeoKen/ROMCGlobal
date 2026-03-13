@@ -1914,6 +1914,15 @@ function ServiceScenePetAutoProxy:CallEquipUpdatePetCmd(petid, update, del)
       end
       msg.update.furniture.npc.monster_id = update.furniture.npc.monster_id
     end
+    if update.furniture.npc ~= nil and update.furniture.npc.damage_reduce_type ~= nil then
+      if msg.update.furniture == nil then
+        msg.update.furniture = {}
+      end
+      if msg.update.furniture.npc == nil then
+        msg.update.furniture.npc = {}
+      end
+      msg.update.furniture.npc.damage_reduce_type = update.furniture.npc.damage_reduce_type
+    end
     if update.attr ~= nil and update.attr.id ~= nil then
       if msg.update == nil then
         msg.update = {}
@@ -2306,6 +2315,15 @@ function ServiceScenePetAutoProxy:CallEquipUpdatePetCmd(petid, update, del)
         msg.update.memory = {}
       end
       msg.update.memory.excess_lv = update.memory.excess_lv
+    end
+    if update.memory ~= nil and update.memory.guid ~= nil then
+      if msg.update == nil then
+        msg.update = {}
+      end
+      if msg.update.memory == nil then
+        msg.update.memory = {}
+      end
+      msg.update.memory.guid = update.memory.guid
     end
     if update ~= nil and update.memory.effects ~= nil then
       if msg.update.memory == nil then
@@ -3726,6 +3744,15 @@ function ServiceScenePetAutoProxy:CallEquipUpdatePetCmd(petid, update, del)
       end
       msgParam.update.furniture.npc.monster_id = update.furniture.npc.monster_id
     end
+    if update.furniture.npc ~= nil and update.furniture.npc.damage_reduce_type ~= nil then
+      if msgParam.update.furniture == nil then
+        msgParam.update.furniture = {}
+      end
+      if msgParam.update.furniture.npc == nil then
+        msgParam.update.furniture.npc = {}
+      end
+      msgParam.update.furniture.npc.damage_reduce_type = update.furniture.npc.damage_reduce_type
+    end
     if update.attr ~= nil and update.attr.id ~= nil then
       if msgParam.update == nil then
         msgParam.update = {}
@@ -4118,6 +4145,15 @@ function ServiceScenePetAutoProxy:CallEquipUpdatePetCmd(petid, update, del)
         msgParam.update.memory = {}
       end
       msgParam.update.memory.excess_lv = update.memory.excess_lv
+    end
+    if update.memory ~= nil and update.memory.guid ~= nil then
+      if msgParam.update == nil then
+        msgParam.update = {}
+      end
+      if msgParam.update.memory == nil then
+        msgParam.update.memory = {}
+      end
+      msgParam.update.memory.guid = update.memory.guid
     end
     if update ~= nil and update.memory.effects ~= nil then
       if msgParam.update.memory == nil then

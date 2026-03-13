@@ -10,7 +10,7 @@ end
 
 function MissionCommandMove:DoLaunch()
   local args = self.args
-  if not self.teleport:Launch(args.targetMapID, args.targetBPID, args.targetPos, args.showClickGround, args.allowExitPoint, args.customMoveAction) then
+  if not self.teleport:Launch(args.targetMapID, args.targetBPID, args.targetPos, args.showClickGround, args.allowExitPoint, args.customMoveAction, args.access_range) then
     LogUtility.InfoFormat("<color=red>MissionCommandMove: </color>teleport failed, {0}", LogUtility.StringFormat("targetMapID={0}, targetBPID={1}, targetPos={2}", LogUtility.ToString(args.targetMapID), LogUtility.ToString(args.targetBPID), LogUtility.ToString(args.targetPos)))
     if nil ~= args.callback then
       args.callback(self, MissionCommandMove.CallbackEvent.TeleportFailed)

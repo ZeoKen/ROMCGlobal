@@ -130,3 +130,21 @@ end
 function AbyssFakeDragonProxy:GetRewardNum()
   return self.rewardNum or 0
 end
+
+function AbyssFakeDragonProxy:UpdateDamageRank(rank_data)
+  if not self.ranks then
+    self.ranks = {}
+  end
+  TableUtility.ArrayClear(self.ranks)
+  for i = 1, #rank_data do
+    local data = {}
+    data.id = rank_data[i].charid
+    data.rank = i
+    data.name = rank_data[i].char_name
+    self.ranks[#self.ranks + 1] = data
+  end
+end
+
+function AbyssFakeDragonProxy:GetDamageRank()
+  return self.ranks
+end

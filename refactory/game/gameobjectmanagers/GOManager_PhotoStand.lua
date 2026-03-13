@@ -5,12 +5,17 @@ local FramePhotoAspect = FramePhotoWidth / FramePhotoHeight
 local FramePhotoAspectReverse = FramePhotoHeight / FramePhotoWidth
 local tempVector3 = LuaVector3.Zero()
 local isNil = LuaGameObject.ObjectIsNull
+local shaderABPath = "Public/Shader"
+local shaderAssetName = "SceneObject-textrans"
 
 function GOManager_PhotoStand:ctor()
   self.objects = {}
   self.renderers = {}
   self.transCount = {}
   self.lastPhoto = {}
+  if not Application.isEditor then
+    shaderAssetName = "Assets/Resources/Public/Shader/SceneObject-textrans.shader"
+  end
 end
 
 function GOManager_PhotoStand:Launch()
@@ -29,9 +34,6 @@ function GOManager_PhotoStand:Clear()
   TableUtility.TableClear(self.lastPhoto)
   self.ori_mat = nil
 end
-
-local shaderABPath = "Public/Shader"
-local shaderAssetName = "SceneObject-textrans"
 
 function GOManager_PhotoStand:InitOriMat(finishCb)
   if self.ori_mat == nil then

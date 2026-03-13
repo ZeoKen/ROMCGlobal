@@ -30,7 +30,14 @@ PlayerDetailView.TabName = {
 
 function PlayerDetailView:Init()
   self:InitUI()
+  self:InitGems()
   self:AddListenEvt(ServiceEvent.ChatCmdQueryUserGemChatCmd, self.HandleUserGemChatCmd)
+end
+
+function PlayerDetailView:InitGems()
+  self.playerSkillGems = {}
+  self.playerAttrGems = {}
+  self.playerSecretLandGems = {}
 end
 
 function PlayerDetailView:TransEquipGrid(grid, width)
@@ -145,7 +152,6 @@ function PlayerDetailView:InitUI()
   self.playerGemProfit = self:FindGO("PlayerGemProfit")
   self.playerGemNoneTip = self:FindGO("GemNoneTip", self.playerGemProfit)
   self.skillGemTable = self:FindComponent("SkillGemContainer", UITable, self.playerGemProfit)
-  self.heroSkillInfoRoot = self:FindGO("HeroSkillInfoRoot", self.skillGemTable.gameObject)
   self.attrGemTable = self:FindComponent("AttrGemContainer", UITable, self.playerGemProfit)
   self.secretLandGemTable = self:FindComponent("SecretLandGemContainer", UITable, self.playerGemProfit)
   self.skillGemProfitListCtrl = ListCtrl.new(self.skillGemTable, GemSkillProfitCell, "GemSkillPlayerDetailCell")
@@ -200,6 +206,7 @@ function PlayerDetailView:InitUI()
   self.partnerName = self:FindComponent("PartnerName", UILabel, self.roleInfo)
   self.normalStick = self:FindComponent("NormalStick", UISprite)
   self.chooseSymbol = self:FindGO("ChooseSymbol")
+  self:InitHeroSkill()
   self:InitTabEvent()
   self.leftState = PlayerDetailView.State.None
   self.rightState = PlayerDetailView.State.Equip
@@ -208,6 +215,17 @@ function PlayerDetailView:InitUI()
   self:SetCurrentTabIconColor(self.equipTab)
   self.myBaseAttriView = self:AddSubView("BaseAttributeView", BaseAttributeView)
   self.playerAttriView = self:AddSubView("PlayerAttriButeView", PlayerAttriButeView)
+end
+
+function PlayerDetailView:InitHeroSkill()
+  self.heroSkillInfoRoot = self:FindGO("HeroSkillInfoRoot", self.skillGemTable.gameObject)
+  self.heroTitleLab = self:FindComponent("TitleLab", UILabel, self.heroSkillInfoRoot)
+  self.heroTitleBg = self:FindComponent("TitleBg", UISprite, self.heroTitleLab.gameObject)
+  self.heroTitleBgInitHeight = self.heroTitleBg.height
+  self.heroFeatureLvLab = self:FindComponent("LvLab", UILabel, self.heroTitleLab.gameObject)
+  self.heroSkillNameLab = self:FindComponent("SkillNameLab", UILabel, self.heroSkillInfoRoot)
+  self.heroDescLab = self:FindComponent("SkillDescLab", UILabel, self.heroSkillInfoRoot)
+  self:Hide(self.heroSkillInfoRoot)
 end
 
 function PlayerDetailView:InitViceEquipSwitch()
@@ -271,24 +289,23 @@ function PlayerDetailView:OnEquipTabChange()
 end
 
 function PlayerDetailView:UpdateHeroSkill()
+  if not self.heroSkillInfoRoot then
+    return
+  end
   if self.heroSkillStaticData then
     self:Show(self.heroSkillInfoRoot)
-    if not self.heroTitleLab then
-      self.heroTitleLab = self:FindComponent("TitleLab", UILabel, self.heroSkillInfoRoot)
-      self.heroTitleBg = self:FindComponent("TitleBg", UISprite, self.heroTitleLab.gameObject)
-      self.heroTitleBgHeight = self.heroTitleBg.height
-      self.heroFeatureLvLab = self:FindComponent("LvLab", UILabel, self.heroTitleLab.gameObject)
-      self.heroSkillNameLab = self:FindComponent("SkillNameLab", UILabel, self.heroSkillInfoRoot)
-      self.heroDescLab = self:FindComponent("SkillDescLab", UILabel, self.heroSkillInfoRoot)
-    end
-    self.heroTitleLab.text = ZhString.Gem_HeroProfessionTitle
-    self.heroFeatureLvLab.text = tostring(self.extra_feature_level) .. "/" .. ProfessionProxy.Instance:GetMaxHeroFeatureLv()
-    self.heroSkillNameLab.text = string.format(ZhString.Gem_HeroSkillName, self.heroSkillStaticData.NameZh)
-    self.heroDescLab.text = SkillTip:GetHeroDesc(self.heroSkillStaticData, self.extra_feature_level)
-    self.heroTitleBg.height = self.heroTitleBgHeight + self.heroDescLab.height
+    self:SetHeroSkill()
   else
     self:Hide(self.heroSkillInfoRoot)
   end
+end
+
+function PlayerDetailView:SetHeroSkill()
+  self.heroTitleLab.text = ZhString.Gem_HeroProfessionTitle
+  self.heroFeatureLvLab.text = tostring(self.extra_feature_level) .. "/" .. ProfessionProxy.Instance:GetMaxHeroFeatureLv()
+  self.heroSkillNameLab.text = string.format(ZhString.Gem_HeroSkillName, self.heroSkillStaticData.NameZh)
+  self.heroDescLab.text = SkillTip:GetHeroDesc(self.heroSkillStaticData, self.extra_feature_level)
+  self.heroTitleBg.height = self.heroTitleBgInitHeight + self.heroDescLab.height
 end
 
 function PlayerDetailView:InitPlayerHeroSkill()
@@ -612,9 +629,6 @@ end
 
 function PlayerDetailView:HandleUserGemChatCmd(note)
   local info = note.body and note.body.info
-  self.playerSkillGems = self.playerSkillGems or {}
-  self.playerAttrGems = self.playerAttrGems or {}
-  self.playerSecretLandGems = self.playerSecretLandGems or {}
   TableUtility.TableClear(self.playerSkillGems)
   TableUtility.TableClear(self.playerAttrGems)
   TableUtility.TableClear(self.playerSecretLandGems)
@@ -647,9 +661,7 @@ function PlayerDetailView:HandleUserGemChatCmd(note)
   self:Hide(self.attrGemTable)
   local allEmpty = #self.playerSkillGems + #self.playerAttrGems + #self.playerSecretLandGems == 0 and not self.heroSkillStaticData
   self.gemTogRoot:SetActive(not allEmpty)
-  if #self.playerAttrGems == 0 then
-    self.playerGemNoneTip:SetActive(true)
-  end
+  self.playerGemNoneTip:SetActive(#self.playerAttrGems == 0)
 end
 
 function PlayerDetailView:UpdateRoleInfo()

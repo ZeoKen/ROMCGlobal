@@ -18,6 +18,7 @@ function ArtifactDistributeCell:Init()
 end
 
 function ArtifactDistributeCell:FindObj()
+  self.boxCollider = self.gameObject:GetComponent(BoxCollider)
   self.name = self:FindComponent("name", UILabel)
   self.phase = self:FindComponent("phase", UILabel)
   self.btn = self:FindComponent("btn", UISprite)
@@ -32,6 +33,8 @@ function ArtifactDistributeCell:FindObj()
   self:AddClickEvent(self.checkBtn.gameObject, function()
     self:PassEvent(MouseEvent.MouseClick, self)
   end)
+  self:AddCellClickEvent()
+  self.selectGO = self:FindGO("Select")
 end
 
 function ArtifactDistributeCell:AddEvts()
@@ -100,6 +103,15 @@ function ArtifactDistributeCell:ShowArtifactTip()
   tipData.funcConfig = {}
   tipData.itemdata = self.itemdata
   self:ShowItemTip(tipData, self.targetCell.icon, NGUIUtil.AnchorSide.Right, {200, 0})
+end
+
+function ArtifactDistributeCell:SetSelect(select)
+  self.selectGO:SetActive(select)
+end
+
+function ArtifactDistributeCell:SetCheckBtn(active)
+  self.checkBtn.gameObject:SetActive(active)
+  self.boxCollider.enabled = not active
 end
 
 function ArtifactDistributeCell:ClearTick()

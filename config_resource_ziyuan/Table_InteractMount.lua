@@ -74,6 +74,12 @@ Table_InteractMount = {
     MountInfo = {
       [2] = 100
     }
+  },
+  [25275] = {
+    id = 25275,
+    MountInfo = {
+      [2] = 100
+    }
   }
 }
 Table_InteractMount_fields = {"id", "MountInfo"}

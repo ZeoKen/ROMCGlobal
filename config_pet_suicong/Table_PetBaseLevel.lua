@@ -47,7 +47,7 @@ Table_PetBaseLevel = {
   [10] = {
     id = 10,
     NeedExp = 913,
-    NeedExp_2 = 396.2
+    NeedExp_2 = 396.20000000000005
   },
   [11] = {
     id = 11,
@@ -72,7 +72,7 @@ Table_PetBaseLevel = {
   [15] = {
     id = 15,
     NeedExp = 5976,
-    NeedExp_2 = 1877.6
+    NeedExp_2 = 1877.6000000000001
   },
   [16] = {
     id = 16,
@@ -82,7 +82,7 @@ Table_PetBaseLevel = {
   [17] = {
     id = 17,
     NeedExp = 11953,
-    NeedExp_2 = 3756.2
+    NeedExp_2 = 3756.2000000000003
   },
   [18] = {
     id = 18,
@@ -117,7 +117,7 @@ Table_PetBaseLevel = {
   [24] = {
     id = 24,
     NeedExp = 29886,
-    NeedExp_2 = 8025.2
+    NeedExp_2 = 8025.200000000001
   },
   [25] = {
     id = 25,
@@ -192,7 +192,7 @@ Table_PetBaseLevel = {
   [39] = {
     id = 39,
     NeedExp = 106226,
-    NeedExp_2 = 27943.6
+    NeedExp_2 = 27943.600000000002
   },
   [40] = {
     id = 40,
@@ -212,7 +212,7 @@ Table_PetBaseLevel = {
   [43] = {
     id = 43,
     NeedExp = 146960,
-    NeedExp_2 = 41197.6
+    NeedExp_2 = 41197.600000000006
   },
   [44] = {
     id = 44,
@@ -222,7 +222,7 @@ Table_PetBaseLevel = {
   [45] = {
     id = 45,
     NeedExp = 184030,
-    NeedExp_2 = 52641.2
+    NeedExp_2 = 52641.200000000004
   },
   [46] = {
     id = 46,
@@ -237,7 +237,7 @@ Table_PetBaseLevel = {
   [48] = {
     id = 48,
     NeedExp = 258530,
-    NeedExp_2 = 73589.2
+    NeedExp_2 = 73589.20000000001
   },
   [49] = {
     id = 49,
@@ -357,7 +357,7 @@ Table_PetBaseLevel = {
   [72] = {
     id = 72,
     NeedExp = 1785506,
-    NeedExp_2 = 455519.6
+    NeedExp_2 = 455519.60000000003
   },
   [73] = {
     id = 73,
@@ -382,12 +382,12 @@ Table_PetBaseLevel = {
   [77] = {
     id = 77,
     NeedExp = 2575183,
-    NeedExp_2 = 660004.6
+    NeedExp_2 = 660004.6000000001
   },
   [78] = {
     id = 78,
     NeedExp = 2768033,
-    NeedExp_2 = 707886.6
+    NeedExp_2 = 707886.6000000001
   },
   [79] = {
     id = 79,
@@ -397,7 +397,7 @@ Table_PetBaseLevel = {
   [80] = {
     id = 80,
     NeedExp = 3188640,
-    NeedExp_2 = 810627.2
+    NeedExp_2 = 810627.2000000001
   },
   [81] = {
     id = 81,
@@ -412,7 +412,7 @@ Table_PetBaseLevel = {
   [83] = {
     id = 83,
     NeedExp = 5530423,
-    NeedExp_2 = 1929218.2
+    NeedExp_2 = 1929218.2000000002
   },
   [84] = {
     id = 84,
@@ -462,7 +462,7 @@ Table_PetBaseLevel = {
   [93] = {
     id = 93,
     NeedExp = 29021980,
-    NeedExp_2 = 1.02472656E7
+    NeedExp_2 = 1.0247265600000001E7
   },
   [94] = {
     id = 94,
@@ -662,22 +662,22 @@ Table_PetBaseLevel = {
   [133] = {
     id = 133,
     NeedExp = 270761270,
-    NeedExp_2 = 9.0253756666667E7
+    NeedExp_2 = 9.025375666666667E7
   },
   [134] = {
     id = 134,
     NeedExp = 277683770,
-    NeedExp_2 = 9.2561256666667E7
+    NeedExp_2 = 9.256125666666667E7
   },
   [135] = {
     id = 135,
     NeedExp = 286043020,
-    NeedExp_2 = 9.5347673333333E7
+    NeedExp_2 = 9.534767333333333E7
   },
   [136] = {
     id = 136,
     NeedExp = 295839010,
-    NeedExp_2 = 9.8613003333333E7
+    NeedExp_2 = 9.861300333333333E7
   },
   [137] = {
     id = 137,
@@ -687,7 +687,7 @@ Table_PetBaseLevel = {
   [138] = {
     id = 138,
     NeedExp = 319741240,
-    NeedExp_2 = 1.06580413333333E8
+    NeedExp_2 = 1.0658041333333333E8
   },
   [139] = {
     id = 139,
@@ -697,7 +697,7 @@ Table_PetBaseLevel = {
   [140] = {
     id = 140,
     NeedExp = 349390450,
-    NeedExp_2 = 1.16463483333333E8
+    NeedExp_2 = 1.1646348333333333E8
   },
   [141] = {
     id = 141,

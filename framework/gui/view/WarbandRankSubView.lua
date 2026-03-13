@@ -5,7 +5,6 @@ local Texture_Name = "12pvp_bg_pic_Ranking"
 
 function WarbandRankSubView:OnEnter()
   WarbandRankSubView.super.OnEnter(self)
-  WarbandProxy.Instance:DoQuerySeasonRank()
 end
 
 function WarbandRankSubView:Init()

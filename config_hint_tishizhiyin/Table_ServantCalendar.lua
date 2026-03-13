@@ -22,15 +22,15 @@ Table_ServantCalendar = {
   [6] = {
     id = 6,
     Icon = "GVG10",
-    Name = "##119297",
+    Name = "##44719966",
     TextureName = {
       {texture = "gvg1", desc = "##296828"},
       {texture = "gvg2", desc = "##296835"},
       {texture = "gvg3", desc = "##296825"}
     },
     TimeUnit = 2,
-    StartTime = "18:00",
-    EndTime = "19:00",
+    StartTime = "20:00",
+    EndTime = "21:00",
     Wday = "Thu",
     GotoMode = {5039},
     Location = "##1266799",
@@ -162,6 +162,26 @@ Table_ServantCalendar = {
     Location = "##42635503",
     Reward = "##42641000",
     Desc = "##42641001",
+    frequency = _EmptyTable
+  },
+  [1006] = {
+    id = 1006,
+    Icon = "GVG10",
+    Name = "##44719967",
+    TextureName = {
+      {texture = "gvg1", desc = "##296828"},
+      {texture = "gvg2", desc = "##296835"},
+      {texture = "gvg3", desc = "##296825"}
+    },
+    TimeUnit = 2,
+    StartTime = "13:00",
+    EndTime = "14:00",
+    Wday = "Thu",
+    GotoMode = {5039},
+    Location = "##1266799",
+    Reward = "##119353",
+    Desc = "##119304",
+    FuncState = 4,
     frequency = _EmptyTable
   }
 }

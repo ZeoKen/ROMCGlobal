@@ -479,7 +479,10 @@ EffectMap.UI = {
   CardUpgrade_Normal = "ufx_card_upgrade_prf",
   CardUpgrade_Advanced = "ufx_card_upgrade_01_prf",
   RoguelikeSkill_Reset = "ufx_cards_refresh",
-  LeadEffect = "ufx_danmachibell_xuli_ui_prf"
+  LeadEffect = "ufx_danmachibell_xuli_ui_prf",
+  AbyssDragonRank_1 = "ufx_DragonWord_first_glow_prf",
+  AbyssDragonRank_2 = "ufx_DragonWord_second_glow_prf",
+  AbyssDragonRank_3 = "ufx_DragonWord_third_glow_prf"
 }
 EffectMap.UIEffect_IdMap = {
   [76] = "76BigCat_Warnning",

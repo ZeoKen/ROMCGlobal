@@ -70,13 +70,30 @@ function LotteryModel:ResetType(t)
     return
   end
   self.type = t
-  self.needShowModel = not LotteryProxy.IsCardLottery(t)
+  self.needShowModel = _LotteryProxy:HasDressData(t)
+  self:SetRoot()
+end
+
+function LotteryModel:SetRoot()
   if self.needShowModel then
     self:InitScene()
     self:Show(self.root)
   else
     self:Hide(self.root)
   end
+end
+
+function LotteryModel:TryResetNeedShowModel()
+  if not self.type then
+    return false
+  end
+  local needShowModel = _LotteryProxy:HasDressData(self.type)
+  if self.needShowModel == needShowModel then
+    return false
+  end
+  self.needShowModel = needShowModel
+  self:SetRoot()
+  return true
 end
 
 function LotteryModel:SetRootActive(show)

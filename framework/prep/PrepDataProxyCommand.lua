@@ -187,6 +187,7 @@ autoImport("RoguelikeSkillProxy")
 autoImport("FairyTaleProxy")
 autoImport("RecallActivityBattlePassProxy")
 autoImport("RecallMvpCardProxy")
+autoImport("ActivityPaySignProxy")
 
 function PrepDataProxyCommand:execute(noti)
   GameFacade.Instance:registerProxy(AccountProxy.new())
@@ -373,4 +374,5 @@ function PrepDataProxyCommand:execute(noti)
   GameFacade.Instance:registerProxy(RecallActivityBattlePassProxy.new())
   GameFacade.Instance:registerProxy(RecallMvpCardProxy.new())
   GameFacade.Instance:registerProxy(FairyTaleProxy.new())
+  GameFacade.Instance:registerProxy(ActivityPaySignProxy.new())
 end

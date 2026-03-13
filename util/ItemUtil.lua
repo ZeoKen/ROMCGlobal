@@ -391,7 +391,8 @@ local _InitRolePartConfig = function()
     [9] = Asset_Role.PartIndex.Wing,
     [10] = Asset_Role.PartIndex.Face,
     [11] = Asset_Role.PartIndex.Tail,
-    [13] = Asset_Role.PartIndex.Mouth
+    [13] = Asset_Role.PartIndex.Mouth,
+    [16] = Asset_Role.PartIndex.LeftWeapon
   }
   ItemType2BodyIndex = {
     [820] = Asset_Role.PartIndex.Hair,
@@ -1124,8 +1125,27 @@ function ItemUtil.GetRewardSelectContent(itemid)
     local giftStaticData = Table_Item[itemid]
     local headwears = Game.HeadwearBoxItems[itemid]
     if not headwears then
-      redlog("头饰自选异常 ItemID:", itemid)
-      return
+      headwears = {}
+      if GameConfig.HeadwearBoxExtraItems and GameConfig.HeadwearBoxExtraItems.NewBoxCfg then
+        local yearMin, yearMax = GameConfig.HeadwearBoxExtraItems.YearBeforeMin or 0, GameConfig.HeadwearBoxExtraItems.YearBeforeMax or 0
+        local curYear = os.date("*t", ServerTime.CurServerTime() / 1000).year
+        local cfg = GameConfig.HeadwearBoxExtraItems.NewBoxCfg[itemid]
+        if cfg then
+          local type, month = cfg.type, cfg.month
+          for id, v in pairs(Table_HeadwearRepair) do
+            if v.Type == type then
+              local sellTime = v.SellTime
+              if not StringUtil.IsEmpty(sellTime) then
+                local y, m = ClientTimeUtil.GetYMDByTimeFormat(sellTime)
+                y, m = tonumber(y), tonumber(m)
+                if y <= curYear - yearMin and y >= curYear - yearMax and m == month then
+                  headwears[#headwears + 1] = id
+                end
+              end
+            end
+          end
+        end
+      end
     end
     local rewards = {}
     local myGender = MyselfProxy.Instance:GetMySex()

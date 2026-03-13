@@ -2700,6 +2700,62 @@ Table_ActionEffectSetUp = {
     EPID = 2,
     EPFollow = 1,
     Loop = 1
+  },
+  [402] = {
+    id = 402,
+    Path = "Common/cfx_p_sweetattack_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [403] = {
+    id = 403,
+    Path = "Common/cfx_p_sweetattack_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [404] = {
+    id = 404,
+    Path = "Common/cfx_p_sweetattack_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [405] = {
+    id = 405,
+    Path = "Common/cfx_p_sweetattack_004_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [406] = {
+    id = 406,
+    Path = "Common/cfx_p_moonlight_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [407] = {
+    id = 407,
+    Path = "Common/cfx_p_moonlight_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [408] = {
+    id = 408,
+    Path = "Common/cfx_p_moonlight_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [409] = {
+    id = 409,
+    Path = "Common/cfx_p_moonlight_004_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
   }
 }
 Table_ActionEffectSetUp_fields = {

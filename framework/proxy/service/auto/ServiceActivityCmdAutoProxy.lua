@@ -246,6 +246,12 @@ function ServiceActivityCmdAutoProxy:onRegister()
   self:Listen(60, 84, function(data)
     self:RecvActCardLevelUpInfoSyncCmd(data)
   end)
+  self:Listen(60, 85, function(data)
+    self:RecvPaySignSyncActCmd(data)
+  end)
+  self:Listen(60, 86, function(data)
+    self:RecvPaySignRewardActCmd(data)
+  end)
 end
 
 function ServiceActivityCmdAutoProxy:CallStartActCmd(items)
@@ -396,7 +402,7 @@ function ServiceActivityCmdAutoProxy:CallActProgressNtfCmd(items)
   end
 end
 
-function ServiceActivityCmdAutoProxy:CallStartGlobalActCmd(id, type, params, starttime, endtime, open, count)
+function ServiceActivityCmdAutoProxy:CallStartGlobalActCmd(id, type, params, starttime, endtime, open, count, batch_id)
   if not NetConfig.PBC then
     local msg = ActivityCmd_pb.StartGlobalActCmd()
     if id ~= nil then
@@ -427,6 +433,9 @@ function ServiceActivityCmdAutoProxy:CallStartGlobalActCmd(id, type, params, sta
     end
     if count ~= nil then
       msg.count = count
+    end
+    if batch_id ~= nil then
+      msg.batch_id = batch_id
     end
     self:SendProto(msg)
   else
@@ -460,6 +469,9 @@ function ServiceActivityCmdAutoProxy:CallStartGlobalActCmd(id, type, params, sta
     end
     if count ~= nil then
       msgParam.count = count
+    end
+    if batch_id ~= nil then
+      msgParam.batch_id = batch_id
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -3389,6 +3401,142 @@ function ServiceActivityCmdAutoProxy:CallActCardLevelUpInfoSyncCmd(act_id, info)
   end
 end
 
+function ServiceActivityCmdAutoProxy:CallPaySignSyncActCmd(info)
+  if not NetConfig.PBC then
+    local msg = ActivityCmd_pb.PaySignSyncActCmd()
+    if info ~= nil and info.act_id ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.act_id = info.act_id
+    end
+    if info ~= nil and info.signed_count ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.signed_count = info.signed_count
+    end
+    if info ~= nil and info.last_signed_time ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.last_signed_time = info.last_signed_time
+    end
+    if info ~= nil and info.rewarded_normal_day ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.rewarded_normal_day = info.rewarded_normal_day
+    end
+    if info ~= nil and info.rewarded_pro_day ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.rewarded_pro_day = info.rewarded_pro_day
+    end
+    if info ~= nil and info.is_pro ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.is_pro = info.is_pro
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.PaySignSyncActCmd.id
+    local msgParam = {}
+    if info ~= nil and info.act_id ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.act_id = info.act_id
+    end
+    if info ~= nil and info.signed_count ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.signed_count = info.signed_count
+    end
+    if info ~= nil and info.last_signed_time ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.last_signed_time = info.last_signed_time
+    end
+    if info ~= nil and info.rewarded_normal_day ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.rewarded_normal_day = info.rewarded_normal_day
+    end
+    if info ~= nil and info.rewarded_pro_day ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.rewarded_pro_day = info.rewarded_pro_day
+    end
+    if info ~= nil and info.is_pro ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.is_pro = info.is_pro
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceActivityCmdAutoProxy:CallPaySignRewardActCmd(act_id)
+  if not NetConfig.PBC then
+    local msg = ActivityCmd_pb.PaySignRewardActCmd()
+    if act_id ~= nil then
+      msg.act_id = act_id
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.PaySignRewardActCmd.id
+    local msgParam = {}
+    if act_id ~= nil then
+      msgParam.act_id = act_id
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceActivityCmdAutoProxy:RecvStartActCmd(data)
   self:Notify(ServiceEvent.ActivityCmdStartActCmd, data)
 end
@@ -3697,6 +3845,14 @@ function ServiceActivityCmdAutoProxy:RecvActCardLevelUpInfoSyncCmd(data)
   self:Notify(ServiceEvent.ActivityCmdActCardLevelUpInfoSyncCmd, data)
 end
 
+function ServiceActivityCmdAutoProxy:RecvPaySignSyncActCmd(data)
+  self:Notify(ServiceEvent.ActivityCmdPaySignSyncActCmd, data)
+end
+
+function ServiceActivityCmdAutoProxy:RecvPaySignRewardActCmd(data)
+  self:Notify(ServiceEvent.ActivityCmdPaySignRewardActCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.ActivityCmdStartActCmd = "ServiceEvent_ActivityCmdStartActCmd"
 ServiceEvent.ActivityCmdStopActCmd = "ServiceEvent_ActivityCmdStopActCmd"
@@ -3775,3 +3931,5 @@ ServiceEvent.ActivityCmdActExchangeInfoCmd = "ServiceEvent_ActivityCmdActExchang
 ServiceEvent.ActivityCmdEnterBigCatInvadeCmd = "ServiceEvent_ActivityCmdEnterBigCatInvadeCmd"
 ServiceEvent.ActivityCmdLeaveActStaticMapCmd = "ServiceEvent_ActivityCmdLeaveActStaticMapCmd"
 ServiceEvent.ActivityCmdActCardLevelUpInfoSyncCmd = "ServiceEvent_ActivityCmdActCardLevelUpInfoSyncCmd"
+ServiceEvent.ActivityCmdPaySignSyncActCmd = "ServiceEvent_ActivityCmdPaySignSyncActCmd"
+ServiceEvent.ActivityCmdPaySignRewardActCmd = "ServiceEvent_ActivityCmdPaySignRewardActCmd"

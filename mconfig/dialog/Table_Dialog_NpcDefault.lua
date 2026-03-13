@@ -5198,6 +5198,7 @@ Table_Dialog_NpcDefault = {
   [174643] = "{id=174643,Text='##44707706',Speaker=894463,}",
   [174669] = "{id=174669,Text='##44706340',Speaker=852431,}",
   [174675] = "{id=174675,Text='##42626049',Speaker=894422,}",
+  [174682] = "{id=174682,Text='##44718352',Speaker=894425,}",
   [200001] = "{id=200001,Text='##213384',}",
   [200002] = "{id=200002,Text='##213741',}",
   [200003] = "{id=200003,Text='##212953',}",
@@ -13915,4 +13916,4 @@ Table_Dialog_NpcDefault = {
   [1312436] = "{id=1312436,Text='##243015',Speaker=3033,}",
   [1312437] = "{id=1312437,Text='##242671',Speaker=3034,}"
 }
-Table_Dialog_NpcDefault.count = 13915
+Table_Dialog_NpcDefault.count = 13916

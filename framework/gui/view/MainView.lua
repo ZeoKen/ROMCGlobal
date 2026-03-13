@@ -254,6 +254,7 @@ function MainView:MapViewListener()
   self:AddListenEvt(ServiceEvent.RaidCmdAbyssDragonInfoNtfRaidCmd, self.HandleUpdateAbyssDragonInfo)
   self:AddListenEvt(PVEEvent.AbyssDragon_Shutdown, self.HandleAbyssDragonRaidShutdown)
   self:AddListenEvt(ServiceEvent.RaidCmdAbyssDragonHpUpdateRaidCmd, self.HandleUpdateAbyssDragonHp)
+  self:AddListenEvt(ServiceEvent.RaidCmdAbyssDragonDamageRankRaidCmd, self.HandleUpdateAbyssDragonDamageRank)
   self:AddListenEvt(PVEEvent.FairyTale_Launch, self.HandleFairyTaleRaidLaunch)
   self:AddListenEvt(PVEEvent.FairyTale_Shutdown, self.HandleFairyTaleRaidShutdown)
   self:AddListenEvt(ServiceEvent.FuBenCmdFairyTaleRaidSyncCmd, self.HandleFairyTaleRaidSync)
@@ -782,6 +783,9 @@ function MainView:HandleAbyssDragonRaidShutdown()
 end
 
 function MainView:HandleUpdateAbyssDragonHp()
+end
+
+function MainView:HandleUpdateAbyssDragonDamageRank()
 end
 
 function MainView:HandleFairyTaleRaidLaunch()

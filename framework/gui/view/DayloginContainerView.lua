@@ -72,12 +72,13 @@ end
 function DayloginContainerView:InitData()
   local viewdata = self.viewdata and self.viewdata.viewdata
   self.activityid = viewdata and viewdata.id
-  self.config = GameConfig.FestivalSignin and GameConfig.FestivalSignin[self.activityid]
+  xdlog("获取配置", self.activityid)
+  self.config = DailyLoginProxy.Instance:GetFestivalSigninConfig(self.activityid)
   self.tipData = {}
   self.tipData.funcConfig = {}
   self.clickValidTime = ServerTime.CurServerTime() / 1000
   local helpBtn = self:FindGO("HelpBtn")
-  helpID = self.config.HelpID
+  helpID = self.config and self.config.HelpID
   self:RegistShowGeneralHelpByHelpID(helpID, helpBtn)
   self.inited = false
 end
@@ -109,44 +110,35 @@ function DayloginContainerView:InitShow()
   self.awardeddays = awardeddays
   self.curLoginNum = curLoginNum
   local mySex = MyselfProxy.Instance:GetMySex() or 1
-  local signInReward = self.config and self.config.SigninReward
   local rewardList = {}
   for i = 1, 6 do
     local data = {}
     data.active = i <= curLoginNum or false
     data.received = TableUtility.ArrayFindIndex(awardeddays, i) > 0 or false
-    local rewardGroup = signInReward[i]
-    if mySex == 1 then
-      data.rewards = rewardGroup.Item
-    elseif rewardGroup.FemaleItem then
-      data.rewards = rewardGroup.FemaleItem
-    else
-      data.rewards = rewardGroup.Item
-    end
+    data.rewards = DailyLoginProxy.Instance:GetSigninReward(self.activityid, i, mySex)
     table.insert(rewardList, data)
   end
   self.dailyLoginGridCtrl:ResetDatas(rewardList)
   local lastData = {}
   lastData.active = 7 <= curLoginNum or false
   lastData.received = 0 < TableUtility.ArrayFindIndex(awardeddays, 7) or false
-  local rewardGroup = signInReward[7]
-  if mySex == 1 then
-    lastData.rewards = rewardGroup.Item
-  elseif rewardGroup.FemaleItem then
-    lastData.rewards = rewardGroup.FemaleItem
-  else
-    lastData.rewards = rewardGroup.Item
-  end
+  lastData.rewards = DailyLoginProxy.Instance:GetSigninReward(self.activityid, 7, mySex)
   self.lastDayCell:SetData(lastData)
   TimeTickManager.Me():CreateOnceDelayTick(100, function(owner, deltaTime)
     self:AdjustScrollView()
   end, self, 9)
   local cells = self.dailyLoginGridCtrl:GetCells()
-  if curLoginNum <= 5 then
-    cells[curLoginNum]:SetFuncLabel(ZhString.PaySignRewardView_Receive)
+  for i = 1, 6 do
+    if cells[i] and cells[i].data and not cells[i].data.received then
+      cells[i]:SetFuncLabel(ZhString.PaySignRewardView_Receive)
+    end
+  end
+  if self.lastDayCell and self.lastDayCell.data and not self.lastDayCell.data.received then
+    self.lastDayCell:SetFuncLabel(ZhString.PaySignRewardView_Receive)
+  end
+  if 1 <= curLoginNum and curLoginNum <= 5 then
     cells[curLoginNum + 1]:SetFuncLabel(ZhString.DayLogin_ReceiveTomorrow)
   elseif curLoginNum == 6 then
-    cells[6]:SetFuncLabel(ZhString.PaySignRewardView_Receive)
     self.lastDayCell:SetFuncLabel(ZhString.DayLogin_ReceiveTomorrow)
   end
 end
@@ -296,25 +288,9 @@ function DayloginContainerView:HandleLoginSuccess(note)
     xdlog("最后一日签到 无事")
     return
   elseif lastSignDay == curLoginNum and TableUtility.ArrayFindIndex(awardeddays, lastSignDay + 1) == 0 then
-    local signInReward = self.config and self.config.SigninReward
-    local rewardGroup = signInReward[lastSignDay]
-    local nextRewardGroup = signInReward[lastSignDay + 1]
     local tempData = {}
-    if mySex == 1 then
-      tempData.rewards = rewardGroup.Item
-      tempData.nextRewards = nextRewardGroup.Item
-    else
-      if rewardGroup.FemaleItem then
-        tempData.rewards = rewardGroup.FemaleItem
-      else
-        tempData.rewards = rewardGroup.Item
-      end
-      if nextRewardGroup.FemaleItem then
-        tempData.nextRewards = nextRewardGroup.FemaleItem
-      else
-        tempData.nextRewards = nextRewardGroup.Item
-      end
-    end
+    tempData.rewards = DailyLoginProxy.Instance:GetSigninReward(self.activityid, lastSignDay, mySex)
+    tempData.nextRewards = DailyLoginProxy.Instance:GetSigninReward(self.activityid, lastSignDay + 1, mySex)
     tempData.nextDayTip = self.config and self.config.NextDayTip or ZhString.NoticeTitle
     tempData.nextDayConfirm = self.config and self.config.NextDayConfirm or ZhString.UniqueConfirmView_Confirm
     self.rewardTip:HideSelf(true)

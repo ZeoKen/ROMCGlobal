@@ -28,10 +28,3 @@ function WarbandProxy_MultiServer:ctor(proxyName, data)
   self.forbiddenPro = {}
   self.curStage = 0
 end
-
-function WarbandProxy_MultiServer:DoQuerySeasonRank()
-  if self.seasonRunning and self.seasonRank and #self.seasonRank > 0 then
-    return
-  end
-  ServiceMatchCCmdProxy.Instance:CallTwelveWarbandSortMatchCCmd(nil, nil, true)
-end

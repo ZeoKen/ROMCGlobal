@@ -179,8 +179,6 @@ function GuildInfoPage:InitGroupZone()
   self:AddClickEvent(self.closeGroupZone, function(go)
     self:GroupZoneHide()
   end)
-  local groupZoneGrid = self:FindComponent("GroupZoneGrid", UIGrid, self.groupZoneObjRoot)
-  self.groupZoneCtl = UIGridListCtrl.new(groupZoneGrid, ZoneGroupCell, "ZoneGroupCell")
   self:GroupZoneHide()
 end
 
@@ -226,7 +224,7 @@ function GuildInfoPage:RebuildHelpData(helpid)
       helpData.rebuild = true
     elseif helpid == 35290 then
       local timeStr = GvgProxy.Instance:GetGvgTimeStr() or ""
-      helpData.Desc = string.format(helpData.Desc, timeStr)
+      helpData.Desc = BranchMgr.IsChina() and string.format(helpData.Desc, timeStr) or helpData.Desc
       helpData.rebuild = true
     end
   end
@@ -306,7 +304,7 @@ function GuildInfoPage:UpdateCurrentGvgZone()
   local superGvgGradeDesc = self.superGvgGradeDesc or ""
   local gvgGroupID = GuildProxy.Instance:GetMyGuildGvgGroup()
   if 0 < gvgGroupID then
-    self.gvgGroupDesc = string.format(ZhString.NewGVG_GroupID, GuildProxy.Instance:GetMyGuildClientGvgGroup())
+    self.gvgGroupDesc = GuildProxy.ParseServerGroupID(gvgGroupID)
     self.superGvg.text = self.gvgGroupDesc .. "  " .. superGvgGradeDesc
   else
     self.superGvg.text = superGvgGradeDesc
@@ -360,7 +358,7 @@ function GuildInfoPage:UpdateCountDownTime()
     local tempData = {
       tip = ZhString.GuildInfoPage_GuildGvgline,
       timeStamp = gvglineTime,
-      target = GvgProxy.ClientGroupId(gdata.next_battle_group)
+      target = GuildProxy.ParseServerGroupID(gdata.next_battle_group, true)
     }
     table.insert(list, tempData)
   end

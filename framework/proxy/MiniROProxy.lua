@@ -132,8 +132,11 @@ function MiniROProxy:SetActivityData(data)
   self.activityData.id = data[1]
   self.activityData.statTime = data[2]
   self.activityData.endTime = data[3]
-  self.activityData.featureData = GameConfig.Monopoly.feature[data[1]]
-  local event = GameConfig.Monopoly.common.Event
+  self.batchID = data[4]
+  xdlog("MiniROProxy:SetActivityData", data[1])
+  local featureData = Table_ActivityNew[data[1]] and Table_ActivityNew[data[1]].Misc
+  self.activityData.featureData = featureData
+  local event = featureData and featureData.event
   self.activityData.moveForwardID = event[1].param2[1]
   self.activityData.moveBackID = event[2].param2[1]
 end
@@ -238,6 +241,27 @@ end
 
 function MiniROProxy:IsActivityDateValid()
   return nil ~= ActivityCmd_pb.GACTIVITY_MINIRO and FunctionActivity.Me():IsActivityRunning(ActivityCmd_pb.GACTIVITY_MINIRO)
+end
+
+function MiniROProxy:GetCircleRewards(batchid)
+  if not Table_MonopolyReward then
+    return
+  end
+  local rewardData = {}
+  for _id, _data in pairs(Table_MonopolyReward) do
+    if _data.BatchID and _data.BatchID == 0 then
+      rewardData[_data.Circle] = _data.Reward
+    end
+  end
+  local batchid = batchid or self.batchID
+  if batchid then
+    for _id, _data in pairs(Table_MonopolyReward) do
+      if _data.BatchID and _data.BatchID == batchid then
+        rewardData[_data.Circle] = _data.Reward
+      end
+    end
+  end
+  return rewardData
 end
 
 function MiniROProxy:ClearData()

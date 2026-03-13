@@ -18,24 +18,51 @@ end
 
 function ActivityFlipCardView:InitData()
   self.activityId = self.subViewData and self.subViewData.ActivityId
+  self.batchID = ActivityIntegrationProxy.Instance:GetActivityBatchID(self.activityId)
   self.rowRewards = {}
   self.columnRewards = {}
   self.linkRewards = {}
   local sortFunc = function(l, r)
-    local lStatic = Table_FlipCard[l]
-    local rStatic = Table_FlipCard[r]
-    return lStatic.Index < rStatic.Index
+    return l.Index < r.Index
   end
   for id, v in pairs(Table_FlipCard) do
     if v.ActID == self.activityId then
       if v.Type == 1 then
-        self.rowRewards[v.Index] = id
+        if v.BatchID == self.batchID then
+          self.rowRewards[v.Index] = id
+        elseif (not v.BatchID or v.BatchID == 0) and not self.rowRewards[v.Index] then
+          self.rowRewards[v.Index] = id
+        end
       elseif v.Type == 2 then
-        self.columnRewards[v.Index] = id
+        if v.BatchID == self.batchID then
+          self.columnRewards[v.Index] = id
+        elseif (not v.BatchID or v.BatchID == 0) and not self.columnRewards[v.Index] then
+          self.columnRewards[v.Index] = id
+        end
       elseif v.Type == 3 then
-        self.diagonalReward = id
+        if v.BatchID == self.batchID then
+          self.diagonalReward = id
+        elseif (not v.BatchID or v.BatchID == 0) and not self.diagonalReward then
+          self.diagonalReward = id
+        end
       elseif v.Type == 4 then
-        self.linkRewards[#self.linkRewards + 1] = id
+        if v.BatchID == self.batchID then
+          local lineReward, idx = TableUtility.ArrayFindByPredicate(self.linkRewards, function(item, args)
+            return item.Index == args.Index
+          end, v)
+          if lineReward then
+            self.linkRewards[idx] = v
+          else
+            self.linkRewards[#self.linkRewards + 1] = v
+          end
+        elseif not v.BatchID or v.BatchID == 0 then
+          local lineReward, idx = TableUtility.ArrayFindByPredicate(self.linkRewards, function(item, args)
+            return item.Index == args.Index
+          end, v)
+          if not lineReward then
+            self.linkRewards[#self.linkRewards + 1] = v
+          end
+        end
       end
     end
   end
@@ -87,7 +114,7 @@ function ActivityFlipCardView:FindObjs()
   end)
   self.tipLabel = SpriteLabel.new(self:FindGO("Tip"), nil, 26, 26, true)
   local container = self:FindGO("GridContainer")
-  local config = Table_ActPersonalTimer[self.activityId]
+  local config = ActivityConfigHelper.GetActPersonalConfig(self.activityId)
   local maxLength = config and config.Misc.side_length and config.Misc.side_length or 6
   self.wrapHelper = WrapListCtrl.new(container, ActivityFlipCardGridCell, "ActivityFlipCardGridCell", WrapListCtrl_Dir.Vertical, maxLength, 76)
   self.wrapHelper:AddEventListener(ActivityFlipCardEvent_TimeOut, self.HandleActTimeOut, self)
@@ -110,7 +137,7 @@ function ActivityFlipCardView:AddEvts()
 end
 
 function ActivityFlipCardView:InitView()
-  local config = Table_ActPersonalTimer[self.activityId]
+  local config = ActivityConfigHelper.GetActPersonalConfig(self.activityId)
   if not config then
     return
   end
@@ -119,10 +146,7 @@ function ActivityFlipCardView:InitView()
   self.tipData.itemdata = itemData
   local tipStr = string.format(ZhString.FlipCard_Tip, token)
   self.tipLabel:SetText(tipStr)
-  local max_chance_by_act = config.Misc.max_chance_by_act
-  local cur_chance_by_act = ActivityFlipCardProxy.Instance:GetByActChance(self.activityId)
-  local addWayStr = string.format(ZhString.FlipCard_AddWay, token, cur_chance_by_act, max_chance_by_act)
-  self.addWayLabel:SetText(addWayStr)
+  self:UpdateAddWayLabel()
   if config.Misc.buy_chance_price then
     local money = config.Misc.buy_chance_price[1]
     local price = config.Misc.buy_chance_price[2]
@@ -194,10 +218,23 @@ function ActivityFlipCardView:RefreshView()
   local isCanBuy = ActivityFlipCardProxy.Instance:IsChanceCanBuy(self.activityId)
   self.buyBtn:SetActive(isCanBuy)
   self.buyBtnGrey:SetActive(not isCanBuy)
+  self:UpdateAddWayLabel()
+end
+
+function ActivityFlipCardView:UpdateAddWayLabel()
+  local config = ActivityConfigHelper.GetActPersonalConfig(self.activityId)
+  if not config then
+    return
+  end
+  local token = config.Misc.chance_token
+  local max_chance_by_act = config.Misc.max_chance_by_act
+  local cur_chance_by_act = ActivityFlipCardProxy.Instance:GetByActChance(self.activityId)
+  local addWayStr = string.format(ZhString.FlipCard_AddWay, token, cur_chance_by_act, max_chance_by_act)
+  self.addWayLabel:SetText(addWayStr)
 end
 
 function ActivityFlipCardView:UpdateGridPanel()
-  local config = Table_ActPersonalTimer[self.activityId]
+  local config = ActivityConfigHelper.GetActPersonalConfig(self.activityId)
   if config then
     local datas = {}
     local maxLength = config.Misc.side_length or 6
@@ -247,7 +284,8 @@ function ActivityFlipCardView:UpdateLinkRewardPanel()
   local datas = ReusableTable.CreateArray()
   local curLink = ActivityFlipCardProxy.Instance:GetLinkLineCount(self.activityId)
   for i = 1, #self.linkRewards do
-    local id = self.linkRewards[i]
+    local config = self.linkRewards[i]
+    local id = config.id
     local sData = Table_FlipCard[id]
     local data = self:SetRewardData(id)
     data.curLink = curLink
@@ -259,7 +297,7 @@ function ActivityFlipCardView:UpdateLinkRewardPanel()
 end
 
 function ActivityFlipCardView:OnShortcutBtnClick()
-  local config = Table_ActPersonalTimer[self.activityId]
+  local config = ActivityConfigHelper.GetActPersonalConfig(self.activityId)
   if config then
     local helpId = config.Misc.help_id
     local shortcutId = config.Misc.shortcut_id

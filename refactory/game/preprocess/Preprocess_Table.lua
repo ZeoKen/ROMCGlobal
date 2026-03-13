@@ -50,6 +50,9 @@ function Game.Preprocess_Table()
   Game.Preprocess_Table_TriplePvpRobot()
   Game.Preprocess_Table_CardLevel()
   Game.Preprocess_Table_SpaceTimeIllusionSkills()
+  Game.Preprocess_Table_ActBpReward()
+  Game.Preprocess_Table_LotteryBanner()
+  Game.Preprocess_Table_ActPaySign()
 end
 
 function Game.Preprocess_TableByTime()
@@ -835,7 +838,7 @@ local endtime = 1
 function Game.Preprocess_FuncTime()
   for k, v in pairs(Table_FuncTime) do
     if EnvChannel.IsTFBranch() then
-      if v.TFStartTime then
+      if v.TFStartTime and v.TFStartTime ~= "" then
         local st_year, st_month, st_day, st_hour, st_min, st_sec = StringUtil.GetDateData(v.TFStartTime)
         starttime = os.time({
           day = st_day,
@@ -847,7 +850,7 @@ function Game.Preprocess_FuncTime()
         })
         v.StartTimeStamp = starttime
       end
-      if v.TFEndTime then
+      if v.TFEndTime and v.TFEndTime ~= "" then
         local end_year, end_month, end_day, end_hour, end_min, end_sec = StringUtil.GetDateData(v.TFEndTime)
         endtime = os.time({
           day = end_day,
@@ -1672,4 +1675,56 @@ function Game.Preprocess_Table_SpaceTimeIllusionSkills()
     end
   end
   Game.SpaceTimeIllusionSkills = t
+end
+
+function Game.Preprocess_Table_ActBpReward()
+  if not Table_ActBpReward then
+    return
+  end
+  local t = {}
+  for _, v in pairs(Table_ActBpReward) do
+    if not t[v.ActID] then
+      t[v.ActID] = {}
+    end
+    local batchID = v.BatchID or 0
+    if not t[v.ActID][batchID] then
+      t[v.ActID][batchID] = {}
+    end
+    t[v.ActID][batchID][v.Level] = v
+  end
+  Game.Config_ActBpReward = t
+end
+
+function Game.Preprocess_Table_LotteryBanner()
+  if not Table_LotteryBanner then
+    return
+  end
+  local t = {}
+  for _, v in pairs(Table_LotteryBanner) do
+    if v.Type and v.ActivtyTime then
+      t[v.Type] = t[v.Type] or {}
+      t[v.Type][v.ActivtyTime] = v
+    end
+  end
+  if not t or not next(t) then
+    Game.Config_LotteryBanner = nil
+  else
+    Game.Config_LotteryBanner = t
+  end
+end
+
+function Game.Preprocess_Table_ActPaySign()
+  if not Table_ActPaySign then
+    return
+  end
+  local t = {}
+  for _, v in pairs(Table_ActPaySign) do
+    local datas = t[v.ActID]
+    if not datas then
+      datas = {}
+      t[v.ActID] = datas
+    end
+    datas[v.Day] = v
+  end
+  Game.Config_ActPaySign = t
 end

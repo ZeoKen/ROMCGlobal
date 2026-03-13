@@ -419,7 +419,11 @@ function EquipRefineBordNew:DoRefine(nowData)
       return
     end
     if self.isSafeMatOverFlow and self.selectSafeRefineMats and #self.selectSafeRefineMats > 0 then
-      MsgManager.ConfirmMsgByID(43300, function()
+      local msgId = 43300
+      if self.refineTolv >= self.maxRefineLv then
+        msgId = 43388
+      end
+      MsgManager.ConfirmMsgByID(msgId, function()
         callSafeRefine(self, nowData)
       end, nil, nil, tostring(self.refineTolv))
     else

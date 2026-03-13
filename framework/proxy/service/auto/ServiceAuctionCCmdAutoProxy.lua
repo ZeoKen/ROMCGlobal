@@ -1823,6 +1823,15 @@ function ServiceAuctionCCmdAutoProxy:CallUpdateAuctionInfoCCmd(iteminfo, batchid
       end
       msg.iteminfo.itemdata.furniture.npc.monster_id = iteminfo.itemdata.furniture.npc.monster_id
     end
+    if iteminfo.itemdata.furniture.npc ~= nil and iteminfo.itemdata.furniture.npc.damage_reduce_type ~= nil then
+      if msg.iteminfo.itemdata.furniture == nil then
+        msg.iteminfo.itemdata.furniture = {}
+      end
+      if msg.iteminfo.itemdata.furniture.npc == nil then
+        msg.iteminfo.itemdata.furniture.npc = {}
+      end
+      msg.iteminfo.itemdata.furniture.npc.damage_reduce_type = iteminfo.itemdata.furniture.npc.damage_reduce_type
+    end
     if iteminfo.itemdata.attr ~= nil and iteminfo.itemdata.attr.id ~= nil then
       if msg.iteminfo.itemdata == nil then
         msg.iteminfo.itemdata = {}
@@ -2215,6 +2224,15 @@ function ServiceAuctionCCmdAutoProxy:CallUpdateAuctionInfoCCmd(iteminfo, batchid
         msg.iteminfo.itemdata.memory = {}
       end
       msg.iteminfo.itemdata.memory.excess_lv = iteminfo.itemdata.memory.excess_lv
+    end
+    if iteminfo.itemdata.memory ~= nil and iteminfo.itemdata.memory.guid ~= nil then
+      if msg.iteminfo.itemdata == nil then
+        msg.iteminfo.itemdata = {}
+      end
+      if msg.iteminfo.itemdata.memory == nil then
+        msg.iteminfo.itemdata.memory = {}
+      end
+      msg.iteminfo.itemdata.memory.guid = iteminfo.itemdata.memory.guid
     end
     if iteminfo ~= nil and iteminfo.itemdata.memory.effects ~= nil then
       if msg.iteminfo.itemdata.memory == nil then
@@ -3740,6 +3758,15 @@ function ServiceAuctionCCmdAutoProxy:CallUpdateAuctionInfoCCmd(iteminfo, batchid
       end
       msgParam.iteminfo.itemdata.furniture.npc.monster_id = iteminfo.itemdata.furniture.npc.monster_id
     end
+    if iteminfo.itemdata.furniture.npc ~= nil and iteminfo.itemdata.furniture.npc.damage_reduce_type ~= nil then
+      if msgParam.iteminfo.itemdata.furniture == nil then
+        msgParam.iteminfo.itemdata.furniture = {}
+      end
+      if msgParam.iteminfo.itemdata.furniture.npc == nil then
+        msgParam.iteminfo.itemdata.furniture.npc = {}
+      end
+      msgParam.iteminfo.itemdata.furniture.npc.damage_reduce_type = iteminfo.itemdata.furniture.npc.damage_reduce_type
+    end
     if iteminfo.itemdata.attr ~= nil and iteminfo.itemdata.attr.id ~= nil then
       if msgParam.iteminfo.itemdata == nil then
         msgParam.iteminfo.itemdata = {}
@@ -4132,6 +4159,15 @@ function ServiceAuctionCCmdAutoProxy:CallUpdateAuctionInfoCCmd(iteminfo, batchid
         msgParam.iteminfo.itemdata.memory = {}
       end
       msgParam.iteminfo.itemdata.memory.excess_lv = iteminfo.itemdata.memory.excess_lv
+    end
+    if iteminfo.itemdata.memory ~= nil and iteminfo.itemdata.memory.guid ~= nil then
+      if msgParam.iteminfo.itemdata == nil then
+        msgParam.iteminfo.itemdata = {}
+      end
+      if msgParam.iteminfo.itemdata.memory == nil then
+        msgParam.iteminfo.itemdata.memory = {}
+      end
+      msgParam.iteminfo.itemdata.memory.guid = iteminfo.itemdata.memory.guid
     end
     if iteminfo ~= nil and iteminfo.itemdata.memory.effects ~= nil then
       if msgParam.iteminfo.itemdata.memory == nil then

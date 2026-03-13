@@ -1379,6 +1379,13 @@ Table_Appellation = {
     OrderType = 0,
     HideLock = 1
   },
+  [1384] = {
+    id = 1384,
+    Name = "##44716078",
+    TitleSort = 1384,
+    OrderType = 0,
+    HideLock = 1
+  },
   [1401] = {
     id = 1401,
     Name = "##1224024",

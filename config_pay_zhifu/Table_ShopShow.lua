@@ -1,4 +1,12 @@
 Table_ShopShow = {
+  [455] = {
+    id = 455,
+    Type = 1,
+    ShopID = 20001153,
+    Icon = "",
+    Picture = "",
+    IconTip = _EmptyTable
+  },
   [1001] = {
     id = 1001,
     Type = 1,
@@ -147,6 +155,14 @@ Table_ShopShow = {
     id = 1019,
     Type = 1,
     ShopID = 20000636,
+    Icon = "",
+    Picture = "libao_52836",
+    IconTip = _EmptyTable
+  },
+  [1020] = {
+    id = 1020,
+    Type = 1,
+    ShopID = 20000637,
     Icon = "",
     Picture = "libao_52836",
     IconTip = _EmptyTable

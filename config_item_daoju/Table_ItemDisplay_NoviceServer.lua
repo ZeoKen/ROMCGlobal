@@ -1044,6 +1044,16 @@ Table_ItemDisplay = {
     Type = 1,
     NoDisplay = _EmptyTable
   },
+  [3012848] = {
+    id = 3012848,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [3012857] = {
+    id = 3012857,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
   [10000000] = {
     id = 10000000,
     Type = 3,
@@ -1076,16 +1086,6 @@ Table_ItemDisplay = {
   },
   [10000315] = {
     id = 10000315,
-    Type = 1,
-    NoDisplay = _EmptyTable
-  },
-  [3012848] = {
-    id = 3012848,
-    Type = 1,
-    NoDisplay = _EmptyTable
-  },
-  [3012857] = {
-    id = 3012857,
     Type = 1,
     NoDisplay = _EmptyTable
   },

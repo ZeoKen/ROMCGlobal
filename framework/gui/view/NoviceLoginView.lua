@@ -61,7 +61,7 @@ end
 function NoviceLoginView:InitDatas()
   local _, activityid = DailyLoginProxy.Instance:isNoviceLoginOpen()
   self.activityid = activityid
-  self.config = GameConfig.FestivalSignin and GameConfig.FestivalSignin[self.activityid]
+  self.config = DailyLoginProxy.Instance:GetFestivalSigninConfig(self.activityid)
   self.tipData = {}
   self.tipData.funcConfig = {}
   self.clickValidTime = ServerTime.CurServerTime() / 1000
@@ -106,21 +106,13 @@ function NoviceLoginView:RefreshPage()
   self.curLoginNum = curLoginNum
   self.loginCountLabel.text = "0" .. curLoginNum
   local mySex = MyselfProxy.Instance:GetMySex() or 1
-  local signInReward = self.config and self.config.SigninReward
   local rewardList = {}
   for i = 1, 6 do
     local data = {}
     data.active = i <= curLoginNum or false
     data.nextDay = i == curLoginNum + 1 or false
     data.received = 0 < TableUtility.ArrayFindIndex(awardeddays, i) or false
-    local rewardGroup = signInReward[i]
-    if mySex == 1 then
-      data.rewards = rewardGroup.Item
-    elseif rewardGroup.FemaleItem then
-      data.rewards = rewardGroup.FemaleItem
-    else
-      data.rewards = rewardGroup.Item
-    end
+    data.rewards = DailyLoginProxy.Instance:GetSigninReward(self.activityid, i, mySex)
     table.insert(rewardList, data)
   end
   self.dailyLoginGridCtrl:ResetDatas(rewardList)
@@ -128,14 +120,7 @@ function NoviceLoginView:RefreshPage()
   lastData.active = 7 <= curLoginNum or false
   lastData.nextDay = 7 == curLoginNum + 1 or false
   lastData.received = 0 < TableUtility.ArrayFindIndex(awardeddays, 7) or false
-  local rewardGroup = signInReward[7]
-  if mySex == 1 then
-    lastData.rewards = rewardGroup.Item
-  elseif rewardGroup.FemaleItem then
-    lastData.rewards = rewardGroup.FemaleItem
-  else
-    lastData.rewards = rewardGroup.Item
-  end
+  lastData.rewards = DailyLoginProxy.Instance:GetSigninReward(self.activityid, 7, mySex)
   self.lastDayCell:SetData(lastData)
   TimeTickManager.Me():CreateOnceDelayTick(100, function(owner, deltaTime)
     self:AdjustScrollView()

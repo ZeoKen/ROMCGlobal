@@ -2711,9 +2711,9 @@ Table_Viewspot_t = {
       -459.37
     },
     {
-      482.33,
+      460.93,
       172.56,
-      -217.29
+      -215.66
     },
     {
       338.55,
@@ -4502,7 +4502,6 @@ Table_Viewspot = {
   [202] = {
     id = 202,
     MapName = 68,
-    SpotName = "##114150",
     Coordinate = Table_Viewspot_t.Coordinate[201],
     AdventureSort = 202
   },
@@ -6195,6 +6194,7 @@ Table_Viewspot = {
     id = 411,
     MapName = 127,
     MapNum = 3,
+    SpotName = "##1164269",
     Coordinate = Table_Viewspot_t.Coordinate[405],
     AdventureSort = 411
   },
@@ -7280,7 +7280,7 @@ local cell_mt = {
     Coordinate = _EmptyTable,
     MapName = 149,
     MapNum = 1,
-    SpotName = "##1164269",
+    SpotName = "##114150",
     Type = 1,
     id = 1
   }

@@ -1276,6 +1276,20 @@ Table_Mount = {
     TransformStartSE = "",
     TransformEndSE = ""
   },
+  [25275] = {
+    id = 25275,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [25276] = {
+    id = 25276,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
   [25278] = {
     id = 25278,
     EquipCondition = _EmptyTable,
@@ -2666,6 +2680,27 @@ Table_Mount = {
     id = 900332,
     EquipCondition = _EmptyTable,
     ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [900335] = {
+    id = 900335,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "aerocraft_ride",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [900336] = {
+    id = 900336,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "aerocraft_ride",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [900337] = {
+    id = 900337,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "aerocraft_ride",
     TransformStartSE = "",
     TransformEndSE = ""
   },

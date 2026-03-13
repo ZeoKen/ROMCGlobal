@@ -2934,7 +2934,7 @@ PanelConfig = {
     desc = "",
     prefab = "ArtifactDistributePopUp",
     class = "ArtifactDistributePopUp",
-    hideCollider = true
+    hideCollider = false
   },
   RealNameCentifyView = {
     id = 1530,
@@ -5247,6 +5247,14 @@ PanelConfig = {
     prefab = "ActivityIntegrationView",
     class = "RecallIntegrationView"
   },
+  LoopActIntegrationView = {
+    id = 2971,
+    tab = nil,
+    name = "循环活动",
+    desc = "",
+    prefab = "ActivityIntegrationView",
+    class = "LoopActIntegrationView"
+  },
   LotteryDollView = {
     id = 3001,
     tab = nil,
@@ -6605,6 +6613,30 @@ PanelConfig = {
     desc = "",
     prefab = "MemoryEquipRewardPopUp",
     class = "MemoryEquipRewardPopUp"
+  },
+  ChangeGuildZoneView = {
+    id = 30090,
+    tab = nil,
+    name = "世界线变更",
+    desc = "",
+    prefab = "ChangeGuildZoneView",
+    class = "ChangeGuildZoneView"
+  },
+  ChangeGvgLineView = {
+    id = 30091,
+    tab = nil,
+    name = "战线变更",
+    desc = "",
+    prefab = "ChangeGuildZoneView",
+    class = "ChangeGvgLineView"
+  },
+  ChangeGvgLineView_MultyZone = {
+    id = 30092,
+    tab = nil,
+    name = "战线变更(多时区)",
+    desc = "",
+    prefab = "ChangeGvgLineView_MultyZone",
+    class = "ChangeGvgLineView_MultyZone"
   },
   FaceBookFavPanel = {
     id = 100001,

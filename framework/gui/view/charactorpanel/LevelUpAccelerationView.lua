@@ -8,6 +8,7 @@ end
 function LevelUpAccelerationView:FindObjs()
   self.gameObject = self:FindGO("LevelUpAccelerationView")
   self.title = self:FindComponent("titleLabel", UILabel)
+  self.title.gameObject:SetActive(false)
   local grid = self:FindComponent("Grid", UIGrid)
   
   function grid.onReposition()

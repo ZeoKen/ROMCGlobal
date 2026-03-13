@@ -13,6 +13,7 @@ autoImport("ActivityIntegrationBriefSubView")
 autoImport("ActivitySelfChooseCardView")
 autoImport("ActivityExchangeView")
 autoImport("ActivityDungeonMvpCardView")
+autoImport("ActivityPaySignView")
 local picIns = PictureManager.Instance
 local DefaultDecorateTexName = "activityintegration_bg_bottom_01"
 
@@ -67,7 +68,8 @@ end
 
 local redtips = {
   [8] = SceneTip_pb.EREDSYS_NEW_YEAR_MEMORY,
-  [11] = ActivityExchangeProxy.RedTipId
+  [11] = ActivityExchangeProxy.RedTipId,
+  [13] = SceneTip_pb.EREDSYS_ACT_PAY_SIGN
 }
 
 function ActivityIntegrationView:InitShow()
@@ -479,6 +481,13 @@ function ActivityIntegrationView:LoadSubView(tabList)
     end
     return self.dungeonMvpCardView
   end
+  local loadActPaySignPage = function(viewdata)
+    if not self.actPaySignView then
+      self.actPaySignView = self:AddSubView("ActivityPaySignView", ActivityPaySignView, nil, viewdata)
+      self.actPaySignView.parentView = self
+    end
+    return self.actPaySignView
+  end
   self.subViews = {}
   self.subViews[1] = loadBPPage
   self.subViews[2] = loadSignInPage
@@ -492,6 +501,7 @@ function ActivityIntegrationView:LoadSubView(tabList)
   self.subViews[10] = loadSelfChooseCardPage
   self.subViews[11] = loadExchangePage
   self.subViews[12] = loadDungeonMvpCardPage
+  self.subViews[13] = loadActPaySignPage
   for i = 1, #tabList do
     local staticData = tabList[i].staticData
     if staticData then

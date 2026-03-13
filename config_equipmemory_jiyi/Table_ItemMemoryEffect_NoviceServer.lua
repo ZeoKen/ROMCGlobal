@@ -402,6 +402,7 @@ Table_ItemMemoryEffect = {
     id = 16,
     EffectID = 20002,
     BuffID = Table_ItemMemoryEffect_t.BuffID[16],
+    PreviewDesc = "魔法防御",
     WaxDesc = "魔法防御＋2%"
   },
   [17] = {
@@ -909,22 +910,19 @@ Table_ItemMemoryEffect = {
     id = 89,
     EffectID = 30304,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[58],
-    PreviewDesc = "时空守望",
     WaxDesc = "自身物伤减免和魔伤减免＋2%；同一地图队伍内其他成员（不包括自身）物伤减免和魔伤减免＋2%\n（效果可叠加，叠加3层时额外获得效果：自身物伤减免和魔伤减免＋4%；同一地图队伍内其他成员（不包括自身）物伤减免和魔伤减免＋4%）"
   },
   [90] = {
     id = 90,
     EffectID = 30304,
     Level = 2,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[59],
-    PreviewDesc = "时空守望"
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[59]
   },
   [91] = {
     id = 91,
     EffectID = 30304,
     Level = 3,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[60],
-    PreviewDesc = "时空守望"
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[60]
   },
   [92] = {
     id = 92,
@@ -1077,6 +1075,7 @@ Table_ItemMemoryEffect = {
     id = 137,
     EffectID = 40102,
     BuffID = Table_ItemMemoryEffect_t.BuffID[41],
+    PreviewDesc = "魔法防御",
     WaxDesc = "魔法防御＋12%"
   },
   [138] = {
@@ -1174,6 +1173,7 @@ Table_ItemMemoryEffect = {
     id = 151,
     EffectID = 40208,
     BuffID = Table_ItemMemoryEffect_t.BuffID[55],
+    PreviewDesc = "魔法防御",
     WaxDesc = "魔法防御＋12%"
   },
   [152] = {
@@ -1238,7 +1238,7 @@ local cell_mt = {
     BuffID = _EmptyTable,
     EffectID = 30103,
     Level = 1,
-    PreviewDesc = "魔法防御",
+    PreviewDesc = "时空守望",
     UpgradeDesc = "",
     WaxBuffID = _EmptyTable,
     WaxDesc = "",

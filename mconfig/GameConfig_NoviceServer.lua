@@ -64,6 +64,40 @@ GameConfig.ArtifactType = {
     [488] = "背饰"
   }
 }
+GameConfig.ArtifactConsumable = {
+  ShopMainID = 1,
+  ShopRandomID = 2,
+  Random2HideShopItemID = {
+    [1907410] = 1907310,
+    [1907420] = 1907320,
+    [1907430] = 1907330,
+    [1907440] = 1907340,
+    [1907450] = 1907350
+  },
+  RandomWeight = {
+    [1907410] = 8,
+    [1907420] = 16,
+    [1907430] = 11,
+    [1907440] = 16,
+    [1907450] = 32
+  },
+  MemberAssembleInviteMsgID = 2697,
+  MemberAssembleUseFailedMsgID = 25524,
+  MemberAssembleAcceptFailedMsgID = 2699,
+  MemberAssembleWaitTime = 10,
+  MemberAssembleTransferRange = 3,
+  MemberAssembleMapMsgID = 2694,
+  PointIllusionBuffID = 12030,
+  PointIllusionMultiplier = 3,
+  PointIllusionDuration = 40,
+  PointIllusionMapMsgID = 2695,
+  PointTransferForbidMapMsgID = 2696,
+  PointTransferForbidNoticeMsgID = 2698,
+  PointTransferForbidDuration = 15,
+  PointTransferForbidMonsterID = 310080,
+  HeartOfFortressBuffID = 12010,
+  HeartOfFortressDuration = 30
+}
 GameConfig.AutoQuestCompleteItems = {
   6826,
   6827,
@@ -4239,6 +4273,7 @@ GameConfig.AbyssDragon = {
       Hard = 1
     }
   },
+  DragonDamageRank = {MaxCount = 3, RankTick = 10},
   StageDesc = {
     [1] = "前往[时空隙谷]抵御时空龙(1/2)",
     [2] = "前往[%s]抵御时空龙(2/2)",
@@ -38318,6 +38353,22 @@ GameConfig.SkillType = {
   SummonCompanion = {
     type = "SummonCompanion",
     name = "主动技能"
+  },
+  GvgPointIllusion = {
+    type = "GvgPointIllusion",
+    name = "主动技能"
+  },
+  GvgHeartOfFortress = {
+    type = "GvgHeartOfFortress",
+    name = "主动技能"
+  },
+  GvgInviteTransferToMe = {
+    type = "GvgInviteTransferToMe",
+    name = "主动技能"
+  },
+  GvgPointForbidTransfer = {
+    type = "GvgPointForbidTransfer",
+    name = "主动技能"
   }
 }
 GameConfig.NormalSerialSkills = {
@@ -39137,7 +39188,7 @@ GameConfig.SkillInherit = {
       MaxLvPoint = 3
     },
     [3] = {
-      Point = 7,
+      Point = 6,
       LvUpCost = {
         60,
         10,
@@ -39150,7 +39201,7 @@ GameConfig.SkillInherit = {
         140,
         200
       },
-      MaxLvPoint = 6
+      MaxLvPoint = 5
     }
   }
 }
@@ -40283,7 +40334,7 @@ GameConfig.Team = {
   reply_kick_time = 20,
   mid_match_time = 20,
   mid_match_time_cd = 60,
-  Roguelike_maxmember = 3,
+  Roguelike_maxmember = 6,
   defaultQueryType = 0,
   chatTeamIntervalTime = 30,
   max_publish_time = 1800,
@@ -42360,6 +42411,147 @@ GameConfig.TopicPoringQuest = {
         1.46,
         0.43,
         15.34
+      }
+    }
+  }
+}
+GameConfig.TrainEscort = {
+  CheckPoint = {
+    0.25,
+    0.4,
+    0.51,
+    0.69,
+    0.76,
+    0.88
+  },
+  StartTime = "10:30",
+  EndTime = "19:30",
+  GiftBoxCountEffect = {
+    [1] = "sfx_bus002_buff_01_prf",
+    [2] = "sfx_bus002_buff_02_prf",
+    [3] = "sfx_bus002_buff_03_prf",
+    [4] = "sfx_bus002_buff_04_prf",
+    [5] = "sfx_bus002_buff_05_prf",
+    [6] = "sfx_bus002_buff_06_prf",
+    [7] = "sfx_bus002_buff_07_prf",
+    [8] = "sfx_bus002_buff_08_prf",
+    [9] = "sfx_bus002_buff_09_prf",
+    [10] = "sfx_bus002_buff_10_prf",
+    [11] = "sfx_bus002_buff_11_prf",
+    [12] = "sfx_bus002_buff_12_prf",
+    [13] = "sfx_bus002_buff_13_prf",
+    [14] = "sfx_bus002_buff_14_prf",
+    [15] = "sfx_bus002_buff_16_prf"
+  },
+  GotoShortCut = 8328,
+  GoodsEffectEp = 12,
+  EventPartnerLocation = {
+    [14] = {
+      [1] = {
+        pos = {
+          -6.867,
+          2.828,
+          42.657
+        },
+        dir = 170.774
+      },
+      [2] = {
+        pos = {
+          -5.244,
+          2.828,
+          48.434
+        },
+        dir = 195.7
+      }
+    },
+    [17] = {
+      [1] = {
+        pos = {
+          22.469,
+          3.525,
+          15.679
+        },
+        dir = 175.31
+      },
+      [2] = {
+        pos = {
+          21.417,
+          3.528,
+          21.573
+        },
+        dir = 180.22
+      }
+    },
+    [18] = {
+      [1] = {
+        pos = {
+          23.573,
+          3.826,
+          -17.789
+        },
+        dir = 178.09
+      },
+      [2] = {
+        pos = {
+          23.374,
+          3.888,
+          -11.793
+        },
+        dir = 178.1
+      }
+    },
+    [21] = {
+      [1] = {
+        pos = {
+          -10.422,
+          2.828,
+          -55.918
+        },
+        dir = 189.18
+      },
+      [2] = {
+        pos = {
+          -9.689,
+          2.828,
+          -49.963
+        },
+        dir = 187.02
+      }
+    },
+    [22] = {
+      [1] = {
+        pos = {
+          2.2615,
+          2.8286,
+          -68.121
+        },
+        dir = 109.425
+      },
+      [2] = {
+        pos = {
+          -2.772,
+          2.828,
+          -64.862
+        },
+        dir = 123.06
+      }
+    },
+    [24] = {
+      [1] = {
+        pos = {
+          24.33,
+          0.0631,
+          -100.549
+        },
+        dir = 174.87
+      },
+      [2] = {
+        pos = {
+          23.432,
+          0.15,
+          -94.62
+        },
+        dir = 171.39
       }
     }
   }
@@ -52485,6 +52677,10 @@ GameConfig.ActivityIntegration = {
   [69] = {
     ActivityIcon = "tab_icon_101",
     ActivityName = "彩虹巡游"
+  },
+  [67] = {
+    ActivityIcon = "tab_icon_101",
+    ActivityName = "付费签到"
   }
 }
 GameConfig.Altman = {
@@ -54798,6 +54994,28 @@ GameConfig.PaySign = {
     entryBgTexture = "recall_bg_bottom",
     isfree = 1,
     ShopInfo = {DepositID = 400001}
+  },
+  [12011] = {
+    activityIcon = "tab_icon_122",
+    activityName = "庆典宝库",
+    noviceMode = false,
+    entryDesc1 = "庆典宝库",
+    entryDesc2 = "",
+    entryDesc3 = "累积登录领好礼",
+    entryBgTexture = "recall_bg_bottom",
+    isfree = 1,
+    ShopInfo = {DepositID = 400024}
+  },
+  [12012] = {
+    activityIcon = "tab_icon_122",
+    activityName = "情人节宝库",
+    noviceMode = false,
+    entryDesc1 = "情人节宝库",
+    entryDesc2 = "",
+    entryDesc3 = "累积登录领好礼",
+    entryBgTexture = "recall_bg_bottom",
+    isfree = 1,
+    ShopInfo = {DepositID = 400025}
   }
 }
 GameConfig.Doll = {
@@ -57568,6 +57786,24 @@ GameConfig.LocalActivity = {
       Param = {PlotId = "40036"},
       RestrictMap = {109}
     }
+  },
+  CycleActivityList = {
+    [1] = {
+      RunTime = {
+        Day = {
+          5,
+          6,
+          7
+        },
+        StartTime = "19:00",
+        EndTime = "21:00",
+        Interval = 300,
+        Duration = 150
+      },
+      Type = "Plot_Action",
+      Param = {PlotId = "937477"},
+      RestrictMap = {1}
+    }
   }
 }
 GameConfig.GiftTimeLimit = {
@@ -59784,8 +60020,8 @@ GameConfig.ActivityPuzzle = {
       }
     }
   },
-  labelText = "联动拼图",
-  iconSprite = "tab_icon_dicheng_2"
+  labelText = "新春拼图",
+  iconSprite = "tab_icon_70"
 }
 GameConfig.ActivitySignIn = {
   [1] = {

@@ -2210,6 +2210,15 @@ function ServiceRecordTradeAutoProxy:CallTakeLogCmd(log, success)
       end
       msg.log.itemdata.furniture.npc.monster_id = log.itemdata.furniture.npc.monster_id
     end
+    if log.itemdata.furniture.npc ~= nil and log.itemdata.furniture.npc.damage_reduce_type ~= nil then
+      if msg.log.itemdata.furniture == nil then
+        msg.log.itemdata.furniture = {}
+      end
+      if msg.log.itemdata.furniture.npc == nil then
+        msg.log.itemdata.furniture.npc = {}
+      end
+      msg.log.itemdata.furniture.npc.damage_reduce_type = log.itemdata.furniture.npc.damage_reduce_type
+    end
     if log.itemdata.attr ~= nil and log.itemdata.attr.id ~= nil then
       if msg.log.itemdata == nil then
         msg.log.itemdata = {}
@@ -2602,6 +2611,15 @@ function ServiceRecordTradeAutoProxy:CallTakeLogCmd(log, success)
         msg.log.itemdata.memory = {}
       end
       msg.log.itemdata.memory.excess_lv = log.itemdata.memory.excess_lv
+    end
+    if log.itemdata.memory ~= nil and log.itemdata.memory.guid ~= nil then
+      if msg.log.itemdata == nil then
+        msg.log.itemdata = {}
+      end
+      if msg.log.itemdata.memory == nil then
+        msg.log.itemdata.memory = {}
+      end
+      msg.log.itemdata.memory.guid = log.itemdata.memory.guid
     end
     if log ~= nil and log.itemdata.memory.effects ~= nil then
       if msg.log.itemdata.memory == nil then
@@ -4336,6 +4354,15 @@ function ServiceRecordTradeAutoProxy:CallTakeLogCmd(log, success)
       end
       msgParam.log.itemdata.furniture.npc.monster_id = log.itemdata.furniture.npc.monster_id
     end
+    if log.itemdata.furniture.npc ~= nil and log.itemdata.furniture.npc.damage_reduce_type ~= nil then
+      if msgParam.log.itemdata.furniture == nil then
+        msgParam.log.itemdata.furniture = {}
+      end
+      if msgParam.log.itemdata.furniture.npc == nil then
+        msgParam.log.itemdata.furniture.npc = {}
+      end
+      msgParam.log.itemdata.furniture.npc.damage_reduce_type = log.itemdata.furniture.npc.damage_reduce_type
+    end
     if log.itemdata.attr ~= nil and log.itemdata.attr.id ~= nil then
       if msgParam.log.itemdata == nil then
         msgParam.log.itemdata = {}
@@ -4728,6 +4755,15 @@ function ServiceRecordTradeAutoProxy:CallTakeLogCmd(log, success)
         msgParam.log.itemdata.memory = {}
       end
       msgParam.log.itemdata.memory.excess_lv = log.itemdata.memory.excess_lv
+    end
+    if log.itemdata.memory ~= nil and log.itemdata.memory.guid ~= nil then
+      if msgParam.log.itemdata == nil then
+        msgParam.log.itemdata = {}
+      end
+      if msgParam.log.itemdata.memory == nil then
+        msgParam.log.itemdata.memory = {}
+      end
+      msgParam.log.itemdata.memory.guid = log.itemdata.memory.guid
     end
     if log ~= nil and log.itemdata.memory.effects ~= nil then
       if msgParam.log.itemdata.memory == nil then
@@ -6468,6 +6504,15 @@ function ServiceRecordTradeAutoProxy:CallAddNewLog(charid, log, total_page_count
       end
       msg.log.itemdata.furniture.npc.monster_id = log.itemdata.furniture.npc.monster_id
     end
+    if log.itemdata.furniture.npc ~= nil and log.itemdata.furniture.npc.damage_reduce_type ~= nil then
+      if msg.log.itemdata.furniture == nil then
+        msg.log.itemdata.furniture = {}
+      end
+      if msg.log.itemdata.furniture.npc == nil then
+        msg.log.itemdata.furniture.npc = {}
+      end
+      msg.log.itemdata.furniture.npc.damage_reduce_type = log.itemdata.furniture.npc.damage_reduce_type
+    end
     if log.itemdata.attr ~= nil and log.itemdata.attr.id ~= nil then
       if msg.log.itemdata == nil then
         msg.log.itemdata = {}
@@ -6860,6 +6905,15 @@ function ServiceRecordTradeAutoProxy:CallAddNewLog(charid, log, total_page_count
         msg.log.itemdata.memory = {}
       end
       msg.log.itemdata.memory.excess_lv = log.itemdata.memory.excess_lv
+    end
+    if log.itemdata.memory ~= nil and log.itemdata.memory.guid ~= nil then
+      if msg.log.itemdata == nil then
+        msg.log.itemdata = {}
+      end
+      if msg.log.itemdata.memory == nil then
+        msg.log.itemdata.memory = {}
+      end
+      msg.log.itemdata.memory.guid = log.itemdata.memory.guid
     end
     if log ~= nil and log.itemdata.memory.effects ~= nil then
       if msg.log.itemdata.memory == nil then
@@ -8597,6 +8651,15 @@ function ServiceRecordTradeAutoProxy:CallAddNewLog(charid, log, total_page_count
       end
       msgParam.log.itemdata.furniture.npc.monster_id = log.itemdata.furniture.npc.monster_id
     end
+    if log.itemdata.furniture.npc ~= nil and log.itemdata.furniture.npc.damage_reduce_type ~= nil then
+      if msgParam.log.itemdata.furniture == nil then
+        msgParam.log.itemdata.furniture = {}
+      end
+      if msgParam.log.itemdata.furniture.npc == nil then
+        msgParam.log.itemdata.furniture.npc = {}
+      end
+      msgParam.log.itemdata.furniture.npc.damage_reduce_type = log.itemdata.furniture.npc.damage_reduce_type
+    end
     if log.itemdata.attr ~= nil and log.itemdata.attr.id ~= nil then
       if msgParam.log.itemdata == nil then
         msgParam.log.itemdata = {}
@@ -8989,6 +9052,15 @@ function ServiceRecordTradeAutoProxy:CallAddNewLog(charid, log, total_page_count
         msgParam.log.itemdata.memory = {}
       end
       msgParam.log.itemdata.memory.excess_lv = log.itemdata.memory.excess_lv
+    end
+    if log.itemdata.memory ~= nil and log.itemdata.memory.guid ~= nil then
+      if msgParam.log.itemdata == nil then
+        msgParam.log.itemdata = {}
+      end
+      if msgParam.log.itemdata.memory == nil then
+        msgParam.log.itemdata.memory = {}
+      end
+      msgParam.log.itemdata.memory.guid = log.itemdata.memory.guid
     end
     if log ~= nil and log.itemdata.memory.effects ~= nil then
       if msgParam.log.itemdata.memory == nil then
@@ -10595,6 +10667,15 @@ function ServiceRecordTradeAutoProxy:CallReqServerPriceRecordTradeCmd(charid, it
       end
       msg.itemData.furniture.npc.monster_id = itemData.furniture.npc.monster_id
     end
+    if itemData.furniture.npc ~= nil and itemData.furniture.npc.damage_reduce_type ~= nil then
+      if msg.itemData.furniture == nil then
+        msg.itemData.furniture = {}
+      end
+      if msg.itemData.furniture.npc == nil then
+        msg.itemData.furniture.npc = {}
+      end
+      msg.itemData.furniture.npc.damage_reduce_type = itemData.furniture.npc.damage_reduce_type
+    end
     if itemData.attr ~= nil and itemData.attr.id ~= nil then
       if msg.itemData == nil then
         msg.itemData = {}
@@ -10987,6 +11068,15 @@ function ServiceRecordTradeAutoProxy:CallReqServerPriceRecordTradeCmd(charid, it
         msg.itemData.memory = {}
       end
       msg.itemData.memory.excess_lv = itemData.memory.excess_lv
+    end
+    if itemData.memory ~= nil and itemData.memory.guid ~= nil then
+      if msg.itemData == nil then
+        msg.itemData = {}
+      end
+      if msg.itemData.memory == nil then
+        msg.itemData.memory = {}
+      end
+      msg.itemData.memory.guid = itemData.memory.guid
     end
     if itemData ~= nil and itemData.memory.effects ~= nil then
       if msg.itemData.memory == nil then
@@ -12425,6 +12515,15 @@ function ServiceRecordTradeAutoProxy:CallReqServerPriceRecordTradeCmd(charid, it
       end
       msgParam.itemData.furniture.npc.monster_id = itemData.furniture.npc.monster_id
     end
+    if itemData.furniture.npc ~= nil and itemData.furniture.npc.damage_reduce_type ~= nil then
+      if msgParam.itemData.furniture == nil then
+        msgParam.itemData.furniture = {}
+      end
+      if msgParam.itemData.furniture.npc == nil then
+        msgParam.itemData.furniture.npc = {}
+      end
+      msgParam.itemData.furniture.npc.damage_reduce_type = itemData.furniture.npc.damage_reduce_type
+    end
     if itemData.attr ~= nil and itemData.attr.id ~= nil then
       if msgParam.itemData == nil then
         msgParam.itemData = {}
@@ -12817,6 +12916,15 @@ function ServiceRecordTradeAutoProxy:CallReqServerPriceRecordTradeCmd(charid, it
         msgParam.itemData.memory = {}
       end
       msgParam.itemData.memory.excess_lv = itemData.memory.excess_lv
+    end
+    if itemData.memory ~= nil and itemData.memory.guid ~= nil then
+      if msgParam.itemData == nil then
+        msgParam.itemData = {}
+      end
+      if msgParam.itemData.memory == nil then
+        msgParam.itemData.memory = {}
+      end
+      msgParam.itemData.memory.guid = itemData.memory.guid
     end
     if itemData ~= nil and itemData.memory.effects ~= nil then
       if msgParam.itemData.memory == nil then
@@ -14327,6 +14435,15 @@ function ServiceRecordTradeAutoProxy:CallBuyItemRecordTradeCmd(item_info, charid
       end
       msg.item_info.item_data.furniture.npc.monster_id = item_info.item_data.furniture.npc.monster_id
     end
+    if item_info.item_data.furniture.npc ~= nil and item_info.item_data.furniture.npc.damage_reduce_type ~= nil then
+      if msg.item_info.item_data.furniture == nil then
+        msg.item_info.item_data.furniture = {}
+      end
+      if msg.item_info.item_data.furniture.npc == nil then
+        msg.item_info.item_data.furniture.npc = {}
+      end
+      msg.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msg.item_info.item_data == nil then
         msg.item_info.item_data = {}
@@ -14719,6 +14836,15 @@ function ServiceRecordTradeAutoProxy:CallBuyItemRecordTradeCmd(item_info, charid
         msg.item_info.item_data.memory = {}
       end
       msg.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.guid ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.memory == nil then
+        msg.item_info.item_data.memory = {}
+      end
+      msg.item_info.item_data.memory.guid = item_info.item_data.memory.guid
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msg.item_info.item_data.memory == nil then
@@ -16295,6 +16421,15 @@ function ServiceRecordTradeAutoProxy:CallBuyItemRecordTradeCmd(item_info, charid
       end
       msgParam.item_info.item_data.furniture.npc.monster_id = item_info.item_data.furniture.npc.monster_id
     end
+    if item_info.item_data.furniture.npc ~= nil and item_info.item_data.furniture.npc.damage_reduce_type ~= nil then
+      if msgParam.item_info.item_data.furniture == nil then
+        msgParam.item_info.item_data.furniture = {}
+      end
+      if msgParam.item_info.item_data.furniture.npc == nil then
+        msgParam.item_info.item_data.furniture.npc = {}
+      end
+      msgParam.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msgParam.item_info.item_data == nil then
         msgParam.item_info.item_data = {}
@@ -16687,6 +16822,15 @@ function ServiceRecordTradeAutoProxy:CallBuyItemRecordTradeCmd(item_info, charid
         msgParam.item_info.item_data.memory = {}
       end
       msgParam.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.guid ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.memory == nil then
+        msgParam.item_info.item_data.memory = {}
+      end
+      msgParam.item_info.item_data.memory.guid = item_info.item_data.memory.guid
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msgParam.item_info.item_data.memory == nil then
@@ -18266,6 +18410,15 @@ function ServiceRecordTradeAutoProxy:CallSellItemRecordTradeCmd(item_info, chari
       end
       msg.item_info.item_data.furniture.npc.monster_id = item_info.item_data.furniture.npc.monster_id
     end
+    if item_info.item_data.furniture.npc ~= nil and item_info.item_data.furniture.npc.damage_reduce_type ~= nil then
+      if msg.item_info.item_data.furniture == nil then
+        msg.item_info.item_data.furniture = {}
+      end
+      if msg.item_info.item_data.furniture.npc == nil then
+        msg.item_info.item_data.furniture.npc = {}
+      end
+      msg.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msg.item_info.item_data == nil then
         msg.item_info.item_data = {}
@@ -18658,6 +18811,15 @@ function ServiceRecordTradeAutoProxy:CallSellItemRecordTradeCmd(item_info, chari
         msg.item_info.item_data.memory = {}
       end
       msg.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.guid ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.memory == nil then
+        msg.item_info.item_data.memory = {}
+      end
+      msg.item_info.item_data.memory.guid = item_info.item_data.memory.guid
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msg.item_info.item_data.memory == nil then
@@ -20234,6 +20396,15 @@ function ServiceRecordTradeAutoProxy:CallSellItemRecordTradeCmd(item_info, chari
       end
       msgParam.item_info.item_data.furniture.npc.monster_id = item_info.item_data.furniture.npc.monster_id
     end
+    if item_info.item_data.furniture.npc ~= nil and item_info.item_data.furniture.npc.damage_reduce_type ~= nil then
+      if msgParam.item_info.item_data.furniture == nil then
+        msgParam.item_info.item_data.furniture = {}
+      end
+      if msgParam.item_info.item_data.furniture.npc == nil then
+        msgParam.item_info.item_data.furniture.npc = {}
+      end
+      msgParam.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msgParam.item_info.item_data == nil then
         msgParam.item_info.item_data = {}
@@ -20626,6 +20797,15 @@ function ServiceRecordTradeAutoProxy:CallSellItemRecordTradeCmd(item_info, chari
         msgParam.item_info.item_data.memory = {}
       end
       msgParam.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.guid ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.memory == nil then
+        msgParam.item_info.item_data.memory = {}
+      end
+      msgParam.item_info.item_data.memory.guid = item_info.item_data.memory.guid
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msgParam.item_info.item_data.memory == nil then
@@ -22205,6 +22385,15 @@ function ServiceRecordTradeAutoProxy:CallCancelItemRecordTrade(item_info, charid
       end
       msg.item_info.item_data.furniture.npc.monster_id = item_info.item_data.furniture.npc.monster_id
     end
+    if item_info.item_data.furniture.npc ~= nil and item_info.item_data.furniture.npc.damage_reduce_type ~= nil then
+      if msg.item_info.item_data.furniture == nil then
+        msg.item_info.item_data.furniture = {}
+      end
+      if msg.item_info.item_data.furniture.npc == nil then
+        msg.item_info.item_data.furniture.npc = {}
+      end
+      msg.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msg.item_info.item_data == nil then
         msg.item_info.item_data = {}
@@ -22597,6 +22786,15 @@ function ServiceRecordTradeAutoProxy:CallCancelItemRecordTrade(item_info, charid
         msg.item_info.item_data.memory = {}
       end
       msg.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.guid ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.memory == nil then
+        msg.item_info.item_data.memory = {}
+      end
+      msg.item_info.item_data.memory.guid = item_info.item_data.memory.guid
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msg.item_info.item_data.memory == nil then
@@ -24182,6 +24380,15 @@ function ServiceRecordTradeAutoProxy:CallCancelItemRecordTrade(item_info, charid
       end
       msgParam.item_info.item_data.furniture.npc.monster_id = item_info.item_data.furniture.npc.monster_id
     end
+    if item_info.item_data.furniture.npc ~= nil and item_info.item_data.furniture.npc.damage_reduce_type ~= nil then
+      if msgParam.item_info.item_data.furniture == nil then
+        msgParam.item_info.item_data.furniture = {}
+      end
+      if msgParam.item_info.item_data.furniture.npc == nil then
+        msgParam.item_info.item_data.furniture.npc = {}
+      end
+      msgParam.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msgParam.item_info.item_data == nil then
         msgParam.item_info.item_data = {}
@@ -24574,6 +24781,15 @@ function ServiceRecordTradeAutoProxy:CallCancelItemRecordTrade(item_info, charid
         msgParam.item_info.item_data.memory = {}
       end
       msgParam.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.guid ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.memory == nil then
+        msgParam.item_info.item_data.memory = {}
+      end
+      msgParam.item_info.item_data.memory.guid = item_info.item_data.memory.guid
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msgParam.item_info.item_data.memory == nil then
@@ -26162,6 +26378,15 @@ function ServiceRecordTradeAutoProxy:CallResellPendingRecordTrade(item_info, cha
       end
       msg.item_info.item_data.furniture.npc.monster_id = item_info.item_data.furniture.npc.monster_id
     end
+    if item_info.item_data.furniture.npc ~= nil and item_info.item_data.furniture.npc.damage_reduce_type ~= nil then
+      if msg.item_info.item_data.furniture == nil then
+        msg.item_info.item_data.furniture = {}
+      end
+      if msg.item_info.item_data.furniture.npc == nil then
+        msg.item_info.item_data.furniture.npc = {}
+      end
+      msg.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msg.item_info.item_data == nil then
         msg.item_info.item_data = {}
@@ -26554,6 +26779,15 @@ function ServiceRecordTradeAutoProxy:CallResellPendingRecordTrade(item_info, cha
         msg.item_info.item_data.memory = {}
       end
       msg.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.guid ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.memory == nil then
+        msg.item_info.item_data.memory = {}
+      end
+      msg.item_info.item_data.memory.guid = item_info.item_data.memory.guid
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msg.item_info.item_data.memory == nil then
@@ -28136,6 +28370,15 @@ function ServiceRecordTradeAutoProxy:CallResellPendingRecordTrade(item_info, cha
       end
       msgParam.item_info.item_data.furniture.npc.monster_id = item_info.item_data.furniture.npc.monster_id
     end
+    if item_info.item_data.furniture.npc ~= nil and item_info.item_data.furniture.npc.damage_reduce_type ~= nil then
+      if msgParam.item_info.item_data.furniture == nil then
+        msgParam.item_info.item_data.furniture = {}
+      end
+      if msgParam.item_info.item_data.furniture.npc == nil then
+        msgParam.item_info.item_data.furniture.npc = {}
+      end
+      msgParam.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msgParam.item_info.item_data == nil then
         msgParam.item_info.item_data = {}
@@ -28528,6 +28771,15 @@ function ServiceRecordTradeAutoProxy:CallResellPendingRecordTrade(item_info, cha
         msgParam.item_info.item_data.memory = {}
       end
       msgParam.item_info.item_data.memory.excess_lv = item_info.item_data.memory.excess_lv
+    end
+    if item_info.item_data.memory ~= nil and item_info.item_data.memory.guid ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.memory == nil then
+        msgParam.item_info.item_data.memory = {}
+      end
+      msgParam.item_info.item_data.memory.guid = item_info.item_data.memory.guid
     end
     if item_info ~= nil and item_info.item_data.memory.effects ~= nil then
       if msgParam.item_info.item_data.memory == nil then
@@ -30327,6 +30579,15 @@ function ServiceRecordTradeAutoProxy:CallReqGiveItemInfoCmd(id, iteminfo)
       end
       msg.iteminfo.itemdata.furniture.npc.monster_id = iteminfo.itemdata.furniture.npc.monster_id
     end
+    if iteminfo.itemdata.furniture.npc ~= nil and iteminfo.itemdata.furniture.npc.damage_reduce_type ~= nil then
+      if msg.iteminfo.itemdata.furniture == nil then
+        msg.iteminfo.itemdata.furniture = {}
+      end
+      if msg.iteminfo.itemdata.furniture.npc == nil then
+        msg.iteminfo.itemdata.furniture.npc = {}
+      end
+      msg.iteminfo.itemdata.furniture.npc.damage_reduce_type = iteminfo.itemdata.furniture.npc.damage_reduce_type
+    end
     if iteminfo.itemdata.attr ~= nil and iteminfo.itemdata.attr.id ~= nil then
       if msg.iteminfo.itemdata == nil then
         msg.iteminfo.itemdata = {}
@@ -30719,6 +30980,15 @@ function ServiceRecordTradeAutoProxy:CallReqGiveItemInfoCmd(id, iteminfo)
         msg.iteminfo.itemdata.memory = {}
       end
       msg.iteminfo.itemdata.memory.excess_lv = iteminfo.itemdata.memory.excess_lv
+    end
+    if iteminfo.itemdata.memory ~= nil and iteminfo.itemdata.memory.guid ~= nil then
+      if msg.iteminfo.itemdata == nil then
+        msg.iteminfo.itemdata = {}
+      end
+      if msg.iteminfo.itemdata.memory == nil then
+        msg.iteminfo.itemdata.memory = {}
+      end
+      msg.iteminfo.itemdata.memory.guid = iteminfo.itemdata.memory.guid
     end
     if iteminfo ~= nil and iteminfo.itemdata.memory.effects ~= nil then
       if msg.iteminfo.itemdata.memory == nil then
@@ -32253,6 +32523,15 @@ function ServiceRecordTradeAutoProxy:CallReqGiveItemInfoCmd(id, iteminfo)
       end
       msgParam.iteminfo.itemdata.furniture.npc.monster_id = iteminfo.itemdata.furniture.npc.monster_id
     end
+    if iteminfo.itemdata.furniture.npc ~= nil and iteminfo.itemdata.furniture.npc.damage_reduce_type ~= nil then
+      if msgParam.iteminfo.itemdata.furniture == nil then
+        msgParam.iteminfo.itemdata.furniture = {}
+      end
+      if msgParam.iteminfo.itemdata.furniture.npc == nil then
+        msgParam.iteminfo.itemdata.furniture.npc = {}
+      end
+      msgParam.iteminfo.itemdata.furniture.npc.damage_reduce_type = iteminfo.itemdata.furniture.npc.damage_reduce_type
+    end
     if iteminfo.itemdata.attr ~= nil and iteminfo.itemdata.attr.id ~= nil then
       if msgParam.iteminfo.itemdata == nil then
         msgParam.iteminfo.itemdata = {}
@@ -32645,6 +32924,15 @@ function ServiceRecordTradeAutoProxy:CallReqGiveItemInfoCmd(id, iteminfo)
         msgParam.iteminfo.itemdata.memory = {}
       end
       msgParam.iteminfo.itemdata.memory.excess_lv = iteminfo.itemdata.memory.excess_lv
+    end
+    if iteminfo.itemdata.memory ~= nil and iteminfo.itemdata.memory.guid ~= nil then
+      if msgParam.iteminfo.itemdata == nil then
+        msgParam.iteminfo.itemdata = {}
+      end
+      if msgParam.iteminfo.itemdata.memory == nil then
+        msgParam.iteminfo.itemdata.memory = {}
+      end
+      msgParam.iteminfo.itemdata.memory.guid = iteminfo.itemdata.memory.guid
     end
     if iteminfo ~= nil and iteminfo.itemdata.memory.effects ~= nil then
       if msgParam.iteminfo.itemdata.memory == nil then
@@ -34629,6 +34917,15 @@ function ServiceRecordTradeAutoProxy:CallUpdateOrderTradeCmd(charid, info, type)
       end
       msg.info.item_data.furniture.npc.monster_id = info.item_data.furniture.npc.monster_id
     end
+    if info.item_data.furniture.npc ~= nil and info.item_data.furniture.npc.damage_reduce_type ~= nil then
+      if msg.info.item_data.furniture == nil then
+        msg.info.item_data.furniture = {}
+      end
+      if msg.info.item_data.furniture.npc == nil then
+        msg.info.item_data.furniture.npc = {}
+      end
+      msg.info.item_data.furniture.npc.damage_reduce_type = info.item_data.furniture.npc.damage_reduce_type
+    end
     if info.item_data.attr ~= nil and info.item_data.attr.id ~= nil then
       if msg.info.item_data == nil then
         msg.info.item_data = {}
@@ -35021,6 +35318,15 @@ function ServiceRecordTradeAutoProxy:CallUpdateOrderTradeCmd(charid, info, type)
         msg.info.item_data.memory = {}
       end
       msg.info.item_data.memory.excess_lv = info.item_data.memory.excess_lv
+    end
+    if info.item_data.memory ~= nil and info.item_data.memory.guid ~= nil then
+      if msg.info.item_data == nil then
+        msg.info.item_data = {}
+      end
+      if msg.info.item_data.memory == nil then
+        msg.info.item_data.memory = {}
+      end
+      msg.info.item_data.memory.guid = info.item_data.memory.guid
     end
     if info ~= nil and info.item_data.memory.effects ~= nil then
       if msg.info.item_data.memory == nil then
@@ -36594,6 +36900,15 @@ function ServiceRecordTradeAutoProxy:CallUpdateOrderTradeCmd(charid, info, type)
       end
       msgParam.info.item_data.furniture.npc.monster_id = info.item_data.furniture.npc.monster_id
     end
+    if info.item_data.furniture.npc ~= nil and info.item_data.furniture.npc.damage_reduce_type ~= nil then
+      if msgParam.info.item_data.furniture == nil then
+        msgParam.info.item_data.furniture = {}
+      end
+      if msgParam.info.item_data.furniture.npc == nil then
+        msgParam.info.item_data.furniture.npc = {}
+      end
+      msgParam.info.item_data.furniture.npc.damage_reduce_type = info.item_data.furniture.npc.damage_reduce_type
+    end
     if info.item_data.attr ~= nil and info.item_data.attr.id ~= nil then
       if msgParam.info.item_data == nil then
         msgParam.info.item_data = {}
@@ -36986,6 +37301,15 @@ function ServiceRecordTradeAutoProxy:CallUpdateOrderTradeCmd(charid, info, type)
         msgParam.info.item_data.memory = {}
       end
       msgParam.info.item_data.memory.excess_lv = info.item_data.memory.excess_lv
+    end
+    if info.item_data.memory ~= nil and info.item_data.memory.guid ~= nil then
+      if msgParam.info.item_data == nil then
+        msgParam.info.item_data = {}
+      end
+      if msgParam.info.item_data.memory == nil then
+        msgParam.info.item_data.memory = {}
+      end
+      msgParam.info.item_data.memory.guid = info.item_data.memory.guid
     end
     if info ~= nil and info.item_data.memory.effects ~= nil then
       if msgParam.info.item_data.memory == nil then

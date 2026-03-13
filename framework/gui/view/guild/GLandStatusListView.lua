@@ -9,15 +9,15 @@ autoImport("GLandStatusCombineView")
 GLandStatusListView.BrotherView = GLandStatusCombineView
 autoImport("GLandStatusListCell")
 autoImport("PopupCombineCell")
-local _BaseNum = 10000
 local _GetRealGroupId = function(id)
-  if id >= _BaseNum * 10000 then
+  local baseNum = GuildProxy.CurrentServerGroupIDBase
+  if id >= baseNum * 10000 then
     return math.floor(id / 10000)
-  elseif id >= _BaseNum * 1000 then
+  elseif id >= baseNum * 1000 then
     return math.floor(id / 1000)
-  elseif id >= _BaseNum * 100 then
+  elseif id >= baseNum * 100 then
     return math.floor(id / 100)
-  elseif id >= _BaseNum * 10 then
+  elseif id >= baseNum * 10 then
     return math.floor(id / 10)
   end
 end

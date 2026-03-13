@@ -2,6 +2,7 @@ autoImport("LotteryCell")
 LotteryMagicDetailCell = class("LotteryMagicDetailCell", LotteryCell)
 
 function LotteryMagicDetailCell:FindObjs()
+  self.batchConfigField = GameConfig.Lottery and GameConfig.Lottery.BatchIcon and GameConfig.Lottery.BatchIcon.magicBatchIcon or "up"
   LotteryMagicDetailCell.super.FindObjs(self)
   self.rate = self:FindGO("Rate")
   if self.rate then

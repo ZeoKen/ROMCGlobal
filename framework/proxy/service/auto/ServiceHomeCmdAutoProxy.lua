@@ -878,15 +878,6 @@ function ServiceHomeCmdAutoProxy:CallFurnitureOperHomeCmd(oper, guid, value, sou
       end
       msg.wood_data.nature = wood_data.nature
     end
-    if wood_data ~= nil and wood_data.damage_reduce ~= nil then
-      if msg == nil then
-        msg = {}
-      end
-      if msg.wood_data == nil then
-        msg.wood_data = {}
-      end
-      msg.wood_data.damage_reduce = wood_data.damage_reduce
-    end
     if wood_data ~= nil and wood_data.nature_lv ~= nil then
       if msg == nil then
         msg = {}
@@ -895,6 +886,15 @@ function ServiceHomeCmdAutoProxy:CallFurnitureOperHomeCmd(oper, guid, value, sou
         msg.wood_data = {}
       end
       msg.wood_data.nature_lv = wood_data.nature_lv
+    end
+    if wood_data ~= nil and wood_data.damage_reduce ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.wood_data == nil then
+        msg.wood_data = {}
+      end
+      msg.wood_data.damage_reduce = wood_data.damage_reduce
     end
     if wood_data ~= nil and wood_data.boss_type ~= nil then
       if msg == nil then
@@ -913,6 +913,15 @@ function ServiceHomeCmdAutoProxy:CallFurnitureOperHomeCmd(oper, guid, value, sou
         msg.wood_data = {}
       end
       msg.wood_data.monster_id = wood_data.monster_id
+    end
+    if wood_data ~= nil and wood_data.damage_reduce_type ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.wood_data == nil then
+        msg.wood_data = {}
+      end
+      msg.wood_data.damage_reduce_type = wood_data.damage_reduce_type
     end
     self:SendProto(msg)
   else
@@ -980,15 +989,6 @@ function ServiceHomeCmdAutoProxy:CallFurnitureOperHomeCmd(oper, guid, value, sou
       end
       msgParam.wood_data.nature = wood_data.nature
     end
-    if wood_data ~= nil and wood_data.damage_reduce ~= nil then
-      if msgParam == nil then
-        msgParam = {}
-      end
-      if msgParam.wood_data == nil then
-        msgParam.wood_data = {}
-      end
-      msgParam.wood_data.damage_reduce = wood_data.damage_reduce
-    end
     if wood_data ~= nil and wood_data.nature_lv ~= nil then
       if msgParam == nil then
         msgParam = {}
@@ -997,6 +997,15 @@ function ServiceHomeCmdAutoProxy:CallFurnitureOperHomeCmd(oper, guid, value, sou
         msgParam.wood_data = {}
       end
       msgParam.wood_data.nature_lv = wood_data.nature_lv
+    end
+    if wood_data ~= nil and wood_data.damage_reduce ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.wood_data == nil then
+        msgParam.wood_data = {}
+      end
+      msgParam.wood_data.damage_reduce = wood_data.damage_reduce
     end
     if wood_data ~= nil and wood_data.boss_type ~= nil then
       if msgParam == nil then
@@ -1015,6 +1024,15 @@ function ServiceHomeCmdAutoProxy:CallFurnitureOperHomeCmd(oper, guid, value, sou
         msgParam.wood_data = {}
       end
       msgParam.wood_data.monster_id = wood_data.monster_id
+    end
+    if wood_data ~= nil and wood_data.damage_reduce_type ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.wood_data == nil then
+        msgParam.wood_data = {}
+      end
+      msgParam.wood_data.damage_reduce_type = wood_data.damage_reduce_type
     end
     self:SendProto2(msgId, msgParam)
   end
