@@ -64,6 +64,18 @@ function RecallIntegrationView:AddViewEvts()
 end
 
 function RecallIntegrationView:InitDatas()
+  local viewdata = self.viewdata and self.viewdata.viewdata
+  local targetTab = viewdata and viewdata.tab
+  local tabToTypeMap = {
+    [1] = "SignIn",
+    [2] = "BattlePass",
+    [3] = "WeeklyTask",
+    [4] = "Fund",
+    [5] = "Shop",
+    [6] = "CatchUp",
+    [7] = "MvpCard"
+  }
+  self.targetActivityType = targetTab and tabToTypeMap[targetTab]
   self:InitTypeConfigs()
   self:InitSubViewLoaders()
 end
@@ -304,7 +316,16 @@ function RecallIntegrationView:RefreshTabList()
   end
   if 0 < #tabList then
     local targetCell
-    if self.currentID then
+    if self.targetActivityType then
+      for i = 1, #cells do
+        if cells[i].data and cells[i].data.activityType == self.targetActivityType then
+          targetCell = cells[i]
+          self.targetActivityType = nil
+          break
+        end
+      end
+    end
+    if not targetCell and self.currentID then
       for i = 1, #cells do
         if cells[i].data and cells[i].data.id == self.currentID then
           targetCell = cells[i]

@@ -39,7 +39,6 @@ function EquipMemoryPage:AddViewInterest()
 end
 
 function EquipMemoryPage:OnEnter()
-  xdlog("111111111111 EquipMemoryPage  OnEnter")
   EquipMemoryPage.super.OnEnter(self)
   self.grids = {}
   self:UpdateEquip()

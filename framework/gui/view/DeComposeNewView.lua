@@ -28,6 +28,7 @@ function DeComposeNewView:Init()
   local viewdata = self.viewdata.viewdata
   self.npcdata = viewdata and viewdata.npcdata
   self.isCombine = viewdata and viewdata.isCombine
+  self.tipData = {}
   self:InitUI()
   self:MapEvent()
 end

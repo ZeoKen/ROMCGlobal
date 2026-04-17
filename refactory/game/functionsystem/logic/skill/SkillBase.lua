@@ -594,6 +594,10 @@ function SkillBase:IsTriggerKickSkill(skillid, creature)
   return false
 end
 
+function SkillBase:IsFirstHitBackOnly()
+  return self.info:IsFirstHitBackOnly()
+end
+
 function SkillBase:IsLastHitOnly()
   return self.info:IsLastHitOnly()
 end

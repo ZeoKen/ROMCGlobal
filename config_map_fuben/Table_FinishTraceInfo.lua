@@ -1473,6 +1473,51 @@ Table_FinishTraceInfo = {
     id = 211600042,
     QuestKey = 123,
     FinishTraceInfo = "##44703170"
+  },
+  [211610011] = {
+    id = 211610011,
+    QuestKey = 124,
+    FinishTraceInfo = "##44717388"
+  },
+  [211610012] = {
+    id = 211610012,
+    QuestKey = 124,
+    FinishTraceInfo = "##44717389"
+  },
+  [211610016] = {
+    id = 211610016,
+    QuestKey = 125,
+    FinishTraceInfo = "##44717390"
+  },
+  [211610017] = {
+    id = 211610017,
+    QuestKey = 125,
+    FinishTraceInfo = "##44717391"
+  },
+  [211610018] = {
+    id = 211610018,
+    QuestKey = 125,
+    FinishTraceInfo = "##44717392"
+  },
+  [211630008] = {
+    id = 211630008,
+    QuestKey = 126,
+    FinishTraceInfo = "##44726601"
+  },
+  [211630009] = {
+    id = 211630009,
+    QuestKey = 126,
+    FinishTraceInfo = "##44726602"
+  },
+  [211630010] = {
+    id = 211630010,
+    QuestKey = 126,
+    FinishTraceInfo = "##44726603"
+  },
+  [211630011] = {
+    id = 211630011,
+    QuestKey = 126,
+    FinishTraceInfo = "##44726604"
   }
 }
 Table_FinishTraceInfo_fields = {

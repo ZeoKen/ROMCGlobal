@@ -58,7 +58,7 @@ end
 
 local damagePos = LuaVector3()
 
-function NCreature:PlayDamage_Effect(damage, damageType, fromid)
+function NCreature:PlayDamage_Effect(damage, damageType, fromid, doubleDamage)
   local posx, posy, posz = self.assetRole:GetEPOrRootPosition(RoleDefines_EP.Chest)
   LuaVector3.Better_Set(damagePos, posx, posy + math.random(0, 20) / 100, posz)
   local fromCreature = SceneCreatureProxy.FindCreature(fromid)
@@ -67,12 +67,12 @@ function NCreature:PlayDamage_Effect(damage, damageType, fromid)
     if CommonFun.DamageType.Normal_Sp == damageType or CommonFun.DamageType.Treatment_Sp == damageType then
       color = HurtNumColorType.Normal_Sp
     end
-    SkillLogic_Base.ShowDamage_Single(damageType, damage, damagePos, HurtNumType.DamageNum_R, color, self, nil, fromCreature)
+    SkillLogic_Base.ShowDamage_Single(damageType, damage, damagePos, HurtNumType.DamageNum_R, color, self, nil, fromCreature, doubleDamage)
   elseif damage < 0 then
     if CommonFun.DamageType.Normal_Sp == damageType or CommonFun.DamageType.Treatment_Sp == damageType then
-      SkillLogic_Base.ShowDamage_Single(CommonFun.DamageType.Treatment_Sp, -damage, damagePos, nil, nil, self, nil, fromCreature)
+      SkillLogic_Base.ShowDamage_Single(CommonFun.DamageType.Treatment_Sp, -damage, damagePos, nil, nil, self, nil, fromCreature, doubleDamage)
     else
-      SkillLogic_Base.ShowDamage_Single(CommonFun.DamageType.Treatment, -damage, damagePos, nil, nil, self, nil, fromCreature)
+      SkillLogic_Base.ShowDamage_Single(CommonFun.DamageType.Treatment, -damage, damagePos, nil, nil, self, nil, fromCreature, doubleDamage)
     end
   end
 end

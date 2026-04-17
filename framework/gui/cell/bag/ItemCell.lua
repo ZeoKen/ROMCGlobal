@@ -189,6 +189,7 @@ function ItemCell:SetData(data)
   self:SetEquipInfo(data)
   self:UpdateQuenchBg(data)
   self:SetMemoryInfo(data)
+  self:SetSnowGemInfo(data)
   self:SetMercenaryCatEquipUnlock(itemType, data)
 end
 
@@ -375,7 +376,7 @@ function ItemCell:SetCardInfo(data)
 end
 
 function ItemCell:SetFunctionTip(itemType)
-  if itemType ~= 65 then
+  if itemType ~= 65 and itemType ~= 4301 then
     if self.functionTip then
       self.functionTip:SetActive(false)
     end
@@ -1103,5 +1104,46 @@ function ItemCell:SetMemoryInfo(data)
     end
   elseif self.memoryGO then
     self.memoryGO:SetActive(false)
+  end
+end
+
+function ItemCell:SetSnowGemInfo(data)
+  if data.IsSnowGem and data:IsSnowGem() then
+    if not self.snowGemGO then
+      self.snowGemGO = self:LoadCellPart("SnowGem", self.normalItem)
+      if self.snowGemGO then
+        self.snowGemLvLabel = self:FindGO("Lv", self.snowGemGO):GetComponent(UILabel)
+        self.snowGemAdvLvGrid = self:FindGO("AdvLv", self.snowGemGO):GetComponent(UIGrid)
+        self.snowGemAdvStars = {}
+        self.snowGemAdvStarSprites = {}
+        for i = 1, 5 do
+          self.snowGemAdvStars[i] = self:FindGO("Star" .. tostring(i), self.snowGemAdvLvGrid.gameObject)
+          if self.snowGemAdvStars[i] then
+            self.snowGemAdvStarSprites[i] = self.snowGemAdvStars[i]:GetComponent(UISprite)
+          end
+        end
+      end
+    else
+      self.snowGemGO:SetActive(true)
+    end
+    if self.snowGemGO then
+      local level = data.snowGemData and data.snowGemData.level or 0
+      local advLv = data.snowGemData and data.snowGemData.advlv or 0
+      self.snowGemLvLabel.text = "+" .. level
+      self:SetSnowGemStarsAlpha(advLv)
+    end
+  elseif self.snowGemGO then
+    self.snowGemGO:SetActive(false)
+  end
+end
+
+function ItemCell:SetSnowGemStarsAlpha(advLv)
+  if not self.snowGemAdvStarSprites then
+    return
+  end
+  for i = 1, 5 do
+    if self.snowGemAdvStarSprites[i] then
+      self.snowGemAdvStarSprites[i].alpha = i <= advLv and 1 or 0
+    end
   end
 end

@@ -21,6 +21,9 @@ function ServiceMapAutoProxy:onRegister()
   self:Listen(12, 2, function(data)
     self:RecvPickupItem(data)
   end)
+  self:Listen(12, 42, function(data)
+    self:RecvRefineLvSyncMapCmd(data)
+  end)
   self:Listen(12, 34, function(data)
     self:RecvSyncGemSecretLandNineData(data)
   end)
@@ -132,6 +135,12 @@ function ServiceMapAutoProxy:onRegister()
   self:Listen(12, 39, function(data)
     self:RecvExtraRewardUpdateMapCmd(data)
   end)
+  self:Listen(12, 40, function(data)
+    self:RecvSnowRealmSnowmanAreaChangeCmd(data)
+  end)
+  self:Listen(12, 41, function(data)
+    self:RecvSnowRealmSnowmanProgressCmd(data)
+  end)
 end
 
 function ServiceMapAutoProxy:CallAddMapItem(items)
@@ -191,6 +200,67 @@ function ServiceMapAutoProxy:CallPickupItem(playerguid, itemguid, success)
     end
     if success ~= nil then
       msgParam.success = success
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceMapAutoProxy:CallRefineLvSyncMapCmd(charid, equip_lv, snow_lv)
+  if not NetConfig.PBC then
+    local msg = SceneMap_pb.RefineLvSyncMapCmd()
+    if charid ~= nil then
+      msg.charid = charid
+    end
+    if equip_lv ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.equip_lv == nil then
+        msg.equip_lv = {}
+      end
+      for i = 1, #equip_lv do
+        table.insert(msg.equip_lv, equip_lv[i])
+      end
+    end
+    if snow_lv ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.snow_lv == nil then
+        msg.snow_lv = {}
+      end
+      for i = 1, #snow_lv do
+        table.insert(msg.snow_lv, snow_lv[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.RefineLvSyncMapCmd.id
+    local msgParam = {}
+    if charid ~= nil then
+      msgParam.charid = charid
+    end
+    if equip_lv ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.equip_lv == nil then
+        msgParam.equip_lv = {}
+      end
+      for i = 1, #equip_lv do
+        table.insert(msgParam.equip_lv, equip_lv[i])
+      end
+    end
+    if snow_lv ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.snow_lv == nil then
+        msgParam.snow_lv = {}
+      end
+      for i = 1, #snow_lv do
+        table.insert(msgParam.snow_lv, snow_lv[i])
+      end
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -2041,12 +2111,68 @@ function ServiceMapAutoProxy:CallExtraRewardUpdateMapCmd(datas)
   end
 end
 
+function ServiceMapAutoProxy:CallSnowRealmSnowmanAreaChangeCmd(snowman_id)
+  if not NetConfig.PBC then
+    local msg = SceneMap_pb.SnowRealmSnowmanAreaChangeCmd()
+    if snowman_id ~= nil then
+      msg.snowman_id = snowman_id
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnowRealmSnowmanAreaChangeCmd.id
+    local msgParam = {}
+    if snowman_id ~= nil then
+      msgParam.snowman_id = snowman_id
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceMapAutoProxy:CallSnowRealmSnowmanProgressCmd(snowman_id, progress, activated, show_vfx)
+  if not NetConfig.PBC then
+    local msg = SceneMap_pb.SnowRealmSnowmanProgressCmd()
+    if snowman_id ~= nil then
+      msg.snowman_id = snowman_id
+    end
+    if progress ~= nil then
+      msg.progress = progress
+    end
+    if activated ~= nil then
+      msg.activated = activated
+    end
+    if show_vfx ~= nil then
+      msg.show_vfx = show_vfx
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnowRealmSnowmanProgressCmd.id
+    local msgParam = {}
+    if snowman_id ~= nil then
+      msgParam.snowman_id = snowman_id
+    end
+    if progress ~= nil then
+      msgParam.progress = progress
+    end
+    if activated ~= nil then
+      msgParam.activated = activated
+    end
+    if show_vfx ~= nil then
+      msgParam.show_vfx = show_vfx
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceMapAutoProxy:RecvAddMapItem(data)
   self:Notify(ServiceEvent.MapAddMapItem, data)
 end
 
 function ServiceMapAutoProxy:RecvPickupItem(data)
   self:Notify(ServiceEvent.MapPickupItem, data)
+end
+
+function ServiceMapAutoProxy:RecvRefineLvSyncMapCmd(data)
+  self:Notify(ServiceEvent.MapRefineLvSyncMapCmd, data)
 end
 
 function ServiceMapAutoProxy:RecvSyncGemSecretLandNineData(data)
@@ -2197,9 +2323,18 @@ function ServiceMapAutoProxy:RecvExtraRewardUpdateMapCmd(data)
   self:Notify(ServiceEvent.MapExtraRewardUpdateMapCmd, data)
 end
 
+function ServiceMapAutoProxy:RecvSnowRealmSnowmanAreaChangeCmd(data)
+  self:Notify(ServiceEvent.MapSnowRealmSnowmanAreaChangeCmd, data)
+end
+
+function ServiceMapAutoProxy:RecvSnowRealmSnowmanProgressCmd(data)
+  self:Notify(ServiceEvent.MapSnowRealmSnowmanProgressCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.MapAddMapItem = "ServiceEvent_MapAddMapItem"
 ServiceEvent.MapPickupItem = "ServiceEvent_MapPickupItem"
+ServiceEvent.MapRefineLvSyncMapCmd = "ServiceEvent_MapRefineLvSyncMapCmd"
 ServiceEvent.MapSyncGemSecretLandNineData = "ServiceEvent_MapSyncGemSecretLandNineData"
 ServiceEvent.MapAddMapUser = "ServiceEvent_MapAddMapUser"
 ServiceEvent.MapAddMapNpc = "ServiceEvent_MapAddMapNpc"
@@ -2237,3 +2372,5 @@ ServiceEvent.MapSkillWeatherSyncCmd = "ServiceEvent_MapSkillWeatherSyncCmd"
 ServiceEvent.MapAbyssAreaChangeNotifyCmd = "ServiceEvent_MapAbyssAreaChangeNotifyCmd"
 ServiceEvent.MapAbyssBossUpdateCmd = "ServiceEvent_MapAbyssBossUpdateCmd"
 ServiceEvent.MapExtraRewardUpdateMapCmd = "ServiceEvent_MapExtraRewardUpdateMapCmd"
+ServiceEvent.MapSnowRealmSnowmanAreaChangeCmd = "ServiceEvent_MapSnowRealmSnowmanAreaChangeCmd"
+ServiceEvent.MapSnowRealmSnowmanProgressCmd = "ServiceEvent_MapSnowRealmSnowmanProgressCmd"

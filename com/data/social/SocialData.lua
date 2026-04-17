@@ -48,6 +48,8 @@ function SocialData:SetData(data)
     self.mercenary_guildid = data.mercenary_guildid
     self.mercenary_guildname = data.mercenary_guildname
     self.mercenary_guildportrait = data.mercenary_guildportrait
+    self.snow_room_id = data.snowroomid
+    self.head_fashion = data.head_fashion
   end
 end
 
@@ -249,6 +251,7 @@ function SocialData:Clear()
   self.mercenary_guildid = nil
   self.mercenary_guildname = nil
   self.mercenary_guildportrait = nil
+  self.head_fashion = nil
 end
 
 function SocialData:DoConstruct(asArray, serverData)

@@ -184,6 +184,9 @@ function DeComposeView:ShowItemTip(data, ignoreBound, callback, funcConfig, tipO
     TipManager.CloseTip()
     return
   end
+  if not self.tipData then
+    self.tipData = {}
+  end
   self.tipData.itemdata = data
   self.tipData.ignoreBounds = ignoreBound
   self.tipData.callback = callback

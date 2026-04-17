@@ -457,6 +457,10 @@ function SkillInfo:NoElementTrap(creature)
   return self.logicParam.clear_element_trap == 1
 end
 
+function SkillInfo:GetNoHitMoveIntercept()
+  return self.logicParam.no_hitmove_intercept == 1
+end
+
 function SkillInfo:GetSpeakName(creature)
   return self.speakName
 end
@@ -1083,6 +1087,9 @@ function SkillInfo:NoHitEffectMove(creature, damageType, damage)
     if downCreature and downCreature:GetCreatureType() == Creature_Type.Player then
       return true
     end
+  end
+  if nil ~= creature and creature:IsOnHandcart() then
+    return true
   end
   if DamageType.None == damageType or DamageType.Miss == damageType or DamageType.Treatment == damageType or DamageType.Treatment_Sp == damageType or DamageType.Barrier == damageType or DamageType.Block == damageType or DamageType.AutoBlock == damageType or DamageType.WeaponBlock == damageType then
     return true
@@ -1714,6 +1721,10 @@ function SkillInfo:NeedPassiveFire()
   return self.logicParam.passive_fire == 1 or "MultiLockedTarget" == logicName
 end
 
+function SkillInfo:NeedSpecialAttackEffect()
+  return self.logicParam.special_attack_effect == 1
+end
+
 function SkillInfo:NoChant(creature)
   return self.logicParam.noChant == 1 or not creature:IsDressEnable()
 end
@@ -1775,6 +1786,16 @@ function SkillInfo:IsIgnoreTerrain()
   if self.staticData.AttackEffects[1] then
     return self.staticData.AttackEffects[1].ignoreTerrain == 1
   end
+end
+
+function SkillInfo:IsFirstHitBackOnly()
+  if not self.staticData.HitEffects then
+    return false
+  end
+  if self.staticData.HitEffects[1] then
+    return self.staticData.HitEffects[1].only_first_hitback == 1
+  end
+  return false
 end
 
 function SkillInfo:IsLastHitOnly()
@@ -1992,6 +2013,18 @@ function SkillInfo:IsFakeNormalAtk()
   return self.logicParam.fake_normalAtk ~= nil
 end
 
+function SkillInfo:CheckIsMoveAround(prepare, attack)
+  return prepare and self.logicParam.move_around_prepare == 1 or attack and self.logicParam.move_around_attack == 1
+end
+
+function SkillInfo:CheckIsMoveAroundPrepare()
+  return self.logicParam.move_around_prepare == 1
+end
+
+function SkillInfo:CheckIsMoveAroundAttack()
+  return self.logicParam.move_around_attack == 1
+end
+
 local roundOff = function(num, n)
   if 0 < n then
     local scale = math.pow(10, n - 1)
@@ -2049,6 +2082,10 @@ end
 function SkillInfo:IsKnightSkill()
   local specialType = self.logicParam.special_type
   return specialType and specialType == "knight"
+end
+
+function SkillInfo:IgnoreAttackInterval()
+  return self.logicParam.ignore_attack_interval == 1
 end
 
 function SkillInfo:IsMoveBreakSkill()

@@ -451,7 +451,12 @@ function PackageFashionPage.IsFashionItemEquiped(itemData, advFashion)
     end
     local site = itemData.equipInfo:GetEquipSite()
     for i = 1, #site do
-      local comp = BagProxy.Instance.fashionEquipBag:GetEquipBySite(site[i])
+      local checkSite = site[i]
+      local mappedSite = GameConfig.FashionEquip and GameConfig.FashionEquip.EquipPosToFashionPos and GameConfig.FashionEquip.EquipPosToFashionPos[checkSite]
+      if mappedSite then
+        checkSite = mappedSite
+      end
+      local comp = BagProxy.Instance.fashionEquipBag:GetEquipBySite(checkSite)
       if comp and comp.staticData.id == itemData.staticData.id then
         return true
       end
@@ -699,6 +704,8 @@ function PackageFashionPage:RefreshMyselfRole()
   parts[partIndexEx.HairColorIndex] = userdata:Get(UDEnum.HAIRCOLOR) or 0
   parts[partIndexEx.EyeColorIndex] = userdata:Get(UDEnum.EYECOLOR) or 0
   parts[partIndexEx.BodyColorIndex] = userdata:Get(UDEnum.CLOTHCOLOR) or 0
+  local headFashionBytes = userdata:GetBytes(UDEnum.HEAD_FASHION)
+  Asset_Role.ProcessHeadFashionForParts(parts, parts[partIndex.Head], headFashionBytes)
   self.role:SetSuffixReplaceMap(Asset_RoleUtility.GetSuffixReplaceMap(MyselfProxy.Instance:GetMyProfession(), parts[partIndex.Body], parts[partIndexEx.Gender]))
   Game.Myself.data:SpecialProcessPart_Sheath(parts)
   Game.Myself.data:SetMountFashionParts(parts, userdata)

@@ -45,6 +45,7 @@ function AchieveRewardView:FindObjs()
   self.itemWrapHelper:AddEventListener(HappyShopEvent.SelectIconSprite, self.HandleClickIconSprite, self)
   local titleBg = self:FindGO("titleBg")
   self.titleLab = self:FindComponent("Label", UILabel, titleBg)
+  self.titleIcon = self:FindComponent("icon", UISprite, titleBg)
 end
 
 function AchieveRewardView:AddEvts()
@@ -57,6 +58,17 @@ end
 function AchieveRewardView:InitData()
   self.groupid = self.viewdata.viewdata.groupid or 2
   xdlog("AchieveRewardView:InitData", self.groupid)
+  local npcFunctionData = self.viewdata.viewdata.npcFunctionData
+  if npcFunctionData and npcFunctionData.Parama then
+    local parama = npcFunctionData.Parama
+    if parama.Name then
+      self.titleLab.text = parama.Name
+    end
+    if parama.Icon then
+      IconManager:SetUIIcon(parama.Icon, self.titleIcon)
+      self.titleIcon:MakePixelPerfect()
+    end
+  end
 end
 
 function AchieveRewardView:InitShow()

@@ -113,12 +113,15 @@ function ActivityPaySignView:RefreshView()
 end
 
 function ActivityPaySignView:OnEnter()
-  local gameConfig = GameConfig.ActPaySign and GameConfig.ActPaySign[self.activityId]
-  if gameConfig then
-    self.titleLabel.text = gameConfig.Title
-    PictureManager.Instance:SetActivityTexture(gameConfig.Banner, self.bannerTex)
-    self.descLabel:SetText(gameConfig.Desc)
-    local depositID = gameConfig.DepositId
+  local config = (not Table_ActivityNew or not Table_ActivityNew[self.activityId]) and GameConfig.ActPaySign and GameConfig.ActPaySign[self.activityId]
+  if config then
+    self.titleLabel.text = config.TitleName
+    local params = config.Params_Inte
+    if params then
+      PictureManager.Instance:SetActivityTexture(params.Banner or "", self.bannerTex)
+      self.descLabel:SetText(params.Desc)
+    end
+    local depositID = ActivityPaySignProxy.Instance:GetDepositID(self.activityId)
     local depositConfig = Table_Deposit[depositID]
     if depositConfig then
       self.upgradeBtnLabel.text = string.format(ZhString.ActivityPaySignView_Upgrade, depositConfig.priceStr or depositConfig.CurrencyType .. FunctionNewRecharge.FormatMilComma(depositConfig.Rmb))
@@ -128,16 +131,15 @@ function ActivityPaySignView:OnEnter()
 end
 
 function ActivityPaySignView:OnExit()
-  local gameConfig = GameConfig.ActPaySign and GameConfig.ActPaySign[self.activityId]
-  if gameConfig then
-    PictureManager.Instance:UnloadActivityTexture(gameConfig.Banner, self.bannerTex)
+  local config = (not Table_ActivityNew or not Table_ActivityNew[self.activityId]) and GameConfig.ActPaySign and GameConfig.ActPaySign[self.activityId]
+  if config and config.Params_Inte then
+    PictureManager.Instance:UnloadActivityTexture(config.Params_Inte.Banner or "", self.bannerTex)
   end
   TimeTickManager.Me():ClearTick(self, 998)
 end
 
 function ActivityPaySignView:OnUpgradeBtnClick()
-  local config = GameConfig.ActPaySign and GameConfig.ActPaySign[self.activityId]
-  local depositID = config and config.DepositId
+  local depositID = ActivityPaySignProxy.Instance:GetDepositID(self.activityId)
   if depositID then
     local info = NewRechargeProxy.Ins:GenerateDepositGoodsInfo(depositID)
     if not info then
@@ -150,7 +152,8 @@ end
 
 function ActivityPaySignView:OnReceiveAllBtnClick()
   if self.activityId then
-    ServiceActivityCmdProxy.Instance:CallPaySignRewardActCmd(self.activityId)
+    local batchID = ActivityPaySignProxy.Instance:GetBatchID(self.activityId)
+    ServiceActivityCmdProxy.Instance:CallPaySignRewardActCmd(self.activityId, batchID)
   end
 end
 

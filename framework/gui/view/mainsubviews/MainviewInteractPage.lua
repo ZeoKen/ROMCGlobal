@@ -11,7 +11,9 @@ local InteractMountBtn_Status = {
   Sit = 0,
   ChangeSeat = 1,
   Kick = 2,
-  KickOver = 3
+  KickOver = 3,
+  SitHandcart = 4,
+  ExitHandcart = 5
 }
 local InteractMountBtn_2_Status = {Exit = 0}
 local FlowerCarMagnetSightBtn_Status = {TurnOn = 0, TurnOff = 1}
@@ -61,7 +63,9 @@ function MainviewInteractPage:AddButtonEvt()
     InteractLocalManager.Me():MyselfManualClick()
   end)
   self:AddClickEvent(self.objBtnInteractMount, function()
-    if self.interactMountBtn_Status == InteractMountBtn_Status.Sit then
+    if self.interactMountBtn_Status == InteractMountBtn_Status.SitHandcart then
+      Game.InteractNpcManager:MyselfManualClickHandcart()
+    elseif self.interactMountBtn_Status == InteractMountBtn_Status.Sit then
       Game.InteractNpcManager:MyselfManualClickMount()
     elseif self.interactMountBtn_Status == InteractMountBtn_Status.ChangeSeat then
       Game.InteractNpcManager:TryChangeSeat()
@@ -71,6 +75,8 @@ function MainviewInteractPage:AddButtonEvt()
         local ridingNpc = Game.Myself.data.userdata:Get(UDEnum.RIDING_NPC) or 0
         ServiceNUserProxy.Instance:CallKickOffPassengerUserCmd(0, nil, nil, ridingNpc ~= 0)
       end
+    elseif self.interactMountBtn_Status == InteractMountBtn_Status.ExitHandcart then
+      Game.InteractNpcManager:TryNotifyGetOffHandcart()
     end
   end)
   self:AddClickEvent(self.objBtnInteractMount_2, function()
@@ -96,7 +102,9 @@ end
 function MainviewInteractPage:AddViewEvt()
   self:AddListenEvt(InteractNpcEvent.MyselfTriggerChange, self.HandleTriggerChange)
   self:AddListenEvt(InteractNpcEvent.MyselfOnOffChange, self.UpdateInteractBtn)
+  self:AddListenEvt(InteractNpcEvent.MyselfOnOffHandcartChange, self.UpdateInteractMountBtn)
   self:AddListenEvt(InteractNpcEvent.MyselfTriggerMountChange, self.UpdateInteractMountBtn)
+  self:AddListenEvt(InteractNpcEvent.MyselfTriggerHandcartChange, self.UpdateInteractMountBtn)
   self:AddListenEvt(InteractNpcEvent.MyselfOnOffMountChange, self.UpdateInteractMountBtn)
   self:AddListenEvt(InteractNpcEvent.MyselfPassengerChange, self.UpdateInteractMountBtn)
   self:AddListenEvt(ServiceEvent.NUserBoothReqUserCmd, self.HandleBooth)
@@ -323,12 +331,17 @@ end
 
 function MainviewInteractPage:UpdateInteractMountBtn(note)
   local mapManager = Game.MapManager
-  if mapManager:IsPVPMode() or mapManager:IsInGVG() then
-    return
-  end
+  local isForbidMount = mapManager:IsPVPMode() or mapManager:IsInGVG()
   local lastBtn_Status = self.interactMountBtn_Status
   local lastBtn_2_Status = self.interactMountBtn_2_Status
-  if Game.InteractNpcManager:IsMyselfRideInteractMount() then
+  if Game.Myself:IsHasHandcart() then
+    self.objBtnInteractMount:SetActive(false)
+    self.objBtnInteractMount_2:SetActive(false)
+  elseif Game.InteractNpcManager:IsMyselfRideInteractHandcart() then
+    self.objBtnInteractMount:SetActive(true)
+    self.objBtnInteractMount_2:SetActive(false)
+    self.interactMountBtn_Status = InteractMountBtn_Status.ExitHandcart
+  elseif Game.InteractNpcManager:IsMyselfRideInteractMount() then
     local interactMount = Game.InteractNpcManager:GetInteractMount(Game.Myself.data.id)
     local isEmpty = not interactMount or interactMount:IsEmpty()
     self.objBtnInteractMount:SetActive(not isEmpty)
@@ -342,11 +355,18 @@ function MainviewInteractPage:UpdateInteractMountBtn(note)
     self.objBtnInteractMount_2:SetActive(true)
     self.interactMountBtn_Status = InteractMountBtn_Status.ChangeSeat
     self.interactMountBtn_2_Status = InteractMountBtn_2_Status.Exit
-  else
+  elseif Game.InteractNpcManager:GetTargetInteractHandcartMasterID() ~= nil then
+    self.objBtnInteractMount:SetActive(true)
+    self.objBtnInteractMount_2:SetActive(false)
+    self.interactMountBtn_Status = InteractMountBtn_Status.SitHandcart
+  elseif not isForbidMount then
     self.objBtnInteractMount:SetActive(Game.InteractNpcManager:GetTargetInteractMountID() ~= nil)
     self.objBtnInteractMount_2:SetActive(false)
     self.interactMountBtn_Status = InteractMountBtn_Status.Sit
     self.interactMountBtn_2_Status = InteractMountBtn_2_Status.Exit
+  else
+    self.objBtnInteractMount:SetActive(false)
+    self.objBtnInteractMount_2:SetActive(false)
   end
   if lastBtn_Status ~= self.interactMountBtn_Status then
     self.mulsprBtnInteractMount.CurrentState = self.interactMountBtn_Status
@@ -354,7 +374,9 @@ function MainviewInteractPage:UpdateInteractMountBtn(note)
   if lastBtn_2_Status ~= self.interactMountBtn_2_Status then
     self.mulsprBtnInteractMount_2.CurrentState = self.interactMountBtn_2_Status
   end
-  self:UpdateKickStatus(self.interactMountBtn_Status == InteractMountBtn_Status.KickOver)
+  if not isForbidMount then
+    self:UpdateKickStatus(self.interactMountBtn_Status == InteractMountBtn_Status.KickOver)
+  end
 end
 
 function MainviewInteractPage:ClearKickCells()

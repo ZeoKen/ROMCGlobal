@@ -42,6 +42,7 @@ autoImport("MainViewAstralPage")
 autoImport("MainViewAbyssLakePage")
 autoImport("MainViewAbyssDragonPage")
 autoImport("MainViewFairyTaleRaidPage")
+autoImport("MainViewAsyncPvpRaidPage")
 MainViewShortCutBord = {
   "ShortCutGrid",
   "SkillBord"
@@ -258,6 +259,10 @@ function MainView:MapViewListener()
   self:AddListenEvt(PVEEvent.FairyTale_Launch, self.HandleFairyTaleRaidLaunch)
   self:AddListenEvt(PVEEvent.FairyTale_Shutdown, self.HandleFairyTaleRaidShutdown)
   self:AddListenEvt(ServiceEvent.FuBenCmdFairyTaleRaidSyncCmd, self.HandleFairyTaleRaidSync)
+  self:AddListenEvt(PVPEvent.AsyncPvpRaid_Shutdown, self.HandleAsyncPvpRaidShutdown)
+  self:AddListenEvt(ServiceEvent.FuBenCmdGeffenMagicInfoSyncCmd, self.HandleSyncGeffenMagicInfo)
+  self:AddListenEvt(ServiceEvent.FuBenCmdGeffenMagicStatUpdateCmd, self.HandleGeffenMagicStatUpdate)
+  self:AddListenEvt(ServiceEvent.FuBenCmdGeffenMagicWinCmd, self.HandleSyncWaveResult)
 end
 
 function MainView:SceneLoadHandler()
@@ -802,6 +807,26 @@ function MainView:HandleFairyTaleRaidShutdown()
 end
 
 function MainView:HandleFairyTaleRaidSync(note)
+end
+
+function MainView:HandleAsyncPvpRaidShutdown()
+  if self.asyncPvpRaidPage then
+    self:RemoveSubView("AsyncPvpRaidPage")
+    self.asyncPvpRaidPage = nil
+  end
+end
+
+function MainView:HandleSyncGeffenMagicInfo()
+  if not self.asyncPvpRaidPage then
+    self.asyncPvpRaidPage = self:AddSubView("AsyncPvpRaidPage", MainViewAsyncPvpRaidPage)
+  end
+  self.asyncPvpRaidPage:RefreshView()
+end
+
+function MainView:HandleGeffenMagicStatUpdate()
+end
+
+function MainView:HandleSyncWaveResult()
 end
 
 return MainView

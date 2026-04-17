@@ -474,6 +474,10 @@ function AI_Myself:_TrySwitchCommand(time, deltaTime, creature)
           oldCurrentCmd:Destroy()
           oldCurrentCmd = nil
         end
+        if oldCurrentCmd and oldCurrentCmd.AIClass == AI_CMD_Myself_Skill then
+          oldCurrentCmd:Destroy()
+          oldCurrentCmd = nil
+        end
         self.nextCmd = oldCurrentCmd
       end
     end
@@ -540,6 +544,13 @@ end
 
 function AI_Myself:_TryExecuteSerialCommand(time, deltaTime, creature, cmd, startFunc)
   if nil ~= cmd then
+    if creature and creature:IsOnHandcart() and startFunc ~= nil then
+      if cmd.running then
+        cmd:End(time, deltaTime, creature)
+        cmd:Destroy()
+      end
+      return nil
+    end
     if cmd.running then
       cmd:Update(time, deltaTime, creature)
     else

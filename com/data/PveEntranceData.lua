@@ -149,6 +149,10 @@ function PveEntranceData:IsMemoryRaid()
   return self.raidType == PveRaidType.MemoryRaid
 end
 
+function PveEntranceData:IsGeffenMagic()
+  return self.raidType == PveRaidType.GeffenMagic
+end
+
 function PveEntranceData:IsNew()
   local openTime = self.groupid and GameConfig.Pve.RaidType[self.groupid] and GameConfig.Pve.RaidType[self.groupid].openTime
   if not openTime then

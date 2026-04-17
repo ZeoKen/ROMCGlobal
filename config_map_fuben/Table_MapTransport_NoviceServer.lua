@@ -187,6 +187,11 @@ Table_MapTransport = {
     id = 17,
     ZoneName = "深渊之湖",
     MapID = {154}
+  },
+  [18] = {
+    id = 18,
+    ZoneName = "伊斯加尔特",
+    MapID = {155}
   }
 }
 Table_MapTransport_fields = {

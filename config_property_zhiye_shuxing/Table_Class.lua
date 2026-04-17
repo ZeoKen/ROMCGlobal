@@ -273,6 +273,12 @@ Table_Class_t = {
         5311001,
         5312001,
         5313001
+      },
+      {
+        5330001,
+        5331001,
+        5332001,
+        5333001
       }
     },
     {
@@ -287,6 +293,12 @@ Table_Class_t = {
         5211001,
         5212001,
         5213001
+      },
+      {
+        5220001,
+        5221001,
+        5222001,
+        5223001
       }
     },
     {
@@ -301,6 +313,12 @@ Table_Class_t = {
         5011001,
         5012001,
         5013001
+      },
+      {
+        5020001,
+        5021001,
+        5022001,
+        5023001
       }
     },
     {
@@ -315,6 +333,12 @@ Table_Class_t = {
         6111001,
         6112001,
         6113001
+      },
+      {
+        6120001,
+        6121001,
+        6122001,
+        6123001
       }
     },
     {
@@ -329,6 +353,12 @@ Table_Class_t = {
         5711001,
         5712001,
         5713001
+      },
+      {
+        5720001,
+        5721001,
+        5722001,
+        5723001
       }
     },
     {
@@ -343,6 +373,12 @@ Table_Class_t = {
         6011001,
         6012001,
         6013001
+      },
+      {
+        6020001,
+        6021001,
+        6022001,
+        6023001
       }
     },
     {
@@ -357,6 +393,12 @@ Table_Class_t = {
         5411001,
         5412001,
         5413001
+      },
+      {
+        5420001,
+        5421001,
+        5422001,
+        5423001
       }
     },
     {
@@ -371,6 +413,12 @@ Table_Class_t = {
         5911001,
         5912001,
         5913001
+      },
+      {
+        5920001,
+        5921001,
+        5922001,
+        5923001
       }
     },
     {
@@ -385,6 +433,12 @@ Table_Class_t = {
         5111001,
         5112001,
         5113001
+      },
+      {
+        5120001,
+        5121001,
+        5122001,
+        5123001
       }
     },
     {
@@ -399,6 +453,12 @@ Table_Class_t = {
         5561001,
         5562001,
         5563001
+      },
+      {
+        5570001,
+        5571001,
+        5572001,
+        5573001
       }
     },
     {
@@ -413,6 +473,12 @@ Table_Class_t = {
         5511001,
         5512001,
         5513001
+      },
+      {
+        5520001,
+        5521001,
+        5522001,
+        5523001
       }
     },
     {
@@ -427,6 +493,12 @@ Table_Class_t = {
         5811001,
         5812001,
         5813001
+      },
+      {
+        5820001,
+        5821001,
+        5822001,
+        5823001
       }
     },
     {
@@ -441,6 +513,12 @@ Table_Class_t = {
         5611001,
         5612001,
         5613001
+      },
+      {
+        5620001,
+        5621001,
+        5622001,
+        5623001
       }
     }
   },
@@ -1328,7 +1406,6 @@ Table_Class = {
   },
   [21] = {
     id = 21,
-    NameZh = "##103362",
     NameEn = "Magician",
     MaleBody = 11,
     FemaleBody = 12,
@@ -1638,6 +1715,7 @@ Table_Class = {
   [43] = {
     id = 43,
     NameZh = "##144826",
+    NameEn = "Sniper",
     MaleBody = 31,
     FemaleBody = 32,
     MaleEye = 1,
@@ -1833,6 +1911,7 @@ Table_Class = {
     AdvancedOccupation = Table_Class_t.AdvancedOccupation[2],
     AdvanceClass = Table_Class_t.AdvanceClass[44],
     Type = 6,
+    icon = "icon_6_1",
     InitialAttr = Table_Class_t.InitialAttr[1],
     AddPointSolution = Table_Class_t.AddPointSolution[20],
     SkillPointSolution = Table_Class_t.SkillPointSolution[1],
@@ -2039,12 +2118,11 @@ Table_Class = {
   [82] = {
     id = 82,
     NameZh = "##140928",
-    NameEn = "Sage",
     MaleBody = 85,
     FemaleBody = 86,
     MaleEye = 1,
     FemaleEye = 2,
-    DefaultWeapon = 63401,
+    DefaultWeapon = 63417,
     Skill = Table_Class_t.Skill[12],
     MaxJobLevel = 90,
     AdvancedJobOccupation = 40,
@@ -2074,7 +2152,7 @@ Table_Class = {
     FemaleBody = 88,
     MaleEye = 1,
     FemaleEye = 2,
-    DefaultWeapon = 63401,
+    DefaultWeapon = 63417,
     Skill = Table_Class_t.Skill[13],
     MaxPeak = 160,
     AdvancedJobOccupation = 40,
@@ -2103,7 +2181,7 @@ Table_Class = {
     FemaleBody = 90,
     MaleEye = 1,
     FemaleEye = 2,
-    DefaultWeapon = 63401,
+    DefaultWeapon = 63417,
     Skill = Table_Class_t.Skill[38],
     MasterSkills = Table_Class_t.MasterSkills[9],
     MaxJobLevel = 200,
@@ -2289,7 +2367,6 @@ Table_Class = {
     AdvancedJobOccupation = 70,
     AdvanceClass = Table_Class_t.AdvanceClass[40],
     TypeBranch = 42,
-    icon = "icon_8_3",
     InitialAttr = Table_Class_t.InitialAttr[10],
     AddPointSolution = Table_Class_t.AddPointSolution[13],
     SkillPointSolution = Table_Class_t.SkillPointSolution[9],
@@ -2489,6 +2566,7 @@ Table_Class = {
   },
   [132] = {
     id = 132,
+    NameZh = "##144781",
     NameEn = "Alchemist",
     MaleBody = 67,
     FemaleBody = 68,
@@ -2607,9 +2685,9 @@ local cell_mt = {
     LimitMasterSkills = _EmptyTable,
     MasterSkills = _EmptyTable,
     MaxJobLevel = 130,
-    NameEn = "Sniper",
+    NameEn = "Sage",
     NameEnFemale = "",
-    NameZh = "##144781",
+    NameZh = "##103362",
     NameZhFemale = "",
     ProfessionalFashion = _EmptyTable,
     ShowEndTime = "",
@@ -2624,7 +2702,7 @@ local cell_mt = {
     TypeBranch = 61,
     UnlockAttr = _EmptyTable,
     UnlockTips = "",
-    icon = "icon_6_1",
+    icon = "icon_8_3",
     id = 1
   }
 }

@@ -286,6 +286,11 @@ function NFurniture:UpdateSeats(seats)
       _InteractNpcManager:AddMountInter(self.id, k, v)
     end
   end
+  local data = self.data
+  local animID = data and data:GetPendingSeatAnimID() or 0
+  if animID ~= 0 then
+    self:PlayActionByID(animID, true)
+  end
 end
 
 local FramePhotoWidth = 822
@@ -370,7 +375,7 @@ function NFurniture:PlayActionByID(actionid, force)
   return true
 end
 
-function NFurniture:Update(time, deltaTime)
+function NFurniture:LateUpdate(time, deltaTime)
   if not self.gameObject then
     return
   end

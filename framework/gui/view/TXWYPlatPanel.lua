@@ -69,6 +69,26 @@ TXWYPlatPanel.BranchConfig = {
     end,
     LogoIcon = "index2-ro"
   },
+  NOKR = {
+    Security = function(go)
+      PlayerPrefs.SetInt("NeedCheckGuest", 1)
+      FunctionSDK.Instance:EnterUserCenter(serverID, "未登入", version)
+    end,
+    ServiceBtn = function(go)
+      GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+        view = PanelConfig.CustomerServicePanel
+      })
+    end,
+    LangBtn = function(go)
+      GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+        view = PanelConfig.LangSwitchPanel
+      })
+      if SelfInstance then
+        SelfInstance:CloseSelf()
+      end
+    end,
+    LogoIcon = "index2-ro"
+  },
   Korea = {
     Security = function(go)
       PlayerPrefs.SetInt("NeedCheckGuest", 1)

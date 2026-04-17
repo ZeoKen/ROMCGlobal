@@ -8,7 +8,7 @@ function AbyssDailyQuestBoardView:Init()
   self:InitData()
   self:FindObjs()
   self:AddListenEvts()
-  ServiceQuestProxy.Instance:CallQueryAbyssQuestListQuestCmd()
+  self:QueryQuestList()
 end
 
 function AbyssDailyQuestBoardView:InitData()
@@ -18,7 +18,7 @@ end
 function AbyssDailyQuestBoardView:FindObjs()
   self.bg = self:FindComponent("Bg", UITexture)
   local grid = self:FindComponent("Grid", UIGrid)
-  self.questListCtrl = UIGridListCtrl.new(grid, AbyssQuestCell, "AbyssQuestCell")
+  self:InitQuestListCtrl(grid)
   self.friendHelpBtn = self:FindGO("HelpBtn")
   self:AddClickEvent(self.friendHelpBtn, function()
     self:OnFriendHelpBtnClick()
@@ -29,11 +29,19 @@ function AbyssDailyQuestBoardView:FindObjs()
   self.areaFriendLabel = self:FindComponent("AreaFriend", UILabel)
 end
 
+function AbyssDailyQuestBoardView:InitQuestListCtrl(grid)
+  self.questListCtrl = UIGridListCtrl.new(grid, AbyssQuestCell, "AbyssQuestCell")
+end
+
 function AbyssDailyQuestBoardView:AddListenEvts()
   self:AddListenEvt(ServiceEvent.SceneUser3QueryPrestigeCmd, self.HandleQueryPrestige)
   self:AddListenEvt(ServiceEvent.QuestQueryAbyssQuestListQuestCmd, self.HandleQueryAbyssQuestList)
   self:AddListenEvt(ServiceEvent.QuestUpdateAbyssHelpCountQuestCmd, self.HandleUpdateAbyssHelpCount)
   self:AddListenEvt(ServiceEvent.QuestQuestUpdate, self.RefreshView)
+end
+
+function AbyssDailyQuestBoardView:QueryQuestList()
+  ServiceQuestProxy.Instance:CallQueryAbyssQuestListQuestCmd()
 end
 
 function AbyssDailyQuestBoardView:HandleQueryPrestige()
@@ -49,13 +57,17 @@ function AbyssDailyQuestBoardView:HandleUpdateAbyssHelpCount()
 end
 
 function AbyssDailyQuestBoardView:OnEnter()
-  local areaName = GameConfig.Quest and GameConfig.Quest.Abyss and GameConfig.Quest.Abyss.AreaName
-  self.areaFriendLabel.text = string.format(ZhString.Abyss_QuestAreaFriend, areaName[self.areaId] or "")
+  self.areaFriendLabel.text = string.format(ZhString.Abyss_QuestAreaFriend, self:GetAreaName())
   PictureManager.Instance:SetAbyssTexture(bgName, self.bg)
 end
 
 function AbyssDailyQuestBoardView:OnExit()
   PictureManager.Instance:UnloadAbyssTexture(bgName, self.bg)
+end
+
+function AbyssDailyQuestBoardView:GetAreaName()
+  local areaName = GameConfig.Quest and GameConfig.Quest.Abyss and GameConfig.Quest.Abyss.AreaName
+  return areaName[self.areaId] or ""
 end
 
 local sortFunc = function(l, r)
@@ -89,14 +101,14 @@ end
 function AbyssDailyQuestBoardView:RefreshView()
   local datas = {}
   if not self.questList then
-    self.questList = AbyssQuestProxy.Instance:GetQuestList(self.areaId)
+    self.questList = self:GetQuestList()
     table.sort(self.questList, sortFunc)
   end
-  local count = GameConfig.Quest and GameConfig.Quest.Abyss and GameConfig.Quest.Abyss.TotalCount or 0
-  local prestigeLv = AbyssQuestProxy.Instance:GetAreaPrestigeLevel(self.areaId)
+  local count = self:GetTotalQuestCount()
+  local prestigeLv = self:GetAreaPrestigeLevel()
   local prestigeInfo = VersionPrestigeProxy.Instance:GetPrestigeInfo(self.areaId)
   local myPrestigeLv = prestigeInfo and prestigeInfo.level or 0
-  local unlockCountConf = GameConfig.Quest and GameConfig.Quest.Abyss and GameConfig.Quest.Abyss.PrestigeLvUnlockCount
+  local unlockCountConf = self:GetUnlockCountConf()
   for i = 1, count do
     local questData = self.questList[i]
     if questData then
@@ -109,10 +121,9 @@ function AbyssDailyQuestBoardView:RefreshView()
           unlockLv = math.min(unlockLv, lv)
         end
       end
-      local areaName = GameConfig.Quest and GameConfig.Quest.Abyss and GameConfig.Quest.Abyss.AreaName
       datas[i] = {
         unlockLv = unlockLv or 0,
-        areaName = areaName[self.areaId] or "",
+        areaName = self:GetAreaName(),
         prestigeLv = prestigeLv,
         myPrestigeLv = myPrestigeLv
       }
@@ -122,19 +133,54 @@ function AbyssDailyQuestBoardView:RefreshView()
   self:RefreshFriendHelp()
 end
 
+function AbyssDailyQuestBoardView:GetQuestList()
+  local questList = AbyssQuestProxy.Instance:GetQuestList(self.areaId)
+  return questList
+end
+
+function AbyssDailyQuestBoardView:GetAreaPrestigeLevel()
+  local prestigeLv = AbyssQuestProxy.Instance:GetAreaPrestigeLevel(self.areaId)
+  return prestigeLv
+end
+
+function AbyssDailyQuestBoardView:GetTotalQuestCount()
+  local count = GameConfig.Quest and GameConfig.Quest.Abyss and GameConfig.Quest.Abyss.TotalCount or 0
+  return count
+end
+
+function AbyssDailyQuestBoardView:GetUnlockCountConf()
+  local unlockCountConf = GameConfig.Quest and GameConfig.Quest.Abyss and GameConfig.Quest.Abyss.PrestigeLvUnlockCount
+  return unlockCountConf
+end
+
+function AbyssDailyQuestBoardView:GetCurHelpNum()
+  local curHelpNum = AbyssQuestProxy.Instance:GetCurHelpNum(self.areaId)
+  return curHelpNum
+end
+
+function AbyssDailyQuestBoardView:GetTotalHelpNum()
+  local totalHelpNum = AbyssQuestProxy.Instance:GetTotalHelpNum(self.areaId)
+  return totalHelpNum
+end
+
+function AbyssDailyQuestBoardView:GetMaxHelpCount()
+  local helpQuest = GameConfig.Quest and GameConfig.Quest.Abyss and GameConfig.Quest.Abyss.HelpQuest
+  local maxHelpCount = helpQuest and helpQuest[self.areaId] and #helpQuest[self.areaId]
+  return maxHelpCount
+end
+
 local enableLabelColor = Color(0.6196078431372549, 0.33725490196078434, 0, 1)
 
 function AbyssDailyQuestBoardView:RefreshFriendHelp()
-  local curHelpNum = AbyssQuestProxy.Instance:GetCurHelpNum(self.areaId)
-  local totalHelpNum = AbyssQuestProxy.Instance:GetTotalHelpNum(self.areaId)
+  local curHelpNum = self:GetCurHelpNum()
+  local totalHelpNum = self:GetTotalHelpNum()
   if 0 < totalHelpNum then
     self.helpCountLabel.text = string.format(ZhString.Abyss_QuestHelpCount, curHelpNum, totalHelpNum)
   else
     self.helpCountLabel.text = ZhString.Abyss_QuestHelp
   end
   local datas = {}
-  local helpQuest = GameConfig.Quest and GameConfig.Quest.Abyss and GameConfig.Quest.Abyss.HelpQuest
-  local maxHelpCount = helpQuest and helpQuest[self.areaId] and #helpQuest[self.areaId]
+  local maxHelpCount = self:GetMaxHelpCount()
   for i = 1, maxHelpCount do
     local data = i <= curHelpNum and 2 or i <= totalHelpNum and 1 or 0
     redlog("helpcount", data)
@@ -145,7 +191,7 @@ function AbyssDailyQuestBoardView:RefreshFriendHelp()
 end
 
 function AbyssDailyQuestBoardView:OnFriendHelpBtnClick()
-  local totalHelpNum = AbyssQuestProxy.Instance:GetTotalHelpNum(self.areaId)
+  local totalHelpNum = self:GetTotalHelpNum()
   if totalHelpNum == 0 then
     MsgManager.ShowMsgByID(43606)
     return

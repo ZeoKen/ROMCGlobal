@@ -6,6 +6,12 @@ AssetManager_Furniture.SceneObjShader = "RO/SceneObject/Lit"
 AssetManager_Furniture.RoleShaderName = "RO/Role/PartOutline"
 AssetManager_Furniture.RenderQueueOpaque = 2110
 AssetManager_Furniture.RenderQueueTransparent = 3195
+local AssetType = {
+  Furniture = "LoadFurniture",
+  HomeMaterial = "_LoadHomeMaterial",
+  HomeMaterialAlbedo = "_LoadHomeMaterialAlbedo",
+  HomeMaterialModel = "LoadHomeMaterialModel"
+}
 
 function AssetManager_Furniture.IsFurnitureBody(renderer)
   local material = renderer.material
@@ -31,6 +37,7 @@ end
 function AssetManager_Furniture:ctor(assetManager)
   self.assetManager = assetManager
   self.tabMaterialMap = {}
+  self.tabMaterialAlbedoMap = {}
   self.tabShaderMap = {}
   self.isRunOnEditor = ApplicationInfo.IsRunOnEditor()
 end
@@ -62,7 +69,8 @@ function AssetManager_Furniture:CreateBuildSign(parent, callback)
 end
 
 function AssetManager_Furniture:CreateWorldGrid(mapName, floorIndex, parent, callback)
-  return self:CreateAsset(ResourcePathHelper.HomeWorldGrid(mapName, floorIndex), parent, callback)
+  local homeName = HomeManager.Me():GetHomeName(mapName)
+  return self:CreateAsset(ResourcePathHelper.HomeWorldGrid(homeName, floorIndex), parent, callback)
 end
 
 function AssetManager_Furniture:CreateBuildGridMask(parent, callback)
@@ -196,6 +204,48 @@ function AssetManager_Furniture:LoadHomeMaterial(id, folderName, callBack, callB
   end
 end
 
+function AssetManager_Furniture:_LoadHomeMaterial(path, parent, callback, callbackparam)
+  self.assetManager:LoadAsync(path, function(asset)
+    if not asset then
+      LogUtility.Error(string.format("加载材质失败! 路径: %s", path))
+    end
+    self.tabMaterialMap[path] = asset
+    if callback then
+      callback(asset, callbackparam)
+    end
+  end)
+end
+
+function AssetManager_Furniture:LoadHomeMaterialAlbedo(id, folderName, callBack, callBackParam)
+  if not id or not folderName then
+    LogUtility.Error(string.format("加载材质Albedo贴图失败! ID: %s, 文件夹: %s", tostring(id), tostring(folderName)))
+    return
+  end
+  local path = ResourcePathHelper.HomeMaterialAlbedo(id)
+  if self.tabMaterialAlbedoMap[path] then
+    if callBack then
+      callBack(self.tabMaterialAlbedoMap[path], callBackParam)
+    end
+    return
+  end
+  if path then
+    self:_LoadHomeMaterialAlbedo(path, nil, callBack, callBackParam)
+  end
+end
+
+function AssetManager_Furniture:_LoadHomeMaterialAlbedo(path, parent, callback, callbackparam)
+  self.assetManager:LoadAsync(path, function(asset)
+    if not asset then
+      LogUtility.Error(string.format("加载材质贴图失败! 路径: %s", path))
+      return
+    end
+    self.tabMaterialAlbedoMap[path] = asset
+    if callback then
+      callback(asset, callbackparam)
+    end
+  end)
+end
+
 function AssetManager_Furniture:GetFurnitureShader(containsAlpha, callBack, callBackArgs)
   if containsAlpha then
     local shaderAssetName = "FurnitureAlpha"
@@ -228,6 +278,7 @@ end
 
 function AssetManager_Furniture:ClearCache()
   TableUtility.TableClear(self.tabMaterialMap)
+  TableUtility.TableClear(self.tabMaterialAlbedoMap)
 end
 
 function AssetManager_Furniture:DestroyFurniture(gameobject)

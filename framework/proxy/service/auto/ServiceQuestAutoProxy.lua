@@ -162,6 +162,12 @@ function ServiceQuestAutoProxy:onRegister()
   self:Listen(8, 55, function(data)
     self:RecvUpdateAbyssHelpCountQuestCmd(data)
   end)
+  self:Listen(8, 56, function(data)
+    self:RecvQuerySnowRealmQuestListCmd(data)
+  end)
+  self:Listen(8, 57, function(data)
+    self:RecvUpdateSnowRealmDailyQuestHelpCountCmd(data)
+  end)
 end
 
 function ServiceQuestAutoProxy:CallQuestList(type, id, list, clear, over)
@@ -3075,6 +3081,200 @@ function ServiceQuestAutoProxy:CallUpdateAbyssHelpCountQuestCmd(area, count)
   end
 end
 
+function ServiceQuestAutoProxy:CallQuerySnowRealmQuestListCmd(cur_area, cur_artifact_lv, used_help_count, cur_help_total_count, list)
+  if not NetConfig.PBC then
+    local msg = SceneQuest_pb.QuerySnowRealmQuestListCmd()
+    if cur_area ~= nil then
+      msg.cur_area = cur_area
+    end
+    if cur_artifact_lv ~= nil then
+      msg.cur_artifact_lv = cur_artifact_lv
+    end
+    if used_help_count ~= nil then
+      msg.used_help_count = used_help_count
+    end
+    if cur_help_total_count ~= nil then
+      msg.cur_help_total_count = cur_help_total_count
+    end
+    if list ~= nil and list.cmd ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.list == nil then
+        msg.list = {}
+      end
+      msg.list.cmd = list.cmd
+    end
+    if list ~= nil and list.param ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.list == nil then
+        msg.list = {}
+      end
+      msg.list.param = list.param
+    end
+    if list ~= nil and list.type ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.list == nil then
+        msg.list = {}
+      end
+      msg.list.type = list.type
+    end
+    if list ~= nil and list.id ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.list == nil then
+        msg.list = {}
+      end
+      msg.list.id = list.id
+    end
+    if list ~= nil and list.list ~= nil then
+      if msg.list == nil then
+        msg.list = {}
+      end
+      if msg.list.list == nil then
+        msg.list.list = {}
+      end
+      for i = 1, #list.list do
+        table.insert(msg.list.list, list.list[i])
+      end
+    end
+    if list ~= nil and list.clear ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.list == nil then
+        msg.list = {}
+      end
+      msg.list.clear = list.clear
+    end
+    if list ~= nil and list.over ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.list == nil then
+        msg.list = {}
+      end
+      msg.list.over = list.over
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.QuerySnowRealmQuestListCmd.id
+    local msgParam = {}
+    if cur_area ~= nil then
+      msgParam.cur_area = cur_area
+    end
+    if cur_artifact_lv ~= nil then
+      msgParam.cur_artifact_lv = cur_artifact_lv
+    end
+    if used_help_count ~= nil then
+      msgParam.used_help_count = used_help_count
+    end
+    if cur_help_total_count ~= nil then
+      msgParam.cur_help_total_count = cur_help_total_count
+    end
+    if list ~= nil and list.cmd ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.list == nil then
+        msgParam.list = {}
+      end
+      msgParam.list.cmd = list.cmd
+    end
+    if list ~= nil and list.param ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.list == nil then
+        msgParam.list = {}
+      end
+      msgParam.list.param = list.param
+    end
+    if list ~= nil and list.type ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.list == nil then
+        msgParam.list = {}
+      end
+      msgParam.list.type = list.type
+    end
+    if list ~= nil and list.id ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.list == nil then
+        msgParam.list = {}
+      end
+      msgParam.list.id = list.id
+    end
+    if list ~= nil and list.list ~= nil then
+      if msgParam.list == nil then
+        msgParam.list = {}
+      end
+      if msgParam.list.list == nil then
+        msgParam.list.list = {}
+      end
+      for i = 1, #list.list do
+        table.insert(msgParam.list.list, list.list[i])
+      end
+    end
+    if list ~= nil and list.clear ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.list == nil then
+        msgParam.list = {}
+      end
+      msgParam.list.clear = list.clear
+    end
+    if list ~= nil and list.over ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.list == nil then
+        msgParam.list = {}
+      end
+      msgParam.list.over = list.over
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceQuestAutoProxy:CallUpdateSnowRealmDailyQuestHelpCountCmd(area, used_count, total_count)
+  if not NetConfig.PBC then
+    local msg = SceneQuest_pb.UpdateSnowRealmDailyQuestHelpCountCmd()
+    if area ~= nil then
+      msg.area = area
+    end
+    if used_count ~= nil then
+      msg.used_count = used_count
+    end
+    if total_count ~= nil then
+      msg.total_count = total_count
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.UpdateSnowRealmDailyQuestHelpCountCmd.id
+    local msgParam = {}
+    if area ~= nil then
+      msgParam.area = area
+    end
+    if used_count ~= nil then
+      msgParam.used_count = used_count
+    end
+    if total_count ~= nil then
+      msgParam.total_count = total_count
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceQuestAutoProxy:RecvQuestList(data)
   self:Notify(ServiceEvent.QuestQuestList, data)
 end
@@ -3271,6 +3471,14 @@ function ServiceQuestAutoProxy:RecvUpdateAbyssHelpCountQuestCmd(data)
   self:Notify(ServiceEvent.QuestUpdateAbyssHelpCountQuestCmd, data)
 end
 
+function ServiceQuestAutoProxy:RecvQuerySnowRealmQuestListCmd(data)
+  self:Notify(ServiceEvent.QuestQuerySnowRealmQuestListCmd, data)
+end
+
+function ServiceQuestAutoProxy:RecvUpdateSnowRealmDailyQuestHelpCountCmd(data)
+  self:Notify(ServiceEvent.QuestUpdateSnowRealmDailyQuestHelpCountCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.QuestQuestList = "ServiceEvent_QuestQuestList"
 ServiceEvent.QuestQuestUpdate = "ServiceEvent_QuestQuestUpdate"
@@ -3321,3 +3529,5 @@ ServiceEvent.QuestUpdateOnceRewardQuestCmd = "ServiceEvent_QuestUpdateOnceReward
 ServiceEvent.QuestSyncTreasureBoxNumCmd = "ServiceEvent_QuestSyncTreasureBoxNumCmd"
 ServiceEvent.QuestQueryAbyssQuestListQuestCmd = "ServiceEvent_QuestQueryAbyssQuestListQuestCmd"
 ServiceEvent.QuestUpdateAbyssHelpCountQuestCmd = "ServiceEvent_QuestUpdateAbyssHelpCountQuestCmd"
+ServiceEvent.QuestQuerySnowRealmQuestListCmd = "ServiceEvent_QuestQuerySnowRealmQuestListCmd"
+ServiceEvent.QuestUpdateSnowRealmDailyQuestHelpCountCmd = "ServiceEvent_QuestUpdateSnowRealmDailyQuestHelpCountCmd"

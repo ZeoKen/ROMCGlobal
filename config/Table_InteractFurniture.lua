@@ -686,6 +686,261 @@ Table_InteractFurniture = {
     },
     DoramOffset = _EmptyTable
   },
+  [32132] = {
+    id = 32132,
+    MountInfo = {
+      [1] = 60
+    },
+    DoramOffset = {
+      [1] = {y = 0.065, z = 0.147}
+    }
+  },
+  [32134] = {
+    id = 32134,
+    MountInfo = {
+      [1] = 37
+    },
+    DoramOffset = {
+      [1] = {y = -0.1}
+    }
+  },
+  [32135] = {
+    id = 32135,
+    MountInfo = {
+      [1] = 1126,
+      [2] = 1126,
+      [3] = 1126,
+      [4] = 1126
+    },
+    DoramOffset = {
+      [1] = {y = 0.04, z = 0.08},
+      [2] = {y = 0.04, z = 0.08},
+      [3] = {y = 0.04, z = 0.08},
+      [4] = {y = 0.04, z = 0.08}
+    }
+  },
+  [32139] = {
+    id = 32139,
+    MountInfo = {
+      [1] = 60,
+      [2] = 60
+    },
+    DoramOffset = _EmptyTable
+  },
+  [32140] = {
+    id = 32140,
+    MountInfo = {
+      [1] = 60,
+      [2] = 60
+    },
+    OnAction = 502,
+    OffAction = 501,
+    DoramOffset = {
+      [1] = {y = -0.12},
+      [2] = {y = -0.12}
+    }
+  },
+  [32141] = {
+    id = 32141,
+    MountInfo = {
+      [1] = 3,
+      [2] = 3,
+      [3] = 3,
+      [4] = 3,
+      [5] = 3,
+      [6] = 3
+    },
+    DoramOffset = _EmptyTable
+  },
+  [32147] = {
+    id = 32147,
+    MountInfo = {
+      [1] = 3
+    },
+    DoramOffset = _EmptyTable
+  },
+  [32148] = {
+    id = 32148,
+    MountInfo = {
+      [1] = 3,
+      [2] = 3,
+      [3] = 3,
+      [4] = 3,
+      [5] = 3,
+      [6] = 3
+    },
+    DoramOffset = _EmptyTable
+  },
+  [32162] = {
+    id = 32162,
+    MountInfo = {
+      [1] = 60
+    },
+    DoramOffset = {
+      [1] = {y = 0.065, z = 0.147}
+    }
+  },
+  [32164] = {
+    id = 32164,
+    MountInfo = {
+      [1] = 37
+    },
+    DoramOffset = {
+      [1] = {y = -0.1}
+    }
+  },
+  [32165] = {
+    id = 32165,
+    MountInfo = {
+      [1] = 1126,
+      [2] = 1126,
+      [3] = 1126,
+      [4] = 1126
+    },
+    DoramOffset = {
+      [1] = {y = 0.04, z = 0.08},
+      [2] = {y = 0.04, z = 0.08},
+      [3] = {y = 0.04, z = 0.08},
+      [4] = {y = 0.04, z = 0.08}
+    }
+  },
+  [32169] = {
+    id = 32169,
+    MountInfo = {
+      [1] = 60,
+      [2] = 60
+    },
+    DoramOffset = _EmptyTable
+  },
+  [32170] = {
+    id = 32170,
+    MountInfo = {
+      [1] = 60,
+      [2] = 60
+    },
+    OnAction = 502,
+    OffAction = 501,
+    DoramOffset = {
+      [1] = {y = -0.12},
+      [2] = {y = -0.12}
+    }
+  },
+  [32171] = {
+    id = 32171,
+    MountInfo = {
+      [1] = 3,
+      [2] = 3,
+      [3] = 3,
+      [4] = 3,
+      [5] = 3,
+      [6] = 3
+    },
+    DoramOffset = _EmptyTable
+  },
+  [32177] = {
+    id = 32177,
+    MountInfo = {
+      [1] = 3
+    },
+    DoramOffset = _EmptyTable
+  },
+  [32178] = {
+    id = 32178,
+    MountInfo = {
+      [1] = 3,
+      [2] = 3,
+      [3] = 3,
+      [4] = 3,
+      [5] = 3,
+      [6] = 3
+    },
+    DoramOffset = _EmptyTable
+  },
+  [32192] = {
+    id = 32192,
+    MountInfo = {
+      [1] = 60
+    },
+    DoramOffset = {
+      [1] = {y = 0.065, z = 0.147}
+    }
+  },
+  [32194] = {
+    id = 32194,
+    MountInfo = {
+      [1] = 37
+    },
+    DoramOffset = {
+      [1] = {y = -0.1}
+    }
+  },
+  [32195] = {
+    id = 32195,
+    MountInfo = {
+      [1] = 1126,
+      [2] = 1126,
+      [3] = 1126,
+      [4] = 1126
+    },
+    DoramOffset = {
+      [1] = {y = 0.04, z = 0.08},
+      [2] = {y = 0.04, z = 0.08},
+      [3] = {y = 0.04, z = 0.08},
+      [4] = {y = 0.04, z = 0.08}
+    }
+  },
+  [32199] = {
+    id = 32199,
+    MountInfo = {
+      [1] = 60,
+      [2] = 60
+    },
+    DoramOffset = _EmptyTable
+  },
+  [32200] = {
+    id = 32200,
+    MountInfo = {
+      [1] = 60,
+      [2] = 60
+    },
+    OnAction = 502,
+    OffAction = 501,
+    DoramOffset = {
+      [1] = {y = -0.12},
+      [2] = {y = -0.12}
+    }
+  },
+  [32201] = {
+    id = 32201,
+    MountInfo = {
+      [1] = 3,
+      [2] = 3,
+      [3] = 3,
+      [4] = 3,
+      [5] = 3,
+      [6] = 3
+    },
+    DoramOffset = _EmptyTable
+  },
+  [32207] = {
+    id = 32207,
+    MountInfo = {
+      [1] = 3
+    },
+    DoramOffset = _EmptyTable
+  },
+  [32208] = {
+    id = 32208,
+    MountInfo = {
+      [1] = 3,
+      [2] = 3,
+      [3] = 3,
+      [4] = 3,
+      [5] = 3,
+      [6] = 3
+    },
+    DoramOffset = _EmptyTable
+  },
   [38022] = {
     id = 38022,
     MountInfo = {

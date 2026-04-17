@@ -41,7 +41,8 @@ local _ClientRaidTypeForMergeServer = {
   [FuBenCmd_pb.ERAIDTYPE_DEADBOSS] = 1,
   [FuBenCmd_pb.ERAIDTYPE_SEVEN_ROYAL_TEAM_RAID] = 1,
   [FuBenCmd_pb.ERAIDTYPE_ELEMENT] = 1,
-  [FuBenCmd_pb.ERAIDTYPE_CRACK] = 1
+  [FuBenCmd_pb.ERAIDTYPE_CRACK] = 1,
+  [FuBenCmd_pb.ERAIDTYPE_DESTROY_AIR_SHIP] = 1
 }
 local _RaidTypeForMergeServer = GameConfig.ServerMerge and GameConfig.ServerMerge.RaidTypeForMergeServer or _ClientRaidTypeForMergeServer
 local NeedCheckUniteTeam = function(raid)

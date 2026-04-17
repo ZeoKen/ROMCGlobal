@@ -273,6 +273,12 @@ Table_Class_t = {
         5311001,
         5312001,
         5313001
+      },
+      {
+        5330001,
+        5331001,
+        5332001,
+        5333001
       }
     },
     {
@@ -287,6 +293,12 @@ Table_Class_t = {
         5211001,
         5212001,
         5213001
+      },
+      {
+        5220001,
+        5221001,
+        5222001,
+        5223001
       }
     },
     {
@@ -301,6 +313,12 @@ Table_Class_t = {
         5011001,
         5012001,
         5013001
+      },
+      {
+        5020001,
+        5021001,
+        5022001,
+        5023001
       }
     },
     {
@@ -315,6 +333,12 @@ Table_Class_t = {
         6111001,
         6112001,
         6113001
+      },
+      {
+        6120001,
+        6121001,
+        6122001,
+        6123001
       }
     },
     {
@@ -329,6 +353,12 @@ Table_Class_t = {
         5711001,
         5712001,
         5713001
+      },
+      {
+        5720001,
+        5721001,
+        5722001,
+        5723001
       }
     },
     {
@@ -343,6 +373,12 @@ Table_Class_t = {
         6011001,
         6012001,
         6013001
+      },
+      {
+        6020001,
+        6021001,
+        6022001,
+        6023001
       }
     },
     {
@@ -357,6 +393,12 @@ Table_Class_t = {
         5411001,
         5412001,
         5413001
+      },
+      {
+        5420001,
+        5421001,
+        5422001,
+        5423001
       }
     },
     {
@@ -371,6 +413,12 @@ Table_Class_t = {
         5911001,
         5912001,
         5913001
+      },
+      {
+        5920001,
+        5921001,
+        5922001,
+        5923001
       }
     },
     {
@@ -385,6 +433,12 @@ Table_Class_t = {
         5111001,
         5112001,
         5113001
+      },
+      {
+        5120001,
+        5121001,
+        5122001,
+        5123001
       }
     },
     {
@@ -399,6 +453,12 @@ Table_Class_t = {
         5561001,
         5562001,
         5563001
+      },
+      {
+        5570001,
+        5571001,
+        5572001,
+        5573001
       }
     },
     {
@@ -413,6 +473,12 @@ Table_Class_t = {
         5511001,
         5512001,
         5513001
+      },
+      {
+        5520001,
+        5521001,
+        5522001,
+        5523001
       }
     },
     {
@@ -427,6 +493,12 @@ Table_Class_t = {
         5811001,
         5812001,
         5813001
+      },
+      {
+        5820001,
+        5821001,
+        5822001,
+        5823001
       }
     },
     {
@@ -441,6 +513,12 @@ Table_Class_t = {
         5611001,
         5612001,
         5613001
+      },
+      {
+        5620001,
+        5621001,
+        5622001,
+        5623001
       }
     }
   },
@@ -1259,7 +1337,6 @@ Table_Class = {
   },
   [11] = {
     id = 11,
-    NameZh = "剑士",
     NameEn = "Swordman",
     MaleBody = 3,
     FemaleBody = 4,
@@ -1665,7 +1742,6 @@ Table_Class = {
   [42] = {
     id = 42,
     NameZh = "猎人",
-    NameEn = "Hunter",
     MaleBody = 29,
     FemaleBody = 30,
     MaleEye = 1,
@@ -1769,7 +1845,6 @@ Table_Class = {
     AdvanceClass = Table_Class_t.AdvanceClass[34],
     Type = 5,
     TypeBranch = 51,
-    icon = "icon_5_1",
     InitialAttr = Table_Class_t.InitialAttr[14],
     AddPointSolution = Table_Class_t.AddPointSolution[18],
     SkillPointSolution = Table_Class_t.SkillPointSolution[13],
@@ -1938,6 +2013,7 @@ Table_Class = {
   },
   [63] = {
     id = 63,
+    NameZh = "神工匠",
     NameEn = "Whitesmith",
     MaleBody = 47,
     FemaleBody = 48,
@@ -2102,7 +2178,7 @@ Table_Class = {
     FemaleBody = 86,
     MaleEye = 1,
     FemaleEye = 2,
-    DefaultWeapon = 63401,
+    DefaultWeapon = 63417,
     Skill = Table_Class_t.Skill[12],
     MaxJobLevel = 90,
     AdvancedJobOccupation = 40,
@@ -2132,13 +2208,14 @@ Table_Class = {
     FemaleBody = 88,
     MaleEye = 1,
     FemaleEye = 2,
-    DefaultWeapon = 63401,
+    DefaultWeapon = 63417,
     Skill = Table_Class_t.Skill[13],
     MaxPeak = 160,
     AdvancedJobOccupation = 40,
     AdvanceClass = Table_Class_t.AdvanceClass[13],
     Type = 2,
     TypeBranch = 22,
+    icon = "icon_11_2",
     InitialAttr = Table_Class_t.InitialAttr[6],
     AddPointSolution = Table_Class_t.AddPointSolution[7],
     SkillPointSolution = Table_Class_t.SkillPointSolution[5],
@@ -2160,7 +2237,7 @@ Table_Class = {
     FemaleBody = 90,
     MaleEye = 1,
     FemaleEye = 2,
-    DefaultWeapon = 63401,
+    DefaultWeapon = 63417,
     Skill = Table_Class_t.Skill[38],
     MasterSkills = Table_Class_t.MasterSkills[9],
     MaxJobLevel = 200,
@@ -2453,6 +2530,7 @@ Table_Class = {
   [122] = {
     id = 122,
     NameZh = "武僧",
+    NameEn = "Monk",
     MaleBody = 60,
     FemaleBody = 61,
     MaleEye = 1,
@@ -2664,9 +2742,9 @@ local cell_mt = {
     LimitMasterSkills = _EmptyTable,
     MasterSkills = _EmptyTable,
     MaxJobLevel = 130,
-    NameEn = "Monk",
+    NameEn = "Hunter",
     NameEnFemale = "",
-    NameZh = "神工匠",
+    NameZh = "剑士",
     NameZhFemale = "",
     ProfessionalFashion = _EmptyTable,
     ShowEndTime = "",
@@ -2681,7 +2759,7 @@ local cell_mt = {
     TypeBranch = 61,
     UnlockAttr = _EmptyTable,
     UnlockTips = "",
-    icon = "icon_11_2",
+    icon = "icon_5_1",
     id = 1
   }
 }

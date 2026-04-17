@@ -41,7 +41,8 @@ function FunctionDialogEvent:ctor()
     Func_ReturnActivityReward = FunctionDialogEvent.Func_ReturnActivityReward,
     Func_ExchangeSand = FunctionDialogEvent.Func_ExchangeSand,
     Func_CatLitterBox = FunctionDialogEvent.Func_CatLitterBox,
-    Func_RetrieveAllArtifacts = FunctionDialogEvent.Func_RetrieveAllArtifacts
+    Func_RetrieveAllArtifacts = FunctionDialogEvent.Func_RetrieveAllArtifacts,
+    VisitHomeMessageBoard = FunctionDialogEvent.VisitHomeMessageBoard
   }
   local pacakgeCheck = GameConfig.PackageMaterialCheck
   DEFAULT_MATERIAL_SEARCH_BAGTYPES = pacakgeCheck and pacakgeCheck.default or {1, 9}
@@ -85,6 +86,7 @@ function FunctionDialogEvent:MapEventConfig()
   self.paramaMap["%[MultiExpTime%]"] = FunctionDialogEvent.Param_MultiExpTime
   self.paramaMap["%[CurSand%]"] = FunctionDialogEvent.Param_CurSand
   self.paramaMap["%[SandExchangeItem%]"] = FunctionDialogEvent.Param_SandExchangeItem
+  self.paramaMap["%[HomeMasterName%]"] = FunctionDialogEvent.Param_HomeMasterName
   self.eventMap = {}
   self.eventMap.Replace_MaterialEnough = FunctionDialogEvent.Replace_MaterialEnough
   self.eventMap.Upgrade_MaterialEnough = FunctionDialogEvent.Upgrade_MaterialEnough
@@ -367,6 +369,10 @@ end
 function FunctionDialogEvent.Param_SandExchangeItem(param, npc)
   local _, newItemNum = ItemFun.oldItemExchange(GameConfig.MoneyId.FourthSkillSand, param)
   return tostring(newItemNum)
+end
+
+function FunctionDialogEvent.Param_HomeMasterName(param, npc)
+  return type(param) == "string" and param or tostring(param or "")
 end
 
 local Func_GetMaterial_SearchNum = function(itemid, search_bagTypes, filterDamage)
@@ -922,6 +928,14 @@ function FunctionDialogEvent:SetEventDialog(dialogId, param, npcInfo)
     viewdata.midShowFunc = self.showEventMap[dcfg.ShowEvent]
     viewdata.midShowFuncParam = param
   end
+  if self.extraViewdata then
+    if self.extraViewdata.addconfig then
+      viewdata.addconfig = self.extraViewdata.addconfig
+    end
+    if self.extraViewdata.addleft ~= nil then
+      viewdata.addleft = self.extraViewdata.addleft
+    end
+  end
   if npcInfo.data.staticData.id == GameConfig.PurifyStake.NpcId then
     viewdata.cameraVP = GameConfig.PurifyStake.ViewPort
     viewdata.cameraRot = GameConfig.PurifyStake.Rotation
@@ -929,8 +943,9 @@ function FunctionDialogEvent:SetEventDialog(dialogId, param, npcInfo)
   GameFacade.Instance:sendNotification(UIEvent.ShowUI, viewdata)
 end
 
-function FunctionDialogEvent.SetDialogEventEnter(type, npcInfo)
+function FunctionDialogEvent.SetDialogEventEnter(type, npcInfo, opt)
   FunctionDialogEvent.Me().npcguid = npcInfo.data.id
+  FunctionDialogEvent.Me().extraViewdata = opt
   if type and Func_Type_Map[type] then
     Func_Type_Map[type](npcInfo)
   end
@@ -1192,4 +1207,15 @@ end
 
 function FunctionDialogEvent.Func_RetrieveAllArtifacts(npcInfo)
   FunctionDialogEvent.Me():SetEventDialog(1201, nil, npcInfo)
+end
+
+function FunctionDialogEvent.VisitHomeMessageBoard(npcInfo)
+  redlog("VisitHomeMessageBoard", npcInfo.data.uniqueid)
+  local houseData = SnowRealmProxy.Instance:GetHouseData(npcInfo.data.uniqueid)
+  if houseData and houseData.accid ~= nil and houseData.accid ~= 0 then
+    local name = houseData.masterName or ""
+    FunctionDialogEvent.Me():SetEventDialog(1203, name, npcInfo)
+  else
+    FunctionVisitNpc.Me():ExcuteDefaultDialog(npcInfo, nil)
+  end
 end

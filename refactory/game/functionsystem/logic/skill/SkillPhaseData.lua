@@ -7,7 +7,7 @@ local TableShallowCopy = TableUtility.TableShallowCopy
 local ArrayClear = TableUtility.ArrayClear
 local TableClear = TableUtility.TableClear
 local _Table_Skill
-local arrayCount = 5
+local arrayCount = 6
 local CreateShareDamageInfos = function(origin, infos)
   if nil ~= origin and 0 < #origin then
     if nil == infos then
@@ -122,6 +122,7 @@ function SkillPhaseData:ParseFromServer(msg, force)
   self:SetPositionXYZ(S2C_Number(pos.x), S2C_Number(pos.y), S2C_Number(pos.z))
   self:SetAngleY(S2C_Number(data.dir))
   self:SetIsLastHit(data.last_hit)
+  self:SetIsFirstHit(data.first_hit)
   if not force then
     self:SetCastTime(S2C_Number(msg.chanttime))
   end
@@ -137,12 +138,12 @@ function SkillPhaseData:ParseFromServer(msg, force)
       end
       if 0 > hit.damage then
         if CommonFun.DamageType.Normal_Sp == hit.type or CommonFun.DamageType.Treatment_Sp == hit.type then
-          self:AddTarget(hit.charid, CommonFun.DamageType.Treatment_sp, -hit.damage, hit.shareTargets)
+          self:AddTarget(hit.charid, CommonFun.DamageType.Treatment_sp, -hit.damage, hit.shareTargets, nil, hit.doubledamage and 10 or -10)
         else
-          self:AddTarget(hit.charid, CommonFun.DamageType.Treatment, -hit.damage, hit.shareTargets)
+          self:AddTarget(hit.charid, CommonFun.DamageType.Treatment, -hit.damage, hit.shareTargets, nil, hit.doubledamage and 10 or -10)
         end
       else
-        self:AddTarget(hit.charid, hit.type, hit.damage, hit.shareTargets)
+        self:AddTarget(hit.charid, hit.type, hit.damage, hit.shareTargets, nil, hit.doubledamage and 10 or -10)
       end
       if hit.gopos and (hit.gopos.x ~= 0 or hit.gopos.y ~= 0 or hit.gopos.z ~= 0) then
         local hitEffect = self:GetSpecialHitEffect()
@@ -213,6 +214,7 @@ function SkillPhaseData:CopyTo(to)
         toData[index + 4] = nil
       end
       toData[index + 5] = fromData[index + 5]
+      toData[index + 6] = fromData[index + 6]
       index = index + arrayCount
     end
   end
@@ -320,7 +322,7 @@ function SkillPhaseData:SetCastTime(v)
   self.data[5] = v
 end
 
-function SkillPhaseData:AddTarget(guid, damageType, damage, shareDamageInfos, damageCount)
+function SkillPhaseData:AddTarget(guid, damageType, damage, shareDamageInfos, damageCount, doubleDamage)
   local data = self.data
   local targetCount = data[6]
   local index = 6 + targetCount * arrayCount
@@ -330,7 +332,8 @@ function SkillPhaseData:AddTarget(guid, damageType, damage, shareDamageInfos, da
   data[index + 2] = damageType
   data[index + 3] = damage
   data[index + 4] = CreateShareDamageInfos(shareDamageInfos, data[index + 4])
-  data[index + 5] = damageCount
+  data[index + 5] = damageCount or 1
+  data[index + 6] = doubleDamage
 end
 
 function SkillPhaseData:GetTargetCount()
@@ -340,17 +343,18 @@ end
 function SkillPhaseData:GetTarget(index)
   local data = self.data
   index = 6 + (index - 1) * arrayCount
-  return data[index + 1], data[index + 2], data[index + 3], data[index + 4], data[index + 5]
+  return data[index + 1], data[index + 2], data[index + 3], data[index + 4], data[index + 5], data[index + 6]
 end
 
-function SkillPhaseData:SetTarget(index, guid, damageType, damage, shareDamageInfos, damageCount)
+function SkillPhaseData:SetTarget(index, guid, damageType, damage, shareDamageInfos, damageCount, doubleDamage)
   local data = self.data
   index = 6 + (index - 1) * arrayCount
   data[index + 1] = guid
   data[index + 2] = damageType
   data[index + 3] = damage
   data[index + 4] = CreateShareDamageInfos(shareDamageInfos, data[index + 4])
-  data[index + 5] = damageCount
+  data[index + 5] = damageCount or 1
+  data[index + 6] = doubleDamage
 end
 
 function SkillPhaseData:ClearTargets()
@@ -362,6 +366,8 @@ function SkillPhaseData:ClearTargets()
     for i = 1, targetCount do
       DestroyShareDamageInfos(data[index + 4])
       data[index + 4] = nil
+      data[index + 5] = nil
+      data[index + 6] = nil
       index = index + arrayCount
     end
   end
@@ -418,6 +424,14 @@ end
 
 function SkillPhaseData:GetIsLastHit(v)
   return self.isLastHit
+end
+
+function SkillPhaseData:SetIsFirstHit(v)
+  self.isFirstHit = v
+end
+
+function SkillPhaseData:GetIsFirstHit()
+  return self.isFirstHit
 end
 
 function SkillPhaseData:GetForceServerDamage()

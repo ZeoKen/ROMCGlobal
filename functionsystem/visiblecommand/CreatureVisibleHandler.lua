@@ -13,7 +13,8 @@ LayerChangeReason = {
   Lock = 999990,
   LowFPS = 999989,
   GmObserver = 999988,
-  HideBodyOnly = 999987
+  HideBodyOnly = 999987,
+  BigHandcart = 999986
 }
 
 function CreatureVisibleHandler:ctor()

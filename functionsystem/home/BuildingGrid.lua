@@ -25,32 +25,6 @@ BuildingGrid.EBuildingDirection = {
   EBackLeft = 7,
   EBackRight = 8
 }
-BuildingGrid.DirectionRotationMap = {
-  [BuildingGrid.EBuildingDirection.EForward] = {
-    [0] = 1,
-    [90] = 3,
-    [180] = 2,
-    [270] = 4
-  },
-  [BuildingGrid.EBuildingDirection.EBack] = {
-    [0] = 2,
-    [90] = 4,
-    [180] = 1,
-    [270] = 3
-  },
-  [BuildingGrid.EBuildingDirection.ELeft] = {
-    [0] = 3,
-    [90] = 2,
-    [180] = 4,
-    [270] = 1
-  },
-  [BuildingGrid.EBuildingDirection.ERight] = {
-    [0] = 4,
-    [90] = 1,
-    [180] = 3,
-    [270] = 2
-  }
-}
 BuildingGrid.EBuildingRotation = {
   E0 = 0,
   E90 = 90,
@@ -92,6 +66,10 @@ function BuildingGrid:ctor(data)
     end
     self.m_WallCells[index] = wallCells
   end
+end
+
+function BuildingGrid:SetDirectionRotationMap(map)
+  self.DirectionRotationMap = map
 end
 
 function BuildingGrid:GetCellData(floor, cellRow, cellCol, cellHeight)

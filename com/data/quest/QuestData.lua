@@ -90,7 +90,8 @@ QuestData.NoDirAndDisStepType = {
   QuestDataStepType.QuestDataStepType_MEDIA,
   QuestDataStepType.QuestDataStepType_ILLUSTRATION,
   QuestDataStepType.QuestDataStepType_MULTIGM,
-  QuestDataStepType.QuestDataStepType_CALL
+  QuestDataStepType.QuestDataStepType_CALL,
+  "snow_level"
 }
 QuestData.EffectTriggerStepType = {
   QuestDataStepType.QuestDataStepType_MOVE,

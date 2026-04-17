@@ -46,6 +46,31 @@ function ServiceMapProxy:RecvSyncGemSecretLandNineData(data)
   self:Notify(ServiceEvent.MapSyncGemSecretLandNineData, data)
 end
 
+function ServiceMapProxy:RecvRefineLvSyncMapCmd(data)
+  if not data.charid then
+    return
+  end
+  local role = NSceneUserProxy.Instance:Find(data.charid)
+  if role then
+    if data.charid ~= role.data.id then
+      role.data:ClearRefineLv()
+    end
+    local equip_lv = data.equip_lv
+    if equip_lv then
+      for i = 1, #equip_lv do
+        role.data:UpdateEquipRefineLv(equip_lv[i].pos, equip_lv[i].lv)
+      end
+    end
+    local snow_lv = data.snow_lv
+    if snow_lv then
+      for i = 1, #snow_lv do
+        role.data:UpdateSnowRefineLv(snow_lv[i].pos, snow_lv[i].lv)
+      end
+    end
+  end
+  self:Notify(ServiceEvent.MapRefineLvSync, data)
+end
+
 function ServiceMapProxy:RecvAddMapUser(data)
   NSceneUserProxy.Instance:AddSome(data.users)
 end
@@ -231,4 +256,11 @@ end
 function ServiceMapProxy:RecvExtraRewardUpdateMapCmd(data)
   AbyssLakeProxy.Instance:RecvExtraRewardUpdateMapCmd(data)
   self:Notify(ServiceEvent.MapExtraRewardUpdateMapCmd, data)
+end
+
+function ServiceMapProxy:RecvSnowRealmSnowmanProgressCmd(data)
+  redlog("ServiceMapProxy:RecvSnowRealmSnowmanProgressCmd")
+  SnowmanProxy.Instance:UpdateSnowmanProcessInfo(data)
+  self:Notify(ServiceEvent.MapSnowRealmSnowmanProgressCmd, data)
+  EventManager.Me():PassEvent(ServiceEvent.MapSnowRealmSnowmanProgressCmd, data)
 end

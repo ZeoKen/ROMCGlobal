@@ -614,7 +614,7 @@ function ServiceMatchCCmdAutoProxy:CallReqRoomDetailCCmd(type, roomid, datail_in
   end
 end
 
-function ServiceMatchCCmdAutoProxy:CallJoinRoomCCmd(type, roomid, name, isquick, teamid, teammember, ret, guildid, users, matcher, charid, zoneid, serverid, teamexptype, only_myserver, entranceid, need_robot_npc, need_heal_profession, abyss_option)
+function ServiceMatchCCmdAutoProxy:CallJoinRoomCCmd(type, roomid, name, isquick, teamid, teammember, ret, guildid, users, matcher, charid, zoneid, serverid, teamexptype, only_myserver, entranceid, need_robot_npc, need_heal_profession, abyss_option, snow_option)
   if not NetConfig.PBC then
     local msg = MatchCCmd_pb.JoinRoomCCmd()
     if type ~= nil then
@@ -768,6 +768,33 @@ function ServiceMatchCCmdAutoProxy:CallJoinRoomCCmd(type, roomid, name, isquick,
         msg.abyss_option = {}
       end
       msg.abyss_option.state = abyss_option.state
+    end
+    if snow_option ~= nil and snow_option.mode ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.snow_option == nil then
+        msg.snow_option = {}
+      end
+      msg.snow_option.mode = snow_option.mode
+    end
+    if snow_option ~= nil and snow_option.be_visitor_accid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.snow_option == nil then
+        msg.snow_option = {}
+      end
+      msg.snow_option.be_visitor_accid = snow_option.be_visitor_accid
+    end
+    if snow_option ~= nil and snow_option.be_visitor_charid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.snow_option == nil then
+        msg.snow_option = {}
+      end
+      msg.snow_option.be_visitor_charid = snow_option.be_visitor_charid
     end
     self:SendProto(msg)
   else
@@ -924,6 +951,33 @@ function ServiceMatchCCmdAutoProxy:CallJoinRoomCCmd(type, roomid, name, isquick,
         msgParam.abyss_option = {}
       end
       msgParam.abyss_option.state = abyss_option.state
+    end
+    if snow_option ~= nil and snow_option.mode ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.snow_option == nil then
+        msgParam.snow_option = {}
+      end
+      msgParam.snow_option.mode = snow_option.mode
+    end
+    if snow_option ~= nil and snow_option.be_visitor_accid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.snow_option == nil then
+        msgParam.snow_option = {}
+      end
+      msgParam.snow_option.be_visitor_accid = snow_option.be_visitor_accid
+    end
+    if snow_option ~= nil and snow_option.be_visitor_charid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.snow_option == nil then
+        msgParam.snow_option = {}
+      end
+      msgParam.snow_option.be_visitor_charid = snow_option.be_visitor_charid
     end
     self:SendProto2(msgId, msgParam)
   end

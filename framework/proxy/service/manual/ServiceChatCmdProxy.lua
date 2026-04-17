@@ -17,6 +17,7 @@ function ServiceChatCmdProxy:RecvPlayExpressionChatCmd(data)
 end
 
 function ServiceChatCmdProxy:RecvQueryUserInfoChatCmd(data)
+  redlog("RecvQueryUserInfoChatCmd msgid = " .. tostring(data.msgid), "type = " .. tostring(data.type))
   local charid = data.charid
   local msgId = data.msgid
   local type = data.type

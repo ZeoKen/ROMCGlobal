@@ -93,6 +93,16 @@ Table_FurnitureFunction = {
     id = 19,
     NameZh = "##123116",
     NameEn = "AppForward"
+  },
+  [20] = {
+    id = 20,
+    NameZh = "##44721634",
+    NameEn = "RandomSeatAction"
+  },
+  [21] = {
+    id = 21,
+    NameZh = "##44721635",
+    NameEn = "RandomAction"
   }
 }
 Table_FurnitureFunction_fields = {

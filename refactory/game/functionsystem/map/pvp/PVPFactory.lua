@@ -192,6 +192,26 @@ local HandlePetsPVP = function(pets)
     pet.data:Camp_SetInSameCamp(pet.master_pvp_camp == myCamp)
   end
 end
+local HandleRolesPVPIncludeRobotUser = function(roles)
+  if not roles then
+    return
+  end
+  local myself = Game.Myself
+  local myCamp = myself.data:GetNormalPVPCamp()
+  local _TeamProxy = TeamProxy.Instance
+  for i = 1, #roles do
+    local role = roles[i]
+    if role ~= myself then
+      role.data:Camp_SetIsInPVP(true)
+      role.data:Camp_SetIsInMyTeam(_TeamProxy:IsInMyGroup(role.data.id))
+      local isRobotUser = role.data:IsRobotUser()
+      if not isRobotUser then
+        local camp = role.data:GetNormalPVPCamp()
+        role.data:Camp_SetInSameCamp(camp == myCamp)
+      end
+    end
+  end
+end
 local SinglePVP = class("SinglePVP")
 
 function SinglePVP:Launch()
@@ -1499,4 +1519,37 @@ end
 
 function PVPFactory.GetPVPEndlessBattleField()
   return PVPEndlessBattleField.new()
+end
+
+local AsyncPvpRaid = class("AsyncPvpRaid")
+
+function AsyncPvpRaid:ctor()
+  self.isAsyncPvpRaid = true
+end
+
+function AsyncPvpRaid:Launch()
+  notify(PVPEvent.AsyncPvpRaid_Launch)
+  EventManager.Me():AddEventListener(SceneUserEvent.SceneAddRoles, self.HandleAddRoles, self)
+  EventManager.Me():AddEventListener(SceneUserEvent.SceneAddPets, self.HandleAddPets, self)
+end
+
+function AsyncPvpRaid:Shutdown()
+  notify(PVPEvent.AsyncPvpRaid_Shutdown)
+  EventManager.Me():RemoveEventListener(SceneUserEvent.SceneAddRoles, self.HandleAddRoles, self)
+  EventManager.Me():RemoveEventListener(SceneUserEvent.SceneAddPets, self.HandleAddPets, self)
+end
+
+function AsyncPvpRaid:HandleAddRoles(roles)
+  HandleRolesPVPIncludeRobotUser(roles)
+end
+
+function AsyncPvpRaid:HandleAddPets(pets)
+  HandlePetsPVP(pets)
+end
+
+function AsyncPvpRaid:Update()
+end
+
+function PVPFactory.GetAsyncPvpRaid()
+  return AsyncPvpRaid.new()
 end

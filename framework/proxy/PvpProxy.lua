@@ -37,7 +37,8 @@ PvpProxy.Type = {
   Triple = MatchCCmd_pb.EPVPTYPE_TRIPLE,
   TripleRelax = MatchCCmd_pb.EPVPTYPE_TRIPLE_RELAX,
   MemoryPalace = MatchCCmd_pb.EPVPTYPE_MEMORY_PALACE,
-  MemoryRaid = MatchCCmd_pb.ERAIDTYPE_MEMORY_RAID
+  MemoryRaid = MatchCCmd_pb.ERAIDTYPE_MEMORY_RAID,
+  SnowRealm = MatchCCmd_pb.EPVPTYPE_SNOW_REALM
 }
 PvpProxy.PvpType2RaidType = {
   [MatchCCmd_pb.EPVPTYPE_LLH] = FuBenCmd_pb.ERAIDTYPE_PVP_LLH,

@@ -19,7 +19,7 @@ end
 local tempVector3 = LuaVector3.Zero()
 local tempVector3_1 = LuaVector3.Zero()
 local tempList = {}
-local arrayCount = 6
+local arrayCount = 7
 local SpecialHitEffectTypes = {HitEffectMove = 1, MultiTargetConnect = 2}
 local CreateShareDamageInfos = function(origin, infos)
   if nil ~= origin and 0 < #origin then
@@ -100,7 +100,11 @@ function SkillHitWorker:SetForceEffectPath(effectPath)
   self.args[5] = effectPath
 end
 
-function SkillHitWorker:AddTarget(targetGUID, damageType, damage, shareDamageInfos, comboDamageLabel, damageCount)
+function SkillHitWorker:AddTargetFromPhaseData(targetGUID, damageType, damage, shareDamageInfos, damageCount, doubleDamage)
+  self:AddTarget(targetGUID, damageType, damage, shareDamageInfos, nil, damageCount, doubleDamage)
+end
+
+function SkillHitWorker:AddTarget(targetGUID, damageType, damage, shareDamageInfos, comboDamageLabel, damageCount, doubleDamage)
   local args = self.args
   local targetCount = args[7]
   local index = 7 + targetCount * arrayCount
@@ -110,7 +114,8 @@ function SkillHitWorker:AddTarget(targetGUID, damageType, damage, shareDamageInf
   args[index + 3] = damage
   args[index + 4] = CreateShareDamageInfos(shareDamageInfos, args[index + 4])
   args[index + 5] = comboDamageLabel
-  args[index + 6] = damageCount
+  args[index + 6] = damageCount or 1
+  args[index + 7] = doubleDamage
 end
 
 function SkillHitWorker:SetTargetComboDamageLabel(index, comboDamageLabel)
@@ -138,7 +143,7 @@ end
 function SkillHitWorker:GetTarget(index)
   local args = self.args
   index = 7 + (index - 1) * arrayCount
-  return args[index + 1], args[index + 2], args[index + 3], args[index + 4], args[index + 5], args[index + 6]
+  return args[index + 1], args[index + 2], args[index + 3], args[index + 4], args[index + 5], args[index + 6], args[index + 7]
 end
 
 function SkillHitWorker:Work(damageIndex, damageCount, forceSingleDamage)
@@ -149,7 +154,7 @@ function SkillHitWorker:Work(damageIndex, damageCount, forceSingleDamage)
   end
   mylog("SkillHitWorker:Work ", damageIndex, damageCount, targetCount)
   local creature = FindCreature(args[3])
-  self:_Work(creature, args[8], args[9], SkillLogic_Base.GetSplitDamage(args[10], damageIndex, damageCount), args[11], args[12], forceSingleDamage, 1, targetCount, args[13])
+  self:_Work(creature, args[8], args[9], SkillLogic_Base.GetSplitDamage(args[10], damageIndex, damageCount), args[11], args[12], forceSingleDamage, 1, targetCount, args[13], args[14])
   tempList[#tempList + 1] = args[8]
   local subCount = targetCount - 1
   if 0 < subCount then
@@ -157,7 +162,7 @@ function SkillHitWorker:Work(damageIndex, damageCount, forceSingleDamage)
     args[5] = nil
     for i = 1, subCount do
       local index = 7 + i * arrayCount
-      self:_Work(creature, args[index + 1], args[index + 2], SkillLogic_Base.GetSplitDamage(args[index + 3], damageIndex, damageCount), args[index + 4], args[index + 5], forceSingleDamage, i + 1, targetCount, args[index + 6])
+      self:_Work(creature, args[index + 1], args[index + 2], SkillLogic_Base.GetSplitDamage(args[index + 3], damageIndex, damageCount), args[index + 4], args[index + 5], forceSingleDamage, i + 1, targetCount, args[index + 6], args[index + 7])
       tempList[#tempList + 1] = args[index + 1]
     end
     args[5] = effectPath
@@ -169,7 +174,7 @@ end
 local hitCheckFrame = 4
 local hitCheckDistance = 8
 
-function SkillHitWorker:_Work(creature, targetGUID, damageType, damage, shareDamageInfos, comboDamageLabel, forceSingleDamage, targetIndex, targetCount, damageCount)
+function SkillHitWorker:_Work(creature, targetGUID, damageType, damage, shareDamageInfos, comboDamageLabel, forceSingleDamage, targetIndex, targetCount, damageCount, doubleDamage)
   local args = self.args
   local targetCreature = FindCreature(targetGUID)
   if nil == targetCreature then
@@ -203,7 +208,7 @@ function SkillHitWorker:_Work(creature, targetGUID, damageType, damage, shareDam
     local allowHurtNum = SkillLogic_Base.AllowTargetHurtNum(creature, targetCreature)
     local effectPath, targetPosition, lodLevel, priority, effectType, dirAngleY = self:_PlayEffect(creature, targetCreature, damageType, damage, hitEP, allowEffect)
     mylog("before hit", damageCount)
-    self:_Hit(creature, targetCreature, damageType, damage, comboDamageLabel, forceSingleDamage, hitEP, targetPosition, allowEffect, allowHurtNum, damageCount, effectPath, lodLevel, priority, effectType, dirAngleY)
+    self:_Hit(creature, targetCreature, damageType, damage, comboDamageLabel, forceSingleDamage, hitEP, targetPosition, allowEffect, allowHurtNum, damageCount, effectPath, lodLevel, priority, effectType, dirAngleY, doubleDamage)
   end
   if nil ~= shareDamageInfos then
     local shareDamageHitEP = RoleDefines_EP.Middle
@@ -282,7 +287,9 @@ function SkillHitWorker:_PlayEffect(creature, targetCreature, damageType, damage
   return effectPath, targetPosition, lodLevel, priority, effectType, dirAngleY
 end
 
-function SkillHitWorker:_Hit(creature, targetCreature, damageType, damage, comboDamageLabel, forceSingleDamage, hitEP, targetPosition, allowEffect, allowHurtNum, damageCount, effectPath, lodLevel, priority, effectType, dirAngleY)
+local doubleDamageOffset = LuaVector3.New(0, 0.3, 0)
+
+function SkillHitWorker:_Hit(creature, targetCreature, damageType, damage, comboDamageLabel, forceSingleDamage, hitEP, targetPosition, allowEffect, allowHurtNum, damageCount, effectPath, lodLevel, priority, effectType, dirAngleY, doubleDamage)
   local args = self.args
   local skillInfo = args[1]
   mylog("_Hit", UnityFrameCount)
@@ -340,6 +347,7 @@ function SkillHitWorker:_Hit(creature, targetCreature, damageType, damage, combo
       comboArgs[19] = priority
       comboArgs[20] = effectType
       comboArgs[21] = dirAngleY
+      comboArgs[22] = nil
       Game.SkillWorkerManager:CreateWorker_ComboHit(comboArgs)
       SkillComboHitWorker.ClearArgs(comboArgs)
     end
@@ -381,6 +389,7 @@ function SkillHitWorker:_Hit(creature, targetCreature, damageType, damage, combo
     comboArgs[19] = priority
     comboArgs[20] = effectType
     comboArgs[21] = dirAngleY
+    comboArgs[22] = doubleDamage
     Game.SkillWorkerManager:CreateWorker_ComboHit(comboArgs)
     SkillComboHitWorker.ClearArgs(comboArgs)
   else
@@ -389,7 +398,7 @@ function SkillHitWorker:_Hit(creature, targetCreature, damageType, damage, combo
     end
     if allowHurtNum then
       if comboDamageLabel == nil then
-        SkillLogic_Base.ShowDamage_Single(damageType, damage, labelPosition, labelType, labelColorType, targetCreature, skillInfo, creature)
+        SkillLogic_Base.ShowDamage_Single(damageType, damage, labelPosition, labelType, labelColorType, targetCreature, skillInfo, creature, doubleDamage)
       else
         LuaVector3.Better_Set(labelPosition, targetCreature.assetRole:GetEPOrRootPosition(RoleDefines_EP.Top))
         local crit
@@ -400,7 +409,13 @@ function SkillHitWorker:_Hit(creature, targetCreature, damageType, damage, combo
             crit = HurtNum_CritType.PAtk
           end
         end
+        if not doubleDamage or doubleDamage == 0 then
+          doubleDamage = targetCreature and targetCreature:GetDoubleDamage()
+        end
         comboDamageLabel:Show(damage, labelPosition, creature == Game.Myself, crit, targetCreature == Game.Myself)
+        if doubleDamage and 0 < doubleDamage then
+          comboDamageLabel:Show(damage, labelPosition + doubleDamageOffset, creature == Game.Myself, crit, targetCreature == Game.Myself)
+        end
       end
     end
     if nil ~= sePath then
@@ -449,7 +464,7 @@ function SkillHitWorker:_SpecialHit(creature, targetCreature)
     end
     targetCreatureLogicTransform:ExtraDirMove(dirAngleY, dirMoveDistance, speed, function(logicTransform, arg)
       dirPoint:Destroy()
-    end, nil, dirPoint, skillInfo:IsIgnoreTerrain())
+    end, nil, dirPoint, skillInfo:IsIgnoreTerrain(), skillInfo:GetNoHitMoveIntercept())
   end
 end
 

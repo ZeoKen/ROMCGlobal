@@ -477,6 +477,9 @@ function SkillItemData:CheckFuncOpen(funcType)
       if self:_CheckOptionOpen(logicParam.being_ids) then
         return true
       end
+      if logicParam.summon_skill ~= nil then
+        return true
+      end
       if self:_CheckOptionOpen(logicParam.skill_opt_ids) then
         return true
       end

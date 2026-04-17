@@ -53,15 +53,17 @@ function MessageTipPage:InitUI()
   self.curPageNum = 0
   self.currentMsgNum = 0
   self.totalPageNum = 1
-  self.curHouseData = HomeProxy.Instance:GetCurHouseData()
 end
 
 function MessageTipPage:InitData()
   local viewData = self.viewdata.viewdata
   self.furniture = viewData and viewData.furniture
-  if not self.furniture then
-    LogUtility.Error("Cannot get furniture when initializing MessageTipPage!")
+  self.npc = viewData and viewData.npc
+  if not self.furniture and not self.npc then
+    LogUtility.Error("Cannot get furniture or npc when initializing MessageTipPage!")
+    return
   end
+  self.curHouseData = HomeProxy.Instance:GetCurHouseData(self.npc and self.npc.data.uniqueid or nil)
 end
 
 function MessageTipPage:AddEvts()
@@ -137,7 +139,11 @@ function MessageTipPage:AddEvts()
         end
       end
       redlog("申请批量删除")
-      ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeProxy.Oper.DelMessage, self.furniture.data.id, nil, nil, nil, tempArray)
+      if self.furniture then
+        ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeProxy.Oper.DelMessage, self.furniture.data.id, nil, nil, nil, tempArray)
+      elseif self.npc then
+        self:CallNpcFurnitureOperHomeCmd(HomeProxy.Oper.DelMessage, nil, nil, nil, tempArray)
+      end
     end)
   end)
   self:AddClickEvent(self.cancelBtn, function()
@@ -157,7 +163,7 @@ function MessageTipPage:AddEvts()
   self:AddClickEvent(self.sendBtn, function()
     if not self.validStatus then
       helplog("屏蔽功能")
-      MsgManager.ShowMsgByIDTable(40570)
+      MsgManager.ShowMsgByIDTable(40571)
       return
     else
       helplog("未屏蔽")
@@ -173,7 +179,11 @@ function MessageTipPage:AddEvts()
     helplog("输入内容", str, "时间戳", time)
     local sendMsgSuccess = self:leaveMessage()
     if sendMsgSuccess then
-      ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeProxy.Oper.AddMessage, self.furniture.data.id, time, nil, str, nil)
+      if self.furniture then
+        ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeProxy.Oper.AddMessage, self.furniture.data.id, time, nil, str, nil)
+      elseif self.npc then
+        self:CallNpcFurnitureOperHomeCmd(HomeProxy.Oper.AddMessage, time, nil, str)
+      end
       self:CloseDetailPanel()
     end
   end)
@@ -182,7 +192,11 @@ function MessageTipPage:AddEvts()
     MsgManager.ConfirmMsgByID(40573, function()
       local times = {}
       table.insert(times, self.curCell.time)
-      ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeProxy.Oper.DelMessage, self.furniture.data.id, nil, nil, nil, times)
+      if self.furniture then
+        ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeProxy.Oper.DelMessage, self.furniture.data.id, nil, nil, nil, times)
+      elseif self.npc then
+        self:CallNpcFurnitureOperHomeCmd(HomeProxy.Oper.DelMessage, nil, nil, nil, times)
+      end
       self:CloseDetailPanel()
     end)
   end)
@@ -215,19 +229,27 @@ end
 
 function MessageTipPage:OnSwitch()
   self:UpdateHomeInfo()
-  helplog("MessageTipPage:OnSwitch,furniture id ", self.furniture.data.id)
-  ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.furniture.data.id, 0)
+  if self.furniture then
+    helplog("MessageTipPage:OnSwitch,furniture id ", self.furniture.data.id)
+    ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.furniture.data.id, 0)
+  elseif self.npc then
+    helplog("MessageTipPage:OnSwitch,npc id ", self.npc.data.uniqueid)
+    self:CallNpcFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, 0)
+  end
 end
 
 function MessageTipPage:CheckAvailableUpdate(data)
   if data.body.data == BaseHouseData.HouseOptType.BoardOpen then
-    ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.furniture.data.id, 0)
+    if self.furniture then
+      ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.furniture.data.id, 0)
+    elseif self.npc then
+      self:CallNpcFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, 0)
+    end
   end
 end
 
 function MessageTipPage:UpdateBtns()
-  local houseData = HomeProxy.Instance:GetCurHouseData()
-  if HomeManager.Me():IsAtMyselfHome() then
+  if HomeManager.Me():IsAtMyselfHome() or self:IsVisitMyHomeMessageBoard() then
     self.editOwnerMsgBtn.gameObject:SetActive(true)
     self.batchManageBtn.gameObject:SetActive(true)
     self.deleteThisMsgBtn.gameObject:SetActive(true)
@@ -243,13 +265,21 @@ end
 function MessageTipPage:ClickLeftIndicator()
   local targetPage = self.curPageNum - 1
   helplog("targetPage:", targetPage)
-  ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.furniture.data.id, targetPage)
+  if self.furniture then
+    ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.furniture.data.id, targetPage)
+  elseif self.npc then
+    self:CallNpcFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, targetPage)
+  end
 end
 
 function MessageTipPage:ClickRightIndicator()
   local targetPage = self.curPageNum + 1
   helplog("targetPage:", targetPage)
-  ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.furniture.data.id, targetPage)
+  if self.furniture then
+    ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.furniture.data.id, targetPage)
+  elseif self.npc then
+    self:CallNpcFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, targetPage)
+  end
 end
 
 function MessageTipPage:ClickItem(cell)
@@ -261,8 +291,8 @@ end
 
 function MessageTipPage:UpdateHomeInfo()
   helplog("UpdateHomeInfo")
-  local houseData = HomeProxy.Instance:GetCurHouseData()
-  self.inputOwnerMsg.value = houseData.ownerMsg
+  self.curHouseData = HomeProxy.Instance:GetCurHouseData(self.npc and self.npc.data.uniqueid or nil)
+  self.inputOwnerMsg.value = self.curHouseData and self.curHouseData.ownerMsg or ""
 end
 
 function MessageTipPage:UpdateMessageTipList()
@@ -295,14 +325,22 @@ function MessageTipPage:RecvBoardItemUpdateCmd(data)
       end
     end
   end
-  ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.furniture.data.id, self.curPageNum)
+  if self.furniture then
+    ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.furniture.data.id, self.curPageNum)
+  elseif self.npc then
+    self:CallNpcFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.curPageNum)
+  end
 end
 
 function MessageTipPage:RecvBoardMsgUpdateCmd()
   if self.messageDetail.gameObject.activeInHierarchy then
     self.messageDetail.gameObject:SetActive(false)
   end
-  ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.furniture.data.id, self.curPageNum)
+  if self.furniture then
+    ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.furniture.data.id, self.curPageNum)
+  elseif self.npc then
+    self:CallNpcFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_BOARD_QUERY, self.curPageNum)
+  end
 end
 
 function MessageTipPage:RefreshIndicator()
@@ -335,7 +373,7 @@ function MessageTipPage:showDetailPanel(data)
       table.insert(result, single)
     end
     self.messageTextList:ResetDatas(result)
-    if HomeManager.Me():IsAtMyselfHome() then
+    if HomeManager.Me():IsAtMyselfHome() or self:IsVisitMyHomeMessageBoard() then
       self.deleteThisMsgBtn.gameObject:SetActive(true)
     else
       self.deleteThisMsgBtn.gameObject:SetActive(false)
@@ -414,4 +452,18 @@ function MessageTipPage:leaveMessage()
     end
   end
   return true
+end
+
+function MessageTipPage:CallNpcFurnitureOperHomeCmd(oper, value, source, data, values)
+  local operCmd = {}
+  operCmd.oper = oper
+  operCmd.value = value
+  operCmd.source = source
+  operCmd.data = data
+  operCmd.values = values
+  ServiceHomeCmdProxy.Instance:CallNpcFurnitureOperHomeCmd(self.npc.data.uniqueid, operCmd)
+end
+
+function MessageTipPage:IsVisitMyHomeMessageBoard()
+  return self.npc and self.npc.data.uniqueid == SnowRealmProxy.Instance:GetMySelfHomeIndex() or false
 end

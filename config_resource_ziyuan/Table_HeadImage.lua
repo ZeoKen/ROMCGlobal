@@ -74,6 +74,7 @@ Table_HeadImage = {
     id = 55134,
     Picture = "face_morocc"
   },
+  [55139] = {id = 55139, Picture = "boli"},
   [56000] = {id = 56000, Picture = "boli"},
   [56001] = {id = 56001, Picture = "fengtu"},
   [56002] = {
@@ -604,6 +605,30 @@ Table_HeadImage = {
     id = 56258,
     Picture = "monster_novus"
   },
+  [56259] = {
+    id = 56259,
+    Picture = "n_nativelugan"
+  },
+  [56260] = {
+    id = 56260,
+    Picture = "n_nativelugan_b"
+  },
+  [56261] = {
+    id = 56261,
+    Picture = "n_midrangelugan"
+  },
+  [56262] = {
+    id = 56262,
+    Picture = "n_caraporing"
+  },
+  [56263] = {
+    id = 56263,
+    Picture = "n_caraporing_a"
+  },
+  [56264] = {
+    id = 56264,
+    Picture = "n_caraporing_b"
+  },
   [56501] = {id = 56501, Picture = "Smokie"},
   [56502] = {id = 56502, Picture = "Eclipse"},
   [56503] = {id = 56503, Picture = "Rocker"},
@@ -962,6 +987,10 @@ Table_HeadImage = {
   [56894] = {
     id = 56894,
     Picture = "n_dragonblackflame"
+  },
+  [56895] = {
+    id = 56895,
+    Picture = "n_seabutterfly"
   },
   [56901] = {id = 56901, Picture = "Red_Plant"},
   [56902] = {

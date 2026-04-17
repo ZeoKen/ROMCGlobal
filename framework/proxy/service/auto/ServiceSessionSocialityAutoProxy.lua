@@ -834,6 +834,15 @@ function ServiceSessionSocialityAutoProxy:CallQueryUserInfoCmd(charid, data, pro
       end
       msg.data.roomid = data.roomid
     end
+    if data ~= nil and data.snowroomid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.data == nil then
+        msg.data = {}
+      end
+      msg.data.snowroomid = data.snowroomid
+    end
     if data ~= nil and data.portrait_frame ~= nil then
       if msg == nil then
         msg = {}
@@ -1022,6 +1031,15 @@ function ServiceSessionSocialityAutoProxy:CallQueryUserInfoCmd(charid, data, pro
         msg.data = {}
       end
       msg.data.cheat_mark = data.cheat_mark
+    end
+    if data ~= nil and data.head_fashion ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.data == nil then
+        msg.data = {}
+      end
+      msg.data.head_fashion = data.head_fashion
     end
     if profiledata ~= nil and profiledata.birthmonth ~= nil then
       if msg == nil then
@@ -1313,6 +1331,15 @@ function ServiceSessionSocialityAutoProxy:CallQueryUserInfoCmd(charid, data, pro
       end
       msgParam.data.roomid = data.roomid
     end
+    if data ~= nil and data.snowroomid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.data == nil then
+        msgParam.data = {}
+      end
+      msgParam.data.snowroomid = data.snowroomid
+    end
     if data ~= nil and data.portrait_frame ~= nil then
       if msgParam == nil then
         msgParam = {}
@@ -1501,6 +1528,15 @@ function ServiceSessionSocialityAutoProxy:CallQueryUserInfoCmd(charid, data, pro
         msgParam.data = {}
       end
       msgParam.data.cheat_mark = data.cheat_mark
+    end
+    if data ~= nil and data.head_fashion ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.data == nil then
+        msgParam.data = {}
+      end
+      msgParam.data.head_fashion = data.head_fashion
     end
     if profiledata ~= nil and profiledata.birthmonth ~= nil then
       if msgParam == nil then

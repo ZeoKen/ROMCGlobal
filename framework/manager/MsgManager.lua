@@ -224,6 +224,7 @@ end
 function MsgManager.CountDownMsgTableParam(title, text, param, id, staticdata)
   local parser = MsgParserProxy.Instance
   local isHideTime = staticdata.buttonF == "HideTime"
+  local showInRaid = staticdata.showInRaid == 1
   local parsedText = text
   if param ~= nil and 0 < #param then
     parsedText = parser:TryParse(text, unpack(param))
@@ -231,7 +232,11 @@ function MsgManager.CountDownMsgTableParam(title, text, param, id, staticdata)
   local text, data = parser:TryParseCountDown(parsedText, isHideTime)
   if nil ~= data then
     data.id = id
-    UIUtil.StartSceenCountDown(text, data)
+    if showInRaid then
+      UIUtil.StartSceenRaidResetCountDown(text, data)
+    else
+      UIUtil.StartSceenCountDown(text, data)
+    end
   end
 end
 

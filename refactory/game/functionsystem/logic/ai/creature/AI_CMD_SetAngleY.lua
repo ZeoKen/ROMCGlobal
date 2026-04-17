@@ -2,7 +2,8 @@ AI_CMD_SetAngleY = {}
 AI_CMD_SetAngleY.Mode = {
   SetAngleY = 1,
   LookAtCreature = 2,
-  LookAtPosition = 3
+  LookAtPosition = 3,
+  SetAngleYSlowly = 4
 }
 
 function AI_CMD_SetAngleY:ResetArgs(args)
@@ -13,6 +14,7 @@ function AI_CMD_SetAngleY:ResetArgs(args)
     self.args[3] = args[3]
   end
   self.args[4] = args[4]
+  self.args[5] = args[5]
 end
 
 function AI_CMD_SetAngleY:Construct(args)
@@ -24,7 +26,8 @@ function AI_CMD_SetAngleY:Construct(args)
     self.args[3] = args[3]
   end
   self.args[4] = args[4]
-  return 4
+  self.args[5] = args[5]
+  return 5
 end
 
 function AI_CMD_SetAngleY:Deconstruct()
@@ -36,6 +39,9 @@ end
 
 function AI_CMD_SetAngleY:Start(time, deltaTime, creature)
   local args = self.args
+  if AI_CMD_SetAngleY.Mode.SetAngleYSlowly == args[1] then
+    return true
+  end
   if args[4] then
     if AI_CMD_SetAngleY.Mode.SetAngleY == args[1] then
       creature.logicTransform:SetAngleY(args[3])
@@ -64,6 +70,18 @@ function AI_CMD_SetAngleY:End(time, deltaTime, creature)
 end
 
 function AI_CMD_SetAngleY:Update(time, deltaTime, creature)
+  if AI_CMD_SetAngleY.Mode.SetAngleYSlowly == self.args[1] then
+    if creature:IsDead() then
+      self:End(time, deltaTime, creature)
+      return true
+    end
+    local timeCount = ServerTime.CurServerTime() - self.args[5][2]
+    creature.logicTransform:SetAngleY(self.args[5][1] + timeCount / self.args[5][4] * self.args[5][3])
+    if timeCount > self.args[5][4] then
+      self:End(time, deltaTime, creature)
+      return true
+    end
+  end
 end
 
 function AI_CMD_SetAngleY.ToString()

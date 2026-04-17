@@ -11,17 +11,19 @@ end
 function PveAffixSubview:UpdateAffixData(affixData, detailAffixData)
   self.affixData = affixData
   self.detailAffixData = detailAffixData
+  self:RefreshShowAllBtn()
   self:UpdateView()
 end
 
 function PveAffixSubview:FindObjs()
   self.bg = self:FindGO("Bg", self.affixRoot):GetComponent(UISprite)
   local midGO = self:FindGO("Mid", self.affixRoot)
-  local affixContainer = self:FindComponent("AffixContainer", UIGrid, midGO)
-  self.affixListCtrl = ListCtrl.new(affixContainer, PveAffixDetailCell, "PveAffixDetailCell")
+  self.affixScrollView = self:FindComponent("AffixScroll", UIScrollView, midGO)
+  self.affixContainer = self:FindComponent("AffixContainer", UIGrid, midGO)
+  self.affixListCtrl = ListCtrl.new(self.affixContainer, PveAffixDetailCell, "PveAffixDetailCell")
   local leftBtnGO = self:FindGO("LeftBottom", self.affixRoot)
-  local showAllBtnGO = self:FindGO("ShowAllBtn", leftBtnGO, self.affixRoot)
-  self:AddClickEvent(showAllBtnGO, function()
+  self.showAllBtnGO = self:FindGO("ShowAllBtn", leftBtnGO, self.affixRoot)
+  self:AddClickEvent(self.showAllBtnGO, function()
     self:sendNotification(UIEvent.JumpPanel, {
       view = PanelConfig.WildMvpAllAffixPopup,
       viewdata = {
@@ -29,6 +31,7 @@ function PveAffixSubview:FindObjs()
       }
     })
   end)
+  self:RefreshShowAllBtn()
   self.hideBtn = self:FindGO("HideBtn", self.affixRoot)
   self:AddClickEvent(self.hideBtn, function()
     self:OnHide()
@@ -51,6 +54,13 @@ function PveAffixSubview:OnHide()
   self:Hide(self.affixRoot)
 end
 
+function PveAffixSubview:RefreshShowAllBtn()
+  if self.showAllBtnGO then
+    local showAllBtn = nil ~= self.detailAffixData and #self.detailAffixData > 0
+    self.showAllBtnGO:SetActive(showAllBtn)
+  end
+end
+
 function PveAffixSubview:UpdateView()
   if not self.affixRoot.activeInHierarchy then
     return
@@ -61,13 +71,26 @@ function PveAffixSubview:UpdateView()
   else
     self.emptyGO:SetActive(true)
   end
-  self.bg.width = datas and 3 <= #datas and 1106 or 846
+  local isMoreThan3 = datas and 3 <= #datas
+  self.bg.width = isMoreThan3 and 1106 or 846
+  if self.affixScrollView then
+    self.affixScrollView.contentPivot = isMoreThan3 and UIWidget.Pivot.Left or UIWidget.Pivot.Center
+  end
   if datas then
     self.affixListCtrl:ResetDatas(datas)
   end
+  self:Hide(self.affixContainer)
+  self.timeTick = TimeTickManager.Me():CreateOnceDelayTick(300, function()
+    self:Show(self.affixContainer)
+    self.affixListCtrl:ResetPosition()
+  end, self)
 end
 
 function PveAffixSubview:OnDestroy()
+  if self.timeTick then
+    TimeTickManager.Me():ClearTick(self, 1)
+    self.timeTick = nil
+  end
   if self.affixListCtrl then
     self.affixListCtrl:Destroy()
   end

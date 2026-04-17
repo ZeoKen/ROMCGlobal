@@ -143,11 +143,11 @@ function FashionPreviewTip:RefreshByUserData(userdata, camReset)
     Asset_RoleUtility.SetUserRoleParts(userdata, parts)
     parts[partIndex.Mount] = 0
   end
-  self:RefreshByData(parts, class, mySex, hideOther, cameraConfig, camReset)
+  self:RefreshByData(parts, class, mySex, hideOther, cameraConfig, camReset, userdata)
 end
 
-function FashionPreviewTip:RefreshByData(parts, class, sex, hideOther, camConfig, camReset)
-  Asset_RoleUtility.SetFashionPreviewParts(self.id, class, sex, hideOther, parts)
+function FashionPreviewTip:RefreshByData(parts, class, sex, hideOther, camConfig, camReset, userdata)
+  Asset_RoleUtility.SetFashionPreviewParts(self.id, class, sex, hideOther, parts, userdata)
   local isPreviewMount = ItemUtil.getItemRolePartIndex(self.id) == Asset_Role.PartIndex.Mount
   if camConfig and camReset ~= false then
     camConfig.fieldOfView = 45

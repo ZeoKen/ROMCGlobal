@@ -46,7 +46,8 @@ end
 
 function MainViewSkadaInfoPage:OnEnter()
   MainViewSkadaInfoPage.super.OnEnter(self)
-  self:HideSelf()
+  self.taskBordCachedActive = self.taskBord.activeSelf
+  self:Hide()
 end
 
 function MainViewSkadaInfoPage:ShowSelf()
@@ -56,7 +57,7 @@ end
 
 function MainViewSkadaInfoPage:HideSelf()
   self:Hide()
-  self.taskBord:SetActive(true)
+  self.taskBord:SetActive(self.taskBordCachedActive)
 end
 
 function MainViewSkadaInfoPage:AddViewEvents()

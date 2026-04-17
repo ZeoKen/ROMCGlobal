@@ -172,6 +172,8 @@ Table_AddWay_t = {
     {8373},
     {8369},
     {8375},
+    {8377},
+    {8380},
     {5031},
     {93},
     {3093},
@@ -184,6 +186,7 @@ Table_AddWay_t = {
     {102},
     {103},
     {104},
+    {8388},
     {8368},
     {8367},
     {8342},
@@ -3831,7 +3834,7 @@ Table_AddWay_t = {
           "id",
           "compare",
           "<",
-          913109
+          913201
         }
       }
     },
@@ -3849,7 +3852,7 @@ Table_AddWay_t = {
           "id",
           "compare",
           "<",
-          920007
+          920100
         }
       }
     },
@@ -4406,6 +4409,96 @@ Table_AddWay_t = {
       }
     },
     {
+      "Table_Shop",
+      "items",
+      {
+        {
+          "type",
+          "compare",
+          "=",
+          12028
+        },
+        {
+          "ShopID",
+          "compare",
+          "=",
+          1
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132181
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132131
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132160
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132134
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132170
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132145
+        }
+      }
+    },
+    {
       "Table_Item",
       "id",
       {
@@ -4414,6 +4507,18 @@ Table_AddWay_t = {
           "compare",
           "=",
           52835
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132158
         }
       }
     },
@@ -4468,6 +4573,30 @@ Table_AddWay_t = {
           "compare",
           "=",
           8
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132151
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132188
         }
       }
     },
@@ -4598,6 +4727,102 @@ Table_AddWay_t = {
       }
     },
     {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132128
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132194
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132182
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132190
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132140
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132173
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132177
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132205
+        }
+      }
+    },
+    {
       "Table_Shop",
       "items",
       {
@@ -4612,6 +4837,198 @@ Table_AddWay_t = {
           "compare",
           "=",
           10
+        }
+      }
+    },
+    {
+      "Table_Reward",
+      "item",
+      {
+        {
+          "team",
+          "compare",
+          "=",
+          30690
+        }
+      }
+    },
+    {
+      "Table_Reward",
+      "item",
+      {
+        {
+          "team",
+          "compare",
+          "=",
+          125020
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          8425
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132121
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132207
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132175
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132147
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132203
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132200
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132143
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132191
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132152
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132164
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132161
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132130
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132122
         }
       }
     },
@@ -10000,9 +10417,9 @@ Table_AddWay = {
     NameEn = "活动商人",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[283],
+    Search1 = Table_AddWay_t.Search1[301],
     Desc = "活动期间存在的商人",
-    GotoMode = Table_AddWay_t.GotoMode[146]
+    GotoMode = Table_AddWay_t.GotoMode[148]
   },
   [500] = {
     id = 500,
@@ -10011,7 +10428,7 @@ Table_AddWay = {
     Materialdisplay = 0,
     Search1 = Table_AddWay_t.Search1[246],
     Desc = "出售各种道具",
-    GotoMode = Table_AddWay_t.GotoMode[147]
+    GotoMode = Table_AddWay_t.GotoMode[149]
   },
   [501] = {
     id = 501,
@@ -10020,7 +10437,7 @@ Table_AddWay = {
     Materialdisplay = 0,
     Search1 = Table_AddWay_t.Search1[246],
     Desc = "出售各种道具",
-    GotoMode = Table_AddWay_t.GotoMode[148]
+    GotoMode = Table_AddWay_t.GotoMode[150]
   },
   [502] = {
     id = 502,
@@ -10029,7 +10446,7 @@ Table_AddWay = {
     Materialdisplay = 0,
     Search1 = Table_AddWay_t.Search1[246],
     Desc = "出售各种道具",
-    GotoMode = Table_AddWay_t.GotoMode[149]
+    GotoMode = Table_AddWay_t.GotoMode[151]
   },
   [503] = {
     id = 503,
@@ -10038,16 +10455,16 @@ Table_AddWay = {
     Materialdisplay = 0,
     Search1 = Table_AddWay_t.Search1[246],
     Desc = "出售各种道具",
-    GotoMode = Table_AddWay_t.GotoMode[150]
+    GotoMode = Table_AddWay_t.GotoMode[152]
   },
   [600] = {
     id = 600,
     NameEn = "料理店",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[305],
+    Search1 = Table_AddWay_t.Search1[339],
     Desc = "出售各种料理",
-    GotoMode = Table_AddWay_t.GotoMode[154]
+    GotoMode = Table_AddWay_t.GotoMode[157]
   },
   [699] = {
     id = 699,
@@ -10055,9 +10472,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[336],
+    Search1 = Table_AddWay_t.Search1[370],
     Desc = "里希塔乐制作商",
-    GotoMode = Table_AddWay_t.GotoMode[157]
+    GotoMode = Table_AddWay_t.GotoMode[160]
   },
   [700] = {
     id = 700,
@@ -10065,9 +10482,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[337],
+    Search1 = Table_AddWay_t.Search1[371],
     Desc = "尼夫海姆制作商",
-    GotoMode = Table_AddWay_t.GotoMode[158]
+    GotoMode = Table_AddWay_t.GotoMode[161]
   },
   [701] = {
     id = 701,
@@ -10075,9 +10492,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[338],
+    Search1 = Table_AddWay_t.Search1[372],
     Desc = "普隆德拉制作商",
-    GotoMode = Table_AddWay_t.GotoMode[159]
+    GotoMode = Table_AddWay_t.GotoMode[162]
   },
   [702] = {
     id = 702,
@@ -10085,9 +10502,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[339],
+    Search1 = Table_AddWay_t.Search1[373],
     Desc = "依斯鲁得制作商",
-    GotoMode = Table_AddWay_t.GotoMode[160]
+    GotoMode = Table_AddWay_t.GotoMode[163]
   },
   [703] = {
     id = 703,
@@ -10095,9 +10512,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[340],
+    Search1 = Table_AddWay_t.Search1[374],
     Desc = "吉芬制作商",
-    GotoMode = Table_AddWay_t.GotoMode[161]
+    GotoMode = Table_AddWay_t.GotoMode[164]
   },
   [704] = {
     id = 704,
@@ -10105,9 +10522,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[341],
+    Search1 = Table_AddWay_t.Search1[375],
     Desc = "梦罗克制作商",
-    GotoMode = Table_AddWay_t.GotoMode[162]
+    GotoMode = Table_AddWay_t.GotoMode[165]
   },
   [705] = {
     id = 705,
@@ -10115,9 +10532,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[342],
+    Search1 = Table_AddWay_t.Search1[376],
     Desc = "斐扬制作商",
-    GotoMode = Table_AddWay_t.GotoMode[163]
+    GotoMode = Table_AddWay_t.GotoMode[166]
   },
   [706] = {
     id = 706,
@@ -10125,9 +10542,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[343],
+    Search1 = Table_AddWay_t.Search1[377],
     Desc = "兽人村制作商",
-    GotoMode = Table_AddWay_t.GotoMode[164]
+    GotoMode = Table_AddWay_t.GotoMode[167]
   },
   [707] = {
     id = 707,
@@ -10135,9 +10552,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[344],
+    Search1 = Table_AddWay_t.Search1[378],
     Desc = "古城制作商",
-    GotoMode = Table_AddWay_t.GotoMode[165]
+    GotoMode = Table_AddWay_t.GotoMode[168]
   },
   [708] = {
     id = 708,
@@ -10145,9 +10562,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[345],
+    Search1 = Table_AddWay_t.Search1[379],
     Desc = "艾尔帕兰制作商",
-    GotoMode = Table_AddWay_t.GotoMode[166]
+    GotoMode = Table_AddWay_t.GotoMode[169]
   },
   [709] = {
     id = 709,
@@ -10155,9 +10572,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[346],
+    Search1 = Table_AddWay_t.Search1[380],
     Desc = "姜饼城制作商",
-    GotoMode = Table_AddWay_t.GotoMode[167]
+    GotoMode = Table_AddWay_t.GotoMode[170]
   },
   [710] = {
     id = 710,
@@ -10165,9 +10582,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[347],
+    Search1 = Table_AddWay_t.Search1[381],
     Desc = "朱诺制作商",
-    GotoMode = Table_AddWay_t.GotoMode[168]
+    GotoMode = Table_AddWay_t.GotoMode[171]
   },
   [711] = {
     id = 711,
@@ -10175,9 +10592,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[348],
+    Search1 = Table_AddWay_t.Search1[382],
     Desc = "斐扬武器升级商",
-    GotoMode = Table_AddWay_t.GotoMode[169]
+    GotoMode = Table_AddWay_t.GotoMode[172]
   },
   [712] = {
     id = 712,
@@ -10185,9 +10602,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[349],
+    Search1 = Table_AddWay_t.Search1[383],
     Desc = "斐扬防具升级商",
-    GotoMode = Table_AddWay_t.GotoMode[170]
+    GotoMode = Table_AddWay_t.GotoMode[173]
   },
   [713] = {
     id = 713,
@@ -10195,9 +10612,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[350],
+    Search1 = Table_AddWay_t.Search1[384],
     Desc = "兽人村武器升级商",
-    GotoMode = Table_AddWay_t.GotoMode[171]
+    GotoMode = Table_AddWay_t.GotoMode[174]
   },
   [714] = {
     id = 714,
@@ -10205,9 +10622,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[351],
+    Search1 = Table_AddWay_t.Search1[385],
     Desc = "兽人村防具升级商",
-    GotoMode = Table_AddWay_t.GotoMode[172]
+    GotoMode = Table_AddWay_t.GotoMode[175]
   },
   [715] = {
     id = 715,
@@ -10215,9 +10632,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[352],
+    Search1 = Table_AddWay_t.Search1[386],
     Desc = "古城武器升级商",
-    GotoMode = Table_AddWay_t.GotoMode[173]
+    GotoMode = Table_AddWay_t.GotoMode[176]
   },
   [716] = {
     id = 716,
@@ -10225,9 +10642,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[353],
+    Search1 = Table_AddWay_t.Search1[387],
     Desc = "古城防具升级商",
-    GotoMode = Table_AddWay_t.GotoMode[174]
+    GotoMode = Table_AddWay_t.GotoMode[177]
   },
   [717] = {
     id = 717,
@@ -10235,9 +10652,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[354],
+    Search1 = Table_AddWay_t.Search1[388],
     Desc = "艾尔帕兰武器升级商",
-    GotoMode = Table_AddWay_t.GotoMode[175]
+    GotoMode = Table_AddWay_t.GotoMode[178]
   },
   [718] = {
     id = 718,
@@ -10245,25 +10662,25 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[355],
+    Search1 = Table_AddWay_t.Search1[389],
     Desc = "艾尔帕兰防具升级商",
-    GotoMode = Table_AddWay_t.GotoMode[176]
+    GotoMode = Table_AddWay_t.GotoMode[179]
   },
   [719] = {
     id = 719,
     NameEn = "姜饼城武器升级商",
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[356],
+    Search1 = Table_AddWay_t.Search1[390],
     Desc = "姜饼城武器升级商",
-    GotoMode = Table_AddWay_t.GotoMode[177]
+    GotoMode = Table_AddWay_t.GotoMode[180]
   },
   [720] = {
     id = 720,
     NameEn = "姜饼城防具升级商",
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[357],
+    Search1 = Table_AddWay_t.Search1[391],
     Desc = "姜饼城防具升级商",
-    GotoMode = Table_AddWay_t.GotoMode[178]
+    GotoMode = Table_AddWay_t.GotoMode[181]
   },
   [725] = {
     id = 725,
@@ -10271,9 +10688,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[358],
+    Search1 = Table_AddWay_t.Search1[392],
     Desc = "里希塔乐武器升级商",
-    GotoMode = Table_AddWay_t.GotoMode[179]
+    GotoMode = Table_AddWay_t.GotoMode[182]
   },
   [726] = {
     id = 726,
@@ -10281,9 +10698,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[359],
+    Search1 = Table_AddWay_t.Search1[393],
     Desc = "里希塔乐防具升级商",
-    GotoMode = Table_AddWay_t.GotoMode[180]
+    GotoMode = Table_AddWay_t.GotoMode[183]
   },
   [727] = {
     id = 727,
@@ -10291,9 +10708,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[360],
+    Search1 = Table_AddWay_t.Search1[394],
     Desc = "罗扎纳装备制作商",
-    GotoMode = Table_AddWay_t.GotoMode[181]
+    GotoMode = Table_AddWay_t.GotoMode[184]
   },
   [728] = {
     id = 728,
@@ -10301,9 +10718,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[361],
+    Search1 = Table_AddWay_t.Search1[395],
     Desc = "拉赫装备制作商",
-    GotoMode = Table_AddWay_t.GotoMode[182]
+    GotoMode = Table_AddWay_t.GotoMode[185]
   },
   [729] = {
     id = 729,
@@ -10311,9 +10728,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[362],
+    Search1 = Table_AddWay_t.Search1[396],
     Desc = "洛阳装备制作商",
-    GotoMode = Table_AddWay_t.GotoMode[183]
+    GotoMode = Table_AddWay_t.GotoMode[186]
   },
   [730] = {
     id = 730,
@@ -10321,9 +10738,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[363],
+    Search1 = Table_AddWay_t.Search1[397],
     Desc = "艾卡拉齐装备制作商",
-    GotoMode = Table_AddWay_t.GotoMode[184]
+    GotoMode = Table_AddWay_t.GotoMode[187]
   },
   [731] = {
     id = 731,
@@ -10331,16 +10748,16 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[364],
+    Search1 = Table_AddWay_t.Search1[398],
     Desc = "克魔岛装备制作商",
-    GotoMode = Table_AddWay_t.GotoMode[185]
+    GotoMode = Table_AddWay_t.GotoMode[188]
   },
   [780] = {
     id = 780,
     NameEn = "装备升级",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[406],
+    Search1 = Table_AddWay_t.Search1[440],
     Desc = "通过二阶装备升级获得"
   },
   [795] = {
@@ -10348,7 +10765,7 @@ Table_AddWay = {
     NameEn = "组队竞技赛",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[420],
+    Search1 = Table_AddWay_t.Search1[454],
     Desc = "竞技模式获得"
   },
   [796] = {
@@ -10356,7 +10773,7 @@ Table_AddWay = {
     NameEn = "组队竞技赛段位奖励",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[421],
+    Search1 = Table_AddWay_t.Search1[455],
     Desc = "竞技模式获得"
   },
   [797] = {
@@ -10364,7 +10781,7 @@ Table_AddWay = {
     NameEn = "组队竞技赛结算奖励",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[422],
+    Search1 = Table_AddWay_t.Search1[456],
     Desc = "竞技模式获得"
   },
   [798] = {
@@ -10372,7 +10789,7 @@ Table_AddWay = {
     NameEn = "活动期间购买获得",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[423],
+    Search1 = Table_AddWay_t.Search1[457],
     Desc = "活动期间购买获得"
   },
   [799] = {
@@ -10380,16 +10797,16 @@ Table_AddWay = {
     NameEn = "通过宠物融合获得",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[424],
+    Search1 = Table_AddWay_t.Search1[458],
     Desc = "通过宠物融合获得",
-    GotoMode = Table_AddWay_t.GotoMode[207]
+    GotoMode = Table_AddWay_t.GotoMode[210]
   },
   [800] = {
     id = 800,
     NameEn = "通过捕捉魔物获得",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[425],
+    Search1 = Table_AddWay_t.Search1[459],
     Desc = "通过捕捉魔物获得"
   },
   [801] = {
@@ -10398,9 +10815,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[426],
+    Search1 = Table_AddWay_t.Search1[460],
     Desc = "恩德勒斯塔中获得",
-    GotoMode = Table_AddWay_t.GotoMode[139]
+    GotoMode = Table_AddWay_t.GotoMode[141]
   },
   [802] = {
     id = 802,
@@ -10408,9 +10825,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[427],
+    Search1 = Table_AddWay_t.Search1[461],
     Desc = "恩德勒斯塔中获得",
-    GotoMode = Table_AddWay_t.GotoMode[139]
+    GotoMode = Table_AddWay_t.GotoMode[141]
   },
   [803] = {
     id = 803,
@@ -10418,16 +10835,16 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[428],
+    Search1 = Table_AddWay_t.Search1[462],
     Desc = "恩德勒斯塔中获得",
-    GotoMode = Table_AddWay_t.GotoMode[139]
+    GotoMode = Table_AddWay_t.GotoMode[141]
   },
   [804] = {
     id = 804,
     NameEn = "神谕副本通关获得",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[429],
+    Search1 = Table_AddWay_t.Search1[463],
     Desc = "神谕副本通关获得",
     GotoMode = Table_AddWay_t.GotoMode[29]
   },
@@ -10436,7 +10853,7 @@ Table_AddWay = {
     NameEn = "神谕副本通关获得",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[430],
+    Search1 = Table_AddWay_t.Search1[464],
     Desc = "神谕副本通关获得",
     GotoMode = Table_AddWay_t.GotoMode[29]
   },
@@ -10446,9 +10863,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[431],
+    Search1 = Table_AddWay_t.Search1[465],
     Desc = "恩德勒斯塔中获得",
-    GotoMode = Table_AddWay_t.GotoMode[139]
+    GotoMode = Table_AddWay_t.GotoMode[141]
   },
   [807] = {
     id = 807,
@@ -10456,16 +10873,16 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[432],
+    Search1 = Table_AddWay_t.Search1[466],
     Desc = "恩德勒斯塔掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[139]
+    GotoMode = Table_AddWay_t.GotoMode[141]
   },
   [808] = {
     id = 808,
     NameEn = "神谕副本通关",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[433],
+    Search1 = Table_AddWay_t.Search1[467],
     Desc = "神谕副本通关获得"
   },
   [809] = {
@@ -10473,7 +10890,7 @@ Table_AddWay = {
     NameEn = "MVP争夺战掉落",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[434],
+    Search1 = Table_AddWay_t.Search1[468],
     Desc = "MVP争夺战掉落获得"
   },
   [810] = {
@@ -10482,7 +10899,7 @@ Table_AddWay = {
     Icon = "bigcat_icon_03",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[435],
+    Search1 = Table_AddWay_t.Search1[469],
     Desc = "B格猫入侵掉落获得"
   },
   [811] = {
@@ -10490,7 +10907,7 @@ Table_AddWay = {
     NameEn = "通过签到获得",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[436],
+    Search1 = Table_AddWay_t.Search1[470],
     Desc = "通过签到获得"
   },
   [813] = {
@@ -10498,34 +10915,34 @@ Table_AddWay = {
     NameEn = "达纳托斯之塔",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[438],
+    Search1 = Table_AddWay_t.Search1[472],
     Desc = "达纳托斯之塔掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[208]
+    GotoMode = Table_AddWay_t.GotoMode[211]
   },
   [814] = {
     id = 814,
     NameEn = "符文商人",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[439],
+    Search1 = Table_AddWay_t.Search1[473],
     Desc = "符文商人",
-    GotoMode = Table_AddWay_t.GotoMode[209]
+    GotoMode = Table_AddWay_t.GotoMode[212]
   },
   [815] = {
     id = 815,
     NameEn = "古币商店",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[440],
+    Search1 = Table_AddWay_t.Search1[474],
     Desc = "古币商店处兑换获得",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[213]
   },
   [816] = {
     id = 816,
     NameEn = "齿轮商店",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[441],
+    Search1 = Table_AddWay_t.Search1[475],
     Desc = "齿轮商店兑换获得"
   },
   [817] = {
@@ -10533,7 +10950,7 @@ Table_AddWay = {
     NameEn = "组队竞技赛结算奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[442],
+    Search1 = Table_AddWay_t.Search1[476],
     Desc = "竞技模式获得"
   },
   [818] = {
@@ -10541,9 +10958,9 @@ Table_AddWay = {
     NameEn = "蛋糕商店",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[443],
+    Search1 = Table_AddWay_t.Search1[477],
     Desc = "通过蛋糕商店兑换获得",
-    GotoMode = Table_AddWay_t.GotoMode[142]
+    GotoMode = Table_AddWay_t.GotoMode[144]
   },
   [819] = {
     id = 819,
@@ -10551,9 +10968,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[444],
+    Search1 = Table_AddWay_t.Search1[478],
     Desc = "无限回廊掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[211]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [820] = {
     id = 820,
@@ -10561,9 +10978,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[445],
+    Search1 = Table_AddWay_t.Search1[479],
     Desc = "无限回廊掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[211]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [821] = {
     id = 821,
@@ -10571,9 +10988,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[446],
+    Search1 = Table_AddWay_t.Search1[480],
     Desc = "无限回廊掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[211]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [822] = {
     id = 822,
@@ -10581,9 +10998,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[447],
+    Search1 = Table_AddWay_t.Search1[481],
     Desc = "无限回廊掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[211]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [823] = {
     id = 823,
@@ -10591,9 +11008,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[448],
+    Search1 = Table_AddWay_t.Search1[482],
     Desc = "无限回廊掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[211]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [824] = {
     id = 824,
@@ -10601,9 +11018,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[449],
+    Search1 = Table_AddWay_t.Search1[483],
     Desc = "无限回廊掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[211]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [825] = {
     id = 825,
@@ -10611,9 +11028,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[450],
+    Search1 = Table_AddWay_t.Search1[484],
     Desc = "无限回廊掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[211]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [826] = {
     id = 826,
@@ -10621,16 +11038,16 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[451],
+    Search1 = Table_AddWay_t.Search1[485],
     Desc = "无限回廊掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[211]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [827] = {
     id = 827,
     NameEn = "圣域之战结算奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[452],
+    Search1 = Table_AddWay_t.Search1[486],
     Desc = "圣域之战结算奖励"
   },
   [828] = {
@@ -10639,7 +11056,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[453],
+    Search1 = Table_AddWay_t.Search1[487],
     Desc = "主教纹章商店兑换获得"
   },
   [829] = {
@@ -10648,7 +11065,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[454],
+    Search1 = Table_AddWay_t.Search1[488],
     Desc = "主教纹章商店兑换获得"
   },
   [830] = {
@@ -10657,7 +11074,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[455],
+    Search1 = Table_AddWay_t.Search1[489],
     Desc = "主教纹章商店兑换获得"
   },
   [832] = {
@@ -10665,7 +11082,7 @@ Table_AddWay = {
     NameEn = "组队竞技赛结算奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[457],
+    Search1 = Table_AddWay_t.Search1[491],
     Desc = "竞技模式获得"
   },
   [833] = {
@@ -10674,9 +11091,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[458],
+    Search1 = Table_AddWay_t.Search1[492],
     Desc = "无限回廊掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[211]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [834] = {
     id = 834,
@@ -10684,7 +11101,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[458],
+    Search1 = Table_AddWay_t.Search1[492],
     Desc = "勇者圣徽商店兑换获得"
   },
   [835] = {
@@ -10693,9 +11110,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[459],
+    Search1 = Table_AddWay_t.Search1[493],
     Desc = "无限回廊掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[211]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [836] = {
     id = 836,
@@ -10703,7 +11120,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[460],
+    Search1 = Table_AddWay_t.Search1[494],
     Desc = "勇者圣徽商店兑换获得"
   },
   [837] = {
@@ -10712,7 +11129,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[461],
+    Search1 = Table_AddWay_t.Search1[495],
     Desc = "主教纹章商店兑换获得"
   },
   [838] = {
@@ -10721,7 +11138,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[462],
+    Search1 = Table_AddWay_t.Search1[496],
     Desc = "主教纹章商店兑换获得"
   },
   [839] = {
@@ -10730,7 +11147,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[463],
+    Search1 = Table_AddWay_t.Search1[497],
     Desc = "主教纹章商店兑换获得"
   },
   [840] = {
@@ -10739,7 +11156,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[464],
+    Search1 = Table_AddWay_t.Search1[498],
     Desc = "主教纹章商店兑换获得"
   },
   [841] = {
@@ -10747,7 +11164,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[465],
+    Search1 = Table_AddWay_t.Search1[499],
     Desc = "圣域之战杯赛结算奖励"
   },
   [842] = {
@@ -10755,7 +11172,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[466],
+    Search1 = Table_AddWay_t.Search1[500],
     Desc = "圣域之战杯赛结算奖励"
   },
   [843] = {
@@ -10763,7 +11180,7 @@ Table_AddWay = {
     NameEn = "组队竞技赛结算奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[467],
+    Search1 = Table_AddWay_t.Search1[501],
     Desc = "竞技模式获得"
   },
   [844] = {
@@ -10771,7 +11188,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[468],
+    Search1 = Table_AddWay_t.Search1[502],
     Desc = "圣域之战杯赛结算奖励"
   },
   [845] = {
@@ -10779,7 +11196,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[469],
+    Search1 = Table_AddWay_t.Search1[503],
     Desc = "圣域之战杯赛结算奖励"
   },
   [846] = {
@@ -10788,9 +11205,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[470],
+    Search1 = Table_AddWay_t.Search1[504],
     Desc = "无限回廊掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[211]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [847] = {
     id = 847,
@@ -10798,16 +11215,16 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[471],
+    Search1 = Table_AddWay_t.Search1[505],
     Desc = "无限回廊掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[211]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [848] = {
     id = 848,
     NameEn = "圣域之战杯赛奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[472],
+    Search1 = Table_AddWay_t.Search1[506],
     Desc = "圣域之战杯赛结算奖励"
   },
   [849] = {
@@ -10815,7 +11232,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[473],
+    Search1 = Table_AddWay_t.Search1[507],
     Desc = "圣域之战杯赛结算奖励"
   },
   [850] = {
@@ -10823,7 +11240,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[474],
+    Search1 = Table_AddWay_t.Search1[508],
     Desc = "圣域之战杯赛结算奖励"
   },
   [851] = {
@@ -10831,7 +11248,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[475],
+    Search1 = Table_AddWay_t.Search1[509],
     Desc = "圣域之战杯赛结算奖励"
   },
   [852] = {
@@ -10840,7 +11257,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[476],
+    Search1 = Table_AddWay_t.Search1[510],
     Desc = "神谕副本通关获得",
     GotoMode = Table_AddWay_t.GotoMode[29]
   },
@@ -10849,7 +11266,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[477],
+    Search1 = Table_AddWay_t.Search1[511],
     Desc = "圣域之战杯赛结算奖励"
   },
   [860] = {
@@ -10857,7 +11274,7 @@ Table_AddWay = {
     NameEn = "公会战相关奖励",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[484],
+    Search1 = Table_AddWay_t.Search1[518],
     Desc = "公会战相关奖励"
   },
   [861] = {
@@ -10865,7 +11282,7 @@ Table_AddWay = {
     NameEn = "公会战相关奖励",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[485],
+    Search1 = Table_AddWay_t.Search1[519],
     Desc = "公会战相关奖励"
   },
   [862] = {
@@ -10873,7 +11290,7 @@ Table_AddWay = {
     NameEn = "组队竞技赛结算奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[486],
+    Search1 = Table_AddWay_t.Search1[520],
     Desc = "竞技模式获得"
   },
   [863] = {
@@ -10881,7 +11298,7 @@ Table_AddWay = {
     NameEn = "组队竞技赛结算奖励",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[487],
+    Search1 = Table_AddWay_t.Search1[521],
     Desc = "圣域之战杯赛结算奖励"
   },
   [864] = {
@@ -10889,7 +11306,7 @@ Table_AddWay = {
     NameEn = "组队竞技赛结算奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[488],
+    Search1 = Table_AddWay_t.Search1[522],
     Desc = "圣域之战杯赛结算奖励"
   },
   [865] = {
@@ -10897,7 +11314,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[489],
+    Search1 = Table_AddWay_t.Search1[523],
     Desc = "圣域之战杯赛结算奖励"
   },
   [866] = {
@@ -10905,7 +11322,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[490],
+    Search1 = Table_AddWay_t.Search1[524],
     Desc = "圣域之战杯赛结算奖励"
   },
   [867] = {
@@ -10913,7 +11330,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[491],
+    Search1 = Table_AddWay_t.Search1[525],
     Desc = "圣域之战杯赛结算奖励"
   },
   [868] = {
@@ -10921,7 +11338,7 @@ Table_AddWay = {
     NameEn = "组队竞技赛结算奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[492],
+    Search1 = Table_AddWay_t.Search1[526],
     Desc = "竞技模式获得"
   },
   [869] = {
@@ -10930,7 +11347,7 @@ Table_AddWay = {
     Icon = "n_rootofcorruption",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[493],
+    Search1 = Table_AddWay_t.Search1[527],
     Desc = "古城之泪",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -10940,7 +11357,7 @@ Table_AddWay = {
     Icon = "n_rootofcorruption",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[494],
+    Search1 = Table_AddWay_t.Search1[528],
     Desc = "古城之泪",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -10950,7 +11367,7 @@ Table_AddWay = {
     Icon = "n_rootofcorruption",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[495],
+    Search1 = Table_AddWay_t.Search1[529],
     Desc = "古城之泪",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -10970,7 +11387,7 @@ Table_AddWay = {
     Icon = "n_rootofcorruption",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[496],
+    Search1 = Table_AddWay_t.Search1[530],
     Desc = "古城之泪",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -10980,7 +11397,7 @@ Table_AddWay = {
     Icon = "n_darklaicorpse",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[497],
+    Search1 = Table_AddWay_t.Search1[531],
     Desc = "古城之泪",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -10990,7 +11407,7 @@ Table_AddWay = {
     Icon = "n_darklaicorpse",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[498],
+    Search1 = Table_AddWay_t.Search1[532],
     Desc = "古城之泪",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11000,7 +11417,7 @@ Table_AddWay = {
     Icon = "n_darklaicorpse",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[495],
+    Search1 = Table_AddWay_t.Search1[529],
     Desc = "古城之泪",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11020,7 +11437,7 @@ Table_AddWay = {
     Icon = "n_darklaicorpse",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[499],
+    Search1 = Table_AddWay_t.Search1[533],
     Desc = "古城之泪",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11030,7 +11447,7 @@ Table_AddWay = {
     Icon = "n_earlymutantdragon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[500],
+    Search1 = Table_AddWay_t.Search1[534],
     Desc = "古城之泪",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11040,7 +11457,7 @@ Table_AddWay = {
     Icon = "n_earlymutantdragon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[501],
+    Search1 = Table_AddWay_t.Search1[535],
     Desc = "古城之泪",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11050,7 +11467,7 @@ Table_AddWay = {
     Icon = "n_earlymutantdragon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[495],
+    Search1 = Table_AddWay_t.Search1[529],
     Desc = "古城之泪",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11060,7 +11477,7 @@ Table_AddWay = {
     Icon = "n_earlymutantdragon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[502],
+    Search1 = Table_AddWay_t.Search1[536],
     Desc = "古城之泪",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11070,7 +11487,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[519],
+    Search1 = Table_AddWay_t.Search1[553],
     Desc = "通过装备兑换获得",
     GotoMode = Table_AddWay_t.GotoMode[37]
   },
@@ -11080,7 +11497,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[520],
+    Search1 = Table_AddWay_t.Search1[554],
     Desc = "通过装备兑换获得",
     GotoMode = Table_AddWay_t.GotoMode[37]
   },
@@ -11090,7 +11507,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[521],
+    Search1 = Table_AddWay_t.Search1[555],
     Desc = "波纳佩博物岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11100,9 +11517,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[522],
+    Search1 = Table_AddWay_t.Search1[556],
     Desc = "通过材料提炼获得",
-    GotoMode = Table_AddWay_t.GotoMode[216]
+    GotoMode = Table_AddWay_t.GotoMode[219]
   },
   [903] = {
     id = 903,
@@ -11110,7 +11527,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[523],
+    Search1 = Table_AddWay_t.Search1[557],
     Desc = "波纳佩博物岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11120,7 +11537,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[524],
+    Search1 = Table_AddWay_t.Search1[558],
     Desc = ""
   },
   [905] = {
@@ -11129,7 +11546,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[525],
+    Search1 = Table_AddWay_t.Search1[559],
     Desc = ""
   },
   [906] = {
@@ -11138,7 +11555,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[526],
+    Search1 = Table_AddWay_t.Search1[560],
     Desc = ""
   },
   [907] = {
@@ -11147,7 +11564,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[527],
+    Search1 = Table_AddWay_t.Search1[561],
     Desc = ""
   },
   [908] = {
@@ -11155,7 +11572,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[528],
+    Search1 = Table_AddWay_t.Search1[562],
     Desc = "圣域之战杯赛结算奖励"
   },
   [909] = {
@@ -11164,7 +11581,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[529],
+    Search1 = Table_AddWay_t.Search1[563],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11174,7 +11591,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[530],
+    Search1 = Table_AddWay_t.Search1[564],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11184,7 +11601,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[531],
+    Search1 = Table_AddWay_t.Search1[565],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11194,9 +11611,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[532],
+    Search1 = Table_AddWay_t.Search1[566],
     Desc = "通过材料提炼获得",
-    GotoMode = Table_AddWay_t.GotoMode[216]
+    GotoMode = Table_AddWay_t.GotoMode[219]
   },
   [913] = {
     id = 913,
@@ -11204,7 +11621,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[533],
+    Search1 = Table_AddWay_t.Search1[567],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11214,7 +11631,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[534],
+    Search1 = Table_AddWay_t.Search1[568],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11224,7 +11641,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[535],
+    Search1 = Table_AddWay_t.Search1[569],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11234,7 +11651,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[536],
+    Search1 = Table_AddWay_t.Search1[570],
     Desc = "使用四海金章兑换获得"
   },
   [917] = {
@@ -11243,7 +11660,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[537],
+    Search1 = Table_AddWay_t.Search1[571],
     Desc = "使用四海金章兑换获得"
   },
   [918] = {
@@ -11252,7 +11669,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[538],
+    Search1 = Table_AddWay_t.Search1[572],
     Desc = "使用四海金章兑换获得"
   },
   [919] = {
@@ -11261,7 +11678,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[539],
+    Search1 = Table_AddWay_t.Search1[573],
     Desc = "使用四海金章兑换获得"
   },
   [920] = {
@@ -11270,7 +11687,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[540],
+    Search1 = Table_AddWay_t.Search1[574],
     Desc = "使用四海金章兑换获得"
   },
   [921] = {
@@ -11279,7 +11696,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[541],
+    Search1 = Table_AddWay_t.Search1[575],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11289,7 +11706,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[542],
+    Search1 = Table_AddWay_t.Search1[576],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11299,7 +11716,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[543],
+    Search1 = Table_AddWay_t.Search1[577],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11309,7 +11726,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[544],
+    Search1 = Table_AddWay_t.Search1[578],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11319,7 +11736,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[545],
+    Search1 = Table_AddWay_t.Search1[579],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11329,7 +11746,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[546],
+    Search1 = Table_AddWay_t.Search1[580],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11339,7 +11756,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[547],
+    Search1 = Table_AddWay_t.Search1[581],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11349,7 +11766,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[548],
+    Search1 = Table_AddWay_t.Search1[582],
     Desc = "使用四海金章兑换获得"
   },
   [929] = {
@@ -11358,7 +11775,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[549],
+    Search1 = Table_AddWay_t.Search1[583],
     Desc = "使用四海金章兑换获得"
   },
   [930] = {
@@ -11367,7 +11784,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[550],
+    Search1 = Table_AddWay_t.Search1[584],
     Desc = "使用四海金章兑换获得"
   },
   [931] = {
@@ -11376,7 +11793,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[551],
+    Search1 = Table_AddWay_t.Search1[585],
     Desc = "使用四海金章兑换获得"
   },
   [932] = {
@@ -11385,7 +11802,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[552],
+    Search1 = Table_AddWay_t.Search1[586],
     Desc = "使用四海金章兑换获得"
   },
   [933] = {
@@ -11393,7 +11810,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[553],
+    Search1 = Table_AddWay_t.Search1[587],
     Desc = "圣域之战杯赛结算奖励"
   },
   [934] = {
@@ -11401,7 +11818,7 @@ Table_AddWay = {
     NameEn = "圣域之战杯赛奖励",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[554],
+    Search1 = Table_AddWay_t.Search1[588],
     Desc = "圣域之战杯赛结算奖励"
   },
   [935] = {
@@ -11410,7 +11827,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[548],
+    Search1 = Table_AddWay_t.Search1[582],
     Desc = "波纳佩秘境掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11420,7 +11837,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[549],
+    Search1 = Table_AddWay_t.Search1[583],
     Desc = "波纳佩秘境掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11430,7 +11847,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[550],
+    Search1 = Table_AddWay_t.Search1[584],
     Desc = "波纳佩秘境掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11440,7 +11857,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[551],
+    Search1 = Table_AddWay_t.Search1[585],
     Desc = "波纳佩秘境掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11450,7 +11867,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[552],
+    Search1 = Table_AddWay_t.Search1[586],
     Desc = "波纳佩秘境掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11460,7 +11877,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[555],
+    Search1 = Table_AddWay_t.Search1[589],
     Desc = "波纳佩秘境掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11470,7 +11887,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[556],
+    Search1 = Table_AddWay_t.Search1[590],
     Desc = "波纳佩秘境掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11480,7 +11897,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[557],
+    Search1 = Table_AddWay_t.Search1[591],
     Desc = "波纳佩秘境掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11490,7 +11907,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[541],
+    Search1 = Table_AddWay_t.Search1[575],
     Desc = "波纳佩秘境掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11500,7 +11917,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[558],
+    Search1 = Table_AddWay_t.Search1[592],
     Desc = "波纳佩博物岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11510,7 +11927,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[559],
+    Search1 = Table_AddWay_t.Search1[593],
     Desc = "波纳佩博物岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11520,7 +11937,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[560],
+    Search1 = Table_AddWay_t.Search1[594],
     Desc = "波纳佩博物岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11530,7 +11947,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[561],
+    Search1 = Table_AddWay_t.Search1[595],
     Desc = "波纳佩博物岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11540,7 +11957,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[562],
+    Search1 = Table_AddWay_t.Search1[596],
     Desc = "波纳佩博物岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11550,7 +11967,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[563],
+    Search1 = Table_AddWay_t.Search1[597],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11560,7 +11977,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[564],
+    Search1 = Table_AddWay_t.Search1[598],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11570,9 +11987,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[565],
+    Search1 = Table_AddWay_t.Search1[599],
     Desc = "白星飞空艇掉落",
-    GotoMode = Table_AddWay_t.GotoMode[217]
+    GotoMode = Table_AddWay_t.GotoMode[220]
   },
   [952] = {
     id = 952,
@@ -11580,7 +11997,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[566],
+    Search1 = Table_AddWay_t.Search1[600],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11590,7 +12007,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[567],
+    Search1 = Table_AddWay_t.Search1[601],
     Desc = "神谕副本通关获得",
     GotoMode = Table_AddWay_t.GotoMode[29]
   },
@@ -11600,7 +12017,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[568],
+    Search1 = Table_AddWay_t.Search1[602],
     Desc = "波纳佩博物岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11610,7 +12027,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[568],
+    Search1 = Table_AddWay_t.Search1[602],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11620,7 +12037,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[569],
+    Search1 = Table_AddWay_t.Search1[603],
     Desc = "波纳佩博物岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11630,7 +12047,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[569],
+    Search1 = Table_AddWay_t.Search1[603],
     Desc = "探秘迷踪岛掉落",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11640,9 +12057,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[487],
+    Search1 = Table_AddWay_t.Search1[521],
     Desc = "达纳托斯之塔掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[208]
+    GotoMode = Table_AddWay_t.GotoMode[211]
   },
   [959] = {
     id = 959,
@@ -11650,9 +12067,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[570],
+    Search1 = Table_AddWay_t.Search1[604],
     Desc = "达纳托斯之塔掉落获得",
-    GotoMode = Table_AddWay_t.GotoMode[208]
+    GotoMode = Table_AddWay_t.GotoMode[211]
   },
   [960] = {
     id = 960,
@@ -11660,7 +12077,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[571],
+    Search1 = Table_AddWay_t.Search1[605],
     Desc = "神谕副本通关获得",
     GotoMode = Table_AddWay_t.GotoMode[29]
   },
@@ -11670,9 +12087,9 @@ Table_AddWay = {
     Icon = "exchange",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[602],
+    Search1 = Table_AddWay_t.Search1[636],
     Desc = "通过Z币向其他玩家进行购买",
-    GotoMode = Table_AddWay_t.GotoMode[224]
+    GotoMode = Table_AddWay_t.GotoMode[227]
   },
   [1001] = {
     id = 1001,
@@ -11680,7 +12097,7 @@ Table_AddWay = {
     Icon = "item_111",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[603],
+    Search1 = Table_AddWay_t.Search1[637],
     Desc = "通过神秘箱子获得"
   },
   [1002] = {
@@ -11689,7 +12106,7 @@ Table_AddWay = {
     Icon = "item_111",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[604],
+    Search1 = Table_AddWay_t.Search1[638],
     Desc = "通过神秘箱子2.0获得"
   },
   [1003] = {
@@ -11698,7 +12115,7 @@ Table_AddWay = {
     Icon = "item_111",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[605],
+    Search1 = Table_AddWay_t.Search1[639],
     Desc = "通过神秘箱子3.0获得"
   },
   [1006] = {
@@ -11707,7 +12124,7 @@ Table_AddWay = {
     Icon = "item_3707",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[607],
+    Search1 = Table_AddWay_t.Search1[641],
     Desc = "通过莫拉福袋获得"
   },
   [1007] = {
@@ -11716,7 +12133,7 @@ Table_AddWay = {
     Icon = "item_3635",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[607],
+    Search1 = Table_AddWay_t.Search1[641],
     Desc = "通过神谕福袋获得"
   },
   [1008] = {
@@ -11725,9 +12142,9 @@ Table_AddWay = {
     Icon = "bigcat_icon_03",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[608],
+    Search1 = Table_AddWay_t.Search1[642],
     Desc = "B格猫入侵魔物掉落",
-    GotoMode = Table_AddWay_t.GotoMode[225]
+    GotoMode = Table_AddWay_t.GotoMode[228]
   },
   [1009] = {
     id = 1009,
@@ -11735,7 +12152,7 @@ Table_AddWay = {
     Icon = "summer",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[609],
+    Search1 = Table_AddWay_t.Search1[643],
     Desc = "波利大乱斗掉落获得",
     EndTime = "2021-01-06  00:00:00"
   },
@@ -11745,9 +12162,9 @@ Table_AddWay = {
     Icon = "bigcat_icon_03",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[610],
+    Search1 = Table_AddWay_t.Search1[644],
     Desc = "B格猫入侵魔物掉落",
-    GotoMode = Table_AddWay_t.GotoMode[225]
+    GotoMode = Table_AddWay_t.GotoMode[228]
   },
   [1011] = {
     id = 1011,
@@ -11755,7 +12172,7 @@ Table_AddWay = {
     Icon = "item_3866",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[611],
+    Search1 = Table_AddWay_t.Search1[645],
     Desc = "通过学园豪华馈赠获得"
   },
   [1012] = {
@@ -11764,7 +12181,7 @@ Table_AddWay = {
     Icon = "item_3866",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[612],
+    Search1 = Table_AddWay_t.Search1[646],
     Desc = "通过学园豪华馈赠获得"
   },
   [1013] = {
@@ -11773,7 +12190,7 @@ Table_AddWay = {
     Icon = "item_3866",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[613],
+    Search1 = Table_AddWay_t.Search1[647],
     Desc = "通过学园豪华馈赠获得"
   },
   [1014] = {
@@ -11782,7 +12199,7 @@ Table_AddWay = {
     Icon = "item_3867",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[612],
+    Search1 = Table_AddWay_t.Search1[646],
     Desc = "通过学园元气礼盒获得"
   },
   [1015] = {
@@ -11791,7 +12208,7 @@ Table_AddWay = {
     Icon = "item_3867",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[613],
+    Search1 = Table_AddWay_t.Search1[647],
     Desc = "通过学园元气礼盒获得"
   },
   [1050] = {
@@ -12045,7 +12462,7 @@ Table_AddWay = {
     Icon = "item_3504",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[614],
+    Search1 = Table_AddWay_t.Search1[648],
     Desc = "通过宠物冒险获得"
   },
   [1136] = {
@@ -12345,9 +12762,9 @@ Table_AddWay = {
     Icon = "Guild",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[597],
+    Search1 = Table_AddWay_t.Search1[631],
     Desc = "通过公会捐献材料获得",
-    GotoMode = Table_AddWay_t.GotoMode[145]
+    GotoMode = Table_AddWay_t.GotoMode[147]
   },
   [2011] = {
     id = 2011,
@@ -12355,7 +12772,7 @@ Table_AddWay = {
     Icon = "Wanted",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[598],
+    Search1 = Table_AddWay_t.Search1[632],
     Desc = "通过委托任务获得",
     GotoMode = Table_AddWay_t.GotoMode[2],
     EndTime = "2020-06-11 22:00:00"
@@ -12366,7 +12783,7 @@ Table_AddWay = {
     Icon = "Map",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[598],
+    Search1 = Table_AddWay_t.Search1[632],
     Desc = "通过修复裂隙获得",
     EndTime = "2020-06-11 22:00:00"
   },
@@ -12376,7 +12793,7 @@ Table_AddWay = {
     Icon = "Quest",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[598],
+    Search1 = Table_AddWay_t.Search1[632],
     Desc = "通过抗击魔潮获得",
     EndTime = "2020-06-11 22:00:00"
   },
@@ -12386,7 +12803,7 @@ Table_AddWay = {
     Icon = "Quest",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[598],
+    Search1 = Table_AddWay_t.Search1[632],
     Desc = "通过研究所获得",
     EndTime = "2020-06-11 22:00:00"
   },
@@ -12396,9 +12813,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[598],
+    Search1 = Table_AddWay_t.Search1[632],
     Desc = "通过恩德勒斯塔获得",
-    GotoMode = Table_AddWay_t.GotoMode[139],
+    GotoMode = Table_AddWay_t.GotoMode[141],
     EndTime = "2020-06-11 22:00:00"
   },
   [2016] = {
@@ -12407,7 +12824,7 @@ Table_AddWay = {
     Icon = "Guild_Dojo",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[599],
+    Search1 = Table_AddWay_t.Search1[633],
     Desc = "帮助队友公会道场获得",
     EndTime = "2020-06-11 22:00:00"
   },
@@ -12417,9 +12834,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[599],
+    Search1 = Table_AddWay_t.Search1[633],
     Desc = "帮助队友恩德勒斯塔获得",
-    GotoMode = Table_AddWay_t.GotoMode[139],
+    GotoMode = Table_AddWay_t.GotoMode[141],
     EndTime = "2020-06-11 22:00:00"
   },
   [2018] = {
@@ -12428,7 +12845,7 @@ Table_AddWay = {
     Icon = "Quest",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[599],
+    Search1 = Table_AddWay_t.Search1[633],
     Desc = "帮助队友研究所获得",
     EndTime = "2020-06-11 22:00:00"
   },
@@ -12438,7 +12855,7 @@ Table_AddWay = {
     Icon = "Map",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[599],
+    Search1 = Table_AddWay_t.Search1[633],
     Desc = "帮助队友修复裂隙获得",
     EndTime = "2020-06-11 22:00:00"
   },
@@ -12448,7 +12865,7 @@ Table_AddWay = {
     Icon = "Wanted",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[599],
+    Search1 = Table_AddWay_t.Search1[633],
     Desc = "帮助队友委托看板获得",
     GotoMode = Table_AddWay_t.GotoMode[2],
     EndTime = "2020-06-11 22:00:00"
@@ -12458,36 +12875,36 @@ Table_AddWay = {
     NameEn = "艾希",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[601],
+    Search1 = Table_AddWay_t.Search1[635],
     Desc = "超时空商店购买",
-    GotoMode = Table_AddWay_t.GotoMode[223]
+    GotoMode = Table_AddWay_t.GotoMode[226]
   },
   [2023] = {
     id = 2023,
     NameEn = "薯片之神品客大叔",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[329],
+    Search1 = Table_AddWay_t.Search1[363],
     Desc = "薯片之神品客大叔获得",
-    GotoMode = Table_AddWay_t.GotoMode[155]
+    GotoMode = Table_AddWay_t.GotoMode[158]
   },
   [2024] = {
     id = 2024,
     NameEn = "薯片之神品客大叔",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[330],
+    Search1 = Table_AddWay_t.Search1[364],
     Desc = "薯片之神品客大叔获得",
-    GotoMode = Table_AddWay_t.GotoMode[155]
+    GotoMode = Table_AddWay_t.GotoMode[158]
   },
   [2025] = {
     id = 2025,
     NameEn = "薯片之神品客大叔",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[331],
+    Search1 = Table_AddWay_t.Search1[365],
     Desc = "薯片之神品客大叔获得",
-    GotoMode = Table_AddWay_t.GotoMode[155]
+    GotoMode = Table_AddWay_t.GotoMode[158]
   },
   [2026] = {
     id = 2026,
@@ -12495,7 +12912,7 @@ Table_AddWay = {
     Icon = "item_3669",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[332],
+    Search1 = Table_AddWay_t.Search1[366],
     Desc = "通过品客礼物盒获得"
   },
   [2027] = {
@@ -12504,7 +12921,7 @@ Table_AddWay = {
     Icon = "item_3669",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[606],
+    Search1 = Table_AddWay_t.Search1[640],
     Desc = "通过品客礼物盒获得"
   },
   [2028] = {
@@ -12513,7 +12930,7 @@ Table_AddWay = {
     Icon = "item_3669",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[331],
+    Search1 = Table_AddWay_t.Search1[365],
     Desc = "通过品客礼物盒获得"
   },
   [2500] = {
@@ -12522,7 +12939,7 @@ Table_AddWay = {
     Icon = "CardMech",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[270],
+    Search1 = Table_AddWay_t.Search1[277],
     Desc = "通过卡片分解获得"
   },
   [2502] = {
@@ -12531,7 +12948,7 @@ Table_AddWay = {
     Icon = "23",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[271],
+    Search1 = Table_AddWay_t.Search1[279],
     Desc = "打开塔罗卡册获得"
   },
   [2503] = {
@@ -12540,9 +12957,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[272],
+    Search1 = Table_AddWay_t.Search1[280],
     Desc = "恩德勒斯塔中获得",
-    GotoMode = Table_AddWay_t.GotoMode[139]
+    GotoMode = Table_AddWay_t.GotoMode[141]
   },
   [2504] = {
     id = 2504,
@@ -12550,9 +12967,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[273],
+    Search1 = Table_AddWay_t.Search1[281],
     Desc = "坐骑商店购买",
-    GotoMode = Table_AddWay_t.GotoMode[140]
+    GotoMode = Table_AddWay_t.GotoMode[142]
   },
   [2507] = {
     id = 2507,
@@ -12560,7 +12977,7 @@ Table_AddWay = {
     Icon = "MVPfight",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[274],
+    Search1 = Table_AddWay_t.Search1[284],
     Desc = "MVP争夺战掉落"
   },
   [2508] = {
@@ -12569,18 +12986,18 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[275],
+    Search1 = Table_AddWay_t.Search1[285],
     Desc = "芙洛拉星币商店兑换",
-    GotoMode = Table_AddWay_t.GotoMode[141]
+    GotoMode = Table_AddWay_t.GotoMode[143]
   },
   [2509] = {
     id = 2509,
     NameEn = "蛋糕保卫战",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[276],
+    Search1 = Table_AddWay_t.Search1[286],
     Desc = "蛋糕保卫战掉落",
-    GotoMode = Table_AddWay_t.GotoMode[142]
+    GotoMode = Table_AddWay_t.GotoMode[144]
   },
   [2510] = {
     id = 2510,
@@ -12588,9 +13005,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[277],
+    Search1 = Table_AddWay_t.Search1[287],
     Desc = "上古遗物商店购买",
-    GotoMode = Table_AddWay_t.GotoMode[143]
+    GotoMode = Table_AddWay_t.GotoMode[145]
   },
   [2511] = {
     id = 2511,
@@ -12598,9 +13015,9 @@ Table_AddWay = {
     Icon = "Guild",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[278],
+    Search1 = Table_AddWay_t.Search1[288],
     Desc = "击杀魔物获得",
-    GotoMode = Table_AddWay_t.GotoMode[144]
+    GotoMode = Table_AddWay_t.GotoMode[146]
   },
   [2512] = {
     id = 2512,
@@ -12608,7 +13025,7 @@ Table_AddWay = {
     Icon = "Guild",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[279],
+    Search1 = Table_AddWay_t.Search1[289],
     Desc = "完成指定委托看板任务获得",
     GotoMode = Table_AddWay_t.GotoMode[2]
   },
@@ -12618,9 +13035,9 @@ Table_AddWay = {
     Icon = "Guild",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[280],
+    Search1 = Table_AddWay_t.Search1[290],
     Desc = "击杀魔物获得",
-    GotoMode = Table_AddWay_t.GotoMode[144]
+    GotoMode = Table_AddWay_t.GotoMode[146]
   },
   [2514] = {
     id = 2514,
@@ -12628,9 +13045,9 @@ Table_AddWay = {
     Icon = "Guild",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[281],
+    Search1 = Table_AddWay_t.Search1[291],
     Desc = "通过公会捐献材料获得",
-    GotoMode = Table_AddWay_t.GotoMode[145]
+    GotoMode = Table_AddWay_t.GotoMode[147]
   },
   [2515] = {
     id = 2515,
@@ -12638,7 +13055,7 @@ Table_AddWay = {
     Icon = "item_5763",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[282],
+    Search1 = Table_AddWay_t.Search1[292],
     Desc = "通过购买古城特典卡获得"
   },
   [4100] = {
@@ -12647,7 +13064,7 @@ Table_AddWay = {
     Icon = "Reward",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[333],
+    Search1 = Table_AddWay_t.Search1[367],
     Desc = "活动期间获得"
   },
   [4101] = {
@@ -12692,9 +13109,9 @@ Table_AddWay = {
     NameEn = "魔物研究所",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[334],
+    Search1 = Table_AddWay_t.Search1[368],
     Desc = "通过魔物研究所获得",
-    GotoMode = Table_AddWay_t.GotoMode[156]
+    GotoMode = Table_AddWay_t.GotoMode[159]
   },
   [5002] = {
     id = 5002,
@@ -12702,7 +13119,7 @@ Table_AddWay = {
     Icon = "homeliy",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[335],
+    Search1 = Table_AddWay_t.Search1[369],
     Desc = "解锁家具时获得"
   },
   [5003] = {
@@ -12710,34 +13127,34 @@ Table_AddWay = {
     NameEn = "辛格拉万事箱",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[368],
+    Search1 = Table_AddWay_t.Search1[402],
     Desc = "通过里希塔乐·辛格拉万事箱委托任务获得",
-    GotoMode = Table_AddWay_t.GotoMode[187]
+    GotoMode = Table_AddWay_t.GotoMode[190]
   },
   [5004] = {
     id = 5004,
     NameEn = "梅尔区商店",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[378],
+    Search1 = Table_AddWay_t.Search1[412],
     Desc = "通过梅尔区商店购买获得",
-    GotoMode = Table_AddWay_t.GotoMode[194]
+    GotoMode = Table_AddWay_t.GotoMode[197]
   },
   [5005] = {
     id = 5005,
     NameEn = "贝勒区商店",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[379],
+    Search1 = Table_AddWay_t.Search1[413],
     Desc = "通过贝勒区商店购买获得",
-    GotoMode = Table_AddWay_t.GotoMode[195]
+    GotoMode = Table_AddWay_t.GotoMode[198]
   },
   [5006] = {
     id = 5006,
     NameEn = "冒险任务",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[380],
+    Search1 = Table_AddWay_t.Search1[414],
     Desc = "通过冒险任务获得"
   },
   [5007] = {
@@ -12745,27 +13162,27 @@ Table_AddWay = {
     NameEn = "影枫司",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[381],
+    Search1 = Table_AddWay_t.Search1[415],
     Desc = "通过辛格拉万事箱委托任务获得",
-    GotoMode = Table_AddWay_t.GotoMode[196]
+    GotoMode = Table_AddWay_t.GotoMode[199]
   },
   [5008] = {
     id = 5008,
     NameEn = "辛格拉万事箱",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[592],
+    Search1 = Table_AddWay_t.Search1[626],
     Desc = "通过艾卡拉奇·辛格拉万事箱委托任务获得",
-    GotoMode = Table_AddWay_t.GotoMode[220]
+    GotoMode = Table_AddWay_t.GotoMode[223]
   },
   [5009] = {
     id = 5009,
     NameEn = "风之轻语乐团声望商店",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[591],
+    Search1 = Table_AddWay_t.Search1[625],
     Desc = "通过艾卡拉奇声望商店购买获得",
-    GotoMode = Table_AddWay_t.GotoMode[219]
+    GotoMode = Table_AddWay_t.GotoMode[222]
   },
   [6000] = {
     id = 6000,
@@ -12773,54 +13190,54 @@ Table_AddWay = {
     Icon = "MaleAssistant",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[505],
+    Search1 = Table_AddWay_t.Search1[539],
     Desc = "通过执事德图拉商店兑换获得",
-    GotoMode = Table_AddWay_t.GotoMode[212]
+    GotoMode = Table_AddWay_t.GotoMode[215]
   },
   [6001] = {
     id = 6001,
     NameEn = "杰佩托的家具工坊",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[506],
+    Search1 = Table_AddWay_t.Search1[540],
     Desc = "通过杰佩托的家具工坊购买获得",
-    GotoMode = Table_AddWay_t.GotoMode[213]
+    GotoMode = Table_AddWay_t.GotoMode[216]
   },
   [6002] = {
     id = 6002,
     NameEn = "杰佩托的家具工坊",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[507],
+    Search1 = Table_AddWay_t.Search1[541],
     Desc = "通过杰佩托的家具工坊购买获得",
-    GotoMode = Table_AddWay_t.GotoMode[213]
+    GotoMode = Table_AddWay_t.GotoMode[216]
   },
   [6003] = {
     id = 6003,
     NameEn = "杰佩托的家具工坊",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[508],
+    Search1 = Table_AddWay_t.Search1[542],
     Desc = "通过杰佩托的家具工坊购买获得",
-    GotoMode = Table_AddWay_t.GotoMode[213]
+    GotoMode = Table_AddWay_t.GotoMode[216]
   },
   [6004] = {
     id = 6004,
     NameEn = "希芙",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[509],
+    Search1 = Table_AddWay_t.Search1[543],
     Desc = "通过希芙的声望商店购买获得",
-    GotoMode = Table_AddWay_t.GotoMode[214]
+    GotoMode = Table_AddWay_t.GotoMode[217]
   },
   [6005] = {
     id = 6005,
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[510],
+    Search1 = Table_AddWay_t.Search1[544],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6006] = {
@@ -12828,9 +13245,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[511],
+    Search1 = Table_AddWay_t.Search1[545],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6007] = {
@@ -12838,9 +13255,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[512],
+    Search1 = Table_AddWay_t.Search1[546],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6008] = {
@@ -12848,9 +13265,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[513],
+    Search1 = Table_AddWay_t.Search1[547],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6010] = {
@@ -12858,27 +13275,27 @@ Table_AddWay = {
     NameEn = "荒境巡守队",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[515],
+    Search1 = Table_AddWay_t.Search1[549],
     Desc = "通过黄昏徽记兑换",
-    GotoMode = Table_AddWay_t.GotoMode[215]
+    GotoMode = Table_AddWay_t.GotoMode[218]
   },
   [6011] = {
     id = 6011,
     NameEn = "影枫司",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[516],
+    Search1 = Table_AddWay_t.Search1[550],
     Desc = "通过锦衣卫的勋章兑换",
-    GotoMode = Table_AddWay_t.GotoMode[196]
+    GotoMode = Table_AddWay_t.GotoMode[199]
   },
   [6012] = {
     id = 6012,
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[517],
+    Search1 = Table_AddWay_t.Search1[551],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6013] = {
@@ -12886,9 +13303,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[518],
+    Search1 = Table_AddWay_t.Search1[552],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6014] = {
@@ -12896,9 +13313,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[590],
+    Search1 = Table_AddWay_t.Search1[624],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6015] = {
@@ -12906,9 +13323,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[589],
+    Search1 = Table_AddWay_t.Search1[623],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6016] = {
@@ -12916,9 +13333,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[588],
+    Search1 = Table_AddWay_t.Search1[622],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6017] = {
@@ -12926,16 +13343,16 @@ Table_AddWay = {
     NameEn = "辛格拉万事箱",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[587],
+    Search1 = Table_AddWay_t.Search1[621],
     Desc = "通过洛阳·辛格拉万事箱委托任务获得",
-    GotoMode = Table_AddWay_t.GotoMode[218]
+    GotoMode = Table_AddWay_t.GotoMode[221]
   },
   [6018] = {
     id = 6018,
     NameEn = "冒险任务",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[382],
+    Search1 = Table_AddWay_t.Search1[416],
     Desc = "通过冒险任务获得"
   },
   [6019] = {
@@ -12943,9 +13360,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[383],
+    Search1 = Table_AddWay_t.Search1[417],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6020] = {
@@ -12953,9 +13370,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[384],
+    Search1 = Table_AddWay_t.Search1[418],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6021] = {
@@ -12963,9 +13380,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[584],
+    Search1 = Table_AddWay_t.Search1[618],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6022] = {
@@ -12973,9 +13390,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[583],
+    Search1 = Table_AddWay_t.Search1[617],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6023] = {
@@ -12983,9 +13400,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[582],
+    Search1 = Table_AddWay_t.Search1[616],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6024] = {
@@ -12993,9 +13410,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[581],
+    Search1 = Table_AddWay_t.Search1[615],
     Desc = "通过神树之灵解锁获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6026] = {
@@ -13004,7 +13421,7 @@ Table_AddWay = {
     Icon = "Longhai",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[580],
+    Search1 = Table_AddWay_t.Search1[614],
     Desc = "击杀世界MVP龙骸获得"
   },
   [6027] = {
@@ -13013,9 +13430,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[579],
+    Search1 = Table_AddWay_t.Search1[613],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6028] = {
@@ -13024,9 +13441,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[578],
+    Search1 = Table_AddWay_t.Search1[612],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6029] = {
@@ -13035,9 +13452,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[577],
+    Search1 = Table_AddWay_t.Search1[611],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6030] = {
@@ -13046,9 +13463,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[385],
+    Search1 = Table_AddWay_t.Search1[419],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6031] = {
@@ -13057,9 +13474,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[386],
+    Search1 = Table_AddWay_t.Search1[420],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6032] = {
@@ -13068,9 +13485,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[387],
+    Search1 = Table_AddWay_t.Search1[421],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6033] = {
@@ -13079,9 +13496,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[388],
+    Search1 = Table_AddWay_t.Search1[422],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6034] = {
@@ -13090,9 +13507,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[389],
+    Search1 = Table_AddWay_t.Search1[423],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6035] = {
@@ -13101,9 +13518,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[514],
+    Search1 = Table_AddWay_t.Search1[548],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6036] = {
@@ -13112,9 +13529,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[504],
+    Search1 = Table_AddWay_t.Search1[538],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6037] = {
@@ -13123,9 +13540,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[503],
+    Search1 = Table_AddWay_t.Search1[537],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6038] = {
@@ -13134,9 +13551,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[483],
+    Search1 = Table_AddWay_t.Search1[517],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6039] = {
@@ -13145,9 +13562,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[482],
+    Search1 = Table_AddWay_t.Search1[516],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6040] = {
@@ -13156,9 +13573,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[481],
+    Search1 = Table_AddWay_t.Search1[515],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6041] = {
@@ -13167,9 +13584,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[480],
+    Search1 = Table_AddWay_t.Search1[514],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6042] = {
@@ -13178,9 +13595,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[479],
+    Search1 = Table_AddWay_t.Search1[513],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6043] = {
@@ -13189,9 +13606,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[478],
+    Search1 = Table_AddWay_t.Search1[512],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6044] = {
@@ -13200,9 +13617,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[456],
+    Search1 = Table_AddWay_t.Search1[490],
     Desc = "通过击杀枫叶彼岸魔物掉落锻造典册",
-    GotoMode = Table_AddWay_t.GotoMode[198],
+    GotoMode = Table_AddWay_t.GotoMode[201],
     EndTime = "2022-02-15 22:00:00"
   },
   [6045] = {
@@ -13210,9 +13627,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[437],
+    Search1 = Table_AddWay_t.Search1[471],
     Desc = "通过神树之灵制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6046] = {
@@ -13220,9 +13637,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[419],
+    Search1 = Table_AddWay_t.Search1[453],
     Desc = "通过神树之灵制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6047] = {
@@ -13230,9 +13647,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[418],
+    Search1 = Table_AddWay_t.Search1[452],
     Desc = "通过神树之灵制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6048] = {
@@ -13240,9 +13657,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[417],
+    Search1 = Table_AddWay_t.Search1[451],
     Desc = "通过神树之灵制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6049] = {
@@ -13250,9 +13667,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[416],
+    Search1 = Table_AddWay_t.Search1[450],
     Desc = "通过神树之灵制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6050] = {
@@ -13260,9 +13677,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[415],
+    Search1 = Table_AddWay_t.Search1[449],
     Desc = "通过神树之灵制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6051] = {
@@ -13270,9 +13687,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[414],
+    Search1 = Table_AddWay_t.Search1[448],
     Desc = "通过神树之灵制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6052] = {
@@ -13280,9 +13697,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[413],
+    Search1 = Table_AddWay_t.Search1[447],
     Desc = "通过神树之灵制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6053] = {
@@ -13290,9 +13707,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[412],
+    Search1 = Table_AddWay_t.Search1[446],
     Desc = "通过神树之灵制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6054] = {
@@ -13300,9 +13717,9 @@ Table_AddWay = {
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[411],
+    Search1 = Table_AddWay_t.Search1[445],
     Desc = "通过神树之灵制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6055] = {
@@ -13311,9 +13728,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[410],
+    Search1 = Table_AddWay_t.Search1[444],
     Desc = "通过击杀荒境魔物掉落锻造典册制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[206],
+    GotoMode = Table_AddWay_t.GotoMode[209],
     EndTime = "2022-02-15 22:00:00"
   },
   [6056] = {
@@ -13322,9 +13739,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[409],
+    Search1 = Table_AddWay_t.Search1[443],
     Desc = "通过击杀荒境魔物掉落锻造典册制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[206],
+    GotoMode = Table_AddWay_t.GotoMode[209],
     EndTime = "2022-02-15 22:00:00"
   },
   [6057] = {
@@ -13333,9 +13750,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[408],
+    Search1 = Table_AddWay_t.Search1[442],
     Desc = "通过击杀荒境魔物掉落锻造典册制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[206],
+    GotoMode = Table_AddWay_t.GotoMode[209],
     EndTime = "2022-02-15 22:00:00"
   },
   [6058] = {
@@ -13344,9 +13761,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[407],
+    Search1 = Table_AddWay_t.Search1[441],
     Desc = "通过击杀荒境魔物掉落锻造典册制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[206],
+    GotoMode = Table_AddWay_t.GotoMode[209],
     EndTime = "2022-02-15 22:00:00"
   },
   [6059] = {
@@ -13355,9 +13772,9 @@ Table_AddWay = {
     Icon = "MIntrusion",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[405],
+    Search1 = Table_AddWay_t.Search1[439],
     Desc = "枫叶彼岸提升混沌气息后击杀梦魇魔物掉落",
-    GotoMode = Table_AddWay_t.GotoMode[198]
+    GotoMode = Table_AddWay_t.GotoMode[201]
   },
   [6060] = {
     id = 6060,
@@ -13365,9 +13782,9 @@ Table_AddWay = {
     Icon = "MIntrusion",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[405],
+    Search1 = Table_AddWay_t.Search1[439],
     Desc = "冰岛提升混沌气息后击杀梦魇魔物掉落",
-    GotoMode = Table_AddWay_t.GotoMode[205]
+    GotoMode = Table_AddWay_t.GotoMode[208]
   },
   [6061] = {
     id = 6061,
@@ -13375,18 +13792,18 @@ Table_AddWay = {
     Icon = "Incantation_Samurai_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[404],
+    Search1 = Table_AddWay_t.Search1[438],
     Desc = "击杀世界MVP元灵武士获得",
-    GotoMode = Table_AddWay_t.GotoMode[198]
+    GotoMode = Table_AddWay_t.GotoMode[201]
   },
   [6062] = {
     id = 6062,
     NameEn = "神树之灵",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[403],
+    Search1 = Table_AddWay_t.Search1[437],
     Desc = "通过神树之灵制作获得",
-    GotoMode = Table_AddWay_t.GotoMode[197],
+    GotoMode = Table_AddWay_t.GotoMode[200],
     EndTime = "2022-02-15 22:00:00"
   },
   [6063] = {
@@ -13395,54 +13812,54 @@ Table_AddWay = {
     Icon = "huangjing_icon02",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[402],
+    Search1 = Table_AddWay_t.Search1[436],
     Desc = "通过幻宝秘筑购买获得",
-    GotoMode = Table_AddWay_t.GotoMode[204]
+    GotoMode = Table_AddWay_t.GotoMode[207]
   },
   [6064] = {
     id = 6064,
     NameEn = "美之宫1F",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[401],
+    Search1 = Table_AddWay_t.Search1[435],
     Desc = "美之宫1F探索获得",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [6065] = {
     id = 6065,
     NameEn = "花开彼岸之地",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[400],
+    Search1 = Table_AddWay_t.Search1[434],
     Desc = "与可可亚·乌波对话，解锁神佑纹章",
-    GotoMode = Table_AddWay_t.GotoMode[203]
+    GotoMode = Table_AddWay_t.GotoMode[206]
   },
   [6066] = {
     id = 6066,
     NameEn = "美之宫1F",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[399],
+    Search1 = Table_AddWay_t.Search1[433],
     Desc = "美之宫1F探索获得",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [6067] = {
     id = 6067,
     NameEn = "研究的学者",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[398],
+    Search1 = Table_AddWay_t.Search1[432],
     Desc = "探索美之宫1F，收集所有夏基的日记，交予学者兑换破坏纹章",
-    GotoMode = Table_AddWay_t.GotoMode[202]
+    GotoMode = Table_AddWay_t.GotoMode[205]
   },
   [6068] = {
     id = 6068,
     NameEn = "花开彼岸之地",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[397],
+    Search1 = Table_AddWay_t.Search1[431],
     Desc = "探索花开之地附近的遗迹",
-    GotoMode = Table_AddWay_t.GotoMode[201]
+    GotoMode = Table_AddWay_t.GotoMode[204]
   },
   [6069] = {
     id = 6069,
@@ -13450,9 +13867,9 @@ Table_AddWay = {
     Icon = "Quest",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[396],
+    Search1 = Table_AddWay_t.Search1[430],
     Desc = "通过完成荒境冒险任务获取",
-    GotoMode = Table_AddWay_t.GotoMode[200],
+    GotoMode = Table_AddWay_t.GotoMode[203],
     EndTime = "2022-12-01 22:00:00"
   },
   [6070] = {
@@ -13461,7 +13878,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[395],
+    Search1 = Table_AddWay_t.Search1[429],
     Desc = "通过击杀美之宫一层夏基获得"
   },
   [6071] = {
@@ -13469,99 +13886,99 @@ Table_AddWay = {
     NameEn = "美之宫2F",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[394],
+    Search1 = Table_AddWay_t.Search1[428],
     Desc = "美之宫2F探索获得",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [6072] = {
     id = 6072,
     NameEn = "美之宫2F",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[393],
+    Search1 = Table_AddWay_t.Search1[427],
     Desc = "美之宫2F探索获得",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [6073] = {
     id = 6073,
     NameEn = "美之宫2F",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[392],
+    Search1 = Table_AddWay_t.Search1[426],
     Desc = "美之宫2F探索获得",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [6074] = {
     id = 6074,
     NameEn = "美之宫2F",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[391],
+    Search1 = Table_AddWay_t.Search1[425],
     Desc = "美之宫2F探索获得",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [6075] = {
     id = 6075,
     NameEn = "美之宫2F",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[390],
+    Search1 = Table_AddWay_t.Search1[424],
     Desc = "美之宫2F探索获得",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [6076] = {
     id = 6076,
     NameEn = "美之宫3F",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[572],
+    Search1 = Table_AddWay_t.Search1[606],
     Desc = "美之宫3F探索获得",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [6077] = {
     id = 6077,
     NameEn = "美之宫3F",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[573],
+    Search1 = Table_AddWay_t.Search1[607],
     Desc = "美之宫3F探索获得",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [6078] = {
     id = 6078,
     NameEn = "美之宫2F",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[574],
+    Search1 = Table_AddWay_t.Search1[608],
     Desc = "美之宫2F探索获得",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [6079] = {
     id = 6079,
     NameEn = "美之宫3F",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[575],
+    Search1 = Table_AddWay_t.Search1[609],
     Desc = "美之宫3F探索获得",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [6080] = {
     id = 6080,
     NameEn = "卡瓦希尔",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[576],
+    Search1 = Table_AddWay_t.Search1[610],
     Desc = "通过击杀美之宫二层卡瓦希尔获得",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [6089] = {
     id = 6089,
     NameEn = "布拉基",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[585],
+    Search1 = Table_AddWay_t.Search1[619],
     Desc = "通过击杀美之宫三层布拉基获得",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [6090] = {
     id = 6090,
@@ -13569,9 +13986,9 @@ Table_AddWay = {
     Icon = "Longhai",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[586],
+    Search1 = Table_AddWay_t.Search1[620],
     Desc = "击杀世界MVP龙骸获得",
-    GotoMode = Table_AddWay_t.GotoMode[206]
+    GotoMode = Table_AddWay_t.GotoMode[209]
   },
   [6091] = {
     id = 6091,
@@ -13579,9 +13996,9 @@ Table_AddWay = {
     Icon = "Incantation_Samurai_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[586],
+    Search1 = Table_AddWay_t.Search1[620],
     Desc = "击杀世界MVP元灵武士获得",
-    GotoMode = Table_AddWay_t.GotoMode[198]
+    GotoMode = Table_AddWay_t.GotoMode[201]
   },
   [6098] = {
     id = 6098,
@@ -13589,9 +14006,9 @@ Table_AddWay = {
     Icon = "ManorBuild_03",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[593],
+    Search1 = Table_AddWay_t.Search1[627],
     Desc = "通过梦幻之音许愿获得",
-    GotoMode = Table_AddWay_t.GotoMode[221],
+    GotoMode = Table_AddWay_t.GotoMode[224],
     menu = 9990
   },
   [6099] = {
@@ -13600,9 +14017,9 @@ Table_AddWay = {
     Icon = "ManorBuild_03",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[594],
+    Search1 = Table_AddWay_t.Search1[628],
     Desc = "通过梦幻之音许愿获得",
-    GotoMode = Table_AddWay_t.GotoMode[221],
+    GotoMode = Table_AddWay_t.GotoMode[224],
     menu = 9990
   },
   [6100] = {
@@ -13611,9 +14028,9 @@ Table_AddWay = {
     Icon = "ManorBuild_02",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[595],
+    Search1 = Table_AddWay_t.Search1[629],
     Desc = "通过警戒缆车派遣获得",
-    GotoMode = Table_AddWay_t.GotoMode[191]
+    GotoMode = Table_AddWay_t.GotoMode[194]
   },
   [6101] = {
     id = 6101,
@@ -13621,9 +14038,9 @@ Table_AddWay = {
     Icon = "ManorBuild_06",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[596],
+    Search1 = Table_AddWay_t.Search1[630],
     Desc = "通过刨刀锯木场产出获得",
-    GotoMode = Table_AddWay_t.GotoMode[222]
+    GotoMode = Table_AddWay_t.GotoMode[225]
   },
   [6102] = {
     id = 6102,
@@ -13631,9 +14048,9 @@ Table_AddWay = {
     Icon = "ManorBuild_07",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[377],
+    Search1 = Table_AddWay_t.Search1[411],
     Desc = "通过星芒矿山开采获得",
-    GotoMode = Table_AddWay_t.GotoMode[193]
+    GotoMode = Table_AddWay_t.GotoMode[196]
   },
   [6103] = {
     id = 6103,
@@ -13641,9 +14058,9 @@ Table_AddWay = {
     Icon = "ManorBuildType_09",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[376],
+    Search1 = Table_AddWay_t.Search1[410],
     Desc = "提升云海群岛伙伴好感度获得",
-    GotoMode = Table_AddWay_t.GotoMode[192]
+    GotoMode = Table_AddWay_t.GotoMode[195]
   },
   [6104] = {
     id = 6104,
@@ -13651,9 +14068,9 @@ Table_AddWay = {
     Icon = "ManorBuild_02",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[375],
+    Search1 = Table_AddWay_t.Search1[409],
     Desc = "通过警戒缆车派遣获得",
-    GotoMode = Table_AddWay_t.GotoMode[191]
+    GotoMode = Table_AddWay_t.GotoMode[194]
   },
   [6105] = {
     id = 6105,
@@ -13663,7 +14080,7 @@ Table_AddWay = {
     Materialdisplay = 1,
     Search1 = Table_AddWay_t.Search1[202],
     Desc = "通过完成活动任务获取",
-    GotoMode = Table_AddWay_t.GotoMode[190]
+    GotoMode = Table_AddWay_t.GotoMode[193]
   },
   [6106] = {
     id = 6106,
@@ -13673,7 +14090,7 @@ Table_AddWay = {
     Materialdisplay = 1,
     Search1 = Table_AddWay_t.Search1[202],
     Desc = "通过购买精炼商城礼盒获取",
-    GotoMode = Table_AddWay_t.GotoMode[189]
+    GotoMode = Table_AddWay_t.GotoMode[192]
   },
   [6107] = {
     id = 6107,
@@ -13681,9 +14098,9 @@ Table_AddWay = {
     Icon = "jianbei",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[374],
+    Search1 = Table_AddWay_t.Search1[408],
     Desc = "通过完成狩猎场剑碑任务获得",
-    GotoMode = Table_AddWay_t.GotoMode[188],
+    GotoMode = Table_AddWay_t.GotoMode[191],
     menu = 10030
   },
   [6108] = {
@@ -13692,7 +14109,7 @@ Table_AddWay = {
     Icon = "RiskBook",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[373],
+    Search1 = Table_AddWay_t.Search1[407],
     Desc = "完成成就荣耀之下获得"
   },
   [6109] = {
@@ -13701,9 +14118,9 @@ Table_AddWay = {
     Icon = "jianbei",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[372],
+    Search1 = Table_AddWay_t.Search1[406],
     Desc = "通过完成狩猎场剑碑任务获得",
-    GotoMode = Table_AddWay_t.GotoMode[188],
+    GotoMode = Table_AddWay_t.GotoMode[191],
     menu = 10030
   },
   [6110] = {
@@ -13711,7 +14128,7 @@ Table_AddWay = {
     NameEn = "联动活动限定",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[371],
+    Search1 = Table_AddWay_t.Search1[405],
     Desc = "通过联动活动获得"
   },
   [6111] = {
@@ -13720,9 +14137,9 @@ Table_AddWay = {
     Icon = "Quest",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[370],
+    Search1 = Table_AddWay_t.Search1[404],
     Desc = "通过每日完成4个狩猎场冒险任务获得",
-    GotoMode = Table_AddWay_t.GotoMode[188]
+    GotoMode = Table_AddWay_t.GotoMode[191]
   },
   [6112] = {
     id = 6112,
@@ -13730,7 +14147,7 @@ Table_AddWay = {
     Icon = "126",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[369],
+    Search1 = Table_AddWay_t.Search1[403],
     Desc = "%s珍藏品全解锁"
   },
   [6113] = {
@@ -13739,7 +14156,7 @@ Table_AddWay = {
     Icon = "xunshoudui",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[600],
+    Search1 = Table_AddWay_t.Search1[634],
     Desc = "卡普拉冒险录限定"
   },
   [6114] = {
@@ -13748,7 +14165,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi06",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[367],
+    Search1 = Table_AddWay_t.Search1[401],
     Desc = "裂隙副本「神树守卫战」掉落"
   },
   [6115] = {
@@ -13757,7 +14174,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi06",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[366],
+    Search1 = Table_AddWay_t.Search1[400],
     Desc = "裂隙副本「神树守卫战」掉落"
   },
   [6116] = {
@@ -13766,7 +14183,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi07",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[367],
+    Search1 = Table_AddWay_t.Search1[401],
     Desc = "裂隙副本「再见，故友！」掉落"
   },
   [6117] = {
@@ -13775,7 +14192,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi07",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[366],
+    Search1 = Table_AddWay_t.Search1[400],
     Desc = "裂隙副本「再见，故友！」掉落"
   },
   [6118] = {
@@ -13784,7 +14201,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi08",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[367],
+    Search1 = Table_AddWay_t.Search1[401],
     Desc = "裂隙副本「彼岸的决战」掉落"
   },
   [6119] = {
@@ -13793,7 +14210,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi08",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[366],
+    Search1 = Table_AddWay_t.Search1[400],
     Desc = "裂隙副本「彼岸的决战」掉落"
   },
   [6120] = {
@@ -13802,9 +14219,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[365],
+    Search1 = Table_AddWay_t.Search1[399],
     Desc = "通过材料提炼获得",
-    GotoMode = Table_AddWay_t.GotoMode[186]
+    GotoMode = Table_AddWay_t.GotoMode[189]
   },
   [6121] = {
     id = 6121,
@@ -14519,7 +14936,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[328],
+    Search1 = Table_AddWay_t.Search1[362],
     Desc = "在冒险者宝库处制作",
     GotoMode = Table_AddWay_t.GotoMode[7]
   },
@@ -14528,7 +14945,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[325],
+    Search1 = Table_AddWay_t.Search1[359],
     Desc = "在冒险者宝库处制作",
     GotoMode = Table_AddWay_t.GotoMode[7]
   },
@@ -14690,7 +15107,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[327],
+    Search1 = Table_AddWay_t.Search1[361],
     Desc = "在冒险者宝库处制作",
     GotoMode = Table_AddWay_t.GotoMode[7]
   },
@@ -14708,7 +15125,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[324],
+    Search1 = Table_AddWay_t.Search1[358],
     Desc = "在冒险者宝库处制作",
     GotoMode = Table_AddWay_t.GotoMode[7]
   },
@@ -14717,7 +15134,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[326],
+    Search1 = Table_AddWay_t.Search1[360],
     Desc = "在冒险者宝库处制作",
     GotoMode = Table_AddWay_t.GotoMode[7]
   },
@@ -14781,7 +15198,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[325],
+    Search1 = Table_AddWay_t.Search1[359],
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
   [6226] = {
@@ -14862,7 +15279,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[324],
+    Search1 = Table_AddWay_t.Search1[358],
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
   [6235] = {
@@ -14889,7 +15306,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[325],
+    Search1 = Table_AddWay_t.Search1[359],
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
   [6238] = {
@@ -14970,7 +15387,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[324],
+    Search1 = Table_AddWay_t.Search1[358],
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
   [6247] = {
@@ -15303,7 +15720,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[323],
+    Search1 = Table_AddWay_t.Search1[357],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15313,7 +15730,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[322],
+    Search1 = Table_AddWay_t.Search1[356],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15323,7 +15740,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[321],
+    Search1 = Table_AddWay_t.Search1[355],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15333,7 +15750,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[320],
+    Search1 = Table_AddWay_t.Search1[354],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15343,7 +15760,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[319],
+    Search1 = Table_AddWay_t.Search1[353],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15353,7 +15770,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[318],
+    Search1 = Table_AddWay_t.Search1[352],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15363,7 +15780,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[317],
+    Search1 = Table_AddWay_t.Search1[351],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15373,7 +15790,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[316],
+    Search1 = Table_AddWay_t.Search1[350],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15383,7 +15800,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[315],
+    Search1 = Table_AddWay_t.Search1[349],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15393,7 +15810,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[314],
+    Search1 = Table_AddWay_t.Search1[348],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15403,7 +15820,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi03",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[313],
+    Search1 = Table_AddWay_t.Search1[347],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15413,7 +15830,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi03",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[312],
+    Search1 = Table_AddWay_t.Search1[346],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15423,7 +15840,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi03",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[311],
+    Search1 = Table_AddWay_t.Search1[345],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15433,7 +15850,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi03",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[310],
+    Search1 = Table_AddWay_t.Search1[344],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15443,7 +15860,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi04",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[309],
+    Search1 = Table_AddWay_t.Search1[343],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15453,7 +15870,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi04",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[308],
+    Search1 = Table_AddWay_t.Search1[342],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15463,7 +15880,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi04",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[307],
+    Search1 = Table_AddWay_t.Search1[341],
     Desc = "冒险、勇士难度掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15841,7 +16258,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[306],
+    Search1 = Table_AddWay_t.Search1[340],
     Desc = "裂隙副本「虎王的咆哮」掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15851,7 +16268,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[306],
+    Search1 = Table_AddWay_t.Search1[340],
     Desc = "裂隙副本「海神的风暴」掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15861,7 +16278,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi03",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[306],
+    Search1 = Table_AddWay_t.Search1[340],
     Desc = "裂隙副本「梦罗克的暗影」掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15871,7 +16288,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi04",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[306],
+    Search1 = Table_AddWay_t.Search1[340],
     Desc = "裂隙副本「樱下镇灵封印」掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15881,7 +16298,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi05",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[306],
+    Search1 = Table_AddWay_t.Search1[340],
     Desc = "裂隙副本「黑暗中的重逢」掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15891,7 +16308,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi09",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[304],
+    Search1 = Table_AddWay_t.Search1[338],
     Desc = "裂隙副本「夏日大作战」掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15901,7 +16318,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi09",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[303],
+    Search1 = Table_AddWay_t.Search1[337],
     Desc = "裂隙副本「夏日大作战」掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15911,7 +16328,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi09",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[302],
+    Search1 = Table_AddWay_t.Search1[336],
     Desc = "裂隙副本「夏日大作战」掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15921,7 +16338,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi09",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[301],
+    Search1 = Table_AddWay_t.Search1[335],
     Desc = "裂隙副本「夏日大作战」掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15931,7 +16348,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi10",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[300],
+    Search1 = Table_AddWay_t.Search1[334],
     Desc = "裂隙副本「灾厄之巢」掉落",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15940,7 +16357,7 @@ Table_AddWay = {
     NameEn = "虚空领域",
     Type = 3,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[299],
+    Search1 = Table_AddWay_t.Search1[333],
     Search2 = Table_AddWay_t.Search2[1],
     Desc = "%s"
   },
@@ -16422,7 +16839,7 @@ Table_AddWay = {
     NameEn = "尼夫海姆微笑小姐",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[298],
+    Search1 = Table_AddWay_t.Search1[332],
     Desc = "通过乐园币兑换头饰图纸",
     GotoMode = Table_AddWay_t.GotoMode[63]
   },
@@ -16432,7 +16849,7 @@ Table_AddWay = {
     Icon = "Kafra7",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[297],
+    Search1 = Table_AddWay_t.Search1[331],
     Desc = "完成日常任务获得",
     GotoMode = Table_AddWay_t.GotoMode[33]
   },
@@ -16442,7 +16859,7 @@ Table_AddWay = {
     Icon = "Kafra7",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[296],
+    Search1 = Table_AddWay_t.Search1[330],
     Desc = "完成日常任务获得",
     GotoMode = Table_AddWay_t.GotoMode[33]
   },
@@ -16452,7 +16869,7 @@ Table_AddWay = {
     Icon = "CardMech",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[295],
+    Search1 = Table_AddWay_t.Search1[329],
     Desc = "通过卡片分解获得"
   },
   [6445] = {
@@ -16461,9 +16878,9 @@ Table_AddWay = {
     Icon = "Man",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[294],
+    Search1 = Table_AddWay_t.Search1[328],
     Desc = "狂想寓言通关获得",
-    GotoMode = Table_AddWay_t.GotoMode[153]
+    GotoMode = Table_AddWay_t.GotoMode[156]
   },
   [6446] = {
     id = 6446,
@@ -16471,7 +16888,7 @@ Table_AddWay = {
     Icon = "item_710001",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[293],
+    Search1 = Table_AddWay_t.Search1[327],
     Desc = "星座占卜",
     GotoMode = Table_AddWay_t.GotoMode[10]
   },
@@ -16836,7 +17253,7 @@ Table_AddWay = {
     Icon = "n_thackeray",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[292],
+    Search1 = Table_AddWay_t.Search1[326],
     Desc = "深渊之湖",
     GotoMode = Table_AddWay_t.GotoMode[109]
   },
@@ -16846,7 +17263,7 @@ Table_AddWay = {
     Icon = "cracks",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[291],
+    Search1 = Table_AddWay_t.Search1[325],
     Desc = "通过参与击杀深渊之湖时空矩阵中的MINI或MVP获得",
     GotoMode = Table_AddWay_t.GotoMode[109]
   },
@@ -16866,7 +17283,7 @@ Table_AddWay = {
     Icon = "CardMech",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[290],
+    Search1 = Table_AddWay_t.Search1[324],
     Desc = "通过卡片分解获得"
   },
   [6548] = {
@@ -16875,9 +17292,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[289],
+    Search1 = Table_AddWay_t.Search1[323],
     Desc = "通过赤鳞团声望商店购买",
-    GotoMode = Table_AddWay_t.GotoMode[152]
+    GotoMode = Table_AddWay_t.GotoMode[155]
   },
   [6552] = {
     id = 6552,
@@ -16885,9 +17302,9 @@ Table_AddWay = {
     Icon = "act_pve",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[288],
+    Search1 = Table_AddWay_t.Search1[322],
     Desc = "通关混乱时空获得",
-    GotoMode = Table_AddWay_t.GotoMode[151],
+    GotoMode = Table_AddWay_t.GotoMode[154],
     BeginTime = "2025-07-21 5:00",
     EndTime = "2025-08-18 5:00"
   },
@@ -16943,7 +17360,7 @@ Table_AddWay = {
     Icon = "n_lostdragon_003",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[287],
+    Search1 = Table_AddWay_t.Search1[321],
     Desc = "通过深渊之湖龙毁世界活动获得",
     GotoMode = Table_AddWay_t.GotoMode[133]
   },
@@ -16953,7 +17370,7 @@ Table_AddWay = {
     Icon = "n_lostdragon_001",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[286],
+    Search1 = Table_AddWay_t.Search1[320],
     Desc = "通过深渊之湖龙毁世界活动获得",
     GotoMode = Table_AddWay_t.GotoMode[134]
   },
@@ -16963,7 +17380,7 @@ Table_AddWay = {
     Icon = "n_lostdragon_002",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[285],
+    Search1 = Table_AddWay_t.Search1[319],
     Desc = "通过深渊之湖龙毁世界活动获得",
     GotoMode = Table_AddWay_t.GotoMode[135]
   },
@@ -16973,7 +17390,7 @@ Table_AddWay = {
     Icon = "n_lostdragon",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[284],
+    Search1 = Table_AddWay_t.Search1[318],
     Desc = "通过深渊之湖龙毁世界活动获得",
     GotoMode = Table_AddWay_t.GotoMode[136]
   },
@@ -17163,6 +17580,321 @@ Table_AddWay = {
     Search1 = Table_AddWay_t.Search1[269],
     Desc = "通过击杀深渊之湖MVP黑炎龙·参宿四获得",
     GotoMode = Table_AddWay_t.GotoMode[109]
+  },
+  [6583] = {
+    id = 6583,
+    NameEn = "冰羽家居典藏官",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[270],
+    Desc = "制作后前往融雪边境购买",
+    GotoMode = Table_AddWay_t.GotoMode[139]
+  },
+  [6586] = {
+    id = 6586,
+    NameEn = "西尔芙的赠礼",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[271],
+    Desc = "在融雪边境中找到3个西尔芙精灵后获取",
+    GotoMode = Table_AddWay_t.GotoMode[140]
+  },
+  [6587] = {
+    id = 6587,
+    NameEn = "西尔芙的赠礼",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[272],
+    Desc = "在融雪边境中找到6个西尔芙精灵后获取",
+    GotoMode = Table_AddWay_t.GotoMode[140]
+  },
+  [6588] = {
+    id = 6588,
+    NameEn = "西尔芙的赠礼",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[273],
+    Desc = "在融雪边境中找到9个西尔芙精灵后获取",
+    GotoMode = Table_AddWay_t.GotoMode[140]
+  },
+  [6589] = {
+    id = 6589,
+    NameEn = "西尔芙的赠礼",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[274],
+    Desc = "在融雪边境中找到12个西尔芙精灵后获取",
+    GotoMode = Table_AddWay_t.GotoMode[140]
+  },
+  [6590] = {
+    id = 6590,
+    NameEn = "西尔芙的赠礼",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[275],
+    Desc = "在融雪边境中找到15个西尔芙精灵后获取",
+    GotoMode = Table_AddWay_t.GotoMode[140]
+  },
+  [6591] = {
+    id = 6591,
+    NameEn = "西尔芙的赠礼",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[276],
+    Desc = "在融雪边境中找到18个西尔芙精灵后获取",
+    GotoMode = Table_AddWay_t.GotoMode[140]
+  },
+  [6592] = {
+    id = 6592,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[317],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6593] = {
+    id = 6593,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[278],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6594] = {
+    id = 6594,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[316],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6595] = {
+    id = 6595,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[315],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6596] = {
+    id = 6596,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[314],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6597] = {
+    id = 6597,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[282],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6598] = {
+    id = 6598,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[283],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6599] = {
+    id = 6599,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[313],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6600] = {
+    id = 6600,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[312],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6601] = {
+    id = 6601,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[311],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6602] = {
+    id = 6602,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[310],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6603] = {
+    id = 6603,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[309],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6604] = {
+    id = 6604,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[308],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6605] = {
+    id = 6605,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[307],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6606] = {
+    id = 6606,
+    NameEn = "融雪边境",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[306],
+    Desc = "开启融雪边境宝箱获得"
+  },
+  [6607] = {
+    id = 6607,
+    NameEn = "雪人拍照",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[305],
+    Desc = "拍摄融雪边境的雪人获得"
+  },
+  [6608] = {
+    id = 6608,
+    NameEn = "雪人拍照",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[293],
+    Desc = "拍摄融雪边境的雪人获得"
+  },
+  [6609] = {
+    id = 6609,
+    NameEn = "雪人拍照",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[294],
+    Desc = "拍摄融雪边境的雪人获得"
+  },
+  [6610] = {
+    id = 6610,
+    NameEn = "雪人拍照",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[295],
+    Desc = "拍摄融雪边境的雪人获得"
+  },
+  [6611] = {
+    id = 6611,
+    NameEn = "雪人拍照",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[296],
+    Desc = "拍摄融雪边境的雪人获得"
+  },
+  [6612] = {
+    id = 6612,
+    NameEn = "雪人拍照",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[297],
+    Desc = "拍摄融雪边境的雪人获得"
+  },
+  [6613] = {
+    id = 6613,
+    NameEn = "雪人拍照",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[298],
+    Desc = "拍摄融雪边境的雪人获得"
+  },
+  [6614] = {
+    id = 6614,
+    NameEn = "雪人拍照",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[299],
+    Desc = "拍摄融雪边境的雪人获得"
+  },
+  [6615] = {
+    id = 6615,
+    NameEn = "雪人拍照",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[300],
+    Desc = "拍摄完成融雪边境的全部雪人后获得"
+  },
+  [6681] = {
+    id = 6681,
+    NameEn = "超级海蝴蝶",
+    Icon = "n_seabutterfly",
+    Type = 4,
+    Materialdisplay = 0,
+    Search1 = Table_AddWay_t.Search1[302],
+    Desc = "雪花之地",
+    GotoMode = Table_AddWay_t.GotoMode[140]
+  },
+  [6682] = {
+    id = 6682,
+    NameEn = "破坏飞空艇作战",
+    Icon = "act_pve",
+    Type = 4,
+    Materialdisplay = 0,
+    Search1 = Table_AddWay_t.Search1[303],
+    Desc = "通关破坏飞空艇作战获得",
+    GotoMode = Table_AddWay_t.GotoMode[153]
+  },
+  [6683] = {
+    id = 6683,
+    NameEn = "破坏飞空艇作战",
+    Icon = "act_pve",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[304],
+    Desc = "通关破坏飞空艇作战获得",
+    GotoMode = Table_AddWay_t.GotoMode[153]
   }
 }
 local cell_mt = {

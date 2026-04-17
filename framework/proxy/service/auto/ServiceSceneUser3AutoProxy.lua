@@ -174,6 +174,24 @@ function ServiceSceneUser3AutoProxy:onRegister()
   self:Listen(82, 55, function(data)
     self:RecvFairyTaleRankQueryCmd(data)
   end)
+  self:Listen(82, 56, function(data)
+    self:RecvAboardUserHandcartCmd(data)
+  end)
+  self:Listen(82, 60, function(data)
+    self:RecvLeaveUserHandcartCmd(data)
+  end)
+  self:Listen(82, 57, function(data)
+    self:RecvGeffenMagicRankQueryCmd(data)
+  end)
+  self:Listen(82, 58, function(data)
+    self:RecvGeffenMagicWaveScoreQueryCmd(data)
+  end)
+  self:Listen(82, 59, function(data)
+    self:RecvGeffenMagicGetRewardUserCmd(data)
+  end)
+  self:Listen(82, 61, function(data)
+    self:RecvUserHoldingNpcCmd(data)
+  end)
 end
 
 function ServiceSceneUser3AutoProxy:CallFirstDepositInfo(end_time, got_gear, accumlated_deposit, first_deposit_rewarded, version)
@@ -2873,6 +2891,214 @@ function ServiceSceneUser3AutoProxy:CallFairyTaleRankQueryCmd(charid, zoneid, se
   end
 end
 
+function ServiceSceneUser3AutoProxy:CallAboardUserHandcartCmd(cartid, success)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.AboardUserHandcartCmd()
+    if cartid ~= nil then
+      msg.cartid = cartid
+    end
+    if success ~= nil then
+      msg.success = success
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.AboardUserHandcartCmd.id
+    local msgParam = {}
+    if cartid ~= nil then
+      msgParam.cartid = cartid
+    end
+    if success ~= nil then
+      msgParam.success = success
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallLeaveUserHandcartCmd(success)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.LeaveUserHandcartCmd()
+    if success ~= nil then
+      msg.success = success
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.LeaveUserHandcartCmd.id
+    local msgParam = {}
+    if success ~= nil then
+      msgParam.success = success
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallGeffenMagicRankQueryCmd(serverid, accid, charid, zoneid, total_score, rank_percent, has_rank, last_season_has_rank, last_season_rank_percent, last_season_gotten_reward)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.GeffenMagicRankQueryCmd()
+    if serverid ~= nil then
+      msg.serverid = serverid
+    end
+    if accid ~= nil then
+      msg.accid = accid
+    end
+    if charid ~= nil then
+      msg.charid = charid
+    end
+    if zoneid ~= nil then
+      msg.zoneid = zoneid
+    end
+    if total_score ~= nil then
+      msg.total_score = total_score
+    end
+    if rank_percent ~= nil then
+      msg.rank_percent = rank_percent
+    end
+    if has_rank ~= nil then
+      msg.has_rank = has_rank
+    end
+    if last_season_has_rank ~= nil then
+      msg.last_season_has_rank = last_season_has_rank
+    end
+    if last_season_rank_percent ~= nil then
+      msg.last_season_rank_percent = last_season_rank_percent
+    end
+    if last_season_gotten_reward ~= nil then
+      msg.last_season_gotten_reward = last_season_gotten_reward
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.GeffenMagicRankQueryCmd.id
+    local msgParam = {}
+    if serverid ~= nil then
+      msgParam.serverid = serverid
+    end
+    if accid ~= nil then
+      msgParam.accid = accid
+    end
+    if charid ~= nil then
+      msgParam.charid = charid
+    end
+    if zoneid ~= nil then
+      msgParam.zoneid = zoneid
+    end
+    if total_score ~= nil then
+      msgParam.total_score = total_score
+    end
+    if rank_percent ~= nil then
+      msgParam.rank_percent = rank_percent
+    end
+    if has_rank ~= nil then
+      msgParam.has_rank = has_rank
+    end
+    if last_season_has_rank ~= nil then
+      msgParam.last_season_has_rank = last_season_has_rank
+    end
+    if last_season_rank_percent ~= nil then
+      msgParam.last_season_rank_percent = last_season_rank_percent
+    end
+    if last_season_gotten_reward ~= nil then
+      msgParam.last_season_gotten_reward = last_season_gotten_reward
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallGeffenMagicWaveScoreQueryCmd(has_rank, wave_scores, score)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.GeffenMagicWaveScoreQueryCmd()
+    if has_rank ~= nil then
+      msg.has_rank = has_rank
+    end
+    if wave_scores ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.wave_scores == nil then
+        msg.wave_scores = {}
+      end
+      for i = 1, #wave_scores do
+        table.insert(msg.wave_scores, wave_scores[i])
+      end
+    end
+    if score ~= nil then
+      msg.score = score
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.GeffenMagicWaveScoreQueryCmd.id
+    local msgParam = {}
+    if has_rank ~= nil then
+      msgParam.has_rank = has_rank
+    end
+    if wave_scores ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.wave_scores == nil then
+        msgParam.wave_scores = {}
+      end
+      for i = 1, #wave_scores do
+        table.insert(msgParam.wave_scores, wave_scores[i])
+      end
+    end
+    if score ~= nil then
+      msgParam.score = score
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallGeffenMagicGetRewardUserCmd(charid, accid, zoneid, serverid)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.GeffenMagicGetRewardUserCmd()
+    if charid ~= nil then
+      msg.charid = charid
+    end
+    if accid ~= nil then
+      msg.accid = accid
+    end
+    if zoneid ~= nil then
+      msg.zoneid = zoneid
+    end
+    if serverid ~= nil then
+      msg.serverid = serverid
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.GeffenMagicGetRewardUserCmd.id
+    local msgParam = {}
+    if charid ~= nil then
+      msgParam.charid = charid
+    end
+    if accid ~= nil then
+      msgParam.accid = accid
+    end
+    if zoneid ~= nil then
+      msgParam.zoneid = zoneid
+    end
+    if serverid ~= nil then
+      msgParam.serverid = serverid
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallUserHoldingNpcCmd(npc_id)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.UserHoldingNpcCmd()
+    if npc_id ~= nil then
+      msg.npc_id = npc_id
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.UserHoldingNpcCmd.id
+    local msgParam = {}
+    if npc_id ~= nil then
+      msgParam.npc_id = npc_id
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceSceneUser3AutoProxy:RecvFirstDepositInfo(data)
   self:Notify(ServiceEvent.SceneUser3FirstDepositInfo, data)
 end
@@ -3085,6 +3311,30 @@ function ServiceSceneUser3AutoProxy:RecvFairyTaleRankQueryCmd(data)
   self:Notify(ServiceEvent.SceneUser3FairyTaleRankQueryCmd, data)
 end
 
+function ServiceSceneUser3AutoProxy:RecvAboardUserHandcartCmd(data)
+  self:Notify(ServiceEvent.SceneUser3AboardUserHandcartCmd, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvLeaveUserHandcartCmd(data)
+  self:Notify(ServiceEvent.SceneUser3LeaveUserHandcartCmd, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvGeffenMagicRankQueryCmd(data)
+  self:Notify(ServiceEvent.SceneUser3GeffenMagicRankQueryCmd, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvGeffenMagicWaveScoreQueryCmd(data)
+  self:Notify(ServiceEvent.SceneUser3GeffenMagicWaveScoreQueryCmd, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvGeffenMagicGetRewardUserCmd(data)
+  self:Notify(ServiceEvent.SceneUser3GeffenMagicGetRewardUserCmd, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvUserHoldingNpcCmd(data)
+  self:Notify(ServiceEvent.SceneUser3UserHoldingNpcCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.SceneUser3FirstDepositInfo = "ServiceEvent_SceneUser3FirstDepositInfo"
 ServiceEvent.SceneUser3FirstDepositReward = "ServiceEvent_SceneUser3FirstDepositReward"
@@ -3139,3 +3389,9 @@ ServiceEvent.SceneUser3BattleTimeOffUserCmd = "ServiceEvent_SceneUser3BattleTime
 ServiceEvent.SceneUser3PlayTimeOffUserCmd = "ServiceEvent_SceneUser3PlayTimeOffUserCmd"
 ServiceEvent.SceneUser3WareHouseOperationCmd = "ServiceEvent_SceneUser3WareHouseOperationCmd"
 ServiceEvent.SceneUser3FairyTaleRankQueryCmd = "ServiceEvent_SceneUser3FairyTaleRankQueryCmd"
+ServiceEvent.SceneUser3AboardUserHandcartCmd = "ServiceEvent_SceneUser3AboardUserHandcartCmd"
+ServiceEvent.SceneUser3LeaveUserHandcartCmd = "ServiceEvent_SceneUser3LeaveUserHandcartCmd"
+ServiceEvent.SceneUser3GeffenMagicRankQueryCmd = "ServiceEvent_SceneUser3GeffenMagicRankQueryCmd"
+ServiceEvent.SceneUser3GeffenMagicWaveScoreQueryCmd = "ServiceEvent_SceneUser3GeffenMagicWaveScoreQueryCmd"
+ServiceEvent.SceneUser3GeffenMagicGetRewardUserCmd = "ServiceEvent_SceneUser3GeffenMagicGetRewardUserCmd"
+ServiceEvent.SceneUser3UserHoldingNpcCmd = "ServiceEvent_SceneUser3UserHoldingNpcCmd"

@@ -303,6 +303,9 @@ EventDialog = {
   },
   [1202] = {
     DialogText = "公会神器已经全部收回！请到公会仓库中查看。"
+  },
+  [1203] = {
+    DialogText = "这里是[c][ffff00][HomeMasterName][-][/c]的冰羽之家，风雪再大，也吹不掉家的暖意。"
   }
 }
 EventDialogOption = {

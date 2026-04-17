@@ -174,6 +174,10 @@ function UIUtil.EndSceenCountDown(id)
   FloatingPanel.Instance:RemoveCountDown(id)
 end
 
+function UIUtil.StartSceenRaidResetCountDown(text, data)
+  FloatingPanel.Instance:AddRaidResetCountDown(text, data)
+end
+
 function UIUtil.FloatMiddleBottom(sortID, text)
   FloatingPanel.Instance:FloatMiddleBottom(sortID, text)
 end

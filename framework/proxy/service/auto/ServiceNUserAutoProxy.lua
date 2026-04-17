@@ -990,6 +990,15 @@ function ServiceNUserAutoProxy:CallSysMsg(id, type, params, act, delay, user)
       end
       msg.user.appellation = user.appellation
     end
+    if user ~= nil and user.snowroomid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.user == nil then
+        msg.user = {}
+      end
+      msg.user.snowroomid = user.snowroomid
+    end
     self:SendProto(msg)
   else
     local msgId = ProtoReqInfoList.SysMsg.id
@@ -1250,6 +1259,15 @@ function ServiceNUserAutoProxy:CallSysMsg(id, type, params, act, delay, user)
         msgParam.user = {}
       end
       msgParam.user.appellation = user.appellation
+    end
+    if user ~= nil and user.snowroomid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.user == nil then
+        msgParam.user = {}
+      end
+      msgParam.user.snowroomid = user.snowroomid
     end
     self:SendProto2(msgId, msgParam)
   end

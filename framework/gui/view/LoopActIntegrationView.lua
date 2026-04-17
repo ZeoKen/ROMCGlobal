@@ -8,6 +8,7 @@ autoImport("LoopActBannerSubView")
 autoImport("LoopActIntegrationProxy")
 autoImport("ActivityIntegrationShopSubView")
 autoImport("ActivityDungeonMvpCardView")
+autoImport("ActivityPaySignView")
 local picIns = PictureManager.Instance
 local DefaultDecorateTexName = "activityintegration_bg_bottom_01"
 
@@ -80,10 +81,12 @@ end
 local RedTipMap = {
   [1] = SceneTip_pb.EREDSYS_ACT_BP,
   [2] = SceneTip_pb.EREDSYS_NEW_SERVER_CHALLENGE,
-  [3] = ActivityFlipCardProxy.RedTipId
+  [3] = ActivityFlipCardProxy.RedTipId,
+  [ActivityCmd_pb.GACTIVITY_ACT_PAY_SIGN] = SceneTip_pb.EREDSYS_ACT_PAY_SIGN
 }
 
 function LoopActIntegrationView:InitShow()
+  self:InitSubViewLoaders()
   local tabList = {}
   if self.bannerActivityID then
     local bannerStaticData = Table_ActivityNew[self.bannerActivityID]
@@ -119,7 +122,18 @@ function LoopActIntegrationView:InitShow()
       if staticData then
         local subType = LoopActIntegrationProxy.Instance:GetSubType(staticData)
         local isValid = LoopActIntegrationProxy.Instance:CheckActivityValid(activityID)
-        if subType and (isValid or self:CheckIdValid(activityID)) then
+        if subType and self.subViews[subType] and (isValid or self:CheckIdValid(activityID)) then
+          local redtip = RedTipMap[subType]
+          local subRedtip
+          if subType == 1 then
+            subRedtip = staticData.id
+          elseif subType == 2 then
+            subRedtip = staticData.id
+          elseif subType == 3 then
+            subRedtip = staticData.Params and staticData.Params.ActivityId or staticData.id
+          elseif subType == ActivityCmd_pb.GACTIVITY_ACT_PAY_SIGN then
+            subRedtip = activityID
+          end
           local startTime, endTime = LoopActIntegrationProxy.Instance:GetActivityTime(staticData)
           local startTimeStr, endTimeStr
           if startTime and endTime then
@@ -133,19 +147,10 @@ function LoopActIntegrationView:InitShow()
             startTime = startTimeStr,
             endTime = endTimeStr,
             id = activityID,
-            staticData = staticData
+            staticData = staticData,
+            Redtip = redtip,
+            subRedtip = subRedtip
           }
-          data.Redtip = RedTipMap[subType]
-          if subType == 1 then
-            local activityId = staticData.id
-            data.subRedtip = activityId
-          elseif subType == 2 then
-            local activityId = staticData.id
-            data.subRedtip = activityId
-          elseif subType == 3 then
-            local activityId = staticData.Params and staticData.Params.ActivityId or staticData.id
-            data.subRedtip = activityId
-          end
           table.insert(tabList, data)
         end
       end
@@ -197,8 +202,8 @@ function LoopActIntegrationView:InitShow()
   end
 end
 
-function LoopActIntegrationView:LoadSubViews(tabList)
-  if not tabList or #tabList == 0 then
+function LoopActIntegrationView:InitSubViewLoaders()
+  if self.subViews then
     return
   end
   self.subViews = {}
@@ -250,12 +255,28 @@ function LoopActIntegrationView:LoadSubViews(tabList)
     end
     return self.dungeonMvpCardView
   end
+  local loadPaySignView = function(viewdata)
+    if not self.paySignView then
+      self.paySignView = self:AddSubView("ActivityPaySignView", ActivityPaySignView, nil, viewdata)
+      self.paySignView.parentView = self
+      self.paySignView.gameObject:SetActive(false)
+    end
+    return self.paySignView
+  end
   self.subViews.banner = loadBannerView
   self.subViews[1] = loadBPView
   self.subViews[2] = loadTaskView
   self.subViews[3] = loadFlipCardView
   self.subViews[4] = loadShopView
   self.subViews[12] = loadDungeonMvpCardView
+  self.subViews[ActivityCmd_pb.GACTIVITY_ACT_PAY_SIGN] = loadPaySignView
+end
+
+function LoopActIntegrationView:LoadSubViews(tabList)
+  if not tabList or #tabList == 0 then
+    return
+  end
+  self:InitSubViewLoaders()
   for i = 1, #tabList do
     local data = tabList[i]
     local staticData = data.staticData
@@ -295,6 +316,8 @@ function LoopActIntegrationView:GetViewDataForSubType(subType, staticData)
       Item = cardId,
       GoToMode = gotoMode
     }
+  elseif subType == ActivityCmd_pb.GACTIVITY_ACT_PAY_SIGN then
+    return {ActivityId = activityId}
   end
   return {}
 end

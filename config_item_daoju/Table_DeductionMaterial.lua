@@ -52,7 +52,8 @@ Table_DeductionMaterial = {
       52339,
       52340,
       52341,
-      52358
+      52358,
+      52359
     },
     CostNum = 1,
     TargetNum = 1,
@@ -104,7 +105,8 @@ Table_DeductionMaterial = {
       52528,
       52529,
       52530,
-      52538
+      52538,
+      52539
     },
     CostNum = 3,
     TargetNum = 1,
@@ -139,7 +141,8 @@ Table_DeductionMaterial = {
       52416,
       52418,
       52419,
-      52425
+      52425,
+      52426
     },
     CostNum = 1,
     TargetNum = 25,
@@ -195,7 +198,9 @@ Table_DeductionMaterial = {
       52165,
       52215,
       52120,
-      52170
+      52170,
+      52121,
+      52171
     },
     CostNum = 1,
     TargetNum = 50,

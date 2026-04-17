@@ -49,6 +49,8 @@ function AutoBattleManager:AutoBattleOn()
     return
   end
   self.on = true
+  local fakeDeadSkillID = SkillProxy.Instance:GetFakeDeadSkill(ShortCutProxy.Instance:GetCurrentAuto())
+  Game.Myself:Client_SetAutoFakeDead(fakeDeadSkillID)
   self.controller:AutoBattleOn()
   local eventManager = EventManager.Me()
   eventManager:DispatchEvent(AutoBattleManagerEvent.StateChanged, self)
@@ -60,6 +62,7 @@ function AutoBattleManager:AutoBattleOff()
     return
   end
   self.on = false
+  Game.Myself:Client_SetAutoFakeDead(0)
   self.controller:AutoBattleOff()
   local eventManager = EventManager.Me()
   eventManager:DispatchEvent(AutoBattleManagerEvent.StateChanged, self)

@@ -32,7 +32,7 @@ function MemoryEquipRewardCell:FindObjs()
       end
     end
   end
-  self.breakLabel = self:FindGO("BreakLabel")
+  self.breakLabel = self:FindComponent("BreakLabel", UILabel)
   self.oldLevel = self:FindComponent("OldLevel", UILabel)
   self.newLevel = self:FindComponent("NewLevel", UILabel)
   self.rewardPart = self:FindGO("RewardPart")
@@ -65,7 +65,10 @@ function MemoryEquipRewardCell:SetData(data)
     self.emptyBg.CurrentState = data.quality - 1
     self.levelPart:SetActive(data.state == FuBenCmd_pb.EMEMORY_EQUIP_REWARD_UP_LEVEL or data.state == FuBenCmd_pb.EMEMORY_EQUIP_REWARD_TO_BREAK)
     self.rewardPart:SetActive(data.state ~= FuBenCmd_pb.EMEMORY_EQUIP_REWARD_UP_LEVEL and data.state ~= FuBenCmd_pb.EMEMORY_EQUIP_REWARD_TO_BREAK)
-    self.breakLabel:SetActive(data.state == FuBenCmd_pb.EMEMORY_EQUIP_REWARD_TO_BREAK)
+    self.breakLabel.gameObject:SetActive(data.state == FuBenCmd_pb.EMEMORY_EQUIP_REWARD_TO_BREAK)
+    if data.state == FuBenCmd_pb.EMEMORY_EQUIP_REWARD_TO_BREAK then
+      self.breakLabel.text = string.format(ZhString.MemoryEquipReward_BreakState, data.effectIndex)
+    end
     local x, y, z = LuaGameObject.GetLocalPositionGO(self.levelGO)
     y = data.state == FuBenCmd_pb.EMEMORY_EQUIP_REWARD_TO_BREAK and BreakPosY or LevelPosY
     LuaGameObject.SetLocalPositionGO(self.levelGO, x, y, z)
@@ -74,7 +77,7 @@ function MemoryEquipRewardCell:SetData(data)
     elseif data.state == FuBenCmd_pb.EMEMORY_EQUIP_REWARD_EMPTY then
       self.stateLabel.text = ZhString.MemoryEquipReward_Empty
     elseif data.state == FuBenCmd_pb.EMEMORY_EQUIP_REWARD_MAX_BREAK then
-      self.stateLabel.text = ZhString.MemoryEquipReward_MaxBreak
+      self.stateLabel.text = string.format(ZhString.MemoryEquipReward_MaxBreak, data.effectIndex)
     end
     if data.rewards then
       local str = ""

@@ -44,8 +44,9 @@ end
 function MessageBoardView:InitData()
   local viewData = self.viewdata.viewdata
   self.furniture = viewData and viewData.furniture
-  if not self.furniture then
-    LogUtility.Error("Cannot get furniture when initializing MessageBoardView!")
+  self.npc = viewData and viewData.npc
+  if not self.furniture and not self.npc then
+    LogUtility.Error("Cannot get furniture or npc when initializing MessageBoardView!")
   end
 end
 

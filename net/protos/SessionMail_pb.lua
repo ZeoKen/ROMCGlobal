@@ -82,6 +82,7 @@ MAILDATA_SENDTIME_FIELD = protobuf.FieldDescriptor()
 MAILDATA_EXPIRETIME_FIELD = protobuf.FieldDescriptor()
 MAILDATA_SERVERIDS_FIELD = protobuf.FieldDescriptor()
 MAILDATA_ATTACHTIME_FIELD = protobuf.FieldDescriptor()
+MAILDATA_BATCH_MAIL_ID_FIELD = protobuf.FieldDescriptor()
 MAILMSG = protobuf.Descriptor()
 MAILMSG_LANGUAGE_FIELD = protobuf.FieldDescriptor()
 MAILMSG_TITLE_FIELD = protobuf.FieldDescriptor()
@@ -605,6 +606,15 @@ MAILDATA_ATTACHTIME_FIELD.has_default_value = true
 MAILDATA_ATTACHTIME_FIELD.default_value = 0
 MAILDATA_ATTACHTIME_FIELD.type = 13
 MAILDATA_ATTACHTIME_FIELD.cpp_type = 3
+MAILDATA_BATCH_MAIL_ID_FIELD.name = "batch_mail_id"
+MAILDATA_BATCH_MAIL_ID_FIELD.full_name = ".Cmd.MailData.batch_mail_id"
+MAILDATA_BATCH_MAIL_ID_FIELD.number = 25
+MAILDATA_BATCH_MAIL_ID_FIELD.index = 22
+MAILDATA_BATCH_MAIL_ID_FIELD.label = 1
+MAILDATA_BATCH_MAIL_ID_FIELD.has_default_value = true
+MAILDATA_BATCH_MAIL_ID_FIELD.default_value = 0
+MAILDATA_BATCH_MAIL_ID_FIELD.type = 13
+MAILDATA_BATCH_MAIL_ID_FIELD.cpp_type = 3
 MAILDATA.name = "MailData"
 MAILDATA.full_name = ".Cmd.MailData"
 MAILDATA.nested_types = {}
@@ -631,7 +641,8 @@ MAILDATA.fields = {
   MAILDATA_SENDTIME_FIELD,
   MAILDATA_EXPIRETIME_FIELD,
   MAILDATA_SERVERIDS_FIELD,
-  MAILDATA_ATTACHTIME_FIELD
+  MAILDATA_ATTACHTIME_FIELD,
+  MAILDATA_BATCH_MAIL_ID_FIELD
 }
 MAILDATA.is_extendable = false
 MAILDATA.extensions = {}

@@ -100,7 +100,8 @@ function MapManager:ctor()
   Game.VisitNpcManager = self.visitNpcManager
   Game.BigWorldManager = self.bigWorldManager
   Game.HotKeyTipManager = HotKeyTipManager.new()
-  self.homeManager = HomeManager.Me()
+  self.homeManager = HomeManager.GetInstance()
+  self.snowRealmManager = SnowRealmManager.Me()
   self.raidPuzzleManager = RaidPuzzleManager.Me()
   self:_Reset()
 end
@@ -135,14 +136,27 @@ function MapManager:GetMapID()
   return self.mapInfo[1]
 end
 
-local bigWorldMapIds = {149, 154}
+local bigWorldMapIds
+local GetBigWorldMapIds = function()
+  if bigWorldMapIds == nil then
+    bigWorldMapIds = {}
+    if Table_BWMapZone then
+      for _, v in pairs(Table_BWMapZone) do
+        if v.MapId and not bigWorldMapIds[v.MapId] then
+          bigWorldMapIds[v.MapId] = true
+        end
+      end
+    end
+  end
+  return bigWorldMapIds
+end
 
 function MapManager:IsCurBigWorld()
-  return self.mapInfo[1] and TableUtility.ArrayFindIndex(bigWorldMapIds, self.mapInfo[1]) > 0
+  return self.mapInfo[1] and GetBigWorldMapIds()[self.mapInfo[1]] == true
 end
 
 function MapManager.IsMapBigWorld(mapid)
-  return mapid and TableUtility.ArrayFindIndex(bigWorldMapIds, mapid) > 0
+  return mapid and GetBigWorldMapIds()[mapid] == true
 end
 
 function MapManager:IsBigWorld()
@@ -470,6 +484,10 @@ function MapManager:IsPVEMode_StarArk()
   return self.dungeonManager:IsPVEMode_StarArk()
 end
 
+function MapManager:IsPVEMode_DestroyAirShip()
+  return self.dungeonManager:IsPVEMode_DestroyAirShip()
+end
+
 function MapManager:IsPVPMode_3Teams()
   return self.dungeonManager:IsPVPMode_3Teams()
 end
@@ -501,6 +519,17 @@ end
 
 function MapManager:IsPVEMode_FairyTaleRaid()
   return self.dungeonManager:IsPVEMode_FairyTaleRaid()
+end
+
+function MapManager:IsPVPMode_AsyncPvpRaid()
+  return self.dungeonManager:IsPVPMode_AsyncPvpRaid()
+end
+
+function MapManager:IsPVPMode_AsyncPvpRaid_InBattle()
+  if self:IsPVPMode_AsyncPvpRaid() then
+    return AsyncPvpRaidProxy.Instance:IsInBattle()
+  end
+  return false
 end
 
 function MapManager:IsInDungeon()
@@ -1057,6 +1086,7 @@ function MapManager:Launch()
   end
   ServiceUserProxy.Instance:CheckRealInitialized()
   self.homeManager:Launch()
+  self.snowRealmManager:Launch()
   self.sceneSeatManager:Launch()
   self.enviromentManager:Launch()
   self.skillWorkerManager:Launch()
@@ -1091,6 +1121,7 @@ function MapManager:Launch()
   FunctionAstral.Me():Launch()
   FunctionAbyssLake.Me():Launch(self.mapInfo[1])
   FunctionAbyssDragon.Me():Launch()
+  FunctionSnowman.Me():Launch()
   if MapManager.Mode.Raid == self.mode then
     self.dungeonManager:SetRaidID(self.curActiveMapID)
   else
@@ -1186,6 +1217,7 @@ function MapManager:Shutdown()
   self:SetInputDisable(true)
   Game.LogicManager_MapCell:Shutdown()
   self.homeManager:Shutdown()
+  self.snowRealmManager:Shutdown()
   self.sceneSeatManager:Shutdown()
   self.enviromentManager:Shutdown()
   self.areaTriggerManager:Shutdown()
@@ -1227,6 +1259,7 @@ function MapManager:Shutdown()
   QuestUseFuncManager.Me():Shutdown()
   FunctionAstral.Me():Shutdown()
   FunctionAbyssDragon.Me():Shutdown()
+  FunctionSnowman.Me():Shutdown()
   self:OnPreviewStop()
   self.sceneAnimation = nil
   self.sceneAnimationAnimator = nil
@@ -1253,6 +1286,7 @@ function MapManager:Update(time, deltaTime)
     end
   end
   self.homeManager:Update(time, deltaTime)
+  self.snowRealmManager:Update(time, deltaTime)
   self.areaTriggerManager:Update(time, deltaTime)
   self.dungeonManager:Update(time, deltaTime)
   self.skillWorkerManager:Update(time, deltaTime)
@@ -1287,6 +1321,8 @@ function MapManager:LateUpdate(time, deltaTime)
   if not self.running then
     return
   end
+  self.homeManager:LateUpdate(time, deltaTime)
+  self.snowRealmManager:LateUpdate(time, deltaTime)
 end
 
 function MapManager:SetImageID(Imageid)
@@ -1646,4 +1682,12 @@ function MapManager:IsActivityMap()
     local actId = tonumber(staticData.EnterCond.id)
     return FunctionActivity.Me():IsActivityRunning(actId)
   end
+end
+
+function MapManager:IsInSnowRealmHouseRaid()
+  local houseRaid = GameConfig.SnowRealm and GameConfig.SnowRealm.HouseRaid
+  if not houseRaid or not houseRaid.RaidID then
+    return false
+  end
+  return self:GetMapID() == houseRaid.RaidID
 end

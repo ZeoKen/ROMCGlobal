@@ -8898,6 +8898,27 @@ Table_ActBpReward = {
     BatchID = 20260201,
     RewardItems = Table_ActBpReward_t.RewardItems[82],
     Important = 1
+  },
+  [1481] = {
+    id = 1481,
+    ActID = 105636,
+    BatchID = 20260301,
+    RewardItems = Table_ActBpReward_t.RewardItems[87],
+    Important = 1
+  },
+  [1482] = {
+    id = 1482,
+    ActID = 105636,
+    BatchID = 20260401,
+    RewardItems = Table_ActBpReward_t.RewardItems[88],
+    Important = 1
+  },
+  [1483] = {
+    id = 1483,
+    ActID = 105636,
+    BatchID = 20260501,
+    RewardItems = Table_ActBpReward_t.RewardItems[90],
+    Important = 1
   }
 }
 local cell_mt = {

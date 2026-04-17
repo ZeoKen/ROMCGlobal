@@ -295,7 +295,9 @@ function WorldTeleport:ResetPath()
       return false
     end
   else
-    local outterTeleportInfo, innerTeleportInfo = WorldTeleport.CreateOutterTeleportInfo(myPosition, self.targetMapID, self.targetBPID, self.targetPos, self.access_range)
+    local npcUID, npcMapID, npcToMapID = WorldTeleport.GetTransitNPCInfo(currentMapID, self.targetMapID)
+    local finalMapId = nil ~= npcUID and nil ~= npcMapID and npcMapID ~= currentMapID and npcMapID or self.targetMapID
+    local outterTeleportInfo, innerTeleportInfo = WorldTeleport.CreateOutterTeleportInfo(myPosition, finalMapId, self.targetBPID, self.targetPos, self.access_range)
     redlog("<color=green>WorldTeleport:ResetPath</color> outter", outterTeleportInfo, innerTeleportInfo)
     if nil == outterTeleportInfo or nil == innerTeleportInfo then
       return false

@@ -118,7 +118,15 @@ function RecallShopItemCell:SetPriceInfo(serverData)
 end
 
 function RecallShopItemCell:SetBuyLimitInfo(serverData)
-  self.buyCountLimitLabel.gameObject:SetActive(false)
+  local buyLimit = serverData.buy_limit or 0
+  if 0 < buyLimit then
+    self.buyCountLimitLabel.gameObject:SetActive(true)
+    local boughtCount = serverData.bought_count or 0
+    local remainCount = buyLimit - boughtCount
+    self.buyCountLimitLabel.text = string.format(ZhString.NewRecharge_BuyLimit_Acc_Ever or "%d/%d", remainCount, buyLimit)
+  else
+    self.buyCountLimitLabel.gameObject:SetActive(false)
+  end
 end
 
 function RecallShopItemCell:GetBoughtCount(serverData)

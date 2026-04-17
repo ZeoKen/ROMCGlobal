@@ -2548,6 +2548,52 @@ Table_Map = {
     IsAfk = 1,
     DamReduce = 1
   },
+  [155] = {
+    id = 155,
+    NameZh = "##44722391",
+    NameEn = "sc_xhzd",
+    CallZh = "##44722391",
+    LvRange = {110, 110},
+    Type = 6,
+    Mode = 1,
+    Range = 4023,
+    MoneyType = 1,
+    Money = 0,
+    MapTips = 1,
+    MapScale = 100,
+    Desc = "##44717393",
+    ShowInList = 1,
+    AdventureValue = -1,
+    SceneAnimation = 0,
+    PVPmap = 0,
+    Position = {5, -3},
+    Camera = 1,
+    MapArea = 155,
+    MapUi = 7,
+    IsCommonline = 1,
+    AvailableWeather = {14},
+    World = 2,
+    TeleportMapType = 1,
+    IsAfk = 1,
+    AreaTips = {
+      {
+        131.07,
+        -359.05,
+        "##44726605"
+      },
+      {
+        434.37,
+        -161.81,
+        "##44724708"
+      },
+      {
+        581.98,
+        -21.51,
+        "##283899"
+      }
+    },
+    DamReduce = 1
+  },
   [1001] = {
     id = 1001,
     NameZh = "##139155",
@@ -5881,6 +5927,58 @@ Table_Map = {
     TeleportMapType = 4,
     DamReduce = 1
   },
+  [7521] = {
+    id = 7521,
+    NameZh = "##44724735",
+    NameEn = "sc_sjdmj_004",
+    CallZh = "##44724735",
+    MapTips = 1,
+    MapScale = 80,
+    Camera = 1,
+    MapArea = 1,
+    MapUi = 7,
+    TeleportMapType = 4,
+    DamReduce = 1
+  },
+  [7522] = {
+    id = 7522,
+    NameZh = "##44724736",
+    NameEn = "sc_sjdmj_003",
+    CallZh = "##44724736",
+    MapTips = 1,
+    MapScale = 80,
+    Camera = 1,
+    MapArea = 1,
+    MapUi = 7,
+    TeleportMapType = 4,
+    DamReduce = 1
+  },
+  [7523] = {
+    id = 7523,
+    NameZh = "##44724737",
+    NameEn = "sc_sjdmj_002",
+    CallZh = "##44724737",
+    MapTips = 1,
+    MapScale = 80,
+    Camera = 1,
+    MapArea = 1,
+    MapUi = 7,
+    TeleportMapType = 4,
+    DamReduce = 1
+  },
+  [7524] = {
+    id = 7524,
+    NameZh = "##44724738",
+    NameEn = "sc_sjdmj_001",
+    CallZh = "##44724738",
+    MapTips = 1,
+    MapScale = 80,
+    Camera = 1,
+    MapArea = 1,
+    MapUi = 7,
+    TeleportMapType = 4,
+    DamReduce = 1
+  },
   [7610] = {
     id = 7610,
     NameZh = "##42632146",
@@ -5961,6 +6059,45 @@ Table_Map = {
     Camera = 1,
     MapArea = 1,
     MapUi = 7,
+    TeleportMapType = 4,
+    DamReduce = 1
+  },
+  [7661] = {
+    id = 7661,
+    NameZh = "##44726396",
+    NameEn = "sc_gcfb_001",
+    CallZh = "##44724845",
+    MapScale = 100,
+    Camera = 1,
+    MapArea = 1,
+    MapUi = 7,
+    NoCat = 3,
+    TeleportMapType = 4,
+    DamReduce = 1
+  },
+  [7662] = {
+    id = 7662,
+    NameZh = "##44726397",
+    NameEn = "sc_gcfb_001",
+    CallZh = "##44724845",
+    MapScale = 100,
+    Camera = 1,
+    MapArea = 1,
+    MapUi = 7,
+    NoCat = 3,
+    TeleportMapType = 4,
+    DamReduce = 1
+  },
+  [7663] = {
+    id = 7663,
+    NameZh = "##44726398",
+    NameEn = "sc_gcfb_001",
+    CallZh = "##44724845",
+    MapScale = 100,
+    Camera = 1,
+    MapArea = 1,
+    MapUi = 7,
+    NoCat = 3,
     TeleportMapType = 4,
     DamReduce = 1
   },
@@ -22838,6 +22975,47 @@ Table_Map = {
     MapUi = 7,
     NoCat = 15,
     TeleportMapType = 4
+  },
+  [1000467] = {
+    id = 1000467,
+    NameZh = "##44726605",
+    NameEn = "sc_xhzd",
+    CallZh = "##44726605",
+    MapScale = 200,
+    Desc = "##44726607",
+    Camera = 1,
+    LeapsMapNavigation = 1,
+    MapUi = 7,
+    NoCat = 11,
+    AvailableWeather = {3},
+    TeleportMapType = 4,
+    DamReduce = 1
+  },
+  [1000470] = {
+    id = 1000470,
+    NameZh = "##44722391",
+    NameEn = "sc_xhzd",
+    CallZh = "##44722391",
+    MapScale = 120,
+    Desc = "##44721687",
+    Camera = 1,
+    MapUi = 7,
+    NoCat = 15,
+    TeleportMapType = 4,
+    DamReduce = 1
+  },
+  [1000471] = {
+    id = 1000471,
+    NameZh = "##44722391",
+    NameEn = "sc_xhzd",
+    CallZh = "##44722391",
+    MapScale = 100,
+    Desc = "##44721685",
+    Camera = 1,
+    MapUi = 7,
+    NoCat = 15,
+    TeleportMapType = 4,
+    DamReduce = 1
   },
   [1001000] = {
     id = 1001000,

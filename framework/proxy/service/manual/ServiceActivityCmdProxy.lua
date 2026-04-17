@@ -205,6 +205,8 @@ function ServiceActivityCmdProxy:RecvStartGlobalActCmd(data)
       ActivityIntegrationProxy.Instance:AddSuperSignIn(data.id, data.starttime, data.endtime)
     elseif data.type == ActivityCmd_pb.GACTIVITY_ESCORT_TRAIN then
       FunctionTrainEscort.Me():SetActivityOpen(true)
+    elseif data.type == ActivityCmd_pb.GACTIVITY_ACT_PAY_SIGN then
+      FunctionActivity.Me():Launch(data.type, nil, data.starttime, data.endtime)
     end
   elseif data.type == ActivityCmd_pb.GACTIVITY_CHARGE_DISCOUNT then
     NewRechargeProxy.Ins:Deposit_SetProductActivity_Discount(data.open, data)

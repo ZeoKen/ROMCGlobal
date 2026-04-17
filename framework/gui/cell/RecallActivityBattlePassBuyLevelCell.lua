@@ -62,7 +62,7 @@ function RecallActivityBattlePassBuyLevelCell:AddConfirmClickEvent()
     local buyLv = tonumber(self.countInput.value)
     local own = HappyShopProxy.Instance:GetItemNum(self.costItem)
     if totalPrice > own then
-      MsgManager.ShowMsgByID(1)
+      MsgManager.ShowMsgByID(9620, tostring(Table_Item[self.costItem] and Table_Item[self.costItem].NameZh) or "Zeny")
     else
       MsgManager.DontAgainConfirmMsgByID(3000007, function()
         self:CallBpBuyLevelCmd(buyLv)

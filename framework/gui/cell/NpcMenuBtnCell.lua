@@ -13,7 +13,9 @@ NpcMenuBtnCell.GuideType = {
   MountDressing = 528,
   EquipUpgrade = 545,
   strengthen = 1002,
-  OpenInheritSkillView = 551
+  OpenInheritSkillView = 551,
+  SnowCrown = 569,
+  EnterHomeEditMode = 570
 }
 NpcMenuBtnCell.Style = {
   Primary = 1,

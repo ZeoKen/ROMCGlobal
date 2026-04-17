@@ -117,6 +117,9 @@ function NPartner:SetMaster(master)
   if self.sceneui then
     self.sceneui:CopyMaskFromOther(master.sceneui)
   end
+  if master:IsHasHandcart() then
+    self:SetInvisibleFlag(true)
+  end
 end
 
 function NPartner:SetPos(master, serverPos)

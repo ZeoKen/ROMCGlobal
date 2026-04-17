@@ -275,6 +275,8 @@ if ApplicationInfo.IsWindows() then
     AppBundleConfig.BundleID = "com.gravityus.romtwzeny.ios"
   elseif BranchMgr.IsNOEN() then
     AppBundleConfig.BundleID = "com.gravityus.romgzeny.ios"
+  elseif BranchMgr.IsNOKR() then
+    AppBundleConfig.BundleID = "com.gravity.romkrzeny.ios"
   end
 end
 AppBundleConfig.TDSG_Config = {
@@ -298,14 +300,16 @@ AppBundleConfig.TDSG_Config = {
   ["com.gravityus.romtwzeny.ios"] = "gwhvwhzdyowuchb7dj",
   ["com.gravityus.romtwzeny.aos"] = "gwhvwhzdyowuchb7dj",
   ["com.gravityus.romgzeny.ios"] = "74rhviyx49ygth3mrr",
-  ["com.gravityus.romgzeny.aos"] = "74rhviyx49ygth3mrr"
+  ["com.gravityus.romgzeny.aos"] = "74rhviyx49ygth3mrr",
+  ["com.gravity.romkrzeny.ios"] = "u1wfodj8xddho1n4xa",
+  ["com.gravity.romkrzeny.aos"] = "u1wfodj8xddho1n4xa"
 }
 
 function AppBundleConfig.GetSDKLang_TDSG()
   helplog("AppBundleConfig => GetSDKLang_TDSG")
   if BranchMgr.IsTW() then
     return tdsg_lang.tw
-  elseif BranchMgr.IsKorea() then
+  elseif BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
     return tdsg_lang.kr
   elseif BranchMgr.IsJapan() then
     return tdsg_lang.jp

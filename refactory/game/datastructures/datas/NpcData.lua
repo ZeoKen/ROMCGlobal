@@ -1,6 +1,7 @@
 NpcData = reusableClass("NpcData", CreatureDataWithPropUserdata)
 NpcData.PoolSize = 100
 autoImport("NpcData_Pushable")
+autoImport("NpcData_Follow")
 autoImport("Table_RoleEquips")
 local NpcMonsterUtility = NpcMonsterUtility
 local m_Table_Monster
@@ -70,7 +71,9 @@ NpcData.NpcDetailedType = {
   TriplePvpRobot = "TriplePvpRobot",
   PerfectPhantom = "PerfectPhantom",
   NormalPhantom = "NormalPhantom",
-  WarehouseNpc = "WarehouseNpc"
+  WarehouseNpc = "WarehouseNpc",
+  UserHandcartNpc = "UserHandcartNpc",
+  HomeMessageBoard = "HomeMessageBoard"
 }
 NpcData.ZoneType = {
   ZONE_MIN = 0,
@@ -368,6 +371,10 @@ end
 
 function NpcData:IsBoki_Detail()
   return self.detailedType == NpcData.NpcDetailedType.Boki
+end
+
+function NpcData:IsHandcart_Detail()
+  return self.detailedType == NpcData.NpcDetailedType.UserHandcartNpc
 end
 
 local MusicNpcConfig = GameConfig.System.musicboxnpc
@@ -1312,6 +1319,9 @@ function NpcData:InitByServerData(serverData)
   self.postcard = serverData.postcard
   self.damReduceType = self:GetDamReduceType()
   self.boxOpened = serverData.box_opened
+  if self:IsHandcart_Detail() then
+    self.followData = Table_NPCFollow[serverData.npcID]
+  end
 end
 
 function NpcData:SetNoAutoLock(val)
@@ -1359,6 +1369,7 @@ function NpcData:DoDeconstruct(asArray)
   self.born_se_loop = nil
   self.postcard = nil
   self.serverBossType = nil
+  self.followData = nil
   self:ClearClientData()
 end
 

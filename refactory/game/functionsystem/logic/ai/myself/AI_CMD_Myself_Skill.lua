@@ -226,7 +226,7 @@ function AI_CMD_Myself_Skill:Start(time, deltaTime, creature)
     end
   end
   local interval = time - lastSkillTime
-  if not creature:IsNoSkillDelay() and interval < SkillInterval and not isFakeNormalAttack and not info:IsKnightSkill() and not info:AffectedByAtkSpd() then
+  if not creature:IsNoSkillDelay() and interval < SkillInterval and not isFakeNormalAttack and not info:IsKnightSkill() and not info:AffectedByAtkSpd() and not info:IgnoreAttackInterval() then
     if not skill.info or not skill.info:NoAttackWait(creature) then
       creature.ai:SetIdleAction(Asset_Role.ActionName.AttackIdle)
     end

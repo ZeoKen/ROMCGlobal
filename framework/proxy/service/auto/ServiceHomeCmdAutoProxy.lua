@@ -24,6 +24,9 @@ function ServiceHomeCmdAutoProxy:onRegister()
   self:Listen(70, 3, function(data)
     self:RecvFurnitureOperHomeCmd(data)
   end)
+  self:Listen(70, 26, function(data)
+    self:RecvSnowFurnitureOperHomeCmd(data)
+  end)
   self:Listen(70, 4, function(data)
     self:RecvFurnitureUpdateHomeCmd(data)
   end)
@@ -74,6 +77,27 @@ function ServiceHomeCmdAutoProxy:onRegister()
   end)
   self:Listen(70, 20, function(data)
     self:RecvQueryWoodRankHomeCmd(data)
+  end)
+  self:Listen(70, 22, function(data)
+    self:RecvQuerySnowHouseDataHomeCmd(data)
+  end)
+  self:Listen(70, 23, function(data)
+    self:RecvSnowHouseDataUpdateHomeCmd(data)
+  end)
+  self:Listen(70, 24, function(data)
+    self:RecvSnowFurnitureUpdateHomeCmd(data)
+  end)
+  self:Listen(70, 25, function(data)
+    self:RecvSnowFurnitureDataUpdateHomeCmd(data)
+  end)
+  self:Listen(70, 27, function(data)
+    self:RecvQueryRecommendHomeCmd(data)
+  end)
+  self:Listen(70, 28, function(data)
+    self:RecvReqHomeCheckHomeCmd(data)
+  end)
+  self:Listen(70, 29, function(data)
+    self:RecvNpcFurnitureOperHomeCmd(data)
   end)
 end
 
@@ -299,6 +323,15 @@ function ServiceHomeCmdAutoProxy:CallQueryFurnitureDataHomeCmd(house, furniture)
         msg.house = {}
       end
       msg.house.board = house.board
+    end
+    if house ~= nil and house.username ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.username = house.username
     end
     if house ~= nil and house.decorates ~= nil then
       if msg.house == nil then
@@ -643,6 +676,15 @@ function ServiceHomeCmdAutoProxy:CallQueryFurnitureDataHomeCmd(house, furniture)
         msgParam.house = {}
       end
       msgParam.house.board = house.board
+    end
+    if house ~= nil and house.username ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.username = house.username
     end
     if house ~= nil and house.decorates ~= nil then
       if msgParam.house == nil then
@@ -1038,6 +1080,333 @@ function ServiceHomeCmdAutoProxy:CallFurnitureOperHomeCmd(oper, guid, value, sou
   end
 end
 
+function ServiceHomeCmdAutoProxy:CallSnowFurnitureOperHomeCmd(house_index, oper_cmd)
+  if not NetConfig.PBC then
+    local msg = HomeCmd_pb.SnowFurnitureOperHomeCmd()
+    if house_index ~= nil then
+      msg.house_index = house_index
+    end
+    if oper_cmd ~= nil and oper_cmd.cmd ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.cmd = oper_cmd.cmd
+    end
+    if oper_cmd ~= nil and oper_cmd.param ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.param = oper_cmd.param
+    end
+    if oper_cmd ~= nil and oper_cmd.oper ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.oper = oper_cmd.oper
+    end
+    if oper_cmd ~= nil and oper_cmd.guid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.guid = oper_cmd.guid
+    end
+    if oper_cmd ~= nil and oper_cmd.value ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.value = oper_cmd.value
+    end
+    if oper_cmd ~= nil and oper_cmd.source ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.source = oper_cmd.source
+    end
+    if oper_cmd ~= nil and oper_cmd.data ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.data = oper_cmd.data
+    end
+    if oper_cmd ~= nil and oper_cmd.values ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.values == nil then
+        msg.oper_cmd.values = {}
+      end
+      for i = 1, #oper_cmd.values do
+        table.insert(msg.oper_cmd.values, oper_cmd.values[i])
+      end
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.type ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.type = oper_cmd.wood_data.type
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.race ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.race = oper_cmd.wood_data.race
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.shape ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.shape = oper_cmd.wood_data.shape
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.nature ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.nature = oper_cmd.wood_data.nature
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.nature_lv ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.nature_lv = oper_cmd.wood_data.nature_lv
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.damage_reduce ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.damage_reduce = oper_cmd.wood_data.damage_reduce
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.boss_type ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.boss_type = oper_cmd.wood_data.boss_type
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.monster_id ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.monster_id = oper_cmd.wood_data.monster_id
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.damage_reduce_type ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.damage_reduce_type = oper_cmd.wood_data.damage_reduce_type
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnowFurnitureOperHomeCmd.id
+    local msgParam = {}
+    if house_index ~= nil then
+      msgParam.house_index = house_index
+    end
+    if oper_cmd ~= nil and oper_cmd.cmd ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.cmd = oper_cmd.cmd
+    end
+    if oper_cmd ~= nil and oper_cmd.param ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.param = oper_cmd.param
+    end
+    if oper_cmd ~= nil and oper_cmd.oper ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.oper = oper_cmd.oper
+    end
+    if oper_cmd ~= nil and oper_cmd.guid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.guid = oper_cmd.guid
+    end
+    if oper_cmd ~= nil and oper_cmd.value ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.value = oper_cmd.value
+    end
+    if oper_cmd ~= nil and oper_cmd.source ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.source = oper_cmd.source
+    end
+    if oper_cmd ~= nil and oper_cmd.data ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.data = oper_cmd.data
+    end
+    if oper_cmd ~= nil and oper_cmd.values ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.values == nil then
+        msgParam.oper_cmd.values = {}
+      end
+      for i = 1, #oper_cmd.values do
+        table.insert(msgParam.oper_cmd.values, oper_cmd.values[i])
+      end
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.type ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.type = oper_cmd.wood_data.type
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.race ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.race = oper_cmd.wood_data.race
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.shape ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.shape = oper_cmd.wood_data.shape
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.nature ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.nature = oper_cmd.wood_data.nature
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.nature_lv ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.nature_lv = oper_cmd.wood_data.nature_lv
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.damage_reduce ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.damage_reduce = oper_cmd.wood_data.damage_reduce
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.boss_type ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.boss_type = oper_cmd.wood_data.boss_type
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.monster_id ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.monster_id = oper_cmd.wood_data.monster_id
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.damage_reduce_type ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.damage_reduce_type = oper_cmd.wood_data.damage_reduce_type
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceHomeCmdAutoProxy:CallFurnitureUpdateHomeCmd(updates, dels)
   if not NetConfig.PBC then
     local msg = HomeCmd_pb.FurnitureUpdateHomeCmd()
@@ -1262,7 +1631,7 @@ function ServiceHomeCmdAutoProxy:CallPrayHomeCmd()
   end
 end
 
-function ServiceHomeCmdAutoProxy:CallEnterHomeCmd(accid, charid)
+function ServiceHomeCmdAutoProxy:CallEnterHomeCmd(accid, charid, type)
   if not NetConfig.PBC then
     local msg = HomeCmd_pb.EnterHomeCmd()
     if accid ~= nil then
@@ -1270,6 +1639,9 @@ function ServiceHomeCmdAutoProxy:CallEnterHomeCmd(accid, charid)
     end
     if charid ~= nil then
       msg.charid = charid
+    end
+    if type ~= nil then
+      msg.type = type
     end
     self:SendProto(msg)
   else
@@ -1280,6 +1652,9 @@ function ServiceHomeCmdAutoProxy:CallEnterHomeCmd(accid, charid)
     end
     if charid ~= nil then
       msgParam.charid = charid
+    end
+    if type ~= nil then
+      msgParam.type = type
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -1507,6 +1882,15 @@ function ServiceHomeCmdAutoProxy:CallQueryHouseDataHomeCmd(house, garden)
         msg.house = {}
       end
       msg.house.board = house.board
+    end
+    if house ~= nil and house.username ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.username = house.username
     end
     if house ~= nil and house.decorates ~= nil then
       if msg.house == nil then
@@ -1836,6 +2220,15 @@ function ServiceHomeCmdAutoProxy:CallQueryHouseDataHomeCmd(house, garden)
         msg.garden = {}
       end
       msg.garden.board = garden.board
+    end
+    if garden ~= nil and garden.username ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.garden == nil then
+        msg.garden = {}
+      end
+      msg.garden.username = garden.username
     end
     if garden ~= nil and garden.decorates ~= nil then
       if msg.garden == nil then
@@ -2170,6 +2563,15 @@ function ServiceHomeCmdAutoProxy:CallQueryHouseDataHomeCmd(house, garden)
       end
       msgParam.house.board = house.board
     end
+    if house ~= nil and house.username ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.username = house.username
+    end
     if house ~= nil and house.decorates ~= nil then
       if msgParam.house == nil then
         msgParam.house = {}
@@ -2499,6 +2901,15 @@ function ServiceHomeCmdAutoProxy:CallQueryHouseDataHomeCmd(house, garden)
       end
       msgParam.garden.board = garden.board
     end
+    if garden ~= nil and garden.username ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.garden == nil then
+        msgParam.garden = {}
+      end
+      msgParam.garden.username = garden.username
+    end
     if garden ~= nil and garden.decorates ~= nil then
       if msgParam.garden == nil then
         msgParam.garden = {}
@@ -2657,11 +3068,14 @@ function ServiceHomeCmdAutoProxy:CallQueryHouseFurnitureHomeCmd(sessionid, type,
   end
 end
 
-function ServiceHomeCmdAutoProxy:CallOptUpdateHomeCmd(accid, data, value, ids, str)
+function ServiceHomeCmdAutoProxy:CallOptUpdateHomeCmd(accid, type, data, value, ids, str)
   if not NetConfig.PBC then
     local msg = HomeCmd_pb.OptUpdateHomeCmd()
     if accid ~= nil then
       msg.accid = accid
+    end
+    if type ~= nil then
+      msg.type = type
     end
     if data ~= nil then
       msg.data = data
@@ -2689,6 +3103,9 @@ function ServiceHomeCmdAutoProxy:CallOptUpdateHomeCmd(accid, data, value, ids, s
     local msgParam = {}
     if accid ~= nil then
       msgParam.accid = accid
+    end
+    if type ~= nil then
+      msgParam.type = type
     end
     if data ~= nil then
       msgParam.data = data
@@ -3045,6 +3462,1233 @@ function ServiceHomeCmdAutoProxy:CallQueryWoodRankHomeCmd(typebranch, hpreduce, 
   end
 end
 
+function ServiceHomeCmdAutoProxy:CallQuerySnowHouseDataHomeCmd(index, house)
+  if not NetConfig.PBC then
+    local msg = HomeCmd_pb.QuerySnowHouseDataHomeCmd()
+    if index ~= nil then
+      msg.index = index
+    end
+    if house ~= nil and house.accid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.accid = house.accid
+    end
+    if house ~= nil and house.id ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.id = house.id
+    end
+    if house ~= nil and house.visitcount ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.visitcount = house.visitcount
+    end
+    if house ~= nil and house.furniturelv ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.furniturelv = house.furniturelv
+    end
+    if house ~= nil and house.furniturescore ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.furniturescore = house.furniturescore
+    end
+    if house ~= nil and house.petrewardtime ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.petrewardtime = house.petrewardtime
+    end
+    if house ~= nil and house.firerewardtime ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.firerewardtime = house.firerewardtime
+    end
+    if house ~= nil and house.dayvisitcount ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.dayvisitcount = house.dayvisitcount
+    end
+    if house ~= nil and house.guide ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.guide = house.guide
+    end
+    if house ~= nil and house.default_furn ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.default_furn = house.default_furn
+    end
+    if house ~= nil and house.levelup ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.levelup = house.levelup
+    end
+    if house ~= nil and house.woodrankopen ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.woodrankopen = house.woodrankopen
+    end
+    if house ~= nil and house.ftype ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.ftype = house.ftype
+    end
+    if house ~= nil and house.state ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.state = house.state
+    end
+    if house.opt ~= nil and house.opt.open ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.opt == nil then
+        msg.house.opt = {}
+      end
+      msg.house.opt.open = house.opt.open
+    end
+    if house.opt ~= nil and house.opt.board_open ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.opt == nil then
+        msg.house.opt = {}
+      end
+      msg.house.opt.board_open = house.opt.board_open
+    end
+    if house.opt ~= nil and house.opt.enter_area ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.opt == nil then
+        msg.house.opt = {}
+      end
+      msg.house.opt.enter_area = house.opt.enter_area
+    end
+    if house.opt ~= nil and house.opt.furniture_show ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.opt == nil then
+        msg.house.opt = {}
+      end
+      msg.house.opt.furniture_show = house.opt.furniture_show
+    end
+    if house ~= nil and house.opt.forbid_self ~= nil then
+      if msg.house.opt == nil then
+        msg.house.opt = {}
+      end
+      if msg.house.opt.forbid_self == nil then
+        msg.house.opt.forbid_self = {}
+      end
+      for i = 1, #house.opt.forbid_self do
+        table.insert(msg.house.opt.forbid_self, house.opt.forbid_self[i])
+      end
+    end
+    if house ~= nil and house.opt.forbid_other ~= nil then
+      if msg.house.opt == nil then
+        msg.house.opt = {}
+      end
+      if msg.house.opt.forbid_other == nil then
+        msg.house.opt.forbid_other = {}
+      end
+      for i = 1, #house.opt.forbid_other do
+        table.insert(msg.house.opt.forbid_other, house.opt.forbid_other[i])
+      end
+    end
+    if house.opt ~= nil and house.opt.garden_house ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.opt == nil then
+        msg.house.opt = {}
+      end
+      msg.house.opt.garden_house = house.opt.garden_house
+    end
+    if house ~= nil and house.name ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.name = house.name
+    end
+    if house ~= nil and house.sign ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.sign = house.sign
+    end
+    if house ~= nil and house.board ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.board = house.board
+    end
+    if house ~= nil and house.username ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.username = house.username
+    end
+    if house ~= nil and house.decorates ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.decorates == nil then
+        msg.house.decorates = {}
+      end
+      for i = 1, #house.decorates do
+        table.insert(msg.house.decorates, house.decorates[i])
+      end
+    end
+    if house ~= nil and house.pets ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.pets == nil then
+        msg.house.pets = {}
+      end
+      for i = 1, #house.pets do
+        table.insert(msg.house.pets, house.pets[i])
+      end
+    end
+    if house ~= nil and house.radios ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.radios == nil then
+        msg.house.radios = {}
+      end
+      for i = 1, #house.radios do
+        table.insert(msg.house.radios, house.radios[i])
+      end
+    end
+    if house ~= nil and house.boards ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.boards == nil then
+        msg.house.boards = {}
+      end
+      for i = 1, #house.boards do
+        table.insert(msg.house.boards, house.boards[i])
+      end
+    end
+    if house ~= nil and house.events ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.events == nil then
+        msg.house.events = {}
+      end
+      for i = 1, #house.events do
+        table.insert(msg.house.events, house.events[i])
+      end
+    end
+    if house ~= nil and house.week_clear_time ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.house == nil then
+        msg.house = {}
+      end
+      msg.house.week_clear_time = house.week_clear_time
+    end
+    if house.home_riskskilldata ~= nil and house.home_riskskilldata.last_puton ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.home_riskskilldata == nil then
+        msg.house.home_riskskilldata = {}
+      end
+      msg.house.home_riskskilldata.last_puton = house.home_riskskilldata.last_puton
+    end
+    if house.home_riskskilldata ~= nil and house.home_riskskilldata.last_putoff ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.home_riskskilldata == nil then
+        msg.house.home_riskskilldata = {}
+      end
+      msg.house.home_riskskilldata.last_putoff = house.home_riskskilldata.last_putoff
+    end
+    if house.home_riskskilldata ~= nil and house.home_riskskilldata.last_reward ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.home_riskskilldata == nil then
+        msg.house.home_riskskilldata = {}
+      end
+      msg.house.home_riskskilldata.last_reward = house.home_riskskilldata.last_reward
+    end
+    if house.home_riskskilldata ~= nil and house.home_riskskilldata.cursize ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.home_riskskilldata == nil then
+        msg.house.home_riskskilldata = {}
+      end
+      msg.house.home_riskskilldata.cursize = house.home_riskskilldata.cursize
+    end
+    if house.home_riskskilldata ~= nil and house.home_riskskilldata.enable ~= nil then
+      if msg.house == nil then
+        msg.house = {}
+      end
+      if msg.house.home_riskskilldata == nil then
+        msg.house.home_riskskilldata = {}
+      end
+      msg.house.home_riskskilldata.enable = house.home_riskskilldata.enable
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.QuerySnowHouseDataHomeCmd.id
+    local msgParam = {}
+    if index ~= nil then
+      msgParam.index = index
+    end
+    if house ~= nil and house.accid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.accid = house.accid
+    end
+    if house ~= nil and house.id ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.id = house.id
+    end
+    if house ~= nil and house.visitcount ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.visitcount = house.visitcount
+    end
+    if house ~= nil and house.furniturelv ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.furniturelv = house.furniturelv
+    end
+    if house ~= nil and house.furniturescore ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.furniturescore = house.furniturescore
+    end
+    if house ~= nil and house.petrewardtime ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.petrewardtime = house.petrewardtime
+    end
+    if house ~= nil and house.firerewardtime ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.firerewardtime = house.firerewardtime
+    end
+    if house ~= nil and house.dayvisitcount ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.dayvisitcount = house.dayvisitcount
+    end
+    if house ~= nil and house.guide ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.guide = house.guide
+    end
+    if house ~= nil and house.default_furn ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.default_furn = house.default_furn
+    end
+    if house ~= nil and house.levelup ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.levelup = house.levelup
+    end
+    if house ~= nil and house.woodrankopen ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.woodrankopen = house.woodrankopen
+    end
+    if house ~= nil and house.ftype ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.ftype = house.ftype
+    end
+    if house ~= nil and house.state ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.state = house.state
+    end
+    if house.opt ~= nil and house.opt.open ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.opt == nil then
+        msgParam.house.opt = {}
+      end
+      msgParam.house.opt.open = house.opt.open
+    end
+    if house.opt ~= nil and house.opt.board_open ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.opt == nil then
+        msgParam.house.opt = {}
+      end
+      msgParam.house.opt.board_open = house.opt.board_open
+    end
+    if house.opt ~= nil and house.opt.enter_area ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.opt == nil then
+        msgParam.house.opt = {}
+      end
+      msgParam.house.opt.enter_area = house.opt.enter_area
+    end
+    if house.opt ~= nil and house.opt.furniture_show ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.opt == nil then
+        msgParam.house.opt = {}
+      end
+      msgParam.house.opt.furniture_show = house.opt.furniture_show
+    end
+    if house ~= nil and house.opt.forbid_self ~= nil then
+      if msgParam.house.opt == nil then
+        msgParam.house.opt = {}
+      end
+      if msgParam.house.opt.forbid_self == nil then
+        msgParam.house.opt.forbid_self = {}
+      end
+      for i = 1, #house.opt.forbid_self do
+        table.insert(msgParam.house.opt.forbid_self, house.opt.forbid_self[i])
+      end
+    end
+    if house ~= nil and house.opt.forbid_other ~= nil then
+      if msgParam.house.opt == nil then
+        msgParam.house.opt = {}
+      end
+      if msgParam.house.opt.forbid_other == nil then
+        msgParam.house.opt.forbid_other = {}
+      end
+      for i = 1, #house.opt.forbid_other do
+        table.insert(msgParam.house.opt.forbid_other, house.opt.forbid_other[i])
+      end
+    end
+    if house.opt ~= nil and house.opt.garden_house ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.opt == nil then
+        msgParam.house.opt = {}
+      end
+      msgParam.house.opt.garden_house = house.opt.garden_house
+    end
+    if house ~= nil and house.name ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.name = house.name
+    end
+    if house ~= nil and house.sign ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.sign = house.sign
+    end
+    if house ~= nil and house.board ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.board = house.board
+    end
+    if house ~= nil and house.username ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.username = house.username
+    end
+    if house ~= nil and house.decorates ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.decorates == nil then
+        msgParam.house.decorates = {}
+      end
+      for i = 1, #house.decorates do
+        table.insert(msgParam.house.decorates, house.decorates[i])
+      end
+    end
+    if house ~= nil and house.pets ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.pets == nil then
+        msgParam.house.pets = {}
+      end
+      for i = 1, #house.pets do
+        table.insert(msgParam.house.pets, house.pets[i])
+      end
+    end
+    if house ~= nil and house.radios ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.radios == nil then
+        msgParam.house.radios = {}
+      end
+      for i = 1, #house.radios do
+        table.insert(msgParam.house.radios, house.radios[i])
+      end
+    end
+    if house ~= nil and house.boards ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.boards == nil then
+        msgParam.house.boards = {}
+      end
+      for i = 1, #house.boards do
+        table.insert(msgParam.house.boards, house.boards[i])
+      end
+    end
+    if house ~= nil and house.events ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.events == nil then
+        msgParam.house.events = {}
+      end
+      for i = 1, #house.events do
+        table.insert(msgParam.house.events, house.events[i])
+      end
+    end
+    if house ~= nil and house.week_clear_time ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      msgParam.house.week_clear_time = house.week_clear_time
+    end
+    if house.home_riskskilldata ~= nil and house.home_riskskilldata.last_puton ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.home_riskskilldata == nil then
+        msgParam.house.home_riskskilldata = {}
+      end
+      msgParam.house.home_riskskilldata.last_puton = house.home_riskskilldata.last_puton
+    end
+    if house.home_riskskilldata ~= nil and house.home_riskskilldata.last_putoff ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.home_riskskilldata == nil then
+        msgParam.house.home_riskskilldata = {}
+      end
+      msgParam.house.home_riskskilldata.last_putoff = house.home_riskskilldata.last_putoff
+    end
+    if house.home_riskskilldata ~= nil and house.home_riskskilldata.last_reward ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.home_riskskilldata == nil then
+        msgParam.house.home_riskskilldata = {}
+      end
+      msgParam.house.home_riskskilldata.last_reward = house.home_riskskilldata.last_reward
+    end
+    if house.home_riskskilldata ~= nil and house.home_riskskilldata.cursize ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.home_riskskilldata == nil then
+        msgParam.house.home_riskskilldata = {}
+      end
+      msgParam.house.home_riskskilldata.cursize = house.home_riskskilldata.cursize
+    end
+    if house.home_riskskilldata ~= nil and house.home_riskskilldata.enable ~= nil then
+      if msgParam.house == nil then
+        msgParam.house = {}
+      end
+      if msgParam.house.home_riskskilldata == nil then
+        msgParam.house.home_riskskilldata = {}
+      end
+      msgParam.house.home_riskskilldata.enable = house.home_riskskilldata.enable
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceHomeCmdAutoProxy:CallSnowHouseDataUpdateHomeCmd(house_index, updates)
+  if not NetConfig.PBC then
+    local msg = HomeCmd_pb.SnowHouseDataUpdateHomeCmd()
+    if house_index ~= nil then
+      msg.house_index = house_index
+    end
+    if updates ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.updates == nil then
+        msg.updates = {}
+      end
+      for i = 1, #updates do
+        table.insert(msg.updates, updates[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnowHouseDataUpdateHomeCmd.id
+    local msgParam = {}
+    if house_index ~= nil then
+      msgParam.house_index = house_index
+    end
+    if updates ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.updates == nil then
+        msgParam.updates = {}
+      end
+      for i = 1, #updates do
+        table.insert(msgParam.updates, updates[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceHomeCmdAutoProxy:CallSnowFurnitureUpdateHomeCmd(house_index, updates, dels)
+  if not NetConfig.PBC then
+    local msg = HomeCmd_pb.SnowFurnitureUpdateHomeCmd()
+    if house_index ~= nil then
+      msg.house_index = house_index
+    end
+    if updates ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.updates == nil then
+        msg.updates = {}
+      end
+      for i = 1, #updates do
+        table.insert(msg.updates, updates[i])
+      end
+    end
+    if dels ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.dels == nil then
+        msg.dels = {}
+      end
+      for i = 1, #dels do
+        table.insert(msg.dels, dels[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnowFurnitureUpdateHomeCmd.id
+    local msgParam = {}
+    if house_index ~= nil then
+      msgParam.house_index = house_index
+    end
+    if updates ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.updates == nil then
+        msgParam.updates = {}
+      end
+      for i = 1, #updates do
+        table.insert(msgParam.updates, updates[i])
+      end
+    end
+    if dels ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.dels == nil then
+        msgParam.dels = {}
+      end
+      for i = 1, #dels do
+        table.insert(msgParam.dels, dels[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceHomeCmdAutoProxy:CallSnowFurnitureDataUpdateHomeCmd(house_index, guid, updates)
+  if not NetConfig.PBC then
+    local msg = HomeCmd_pb.SnowFurnitureDataUpdateHomeCmd()
+    if house_index ~= nil then
+      msg.house_index = house_index
+    end
+    if guid ~= nil then
+      msg.guid = guid
+    end
+    if updates ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.updates == nil then
+        msg.updates = {}
+      end
+      for i = 1, #updates do
+        table.insert(msg.updates, updates[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnowFurnitureDataUpdateHomeCmd.id
+    local msgParam = {}
+    if house_index ~= nil then
+      msgParam.house_index = house_index
+    end
+    if guid ~= nil then
+      msgParam.guid = guid
+    end
+    if updates ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.updates == nil then
+        msgParam.updates = {}
+      end
+      for i = 1, #updates do
+        table.insert(msgParam.updates, updates[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceHomeCmdAutoProxy:CallQueryRecommendHomeCmd(cdn_path, type, datas)
+  if not NetConfig.PBC then
+    local msg = HomeCmd_pb.QueryRecommendHomeCmd()
+    if cdn_path ~= nil then
+      msg.cdn_path = cdn_path
+    end
+    if type ~= nil then
+      msg.type = type
+    end
+    if datas ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.datas == nil then
+        msg.datas = {}
+      end
+      for i = 1, #datas do
+        table.insert(msg.datas, datas[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.QueryRecommendHomeCmd.id
+    local msgParam = {}
+    if cdn_path ~= nil then
+      msgParam.cdn_path = cdn_path
+    end
+    if type ~= nil then
+      msgParam.type = type
+    end
+    if datas ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.datas == nil then
+        msgParam.datas = {}
+      end
+      for i = 1, #datas do
+        table.insert(msgParam.datas, datas[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceHomeCmdAutoProxy:CallReqHomeCheckHomeCmd(type)
+  if not NetConfig.PBC then
+    local msg = HomeCmd_pb.ReqHomeCheckHomeCmd()
+    if type ~= nil then
+      msg.type = type
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.ReqHomeCheckHomeCmd.id
+    local msgParam = {}
+    if type ~= nil then
+      msgParam.type = type
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceHomeCmdAutoProxy:CallNpcFurnitureOperHomeCmd(house_index, oper_cmd)
+  if not NetConfig.PBC then
+    local msg = HomeCmd_pb.NpcFurnitureOperHomeCmd()
+    if house_index ~= nil then
+      msg.house_index = house_index
+    end
+    if oper_cmd ~= nil and oper_cmd.cmd ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.cmd = oper_cmd.cmd
+    end
+    if oper_cmd ~= nil and oper_cmd.param ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.param = oper_cmd.param
+    end
+    if oper_cmd ~= nil and oper_cmd.oper ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.oper = oper_cmd.oper
+    end
+    if oper_cmd ~= nil and oper_cmd.guid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.guid = oper_cmd.guid
+    end
+    if oper_cmd ~= nil and oper_cmd.value ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.value = oper_cmd.value
+    end
+    if oper_cmd ~= nil and oper_cmd.source ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.source = oper_cmd.source
+    end
+    if oper_cmd ~= nil and oper_cmd.data ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      msg.oper_cmd.data = oper_cmd.data
+    end
+    if oper_cmd ~= nil and oper_cmd.values ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.values == nil then
+        msg.oper_cmd.values = {}
+      end
+      for i = 1, #oper_cmd.values do
+        table.insert(msg.oper_cmd.values, oper_cmd.values[i])
+      end
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.type ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.type = oper_cmd.wood_data.type
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.race ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.race = oper_cmd.wood_data.race
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.shape ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.shape = oper_cmd.wood_data.shape
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.nature ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.nature = oper_cmd.wood_data.nature
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.nature_lv ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.nature_lv = oper_cmd.wood_data.nature_lv
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.damage_reduce ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.damage_reduce = oper_cmd.wood_data.damage_reduce
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.boss_type ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.boss_type = oper_cmd.wood_data.boss_type
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.monster_id ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.monster_id = oper_cmd.wood_data.monster_id
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.damage_reduce_type ~= nil then
+      if msg.oper_cmd == nil then
+        msg.oper_cmd = {}
+      end
+      if msg.oper_cmd.wood_data == nil then
+        msg.oper_cmd.wood_data = {}
+      end
+      msg.oper_cmd.wood_data.damage_reduce_type = oper_cmd.wood_data.damage_reduce_type
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.NpcFurnitureOperHomeCmd.id
+    local msgParam = {}
+    if house_index ~= nil then
+      msgParam.house_index = house_index
+    end
+    if oper_cmd ~= nil and oper_cmd.cmd ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.cmd = oper_cmd.cmd
+    end
+    if oper_cmd ~= nil and oper_cmd.param ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.param = oper_cmd.param
+    end
+    if oper_cmd ~= nil and oper_cmd.oper ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.oper = oper_cmd.oper
+    end
+    if oper_cmd ~= nil and oper_cmd.guid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.guid = oper_cmd.guid
+    end
+    if oper_cmd ~= nil and oper_cmd.value ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.value = oper_cmd.value
+    end
+    if oper_cmd ~= nil and oper_cmd.source ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.source = oper_cmd.source
+    end
+    if oper_cmd ~= nil and oper_cmd.data ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      msgParam.oper_cmd.data = oper_cmd.data
+    end
+    if oper_cmd ~= nil and oper_cmd.values ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.values == nil then
+        msgParam.oper_cmd.values = {}
+      end
+      for i = 1, #oper_cmd.values do
+        table.insert(msgParam.oper_cmd.values, oper_cmd.values[i])
+      end
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.type ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.type = oper_cmd.wood_data.type
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.race ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.race = oper_cmd.wood_data.race
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.shape ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.shape = oper_cmd.wood_data.shape
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.nature ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.nature = oper_cmd.wood_data.nature
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.nature_lv ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.nature_lv = oper_cmd.wood_data.nature_lv
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.damage_reduce ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.damage_reduce = oper_cmd.wood_data.damage_reduce
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.boss_type ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.boss_type = oper_cmd.wood_data.boss_type
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.monster_id ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.monster_id = oper_cmd.wood_data.monster_id
+    end
+    if oper_cmd.wood_data ~= nil and oper_cmd.wood_data.damage_reduce_type ~= nil then
+      if msgParam.oper_cmd == nil then
+        msgParam.oper_cmd = {}
+      end
+      if msgParam.oper_cmd.wood_data == nil then
+        msgParam.oper_cmd.wood_data = {}
+      end
+      msgParam.oper_cmd.wood_data.damage_reduce_type = oper_cmd.wood_data.damage_reduce_type
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceHomeCmdAutoProxy:RecvQueryFurnitureDataHomeCmd(data)
   self:Notify(ServiceEvent.HomeCmdQueryFurnitureDataHomeCmd, data)
 end
@@ -3055,6 +4699,10 @@ end
 
 function ServiceHomeCmdAutoProxy:RecvFurnitureOperHomeCmd(data)
   self:Notify(ServiceEvent.HomeCmdFurnitureOperHomeCmd, data)
+end
+
+function ServiceHomeCmdAutoProxy:RecvSnowFurnitureOperHomeCmd(data)
+  self:Notify(ServiceEvent.HomeCmdSnowFurnitureOperHomeCmd, data)
 end
 
 function ServiceHomeCmdAutoProxy:RecvFurnitureUpdateHomeCmd(data)
@@ -3125,10 +4773,39 @@ function ServiceHomeCmdAutoProxy:RecvQueryWoodRankHomeCmd(data)
   self:Notify(ServiceEvent.HomeCmdQueryWoodRankHomeCmd, data)
 end
 
+function ServiceHomeCmdAutoProxy:RecvQuerySnowHouseDataHomeCmd(data)
+  self:Notify(ServiceEvent.HomeCmdQuerySnowHouseDataHomeCmd, data)
+end
+
+function ServiceHomeCmdAutoProxy:RecvSnowHouseDataUpdateHomeCmd(data)
+  self:Notify(ServiceEvent.HomeCmdSnowHouseDataUpdateHomeCmd, data)
+end
+
+function ServiceHomeCmdAutoProxy:RecvSnowFurnitureUpdateHomeCmd(data)
+  self:Notify(ServiceEvent.HomeCmdSnowFurnitureUpdateHomeCmd, data)
+end
+
+function ServiceHomeCmdAutoProxy:RecvSnowFurnitureDataUpdateHomeCmd(data)
+  self:Notify(ServiceEvent.HomeCmdSnowFurnitureDataUpdateHomeCmd, data)
+end
+
+function ServiceHomeCmdAutoProxy:RecvQueryRecommendHomeCmd(data)
+  self:Notify(ServiceEvent.HomeCmdQueryRecommendHomeCmd, data)
+end
+
+function ServiceHomeCmdAutoProxy:RecvReqHomeCheckHomeCmd(data)
+  self:Notify(ServiceEvent.HomeCmdReqHomeCheckHomeCmd, data)
+end
+
+function ServiceHomeCmdAutoProxy:RecvNpcFurnitureOperHomeCmd(data)
+  self:Notify(ServiceEvent.HomeCmdNpcFurnitureOperHomeCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.HomeCmdQueryFurnitureDataHomeCmd = "ServiceEvent_HomeCmdQueryFurnitureDataHomeCmd"
 ServiceEvent.HomeCmdFurnitureActionHomeCmd = "ServiceEvent_HomeCmdFurnitureActionHomeCmd"
 ServiceEvent.HomeCmdFurnitureOperHomeCmd = "ServiceEvent_HomeCmdFurnitureOperHomeCmd"
+ServiceEvent.HomeCmdSnowFurnitureOperHomeCmd = "ServiceEvent_HomeCmdSnowFurnitureOperHomeCmd"
 ServiceEvent.HomeCmdFurnitureUpdateHomeCmd = "ServiceEvent_HomeCmdFurnitureUpdateHomeCmd"
 ServiceEvent.HomeCmdFurnitureDataUpdateHomeCmd = "ServiceEvent_HomeCmdFurnitureDataUpdateHomeCmd"
 ServiceEvent.HomeCmdHouseActionHomeCmd = "ServiceEvent_HomeCmdHouseActionHomeCmd"
@@ -3146,3 +4823,10 @@ ServiceEvent.HomeCmdBoardItemUpdateHomeCmd = "ServiceEvent_HomeCmdBoardItemUpdat
 ServiceEvent.HomeCmdBoardMsgUpdateHomeCmd = "ServiceEvent_HomeCmdBoardMsgUpdateHomeCmd"
 ServiceEvent.HomeCmdEventItemQueryHomeCmd = "ServiceEvent_HomeCmdEventItemQueryHomeCmd"
 ServiceEvent.HomeCmdQueryWoodRankHomeCmd = "ServiceEvent_HomeCmdQueryWoodRankHomeCmd"
+ServiceEvent.HomeCmdQuerySnowHouseDataHomeCmd = "ServiceEvent_HomeCmdQuerySnowHouseDataHomeCmd"
+ServiceEvent.HomeCmdSnowHouseDataUpdateHomeCmd = "ServiceEvent_HomeCmdSnowHouseDataUpdateHomeCmd"
+ServiceEvent.HomeCmdSnowFurnitureUpdateHomeCmd = "ServiceEvent_HomeCmdSnowFurnitureUpdateHomeCmd"
+ServiceEvent.HomeCmdSnowFurnitureDataUpdateHomeCmd = "ServiceEvent_HomeCmdSnowFurnitureDataUpdateHomeCmd"
+ServiceEvent.HomeCmdQueryRecommendHomeCmd = "ServiceEvent_HomeCmdQueryRecommendHomeCmd"
+ServiceEvent.HomeCmdReqHomeCheckHomeCmd = "ServiceEvent_HomeCmdReqHomeCheckHomeCmd"
+ServiceEvent.HomeCmdNpcFurnitureOperHomeCmd = "ServiceEvent_HomeCmdNpcFurnitureOperHomeCmd"

@@ -54,7 +54,13 @@ function GvGPvPPrayDialog:OnClickPray()
     return
   end
   local count = self.maxPrayTog.value and chooseData:CalcMaxPrayCount() or nil
-  self:_OnClickPray(count)
+  if self.maxPrayTog.value then
+    MsgManager.ConfirmMsgByID(900014, function()
+      self:_OnClickPray(count)
+    end)
+  else
+    self:_OnClickPray(count)
+  end
 end
 
 function GvGPvPPrayDialog:_OnClickPray(praycount)

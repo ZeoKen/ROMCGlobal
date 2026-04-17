@@ -12,6 +12,8 @@ MiniMapWindow.GvgSymbolPath = ResourcePathHelper.UICell("MiniMapSymbol_GvgSymbol
 MiniMapWindow.DefaultMapTextureSize = 365
 MiniMapWindow.MAPSCALE_NORMAL = 1
 MiniMapWindow.MAPSCALE_LARGE = 2.3
+MiniMapWindow.MAPSCALE_HOUSE_RAID = 5
+MiniMapWindow.SYMBOL_SCALE_LARGE = 1.65
 local tempV3, tempRot = LuaVector3(), LuaQuaternion()
 local IsNull = Slua.IsNull
 local TableClear = TableUtility.TableClear
@@ -75,7 +77,8 @@ MiniMapWindow.Type = {
   GvgFriendChairmanPoint = 45,
   GvgEnemyChairmanPoint = 46,
   AbyssDragon = 47,
-  FairyTale = 48
+  FairyTale = 48,
+  SnowRealmMyHouse = 49
 }
 local Type = MiniMapWindow.Type
 local MiniMapDataRemoveFunc = function(data)
@@ -110,6 +113,7 @@ function MiniMapWindow:InitDatas()
   self.monsterActive = true
   self.lastMyPos = LuaVector3()
   self.lastMapScale = 1
+  self.lastSymbolScale = 1
   self.mapDataInfoCache = {}
   self.puzzleRoomsObjAreaMap = {}
   self.puzzleRoomsColliderMap = {}
@@ -163,6 +167,7 @@ function MiniMapWindow:RegisterAllMapInfos()
   self:RegisterMapInfo(Type.GvgEnemyChairmanPoint, MiniMapWindow._CreateGvgEnemyChairmanPointSymbol)
   self:RegisterMapInfo(Type.FakeDragon, MiniMapWindow._CreateFakeDragonSymbol, MiniMapWindow._UpdateFakeDragonSymbol, MiniMapWindow._RemoveFakeDragonSymbol)
   self:RegisterMapInfo(Type.FairyTale, MiniMapWindow._CreateFairyTaleSymbol, MiniMapWindow._UpdateFairyTaleSymbol, MiniMapWindow._RemoveFairyTaleSymbol)
+  self:RegisterMapInfo(Type.SnowRealmMyHouse)
 end
 
 function MiniMapWindow:RegisterMapInfo(type, createFunc, updateFunc, removeFunc)
@@ -623,10 +628,11 @@ function MiniMapWindow:SetMiniMapPart(name, b)
   end
 end
 
-function MiniMapWindow:SetMapScale(scale)
+function MiniMapWindow:SetMapScale(scale, symbolScale)
   if scale and scale ~= self.lastMapScale then
     local pct = scale / self.lastMapScale
-    local symbolPct = (scale * 0.5 + 0.5) / (self.lastMapScale * 0.5 + 0.5)
+    local targetSymbolScale = symbolScale or scale * 0.5 + 0.5
+    local symbolPct = targetSymbolScale / self.lastSymbolScale
     self.mapsize.x = self.mapsize.x * pct
     self.mapsize.y = self.mapsize.y * pct
     self.mapTexture.width = self.mapsize.x
@@ -681,6 +687,7 @@ function MiniMapWindow:SetMapScale(scale)
     LuaVector3.Mul(tempV3, symbolPct)
     self.myTrans.localScale = tempV3
     self.lastMapScale = scale
+    self.lastSymbolScale = targetSymbolScale
     self:UpdatePuzzleMapSize()
   end
 end
@@ -836,8 +843,10 @@ function MiniMapWindow:CenterOnTrans(trans, restrictWithPanel)
     return
   end
   local mapPanelTrans = self.mapPanel.transform
-  cc[1], cc[2], cc[3] = LuaGameObject.InverseTransformPointByVector3(mapPanelTrans, self.mTrans.position)
-  cp[1], cp[2], cp[3] = LuaGameObject.InverseTransformPointByVector3(mapPanelTrans, trans.position)
+  local mx, my, mz = GetLocalPosition(self.mTrans)
+  local tx, ty, tz = GetLocalPosition(trans)
+  cc[1], cc[2], cc[3] = mx, my, mz
+  cp[1], cp[2], cp[3] = tx, ty, tz
   if restrictWithPanel then
     local mBound = NGUIMath.CalculateRelativeWidgetBounds(self.mapTexture.transform)
     local mBound_Size = mBound.size
@@ -2758,8 +2767,8 @@ function MiniMapWindow:UpdateAreaTips(datas)
   local symbol
   for key, data in pairs(datas) do
     symbol = self.areaTipsCacheMap[key]
-    if symbol then
-      self:_UpdateAreaTips(symbol, data)
+    if symbol and not IsNull(symbol) then
+      symbol = self:_UpdateAreaTips(symbol, data)
     else
       symbol = self:_CreateAreaTips(data)
     end
@@ -2801,6 +2810,7 @@ function MiniMapWindow:_UpdateAreaTips(symbolObj, data)
   local label = symbolObj:GetComponent(UILabel)
   label.text = data:GetParama("Text") or ""
   label.fontSize = math.floor(14 * scale)
+  return symbolObj
 end
 
 function MiniMapWindow:IsAreaTipsUnlocked(data)
@@ -3515,4 +3525,8 @@ function MiniMapWindow:_RemoveFairyTaleSymbol(key, symbolObj)
     GameObject.DestroyImmediate(symbolObj)
   end
   self.fairyTaleSymbolMap[key] = nil
+end
+
+function MiniMapWindow:UpdateSnowRealmMyHouseSymbol(datas, isRemoveOther)
+  self:UpdateMapSymbolDatas(Type.SnowRealmMyHouse, datas, isRemoveOther)
 end

@@ -42,6 +42,10 @@ if not Asset_Role.Asset_Role_Inited then
     DefaultLeftWeapon = 28,
     DefaultRightWeapon = 29,
     DefaultAll = 30,
+    HeadFashionIndex1 = 31,
+    HeadFashionIndex2 = 32,
+    HeadFashionIndex3 = 33,
+    OriginalHeadID = 34,
     MountPart = 12000,
     MountPart0 = 12001,
     MountPart1 = 12002,
@@ -221,7 +225,7 @@ local ShowWeaponTypeKey = {
   [5] = "ShowWeapon_5",
   [6] = "ShowWeapon_6"
 }
-local WeakDataKeys = {ActionEffect = 1}
+local WeakDataKeys = {ActionEffect = 1, HeadFashionEffect = 2}
 local SuperAction = {
   [ActionName.Idle] = 1,
   [ActionName.Move] = 2,
@@ -358,6 +362,90 @@ function Asset_Role.DestroySubPartTable(tbl)
     ReusableTable.DestroyRolePartTable(subTable)
   end
   ReusableTable.DestroyRolePartTable(tbl)
+end
+
+function Asset_Role.ProcessHeadFashionForParts(parts, headID, headFashionString)
+  local isSnowCrownItem = GameConfig.Snow and GameConfig.Snow.FashionItemId and headID == GameConfig.Snow.FashionItemId
+  if not isSnowCrownItem then
+    return
+  end
+  if not headFashionString or headFashionString == "" then
+    return
+  end
+  local rets = string.split(headFashionString, ";")
+  local PartIndexEx = Asset_Role.PartIndexEx
+  if rets[1] then
+    parts[PartIndexEx.HeadFashionIndex1] = tonumber(rets[1]) or 0
+  end
+  if rets[2] then
+    parts[PartIndexEx.HeadFashionIndex2] = tonumber(rets[2]) or 0
+  end
+  if rets[3] then
+    parts[PartIndexEx.HeadFashionIndex3] = tonumber(rets[3]) or 0
+  end
+end
+
+function Asset_Role:LoadHeadFashionEffect()
+  self:RemoveHeadFashionEffect()
+  local effectIndex = self.partIDs[Asset_Role.PartIndexEx.HeadFashionIndex3]
+  if not effectIndex or effectIndex == 0 then
+    return
+  end
+  local effectPath = GameConfig.Snow and GameConfig.Snow.FashionEffect and GameConfig.Snow.FashionEffect[effectIndex]
+  if not effectPath or effectPath == "" then
+    return
+  end
+  local originalHeadID = self.partIDs[Asset_Role.PartIndexEx.OriginalHeadID] or self.partIDs[Asset_Role.PartIndex.Head]
+  local isSnowCrownItem = GameConfig.Snow and GameConfig.Snow.FashionItemId and originalHeadID == GameConfig.Snow.FashionItemId
+  if not isSnowCrownItem then
+    return
+  end
+  local headPartObj = self.partObjs[Asset_Role.PartIndex.Head]
+  if not headPartObj then
+    return
+  end
+  local headTransform = headPartObj.transform
+  if not headTransform then
+    return
+  end
+  local selfRef = self
+  local effect = Asset_Effect.PlayOn(effectPath, headTransform, function(obj, callbackArg, effectAsset)
+    if effectAsset and effectAsset.effectObj and selfRef.complete and selfRef.complete.layer then
+      NGUITools.SetLayer(effectAsset.effectObj, selfRef.complete.layer)
+    end
+  end, nil, nil, nil, nil, nil, true)
+  if effect then
+    if effect.effectObj and self.complete and self.complete.layer then
+      NGUITools.SetLayer(effect.effectObj, self.complete.layer)
+    end
+    self:CreateWeakData()
+    self:SetWeakData(WeakDataKeys.HeadFashionEffect, effect)
+  end
+end
+
+function Asset_Role:RemoveHeadFashionEffect()
+  local effect = self:GetWeakData(WeakDataKeys.HeadFashionEffect)
+  if effect then
+    effect:Destroy()
+    self:SetWeakData(WeakDataKeys.HeadFashionEffect, nil)
+  end
+end
+
+function Asset_Role:RefreshHeadFashionEffect(headFashionIndex1, headFashionIndex2, headFashionIndex3, originalHeadID)
+  local PartIndexEx = Asset_Role.PartIndexEx
+  if headFashionIndex1 then
+    self.partIDs[PartIndexEx.HeadFashionIndex1] = headFashionIndex1
+  end
+  if headFashionIndex2 then
+    self.partIDs[PartIndexEx.HeadFashionIndex2] = headFashionIndex2
+  end
+  if headFashionIndex3 then
+    self.partIDs[PartIndexEx.HeadFashionIndex3] = headFashionIndex3
+  end
+  if originalHeadID then
+    self.partIDs[PartIndexEx.OriginalHeadID] = originalHeadID
+  end
+  self:LoadHeadFashionEffect()
 end
 
 local tempVector3 = LuaVector3.Zero()
@@ -509,22 +597,60 @@ function Asset_Role.PreprocessParts(parts, gender)
     end
   end
   local headID = parts[PartIndex.Head]
+  local PartIndexEx = Asset_Role.PartIndexEx
+  parts[PartIndexEx.OriginalHeadID] = headID
   if 0 < headID then
-    local headData = Table_Equip[headID]
-    if nil ~= headData then
-      local display
-      if 0 < bodyID and IsDoram(bodyID) then
-        display = headData.display and headData.display[2] or headData.display and headData.display[1]
-      else
-        display = headData.display and headData.display[1]
+    local isSnowCrownItem = GameConfig.Snow and GameConfig.Snow.FashionItemId and headID == GameConfig.Snow.FashionItemId
+    if isSnowCrownItem then
+      local index1 = parts[PartIndexEx.HeadFashionIndex1]
+      local index2 = parts[PartIndexEx.HeadFashionIndex2]
+      if index1 and 0 < index1 or index2 and 0 < index2 then
+        local snowBodyId
+        if index1 and index2 and 0 < index1 and 0 < index2 then
+          if GameConfig.Snow and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[index2] then
+            local fashionConfig = GameConfig.Snow.Fashion[index2]
+            if fashionConfig[index1] then
+              snowBodyId = fashionConfig[index1]
+            end
+          end
+        elseif index1 and 0 < index1 then
+          if GameConfig.Snow and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[1] then
+            local fashionConfig = GameConfig.Snow.Fashion[1]
+            if fashionConfig[index1] then
+              snowBodyId = fashionConfig[index1]
+            end
+          end
+        elseif index2 and 0 < index2 and GameConfig.Snow and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[index2] then
+          local fashionConfig = GameConfig.Snow.Fashion[index2]
+          if fashionConfig[1] then
+            snowBodyId = fashionConfig[1]
+          end
+        end
+        if snowBodyId then
+          headID = snowBodyId
+        else
+          headID = 0
+        end
       end
-      Asset_Role.ApplyMask(parts, display, PartIndex.Head)
-      local isFileExist
-      if 0 ~= parts[PartIndex.Hair] then
-        Asset_Role.ProcessSafeHair(parts, gender, headData)
-      end
-      TryReplaceBaseDefaultParts(parts, PartIndex.Head)
     end
+    if 0 < headID then
+      local headData = Table_Equip[headID]
+      if nil ~= headData then
+        local display
+        if 0 < bodyID and IsDoram(bodyID) then
+          display = headData.display and headData.display[2] or headData.display and headData.display[1]
+        else
+          display = headData.display and headData.display[1]
+        end
+        Asset_Role.ApplyMask(parts, display, PartIndex.Head)
+        local isFileExist
+        if 0 ~= parts[PartIndex.Hair] then
+          Asset_Role.ProcessSafeHair(parts, gender, headData)
+        end
+        TryReplaceBaseDefaultParts(parts, PartIndex.Head)
+      end
+    end
+    parts[PartIndex.Head] = headID
   end
   local faceID = parts[PartIndex.Face]
   if 0 < faceID then
@@ -551,6 +677,9 @@ function Asset_Role.PreprocessParts(parts, gender)
       end
     elseif defaultTailID < 0 then
       parts[PartIndex.Tail] = 0
+    end
+    if IsDoram(bodyID) and tailID == 400214 then
+      parts[PartIndex.DefaultTail] = 0
     end
   end
   if defaultTailID < 0 then
@@ -705,6 +834,12 @@ end
 function Asset_Role.SetMountPartColor(parts, subPartIndex, skin)
   local colorIndex = Asset_Role.EncodePartColorIndex(Asset_Role.PartIndex.Mount, subPartIndex)
   parts[colorIndex] = skin
+end
+
+function Asset_Role.SetHeadSubPart(parts, subPartIndex, partID)
+  local partIndex = Asset_Role.EncodeSubPartIndex(Asset_Role.PartIndex.Head, subPartIndex)
+  xdlog("SetHeadSubPart", partIndex, partID)
+  parts[partIndex] = partID
 end
 
 function Asset_Role:DontDestroyOnLoad()
@@ -1075,6 +1210,26 @@ function Asset_Role:Redress(parts, isLoadFirst, showLayer)
   parts[PartIndex.Hair] = hairID
   parts[PartIndex.Face] = faceID
   parts[PartIndex.Eye] = eyeID
+  local PartIndexEx = Asset_Role.PartIndexEx
+  local oldEffectIndex = self.partIDs[PartIndexEx.HeadFashionIndex3]
+  local oldOriginalHeadID = self.partIDs[PartIndexEx.OriginalHeadID]
+  if parts[PartIndexEx.HeadFashionIndex1] then
+    self.partIDs[PartIndexEx.HeadFashionIndex1] = parts[PartIndexEx.HeadFashionIndex1]
+  end
+  if parts[PartIndexEx.HeadFashionIndex2] then
+    self.partIDs[PartIndexEx.HeadFashionIndex2] = parts[PartIndexEx.HeadFashionIndex2]
+  end
+  if parts[PartIndexEx.HeadFashionIndex3] then
+    self.partIDs[PartIndexEx.HeadFashionIndex3] = parts[PartIndexEx.HeadFashionIndex3]
+  end
+  if parts[PartIndexEx.OriginalHeadID] ~= nil then
+    self.partIDs[PartIndexEx.OriginalHeadID] = parts[PartIndexEx.OriginalHeadID]
+  end
+  local newEffectIndex = self.partIDs[PartIndexEx.HeadFashionIndex3]
+  local newOriginalHeadID = self.partIDs[PartIndexEx.OriginalHeadID]
+  if oldEffectIndex ~= newEffectIndex or oldOriginalHeadID ~= newOriginalHeadID then
+    self:LoadHeadFashionEffect()
+  end
 end
 
 function Asset_Role:_Redress(parts, isLoadFirst)
@@ -1271,6 +1426,10 @@ end
 function Asset_Role:SetLayer(layer)
   self.complete.layer = layer
   self:FixSubPartsLayer()
+  local effect = self:GetWeakData(WeakDataKeys.HeadFashionEffect)
+  if effect and effect.effectObj then
+    NGUITools.SetLayer(effect.effectObj, layer)
+  end
 end
 
 function Asset_Role:FixSubPartsLayer()
@@ -1770,7 +1929,7 @@ end
 
 function Asset_Role.GetRidePrefix(mountID)
   local config = Table_Mount[mountID]
-  local interactConfig = Table_InteractMount[mountId]
+  local interactConfig = Table_InteractMount[mountID]
   if config then
     if config.ActionPrefix and config.ActionPrefix ~= "" then
       return config.ActionPrefix
@@ -3000,6 +3159,8 @@ function Asset_Role:OnPartCreated(tag, obj, part, ID, oldID)
     end
   elseif part == PartIndex.Eye then
     self:SetExpression(self.curExpressionID or 1, true)
+  elseif part == PartIndex.Head then
+    self:LoadHeadFashionEffect()
   end
   if self.epNodesDisplay then
     self:UpdateEpNodesDisplay(part, obj)
@@ -3245,6 +3406,9 @@ function Asset_Role:_TryDressPart(part, obj, oldID, ID)
     else
       oldObj:MoveEffectToTransform(self.complete.tempOwner)
     end
+  end
+  if PartIndex.Head == part and oldID ~= ID then
+    self:RemoveHeadFashionEffect()
   end
   self:_DestroyPartObject(part, oldID, true)
   if nil ~= obj then

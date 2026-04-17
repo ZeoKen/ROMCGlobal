@@ -139,8 +139,8 @@ function RecallFundSubView:UpdateLeftContent()
     self.line2Label.text = self.activityIndex == 0 and ZhString.RecallIntegration_Fund_Line2 or ZhString.RecallIntegration_Fund_Line2_7 or "连续登录14天获得丰厚奖励"
   end
   if self.rewardIcon and self.rewardNum then
-    IconManager:SetItemIcon(Table_Item[100].Icon, self.rewardIcon)
-    self.rewardNum.text = 22800000
+    IconManager:SetItemIcon(Table_Item[GameConfig.UserRecall.FundRewardID or 100].Icon, self.rewardIcon)
+    self.rewardNum.text = GameConfig.UserRecall.FundRewardNum or 22800000
   end
   local costStr = self:GetBuyCostString()
   if self.buyCostLabel then

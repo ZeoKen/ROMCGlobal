@@ -810,6 +810,174 @@ Table_PaySign = {
     Day = 7,
     ItemID = {id = 3013899, num = 1},
     FemaleItemID = _EmptyTable
+  },
+  [99] = {
+    id = 99,
+    ActivityID = 12013,
+    ServerID = _EmptyTable,
+    Day = 1,
+    ItemID = {id = 7300, num = 10},
+    FemaleItemID = _EmptyTable
+  },
+  [100] = {
+    id = 100,
+    ActivityID = 12013,
+    ServerID = _EmptyTable,
+    Day = 2,
+    ItemID = {id = 3720, num = 3},
+    FemaleItemID = _EmptyTable
+  },
+  [101] = {
+    id = 101,
+    ActivityID = 12013,
+    ServerID = _EmptyTable,
+    Day = 3,
+    ItemID = {id = 5263, num = 5},
+    FemaleItemID = _EmptyTable
+  },
+  [102] = {
+    id = 102,
+    ActivityID = 12013,
+    ServerID = _EmptyTable,
+    Day = 4,
+    ItemID = {id = 141, num = 1000},
+    FemaleItemID = _EmptyTable
+  },
+  [103] = {
+    id = 103,
+    ActivityID = 12013,
+    ServerID = _EmptyTable,
+    Day = 5,
+    ItemID = {id = 52901, num = 5},
+    FemaleItemID = _EmptyTable
+  },
+  [104] = {
+    id = 104,
+    ActivityID = 12013,
+    ServerID = _EmptyTable,
+    Day = 6,
+    ItemID = {id = 6996, num = 1},
+    FemaleItemID = _EmptyTable
+  },
+  [105] = {
+    id = 105,
+    ActivityID = 12013,
+    ServerID = _EmptyTable,
+    Day = 7,
+    ItemID = {id = 52836, num = 100},
+    FemaleItemID = _EmptyTable
+  },
+  [106] = {
+    id = 106,
+    ActivityID = 12014,
+    ServerID = _EmptyTable,
+    Day = 1,
+    ItemID = {id = 7300, num = 10},
+    FemaleItemID = _EmptyTable
+  },
+  [107] = {
+    id = 107,
+    ActivityID = 12014,
+    ServerID = _EmptyTable,
+    Day = 2,
+    ItemID = {id = 3720, num = 3},
+    FemaleItemID = _EmptyTable
+  },
+  [108] = {
+    id = 108,
+    ActivityID = 12014,
+    ServerID = _EmptyTable,
+    Day = 3,
+    ItemID = {id = 5263, num = 5},
+    FemaleItemID = _EmptyTable
+  },
+  [109] = {
+    id = 109,
+    ActivityID = 12014,
+    ServerID = _EmptyTable,
+    Day = 4,
+    ItemID = {id = 141, num = 1000},
+    FemaleItemID = _EmptyTable
+  },
+  [110] = {
+    id = 110,
+    ActivityID = 12014,
+    ServerID = _EmptyTable,
+    Day = 5,
+    ItemID = {id = 52901, num = 5},
+    FemaleItemID = _EmptyTable
+  },
+  [111] = {
+    id = 111,
+    ActivityID = 12014,
+    ServerID = _EmptyTable,
+    Day = 6,
+    ItemID = {id = 6996, num = 1},
+    FemaleItemID = _EmptyTable
+  },
+  [112] = {
+    id = 112,
+    ActivityID = 12014,
+    ServerID = _EmptyTable,
+    Day = 7,
+    ItemID = {id = 52836, num = 100},
+    FemaleItemID = _EmptyTable
+  },
+  [113] = {
+    id = 113,
+    ActivityID = 12015,
+    ServerID = _EmptyTable,
+    Day = 1,
+    ItemID = {id = 7300, num = 10},
+    FemaleItemID = _EmptyTable
+  },
+  [114] = {
+    id = 114,
+    ActivityID = 12015,
+    ServerID = _EmptyTable,
+    Day = 2,
+    ItemID = {id = 3720, num = 3},
+    FemaleItemID = _EmptyTable
+  },
+  [115] = {
+    id = 115,
+    ActivityID = 12015,
+    ServerID = _EmptyTable,
+    Day = 3,
+    ItemID = {id = 5263, num = 5},
+    FemaleItemID = _EmptyTable
+  },
+  [116] = {
+    id = 116,
+    ActivityID = 12015,
+    ServerID = _EmptyTable,
+    Day = 4,
+    ItemID = {id = 141, num = 1000},
+    FemaleItemID = _EmptyTable
+  },
+  [117] = {
+    id = 117,
+    ActivityID = 12015,
+    ServerID = _EmptyTable,
+    Day = 5,
+    ItemID = {id = 52901, num = 5},
+    FemaleItemID = _EmptyTable
+  },
+  [118] = {
+    id = 118,
+    ActivityID = 12015,
+    ServerID = _EmptyTable,
+    Day = 6,
+    ItemID = {id = 6996, num = 1},
+    FemaleItemID = _EmptyTable
+  },
+  [119] = {
+    id = 119,
+    ActivityID = 12015,
+    ServerID = _EmptyTable,
+    Day = 7,
+    ItemID = {id = 52836, num = 100},
+    FemaleItemID = _EmptyTable
   }
 }
 Table_PaySign_fields = {

@@ -862,6 +862,15 @@ Table_ItemTypeAdventureLog = {
     Order = 21,
     RidTip = {216}
   },
+  [1123] = {
+    id = 1123,
+    Name = "伊斯加尔特",
+    NameEn = "sc_xhzd",
+    icon = "",
+    type = 11,
+    Order = 22,
+    RidTip = {217}
+  },
   [1201] = {
     id = 1201,
     Name = "普隆德拉",
@@ -1225,6 +1234,16 @@ Table_ItemTypeAdventureLog = {
     RidTip = {1019},
     MenuID = 272
   },
+  [20022] = {
+    id = 20022,
+    Name = "伊斯加尔特",
+    NameEn = "",
+    icon = "",
+    type = 6,
+    Order = 22,
+    RidTip = {1020},
+    MenuID = 273
+  },
   [20100] = {
     id = 20100,
     Name = "其他区域",
@@ -1383,6 +1402,16 @@ Table_ItemTypeAdventureLog = {
     Order = 21,
     RidTip = {1071},
     MenuID = 272
+  },
+  [30022] = {
+    id = 30022,
+    Name = "伊斯加尔特",
+    NameEn = "",
+    icon = "",
+    type = 7,
+    Order = 22,
+    RidTip = {1072},
+    MenuID = 273
   },
   [30100] = {
     id = 30100,

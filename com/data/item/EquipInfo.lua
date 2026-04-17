@@ -914,6 +914,10 @@ function EquipInfo:IsArtifact()
   if cfg == nil then
     return false
   end
+  local id = self.equipData.id
+  if GameConfig.Snow and GameConfig.Snow.FashionItemId and id == GameConfig.Snow.FashionItemId then
+    return false
+  end
   return cfg.equipBodyIndex == "Artifact"
 end
 
@@ -961,6 +965,10 @@ end
 
 function EquipInfo:IsNextGen()
   return self.equipData.IsNew ~= nil and self.equipData.IsNew > 0
+end
+
+function EquipInfo:IsSnowEquip()
+  return self.equipData.IsNew ~= nil and self.equipData.IsNew == 2
 end
 
 function EquipInfo:GetUpgradeReplaceLv()

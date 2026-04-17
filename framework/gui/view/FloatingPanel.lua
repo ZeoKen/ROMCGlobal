@@ -10,6 +10,7 @@ autoImport("MaintenanceMsg")
 autoImport("TypeNineFloatPanel")
 autoImport("UIViewAchievementPopupTip")
 autoImport("PrestigeExpTip")
+autoImport("RaidResetCountDownMsg")
 FloatingPanel = class("FloatingPanel", ContainerView)
 FloatingPanel.Instance = nil
 FloatingPanel.ViewType = UIViewType.FloatLayer
@@ -423,6 +424,15 @@ function FloatingPanel:SetCountDownRemoveOnChangeScene(id, value)
   if self.countDownMsg and not self.countDownMsg.hasBeenDestroyed and self.countDownMsg.data.id == id then
     self.countDownMsg.DestroyWhenLoadScene = value
   end
+end
+
+function FloatingPanel:AddRaidResetCountDown(text, data)
+  if self.countDownMsg == nil or self.countDownMsg and self.countDownMsg.hasBeenDestroyed then
+    self.countDownMsg = RaidResetCountDownMsg.new(self.gameObject)
+  end
+  self.countDownMsg:SetData(text, data)
+  local inRaid = Game.MapManager:IsRaidMode()
+  self.countDownMsg.DestroyWhenLoadScene = inRaid
 end
 
 function FloatingPanel:RecvUpdateZoneMapCmd(serverdata)

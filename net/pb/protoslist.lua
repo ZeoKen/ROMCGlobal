@@ -45,20 +45,20 @@ ProtoFileList = {
   "AuctionCCmd",
   "SceneBeing",
   "SceneQuest",
-  "RoguelikeCmd",
-  "ScenePet",
-  "RecordTrade",
-  "SceneManual",
   "HomeCmd",
+  "SnowCmd",
+  "SceneManual",
+  "RecordTrade",
+  "ScenePet",
+  "RoguelikeCmd",
   "SceneUser2",
   "NoviceBattlePass",
   "UserAfkCmd",
   "SceneMap",
-  "LoginUserCmd",
   "MessCCmd",
+  "LoginUserCmd",
   "GuildCmd",
   "PhotoCmd",
-  "SceneUser3",
   "ChatCmd",
   "InteractCmd",
   "SessionTeam",
@@ -66,6 +66,7 @@ ProtoFileList = {
   "FuBenCmd",
   "RaidCmd",
   "ActivityEvent",
+  "SceneUser3",
   "UserEvent",
   "SessionMail",
   "MatchCCmd",
@@ -2460,6 +2461,36 @@ ProtoReqInfoList = {
     ack = "Cmd.GvgInviteTransferToMeCmd",
     from = "FuBenCmd"
   },
+  GeffenMagicInfoSyncCmd = {
+    id = 110187,
+    req = "Cmd.GeffenMagicInfoSyncCmd",
+    ack = "Cmd.GeffenMagicInfoSyncCmd",
+    from = "FuBenCmd"
+  },
+  GeffenMagicSelectAffixCmd = {
+    id = 110188,
+    req = "Cmd.GeffenMagicSelectAffixCmd",
+    ack = "Cmd.GeffenMagicSelectAffixCmd",
+    from = "FuBenCmd"
+  },
+  GeffenMagicStatUpdateCmd = {
+    id = 110189,
+    req = "Cmd.GeffenMagicStatUpdateCmd",
+    ack = "Cmd.GeffenMagicStatUpdateCmd",
+    from = "FuBenCmd"
+  },
+  GeffenMagicWinCmd = {
+    id = 110190,
+    req = "Cmd.GeffenMagicWinCmd",
+    ack = "Cmd.GeffenMagicWinCmd",
+    from = "FuBenCmd"
+  },
+  GeffenMagicEnemyInfoQueryCmd = {
+    id = 110191,
+    req = "Cmd.GeffenMagicEnemyInfoQueryCmd",
+    ack = "Cmd.GeffenMagicEnemyInfoQueryCmd",
+    from = "FuBenCmd"
+  },
   QueryGuildListGuildCmd = {
     id = 500001,
     req = "Cmd.QueryGuildListGuildCmd",
@@ -3138,6 +3169,12 @@ ProtoReqInfoList = {
     ack = "Cmd.FurnitureOperHomeCmd",
     from = "HomeCmd"
   },
+  SnowFurnitureOperHomeCmd = {
+    id = 700026,
+    req = "Cmd.SnowFurnitureOperHomeCmd",
+    ack = "Cmd.SnowFurnitureOperHomeCmd",
+    from = "HomeCmd"
+  },
   FurnitureUpdateHomeCmd = {
     id = 700004,
     req = "Cmd.FurnitureUpdateHomeCmd",
@@ -3238,6 +3275,48 @@ ProtoReqInfoList = {
     id = 700020,
     req = "Cmd.QueryWoodRankHomeCmd",
     ack = "Cmd.QueryWoodRankHomeCmd",
+    from = "HomeCmd"
+  },
+  QuerySnowHouseDataHomeCmd = {
+    id = 700022,
+    req = "Cmd.QuerySnowHouseDataHomeCmd",
+    ack = "Cmd.QuerySnowHouseDataHomeCmd",
+    from = "HomeCmd"
+  },
+  SnowHouseDataUpdateHomeCmd = {
+    id = 700023,
+    req = "Cmd.SnowHouseDataUpdateHomeCmd",
+    ack = "Cmd.SnowHouseDataUpdateHomeCmd",
+    from = "HomeCmd"
+  },
+  SnowFurnitureUpdateHomeCmd = {
+    id = 700024,
+    req = "Cmd.SnowFurnitureUpdateHomeCmd",
+    ack = "Cmd.SnowFurnitureUpdateHomeCmd",
+    from = "HomeCmd"
+  },
+  SnowFurnitureDataUpdateHomeCmd = {
+    id = 700025,
+    req = "Cmd.SnowFurnitureDataUpdateHomeCmd",
+    ack = "Cmd.SnowFurnitureDataUpdateHomeCmd",
+    from = "HomeCmd"
+  },
+  QueryRecommendHomeCmd = {
+    id = 700027,
+    req = "Cmd.QueryRecommendHomeCmd",
+    ack = "Cmd.QueryRecommendHomeCmd",
+    from = "HomeCmd"
+  },
+  ReqHomeCheckHomeCmd = {
+    id = 700028,
+    req = "Cmd.ReqHomeCheckHomeCmd",
+    ack = "Cmd.ReqHomeCheckHomeCmd",
+    from = "HomeCmd"
+  },
+  NpcFurnitureOperHomeCmd = {
+    id = 700029,
+    req = "Cmd.NpcFurnitureOperHomeCmd",
+    ack = "Cmd.NpcFurnitureOperHomeCmd",
     from = "HomeCmd"
   },
   TeamTowerInfoCmd = {
@@ -6852,6 +6931,12 @@ ProtoReqInfoList = {
     ack = "Cmd.PickupItem",
     from = "SceneMap"
   },
+  RefineLvSyncMapCmd = {
+    id = 120042,
+    req = "Cmd.RefineLvSyncMapCmd",
+    ack = "Cmd.RefineLvSyncMapCmd",
+    from = "SceneMap"
+  },
   SyncGemSecretLandNineData = {
     id = 120034,
     req = "Cmd.SyncGemSecretLandNineData",
@@ -7072,6 +7157,18 @@ ProtoReqInfoList = {
     id = 120039,
     req = "Cmd.ExtraRewardUpdateMapCmd",
     ack = "Cmd.ExtraRewardUpdateMapCmd",
+    from = "SceneMap"
+  },
+  SnowRealmSnowmanAreaChangeCmd = {
+    id = 120040,
+    req = "Cmd.SnowRealmSnowmanAreaChangeCmd",
+    ack = "Cmd.SnowRealmSnowmanAreaChangeCmd",
+    from = "SceneMap"
+  },
+  SnowRealmSnowmanProgressCmd = {
+    id = 120041,
+    req = "Cmd.SnowRealmSnowmanProgressCmd",
+    ack = "Cmd.SnowRealmSnowmanProgressCmd",
     from = "SceneMap"
   },
   PetList = {
@@ -7672,6 +7769,18 @@ ProtoReqInfoList = {
     id = 80055,
     req = "Cmd.UpdateAbyssHelpCountQuestCmd",
     ack = "Cmd.UpdateAbyssHelpCountQuestCmd",
+    from = "SceneQuest"
+  },
+  QuerySnowRealmQuestListCmd = {
+    id = 80056,
+    req = "Cmd.QuerySnowRealmQuestListCmd",
+    ack = "Cmd.QuerySnowRealmQuestListCmd",
+    from = "SceneQuest"
+  },
+  UpdateSnowRealmDailyQuestHelpCountCmd = {
+    id = 80057,
+    req = "Cmd.UpdateSnowRealmDailyQuestHelpCountCmd",
+    ack = "Cmd.UpdateSnowRealmDailyQuestHelpCountCmd",
     from = "SceneQuest"
   },
   SealItem = {
@@ -9918,6 +10027,42 @@ ProtoReqInfoList = {
     ack = "Cmd.FairyTaleRankQueryCmd",
     from = "SceneUser3"
   },
+  AboardUserHandcartCmd = {
+    id = 820056,
+    req = "Cmd.AboardUserHandcartCmd",
+    ack = "Cmd.AboardUserHandcartCmd",
+    from = "SceneUser3"
+  },
+  LeaveUserHandcartCmd = {
+    id = 820060,
+    req = "Cmd.LeaveUserHandcartCmd",
+    ack = "Cmd.LeaveUserHandcartCmd",
+    from = "SceneUser3"
+  },
+  GeffenMagicRankQueryCmd = {
+    id = 820057,
+    req = "Cmd.GeffenMagicRankQueryCmd",
+    ack = "Cmd.GeffenMagicRankQueryCmd",
+    from = "SceneUser3"
+  },
+  GeffenMagicWaveScoreQueryCmd = {
+    id = 820058,
+    req = "Cmd.GeffenMagicWaveScoreQueryCmd",
+    ack = "Cmd.GeffenMagicWaveScoreQueryCmd",
+    from = "SceneUser3"
+  },
+  GeffenMagicGetRewardUserCmd = {
+    id = 820059,
+    req = "Cmd.GeffenMagicGetRewardUserCmd",
+    ack = "Cmd.GeffenMagicGetRewardUserCmd",
+    from = "SceneUser3"
+  },
+  UserHoldingNpcCmd = {
+    id = 820061,
+    req = "Cmd.UserHoldingNpcCmd",
+    ack = "Cmd.UserHoldingNpcCmd",
+    from = "SceneUser3"
+  },
   QueryAllMail = {
     id = 550001,
     req = "Cmd.QueryAllMail",
@@ -10499,6 +10644,78 @@ ProtoReqInfoList = {
     req = "Cmd.SkyChange",
     ack = "Cmd.SkyChange",
     from = "SessionWeather"
+  },
+  SnowHeadQuerySnowCmd = {
+    id = 850001,
+    req = "Cmd.SnowHeadQuerySnowCmd",
+    ack = "Cmd.SnowHeadQuerySnowCmd",
+    from = "SnowCmd"
+  },
+  SnowHeadLvupSnowCmd = {
+    id = 850002,
+    req = "Cmd.SnowHeadLvupSnowCmd",
+    ack = "Cmd.SnowHeadLvupSnowCmd",
+    from = "SnowCmd"
+  },
+  SnowHeadActiveSnowCmd = {
+    id = 850003,
+    req = "Cmd.SnowHeadActiveSnowCmd",
+    ack = "Cmd.SnowHeadActiveSnowCmd",
+    from = "SnowCmd"
+  },
+  SnowHeadModeChangeSnowCmd = {
+    id = 850004,
+    req = "Cmd.SnowHeadModeChangeSnowCmd",
+    ack = "Cmd.SnowHeadModeChangeSnowCmd",
+    from = "SnowCmd"
+  },
+  SnowHeadFashionSelectSnowCmd = {
+    id = 850005,
+    req = "Cmd.SnowHeadFashionSelectSnowCmd",
+    ack = "Cmd.SnowHeadFashionSelectSnowCmd",
+    from = "SnowCmd"
+  },
+  SnowCrownActiveSnowCmd = {
+    id = 850006,
+    req = "Cmd.SnowCrownActiveSnowCmd",
+    ack = "Cmd.SnowCrownActiveSnowCmd",
+    from = "SnowCmd"
+  },
+  QuerySnowManualSnowCmd = {
+    id = 850007,
+    req = "Cmd.QuerySnowManualSnowCmd",
+    ack = "Cmd.QuerySnowManualSnowCmd",
+    from = "SnowCmd"
+  },
+  SnowManualUpdateSnowCmd = {
+    id = 850008,
+    req = "Cmd.SnowManualUpdateSnowCmd",
+    ack = "Cmd.SnowManualUpdateSnowCmd",
+    from = "SnowCmd"
+  },
+  SnowManualEquipUpdateSnowCmd = {
+    id = 850009,
+    req = "Cmd.SnowManualEquipUpdateSnowCmd",
+    ack = "Cmd.SnowManualEquipUpdateSnowCmd",
+    from = "SnowCmd"
+  },
+  SnowManualStoneUpdateSnowCmd = {
+    id = 850010,
+    req = "Cmd.SnowManualStoneUpdateSnowCmd",
+    ack = "Cmd.SnowManualStoneUpdateSnowCmd",
+    from = "SnowCmd"
+  },
+  OperSnowEquipSnowCmd = {
+    id = 850011,
+    req = "Cmd.OperSnowEquipSnowCmd",
+    ack = "Cmd.OperSnowEquipSnowCmd",
+    from = "SnowCmd"
+  },
+  OperSnowStoneSnowCmd = {
+    id = 850012,
+    req = "Cmd.OperSnowStoneSnowCmd",
+    ack = "Cmd.OperSnowStoneSnowCmd",
+    from = "SnowCmd"
   },
   InviteGroupJoinRaidTeamCmd = {
     id = 690001,
@@ -11883,6 +12100,11 @@ ProtoReqInfoList[110184] = ProtoReqInfoList.SyncMemoryEquipRewardInfo
 ProtoReqInfoList[110185] = ProtoReqInfoList.ChooseMemoryEquipRewardInfo
 ProtoReqInfoList[110181] = ProtoReqInfoList.GvgDateBattleInfoSyncCmd
 ProtoReqInfoList[110186] = ProtoReqInfoList.GvgInviteTransferToMeCmd
+ProtoReqInfoList[110187] = ProtoReqInfoList.GeffenMagicInfoSyncCmd
+ProtoReqInfoList[110188] = ProtoReqInfoList.GeffenMagicSelectAffixCmd
+ProtoReqInfoList[110189] = ProtoReqInfoList.GeffenMagicStatUpdateCmd
+ProtoReqInfoList[110190] = ProtoReqInfoList.GeffenMagicWinCmd
+ProtoReqInfoList[110191] = ProtoReqInfoList.GeffenMagicEnemyInfoQueryCmd
 ProtoReqInfoList[500001] = ProtoReqInfoList.QueryGuildListGuildCmd
 ProtoReqInfoList[500002] = ProtoReqInfoList.CreateGuildGuildCmd
 ProtoReqInfoList[500003] = ProtoReqInfoList.EnterGuildGuildCmd
@@ -11996,6 +12218,7 @@ ProtoReqInfoList[1] = ProtoReqInfoList.HouseOpt
 ProtoReqInfoList[700001] = ProtoReqInfoList.QueryFurnitureDataHomeCmd
 ProtoReqInfoList[700002] = ProtoReqInfoList.FurnitureActionHomeCmd
 ProtoReqInfoList[700003] = ProtoReqInfoList.FurnitureOperHomeCmd
+ProtoReqInfoList[700026] = ProtoReqInfoList.SnowFurnitureOperHomeCmd
 ProtoReqInfoList[700004] = ProtoReqInfoList.FurnitureUpdateHomeCmd
 ProtoReqInfoList[700005] = ProtoReqInfoList.FurnitureDataUpdateHomeCmd
 ProtoReqInfoList[700006] = ProtoReqInfoList.HouseActionHomeCmd
@@ -12013,6 +12236,13 @@ ProtoReqInfoList[700017] = ProtoReqInfoList.BoardItemUpdateHomeCmd
 ProtoReqInfoList[700018] = ProtoReqInfoList.BoardMsgUpdateHomeCmd
 ProtoReqInfoList[700019] = ProtoReqInfoList.EventItemQueryHomeCmd
 ProtoReqInfoList[700020] = ProtoReqInfoList.QueryWoodRankHomeCmd
+ProtoReqInfoList[700022] = ProtoReqInfoList.QuerySnowHouseDataHomeCmd
+ProtoReqInfoList[700023] = ProtoReqInfoList.SnowHouseDataUpdateHomeCmd
+ProtoReqInfoList[700024] = ProtoReqInfoList.SnowFurnitureUpdateHomeCmd
+ProtoReqInfoList[700025] = ProtoReqInfoList.SnowFurnitureDataUpdateHomeCmd
+ProtoReqInfoList[700027] = ProtoReqInfoList.QueryRecommendHomeCmd
+ProtoReqInfoList[700028] = ProtoReqInfoList.ReqHomeCheckHomeCmd
+ProtoReqInfoList[700029] = ProtoReqInfoList.NpcFurnitureOperHomeCmd
 ProtoReqInfoList[200001] = ProtoReqInfoList.TeamTowerInfoCmd
 ProtoReqInfoList[200002] = ProtoReqInfoList.TeamTowerSummaryCmd
 ProtoReqInfoList[200003] = ProtoReqInfoList.TeamTowerInviteCmd
@@ -12615,6 +12845,7 @@ ProtoReqInfoList[230018] = ProtoReqInfoList.UnlockQuickManualCmd
 ProtoReqInfoList[230019] = ProtoReqInfoList.GetQuestRewardQuickManualCmd
 ProtoReqInfoList[120001] = ProtoReqInfoList.AddMapItem
 ProtoReqInfoList[120002] = ProtoReqInfoList.PickupItem
+ProtoReqInfoList[120042] = ProtoReqInfoList.RefineLvSyncMapCmd
 ProtoReqInfoList[120034] = ProtoReqInfoList.SyncGemSecretLandNineData
 ProtoReqInfoList[120003] = ProtoReqInfoList.AddMapUser
 ProtoReqInfoList[120004] = ProtoReqInfoList.AddMapNpc
@@ -12652,6 +12883,8 @@ ProtoReqInfoList[120036] = ProtoReqInfoList.SkillWeatherSyncCmd
 ProtoReqInfoList[120037] = ProtoReqInfoList.AbyssAreaChangeNotifyCmd
 ProtoReqInfoList[120038] = ProtoReqInfoList.AbyssBossUpdateCmd
 ProtoReqInfoList[120039] = ProtoReqInfoList.ExtraRewardUpdateMapCmd
+ProtoReqInfoList[120040] = ProtoReqInfoList.SnowRealmSnowmanAreaChangeCmd
+ProtoReqInfoList[120041] = ProtoReqInfoList.SnowRealmSnowmanProgressCmd
 ProtoReqInfoList[99999] = ProtoReqInfoList.PetList
 ProtoReqInfoList[100002] = ProtoReqInfoList.FireCatPetCmd
 ProtoReqInfoList[100003] = ProtoReqInfoList.HireCatPetCmd
@@ -12752,6 +12985,8 @@ ProtoReqInfoList[80052] = ProtoReqInfoList.UpdateOnceRewardQuestCmd
 ProtoReqInfoList[80053] = ProtoReqInfoList.SyncTreasureBoxNumCmd
 ProtoReqInfoList[80054] = ProtoReqInfoList.QueryAbyssQuestListQuestCmd
 ProtoReqInfoList[80055] = ProtoReqInfoList.UpdateAbyssHelpCountQuestCmd
+ProtoReqInfoList[80056] = ProtoReqInfoList.QuerySnowRealmQuestListCmd
+ProtoReqInfoList[80057] = ProtoReqInfoList.UpdateSnowRealmDailyQuestHelpCountCmd
 ProtoReqInfoList[1] = ProtoReqInfoList.SealItem
 ProtoReqInfoList[210001] = ProtoReqInfoList.QuerySeal
 ProtoReqInfoList[210002] = ProtoReqInfoList.UpdateSeal
@@ -13126,6 +13361,12 @@ ProtoReqInfoList[820052] = ProtoReqInfoList.BattleTimeOffUserCmd
 ProtoReqInfoList[820053] = ProtoReqInfoList.PlayTimeOffUserCmd
 ProtoReqInfoList[820054] = ProtoReqInfoList.WareHouseOperationCmd
 ProtoReqInfoList[820055] = ProtoReqInfoList.FairyTaleRankQueryCmd
+ProtoReqInfoList[820056] = ProtoReqInfoList.AboardUserHandcartCmd
+ProtoReqInfoList[820060] = ProtoReqInfoList.LeaveUserHandcartCmd
+ProtoReqInfoList[820057] = ProtoReqInfoList.GeffenMagicRankQueryCmd
+ProtoReqInfoList[820058] = ProtoReqInfoList.GeffenMagicWaveScoreQueryCmd
+ProtoReqInfoList[820059] = ProtoReqInfoList.GeffenMagicGetRewardUserCmd
+ProtoReqInfoList[820061] = ProtoReqInfoList.UserHoldingNpcCmd
 ProtoReqInfoList[550001] = ProtoReqInfoList.QueryAllMail
 ProtoReqInfoList[550002] = ProtoReqInfoList.MailUpdate
 ProtoReqInfoList[550003] = ProtoReqInfoList.GetMailAttach
@@ -13223,6 +13464,18 @@ ProtoReqInfoList[510052] = ProtoReqInfoList.PublishReqHelpTeamCmd
 ProtoReqInfoList[510053] = ProtoReqInfoList.AskForTeamInfoTeamCmd
 ProtoReqInfoList[530001] = ProtoReqInfoList.WeatherChange
 ProtoReqInfoList[530002] = ProtoReqInfoList.SkyChange
+ProtoReqInfoList[850001] = ProtoReqInfoList.SnowHeadQuerySnowCmd
+ProtoReqInfoList[850002] = ProtoReqInfoList.SnowHeadLvupSnowCmd
+ProtoReqInfoList[850003] = ProtoReqInfoList.SnowHeadActiveSnowCmd
+ProtoReqInfoList[850004] = ProtoReqInfoList.SnowHeadModeChangeSnowCmd
+ProtoReqInfoList[850005] = ProtoReqInfoList.SnowHeadFashionSelectSnowCmd
+ProtoReqInfoList[850006] = ProtoReqInfoList.SnowCrownActiveSnowCmd
+ProtoReqInfoList[850007] = ProtoReqInfoList.QuerySnowManualSnowCmd
+ProtoReqInfoList[850008] = ProtoReqInfoList.SnowManualUpdateSnowCmd
+ProtoReqInfoList[850009] = ProtoReqInfoList.SnowManualEquipUpdateSnowCmd
+ProtoReqInfoList[850010] = ProtoReqInfoList.SnowManualStoneUpdateSnowCmd
+ProtoReqInfoList[850011] = ProtoReqInfoList.OperSnowEquipSnowCmd
+ProtoReqInfoList[850012] = ProtoReqInfoList.OperSnowStoneSnowCmd
 ProtoReqInfoList[690001] = ProtoReqInfoList.InviteGroupJoinRaidTeamCmd
 ProtoReqInfoList[690002] = ProtoReqInfoList.ReplyGroupJoinRaidTeamCmd
 ProtoReqInfoList[690003] = ProtoReqInfoList.OpenGroupRaidTeamCmd

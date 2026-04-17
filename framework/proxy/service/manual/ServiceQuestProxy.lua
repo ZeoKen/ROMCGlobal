@@ -205,3 +205,13 @@ function ServiceQuestProxy:RecvUpdateAbyssHelpCountQuestCmd(data)
   AbyssQuestProxy.Instance:UpdateAbyssHelpCount(data)
   self:Notify(ServiceEvent.QuestUpdateAbyssHelpCountQuestCmd, data)
 end
+
+function ServiceQuestProxy:RecvQuerySnowRealmQuestListCmd(data)
+  SnowRealmQuestProxy.Instance:QuerySnowRealmQuestList(data)
+  self:Notify(ServiceEvent.QuestQuerySnowRealmQuestListCmd, data)
+end
+
+function ServiceQuestProxy:RecvUpdateSnowRealmDailyQuestHelpCountCmd(data)
+  SnowRealmQuestProxy.Instance:UpdateSnowRealmHelpCount(data)
+  self:Notify(ServiceEvent.QuestUpdateSnowRealmDailyQuestHelpCountCmd, data)
+end

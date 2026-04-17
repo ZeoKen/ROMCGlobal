@@ -51,8 +51,16 @@ end
 local headwearTargetInPredicate = function(equip)
   return lotteryHeadIdPredicate(equip.staticData.id) and equip:HasEnchant()
 end
+local CheckSnowEquipMatch = function(equip1, equip2)
+  if not equip1 or not equip2 then
+    return true
+  end
+  local isSnow1 = equip1.equipInfo and equip1.equipInfo:IsSnowEquip()
+  local isSnow2 = equip2.equipInfo and equip2.equipInfo:IsSnowEquip()
+  return isSnow1 and isSnow2 or not isSnow1 and not isSnow2
+end
 local nextGenTargetOutPredicate = function(equip, compareTarget)
-  return not equip:CanTrade() and equip.equipInfo:IsNextGen() and equip.equipInfo:CanEnchant() and EnchantTransferView.CheckIsSameType(equip, compareTarget) and equip.id ~= compareTarget.id
+  return not equip:CanTrade() and equip.equipInfo:IsNextGen() and equip.equipInfo:CanEnchant() and EnchantTransferView.CheckIsSameType(equip, compareTarget) and CheckSnowEquipMatch(equip, compareTarget) and equip.id ~= compareTarget.id
 end
 local headwearTargetOutPredicate = function(equip, compareTarget)
   return lotteryHeadIdPredicate(equip.staticData.id) and equip.equipInfo:CanEnchant() and compareTarget.staticData.Type == equip.staticData.Type and equip.id ~= compareTarget.id

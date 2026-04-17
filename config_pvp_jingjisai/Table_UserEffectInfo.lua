@@ -302,6 +302,16 @@ Table_UserEffectInfo = {
     VideoPath = "6V6S3_Kill03.mp4",
     SoundEffectPath = "UI/UI_6V6_Defeat",
     Item = 709
+  },
+  [43] = {
+    id = 43,
+    Type = 2,
+    EffectPath = {
+      "Common/sfx_kill_lightsaber_prf"
+    },
+    VideoPath = "jibai_lightsaber.mp4",
+    SoundEffectPath = "Common/sfx_3v3v3_award_defeat_firework",
+    Item = 3014127
   }
 }
 Table_UserEffectInfo_fields = {

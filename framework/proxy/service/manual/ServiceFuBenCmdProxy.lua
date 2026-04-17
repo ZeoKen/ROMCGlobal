@@ -705,6 +705,11 @@ function ServiceFuBenCmdProxy:RecvSyncTripleFightingInfoFuBenCmd(data)
   self:Notify(ServiceEvent.FuBenCmdSyncTripleFightingInfoFuBenCmd, data)
 end
 
+function ServiceFuBenCmdProxy:RecvGeffenMagicEnemyInfoQueryCmd(data)
+  GeffenMagicWaveScoreProxy.Instance:HandleEnemyInfos(data)
+  self:Notify(ServiceEvent.FuBenCmdGeffenMagicEnemyInfoQueryCmd, data)
+end
+
 function ServiceFuBenCmdProxy:RecvAstralInfoSyncCmd(data)
   AstralProxy.Instance:SyncAstralRoundInfo(data)
   self:Notify(ServiceEvent.FuBenCmdAstralInfoSyncCmd, data)
@@ -755,4 +760,22 @@ function ServiceFuBenCmdProxy:RecvSyncMemoryEquipRewardInfo(data)
     viewdata = data
   })
   self:Notify(ServiceEvent.FuBenCmdSyncMemoryEquipRewardInfo, data)
+end
+
+function ServiceFuBenCmdProxy:RecvGeffenMagicInfoSyncCmd(data)
+  redlog("ServiceFuBenCmdProxy:RecvGeffenMagicInfoSyncCmd")
+  AsyncPvpRaidProxy.Instance:SyncGeffenMagicAffixInfo(data)
+  self:Notify(ServiceEvent.FuBenCmdGeffenMagicInfoSyncCmd, data)
+end
+
+function ServiceFuBenCmdProxy:RecvGeffenMagicStatUpdateCmd(data)
+  redlog("ServiceFuBenCmdProxy:RecvGeffenMagicStatUpdateCmd")
+  AsyncPvpRaidProxy.Instance:UpdateGeffenMagicStat(data.stat_data)
+  self:Notify(ServiceEvent.FuBenCmdGeffenMagicStatUpdateCmd, data)
+end
+
+function ServiceFuBenCmdProxy:RecvGeffenMagicWinCmd(data)
+  redlog("ServiceFuBenCmdProxy:RecvGeffenMagicWinCmd")
+  AsyncPvpRaidProxy.Instance:SyncGeffenMagicResultInfo(data)
+  self:Notify(ServiceEvent.FuBenCmdGeffenMagicWinCmd, data)
 end

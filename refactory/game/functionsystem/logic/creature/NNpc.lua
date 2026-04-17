@@ -73,6 +73,9 @@ function NNpc:RegisterInteractNpc()
           return
         elseif interactConfig.Type == InteractNpc.InteractType.LocalHug then
           return
+        elseif interactConfig.Type == InteractNpc.InteractType.Handcart then
+          Game.InteractNpcManager:RegisterInteractHandcart(self.data.staticData.id, self.data.id)
+          return
         end
       end
       Game.InteractNpcManager:RegisterInteractNpc(self.data.staticData.id, self.data.id)
@@ -89,6 +92,11 @@ function NNpc:UnregisterInteractNpc()
     self.data.isInteractLocalServer = nil
     self.data.interactLocalServerNpcKey = nil
   else
+    local interactConfig = Table_InteractNpc[self.data.staticData.id]
+    if interactConfig and interactConfig.Type == InteractNpc.InteractType.Handcart then
+      Game.InteractNpcManager:UnregisterInteractHandcart(self.data.id)
+      return
+    end
     Game.InteractNpcManager:UnregisterInteractNpc(self.data.id)
   end
 end
@@ -442,6 +450,7 @@ function NNpc:Init(serverData, reinit)
     local to = self.data.userdata:Get(UDEnum.ALPHA) or 1
     self.assetRole:AlphaFromTo(0, to, serverData.fadein / 1000)
   end
+  self:InitNpcEffect(serverData)
   self.data.isInteractLocal = serverData.isInteractLocal
   self:RegisterInteractNpc()
   local mounts = serverData.mounts
@@ -875,6 +884,7 @@ function NNpc:DoDeconstruct(asArray)
   self:UnregisterInteractNpc()
   self:UnregisterInsightNpc()
   self:TryUnbindPhotoStandInfo()
+  self:ClearNpcEffect()
   FunctionAbyssLake.Me():TrySetSummonProgress(self.data.uniqueid, self)
   HomeManager.Me():RemoveRelativeCreature(self.data:GetRelativeFurnitureID())
   if self.data:GetPushableObjID() then
@@ -905,4 +915,17 @@ function NNpc:DoDeconstruct(asArray)
   end
   self.pvpStatueInfo = nil
   self:ClearRoadBlock()
+end
+
+function NNpc:DoStartNpcRotation(startTime, turnAngle, duration)
+  local oriAngleY = self:GetSpinStartAngleY()
+  self:Client_SetDirCmd(AI_CMD_SetAngleY.Mode.SetAngleYSlowly, oriAngleY, false, {
+    [1] = oriAngleY,
+    [2] = startTime,
+    [3] = turnAngle,
+    [4] = duration
+  })
+end
+
+function NNpc:DoStopNpcRotation()
 end

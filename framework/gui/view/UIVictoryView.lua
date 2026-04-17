@@ -120,6 +120,8 @@ function UIVictoryView:RefreshTexture(teamData)
       parts[partIndexEx.HairColorIndex] = userdata:Get(UDEnum.HAIRCOLOR) or 0
       parts[partIndexEx.EyeColorIndex] = userdata:Get(UDEnum.EYECOLOR) or 0
       parts[partIndexEx.BodyColorIndex] = userdata:Get(UDEnum.CLOTHCOLOR) or 0
+      local headFashion = userdata:GetBytes(UDEnum.HEAD_FASHION)
+      Asset_Role.ProcessHeadFashionForParts(parts, parts[partIndex.Head], headFashion)
     else
       parts[partIndex.Body] = teamData[i].body or 0
       parts[partIndex.Hair] = teamData[i].hair or 0
@@ -135,6 +137,7 @@ function UIVictoryView:RefreshTexture(teamData)
       parts[partIndexEx.Gender] = teamData[i].gender or 0
       parts[partIndexEx.HairColorIndex] = teamData[i].haircolor or 0
       parts[partIndexEx.BodyColorIndex] = teamData[i].bodycolor or 0
+      Asset_Role.ProcessHeadFashionForParts(parts, teamData[i].head, teamData[i].head_fashion)
     end
     local config = self.config[i]
     pos = LuaGeometry.GetTempVector3(config.position[1], config.position[2], config.position[3])

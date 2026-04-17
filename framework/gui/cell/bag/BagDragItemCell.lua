@@ -49,6 +49,8 @@ function BagDragItemCell:SetData(data)
       self:AddOrRemoveGuideId(self.gameObject, 537)
     elseif data.staticData.id == 42692 then
       self:AddOrRemoveGuideId(self.gameObject, 540)
+    elseif data.staticData.id == 45563 then
+      self:AddOrRemoveGuideId(self.gameObject, 563)
     end
   end
 end

@@ -27,6 +27,7 @@ function PlayerTipData:SetByCreature(creature)
   self.headData:TransByLPlayer(creature)
   self.zoneid = creature.data.userdata:Get(UDEnum.ZONEID) or MyselfProxy.Instance:GetZoneId()
   self.homeid = creature.data.userdata:Get(UDEnum.HOME_ROOMID)
+  self.snow_room_id = creature.data.userdata:Get(UDEnum.SNOW_ROOMID)
   self.accid = creature.data.accid
   self.serverid = creature.serverid
   local mercenaryGuildData = creature.data.GetMercenaryGuildData and creature.data:GetMercenaryGuildData()
@@ -47,6 +48,7 @@ function PlayerTipData:SetByFriendData(frienddata)
   self.accid = frienddata.accid
   self.guildid = frienddata.guildid
   self.mercenary_guildid = frienddata.mercenary_guildid
+  self.snow_room_id = frienddata.snow_room_id
 end
 
 function PlayerTipData:SetByWarband(bandMemberData)
@@ -95,6 +97,7 @@ function PlayerTipData:SetByTeamMemberData(teamMemberData)
   self.accid = teamMemberData.accid
   self.serverid = teamMemberData.serverid
   self.mercenary_guildid = teamMemberData.mercenary_guildid
+  self.snow_room_id = teamMemberData.snowroomid
 end
 
 function PlayerTipData:SetByChatMessageData(chatMessageData)
@@ -110,6 +113,7 @@ function PlayerTipData:SetByChatMessageData(chatMessageData)
   self.zoneid = chatMessageData:GetZoneId()
   self.serverid = chatMessageData:GetServerId()
   self.homeid = chatMessageData:GetHomeId()
+  self.snow_room_id = chatMessageData:GetSnowRoomId()
   self.accid = chatMessageData:GetAccId()
   self.portrait_frame = chatMessageData:GetPortraitFrame()
   self.headData = HeadImageData.new()
@@ -150,6 +154,7 @@ function PlayerTipData:SetByGuildMemberData(guildMember)
   self.homeid = guildMember.roomid
   self.accid = guildMember.accid
   self.mercenary_guildid = guildMember.mercenary_guild_id
+  self.snow_room_id = guildMember.snowroomid
 end
 
 function PlayerTipData:SetByGuildApplyData(applyData)
@@ -226,6 +231,7 @@ function PlayerTipData:SetBySocialData(socialData)
   self.accid = socialData.accid
   self.guildid = socialData.guildid
   self.mercenary_guildid = socialData.mercenary_guildid
+  self.snow_room_id = socialData.snow_room_id
 end
 
 function PlayerTipData:SetByMatcherData(matcherdata)
@@ -351,4 +357,26 @@ function PlayerTipData:SetByFairyTaleRankData(data)
   self.name = data.name
   self.headData = clone(data.headData)
   self.guildname = data.guildName
+end
+
+function PlayerTipData:SetByPlayerData(data)
+  if not data then
+    return
+  end
+  self.id = data.id
+  self.level = data:GetBaseLv()
+  self.name = data:GetName()
+  local guildData = data.GetGuildData and data:GetGuildData()
+  if guildData then
+    self.guildid = guildData.id
+    self.guildname = guildData.name
+  end
+  self.headData = HeadImageData.new()
+  self.headData:TransByPlayerData(data)
+  self.zoneid = data.userdata and data.userdata:Get(UDEnum.ZONEID) or MyselfProxy.Instance:GetZoneId()
+  self.homeid = data.userdata and data.userdata:Get(UDEnum.HOME_ROOMID)
+  self.accid = data.accid
+  self.serverid = data.serverid
+  local mercenaryGuildData = data.GetMercenaryGuildData and data:GetMercenaryGuildData()
+  self.mercenary_guildid = mercenaryGuildData and mercenaryGuildData.id or 0
 end

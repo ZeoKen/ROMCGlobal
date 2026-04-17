@@ -1666,6 +1666,45 @@ Table_DeathTransferMap = {
       -112.6
     },
     CdBuff = 159814
+  },
+  [140] = {
+    id = 140,
+    NpcID = 842588,
+    MapID = 155,
+    MapGroup = 23,
+    NpcType = 1,
+    Position = {
+      -47.65,
+      2.82,
+      -390.61
+    },
+    CdBuff = 159814
+  },
+  [141] = {
+    id = 141,
+    NpcID = 842590,
+    MapID = 155,
+    MapGroup = 23,
+    NpcType = 1,
+    Position = {
+      130.52,
+      3.37,
+      -298.58
+    },
+    CdBuff = 159814
+  },
+  [142] = {
+    id = 142,
+    NpcID = 842592,
+    MapID = 155,
+    MapGroup = 23,
+    NpcType = 1,
+    Position = {
+      350.34,
+      9.03,
+      -90.64
+    },
+    CdBuff = 159814
   }
 }
 Table_DeathTransferMap_fields = {

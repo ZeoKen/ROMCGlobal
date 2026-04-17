@@ -139,6 +139,7 @@ function MyselfData:GetDressParts()
     end
     parts[PartIndex.Mount] = userData:Get(UDEnum.MOUNT) or 0
     self:SetMountFashionParts(parts, userData)
+    self:SetHeadFashionParts(parts, userData)
     self:SpecialProcessPart_Sheath(parts)
   else
     for i = 1, 12 do
@@ -150,6 +151,19 @@ end
 
 function MyselfData:GetLernedSkillLevel(skillID)
   return SkillProxy.Instance:GetLearnedSkillLevelBySortID(skillID)
+end
+
+function MyselfData:GetBlendBeingNpcID()
+  local beingList = PetProxy.Instance:GetMySummonBeingList()
+  if beingList then
+    for i, v in pairs(beingList) do
+      local beingData = PetProxy.Instance:GetMyBeingNpcInfo(v)
+      if beingData and beingData:IsSummoned() and beingData:GetSummonType() == 2 then
+        return beingData.guid
+      end
+    end
+  end
+  return nil
 end
 
 function MyselfData:GetArrowID()
@@ -188,6 +202,16 @@ function MyselfData:GetEquipedRefineLv(site)
     self:CacheEquipedRefineLv(site, ret)
     return ret
   end
+end
+
+function MyselfData:GetSnowStoreRefineLv(site)
+  if SnowCrownProxy and SnowCrownProxy.Instance then
+    local equipData = SnowCrownProxy.Instance:GetSlotEquipData(site)
+    if equipData and equipData.equipInfo and equipData.equipInfo.refinelv then
+      return equipData.equipInfo.refinelv
+    end
+  end
+  return MyselfData.super.GetSnowStoreRefineLv(self, site)
 end
 
 function MyselfData:GetEquipedStrengthLv(site)

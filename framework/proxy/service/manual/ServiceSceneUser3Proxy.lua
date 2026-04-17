@@ -305,3 +305,21 @@ function ServiceSceneUser3Proxy:RecvFairyTaleRankQueryCmd(data)
   FairyTaleProxy.Instance:UpdateRankInfo(data)
   self:Notify(ServiceEvent.SceneUser3FairyTaleRankQueryCmd, data)
 end
+
+function ServiceSceneUser3Proxy:RecvGeffenMagicRankQueryCmd(data)
+  GeffenMagicWaveScoreProxy.Instance:HandleRankQuery(data)
+  self:Notify(ServiceEvent.SceneUser3GeffenMagicRankQueryCmd, data)
+end
+
+function ServiceSceneUser3Proxy:RecvGeffenMagicWaveScoreQueryCmd(data)
+  GeffenMagicWaveScoreProxy.Instance:HandleWaveScoreInfo(data)
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.PveGeffenMagicScorePopUp
+  })
+  self:Notify(ServiceEvent.SceneUser3GeffenMagicWaveScoreQueryCmd, data)
+end
+
+function ServiceSceneUser3Proxy:RecvGeffenMagicGetRewardUserCmd(data)
+  GeffenMagicWaveScoreProxy.Instance:HandleGetReward(data)
+  self:Notify(ServiceEvent.SceneUser3GeffenMagicGetRewardUserCmd, data)
+end

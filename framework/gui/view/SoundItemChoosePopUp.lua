@@ -94,7 +94,7 @@ function SoundItemChoosePopUp:GetRemainingMusicCountOfList()
   if self.npc then
     list = ServiceNUserProxy.Instance.musicList
   elseif self.furniture then
-    list = HomeProxy.Instance.curSoundList
+    list = HomeProxy.Instance:GetCurSoundList()
   end
   return GameConfig.Music.max_music_count - (list and #list or 0)
 end

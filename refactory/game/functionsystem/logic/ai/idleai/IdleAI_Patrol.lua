@@ -1,4 +1,5 @@
 autoImport("HomeManager")
+autoImport("SnowRealmManager")
 IdleAI_Patrol = class("IdleAI_Patrol")
 IdleAI_Patrol.PatrolType = {
   Random = 1,
@@ -265,7 +266,15 @@ end
 function IdleAI_Patrol:OnPatrolStepStart_Random(patrolData, creature)
   patrolData.currentAnimTime = nil
   patrolData.isEnd = false
-  local targetPos = HomeManager.Me():GetRandomPosInCurrentHome()
+  local targetPos
+  if creature.houseIndex then
+    targetPos = SnowRealmManager.Me():GetRandomPosInCurrentHome(creature.houseIndex)
+  else
+    targetPos = HomeManager.Me():GetRandomPosInCurrentHome()
+  end
+  if not targetPos then
+    return
+  end
   self:_MoveTo(targetPos, creature)
   local p = creature.logicTransform.currentPosition
   LuaVector3.Better_Set(self.prePosition, p[1], p[2], p[3])
@@ -321,7 +330,11 @@ OnStop[IdleAI_Patrol.PatrolType.Random] = IdleAI_Patrol.OnStop_Random
 function IdleAI_Patrol:OnPatrolStepStart_Furniture(patrolData, creature)
   patrolData.currentAnimTime = nil
   patrolData.isEnd = false
-  self.furniture = HomeManager.Me():GetRandomFurnitureByFurnitureType(patrolData.toType)
+  if creature.houseIndex then
+    self.furniture = SnowRealmManager.Me():GetRandomFurnitureByFurnitureType(patrolData.toType, creature.houseIndex)
+  else
+    self.furniture = HomeManager.Me():GetRandomFurnitureByFurnitureType(patrolData.toType)
+  end
   if self.furniture == nil then
     patrolData.isEnd = true
     patrolData.currentTimes = patrolData.times

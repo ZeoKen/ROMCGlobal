@@ -59,7 +59,7 @@ end
 
 local tempExtraDirMoveArgs = {}
 
-function Logic_Transform:ExtraDirMove(dirAngleY, distance, speed, callback, callbackArg, dirPoint, ignoreTerrain)
+function Logic_Transform:ExtraDirMove(dirAngleY, distance, speed, callback, callbackArg, dirPoint, ignoreTerrain, allowMergeMove)
   tempExtraDirMoveArgs[1] = dirAngleY
   tempExtraDirMoveArgs[2] = distance
   tempExtraDirMoveArgs[3] = speed
@@ -67,6 +67,7 @@ function Logic_Transform:ExtraDirMove(dirAngleY, distance, speed, callback, call
   tempExtraDirMoveArgs[5] = callbackArg
   tempExtraDirMoveArgs[6] = dirPoint
   tempExtraDirMoveArgs[7] = ignoreTerrain
+  tempExtraDirMoveArgs[8] = allowMergeMove
   if self.extraLogics.DirMove then
     self.extraLogics.DirMove:Destroy()
   end
@@ -426,32 +427,31 @@ function Logic_Transform:IsLockRotation()
 end
 
 function Logic_Transform:Update(time, deltaTime)
-  if nil ~= self.targetPosition then
-    if self.useNavMesh then
-      if self.navMeshPathAgent.idle then
-        if not self:_CalcNavMeshPath() then
-          self:StopMove()
-        end
-      elseif self.navMeshPathAgent.complete or self.navMeshPathAgent.completePartial then
-        local deltaDistance = self:GetMoveSpeedWithFastForward() * deltaTime
-        LuaVector3.SelfMoveTowards(self.currentPosition, self.nextCorner, deltaDistance)
-        if VectorUtility.AlmostEqual_3(self.currentPosition, self.nextCorner) and not self:_MoveToNextCorner() then
-          VectorUtility.Asign_3(self.currentPosition, self.nextCorner)
-          self:StopMove()
-        end
-      elseif self.navMeshPathAgent.invalid then
+  if nil == self.targetPosition or self.extraLogics.DirMove and not self.extraLogics.DirMove.args[9] and self:GetMoveSpeedWithFastForward() < self.extraLogics.DirMove.args[3] then
+  elseif self.useNavMesh then
+    if self.navMeshPathAgent.idle then
+      if not self:_CalcNavMeshPath() then
         self:StopMove()
       end
-    else
+    elseif self.navMeshPathAgent.complete or self.navMeshPathAgent.completePartial then
       local deltaDistance = self:GetMoveSpeedWithFastForward() * deltaTime
-      if deltaDistance > Thread_CheckThroughWall and IsCloseToWall(self.currentPosition, Thread_CheckThroughWall) then
-        deltaDistance = 0.2
-      end
-      LuaVector3.SelfMoveTowards(self.currentPosition, self.targetPosition, deltaDistance)
-      if VectorUtility.AlmostEqual_3(self.currentPosition, self.targetPosition) then
-        VectorUtility.Asign_3(self.currentPosition, self.targetPosition)
+      LuaVector3.SelfMoveTowards(self.currentPosition, self.nextCorner, deltaDistance)
+      if VectorUtility.AlmostEqual_3(self.currentPosition, self.nextCorner) and not self:_MoveToNextCorner() then
+        VectorUtility.Asign_3(self.currentPosition, self.nextCorner)
         self:StopMove()
       end
+    elseif self.navMeshPathAgent.invalid then
+      self:StopMove()
+    end
+  else
+    local deltaDistance = self:GetMoveSpeedWithFastForward() * deltaTime
+    if deltaDistance > Thread_CheckThroughWall and IsCloseToWall(self.currentPosition, Thread_CheckThroughWall) then
+      deltaDistance = 0.2
+    end
+    LuaVector3.SelfMoveTowards(self.currentPosition, self.targetPosition, deltaDistance)
+    if VectorUtility.AlmostEqual_3(self.currentPosition, self.targetPosition) then
+      VectorUtility.Asign_3(self.currentPosition, self.targetPosition)
+      self:StopMove()
     end
   end
   if nil ~= self.targetAngleY then

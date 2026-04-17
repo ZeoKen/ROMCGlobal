@@ -478,6 +478,11 @@ Table_RedTip = {
     MenuID = 23,
     GroupID = 1
   },
+  [167] = {
+    id = 167,
+    MenuID = 23,
+    GroupID = 1
+  },
   [201] = {
     id = 201,
     MenuID = 34,
@@ -555,6 +560,11 @@ Table_RedTip = {
   },
   [216] = {
     id = 216,
+    MenuID = 34,
+    GroupID = 1
+  },
+  [217] = {
+    id = 217,
     MenuID = 34,
     GroupID = 1
   },
@@ -676,6 +686,11 @@ Table_RedTip = {
     MenuID = 28,
     GroupID = 1
   },
+  [1020] = {
+    id = 1020,
+    MenuID = 28,
+    GroupID = 1
+  },
   [1050] = {
     id = 1050,
     MenuID = 28,
@@ -783,6 +798,11 @@ Table_RedTip = {
   },
   [1071] = {
     id = 1071,
+    MenuID = 30,
+    GroupID = 1
+  },
+  [1072] = {
+    id = 1072,
     MenuID = 30,
     GroupID = 1
   },
@@ -1002,7 +1022,9 @@ Table_RedTip = {
   [10776] = {id = 10776},
   [10777] = {id = 10777},
   [10778] = {id = 10778},
-  [10779] = {id = 10779}
+  [10779] = {id = 10779},
+  [10780] = {id = 10780},
+  [10781] = {id = 10781}
 }
 local cell_mt = {
   __index = {

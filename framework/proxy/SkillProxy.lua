@@ -563,6 +563,10 @@ end
 function SkillProxy:SetFakeDeadSkill(skillID, AutoMode)
   self.fakeDeadSkillID = skillID
   self.fakeDeadSkillAutoMode = AutoMode
+  if Game.AutoBattleManager and Game.AutoBattleManager.on then
+    local fakeDeadSkillID = self:GetFakeDeadSkill(ShortCutProxy.Instance:GetCurrentAuto())
+    Game.Myself:Client_SetAutoFakeDead(fakeDeadSkillID)
+  end
 end
 
 function SkillProxy:GetFakeDeadSkill(AutoMode)
@@ -962,6 +966,22 @@ function SkillProxy:ForbitUse(skillItemData)
     end
     if skillItemData:GetID() == myselfData:GetAttackSkillIDAndLevel() and (not (not myselfData:NoNormalAttack() and self:CanMagicSkillUse(skillItemData) and self:CanPhySkillUse(skillItemData)) or myselfData:NoAttack()) then
       return true
+    end
+    if myselfData:IsRideOnHandcart() then
+      if staticData.AttackEffects and 0 < #staticData.AttackEffects then
+        local flag = false
+        for k, v in ipairs(staticData.AttackEffects) do
+          if v.type and v.type == 1 then
+            flag = true
+            break
+          end
+        end
+        return flag
+      end
+      if staticData.Logic_Param and staticData.Logic_Param.pre_attack then
+        local pre_attack_type = staticData.Logic_Param.pre_attack.type or 0
+        return 1 < pre_attack_type
+      end
     end
     local limitMap = staticData.Logic_Param.use_limit_map
     if limitMap ~= nil then

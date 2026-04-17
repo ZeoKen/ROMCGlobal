@@ -173,7 +173,12 @@ function PaySignProxy:ActRealOpen(id)
   if purchased then
     local info = self:GetInfoMap(id)
     if info.isFree then
-      return self:IsLotteryTimeValid(id)
+      local cfg = GameConfig.PaySign and GameConfig.PaySign[id]
+      if cfg and cfg.ShopInfo then
+        return self:IsActTimeValid(id)
+      else
+        return self:IsLotteryTimeValid(id)
+      end
     else
       return info.status ~= PaySignProxy.RECEIVE_REWARD_STATUS.FINISHED
     end

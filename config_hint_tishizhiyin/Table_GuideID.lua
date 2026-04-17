@@ -3966,6 +3966,136 @@ Table_GuideID = {
     ButtonID = 551,
     press = 1
   },
+  [552] = {
+    id = 552,
+    Explain = "##44716268",
+    ButtonID = 552,
+    press = 1
+  },
+  [553] = {
+    id = 553,
+    Explain = "##45910239",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 553,
+    press = 1
+  },
+  [554] = {
+    id = 554,
+    Explain = "##45910168",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 554,
+    press = 1
+  },
+  [555] = {
+    id = 555,
+    Explain = "##45909919",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 555,
+    press = 1
+  },
+  [556] = {
+    id = 556,
+    Explain = "##45909904",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 556,
+    press = 1
+  },
+  [557] = {
+    id = 557,
+    Explain = "##45909920",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 557,
+    press = 1
+  },
+  [558] = {
+    id = 558,
+    Explain = "##45910240",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 558,
+    press = 1
+  },
+  [559] = {
+    id = 559,
+    Explain = "##45910241",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 559,
+    press = 1
+  },
+  [560] = {
+    id = 560,
+    Explain = "##3497884",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 560,
+    press = 1
+  },
+  [561] = {
+    id = 561,
+    Explain = "##45910242",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 561,
+    press = 1
+  },
+  [562] = {
+    id = 562,
+    Explain = "##45909907",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 562,
+    press = 1
+  },
+  [563] = {
+    id = 563,
+    Explain = "##45909900",
+    uiID = "PackageView",
+    ButtonID = 563,
+    press = 1
+  },
+  [564] = {
+    id = 564,
+    Explain = "##45909901",
+    uiID = "PackageView",
+    ButtonID = 564,
+    press = 1
+  },
+  [565] = {
+    id = 565,
+    Explain = "##45909911",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 565,
+    press = 1
+  },
+  [566] = {
+    id = 566,
+    Explain = "##45910169",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 566,
+    press = 1
+  },
+  [567] = {
+    id = 567,
+    Explain = "##45909905",
+    uiID = "SnowModePopup",
+    ButtonID = 567,
+    press = 1
+  },
+  [568] = {
+    id = 568,
+    Explain = "##45910170",
+    uiID = "SnowModePopup",
+    ButtonID = 568,
+    press = 1
+  },
+  [569] = {
+    id = 569,
+    Explain = "##45910171",
+    ButtonID = 569,
+    press = 1
+  },
+  [570] = {
+    id = 570,
+    Explain = "##45908278",
+    ButtonID = 570,
+    press = 1
+  },
   [1001] = {
     id = 1001,
     Explain = "##1242836",

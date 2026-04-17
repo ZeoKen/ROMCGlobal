@@ -1,7 +1,7 @@
 Table_CardLevel_t = {
   BuffEffect = {
-    {607840, 607841},
-    {607850, 607851},
+    {607840, 57201},
+    {607850, 57201},
     {604710, 53431},
     {601910},
     {601920},
@@ -105,6 +105,8 @@ Table_CardLevel_t = {
     {602750, 602751},
     {607240, 607241},
     {607250, 607251},
+    {608310, 59381},
+    {608320, 59381},
     {607110, 607111},
     {603410},
     {603420},
@@ -141,6 +143,7 @@ Table_CardLevel_t = {
       600951,
       600952
     },
+    {607910, 607911},
     {606010},
     {606020},
     {606030},
@@ -208,6 +211,11 @@ Table_CardLevel_t = {
     {607330, 607331},
     {607340, 607341},
     {607350, 607351},
+    {608010, 57150},
+    {608020, 57150},
+    {608030, 57150},
+    {608040, 57150},
+    {608050, 57150},
     {
       606910,
       606911,
@@ -280,11 +288,77 @@ Table_CardLevel_t = {
     {602330, 602331},
     {602340, 602341},
     {602350, 602351},
+    {608450, 59550},
+    {608440, 59550},
+    {608430, 59550},
+    {608420, 59550},
+    {608410, 59550},
+    {608350, 59381},
+    {608340, 59381},
+    {608330, 59381},
+    {
+      608250,
+      59320,
+      59321
+    },
+    {
+      608240,
+      59320,
+      59321
+    },
+    {
+      608230,
+      59320,
+      59321
+    },
+    {
+      608220,
+      59320,
+      59321
+    },
+    {
+      608210,
+      59320,
+      59321
+    },
+    {
+      608150,
+      59750,
+      59751,
+      59752,
+      59753,
+      59754,
+      59755
+    },
+    {
+      608140,
+      59750,
+      59751,
+      59752,
+      59753,
+      59754,
+      59755
+    },
+    {
+      608130,
+      59750,
+      59751,
+      59752,
+      59753,
+      59754,
+      59755
+    },
+    {605420},
+    {605650, 605651},
+    {607950, 607951},
     {604210},
     {604220},
     {604230},
     {604240},
     {604250},
+    {607940, 607941},
+    {607930, 607931},
+    {607920, 607921},
     {601720, 601721},
     {601730, 601731},
     {604110},
@@ -469,8 +543,24 @@ Table_CardLevel_t = {
     {605730},
     {605720},
     {605710},
-    {605650, 605651},
-    {605420},
+    {
+      608110,
+      59750,
+      59751,
+      59752,
+      59753,
+      59754,
+      59755
+    },
+    {
+      608120,
+      59750,
+      59751,
+      59752,
+      59753,
+      59754,
+      59755
+    },
     {603010, 53050},
     {603020, 53050},
     {603030, 53050},
@@ -536,9 +626,9 @@ Table_CardLevel_t = {
     {603310, 54361},
     {602620},
     {602610},
-    {607810, 607811},
-    {607820, 607821},
-    {607830, 607831},
+    {607810, 57201},
+    {607820, 57201},
+    {607830, 57201},
     {601710, 601711}
   },
   Cost = {
@@ -808,6 +898,14 @@ Table_CardLevel_t = {
       {52838, 7}
     },
     {
+      {23314, 1},
+      {52838, 6}
+    },
+    {
+      {23314, 1},
+      {52838, 7}
+    },
+    {
       {24612, 1},
       {52838, 6}
     },
@@ -852,12 +950,56 @@ Table_CardLevel_t = {
       {52838, 7}
     },
     {
+      {23075, 1},
+      {52838, 7}
+    },
+    {
+      {23075, 1},
+      {52838, 6}
+    },
+    {
+      {23451, 1},
+      {52838, 7}
+    },
+    {
+      {23451, 1},
+      {52838, 6}
+    },
+    {
+      {23074, 1},
+      {52838, 7}
+    },
+    {
+      {23074, 1},
+      {52838, 6}
+    },
+    {
+      {23490, 1},
+      {52838, 7}
+    },
+    {
+      {23490, 1},
+      {52838, 6}
+    },
+    {
+      {23272, 1},
+      {52838, 7}
+    },
+    {
+      {23487, 1},
+      {52838, 7}
+    },
+    {
       {24613, 1},
       {52838, 6}
     },
     {
       {24613, 1},
       {52838, 7}
+    },
+    {
+      {23487, 1},
+      {52838, 6}
     },
     {
       {24608, 1},
@@ -1032,10 +1174,6 @@ Table_CardLevel_t = {
       {52838, 6}
     },
     {
-      {23272, 1},
-      {52838, 7}
-    },
-    {
       {24604, 1},
       {52838, 6}
     },
@@ -1176,7 +1314,7 @@ Table_CardLevel = {
   [2300201] = {
     id = 2300201,
     CardID = 23002,
-    BuffEffect = Table_CardLevel_t.BuffEffect[132],
+    BuffEffect = Table_CardLevel_t.BuffEffect[135],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "生命上限[c][c427f1]＋2%[-][/c]\n魔伤减免＋50%\n使用技能时SP消耗量[c][c427f1]＋80%[-][/c]"
@@ -1185,7 +1323,7 @@ Table_CardLevel = {
     id = 2300202,
     CardID = 23002,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[133],
+    BuffEffect = Table_CardLevel_t.BuffEffect[136],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 175000000,
     Desc = "生命上限[c][c427f1]＋4%[-][/c]\n魔伤减免＋50%\n使用技能时SP消耗量[c][c427f1]＋60%[-][/c]"
@@ -1194,7 +1332,7 @@ Table_CardLevel = {
     id = 2300203,
     CardID = 23002,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[134],
+    BuffEffect = Table_CardLevel_t.BuffEffect[137],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "生命上限[c][c427f1]＋6%[-][/c]\n魔伤减免＋50%\n使用技能时SP消耗量[c][c427f1]＋40%[-][/c]"
@@ -1203,7 +1341,7 @@ Table_CardLevel = {
     id = 2300204,
     CardID = 23002,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[135],
+    BuffEffect = Table_CardLevel_t.BuffEffect[138],
     Cost = Table_CardLevel_t.Cost[60],
     ZenyConvert = 450000000,
     Desc = "生命上限[c][c427f1]＋8%[-][/c]\n魔伤减免＋50%\n使用技能时SP消耗量[c][c427f1]＋20%[-][/c]"
@@ -1212,7 +1350,7 @@ Table_CardLevel = {
     id = 2300205,
     CardID = 23002,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[136],
+    BuffEffect = Table_CardLevel_t.BuffEffect[139],
     Cost = Table_CardLevel_t.Cost[61],
     ZenyConvert = 625000000,
     Desc = "生命上限[c][c427f1]＋10%[-][/c]\n魔伤减免＋50%"
@@ -1220,7 +1358,7 @@ Table_CardLevel = {
   [2301401] = {
     id = 2301401,
     CardID = 23014,
-    BuffEffect = Table_CardLevel_t.BuffEffect[217],
+    BuffEffect = Table_CardLevel_t.BuffEffect[247],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "生命上限[c][c427f1]＋2%[-][/c]\n体质＋5\n避免陷入晕眩的状态\n单次受到超过15%生命上限的伤害（不包含生命流失）时，[c][c427f1]20%[-][/c]概率使攻击方陷入眩晕状态，持续2秒（目标10秒内只能受到一次该眩晕效果）"
@@ -1229,7 +1367,7 @@ Table_CardLevel = {
     id = 2301402,
     CardID = 23014,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[218],
+    BuffEffect = Table_CardLevel_t.BuffEffect[248],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 175000000,
     Desc = "生命上限[c][c427f1]＋4%[-][/c]\n体质＋5\n避免陷入晕眩的状态\n单次受到超过15%生命上限的伤害（不包含生命流失）时，[c][c427f1]40%[-][/c]概率使攻击方陷入眩晕状态，持续2秒（目标10秒内只能受到一次该眩晕效果）"
@@ -1238,7 +1376,7 @@ Table_CardLevel = {
     id = 2301403,
     CardID = 23014,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[219],
+    BuffEffect = Table_CardLevel_t.BuffEffect[249],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "生命上限[c][c427f1]＋6%[-][/c]\n体质＋5\n避免陷入晕眩的状态\n单次受到超过15%生命上限的伤害（不包含生命流失）时，[c][c427f1]60%[-][/c]概率使攻击方陷入眩晕状态，持续2秒（目标10秒内只能受到一次该眩晕效果）"
@@ -1247,8 +1385,8 @@ Table_CardLevel = {
     id = 2301404,
     CardID = 23014,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[220],
-    Cost = Table_CardLevel_t.Cost[94],
+    BuffEffect = Table_CardLevel_t.BuffEffect[250],
+    Cost = Table_CardLevel_t.Cost[107],
     ZenyConvert = 450000000,
     Desc = "生命上限[c][c427f1]＋8%[-][/c]\n体质＋5\n避免陷入晕眩的状态\n单次受到超过15%生命上限的伤害（不包含生命流失）时，[c][c427f1]80%[-][/c]概率使攻击方陷入眩晕状态，持续2秒（目标10秒内只能受到一次该眩晕效果）"
   },
@@ -1256,8 +1394,8 @@ Table_CardLevel = {
     id = 2301405,
     CardID = 23014,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[221],
-    Cost = Table_CardLevel_t.Cost[95],
+    BuffEffect = Table_CardLevel_t.BuffEffect[251],
+    Cost = Table_CardLevel_t.Cost[108],
     ZenyConvert = 625000000,
     Desc = "生命上限[c][c427f1]＋10%[-][/c]\n体质＋5\n避免陷入晕眩的状态\n单次受到超过15%生命上限的伤害（不包含生命流失）时，[c][c427f1]100%[-][/c]概率使攻击方陷入眩晕状态，持续2秒（目标10秒内只能受到一次该眩晕效果）"
   },
@@ -1273,7 +1411,7 @@ Table_CardLevel = {
     id = 2302102,
     CardID = 23021,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[347],
+    BuffEffect = Table_CardLevel_t.BuffEffect[377],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "命中＋10\n对所有种族魔物伤害[c][c427f1]＋14%[-][/c]\n近战普攻时对目标及周围小范围内所有目标造成溅射伤害"
@@ -1282,7 +1420,7 @@ Table_CardLevel = {
     id = 2302103,
     CardID = 23021,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[346],
+    BuffEffect = Table_CardLevel_t.BuffEffect[376],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "命中＋10\n对所有种族魔物伤害[c][c427f1]＋16%[-][/c]\n近战普攻时对目标及周围小范围内所有目标造成溅射伤害"
@@ -1291,23 +1429,23 @@ Table_CardLevel = {
     id = 2302104,
     CardID = 23021,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[339],
-    Cost = Table_CardLevel_t.Cost[142],
+    BuffEffect = Table_CardLevel_t.BuffEffect[369],
+    Cost = Table_CardLevel_t.Cost[154],
     Desc = "命中＋10\n对所有种族魔物伤害[c][c427f1]＋18%[-][/c]\n近战普攻时对目标及周围小范围内所有目标造成溅射伤害"
   },
   [2302105] = {
     id = 2302105,
     CardID = 23021,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[338],
-    Cost = Table_CardLevel_t.Cost[141],
+    BuffEffect = Table_CardLevel_t.BuffEffect[368],
+    Cost = Table_CardLevel_t.Cost[153],
     ZenyConvert = 312500000,
     Desc = "命中＋10\n对所有种族魔物伤害[c][c427f1]＋20%[-][/c]\n近战普攻时对目标及周围小范围内所有目标造成溅射伤害"
   },
   [2302201] = {
     id = 2302201,
     CardID = 23022,
-    BuffEffect = Table_CardLevel_t.BuffEffect[102],
+    BuffEffect = Table_CardLevel_t.BuffEffect[105],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "生命上限[c][c427f1]＋12%[-][/c]"
@@ -1316,7 +1454,7 @@ Table_CardLevel = {
     id = 2302202,
     CardID = 23022,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[103],
+    BuffEffect = Table_CardLevel_t.BuffEffect[106],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "生命上限[c][c427f1]＋14%[-][/c]"
@@ -1325,7 +1463,7 @@ Table_CardLevel = {
     id = 2302203,
     CardID = 23022,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[104],
+    BuffEffect = Table_CardLevel_t.BuffEffect[107],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "生命上限[c][c427f1]＋16%[-][/c]"
@@ -1334,7 +1472,7 @@ Table_CardLevel = {
     id = 2302204,
     CardID = 23022,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[105],
+    BuffEffect = Table_CardLevel_t.BuffEffect[108],
     Cost = Table_CardLevel_t.Cost[46],
     Desc = "生命上限[c][c427f1]＋18%[-][/c]"
   },
@@ -1342,7 +1480,7 @@ Table_CardLevel = {
     id = 2302205,
     CardID = 23022,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[106],
+    BuffEffect = Table_CardLevel_t.BuffEffect[109],
     Cost = Table_CardLevel_t.Cost[47],
     ZenyConvert = 312500000,
     Desc = "生命上限[c][c427f1]＋20%[-][/c]"
@@ -1350,7 +1488,7 @@ Table_CardLevel = {
   [2302401] = {
     id = 2302401,
     CardID = 23024,
-    BuffEffect = Table_CardLevel_t.BuffEffect[195],
+    BuffEffect = Table_CardLevel_t.BuffEffect[225],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "物理伤害[c][c427f1]＋3%[-][/c]\n锁定目标类的物理伤害技能可获得5%伤害的HP恢复效果"
@@ -1359,7 +1497,7 @@ Table_CardLevel = {
     id = 2302402,
     CardID = 23024,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[337],
+    BuffEffect = Table_CardLevel_t.BuffEffect[367],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "物理伤害[c][c427f1]＋6%[-][/c]\n锁定目标类的物理伤害技能可获得5%伤害的HP恢复效果"
@@ -1368,7 +1506,7 @@ Table_CardLevel = {
     id = 2302403,
     CardID = 23024,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[336],
+    BuffEffect = Table_CardLevel_t.BuffEffect[366],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "物理伤害[c][c427f1]＋9%[-][/c]\n锁定目标类的物理伤害技能可获得5%伤害的HP恢复效果"
@@ -1377,23 +1515,23 @@ Table_CardLevel = {
     id = 2302404,
     CardID = 23024,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[335],
-    Cost = Table_CardLevel_t.Cost[140],
+    BuffEffect = Table_CardLevel_t.BuffEffect[365],
+    Cost = Table_CardLevel_t.Cost[152],
     Desc = "物理伤害[c][c427f1]＋12%[-][/c]\n锁定目标类的物理伤害技能可获得5%伤害的HP恢复效果"
   },
   [2302405] = {
     id = 2302405,
     CardID = 23024,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[334],
-    Cost = Table_CardLevel_t.Cost[139],
+    BuffEffect = Table_CardLevel_t.BuffEffect[364],
+    Cost = Table_CardLevel_t.Cost[151],
     ZenyConvert = 312500000,
     Desc = "物理伤害[c][c427f1]＋15%[-][/c]\n锁定目标类的物理伤害技能可获得5%伤害的HP恢复效果"
   },
   [2302801] = {
     id = 2302801,
     CardID = 23028,
-    BuffEffect = Table_CardLevel_t.BuffEffect[154],
+    BuffEffect = Table_CardLevel_t.BuffEffect[162],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "全属性攻击[c][c427f1]＋3%[-][/c]\n任何攻击时10%概率使对敌人造成伤害的一定百分比转化为自己的魔法值"
@@ -1402,7 +1540,7 @@ Table_CardLevel = {
     id = 2302802,
     CardID = 23028,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[314],
+    BuffEffect = Table_CardLevel_t.BuffEffect[344],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "全属性攻击[c][c427f1]＋6%[-][/c]\n任何攻击时10%概率使对敌人造成伤害的一定百分比转化为自己的魔法值"
@@ -1411,7 +1549,7 @@ Table_CardLevel = {
     id = 2302803,
     CardID = 23028,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[315],
+    BuffEffect = Table_CardLevel_t.BuffEffect[345],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "全属性攻击[c][c427f1]＋9%[-][/c]\n任何攻击时10%概率使对敌人造成伤害的一定百分比转化为自己的魔法值"
@@ -1420,23 +1558,23 @@ Table_CardLevel = {
     id = 2302804,
     CardID = 23028,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[316],
-    Cost = Table_CardLevel_t.Cost[131],
+    BuffEffect = Table_CardLevel_t.BuffEffect[346],
+    Cost = Table_CardLevel_t.Cost[143],
     Desc = "全属性攻击[c][c427f1]＋12%[-][/c]\n任何攻击时10%概率使对敌人造成伤害的一定百分比转化为自己的魔法值"
   },
   [2302805] = {
     id = 2302805,
     CardID = 23028,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[317],
-    Cost = Table_CardLevel_t.Cost[132],
+    BuffEffect = Table_CardLevel_t.BuffEffect[347],
+    Cost = Table_CardLevel_t.Cost[144],
     ZenyConvert = 312500000,
     Desc = "全属性攻击[c][c427f1]＋15%[-][/c]\n任何攻击时10%概率使对敌人造成伤害的一定百分比转化为自己的魔法值"
   },
   [2302901] = {
     id = 2302901,
     CardID = 23029,
-    BuffEffect = Table_CardLevel_t.BuffEffect[184],
+    BuffEffect = Table_CardLevel_t.BuffEffect[214],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "最终伤害加成[c][c427f1]＋2%[-][/c]\n精炼物攻[c][c427f1]＋80[-][/c]"
@@ -1445,7 +1583,7 @@ Table_CardLevel = {
     id = 2302902,
     CardID = 23029,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[318],
+    BuffEffect = Table_CardLevel_t.BuffEffect[348],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "最终伤害加成[c][c427f1]＋4%[-][/c]\n精炼物攻[c][c427f1]＋110[-][/c]"
@@ -1454,7 +1592,7 @@ Table_CardLevel = {
     id = 2302903,
     CardID = 23029,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[328],
+    BuffEffect = Table_CardLevel_t.BuffEffect[358],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "最终伤害加成[c][c427f1]＋6%[-][/c]\n精炼物攻[c][c427f1]＋140[-][/c]"
@@ -1463,23 +1601,23 @@ Table_CardLevel = {
     id = 2302904,
     CardID = 23029,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[327],
-    Cost = Table_CardLevel_t.Cost[136],
+    BuffEffect = Table_CardLevel_t.BuffEffect[357],
+    Cost = Table_CardLevel_t.Cost[148],
     Desc = "最终伤害加成[c][c427f1]＋8%[-][/c]\n精炼物攻[c][c427f1]＋170[-][/c]"
   },
   [2302905] = {
     id = 2302905,
     CardID = 23029,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[326],
-    Cost = Table_CardLevel_t.Cost[135],
+    BuffEffect = Table_CardLevel_t.BuffEffect[356],
+    Cost = Table_CardLevel_t.Cost[147],
     ZenyConvert = 312500000,
     Desc = "最终伤害加成[c][c427f1]＋10%[-][/c]\n精炼物攻[c][c427f1]＋200[-][/c]"
   },
   [2303201] = {
     id = 2303201,
     CardID = 23032,
-    BuffEffect = Table_CardLevel_t.BuffEffect[86],
+    BuffEffect = Table_CardLevel_t.BuffEffect[88],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "技能伤害减免[c][c427f1]＋2%[-][/c]\n冰冻攻击[c][c427f1]＋3%[-][/c]\n受到物理伤害时30%概率使敌人冰冻2秒，无视冰冻免疫"
@@ -1488,7 +1626,7 @@ Table_CardLevel = {
     id = 2303202,
     CardID = 23032,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[231],
+    BuffEffect = Table_CardLevel_t.BuffEffect[261],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "技能伤害减免[c][c427f1]＋4%[-][/c]\n冰冻攻击[c][c427f1]＋6%[-][/c]\n受到物理伤害时30%概率使敌人冰冻2秒，无视冰冻免疫"
@@ -1497,7 +1635,7 @@ Table_CardLevel = {
     id = 2303203,
     CardID = 23032,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[230],
+    BuffEffect = Table_CardLevel_t.BuffEffect[260],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "技能伤害减免[c][c427f1]＋6%[-][/c]\n冰冻攻击[c][c427f1]＋9%[-][/c]\n受到物理伤害时30%概率使敌人冰冻2秒，无视冰冻免疫"
@@ -1506,23 +1644,23 @@ Table_CardLevel = {
     id = 2303204,
     CardID = 23032,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[229],
-    Cost = Table_CardLevel_t.Cost[97],
+    BuffEffect = Table_CardLevel_t.BuffEffect[259],
+    Cost = Table_CardLevel_t.Cost[110],
     Desc = "技能伤害减免[c][c427f1]＋8%[-][/c]\n冰冻攻击[c][c427f1]＋12%[-][/c]\n受到物理伤害时30%概率使敌人冰冻2秒，无视冰冻免疫"
   },
   [2303205] = {
     id = 2303205,
     CardID = 23032,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[228],
-    Cost = Table_CardLevel_t.Cost[96],
+    BuffEffect = Table_CardLevel_t.BuffEffect[258],
+    Cost = Table_CardLevel_t.Cost[109],
     ZenyConvert = 312500000,
     Desc = "技能伤害减免[c][c427f1]＋10%[-][/c]\n冰冻攻击[c][c427f1]＋15%[-][/c]\n受到物理伤害时30%概率使敌人冰冻2秒，无视冰冻免疫"
   },
   [2303501] = {
     id = 2303501,
     CardID = 23035,
-    BuffEffect = Table_CardLevel_t.BuffEffect[273],
+    BuffEffect = Table_CardLevel_t.BuffEffect[303],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "全种族伤害[c][c427f1]＋2%[-][/c]\n近战攻击时有一定的概率（8%）使目标眩晕、诅咒、沉默、中毒、流血，持续3秒\n对眩晕、诅咒、沉默、中毒、流血目标伤害增加20%"
@@ -1531,7 +1669,7 @@ Table_CardLevel = {
     id = 2303502,
     CardID = 23035,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[274],
+    BuffEffect = Table_CardLevel_t.BuffEffect[304],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "全种族伤害[c][c427f1]＋4%[-][/c]\n近战攻击时有一定的概率（8%）使目标眩晕、诅咒、沉默、中毒、流血，持续3秒\n对眩晕、诅咒、沉默、中毒、流血目标伤害增加20%"
@@ -1540,7 +1678,7 @@ Table_CardLevel = {
     id = 2303503,
     CardID = 23035,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[275],
+    BuffEffect = Table_CardLevel_t.BuffEffect[305],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "全种族伤害[c][c427f1]＋6%[-][/c]\n近战攻击时有一定的概率（8%）使目标眩晕、诅咒、沉默、中毒、流血，持续3秒\n对眩晕、诅咒、沉默、中毒、流血目标伤害增加20%"
@@ -1549,23 +1687,23 @@ Table_CardLevel = {
     id = 2303504,
     CardID = 23035,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[276],
-    Cost = Table_CardLevel_t.Cost[114],
+    BuffEffect = Table_CardLevel_t.BuffEffect[306],
+    Cost = Table_CardLevel_t.Cost[127],
     Desc = "全种族伤害[c][c427f1]＋8%[-][/c]\n近战攻击时有一定的概率（8%）使目标眩晕、诅咒、沉默、中毒、流血，持续3秒\n对眩晕、诅咒、沉默、中毒、流血目标伤害增加20%"
   },
   [2303505] = {
     id = 2303505,
     CardID = 23035,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[277],
-    Cost = Table_CardLevel_t.Cost[115],
+    BuffEffect = Table_CardLevel_t.BuffEffect[307],
+    Cost = Table_CardLevel_t.Cost[128],
     ZenyConvert = 312500000,
     Desc = "全种族伤害[c][c427f1]＋10%[-][/c]\n近战攻击时有一定的概率（8%）使目标眩晕、诅咒、沉默、中毒、流血，持续3秒\n对眩晕、诅咒、沉默、中毒、流血目标伤害增加20%"
   },
   [2303601] = {
     id = 2303601,
     CardID = 23036,
-    BuffEffect = Table_CardLevel_t.BuffEffect[325],
+    BuffEffect = Table_CardLevel_t.BuffEffect[355],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "暴击[c][c427f1]＋9[-][/c]，暴击伤害增加[c][c427f1]＋15%[-][/c]\n普通攻击，暴击时有概率（10%）获得【嗜血】状态，普通攻击伤害＋5%，持续5秒"
@@ -1574,7 +1712,7 @@ Table_CardLevel = {
     id = 2303602,
     CardID = 23036,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[324],
+    BuffEffect = Table_CardLevel_t.BuffEffect[354],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "暴击[c][c427f1]＋11[-][/c]，暴击伤害增加[c][c427f1]＋18%[-][/c]\n普通攻击，暴击时有概率（10%）获得【嗜血】状态，普通攻击伤害＋5%，持续5秒"
@@ -1583,7 +1721,7 @@ Table_CardLevel = {
     id = 2303603,
     CardID = 23036,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[323],
+    BuffEffect = Table_CardLevel_t.BuffEffect[353],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "暴击[c][c427f1]＋13[-][/c]，暴击伤害增加[c][c427f1]＋21%[-][/c]\n普通攻击，暴击时有概率（10%）获得【嗜血】状态，普通攻击伤害＋5%，持续5秒"
@@ -1608,7 +1746,7 @@ Table_CardLevel = {
   [2303701] = {
     id = 2303701,
     CardID = 23037,
-    BuffEffect = Table_CardLevel_t.BuffEffect[227],
+    BuffEffect = Table_CardLevel_t.BuffEffect[257],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "物伤减免、魔伤减免[c][c427f1]＋2%[-][/c]\n异常状态抵抗＋25%\n异常状态下，将获得25%物伤减免和魔伤减免"
@@ -1617,7 +1755,7 @@ Table_CardLevel = {
     id = 2303702,
     CardID = 23037,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[226],
+    BuffEffect = Table_CardLevel_t.BuffEffect[256],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "物伤减免、魔伤减免[c][c427f1]＋4%[-][/c]\n异常状态抵抗＋25%\n异常状态下，将获得25%物伤减免和魔伤减免"
@@ -1626,7 +1764,7 @@ Table_CardLevel = {
     id = 2303703,
     CardID = 23037,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[225],
+    BuffEffect = Table_CardLevel_t.BuffEffect[255],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "物伤减免、魔伤减免[c][c427f1]＋6%[-][/c]\n异常状态抵抗＋25%\n异常状态下，将获得25%物伤减免和魔伤减免"
@@ -1651,7 +1789,7 @@ Table_CardLevel = {
   [2303801] = {
     id = 2303801,
     CardID = 23038,
-    BuffEffect = Table_CardLevel_t.BuffEffect[144],
+    BuffEffect = Table_CardLevel_t.BuffEffect[147],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "生命上限[c][c427f1]＋13%[-][/c]\n受到物理伤害时100%概率使用技能【剧毒暗器】Lv1"
@@ -1660,7 +1798,7 @@ Table_CardLevel = {
     id = 2303802,
     CardID = 23038,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[145],
+    BuffEffect = Table_CardLevel_t.BuffEffect[148],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "生命上限[c][c427f1]＋16%[-][/c]\n受到物理伤害时100%概率使用技能【剧毒暗器】Lv1"
@@ -1669,7 +1807,7 @@ Table_CardLevel = {
     id = 2303803,
     CardID = 23038,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[146],
+    BuffEffect = Table_CardLevel_t.BuffEffect[149],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "生命上限[c][c427f1]＋19%[-][/c]\n受到物理伤害时100%概率使用技能【剧毒暗器】Lv1"
@@ -1678,7 +1816,7 @@ Table_CardLevel = {
     id = 2303804,
     CardID = 23038,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[147],
+    BuffEffect = Table_CardLevel_t.BuffEffect[150],
     Cost = Table_CardLevel_t.Cost[66],
     Desc = "生命上限[c][c427f1]＋22%[-][/c]\n受到物理伤害时100%概率使用技能【剧毒暗器】Lv1"
   },
@@ -1686,7 +1824,7 @@ Table_CardLevel = {
     id = 2303805,
     CardID = 23038,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[148],
+    BuffEffect = Table_CardLevel_t.BuffEffect[151],
     Cost = Table_CardLevel_t.Cost[67],
     ZenyConvert = 312500000,
     Desc = "生命上限[c][c427f1]＋25%[-][/c]\n受到物理伤害时100%概率使用技能【剧毒暗器】Lv1"
@@ -1694,7 +1832,7 @@ Table_CardLevel = {
   [2304001] = {
     id = 2304001,
     CardID = 23040,
-    BuffEffect = Table_CardLevel_t.BuffEffect[262],
+    BuffEffect = Table_CardLevel_t.BuffEffect[292],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "魔法穿刺[c][c427f1]＋10%[-][/c]\n可变吟唱时间＋5%\nSP恢复＋10%"
@@ -1703,7 +1841,7 @@ Table_CardLevel = {
     id = 2304002,
     CardID = 23040,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[282],
+    BuffEffect = Table_CardLevel_t.BuffEffect[312],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "魔法穿刺[c][c427f1]＋12%[-][/c]\n可变吟唱时间＋5%\nSP恢复＋10%"
@@ -1712,7 +1850,7 @@ Table_CardLevel = {
     id = 2304003,
     CardID = 23040,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[281],
+    BuffEffect = Table_CardLevel_t.BuffEffect[311],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "魔法穿刺[c][c427f1]＋14%[-][/c]\n可变吟唱时间＋5%\nSP恢复＋10%"
@@ -1721,16 +1859,16 @@ Table_CardLevel = {
     id = 2304004,
     CardID = 23040,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[280],
-    Cost = Table_CardLevel_t.Cost[118],
+    BuffEffect = Table_CardLevel_t.BuffEffect[310],
+    Cost = Table_CardLevel_t.Cost[131],
     Desc = "魔法穿刺[c][c427f1]＋16%[-][/c]\n可变吟唱时间＋5%\nSP恢复＋10%"
   },
   [2304005] = {
     id = 2304005,
     CardID = 23040,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[279],
-    Cost = Table_CardLevel_t.Cost[117],
+    BuffEffect = Table_CardLevel_t.BuffEffect[309],
+    Cost = Table_CardLevel_t.Cost[130],
     ZenyConvert = 312500000,
     Desc = "魔法穿刺[c][c427f1]＋18%[-][/c]\n可变吟唱时间＋5%\nSP恢复＋10%"
   },
@@ -1746,7 +1884,7 @@ Table_CardLevel = {
     id = 2304102,
     CardID = 23041,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[322],
+    BuffEffect = Table_CardLevel_t.BuffEffect[352],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "暴击[c][c427f1]＋7[-][/c]\n普攻伤害[c][c427f1]＋4%[-][/c]\nHP恢复[c][c427f1]－60%[-][/c]\n远程普通攻击时，有30%概率获得20%伤害的HP恢复效果（卡片效果不叠加）"
@@ -1755,7 +1893,7 @@ Table_CardLevel = {
     id = 2304103,
     CardID = 23041,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[321],
+    BuffEffect = Table_CardLevel_t.BuffEffect[351],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "暴击[c][c427f1]＋8[-][/c]\n普攻伤害[c][c427f1]＋6%[-][/c]\nHP恢复[c][c427f1]－40%[-][/c]\n远程普通攻击时，有30%概率获得20%伤害的HP恢复效果（卡片效果不叠加）"
@@ -1764,23 +1902,23 @@ Table_CardLevel = {
     id = 2304104,
     CardID = 23041,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[320],
-    Cost = Table_CardLevel_t.Cost[134],
+    BuffEffect = Table_CardLevel_t.BuffEffect[350],
+    Cost = Table_CardLevel_t.Cost[146],
     Desc = "暴击[c][c427f1]＋9[-][/c]\n普攻伤害[c][c427f1]＋8%[-][/c]\nHP恢复[c][c427f1]－20%[-][/c]\n远程普通攻击时，有30%概率获得20%伤害的HP恢复效果（卡片效果不叠加）"
   },
   [2304105] = {
     id = 2304105,
     CardID = 23041,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[319],
-    Cost = Table_CardLevel_t.Cost[133],
+    BuffEffect = Table_CardLevel_t.BuffEffect[349],
+    Cost = Table_CardLevel_t.Cost[145],
     ZenyConvert = 312500000,
     Desc = "暴击[c][c427f1]＋10[-][/c]\n普攻伤害[c][c427f1]＋10%[-][/c]\n远程普通攻击时，有30%概率获得20%伤害的HP恢复效果（卡片效果不叠加）"
   },
   [2304701] = {
     id = 2304701,
     CardID = 23047,
-    BuffEffect = Table_CardLevel_t.BuffEffect[224],
+    BuffEffect = Table_CardLevel_t.BuffEffect[254],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "全属性攻击[c][c427f1]＋2%[-][/c]\n对火属性魔物伤害＋25%\n受到伤害时有30%的概率对敌人施展【霜冻之术】Lv.10"
@@ -1789,7 +1927,7 @@ Table_CardLevel = {
     id = 2304702,
     CardID = 23047,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[223],
+    BuffEffect = Table_CardLevel_t.BuffEffect[253],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "全属性攻击[c][c427f1]＋4%[-][/c]\n对火属性魔物伤害＋25%\n受到伤害时有30%的概率对敌人施展【霜冻之术】Lv.10"
@@ -1798,7 +1936,7 @@ Table_CardLevel = {
     id = 2304703,
     CardID = 23047,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[222],
+    BuffEffect = Table_CardLevel_t.BuffEffect[252],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "全属性攻击[c][c427f1]＋6%[-][/c]\n对火属性魔物伤害＋25%\n受到伤害时有30%的概率对敌人施展【霜冻之术】Lv.10"
@@ -1807,8 +1945,8 @@ Table_CardLevel = {
     id = 2304704,
     CardID = 23047,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[216],
-    Cost = Table_CardLevel_t.Cost[93],
+    BuffEffect = Table_CardLevel_t.BuffEffect[246],
+    Cost = Table_CardLevel_t.Cost[106],
     Desc = "全属性攻击[c][c427f1]＋8%[-][/c]\n对火属性魔物伤害＋25%\n受到伤害时有30%的概率对敌人施展【霜冻之术】Lv.10"
   },
   [2304705] = {
@@ -1823,16 +1961,15 @@ Table_CardLevel = {
   [2304801] = {
     id = 2304801,
     CardID = 23048,
-    BuffEffect = Table_CardLevel_t.BuffEffect[313],
+    BuffEffect = Table_CardLevel_t.BuffEffect[343],
     Cost = Table_CardLevel_t.Cost[3],
-    ZenyConvert = 37500000,
-    Desc = "风、地、水、火、无属性攻击[c][c427f1]＋3%[-][/c]\n【雷鸣术】、【雷击术】、【怒雷强击】、【雷爆术】伤害＋25%"
+    ZenyConvert = 37500000
   },
   [2304802] = {
     id = 2304802,
     CardID = 23048,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[312],
+    BuffEffect = Table_CardLevel_t.BuffEffect[342],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "风、地、水、火、无属性攻击[c][c427f1]＋6%[-][/c]\n【雷鸣术】、【雷击术】、【怒雷强击】、【雷爆术】伤害＋25%"
@@ -1841,7 +1978,7 @@ Table_CardLevel = {
     id = 2304803,
     CardID = 23048,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[304],
+    BuffEffect = Table_CardLevel_t.BuffEffect[334],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "风、地、水、火、无属性攻击[c][c427f1]＋9%[-][/c]\n【雷鸣术】、【雷击术】、【怒雷强击】、【雷爆术】伤害＋25%"
@@ -1850,23 +1987,23 @@ Table_CardLevel = {
     id = 2304804,
     CardID = 23048,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[305],
-    Cost = Table_CardLevel_t.Cost[127],
+    BuffEffect = Table_CardLevel_t.BuffEffect[335],
+    Cost = Table_CardLevel_t.Cost[139],
     Desc = "风、地、水、火、无属性攻击[c][c427f1]＋12%[-][/c]\n【雷鸣术】、【雷击术】、【怒雷强击】、【雷爆术】伤害＋25%"
   },
   [2304805] = {
     id = 2304805,
     CardID = 23048,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[306],
-    Cost = Table_CardLevel_t.Cost[128],
+    BuffEffect = Table_CardLevel_t.BuffEffect[336],
+    Cost = Table_CardLevel_t.Cost[140],
     ZenyConvert = 312500000,
     Desc = "风、地、水、火、无属性攻击[c][c427f1]＋15%[-][/c]\n【雷鸣术】、【雷击术】、【怒雷强击】、【雷爆术】伤害＋25%"
   },
   [2304901] = {
     id = 2304901,
     CardID = 23049,
-    BuffEffect = Table_CardLevel_t.BuffEffect[171],
+    BuffEffect = Table_CardLevel_t.BuffEffect[179],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "全种族伤害[c][c427f1]＋2%[-][/c]\n对圣、暗属性魔物伤害＋15%\n对天使、恶魔种族魔物伤害＋15%"
@@ -1875,7 +2012,7 @@ Table_CardLevel = {
     id = 2304902,
     CardID = 23049,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[215],
+    BuffEffect = Table_CardLevel_t.BuffEffect[245],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "全种族伤害[c][c427f1]＋4%[-][/c]\n对圣、暗属性魔物伤害＋15%\n对天使、恶魔种族魔物伤害＋15%"
@@ -1884,7 +2021,7 @@ Table_CardLevel = {
     id = 2304903,
     CardID = 23049,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[214],
+    BuffEffect = Table_CardLevel_t.BuffEffect[244],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "全种族伤害[c][c427f1]＋6%[-][/c]\n对圣、暗属性魔物伤害＋15%\n对天使、恶魔种族魔物伤害＋15%"
@@ -1893,23 +2030,23 @@ Table_CardLevel = {
     id = 2304904,
     CardID = 23049,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[213],
-    Cost = Table_CardLevel_t.Cost[92],
+    BuffEffect = Table_CardLevel_t.BuffEffect[243],
+    Cost = Table_CardLevel_t.Cost[105],
     Desc = "全种族伤害[c][c427f1]＋8%[-][/c]\n对圣、暗属性魔物伤害＋15%\n对天使、恶魔种族魔物伤害＋15%"
   },
   [2304905] = {
     id = 2304905,
     CardID = 23049,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[212],
-    Cost = Table_CardLevel_t.Cost[91],
+    BuffEffect = Table_CardLevel_t.BuffEffect[242],
+    Cost = Table_CardLevel_t.Cost[104],
     ZenyConvert = 312500000,
     Desc = "全种族伤害[c][c427f1]＋10%[-][/c]\n对圣、暗属性魔物伤害＋15%\n对天使、恶魔种族魔物伤害＋15%"
   },
   [2305001] = {
     id = 2305001,
     CardID = 23050,
-    BuffEffect = Table_CardLevel_t.BuffEffect[240],
+    BuffEffect = Table_CardLevel_t.BuffEffect[270],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "全种族伤害[c][c427f1]＋2%[-][/c]\n对风、地属性魔物伤害＋15%\n对动物、昆虫种族魔物伤害＋15%"
@@ -1918,7 +2055,7 @@ Table_CardLevel = {
     id = 2305002,
     CardID = 23050,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[205],
+    BuffEffect = Table_CardLevel_t.BuffEffect[235],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "全种族伤害[c][c427f1]＋4%[-][/c]\n对风、地属性魔物伤害＋15%\n对动物、昆虫种族魔物伤害＋15%"
@@ -1927,7 +2064,7 @@ Table_CardLevel = {
     id = 2305003,
     CardID = 23050,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[204],
+    BuffEffect = Table_CardLevel_t.BuffEffect[234],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "全种族伤害[c][c427f1]＋6%[-][/c]\n对风、地属性魔物伤害＋15%\n对动物、昆虫种族魔物伤害＋15%"
@@ -1936,23 +2073,23 @@ Table_CardLevel = {
     id = 2305004,
     CardID = 23050,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[203],
-    Cost = Table_CardLevel_t.Cost[88],
+    BuffEffect = Table_CardLevel_t.BuffEffect[233],
+    Cost = Table_CardLevel_t.Cost[101],
     Desc = "全种族伤害[c][c427f1]＋8%[-][/c]\n对风、地属性魔物伤害＋15%\n对动物、昆虫种族魔物伤害＋15%"
   },
   [2305005] = {
     id = 2305005,
     CardID = 23050,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[202],
-    Cost = Table_CardLevel_t.Cost[87],
+    BuffEffect = Table_CardLevel_t.BuffEffect[232],
+    Cost = Table_CardLevel_t.Cost[100],
     ZenyConvert = 312500000,
     Desc = "全种族伤害[c][c427f1]＋10%[-][/c]\n对风、地属性魔物伤害＋15%\n对动物、昆虫种族魔物伤害＋15%"
   },
   [2305101] = {
     id = 2305101,
     CardID = 23051,
-    BuffEffect = Table_CardLevel_t.BuffEffect[340],
+    BuffEffect = Table_CardLevel_t.BuffEffect[370],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "生命上限＋15%\n技能伤害减免＋[c][c427f1]7%[-][/c]"
@@ -1961,7 +2098,7 @@ Table_CardLevel = {
     id = 2305102,
     CardID = 23051,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[341],
+    BuffEffect = Table_CardLevel_t.BuffEffect[371],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 175000000,
     Desc = "生命上限＋15%\n技能伤害减免＋[c][c427f1]9%[-][/c]"
@@ -1970,7 +2107,7 @@ Table_CardLevel = {
     id = 2305103,
     CardID = 23051,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[342],
+    BuffEffect = Table_CardLevel_t.BuffEffect[372],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "生命上限＋15%\n技能伤害减免＋[c][c427f1]11%[-][/c]"
@@ -1979,8 +2116,8 @@ Table_CardLevel = {
     id = 2305104,
     CardID = 23051,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[343],
-    Cost = Table_CardLevel_t.Cost[143],
+    BuffEffect = Table_CardLevel_t.BuffEffect[373],
+    Cost = Table_CardLevel_t.Cost[155],
     ZenyConvert = 450000000,
     Desc = "生命上限＋15%\n技能伤害减免＋[c][c427f1]13%[-][/c]"
   },
@@ -1988,8 +2125,8 @@ Table_CardLevel = {
     id = 2305105,
     CardID = 23051,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[344],
-    Cost = Table_CardLevel_t.Cost[144],
+    BuffEffect = Table_CardLevel_t.BuffEffect[374],
+    Cost = Table_CardLevel_t.Cost[156],
     ZenyConvert = 625000000,
     Desc = "生命上限＋15%\n技能伤害减免＋[c][c427f1]15%[-][/c]"
   },
@@ -2040,7 +2177,7 @@ Table_CardLevel = {
   [2305301] = {
     id = 2305301,
     CardID = 23053,
-    BuffEffect = Table_CardLevel_t.BuffEffect[127],
+    BuffEffect = Table_CardLevel_t.BuffEffect[130],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "全能力＋2\n物理穿刺[c][c427f1]＋10%[-][/c]"
@@ -2049,7 +2186,7 @@ Table_CardLevel = {
     id = 2305302,
     CardID = 23053,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[128],
+    BuffEffect = Table_CardLevel_t.BuffEffect[131],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "全能力＋2\n物理穿刺[c][c427f1]＋12%[-][/c]"
@@ -2058,7 +2195,7 @@ Table_CardLevel = {
     id = 2305303,
     CardID = 23053,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[129],
+    BuffEffect = Table_CardLevel_t.BuffEffect[132],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "全能力＋2\n物理穿刺[c][c427f1]＋14%[-][/c]"
@@ -2067,7 +2204,7 @@ Table_CardLevel = {
     id = 2305304,
     CardID = 23053,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[130],
+    BuffEffect = Table_CardLevel_t.BuffEffect[133],
     Cost = Table_CardLevel_t.Cost[58],
     Desc = "全能力＋2\n物理穿刺[c][c427f1]＋16%[-][/c]"
   },
@@ -2075,7 +2212,7 @@ Table_CardLevel = {
     id = 2305305,
     CardID = 23053,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[131],
+    BuffEffect = Table_CardLevel_t.BuffEffect[134],
     Cost = Table_CardLevel_t.Cost[59],
     ZenyConvert = 312500000,
     Desc = "全能力＋2\n物理穿刺[c][c427f1]＋18%[-][/c]"
@@ -2083,7 +2220,7 @@ Table_CardLevel = {
   [2305601] = {
     id = 2305601,
     CardID = 23056,
-    BuffEffect = Table_CardLevel_t.BuffEffect[329],
+    BuffEffect = Table_CardLevel_t.BuffEffect[359],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "技能伤害[c][c427f1]＋2%[-][/c]\nHP恢复[c][c427f1]－80%[-][/c]\n魔法技能攻击时，有100%概率获得5%伤害的HP恢复效果（卡片效果不叠加）"
@@ -2092,7 +2229,7 @@ Table_CardLevel = {
     id = 2305602,
     CardID = 23056,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[330],
+    BuffEffect = Table_CardLevel_t.BuffEffect[360],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "技能伤害[c][c427f1]＋4%[-][/c]\nHP恢复[c][c427f1]－60%[-][/c]\n魔法技能攻击时，有100%概率获得5%伤害的HP恢复效果（卡片效果不叠加）"
@@ -2101,7 +2238,7 @@ Table_CardLevel = {
     id = 2305603,
     CardID = 23056,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[331],
+    BuffEffect = Table_CardLevel_t.BuffEffect[361],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "技能伤害[c][c427f1]＋6%[-][/c]\nHP恢复[c][c427f1]－40%[-][/c]\n魔法技能攻击时，有100%概率获得5%伤害的HP恢复效果（卡片效果不叠加）"
@@ -2110,16 +2247,16 @@ Table_CardLevel = {
     id = 2305604,
     CardID = 23056,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[332],
-    Cost = Table_CardLevel_t.Cost[137],
+    BuffEffect = Table_CardLevel_t.BuffEffect[362],
+    Cost = Table_CardLevel_t.Cost[149],
     Desc = "技能伤害[c][c427f1]＋8%[-][/c]\nHP恢复[c][c427f1]－20%[-][/c]\n魔法技能攻击时，有100%概率获得5%伤害的HP恢复效果（卡片效果不叠加）"
   },
   [2305605] = {
     id = 2305605,
     CardID = 23056,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[333],
-    Cost = Table_CardLevel_t.Cost[138],
+    BuffEffect = Table_CardLevel_t.BuffEffect[363],
+    Cost = Table_CardLevel_t.Cost[150],
     ZenyConvert = 312500000,
     Desc = "技能伤害[c][c427f1]＋10%[-][/c]\n魔法技能攻击时，有100%概率获得5%伤害的HP恢复效果（卡片效果不叠加）"
   },
@@ -2135,7 +2272,7 @@ Table_CardLevel = {
     id = 2305702,
     CardID = 23057,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[261],
+    BuffEffect = Table_CardLevel_t.BuffEffect[291],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "智力＋5\n全属性攻击[c][c427f1]＋4%[-][/c]\n念属性攻击＋15%"
@@ -2144,7 +2281,7 @@ Table_CardLevel = {
     id = 2305703,
     CardID = 23057,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[260],
+    BuffEffect = Table_CardLevel_t.BuffEffect[290],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "智力＋5\n全属性攻击[c][c427f1]＋6%[-][/c]\n念属性攻击＋15%"
@@ -2153,23 +2290,23 @@ Table_CardLevel = {
     id = 2305704,
     CardID = 23057,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[259],
-    Cost = Table_CardLevel_t.Cost[109],
+    BuffEffect = Table_CardLevel_t.BuffEffect[289],
+    Cost = Table_CardLevel_t.Cost[122],
     Desc = "智力＋5\n全属性攻击[c][c427f1]＋8%[-][/c]\n念属性攻击＋15%"
   },
   [2305705] = {
     id = 2305705,
     CardID = 23057,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[258],
-    Cost = Table_CardLevel_t.Cost[108],
+    BuffEffect = Table_CardLevel_t.BuffEffect[288],
+    Cost = Table_CardLevel_t.Cost[121],
     ZenyConvert = 312500000,
     Desc = "智力＋5\n全属性攻击[c][c427f1]＋10%[-][/c]\n念属性攻击＋15%"
   },
   [2306301] = {
     id = 2306301,
     CardID = 23063,
-    BuffEffect = Table_CardLevel_t.BuffEffect[108],
+    BuffEffect = Table_CardLevel_t.BuffEffect[111],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "技能伤害[c][c427f1]＋8%[-][/c]\n每12点力量、灵巧、智力都能额外增加0.1%技能伤害"
@@ -2178,7 +2315,7 @@ Table_CardLevel = {
     id = 2306302,
     CardID = 23063,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[109],
+    BuffEffect = Table_CardLevel_t.BuffEffect[112],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 175000000,
     Desc = "技能伤害[c][c427f1]＋10%[-][/c]\n每12点力量、灵巧、智力都能额外增加0.1%技能伤害"
@@ -2187,7 +2324,7 @@ Table_CardLevel = {
     id = 2306303,
     CardID = 23063,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[110],
+    BuffEffect = Table_CardLevel_t.BuffEffect[113],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "技能伤害[c][c427f1]＋12%[-][/c]\n每12点力量、灵巧、智力都能额外增加0.1%技能伤害"
@@ -2196,7 +2333,7 @@ Table_CardLevel = {
     id = 2306304,
     CardID = 23063,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[111],
+    BuffEffect = Table_CardLevel_t.BuffEffect[114],
     Cost = Table_CardLevel_t.Cost[49],
     ZenyConvert = 450000000,
     Desc = "技能伤害[c][c427f1]＋14%[-][/c]\n每12点力量、灵巧、智力都能额外增加0.1%技能伤害"
@@ -2205,7 +2342,7 @@ Table_CardLevel = {
     id = 2306305,
     CardID = 23063,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[112],
+    BuffEffect = Table_CardLevel_t.BuffEffect[115],
     Cost = Table_CardLevel_t.Cost[50],
     ZenyConvert = 625000000,
     Desc = "技能伤害[c][c427f1]＋16%[-][/c]\n每12点力量、灵巧、智力都能额外增加0.1%技能伤害"
@@ -2213,7 +2350,7 @@ Table_CardLevel = {
   [2306401] = {
     id = 2306401,
     CardID = 23064,
-    BuffEffect = Table_CardLevel_t.BuffEffect[165],
+    BuffEffect = Table_CardLevel_t.BuffEffect[173],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "幸运＋20\n魔法伤害[c][c427f1]+1%[-][/c]\n魔法技能攻击时，有[c][c427f1]11%[-][/c]概率暴击，造成150%的法术暴击伤害\n每6点幸运额外增加1%法术暴击伤害（幸运增加法术暴击伤害效果不叠加）"
@@ -2222,7 +2359,7 @@ Table_CardLevel = {
     id = 2306402,
     CardID = 23064,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[166],
+    BuffEffect = Table_CardLevel_t.BuffEffect[174],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "幸运＋20\n魔法伤害[c][c427f1]+2%[-][/c]\n魔法技能攻击时，有[c][c427f1]12%[-][/c]概率暴击，造成150%的法术暴击伤害\n每6点幸运额外增加1%法术暴击伤害（幸运增加法术暴击伤害效果不叠加）"
@@ -2231,7 +2368,7 @@ Table_CardLevel = {
     id = 2306403,
     CardID = 23064,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[167],
+    BuffEffect = Table_CardLevel_t.BuffEffect[175],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "幸运＋20\n魔法伤害[c][c427f1]+3%[-][/c]\n魔法技能攻击时，有[c][c427f1]13%[-][/c]概率暴击，造成150%的法术暴击伤害\n每6点幸运额外增加1%法术暴击伤害（幸运增加法术暴击伤害效果不叠加）"
@@ -2240,23 +2377,23 @@ Table_CardLevel = {
     id = 2306404,
     CardID = 23064,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[168],
-    Cost = Table_CardLevel_t.Cost[74],
+    BuffEffect = Table_CardLevel_t.BuffEffect[176],
+    Cost = Table_CardLevel_t.Cost[76],
     Desc = "幸运＋20\n魔法伤害[c][c427f1]+4%[-][/c]\n魔法技能攻击时，有[c][c427f1]14%[-][/c]概率暴击，造成150%的法术暴击伤害\n每6点幸运额外增加1%法术暴击伤害（幸运增加法术暴击伤害效果不叠加）"
   },
   [2306405] = {
     id = 2306405,
     CardID = 23064,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[169],
-    Cost = Table_CardLevel_t.Cost[75],
+    BuffEffect = Table_CardLevel_t.BuffEffect[177],
+    Cost = Table_CardLevel_t.Cost[77],
     ZenyConvert = 312500000,
     Desc = "幸运＋20\n魔法伤害[c][c427f1]+5%[-][/c]\n魔法技能攻击时，有[c][c427f1]15%[-][/c]概率暴击，造成150%的法术暴击伤害\n每6点幸运额外增加1%法术暴击伤害（幸运增加法术暴击伤害效果不叠加）"
   },
   [2306501] = {
     id = 2306501,
     CardID = 23065,
-    BuffEffect = Table_CardLevel_t.BuffEffect[207],
+    BuffEffect = Table_CardLevel_t.BuffEffect[237],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "全能力＋2\n物理伤害[c][c427f1]＋7%[-][/c]\n任意一条六维属性（力量、敏捷、体质、智力、灵巧、幸运）达到119时，物理伤害＋1%（额外最多6%）"
@@ -2265,7 +2402,7 @@ Table_CardLevel = {
     id = 2306502,
     CardID = 23065,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[208],
+    BuffEffect = Table_CardLevel_t.BuffEffect[238],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "全能力＋2\n物理伤害[c][c427f1]＋9%[-][/c]\n任意一条六维属性（力量、敏捷、体质、智力、灵巧、幸运）达到119时，物理伤害＋1%（额外最多6%）"
@@ -2274,7 +2411,7 @@ Table_CardLevel = {
     id = 2306503,
     CardID = 23065,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[209],
+    BuffEffect = Table_CardLevel_t.BuffEffect[239],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "全能力＋2\n物理伤害[c][c427f1]＋11%[-][/c]\n任意一条六维属性（力量、敏捷、体质、智力、灵巧、幸运）达到119时，物理伤害＋1%（额外最多6%）"
@@ -2283,23 +2420,23 @@ Table_CardLevel = {
     id = 2306504,
     CardID = 23065,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[210],
-    Cost = Table_CardLevel_t.Cost[89],
+    BuffEffect = Table_CardLevel_t.BuffEffect[240],
+    Cost = Table_CardLevel_t.Cost[102],
     Desc = "全能力＋2\n物理伤害[c][c427f1]＋13%[-][/c]\n任意一条六维属性（力量、敏捷、体质、智力、灵巧、幸运）达到119时，物理伤害＋1%（额外最多6%）"
   },
   [2306505] = {
     id = 2306505,
     CardID = 23065,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[211],
-    Cost = Table_CardLevel_t.Cost[90],
+    BuffEffect = Table_CardLevel_t.BuffEffect[241],
+    Cost = Table_CardLevel_t.Cost[103],
     ZenyConvert = 312500000,
     Desc = "全能力＋2\n物理伤害[c][c427f1]＋15%[-][/c]\n任意一条六维属性（力量、敏捷、体质、智力、灵巧、幸运）达到119时，物理伤害＋1%（额外最多6%）"
   },
   [2306601] = {
     id = 2306601,
     CardID = 23066,
-    BuffEffect = Table_CardLevel_t.BuffEffect[307],
+    BuffEffect = Table_CardLevel_t.BuffEffect[337],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "技能伤害[c][c427f1]＋7%[-][/c]\n技能攻击时，50%的概率使目标技能伤害减免－5%，受治疗加成－15%，持续5秒，最多可叠加2层（卡片效果不叠加）"
@@ -2308,7 +2445,7 @@ Table_CardLevel = {
     id = 2306602,
     CardID = 23066,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[308],
+    BuffEffect = Table_CardLevel_t.BuffEffect[338],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "技能伤害[c][c427f1]＋9%[-][/c]\n技能攻击时，50%的概率使目标技能伤害减免－5%，受治疗加成－15%，持续5秒，最多可叠加2层（卡片效果不叠加）"
@@ -2317,7 +2454,7 @@ Table_CardLevel = {
     id = 2306603,
     CardID = 23066,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[309],
+    BuffEffect = Table_CardLevel_t.BuffEffect[339],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "技能伤害[c][c427f1]＋11%[-][/c]\n技能攻击时，50%的概率使目标技能伤害减免－5%，受治疗加成－15%，持续5秒，最多可叠加2层（卡片效果不叠加）"
@@ -2326,23 +2463,23 @@ Table_CardLevel = {
     id = 2306604,
     CardID = 23066,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[310],
-    Cost = Table_CardLevel_t.Cost[129],
+    BuffEffect = Table_CardLevel_t.BuffEffect[340],
+    Cost = Table_CardLevel_t.Cost[141],
     Desc = "技能伤害[c][c427f1]＋13%[-][/c]\n技能攻击时，50%的概率使目标技能伤害减免－5%，受治疗加成－15%，持续5秒，最多可叠加2层（卡片效果不叠加）"
   },
   [2306605] = {
     id = 2306605,
     CardID = 23066,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[311],
-    Cost = Table_CardLevel_t.Cost[130],
+    BuffEffect = Table_CardLevel_t.BuffEffect[341],
+    Cost = Table_CardLevel_t.Cost[142],
     ZenyConvert = 312500000,
     Desc = "技能伤害[c][c427f1]＋15%[-][/c]\n技能攻击时，50%的概率使目标技能伤害减免－5%，受治疗加成－15%，持续5秒，最多可叠加2层（卡片效果不叠加）"
   },
   [2306701] = {
     id = 2306701,
     CardID = 23067,
-    BuffEffect = Table_CardLevel_t.BuffEffect[206],
+    BuffEffect = Table_CardLevel_t.BuffEffect[236],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "全能力＋5\n技能伤害[c][c427f1]＋7%[-][/c]\n对血量高于50%目标，最终伤害＋5%"
@@ -2351,7 +2488,7 @@ Table_CardLevel = {
     id = 2306702,
     CardID = 23067,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[249],
+    BuffEffect = Table_CardLevel_t.BuffEffect[279],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "全能力＋5\n技能伤害[c][c427f1]＋9%[-][/c]\n对血量高于50%目标，最终伤害＋5%"
@@ -2360,7 +2497,7 @@ Table_CardLevel = {
     id = 2306703,
     CardID = 23067,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[250],
+    BuffEffect = Table_CardLevel_t.BuffEffect[280],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "全能力＋5\n技能伤害[c][c427f1]＋11%[-][/c]\n对血量高于50%目标，最终伤害＋5%"
@@ -2369,23 +2506,23 @@ Table_CardLevel = {
     id = 2306704,
     CardID = 23067,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[251],
-    Cost = Table_CardLevel_t.Cost[104],
+    BuffEffect = Table_CardLevel_t.BuffEffect[281],
+    Cost = Table_CardLevel_t.Cost[117],
     Desc = "全能力＋5\n技能伤害[c][c427f1]＋13%[-][/c]\n对血量高于50%目标，最终伤害＋5%"
   },
   [2306705] = {
     id = 2306705,
     CardID = 23067,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[252],
-    Cost = Table_CardLevel_t.Cost[105],
+    BuffEffect = Table_CardLevel_t.BuffEffect[282],
+    Cost = Table_CardLevel_t.Cost[118],
     ZenyConvert = 312500000,
     Desc = "全能力＋5\n技能伤害[c][c427f1]＋15%[-][/c]\n对血量高于50%目标，最终伤害＋5%"
   },
   [2307301] = {
     id = 2307301,
     CardID = 23073,
-    BuffEffect = Table_CardLevel_t.BuffEffect[293],
+    BuffEffect = Table_CardLevel_t.BuffEffect[323],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "蕴含着萨克莱的愤怒，自身伤害提高[c][c427f1]12%[-][/c]；当自身5米范围内每存在1名敌人时，受到的伤害降低2%（最多降低10%）"
@@ -2394,7 +2531,7 @@ Table_CardLevel = {
     id = 2307302,
     CardID = 23073,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[292],
+    BuffEffect = Table_CardLevel_t.BuffEffect[322],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "蕴含着萨克莱的愤怒，自身伤害提高[c][c427f1]14%[-][/c]；当自身5米范围内每存在1名敌人时，受到的伤害降低2%（最多降低10%）"
@@ -2403,7 +2540,7 @@ Table_CardLevel = {
     id = 2307303,
     CardID = 23073,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[291],
+    BuffEffect = Table_CardLevel_t.BuffEffect[321],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "蕴含着萨克莱的愤怒，自身伤害提高[c][c427f1]16%[-][/c]；当自身5米范围内每存在1名敌人时，受到的伤害降低2%（最多降低10%）"
@@ -2412,18 +2549,104 @@ Table_CardLevel = {
     id = 2307304,
     CardID = 23073,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[290],
-    Cost = Table_CardLevel_t.Cost[123],
+    BuffEffect = Table_CardLevel_t.BuffEffect[320],
+    Cost = Table_CardLevel_t.Cost[136],
     Desc = "蕴含着萨克莱的愤怒，自身伤害提高[c][c427f1]18%[-][/c]；当自身5米范围内每存在1名敌人时，受到的伤害降低2%（最多降低10%）"
   },
   [2307305] = {
     id = 2307305,
     CardID = 23073,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[284],
-    Cost = Table_CardLevel_t.Cost[120],
+    BuffEffect = Table_CardLevel_t.BuffEffect[314],
+    Cost = Table_CardLevel_t.Cost[133],
     ZenyConvert = 312500000,
     Desc = "蕴含着萨克莱的愤怒，自身伤害提高[c][c427f1]20%[-][/c]；当自身5米范围内每存在1名敌人时，受到的伤害降低2%（最多降低10%）"
+  },
+  [2307401] = {
+    id = 2307401,
+    CardID = 23074,
+    BuffEffect = Table_CardLevel_t.BuffEffect[197],
+    Cost = Table_CardLevel_t.Cost[3],
+    ZenyConvert = 37500000,
+    Desc = "对全种族伤害[c][c427f1]＋2%[-][/c]n对非人形种族伤害＋18%\n武器每精炼＋1，对龙族魔物伤害＋2%"
+  },
+  [2307402] = {
+    id = 2307402,
+    CardID = 23074,
+    Level = 2,
+    BuffEffect = Table_CardLevel_t.BuffEffect[196],
+    Cost = Table_CardLevel_t.Cost[4],
+    ZenyConvert = 87500000,
+    Desc = "对全种族伤害[c][c427f1]＋4%[-][/c]\n对非人形种族伤害＋18%\n武器每精炼＋1，对龙族魔物伤害＋2%"
+  },
+  [2307403] = {
+    id = 2307403,
+    CardID = 23074,
+    Level = 3,
+    BuffEffect = Table_CardLevel_t.BuffEffect[195],
+    Cost = Table_CardLevel_t.Cost[5],
+    ZenyConvert = 150000000,
+    Desc = "对全种族伤害[c][c427f1]＋6%[-][/c]\n对非人形种族伤害＋18%\n武器每精炼＋1，对龙族魔物伤害＋2%"
+  },
+  [2307404] = {
+    id = 2307404,
+    CardID = 23074,
+    Level = 4,
+    BuffEffect = Table_CardLevel_t.BuffEffect[194],
+    Cost = Table_CardLevel_t.Cost[86],
+    Desc = "对全种族伤害[c][c427f1]＋8%[-][/c]\n对非人形种族伤害＋18%\n武器每精炼＋1，对龙族魔物伤害＋2%"
+  },
+  [2307405] = {
+    id = 2307405,
+    CardID = 23074,
+    Level = 5,
+    BuffEffect = Table_CardLevel_t.BuffEffect[193],
+    Cost = Table_CardLevel_t.Cost[85],
+    ZenyConvert = 312500000,
+    Desc = "对全种族伤害[c][c427f1]＋10%[-][/c]\n对非人形种族伤害＋18%\n武器每精炼＋1，对龙族魔物伤害＋2%"
+  },
+  [2307501] = {
+    id = 2307501,
+    CardID = 23075,
+    BuffEffect = Table_CardLevel_t.BuffEffect[189],
+    Cost = Table_CardLevel_t.Cost[3],
+    ZenyConvert = 37500000,
+    Desc = "全属性攻击[c][c427f1]＋2%[-][/c]\n攻击目标时，有30%概率使目标陷入灼烧状态、使用技能时SP消耗量＋100%，持续10秒，最多可叠加3层\n对灼烧目标伤害＋15%"
+  },
+  [2307502] = {
+    id = 2307502,
+    CardID = 23075,
+    Level = 2,
+    BuffEffect = Table_CardLevel_t.BuffEffect[188],
+    Cost = Table_CardLevel_t.Cost[4],
+    ZenyConvert = 87500000,
+    Desc = "全属性攻击[c][c427f1]＋4%[-][/c]\n攻击目标时，有30%概率使目标陷入灼烧状态、使用技能时SP消耗量＋100%，持续10秒，最多可叠加3层\n对灼烧目标伤害＋15%"
+  },
+  [2307503] = {
+    id = 2307503,
+    CardID = 23075,
+    Level = 3,
+    BuffEffect = Table_CardLevel_t.BuffEffect[187],
+    Cost = Table_CardLevel_t.Cost[5],
+    ZenyConvert = 150000000,
+    Desc = "全属性攻击[c][c427f1]＋6%[-][/c]\n攻击目标时，有30%概率使目标陷入灼烧状态、使用技能时SP消耗量＋100%，持续10秒，最多可叠加3层\n对灼烧目标伤害＋15%"
+  },
+  [2307504] = {
+    id = 2307504,
+    CardID = 23075,
+    Level = 4,
+    BuffEffect = Table_CardLevel_t.BuffEffect[186],
+    Cost = Table_CardLevel_t.Cost[82],
+    Desc = "全属性攻击[c][c427f1]＋8%[-][/c]\n攻击目标时，有30%概率使目标陷入灼烧状态、使用技能时SP消耗量＋100%，持续10秒，最多可叠加3层\n对灼烧目标伤害＋15%"
+  },
+  [2307505] = {
+    id = 2307505,
+    CardID = 23075,
+    Level = 5,
+    BuffEffect = Table_CardLevel_t.BuffEffect[185],
+    Cost = Table_CardLevel_t.Cost[81],
+    ZenyConvert = 312500000,
+    Desc = "全属性攻击[c][c427f1]＋10%[-][/c]\n攻击目标时，有30%概率使目标陷入灼烧状态、使用技能时SP消耗量＋100%，持续10秒，最多可叠加3层\n对灼烧目标伤害＋15%"
   },
   [2327201] = {
     id = 2327201,
@@ -2463,15 +2686,15 @@ Table_CardLevel = {
     id = 2327205,
     CardID = 23272,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[294],
-    Cost = Table_CardLevel_t.Cost[124],
+    BuffEffect = Table_CardLevel_t.BuffEffect[202],
+    Cost = Table_CardLevel_t.Cost[89],
     ZenyConvert = 312500000,
     Desc = "可使用技能【领主光环】Lv.1\n全能力[c][c427f1]＋10[-][/c]\n对中型魔物伤害[c][c427f1]＋15%[-][/c]\n头饰每精炼+1，对中型魔物伤害＋1%"
   },
   [2328000] = {
     id = 2328000,
     CardID = 23280,
-    BuffEffect = Table_CardLevel_t.BuffEffect[303],
+    BuffEffect = Table_CardLevel_t.BuffEffect[333],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "闪避＋20\n全属性伤害减免[c][c427f1]＋9.5%[-][/c]\n主装备栏披风每精炼＋1，全属性伤害减免＋0.5%"
@@ -2480,7 +2703,7 @@ Table_CardLevel = {
     id = 2328001,
     CardID = 23280,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[302],
+    BuffEffect = Table_CardLevel_t.BuffEffect[332],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "闪避＋20\n全属性伤害减免[c][c427f1]＋11.5%[-][/c]\n主装备栏披风每精炼＋1，全属性伤害减免＋0.5%"
@@ -2489,7 +2712,7 @@ Table_CardLevel = {
     id = 2328002,
     CardID = 23280,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[246],
+    BuffEffect = Table_CardLevel_t.BuffEffect[276],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "闪避＋20\n全属性伤害减免[c][c427f1]＋13.5%[-][/c]\n主装备栏披风每精炼＋1，全属性伤害减免＋0.5%"
@@ -2498,16 +2721,16 @@ Table_CardLevel = {
     id = 2328003,
     CardID = 23280,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[247],
-    Cost = Table_CardLevel_t.Cost[102],
+    BuffEffect = Table_CardLevel_t.BuffEffect[277],
+    Cost = Table_CardLevel_t.Cost[115],
     Desc = "闪避＋20\n全属性伤害减免[c][c427f1]＋15.5%[-][/c]\n主装备栏披风每精炼＋1，全属性伤害减免＋0.5%"
   },
   [2328004] = {
     id = 2328004,
     CardID = 23280,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[248],
-    Cost = Table_CardLevel_t.Cost[103],
+    BuffEffect = Table_CardLevel_t.BuffEffect[278],
+    Cost = Table_CardLevel_t.Cost[116],
     ZenyConvert = 312500000,
     Desc = "闪避＋20\n全属性伤害减免[c][c427f1]＋17.5%[-][/c]\n主装备栏披风每精炼＋1，全属性伤害减免＋0.5%"
   },
@@ -2558,7 +2781,7 @@ Table_CardLevel = {
   [2329300] = {
     id = 2329300,
     CardID = 23293,
-    BuffEffect = Table_CardLevel_t.BuffEffect[301],
+    BuffEffect = Table_CardLevel_t.BuffEffect[331],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "普攻伤害[c][c427f1]＋7%[-][/c]\n每5%暴击伤害额外增加0.1%普攻伤害"
@@ -2567,7 +2790,7 @@ Table_CardLevel = {
     id = 2329301,
     CardID = 23293,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[295],
+    BuffEffect = Table_CardLevel_t.BuffEffect[201],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "普攻伤害[c][c427f1]＋9%[-][/c]\n每5%暴击伤害额外增加0.1%普攻伤害"
@@ -2576,7 +2799,7 @@ Table_CardLevel = {
     id = 2329302,
     CardID = 23293,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[114],
+    BuffEffect = Table_CardLevel_t.BuffEffect[117],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "普攻伤害[c][c427f1]＋11%[-][/c]\n每5%暴击伤害额外增加0.1%普攻伤害"
@@ -2585,7 +2808,7 @@ Table_CardLevel = {
     id = 2329303,
     CardID = 23293,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[115],
+    BuffEffect = Table_CardLevel_t.BuffEffect[118],
     Cost = Table_CardLevel_t.Cost[52],
     Desc = "普攻伤害[c][c427f1]＋13%[-][/c]\n每5%暴击伤害额外增加0.1%普攻伤害"
   },
@@ -2593,7 +2816,7 @@ Table_CardLevel = {
     id = 2329304,
     CardID = 23293,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[116],
+    BuffEffect = Table_CardLevel_t.BuffEffect[119],
     Cost = Table_CardLevel_t.Cost[53],
     ZenyConvert = 312500000,
     Desc = "普攻伤害[c][c427f1]＋15%[-][/c]\n每5%暴击伤害额外增加0.1%普攻伤害"
@@ -2673,7 +2896,8 @@ Table_CardLevel = {
     CardID = 23307,
     Level = 4,
     BuffEffect = Table_CardLevel_t.BuffEffect[31],
-    Cost = Table_CardLevel_t.Cost[17]
+    Cost = Table_CardLevel_t.Cost[17],
+    Desc = "普攻伤害[c][c427f1]＋8%[-][/c]\n武器每精炼＋1，普攻伤害＋1%\n普通攻击玩家时，有5%概率卸除玩家的【头饰】装备"
   },
   [2330704] = {
     id = 2330704,
@@ -2687,7 +2911,7 @@ Table_CardLevel = {
   [2330801] = {
     id = 2330801,
     CardID = 23308,
-    BuffEffect = Table_CardLevel_t.BuffEffect[92],
+    BuffEffect = Table_CardLevel_t.BuffEffect[94],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "移动速度[c][c427f1]＋1%[-][/c]\n技能伤害减免[c][c427f1]＋11%[-][/c]\n异常状态下，自身种族变为龙族"
@@ -2696,7 +2920,7 @@ Table_CardLevel = {
     id = 2330802,
     CardID = 23308,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[93],
+    BuffEffect = Table_CardLevel_t.BuffEffect[95],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 175000000,
     Desc = "移动速度[c][c427f1]＋2%[-][/c]\n技能伤害减免[c][c427f1]＋12%[-][/c]\n异常状态下，自身种族变为龙族"
@@ -2705,7 +2929,7 @@ Table_CardLevel = {
     id = 2330803,
     CardID = 23308,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[94],
+    BuffEffect = Table_CardLevel_t.BuffEffect[96],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "移动速度[c][c427f1]＋3%[-][/c]\n技能伤害减免[c][c427f1]＋13%[-][/c]\n异常状态下，自身种族变为龙族"
@@ -2714,7 +2938,7 @@ Table_CardLevel = {
     id = 2330804,
     CardID = 23308,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[95],
+    BuffEffect = Table_CardLevel_t.BuffEffect[97],
     Cost = Table_CardLevel_t.Cost[42],
     ZenyConvert = 450000000,
     Desc = "移动速度[c][c427f1]＋4%[-][/c]\n技能伤害减免[c][c427f1]＋14%[-][/c]\n异常状态下，自身种族变为龙族"
@@ -2723,7 +2947,7 @@ Table_CardLevel = {
     id = 2330805,
     CardID = 23308,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[96],
+    BuffEffect = Table_CardLevel_t.BuffEffect[98],
     Cost = Table_CardLevel_t.Cost[43],
     ZenyConvert = 625000000,
     Desc = "移动速度[c][c427f1]＋5%[-][/c]\n技能伤害减免[c][c427f1]＋15%[-][/c]\n异常状态下，自身种族变为龙族"
@@ -2771,10 +2995,53 @@ Table_CardLevel = {
     ZenyConvert = 312500000,
     Desc = "命中＋20\n物理伤害[c][c427f1]＋13%[-][/c]\n武器每精炼＋1，命中＋2、物理伤害[c][c427f1]＋1%[-][/c]\n可使用技能[c][c427f1]【无视体型攻击】Lv.10[-][/c]"
   },
+  [2331401] = {
+    id = 2331401,
+    CardID = 23314,
+    BuffEffect = Table_CardLevel_t.BuffEffect[152],
+    Cost = Table_CardLevel_t.Cost[3],
+    ZenyConvert = 37500000,
+    Desc = "技能伤害[c][c427f1]＋2%[-][/c]\n物理技能攻击时，100%概率获得10%伤害的HP恢复效果（1秒最多触发一次，卡片效果不叠加）"
+  },
+  [2331402] = {
+    id = 2331402,
+    CardID = 23314,
+    Level = 2,
+    BuffEffect = Table_CardLevel_t.BuffEffect[153],
+    Cost = Table_CardLevel_t.Cost[4],
+    ZenyConvert = 87500000,
+    Desc = "技能伤害[c][c427f1]＋4%[-][/c]\n物理技能攻击时，100%概率获得10%伤害的HP恢复效果（1秒最多触发一次，卡片效果不叠加）"
+  },
+  [2331403] = {
+    id = 2331403,
+    CardID = 23314,
+    Level = 3,
+    BuffEffect = Table_CardLevel_t.BuffEffect[154],
+    Cost = Table_CardLevel_t.Cost[5],
+    ZenyConvert = 150000000,
+    Desc = "技能伤害[c][c427f1]＋6%[-][/c]\n物理技能攻击时，100%概率获得10%伤害的HP恢复效果（1秒最多触发一次，卡片效果不叠加）"
+  },
+  [2331404] = {
+    id = 2331404,
+    CardID = 23314,
+    Level = 4,
+    BuffEffect = Table_CardLevel_t.BuffEffect[155],
+    Cost = Table_CardLevel_t.Cost[68],
+    Desc = "技能伤害[c][c427f1]＋8%[-][/c]\n物理技能攻击时，100%概率获得10%伤害的HP恢复效果（1秒最多触发一次，卡片效果不叠加）"
+  },
+  [2331405] = {
+    id = 2331405,
+    CardID = 23314,
+    Level = 5,
+    BuffEffect = Table_CardLevel_t.BuffEffect[156],
+    Cost = Table_CardLevel_t.Cost[69],
+    ZenyConvert = 312500000,
+    Desc = "技能伤害[c][c427f1]＋10%[-][/c]\n物理技能攻击时，100%概率获得10%伤害的HP恢复效果（1秒最多触发一次，卡片效果不叠加）"
+  },
   [2331601] = {
     id = 2331601,
     CardID = 23316,
-    BuffEffect = Table_CardLevel_t.BuffEffect[268],
+    BuffEffect = Table_CardLevel_t.BuffEffect[298],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "对普通魔物（不包含MVP、Mini魔物）增伤[c][c427f1]＋2%[-][/c]\n对MVP、Mini魔物伤害[c][c427f1]＋7%[-][/c]\n主装备栏盔甲每精炼＋1，对MVP、Mini魔物伤害＋1%"
@@ -2783,7 +3050,7 @@ Table_CardLevel = {
     id = 2331602,
     CardID = 23316,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[269],
+    BuffEffect = Table_CardLevel_t.BuffEffect[299],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "对普通魔物（不包含MVP、Mini魔物）增伤[c][c427f1]＋4%[-][/c]\n对MVP、Mini魔物伤害[c][c427f1]＋9%[-][/c]\n主装备栏盔甲每精炼＋1，对MVP、Mini魔物伤害＋1%"
@@ -2792,7 +3059,7 @@ Table_CardLevel = {
     id = 2331603,
     CardID = 23316,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[270],
+    BuffEffect = Table_CardLevel_t.BuffEffect[300],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "对普通魔物（不包含MVP、Mini魔物）增伤[c][c427f1]＋6%[-][/c]\n对MVP、Mini魔物伤害[c][c427f1]＋11%[-][/c]\n主装备栏盔甲每精炼＋1，对MVP、Mini魔物伤害＋1%"
@@ -2801,16 +3068,16 @@ Table_CardLevel = {
     id = 2331604,
     CardID = 23316,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[271],
-    Cost = Table_CardLevel_t.Cost[112],
+    BuffEffect = Table_CardLevel_t.BuffEffect[301],
+    Cost = Table_CardLevel_t.Cost[125],
     Desc = "对普通魔物（不包含MVP、Mini魔物）增伤[c][c427f1]＋8%[-][/c]\n对MVP、Mini魔物伤害[c][c427f1]＋13%[-][/c]\n主装备栏盔甲每精炼＋1，对MVP、Mini魔物伤害＋1%"
   },
   [2331605] = {
     id = 2331605,
     CardID = 23316,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[272],
-    Cost = Table_CardLevel_t.Cost[113],
+    BuffEffect = Table_CardLevel_t.BuffEffect[302],
+    Cost = Table_CardLevel_t.Cost[126],
     ZenyConvert = 312500000,
     Desc = "对普通魔物（不包含MVP、Mini魔物）增伤[c][c427f1]＋10%[-][/c]\n对MVP、Mini魔物伤害[c][c427f1]＋15%[-][/c]\n主装备栏盔甲每精炼＋1，对MVP、Mini魔物伤害＋1%"
   },
@@ -2860,7 +3127,7 @@ Table_CardLevel = {
   [2332201] = {
     id = 2332201,
     CardID = 23322,
-    BuffEffect = Table_CardLevel_t.BuffEffect[357],
+    BuffEffect = Table_CardLevel_t.BuffEffect[387],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "技能伤害[c][c427f1]＋7%[-][/c]\n对目标造成的最终伤害＋10%，该效果会被击中的所有目标分摊（卡片该效果不叠加）\n如果技能属于生命流失类型伤害，且受最终伤害加成属性的影响，则对目标造成的最终伤害＋15%（卡片该效果不叠加）"
@@ -2869,7 +3136,7 @@ Table_CardLevel = {
     id = 2332202,
     CardID = 23322,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[358],
+    BuffEffect = Table_CardLevel_t.BuffEffect[388],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "技能伤害[c][c427f1]＋9%[-][/c]\n对目标造成的最终伤害＋10%，该效果会被击中的所有目标分摊（卡片该效果不叠加）\n如果技能属于生命流失类型伤害，且受最终伤害加成属性的影响，则对目标造成的最终伤害＋15%（卡片该效果不叠加）"
@@ -2878,7 +3145,7 @@ Table_CardLevel = {
     id = 2332203,
     CardID = 23322,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[359],
+    BuffEffect = Table_CardLevel_t.BuffEffect[389],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "技能伤害[c][c427f1]＋11%[-][/c]\n对目标造成的最终伤害＋10%，该效果会被击中的所有目标分摊（卡片该效果不叠加）\n如果技能属于生命流失类型伤害，且受最终伤害加成属性的影响，则对目标造成的最终伤害＋15%（卡片该效果不叠加）"
@@ -2902,7 +3169,7 @@ Table_CardLevel = {
   [2333401] = {
     id = 2333401,
     CardID = 23334,
-    BuffEffect = Table_CardLevel_t.BuffEffect[122],
+    BuffEffect = Table_CardLevel_t.BuffEffect[125],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "幸运＋5\n魔法伤害[c][c427f1]＋1%[-][/c]\n魔法技能攻击时，有[c][c427f1]6%[-][/c]概率暴击，造成150%的法术暴击伤害，每6点幸运额外增加1%法术暴击伤害（幸运增加法术暴击伤害效果不叠加）\n武器每精炼＋1，幸运＋1、该法术暴击概率＋1%"
@@ -2911,7 +3178,7 @@ Table_CardLevel = {
     id = 2333402,
     CardID = 23334,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[123],
+    BuffEffect = Table_CardLevel_t.BuffEffect[126],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "幸运＋5\n魔法伤害[c][c427f1]＋2%[-][/c]\n魔法技能攻击时，有[c][c427f1]7%[-][/c]概率暴击，造成150%的法术暴击伤害，每6点幸运额外增加1%法术暴击伤害（幸运增加法术暴击伤害效果不叠加）\n武器每精炼＋1，幸运＋1、该法术暴击概率＋1%"
@@ -2920,7 +3187,7 @@ Table_CardLevel = {
     id = 2333403,
     CardID = 23334,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[124],
+    BuffEffect = Table_CardLevel_t.BuffEffect[127],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "幸运＋5\n魔法伤害[c][c427f1]＋3%[-][/c]\n魔法技能攻击时，有[c][c427f1]8%[-][/c]概率暴击，造成150%的法术暴击伤害，每6点幸运额外增加1%法术暴击伤害（幸运增加法术暴击伤害效果不叠加）\n武器每精炼＋1，幸运＋1、该法术暴击概率＋1%"
@@ -2929,7 +3196,7 @@ Table_CardLevel = {
     id = 2333404,
     CardID = 23334,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[125],
+    BuffEffect = Table_CardLevel_t.BuffEffect[128],
     Cost = Table_CardLevel_t.Cost[56],
     Desc = "幸运＋5\n魔法伤害[c][c427f1]＋4%[-][/c]\n魔法技能攻击时，有[c][c427f1]9%[-][/c]概率暴击，造成150%的法术暴击伤害，每6点幸运额外增加1%法术暴击伤害（幸运增加法术暴击伤害效果不叠加）\n武器每精炼＋1，幸运＋1、该法术暴击概率＋1%"
   },
@@ -2937,7 +3204,7 @@ Table_CardLevel = {
     id = 2333405,
     CardID = 23334,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[126],
+    BuffEffect = Table_CardLevel_t.BuffEffect[129],
     Cost = Table_CardLevel_t.Cost[57],
     ZenyConvert = 312500000,
     Desc = "幸运＋5\n魔法伤害[c][c427f1]＋5%[-][/c]\n魔法技能攻击时，有[c][c427f1]10%[-][/c]概率暴击，造成150%的法术暴击伤害，每6点幸运额外增加1%法术暴击伤害（幸运增加法术暴击伤害效果不叠加）\n武器每精炼＋1，幸运＋1、该法术暴击概率＋1%"
@@ -2945,7 +3212,7 @@ Table_CardLevel = {
   [2336301] = {
     id = 2336301,
     CardID = 23363,
-    BuffEffect = Table_CardLevel_t.BuffEffect[257],
+    BuffEffect = Table_CardLevel_t.BuffEffect[287],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "全种族伤害[c][c427f1]＋2%[-][/c]\n人形种族加伤＋5%\n对中型魔物伤害＋10%\n主装备栏盔甲每精炼＋1，对中型魔物伤害＋1%"
@@ -2954,7 +3221,7 @@ Table_CardLevel = {
     id = 2336302,
     CardID = 23363,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[256],
+    BuffEffect = Table_CardLevel_t.BuffEffect[286],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "全种族伤害[c][c427f1]＋4%[-][/c]\n人形种族加伤＋5%\n对中型魔物伤害＋10%\n主装备栏盔甲每精炼＋1，对中型魔物伤害＋1%"
@@ -2963,7 +3230,7 @@ Table_CardLevel = {
     id = 2336303,
     CardID = 23363,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[255],
+    BuffEffect = Table_CardLevel_t.BuffEffect[285],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "全种族伤害[c][c427f1]＋6%[-][/c]\n人形种族加伤＋5%\n对中型魔物伤害＋10%\n主装备栏盔甲每精炼＋1，对中型魔物伤害＋1%"
@@ -2972,23 +3239,23 @@ Table_CardLevel = {
     id = 2336304,
     CardID = 23363,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[254],
-    Cost = Table_CardLevel_t.Cost[107],
+    BuffEffect = Table_CardLevel_t.BuffEffect[284],
+    Cost = Table_CardLevel_t.Cost[120],
     Desc = "全种族伤害[c][c427f1]＋8%[-][/c]\n人形种族加伤＋5%\n对中型魔物伤害＋10%\n主装备栏盔甲每精炼＋1，对中型魔物伤害＋1%"
   },
   [2336305] = {
     id = 2336305,
     CardID = 23363,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[253],
-    Cost = Table_CardLevel_t.Cost[106],
+    BuffEffect = Table_CardLevel_t.BuffEffect[283],
+    Cost = Table_CardLevel_t.Cost[119],
     ZenyConvert = 312500000,
     Desc = "全种族伤害[c][c427f1]＋10%[-][/c]\n人形种族加伤＋5%\n对中型魔物伤害＋10%\n主装备栏盔甲每精炼＋1，对中型魔物伤害＋1%"
   },
   [2341901] = {
     id = 2341901,
     CardID = 23419,
-    BuffEffect = Table_CardLevel_t.BuffEffect[348],
+    BuffEffect = Table_CardLevel_t.BuffEffect[378],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "对全种族伤害[c][c427f1]＋7%[-][/c]\n攻击目标时，有50%概率对目标施加“易伤”效果：使目标受到的伤害增加15%，持续10秒（卡片该效果不叠加）"
@@ -2997,7 +3264,7 @@ Table_CardLevel = {
     id = 2341902,
     CardID = 23419,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[349],
+    BuffEffect = Table_CardLevel_t.BuffEffect[379],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "对全种族伤害[c][c427f1]＋9%[-][/c]\n攻击目标时，有50%概率对目标施加“易伤”效果：使目标受到的伤害增加15%，持续10秒（卡片该效果不叠加）"
@@ -3006,7 +3273,7 @@ Table_CardLevel = {
     id = 2341903,
     CardID = 23419,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[350],
+    BuffEffect = Table_CardLevel_t.BuffEffect[380],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "对全种族伤害[c][c427f1]＋11%[-][/c]\n攻击目标时，有50%概率对目标施加“易伤”效果：使目标受到的伤害增加15%，持续10秒（卡片该效果不叠加）"
@@ -3015,23 +3282,66 @@ Table_CardLevel = {
     id = 2341904,
     CardID = 23419,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[351],
-    Cost = Table_CardLevel_t.Cost[146],
+    BuffEffect = Table_CardLevel_t.BuffEffect[381],
+    Cost = Table_CardLevel_t.Cost[158],
     Desc = "对全种族伤害[c][c427f1]＋13%[-][/c]\n攻击目标时，有50%概率对目标施加“易伤”效果：使目标受到的伤害增加15%，持续10秒（卡片该效果不叠加）"
   },
   [2341905] = {
     id = 2341905,
     CardID = 23419,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[352],
-    Cost = Table_CardLevel_t.Cost[147],
+    BuffEffect = Table_CardLevel_t.BuffEffect[382],
+    Cost = Table_CardLevel_t.Cost[159],
     ZenyConvert = 312500000,
     Desc = "对全种族伤害[c][c427f1]＋15%[-][/c]\n攻击目标时，有50%概率对目标施加“易伤”效果：使目标受到的伤害增加15%，持续10秒（卡片该效果不叠加）"
+  },
+  [2345101] = {
+    id = 2345101,
+    CardID = 23451,
+    BuffEffect = Table_CardLevel_t.BuffEffect[86],
+    Cost = Table_CardLevel_t.Cost[3],
+    ZenyConvert = 37500000,
+    Desc = "移动速度＋15%\n物理、魔法伤害[c][c427f1]＋2%[-][/c]\n每隔2秒自动释放一次，自身5米范围内敌人的移动速度－15%，持续5秒（该减速无视减速免疫）\n若目标移动速度低于攻击方移动速度，则伤害提升10%"
+  },
+  [2345102] = {
+    id = 2345102,
+    CardID = 23451,
+    Level = 2,
+    BuffEffect = Table_CardLevel_t.BuffEffect[87],
+    Cost = Table_CardLevel_t.Cost[4],
+    ZenyConvert = 87500000,
+    Desc = "移动速度＋15%\n物理、魔法伤害[c][c427f1]＋4%[-][/c]\n每隔2秒自动释放一次，自身5米范围内敌人的移动速度－15%，持续5秒（该减速无视减速免疫）\n若目标移动速度低于攻击方移动速度，则伤害提升10%"
+  },
+  [2345103] = {
+    id = 2345103,
+    CardID = 23451,
+    Level = 3,
+    BuffEffect = Table_CardLevel_t.BuffEffect[192],
+    Cost = Table_CardLevel_t.Cost[5],
+    ZenyConvert = 150000000,
+    Desc = "移动速度＋15%\n物理、魔法伤害[c][c427f1]＋6%[-][/c]\n每隔2秒自动释放一次，自身5米范围内敌人的移动速度－15%，持续5秒（该减速无视减速免疫）\n若目标移动速度低于攻击方移动速度，则伤害提升10%"
+  },
+  [2345104] = {
+    id = 2345104,
+    CardID = 23451,
+    Level = 4,
+    BuffEffect = Table_CardLevel_t.BuffEffect[191],
+    Cost = Table_CardLevel_t.Cost[84],
+    Desc = "移动速度＋15%\n物理、魔法伤害[c][c427f1]＋8%[-][/c]\n每隔2秒自动释放一次，自身5米范围内敌人的移动速度－15%，持续5秒（该减速无视减速免疫）\n若目标移动速度低于攻击方移动速度，则伤害提升10%"
+  },
+  [2345105] = {
+    id = 2345105,
+    CardID = 23451,
+    Level = 5,
+    BuffEffect = Table_CardLevel_t.BuffEffect[190],
+    Cost = Table_CardLevel_t.Cost[83],
+    ZenyConvert = 312500000,
+    Desc = "移动速度＋15%\n物理、魔法伤害[c][c427f1]＋10%[-][/c]\n每隔2秒自动释放一次，自身5米范围内敌人的移动速度－15%，持续5秒（该减速无视减速免疫）\n若目标移动速度低于攻击方移动速度，则伤害提升10%"
   },
   [2345501] = {
     id = 2345501,
     CardID = 23455,
-    BuffEffect = Table_CardLevel_t.BuffEffect[356],
+    BuffEffect = Table_CardLevel_t.BuffEffect[386],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "幸运＋15\n头饰每精炼＋1，幸运＋3\n魔法伤害[c][c427f1]＋1%[-][/c]\n魔法技能攻击时，有[c][c427f1]11%[-][/c]概率暴击，造成150%的法术暴击伤害，每6点幸运额外增加1%法术暴击伤害（幸运增加法术暴击伤害效果不叠加）"
@@ -3040,7 +3350,7 @@ Table_CardLevel = {
     id = 2345502,
     CardID = 23455,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[355],
+    BuffEffect = Table_CardLevel_t.BuffEffect[385],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "幸运＋15\n头饰每精炼＋1，幸运＋3\n魔法伤害[c][c427f1]＋2%[-][/c]\n魔法技能攻击时，有[c][c427f1]12%[-][/c]概率暴击，造成150%的法术暴击伤害，每6点幸运额外增加1%法术暴击伤害（幸运增加法术暴击伤害效果不叠加）"
@@ -3114,6 +3424,92 @@ Table_CardLevel = {
     ZenyConvert = 312500000,
     Desc = "最终伤害[c][c427f1]＋15%[-][/c]\n移动速度[c][c427f1]＋5%[-][/c]\n移动速度100%以后，每提升10%移动速度，最终伤害＋1%（额外最多提升15%）"
   },
+  [2348701] = {
+    id = 2348701,
+    CardID = 23487,
+    BuffEffect = Table_CardLevel_t.BuffEffect[104],
+    Cost = Table_CardLevel_t.Cost[3],
+    ZenyConvert = 37500000,
+    Desc = "全属性攻击[c][c427f1]＋12%[-][/c]\n攻击目标时，有10%概率使目标铠甲属性变成地属性，持续5秒（卡片该效果不叠加）"
+  },
+  [2348702] = {
+    id = 2348702,
+    CardID = 23487,
+    Level = 2,
+    BuffEffect = Table_CardLevel_t.BuffEffect[211],
+    Cost = Table_CardLevel_t.Cost[4],
+    ZenyConvert = 87500000,
+    Desc = "全属性攻击[c][c427f1]＋14%[-][/c]\n攻击目标时，有10%概率使目标铠甲属性变成地属性，持续5秒（卡片该效果不叠加）"
+  },
+  [2348703] = {
+    id = 2348703,
+    CardID = 23487,
+    Level = 3,
+    BuffEffect = Table_CardLevel_t.BuffEffect[210],
+    Cost = Table_CardLevel_t.Cost[5],
+    ZenyConvert = 150000000,
+    Desc = "全属性攻击[c][c427f1]＋16%[-][/c]\n攻击目标时，有10%概率使目标铠甲属性变成地属性，持续5秒（卡片该效果不叠加）"
+  },
+  [2348704] = {
+    id = 2348704,
+    CardID = 23487,
+    Level = 4,
+    BuffEffect = Table_CardLevel_t.BuffEffect[209],
+    Cost = Table_CardLevel_t.Cost[93],
+    Desc = "全属性攻击[c][c427f1]＋18%[-][/c]\n攻击目标时，有10%概率使目标铠甲属性变成地属性，持续5秒（卡片该效果不叠加）"
+  },
+  [2348705] = {
+    id = 2348705,
+    CardID = 23487,
+    Level = 5,
+    BuffEffect = Table_CardLevel_t.BuffEffect[203],
+    Cost = Table_CardLevel_t.Cost[90],
+    ZenyConvert = 312500000,
+    Desc = "全属性攻击[c][c427f1]＋20%[-][/c]\n攻击目标时，有10%概率使目标铠甲属性变成地属性，持续5秒（卡片该效果不叠加）"
+  },
+  [2349001] = {
+    id = 2349001,
+    CardID = 23490,
+    BuffEffect = Table_CardLevel_t.BuffEffect[324],
+    Cost = Table_CardLevel_t.Cost[3],
+    ZenyConvert = 37500000,
+    Desc = "物理、魔法穿刺[c][c427f1]＋2%[-][/c]\n同一地图队伍内不同的职业种类达到2个时，自身物理、魔法穿刺＋8%，之后每增加1个，自身物理、魔法穿刺＋2%（最多额外增加8%，卡片效果不叠加）\n同一地图队伍内不同的职业种类达到4个时，自身物伤、魔伤减免＋4%、队伍内其他成员物伤、魔伤减免＋4%（卡片效果不叠加）\n计算职业种类时，一转及一转之前职业不生效"
+  },
+  [2349002] = {
+    id = 2349002,
+    CardID = 23490,
+    Level = 2,
+    BuffEffect = Table_CardLevel_t.BuffEffect[325],
+    Cost = Table_CardLevel_t.Cost[4],
+    ZenyConvert = 87500000,
+    Desc = "物理、魔法穿刺[c][c427f1]＋4%[-][/c]\n同一地图队伍内不同的职业种类达到2个时，自身物理、魔法穿刺＋8%，之后每增加1个，自身物理、魔法穿刺＋2%（最多额外增加8%，卡片效果不叠加）\n同一地图队伍内不同的职业种类达到4个时，自身物伤、魔伤减免＋4%、队伍内其他成员物伤、魔伤减免＋4%（卡片效果不叠加）\n计算职业种类时，一转及一转之前职业不生效"
+  },
+  [2349003] = {
+    id = 2349003,
+    CardID = 23490,
+    Level = 3,
+    BuffEffect = Table_CardLevel_t.BuffEffect[200],
+    Cost = Table_CardLevel_t.Cost[5],
+    ZenyConvert = 150000000,
+    Desc = "物理、魔法穿刺[c][c427f1]＋6%[-][/c]\n同一地图队伍内不同的职业种类达到2个时，自身物理、魔法穿刺＋8%，之后每增加1个，自身物理、魔法穿刺＋2%（最多额外增加8%，卡片效果不叠加）\n同一地图队伍内不同的职业种类达到4个时，自身物伤、魔伤减免＋4%、队伍内其他成员物伤、魔伤减免＋4%（卡片效果不叠加）\n计算职业种类时，一转及一转之前职业不生效"
+  },
+  [2349004] = {
+    id = 2349004,
+    CardID = 23490,
+    Level = 4,
+    BuffEffect = Table_CardLevel_t.BuffEffect[199],
+    Cost = Table_CardLevel_t.Cost[88],
+    Desc = "物理、魔法穿刺[c][c427f1]＋8%[-][/c]\n同一地图队伍内不同的职业种类达到2个时，自身物理、魔法穿刺＋8%，之后每增加1个，自身物理、魔法穿刺＋2%（最多额外增加8%，卡片效果不叠加）\n同一地图队伍内不同的职业种类达到4个时，自身物伤、魔伤减免＋4%、队伍内其他成员物伤、魔伤减免＋4%（卡片效果不叠加）\n计算职业种类时，一转及一转之前职业不生效"
+  },
+  [2349005] = {
+    id = 2349005,
+    CardID = 23490,
+    Level = 5,
+    BuffEffect = Table_CardLevel_t.BuffEffect[198],
+    Cost = Table_CardLevel_t.Cost[87],
+    ZenyConvert = 312500000,
+    Desc = "物理、魔法穿刺[c][c427f1]＋10%[-][/c]\n同一地图队伍内不同的职业种类达到2个时，自身物理、魔法穿刺＋8%，之后每增加1个，自身物理、魔法穿刺＋2%（最多额外增加8%，卡片效果不叠加）\n同一地图队伍内不同的职业种类达到4个时，自身物伤、魔伤减免＋4%、队伍内其他成员物伤、魔伤减免＋4%（卡片效果不叠加）\n计算职业种类时，一转及一转之前职业不生效"
+  },
   [2460001] = {
     id = 2460001,
     CardID = 24600,
@@ -3160,7 +3556,7 @@ Table_CardLevel = {
   [2460101] = {
     id = 2460101,
     CardID = 24601,
-    BuffEffect = Table_CardLevel_t.BuffEffect[235],
+    BuffEffect = Table_CardLevel_t.BuffEffect[265],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "物伤减免[c][c427f1]＋2%[-][/c]\n受到物理伤害时有3%概率使敌人中毒。当刺客系装备时中毒概率提升至12%\n中毒攻击＋50%，中毒抵抗＋100%\n对中毒的目标造成伤害＋20%"
@@ -3169,7 +3565,7 @@ Table_CardLevel = {
     id = 2460102,
     CardID = 24601,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[234],
+    BuffEffect = Table_CardLevel_t.BuffEffect[264],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "物伤减免[c][c427f1]＋4%[-][/c]\n受到物理伤害时有3%概率使敌人中毒。当刺客系装备时中毒概率提升至12%\n中毒攻击＋50%，中毒抵抗＋100%\n对中毒的目标造成伤害＋20%"
@@ -3178,7 +3574,7 @@ Table_CardLevel = {
     id = 2460103,
     CardID = 24601,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[233],
+    BuffEffect = Table_CardLevel_t.BuffEffect[263],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "物伤减免[c][c427f1]＋6%[-][/c]\n受到物理伤害时有3%概率使敌人中毒。当刺客系装备时中毒概率提升至12%\n中毒攻击＋50%，中毒抵抗＋100%\n对中毒的目标造成伤害＋20%"
@@ -3187,15 +3583,15 @@ Table_CardLevel = {
     id = 2460104,
     CardID = 24601,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[232],
-    Cost = Table_CardLevel_t.Cost[98],
+    BuffEffect = Table_CardLevel_t.BuffEffect[262],
+    Cost = Table_CardLevel_t.Cost[111],
     Desc = "物伤减免[c][c427f1]＋8%[-][/c]\n受到物理伤害时有3%概率使敌人中毒。当刺客系装备时中毒概率提升至12%\n中毒攻击＋50%，中毒抵抗＋100%\n对中毒的目标造成伤害＋20%"
   },
   [2460105] = {
     id = 2460105,
     CardID = 24601,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[107],
+    BuffEffect = Table_CardLevel_t.BuffEffect[110],
     Cost = Table_CardLevel_t.Cost[48],
     ZenyConvert = 312500000,
     Desc = "物伤减免[c][c427f1]＋10%[-][/c]\n受到物理伤害时有3%概率使敌人中毒。当刺客系装备时中毒概率提升至12%\n中毒攻击＋50%，中毒抵抗＋100%\n对中毒的目标造成伤害＋20%"
@@ -3203,7 +3599,7 @@ Table_CardLevel = {
   [2460200] = {
     id = 2460200,
     CardID = 24602,
-    BuffEffect = Table_CardLevel_t.BuffEffect[160],
+    BuffEffect = Table_CardLevel_t.BuffEffect[168],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "生命上限[c][c427f1]＋1%[-][/c]\n受到无属性伤害[c][c427f1]＋44%[-][/c]\n受到其他属性伤害－20%"
@@ -3212,7 +3608,7 @@ Table_CardLevel = {
     id = 2460201,
     CardID = 24602,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[161],
+    BuffEffect = Table_CardLevel_t.BuffEffect[169],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "生命上限[c][c427f1]＋2%[-][/c]\n受到无属性伤害[c][c427f1]＋38%[-][/c]\n受到其他属性伤害－20%"
@@ -3221,7 +3617,7 @@ Table_CardLevel = {
     id = 2460202,
     CardID = 24602,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[162],
+    BuffEffect = Table_CardLevel_t.BuffEffect[170],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "生命上限[c][c427f1]＋3%[-][/c]\n受到无属性伤害[c][c427f1]＋32%[-][/c]\n受到其他属性伤害－20%"
@@ -3230,23 +3626,23 @@ Table_CardLevel = {
     id = 2460203,
     CardID = 24602,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[163],
-    Cost = Table_CardLevel_t.Cost[72],
+    BuffEffect = Table_CardLevel_t.BuffEffect[171],
+    Cost = Table_CardLevel_t.Cost[74],
     Desc = "生命上限[c][c427f1]＋4%[-][/c]\n受到无属性伤害[c][c427f1]＋26%[-][/c]\n受到其他属性伤害－20%"
   },
   [2460204] = {
     id = 2460204,
     CardID = 24602,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[164],
-    Cost = Table_CardLevel_t.Cost[73],
+    BuffEffect = Table_CardLevel_t.BuffEffect[172],
+    Cost = Table_CardLevel_t.Cost[75],
     ZenyConvert = 312500000,
     Desc = "生命上限[c][c427f1]＋5%[-][/c]\n受到无属性伤害[c][c427f1]＋20%[-][/c]\n受到其他属性伤害－20%"
   },
   [2460301] = {
     id = 2460301,
     CardID = 24603,
-    BuffEffect = Table_CardLevel_t.BuffEffect[196],
+    BuffEffect = Table_CardLevel_t.BuffEffect[226],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "对小、中、大型魔物都造成100%的伤害\n物理攻击＋100\n对大型魔物伤害额外增加[c][c427f1]32%[-][/c]"
@@ -3255,7 +3651,7 @@ Table_CardLevel = {
     id = 2460302,
     CardID = 24603,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[197],
+    BuffEffect = Table_CardLevel_t.BuffEffect[227],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "对小、中、大型魔物都造成100%的伤害\n物理攻击＋100\n对大型魔物伤害额外增加[c][c427f1]34%[-][/c]"
@@ -3264,7 +3660,7 @@ Table_CardLevel = {
     id = 2460303,
     CardID = 24603,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[198],
+    BuffEffect = Table_CardLevel_t.BuffEffect[228],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "对小、中、大型魔物都造成100%的伤害\n物理攻击＋100\n对大型魔物伤害额外增加[c][c427f1]36%[-][/c]"
@@ -3273,23 +3669,23 @@ Table_CardLevel = {
     id = 2460304,
     CardID = 24603,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[199],
-    Cost = Table_CardLevel_t.Cost[84],
+    BuffEffect = Table_CardLevel_t.BuffEffect[229],
+    Cost = Table_CardLevel_t.Cost[97],
     Desc = "对小、中、大型魔物都造成100%的伤害\n物理攻击＋100\n对大型魔物伤害额外增加[c][c427f1]38%[-][/c]"
   },
   [2460305] = {
     id = 2460305,
     CardID = 24603,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[200],
-    Cost = Table_CardLevel_t.Cost[85],
+    BuffEffect = Table_CardLevel_t.BuffEffect[230],
+    Cost = Table_CardLevel_t.Cost[98],
     ZenyConvert = 312500000,
     Desc = "对小、中、大型魔物都造成100%的伤害\n物理攻击＋100\n对大型魔物伤害额外增加[c][c427f1]40%[-][/c]"
   },
   [2460401] = {
     id = 2460401,
     CardID = 24604,
-    BuffEffect = Table_CardLevel_t.BuffEffect[296],
+    BuffEffect = Table_CardLevel_t.BuffEffect[326],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "普攻伤害[c][c427f1]＋2%[-][/c]\n普攻时有20%概率自动施放【天使之怒】Lv.1技能，使敌方单体下次受到的伤害增加100%"
@@ -3298,7 +3694,7 @@ Table_CardLevel = {
     id = 2460402,
     CardID = 24604,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[297],
+    BuffEffect = Table_CardLevel_t.BuffEffect[327],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "普攻伤害[c][c427f1]＋4%[-][/c]\n普攻时有20%概率自动施放【天使之怒】Lv.1技能，使敌方单体下次受到的伤害增加100%"
@@ -3307,7 +3703,7 @@ Table_CardLevel = {
     id = 2460403,
     CardID = 24604,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[298],
+    BuffEffect = Table_CardLevel_t.BuffEffect[328],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "普攻伤害[c][c427f1]＋6%[-][/c]\n普攻时有20%概率自动施放【天使之怒】Lv.1技能，使敌方单体下次受到的伤害增加100%"
@@ -3316,16 +3712,16 @@ Table_CardLevel = {
     id = 2460404,
     CardID = 24604,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[299],
-    Cost = Table_CardLevel_t.Cost[125],
+    BuffEffect = Table_CardLevel_t.BuffEffect[329],
+    Cost = Table_CardLevel_t.Cost[137],
     Desc = "普攻伤害[c][c427f1]＋8%[-][/c]\n普攻时有20%概率自动施放【天使之怒】Lv.1技能，使敌方单体下次受到的伤害增加100%"
   },
   [2460405] = {
     id = 2460405,
     CardID = 24604,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[300],
-    Cost = Table_CardLevel_t.Cost[126],
+    BuffEffect = Table_CardLevel_t.BuffEffect[330],
+    Cost = Table_CardLevel_t.Cost[138],
     ZenyConvert = 312500000,
     Desc = "普攻伤害[c][c427f1]＋10%[-][/c]\n普攻时有20%概率自动施放【天使之怒】Lv.1技能，使敌方单体下次受到的伤害增加100%"
   },
@@ -3375,7 +3771,7 @@ Table_CardLevel = {
   [2460601] = {
     id = 2460601,
     CardID = 24606,
-    BuffEffect = Table_CardLevel_t.BuffEffect[97],
+    BuffEffect = Table_CardLevel_t.BuffEffect[99],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "反射20%的魔法伤害\n受到魔法伤害时，[c][c427f1]30%[-][/c]概率提升30%魔法防御，持续5秒\n受到伤害时，恢复实际受到伤害值[c][c427f1]2%[-][/c]的最大生命"
@@ -3384,7 +3780,7 @@ Table_CardLevel = {
     id = 2460602,
     CardID = 24606,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[98],
+    BuffEffect = Table_CardLevel_t.BuffEffect[100],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 175000000,
     Desc = "反射20%的魔法伤害\n受到魔法伤害时，[c][c427f1]45%[-][/c]概率提升30%魔法防御，持续5秒\n受到伤害时，恢复实际受到伤害值[c][c427f1]4%[-][/c]的最大生命"
@@ -3393,7 +3789,7 @@ Table_CardLevel = {
     id = 2460603,
     CardID = 24606,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[99],
+    BuffEffect = Table_CardLevel_t.BuffEffect[101],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "反射20%的魔法伤害\n受到魔法伤害时，[c][c427f1]60%[-][/c]概率提升30%魔法防御，持续5秒\n受到伤害时，恢复实际受到伤害值[c][c427f1]6%[-][/c]的最大生命"
@@ -3402,7 +3798,7 @@ Table_CardLevel = {
     id = 2460604,
     CardID = 24606,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[100],
+    BuffEffect = Table_CardLevel_t.BuffEffect[102],
     Cost = Table_CardLevel_t.Cost[44],
     ZenyConvert = 450000000,
     Desc = "反射20%的魔法伤害\n受到魔法伤害时，[c][c427f1]75%[-][/c]概率提升30%魔法防御，持续5秒\n受到伤害时，恢复实际受到伤害值[c][c427f1]8%[-][/c]的最大生命"
@@ -3411,7 +3807,7 @@ Table_CardLevel = {
     id = 2460605,
     CardID = 24606,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[101],
+    BuffEffect = Table_CardLevel_t.BuffEffect[103],
     Cost = Table_CardLevel_t.Cost[45],
     ZenyConvert = 625000000,
     Desc = "反射20%的魔法伤害\n受到魔法伤害时，[c][c427f1]100%[-][/c]概率提升30%魔法防御，持续5秒\n受到伤害时，恢复实际受到伤害值[c][c427f1]10%[-][/c]的最大生命"
@@ -3419,7 +3815,7 @@ Table_CardLevel = {
   [2460701] = {
     id = 2460701,
     CardID = 24607,
-    BuffEffect = Table_CardLevel_t.BuffEffect[155],
+    BuffEffect = Table_CardLevel_t.BuffEffect[163],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "生命上限[c][c427f1]－6%[-][/c]\n处于无限【霸体】状态\n避免陷入定身状态"
@@ -3428,7 +3824,7 @@ Table_CardLevel = {
     id = 2460702,
     CardID = 24607,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[156],
+    BuffEffect = Table_CardLevel_t.BuffEffect[164],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 175000000,
     Desc = "生命上限[c][c427f1]－2%[-][/c]\n处于无限【霸体】状态\n避免陷入定身状态"
@@ -3437,7 +3833,7 @@ Table_CardLevel = {
     id = 2460703,
     CardID = 24607,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[157],
+    BuffEffect = Table_CardLevel_t.BuffEffect[165],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "生命上限[c][c427f1]＋2%[-][/c]\n处于无限【霸体】状态\n避免陷入定身状态"
@@ -3446,8 +3842,8 @@ Table_CardLevel = {
     id = 2460704,
     CardID = 24607,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[158],
-    Cost = Table_CardLevel_t.Cost[70],
+    BuffEffect = Table_CardLevel_t.BuffEffect[166],
+    Cost = Table_CardLevel_t.Cost[72],
     ZenyConvert = 450000000,
     Desc = "生命上限[c][c427f1]＋6%[-][/c]\n处于无限【霸体】状态\n避免陷入定身状态"
   },
@@ -3455,15 +3851,15 @@ Table_CardLevel = {
     id = 2460705,
     CardID = 24607,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[159],
-    Cost = Table_CardLevel_t.Cost[71],
+    BuffEffect = Table_CardLevel_t.BuffEffect[167],
+    Cost = Table_CardLevel_t.Cost[73],
     ZenyConvert = 625000000,
     Desc = "生命上限[c][c427f1]＋10%[-][/c]\n处于无限【霸体】状态\n避免陷入定身状态"
   },
   [2460801] = {
     id = 2460801,
     CardID = 24608,
-    BuffEffect = Table_CardLevel_t.BuffEffect[185],
+    BuffEffect = Table_CardLevel_t.BuffEffect[215],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "永久提升移速[c][c427f1]34%[-][/c]\n避免移动速度降低"
@@ -3472,7 +3868,7 @@ Table_CardLevel = {
     id = 2460802,
     CardID = 24608,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[186],
+    BuffEffect = Table_CardLevel_t.BuffEffect[216],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 175000000,
     Desc = "永久提升移速[c][c427f1]38%[-][/c]\n避免移动速度降低"
@@ -3481,7 +3877,7 @@ Table_CardLevel = {
     id = 2460803,
     CardID = 24608,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[187],
+    BuffEffect = Table_CardLevel_t.BuffEffect[217],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "永久提升移速[c][c427f1]42%[-][/c]\n避免移动速度降低"
@@ -3490,8 +3886,8 @@ Table_CardLevel = {
     id = 2460804,
     CardID = 24608,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[188],
-    Cost = Table_CardLevel_t.Cost[81],
+    BuffEffect = Table_CardLevel_t.BuffEffect[218],
+    Cost = Table_CardLevel_t.Cost[94],
     ZenyConvert = 450000000,
     Desc = "永久提升移速[c][c427f1]46%[-][/c]\n避免移动速度降低"
   },
@@ -3499,15 +3895,15 @@ Table_CardLevel = {
     id = 2460805,
     CardID = 24608,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[189],
-    Cost = Table_CardLevel_t.Cost[82],
+    BuffEffect = Table_CardLevel_t.BuffEffect[219],
+    Cost = Table_CardLevel_t.Cost[95],
     ZenyConvert = 625000000,
     Desc = "永久提升移速[c][c427f1]50%[-][/c]\n避免移动速度降低"
   },
   [2460901] = {
     id = 2460901,
     CardID = 24609,
-    BuffEffect = Table_CardLevel_t.BuffEffect[285],
+    BuffEffect = Table_CardLevel_t.BuffEffect[315],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "普攻伤害[c][c427f1]＋2%[-][/c]\n普攻时有5%概率获得急速狂暴效果，急速狂暴：装备攻速＋20%，普攻伤害＋7.5%，持续10秒\n【死灵★卡片】和【阿特罗斯★卡片】一同装备时，普攻伤害＋10%"
@@ -3516,7 +3912,7 @@ Table_CardLevel = {
     id = 2460902,
     CardID = 24609,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[286],
+    BuffEffect = Table_CardLevel_t.BuffEffect[316],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "普攻伤害[c][c427f1]＋4%[-][/c]\n普攻时有5%概率获得急速狂暴效果，急速狂暴：装备攻速＋20%，普攻伤害＋7.5%，持续10秒\n【死灵★卡片】和【阿特罗斯★卡片】一同装备时，普攻伤害＋10%"
@@ -3525,7 +3921,7 @@ Table_CardLevel = {
     id = 2460903,
     CardID = 24609,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[287],
+    BuffEffect = Table_CardLevel_t.BuffEffect[317],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "普攻伤害[c][c427f1]＋6%[-][/c]\n普攻时有5%概率获得急速狂暴效果，急速狂暴：装备攻速＋20%，普攻伤害＋7.5%，持续10秒\n【死灵★卡片】和【阿特罗斯★卡片】一同装备时，普攻伤害＋10%"
@@ -3534,16 +3930,16 @@ Table_CardLevel = {
     id = 2460904,
     CardID = 24609,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[288],
-    Cost = Table_CardLevel_t.Cost[121],
+    BuffEffect = Table_CardLevel_t.BuffEffect[318],
+    Cost = Table_CardLevel_t.Cost[134],
     Desc = "普攻伤害[c][c427f1]＋8%[-][/c]\n普攻时有5%概率获得急速狂暴效果，急速狂暴：装备攻速＋20%，普攻伤害＋7.5%，持续10秒\n【死灵★卡片】和【阿特罗斯★卡片】一同装备时，普攻伤害＋10%"
   },
   [2460905] = {
     id = 2460905,
     CardID = 24609,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[289],
-    Cost = Table_CardLevel_t.Cost[122],
+    BuffEffect = Table_CardLevel_t.BuffEffect[319],
+    Cost = Table_CardLevel_t.Cost[135],
     ZenyConvert = 312500000,
     Desc = "普攻伤害[c][c427f1]＋10%[-][/c]\n普攻时有5%概率获得急速狂暴效果，急速狂暴：装备攻速＋20%，普攻伤害＋7.5%，持续10秒\n【死灵★卡片】和【阿特罗斯★卡片】一同装备时，普攻伤害＋10%"
   },
@@ -3585,15 +3981,15 @@ Table_CardLevel = {
     id = 2461005,
     CardID = 24610,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[283],
-    Cost = Table_CardLevel_t.Cost[119],
+    BuffEffect = Table_CardLevel_t.BuffEffect[313],
+    Cost = Table_CardLevel_t.Cost[132],
     ZenyConvert = 312500000,
     Desc = "技能伤害[c][c427f1]＋5%[-][/c]\n可变吟唱时间[c][c427f1]－15%[-][/c]\n使用技能不需要消耗道具\n使用技能时SP消耗量[c][c427f1]－10%[-][/c]"
   },
   [2461101] = {
     id = 2461101,
     CardID = 24611,
-    BuffEffect = Table_CardLevel_t.BuffEffect[87],
+    BuffEffect = Table_CardLevel_t.BuffEffect[89],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "命中＋100\n技能伤害[c][c427f1]＋12%[-][/c]"
@@ -3602,7 +3998,7 @@ Table_CardLevel = {
     id = 2461102,
     CardID = 24611,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[88],
+    BuffEffect = Table_CardLevel_t.BuffEffect[90],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "命中＋100\n技能伤害[c][c427f1]＋14%[-][/c]"
@@ -3611,7 +4007,7 @@ Table_CardLevel = {
     id = 2461103,
     CardID = 24611,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[89],
+    BuffEffect = Table_CardLevel_t.BuffEffect[91],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "命中＋100\n技能伤害[c][c427f1]＋16%[-][/c]"
@@ -3620,7 +4016,7 @@ Table_CardLevel = {
     id = 2461104,
     CardID = 24611,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[90],
+    BuffEffect = Table_CardLevel_t.BuffEffect[92],
     Cost = Table_CardLevel_t.Cost[40],
     Desc = "命中＋100\n技能伤害[c][c427f1]＋18%[-][/c]"
   },
@@ -3628,7 +4024,7 @@ Table_CardLevel = {
     id = 2461105,
     CardID = 24611,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[91],
+    BuffEffect = Table_CardLevel_t.BuffEffect[93],
     Cost = Table_CardLevel_t.Cost[41],
     ZenyConvert = 312500000,
     Desc = "命中＋100\n技能伤害[c][c427f1]＋20%[-][/c]"
@@ -3636,7 +4032,7 @@ Table_CardLevel = {
   [2461201] = {
     id = 2461201,
     CardID = 24612,
-    BuffEffect = Table_CardLevel_t.BuffEffect[149],
+    BuffEffect = Table_CardLevel_t.BuffEffect[157],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "魔伤减免[c][c427f1]＋2%[-][/c]\n避免陷入冰冻状态\n冰冻抵抗＋50%\n中毒抵抗＋50%\n受到魔法攻击33%概率自动施放【崩裂术】Lv.20"
@@ -3645,7 +4041,7 @@ Table_CardLevel = {
     id = 2461202,
     CardID = 24612,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[150],
+    BuffEffect = Table_CardLevel_t.BuffEffect[158],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "魔伤减免[c][c427f1]＋4%[-][/c]\n避免陷入冰冻状态\n冰冻抵抗＋50%\n中毒抵抗＋50%\n受到魔法攻击33%概率自动施放【崩裂术】Lv.20"
@@ -3654,7 +4050,7 @@ Table_CardLevel = {
     id = 2461203,
     CardID = 24612,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[151],
+    BuffEffect = Table_CardLevel_t.BuffEffect[159],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "魔伤减免[c][c427f1]＋6%[-][/c]\n避免陷入冰冻状态\n冰冻抵抗＋50%\n中毒抵抗＋50%\n受到魔法攻击33%概率自动施放【崩裂术】Lv.20"
@@ -3663,23 +4059,23 @@ Table_CardLevel = {
     id = 2461204,
     CardID = 24612,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[152],
-    Cost = Table_CardLevel_t.Cost[68],
+    BuffEffect = Table_CardLevel_t.BuffEffect[160],
+    Cost = Table_CardLevel_t.Cost[70],
     Desc = "魔伤减免[c][c427f1]＋8%[-][/c]\n避免陷入冰冻状态\n冰冻抵抗＋50%\n中毒抵抗＋50%\n受到魔法攻击33%概率自动施放【崩裂术】Lv.20"
   },
   [2461205] = {
     id = 2461205,
     CardID = 24612,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[153],
-    Cost = Table_CardLevel_t.Cost[69],
+    BuffEffect = Table_CardLevel_t.BuffEffect[161],
+    Cost = Table_CardLevel_t.Cost[71],
     ZenyConvert = 312500000,
     Desc = "魔伤减免[c][c427f1]＋10%[-][/c]\n避免陷入冰冻状态\n冰冻抵抗＋50%\n中毒抵抗＋50%\n受到魔法攻击33%概率自动施放【崩裂术】Lv.20"
   },
   [2461301] = {
     id = 2461301,
     CardID = 24613,
-    BuffEffect = Table_CardLevel_t.BuffEffect[177],
+    BuffEffect = Table_CardLevel_t.BuffEffect[204],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "生命上限[c][c427f1]＋12%[-][/c]\n闪避＋30\n有5%概率闪避魔法伤害"
@@ -3688,7 +4084,7 @@ Table_CardLevel = {
     id = 2461302,
     CardID = 24613,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[178],
+    BuffEffect = Table_CardLevel_t.BuffEffect[205],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "生命上限[c][c427f1]＋14%[-][/c]\n闪避＋30\n有5%概率闪避魔法伤害"
@@ -3697,7 +4093,7 @@ Table_CardLevel = {
     id = 2461303,
     CardID = 24613,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[179],
+    BuffEffect = Table_CardLevel_t.BuffEffect[206],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "生命上限[c][c427f1]＋16%[-][/c]\n闪避＋30\n有5%概率闪避魔法伤害"
@@ -3706,23 +4102,23 @@ Table_CardLevel = {
     id = 2461304,
     CardID = 24613,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[180],
-    Cost = Table_CardLevel_t.Cost[79],
+    BuffEffect = Table_CardLevel_t.BuffEffect[207],
+    Cost = Table_CardLevel_t.Cost[91],
     Desc = "生命上限[c][c427f1]＋18%[-][/c]\n闪避＋30\n有5%概率闪避魔法伤害"
   },
   [2461305] = {
     id = 2461305,
     CardID = 24613,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[181],
-    Cost = Table_CardLevel_t.Cost[80],
+    BuffEffect = Table_CardLevel_t.BuffEffect[208],
+    Cost = Table_CardLevel_t.Cost[92],
     ZenyConvert = 312500000,
     Desc = "生命上限[c][c427f1]＋20%[-][/c]\n闪避＋30\n有5%概率闪避魔法伤害"
   },
   [2461901] = {
     id = 2461901,
     CardID = 24619,
-    BuffEffect = Table_CardLevel_t.BuffEffect[263],
+    BuffEffect = Table_CardLevel_t.BuffEffect[293],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "物理伤害＋3%\n暴击[c][c427f1]＋2[-][/c]\n暴伤[c][c427f1]＋10%[-][/c]"
@@ -3731,7 +4127,7 @@ Table_CardLevel = {
     id = 2461902,
     CardID = 24619,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[264],
+    BuffEffect = Table_CardLevel_t.BuffEffect[294],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "物理伤害＋3%\n暴击[c][c427f1]＋4[-][/c]\n暴伤[c][c427f1]＋12%[-][/c]"
@@ -3740,7 +4136,7 @@ Table_CardLevel = {
     id = 2461903,
     CardID = 24619,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[265],
+    BuffEffect = Table_CardLevel_t.BuffEffect[295],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "物理伤害＋3%\n暴击[c][c427f1]＋6[-][/c]\n暴伤[c][c427f1]＋14%[-][/c]"
@@ -3749,16 +4145,16 @@ Table_CardLevel = {
     id = 2461904,
     CardID = 24619,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[266],
-    Cost = Table_CardLevel_t.Cost[110],
+    BuffEffect = Table_CardLevel_t.BuffEffect[296],
+    Cost = Table_CardLevel_t.Cost[123],
     Desc = "物理伤害＋3%\n暴击[c][c427f1]＋8[-][/c]\n暴伤[c][c427f1]＋16%[-][/c]"
   },
   [2461905] = {
     id = 2461905,
     CardID = 24619,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[267],
-    Cost = Table_CardLevel_t.Cost[111],
+    BuffEffect = Table_CardLevel_t.BuffEffect[297],
+    Cost = Table_CardLevel_t.Cost[124],
     ZenyConvert = 312500000,
     Desc = "物理伤害＋3%\n暴击[c][c427f1]＋10[-][/c]\n暴伤[c][c427f1]＋18%[-][/c]"
   },
@@ -3844,15 +4240,15 @@ Table_CardLevel = {
     id = 2462105,
     CardID = 24621,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[278],
-    Cost = Table_CardLevel_t.Cost[116],
+    BuffEffect = Table_CardLevel_t.BuffEffect[308],
+    Cost = Table_CardLevel_t.Cost[129],
     ZenyConvert = 312500000,
     Desc = "体质[c][c427f1]＋10[-][/c]\n技能伤害减免[c][c427f1]＋10%[-][/c]\n避免陷入恐惧状态"
   },
   [2462201] = {
     id = 2462201,
     CardID = 24622,
-    BuffEffect = Table_CardLevel_t.BuffEffect[139],
+    BuffEffect = Table_CardLevel_t.BuffEffect[142],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "普攻伤害[c][c427f1]＋2%[-][/c]\n增加魔法攻击×0.3的普攻攻击力"
@@ -3861,7 +4257,7 @@ Table_CardLevel = {
     id = 2462202,
     CardID = 24622,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[140],
+    BuffEffect = Table_CardLevel_t.BuffEffect[143],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "普攻伤害[c][c427f1]＋4%[-][/c]\n增加魔法攻击×0.3的普攻攻击力"
@@ -3870,7 +4266,7 @@ Table_CardLevel = {
     id = 2462203,
     CardID = 24622,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[141],
+    BuffEffect = Table_CardLevel_t.BuffEffect[144],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "普攻伤害[c][c427f1]＋6%[-][/c]\n增加魔法攻击×0.3的普攻攻击力"
@@ -3879,7 +4275,7 @@ Table_CardLevel = {
     id = 2462204,
     CardID = 24622,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[142],
+    BuffEffect = Table_CardLevel_t.BuffEffect[145],
     Cost = Table_CardLevel_t.Cost[64],
     Desc = "普攻伤害[c][c427f1]＋8%[-][/c]\n增加魔法攻击×0.3的普攻攻击力"
   },
@@ -3887,7 +4283,7 @@ Table_CardLevel = {
     id = 2462205,
     CardID = 24622,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[143],
+    BuffEffect = Table_CardLevel_t.BuffEffect[146],
     Cost = Table_CardLevel_t.Cost[65],
     ZenyConvert = 312500000,
     Desc = "普攻伤害[c][c427f1]＋10%[-][/c]\n增加魔法攻击×0.3的普攻攻击力"
@@ -3895,7 +4291,7 @@ Table_CardLevel = {
   [2462701] = {
     id = 2462701,
     CardID = 24627,
-    BuffEffect = Table_CardLevel_t.BuffEffect[354],
+    BuffEffect = Table_CardLevel_t.BuffEffect[384],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "物理伤害[c][c427f1]＋7%[-][/c]\n近战普攻可获得5%伤害的HP恢复效果"
@@ -3904,7 +4300,7 @@ Table_CardLevel = {
     id = 2462702,
     CardID = 24627,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[353],
+    BuffEffect = Table_CardLevel_t.BuffEffect[383],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "物理伤害[c][c427f1]＋9%[-][/c]\n近战普攻可获得5%伤害的HP恢复效果"
@@ -3913,7 +4309,7 @@ Table_CardLevel = {
     id = 2462703,
     CardID = 24627,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[191],
+    BuffEffect = Table_CardLevel_t.BuffEffect[221],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "物理伤害[c][c427f1]＋11%[-][/c]\n近战普攻可获得5%伤害的HP恢复效果"
@@ -3922,7 +4318,7 @@ Table_CardLevel = {
     id = 2462704,
     CardID = 24627,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[137],
+    BuffEffect = Table_CardLevel_t.BuffEffect[140],
     Cost = Table_CardLevel_t.Cost[62],
     Desc = "物理伤害[c][c427f1]＋13%[-][/c]\n近战普攻可获得5%伤害的HP恢复效果"
   },
@@ -3930,7 +4326,7 @@ Table_CardLevel = {
     id = 2462705,
     CardID = 24627,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[138],
+    BuffEffect = Table_CardLevel_t.BuffEffect[141],
     Cost = Table_CardLevel_t.Cost[63],
     ZenyConvert = 312500000,
     Desc = "物理伤害[c][c427f1]＋15%[-][/c]\n近战普攻可获得5%伤害的HP恢复效果"
@@ -3938,7 +4334,7 @@ Table_CardLevel = {
   [2462801] = {
     id = 2462801,
     CardID = 24628,
-    BuffEffect = Table_CardLevel_t.BuffEffect[172],
+    BuffEffect = Table_CardLevel_t.BuffEffect[180],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "生命上限[c][c427f1]＋12%[-][/c]\n复活时，HP与SP全部恢复"
@@ -3947,7 +4343,7 @@ Table_CardLevel = {
     id = 2462802,
     CardID = 24628,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[173],
+    BuffEffect = Table_CardLevel_t.BuffEffect[181],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "生命上限[c][c427f1]＋14%[-][/c]\n复活时，HP与SP全部恢复"
@@ -3956,7 +4352,7 @@ Table_CardLevel = {
     id = 2462803,
     CardID = 24628,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[174],
+    BuffEffect = Table_CardLevel_t.BuffEffect[182],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "生命上限[c][c427f1]＋16%[-][/c]\n复活时，HP与SP全部恢复"
@@ -3965,23 +4361,23 @@ Table_CardLevel = {
     id = 2462804,
     CardID = 24628,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[175],
-    Cost = Table_CardLevel_t.Cost[77],
+    BuffEffect = Table_CardLevel_t.BuffEffect[183],
+    Cost = Table_CardLevel_t.Cost[79],
     Desc = "生命上限[c][c427f1]＋18%[-][/c]\n复活时，HP与SP全部恢复"
   },
   [2462805] = {
     id = 2462805,
     CardID = 24628,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[176],
-    Cost = Table_CardLevel_t.Cost[78],
+    BuffEffect = Table_CardLevel_t.BuffEffect[184],
+    Cost = Table_CardLevel_t.Cost[80],
     ZenyConvert = 312500000,
     Desc = "生命上限[c][c427f1]＋20%[-][/c]\n复活时，HP与SP全部恢复"
   },
   [2462901] = {
     id = 2462901,
     CardID = 24629,
-    BuffEffect = Table_CardLevel_t.BuffEffect[241],
+    BuffEffect = Table_CardLevel_t.BuffEffect[271],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "普攻伤害[c][c427f1]＋7%[-][/c]\n物理攻击＋40，生命上限＋500，装备攻速[c][c427f1]＋6%[-][/c]，生命恢复＋2"
@@ -3990,7 +4386,7 @@ Table_CardLevel = {
     id = 2462902,
     CardID = 24629,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[242],
+    BuffEffect = Table_CardLevel_t.BuffEffect[272],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 175000000,
     Desc = "普攻伤害[c][c427f1]＋9%[-][/c]\n物理攻击＋40，生命上限＋500，装备攻速[c][c427f1]＋7%[-][/c]，生命恢复＋2"
@@ -3999,7 +4395,7 @@ Table_CardLevel = {
     id = 2462903,
     CardID = 24629,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[243],
+    BuffEffect = Table_CardLevel_t.BuffEffect[273],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "普攻伤害[c][c427f1]＋11%[-][/c]\n物理攻击＋40，生命上限＋500，装备攻速[c][c427f1]＋8%[-][/c]，生命恢复＋2"
@@ -4008,8 +4404,8 @@ Table_CardLevel = {
     id = 2462904,
     CardID = 24629,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[244],
-    Cost = Table_CardLevel_t.Cost[100],
+    BuffEffect = Table_CardLevel_t.BuffEffect[274],
+    Cost = Table_CardLevel_t.Cost[113],
     ZenyConvert = 450000000,
     Desc = "普攻伤害[c][c427f1]＋13%[-][/c]\n物理攻击＋40，生命上限＋500，装备攻速[c][c427f1]＋9%[-][/c]，生命恢复＋2"
   },
@@ -4017,15 +4413,15 @@ Table_CardLevel = {
     id = 2462905,
     CardID = 24629,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[245],
-    Cost = Table_CardLevel_t.Cost[101],
+    BuffEffect = Table_CardLevel_t.BuffEffect[275],
+    Cost = Table_CardLevel_t.Cost[114],
     ZenyConvert = 625000000,
     Desc = "普攻伤害[c][c427f1]＋15%[-][/c]\n物理攻击＋40，生命上限＋500，装备攻速[c][c427f1]＋10%[-][/c]，生命恢复＋2"
   },
   [2463001] = {
     id = 2463001,
     CardID = 24630,
-    BuffEffect = Table_CardLevel_t.BuffEffect[192],
+    BuffEffect = Table_CardLevel_t.BuffEffect[222],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "普攻伤害[c][c427f1]＋7%[-][/c]\n普攻时有5%概率自动施放【陨石术】Lv.10技能\n【苍白领主卡片】【血腥骑士★卡片】一起装备时，普攻伤害＋5%，普攻时自动施放【陨石术】概率提高5%"
@@ -4034,7 +4430,7 @@ Table_CardLevel = {
     id = 2463002,
     CardID = 24630,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[193],
+    BuffEffect = Table_CardLevel_t.BuffEffect[223],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "普攻伤害[c][c427f1]＋9%[-][/c]\n普攻时有5%概率自动施放【陨石术】Lv.10技能\n【苍白领主卡片】【血腥骑士★卡片】一起装备时，普攻伤害＋5%，普攻时自动施放【陨石术】概率提高5%"
@@ -4043,7 +4439,7 @@ Table_CardLevel = {
     id = 2463003,
     CardID = 24630,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[194],
+    BuffEffect = Table_CardLevel_t.BuffEffect[224],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "普攻伤害[c][c427f1]＋11%[-][/c]\n普攻时有5%概率自动施放【陨石术】Lv.10技能\n【苍白领主卡片】【血腥骑士★卡片】一起装备时，普攻伤害＋5%，普攻时自动施放【陨石术】概率提高5%"
@@ -4052,16 +4448,16 @@ Table_CardLevel = {
     id = 2463004,
     CardID = 24630,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[201],
-    Cost = Table_CardLevel_t.Cost[86],
+    BuffEffect = Table_CardLevel_t.BuffEffect[231],
+    Cost = Table_CardLevel_t.Cost[99],
     Desc = "普攻伤害[c][c427f1]＋13%[-][/c]\n普攻时有5%概率自动施放【陨石术】Lv.10技能\n【苍白领主卡片】【血腥骑士★卡片】一起装备时，普攻伤害＋5%，普攻时自动施放【陨石术】概率提高5%"
   },
   [2463005] = {
     id = 2463005,
     CardID = 24630,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[345],
-    Cost = Table_CardLevel_t.Cost[145],
+    BuffEffect = Table_CardLevel_t.BuffEffect[375],
+    Cost = Table_CardLevel_t.Cost[157],
     ZenyConvert = 312500000,
     Desc = "普攻伤害[c][c427f1]＋15%[-][/c]\n普攻时有5%概率自动施放【陨石术】Lv.10技能\n【苍白领主卡片】【血腥骑士★卡片】一起装备时，普攻伤害＋5%，普攻时自动施放【陨石术】概率提高5%"
   },
@@ -4111,7 +4507,7 @@ Table_CardLevel = {
   [2463701] = {
     id = 2463701,
     CardID = 24637,
-    BuffEffect = Table_CardLevel_t.BuffEffect[117],
+    BuffEffect = Table_CardLevel_t.BuffEffect[120],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "全种族伤害[c][c427f1]＋7%[-][/c]\n普通攻击时有20%概率使敌人冰冻2秒，无视冰冻免疫\n普通攻击时5%概率使用【暴风雪】Lv.10"
@@ -4120,7 +4516,7 @@ Table_CardLevel = {
     id = 2463702,
     CardID = 24637,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[118],
+    BuffEffect = Table_CardLevel_t.BuffEffect[121],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "全种族伤害[c][c427f1]＋9%[-][/c]\n普通攻击时有20%概率使敌人冰冻2秒，无视冰冻免疫\n普通攻击时5%概率使用【暴风雪】Lv.10"
@@ -4129,7 +4525,7 @@ Table_CardLevel = {
     id = 2463703,
     CardID = 24637,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[119],
+    BuffEffect = Table_CardLevel_t.BuffEffect[122],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "全种族伤害[c][c427f1]＋11%[-][/c]\n普通攻击时有20%概率使敌人冰冻2秒，无视冰冻免疫\n普通攻击时5%概率使用【暴风雪】Lv.10"
@@ -4138,7 +4534,7 @@ Table_CardLevel = {
     id = 2463704,
     CardID = 24637,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[120],
+    BuffEffect = Table_CardLevel_t.BuffEffect[123],
     Cost = Table_CardLevel_t.Cost[54],
     Desc = "全种族伤害[c][c427f1]＋13%[-][/c]\n普通攻击时有20%概率使敌人冰冻2秒，无视冰冻免疫\n普通攻击时5%概率使用【暴风雪】Lv.10"
   },
@@ -4146,14 +4542,14 @@ Table_CardLevel = {
     id = 2463705,
     CardID = 24637,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[121],
+    BuffEffect = Table_CardLevel_t.BuffEffect[124],
     Cost = Table_CardLevel_t.Cost[55],
     ZenyConvert = 312500000,
     Desc = "全种族伤害[c][c427f1]＋15%[-][/c]\n普通攻击时有20%概率使敌人冰冻2秒，无视冰冻免疫\n普通攻击时5%概率使用【暴风雪】Lv.10"
   },
   [2464201] = {
     id = 2464201,
-    BuffEffect = Table_CardLevel_t.BuffEffect[360],
+    BuffEffect = Table_CardLevel_t.BuffEffect[390],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "生命上限[c][c427f1]＋2%[-][/c]\n受到物理伤害时，有20%概率释放10级陨石术\n异常状态抵抗＋25%"
@@ -4161,7 +4557,7 @@ Table_CardLevel = {
   [2464202] = {
     id = 2464202,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[182],
+    BuffEffect = Table_CardLevel_t.BuffEffect[212],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 175000000,
     Desc = "生命上限[c][c427f1]＋4%[-][/c]\n受到物理伤害时，有20%概率释放10级陨石术\n异常状态抵抗＋25%"
@@ -4169,7 +4565,7 @@ Table_CardLevel = {
   [2464203] = {
     id = 2464203,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[183],
+    BuffEffect = Table_CardLevel_t.BuffEffect[213],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "生命上限[c][c427f1]＋6%[-][/c]\n受到物理伤害时，有20%概率释放10级陨石术\n异常状态抵抗＋25%"
@@ -4177,15 +4573,15 @@ Table_CardLevel = {
   [2464204] = {
     id = 2464204,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[190],
-    Cost = Table_CardLevel_t.Cost[83],
+    BuffEffect = Table_CardLevel_t.BuffEffect[220],
+    Cost = Table_CardLevel_t.Cost[96],
     ZenyConvert = 450000000,
     Desc = "生命上限[c][c427f1]＋8%[-][/c]\n受到物理伤害时，有20%概率释放10级陨石术\n异常状态抵抗＋25%"
   },
   [2464205] = {
     id = 2464205,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[113],
+    BuffEffect = Table_CardLevel_t.BuffEffect[116],
     Cost = Table_CardLevel_t.Cost[51],
     ZenyConvert = 625000000,
     Desc = "生命上限[c][c427f1]＋10%[-][/c]\n受到物理伤害时，有20%概率释放10级陨石术\n异常状态抵抗＋25%"
@@ -4193,7 +4589,7 @@ Table_CardLevel = {
   [2464301] = {
     id = 2464301,
     CardID = 24643,
-    BuffEffect = Table_CardLevel_t.BuffEffect[239],
+    BuffEffect = Table_CardLevel_t.BuffEffect[269],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 37500000,
     Desc = "生命上限[c][c427f1]＋2%[-][/c]\n受到敌人近距离物理攻击时有5%概率获得效果：受到的物理伤害会100%反射给敌人，持续5秒\n受到物理攻击时，可恢复来自伤害15%的HP"
@@ -4202,7 +4598,7 @@ Table_CardLevel = {
     id = 2464302,
     CardID = 24643,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[238],
+    BuffEffect = Table_CardLevel_t.BuffEffect[268],
     Cost = Table_CardLevel_t.Cost[4],
     ZenyConvert = 87500000,
     Desc = "生命上限[c][c427f1]＋4%[-][/c]\n受到敌人近距离物理攻击时有5%概率获得效果：受到的物理伤害会100%反射给敌人，持续5秒\n受到物理攻击时，可恢复来自伤害15%的HP"
@@ -4211,7 +4607,7 @@ Table_CardLevel = {
     id = 2464303,
     CardID = 24643,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[237],
+    BuffEffect = Table_CardLevel_t.BuffEffect[267],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 150000000,
     Desc = "生命上限[c][c427f1]＋6%[-][/c]\n受到敌人近距离物理攻击时有5%概率获得效果：受到的物理伤害会100%反射给敌人，持续5秒\n受到物理攻击时，可恢复来自伤害15%的HP"
@@ -4220,16 +4616,16 @@ Table_CardLevel = {
     id = 2464304,
     CardID = 24643,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[236],
-    Cost = Table_CardLevel_t.Cost[99],
+    BuffEffect = Table_CardLevel_t.BuffEffect[266],
+    Cost = Table_CardLevel_t.Cost[112],
     Desc = "生命上限[c][c427f1]＋8%[-][/c]\n受到敌人近距离物理攻击时有5%概率获得效果：受到的物理伤害会100%反射给敌人，持续5秒\n受到物理攻击时，可恢复来自伤害15%的HP"
   },
   [2464305] = {
     id = 2464305,
     CardID = 24643,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[170],
-    Cost = Table_CardLevel_t.Cost[76],
+    BuffEffect = Table_CardLevel_t.BuffEffect[178],
+    Cost = Table_CardLevel_t.Cost[78],
     ZenyConvert = 312500000,
     Desc = "生命上限[c][c427f1]＋10%[-][/c]\n受到敌人近距离物理攻击时有5%概率获得效果：受到的物理伤害会100%反射给敌人，持续5秒\n受到物理攻击时，可恢复来自伤害15%的HP"
   }
@@ -4239,7 +4635,7 @@ local cell_mt = {
     BuffEffect = _EmptyTable,
     CardID = 24642,
     Cost = _EmptyTable,
-    Desc = "普攻伤害[c][c427f1]＋8%[-][/c]\n武器每精炼＋1，普攻伤害＋1%\n普通攻击玩家时，有5%概率卸除玩家的【头饰】装备",
+    Desc = "风、地、水、火、无属性攻击[c][c427f1]＋3%[-][/c]\n【雷鸣术】、【雷击术】、【怒雷强击】、【雷爆术】伤害＋25%",
     Level = 1,
     TFValidDate = "",
     ValidDate = "",

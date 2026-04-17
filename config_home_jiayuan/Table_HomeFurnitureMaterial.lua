@@ -788,6 +788,156 @@ Table_HomeFurnitureMaterial = {
     HideInAdventure = 1,
     AreaForceLimit = 1
   },
+  [32121] = {
+    id = 32121,
+    NameZh = "##44721738",
+    NameEn = "Xhzd_01_Roof",
+    Type = 10001,
+    Floor = {1, 2},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32122] = {
+    id = 32122,
+    NameZh = "##44721740",
+    NameEn = "Xhzd_01_Wall",
+    Type = 10002,
+    Floor = {1, 2},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32123] = {
+    id = 32123,
+    NameZh = "##44721742",
+    NameEn = "Xhzd_01_Stairs",
+    Type = 10004,
+    Floor = {1},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32124] = {
+    id = 32124,
+    NameZh = "##44721744",
+    NameEn = "Xhzd_01_Floor",
+    Type = 10005,
+    Floor = {1, 2},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32125] = {
+    id = 32125,
+    NameZh = "##44721746",
+    NameEn = "Xhzd_01_Door",
+    Type = 10006,
+    Floor = {1, 2},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32151] = {
+    id = 32151,
+    NameZh = "##44721798",
+    NameEn = "Xhzd_01_Roofa",
+    Type = 10001,
+    Floor = {1, 2},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32152] = {
+    id = 32152,
+    NameZh = "##44721800",
+    NameEn = "Xhzd_01_Walla",
+    Type = 10002,
+    Floor = {1, 2},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32153] = {
+    id = 32153,
+    NameZh = "##44721802",
+    NameEn = "Xhzd_01_Stairsa",
+    Type = 10004,
+    Floor = {1},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32154] = {
+    id = 32154,
+    NameZh = "##44721804",
+    NameEn = "Xhzd_01_Floora",
+    Type = 10005,
+    Floor = {1, 2},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32155] = {
+    id = 32155,
+    NameZh = "##44721806",
+    NameEn = "Xhzd_01_Doora",
+    Type = 10006,
+    Floor = {1, 2},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32181] = {
+    id = 32181,
+    NameZh = "##44721858",
+    NameEn = "Xhzd_01_Roofb",
+    Type = 10001,
+    Floor = {1, 2},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32182] = {
+    id = 32182,
+    NameZh = "##44721860",
+    NameEn = "Xhzd_01_Wallb",
+    Type = 10002,
+    Floor = {1, 2},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32183] = {
+    id = 32183,
+    NameZh = "##44721862",
+    NameEn = "Xhzd_01_Stairsb",
+    Type = 10004,
+    Floor = {1},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32184] = {
+    id = 32184,
+    NameZh = "##44721864",
+    NameEn = "Xhzd_01_Floorb",
+    Type = 10005,
+    Floor = {1, 2},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
+  [32185] = {
+    id = 32185,
+    NameZh = "##44721866",
+    NameEn = "Xhzd_01_Doorb",
+    Type = 10006,
+    Floor = {1, 2},
+    HomeScore = 15,
+    UnlockDesc = "",
+    AreaForceLimit = 1
+  },
   [38081] = {
     id = 38081,
     NameZh = "##123609",

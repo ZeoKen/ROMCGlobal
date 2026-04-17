@@ -13,10 +13,10 @@ Table_EquipCompose_t = {
       {id = 40715, lv = 8}
     },
     {
-      {id = 60504, lv = 8}
+      {id = 40745, lv = 2}
     },
     {
-      {id = 61011, lv = 8}
+      {id = 40746, lv = 8}
     },
     {
       {id = 61012, lv = 8}
@@ -130,7 +130,10 @@ Table_EquipCompose_t = {
       {id = 140715, lv = 8}
     },
     {
-      {id = 161011, lv = 8}
+      {id = 140745, lv = 2}
+    },
+    {
+      {id = 140746, lv = 8}
     },
     {
       {id = 161012, lv = 8}
@@ -151,7 +154,7 @@ Table_EquipCompose_t = {
       {id = 41851, lv = 8}
     },
     {
-      {id = 44064, lv = 4}
+      {id = 41556, lv = 4}
     },
     {
       {id = 142037, lv = 10}
@@ -223,6 +226,21 @@ Table_EquipCompose_t = {
       {id = 163417, lv = 8}
     },
     {
+      {id = 163109, lv = 2}
+    },
+    {
+      {id = 163113, lv = 8}
+    },
+    {
+      {id = 142557, lv = 8}
+    },
+    {
+      {id = 161511, lv = 9}
+    },
+    {
+      {id = 143551, lv = 8}
+    },
+    {
       {id = 141835, lv = 8}
     },
     {
@@ -238,43 +256,43 @@ Table_EquipCompose_t = {
       {id = 141851, lv = 8}
     },
     {
-      {id = 144064, lv = 4}
+      {id = 141556, lv = 4}
     },
     {
-      {id = 163109, lv = 2}
-    },
-    {
-      {id = 163113, lv = 8}
-    },
-    {
-      {id = 161511, lv = 9}
-    },
-    {
-      {id = 62570, lv = 8}
-    },
-    {
-      {id = 143024, lv = 8}
-    },
-    {
-      {id = 62572, lv = 8}
-    },
-    {
-      {id = 143545, lv = 8}
-    },
-    {
-      {id = 143540, lv = 8}
+      {id = 143556, lv = 4}
     },
     {
       {id = 162507, lv = 4}
     },
     {
-      {id = 144045, lv = 4}
+      {id = 60504, lv = 8}
+    },
+    {
+      {id = 62570, lv = 8}
+    },
+    {
+      {id = 144038, lv = 4}
+    },
+    {
+      {id = 62572, lv = 8}
+    },
+    {
+      {id = 144040, lv = 4}
+    },
+    {
+      {id = 144064, lv = 4}
+    },
+    {
+      {id = 144076, lv = 4}
     },
     {
       {id = 144015, lv = 4}
     },
     {
-      {id = 144076, lv = 4}
+      {id = 144045, lv = 4}
+    },
+    {
+      {id = 144044, lv = 4}
     },
     {
       {id = 162508, lv = 4}
@@ -286,7 +304,7 @@ Table_EquipCompose_t = {
       {id = 162509, lv = 6}
     },
     {
-      {id = 144044, lv = 4}
+      {id = 144031, lv = 8}
     },
     {
       {id = 140308, lv = 4}
@@ -298,10 +316,10 @@ Table_EquipCompose_t = {
       {id = 140310, lv = 10}
     },
     {
-      {id = 144040, lv = 4}
+      {id = 43031, lv = 8}
     },
     {
-      {id = 144038, lv = 4}
+      {id = 144027, lv = 6}
     },
     {
       {id = 62820, lv = 2}
@@ -319,18 +337,6 @@ Table_EquipCompose_t = {
       {id = 41510, lv = 8}
     },
     {
-      {id = 43031, lv = 8}
-    },
-    {
-      {id = 144031, lv = 8}
-    },
-    {
-      {id = 43032, lv = 8}
-    },
-    {
-      {id = 144027, lv = 6}
-    },
-    {
       {id = 144030, lv = 8}
     },
     {
@@ -338,9 +344,6 @@ Table_EquipCompose_t = {
     },
     {
       {id = 144010, lv = 8}
-    },
-    {
-      {id = 40621, lv = 4}
     },
     {
       {id = 144008, lv = 8}
@@ -355,7 +358,7 @@ Table_EquipCompose_t = {
       {id = 144004, lv = 10}
     },
     {
-      {id = 40664, lv = 8}
+      {id = 40621, lv = 4}
     },
     {
       {id = 144003, lv = 8}
@@ -370,34 +373,31 @@ Table_EquipCompose_t = {
       {id = 143538, lv = 8}
     },
     {
-      {id = 162570, lv = 8}
+      {id = 40664, lv = 8}
+    },
+    {
+      {id = 143540, lv = 8}
     },
     {
       {id = 143546, lv = 8}
     },
     {
-      {id = 162572, lv = 8}
+      {id = 143545, lv = 8}
     },
     {
       {id = 143544, lv = 4}
     },
     {
-      {id = 143556, lv = 4}
+      {id = 162570, lv = 8}
     },
     {
       {id = 143552, lv = 4}
     },
     {
-      {id = 143551, lv = 8}
+      {id = 162572, lv = 8}
     },
     {
       {id = 143557, lv = 4}
-    },
-    {
-      {id = 40919, lv = 9}
-    },
-    {
-      {id = 40914, lv = 6}
     },
     {
       {id = 143030, lv = 8}
@@ -412,7 +412,13 @@ Table_EquipCompose_t = {
       {id = 143031, lv = 8}
     },
     {
-      {id = 162809, lv = 8}
+      {id = 40919, lv = 9}
+    },
+    {
+      {id = 40914, lv = 6}
+    },
+    {
+      {id = 143024, lv = 8}
     },
     {
       {id = 143007, lv = 4}
@@ -422,6 +428,18 @@ Table_EquipCompose_t = {
     },
     {
       {id = 161512, lv = 8}
+    },
+    {
+      {id = 162809, lv = 8}
+    },
+    {
+      {id = 161506, lv = 8}
+    },
+    {
+      {id = 161014, lv = 8}
+    },
+    {
+      {id = 161011, lv = 8}
     },
     {
       {id = 162820, lv = 2}
@@ -442,15 +460,6 @@ Table_EquipCompose_t = {
       {id = 63109, lv = 2}
     },
     {
-      {id = 161506, lv = 8}
-    },
-    {
-      {id = 161014, lv = 8}
-    },
-    {
-      {id = 142557, lv = 8}
-    },
-    {
       {id = 142536, lv = 8}
     },
     {
@@ -458,9 +467,6 @@ Table_EquipCompose_t = {
     },
     {
       {id = 142525, lv = 10}
-    },
-    {
-      {id = 140621, lv = 4}
     },
     {
       {id = 142009, lv = 10}
@@ -472,10 +478,10 @@ Table_EquipCompose_t = {
       {id = 142040, lv = 6}
     },
     {
-      {id = 142083, lv = 4}
+      {id = 140621, lv = 4}
     },
     {
-      {id = 140664, lv = 8}
+      {id = 142083, lv = 4}
     },
     {
       {id = 142080, lv = 4}
@@ -485,6 +491,9 @@ Table_EquipCompose_t = {
     },
     {
       {id = 142075, lv = 8}
+    },
+    {
+      {id = 140664, lv = 8}
     },
     {
       {id = 142060, lv = 8}
@@ -514,13 +523,22 @@ Table_EquipCompose_t = {
       {id = 42525, lv = 10}
     },
     {
+      {id = 42535, lv = 8}
+    },
+    {
+      {id = 42536, lv = 8}
+    },
+    {
+      {id = 42557, lv = 8}
+    },
+    {
       {id = 140919, lv = 9}
     },
     {
       {id = 140914, lv = 6}
     },
     {
-      {id = 42535, lv = 8}
+      {id = 140716, lv = 8}
     },
     {
       {id = 44003, lv = 8}
@@ -577,15 +595,6 @@ Table_EquipCompose_t = {
       {id = 63433, lv = 2}
     },
     {
-      {id = 42536, lv = 8}
-    },
-    {
-      {id = 42557, lv = 8}
-    },
-    {
-      {id = 140716, lv = 8}
-    },
-    {
       {id = 140723, lv = 4}
     },
     {
@@ -601,6 +610,9 @@ Table_EquipCompose_t = {
       {id = 63417, lv = 8}
     },
     {
+      {id = 44064, lv = 4}
+    },
+    {
       {id = 44076, lv = 4}
     },
     {
@@ -614,6 +626,12 @@ Table_EquipCompose_t = {
     },
     {
       {id = 44040, lv = 4}
+    },
+    {
+      {id = 44038, lv = 4}
+    },
+    {
+      {id = 61011, lv = 8}
     },
     {
       {id = 42022, lv = 8}
@@ -637,7 +655,7 @@ Table_EquipCompose_t = {
       {id = 43030, lv = 8}
     },
     {
-      {id = 44038, lv = 4}
+      {id = 43032, lv = 8}
     },
     {
       {id = 43557, lv = 4}
@@ -770,28 +788,25 @@ Table_EquipCompose_t = {
       {id = 52521, num = 20}
     },
     {
-      {id = 52821, num = 100},
-      {id = 52338, num = 16},
-      {id = 52214, num = 2000},
-      {id = 52337, num = 16},
-      {id = 52418, num = 1000},
-      {id = 52301, num = 8},
-      {id = 52311, num = 8},
-      {id = 52333, num = 8},
-      {id = 52524, num = 40},
-      {id = 52528, num = 40}
+      {id = 52821, num = 60},
+      {id = 52326, num = 10},
+      {id = 52160, num = 2000},
+      {id = 52327, num = 12},
+      {id = 52414, num = 1000},
+      {id = 52314, num = 10},
+      {id = 52321, num = 8},
+      {id = 52508, num = 50},
+      {id = 52328, num = 2},
+      {id = 52521, num = 50}
     },
     {
-      {id = 52821, num = 100},
-      {id = 52337, num = 14},
-      {id = 52214, num = 2000},
-      {id = 52336, num = 14},
-      {id = 52418, num = 1000},
-      {id = 52319, num = 10},
-      {id = 52326, num = 10},
+      {id = 52821, num = 20},
+      {id = 52326, num = 12},
+      {id = 52210, num = 2000},
       {id = 52328, num = 10},
-      {id = 52519, num = 40},
-      {id = 52521, num = 40}
+      {id = 52414, num = 1000},
+      {id = 52507, num = 20},
+      {id = 52327, num = 2}
     },
     {
       {id = 52821, num = 100},
@@ -1207,15 +1222,13 @@ Table_EquipCompose_t = {
     },
     {
       {id = 52821, num = 60},
-      {id = 52332, num = 8},
-      {id = 52162, num = 1000},
-      {id = 52334, num = 8},
-      {id = 52416, num = 500},
-      {id = 52316, num = 4},
-      {id = 52323, num = 4},
-      {id = 52330, num = 4},
-      {id = 52517, num = 40},
-      {id = 52524, num = 40}
+      {id = 52326, num = 12},
+      {id = 52160, num = 2000},
+      {id = 52327, num = 12},
+      {id = 52414, num = 1000},
+      {id = 52316, num = 8},
+      {id = 52320, num = 6},
+      {id = 52514, num = 30}
     },
     {
       {id = 52821, num = 20},
@@ -1322,6 +1335,52 @@ Table_EquipCompose_t = {
       {id = 52414, num = 1000}
     },
     {
+      {id = 52821, num = 100},
+      {id = 52336, num = 16},
+      {id = 52114, num = 2000},
+      {id = 52338, num = 16},
+      {id = 52418, num = 1000},
+      {id = 52326, num = 10},
+      {id = 52329, num = 10},
+      {id = 52332, num = 10},
+      {id = 52521, num = 40},
+      {id = 52525, num = 40}
+    },
+    {
+      {id = 52821, num = 80},
+      {id = 52340, num = 10},
+      {id = 52115, num = 1200},
+      {id = 52341, num = 10},
+      {id = 52419, num = 600},
+      {id = 52302, num = 2},
+      {id = 52333, num = 2},
+      {id = 52337, num = 2}
+    },
+    {
+      {id = 52821, num = 60},
+      {id = 52340, num = 14},
+      {id = 52115, num = 1200},
+      {id = 52341, num = 14},
+      {id = 52419, num = 600},
+      {id = 52304, num = 6},
+      {id = 52312, num = 6},
+      {id = 52338, num = 8},
+      {id = 52525, num = 30},
+      {id = 52530, num = 30}
+    },
+    {
+      {id = 52821, num = 100},
+      {id = 52338, num = 16},
+      {id = 52214, num = 2000},
+      {id = 52337, num = 16},
+      {id = 52418, num = 1000},
+      {id = 52301, num = 8},
+      {id = 52311, num = 8},
+      {id = 52333, num = 8},
+      {id = 52524, num = 40},
+      {id = 52528, num = 40}
+    },
+    {
       {id = 52821, num = 40},
       {id = 52328, num = 12},
       {id = 52110, num = 2000},
@@ -1329,95 +1388,21 @@ Table_EquipCompose_t = {
       {id = 52414, num = 1000}
     },
     {
-      {id = 52821, num = 60},
-      {id = 52340, num = 16},
-      {id = 52215, num = 2000},
-      {id = 52341, num = 16},
-      {id = 52419, num = 1000},
-      {id = 52329, num = 6},
-      {id = 52332, num = 6},
-      {id = 52336, num = 6},
-      {id = 52525, num = 40},
-      {id = 52530, num = 40}
+      {id = 52821, num = 80},
+      {id = 52334, num = 8},
+      {id = 52212, num = 1000},
+      {id = 52332, num = 8},
+      {id = 52416, num = 500},
+      {id = 52313, num = 8},
+      {id = 52321, num = 8},
+      {id = 52329, num = 8},
+      {id = 52521, num = 40},
+      {id = 52523, num = 40}
     },
     {
       {id = 52821, num = 40},
       {id = 52328, num = 12},
       {id = 52210, num = 2000},
-      {id = 52327, num = 12},
-      {id = 52414, num = 1000}
-    },
-    {
-      {id = 52821, num = 40},
-      {id = 52340, num = 10},
-      {id = 52215, num = 1200},
-      {id = 52341, num = 10},
-      {id = 52419, num = 600},
-      {id = 52517, num = 30},
-      {id = 52530, num = 30}
-    },
-    {
-      {id = 52821, num = 60},
-      {id = 52340, num = 8},
-      {id = 52165, num = 1200},
-      {id = 52341, num = 8},
-      {id = 52419, num = 600},
-      {id = 52319, num = 6},
-      {id = 52327, num = 6},
-      {id = 52330, num = 6}
-    },
-    {
-      {id = 52821, num = 80},
-      {id = 52332, num = 10},
-      {id = 52162, num = 1000},
-      {id = 52333, num = 10},
-      {id = 52416, num = 500},
-      {id = 52312, num = 6},
-      {id = 52319, num = 6},
-      {id = 52326, num = 6},
-      {id = 52521, num = 40},
-      {id = 52524, num = 40}
-    },
-    {
-      {id = 52821, num = 100},
-      {id = 52333, num = 10},
-      {id = 52212, num = 1000},
-      {id = 52334, num = 10},
-      {id = 52416, num = 500},
-      {id = 52303, num = 6},
-      {id = 52311, num = 6},
-      {id = 52321, num = 6},
-      {id = 52520, num = 40},
-      {id = 52522, num = 40}
-    },
-    {
-      {id = 52821, num = 100},
-      {id = 52334, num = 10},
-      {id = 52212, num = 1000},
-      {id = 52332, num = 10},
-      {id = 52112, num = 500},
-      {id = 52313, num = 8},
-      {id = 52320, num = 8},
-      {id = 52327, num = 8},
-      {id = 52512, num = 40},
-      {id = 52519, num = 40}
-    },
-    {
-      {id = 52821, num = 80},
-      {id = 52332, num = 10},
-      {id = 52162, num = 1000},
-      {id = 52333, num = 10},
-      {id = 52416, num = 500},
-      {id = 52310, num = 6},
-      {id = 52317, num = 6},
-      {id = 52324, num = 6},
-      {id = 52519, num = 40},
-      {id = 52525, num = 40}
-    },
-    {
-      {id = 52821, num = 40},
-      {id = 52326, num = 12},
-      {id = 52160, num = 2000},
       {id = 52327, num = 12},
       {id = 52414, num = 1000}
     },
@@ -1434,16 +1419,107 @@ Table_EquipCompose_t = {
       {id = 52518, num = 40}
     },
     {
-      {id = 52821, num = 80},
-      {id = 52334, num = 8},
-      {id = 52212, num = 1000},
+      {id = 52821, num = 60},
       {id = 52332, num = 8},
+      {id = 52162, num = 1000},
+      {id = 52334, num = 8},
       {id = 52416, num = 500},
+      {id = 52316, num = 4},
+      {id = 52323, num = 4},
+      {id = 52330, num = 4},
+      {id = 52517, num = 40},
+      {id = 52524, num = 40}
+    },
+    {
+      {id = 52821, num = 100},
+      {id = 52334, num = 10},
+      {id = 52212, num = 1000},
+      {id = 52332, num = 10},
+      {id = 52112, num = 500},
       {id = 52313, num = 8},
-      {id = 52321, num = 8},
-      {id = 52329, num = 8},
+      {id = 52320, num = 8},
+      {id = 52327, num = 8},
+      {id = 52512, num = 40},
+      {id = 52519, num = 40}
+    },
+    {
+      {id = 52821, num = 100},
+      {id = 52333, num = 10},
+      {id = 52212, num = 1000},
+      {id = 52334, num = 10},
+      {id = 52416, num = 500},
+      {id = 52303, num = 6},
+      {id = 52311, num = 6},
+      {id = 52321, num = 6},
+      {id = 52520, num = 40},
+      {id = 52522, num = 40}
+    },
+    {
+      {id = 52821, num = 80},
+      {id = 52332, num = 10},
+      {id = 52162, num = 1000},
+      {id = 52333, num = 10},
+      {id = 52416, num = 500},
+      {id = 52312, num = 6},
+      {id = 52319, num = 6},
+      {id = 52326, num = 6},
       {id = 52521, num = 40},
-      {id = 52523, num = 40}
+      {id = 52524, num = 40}
+    },
+    {
+      {id = 52821, num = 80},
+      {id = 52332, num = 10},
+      {id = 52162, num = 1000},
+      {id = 52333, num = 10},
+      {id = 52416, num = 500},
+      {id = 52310, num = 6},
+      {id = 52317, num = 6},
+      {id = 52324, num = 6},
+      {id = 52519, num = 40},
+      {id = 52525, num = 40}
+    },
+    {
+      {id = 52821, num = 60},
+      {id = 52332, num = 6},
+      {id = 52112, num = 1000},
+      {id = 52333, num = 6},
+      {id = 52416, num = 500},
+      {id = 52305, num = 6},
+      {id = 52311, num = 6},
+      {id = 52317, num = 6},
+      {id = 52509, num = 40},
+      {id = 52516, num = 40}
+    },
+    {
+      {id = 52821, num = 40},
+      {id = 52326, num = 12},
+      {id = 52160, num = 2000},
+      {id = 52327, num = 12},
+      {id = 52414, num = 1000}
+    },
+    {
+      {id = 52821, num = 100},
+      {id = 52340, num = 12},
+      {id = 52115, num = 2000},
+      {id = 52341, num = 12},
+      {id = 52419, num = 1000},
+      {id = 52316, num = 6},
+      {id = 52326, num = 6},
+      {id = 52329, num = 6},
+      {id = 52520, num = 20},
+      {id = 52522, num = 20}
+    },
+    {
+      {id = 52821, num = 80},
+      {id = 52333, num = 6},
+      {id = 52212, num = 1000},
+      {id = 52334, num = 6},
+      {id = 52416, num = 500},
+      {id = 52308, num = 8},
+      {id = 52314, num = 8},
+      {id = 52320, num = 8},
+      {id = 52508, num = 40},
+      {id = 52512, num = 40}
     },
     {
       {id = 52821, num = 60},
@@ -1493,54 +1569,6 @@ Table_EquipCompose_t = {
       {id = 52414, num = 1000}
     },
     {
-      {id = 52821, num = 100},
-      {id = 52340, num = 12},
-      {id = 52115, num = 2000},
-      {id = 52341, num = 12},
-      {id = 52419, num = 1000},
-      {id = 52316, num = 6},
-      {id = 52326, num = 6},
-      {id = 52329, num = 6},
-      {id = 52520, num = 20},
-      {id = 52522, num = 20}
-    },
-    {
-      {id = 52821, num = 60},
-      {id = 52332, num = 6},
-      {id = 52112, num = 1000},
-      {id = 52333, num = 6},
-      {id = 52416, num = 500},
-      {id = 52305, num = 6},
-      {id = 52311, num = 6},
-      {id = 52317, num = 6},
-      {id = 52509, num = 40},
-      {id = 52516, num = 40}
-    },
-    {
-      {id = 52821, num = 80},
-      {id = 52340, num = 12},
-      {id = 52165, num = 2000},
-      {id = 52341, num = 12},
-      {id = 52419, num = 1000},
-      {id = 52317, num = 6},
-      {id = 52327, num = 6},
-      {id = 52330, num = 6},
-      {id = 52518, num = 20},
-      {id = 52523, num = 20}
-    },
-    {
-      {id = 52821, num = 80},
-      {id = 52333, num = 6},
-      {id = 52212, num = 1000},
-      {id = 52334, num = 6},
-      {id = 52416, num = 500},
-      {id = 52308, num = 8},
-      {id = 52314, num = 8},
-      {id = 52320, num = 8},
-      {id = 52508, num = 40},
-      {id = 52512, num = 40}
-    },
-    {
       {id = 52821, num = 60},
       {id = 52332, num = 6},
       {id = 52112, num = 1000},
@@ -1570,16 +1598,6 @@ Table_EquipCompose_t = {
       {id = 52318, num = 6},
       {id = 52514, num = 40},
       {id = 52516, num = 40}
-    },
-    {
-      {id = 52821, num = 60},
-      {id = 52326, num = 12},
-      {id = 52210, num = 2000},
-      {id = 52327, num = 12},
-      {id = 52414, num = 1000},
-      {id = 52312, num = 10},
-      {id = 52325, num = 8},
-      {id = 52518, num = 50}
     },
     {
       {id = 52821, num = 30},
@@ -1619,6 +1637,16 @@ Table_EquipCompose_t = {
       {id = 52212, num = 1000},
       {id = 52334, num = 6},
       {id = 52416, num = 500}
+    },
+    {
+      {id = 52821, num = 60},
+      {id = 52326, num = 12},
+      {id = 52210, num = 2000},
+      {id = 52327, num = 12},
+      {id = 52414, num = 1000},
+      {id = 52312, num = 10},
+      {id = 52325, num = 8},
+      {id = 52518, num = 50}
     },
     {
       {id = 52821, num = 30},
@@ -1665,6 +1693,16 @@ Table_EquipCompose_t = {
       {id = 52313, num = 6}
     },
     {
+      {id = 52821, num = 60},
+      {id = 52340, num = 8},
+      {id = 52165, num = 1200},
+      {id = 52341, num = 8},
+      {id = 52419, num = 600},
+      {id = 52319, num = 6},
+      {id = 52327, num = 6},
+      {id = 52330, num = 6}
+    },
+    {
       {id = 52821, num = 80},
       {id = 52340, num = 8},
       {id = 52115, num = 1200},
@@ -1673,6 +1711,15 @@ Table_EquipCompose_t = {
       {id = 52321, num = 6},
       {id = 52326, num = 6},
       {id = 52329, num = 6}
+    },
+    {
+      {id = 52821, num = 40},
+      {id = 52340, num = 10},
+      {id = 52215, num = 1200},
+      {id = 52341, num = 10},
+      {id = 52419, num = 600},
+      {id = 52517, num = 30},
+      {id = 52530, num = 30}
     },
     {
       {id = 52821, num = 80},
@@ -1684,18 +1731,6 @@ Table_EquipCompose_t = {
       {id = 52334, num = 6},
       {id = 52339, num = 6},
       {id = 52516, num = 30},
-      {id = 52530, num = 30}
-    },
-    {
-      {id = 52821, num = 60},
-      {id = 52340, num = 14},
-      {id = 52115, num = 1200},
-      {id = 52341, num = 14},
-      {id = 52419, num = 600},
-      {id = 52304, num = 6},
-      {id = 52312, num = 6},
-      {id = 52338, num = 8},
-      {id = 52525, num = 30},
       {id = 52530, num = 30}
     },
     {
@@ -1711,16 +1746,6 @@ Table_EquipCompose_t = {
       {id = 52530, num = 30}
     },
     {
-      {id = 52821, num = 80},
-      {id = 52340, num = 10},
-      {id = 52115, num = 1200},
-      {id = 52341, num = 10},
-      {id = 52419, num = 600},
-      {id = 52302, num = 2},
-      {id = 52333, num = 2},
-      {id = 52337, num = 2}
-    },
-    {
       {id = 52821, num = 100},
       {id = 52340, num = 14},
       {id = 52215, num = 1200},
@@ -1731,22 +1756,6 @@ Table_EquipCompose_t = {
       {id = 52332, num = 8},
       {id = 52524, num = 30},
       {id = 52530, num = 30}
-    },
-    {
-      {id = 52821, num = 20},
-      {id = 52328, num = 10},
-      {id = 52210, num = 2000},
-      {id = 52327, num = 10},
-      {id = 52414, num = 1000}
-    },
-    {
-      {id = 52821, num = 40},
-      {id = 52327, num = 12},
-      {id = 52110, num = 2000},
-      {id = 52326, num = 12},
-      {id = 52414, num = 1000},
-      {id = 52316, num = 4},
-      {id = 52321, num = 4}
     },
     {
       {id = 52821, num = 100},
@@ -1771,6 +1780,46 @@ Table_EquipCompose_t = {
       {id = 52339, num = 10},
       {id = 52521, num = 60},
       {id = 52530, num = 60}
+    },
+    {
+      {id = 52821, num = 80},
+      {id = 52340, num = 12},
+      {id = 52165, num = 2000},
+      {id = 52341, num = 12},
+      {id = 52419, num = 1000},
+      {id = 52317, num = 6},
+      {id = 52327, num = 6},
+      {id = 52330, num = 6},
+      {id = 52518, num = 20},
+      {id = 52523, num = 20}
+    },
+    {
+      {id = 52821, num = 20},
+      {id = 52328, num = 10},
+      {id = 52210, num = 2000},
+      {id = 52327, num = 10},
+      {id = 52414, num = 1000}
+    },
+    {
+      {id = 52821, num = 40},
+      {id = 52327, num = 12},
+      {id = 52110, num = 2000},
+      {id = 52326, num = 12},
+      {id = 52414, num = 1000},
+      {id = 52316, num = 4},
+      {id = 52321, num = 4}
+    },
+    {
+      {id = 52821, num = 60},
+      {id = 52340, num = 16},
+      {id = 52215, num = 2000},
+      {id = 52341, num = 16},
+      {id = 52419, num = 1000},
+      {id = 52329, num = 6},
+      {id = 52332, num = 6},
+      {id = 52336, num = 6},
+      {id = 52525, num = 40},
+      {id = 52530, num = 40}
     },
     {
       {id = 52821, num = 120},
@@ -1798,15 +1847,15 @@ Table_EquipCompose_t = {
     },
     {
       {id = 52821, num = 100},
-      {id = 52336, num = 16},
-      {id = 52114, num = 2000},
-      {id = 52338, num = 16},
+      {id = 52337, num = 14},
+      {id = 52214, num = 2000},
+      {id = 52336, num = 14},
       {id = 52418, num = 1000},
+      {id = 52319, num = 10},
       {id = 52326, num = 10},
-      {id = 52329, num = 10},
-      {id = 52332, num = 10},
-      {id = 52521, num = 40},
-      {id = 52525, num = 40}
+      {id = 52328, num = 10},
+      {id = 52519, num = 40},
+      {id = 52521, num = 40}
     },
     {
       {id = 52821, num = 100},
@@ -2017,57 +2066,57 @@ Table_EquipCompose = {
   },
   [40359] = {
     id = 40359,
-    Material = Table_EquipCompose_t.Material[68],
+    Material = Table_EquipCompose_t.Material[69],
     MaterialCost = Table_EquipCompose_t.MaterialCost[49]
   },
   [40360] = {
     id = 40360,
-    Material = Table_EquipCompose_t.Material[69],
+    Material = Table_EquipCompose_t.Material[70],
     MaterialCost = Table_EquipCompose_t.MaterialCost[50]
   },
   [40361] = {
     id = 40361,
-    Material = Table_EquipCompose_t.Material[70],
+    Material = Table_EquipCompose_t.Material[71],
     MaterialCost = Table_EquipCompose_t.MaterialCost[51]
   },
   [40660] = {
     id = 40660,
-    Material = Table_EquipCompose_t.Material[103],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[70]
+    Material = Table_EquipCompose_t.Material[109],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[75]
   },
   [40661] = {
     id = 40661,
-    Material = Table_EquipCompose_t.Material[104],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[71]
+    Material = Table_EquipCompose_t.Material[110],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[76]
   },
   [40662] = {
     id = 40662,
-    Material = Table_EquipCompose_t.Material[105],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[72]
+    Material = Table_EquipCompose_t.Material[111],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[77]
   },
   [40663] = {
     id = 40663,
-    Material = Table_EquipCompose_t.Material[106],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[73]
+    Material = Table_EquipCompose_t.Material[112],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[78]
   },
   [40671] = {
     id = 40671,
-    Material = Table_EquipCompose_t.Material[114],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[81]
+    Material = Table_EquipCompose_t.Material[120],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[86]
   },
   [40676] = {
     id = 40676,
-    Material = Table_EquipCompose_t.Material[119],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[70]
+    Material = Table_EquipCompose_t.Material[125],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[75]
   },
   [40766] = {
     id = 40766,
-    Material = Table_EquipCompose_t.Material[209],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[119]
+    Material = Table_EquipCompose_t.Material[215],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[122]
   },
   [40767] = {
     id = 40767,
-    Material = Table_EquipCompose_t.Material[210],
+    Material = Table_EquipCompose_t.Material[216],
     MaterialCost = Table_EquipCompose_t.MaterialCost[56]
   },
   [40803] = {
@@ -2075,40 +2124,50 @@ Table_EquipCompose = {
     Material = Table_EquipCompose_t.Material[4],
     MaterialCost = Table_EquipCompose_t.MaterialCost[4]
   },
+  [40804] = {
+    id = 40804,
+    Material = Table_EquipCompose_t.Material[5],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[5]
+  },
+  [40805] = {
+    id = 40805,
+    Material = Table_EquipCompose_t.Material[6],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[6]
+  },
   [40944] = {
     id = 40944,
-    Material = Table_EquipCompose_t.Material[132],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[96]
+    Material = Table_EquipCompose_t.Material[138],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[100]
   },
   [40945] = {
     id = 40945,
-    Material = Table_EquipCompose_t.Material[133],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[97]
+    Material = Table_EquipCompose_t.Material[139],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[101]
   },
   [41254] = {
     id = 41254,
-    Material = Table_EquipCompose_t.Material[187],
+    Material = Table_EquipCompose_t.Material[193],
     MaterialCost = Table_EquipCompose_t.MaterialCost[44]
   },
   [41255] = {
     id = 41255,
-    Material = Table_EquipCompose_t.Material[188],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[114]
+    Material = Table_EquipCompose_t.Material[194],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[117]
   },
   [41256] = {
     id = 41256,
-    Material = Table_EquipCompose_t.Material[189],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[115]
+    Material = Table_EquipCompose_t.Material[195],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[118]
   },
   [41257] = {
     id = 41257,
-    Material = Table_EquipCompose_t.Material[190],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[116]
+    Material = Table_EquipCompose_t.Material[196],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[119]
   },
   [41258] = {
     id = 41258,
-    Material = Table_EquipCompose_t.Material[191],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[117]
+    Material = Table_EquipCompose_t.Material[197],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[120]
   },
   [41565] = {
     Material = Table_EquipCompose_t.Material[1],
@@ -2126,32 +2185,37 @@ Table_EquipCompose = {
   },
   [41568] = {
     id = 41568,
-    Material = Table_EquipCompose_t.Material[243],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[111]
+    Material = Table_EquipCompose_t.Material[249],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[114]
+  },
+  [41617] = {
+    id = 41617,
+    Material = Table_EquipCompose_t.Material[52],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[45]
   },
   [41867] = {
     id = 41867,
-    Material = Table_EquipCompose_t.Material[46],
+    Material = Table_EquipCompose_t.Material[47],
     MaterialCost = Table_EquipCompose_t.MaterialCost[40]
   },
   [41868] = {
     id = 41868,
-    Material = Table_EquipCompose_t.Material[47],
+    Material = Table_EquipCompose_t.Material[48],
     MaterialCost = Table_EquipCompose_t.MaterialCost[41]
   },
   [41869] = {
     id = 41869,
-    Material = Table_EquipCompose_t.Material[48],
+    Material = Table_EquipCompose_t.Material[49],
     MaterialCost = Table_EquipCompose_t.MaterialCost[42]
   },
   [41870] = {
     id = 41870,
-    Material = Table_EquipCompose_t.Material[49],
+    Material = Table_EquipCompose_t.Material[50],
     MaterialCost = Table_EquipCompose_t.MaterialCost[43]
   },
   [41871] = {
     id = 41871,
-    Material = Table_EquipCompose_t.Material[50],
+    Material = Table_EquipCompose_t.Material[51],
     MaterialCost = Table_EquipCompose_t.MaterialCost[44]
   },
   [42086] = {
@@ -2210,8 +2274,8 @@ Table_EquipCompose = {
   },
   [42095] = {
     id = 42095,
-    Material = Table_EquipCompose_t.Material[170],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[110],
+    Material = Table_EquipCompose_t.Material[173],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[113],
     Cost = 1800000
   },
   [42096] = {
@@ -2222,20 +2286,20 @@ Table_EquipCompose = {
   },
   [42097] = {
     id = 42097,
-    Material = Table_EquipCompose_t.Material[73],
+    Material = Table_EquipCompose_t.Material[74],
     MaterialCost = Table_EquipCompose_t.MaterialCost[53],
     Cost = 1800000
   },
   [42098] = {
     id = 42098,
-    Material = Table_EquipCompose_t.Material[233],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[109],
+    Material = Table_EquipCompose_t.Material[239],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[112],
     Cost = 1800000
   },
   [42099] = {
     id = 42099,
-    Material = Table_EquipCompose_t.Material[234],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[108],
+    Material = Table_EquipCompose_t.Material[240],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[111],
     Cost = 1800000
   },
   [42100] = {
@@ -2276,8 +2340,8 @@ Table_EquipCompose = {
   },
   [42106] = {
     id = 42106,
-    Material = Table_EquipCompose_t.Material[235],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[107],
+    Material = Table_EquipCompose_t.Material[241],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[110],
     Cost = 1800000
   },
   [42107] = {
@@ -2288,69 +2352,69 @@ Table_EquipCompose = {
   },
   [42126] = {
     id = 42126,
-    Material = Table_EquipCompose_t.Material[236],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[106],
+    Material = Table_EquipCompose_t.Material[242],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[109],
     Cost = 1800000
   },
   [42579] = {
     id = 42579,
-    Material = Table_EquipCompose_t.Material[237],
+    Material = Table_EquipCompose_t.Material[243],
     MaterialCost = Table_EquipCompose_t.MaterialCost[34]
   },
   [42580] = {
     id = 42580,
-    Material = Table_EquipCompose_t.Material[238],
+    Material = Table_EquipCompose_t.Material[244],
     MaterialCost = Table_EquipCompose_t.MaterialCost[35]
   },
   [42581] = {
     id = 42581,
-    Material = Table_EquipCompose_t.Material[239],
+    Material = Table_EquipCompose_t.Material[245],
     MaterialCost = Table_EquipCompose_t.MaterialCost[36]
   },
   [42582] = {
     id = 42582,
-    Material = Table_EquipCompose_t.Material[240],
+    Material = Table_EquipCompose_t.Material[246],
     MaterialCost = Table_EquipCompose_t.MaterialCost[37]
   },
   [42583] = {
     id = 42583,
-    Material = Table_EquipCompose_t.Material[241],
+    Material = Table_EquipCompose_t.Material[247],
     MaterialCost = Table_EquipCompose_t.MaterialCost[38]
   },
   [42584] = {
     id = 42584,
-    Material = Table_EquipCompose_t.Material[242],
+    Material = Table_EquipCompose_t.Material[248],
     MaterialCost = Table_EquipCompose_t.MaterialCost[39]
   },
   [42585] = {
     id = 42585,
-    Material = Table_EquipCompose_t.Material[171],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[105]
+    Material = Table_EquipCompose_t.Material[174],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[108]
   },
   [42586] = {
     id = 42586,
-    Material = Table_EquipCompose_t.Material[174],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[104]
+    Material = Table_EquipCompose_t.Material[175],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[107]
   },
   [42587] = {
     id = 42587,
-    Material = Table_EquipCompose_t.Material[193],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[103]
+    Material = Table_EquipCompose_t.Material[176],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[106]
   },
   [42588] = {
     id = 42588,
-    Material = Table_EquipCompose_t.Material[194],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[102]
+    Material = Table_EquipCompose_t.Material[177],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[57]
   },
   [42589] = {
     id = 42589,
-    Material = Table_EquipCompose_t.Material[5],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[5]
+    Material = Table_EquipCompose_t.Material[89],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[60]
   },
   [42590] = {
     id = 42590,
-    Material = Table_EquipCompose_t.Material[6],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[6]
+    Material = Table_EquipCompose_t.Material[211],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[105]
   },
   [42591] = {
     id = 42591,
@@ -2379,357 +2443,357 @@ Table_EquipCompose = {
   },
   [43058] = {
     id = 43058,
-    Material = Table_EquipCompose_t.Material[206],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[101]
+    Material = Table_EquipCompose_t.Material[212],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[104]
   },
   [43059] = {
     id = 43059,
-    Material = Table_EquipCompose_t.Material[207],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[100]
+    Material = Table_EquipCompose_t.Material[213],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[103]
   },
   [43060] = {
     id = 43060,
-    Material = Table_EquipCompose_t.Material[208],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[58]
+    Material = Table_EquipCompose_t.Material[214],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[102]
   },
   [43061] = {
     id = 43061,
-    Material = Table_EquipCompose_t.Material[107],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[74]
+    Material = Table_EquipCompose_t.Material[106],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[72]
   },
   [43062] = {
     id = 43062,
-    Material = Table_EquipCompose_t.Material[109],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[76]
+    Material = Table_EquipCompose_t.Material[219],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[99]
   },
   [43063] = {
     id = 43063,
-    Material = Table_EquipCompose_t.Material[211],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[99]
+    Material = Table_EquipCompose_t.Material[217],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[98]
   },
   [43064] = {
     id = 43064,
-    Material = Table_EquipCompose_t.Material[212],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[98]
+    Material = Table_EquipCompose_t.Material[218],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[97]
   },
   [43576] = {
     id = 43576,
-    Material = Table_EquipCompose_t.Material[214],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[95],
+    Material = Table_EquipCompose_t.Material[220],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[96],
     Cost = 1000000
   },
   [43577] = {
     id = 43577,
-    Material = Table_EquipCompose_t.Material[215],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[94],
+    Material = Table_EquipCompose_t.Material[221],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[58],
     Cost = 1000000
   },
   [43578] = {
     id = 43578,
-    Material = Table_EquipCompose_t.Material[216],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[93],
+    Material = Table_EquipCompose_t.Material[222],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[95],
     Cost = 1000000
   },
   [43579] = {
     id = 43579,
-    Material = Table_EquipCompose_t.Material[217],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[92],
+    Material = Table_EquipCompose_t.Material[223],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[59],
     Cost = 1000000
   },
   [43580] = {
     id = 43580,
-    Material = Table_EquipCompose_t.Material[218],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[91],
+    Material = Table_EquipCompose_t.Material[224],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[94],
     Cost = 1000000
   },
   [43581] = {
     id = 43581,
-    Material = Table_EquipCompose_t.Material[219],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[60],
+    Material = Table_EquipCompose_t.Material[225],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[93],
     Cost = 1000000
   },
   [43582] = {
     id = 43582,
-    Material = Table_EquipCompose_t.Material[220],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[90],
+    Material = Table_EquipCompose_t.Material[226],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[92],
     Cost = 1000000
   },
   [43583] = {
     id = 43583,
-    Material = Table_EquipCompose_t.Material[221],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[61],
+    Material = Table_EquipCompose_t.Material[227],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[91],
     Cost = 1000000
   },
   [43584] = {
     id = 43584,
-    Material = Table_EquipCompose_t.Material[222],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[89],
+    Material = Table_EquipCompose_t.Material[228],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[90],
     Cost = 1000000
   },
   [43585] = {
     id = 43585,
-    Material = Table_EquipCompose_t.Material[223],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[88],
+    Material = Table_EquipCompose_t.Material[229],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[89],
     Cost = 1000000
   },
   [43587] = {
     id = 43587,
-    Material = Table_EquipCompose_t.Material[225],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[87],
+    Material = Table_EquipCompose_t.Material[231],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[88],
     Cost = 1000000
   },
   [44047] = {
     id = 44047,
-    Material = Table_EquipCompose_t.Material[175],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[86],
+    Material = Table_EquipCompose_t.Material[181],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[87],
     Cost = 1000000
   },
   [44048] = {
     id = 44048,
-    Material = Table_EquipCompose_t.Material[176],
+    Material = Table_EquipCompose_t.Material[182],
     MaterialCost = Table_EquipCompose_t.MaterialCost[85],
     Cost = 1000000
   },
   [44049] = {
     id = 44049,
-    Material = Table_EquipCompose_t.Material[177],
+    Material = Table_EquipCompose_t.Material[183],
     MaterialCost = Table_EquipCompose_t.MaterialCost[84],
     Cost = 1000000
   },
   [44050] = {
     id = 44050,
-    Material = Table_EquipCompose_t.Material[178],
+    Material = Table_EquipCompose_t.Material[184],
     MaterialCost = Table_EquipCompose_t.MaterialCost[83],
     Cost = 1000000
   },
   [44051] = {
     id = 44051,
-    Material = Table_EquipCompose_t.Material[179],
+    Material = Table_EquipCompose_t.Material[185],
     MaterialCost = Table_EquipCompose_t.MaterialCost[82],
     Cost = 1000000
   },
   [44052] = {
     id = 44052,
-    Material = Table_EquipCompose_t.Material[180],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[80],
+    Material = Table_EquipCompose_t.Material[186],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[81],
     Cost = 1000000
   },
   [44053] = {
     id = 44053,
-    Material = Table_EquipCompose_t.Material[181],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[79],
+    Material = Table_EquipCompose_t.Material[187],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[80],
     Cost = 1000000
   },
   [44054] = {
     id = 44054,
-    Material = Table_EquipCompose_t.Material[182],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[78],
+    Material = Table_EquipCompose_t.Material[188],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[79],
     Cost = 1000000
   },
   [44055] = {
     id = 44055,
-    Material = Table_EquipCompose_t.Material[183],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[77],
+    Material = Table_EquipCompose_t.Material[189],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[73],
     Cost = 1000000
   },
   [44056] = {
     id = 44056,
-    Material = Table_EquipCompose_t.Material[184],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[112],
+    Material = Table_EquipCompose_t.Material[190],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[115],
     Cost = 1000000
   },
   [44057] = {
     id = 44057,
-    Material = Table_EquipCompose_t.Material[185],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[75],
+    Material = Table_EquipCompose_t.Material[191],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[70],
     Cost = 1000000
   },
   [44058] = {
     id = 44058,
-    Material = Table_EquipCompose_t.Material[186],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[113],
+    Material = Table_EquipCompose_t.Material[192],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[116],
     Cost = 1000000
   },
   [44059] = {
     id = 44059,
-    Material = Table_EquipCompose_t.Material[213],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[68],
+    Material = Table_EquipCompose_t.Material[210],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[62],
     Cost = 1000000
   },
   [44060] = {
     id = 44060,
-    Material = Table_EquipCompose_t.Material[205],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[67],
+    Material = Table_EquipCompose_t.Material[209],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[64],
     Cost = 1000000
   },
   [44061] = {
     id = 44061,
-    Material = Table_EquipCompose_t.Material[204],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[65],
+    Material = Table_EquipCompose_t.Material[208],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[69],
     Cost = 1000000
   },
   [44062] = {
     id = 44062,
-    Material = Table_EquipCompose_t.Material[203],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[62],
+    Material = Table_EquipCompose_t.Material[207],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[68],
     Cost = 1000000
   },
   [44063] = {
     id = 44063,
-    Material = Table_EquipCompose_t.Material[202],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[63],
+    Material = Table_EquipCompose_t.Material[206],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[67],
     Cost = 1000000
   },
   [44166] = {
     id = 44166,
-    Material = Table_EquipCompose_t.Material[201],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[64],
+    Material = Table_EquipCompose_t.Material[205],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[66],
     Cost = 1000000
   },
   [44167] = {
     id = 44167,
-    Material = Table_EquipCompose_t.Material[51],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[45],
+    Material = Table_EquipCompose_t.Material[204],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[65],
     Cost = 1000000
   },
   [62540] = {
     id = 62540,
-    Material = Table_EquipCompose_t.Material[64],
+    Material = Table_EquipCompose_t.Material[65],
     MaterialCost = Table_EquipCompose_t.MaterialCost[46]
   },
   [62541] = {
     id = 62541,
-    Material = Table_EquipCompose_t.Material[65],
+    Material = Table_EquipCompose_t.Material[66],
     MaterialCost = Table_EquipCompose_t.MaterialCost[47]
   },
   [62542] = {
     id = 62542,
-    Material = Table_EquipCompose_t.Material[66],
+    Material = Table_EquipCompose_t.Material[67],
     MaterialCost = Table_EquipCompose_t.MaterialCost[48]
   },
   [62551] = {
     id = 62551,
-    Material = Table_EquipCompose_t.Material[72],
+    Material = Table_EquipCompose_t.Material[73],
     MaterialCost = Table_EquipCompose_t.MaterialCost[52]
   },
   [62571] = {
     id = 62571,
-    Material = Table_EquipCompose_t.Material[84],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[57]
+    Material = Table_EquipCompose_t.Material[90],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[61]
   },
   [62573] = {
     id = 62573,
-    Material = Table_EquipCompose_t.Material[86],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[59]
+    Material = Table_EquipCompose_t.Material[92],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[63]
   },
   [62840] = {
     id = 62840,
-    Material = Table_EquipCompose_t.Material[98],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[66]
+    Material = Table_EquipCompose_t.Material[104],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[71]
   },
   [62844] = {
     id = 62844,
-    Material = Table_EquipCompose_t.Material[102],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[69]
+    Material = Table_EquipCompose_t.Material[108],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[74]
   },
   [63140] = {
     id = 63140,
-    Material = Table_EquipCompose_t.Material[143],
+    Material = Table_EquipCompose_t.Material[149],
     MaterialCost = Table_EquipCompose_t.MaterialCost[56]
   },
   [63144] = {
     id = 63144,
-    Material = Table_EquipCompose_t.Material[147],
+    Material = Table_EquipCompose_t.Material[153],
     MaterialCost = Table_EquipCompose_t.MaterialCost[55]
   },
   [63440] = {
     id = 63440,
-    Material = Table_EquipCompose_t.Material[200],
+    Material = Table_EquipCompose_t.Material[203],
     MaterialCost = Table_EquipCompose_t.MaterialCost[54]
   },
   [63444] = {
     id = 63444,
-    Material = Table_EquipCompose_t.Material[192],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[118]
+    Material = Table_EquipCompose_t.Material[198],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[121]
   },
   [140055] = {
     id = 140055,
-    Material = Table_EquipCompose_t.Material[59],
+    Material = Table_EquipCompose_t.Material[60],
     MaterialCost = Table_EquipCompose_t.MaterialCost[21]
   },
   [140057] = {
     id = 140057,
-    Material = Table_EquipCompose_t.Material[61],
+    Material = Table_EquipCompose_t.Material[62],
     MaterialCost = Table_EquipCompose_t.MaterialCost[23]
   },
   [140058] = {
     id = 140058,
-    Material = Table_EquipCompose_t.Material[62],
+    Material = Table_EquipCompose_t.Material[63],
     MaterialCost = Table_EquipCompose_t.MaterialCost[24]
   },
   [140059] = {
     id = 140059,
-    Material = Table_EquipCompose_t.Material[63],
+    Material = Table_EquipCompose_t.Material[64],
     MaterialCost = Table_EquipCompose_t.MaterialCost[25]
   },
   [140066] = {
     id = 140066,
-    Material = Table_EquipCompose_t.Material[199],
+    Material = Table_EquipCompose_t.Material[202],
     MaterialCost = Table_EquipCompose_t.MaterialCost[32]
   },
   [140359] = {
     id = 140359,
-    Material = Table_EquipCompose_t.Material[97],
+    Material = Table_EquipCompose_t.Material[103],
     MaterialCost = Table_EquipCompose_t.MaterialCost[49]
   },
   [140360] = {
     id = 140360,
-    Material = Table_EquipCompose_t.Material[198],
+    Material = Table_EquipCompose_t.Material[201],
     MaterialCost = Table_EquipCompose_t.MaterialCost[50]
   },
   [140361] = {
     id = 140361,
-    Material = Table_EquipCompose_t.Material[99],
+    Material = Table_EquipCompose_t.Material[105],
     MaterialCost = Table_EquipCompose_t.MaterialCost[51]
   },
   [140660] = {
     id = 140660,
-    Material = Table_EquipCompose_t.Material[197],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[70]
+    Material = Table_EquipCompose_t.Material[200],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[75]
   },
   [140661] = {
     id = 140661,
-    Material = Table_EquipCompose_t.Material[144],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[71]
+    Material = Table_EquipCompose_t.Material[150],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[76]
   },
   [140662] = {
     id = 140662,
-    Material = Table_EquipCompose_t.Material[145],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[72]
+    Material = Table_EquipCompose_t.Material[151],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[77]
   },
   [140663] = {
     id = 140663,
-    Material = Table_EquipCompose_t.Material[146],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[73]
+    Material = Table_EquipCompose_t.Material[152],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[78]
   },
   [140671] = {
     id = 140671,
-    Material = Table_EquipCompose_t.Material[154],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[81]
+    Material = Table_EquipCompose_t.Material[160],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[86]
   },
   [140676] = {
     id = 140676,
-    Material = Table_EquipCompose_t.Material[159],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[70]
+    Material = Table_EquipCompose_t.Material[165],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[75]
   },
   [140766] = {
     id = 140766,
-    Material = Table_EquipCompose_t.Material[196],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[119]
+    Material = Table_EquipCompose_t.Material[199],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[122]
   },
   [140767] = {
     id = 140767,
-    Material = Table_EquipCompose_t.Material[195],
+    Material = Table_EquipCompose_t.Material[180],
     MaterialCost = Table_EquipCompose_t.MaterialCost[56]
   },
   [140803] = {
@@ -2737,40 +2801,50 @@ Table_EquipCompose = {
     Material = Table_EquipCompose_t.Material[43],
     MaterialCost = Table_EquipCompose_t.MaterialCost[4]
   },
+  [140804] = {
+    id = 140804,
+    Material = Table_EquipCompose_t.Material[44],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[5]
+  },
+  [140805] = {
+    id = 140805,
+    Material = Table_EquipCompose_t.Material[45],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[6]
+  },
   [140944] = {
     id = 140944,
-    Material = Table_EquipCompose_t.Material[172],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[96]
+    Material = Table_EquipCompose_t.Material[178],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[100]
   },
   [140945] = {
     id = 140945,
-    Material = Table_EquipCompose_t.Material[173],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[97]
+    Material = Table_EquipCompose_t.Material[179],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[101]
   },
   [141254] = {
     id = 141254,
-    Material = Table_EquipCompose_t.Material[227],
+    Material = Table_EquipCompose_t.Material[233],
     MaterialCost = Table_EquipCompose_t.MaterialCost[44]
   },
   [141255] = {
     id = 141255,
-    Material = Table_EquipCompose_t.Material[228],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[114]
+    Material = Table_EquipCompose_t.Material[234],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[117]
   },
   [141256] = {
     id = 141256,
-    Material = Table_EquipCompose_t.Material[229],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[115]
+    Material = Table_EquipCompose_t.Material[235],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[118]
   },
   [141257] = {
     id = 141257,
-    Material = Table_EquipCompose_t.Material[230],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[116]
+    Material = Table_EquipCompose_t.Material[236],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[119]
   },
   [141258] = {
     id = 141258,
-    Material = Table_EquipCompose_t.Material[231],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[117]
+    Material = Table_EquipCompose_t.Material[237],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[120]
   },
   [141565] = {
     id = 141565,
@@ -2789,170 +2863,175 @@ Table_EquipCompose = {
   },
   [141568] = {
     id = 141568,
-    Material = Table_EquipCompose_t.Material[169],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[111]
+    Material = Table_EquipCompose_t.Material[172],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[114]
+  },
+  [141617] = {
+    id = 141617,
+    Material = Table_EquipCompose_t.Material[86],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[45]
   },
   [141867] = {
     id = 141867,
-    Material = Table_EquipCompose_t.Material[75],
+    Material = Table_EquipCompose_t.Material[81],
     MaterialCost = Table_EquipCompose_t.MaterialCost[40]
   },
   [141868] = {
     id = 141868,
-    Material = Table_EquipCompose_t.Material[76],
+    Material = Table_EquipCompose_t.Material[82],
     MaterialCost = Table_EquipCompose_t.MaterialCost[41]
   },
   [141869] = {
     id = 141869,
-    Material = Table_EquipCompose_t.Material[77],
+    Material = Table_EquipCompose_t.Material[83],
     MaterialCost = Table_EquipCompose_t.MaterialCost[42]
   },
   [141870] = {
     id = 141870,
-    Material = Table_EquipCompose_t.Material[78],
+    Material = Table_EquipCompose_t.Material[84],
     MaterialCost = Table_EquipCompose_t.MaterialCost[43]
   },
   [141871] = {
     id = 141871,
-    Material = Table_EquipCompose_t.Material[79],
+    Material = Table_EquipCompose_t.Material[85],
     MaterialCost = Table_EquipCompose_t.MaterialCost[44]
   },
   [142086] = {
     id = 142086,
-    Material = Table_EquipCompose_t.Material[168],
+    Material = Table_EquipCompose_t.Material[171],
     MaterialCost = Table_EquipCompose_t.MaterialCost[12],
     Cost = 1800000
   },
   [142087] = {
     id = 142087,
-    Material = Table_EquipCompose_t.Material[167],
+    Material = Table_EquipCompose_t.Material[170],
     MaterialCost = Table_EquipCompose_t.MaterialCost[13],
     Cost = 1800000
   },
   [142088] = {
     id = 142088,
-    Material = Table_EquipCompose_t.Material[52],
+    Material = Table_EquipCompose_t.Material[53],
     MaterialCost = Table_EquipCompose_t.MaterialCost[14],
     Cost = 1800000
   },
   [142089] = {
     id = 142089,
-    Material = Table_EquipCompose_t.Material[53],
+    Material = Table_EquipCompose_t.Material[54],
     MaterialCost = Table_EquipCompose_t.MaterialCost[15],
     Cost = 1800000
   },
   [142090] = {
     id = 142090,
-    Material = Table_EquipCompose_t.Material[54],
+    Material = Table_EquipCompose_t.Material[55],
     MaterialCost = Table_EquipCompose_t.MaterialCost[16],
     Cost = 1800000
   },
   [142091] = {
     id = 142091,
-    Material = Table_EquipCompose_t.Material[55],
+    Material = Table_EquipCompose_t.Material[56],
     MaterialCost = Table_EquipCompose_t.MaterialCost[17],
     Cost = 1800000
   },
   [142092] = {
     id = 142092,
-    Material = Table_EquipCompose_t.Material[56],
+    Material = Table_EquipCompose_t.Material[57],
     MaterialCost = Table_EquipCompose_t.MaterialCost[18],
     Cost = 1800000
   },
   [142093] = {
     id = 142093,
-    Material = Table_EquipCompose_t.Material[57],
+    Material = Table_EquipCompose_t.Material[58],
     MaterialCost = Table_EquipCompose_t.MaterialCost[19],
     Cost = 1800000
   },
   [142094] = {
     id = 142094,
-    Material = Table_EquipCompose_t.Material[58],
+    Material = Table_EquipCompose_t.Material[59],
     MaterialCost = Table_EquipCompose_t.MaterialCost[20],
     Cost = 1800000
   },
   [142095] = {
     id = 142095,
-    Material = Table_EquipCompose_t.Material[166],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[110],
+    Material = Table_EquipCompose_t.Material[169],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[113],
     Cost = 1800000
   },
   [142096] = {
     id = 142096,
-    Material = Table_EquipCompose_t.Material[60],
+    Material = Table_EquipCompose_t.Material[61],
     MaterialCost = Table_EquipCompose_t.MaterialCost[22],
     Cost = 1800000
   },
   [142097] = {
     id = 142097,
-    Material = Table_EquipCompose_t.Material[165],
+    Material = Table_EquipCompose_t.Material[168],
     MaterialCost = Table_EquipCompose_t.MaterialCost[53],
     Cost = 1800000
   },
   [142098] = {
     id = 142098,
-    Material = Table_EquipCompose_t.Material[164],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[109],
+    Material = Table_EquipCompose_t.Material[167],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[112],
     Cost = 1800000
   },
   [142099] = {
     id = 142099,
-    Material = Table_EquipCompose_t.Material[163],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[108],
+    Material = Table_EquipCompose_t.Material[166],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[111],
     Cost = 1800000
   },
   [142100] = {
     id = 142100,
-    Material = Table_EquipCompose_t.Material[162],
+    Material = Table_EquipCompose_t.Material[164],
     MaterialCost = Table_EquipCompose_t.MaterialCost[26],
     Cost = 1800000
   },
   [142101] = {
     id = 142101,
-    Material = Table_EquipCompose_t.Material[161],
+    Material = Table_EquipCompose_t.Material[163],
     MaterialCost = Table_EquipCompose_t.MaterialCost[27],
     Cost = 1800000
   },
   [142102] = {
     id = 142102,
-    Material = Table_EquipCompose_t.Material[160],
+    Material = Table_EquipCompose_t.Material[162],
     MaterialCost = Table_EquipCompose_t.MaterialCost[28],
     Cost = 1800000
   },
   [142103] = {
     id = 142103,
-    Material = Table_EquipCompose_t.Material[67],
+    Material = Table_EquipCompose_t.Material[68],
     MaterialCost = Table_EquipCompose_t.MaterialCost[29],
     Cost = 1800000
   },
   [142104] = {
     id = 142104,
-    Material = Table_EquipCompose_t.Material[158],
+    Material = Table_EquipCompose_t.Material[161],
     MaterialCost = Table_EquipCompose_t.MaterialCost[30],
     Cost = 1800000
   },
   [142105] = {
     id = 142105,
-    Material = Table_EquipCompose_t.Material[157],
+    Material = Table_EquipCompose_t.Material[159],
     MaterialCost = Table_EquipCompose_t.MaterialCost[31],
     Cost = 1800000
   },
   [142106] = {
     id = 142106,
-    Material = Table_EquipCompose_t.Material[156],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[107],
+    Material = Table_EquipCompose_t.Material[158],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[110],
     Cost = 1800000
   },
   [142107] = {
     id = 142107,
-    Material = Table_EquipCompose_t.Material[71],
+    Material = Table_EquipCompose_t.Material[72],
     MaterialCost = Table_EquipCompose_t.MaterialCost[33],
     Cost = 1800000
   },
   [142126] = {
     id = 142126,
-    Material = Table_EquipCompose_t.Material[155],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[106],
+    Material = Table_EquipCompose_t.Material[157],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[109],
     Cost = 1800000
   },
   [142579] = {
@@ -2987,328 +3066,328 @@ Table_EquipCompose = {
   },
   [142585] = {
     id = 142585,
-    Material = Table_EquipCompose_t.Material[153],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[105]
+    Material = Table_EquipCompose_t.Material[156],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[108]
   },
   [142586] = {
     id = 142586,
-    Material = Table_EquipCompose_t.Material[152],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[104]
+    Material = Table_EquipCompose_t.Material[155],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[107]
   },
   [142587] = {
     id = 142587,
-    Material = Table_EquipCompose_t.Material[151],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[103]
+    Material = Table_EquipCompose_t.Material[154],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[106]
   },
   [142588] = {
     id = 142588,
-    Material = Table_EquipCompose_t.Material[150],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[102]
+    Material = Table_EquipCompose_t.Material[78],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[57]
   },
   [142590] = {
     id = 142590,
-    Material = Table_EquipCompose_t.Material[44],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[6]
+    Material = Table_EquipCompose_t.Material[147],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[105]
   },
   [142591] = {
     id = 142591,
-    Material = Table_EquipCompose_t.Material[45],
+    Material = Table_EquipCompose_t.Material[46],
     MaterialCost = Table_EquipCompose_t.MaterialCost[7]
   },
   [142592] = {
     id = 142592,
-    Material = Table_EquipCompose_t.Material[149],
+    Material = Table_EquipCompose_t.Material[146],
     MaterialCost = Table_EquipCompose_t.MaterialCost[8]
   },
   [142593] = {
     id = 142593,
-    Material = Table_EquipCompose_t.Material[148],
+    Material = Table_EquipCompose_t.Material[145],
     MaterialCost = Table_EquipCompose_t.MaterialCost[9]
   },
   [142594] = {
     id = 142594,
-    Material = Table_EquipCompose_t.Material[83],
+    Material = Table_EquipCompose_t.Material[79],
     MaterialCost = Table_EquipCompose_t.MaterialCost[10]
   },
   [142595] = {
     id = 142595,
-    Material = Table_EquipCompose_t.Material[141],
+    Material = Table_EquipCompose_t.Material[143],
     MaterialCost = Table_EquipCompose_t.MaterialCost[11]
   },
   [143058] = {
     id = 143058,
-    Material = Table_EquipCompose_t.Material[140],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[101]
+    Material = Table_EquipCompose_t.Material[142],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[104]
   },
   [143059] = {
     id = 143059,
-    Material = Table_EquipCompose_t.Material[139],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[100]
+    Material = Table_EquipCompose_t.Material[141],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[103]
   },
   [143060] = {
     id = 143060,
-    Material = Table_EquipCompose_t.Material[85],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[58]
+    Material = Table_EquipCompose_t.Material[140],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[102]
   },
   [143061] = {
     id = 143061,
     Material = Table_EquipCompose_t.Material[137],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[74]
+    MaterialCost = Table_EquipCompose_t.MaterialCost[72]
   },
   [143062] = {
     id = 143062,
     Material = Table_EquipCompose_t.Material[136],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[76]
+    MaterialCost = Table_EquipCompose_t.MaterialCost[99]
   },
   [143063] = {
     id = 143063,
     Material = Table_EquipCompose_t.Material[135],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[99]
+    MaterialCost = Table_EquipCompose_t.MaterialCost[98]
   },
   [143064] = {
     id = 143064,
     Material = Table_EquipCompose_t.Material[134],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[98]
+    MaterialCost = Table_EquipCompose_t.MaterialCost[97]
   },
   [143576] = {
     id = 143576,
-    Material = Table_EquipCompose_t.Material[131],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[95],
+    Material = Table_EquipCompose_t.Material[133],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[96],
     Cost = 1000000
   },
   [143577] = {
     id = 143577,
-    Material = Table_EquipCompose_t.Material[130],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[94],
+    Material = Table_EquipCompose_t.Material[80],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[58],
     Cost = 1000000
   },
   [143578] = {
     id = 143578,
-    Material = Table_EquipCompose_t.Material[129],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[93],
+    Material = Table_EquipCompose_t.Material[131],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[95],
     Cost = 1000000
   },
   [143579] = {
     id = 143579,
-    Material = Table_EquipCompose_t.Material[128],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[92],
+    Material = Table_EquipCompose_t.Material[87],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[59],
     Cost = 1000000
   },
   [143580] = {
     id = 143580,
-    Material = Table_EquipCompose_t.Material[127],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[91],
+    Material = Table_EquipCompose_t.Material[129],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[94],
     Cost = 1000000
   },
   [143581] = {
     id = 143581,
-    Material = Table_EquipCompose_t.Material[87],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[60],
+    Material = Table_EquipCompose_t.Material[128],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[93],
     Cost = 1000000
   },
   [143582] = {
     id = 143582,
-    Material = Table_EquipCompose_t.Material[125],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[90],
+    Material = Table_EquipCompose_t.Material[127],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[92],
     Cost = 1000000
   },
   [143583] = {
     id = 143583,
-    Material = Table_EquipCompose_t.Material[88],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[61],
+    Material = Table_EquipCompose_t.Material[126],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[91],
     Cost = 1000000
   },
   [143584] = {
     id = 143584,
-    Material = Table_EquipCompose_t.Material[123],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[89],
+    Material = Table_EquipCompose_t.Material[124],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[90],
     Cost = 1000000
   },
   [143585] = {
     id = 143585,
-    Material = Table_EquipCompose_t.Material[122],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[88],
+    Material = Table_EquipCompose_t.Material[123],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[89],
     Cost = 1000000
   },
   [143587] = {
     id = 143587,
-    Material = Table_EquipCompose_t.Material[121],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[87],
+    Material = Table_EquipCompose_t.Material[122],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[88],
     Cost = 1000000
   },
   [144047] = {
     id = 144047,
-    Material = Table_EquipCompose_t.Material[120],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[86],
+    Material = Table_EquipCompose_t.Material[121],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[87],
     Cost = 1000000
   },
   [144048] = {
     id = 144048,
-    Material = Table_EquipCompose_t.Material[118],
+    Material = Table_EquipCompose_t.Material[119],
     MaterialCost = Table_EquipCompose_t.MaterialCost[85],
     Cost = 1000000
   },
   [144049] = {
     id = 144049,
-    Material = Table_EquipCompose_t.Material[117],
+    Material = Table_EquipCompose_t.Material[118],
     MaterialCost = Table_EquipCompose_t.MaterialCost[84],
     Cost = 1000000
   },
   [144050] = {
     id = 144050,
-    Material = Table_EquipCompose_t.Material[116],
+    Material = Table_EquipCompose_t.Material[117],
     MaterialCost = Table_EquipCompose_t.MaterialCost[83],
     Cost = 1000000
   },
   [144051] = {
     id = 144051,
-    Material = Table_EquipCompose_t.Material[115],
+    Material = Table_EquipCompose_t.Material[116],
     MaterialCost = Table_EquipCompose_t.MaterialCost[82],
     Cost = 1000000
   },
   [144052] = {
     id = 144052,
-    Material = Table_EquipCompose_t.Material[113],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[80],
+    Material = Table_EquipCompose_t.Material[115],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[81],
     Cost = 1000000
   },
   [144053] = {
     id = 144053,
-    Material = Table_EquipCompose_t.Material[112],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[79],
+    Material = Table_EquipCompose_t.Material[114],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[80],
     Cost = 1000000
   },
   [144054] = {
     id = 144054,
-    Material = Table_EquipCompose_t.Material[111],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[78],
+    Material = Table_EquipCompose_t.Material[113],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[79],
     Cost = 1000000
   },
   [144055] = {
     id = 144055,
-    Material = Table_EquipCompose_t.Material[110],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[77],
+    Material = Table_EquipCompose_t.Material[107],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[73],
     Cost = 1000000
   },
   [144056] = {
     id = 144056,
-    Material = Table_EquipCompose_t.Material[224],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[112],
+    Material = Table_EquipCompose_t.Material[230],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[115],
     Cost = 1000000
   },
   [144057] = {
     id = 144057,
-    Material = Table_EquipCompose_t.Material[108],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[75],
+    Material = Table_EquipCompose_t.Material[102],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[70],
     Cost = 1000000
   },
   [144058] = {
     id = 144058,
-    Material = Table_EquipCompose_t.Material[226],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[113],
+    Material = Table_EquipCompose_t.Material[232],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[116],
     Cost = 1000000
   },
   [144059] = {
     id = 144059,
-    Material = Table_EquipCompose_t.Material[101],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[68],
+    Material = Table_EquipCompose_t.Material[91],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[62],
     Cost = 1000000
   },
   [144060] = {
     id = 144060,
-    Material = Table_EquipCompose_t.Material[100],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[67],
+    Material = Table_EquipCompose_t.Material[93],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[64],
     Cost = 1000000
   },
   [144061] = {
     id = 144061,
-    Material = Table_EquipCompose_t.Material[96],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[65],
+    Material = Table_EquipCompose_t.Material[98],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[69],
     Cost = 1000000
   },
   [144062] = {
     id = 144062,
-    Material = Table_EquipCompose_t.Material[90],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[62],
+    Material = Table_EquipCompose_t.Material[97],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[68],
     Cost = 1000000
   },
   [144063] = {
     id = 144063,
-    Material = Table_EquipCompose_t.Material[91],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[63],
+    Material = Table_EquipCompose_t.Material[96],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[67],
     Cost = 1000000
   },
   [144166] = {
     id = 144166,
-    Material = Table_EquipCompose_t.Material[92],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[64],
+    Material = Table_EquipCompose_t.Material[95],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[66],
     Cost = 1000000
   },
   [144167] = {
     id = 144167,
-    Material = Table_EquipCompose_t.Material[80],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[45],
+    Material = Table_EquipCompose_t.Material[94],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[65],
     Cost = 1000000
   },
   [162540] = {
     id = 162540,
-    Material = Table_EquipCompose_t.Material[93],
+    Material = Table_EquipCompose_t.Material[99],
     MaterialCost = Table_EquipCompose_t.MaterialCost[46]
   },
   [162541] = {
     id = 162541,
-    Material = Table_EquipCompose_t.Material[94],
+    Material = Table_EquipCompose_t.Material[100],
     MaterialCost = Table_EquipCompose_t.MaterialCost[47]
   },
   [162542] = {
     id = 162542,
-    Material = Table_EquipCompose_t.Material[95],
+    Material = Table_EquipCompose_t.Material[101],
     MaterialCost = Table_EquipCompose_t.MaterialCost[48]
   },
   [162551] = {
     id = 162551,
-    Material = Table_EquipCompose_t.Material[89],
+    Material = Table_EquipCompose_t.Material[88],
     MaterialCost = Table_EquipCompose_t.MaterialCost[52]
   },
   [162571] = {
     id = 162571,
-    Material = Table_EquipCompose_t.Material[124],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[57]
+    Material = Table_EquipCompose_t.Material[130],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[61]
   },
   [162573] = {
     id = 162573,
-    Material = Table_EquipCompose_t.Material[126],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[59]
+    Material = Table_EquipCompose_t.Material[132],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[63]
   },
   [162840] = {
     id = 162840,
-    Material = Table_EquipCompose_t.Material[138],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[66]
+    Material = Table_EquipCompose_t.Material[144],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[71]
   },
   [162844] = {
     id = 162844,
-    Material = Table_EquipCompose_t.Material[142],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[69]
+    Material = Table_EquipCompose_t.Material[148],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[74]
   },
   [163140] = {
     id = 163140,
-    Material = Table_EquipCompose_t.Material[82],
+    Material = Table_EquipCompose_t.Material[77],
     MaterialCost = Table_EquipCompose_t.MaterialCost[56]
   },
   [163144] = {
     id = 163144,
-    Material = Table_EquipCompose_t.Material[81],
+    Material = Table_EquipCompose_t.Material[76],
     MaterialCost = Table_EquipCompose_t.MaterialCost[55]
   },
   [163440] = {
     id = 163440,
-    Material = Table_EquipCompose_t.Material[74],
+    Material = Table_EquipCompose_t.Material[75],
     MaterialCost = Table_EquipCompose_t.MaterialCost[54]
   },
   [163444] = {
     id = 163444,
-    Material = Table_EquipCompose_t.Material[232],
-    MaterialCost = Table_EquipCompose_t.MaterialCost[118]
+    Material = Table_EquipCompose_t.Material[238],
+    MaterialCost = Table_EquipCompose_t.MaterialCost[121]
   }
 }
 local cell_mt = {

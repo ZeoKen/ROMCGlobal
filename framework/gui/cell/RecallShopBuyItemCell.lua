@@ -200,10 +200,15 @@ end
 function RecallShopBuyItemCell:CalculateMaxCanBuy(costInfo, serverData)
   local buyLimit = serverData.buy_limit or 0
   local boughtCount = serverData.bought_count or 0
-  local stockLimit = buyLimit - boughtCount
-  if stockLimit <= 0 then
-    self.maxcount = 0
-    return
+  local stockLimit
+  if buyLimit <= 0 then
+    stockLimit = GameConfig.Shop.default_item_limit or 999
+  else
+    stockLimit = buyLimit - boughtCount
+    if stockLimit <= 0 then
+      self.maxcount = 0
+      return
+    end
   end
   local moneyLimit = stockLimit
   if costInfo and 0 < self.moneycount then

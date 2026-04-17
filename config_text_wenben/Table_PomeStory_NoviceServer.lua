@@ -1818,7 +1818,6 @@ Table_PomeStory = {
     id = 14,
     QuestID = Table_PomeStory_t.QuestID[14],
     version = Table_PomeStory_t.version[4],
-    QuestName = "白帽子黑帽子",
     Npcid = 1598,
     Pstory = Table_PomeStory_t.Pstory[14]
   },
@@ -2108,6 +2107,7 @@ Table_PomeStory = {
     id = 48,
     QuestID = Table_PomeStory_t.QuestID[48],
     version = Table_PomeStory_t.version[8],
+    QuestName = "雷根贝勒秘闻",
     Npcid = 800057,
     Pstory = Table_PomeStory_t.Pstory[48]
   }
@@ -2119,7 +2119,7 @@ local cell_mt = {
     Npcid = 1595,
     Pstory = _EmptyTable,
     QuestID = _EmptyTable,
-    QuestName = "雷根贝勒秘闻",
+    QuestName = "白帽子黑帽子",
     id = 1,
     version = _EmptyTable
   }

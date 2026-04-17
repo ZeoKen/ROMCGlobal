@@ -32,7 +32,6 @@ function Logic_Transform_DirMove:Update(logicTransform, time, deltaTime)
       return
     end
   end
-  logicTransform:StopMove()
   local restDistance = args[2] - args[4]
   if restDistance <= 1.0E-4 then
     self:Stop(logicTransform)
@@ -72,6 +71,7 @@ function Logic_Transform_DirMove:DoConstruct(asArray, args)
   self.args[6] = args[5]
   self.args[7] = args[6]
   self.args[8] = args[7]
+  self.args[9] = args[8]
   self.running = true
 end
 

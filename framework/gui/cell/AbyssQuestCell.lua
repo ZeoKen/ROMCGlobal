@@ -65,30 +65,38 @@ function AbyssQuestCell:SetData(data)
     self.unlockTip.gameObject:SetActive(false)
     local config = data.staticData
     self.nameLabel.text = config and config.Name or ""
-    local abyssConf = Table_AbyssQuest[data.id]
-    if abyssConf then
-      local rewardId = abyssConf.Reward
-      local items = ItemUtil.GetRewardItemIdsByTeamId(rewardId)
-      if items then
-        local itemId = items[1] and items[1].id
-        local num = items[1] and items[1].num
-        IconManager:SetItemIconById(itemId, self.rewardIcon)
-        local itemConf = Table_Item[itemId]
-        self.rewardLabel.text = string.format(ZhString.Abyss_QuestRewardStr, itemConf and itemConf.NameZh or "", num)
-      end
-    end
+    self:SetReward(data)
   elseif data then
     self.cancelBtn:SetActive(false)
     self.submitBtn:SetActive(false)
     self.completeGO:SetActive(false)
     self.acceptBtn:SetActive(false)
     self.unlockTip.gameObject:SetActive(true)
-    if data.prestigeLv < data.myPrestigeLv and data.unlockLv <= data.myPrestigeLv then
-      self.unlockTip.text = ZhString.Abyss_QuestUnlocked
-      self.lock:SetActive(false)
-    else
-      self.unlockTip.text = string.format(ZhString.Abyss_QuestUnlockTip, data.areaName, data.unlockLv)
-      self.lock:SetActive(true)
+    self:SetUnlockTip(data)
+  end
+end
+
+function AbyssQuestCell:SetReward(data)
+  local abyssConf = Table_AbyssQuest[data.id]
+  if abyssConf then
+    local rewardId = abyssConf.Reward
+    local items = ItemUtil.GetRewardItemIdsByTeamId(rewardId)
+    if items then
+      local itemId = items[1] and items[1].id
+      local num = items[1] and items[1].num
+      IconManager:SetItemIconById(itemId, self.rewardIcon)
+      local itemConf = Table_Item[itemId]
+      self.rewardLabel.text = string.format(ZhString.Abyss_QuestRewardStr, itemConf and itemConf.NameZh or "", num)
     end
+  end
+end
+
+function AbyssQuestCell:SetUnlockTip(data)
+  if data.prestigeLv < data.myPrestigeLv and data.unlockLv <= data.myPrestigeLv then
+    self.unlockTip.text = ZhString.Abyss_QuestUnlocked
+    self.lock:SetActive(false)
+  else
+    self.unlockTip.text = string.format(ZhString.Abyss_QuestUnlockTip, data.areaName, data.unlockLv)
+    self.lock:SetActive(true)
   end
 end

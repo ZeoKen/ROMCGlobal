@@ -32,6 +32,10 @@ function LoginInitCommand:Init(data)
   end
   FunctionPve.QueryPvePassInfo()
   ServiceSceneUser3Proxy.Instance:CallHeroShowUserCmd()
+  ServiceSnowCmdProxy.Instance:CallSnowHeadQuerySnowCmd()
+  if ServiceSnowCmdProxy.Instance.CallQuerySnowManualSnowCmd then
+    ServiceSnowCmdProxy.Instance:CallQuerySnowManualSnowCmd()
+  end
 end
 
 return LoginInitCommand

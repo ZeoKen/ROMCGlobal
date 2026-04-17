@@ -2756,6 +2756,62 @@ Table_ActionEffectSetUp = {
     EPID = 2,
     EPFollow = 1,
     Loop = 1
+  },
+  [410] = {
+    id = 410,
+    Path = "Common/cfx_oliveflower_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [411] = {
+    id = 411,
+    Path = "Common/cfx_oliveflower_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [412] = {
+    id = 412,
+    Path = "Common/cfx_oliveflower_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [413] = {
+    id = 413,
+    Path = "Common/cfx_oliveflower_004_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [414] = {
+    id = 414,
+    Path = "Common/cfx_miaoethnic_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [415] = {
+    id = 415,
+    Path = "Common/cfx_miaoethnic_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [416] = {
+    id = 416,
+    Path = "Common/cfx_miaoethnic_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [417] = {
+    id = 417,
+    Path = "Common/cfx_miaoethnic_004_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
   }
 }
 Table_ActionEffectSetUp_fields = {

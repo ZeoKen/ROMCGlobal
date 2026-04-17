@@ -290,7 +290,9 @@ function SkillLogic_Base.AllowTargetHurtNum(creature, targetCreature, skillInfo,
   return true
 end
 
-function SkillLogic_Base.ShowDamage_Single(damageType, damage, position, labelType, labelColorType, targetCreature, skillInfo, creature)
+local doubleOffset = LuaVector3(0, 0.3, 0)
+
+function SkillLogic_Base.ShowDamage_Single(damageType, damage, position, labelType, labelColorType, targetCreature, skillInfo, creature, doubleDamage)
   if not SkillLogic_Base.AllowTargetEffect(creature, targetCreature) then
     return
   end
@@ -299,6 +301,12 @@ function SkillLogic_Base.ShowDamage_Single(damageType, damage, position, labelTy
   end
   if DamageType.None == damageType or DamageType.Block == damageType or DamageType.AutoBlock == damageType or DamageType.WeaponBlock == damageType then
     return
+  end
+  if not doubleDamage or doubleDamage == 0 then
+    doubleDamage = targetCreature and targetCreature:GetDoubleDamage() or 0
+  end
+  if doubleDamage and 1 < doubleDamage then
+    damage = damage / 2
   end
   local damageStr
   local crit = HurtNum_CritType.None
@@ -336,6 +344,9 @@ function SkillLogic_Base.ShowDamage_Single(damageType, damage, position, labelTy
     damageStr = tostring(damage)
   end
   SceneUIManager.Instance:ShowDynamicHurtNum(position, damageStr, labelType, labelColorType, crit, creature == Game.Myself, targetCreature == Game.Myself)
+  if doubleDamage and 0 < doubleDamage then
+    SceneUIManager.Instance:ShowDynamicHurtNum(position + doubleOffset, damageStr, labelType, labelColorType, crit, creature == Game.Myself, targetCreature == Game.Myself)
+  end
   if damageType ~= DamageType.Miss and damageType ~= DamageType.Barrier and damageType ~= DamageType.Treatment and damageType ~= DamageType.Treatment_Sp and creature then
     local args = ReusableTable.CreateArray()
     args[1] = RandomAIManager.TriggerConditionEnum.DAMAGE
@@ -400,13 +411,13 @@ function SkillLogic_Base.HitTargetByPhaseData(phaseData, sourceCreatureGUID, ign
       if skillInfo:IsSkillDirectionRect(sourceCreature) then
         fromPosition = sourceCreature:GetPosition()
       end
-      if skillInfo:NeedPassiveFire() and not ignoreFireEffect then
+      if skillInfo:NeedPassiveFire() and (not ignoreFireEffect or skillInfo:NeedSpecialAttackEffect()) then
         SkillLogic_Base.PassiveFire(sourceCreature, phaseData, skillInfo)
         return
       end
     end
   end
-  local noHitEffect = skillInfo:IsLastHitOnly() and not phaseData:GetIsLastHit()
+  local noHitEffect = skillInfo:IsLastHitOnly() and not phaseData:GetIsLastHit() or skillInfo:IsFirstHitBackOnly() and not phaseData:GetIsFirstHit()
   local fireCount = skillInfo:GetFireCount()
   local fireInterval = skillInfo:GetFireInterval()
   if not skillInfo:IsLockTargetSkill() and fireCount and fireInterval then
@@ -416,7 +427,7 @@ function SkillLogic_Base.HitTargetByPhaseData(phaseData, sourceCreatureGUID, ign
       local hitWorker = SkillHitWorker.Create()
       hitWorker:Init(skillInfo, fromPosition or phaseData:GetPosition(), sourceCreatureGUID, 0, noHitEffect)
       for j = 1, targetCount do
-        hitWorker:AddTarget(phaseData:GetTarget(j))
+        hitWorker:AddTargetFromPhaseData(phaseData:GetTarget(j))
       end
       hitWorker:SetHitedTargetGoPos(phaseData:GetHitedTargetPos())
       hitWorker:SetEmitTarget(phaseData:GetEmitTarget())
@@ -426,7 +437,7 @@ function SkillLogic_Base.HitTargetByPhaseData(phaseData, sourceCreatureGUID, ign
     local hitWorker = SkillHitWorker.Create()
     hitWorker:Init(skillInfo, fromPosition or phaseData:GetPosition(), sourceCreatureGUID, 0, noHitEffect)
     for i = 1, targetCount do
-      hitWorker:AddTarget(phaseData:GetTarget(i))
+      hitWorker:AddTargetFromPhaseData(phaseData:GetTarget(i))
     end
     hitWorker:SetHitedTargetGoPos(phaseData:GetHitedTargetPos())
     hitWorker:SetEmitTarget(phaseData:GetEmitTarget())
@@ -736,8 +747,8 @@ function SkillLogic_Base:CreateHitTargetWorker(creature, phaseData, assetRole, s
   hitWorker:SetForceEffectPath(skillInfo:GetMainHitEffectPath(creature))
   hitWorker:SetHitedTargetGoPos(phaseData:GetHitedTargetPos())
   hitWorker:SetEmitTarget(phaseData:GetEmitTarget())
-  local targetGUID, damageType, damage, shareDamageInfos, damageCount = phaseData:GetTarget(targetIndex)
-  hitWorker:AddTarget(targetGUID, damageType, damage, shareDamageInfos, self:GetComboDamageLabel(targetIndex), damageCount)
+  local targetGUID, damageType, damage, shareDamageInfos, damageCount, doubleDamage = phaseData:GetTarget(targetIndex)
+  hitWorker:AddTarget(targetGUID, damageType, damage, shareDamageInfos, self:GetComboDamageLabel(targetIndex), damageCount, doubleDamage)
   return hitWorker
 end
 
@@ -750,11 +761,11 @@ function SkillLogic_Base:CreateHitMultiTargetWorker(creature, phaseData, assetRo
   local targetCount = phaseData:GetTargetCount()
   if 0 < targetCount then
     for i = 1, targetCount do
-      local targetGUID, damageType, damage, shareDamageInfos, damageCount = phaseData:GetTarget(i)
+      local targetGUID, damageType, damage, shareDamageInfos, damageCount, doubleDamage = phaseData:GetTarget(i)
       if hideDamage then
         damageCount = 0
       end
-      hitWorker:AddTarget(targetGUID, damageType, damage, shareDamageInfos, self:GetComboDamageLabel(i), damageCount)
+      hitWorker:AddTarget(targetGUID, damageType, damage, shareDamageInfos, self:GetComboDamageLabel(i), damageCount, doubleDamage)
     end
   end
   return hitWorker

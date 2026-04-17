@@ -101,6 +101,10 @@ local PVERaidConfig = {
     Type = FuBenCmd_pb.ERAIDTYPE_STAR_ARK,
     DungeonSpawner = PVEFactory.GetStarArkRaid
   },
+  PVE_DestroyAirShip = {
+    Type = FuBenCmd_pb.ERAIDTYPE_DESTROY_AIR_SHIP,
+    DungeonSpawner = PVEFactory.GetDestroyAirShip
+  },
   GVG_Lobby = {
     Type = FuBenCmd_pb.ERAIDTYPE_GVG_LOBBY,
     DungeonSpawner = PVEFactory.GetGvgLobby
@@ -190,6 +194,10 @@ local PVPRaidConfig = {
   PVP_EndlessBattleField = {
     Type = FuBenCmd_pb.ERAIDTYPE_ENDLESS_BATTLE_FIELD,
     DungeonSpawner = PVPFactory.GetPVPEndlessBattleField
+  },
+  PVP_AsyncPvpRaid = {
+    Type = FuBenCmd_pb.ERAIDTYPE_TEAMPWS_PVE,
+    DungeonSpawner = PVPFactory.GetAsyncPvpRaid
   }
 }
 local GVGRaidConfig = {
@@ -449,6 +457,10 @@ function DungeonManager:IsPVEMode_ComodoRaid()
   return self.currentDungeon ~= nil and self.currentDungeon.isComodoRaid or false
 end
 
+function DungeonManager:IsPVEMode_DestroyAirShip()
+  return self.currentDungeon ~= nil and self.currentDungeon.isDestroyAirShipRaid or false
+end
+
 function DungeonManager:IsPVEMode_MultiBossRaid()
   return self.currentDungeon ~= nil and self.currentDungeon.isMultiBossRaid or false
 end
@@ -487,6 +499,10 @@ end
 
 function DungeonManager:IsPVEMode_AbyssDragon()
   return self.currentDungeon and self.currentDungeon.isAbyssDragonRaid or false
+end
+
+function DungeonManager:IsPVPMode_AsyncPvpRaid()
+  return self.currentDungeon and self.currentDungeon.isAsyncPvpRaid or false
 end
 
 function DungeonManager:GetRaidType()

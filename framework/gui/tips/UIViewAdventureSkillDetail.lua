@@ -63,18 +63,31 @@ function UIViewAdventureSkillDetail:LoadView()
   end
   local skillConfConditionFieldValue = self.skillConf.Contidion
   if skillConfConditionFieldValue ~= nil and not table.IsEmpty(skillConfConditionFieldValue) then
-    local suffix, skillid
     local sb = LuaStringBuilder.CreateAsTable()
-    for i = 1, SkillItemData.ConditionSkillCount do
-      suffix = i == 1 and "" or i
-      skillid = skillConfConditionFieldValue["skillid" .. suffix]
-      if skillid ~= nil then
+    local skillIds = skillConfConditionFieldValue.skills
+    if skillIds ~= nil and not table.IsEmpty(skillIds) then
+      for i, skillid in ipairs(skillIds) do
         local preSkillConf = Table_Skill[skillid]
         if preSkillConf ~= nil then
           if i ~= 1 then
             sb:Append("/")
           end
           sb:Append(OverSea.LangManager.Instance():GetLangByKey(preSkillConf.NameZh))
+        end
+      end
+    else
+      local suffix, skillid
+      for i = 1, SkillItemData.ConditionSkillCount do
+        suffix = i == 1 and "" or i
+        skillid = skillConfConditionFieldValue["skillid" .. suffix]
+        if skillid ~= nil then
+          local preSkillConf = Table_Skill[skillid]
+          if preSkillConf ~= nil then
+            if sb:GetCount() ~= 0 then
+              sb:Append("/")
+            end
+            sb:Append(OverSea.LangManager.Instance():GetLangByKey(preSkillConf.NameZh))
+          end
         end
       end
     end
@@ -122,6 +135,7 @@ end
 function UIViewAdventureSkillDetail:InitializeModelSet()
   self.skillShopItemData = self.tipData.skillShopItemData
   self.skillConf = self.tipData.skillConf
+  xdlog(string.format("UIViewAdventureSkillDetail skillConf.id = %s", tostring(self.skillConf.id)))
   self.adventureLevelID = UIModelAdventureSkill.Instance():GetAdventureLevel()
   self.needCurrency = self.skillShopItemData.ItemCount
   self.shopItemID = self.skillShopItemData.id

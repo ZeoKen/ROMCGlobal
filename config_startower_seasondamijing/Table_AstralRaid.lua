@@ -539,6 +539,114 @@ Table_AstralRaid_t = {
         20440
       },
       UniqueIDs = {17, 18}
+    },
+    {
+      GroupPool = {10501, 10502},
+      UniqueIDs = {6}
+    },
+    {
+      GroupPool = {10509, 10510},
+      UniqueIDs = {10}
+    },
+    {
+      GroupPool = {
+        10517,
+        10518,
+        10519,
+        10520
+      },
+      UniqueIDs = {13, 14}
+    },
+    {
+      GroupPool = {
+        20501,
+        20502,
+        20503,
+        20504,
+        20505
+      },
+      UniqueIDs = {17, 18}
+    },
+    {
+      GroupPool = {10503, 10504},
+      UniqueIDs = {6}
+    },
+    {
+      GroupPool = {10511, 10512},
+      UniqueIDs = {10}
+    },
+    {
+      GroupPool = {
+        10521,
+        10522,
+        10523,
+        10524
+      },
+      UniqueIDs = {13, 14}
+    },
+    {
+      GroupPool = {
+        20506,
+        20507,
+        20508,
+        20509,
+        20510
+      },
+      UniqueIDs = {17, 18}
+    },
+    {
+      GroupPool = {10505, 10506},
+      UniqueIDs = {6}
+    },
+    {
+      GroupPool = {10513, 10514},
+      UniqueIDs = {10}
+    },
+    {
+      GroupPool = {
+        10525,
+        10526,
+        10527,
+        10528
+      },
+      UniqueIDs = {13, 14}
+    },
+    {
+      GroupPool = {
+        20511,
+        20512,
+        20513,
+        20514,
+        20515
+      },
+      UniqueIDs = {17, 18}
+    },
+    {
+      GroupPool = {10507, 10508},
+      UniqueIDs = {6}
+    },
+    {
+      GroupPool = {10515, 10516},
+      UniqueIDs = {10}
+    },
+    {
+      GroupPool = {
+        10529,
+        10530,
+        10531,
+        10532
+      },
+      UniqueIDs = {13, 14}
+    },
+    {
+      GroupPool = {
+        20516,
+        20517,
+        20518,
+        20519,
+        20520
+      },
+      UniqueIDs = {17, 18}
     }
   },
   Monster = {
@@ -979,6 +1087,94 @@ Table_AstralRaid_t = {
         93,
         94,
         95
+      },
+      UniqueIDs = {11, 12}
+    },
+    {
+      GroupPool = {
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115
+      },
+      UniqueIDs = {
+        1,
+        2,
+        3
+      }
+    },
+    {
+      GroupPool = {
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115
+      },
+      UniqueIDs = {4, 5}
+    },
+    {
+      GroupPool = {
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115
+      },
+      UniqueIDs = {
+        7,
+        8,
+        9
+      }
+    },
+    {
+      GroupPool = {
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115
       },
       UniqueIDs = {11, 12}
     }
@@ -1875,6 +2071,186 @@ Table_AstralRaid = {
     RaidID = 7520,
     Round = 5,
     Boss = Table_AstralRaid_t.Boss[80],
+    BornPoint = 6,
+    LimitTime = 180,
+    IsBossRound = 1
+  },
+  [101] = {
+    id = 101,
+    RaidID = 7521,
+    Monster = Table_AstralRaid_t.Monster[21],
+    ReliveCount = 10
+  },
+  [102] = {
+    id = 102,
+    RaidID = 7521,
+    Round = 2,
+    Monster = Table_AstralRaid_t.Monster[22],
+    Boss = Table_AstralRaid_t.Boss[81],
+    BornPoint = 3,
+    ReliveCount = 20,
+    IsBossRound = 1
+  },
+  [103] = {
+    id = 103,
+    RaidID = 7521,
+    Round = 3,
+    Monster = Table_AstralRaid_t.Monster[23],
+    Boss = Table_AstralRaid_t.Boss[82],
+    BornPoint = 4,
+    ReliveCount = 20,
+    IsBossRound = 1
+  },
+  [104] = {
+    id = 104,
+    RaidID = 7521,
+    Round = 4,
+    Monster = Table_AstralRaid_t.Monster[24],
+    Boss = Table_AstralRaid_t.Boss[83],
+    BornPoint = 5,
+    LimitTime = 90,
+    IsBossRound = 1
+  },
+  [105] = {
+    id = 105,
+    RaidID = 7521,
+    Round = 5,
+    Boss = Table_AstralRaid_t.Boss[84],
+    BornPoint = 6,
+    LimitTime = 180,
+    IsBossRound = 1
+  },
+  [106] = {
+    id = 106,
+    RaidID = 7522,
+    Monster = Table_AstralRaid_t.Monster[21],
+    ReliveCount = 10
+  },
+  [107] = {
+    id = 107,
+    RaidID = 7522,
+    Round = 2,
+    Monster = Table_AstralRaid_t.Monster[22],
+    Boss = Table_AstralRaid_t.Boss[85],
+    BornPoint = 3,
+    ReliveCount = 20,
+    IsBossRound = 1
+  },
+  [108] = {
+    id = 108,
+    RaidID = 7522,
+    Round = 3,
+    Monster = Table_AstralRaid_t.Monster[23],
+    Boss = Table_AstralRaid_t.Boss[86],
+    BornPoint = 4,
+    ReliveCount = 20,
+    IsBossRound = 1
+  },
+  [109] = {
+    id = 109,
+    RaidID = 7522,
+    Round = 4,
+    Monster = Table_AstralRaid_t.Monster[24],
+    Boss = Table_AstralRaid_t.Boss[87],
+    BornPoint = 5,
+    LimitTime = 90,
+    IsBossRound = 1
+  },
+  [110] = {
+    id = 110,
+    RaidID = 7522,
+    Round = 5,
+    Boss = Table_AstralRaid_t.Boss[88],
+    BornPoint = 6,
+    LimitTime = 180,
+    IsBossRound = 1
+  },
+  [111] = {
+    id = 111,
+    RaidID = 7523,
+    Monster = Table_AstralRaid_t.Monster[21],
+    ReliveCount = 10
+  },
+  [112] = {
+    id = 112,
+    RaidID = 7523,
+    Round = 2,
+    Monster = Table_AstralRaid_t.Monster[22],
+    Boss = Table_AstralRaid_t.Boss[89],
+    BornPoint = 3,
+    ReliveCount = 20,
+    IsBossRound = 1
+  },
+  [113] = {
+    id = 113,
+    RaidID = 7523,
+    Round = 3,
+    Monster = Table_AstralRaid_t.Monster[23],
+    Boss = Table_AstralRaid_t.Boss[90],
+    BornPoint = 4,
+    ReliveCount = 20,
+    IsBossRound = 1
+  },
+  [114] = {
+    id = 114,
+    RaidID = 7523,
+    Round = 4,
+    Monster = Table_AstralRaid_t.Monster[24],
+    Boss = Table_AstralRaid_t.Boss[91],
+    BornPoint = 5,
+    LimitTime = 90,
+    IsBossRound = 1
+  },
+  [115] = {
+    id = 115,
+    RaidID = 7523,
+    Round = 5,
+    Boss = Table_AstralRaid_t.Boss[92],
+    BornPoint = 6,
+    LimitTime = 180,
+    IsBossRound = 1
+  },
+  [116] = {
+    id = 116,
+    RaidID = 7524,
+    Monster = Table_AstralRaid_t.Monster[21],
+    ReliveCount = 10
+  },
+  [117] = {
+    id = 117,
+    RaidID = 7524,
+    Round = 2,
+    Monster = Table_AstralRaid_t.Monster[22],
+    Boss = Table_AstralRaid_t.Boss[93],
+    BornPoint = 3,
+    ReliveCount = 20,
+    IsBossRound = 1
+  },
+  [118] = {
+    id = 118,
+    RaidID = 7524,
+    Round = 3,
+    Monster = Table_AstralRaid_t.Monster[23],
+    Boss = Table_AstralRaid_t.Boss[94],
+    BornPoint = 4,
+    ReliveCount = 20,
+    IsBossRound = 1
+  },
+  [119] = {
+    id = 119,
+    RaidID = 7524,
+    Round = 4,
+    Monster = Table_AstralRaid_t.Monster[24],
+    Boss = Table_AstralRaid_t.Boss[95],
+    BornPoint = 5,
+    LimitTime = 90,
+    IsBossRound = 1
+  },
+  [120] = {
+    id = 120,
+    RaidID = 7524,
+    Round = 5,
+    Boss = Table_AstralRaid_t.Boss[96],
     BornPoint = 6,
     LimitTime = 180,
     IsBossRound = 1

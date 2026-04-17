@@ -1,5 +1,23 @@
 autoImport("CoreView")
 FoodPackagePart = class("FoodPackagePart", CoreView)
+local _BagType = BagProxy.BagType.Food
+
+function FoodPackagePart.SortFunc(l, r)
+  local lIsFavorite = BagProxy.Instance:CheckIsFavorite(l, _BagType) and 1 or 0
+  local rIsFavorite = BagProxy.Instance:CheckIsFavorite(r, _BagType) and 1 or 0
+  local lIsNew = l.IsNew and l:IsNew() and 1 or 0
+  local rIsNew = r.IsNew and r:IsNew() and 1 or 0
+  if lIsFavorite ~= rIsFavorite then
+    return lIsFavorite > rIsFavorite
+  elseif lIsNew ~= rIsNew then
+    return lIsNew > rIsNew
+  elseif l.index and r.index then
+    return l.index > r.index
+  else
+    return l.staticData.id > r.staticData.id
+  end
+end
+
 autoImport("BagItemCell")
 autoImport("WrapListCtrl")
 local TABCONFIG = {
@@ -13,6 +31,13 @@ for i = 1, #FoodPackPage do
 end
 
 function FoodPackagePart:ctor()
+end
+
+function FoodPackagePart:HandleFavorite()
+  local tip = TipsView.Me().currentTip
+  if tip and TipsView.Me():IsCurrentTip(ItemFloatTip) and tip.UpdateFavorite then
+    tip:UpdateFavorite()
+  end
 end
 
 local FoodPackagePart_Path = "GUI/v1/part/FoodPackagePart"
@@ -96,7 +121,9 @@ function FoodPackagePart:UpdateInfo(noResetPos)
     self.noneTip:SetActive(false)
     self.scrollView.gameObject:SetActive(true)
   end
-  self.itemCtrl:ResetDatas(foodBagData:GetItems(config), noResetPos)
+  table.sort(items, FoodPackagePart.SortFunc)
+  self.itemCtrl:ResetDatas(items, noResetPos)
+  self:HandleFavorite()
 end
 
 function FoodPackagePart:AddIgnoreBounds(obj)
@@ -150,6 +177,9 @@ function FoodPackagePart:ShowPackageItemTip(data, cellGO)
   local itemtip = self:ShowItemTip(sdata, self.normalStick, NGUIUtil.AnchorSide.Right, offset)
   itemtip:AddIgnoreBounds(self.gameObject)
   self:AddIgnoreBounds(itemtip.gameObject)
+  if itemtip.ActiveFavorite then
+    itemtip:ActiveFavorite()
+  end
 end
 
 function FoodPackagePart:SetPos(x, y, z)

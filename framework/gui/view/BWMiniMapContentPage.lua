@@ -163,6 +163,7 @@ function BWMiniMapContentPage:EnLargeBigMap(b, notCenterMyPos)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.QuestNpc, true)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.AreaTips, false)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.ZoneTips, true)
+    self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.MapAreaTips, true)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.ServerNpc, true)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.ScenicSpot, true)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.Yahaha, true)
@@ -179,6 +180,7 @@ function BWMiniMapContentPage:EnLargeBigMap(b, notCenterMyPos)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.QuestNpc, false)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.AreaTips, true)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.ZoneTips, false)
+    self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.MapAreaTips, false)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.ServerNpc, false)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.ScenicSpot, false)
     self.window:ActiveSymbolsByType(BWMiniMapWindow.Type.Yahaha, false)
@@ -526,7 +528,7 @@ end
 function BWMiniMapContentPage:_UpdateSceneSpot(scenicSpot, forceUpdate)
   if not AdventureDataProxy.Instance:IsSceneryHasTakePic(scenicSpot.ID) then
     local spotConfig = Table_Viewspot[scenicSpot.ID]
-    if spotConfig and (spotConfig.Type == 1 or spotConfig.Type == 3) then
+    if spotConfig and (spotConfig.Type == 1 or spotConfig.Type == 3 or spotConfig.Type == 6) then
       local p = scenicSpot.position
       if p then
         if self.window and not self.window:IsScenePosInUnlockedZone(p[1], p[2], p[3]) then

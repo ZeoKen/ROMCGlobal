@@ -102,11 +102,13 @@ function InteractBase:GetOn(cpid, charid, npcid, masterid, ncreature)
 end
 
 function InteractBase:GetOff(charid, lastNpc)
+  local foundInCpMap = false
   self:RemoveWatchPlayerGuid(charid)
   for k, v in pairs(self.cpMap) do
     if v == charid then
       self.cpMap[k] = nil
       self:MinusCpCount(k)
+      foundInCpMap = true
       break
     end
   end

@@ -96,6 +96,18 @@ Table_ServerList = {
       "172.26.31.17"
     },
     port = 8888
+  },
+  [9] = {
+    id = 9,
+    name = "##44724966",
+    type = 2,
+    serverid = 60009,
+    servertype = "novice",
+    state = 1,
+    serverip = {
+      "172.25.135.114"
+    },
+    port = 8888
   }
 }
 Table_ServerList_fields = {

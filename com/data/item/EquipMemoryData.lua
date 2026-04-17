@@ -26,22 +26,25 @@ function EquipMemoryData:SetMyServerData(serverData)
   TableUtility.TableClear(self.memoryAttrs)
   TableUtility.TableClear(self.previewAttrs)
   local effects = serverData.effects or {}
+  local totalExcessLv = 0
   for i = 1, #effects do
     local _singleAttr = effects[i]
     local _singleAttrData = {
       id = _singleAttr.id,
       level = _singleAttr.level,
-      wax_level = _singleAttr.wax_level
+      wax_level = _singleAttr.wax_level,
+      excess_level = _singleAttr.excess_level or 0
     }
+    totalExcessLv = totalExcessLv + _singleAttrData.excess_level
     _singleAttrData.previewid = {}
     TableUtility.ArrayShallowCopy(_singleAttrData.previewid, _singleAttr.previewid)
-    local debugStr = string.format("装备记忆词条数据 id:%s， level:%s, wax_level: %s ", _singleAttrData.id, _singleAttrData.level, _singleAttrData.wax_level)
+    local debugStr = string.format("装备记忆词条数据 id:%s， level:%s, wax_level: %s, excess_level: %s ", _singleAttrData.id, _singleAttrData.level, _singleAttrData.wax_level, _singleAttrData.excess_level)
     if _singleAttrData.previewid and 0 < #_singleAttrData.previewid then
       debugStr = debugStr .. string.format(" 预览词条数量  %s 条", #_singleAttrData.previewid)
     end
     table.insert(self.memoryAttrs, _singleAttrData)
   end
-  self.excess_lv = serverData.excess_lv or 0
+  self.excess_lv = totalExcessLv
 end
 
 function EquipMemoryData:HasCacheRefreshAttr()
@@ -157,18 +160,21 @@ function EquipMemoryData:Clone()
   equipMemoryData.level = self.level
   equipMemoryData.maxLevel = self.maxLevel
   equipMemoryData.maxAttrCount = self.maxAttrCount
-  equipMemoryData.excess_lv = self.excess_lv
+  local totalExcessLv = 0
   for i = 1, #self.memoryAttrs do
     local _singleAttrData = {}
     local _singleAttr = self.memoryAttrs[i]
     local _singleAttrData = {
       id = _singleAttr.id,
       level = _singleAttr.level,
-      wax_level = _singleAttr.wax_level
+      wax_level = _singleAttr.wax_level,
+      excess_level = _singleAttr.excess_level or 0
     }
+    totalExcessLv = totalExcessLv + _singleAttrData.excess_level
     _singleAttrData.previewid = {}
     TableUtility.ArrayShallowCopy(_singleAttrData.previewid, _singleAttr.previewid)
     equipMemoryData.memoryAttrs[i] = _singleAttrData
   end
+  equipMemoryData.excess_lv = totalExcessLv
   return equipMemoryData
 end

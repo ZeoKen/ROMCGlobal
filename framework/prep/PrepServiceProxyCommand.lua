@@ -72,6 +72,7 @@ autoImport("ServiceNoviceBattlePassProxy")
 autoImport("ServiceSceneUser3Proxy")
 autoImport("ServiceMessCCmdProxy")
 autoImport("ServiceRecallCCmdProxy")
+autoImport("ServiceSnowCmdProxy")
 autoImport("ServiceOverseasTaiwanCmdProxy")
 
 function PrepServiceProxyCommand:execute(noti)
@@ -148,4 +149,5 @@ function PrepServiceProxyCommand:execute(noti)
   GameFacade.Instance:registerProxy(ServiceSceneUser3Proxy.new())
   GameFacade.Instance:registerProxy(ServiceMessCCmdProxy.new())
   GameFacade.Instance:registerProxy(ServiceRecallCCmdProxy.new())
+  GameFacade.Instance:registerProxy(ServiceSnowCmdProxy.new())
 end

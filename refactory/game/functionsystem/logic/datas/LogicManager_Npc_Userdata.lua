@@ -10,6 +10,7 @@ function LogicManager_Npc_Userdata:ctor()
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_PARTNER_STATE, self.UpdatePartnerState)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_BOX_PUSHLIMIT, self.UpdateObjPushLimit)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_WALKACTION, self.SetWalkAction)
+  self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_NPC_ROTATION, self.UpdateNpcRotation)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_ALPHA, self.UpdateAlpha)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_HAIR, self.SetChangeDressDirty)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_LEFTHAND, self.SetChangeDressDirty)
@@ -24,6 +25,7 @@ function LogicManager_Npc_Userdata:ctor()
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_BOX_PUSHLIMIT, self.UpdateObjPushLimit)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_SHOWNAME, self.UpdateShowName)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_WALKACTION, self.SetWalkAction)
+  self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_NPC_ROTATION, self.UpdateNpcRotation)
 end
 
 function LogicManager_Npc_Userdata:SetAlpha(ncreature, userDataID, oldValue, newValue)
@@ -135,5 +137,14 @@ function LogicManager_Npc_Userdata:SetWalkAction(ncreature, userDataID, oldValue
     if config ~= nil then
       ncreature:SetDefaultWalkAnime(config.Name)
     end
+  end
+end
+
+function LogicManager_Npc_Userdata:UpdateNpcRotation(ncreature, userDataID, oldValue, newValue, bytesData)
+  if bytesData == nil or bytesData == "" then
+    ncreature:DoStopNpcRotation()
+  else
+    local strs = StringUtility.Split(bytesData, "|")
+    ncreature:DoStartNpcRotation(tonumber(strs[1]), tonumber(strs[2]), tonumber(strs[3]))
   end
 end

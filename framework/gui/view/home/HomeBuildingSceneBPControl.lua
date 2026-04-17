@@ -180,6 +180,198 @@ function HomeBuildingSceneBPControl:CreateBP(bluePrintData, index, count, finish
   end)
 end
 
+function HomeBuildingSceneBPControl:ApplyBluePrintMap()
+  local blueprints = self.bpFurnitureMap
+  if not blueprints or not next(blueprints) then
+    return
+  end
+  local homeManager = HomeManager.Me()
+  local buildingGrid = homeManager.buildingGrid
+  if not buildingGrid then
+    return
+  end
+  local satisfiedBPs = {}
+  local usedSceneFurnitures = {}
+  local furnitureMap = homeManager:GetFurnituresMap()
+  for bpID, bpNFurniture in pairs(blueprints) do
+    for fID, nFurniture in pairs(furnitureMap) do
+      if not usedSceneFurnitures[fID] and nFurniture.staticID == bpNFurniture.staticID and nFurniture.placeFloor == bpNFurniture.placeFloor and nFurniture.placeRow == bpNFurniture.placeRow and nFurniture.placeCol == bpNFurniture.placeCol and nFurniture:GetRotationAngle() == bpNFurniture.placeAngle then
+        satisfiedBPs[bpID] = true
+        usedSceneFurnitures[fID] = true
+        break
+      end
+    end
+  end
+  local bpBlockers = {}
+  local potentialBlockers = {}
+  for fID, nFurniture in pairs(furnitureMap) do
+    if not usedSceneFurnitures[fID] then
+      table.insert(potentialBlockers, nFurniture)
+    end
+  end
+  local occupancyMap = {}
+  for _, nFurniture in ipairs(potentialBlockers) do
+    local floor, cells = buildingGrid:GetPlacedFurnitureCells(nFurniture.tag)
+    if floor and cells then
+      if not occupancyMap[floor] then
+        occupancyMap[floor] = {}
+      end
+      local floorMap = occupancyMap[floor]
+      for _, cell in ipairs(cells) do
+        if not floorMap[cell.row] then
+          floorMap[cell.row] = {}
+        end
+        floorMap[cell.row][cell.col] = nFurniture
+      end
+    end
+  end
+  local unsatisfiedBPs = {}
+  for bpID, bpNFurniture in pairs(blueprints) do
+    if not satisfiedBPs[bpID] then
+      table.insert(unsatisfiedBPs, {id = bpID, data = bpNFurniture})
+      local blockers = {}
+      local templateData = buildingGrid.m_TemplateFurnitures[bpNFurniture.staticID]
+      if templateData then
+        local placeData = buildingGrid:CalculatePlacedFurnitureData(bpNFurniture.placeRow, bpNFurniture.placeCol, bpNFurniture.placeAngle, templateData)
+        if placeData and placeData.cells and occupancyMap[bpNFurniture.placeFloor] then
+          local floorMap = occupancyMap[bpNFurniture.placeFloor]
+          local seenBlockers = {}
+          for _, cell in ipairs(placeData.cells) do
+            if floorMap[cell.row] then
+              local blocker = floorMap[cell.row][cell.col]
+              if blocker and not seenBlockers[blocker.id] then
+                seenBlockers[blocker.id] = true
+                table.insert(blockers, blocker)
+              end
+            end
+          end
+        end
+      end
+      bpBlockers[bpID] = blockers
+    end
+  end
+  local bagPool = {}
+  local bagItems = BagProxy.Instance.bagMap[BagProxy.BagType.Furniture].wholeTab:GetItems()
+  for i = 1, #bagItems do
+    local item = bagItems[i]
+    local sid = item.staticData.id
+    if not bagPool[sid] then
+      bagPool[sid] = {}
+    end
+    for j = 1, item.num do
+      table.insert(bagPool[sid], item.id)
+    end
+  end
+  local recycledPool = {}
+  local feasibleBPs = {}
+  local usedResources = {}
+  local recycledSet = {}
+  while true do
+    local progress = false
+    for _, bpInfo in ipairs(unsatisfiedBPs) do
+      local bpID = bpInfo.id
+      if not feasibleBPs[bpID] then
+        local bpData = bpInfo.data
+        local sid = bpData.staticID
+        local resource, mode
+        local blockers = bpBlockers[bpID]
+        if blockers then
+          for _, blocker in ipairs(blockers) do
+            if blocker.staticID == sid and not usedResources[blocker.id] then
+              resource = blocker
+              mode = "Edit"
+              break
+            end
+          end
+        end
+        if not resource and recycledPool[sid] then
+          for i, recycled in ipairs(recycledPool[sid]) do
+            if not usedResources[recycled.id] then
+              resource = recycled
+              mode = "Edit"
+              break
+            end
+          end
+        end
+        if not resource and bagPool[sid] and 0 < #bagPool[sid] then
+          local guid = table.remove(bagPool[sid])
+          resource = {id = guid}
+          mode = "PutOn"
+        end
+        if resource then
+          feasibleBPs[bpID] = {mode = mode, resource = resource}
+          usedResources[resource.id] = true
+          progress = true
+          if blockers then
+            for _, blocker in ipairs(blockers) do
+              if not usedResources[blocker.id] and not recycledSet[blocker.id] then
+                recycledSet[blocker.id] = true
+                if not recycledPool[blocker.staticID] then
+                  recycledPool[blocker.staticID] = {}
+                end
+                table.insert(recycledPool[blocker.staticID], blocker)
+              end
+            end
+          end
+        end
+      end
+    end
+    if not progress then
+      break
+    end
+  end
+  local putOffList = {}
+  local editList = {}
+  local putOnList = {}
+  for sid, list in pairs(recycledPool) do
+    for _, furniture in ipairs(list) do
+      if not usedResources[furniture.id] then
+        local pb = self:CreateSceneItemFurniture(furniture.id)
+        table.insert(putOffList, pb)
+      end
+    end
+  end
+  for bpID, alloc in pairs(feasibleBPs) do
+    local bpData = self.bpFurnitureMap[bpID]
+    local guid = alloc.resource.id
+    local pb = self:CreateSceneItemFurniture(guid, bpData.placeFloor, bpData.placeRow, bpData.placeCol, bpData.placeAngle)
+    if alloc.mode == "Edit" then
+      table.insert(editList, pb)
+    else
+      table.insert(putOnList, pb)
+    end
+  end
+  if 0 < #putOffList then
+    ServiceHomeCmdProxy.Instance:CallFurnitureActionHomeCmd(HomeCmd_pb.EFURNITUREACTION_PUTOFF, putOffList)
+  end
+  if 0 < #editList then
+    ServiceHomeCmdProxy.Instance:CallFurnitureActionHomeCmd(HomeCmd_pb.EFURNITUREACTION_EDIT, editList)
+  end
+  if 0 < #putOnList then
+    ServiceHomeCmdProxy.Instance:CallFurnitureActionHomeCmd(HomeCmd_pb.EFURNITUREACTION_PUTON, putOnList)
+  end
+end
+
+function HomeBuildingSceneBPControl:CreateSceneItemFurniture(guid, floor, row, col, angle)
+  local tb
+  if not NetConfig.PBC then
+    tb = SceneItem_pb.Furniture()
+    tb.guid = guid
+    tb.row = row
+    tb.col = col
+    tb.angle = angle
+    tb.floor = floor
+  else
+    tb = {}
+    tb.guid = guid
+    tb.row = row
+    tb.col = col
+    tb.angle = angle
+    tb.floor = floor
+  end
+  return tb
+end
+
 function HomeBuildingSceneBPControl:SelectFurnitureContent(contentData)
   if not HomeManager.Me():IsBluePrintMode() then
     return

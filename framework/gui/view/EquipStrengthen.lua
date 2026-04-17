@@ -171,6 +171,17 @@ function EquipStrengthen:OnButtonStrengthOnceClick(count)
     end)
     return
   end
+  if 1 < count then
+    MsgManager.ConfirmMsgByID(900012, function()
+      self:_DoStrengthen(count)
+    end)
+  else
+    self:_DoStrengthen(count)
+  end
+end
+
+function EquipStrengthen:_DoStrengthen(count)
+  local siteData = self.siteData
   _StrengthenProxy:DoStrenghten(siteData.site, count + siteData:GetLv())
   self:sendNotification(HomeEvent.WorkbenchStartWork)
 end

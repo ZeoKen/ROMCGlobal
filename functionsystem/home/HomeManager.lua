@@ -6,6 +6,8 @@ autoImport("HomeCmd_pb")
 autoImport("HomePhonographManager")
 autoImport("HomeMagicBookManager")
 autoImport("HomeSkadaManager")
+autoImport("SnowRealmManager")
+autoImport("HomePictureManager")
 HomeManager = class("HomeManager", EventDispatcher)
 HomeManager.AccessType = {
   Direct = 1,
@@ -14,10 +16,47 @@ HomeManager.AccessType = {
   NearBySelect = 4,
   IsNPC = 10
 }
+HomeManager.DirectionRotationMap = {
+  [BuildingGrid.EBuildingDirection.EForward] = {
+    [0] = 1,
+    [90] = 3,
+    [180] = 2,
+    [270] = 4
+  },
+  [BuildingGrid.EBuildingDirection.EBack] = {
+    [0] = 2,
+    [90] = 4,
+    [180] = 1,
+    [270] = 3
+  },
+  [BuildingGrid.EBuildingDirection.ELeft] = {
+    [0] = 3,
+    [90] = 2,
+    [180] = 4,
+    [270] = 1
+  },
+  [BuildingGrid.EBuildingDirection.ERight] = {
+    [0] = 4,
+    [90] = 1,
+    [180] = 3,
+    [270] = 2
+  }
+}
 local m_baseHeight = 0.001
 local m_vecUp = LuaVector3.Up()
 
 function HomeManager.Me()
+  if nil == HomeManager.me then
+    HomeManager.me = HomeManager.new()
+  end
+  local curMapID = Game.MapManager:GetMapID()
+  if curMapID and HomeManager._IsSnowRealmMap and HomeManager:_IsSnowRealmMap(curMapID) then
+    return SnowRealmManager.Me()
+  end
+  return HomeManager.me
+end
+
+function HomeManager.GetInstance()
   if nil == HomeManager.me then
     HomeManager.me = HomeManager.new()
   end
@@ -33,6 +72,16 @@ local GetTempVector3 = function(x, y, z, tarVector)
   tarVector = tarVector or tmpVector3
   LuaVector3.Better_Set(tarVector, x, y, z)
   return tarVector
+end
+
+function HomeManager:_IsSnowRealmMap(mapID)
+  local homeMapConfig = GameConfig.SnowRealm and GameConfig.SnowRealm.MapDatas
+  local curHouseConfig = homeMapConfig and homeMapConfig[mapID]
+  return curHouseConfig ~= nil
+end
+
+function HomeManager:IsSnowRealmMap(mapID)
+  return HomeManager._IsSnowRealmMap and HomeManager:_IsSnowRealmMap(mapID) or false
 end
 
 function HomeManager:Init()
@@ -59,15 +108,80 @@ function HomeManager:Init()
   self.nFurnitureClientMap = {}
   self.relativeCreatureMap = {}
   self.destroyList = {}
+  self.furnitureLayerMap = {}
   self.groundHeightCache = {}
   self.tabRenovationMap = {}
   self.tabWalls = {}
   self.tabLogicWalls = {}
   self.tmpDataList = {}
+  self.hasEditedFurnitureInThisEditSession = false
   self.phonographManager = HomePhonographManager.new()
   self.magicBookManager = HomeMagicBookManager.new()
   self.skadaManager = HomeSkadaManager.Me()
+  self.pictureManager = HomePictureManager.new()
   EventManager.Me():AddEventListener(HomeWallPicManager.WallPicThumbnailDownloadCompleteCallback, self.PhotoAlbumCompleteCallback, self)
+end
+
+local ForEachFurniture = function(self, func)
+  for _, nfur in pairs(self.nFurnitureMap) do
+    if nfur then
+      func(nfur)
+    end
+  end
+  for _, nfur in pairs(self.nFurnitureClientMap) do
+    if nfur then
+      func(nfur)
+    end
+  end
+end
+
+local function ForEachGameObjectInHierarchy(tsf, callback)
+  if not tsf or Game.GameObjectUtil:ObjectIsNULL(tsf.gameObject) then
+    return
+  end
+  local go = tsf.gameObject
+  callback(go)
+  for i = 0, tsf.childCount - 1 do
+    ForEachGameObjectInHierarchy(tsf:GetChild(i), callback)
+  end
+end
+
+function HomeManager:SaveFurnitureLayers()
+  if not self.furnitureLayerMap then
+    self.furnitureLayerMap = {}
+  end
+  TableUtility.TableClear(self.furnitureLayerMap)
+  ForEachFurniture(self, function(nfur)
+    local go = nfur.assetFurniture and nfur.assetFurniture.gameObject
+    if go and not Game.GameObjectUtil:ObjectIsNULL(go) then
+      ForEachGameObjectInHierarchy(go.transform, function(childGo)
+        self.furnitureLayerMap[childGo] = childGo.layer
+      end)
+    end
+  end)
+  return self.furnitureLayerMap
+end
+
+function HomeManager:SetAllFurnituresLayer(layerId, homeIdxOverride)
+  self:SaveFurnitureLayers()
+  ForEachFurniture(self, function(nfur)
+    local go = nfur.assetFurniture and nfur.assetFurniture.gameObject
+    if go then
+      Game.GameObjectUtil:ChangeLayersRecursively(go, layerId)
+    end
+  end)
+end
+
+function HomeManager:ResetFurnitureLayers()
+  if not self.furnitureLayerMap then
+    return
+  end
+  for go, layerId in pairs(self.furnitureLayerMap) do
+    if go and not Game.GameObjectUtil:ObjectIsNULL(go) then
+      go.layer = layerId
+    end
+  end
+  TableUtility.TableClear(self.furnitureLayerMap)
 end
 
 function HomeManager:Launch()
@@ -96,6 +210,7 @@ function HomeManager:Shutdown()
     self.curAtHome = false
   end
   self.isInEditMode = false
+  self.hasEditedFurnitureInThisEditSession = false
   self.curBlurPrintData = nil
   self.bpFinishNumMap = nil
   self.clientPrepareBuild = false
@@ -143,6 +258,7 @@ function HomeManager:InitHomeScene(sceneName)
     return
   end
   self.buildingGrid = BuildingGrid.new(self.mapInfo)
+  self.buildingGrid:SetDirectionRotationMap(HomeManager.DirectionRotationMap)
   for id, data in pairs(Table_HomeFurniture) do
     self.buildingGrid:RegisterFurnitureData(data.id, data.Row, data.Col, data.BeginHeight, data.EndHeight, data.FixedPlanes, data.AlternativePlanes, data.NormalType)
   end
@@ -496,6 +612,7 @@ function HomeManager:EnterEditMode_Server()
     view = PanelConfig.HomeBuildingView
   })
   self.isInEditMode = true
+  self.hasEditedFurnitureInThisEditSession = false
   self.clientPrepareBuild = false
   if self.objRoof then
     self.objRoof:SetActive(false)
@@ -528,8 +645,9 @@ function HomeManager:EnterEditMode_Server()
   FunctionPet.Me():PetGiftActiveSelf(false)
 end
 
-function HomeManager:ExitEditMode()
+function HomeManager:ExitEditMode(skipFurnitureLayerChange)
   self.isInEditMode = false
+  self.hasEditedFurnitureInThisEditSession = false
   self.curBlurPrintData = nil
   self.bpFinishNumMap = nil
   if not LuaGameObject.ObjectIsNull(self.objBuildRoot) then
@@ -542,7 +660,9 @@ function HomeManager:ExitEditMode()
     self:ResetRenovations()
     local furnitures = self:GetFurnituresMap()
     for id, nFurniture in pairs(furnitures) do
-      nFurniture:SetColliderLayer(nFurniture:HaveFunction() and Game.ELayer.Accessable or Game.ELayer.Default)
+      if not skipFurnitureLayerChange then
+        nFurniture:SetColliderLayer(nFurniture:HaveFunction() and Game.ELayer.Accessable or Game.ELayer.Default)
+      end
       nFurniture:OnExitEditMode()
     end
   end
@@ -578,6 +698,31 @@ end
 
 function HomeManager:IsInEditMode()
   return self:IsAtMyselfHome() and self.isInEditMode == true
+end
+
+function HomeManager:SetFurnitureColliderLayerToNormal()
+  local furnitures = self:GetFurnituresMap()
+  for id, nFurniture in pairs(furnitures) do
+    nFurniture:SetColliderLayer(nFurniture:HaveFunction() and Game.ELayer.Accessable or Game.ELayer.Default)
+  end
+end
+
+function HomeManager:HasEditedFurnitureInThisEditSession()
+  return self.hasEditedFurnitureInThisEditSession == true
+end
+
+function HomeManager:HasAnyFurnitureInPlacementMaps(snowHouseIdx)
+  for _, nFurniture in pairs(self.nFurnitureMap) do
+    if nFurniture then
+      return true
+    end
+  end
+  for _, nFurniture in pairs(self.nFurnitureClientMap) do
+    if nFurniture then
+      return true
+    end
+  end
+  return false
 end
 
 function HomeManager:IsBluePrintMode()
@@ -920,12 +1065,14 @@ end
 
 function HomeManager:ConfirmPlaceFurniture(nFurniture)
   if HomeManager.ClientTest then
+    self.hasEditedFurnitureInThisEditSession = true
     nFurniture:PlaceOnCurCell()
     self.nFurnitureMap[nFurniture.data.id] = nFurniture
     self.nFurnitureClientMap[nFurniture.data.id] = nil
     return
   end
   if nFurniture:IsMoved() or not nFurniture.data:IsServerInited() then
+    self.hasEditedFurnitureInThisEditSession = true
     self:AddFurnitureItem(nFurniture)
     nFurniture:PlaceOnCurCell()
     nFurniture.assetFurniture:SetAlpha(0.5)
@@ -1017,6 +1164,7 @@ function HomeManager:RemoveAllFurnitures()
     self:ClearClientFurnitures(true)
     return
   end
+  self.hasEditedFurnitureInThisEditSession = true
   ServiceHomeCmdProxy.Instance:CallFurnitureActionHomeCmd(HomeCmd_pb.EFURNITUREACTION_PUTOFFALL)
 end
 
@@ -1043,6 +1191,7 @@ function HomeManager:RemoveFurnitureItems(ids, force)
     tmpArray[#tmpArray + 1] = pbFurniture
   end
   if 0 < #tmpArray then
+    self.hasEditedFurnitureInThisEditSession = true
     ServiceHomeCmdProxy.Instance:CallFurnitureActionHomeCmd(HomeCmd_pb.EFURNITUREACTION_PUTOFF, tmpArray, force)
   end
   ReusableTable.DestroyAndClearArray(tmpArray)
@@ -1283,6 +1432,7 @@ function HomeManager:Renovation(materialStaticID, floorIndex, posKey)
   self:ChangeObjMaterial(materialStaticID, floorIndex, posKey, function(obj)
     if obj and sended == nil then
       sended = true
+      self.hasEditedFurnitureInThisEditSession = true
       local table = HomeCmd_pb.HouseDecorate()
       table.floor = floorIndex
       table.ids[#table.ids + 1] = materialStaticID
@@ -1663,16 +1813,22 @@ function HomeManager:Update(time, deltaTime)
     Game.AssetManager_Furniture:DestroyFurniture(self.destroyList[destroyListNum])
     self.destroyList[destroyListNum] = nil
   end
+  self.phonographManager:Update(deltaTime)
+end
+
+function HomeManager:LateUpdate(time, deltaTime)
   if self:IsInEditMode() then
     return
   end
   for id, nFurniture in pairs(self.nFurnitureMap) do
-    nFurniture:Update(time, deltaTime)
+    nFurniture:LateUpdate(time, deltaTime)
   end
-  self.phonographManager:Update(deltaTime)
 end
 
 function HomeManager:GetRandomPosInCurrentHome()
+  if not self.mapInfo then
+    return nil
+  end
   while true do
     local floorIndex = math.random(1, #self.mapInfo)
     local floor = self.mapInfo[floorIndex]
@@ -1705,7 +1861,13 @@ function HomeManager:GetRandomFurnitureByFurnitureType(itemType)
 end
 
 function HomeManager:TryGetHomeWorkbenchDiscount(key)
-  local buff = Table_HomeBuff[HomeProxy.Instance:GetMyHomeScoreLv()]
+  local myHouseData = HomeProxy.Instance:GetMyHouseData()
+  local homeBuff = myHouseData and Game.HomeBuff[myHouseData.houseType]
+  if not homeBuff then
+    redlog("HomeManager:TryGetHomeWorkbenchDiscount homeBuff is nil! houseType = " .. tostring(myHouseData and myHouseData.houseType or "nil"))
+    return 100
+  end
+  local buff = homeBuff[HomeProxy.Instance:GetMyHomeScoreLv()]
   if not buff or not next(buff) then
     return 100
   end
@@ -1866,4 +2028,28 @@ function HomeManager:GetRandomGiftCellInCurrentHomeNearExit(needCheck)
       range = math.ceil(tryCount / 4)
     end
   end
+end
+
+function HomeManager:GetHomeName(mapName)
+  return mapName
+end
+
+function HomeManager:GetHomeConfig()
+  return GameConfig.Home
+end
+
+function HomeManager:GetCameraMinPos(curMapID)
+  return GameConfig.Home.CameraMinPos[curMapID]
+end
+
+function HomeManager:GetCameraMaxPos(curMapID)
+  return GameConfig.Home.CameraMaxPos[curMapID]
+end
+
+function HomeManager:GetCameraStartPos(curMapID)
+  return GameConfig.Home.CameraStartPos[curMapID]
+end
+
+function HomeManager:GetCurHomeIdx()
+  return 0
 end

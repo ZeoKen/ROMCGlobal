@@ -3224,7 +3224,6 @@ Table_AIEventDialog = {
     Dialogs = Table_AIEventDialog_t.Dialogs[15]
   },
   [817410] = {
-    Name = "##1164261",
     Dialogs = Table_AIEventDialog_t.Dialogs[1]
   },
   [817411] = {
@@ -3254,13 +3253,14 @@ Table_AIEventDialog = {
   },
   [817416] = {
     id = 817416,
+    Name = "##1135729",
     Dialogs = Table_AIEventDialog_t.Dialogs[16]
   }
 }
 local cell_mt = {
   __index = {
     Dialogs = _EmptyTable,
-    Name = "##1135729",
+    Name = "##1164261",
     id = 817410
   }
 }

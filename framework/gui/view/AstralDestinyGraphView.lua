@@ -9,13 +9,13 @@ function AstralDestinyGraphView:Init()
   self:FindObjs()
   self:AddListenEvts()
   self.isInit = true
+  self.graphInfoList = {}
   ServiceMessCCmdProxy.Instance:CallSyncDestinyGraphMessCCmd()
 end
 
 function AstralDestinyGraphView:InitData()
   local initSeason = AstralProxy.Instance:GetSeason()
   self.round = (initSeason - 1) // 4 + 1
-  self.graphInfoList = {}
 end
 
 function AstralDestinyGraphView:FindObjs()

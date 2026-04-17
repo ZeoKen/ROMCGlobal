@@ -293,7 +293,7 @@ function SelfClass:FixTargetPosition(skill, targetPosition, creature, init)
     targetPosition = phaseData:GetPosition()
     local currentPosition = creature:GetPosition()
     if init then
-      LuaVector3.Better_Set(targetPosition, currentPosition[1], targetPosition[2], targetPosition[3])
+      LuaVector3.Better_Set(targetPosition, currentPosition[1], targetPosition[2], currentPosition[3])
       phaseData:SetPosition(targetPosition)
     end
   end

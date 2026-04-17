@@ -63,7 +63,7 @@ function HomeBluePrintView:ReloadBPInfos()
     showMapIDs[#showMapIDs + 1] = curHouseData and curHouseData.mapID
   else
     for k, v in pairs(HomeProxy.HouseType) do
-      local myHouseData = HomeProxy.Instance:GetMyHouseData(v)
+      local myHouseData = HomeProxy.__RealInstance:GetMyHouseData(v)
       if myHouseData and myHouseData.mapID then
         showMapIDs[#showMapIDs + 1] = myHouseData.mapID
       end

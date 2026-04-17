@@ -78,7 +78,8 @@ PictureManager.Config = {
     MasterSkill = "GUI/pic/MasterSkill/",
     Abyss = "GUI/pic/Abyss/",
     InheritSkill = "GUI/pic/InheritSkill/",
-    EquipMemory = "GUI/pic/EquipMemory/"
+    EquipMemory = "GUI/pic/EquipMemory/",
+    GeffenMagic = "GUI/pic/GeffenMagic/"
   }
 }
 PictureManager.Instance = nil
@@ -162,6 +163,7 @@ function PictureManager:ctor()
   self.abyssCache = {}
   self.inheritSkillCache = {}
   self.equipMemoryCache = {}
+  self.geffenMagicCache = {}
   PictureManager.Instance = self
 end
 
@@ -478,6 +480,10 @@ end
 
 function PictureManager:SetEquipMemoryTexture(sName, uiTexture)
   return self:SetTexture(sName, uiTexture, PictureManager.Config.Pic.EquipMemory, self.equipMemoryCache)
+end
+
+function PictureManager:SetGeffenMagicTexture(sName, uiTexture)
+  return self:SetTexture(sName, uiTexture, PictureManager.Config.Pic.GeffenMagic, self.geffenMagicCache)
 end
 
 function PictureManager:SetTexture(sName, uiTexture, path, cache)
@@ -838,6 +844,10 @@ end
 
 function PictureManager:UnloadEquipMemoryTexture(sName, uiTexture)
   self:UnLoadTexture(self.equipMemoryCache, sName, uiTexture)
+end
+
+function PictureManager:UnloadGeffenMagicTexture(sName, uiTexture)
+  self:UnLoadTexture(self.geffenMagicCache, sName, uiTexture)
 end
 
 function PictureManager:UnLoadTexture(cache, sName, uiTexture)

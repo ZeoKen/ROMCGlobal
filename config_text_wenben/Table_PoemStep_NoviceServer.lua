@@ -1867,6 +1867,7 @@ Table_PoemStep = {
   [19] = {
     id = 19,
     Questid = 600550002,
+    name = "默斯曼·岁月·故事一",
     Descrip = Table_PoemStep_t.Descrip[19],
     TraceInfo = "黄金时钟暗处的危机"
   },
@@ -2026,7 +2027,8 @@ Table_PoemStep = {
     id = 40,
     Questid = 601870003,
     name = "天空之城·故事二",
-    Descrip = Table_PoemStep_t.Descrip[40]
+    Descrip = Table_PoemStep_t.Descrip[40],
+    TraceInfo = "能源是拯救朱诺的首要"
   },
   [41] = {
     id = 41,
@@ -2262,7 +2264,6 @@ Table_PoemStep = {
   [71] = {
     id = 71,
     Questid = 311120011,
-    name = "休朗克·故事一",
     Descrip = Table_PoemStep_t.Descrip[71],
     TraceInfo = "米尔特家族的骑士"
   },
@@ -2375,8 +2376,7 @@ Table_PoemStep = {
     id = 85,
     Questid = 311140011,
     name = "巴尔洛·故事一",
-    Descrip = Table_PoemStep_t.Descrip[85],
-    TraceInfo = "梦罗克大陆卫队的建立"
+    Descrip = Table_PoemStep_t.Descrip[85]
   },
   [86] = {
     id = 86,
@@ -2796,9 +2796,9 @@ local cell_mt = {
   __index = {
     Descrip = _EmptyTable,
     Questid = 311150001,
-    TraceInfo = "能源是拯救朱诺的首要",
+    TraceInfo = "梦罗克大陆卫队的建立",
     id = 1,
-    name = "默斯曼·岁月·故事一",
+    name = "休朗克·故事一",
     step = 0
   }
 }

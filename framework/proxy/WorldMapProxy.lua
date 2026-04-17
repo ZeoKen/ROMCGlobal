@@ -460,6 +460,28 @@ function WorldMapProxy:GetBWAreaTips()
   return rets
 end
 
+function WorldMapProxy:GetMapAreaTips()
+  local mapId = Game.MapManager:GetMapID()
+  local mapData = Table_Map and Table_Map[mapId]
+  if not mapData or not mapData.AreaTips then
+    return
+  end
+  local rets = {}
+  for i, tipData in ipairs(mapData.AreaTips) do
+    local areaTip = {
+      id = 100000 + mapId * 100 + i,
+      NameZh = tipData[3],
+      Center = {
+        tipData[1],
+        0,
+        tipData[2]
+      }
+    }
+    table.insert(rets, areaTip)
+  end
+  return rets
+end
+
 function WorldMapProxy:SetMapStepForeverRewardInfo(serverData)
   self.mapStepFRewardMap = {}
   local infos = serverData.infos

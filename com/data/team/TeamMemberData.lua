@@ -63,8 +63,14 @@ mapTeamMemberProp(SessionTeam_pb.EMEMBERDATA_TEAMNPC, "teamnpc")
 mapTeamMemberProp(SessionTeam_pb.EMEMBERDATA_MERCENARY_GUILDID, "mercenary_guildid")
 mapTeamMemberProp(SessionTeam_pb.EMEMBERDATA_MERCENARY_GUILDNAME, "mercenary_guildname")
 mapTeamMemberProp(SessionTeam_pb.EMEMBERDATA_HIDE_NAME, "anonymous")
+mapTeamMemberProp(SessionTeam_pb.EMEMBERDATA_SNOW_ROOMID, "snowroomid")
+mapTeamMemberProp(SessionTeam_pb.EMEMBERDATA_HEAD_FASHION, "head_fashion")
 TeamMemberDataMapType = {ensembleskill = 1}
-TeamMemberDataStringType = {name = 1, guildname = 1}
+TeamMemberDataStringType = {
+  name = 1,
+  guildname = 1,
+  head_fashion = 1
+}
 
 function TeamMemberData:ctor(teamMember, index)
   self.index = index
@@ -116,6 +122,9 @@ function TeamMemberData:SetMemberData(memberDatas)
         end
       elseif TeamMemberDataStringType[key] then
         self[key] = data.data
+        if key == "head_fashion" then
+          xdlog("TeamMemberData head_fashion: id=%s, name=%s, head_fashion=%s", tostring(self.id), tostring(self.name), tostring(data.data))
+        end
       else
         self[key] = data.value
       end

@@ -24,8 +24,9 @@ function HomeScoreLvCell:AddEvts()
 end
 
 function HomeScoreLvCell:SetData(data)
-  self.data = data
-  local haveData = data ~= nil
+  self.data = data and data.data
+  self.houseType = data and data.houseType
+  local haveData = self.data ~= nil
   if self.isActive ~= haveData then
     self.gameObject:SetActive(haveData)
     self.isActive = haveData
@@ -33,11 +34,11 @@ function HomeScoreLvCell:SetData(data)
   if not haveData then
     return
   end
-  self.labLv.text = string.format("[Lv.%s]", data.id)
-  self.labAttri.text = data.Desc
+  self.labLv.text = string.format("[Lv.%s]", self.data.Lv)
+  self.labAttri.text = self.data.Desc
   self.sprBG:ResetAndUpdateAnchors()
-  local myHouseData = HomeProxy.Instance:GetMyHouseData()
-  if myHouseData and myHouseData.lv >= data.id then
+  local myHouseData = HomeProxy.__RealInstance:GetMyHouseData(self.houseType)
+  if myHouseData and myHouseData.lv >= self.data.Lv then
     self.labAttri.color = LuaColor.black
     self.labLv.color = color_LvActive
   else

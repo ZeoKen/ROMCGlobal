@@ -573,6 +573,16 @@ Table_Weather = {
     Icon = "weather_snow",
     Desc = "",
     InvalidTime = _EmptyTable
+  },
+  [64] = {
+    id = 64,
+    NameZh = "##45909780",
+    EffectDir = "Weather/50WindSnow",
+    LastTime = 1800,
+    UserBuff = _EmptyTable,
+    Icon = "",
+    Desc = "",
+    InvalidTime = _EmptyTable
   }
 }
 Table_Weather_fields = {

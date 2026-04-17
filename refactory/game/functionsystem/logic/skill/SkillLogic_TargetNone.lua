@@ -9,7 +9,8 @@ local SuperClass = SkillLogic_Base
 function SkillLogic_TargetNone:Cast(creature)
   if SuperClass.Cast(self, creature) then
     local angleY = self.phaseData:GetAngleY()
-    if angleY ~= nil and creature:GetCreatureType() == Creature_Type.Npc then
+    if self.info:CheckIsMoveAround(true, true) then
+    elseif angleY ~= nil and creature:GetCreatureType() == Creature_Type.Npc then
       creature.logicTransform:SetAngleY(angleY)
     end
     return true

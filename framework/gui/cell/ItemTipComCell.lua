@@ -152,6 +152,8 @@ function ItemTipComCell:InitFuncBtnStyle(num, container)
       container.button[i]:AddEventListener(MouseEvent.MouseClick, self.ClickTipFunc, self)
       if i == 1 then
         self:AddOrRemoveGuideId(obj, 202)
+      elseif i == 2 then
+        self:AddOrRemoveGuideId(obj, 564)
       end
     end
   end

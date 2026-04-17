@@ -118,10 +118,11 @@ function CDProxy:Server_AddSkillCD(id, time, isall, coldtime, leftTimes, maxtime
         SkillProxy.Instance:UpdateSkillLeftCD(sortID, leftTimes)
       else
         totalCD = cd
+        local maxTimes = skill:GetMaxCDTimes(Game.Myself) or 0
+        local leftTimes = math.max(0, maxTimes - math.ceil(cd / cdMax))
         cd = cd % cdMax
         local cdCount = math.ceil(cd / cdMax)
-        local maxTimes = skill:GetMaxCDTimes(Game.Myself) or 0
-        SkillProxy.Instance:UpdateSkillLeftCD(sortID, maxTimes - cdCount)
+        SkillProxy.Instance:UpdateSkillLeftCD(sortID, leftTimes)
       end
       if 0.01 < cd then
         if not data then

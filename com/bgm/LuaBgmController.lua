@@ -142,7 +142,11 @@ function LuaBgmController:Play(bgmName, playTimes, playEndCall, fadeEndCall, pro
     if self.unloadBgmPath ~= nil then
       Game.AssetManager:UnloadBgm(self.unloadBgmPath)
     end
-    self.unloadBgmPath = self.bgmPath
+    if self.bgmPath ~= bgmPath then
+      self.unloadBgmPath = self.bgmPath
+    else
+      self.unloadBgmPath = nil
+    end
     self.bgmPath = bgmPath
     if self:_TryLoadHD(bgmName) then
       return

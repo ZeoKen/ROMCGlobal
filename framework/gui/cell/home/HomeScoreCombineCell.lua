@@ -57,6 +57,7 @@ function HomeScoreCombineCell:SetData(data)
   else
     HomeScoreCombineCell.super.SetData(self, data)
   end
+  self:Reposition()
 end
 
 function HomeScoreCombineCell:OnClickBtnSwitchFold(btn)

@@ -183,7 +183,8 @@ PlayerTipFuncConfig = {
     name = ZhString.FunctionPlayerTip_ServantReset
   },
   EnterHomeRoom = {
-    name = ZhString.FunctionPlayerTip_EnterHomeRoom
+    name = ZhString.FunctionPlayerTip_EnterHomeRoom,
+    noCloseTip = 1
   },
   Skada_Settings = {
     name = ZhString.FunctionPlayerTip_Skada_Settings
@@ -519,6 +520,7 @@ end
 
 function FunctionPlayerTip:CloseTip()
   if self:CurPlayerTip() then
+    redlog("CloseTip")
     TipsView.Me():HideCurrent()
   end
 end
@@ -1158,6 +1160,16 @@ function FunctionPlayerTip.Double_Action(ptdata)
     MsgManager.ShowMsgByID(43538)
     return
   end
+  local mySelf = Game.Myself
+  if mySelf.data:IsRideOnHandcart() then
+    MsgManager.ShowMsgByID(27102)
+    return
+  end
+  local target = NSceneUserProxy.Instance:Find(ptdata.id)
+  if target and target.data:IsRideOnHandcart() then
+    MsgManager.ShowMsgByID(27102)
+    return
+  end
   local tip = FunctionPlayerTip.Me():CurPlayerTip()
   if tip then
     tip:ShowChildBord()
@@ -1239,8 +1251,11 @@ end
 
 function FunctionPlayerTip.EnterHomeRoom(ptdata)
   redlog("enter room", ptdata.homeid, ptdata.accid, ptdata.id)
-  if ptdata.homeid then
-    ServiceHomeCmdProxy.Instance:CallEnterHomeCmd(ptdata.accid, ptdata.id)
+  local tip = FunctionPlayerTip.Me():CurPlayerTip()
+  if tip then
+    tip:ShowHomeBord()
+  else
+    LogUtility.Warning("Cannot get current player tip. Enter home room message will be ignored.")
   end
 end
 
@@ -1708,10 +1723,7 @@ function FunctionPlayerTip.CheckEnterHomeRoom(ptdata)
   if Game.MapManager:IsPVPMode() or Game.MapManager:IsPveMode_Thanatos() then
     return PlayerTipFuncState.InActive
   end
-  if ptdata.homeid and ptdata.homeid ~= 0 then
-    return PlayerTipFuncState.Active
-  end
-  return PlayerTipFuncState.InActive
+  return PlayerTipFuncState.Active
 end
 
 function FunctionPlayerTip.CheckBoki_Follow(ptdata)

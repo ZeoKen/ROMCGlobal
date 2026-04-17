@@ -384,6 +384,7 @@ function DisneyRankView:ShowPlayerModel(rankShowData)
     parts[partIndexEx.HairColorIndex] = rankShowData.haircolor or 0
     parts[partIndexEx.EyeColorIndex] = rankShowData.eyecolor or 0
     parts[partIndexEx.BodyColorIndex] = rankShowData.clothcolor or 0
+    Asset_Role.ProcessHeadFashionForParts(parts, rankShowData.headID, rankShowData.head_fashion)
     UIModelUtil.Instance:ChangeBGMeshRenderer("Disney_bg_Roles", self.charModelTex)
     UIModelUtil.Instance:SetRoleModelTexture(self.charModelTex, parts, UIModelCameraTrans.BattlePassRank)
     Asset_Role.DestroyPartArray(parts)

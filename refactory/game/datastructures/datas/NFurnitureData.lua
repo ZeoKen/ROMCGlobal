@@ -25,7 +25,8 @@ NFurnitureData.EnumDataType = {
   Pet = 4,
   Seats = 5,
   Photo = 6,
-  Skada = 7
+  Skada = 7,
+  Anim = 8
 }
 SetFurnitureEnumProp(NFurnitureData.EnumDataType.Build, HomeCmd_pb.EFURNITUREDATA_ANGLE, "TryUpdateNormalData", "angle", "value")
 SetFurnitureEnumProp(NFurnitureData.EnumDataType.Build, HomeCmd_pb.EFURNITUREDATA_ROW, "TryUpdateNormalData", "row", "value")
@@ -47,6 +48,7 @@ SetFurnitureEnumProp(NFurnitureData.EnumDataType.Pet, HomeCmd_pb.EFURNITUREDATA_
 SetFurnitureEnumProp(NFurnitureData.EnumDataType.Seats, HomeCmd_pb.EFURNITUREDATA_SEATS, "TryUpdateSeats", "seats")
 SetFurnitureEnumProp(NFurnitureData.EnumDataType.Photo, HomeCmd_pb.EFURNITUREDATA_PHOTO, "TryUpdatePhoto", "photos")
 SetFurnitureEnumProp(NFurnitureData.EnumDataType.Skada, HomeCmd_pb.EFURNITUREDATA_NPC, "TryUpdateSkada")
+SetFurnitureEnumProp(NFurnitureData.EnumDataType.Anim, HomeCmd_pb.EFURNITUREDATA_ANIM, "TryUpdateAnim", "anim")
 local StateEnum = {
   On = SceneItem_pb.EFURNITURESTATE_ON,
   Off = SceneItem_pb.EFURNITURESTATE_OFF
@@ -67,6 +69,7 @@ function NFurnitureData:ctor(id, staticID)
   self.accessRange = self.staticData and self.staticData.AccessRange or GameConfig.Home.DefaultAccessRange
   self.serverInited = false
   self.seats = {}
+  self._pendingSeatAnimID = 0
   self.photo = nil
 end
 
@@ -113,6 +116,7 @@ function NFurnitureData:ParseServerData(serverData)
   self:SetSeats(serverData.seats)
   self:TryUpdatePhoto(serverData)
   self:TryUpdateSkada(serverData)
+  self:TryUpdateAnim(serverData)
   self.serverInited = true
 end
 
@@ -161,13 +165,31 @@ function NFurnitureData:TryUpdateSkada(serverData)
   return serverSkadaData
 end
 
+function NFurnitureData:TryUpdateAnim(serverData, clientKey, serverKey)
+  local animData = serverData.anim
+  if not animData then
+    return false
+  end
+  self.animID = animData.anim_id
+  self.animStartTime = animData.start_time
+  return true
+end
+
 function NFurnitureData:SetSeats(serverData)
   TableUtility.TableClear(self.seats)
+  self._pendingSeatAnimID = 0
   local seat
   for i = 1, #serverData do
     seat = serverData[i]
     self.seats[seat.point] = seat.charid
+    if self._pendingSeatAnimID == 0 and seat.anim and seat.anim.anim_id and seat.anim.anim_id ~= 0 then
+      self._pendingSeatAnimID = seat.anim.anim_id
+    end
   end
+end
+
+function NFurnitureData:GetPendingSeatAnimID()
+  return self._pendingSeatAnimID or 0
 end
 
 function NFurnitureData:TryUpdatePhoto(serverData, clientKey, serverKey)

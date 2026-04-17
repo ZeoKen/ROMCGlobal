@@ -87,6 +87,15 @@ CommonFun.RoleData = {
   EATTRTYPE_RESULTDAMRES = 458,
   EATTRTYPE_BOSSREALREDUC = 473,
   EATTRTYPE_BOSSREALDAM = 474,
+  EATTRTYPE_SINGLETARGETDAM = 481,
+  EATTRTYPE_MULTIPLETARGETSDAM = 482,
+  EATTRTYPE_SINGLETARGETRES = 483,
+  EATTRTYPE_MULTIPLETARGETSRES = 484,
+  EATTRTYPE_DAMREDUCTHROUGH = 485,
+  EATTRTYPE_MDAMREDUCTHROUGH = 486,
+  EATTRTYPE_DAMSPIKERESISTANCE = 487,
+  EATTRTYPE_MDAMSPIKERESISTANCE = 488,
+  EATTRTYPE_REFINETHROUGH = 489,
   EATTRTYPE_BEWINDDAMPER = 712,
   EATTRTYPE_BEEARTHDAMPER = 713,
   EATTRTYPE_BEWATERDAMPER = 714,
@@ -107,7 +116,47 @@ CommonFun.RoleData = {
   EATTRTYPE_GHOSTATK = 736,
   EATTRTYPE_UNDEADATK = 737,
   EATTRTYPE_POISONINGATK = 738,
+  EATTRTYPE_WINDTHROUGH = 750,
+  EATTRTYPE_EARTHTHROUGH = 751,
+  EATTRTYPE_FIRETHROUGH = 752,
+  EATTRTYPE_WATERTHROUGH = 753,
+  EATTRTYPE_NEUTRALTHROUGH = 754,
+  EATTRTYPE_HOLYTHROUGH = 755,
+  EATTRTYPE_DARKTHROUGH = 756,
+  EATTRTYPE_GHOSTTHROUGH = 757,
+  EATTRTYPE_UNDEADTHROUGH = 758,
+  EATTRTYPE_POISONINGTHROUGH = 759,
+  EATTRTYPE_WINDRESISTANCE = 760,
+  EATTRTYPE_EARTHRESISTANCE = 761,
+  EATTRTYPE_FIRERESISTANCE = 762,
+  EATTRTYPE_WATERRESISTANCE = 763,
+  EATTRTYPE_NEUTRALRESISTANCE = 764,
+  EATTRTYPE_HOLYRESISTANCE = 765,
+  EATTRTYPE_DARKRESISTANCE = 766,
+  EATTRTYPE_GHOSTRESISTANCE = 767,
+  EATTRTYPE_UNDEADRESISTANCE = 768,
+  EATTRTYPE_POISONINGRESISTANCE = 769,
   EATTRTYPE_DEMIHUMANDAMPER = 801,
+  EATTRTYPE_BRUTETHROUGH = 850,
+  EATTRTYPE_DEMIHUMANTHROUGH = 851,
+  EATTRTYPE_DEMONTHROUGH = 852,
+  EATTRTYPE_PLANTTHROUGH = 853,
+  EATTRTYPE_DEADLESSTHROUGH = 854,
+  EATTRTYPE_FORMLESSTHROUGH = 855,
+  EATTRTYPE_FISHTHROUGH = 856,
+  EATTRTYPE_ANGELTHROUGH = 857,
+  EATTRTYPE_INSECTTHROUGH = 858,
+  EATTRTYPE_DRAGONTHROUGH = 859,
+  EATTRTYPE_BRUTERESISTANCE = 860,
+  EATTRTYPE_DEMIHUMANRESISTANCE = 861,
+  EATTRTYPE_DEMONRESISTANCE = 862,
+  EATTRTYPE_PLANTRESISTANCE = 863,
+  EATTRTYPE_DEADLESSRESISTANCE = 864,
+  EATTRTYPE_FORMLESSRESISTANCE = 865,
+  EATTRTYPE_FISHRESISTANCE = 866,
+  EATTRTYPE_ANGELRESISTANCE = 867,
+  EATTRTYPE_INSECTRESISTANCE = 868,
+  EATTRTYPE_DRAGONRESISTANCE = 869,
   EATTRTYPE_MIDDAMPER = 902,
   EATTRTYPE_STATEDEF = 1019,
   EATTRTYPE_HEALENCPER = 1111,
@@ -1086,40 +1135,63 @@ CommonFun.BossType = {Normal = 0, MVPMini = 1}
 CommonFun.RaceProps = {
   [CommonFun.Race.Brute] = {
     "BruteDamPer",
-    "BruteResPer"
+    "BruteResPer",
+    "BruteThrough",
+    "BruteResistance"
   },
   [CommonFun.Race.DemiHuman] = {
     "DemiHumanDamPer",
-    "DemiHumanResPer"
+    "DemiHumanResPer",
+    "DemiHumanThrough",
+    "DemiHumanResistance"
   },
   [CommonFun.Race.Demon] = {
     "DemonDamPer",
-    "DemonResPer"
+    "DemonResPer",
+    "DemonThrough",
+    "DemonResistance"
   },
   [CommonFun.Race.Plant] = {
     "PlantDamPer",
-    "PlantResPer"
+    "PlantResPer",
+    "PlantThrough",
+    "PlantResistance"
   },
   [CommonFun.Race.DeadLess] = {
     "DeadLessDamPer",
-    "DeadLessResPer"
+    "DeadLessResPer",
+    "DeadLessThrough",
+    "DeadLessResistance"
   },
   [CommonFun.Race.Formless] = {
     "FormlessDamPer",
-    "FormlessResPer"
+    "FormlessResPer",
+    "FormlessThrough",
+    "FormlessResistance"
   },
-  [CommonFun.Race.Fish] = {"FishDamPer", "FishResPer"},
+  [CommonFun.Race.Fish] = {
+    "FishDamPer",
+    "FishResPer",
+    "FishThrough",
+    "FishResistance"
+  },
   [CommonFun.Race.Angel] = {
     "AngelDamPer",
-    "AngelResPer"
+    "AngelResPer",
+    "AngelThrough",
+    "AngelResistance"
   },
   [CommonFun.Race.Insect] = {
     "InsectDamPer",
-    "InsectResPer"
+    "InsectResPer",
+    "InsectThrough",
+    "InsectResistance"
   },
   [CommonFun.Race.Dragon] = {
     "DragonDamPer",
-    "DragonResPer"
+    "DragonResPer",
+    "DragonThrough",
+    "DragonResistance"
   }
 }
 CommonFun.Nature = {
@@ -1138,52 +1210,72 @@ CommonFun.NatureProps = {
   [CommonFun.Nature.Wind] = {
     "WindDamPer",
     "BeWindDamPer",
-    "WindAtk"
+    "WindAtk",
+    "WindThrough",
+    "WindResistance"
   },
   [CommonFun.Nature.Earth] = {
     "EarthDamPer",
     "BeEarthDamPer",
-    "EarthAtk"
+    "EarthAtk",
+    "EarthThrough",
+    "EarthResistance"
   },
   [CommonFun.Nature.Water] = {
     "WaterDamPer",
     "BeWaterDamPer",
-    "WaterAtk"
+    "WaterAtk",
+    "WaterThrough",
+    "WaterResistance"
   },
   [CommonFun.Nature.Fire] = {
     "FireDamPer",
     "BeFireDamPer",
-    "FireAtk"
+    "FireAtk",
+    "FireThrough",
+    "FireResistance"
   },
   [CommonFun.Nature.Neutral] = {
     "NeutralDamPer",
     "BeNeutralDamPer",
-    "NeutralAtk"
+    "NeutralAtk",
+    "NeutralThrough",
+    "NeutralResistance"
   },
   [CommonFun.Nature.Holy] = {
     "HolyDamPer",
     "BeHolyDamPer",
-    "HolyAtk"
+    "HolyAtk",
+    "HolyThrough",
+    "HolyResistance"
   },
   [CommonFun.Nature.Shadow] = {
     "ShadowDamPer",
     "BeShadowDamPer",
-    "DarkAtk"
+    "DarkAtk",
+    "DarkThrough",
+    "DarkResistance"
   },
   [CommonFun.Nature.Ghost] = {
     "GhostDamPer",
     "BeGhostDamPer",
-    "GhostAtk"
+    "GhostAtk",
+    "GhostThrough",
+    "GhostResistance"
   },
   [CommonFun.Nature.Undead] = {
     "UndeadDamPer",
     "BeUndeadDamPer",
-    "UndeadAtk"
+    "UndeadAtk",
+    "UndeadThrough",
+    "UndeadResistance"
   },
   [CommonFun.Nature.Poison] = {
     "PoisonDamPer",
     "BePoisonDamPer",
-    "PoisoningAtk"
+    "PoisoningAtk",
+    "PoisoningThrough",
+    "PoisoningResistance"
   }
 }
 CommonFun.Shape = {
@@ -4305,7 +4397,8 @@ function CommonFun.calcBeingNpcAttrValue(attr, npcid, npclevel, srcUser)
   end
   local GemValue1 = srcUser:GetGemValue(132023)
   local GemValue2 = srcUser:GetGemValue(132053)
-  local GemDam = 1 + GemValue1 / 100000 + GemValue2 / 100000
+  local skilllv_ronghe = srcUser:GetLernedSkillLevel(5331)
+  local GemDam = 1 + skilllv_ronghe * 0.06
   if npcid == 600010 then
     result[CommonFun.RoleData.EATTRTYPE_STR] = (1 + (npclevel - 1) * 0.05) * QualityRatio + attr[CommonFun.RoleData.EATTRTYPE_STR]
     result[CommonFun.RoleData.EATTRTYPE_AGI] = (1 + (npclevel - 1) * 0.05) * QualityRatio + attr[CommonFun.RoleData.EATTRTYPE_AGI]
@@ -4663,8 +4756,10 @@ function CommonFun.CalcDef(srcUser, targetUser, params)
   else
     IgnoreDef = IgnoreDef1 + IgnoreDef2
   end
+  local SkillID = 0
+  local SkillLevel = 0
   if params ~= nil then
-    local SkillID, SkillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
+    SkillID, SkillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
     local BuffIDs, IgnoreDefAdd = CommonFun.EquipBuffAndIgnoreDef(SkillID)
     local TempAdd = true
     for i = 1, #BuffIDs do
@@ -4700,6 +4795,12 @@ function CommonFun.CalcDef(srcUser, targetUser, params)
   end
   if targetUser:GetBuffActive(137321) then
     IgnoreDef = 0
+  end
+  if (SkillID == 5424 or SkillID == 352) and srcUser:HasBuffID(1004160) then
+    local skilllv_huixuan = srcUser:GetLernedSkillLevel(5423)
+    local DefPer = srcUser:GetProperty("DefPer")
+    local MDefPer = srcUser:GetProperty("MDefPer")
+    IgnoreDef = IgnoreDef + (DefPer + MDefPer) * skilllv_huixuan * 0.1
   end
   local pvpReduce = 0
   local mapid, maptype = srcUser:GetMapInfo()
@@ -4860,6 +4961,22 @@ function CommonFun.CalcRaceParam(srcUser, targetUser, params, damageParam, logge
   end
   raceInc = srcUser:GetProperty(CommonFun.RaceProps[targetRace][1])
   raceRed = targetUser:GetProperty(CommonFun.RaceProps[srcRace][2])
+  local Arrow_attr = CommonFun.GetUserArrowAttr(srcUser, params)
+  raceInc = raceInc + Arrow_attr
+  local raceRedThrough = srcUser:GetProperty(CommonFun.RaceProps[srcRace][3])
+  local raceIncResistance = targetUser:GetProperty(CommonFun.RaceProps[targetRace][4])
+  if nil == raceRedThrough then
+    raceRedThrough = 0
+  end
+  if nil == raceIncResistance then
+    raceIncResistance = 0
+  end
+  if 0 <= raceInc then
+    raceInc = raceInc * math.max(1 - raceIncResistance, 0)
+  end
+  if 0 <= raceRed then
+    raceRed = raceRed * math.max(1 - raceRedThrough, 0)
+  end
   local xinnian = 0
   local skill_xinnian3 = srcUser:GetLernedSkillLevel(6013)
   local skill_xinnian1 = srcUser:GetLernedSkillLevel(6011)
@@ -4869,15 +4986,13 @@ function CommonFun.CalcRaceParam(srcUser, targetUser, params, damageParam, logge
   end
   local skilllv = srcUser:GetLernedSkillLevel(306)
   local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
-  if 5 < skilllv and skillID == 306 or skillID == 3303 or skillID == 819 then
+  if 5 < skilllv and (skillID == 306 or skillID == 3303 or skillID == 819 or skillID == 6024) then
     raceRed = math.max(raceRed - 0.06 * (skilllv - 5) - xinnian, 0)
   end
   local skilllv1 = srcUser:GetLernedSkillLevel(4762)
   if skillID == 4763 or skillID == 4764 or skillID == 4766 then
     raceRed = math.max(raceRed - 0.02 * skilllv1, 0)
   end
-  local Arrow_attr = CommonFun.GetUserArrowAttr(srcUser, params)
-  raceInc = raceInc + Arrow_attr
   local A = 1 + raceInc - raceRed
   local mapid, maptype = srcUser:GetMapInfo()
   if (maptype == 2 or maptype == 4) and targetUser:GetNpcID() ~= 40022 then
@@ -5081,6 +5196,10 @@ function CommonFun.GetElementRate(srcUser, srcAtkElement, targetUser, targetDefE
       layer = layer + 1
     end
     ElementRate = ElementRate + 0.02 * skilllv1 * skilllv2 * 0.05 * layer
+  end
+  if srcUser:HasBuffID(1003550) and srcAtkElement == 4 then
+    local skilllv_yishi = srcUser:GetLernedSkillLevel(5333)
+    ElementRate = ElementRate + 0.05 * skilllv_yishi
   end
   if 3 <= tarDefLevel then
     ElementRate = ElementRate + (srcAtkLevel - 1) * 0.25 - 0.25 - (tarDefLevel - 2) * 0.125
@@ -5353,6 +5472,14 @@ function CommonFun.CalcElementParam2(srcUser, targetUser, params, damageParam, l
   elementInc = srcUser:GetProperty(CommonFun.NatureProps[targetDefElement][1])
   elementRed = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][2])
   elementAtk = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][3])
+  local elementThrough = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][4])
+  local elementResistance = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][5])
+  if 0 <= elementRed then
+    elementRed = elementRed * math.max(1 - elementThrough, 0)
+  end
+  if 0 <= elementAtk then
+    elementAtk = elementAtk * math.max(1 - elementResistance, 0)
+  end
   if nil == elementAtk then
     elementAtk = 0
   end
@@ -5365,7 +5492,7 @@ function CommonFun.CalcElementParam2(srcUser, targetUser, params, damageParam, l
   end
   local skilllv = srcUser:GetLernedSkillLevel(306)
   local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
-  if 5 < skilllv and skillID == 306 or skillID == 3303 or skillID == 819 then
+  if 5 < skilllv and (skillID == 306 or skillID == 3303 or skillID == 819 or skillID == 6024) then
     elementRed = math.max(elementRed - 0.06 * (skilllv - 5) - xinnian, 0)
   end
   if skillID == 1288 or skillID == 1812 or skillID == 4310 then
@@ -5519,7 +5646,7 @@ function CommonFun.CalcHitRate(srcUser, targetUser, skillParams)
   if math.floor(skilllv_1 / 1000) == 1284 or math.floor(skilllv_1 / 1000) == 1288 or math.floor(skilllv_1 / 1000) == 1122 or math.floor(skilllv_1 / 1000) == 3303 or math.floor(skilllv_1 / 1000) == 819 or math.floor(skilllv_1 / 1000) == 3706 or math.floor(skilllv_1 / 1000) == 1812 or math.floor(skilllv_1 / 1000) == 1835 or math.floor(skilllv_1 / 1000) == 1817 or math.floor(skilllv_1 / 1000) == 5604 then
     rate = 100
   end
-  if math.floor(skilllv_1 / 1000) == 2563 or math.floor(skilllv_1 / 1000) == 2572 or math.floor(skilllv_1 / 10000) == 531 or math.floor(skilllv_1 / 10000) == 532 then
+  if math.floor(skilllv_1 / 1000) == 2563 or math.floor(skilllv_1 / 1000) == 2572 or math.floor(skilllv_1 / 10000) == 531 or math.floor(skilllv_1 / 10000) == 532 or math.floor(skilllv_1 / 1000) == 5820 or math.floor(skilllv_1 / 1000) == 6024 then
     rate = 100
   end
   if srcUser:HasBuffID(115090) or srcUser:HasBuffID(115091) or srcUser:HasBuffID(232170) then
@@ -5533,7 +5660,7 @@ function CommonFun.CalcHitRate(srcUser, targetUser, skillParams)
     local MustMissRate = srcUser:GetProperty("MustMissRate")
     rate = 100 * (1 - MustMissRate)
   end
-  if srcUser:HasBuffID(133580) or srcUser:HasBuffID(133581) then
+  if srcUser:HasBuffID(133580) or srcUser:HasBuffID(133581) or srcUser:HasBuffID(1007241) then
     local MustMissRate = srcUser:GetProperty("MustMissRate")
     rate = math.min(rate, 100) * (1 - MustMissRate)
   end
@@ -5541,6 +5668,9 @@ function CommonFun.CalcHitRate(srcUser, targetUser, skillParams)
     rate = 100
   end
   if math.floor(skilllv_1 / 1000) == 6110 and srcUser:GetBuffLayer(116080) == 15 then
+    rate = 100
+  end
+  if math.floor(skilllv_1 / 1000) == 5524 then
     rate = 100
   end
   if CommonFun.RollType.Attack == skillParams.RollType and srcUser:HasBuffID(49120) or isCanBlock == false then
@@ -5805,6 +5935,9 @@ function CommonFun.GetDamReduceValue(srcUser, targetUser, value)
   if damage ~= 0 and (mapid == 7505 or mapid == 7510 or mapid == 7515 or mapid == 7520) then
     damage = damage / 10
   end
+  if damage ~= 0 and (mapid == 7521 or mapid == 7522 or mapid == 7523 or mapid == 7524) then
+    damage = damage / 50
+  end
   if damage ~= 0 and targetUser.zoneType == 28 then
     damage = damage / (math.random(0, 6) + 47)
   end
@@ -5932,6 +6065,16 @@ function CommonFun.CalcDamage(srcUser, targetUser, params, logger)
   if 2147483647 <= damage then
     damage = 2147483647
   end
+  targetUser:SetDoubleDamage(false)
+  if 0 < damage then
+    local damageDouble = CommonFun.calcOdds_18(srcUser, targetUser)
+    if 0 < damageDouble then
+      targetUser:SetDoubleDamage(true)
+    elseif damageDouble < 0 then
+      damagetype = CommonFun.DamageType.Miss
+      damage = 0
+    end
+  end
   return damage, damagetype, sharedam, realdam
 end
 
@@ -6004,6 +6147,9 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     isCanBlock = false
   end
   if skillID == 6110 and srcUser:GetBuffLayer(116080) == 15 then
+    isCanBlock = false
+  end
+  if skillID == 5524 then
     isCanBlock = false
   end
   if enemy then
@@ -6107,8 +6253,9 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
         Rate = Rate + 5
       end
       local MemoryBufflvlayer = targetUser:GetBuffLayer(29250)
-      if targetUser:HasBuffID(29250) then
-        Rate = Rate + MemoryBufflvlayer * 1
+      local MemoryBufflvlayer50 = targetUser:GetBuffLayer(29251)
+      if targetUser:HasBuffID(29250) or targetUser:HasBuffID(29251) then
+        Rate = Rate + (MemoryBufflvlayer + MemoryBufflvlayer50) * 1
       end
       if targetUser:HasBuffID(118250) or targetUser:HasBuffID(128100) or targetUser:HasBuffID(128101) or targetUser:HasBuffID(135200) or targetUser:HasBuffID(100038250) or targetUser:HasBuffID(135353) or targetUser:HasBuffID(136011) or targetUser:HasBuffID(1001001) or targetUser:HasBuffID(232030) then
         local MagicFlee = targetUser:GetProperty("MagicFleeRate")
@@ -6134,6 +6281,9 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     if skillID == 6110 and srcUser:GetBuffLayer(116080) == 15 then
       judu = false
     end
+    if skillID == 5524 then
+      judu = false
+    end
     local HarmImmune = targetUser:GetProperty("HarmImmune")
     if nil ~= HarmImmune and 0 < HarmImmune then
       local harmImmuneInfo = Table_BuffStateOdds[HarmImmune]
@@ -6156,7 +6306,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
         if targetUser:HasBuffID(1002020) then
           rate = rate + 3 * lingqijian
         end
-        if CommonFun.IsInRate(rate, srcUser:GetRandom()) and math.floor(params.skillIDAndLevel / 1000) ~= 306 and math.floor(params.skillIDAndLevel / 1000) ~= 422 and math.floor(params.skillIDAndLevel / 1000) ~= 1122 and math.floor(params.skillIDAndLevel / 1000) ~= 1164 and judu == true and math.floor(params.skillIDAndLevel / 1000) ~= 3303 and math.floor(params.skillIDAndLevel / 1000) ~= 819 and math.floor(params.skillIDAndLevel / 1000) ~= 3706 and math.floor(params.skillIDAndLevel / 1000) ~= 1809 and math.floor(params.skillIDAndLevel / 1000) ~= 1835 and math.floor(params.skillIDAndLevel / 1000) ~= 1915 and math.floor(params.skillIDAndLevel / 1000) ~= 1941 and math.floor(params.skillIDAndLevel / 10000) ~= 531 and math.floor(params.skillIDAndLevel / 10000) ~= 532 then
+        if CommonFun.IsInRate(rate, srcUser:GetRandom()) and math.floor(params.skillIDAndLevel / 1000) ~= 306 and math.floor(params.skillIDAndLevel / 1000) ~= 422 and math.floor(params.skillIDAndLevel / 1000) ~= 1122 and math.floor(params.skillIDAndLevel / 1000) ~= 1164 and judu == true and math.floor(params.skillIDAndLevel / 1000) ~= 3303 and math.floor(params.skillIDAndLevel / 1000) ~= 819 and math.floor(params.skillIDAndLevel / 1000) ~= 3706 and math.floor(params.skillIDAndLevel / 1000) ~= 1809 and math.floor(params.skillIDAndLevel / 1000) ~= 1835 and math.floor(params.skillIDAndLevel / 1000) ~= 1915 and math.floor(params.skillIDAndLevel / 1000) ~= 1941 and math.floor(params.skillIDAndLevel / 10000) ~= 531 and math.floor(params.skillIDAndLevel / 10000) ~= 532 and math.floor(params.skillIDAndLevel / 1000) ~= 6024 then
           return 0, CommonFun.DamageType.Block
         end
       end
@@ -6164,7 +6314,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     if bits3[CommonFun.AttrEffect2.AutoDef] == 1 then
       local rate = targetUser:GetProperty("AutoBlockRate")
       rate = math.min(rate, 60)
-      if CommonFun.IsInRate(rate, srcUser:GetRandom()) and math.floor(params.skillIDAndLevel / 1000) ~= 306 and math.floor(params.skillIDAndLevel / 1000) ~= 411 and math.floor(params.skillIDAndLevel / 1000) ~= 422 and math.floor(params.skillIDAndLevel / 1000) ~= 1122 and math.floor(params.skillIDAndLevel / 1000) ~= 1164 and judu == true and math.floor(params.skillIDAndLevel / 1000) ~= 3303 and math.floor(params.skillIDAndLevel / 1000) ~= 819 and math.floor(params.skillIDAndLevel / 1000) ~= 3706 and math.floor(params.skillIDAndLevel / 1000) ~= 1809 and math.floor(params.skillIDAndLevel / 1000) ~= 1835 and math.floor(params.skillIDAndLevel / 1000) ~= 1915 and math.floor(params.skillIDAndLevel / 1000) ~= 1941 and math.floor(params.skillIDAndLevel / 10000) ~= 531 and math.floor(params.skillIDAndLevel / 10000) ~= 532 then
+      if CommonFun.IsInRate(rate, srcUser:GetRandom()) and math.floor(params.skillIDAndLevel / 1000) ~= 306 and math.floor(params.skillIDAndLevel / 1000) ~= 411 and math.floor(params.skillIDAndLevel / 1000) ~= 422 and math.floor(params.skillIDAndLevel / 1000) ~= 1122 and math.floor(params.skillIDAndLevel / 1000) ~= 1164 and judu == true and math.floor(params.skillIDAndLevel / 1000) ~= 3303 and math.floor(params.skillIDAndLevel / 1000) ~= 819 and math.floor(params.skillIDAndLevel / 1000) ~= 3706 and math.floor(params.skillIDAndLevel / 1000) ~= 1809 and math.floor(params.skillIDAndLevel / 1000) ~= 1835 and math.floor(params.skillIDAndLevel / 1000) ~= 1915 and math.floor(params.skillIDAndLevel / 1000) ~= 1941 and math.floor(params.skillIDAndLevel / 10000) ~= 531 and math.floor(params.skillIDAndLevel / 10000) ~= 532 and math.floor(params.skillIDAndLevel / 1000) ~= 6024 then
         local skilllv_weiw = targetUser:GetLernedSkillLevel(1190)
         if 0 < skilllv_weiw and srcUser.isServerCall then
           targetUser:AddBuff(116700, srcUser:GetGuid())
@@ -6191,7 +6341,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
       if targetUser:HasBuffID(116094) then
         rate = 100
       end
-      if CommonFun.IsInRate(rate, srcUser:GetRandom()) and skillParams.Launch_Range ~= nil and CommonFun.IsLongSkill(skillParams.Launch_Range) == false and skillParams.RollType == 1 and math.floor(params.skillIDAndLevel / 1000) ~= 306 and math.floor(params.skillIDAndLevel / 1000) ~= 3303 and math.floor(params.skillIDAndLevel / 1000) ~= 819 then
+      if CommonFun.IsInRate(rate, srcUser:GetRandom()) and skillParams.Launch_Range ~= nil and CommonFun.IsLongSkill(skillParams.Launch_Range) == false and skillParams.RollType == 1 and math.floor(params.skillIDAndLevel / 1000) ~= 306 and math.floor(params.skillIDAndLevel / 1000) ~= 3303 and math.floor(params.skillIDAndLevel / 1000) ~= 819 and math.floor(params.skillIDAndLevel / 1000) ~= 6024 then
         local RuneNum = targetUser:GetRunePoint(34030)
         if 0 < RuneNum then
           local RuneRate = RuneNum * 25 + GemValue2 / 1000
@@ -6258,6 +6408,10 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
       if CommonFun.IsInRate(Rate1, srcUser:GetRandom()) then
         return 0, CommonFun.DamageType.Miss
       end
+    end
+    local PerfectFlee = targetUser:GetProperty("PerfectFlee")
+    if PerfectFlee ~= 0 and isCanBlock == true and 0 < damage and CommonFun.IsInRate(PerfectFlee, srcUser:GetRandom()) then
+      return 0, CommonFun.DamageType.Miss
     end
     local buff2MissAtkAttr = {
       [90005525] = {
@@ -6474,7 +6628,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     local Vit2 = targetUser:GetProperty("Vit")
     local VitPer2 = targetUser:GetProperty("VitPer")
     local DamReduc2 = CommonFun.calcDamReDuc(srcUser, targetUser)
-    local RefineDamReduc = targetUser:GetProperty("RefineDamReduc")
+    local RefineDamReduc = CommonFun.calcRefineDamReduc(srcUser, targetUser)
     local RealDamage = targetUser:GetProperty("RealDamage")
     if targetUser:HasBuffID(96050) and 1 <= RealDamage then
       local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
@@ -6489,6 +6643,8 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     local StateEffect = targetUser:GetProperty("StateEffect")
     local bits3 = CommonFun.getBits(StateEffect)
     local Weapon = srcUser:GetEquipedID(7)
+    local Sp = srcUser:GetProperty("Sp")
+    local MaxSp = srcUser:GetProperty("MaxSp")
     if skillParams.RollType == 1 then
       if bits[CommonFun.AttrEffect.NextAttackIncrease] == 1 then
         damage = (((Atk - BaseAtk1) * (1 + AtkPer) * CommonFun.ShapeCorrection(srcUser, targetUser) * bodyparam * elementparam * elementparam2 + BaseAtk3) * raceparam * bossparam * bossparam2 * (1 - DamReduc2) + Refine + SkillRealDamage - Vit2 * (1 + VitPer2)) * CommonFun.CalcCrit(srcUser, targetUser, skillParams) * (1 - RefineDamReduc) * (1 + DamIncrease) * 2 * (1 + RealDamage) * (1 + skillLevel2 * 0.05)
@@ -6502,7 +6658,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
         local DisDam = 1
         if 10 < skilllv_1 then
           DisDam = 1 + distance / 7.5 * (skilllv_1 - 10) * 0.1
-          if srcUser:HasBuffID(131080) or targetUser:IsBuffFrom(1007000, srcUser:GetGuid()) and srcUser:HasBuffID(1007050) then
+          if srcUser:HasBuffID(131080) or targetUser:IsBuffFrom(1007000, srcUser:GetGuid()) and srcUser:HasBuffID(1007050) or srcUser:HasBuffID(1007200) and 0.05 <= Sp / MaxSp then
             DisDam = 1 + (skilllv_1 - 10) * 0.1
           end
           DisDam = math.min(DisDam, 2)
@@ -6524,7 +6680,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
         local DisDam = 1
         if 10 < skilllv_1 then
           DisDam = 1 + distance / 7.5 * (skilllv_1 - 10) * 0.1
-          if srcUser:HasBuffID(131080) or targetUser:IsBuffFrom(1007000, srcUser:GetGuid()) and srcUser:HasBuffID(1007050) then
+          if srcUser:HasBuffID(131080) or targetUser:IsBuffFrom(1007000, srcUser:GetGuid()) and srcUser:HasBuffID(1007050) or srcUser:HasBuffID(1007200) and 0.05 <= Sp / MaxSp then
             DisDam = 1 + (skilllv_1 - 10) * 0.1
           end
           DisDam = math.min(DisDam, 2)
@@ -6542,11 +6698,12 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
           BUffDam = 1 + skilllv_biaoji * 0.02 + Numxp * 0.02 + GemBiaoji / 100000
         end
         local SpAtk = 0
-        if srcUser:HasBuffID(131096) then
-          local Sp = srcUser:GetProperty("Sp")
-          SpAtk = Sp
+        if srcUser:HasBuffID(1007201) then
+          local skilllv_liuxing = srcUser:GetLernedSkillLevel(5720)
+          local skilllv_liuxing3 = srcUser:GetLernedSkillLevel(5723)
+          SpAtk = math.max(Sp, MaxSp * (0.05 * skilllv_liuxing3)) * skilllv_liuxing * 0.1
         end
-        damage = ((((Atk - BaseAtk1) * (1 + AtkPer) + SpAtk) * CommonFun.ShapeCorrection(srcUser, targetUser) * bodyparam * elementparam * elementparam2 + BaseAtk3) * raceparam * bossparam * bossparam2 * (1 - DamReduc2) + Refine + SkillRealDamage - Vit2 * (1 + VitPer2)) * CommonFun.CalcCrit(srcUser, targetUser, skillParams) * (1 - RefineDamReduc) * (1 + DamIncrease) * (1 + RealDamage) * (1 + skillLevel2 * 0.05) * DisDam * BUffDam
+        damage = (((Atk - BaseAtk1 + SpAtk) * (1 + AtkPer) * CommonFun.ShapeCorrection(srcUser, targetUser) * bodyparam * elementparam * elementparam2 + BaseAtk3) * raceparam * bossparam * bossparam2 * (1 - DamReduc2) + Refine + SkillRealDamage - Vit2 * (1 + VitPer2)) * CommonFun.CalcCrit(srcUser, targetUser, skillParams) * (1 - RefineDamReduc) * (1 + DamIncrease) * (1 + RealDamage) * (1 + skillLevel2 * 0.05) * DisDam * BUffDam
         if damage <= 0 then
           damage = 0
         end
@@ -6583,7 +6740,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
       local DisDam = 1
       if 10 < skilllv_1 then
         DisDam = 1 + distance / 7.5 * (skilllv_1 - 10) * 0.1
-        if srcUser:HasBuffID(131080) or targetUser:IsBuffFrom(1007000, srcUser:GetGuid()) and srcUser:HasBuffID(1007050) then
+        if srcUser:HasBuffID(131080) or targetUser:IsBuffFrom(1007000, srcUser:GetGuid()) and srcUser:HasBuffID(1007050) or srcUser:HasBuffID(1007200) and 0.05 <= Sp / MaxSp then
           DisDam = 1 + (skilllv_1 - 10) * 0.1
         end
         DisDam = math.min(DisDam, 2)
@@ -6704,7 +6861,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
   local NormalAtkRes = targetUser:GetProperty("NormalAtkRes")
   local SkillDam = srcUser:GetProperty("SkillDam")
   local SkillRes = targetUser:GetProperty("SkillRes")
-  if (skillID == 306 or skillID == 3303 or skillID == 819) and srcUser:HasBuffID(22000830) then
+  if (skillID == 306 or skillID == 3303 or skillID == 819 or skillID == 6024) and srcUser:HasBuffID(22000830) then
     SkillRes = math.max(SkillRes - 0.3, 0)
   end
   local ActuallySkiRes = SkillRes - SkillDam
@@ -6728,6 +6885,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     SkillEnd = 1
   end
   if CommonFun.RollType.Magic == skillParams.RollType then
+    local RefineMDamReduc = CommonFun.calcRefineMDamReduc(srcUser, targetUser)
     if srcUser:IsAttackSkill(params.skillIDAndLevel) and 0 < damage then
       damage = (damage + NormalMRealDam * (1 - RefineMDamReduc)) * NormalEnd
     elseif not srcUser:IsAttackSkill(params.skillIDAndLevel) and 0 < damage then
@@ -6735,6 +6893,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     end
   end
   if CommonFun.RollType.Attack == skillParams.RollType then
+    local RefineDamReduc = CommonFun.calcRefineDamReduc(srcUser, targetUser)
     if srcUser:IsAttackSkill(params.skillIDAndLevel) and 0 < damage then
       damage = (damage + NormalRealDam * (1 - RefineDamReduc)) * NormalEnd
     elseif not srcUser:IsAttackSkill(params.skillIDAndLevel) and 0 < damage then
@@ -6792,7 +6951,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
   if isCanBlock == false then
     Baxie = false
   end
-  if bits2[CommonFun.AttrEffect.BaXieZhiZhen] == 1 and CommonFun.RollType.Attack == skillParams.RollType and 0 < damage and skillID ~= 411 and skillID ~= 306 and skillID ~= 3303 and skillID ~= 819 and Baxie == true then
+  if bits2[CommonFun.AttrEffect.BaXieZhiZhen] == 1 and CommonFun.RollType.Attack == skillParams.RollType and 0 < damage and skillID ~= 411 and skillID ~= 306 and skillID ~= 3303 and skillID ~= 819 and skillID ~= 6024 and Baxie == true then
     if targetUser.AddBuffDamage ~= nil then
       targetUser:AddBuffDamage(damage)
     end
@@ -6833,7 +6992,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     local GemValue = targetUser:GetProperty("JinGangRate")
     JGBH = 0.15 - GemValue
     local skilllv_ab = srcUser:GetLernedSkillLevel(306)
-    if 5 < skilllv_ab and skillID == 306 or skillID == 3303 or skillID == 819 then
+    if 5 < skilllv_ab and skillID == 306 or skillID == 3303 or skillID == 819 or skillID == 6024 then
       JGBH = 1
     end
     damage = math.floor(damage * JGBH)
@@ -6959,6 +7118,9 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     if srcUser:HasBuffID(72280) then
       mediumdam = mediumdam + 0.05 + RefineLv * 0.01
     end
+    if srcUser:HasBuffID(79700) then
+      mediumdam = mediumdam + 0.05
+    end
     if srcUser:HasBuffID(57300) then
       mediumdam = mediumdam + 0.02 + RefineLv * 0.01
     end
@@ -7049,6 +7211,57 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
   if targetUser:HasBuffID(137840) and 5 < distance then
     local Bufflv = targetUser:GetBuffLevel(137840)
     damage = damage * (1 - Bufflv * 0.08)
+  end
+  if srcUser:HasBuffID(1001230) and srcUser:HasBuffID(1001202) then
+    local skilllv_chongyin = srcUser:GetLernedSkillLevel(5123)
+    local Str = srcUser:GetProperty("Str")
+    local Vit = srcUser:GetProperty("Vit")
+    local Int = srcUser:GetProperty("Int")
+    local Dex = srcUser:GetProperty("Dex")
+    local Luk = srcUser:GetProperty("Luk")
+    local Agi = srcUser:GetProperty("Agi")
+    local Str1 = targetUser:GetProperty("Str")
+    local Vit1 = targetUser:GetProperty("Vit")
+    local Int1 = targetUser:GetProperty("Int")
+    local Dex1 = targetUser:GetProperty("Dex")
+    local Luk1 = targetUser:GetProperty("Luk")
+    local Agi1 = targetUser:GetProperty("Agi")
+    local count = 0
+    if Str > Str1 then
+      count = count + 1
+    end
+    if Vit > Vit1 then
+      count = count + 1
+    end
+    if Int > Int1 then
+      count = count + 1
+    end
+    if Dex > Dex1 then
+      count = count + 1
+    end
+    if Luk > Luk1 then
+      count = count + 1
+    end
+    if Agi > Agi1 then
+      count = count + 1
+    end
+    if 0 < count then
+      damage = damage * (1 + skilllv_chongyin * 0.02 * count)
+    end
+  end
+  if srcUser:HasBuffID(1012020) and targetUser:HasBuffID(1012021) then
+    local skilllv_yingzhua = targetUser:GetBuffLevel(1012021)
+    damage = damage * (1 - skilllv_yingzhua * 0.1)
+  end
+  if srcUser:HasBuffID(1012021) and targetUser:HasBuffID(1012020) then
+    local skilllv_yingzhua = srcUser:GetBuffLevel(1012021)
+    damage = damage * (1 + skilllv_yingzhua * 0.1)
+  end
+  if srcUser:HasBuffID(1003560) and CommonFun.RollType.Attack == skillParams.RollType and srcUser:IsAttackSkill(params.skillIDAndLevel) == false then
+    local skilllv_yishi = srcUser:GetLernedSkillLevel(5333)
+    local CriDamPer = srcUser:GetProperty("CriDamPer")
+    local CriDefPer = targetUser:GetProperty("CriDefPer")
+    damage = damage * math.max(1, (CriDamPer - CriDefPer) * skilllv_yishi * 0.05 + 1)
   end
   if bits3[CommonFun.AttrEffect2.MDamageTo1] == 1 and CommonFun.RollType.Magic == skillParams.RollType then
     return 1, CommonFun.DamageType.Normal
@@ -7557,7 +7770,31 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
   if GetSelfID == 0 and (GetNpcID == 301200 or GetNpcID == 301201 or GetNpcID == 301202 or GetNpcID == 301203 or GetNpcID == 301204 or GetNpcID == 301205 or GetNpcID == 301206) then
     return 0, CommonFun.DamageType.Miss
   end
-  if targetUser:HasBuffID(32290) and 0 < damage and targetUser:HasBuffID(135251) == false then
+  if targetUser:HasBuffID(1007220) and 0 < damage and targetUser:HasBuffID(135251) == false then
+    local mapid, maptype = srcUser:GetMapInfo()
+    local pvpRatio = 5
+    if maptype == 2 or maptype == 4 then
+      pvpRatio = 20
+    end
+    local Sp = targetUser:GetProperty("Sp")
+    local skilllv_xinghui = targetUser:GetBuffLevel(1007220)
+    local SpCostPer = targetUser:GetProperty("SpCostPer")
+    pvpRatio = pvpRatio * skilllv_xinghui * math.max(1, 1 - SpCostPer)
+    if Sp > damage / pvpRatio then
+      damage = damage / pvpRatio
+      return damage, CommonFun.DamageType.Normal_Sp
+    elseif 0 < Sp and Sp < damage / pvpRatio then
+      damage = damage - Sp * pvpRatio
+      local Hp = targetUser:GetProperty("Hp")
+      if damage >= Hp then
+        return damage, damageType
+      end
+      if srcUser.isServerCall then
+        srcUser:AddBuff(32291, targetUser:GetGuid())
+      end
+    end
+  end
+  if targetUser:HasBuffID(32290) and 0 < damage and targetUser:HasBuffID(135251) == false and targetUser:HasBuffID(1007220) == false then
     local mapid, maptype = srcUser:GetMapInfo()
     local pvpRatio = 5
     if maptype == 2 or maptype == 4 then
@@ -7601,7 +7838,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     end
   end
   local skilllv_1 = skillParams.id
-  if (srcUser:HasBuffID(35600) or srcUser:HasBuffID(43230) or srcUser:HasBuffID(55170) or srcUser:HasBuffID(66730) or srcUser:HasBuffID(55890) or srcUser:HasBuffID(70450) or srcUser:HasBuffID(56700) or srcUser:HasBuffID(56730) or srcUser:HasBuffID(55710) or srcUser:HasBuffID(73550) or srcUser:HasBuffID(57700) or srcUser:HasBuffID(57170) or srcUser:HasBuffID(23200) or srcUser:HasBuffLayer(23200, EBUFFERLAYER_SHADOW) or srcUser:HasBuffID(602110) or srcUser:HasBuffID(602120) or srcUser:HasBuffID(602130) or srcUser:HasBuffID(602140) or srcUser:HasBuffID(602150) or srcUser:HasBuffID(59510) or srcUser:HasBuffID(602610) or srcUser:HasBuffID(602620) or srcUser:HasBuffID(602630) or srcUser:HasBuffID(602640) or srcUser:HasBuffID(602650) or srcUser:HasBuffID(602910) or srcUser:HasBuffID(602920) or srcUser:HasBuffID(602930) or srcUser:HasBuffID(602940) or srcUser:HasBuffID(602950)) and 0 < damage then
+  if (srcUser:HasBuffID(35600) or srcUser:HasBuffID(43230) or srcUser:HasBuffID(55170) or srcUser:HasBuffID(66730) or srcUser:HasBuffID(55890) or srcUser:HasBuffID(70450) or srcUser:HasBuffID(56700) or srcUser:HasBuffID(56730) or srcUser:HasBuffID(55710) or srcUser:HasBuffID(73550) or srcUser:HasBuffID(57700) or srcUser:HasBuffID(57170) or srcUser:HasBuffID(23200) or srcUser:HasBuffLayer(23200, EBUFFERLAYER_SHADOW) or srcUser:HasBuffID(602110) or srcUser:HasBuffID(602120) or srcUser:HasBuffID(602130) or srcUser:HasBuffID(602140) or srcUser:HasBuffID(602150) or srcUser:HasBuffID(59510) or srcUser:HasBuffID(602610) or srcUser:HasBuffID(602620) or srcUser:HasBuffID(602630) or srcUser:HasBuffID(602640) or srcUser:HasBuffID(602650) or srcUser:HasBuffID(602910) or srcUser:HasBuffID(602920) or srcUser:HasBuffID(602930) or srcUser:HasBuffID(602940) or srcUser:HasBuffID(602950) or srcUser:HasBuffID(28540) or srcUser:HasBuffID(28541) or srcUser:HasBuffID(28542)) and 0 < damage then
     local Luk = srcUser:GetProperty("Luk")
     local CriDamNum = 1.5 + math.floor(Luk / 6) / 100
     if srcUser:HasBuffID(81002780) then
@@ -7720,8 +7957,16 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     if srcUser:HasBuffID(73550) then
       CriNum7 = 10 + RefineLv8 * 1
     end
-    local CriNum = CriNum1 + CriNum2 + CriNum3 + CriNum4 + CriNum5 + CriNum6 + CriNum7
-    if CommonFun.RollType.Magic == skillParams.RollType and srcUser:IsAttackSkill(params.skillIDAndLevel) == false and 0 < damage and CommonFun.IsInRate(CriNum, srcUser:GetRandom()) and (mapid == 7200 or mapid == 7204 or mapid == 7505 or mapid == 7510 or mapid == 7515 or mapid == 7520 or mapid == 154 or srcUser:InDamReduceRaid() == true and srcUser:IsUserCamp() == true) then
+    local CriNum8 = 0
+    if srcUser:HasBuffID(28540) then
+      CriNum8 = CriNum8 + 6
+    elseif srcUser:HasBuffID(28541) then
+      CriNum8 = CriNum8 + 12
+    elseif srcUser:HasBuffID(28542) then
+      CriNum8 = CriNum8 + 18
+    end
+    local CriNum = CriNum1 + CriNum2 + CriNum3 + CriNum4 + CriNum5 + CriNum6 + CriNum7 + CriNum8
+    if CommonFun.RollType.Magic == skillParams.RollType and srcUser:IsAttackSkill(params.skillIDAndLevel) == false and 0 < damage and CommonFun.IsInRate(CriNum, srcUser:GetRandom()) and (mapid == 7200 or mapid == 7204 or mapid == 7505 or mapid == 7510 or mapid == 7515 or mapid == 7520 or mapid == 154 or mapid == 7521 or mapid == 7522 or mapid == 7523 or mapid == 7524 or srcUser:InDamReduceRaid() == true and srcUser:IsUserCamp() == true) then
       return math.min(damage * CriDamNum), CommonFun.DamageType.Crit
     elseif CommonFun.RollType.Magic == skillParams.RollType and srcUser:IsAttackSkill(params.skillIDAndLevel) == false and 0 < damage and CommonFun.IsInRate(CriNum, srcUser:GetRandom()) then
       return math.min(damage * CriDamNum, 2147483647), CommonFun.DamageType.Crit
@@ -7742,7 +7987,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     return 0, 0
   end
   local mapid, maptype = srcUser:GetMapInfo()
-  if damage >= 2147483647 and (mapid == 7200 or mapid == 7204 or mapid == 7505 or mapid == 7510 or mapid == 7515 or mapid == 7520 or mapid == 154 or srcUser:InDamReduceRaid() == true and srcUser:IsUserCamp() == true) then
+  if damage >= 2147483647 and (mapid == 7200 or mapid == 7204 or mapid == 7505 or mapid == 7510 or mapid == 7515 or mapid == 7520 or mapid == 7521 or mapid == 7522 or mapid == 7523 or mapid == 7524 or mapid == 154 or srcUser:InDamReduceRaid() == true and srcUser:IsUserCamp() == true) then
   elseif damage >= 2147483647 then
     damage = 2147483647
   end
@@ -8078,6 +8323,48 @@ function CommonFun.calcDamReDuc(srcUser, targetUser)
   local DamReduc2 = targetUser:GetProperty("DamReduc")
   local ReduceLv = CommonFun.calcSpikeLv(srcUser, targetUser)
   local SkillDamReduc = CommonFun.calcSkillDamReduc(srcUser, targetUser)
+  if srcUser:HasBuffID(138002) then
+    local MDamSpike = srcUser:GetProperty("MDamSpike")
+    DamSpike = DamSpike + MDamSpike
+  end
+  if targetUser:GetNpcID() ~= 0 and (srcUser:HasBuffID(57720) or srcUser:HasBuffID(608711)) and srcUser:HasBuffID(138002) then
+    DamSpike = DamSpike + 0.2
+  elseif targetUser:GetNpcID() ~= 0 and (srcUser:HasBuffID(57720) or srcUser:HasBuffID(608711)) then
+    DamSpike = DamSpike + 0.1
+  end
+  if targetUser:GetNpcID() == 0 and (srcUser:HasBuffID(59840) or srcUser:HasBuffID(608811)) and srcUser:HasBuffID(138002) then
+    DamSpike = DamSpike + 0.2
+  elseif targetUser:GetNpcID() == 0 and (srcUser:HasBuffID(59840) or srcUser:HasBuffID(608811)) then
+    DamSpike = DamSpike + 0.1
+  end
+  if targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58120) and srcUser:HasBuffID(138002) then
+    DamSpike = DamSpike + 0.2
+  elseif targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58120) then
+    DamSpike = DamSpike + 0.1
+  end
+  if targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58730) and srcUser:HasBuffID(138002) then
+    DamSpike = DamSpike + 0.2
+  elseif targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58730) then
+    DamSpike = DamSpike + 0.1
+  end
+  if (targetUser.boss or targetUser.mini) and srcUser:HasBuffID(58730) and srcUser:HasBuffID(138002) then
+    DamSpike = DamSpike + 0.1
+  elseif (targetUser.boss or targetUser.mini) and srcUser:HasBuffID(58730) then
+    DamSpike = DamSpike + 0.05
+  end
+  if targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(57780) then
+    local Card22 = srcUser:GetEquipCardNum(7, 23331)
+    local RefineLv = srcUser:GetEquipedRefineLv(7)
+    DamSpike = DamSpike + 0.01 * RefineLv * Card22
+  end
+  local DamReducThrough = srcUser:GetProperty("DamReducThrough")
+  local DamSpikeResistance = targetUser:GetProperty("DamSpikeResistance")
+  if 0 <= DamSpike then
+    DamSpike = DamSpike * math.max(1 - DamSpikeResistance, 0)
+  end
+  if 0 <= DamReduc2 then
+    DamReduc2 = DamReduc2 * math.max(1 - DamReducThrough, 0)
+  end
   local A = 1 - (1 + 0.009 * ReduceLv + DamSpike - DamReduc2) * SkillDamReduc
   local mapid, maptype = srcUser:GetMapInfo()
   if (maptype == 2 or maptype == 4) and targetUser:GetNpcID() ~= 40022 then
@@ -8108,6 +8395,47 @@ function CommonFun.calcMDamReDuc(srcUser, targetUser)
   local MDamReduc2 = targetUser:GetProperty("MDamReduc")
   local ReduceLv = CommonFun.calcSpikeLv(srcUser, targetUser)
   local SkillMDamReduc = CommonFun.calcSkillMDamReduc(srcUser, targetUser)
+  if srcUser:HasBuffID(138002) then
+    local DamSpike = srcUser:GetProperty("DamSpike")
+    MDamSpike = MDamSpike + DamSpike
+  end
+  if srcUser:HasBuffID(141170) then
+    local zengqiang = srcUser:GetBuffLevel(141170)
+    MDamSpike = MDamSpike + DamSpike * (0.05 * zengqiang + 0.5)
+  end
+  if targetUser:GetNpcID() ~= 0 and (srcUser:HasBuffID(57720) or srcUser:HasBuffID(608711)) and srcUser:HasBuffID(138002) then
+    MDamSpike = MDamSpike + 0.2
+  elseif targetUser:GetNpcID() ~= 0 and (srcUser:HasBuffID(57720) or srcUser:HasBuffID(608711)) then
+    MDamSpike = MDamSpike + 0.1
+  end
+  if targetUser:GetNpcID() == 0 and (srcUser:HasBuffID(59840) or srcUser:HasBuffID(608811)) and srcUser:HasBuffID(138002) then
+    MDamSpike = MDamSpike + 0.2
+  elseif targetUser:GetNpcID() == 0 and (srcUser:HasBuffID(59840) or srcUser:HasBuffID(608811)) then
+    MDamSpike = MDamSpike + 0.1
+  end
+  if targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58120) and srcUser:HasBuffID(138002) then
+    MDamSpike = MDamSpike + 0.2
+  elseif targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58120) then
+    MDamSpike = MDamSpike + 0.1
+  end
+  if targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58730) and srcUser:HasBuffID(138002) then
+    MDamSpike = MDamSpike + 0.2
+  elseif targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58730) then
+    MDamSpike = MDamSpike + 0.1
+  end
+  if (targetUser.boss or targetUser.mini) and srcUser:HasBuffID(58730) and srcUser:HasBuffID(138002) then
+    MDamSpike = MDamSpike + 0.1
+  elseif (targetUser.boss or targetUser.mini) and srcUser:HasBuffID(58730) then
+    MDamSpike = MDamSpike + 0.05
+  end
+  local MDamReducThrough = srcUser:GetProperty("MDamReducThrough")
+  local MDamSpikeResistance = targetUser:GetProperty("MDamSpikeResistance")
+  if 0 <= MDamSpike then
+    MDamSpike = MDamSpike * math.max(1 - MDamSpikeResistance, 0)
+  end
+  if 0 <= MDamReduc2 then
+    MDamReduc2 = MDamReduc2 * math.max(1 - MDamReducThrough, 0)
+  end
   local A = 1 - (1 + 0.009 * ReduceLv + MDamSpike - MDamReduc2) * SkillMDamReduc
   local mapid, maptype = srcUser:GetMapInfo()
   if (maptype == 2 or maptype == 4) and targetUser:GetNpcID() ~= 40022 then
@@ -8117,6 +8445,32 @@ function CommonFun.calcMDamReDuc(srcUser, targetUser)
   end
   if 0.85 <= A then
     A = 0.85
+  end
+  return A
+end
+
+function CommonFun.calcRefineDamReduc(srcUser, targetUser)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local RefineThrough = srcUser:GetProperty("RefineThrough")
+  local RefineDamReduc = targetUser:GetProperty("RefineDamReduc")
+  local A = RefineDamReduc - RefineThrough
+  if 0.9 <= A and targetUser:GetNpcID() == 0 then
+    A = 0.9
+  end
+  return A
+end
+
+function CommonFun.calcRefineMDamReduc(srcUser, targetUser)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local RefineThrough = srcUser:GetProperty("RefineThrough")
+  local RefineMDamReduc = targetUser:GetProperty("RefineMDamReduc")
+  local A = RefineMDamReduc - RefineThrough
+  if 0.9 <= A and targetUser:GetNpcID() == 0 then
+    A = 0.9
   end
   return A
 end
@@ -8175,6 +8529,14 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
       Damage_Per = Damage_Per + 0.15
     end
   end
+  if srcUser:HasBuffID(75870) then
+    local target_Hp = targetUser:GetProperty("Hp")
+    local target_MaxHp = targetUser:GetProperty("MaxHp")
+    local target_hpper = target_Hp / target_MaxHp
+    if 0.7 < target_hpper then
+      Damage_Per = Damage_Per + 0.1
+    end
+  end
   local shenqi = 0
   if srcUser:HasBuffID(107031) then
     shenqi = 0.5
@@ -8220,12 +8582,21 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
   if srcUser:HasBuffID(57480) then
     Personalartifact = Personalartifact + 0.02 * NumDebuff * Cardsnake
   end
+  if srcUser:HasBuffID(75480) and 1 <= NumDebuff then
+    Personalartifact = Personalartifact + 0.1 + 0.02 * NumDebuff
+  end
+  if srcUser:HasBuffID(79680) and 1 <= NumDebuff then
+    Personalartifact = Personalartifact + 0.1
+  end
   local count = params.hitedCount
   local DemonLeader = 0
-  if srcUser:HasBuffID(57200) and srcUser:HasBuffID(81002810) then
+  if srcUser:HasBuffID(57201) and srcUser:HasBuffID(81002810) then
     DemonLeader = 0.1
-  elseif srcUser:HasBuffID(57200) and 1 <= count then
+  elseif srcUser:HasBuffID(57201) and 1 <= count then
     DemonLeader = 0.1 / count
+  end
+  if srcUser:HasBuffID(75850) and 1 <= count then
+    DemonLeader = DemonLeader + math.min(0.02 * count, 0.06)
   end
   local Transmission = 0
   local SecretLandGemLv = srcUser:GetSecretLandGemLv(384002)
@@ -8290,6 +8661,15 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
   if (srcUser:HasBuffID(55740) or srcUser:HasBuffID(606310) or srcUser:HasBuffID(606320) or srcUser:HasBuffID(606330) or srcUser:HasBuffID(606340) or srcUser:HasBuffID(606350)) and srcUser:HasBuffID(81001690) and Dtarget_hpper < 0.5 then
     dragon = dragon + 0.05
   end
+  if srcUser:HasBuffID(79300) and Dtarget_hpper < 0.5 then
+    dragon = dragon + 0.1
+  end
+  if srcUser:HasBuffID(79500) and Dtarget_hpper < 0.15 then
+    dragon = dragon + 0.2
+  end
+  if srcUser:HasBuffID(79690) and Dtarget_hpper < 0.15 then
+    dragon = dragon + 0.2
+  end
   local CriFinalDamPer = 0
   local Cri = srcUser:GetProperty("Cri")
   local CriRes2 = targetUser:GetProperty("CriRes")
@@ -8300,6 +8680,16 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
     CriFinalDamPer = CriFinalDamPer + math.min(RateFinal * 0.06 / 100, 0.08)
   elseif srcUser:HasBuffID(29422) then
     CriFinalDamPer = CriFinalDamPer + math.min(RateFinal * 0.15 / 100, 0.2)
+  end
+  if srcUser:HasBuffID(28526) and targetUser:HasBuffID(28523) then
+    CriFinalDamPer = CriFinalDamPer + 0.06
+  elseif srcUser:HasBuffID(28527) and targetUser:HasBuffID(28524) then
+    CriFinalDamPer = CriFinalDamPer + 0.12
+  elseif srcUser:HasBuffID(28528) and targetUser:HasBuffID(28525) then
+    CriFinalDamPer = CriFinalDamPer + 0.18
+  end
+  if srcUser:HasBuffID(79520) then
+    CriFinalDamPer = CriFinalDamPer + math.min(RateFinal * 0.1 / 100, 0.1)
   end
   local Devilballs = 0
   local Dtarget_Hp = targetUser:GetProperty("Hp")
@@ -8426,6 +8816,140 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
       IgnoreD = IgnoreD + 0.15
     end
   end
+  local NormalAtkDam = srcUser:GetProperty("NormalAtkDam")
+  local NormalAtkRes = targetUser:GetProperty("NormalAtkRes")
+  local SkillDam = srcUser:GetProperty("SkillDam")
+  local SkillRes = targetUser:GetProperty("SkillRes")
+  local NormalEnd = NormalAtkDam - NormalAtkRes
+  local SkillEnd = SkillDam - SkillRes
+  local ExtraDamage = 0
+  if srcUser:HasBuffID(58440) and 0 < SkillEnd then
+    ExtraDamage = ExtraDamage + 0.1
+  end
+  if srcUser:HasBuffID(55730) and srcUser:HasBuffID(59050) and 0 < SkillEnd then
+    ExtraDamage = ExtraDamage + 0.15
+  end
+  if srcUser:HasBuffID(58620) and 0 < NormalEnd then
+    ExtraDamage = ExtraDamage + 0.1
+  end
+  if srcUser:HasBuffID(59260) and 0 < NormalEnd then
+    ExtraDamage = ExtraDamage + 0.1
+  end
+  local DamSpike = srcUser:GetProperty("DamSpike")
+  if nil ~= CommonFun.Shape and CommonFun.Shape.M == targetUser.shape and srcUser:HasBuffID(90004384) then
+    DamSpike = DamSpike + 0.15
+  end
+  local DamReduc2 = targetUser:GetProperty("DamReduc")
+  local ReduceLv = CommonFun.calcSpikeLv(srcUser, targetUser)
+  if srcUser:HasBuffID(138002) then
+    local MDamSpike = srcUser:GetProperty("MDamSpike")
+    DamSpike = DamSpike + MDamSpike
+  end
+  if targetUser:GetNpcID() ~= 0 and (srcUser:HasBuffID(57720) or srcUser:HasBuffID(608711)) and srcUser:HasBuffID(138002) then
+    DamSpike = DamSpike + 0.2
+  elseif targetUser:GetNpcID() ~= 0 and (srcUser:HasBuffID(57720) or srcUser:HasBuffID(608711)) then
+    DamSpike = DamSpike + 0.1
+  end
+  if targetUser:GetNpcID() == 0 and (srcUser:HasBuffID(59840) or srcUser:HasBuffID(608811)) and srcUser:HasBuffID(138002) then
+    DamSpike = DamSpike + 0.2
+  elseif targetUser:GetNpcID() == 0 and (srcUser:HasBuffID(59840) or srcUser:HasBuffID(608811)) then
+    DamSpike = DamSpike + 0.1
+  end
+  if targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58120) and srcUser:HasBuffID(138002) then
+    DamSpike = DamSpike + 0.2
+  elseif targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58120) then
+    DamSpike = DamSpike + 0.1
+  end
+  if targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58730) and srcUser:HasBuffID(138002) then
+    DamSpike = DamSpike + 0.2
+  elseif targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58730) then
+    DamSpike = DamSpike + 0.1
+  end
+  if (targetUser.boss or targetUser.mini) and srcUser:HasBuffID(58730) and srcUser:HasBuffID(138002) then
+    DamSpike = DamSpike + 0.1
+  elseif (targetUser.boss or targetUser.mini) and srcUser:HasBuffID(58730) then
+    DamSpike = DamSpike + 0.05
+  end
+  if targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(57780) then
+    local Card22 = srcUser:GetEquipCardNum(7, 23331)
+    local RefineLv = srcUser:GetEquipedRefineLv(7)
+    DamSpike = DamSpike + 0.01 * RefineLv * Card22
+  end
+  local DamReducThrough = srcUser:GetProperty("DamReducThrough")
+  local DamSpikeResistance = targetUser:GetProperty("DamSpikeResistance")
+  if 0 <= DamSpike then
+    DamSpike = DamSpike * math.max(1 - DamSpikeResistance, 0)
+  end
+  if 0 <= DamReduc2 then
+    DamReduc2 = DamReduc2 * math.max(1 - DamReducThrough, 0)
+  end
+  local DamSpikeEnd = 0.009 * ReduceLv + DamSpike - DamReduc2
+  if srcUser:HasBuffID(58830) and 0 < DamSpikeEnd then
+    ExtraDamage = ExtraDamage + 0.15
+  end
+  if srcUser:HasBuffID(28570) and 0 < DamSpikeEnd then
+    ExtraDamage = ExtraDamage + 0.04
+  elseif srcUser:HasBuffID(28571) and 0 < DamSpikeEnd then
+    ExtraDamage = ExtraDamage + 0.08
+  elseif srcUser:HasBuffID(28572) and 0 < DamSpikeEnd then
+    ExtraDamage = ExtraDamage + 0.12
+  end
+  local MDamSpike = srcUser:GetProperty("MDamSpike")
+  local MDamReduc2 = targetUser:GetProperty("MDamReduc")
+  if srcUser:HasBuffID(138002) then
+    local DamSpike = srcUser:GetProperty("DamSpike")
+    MDamSpike = MDamSpike + DamSpike
+  end
+  if srcUser:HasBuffID(141170) then
+    local zengqiang = srcUser:GetBuffLevel(141170)
+    MDamSpike = MDamSpike + DamSpike * (0.05 * zengqiang + 0.5)
+  end
+  if targetUser:GetNpcID() ~= 0 and (srcUser:HasBuffID(57720) or srcUser:HasBuffID(608711)) and srcUser:HasBuffID(138002) then
+    MDamSpike = MDamSpike + 0.2
+  elseif targetUser:GetNpcID() ~= 0 and (srcUser:HasBuffID(57720) or srcUser:HasBuffID(608711)) then
+    MDamSpike = MDamSpike + 0.1
+  end
+  if targetUser:GetNpcID() == 0 and (srcUser:HasBuffID(59840) or srcUser:HasBuffID(608811)) and srcUser:HasBuffID(138002) then
+    MDamSpike = MDamSpike + 0.2
+  elseif targetUser:GetNpcID() == 0 and (srcUser:HasBuffID(59840) or srcUser:HasBuffID(608811)) then
+    MDamSpike = MDamSpike + 0.1
+  end
+  if targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58120) and srcUser:HasBuffID(138002) then
+    MDamSpike = MDamSpike + 0.2
+  elseif targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58120) then
+    MDamSpike = MDamSpike + 0.1
+  end
+  if targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58730) and srcUser:HasBuffID(138002) then
+    MDamSpike = MDamSpike + 0.2
+  elseif targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(58730) then
+    MDamSpike = MDamSpike + 0.1
+  end
+  if (targetUser.boss or targetUser.mini) and srcUser:HasBuffID(58730) and srcUser:HasBuffID(138002) then
+    MDamSpike = MDamSpike + 0.1
+  elseif (targetUser.boss or targetUser.mini) and srcUser:HasBuffID(58730) then
+    MDamSpike = MDamSpike + 0.05
+  end
+  local MDamReducThrough = srcUser:GetProperty("MDamReducThrough")
+  local MDamSpikeResistance = targetUser:GetProperty("MDamSpikeResistance")
+  if 0 <= MDamSpike then
+    MDamSpike = MDamSpike * math.max(1 - MDamSpikeResistance, 0)
+  end
+  if 0 <= MDamReduc2 then
+    MDamReduc2 = MDamReduc2 * math.max(1 - MDamReducThrough, 0)
+  end
+  local MDamSpikeEnd = 0.009 * ReduceLv + MDamSpike - MDamReduc2
+  if srcUser:HasBuffID(58870) and 0 < MDamSpikeEnd then
+    ExtraDamage = ExtraDamage + 0.15
+  end
+  local MoveSpdDamage = 0
+  local MoveSpdS = srcUser:GetProperty("MoveSpd")
+  local MoveSpdT = targetUser:GetProperty("MoveSpd")
+  if MoveSpdS > MoveSpdT and srcUser:HasBuffID(59381) then
+    MoveSpdDamage = MoveSpdDamage + 0.1
+  end
+  if MoveSpdS > MoveSpdT and srcUser:HasBuffID(81004980) then
+    MoveSpdDamage = MoveSpdDamage + 0.01
+  end
   local StateEffect = targetUser:GetProperty("StateEffect")
   local bits = CommonFun.getBits(StateEffect)
   local CardNum = srcUser:GetEquipCardNum(7, 23035)
@@ -8458,6 +8982,12 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
   if srcUser:HasBuffID(55800) and bits[CommonFun.StateEffect.Blood] == 1 then
     GunBlood = GunBlood + 0.1
   end
+  if srcUser:HasBuffID(78120) and bits[CommonFun.StateEffect.Blood] == 1 then
+    GunBlood = GunBlood + 0.1
+  end
+  if srcUser:HasBuffID(79910) and bits[CommonFun.StateEffect.Blood] == 1 then
+    GunBlood = GunBlood + 0.15
+  end
   local InkSnake = 0
   if srcUser:HasBuffID(57530) and (bits[CommonFun.StateEffect.Dark] == 1 or bits[CommonFun.StateEffect.Curse] == 1) then
     InkSnake = InkSnake + 0.15
@@ -8471,6 +9001,17 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
   end
   if srcUser:HasBuffID(59550) and srcUser:HasBuffID(81005150) and bits[CommonFun.StateEffect.Burn] == 1 then
     Burndamage = Burndamage + 0.05
+  end
+  local Frozendamage = 0
+  if srcUser:HasBuffID(76350) and bits[CommonFun.StateEffect.Freeze] == 1 then
+    Frozendamage = Frozendamage + 0.1
+  end
+  if srcUser:HasBuffID(700690) and bits[CommonFun.StateEffect.Freeze] == 1 then
+    Frozendamage = Frozendamage + 0.1
+  end
+  local Sleepdamage = 0
+  if srcUser:HasBuffID(77152) and bits[CommonFun.StateEffect.Sleep] == 1 then
+    Sleepdamage = Sleepdamage + 0.1
   end
   local HpM = srcUser:GetProperty("Hp")
   local MaxHpM = srcUser:GetProperty("MaxHp")
@@ -8493,8 +9034,27 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
   local DefPer2 = targetUser:GetProperty("DefPer")
   local Vit2 = targetUser:GetProperty("Vit")
   local VitPer2 = targetUser:GetProperty("VitPer")
-  if srcUser:HasBuffID(55960) then
-    Danatos = math.floor(((Def2 - Vit2) * (1 + DefPer2) + Vit2 * (1 + VitPer2)) / 200) * 0.001
+  local CardDanatos = srcUser:GetEquipCardNum(7, 23350)
+  if 0 < CardDanatos then
+    Danatos = math.min(math.floor(((Def2 - Vit2) * (1 + DefPer2) + Vit2 * (1 + VitPer2)) / 50) * 0.001, 0.1) * CardDanatos
+  end
+  if srcUser:HasBuffID(28500) then
+    Danatos = Danatos + math.min(math.floor(((Def2 - Vit2) * (1 + DefPer2) + Vit2 * (1 + VitPer2)) / 100) * 0.002, 0.06)
+  elseif srcUser:HasBuffID(28501) then
+    Danatos = Danatos + math.min(math.floor(((Def2 - Vit2) * (1 + DefPer2) + Vit2 * (1 + VitPer2)) / 100) * 0.004, 0.12)
+  elseif srcUser:HasBuffID(28502) then
+    Danatos = Danatos + math.min(math.floor(((Def2 - Vit2) * (1 + DefPer2) + Vit2 * (1 + VitPer2)) / 100) * 0.006, 0.18)
+  end
+  local MDef2 = targetUser:GetProperty("MDef")
+  local MDefPer2 = targetUser:GetProperty("MDefPer")
+  local Int2 = targetUser:GetProperty("Int")
+  local IntPer2 = targetUser:GetProperty("IntPer")
+  if srcUser:HasBuffID(28510) then
+    Danatos = Danatos + math.min(math.floor(((MDef2 - Int2) * (1 + MDefPer2) + Int2 * (1 + IntPer2)) / 50) * 0.002, 0.06)
+  elseif srcUser:HasBuffID(28511) then
+    Danatos = Danatos + math.min(math.floor(((MDef2 - Int2) * (1 + MDefPer2) + Int2 * (1 + IntPer2)) / 50) * 0.004, 0.12)
+  elseif srcUser:HasBuffID(28512) then
+    Danatos = Danatos + math.min(math.floor(((MDef2 - Int2) * (1 + MDefPer2) + Int2 * (1 + IntPer2)) / 50) * 0.006, 0.18)
   end
   local MaxSp1 = srcUser:GetProperty("MaxSp")
   local Image = 0
@@ -8566,7 +9126,7 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
     Mvp_blood = (MaxHp - Hp) / MaxHp * 5
   end
   local Final = 1 + Damage_Per + shenqi + Godness + Hide + Overlord + dragon + CardDie + tiger + kaimeila + atls + Ball + Whale + queen + kb + gz + sword + Dagger + testbuff + GreatNum + GreatbuffD + tail + Mineral + staff + Devilballs + Personalartifact + robot + Ignore + IgnoreD
-  Final = Final + SunHate + Mvp_blood + Danatos + Image + GunBlood + Transmission + Handtohand + InkSnake + Thunder + DemonLeader + Burndamage + CriFinalDamPer + TeamDam
+  Final = Final + SunHate + Mvp_blood + Danatos + Image + GunBlood + Transmission + Handtohand + InkSnake + Thunder + DemonLeader + Burndamage + CriFinalDamPer + TeamDam + ExtraDamage + Frozendamage + Sleepdamage + MoveSpdDamage
   local huangjing = 0
   if srcUser:HasBuffID(180005) and targetUser.isRareElite then
     local jingying = srcUser:GetBuffLayer(180005)
@@ -8773,6 +9333,7 @@ function CommonFun.DoCalcDamage(srcUser, targetUser, params, logger)
   local MRefine = srcUser:GetProperty("MRefine")
   local skillParams = Table_Skill[params.skillIDAndLevel]
   local damageParamList = skillParams.Damage
+  local jianyu = false
   for i = 1, #damageParamList do
     local damageParam = damageParamList[i]
     local func = CommonFun.CalcDamageFuncs[damageParam.type]
@@ -8783,6 +9344,7 @@ function CommonFun.DoCalcDamage(srcUser, targetUser, params, logger)
       local srcAtkElement = CommonFun.GetUserAtkAttr(srcUser, params, damageParam)
       if (targetUser:HasBuffID(116813) or targetUser:HasBuffID(116817) or targetUser:HasBuffID(186150) or targetUser:HasBuffID(156111) or targetUser:HasBuffID(135271) or targetUser:HasBuffID(232130) or targetUser:HasBuffID(116810) and targetUser.boss == false and targetUser.mini == false) and 0 < partDamage then
         local Numjianyu = srcUser:GetRunePoint(223021)
+        jianyu = true
         local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
         local GemValue = srcUser:GetGemValue(21161)
         if skillID == 1915 or skillID == 1908 or skillID == 1941 then
@@ -8790,7 +9352,6 @@ function CommonFun.DoCalcDamage(srcUser, targetUser, params, logger)
             partDamage = partDamage * Numjianyu * 0.2
           else
             partDamage = 0
-            partDamageType = CommonFun.DamageType.WeaponBlock
           end
         elseif skillID == 1164 then
           if targetUser:HasBuffID(116810) and srcUser:HasBuffID(22000010) then
@@ -8800,11 +9361,9 @@ function CommonFun.DoCalcDamage(srcUser, targetUser, params, logger)
             partDamage = 0
           else
             partDamage = 0
-            partDamageType = CommonFun.DamageType.WeaponBlock
           end
         elseif srcAtkElement ~= 8 then
           partDamage = 0
-          partDamageType = CommonFun.DamageType.WeaponBlock
         end
       end
       if (srcAtkElement == 5 or srcAtkElement == 6 or srcAtkElement == 8) and targetUser:HasBuffID(154910) then
@@ -8882,6 +9441,9 @@ function CommonFun.DoCalcDamage(srcUser, targetUser, params, logger)
     else
       logger.error(string.format("CommonFun.CalcDamageFuncs[%s] is nil", tostring(damageParam.type)))
     end
+  end
+  if damage == 0 and jianyu == true then
+    damageType = CommonFun.DamageType.WeaponBlock
   end
   damage = math.floor(damage)
   if 0 < damage and targetUser:GetNpcID() == 30043 then
@@ -9038,7 +9600,12 @@ function CommonFun.CalcShareDamage(srcUser, tUser, damage, damagetype)
     if tUser:HasBuffID(buffID) and buff ~= nil and buff.BuffEffect ~= nil and buff.BuffEffect.shareper ~= nil then
       local shareTargetID = tUser:GetBuffFromID(buffID)
       if buff.BuffEffect.share_to_being == 1 then
-        shareTargetID = tUser:GetHighHpBeingGUID()
+        if tUser:HasBuffID(1003570) then
+          shareTargetID = tUser:GetBlendBeingNpcID()
+        end
+        if tUser:HasBuffID(1003570) == false or CommonFunHelper.GetUserHP(shareTargetID) == 0 then
+          shareTargetID = tUser:GetHighHpBeingGUID()
+        end
       end
       if shareTargetID ~= 0 and (buff.BuffEffect.checkbuff == nil or CommonFunHelper.HasBuffID(shareTargetID, buff.BuffEffect.checkbuff) == true) and (buff.BuffEffect.range == nil or tUser:GetDistance(shareTargetID) <= buff.BuffEffect.range) then
         local perdam = buff.BuffEffect.shareper * damage
@@ -9457,6 +10024,11 @@ function CommonFun.calcDamage_20(srcUser, targetUser, params, damageParam, logge
   if skillID == 380 or skillID == 383 or skillID == 384 then
     AtkPer = 0
   end
+  local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
+  if skillID == 5337 and srcUser:HasBuffID(1003503) then
+    Atk = CommonFunHelper.GetProperty(srcUser:GetBlendBeingNpcID(), "Atk")
+    AtkPer = 0
+  end
   local BaseAtk = Str * 2 + math.floor(Str * Str / 100) + math.floor(Dex / 5) + math.floor(Luk / 5)
   local AtkFinal = ((Atk - BaseAtk) * (1 + AtkPer) * CommonFun.ShapeCorrection(srcUser, targetUser) * bodyparam * elementparam * elementparam2 + BaseAtk) * raceparam * bossparam * bossparam2
   local DefReduc = CommonFun.CalcDef(srcUser, targetUser)
@@ -9517,20 +10089,25 @@ function CommonFun.calcDamage_21(srcUser, targetUser, params, damageParam, logge
     NormalAtk = NormalAtkAttr + 3 * Dex
   end
   local SpAtk = 0
-  if srcUser:HasBuffID(131096) and (skillID == 300 or skillID == 113 or skillID == 252 or skillID == 253) then
+  if srcUser:HasBuffID(1007201) then
     local Sp = srcUser:GetProperty("Sp")
-    SpAtk = Sp
+    local MaxSp = srcUser:GetProperty("MaxSp")
+    local skilllv_liuxing = srcUser:GetLernedSkillLevel(5720)
+    local skilllv_liuxing3 = srcUser:GetLernedSkillLevel(5723)
+    SpAtk = math.max(Sp, MaxSp * (0.05 * skilllv_liuxing3)) * skilllv_liuxing * 0.1
   end
   local BaseAtk = Dex * 2 + math.floor(Dex * Dex / 100) + math.floor(Str / 5) + math.floor(Luk / 5)
-  local AtkFinal = (((Atk - BaseAtk + NormalAtk + atk_add) * (1 + AtkPer) + SpAtk) * CommonFun.ShapeCorrection(srcUser, targetUser) * bodyparam * elementparam * elementparam2 + BaseAtk) * raceparam * bossparam * bossparam2
+  local AtkFinal = ((Atk - BaseAtk + NormalAtk + atk_add + SpAtk) * (1 + AtkPer) * CommonFun.ShapeCorrection(srcUser, targetUser) * bodyparam * elementparam * elementparam2 + BaseAtk) * raceparam * bossparam * bossparam2
   local DefReduc = CommonFun.CalcDef(srcUser, targetUser)
   local targetid = targetUser:GetGuid()
   local distance = srcUser:GetDistance(targetid)
   local skilllv_1 = srcUser:GetLernedSkillLevel(133)
   local DisDam = 1
+  local Sp = srcUser:GetProperty("Sp")
+  local MaxSp = srcUser:GetProperty("MaxSp")
   if 10 < skilllv_1 then
     DisDam = 1 + distance / 7.5 * (skilllv_1 - 10) * 0.1
-    if srcUser:HasBuffID(131080) or targetUser:IsBuffFrom(1007000, srcUser:GetGuid()) and srcUser:HasBuffID(1007050) then
+    if srcUser:HasBuffID(131080) or targetUser:IsBuffFrom(1007000, srcUser:GetGuid()) and srcUser:HasBuffID(1007050) or srcUser:HasBuffID(1007200) and 0.05 <= Sp / MaxSp then
       DisDam = 1 + (skilllv_1 - 10) * 0.1
     end
     DisDam = math.min(DisDam, 2)
@@ -12502,6 +13079,10 @@ function CommonFun.calcDamage_6106(srcUser, targetUser, params, damageParam, log
     IgnoreMDef = 1
   end
   local skilllv = srcUser:GetLernedSkillLevel(445)
+  local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
+  if skillID == 5336 and srcUser:HasBuffID(1003502) then
+    MAtk = CommonFunHelper.GetProperty(srcUser:GetBlendBeingNpcID(), "MAtk")
+  end
   local srcAtkElement = CommonFun.GetUserAtkAttr(srcUser, params, damageParam)
   local targetDefElement = targetUser:GetProperty("DefAttr")
   local elementparam2 = CommonFun.CalcElementParam2(srcUser, targetUser, params, damageParam, logger)
@@ -12729,6 +13310,16 @@ function CommonFun.calcDamage_6402(srcUser, targetUser, params, damageParam, log
   end
   local Num = srcUser:GetRunePoint(64040)
   local RuneDamage = 1 + Num * 0.05
+  local skilllv_zb1 = srcUser:GetLernedSkillLevel(1284)
+  local skilllv1_gz = srcUser:GetLernedSkillLevel(5620)
+  local skilllv2_bg = srcUser:GetLernedSkillLevel(5623)
+  local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
+  if skillID == 5624 then
+    damChangePer = 0.1 * skilllv_zb1 * (1 + skilllv1_gz * 0.1)
+  end
+  if skillID == 5626 then
+    damChangePer = 0.1 * skilllv_zb1 * (skilllv2_bg * 0.05)
+  end
   local A = ((AtkFinal * DefReduc * (1 - DamReduc2) + Refine) * damChangePer * (Sp / 100 + math.min(Hp / 5000 * pvpRatio, 200) + Vit / 10 + Fifth) * (1 - RefineDamReduc) * (1 + DamIncrease - ShortRangeDamReduc2) - Vit2 * (1 + VitPer2)) * Wrench * RuneDamage
   if A <= 1 then
     return 1
@@ -13475,7 +14066,7 @@ function CommonFun.calcDamage_1201(srcUser, targetUser, params, damageParam, log
   skilllv_1 = math.min(skilllv_1, 5)
   local GemValue = srcUser:GetGemValue(11131)
   if fromid == guid then
-    Sign = 1 + (skilllv_1 * 0.01 + 0.02 + GemValue / 100000) * Num1
+    Sign = 1 + (skilllv_1 * 0.01 + 0.02 + GemValue / 100000) * Num1 * 2
   end
   local BaseAtk = Str * 2 + math.floor(Str * Str / 100) + math.floor(Dex / 5) + math.floor(Luk / 5)
   local AtkFinal = ((Atk - BaseAtk) * (1 + AtkPer) * CommonFun.ShapeCorrection(srcUser, targetUser) * bodyparam * elementparam * elementparam2 + BaseAtk) * raceparam * bossparam * bossparam2
@@ -13498,7 +14089,20 @@ function CommonFun.calcDamage_1201(srcUser, targetUser, params, damageParam, log
   if bits2[CommonFun.StateEffect.Dark] == 1 then
     Heian = 1 + skilllv_ha * 0.04
   end
+  local skilllv_zhongyan = srcUser:GetLernedSkillLevel(5223)
+  local skilllv_lianci = srcUser:GetLernedSkillLevel(21)
+  local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
+  if skillID == 5224 then
+    damChangePer = 0.2 * skilllv_lianci + 1
+  end
   local A = ((AtkFinal * DefReduc * (1 - DamReduc2) + Refine) * damChangePer * (1 - RefineDamReduc) * (1 + DamIncrease - ShortRangeDamReduc2) * GemDam - Vit2 * (1 + VitPer2)) * sizeCorrection * Sign * Heian + BaseLvDamage
+  local skilllv_guanshi = srcUser:GetLernedSkillLevel(5221)
+  if targetUser:HasBuffID(1002200) and 1 <= skilllv_guanshi then
+    A = A * (1 + skilllv_guanshi * 0.1)
+  end
+  if skillID == 5224 then
+    A = A * 0.1 * skilllv_zhongyan
+  end
   if A <= 1 then
     return 1
   end
@@ -13978,7 +14582,7 @@ function CommonFun.calcDamage_1301(srcUser, targetUser, params, damageParam, log
   skilllv_1 = math.min(skilllv_1, 5)
   local GemValue = srcUser:GetGemValue(11131)
   if fromid == guid then
-    Sign = 1 + (skilllv_1 * 0.01 + 0.02 + GemValue / 100000) * Num1
+    Sign = 1 + (skilllv_1 * 0.01 + 0.02 + GemValue / 100000) * Num1 * 2
   end
   local ShortRangeDamReduc2 = targetUser:GetProperty("ShortRangeDamReduc")
   local GemValue = srcUser:GetGemValue(11072)
@@ -13990,7 +14594,20 @@ function CommonFun.calcDamage_1301(srcUser, targetUser, params, damageParam, log
   if bits2[CommonFun.StateEffect.Dark] == 1 then
     Heian = 1 + skilllv_ha * 0.04
   end
+  local skilllv_zhongyan = srcUser:GetLernedSkillLevel(5223)
+  local skilllv_luoxuan = srcUser:GetLernedSkillLevel(28)
+  local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
+  if skillID == 5225 then
+    damChangePer = 0.5 * skilllv_luoxuan
+  end
   local A = (((Str / 4) ^ 2 + WeaponType_value * AtkFinal * elementparam * bodyparam) * damChangePer + Refine * 15 + BaseLv * 15) * raceparam * bossparam * (1 - RefineDamReduc) * (1 + DamIncrease - ShortRangeDamReduc2) * (1 - DamReduc2) * sizeCorrection * elementparam2 * bossparam2 * calcfbzq * Sign * GemDam * Heian
+  local skilllv_guanshi = srcUser:GetLernedSkillLevel(5221)
+  if targetUser:HasBuffID(1002200) and 1 <= skilllv_guanshi then
+    A = A * (1 + skilllv_guanshi * 0.1)
+  end
+  if skillID == 5225 then
+    A = A * 0.1 * skilllv_zhongyan
+  end
   if A <= 1 then
     return 1
   end
@@ -14247,7 +14864,7 @@ function CommonFun.calcDamage_1402(srcUser, targetUser, params, damageParam, log
     Fifth = 0.01
   end
   if fromid == guid then
-    Sign = 1 + (skilllv_1 * 0.01 + 0.02 + GemValue / 100000 + Fifth) * Num1
+    Sign = 1 + (skilllv_1 * 0.01 + 0.02 + GemValue / 100000 + Fifth) * Num1 * 2
   end
   local skilllv_ha = srcUser:GetLernedSkillLevel(3005)
   local StateEffect = targetUser:GetProperty("StateEffect")
@@ -14256,9 +14873,18 @@ function CommonFun.calcDamage_1402(srcUser, targetUser, params, damageParam, log
   if bits2[CommonFun.StateEffect.Dark] == 1 then
     Heian = 1 + skilllv_ha * 0.04
   end
-  local A = ((AtkFinal * DefReduc * (1 - DamReduc2) + Refine) * damChangePer * (1 - RefineDamReduc) * (1 + DamIncrease - ShortRangeDamReduc2) - Vit2 * (1 + VitPer2)) * Sign * Heian
+  local skilllv_zhongyan = srcUser:GetLernedSkillLevel(5223)
+  local skilllv_huanying = srcUser:GetLernedSkillLevel(1265)
+  local skilllv_jisu = srcUser:GetLernedSkillLevel(1266)
   local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
-  if skillID == 1266 then
+  if skillID == 5226 then
+    damChangePer = 0.4 * skilllv_huanying + 4.6
+  end
+  if skillID == 5227 then
+    damChangePer = 0.8 * skilllv_jisu + 8.8
+  end
+  local A = ((AtkFinal * DefReduc * (1 - DamReduc2) + Refine) * damChangePer * (1 - RefineDamReduc) * (1 + DamIncrease - ShortRangeDamReduc2) - Vit2 * (1 + VitPer2)) * Sign * Heian
+  if skillID == 1266 or skillID == 5227 then
     local Num = srcUser:GetRunePoint(14040)
     local RuneDamage = 1 + Num * 0.06
     local calcfbzq = 1
@@ -14286,6 +14912,13 @@ function CommonFun.calcDamage_1402(srcUser, targetUser, params, damageParam, log
       sizeCorrection = 1.5
     end
     A = A * ch * sizeCorrection
+  end
+  local skilllv_guanshi = srcUser:GetLernedSkillLevel(5221)
+  if targetUser:HasBuffID(1002200) and 1 <= skilllv_guanshi then
+    A = A * (1 + skilllv_guanshi * 0.1)
+  end
+  if skillID == 5226 or skillID == 5227 then
+    A = A * 0.1 * skilllv_zhongyan
   end
   if A <= 1 then
     return 1
@@ -14833,6 +15466,55 @@ function CommonFun.calcDamage_2307(srcUser, targetUser, params, damageParam, log
   local GemValue2 = srcUser:GetGemValue(21002)
   local GemDam = 1 + GemValue2 / 100000
   local A = ((MAtkFinal * MDefReduc * (1 - MDamReduc2) + MRefine) * (1 - RefineMDamReduc) * (damChangePer * GemValue1 / 100000) * (1 + MDamIncrease) * CommonFun.calcMagicElement(srcUser, targetUser, params, damageParam) * elementparam2 - Vit2 / 2 * (1 + VitPer2) - Int2 * (1 + IntPer2)) * (1 + RangeDam) * GemDam
+  if A <= 1 then
+    return 1
+  end
+  return A
+end
+
+function CommonFun.calcDamage_2320(srcUser, targetUser, params, damageParam, logger)
+  local Luk = srcUser:GetProperty("Luk")
+  local Int = srcUser:GetProperty("Int")
+  local Vit = srcUser:GetProperty("Vit")
+  local MAtk = srcUser:GetProperty("MAtk")
+  local MAtkPer = srcUser:GetProperty("MAtkPer")
+  local RangeDam = srcUser:GetProperty("RangeDam")
+  local MDamIncrease = CommonFun.calcMDamIncrease(srcUser, targetUser)
+  local IgnoreMDef = srcUser:GetProperty("IgnoreMDef")
+  if 1 <= IgnoreMDef then
+    IgnoreMDef = 1
+  end
+  local MRefine = srcUser:GetProperty("MRefine")
+  local srcAtkElement = CommonFun.GetUserAtkAttr(srcUser, params, damageParam)
+  local targetDefElement = targetUser:GetProperty("DefAttr")
+  local elementparam2 = CommonFun.CalcElementParam2(srcUser, targetUser, params, damageParam, logger)
+  local raceparam = CommonFun.CalcRaceParam(srcUser, targetUser, params, damageParam, logger)
+  local raceparam2 = CommonFun.CalcRaceParam2(srcUser, targetUser, params, damageParam, logger)
+  local bossparam = CommonFun.CalcBossParam(srcUser, targetUser, params, damageParam, logger)
+  local bossparam2 = CommonFun.CalcBossParam2(srcUser, targetUser, params, damageParam, logger)
+  local MDef2 = targetUser:GetProperty("MDef")
+  local MDefPer2 = targetUser:GetProperty("MDefPer")
+  local Vit2 = targetUser:GetProperty("Vit")
+  local VitPer2 = targetUser:GetProperty("VitPer")
+  local Int2 = targetUser:GetProperty("Int")
+  local IntPer2 = targetUser:GetProperty("IntPer")
+  local MDamReduc2 = CommonFun.calcMDamReDuc(srcUser, targetUser)
+  local RefineMDamReduc = targetUser:GetProperty("RefineMDamReduc")
+  local BaseMAtk = Int + math.floor(Int * Int / 100)
+  local MAtkFinal = ((MAtk - BaseMAtk) * (1 + MAtkPer) + BaseMAtk) * raceparam * bossparam * bossparam2
+  local skilllv_xingji = srcUser:GetLernedSkillLevel(5020)
+  local skilllv_xingji1 = srcUser:GetLernedSkillLevel(5021)
+  local MDefReduc = CommonFun.CalcMDef(srcUser, targetUser, params, damageParam)
+  local damChangePer = skilllv_xingji * 0.7 + 4.1
+  local Fifth = 1
+  if srcUser:HasBuffID(90004794) then
+    Fifth = Fifth + 0.1
+  end
+  local A = ((MAtkFinal * MDefReduc * (1 - MDamReduc2) + MRefine) * (1 - RefineMDamReduc) * damChangePer * (1 + MDamIncrease) * CommonFun.calcMagicElement(srcUser, targetUser, params, damageParam) * elementparam2 - Vit2 / 2 * (1 + VitPer2) - Int2 * (1 + IntPer2)) * Fifth * (1 + RangeDam)
+  local NumDebuff = targetUser:GetStatusNum()
+  if 1 <= NumDebuff then
+    A = A * (1 + 0.06 * skilllv_xingji1)
+  end
   if A <= 1 then
     return 1
   end
@@ -15696,6 +16378,10 @@ function CommonFun.calcDamage_3401(srcUser, targetUser, params, damageParam, log
       A = ((AtkFinal * (1 - DamReduc2) + Refine) * damChangePer * (1 - RefineDamReduc) * (1 + DamIncrease - ShortRangeDamReduc2) - Vit2 * (1 + VitPer2)) * NormalEnd
       return A * (1.5 + CriDamPer - CriDefPer2), CommonFun.DamageType.Crit
     end
+  end
+  if skillID == 6120 and targetUser:GetNpcID() ~= 0 then
+    local skilllv_zhongyan = srcUser:GetLernedSkillLevel(6123)
+    A = A * (1 + skilllv_zhongyan * 0.5)
   end
   return A
 end
@@ -17867,6 +18553,11 @@ function CommonFun.calcDamage_5402(srcUser, targetUser, params, damageParam, log
   local MDamReduc2 = CommonFun.calcMDamReDuc(srcUser, targetUser)
   local RefineMDamReduc = targetUser:GetProperty("RefineMDamReduc")
   local damChangePer = damageParam.damChangePer
+  local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
+  if skillID == 5924 then
+    local skilllv_zhicai = srcUser:GetLernedSkillLevel(5920)
+    damChangePer = skilllv_zhicai * 0.4 + 2
+  end
   local BaseMAtk = Int + math.floor(Int * Int / 100)
   local MAtkFinal = ((MAtk - BaseMAtk) * (1 + MAtkPer) + BaseMAtk) * raceparam * bossparam * bossparam2
   local MDefReduc = CommonFun.CalcMDef(srcUser, targetUser)
@@ -17950,7 +18641,17 @@ function CommonFun.calcDamage_5402(srcUser, targetUser, params, damageParam, log
   local GemValue1 = srcUser:GetGemValue(51003)
   local GemValue2 = srcUser:GetGemValue(51061)
   local GemDam = 1 + GemValue1 / 100000 + GemValue2 / 100000
-  local A = ((MAtkFinal * MDefReduc * (1 - MDamReduc2) + MRefine) * (damChangePer + Trial1) * (1 - RefineMDamReduc) * (1 + MDamIncrease) * ElementRate * elementparam2 - Vit2 / 2 * (1 + VitPer2) - Int2 * (1 + IntPer2)) * Trial2 * RuneDamage * GemDam
+  local shenghuo = 1
+  local huoyan = targetUser:GetBuffLayer(1009221)
+  local skilllv_shenghuo = srcUser:GetLernedSkillLevel(5923)
+  if skillID == 5924 and 1 <= huoyan and targetUser:HasBuffID(1009201) then
+    shenghuo = 1 + skilllv_shenghuo * 0.01 * huoyan
+  end
+  local RangeDam = 0
+  if skillID == 5924 or skillID == 1227 and srcUser:GetLernedSkillLevel(1227) >= 11 then
+    RangeDam = srcUser:GetProperty("RangeDam")
+  end
+  local A = ((MAtkFinal * MDefReduc * (1 - MDamReduc2) + MRefine) * (damChangePer + Trial1) * (1 - RefineMDamReduc) * (1 + MDamIncrease) * ElementRate * elementparam2 - Vit2 / 2 * (1 + VitPer2) - Int2 * (1 + IntPer2)) * Trial2 * RuneDamage * GemDam * shenghuo * (1 + RangeDam)
   if A <= 1 then
     return 1
   end
@@ -18562,7 +19263,7 @@ function CommonFun.calcDamage_7204(srcUser, targetUser, params, damageParam, log
   end
   local BaseAtk = Vit * 8 + math.floor(Vit * Vit / 100) * 4 + math.floor(Dex / 5) + math.floor(Luk / 5) + RefineLv * RefineLv * 2 + TopAtk
   local AtkFinal = BaseAtk * elementparam * elementparam2 * raceparam * bossparam * bossparam2
-  local DefReduc = CommonFun.CalcDef(srcUser, targetUser)
+  local DefReduc = CommonFun.CalcDef(srcUser, targetUser, params)
   local LongRangeDamReduc2 = targetUser:GetProperty("LongRangeDamReduc")
   local Num1 = srcUser:GetRunePoint(70100)
   local RuneDamage = 1 + 0.05 * Num1
@@ -18587,6 +19288,13 @@ function CommonFun.calcDamage_7204(srcUser, targetUser, params, damageParam, log
     local skilllv_db = srcUser:GetLernedSkillLevel(3804)
     shenp = 1 + skilllv_sp * 0.1
     VDDamage = VDDamage + skilllv_db * 0.05 * RefineLv
+  end
+  if skillID == 5424 then
+    if skilllv_1 <= 5 then
+      damChangePer = 3 + skilllv_1 * 0.6
+    else
+      damChangePer = 4 + skilllv_1 * 0.4
+    end
   end
   local RefineLvH = srcUser:GetEquipedRefineLv(2)
   local huangjiazhanjia = 0
@@ -18625,7 +19333,24 @@ function CommonFun.calcDamage_7204(srcUser, targetUser, params, damageParam, log
       Nirvana = Nirvana + 0.30000000000000004 * equipRingSD.quench_per / 100
     end
   end
-  local A = (AtkFinal * DefReduc * (1 - DamReduc2) * (damChangePer + VDDamage) * (1 + DamIncrease - LongRangeDamReduc2) * (1 - RefineDamReduc) - Vit2 * (1 + VitPer2)) * RuneDamage * Sheild * GemDam * shenp * (1 + huangjiazhanjia + jingdun + Nirvana)
+  local MaxHp = srcUser:GetProperty("MaxHp")
+  local skilllv_xueshi = srcUser:GetLernedSkillLevel(5422)
+  local zhongji = MaxHp * (skilllv_xueshi * 0.08)
+  local mapid, maptype = srcUser:GetMapInfo()
+  if maptype == 2 or maptype == 4 then
+    zhongji = zhongji / 4
+  end
+  local A = ((AtkFinal * (damChangePer + VDDamage) + zhongji) * DefReduc * (1 - DamReduc2) * (1 + DamIncrease - LongRangeDamReduc2) * (1 - RefineDamReduc) - Vit2 * (1 + VitPer2)) * RuneDamage * Sheild * GemDam * shenp * (1 + huangjiazhanjia + jingdun + Nirvana)
+  local DamRebound = srcUser:GetProperty("DamRebound")
+  local MDamRebound = srcUser:GetProperty("MDamRebound")
+  local skilllv_touzhi = srcUser:GetLernedSkillLevel(5420)
+  if skillID == 5424 then
+    A = A * (0.7 + 0.08 * skilllv_touzhi)
+  end
+  local skilllv_huixuan = srcUser:GetLernedSkillLevel(5423)
+  if 0 <= skilllv_huixuan then
+    A = A * (1 + (DamRebound + MDamRebound) * 0.1 * skilllv_huixuan)
+  end
   if A <= 1 then
     return 1
   end
@@ -22075,7 +22800,7 @@ function CommonFun.calcDamage_9205(srcUser, targetUser, params, damageParam, log
   local GemDam = 1 + GemValue / 100000
   local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
   local yx = 1
-  if skillID == 4210 then
+  if skillID == 4210 or skillID == 5820 then
     local skilllv_bc = srcUser:GetLernedSkillLevel(480)
     local skilllv_yx = srcUser:GetLernedSkillLevel(4210)
     damChangePer = skilllv_bc * 0.6 + 3
@@ -22083,7 +22808,73 @@ function CommonFun.calcDamage_9205(srcUser, targetUser, params, damageParam, log
     local ShadowNum = srcUser:GetPetCount("ShadowNpc")
     yx = (1 + skilllv_yx * 0.05) * (1 + skilllv_xjn * 0.05 * ShadowNum)
   end
-  local A = ((AtkFinal * DefReduc * (1 - DamReduc2) + Refine) * (damChangePer + yake) * (1 - RefineDamReduc) * (1 + DamIncrease - ShortRangeDamReduc2) * RuneDamage - Vit2 * (1 + VitPer2)) * kerd * Hand * Enemy * yake2 * GemDam * yx
+  local lingqiao = 1
+  local skilllv_lingqiao3 = srcUser:GetLernedSkillLevel(5823)
+  if skillID == 5820 then
+    local off1 = targetUser:IsEquipForceOff(1)
+    local off2 = targetUser:IsEquipForceOff(2)
+    local off3 = targetUser:IsEquipForceOff(3)
+    local off4 = targetUser:IsEquipForceOff(4)
+    local off5 = targetUser:IsEquipForceOff(5)
+    local off6 = targetUser:IsEquipForceOff(6)
+    local off7 = targetUser:IsEquipForceOff(7)
+    local off8 = targetUser:IsEquipForceOff(8)
+    local off9 = targetUser:IsEquipForceOff(9)
+    local off10 = targetUser:IsEquipForceOff(10)
+    local off11 = targetUser:IsEquipForceOff(11)
+    local off12 = targetUser:IsEquipForceOff(12)
+    local xiechu = 0
+    if off1 == true then
+      xiechu = xiechu + 1
+    end
+    if off2 == true then
+      xiechu = xiechu + 1
+    end
+    if off3 == true then
+      xiechu = xiechu + 1
+    end
+    if off4 == true then
+      xiechu = xiechu + 1
+    end
+    if off5 == true then
+      xiechu = xiechu + 1
+    end
+    if off6 == true then
+      xiechu = xiechu + 1
+    end
+    if off7 == true then
+      xiechu = xiechu + 1
+    end
+    if off8 == true then
+      xiechu = xiechu + 1
+    end
+    if off9 == true then
+      xiechu = xiechu + 1
+    end
+    if off10 == true then
+      xiechu = xiechu + 1
+    end
+    if off11 == true then
+      xiechu = xiechu + 1
+    end
+    if off12 == true then
+      xiechu = xiechu + 1
+    end
+    if targetUser:HasBuffID(106181) then
+      xiechu = xiechu + 1
+    end
+    if targetUser:HasBuffID(106191) then
+      xiechu = xiechu + 1
+    end
+    if 1 <= xiechu and skillID == 5820 then
+      lingqiao = 1 + skilllv_lingqiao3 * 0.02 * xiechu
+    end
+  end
+  local A = ((AtkFinal * DefReduc * (1 - DamReduc2) + Refine) * (damChangePer + yake) * (1 - RefineDamReduc) * (1 + DamIncrease - ShortRangeDamReduc2) * RuneDamage - Vit2 * (1 + VitPer2)) * kerd * Hand * Enemy * yake2 * GemDam * yx * lingqiao
+  if skillID == 5820 then
+    local skilllv_lingqiao = srcUser:GetLernedSkillLevel(5820)
+    A = A * (1 + skilllv_lingqiao * 0.1)
+  end
   if A <= 1 then
     return 1
   end
@@ -22496,10 +23287,41 @@ function CommonFun.calcDamage_11203(srcUser, targetUser, params, damageParam, lo
     local GemValue2 = srcUser:GetGemValue(112061)
     GemDam = (1 + GemValue1 / 100000 + GemValue2 / 100000) * (1 + 0.1 * (skilllv_1 + skilllv_2))
   end
+  if skillID == 5520 or skillID == 5570 or skillID == 5524 then
+    local skilllv_xinrui1 = srcUser:GetLernedSkillLevel(5522)
+    local skilllv_xinrui2 = srcUser:GetLernedSkillLevel(5572)
+    local Sp = srcUser:GetProperty("Sp")
+    AtkSp = math.floor(Sp / 10) * (skilllv_xinrui1 + skilllv_xinrui2) * 1
+  end
   local BaseAtk = Dex * 2 + math.floor(Dex * Dex / 100) + math.floor(Str / 5) + math.floor(Luk / 5)
   local AtkFinal = ((Atk - BaseAtk + AtkSp) * (1 + AtkPer) * CommonFun.ShapeCorrection(srcUser, targetUser) * bodyparam * elementparam * elementparam2 + BaseAtk) * raceparam * bossparam * bossparam2
   local DefReduc = CommonFun.CalcDef(srcUser, targetUser)
   local A = ((AtkFinal * DefReduc * (1 - DamReduc2) + Refine) * damChangePer * (1 - RefineDamReduc) * (1 + DamIncrease - LongRangeDamReduc2) - Vit2 * (1 + VitPer2)) * RuneDamage * GemDam + BaseLvDamage
+  local targetid = targetUser:GetGuid()
+  local distance = srcUser:GetDistance(targetid)
+  local skilllv_cy = srcUser:GetLernedSkillLevel(133)
+  local DisDam = 1
+  if 10 < skilllv_cy and srcUser:HasBuffID(1005200) then
+    DisDam = 1 + distance / 9 * (skilllv_cy - 10) * 0.1
+    DisDam = math.min(DisDam, 2)
+  end
+  local skill_meigui1 = srcUser:GetLernedSkillLevel(5520)
+  local skill_meigui2 = srcUser:GetLernedSkillLevel(5570)
+  local DamSpike = srcUser:GetProperty("DamSpike")
+  if skillID == 5524 then
+    damChangePer = (skill_meigui1 + skill_meigui2) * 10 + 20
+  end
+  if skillID == 5520 or skillID == 5570 or skillID == 5524 then
+    A = ((AtkFinal * DefReduc * (1 - DamReduc2) + Refine) * damChangePer * (1 - RefineDamReduc) * (1 + DamIncrease - LongRangeDamReduc2) - Vit2 * (1 + VitPer2)) * DisDam
+  end
+  if skillID == 5524 then
+    local Num = srcUser:GetBuffLayer(1005178)
+    local skilllv_meigui = srcUser:GetLernedSkillLevel(5523)
+    local skilllv_meigui1 = srcUser:GetLernedSkillLevel(5573)
+    local rangeup = (skilllv_meigui + skilllv_meigui1) * 0.001
+    AtkFinal = (Atk - BaseAtk + AtkSp) * (1 + AtkPer) + BaseAtk
+    A = A + (AtkFinal * (1 + DamSpike) + Refine) * damChangePer * (1 - RefineDamReduc) * (1 + DamIncrease) * (Num * rangeup) * DisDam
+  end
   if A <= 1 then
     return 1
   end
@@ -22829,7 +23651,7 @@ function CommonFun.calcDamage_12202(srcUser, targetUser, params, damageParam, lo
   end
   local potian = 1
   local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
-  if skillID == 3303 or skillID == 819 then
+  if skillID == 3303 or skillID == 819 or skillID == 6024 then
     local skilllv_potian = srcUser:GetLernedSkillLevel(3303)
     local skilllv_fuw = srcUser:GetLernedSkillLevel(819)
     local skilllv_lz = srcUser:GetLernedSkillLevel(3329)
@@ -22840,9 +23662,13 @@ function CommonFun.calcDamage_12202(srcUser, targetUser, params, damageParam, lo
     end
     damChangePer = 4 * skilllv
     damChangePer1 = 5 * skilllv
-    potian = (math.max(skilllv_potian, skilllv_fuw) * 0.05 + 0.5) * lz
   end
   local A = (((AtkFinal * (1 - DamReduc2) + Refine) * (damChangePer + Sp / 100 + RuneDamage + a + b + c + d) + 2500 + 500 * damChangePer1) * (1 + DamIncrease - ShortRangeDamReduc2) * (1 - RefineDamReduc) * GemDam + BaseLvDamage) * potian
+  local skilllv_wushuang = srcUser:GetLernedSkillLevel(6020)
+  local xuli = srcUser:GetBuffLayer(1010340)
+  if skillID == 6024 then
+    A = A * (0.73 + skilllv_wushuang * 0.04) * (1 + xuli * 0.2)
+  end
   if targetUser:GetNpcID() ~= 0 and srcUser:HasBuffID(1010220) and srcUser:HasBuffID(1010250) then
     A = A * xinnian1
   end
@@ -24354,6 +25180,10 @@ function CommonFun.calcDamage_13403(srcUser, targetUser, params, damageParam, lo
   local bossparam2 = CommonFun.CalcBossParam2(srcUser, targetUser, params, damageParam, logger)
   local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
   if skillID == 1133 then
+    AtkPer = 0
+  end
+  if skillID == 5335 and srcUser:HasBuffID(1003501) then
+    Atk = CommonFunHelper.GetProperty(srcUser:GetBlendBeingNpcID(), "Atk")
     AtkPer = 0
   end
   local BaseAtk = Str * 2 + math.floor(Str * Str / 100) + math.floor(Dex / 5) + math.floor(Luk / 5)
@@ -28372,6 +29202,7 @@ CommonFun.CalcDamageFuncs = {
   [2305] = CommonFun.calcDamage_2305,
   [2306] = CommonFun.calcDamage_2306,
   [2307] = CommonFun.calcDamage_2307,
+  [2320] = CommonFun.calcDamage_2320,
   [3101] = CommonFun.calcDamage_3101,
   [3102] = CommonFun.calcDamage_3102,
   [3103] = CommonFun.calcDamage_3103,
@@ -28755,6 +29586,46 @@ function CommonFun.calcOdds_17(srcUser)
   return A
 end
 
+function CommonFun.calcOdds_18(srcUser, targetUser)
+  local Rate = 0
+  local RefineLv1 = srcUser:GetEquipedRefineLv(1)
+  local RefineLv3 = targetUser:GetEquipedRefineLv(3)
+  local srcSnowStoreRefineLv = srcUser:GetSnowStoreRefineLv(1)
+  local tarSnowStoreRefineLv = targetUser:GetSnowStoreRefineLv(1)
+  if srcUser:HasBuffID(800210) then
+    Rate = Rate + RefineLv1 * 0.5
+    if 15 <= RefineLv1 then
+      Rate = Rate + 2.5
+    end
+  end
+  if targetUser:HasBuffID(800220) then
+    Rate = Rate - RefineLv3 * 0.5
+    if 15 <= RefineLv3 then
+      Rate = Rate - 2.5
+    end
+  end
+  if srcUser:HasBuffID(800250) then
+    Rate = Rate + srcSnowStoreRefineLv * 0.5
+    if 15 <= srcSnowStoreRefineLv then
+      Rate = Rate + 2.5
+    end
+  end
+  if targetUser:HasBuffID(800260) then
+    Rate = Rate - tarSnowStoreRefineLv * 0.5
+    if 15 <= tarSnowStoreRefineLv then
+      Rate = Rate - 2.5
+    end
+  end
+  if 0 < Rate then
+    if CommonFun.IsInRate(Rate, srcUser:GetRandom()) then
+      return 1
+    end
+  elseif Rate < 0 and CommonFun.IsInRate(math.abs(Rate), srcUser:GetRandom()) then
+    return -1
+  end
+  return 0
+end
+
 function CommonFun.GetFormulaValue(srcUser, targetUser, type)
   if CommonFun.FormulaFuns[type] == nil then
     return 0
@@ -28780,7 +29651,8 @@ CommonFun.FormulaFuns = {
   [13] = CommonFun.calcOdds_13,
   [14] = CommonFun.calcOdds_14,
   [15] = CommonFun.calcOdds_15,
-  [17] = CommonFun.calcOdds_17
+  [17] = CommonFun.calcOdds_17,
+  [18] = CommonFun.calcOdds_18
 }
 
 function CommonFun.CheckBuffListSkill(bufflistskill, buffskill)
@@ -29270,6 +30142,20 @@ function CommonFun.calcBuff_6(srcUser, targetUser, a, b, c, d, lv)
     end
     local raceInc = srcUser:GetProperty(CommonFun.RaceProps[targetRace][1])
     local raceRed = targetUser:GetProperty(CommonFun.RaceProps[srcRace][2])
+    local raceRedThrough = srcUser:GetProperty(CommonFun.RaceProps[srcRace][3])
+    local raceIncResistance = targetUser:GetProperty(CommonFun.RaceProps[targetRace][4])
+    if nil == raceRedThrough then
+      raceRedThrough = 0
+    end
+    if nil == raceIncResistance then
+      raceIncResistance = 0
+    end
+    if 0 <= raceInc then
+      raceInc = raceInc * math.max(1 - raceIncResistance, 0)
+    end
+    if 0 <= raceRed then
+      raceRed = raceRed * math.max(1 - raceRedThrough, 0)
+    end
     local raceparam = 1 + raceInc - raceRed
     if raceparam <= 0.1 then
       raceparam = 0.1
@@ -29632,6 +30518,10 @@ function CommonFun.calcBuff_59(srcUser, targetUser, a, b, c, d, lv)
   local MDefReduc = CommonFun.CalcMDef(srcUser, targetUser)
   local ResultDamInc = srcUser:GetProperty("ResultDamInc")
   local ResultDamRes = targetUser:GetProperty("ResultDamRes")
+  local Master = srcUser:GetMasterUser()
+  if Master ~= nil and (Master:HasBuffID(57201) or Master:HasBuffID(607810) or Master:HasBuffID(607820) or Master:HasBuffID(607830) or Master:HasBuffID(607840) or Master:HasBuffID(607850)) then
+    ResultDamInc = ResultDamInc + 0.15
+  end
   local Result = 1 + ResultDamInc - ResultDamRes
   Result = math.max(Result, 0.1)
   local NeutralAtk = srcUser:GetProperty("NeutralAtk")
@@ -33100,6 +33990,7 @@ function CommonFun.calcBuff_2410(srcUser, targetUser, a, b, c, d, lv)
   local skilllv_1 = srcUser:GetLernedSkillLevel(491)
   local skilllv_2 = srcUser:GetLernedSkillLevel(492)
   local skilllv_3 = srcUser:GetLernedSkillLevel(493)
+  local skilllv_xifa = srcUser:GetLernedSkillLevel(5822)
   local Luk = srcUser:GetProperty("Luk")
   local Dex = srcUser:GetProperty("Dex")
   local RefineLv = srcUser:GetEquipedRefineLv(7)
@@ -33130,7 +34021,7 @@ function CommonFun.calcBuff_2410(srcUser, targetUser, a, b, c, d, lv)
   local Rate2 = math.floor(Vit2 / 8)
   local GemValue = srcUser:GetGemValue(91033)
   local GemDam = GemValue / 1000
-  local Rate = math.min(skilllv_1 * 3 + skilllv_2 * 3 + skilllv_3 * 3 + pojia + pojia_1 + pojia_8 + (Luk + Dex) / 5, 90 + GemDam) - math.min(Rate2, 50)
+  local Rate = math.min(skilllv_1 * 3 + skilllv_2 * 3 + skilllv_3 * 3 + pojia + pojia_1 + pojia_8 + (Luk + Dex) / 5, 90 + GemDam) - math.min(Rate2, 50) + skilllv_xifa * 2
   if CommonFun.IsInRate(Rate, srcUser:GetRandom()) then
     local off5 = targetUser:IsEquipForceOff(5)
     local off6 = targetUser:IsEquipForceOff(6)
@@ -33260,6 +34151,7 @@ function CommonFun.calcBuff_2430(srcUser, targetUser, a, b, c, d, lv)
   local skilllv_3 = srcUser:GetLernedSkillLevel(496)
   local skilllv_4 = srcUser:GetLernedSkillLevel(497)
   local skilllv_5 = srcUser:GetLernedSkillLevel(498)
+  local skilllv_xifa = srcUser:GetLernedSkillLevel(5822)
   local Luk = srcUser:GetProperty("Luk")
   local Dex = srcUser:GetProperty("Dex")
   local RefineLv = srcUser:GetEquipedRefineLv(7)
@@ -33290,7 +34182,7 @@ function CommonFun.calcBuff_2430(srcUser, targetUser, a, b, c, d, lv)
   local Rate2 = math.floor(Vit2 / 8)
   local GemValue = srcUser:GetGemValue(91033)
   local GemDam = GemValue / 1000
-  local Rate = math.min(skilllv_1 * 3 + skilllv_2 * 3 + skilllv_3 * 3 + skilllv_4 * 3 + pojia + pojia_1 + pojia_8 + (Luk + Dex) / 5, 90 + GemDam) - math.min(Rate2, 50)
+  local Rate = math.min(skilllv_1 * 3 + skilllv_2 * 3 + skilllv_3 * 3 + skilllv_4 * 3 + pojia + pojia_1 + pojia_8 + (Luk + Dex) / 5, 90 + GemDam) - math.min(Rate2, 50) + skilllv_xifa * 2
   if CommonFun.IsInRate(Rate, srcUser:GetRandom()) then
     local skill2 = 0 < skilllv_2
     local skill3 = 0 < skilllv_3
@@ -36136,6 +37028,20 @@ function CommonFun.calcBuff_3540(srcUser, targetUser, a, b, c, d, lv)
   end
   local raceInc = srcUser:GetProperty(CommonFun.RaceProps[targetRace][1])
   local raceRed = targetUser:GetProperty(CommonFun.RaceProps[srcRace][2])
+  local raceRedThrough = srcUser:GetProperty(CommonFun.RaceProps[srcRace][3])
+  local raceIncResistance = targetUser:GetProperty(CommonFun.RaceProps[targetRace][4])
+  if nil == raceRedThrough then
+    raceRedThrough = 0
+  end
+  if nil == raceIncResistance then
+    raceIncResistance = 0
+  end
+  if 0 <= raceInc then
+    raceInc = raceInc * math.max(1 - raceIncResistance, 0)
+  end
+  if 0 <= raceRed then
+    raceRed = raceRed * math.max(1 - raceRedThrough, 0)
+  end
   local raceparam = 1 + raceInc - raceRed
   local mapid, maptype = srcUser:GetMapInfo()
   if maptype == 2 or maptype == 4 then
@@ -36166,6 +37072,14 @@ function CommonFun.calcBuff_3540(srcUser, targetUser, a, b, c, d, lv)
   local elementInc = srcUser:GetProperty(CommonFun.NatureProps[targetDefElement][1])
   local elementRed = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][2])
   local elementAtk = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][3])
+  local elementThrough = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][4])
+  local elementResistance = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][5])
+  if 0 <= elementRed then
+    elementRed = elementRed * math.max(1 - elementThrough, 0)
+  end
+  if 0 <= elementAtk then
+    elementAtk = elementAtk * math.max(1 - elementResistance, 0)
+  end
   local elementparam = (1 + elementInc) * ElementRate
   local elementparam2 = 1 + elementAtk - elementRed
   local mapid, maptype = srcUser:GetMapInfo()
@@ -36274,6 +37188,20 @@ function CommonFun.calcBuff_3541(srcUser, targetUser, a, b, c, d, lv)
   end
   local raceInc = srcUser:GetProperty(CommonFun.RaceProps[targetRace][1])
   local raceRed = targetUser:GetProperty(CommonFun.RaceProps[srcRace][2])
+  local raceRedThrough = srcUser:GetProperty(CommonFun.RaceProps[srcRace][3])
+  local raceIncResistance = targetUser:GetProperty(CommonFun.RaceProps[targetRace][4])
+  if nil == raceRedThrough then
+    raceRedThrough = 0
+  end
+  if nil == raceIncResistance then
+    raceIncResistance = 0
+  end
+  if 0 <= raceInc then
+    raceInc = raceInc * math.max(1 - raceIncResistance, 0)
+  end
+  if 0 <= raceRed then
+    raceRed = raceRed * math.max(1 - raceRedThrough, 0)
+  end
   local raceparam = 1 + raceInc - raceRed
   local mapid, maptype = srcUser:GetMapInfo()
   if maptype == 2 or maptype == 4 then
@@ -36312,6 +37240,14 @@ function CommonFun.calcBuff_3541(srcUser, targetUser, a, b, c, d, lv)
   local elementInc = srcUser:GetProperty(CommonFun.NatureProps[targetDefElement][1])
   local elementRed = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][2])
   local elementAtk = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][3])
+  local elementThrough = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][4])
+  local elementResistance = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][5])
+  if 0 <= elementRed then
+    elementRed = elementRed * math.max(1 - elementThrough, 0)
+  end
+  if 0 <= elementAtk then
+    elementAtk = elementAtk * math.max(1 - elementResistance, 0)
+  end
   local elementparam = (1 + elementInc) * ElementRate
   local elementparam2 = 1 + elementAtk - elementRed
   local mapid, maptype = srcUser:GetMapInfo()
@@ -38484,6 +39420,20 @@ function CommonFun.calcBuff_4630(srcUser, targetUser, a, b, c, d, lv)
   end
   local raceInc = srcUser:GetProperty(CommonFun.RaceProps[targetRace][1])
   local raceRed = targetUser:GetProperty(CommonFun.RaceProps[srcRace][2])
+  local raceRedThrough = srcUser:GetProperty(CommonFun.RaceProps[srcRace][3])
+  local raceIncResistance = targetUser:GetProperty(CommonFun.RaceProps[targetRace][4])
+  if nil == raceRedThrough then
+    raceRedThrough = 0
+  end
+  if nil == raceIncResistance then
+    raceIncResistance = 0
+  end
+  if 0 <= raceInc then
+    raceInc = raceInc * math.max(1 - raceIncResistance, 0)
+  end
+  if 0 <= raceRed then
+    raceRed = raceRed * math.max(1 - raceRedThrough, 0)
+  end
   local raceparam = 1 + raceInc - raceRed
   if raceparam <= 0.1 then
     raceparam = 0.1
@@ -38497,6 +39447,14 @@ function CommonFun.calcBuff_4630(srcUser, targetUser, a, b, c, d, lv)
   local elementInc = srcUser:GetProperty(CommonFun.NatureProps[targetDefElement][1])
   local elementRed = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][2])
   local elementAtk = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][3])
+  local elementThrough = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][4])
+  local elementResistance = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][5])
+  if 0 <= elementRed then
+    elementRed = elementRed * math.max(1 - elementThrough, 0)
+  end
+  if 0 <= elementAtk then
+    elementAtk = elementAtk * math.max(1 - elementResistance, 0)
+  end
   local elementparam = (1 + elementInc) * ElementRate
   local elementparam2 = 1 + elementAtk - elementRed
   if elementparam2 <= 0.1 then
@@ -38561,6 +39519,20 @@ function CommonFun.calcBuff_4640(srcUser, targetUser, a, b, c, d, lv)
   end
   local raceInc = srcUser:GetProperty(CommonFun.RaceProps[targetRace][1])
   local raceRed = targetUser:GetProperty(CommonFun.RaceProps[srcRace][2])
+  local raceRedThrough = srcUser:GetProperty(CommonFun.RaceProps[srcRace][3])
+  local raceIncResistance = targetUser:GetProperty(CommonFun.RaceProps[targetRace][4])
+  if nil == raceRedThrough then
+    raceRedThrough = 0
+  end
+  if nil == raceIncResistance then
+    raceIncResistance = 0
+  end
+  if 0 <= raceInc then
+    raceInc = raceInc * math.max(1 - raceIncResistance, 0)
+  end
+  if 0 <= raceRed then
+    raceRed = raceRed * math.max(1 - raceRedThrough, 0)
+  end
   local raceparam = 1 + raceInc - raceRed
   if raceparam <= 0.1 then
     raceparam = 0.1
@@ -38574,6 +39546,14 @@ function CommonFun.calcBuff_4640(srcUser, targetUser, a, b, c, d, lv)
   local elementInc = srcUser:GetProperty(CommonFun.NatureProps[targetDefElement][1])
   local elementRed = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][2])
   local elementAtk = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][3])
+  local elementThrough = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][4])
+  local elementResistance = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][5])
+  if 0 <= elementRed then
+    elementRed = elementRed * math.max(1 - elementThrough, 0)
+  end
+  if 0 <= elementAtk then
+    elementAtk = elementAtk * math.max(1 - elementResistance, 0)
+  end
   local elementparam = (1 + elementInc) * ElementRate
   local elementparam2 = 1 + elementAtk - elementRed
   if elementparam2 <= 0.1 then
@@ -38638,6 +39618,20 @@ function CommonFun.calcBuff_4641(srcUser, targetUser, a, b, c, d, lv)
   end
   local raceInc = srcUser:GetProperty(CommonFun.RaceProps[targetRace][1])
   local raceRed = targetUser:GetProperty(CommonFun.RaceProps[srcRace][2])
+  local raceRedThrough = srcUser:GetProperty(CommonFun.RaceProps[srcRace][3])
+  local raceIncResistance = targetUser:GetProperty(CommonFun.RaceProps[targetRace][4])
+  if nil == raceRedThrough then
+    raceRedThrough = 0
+  end
+  if nil == raceIncResistance then
+    raceIncResistance = 0
+  end
+  if 0 <= raceInc then
+    raceInc = raceInc * math.max(1 - raceIncResistance, 0)
+  end
+  if 0 <= raceRed then
+    raceRed = raceRed * math.max(1 - raceRedThrough, 0)
+  end
   local raceparam = 1 + raceInc - raceRed
   if raceparam <= 0.1 then
     raceparam = 0.1
@@ -38651,6 +39645,14 @@ function CommonFun.calcBuff_4641(srcUser, targetUser, a, b, c, d, lv)
   local elementInc = srcUser:GetProperty(CommonFun.NatureProps[targetDefElement][1])
   local elementRed = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][2])
   local elementAtk = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][3])
+  local elementThrough = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][4])
+  local elementResistance = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][5])
+  if 0 <= elementRed then
+    elementRed = elementRed * math.max(1 - elementThrough, 0)
+  end
+  if 0 <= elementAtk then
+    elementAtk = elementAtk * math.max(1 - elementResistance, 0)
+  end
   local elementparam = (1 + elementInc) * ElementRate
   local elementparam2 = 1 + elementAtk - elementRed
   if elementparam2 <= 0.1 then
@@ -39970,10 +40972,11 @@ function CommonFun.calcBuff_5270(srcUser, targetUser, a, b, c, d, lv)
   local buff = 0
   local Hp1 = srcUser:GetProperty("Hp")
   local Hp2 = targetUser:GetProperty("Hp")
-  if srcUser:HasBuffID(20720090) and Hp2 < Hp1 * 0.05 then
+  local skilllv_1 = srcUser:GetLernedSkillLevel(5423)
+  if Hp2 < Hp1 * 0.005 * skilllv_1 then
     buff = 1
   end
-  local A = a * buff + b * Hp2
+  local A = a * buff + b * Hp2 * 0.1
   local AttrFunction = srcUser:GetProperty("AttrFunction")
   local bitfunc = CommonFun.getBits(AttrFunction)
   if (targetUser.boss or targetUser.mini or targetUser.changelinepunish) and (targetUser.zoneType == 1 or targetUser.zoneType == 22) and targetUser.noPunishBoss == false and bitfunc[CommonFun.AttrFunction.JustInViceZone] == 1 and targetUser.isBossFromBranch == false then
@@ -42359,6 +43362,9 @@ function CommonFun.calcBuff_5990(srcUser, targetUser, a, b, c, d, lv)
   local MDamSpike = srcUser:GetProperty("MDamSpike")
   local ResultDamInc = srcUser:GetProperty("ResultDamInc")
   local ResultDamRes = targetUser:GetProperty("ResultDamRes")
+  if srcUser:HasBuffID(57201) or srcUser:HasBuffID(607810) or srcUser:HasBuffID(607820) or srcUser:HasBuffID(607830) or srcUser:HasBuffID(607840) or srcUser:HasBuffID(607850) then
+    ResultDamInc = ResultDamInc + 0.15
+  end
   local Result = 1 + ResultDamInc - ResultDamRes
   Result = math.max(Result, 0.1)
   if srcUser:HasBuffID(22000130) and a == 0.5 then
@@ -42893,6 +43899,9 @@ function CommonFun.calcBuff_6300(srcUser, targetUser, a, b, c, d, lv)
   local RefineDamReduc = targetUser:GetProperty("RefineDamReduc")
   local ResultDamInc = srcUser:GetProperty("ResultDamInc")
   local ResultDamRes = targetUser:GetProperty("ResultDamRes")
+  if srcUser:HasBuffID(57201) or srcUser:HasBuffID(607810) or srcUser:HasBuffID(607820) or srcUser:HasBuffID(607830) or srcUser:HasBuffID(607840) or srcUser:HasBuffID(607850) then
+    ResultDamInc = ResultDamInc + 0.15
+  end
   local NpcParam = CommonFun.NpcParam(srcUser, targetUser, params, damageParam, logger)
   local Result = 1 + ResultDamInc - ResultDamRes
   Result = math.max(Result, 0.1)
@@ -43069,6 +44078,9 @@ function CommonFun.calcBuff_6350(srcUser, targetUser, a, b, c, d, lv, damage)
   local MDamSpike = srcUser:GetProperty("MDamSpike")
   local ResultDamInc = srcUser:GetProperty("ResultDamInc")
   local ResultDamRes = targetUser:GetProperty("ResultDamRes")
+  if srcUser:HasBuffID(57201) or srcUser:HasBuffID(607810) or srcUser:HasBuffID(607820) or srcUser:HasBuffID(607830) or srcUser:HasBuffID(607840) or srcUser:HasBuffID(607850) then
+    ResultDamInc = ResultDamInc + 0.15
+  end
   local Result = 1 + ResultDamInc - ResultDamRes
   Result = math.max(Result, 0.1)
   local A = -(MAtkFinal * (1 + MDamSpike) + MRefine) * (skilllv * 0.3 * Num) * (1 - RefineMDamReduc) * (1 + MDamIncrease) * Result * ele
@@ -47444,6 +48456,20 @@ function CommonFun.calcBuff_7631(srcUser, targetUser, a, b, c, d, lv)
   return A
 end
 
+function CommonFun.calcBuff_7632(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local Str = srcUser:GetProperty("Str")
+  local Int = srcUser:GetProperty("Int")
+  local Dex = srcUser:GetProperty("Dex")
+  local Agi = srcUser:GetProperty("Agi")
+  local Vit = srcUser:GetProperty("Vit")
+  local Luk = srcUser:GetProperty("Luk")
+  local A = (math.floor(Luk / a) * b + math.floor(Dex / a) * b + math.floor(Int / a) * b + d) / 100
+  return A
+end
+
 function CommonFun.calcBuff_7640(srcUser, targetUser, a, b, c, d, lv)
   if srcUser == nil or targetUser == nil then
     return 0
@@ -49303,6 +50329,20 @@ function CommonFun.calcBuff_9250(srcUser, targetUser, a, b, c, d, lv)
   end
   local raceInc = srcUser:GetProperty(CommonFun.RaceProps[targetRace][1])
   local raceRed = targetUser:GetProperty(CommonFun.RaceProps[srcRace][2])
+  local raceRedThrough = srcUser:GetProperty(CommonFun.RaceProps[srcRace][3])
+  local raceIncResistance = targetUser:GetProperty(CommonFun.RaceProps[targetRace][4])
+  if nil == raceRedThrough then
+    raceRedThrough = 0
+  end
+  if nil == raceIncResistance then
+    raceIncResistance = 0
+  end
+  if 0 <= raceInc then
+    raceInc = raceInc * math.max(1 - raceIncResistance, 0)
+  end
+  if 0 <= raceRed then
+    raceRed = raceRed * math.max(1 - raceRedThrough, 0)
+  end
   local raceparam = 1 + raceInc - raceRed
   local mapid, maptype = srcUser:GetMapInfo()
   if maptype == 2 or maptype == 4 then
@@ -49650,6 +50690,37 @@ function CommonFun.calcBuff_9610(srcUser, targetUser, a, b, c, d, lv, damage)
   local A = 0
   local fuhuo = srcUser:GetUseReliveCount()
   A = fuhuo * a
+  return A
+end
+
+function CommonFun.calcBuff_9770(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local RefineLv = srcUser:GetSnowStoreRefineLv(1)
+  local A = 0
+  if b < RefineLv then
+    A = A + (RefineLv - b) * a
+  end
+  if 15 <= RefineLv then
+    A = A + c
+  end
+  return A
+end
+
+function CommonFun.calcBuff_9780(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local RefineLv = srcUser:GetSnowStoreRefineLv(1)
+  local A = d
+  if 5 <= RefineLv and RefineLv < 10 then
+    A = d + a
+  elseif 10 <= RefineLv and RefineLv < 15 then
+    A = d + a + b
+  elseif 15 <= RefineLv then
+    A = d + a + b + c
+  end
   return A
 end
 
@@ -50075,6 +51146,20 @@ function CommonFun.calcBuff_100300(srcUser, targetUser, a, b, c, d, lv)
   end
   local raceInc = srcUser:GetProperty(CommonFun.RaceProps[targetRace][1])
   local raceRed = targetUser:GetProperty(CommonFun.RaceProps[srcRace][2])
+  local raceRedThrough = srcUser:GetProperty(CommonFun.RaceProps[srcRace][3])
+  local raceIncResistance = targetUser:GetProperty(CommonFun.RaceProps[targetRace][4])
+  if nil == raceRedThrough then
+    raceRedThrough = 0
+  end
+  if nil == raceIncResistance then
+    raceIncResistance = 0
+  end
+  if 0 <= raceInc then
+    raceInc = raceInc * math.max(1 - raceIncResistance, 0)
+  end
+  if 0 <= raceRed then
+    raceRed = raceRed * math.max(1 - raceRedThrough, 0)
+  end
   local raceparam = 1 + raceInc - raceRed
   local mapid, maptype = srcUser:GetMapInfo()
   if maptype == 2 or maptype == 4 then
@@ -50204,6 +51289,20 @@ function CommonFun.calcBuff_100310(srcUser, targetUser, a, b, c, d, lv)
   end
   local raceInc = srcUser:GetProperty(CommonFun.RaceProps[targetRace][1])
   local raceRed = targetUser:GetProperty(CommonFun.RaceProps[srcRace][2])
+  local raceRedThrough = srcUser:GetProperty(CommonFun.RaceProps[srcRace][3])
+  local raceIncResistance = targetUser:GetProperty(CommonFun.RaceProps[targetRace][4])
+  if nil == raceRedThrough then
+    raceRedThrough = 0
+  end
+  if nil == raceIncResistance then
+    raceIncResistance = 0
+  end
+  if 0 <= raceInc then
+    raceInc = raceInc * math.max(1 - raceIncResistance, 0)
+  end
+  if 0 <= raceRed then
+    raceRed = raceRed * math.max(1 - raceRedThrough, 0)
+  end
   local raceparam = 1 + raceInc - raceRed
   local mapid, maptype = srcUser:GetMapInfo()
   if maptype == 2 or maptype == 4 then
@@ -50520,6 +51619,166 @@ function CommonFun.calcBuff_100450(srcUser, targetUser, a, b, c, d, lv)
   return A
 end
 
+function CommonFun.calcBuff_100460(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local skilllv_1 = srcUser:GetLernedSkillLevel(5622)
+  local A = 0
+  local zaike = srcUser:GetUserHandcartPassengerNum()
+  A = 0.06 * skilllv_1 + zaike * 0.02 * skilllv_1
+  return A
+end
+
+function CommonFun.calcBuff_100470(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local skilllv_1 = srcUser:GetLernedSkillLevel(6120)
+  local Hp = targetUser:GetProperty("Hp")
+  local A = Hp * (skilllv_1 * 0.05)
+  if targetUser:GetNpcID() ~= 0 then
+    A = 0
+  end
+  return -A
+end
+
+function CommonFun.calcBuff_100480(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local skilllv_1 = srcUser:GetLernedSkillLevel(6121)
+  local zhongdu = targetUser:GetBuffLayer(95313) + targetUser:GetBuffLayer(95352)
+  zhongdu = math.min(3, zhongdu)
+  local xindu = targetUser:GetBuffLayer(116014)
+  local A = skilllv_1 * 0.02 * (zhongdu + xindu)
+  return -A
+end
+
+function CommonFun.calcBuff_100490(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local skilllv_1 = srcUser:GetLernedSkillLevel(5121)
+  local MaxHp = targetUser:GetProperty("MaxHp")
+  local MaxSp = targetUser:GetProperty("MaxSp")
+  local A = -skilllv_1 / 100 * 2 * MaxHp * a - skilllv_1 / 100 * 2 * MaxSp * b
+  return A
+end
+
+function CommonFun.calcBuff_100500(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local skilllv_1 = srcUser:GetLernedSkillLevel(5720)
+  local Sp = srcUser:GetProperty("Sp")
+  local Int = srcUser:GetProperty("Int")
+  local RefineDamReduc = targetUser:GetProperty("RefineDamReduc")
+  local ResultDamInc = srcUser:GetProperty("ResultDamInc")
+  local ResultDamRes = targetUser:GetProperty("ResultDamRes")
+  if srcUser:HasBuffID(57201) or srcUser:HasBuffID(607810) or srcUser:HasBuffID(607820) or srcUser:HasBuffID(607830) or srcUser:HasBuffID(607840) or srcUser:HasBuffID(607850) then
+    ResultDamInc = ResultDamInc + 0.15
+  end
+  local NpcParam = CommonFun.NpcParam(srcUser, targetUser, params, damageParam, logger)
+  local Result = 1 + ResultDamInc - ResultDamRes
+  Result = math.max(Result, 0.1)
+  local MaxSp = srcUser:GetProperty("MaxSp")
+  local skilllv_liuxing3 = srcUser:GetLernedSkillLevel(5723)
+  if 1 <= skilllv_liuxing3 then
+    Sp = math.max(Sp, MaxSp * (0.03 * skilllv_liuxing3 + 0.2))
+  end
+  local A = -skilllv_1 / 125 * Sp * Int * (1 - RefineDamReduc) * Result * NpcParam
+  local AttrFunction = srcUser:GetProperty("AttrFunction")
+  local bitfunc = CommonFun.getBits(AttrFunction)
+  if (targetUser.boss or targetUser.mini or targetUser.changelinepunish) and (targetUser.zoneType == 1 or targetUser.zoneType == 22) and targetUser.noPunishBoss == false and bitfunc[CommonFun.AttrFunction.JustInViceZone] == 1 and targetUser.isBossFromBranch == false then
+    A = 0
+  end
+  if CommonFun.checkAttrFunctionMiss(targetUser, srcUser) then
+    A = 0
+  end
+  if targetUser.boss and targetUser.zoneType == 22 and CommonFun.CheckStormBossMiss(targetUser, srcUser) then
+    A = 0
+  end
+  if targetUser:GetNpcID() == 30043 or targetUser:GetNpcID() == 280303 or targetUser:GetNpcID() == 56008 or targetUser:GetNpcID() == 56009 or targetUser:GetNpcID() == 56010 or targetUser:GetNpcID() == 56011 or targetUser:GetNpcID() == 56012 or targetUser:GetNpcID() == 56013 then
+    A = -1
+  end
+  if targetUser:DamageAlways1() then
+    A = -1
+  end
+  return A
+end
+
+function CommonFun.calcBuff_100510(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = b
+  if targetUser:HasBuffID(a) then
+    A = c
+  end
+  return A
+end
+
+function CommonFun.calcBuff_100520(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local Num = srcUser:GetBuffLayer(1005178)
+  local skilllv_meigui = srcUser:GetLernedSkillLevel(5523)
+  local skilllv_meigui1 = srcUser:GetLernedSkillLevel(5573)
+  local rangeup = 0.1
+  local A = 5 * (Num * rangeup)
+  return A
+end
+
+function CommonFun.calcBuff_100530(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 0
+  local skilllv_zhongyan = srcUser:GetLernedSkillLevel(6123)
+  if 0 < skilllv_zhongyan and targetUser:GetNpcID() == 0 then
+    A = 100
+  end
+  return A
+end
+
+function CommonFun.calcBuff_100540(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 0
+  if targetUser:HasBuffID(1005170) and targetUser:HasBuffID(1005180) then
+    A = 100
+  end
+  return A
+end
+
+function CommonFun.calcBuff_100550(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 0
+  local Hp1 = srcUser:GetProperty("Hp")
+  local Hp2 = targetUser:GetProperty("Hp")
+  local skilllv_1 = srcUser:GetLernedSkillLevel(5423)
+  if Hp2 < Hp1 * 0.005 * skilllv_1 and targetUser:GetNpcID() == 0 then
+    A = 100
+  end
+  return A
+end
+
+function CommonFun.calcBuff_100560(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 1
+  if targetUser:GetNpcID() ~= 0 then
+    A = 5
+  end
+  return A
+end
+
 CommonFun.BaseAttrCalNoPer = {
   "Cri",
   "MaxHp",
@@ -50616,6 +51875,11 @@ function CommonFun.calcDamReduce_50(damage)
   return A
 end
 
+function CommonFun.calcDamReduce_60(damage)
+  local A = damage / (math.random(0, 8) + 56)
+  return A
+end
+
 function CommonFun.calcDamReduce_75(damage)
   local A = damage / (math.random(0, 8) + 71)
   return A
@@ -50661,6 +51925,7 @@ CommonFun.CalcDamReduce = {
   [20] = CommonFun.calcDamReduce_20,
   [30] = CommonFun.calcDamReduce_30,
   [50] = CommonFun.calcDamReduce_50,
+  [60] = CommonFun.calcDamReduce_60,
   [75] = CommonFun.calcDamReduce_75,
   [100] = CommonFun.calcDamReduce_100,
   [101] = CommonFun.calcDamReduce_101,
@@ -51654,6 +52919,7 @@ CommonFun.CalcBuffFuncs = {
   [7622] = CommonFun.calcBuff_7622,
   [7630] = CommonFun.calcBuff_7630,
   [7631] = CommonFun.calcBuff_7631,
+  [7632] = CommonFun.calcBuff_7632,
   [7640] = CommonFun.calcBuff_7640,
   [7650] = CommonFun.calcBuff_7650,
   [7660] = CommonFun.calcBuff_7660,
@@ -51798,6 +53064,8 @@ CommonFun.CalcBuffFuncs = {
   [9330] = CommonFun.calcBuff_9330,
   [9600] = CommonFun.calcBuff_9600,
   [9610] = CommonFun.calcBuff_9610,
+  [9770] = CommonFun.calcBuff_9770,
+  [9780] = CommonFun.calcBuff_9780,
   [100010] = CommonFun.calcBuff_100010,
   [100020] = CommonFun.calcBuff_100020,
   [100030] = CommonFun.calcBuff_100030,
@@ -51842,7 +53110,18 @@ CommonFun.CalcBuffFuncs = {
   [100420] = CommonFun.calcBuff_100420,
   [100430] = CommonFun.calcBuff_100430,
   [100440] = CommonFun.calcBuff_100440,
-  [100450] = CommonFun.calcBuff_100450
+  [100450] = CommonFun.calcBuff_100450,
+  [100460] = CommonFun.calcBuff_100460,
+  [100470] = CommonFun.calcBuff_100470,
+  [100480] = CommonFun.calcBuff_100480,
+  [100490] = CommonFun.calcBuff_100490,
+  [100500] = CommonFun.calcBuff_100500,
+  [100510] = CommonFun.calcBuff_100510,
+  [100520] = CommonFun.calcBuff_100520,
+  [100530] = CommonFun.calcBuff_100530,
+  [100540] = CommonFun.calcBuff_100540,
+  [100550] = CommonFun.calcBuff_100550,
+  [100560] = CommonFun.calcBuff_100560
 }
 
 function CommonFun.calcExtraScore(maxApple, rank)
@@ -53426,6 +54705,9 @@ function CommonFun.GetRefineTicketType(isNew, equipType, hasDecomposeID)
     if isNewTypes[equipType] ~= nil then
       return 10001
     end
+    return 0
+  end
+  if isNew == 2 then
     return 0
   end
   local headTypes = {

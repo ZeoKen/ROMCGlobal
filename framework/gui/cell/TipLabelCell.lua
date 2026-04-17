@@ -183,9 +183,9 @@ end
 
 function TipLabelCell:SetLabels(labels, labelConfig)
   local num = labels and #labels or 0
-  local width, labwidth, iconwidth, iconheight
+  local width, labwidth, iconwidth, iconheight, iconColorHexStr
   if labelConfig then
-    width, labwidth, iconwidth, iconheight = labelConfig.width, labelConfig.labwidth, labelConfig.iconwidth, labelConfig.iconheight
+    width, labwidth, iconwidth, iconheight, iconColorHexStr = labelConfig.width, labelConfig.labwidth, labelConfig.iconwidth, labelConfig.iconheight, labelConfig.iconColorHexStr
     if width and width <= 0 then
       width = Line_default_width[1] + width
     end
@@ -229,11 +229,14 @@ function TipLabelCell:SetLabels(labels, labelConfig)
     else
       local lab = self.labelMap[i]
       if not lab then
-        lab = self:MakeSpriteLabel(width, labwidth, iconwidth, iconheight, i)
+        lab = self:MakeSpriteLabel(width, labwidth, iconwidth, iconheight, i, iconColorHexStr)
         self.labelMap[i] = lab
       else
         lab:ResetLineWidth(width)
         lab:Reset()
+        if iconColorHexStr then
+          lab.iconColorHexStr = iconColorHexStr
+        end
       end
       lab:SetText(text)
       lab:SetLabelColor(self.data.color or defaultLabelColor)
@@ -472,7 +475,7 @@ function TipLabelCell:TryHandleInlineButton(spriteLabel)
   end
 end
 
-function TipLabelCell:MakeSpriteLabel(width, labwidth, iconwidth, iconheight, number)
+function TipLabelCell:MakeSpriteLabel(width, labwidth, iconwidth, iconheight, number, iconColorHexStr)
   local labObj, labComp = self:CopyGameObject(self.labelPfb)
   labObj:SetActive(true)
   labObj.name = string.format("Label%02d", number or 0)
@@ -484,7 +487,7 @@ function TipLabelCell:MakeSpriteLabel(width, labwidth, iconwidth, iconheight, nu
     labComp.width = labwidth
   end
   labComp.fontSize = self.data.fontsize or defaultLabelFontSize
-  return SpriteLabel.new(labObj, width, iconwidth, iconheight, true)
+  return SpriteLabel.new(labObj, width, iconwidth, iconheight, true, nil, iconColorHexStr)
 end
 
 function TipLabelCell:MakeNameValuePair(name, data)

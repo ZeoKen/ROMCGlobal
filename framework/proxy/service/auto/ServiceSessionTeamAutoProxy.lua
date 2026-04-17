@@ -3276,6 +3276,15 @@ function ServiceSessionTeamAutoProxy:CallNewRecruitPublishTeamCmd(team, chat)
       end
       msg.chat.roomid = chat.roomid
     end
+    if chat ~= nil and chat.snowroomid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.chat == nil then
+        msg.chat = {}
+      end
+      msg.chat.snowroomid = chat.snowroomid
+    end
     if chat ~= nil and chat.portrait_frame ~= nil then
       if msg == nil then
         msg = {}
@@ -3708,6 +3717,15 @@ function ServiceSessionTeamAutoProxy:CallNewRecruitPublishTeamCmd(team, chat)
       end
       msg.chat.recall_time = chat.recall_time
     end
+    if chat ~= nil and chat.head_fashion ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.chat == nil then
+        msg.chat = {}
+      end
+      msg.chat.head_fashion = chat.head_fashion
+    end
     self:SendProto(msg)
   else
     local msgId = ProtoReqInfoList.NewRecruitPublishTeamCmd.id
@@ -4023,6 +4041,15 @@ function ServiceSessionTeamAutoProxy:CallNewRecruitPublishTeamCmd(team, chat)
         msgParam.chat = {}
       end
       msgParam.chat.roomid = chat.roomid
+    end
+    if chat ~= nil and chat.snowroomid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.chat == nil then
+        msgParam.chat = {}
+      end
+      msgParam.chat.snowroomid = chat.snowroomid
     end
     if chat ~= nil and chat.portrait_frame ~= nil then
       if msgParam == nil then
@@ -4455,6 +4482,15 @@ function ServiceSessionTeamAutoProxy:CallNewRecruitPublishTeamCmd(team, chat)
         msgParam.chat = {}
       end
       msgParam.chat.recall_time = chat.recall_time
+    end
+    if chat ~= nil and chat.head_fashion ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.chat == nil then
+        msgParam.chat = {}
+      end
+      msgParam.chat.head_fashion = chat.head_fashion
     end
     self:SendProto2(msgId, msgParam)
   end

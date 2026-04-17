@@ -142,6 +142,9 @@ function AdventureBagData:UpdateItems(manualData, type)
       if item.staticData ~= nil then
         self:AddItem(item, type)
       end
+      if type == SceneManual_pb.EMANUALTYPE_SCENERY and item.staticData.Type == 6 and item.status ~= SceneManual_pb.EMANUALSTATUS_DISPLAY then
+        table.insert(updateSceneIds, item.staticId)
+      end
     end
   end
   if 0 < #updateSceneIds then

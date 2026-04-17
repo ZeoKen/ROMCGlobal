@@ -8398,7 +8398,7 @@ function ServiceItemAutoProxy:CallBalanceModeMemoryUpdateItemCmd(balance_memory)
   end
 end
 
-function ServiceItemAutoProxy:CallMemoryExcessItemCmd(memory_guid, equip_pos)
+function ServiceItemAutoProxy:CallMemoryExcessItemCmd(memory_guid, equip_pos, index)
   if not NetConfig.PBC then
     local msg = SceneItem_pb.MemoryExcessItemCmd()
     if memory_guid ~= nil then
@@ -8406,6 +8406,9 @@ function ServiceItemAutoProxy:CallMemoryExcessItemCmd(memory_guid, equip_pos)
     end
     if equip_pos ~= nil then
       msg.equip_pos = equip_pos
+    end
+    if index ~= nil then
+      msg.index = index
     end
     self:SendProto(msg)
   else
@@ -8416,6 +8419,9 @@ function ServiceItemAutoProxy:CallMemoryExcessItemCmd(memory_guid, equip_pos)
     end
     if equip_pos ~= nil then
       msgParam.equip_pos = equip_pos
+    end
+    if index ~= nil then
+      msgParam.index = index
     end
     self:SendProto2(msgId, msgParam)
   end

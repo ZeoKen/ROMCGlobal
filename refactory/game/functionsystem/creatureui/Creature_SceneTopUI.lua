@@ -17,6 +17,7 @@ autoImport("SceneTopGvGCooking")
 autoImport("SceneCoinCell")
 autoImport("SceneSummonProgress")
 autoImport("SceneGetReward")
+autoImport("SceneSnowmanProcess")
 local FindCreature = function(id)
   local creature = NSceneNpcProxy.Instance:GetClientNpc(id)
   if not creature then
@@ -1003,6 +1004,31 @@ function Creature_SceneTopUI:RemoveGetReward()
   end
 end
 
+function Creature_SceneTopUI:UpdateSnowmanProcess(process, totalProcess)
+  if not self.sceneSnowmanProcess then
+    self:CreateSnowmanProcess()
+  end
+  self.sceneSnowmanProcess:SetData(process, totalProcess)
+end
+
+function Creature_SceneTopUI:CreateSnowmanProcess()
+  local follow = self:GetSceneUITopFollow(SceneUIType.RoleTopInfo)
+  if not follow then
+    return
+  end
+  local args = ReusableTable.CreateArray()
+  args[1] = follow
+  self.sceneSnowmanProcess = SceneSnowmanProcess.CreateAsArray(args)
+  ReusableTable.DestroyAndClearArray(args)
+end
+
+function Creature_SceneTopUI:RemoveSnowmanProcess()
+  if self.sceneSnowmanProcess then
+    self.sceneSnowmanProcess:Destroy()
+    self.sceneSnowmanProcess = nil
+  end
+end
+
 function Creature_SceneTopUI:DoConstruct(asArray, creature)
   self:SetCreature(creature)
   self.emojiActive = true
@@ -1047,6 +1073,7 @@ function Creature_SceneTopUI:DoDeconstruct(asArray)
   self:RemoveEBFCoinSceneUI()
   self:RemoveSummonProgress()
   self:RemoveGetReward()
+  self:RemoveSnowmanProcess()
   self:UnregisterSceneUITopFollows()
 end
 

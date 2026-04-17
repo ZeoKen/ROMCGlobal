@@ -30,6 +30,8 @@ function NoviceExpGuideCell:SetData(data)
   if iconName and not IconManager:SetItemIcon(iconName, self.icon) then
     IconManager:SetUIIcon(iconName, self.icon)
   end
+  local hasShortcut = data.Shortcutpower and next(data.Shortcutpower) ~= nil
+  self.goToBtn:SetActive(hasShortcut)
   self:RefreshStatus()
 end
 

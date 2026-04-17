@@ -234,10 +234,26 @@ function NMyselfPlayer:Client_UseSkillHandler(random, phaseData, targetCreatureG
     EventManager.Me():PassEvent(MyselfEvent.ForgetSkill_Start, sortID)
   end
   self:SetNextNormalAttack(skillID)
+  self:SetNextEndPrepareSkillId(phaseData, skillID)
   ServicePlayerProxy.Instance:CallSkillBroadcast(random, phaseData, self, targetCreatureGUID, isTrigger, manual)
   local id, phase = phaseData:GetSkillID(), phaseData:GetSkillPhase()
   redlog("使用技能:" .. id .. ", " .. phase)
   EventManager.Me():PassEvent(MyselfEvent.BeginSkillBroadcast, {id, phase})
+end
+
+function NMyselfPlayer:SetNextEndPrepareSkillId(phaseData, skillID)
+  local phase = phaseData:GetSkillPhase()
+  if phase < 0 then
+    return
+  end
+  self.nextEndPrepareSkillId = nil
+  local skillConf = Table_Skill[skillID]
+  local logic_param = skillConf and skillConf.Logic_Param
+  if logic_param and logic_param.end_skill_id then
+    self.nextEndPrepareSkillId = logic_param.end_skill_id
+  else
+    self.nextEndPrepareSkillId = nil
+  end
 end
 
 function NMyselfPlayer:Client_AutoAttackTarget(targetCreature)
@@ -286,6 +302,7 @@ function NMyselfPlayer:Client_BreakSkillLead(skillID, manual)
     phaseData:SetSkillPhase(SkillPhase.None)
     self:Client_UseSkillHandler(0, phaseData, nil, nil, manual)
     self:Server_BreakSkill(skillID)
+    self:CheckLeadCompleteSkill(skillID, true)
     phaseData:Destroy()
     phaseData = nil
     return true
@@ -370,7 +387,7 @@ function NMyselfPlayer:Client_UseSkill(skillID, targetCreature, targetPosition, 
       if noSearch then
         return false
       end
-      if nil ~= lockedCreature and (not teamFirst or lockedCreature:IsInMyTeam()) and (not hatredFirst or lockedCreature:IsHatred()) and skillInfo:CheckTarget(self, lockedCreature) then
+      if nil ~= lockedCreature and (not teamFirst or lockedCreature:IsInMyTeam()) and (not hatredFirst or lockedCreature:IsHatred()) and skillInfo:CheckTarget(self, lockedCreature) and not self:IsOnHandcart() then
         targetCreature = lockedCreature
       else
         local searchRange = SkillLogic_Base.DefaultSearchRange
@@ -379,7 +396,17 @@ function NMyselfPlayer:Client_UseSkill(skillID, targetCreature, targetPosition, 
         end
         if hatredFirst then
           SkillLogic_Base.SearchTargetInRange(tempCreatureArray, self:GetPosition(), searchRange, skillInfo, self, searchFilter, SkillLogic_Base.SortComparator_HatredFirstDistance)
-          targetCreature = tempCreatureArray[1]
+          if tempCreatureArray and self:IsOnHandcart() and lockedCreature then
+            for i = 1, #tempCreatureArray do
+              if tempCreatureArray[i] == lockedCreature then
+                targetCreature = lockedCreature
+                break
+              end
+            end
+          end
+          if nil == targetCreature then
+            targetCreature = tempCreatureArray[1]
+          end
           TableUtility.ArrayClear(tempCreatureArray)
           if nil == targetCreature or not targetCreature:IsHatred() then
             local autoBattleLockTarget, lockIDs = self.ai:GetAutoBattleLockTarget(self, skillInfo)

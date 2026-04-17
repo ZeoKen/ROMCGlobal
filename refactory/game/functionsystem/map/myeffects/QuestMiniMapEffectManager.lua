@@ -35,6 +35,9 @@ function QuestMiniMapEffectManager:RemoveQuestEffect(id)
     self:HideEffect(id)
     TableUtility.TableClear(map)
     self.questMap[id] = nil
+    if self.questMap and not next(self.questMap) then
+      self:HideGuideEffect()
+    end
   end
 end
 
@@ -391,7 +394,8 @@ function QuestMiniMapEffectManager:ShowGuideEffect(isShow)
 end
 
 function QuestMiniMapEffectManager:HideGuideEffect()
-  if self.curGuideShow then
+  if self.guideEffects and #self.guideEffects > 0 then
+    self.curGuideShow = false
     for i = 1, self.guideWorkCount do
       self.guideEffects[i]:SetActive(false)
     end

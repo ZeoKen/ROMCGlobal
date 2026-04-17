@@ -303,7 +303,12 @@ function NCreature:Logic_PartnerVisible()
   if classData == nil or classData.Feature == nil or classData.Feature & 1 == 0 then
     return
   end
-  self:SetPartnerVisible(self:_IsPartnerVisible(), LayerChangeReason.Mount)
+  if self:IsHasHandcart() then
+    self:SetPartnerVisible(false, LayerChangeReason.BigHandcart)
+  else
+    self:SetPartnerVisible(true, LayerChangeReason.BigHandcart)
+    self:SetPartnerVisible(self:_IsPartnerVisible(), LayerChangeReason.Mount)
+  end
 end
 
 function NCreature:_IsPartnerVisible()

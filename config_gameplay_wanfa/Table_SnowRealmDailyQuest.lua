@@ -1,0 +1,81 @@
+Table_SnowRealmDailyQuest = {
+  [1016110001] = {
+    id = 1016110001,
+    Area = 1,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016120001] = {
+    id = 1016120001,
+    Area = 1,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016130001] = {
+    id = 1016130001,
+    Area = 1,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016140001] = {
+    id = 1016140001,
+    Area = 1,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016150001] = {
+    id = 1016150001,
+    Area = 1,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016160001] = {
+    id = 1016160001,
+    Area = 1,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016170001] = {
+    id = 1016170001,
+    Area = 1,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016180001] = {
+    id = 1016180001,
+    Area = 1,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016190001] = {
+    id = 1016190001,
+    Area = 1,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016200001] = {
+    id = 1016200001,
+    Area = 1,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016210001] = {
+    id = 1016210001,
+    Area = 1,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016220001] = {
+    id = 1016220001,
+    Area = 1,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  }
+}
+Table_SnowRealmDailyQuest_fields = {
+  "id",
+  "Area",
+  "Reward",
+  "HelpReward"
+}
+return Table_SnowRealmDailyQuest

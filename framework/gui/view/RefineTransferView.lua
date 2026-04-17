@@ -99,12 +99,20 @@ function CheckIsSameType(equip1, equip2)
   return t1 ~= nil and t1 == t2
 end
 
+local CheckSnowEquipMatch = function(equip1, equip2)
+  if not equip1 or not equip2 then
+    return true
+  end
+  local isSnow1 = equip1.equipInfo and equip1.equipInfo:IsSnowEquip()
+  local isSnow2 = equip2.equipInfo and equip2.equipInfo:IsSnowEquip()
+  return isSnow1 and isSnow2 or not isSnow1 and not isSnow2
+end
 local newEquipRefineBan = GameConfig.BanRefineTransfer and GameConfig.BanRefineTransfer.NewEquipRefine
 local SrcEquipPredicate = function(equip, dstEquip)
   local equipInfo = equip.equipInfo
   if equipInfo:CanRefineTransfer() and equipInfo.refinelv > 0 and not equipInfo.damage and (not newEquipRefineBan or TableUtility.ArrayFindIndex(newEquipRefineBan, equipInfo.equipData.NewEquipRefine) == 0) then
     if dstEquip then
-      return CheckIsSameType(equip, dstEquip)
+      return CheckIsSameType(equip, dstEquip) and CheckSnowEquipMatch(equip, dstEquip)
     end
     return true
   end
@@ -128,7 +136,7 @@ local DstEquipPredicate = function(equip, compareTarget)
   if not mFGetTransferCost(compareTarget, equip) then
     return false
   end
-  return equipInfo:CanRefineTransfer() and equipInfo.refinelv < compareTarget.equipInfo.refinelv and not equipInfo.damage and CheckIsSameType(equip, compareTarget) and equip.id ~= compareTarget.id and (not newEquipRefineBan or TableUtility.ArrayFindIndex(newEquipRefineBan, equipInfo.equipData.NewEquipRefine) == 0)
+  return equipInfo:CanRefineTransfer() and equipInfo.refinelv < compareTarget.equipInfo.refinelv and not equipInfo.damage and CheckIsSameType(equip, compareTarget) and CheckSnowEquipMatch(equip, compareTarget) and equip.id ~= compareTarget.id and (not newEquipRefineBan or TableUtility.ArrayFindIndex(newEquipRefineBan, equipInfo.equipData.NewEquipRefine) == 0)
 end
 
 function RefineTransferView:GetDstChooseDatas()

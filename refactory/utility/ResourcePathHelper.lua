@@ -36,6 +36,7 @@ local Path_BarrageAdornment = "Public/BarrageAdorment/"
 local Path_Material = "Public/Material/"
 local Path_Furniture = "Public/Home/Furniture/"
 local Path_HomeMaterial = "Public/Home/FurnitureMaterial/"
+local Path_HomeFurnitureTex = "Public/Home/Textures/"
 local Path_HomeWorldGrid = "Public/Home/Prefabs/WorldGrid/"
 local Path_GardenHouse = "Public/Home/Prefabs/GardenHouse/"
 local Path_UIModel = "Public/UIModel/"
@@ -271,6 +272,11 @@ function ResourcePathHelper.HomeMaterial(ID, folderName)
     return nil
   end
   return data and string.format("%s%s/%s/%s", Path_HomeMaterial, typeData.Type, folderName, data.NameEn) or nil
+end
+
+function ResourcePathHelper.HomeMaterialAlbedo(ID)
+  local data = Table_HomeFurnitureMaterial[ID]
+  return data and string.format("%s%s", Path_HomeFurnitureTex, data.NameEn) or nil
 end
 
 function ResourcePathHelper.HomeWorldGrid(mapName, floorIndex)

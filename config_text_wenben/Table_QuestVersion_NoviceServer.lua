@@ -257,6 +257,24 @@ Table_QuestVersion = {
     },
     VersionBG = "Missiontracking_bottom_syzh",
     MapID = {154}
+  },
+  [13] = {
+    id = 13,
+    version = "18.0",
+    name = "雪花之地",
+    icon = "taskmanual_btn_YZHX",
+    PuzzleUnder = "taskmanual_bg_jigsaw",
+    VersionStory = "永恒的初雪下，低语着失落王权的哀歌；冰封的大地上，倒映出交错意识的微光；神秘的炼炉里，仿制的心脏正微弱跳动。命运之风已至，你听见那跨越世界的呼唤了吗？",
+    StoryName = "雪花之地",
+    VersionPic = "",
+    FirstMainQuest = 211630001,
+    Tab = 2,
+    sortid = 26,
+    KeyReward = {
+      {45563, 1}
+    },
+    VersionBG = "Missiontracking_bottom_xuehua",
+    MapID = {155}
   }
 }
 Table_QuestVersion_fields = {

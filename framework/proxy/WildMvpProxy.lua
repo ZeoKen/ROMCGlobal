@@ -21,6 +21,7 @@ function WildMvpProxy:Init()
   self.wildMvpAffixDatas = {}
   self.pveAffixDatas = {}
   self.pveAffixDatas2 = {}
+  self.pveAffixDatas_GeffenMagic = {}
   self:InitMonsterDatas()
   self:InitAffixDatas()
   self.buffDataInited = false
@@ -58,16 +59,19 @@ function WildMvpProxy:InitAffixDatas()
   self:InitWildMvpAffixDatas(GameConfig.StormBoss and GameConfig.StormBoss.AffixTypes, self.wildMvpAffixDatas)
   self:InitWildMvpAffixDatas(GameConfig.StarArk and GameConfig.StarArk.AffixTypes, self.pveAffixDatas)
   self:InitWildMvpAffixDatas(GameConfig.SpaceTimeIllusion and GameConfig.SpaceTimeIllusion.PveAffixTypes, self.pveAffixDatas2)
+  self:InitWildMvpAffixDatas(GameConfig.GeffenMagic and GameConfig.GeffenMagic.Affix, self.pveAffixDatas_GeffenMagic)
 end
 
 function WildMvpProxy:InitWildMvpAffixDatas(game_config, cache_data)
   if not game_config then
     return
   end
-  for typeId, typeName in pairs(game_config) do
+  local _typeName
+  for typeId, config in pairs(game_config) do
     for _, affixConfig in pairs(Table_MonsterAffix) do
       if affixConfig.Type == typeId then
-        self:AddAffixDataSorted(affixConfig, typeId, typeName, cache_data)
+        _typeName = type(config) == "string" and config or config.typeName or ""
+        self:AddAffixDataSorted(affixConfig, typeId, _typeName, cache_data)
       end
     end
   end
@@ -138,6 +142,10 @@ end
 
 function WildMvpProxy:GetPveAffixDatas2()
   return self.pveAffixDatas2
+end
+
+function WildMvpProxy:GetPveAffixDatas_GeffenMagic()
+  return self.pveAffixDatas_GeffenMagic
 end
 
 function WildMvpProxy:GetActiveAffixDatas()

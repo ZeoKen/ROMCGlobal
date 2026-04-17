@@ -377,6 +377,7 @@ function NPlayer:DoDeconstruct(asArray)
   self._changeJobTimeFlag = nil
   self.skillOverAction = nil
   self.serverid = nil
+  self.handcartID = nil
 end
 
 function NPlayer:ResetRiderCamera()
@@ -502,4 +503,46 @@ function NPlayer:SetDressEnable(v)
   end
   redlog("NPlayer SetDressEnable", self.data.id, showCombine or v)
   NPlayer.super.SetDressEnable(self, showCombine or v)
+end
+
+function NPlayer:GetPosition()
+  if self:IsOnHandcart() then
+    local masterId = self:GetRidingHandcartCharID()
+    if 0 < masterId then
+      local cartMaster = NSceneUserProxy.Instance:Find(masterId)
+      if cartMaster then
+        return cartMaster:GetPosition()
+      end
+    end
+  end
+  return NPlayer.super.GetPosition(self)
+end
+
+function NPlayer:SetHandcartNpc(id)
+  if id == 0 then
+    self:RemoveHandcartNpc()
+  else
+    self:AddHandcartNpc(id)
+  end
+end
+
+function NPlayer:AddHandcartNpc(id)
+  local sceneCart = NSceneNpcProxy.Instance:Find(id)
+  if sceneCart == nil then
+    return
+  end
+  self.handcartID = id
+  sceneCart:SetMaster(self)
+end
+
+function NPlayer:RemoveHandcartNpc()
+  if self.handcartID == nil then
+    self.handcartID = 0
+    return
+  end
+  local sceneCart = NSceneNpcProxy.Instance:Find(self.handcartID)
+  self.handcartID = 0
+  if sceneCart ~= nil then
+    sceneCart:SetMaster(nil)
+  end
 end

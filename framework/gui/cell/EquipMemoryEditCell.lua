@@ -72,7 +72,8 @@ function EquipMemoryEditCell:SetData(data)
           local buffDesc
           local staticId = attrConfig.level and attrConfig.level[level]
           local staticData = staticId and Table_ItemMemoryEffect[staticId]
-          self.attrs[i].name.text = staticData and staticData.WaxDesc
+          local waxDescKey = staticData and staticData.WaxDesc or ""
+          self.attrs[i].name.text = OverSea.LangManager.Instance():GetLangByKey(waxDescKey) or waxDescKey
         end
       else
         self.attrs[i].go:SetActive(true)

@@ -43,9 +43,22 @@ autoImport("HappyShopBuyItemCell")
 autoImport("PveMonsterTextureCell")
 autoImport("PveAffixSubview")
 autoImport("HeroRoadView")
+autoImport("PveGeffenMagicSubView")
 autoImport("SweepTicketUtil")
 PveView = class("PveView", ContainerView)
 PveView.ViewType = UIViewType.NormalLayer
+local _SubViewMapByRaidType = {
+  [PveRaidType.RoadOfHero] = {
+    subViewKey = "HeroRoadView",
+    subView = HeroRoadView,
+    root = "HeroRoadRoot"
+  },
+  [PveRaidType.GeffenMagic] = {
+    subViewKey = "PveGeffenMagicSubView",
+    subView = PveGeffenMagicSubView,
+    root = "GeffenMagicRoot"
+  }
+}
 
 function PveView:Init()
   _EntranceProxy = PveEntranceProxy.Instance
@@ -56,6 +69,10 @@ function PveView:Init()
   self.root:SetActive(false)
   self.loadingRoot = self:FindGO("LoadingRoot")
   self.loadingRoot:SetActive(true)
+  self.currentSubView = nil
+  local beforePanel = self:FindComponent("BeforePanel", UIPanel)
+  local parentPanel = self.gameObject:GetComponent(UIPanel)
+  beforePanel.depth = beforePanel.depth + parentPanel.depth
   self:AddEvt()
   self:InitBuyItemCell()
 end
@@ -248,7 +265,7 @@ function PveView:FindObj()
   self:InitDifficultyMode()
   self:InitContentFunc()
   self:InitActivityInfo()
-  self.heroRoadViewRoot = self:FindGO("HeroRoadRoot")
+  self.affixSubviewRoot = self:FindGO("AffixSubViewRoot")
   self.astralGraphBtn = self:FindGO("AstralGraphBtn")
   self:AddClickEvent(self.astralGraphBtn, function()
     if AstralProxy.Instance:IsSeasonNotOpen() then
@@ -395,13 +412,17 @@ function PveView:InitStarArk()
     self.affixBuffs[i] = self:FindComponent("Buff" .. i, UISprite, self.checkAffixBtn)
   end
   self:AddClickEvent(self.checkAffixBtn, function(go)
-    if not self.affixSubview then
-      local root = self:FindGO("AffixSubViewRoot")
-      self.affixSubview = self:AddSubView("PveAffixSubview", PveAffixSubview, root)
-    end
-    self.affixSubview:UpdateAffixData(self.curData:GetActiveAffix(), self.curData:GetDetailActiveAffix())
-    self.affixSubview:OnShow()
+    self:OnClickCheckAffix()
   end)
+end
+
+function PveView:OnClickCheckAffix(active_affix)
+  if not self.affixSubview then
+    self.affixSubview = self:AddSubView("PveAffixSubview", PveAffixSubview, self.affixSubviewRoot)
+  end
+  active_affix = active_affix or self.curData:GetActiveAffix()
+  self.affixSubview:UpdateAffixData(active_affix, self.curData:GetDetailActiveAffix())
+  self.affixSubview:OnShow()
 end
 
 function PveView:UpdateArkBuff()
@@ -844,59 +865,16 @@ end
 
 function PveView:AddUIEvts()
   self:AddClickEvent(self.publishBtn, function()
-    if not self.curIsOpen then
-      self:ShowUnlockMsg()
-      return
-    end
-    FunctionPve.Me():OnClickPublish()
+    self:OnClickPublishBtn()
   end)
   self:AddClickEvent(self.shopBtn, function()
     self:OnClickShopBtn()
   end)
   self:AddClickEvent(self.matchBtn, function()
-    if self.curData.staticEntranceData:IsAstral() and AstralProxy.Instance:IsSeasonEnd() then
-      MsgManager.ShowMsgByID(43567)
-      return
-    end
-    if not self.curIsOpen then
-      self:ShowUnlockMsg()
-      return
-    end
-    if self.curData.staticEntranceData:IsThanatos() then
-      if FunctionPve.Me():DoMatch() then
-        self:CloseSelf()
-      end
-    else
-      GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
-        view = PanelConfig.PveMatchPopup,
-        viewdata = {
-          raidName = self.curData.staticEntranceData.name,
-          confirmCallback = function(ai, heal)
-            if FunctionPve.Me():DoMatch(ai, heal) then
-              self:CloseSelf()
-            end
-          end
-        }
-      })
-    end
+    self:OnClickMatchBtn()
   end)
   self:AddClickEvent(self.challengeBtn, function()
-    if not self.curIsOpen then
-      self:ShowUnlockMsg()
-      return
-    end
-    local guideParam = FunctionGuide.Me():tryTakeCustomGuideParam(nil, "fake_crackraid")
-    if guideParam then
-      self:CloseSelf()
-      return
-    end
-    if not (self.curData and self.curData.staticEntranceData:IsHeadWear()) or not _BattleTimeData:CheckBattleTimelen(true) then
-    end
-    self:ConfirmOption(function()
-      if FunctionPve.Me():DoChallenge() then
-        self:CloseSelf()
-      end
-    end)
+    self:OnClickChallengeBtn()
   end)
   self:AddClickEvent(self.checkBtn.gameObject, function()
     if self.curData then
@@ -916,6 +894,61 @@ function PveView:AddUIEvts()
     self.raidCombinedPart:SetActive(true)
     self:ShowRaidCombinedProcess()
   end)
+end
+
+function PveView:OnClickPublishBtn()
+  if not self.curIsOpen then
+    self:ShowUnlockMsg()
+    return
+  end
+  FunctionPve.Me():OnClickPublish()
+end
+
+function PveView:OnClickChallengeBtn()
+  if not self.curIsOpen then
+    self:ShowUnlockMsg()
+    return
+  end
+  local guideParam = FunctionGuide.Me():tryTakeCustomGuideParam(nil, "fake_crackraid")
+  if guideParam then
+    self:CloseSelf()
+    return
+  end
+  if not (self.curData and self.curData.staticEntranceData:IsHeadWear()) or not _BattleTimeData:CheckBattleTimelen(true) then
+  end
+  self:ConfirmOption(function()
+    if FunctionPve.Me():DoChallenge() then
+      self:CloseSelf()
+    end
+  end)
+end
+
+function PveView:OnClickMatchBtn()
+  if self.curData.staticEntranceData:IsAstral() and AstralProxy.Instance:IsSeasonEnd() then
+    MsgManager.ShowMsgByID(43567)
+    return
+  end
+  if not self.curIsOpen then
+    self:ShowUnlockMsg()
+    return
+  end
+  if self.curData.staticEntranceData:IsThanatos() then
+    if FunctionPve.Me():DoMatch() then
+      self:CloseSelf()
+    end
+  else
+    GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+      view = PanelConfig.PveMatchPopup,
+      viewdata = {
+        raidName = self.curData.staticEntranceData.name,
+        confirmCallback = function(ai, heal)
+          if FunctionPve.Me():DoMatch(ai, heal) then
+            self:CloseSelf()
+          end
+        end
+      }
+    })
+  end
 end
 
 function PveView:OnEnter()
@@ -1160,10 +1193,11 @@ function PveView:UpdateViewData(data)
   end
   FunctionPve.Me():SetCurPve(data.staticEntranceData)
   self.nameLab.text = data.staticEntranceData.name
-  local isRoadOfHero = data.staticEntranceData:IsRoadOfHero()
-  self.root:SetActive(not isRoadOfHero)
-  self.heroRoadViewRoot:SetActive(isRoadOfHero)
-  if not isRoadOfHero then
+  self:UpdateActivityInfo()
+  local raidType = data.staticEntranceData.raidType
+  local hasSubView = _SubViewMapByRaidType[raidType] ~= nil
+  if not hasSubView then
+    self:Show(self.root)
     self:UpdateOptionBtn()
     self:UpdateContentLabel()
     self.monsterIndex = 1
@@ -1171,10 +1205,48 @@ function PveView:UpdateViewData(data)
     self:UpdateAchieve()
     self:UpdateCurRaidRoot()
     self:UpdateAstral()
-    self:UpdateActivityInfo()
     self.roguelikeSkillHandbookBtn:SetActive(data.staticEntranceData:IsSpaceTimeIllusion())
     self.fairyTaleRaidRankBtn:SetActive(data.staticEntranceData:IsFairyTale())
     self.leftTimeTip:SetActive(not data.staticEntranceData:IsFairyTale())
+    self:HideCurrentSubView()
+  else
+    self:SwitchSubView(raidType)
+  end
+end
+
+function PveView:HideCurrentSubView()
+  if self.currentSubView then
+    self:Hide(self.currentSubView.gameObject)
+    self.currentSubView = nil
+  end
+end
+
+function PveView:SwitchSubView(raidType)
+  local subConfig = _SubViewMapByRaidType[raidType]
+  if not subConfig then
+    return
+  end
+  local subViewKey = subConfig.subViewKey
+  if self.currentSubView and self.currentSubView.__cname == subViewKey then
+    return
+  end
+  if self.currentSubView then
+    self:Hide(self.currentSubView.gameObject)
+  end
+  if not self[subViewKey] then
+    self[subViewKey] = self:AddSubView(subViewKey, subConfig.subView, {
+      parent = self:FindGO(subConfig.root).transform,
+      groupId = self.curData.staticEntranceData.groupid
+    })
+  end
+  self.currentSubView = self[subViewKey]
+  self:Show(self.currentSubView.gameObject)
+  self:Hide(self.root)
+  if not self.curIsOpen then
+    self:ShowUnlockMsg()
+  end
+  if self.currentSubView.UpdateLeftReward then
+    self.currentSubView:UpdateLeftReward()
   end
 end
 
@@ -1596,11 +1668,9 @@ function PveView:OnClickRaidTypeCell(cell, auto)
     self:_updateGroupTog()
   else
     self.curDifficultyMode = nil
-    if entranceData:IsRoadOfHero() then
-      if not self.heroRoadSubView then
-        self.heroRoadSubView = self:AddSubView("HeroRoadView", HeroRoadView)
-      end
-      self.heroRoadSubView:RefreshView(entranceData.groupid)
+    local tryGetSubView = _SubViewMapByRaidType[entranceData.raidType]
+    if self.currentSubView then
+      self.currentSubView:RefreshView(entranceData.groupid)
     else
       self:InitDiffRaid()
     end
@@ -1674,11 +1744,10 @@ function PveView:ChooseBoss(id)
   end
 end
 
-function PveView:UpdateItemDropList()
+function PveView:GetAllDrops()
   if not self.curData then
     return
   end
-  local hasRewardTip = nil ~= self.raidTip[self.curData.staticEntranceData.raidType]
   local result = self.curData:TryGetExtraRewards() or {}
   local dropItems = self.curData:GetAllRewards(self.curBossId)
   TableUtil.InsertArray(result, dropItems)
@@ -1688,6 +1757,14 @@ function PveView:UpdateItemDropList()
       result[#result + 1] = PveDropItemCell.Empty
     end
   end
+  return result
+end
+
+function PveView:UpdateItemDropList()
+  if not self.curData then
+    return
+  end
+  local result = self:GetAllDrops()
   self.itemCtl:ResetDatas(result)
   local buffID = ReturnActivityProxy.Instance:GetReturnBufferID()
   if buffID and Game.Myself.data:HasBuffID(buffID) then
@@ -1758,6 +1835,21 @@ function PveView:AddEvt()
   self:AddListenEvt(UICloseEvent.CloseSubView, self.CloseSelf)
   self:AddListenEvt(MyselfEvent.MyDataChange, self.HandleMyDataChange)
   self:AddListenEvt(ServiceEvent.SessionShopQueryShopConfigCmd, self.HandleQueryShopConfig)
+  self:AddListenEvt(ServiceEvent.SceneUser3GeffenMagicRankQueryCmd, self.HandleUpdateSeasonReward)
+  self:AddListenEvt(ServiceEvent.SceneUser3GeffenMagicGetRewardUserCmd, self.HandleUpdateSeasonReward)
+  self:AddListenEvt(ServiceEvent.FuBenCmdGeffenMagicEnemyInfoQueryCmd, self.HandleUpdateEnemyInfo)
+end
+
+function PveView:HandleUpdateSeasonReward()
+  if self.currentSubView and self.currentSubView.HandleUpdateSeasonReward then
+    self.currentSubView:HandleUpdateSeasonReward()
+  end
+end
+
+function PveView:HandleUpdateEnemyInfo()
+  if self.currentSubView and self.currentSubView.HandleUpdateEnemyInfo then
+    self.currentSubView:HandleUpdateEnemyInfo()
+  end
 end
 
 function PveView:UpdateAchieve()
@@ -1782,8 +1874,8 @@ end
 
 function PveView:HandleSyncPvePassInfo()
   if self.curData and self.curData.staticEntranceData:IsRoadOfHero() then
-    if self.heroRoadSubView then
-      self.heroRoadSubView:RefreshView(self.curData.staticEntranceData.groupid)
+    if self.currentSubView and self.currentSubView.RefreshView then
+      self.currentSubView:RefreshView(self.curData.staticEntranceData.groupid)
     end
   else
     self:HandleAddPveCardTimes()
@@ -1846,8 +1938,8 @@ end
 function PveView:HandleTimelen(note)
   self:UpdateLeftTimeInfo()
   self:UpdateContentLabel()
-  if self.heroRoadSubView then
-    self.heroRoadSubView:RefreshView()
+  if self.currentSubView and self.currentSubView.RefreshView then
+    self.currentSubView:RefreshView()
   end
 end
 
@@ -1957,14 +2049,14 @@ function PveView:_updateExtraLayer()
 end
 
 function PveView:HandleMyDataChange()
-  if self.heroRoadSubView then
-    self.heroRoadSubView:HandleMyDataChange()
+  if self.currentSubView and self.currentSubView.HandleMyDataChange then
+    self.currentSubView:HandleMyDataChange()
   end
 end
 
 function PveView:HandleQueryShopConfig()
-  if self.heroRoadSubView then
-    self.heroRoadSubView:HandleQueryShopConfig()
+  if self.currentSubView and self.currentSubView.HandleQueryShopConfig then
+    self.currentSubView:HandleQueryShopConfig()
   end
 end
 

@@ -2,16 +2,15 @@ Table_AssetEffect_t = {
   Params = {
     {capacity = 300, npcid = 817422},
     {capacity = 400, npcid = 817422},
-    {npcid = 812778},
     {npcid = 826752},
     {npcid = 828027},
     {count = 1},
+    {
+      menuid = {18468}
+    },
     {capacity = 100, npcid = 817421},
     {capacity = 150, npcid = 817421},
     {capacity = 200, npcid = 817421},
-    {
-      menuid = {18473}
-    },
     {
       menuid = {18474}
     },
@@ -24,11 +23,11 @@ Table_AssetEffect_t = {
     {
       menuid = {18477}
     },
+    {
+      menuid = {18478}
+    },
     {count = 2},
     {count = 3},
-    {
-      menuid = {18482}
-    },
     {
       menuid = {18483}
     },
@@ -43,6 +42,9 @@ Table_AssetEffect_t = {
     },
     {
       menuid = {18487}
+    },
+    {
+      menuid = {18488}
     },
     {
       maps = {
@@ -102,9 +104,6 @@ Table_AssetEffect_t = {
       rate = 5
     },
     {
-      menuid = {18626}
-    },
-    {
       menuid = {18627}
     },
     {
@@ -122,6 +121,11 @@ Table_AssetEffect_t = {
     {
       minitimes = 1,
       type = "add_abyss_boss_reward_times"
+    },
+    {
+      extrareward = 8230,
+      maps = {154},
+      rewardid = 8222
     },
     {
       areaid = {1}
@@ -333,7 +337,7 @@ Table_AssetEffect_t = {
       menuid = {15151}
     },
     {
-      menuid = {15162}
+      menuid = {15152}
     },
     {
       menuid = {15163}
@@ -349,6 +353,18 @@ Table_AssetEffect_t = {
     },
     {
       menuid = {15167}
+    },
+    {
+      buffid = {181401},
+      maps = {155}
+    },
+    {
+      buffid = {181402},
+      maps = {155}
+    },
+    {
+      buffid = {181403},
+      maps = {155}
     },
     {
       menuid = {17005}
@@ -392,7 +408,47 @@ Table_AssetEffect_t = {
     {
       menuid = {17004}
     },
+    {
+      buffid = {181419},
+      maps = {155}
+    },
+    {
+      buffid = {181420},
+      maps = {155}
+    },
+    {
+      buffid = {181421},
+      maps = {155}
+    },
+    {
+      buffid = {181422},
+      maps = {155}
+    },
+    {
+      buffid = {181423},
+      maps = {155}
+    },
     {interval = 36000},
+    {
+      buffid = {181429},
+      maps = {155}
+    },
+    {
+      buffid = {181430},
+      maps = {155}
+    },
+    {
+      buffid = {181431},
+      maps = {155}
+    },
+    {
+      buffid = {181432},
+      maps = {155}
+    },
+    {
+      buffid = {181433},
+      maps = {155}
+    },
     {
       rate = {
         1,
@@ -450,10 +506,89 @@ Table_AssetEffect_t = {
       }
     },
     {
+      buffid = {181442},
+      maps = {155}
+    },
+    {
+      buffid = {181443},
+      maps = {155}
+    },
+    {
       part = {1}
     },
     {
       part = {2}
+    },
+    {
+      buffid = {181446},
+      maps = {155}
+    },
+    {
+      buffid = {181447},
+      maps = {155}
+    },
+    {
+      buffid = {181448},
+      maps = {155}
+    },
+    {
+      buffid = {181449},
+      maps = {155}
+    },
+    {
+      buffid = {181450},
+      maps = {155}
+    },
+    {
+      buffid = {181451},
+      maps = {155}
+    },
+    {
+      buffid = {181452},
+      maps = {155}
+    },
+    {
+      buffid = {181453},
+      maps = {155}
+    },
+    {
+      buffid = {181454},
+      maps = {155}
+    },
+    {
+      buffid = {181455},
+      maps = {155}
+    },
+    {
+      buffid = {181456},
+      maps = {155}
+    },
+    {
+      buffid = {181457},
+      maps = {155}
+    },
+    {
+      buffid = {181458},
+      maps = {155}
+    },
+    {
+      buffid = {181459},
+      maps = {155}
+    },
+    {
+      buffid = {181460},
+      maps = {155}
+    },
+    {
+      items = {
+        {id = 100, ratio = 0.01}
+      },
+      maps = {155}
+    },
+    {
+      maps = {155},
+      monster_type = "Monster",
+      ratio = 0.01
     },
     {
       buffid = {180710},
@@ -561,6 +696,849 @@ Table_AssetEffect_t = {
       }
     },
     {
+      buffid = {181804},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181805},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181806},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181807},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181808},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181809},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181810},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181811},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181812},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181813},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181814},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181815},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181816},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181817},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181818},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181819},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181820},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181821},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181822},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181823},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181824},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181825},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181826},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181827},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181828},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181829},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181830},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181831},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181832},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181833},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181834},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181835},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181836},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181837},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181838},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181839},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181840},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181841},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181842},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181843},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181844},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181845},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181846},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181847},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181848},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181849},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181850},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181851},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181852},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181853},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181854},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181855},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181856},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181857},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181858},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181859},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181860},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181861},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181862},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181863},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181864},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181865},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181866},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181867},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181868},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181869},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181870},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181871},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181872},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181873},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181874},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181875},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181876},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181877},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181878},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181879},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181880},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181881},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181882},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181883},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181884},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181885},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181886},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181887},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181888},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181889},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181890},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181803},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181802},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181801},
+      maps = {
+        7661,
+        7662,
+        7663
+      }
+    },
+    {
+      buffid = {181445},
+      maps = {155}
+    },
+    {
+      buffid = {181444},
+      maps = {155}
+    },
+    {
+      buffid = {181441},
+      maps = {155}
+    },
+    {
+      buffid = {181440},
+      maps = {155}
+    },
+    {
+      buffid = {181439},
+      maps = {155}
+    },
+    {
+      buffid = {181438},
+      maps = {155}
+    },
+    {
+      buffid = {181437},
+      maps = {155}
+    },
+    {
+      buffid = {181436},
+      maps = {155}
+    },
+    {
+      buffid = {181435},
+      maps = {155}
+    },
+    {
+      buffid = {181434},
+      maps = {155}
+    },
+    {
+      buffid = {181428},
+      maps = {155}
+    },
+    {
+      buffid = {181427},
+      maps = {155}
+    },
+    {
+      buffid = {181426},
+      maps = {155}
+    },
+    {
+      buffid = {181425},
+      maps = {155}
+    },
+    {
+      buffid = {181424},
+      maps = {155}
+    },
+    {
+      buffid = {181418},
+      maps = {155}
+    },
+    {
+      buffid = {181417},
+      maps = {155}
+    },
+    {
+      buffid = {181416},
+      maps = {155}
+    },
+    {
+      buffid = {181415},
+      maps = {155}
+    },
+    {
+      buffid = {181414},
+      maps = {155}
+    },
+    {
+      buffid = {181413},
+      maps = {155}
+    },
+    {
+      buffid = {181412},
+      maps = {155}
+    },
+    {
+      buffid = {181411},
+      maps = {155}
+    },
+    {
+      buffid = {181410},
+      maps = {155}
+    },
+    {
+      buffid = {181409},
+      maps = {155}
+    },
+    {
+      buffid = {181408},
+      maps = {155}
+    },
+    {
+      buffid = {181407},
+      maps = {155}
+    },
+    {
+      buffid = {181406},
+      maps = {155}
+    },
+    {
+      buffid = {181405},
+      maps = {155}
+    },
+    {
+      buffid = {181404},
+      maps = {155}
+    },
+    {
+      menuid = {15162}
+    },
+    {
       menuid = {15161}
     },
     {
@@ -588,17 +1566,12 @@ Table_AssetEffect_t = {
       menuid = {15153}
     },
     {
-      menuid = {15152}
-    },
-    {
       extrareward = 8231,
       maps = {154},
       rewardid = 8222
     },
     {
-      extrareward = 8230,
-      maps = {154},
-      rewardid = 8222
+      menuid = {18626}
     },
     {
       menuid = {18553}
@@ -724,7 +1697,7 @@ Table_AssetEffect_t = {
       menuid = {18489}
     },
     {
-      menuid = {18488}
+      menuid = {18482}
     },
     {
       menuid = {18481}
@@ -736,7 +1709,7 @@ Table_AssetEffect_t = {
       menuid = {18479}
     },
     {
-      menuid = {18478}
+      menuid = {18473}
     },
     {
       menuid = {18472}
@@ -750,9 +1723,7 @@ Table_AssetEffect_t = {
     {
       menuid = {18469}
     },
-    {
-      menuid = {18468}
-    },
+    {npcid = 812778},
     {
       menuid = {18410}
     },
@@ -761,26 +1732,6 @@ Table_AssetEffect_t = {
     },
     {
       menuid = {18408}
-    },
-    {
-      menuid = {18407}
-    },
-    {
-      items = {
-        {id = 100, ratio = 0.05}
-      },
-      maps = {
-        137,
-        138,
-        1003658,
-        1003659,
-        1003660,
-        1003661,
-        1003662,
-        1003663,
-        1003664,
-        1003665
-      }
     },
     {
       maps = {
@@ -800,6 +1751,12 @@ Table_AssetEffect_t = {
     },
     {
       menuid = {18422}
+    },
+    {
+      menuid = {18423}
+    },
+    {
+      menuid = {18404}
     },
     {
       menuid = {18403}
@@ -836,9 +1793,6 @@ Table_AssetEffect_t = {
     },
     {
       menuid = {18424}
-    },
-    {
-      menuid = {18423}
     },
     {
       items = {
@@ -1039,6 +1993,29 @@ Table_AssetEffect_t = {
     },
     {
       buffid = {180912},
+      maps = {
+        137,
+        138,
+        1003658,
+        1003659,
+        1003660,
+        1003661,
+        1003662,
+        1003663,
+        1003664,
+        1003665
+      }
+    },
+    {
+      items = {
+        {id = 20192, ratio = 0.05},
+        {id = 20193, ratio = 0.05},
+        {id = 20194, ratio = 0.05},
+        {id = 20195, ratio = 0.05},
+        {id = 20196, ratio = 0.05},
+        {id = 20197, ratio = 0.05},
+        {id = 20198, ratio = 0.05}
+      },
       maps = {
         137,
         138,
@@ -1295,24 +2272,18 @@ Table_AssetEffect_t = {
       equipid = {13506}
     },
     {
-      menuid = {18404}
-    },
-    {
       menuid = {18405}
     },
     {
       menuid = {18406}
     },
+    {
+      menuid = {18407}
+    },
     {capacity = 200, npcid = 817422},
     {
       items = {
-        {id = 20192, ratio = 0.05},
-        {id = 20193, ratio = 0.05},
-        {id = 20194, ratio = 0.05},
-        {id = 20195, ratio = 0.05},
-        {id = 20196, ratio = 0.05},
-        {id = 20197, ratio = 0.05},
-        {id = 20198, ratio = 0.05}
+        {id = 100, ratio = 0.05}
       },
       maps = {
         137,
@@ -1332,128 +2303,118 @@ Table_AssetEffect_t = {
 Table_AssetEffect = {
   [1001] = {
     id = 1001,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[235],
+    Params = Table_AssetEffect_t.Params[387],
     Desc = "##1133673"
   },
   [1002] = {
     id = 1002,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[236],
+    Params = Table_AssetEffect_t.Params[388],
     Desc = "##1101128"
   },
   [1003] = {
     id = 1003,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[237],
+    Params = Table_AssetEffect_t.Params[389],
     Desc = "##1133674"
   },
   [1004] = {
     id = 1004,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[238],
+    Params = Table_AssetEffect_t.Params[390],
     Desc = "##1133673"
   },
   [1005] = {
     id = 1005,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[239],
+    Params = Table_AssetEffect_t.Params[391],
     Desc = "##1133676"
   },
   [1006] = {
     id = 1006,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[240],
+    Params = Table_AssetEffect_t.Params[392],
     Desc = "##1133677"
   },
   [1007] = {
     id = 1007,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[241],
+    Params = Table_AssetEffect_t.Params[393],
     Desc = "##1133673"
   },
   [1008] = {
     id = 1008,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[242],
+    Params = Table_AssetEffect_t.Params[394],
     Desc = "##1133679"
   },
   [1009] = {
     id = 1009,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[243],
+    Params = Table_AssetEffect_t.Params[395],
     Desc = "##1101140"
   },
   [1010] = {
     id = 1010,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[244],
+    Params = Table_AssetEffect_t.Params[396],
     Desc = "##1133680"
   },
   [1011] = {
     id = 1011,
     Type = "ManorEquipOpen",
-    Params = Table_AssetEffect_t.Params[245],
+    Params = Table_AssetEffect_t.Params[397],
     Desc = "##1133681",
     Group = 1
   },
   [1012] = {
     id = 1012,
     Type = "ManorEquipOpen",
-    Params = Table_AssetEffect_t.Params[246],
+    Params = Table_AssetEffect_t.Params[398],
     Desc = "##1133681",
     Group = 1
   },
   [1013] = {
     id = 1013,
     Type = "ManorEquipOpen",
-    Params = Table_AssetEffect_t.Params[247],
+    Params = Table_AssetEffect_t.Params[399],
     Desc = "##1133681",
     Group = 1
   },
   [1014] = {
     id = 1014,
     Type = "ManorEquipOpen",
-    Params = Table_AssetEffect_t.Params[248],
+    Params = Table_AssetEffect_t.Params[400],
     Desc = "##1133681",
     Group = 1
   },
   [1015] = {
     id = 1015,
     Type = "ManorEquipOpen",
-    Params = Table_AssetEffect_t.Params[249],
+    Params = Table_AssetEffect_t.Params[401],
     Desc = "##1133681",
     Group = 1
   },
   [1016] = {
     id = 1016,
     Type = "ManorEquipOpen",
-    Params = Table_AssetEffect_t.Params[250],
+    Params = Table_AssetEffect_t.Params[402],
     Desc = "##1133681",
     Group = 1
   },
   [1017] = {
     id = 1017,
     Type = "ManorEquipOpen",
-    Params = Table_AssetEffect_t.Params[251],
+    Params = Table_AssetEffect_t.Params[403],
     Desc = "##1133681",
     Group = 1
   },
   [1021] = {
     id = 1021,
     Type = "ManorResourceProduce",
-    Params = Table_AssetEffect_t.Params[255],
+    Params = Table_AssetEffect_t.Params[407],
     Desc = "##1133688",
     Group = 2
   },
   [1022] = {
+    id = 1022,
     Type = "ManorResourceProduce",
     Params = Table_AssetEffect_t.Params[1],
     Desc = "##1133689",
     Group = 2
   },
   [1023] = {
-    id = 1023,
     Type = "ManorResourceProduce",
     Params = Table_AssetEffect_t.Params[1],
     Desc = "##1133689",
@@ -1799,14 +2760,14 @@ Table_AssetEffect = {
   [1091] = {
     id = 1091,
     Type = "ManorDispatchTimesAdd",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1133742",
     Group = 9
   },
   [1092] = {
     id = 1092,
     Type = "ManorDispatchTimesAdd",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1133742",
     Group = 9
   },
@@ -1834,121 +2795,131 @@ Table_AssetEffect = {
   [1201] = {
     id = 1201,
     Type = "ManorDispatchRewardLvAdd",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1133747",
     Group = 11
   },
   [1202] = {
     id = 1202,
     Type = "ManorDispatchRewardLvAdd",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1133747",
     Group = 11
   },
   [1203] = {
     id = 1203,
     Type = "ManorDispatchRewardLvAdd",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1133747",
     Group = 11
   },
   [1204] = {
     id = 1204,
     Type = "ManorDispatchRewardLvAdd",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1133747",
     Group = 11
   },
   [1205] = {
     id = 1205,
     Type = "ManorDispatchRewardLvAdd",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1133747",
     Group = 11
   },
   [1206] = {
     id = 1206,
     Type = "ManorDispatchRewardLvAdd",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1133747",
     Group = 11
   },
   [1207] = {
     id = 1207,
     Type = "ManorDispatchRewardLvAdd",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1133747",
     Group = 11
   },
   [1208] = {
     id = 1208,
     Type = "ManorDispatchRewardLvAdd",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1133747",
     Group = 11
   },
   [1209] = {
     id = 1209,
     Type = "ManorDispatchRewardLvAdd",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1133747",
     Group = 11
   },
   [1210] = {
     id = 1210,
     Type = "ManorDispatchRewardLvAdd",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1133747",
     Group = 11
   },
   [1221] = {
     id = 1221,
-    Params = Table_AssetEffect_t.Params[104],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[107],
     Desc = "##1133757"
   },
   [1222] = {
     id = 1222,
-    Params = Table_AssetEffect_t.Params[105],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[108],
     Desc = "##1133757"
   },
   [1223] = {
     id = 1223,
-    Params = Table_AssetEffect_t.Params[106],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[109],
     Desc = "##1133757"
   },
   [1224] = {
     id = 1224,
-    Params = Table_AssetEffect_t.Params[107],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[110],
     Desc = "##1133757"
   },
   [1225] = {
     id = 1225,
-    Params = Table_AssetEffect_t.Params[108],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[111],
     Desc = "##1133757"
   },
   [1226] = {
     id = 1226,
-    Params = Table_AssetEffect_t.Params[109],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[112],
     Desc = "##1133757"
   },
   [1227] = {
     id = 1227,
-    Params = Table_AssetEffect_t.Params[110],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[113],
     Desc = "##1133757"
   },
   [1228] = {
     id = 1228,
-    Params = Table_AssetEffect_t.Params[111],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[114],
     Desc = "##1133757"
   },
   [1229] = {
     id = 1229,
-    Params = Table_AssetEffect_t.Params[112],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[115],
     Desc = "##1133757"
   },
   [1230] = {
     id = 1230,
-    Params = Table_AssetEffect_t.Params[113],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[116],
     Desc = "##1133757"
   },
   [1231] = {
@@ -1958,811 +2929,894 @@ Table_AssetEffect = {
   },
   [1232] = {
     id = 1232,
-    Params = Table_AssetEffect_t.Params[114],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[117],
     Desc = "##1133767"
   },
   [1233] = {
     id = 1233,
-    Params = Table_AssetEffect_t.Params[115],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[118],
     Desc = "##1133767"
   },
   [1234] = {
     id = 1234,
-    Params = Table_AssetEffect_t.Params[116],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[119],
     Desc = "##1133767"
   },
   [1235] = {
     id = 1235,
-    Params = Table_AssetEffect_t.Params[117],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[120],
     Desc = "##1133767"
   },
   [1241] = {
     id = 1241,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[118],
+    Params = Table_AssetEffect_t.Params[126],
     Desc = "##1133772",
     Group = 12
   },
   [1242] = {
     id = 1242,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[118],
+    Params = Table_AssetEffect_t.Params[126],
     Desc = "##1133772",
     Group = 12
   },
   [1243] = {
     id = 1243,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[118],
+    Params = Table_AssetEffect_t.Params[126],
     Desc = "##1133772",
     Group = 12
   },
   [1244] = {
     id = 1244,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[118],
+    Params = Table_AssetEffect_t.Params[126],
     Desc = "##1133772",
     Group = 12
   },
   [1245] = {
     id = 1245,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[118],
+    Params = Table_AssetEffect_t.Params[126],
     Desc = "##1133772",
     Group = 12
   },
   [1251] = {
     id = 1251,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[119],
+    Params = Table_AssetEffect_t.Params[132],
     Desc = "##1164272",
     Group = 13
   },
   [1252] = {
     id = 1252,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[120],
+    Params = Table_AssetEffect_t.Params[133],
     Desc = "##1164272",
     Group = 13
   },
   [1253] = {
     id = 1253,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[121],
+    Params = Table_AssetEffect_t.Params[134],
     Desc = "##1164272",
     Group = 13
   },
   [1254] = {
     id = 1254,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[122],
+    Params = Table_AssetEffect_t.Params[135],
     Desc = "##1164272",
     Group = 13
   },
   [1255] = {
     id = 1255,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[123],
+    Params = Table_AssetEffect_t.Params[136],
     Desc = "##1164272",
     Group = 13
   },
   [1256] = {
     id = 1256,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[124],
+    Params = Table_AssetEffect_t.Params[137],
     Desc = "##1164272",
     Group = 13
   },
   [1257] = {
     id = 1257,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[125],
+    Params = Table_AssetEffect_t.Params[138],
     Desc = "##1164272",
     Group = 13
   },
   [1258] = {
     id = 1258,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[126],
+    Params = Table_AssetEffect_t.Params[139],
     Desc = "##1164272",
     Group = 13
   },
   [1261] = {
     id = 1261,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[127],
+    Params = Table_AssetEffect_t.Params[142],
     Desc = "##1133784"
   },
   [1262] = {
     id = 1262,
     Type = "ManorEquipForge",
-    Params = Table_AssetEffect_t.Params[128],
+    Params = Table_AssetEffect_t.Params[143],
     Desc = "##1133785"
   },
   [1301] = {
     id = 1301,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[129],
+    Params = Table_AssetEffect_t.Params[161],
     Desc = "##1133786"
   },
   [1302] = {
     id = 1302,
     Type = "MapItemRatio",
-    Params = Table_AssetEffect_t.Params[130],
+    Params = Table_AssetEffect_t.Params[162],
     Desc = "##1133787"
   },
   [1303] = {
     id = 1303,
     Type = "MapItemRatio",
-    Params = Table_AssetEffect_t.Params[131],
+    Params = Table_AssetEffect_t.Params[163],
     Desc = "##1133788"
   },
   [1304] = {
     id = 1304,
     Type = "ManorDispatchRewardAdd",
-    Params = Table_AssetEffect_t.Params[132],
+    Params = Table_AssetEffect_t.Params[164],
     Desc = "##1133789"
   },
   [1305] = {
     id = 1305,
     Type = "ManorDispatchRewardItemAdd",
-    Params = Table_AssetEffect_t.Params[133],
+    Params = Table_AssetEffect_t.Params[165],
     Desc = "##1133790"
   },
   [1306] = {
     id = 1306,
     Type = "ManorResourceProduce",
-    Params = Table_AssetEffect_t.Params[134],
+    Params = Table_AssetEffect_t.Params[166],
     Desc = "##1133791"
   },
   [1307] = {
     id = 1307,
     Type = "ManorAreaOpen",
-    Params = Table_AssetEffect_t.Params[135],
+    Params = Table_AssetEffect_t.Params[167],
     Desc = "##1133792"
   },
   [1308] = {
     id = 1308,
     Type = "ManorResourceProduce",
-    Params = Table_AssetEffect_t.Params[136],
+    Params = Table_AssetEffect_t.Params[168],
     Desc = "##1164280"
   },
   [1309] = {
     id = 1309,
     Type = "MapItemRatio",
-    Params = Table_AssetEffect_t.Params[137],
+    Params = Table_AssetEffect_t.Params[169],
     Desc = "##1164281"
   },
-  [1310] = {id = 1310, Desc = "##1164282"},
+  [1310] = {
+    id = 1310,
+    Type = "MenuOpen",
+    Desc = "##1164282"
+  },
   [2001] = {
     id = 2001,
     Type = "MapItemRatio",
-    Params = Table_AssetEffect_t.Params[221],
+    Params = Table_AssetEffect_t.Params[372],
     Desc = "##1186687"
   },
   [2002] = {
     id = 2002,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[222],
+    Params = Table_AssetEffect_t.Params[373],
     Desc = "##1186688"
   },
   [2003] = {
     id = 2003,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[223],
+    Params = Table_AssetEffect_t.Params[374],
     Desc = "##1186689"
   },
   [2004] = {
     id = 2004,
     Type = "MapDeadReward",
-    Params = Table_AssetEffect_t.Params[206],
+    Params = Table_AssetEffect_t.Params[356],
     Desc = "##1186694"
   },
   [2005] = {
     id = 2005,
     Type = "MapItemRatio",
-    Params = Table_AssetEffect_t.Params[221],
+    Params = Table_AssetEffect_t.Params[372],
     Desc = "##1186687"
   },
   [2006] = {
     id = 2006,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[224],
+    Params = Table_AssetEffect_t.Params[375],
     Desc = "##1186692"
   },
   [2007] = {
     id = 2007,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[225],
+    Params = Table_AssetEffect_t.Params[376],
     Desc = "##1186693"
   },
   [2008] = {
     id = 2008,
     Type = "MapDeadReward",
-    Params = Table_AssetEffect_t.Params[206],
+    Params = Table_AssetEffect_t.Params[356],
     Desc = "##1186694"
   },
   [2009] = {
     id = 2009,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[226],
+    Params = Table_AssetEffect_t.Params[377],
     Desc = "##530293"
   },
   [2010] = {
     id = 2010,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[227],
+    Params = Table_AssetEffect_t.Params[378],
     Desc = "##1101140"
   },
   [2011] = {
     id = 2011,
     Type = "MapItemRatio",
-    Params = Table_AssetEffect_t.Params[221],
+    Params = Table_AssetEffect_t.Params[372],
     Desc = "##1186687"
   },
   [2012] = {
     id = 2012,
     Type = "MapDeadReward",
-    Params = Table_AssetEffect_t.Params[206],
+    Params = Table_AssetEffect_t.Params[356],
     Desc = "##1186694"
   },
   [2013] = {
     id = 2013,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[228],
+    Params = Table_AssetEffect_t.Params[379],
     Desc = "##1190438"
   },
   [2014] = {
     id = 2014,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[229],
+    Params = Table_AssetEffect_t.Params[380],
     Desc = "##1133676"
   },
   [2015] = {
     id = 2015,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[230],
+    Params = Table_AssetEffect_t.Params[381],
     Desc = "##1186698"
   },
   [2016] = {
     id = 2016,
     Type = "MapDeadReward",
-    Params = Table_AssetEffect_t.Params[206],
+    Params = Table_AssetEffect_t.Params[356],
     Desc = "##1186694"
   },
   [2017] = {
     id = 2017,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[231],
+    Params = Table_AssetEffect_t.Params[382],
     Desc = "##1190438"
   },
   [2018] = {
     id = 2018,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[232],
+    Params = Table_AssetEffect_t.Params[383],
     Desc = "##1186701"
   },
   [2019] = {
     id = 2019,
     Type = "MapDeadReward",
-    Params = Table_AssetEffect_t.Params[206],
+    Params = Table_AssetEffect_t.Params[356],
     Desc = "##1186694"
   },
   [2020] = {
     id = 2020,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[233],
+    Params = Table_AssetEffect_t.Params[384],
     Desc = "##1186703"
   },
   [2021] = {
     id = 2021,
-    Type = "MapBuff",
-    Params = Table_AssetEffect_t.Params[234],
+    Params = Table_AssetEffect_t.Params[385],
     Desc = "##1133786"
   },
   [2022] = {
     id = 2022,
     Type = "MapDeadReward",
-    Params = Table_AssetEffect_t.Params[206],
+    Params = Table_AssetEffect_t.Params[356],
     Desc = "##1186694"
   },
   [2023] = {
     id = 2023,
     Type = "MapItemRatio",
-    Params = Table_AssetEffect_t.Params[256],
+    Params = Table_AssetEffect_t.Params[386],
     Desc = "##1186705"
   },
   [2024] = {
     id = 2024,
     Type = "MapItemRatio",
-    Params = Table_AssetEffect_t.Params[205],
+    Params = Table_AssetEffect_t.Params[408],
     Desc = "##1186706"
   },
   [2025] = {
     id = 2025,
     Type = "MapDeadReward",
-    Params = Table_AssetEffect_t.Params[206],
+    Params = Table_AssetEffect_t.Params[356],
     Desc = "##1186694"
   },
   [2026] = {
     id = 2026,
-    Params = Table_AssetEffect_t.Params[207],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[357],
     Desc = "##1300934"
   },
   [2027] = {
     id = 2027,
-    Params = Table_AssetEffect_t.Params[220],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[358],
     Desc = "##1300935"
   },
   [2028] = {
     id = 2028,
-    Params = Table_AssetEffect_t.Params[219],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[371],
     Desc = "##1300936"
   },
   [2029] = {
     id = 2029,
-    Params = Table_AssetEffect_t.Params[218],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[370],
     Desc = "##1300937"
   },
   [2030] = {
     id = 2030,
-    Params = Table_AssetEffect_t.Params[217],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[369],
     Desc = "##1300938"
   },
   [2031] = {
     id = 2031,
-    Params = Table_AssetEffect_t.Params[216],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[368],
     Desc = "##1300939"
   },
   [2032] = {
     id = 2032,
-    Params = Table_AssetEffect_t.Params[215],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[367],
     Desc = "##1300940"
   },
   [2033] = {
     id = 2033,
-    Params = Table_AssetEffect_t.Params[214],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[366],
     Desc = "##1300941"
   },
   [2034] = {
     id = 2034,
-    Params = Table_AssetEffect_t.Params[213],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[365],
     Desc = "##1300942"
   },
   [2035] = {
     id = 2035,
-    Params = Table_AssetEffect_t.Params[212],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[364],
     Desc = "##1300943"
   },
   [2036] = {
     id = 2036,
-    Params = Table_AssetEffect_t.Params[211],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[363],
     Desc = "##1291367"
   },
   [2037] = {
     id = 2037,
-    Params = Table_AssetEffect_t.Params[210],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[362],
     Desc = "##1300944"
   },
   [2038] = {
     id = 2038,
-    Params = Table_AssetEffect_t.Params[209],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[361],
     Desc = "##1300945"
   },
   [2039] = {
     id = 2039,
-    Params = Table_AssetEffect_t.Params[208],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[360],
     Desc = "##1300946"
   },
   [2040] = {
     id = 2040,
-    Params = Table_AssetEffect_t.Params[252],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[359],
     Desc = "##1300947"
   },
   [2041] = {
     id = 2041,
-    Params = Table_AssetEffect_t.Params[253],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[404],
     Desc = "##2809113"
   },
   [2042] = {
     id = 2042,
-    Params = Table_AssetEffect_t.Params[254],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[405],
     Desc = "##2809114"
   },
   [2043] = {
     id = 2043,
-    Params = Table_AssetEffect_t.Params[204],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[406],
     Desc = "##2809115"
   },
   [2044] = {
     id = 2044,
-    Params = Table_AssetEffect_t.Params[203],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[355],
     Desc = "##2809116"
   },
   [2045] = {
     id = 2045,
-    Params = Table_AssetEffect_t.Params[202],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[354],
     Desc = "##2809117"
   },
   [2046] = {
     id = 2046,
-    Params = Table_AssetEffect_t.Params[201],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[353],
     Desc = "##2809118"
   },
   [2047] = {
     id = 2047,
     Type = "SmithQuestCount",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1291368"
   },
   [2048] = {
     id = 2048,
     Type = "UnlockSmithPartner",
-    Params = Table_AssetEffect_t.Params[3],
+    Params = Table_AssetEffect_t.Params[352],
     Desc = "##1291369"
   },
   [2049] = {
     id = 2049,
     Type = "UnlockSmithPartner",
-    Params = Table_AssetEffect_t.Params[4],
+    Params = Table_AssetEffect_t.Params[3],
     Desc = "##1291369"
   },
   [2050] = {
     id = 2050,
     Type = "UnlockSmithPartner",
-    Params = Table_AssetEffect_t.Params[5],
+    Params = Table_AssetEffect_t.Params[4],
     Desc = "##1291369"
   },
   [2051] = {
     id = 2051,
     Type = "SmithQuestCount",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1291368"
   },
   [2052] = {
     id = 2052,
     Type = "SmithQuestCount",
-    Params = Table_AssetEffect_t.Params[6],
+    Params = Table_AssetEffect_t.Params[5],
     Desc = "##1291373"
   },
   [2053] = {
     id = 2053,
-    Params = Table_AssetEffect_t.Params[200],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[6],
     Desc = "##1291374"
   },
   [2054] = {
     id = 2054,
-    Params = Table_AssetEffect_t.Params[199],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[351],
     Desc = "##1291375"
   },
   [2055] = {
     id = 2055,
-    Params = Table_AssetEffect_t.Params[198],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[350],
     Desc = "##1291376"
   },
   [2056] = {
     id = 2056,
-    Params = Table_AssetEffect_t.Params[197],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[349],
     Desc = "##1291377"
   },
   [2057] = {
     id = 2057,
-    Params = Table_AssetEffect_t.Params[196],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[348],
     Desc = "##1291378"
   },
   [2058] = {
     id = 2058,
-    Params = Table_AssetEffect_t.Params[10],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[347],
     Desc = "##1291379"
   },
   [2059] = {
     id = 2059,
-    Params = Table_AssetEffect_t.Params[11],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[10],
     Desc = "##1291380"
   },
   [2060] = {
     id = 2060,
-    Params = Table_AssetEffect_t.Params[12],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[11],
     Desc = "##1291381"
   },
   [2061] = {
     id = 2061,
-    Params = Table_AssetEffect_t.Params[13],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[12],
     Desc = "##1291382"
   },
   [2062] = {
     id = 2062,
-    Params = Table_AssetEffect_t.Params[14],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[13],
     Desc = "##1291383"
   },
   [2063] = {
     id = 2063,
-    Params = Table_AssetEffect_t.Params[195],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[14],
     Desc = "##1291384"
   },
   [2064] = {
     id = 2064,
-    Params = Table_AssetEffect_t.Params[194],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[346],
     Desc = "##1291385"
   },
   [2065] = {
     id = 2065,
-    Params = Table_AssetEffect_t.Params[193],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[345],
     Desc = "##1291386"
   },
   [2066] = {
     id = 2066,
-    Params = Table_AssetEffect_t.Params[192],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[344],
     Desc = "##1291387"
   },
   [2067] = {
     id = 2067,
-    Params = Table_AssetEffect_t.Params[17],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[343],
     Desc = "##1291388"
   },
   [2068] = {
     id = 2068,
-    Params = Table_AssetEffect_t.Params[18],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[17],
     Desc = "##1291389"
   },
   [2069] = {
     id = 2069,
-    Params = Table_AssetEffect_t.Params[19],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[18],
     Desc = "##1291390"
   },
   [2070] = {
     id = 2070,
-    Params = Table_AssetEffect_t.Params[20],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[19],
     Desc = "##1291391"
   },
   [2071] = {
     id = 2071,
-    Params = Table_AssetEffect_t.Params[21],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[20],
     Desc = "##1291392"
   },
   [2072] = {
     id = 2072,
-    Params = Table_AssetEffect_t.Params[22],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[21],
     Desc = "##1291393"
   },
   [2073] = {
     id = 2073,
-    Params = Table_AssetEffect_t.Params[191],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[22],
     Desc = "##1291394"
   },
   [2074] = {
     id = 2074,
-    Params = Table_AssetEffect_t.Params[190],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[342],
     Desc = "##1291395"
   },
   [2075] = {
     id = 2075,
-    Params = Table_AssetEffect_t.Params[189],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[341],
     Desc = "##1291396"
   },
   [2076] = {
     id = 2076,
-    Params = Table_AssetEffect_t.Params[188],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[340],
     Desc = "##1291397"
   },
   [2077] = {
     id = 2077,
-    Params = Table_AssetEffect_t.Params[187],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[339],
     Desc = "##1291398"
   },
   [2078] = {
     id = 2078,
-    Params = Table_AssetEffect_t.Params[186],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[338],
     Desc = "##1291399"
   },
   [2079] = {
     id = 2079,
-    Params = Table_AssetEffect_t.Params[185],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[337],
     Desc = "##1291400"
   },
   [2080] = {
     id = 2080,
-    Params = Table_AssetEffect_t.Params[184],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[336],
     Desc = "##1291401"
   },
   [2081] = {
     id = 2081,
-    Params = Table_AssetEffect_t.Params[183],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[335],
     Desc = "##1291402"
   },
   [2082] = {
     id = 2082,
-    Params = Table_AssetEffect_t.Params[182],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[334],
     Desc = "##1291403"
   },
   [2083] = {
     id = 2083,
-    Params = Table_AssetEffect_t.Params[181],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[333],
     Desc = "##1291404"
   },
   [2084] = {
     id = 2084,
-    Params = Table_AssetEffect_t.Params[180],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[332],
     Desc = "##1291405"
   },
   [2085] = {
     id = 2085,
-    Params = Table_AssetEffect_t.Params[179],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[331],
     Desc = "##1291406"
   },
   [2086] = {
     id = 2086,
-    Params = Table_AssetEffect_t.Params[178],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[330],
     Desc = "##1291407"
   },
   [2087] = {
     id = 2087,
-    Params = Table_AssetEffect_t.Params[177],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[329],
     Desc = "##1291408"
   },
   [2088] = {
     id = 2088,
-    Params = Table_AssetEffect_t.Params[176],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[328],
     Desc = "##1291409"
   },
   [2089] = {
     id = 2089,
-    Params = Table_AssetEffect_t.Params[175],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[327],
     Desc = "##1291410"
   },
   [2090] = {
     id = 2090,
-    Params = Table_AssetEffect_t.Params[174],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[326],
     Desc = "##1291411"
   },
   [2091] = {
     id = 2091,
-    Params = Table_AssetEffect_t.Params[173],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[325],
     Desc = "##1291412"
   },
   [2092] = {
     id = 2092,
-    Params = Table_AssetEffect_t.Params[172],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[324],
     Desc = "##1291413"
   },
   [2093] = {
     id = 2093,
-    Params = Table_AssetEffect_t.Params[171],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[323],
     Desc = "##1298950"
   },
   [2094] = {
     id = 2094,
-    Params = Table_AssetEffect_t.Params[170],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[322],
     Desc = "##1299035"
   },
   [2095] = {
     id = 2095,
-    Params = Table_AssetEffect_t.Params[169],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[321],
     Desc = "##1299035"
   },
   [2096] = {
     id = 2096,
-    Params = Table_AssetEffect_t.Params[168],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[320],
     Desc = "##1298956"
   },
   [2097] = {
     id = 2097,
-    Params = Table_AssetEffect_t.Params[167],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[319],
     Desc = "##1298956"
   },
   [2098] = {
     id = 2098,
-    Params = Table_AssetEffect_t.Params[166],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[318],
     Desc = "##1298956"
   },
   [2099] = {
     id = 2099,
-    Params = Table_AssetEffect_t.Params[165],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[317],
     Desc = "##1298962"
   },
   [2100] = {
     id = 2100,
-    Params = Table_AssetEffect_t.Params[164],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[316],
     Desc = "##1298962"
   },
   [2101] = {
     id = 2101,
-    Params = Table_AssetEffect_t.Params[163],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[315],
     Desc = "##1298962"
   },
   [2102] = {
     id = 2102,
-    Params = Table_AssetEffect_t.Params[162],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[314],
     Desc = "##1298962"
   },
   [2103] = {
     id = 2103,
-    Params = Table_AssetEffect_t.Params[161],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[313],
     Desc = "##1298962"
   },
   [2104] = {
     id = 2104,
-    Params = Table_AssetEffect_t.Params[160],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[312],
     Desc = "##1298962"
   },
   [2105] = {
     id = 2105,
-    Params = Table_AssetEffect_t.Params[159],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[311],
     Desc = "##1298962"
   },
   [2106] = {
     id = 2106,
-    Params = Table_AssetEffect_t.Params[158],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[310],
     Desc = "##1298962"
   },
   [2107] = {
     id = 2107,
-    Params = Table_AssetEffect_t.Params[157],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[309],
     Desc = "##1298962"
   },
   [2108] = {
     id = 2108,
-    Params = Table_AssetEffect_t.Params[156],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[308],
     Desc = "##1298962"
   },
   [2109] = {
     id = 2109,
-    Params = Table_AssetEffect_t.Params[155],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[307],
     Desc = "##1298962"
   },
   [2110] = {
     id = 2110,
-    Params = Table_AssetEffect_t.Params[154],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[306],
     Desc = "##1298962"
   },
   [2111] = {
     id = 2111,
-    Params = Table_AssetEffect_t.Params[153],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[305],
     Desc = "##1298962"
   },
   [2112] = {
     id = 2112,
-    Params = Table_AssetEffect_t.Params[152],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[304],
     Desc = "##1298962"
   },
   [2113] = {
     id = 2113,
-    Params = Table_AssetEffect_t.Params[151],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[303],
     Desc = "##1298962"
   },
   [2114] = {
     id = 2114,
-    Params = Table_AssetEffect_t.Params[150],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[302],
     Desc = "##1298962"
   },
   [2115] = {
     id = 2115,
-    Params = Table_AssetEffect_t.Params[27],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[301],
     Desc = "##2844064"
   },
   [2116] = {
     id = 2116,
-    Params = Table_AssetEffect_t.Params[28],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[27],
     Desc = "##2844066"
   },
   [2117] = {
     id = 2117,
-    Params = Table_AssetEffect_t.Params[29],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[28],
     Desc = "##2844068"
   },
   [2118] = {
     id = 2118,
-    Params = Table_AssetEffect_t.Params[30],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[29],
     Desc = "##2844070"
   },
   [2119] = {
     id = 2119,
-    Params = Table_AssetEffect_t.Params[31],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[30],
     Desc = "##3361172"
   },
   [2120] = {
     id = 2120,
-    Params = Table_AssetEffect_t.Params[32],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[31],
     Desc = "##3361173"
   },
   [2121] = {
@@ -2773,31 +3827,31 @@ Table_AssetEffect = {
   [2122] = {
     id = 2122,
     Type = "GM",
-    Params = Table_AssetEffect_t.Params[33],
+    Params = Table_AssetEffect_t.Params[32],
     Desc = "##42635904"
   },
   [2123] = {
     id = 2123,
     Type = "ExtraReward",
-    Params = Table_AssetEffect_t.Params[149],
+    Params = Table_AssetEffect_t.Params[33],
     Desc = "##42635905"
   },
   [2124] = {
     id = 2124,
     Type = "GM",
-    Params = Table_AssetEffect_t.Params[33],
+    Params = Table_AssetEffect_t.Params[32],
     Desc = "##42635904"
   },
   [2125] = {
     id = 2125,
     Type = "ExtraReward",
-    Params = Table_AssetEffect_t.Params[148],
+    Params = Table_AssetEffect_t.Params[300],
     Desc = "##42642168"
   },
   [2126] = {
     id = 2126,
     Type = "GM",
-    Params = Table_AssetEffect_t.Params[33],
+    Params = Table_AssetEffect_t.Params[32],
     Desc = "##42635904"
   },
   [2127] = {
@@ -2814,86 +3868,103 @@ Table_AssetEffect = {
   },
   [2129] = {
     id = 2129,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[39],
     Desc = "##42635911"
   },
   [2130] = {
     id = 2130,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[40],
     Desc = "##42635911"
   },
   [2131] = {
     id = 2131,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[41],
     Desc = "##42635911"
   },
   [2132] = {
     id = 2132,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[42],
     Desc = "##42635911"
   },
   [2133] = {
     id = 2133,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[43],
     Desc = "##42635911"
   },
   [2134] = {
     id = 2134,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[44],
     Desc = "##42635911"
   },
   [2135] = {
     id = 2135,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[45],
     Desc = "##42635911"
   },
   [2136] = {
     id = 2136,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[46],
     Desc = "##42635911"
   },
   [2137] = {
     id = 2137,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[47],
     Desc = "##42635911"
   },
   [2138] = {
     id = 2138,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[48],
     Desc = "##42635911"
   },
   [2139] = {
     id = 2139,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[49],
     Desc = "##42635911"
   },
   [2140] = {
     id = 2140,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[50],
     Desc = "##42635922"
   },
   [2141] = {
     id = 2141,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[51],
     Desc = "##42635922"
   },
   [2142] = {
     id = 2142,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[52],
     Desc = "##42635922"
   },
   [2143] = {
     id = 2143,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[53],
     Desc = "##42635922"
   },
   [2144] = {
     id = 2144,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[54],
     Desc = "##42635922"
   },
   [2145] = {
     id = 2145,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[55],
     Desc = "##42635922"
   },
@@ -2955,7 +4026,7 @@ Table_AssetEffect = {
   [2157] = {
     id = 2157,
     Type = "GM",
-    Params = Table_AssetEffect_t.Params[33],
+    Params = Table_AssetEffect_t.Params[32],
     Desc = "##42635904"
   },
   [2158] = {
@@ -2967,7 +4038,7 @@ Table_AssetEffect = {
   [2159] = {
     id = 2159,
     Type = "GM",
-    Params = Table_AssetEffect_t.Params[33],
+    Params = Table_AssetEffect_t.Params[32],
     Desc = "##42635904"
   },
   [2160] = {
@@ -2979,7 +4050,7 @@ Table_AssetEffect = {
   [2161] = {
     id = 2161,
     Type = "GM",
-    Params = Table_AssetEffect_t.Params[33],
+    Params = Table_AssetEffect_t.Params[32],
     Desc = "##42635904"
   },
   [2162] = {
@@ -2996,86 +4067,103 @@ Table_AssetEffect = {
   },
   [2164] = {
     id = 2164,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[59],
     Desc = "##42642310"
   },
   [2165] = {
     id = 2165,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[60],
     Desc = "##42642310"
   },
   [2166] = {
     id = 2166,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[61],
     Desc = "##42642310"
   },
   [2167] = {
     id = 2167,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[62],
     Desc = "##42642310"
   },
   [2168] = {
     id = 2168,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[63],
     Desc = "##42642310"
   },
   [2169] = {
     id = 2169,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[64],
     Desc = "##42642310"
   },
   [2170] = {
     id = 2170,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[65],
     Desc = "##42642310"
   },
   [2171] = {
     id = 2171,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[66],
     Desc = "##42642310"
   },
   [2172] = {
     id = 2172,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[67],
     Desc = "##42642310"
   },
   [2173] = {
     id = 2173,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[68],
     Desc = "##42642310"
   },
   [2174] = {
     id = 2174,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[69],
     Desc = "##42642310"
   },
   [2175] = {
     id = 2175,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[70],
     Desc = "##42642321"
   },
   [2176] = {
     id = 2176,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[71],
     Desc = "##42642321"
   },
   [2177] = {
     id = 2177,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[72],
     Desc = "##42642321"
   },
   [2178] = {
     id = 2178,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[73],
     Desc = "##42642321"
   },
   [2179] = {
     id = 2179,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[74],
     Desc = "##42642321"
   },
   [2180] = {
     id = 2180,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[75],
     Desc = "##42642321"
   },
@@ -3118,7 +4206,7 @@ Table_AssetEffect = {
   [2188] = {
     id = 2188,
     Type = "GM",
-    Params = Table_AssetEffect_t.Params[33],
+    Params = Table_AssetEffect_t.Params[32],
     Desc = "##42635904"
   },
   [2189] = {
@@ -3145,86 +4233,103 @@ Table_AssetEffect = {
   },
   [2193] = {
     id = 2193,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[78],
     Desc = "##44702727"
   },
   [2194] = {
     id = 2194,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[79],
     Desc = "##44702727"
   },
   [2195] = {
     id = 2195,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[80],
     Desc = "##44702727"
   },
   [2196] = {
     id = 2196,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[81],
     Desc = "##44702727"
   },
   [2197] = {
     id = 2197,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[82],
     Desc = "##44702727"
   },
   [2198] = {
     id = 2198,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[83],
     Desc = "##44702727"
   },
   [2199] = {
     id = 2199,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[84],
     Desc = "##44702727"
   },
   [2200] = {
     id = 2200,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[85],
     Desc = "##44702727"
   },
   [2201] = {
     id = 2201,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[86],
     Desc = "##44702727"
   },
   [2202] = {
     id = 2202,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[87],
     Desc = "##44702727"
   },
   [2203] = {
     id = 2203,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[88],
     Desc = "##44702727"
   },
   [2204] = {
     id = 2204,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[89],
     Desc = "##44702738"
   },
   [2205] = {
     id = 2205,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[90],
     Desc = "##44702738"
   },
   [2206] = {
     id = 2206,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[91],
     Desc = "##44702738"
   },
   [2207] = {
     id = 2207,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[92],
     Desc = "##44702738"
   },
   [2208] = {
     id = 2208,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[93],
     Desc = "##44702738"
   },
   [2209] = {
     id = 2209,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[94],
     Desc = "##44702738"
   },
@@ -3272,7 +4377,7 @@ Table_AssetEffect = {
   [2218] = {
     id = 2218,
     Type = "GM",
-    Params = Table_AssetEffect_t.Params[33],
+    Params = Table_AssetEffect_t.Params[32],
     Desc = "##42635904"
   },
   [2219] = {
@@ -3294,96 +4399,1033 @@ Table_AssetEffect = {
   },
   [2222] = {
     id = 2222,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[97],
     Desc = "##44713768"
   },
   [2223] = {
     id = 2223,
-    Params = Table_AssetEffect_t.Params[147],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[98],
     Desc = "##44713768"
   },
   [2224] = {
     id = 2224,
-    Params = Table_AssetEffect_t.Params[146],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[299],
     Desc = "##44713768"
   },
   [2225] = {
     id = 2225,
-    Params = Table_AssetEffect_t.Params[145],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[298],
     Desc = "##44713768"
   },
   [2226] = {
     id = 2226,
-    Params = Table_AssetEffect_t.Params[144],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[297],
     Desc = "##44713768"
   },
   [2227] = {
     id = 2227,
-    Params = Table_AssetEffect_t.Params[143],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[296],
     Desc = "##44713768"
   },
   [2228] = {
     id = 2228,
-    Params = Table_AssetEffect_t.Params[142],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[295],
     Desc = "##44713768"
   },
   [2229] = {
     id = 2229,
-    Params = Table_AssetEffect_t.Params[141],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[294],
     Desc = "##44713768"
   },
   [2230] = {
     id = 2230,
-    Params = Table_AssetEffect_t.Params[140],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[293],
     Desc = "##44713768"
   },
   [2231] = {
     id = 2231,
-    Params = Table_AssetEffect_t.Params[139],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[292],
     Desc = "##44713768"
   },
   [2232] = {
     id = 2232,
-    Params = Table_AssetEffect_t.Params[138],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[291],
     Desc = "##44713768"
   },
   [2233] = {
     id = 2233,
-    Params = Table_AssetEffect_t.Params[98],
+    Type = "MenuOpen",
+    Params = Table_AssetEffect_t.Params[290],
     Desc = "##44713779"
   },
   [2234] = {
     id = 2234,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[99],
     Desc = "##44713779"
   },
   [2235] = {
     id = 2235,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[100],
     Desc = "##44713779"
   },
   [2236] = {
     id = 2236,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[101],
     Desc = "##44713779"
   },
   [2237] = {
     id = 2237,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[102],
     Desc = "##44713779"
   },
   [2238] = {
     id = 2238,
+    Type = "MenuOpen",
     Params = Table_AssetEffect_t.Params[103],
     Desc = "##44713779"
+  },
+  [2241] = {
+    id = 2241,
+    Params = Table_AssetEffect_t.Params[104],
+    Desc = "##1101118"
+  },
+  [2242] = {
+    id = 2242,
+    Params = Table_AssetEffect_t.Params[105],
+    Desc = "##1101118"
+  },
+  [2243] = {
+    id = 2243,
+    Params = Table_AssetEffect_t.Params[106],
+    Desc = "##1101118"
+  },
+  [2244] = {
+    id = 2244,
+    Params = Table_AssetEffect_t.Params[289],
+    Desc = "##1101118"
+  },
+  [2245] = {
+    id = 2245,
+    Params = Table_AssetEffect_t.Params[288],
+    Desc = "##1101118"
+  },
+  [2246] = {
+    id = 2246,
+    Params = Table_AssetEffect_t.Params[287],
+    Desc = "##1101118"
+  },
+  [2247] = {
+    id = 2247,
+    Params = Table_AssetEffect_t.Params[286],
+    Desc = "##1101118"
+  },
+  [2248] = {
+    id = 2248,
+    Params = Table_AssetEffect_t.Params[285],
+    Desc = "##1101118"
+  },
+  [2249] = {
+    id = 2249,
+    Params = Table_AssetEffect_t.Params[284],
+    Desc = "##1101118"
+  },
+  [2250] = {
+    id = 2250,
+    Params = Table_AssetEffect_t.Params[283],
+    Desc = "##1101118"
+  },
+  [2251] = {
+    id = 2251,
+    Params = Table_AssetEffect_t.Params[282],
+    Desc = "##1101120"
+  },
+  [2252] = {
+    id = 2252,
+    Params = Table_AssetEffect_t.Params[281],
+    Desc = "##1101120"
+  },
+  [2253] = {
+    id = 2253,
+    Params = Table_AssetEffect_t.Params[280],
+    Desc = "##1101120"
+  },
+  [2254] = {
+    id = 2254,
+    Params = Table_AssetEffect_t.Params[279],
+    Desc = "##1101120"
+  },
+  [2255] = {
+    id = 2255,
+    Params = Table_AssetEffect_t.Params[278],
+    Desc = "##1101120"
+  },
+  [2256] = {
+    id = 2256,
+    Params = Table_AssetEffect_t.Params[277],
+    Desc = "##1101120"
+  },
+  [2257] = {
+    id = 2257,
+    Params = Table_AssetEffect_t.Params[276],
+    Desc = "##1101120"
+  },
+  [2258] = {
+    id = 2258,
+    Params = Table_AssetEffect_t.Params[275],
+    Desc = "##1101120"
+  },
+  [2259] = {
+    id = 2259,
+    Params = Table_AssetEffect_t.Params[121],
+    Desc = "##1101120"
+  },
+  [2260] = {
+    id = 2260,
+    Params = Table_AssetEffect_t.Params[122],
+    Desc = "##1101120"
+  },
+  [2261] = {
+    id = 2261,
+    Params = Table_AssetEffect_t.Params[123],
+    Desc = "##44721329"
+  },
+  [2262] = {
+    id = 2262,
+    Params = Table_AssetEffect_t.Params[124],
+    Desc = "##44721329"
+  },
+  [2263] = {
+    id = 2263,
+    Params = Table_AssetEffect_t.Params[125],
+    Desc = "##44721329"
+  },
+  [2264] = {
+    id = 2264,
+    Params = Table_AssetEffect_t.Params[274],
+    Desc = "##44721329"
+  },
+  [2265] = {
+    id = 2265,
+    Params = Table_AssetEffect_t.Params[273],
+    Desc = "##44721329"
+  },
+  [2266] = {
+    id = 2266,
+    Params = Table_AssetEffect_t.Params[272],
+    Desc = "##44721329"
+  },
+  [2267] = {
+    id = 2267,
+    Params = Table_AssetEffect_t.Params[271],
+    Desc = "##44721329"
+  },
+  [2268] = {
+    id = 2268,
+    Params = Table_AssetEffect_t.Params[270],
+    Desc = "##44721329"
+  },
+  [2269] = {
+    id = 2269,
+    Params = Table_AssetEffect_t.Params[127],
+    Desc = "##44721329"
+  },
+  [2270] = {
+    id = 2270,
+    Params = Table_AssetEffect_t.Params[128],
+    Desc = "##44721329"
+  },
+  [2271] = {
+    id = 2271,
+    Params = Table_AssetEffect_t.Params[129],
+    Desc = "##44721339"
+  },
+  [2272] = {
+    id = 2272,
+    Params = Table_AssetEffect_t.Params[130],
+    Desc = "##44721339"
+  },
+  [2273] = {
+    id = 2273,
+    Params = Table_AssetEffect_t.Params[131],
+    Desc = "##44721339"
+  },
+  [2274] = {
+    id = 2274,
+    Params = Table_AssetEffect_t.Params[269],
+    Desc = "##44721339"
+  },
+  [2275] = {
+    id = 2275,
+    Params = Table_AssetEffect_t.Params[268],
+    Desc = "##44721339"
+  },
+  [2276] = {
+    id = 2276,
+    Params = Table_AssetEffect_t.Params[267],
+    Desc = "##44721339"
+  },
+  [2277] = {
+    id = 2277,
+    Params = Table_AssetEffect_t.Params[266],
+    Desc = "##44721339"
+  },
+  [2278] = {
+    id = 2278,
+    Params = Table_AssetEffect_t.Params[265],
+    Desc = "##44721339"
+  },
+  [2279] = {
+    id = 2279,
+    Params = Table_AssetEffect_t.Params[264],
+    Desc = "##44721339"
+  },
+  [2280] = {
+    id = 2280,
+    Params = Table_AssetEffect_t.Params[263],
+    Desc = "##44721339"
+  },
+  [2281] = {
+    id = 2281,
+    Params = Table_AssetEffect_t.Params[262],
+    Desc = "##44721349"
+  },
+  [2282] = {
+    id = 2282,
+    Params = Table_AssetEffect_t.Params[140],
+    Desc = "##44721349"
+  },
+  [2283] = {
+    id = 2283,
+    Params = Table_AssetEffect_t.Params[141],
+    Desc = "##44721349"
+  },
+  [2284] = {
+    id = 2284,
+    Params = Table_AssetEffect_t.Params[261],
+    Desc = "##44721349"
+  },
+  [2285] = {
+    id = 2285,
+    Params = Table_AssetEffect_t.Params[260],
+    Desc = "##44721349"
+  },
+  [2286] = {
+    id = 2286,
+    Params = Table_AssetEffect_t.Params[144],
+    Desc = "##44721349"
+  },
+  [2287] = {
+    id = 2287,
+    Params = Table_AssetEffect_t.Params[145],
+    Desc = "##44721349"
+  },
+  [2288] = {
+    id = 2288,
+    Params = Table_AssetEffect_t.Params[146],
+    Desc = "##44721349"
+  },
+  [2289] = {
+    id = 2289,
+    Params = Table_AssetEffect_t.Params[147],
+    Desc = "##44721349"
+  },
+  [2290] = {
+    id = 2290,
+    Params = Table_AssetEffect_t.Params[148],
+    Desc = "##44721349"
+  },
+  [2291] = {
+    id = 2291,
+    Params = Table_AssetEffect_t.Params[149],
+    Desc = "##44721359"
+  },
+  [2292] = {
+    id = 2292,
+    Params = Table_AssetEffect_t.Params[150],
+    Desc = "##44721359"
+  },
+  [2293] = {
+    id = 2293,
+    Params = Table_AssetEffect_t.Params[151],
+    Desc = "##44721359"
+  },
+  [2294] = {
+    id = 2294,
+    Params = Table_AssetEffect_t.Params[152],
+    Desc = "##44721359"
+  },
+  [2295] = {
+    id = 2295,
+    Params = Table_AssetEffect_t.Params[153],
+    Desc = "##44721359"
+  },
+  [2296] = {
+    id = 2296,
+    Params = Table_AssetEffect_t.Params[154],
+    Desc = "##44721359"
+  },
+  [2297] = {
+    id = 2297,
+    Params = Table_AssetEffect_t.Params[155],
+    Desc = "##44721359"
+  },
+  [2298] = {
+    id = 2298,
+    Params = Table_AssetEffect_t.Params[156],
+    Desc = "##44721359"
+  },
+  [2299] = {
+    id = 2299,
+    Params = Table_AssetEffect_t.Params[157],
+    Desc = "##44721359"
+  },
+  [2300] = {
+    id = 2300,
+    Params = Table_AssetEffect_t.Params[158],
+    Desc = "##44721359"
+  },
+  [2301] = {
+    id = 2301,
+    Type = "MapItemRatio",
+    Desc = "##44721369"
+  },
+  [2302] = {
+    id = 2302,
+    Type = "MapItemRatio",
+    Desc = "##44721369"
+  },
+  [2303] = {
+    id = 2303,
+    Type = "MapItemRatio",
+    Desc = "##44721369"
+  },
+  [2304] = {
+    id = 2304,
+    Type = "MapItemRatio",
+    Desc = "##44721369"
+  },
+  [2305] = {
+    id = 2305,
+    Type = "MapItemRatio",
+    Desc = "##44721369"
+  },
+  [2306] = {
+    id = 2306,
+    Type = "MapItemRatio",
+    Desc = "##44721369"
+  },
+  [2307] = {
+    id = 2307,
+    Type = "MapItemRatio",
+    Desc = "##44721369"
+  },
+  [2308] = {
+    id = 2308,
+    Type = "MapItemRatio",
+    Desc = "##44721369"
+  },
+  [2309] = {
+    id = 2309,
+    Type = "MapItemRatio",
+    Desc = "##44721369"
+  },
+  [2310] = {
+    id = 2310,
+    Type = "MapItemRatio",
+    Desc = "##44721369"
+  },
+  [2311] = {
+    id = 2311,
+    Type = "MapItemRatio",
+    Params = Table_AssetEffect_t.Params[159],
+    Desc = "##44721379"
+  },
+  [2312] = {
+    id = 2312,
+    Type = "MapItemRatio",
+    Params = Table_AssetEffect_t.Params[159],
+    Desc = "##44721379"
+  },
+  [2313] = {
+    id = 2313,
+    Type = "MapItemRatio",
+    Params = Table_AssetEffect_t.Params[159],
+    Desc = "##44721379"
+  },
+  [2314] = {
+    id = 2314,
+    Type = "MapItemRatio",
+    Params = Table_AssetEffect_t.Params[159],
+    Desc = "##44721379"
+  },
+  [2315] = {
+    id = 2315,
+    Type = "MapItemRatio",
+    Params = Table_AssetEffect_t.Params[159],
+    Desc = "##44721379"
+  },
+  [2316] = {
+    id = 2316,
+    Type = "MapItemRatio",
+    Params = Table_AssetEffect_t.Params[159],
+    Desc = "##44721379"
+  },
+  [2317] = {
+    id = 2317,
+    Type = "MapItemRatio",
+    Params = Table_AssetEffect_t.Params[159],
+    Desc = "##44721379"
+  },
+  [2318] = {
+    id = 2318,
+    Type = "MapItemRatio",
+    Params = Table_AssetEffect_t.Params[159],
+    Desc = "##44721379"
+  },
+  [2319] = {
+    id = 2319,
+    Type = "MapItemRatio",
+    Params = Table_AssetEffect_t.Params[159],
+    Desc = "##44721379"
+  },
+  [2320] = {
+    id = 2320,
+    Type = "MapItemRatio",
+    Params = Table_AssetEffect_t.Params[159],
+    Desc = "##44721379"
+  },
+  [2321] = {
+    id = 2321,
+    Type = "MapDeadReward",
+    Params = Table_AssetEffect_t.Params[160],
+    Desc = "##45907969"
+  },
+  [2322] = {
+    id = 2322,
+    Type = "MapDeadReward",
+    Params = Table_AssetEffect_t.Params[160],
+    Desc = "##45907969"
+  },
+  [2323] = {
+    id = 2323,
+    Type = "MapDeadReward",
+    Params = Table_AssetEffect_t.Params[160],
+    Desc = "##45907969"
+  },
+  [2324] = {
+    id = 2324,
+    Type = "MapDeadReward",
+    Params = Table_AssetEffect_t.Params[160],
+    Desc = "##45907969"
+  },
+  [2325] = {
+    id = 2325,
+    Type = "MapDeadReward",
+    Params = Table_AssetEffect_t.Params[160],
+    Desc = "##45907969"
+  },
+  [2326] = {
+    id = 2326,
+    Type = "MapDeadReward",
+    Params = Table_AssetEffect_t.Params[160],
+    Desc = "##45907969"
+  },
+  [2327] = {
+    id = 2327,
+    Type = "MapDeadReward",
+    Params = Table_AssetEffect_t.Params[160],
+    Desc = "##45907969"
+  },
+  [2328] = {
+    id = 2328,
+    Type = "MapDeadReward",
+    Params = Table_AssetEffect_t.Params[160],
+    Desc = "##45907969"
+  },
+  [2329] = {
+    id = 2329,
+    Type = "MapDeadReward",
+    Params = Table_AssetEffect_t.Params[160],
+    Desc = "##45907969"
+  },
+  [2330] = {
+    id = 2330,
+    Type = "MapDeadReward",
+    Params = Table_AssetEffect_t.Params[160],
+    Desc = "##45907969"
+  },
+  [2331] = {
+    id = 2331,
+    Params = Table_AssetEffect_t.Params[259],
+    Desc = "##45907979"
+  },
+  [2332] = {
+    id = 2332,
+    Params = Table_AssetEffect_t.Params[258],
+    Desc = "##45907979"
+  },
+  [2333] = {
+    id = 2333,
+    Params = Table_AssetEffect_t.Params[257],
+    Desc = "##45907979"
+  },
+  [2334] = {
+    id = 2334,
+    Params = Table_AssetEffect_t.Params[170],
+    Desc = "##45907979"
+  },
+  [2335] = {
+    id = 2335,
+    Params = Table_AssetEffect_t.Params[171],
+    Desc = "##45907979"
+  },
+  [2336] = {
+    id = 2336,
+    Params = Table_AssetEffect_t.Params[172],
+    Desc = "##45907979"
+  },
+  [2337] = {
+    id = 2337,
+    Params = Table_AssetEffect_t.Params[173],
+    Desc = "##45907979"
+  },
+  [2338] = {
+    id = 2338,
+    Params = Table_AssetEffect_t.Params[174],
+    Desc = "##45907979"
+  },
+  [2339] = {
+    id = 2339,
+    Params = Table_AssetEffect_t.Params[175],
+    Desc = "##45907979"
+  },
+  [2340] = {
+    id = 2340,
+    Params = Table_AssetEffect_t.Params[176],
+    Desc = "##45907979"
+  },
+  [2341] = {
+    id = 2341,
+    Params = Table_AssetEffect_t.Params[177],
+    Desc = "##45907989"
+  },
+  [2342] = {
+    id = 2342,
+    Params = Table_AssetEffect_t.Params[178],
+    Desc = "##45907989"
+  },
+  [2343] = {
+    id = 2343,
+    Params = Table_AssetEffect_t.Params[179],
+    Desc = "##45907989"
+  },
+  [2344] = {
+    id = 2344,
+    Params = Table_AssetEffect_t.Params[180],
+    Desc = "##45907989"
+  },
+  [2345] = {
+    id = 2345,
+    Params = Table_AssetEffect_t.Params[181],
+    Desc = "##45907989"
+  },
+  [2346] = {
+    id = 2346,
+    Params = Table_AssetEffect_t.Params[182],
+    Desc = "##45907989"
+  },
+  [2347] = {
+    id = 2347,
+    Params = Table_AssetEffect_t.Params[183],
+    Desc = "##45907989"
+  },
+  [2348] = {
+    id = 2348,
+    Params = Table_AssetEffect_t.Params[184],
+    Desc = "##45907989"
+  },
+  [2349] = {
+    id = 2349,
+    Params = Table_AssetEffect_t.Params[185],
+    Desc = "##45907989"
+  },
+  [2350] = {
+    id = 2350,
+    Params = Table_AssetEffect_t.Params[186],
+    Desc = "##45907989"
+  },
+  [2351] = {
+    id = 2351,
+    Params = Table_AssetEffect_t.Params[187],
+    Desc = "##45907999"
+  },
+  [2352] = {
+    id = 2352,
+    Params = Table_AssetEffect_t.Params[188],
+    Desc = "##45907999"
+  },
+  [2353] = {
+    id = 2353,
+    Params = Table_AssetEffect_t.Params[189],
+    Desc = "##45907999"
+  },
+  [2354] = {
+    id = 2354,
+    Params = Table_AssetEffect_t.Params[190],
+    Desc = "##45907999"
+  },
+  [2355] = {
+    id = 2355,
+    Params = Table_AssetEffect_t.Params[191],
+    Desc = "##45907999"
+  },
+  [2356] = {
+    id = 2356,
+    Params = Table_AssetEffect_t.Params[192],
+    Desc = "##45907999"
+  },
+  [2357] = {
+    id = 2357,
+    Params = Table_AssetEffect_t.Params[193],
+    Desc = "##45907999"
+  },
+  [2358] = {
+    id = 2358,
+    Params = Table_AssetEffect_t.Params[194],
+    Desc = "##45907999"
+  },
+  [2359] = {
+    id = 2359,
+    Params = Table_AssetEffect_t.Params[195],
+    Desc = "##45907999"
+  },
+  [2360] = {
+    id = 2360,
+    Params = Table_AssetEffect_t.Params[196],
+    Desc = "##45907999"
+  },
+  [2361] = {
+    id = 2361,
+    Params = Table_AssetEffect_t.Params[197],
+    Desc = "##45908009"
+  },
+  [2362] = {
+    id = 2362,
+    Params = Table_AssetEffect_t.Params[198],
+    Desc = "##45908009"
+  },
+  [2363] = {
+    id = 2363,
+    Params = Table_AssetEffect_t.Params[199],
+    Desc = "##45908009"
+  },
+  [2364] = {
+    id = 2364,
+    Params = Table_AssetEffect_t.Params[200],
+    Desc = "##45908009"
+  },
+  [2365] = {
+    id = 2365,
+    Params = Table_AssetEffect_t.Params[201],
+    Desc = "##45908009"
+  },
+  [2366] = {
+    id = 2366,
+    Params = Table_AssetEffect_t.Params[202],
+    Desc = "##45908009"
+  },
+  [2367] = {
+    id = 2367,
+    Params = Table_AssetEffect_t.Params[203],
+    Desc = "##45908009"
+  },
+  [2368] = {
+    id = 2368,
+    Params = Table_AssetEffect_t.Params[204],
+    Desc = "##45908009"
+  },
+  [2369] = {
+    id = 2369,
+    Params = Table_AssetEffect_t.Params[205],
+    Desc = "##45908009"
+  },
+  [2370] = {
+    id = 2370,
+    Params = Table_AssetEffect_t.Params[206],
+    Desc = "##45908009"
+  },
+  [2371] = {
+    id = 2371,
+    Params = Table_AssetEffect_t.Params[207],
+    Desc = "##45908019"
+  },
+  [2372] = {
+    id = 2372,
+    Params = Table_AssetEffect_t.Params[208],
+    Desc = "##45908019"
+  },
+  [2373] = {
+    id = 2373,
+    Params = Table_AssetEffect_t.Params[209],
+    Desc = "##45908019"
+  },
+  [2374] = {
+    id = 2374,
+    Params = Table_AssetEffect_t.Params[210],
+    Desc = "##45908019"
+  },
+  [2375] = {
+    id = 2375,
+    Params = Table_AssetEffect_t.Params[211],
+    Desc = "##45908019"
+  },
+  [2376] = {
+    id = 2376,
+    Params = Table_AssetEffect_t.Params[212],
+    Desc = "##45908019"
+  },
+  [2377] = {
+    id = 2377,
+    Params = Table_AssetEffect_t.Params[213],
+    Desc = "##45908019"
+  },
+  [2378] = {
+    id = 2378,
+    Params = Table_AssetEffect_t.Params[214],
+    Desc = "##45908019"
+  },
+  [2379] = {
+    id = 2379,
+    Params = Table_AssetEffect_t.Params[215],
+    Desc = "##45908019"
+  },
+  [2380] = {
+    id = 2380,
+    Params = Table_AssetEffect_t.Params[216],
+    Desc = "##45908019"
+  },
+  [2381] = {
+    id = 2381,
+    Params = Table_AssetEffect_t.Params[217],
+    Desc = "##45908029"
+  },
+  [2382] = {
+    id = 2382,
+    Params = Table_AssetEffect_t.Params[218],
+    Desc = "##45908029"
+  },
+  [2383] = {
+    id = 2383,
+    Params = Table_AssetEffect_t.Params[219],
+    Desc = "##45908029"
+  },
+  [2384] = {
+    id = 2384,
+    Params = Table_AssetEffect_t.Params[220],
+    Desc = "##45908029"
+  },
+  [2385] = {
+    id = 2385,
+    Params = Table_AssetEffect_t.Params[221],
+    Desc = "##45908029"
+  },
+  [2386] = {
+    id = 2386,
+    Params = Table_AssetEffect_t.Params[222],
+    Desc = "##45908029"
+  },
+  [2387] = {
+    id = 2387,
+    Params = Table_AssetEffect_t.Params[223],
+    Desc = "##45908029"
+  },
+  [2388] = {
+    id = 2388,
+    Params = Table_AssetEffect_t.Params[224],
+    Desc = "##45908029"
+  },
+  [2389] = {
+    id = 2389,
+    Params = Table_AssetEffect_t.Params[225],
+    Desc = "##45908029"
+  },
+  [2390] = {
+    id = 2390,
+    Params = Table_AssetEffect_t.Params[226],
+    Desc = "##45908029"
+  },
+  [2391] = {
+    id = 2391,
+    Params = Table_AssetEffect_t.Params[227],
+    Desc = "##45908039"
+  },
+  [2392] = {
+    id = 2392,
+    Params = Table_AssetEffect_t.Params[228],
+    Desc = "##45908039"
+  },
+  [2393] = {
+    id = 2393,
+    Params = Table_AssetEffect_t.Params[229],
+    Desc = "##45908039"
+  },
+  [2394] = {
+    id = 2394,
+    Params = Table_AssetEffect_t.Params[230],
+    Desc = "##45908039"
+  },
+  [2395] = {
+    id = 2395,
+    Params = Table_AssetEffect_t.Params[231],
+    Desc = "##45908039"
+  },
+  [2396] = {
+    id = 2396,
+    Params = Table_AssetEffect_t.Params[232],
+    Desc = "##45908039"
+  },
+  [2397] = {
+    id = 2397,
+    Params = Table_AssetEffect_t.Params[233],
+    Desc = "##45908039"
+  },
+  [2398] = {
+    id = 2398,
+    Params = Table_AssetEffect_t.Params[234],
+    Desc = "##45908039"
+  },
+  [2399] = {
+    id = 2399,
+    Params = Table_AssetEffect_t.Params[235],
+    Desc = "##45908039"
+  },
+  [2400] = {
+    id = 2400,
+    Params = Table_AssetEffect_t.Params[236],
+    Desc = "##45908039"
+  },
+  [2401] = {
+    id = 2401,
+    Params = Table_AssetEffect_t.Params[237],
+    Desc = "##45908049"
+  },
+  [2402] = {
+    id = 2402,
+    Params = Table_AssetEffect_t.Params[238],
+    Desc = "##45908049"
+  },
+  [2403] = {
+    id = 2403,
+    Params = Table_AssetEffect_t.Params[239],
+    Desc = "##45908049"
+  },
+  [2404] = {
+    id = 2404,
+    Params = Table_AssetEffect_t.Params[240],
+    Desc = "##45908049"
+  },
+  [2405] = {
+    id = 2405,
+    Params = Table_AssetEffect_t.Params[241],
+    Desc = "##45908049"
+  },
+  [2406] = {
+    id = 2406,
+    Params = Table_AssetEffect_t.Params[242],
+    Desc = "##45908049"
+  },
+  [2407] = {
+    id = 2407,
+    Params = Table_AssetEffect_t.Params[243],
+    Desc = "##45908049"
+  },
+  [2408] = {
+    id = 2408,
+    Params = Table_AssetEffect_t.Params[244],
+    Desc = "##45908049"
+  },
+  [2409] = {
+    id = 2409,
+    Params = Table_AssetEffect_t.Params[245],
+    Desc = "##45908049"
+  },
+  [2410] = {
+    id = 2410,
+    Params = Table_AssetEffect_t.Params[246],
+    Desc = "##45908049"
+  },
+  [2411] = {
+    id = 2411,
+    Params = Table_AssetEffect_t.Params[247],
+    Desc = "##45908059"
+  },
+  [2412] = {
+    id = 2412,
+    Params = Table_AssetEffect_t.Params[248],
+    Desc = "##45908059"
+  },
+  [2413] = {
+    id = 2413,
+    Params = Table_AssetEffect_t.Params[249],
+    Desc = "##45908059"
+  },
+  [2414] = {
+    id = 2414,
+    Params = Table_AssetEffect_t.Params[250],
+    Desc = "##45908059"
+  },
+  [2415] = {
+    id = 2415,
+    Params = Table_AssetEffect_t.Params[251],
+    Desc = "##45908059"
+  },
+  [2416] = {
+    id = 2416,
+    Params = Table_AssetEffect_t.Params[252],
+    Desc = "##45908059"
+  },
+  [2417] = {
+    id = 2417,
+    Params = Table_AssetEffect_t.Params[253],
+    Desc = "##45908059"
+  },
+  [2418] = {
+    id = 2418,
+    Params = Table_AssetEffect_t.Params[254],
+    Desc = "##45908059"
+  },
+  [2419] = {
+    id = 2419,
+    Params = Table_AssetEffect_t.Params[255],
+    Desc = "##45908059"
+  },
+  [2420] = {
+    id = 2420,
+    Params = Table_AssetEffect_t.Params[256],
+    Desc = "##45908059"
   }
 }
 local cell_mt = {
   __index = {
     Desc = "##1133722",
     Params = _EmptyTable,
-    Type = "MenuOpen",
-    id = 1022
+    Type = "MapBuff",
+    id = 1023
   }
 }
 for _, d in pairs(Table_AssetEffect) do

@@ -17,15 +17,57 @@ function ActivityPaySignProxy:Init()
   self.signDatas = {}
 end
 
-function ActivityPaySignProxy:UpdatePaySignDatas(serverData)
-  if serverData then
-    local signData = self.signDatas[serverData.act_id]
+function ActivityPaySignProxy:InitSignDatas()
+  for act_id, config in pairs(Game.Config_ActPaySign) do
+    local signData = self.signDatas[act_id]
     if not signData then
       signData = {}
-      signData.act_id = serverData.act_id
-      signData.staticData = Game.Config_ActPaySign[serverData.act_id]
-      self.signDatas[serverData.act_id] = signData
+      signData.act_id = act_id
+      signData.staticData = {}
+      self.signDatas[act_id] = signData
     end
+    local templateData = config[0]
+    if templateData then
+      for day, v in pairs(templateData) do
+        signData.staticData[day] = v
+        if not signData.deposit_id then
+          signData.deposit_id = v.DepositID
+        end
+      end
+    end
+  end
+end
+
+function ActivityPaySignProxy:BatchSignDatas(act_id, batch_id)
+  self:InitSignDatas()
+  local signData = self.signDatas[act_id]
+  if not signData then
+    signData = {}
+    signData.act_id = act_id
+    signData.staticData = {}
+    self.signDatas[act_id] = signData
+  end
+  local config = Game.Config_ActPaySign[act_id]
+  if not config then
+    redlog("ActPaySign表中无活动数据：", act_id)
+    return
+  end
+  local batchData = config[batch_id]
+  if batchData then
+    for day, v in pairs(batchData) do
+      signData.staticData[day] = v
+      if not signData.deposit_id then
+        signData.deposit_id = v.DepositID
+      end
+    end
+    signData.batch_id = batch_id
+  end
+end
+
+function ActivityPaySignProxy:UpdatePaySignDatas(serverData)
+  if serverData then
+    self:BatchSignDatas(serverData.act_id, serverData.batch_id)
+    local signData = self.signDatas[serverData.act_id]
     signData.signed_day = serverData.signed_count or 0
     signData.rewarded_normal_day = serverData.rewarded_normal_day or 0
     signData.rewarded_pro_day = serverData.rewarded_pro_day or 0
@@ -111,4 +153,14 @@ function ActivityPaySignProxy:IsHaveAvailableReward(act_id)
     end
   end
   return false
+end
+
+function ActivityPaySignProxy:GetDepositID(act_id)
+  local signData = self.signDatas[act_id]
+  return signData and signData.deposit_id or 0
+end
+
+function ActivityPaySignProxy:GetBatchID(act_id)
+  local signData = self.signDatas[act_id]
+  return signData and signData.batch_id or 0
 end

@@ -3458,6 +3458,15 @@ function ServiceActivityCmdAutoProxy:CallPaySignSyncActCmd(info)
       end
       msg.info.is_pro = info.is_pro
     end
+    if info ~= nil and info.batch_id ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.batch_id = info.batch_id
+    end
     self:SendProto(msg)
   else
     local msgId = ProtoReqInfoList.PaySignSyncActCmd.id
@@ -3516,15 +3525,27 @@ function ServiceActivityCmdAutoProxy:CallPaySignSyncActCmd(info)
       end
       msgParam.info.is_pro = info.is_pro
     end
+    if info ~= nil and info.batch_id ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.batch_id = info.batch_id
+    end
     self:SendProto2(msgId, msgParam)
   end
 end
 
-function ServiceActivityCmdAutoProxy:CallPaySignRewardActCmd(act_id)
+function ServiceActivityCmdAutoProxy:CallPaySignRewardActCmd(act_id, batch_id)
   if not NetConfig.PBC then
     local msg = ActivityCmd_pb.PaySignRewardActCmd()
     if act_id ~= nil then
       msg.act_id = act_id
+    end
+    if batch_id ~= nil then
+      msg.batch_id = batch_id
     end
     self:SendProto(msg)
   else
@@ -3532,6 +3553,9 @@ function ServiceActivityCmdAutoProxy:CallPaySignRewardActCmd(act_id)
     local msgParam = {}
     if act_id ~= nil then
       msgParam.act_id = act_id
+    end
+    if batch_id ~= nil then
+      msgParam.batch_id = batch_id
     end
     self:SendProto2(msgId, msgParam)
   end

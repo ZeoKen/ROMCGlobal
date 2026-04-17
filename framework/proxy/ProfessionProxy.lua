@@ -1009,6 +1009,12 @@ function ProfessionProxy.CanChangeProfession4NewPVPRule(failPrompt)
       end
     end
   end
+  if Game.MapManager:IsPVPMode_AsyncPvpRaid_InBattle() then
+    if failPrompt then
+      MsgManager.ShowMsgByID(failPrompt)
+    end
+    return false, false
+  end
   local mapid = Game.MapManager:GetMapID()
   local raidid = Game.MapManager:GetRaidID()
   local canChange = true

@@ -40,7 +40,13 @@ mapGuildEnumProp(GuildCmd_pb.EGUILDMEMBERDATA_ASSEMBLY_STATUS, "assemblystatus")
 mapGuildEnumProp(GuildCmd_pb.EGUILDMEMBERDATA_IN_GVG_FIRE, "ingvgfire")
 mapGuildEnumProp(GuildCmd_pb.EGUILDMEMBERDATA_IN_GVG_SUPER, "ingvgsuper")
 mapGuildEnumProp(GuildCmd_pb.EGUILDMEMBERDATA_MERCENARY_GUILDID, "mercenary_guild_id")
-GuildSummaryStringType = {name = 1, teamname = 1}
+mapGuildEnumProp(GuildCmd_pb.EGUILDMEMBERDATA_SNOW_ROOMID, "snowroomid")
+mapGuildEnumProp(GuildCmd_pb.EGUILDMEMBERDATA_HEAD_FASHION, "head_fashion")
+GuildSummaryStringType = {
+  name = 1,
+  teamname = 1,
+  head_fashion = 1
+}
 
 function GuildMemberData:ctor(guildMemberData, guildData)
   self.guildData = guildData

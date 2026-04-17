@@ -246,7 +246,6 @@ function PackageView:OnEquipTabChange()
   local isViceEquipType = BagProxy.Instance:IsViceEquipType()
   self.isViceEquip = isViceEquipType
   local equipType = BagProxy.Instance.curEquipType
-  xdlog("EquipType", equipType)
   if self.preEquipType == equipType then
     return
   end

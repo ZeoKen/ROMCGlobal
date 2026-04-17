@@ -254,5 +254,9 @@ local cross = function(p, a, b)
 end
 
 function LuaGeometry.IsPointInRect_XZ(p, ra, rb, rc, rd)
-  return 0 < cross(p, ra, rb) * cross(p, rb, rc) * cross(p, rc, rd) * cross(p, rd, ra)
+  local s1 = cross(p, ra, rb)
+  local s2 = cross(p, rb, rc)
+  local s3 = cross(p, rc, rd)
+  local s4 = cross(p, rd, ra)
+  return s1 < 0 and s2 < 0 and s3 < 0 and s4 < 0 or 0 < s1 and 0 < s2 and 0 < s3 and 0 < s4
 end

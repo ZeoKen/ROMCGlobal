@@ -516,6 +516,21 @@ function ServiceFuBenCmdAutoProxy:onRegister()
   self:Listen(11, 186, function(data)
     self:RecvGvgInviteTransferToMeCmd(data)
   end)
+  self:Listen(11, 187, function(data)
+    self:RecvGeffenMagicInfoSyncCmd(data)
+  end)
+  self:Listen(11, 188, function(data)
+    self:RecvGeffenMagicSelectAffixCmd(data)
+  end)
+  self:Listen(11, 189, function(data)
+    self:RecvGeffenMagicStatUpdateCmd(data)
+  end)
+  self:Listen(11, 190, function(data)
+    self:RecvGeffenMagicWinCmd(data)
+  end)
+  self:Listen(11, 191, function(data)
+    self:RecvGeffenMagicEnemyInfoQueryCmd(data)
+  end)
 end
 
 function ServiceFuBenCmdAutoProxy:CallTrackFuBenUserCmd(data, dmapid, endtime)
@@ -8485,6 +8500,311 @@ function ServiceFuBenCmdAutoProxy:CallGvgInviteTransferToMeCmd(host, start_time,
   end
 end
 
+function ServiceFuBenCmdAutoProxy:CallGeffenMagicInfoSyncCmd(affixes, wave, start_time, select_affixes, difficulty, start_fight)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.GeffenMagicInfoSyncCmd()
+    if affixes ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.affixes == nil then
+        msg.affixes = {}
+      end
+      for i = 1, #affixes do
+        table.insert(msg.affixes, affixes[i])
+      end
+    end
+    if wave ~= nil then
+      msg.wave = wave
+    end
+    if start_time ~= nil then
+      msg.start_time = start_time
+    end
+    if select_affixes ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.select_affixes == nil then
+        msg.select_affixes = {}
+      end
+      for i = 1, #select_affixes do
+        table.insert(msg.select_affixes, select_affixes[i])
+      end
+    end
+    if difficulty ~= nil then
+      msg.difficulty = difficulty
+    end
+    if start_fight ~= nil then
+      msg.start_fight = start_fight
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.GeffenMagicInfoSyncCmd.id
+    local msgParam = {}
+    if affixes ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.affixes == nil then
+        msgParam.affixes = {}
+      end
+      for i = 1, #affixes do
+        table.insert(msgParam.affixes, affixes[i])
+      end
+    end
+    if wave ~= nil then
+      msgParam.wave = wave
+    end
+    if start_time ~= nil then
+      msgParam.start_time = start_time
+    end
+    if select_affixes ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.select_affixes == nil then
+        msgParam.select_affixes = {}
+      end
+      for i = 1, #select_affixes do
+        table.insert(msgParam.select_affixes, select_affixes[i])
+      end
+    end
+    if difficulty ~= nil then
+      msgParam.difficulty = difficulty
+    end
+    if start_fight ~= nil then
+      msgParam.start_fight = start_fight
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceFuBenCmdAutoProxy:CallGeffenMagicSelectAffixCmd(select_affixes, difficulty)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.GeffenMagicSelectAffixCmd()
+    if select_affixes ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.select_affixes == nil then
+        msg.select_affixes = {}
+      end
+      for i = 1, #select_affixes do
+        table.insert(msg.select_affixes, select_affixes[i])
+      end
+    end
+    if difficulty ~= nil then
+      msg.difficulty = difficulty
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.GeffenMagicSelectAffixCmd.id
+    local msgParam = {}
+    if select_affixes ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.select_affixes == nil then
+        msgParam.select_affixes = {}
+      end
+      for i = 1, #select_affixes do
+        table.insert(msgParam.select_affixes, select_affixes[i])
+      end
+    end
+    if difficulty ~= nil then
+      msgParam.difficulty = difficulty
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceFuBenCmdAutoProxy:CallGeffenMagicStatUpdateCmd(stat_data)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.GeffenMagicStatUpdateCmd()
+    if stat_data ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.stat_data == nil then
+        msg.stat_data = {}
+      end
+      for i = 1, #stat_data do
+        table.insert(msg.stat_data, stat_data[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.GeffenMagicStatUpdateCmd.id
+    local msgParam = {}
+    if stat_data ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.stat_data == nil then
+        msgParam.stat_data = {}
+      end
+      for i = 1, #stat_data do
+        table.insert(msgParam.stat_data, stat_data[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceFuBenCmdAutoProxy:CallGeffenMagicWinCmd(wave_scores, new_record)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.GeffenMagicWinCmd()
+    if wave_scores ~= nil and wave_scores.wave ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.wave_scores == nil then
+        msg.wave_scores = {}
+      end
+      msg.wave_scores.wave = wave_scores.wave
+    end
+    if wave_scores ~= nil and wave_scores.stat_data ~= nil then
+      if msg.wave_scores == nil then
+        msg.wave_scores = {}
+      end
+      if msg.wave_scores.stat_data == nil then
+        msg.wave_scores.stat_data = {}
+      end
+      for i = 1, #wave_scores.stat_data do
+        table.insert(msg.wave_scores.stat_data, wave_scores.stat_data[i])
+      end
+    end
+    if wave_scores ~= nil and wave_scores.score_rate ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.wave_scores == nil then
+        msg.wave_scores = {}
+      end
+      msg.wave_scores.score_rate = wave_scores.score_rate
+    end
+    if wave_scores ~= nil and wave_scores.score ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.wave_scores == nil then
+        msg.wave_scores = {}
+      end
+      msg.wave_scores.score = wave_scores.score
+    end
+    if new_record ~= nil then
+      msg.new_record = new_record
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.GeffenMagicWinCmd.id
+    local msgParam = {}
+    if wave_scores ~= nil and wave_scores.wave ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.wave_scores == nil then
+        msgParam.wave_scores = {}
+      end
+      msgParam.wave_scores.wave = wave_scores.wave
+    end
+    if wave_scores ~= nil and wave_scores.stat_data ~= nil then
+      if msgParam.wave_scores == nil then
+        msgParam.wave_scores = {}
+      end
+      if msgParam.wave_scores.stat_data == nil then
+        msgParam.wave_scores.stat_data = {}
+      end
+      for i = 1, #wave_scores.stat_data do
+        table.insert(msgParam.wave_scores.stat_data, wave_scores.stat_data[i])
+      end
+    end
+    if wave_scores ~= nil and wave_scores.score_rate ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.wave_scores == nil then
+        msgParam.wave_scores = {}
+      end
+      msgParam.wave_scores.score_rate = wave_scores.score_rate
+    end
+    if wave_scores ~= nil and wave_scores.score ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.wave_scores == nil then
+        msgParam.wave_scores = {}
+      end
+      msgParam.wave_scores.score = wave_scores.score
+    end
+    if new_record ~= nil then
+      msgParam.new_record = new_record
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceFuBenCmdAutoProxy:CallGeffenMagicEnemyInfoQueryCmd(enemy_infos, season_end_time, affixes)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.GeffenMagicEnemyInfoQueryCmd()
+    if enemy_infos ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.enemy_infos == nil then
+        msg.enemy_infos = {}
+      end
+      for i = 1, #enemy_infos do
+        table.insert(msg.enemy_infos, enemy_infos[i])
+      end
+    end
+    if season_end_time ~= nil then
+      msg.season_end_time = season_end_time
+    end
+    if affixes ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.affixes == nil then
+        msg.affixes = {}
+      end
+      for i = 1, #affixes do
+        table.insert(msg.affixes, affixes[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.GeffenMagicEnemyInfoQueryCmd.id
+    local msgParam = {}
+    if enemy_infos ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.enemy_infos == nil then
+        msgParam.enemy_infos = {}
+      end
+      for i = 1, #enemy_infos do
+        table.insert(msgParam.enemy_infos, enemy_infos[i])
+      end
+    end
+    if season_end_time ~= nil then
+      msgParam.season_end_time = season_end_time
+    end
+    if affixes ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.affixes == nil then
+        msgParam.affixes = {}
+      end
+      for i = 1, #affixes do
+        table.insert(msgParam.affixes, affixes[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceFuBenCmdAutoProxy:RecvTrackFuBenUserCmd(data)
   self:Notify(ServiceEvent.FuBenCmdTrackFuBenUserCmd, data)
 end
@@ -9153,6 +9473,26 @@ function ServiceFuBenCmdAutoProxy:RecvGvgInviteTransferToMeCmd(data)
   self:Notify(ServiceEvent.FuBenCmdGvgInviteTransferToMeCmd, data)
 end
 
+function ServiceFuBenCmdAutoProxy:RecvGeffenMagicInfoSyncCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdGeffenMagicInfoSyncCmd, data)
+end
+
+function ServiceFuBenCmdAutoProxy:RecvGeffenMagicSelectAffixCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdGeffenMagicSelectAffixCmd, data)
+end
+
+function ServiceFuBenCmdAutoProxy:RecvGeffenMagicStatUpdateCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdGeffenMagicStatUpdateCmd, data)
+end
+
+function ServiceFuBenCmdAutoProxy:RecvGeffenMagicWinCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdGeffenMagicWinCmd, data)
+end
+
+function ServiceFuBenCmdAutoProxy:RecvGeffenMagicEnemyInfoQueryCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdGeffenMagicEnemyInfoQueryCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.FuBenCmdTrackFuBenUserCmd = "ServiceEvent_FuBenCmdTrackFuBenUserCmd"
 ServiceEvent.FuBenCmdFailFuBenUserCmd = "ServiceEvent_FuBenCmdFailFuBenUserCmd"
@@ -9321,3 +9661,8 @@ ServiceEvent.FuBenCmdSyncMemoryEquipRewardInfo = "ServiceEvent_FuBenCmdSyncMemor
 ServiceEvent.FuBenCmdChooseMemoryEquipRewardInfo = "ServiceEvent_FuBenCmdChooseMemoryEquipRewardInfo"
 ServiceEvent.FuBenCmdGvgDateBattleInfoSyncCmd = "ServiceEvent_FuBenCmdGvgDateBattleInfoSyncCmd"
 ServiceEvent.FuBenCmdGvgInviteTransferToMeCmd = "ServiceEvent_FuBenCmdGvgInviteTransferToMeCmd"
+ServiceEvent.FuBenCmdGeffenMagicInfoSyncCmd = "ServiceEvent_FuBenCmdGeffenMagicInfoSyncCmd"
+ServiceEvent.FuBenCmdGeffenMagicSelectAffixCmd = "ServiceEvent_FuBenCmdGeffenMagicSelectAffixCmd"
+ServiceEvent.FuBenCmdGeffenMagicStatUpdateCmd = "ServiceEvent_FuBenCmdGeffenMagicStatUpdateCmd"
+ServiceEvent.FuBenCmdGeffenMagicWinCmd = "ServiceEvent_FuBenCmdGeffenMagicWinCmd"
+ServiceEvent.FuBenCmdGeffenMagicEnemyInfoQueryCmd = "ServiceEvent_FuBenCmdGeffenMagicEnemyInfoQueryCmd"

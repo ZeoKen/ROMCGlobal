@@ -257,6 +257,24 @@ Table_QuestVersion = {
     },
     VersionBG = "Missiontracking_bottom_syzh",
     MapID = {154}
+  },
+  [13] = {
+    id = 13,
+    version = "18.0",
+    name = "##44716044",
+    icon = "taskmanual_btn_YZHX",
+    PuzzleUnder = "taskmanual_bg_jigsaw",
+    VersionStory = "##45910293",
+    StoryName = "##44716044",
+    VersionPic = "",
+    FirstMainQuest = 211630001,
+    Tab = 2,
+    sortid = 26,
+    KeyReward = {
+      {45563, 1}
+    },
+    VersionBG = "Missiontracking_bottom_xuehua",
+    MapID = {155}
   }
 }
 Table_QuestVersion_fields = {

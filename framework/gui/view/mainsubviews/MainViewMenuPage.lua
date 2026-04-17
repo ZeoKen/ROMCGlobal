@@ -3184,6 +3184,7 @@ function MainViewMenuPage:OnExit()
     self.reservationTimeTick = nil
   end
   TimeTickManager.Me():ClearTick(self, 41)
+  self:ClearQuestionnaireTick()
   if self.delayGildTimer then
     self.delayGildTimer:Destroy()
     self.delayGildTimer = nil
@@ -4379,9 +4380,15 @@ function MainViewMenuPage:UpdateQuestionnaireBtn()
     name = string.format([=[
 %s
 [c][6dccff]%s[-][/c]]=], GameConfig.QuestionnaireScore.Name, name)
-    self.questionnaireBtn = self.container.activityPage:CreateDoujinshiButton(name, GameConfig.QuestionnaireScore.Icon, function(go)
+    self.questionnaireBtn, self.questionnaireBtnCtrl = self.container.activityPage:CreateDoujinshiButton(name, GameConfig.QuestionnaireScore.Icon, function(go)
       local info = ActivityEventProxy.Instance:GetQuestionnaireInfo()
-      local lt = (info and info.endTime or 0) - ServerTime.CurServerTime() / 1000
+      if not info then
+        MsgManager.ShowMsgByID(40973)
+        return
+      end
+      local curTime = ServerTime.CurServerTime() / 1000
+      local st = curTime - info.beginTime
+      local lt = info.endTime - curTime
       if lt <= 0 then
         MsgManager.ShowMsgByID(40973)
         if self.questionnaireBtn then
@@ -4391,6 +4398,10 @@ function MainViewMenuPage:UpdateQuestionnaireBtn()
             self.doujinshiGrid:Reposition()
           end
         end
+        return
+      end
+      if st < 0 then
+        MsgManager.ShowMsgByID(40997)
         return
       end
       GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
@@ -4405,17 +4416,56 @@ function MainViewMenuPage:UpdateQuestionnaireBtn()
   self:RegisterRedTipCheck(GameConfig.QuestionnaireScore.RedTipID, self.questionnaireBtn, 39)
   if self.questionnaireBtn then
     local info = ActivityEventProxy.Instance:GetQuestionnaireInfo()
-    local st = info and ServerTime.CurServerTime() / 1000 - info.beginTime or 0
-    local lt = info and info.endTime - ServerTime.CurServerTime() / 1000 or 0
+    if not info then
+      self.questionnaireBtn:SetActive(false)
+      RedTipProxy.Instance:RemoveWholeTip(GameConfig.QuestionnaireScore.RedTipID)
+      self:ClearQuestionnaireTick()
+      return
+    end
+    local curTime = ServerTime.CurServerTime() / 1000
+    local st = curTime - info.beginTime
+    local lt = info.endTime - curTime
     local finished = ActivityEventProxy.Instance:CheckQuestionnaireFinished()
-    if 0 < st and 0 < lt and not finished then
+    local endTime = info.endTime
+    local name
+    if endTime then
+      name = string.format(ZhString.NpcMenuBtnCell_EndTimeFormat, os.date("%m/%d %H:%M", endTime))
+    else
+      name = ZhString.Auction_MainViewEndName
+    end
+    name = string.format([=[
+%s
+[c][6dccff]%s[-][/c]]=], GameConfig.QuestionnaireScore.Name, name)
+    if self.questionnaireBtnCtrl then
+      self.questionnaireBtnCtrl:UpdateLabel(name)
+    end
+    if 0 <= st and 0 < lt and not finished then
       self.questionnaireBtn:SetActive(true)
       ActivityEventProxy.Instance:CheckQuestionnaireVisitedToday()
+      self:ClearQuestionnaireTick()
     else
       self.questionnaireBtn:SetActive(false)
       RedTipProxy.Instance:RemoveWholeTip(GameConfig.QuestionnaireScore.RedTipID)
+      if st < 0 and 0 < lt and not finished then
+        self:StartQuestionnaireTick()
+      else
+        self:ClearQuestionnaireTick()
+      end
       return
     end
+  end
+end
+
+function MainViewMenuPage:StartQuestionnaireTick()
+  if not self.questionnaireTimeTick then
+    self.questionnaireTimeTick = TimeTickManager.Me():CreateTick(0, 5000, self.UpdateQuestionnaireBtn, self, 40)
+  end
+end
+
+function MainViewMenuPage:ClearQuestionnaireTick()
+  if self.questionnaireTimeTick then
+    TimeTickManager.Me():ClearTick(self, 40)
+    self.questionnaireTimeTick = nil
   end
 end
 
@@ -4777,6 +4827,13 @@ function MainViewMenuPage:UpdateLoopActIntegrationBtns()
                 local isNew = RedTipProxy.Instance:IsNew(ActivityFlipCardProxy.RedTipId, activityId)
                 if isNew then
                   self:RegisterRedTipCheck(ActivityFlipCardProxy.RedTipId, self.loopActIntegerBtns[groupid], 39, nil, nil, activityId)
+                end
+              elseif subType == ActivityCmd_pb.GACTIVITY_ACT_PAY_SIGN then
+                local isNew = RedTipProxy.Instance:InRedTip(SceneTip_pb.EREDSYS_ACT_PAY_SIGN)
+                if isNew then
+                  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.loopActIntegerBtns[groupid], 39)
+                else
+                  self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.loopActIntegerBtns[groupid])
                 end
               end
             end

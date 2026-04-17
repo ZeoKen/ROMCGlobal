@@ -91,7 +91,8 @@ BuffType = {
   InWarehouse = "InWarehouse",
   PerfectServiceTemporary = "PerfectServiceTemporary",
   BellCharge = "BellCharge",
-  AttrCanMove = "AttrCanMove"
+  AttrCanMove = "AttrCanMove",
+  RoseSeedCount = "RoseSeedCount"
 }
 SkillTargetType = {
   None = 1,

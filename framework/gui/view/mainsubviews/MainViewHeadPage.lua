@@ -95,6 +95,9 @@ function MainViewHeadPage:ClickTargetHead(cell)
     local creature = SceneCreatureProxy.FindCreature(self.targetId)
     if creature and creature:GetCreatureType() == Creature_Type.Player then
       if not self.playerTipShow then
+        if creature.data:IsRobotUser() then
+          return
+        end
         if GuildProxy.Instance:GetMercenaryGuildName(creature.data) ~= nil then
           MsgManager.ShowMsgByID(2669)
           return

@@ -77,6 +77,9 @@ function InteractLocalHug:SetVisible(v)
   local npc = self:GetNpc()
   if npc then
     npc:SetVisible(v, LayerChangeReason.HidingSkill)
+    if self.effect then
+      self.effect:SetActive(v)
+    end
   end
 end
 
@@ -116,7 +119,7 @@ function InteractLocalHug:DoPutDown()
     if self.interactGroup:CheckSafeInBoundPos(myPos) then
       self:SetPos(myPos)
     else
-      local initialPos = self.interactGroup:GetInitialPos()
+      local initialPos = self.interactGroup:GetInitialPos(self.id)
       self:SetPos(initialPos)
     end
   end
@@ -134,6 +137,35 @@ function InteractLocalHug:GetInteractPrompt()
   else
     return ZhString.InteractLocal_HugOn
   end
+end
+
+function InteractLocalHug:CreateEffect(effect)
+  if not effect then
+    return
+  end
+  local path = EffectMap.Maps[effect]
+  if not path then
+    return
+  end
+  local npc = self:GetNpc()
+  if not npc then
+    redlog("InteractLocalHug:CreateEffect npc not found! id = " .. tostring(self.id))
+    return
+  end
+  local effect = Asset_Effect.PlayOn(path, npc.assetRole.completeTransform)
+  self.effect = effect
+end
+
+function InteractLocalHug:DestroyEffect()
+  if self.effect then
+    self.effect:Destroy()
+    self.effect = nil
+  end
+end
+
+function InteractLocalHug:Destroy()
+  self:DestroyEffect()
+  InteractLocalHug.super.Destroy(self)
 end
 
 InteractLocalCollectHug = class("InteractLocalCollectHug", InteractLocalHug)

@@ -1,6 +1,12 @@
 HomeInfoPage = class("HomeInfoPage", SubView)
-HomeInfoPage.texName_homeFrame = "home_information_frame"
-HomeInfoPage.texName_homeScene = "home_information_framebg"
+HomeInfoPage.texName_homeFrame = {
+  [HomeProxy.HouseType.Home] = "home_information_frame",
+  [HomeProxy.HouseType.Snow] = "home_blueprint_bg_02"
+}
+HomeInfoPage.texName_homeScene = {
+  [HomeProxy.HouseType.Home] = "home_information_framebg",
+  [HomeProxy.HouseType.Snow] = "home_information_bingxue"
+}
 HomeInfoPage.texName_roMark = "home_information_icon_ro"
 HomeInfoPage.sprName_PopularityIcon = "poring_fight"
 local color_effectGray = LuaColor(0.4980392156862745, 0.4980392156862745, 0.4980392156862745, 1)
@@ -71,12 +77,16 @@ function HomeInfoPage:InitUI()
   if FunctionPerformanceSetting.CheckInputForbidden() then
     self.objBtnEditHomeName:SetActive(false)
   end
+  self.texBgScene = self:FindComponent("texBgScene", UITexture)
+  self.texBgFrame = self:FindComponent("texBgFrame", UITexture)
+  self.texROMark = self:FindComponent("texROMark", UITexture)
 end
 
 function HomeInfoPage:AddEvts()
   self:AddClickEvent(self:FindGO("BtnHomeScoreDetail"), function(go)
     self:sendNotification(UIEvent.JumpPanel, {
-      view = PanelConfig.HomeScoreLvPopUp
+      view = PanelConfig.HomeScoreLvPopUp,
+      viewdata = self.houseType
     })
   end)
   self:AddClickEvent(self.objBtnEnterArea, function(go)
@@ -84,7 +94,8 @@ function HomeInfoPage:AddEvts()
       MsgManager.ShowMsgByIDTable(2500)
       return
     end
-    ServiceHomeCmdProxy.Instance:CallEnterHomeCmd(FunctionLogin.Me():getLoginData().accid, Game.Myself.data.id)
+    local serverHouseType = HomeProxy.HouseType2ServerHouseType[self.houseType]
+    ServiceHomeCmdProxy.Instance:CallEnterHomeCmd(FunctionLogin.Me():getLoginData().accid, Game.Myself.data.id, serverHouseType)
     self.container:CloseSelf()
   end)
   self:AddClickEvent(self:FindGO("BtnHelp"), function(go)
@@ -134,6 +145,9 @@ function HomeInfoPage:AddEvts()
     end
   end)
   self:AddClickEvent(self.objHouseIcon, function()
+    if self.houseType == HomeProxy.HouseType.Snow then
+      return
+    end
     self:sendNotification(UIEvent.JumpPanel, {
       view = PanelConfig.HouseChooseView
     })
@@ -167,7 +181,7 @@ function HomeInfoPage:TrySetHomeName()
     name = StringUtil.getTextByIndex(name, 1, GameConfig.System.homename_max)
     self.inputHomeName.value = name
   end
-  ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HouseData.HouseOptType.Name, nil, nil, name)
+  ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, self.myHouseData and self.myHouseData.houseType, HouseData.HouseOptType.Name, nil, nil, name)
 end
 
 function HomeInfoPage:TrySetHomeSign()
@@ -197,7 +211,7 @@ function HomeInfoPage:TrySetHomeSign()
     name = StringUtil.getTextByIndex(name, 1, GameConfig.System.homesign_max)
     self.inputSignInfo.value = name
   end
-  ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HouseData.HouseOptType.Sign, nil, nil, name)
+  ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, self.myHouseData and self.myHouseData.houseType, HouseData.HouseOptType.Sign, nil, nil, name)
 end
 
 function HomeInfoPage:AddViewEvts()
@@ -213,9 +227,15 @@ function HomeInfoPage:ClickHelp()
 end
 
 function HomeInfoPage:UpdateHomeInfo()
-  self.myHouseData = HomeProxy.Instance:GetMyHouseData()
+  self.myHouseData = HomeProxy.__RealInstance:GetMyHouseData(self.houseType)
   if self.myHouseData then
-    self.inputHomeName.value = self.myHouseData.name
+    redlog("UpdateHomeInfo", self.houseType, self.myHouseData.name)
+    if self.houseType == HomeProxy.HouseType.Snow then
+      local homeName = not StringUtil.IsEmpty(self.myHouseData.name) and self.myHouseData.name or string.format(ZhString.HomeRecommend_HomeName, Game.Myself.data:GetName(), ZhString.HomeMainView_TabSnow)
+      self.inputHomeName.value = homeName
+    else
+      self.inputHomeName.value = self.myHouseData.name
+    end
     self.inputSignInfo.value = self.myHouseData.sign
     self.sprBtnEditHomeName:ResetAndUpdateAnchors()
     self.labVisitCount.text = self.myHouseData:GetVisitCount()
@@ -238,21 +258,25 @@ function HomeInfoPage:UpdateHomeInfo()
   self:RefreshEnterAreaBtn()
   self.tableHomeInfo:Reposition()
   self:UpdateGiftTip()
+  self:UpdateBgTex()
 end
 
 function HomeInfoPage:UpdateHouseIcon()
   if not self.myHouseData then
-    self.myHouseData = HomeProxy.Instance:GetMyHouseData()
+    self.myHouseData = HomeProxy.__RealInstance:GetMyHouseData(self.houseType)
   end
-  local newGardenHouseID = self.myHouseData and self.myHouseData:GetGardenHouseID() or 1
-  local staticData = Table_GardenHouseType and Table_GardenHouseType[newGardenHouseID]
-  if staticData then
-    IconManager:SetHomeBuildingIcon(staticData.Icon, self.sprHouseIcon)
+  if self.houseType == HomeProxy.HouseType.Home then
+    local newGardenHouseID = self.myHouseData and self.myHouseData:GetGardenHouseID() or 1
+    local staticData = Table_GardenHouseType and Table_GardenHouseType[newGardenHouseID]
+    if staticData then
+      IconManager:SetHomeBuildingIcon(staticData.Icon, self.sprHouseIcon)
+    end
+  elseif self.houseType == HomeProxy.HouseType.Snow then
   end
 end
 
 function HomeInfoPage:RefreshHouseTypeInfo()
-  self.myHouseData = HomeProxy.Instance:GetMyHouseData()
+  self.myHouseData = HomeProxy.__RealInstance:GetMyHouseData(self.houseType)
   if not self.myHouseData then
     self.objTypeNormalBG:SetActive(true)
     self.objTypeUpdateContent:SetActive(false)
@@ -293,6 +317,12 @@ end
 
 function HomeInfoPage:RefreshEnterAreaBtn()
   local isAtHome = HomeManager.Me():IsAtMyselfHome()
+  local serverHouseType = HomeProxy.HouseType2ServerHouseType[self.houseType]
+  local maps = GameConfig.Home.HomeTypeMap and GameConfig.Home.HomeTypeMap[serverHouseType]
+  if maps then
+    local curMap = Game.MapManager:GetMapID()
+    isAtHome = isAtHome and TableUtility.ArrayFindIndex(maps, curMap) > 0
+  end
   self.colBtnEnterArea.enabled = not isAtHome
   if isAtHome then
     self:SetTextureGrey(self.sprBtnEnterArea)
@@ -303,22 +333,43 @@ function HomeInfoPage:RefreshEnterAreaBtn()
   end
 end
 
-function HomeInfoPage:OnSwitch(isOpen)
+function HomeInfoPage:OnSwitch(isOpen, houseType)
+  self.houseType = houseType
   self:UpdateHomeInfo()
 end
 
 function HomeInfoPage:UpdateGiftTip()
-  local isNew = RedTipProxy.Instance:InRedTip(10758)
-  self.giftTip:SetActive(isNew)
+  if self.houseType == HomeProxy.HouseType.Home then
+    local isNew = RedTipProxy.Instance:InRedTip(10758)
+    self.giftTip:SetActive(isNew)
+  else
+    self.giftTip:SetActive(false)
+  end
+end
+
+function HomeInfoPage:UpdateBgTex()
+  if self.lastHouseType == self.houseType then
+    return
+  end
+  if self.lastHouseType then
+    PictureManager.Instance:UnLoadHome(HomeInfoPage.texName_homeFrame[self.lastHouseType], self.texBgFrame)
+    PictureManager.Instance:UnLoadHome(HomeInfoPage.texName_homeScene[self.lastHouseType], self.texBgScene)
+  end
+  PictureManager.Instance:SetHome(HomeInfoPage.texName_homeFrame[self.houseType], self.texBgFrame)
+  PictureManager.Instance:SetHome(HomeInfoPage.texName_homeScene[self.houseType], self.texBgScene)
+  self.texBgFrame:MakePixelPerfect()
+  self.lastHouseType = self.houseType
+  if self.houseType == HomeProxy.HouseType.Home then
+    RedTipProxy.Instance:RegisterUI(GameConfig.Home.GardenHouseRedTip, self.objHouseIconRedTipRoot, self.sprHouseIcon.depth + 5, self.redTipOffset, NGUIUtil.AnchorSide.Center)
+  else
+    RedTipProxy.Instance:UnRegisterUI(GameConfig.Home.GardenHouseRedTip, self.objHouseIconRedTipRoot)
+  end
 end
 
 function HomeInfoPage:OnEnter()
   HomeInfoPage.super.OnEnter(self)
-  PictureManager.Instance:SetHome(HomeInfoPage.texName_homeFrame, self:FindComponent("texBgFrame", UITexture))
-  PictureManager.Instance:SetHome(HomeInfoPage.texName_homeScene, self:FindComponent("texBgScene", UITexture))
-  PictureManager.Instance:SetHome(HomeInfoPage.texName_roMark, self:FindComponent("texROMark", UITexture))
+  PictureManager.Instance:SetHome(HomeInfoPage.texName_roMark, self.texROMark)
   IconManager:SetUIIcon(HomeInfoPage.sprName_PopularityIcon, self.sprPopularityIcon)
-  RedTipProxy.Instance:RegisterUI(GameConfig.Home.GardenHouseRedTip, self.objHouseIconRedTipRoot, self.sprHouseIcon.depth + 5, self.redTipOffset, NGUIUtil.AnchorSide.Center)
 end
 
 function HomeInfoPage:OnExit()

@@ -13,6 +13,7 @@ function WildMvpAffixDetailCell:SetData(data)
     local staticData = data.staticData
     self.title.text = staticData.Name or ""
     self.desc.text = staticData.Desc or ""
+    NGUITools.UpdateWidgetCollider(self.desc.gameObject)
     if staticData.Icon then
       IconManager:SetSkillIcon(staticData.Icon, self.icon)
       self.icon:SetMaskPath(UIMaskConfig.SkillMask)

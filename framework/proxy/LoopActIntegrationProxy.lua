@@ -52,11 +52,24 @@ function LoopActIntegrationProxy:GetGroupInfo(groupID)
   if isTF and 0 < tfDayInAdvance then
     currentTimeForBaseCompare = currentTime + tfDayInAdvance * 86400
   end
+  local branchName = BranchMgr.Get_EAREA()
+  if branchName == "CH" and ISNoviceServerType then
+    branchName = "NOCH"
+  elseif branchName == "NOTW" then
+    branchName = "NO"
+  elseif branchName == "NOEN" then
+    branchName = "NONA"
+  end
   for i = 1, #groupInfo.activityIDs do
     local activityID = groupInfo.activityIDs[i]
     local staticData = Table_ActivityNew[activityID]
     if staticData then
-      if staticData.Type == "banner" then
+      local serverValid = true
+      local areaAndServer = staticData.AreaAndServer
+      if areaAndServer and 0 < #areaAndServer then
+        serverValid = 0 < TableUtility.ArrayFindIndex(areaAndServer, branchName)
+      end
+      if staticData.Type == "banner" and serverValid then
         local timeValid, realStartTime, realEndTime = self:CheckTimeValid(staticData)
         if timeValid then
           local baseStartTime = self:ParseDateTime(staticData.StartTime)
@@ -97,22 +110,26 @@ function LoopActIntegrationProxy:GetGroupInfo(groupID)
             bannerActivityID = activityID
           end
         end
-      elseif staticData.Cycle and staticData.Cycle ~= "" then
-        local timeValid, realStartTime, realEndTime = self:CheckTimeValid(staticData)
-        if timeValid then
-          local startTimeStr = realStartTime and ServerTime.Ori_OsDate("%Y-%m-%d %H:%M:%S", realStartTime) or "nil"
-          local endTimeStr = realEndTime and ServerTime.Ori_OsDate("%Y-%m-%d %H:%M:%S", realEndTime) or "nil"
-          xdlog("时间合法", activityID, startTimeStr, ServerTime.Ori_OsDate("%Y-%m-%d %H:%M:%S", ServerTime.CurServerTime() / 1000))
-          table.insert(filteredActivityIDs, activityID)
-        elseif self:CheckActivityValid(activityID) then
-          table.insert(filteredActivityIDs, activityID)
+      elseif serverValid then
+        if staticData.Cycle and staticData.Cycle ~= "" then
+          local timeValid, realStartTime, realEndTime = self:CheckTimeValid(staticData)
+          if timeValid then
+            local startTimeStr = realStartTime and ServerTime.Ori_OsDate("%Y-%m-%d %H:%M:%S", realStartTime) or "nil"
+            local endTimeStr = realEndTime and ServerTime.Ori_OsDate("%Y-%m-%d %H:%M:%S", realEndTime) or "nil"
+            xdlog(string.format("[LoopActIntegrationProxy] 时间合法 activityID: %s, realStartTime: %s, realEndTime: %s, startTimeStr: %s, endTimeStr: %s", tostring(activityID), tostring(realStartTime), tostring(realEndTime), startTimeStr, endTimeStr))
+            table.insert(filteredActivityIDs, activityID)
+          elseif self:CheckActivityValid(activityID) then
+            table.insert(filteredActivityIDs, activityID)
+          end
+        else
+          local startTime = staticData.StartTime
+          startTime = KFCARCameraProxy.Instance:GetSelfCustomDate(startTime)
+          if not startTime or currentTimeForBaseCompare >= startTime then
+            table.insert(filteredActivityIDs, activityID)
+          end
         end
       else
-        local startTime = staticData.StartTime
-        startTime = KFCARCameraProxy.Instance:GetSelfCustomDate(startTime)
-        if not startTime or currentTimeForBaseCompare >= startTime then
-          table.insert(filteredActivityIDs, activityID)
-        end
+        redlog("serverValid is false", activityID)
       end
     end
   end
@@ -230,7 +247,7 @@ function LoopActIntegrationProxy:ParseDateTime(dateTimeStr)
   if not year then
     return nil
   end
-  return ServerTime.Ori_OsTime({
+  return os.time({
     year = tonumber(year),
     month = tonumber(month),
     day = tonumber(day),
@@ -316,7 +333,7 @@ function LoopActIntegrationProxy:CheckTimeValid(config)
       if currentTime >= realStartTime and currentTime <= realEndTime then
         return true, realStartTime, realEndTime
       elseif baseStartTime <= realStartTime then
-        return true, realStartTime, realEndTime
+        return false, realStartTime, realEndTime
       end
     end
   elseif cycle == "yearly" then
@@ -328,13 +345,20 @@ function LoopActIntegrationProxy:CheckTimeValid(config)
       if currentTime >= realStartTime and currentTime <= realEndTime then
         return true, realStartTime, realEndTime
       elseif baseStartTime <= realStartTime then
-        return true, realStartTime, realEndTime
+        return false, realStartTime, realEndTime
       end
     end
   elseif cycle == "seasonly" then
     local realStartTime, realEndTime = self:CalculateSeasonlyTime(baseStartDate, baseEndDate, true, config, nil)
-    if realStartTime and realEndTime and currentTime >= realStartTime and currentTime <= realEndTime then
-      return true, realStartTime, realEndTime
+    if realStartTime and realEndTime then
+      if currentTime < realStartTime then
+        return false, realStartTime, realEndTime
+      end
+      if currentTime >= realStartTime and currentTime <= realEndTime then
+        return true, realStartTime, realEndTime
+      elseif baseStartTime <= realStartTime then
+        return false, realStartTime, realEndTime
+      end
     end
   end
   return false, nil, nil
@@ -912,7 +936,7 @@ function LoopActIntegrationProxy:GetSubType(staticData)
   if staticData.IsGlobalActivity ~= 1 then
     return self:GetSubTypeFromActType(staticData.Type)
   end
-  return nil
+  return tonumber(staticData.Type)
 end
 
 function LoopActIntegrationProxy:GetActivityTime(staticData)
@@ -920,7 +944,7 @@ function LoopActIntegrationProxy:GetActivityTime(staticData)
     return nil, nil
   end
   local isGlobalActivity = staticData.IsGlobalActivity
-  local actType = staticData.Type
+  local actType = tonumber(staticData.Type)
   local actID = staticData.id
   if isGlobalActivity == 1 then
     return self:GetGlobalActivityTime(actType, actID)
@@ -938,8 +962,8 @@ function LoopActIntegrationProxy:GetGlobalActivityTime(actType, actID)
   if params and params.id and params.id ~= actID then
     return nil, nil
   end
-  local startTime = activityData.startTime
-  local endTime = activityData.endTime
+  local startTime = activityData.whole_starttime
+  local endTime = activityData.whole_endtime
   return startTime, endTime
 end
 
@@ -964,7 +988,7 @@ function LoopActIntegrationProxy:CheckActivityValid(activityID)
     if type == "act_bp" then
       return ActivityBattlePassProxy.Instance:IsBPAvailable(activityID)
     else
-      return false
+      return FunctionActivity.Me():IsActivityRunning(tonumber(type))
     end
   else
     return ActivityIntegrationProxy.Instance:CheckActPersinalActValid(activityID)

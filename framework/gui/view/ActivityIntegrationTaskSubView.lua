@@ -197,7 +197,7 @@ function ActivityIntegrationTaskSubView:RefreshPage(id)
   if self.endTime then
     self.timeLabel.gameObject:SetActive(true)
     TimeTickManager.Me():ClearTick(self, 1)
-    TimeTickManager.Me():CreateTick(0, 10000, self.UpdateLeftTime, self)
+    TimeTickManager.Me():CreateTick(0, 1000, self.UpdateLeftTime, self)
   else
     TimeTickManager.Me():ClearTick(self, 1)
     self.timeLabel.gameObject:SetActive(false)

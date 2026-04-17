@@ -1923,6 +1923,24 @@ function ServiceScenePetAutoProxy:CallEquipUpdatePetCmd(petid, update, del)
       end
       msg.update.furniture.npc.damage_reduce_type = update.furniture.npc.damage_reduce_type
     end
+    if update.furniture.anim ~= nil and update.furniture.anim.start_time ~= nil then
+      if msg.update.furniture == nil then
+        msg.update.furniture = {}
+      end
+      if msg.update.furniture.anim == nil then
+        msg.update.furniture.anim = {}
+      end
+      msg.update.furniture.anim.start_time = update.furniture.anim.start_time
+    end
+    if update.furniture.anim ~= nil and update.furniture.anim.anim_id ~= nil then
+      if msg.update.furniture == nil then
+        msg.update.furniture = {}
+      end
+      if msg.update.furniture.anim == nil then
+        msg.update.furniture.anim = {}
+      end
+      msg.update.furniture.anim.anim_id = update.furniture.anim.anim_id
+    end
     if update.attr ~= nil and update.attr.id ~= nil then
       if msg.update == nil then
         msg.update = {}
@@ -3752,6 +3770,24 @@ function ServiceScenePetAutoProxy:CallEquipUpdatePetCmd(petid, update, del)
         msgParam.update.furniture.npc = {}
       end
       msgParam.update.furniture.npc.damage_reduce_type = update.furniture.npc.damage_reduce_type
+    end
+    if update.furniture.anim ~= nil and update.furniture.anim.start_time ~= nil then
+      if msgParam.update.furniture == nil then
+        msgParam.update.furniture = {}
+      end
+      if msgParam.update.furniture.anim == nil then
+        msgParam.update.furniture.anim = {}
+      end
+      msgParam.update.furniture.anim.start_time = update.furniture.anim.start_time
+    end
+    if update.furniture.anim ~= nil and update.furniture.anim.anim_id ~= nil then
+      if msgParam.update.furniture == nil then
+        msgParam.update.furniture = {}
+      end
+      if msgParam.update.furniture.anim == nil then
+        msgParam.update.furniture.anim = {}
+      end
+      msgParam.update.furniture.anim.anim_id = update.furniture.anim.anim_id
     end
     if update.attr ~= nil and update.attr.id ~= nil then
       if msgParam.update == nil then

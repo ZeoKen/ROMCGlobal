@@ -77,8 +77,8 @@ function NCreature:Client_PlayActionIdle(name, normalizedTime, loop, fakeDead, f
   self.ai:PushCommand(FactoryAICMD.GetPlayActionCmd(name, normalizedTime, loop, fakeDead, forceDuration, freezeAtEnd, actionSpeed, spExpression, nil, ignoreWeapon), self)
 end
 
-function NCreature:Client_SetDirCmd(mode, dir, noSmooth)
-  self.ai:PushCommand(FactoryAICMD.GetSetAngleYCmd(mode, dir, noSmooth), self)
+function NCreature:Client_SetDirCmd(mode, dir, noSmooth, extraArgs)
+  self.ai:PushCommand(FactoryAICMD.GetSetAngleYCmd(mode, dir, noSmooth, extraArgs), self)
 end
 
 function NCreature:Client_PlaceXYZTo(x, y, z, div, ignoreNavMesh)

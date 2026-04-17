@@ -261,6 +261,24 @@ local helpSet = function(parts, index, dataValue, usedebug)
   parts[index] = dataValue
   return true
 end
+local processHeadFashion = function(parts, headFashionBytes, partIndexEx)
+  local dirty = 0
+  if headFashionBytes and headFashionBytes ~= "" then
+    local rets = string.split(headFashionBytes, ";")
+    if rets and 3 <= #rets then
+      if helpSet(parts, partIndexEx.HeadFashionIndex1, tonumber(rets[1]) or 0) then
+        dirty = dirty + 1
+      end
+      if helpSet(parts, partIndexEx.HeadFashionIndex2, tonumber(rets[2]) or 0) then
+        dirty = dirty + 1
+      end
+      if helpSet(parts, partIndexEx.HeadFashionIndex3, tonumber(rets[3]) or 0) then
+        dirty = dirty + 1
+      end
+    end
+  end
+  return dirty
+end
 
 function TeamMemberCell:UpdateRoleTexture()
   if self.parts == nil then
@@ -344,6 +362,7 @@ function TeamMemberCell:UpdateRoleTexture()
       if helpSet(self.parts, partIndexEx.BodyColorIndex, userdata:Get(UDEnum.CLOTHCOLOR) or 0) then
         dirty = dirty + 1
       end
+      dirty = dirty + processHeadFashion(self.parts, userdata:GetBytes(UDEnum.HEAD_FASHION), partIndexEx)
     end
   else
     class = self.data.profession
@@ -416,6 +435,7 @@ function TeamMemberCell:UpdateRoleTexture()
       if helpSet(self.parts, partIndexEx.BodyColorIndex, self.data.bodycolor or 0) then
         dirty = dirty + 1
       end
+      dirty = dirty + processHeadFashion(self.parts, self.data.head_fashion, partIndexEx)
     end
   end
   if helpSet(self.parts, partIndexEx.LoadFirst, true) then

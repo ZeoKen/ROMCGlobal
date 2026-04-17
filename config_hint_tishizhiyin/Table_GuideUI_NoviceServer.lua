@@ -334,6 +334,39 @@ Table_GuideUI = {
       type = {1, 2}
     },
     Sysmsg = 43463
+  },
+  [36] = {
+    id = 36,
+    GroupID = 12,
+    MainTitle = "完成雪花之地玩法，获取冰霜之力",
+    Text = "日常任务",
+    Desc = "完成融雪边境任务获得冰霜之力",
+    Icon = "Quest",
+    Shortcutpower = {8387},
+    complete_con = "",
+    Params = _EmptyTable
+  },
+  [37] = {
+    id = 37,
+    GroupID = 12,
+    MainTitle = "完成雪花之地玩法，获取冰霜之力",
+    Text = "精英营地",
+    Desc = "开启伊斯加尔特精英营地宝箱获得冰霜之力",
+    Icon = "map_icon_jingying03",
+    Shortcutpower = _EmptyTable,
+    complete_con = "",
+    Params = _EmptyTable
+  },
+  [38] = {
+    id = 38,
+    GroupID = 12,
+    MainTitle = "完成雪花之地玩法，获取冰霜之力",
+    Text = "西尔芙的赠礼",
+    Desc = "在伊斯加尔特中找到西尔芙精灵后获取冰霜之力",
+    Icon = "elf_icon_01",
+    Shortcutpower = _EmptyTable,
+    complete_con = "",
+    Params = _EmptyTable
   }
 }
 Table_GuideUI_fields = {

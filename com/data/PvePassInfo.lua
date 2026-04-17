@@ -137,7 +137,7 @@ end
 function PvePassInfo:HasRedTip()
   local _redProxy = RedTipProxy.Instance
   local groupid = self.staticEntranceData.groupid
-  return _redProxy:IsNew(SceneTip_pb.EREDSYS_PVERAID_ENTRANCE, groupid) or _redProxy:IsNew(SceneTip_pb.EREDSYS_PVERAID_ACHIEVE, groupid)
+  return _redProxy:IsNew(SceneTip_pb.EREDSYS_PVERAID_ENTRANCE, groupid) or _redProxy:IsNew(SceneTip_pb.EREDSYS_PVERAID_ACHIEVE, groupid) or _redProxy:InRedTip(SceneTip_pb.EREDSYS_GEFFEN_MAGIC_REWARD)
 end
 
 function PvePassInfo:SetServerData(serverdata)
@@ -221,6 +221,9 @@ function PvePassInfo:GetActiveAffix()
 end
 
 function PvePassInfo:GetDetailActiveAffix()
+  if self.staticEntranceData:IsGeffenMagic() then
+    return nil
+  end
   if self.staticEntranceData:IsStarArk() then
     return WildMvpProxy.Instance:GetPveAffixDatas()
   end
@@ -230,9 +233,6 @@ end
 function PvePassInfo:RecordDisplay(no_show, act_end_time)
   self.no_show = no_show
   self.act_end_time = act_end_time
-  if self.id == 100 then
-    redlog("RecordDisplay self.no_show", self.no_show, self.act_end_time)
-  end
 end
 
 function PvePassInfo:GetActivityEndTime()
@@ -295,6 +295,10 @@ function PvePassInfo:GetMaxChallengeCnt(ignore_sweep)
         return 1
       end
     else
+      if static_challenge_count == nil then
+        redlog("未配置总奖励次数 PveRaidEntrance表ID:", self.id)
+        return 1
+      end
       return static_challenge_count
     end
   end

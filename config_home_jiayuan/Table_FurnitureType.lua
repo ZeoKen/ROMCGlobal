@@ -407,6 +407,30 @@ Table_FurnitureType = {
     Category = 3,
     Sort = 17
   },
+  [20019] = {
+    id = 20019,
+    Type = "Snow_1",
+    IconName = "home_icon_Snow_1",
+    NameZh = "##44726399",
+    Category = 3,
+    Sort = 18
+  },
+  [20020] = {
+    id = 20020,
+    Type = "Snow_2",
+    IconName = "home_icon_Snow_2",
+    NameZh = "##44726400",
+    Category = 3,
+    Sort = 19
+  },
+  [20021] = {
+    id = 20021,
+    Type = "Snow_3",
+    IconName = "home_icon_Snow_3",
+    NameZh = "##44726401",
+    Category = 3,
+    Sort = 20
+  },
   [30000] = {
     id = 30000,
     Type = "Possess",

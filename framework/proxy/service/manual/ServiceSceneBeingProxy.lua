@@ -32,6 +32,7 @@ function ServiceSceneBeingProxy:RecvBeingInfoUpdate(data)
   helplog("Recv-->BeingInfoUpdate")
   PetProxy.Instance:Server_UpdateMyBeingInfo(data.beingid, data.datas)
   self:Notify(ServiceEvent.SceneBeingBeingInfoUpdate, data)
+  EventManager.Me():PassEvent(ServiceEvent.SceneBeingBeingInfoUpdate, data)
 end
 
 function ServiceSceneBeingProxy:CallBeingSwitchState(beingid, battle)

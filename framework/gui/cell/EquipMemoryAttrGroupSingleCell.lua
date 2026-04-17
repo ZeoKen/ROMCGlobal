@@ -20,7 +20,8 @@ function EquipMemoryAttrGroupSingleCell:SetData(data)
       if waxBuffid and 0 < #waxBuffid then
         self.text.width = 420
       end
-      self.text.text = staticData and staticData.WaxDesc
+      local waxDescKey = staticData and staticData.WaxDesc or ""
+      self.text.text = OverSea.LangManager.Instance():GetLangByKey(waxDescKey) or waxDescKey
     end
   end
 end

@@ -10,7 +10,8 @@ BranchMgr = _G.BranchMgr or {
   VN = false,
   NO = false,
   NOTW = false,
-  NOEN = false
+  NOEN = false,
+  NOKR = false
 }
 BranchMgr.Language = {
   ELANGUAGE_Afrikaans = 0,
@@ -90,6 +91,9 @@ function BranchMgr.Init()
   elseif branchName == "Oversea_NoviceEN" then
     BranchMgr.NOEN = true
     ISNoviceServerType = true
+  elseif branchName == "Oversea_NoviceKR" then
+    BranchMgr.NOKR = true
+    ISNoviceServerType = true
   end
 end
 
@@ -106,6 +110,7 @@ function BranchMgr.Reset()
   BranchMgr.NO = false
   BranchMgr.NOTW = false
   BranchMgr.NOEN = false
+  BranchMgr.NOKR = false
 end
 
 function BranchMgr.IsChina()
@@ -146,6 +151,10 @@ end
 
 function BranchMgr.IsNOTW()
   return BranchMgr.NOTW
+end
+
+function BranchMgr.IsNOKR()
+  return BranchMgr.NOKR
 end
 
 function BranchMgr.IsNOEN()
@@ -194,6 +203,8 @@ function BranchMgr.GetBranchName()
     branch = "NOTW"
   elseif BranchMgr.IsNOEN() then
     branch = "NOEN"
+  elseif BranchMgr.IsNOKR() then
+    branch = "NOKR"
   end
   return branch
 end

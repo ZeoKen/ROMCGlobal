@@ -152,6 +152,14 @@ function NCreature:IsHandInHand()
   return false, nil
 end
 
+function NCreature:IsOnHandcart()
+  return false
+end
+
+function NCreature:IsHasHandcart()
+  return false
+end
+
 function NCreature:IsUIMask(uiType, reason)
   if Game.MapManager:IsIgnoreSceneUIMapCellLod() then
     return false
@@ -843,6 +851,9 @@ function NCreature:Server_BreakSkill(skillID, phaseData)
   end
 end
 
+function NCreature:CheckLeadCompleteSkill(skillID, leadSuccess)
+end
+
 function NCreature:PlayStiffAction()
   local BalanceConfig = self.data:GetBalanceConfig()
   if not BalanceConfig or not self.assetRole then
@@ -1237,6 +1248,9 @@ function NCreature:Update(time, deltaTime)
   end
   if self.partner then
     self.partner:Update(time, deltaTime)
+  end
+  if self:IsOnHandcart() then
+    Game.MapCellManager:UpdateRole(self:GetRoleComplete())
   end
   if canLogic then
     if self.handNpc then
@@ -1648,6 +1662,12 @@ function NCreature:SetDefaultWalkAnime(animeName)
   self.data.moveAction = animeName
 end
 
+function NCreature:DoStartNpcRotation(startTime, turnAngle, duration)
+end
+
+function NCreature:DoStopNpcRotation()
+end
+
 function NCreature:ObservePartCreated()
   self:CreateWeakData()
   local event = Asset_Role.NotifyEvent.PartCreated
@@ -1920,6 +1940,14 @@ function NCreature:SetStageEffect(bufflayer)
   self:PlayContractEffect(fromID, EffectMap.Maps.DragonContract, RoleDefines_EP.Bottom, nil, true, angleY)
 end
 
+function NCreature:LogSpinStartAngleY(angleY)
+  self.spinStartAngleY = angleY
+end
+
+function NCreature:GetSpinStartAngleY()
+  return self.spinStartAngleY or 0
+end
+
 function NCreature:DoConstruct(asArray, data)
   self.culling_visible = true
   self.culling_distanceLevel = 0
@@ -1945,6 +1973,7 @@ function NCreature:DoConstruct(asArray, data)
   self.allowConcurrent = false
   self.isHideHp = false
   self.hideBodyOnly = false
+  self.spinStartAngleY = nil
 end
 
 function NCreature:GetUpIDReset()

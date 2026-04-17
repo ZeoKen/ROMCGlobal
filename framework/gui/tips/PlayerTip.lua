@@ -1,5 +1,6 @@
 autoImport("BaseTip")
 autoImport("UIEmojiCell")
+autoImport("PlayerTipHomeCell")
 PlayerTip = class("PlayerTip", BaseTip)
 local FindCreature = SceneCreatureProxy.FindCreature
 local tempVector3 = LuaVector3.Zero()
@@ -41,6 +42,7 @@ function PlayerTip:InitTip()
   self.socialCtl = UIGridListCtrl.new(self.sgrid, SocialIconCell, "SocialIconCell")
   self.socialCtl:AddEventListener(MouseEvent.MouseClick, self.ClickCell, self)
   self:InitChildBord()
+  self:InitHomeBord()
   self.favoriteTip = self:FindGO("FavoriteTip")
   if self.favoriteTip then
     self.favoriteSp = self.favoriteTip:GetComponent(UISprite)
@@ -524,6 +526,86 @@ end
 
 function PlayerTip:HideChildBord()
   self.childBord:SetActive(false)
+end
+
+function PlayerTip:InitHomeBord()
+  self.homeBord = self:FindGO("HomeBord")
+  self.home_Bg = self:FindComponent("HBg", UISprite, self.homeBord)
+  self.home_actionGrid = self:FindComponent("HomeGrid", UIGrid, self.homeBord)
+  self.homeCtl = UIGridListCtrl.new(self.home_actionGrid, PlayerTipHomeCell, "PlayerTipHomeCell")
+  self.homeCtl:AddEventListener(MouseEvent.MouseClick, self.ClickHomeCell, self)
+end
+
+function PlayerTip:ClickHomeCell(cell)
+  local data = cell.data
+  if not data then
+    return
+  end
+  local ptdata = self.playerTipData
+  local mode = data.mode or 0
+  if mode == 0 then
+    if ptdata and ptdata.homeid then
+      if ptdata.homeid == 0 then
+        MsgManager.ShowMsgByIDTable(43666)
+        return
+      end
+      ServiceHomeCmdProxy.Instance:CallEnterHomeCmd(ptdata.accid, ptdata.id, HomeCmd_pb.EHOUSETYPE_PRIVATE)
+      self:CloseSelf()
+    else
+      MsgManager.ShowMsgByIDTable(43666)
+      return
+    end
+  elseif ptdata and ptdata.snow_room_id then
+    if ptdata.snow_room_id == 0 then
+      MsgManager.ShowMsgByIDTable(43667)
+      return
+    end
+    ServiceHomeCmdProxy.Instance:CallEnterHomeCmd(ptdata.accid, ptdata.id, HomeCmd_pb.EHOUSETYPE_SNOW)
+    self:CloseSelf()
+  else
+    MsgManager.ShowMsgByIDTable(43667)
+    return
+  end
+  self:HideHomeBord()
+end
+
+local HomeCellHeight = 62
+
+function PlayerTip:ResizeHomeBord()
+  local cells = self.homeCtl:GetCells()
+  local cellCount = cells and #cells or 0
+  self.home_Bg.width = cellCount * HomeCellHeight
+end
+
+function PlayerTip:UpdateHomeBordData()
+  local homeDatas, homeCellData = ReusableTable.CreateArray()
+  homeDatas[1] = {
+    name = GameConfig.ExtraHomeFunctions and GameConfig.ExtraHomeFunctions[0] and GameConfig.ExtraHomeFunctions[0].name or ZhString.PlayerTip_DefaultHome,
+    mode = 0
+  }
+  if GameConfig.ExtraHomeFunctions then
+    for index, homeData in pairs(GameConfig.ExtraHomeFunctions) do
+      if index ~= 0 then
+        homeCellData = {}
+        homeCellData.name = homeData.name
+        homeCellData.mode = homeData.mode
+        table.insert(homeDatas, homeCellData)
+      end
+    end
+  end
+  self.homeCtl:ResetDatas(homeDatas)
+  ReusableTable.DestroyAndClearArray(homeDatas)
+end
+
+function PlayerTip:ShowHomeBord()
+  self.homeBord:SetActive(true)
+  self:UpdateHomeBordData()
+  self:ResizeHomeBord()
+  self.closecomp:ReCalculateBound()
+end
+
+function PlayerTip:HideHomeBord()
+  self.homeBord:SetActive(false)
 end
 
 function PlayerTip:HideGuildInfo()

@@ -77,6 +77,43 @@ Table_FestivalSignin_t = {
     {
       {
         {100, 150000},
+        {3041438, 1},
+        {7300, 10}
+      },
+      {
+        {100, 150000},
+        {8211, 50},
+        {3773, 1}
+      },
+      {
+        {100, 150000},
+        {8211, 50},
+        {3005490, 1}
+      },
+      {
+        {100, 150000},
+        {8211, 40},
+        {3005491, 1}
+      },
+      {
+        {100, 150000},
+        {8211, 50},
+        {3013977, 5}
+      },
+      {
+        {3013978, 2},
+        {8211, 40},
+        {3013986, 2}
+      },
+      {
+        {3041541, 1},
+        {3013985, 2},
+        {3013974, 1}
+      }
+    },
+    {
+      {
+        {100, 150000},
         {8211, 50},
         {7300, 10}
       },
@@ -143,6 +180,43 @@ Table_FestivalSignin_t = {
         {110, 500},
         {3007041, 1},
         {3006025, 1}
+      }
+    },
+    {
+      {
+        {100, 150000},
+        {3011496, 5},
+        {7300, 10}
+      },
+      {
+        {100, 150000},
+        {3011496, 5},
+        {4625, 1}
+      },
+      {
+        {100, 150000},
+        {3011496, 5},
+        {3007242, 1}
+      },
+      {
+        {100, 150000},
+        {3011496, 5},
+        {3005200, 1}
+      },
+      {
+        {100, 150000},
+        {3011496, 5},
+        {3720, 5}
+      },
+      {
+        {100, 150000},
+        {3011496, 5},
+        {12572, 20}
+      },
+      {
+        {6996, 1},
+        {52901, 10},
+        {10000478, 1}
       }
     },
     {
@@ -263,7 +337,7 @@ Table_FestivalSignin = {
     id = 104310101,
     Month = 1,
     ActivityName = "##44716152",
-    SigninReward = Table_FestivalSignin_t.SigninReward[7]
+    SigninReward = Table_FestivalSignin_t.SigninReward[9]
   },
   [104310102] = {
     id = 104310102,
@@ -301,6 +375,7 @@ Table_FestivalSignin = {
     SigninReward = Table_FestivalSignin_t.SigninReward[1]
   },
   [104310108] = {
+    id = 104310108,
     Month = 8,
     ActivityName = "##44716159",
     SigninReward = Table_FestivalSignin_t.SigninReward[1]
@@ -334,7 +409,7 @@ Table_FestivalSignin = {
     ActID = 1043102,
     Month = 1,
     ActivityName = "##44719598",
-    SigninReward = Table_FestivalSignin_t.SigninReward[3]
+    SigninReward = Table_FestivalSignin_t.SigninReward[4]
   },
   [104310202] = {
     id = 104310202,
@@ -500,7 +575,7 @@ Table_FestivalSignin = {
     id = 104310401,
     ActID = 1043104,
     ActivityName = "##1221036",
-    SigninReward = Table_FestivalSignin_t.SigninReward[5],
+    SigninReward = Table_FestivalSignin_t.SigninReward[7],
     ActivityIcon = "tab_icon_101"
   },
   [104310501] = {
@@ -508,14 +583,27 @@ Table_FestivalSignin = {
     ActID = 1043105,
     Month = 1,
     ActivityName = "##44719598",
-    SigninReward = Table_FestivalSignin_t.SigninReward[6]
+    SigninReward = Table_FestivalSignin_t.SigninReward[8]
   },
   [104310601] = {
     id = 104310601,
     ActID = 1043106,
     ActivityName = "##1221036",
-    SigninReward = Table_FestivalSignin_t.SigninReward[4],
+    SigninReward = Table_FestivalSignin_t.SigninReward[5],
     ActivityIcon = "tab_icon_101"
+  },
+  [104310701] = {
+    id = 104310701,
+    ActID = 1043107,
+    Month = 3,
+    ActivityName = "##44721327",
+    SigninReward = Table_FestivalSignin_t.SigninReward[3]
+  },
+  [104310801] = {
+    ActID = 1043108,
+    Month = 2,
+    ActivityName = "##44721327",
+    SigninReward = Table_FestivalSignin_t.SigninReward[6]
   }
 }
 local cell_mt = {
@@ -525,7 +613,7 @@ local cell_mt = {
     ActivityName = "##44716156",
     HelpID = 35209,
     SigninReward = _EmptyTable,
-    id = 104310108
+    id = 104310801
   }
 }
 for _, d in pairs(Table_FestivalSignin) do

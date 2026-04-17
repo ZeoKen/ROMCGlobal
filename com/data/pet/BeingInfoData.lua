@@ -9,6 +9,7 @@ BeingInfoData.KeyValue = {
   [SceneBeing_pb.EBEINGDATA_BODY or 7] = "body",
   [SceneBeing_pb.EBEINGDATA_EATEN or 9] = "eaten"
 }
+BeingInfoData.ESummonType = {Summon = 1, GeneFusion = 2}
 
 function BeingInfoData:ctor()
 end
@@ -66,6 +67,9 @@ function BeingInfoData:Server_UpdateData(server_BeingMemberDatas)
     elseif single.etype == SceneBeing_pb.EBEINGDATA_BODY then
       self:setBodyId(single.value)
     else
+      if single.etype == SceneBeing_pb.EBEINGDATA_SUMMON then
+        self.summonType = single.values and single.values[1] or BeingInfoData.ESummonType.Summon
+      end
       local v = self.KeyValue[single.etype]
       if v ~= nil then
         self[v] = single.value
@@ -75,6 +79,10 @@ function BeingInfoData:Server_UpdateData(server_BeingMemberDatas)
   if self.body == nil or self.body == 0 then
     self:setBodyId(self.beingid)
   end
+end
+
+function BeingInfoData:GetSummonType()
+  return self.summonType or 0
 end
 
 function BeingInfoData:IsAutoFighting()

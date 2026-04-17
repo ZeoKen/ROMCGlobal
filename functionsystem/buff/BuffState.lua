@@ -67,6 +67,7 @@ function BuffState.Create(layer, level, active, buffStateID, buffID)
 end
 
 function BuffState:Start(creature)
+  self.endScale = nil
   self:_PlayStartEffect(creature, function(result)
     if not result then
       self:_PlayEffect(creature)
@@ -94,7 +95,13 @@ function BuffState:Refresh(creature)
 end
 
 function BuffState:End(creature)
-  self:_PlayEndEffect(creature)
+  local showEndFlag = true
+  if self.buffStaticData and self.buffStaticData.BuffEffect.no_deadend_effect == 1 and creature and creature:CheckHpIsZero() then
+    showEndFlag = false
+  end
+  if showEndFlag then
+    self:_PlayEndEffect(creature)
+  end
   creature:UnRegisterBuffGroup(self)
 end
 
@@ -279,7 +286,11 @@ function BuffState:_PlayEndEffect(creature)
     return
   end
   local path, lodLevel, priority = GetEffectPath(self.config.Effect_end, creature)
-  self:_PlayOneShotEffectOn(creature, path, self.staticData.SE_end, self.staticData.Effect_endScale, nil, nil, lodLevel, priority, AudioSourceType.BUFF_end)
+  local showScale = self.staticData.Effect_endScale
+  if self.endScale then
+    showScale = self.endScale * (showScale or 1)
+  end
+  self:_PlayOneShotEffectOn(creature, path, self.staticData.SE_end, showScale, nil, nil, lodLevel, priority, AudioSourceType.BUFF_end)
   if self.staticData.SE_start_Loop ~= "" and self.audioSource then
     self.audioSource:Stop()
     self.audioSource = nil
@@ -585,8 +596,12 @@ end
 function BuffState:SetEffectScale(scale)
   self.scale = scale
   if self.effect then
-    self.effect:ResetLocalScaleXYZ(scale, 1, scale)
+    self.effect:ResetLocalScaleXYZ(scale, scale, scale)
   end
+end
+
+function BuffState:SetEffectEndScale(scale)
+  self.endScale = scale
 end
 
 function BuffState:DoConstruct(asArray, args)
@@ -637,5 +652,24 @@ function BuffState:OnObserverDestroyed(k, obj)
   elseif 3 == k and self.effect == obj then
     self.effect = nil
     self:_DestroyAroundEffects()
+  end
+end
+
+function BuffState:UpdateRoseSeedCount(count)
+  local maxLayer = self.buffStaticData and self.buffStaticData.BuffEffect.limit_layer or 1
+  local curLayer = self:GetLayer()
+  curLayer = math.min(maxLayer, curLayer)
+  self:UpdatePlayEffectTime("attack", curLayer / maxLayer)
+  self:SetEffectScale(1 + count * 0.1)
+  self:SetEffectEndScale(1 + count * 0.1)
+end
+
+function BuffState:UpdatePlayEffectTime(animName, timeRatio)
+  if self.effect == nil then
+    return
+  end
+  local animator = self.effect:GetComponent(Animator)
+  if animator then
+    animator:Play(animName, 0, timeRatio)
   end
 end

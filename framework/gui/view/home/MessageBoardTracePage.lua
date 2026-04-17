@@ -54,8 +54,9 @@ end
 function MessageBoardTracePage:InitUI()
   local viewData = self.viewdata.viewdata
   self.furniture = viewData and viewData.furniture
-  if not self.furniture then
-    LogUtility.Error("Cannot get furniture when initializing MessageTipPage!")
+  self.npc = viewData and viewData.npc
+  if not self.furniture and not self.npc then
+    LogUtility.Error("Cannot get furniture or npc when initializing MessageTipPage!")
   end
   self.gameObject = self:FindGO("MessageBoardTracePage")
   local totalVisit = self:FindGO("TotalVisitNum")
@@ -96,7 +97,11 @@ end
 
 function MessageBoardTracePage:OnSwitch(isOpen)
   helplog("MessageBoardTracePage:OnSwitch")
-  ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_EVENT_QUERY, self.furniture.data.id, 0)
+  if self.furniture then
+    ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_EVENT_QUERY, self.furniture.data.id, 0)
+  elseif self.npc then
+    self:CallNpcFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_EVENT_QUERY, 0)
+  end
 end
 
 function MessageBoardTracePage:UpdateGuestTraces()
@@ -144,12 +149,20 @@ end
 
 function MessageBoardTracePage:ClickLeftIndicator()
   local targetPage = self.curPage - 1
-  ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_EVENT_QUERY, self.furniture.data.id, targetPage - 1)
+  if self.furniture then
+    ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_EVENT_QUERY, self.furniture.data.id, targetPage - 1)
+  elseif self.npc then
+    self:CallNpcFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_EVENT_QUERY, targetPage - 1)
+  end
 end
 
 function MessageBoardTracePage:ClickRightIndicator()
   local targetPage = self.curPage + 1
-  ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_EVENT_QUERY, self.furniture.data.id, targetPage - 1)
+  if self.furniture then
+    ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_EVENT_QUERY, self.furniture.data.id, targetPage - 1)
+  elseif self.npc then
+    self:CallNpcFurnitureOperHomeCmd(HomeCmd_pb.EFURNITUREOPER_EVENT_QUERY, targetPage - 1)
+  end
 end
 
 function MessageBoardTracePage:HandleClickHead(cellctl)
@@ -170,6 +183,13 @@ function MessageBoardTracePage:HandleClickHead(cellctl)
   self.tipData.playerData = playerData
   self.tipData.funckeys = self.funckeys
   playerTip:SetData(self.tipData)
+end
+
+function MessageBoardTracePage:CallNpcFurnitureOperHomeCmd(oper, value)
+  local operCmd = {}
+  operCmd.oper = oper
+  operCmd.value = value
+  ServiceHomeCmdProxy.Instance:CallNpcFurnitureOperHomeCmd(self.npc.data.uniqueid, operCmd)
 end
 
 function MessageBoardTracePage:OnEnter()

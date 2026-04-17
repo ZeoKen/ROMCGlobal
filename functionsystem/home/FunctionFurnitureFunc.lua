@@ -34,6 +34,8 @@ function FunctionFurnitureFunc:ctor()
   self.funcMap.Save = FunctionFurnitureFunc.Save
   self.funcMap.MessageBoard = FunctionFurnitureFunc.MessageBoard
   self.funcMap.OpenURL = FunctionFurnitureFunc.OpenURL
+  self.funcMap.RandomSeatAction = FunctionFurnitureFunc.RandomSeatAction
+  self.funcMap.RandomAction = FunctionFurnitureFunc.RandomAction
   self.checkMap.UseWardrobe = FunctionFurnitureFunc.CheckUseWardrobe
   self.checkMap.WatchTV = FunctionFurnitureFunc.CheckWatchTV
   self.checkMap.Save = FunctionFurnitureFunc.CheckSave
@@ -226,6 +228,20 @@ function FunctionFurnitureFunc.OpenURL(nFurniture, param)
     return
   end
   ApplicationInfo.OpenUrl(param.url)
+end
+
+function FunctionFurnitureFunc.RandomSeatAction(nFurniture, param)
+  if not nFurniture or not nFurniture.data then
+    return
+  end
+  ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeProxy.Oper.Interact, nFurniture.data.id)
+end
+
+function FunctionFurnitureFunc.RandomAction(nFurniture, param)
+  if not nFurniture or not nFurniture.data then
+    return
+  end
+  ServiceHomeCmdProxy.Instance:CallFurnitureOperHomeCmd(HomeProxy.Oper.Touch, nFurniture.data.id)
 end
 
 function FunctionFurnitureFunc.CheckUseWardrobe(nfurniture, param)

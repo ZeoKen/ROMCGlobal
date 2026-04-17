@@ -952,3 +952,22 @@ end
 function PVEFactory.GetFairyTaleRaid()
   return FairyTaleRaid.new()
 end
+
+local DestroyAirShipRaid = class("DestroyAirShipRaid", Dungeon_Handle)
+
+function DestroyAirShipRaid:ctor()
+  self.isDestroyAirShipRaid = true
+end
+
+function DestroyAirShipRaid:Launch()
+  notify(PVEEvent.DestroyAirShipRaid_Launch)
+end
+
+function DestroyAirShipRaid:Shutdown()
+  GroupRaidProxy.Instance:SetMultiBossRaidPhase(0)
+  notify(PVEEvent.DestroyAirShipRaid_ShutDown)
+end
+
+function PVEFactory.GetDestroyAirShip()
+  return DestroyAirShipRaid.new()
+end

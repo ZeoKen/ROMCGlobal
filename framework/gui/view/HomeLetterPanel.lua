@@ -21,7 +21,7 @@ function HomeLetterPanel:InitLetterPart()
   local housebelongLeft_UILabel = self:FindComponent("housebelong", UILabel, self.letterLabel)
   local housebelongRight_UILabel = self:FindComponent("housebelongRight", UILabel, self.letterLabel)
   housebelongRight_UILabel.text = Game.Myself.data:GetName()
-  local myHouseData = HomeProxy.Instance:GetMyHouseData()
+  local myHouseData = HomeProxy.__RealInstance:GetMyHouseData()
   if myHouseData then
     self.Name_UIInput.value = myHouseData.name
     self.Sign_UIInput.value = myHouseData.sign
@@ -83,7 +83,7 @@ function HomeLetterPanel:TrySetHomeName()
     self.Name_UIInput.label.color = ColorUtil.NGUILabelRed
     return
   end
-  ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HouseData.HouseOptType.Name, nil, nil, name)
+  ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HomeCmd_pb.EHOUSETYPE_PRIVATE, HouseData.HouseOptType.Name, nil, nil, name)
   return true
 end
 
@@ -107,7 +107,7 @@ function HomeLetterPanel:TrySetHomeSign()
     self.Sign_UIInput.label.color = ColorUtil.NGUILabelRed
     return
   end
-  ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HouseData.HouseOptType.Sign, nil, nil, name)
+  ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HomeCmd_pb.EHOUSETYPE_PRIVATE, HouseData.HouseOptType.Sign, nil, nil, name)
   return true
 end
 

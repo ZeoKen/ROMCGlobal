@@ -916,7 +916,8 @@ function PlotStoryProcess:ChangeTargetRolePartByParam(target, params)
       Game.Myself.assetRole:GetPartsInfo(tempPartArray)
       tempPartArray[PartIndex.Mount] = 0
     else
-      target.assetRole:GetPartsInfo(tempPartArray)
+      local partsNoDestroy
+      tempPartArray, partsNoDestroy = target:GetDressParts()
     end
     setPartArrayByParam(tempPartArray, params)
     target.assetRole:Redress(tempPartArray)

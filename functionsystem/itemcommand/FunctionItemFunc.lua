@@ -83,6 +83,7 @@ function FunctionItemFunc:ctor()
   self.funcMap.MemoryUpgrade = FunctionItemFunc.MemoryUpgradeEvt
   self.funcMap.UseAnonymousItem = FunctionItemFunc.UseAnonymousItem
   self.funcMap.OpenVideo = FunctionItemFunc.OpenVideo
+  self.funcMap.Train = FunctionItemFunc.Train
   self.checkMap.OpenVideo = FunctionItemFunc.CheckOpenVideo
   self.checkMap.Inlay = FunctionItemFunc.CheckInlay
   self.checkMap.Combine = FunctionItemFunc.CheckCombine
@@ -102,6 +103,7 @@ function FunctionItemFunc:ctor()
   self.checkMap.CheckBeVIP = FunctionItemFunc.CheckBeVIP
   self.checkMap.AdvancedCostEnchant = FunctionItemFunc.CheckAdvancedCostEnchant
   self.checkMap.Strength = FunctionItemFunc.CheckStrength
+  self.checkMap.Train = FunctionItemFunc.CheckTrain
 end
 
 function FunctionItemFunc:GetItemDefaultFunc(data, source, dest_isfashion)
@@ -724,9 +726,12 @@ function FunctionItemFunc.TryUseItem(data, target, count)
           MsgManager.ShowMsgByID(1358)
           return
         end
-        if useEffect.new == 1 and not euqipData.equipInfo:IsNextGen() then
-          MsgManager.ShowMsgByID(1361)
-          return
+        if useEffect.new then
+          local equipGen = euqipData.equipInfo.equipData.IsNew or 0
+          if equipGen ~= useEffect.new then
+            MsgManager.ShowMsgByID(1361)
+            return
+          end
         end
         if useEffect.refusedamage == 1 and euqipData.equipInfo.damage then
           MsgManager.ShowMsgByID(26106)
@@ -1905,6 +1910,17 @@ function FunctionItemFunc.UseAnonymousItem(data, count, cellCtrl)
   FunctionSecurity.Me():UseItem(function()
     FunctionItemFunc.TryUseItem(data, nil, count, cellCtl)
   end, {itemData = data})
+end
+
+function FunctionItemFunc.Train(data)
+  local staticData = data.staticData
+  local id = staticData.id
+  if id == 45563 then
+    GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+      view = PanelConfig.SnowCrownContainerView,
+      viewdata = data
+    })
+  end
 end
 
 function FunctionItemFunc:CheckFuncState(key, itemdata)

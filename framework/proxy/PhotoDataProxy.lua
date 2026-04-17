@@ -6,7 +6,9 @@ local tempArray = {}
 PhotoDataProxy.PhotoType = {
   PersonalPhotoType = 1,
   SceneryPhotoType = 2,
-  PostcardType = 3
+  PostcardType = 3,
+  HomeRecommendPhotoType = 4,
+  HomeBlueprintPhotoType = 5
 }
 
 function PhotoDataProxy:ctor(proxyName, data)

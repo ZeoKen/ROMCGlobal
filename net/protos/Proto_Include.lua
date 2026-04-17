@@ -59,6 +59,7 @@ autoImport("SessionShop_pb")
 autoImport("SessionSociality_pb")
 autoImport("SessionTeam_pb")
 autoImport("SessionWeather_pb")
+autoImport("SnowCmd_pb")
 autoImport("TeamGroupRaid_pb")
 autoImport("TeamRaidCmd_pb")
 autoImport("TechTreeCmd_pb")
@@ -639,10 +640,13 @@ Proto_Include = {
     [8] = TeamGroupRaid_pb.ReplyConfirmRaidTeamGroupCmd
   },
   [82] = {
+    [56] = SceneUser3_pb.AboardUserHandcartCmd,
     [54] = SceneUser3_pb.WareHouseOperationCmd,
     [42] = SceneUser3_pb.QueryYearMemoryUserCmd,
     [48] = SceneUser3_pb.GvgExcellectRewardUserCmd,
     [43] = SceneUser3_pb.YearMemoryProcessUserCmd,
+    [60] = SceneUser3_pb.LeaveUserHandcartCmd,
+    [61] = SceneUser3_pb.UserHoldingNpcCmd,
     [53] = SceneUser3_pb.PlayTimeOffUserCmd,
     [52] = SceneUser3_pb.BattleTimeOffUserCmd,
     [24] = SceneUser3_pb.NoviceChargeSync,
@@ -672,6 +676,8 @@ Proto_Include = {
     [51] = SceneUser3_pb.EffectInfoUseUserCmd,
     [39] = SceneUser3_pb.QueryQuestSignInfoUserCmd,
     [38] = SceneUser3_pb.PrestigeRewardCmd,
+    [59] = SceneUser3_pb.GeffenMagicGetRewardUserCmd,
+    [58] = SceneUser3_pb.GeffenMagicWaveScoreQueryCmd,
     [11] = SceneUser3_pb.HeroBuyUserCmd,
     [10] = SceneUser3_pb.PlugInUpload,
     [13] = SceneUser3_pb.HeroGrowthQuestInfo,
@@ -691,6 +697,7 @@ Proto_Include = {
     [33] = SceneUser3_pb.ActionStatUserCmd,
     [55] = SceneUser3_pb.FairyTaleRankQueryCmd,
     [32] = SceneUser3_pb.AuthUpdateUserCmd,
+    [57] = SceneUser3_pb.GeffenMagicRankQueryCmd,
     [50] = SceneUser3_pb.EffectInfoUpdateUserCmd
   },
   [28] = {
@@ -1243,6 +1250,7 @@ Proto_Include = {
     [227] = SceneUser2_pb.UserSyncBuffFromUserCmd
   },
   [8] = {
+    [56] = SceneQuest_pb.QuerySnowRealmQuestListCmd,
     [54] = SceneQuest_pb.QueryAbyssQuestListQuestCmd,
     [42] = SceneQuest_pb.CompleteAvailableQueryQuestCmd,
     [43] = SceneQuest_pb.WorldCountListQuestCmd,
@@ -1288,7 +1296,22 @@ Proto_Include = {
     [34] = SceneQuest_pb.UnlockEvidenceMessageCmd,
     [33] = SceneQuest_pb.EvidenceQueryCmd,
     [55] = SceneQuest_pb.UpdateAbyssHelpCountQuestCmd,
-    [32] = SceneQuest_pb.BottleUpdateQuestCmd
+    [32] = SceneQuest_pb.BottleUpdateQuestCmd,
+    [57] = SceneQuest_pb.UpdateSnowRealmDailyQuestHelpCountCmd
+  },
+  [85] = {
+    [11] = SnowCmd_pb.OperSnowEquipSnowCmd,
+    [10] = SnowCmd_pb.SnowManualStoneUpdateSnowCmd,
+    [12] = SnowCmd_pb.OperSnowStoneSnowCmd,
+    [1] = SnowCmd_pb.SnowHeadQuerySnowCmd,
+    [3] = SnowCmd_pb.SnowHeadActiveSnowCmd,
+    [2] = SnowCmd_pb.SnowHeadLvupSnowCmd,
+    [5] = SnowCmd_pb.SnowHeadFashionSelectSnowCmd,
+    [4] = SnowCmd_pb.SnowHeadModeChangeSnowCmd,
+    [7] = SnowCmd_pb.QuerySnowManualSnowCmd,
+    [6] = SnowCmd_pb.SnowCrownActiveSnowCmd,
+    [9] = SnowCmd_pb.SnowManualEquipUpdateSnowCmd,
+    [8] = SnowCmd_pb.SnowManualUpdateSnowCmd
   },
   [68] = {
     [1] = PuzzleCmd_pb.QueryActPuzzleCmd,
@@ -1372,16 +1395,16 @@ Proto_Include = {
     [6] = ActMiniRoCmd_pb.ActMiniRoCheckCircleReward
   },
   [70] = {
-    [11] = HomeCmd_pb.EnterHomeCmd,
-    [10] = HomeCmd_pb.PrayHomeCmd,
-    [13] = HomeCmd_pb.OptUpdateHomeCmd,
-    [12] = HomeCmd_pb.QueryHouseDataHomeCmd,
-    [15] = HomeCmd_pb.PrintUpdateHomeCmd,
+    [24] = HomeCmd_pb.SnowFurnitureUpdateHomeCmd,
+    [25] = HomeCmd_pb.SnowFurnitureDataUpdateHomeCmd,
+    [26] = HomeCmd_pb.SnowFurnitureOperHomeCmd,
+    [27] = HomeCmd_pb.QueryRecommendHomeCmd,
+    [20] = HomeCmd_pb.QueryWoodRankHomeCmd,
     [21] = HomeCmd_pb.QueryHouseFurnitureHomeCmd,
-    [17] = HomeCmd_pb.BoardItemUpdateHomeCmd,
-    [16] = HomeCmd_pb.BoardItemQueryHomeCmd,
-    [19] = HomeCmd_pb.EventItemQueryHomeCmd,
-    [18] = HomeCmd_pb.BoardMsgUpdateHomeCmd,
+    [22] = HomeCmd_pb.QuerySnowHouseDataHomeCmd,
+    [23] = HomeCmd_pb.SnowHouseDataUpdateHomeCmd,
+    [28] = HomeCmd_pb.ReqHomeCheckHomeCmd,
+    [29] = HomeCmd_pb.NpcFurnitureOperHomeCmd,
     [1] = HomeCmd_pb.QueryFurnitureDataHomeCmd,
     [3] = HomeCmd_pb.FurnitureOperHomeCmd,
     [2] = HomeCmd_pb.FurnitureActionHomeCmd,
@@ -1390,8 +1413,16 @@ Proto_Include = {
     [7] = HomeCmd_pb.HouseDataUpdateHomeCmd,
     [6] = HomeCmd_pb.HouseActionHomeCmd,
     [9] = HomeCmd_pb.PetFurnitureActionhomeCmd,
-    [20] = HomeCmd_pb.QueryWoodRankHomeCmd,
-    [14] = HomeCmd_pb.PrintActionHomeCmd
+    [11] = HomeCmd_pb.EnterHomeCmd,
+    [10] = HomeCmd_pb.PrayHomeCmd,
+    [13] = HomeCmd_pb.OptUpdateHomeCmd,
+    [12] = HomeCmd_pb.QueryHouseDataHomeCmd,
+    [15] = HomeCmd_pb.PrintUpdateHomeCmd,
+    [14] = HomeCmd_pb.PrintActionHomeCmd,
+    [17] = HomeCmd_pb.BoardItemUpdateHomeCmd,
+    [16] = HomeCmd_pb.BoardItemQueryHomeCmd,
+    [19] = HomeCmd_pb.EventItemQueryHomeCmd,
+    [18] = HomeCmd_pb.BoardMsgUpdateHomeCmd
   },
   [59] = {
     [24] = ChatCmd_pb.ReceiveRedPacketCmd,
@@ -1507,6 +1538,8 @@ Proto_Include = {
     [164] = FuBenCmd_pb.GvgMvpInfoUpdateCmd,
     [179] = FuBenCmd_pb.FairyTaleRaidSyncCmd,
     [178] = FuBenCmd_pb.STIDropSkillCmd,
+    [191] = FuBenCmd_pb.GeffenMagicEnemyInfoQueryCmd,
+    [190] = FuBenCmd_pb.GeffenMagicWinCmd,
     [177] = FuBenCmd_pb.STIRefreshUpgradeOptionsCmd,
     [88] = FuBenCmd_pb.ReqEnterTowerPrivate,
     [89] = FuBenCmd_pb.TowerPrivateLayerInfo,
@@ -1563,9 +1596,12 @@ Proto_Include = {
     [180] = FuBenCmd_pb.RaidStartFightCmd,
     [2] = FuBenCmd_pb.FailFuBenUserCmd,
     [162] = FuBenCmd_pb.EBFEventAreaUpdateCmd,
+    [187] = FuBenCmd_pb.GeffenMagicInfoSyncCmd,
     [184] = FuBenCmd_pb.SyncMemoryEquipRewardInfo,
     [6] = FuBenCmd_pb.StageStepUserCmd,
     [186] = FuBenCmd_pb.GvgInviteTransferToMeCmd,
+    [188] = FuBenCmd_pb.GeffenMagicSelectAffixCmd,
+    [189] = FuBenCmd_pb.GeffenMagicStatUpdateCmd,
     [185] = FuBenCmd_pb.ChooseMemoryEquipRewardInfo,
     [99] = FuBenCmd_pb.TeamPwsStateSyncFubenCmd,
     [98] = FuBenCmd_pb.QueryComodoTeamRaidStat,
@@ -1685,14 +1721,17 @@ Proto_Include = {
     [50] = ScenePet_pb.BoKiSkillLevelUpPetCmd
   },
   [12] = {
+    [28] = SceneMap_pb.MultiObjStateSyncMapCmd,
     [24] = SceneMap_pb.ChangeCloneMapCmd,
     [25] = SceneMap_pb.StormBossAffixQueryCmd,
     [26] = SceneMap_pb.BuffRewardQueryCmd,
     [27] = SceneMap_pb.BuffRewardSelectCmd,
     [22] = SceneMap_pb.FuncBuildNpcUpdateCmd,
     [23] = SceneMap_pb.QueryCloneMapStatusMapCmd,
-    [28] = SceneMap_pb.MultiObjStateSyncMapCmd,
+    [42] = SceneMap_pb.RefineLvSyncMapCmd,
     [29] = SceneMap_pb.UpdateZoneMapCmd,
+    [40] = SceneMap_pb.SnowRealmSnowmanAreaChangeCmd,
+    [41] = SceneMap_pb.SnowRealmSnowmanProgressCmd,
     [1] = SceneMap_pb.AddMapItem,
     [3] = SceneMap_pb.AddMapUser,
     [2] = SceneMap_pb.PickupItem,

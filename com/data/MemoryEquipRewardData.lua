@@ -11,6 +11,7 @@ function MemoryEquipRewardData:SetData(serverData)
   self.oldLevel = serverData.beginlevel or 0
   self.newLevel = serverData.endlevel or 0
   self.upLevel = serverData.quality or 0
+  self.effectIndex = serverData.effect_index or 0
   self.quality = GameConfig.SpaceTimeIllusion.MemoryReward and GameConfig.SpaceTimeIllusion.MemoryReward.RewardColor and GameConfig.SpaceTimeIllusion.MemoryReward.RewardColor[self.upLevel] or 0
   self.rewards = {}
   if serverData.items then

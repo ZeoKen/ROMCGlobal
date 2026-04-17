@@ -7,6 +7,41 @@ HeadImageIconType = {
 }
 HeadImageData.DefaultFace = "DefaultFace"
 
+function HeadImageData.ProcessSnowCrownFashion(headID, headFashionBytes)
+  if not headID or headID <= 0 then
+    return headID
+  end
+  if not (GameConfig.Snow and GameConfig.Snow.FashionItemId) or headID ~= GameConfig.Snow.FashionItemId then
+    return headID
+  end
+  if not headFashionBytes or headFashionBytes == "" then
+    return headID
+  end
+  local rets = string.split(headFashionBytes, ";")
+  if not rets or #rets < 2 then
+    return headID
+  end
+  local index1 = tonumber(rets[1]) or 0
+  local index2 = tonumber(rets[2]) or 0
+  if 0 < index1 and 0 < index2 and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[index2] then
+    local fashionConfig = GameConfig.Snow.Fashion[index2]
+    if fashionConfig[index1] then
+      return fashionConfig[index1]
+    end
+  elseif 0 < index1 and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[1] then
+    local fashionConfig = GameConfig.Snow.Fashion[1]
+    if fashionConfig[index1] then
+      return fashionConfig[index1]
+    end
+  elseif 0 < index2 and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[index2] then
+    local fashionConfig = GameConfig.Snow.Fashion[index2]
+    if fashionConfig[1] then
+      return fashionConfig[1]
+    end
+  end
+  return headID
+end
+
 function HeadImageData:ctor()
   self:Reset()
 end
@@ -117,10 +152,13 @@ function HeadImageData:TransformByCreatureWithCustomJob(creature, customjob)
       self.iconData.haircolor = userdata:Get(UDEnum.HAIRCOLOR)
       self.iconData.gender = userdata:Get(UDEnum.SEX)
       self.iconData.blink = creature.data:CanBlink()
-      self.iconData.headID = userdata:Get(UDEnum.HEAD)
+      local headID = userdata:Get(UDEnum.HEAD)
+      self.iconData.headID = headID
       self.iconData.faceID = userdata:Get(UDEnum.FACE)
       self.iconData.mouthID = userdata:Get(UDEnum.MOUTH)
       self.iconData.eyeID = userdata:Get(UDEnum.EYE)
+      local headFashionBytes = userdata:GetBytes(UDEnum.HEAD_FASHION)
+      self.iconData.headID = HeadImageData.ProcessSnowCrownFashion(headID, headFashionBytes)
     end
     if creature:GetCreatureType() == Creature_Type.Me then
       local myMemberData = TeamProxy.Instance:GetMyTeamMemberData()
@@ -211,10 +249,13 @@ function HeadImageData:TransformByCreature(creature)
           self.iconData.haircolor = userdata:Get(UDEnum.HAIRCOLOR)
           self.iconData.gender = userdata:Get(UDEnum.SEX)
           self.iconData.blink = creature.data:CanBlink()
-          self.iconData.headID = userdata:Get(UDEnum.HEAD)
+          local headID = userdata:Get(UDEnum.HEAD)
+          self.iconData.headID = headID
           self.iconData.faceID = userdata:Get(UDEnum.FACE)
           self.iconData.mouthID = userdata:Get(UDEnum.MOUTH)
           self.iconData.eyeID = userdata:Get(UDEnum.EYE)
+          local headFashionBytes = userdata:GetBytes(UDEnum.HEAD_FASHION)
+          self.iconData.headID = HeadImageData.ProcessSnowCrownFashion(headID, headFashionBytes)
         end
         local monsterPortrait = userdata:Get(UDEnum.MONSTER_PORTRAIT)
         if monsterPortrait and monsterPortrait ~= 0 then
@@ -388,7 +429,7 @@ function HeadImageData:TransByTeamMemberData(mdata, includeMyself)
       self.iconData.gender = mdata.gender
       self.iconData.blink = mdata:CanBlink()
       self.iconData.eyeID = mdata.eye
-      self.iconData.headID = mdata.head
+      self.iconData.headID = HeadImageData.ProcessSnowCrownFashion(mdata.head, mdata.head_fashion)
       self.iconData.faceID = mdata.face
       self.iconData.mouthID = mdata.mouth
     end
@@ -483,7 +524,8 @@ function HeadImageData:TransByFriendData(frienddata)
     self.iconData.type = HeadImageIconType.Avatar
     self.iconData.bodyID = frienddata.bodyID
     self.iconData.hairID = frienddata.hairID
-    self.iconData.headID = frienddata.headID
+    local headID = frienddata.headID
+    self.iconData.headID = headID
     self.iconData.faceID = frienddata.faceID
     self.iconData.mouthID = frienddata.mouthID
     self.iconData.eyeID = frienddata.eyeID
@@ -491,6 +533,7 @@ function HeadImageData:TransByFriendData(frienddata)
     self.iconData.gender = frienddata.gender
     self.iconData.blink = frienddata.blink
     self.iconData.portraitframe = frienddata.portraitframe
+    self.iconData.headID = HeadImageData.ProcessSnowCrownFashion(headID, frienddata.head_fashion)
   end
   self.iconData.id = frienddata.id
   self.name = frienddata.name
@@ -508,13 +551,15 @@ function HeadImageData:TransByGuildApplyData(applyData)
     self.iconData.type = HeadImageIconType.Avatar
     self.iconData.bodyID = applyData.body
     self.iconData.hairID = applyData.hair
-    self.iconData.headID = applyData.head
+    local headID = applyData.head
+    self.iconData.headID = headID
     self.iconData.faceID = applyData.face
     self.iconData.mouthID = applyData.mouth
     self.iconData.eyeID = applyData.eye
     self.iconData.haircolor = applyData.haircolor
     self.iconData.gender = applyData.gender
     self.iconData.portraitframe = applyData.portrait
+    self.iconData.headID = HeadImageData.ProcessSnowCrownFashion(headID, applyData.head_fashion)
   end
   self.iconData.id = applyData.id
   self.name = applyData.name
@@ -534,12 +579,14 @@ function HeadImageData:TransByGuildMemberData(guildMember)
     self.iconData.bodyID = guildMember.body
     self.iconData.hairID = guildMember.hair
     self.iconData.haircolor = guildMember.haircolor
-    self.iconData.headID = guildMember.head
+    local headID = guildMember.head
+    self.iconData.headID = headID
     self.iconData.faceID = guildMember.face
     self.iconData.mouthID = guildMember.mouth
     self.iconData.eyeID = guildMember:GetEyeID()
     self.iconData.gender = guildMember.gender
     self.iconData.portraitframe = guildMember.portrait_frame
+    self.iconData.headID = HeadImageData.ProcessSnowCrownFashion(headID, guildMember.head_fashion)
   end
   self.name = guildMember.name
   self.profession = guildMember.profession
@@ -564,7 +611,8 @@ function HeadImageData:TransByClassData(clasData)
     local faceID = userData:Get(UDEnum.FACE) or nil
     local mouthID = userData:Get(UDEnum.MOUTH) or nil
     local eye = userData:Get(UDEnum.EYE) or nil
-    self.iconData.headID = headID
+    local headFashionBytes = userData:GetBytes(UDEnum.HEAD_FASHION)
+    self.iconData.headID = HeadImageData.ProcessSnowCrownFashion(headID, headFashionBytes)
     self.iconData.faceID = faceID
     self.iconData.mouthID = mouthID
     self.iconData.eyeID = eye
@@ -690,6 +738,8 @@ function HeadImageData:TransBySocialData(socialData)
     self.iconData.gender = socialData.gender
     self.iconData.blink = socialData.blink
     self.iconData.eyeID = socialData.eye
+    local headID = socialData.headID
+    self.iconData.headID = HeadImageData.ProcessSnowCrownFashion(headID, socialData.head_fashion)
   end
   self.iconData.id = socialData.guid
   self.name = socialData.name
@@ -983,6 +1033,24 @@ function HeadImageData:TransByPortraitData(data)
   end
 end
 
+function HeadImageData:TransByGeffenMagicEnemyInfo(enemyInfo)
+  if not enemyInfo then
+    return
+  end
+  self.profession = enemyInfo.profession
+  local portrait = enemyInfo.portrait
+  self.iconData.type = HeadImageIconType.Avatar
+  self.iconData.bodyID = portrait.body
+  self.iconData.hairID = portrait.hair
+  self.iconData.haircolor = portrait.haircolor
+  self.iconData.gender = portrait.gender
+  self.iconData.headID = portrait.head
+  self.iconData.faceID = portrait.face
+  self.iconData.mouthID = portrait.mouth
+  self.iconData.eyeID = portrait.eye
+  self.iconData.portraitframe = portrait.portrait_frame
+end
+
 function HeadImageData:SetCustomParam(key, value)
   if self._customParam == nil then
     self._customParam = {}
@@ -1010,4 +1078,43 @@ function HeadImageData:TransByPippiData(pippi)
   self.creatureId = self.guid
   self.level = nil
   self.isPippi = true
+end
+
+function HeadImageData:TransByPlayerData(playerData)
+  if not playerData then
+    return
+  end
+  self.name = playerData:GetName()
+  self.profession = playerData:GetProfesstion()
+  self.level = playerData:GetBaseLv()
+  local userdata = playerData.userdata
+  if not userdata then
+    return
+  end
+  local portrait = userdata:Get(UDEnum.PORTRAIT)
+  local portraitData = Table_HeadImage[portrait]
+  if portrait and portrait ~= 0 and portraitData and portraitData.Picture then
+    self.iconData.type = HeadImageIconType.Simple
+    self.iconData.icon = portraitData.Picture
+    self.iconData.frameType = portraitData.Frame
+  else
+    self.iconData.type = HeadImageIconType.Avatar
+    self.iconData.id = playerData.id
+    if playerData:IsAnonymous() then
+      local classId = userdata:Get(UDEnum.PROFESSION)
+      local gender = userdata:Get(UDEnum.SEX)
+      FunctionAnonymous.Me():GetAnonymousHeadIconData(classId, gender, self.iconData)
+    else
+      self.iconData.bodyID = userdata:Get(UDEnum.BODY)
+      self.iconData.hairID = userdata:Get(UDEnum.HAIR)
+      self.iconData.haircolor = userdata:Get(UDEnum.HAIRCOLOR)
+      self.iconData.gender = userdata:Get(UDEnum.SEX)
+      self.iconData.blink = playerData:CanBlink()
+      self.iconData.headID = userdata:Get(UDEnum.HEAD)
+      self.iconData.faceID = userdata:Get(UDEnum.FACE)
+      self.iconData.mouthID = userdata:Get(UDEnum.MOUTH)
+      self.iconData.eyeID = userdata:Get(UDEnum.EYE)
+    end
+  end
+  self.iconData.portraitframe = userdata:Get(UDEnum.PORTRAIT_FRAME) or 0
 end

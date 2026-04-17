@@ -2359,6 +2359,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[83],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[5],
     SameTeam = 4,
+    EquipSuitDsc = "[大猫的祝福][魔术无边帽][石制圆盾]",
     EffectDesc = "智力＋3、生命上限＋10%、魔法上限＋10%"
   },
   [131] = {
@@ -2366,6 +2367,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[84],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[5],
     SameTeam = 4,
+    EquipSuitDsc = "[大猫的祝福][魔术无边帽][石制圆盾]",
     EffectDesc = "智力＋3、生命上限＋10%、魔法上限＋10%"
   },
   [132] = {
@@ -2373,6 +2375,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[85],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[5],
     SameTeam = 4,
+    EquipSuitDsc = "[大猫的祝福][魔术无边帽][石制圆盾]",
     EffectDesc = "智力＋3、生命上限＋10%、魔法上限＋10%"
   },
   [133] = {
@@ -2380,6 +2383,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[86],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[5],
     SameTeam = 4,
+    EquipSuitDsc = "[大猫的祝福][魔术无边帽][石制圆盾]",
     EffectDesc = "智力＋3、生命上限＋10%、魔法上限＋10%"
   },
   [134] = {
@@ -2387,6 +2391,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[87],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[5],
     SameTeam = 4,
+    EquipSuitDsc = "[大猫的祝福][魔术无边帽][石制圆盾]",
     EffectDesc = "智力＋3、生命上限＋10%、魔法上限＋10%"
   },
   [135] = {
@@ -2394,6 +2399,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[88],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[5],
     SameTeam = 4,
+    EquipSuitDsc = "[大猫的祝福][魔术无边帽][石制圆盾]",
     EffectDesc = "智力＋3、生命上限＋10%、魔法上限＋10%"
   },
   [136] = {
@@ -2401,6 +2407,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[89],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[5],
     SameTeam = 4,
+    EquipSuitDsc = "[大猫的祝福][魔术无边帽][石制圆盾]",
     EffectDesc = "智力＋3、生命上限＋10%、魔法上限＋10%"
   },
   [137] = {
@@ -2408,6 +2415,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[90],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[5],
     SameTeam = 4,
+    EquipSuitDsc = "[大猫的祝福][魔术无边帽][石制圆盾]",
     EffectDesc = "智力＋3、生命上限＋10%、魔法上限＋10%"
   },
   [140] = {
@@ -8262,7 +8270,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[671],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 179,
-    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][多芙的斗篷★][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1881] = {
@@ -8270,7 +8277,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[672],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 179,
-    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][多芙的斗篷★][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1882] = {
@@ -8278,7 +8284,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[673],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 179,
-    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][多芙的斗篷★][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1883] = {
@@ -8286,7 +8291,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[619],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 179,
-    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][多芙的斗篷★][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1884] = {
@@ -8294,7 +8298,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[618],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 179,
-    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][多芙的斗篷★][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1885] = {
@@ -8302,7 +8305,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[610],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 179,
-    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][多芙的斗篷★][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1886] = {
@@ -8310,7 +8312,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[609],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 179,
-    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][多芙的斗篷★][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1887] = {
@@ -8318,7 +8319,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[678],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 179,
-    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][多芙的斗篷★][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1890] = {
@@ -8822,7 +8822,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[2],
     SuitTwoAdd = Table_EquipSuit_t.SuitTwoAdd[2],
     SameTeam = 197,
-    EquipSuitDsc = "[侠盗之衣][手术专家]",
+    EquipSuitDsc = "[侠盗之衣][牙科手术刀★]",
     EffectDesc = "【背刺】技能对人型目标时技能倍率＋50%"
   },
   [2051] = {
@@ -8830,7 +8830,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[3],
     SuitTwoAdd = Table_EquipSuit_t.SuitTwoAdd[2],
     SameTeam = 197,
-    EquipSuitDsc = "[侠盗之衣][手术专家]",
+    EquipSuitDsc = "[侠盗之衣][牙科手术刀★]",
     EffectDesc = "【背刺】技能对人型目标时技能倍率＋50%"
   },
   [2052] = {
@@ -8838,7 +8838,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[4],
     SuitTwoAdd = Table_EquipSuit_t.SuitTwoAdd[2],
     SameTeam = 197,
-    EquipSuitDsc = "[侠盗之衣][手术专家]",
+    EquipSuitDsc = "[侠盗之衣][牙科手术刀★]",
     EffectDesc = "【背刺】技能对人型目标时技能倍率＋50%"
   },
   [2053] = {
@@ -8846,7 +8846,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[370],
     SuitTwoAdd = Table_EquipSuit_t.SuitTwoAdd[2],
     SameTeam = 197,
-    EquipSuitDsc = "[侠盗之衣][手术专家]",
+    EquipSuitDsc = "[侠盗之衣][牙科手术刀★]",
     EffectDesc = "【背刺】技能对人型目标时技能倍率＋50%"
   },
   [2060] = {
@@ -8854,7 +8854,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[369],
     SuitTwoAdd = Table_EquipSuit_t.SuitTwoAdd[3],
     SameTeam = 198,
-    EquipSuitDsc = "[侠盗之衣★][手术专家]",
+    EquipSuitDsc = "[侠盗之衣★][牙科手术刀★]",
     EffectDesc = "【背刺】技能对人型目标时技能倍率＋50%"
   },
   [2061] = {
@@ -8862,7 +8862,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[13],
     SuitTwoAdd = Table_EquipSuit_t.SuitTwoAdd[3],
     SameTeam = 198,
-    EquipSuitDsc = "[侠盗之衣★][手术专家]",
+    EquipSuitDsc = "[侠盗之衣★][牙科手术刀★]",
     EffectDesc = "【背刺】技能对人型目标时技能倍率＋50%"
   },
   [2062] = {
@@ -8870,7 +8870,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[14],
     SuitTwoAdd = Table_EquipSuit_t.SuitTwoAdd[3],
     SameTeam = 198,
-    EquipSuitDsc = "[侠盗之衣★][手术专家]",
+    EquipSuitDsc = "[侠盗之衣★][牙科手术刀★]",
     EffectDesc = "【背刺】技能对人型目标时技能倍率＋50%"
   },
   [2063] = {
@@ -8878,14 +8878,14 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[368],
     SuitTwoAdd = Table_EquipSuit_t.SuitTwoAdd[3],
     SameTeam = 198,
-    EquipSuitDsc = "[侠盗之衣★][手术专家]",
+    EquipSuitDsc = "[侠盗之衣★][牙科手术刀★]",
     EffectDesc = "【背刺】技能对人型目标时技能倍率＋50%"
   }
 }
 local cell_mt = {
   __index = {
     EffectDesc = "【赞歌】伤害＋10%",
-    EquipSuitDsc = "[大猫的祝福][魔术无边帽][石制圆盾]",
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][多芙的斗篷★][哥夫内的头具]",
     RefineBuff = _EmptyTable,
     SameTeam = 1,
     SuitFiveAdd = _EmptyTable,

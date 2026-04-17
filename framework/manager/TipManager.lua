@@ -67,6 +67,7 @@ autoImport("AdventureAppendTip")
 autoImport("BalanceModeSkillTip")
 autoImport("AstralDestinyGraphPointTip")
 autoImport("RoguelikeSkillRemoveTip")
+autoImport("SnowCrownAttrTip")
 TipManager.Instance = nil
 
 function TipManager:ctor()
@@ -749,5 +750,12 @@ function TipManager:ShowRoguelikeSkillRemoveTip(data, stick, side, offset)
   side = side or NGUIUtil.AnchorSide.TopRight
   offset = offset or {0, 0}
   TipsView.Me():ShowStickTip(RoguelikeSkillRemoveTip, data, side, stick, offset, "RoguelikeSkillRemoveTip")
+  return TipsView.Me().currentTip
+end
+
+function TipManager:ShowSnowCrownAttrTip(data, stick, side, offset)
+  side = side or NGUIUtil.AnchorSide.TopRight
+  offset = offset or {0, 0}
+  TipsView.Me():ShowStickTip(SnowCrownAttrTip, data, side, stick, offset, "SnowCrownAttrTip")
   return TipsView.Me().currentTip
 end

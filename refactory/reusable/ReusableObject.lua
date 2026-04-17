@@ -261,11 +261,15 @@ function ReusableObject:DoClearWeakData()
   self._weakData = nil
   if self._dataAsArray then
     for i = 1, #temp do
-      temp[i]:UnregisterWeakObserver(self)
+      if temp[i] and temp[i].UnregisterWeakObserver then
+        temp[i]:UnregisterWeakObserver(self)
+      end
     end
   else
     for k, v in pairs(temp) do
-      v:UnregisterWeakObserver(self)
+      if v and v.UnregisterWeakObserver then
+        v:UnregisterWeakObserver(self)
+      end
     end
   end
   self._weakData = temp

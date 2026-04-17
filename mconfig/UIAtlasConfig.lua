@@ -341,7 +341,8 @@ UIAtlasConfig.IconAtlas = {
     [17] = "GUI/atlas/preferb/Assesories_Front_17",
     [18] = "GUI/atlas/preferb/Assesories_Front_18",
     [19] = "GUI/atlas/preferb/Assesories_Front_19",
-    [20] = "GUI/atlas/preferb/Assesories_Front_20"
+    [20] = "GUI/atlas/preferb/Assesories_Front_20",
+    [21] = "GUI/atlas/preferb/Assesories_Front_21"
   },
   HeadAccessoryBack = {
     [1] = "GUI/atlas/preferb/Assesories_Back_1",

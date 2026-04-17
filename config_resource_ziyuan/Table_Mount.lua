@@ -1164,6 +1164,13 @@ Table_Mount = {
     TransformStartSE = "",
     TransformEndSE = ""
   },
+  [25256] = {
+    id = 25256,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
   [25257] = {
     id = 25257,
     EquipCondition = _EmptyTable,
@@ -1224,6 +1231,22 @@ Table_Mount = {
     id = 25265,
     EquipCondition = _EmptyTable,
     ActionPrefix = "elegance_ride",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [25266] = {
+    id = 25266,
+    EquipCondition = _EmptyTable,
+    IsMoto = 1,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [25267] = {
+    id = 25267,
+    EquipCondition = _EmptyTable,
+    IsMoto = 1,
+    ActionPrefix = "",
     TransformStartSE = "",
     TransformEndSE = ""
   },
@@ -1290,8 +1313,43 @@ Table_Mount = {
     TransformStartSE = "",
     TransformEndSE = ""
   },
+  [25277] = {
+    id = 25277,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
   [25278] = {
     id = 25278,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [25279] = {
+    id = 25279,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [25280] = {
+    id = 25280,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [25289] = {
+    id = 25289,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "aerocraft_ride",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [25291] = {
+    id = 25291,
     EquipCondition = _EmptyTable,
     ActionPrefix = "",
     TransformStartSE = "",
@@ -2130,6 +2188,22 @@ Table_Mount = {
     TransformStartSE = "",
     TransformEndSE = ""
   },
+  [600707] = {
+    id = 600707,
+    EquipCondition = _EmptyTable,
+    IsMoto = 1,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [600708] = {
+    id = 600708,
+    EquipCondition = _EmptyTable,
+    IsMoto = 1,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
   [900151] = {
     id = 900151,
     EquipCondition = _EmptyTable,
@@ -2914,6 +2988,13 @@ Table_Mount = {
     TransformStartSE = "",
     TransformEndSE = ""
   },
+  [3005890] = {
+    id = 3005890,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
   [3006376] = {
     id = 3006376,
     EquipCondition = _EmptyTable,
@@ -3144,6 +3225,13 @@ Table_Mount = {
   },
   [3033921] = {
     id = 3033921,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [3042302] = {
+    id = 3042302,
     EquipCondition = _EmptyTable,
     ActionPrefix = "",
     TransformStartSE = "",

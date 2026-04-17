@@ -268,6 +268,13 @@ function Asset_Effect:GetLocalPosition()
   return self.args[2]
 end
 
+function Asset_Effect:GetPosition()
+  if self.effectTrans and not LuaGameObject.ObjectIsNull(self.effectTrans) then
+    return LuaGeometry.TempGetPosition(self.effectTrans)
+  end
+  return nil
+end
+
 function Asset_Effect:GetLocalEulerAngles()
   return self.args[3]
 end

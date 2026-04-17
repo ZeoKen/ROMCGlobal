@@ -57,55 +57,72 @@ Table_ItemMemoryEffect_t = {
       [1] = {29131}
     },
     {
-      [0] = {29200}
+      [0] = {29200},
+      [1] = {29201}
     },
     {
-      [0] = {29210}
+      [0] = {29210},
+      [1] = {29211}
     },
     {
-      [0] = {29220}
+      [0] = {29220},
+      [1] = {29221}
     },
     {
-      [0] = {29230}
+      [0] = {29230},
+      [1] = {29231}
     },
     {
-      [0] = {29240}
+      [0] = {29240},
+      [1] = {29241}
     },
     {
-      [0] = {29250}
+      [0] = {29250},
+      [1] = {29251}
     },
     {
-      [0] = {29260}
+      [0] = {29260},
+      [1] = {29261}
     },
     {
-      [0] = {29270}
+      [0] = {29270},
+      [1] = {29271}
     },
     {
-      [0] = {29280}
+      [0] = {29280},
+      [1] = {29281}
     },
     {
-      [0] = {29290}
+      [0] = {29290},
+      [1] = {29291}
     },
     {
-      [0] = {29300}
+      [0] = {29300},
+      [1] = {29301}
     },
     {
-      [0] = {29310}
+      [0] = {29310},
+      [1] = {29311}
     },
     {
-      [0] = {29320}
+      [0] = {29320},
+      [1] = {29321}
     },
     {
-      [0] = {29330}
+      [0] = {29330},
+      [1] = {29331}
     },
     {
-      [0] = {29340}
+      [0] = {29340},
+      [1] = {29341}
     },
     {
-      [0] = {29350}
+      [0] = {29350},
+      [1] = {29351}
     },
     {
-      [0] = {29360}
+      [0] = {29360},
+      [1] = {29361}
     },
     {
       [0] = {29720}
@@ -203,6 +220,32 @@ Table_ItemMemoryEffect_t = {
     {
       [0] = {29757}
     }
+  },
+  ExcessWaxBuffID = {
+    {28500},
+    {28501},
+    {28502},
+    {28510},
+    {28511},
+    {28512},
+    {28520},
+    {28521},
+    {28522},
+    {28530},
+    {28531},
+    {28532},
+    {28540},
+    {28541},
+    {28542},
+    {28560},
+    {28561},
+    {28562},
+    {28570},
+    {28571},
+    {28572},
+    {28550},
+    {28551},
+    {28552}
   },
   WaxBuffID = {
     {29400},
@@ -396,124 +439,142 @@ Table_ItemMemoryEffect = {
     EffectID = 20001,
     BuffID = Table_ItemMemoryEffect_t.BuffID[15],
     PreviewDesc = "物理防御",
-    WaxDesc = "物理防御＋2%"
+    WaxDesc = "物理防御＋2%",
+    UpgradeDesc = "物理防御＋4%"
   },
   [16] = {
     id = 16,
     EffectID = 20002,
     BuffID = Table_ItemMemoryEffect_t.BuffID[16],
     PreviewDesc = "魔法防御",
-    WaxDesc = "魔法防御＋2%"
+    WaxDesc = "魔法防御＋2%",
+    UpgradeDesc = "魔法防御＋4%"
   },
   [17] = {
     id = 17,
     EffectID = 20003,
     BuffID = Table_ItemMemoryEffect_t.BuffID[17],
     PreviewDesc = "治疗",
-    WaxDesc = "治疗加成＋2%"
+    WaxDesc = "治疗加成＋2%",
+    UpgradeDesc = "治疗加成＋4%"
   },
   [18] = {
     id = 18,
     EffectID = 20004,
     BuffID = Table_ItemMemoryEffect_t.BuffID[18],
     PreviewDesc = "魔法上限",
-    WaxDesc = "魔法上限＋2%"
+    WaxDesc = "魔法上限＋2%",
+    UpgradeDesc = "魔法上限＋4%"
   },
   [19] = {
     id = 19,
     EffectID = 20005,
     BuffID = Table_ItemMemoryEffect_t.BuffID[19],
     PreviewDesc = "物理闪避",
-    WaxDesc = "闪避＋15"
+    WaxDesc = "闪避＋15",
+    UpgradeDesc = "物伤减免＋2%"
   },
   [20] = {
     id = 20,
     EffectID = 20006,
     BuffID = Table_ItemMemoryEffect_t.BuffID[20],
     PreviewDesc = "魔法闪避",
-    WaxDesc = "有1%概率闪避魔法伤害"
+    WaxDesc = "有1%概率闪避魔法伤害",
+    UpgradeDesc = "魔伤减免＋2%"
   },
   [21] = {
     id = 21,
     EffectID = 20007,
     BuffID = Table_ItemMemoryEffect_t.BuffID[21],
     PreviewDesc = "风地水火抗",
-    WaxDesc = "受到风、地、水、火属性伤害－2%"
+    WaxDesc = "受到风、地、水、火属性伤害－2%",
+    UpgradeDesc = "受到风、地、水、火属性伤害－4%"
   },
   [22] = {
     id = 22,
     EffectID = 20008,
     BuffID = Table_ItemMemoryEffect_t.BuffID[22],
     PreviewDesc = "圣暗念毒抗",
-    WaxDesc = "受到圣、暗、念、毒属性伤害－2%"
+    WaxDesc = "受到圣、暗、念、毒属性伤害－2%",
+    UpgradeDesc = "受到圣、暗、念、毒属性伤害－4%"
   },
   [23] = {
     id = 23,
     EffectID = 20009,
     BuffID = Table_ItemMemoryEffect_t.BuffID[23],
     PreviewDesc = "受治疗加成",
-    WaxDesc = "受治疗加成＋2%"
+    WaxDesc = "受治疗加成＋2%",
+    UpgradeDesc = "受治疗加成＋4%"
   },
   [24] = {
     id = 24,
     EffectID = 20010,
     BuffID = Table_ItemMemoryEffect_t.BuffID[24],
     PreviewDesc = "暴伤减免",
-    WaxDesc = "暴伤减免＋2%"
+    WaxDesc = "暴伤减免＋2%",
+    UpgradeDesc = "暴伤减免＋4%"
   },
   [25] = {
     id = 25,
     EffectID = 20011,
     BuffID = Table_ItemMemoryEffect_t.BuffID[25],
     PreviewDesc = "物伤减免",
-    WaxDesc = "物伤减免＋1%"
+    WaxDesc = "物伤减免＋1%",
+    UpgradeDesc = "物伤减免＋2%"
   },
   [26] = {
     id = 26,
     EffectID = 20012,
     BuffID = Table_ItemMemoryEffect_t.BuffID[26],
     PreviewDesc = "魔伤减免",
-    WaxDesc = "魔伤减免＋1%"
+    WaxDesc = "魔伤减免＋1%",
+    UpgradeDesc = "魔伤减免＋2%"
   },
   [27] = {
     id = 27,
     EffectID = 20013,
     BuffID = Table_ItemMemoryEffect_t.BuffID[27],
     PreviewDesc = "异常抵抗",
-    WaxDesc = "所有异常状态抵抗＋1%"
+    WaxDesc = "所有异常状态抵抗＋1%",
+    UpgradeDesc = "所有异常状态抵抗＋2%"
   },
   [28] = {
     id = 28,
     EffectID = 20014,
     BuffID = Table_ItemMemoryEffect_t.BuffID[28],
     PreviewDesc = "PVP/GVG减伤",
-    WaxDesc = "PVP/GVG中受玩家伤害－1%"
+    WaxDesc = "PVP/GVG中受玩家伤害－1%",
+    UpgradeDesc = "PVP/GVG中受玩家伤害－2%"
   },
   [29] = {
     id = 29,
     EffectID = 20015,
     BuffID = Table_ItemMemoryEffect_t.BuffID[29],
     PreviewDesc = "普伤减免",
-    WaxDesc = "普攻伤害减免＋1%"
+    WaxDesc = "普攻伤害减免＋1%",
+    UpgradeDesc = "普攻伤害减免＋2%"
   },
   [30] = {
     id = 30,
     EffectID = 20016,
     BuffID = Table_ItemMemoryEffect_t.BuffID[30],
     PreviewDesc = "技伤减免",
-    WaxDesc = "技能伤害减免＋1%"
+    WaxDesc = "技能伤害减免＋1%",
+    UpgradeDesc = "技能伤害减免＋2%"
   },
   [31] = {
     id = 31,
     EffectID = 20017,
     BuffID = Table_ItemMemoryEffect_t.BuffID[31],
     PreviewDesc = "生命上限",
-    WaxDesc = "生命上限＋1%"
+    WaxDesc = "生命上限＋1%",
+    UpgradeDesc = "生命上限＋2%"
   },
   [32] = {
     id = 32,
     EffectID = 30001,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[1],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[1],
     PreviewDesc = "诅咒破甲",
     WaxDesc = "对方的物理防御完全被忽视时，最终伤害提高3%\n（效果可叠加，叠加3层时额外获得效果：对方的物理防御完全被忽视时，最终伤害提高6%）"
   },
@@ -522,6 +583,7 @@ Table_ItemMemoryEffect = {
     EffectID = 30001,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[2],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[2],
     PreviewDesc = "诅咒破甲"
   },
   [34] = {
@@ -529,12 +591,14 @@ Table_ItemMemoryEffect = {
     EffectID = 30001,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[3],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[3],
     PreviewDesc = "诅咒破甲"
   },
   [35] = {
     id = 35,
     EffectID = 30002,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[4],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[4],
     PreviewDesc = "诅咒破魔",
     WaxDesc = "对方的魔法防御完全被忽视时，最终伤害提高3%\n（效果可叠加，叠加3层时额外获得效果：对方的魔法防御完全被忽视时，最终伤害提高6%）"
   },
@@ -543,6 +607,7 @@ Table_ItemMemoryEffect = {
     EffectID = 30002,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[5],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[5],
     PreviewDesc = "诅咒破魔"
   },
   [37] = {
@@ -550,12 +615,14 @@ Table_ItemMemoryEffect = {
     EffectID = 30002,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[6],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[6],
     PreviewDesc = "诅咒破魔"
   },
   [38] = {
     id = 38,
     EffectID = 30003,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[7],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[7],
     PreviewDesc = "诅咒压制",
     WaxDesc = "额外造成（自身暴击－对方暴击防护）*0.03%的最终伤害（最多提升4%）\n（效果可叠加，叠加3层时额外获得效果：额外造成（自身暴击－对方暴击防护）*0.06%的最终伤害（最多提升8%））"
   },
@@ -564,6 +631,7 @@ Table_ItemMemoryEffect = {
     EffectID = 30003,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[8],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[8],
     PreviewDesc = "诅咒压制"
   },
   [40] = {
@@ -571,12 +639,14 @@ Table_ItemMemoryEffect = {
     EffectID = 30003,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[9],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[9],
     PreviewDesc = "诅咒压制"
   },
   [41] = {
     id = 41,
     EffectID = 30004,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[10],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[10],
     PreviewDesc = "诅咒狩猎",
     WaxDesc = "对大型魔物伤害＋4%\n（效果可叠加，叠加3层时额外获得效果：对大型魔物伤害＋8%）"
   },
@@ -585,6 +655,7 @@ Table_ItemMemoryEffect = {
     EffectID = 30004,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[11],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[11],
     PreviewDesc = "诅咒狩猎"
   },
   [43] = {
@@ -592,12 +663,14 @@ Table_ItemMemoryEffect = {
     EffectID = 30004,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[12],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[12],
     PreviewDesc = "诅咒狩猎"
   },
   [44] = {
     id = 44,
     EffectID = 30005,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[13],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[13],
     PreviewDesc = "诅咒奥狩",
     WaxDesc = "对大型魔物造成魔法伤害时，魔法伤害＋4%\n（效果可叠加，叠加3层时额外获得效果：对大型魔物造成魔法伤害时，魔法伤害＋8%）"
   },
@@ -606,6 +679,7 @@ Table_ItemMemoryEffect = {
     EffectID = 30005,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[14],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[14],
     PreviewDesc = "诅咒奥狩"
   },
   [46] = {
@@ -613,12 +687,14 @@ Table_ItemMemoryEffect = {
     EffectID = 30005,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[15],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[15],
     PreviewDesc = "诅咒奥狩"
   },
   [47] = {
     id = 47,
     EffectID = 30006,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[16],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[16],
     PreviewDesc = "诅咒秘环",
     WaxDesc = "智力达到180点时，魔法伤害＋3%\n（效果可叠加，叠加3层时额外获得效果：智力达到180点时，魔法伤害＋6%）"
   },
@@ -627,6 +703,7 @@ Table_ItemMemoryEffect = {
     EffectID = 30006,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[17],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[17],
     PreviewDesc = "诅咒秘环"
   },
   [49] = {
@@ -634,12 +711,14 @@ Table_ItemMemoryEffect = {
     EffectID = 30006,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[18],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[18],
     PreviewDesc = "诅咒秘环"
   },
   [50] = {
     id = 50,
     EffectID = 30007,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[19],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[19],
     PreviewDesc = "诅咒迅疾",
     WaxDesc = "攻击速度达到360%时，物理穿刺＋3%\n（效果可叠加，叠加3层时额外获得效果：攻击速度达到360%时，物理穿刺＋6%）"
   },
@@ -648,6 +727,7 @@ Table_ItemMemoryEffect = {
     EffectID = 30007,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[20],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[20],
     PreviewDesc = "诅咒迅疾"
   },
   [52] = {
@@ -655,12 +735,14 @@ Table_ItemMemoryEffect = {
     EffectID = 30007,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[21],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[21],
     PreviewDesc = "诅咒迅疾"
   },
   [53] = {
     id = 53,
     EffectID = 30008,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[22],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[22],
     PreviewDesc = "诅咒力界",
     WaxDesc = "力量达到180点时，物理伤害＋3%\n（效果可叠加，叠加3层时额外获得效果：力量达到180点时，物理伤害＋6%）"
   },
@@ -669,6 +751,7 @@ Table_ItemMemoryEffect = {
     EffectID = 30008,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[23],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[23],
     PreviewDesc = "诅咒力界"
   },
   [55] = {
@@ -676,6 +759,7 @@ Table_ItemMemoryEffect = {
     EffectID = 30008,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[24],
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[24],
     PreviewDesc = "诅咒力界"
   },
   [56] = {
@@ -910,19 +994,22 @@ Table_ItemMemoryEffect = {
     id = 89,
     EffectID = 30304,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[58],
+    PreviewDesc = "时空守望",
     WaxDesc = "自身物伤减免和魔伤减免＋2%；同一地图队伍内其他成员（不包括自身）物伤减免和魔伤减免＋2%\n（效果可叠加，叠加3层时额外获得效果：自身物伤减免和魔伤减免＋4%；同一地图队伍内其他成员（不包括自身）物伤减免和魔伤减免＋4%）"
   },
   [90] = {
     id = 90,
     EffectID = 30304,
     Level = 2,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[59]
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[59],
+    PreviewDesc = "时空守望"
   },
   [91] = {
     id = 91,
     EffectID = 30304,
     Level = 3,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[60]
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[60],
+    PreviewDesc = "时空守望"
   },
   [92] = {
     id = 92,
@@ -949,22 +1036,19 @@ Table_ItemMemoryEffect = {
     id = 95,
     EffectID = 30306,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[64],
-    PreviewDesc = "时空护盾",
     WaxDesc = "使用技能时，给自身及周边5米范围内的队员添加一个生命上限*2%的护盾，持续5秒（目标10秒内只能受到一次该护盾效果）\n（效果可叠加，叠加3层时额外获得效果：使用技能时，给自身及周边5米范围内的队员添加一个生命上限*4%的护盾，持续5秒（目标10秒内只能受到一次该护盾效果））"
   },
   [96] = {
     id = 96,
     EffectID = 30306,
     Level = 2,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[65],
-    PreviewDesc = "时空护盾"
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[65]
   },
   [97] = {
     id = 97,
     EffectID = 30306,
     Level = 3,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[66],
-    PreviewDesc = "时空护盾"
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[66]
   },
   [98] = {
     id = 98,
@@ -1237,8 +1321,9 @@ local cell_mt = {
   __index = {
     BuffID = _EmptyTable,
     EffectID = 30103,
+    ExcessWaxBuffID = _EmptyTable,
     Level = 1,
-    PreviewDesc = "时空守望",
+    PreviewDesc = "时空护盾",
     UpgradeDesc = "",
     WaxBuffID = _EmptyTable,
     WaxDesc = "",

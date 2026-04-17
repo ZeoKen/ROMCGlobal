@@ -1673,6 +1673,11 @@ Table_MapBgm = {
     id = 339,
     NameEn = "sc_hswf_001",
     SceneBgm = "rothana"
+  },
+  [340] = {
+    id = 340,
+    NameEn = "sc_jfmfds_001",
+    SceneBgm = "bgm_teampve5"
   }
 }
 Table_MapBgm_fields = {

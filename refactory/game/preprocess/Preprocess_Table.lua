@@ -53,6 +53,8 @@ function Game.Preprocess_Table()
   Game.Preprocess_Table_ActBpReward()
   Game.Preprocess_Table_LotteryBanner()
   Game.Preprocess_Table_ActPaySign()
+  Game.Preprocess_Table_SnowCrown()
+  Game.Preprocess_Table_HomeBuff()
 end
 
 function Game.Preprocess_TableByTime()
@@ -517,6 +519,7 @@ function Game.Preprocess_Menu()
   Game.Config_UnlockEmojiIds = {}
   Game.FoundElfConfigs = {}
   Game.abyssLakeFoundElfConfigs = {}
+  Game.snowRealmFoundElfConfigs = {}
   for k, v in pairs(Table_Menu) do
     local evt = v.event
     if evt then
@@ -539,6 +542,9 @@ function Game.Preprocess_Menu()
       if v.Condition.found_abyss_lake_elf_num then
         table.insert(Game.abyssLakeFoundElfConfigs, v)
       end
+      if v.Condition.found_snow_realm_elf_num then
+        table.insert(Game.snowRealmFoundElfConfigs, v)
+      end
     end
   end
   table.sort(Game.FoundElfConfigs, function(l, r)
@@ -546,6 +552,9 @@ function Game.Preprocess_Menu()
   end)
   table.sort(Game.abyssLakeFoundElfConfigs, function(l, r)
     return l.Condition.found_abyss_lake_elf_num < r.Condition.found_abyss_lake_elf_num
+  end)
+  table.sort(Game.snowRealmFoundElfConfigs, function(l, r)
+    return l.Condition.found_snow_realm_elf_num < r.Condition.found_snow_realm_elf_num
   end)
 end
 
@@ -1677,6 +1686,26 @@ function Game.Preprocess_Table_SpaceTimeIllusionSkills()
   Game.SpaceTimeIllusionSkills = t
 end
 
+function Game.Preprocess_Table_ActPaySign()
+  if not Table_ActPaySign then
+    return
+  end
+  local t = {}
+  for _, v in pairs(Table_ActPaySign) do
+    local datas = t[v.ActID]
+    if not datas then
+      datas = {}
+      t[v.ActID] = datas
+    end
+    local batchID = v.BatchID or 0
+    if not datas[batchID] then
+      datas[batchID] = {}
+    end
+    datas[batchID][v.Day] = v
+  end
+  Game.Config_ActPaySign = t
+end
+
 function Game.Preprocess_Table_ActBpReward()
   if not Table_ActBpReward then
     return
@@ -1713,18 +1742,42 @@ function Game.Preprocess_Table_LotteryBanner()
   end
 end
 
-function Game.Preprocess_Table_ActPaySign()
-  if not Table_ActPaySign then
+function Game.Preprocess_Table_SnowCrown()
+  if not Table_SnowCrown then
     return
   end
   local t = {}
-  for _, v in pairs(Table_ActPaySign) do
-    local datas = t[v.ActID]
-    if not datas then
-      datas = {}
-      t[v.ActID] = datas
+  local groupMap = {}
+  local groupMaxLevel = {}
+  for id, v in pairs(Table_SnowCrown) do
+    local groupId = id // 100
+    if not t[v.Batch] then
+      t[v.Batch] = {}
     end
-    datas[v.Day] = v
+    if not groupMap[groupId] then
+      table.insert(t[v.Batch], groupId)
+      groupMap[groupId] = true
+    end
+    if not groupMaxLevel[groupId] then
+      groupMaxLevel[groupId] = v.Level
+    else
+      groupMaxLevel[groupId] = math.max(groupMaxLevel[groupId], v.Level)
+    end
   end
-  Game.Config_ActPaySign = t
+  Game.SnowCrown = t
+  Game.SnowCrownGroupMaxLevel = groupMaxLevel
+end
+
+function Game.Preprocess_Table_HomeBuff()
+  if not Table_HomeBuff then
+    return
+  end
+  local t = {}
+  for _, v in pairs(Table_HomeBuff) do
+    if not t[v.Type] then
+      t[v.Type] = {}
+    end
+    t[v.Type][v.Lv] = v
+  end
+  Game.HomeBuff = t
 end

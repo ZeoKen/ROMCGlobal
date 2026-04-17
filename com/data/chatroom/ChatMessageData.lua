@@ -74,6 +74,9 @@ function ChatMessageData:SetData(data)
     self[35] = data.isreturnuser
     self[36] = data.chat_frame
     self[41] = data.recall_time
+    self[42] = data.snowroomid
+    self[43] = data.head_fashion
+    self[22] = HeadImageData.ProcessSnowCrownFashion(self[22], data.head_fashion)
     if data.postcard and data.postcard.url and data.postcard.url ~= "" then
       self[37] = PostcardData.new()
       self[37]:Server_SetData(data.postcard)
@@ -574,6 +577,10 @@ end
 
 function ChatMessageData:GetHomeId()
   return self[30]
+end
+
+function ChatMessageData:GetSnowRoomId()
+  return self[42]
 end
 
 function ChatMessageData:GetPhoto(isParse)

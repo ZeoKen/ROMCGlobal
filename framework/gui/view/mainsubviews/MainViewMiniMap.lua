@@ -83,6 +83,7 @@ function MainViewMiniMap:InitData()
   self.gvgFriendChairmanDatas = {}
   self.gvgEnemyChairmanDatas = {}
   self.abyssDragonMapInfo = {}
+  self.snowRealmMyHouseMapInfo = {}
 end
 
 local tempArgs = {}
@@ -245,7 +246,8 @@ function MainViewMiniMap:InitUI()
   self:AddClickEvent(self.exitRaid, function()
     local inRaid = MapManager:IsRaidMode(true)
     local isActMap = MapManager:IsActivityMap()
-    if inRaid or isActMap then
+    local isSnowHouseRaid = MapManager:IsInSnowRealmHouseRaid()
+    if inRaid or isActMap or isSnowHouseRaid then
       self:TryExitRaid()
     end
   end)
@@ -426,7 +428,8 @@ function MainViewMiniMap:InitBigMap()
     end
     local inRaid = MapManager:IsRaidMode(true)
     local isActMap = MapManager:IsActivityMap()
-    if inRaid or isActMap then
+    local isSnowHouseRaid = MapManager:IsInSnowRealmHouseRaid()
+    if inRaid or isActMap or isSnowHouseRaid then
       self:TryExitRaid()
     else
       self:sendNotification(UIEvent.JumpPanel, {
@@ -444,7 +447,6 @@ function MainViewMiniMap:InitBigMap()
   local activeComp = self.mapBord:GetComponent(RelateGameObjectActive)
   
   function activeComp.enable_Call()
-    self:EnLargeBigMap(false)
   end
   
   self.UseButterflyButtonInfo.itemID = 50001
@@ -512,7 +514,8 @@ function MainViewMiniMap:ActiveMapBord(b)
     end
     self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.Show)
     self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.UpdateQuestNpcSymbol, self.questShowDatas, true)
-    self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.ResetMapPos)
+    self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.UpdateMyPos, true)
+    self:EnLargeBigMap(MapManager:IsInSnowRealmHouseRaid())
     self:UpdateNearlyMonsters()
     self:RefreshButterflyAndFlyButtons()
     self.container.menuPage.moreBord:SetActive(false)
@@ -523,9 +526,9 @@ function MainViewMiniMap:ActiveMapBord(b)
     self:UpdateTrainEscortPos()
     self:UpdateMapTreasure()
   else
+    self:EnLargeBigMap(false)
     self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.Hide)
     self:ShutDownGuideAnim()
-    self:EnLargeBigMap(false)
     TipManager.CloseTip()
   end
   if MapManager:IsGvgMode_Droiyan() then
@@ -554,7 +557,10 @@ function MainViewMiniMap:EnLargeBigMap(b, notCenterMyPos)
   end
   if b then
     self.bigmaplarge = true
-    self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.SetMapScale, MiniMapWindow.MAPSCALE_LARGE)
+    local isHouseRaid = MapManager:IsInSnowRealmHouseRaid()
+    local scale = isHouseRaid and MiniMapWindow.MAPSCALE_HOUSE_RAID or MiniMapWindow.MAPSCALE_LARGE
+    local symbolScale = isHouseRaid and MiniMapWindow.SYMBOL_SCALE_LARGE or nil
+    self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.SetMapScale, scale, symbolScale)
     if notCenterMyPos == nil or notCenterMyPos == false then
       self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.CenterOnMyPos, true)
     end
@@ -776,20 +782,22 @@ function MainViewMiniMap:UpdateNearlyCreature(tog, forceUpdate)
     _TableClearByDeleter(self.nearlyPlayers, miniMapDataDeleteFunc)
     local allRole = NSceneUserProxy.Instance.userMap
     for _, role in pairs(allRole) do
-      local playerMapData = MiniMapData.CreateAsTable(role.data.id)
-      playerMapData:SetParama("creatureType", Creature_Type.Player)
-      local name = role.data:GetName()
-      local _GuildProxy = GuildProxy.Instance
-      local isPlayerMercenary = _GuildProxy:IsPlayerMercenary(role.data) and Game.MapManager:IsInGVG()
-      name = isPlayerMercenary and not _GuildProxy:IsPlayerInMyGuildUnion(role.data) and role.data:GetMercenaryGuildName() or name
-      playerMapData:SetParama("name", name)
-      local profession = role.data.userdata:Get(UDEnum.PROFESSION)
-      playerMapData:SetParama("Profession", profession)
-      local gender = role.data.userdata:Get(UDEnum.SEX)
-      playerMapData:SetParama("gender", gender)
-      local level = role.data.userdata:Get(UDEnum.ROLELEVEL)
-      playerMapData:SetParama("level", level)
-      table.insert(self.nearlyPlayers, playerMapData)
+      if not role.data:IsPlayer() or not role.data:IsRobotUser() then
+        local playerMapData = MiniMapData.CreateAsTable(role.data.id)
+        playerMapData:SetParama("creatureType", Creature_Type.Player)
+        local name = role.data:GetName()
+        local _GuildProxy = GuildProxy.Instance
+        local isPlayerMercenary = _GuildProxy:IsPlayerMercenary(role.data) and Game.MapManager:IsInGVG()
+        name = isPlayerMercenary and not _GuildProxy:IsPlayerInMyGuildUnion(role.data) and role.data:GetMercenaryGuildName() or name
+        playerMapData:SetParama("name", name)
+        local profession = role.data.userdata:Get(UDEnum.PROFESSION)
+        playerMapData:SetParama("Profession", profession)
+        local gender = role.data.userdata:Get(UDEnum.SEX)
+        playerMapData:SetParama("gender", gender)
+        local level = role.data.userdata:Get(UDEnum.ROLELEVEL)
+        playerMapData:SetParama("level", level)
+        table.insert(self.nearlyPlayers, playerMapData)
+      end
     end
     self.nearlyCreaturesCtl:ResetDatas(self.nearlyPlayers)
     self:SetObjActive(self.noPlayerTip, #self.nearlyPlayers == 0)
@@ -1310,6 +1318,15 @@ function MainViewMiniMap:UpdateQuestMapSymbol()
         elseif npcid then
           if not FunctionUnLockFunc.CheckNpcIsForbiddenByFuncState(npcid) then
             npcPoint = self:GetMapNpcPointByNpcId(npcid)
+            if HomeManager.Me():IsSnowRealmMap(Game.MapManager:GetMapID()) then
+              local npcs = NSceneNpcProxy.Instance:FindNpcs(npcid)
+              if npcs and npcs[1] and npcs[1].data and npcs[1].data.staticData and npcs[1].data.staticData.Type == NpcData.NpcDetailedType.HomeMessageBoard then
+                local myHomeIndex = SnowRealmProxy.Instance:GetMySelfHomeIndex()
+                if myHomeIndex and 0 < myHomeIndex then
+                  npcPoint = MapManager:FindNPCPoint(myHomeIndex)
+                end
+              end
+            end
             uniqueid = npcPoint and npcPoint.uniqueID or 0
           end
         else
@@ -1523,7 +1540,7 @@ function MainViewMiniMap:UpdateMapAllInfo(map2d)
     twelvePVPLeaveForbidden = false
   end
   self:SetObjActive(self.bigMapButton, not twelvePVPLeaveForbidden and not Game.MapManager:MapForbidLeaveButton())
-  if MapManager:IsRaidMode(true) or MapManager:IsActivityMap() then
+  if MapManager:IsRaidMode(true) or MapManager:IsActivityMap() or MapManager:IsInSnowRealmHouseRaid() then
     self.bigMapLab.text = ZhString.MainViewMiniMap_ReturnHome
     self.normalMapIcon:SetActive(false)
     self.exitRaidIcon:SetActive(true)
@@ -1602,6 +1619,7 @@ function MainViewMiniMap:UpdateMapAllInfo(map2d)
     self:RefreshUnlockRoomIDsFuBenCmd()
     self:UpdateMapTreasure()
     self:UpdateEBFEventBoard()
+    self:UpdateSnowRealmMyHouseSymbol()
   else
     self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.Reset)
     self:WindowInvoke(self.minimapWindow, self.minimapWindow.Reset)
@@ -1747,6 +1765,7 @@ function MainViewMiniMap:MapEvent()
   self:AddListenEvt(PVEEvent.FairyTale_RemoveTrainNpc, self.HandleFairyTaleRemoveTrainNpc)
   self:AddListenEvt(PVEEvent.FairyTale_Launch, self.HandleFairyTaleLaunch)
   self:AddListenEvt(PVEEvent.FairyTale_Shutdown, self.HandleFairyTaleShutdown)
+  self:AddListenEvt(ServiceEvent.HomeCmdQuerySnowHouseDataHomeCmd, self.UpdateSnowRealmMyHouseSymbol)
 end
 
 function MainViewMiniMap:HandleChangeMap(note)
@@ -1758,6 +1777,7 @@ function MainViewMiniMap:HandleChangeMap(note)
   self:TrySetupBigWorldWildMvpPassDayRefresh()
   self:UpdateAstralTowerMapInfo()
   self:UpdateGvgMapSymbols()
+  self:UpdateSnowRealmMyHouseSymbol()
 end
 
 function MainViewMiniMap:HandleActivePart(note)
@@ -2241,7 +2261,7 @@ function MainViewMiniMap:_UpdateSceneSpot(scenicSpot, forceUpdate)
     mapStr = "map_Lookout_lock"
   end
   local spotConfig = Table_Viewspot[scenicSpot.ID]
-  if not isDiaplay and spotConfig and (spotConfig.Type == 1 or spotConfig.Type == 3) then
+  if not isDiaplay and spotConfig and (spotConfig.Type == 1 or spotConfig.Type == 3 or spotConfig.Type == 6) then
     local p = scenicSpot.position
     if p ~= nil then
       local guid = scenicSpot.ID
@@ -2309,9 +2329,23 @@ function MainViewMiniMap:HandleScenicSpotUpdate(note)
   local updateSceneIds = note.body
   for i = 1, #updateSceneIds do
     local id = updateSceneIds[i]
-    if id and self.spotDatas[id] then
-      self.spotDatas[id]:Destroy()
-      self.spotDatas[id] = nil
+    if id then
+      if self.spotDatas[id] then
+        self.spotDatas[id]:Destroy()
+        self.spotDatas[id] = nil
+      end
+      local idStr = tostring(id)
+      local toRemove = {}
+      for k, v in pairs(self.spotDatas) do
+        if type(k) == "string" and string.find(k, idStr) then
+          toRemove[#toRemove + 1] = k
+        end
+      end
+      for j = 1, #toRemove do
+        local k = toRemove[j]
+        self.spotDatas[k]:Destroy()
+        self.spotDatas[k] = nil
+      end
     end
   end
   self:WindowInvoke(self.minimapWindow, self.minimapWindow.UpdateScenicSpotSymbol, self.spotDatas, true)
@@ -4825,4 +4859,58 @@ function MainViewMiniMap:HandleFairyTaleShutdown()
     TimeTickManager.Me():ClearTick(self, 1001)
     self.fairyTaleTimeTick = nil
   end
+end
+
+function MainViewMiniMap:UpdateSnowRealmMyHouseSymbol()
+  if not HomeManager.Me():IsSnowRealmMap(Game.MapManager:GetMapID()) then
+    _TableClearByDeleter(self.snowRealmMyHouseMapInfo, miniMapDataDeleteFunc)
+    self:WindowInvoke(self.minimapWindow, self.minimapWindow.UpdateSnowRealmMyHouseSymbol, self.snowRealmMyHouseMapInfo, true)
+    self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.UpdateSnowRealmMyHouseSymbol, self.snowRealmMyHouseMapInfo, true)
+    return
+  end
+  local proxy = SnowRealmProxy.Instance
+  local myHomeIndex = proxy:GetMySelfHomeIndex()
+  local maxHouseCount = GameConfig.SnowRealm and GameConfig.SnowRealm.MaxHouseCount or 6
+  local mapSymbols = GameConfig.SnowRealm and GameConfig.SnowRealm.MapSymbols or {}
+  local symbolMyself = mapSymbols.myself or GameConfig.SnowRealm and GameConfig.SnowRealm.MyHouseSymbol or ""
+  local symbolOther = mapSymbols.other or ""
+  local validHomeIndices = {}
+  for homeIndex = 1, maxHouseCount do
+    local houseData = proxy:GetHouseData(homeIndex)
+    if houseData and houseData.accid and houseData.accid ~= 0 then
+      validHomeIndices[homeIndex] = true
+    end
+  end
+  for homeIndex, miniMapData in pairs(self.snowRealmMyHouseMapInfo) do
+    if not validHomeIndices[homeIndex] and miniMapData then
+      miniMapData:Destroy()
+      self.snowRealmMyHouseMapInfo[homeIndex] = nil
+    end
+  end
+  for homeIndex = 1, maxHouseCount do
+    if validHomeIndices[homeIndex] then
+      local isMyself = homeIndex == myHomeIndex
+      local symbolName = isMyself and symbolMyself or symbolOther
+      local miniMapData = self.snowRealmMyHouseMapInfo[homeIndex]
+      if not miniMapData then
+        miniMapData = MiniMapData.CreateAsTable("snowRealmHome_" .. tostring(homeIndex))
+        self.snowRealmMyHouseMapInfo[homeIndex] = miniMapData
+      end
+      miniMapData:SetParama("Symbol", symbolName)
+      miniMapData:SetShowRange(-1)
+      local configName = "sc_xhzd_home_" .. tostring(homeIndex)
+      pcall(function()
+        autoImport(configName)
+      end)
+      local mapInfo = _G[configName]
+      local data = mapInfo and mapInfo[1]
+      if data and data.x and data.y and data.z then
+        miniMapData:SetPos(data.x, data.y, data.z)
+      else
+        redlog("UpdateSnowRealmMyHouseSymbol config missing or no pos:", configName)
+      end
+    end
+  end
+  self:WindowInvoke(self.minimapWindow, self.minimapWindow.UpdateSnowRealmMyHouseSymbol, self.snowRealmMyHouseMapInfo, true)
+  self:WindowInvoke(self.bigmapWindow, self.bigmapWindow.UpdateSnowRealmMyHouseSymbol, self.snowRealmMyHouseMapInfo, true)
 end

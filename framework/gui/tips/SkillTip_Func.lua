@@ -505,12 +505,39 @@ function SkillTip:_SelectFunc(bgHeight)
     local being = logicParam.being_ids
     if being then
       self.funcOptions_opt = _OptionEnum.SummonBeing
+      table.insert(datas, {
+        id = 0,
+        RuneName = ZhString.SkillTip_CannotSummon
+      })
       for i = 1, #being do
         local data = {
           id = being[i]
         }
         data.RuneName = string.format(ZhString.SkillTip_OptionSummon, Table_Being[data.id].Name)
-        datas[#datas + 1] = data
+        table.insert(datas, data)
+      end
+    end
+    local summonSkill = logicParam.summon_skill
+    if summonSkill then
+      datas = {}
+      local relationSkill = logicParam.relation_skill
+      if relationSkill then
+        self.funcOptions_opt = _OptionEnum.BlendBeing
+        local tData = SkillProxy.Instance:GetLearnedSkillBySortID(relationSkill)
+        local beingX = tData and tData.staticData.Logic_Param.being_ids
+        if beingX then
+          table.insert(datas, {
+            id = 0,
+            RuneName = ZhString.SkillTip_CannotSummon
+          })
+          for i = 1, #beingX do
+            local data = {
+              id = beingX[i]
+            }
+            data.RuneName = string.format(ZhString.SkillTip_OptionSummon, Table_Being[data.id].Name)
+            table.insert(datas, data)
+          end
+        end
       end
     end
     local skill = logicParam.skill_opt_ids
@@ -606,9 +633,13 @@ function SkillTip:_SelectFunc(bgHeight)
       extraOptions.opt = self.funcOptions_opt
       extraOptions.sortID = self.data.sortID
     end
-    tip:UpdateTip(datas, nil, extraOptions)
-    self:_SelectOptions(datas)
-    bgHeight = tip:GetRealBgHeight() + bgHeight
+    if datas ~= nil and 0 < #datas then
+      tip:UpdateTip(datas, nil, extraOptions)
+      self:_SelectOptions(datas)
+      bgHeight = tip:GetRealBgHeight() + bgHeight
+    elseif tip ~= nil then
+      tip:Hide()
+    end
   elseif tip ~= nil then
     tip:Hide()
   end
@@ -670,6 +701,9 @@ function SkillTip:ClickSelectOption(cell)
     end
   else
     previousSelect = self:_GetSelectedOptionCell()
+  end
+  if not self:CheckMultiOptionValid(self.funcOptions_opt, id) then
+    return false
   end
   if previousSelect == nil or id ~= previousSelect.data.id then
     if previousSelect then
@@ -1124,7 +1158,7 @@ end
 
 function SkillTip:_IsMultiSkillOption(opt)
   local _OptionEnum = SkillOptionManager.OptionEnum
-  return opt == _OptionEnum.SummonBeing or opt == _OptionEnum.SelectBuffs
+  return opt == _OptionEnum.SummonBeing or opt == _OptionEnum.BlendBeing or opt == _OptionEnum.SelectBuffs
 end
 
 function SkillTip:_GetMultiSkillOptionMaxCount(opt)
@@ -1166,27 +1200,29 @@ function SkillTip:_AskSetMultiSkillOption(opt, selectList, param1)
   end
 end
 
+function SkillTip:CheckMultiOptionValid(opt, nextSelect)
+  local mutexOption
+  if opt == SkillOptionManager.OptionEnum.SummonBeing then
+    local targetOpt = SkillOptionManager.OptionEnum.BlendBeing
+    local list = Game.SkillOptionManager:GetMultiSkillOption(targetOpt, self:_GetMultiSkillOptionSkillid(targetOpt))
+    mutexOption = list and list[1]
+  elseif opt == SkillOptionManager.OptionEnum.BlendBeing then
+    local targetOpt = SkillOptionManager.OptionEnum.SummonBeing
+    local list = Game.SkillOptionManager:GetMultiSkillOption(targetOpt, self:_GetMultiSkillOptionSkillid(targetOpt))
+    mutexOption = list and list[1]
+  end
+  if mutexOption then
+    local curSelect = nextSelect
+    if 0 < curSelect and curSelect == mutexOption then
+      MsgManager.ShowMsgByIDTable(43688)
+      return false
+    end
+  end
+  return true
+end
+
 function SkillTip:_GetMultiSkillOptionSkillid(opt)
-  local _OptionEnum = SkillOptionManager.OptionEnum
-  if opt == _OptionEnum.SummonBeing then
-    return 0
-  end
-  if opt == _OptionEnum.PioneerSkillList then
-    return self.data.sortID
-  end
-  if opt == _OptionEnum.ReplaceSkillList then
-    return self.data.id
-  end
-  if opt == _OptionEnum.SuperPositionSkill then
-    return self.data.sortID
-  end
-  if opt == _OptionEnum.DelMultiTrap then
-    return self.data.sortID
-  end
-  if opt == _OptionEnum.SelectBuffs then
-    return self.data.sortID
-  end
-  return self.data:GetID()
+  return Game.SkillOptionManager:GetMultiSkillOptionSkillid(opt, self.data)
 end
 
 function SkillTip:UpdateContainer(height)

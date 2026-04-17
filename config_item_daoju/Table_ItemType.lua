@@ -42,6 +42,11 @@ Table_ItemType_t = {
     {55},
     {53},
     {
+      6,
+      14,
+      8
+    },
+    {
       5,
       7,
       16
@@ -934,13 +939,13 @@ Table_ItemType = {
   [553] = {
     id = 553,
     icon = "65",
-    Function = Table_ItemType_t.Function[29]
+    Function = Table_ItemType_t.Function[30]
   },
   [554] = {id = 554, Name = "##2844078"},
   [555] = {
     id = 555,
     Name = "##3490350",
-    Function = Table_ItemType_t.Function[28]
+    Function = Table_ItemType_t.Function[29]
   },
   [601] = {id = 601, Name = "##137575"},
   [602] = {id = 602, Name = "##103917"},
@@ -952,7 +957,7 @@ Table_ItemType = {
     Name = "##137495",
     icon = "icon_61",
     AdventureLogGroup = 1054,
-    Function = Table_ItemType_t.Function[27],
+    Function = Table_ItemType_t.Function[28],
     EffectShow = 8,
     UseNumber = 999
   },
@@ -961,14 +966,14 @@ Table_ItemType = {
     Name = "##100444",
     icon = "92",
     AdventureLogGroup = 1040,
-    Function = Table_ItemType_t.Function[26]
+    Function = Table_ItemType_t.Function[27]
   },
   [810] = {
     id = 810,
     Name = "##137589",
     icon = "94",
     AdventureLogGroup = 1042,
-    Function = Table_ItemType_t.Function[26]
+    Function = Table_ItemType_t.Function[27]
   },
   [820] = {
     id = 820,
@@ -1003,21 +1008,21 @@ Table_ItemType = {
     Name = "##137582",
     icon = "93",
     AdventureLogGroup = 1041,
-    Function = Table_ItemType_t.Function[26]
+    Function = Table_ItemType_t.Function[27]
   },
   [840] = {
     id = 840,
     Name = "##137631",
     icon = "95",
     AdventureLogGroup = 1044,
-    Function = Table_ItemType_t.Function[26]
+    Function = Table_ItemType_t.Function[27]
   },
   [850] = {
     id = 850,
     Name = "##137542",
     icon = "97",
     AdventureLogGroup = 1043,
-    Function = Table_ItemType_t.Function[26]
+    Function = Table_ItemType_t.Function[27]
   },
   [901] = {
     id = 901,
@@ -1507,6 +1512,11 @@ Table_ItemType = {
     Name = "##42635503",
     AdventureLogGroup = 1122
   },
+  [4023] = {
+    id = 4023,
+    Name = "##44722391",
+    AdventureLogGroup = 1123
+  },
   [4100] = {
     id = 4100,
     Name = "##137614",
@@ -1528,6 +1538,12 @@ Table_ItemType = {
     Function = Table_ItemType_t.Function[2]
   },
   [4300] = {id = 4300, Name = "##42533460"},
+  [4301] = {
+    id = 4301,
+    Name = "##137486",
+    AdventureLogGroup = 1040,
+    Function = Table_ItemType_t.Function[26]
+  },
   [5001] = {
     id = 5001,
     Name = "##123662",
@@ -1622,6 +1638,11 @@ Table_ItemType = {
     id = 5021,
     Name = "##42635503",
     AdventureLogGroup = 20021
+  },
+  [5022] = {
+    id = 5022,
+    Name = "##44722391",
+    AdventureLogGroup = 20022
   },
   [5100] = {
     id = 5100,
@@ -1732,6 +1753,11 @@ Table_ItemType = {
     id = 6021,
     Name = "##42635503",
     AdventureLogGroup = 30021
+  },
+  [6022] = {
+    id = 6022,
+    Name = "##44722391",
+    AdventureLogGroup = 30022
   },
   [6100] = {
     id = 6100,

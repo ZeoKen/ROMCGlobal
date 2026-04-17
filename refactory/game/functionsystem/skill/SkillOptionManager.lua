@@ -20,7 +20,8 @@ SkillOptionManager.OptionEnum = {
   SwitchSkill = SceneSkill_pb.ESKILLOPTION_SKILL_SWITCH,
   SuperPositionSkill = SceneSkill_pb.ESKILLOPTION_SUPERPOSITION_SKILL,
   DelMultiTrap = SceneSkill_pb.ESKILLOPTION_DEL_MULTI_TRAP,
-  Companion_Skill = SceneSkill_pb.ESKILLOPTION_COMPANION_SKILLLIST
+  Companion_Skill = SceneSkill_pb.ESKILLOPTION_COMPANION_SKILLLIST,
+  BlendBeing = SceneSkill_pb.ESKILLOPTION_BLENDBEING
 }
 local StringData = {
   [SkillOptionManager.OptionEnum.SelectMount] = 1
@@ -389,4 +390,26 @@ end
 
 function SkillOptionManager:GetExtraOptions(skillid)
   return self.extraOptions[skillid]
+end
+
+function SkillOptionManager:GetMultiSkillOptionSkillid(opt, skillData)
+  if opt == self.OptionEnum.SummonBeing or opt == self.OptionEnum.BlendBeing then
+    return 0
+  end
+  if opt == self.OptionEnum.PioneerSkillList then
+    return skillData.sortID
+  end
+  if opt == self.OptionEnum.ReplaceSkillList then
+    return skillData.id
+  end
+  if opt == self.OptionEnum.SuperPositionSkill then
+    return skillData.sortID
+  end
+  if opt == self.OptionEnum.DelMultiTrap then
+    return skillData.sortID
+  end
+  if opt == self.OptionEnum.SelectBuffs then
+    return skillData.sortID
+  end
+  return skillData:GetID()
 end

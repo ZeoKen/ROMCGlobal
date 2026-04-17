@@ -81,6 +81,7 @@ end
 
 function PetHouseView:MapListenEvt()
   self:AddListenEvt(ServiceEvent.HomeCmdHouseDataUpdateHomeCmd, self.RecvDataUpdata)
+  self:AddListenEvt(ServiceEvent.HomeCmdSnowHouseDataUpdateHomeCmd, self.RecvDataUpdata)
   self:AddListenEvt(ItemEvent.PetUpdate, self.HandlePetUpdate)
 end
 

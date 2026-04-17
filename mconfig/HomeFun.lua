@@ -49,6 +49,14 @@ function HomeFun.ConvertColToWorldPosXByFloorData(floorData, col)
   return floorData and (col - 0.5 - floorData.col * 0.5) * HomeFun.m_CellSize + floorData.x or -1
 end
 
+function HomeFun.GetWorldPosY(mapName, floorIndex)
+  local homeMapData = _G[mapName]
+  if not homeMapData then
+    return -1
+  end
+  return homeMapData[floorIndex].y
+end
+
 function HomeFun.IsPosValid(mapName, worldX, worldZ)
   local homeMapData = _G[mapName]
   if not homeMapData then

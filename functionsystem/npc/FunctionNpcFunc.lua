@@ -364,6 +364,12 @@ function FunctionNpcFunc:ctor()
   self.funcMap.GetFairyTaleRaidReward = FunctionNpcFunc.GetFairyTaleRaidReward
   self.funcMap.ExitFairyTaleRaid = FunctionNpcFunc.ExitFairyTaleRaid
   self.funcMap.FashionTrader = FunctionNpcFunc.FashionTrader
+  self.funcMap.OpenAsyncPvpRaidDiffSetView = FunctionNpcFunc.OpenAsyncPvpRaidDiffSetView
+  self.funcMap.OpenSnowRealmQuestBoard = FunctionNpcFunc.OpenSnowRealmQuestBoard
+  self.funcMap.SnowCrown = FunctionNpcFunc.SnowCrown
+  self.funcMap.OpenHomeMessageBoard = FunctionNpcFunc.OpenHomeMessageBoard
+  self.funcMap.EnterHomeEditMode = FunctionNpcFunc.EnterHomeEditMode
+  self.funcMap.ExitSnowHouseRaid = FunctionNpcFunc.ExitSnowHouseRaid
   self.checkMap.CreateGuild = FunctionNpcFunc.CheckCreateGuild
   self.checkMap.ApplyGuild = FunctionNpcFunc.CheckCreateGuild
   self.checkMap.QuickTeam = FunctionNpcFunc.CheckQuickTeam
@@ -374,6 +380,7 @@ function FunctionNpcFunc:ctor()
   self.checkMap.DojoTeam = FunctionNpcFunc.CheckDojoTeam
   self.checkMap.EndLessTeam = FunctionNpcFunc.CheckEndLessTeam
   self.checkMap.Astrolabe = FunctionNpcFunc.CheckAstrolabe
+  self.checkMap.ExitSnowHouseRaid = FunctionNpcFunc.CheckExitSnowHouseRaid
   self.checkMap.GetOldConsume = FunctionNpcFunc.InActiveNpcFunc
   self.checkMap.GetAutumnEquip = FunctionNpcFunc.InActiveNpcFunc
   self.checkMap.GetIceCream = FunctionNpcFunc.InActiveNpcFunc
@@ -492,6 +499,10 @@ function FunctionNpcFunc:ctor()
   self.checkMap.OpenInheritSkillExtendCostPointPopUp = FunctionNpcFunc.CheckOpenInheritSkillExtendCostPointPopUp
   self.checkMap.ExitFairyTaleRaid = FunctionNpcFunc.CheckExitFairyTaleRaid
   self.checkMap.CheckFashionTrader = FunctionNpcFunc.CheckFashionTrader
+  self.checkMap.OpenSnowRealmQuestBoard = FunctionNpcFunc.CheckOpenSnowRealmQuestBoard
+  self.checkMap.SnowCrown = FunctionNpcFunc.CheckSnowCrown
+  self.checkMap.OpenHomeMessageBoard = FunctionNpcFunc.CheckOpenHomeMessageBoard
+  self.checkMap.EnterHomeEditMode = FunctionNpcFunc.CheckEnterHomeEditMode
   self.updateCheckCache = {}
 end
 
@@ -3589,7 +3600,15 @@ function FunctionNpcFunc.ChangePVPAction(npc, param, npcFunctionData)
 end
 
 function FunctionNpcFunc.OpenAchieveRewardView(npc, params, npcFunctionData)
-  FunctionNpcFunc.JumpPanel(PanelConfig.AchieveRewardView, {groupid = params, npc = npc})
+  FunctionNpcFunc.JumpPanel(PanelConfig.AchieveRewardView, {
+    groupid = params,
+    npc = npc,
+    npcFunctionData = npcFunctionData
+  })
+end
+
+function FunctionNpcFunc.ExitSnowHouseRaid(npc, params, npcFunctionData)
+  ServiceNUserProxy.Instance:ReturnToHomeCity()
 end
 
 function FunctionNpcFunc.CheckWildTransfer(npc, param)
@@ -4815,18 +4834,14 @@ function FunctionNpcFunc.CheckDungeonMvpCardCompose(npc, param, npcFunctionData)
       break
     end
   end
-  local activityNewID
+  local curTime = ServerTime.CurServerTime() / 1000
   for _, v in pairs(Table_ActivityNew) do
     if v.Type == "boss_scene_season" then
-      activityNewID = v.id
-      break
-    end
-  end
-  local activityInfo = ActivityIntegrationProxy.Instance:GetActPersonalActInfo(activityNewID)
-  if activityInfo then
-    local curTime = ServerTime.CurServerTime() / 1000
-    if curTime >= activityInfo.starttime and curTime <= activityInfo.endtime then
-      isUp = true
+      local activityInfo = ActivityIntegrationProxy.Instance:GetActPersonalActInfo(v.id)
+      if activityInfo and curTime >= activityInfo.starttime and curTime <= activityInfo.endtime then
+        isUp = true
+        break
+      end
     end
   end
   if isUp then
@@ -4880,6 +4895,12 @@ function FunctionNpcFunc.ExitFairyTaleRaid(npc, param, npcFunctionData)
   end, nil)
 end
 
+function FunctionNpcFunc.OpenAsyncPvpRaidDiffSetView(npc, param, npcFunctionData)
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.AsyncPvpRaidDiffSetView
+  })
+end
+
 function FunctionNpcFunc.CheckExitFairyTaleRaid(npc, param, npcFunctionData)
   local inRaid = Game.MapManager:IsPVEMode_FairyTaleRaid()
   if inRaid then
@@ -4906,6 +4927,70 @@ function FunctionNpcFunc.CheckFashionTrader(npcdata, param, funcStaticId)
     return NpcFuncState.InActive
   end
   if ActivityIntegrationProxy.Instance and ActivityIntegrationProxy.Instance:CheckActPersinalActValid(fashionTraderActID) then
+    return NpcFuncState.Active
+  end
+  return NpcFuncState.InActive
+end
+
+function FunctionNpcFunc.OpenSnowRealmQuestBoard(npc, param, npcFunctionData)
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.SnowRealmDailyQuestBoardView,
+    viewdata = param
+  })
+end
+
+function FunctionNpcFunc.CheckOpenSnowRealmQuestBoard(npc, param)
+  local config = GameConfig.Quest and GameConfig.Quest.SnowRealm and GameConfig.Quest.SnowRealm[param]
+  local menuId = config and config.MenuId
+  if FunctionUnLockFunc.Me():CheckCanOpen(menuId) then
+    return NpcFuncState.Active
+  end
+  return NpcFuncState.InActive
+end
+
+function FunctionNpcFunc.OpenHomeMessageBoard(npc, param, npcFunctionData)
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.MessageBoardView,
+    viewdata = {npc = npc}
+  })
+end
+
+function FunctionNpcFunc.CheckOpenHomeMessageBoard(npc, param)
+  local houseData = SnowRealmProxy.Instance:GetHouseData(npc.data.uniqueid)
+  if houseData and houseData.accid ~= nil and houseData.accid ~= 0 then
+    return NpcFuncState.Active
+  end
+  return NpcFuncState.InActive
+end
+
+function FunctionNpcFunc.SnowCrown(npc, param, npcFunctionData)
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.SnowCrownContainerView,
+    viewdata = param
+  })
+end
+
+function FunctionNpcFunc.CheckSnowCrown(npc, param)
+  if FunctionUnLockFunc.Me():CheckCanOpen(19392) then
+    return NpcFuncState.Active
+  end
+  return NpcFuncState.InActive
+end
+
+function FunctionNpcFunc.EnterHomeEditMode(npc, param, npcFunctionData)
+  SnowRealmManager.Me():EnterEditModeUseNpcFunction()
+end
+
+function FunctionNpcFunc.CheckEnterHomeEditMode(npc, param)
+  local myHomeIndex = SnowRealmProxy.Instance:GetMySelfHomeIndex()
+  if myHomeIndex and 0 < myHomeIndex and myHomeIndex == npc.data.uniqueid then
+    return NpcFuncState.Active
+  end
+  return NpcFuncState.InActive
+end
+
+function FunctionNpcFunc.CheckExitSnowHouseRaid(npc, param)
+  if Game.MapManager:IsInSnowRealmHouseRaid() then
     return NpcFuncState.Active
   end
   return NpcFuncState.InActive

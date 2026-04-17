@@ -12,6 +12,7 @@ autoImport("MainViewRaidPuzzleBordPage")
 autoImport("MainViewComodoRaid")
 autoImport("MainViewNewTaskQuestPage")
 autoImport("MainViewMultiBossBase")
+autoImport("MainViewDestroyAirShipRaid")
 autoImport("MainViewHeartLockPage")
 autoImport("BossRaidBord")
 autoImport("MainViewStarArkPage")
@@ -96,6 +97,8 @@ function MainViewTraceInfoPage:AddViewEvts()
   self:AddListenEvt(PVEEvent.RaidPuzzle_Shutdown, self.HandleMayPalaceEnd)
   self:AddListenEvt(PVEEvent.ComodoRaid_Launch, self.HandleComodoRaidLaunch)
   self:AddListenEvt(PVEEvent.ComodoRaid_Shutdown, self.HandleComodoRaidShutdown)
+  self:AddListenEvt(PVEEvent.DestroyAirShipRaid_Launch, self.HandleDestroyAirShipRaidLaunch)
+  self:AddListenEvt(PVEEvent.DestroyAirShipRaid_ShutDown, self.HandleDestroyAirShipRaidShutdown)
   self:AddListenEvt(PVEEvent.MultiBossRaid_Launch, self.HandleMultiBossRaidLaunch)
   self:AddListenEvt(PVEEvent.MultiBossRaid_Shutdown, self.HandleMultiBossRaidShutdown)
   self:MapCardEvent()
@@ -862,6 +865,26 @@ function MainViewTraceInfoPage:HandleStarArkShutdown()
   self.taskBord:Show()
   if self.starArkPage then
     self.starArkPage:Hide()
+  end
+  self.curBord = nil
+end
+
+function MainViewTraceInfoPage:HandleDestroyAirShipRaidLaunch()
+  if not self.destroyAirShipRaidPage then
+    self.destroyAirShipRaidPage = self:AddSubView("MainViewDestroyAirShipRaid", MainViewDestroyAirShipRaid)
+  end
+  self.taskBord:Hide()
+  self.destroyAirShipRaidPage:Show()
+  self.destroyAirShipRaidPage:ResetDatas()
+  self.curBord = self.destroyAirShipRaidPage
+end
+
+function MainViewTraceInfoPage:HandleDestroyAirShipRaidShutdown()
+  self.taskBord:Show()
+  if self.destroyAirShipRaidPage then
+    self.destroyAirShipRaidPage:Hide()
+    self:RemoveSubView("MainViewDestroyAirShipRaid")
+    self.destroyAirShipRaidPage = nil
   end
   self.curBord = nil
 end

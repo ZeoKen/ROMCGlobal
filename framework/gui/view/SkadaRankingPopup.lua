@@ -175,6 +175,7 @@ function SkadaRankingPopup:ShowModel(rankdata)
     parts[partIndexEx.HairColorIndex] = rankdata.haircolor or 0
     parts[partIndexEx.EyeColorIndex] = rankdata.eyecolor or 0
     parts[partIndexEx.BodyColorIndex] = rankdata.clothcolor or 0
+    Asset_Role.ProcessHeadFashionForParts(parts, rankdata.headID, rankdata.head_fashion)
     if self.role then
       self.role:Redress(parts)
       self:ShowModelCallBack()

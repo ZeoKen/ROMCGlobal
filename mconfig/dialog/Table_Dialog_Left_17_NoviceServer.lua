@@ -63,6 +63,13 @@ Table_Dialog_Left_17 = {
   [131487] = "{id=131487,Text='要打开仓库了呢，收费%sZeny，谢谢您的使用！',Speaker=1269,Option='{好的,2}{下次吧,1}',Emoji=6,Action={actionid=34,num=1},}",
   [131583] = "{id=131583,Text='那株药草就在西南方向，我得提醒你，这种药草周围都有[c][ffff00]强大的魔物守护[-][/c]，你一定要小心啊。',Speaker=2532,}",
   [131799] = "{id=131799,Text='一群被控制的僵尸缓缓站立了起来',}",
+  [392980] = "{id=392980,Text='Skill/Mechanic_Overload     播放完毕',}",
+  [392981] = "{id=392981,Text='Skill/Mechanic_PhotonGun_atk     播放完毕',}",
+  [392982] = "{id=392982,Text='Skill/Mechanic_PhotonGun_atk_12pvp     播放完毕',}",
+  [392983] = "{id=392983,Text='Skill/Mechanic_PhotonGun_hit     播放完毕',}",
+  [392984] = "{id=392984,Text='Skill/Mechanic_PhotonGun_hit_12pvp     播放完毕',}",
+  [392985] = "{id=392985,Text='Skill/Mechanic_PioneerAttack_atk     播放完毕',}",
+  [392986] = "{id=392986,Text='Skill/Mechanic_PioneerAttack_hit     播放完毕',}",
   [392987] = "{id=392987,Text='Skill/Mechanic_Pioneer_atk     播放完毕',}",
   [392988] = "{id=392988,Text='Skill/Mechanic_Pioneer_start     播放完毕',}",
   [392989] = "{id=392989,Text='Skill/Mechanic_PositiveCharge_buff     播放完毕',}",
@@ -1992,13 +1999,6 @@ Table_Dialog_Left_17 = {
   [659685] = "{id=659685,Text='根部的泥土微微湿润，花枝随风微微摇摆，似乎很惬意。',}",
   [659686] = "{id=659686,Text='根部的泥土微微湿润，花枝随风微微摇摆，似乎很惬意。',}",
   [659687] = "{id=659687,Text='嗯嗯~它有在好好长大！~按这个速度的话，五天就可以开花了~',Speaker=828235,}",
-  [659688] = "{id=659688,Text='不过，如果周围有野草，就会抢夺花朵的养分；如果有虫子，就会啃食花朵。',Speaker=828235,}",
-  [659689] = "{id=659689,Text='所以，要记得每天来看看它，选择合适的方式照料它哦！',Speaker=828235,Option='{知道了,21},{好麻烦,22}',}",
-  [659690] = "{id=659690,Text='嘿嘿~好期待你的永恒之花呀！',Speaker=828235,}",
-  [659691] = "{id=659691,Text='哎呀呀~想要收获就得付出努力哦！',Speaker=828235,}",
-  [659692] = "{id=659692,Text='那么我们祭典再见啦！',Speaker=828235,}",
-  [659693] = "{id=659693,Text='花朵看上去奄奄的，周围的泥土中似乎长出了杂草。',Speaker=828320,Option='{浇水,11},{除草,12},{灭虫,13}',}",
-  [659694] = "{id=659694,Text='泥土的湿润度已经足够了。',Speaker=828320,}",
-  [659695] = "{id=659695,Text='没有看到需要清除的害虫。',Speaker=828320,}"
+  [659688] = "{id=659688,Text='不过，如果周围有野草，就会抢夺花朵的养分；如果有虫子，就会啃食花朵。',Speaker=828235,}"
 }
 Table_Dialog_Left_17.count = 2001

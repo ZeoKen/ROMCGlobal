@@ -129,6 +129,9 @@ end
 function ClientSkill:_SetPhase(phase, creature)
   self:_Clear(creature)
   self.phaseData:SetSkillPhase(phase)
+  if phase == SkillPhase.LeadComplete then
+    creature:CheckLeadCompleteSkill(self.phaseData:GetSkillID(), true)
+  end
 end
 
 function ClientSkill:_NotifyServer(creature, manual)
@@ -383,6 +386,9 @@ local helpDisFunc = function(x1, y1, z1, x2, y2, z2)
 end
 
 function ClientSkill:SyncDirMoveFromServer(creature, phaseData)
+  if phaseData:GetSkillPhase() < 0 then
+    return
+  end
   local clientPhaseData = self.phaseData
   local attackSpeed = 1
   local sGopos = phaseData.gopos[1]
@@ -399,6 +405,7 @@ function ClientSkill:SyncDirMoveFromServer(creature, phaseData)
           if "forward" == direction then
             dirAngleY = NumberUtility.Repeat(dirAngleY + 180, 360)
           end
+          local allowMergeMove = self.info and self.info:GetNoHitMoveIntercept() or false
           creature.logicTransform:ExtraDirMove(dirAngleY, dirMoveDistance, (sGopos[4] or 10) * attackSpeed, function(logicTransform, arg)
             SkillLogic_Base.CheckExtraDirMove(logicTransform, arg)
             local effect = creature:GetWeakData("AttackEffectOnRole")
@@ -410,7 +417,7 @@ function ClientSkill:SyncDirMoveFromServer(creature, phaseData)
               creature:HideMyself(false)
             end
             dirPoint:Destroy()
-          end, nil, dirPoint, true)
+          end, nil, dirPoint, true, allowMergeMove)
         end
       end
     end
@@ -436,10 +443,11 @@ function ClientSkill:SyncDirMoveFromServer(creature, phaseData)
           if "forward" == direction then
             dirAngleY = NumberUtility.Repeat(dirAngleY + 180, 360)
           end
+          local allowMergeMove = self.info and self.info:GetNoHitMoveIntercept() or false
           targetCreature.logicTransform:ExtraDirMove(dirAngleY, dirMoveDistance, sHT_Gopos[4] * attackSpeed, function(logicTransform, arg)
             SkillLogic_Base.CheckExtraDirMove(logicTransform, arg)
             dirPoint:Destroy()
-          end, nil, dirPoint, true)
+          end, nil, dirPoint, true, allowMergeMove)
         end
       end
     end

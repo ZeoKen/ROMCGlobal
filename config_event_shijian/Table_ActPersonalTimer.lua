@@ -215,24 +215,6 @@ Table_ActPersonalTimer = {
       ShopShowID = 1019
     }
   },
-  [105839] = {
-    id = 105839,
-    Type = "new_server_challenge",
-    Servers = _EmptyTable,
-    TfStartTime = "2026-01-12 05:00:00",
-    TfEndTime = "2026-01-26 05:00:00",
-    TfAbortTime = "",
-    StartTime = "2026-01-19 05:00:00",
-    EndTime = "2026-02-02 05:00:00",
-    AbortTime = "",
-    Cycle = "",
-    Name = "##42634300",
-    Misc = {
-      ShopType = 650,
-      ShopId = 34,
-      ShopShowID = 1020
-    }
-  },
   [106001] = {
     id = 106001,
     Type = "fate_select",
@@ -733,6 +715,24 @@ Table_ActPersonalTimer = {
     },
     OpenOnAccDay = 42,
     CloseDay = 3
+  },
+  [105839] = {
+    id = 105839,
+    Type = "new_server_challenge",
+    Servers = _EmptyTable,
+    TfStartTime = "2026-01-12 05:00:00",
+    TfEndTime = "2026-01-26 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2026-01-19 05:00:00",
+    EndTime = "2026-02-02 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "##42634300",
+    Misc = {
+      ShopType = 650,
+      ShopId = 34,
+      ShopShowID = 1020
+    }
   }
 }
 Table_ActPersonalTimer_fields = {

@@ -428,7 +428,7 @@ function QuestProxy:getDialogQuestListByNpcId(npcId, uniqueid)
       local single = sourceTable[i]
       if single.params then
         local npc = single.params.npc
-        if single.questDataStepType == QuestDataStepType.QuestDataStepType_VISIT and self:checkDialogQuestByParams(npcId, single) and (single.params.uniqueid == nil or single.params.uniqueid == uniqueid and currentMap:IsSameMapOrRaid(single.map)) and self:checkGuildQuest(single) and self:isCountDownQuestValid(single) then
+        if single.questDataStepType == QuestDataStepType.QuestDataStepType_VISIT and self:checkDialogQuestByParams(npcId, single) and (single.params.uniqueid == nil or single.params.uniqueid == uniqueid and currentMap:IsSameMapOrRaid(single.map)) and self:checkGuildQuest(single) and self:isCountDownQuestValid(single) and self:CheckIsMySnowHome(uniqueid) then
           table.insert(list, single)
         end
       else
@@ -2589,4 +2589,16 @@ function QuestProxy:GetTreasureBoxData(mapid)
   if self.mapTreasure[mapid] then
     return self.mapTreasure[mapid]
   end
+end
+
+function QuestProxy:CheckIsMySnowHome(uniqueid)
+  if not HomeManager.Me():IsSnowRealmMap(Game.MapManager:GetMapID()) then
+    return true
+  end
+  local npc = NSceneNpcProxy.Instance:FindNpcByUniqueId(uniqueid)
+  if npc and npc.data and npc.data.staticData and npc.data.staticData.Type == NpcData.NpcDetailedType.HomeMessageBoard then
+    local myHomeIndex = SnowRealmProxy.Instance:GetMySelfHomeIndex()
+    return myHomeIndex == uniqueid
+  end
+  return true
 end

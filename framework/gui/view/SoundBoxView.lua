@@ -143,7 +143,7 @@ end
 
 function SoundBoxView:HandleUpdateHouseSList()
   local tempArr = ReusableTable.CreateArray()
-  local soundList = HomeProxy.Instance.curSoundList
+  local soundList = HomeProxy.Instance:GetCurSoundList()
   for i = 1, #soundList do
     TableUtility.ArrayPushBack(tempArr, {
       starttime = 0,

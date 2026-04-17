@@ -8,6 +8,21 @@ function ShopMallExchangeSellView:OnExit()
   for i = 1, #cells do
     cells[i]:OnDestroy()
   end
+  self.quickSellQueue = nil
+  self.quickSellIndex = nil
+  self.isQuickSelling = false
+  self.lastQuickSellTime = nil
+  self.lastQuickSellCount = nil
+  self.hasQuickSellSuccess = false
+  self.quickSellSuccessCount = 0
+  self.quickSellFailCount = 0
+  self.quickSellSentCount = 0
+  self.quickSellResponseCount = 0
+  self:ClearQuickSellTimer()
+  if self.refreshTimer then
+    self.refreshTimer:Destroy()
+    self.refreshTimer = nil
+  end
   ShopMallExchangeSellView.super.OnExit(self)
 end
 
@@ -28,13 +43,24 @@ function ShopMallExchangeSellView:FindObjs()
   self.sellingGrid = self.sellingContainer:GetComponent(UIGrid)
   self.itemTabs = self:FindComponent("ItemTabs", UIGrid)
   self.loadingRoot = self:FindGO("LoadingRoot", self.recordView)
-  self.QuickSellButton = self:FindGO("QuickSellButton")
+  self.quickSellContainer = self:FindGO("QuickSellContainer", self.sellView)
+  if self.quickSellContainer then
+    self.quickSellButton = self:FindGO("QuickSellButton", self.quickSellContainer)
+    self.quickSellContainer:SetActive(false)
+    self:AddClickEvent(self.quickSellButton, function()
+      self:ClickQuickSell()
+    end)
+  end
+  self.quickSellWaitingPanel = self:FindGO("QuickSellWaitingPanel")
+  self.quickSellWaitingPanel:SetActive(false)
 end
 
 function ShopMallExchangeSellView:AddEvts()
   self:AddListenEvt(ServiceEvent.RecordTradeMyPendingListRecordTradeCmd, self.RecvPendingList)
   self:AddListenEvt(ServiceEvent.RecordTradeListNtfRecordTrade, self.RecvListNtf)
   self:AddListenEvt(ServiceEvent.RecordTradeQueryItemPriceRecordTradeCmd, self.RecvItemPriceList)
+  self:AddListenEvt(ServiceEvent.RecordTradeReqServerPriceRecordTradeCmd, self.RecvQuickSellItemPrice)
+  self:AddListenEvt(ServiceEvent.RecordTradeSellItemRecordTradeCmd, self.RecvSellItem)
 end
 
 function ShopMallExchangeSellView:AddViewEvts()
@@ -68,6 +94,14 @@ function ShopMallExchangeSellView:UpdateSelling()
   self.sellingTitle.text = string.format(ZhString.ShopMall_ExchangeSellTitle, tostring(#sellingData), tostring(self.maxPendingCount))
   local newData = self:ReUniteCellData(sellingData, 2)
   self.sellingCombineList:ResetDatas(newData)
+  local hasExpired = false
+  for i = 1, #sellingData do
+    if sellingData[i].isExpired then
+      hasExpired = true
+      break
+    end
+  end
+  self.quickSellContainer:SetActive(hasExpired)
 end
 
 function ShopMallExchangeSellView:ClickBagSell(cellCtl)
@@ -195,21 +229,201 @@ function ShopMallExchangeSellView:RecvItemPriceList()
 end
 
 function ShopMallExchangeSellView:ClickQuickSell()
-  local sellReceiveCount = ShopMallProxy.Instance:GetExchangeRecordReceiveCount()
-  if 0 < sellReceiveCount then
-    self:ClearQuickSellLt()
-    self.quickSellLt = TimeTickManager.Me():CreateOnceDelayTick(15000, function(owner, deltaTime)
-      self.quickSellLt = nil
-      self.loadingRoot:SetActive(false)
-    end, self)
-    self.loadingRoot:SetActive(true)
-    self:QueryItemPriceList()
+  if self.isQuickSelling then
+    MsgManager.ShowMsgByID(49)
+    return
   end
+  if self.lastQuickSellTime and self.lastQuickSellCount then
+    local currentTime = ServerTime.CurServerTime()
+    local timeDiff = currentTime - self.lastQuickSellTime
+    local cooldownTime = self.lastQuickSellCount * (GameConfig.Exchange.QuickSellInterval or 2000)
+    if timeDiff < cooldownTime then
+      MsgManager.ShowMsgByID(49)
+      return
+    end
+  end
+  local sellingData = ShopMallProxy.Instance:GetExchangeSelfSelling()
+  local expiredItems = {}
+  for i = 1, #sellingData do
+    local data = sellingData[i]
+    if data:CanExchange() and data.isExpired then
+      table.insert(expiredItems, data)
+    end
+  end
+  if #expiredItems == 0 then
+    return
+  end
+  MsgManager.ConfirmMsgByID(1000013, function()
+    self.isQuickSelling = true
+    self.hasQuickSellSuccess = false
+    self.quickSellSuccessCount = 0
+    self.quickSellFailCount = 0
+    self.quickSellSentCount = 0
+    self.quickSellResponseCount = 0
+    self.quickSellQueue = expiredItems
+    self.quickSellIndex = 1
+    if self.quickSellWaitingPanel then
+      self.quickSellWaitingPanel:SetActive(true)
+    end
+    self:ClearQuickSellTimer()
+    local timeoutDuration = #expiredItems * (GameConfig.Exchange.QuickSellInterval or 2000)
+    self.quickSellTimer = TimeTickManager.Me():CreateOnceDelayTick(timeoutDuration, function()
+      self.quickSellTimer = nil
+      if self.quickSellWaitingPanel then
+        self.quickSellWaitingPanel:SetActive(false)
+      end
+      self.quickSellQueue = nil
+      self.quickSellIndex = nil
+      self.isQuickSelling = false
+    end, self)
+    self:ProcessNextQuickSellItem()
+  end)
+end
+
+function ShopMallExchangeSellView:ProcessNextQuickSellItem()
+  local queueCount = self.quickSellQueue and #self.quickSellQueue or 0
+  local currentIndex = self.quickSellIndex or 0
+  if not self.quickSellQueue or self.quickSellIndex > #self.quickSellQueue then
+    if self.quickSellWaitingPanel then
+      self.quickSellWaitingPanel:SetActive(false)
+    end
+    if self.refreshTimer then
+      self.refreshTimer:Destroy()
+      self.refreshTimer = nil
+    end
+    self.refreshTimer = TimeTickManager.Me():CreateOnceDelayTick(1000, function()
+      ServiceRecordTradeProxy.Instance:CallMyPendingListRecordTradeCmd(nil, Game.Myself.data.id)
+    end, self)
+    self:ClearQuickSellTimer()
+    return
+  end
+  local data = self.quickSellQueue[self.quickSellIndex]
+  if not data then
+    self.quickSellFailCount = (self.quickSellFailCount or 0) + 1
+    self.quickSellIndex = self.quickSellIndex + 1
+    self:ProcessNextQuickSellItem()
+    return
+  end
+  local itemData = data:GetItemData()
+  if not itemData then
+    self.quickSellFailCount = (self.quickSellFailCount or 0) + 1
+    self.quickSellIndex = self.quickSellIndex + 1
+    self:ProcessNextQuickSellItem()
+    return
+  end
+  FunctionItemTrade.Me():GetTradePrice(itemData, true, true)
+end
+
+function ShopMallExchangeSellView:RecvQuickSellItemPrice(note)
+  if not self.quickSellQueue or not self.quickSellIndex then
+    return
+  end
+  local priceData = note.body
+  if not priceData then
+    self.quickSellFailCount = (self.quickSellFailCount or 0) + 1
+    self.quickSellIndex = self.quickSellIndex + 1
+    self:ProcessNextQuickSellItem()
+    return
+  end
+  local data = self.quickSellQueue[self.quickSellIndex]
+  if not data then
+    return
+  end
+  local itemData = data:GetItemData()
+  if not itemData then
+    return
+  end
+  if priceData.itemData and priceData.itemData.base and itemData.staticData.id ~= priceData.itemData.base.id then
+    return
+  end
+  local count = data.count or 1
+  local boothfee = ShopMallProxy.Instance:GetBoothfee(priceData.price, count)
+  local currentROB = MyselfProxy.Instance:GetROB()
+  if boothfee > currentROB then
+    MsgManager.ShowMsgByID(10109)
+    self.quickSellFailCount = (self.quickSellFailCount or 0) + 1
+    self.quickSellIndex = self.quickSellIndex + 1
+    self:ProcessNextQuickSellItem()
+    return
+  end
+  local sellingData = ShopMallProxy.Instance:GetExchangeSelfSelling()
+  local currentSellingCount = 0
+  for i = 1, #sellingData do
+    if not sellingData[i].isExpired then
+      currentSellingCount = currentSellingCount + 1
+    end
+  end
+  if currentSellingCount >= self.maxPendingCount then
+    MsgManager.ShowMsgByID(10104)
+    self.quickSellQueue = nil
+    self.quickSellIndex = nil
+    self:CheckQuickSellFinish()
+    return
+  end
+  local itemInfo = {}
+  itemInfo.itemid = itemData.staticData.id
+  itemInfo.price = priceData.price
+  itemInfo.publicity_id = (priceData.statetype == ShopMallStateTypeEnum.WillPublicity or priceData.statetype == ShopMallStateTypeEnum.InPublicity) and 1 or 0
+  itemInfo.item_data = itemData:ExportServerItem()
+  ServiceRecordTradeProxy.Instance:CallResellPendingRecordTrade(itemInfo, Game.Myself.data.id, nil, data.orderId)
+  self.quickSellSentCount = (self.quickSellSentCount or 0) + 1
+  self.quickSellIndex = self.quickSellIndex + 1
+  self:ProcessNextQuickSellItem()
 end
 
 function ShopMallExchangeSellView:ClearQuickSellLt()
   if self.quickSellLt then
     self.quickSellLt:Destroy()
     self.quickSellLt = nil
+  end
+end
+
+function ShopMallExchangeSellView:ClearQuickSellTimer()
+  if self.quickSellTimer then
+    self.quickSellTimer:Destroy()
+    self.quickSellTimer = nil
+  end
+end
+
+function ShopMallExchangeSellView:RecvSellItem(note)
+  local data = note.body
+  if data.type == BoothProxy.TradeType.Exchange and data.ret == ProtoCommon_pb.ETRADE_RET_CODE_SUCCESS then
+    if self.isQuickSelling then
+      self.hasQuickSellSuccess = true
+      self.quickSellSuccessCount = (self.quickSellSuccessCount or 0) + 1
+      self.quickSellResponseCount = (self.quickSellResponseCount or 0) + 1
+      self:CheckQuickSellFinish()
+    end
+  elseif data.type == BoothProxy.TradeType.Exchange and self.isQuickSelling then
+    self.quickSellFailCount = (self.quickSellFailCount or 0) + 1
+    self.quickSellResponseCount = (self.quickSellResponseCount or 0) + 1
+    self:CheckQuickSellFinish()
+  end
+end
+
+function ShopMallExchangeSellView:CheckQuickSellFinish()
+  if not self.isQuickSelling then
+    return
+  end
+  if self.quickSellResponseCount >= self.quickSellSentCount and self.quickSellSentCount > 0 or self.quickSellSentCount == 0 then
+    if self.hasQuickSellSuccess then
+      ServiceRecordTradeProxy.Instance:CallMyPendingListRecordTradeCmd(nil, Game.Myself.data.id)
+    end
+    if self.quickSellSentCount > 0 then
+      self.lastQuickSellTime = ServerTime.CurServerTime()
+      self.lastQuickSellCount = self.quickSellSentCount
+    end
+    if self.quickSellWaitingPanel then
+      self.quickSellWaitingPanel:SetActive(false)
+    end
+    self:ClearQuickSellTimer()
+    self.quickSellQueue = nil
+    self.quickSellIndex = nil
+    self.isQuickSelling = false
+    self.hasQuickSellSuccess = false
+    self.quickSellSuccessCount = 0
+    self.quickSellFailCount = 0
+    self.quickSellSentCount = 0
+    self.quickSellResponseCount = 0
   end
 end

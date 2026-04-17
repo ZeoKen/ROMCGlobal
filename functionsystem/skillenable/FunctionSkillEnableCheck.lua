@@ -34,6 +34,7 @@ function FunctionSkillEnableCheck:ctor()
   self.typeChecks[SkillPrecondCheck.PreConditionType.TargetHpLessThan] = self.TargetHpLessThanCheck
   self.typeChecks[SkillPrecondCheck.PreConditionType.InterferenceValue] = self.InterferenceValueCheck
   self.typeChecks[SkillPrecondCheck.PreConditionType.IsRideOnTeammate] = self.IsRideOnTeammateCheck
+  self.typeChecks[SkillPrecondCheck.PreConditionType.SkillOptionValid] = self.SkillOptionValidCheck
   self.typeOnAdd = {}
   self.typeOnAdd[SkillPrecondCheck.PreConditionType.MyselfState] = self.OnAddStateCheckSkill
   self.typeOnRemove = {}
@@ -54,7 +55,8 @@ function FunctionSkillEnableCheck:AddListener()
   EventManager.Me():AddEventListener(SkillEvent.SkillDisEquip, self.RemoveCheckSkill, self)
   EventManager.Me():AddEventListener(SkillEvent.SkillUpdate, self.SkillUpdateHandler, self)
   EventManager.Me():AddEventListener(ServiceEvent.SkillMultiSkillOptionSyncSkillCmd, self.SkillOptionSyncHandler, self)
-  EventManager.Me():AddEventListener(SkillEvent.UpdateSubSkill, self.SkillOptionUpdateHandler, self)
+  EventManager.Me():AddEventListener(ServiceEvent.SkillMultiSkillOptionUpdateSkillCmd, self.SkillOptionUpdateSkillHandler, self)
+  EventManager.Me():AddEventListener(SkillEvent.UpdateSubSkill, self.UpdateSubSkillHandler, self)
   EventManager.Me():AddEventListener(RoleEquipEvent.TakeOn, self.RoleEquipUpdateCheck, self)
   EventManager.Me():AddEventListener(RoleEquipEvent.TakeOff, self.RoleEquipUpdateCheck, self)
   EventManager.Me():AddEventListener(MyselfEvent.UsedSkill, self.UsedSkillCheck, self)
@@ -66,6 +68,7 @@ function FunctionSkillEnableCheck:AddListener()
   EventManager.Me():AddEventListener(PetEvent.BeingInfoData_SummonChange, self.SummonChangeCheck, self)
   EventManager.Me():AddEventListener(PetEvent.BeingInfoData_AliveChange, self.SummonChangeCheck, self)
   EventManager.Me():AddEventListener(PetEvent.Being_CountChange, self.SummonChangeCheck, self)
+  EventManager.Me():AddEventListener(ServiceEvent.SceneBeingBeingInfoUpdate, self.SummonChangeCheck, self)
   EventManager.Me():AddEventListener(LoadSceneEvent.FinishLoadScene, self.MapUpdateCheck, self)
   FunctionCheck.Me():AddEventListener(MyselfEvent.MyPropChange, self.PropChangeCheck, self)
   EventManager.Me():AddEventListener(RoleEquipEvent.OffPosBegin, self.RoleEquipTakeOffBeginCheck, self)
@@ -171,9 +174,10 @@ function FunctionSkillEnableCheck:SkillOptionSyncHandler(data)
       end
     end
   end
+  self:SkillOptionValidCheckMain()
 end
 
-function FunctionSkillEnableCheck:SkillOptionUpdateHandler(data)
+function FunctionSkillEnableCheck:UpdateSubSkillHandler(data)
   local subSkill
   local instance = SkillProxy.Instance
   local CheckReasonSubSkill = SkillPrecondCheck.CheckReason.SubSkill
@@ -884,6 +888,12 @@ function FunctionSkillEnableCheck:LearnedSkillCheck(skillIDAndLevel)
   return true
 end
 
+function FunctionSkillEnableCheck:GetCheckBeingOption(beingType)
+  local list = Game.SkillOptionManager:GetMultiSkillOption(beingType, 0)
+  local op = list and list[1]
+  return op and 0 < op
+end
+
 function FunctionSkillEnableCheck:BeingStateCheck(conditionCheck)
   local skill = conditionCheck.skillItemData
   local needChecks = conditionCheck:GetPrecondtionsByType(SkillPrecondCheck.PreConditionType.BeingState)
@@ -895,11 +905,24 @@ function FunctionSkillEnableCheck:BeingStateCheck(conditionCheck)
     for i = 1, #needChecks do
       preCondition = needChecks[i]
       if preCondition.not_exist then
-        if count > #list then
-          self:UpdateReason(conditionCheck, true, skill, preCondition)
-        else
-          self:UpdateReason(conditionCheck, false, skill, preCondition)
+        local targetCount = 0
+        if preCondition.summon_type then
+          for i2, beingId in ipairs(list) do
+            local summoned = _PetProxy:GetMyBeingNpcInfo(beingId)
+            if summoned ~= nil and summoned:GetSummonType() == preCondition.summon_type then
+              targetCount = targetCount + 1
+            end
+          end
         end
+        local flag = count > targetCount
+        if flag then
+          if preCondition.summon_type == 1 then
+            flag = self:GetCheckBeingOption(SkillOptionManager.OptionEnum.SummonBeing)
+          elseif preCondition.summon_type == 2 then
+            flag = self:GetCheckBeingOption(SkillOptionManager.OptionEnum.BlendBeing)
+          end
+        end
+        self:UpdateReason(conditionCheck, flag, skill, preCondition)
       elseif preCondition.died then
         local died = false
         for i = 1, #list do
@@ -937,7 +960,6 @@ end
 function FunctionSkillEnableCheck:SummonChangeCheck()
   local preConditions = self.skillsTypeCheck[SkillPrecondCheck.PreConditionType.BeingState]
   if preConditions then
-    local preCondition
     for k, v in pairs(preConditions) do
       if self:_ProCheckSkillPreCond(v) == false then
         self:BeingStateCheck(v)
@@ -1298,6 +1320,58 @@ function FunctionSkillEnableCheck:EquipCheck()
   if preConditions then
     for k, v in pairs(preConditions) do
       self:WearEquipCheck(v)
+    end
+  end
+end
+
+function FunctionSkillEnableCheck:SkillOptionUpdateSkillHandler(data)
+  local opt = data.opt
+  if opt == nil then
+    return
+  end
+  local preConditions = self.skillsTypeCheck[SkillPrecondCheck.PreConditionType.SkillOptionValid]
+  if preConditions then
+    for k, v in pairs(preConditions) do
+      if self:_ProCheckSkillPreCond(v) == false then
+        self:SkillOptionValidCheck(v, opt.opt)
+      end
+    end
+  end
+  if opt.opt == SkillOptionManager.OptionEnum.SummonBeing or opt.opt == SkillOptionManager.OptionEnum.BlendBeing then
+    self:SummonChangeCheck()
+  end
+end
+
+function FunctionSkillEnableCheck:SkillOptionValidCheck(conditionCheck, opt)
+  if self.myself then
+    local skill = conditionCheck.skillItemData
+    local needChecks = conditionCheck:GetPrecondtionsByType(SkillPrecondCheck.PreConditionType.SkillOptionValid)
+    if needChecks then
+      local preCondition
+      for i = 1, #needChecks do
+        if opt == nil or needChecks[i].option == opt then
+          preCondition = needChecks[i]
+          local tarSkillID = Game.SkillOptionManager:GetMultiSkillOptionSkillid(preCondition.option, skill)
+          local curOpt = Game.SkillOptionManager:GetMultiSkillOption(preCondition.option, tarSkillID)
+          local firstOpt = curOpt and curOpt[1]
+          if firstOpt then
+            if 0 < firstOpt then
+              self:UpdateReason(conditionCheck, true, skill, preCondition)
+            else
+              self:UpdateReason(conditionCheck, false, skill, preCondition)
+            end
+          end
+        end
+      end
+    end
+  end
+end
+
+function FunctionSkillEnableCheck:SkillOptionValidCheckMain()
+  local preConditions = self.skillsTypeCheck[SkillPrecondCheck.PreConditionType.SkillOptionValid]
+  if preConditions then
+    for k, v in pairs(preConditions) do
+      self:SkillOptionValidCheck(v)
     end
   end
 end

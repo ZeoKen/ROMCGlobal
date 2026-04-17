@@ -242,6 +242,10 @@ function SocialManager:UpdateData(serverData)
         socialData.mercenary_guildname = item.value
       elseif item.type == SessionSociality_pb.ESOCIALDATA_MERCENARY_GUILDPORTRAIT then
         socialData.mercenary_guildportrait = item.value
+      elseif item.type == SessionSociality_pb.ESOCIALDATA_SNOW_ROOMID then
+        socialData.snow_room_id = item.value
+      elseif item.type == SessionSociality_pb.ESOCIALDATA_HEAD_FASHION then
+        socialData.head_fashion = item.data
       end
     end
   end

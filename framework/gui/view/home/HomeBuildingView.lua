@@ -749,8 +749,34 @@ function HomeBuildingView:OnPressContentCell(cell)
   self.isDragContentList = false
   self.scrollHomeContentCells:Press(cell.isPress)
   if not cell.isPress then
-    self:OnPressUp()
+    if self.isDragCell and self.curOperateItem then
+      local inputPos = LuaGeometry.GetTempVector3(LuaGameObject.GetMousePosition())
+      inputPos.x = math.clamp(inputPos.x, 0, self.screenWidth)
+      inputPos.y = math.clamp(inputPos.y, 0, self.screenHeight)
+      local hitPoint, floorIndex = self.cameraControl:GetGroundPosAtScreenPos(inputPos)
+      if not hitPoint or not floorIndex then
+        self:RemoveCurOperateItem()
+        self:ResetDragState()
+        return
+      end
+      local result, right, wrong, placeRow, placeCol = HomeManager.Me():PlaceFurniture(self.curOperateItem, floorIndex, hitPoint.x, hitPoint.z)
+      if result == BuildingGrid.EPlaceFurnitureResult.EOutOfRange then
+        self:RemoveCurOperateItem()
+        self:ResetDragState()
+        return
+      end
+      self:OnPressUp()
+    else
+      self:RemoveCurOperateItem()
+      self:ResetDragState()
+    end
   end
+end
+
+function HomeBuildingView:ResetDragState()
+  self.isDragged = false
+  self.isDragObj = false
+  self.isDragCell = false
 end
 
 function HomeBuildingView:OnDragContentCell(cell)
@@ -961,7 +987,13 @@ function HomeBuildingView:RemoveCurOperateItem()
   self:ShowBuildUI(true)
   local deleteItem = self.curOperateItem
   self:ClearCurSelectItem()
-  HomeManager.Me():RemoveFurnitureItem(deleteItem.data.id)
+  local homeManager = HomeManager.Me()
+  local deleteID = deleteItem and deleteItem.data and deleteItem.data.id
+  if deleteID and homeManager:FindFurniture(deleteID, true) then
+    homeManager:RemoveFurnitureItem(deleteID)
+  else
+    homeManager:_DestroyFurniture(deleteItem)
+  end
   self.isLastOperateSuccess = true
 end
 
@@ -1083,7 +1115,12 @@ function HomeBuildingView:SetHomeScore()
   self.tabScoreBoard.labAddScore.alpha = 0
   self.tabScoreBoard.tweenerAddScore.enabled = false
   self.curHomeScore = HomeProxy.Instance:CalMyHouseScore_Client()
-  local tableHomeBuff = Table_HomeBuff
+  local myHouseData = HomeProxy.Instance:GetMyHouseData()
+  local tableHomeBuff = Game.HomeBuff[myHouseData.houseType]
+  if not tableHomeBuff then
+    redlog("HomeBuildingView:SetHomeScore tableHomeBuff is nil! houseType = " .. tostring(myHouseData.houseType))
+    return
+  end
   local curLv = #tableHomeBuff
   local foundLv = false
   for i = 1, #tableHomeBuff do
@@ -1314,6 +1351,8 @@ function HomeBuildingView:OnEnter()
   self:InitView()
 end
 
+local ReviewLayer = Game.ELayer.PhotographPanel
+
 function HomeBuildingView:OnExit()
   if HomeManager.Me():IsAtHome() then
     self:SetEditRecovery(false)
@@ -1330,8 +1369,48 @@ function HomeBuildingView:OnExit()
     self.ltTypeTipShow = nil
   end
   HomeFurniturOutLine.Me():Release()
-  HomeManager.Me():ExitEditMode()
+  local hasEditedInSession = HomeManager.Me():HasEditedFurnitureInThisEditSession()
+  local mapIdForHomeCapture = Game.MapManager:GetMapID()
+  local snowHomeIdxForCapture
+  if HomeManager.Me():IsSnowRealmMap(mapIdForHomeCapture) then
+    snowHomeIdxForCapture = HomeManager.Me():GetCurHomeIdx()
+  end
+  local hasAnyFurnitureInMaps = HomeManager.Me():HasAnyFurnitureInPlacementMaps(snowHomeIdxForCapture)
+  local shouldCaptureHomePhoto = hasEditedInSession and hasAnyFurnitureInMaps
+  HomeManager.Me():ExitEditMode(shouldCaptureHomePhoto)
   HomeBuildingView.super.OnExit(self)
+  if shouldCaptureHomePhoto then
+    local filters = self.filtersWhenViewOpen
+    local didStartReviewFlow = false
+    FunctionSceneFilter.Me():StartFilter(filters)
+    local poses = HomePictureManager.Me():GetCapturePoses(false, snowHomeIdxForCapture)
+    local photoId = HomeManager.Me():IsSnowRealmMap(Game.MapManager:GetMapID()) and HomeCmd_pb.EHOUSETYPE_SNOW or HomeCmd_pb.EHOUSETYPE_PRIVATE
+    HomePictureManager.Me():CaptureAndUploadAtPositions(poses, FunctionPhotoStorage.PhotoType.HomeRecommend, photoId, nil, function(index, success, errorMsg, photoId, timestamp)
+      redlog(string.format("HomeBuildingView:Capture finish index=%s success=%s error=%s photoId=%s ts=%s", tostring(index), tostring(success), tostring(errorMsg), tostring(photoId), tostring(timestamp)))
+      if success then
+        didStartReviewFlow = true
+        HomeManager.Me():SetAllFurnituresLayer(ReviewLayer, snowHomeIdxForCapture)
+        local reviewPoses = HomePictureManager.Me():GetCapturePoses(true, snowHomeIdxForCapture)
+        local photoType = photoId == HomeCmd_pb.EHOUSETYPE_SNOW and FunctionPhotoStorage.PhotoType.HomeCheckSnow or FunctionPhotoStorage.PhotoType.HomeCheckPrivate
+        HomePictureManager.Me():CaptureAndUploadReviewAtPoses(reviewPoses, photoType, nil, function(index, success, errorMsg, photoId, timestamp)
+          redlog("HomeBuildingView:Capture review finish index=" .. tostring(index), "success=" .. tostring(success), "errorMsg=" .. tostring(errorMsg), "photoId=" .. tostring(photoId), "timestamp=" .. tostring(timestamp))
+        end, function(allSuccess)
+          redlog("HomeBuildingView:Capture review all finish allSuccess=" .. tostring(allSuccess))
+          if allSuccess then
+            ServiceHomeCmdProxy.Instance:CallReqHomeCheckHomeCmd(photoId)
+          end
+          HomeManager.Me():ResetFurnitureLayers()
+          HomeManager.Me():SetFurnitureColliderLayerToNormal()
+        end, nil, ReviewLayer)
+      end
+    end, function()
+      FunctionSceneFilter.Me():EndFilter(filters)
+      if not didStartReviewFlow then
+        HomeManager.Me():SetFurnitureColliderLayerToNormal()
+      end
+      redlog("HomeBuildingView:Capture all finish")
+    end, nil)
+  end
 end
 
 function HomeBuildingView:OnDestroy()

@@ -73,11 +73,18 @@ function HomePhonographManager:StopPhonographMusic()
   self.phonographQueryTick = nil
 end
 
+function HomePhonographManager:PauseMusic()
+  FunctionBGMCmd.Me():StopJukeBox(musicFadeDuration, 0)
+  self.musicUpdateTime = nil
+  self.nowPlayingMusicStartTime = nil
+  self:PlayPhonographsAction()
+end
+
 function HomePhonographManager:_PhonographUpdate()
   if #self.phonographIds < 1 then
     return
   end
-  local soundList = HomeProxy.Instance.curSoundList
+  local soundList = HomeProxy.Instance:GetCurSoundList()
   if not soundList or not next(soundList) then
     if self.nowPlayingMusicStartTime then
       self:StopPhonographMusic()

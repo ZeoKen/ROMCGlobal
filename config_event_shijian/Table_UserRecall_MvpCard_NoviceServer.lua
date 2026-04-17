@@ -439,6 +439,20 @@ Table_UserRecall_MvpCard = {
     UpBeginTime = "2025-09-15 05:00:00",
     UpEndTime = "2025-09-29 05:00:00",
     Weight = 25
+  },
+  [23074] = {
+    id = 23074,
+    OnlineTime = "2026-04-10 05:00:00",
+    UpBeginTime = "2026-04-10 05:00:00",
+    UpEndTime = "2026-04-25 05:00:00",
+    Weight = 25
+  },
+  [23075] = {
+    id = 23075,
+    OnlineTime = "2026-05-10 05:00:00",
+    UpBeginTime = "2026-05-10 05:00:00",
+    UpEndTime = "2026-05-25 05:00:00",
+    Weight = 25
   }
 }
 Table_UserRecall_MvpCard_fields = {

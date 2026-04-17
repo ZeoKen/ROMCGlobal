@@ -71,6 +71,7 @@ function ServiceLoginUserCmdProxy:RecvLoginResultUserCmd(data)
     AstrolabeProxy.Instance:ResetPlate()
     RedTipProxy.Instance:RemoveAll()
     PvpProxy.Instance:ClearBosses()
+    GeffenMagicWaveScoreProxy.Instance:Reset()
     local myZoneID = MyselfProxy.Instance:GetZoneId()
     if nil == myZoneID then
       PvpProxy.Instance:ClearMatchInfo()

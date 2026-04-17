@@ -222,7 +222,7 @@ Table_Guild_Incident = {
   [48] = {
     id = 48,
     Page = 1,
-    txt = "##3361179"
+    txt = "##44722590"
   },
   [49] = {
     id = 49,

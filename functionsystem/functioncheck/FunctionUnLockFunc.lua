@@ -75,6 +75,19 @@ function FunctionUnLockFunc:GetMenuDataByPanelID(panelId, unlockType)
   end
 end
 
+function FunctionUnLockFunc:GetAllMenuDataByPanelID(panelId, unlockType)
+  local result = {}
+  for _, mData in pairs(self.menuData) do
+    if mData.staticData and mData.staticData.PanelID == panelId and (unlockType == nil or mData.staticData.type == unlockType) then
+      table.insert(result, mData)
+    end
+    if mData.interfaceData and mData.interfaceData.PanelID == panelId then
+      table.insert(result, mData)
+    end
+  end
+  return result
+end
+
 function FunctionUnLockFunc:InitInterfaceData()
   self.propMap = {}
   for _, iData in pairs(Table_InterfaceOpen) do
@@ -142,10 +155,46 @@ function FunctionUnLockFunc:RegisteEnterBtn(menuid, button)
 end
 
 function FunctionUnLockFunc:RegisteEnterBtnByPanelID(panelid, button)
-  local data = self:GetMenuDataByPanelID(panelid, MenuUnlockType.View)
-  if data then
-    self:RegisteEnterBtn(self:GetMenuId(data), button)
+  local allData = self:GetAllMenuDataByPanelID(panelid, nil)
+  if #allData == 0 then
+    return
   end
+  local anyUnlocked = false
+  local allHaveEnterhide = true
+  for _, data in ipairs(allData) do
+    if data.staticData and data.staticData.Enterhide ~= 1 then
+      allHaveEnterhide = false
+    end
+    if self:CheckCanOpen(self:GetMenuId(data)) then
+      anyUnlocked = true
+      break
+    end
+  end
+  if not allHaveEnterhide then
+    return
+  end
+  if not anyUnlocked then
+    for _, data in ipairs(allData) do
+      local menuid = self:GetMenuId(data)
+      local buttonMap = self.enterBtnsMap[menuid]
+      if not buttonMap then
+        self.enterBtnsMap[menuid] = {}
+        buttonMap = self.enterBtnsMap[menuid]
+      end
+      local alreadyExist = false
+      for _, btn in ipairs(buttonMap) do
+        if btn == button then
+          alreadyExist = true
+          break
+        end
+      end
+      if not alreadyExist then
+        table.insert(buttonMap, button)
+      end
+    end
+    button.gameObject:SetActive(false)
+  end
+  self:ClearUselessButton()
 end
 
 function FunctionUnLockFunc:UnRegisteEnterBtn(menuid)
@@ -177,12 +226,22 @@ function FunctionUnLockFunc:CheckCanOpen(menuid, withTip)
 end
 
 function FunctionUnLockFunc:CheckCanOpenByPanelId(panelId, withTip, unlockType)
-  unlockType = unlockType or MenuUnlockType.View
-  local menuData = self:GetMenuDataByPanelID(panelId, unlockType)
-  if menuData then
-    return self:CheckCanOpen(self:GetMenuId(menuData), withTip)
+  local allData = self:GetAllMenuDataByPanelID(panelId, unlockType)
+  if #allData == 0 then
+    return true
   end
-  return true
+  local firstLockedMenuId
+  for _, data in ipairs(allData) do
+    local menuid = self:GetMenuId(data)
+    if self:CheckCanOpen(menuid) then
+      return true
+    end
+    firstLockedMenuId = firstLockedMenuId or menuid
+  end
+  if withTip and firstLockedMenuId then
+    self:ErrorMsg(firstLockedMenuId)
+  end
+  return false
 end
 
 function FunctionUnLockFunc:ErrorMsg(menuid)

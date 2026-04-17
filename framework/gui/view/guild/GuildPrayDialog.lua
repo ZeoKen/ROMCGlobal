@@ -145,6 +145,16 @@ function GuildPrayDialog:OnClickPray()
   if not self:CanPray() then
     return
   end
+  if self.maxPrayTog.value then
+    MsgManager.ConfirmMsgByID(900011, function()
+      self:_DoPray()
+    end)
+  else
+    self:_DoPray()
+  end
+end
+
+function GuildPrayDialog:_DoPray()
   self:ActiveLock(true)
   TimeTickManager.Me():ClearTick(self)
   TimeTickManager.Me():CreateOnceDelayTick(1500, function(owner, deltaTime)

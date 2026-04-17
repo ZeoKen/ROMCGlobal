@@ -109,6 +109,15 @@ function Asset_RoleUtility.SetUserRoleParts(userData, parts)
   parts[partIndexEx.HairColorIndex] = userData:Get(UDEnum.HAIRCOLOR) or 0
   parts[partIndexEx.EyeColorIndex] = userData:Get(UDEnum.EYECOLOR) or 0
   parts[partIndexEx.BodyColorIndex] = userData:Get(UDEnum.CLOTHCOLOR) or 0
+  local headFashionBytes = userData:GetBytes(UDEnum.HEAD_FASHION)
+  if headFashionBytes and headFashionBytes ~= "" then
+    local rets = string.split(headFashionBytes, ";")
+    if rets and 3 <= #rets then
+      parts[partIndexEx.HeadFashionIndex1] = tonumber(rets[1]) or 0
+      parts[partIndexEx.HeadFashionIndex2] = tonumber(rets[2]) or 0
+      parts[partIndexEx.HeadFashionIndex3] = tonumber(rets[3]) or 0
+    end
+  end
 end
 
 function Asset_RoleUtility.CreateMyRoleParts()
@@ -227,11 +236,12 @@ local fashionPreviewDoubleHandProfession = {
 }
 local HeinrichWeaponType = {Sword = 1, Knife = 1}
 
-function Asset_RoleUtility.SetFashionPreviewParts(id, class, sex, hideOther, parts)
+function Asset_RoleUtility.SetFashionPreviewParts(id, class, sex, hideOther, parts, userdata)
   if not id then
     return
   end
   local partIndex = Asset_Role.PartIndex
+  local partIndexEx = Asset_Role.PartIndexEx
   local itemPartIndex = ItemUtil.getItemRolePartIndex(id)
   local mountBody = GameConfig.Mount2Body[id]
   if mountBody then
@@ -288,6 +298,15 @@ function Asset_RoleUtility.SetFashionPreviewParts(id, class, sex, hideOther, par
     end
     if parts[partIndex.RightWeapon] == 0 then
       parts[partIndex.RightWeapon] = id
+    end
+  end
+  local headFashionBytes = userdata and userdata:GetBytes(UDEnum.HEAD_FASHION)
+  if headFashionBytes and headFashionBytes ~= "" then
+    local rets = string.split(headFashionBytes, ";")
+    if rets and 3 <= #rets then
+      parts[partIndexEx.HeadFashionIndex1] = tonumber(rets[1]) or 0
+      parts[partIndexEx.HeadFashionIndex2] = tonumber(rets[2]) or 0
+      parts[partIndexEx.HeadFashionIndex3] = tonumber(rets[3]) or 0
     end
   end
 end

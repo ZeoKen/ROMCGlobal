@@ -69,7 +69,47 @@ function BagFashionItemCell:RefreshStatus()
   elseif self.fashionItemData then
     self.isEquiped = PackageFashionPage.IsFashionItemEquiped(self.fashionItemData, self.advFashion)
   end
-  self.objInUse:SetActive(self.isEquiped and not self.isFashionHide)
+  local inUseShow = self.isEquiped and not self.isFashionHide
+  self.objInUse:SetActive(inUseShow)
+  if inUseShow and self.fashionItemData then
+    local itemId, itemType, equipSite, fashionBagItemId
+    if self.fashionItemData.isAdventureItemData then
+      itemId = self.fashionItemData.staticId
+      local savedItems = self.fashionItemData.savedItemDatas
+      for i = 1, #savedItems do
+        local singleItem = savedItems[i]
+        if singleItem and singleItem.equipInfo then
+          itemType = singleItem.staticData and singleItem.staticData.Type
+          local sites = singleItem.equipInfo:GetEquipSite()
+          for j = 1, #sites do
+            local comp = BagProxy.Instance.fashionEquipBag:GetEquipBySite(sites[j])
+            if comp and comp.staticData.id == singleItem.staticData.id then
+              equipSite = sites[j]
+              fashionBagItemId = comp.staticData.id
+              break
+            end
+          end
+          if equipSite then
+            break
+          end
+        end
+      end
+    elseif self.fashionItemData.staticData then
+      itemId = self.fashionItemData.staticData.id
+      itemType = self.fashionItemData.staticData.Type
+      if self.fashionItemData.equipInfo then
+        local sites = self.fashionItemData.equipInfo:GetEquipSite()
+        for j = 1, #sites do
+          local comp = BagProxy.Instance.fashionEquipBag:GetEquipBySite(sites[j])
+          if comp and comp.staticData.id == itemId then
+            equipSite = sites[j]
+            fashionBagItemId = comp.staticData.id
+            break
+          end
+        end
+      end
+    end
+  end
 end
 
 function BagFashionItemCell:TrySetFashionHide(advFashion, isFashionHide)

@@ -6,7 +6,11 @@ FunctionPhotoStorage.PhotoType = {
   GuildIcon = 4,
   Wedding = 5,
   UnionWall = 6,
-  PhotoBoard = 7
+  PhotoBoard = 7,
+  HomeRecommend = 8,
+  HomeBlueprint = 9,
+  HomeCheckPrivate = 10,
+  HomeCheckSnow = 11
 }
 local m_divideChar = "!"
 FunctionPhotoStorage.DivideCharacter = m_divideChar
@@ -21,6 +25,7 @@ autoImport("FunctionPhotoStorage_Scenery")
 autoImport("FunctionPhotoStorage_Wedding")
 autoImport("FunctionPhotoStorage_UnionWall")
 autoImport("FunctionPhotoStorage_GuildIcon")
+autoImport("FunctionPhotoStorage_Home")
 
 function FunctionPhotoStorage.Me()
   if nil == FunctionPhotoStorage.me then
@@ -68,7 +73,11 @@ function FunctionPhotoStorage:Init()
     [FunctionPhotoStorage.PhotoType.Personal] = PhotoCmd_pb.EPHOTOTYPE_PHOTO or 2,
     [FunctionPhotoStorage.PhotoType.GuildIcon] = PhotoCmd_pb.EPHOTOTYPE_GUILD_ICON or 3,
     [FunctionPhotoStorage.PhotoType.Wedding] = PhotoCmd_pb.EPHOTOTYPE_WEDDING or 4,
-    [FunctionPhotoStorage.PhotoType.PhotoBoard] = PhotoCmd_pb.EPHOTOTYPE_BOARD or 5
+    [FunctionPhotoStorage.PhotoType.PhotoBoard] = PhotoCmd_pb.EPHOTOTYPE_BOARD or 5,
+    [FunctionPhotoStorage.PhotoType.HomeRecommend] = PhotoCmd_pb.EPHOTOTYPE_HOME_RECOMMEND or 7,
+    [FunctionPhotoStorage.PhotoType.HomeBlueprint] = PhotoCmd_pb.EPHOTOTYPE_HOME_BLUEPRINT or 10,
+    [FunctionPhotoStorage.PhotoType.HomeCheckPrivate] = PhotoCmd_pb.EPHOTOTYPE_HOME_CHECK_PRIVATE or 8,
+    [FunctionPhotoStorage.PhotoType.HomeCheckSnow] = PhotoCmd_pb.EPHOTOTYPE_HOME_CHECK_SNOW or 9
   }
   self.photoPath = {
     [FunctionPhotoStorage.PhotoType.SceneryRole] = IOPathConfig.Paths.Extension.ScenicSpotPhotoRolesOrigin,
@@ -85,6 +94,17 @@ function FunctionPhotoStorage:Init()
     [FunctionPhotoStorage.PhotoType.Wedding] = IOPathConfig.Paths.USER.MarryPhotoThumbnail,
     [FunctionPhotoStorage.PhotoType.UnionWall] = IOPathConfig.Paths.USER.UnionWallPhotoThumbnail,
     [FunctionPhotoStorage.PhotoType.GuildIcon] = IOPathConfig.Paths.USER.UnionLogoThumbnail
+  }
+  local homeRootDir = IOPathConfig.Paths.USER.Role .. "/HomePhoto"
+  self.homePathMap = {
+    [FunctionPhotoStorage.PhotoType.HomeRecommend] = {
+      origin = homeRootDir .. "/Recommend/Origin",
+      thumb = homeRootDir .. "/Recommend/Thumbnail"
+    },
+    [FunctionPhotoStorage.PhotoType.HomeBlueprint] = {
+      origin = homeRootDir .. "/Blueprint/Origin",
+      thumb = homeRootDir .. "/Blueprint/Thumbnail"
+    }
   }
   self.photoPathMap = {}
   self.photoTypeMap = {}
@@ -137,7 +157,7 @@ function FunctionPhotoStorage:DownloadPhoto(photoType, photoIndex, timestamp, is
       if funcOnFinish then
         funcOnFinish(localData)
       end
-      self:SendDownloadFinishMsg(photoType, photoIndex, timestamp, isThumb, localData, errorMsg)
+      self:SendDownloadFinishMsg(photoType, photoIndex, timestamp, isThumb, localData, errorMsg, customParam)
     end)
     return
   end
@@ -365,6 +385,7 @@ function FunctionPhotoStorage:GetUrlAndUploadData(strPath, data)
     for i = 1, #params do
       uploadFields[#uploadFields + 1] = params[i].key
       uploadFields[#uploadFields + 1] = params[i].value
+      redlog("GetUrlAndUploadData params[i].key = " .. tostring(params[i].key), "params[i].value = " .. tostring(params[i].value))
     end
     url = UpyunInfo.GetFormUploadURL()
   else

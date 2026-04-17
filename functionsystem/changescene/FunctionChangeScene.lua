@@ -404,7 +404,8 @@ function FunctionChangeScene:AllFinishLoad(sceneInfo)
   Game.MapManager:Launch()
   MyLuaSrv.ClearLuaMapAsset()
   if needStaticCombine then
-    local isHome = GameConfig.Home.MapDatas[sceneInfo.mapID] ~= nil
+    local homeConfig = HomeManager.Me():GetHomeConfig()
+    local isHome = homeConfig.MapDatas[sceneInfo.mapID] ~= nil
     if not isHome then
       local go = GameObject.Find("static")
       if not Slua.IsNull(go) then
@@ -468,6 +469,7 @@ function FunctionChangeScene:ClearScene(loadOtherScene)
   GameObjPool.Instance:ClearAll()
   GvgProxy.Instance:ClearRuleGuildInfos()
   FunctionAbyssDragon.Me():Shutdown()
+  FunctionSnowman.Me():Shutdown()
 end
 
 function FunctionChangeScene:RunMapActivityBossAnime(mapId)
@@ -510,7 +512,7 @@ function FunctionChangeScene:UpdateGCStrategy()
   local mapManager = Game.MapManager
   if Game.ActiveTimingGC and mapManager then
     local isTimingGCEnabled = true
-    if mapManager:IsPveMode_Arena() or mapManager:IsPVPMode_TeamPws() or mapManager:IsPvPMode_TeamTwelve() or mapManager:IsPVEMode_ComodoRaid() or mapManager:IsPVEMode_MultiBossRaid() or mapManager:IsPveMode_Thanatos() then
+    if mapManager:IsPveMode_Arena() or mapManager:IsPVPMode_TeamPws() or mapManager:IsPvPMode_TeamTwelve() or mapManager:IsPVEMode_ComodoRaid() or mapManager:IsPVEMode_MultiBossRaid() or mapManager:IsPveMode_Thanatos() or mapManager:IsPVEMode_DestroyAirShip() then
       isTimingGCEnabled = false
     end
     Game.ActiveTimingGC(isTimingGCEnabled)

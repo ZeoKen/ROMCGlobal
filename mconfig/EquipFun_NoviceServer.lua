@@ -9,11 +9,11 @@ local _CheckSpiritType_1or2 = function(id)
 end
 local _CheckEquipIsNew = function(id)
   local staticEquip = Table_Equip[id]
-  return nil ~= staticEquip and staticEquip.IsNew == 1
+  return nil ~= staticEquip and (staticEquip.IsNew == 1 or staticEquip.IsNew == 2)
 end
 local _CheckEquipIsNotNew = function(id)
   local staticEquip = Table_Equip[id]
-  return nil ~= staticEquip and staticEquip.IsNew ~= 1
+  return nil ~= staticEquip and (staticEquip.IsNew == 1 or staticEquip.IsNew == 2)
 end
 local _CheckEquipIsWeapon = function(id)
   local staticEquip = Table_Equip[id]

@@ -206,7 +206,7 @@ end
 
 function HeadIconCell:SetData(data)
   self.data = data
-  local hairID, headID, faceID, mouthID, bodyID, eyeID = self:ParseDisplayLogic(self.data.hairID, self.data.headID, self.data.faceID, self.data.mouthID, self.data.bodyID, self.data.eyeID, self.data.gender)
+  local hairID, headID, faceID, mouthID, bodyID, eyeID, haircolor = self:ParseDisplayLogic(self.data.hairID, self.data.headID, self.data.faceID, self.data.mouthID, self.data.bodyID, self.data.eyeID, self.data.haircolor, self.data.gender, self.data.head_fashion)
   local bodydata = Table_Body[bodyID]
   if bodydata ~= nil and bodydata.HeadIcon ~= "" then
     self:SetSimpleIcon(bodydata.HeadIcon)
@@ -250,13 +250,20 @@ end
 local parts = Asset_Role.CreatePartArray()
 local PartIndex = Asset_Role.PartIndexEx
 
-function HeadIconCell:ParseDisplayLogic(hairID, headID, faceID, mouthID, bodyID, eyeID, gender)
+function HeadIconCell:ParseDisplayLogic(hairID, headID, faceID, mouthID, bodyID, eyeID, hairColorID, gender, headFashion)
   parts[PartIndex.Hair] = hairID or 0
   parts[PartIndex.Head] = headID or 0
   parts[PartIndex.Face] = faceID or 0
   parts[PartIndex.Mouth] = mouthID or 0
   parts[PartIndex.Body] = bodyID or 0
   parts[PartIndex.Eye] = eyeID or 0
+  if headFashion and headFashion ~= "" then
+    local rets = string.split(headFashion, ";")
+    if rets and 2 <= #rets then
+      parts[PartIndex.HeadFashionIndex1] = tonumber(rets[1]) or 0
+      parts[PartIndex.HeadFashionIndex2] = tonumber(rets[2]) or 0
+    end
+  end
   Asset_Role.PreprocessParts(parts, gender)
   return parts[PartIndex.Hair], parts[PartIndex.Head], parts[PartIndex.Face], parts[PartIndex.Mouth], parts[PartIndex.Body], parts[PartIndex.Eye]
 end
@@ -986,8 +993,34 @@ function MyHeadIconCell:Refresh(pFrame)
       local mouthID = userData:Get(UDEnum.MOUTH) or nil
       local eye = userData:Get(UDEnum.EYE) or nil
       local portraitFrame = pFrame or userData:Get(UDEnum.PORTRAIT_FRAME) or nil
+      if headID and 0 < headID and GameConfig.Snow and GameConfig.Snow.FashionItemId and headID == GameConfig.Snow.FashionItemId then
+        local headFashionBytes = userData:GetBytes(UDEnum.HEAD_FASHION)
+        if headFashionBytes and headFashionBytes ~= "" then
+          local rets = string.split(headFashionBytes, ";")
+          if rets and 2 <= #rets then
+            local index1 = tonumber(rets[1]) or 0
+            local index2 = tonumber(rets[2]) or 0
+            if 0 < index1 and 0 < index2 and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[index2] then
+              local fashionConfig = GameConfig.Snow.Fashion[index2]
+              if fashionConfig[index1] then
+                headID = fashionConfig[index1]
+              end
+            elseif 0 < index1 and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[1] then
+              local fashionConfig = GameConfig.Snow.Fashion[1]
+              if fashionConfig[index1] then
+                headID = fashionConfig[index1]
+              end
+            elseif 0 < index2 and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[index2] then
+              local fashionConfig = GameConfig.Snow.Fashion[index2]
+              if fashionConfig[1] then
+                headID = fashionConfig[1]
+              end
+            end
+          end
+        end
+      end
       self:SetHairColor(hairID, haircolor)
-      hairID, headID, faceID, mouthID = self:ParseDisplayLogic(hairID, headID, faceID, mouthID, sex)
+      hairID, headID, faceID, mouthID = self:ParseDisplayLogic(hairID, headID, faceID, mouthID, bodyID, eye, sex)
       self:SetHair(hairID)
       self:SetHairAccessory(hairID)
       self:SetBody(bodyID)

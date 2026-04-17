@@ -3,6 +3,7 @@ HomeScoreLvPopUp = class("HomeScoreLvPopUp", BaseView)
 HomeScoreLvPopUp.ViewType = UIViewType.PopUpLayer
 
 function HomeScoreLvPopUp:Init()
+  self.houseType = self.viewdata and self.viewdata.viewdata
   self:FindObjs()
   self:AddEvts()
   self:AddViewEvts()
@@ -32,7 +33,7 @@ function HomeScoreLvPopUp:ClickHelp()
 end
 
 function HomeScoreLvPopUp:UpdateHomeInfo()
-  local myHouseData = HomeProxy.Instance:GetMyHouseData()
+  local myHouseData = HomeProxy.__RealInstance:GetMyHouseData(self.houseType)
   if myHouseData then
     self.labHomeLv.text = string.format(ZhString.Home_Lv, myHouseData.lv or 0)
     if myHouseData:IsMaxLv() then
@@ -48,7 +49,19 @@ function HomeScoreLvPopUp:UpdateHomeInfo()
     self.labHomeScore.text = "0/100"
     self.sliderHomeScore.value = 0
   end
-  self.listHomeScores:ResetDatas(Table_HomeBuff)
+  local datas = {}
+  local config = Game.HomeBuff[HomeProxy.HouseType2ServerHouseType[self.houseType]]
+  if not config then
+    redlog("HomeScoreLvPopUp:UpdateHomeInfo HomeBuff config is nil! houseType = " .. tostring(self.houseType))
+    return
+  end
+  for i = 1, #config do
+    datas[#datas + 1] = {
+      data = config[i],
+      houseType = self.houseType
+    }
+  end
+  self.listHomeScores:ResetDatas(datas)
 end
 
 function HomeScoreLvPopUp:OnEnter()

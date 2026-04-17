@@ -80,8 +80,8 @@ function HomeBuildingCameraControl:InitView()
   self.cameraZoomOnePixels = GameConfig.Home.CameraZoomOnePixels
   self.cameraMinFov = GameConfig.Home.CameraMinFov
   self.cameraMaxFov = GameConfig.Home.CameraMaxFov
-  self.cameraMinPos = GameConfig.Home.CameraMinPos[curMapID]
-  self.cameraMaxPos = GameConfig.Home.CameraMaxPos[curMapID]
+  self.cameraMinPos = HomeManager.Me():GetCameraMinPos(curMapID)
+  self.cameraMaxPos = HomeManager.Me():GetCameraMaxPos(curMapID)
   if not self.cameraMaxPos or not self.cameraMaxPos then
     LogUtility.Error(string.format("没有找到地图: %s的摄像机范围配置！", curMapID))
     self.container:CloseSelf()
@@ -293,8 +293,9 @@ function HomeBuildingCameraControl:ResetCameraToEditStartPos(callbackOnFinished)
   local curMapSData = HomeManager.Me():GetCurMapSData()
   local curMapID = curMapSData and curMapSData.id or 3007
   self.tabCameraWorld.tsfRotateRoot.parent = self.tsfWorldRoot
-  self.tabCameraWorld.tsfRotateRoot.position = LuaGeometry.GetTempVector3(unpack(GameConfig.Home.CameraStartPos[curMapID]))
-  local x, y, z = unpack(GameConfig.Home.CameraStartRotate[curMapID])
+  local homeConfig = HomeManager.Me():GetHomeConfig()
+  self.tabCameraWorld.tsfRotateRoot.position = LuaGeometry.GetTempVector3(unpack(HomeManager.Me():GetCameraStartPos(curMapID)))
+  local x, y, z = unpack(homeConfig.CameraStartRotate[curMapID])
   self.tabCameraWorld.tsfMoveRoot.eulerAngles = LuaGeometry.GetTempVector3(0, y, 0)
   self.tabCameraWorld.tsfRotateRoot.eulerAngles = LuaGeometry.GetTempVector3(x, y, z)
   local ray = self.tabCameraWorld.cameraCopy:ScreenPointToRay(self.vecScreenCenter)
@@ -306,7 +307,7 @@ function HomeBuildingCameraControl:ResetCameraToEditStartPos(callbackOnFinished)
   end
   self.tabCameraWorld.tsfMoveRoot.position = hitInfo.point
   self.tabCameraWorld.tsfRotateRoot.parent = self.tabCameraWorld.tsfMoveRoot
-  local startFov = GameConfig.Home.CameraStartFov[curMapID]
+  local startFov = homeConfig.CameraStartFov[curMapID]
   self.tabCameraWorld.cameraCopy.fieldOfView = startFov
   for i = 1, #self.tabCameraWorld.allCameras do
     TweenFOV.Begin(self.tabCameraWorld.allCameras[i].gameObject, 0.5, startFov)

@@ -25,6 +25,9 @@ function SceneTriggerProxy:ctor(proxyName, data)
   self.typeFunc[AreaTrigger_Common_ClientType.EndlessBattleField_Occupy] = self.EndlessBattle_OccupyArea_Handle
   self.typeFunc[AreaTrigger_Common_ClientType.AybssLake_BattlePoint] = self.AybssLake_BattlePoint_Handle
   self.typeFunc[AreaTrigger_Common_ClientType.AbyssDragon_Area] = self.AbyssDragon_Area_Handle
+  self.typeFunc[AreaTrigger_Common_ClientType.Snowman_Area] = self.SnowRealm_Snowman_Area_Handle
+  self.typeFunc[AreaTrigger_Common_ClientType.SnowRealm_Area] = self.SnowRealm_Area_Handle
+  self.typeFunc[AreaTrigger_Common_ClientType.SnowRealm_Room] = self.SnowRealm_Room_Handle
 end
 
 function SceneTriggerProxy:Reset()
@@ -220,6 +223,33 @@ function SceneTriggerProxy:AbyssDragon_Area_Handle(data)
   result.id = data.id
   result.pos = LuaVector3(data.pos[1], data.pos[2], data.pos[3])
   result.reachDis = data.range
+  result.type = data.type
+  return result
+end
+
+function SceneTriggerProxy:SnowRealm_Snowman_Area_Handle(data)
+  local result = ReusableTable.CreateTable()
+  result.id = data.id
+  result.pos = LuaVector3(data.pos[1], data.pos[2], data.pos[3])
+  result.reachDis = data.range
+  result.type = data.type
+  return result
+end
+
+function SceneTriggerProxy:SnowRealm_Area_Handle(data)
+  local result = ReusableTable.CreateTable()
+  result.id = data.id
+  result.distanceCheck = data.distanceCheck
+  result.rectPos = data.rectPos
+  result.type = data.type
+  return result
+end
+
+function SceneTriggerProxy:SnowRealm_Room_Handle(data)
+  local result = ReusableTable.CreateTable()
+  result.id = data.id
+  result.distanceCheck = data.distanceCheck
+  result.rectPos = data.rectPos
   result.type = data.type
   return result
 end

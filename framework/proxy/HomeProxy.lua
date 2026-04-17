@@ -5,6 +5,7 @@ autoImport("HomeContentData")
 autoImport("NFurnitureData")
 autoImport("HouseData")
 autoImport("HomeBluePrintData")
+autoImport("SnowRealmProxy")
 HomeProxy = class("HomeProxy", pm.Proxy)
 HomeProxy.Instance = nil
 HomeProxy.NAME = "HomeProxy"
@@ -29,12 +30,18 @@ HomeProxy.Oper = {
   WoodOver = HomeCmd_pb.EFURNITUREOPER_WOOD_OVER,
   WoodClear = HomeCmd_pb.EFURNITUREOPER_WOOD_CLEAR,
   AddMessage = HomeCmd_pb.EFURNITUREOPER_BOARD_ADDMSG,
-  DelMessage = HomeCmd_pb.EFURNITUREOPER_BOARD_DELMSG
+  DelMessage = HomeCmd_pb.EFURNITUREOPER_BOARD_DELMSG,
+  Touch = HomeCmd_pb.EFURNITUREOPER_TOUCH
 }
 HomeProxy.HouseType = {
   Home = 1,
   Garden = 2,
+  Snow = 3,
   MarrageHouse = 4
+}
+HomeProxy.HouseType2ServerHouseType = {
+  [HomeProxy.HouseType.Home] = HomeCmd_pb.EHOUSETYPE_PRIVATE,
+  [HomeProxy.HouseType.Snow] = HomeCmd_pb.EHOUSETYPE_SNOW
 }
 
 function HomeProxy:ctor(proxyName, data)
@@ -49,6 +56,46 @@ function HomeProxy:ctor(proxyName, data)
   self:InitDataUpdateHandler()
   self:InitRenovationDataUpdateHandler()
   self:InitHouseOptDataUpdateHandler()
+  if not HomeProxy.__RouterInstalled then
+    HomeProxy.__RealInstance = HomeProxy.Instance
+    local _IsSnowRealmMap = function(mapID)
+      local homeMapConfig = GameConfig.SnowRealm and GameConfig.SnowRealm.MapDatas
+      local curHouseConfig = homeMapConfig and homeMapConfig[mapID]
+      return curHouseConfig ~= nil
+    end
+    local _CurrentProxy = function()
+      local curMapID = Game.MapManager:GetMapID()
+      if curMapID and _IsSnowRealmMap(curMapID) then
+        return SnowRealmProxy.Instance
+      end
+      return HomeProxy.__RealInstance
+    end
+    local HomeProxyRouter = {}
+    setmetatable(HomeProxyRouter, {
+      __index = function(_, k)
+        local impl = _CurrentProxy()
+        local v = impl and impl[k]
+        if v == nil and HomeProxy.__RealInstance then
+          v = HomeProxy.__RealInstance[k]
+          impl = HomeProxy.__RealInstance
+        end
+        if type(v) == "function" then
+          return function(_, ...)
+            return v(impl, ...)
+          end
+        end
+        return v
+      end,
+      __newindex = function(_, k, v)
+        local impl = _CurrentProxy() or HomeProxy.__RealInstance
+        if impl then
+          impl[k] = v
+        end
+      end
+    })
+    HomeProxy.Instance = HomeProxyRouter
+    HomeProxy.__RouterInstalled = true
+  end
 end
 
 function HomeProxy:Init()
@@ -238,6 +285,9 @@ function HomeProxy:GetMyHouseData(houseType)
   if not houseType or houseType == HomeProxy.HouseType.Home then
     return self.myHouseData
   end
+  if houseType == HomeProxy.HouseType.Snow then
+    return SnowRealmProxy.Instance:GetMyHouseData()
+  end
   if houseType == HomeProxy.HouseType.Garden then
     return self.myGardenData
   end
@@ -246,6 +296,10 @@ end
 function HomeProxy:GetMyHouseDataByMapID(mapID)
   if self.myHouseData and (not mapID or mapID == self.myHouseData.mapID) then
     return self.myHouseData
+  end
+  local myHouseData = SnowRealmProxy.Instance:GetMyHouseDataByMapID(mapID)
+  if myHouseData then
+    return myHouseData
   end
   if self.myGardenData and mapID == self.myGardenData.mapID then
     return self.myGardenData
@@ -378,6 +432,9 @@ function HomeProxy:GetMyFurnitureSimpleDatas(houseType)
   if not houseType or houseType == HomeProxy.HouseType.Home then
     return self.myHomeFurnitureSimpleDatas
   end
+  if houseType == HomeProxy.HouseType.Snow then
+    return SnowRealmProxy.Instance:GetMyFurnitureSimpleDatas()
+  end
   if houseType == HomeProxy.HouseType.Garden then
     return self.myGardenFurnitureSimpleDatas
   end
@@ -386,6 +443,10 @@ end
 function HomeProxy:GetMyFurnitureSimpleDatasByMapID(mapID)
   if self.myHouseData and self.myHouseData.mapID == mapID then
     return self.myHomeFurnitureSimpleDatas
+  end
+  local myFurnitureSimpleDatas = SnowRealmProxy.Instance:GetMyFurnitureSimpleDatasByMapID(mapID)
+  if myFurnitureSimpleDatas then
+    return myFurnitureSimpleDatas
   end
   if self.myGardenData and self.myGardenData.mapID == mapID then
     return self.myGardenFurnitureSimpleDatas
@@ -425,7 +486,9 @@ function HomeProxy:CalMyHouseScore_Client()
   self.myHouseScore = 0
   local tempTypeMap = ReusableTable.CreateTable()
   for k, v in pairs(HomeProxy.HouseType) do
-    self:GenerateSingleHouseScoreMap_Client(v, tempTypeMap)
+    if v ~= HomeProxy.HouseType.Snow then
+      self:GenerateSingleHouseScoreMap_Client(v, tempTypeMap)
+    end
   end
   for typeID, furnitureSData in pairs(tempTypeMap) do
     self.myHouseScore = self.myHouseScore + furnitureSData.HomeScore
@@ -530,7 +593,11 @@ function HomeProxy:HandleQueryHomeDataHomeCmd(serverDatas)
     return
   end
   if serverDatas.house then
-    self.myHouseData = BaseHouseData.new(serverDatas.house)
+    if serverDatas.house.ftype == HomeCmd_pb.EHOUSETYPE_PRIVATE then
+      self.myHouseData = BaseHouseData.new(serverDatas.house)
+    elseif serverDatas.house.ftype == HomeCmd_pb.EHOUSETYPE_SNOW then
+      SnowRealmProxy.Instance:HandleQueryHomeDataHomeCmd(serverDatas)
+    end
   end
   if serverDatas.garden then
     self.myGardenData = BaseHouseData.new(serverDatas.garden)
@@ -540,15 +607,22 @@ end
 function HomeProxy:HandleRecvQueryHouseFurnitureHomeCmd(serverDatas)
   local sessionid = serverDatas.sessionid
   local furnitureType = serverDatas.type
-  if self.sessionid and self.sessionid ~= sessionid then
+  if self.sessionid ~= sessionid then
     TableUtility.TableClear(self.myHomeFurnitureSimpleDatas)
     TableUtility.TableClear(self.myGardenFurnitureSimpleDatas)
   end
-  if furnitureType == 1 then
+  redlog("HandleRecvQueryHouseFurnitureHomeCmd", tostring(furnitureType))
+  if furnitureType == HomeCmd_pb.EQUERYFURNITURE_HOUSE then
+    redlog("冒险家园家具数据")
     self:GenerateFurnitureSimpleDatas(self.myHomeFurnitureSimpleDatas, serverDatas.furnitures)
-  elseif furnitureType == 2 then
+  elseif furnitureType == HomeCmd_pb.EQUERYFURNITURE_GARDEN then
+    redlog("花园家具数据")
     self:GenerateFurnitureSimpleDatas(self.myGardenFurnitureSimpleDatas, serverDatas.furnitures)
+  elseif furnitureType == HomeCmd_pb.EQUERYFURNITURE_SNOW then
+    redlog("雪花之地家具数据")
+    SnowRealmProxy.Instance:HandleRecvQueryHouseFurnitureHomeCmd(serverDatas)
   end
+  self.sessionid = sessionid
 end
 
 function HomeProxy:GenerateFurnitureSimpleDatas(targetList, serverDatas)
@@ -561,6 +635,7 @@ function HomeProxy:GenerateFurnitureSimpleDatas(targetList, serverDatas)
   for i = 1, #serverDatas do
     sFurniture = serverDatas[i]
     furnitureSData = tableFurniture[sFurniture.id]
+    redlog("GenerateFurnitureSimpleDatas", tostring(sFurniture.id))
     itemSData = tableItem[sFurniture.id]
     itemType = itemSData and itemSData.Type
     if itemType then
@@ -640,19 +715,26 @@ function HomeProxy:_HandleUpdateSoundList()
 end
 
 function HomeProxy:HandleOptUpdateHomeCmd(serverDatas)
-  helplog("HomeProxy:HandleOptUpdateHomeCmd:")
+  helplog("HomeProxy:HandleOptUpdateHomeCmd:", tostring(serverDatas.type))
   local accid = serverDatas.accid
   local setsuc = false
-  if self.myHouseData and accid == self.myHouseData.accid then
-    self.myHouseData:UpdateHomeOptData(serverDatas)
-    setsuc = true
-  end
-  if self.curHouseData and accid == self.curHouseData.accid then
-    local dataType, value = self.curHouseData:UpdateHomeOptData(serverDatas)
-    if self.houseOptDataUpdateHandler[dataType] then
-      self.houseOptDataUpdateHandler[dataType](self, value)
+  if accid == self.myHouseData.accid then
+    if serverDatas.type == HomeCmd_pb.EHOUSETYPE_PRIVATE then
+      if self.myHouseData then
+        self.myHouseData:UpdateHomeOptData(serverDatas)
+        setsuc = true
+      end
+      if self.curHouseData and accid == self.curHouseData.accid then
+        local dataType, value = self.curHouseData:UpdateHomeOptData(serverDatas)
+        if self.houseOptDataUpdateHandler[dataType] then
+          self.houseOptDataUpdateHandler[dataType](self, value)
+        end
+        setsuc = true
+      end
+    elseif serverDatas.type == HomeCmd_pb.EHOUSETYPE_SNOW then
+      SnowRealmProxy.Instance:HandleOptUpdateHomeCmd(serverDatas)
+      setsuc = true
     end
-    setsuc = true
   end
   if not setsuc then
     LogUtility.Error(string.format("未找到accid: %s的房屋数据，更新失败！", accid))
@@ -673,6 +755,7 @@ function HomeProxy:HandleQueryFurnitureDatas(serverDatas)
   HomeManager.Me():ClearFurnitures()
   HomeManager.Me():ClearClientFurnitures()
   self:ClearFurnitureDatas()
+  self:ClearFeedingPets()
   self.curHouseData = HouseData.new(serverDatas.house)
   self.isAtMyselfHome = self.curHouseData.accid == FunctionLogin.Me():getLoginData().accid
   self.isMyHouseScoreDirty = true
@@ -829,8 +912,19 @@ function HomeProxy:InitDataUpdateHandler()
     [NFurnitureData.EnumDataType.State] = self._HandleStateDataUpdate,
     [NFurnitureData.EnumDataType.Seats] = self._HandleSeatsDataUpdate,
     [NFurnitureData.EnumDataType.Photo] = self._HandlePhotoDataUpdate,
-    [NFurnitureData.EnumDataType.Skada] = self._HandleSkadaDataUpdate
+    [NFurnitureData.EnumDataType.Skada] = self._HandleSkadaDataUpdate,
+    [NFurnitureData.EnumDataType.Anim] = self._HandleAnimDataUpdate
   }
+end
+
+function HomeProxy:_HandleAnimDataUpdate(data, nFurniture, animData)
+  if nFurniture == nil then
+    return
+  end
+  local animID = data and data.animID or 0
+  if animID ~= 0 then
+    nFurniture:PlayActionByID(animID, true)
+  end
 end
 
 function HomeProxy:_HandleStateDataUpdate(data, nFurniture)
@@ -1056,4 +1150,34 @@ function HomeProxy:RecvFurnitureOperHomeCmd(data)
   if data.oper == self.Oper.Action then
     nfurniture:PlayActionByID(data.value, true)
   end
+end
+
+local HouseTypeList = {
+  {
+    id = HomeProxy.HouseType.Home,
+    name = ZhString.HomeMainView_TabHome
+  },
+  {
+    id = HomeProxy.HouseType.Snow,
+    name = ZhString.HomeMainView_TabSnow
+  }
+}
+
+function HomeProxy:GetHouseTypeList()
+  local list = {}
+  for i = 1, #HouseTypeList do
+    local data = HouseTypeList[i]
+    local serverType = HomeProxy.HouseType2ServerHouseType[data.id]
+    if serverType then
+      local menuid = GameConfig.Home.HomeTypeMenu and GameConfig.Home.HomeTypeMenu[serverType]
+      if FunctionUnLockFunc.Me():CheckCanOpen(menuid) then
+        list[#list + 1] = data
+      end
+    end
+  end
+  return list
+end
+
+function HomeProxy:GetCurSoundList()
+  return self.curSoundList
 end

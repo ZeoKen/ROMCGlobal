@@ -223,12 +223,20 @@ function ServantContainerData:SetActivityData()
     return
   end
   local valid
+  local _FuncState = Table_FuncState
   for k, v in pairs(Table_ServantCalendar) do
     if v.FuncState then
-      valid = nil == Table_FuncState[v.FuncState] or FunctionUnLockFunc.checkFuncStateValid(v.FuncState)
+      valid = nil == _FuncState[v.FuncState] or FunctionUnLockFunc.checkFuncStateValid(v.FuncState)
       if valid then
         if v.id == 14 then
           valid = WarbandProxy.Instance:CheckCalendarTimeValid(PvpProxy.Type.TeamPwsChampion, self.dayStartTime)
+        elseif v.id == 8 then
+          valid = WarbandProxy.Instance:CheckCalendarTimeValid(PvpProxy.Type.SuGVG, self.dayStartTime)
+          if valid then
+            valid = not GvgProxy.Instance:InBreakTime(self.dayStartTime)
+          end
+        elseif v.id == 6 or v.id == 7 then
+          valid = not GvgProxy.Instance:InBreakTime(self.dayStartTime)
         elseif v.id == 4 then
           valid = WarbandProxy.Instance:CheckCalendarTimeValid(PvpProxy.Type.TeamPws, self.dayStartTime)
         elseif v.id == 12 then

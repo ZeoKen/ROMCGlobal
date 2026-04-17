@@ -13,7 +13,10 @@ AreaTrigger_Common_ClientType = {
   EndlessBattleField_EventArea = 100008,
   EndlessBattleField_Occupy = 100009,
   AybssLake_BattlePoint = 100020,
-  AbyssDragon_Area = 100021
+  AbyssDragon_Area = 100021,
+  Snowman_Area = 100024,
+  SnowRealm_Area = 100022,
+  SnowRealm_Room = 100023
 }
 
 function AreaTrigger_Common:ctor()
@@ -35,6 +38,9 @@ function AreaTrigger_Common:ctor()
   self.triggerEnterCall[AreaTrigger_Common_ClientType.EndlessBattleField_EventArea] = self.Enter_EndlessBattleFieldEventArea
   self.triggerEnterCall[AreaTrigger_Common_ClientType.AybssLake_BattlePoint] = self.Enter_AybssLakeBattleArea
   self.triggerEnterCall[AreaTrigger_Common_ClientType.AbyssDragon_Area] = self.Enter_AbyssDragonArea
+  self.triggerEnterCall[AreaTrigger_Common_ClientType.Snowman_Area] = self.Enter_SnowmanArea
+  self.triggerEnterCall[AreaTrigger_Common_ClientType.SnowRealm_Area] = self.Enter_SnowRealmArea
+  self.triggerEnterCall[AreaTrigger_Common_ClientType.SnowRealm_Room] = self.Enter_SnowRealmRoom
   self.triggerLeaveCall = {}
   self.triggerLeaveCall[SceneMap_pb.EACTTYPE_PURIFY] = self.LeavePurify
   self.triggerLeaveCall[SceneMap_pb.EACTTYPE_SEAL] = self.LeaveSeal
@@ -52,6 +58,9 @@ function AreaTrigger_Common:ctor()
   self.triggerLeaveCall[AreaTrigger_Common_ClientType.EndlessBattleField_EventArea] = self.Leave_EndlessBattleFieldEventArea
   self.triggerLeaveCall[AreaTrigger_Common_ClientType.AybssLake_BattlePoint] = self.Leave_AybssLakeBattleArea
   self.triggerLeaveCall[AreaTrigger_Common_ClientType.AbyssDragon_Area] = self.Leave_AbyssDragonArea
+  self.triggerLeaveCall[AreaTrigger_Common_ClientType.Snowman_Area] = self.Leave_SnowmanArea
+  self.triggerLeaveCall[AreaTrigger_Common_ClientType.SnowRealm_Area] = self.Leave_SnowRealmArea
+  self.triggerLeaveCall[AreaTrigger_Common_ClientType.SnowRealm_Room] = self.Leave_SnowRealmRoom
   self.triggerRemoveCall = {}
   self.triggerRemoveCall[SceneMap_pb.EACTTYPE_PURIFY] = self.LeavePurify
   self.triggerRemoveCall[SceneMap_pb.EACTTYPE_SEAL] = self.RemoveSeal
@@ -65,6 +74,9 @@ function AreaTrigger_Common:ctor()
   self.triggerRemoveCall[AreaTrigger_Common_ClientType.EndlessBattleField_EventArea] = self.Remove_EndlessBattleFieldEventArea
   self.triggerRemoveCall[AreaTrigger_Common_ClientType.AybssLake_BattlePoint] = self.Remove_AybssLakeBattleArea
   self.triggerRemoveCall[AreaTrigger_Common_ClientType.AbyssDragon_Area] = self.Remove_AbyssDragonArea
+  self.triggerRemoveCall[AreaTrigger_Common_ClientType.Snowman_Area] = self.Remove_SnowmanArea
+  self.triggerRemoveCall[AreaTrigger_Common_ClientType.SnowRealm_Area] = self.Remove_SnowRealmArea
+  self.triggerRemoveCall[AreaTrigger_Common_ClientType.SnowRealm_Room] = self.Remove_SnowRealmRoom
 end
 
 function AreaTrigger_Common:Launch()
@@ -354,4 +366,58 @@ function AreaTrigger_Common:Remove_AbyssDragonArea(trigger)
   redlog("Remove_AbyssDragonArea", trigger.id)
   GameFacade.Instance:sendNotification(TriggerEvent.RemoveAbyssDragonArea, trigger.id)
   EventManager.Me():PassEvent(TriggerEvent.RemoveAbyssDragonArea, trigger.id)
+end
+
+function AreaTrigger_Common:Enter_SnowmanArea(trigger)
+  redlog("Enter_SnowmanArea", trigger.id)
+  GameFacade.Instance:sendNotification(TriggerEvent.EnterSnowmanArea, trigger.id)
+  EventManager.Me():PassEvent(TriggerEvent.EnterSnowmanArea, trigger.id)
+end
+
+function AreaTrigger_Common:Leave_SnowmanArea(trigger)
+  redlog("Leave_SnowmanArea", trigger.id)
+  GameFacade.Instance:sendNotification(TriggerEvent.LeaveSnowmanArea, trigger.id)
+  EventManager.Me():PassEvent(TriggerEvent.LeaveSnowmanArea, trigger.id)
+end
+
+function AreaTrigger_Common:Remove_SnowmanArea(trigger)
+  redlog("Remove_SnowmanArea", trigger.id)
+  GameFacade.Instance:sendNotification(TriggerEvent.RemoveSnowmanArea, trigger.id)
+  EventManager.Me():PassEvent(TriggerEvent.RemoveSnowmanArea, trigger.id)
+end
+
+function AreaTrigger_Common:Enter_SnowRealmArea(trigger)
+  redlog("Enter_SnowRealmArea", trigger.id)
+  GameFacade.Instance:sendNotification(TriggerEvent.EnterSnowRealmArea, trigger.id)
+  EventManager.Me():PassEvent(TriggerEvent.EnterSnowRealmArea, trigger.id)
+end
+
+function AreaTrigger_Common:Leave_SnowRealmArea(trigger)
+  redlog("Leave_SnowRealmArea", trigger.id)
+  GameFacade.Instance:sendNotification(TriggerEvent.LeaveSnowRealmArea, trigger.id)
+  EventManager.Me():PassEvent(TriggerEvent.LeaveSnowRealmArea, trigger.id)
+end
+
+function AreaTrigger_Common:Remove_SnowRealmArea(trigger)
+  redlog("Remove_SnowRealmArea", trigger.id)
+  GameFacade.Instance:sendNotification(TriggerEvent.RemoveSnowRealmArea, trigger.id)
+  EventManager.Me():PassEvent(TriggerEvent.RemoveSnowRealmArea, trigger.id)
+end
+
+function AreaTrigger_Common:Enter_SnowRealmRoom(trigger)
+  redlog("Enter_SnowRealmRoom", trigger.id)
+  GameFacade.Instance:sendNotification(TriggerEvent.EnterSnowRealmRoom, trigger.id)
+  EventManager.Me():PassEvent(TriggerEvent.EnterSnowRealmRoom, trigger.id)
+end
+
+function AreaTrigger_Common:Leave_SnowRealmRoom(trigger)
+  redlog("Leave_SnowRealmRoom", trigger.id)
+  GameFacade.Instance:sendNotification(TriggerEvent.LeaveSnowRealmRoom, trigger.id)
+  EventManager.Me():PassEvent(TriggerEvent.LeaveSnowRealmRoom, trigger.id)
+end
+
+function AreaTrigger_Common:Remove_SnowRealmRoom(trigger)
+  redlog("Remove_SnowRealmRoom", trigger.id)
+  GameFacade.Instance:sendNotification(TriggerEvent.RemoveSnowRealmRoom, trigger.id)
+  EventManager.Me():PassEvent(TriggerEvent.RemoveSnowRealmRoom, trigger.id)
 end

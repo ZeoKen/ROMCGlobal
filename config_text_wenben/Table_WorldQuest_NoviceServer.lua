@@ -628,6 +628,126 @@ Table_WorldQuest = {
     StartCondition = _EmptyTable,
     Map = 154,
     Version = 9
+  },
+  [1016110001] = {
+    id = 1016110001,
+    Type = 151,
+    Describe = "巴格复制真正卢甘族的数据用于试验，因此又产生了大量的被污染的低级卢甘族，它们聚集在一起，会对这片土地造成危害。",
+    Name = "回收失败的试验体",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016120001] = {
+    id = 1016120001,
+    Type = 151,
+    Describe = "卢甘族祭司是卢甘族的中等种族，此刻他被巴格控制而狂暴！",
+    Name = "击退袭击者",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016130001] = {
+    id = 1016130001,
+    Type = 151,
+    Describe = "被污染的卢甘族祭司把抵御寒冷的小妙招都藏在他们的小马甲中噢，击败他们，取走他们的小马甲就可以安心过冬啦~",
+    Name = "储备御寒小马甲",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016140001] = {
+    id = 1016140001,
+    Type = 151,
+    Describe = "怪物营地原本是雪花之冠重要材料产出地，如今却被经营魔物所占领！因此导致白鹰护卫队无法从中获得材料提升自己！",
+    Name = "清剿营地",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016150001] = {
+    id = 1016150001,
+    Type = 151,
+    Describe = "被污染的低级卢甘族，此刻正在侵蚀黄金树！",
+    Name = "驱逐黄金树破坏者",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016160001] = {
+    id = 1016160001,
+    Type = 151,
+    Describe = "绵绵冰花海可不是小白鹰吃的甜品噢，是生长在伊斯加尔特最美的存在，不仅如此，它还具有很强大的治愈能力！",
+    Name = "绵绵冰的厉害",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016170001] = {
+    id = 1016170001,
+    Type = 151,
+    Describe = "巴格的飞空艇不定期投下大量被被污染的低级卢甘族。它们落地后即刻暴走，攻击一切生命体，严重威胁白鹰族。",
+    Name = "追击暴走者",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016180001] = {
+    id = 1016180001,
+    Type = 151,
+    Describe = "初雪祭这一天，白鹰族都喜欢去坐旋转木马，然而却被那里的魔物阻拦了回家之路！",
+    Name = "拯救白鹰族",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016190001] = {
+    id = 1016190001,
+    Type = 151,
+    Describe = "白鹰族一般以吃海鱼为主，但自从有人发现卡拉波利的粘液可以制作成粘粘糖后，它们便一发不可收拾的爱上了。",
+    Name = "白鹰族的异食癖好",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016200001] = {
+    id = 1016200001,
+    Type = 151,
+    Describe = "白鹰族的的头是十分怕冷的，但是它们的帽子却被调皮的卡拉波利偷走了，快把它们抢回来！",
+    Name = "帽子之争",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016210001] = {
+    id = 1016210001,
+    Type = 151,
+    Describe = "白鹰族的嘟嘟噜爱上了海蝴蝶！嘟嘟噜说都是飞行种，为什么不可以相爱！",
+    Name = "禁忌之恋",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016220001] = {
+    id = 1016220001,
+    Type = 151,
+    Describe = "拉斯甘德大人一直怀疑，巴格已经将魔爪伸向了卢甘族祭司。去寻找巴格改造卢甘族祭司的证据！",
+    Name = "获取被改造的证据",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
   }
 }
 Table_WorldQuest_fields = {

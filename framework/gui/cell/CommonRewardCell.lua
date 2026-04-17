@@ -14,7 +14,8 @@ function CommonRewardCell:SetData(data)
   else
     self.rewardLabel.gameObject:SetActive(true)
     self.rewardIcon.gameObject:SetActive(true)
-    self.rewardLabel.text = data.NameZh .. "x" .. data.num
+    local num = data.num or 1
+    self.rewardLabel.text = data.NameZh .. "x" .. tostring(num)
     IconManager:SetItemIcon(data.Icon, self.rewardIcon)
     if data.Icon == "item_300" or data.Icon == "item_400" then
       self.rewardIcon.width = 42

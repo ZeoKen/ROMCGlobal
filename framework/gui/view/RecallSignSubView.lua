@@ -48,7 +48,10 @@ function RecallSignSubView:FindObjs(signDays)
   self.helpBtn = self:FindGO("HelpBtn", self.signRoot)
   self.batchLabel = self:FindGO("BatchLabel", self.signRoot):GetComponent(UILabel)
   local gainTipLabelGO = self:FindGO("GainTipLabel", self.signRoot):GetComponent(UIRichLabel)
-  self.gainTipLabel = SpriteLabel.new(gainTipLabelGO, nil, 25, 25, false)
+  if not BranchMgr.IsChina() then
+    gainTipLabelGO.fontSize = 20
+  end
+  self.gainTipLabel = SpriteLabel.new(gainTipLabelGO, nil, 25, 25, true)
   self.signInBtn = self:FindGO("SignInBtn", self.signRoot)
   self:CreateSignCells(signDays)
 end
@@ -160,9 +163,9 @@ function RecallSignSubView:RefreshPage()
   if self.gainTipLabel and self.activityIndex then
     local actualIndex = RecallInfoProxy.Instance:GetIndex(self.activityIndex + 1)
     if actualIndex == 1 then
-      self.gainTipLabel:SetText(ZhString.RecallIntegration_SignIn_RewardTip1)
+      self.gainTipLabel:SetText(GameConfig.UserRecall.SignRewardTip1 or ZhString.RecallIntegration_SignIn_RewardTip1)
     elseif actualIndex == 2 then
-      self.gainTipLabel:SetText(ZhString.RecallIntegration_SignIn_RewardTip2)
+      self.gainTipLabel:SetText(GameConfig.UserRecall.SignRewardTip2 or ZhString.RecallIntegration_SignIn_RewardTip2)
     end
   end
   self:UpdateTimeDisplay()

@@ -38,7 +38,7 @@ function HouseChooseView:ReloadHouses()
       end
     end
   end
-  local myHouseData = HomeProxy.Instance:GetMyHouseData()
+  local myHouseData = HomeProxy.__RealInstance:GetMyHouseData()
   HouseChooseCell.SetSelectID(myHouseData and myHouseData:GetGardenHouseID() or 1)
   self.listHouses:ResetDatas(self.houseDatas)
   self.objNoneTip:SetActive(#self.houseDatas < 1)
@@ -60,7 +60,8 @@ function HouseChooseView:ClickHouseCell(cell)
     MsgManager.ShowMsgByID(49)
     return
   end
-  ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HouseData.HouseOptType.GardenHouse, id)
+  local myHouseData = HomeProxy.__RealInstance:GetMyHouseData()
+  ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, myHouseData and myHouseData.houseType or HomeCmd_pb.EHOUSETYPE_PRIVATE, HouseData.HouseOptType.GardenHouse, id)
   self.ltForbidClick = TimeTickManager.Me():CreateOnceDelayTick(1000, function(owner, deltaTime)
     self.ltForbidClick = nil
   end, self)

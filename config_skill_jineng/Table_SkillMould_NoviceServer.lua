@@ -181,6 +181,7 @@ Table_SkillMould_t = {
     {-4, 4},
     {50, 1},
     {8, 15},
+    {57, 4},
     {-10, 1},
     {16, 3},
     {2, 2},
@@ -212,6 +213,7 @@ Table_SkillMould_t = {
     {7, 6},
     {1, 8},
     {13, 4},
+    {72, 4},
     {15, 5},
     {6, -2},
     {40, 1},
@@ -332,46 +334,56 @@ Table_SkillMould_t = {
     {6, 7},
     {24, 5},
     {19, 11},
+    {65, 4},
+    {61, 4},
+    {53, 4},
     {38, 5},
     {7, 7},
     {24, 2},
     {21, 9},
     {18, 8},
+    {63, 4},
     {53, 5},
+    {59, 4},
     {2, 5},
+    {51, 4},
     {15, 7},
     {-7, 1},
     {20, 17},
+    {59, 3},
+    {51, 3},
+    {63, 2},
+    {59, 2},
     {25, 13},
+    {55, 2},
+    {67, 4},
     {18, 10},
     {9, 5},
     {26, 8},
+    {67, 3},
+    {19, 15},
     {19, 14},
     {25, 2},
     {14, 7},
     {25, 4},
     {41, 4},
-    {8, 5},
-    {59, 3},
-    {51, 3},
-    {63, 2},
-    {59, 2},
-    {55, 2},
-    {32, 3},
-    {67, 3},
-    {23, 12},
-    {19, 15},
     {67, 2},
-    {10, -3},
-    {16, 4},
+    {8, 5},
+    {26, 9},
     {23, 8},
-    {0, -6},
+    {32, 3},
+    {23, 12},
+    {10, -3},
     {13, 2},
+    {16, 4},
+    {0, -6},
+    {72, 2},
     {14, 14},
     {28, 4},
-    {72, 2},
     {29, 3},
     {5, 14},
+    {21, 4},
+    {7, 8},
     {11, 2},
     {-2, 2},
     {22, 11},
@@ -383,7 +395,6 @@ Table_SkillMould_t = {
     {8, 12},
     {17, 8},
     {27, 2},
-    {26, 9},
     {25, 6},
     {3, 8},
     {17, 15},
@@ -439,11 +450,9 @@ Table_SkillMould_t = {
     {12, 13},
     {-9, -3},
     {61, 3},
-    {21, 4},
     {48, 3},
     {2, 8},
     {14, 10},
-    {7, 8},
     {17, 10},
     {23, 13},
     {22, 6},
@@ -583,7 +592,7 @@ Table_SkillMould = {
   },
   [18001] = {
     id = 18001,
-    Pos = Table_SkillMould_t.Pos[420],
+    Pos = Table_SkillMould_t.Pos[431],
     Atktype = 1
   },
   [19001] = {
@@ -598,12 +607,12 @@ Table_SkillMould = {
   },
   [21001] = {
     id = 21001,
-    Pos = Table_SkillMould_t.Pos[202],
+    Pos = Table_SkillMould_t.Pos[203],
     Atktype = 1
   },
   [22001] = {
     id = 22001,
-    Pos = Table_SkillMould_t.Pos[280]
+    Pos = Table_SkillMould_t.Pos[282]
   },
   [23001] = {
     id = 23001,
@@ -620,7 +629,7 @@ Table_SkillMould = {
   },
   [26001] = {
     id = 26001,
-    Pos = Table_SkillMould_t.Pos[364]
+    Pos = Table_SkillMould_t.Pos[376]
   },
   [27001] = {
     id = 27001,
@@ -628,7 +637,7 @@ Table_SkillMould = {
   },
   [28001] = {
     id = 28001,
-    Pos = Table_SkillMould_t.Pos[369],
+    Pos = Table_SkillMould_t.Pos[380],
     Atktype = 1
   },
   [29001] = {
@@ -657,7 +666,7 @@ Table_SkillMould = {
   },
   [34001] = {
     id = 34001,
-    Pos = Table_SkillMould_t.Pos[241],
+    Pos = Table_SkillMould_t.Pos[243],
     Atktype = 1
   },
   [35001] = {
@@ -677,7 +686,7 @@ Table_SkillMould = {
   },
   [38001] = {
     id = 38001,
-    Pos = Table_SkillMould_t.Pos[333],
+    Pos = Table_SkillMould_t.Pos[338],
     Atktype = 1
   },
   [39001] = {
@@ -714,7 +723,7 @@ Table_SkillMould = {
   },
   [69001] = {
     id = 69001,
-    Pos = Table_SkillMould_t.Pos[245],
+    Pos = Table_SkillMould_t.Pos[247],
     Atktype = 1
   },
   [70001] = {
@@ -763,7 +772,7 @@ Table_SkillMould = {
   },
   [79001] = {
     id = 79001,
-    Pos = Table_SkillMould_t.Pos[184],
+    Pos = Table_SkillMould_t.Pos[185],
     Atktype = 1
   },
   [80001] = {
@@ -872,7 +881,7 @@ Table_SkillMould = {
   },
   [116001] = {
     id = 116001,
-    Pos = Table_SkillMould_t.Pos[231],
+    Pos = Table_SkillMould_t.Pos[233],
     Atktype = 1
   },
   [117001] = {
@@ -881,7 +890,7 @@ Table_SkillMould = {
   },
   [118001] = {
     id = 118001,
-    Pos = Table_SkillMould_t.Pos[306]
+    Pos = Table_SkillMould_t.Pos[308]
   },
   [119001] = {
     id = 119001,
@@ -957,7 +966,7 @@ Table_SkillMould = {
   },
   [135001] = {
     id = 135001,
-    Pos = Table_SkillMould_t.Pos[280],
+    Pos = Table_SkillMould_t.Pos[282],
     Atktype = 1
   },
   [136001] = {
@@ -985,7 +994,7 @@ Table_SkillMould = {
   },
   [144001] = {
     id = 144001,
-    Pos = Table_SkillMould_t.Pos[184]
+    Pos = Table_SkillMould_t.Pos[185]
   },
   [145001] = {
     id = 145001,
@@ -1018,7 +1027,7 @@ Table_SkillMould = {
   },
   [152001] = {
     id = 152001,
-    Pos = Table_SkillMould_t.Pos[183]
+    Pos = Table_SkillMould_t.Pos[184]
   },
   [153001] = {
     id = 153001,
@@ -1077,7 +1086,7 @@ Table_SkillMould = {
   },
   [171001] = {
     id = 171001,
-    Pos = Table_SkillMould_t.Pos[216]
+    Pos = Table_SkillMould_t.Pos[218]
   },
   [172001] = {
     id = 172001,
@@ -1096,7 +1105,7 @@ Table_SkillMould = {
   },
   [175001] = {
     id = 175001,
-    Pos = Table_SkillMould_t.Pos[307]
+    Pos = Table_SkillMould_t.Pos[309]
   },
   [176001] = {
     id = 176001,
@@ -1113,12 +1122,12 @@ Table_SkillMould = {
   },
   [179001] = {
     id = 179001,
-    Pos = Table_SkillMould_t.Pos[184],
+    Pos = Table_SkillMould_t.Pos[185],
     Atktype = 1
   },
   [180001] = {
     id = 180001,
-    Pos = Table_SkillMould_t.Pos[196],
+    Pos = Table_SkillMould_t.Pos[197],
     Atktype = 1
   },
   [181001] = {
@@ -1128,17 +1137,17 @@ Table_SkillMould = {
   },
   [182001] = {
     id = 182001,
-    Pos = Table_SkillMould_t.Pos[474],
+    Pos = Table_SkillMould_t.Pos[483],
     Atktype = 1
   },
   [183001] = {
     id = 183001,
-    Pos = Table_SkillMould_t.Pos[266],
+    Pos = Table_SkillMould_t.Pos[268],
     Atktype = 1
   },
   [184001] = {
     id = 184001,
-    Pos = Table_SkillMould_t.Pos[420]
+    Pos = Table_SkillMould_t.Pos[431]
   },
   [185001] = {
     id = 185001,
@@ -1150,12 +1159,12 @@ Table_SkillMould = {
   },
   [187001] = {
     id = 187001,
-    Pos = Table_SkillMould_t.Pos[252],
+    Pos = Table_SkillMould_t.Pos[254],
     Atktype = 1
   },
   [188001] = {
     id = 188001,
-    Pos = Table_SkillMould_t.Pos[299],
+    Pos = Table_SkillMould_t.Pos[301],
     Atktype = 1
   },
   [189001] = {
@@ -1164,7 +1173,7 @@ Table_SkillMould = {
   },
   [190001] = {
     id = 190001,
-    Pos = Table_SkillMould_t.Pos[222]
+    Pos = Table_SkillMould_t.Pos[224]
   },
   [191001] = {
     id = 191001,
@@ -1172,7 +1181,7 @@ Table_SkillMould = {
   },
   [192001] = {
     id = 192001,
-    Pos = Table_SkillMould_t.Pos[358]
+    Pos = Table_SkillMould_t.Pos[372]
   },
   [193001] = {
     id = 193001,
@@ -1185,7 +1194,7 @@ Table_SkillMould = {
   },
   [197001] = {
     id = 197001,
-    Pos = Table_SkillMould_t.Pos[189],
+    Pos = Table_SkillMould_t.Pos[190],
     Atktype = 1
   },
   [198001] = {
@@ -1203,7 +1212,7 @@ Table_SkillMould = {
   },
   [204001] = {
     id = 204001,
-    Pos = Table_SkillMould_t.Pos[196],
+    Pos = Table_SkillMould_t.Pos[197],
     Atktype = 1
   },
   [205001] = {
@@ -1212,7 +1221,7 @@ Table_SkillMould = {
   },
   [206001] = {
     id = 206001,
-    Pos = Table_SkillMould_t.Pos[358],
+    Pos = Table_SkillMould_t.Pos[372],
     Atktype = 1
   },
   [207001] = {
@@ -1234,7 +1243,7 @@ Table_SkillMould = {
   },
   [212001] = {
     id = 212001,
-    Pos = Table_SkillMould_t.Pos[335],
+    Pos = Table_SkillMould_t.Pos[340],
     Atktype = 1
   },
   [213001] = {
@@ -1252,7 +1261,7 @@ Table_SkillMould = {
   },
   [216001] = {
     id = 216001,
-    Pos = Table_SkillMould_t.Pos[222]
+    Pos = Table_SkillMould_t.Pos[224]
   },
   [217001] = {
     id = 217001,
@@ -1269,11 +1278,11 @@ Table_SkillMould = {
   },
   [220001] = {
     id = 220001,
-    Pos = Table_SkillMould_t.Pos[299]
+    Pos = Table_SkillMould_t.Pos[301]
   },
   [221001] = {
     id = 221001,
-    Pos = Table_SkillMould_t.Pos[250]
+    Pos = Table_SkillMould_t.Pos[252]
   },
   [226001] = {
     id = 226001,
@@ -1302,7 +1311,7 @@ Table_SkillMould = {
   },
   [234001] = {
     id = 234001,
-    Pos = Table_SkillMould_t.Pos[231]
+    Pos = Table_SkillMould_t.Pos[233]
   },
   [235001] = {
     id = 235001,
@@ -1318,7 +1327,7 @@ Table_SkillMould = {
   },
   [251001] = {
     id = 251001,
-    Pos = Table_SkillMould_t.Pos[216]
+    Pos = Table_SkillMould_t.Pos[218]
   },
   [260001] = {
     id = 260001,
@@ -1331,11 +1340,11 @@ Table_SkillMould = {
   },
   [262001] = {
     id = 262001,
-    Pos = Table_SkillMould_t.Pos[189]
+    Pos = Table_SkillMould_t.Pos[190]
   },
   [263001] = {
     id = 263001,
-    Pos = Table_SkillMould_t.Pos[303]
+    Pos = Table_SkillMould_t.Pos[305]
   },
   [264001] = {
     id = 264001,
@@ -1359,7 +1368,7 @@ Table_SkillMould = {
   },
   [269001] = {
     id = 269001,
-    Pos = Table_SkillMould_t.Pos[252]
+    Pos = Table_SkillMould_t.Pos[254]
   },
   [270001] = {
     id = 270001,
@@ -1367,7 +1376,7 @@ Table_SkillMould = {
   },
   [272001] = {
     id = 272001,
-    Pos = Table_SkillMould_t.Pos[183]
+    Pos = Table_SkillMould_t.Pos[184]
   },
   [273001] = {
     id = 273001,
@@ -1375,11 +1384,11 @@ Table_SkillMould = {
   },
   [274001] = {
     id = 274001,
-    Pos = Table_SkillMould_t.Pos[331]
+    Pos = Table_SkillMould_t.Pos[333]
   },
   [275001] = {
     id = 275001,
-    Pos = Table_SkillMould_t.Pos[245]
+    Pos = Table_SkillMould_t.Pos[247]
   },
   [300001] = {
     id = 300001,
@@ -1396,7 +1405,7 @@ Table_SkillMould = {
   },
   [304001] = {
     id = 304001,
-    Pos = Table_SkillMould_t.Pos[280],
+    Pos = Table_SkillMould_t.Pos[282],
     Atktype = 1
   },
   [305001] = {
@@ -1481,7 +1490,7 @@ Table_SkillMould = {
   },
   [324001] = {
     id = 324001,
-    Pos = Table_SkillMould_t.Pos[216]
+    Pos = Table_SkillMould_t.Pos[218]
   },
   [325001] = {
     id = 325001,
@@ -1527,7 +1536,7 @@ Table_SkillMould = {
   },
   [356001] = {
     id = 356001,
-    Pos = Table_SkillMould_t.Pos[280]
+    Pos = Table_SkillMould_t.Pos[282]
   },
   [357001] = {
     id = 357001,
@@ -1549,7 +1558,7 @@ Table_SkillMould = {
   },
   [361001] = {
     id = 361001,
-    Pos = Table_SkillMould_t.Pos[250]
+    Pos = Table_SkillMould_t.Pos[252]
   },
   [362001] = {
     id = 362001,
@@ -1661,7 +1670,7 @@ Table_SkillMould = {
   },
   [419001] = {
     id = 419001,
-    Pos = Table_SkillMould_t.Pos[183]
+    Pos = Table_SkillMould_t.Pos[184]
   },
   [420001] = {
     id = 420001,
@@ -1695,7 +1704,7 @@ Table_SkillMould = {
   },
   [427001] = {
     id = 427001,
-    Pos = Table_SkillMould_t.Pos[231]
+    Pos = Table_SkillMould_t.Pos[233]
   },
   [428001] = {
     id = 428001,
@@ -1845,7 +1854,7 @@ Table_SkillMould = {
   },
   [480001] = {
     id = 480001,
-    Pos = Table_SkillMould_t.Pos[183],
+    Pos = Table_SkillMould_t.Pos[184],
     Atktype = 1
   },
   [481001] = {
@@ -1855,7 +1864,7 @@ Table_SkillMould = {
   },
   [482001] = {
     id = 482001,
-    Pos = Table_SkillMould_t.Pos[268]
+    Pos = Table_SkillMould_t.Pos[270]
   },
   [483001] = {
     id = 483001,
@@ -1864,7 +1873,7 @@ Table_SkillMould = {
   },
   [484001] = {
     id = 484001,
-    Pos = Table_SkillMould_t.Pos[216]
+    Pos = Table_SkillMould_t.Pos[218]
   },
   [485001] = {
     id = 485001,
@@ -1887,7 +1896,7 @@ Table_SkillMould = {
   },
   [492001] = {
     id = 492001,
-    Pos = Table_SkillMould_t.Pos[250]
+    Pos = Table_SkillMould_t.Pos[252]
   },
   [493001] = {
     id = 493001,
@@ -1895,7 +1904,7 @@ Table_SkillMould = {
   },
   [494001] = {
     id = 494001,
-    Pos = Table_SkillMould_t.Pos[231],
+    Pos = Table_SkillMould_t.Pos[233],
     Atktype = 1
   },
   [495001] = {
@@ -1908,7 +1917,7 @@ Table_SkillMould = {
   },
   [497001] = {
     id = 497001,
-    Pos = Table_SkillMould_t.Pos[333]
+    Pos = Table_SkillMould_t.Pos[338]
   },
   [501001] = {
     id = 501001,
@@ -1972,7 +1981,7 @@ Table_SkillMould = {
   },
   [1100001] = {
     id = 1100001,
-    Pos = Table_SkillMould_t.Pos[203]
+    Pos = Table_SkillMould_t.Pos[204]
   },
   [1101001] = {
     id = 1101001,
@@ -1980,16 +1989,16 @@ Table_SkillMould = {
   },
   [1102001] = {
     id = 1102001,
-    Pos = Table_SkillMould_t.Pos[247]
+    Pos = Table_SkillMould_t.Pos[249]
   },
   [1103001] = {
     id = 1103001,
-    Pos = Table_SkillMould_t.Pos[441],
+    Pos = Table_SkillMould_t.Pos[451],
     Atktype = 1
   },
   [1104001] = {
     id = 1104001,
-    Pos = Table_SkillMould_t.Pos[235],
+    Pos = Table_SkillMould_t.Pos[237],
     Atktype = 1
   },
   [1105001] = {
@@ -1999,32 +2008,32 @@ Table_SkillMould = {
   },
   [1106001] = {
     id = 1106001,
-    Pos = Table_SkillMould_t.Pos[225]
+    Pos = Table_SkillMould_t.Pos[227]
   },
   [1107001] = {
     id = 1107001,
-    Pos = Table_SkillMould_t.Pos[304]
+    Pos = Table_SkillMould_t.Pos[306]
   },
   [1108001] = {
     id = 1108001,
-    Pos = Table_SkillMould_t.Pos[215]
+    Pos = Table_SkillMould_t.Pos[217]
   },
   [1109001] = {
     id = 1109001,
-    Pos = Table_SkillMould_t.Pos[413]
+    Pos = Table_SkillMould_t.Pos[424]
   },
   [1110001] = {
     id = 1110001,
-    Pos = Table_SkillMould_t.Pos[201]
+    Pos = Table_SkillMould_t.Pos[202]
   },
   [1111001] = {
     id = 1111001,
-    Pos = Table_SkillMould_t.Pos[207],
+    Pos = Table_SkillMould_t.Pos[208],
     Atktype = 1
   },
   [1112001] = {
     id = 1112001,
-    Pos = Table_SkillMould_t.Pos[185],
+    Pos = Table_SkillMould_t.Pos[186],
     Atktype = 1
   },
   [1120001] = {
@@ -2043,7 +2052,7 @@ Table_SkillMould = {
   },
   [1123001] = {
     id = 1123001,
-    Pos = Table_SkillMould_t.Pos[225]
+    Pos = Table_SkillMould_t.Pos[227]
   },
   [1124001] = {
     id = 1124001,
@@ -2052,7 +2061,7 @@ Table_SkillMould = {
   },
   [1125001] = {
     id = 1125001,
-    Pos = Table_SkillMould_t.Pos[338]
+    Pos = Table_SkillMould_t.Pos[344]
   },
   [1126001] = {
     id = 1126001,
@@ -2068,7 +2077,7 @@ Table_SkillMould = {
   },
   [1129001] = {
     id = 1129001,
-    Pos = Table_SkillMould_t.Pos[326]
+    Pos = Table_SkillMould_t.Pos[328]
   },
   [1130001] = {
     id = 1130001,
@@ -2091,11 +2100,11 @@ Table_SkillMould = {
   },
   [1135001] = {
     id = 1135001,
-    Pos = Table_SkillMould_t.Pos[297]
+    Pos = Table_SkillMould_t.Pos[299]
   },
   [1140001] = {
     id = 1140001,
-    Pos = Table_SkillMould_t.Pos[206],
+    Pos = Table_SkillMould_t.Pos[207],
     Atktype = 1
   },
   [1141001] = {
@@ -2108,7 +2117,7 @@ Table_SkillMould = {
   },
   [1143001] = {
     id = 1143001,
-    Pos = Table_SkillMould_t.Pos[197],
+    Pos = Table_SkillMould_t.Pos[198],
     Atktype = 1
   },
   [1144001] = {
@@ -2117,7 +2126,7 @@ Table_SkillMould = {
   },
   [1145001] = {
     id = 1145001,
-    Pos = Table_SkillMould_t.Pos[254]
+    Pos = Table_SkillMould_t.Pos[256]
   },
   [1146001] = {
     id = 1146001,
@@ -2133,11 +2142,11 @@ Table_SkillMould = {
   },
   [1149001] = {
     id = 1149001,
-    Pos = Table_SkillMould_t.Pos[207]
+    Pos = Table_SkillMould_t.Pos[208]
   },
   [1150001] = {
     id = 1150001,
-    Pos = Table_SkillMould_t.Pos[201]
+    Pos = Table_SkillMould_t.Pos[202]
   },
   [1151001] = {
     id = 1151001,
@@ -2145,7 +2154,7 @@ Table_SkillMould = {
   },
   [1160001] = {
     id = 1160001,
-    Pos = Table_SkillMould_t.Pos[220],
+    Pos = Table_SkillMould_t.Pos[222],
     Atktype = 1
   },
   [1161001] = {
@@ -2154,7 +2163,7 @@ Table_SkillMould = {
   },
   [1162001] = {
     id = 1162001,
-    Pos = Table_SkillMould_t.Pos[191]
+    Pos = Table_SkillMould_t.Pos[192]
   },
   [1163001] = {
     id = 1163001,
@@ -2162,7 +2171,7 @@ Table_SkillMould = {
   },
   [1164001] = {
     id = 1164001,
-    Pos = Table_SkillMould_t.Pos[315],
+    Pos = Table_SkillMould_t.Pos[317],
     Atktype = 1
   },
   [1165001] = {
@@ -2198,7 +2207,7 @@ Table_SkillMould = {
   },
   [1172001] = {
     id = 1172001,
-    Pos = Table_SkillMould_t.Pos[292],
+    Pos = Table_SkillMould_t.Pos[294],
     Atktype = 1
   },
   [1180001] = {
@@ -2208,7 +2217,7 @@ Table_SkillMould = {
   },
   [1181001] = {
     id = 1181001,
-    Pos = Table_SkillMould_t.Pos[197]
+    Pos = Table_SkillMould_t.Pos[198]
   },
   [1182001] = {
     id = 1182001,
@@ -2217,7 +2226,7 @@ Table_SkillMould = {
   },
   [1183001] = {
     id = 1183001,
-    Pos = Table_SkillMould_t.Pos[191]
+    Pos = Table_SkillMould_t.Pos[192]
   },
   [1184001] = {
     id = 1184001,
@@ -2225,7 +2234,7 @@ Table_SkillMould = {
   },
   [1185001] = {
     id = 1185001,
-    Pos = Table_SkillMould_t.Pos[315]
+    Pos = Table_SkillMould_t.Pos[317]
   },
   [1186001] = {
     id = 1186001,
@@ -2249,7 +2258,7 @@ Table_SkillMould = {
   },
   [1191001] = {
     id = 1191001,
-    Pos = Table_SkillMould_t.Pos[233],
+    Pos = Table_SkillMould_t.Pos[235],
     Atktype = 1
   },
   [1200001] = {
@@ -2259,7 +2268,7 @@ Table_SkillMould = {
   },
   [1201001] = {
     id = 1201001,
-    Pos = Table_SkillMould_t.Pos[197],
+    Pos = Table_SkillMould_t.Pos[198],
     Atktype = 1
   },
   [1202001] = {
@@ -2287,7 +2296,7 @@ Table_SkillMould = {
   },
   [1207001] = {
     id = 1207001,
-    Pos = Table_SkillMould_t.Pos[186]
+    Pos = Table_SkillMould_t.Pos[187]
   },
   [1208001] = {
     id = 1208001,
@@ -2296,7 +2305,7 @@ Table_SkillMould = {
   },
   [1209001] = {
     id = 1209001,
-    Pos = Table_SkillMould_t.Pos[351],
+    Pos = Table_SkillMould_t.Pos[367],
     Atktype = 1
   },
   [1210001] = {
@@ -2305,7 +2314,7 @@ Table_SkillMould = {
   },
   [1211001] = {
     id = 1211001,
-    Pos = Table_SkillMould_t.Pos[295]
+    Pos = Table_SkillMould_t.Pos[297]
   },
   [1212001] = {
     id = 1212001,
@@ -2314,19 +2323,19 @@ Table_SkillMould = {
   },
   [1220001] = {
     id = 1220001,
-    Pos = Table_SkillMould_t.Pos[424]
+    Pos = Table_SkillMould_t.Pos[435]
   },
   [1221001] = {
     id = 1221001,
-    Pos = Table_SkillMould_t.Pos[304]
+    Pos = Table_SkillMould_t.Pos[306]
   },
   [1222001] = {
     id = 1222001,
-    Pos = Table_SkillMould_t.Pos[315]
+    Pos = Table_SkillMould_t.Pos[317]
   },
   [1223001] = {
     id = 1223001,
-    Pos = Table_SkillMould_t.Pos[288]
+    Pos = Table_SkillMould_t.Pos[290]
   },
   [1224001] = {
     id = 1224001,
@@ -2351,7 +2360,7 @@ Table_SkillMould = {
   },
   [1229001] = {
     id = 1229001,
-    Pos = Table_SkillMould_t.Pos[263],
+    Pos = Table_SkillMould_t.Pos[265],
     Atktype = 1
   },
   [1230001] = {
@@ -2373,7 +2382,7 @@ Table_SkillMould = {
   },
   [1241001] = {
     id = 1241001,
-    Pos = Table_SkillMould_t.Pos[197],
+    Pos = Table_SkillMould_t.Pos[198],
     Atktype = 1
   },
   [1242001] = {
@@ -2405,7 +2414,7 @@ Table_SkillMould = {
   },
   [1248001] = {
     id = 1248001,
-    Pos = Table_SkillMould_t.Pos[288]
+    Pos = Table_SkillMould_t.Pos[290]
   },
   [1249001] = {
     id = 1249001,
@@ -2413,7 +2422,7 @@ Table_SkillMould = {
   },
   [1250001] = {
     id = 1250001,
-    Pos = Table_SkillMould_t.Pos[220]
+    Pos = Table_SkillMould_t.Pos[222]
   },
   [1256001] = {
     id = 1256001,
@@ -2431,23 +2440,23 @@ Table_SkillMould = {
   },
   [1262001] = {
     id = 1262001,
-    Pos = Table_SkillMould_t.Pos[315]
+    Pos = Table_SkillMould_t.Pos[317]
   },
   [1263001] = {
     Pos = Table_SkillMould_t.Pos[1]
   },
   [1264001] = {
     id = 1264001,
-    Pos = Table_SkillMould_t.Pos[233]
+    Pos = Table_SkillMould_t.Pos[235]
   },
   [1265001] = {
     id = 1265001,
-    Pos = Table_SkillMould_t.Pos[191],
+    Pos = Table_SkillMould_t.Pos[192],
     Atktype = 1
   },
   [1266001] = {
     id = 1266001,
-    Pos = Table_SkillMould_t.Pos[292],
+    Pos = Table_SkillMould_t.Pos[294],
     Atktype = 1
   },
   [1267001] = {
@@ -2456,15 +2465,15 @@ Table_SkillMould = {
   },
   [1268001] = {
     id = 1268001,
-    Pos = Table_SkillMould_t.Pos[281]
+    Pos = Table_SkillMould_t.Pos[283]
   },
   [1269001] = {
     id = 1269001,
-    Pos = Table_SkillMould_t.Pos[464]
+    Pos = Table_SkillMould_t.Pos[473]
   },
   [1270001] = {
     id = 1270001,
-    Pos = Table_SkillMould_t.Pos[220]
+    Pos = Table_SkillMould_t.Pos[222]
   },
   [1271001] = {
     id = 1271001,
@@ -2477,23 +2486,23 @@ Table_SkillMould = {
   },
   [1280001] = {
     id = 1280001,
-    Pos = Table_SkillMould_t.Pos[197]
+    Pos = Table_SkillMould_t.Pos[198]
   },
   [1281001] = {
     id = 1281001,
-    Pos = Table_SkillMould_t.Pos[308]
+    Pos = Table_SkillMould_t.Pos[310]
   },
   [1282001] = {
     id = 1282001,
-    Pos = Table_SkillMould_t.Pos[217]
+    Pos = Table_SkillMould_t.Pos[219]
   },
   [1283001] = {
     id = 1283001,
-    Pos = Table_SkillMould_t.Pos[233]
+    Pos = Table_SkillMould_t.Pos[235]
   },
   [1284001] = {
     id = 1284001,
-    Pos = Table_SkillMould_t.Pos[203],
+    Pos = Table_SkillMould_t.Pos[204],
     Atktype = 1
   },
   [1285001] = {
@@ -2502,7 +2511,7 @@ Table_SkillMould = {
   },
   [1286001] = {
     id = 1286001,
-    Pos = Table_SkillMould_t.Pos[186]
+    Pos = Table_SkillMould_t.Pos[187]
   },
   [1287001] = {
     id = 1287001,
@@ -2545,7 +2554,7 @@ Table_SkillMould = {
   },
   [1303001] = {
     id = 1303001,
-    Pos = Table_SkillMould_t.Pos[195]
+    Pos = Table_SkillMould_t.Pos[196]
   },
   [1304001] = {
     id = 1304001,
@@ -2553,7 +2562,7 @@ Table_SkillMould = {
   },
   [1305001] = {
     id = 1305001,
-    Pos = Table_SkillMould_t.Pos[183],
+    Pos = Table_SkillMould_t.Pos[184],
     Atktype = 1
   },
   [1306001] = {
@@ -2599,11 +2608,11 @@ Table_SkillMould = {
   },
   [1318001] = {
     id = 1318001,
-    Pos = Table_SkillMould_t.Pos[452]
+    Pos = Table_SkillMould_t.Pos[461]
   },
   [1319001] = {
     id = 1319001,
-    Pos = Table_SkillMould_t.Pos[216],
+    Pos = Table_SkillMould_t.Pos[218],
     Atktype = 1
   },
   [1320001] = {
@@ -2618,25 +2627,25 @@ Table_SkillMould = {
   },
   [1322001] = {
     id = 1322001,
-    Pos = Table_SkillMould_t.Pos[434],
+    Pos = Table_SkillMould_t.Pos[445],
     Atktype = 1
   },
   [1323001] = {
     id = 1323001,
-    Pos = Table_SkillMould_t.Pos[231],
+    Pos = Table_SkillMould_t.Pos[233],
     Atktype = 1
   },
   [1324001] = {
     id = 1324001,
-    Pos = Table_SkillMould_t.Pos[424]
+    Pos = Table_SkillMould_t.Pos[435]
   },
   [1325001] = {
     id = 1325001,
-    Pos = Table_SkillMould_t.Pos[220]
+    Pos = Table_SkillMould_t.Pos[222]
   },
   [1327001] = {
     id = 1327001,
-    Pos = Table_SkillMould_t.Pos[207],
+    Pos = Table_SkillMould_t.Pos[208],
     Atktype = 1
   },
   [1328001] = {
@@ -2646,12 +2655,12 @@ Table_SkillMould = {
   },
   [1329001] = {
     id = 1329001,
-    Pos = Table_SkillMould_t.Pos[191],
+    Pos = Table_SkillMould_t.Pos[192],
     Atktype = 1
   },
   [1330001] = {
     id = 1330001,
-    Pos = Table_SkillMould_t.Pos[394],
+    Pos = Table_SkillMould_t.Pos[405],
     Atktype = 1
   },
   [1331001] = {
@@ -2680,7 +2689,7 @@ Table_SkillMould = {
   },
   [1362001] = {
     id = 1362001,
-    Pos = Table_SkillMould_t.Pos[213]
+    Pos = Table_SkillMould_t.Pos[215]
   },
   [1363001] = {
     id = 1363001,
@@ -2694,12 +2703,12 @@ Table_SkillMould = {
   },
   [1365001] = {
     id = 1365001,
-    Pos = Table_SkillMould_t.Pos[199],
+    Pos = Table_SkillMould_t.Pos[200],
     Atktype = 1
   },
   [1366001] = {
     id = 1366001,
-    Pos = Table_SkillMould_t.Pos[183],
+    Pos = Table_SkillMould_t.Pos[184],
     Atktype = 1
   },
   [1368001] = {
@@ -2721,7 +2730,7 @@ Table_SkillMould = {
   },
   [1372001] = {
     id = 1372001,
-    Pos = Table_SkillMould_t.Pos[195]
+    Pos = Table_SkillMould_t.Pos[196]
   },
   [1373001] = {
     id = 1373001,
@@ -2743,7 +2752,7 @@ Table_SkillMould = {
   },
   [1377001] = {
     id = 1377001,
-    Pos = Table_SkillMould_t.Pos[245]
+    Pos = Table_SkillMould_t.Pos[247]
   },
   [1378001] = {
     id = 1378001,
@@ -2783,7 +2792,7 @@ Table_SkillMould = {
   },
   [1387001] = {
     id = 1387001,
-    Pos = Table_SkillMould_t.Pos[254],
+    Pos = Table_SkillMould_t.Pos[256],
     Atktype = 1
   },
   [1388001] = {
@@ -2792,7 +2801,7 @@ Table_SkillMould = {
   },
   [1389001] = {
     id = 1389001,
-    Pos = Table_SkillMould_t.Pos[308],
+    Pos = Table_SkillMould_t.Pos[310],
     Atktype = 1
   },
   [1390001] = {
@@ -2802,7 +2811,7 @@ Table_SkillMould = {
   },
   [1391001] = {
     id = 1391001,
-    Pos = Table_SkillMould_t.Pos[295],
+    Pos = Table_SkillMould_t.Pos[297],
     Atktype = 1
   },
   [1392001] = {
@@ -2815,7 +2824,7 @@ Table_SkillMould = {
   },
   [1394001] = {
     id = 1394001,
-    Pos = Table_SkillMould_t.Pos[488]
+    Pos = Table_SkillMould_t.Pos[497]
   },
   [1397001] = {
     id = 1397001,
@@ -2834,7 +2843,7 @@ Table_SkillMould = {
   },
   [1413001] = {
     id = 1413001,
-    Pos = Table_SkillMould_t.Pos[213]
+    Pos = Table_SkillMould_t.Pos[215]
   },
   [1414001] = {
     id = 1414001,
@@ -2843,7 +2852,7 @@ Table_SkillMould = {
   },
   [1415001] = {
     id = 1415001,
-    Pos = Table_SkillMould_t.Pos[199],
+    Pos = Table_SkillMould_t.Pos[200],
     Atktype = 1
   },
   [1416001] = {
@@ -2853,7 +2862,7 @@ Table_SkillMould = {
   },
   [1417001] = {
     id = 1417001,
-    Pos = Table_SkillMould_t.Pos[183],
+    Pos = Table_SkillMould_t.Pos[184],
     Atktype = 1
   },
   [1419001] = {
@@ -2870,7 +2879,7 @@ Table_SkillMould = {
   },
   [1422001] = {
     id = 1422001,
-    Pos = Table_SkillMould_t.Pos[195]
+    Pos = Table_SkillMould_t.Pos[196]
   },
   [1423001] = {
     id = 1423001,
@@ -2897,7 +2906,7 @@ Table_SkillMould = {
   },
   [1428001] = {
     id = 1428001,
-    Pos = Table_SkillMould_t.Pos[245]
+    Pos = Table_SkillMould_t.Pos[247]
   },
   [1429001] = {
     id = 1429001,
@@ -2932,7 +2941,7 @@ Table_SkillMould = {
   },
   [1436001] = {
     id = 1436001,
-    Pos = Table_SkillMould_t.Pos[254],
+    Pos = Table_SkillMould_t.Pos[256],
     Atktype = 1
   },
   [1437001] = {
@@ -2941,7 +2950,7 @@ Table_SkillMould = {
   },
   [1438001] = {
     id = 1438001,
-    Pos = Table_SkillMould_t.Pos[308],
+    Pos = Table_SkillMould_t.Pos[310],
     Atktype = 1
   },
   [1439001] = {
@@ -2951,7 +2960,7 @@ Table_SkillMould = {
   },
   [1440001] = {
     id = 1440001,
-    Pos = Table_SkillMould_t.Pos[295],
+    Pos = Table_SkillMould_t.Pos[297],
     Atktype = 1
   },
   [1441001] = {
@@ -2964,7 +2973,7 @@ Table_SkillMould = {
   },
   [1443001] = {
     id = 1443001,
-    Pos = Table_SkillMould_t.Pos[488]
+    Pos = Table_SkillMould_t.Pos[497]
   },
   [1446001] = {
     id = 1446001,
@@ -2978,7 +2987,7 @@ Table_SkillMould = {
   },
   [1461001] = {
     id = 1461001,
-    Pos = Table_SkillMould_t.Pos[391]
+    Pos = Table_SkillMould_t.Pos[402]
   },
   [1462001] = {
     id = 1462001,
@@ -3021,7 +3030,7 @@ Table_SkillMould = {
   },
   [1471001] = {
     id = 1471001,
-    Pos = Table_SkillMould_t.Pos[348]
+    Pos = Table_SkillMould_t.Pos[364]
   },
   [1472001] = {
     id = 1472001,
@@ -3029,7 +3038,7 @@ Table_SkillMould = {
   },
   [1473001] = {
     id = 1473001,
-    Pos = Table_SkillMould_t.Pos[196]
+    Pos = Table_SkillMould_t.Pos[197]
   },
   [1474001] = {
     id = 1474001,
@@ -3037,7 +3046,7 @@ Table_SkillMould = {
   },
   [1475001] = {
     id = 1475001,
-    Pos = Table_SkillMould_t.Pos[212]
+    Pos = Table_SkillMould_t.Pos[213]
   },
   [1476001] = {
     id = 1476001,
@@ -3064,7 +3073,7 @@ Table_SkillMould = {
   },
   [1482001] = {
     id = 1482001,
-    Pos = Table_SkillMould_t.Pos[231],
+    Pos = Table_SkillMould_t.Pos[233],
     Atktype = 1
   },
   [1483001] = {
@@ -3074,12 +3083,12 @@ Table_SkillMould = {
   },
   [1484001] = {
     id = 1484001,
-    Pos = Table_SkillMould_t.Pos[498],
+    Pos = Table_SkillMould_t.Pos[507],
     Atktype = 1
   },
   [1486001] = {
     id = 1486001,
-    Pos = Table_SkillMould_t.Pos[488],
+    Pos = Table_SkillMould_t.Pos[497],
     Atktype = 1
   },
   [1487001] = {
@@ -3096,7 +3105,7 @@ Table_SkillMould = {
   },
   [1490001] = {
     id = 1490001,
-    Pos = Table_SkillMould_t.Pos[464]
+    Pos = Table_SkillMould_t.Pos[473]
   },
   [1491001] = {
     id = 1491001,
@@ -3105,7 +3114,7 @@ Table_SkillMould = {
   },
   [1492001] = {
     id = 1492001,
-    Pos = Table_SkillMould_t.Pos[308]
+    Pos = Table_SkillMould_t.Pos[310]
   },
   [1493001] = {
     id = 1493001,
@@ -3113,11 +3122,11 @@ Table_SkillMould = {
   },
   [1494001] = {
     id = 1494001,
-    Pos = Table_SkillMould_t.Pos[424]
+    Pos = Table_SkillMould_t.Pos[435]
   },
   [1495001] = {
     id = 1495001,
-    Pos = Table_SkillMould_t.Pos[225]
+    Pos = Table_SkillMould_t.Pos[227]
   },
   [1496001] = {
     id = 1496001,
@@ -3125,7 +3134,7 @@ Table_SkillMould = {
   },
   [1497001] = {
     id = 1497001,
-    Pos = Table_SkillMould_t.Pos[233],
+    Pos = Table_SkillMould_t.Pos[235],
     Atktype = 1
   },
   [1498001] = {
@@ -3140,7 +3149,7 @@ Table_SkillMould = {
   },
   [1501001] = {
     id = 1501001,
-    Pos = Table_SkillMould_t.Pos[209]
+    Pos = Table_SkillMould_t.Pos[210]
   },
   [1502001] = {
     id = 1502001,
@@ -3168,7 +3177,7 @@ Table_SkillMould = {
   },
   [1604001] = {
     id = 1604001,
-    Pos = Table_SkillMould_t.Pos[339],
+    Pos = Table_SkillMould_t.Pos[346],
     Atktype = 1
   },
   [1605001] = {
@@ -3196,7 +3205,7 @@ Table_SkillMould = {
   },
   [1610001] = {
     id = 1610001,
-    Pos = Table_SkillMould_t.Pos[317],
+    Pos = Table_SkillMould_t.Pos[319],
     Atktype = 1
   },
   [1611001] = {
@@ -3211,12 +3220,12 @@ Table_SkillMould = {
   },
   [1613001] = {
     id = 1613001,
-    Pos = Table_SkillMould_t.Pos[462],
+    Pos = Table_SkillMould_t.Pos[471],
     Atktype = 1
   },
   [1614001] = {
     id = 1614001,
-    Pos = Table_SkillMould_t.Pos[298],
+    Pos = Table_SkillMould_t.Pos[300],
     Atktype = 1
   },
   [1615001] = {
@@ -3226,7 +3235,7 @@ Table_SkillMould = {
   },
   [1616001] = {
     id = 1616001,
-    Pos = Table_SkillMould_t.Pos[284],
+    Pos = Table_SkillMould_t.Pos[286],
     Atktype = 1
   },
   [1617001] = {
@@ -3236,7 +3245,7 @@ Table_SkillMould = {
   },
   [1618001] = {
     id = 1618001,
-    Pos = Table_SkillMould_t.Pos[252]
+    Pos = Table_SkillMould_t.Pos[254]
   },
   [1619001] = {
     id = 1619001,
@@ -3245,11 +3254,11 @@ Table_SkillMould = {
   },
   [1620001] = {
     id = 1620001,
-    Pos = Table_SkillMould_t.Pos[268]
+    Pos = Table_SkillMould_t.Pos[270]
   },
   [1621001] = {
     id = 1621001,
-    Pos = Table_SkillMould_t.Pos[460],
+    Pos = Table_SkillMould_t.Pos[469],
     Atktype = 1
   },
   [1622001] = {
@@ -3259,30 +3268,30 @@ Table_SkillMould = {
   },
   [1623001] = {
     id = 1623001,
-    Pos = Table_SkillMould_t.Pos[358]
+    Pos = Table_SkillMould_t.Pos[372]
   },
   [1624001] = {
     id = 1624001,
-    Pos = Table_SkillMould_t.Pos[255],
+    Pos = Table_SkillMould_t.Pos[257],
     Atktype = 1
   },
   [1625001] = {
     id = 1625001,
-    Pos = Table_SkillMould_t.Pos[369],
+    Pos = Table_SkillMould_t.Pos[380],
     Atktype = 1
   },
   [1626001] = {
     id = 1626001,
-    Pos = Table_SkillMould_t.Pos[241]
+    Pos = Table_SkillMould_t.Pos[243]
   },
   [1627001] = {
     id = 1627001,
-    Pos = Table_SkillMould_t.Pos[325],
+    Pos = Table_SkillMould_t.Pos[327],
     Atktype = 1
   },
   [1628001] = {
     id = 1628001,
-    Pos = Table_SkillMould_t.Pos[230],
+    Pos = Table_SkillMould_t.Pos[232],
     Atktype = 1
   },
   [1629001] = {
@@ -3301,11 +3310,11 @@ Table_SkillMould = {
   },
   [1632001] = {
     id = 1632001,
-    Pos = Table_SkillMould_t.Pos[206]
+    Pos = Table_SkillMould_t.Pos[207]
   },
   [1633001] = {
     id = 1633001,
-    Pos = Table_SkillMould_t.Pos[315],
+    Pos = Table_SkillMould_t.Pos[317],
     Atktype = 1
   },
   [1634001] = {
@@ -3324,7 +3333,7 @@ Table_SkillMould = {
   },
   [1637001] = {
     id = 1637001,
-    Pos = Table_SkillMould_t.Pos[288],
+    Pos = Table_SkillMould_t.Pos[290],
     Atktype = 1
   },
   [1638001] = {
@@ -3346,7 +3355,7 @@ Table_SkillMould = {
   },
   [1662001] = {
     id = 1662001,
-    Pos = Table_SkillMould_t.Pos[468]
+    Pos = Table_SkillMould_t.Pos[477]
   },
   [1700001] = {
     id = 1700001,
@@ -3355,7 +3364,7 @@ Table_SkillMould = {
   },
   [1701001] = {
     id = 1701001,
-    Pos = Table_SkillMould_t.Pos[196]
+    Pos = Table_SkillMould_t.Pos[197]
   },
   [1702001] = {
     id = 1702001,
@@ -3386,26 +3395,26 @@ Table_SkillMould = {
   },
   [1708001] = {
     id = 1708001,
-    Pos = Table_SkillMould_t.Pos[213],
+    Pos = Table_SkillMould_t.Pos[215],
     Atktype = 1
   },
   [1710001] = {
     id = 1710001,
-    Pos = Table_SkillMould_t.Pos[189],
+    Pos = Table_SkillMould_t.Pos[190],
     Atktype = 1
   },
   [1711001] = {
     id = 1711001,
-    Pos = Table_SkillMould_t.Pos[225]
+    Pos = Table_SkillMould_t.Pos[227]
   },
   [1712001] = {
     id = 1712001,
-    Pos = Table_SkillMould_t.Pos[231],
+    Pos = Table_SkillMould_t.Pos[233],
     Atktype = 1
   },
   [1713001] = {
     id = 1713001,
-    Pos = Table_SkillMould_t.Pos[216],
+    Pos = Table_SkillMould_t.Pos[218],
     Atktype = 1
   },
   [1714001] = {
@@ -3414,7 +3423,7 @@ Table_SkillMould = {
   },
   [1715001] = {
     id = 1715001,
-    Pos = Table_SkillMould_t.Pos[424]
+    Pos = Table_SkillMould_t.Pos[435]
   },
   [1716001] = {
     id = 1716001,
@@ -3436,7 +3445,7 @@ Table_SkillMould = {
   },
   [1721001] = {
     id = 1721001,
-    Pos = Table_SkillMould_t.Pos[400],
+    Pos = Table_SkillMould_t.Pos[411],
     Atktype = 1
   },
   [1722001] = {
@@ -3446,7 +3455,7 @@ Table_SkillMould = {
   },
   [1723001] = {
     id = 1723001,
-    Pos = Table_SkillMould_t.Pos[312],
+    Pos = Table_SkillMould_t.Pos[314],
     Atktype = 1
   },
   [1724001] = {
@@ -3455,7 +3464,7 @@ Table_SkillMould = {
   },
   [1725001] = {
     id = 1725001,
-    Pos = Table_SkillMould_t.Pos[373],
+    Pos = Table_SkillMould_t.Pos[385],
     Atktype = 1
   },
   [1726001] = {
@@ -3464,7 +3473,7 @@ Table_SkillMould = {
   },
   [1727001] = {
     id = 1727001,
-    Pos = Table_SkillMould_t.Pos[294],
+    Pos = Table_SkillMould_t.Pos[296],
     Atktype = 1
   },
   [1728001] = {
@@ -3490,7 +3499,7 @@ Table_SkillMould = {
   },
   [1733001] = {
     id = 1733001,
-    Pos = Table_SkillMould_t.Pos[346]
+    Pos = Table_SkillMould_t.Pos[360]
   },
   [1734001] = {
     id = 1734001,
@@ -3508,7 +3517,7 @@ Table_SkillMould = {
   },
   [1737001] = {
     id = 1737001,
-    Pos = Table_SkillMould_t.Pos[317]
+    Pos = Table_SkillMould_t.Pos[319]
   },
   [1738001] = {
     id = 1738001,
@@ -3516,7 +3525,7 @@ Table_SkillMould = {
   },
   [1739001] = {
     id = 1739001,
-    Pos = Table_SkillMould_t.Pos[324]
+    Pos = Table_SkillMould_t.Pos[326]
   },
   [1740001] = {
     id = 1740001,
@@ -3524,7 +3533,7 @@ Table_SkillMould = {
   },
   [1741001] = {
     id = 1741001,
-    Pos = Table_SkillMould_t.Pos[316]
+    Pos = Table_SkillMould_t.Pos[318]
   },
   [1742001] = {
     id = 1742001,
@@ -3532,53 +3541,53 @@ Table_SkillMould = {
   },
   [1743001] = {
     id = 1743001,
-    Pos = Table_SkillMould_t.Pos[249],
+    Pos = Table_SkillMould_t.Pos[251],
     Atktype = 1
   },
   [1744001] = {
     id = 1744001,
-    Pos = Table_SkillMould_t.Pos[504]
+    Pos = Table_SkillMould_t.Pos[513]
   },
   [1745001] = {
     id = 1745001,
-    Pos = Table_SkillMould_t.Pos[293]
+    Pos = Table_SkillMould_t.Pos[295]
   },
   [1747001] = {
     id = 1747001,
-    Pos = Table_SkillMould_t.Pos[282]
+    Pos = Table_SkillMould_t.Pos[284]
   },
   [1800001] = {
     id = 1800001,
-    Pos = Table_SkillMould_t.Pos[242],
+    Pos = Table_SkillMould_t.Pos[244],
     Atktype = 1
   },
   [1801001] = {
     id = 1801001,
-    Pos = Table_SkillMould_t.Pos[339]
+    Pos = Table_SkillMould_t.Pos[346]
   },
   [1802001] = {
     id = 1802001,
-    Pos = Table_SkillMould_t.Pos[232],
+    Pos = Table_SkillMould_t.Pos[234],
     Atktype = 1
   },
   [1803001] = {
     id = 1803001,
-    Pos = Table_SkillMould_t.Pos[425],
+    Pos = Table_SkillMould_t.Pos[436],
     Atktype = 1
   },
   [1804001] = {
     id = 1804001,
-    Pos = Table_SkillMould_t.Pos[221],
+    Pos = Table_SkillMould_t.Pos[223],
     Atktype = 1
   },
   [1805001] = {
     id = 1805001,
-    Pos = Table_SkillMould_t.Pos[258],
+    Pos = Table_SkillMould_t.Pos[260],
     Atktype = 1
   },
   [1806001] = {
     id = 1806001,
-    Pos = Table_SkillMould_t.Pos[208],
+    Pos = Table_SkillMould_t.Pos[209],
     Atktype = 1
   },
   [1807001] = {
@@ -3591,7 +3600,7 @@ Table_SkillMould = {
   },
   [1809001] = {
     id = 1809001,
-    Pos = Table_SkillMould_t.Pos[230],
+    Pos = Table_SkillMould_t.Pos[232],
     Atktype = 1
   },
   [1810001] = {
@@ -3601,7 +3610,7 @@ Table_SkillMould = {
   },
   [1811001] = {
     id = 1811001,
-    Pos = Table_SkillMould_t.Pos[383],
+    Pos = Table_SkillMould_t.Pos[395],
     Atktype = 1
   },
   [1812001] = {
@@ -3611,7 +3620,7 @@ Table_SkillMould = {
   },
   [1813001] = {
     id = 1813001,
-    Pos = Table_SkillMould_t.Pos[371]
+    Pos = Table_SkillMould_t.Pos[381]
   },
   [1814001] = {
     id = 1814001,
@@ -3640,7 +3649,7 @@ Table_SkillMould = {
   },
   [1819001] = {
     id = 1819001,
-    Pos = Table_SkillMould_t.Pos[350]
+    Pos = Table_SkillMould_t.Pos[366]
   },
   [1820001] = {
     id = 1820001,
@@ -3649,7 +3658,7 @@ Table_SkillMould = {
   },
   [1821001] = {
     id = 1821001,
-    Pos = Table_SkillMould_t.Pos[343],
+    Pos = Table_SkillMould_t.Pos[355],
     Atktype = 1
   },
   [1822001] = {
@@ -3659,7 +3668,7 @@ Table_SkillMould = {
   },
   [1823001] = {
     id = 1823001,
-    Pos = Table_SkillMould_t.Pos[336],
+    Pos = Table_SkillMould_t.Pos[341],
     Atktype = 1
   },
   [1824001] = {
@@ -3669,7 +3678,7 @@ Table_SkillMould = {
   },
   [1825001] = {
     id = 1825001,
-    Pos = Table_SkillMould_t.Pos[330]
+    Pos = Table_SkillMould_t.Pos[332]
   },
   [1826001] = {
     id = 1826001,
@@ -3678,7 +3687,7 @@ Table_SkillMould = {
   },
   [1827001] = {
     id = 1827001,
-    Pos = Table_SkillMould_t.Pos[321],
+    Pos = Table_SkillMould_t.Pos[323],
     Atktype = 1
   },
   [1828001] = {
@@ -3687,23 +3696,23 @@ Table_SkillMould = {
   },
   [1829001] = {
     id = 1829001,
-    Pos = Table_SkillMould_t.Pos[240]
+    Pos = Table_SkillMould_t.Pos[242]
   },
   [1830001] = {
     id = 1830001,
-    Pos = Table_SkillMould_t.Pos[510]
+    Pos = Table_SkillMould_t.Pos[519]
   },
   [1831001] = {
     id = 1831001,
-    Pos = Table_SkillMould_t.Pos[302]
+    Pos = Table_SkillMould_t.Pos[304]
   },
   [1832001] = {
     id = 1832001,
-    Pos = Table_SkillMould_t.Pos[499]
+    Pos = Table_SkillMould_t.Pos[508]
   },
   [1833001] = {
     id = 1833001,
-    Pos = Table_SkillMould_t.Pos[286]
+    Pos = Table_SkillMould_t.Pos[288]
   },
   [1834001] = {
     id = 1834001,
@@ -3716,11 +3725,11 @@ Table_SkillMould = {
   },
   [1837001] = {
     id = 1837001,
-    Pos = Table_SkillMould_t.Pos[271]
+    Pos = Table_SkillMould_t.Pos[273]
   },
   [1838001] = {
     id = 1838001,
-    Pos = Table_SkillMould_t.Pos[467]
+    Pos = Table_SkillMould_t.Pos[476]
   },
   [1900001] = {
     id = 1900001,
@@ -3738,7 +3747,7 @@ Table_SkillMould = {
   },
   [1903001] = {
     id = 1903001,
-    Pos = Table_SkillMould_t.Pos[364]
+    Pos = Table_SkillMould_t.Pos[376]
   },
   [1904001] = {
     id = 1904001,
@@ -3747,7 +3756,7 @@ Table_SkillMould = {
   },
   [1905001] = {
     id = 1905001,
-    Pos = Table_SkillMould_t.Pos[303],
+    Pos = Table_SkillMould_t.Pos[305],
     Atktype = 1
   },
   [1906001] = {
@@ -3767,7 +3776,7 @@ Table_SkillMould = {
   },
   [1909001] = {
     id = 1909001,
-    Pos = Table_SkillMould_t.Pos[213]
+    Pos = Table_SkillMould_t.Pos[215]
   },
   [1910001] = {
     id = 1910001,
@@ -3785,7 +3794,7 @@ Table_SkillMould = {
   },
   [1913001] = {
     id = 1913001,
-    Pos = Table_SkillMould_t.Pos[325],
+    Pos = Table_SkillMould_t.Pos[327],
     Atktype = 1
   },
   [1914001] = {
@@ -3817,7 +3826,7 @@ Table_SkillMould = {
   },
   [1920001] = {
     id = 1920001,
-    Pos = Table_SkillMould_t.Pos[216],
+    Pos = Table_SkillMould_t.Pos[218],
     Atktype = 1
   },
   [1922001] = {
@@ -3827,32 +3836,32 @@ Table_SkillMould = {
   },
   [1930001] = {
     id = 1930001,
-    Pos = Table_SkillMould_t.Pos[443],
+    Pos = Table_SkillMould_t.Pos[453],
     Atktype = 1
   },
   [1931001] = {
     id = 1931001,
-    Pos = Table_SkillMould_t.Pos[240],
+    Pos = Table_SkillMould_t.Pos[242],
     Atktype = 1
   },
   [1932001] = {
     id = 1932001,
-    Pos = Table_SkillMould_t.Pos[433],
+    Pos = Table_SkillMould_t.Pos[444],
     Atktype = 1
   },
   [1933001] = {
     id = 1933001,
-    Pos = Table_SkillMould_t.Pos[229],
+    Pos = Table_SkillMould_t.Pos[231],
     Atktype = 1
   },
   [1934001] = {
     id = 1934001,
-    Pos = Table_SkillMould_t.Pos[286],
+    Pos = Table_SkillMould_t.Pos[288],
     Atktype = 1
   },
   [1935001] = {
     id = 1935001,
-    Pos = Table_SkillMould_t.Pos[219]
+    Pos = Table_SkillMould_t.Pos[221]
   },
   [1936001] = {
     id = 1936001,
@@ -3861,12 +3870,12 @@ Table_SkillMould = {
   },
   [1937001] = {
     id = 1937001,
-    Pos = Table_SkillMould_t.Pos[205],
+    Pos = Table_SkillMould_t.Pos[206],
     Atktype = 1
   },
   [1938001] = {
     id = 1938001,
-    Pos = Table_SkillMould_t.Pos[405],
+    Pos = Table_SkillMould_t.Pos[416],
     Atktype = 1
   },
   [1944001] = {
@@ -3880,7 +3889,7 @@ Table_SkillMould = {
   },
   [1946001] = {
     id = 1946001,
-    Pos = Table_SkillMould_t.Pos[269]
+    Pos = Table_SkillMould_t.Pos[271]
   },
   [1947001] = {
     id = 1947001,
@@ -3888,7 +3897,7 @@ Table_SkillMould = {
   },
   [1948001] = {
     id = 1948001,
-    Pos = Table_SkillMould_t.Pos[360]
+    Pos = Table_SkillMould_t.Pos[373]
   },
   [1949001] = {
     id = 1949001,
@@ -3896,7 +3905,7 @@ Table_SkillMould = {
   },
   [1950001] = {
     id = 1950001,
-    Pos = Table_SkillMould_t.Pos[349]
+    Pos = Table_SkillMould_t.Pos[365]
   },
   [1951001] = {
     id = 1951001,
@@ -3905,7 +3914,7 @@ Table_SkillMould = {
   },
   [1952001] = {
     id = 1952001,
-    Pos = Table_SkillMould_t.Pos[342]
+    Pos = Table_SkillMould_t.Pos[350]
   },
   [1953001] = {
     id = 1953001,
@@ -3914,7 +3923,7 @@ Table_SkillMould = {
   },
   [1954001] = {
     id = 1954001,
-    Pos = Table_SkillMould_t.Pos[300]
+    Pos = Table_SkillMould_t.Pos[302]
   },
   [1955001] = {
     id = 1955001,
@@ -3922,7 +3931,7 @@ Table_SkillMould = {
   },
   [1956001] = {
     id = 1956001,
-    Pos = Table_SkillMould_t.Pos[328]
+    Pos = Table_SkillMould_t.Pos[330]
   },
   [1957001] = {
     id = 1957001,
@@ -3940,7 +3949,7 @@ Table_SkillMould = {
   },
   [2021001] = {
     id = 2021001,
-    Pos = Table_SkillMould_t.Pos[223],
+    Pos = Table_SkillMould_t.Pos[225],
     Atktype = 1
   },
   [2022001] = {
@@ -3950,7 +3959,7 @@ Table_SkillMould = {
   },
   [2023001] = {
     id = 2023001,
-    Pos = Table_SkillMould_t.Pos[212]
+    Pos = Table_SkillMould_t.Pos[213]
   },
   [2024001] = {
     id = 2024001,
@@ -3959,12 +3968,12 @@ Table_SkillMould = {
   },
   [2025001] = {
     id = 2025001,
-    Pos = Table_SkillMould_t.Pos[196],
+    Pos = Table_SkillMould_t.Pos[197],
     Atktype = 1
   },
   [2026001] = {
     id = 2026001,
-    Pos = Table_SkillMould_t.Pos[280],
+    Pos = Table_SkillMould_t.Pos[282],
     Atktype = 1
   },
   [2028001] = {
@@ -3987,7 +3996,7 @@ Table_SkillMould = {
   },
   [2032001] = {
     id = 2032001,
-    Pos = Table_SkillMould_t.Pos[367],
+    Pos = Table_SkillMould_t.Pos[375],
     Atktype = 1
   },
   [2033001] = {
@@ -4006,7 +4015,7 @@ Table_SkillMould = {
   },
   [2036001] = {
     id = 2036001,
-    Pos = Table_SkillMould_t.Pos[231],
+    Pos = Table_SkillMould_t.Pos[233],
     Atktype = 1
   },
   [2037001] = {
@@ -4053,39 +4062,39 @@ Table_SkillMould = {
   },
   [2050001] = {
     id = 2050001,
-    Pos = Table_SkillMould_t.Pos[291],
+    Pos = Table_SkillMould_t.Pos[293],
     Atktype = 1
   },
   [2051001] = {
     id = 2051001,
-    Pos = Table_SkillMould_t.Pos[378],
+    Pos = Table_SkillMould_t.Pos[390],
     Atktype = 1
   },
   [2052001] = {
     id = 2052001,
-    Pos = Table_SkillMould_t.Pos[280]
+    Pos = Table_SkillMould_t.Pos[282]
   },
   [2053001] = {
     id = 2053001,
-    Pos = Table_SkillMould_t.Pos[487]
+    Pos = Table_SkillMould_t.Pos[496]
   },
   [2054001] = {
     id = 2054001,
-    Pos = Table_SkillMould_t.Pos[273]
+    Pos = Table_SkillMould_t.Pos[275]
   },
   [2055001] = {
     id = 2055001,
-    Pos = Table_SkillMould_t.Pos[472],
+    Pos = Table_SkillMould_t.Pos[481],
     Atktype = 1
   },
   [2056001] = {
     id = 2056001,
-    Pos = Table_SkillMould_t.Pos[264],
+    Pos = Table_SkillMould_t.Pos[266],
     Atktype = 1
   },
   [2057001] = {
     id = 2057001,
-    Pos = Table_SkillMould_t.Pos[218],
+    Pos = Table_SkillMould_t.Pos[220],
     Atktype = 1
   },
   [2058001] = {
@@ -4100,49 +4109,49 @@ Table_SkillMould = {
   },
   [2060001] = {
     id = 2060001,
-    Pos = Table_SkillMould_t.Pos[437],
+    Pos = Table_SkillMould_t.Pos[448],
     Atktype = 1
   },
   [2061001] = {
     id = 2061001,
-    Pos = Table_SkillMould_t.Pos[249],
+    Pos = Table_SkillMould_t.Pos[251],
     Atktype = 1
   },
   [2070001] = {
     id = 2070001,
-    Pos = Table_SkillMould_t.Pos[514]
+    Pos = Table_SkillMould_t.Pos[523]
   },
   [2071001] = {
     id = 2071001,
-    Pos = Table_SkillMould_t.Pos[513]
+    Pos = Table_SkillMould_t.Pos[522]
   },
   [2072001] = {
     id = 2072001,
-    Pos = Table_SkillMould_t.Pos[252]
+    Pos = Table_SkillMould_t.Pos[254]
   },
   [2073001] = {
     id = 2073001,
-    Pos = Table_SkillMould_t.Pos[512]
+    Pos = Table_SkillMould_t.Pos[521]
   },
   [2074001] = {
     id = 2074001,
-    Pos = Table_SkillMould_t.Pos[511]
+    Pos = Table_SkillMould_t.Pos[520]
   },
   [2075001] = {
     id = 2075001,
-    Pos = Table_SkillMould_t.Pos[219]
+    Pos = Table_SkillMould_t.Pos[221]
   },
   [2076001] = {
     id = 2076001,
-    Pos = Table_SkillMould_t.Pos[344]
+    Pos = Table_SkillMould_t.Pos[358]
   },
   [2077001] = {
     id = 2077001,
-    Pos = Table_SkillMould_t.Pos[210]
+    Pos = Table_SkillMould_t.Pos[211]
   },
   [2078001] = {
     id = 2078001,
-    Pos = Table_SkillMould_t.Pos[306]
+    Pos = Table_SkillMould_t.Pos[308]
   },
   [2082001] = {
     id = 2082001,
@@ -4151,7 +4160,7 @@ Table_SkillMould = {
   },
   [2083001] = {
     id = 2083001,
-    Pos = Table_SkillMould_t.Pos[315],
+    Pos = Table_SkillMould_t.Pos[317],
     Atktype = 1
   },
   [2200001] = {
@@ -4161,21 +4170,21 @@ Table_SkillMould = {
   },
   [2202001] = {
     id = 2202001,
-    Pos = Table_SkillMould_t.Pos[312],
+    Pos = Table_SkillMould_t.Pos[314],
     Atktype = 1
   },
   [2203001] = {
     id = 2203001,
-    Pos = Table_SkillMould_t.Pos[373],
+    Pos = Table_SkillMould_t.Pos[385],
     Atktype = 1
   },
   [2204001] = {
     id = 2204001,
-    Pos = Table_SkillMould_t.Pos[317]
+    Pos = Table_SkillMould_t.Pos[319]
   },
   [2205001] = {
     id = 2205001,
-    Pos = Table_SkillMould_t.Pos[506],
+    Pos = Table_SkillMould_t.Pos[515],
     Atktype = 1
   },
   [2206001] = {
@@ -4189,7 +4198,7 @@ Table_SkillMould = {
   },
   [2208001] = {
     id = 2208001,
-    Pos = Table_SkillMould_t.Pos[486],
+    Pos = Table_SkillMould_t.Pos[495],
     Atktype = 1
   },
   [2209001] = {
@@ -4203,12 +4212,12 @@ Table_SkillMould = {
   },
   [2211001] = {
     id = 2211001,
-    Pos = Table_SkillMould_t.Pos[503],
+    Pos = Table_SkillMould_t.Pos[512],
     Atktype = 1
   },
   [2212001] = {
     id = 2212001,
-    Pos = Table_SkillMould_t.Pos[364],
+    Pos = Table_SkillMould_t.Pos[376],
     Atktype = 1
   },
   [2220001] = {
@@ -4223,21 +4232,21 @@ Table_SkillMould = {
   },
   [2222001] = {
     id = 2222001,
-    Pos = Table_SkillMould_t.Pos[413]
+    Pos = Table_SkillMould_t.Pos[424]
   },
   [2223001] = {
     id = 2223001,
-    Pos = Table_SkillMould_t.Pos[383],
+    Pos = Table_SkillMould_t.Pos[395],
     Atktype = 1
   },
   [2224001] = {
     id = 2224001,
-    Pos = Table_SkillMould_t.Pos[502],
+    Pos = Table_SkillMould_t.Pos[511],
     Atktype = 1
   },
   [2225001] = {
     id = 2225001,
-    Pos = Table_SkillMould_t.Pos[217]
+    Pos = Table_SkillMould_t.Pos[219]
   },
   [2226001] = {
     id = 2226001,
@@ -4246,7 +4255,7 @@ Table_SkillMould = {
   },
   [2227001] = {
     id = 2227001,
-    Pos = Table_SkillMould_t.Pos[501],
+    Pos = Table_SkillMould_t.Pos[510],
     Atktype = 1
   },
   [2228001] = {
@@ -4255,7 +4264,7 @@ Table_SkillMould = {
   },
   [2229001] = {
     id = 2229001,
-    Pos = Table_SkillMould_t.Pos[500]
+    Pos = Table_SkillMould_t.Pos[509]
   },
   [2230001] = {
     id = 2230001,
@@ -4264,7 +4273,7 @@ Table_SkillMould = {
   },
   [2240001] = {
     id = 2240001,
-    Pos = Table_SkillMould_t.Pos[402]
+    Pos = Table_SkillMould_t.Pos[413]
   },
   [2241001] = {
     id = 2241001,
@@ -4287,16 +4296,16 @@ Table_SkillMould = {
   },
   [2245001] = {
     id = 2245001,
-    Pos = Table_SkillMould_t.Pos[183],
+    Pos = Table_SkillMould_t.Pos[184],
     Atktype = 1
   },
   [2246001] = {
     id = 2246001,
-    Pos = Table_SkillMould_t.Pos[188]
+    Pos = Table_SkillMould_t.Pos[189]
   },
   [2247001] = {
     id = 2247001,
-    Pos = Table_SkillMould_t.Pos[378],
+    Pos = Table_SkillMould_t.Pos[390],
     Atktype = 1
   },
   [2248001] = {
@@ -4311,21 +4320,21 @@ Table_SkillMould = {
   },
   [2250001] = {
     id = 2250001,
-    Pos = Table_SkillMould_t.Pos[311],
+    Pos = Table_SkillMould_t.Pos[313],
     Atktype = 1
   },
   [2251001] = {
     id = 2251001,
-    Pos = Table_SkillMould_t.Pos[497],
+    Pos = Table_SkillMould_t.Pos[506],
     Atktype = 1
   },
   [2260001] = {
     id = 2260001,
-    Pos = Table_SkillMould_t.Pos[496]
+    Pos = Table_SkillMould_t.Pos[505]
   },
   [2261001] = {
     id = 2261001,
-    Pos = Table_SkillMould_t.Pos[329]
+    Pos = Table_SkillMould_t.Pos[331]
   },
   [2262001] = {
     id = 2262001,
@@ -4333,7 +4342,7 @@ Table_SkillMould = {
   },
   [2263001] = {
     id = 2263001,
-    Pos = Table_SkillMould_t.Pos[458]
+    Pos = Table_SkillMould_t.Pos[467]
   },
   [2264001] = {
     id = 2264001,
@@ -4341,19 +4350,19 @@ Table_SkillMould = {
   },
   [2265001] = {
     id = 2265001,
-    Pos = Table_SkillMould_t.Pos[328]
+    Pos = Table_SkillMould_t.Pos[330]
   },
   [2266001] = {
     id = 2266001,
-    Pos = Table_SkillMould_t.Pos[414]
+    Pos = Table_SkillMould_t.Pos[425]
   },
   [2267001] = {
     id = 2267001,
-    Pos = Table_SkillMould_t.Pos[495]
+    Pos = Table_SkillMould_t.Pos[504]
   },
   [2268001] = {
     id = 2268001,
-    Pos = Table_SkillMould_t.Pos[494]
+    Pos = Table_SkillMould_t.Pos[503]
   },
   [2300001] = {
     id = 2300001,
@@ -4376,7 +4385,7 @@ Table_SkillMould = {
   },
   [2304001] = {
     id = 2304001,
-    Pos = Table_SkillMould_t.Pos[272],
+    Pos = Table_SkillMould_t.Pos[274],
     Atktype = 1
   },
   [2305001] = {
@@ -4406,7 +4415,7 @@ Table_SkillMould = {
   },
   [2310001] = {
     id = 2310001,
-    Pos = Table_SkillMould_t.Pos[202]
+    Pos = Table_SkillMould_t.Pos[203]
   },
   [2311001] = {
     id = 2311001,
@@ -4414,7 +4423,7 @@ Table_SkillMould = {
   },
   [2312001] = {
     id = 2312001,
-    Pos = Table_SkillMould_t.Pos[345],
+    Pos = Table_SkillMould_t.Pos[359],
     Atktype = 1
   },
   [2320001] = {
@@ -4428,7 +4437,7 @@ Table_SkillMould = {
   },
   [2322001] = {
     id = 2322001,
-    Pos = Table_SkillMould_t.Pos[231],
+    Pos = Table_SkillMould_t.Pos[233],
     Atktype = 1
   },
   [2323001] = {
@@ -4438,16 +4447,16 @@ Table_SkillMould = {
   },
   [2324001] = {
     id = 2324001,
-    Pos = Table_SkillMould_t.Pos[235],
+    Pos = Table_SkillMould_t.Pos[237],
     Atktype = 1
   },
   [2325001] = {
     id = 2325001,
-    Pos = Table_SkillMould_t.Pos[263]
+    Pos = Table_SkillMould_t.Pos[265]
   },
   [2326001] = {
     id = 2326001,
-    Pos = Table_SkillMould_t.Pos[222]
+    Pos = Table_SkillMould_t.Pos[224]
   },
   [2327001] = {
     id = 2327001,
@@ -4479,7 +4488,7 @@ Table_SkillMould = {
   },
   [2341001] = {
     id = 2341001,
-    Pos = Table_SkillMould_t.Pos[352],
+    Pos = Table_SkillMould_t.Pos[369],
     Atktype = 1
   },
   [2342001] = {
@@ -4499,7 +4508,7 @@ Table_SkillMould = {
   },
   [2345001] = {
     id = 2345001,
-    Pos = Table_SkillMould_t.Pos[279]
+    Pos = Table_SkillMould_t.Pos[281]
   },
   [2346001] = {
     id = 2346001,
@@ -4508,11 +4517,11 @@ Table_SkillMould = {
   },
   [2347001] = {
     id = 2347001,
-    Pos = Table_SkillMould_t.Pos[344]
+    Pos = Table_SkillMould_t.Pos[358]
   },
   [2348001] = {
     id = 2348001,
-    Pos = Table_SkillMould_t.Pos[414],
+    Pos = Table_SkillMould_t.Pos[425],
     Atktype = 1
   },
   [2349001] = {
@@ -4522,48 +4531,48 @@ Table_SkillMould = {
   },
   [2350001] = {
     id = 2350001,
-    Pos = Table_SkillMould_t.Pos[393]
+    Pos = Table_SkillMould_t.Pos[404]
   },
   [2351001] = {
     id = 2351001,
-    Pos = Table_SkillMould_t.Pos[492],
+    Pos = Table_SkillMould_t.Pos[501],
     Atktype = 1
   },
   [2360001] = {
     id = 2360001,
-    Pos = Table_SkillMould_t.Pos[440]
+    Pos = Table_SkillMould_t.Pos[383]
   },
   [2361001] = {
     id = 2361001,
-    Pos = Table_SkillMould_t.Pos[480]
+    Pos = Table_SkillMould_t.Pos[489]
   },
   [2362001] = {
     id = 2362001,
-    Pos = Table_SkillMould_t.Pos[430]
+    Pos = Table_SkillMould_t.Pos[441]
   },
   [2363001] = {
     id = 2363001,
-    Pos = Table_SkillMould_t.Pos[442]
+    Pos = Table_SkillMould_t.Pos[452]
   },
   [2364001] = {
     id = 2364001,
-    Pos = Table_SkillMould_t.Pos[489]
+    Pos = Table_SkillMould_t.Pos[498]
   },
   [2365001] = {
     id = 2365001,
-    Pos = Table_SkillMould_t.Pos[372]
+    Pos = Table_SkillMould_t.Pos[382]
   },
   [2366001] = {
     id = 2366001,
-    Pos = Table_SkillMould_t.Pos[234]
+    Pos = Table_SkillMould_t.Pos[236]
   },
   [2367001] = {
     id = 2367001,
-    Pos = Table_SkillMould_t.Pos[418]
+    Pos = Table_SkillMould_t.Pos[429]
   },
   [2368001] = {
     id = 2368001,
-    Pos = Table_SkillMould_t.Pos[417]
+    Pos = Table_SkillMould_t.Pos[428]
   },
   [2400001] = {
     id = 2400001,
@@ -4577,16 +4586,16 @@ Table_SkillMould = {
   },
   [2402001] = {
     id = 2402001,
-    Pos = Table_SkillMould_t.Pos[465],
+    Pos = Table_SkillMould_t.Pos[474],
     Atktype = 1
   },
   [2403001] = {
     id = 2403001,
-    Pos = Table_SkillMould_t.Pos[462]
+    Pos = Table_SkillMould_t.Pos[471]
   },
   [2404001] = {
     id = 2404001,
-    Pos = Table_SkillMould_t.Pos[373],
+    Pos = Table_SkillMould_t.Pos[385],
     Atktype = 1
   },
   [2405001] = {
@@ -4599,25 +4608,25 @@ Table_SkillMould = {
   },
   [2407001] = {
     id = 2407001,
-    Pos = Table_SkillMould_t.Pos[486]
+    Pos = Table_SkillMould_t.Pos[495]
   },
   [2408001] = {
     id = 2408001,
-    Pos = Table_SkillMould_t.Pos[436],
+    Pos = Table_SkillMould_t.Pos[447],
     Atktype = 1
   },
   [2409001] = {
     id = 2409001,
-    Pos = Table_SkillMould_t.Pos[284]
+    Pos = Table_SkillMould_t.Pos[286]
   },
   [2410001] = {
     id = 2410001,
-    Pos = Table_SkillMould_t.Pos[484],
+    Pos = Table_SkillMould_t.Pos[493],
     Atktype = 1
   },
   [2411001] = {
     id = 2411001,
-    Pos = Table_SkillMould_t.Pos[389]
+    Pos = Table_SkillMould_t.Pos[400]
   },
   [2412001] = {
     id = 2412001,
@@ -4649,7 +4658,7 @@ Table_SkillMould = {
   },
   [2425001] = {
     id = 2425001,
-    Pos = Table_SkillMould_t.Pos[288],
+    Pos = Table_SkillMould_t.Pos[290],
     Atktype = 1
   },
   [2426001] = {
@@ -4658,7 +4667,7 @@ Table_SkillMould = {
   },
   [2427001] = {
     id = 2427001,
-    Pos = Table_SkillMould_t.Pos[325]
+    Pos = Table_SkillMould_t.Pos[327]
   },
   [2428001] = {
     id = 2428001,
@@ -4667,16 +4676,16 @@ Table_SkillMould = {
   },
   [2429001] = {
     id = 2429001,
-    Pos = Table_SkillMould_t.Pos[483]
+    Pos = Table_SkillMould_t.Pos[492]
   },
   [2430001] = {
     id = 2430001,
-    Pos = Table_SkillMould_t.Pos[468],
+    Pos = Table_SkillMould_t.Pos[477],
     Atktype = 1
   },
   [2435001] = {
     id = 2435001,
-    Pos = Table_SkillMould_t.Pos[329]
+    Pos = Table_SkillMould_t.Pos[331]
   },
   [2437001] = {
     id = 2437001,
@@ -4689,7 +4698,7 @@ Table_SkillMould = {
   },
   [2439001] = {
     id = 2439001,
-    Pos = Table_SkillMould_t.Pos[311],
+    Pos = Table_SkillMould_t.Pos[313],
     Atktype = 1
   },
   [2440001] = {
@@ -4699,12 +4708,12 @@ Table_SkillMould = {
   },
   [2441001] = {
     id = 2441001,
-    Pos = Table_SkillMould_t.Pos[300],
+    Pos = Table_SkillMould_t.Pos[302],
     Atktype = 1
   },
   [2442001] = {
     id = 2442001,
-    Pos = Table_SkillMould_t.Pos[252]
+    Pos = Table_SkillMould_t.Pos[254]
   },
   [2443001] = {
     id = 2443001,
@@ -4712,37 +4721,37 @@ Table_SkillMould = {
   },
   [2444001] = {
     id = 2444001,
-    Pos = Table_SkillMould_t.Pos[491]
+    Pos = Table_SkillMould_t.Pos[500]
   },
   [2445001] = {
     id = 2445001,
-    Pos = Table_SkillMould_t.Pos[276],
+    Pos = Table_SkillMould_t.Pos[278],
     Atktype = 1
   },
   [2446001] = {
     id = 2446001,
-    Pos = Table_SkillMould_t.Pos[481],
+    Pos = Table_SkillMould_t.Pos[490],
     Atktype = 1
   },
   [2450001] = {
     id = 2450001,
-    Pos = Table_SkillMould_t.Pos[454]
+    Pos = Table_SkillMould_t.Pos[463]
   },
   [2451001] = {
     id = 2451001,
-    Pos = Table_SkillMould_t.Pos[256]
+    Pos = Table_SkillMould_t.Pos[258]
   },
   [2452001] = {
     id = 2452001,
-    Pos = Table_SkillMould_t.Pos[447]
+    Pos = Table_SkillMould_t.Pos[456]
   },
   [2453001] = {
     id = 2453001,
-    Pos = Table_SkillMould_t.Pos[244]
+    Pos = Table_SkillMould_t.Pos[246]
   },
   [2454001] = {
     id = 2454001,
-    Pos = Table_SkillMould_t.Pos[349]
+    Pos = Table_SkillMould_t.Pos[365]
   },
   [2455001] = {
     id = 2455001,
@@ -4750,11 +4759,11 @@ Table_SkillMould = {
   },
   [2456001] = {
     id = 2456001,
-    Pos = Table_SkillMould_t.Pos[426]
+    Pos = Table_SkillMould_t.Pos[437]
   },
   [2457001] = {
     id = 2457001,
-    Pos = Table_SkillMould_t.Pos[433]
+    Pos = Table_SkillMould_t.Pos[444]
   },
   [2501001] = {
     id = 2501001,
@@ -4768,24 +4777,24 @@ Table_SkillMould = {
   },
   [2503001] = {
     id = 2503001,
-    Pos = Table_SkillMould_t.Pos[410],
+    Pos = Table_SkillMould_t.Pos[421],
     Atktype = 1
   },
   [2504001] = {
     id = 2504001,
-    Pos = Table_SkillMould_t.Pos[198]
+    Pos = Table_SkillMould_t.Pos[199]
   },
   [2505001] = {
     id = 2505001,
-    Pos = Table_SkillMould_t.Pos[399]
+    Pos = Table_SkillMould_t.Pos[410]
   },
   [2506001] = {
     id = 2506001,
-    Pos = Table_SkillMould_t.Pos[182]
+    Pos = Table_SkillMould_t.Pos[183]
   },
   [2507001] = {
     id = 2507001,
-    Pos = Table_SkillMould_t.Pos[479],
+    Pos = Table_SkillMould_t.Pos[488],
     Atktype = 1
   },
   [2508001] = {
@@ -4795,30 +4804,30 @@ Table_SkillMould = {
   },
   [2509001] = {
     id = 2509001,
-    Pos = Table_SkillMould_t.Pos[478],
+    Pos = Table_SkillMould_t.Pos[487],
     Atktype = 1
   },
   [2510001] = {
     id = 2510001,
-    Pos = Table_SkillMould_t.Pos[477],
+    Pos = Table_SkillMould_t.Pos[486],
     Atktype = 1
   },
   [2511001] = {
     id = 2511001,
-    Pos = Table_SkillMould_t.Pos[476],
+    Pos = Table_SkillMould_t.Pos[485],
     Atktype = 1
   },
   [2512001] = {
     id = 2512001,
-    Pos = Table_SkillMould_t.Pos[475]
+    Pos = Table_SkillMould_t.Pos[484]
   },
   [2513001] = {
     id = 2513001,
-    Pos = Table_SkillMould_t.Pos[363]
+    Pos = Table_SkillMould_t.Pos[374]
   },
   [2514001] = {
     id = 2514001,
-    Pos = Table_SkillMould_t.Pos[303]
+    Pos = Table_SkillMould_t.Pos[305]
   },
   [2530001] = {
     id = 2530001,
@@ -4832,49 +4841,49 @@ Table_SkillMould = {
   },
   [2532001] = {
     id = 2532001,
-    Pos = Table_SkillMould_t.Pos[461],
+    Pos = Table_SkillMould_t.Pos[470],
     Atktype = 1
   },
   [2533001] = {
     id = 2533001,
-    Pos = Table_SkillMould_t.Pos[473],
+    Pos = Table_SkillMould_t.Pos[482],
     Atktype = 1
   },
   [2534001] = {
     id = 2534001,
-    Pos = Table_SkillMould_t.Pos[471],
+    Pos = Table_SkillMould_t.Pos[480],
     Atktype = 1
   },
   [2535001] = {
     id = 2535001,
-    Pos = Table_SkillMould_t.Pos[265],
+    Pos = Table_SkillMould_t.Pos[267],
     Atktype = 1
   },
   [2536001] = {
     id = 2536001,
-    Pos = Table_SkillMould_t.Pos[457],
+    Pos = Table_SkillMould_t.Pos[466],
     Atktype = 1
   },
   [2537001] = {
     id = 2537001,
-    Pos = Table_SkillMould_t.Pos[259],
+    Pos = Table_SkillMould_t.Pos[261],
     Atktype = 1
   },
   [2538001] = {
     id = 2538001,
-    Pos = Table_SkillMould_t.Pos[438]
+    Pos = Table_SkillMould_t.Pos[449]
   },
   [2539001] = {
     id = 2539001,
-    Pos = Table_SkillMould_t.Pos[470]
+    Pos = Table_SkillMould_t.Pos[479]
   },
   [2540001] = {
     id = 2540001,
-    Pos = Table_SkillMould_t.Pos[435]
+    Pos = Table_SkillMould_t.Pos[446]
   },
   [2541001] = {
     id = 2541001,
-    Pos = Table_SkillMould_t.Pos[469]
+    Pos = Table_SkillMould_t.Pos[478]
   },
   [2560001] = {
     id = 2560001,
@@ -4888,7 +4897,7 @@ Table_SkillMould = {
   },
   [2562001] = {
     id = 2562001,
-    Pos = Table_SkillMould_t.Pos[192],
+    Pos = Table_SkillMould_t.Pos[193],
     Atktype = 1
   },
   [2563001] = {
@@ -4898,7 +4907,7 @@ Table_SkillMould = {
   },
   [2564001] = {
     id = 2564001,
-    Pos = Table_SkillMould_t.Pos[291],
+    Pos = Table_SkillMould_t.Pos[293],
     Atktype = 1
   },
   [2565001] = {
@@ -4918,7 +4927,7 @@ Table_SkillMould = {
   },
   [2568001] = {
     id = 2568001,
-    Pos = Table_SkillMould_t.Pos[318]
+    Pos = Table_SkillMould_t.Pos[320]
   },
   [2569001] = {
     id = 2569001,
@@ -4926,11 +4935,11 @@ Table_SkillMould = {
   },
   [2570001] = {
     id = 2570001,
-    Pos = Table_SkillMould_t.Pos[309]
+    Pos = Table_SkillMould_t.Pos[311]
   },
   [2571001] = {
     id = 2571001,
-    Pos = Table_SkillMould_t.Pos[505]
+    Pos = Table_SkillMould_t.Pos[514]
   },
   [2590001] = {
     id = 2590001,
@@ -4944,7 +4953,7 @@ Table_SkillMould = {
   },
   [2592001] = {
     id = 2592001,
-    Pos = Table_SkillMould_t.Pos[192],
+    Pos = Table_SkillMould_t.Pos[193],
     Atktype = 1
   },
   [2593001] = {
@@ -4959,7 +4968,7 @@ Table_SkillMould = {
   },
   [2595001] = {
     id = 2595001,
-    Pos = Table_SkillMould_t.Pos[318],
+    Pos = Table_SkillMould_t.Pos[320],
     Atktype = 1
   },
   [2596001] = {
@@ -4969,7 +4978,7 @@ Table_SkillMould = {
   },
   [2597001] = {
     id = 2597001,
-    Pos = Table_SkillMould_t.Pos[291],
+    Pos = Table_SkillMould_t.Pos[293],
     Atktype = 1
   },
   [2598001] = {
@@ -4979,7 +4988,7 @@ Table_SkillMould = {
   },
   [2599001] = {
     id = 2599001,
-    Pos = Table_SkillMould_t.Pos[366]
+    Pos = Table_SkillMould_t.Pos[377]
   },
   [2600001] = {
     id = 2600001,
@@ -4987,7 +4996,7 @@ Table_SkillMould = {
   },
   [2601001] = {
     id = 2601001,
-    Pos = Table_SkillMould_t.Pos[260]
+    Pos = Table_SkillMould_t.Pos[262]
   },
   [2602001] = {
     id = 2602001,
@@ -5010,27 +5019,27 @@ Table_SkillMould = {
   },
   [2613001] = {
     id = 2613001,
-    Pos = Table_SkillMould_t.Pos[313],
+    Pos = Table_SkillMould_t.Pos[315],
     Atktype = 1
   },
   [2614001] = {
     id = 2614001,
-    Pos = Table_SkillMould_t.Pos[509],
+    Pos = Table_SkillMould_t.Pos[518],
     Atktype = 1
   },
   [2615001] = {
     id = 2615001,
-    Pos = Table_SkillMould_t.Pos[301],
+    Pos = Table_SkillMould_t.Pos[303],
     Atktype = 1
   },
   [2616001] = {
     id = 2616001,
-    Pos = Table_SkillMould_t.Pos[479],
+    Pos = Table_SkillMould_t.Pos[488],
     Atktype = 1
   },
   [2617001] = {
     id = 2617001,
-    Pos = Table_SkillMould_t.Pos[267],
+    Pos = Table_SkillMould_t.Pos[269],
     Atktype = 1
   },
   [2618001] = {
@@ -5045,15 +5054,15 @@ Table_SkillMould = {
   },
   [2620001] = {
     id = 2620001,
-    Pos = Table_SkillMould_t.Pos[482]
+    Pos = Table_SkillMould_t.Pos[491]
   },
   [2621001] = {
     id = 2621001,
-    Pos = Table_SkillMould_t.Pos[270]
+    Pos = Table_SkillMould_t.Pos[272]
   },
   [2622001] = {
     id = 2622001,
-    Pos = Table_SkillMould_t.Pos[466]
+    Pos = Table_SkillMould_t.Pos[475]
   },
   [2623001] = {
     id = 2623001,
@@ -5071,7 +5080,7 @@ Table_SkillMould = {
   },
   [2652001] = {
     id = 2652001,
-    Pos = Table_SkillMould_t.Pos[237],
+    Pos = Table_SkillMould_t.Pos[239],
     Atktype = 1
   },
   [2653001] = {
@@ -5081,7 +5090,7 @@ Table_SkillMould = {
   },
   [2654001] = {
     id = 2654001,
-    Pos = Table_SkillMould_t.Pos[323],
+    Pos = Table_SkillMould_t.Pos[325],
     Atktype = 1
   },
   [2655001] = {
@@ -5091,7 +5100,7 @@ Table_SkillMould = {
   },
   [2656001] = {
     id = 2656001,
-    Pos = Table_SkillMould_t.Pos[274],
+    Pos = Table_SkillMould_t.Pos[276],
     Atktype = 1
   },
   [2657001] = {
@@ -5101,29 +5110,29 @@ Table_SkillMould = {
   },
   [2658001] = {
     id = 2658001,
-    Pos = Table_SkillMould_t.Pos[305],
+    Pos = Table_SkillMould_t.Pos[307],
     Atktype = 1
   },
   [2659001] = {
     id = 2659001,
-    Pos = Table_SkillMould_t.Pos[429],
+    Pos = Table_SkillMould_t.Pos[440],
     Atktype = 1
   },
   [2660001] = {
     id = 2660001,
-    Pos = Table_SkillMould_t.Pos[289]
+    Pos = Table_SkillMould_t.Pos[291]
   },
   [2661001] = {
     id = 2661001,
-    Pos = Table_SkillMould_t.Pos[283]
+    Pos = Table_SkillMould_t.Pos[285]
   },
   [2662001] = {
     id = 2662001,
-    Pos = Table_SkillMould_t.Pos[253]
+    Pos = Table_SkillMould_t.Pos[255]
   },
   [2663001] = {
     id = 2663001,
-    Pos = Table_SkillMould_t.Pos[485]
+    Pos = Table_SkillMould_t.Pos[494]
   },
   [2670001] = {
     id = 2670001,
@@ -5137,47 +5146,47 @@ Table_SkillMould = {
   },
   [2672001] = {
     id = 2672001,
-    Pos = Table_SkillMould_t.Pos[237],
+    Pos = Table_SkillMould_t.Pos[239],
     Atktype = 1
   },
   [2673001] = {
     id = 2673001,
-    Pos = Table_SkillMould_t.Pos[429],
+    Pos = Table_SkillMould_t.Pos[440],
     Atktype = 1
   },
   [2674001] = {
     id = 2674001,
-    Pos = Table_SkillMould_t.Pos[224],
+    Pos = Table_SkillMould_t.Pos[226],
     Atktype = 1
   },
   [2675001] = {
     id = 2675001,
-    Pos = Table_SkillMould_t.Pos[419],
+    Pos = Table_SkillMould_t.Pos[430],
     Atktype = 1
   },
   [2676001] = {
     id = 2676001,
-    Pos = Table_SkillMould_t.Pos[214],
+    Pos = Table_SkillMould_t.Pos[216],
     Atktype = 1
   },
   [2677001] = {
     id = 2677001,
-    Pos = Table_SkillMould_t.Pos[412],
+    Pos = Table_SkillMould_t.Pos[423],
     Atktype = 1
   },
   [2678001] = {
     id = 2678001,
-    Pos = Table_SkillMould_t.Pos[200],
+    Pos = Table_SkillMould_t.Pos[201],
     Atktype = 1
   },
   [2679001] = {
     id = 2679001,
-    Pos = Table_SkillMould_t.Pos[401],
+    Pos = Table_SkillMould_t.Pos[412],
     Atktype = 1
   },
   [2680001] = {
     id = 2680001,
-    Pos = Table_SkillMould_t.Pos[184]
+    Pos = Table_SkillMould_t.Pos[185]
   },
   [2681001] = {
     id = 2681001,
@@ -5189,7 +5198,7 @@ Table_SkillMould = {
   },
   [2683001] = {
     id = 2683001,
-    Pos = Table_SkillMould_t.Pos[374]
+    Pos = Table_SkillMould_t.Pos[386]
   },
   [2700001] = {
     id = 2700001,
@@ -5203,22 +5212,22 @@ Table_SkillMould = {
   },
   [2702001] = {
     id = 2702001,
-    Pos = Table_SkillMould_t.Pos[323],
+    Pos = Table_SkillMould_t.Pos[325],
     Atktype = 1
   },
   [2703001] = {
     id = 2703001,
-    Pos = Table_SkillMould_t.Pos[296],
+    Pos = Table_SkillMould_t.Pos[298],
     Atktype = 1
   },
   [2704001] = {
     id = 2704001,
-    Pos = Table_SkillMould_t.Pos[479],
+    Pos = Table_SkillMould_t.Pos[488],
     Atktype = 1
   },
   [2705001] = {
     id = 2705001,
-    Pos = Table_SkillMould_t.Pos[283],
+    Pos = Table_SkillMould_t.Pos[285],
     Atktype = 1
   },
   [2706001] = {
@@ -5228,7 +5237,7 @@ Table_SkillMould = {
   },
   [2707001] = {
     id = 2707001,
-    Pos = Table_SkillMould_t.Pos[274],
+    Pos = Table_SkillMould_t.Pos[276],
     Atktype = 1
   },
   [2708001] = {
@@ -5238,31 +5247,31 @@ Table_SkillMould = {
   },
   [2709001] = {
     id = 2709001,
-    Pos = Table_SkillMould_t.Pos[267],
+    Pos = Table_SkillMould_t.Pos[269],
     Atktype = 1
   },
   [2710001] = {
     id = 2710001,
-    Pos = Table_SkillMould_t.Pos[289],
+    Pos = Table_SkillMould_t.Pos[291],
     Atktype = 1
   },
   [2711001] = {
     id = 2711001,
-    Pos = Table_SkillMould_t.Pos[260],
+    Pos = Table_SkillMould_t.Pos[262],
     Atktype = 1
   },
   [2712001] = {
     id = 2712001,
-    Pos = Table_SkillMould_t.Pos[301],
+    Pos = Table_SkillMould_t.Pos[303],
     Atktype = 1
   },
   [2713001] = {
     id = 2713001,
-    Pos = Table_SkillMould_t.Pos[253]
+    Pos = Table_SkillMould_t.Pos[255]
   },
   [2714001] = {
     id = 2714001,
-    Pos = Table_SkillMould_t.Pos[442]
+    Pos = Table_SkillMould_t.Pos[452]
   },
   [2715001] = {
     id = 2715001,
@@ -5285,7 +5294,7 @@ Table_SkillMould = {
   },
   [2736001] = {
     id = 2736001,
-    Pos = Table_SkillMould_t.Pos[341],
+    Pos = Table_SkillMould_t.Pos[349],
     Atktype = 1
   },
   [2737001] = {
@@ -5305,7 +5314,7 @@ Table_SkillMould = {
   },
   [2740001] = {
     id = 2740001,
-    Pos = Table_SkillMould_t.Pos[327],
+    Pos = Table_SkillMould_t.Pos[329],
     Atktype = 1
   },
   [2741001] = {
@@ -5315,7 +5324,7 @@ Table_SkillMould = {
   },
   [2742001] = {
     id = 2742001,
-    Pos = Table_SkillMould_t.Pos[319]
+    Pos = Table_SkillMould_t.Pos[321]
   },
   [2743001] = {
     id = 2743001,
@@ -5323,11 +5332,11 @@ Table_SkillMould = {
   },
   [2744001] = {
     id = 2744001,
-    Pos = Table_SkillMould_t.Pos[310]
+    Pos = Table_SkillMould_t.Pos[312]
   },
   [2745001] = {
     id = 2745001,
-    Pos = Table_SkillMould_t.Pos[507]
+    Pos = Table_SkillMould_t.Pos[516]
   },
   [3001001] = {
     id = 3001001,
@@ -5335,7 +5344,7 @@ Table_SkillMould = {
   },
   [3002001] = {
     id = 3002001,
-    Pos = Table_SkillMould_t.Pos[272]
+    Pos = Table_SkillMould_t.Pos[274]
   },
   [3003001] = {
     id = 3003001,
@@ -5343,7 +5352,7 @@ Table_SkillMould = {
   },
   [3004001] = {
     id = 3004001,
-    Pos = Table_SkillMould_t.Pos[229],
+    Pos = Table_SkillMould_t.Pos[231],
     Atktype = 1
   },
   [3005001] = {
@@ -5362,7 +5371,7 @@ Table_SkillMould = {
   },
   [3008001] = {
     id = 3008001,
-    Pos = Table_SkillMould_t.Pos[294],
+    Pos = Table_SkillMould_t.Pos[296],
     Atktype = 1
   },
   [3009001] = {
@@ -5394,23 +5403,23 @@ Table_SkillMould = {
   },
   [3020001] = {
     id = 3020001,
-    Pos = Table_SkillMould_t.Pos[239]
+    Pos = Table_SkillMould_t.Pos[241]
   },
   [3021001] = {
     id = 3021001,
-    Pos = Table_SkillMould_t.Pos[307]
+    Pos = Table_SkillMould_t.Pos[309]
   },
   [3022001] = {
     id = 3022001,
-    Pos = Table_SkillMould_t.Pos[227]
+    Pos = Table_SkillMould_t.Pos[229]
   },
   [3023001] = {
     id = 3023001,
-    Pos = Table_SkillMould_t.Pos[293]
+    Pos = Table_SkillMould_t.Pos[295]
   },
   [3024001] = {
     id = 3024001,
-    Pos = Table_SkillMould_t.Pos[218]
+    Pos = Table_SkillMould_t.Pos[220]
   },
   [3025001] = {
     id = 3025001,
@@ -5422,19 +5431,19 @@ Table_SkillMould = {
   },
   [3027001] = {
     id = 3027001,
-    Pos = Table_SkillMould_t.Pos[269]
+    Pos = Table_SkillMould_t.Pos[271]
   },
   [3028001] = {
     id = 3028001,
-    Pos = Table_SkillMould_t.Pos[188]
+    Pos = Table_SkillMould_t.Pos[189]
   },
   [3101001] = {
     id = 3101001,
-    Pos = Table_SkillMould_t.Pos[312]
+    Pos = Table_SkillMould_t.Pos[314]
   },
   [3102001] = {
     id = 3102001,
-    Pos = Table_SkillMould_t.Pos[262]
+    Pos = Table_SkillMould_t.Pos[264]
   },
   [3103001] = {
     id = 3103001,
@@ -5442,12 +5451,12 @@ Table_SkillMould = {
   },
   [3104001] = {
     id = 3104001,
-    Pos = Table_SkillMould_t.Pos[257],
+    Pos = Table_SkillMould_t.Pos[259],
     Atktype = 1
   },
   [3105001] = {
     id = 3105001,
-    Pos = Table_SkillMould_t.Pos[448],
+    Pos = Table_SkillMould_t.Pos[457],
     Atktype = 1
   },
   [3106001] = {
@@ -5457,7 +5466,7 @@ Table_SkillMould = {
   },
   [3107001] = {
     id = 3107001,
-    Pos = Table_SkillMould_t.Pos[223],
+    Pos = Table_SkillMould_t.Pos[225],
     Atktype = 1
   },
   [3108001] = {
@@ -5467,7 +5476,7 @@ Table_SkillMould = {
   },
   [3109001] = {
     id = 3109001,
-    Pos = Table_SkillMould_t.Pos[390],
+    Pos = Table_SkillMould_t.Pos[401],
     Atktype = 1
   },
   [3110001] = {
@@ -5477,12 +5486,12 @@ Table_SkillMould = {
   },
   [3111001] = {
     id = 3111001,
-    Pos = Table_SkillMould_t.Pos[375],
+    Pos = Table_SkillMould_t.Pos[387],
     Atktype = 1
   },
   [3112001] = {
     id = 3112001,
-    Pos = Table_SkillMould_t.Pos[211],
+    Pos = Table_SkillMould_t.Pos[212],
     Atktype = 1
   },
   [3113001] = {
@@ -5495,7 +5504,7 @@ Table_SkillMould = {
   },
   [3121001] = {
     id = 3121001,
-    Pos = Table_SkillMould_t.Pos[256]
+    Pos = Table_SkillMould_t.Pos[258]
   },
   [3122001] = {
     id = 3122001,
@@ -5503,7 +5512,7 @@ Table_SkillMould = {
   },
   [3123001] = {
     id = 3123001,
-    Pos = Table_SkillMould_t.Pos[330]
+    Pos = Table_SkillMould_t.Pos[332]
   },
   [3124001] = {
     id = 3124001,
@@ -5527,7 +5536,7 @@ Table_SkillMould = {
   },
   [3129001] = {
     id = 3129001,
-    Pos = Table_SkillMould_t.Pos[213]
+    Pos = Table_SkillMould_t.Pos[215]
   },
   [3201001] = {
     id = 3201001,
@@ -5536,11 +5545,11 @@ Table_SkillMould = {
   },
   [3202001] = {
     id = 3202001,
-    Pos = Table_SkillMould_t.Pos[190]
+    Pos = Table_SkillMould_t.Pos[191]
   },
   [3203001] = {
     id = 3203001,
-    Pos = Table_SkillMould_t.Pos[393],
+    Pos = Table_SkillMould_t.Pos[404],
     Atktype = 1
   },
   [3204001] = {
@@ -5550,7 +5559,7 @@ Table_SkillMould = {
   },
   [3205001] = {
     id = 3205001,
-    Pos = Table_SkillMould_t.Pos[381]
+    Pos = Table_SkillMould_t.Pos[393]
   },
   [3206001] = {
     id = 3206001,
@@ -5563,16 +5572,16 @@ Table_SkillMould = {
   },
   [3208001] = {
     id = 3208001,
-    Pos = Table_SkillMould_t.Pos[411]
+    Pos = Table_SkillMould_t.Pos[422]
   },
   [3209001] = {
     id = 3209001,
-    Pos = Table_SkillMould_t.Pos[459],
+    Pos = Table_SkillMould_t.Pos[468],
     Atktype = 1
   },
   [3210001] = {
     id = 3210001,
-    Pos = Table_SkillMould_t.Pos[458],
+    Pos = Table_SkillMould_t.Pos[467],
     Atktype = 1
   },
   [3211001] = {
@@ -5582,7 +5591,7 @@ Table_SkillMould = {
   },
   [3212001] = {
     id = 3212001,
-    Pos = Table_SkillMould_t.Pos[456]
+    Pos = Table_SkillMould_t.Pos[465]
   },
   [3213001] = {
     id = 3213001,
@@ -5595,7 +5604,7 @@ Table_SkillMould = {
   },
   [3221001] = {
     id = 3221001,
-    Pos = Table_SkillMould_t.Pos[320]
+    Pos = Table_SkillMould_t.Pos[322]
   },
   [3222001] = {
     id = 3222001,
@@ -5607,23 +5616,23 @@ Table_SkillMould = {
   },
   [3224001] = {
     id = 3224001,
-    Pos = Table_SkillMould_t.Pos[508]
+    Pos = Table_SkillMould_t.Pos[517]
   },
   [3225001] = {
     id = 3225001,
-    Pos = Table_SkillMould_t.Pos[252]
+    Pos = Table_SkillMould_t.Pos[254]
   },
   [3226001] = {
     id = 3226001,
-    Pos = Table_SkillMould_t.Pos[361]
+    Pos = Table_SkillMould_t.Pos[362]
   },
   [3227001] = {
     id = 3227001,
-    Pos = Table_SkillMould_t.Pos[455]
+    Pos = Table_SkillMould_t.Pos[464]
   },
   [3228001] = {
     id = 3228001,
-    Pos = Table_SkillMould_t.Pos[219]
+    Pos = Table_SkillMould_t.Pos[221]
   },
   [3301001] = {
     id = 3301001,
@@ -5646,7 +5655,7 @@ Table_SkillMould = {
   },
   [3305001] = {
     id = 3305001,
-    Pos = Table_SkillMould_t.Pos[332],
+    Pos = Table_SkillMould_t.Pos[334],
     Atktype = 1
   },
   [3306001] = {
@@ -5661,15 +5670,15 @@ Table_SkillMould = {
   },
   [3308001] = {
     id = 3308001,
-    Pos = Table_SkillMould_t.Pos[361]
+    Pos = Table_SkillMould_t.Pos[362]
   },
   [3309001] = {
     id = 3309001,
-    Pos = Table_SkillMould_t.Pos[273]
+    Pos = Table_SkillMould_t.Pos[275]
   },
   [3310001] = {
     id = 3310001,
-    Pos = Table_SkillMould_t.Pos[345]
+    Pos = Table_SkillMould_t.Pos[359]
   },
   [3311001] = {
     id = 3311001,
@@ -5682,27 +5691,27 @@ Table_SkillMould = {
   },
   [3313001] = {
     id = 3313001,
-    Pos = Table_SkillMould_t.Pos[213]
+    Pos = Table_SkillMould_t.Pos[215]
   },
   [3314001] = {
     id = 3314001,
-    Pos = Table_SkillMould_t.Pos[365]
+    Pos = Table_SkillMould_t.Pos[371]
   },
   [3320001] = {
     id = 3320001,
-    Pos = Table_SkillMould_t.Pos[403]
+    Pos = Table_SkillMould_t.Pos[414]
   },
   [3321001] = {
     id = 3321001,
-    Pos = Table_SkillMould_t.Pos[258]
+    Pos = Table_SkillMould_t.Pos[260]
   },
   [3322001] = {
     id = 3322001,
-    Pos = Table_SkillMould_t.Pos[451]
+    Pos = Table_SkillMould_t.Pos[460]
   },
   [3323001] = {
     id = 3323001,
-    Pos = Table_SkillMould_t.Pos[249]
+    Pos = Table_SkillMould_t.Pos[251]
   },
   [3324001] = {
     id = 3324001,
@@ -5714,11 +5723,11 @@ Table_SkillMould = {
   },
   [3326001] = {
     id = 3326001,
-    Pos = Table_SkillMould_t.Pos[431]
+    Pos = Table_SkillMould_t.Pos[442]
   },
   [3327001] = {
     id = 3327001,
-    Pos = Table_SkillMould_t.Pos[390]
+    Pos = Table_SkillMould_t.Pos[401]
   },
   [3328001] = {
     id = 3328001,
@@ -5726,20 +5735,20 @@ Table_SkillMould = {
   },
   [3329001] = {
     id = 3329001,
-    Pos = Table_SkillMould_t.Pos[453]
+    Pos = Table_SkillMould_t.Pos[462]
   },
   [3400001] = {
     id = 3400001,
-    Pos = Table_SkillMould_t.Pos[252]
+    Pos = Table_SkillMould_t.Pos[254]
   },
   [3401001] = {
     id = 3401001,
-    Pos = Table_SkillMould_t.Pos[228],
+    Pos = Table_SkillMould_t.Pos[230],
     Atktype = 1
   },
   [3402001] = {
     id = 3402001,
-    Pos = Table_SkillMould_t.Pos[422],
+    Pos = Table_SkillMould_t.Pos[433],
     Atktype = 1
   },
   [3403001] = {
@@ -5748,7 +5757,7 @@ Table_SkillMould = {
   },
   [3404001] = {
     id = 3404001,
-    Pos = Table_SkillMould_t.Pos[382]
+    Pos = Table_SkillMould_t.Pos[394]
   },
   [3405001] = {
     id = 3405001,
@@ -5782,11 +5791,11 @@ Table_SkillMould = {
   },
   [3411001] = {
     id = 3411001,
-    Pos = Table_SkillMould_t.Pos[252]
+    Pos = Table_SkillMould_t.Pos[254]
   },
   [3412001] = {
     id = 3412001,
-    Pos = Table_SkillMould_t.Pos[437],
+    Pos = Table_SkillMould_t.Pos[448],
     Atktype = 1
   },
   [3420001] = {
@@ -5799,23 +5808,23 @@ Table_SkillMould = {
   },
   [3422001] = {
     id = 3422001,
-    Pos = Table_SkillMould_t.Pos[446]
+    Pos = Table_SkillMould_t.Pos[455]
   },
   [3423001] = {
     id = 3423001,
-    Pos = Table_SkillMould_t.Pos[445]
+    Pos = Table_SkillMould_t.Pos[454]
   },
   [3424001] = {
     id = 3424001,
-    Pos = Table_SkillMould_t.Pos[213]
+    Pos = Table_SkillMould_t.Pos[215]
   },
   [3425001] = {
     id = 3425001,
-    Pos = Table_SkillMould_t.Pos[444]
+    Pos = Table_SkillMould_t.Pos[384]
   },
   [3426001] = {
     id = 3426001,
-    Pos = Table_SkillMould_t.Pos[311]
+    Pos = Table_SkillMould_t.Pos[313]
   },
   [3427001] = {
     id = 3427001,
@@ -5827,16 +5836,16 @@ Table_SkillMould = {
   },
   [3500001] = {
     id = 3500001,
-    Pos = Table_SkillMould_t.Pos[252]
+    Pos = Table_SkillMould_t.Pos[254]
   },
   [3501001] = {
     id = 3501001,
-    Pos = Table_SkillMould_t.Pos[228],
+    Pos = Table_SkillMould_t.Pos[230],
     Atktype = 1
   },
   [3502001] = {
     id = 3502001,
-    Pos = Table_SkillMould_t.Pos[422],
+    Pos = Table_SkillMould_t.Pos[433],
     Atktype = 1
   },
   [3503001] = {
@@ -5845,7 +5854,7 @@ Table_SkillMould = {
   },
   [3504001] = {
     id = 3504001,
-    Pos = Table_SkillMould_t.Pos[382]
+    Pos = Table_SkillMould_t.Pos[394]
   },
   [3505001] = {
     id = 3505001,
@@ -5879,11 +5888,11 @@ Table_SkillMould = {
   },
   [3511001] = {
     id = 3511001,
-    Pos = Table_SkillMould_t.Pos[252]
+    Pos = Table_SkillMould_t.Pos[254]
   },
   [3512001] = {
     id = 3512001,
-    Pos = Table_SkillMould_t.Pos[437],
+    Pos = Table_SkillMould_t.Pos[448],
     Atktype = 1
   },
   [3520001] = {
@@ -5896,23 +5905,23 @@ Table_SkillMould = {
   },
   [3522001] = {
     id = 3522001,
-    Pos = Table_SkillMould_t.Pos[446]
+    Pos = Table_SkillMould_t.Pos[455]
   },
   [3523001] = {
     id = 3523001,
-    Pos = Table_SkillMould_t.Pos[445]
+    Pos = Table_SkillMould_t.Pos[454]
   },
   [3524001] = {
     id = 3524001,
-    Pos = Table_SkillMould_t.Pos[213]
+    Pos = Table_SkillMould_t.Pos[215]
   },
   [3525001] = {
     id = 3525001,
-    Pos = Table_SkillMould_t.Pos[444]
+    Pos = Table_SkillMould_t.Pos[384]
   },
   [3526001] = {
     id = 3526001,
-    Pos = Table_SkillMould_t.Pos[311]
+    Pos = Table_SkillMould_t.Pos[313]
   },
   [3527001] = {
     id = 3527001,
@@ -5934,7 +5943,7 @@ Table_SkillMould = {
   },
   [3602001] = {
     id = 3602001,
-    Pos = Table_SkillMould_t.Pos[188],
+    Pos = Table_SkillMould_t.Pos[189],
     Atktype = 1
   },
   [3603001] = {
@@ -5944,7 +5953,7 @@ Table_SkillMould = {
   },
   [3604001] = {
     id = 3604001,
-    Pos = Table_SkillMould_t.Pos[213]
+    Pos = Table_SkillMould_t.Pos[215]
   },
   [3605001] = {
     id = 3605001,
@@ -5952,7 +5961,7 @@ Table_SkillMould = {
   },
   [3606001] = {
     id = 3606001,
-    Pos = Table_SkillMould_t.Pos[345]
+    Pos = Table_SkillMould_t.Pos[359]
   },
   [3607001] = {
     id = 3607001,
@@ -5961,7 +5970,7 @@ Table_SkillMould = {
   },
   [3608001] = {
     id = 3608001,
-    Pos = Table_SkillMould_t.Pos[337]
+    Pos = Table_SkillMould_t.Pos[342]
   },
   [3609001] = {
     id = 3609001,
@@ -5969,7 +5978,7 @@ Table_SkillMould = {
   },
   [3610001] = {
     id = 3610001,
-    Pos = Table_SkillMould_t.Pos[331],
+    Pos = Table_SkillMould_t.Pos[333],
     Atktype = 1
   },
   [3611001] = {
@@ -5988,27 +5997,27 @@ Table_SkillMould = {
   },
   [3620001] = {
     id = 3620001,
-    Pos = Table_SkillMould_t.Pos[279]
+    Pos = Table_SkillMould_t.Pos[281]
   },
   [3621001] = {
     id = 3621001,
-    Pos = Table_SkillMould_t.Pos[328]
+    Pos = Table_SkillMould_t.Pos[330]
   },
   [3622001] = {
     id = 3622001,
-    Pos = Table_SkillMould_t.Pos[272]
+    Pos = Table_SkillMould_t.Pos[274]
   },
   [3623001] = {
     id = 3623001,
-    Pos = Table_SkillMould_t.Pos[415]
+    Pos = Table_SkillMould_t.Pos[426]
   },
   [3624001] = {
     id = 3624001,
-    Pos = Table_SkillMould_t.Pos[258]
+    Pos = Table_SkillMould_t.Pos[260]
   },
   [3625001] = {
     id = 3625001,
-    Pos = Table_SkillMould_t.Pos[407]
+    Pos = Table_SkillMould_t.Pos[418]
   },
   [3626001] = {
     id = 3626001,
@@ -6016,11 +6025,11 @@ Table_SkillMould = {
   },
   [3627001] = {
     id = 3627001,
-    Pos = Table_SkillMould_t.Pos[450]
+    Pos = Table_SkillMould_t.Pos[459]
   },
   [3628001] = {
     id = 3628001,
-    Pos = Table_SkillMould_t.Pos[248]
+    Pos = Table_SkillMould_t.Pos[250]
   },
   [3700001] = {
     id = 3700001,
@@ -6033,12 +6042,12 @@ Table_SkillMould = {
   },
   [3702001] = {
     id = 3702001,
-    Pos = Table_SkillMould_t.Pos[312],
+    Pos = Table_SkillMould_t.Pos[314],
     Atktype = 1
   },
   [3703001] = {
     id = 3703001,
-    Pos = Table_SkillMould_t.Pos[478],
+    Pos = Table_SkillMould_t.Pos[487],
     Atktype = 1
   },
   [3704001] = {
@@ -6057,11 +6066,11 @@ Table_SkillMould = {
   },
   [3707001] = {
     id = 3707001,
-    Pos = Table_SkillMould_t.Pos[205]
+    Pos = Table_SkillMould_t.Pos[206]
   },
   [3708001] = {
     id = 3708001,
-    Pos = Table_SkillMould_t.Pos[378]
+    Pos = Table_SkillMould_t.Pos[390]
   },
   [3709001] = {
     id = 3709001,
@@ -6069,16 +6078,16 @@ Table_SkillMould = {
   },
   [3710001] = {
     id = 3710001,
-    Pos = Table_SkillMould_t.Pos[269],
+    Pos = Table_SkillMould_t.Pos[271],
     Atktype = 1
   },
   [3711001] = {
     id = 3711001,
-    Pos = Table_SkillMould_t.Pos[286]
+    Pos = Table_SkillMould_t.Pos[288]
   },
   [3712001] = {
     id = 3712001,
-    Pos = Table_SkillMould_t.Pos[261],
+    Pos = Table_SkillMould_t.Pos[263],
     Atktype = 1
   },
   [3720001] = {
@@ -6087,11 +6096,11 @@ Table_SkillMould = {
   },
   [3721001] = {
     id = 3721001,
-    Pos = Table_SkillMould_t.Pos[264]
+    Pos = Table_SkillMould_t.Pos[266]
   },
   [3722001] = {
     id = 3722001,
-    Pos = Table_SkillMould_t.Pos[210]
+    Pos = Table_SkillMould_t.Pos[211]
   },
   [3723001] = {
     id = 3723001,
@@ -6099,11 +6108,11 @@ Table_SkillMould = {
   },
   [3724001] = {
     id = 3724001,
-    Pos = Table_SkillMould_t.Pos[193]
+    Pos = Table_SkillMould_t.Pos[194]
   },
   [3725001] = {
     id = 3725001,
-    Pos = Table_SkillMould_t.Pos[360]
+    Pos = Table_SkillMould_t.Pos[373]
   },
   [3726001] = {
     id = 3726001,
@@ -6111,7 +6120,7 @@ Table_SkillMould = {
   },
   [3727001] = {
     id = 3727001,
-    Pos = Table_SkillMould_t.Pos[387]
+    Pos = Table_SkillMould_t.Pos[398]
   },
   [3728001] = {
     id = 3728001,
@@ -6124,50 +6133,50 @@ Table_SkillMould = {
   },
   [3801001] = {
     id = 3801001,
-    Pos = Table_SkillMould_t.Pos[306],
+    Pos = Table_SkillMould_t.Pos[308],
     Atktype = 1
   },
   [3802001] = {
     id = 3802001,
-    Pos = Table_SkillMould_t.Pos[251],
+    Pos = Table_SkillMould_t.Pos[253],
     Atktype = 1
   },
   [3803001] = {
     id = 3803001,
-    Pos = Table_SkillMould_t.Pos[290],
+    Pos = Table_SkillMould_t.Pos[292],
     Atktype = 1
   },
   [3804001] = {
     id = 3804001,
-    Pos = Table_SkillMould_t.Pos[238]
+    Pos = Table_SkillMould_t.Pos[240]
   },
   [3805001] = {
     id = 3805001,
-    Pos = Table_SkillMould_t.Pos[432],
+    Pos = Table_SkillMould_t.Pos[443],
     Atktype = 1
   },
   [3806001] = {
     id = 3806001,
-    Pos = Table_SkillMould_t.Pos[226]
+    Pos = Table_SkillMould_t.Pos[228]
   },
   [3807001] = {
     id = 3807001,
-    Pos = Table_SkillMould_t.Pos[421],
+    Pos = Table_SkillMould_t.Pos[432],
     Atktype = 1
   },
   [3808001] = {
     id = 3808001,
-    Pos = Table_SkillMould_t.Pos[202],
+    Pos = Table_SkillMould_t.Pos[203],
     Atktype = 1
   },
   [3809001] = {
     id = 3809001,
-    Pos = Table_SkillMould_t.Pos[258],
+    Pos = Table_SkillMould_t.Pos[260],
     Atktype = 1
   },
   [3810001] = {
     id = 3810001,
-    Pos = Table_SkillMould_t.Pos[204],
+    Pos = Table_SkillMould_t.Pos[205],
     Atktype = 1
   },
   [3811001] = {
@@ -6177,7 +6186,7 @@ Table_SkillMould = {
   },
   [3812001] = {
     id = 3812001,
-    Pos = Table_SkillMould_t.Pos[187]
+    Pos = Table_SkillMould_t.Pos[188]
   },
   [3820001] = {
     id = 3820001,
@@ -6185,7 +6194,7 @@ Table_SkillMould = {
   },
   [3821001] = {
     id = 3821001,
-    Pos = Table_SkillMould_t.Pos[219]
+    Pos = Table_SkillMould_t.Pos[221]
   },
   [3822001] = {
     id = 3822001,
@@ -6193,7 +6202,7 @@ Table_SkillMould = {
   },
   [3823001] = {
     id = 3823001,
-    Pos = Table_SkillMould_t.Pos[347]
+    Pos = Table_SkillMould_t.Pos[363]
   },
   [3824001] = {
     id = 3824001,
@@ -6201,7 +6210,7 @@ Table_SkillMould = {
   },
   [3825001] = {
     id = 3825001,
-    Pos = Table_SkillMould_t.Pos[340]
+    Pos = Table_SkillMould_t.Pos[348]
   },
   [3826001] = {
     id = 3826001,
@@ -6209,7 +6218,7 @@ Table_SkillMould = {
   },
   [3827001] = {
     id = 3827001,
-    Pos = Table_SkillMould_t.Pos[334]
+    Pos = Table_SkillMould_t.Pos[339]
   },
   [3828001] = {
     id = 3828001,
@@ -6221,7 +6230,7 @@ Table_SkillMould = {
   },
   [3901001] = {
     id = 3901001,
-    Pos = Table_SkillMould_t.Pos[223],
+    Pos = Table_SkillMould_t.Pos[225],
     Atktype = 1
   },
   [3902001] = {
@@ -6240,7 +6249,7 @@ Table_SkillMould = {
   },
   [3905001] = {
     id = 3905001,
-    Pos = Table_SkillMould_t.Pos[321],
+    Pos = Table_SkillMould_t.Pos[323],
     Atktype = 1
   },
   [3906001] = {
@@ -6250,7 +6259,7 @@ Table_SkillMould = {
   },
   [3907001] = {
     id = 3907001,
-    Pos = Table_SkillMould_t.Pos[279],
+    Pos = Table_SkillMould_t.Pos[281],
     Atktype = 1
   },
   [3908001] = {
@@ -6268,7 +6277,7 @@ Table_SkillMould = {
   },
   [3911001] = {
     id = 3911001,
-    Pos = Table_SkillMould_t.Pos[344],
+    Pos = Table_SkillMould_t.Pos[358],
     Atktype = 1
   },
   [3912001] = {
@@ -6277,27 +6286,27 @@ Table_SkillMould = {
   },
   [3920001] = {
     id = 3920001,
-    Pos = Table_SkillMould_t.Pos[352]
+    Pos = Table_SkillMould_t.Pos[369]
   },
   [3921001] = {
     id = 3921001,
-    Pos = Table_SkillMould_t.Pos[306]
+    Pos = Table_SkillMould_t.Pos[308]
   },
   [3922001] = {
     id = 3922001,
-    Pos = Table_SkillMould_t.Pos[416]
+    Pos = Table_SkillMould_t.Pos[427]
   },
   [3923001] = {
     id = 3923001,
-    Pos = Table_SkillMould_t.Pos[290]
+    Pos = Table_SkillMould_t.Pos[292]
   },
   [3924001] = {
     id = 3924001,
-    Pos = Table_SkillMould_t.Pos[213]
+    Pos = Table_SkillMould_t.Pos[215]
   },
   [3925001] = {
     id = 3925001,
-    Pos = Table_SkillMould_t.Pos[278]
+    Pos = Table_SkillMould_t.Pos[280]
   },
   [3926001] = {
     id = 3926001,
@@ -6309,7 +6318,7 @@ Table_SkillMould = {
   },
   [3928001] = {
     id = 3928001,
-    Pos = Table_SkillMould_t.Pos[249]
+    Pos = Table_SkillMould_t.Pos[251]
   },
   [4000001] = {
     id = 4000001,
@@ -6318,7 +6327,7 @@ Table_SkillMould = {
   },
   [4001001] = {
     id = 4001001,
-    Pos = Table_SkillMould_t.Pos[199],
+    Pos = Table_SkillMould_t.Pos[200],
     Atktype = 1
   },
   [4002001] = {
@@ -6352,52 +6361,52 @@ Table_SkillMould = {
   },
   [4008001] = {
     id = 4008001,
-    Pos = Table_SkillMould_t.Pos[186],
+    Pos = Table_SkillMould_t.Pos[187],
     Atktype = 1
   },
   [4009001] = {
     id = 4009001,
-    Pos = Table_SkillMould_t.Pos[249],
+    Pos = Table_SkillMould_t.Pos[251],
     Atktype = 1
   },
   [4010001] = {
     id = 4010001,
-    Pos = Table_SkillMould_t.Pos[290]
+    Pos = Table_SkillMould_t.Pos[292]
   },
   [4011001] = {
     id = 4011001,
-    Pos = Table_SkillMould_t.Pos[273],
+    Pos = Table_SkillMould_t.Pos[275],
     Atktype = 1
   },
   [4012001] = {
     id = 4012001,
-    Pos = Table_SkillMould_t.Pos[490],
+    Pos = Table_SkillMould_t.Pos[499],
     Atktype = 1
   },
   [4013001] = {
     id = 4013001,
-    Pos = Table_SkillMould_t.Pos[275],
+    Pos = Table_SkillMould_t.Pos[277],
     Atktype = 1
   },
   [4020001] = {
     id = 4020001,
-    Pos = Table_SkillMould_t.Pos[213]
+    Pos = Table_SkillMould_t.Pos[215]
   },
   [4021001] = {
     id = 4021001,
-    Pos = Table_SkillMould_t.Pos[227]
+    Pos = Table_SkillMould_t.Pos[229]
   },
   [4022001] = {
     id = 4022001,
-    Pos = Table_SkillMould_t.Pos[272]
+    Pos = Table_SkillMould_t.Pos[274]
   },
   [4023001] = {
     id = 4023001,
-    Pos = Table_SkillMould_t.Pos[234]
+    Pos = Table_SkillMould_t.Pos[236]
   },
   [4024001] = {
     id = 4024001,
-    Pos = Table_SkillMould_t.Pos[307]
+    Pos = Table_SkillMould_t.Pos[309]
   },
   [4025001] = {
     id = 4025001,
@@ -6405,7 +6414,7 @@ Table_SkillMould = {
   },
   [4026001] = {
     id = 4026001,
-    Pos = Table_SkillMould_t.Pos[416]
+    Pos = Table_SkillMould_t.Pos[427]
   },
   [4027001] = {
     id = 4027001,
@@ -6413,21 +6422,21 @@ Table_SkillMould = {
   },
   [4028001] = {
     id = 4028001,
-    Pos = Table_SkillMould_t.Pos[406]
+    Pos = Table_SkillMould_t.Pos[417]
   },
   [4100001] = {
     id = 4100001,
-    Pos = Table_SkillMould_t.Pos[428],
+    Pos = Table_SkillMould_t.Pos[439],
     Atktype = 1
   },
   [4101001] = {
     id = 4101001,
-    Pos = Table_SkillMould_t.Pos[221],
+    Pos = Table_SkillMould_t.Pos[223],
     Atktype = 1
   },
   [4102001] = {
     id = 4102001,
-    Pos = Table_SkillMould_t.Pos[258],
+    Pos = Table_SkillMould_t.Pos[260],
     Atktype = 1
   },
   [4103001] = {
@@ -6441,7 +6450,7 @@ Table_SkillMould = {
   },
   [4105001] = {
     id = 4105001,
-    Pos = Table_SkillMould_t.Pos[427]
+    Pos = Table_SkillMould_t.Pos[438]
   },
   [4106001] = {
     id = 4106001,
@@ -6455,7 +6464,7 @@ Table_SkillMould = {
   },
   [4108001] = {
     id = 4108001,
-    Pos = Table_SkillMould_t.Pos[223]
+    Pos = Table_SkillMould_t.Pos[225]
   },
   [4109001] = {
     id = 4109001,
@@ -6464,7 +6473,7 @@ Table_SkillMould = {
   },
   [4110001] = {
     id = 4110001,
-    Pos = Table_SkillMould_t.Pos[317],
+    Pos = Table_SkillMould_t.Pos[319],
     Atktype = 1
   },
   [4111001] = {
@@ -6474,19 +6483,19 @@ Table_SkillMould = {
   },
   [4112001] = {
     id = 4112001,
-    Pos = Table_SkillMould_t.Pos[188]
+    Pos = Table_SkillMould_t.Pos[189]
   },
   [4113001] = {
     id = 4113001,
-    Pos = Table_SkillMould_t.Pos[389]
+    Pos = Table_SkillMould_t.Pos[400]
   },
   [4120001] = {
     id = 4120001,
-    Pos = Table_SkillMould_t.Pos[423]
+    Pos = Table_SkillMould_t.Pos[434]
   },
   [4121001] = {
     id = 4121001,
-    Pos = Table_SkillMould_t.Pos[345]
+    Pos = Table_SkillMould_t.Pos[359]
   },
   [4122001] = {
     id = 4122001,
@@ -6498,7 +6507,7 @@ Table_SkillMould = {
   },
   [4124001] = {
     id = 4124001,
-    Pos = Table_SkillMould_t.Pos[262]
+    Pos = Table_SkillMould_t.Pos[264]
   },
   [4125001] = {
     id = 4125001,
@@ -6518,16 +6527,16 @@ Table_SkillMould = {
   },
   [4201001] = {
     id = 4201001,
-    Pos = Table_SkillMould_t.Pos[418],
+    Pos = Table_SkillMould_t.Pos[429],
     Atktype = 1
   },
   [4202001] = {
     id = 4202001,
-    Pos = Table_SkillMould_t.Pos[417]
+    Pos = Table_SkillMould_t.Pos[428]
   },
   [4203001] = {
     id = 4203001,
-    Pos = Table_SkillMould_t.Pos[194],
+    Pos = Table_SkillMould_t.Pos[195],
     Atktype = 1
   },
   [4204001] = {
@@ -6541,7 +6550,7 @@ Table_SkillMould = {
   },
   [4206001] = {
     id = 4206001,
-    Pos = Table_SkillMould_t.Pos[345]
+    Pos = Table_SkillMould_t.Pos[359]
   },
   [4207001] = {
     id = 4207001,
@@ -6560,26 +6569,26 @@ Table_SkillMould = {
   },
   [4210001] = {
     id = 4210001,
-    Pos = Table_SkillMould_t.Pos[331],
+    Pos = Table_SkillMould_t.Pos[333],
     Atktype = 1
   },
   [4211001] = {
     id = 4211001,
-    Pos = Table_SkillMould_t.Pos[337],
+    Pos = Table_SkillMould_t.Pos[342],
     Atktype = 1
   },
   [4212001] = {
     id = 4212001,
-    Pos = Table_SkillMould_t.Pos[213]
+    Pos = Table_SkillMould_t.Pos[215]
   },
   [4213001] = {
     id = 4213001,
-    Pos = Table_SkillMould_t.Pos[188],
+    Pos = Table_SkillMould_t.Pos[189],
     Atktype = 1
   },
   [4220001] = {
     id = 4220001,
-    Pos = Table_SkillMould_t.Pos[339]
+    Pos = Table_SkillMould_t.Pos[346]
   },
   [4221001] = {
     id = 4221001,
@@ -6587,23 +6596,23 @@ Table_SkillMould = {
   },
   [4222001] = {
     id = 4222001,
-    Pos = Table_SkillMould_t.Pos[276]
+    Pos = Table_SkillMould_t.Pos[278]
   },
   [4223001] = {
     id = 4223001,
-    Pos = Table_SkillMould_t.Pos[258]
+    Pos = Table_SkillMould_t.Pos[260]
   },
   [4224001] = {
     id = 4224001,
-    Pos = Table_SkillMould_t.Pos[415]
+    Pos = Table_SkillMould_t.Pos[426]
   },
   [4225001] = {
     id = 4225001,
-    Pos = Table_SkillMould_t.Pos[414]
+    Pos = Table_SkillMould_t.Pos[425]
   },
   [4226001] = {
     id = 4226001,
-    Pos = Table_SkillMould_t.Pos[403]
+    Pos = Table_SkillMould_t.Pos[414]
   },
   [4227001] = {
     id = 4227001,
@@ -6620,7 +6629,7 @@ Table_SkillMould = {
   },
   [4302001] = {
     id = 4302001,
-    Pos = Table_SkillMould_t.Pos[411],
+    Pos = Table_SkillMould_t.Pos[422],
     Atktype = 1
   },
   [4303001] = {
@@ -6630,7 +6639,7 @@ Table_SkillMould = {
   },
   [4304001] = {
     id = 4304001,
-    Pos = Table_SkillMould_t.Pos[409],
+    Pos = Table_SkillMould_t.Pos[420],
     Atktype = 1
   },
   [4305001] = {
@@ -6640,15 +6649,15 @@ Table_SkillMould = {
   },
   [4306001] = {
     id = 4306001,
-    Pos = Table_SkillMould_t.Pos[408]
+    Pos = Table_SkillMould_t.Pos[419]
   },
   [4307001] = {
     id = 4307001,
-    Pos = Table_SkillMould_t.Pos[407]
+    Pos = Table_SkillMould_t.Pos[418]
   },
   [4308001] = {
     id = 4308001,
-    Pos = Table_SkillMould_t.Pos[272]
+    Pos = Table_SkillMould_t.Pos[274]
   },
   [4309001] = {
     id = 4309001,
@@ -6662,12 +6671,12 @@ Table_SkillMould = {
   },
   [4311001] = {
     id = 4311001,
-    Pos = Table_SkillMould_t.Pos[252],
+    Pos = Table_SkillMould_t.Pos[254],
     Atktype = 1
   },
   [4312001] = {
     id = 4312001,
-    Pos = Table_SkillMould_t.Pos[360],
+    Pos = Table_SkillMould_t.Pos[373],
     Atktype = 1
   },
   [4313001] = {
@@ -6681,16 +6690,16 @@ Table_SkillMould = {
   },
   [4315001] = {
     id = 4315001,
-    Pos = Table_SkillMould_t.Pos[404],
+    Pos = Table_SkillMould_t.Pos[415],
     Atktype = 1
   },
   [4320001] = {
     id = 4320001,
-    Pos = Table_SkillMould_t.Pos[403]
+    Pos = Table_SkillMould_t.Pos[414]
   },
   [4321001] = {
     id = 4321001,
-    Pos = Table_SkillMould_t.Pos[463]
+    Pos = Table_SkillMould_t.Pos[472]
   },
   [4322001] = {
     id = 4322001,
@@ -6698,7 +6707,7 @@ Table_SkillMould = {
   },
   [4323001] = {
     id = 4323001,
-    Pos = Table_SkillMould_t.Pos[451]
+    Pos = Table_SkillMould_t.Pos[460]
   },
   [4324001] = {
     id = 4324001,
@@ -6706,19 +6715,19 @@ Table_SkillMould = {
   },
   [4325001] = {
     id = 4325001,
-    Pos = Table_SkillMould_t.Pos[398]
+    Pos = Table_SkillMould_t.Pos[409]
   },
   [4326001] = {
     id = 4326001,
-    Pos = Table_SkillMould_t.Pos[390]
+    Pos = Table_SkillMould_t.Pos[401]
   },
   [4327001] = {
     id = 4327001,
-    Pos = Table_SkillMould_t.Pos[261]
+    Pos = Table_SkillMould_t.Pos[263]
   },
   [4328001] = {
     id = 4328001,
-    Pos = Table_SkillMould_t.Pos[397]
+    Pos = Table_SkillMould_t.Pos[408]
   },
   [4400001] = {
     id = 4400001,
@@ -6737,7 +6746,7 @@ Table_SkillMould = {
   },
   [4403001] = {
     id = 4403001,
-    Pos = Table_SkillMould_t.Pos[252],
+    Pos = Table_SkillMould_t.Pos[254],
     Atktype = 1
   },
   [4404001] = {
@@ -6747,12 +6756,12 @@ Table_SkillMould = {
   },
   [4405001] = {
     id = 4405001,
-    Pos = Table_SkillMould_t.Pos[396],
+    Pos = Table_SkillMould_t.Pos[407],
     Atktype = 1
   },
   [4406001] = {
     id = 4406001,
-    Pos = Table_SkillMould_t.Pos[395]
+    Pos = Table_SkillMould_t.Pos[406]
   },
   [4407001] = {
     id = 4407001,
@@ -6773,12 +6782,12 @@ Table_SkillMould = {
   },
   [4411001] = {
     id = 4411001,
-    Pos = Table_SkillMould_t.Pos[392],
+    Pos = Table_SkillMould_t.Pos[403],
     Atktype = 1
   },
   [4412001] = {
     id = 4412001,
-    Pos = Table_SkillMould_t.Pos[382],
+    Pos = Table_SkillMould_t.Pos[394],
     Atktype = 1
   },
   [4413001] = {
@@ -6787,11 +6796,11 @@ Table_SkillMould = {
   },
   [4420001] = {
     id = 4420001,
-    Pos = Table_SkillMould_t.Pos[258]
+    Pos = Table_SkillMould_t.Pos[260]
   },
   [4421001] = {
     id = 4421001,
-    Pos = Table_SkillMould_t.Pos[352]
+    Pos = Table_SkillMould_t.Pos[369]
   },
   [4422001] = {
     id = 4422001,
@@ -6799,7 +6808,7 @@ Table_SkillMould = {
   },
   [4423001] = {
     id = 4423001,
-    Pos = Table_SkillMould_t.Pos[390]
+    Pos = Table_SkillMould_t.Pos[401]
   },
   [4424001] = {
     id = 4424001,
@@ -6807,7 +6816,7 @@ Table_SkillMould = {
   },
   [4425001] = {
     id = 4425001,
-    Pos = Table_SkillMould_t.Pos[376]
+    Pos = Table_SkillMould_t.Pos[388]
   },
   [4426001] = {
     id = 4426001,
@@ -6815,7 +6824,7 @@ Table_SkillMould = {
   },
   [4427001] = {
     id = 4427001,
-    Pos = Table_SkillMould_t.Pos[368]
+    Pos = Table_SkillMould_t.Pos[379]
   },
   [4428001] = {
     id = 4428001,
@@ -6832,20 +6841,20 @@ Table_SkillMould = {
   },
   [4502001] = {
     id = 4502001,
-    Pos = Table_SkillMould_t.Pos[389]
+    Pos = Table_SkillMould_t.Pos[400]
   },
   [4503001] = {
     id = 4503001,
-    Pos = Table_SkillMould_t.Pos[367],
+    Pos = Table_SkillMould_t.Pos[375],
     Atktype = 1
   },
   [4504001] = {
     id = 4504001,
-    Pos = Table_SkillMould_t.Pos[388]
+    Pos = Table_SkillMould_t.Pos[399]
   },
   [4505001] = {
     id = 4505001,
-    Pos = Table_SkillMould_t.Pos[196]
+    Pos = Table_SkillMould_t.Pos[197]
   },
   [4506001] = {
     id = 4506001,
@@ -6858,42 +6867,42 @@ Table_SkillMould = {
   },
   [4509001] = {
     id = 4509001,
-    Pos = Table_SkillMould_t.Pos[320],
+    Pos = Table_SkillMould_t.Pos[322],
     Atktype = 1
   },
   [4510001] = {
     id = 4510001,
-    Pos = Table_SkillMould_t.Pos[321]
+    Pos = Table_SkillMould_t.Pos[323]
   },
   [4511001] = {
     id = 4511001,
-    Pos = Table_SkillMould_t.Pos[330],
+    Pos = Table_SkillMould_t.Pos[332],
     Atktype = 1
   },
   [4512001] = {
     id = 4512001,
-    Pos = Table_SkillMould_t.Pos[223]
+    Pos = Table_SkillMould_t.Pos[225]
   },
   [4513001] = {
     id = 4513001,
-    Pos = Table_SkillMould_t.Pos[386]
+    Pos = Table_SkillMould_t.Pos[397]
   },
   [4514001] = {
     id = 4514001,
-    Pos = Table_SkillMould_t.Pos[365],
+    Pos = Table_SkillMould_t.Pos[371],
     Atktype = 1
   },
   [4515001] = {
     id = 4515001,
-    Pos = Table_SkillMould_t.Pos[385]
+    Pos = Table_SkillMould_t.Pos[396]
   },
   [4516001] = {
     id = 4516001,
-    Pos = Table_SkillMould_t.Pos[384]
+    Pos = Table_SkillMould_t.Pos[370]
   },
   [4517001] = {
     id = 4517001,
-    Pos = Table_SkillMould_t.Pos[382],
+    Pos = Table_SkillMould_t.Pos[394],
     Atktype = 1
   },
   [4518001] = {
@@ -6902,19 +6911,19 @@ Table_SkillMould = {
   },
   [4519001] = {
     id = 4519001,
-    Pos = Table_SkillMould_t.Pos[380]
+    Pos = Table_SkillMould_t.Pos[392]
   },
   [4520001] = {
     id = 4520001,
-    Pos = Table_SkillMould_t.Pos[379]
+    Pos = Table_SkillMould_t.Pos[391]
   },
   [4521001] = {
     id = 4521001,
-    Pos = Table_SkillMould_t.Pos[378]
+    Pos = Table_SkillMould_t.Pos[390]
   },
   [4522001] = {
     id = 4522001,
-    Pos = Table_SkillMould_t.Pos[377]
+    Pos = Table_SkillMould_t.Pos[389]
   },
   [4523001] = {
     id = 4523001,
@@ -6922,16 +6931,16 @@ Table_SkillMould = {
   },
   [4524001] = {
     id = 4524001,
-    Pos = Table_SkillMould_t.Pos[352]
+    Pos = Table_SkillMould_t.Pos[369]
   },
   [4525001] = {
     id = 4525001,
-    Pos = Table_SkillMould_t.Pos[375],
+    Pos = Table_SkillMould_t.Pos[387],
     Atktype = 1
   },
   [4526001] = {
     id = 4526001,
-    Pos = Table_SkillMould_t.Pos[234],
+    Pos = Table_SkillMould_t.Pos[236],
     Atktype = 1
   },
   [4531001] = {
@@ -6941,7 +6950,7 @@ Table_SkillMould = {
   },
   [5000001] = {
     id = 5000001,
-    Pos = Table_SkillMould_t.Pos[285],
+    Pos = Table_SkillMould_t.Pos[287],
     Atktype = 1
   },
   [5001001] = {
@@ -6958,7 +6967,7 @@ Table_SkillMould = {
   },
   [5010001] = {
     id = 5010001,
-    Pos = Table_SkillMould_t.Pos[243],
+    Pos = Table_SkillMould_t.Pos[245],
     Atktype = 1
   },
   [5011001] = {
@@ -6971,11 +6980,28 @@ Table_SkillMould = {
   },
   [5013001] = {
     id = 5013001,
-    Pos = Table_SkillMould_t.Pos[322]
+    Pos = Table_SkillMould_t.Pos[324]
+  },
+  [5020001] = {
+    id = 5020001,
+    Pos = Table_SkillMould_t.Pos[70],
+    Atktype = 1
+  },
+  [5021001] = {
+    id = 5021001,
+    Pos = Table_SkillMould_t.Pos[95]
+  },
+  [5022001] = {
+    id = 5022001,
+    Pos = Table_SkillMould_t.Pos[161]
+  },
+  [5023001] = {
+    id = 5023001,
+    Pos = Table_SkillMould_t.Pos[73]
   },
   [5100001] = {
     id = 5100001,
-    Pos = Table_SkillMould_t.Pos[285],
+    Pos = Table_SkillMould_t.Pos[287],
     Atktype = 1
   },
   [5101001] = {
@@ -6992,7 +7018,7 @@ Table_SkillMould = {
   },
   [5110001] = {
     id = 5110001,
-    Pos = Table_SkillMould_t.Pos[243],
+    Pos = Table_SkillMould_t.Pos[245],
     Atktype = 1
   },
   [5111001] = {
@@ -7005,24 +7031,41 @@ Table_SkillMould = {
   },
   [5113001] = {
     id = 5113001,
-    Pos = Table_SkillMould_t.Pos[322]
+    Pos = Table_SkillMould_t.Pos[324]
+  },
+  [5120001] = {
+    id = 5120001,
+    Pos = Table_SkillMould_t.Pos[70],
+    Atktype = 1
+  },
+  [5121001] = {
+    id = 5121001,
+    Pos = Table_SkillMould_t.Pos[95]
+  },
+  [5122001] = {
+    id = 5122001,
+    Pos = Table_SkillMould_t.Pos[161]
+  },
+  [5123001] = {
+    id = 5123001,
+    Pos = Table_SkillMould_t.Pos[73]
   },
   [5200001] = {
     id = 5200001,
-    Pos = Table_SkillMould_t.Pos[357],
+    Pos = Table_SkillMould_t.Pos[356],
     Atktype = 1
   },
   [5201001] = {
     id = 5201001,
-    Pos = Table_SkillMould_t.Pos[356]
+    Pos = Table_SkillMould_t.Pos[354]
   },
   [5202001] = {
     id = 5202001,
-    Pos = Table_SkillMould_t.Pos[355]
+    Pos = Table_SkillMould_t.Pos[353]
   },
   [5203001] = {
     id = 5203001,
-    Pos = Table_SkillMould_t.Pos[362]
+    Pos = Table_SkillMould_t.Pos[368]
   },
   [5210001] = {
     id = 5210001,
@@ -7031,7 +7074,7 @@ Table_SkillMould = {
   },
   [5211001] = {
     id = 5211001,
-    Pos = Table_SkillMould_t.Pos[353]
+    Pos = Table_SkillMould_t.Pos[351]
   },
   [5212001] = {
     id = 5212001,
@@ -7039,7 +7082,24 @@ Table_SkillMould = {
   },
   [5213001] = {
     id = 5213001,
-    Pos = Table_SkillMould_t.Pos[359]
+    Pos = Table_SkillMould_t.Pos[361]
+  },
+  [5220001] = {
+    id = 5220001,
+    Pos = Table_SkillMould_t.Pos[299],
+    Atktype = 1
+  },
+  [5221001] = {
+    id = 5221001,
+    Pos = Table_SkillMould_t.Pos[345]
+  },
+  [5222001] = {
+    id = 5222001,
+    Pos = Table_SkillMould_t.Pos[343]
+  },
+  [5223001] = {
+    id = 5223001,
+    Pos = Table_SkillMould_t.Pos[357]
   },
   [5300001] = {
     id = 5300001,
@@ -7056,7 +7116,7 @@ Table_SkillMould = {
   },
   [5303001] = {
     id = 5303001,
-    Pos = Table_SkillMould_t.Pos[370]
+    Pos = Table_SkillMould_t.Pos[378]
   },
   [5310001] = {
     id = 5310001,
@@ -7065,7 +7125,7 @@ Table_SkillMould = {
   },
   [5311001] = {
     id = 5311001,
-    Pos = Table_SkillMould_t.Pos[322]
+    Pos = Table_SkillMould_t.Pos[324]
   },
   [5312001] = {
     id = 5312001,
@@ -7073,11 +7133,28 @@ Table_SkillMould = {
   },
   [5313001] = {
     id = 5313001,
-    Pos = Table_SkillMould_t.Pos[314]
+    Pos = Table_SkillMould_t.Pos[316]
+  },
+  [5330001] = {
+    id = 5330001,
+    Pos = Table_SkillMould_t.Pos[161],
+    Atktype = 1
+  },
+  [5331001] = {
+    id = 5331001,
+    Pos = Table_SkillMould_t.Pos[73]
+  },
+  [5332001] = {
+    id = 5332001,
+    Pos = Table_SkillMould_t.Pos[140]
+  },
+  [5333001] = {
+    id = 5333001,
+    Pos = Table_SkillMould_t.Pos[214]
   },
   [5400001] = {
     id = 5400001,
-    Pos = Table_SkillMould_t.Pos[285],
+    Pos = Table_SkillMould_t.Pos[287],
     Atktype = 1
   },
   [5401001] = {
@@ -7094,7 +7171,7 @@ Table_SkillMould = {
   },
   [5410001] = {
     id = 5410001,
-    Pos = Table_SkillMould_t.Pos[243],
+    Pos = Table_SkillMould_t.Pos[245],
     Atktype = 1
   },
   [5411001] = {
@@ -7107,7 +7184,24 @@ Table_SkillMould = {
   },
   [5413001] = {
     id = 5413001,
-    Pos = Table_SkillMould_t.Pos[322]
+    Pos = Table_SkillMould_t.Pos[324]
+  },
+  [5420001] = {
+    id = 5420001,
+    Pos = Table_SkillMould_t.Pos[70],
+    Atktype = 1
+  },
+  [5421001] = {
+    id = 5421001,
+    Pos = Table_SkillMould_t.Pos[95]
+  },
+  [5422001] = {
+    id = 5422001,
+    Pos = Table_SkillMould_t.Pos[161]
+  },
+  [5423001] = {
+    id = 5423001,
+    Pos = Table_SkillMould_t.Pos[73]
   },
   [5500001] = {
     id = 5500001,
@@ -7137,11 +7231,28 @@ Table_SkillMould = {
   },
   [5512001] = {
     id = 5512001,
-    Pos = Table_SkillMould_t.Pos[322]
+    Pos = Table_SkillMould_t.Pos[324]
   },
   [5513001] = {
     id = 5513001,
     Pos = Table_SkillMould_t.Pos[23]
+  },
+  [5520001] = {
+    id = 5520001,
+    Pos = Table_SkillMould_t.Pos[95],
+    Atktype = 1
+  },
+  [5521001] = {
+    id = 5521001,
+    Pos = Table_SkillMould_t.Pos[161]
+  },
+  [5522001] = {
+    id = 5522001,
+    Pos = Table_SkillMould_t.Pos[73]
+  },
+  [5523001] = {
+    id = 5523001,
+    Pos = Table_SkillMould_t.Pos[140]
   },
   [5550001] = {
     id = 5550001,
@@ -7171,11 +7282,28 @@ Table_SkillMould = {
   },
   [5562001] = {
     id = 5562001,
-    Pos = Table_SkillMould_t.Pos[322]
+    Pos = Table_SkillMould_t.Pos[324]
   },
   [5563001] = {
     id = 5563001,
     Pos = Table_SkillMould_t.Pos[23]
+  },
+  [5570001] = {
+    id = 5570001,
+    Pos = Table_SkillMould_t.Pos[95],
+    Atktype = 1
+  },
+  [5571001] = {
+    id = 5571001,
+    Pos = Table_SkillMould_t.Pos[161]
+  },
+  [5572001] = {
+    id = 5572001,
+    Pos = Table_SkillMould_t.Pos[73]
+  },
+  [5573001] = {
+    id = 5573001,
+    Pos = Table_SkillMould_t.Pos[140]
   },
   [5600001] = {
     id = 5600001,
@@ -7205,11 +7333,28 @@ Table_SkillMould = {
   },
   [5612001] = {
     id = 5612001,
-    Pos = Table_SkillMould_t.Pos[322]
+    Pos = Table_SkillMould_t.Pos[324]
   },
   [5613001] = {
     id = 5613001,
     Pos = Table_SkillMould_t.Pos[23]
+  },
+  [5620001] = {
+    id = 5620001,
+    Pos = Table_SkillMould_t.Pos[95],
+    Atktype = 1
+  },
+  [5621001] = {
+    id = 5621001,
+    Pos = Table_SkillMould_t.Pos[161]
+  },
+  [5622001] = {
+    id = 5622001,
+    Pos = Table_SkillMould_t.Pos[73]
+  },
+  [5623001] = {
+    id = 5623001,
+    Pos = Table_SkillMould_t.Pos[140]
   },
   [5690001] = {
     id = 5690001,
@@ -7230,20 +7375,20 @@ Table_SkillMould = {
   },
   [5700001] = {
     id = 5700001,
-    Pos = Table_SkillMould_t.Pos[357],
+    Pos = Table_SkillMould_t.Pos[356],
     Atktype = 1
   },
   [5701001] = {
     id = 5701001,
-    Pos = Table_SkillMould_t.Pos[356]
+    Pos = Table_SkillMould_t.Pos[354]
   },
   [5702001] = {
     id = 5702001,
-    Pos = Table_SkillMould_t.Pos[355]
+    Pos = Table_SkillMould_t.Pos[353]
   },
   [5703001] = {
     id = 5703001,
-    Pos = Table_SkillMould_t.Pos[362]
+    Pos = Table_SkillMould_t.Pos[368]
   },
   [5710001] = {
     id = 5710001,
@@ -7252,7 +7397,7 @@ Table_SkillMould = {
   },
   [5711001] = {
     id = 5711001,
-    Pos = Table_SkillMould_t.Pos[353]
+    Pos = Table_SkillMould_t.Pos[351]
   },
   [5712001] = {
     id = 5712001,
@@ -7260,24 +7405,41 @@ Table_SkillMould = {
   },
   [5713001] = {
     id = 5713001,
-    Pos = Table_SkillMould_t.Pos[359]
+    Pos = Table_SkillMould_t.Pos[361]
+  },
+  [5720001] = {
+    id = 5720001,
+    Pos = Table_SkillMould_t.Pos[299],
+    Atktype = 1
+  },
+  [5721001] = {
+    id = 5721001,
+    Pos = Table_SkillMould_t.Pos[345]
+  },
+  [5722001] = {
+    id = 5722001,
+    Pos = Table_SkillMould_t.Pos[343]
+  },
+  [5723001] = {
+    id = 5723001,
+    Pos = Table_SkillMould_t.Pos[357]
   },
   [5800001] = {
     id = 5800001,
-    Pos = Table_SkillMould_t.Pos[357],
+    Pos = Table_SkillMould_t.Pos[356],
     Atktype = 1
   },
   [5801001] = {
     id = 5801001,
-    Pos = Table_SkillMould_t.Pos[356]
+    Pos = Table_SkillMould_t.Pos[354]
   },
   [5802001] = {
     id = 5802001,
-    Pos = Table_SkillMould_t.Pos[355]
+    Pos = Table_SkillMould_t.Pos[353]
   },
   [5803001] = {
     id = 5803001,
-    Pos = Table_SkillMould_t.Pos[362]
+    Pos = Table_SkillMould_t.Pos[368]
   },
   [5810001] = {
     id = 5810001,
@@ -7286,7 +7448,7 @@ Table_SkillMould = {
   },
   [5811001] = {
     id = 5811001,
-    Pos = Table_SkillMould_t.Pos[353]
+    Pos = Table_SkillMould_t.Pos[351]
   },
   [5812001] = {
     id = 5812001,
@@ -7294,7 +7456,24 @@ Table_SkillMould = {
   },
   [5813001] = {
     id = 5813001,
-    Pos = Table_SkillMould_t.Pos[359]
+    Pos = Table_SkillMould_t.Pos[361]
+  },
+  [5820001] = {
+    id = 5820001,
+    Pos = Table_SkillMould_t.Pos[299],
+    Atktype = 1
+  },
+  [5821001] = {
+    id = 5821001,
+    Pos = Table_SkillMould_t.Pos[345]
+  },
+  [5822001] = {
+    id = 5822001,
+    Pos = Table_SkillMould_t.Pos[343]
+  },
+  [5823001] = {
+    id = 5823001,
+    Pos = Table_SkillMould_t.Pos[357]
   },
   [5900001] = {
     id = 5900001,
@@ -7303,19 +7482,19 @@ Table_SkillMould = {
   },
   [5901001] = {
     id = 5901001,
-    Pos = Table_SkillMould_t.Pos[357]
+    Pos = Table_SkillMould_t.Pos[356]
   },
   [5902001] = {
     id = 5902001,
-    Pos = Table_SkillMould_t.Pos[356]
+    Pos = Table_SkillMould_t.Pos[354]
   },
   [5903001] = {
     id = 5903001,
-    Pos = Table_SkillMould_t.Pos[355]
+    Pos = Table_SkillMould_t.Pos[353]
   },
   [5910001] = {
     id = 5910001,
-    Pos = Table_SkillMould_t.Pos[354],
+    Pos = Table_SkillMould_t.Pos[352],
     Atktype = 1
   },
   [5911001] = {
@@ -7324,11 +7503,28 @@ Table_SkillMould = {
   },
   [5912001] = {
     id = 5912001,
-    Pos = Table_SkillMould_t.Pos[353]
+    Pos = Table_SkillMould_t.Pos[351]
   },
   [5913001] = {
     id = 5913001,
     Pos = Table_SkillMould_t.Pos[159]
+  },
+  [5920001] = {
+    id = 5920001,
+    Pos = Table_SkillMould_t.Pos[347],
+    Atktype = 1
+  },
+  [5921001] = {
+    id = 5921001,
+    Pos = Table_SkillMould_t.Pos[299]
+  },
+  [5922001] = {
+    id = 5922001,
+    Pos = Table_SkillMould_t.Pos[345]
+  },
+  [5923001] = {
+    id = 5923001,
+    Pos = Table_SkillMould_t.Pos[343]
   },
   [6000001] = {
     id = 6000001,
@@ -7358,11 +7554,28 @@ Table_SkillMould = {
   },
   [6012001] = {
     id = 6012001,
-    Pos = Table_SkillMould_t.Pos[322]
+    Pos = Table_SkillMould_t.Pos[324]
   },
   [6013001] = {
     id = 6013001,
     Pos = Table_SkillMould_t.Pos[23]
+  },
+  [6020001] = {
+    id = 6020001,
+    Pos = Table_SkillMould_t.Pos[95],
+    Atktype = 1
+  },
+  [6021001] = {
+    id = 6021001,
+    Pos = Table_SkillMould_t.Pos[161]
+  },
+  [6022001] = {
+    id = 6022001,
+    Pos = Table_SkillMould_t.Pos[73]
+  },
+  [6023001] = {
+    id = 6023001,
+    Pos = Table_SkillMould_t.Pos[140]
   },
   [6090001] = {
     id = 6090001,
@@ -7383,46 +7596,63 @@ Table_SkillMould = {
   },
   [6100001] = {
     id = 6100001,
-    Pos = Table_SkillMould_t.Pos[326],
+    Pos = Table_SkillMould_t.Pos[328],
     Atktype = 1
   },
   [6101001] = {
     id = 6101001,
-    Pos = Table_SkillMould_t.Pos[287]
+    Pos = Table_SkillMould_t.Pos[289]
   },
   [6102001] = {
     id = 6102001,
-    Pos = Table_SkillMould_t.Pos[493]
+    Pos = Table_SkillMould_t.Pos[502]
   },
   [6103001] = {
     id = 6103001,
-    Pos = Table_SkillMould_t.Pos[277]
+    Pos = Table_SkillMould_t.Pos[279]
   },
   [6110001] = {
     id = 6110001,
-    Pos = Table_SkillMould_t.Pos[449],
+    Pos = Table_SkillMould_t.Pos[458],
     Atktype = 1
   },
   [6111001] = {
     id = 6111001,
-    Pos = Table_SkillMould_t.Pos[246]
+    Pos = Table_SkillMould_t.Pos[248]
   },
   [6112001] = {
     id = 6112001,
-    Pos = Table_SkillMould_t.Pos[439]
+    Pos = Table_SkillMould_t.Pos[450]
   },
   [6113001] = {
     id = 6113001,
-    Pos = Table_SkillMould_t.Pos[236]
+    Pos = Table_SkillMould_t.Pos[238]
+  },
+  [6120001] = {
+    id = 6120001,
+    Pos = Table_SkillMould_t.Pos[337],
+    Atktype = 1
+  },
+  [6121001] = {
+    id = 6121001,
+    Pos = Table_SkillMould_t.Pos[182]
+  },
+  [6122001] = {
+    id = 6122001,
+    Pos = Table_SkillMould_t.Pos[336]
+  },
+  [6123001] = {
+    id = 6123001,
+    Pos = Table_SkillMould_t.Pos[335]
   },
   [100670001] = {
     id = 100670001,
-    Pos = Table_SkillMould_t.Pos[285],
+    Pos = Table_SkillMould_t.Pos[287],
     Atktype = 1
   },
   [100680001] = {
     id = 100680001,
-    Pos = Table_SkillMould_t.Pos[243],
+    Pos = Table_SkillMould_t.Pos[245],
     Atktype = 1
   },
   [100690001] = {
@@ -7452,7 +7682,7 @@ Table_SkillMould = {
   },
   [101050001] = {
     id = 101050001,
-    Pos = Table_SkillMould_t.Pos[322]
+    Pos = Table_SkillMould_t.Pos[324]
   },
   [101060001] = {
     id = 101060001,

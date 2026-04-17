@@ -298,6 +298,7 @@ function SceneBottomHpSpCell:SetSp(sp, maxSp, spTrans)
     end
     local curSp = self.spSlider.value * maxSp
     if self.spContainer.activeSelf and not self.isFirstSpInit then
+      LeanTween.cancel(self.spSlider.gameObject)
       LeanTween.sliderUGUI(self.spSlider, curSp / maxSp, sp / maxSp, math.abs((sp - curSp) / maxSp) * 0.5)
     else
       self.spSlider.value = sp / maxSp

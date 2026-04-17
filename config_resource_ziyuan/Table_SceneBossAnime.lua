@@ -3412,6 +3412,42 @@ Table_SceneBossAnime = {
     ObjID = 18,
     Name = "state5002",
     DescInfo = "##44715238"
+  },
+  [659] = {
+    id = 659,
+    ObjID = 1,
+    Name = "state2001",
+    DescInfo = "##44726851"
+  },
+  [660] = {
+    id = 660,
+    ObjID = 1,
+    Name = "state2002",
+    DescInfo = "##44726851"
+  },
+  [661] = {
+    id = 661,
+    ObjID = 2,
+    Name = "state2001",
+    DescInfo = "##44726853"
+  },
+  [662] = {
+    id = 662,
+    ObjID = 2,
+    Name = "state2002",
+    DescInfo = "##44726853"
+  },
+  [663] = {
+    id = 663,
+    ObjID = 3,
+    Name = "state2001",
+    DescInfo = "##44726855"
+  },
+  [664] = {
+    id = 664,
+    ObjID = 3,
+    Name = "state2002",
+    DescInfo = "##44726855"
   }
 }
 Table_SceneBossAnime_fields = {

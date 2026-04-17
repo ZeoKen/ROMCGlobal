@@ -29,6 +29,8 @@ function PlayerData:ctor()
   self.transformData:CacheOrigin(self)
   self.occupations = {}
   self.secretLandLvMap = {}
+  self.equipRefineLvMap = {}
+  self.snowRefineLvMap = {}
   self.currentOcc = nil
   self.excludeTeammate = false
 end
@@ -77,6 +79,27 @@ end
 
 function PlayerData:GetSecretLandGemLv(id)
   return self.secretLandLvMap[id] or 0
+end
+
+function PlayerData:ClearRefineLv()
+  TableUtility.TableClear(self.equipRefineLvMap)
+  TableUtility.TableClear(self.snowRefineLvMap)
+end
+
+function PlayerData:UpdateEquipRefineLv(pos, lv)
+  self.equipRefineLvMap[pos] = lv
+end
+
+function PlayerData:UpdateSnowRefineLv(pos, lv)
+  self.snowRefineLvMap[pos] = lv
+end
+
+function PlayerData:GetEquipedRefineLv(site)
+  return self.equipRefineLvMap[site] or 0
+end
+
+function PlayerData:GetSnowStoreRefineLv(site)
+  return self.snowRefineLvMap[site] or 0
 end
 
 function PlayerData:IsHuman()
@@ -450,4 +473,8 @@ function PlayerData:IsTransformState()
     return true
   end
   return false
+end
+
+function PlayerData:IsRobotUser()
+  return self.userdata:Get(UDEnum.ROBOT_USER) == 1
 end

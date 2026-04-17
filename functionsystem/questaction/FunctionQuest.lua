@@ -132,6 +132,16 @@ function FunctionQuest:executeQuest(questData, clientClick)
       })
     end
     return
+  elseif questData.questDataStepType == "snow_level" then
+    local level = questData.params and questData.params.need_level
+    local groupid = questData.params and questData.params.groupid
+    if groupid then
+      GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+        view = PanelConfig.NoviceExpGuideView,
+        viewdata = {level = level, groupid = groupid}
+      })
+    end
+    return
   elseif questData.questDataStepType == QuestDataStepType.QuestDataStepType_WAIT then
     return
   elseif questData.questDataStepType == QuestDataStepType.QuestDataStepType_SELFIE_SYS then
@@ -699,6 +709,13 @@ function FunctionQuest:executeQuest(questData, clientClick)
             end
           end
         end
+        if HomeManager.Me():IsSnowRealmMap(cmdArgs.targetMapID) then
+          local myHomeIndex = SnowRealmProxy.Instance:GetMySelfHomeIndex()
+          redlog("雪花家园引导任务寻路 npcUID=", myHomeIndex)
+          if myHomeIndex and 0 < myHomeIndex then
+            cmdArgs.npcUID = myHomeIndex
+          end
+        end
       end
       cmdClass = MissionCommandVisitNpc
     elseif QuestDataStepType.QuestDataStepType_KILL == questStepType or QuestDataStepType.QuestDataStepType_KILLALL == string.lower(questStepType) then
@@ -1021,7 +1038,7 @@ function FunctionQuest:executeQuest(questData, clientClick)
 end
 
 function FunctionQuest:HandleVisitNpcInHome(questData)
-  if not HomeManager.Me():IsAtHome() then
+  if not HomeManager.Me():IsAtHome() or HomeManager.Me():IsSnowRealmMap(Game.MapManager:GetMapID()) then
     return false
   end
   local npcID = questData.params.uniqueid
@@ -1152,6 +1169,9 @@ function FunctionQuest:executeTalkQuest(questData)
     GameFacade.Instance:sendNotification(UIEvent.ShowUI, viewdata)
   elseif LinkCharacterProxy.Instance:CheckIsQuestIdOfLinkCharacter(questData.id) then
   else
+    if questData.params.only_captain == 1 and not TeamProxy.Instance:CheckIHaveLeaderAuthority() then
+      return
+    end
     local specialMarks
     if questData.type == QuestDataType.QuestDataType_DAHUANG then
       specialMarks = questData.id
@@ -1511,7 +1531,10 @@ function FunctionQuest:handleAutoTrigger(questData)
           redlog("add_local_interact", questData.id, "successCb")
           QuestProxy.Instance:notifyQuestState(questData.scope, questData.id, questData.staticData.FinishJump)
           local keepOnSuccess = questData.params.keepOnSuccess and questData.params.keepOnSuccess == 1
-          InteractLocalManager.Me():DestroyInteractGroup(questData.params.uid, keepOnSuccess)
+          local times = questData.params.times
+          if not times or times <= 0 then
+            InteractLocalManager.Me():DestroyInteractGroup(questData.params.uid, keepOnSuccess)
+          end
         end
         local failCb = function()
           QuestProxy.Instance:notifyQuestState(questData.scope, questData.id, questData.staticData.FailJump)

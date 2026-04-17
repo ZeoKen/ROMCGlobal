@@ -117,6 +117,11 @@ Table_PveMonsterPreview_t = {
     },
     {
       0,
+      -0.35,
+      0
+    },
+    {
+      0,
       -0.1,
       0
     },
@@ -213,7 +218,13 @@ Table_PveMonsterPreview_t = {
     {58},
     {52},
     {14},
+    {67},
     {61},
+    {
+      68,
+      69,
+      70
+    },
     {13},
     {38},
     {21},
@@ -499,10 +510,23 @@ Table_PveMonsterPreview_t = {
       [270606] = {introduction = 27}
     },
     {
+      [276542] = {introduction = 169}
+    },
+    {
       [276441] = {introduction = 150},
       [276442] = {introduction = 151},
       [276443] = {introduction = 152},
       [276444] = {introduction = 153}
+    },
+    {
+      [276562] = {
+        introduction = 171,
+        skills = {
+          24399001,
+          24400001,
+          24402001
+        }
+      }
     },
     {
       [272504] = {introduction = 24},
@@ -771,8 +795,8 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 0.4,
     Introduction = 5,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[35],
-    Summon = Table_PveMonsterPreview_t.Summon[22]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[37],
+    Summon = Table_PveMonsterPreview_t.Summon[24]
   },
   [270600] = {
     id = 270600,
@@ -817,8 +841,8 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 0.4,
     Introduction = 5,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[35],
-    Summon = Table_PveMonsterPreview_t.Summon[22]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[37],
+    Summon = Table_PveMonsterPreview_t.Summon[24]
   },
   [271600] = {
     id = 271600,
@@ -863,8 +887,8 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 0.4,
     Introduction = 5,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[35],
-    Summon = Table_PveMonsterPreview_t.Summon[22]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[37],
+    Summon = Table_PveMonsterPreview_t.Summon[24]
   },
   [272600] = {
     id = 272600,
@@ -923,12 +947,12 @@ Table_PveMonsterPreview = {
   },
   [273300] = {
     id = 273300,
-    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[25],
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[26],
     LoadShowRotate = 0,
     LoadShowSize = 0.6,
     Introduction = 10,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[37],
-    Summon = Table_PveMonsterPreview_t.Summon[24]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[39],
+    Summon = Table_PveMonsterPreview_t.Summon[26]
   },
   [274100] = {
     id = 274100,
@@ -950,12 +974,12 @@ Table_PveMonsterPreview = {
   },
   [274300] = {
     id = 274300,
-    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[25],
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[26],
     LoadShowRotate = 0,
     LoadShowSize = 0.6,
     Introduction = 10,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[37],
-    Summon = Table_PveMonsterPreview_t.Summon[24]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[39],
+    Summon = Table_PveMonsterPreview_t.Summon[26]
   },
   [275100] = {
     id = 275100,
@@ -977,12 +1001,12 @@ Table_PveMonsterPreview = {
   },
   [275300] = {
     id = 275300,
-    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[25],
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[26],
     LoadShowRotate = 0,
     LoadShowSize = 0.6,
     Introduction = 10,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[37],
-    Summon = Table_PveMonsterPreview_t.Summon[24]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[39],
+    Summon = Table_PveMonsterPreview_t.Summon[26]
   },
   [276100] = {
     id = 276100,
@@ -999,8 +1023,8 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 0.35,
     Introduction = 142,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[58],
-    Summon = Table_PveMonsterPreview_t.Summon[35]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[60],
+    Summon = Table_PveMonsterPreview_t.Summon[37]
   },
   [276430] = {
     id = 276430,
@@ -1008,8 +1032,8 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 1,
     Introduction = 149,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[34],
-    Summon = Table_PveMonsterPreview_t.Summon[21]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[35],
+    Summon = Table_PveMonsterPreview_t.Summon[22]
   },
   [276470] = {
     id = 276470,
@@ -1017,8 +1041,8 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 1,
     Introduction = 149,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[56],
-    Summon = Table_PveMonsterPreview_t.Summon[33]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[58],
+    Summon = Table_PveMonsterPreview_t.Summon[35]
   },
   [276500] = {
     id = 276500,
@@ -1029,14 +1053,32 @@ Table_PveMonsterPreview = {
     SkillContent = Table_PveMonsterPreview_t.SkillContent[12],
     Summon = Table_PveMonsterPreview_t.Summon[9]
   },
+  [276540] = {
+    id = 276540,
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[6],
+    LoadShowRotate = 0,
+    LoadShowSize = 0.5,
+    Introduction = 168,
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[34],
+    Summon = Table_PveMonsterPreview_t.Summon[21]
+  },
+  [276560] = {
+    id = 276560,
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[24],
+    LoadShowRotate = 0,
+    LoadShowSize = 0.5,
+    Introduction = 170,
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[36],
+    Summon = Table_PveMonsterPreview_t.Summon[23]
+  },
   [276600] = {
     id = 276600,
     LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[9],
     LoadShowRotate = 0,
     LoadShowSize = 0.27,
     Introduction = 154,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[57],
-    Summon = Table_PveMonsterPreview_t.Summon[34]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[59],
+    Summon = Table_PveMonsterPreview_t.Summon[36]
   },
   [276630] = {
     id = 276630,
@@ -1053,8 +1095,8 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 0.27,
     Introduction = 165,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[55],
-    Summon = Table_PveMonsterPreview_t.Summon[32]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[57],
+    Summon = Table_PveMonsterPreview_t.Summon[34]
   },
   [291100] = {
     id = 291100,
@@ -1075,44 +1117,44 @@ Table_PveMonsterPreview = {
   },
   [293100] = {
     id = 293100,
-    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[29],
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[30],
     LoadShowRotate = -17.8,
     LoadShowSize = 0.7,
     Introduction = 85,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[50],
-    Summon = Table_PveMonsterPreview_t.Summon[31]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[52],
+    Summon = Table_PveMonsterPreview_t.Summon[33]
   },
   [293101] = {
     id = 293101,
-    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[30],
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[31],
     LoadShowRotate = -10.9,
     LoadShowSize = 1,
     Introduction = 86,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[51]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[53]
   },
   [293102] = {
     id = 293102,
-    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[31],
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[32],
     LoadShowRotate = -13.32,
     LoadShowSize = 0.9,
     Introduction = 87,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[52]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[54]
   },
   [293103] = {
     id = 293103,
-    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[32],
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[33],
     LoadShowRotate = -18.44,
     LoadShowSize = 0.9,
     Introduction = 88,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[53]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[55]
   },
   [293104] = {
     id = 293104,
-    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[33],
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[34],
     LoadShowRotate = -2.45,
     LoadShowSize = 1.5,
     Introduction = 89,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[54]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[56]
   },
   [294104] = {
     id = 294104,
@@ -1120,8 +1162,8 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 0.7,
     Introduction = 98,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[42],
-    Summon = Table_PveMonsterPreview_t.Summon[26]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[44],
+    Summon = Table_PveMonsterPreview_t.Summon[28]
   },
   [294310] = {
     id = 294310,
@@ -1129,7 +1171,7 @@ Table_PveMonsterPreview = {
     LoadShowRotate = -1.14,
     LoadShowSize = 0.8,
     Introduction = 132,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[49]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[51]
   },
   [294311] = {
     id = 294311,
@@ -1153,7 +1195,7 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 0.8,
     Introduction = 135,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[48]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[50]
   },
   [294314] = {
     id = 294314,
@@ -1182,12 +1224,12 @@ Table_PveMonsterPreview = {
   },
   [295107] = {
     id = 295107,
-    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[24],
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[25],
     LoadShowRotate = -9.9,
     LoadShowSize = 1,
     Introduction = 103,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[36],
-    Summon = Table_PveMonsterPreview_t.Summon[23]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[38],
+    Summon = Table_PveMonsterPreview_t.Summon[25]
   },
   [296203] = {
     id = 296203,
@@ -1209,8 +1251,8 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 0.7,
     Introduction = 48,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[47],
-    Summon = Table_PveMonsterPreview_t.Summon[30]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[49],
+    Summon = Table_PveMonsterPreview_t.Summon[32]
   },
   [297100] = {
     id = 297100,
@@ -1223,30 +1265,30 @@ Table_PveMonsterPreview = {
   },
   [297107] = {
     id = 297107,
-    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[28],
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[29],
     LoadShowRotate = 0,
     LoadShowSize = 0.6,
     Introduction = 55,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[46],
-    Summon = Table_PveMonsterPreview_t.Summon[29]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[48],
+    Summon = Table_PveMonsterPreview_t.Summon[31]
   },
   [297108] = {
     id = 297108,
-    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[27],
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[28],
     LoadShowRotate = -12.3,
     LoadShowSize = 0.6,
     Introduction = 57,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[45],
-    Summon = Table_PveMonsterPreview_t.Summon[28]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[47],
+    Summon = Table_PveMonsterPreview_t.Summon[30]
   },
   [297109] = {
     id = 297109,
-    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[26],
+    LoadShowPose = Table_PveMonsterPreview_t.LoadShowPose[27],
     LoadShowRotate = -20.1,
     LoadShowSize = 0.7,
     Introduction = 56,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[44],
-    Summon = Table_PveMonsterPreview_t.Summon[27]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[46],
+    Summon = Table_PveMonsterPreview_t.Summon[29]
   },
   [298100] = {
     id = 298100,
@@ -1271,7 +1313,7 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 1,
     Introduction = 107,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[43]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[45]
   },
   [299102] = {
     id = 299102,
@@ -1279,7 +1321,7 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 1,
     Introduction = 108,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[41]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[43]
   },
   [299103] = {
     id = 299103,
@@ -1287,7 +1329,7 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 1,
     Introduction = 109,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[40]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[42]
   },
   [299104] = {
     id = 299104,
@@ -1311,7 +1353,7 @@ Table_PveMonsterPreview = {
     LoadShowRotate = 0,
     LoadShowSize = 1,
     Introduction = 112,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[39]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[41]
   },
   [299107] = {
     id = 299107,
@@ -1327,8 +1369,8 @@ Table_PveMonsterPreview = {
     LoadShowRotate = -4.16,
     LoadShowSize = 0.6,
     Introduction = 114,
-    SkillContent = Table_PveMonsterPreview_t.SkillContent[38],
-    Summon = Table_PveMonsterPreview_t.Summon[25]
+    SkillContent = Table_PveMonsterPreview_t.SkillContent[40],
+    Summon = Table_PveMonsterPreview_t.Summon[27]
   },
   [1201202] = {
     id = 1201202,

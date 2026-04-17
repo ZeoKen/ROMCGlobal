@@ -442,7 +442,14 @@ function GroupRaidProxy:RecvQueryMultiBossRaidStat(serverdata)
     count = count + 1
     self.multiBossRecord[count] = GroupRaidTeamShowData.new(cdata)
     self.multiBossRecord[count].raidid = raidid
-    self.multiBossRecord[count].boss_index = 4
+    local MultiBossConfig = GameConfig.MultiBoss
+    local raidtype = Table_MapRaid[raidid].Type or 0
+    local raidConfig = MultiBossConfig.Raid[raidtype]
+    if raidConfig then
+      self.multiBossRecord[count].boss_index = #raidConfig.BossFilterConfig
+    else
+      self.multiBossRecord[count].boss_index = 4
+    end
   end
 end
 

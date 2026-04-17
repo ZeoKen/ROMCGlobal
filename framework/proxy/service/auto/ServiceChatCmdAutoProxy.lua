@@ -1505,6 +1505,24 @@ function ServiceChatCmdAutoProxy:CallQueryItemData(guid, data)
       end
       msg.data.furniture.npc.damage_reduce_type = data.furniture.npc.damage_reduce_type
     end
+    if data.furniture.anim ~= nil and data.furniture.anim.start_time ~= nil then
+      if msg.data.furniture == nil then
+        msg.data.furniture = {}
+      end
+      if msg.data.furniture.anim == nil then
+        msg.data.furniture.anim = {}
+      end
+      msg.data.furniture.anim.start_time = data.furniture.anim.start_time
+    end
+    if data.furniture.anim ~= nil and data.furniture.anim.anim_id ~= nil then
+      if msg.data.furniture == nil then
+        msg.data.furniture = {}
+      end
+      if msg.data.furniture.anim == nil then
+        msg.data.furniture.anim = {}
+      end
+      msg.data.furniture.anim.anim_id = data.furniture.anim.anim_id
+    end
     if data.attr ~= nil and data.attr.id ~= nil then
       if msg.data == nil then
         msg.data = {}
@@ -3332,6 +3350,24 @@ function ServiceChatCmdAutoProxy:CallQueryItemData(guid, data)
       end
       msgParam.data.furniture.npc.damage_reduce_type = data.furniture.npc.damage_reduce_type
     end
+    if data.furniture.anim ~= nil and data.furniture.anim.start_time ~= nil then
+      if msgParam.data.furniture == nil then
+        msgParam.data.furniture = {}
+      end
+      if msgParam.data.furniture.anim == nil then
+        msgParam.data.furniture.anim = {}
+      end
+      msgParam.data.furniture.anim.start_time = data.furniture.anim.start_time
+    end
+    if data.furniture.anim ~= nil and data.furniture.anim.anim_id ~= nil then
+      if msgParam.data.furniture == nil then
+        msgParam.data.furniture = {}
+      end
+      if msgParam.data.furniture.anim == nil then
+        msgParam.data.furniture.anim = {}
+      end
+      msgParam.data.furniture.anim.anim_id = data.furniture.anim.anim_id
+    end
     if data.attr ~= nil and data.attr.id ~= nil then
       if msgParam.data == nil then
         msgParam.data = {}
@@ -4478,7 +4514,7 @@ function ServiceChatCmdAutoProxy:CallChatCmd(channel, str, desID, voice, voiceti
   end
 end
 
-function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, frame, baselevel, voiceid, voicetime, hair, haircolor, body, appellation, msgid, head, face, mouth, eye, roomid, portrait_frame, serverid, channel, rolejob, gender, blink, str, name, guildname, sysmsgid, photo, expression, redpacketret, isreturnuser, chat_frame, items, share_data, love_confession, postcard, timestamp, recall_time)
+function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, frame, baselevel, voiceid, voicetime, hair, haircolor, body, appellation, msgid, head, face, mouth, eye, roomid, snowroomid, portrait_frame, serverid, channel, rolejob, gender, blink, str, name, guildname, sysmsgid, photo, expression, redpacketret, isreturnuser, chat_frame, items, share_data, love_confession, postcard, timestamp, recall_time, head_fashion)
   if not NetConfig.PBC then
     local msg = ChatCmd_pb.ChatRetCmd()
     if msg == nil then
@@ -4538,6 +4574,9 @@ function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, f
     end
     if roomid ~= nil then
       msg.roomid = roomid
+    end
+    if snowroomid ~= nil then
+      msg.snowroomid = snowroomid
     end
     if portrait_frame ~= nil then
       msg.portrait_frame = portrait_frame
@@ -4893,6 +4932,9 @@ function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, f
     if recall_time ~= nil then
       msg.recall_time = recall_time
     end
+    if head_fashion ~= nil then
+      msg.head_fashion = head_fashion
+    end
     self:SendProto(msg)
   else
     local msgId = ProtoReqInfoList.ChatRetCmd.id
@@ -4954,6 +4996,9 @@ function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, f
     end
     if roomid ~= nil then
       msgParam.roomid = roomid
+    end
+    if snowroomid ~= nil then
+      msgParam.snowroomid = snowroomid
     end
     if portrait_frame ~= nil then
       msgParam.portrait_frame = portrait_frame
@@ -5308,6 +5353,9 @@ function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, f
     end
     if recall_time ~= nil then
       msgParam.recall_time = recall_time
+    end
+    if head_fashion ~= nil then
+      msgParam.head_fashion = head_fashion
     end
     self:SendProto2(msgId, msgParam)
   end

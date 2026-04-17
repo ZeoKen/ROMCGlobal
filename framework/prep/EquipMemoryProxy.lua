@@ -99,11 +99,11 @@ end
 
 function EquipMemoryProxy:GetTotalEquipMemoryLevels(fullfire)
   local memoryLevels = {}
-  local addMemoryLevel = function(attrid, excess_lv)
+  local addMemoryLevel = function(attrid, excess_level)
     if not attrid or attrid == 0 then
       return
     end
-    local stage = excess_lv or 0
+    local stage = excess_level or 0
     if not memoryLevels[attrid] then
       memoryLevels[attrid] = {}
     end
@@ -114,22 +114,11 @@ function EquipMemoryProxy:GetTotalEquipMemoryLevels(fullfire)
       return
     end
     local attrs = posData.memoryAttrs or {}
-    local passExcessForSlot = {}
-    do
-      local curExcess = posData.excess_lv or 0
-      local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
-      if type(excessCfg) == "table" and curExcess and 0 < curExcess then
-        for stageKey, mappedKey in pairs(excessCfg) do
-          local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
-          if slotIndex and stageKey <= curExcess then
-            passExcessForSlot[slotIndex] = curExcess
-          end
-        end
-      end
-    end
     for i = 1, #attrs do
-      local stageForThis = passExcessForSlot[i] or 0
-      addMemoryLevel(attrs[i].id, stageForThis)
+      local attrData = attrs[i]
+      if attrData and attrData.id then
+        addMemoryLevel(attrData.id, attrData.excess_level or 0)
+      end
     end
   end
   if fullfire then

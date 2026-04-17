@@ -78,7 +78,8 @@ SetOptEnumProp(BaseHouseData.HouseOptType.Score, "TryUpdateScore", "score", "val
 SetOptEnumProp(BaseHouseData.HouseOptType.GardenHouse, "TryUpdateNormalData", "gardenHouseID", "value")
 SetOptEnumProp(BaseHouseData.HouseOptType.BoardOpen, "TryUpdateNormalData", "messageBoardOpen", "value")
 
-function BaseHouseData:ctor(serverData)
+function BaseHouseData:ctor(serverData, houseIndex)
+  self.houseIndex = houseIndex
   self.renovationMap = {}
   self.masterShieldTypes = {}
   self.visitorForbidTypes = {}
@@ -97,9 +98,11 @@ function BaseHouseData:ParseServerData(serverData)
   end
   TableUtility.TableClear(self.renovationMap)
   self.mapID = serverData.id
-  self.houseConfig = GameConfig.Home.MapDatas[self.mapID]
-  self.accid = serverData.accid
   self.houseType = serverData.ftype
+  local homeConfig = self.houseType == HomeCmd_pb.EHOUSETYPE_SNOW and SnowRealmManager.Me():GetHomeConfig() or HomeManager.Me():GetHomeConfig()
+  self.houseConfig = homeConfig.MapDatas[self.mapID]
+  self.accid = serverData.accid
+  self.masterName = serverData.username
   self.houseState = serverData.state
   self.name = serverData.name
   self.sign = serverData.sign
@@ -182,6 +185,7 @@ function BaseHouseData:UpdateHomeOptData(serverData)
   local handlerData = OptsMap[serverData.data]
   if handlerData then
     local handler = self[handlerData.handlerKey]
+    redlog("UpdateHomeOptData handlerKey = " .. tostring(handlerData.handlerKey), "clientKey = " .. tostring(handlerData.clientKey), "serverKey = " .. tostring(handlerData.serverKey))
     return serverData.data, handler and handler(self, serverData, handlerData.clientKey, handlerData.serverKey)
   end
   return self:OnUpdateHomeOptData(serverData)
@@ -253,12 +257,13 @@ end
 
 function BaseHouseData:RefreshScoreLvInfo()
   self.lv = self.lv or 0
-  local curLvData = Table_HomeBuff[math.clamp(self.lv, 0, #Table_HomeBuff)]
+  local homeBuff = Game.HomeBuff[self.houseType]
+  local curLvData = homeBuff and homeBuff[math.clamp(self.lv, 0, #homeBuff)]
   if curLvData and self.score < curLvData.Score then
     self.curLvScore = 0
     return
   end
-  local nextLvData = Table_HomeBuff[self.lv + 1]
+  local nextLvData = homeBuff and homeBuff[self.lv + 1]
   local curLvMinScore = curLvData and curLvData.Score or 0
   self.curLvScore = self.score - curLvMinScore
   if 0 > self.curLvScore then
@@ -284,7 +289,12 @@ function BaseHouseData:GetCurLvNeedTotalScore()
 end
 
 function BaseHouseData:IsMaxLv()
-  return self.lv >= #Table_HomeBuff
+  local homeBuff = Game.HomeBuff[self.houseType]
+  if not homeBuff then
+    redlog("BaseHouseData:IsMaxLv homeBuff is nil! houseType = " .. tostring(self.houseType))
+    return false
+  end
+  return self.lv >= #homeBuff
 end
 
 function BaseHouseData:GetOpenType()

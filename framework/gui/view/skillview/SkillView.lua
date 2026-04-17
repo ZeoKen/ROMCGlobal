@@ -113,7 +113,6 @@ function SkillView:OnExit()
     FunctionCDCommand.Me():StopCD(SkillCountdownRefresher)
   end
   SkillView.super.OnExit(self)
-  ResourceManager.Instance:GC()
 end
 
 function SkillView:OnShow()

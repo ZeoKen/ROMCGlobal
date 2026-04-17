@@ -23,12 +23,28 @@ function NCreatureWithPropUserdata:IsDead()
   return status == ProtoCommon_pb.ECREATURESTATUS_DEAD or status == ProtoCommon_pb.ECREATURESTATUS_INRELIVE
 end
 
+function NCreatureWithPropUserdata:CheckHpIsZero()
+  return self.data and self.data.props:GetPropByName("Hp"):GetValue() <= 0 or false
+end
+
 function NCreatureWithPropUserdata:IsInRevive()
   return self.data.userdata:Get(UDEnum.STATUS) == ProtoCommon_pb.ECREATURESTATUS_INRELIVE
 end
 
 function NCreatureWithPropUserdata:IsFakeDead()
   return self.data.userdata:Get(UDEnum.STATUS) == ProtoCommon_pb.ECREATURESTATUS_FAKEDEAD
+end
+
+function NCreatureWithPropUserdata:IsOnHandcart()
+  return self:GetRidingHandcartCharID() > 0
+end
+
+function NCreatureWithPropUserdata:IsHasHandcart()
+  return self:GetOwnHandcartId() > 0
+end
+
+function NCreatureWithPropUserdata:IsOwnHandcart(handcartId)
+  return 0 < handcartId and self:GetOwnHandcartId() == handcartId
 end
 
 function NCreatureWithPropUserdata:Server_SetUserDatas(serverUserdatas, init, changeJob)
@@ -58,6 +74,10 @@ function NCreatureWithPropUserdata:Server_SetAttrs(serverAttrs)
       end
     end
   end
+end
+
+function NCreatureWithPropUserdata:GetDoubleDamage()
+  return self.data and self.data:GetDoubleDamage() or -1
 end
 
 function NCreatureWithPropUserdata:SetVisible(v, reason)
@@ -363,7 +383,22 @@ function NCreatureWithPropUserdata:TryHandleAddSpecialBuff(buffInfo, fromID, par
     elseif buffType == BuffType.BeTaunt then
       self:Logic_BeTaunt(true, fromID)
     elseif buffType == BuffType.HandStatus then
-      self:Client_AddHugRole(buffeffect.npcId or params[1])
+      if not self:HasAllPartLoadedStrictCheck() then
+        self:AddPostModelLoadHandleBuffs(buffInfo.id, params)
+      else
+        local npcId = buffeffect.npcId or params[1]
+        local dirX = buffeffect.dirx
+        local dirY = buffeffect.diry
+        local offset = buffeffect.offset
+        local scale = buffeffect.scale
+        self:Client_AddHugRole(buffeffect.npcId or params[1], dirX, dirY, offset, scale)
+        if self.data.id == Game.Myself.data.id then
+          EventManager.Me():DispatchEvent(EscortEvent.HandStatusBuff, {
+            buffInfo.id,
+            npcId
+          })
+        end
+      end
     elseif buffType == BuffType.Clearautolock then
       self.data:SetNoAutoLock(buffeffect.value == 1)
       EventManager.Me():DispatchEvent(SkillEvent.ClearLockTarget, self)
@@ -810,6 +845,12 @@ function NCreatureWithPropUserdata:TryUpdateSpecialBuff(buffInfo, active, fromID
     end
   elseif buffType == BuffType.AttrCanMove then
     self.data:SetAttrCanMove(active)
+  elseif buffType == BuffType.RoseSeedCount and active then
+    local relatedBuffID = buffeffect.check_buff
+    local relatedBuff = relatedBuffID and self.buffs[relatedBuffID]
+    if relatedBuff then
+      relatedBuff:UpdateRoseSeedCount(layer)
+    end
   end
 end
 
@@ -1325,4 +1366,24 @@ end
 
 function NCreatureWithPropUserdata:GetRideRole()
   return SceneCreatureProxy.FindCreature(self.rideRoleId)
+end
+
+function NCreatureWithPropUserdata:GetRidingHandcartCharID()
+  return self.data.userdata:Get(UDEnum.RIDING_HANDCART_OWNER) or 0
+end
+
+function NCreatureWithPropUserdata:GetRidingHandcartSeat()
+  return self.data.userdata:Get(UDEnum.RIDING_HANDCART_SEAT) or -1
+end
+
+function NCreatureWithPropUserdata:GetOwnHandcartId()
+  return self.data.userdata:Get(UDEnum.OWN_HANDCART) or 0
+end
+
+function NCreatureWithPropUserdata:UpdateRidingHandcartCharID(lastCharID, curCharID)
+  if lastCharID == curCharID then
+    return
+  end
+  local seatId = 0 < curCharID and self:GetRidingHandcartSeat() or -1
+  Game.InteractNpcManager:DoUpdateRidingHandcartCharID(self, lastCharID, curCharID, seatId)
 end

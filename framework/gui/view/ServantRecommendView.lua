@@ -22,6 +22,7 @@ local KJMC_GUIDE_QUEST_ID = 99090033
 
 function ServantRecommendView:Init()
   BattleTimeDataProxy.QueryBattleTimelenUserCmd()
+  GvgProxy.Instance:DoQueryGvgZoneGroup(true)
   self:FindObjs()
   self:AddUIEvts()
   self:AddViewEvts()

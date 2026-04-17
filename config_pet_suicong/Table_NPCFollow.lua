@@ -334,6 +334,28 @@ Table_NPCFollow = {
     FollowDistance_Start = 6,
     ChooseUILocation = _EmptyTable,
     ChooseUIRotating = _EmptyTable
+  },
+  [1726] = {
+    id = 1726,
+    NameZh = "##44717426",
+    NameEn = "Cart",
+    FollowType = 2,
+    FollowEP = 0,
+    FollowDistance_Stop = 1.1,
+    FollowDistance_Start = 1.1,
+    FollowHighly = 0.1,
+    FollowEasingTime = 0.3,
+    ChooseUILocation = {
+      0.06,
+      -1.63,
+      -2.68
+    },
+    ChooseUIRotating = {
+      0,
+      150.8,
+      0
+    },
+    RideVehicle = 0
   }
 }
 Table_NPCFollow_fields = {

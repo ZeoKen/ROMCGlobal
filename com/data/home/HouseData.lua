@@ -44,13 +44,14 @@ function HouseData:OnParseServerData(serverData)
     LogUtility.Error("HouseData: Server Data Is Nil")
     return
   end
+  self:ClearFeedingPet()
   self.firerewardtime = serverData.firerewardtime
   self:SetCanReward()
   local serverpets = serverData.pets
   self.furniturePets = {}
   if serverpets then
     for i = 1, #serverpets do
-      local data = PetHouseData.new(serverpets[i])
+      local data = PetHouseData.new(serverpets[i], self.houseIndex)
       self.furniturePets[data.index] = data
     end
   end

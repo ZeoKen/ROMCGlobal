@@ -334,6 +334,39 @@ Table_GuideUI = {
       type = {1, 2}
     },
     Sysmsg = 43463
+  },
+  [36] = {
+    id = 36,
+    GroupID = 12,
+    MainTitle = "##45909753",
+    Text = "##123673",
+    Desc = "##45909754",
+    Icon = "Quest",
+    Shortcutpower = {8387},
+    complete_con = "",
+    Params = _EmptyTable
+  },
+  [37] = {
+    id = 37,
+    GroupID = 12,
+    MainTitle = "##45909753",
+    Text = "##45909756",
+    Desc = "##45909757",
+    Icon = "map_icon_jingying03",
+    Shortcutpower = _EmptyTable,
+    complete_con = "",
+    Params = _EmptyTable
+  },
+  [38] = {
+    id = 38,
+    GroupID = 12,
+    MainTitle = "##45909753",
+    Text = "##2846519",
+    Desc = "##45909759",
+    Icon = "elf_icon_01",
+    Shortcutpower = _EmptyTable,
+    complete_con = "",
+    Params = _EmptyTable
   }
 }
 Table_GuideUI_fields = {

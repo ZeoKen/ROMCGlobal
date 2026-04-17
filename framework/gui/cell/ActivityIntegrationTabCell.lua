@@ -46,14 +46,6 @@ function ActivityIntegrationTabCell:SetData(data)
         min = tonumber(endMin),
         sec = tonumber(endSec)
       })
-      local kfcStartTimestamp = KFCARCameraProxy.Instance:GetSelfCustomDate(startTime)
-      local kfcEndTimestamp = KFCARCameraProxy.Instance:GetSelfCustomDate(endTime)
-      local startDiff = startTimestamp and kfcStartTimestamp and startTimestamp - kfcStartTimestamp or "nil"
-      local endDiff = endTimestamp and kfcEndTimestamp and endTimestamp - kfcEndTimestamp or "nil"
-      local startTimeStr = string.format("startTime:%s | Ori_OsTime:%d(%s) | GetSelfCustomDate:%d(%s) | 差值:%s", startTime, startTimestamp or 0, startTimestamp and ServerTime.Ori_OsDate("%Y-%m-%d %H:%M:%S", startTimestamp) or "nil", kfcStartTimestamp or 0, kfcStartTimestamp and ServerTime.Ori_OsDate("%Y-%m-%d %H:%M:%S", kfcStartTimestamp) or "nil", tostring(startDiff))
-      local endTimeStr = string.format("endTime:%s | Ori_OsTime:%d(%s) | GetSelfCustomDate:%d(%s) | 差值:%s", endTime, endTimestamp or 0, endTimestamp and ServerTime.Ori_OsDate("%Y-%m-%d %H:%M:%S", endTimestamp) or "nil", kfcEndTimestamp or 0, kfcEndTimestamp and ServerTime.Ori_OsDate("%Y-%m-%d %H:%M:%S", kfcEndTimestamp) or "nil", tostring(endDiff))
-      xdlog("ActivityIntegrationTabCell时间戳对比-开始时间", startTimeStr)
-      xdlog("ActivityIntegrationTabCell时间戳对比-结束时间", endTimeStr)
       local curServerTime = ServerTime.CurServerTime() / 1000
       if startTimestamp and endTimestamp and startTimestamp <= curServerTime and endTimestamp >= curServerTime then
         local str = tonumber(startMonth) .. "." .. tonumber(startDay) .. "~" .. tonumber(endMonth) .. "." .. tonumber(endDay)

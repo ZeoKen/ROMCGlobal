@@ -7,6 +7,7 @@ autoImport("InteractNpc2Furniture")
 autoImport("InteractMount")
 autoImport("InteractMountNpc")
 autoImport("InteractSceneObject")
+autoImport("InteractHandcartNpc")
 InteractNpcManager = class("InteractNpcManager")
 local TableInteractFurnitureName = "Table_InteractFurniture"
 local GameFacade = GameFacade.Instance
@@ -20,12 +21,14 @@ local _GameConfig = GameConfig
 function InteractNpcManager:ctor()
   self.interactNpcMap = {}
   self.interactMountMap = {}
+  self.interactHandcartMap = {}
   self.interactMountLinkMap = {}
   self.interactMountRideMap = {}
   self.assetRoleMap = {}
   self.interactFlowerCarCtrlMap = {}
   self.interactNpcCount = 0
   self.interactMountCount = 0
+  self.interactHandcartCount = 0
   self.isInTrigger = false
 end
 
@@ -119,8 +122,8 @@ function InteractNpcManager:Clear()
   end
   TableUtility.TableClear(self.interactMountLinkMap)
   TableUtility.TableClear(self.interactMountRideMap)
-  local myselfID = Game.Myself and Game.Myself.data and Game.Myself.data.id
   self.lockMountMasterGuid = nil
+  self.lockTargetHandcartMasterGuid = nil
   self.myselfRideInteractMount = nil
   if self.myselfOnMountGuid then
     self.myselfOnMountGuid = nil
@@ -179,8 +182,10 @@ function InteractNpcManager:UpdateRegisterInteractMount(id, bodyid, creature)
   end
   local data = bodyid and Table_InteractMount[bodyid]
   local curMount = self.interactMountMap[id]
+  local savedNpcid
   if data then
     if curMount and curMount.staticData.id ~= bodyid then
+      savedNpcid = curMount.npcid
       self:_UnregisterInteractMount(id)
       curMount = nil
     end
@@ -190,9 +195,13 @@ function InteractNpcManager:UpdateRegisterInteractMount(id, bodyid, creature)
         local charid = creature.data.id
         local masterid = creature.data.userdata:Get(UDEnum.RIDING_CHARID) or 0
         local ridingNpc = creature.data.userdata:Get(UDEnum.RIDING_NPC)
-        if masterid == 0 and ridingNpc ~= 0 then
-          local interactMount = self:GetInteractMount(charid)
-          if interactMount then
+        local interactMount = self:GetInteractMount(charid)
+        if interactMount then
+          local finalNpcid = ridingNpc and ridingNpc ~= 0 and ridingNpc or savedNpcid
+          if finalNpcid and finalNpcid ~= 0 then
+            interactMount.npcid = finalNpcid
+          end
+          if masterid == 0 and ridingNpc ~= 0 then
             interactMount:RequestGetOn(2, 0, ridingNpc)
           end
         end
@@ -311,11 +320,115 @@ function InteractNpcManager:TryNotifyGetOffMount()
   end
 end
 
+function InteractNpcManager:TryNotifyGetOffHandcart()
+  ServiceSceneUser3Proxy.Instance:CallLeaveUserHandcartCmd()
+end
+
 function InteractNpcManager:TryChangeSeat()
   local interactMount = self:GetInteractMount(self.myselfOnMountGuid)
   if interactMount then
     interactMount:TryChangeSeat()
   end
+end
+
+function InteractNpcManager:MyselfManualClickHandcart()
+  if Game.Myself:IsHasHandcart() then
+    return
+  end
+  local masterId = self:GetTargetInteractHandcartMasterID()
+  local handcartId = self:GetHandcartIdByCharId(masterId)
+  local interactHandcart = self:GetInteractHandcart(handcartId)
+  if interactHandcart then
+    interactHandcart:TryNotifyGetOn(handcartId)
+  end
+end
+
+function InteractNpcManager:DoUpdateRidingHandcartCharID(creature, lastCharId, charId, seatId)
+  lastCharId = lastCharId or 0
+  charId = charId or 0
+  if 0 < lastCharId and charId == 0 then
+    local handcartId = self:GetHandcartIdByCharId(lastCharId)
+    local interactHandcart = self:GetInteractHandcart(handcartId)
+    if interactHandcart then
+      interactHandcart:RequestGetOff(creature.data.id)
+    end
+    self.myselfOnHandcartGuid = nil
+    GameFacade:sendNotification(InteractNpcEvent.MyselfOnOffHandcartChange, false)
+  elseif lastCharId == 0 and charId ~= 0 then
+    local ownerChar = NSceneUserProxy.Instance:Find(charId)
+    if ownerChar then
+      local handcartId = ownerChar:GetOwnHandcartId()
+      local interactHandcart = self:GetInteractHandcart(handcartId)
+      if interactHandcart then
+        interactHandcart:RequestGetOn(creature, seatId)
+      end
+    end
+  end
+end
+
+function InteractNpcManager:SetTargetInteractHandcartMasterID(masterId)
+  local lastIsTrigger = self:GetTargetInteractHandcartMasterID() ~= nil
+  local nowIsTrigger = masterId ~= nil
+  self.lockTargetHandcartMasterGuid = masterId
+  if lastIsTrigger ~= nowIsTrigger then
+    GameFacade:sendNotification(InteractNpcEvent.MyselfTriggerHandcartChange, nowIsTrigger)
+  end
+end
+
+function InteractNpcManager:RegisterInteractHandcart(staticId, id)
+  local staticData = Table_InteractNpc[staticId]
+  if staticData == nil then
+    return
+  end
+  self:_RegisterInteractHandcart(staticData, id)
+end
+
+function InteractNpcManager:_RegisterInteractHandcart(staticData, id)
+  if not staticData or self.interactHandcartMap[id] then
+    return
+  end
+  if Game.Myself and Game.Myself:IsOwnHandcart(id) then
+    return
+  end
+  local handcartNpc = InteractHandcartNpc.Create(staticData, id)
+  self.interactHandcartMap[id] = handcartNpc
+  self.interactHandcartCount = self.interactHandcartCount + 1
+  GameFacade:sendNotification(InteractNpcEvent.MyselfTriggerHandcartChange, false)
+end
+
+function InteractNpcManager:UnregisterInteractHandcart(id)
+  self:_UnregisterInteractHandcart(id)
+end
+
+function InteractNpcManager:_UnregisterInteractHandcart(id)
+  local interactHandcart = self.interactHandcartMap[id]
+  if interactHandcart then
+    interactHandcart:RequestGetOffAll()
+    interactHandcart:Destroy()
+    self.interactHandcartMap[id] = nil
+    self.interactHandcartCount = self.interactHandcartCount - 1
+  end
+  if self.myselfOnHandcartGuid == id then
+    self.myselfOnHandcartGuid = nil
+  end
+  GameFacade:sendNotification(InteractNpcEvent.MyselfTriggerHandcartChange, false)
+end
+
+function InteractNpcManager:IsMyselfRideInteractHandcart()
+  return Game.Myself and Game.Myself:IsOnHandcart()
+end
+
+function InteractNpcManager:GetInteractHandcart(id)
+  return id and self.interactHandcartMap[id]
+end
+
+function InteractNpcManager:GetTargetInteractHandcartMasterID()
+  return self.lockTargetHandcartMasterGuid
+end
+
+function InteractNpcManager:GetHandcartIdByCharId(charId)
+  local masterData = NSceneUserProxy.Instance:Find(charId)
+  return masterData and masterData:GetOwnHandcartId() or 0
 end
 
 function InteractNpcManager:OnCreatureRecycle(id)
@@ -326,6 +439,10 @@ function InteractNpcManager:OnCreatureRecycle(id)
   local interactMount = self:GetInteractMount(cachedMasterID)
   if interactMount then
     interactMount:RequestGetOff(id)
+  end
+  local interactHandcart = self:GetInteractHandcart(cachedMasterID)
+  if interactHandcart then
+    interactHandcart:RequestGetOff(id)
   end
   self.interactMountRideMap[id] = nil
   local passengerMap = self.interactMountLinkMap[cachedMasterID]

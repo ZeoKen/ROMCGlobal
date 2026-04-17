@@ -15,6 +15,7 @@ function HomeSettingPage:InitUI()
   self.scrollSettings = l_objScrollSettings:GetComponent(UIScrollView)
   self.uiTableSettings = l_objSettingContainer:GetComponent(UITable)
   self.togHomePublic = self:FindComponent("SetPublic", UIToggle, l_objSettingContainer)
+  self.togHomePublicWidget = self:FindComponent("SetPublic", UIWidget, l_objSettingContainer)
   self.togHomeFriendsOnly = self:FindComponent("SetFriendsOnly", UIToggle, l_objSettingContainer)
   self.togFurniturePublic = self:FindComponent("SetFurniturePublic", UIToggle, l_objSettingContainer)
   self.togFurniturePrivate = self:FindComponent("SetFurniturePrivate", UIToggle, l_objSettingContainer)
@@ -80,7 +81,7 @@ function HomeSettingPage:LoadHomeSettings()
   if allShieldTypes then
     self.listFunctionUseCostomize:ResetDatas(allShieldTypes)
   end
-  local myHouseData = HomeProxy.Instance:GetMyHouseData()
+  local myHouseData = HomeProxy.__RealInstance:GetMyHouseData(self.houseType)
   if not myHouseData then
     redlog("Cannot Find My House Data!")
     self:LoadDefaultSettings()
@@ -91,7 +92,10 @@ function HomeSettingPage:LoadHomeSettings()
   else
     self.togHomePublic.value = true
   end
+  self.togHomeFriendsOnly.gameObject:SetActive(self.houseType == HomeProxy.HouseType.Home)
+  self.togHomePublicWidget.alpha = self.houseType == HomeProxy.HouseType.Snow and 0.5 or 1
   local forbidList = myHouseData:GetVisitorForbidTypes()
+  redlog("LoadHomeSettings visitor forbidList = " .. (forbidList and #forbidList or "nil"), "allForbidTypes = " .. (allForbidTypes and #allForbidTypes or "nil"))
   if not forbidList or #forbidList < 1 then
     self.togFurniturePublic.value = true
   elseif allForbidTypes and #forbidList >= #allForbidTypes then
@@ -109,6 +113,7 @@ function HomeSettingPage:LoadHomeSettings()
   end
   self.togShowName.value = myHouseData:IsShowFurnitureName()
   forbidList = myHouseData:GetMasterShieldTypes()
+  redlog("LoadHomeSettings master forbidList = " .. (forbidList and #forbidList or "nil"), "allShieldTypes = " .. (allShieldTypes and #allShieldTypes or "nil"))
   if not forbidList or #forbidList < 1 then
     self.togFunctionAllOpen.value = true
   elseif allShieldTypes and #forbidList >= #allShieldTypes then
@@ -244,12 +249,12 @@ function HomeSettingPage:SaveSettings()
       end
     end
   end
-  local myHouseData = HomeProxy.Instance:GetMyHouseData()
+  local myHouseData = HomeProxy.__RealInstance:GetMyHouseData(self.houseType)
   if not myHouseData or openType ~= myHouseData:GetOpenType() then
-    ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HouseData.HouseOptType.OpenType, openType)
+    ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, myHouseData and myHouseData.houseType or HomeProxy.HouseType2ServerHouseType[self.houseType], HouseData.HouseOptType.OpenType, openType)
   end
   if not myHouseData or isFurnitureNameShow ~= myHouseData:IsShowFurnitureName() then
-    ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HouseData.HouseOptType.ShowFurnitureName, isFurnitureNameShow and 1 or 0)
+    ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, myHouseData and myHouseData.houseType or HomeProxy.HouseType2ServerHouseType[self.houseType], HouseData.HouseOptType.ShowFurnitureName, isFurnitureNameShow and 1 or 0)
   end
   if myHouseData then
     local curList = myHouseData:GetVisitorForbidTypes()
@@ -263,10 +268,11 @@ function HomeSettingPage:SaveSettings()
       end
     end
     if dirty then
-      ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HouseData.HouseOptType.VisitorForbidType, nil, forbidList)
+      redlog("[HomeSettingPage] 保存家具禁用列表 houseType = " .. tostring(myHouseData.houseType), "forbidList = " .. (forbidList and #forbidList or "nil"))
+      ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, myHouseData.houseType, HouseData.HouseOptType.VisitorForbidType, nil, forbidList)
     end
   else
-    ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HouseData.HouseOptType.VisitorForbidType, nil, forbidList)
+    ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HomeProxy.HouseType2ServerHouseType[self.houseType], HouseData.HouseOptType.VisitorForbidType, nil, forbidList)
   end
   if myHouseData then
     local curList = myHouseData:GetMasterShieldTypes()
@@ -280,13 +286,13 @@ function HomeSettingPage:SaveSettings()
       end
     end
     if dirty then
-      ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HouseData.HouseOptType.MasterShieldType, nil, shieldList)
+      ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, myHouseData.houseType, HouseData.HouseOptType.MasterShieldType, nil, shieldList)
     end
   else
-    ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HouseData.HouseOptType.MasterShieldType, nil, shieldList)
+    ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HomeProxy.HouseType2ServerHouseType[self.houseType], HouseData.HouseOptType.MasterShieldType, nil, shieldList)
   end
   if messageBoardType ~= myHouseData:GetMessageBoardStatue() then
-    ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, HouseData.HouseOptType.BoardOpen, messageBoardType)
+    ServiceHomeCmdProxy.Instance:CallOptUpdateHomeCmd(nil, myHouseData and myHouseData.houseType or HomeProxy.HouseType2ServerHouseType[self.houseType], HouseData.HouseOptType.BoardOpen, messageBoardType)
   end
   ReusableTable.DestroyAndClearArray(forbidList)
   ReusableTable.DestroyAndClearArray(shieldList)
@@ -297,7 +303,8 @@ function HomeSettingPage:ClickHelp()
   self:OpenHelpView(helpData)
 end
 
-function HomeSettingPage:OnSwitch(isOpen)
+function HomeSettingPage:OnSwitch(isOpen, houseType)
+  self.houseType = houseType
   self:LoadHomeSettings()
 end
 

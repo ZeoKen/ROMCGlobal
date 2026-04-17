@@ -323,15 +323,19 @@ function ActivityIntegrationProxy:RecvActPersonalTimeSyncCmd(data)
   if actTimes and 0 < #actTimes then
     for i = 1, #actTimes do
       local single = actTimes[i]
-      self.activityTaskActMap[single.act_id] = {
-        starttime = single.start_time,
-        endtime = single.end_time
-      }
-      xdlog("活动时间同步", single.act_id, single.start_time, single.end_time)
-      self.activityBatchIdMap[single.act_id] = single.batch_id
-      ActivityBattlePassProxy.Instance:BatchLevelData(single.act_id, single.batch_id)
-      if ActivityChallengeProxy and ActivityChallengeProxy.Instance then
-        ActivityChallengeProxy.Instance:BatchChallengeData(single.act_id, single.batch_id)
+      local existData = self.activityTaskActMap[single.act_id]
+      if existData and existData.endtime and existData.endtime > single.end_time then
+      else
+        self.activityTaskActMap[single.act_id] = {
+          starttime = single.start_time,
+          endtime = single.end_time
+        }
+        xdlog("活动时间同步", single.act_id, single.start_time, single.end_time)
+        self.activityBatchIdMap[single.act_id] = single.batch_id
+        ActivityBattlePassProxy.Instance:BatchLevelData(single.act_id, single.batch_id)
+        if ActivityChallengeProxy and ActivityChallengeProxy.Instance then
+          ActivityChallengeProxy.Instance:BatchChallengeData(single.act_id, single.batch_id)
+        end
       end
     end
   end
@@ -601,6 +605,7 @@ function ActivityIntegrationProxy:CheckGroupValid(groupid)
       if not overallEndTime or endTime and overallEndTime < endTime then
         overallEndTime = endTime
       end
+    elseif type == 9 then
     else
       local serverValid = true
       local serverList = staticData.ServerID

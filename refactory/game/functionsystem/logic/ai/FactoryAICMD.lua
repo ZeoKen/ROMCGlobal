@@ -130,11 +130,12 @@ function FactoryAICMD.GetSetScaleCmd(scaleX, scaleY, scaleZ, noSmooth)
   return cmd
 end
 
-function FactoryAICMD.GetSetAngleYCmd(mode, arg, noSmooth)
+function FactoryAICMD.GetSetAngleYCmd(mode, arg, noSmooth, extraArgs)
   local cmd = FactoryAICMD.SetAngleYCmd
   cmd[2] = mode
   cmd[3] = arg
   cmd[4] = noSmooth
+  cmd[5] = extraArgs
   return cmd
 end
 

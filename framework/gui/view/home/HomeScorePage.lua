@@ -11,21 +11,30 @@ function HomeScorePage:Init()
 end
 
 function HomeScorePage:InitTagDatas()
-  self.tagDatas = {
-    {
-      id = HomeProxy.HouseType.Home,
-      name = ZhString.Home_IndoorScore,
-      dataList = {}
+  self.tagDatasByHouseType = {
+    [HomeProxy.HouseType.Home] = {
+      {
+        id = HomeProxy.HouseType.Home,
+        name = ZhString.Home_IndoorScore,
+        dataList = {}
+      },
+      {
+        id = HomeProxy.HouseType.Garden,
+        name = ZhString.Home_OutdoorScore,
+        dataList = {}
+      },
+      {
+        id = 10086,
+        name = ZhString.Home_FurnitureSetScore,
+        dataList = {}
+      }
     },
-    {
-      id = HomeProxy.HouseType.Garden,
-      name = ZhString.Home_OutdoorScore,
-      dataList = {}
-    },
-    {
-      id = 10086,
-      name = ZhString.Home_FurnitureSetScore,
-      dataList = {}
+    [HomeProxy.HouseType.Snow] = {
+      {
+        id = HomeProxy.HouseType.Snow,
+        name = ZhString.Home_AllFurniture,
+        dataList = {}
+      }
     }
   }
 end
@@ -51,7 +60,8 @@ function HomeScorePage:AddViewEvts()
 end
 
 function HomeScorePage:InitView()
-  self.listHomeScores:SetTagList(self.tagDatas, self.GetFurnitureDatasByTag, self)
+  self.curTagDatas = self:GetTagDatasByHouseType(self.houseType)
+  self.listHomeScores:SetTagList(self.curTagDatas, self.GetFurnitureDatasByTag, self)
   self.listHomeScores:AddEventListener(MouseEvent.MouseClick, self.ClickScoreCell, self)
   self.itemDataCache = {}
 end
@@ -62,7 +72,7 @@ function HomeScorePage:ClickHelp()
 end
 
 function HomeScorePage:UpdateHomeScores()
-  local myHouseData = HomeProxy.Instance:GetMyHouseData()
+  local myHouseData = HomeProxy.__RealInstance:GetMyHouseData(self.houseType)
   if not myHouseData then
     redlog("Cannot Find My House Data!")
     return
@@ -74,6 +84,17 @@ function HomeScorePage:UpdateHomeScores()
 end
 
 function HomeScorePage:GenerateHomeScoreList_Client()
+  if self.houseType == HomeProxy.HouseType.Snow then
+    local snowScoreMap, snowInvalidMap = ReusableTable.CreateTable(), ReusableTable.CreateTable()
+    HomeProxy.Instance:GenerateSingleHouseScoreMap_Client(HomeProxy.HouseType.Snow, snowScoreMap, snowInvalidMap)
+    local tagData = self:GetTagDataById(self.curTagDatas, HomeProxy.HouseType.Snow)
+    if tagData then
+      self:ProcessSingleTagData(tagData, snowScoreMap, snowInvalidMap)
+    end
+    ReusableTable.DestroyAndClearTable(snowScoreMap)
+    ReusableTable.DestroyAndClearTable(snowInvalidMap)
+    return
+  end
   local homeScoreMap, homeInvalidMap = ReusableTable.CreateTable(), ReusableTable.CreateTable()
   local gardenScoreMap, gardenInvalidMap = ReusableTable.CreateTable(), ReusableTable.CreateTable()
   HomeProxy.Instance:GenerateSingleHouseScoreMap_Client(HomeProxy.HouseType.Home, homeScoreMap, homeInvalidMap)
@@ -82,8 +103,14 @@ function HomeScorePage:GenerateHomeScoreList_Client()
   self:ProcessSingleScoreMap(homeScoreMap, gardenScoreMap)
   self:ProcessSingleInvalidMap(gardenInvalidMap, homeScoreMap, homeInvalidMap)
   self:ProcessSingleInvalidMap(homeInvalidMap, gardenScoreMap, gardenInvalidMap)
-  self:ProcessSingleTagData(self.tagDatas[HomeProxy.HouseType.Home], homeScoreMap, homeInvalidMap)
-  self:ProcessSingleTagData(self.tagDatas[HomeProxy.HouseType.Garden], gardenScoreMap, gardenInvalidMap)
+  local homeTagData = self:GetTagDataById(self.curTagDatas, HomeProxy.HouseType.Home)
+  local gardenTagData = self:GetTagDataById(self.curTagDatas, HomeProxy.HouseType.Garden)
+  if homeTagData then
+    self:ProcessSingleTagData(homeTagData, homeScoreMap, homeInvalidMap)
+  end
+  if gardenTagData then
+    self:ProcessSingleTagData(gardenTagData, gardenScoreMap, gardenInvalidMap)
+  end
   ReusableTable.DestroyAndClearTable(homeScoreMap)
   ReusableTable.DestroyAndClearTable(homeInvalidMap)
   ReusableTable.DestroyAndClearTable(gardenScoreMap)
@@ -148,7 +175,10 @@ function HomeScorePage:ClickScoreCell(cell)
   ReusableTable.DestroyAndClearTable(tab)
 end
 
-function HomeScorePage:OnSwitch(isOpen)
+function HomeScorePage:OnSwitch(isOpen, houseType)
+  self.houseType = houseType
+  self.curTagDatas = self:GetTagDatasByHouseType(self.houseType)
+  self.listHomeScores:SetTagList(self.curTagDatas, self.GetFurnitureDatasByTag, self)
   self:UpdateHomeScores()
   self.listHomeScores:UpdateList(true)
   self.noneTip:SetActive(#self.listHomeScores.datas < 1)
@@ -156,7 +186,6 @@ end
 
 function HomeScorePage:OnEnter()
   HomeScorePage.super.OnEnter(self)
-  self:GenerateHomeScoreList_Client()
 end
 
 function HomeScorePage:OnExit()
@@ -173,9 +202,31 @@ function HomeScorePage:ClearListInvalidSign(dataList)
 end
 
 function HomeScorePage:OnDestroy()
-  for k, tagData in pairs(self.tagDatas) do
-    self:ClearListInvalidSign(tagData.dataList)
+  if self.tagDatasByHouseType then
+    for _, tagList in pairs(self.tagDatasByHouseType) do
+      for i = 1, #tagList do
+        self:ClearListInvalidSign(tagList[i].dataList)
+      end
+    end
   end
   self.listHomeScores:Destroy()
   HomeScorePage.super.OnDestroy(self)
+end
+
+function HomeScorePage:GetTagDatasByHouseType(houseType)
+  houseType = houseType or HomeProxy.HouseType.Home
+  local tagList = self.tagDatasByHouseType and self.tagDatasByHouseType[houseType]
+  tagList = tagList or self.tagDatasByHouseType and self.tagDatasByHouseType[HomeProxy.HouseType.Home]
+  return tagList
+end
+
+function HomeScorePage:GetTagDataById(tagList, tagId)
+  if not tagList then
+    return nil
+  end
+  for i = 1, #tagList do
+    if tagList[i].id == tagId then
+      return tagList[i]
+    end
+  end
 end

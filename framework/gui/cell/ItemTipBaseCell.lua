@@ -17,43 +17,47 @@ ItemTipAttriType = {
   ConditionForbid = 9,
   MountSpeedUp = 14,
   EquipBaseAttri = 15,
-  NextEquipLotteryAttri = 16,
-  EquipQuench = 17,
-  EquipStrengthRefine = 18,
-  EquipSpecial = 19,
-  Pvp_EquipBaseAttri = 20,
-  EquipRandomAttri = 21,
-  EquipEnchant = 22,
-  EquipUpInfo = 23,
-  EquipUpMaterial = 24,
-  EquipCards = 25,
-  EquipSuit = 26,
-  EquipColor = 27,
-  ComposeProductAttri = 28,
-  ComposeInfo = 29,
-  CardInfo = 30,
-  SpecialTip = 31,
-  EquipMemory = 32,
-  UnLockInfo = 35,
-  NoStorage = 36,
-  NoMakeCard = 37,
-  EquipCanInfo = 38,
-  FoodInfo = 42,
-  FoodAdvInfo = 43,
-  FoodLvInfo = 44,
-  PetEggInfo_Brief = 47,
-  PetEggInfo_Skill = 48,
-  PetEggInfo_Equip = 49,
-  EquipJobs = 50,
-  NoEffectTip = 51,
-  ObsidianSoulCrystalTip = 52,
-  Code = 53,
-  UseTime = 54,
-  Desc = 55,
-  TradePrice = 56,
-  SellPrice = 57,
-  GetWay = 58,
-  MAX_INDEX = 59
+  SnowCrownAttri = 16,
+  SnowGemAttr = 17,
+  SnowGemAdvAttr = 18,
+  NextEquipLotteryAttri = 19,
+  EquipQuench = 22,
+  EquipStrengthRefine = 23,
+  EquipSpecial = 24,
+  Pvp_EquipBaseAttri = 25,
+  EquipRandomAttri = 26,
+  EquipRandomAttri2 = 27,
+  EquipEnchant = 28,
+  EquipUpInfo = 29,
+  EquipUpMaterial = 30,
+  EquipCards = 31,
+  EquipSuit = 32,
+  EquipColor = 33,
+  ComposeProductAttri = 34,
+  ComposeInfo = 35,
+  CardInfo = 36,
+  SpecialTip = 37,
+  EquipMemory = 38,
+  UnLockInfo = 40,
+  NoStorage = 41,
+  NoMakeCard = 42,
+  EquipCanInfo = 43,
+  FoodInfo = 47,
+  FoodAdvInfo = 48,
+  FoodLvInfo = 49,
+  PetEggInfo_Brief = 52,
+  PetEggInfo_Skill = 53,
+  PetEggInfo_Equip = 54,
+  EquipJobs = 55,
+  NoEffectTip = 56,
+  ObsidianSoulCrystalTip = 57,
+  Code = 58,
+  UseTime = 59,
+  Desc = 60,
+  TradePrice = 61,
+  SellPrice = 62,
+  GetWay = 63,
+  MAX_INDEX = 64
 }
 local ExtractionItemTipAttrTypes = {
   ItemTipAttriType.EquipJobs,
@@ -975,6 +979,17 @@ function ItemTipBaseCell:UpdateNormalItemInfo(data)
       }
     end
   end
+  if data:IsSnowGem() then
+    local snowGemAttrData = ItemTipBaseCell.GetSnowGemAttrByItemData(data, self)
+    if snowGemAttrData then
+      if snowGemAttrData.basicAttr then
+        self.contextDatas[ItemTipAttriType.SnowGemAttr] = snowGemAttrData.basicAttr
+      end
+      if snowGemAttrData.advAttr then
+        self.contextDatas[ItemTipAttriType.SnowGemAdvAttr] = snowGemAttrData.advAttr
+      end
+    end
+  end
 end
 
 function ItemTipBaseCell.EffectSort(a, b)
@@ -1003,11 +1018,12 @@ function ItemTipBaseCell:UpdateEquipAttriInfo(data)
         self.contextDatas[ItemTipAttriType.EquipSpecial] = singleData
       end
     else
-      singleData = ItemTipBaseCell.GetEquipBaseAttriByItemData(data, nil, ItemTipEquipAttriVStrColorStr)
+      local attrColorStr = data.snowStoreMode and ItemTipEquipAttriVStrColorStr_ or ItemTipEquipAttriVStrColorStr
+      singleData = ItemTipBaseCell.GetEquipBaseAttriByItemData(data, nil, attrColorStr)
       if singleData then
         self.contextDatas[ItemTipAttriType.EquipBaseAttri] = singleData
       end
-      singleData = ItemTipBaseCell.GetEquipPvpBaseAttri(equipInfo, nil, ItemTipEquipAttriVStrColorStr)
+      singleData = ItemTipBaseCell.GetEquipPvpBaseAttri(equipInfo, nil, attrColorStr)
       if singleData then
         self.contextDatas[ItemTipAttriType.Pvp_EquipBaseAttri] = singleData
       end
@@ -1017,7 +1033,7 @@ function ItemTipBaseCell:UpdateEquipAttriInfo(data)
         for k, v in pairs(nextlotteryData.Attr) do
           if propMap[k] then
             local vstr = propMap[k].IsPercent == 1 and v * 100 .. "%" or v
-            vstr = string.format("[c][%s]+%s[-][/c]", ItemTipEquipAttriVStrColorStr, vstr)
+            vstr = string.format("[c][%s]+%s[-][/c]", attrColorStr, vstr)
             local templab = string.format("%s%s%s", ItemTipDefaultUiIconPrefix, propMap[k].PropName, vstr)
             table.insert(nlotteryEffect, {
               propMap[k].id,
@@ -1053,15 +1069,21 @@ function ItemTipBaseCell:UpdateEquipAttriInfo(data)
         }
       end
     end
+    if data.staticData and data.staticData.Type == 4301 then
+      singleData = ItemTipBaseCell.GetSnowCrownAttriByItemData(data)
+      if singleData then
+        self.contextDatas[ItemTipAttriType.SnowCrownAttri] = singleData
+      end
+    end
     singleData = ItemTipBaseCell.GetEquipQuenchByItemData(data)
     if singleData then
       self.contextDatas[ItemTipAttriType.EquipQuench] = singleData
     end
-    singleData = ItemTipBaseCell.GetEquipStrengthRefineByItemData(data, nil, self.equipBuffUpSource)
+    singleData = ItemTipBaseCell.GetEquipStrengthRefineByItemData(data, nil, self.equipBuffUpSource, data.snowStoreMode)
     if singleData then
       self.contextDatas[ItemTipAttriType.EquipStrengthRefine] = singleData
     end
-    singleData = ItemTipBaseCell.GetEquipSpecial(equipInfo, nil, data:GetAttrPercentByQuench())
+    singleData = ItemTipBaseCell.GetEquipSpecial(equipInfo, nil, data:GetAttrPercentByQuench(), data.snowStoreMode)
     if singleData then
       self.contextDatas[ItemTipAttriType.EquipSpecial] = singleData
     end
@@ -1085,11 +1107,13 @@ function ItemTipBaseCell:UpdateEquipAttriInfo(data)
         label = {}
       }, data.equipedCardInfo or _EmptyTable
       local isShadowEquip = data:IsShadowEquip()
+      local snowStoreMode = data.snowStoreMode
+      local useInactiveColor = isShadowEquip or snowStoreMode
       for i = 1, cardSlotNum do
         local sb = LuaStringBuilder.CreateAsTable()
         redlog("ItemTipBaseCell:UpdateEquipAttriInfo", i, tostring(equipCards[i]))
         if equipCards[i] then
-          if isShadowEquip then
+          if useInactiveColor then
             table.insert(sb.content, 1, "[c]")
             table.insert(sb.content, 2, ItemTipInactiveColorStr)
           end
@@ -1108,7 +1132,7 @@ function ItemTipBaseCell:UpdateEquipAttriInfo(data)
           for j = 1, #bufferIds do
             if not ItemUtil.CheckBuffNeedShow(bufferIds[j]) then
               sb:Append(ItemTipBaseCell.FormatBufferStr(bufferIds[j]))
-              if j == #bufferIds and isShadowEquip then
+              if j == #bufferIds and useInactiveColor then
                 sb:Append("[-][/c]")
               end
               sb:Append("\n")
@@ -1728,10 +1752,14 @@ function ItemTipBaseCell:UpdateMemoryAttrInfo(data)
         break
       end
       lastReachable = i
-      local hasExcessCost = lvCfg.ExcessCost and next(lvCfg.ExcessCost) ~= nil
-      local needExcessLv = lvCfg.NeedExcessLv
-      if hasExcessCost and needExcessLv and excessLv < needExcessLv then
-        break
+      local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess
+      local nextExcessLv = excessLv + 1
+      local effectLevelUpCfg = excessCfg and excessCfg.EffectLevelUp and excessCfg.EffectLevelUp[nextExcessLv]
+      if effectLevelUpCfg then
+        local memoryLvLimit = effectLevelUpCfg.MemoryLvLimit or 0
+        if curLv < memoryLvLimit then
+          break
+        end
       end
     end
     return lastReachable
@@ -1793,19 +1821,6 @@ function ItemTipBaseCell:UpdateMemoryAttrInfo(data)
   end
   local maxAttrCount = memoryData.maxAttrCount or 1
   local attrs = memoryData.memoryAttrs
-  local passExcessForSlot = {}
-  do
-    local curExcess = memoryData.excess_lv or 0
-    local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
-    if type(excessCfg) == "table" and curExcess and 0 < curExcess then
-      for stageKey, mappedKey in pairs(excessCfg) do
-        local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
-        if slotIndex and stageKey <= curExcess then
-          passExcessForSlot[slotIndex] = curExcess
-        end
-      end
-    end
-  end
   for i = 1, maxAttrCount do
     if attrs[i] then
       local attrConfig = Game.ItemMemoryEffect[attrs[i].id]
@@ -1840,19 +1855,71 @@ function ItemTipBaseCell:UpdateMemoryAttrInfo(data)
           end
           return desc
         end
-        local stageIndexCurrent = passExcessForSlot[i] or 0
-        local buffDesc = staticData and getBuffDescByStage(staticData.BuffID, stageIndexCurrent)
-        if (not buffDesc or buffDesc == "") and staticData then
-          buffDesc = staticData.WaxDesc
+        local stageIndexCurrent = attrs[i].excess_level or 0
+        local buffIds = staticData and staticData.BuffID or {}
+        local waxBuffIds = staticData and staticData.WaxBuffID or {}
+        local excessWaxBuffIds = staticData and staticData.ExcessWaxBuffID or {}
+        local isSpecialAttr = (not buffIds or type(buffIds) == "table" and next(buffIds) == nil) and waxBuffIds and type(waxBuffIds) == "table" and next(waxBuffIds) ~= nil
+        local buffDesc
+        if isSpecialAttr then
+          local waxDescKey = staticData and staticData.WaxDesc or ""
+          local baseDesc = OverSea.LangManager.Instance():GetLangByKey(waxDescKey) or waxDescKey
+          local getExcessWaxBuffDesc = function(excessWaxBuffIds, stageIndex)
+            if not excessWaxBuffIds then
+              return nil
+            end
+            local targetBuffIds
+            if type(excessWaxBuffIds) == "table" then
+              if excessWaxBuffIds[stageIndex] ~= nil then
+                targetBuffIds = excessWaxBuffIds[stageIndex]
+              elseif excessWaxBuffIds[0] ~= nil then
+                targetBuffIds = excessWaxBuffIds[0]
+              else
+                targetBuffIds = excessWaxBuffIds[1]
+              end
+            end
+            local buffId
+            if type(targetBuffIds) == "table" then
+              buffId = next(targetBuffIds) and targetBuffIds[next(targetBuffIds)]
+            else
+              buffId = targetBuffIds
+            end
+            local buffData = buffId and Table_Buffer[buffId]
+            local desc = buffData and buffData.Dsc and OverSea.LangManager.Instance():GetLangByKey(buffData.Dsc)
+            if type(desc) == "string" then
+              desc = string.gsub(desc, "%[AttrValue%]", "")
+            end
+            return desc
+          end
+          if 0 < stageIndexCurrent then
+            local excessDesc = getExcessWaxBuffDesc(excessWaxBuffIds, stageIndexCurrent)
+            if baseDesc and baseDesc ~= "" then
+              if excessDesc and excessDesc ~= "" then
+                buffDesc = baseDesc .. "\n" .. excessDesc
+              else
+                buffDesc = baseDesc
+              end
+            else
+              buffDesc = excessDesc or ""
+            end
+          else
+            buffDesc = baseDesc or ""
+          end
+        else
+          buffDesc = staticData and getBuffDescByStage(staticData.BuffID, stageIndexCurrent)
+          if (not buffDesc or buffDesc == "") and staticData then
+            local fallbackWaxDesc = staticData.WaxDesc or ""
+            buffDesc = OverSea.LangManager.Instance():GetLangByKey(fallbackWaxDesc) or fallbackWaxDesc
+          end
         end
         table.insert(memory.namevaluepair, {
           isMemory = true,
-          name = buffDesc,
+          name = buffDesc or "",
           value = level,
           color = attrConfig.Color
         })
       end
-    elseif maxAttrCount > i then
+    elseif i ~= 4 and i <= maxAttrCount then
       table.insert(memory.namevaluepair, {
         isMemory = true,
         name = string.format(ZhString.EquipMemory_AttrResetUnlockTip, i * 10),
@@ -2461,7 +2528,7 @@ local Check_CAN_hrefine = function(itemData)
   return true, lv, max_lv
 end
 
-function ItemTipBaseCell.GetEquipStrengthRefineByItemData(itemData, vstrColorStr, equipBuffUpSource)
+function ItemTipBaseCell.GetEquipStrengthRefineByItemData(itemData, vstrColorStr, equipBuffUpSource, snowStoreMode)
   local equipInfo = itemData.equipInfo
   if not equipInfo then
     return
@@ -2566,7 +2633,9 @@ function ItemTipBaseCell.GetEquipStrengthRefineByItemData(itemData, vstrColorStr
       end
       local label
       if not StringUtil.IsEmpty(refineTxt) and 0 < refineLv then
-        if ItemUtil.IsGVGSeasonEquip(equipInfo.equipData.id) then
+        if snowStoreMode then
+          _zhstring = ZhString.ItemTip_RefineLv_GVGSeasonEquip
+        elseif ItemUtil.IsGVGSeasonEquip(equipInfo.equipData.id) then
           maxRefineLv = refineLv
           if Game.MapManager:IsInGVGRaid() then
             _zhstring = ZhString.ItemTip_RefineLv
@@ -2578,7 +2647,8 @@ function ItemTipBaseCell.GetEquipStrengthRefineByItemData(itemData, vstrColorStr
         end
         label = string.format(_zhstring, refineLv, maxRefineLv, refineTxt)
       else
-        label = string.format(ZhString.ItemTip_RefineLv, refineLv, maxRefineLv, ZhString.ItemTip_NoAttrYet)
+        local noAttrZhString = snowStoreMode and ZhString.ItemTip_RefineLv_GVGSeasonEquip or ZhString.ItemTip_RefineLv
+        label = string.format(noAttrZhString, refineLv, maxRefineLv, ZhString.ItemTip_NoAttrYet)
       end
       SHOWBTN_refine = refineLv < maxRefineLv
       if label then
@@ -2620,7 +2690,9 @@ function ItemTipBaseCell.GetEquipStrengthRefineByItemData(itemData, vstrColorStr
     end
     local label
     if not StringUtil.IsEmpty(refineTxt) and 0 < refineLv then
-      if ItemUtil.IsGVGSeasonEquip(equipInfo.equipData.id) then
+      if snowStoreMode then
+        _zhstring = ZhString.ItemTip_RefineLv_GVGSeasonEquip
+      elseif ItemUtil.IsGVGSeasonEquip(equipInfo.equipData.id) then
         maxRefineLv = refineLv
         if Game.MapManager:IsInGVGRaid() then
           _zhstring = ZhString.ItemTip_RefineLv
@@ -2632,7 +2704,8 @@ function ItemTipBaseCell.GetEquipStrengthRefineByItemData(itemData, vstrColorStr
       end
       label = string.format(_zhstring, refineLv, maxRefineLv, refineTxt)
     else
-      label = string.format(ZhString.ItemTip_RefineLv, refineLv, maxRefineLv, ZhString.ItemTip_NoAttrYet)
+      local noAttrZhString = snowStoreMode and ZhString.ItemTip_RefineLv_GVGSeasonEquip or ZhString.ItemTip_RefineLv
+      label = string.format(noAttrZhString, refineLv, maxRefineLv, ZhString.ItemTip_NoAttrYet)
     end
     SHOWBTN_refine = refineLv < maxRefineLv
     if label then
@@ -2963,6 +3036,181 @@ function ItemTipBaseCell.GetEquipBaseAttriByItemData(itemData, hideIcon, vstrCol
   end
 end
 
+function ItemTipBaseCell.GetSnowCrownAttriByItemData(itemData)
+  if not (itemData and itemData.staticData) or itemData.staticData.Type ~= 4301 then
+    return nil
+  end
+  if not SnowCrownProxy.Instance or not SnowCrownProxy.Instance.snowData then
+    return nil
+  end
+  local currentMode = SnowCrownProxy.Instance:GetCurrentUseMode()
+  if not currentMode then
+    return nil
+  end
+  local attrList = SnowCrownProxy.Instance:GetTotalAttrsByMode(currentMode)
+  if not attrList or #attrList == 0 then
+    return nil
+  end
+  local propMap = Game.Config_PropName
+  if not propMap then
+    return nil
+  end
+  local attrEffect = {}
+  for i = 1, #attrList do
+    local attrData = attrList[i]
+    local propConfig = attrData.propConfig
+    if propConfig then
+      local value = attrData.value or 0
+      local vstr
+      if propConfig.IsPercent == 1 then
+        local percentValue = value * 100
+        if percentValue == math.floor(percentValue) then
+          vstr = string.format("%g%%", percentValue)
+        else
+          vstr = string.format("%.1f%%", percentValue)
+        end
+      else
+        vstr = tostring(value)
+      end
+      vstr = string.format("[c][%s]+%s[-][/c]", ItemTipEquipAttriVStrColorStr, vstr)
+      local propicon = ItemTipPropIcon[propConfig.VarName]
+      local iconname = propicon and string.format("{uiicon=%s}", propicon)
+      local templab = string.format("%s%s%s", iconname or ItemTipDefaultUiIconPrefix, OverSea.LangManager.Instance():GetLangByKey(propConfig.PropName), vstr)
+      table.insert(attrEffect, {
+        propConfig.id,
+        templab
+      })
+    end
+  end
+  if 0 < #attrEffect then
+    table.sort(attrEffect, ItemTipBaseCell.EffectSort)
+    local sb = LuaStringBuilder.CreateAsTable()
+    for i = 1, #attrEffect do
+      local effStr = attrEffect[i][2]
+      if i < #attrEffect then
+        sb:AppendLine(effStr)
+      else
+        sb:Append(effStr)
+      end
+    end
+    if 0 < sb:GetCount() then
+      local str = sb:ToString()
+      sb:Destroy()
+      return {label = str}
+    end
+    sb:Destroy()
+  end
+  return nil
+end
+
+function ItemTipBaseCell.GetSnowGemAttrByItemData(itemData, theCell)
+  if not itemData then
+    return nil
+  end
+  if not itemData:IsSnowGem() then
+    return nil
+  end
+  local staticId = itemData.staticData and itemData.staticData.id
+  if not staticId then
+    return nil
+  end
+  local stoneConfig = Table_SnowStone and Table_SnowStone[staticId]
+  if not stoneConfig then
+    return nil
+  end
+  local level, advLevel = 0, 0
+  if itemData.snowGemData then
+    level = itemData.snowGemData.level or 0
+    advLevel = itemData.snowGemData.advlv or 0
+  elseif SnowCrownProxy and SnowCrownProxy.Instance then
+    local stoneData = SnowCrownProxy.Instance:GetStoneBookData(staticId)
+    if stoneData then
+      level = stoneData.lv or 0
+      advLevel = stoneData.advlv or 0
+    end
+  end
+  local result = {basicAttr = nil, advAttr = nil}
+  local storeAttr = stoneConfig.StoreAttr
+  if storeAttr then
+    local basicInfo = {
+      tiplabel = string.format(ZhString.ItemTip_SnowGemBasicAttr, level),
+      label = {}
+    }
+    local propMap = Game.Config_PropName
+    for attrName, attrValue in pairs(storeAttr) do
+      local propConfig = propMap and propMap[attrName]
+      local displayName = propConfig and OverSea.LangManager.Instance():GetLangByKey(propConfig.PropName) or attrName
+      local attrText = string.format("%s +%d", displayName, attrValue)
+      local labelText = ItemTipDefaultUiIconPrefix .. attrText
+      table.insert(basicInfo.label, labelText)
+    end
+    if _SHOWBTN_ and theCell then
+      basicInfo.aTipInlineButton = {
+        sprite = "tips_icon_06",
+        color = ItemTipSpriteNormalColor,
+        action = function()
+          if theCell then
+            GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+              view = PanelConfig.SnowCrownView
+            })
+          end
+        end
+      }
+    end
+    if 0 < #basicInfo.label then
+      result.basicAttr = basicInfo
+    end
+  end
+  local romanNumerals = {
+    [0] = "0",
+    [1] = "I",
+    [2] = "II",
+    [3] = "III",
+    [4] = "IV",
+    [5] = "V"
+  }
+  local advanceAttrs = {
+    stoneConfig.AdvanceAttr,
+    stoneConfig.AdvanceAttr2,
+    stoneConfig.AdvanceAttr3
+  }
+  local advLabels = {}
+  local maxAdvLevel = 0
+  for _, advanceAttr in ipairs(advanceAttrs) do
+    if advanceAttr then
+      for unlockLevel, stageData in pairs(advanceAttr) do
+        for stageLevel, _ in pairs(stageData) do
+          if stageLevel > maxAdvLevel then
+            maxAdvLevel = stageLevel
+          end
+        end
+      end
+    end
+  end
+  for i, advanceAttr in ipairs(advanceAttrs) do
+    if advanceAttr then
+      for unlockLevel, stageData in pairs(advanceAttr) do
+        local bufferId = stageData[advLevel] or stageData[0]
+        if bufferId and Table_Buffer and Table_Buffer[bufferId] then
+          local bufferData = Table_Buffer[bufferId]
+          local buffDesc = bufferData.Dsc and bufferData.Dsc ~= "" and bufferData.Dsc or bufferData.BuffName or ""
+          if buffDesc and buffDesc ~= "" then
+            local labelText = ItemTipDefaultUiIconPrefix .. buffDesc
+            table.insert(advLabels, labelText)
+          end
+        end
+      end
+    end
+  end
+  if 0 < #advLabels then
+    local currentRoman = romanNumerals[advLevel] or tostring(advLevel)
+    local maxRoman = romanNumerals[maxAdvLevel] or tostring(maxAdvLevel)
+    local advTitle = string.format(ZhString.ItemTip_SnowGemAdvAttr, currentRoman, maxRoman)
+    result.advAttr = {tiplabel = advTitle, label = advLabels}
+  end
+  return result
+end
+
 function ItemTipBaseCell.GetEquipPvpBaseAttri(equipInfo, hideIcon, vstrColorStr)
   if not equipInfo then
     return
@@ -3028,7 +3276,7 @@ function ItemTipBaseCell.GetEquipPvpBaseAttri(equipInfo, hideIcon, vstrColorStr)
   end
 end
 
-function ItemTipBaseCell.GetEquipSpecial(equipInfo, hideIcon, quenchper)
+function ItemTipBaseCell.GetEquipSpecial(equipInfo, hideIcon, quenchper, snowStoreMode)
   if not equipInfo then
     return
   end
@@ -3039,6 +3287,50 @@ function ItemTipBaseCell.GetEquipSpecial(equipInfo, hideIcon, quenchper)
     }
     local sb = LuaStringBuilder.CreateAsTable()
     local buffid
+    if snowStoreMode then
+      local equipId = equipInfo.equipData and equipInfo.equipData.id
+      local equipConfig = equipId and Table_Equip[equipId]
+      local snowStoreBuff = equipConfig and equipConfig.SnowStoreBuff
+      if snowStoreBuff and 0 < #snowStoreBuff then
+        local displayBuffs = {}
+        local snowStoreBuffMap = {}
+        for i = 1, #snowStoreBuff do
+          snowStoreBuffMap[snowStoreBuff[i]] = true
+        end
+        local keepCount = #uniqueEffect - #snowStoreBuff
+        for i = 1, keepCount do
+          table.insert(displayBuffs, {
+            id = uniqueEffect[i].id,
+            isActive = false
+          })
+        end
+        for i = 1, #snowStoreBuff do
+          table.insert(displayBuffs, {
+            id = snowStoreBuff[i],
+            isActive = true
+          })
+        end
+        for i = 1, #displayBuffs do
+          buffid = displayBuffs[i].id
+          local buffStr = ItemTipBaseCell.FormatBufferStr(buffid, hideIcon, quenchper)
+          if displayBuffs[i].isActive then
+            sb:Append(string.format("[c][%s]%s[-][/c]", ItemTipEquipPreviewColorStr, buffStr))
+          else
+            sb:Append(string.format("[c]%s%s[-][/c]", ItemTipInactiveColorStr, buffStr))
+          end
+          if i < #displayBuffs then
+            sb:Append("\n")
+          end
+        end
+        if 0 < sb:GetCount() then
+          table.insert(special.label, sb:ToString())
+          sb:Destroy()
+          return special
+        end
+        sb:Destroy()
+        return
+      end
+    end
     for i = 1, #uniqueEffect do
       buffid = uniqueEffect[i].id
       sb:Append(ItemTipBaseCell.FormatBufferStr(buffid, hideIcon, quenchper))
@@ -3079,8 +3371,13 @@ function ItemTipBaseCell.GetEquipRandomAttri(equipInfo, hideIcon, itemData, theC
   end
   local sb = LuaStringBuilder.CreateAsTable()
   local attr_quenchper = itemData:GetAttrPercentByQuench()
+  local snowStoreMode = itemData and itemData.snowStoreMode
   for i = 1, #list do
-    sb:Append(ItemTipBaseCell.FormatRandomEffectStr(list[i].id, list[i].value * attr_quenchper, hideIcon, true))
+    local effectStr = ItemTipBaseCell.FormatRandomEffectStr(list[i].id, list[i].value * attr_quenchper, hideIcon, true)
+    if snowStoreMode and effectStr then
+      effectStr = string.format("[c]%s%s[-][/c]", ItemTipInactiveColorStr, effectStr)
+    end
+    sb:Append(effectStr)
     if i < #list then
       sb:Append("\n")
     end
@@ -3192,6 +3489,7 @@ function ItemTipBaseCell.GetEquipEnchant(data, showFullAttr, equipBuffUpSource)
   }
   local attriValue
   local fullfire = ItemTipBaseCell.IsFreeFire(data.id)
+  local snowStoreMode = data and data.snowStoreMode
   for i = 1, #attris do
     attriData = attris[i]
     attriValue = attriData.value * quenchper
@@ -3202,6 +3500,9 @@ function ItemTipBaseCell.GetEquipEnchant(data, showFullAttr, equipBuffUpSource)
       if ItemUtil.manualQuenchValue and quenchper < 1 then
         attriValue = string.format("[c][%s]%s[-][/c]", ItemTipEquipPreviewColorStr, attriValue)
       end
+    end
+    if snowStoreMode then
+      attriValue = string.format("[c]%s%s[-][/c]", ItemTipInactiveColorStr, attriValue)
     end
     table.insert(enchant.namevaluepair, {
       name = attriData.name,
@@ -3235,7 +3536,7 @@ function ItemTipBaseCell.GetEquipEnchant(data, showFullAttr, equipBuffUpSource)
         _quench = 1
       end
       buffDesc = ItemUtil.GetBuffDesc(buffData.BuffDesc, _quench)
-      if isWork then
+      if isWork and not snowStoreMode then
         sb:Append(OverSea.LangManager.Instance():GetLangByKey(buffData.BuffName))
         sb:Append(":")
         sb:Append(buffDesc)
@@ -3245,9 +3546,12 @@ function ItemTipBaseCell.GetEquipEnchant(data, showFullAttr, equipBuffUpSource)
         sb:Append(OverSea.LangManager.Instance():GetLangByKey(buffData.BuffName))
         sb:Append(":")
         sb:Append(buffDesc)
-        sb:Append("(")
-        sb:Append(combineEffect.WorkTip)
-        sb:Append(")[-][/c]")
+        if not snowStoreMode then
+          sb:Append("(")
+          sb:Append(combineEffect.WorkTip)
+          sb:Append(")")
+        end
+        sb:Append("[-][/c]")
       end
     end
   end

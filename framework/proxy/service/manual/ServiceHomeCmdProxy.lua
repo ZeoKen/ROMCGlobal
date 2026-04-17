@@ -34,17 +34,18 @@ function ServiceHomeCmdProxy:RecvHouseDataUpdateHomeCmd(data)
 end
 
 function ServiceHomeCmdProxy:RecvQueryHouseDataHomeCmd(data)
-  HomeProxy.Instance:HandleQueryHomeDataHomeCmd(data)
+  HomeProxy.__RealInstance:HandleQueryHomeDataHomeCmd(data)
   self:Notify(ServiceEvent.HomeCmdQueryHouseDataHomeCmd, data)
 end
 
 function ServiceHomeCmdProxy:RecvOptUpdateHomeCmd(data)
-  HomeProxy.Instance:HandleOptUpdateHomeCmd(data)
+  HomeProxy.__RealInstance:HandleOptUpdateHomeCmd(data)
   self:Notify(ServiceEvent.HomeCmdOptUpdateHomeCmd, data)
 end
 
 function ServiceHomeCmdProxy:RecvPrintUpdateHomeCmd(data)
   HomeProxy.Instance:HandlePrintUpdateHomeCmd(data)
+  SnowRealmProxy.Instance:HandlePrintUpdateHomeCmd(data)
   self:Notify(ServiceEvent.HomeCmdPrintUpdateHomeCmd, data)
 end
 
@@ -53,12 +54,12 @@ function ServiceHomeCmdProxy:RecvFurnitureOperHomeCmd(data)
   self:Notify(ServiceEvent.HomeCmdFurnitureOperHomeCmd, data)
 end
 
-function ServiceHomeCmdProxy:CallEnterHomeCmd(accid, charid)
+function ServiceHomeCmdProxy:CallEnterHomeCmd(accid, charid, houseType)
   if Game.MapManager:IsPVPMode() or Game.MapManager:IsPveMode_Thanatos() then
     MsgManager.ShowMsgByIDTable(38025)
     return
   end
-  ServiceHomeCmdProxy.super.CallEnterHomeCmd(self, accid, charid)
+  ServiceHomeCmdProxy.super.CallEnterHomeCmd(self, accid, charid, houseType)
 end
 
 function ServiceHomeCmdProxy:RecvBoardItemQueryHomeCmd(data)
@@ -92,6 +93,38 @@ function ServiceHomeCmdAutoProxy:RecvQueryWoodRankHomeCmd(data)
 end
 
 function ServiceHomeCmdProxy:RecvQueryHouseFurnitureHomeCmd(data)
-  HomeProxy.Instance:HandleRecvQueryHouseFurnitureHomeCmd(data)
+  HomeProxy.__RealInstance:HandleRecvQueryHouseFurnitureHomeCmd(data)
   self:Notify(ServiceEvent.HomeCmdQueryHouseFurnitureHomeCmd, data)
+end
+
+function ServiceHomeCmdProxy:RecvQuerySnowHouseDataHomeCmd(data)
+  SnowRealmProxy.Instance:HandleQuerySnowHouseDataHomeCmd(data)
+  self:Notify(ServiceEvent.HomeCmdQuerySnowHouseDataHomeCmd, data)
+  EventManager.Me():DispatchEvent(ServiceEvent.HomeCmdQuerySnowHouseDataHomeCmd, data)
+end
+
+function ServiceHomeCmdProxy:RecvQueryRecommendHomeCmd(data)
+  redlog("ServiceHomeCmdProxy:RecvQueryRecommendHomeCmd")
+  HomeRecommendProxy.Instance:UpdateRecommendList(data)
+  self:Notify(ServiceEvent.HomeCmdQueryRecommendHomeCmd, data)
+end
+
+function ServiceHomeCmdProxy:RecvSnowHouseDataUpdateHomeCmd(data)
+  SnowRealmProxy.Instance:RecvSnowHouseDataUpdateHomeCmd(data)
+  self:Notify(ServiceEvent.HomeCmdSnowHouseDataUpdateHomeCmd, data)
+end
+
+function ServiceHomeCmdProxy:RecvSnowFurnitureUpdateHomeCmd(data)
+  SnowRealmProxy.Instance:RecvSnowFurnitureUpdateHomeCmd(data)
+  self:Notify(ServiceEvent.HomeCmdSnowFurnitureUpdateHomeCmd, data)
+end
+
+function ServiceHomeCmdProxy:RecvSnowFurnitureDataUpdateHomeCmd(data)
+  SnowRealmProxy.Instance:RecvSnowFurnitureDataUpdateHomeCmd(data)
+  self:Notify(ServiceEvent.HomeCmdSnowFurnitureDataUpdateHomeCmd, data)
+end
+
+function ServiceHomeCmdProxy:RecvSnowFurnitureOperHomeCmd(data)
+  SnowRealmProxy.Instance:RecvSnowFurnitureOperHomeCmd(data)
+  self:Notify(ServiceEvent.HomeCmdSnowFurnitureOperHomeCmd, data)
 end

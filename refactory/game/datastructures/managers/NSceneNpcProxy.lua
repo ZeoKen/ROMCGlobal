@@ -74,7 +74,7 @@ function NSceneNpcProxy:Add(data, classRef, isTrap)
   else
     classRef = FUNC_GET_NPC_CLASSREF(data, classRef)
     npc = classRef.CreateAsTable(data)
-    if (classRef == NNpc or classRef == NStageNpc or classRef == NFollowNpc) and isTrap and data.owner ~= 0 then
+    if (classRef == NNpc or classRef == NStageNpc or classRef == NFollowNpc or classRef == NFollowOwnerNpc) and isTrap and data.owner ~= 0 then
       local creature = SceneCreatureProxy.FindCreature(data.owner)
       if creature and creature.data:GetCamp() == RoleDefines_Camp.ENEMY then
         npc:ShowWarnRingEffect()
@@ -107,6 +107,7 @@ function NSceneNpcProxy:Add(data, classRef, isTrap)
   if chantskill then
     npc:SetChantSkill(chantskill)
   end
+  self:HandleAddScenicBuffs(data)
   return npc
 end
 
@@ -254,15 +255,16 @@ function NSceneNpcProxy:PureAddSome(datas)
     data = datas[i]
     if data ~= nil then
       local isTrap = TrapNpcID[data.npcID] ~= nil
-      if data.owner == 0 or isTrap then
+      local staticData = Table_Npc[data.npcID]
+      local npcType = staticData and staticData.Type or -1
+      if npcType == "UserHandcartNpc" then
+        tmpNpcs[#tmpNpcs + 1] = self:Add(data, NFollowOwnerNpc, isTrap)
+      elseif npcType == "Firework" then
+        tmpNpcs[#tmpNpcs + 1] = self:Add(data, nil, isTrap)
+      elseif data.owner == 0 or isTrap then
         tmpNpcs[#tmpNpcs + 1] = self:Add(data, nil, isTrap)
       else
-        local staticData = Table_Npc[data.npcID]
-        if staticData and staticData.Type and staticData.Type == "Firework" then
-          tmpNpcs[#tmpNpcs + 1] = self:Add(data, nil, isTrap)
-        else
-          tmpArray[#tmpArray + 1] = data
-        end
+        tmpArray[#tmpArray + 1] = data
       end
     end
   end
@@ -283,6 +285,7 @@ function NSceneNpcProxy:RemoveSome(guids, delay, fadeout)
   if npcs and 0 < #npcs then
     GameFacade.Instance:sendNotification(SceneUserEvent.SceneRemoveNpcs, npcs)
     EventManager.Me():PassEvent(SceneUserEvent.SceneRemoveNpcs, npcs)
+    self:HandleRemoveScenicBuffs(guids)
   end
 end
 
@@ -897,4 +900,35 @@ function NSceneNpcProxy:GetVisibleNpcMap()
     self.visibleNpcMap = {}
   end
   return self.visibleNpcMap
+end
+
+function NSceneNpcProxy:AddScenicBuff(guid, buffId)
+  local buffData = Table_Buffer[buffId]
+  if buffData and buffData.BuffEffect.type == "Scenery" then
+    local data = FunctionScenicSpot.Me():AddCreatureScenicSpot(guid, buffData.BuffEffect.scenic)
+    if data then
+      GameFacade.Instance:sendNotification(MiniMapEvent.CreatureScenicAdd, {data})
+    end
+  end
+end
+
+local tempArray = {}
+
+function NSceneNpcProxy:HandleAddScenicBuffs(serverData)
+  TableUtility.ArrayClear(tempArray)
+  local buffDatas = serverData.buffs
+  if buffDatas and 0 < #buffDatas then
+    for i = 1, #buffDatas do
+      local scenic = self:AddScenicBuff(serverData.id, buffDatas[i].id)
+      if scenic then
+        tempArray[#tempArray + 1] = scenic
+      end
+    end
+  end
+end
+
+function NSceneNpcProxy:HandleRemoveScenicBuffs(guids)
+  for i = 1, #guids do
+    FunctionScenicSpot.Me():RemoveCreatureScenicSpot(guids[i])
+  end
 end

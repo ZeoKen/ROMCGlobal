@@ -169,6 +169,21 @@ Table_BWMapZone_t = {
       238.28,
       171.3,
       -165.69
+    },
+    {
+      -91.0,
+      0.0,
+      -351.5
+    },
+    {
+      173.0,
+      0.0,
+      -337.0
+    },
+    {
+      442.5,
+      0.0,
+      -229.5
     }
   },
   Center = {
@@ -391,6 +406,26 @@ Table_BWMapZone_t = {
       276.26,
       164.32,
       -63.72
+    },
+    {
+      180.0,
+      0.0,
+      -337.0
+    },
+    {
+      -53.18,
+      3.37,
+      -414.87
+    },
+    {
+      110.0,
+      4.88,
+      -245.31
+    },
+    {
+      392.62,
+      9.69,
+      -115.82
     }
   },
   Event = {
@@ -870,6 +905,46 @@ Table_BWMapZone_t = {
         1014540001,
         1014550001,
         1015760002
+      }
+    },
+    {
+      MapStep = {276},
+      Quest = {
+        1014570001,
+        1014580001,
+        1014590001,
+        1014630001,
+        1014640001,
+        1014650001,
+        1014690001,
+        1016230002
+      }
+    },
+    {
+      MapStep = {277},
+      Quest = {
+        1014600001,
+        1014620001,
+        1014660001,
+        1014700001,
+        1014710001,
+        1016240002
+      }
+    },
+    {
+      MapStep = {
+        278,
+        279,
+        280
+      },
+      Quest = {
+        1014610001,
+        1014670001,
+        1014680001,
+        1014720001,
+        1014730001,
+        1014740001,
+        1016250002
       }
     }
   }
@@ -1601,6 +1676,77 @@ Table_BWMapZone = {
     GroupId = 13,
     BGM = "AtharStone",
     Desc = "##44707878"
+  },
+  [79] = {
+    id = 79,
+    MapId = 155,
+    NameZh = "##44726427",
+    Type = 1,
+    Center = Table_BWMapZone_t.Center[45],
+    BGM = ""
+  },
+  [80] = {
+    id = 80,
+    MapId = 155,
+    NameZh = "##44724699",
+    RegionId = 1,
+    GroupId = 1,
+    Center = Table_BWMapZone_t.Center[46],
+    BlockCenter = Table_BWMapZone_t.BlockCenter[35],
+    Event = Table_BWMapZone_t.Event[35],
+    BGM = "Bgm_187_WordsFromTheMyths"
+  },
+  [81] = {
+    id = 81,
+    MapId = 155,
+    NameZh = "##44724699",
+    Type = 3,
+    RegionId = 2,
+    GroupId = 1,
+    BGM = "Bgm_197_CallOfCathulhu",
+    Desc = "##44726598"
+  },
+  [82] = {
+    id = 82,
+    MapId = 155,
+    NameZh = "##44724700",
+    RegionId = 3,
+    GroupId = 2,
+    Center = Table_BWMapZone_t.Center[47],
+    BlockCenter = Table_BWMapZone_t.BlockCenter[36],
+    Event = Table_BWMapZone_t.Event[36],
+    BGM = "Bgm_187_WordsFromTheMyths"
+  },
+  [83] = {
+    id = 83,
+    MapId = 155,
+    NameZh = "##44724700",
+    Type = 3,
+    RegionId = 4,
+    GroupId = 2,
+    BGM = "Bgm_197_CallOfCathulhu",
+    Desc = "##44726599"
+  },
+  [84] = {
+    id = 84,
+    MapId = 155,
+    NameZh = "##44724704",
+    RegionId = 5,
+    GroupId = 3,
+    Center = Table_BWMapZone_t.Center[48],
+    BlockCenter = Table_BWMapZone_t.BlockCenter[37],
+    Event = Table_BWMapZone_t.Event[37],
+    BGM = "Bgm_187_WordsFromTheMyths"
+  },
+  [85] = {
+    id = 85,
+    MapId = 155,
+    NameZh = "##44724704",
+    Type = 3,
+    RegionId = 6,
+    GroupId = 3,
+    BGM = "Bgm_197_CallOfCathulhu",
+    Desc = "##44726600"
   }
 }
 local cell_mt = {

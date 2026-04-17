@@ -157,11 +157,11 @@ function SkillContentPage:FindObjs()
   self.masterSkillsGO = self:FindGO("MasterSkills")
   self.masterSkillBg = self:FindComponent("MasterSkillBg", UITexture, self.masterSkillsGO)
   self.masterSkillSelectGOs = {}
-  for i = 1, 3 do
+  for i = 1, 4 do
     self.masterSkillSelectGOs[i] = self:FindGO("Select" .. i, self.masterSkillsGO)
   end
   self.masterSkillActiveBtns = {}
-  for i = 1, 3 do
+  for i = 1, 4 do
     self.masterSkillActiveBtns[i] = self:FindGO("Btn" .. i, self.masterSkillsGO)
     self:AddClickEvent(self.masterSkillActiveBtns[i], function()
       self:OnMasterSkillActiveBtnClick(i)

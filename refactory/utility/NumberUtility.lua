@@ -1,5 +1,12 @@
 NumberUtility = class("NumberUtility")
 
+function NumberUtility.RoundToInt(num)
+  if 0 <= num then
+    return math.floor(num + 0.5)
+  end
+  return math.ceil(num - 0.5)
+end
+
 function NumberUtility.Repeat(a, len)
   return a - math.floor(a / len) * len
 end

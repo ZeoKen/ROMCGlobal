@@ -38,6 +38,7 @@ local tempComboHitArgs = {
   [19] = nil,
   [20] = nil,
   [21] = nil,
+  [22] = nil,
   [25] = nil
 }
 
@@ -52,6 +53,8 @@ function SkillComboHitWorker.ClearArgs(args)
   args[12] = true
   args[13] = nil
   args[14] = true
+  args[26] = nil
+  args[27] = nil
 end
 
 function SkillComboHitWorker.Create(args)
@@ -65,6 +68,8 @@ function SkillComboHitWorker:ctor()
   args[20] = LuaVector3.Zero()
   args[25] = LuaVector3.Zero()
 end
+
+local doubleDamageOffset = LuaVector3.New(0, -0.3, 0)
 
 function SkillComboHitWorker:Update(time, deltaTime)
   local args = self.args
@@ -97,10 +102,23 @@ function SkillComboHitWorker:Update(time, deltaTime)
   if nil ~= args[10] then
     local damage = SkillLogic_Base.GetSplitDamage(args[3], args[14], args[4])
     local creature = FindCreature(args[11])
+    local doubleDamage = args[26]
+    if not doubleDamage or doubleDamage == 0 then
+      doubleDamage = targetCreature and targetCreature:GetDoubleDamage()
+    end
+    if doubleDamage and 1 < doubleDamage then
+      damage = damage / 2
+    end
     if not Game.MapManager:IsInAllGVG() then
-      SkillLogic_Base.ShowDamage_Single(args[2], damage, args[25], args[8], args[9], targetCreature, args[13], creature)
+      SkillLogic_Base.ShowDamage_Single(args[2], damage, args[25], args[8], args[9], targetCreature, args[13], creature, -1)
     end
     self.args[10]:Show(damage, args[17], creature == Game.Myself, self.args[18], targetCreature == Game.Myself)
+    if args[14] >= args[4] and doubleDamage and 0 < doubleDamage then
+      local showDamage = 1 < doubleDamage and args[3] / 2 or args[3]
+      self.args[27] = SceneUIManager.Instance:GetStaticHurtLabelWorker()
+      self.args[27]:AddRef()
+      self.args[27]:Show(showDamage, args[17] + doubleDamageOffset, creature == Game.Myself, self.args[18], targetCreature == Game.Myself)
+    end
   end
   if args[14] >= args[4] then
     self:Destroy()
@@ -147,6 +165,7 @@ function SkillComboHitWorker:DoConstruct(asArray, args)
   self.args[22] = args[19]
   self.args[23] = args[20]
   self.args[24] = args[21]
+  self.args[26] = args[22]
 end
 
 function SkillComboHitWorker:DoDeconstruct(asArray)
@@ -158,7 +177,11 @@ function SkillComboHitWorker:DoDeconstruct(asArray)
   if nil ~= args[10] then
     args[10]:SubRef()
   end
+  if nil ~= args[27] then
+    args[27]:SubRef()
+  end
   args[10] = nil
   args[13] = nil
   args[18] = nil
+  args[27] = nil
 end

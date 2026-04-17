@@ -43,7 +43,9 @@ BWMiniMapWindow.Type = {
   ZoneBlock = 35,
   Yahaha = 36,
   FakeDragon = 37,
-  AbyssDragon = 38
+  AbyssDragon = 38,
+  SnowRealmMyHouse = 39,
+  MapAreaTips = 40
 }
 local Type = BWMiniMapWindow.Type
 local _Game = Game
@@ -124,9 +126,11 @@ function BWMiniMapWindow:RegisterAllMapInfos()
   self:RegisterMapInfo(Type.LocalNpc, BWMiniMapWindow._CreateLocalNpcPosSymbol)
   self:RegisterMapInfo(Type.AreaTips, BWMiniMapWindow._CreateAreaTips, BWMiniMapWindow._UpdateAreaTips)
   self:RegisterMapInfo(Type.ZoneTips, BWMiniMapWindow._CreateZoneTips, BWMiniMapWindow._UpdateZoneTips)
+  self:RegisterMapInfo(Type.MapAreaTips, BWMiniMapWindow._CreateAreaTips, BWMiniMapWindow._UpdateAreaTips)
   self:RegisterMapInfo(Type.ZoneBlock, BWMiniMapWindow._CreateZoneBlock, BWMiniMapWindow._UpdateZoneBlock, BWMiniMapWindow._RemoveZoneBlock)
   self:RegisterMapInfo(Type.WildMvp, BWMiniMapWindow._CreateWildMvpSymbol, BWMiniMapWindow._UpdateWildMvpSymbol, BWMiniMapWindow._RemoveWildMvpSymbol)
   self:RegisterMapInfo(Type.Yahaha, BWMiniMapWindow._CreateYahahaSymbol, BWMiniMapWindow._UpdateYahahaSymbol)
+  self:RegisterMapInfo(Type.SnowRealmMyHouse)
 end
 
 function BWMiniMapWindow:RegisterMapInfo(type, createFunc, updateFunc, removeFunc)
@@ -645,6 +649,26 @@ function BWMiniMapWindow:UpdateAreaTips()
   self:UpdateMapSymbolDatas(Type.ZoneTips, self.zoneTipMap, true)
   self:UpdateMapSymbolDatas(Type.ZoneBlock, self.zoneBlockMap, true)
   self:UpdateMapBorderUnlock()
+  self:UpdateMapAreaTips()
+end
+
+function BWMiniMapWindow:UpdateMapAreaTips()
+  if not self.mapAreaTipMap then
+    self.mapAreaTipMap = {}
+  else
+    TableUtility.TableClearByDeleter(self.mapAreaTipMap, MiniMapDataRemoveFunc)
+  end
+  local areaList = WorldMapProxy.Instance:GetMapAreaTips()
+  if areaList then
+    for _, data in pairs(areaList) do
+      local miniMapData = MiniMapData.CreateAsTable(data.id)
+      self.mapAreaTipMap[data.id] = miniMapData
+      miniMapData:SetParama("Text", data.NameZh)
+      miniMapData:SetParama("depth", 31)
+      miniMapData:SetPos(data.Center[1], data.Center[2], data.Center[3])
+    end
+  end
+  self:UpdateMapSymbolDatas(Type.MapAreaTips, self.mapAreaTipMap, true)
 end
 
 function BWMiniMapWindow:UpdateZoneTipsProgress()
@@ -2358,4 +2382,8 @@ function BWMiniMapWindow:_RemoveAbyssDragonSymbol(id, effect)
     effect:Destroy()
     self.abyssDragonEffectMap[id] = nil
   end
+end
+
+function BWMiniMapWindow:UpdateSnowRealmMyHouseSymbol(datas, isRemoveOther)
+  self:UpdateMapSymbolDatas(Type.SnowRealmMyHouse, datas, isRemoveOther)
 end

@@ -28,6 +28,8 @@ function LogicManager_Player_Userdata:ctor()
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_HIDE_NAME, self.UpdateAnonymous)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_EXCELLECT, self.UpdateExcellent)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_BLACK_MUCK, self.UpdateBlackMuck)
+  self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_OWN_HANDCART, self.UpdateOwnHandcart)
+  self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_ROBOT_USER, self.UpdateRobotUser)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_JOBLEVEL, self.UpdateJobLevel)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_JOBEXP, self.UpdateJobExpLevel)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_PROFESSION, self.UpdateProfession)
@@ -48,14 +50,18 @@ function LogicManager_Player_Userdata:ctor()
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_RIDING_CHARID, self.UpdateMultiMount)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_RIDING_POS, self.UpdateMultiMount)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_MOUNT_FASHION, self.UpdateMountFashion)
+  self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_HEAD_FASHION, self.UpdateHeadFashion)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_PRESTIGE_LEVEL, self.UpdatePrestigeLevel)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_RIDING_NPC, self.UpdateMultiMountNpc)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_TWELVEPVP_CAMP, self.UpdateTwelvePvpCamp)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_HIDE_NAME, self.UpdateAnonymous)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_EXCELLECT, self.UpdateExcellent)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_BLACK_MUCK, self.UpdateBlackMuck)
+  self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_OWN_HANDCART, self.UpdateOwnHandcart)
+  self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_ROBOT_USER, self.UpdateRobotUser)
   self:AddDirtyCall(ProtoCommon_pb.EUSERDATATYPE_MOUNT, self.UpdateMount)
   self:AddDirtyCall(ProtoCommon_pb.EUSERDATATYPE_RIDING_NPC, self.UpdateMultiMountNpc)
+  self:AddDirtyCall(ProtoCommon_pb.EUSERDATATYPE_RIDING_HANDCART_OWNER, self.UpdateRidingHandcartCharID)
 end
 
 function LogicManager_Player_Userdata:SetProfession(ncreature, userDataID, oldValue, newValue)
@@ -204,6 +210,13 @@ function LogicManager_Player_Userdata:UpdateMountFashion(ncreature, id, oldValue
   self.changeDressDirty = true
 end
 
+function LogicManager_Player_Userdata:UpdateHeadFashion(ncreature, id, oldValue, value, bytes)
+  if StringUtil.IsEmpty(bytes) then
+    return
+  end
+  self.changeDressDirty = true
+end
+
 function LogicManager_Player_Userdata:UpdatePrestigeLevel()
   GameFacade.Instance:sendNotification(CreatureEvent.PrestigeChange, ncreature)
 end
@@ -248,5 +261,21 @@ function LogicManager_Player_Userdata:UpdateBlackMuck(ncreature, userDataID, old
   local ui = ncreature:GetSceneUI()
   if ui then
     ui.roleBottomUI:UpdateBlackMuck(ncreature)
+  end
+end
+
+function LogicManager_Player_Userdata:UpdateRidingHandcartCharID(ncreature, userDataID, oldValue, newValue)
+  ncreature:UpdateRidingHandcartCharID(oldValue, newValue)
+  if Game.Myself and Game.Myself.data.id == ncreature.data.id then
+    GameFacade.Instance:sendNotification(InteractNpcEvent.MyselfOnOffHandcartChange, 0 < newValue)
+    EventManager.Me():PassEvent(InteractNpcEvent.MyselfOnOffHandcartChange)
+  end
+end
+
+function LogicManager_Player_Userdata:UpdateOwnHandcart(ncreature, userDataID, oldValue, newValue)
+  ncreature:SetHandcartNpc(newValue)
+  ncreature:Logic_PartnerVisible()
+  if Game.Myself and Game.Myself.data.id == ncreature.data.id then
+    GameFacade.Instance:sendNotification(InteractNpcEvent.MyselfOnOffHandcartChange)
   end
 end

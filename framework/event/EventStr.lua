@@ -156,7 +156,9 @@ PVPEvent = {
   EndlessBattleField_Event_Update = "PVPEvent_EndlessBattleField_Event_Update",
   EndlessBattleField_Event_PointOccypied = "PVPEvent_EndlessBattleField_Event_PointOccypied",
   EndlessBattleField_MultiEvent_End = "PVPEvent_EndlessBattleField_MultiEvent_End",
-  PVP_CampChange = "PVP_CampChange"
+  PVP_CampChange = "PVP_CampChange",
+  AsyncPvpRaid_Launch = "PVPEvent_AsyncPvpRaid_Launch",
+  AsyncPvpRaid_Shutdown = "PVPEvent_AsyncPvpRaid_Shutdown"
 }
 PVEEvent = {
   PVE_CardLaunch = "PVE_CardLaunch",
@@ -210,6 +212,8 @@ PVEEvent = {
   HeartLockRaid_Shutdown = "HeartLockRaid_Shutdown",
   ElementRaid_Launch = "ElementRaid_Launch",
   ElementRaid_ShutDown = "ElementRaid_ShutDown",
+  DestroyAirShipRaid_Launch = "DestroyAirShipRaid_Launch",
+  DestroyAirShipRaid_ShutDown = "DestroyAirShipRaid_ShutDown",
   DemoRaid_Launch = "DemoRaidRaid_Launch",
   DemoRaidRaid_Shutdown = "DemoRaidRaid_Shutdown",
   HeroJourney_Launch = "HeroJourney_Launch",
@@ -609,7 +613,8 @@ QuestEvent = {
   QuestTraceSwitch = "QuestEvent_QuestTraceSwitch",
   QuestTracePanelOff = "QuestEvent_QuestTracePanelOff",
   QuestTraceNotice = "QuestEvent_QuestTraceNotice",
-  QuestTraceShowPuzzleImage = "QuestEvent_QuestTraceShowPuzzleImage"
+  QuestTraceShowPuzzleImage = "QuestEvent_QuestTraceShowPuzzleImage",
+  QuestLocalInteractSuccess = "QuestEvent_QuestLocalInteractSuccess"
 }
 PostEvent = {
   PostDelete = "PostEvent_PostDelete",
@@ -771,7 +776,16 @@ TriggerEvent = {
   RemoveAybssLakeBattleArea = "TriggerEvent_RemoveAybssLakeBattleArea",
   EnterAbyssDragonArea = "TriggerEvent_EnterAbyssDragonArea",
   LeaveAbyssDragonArea = "TriggerEvent_LeaveAbyssDragonArea",
-  RemoveAbyssDragonArea = "TriggerEvent_RemoveAbyssDragonArea"
+  RemoveAbyssDragonArea = "TriggerEvent_RemoveAbyssDragonArea",
+  EnterSnowmanArea = "TriggerEvent_EnterSnowmanArea",
+  LeaveSnowmanArea = "TriggerEvent_LeaveSnowmanArea",
+  RemoveSnowmanArea = "TriggerEvent_RemoveSnowmanArea",
+  EnterSnowRealmArea = "TriggerEvent_EnterSnowRealmArea",
+  LeaveSnowRealmArea = "TriggerEvent_LeaveSnowRealmArea",
+  RemoveSnowRealmArea = "TriggerEvent_RemoveSnowRealmArea",
+  EnterSnowRealmRoom = "TriggerEvent_EnterSnowRealmRoom",
+  LeaveSnowRealmRoom = "TriggerEvent_LeaveSnowRealmRoom",
+  RemoveSnowRealmRoom = "TriggerEvent_RemoveSnowRealmRoom"
 }
 ChatRoomEvent = {
   HavePrivateChatMsg = "ChatRoomEvent_HavePrivateChatMsg",
@@ -1278,7 +1292,9 @@ InteractNpcEvent = {
   FlowerCarUpdateMiniMap = "FlowerCarUpdateMiniMap",
   FlowerCarStart = "FlowerCarStart",
   FlowerCarEnd = "FlowerCarEnd",
-  RefreshNpcVisitList = "InteractNpcEvent_RefreshNpcVisitList"
+  RefreshNpcVisitList = "InteractNpcEvent_RefreshNpcVisitList",
+  MyselfOnOffHandcartChange = "InteractNpcEvent_MyselfOnOffHandcartChange",
+  MyselfTriggerHandcartChange = "InteractNpcEvent_MyselfTriggerHandcartChange"
 }
 InteractLocalEvent = {
   MyselfTriggerChange = "InteractLocalEvent_MyselfTriggerChange",
@@ -1317,7 +1333,8 @@ HomeEvent = {
   WorkbenchShowHelpBtn = "HomeEvent_WorkbenchShowHelpBtn",
   ClickMessageTip = "HomeEvent_ClickMessageTip",
   SkadaRecordOver = "HomeEvent_SkadaRecordOver",
-  QuerySkadaData = "HomeEvent_QuerySkadaData"
+  QuerySkadaData = "HomeEvent_QuerySkadaData",
+  GotoHome = "HomeEvent_GotoHome"
 }
 ActivityPuzzleGoEvent = {
   MouseClick = "ActivityPuzzleGoEvent_Click",
@@ -1682,4 +1699,7 @@ InheritSkillEvent = {
 }
 FakeDragonEvent = {
   UpdateFakeDragonPoses = "FakeDragonEvent_UpdateFakeDragonPoses"
+}
+AsyncPvpRaidEvent = {
+  SelectAffix = "AsyncPvpRaidEvent_SelectAffix"
 }

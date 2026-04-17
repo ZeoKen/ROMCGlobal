@@ -1,7 +1,8 @@
 autoImport("PetEggInfo")
 PetHouseData = class("PetHouseData")
 
-function PetHouseData:ctor(server_data)
+function PetHouseData:ctor(server_data, houseIndex)
+  self.houseIndex = houseIndex
   self.staticData = GameConfig.Home.PetFurniture or {
     Pos = {
       {100, 0},
@@ -22,7 +23,7 @@ function PetHouseData:Server_SetData(serviceData)
     self.petEgg = PetEggInfo.new()
     self.petEgg:Server_SetData(serviceData.pet)
     if not self.petCreature then
-      local myPos = Game.Myself:GetPosition()
+      local spawnPos = self:_GetSpawnPos()
       local mStaticData = Table_Monster[self.petEgg.petid]
       local bodyID = mStaticData.Body
       local modelScale = mStaticData.Scale and mStaticData.Scale * 100 or 100
@@ -55,7 +56,9 @@ function PetHouseData:Server_SetData(serviceData)
       else
         self.petCreature.assetRole = Asset_Role.Create(fakeParts)
       end
-      self.petCreature.assetRole:SetPosition(myPos)
+      self.petCreature.houseIndex = self.houseIndex
+      self.petCreature.logicTransform:NavMeshPlaceTo(spawnPos)
+      self.petCreature.assetRole:SetPosition(spawnPos)
       self.petCreature.assetRole:SetScale(modelScale)
       self.petCreature.ai:DOPatrol(self.petCreature)
       Asset_Role.DestroyPartArray(fakeParts)
@@ -88,6 +91,20 @@ end
 
 function PetHouseData:GetPetFriendlyLv()
   return self.petEgg and self.petEgg.friendlv
+end
+
+function PetHouseData:_GetSpawnPos()
+  if self.houseIndex then
+    local pos = SnowRealmManager.Me():GetRandomPosInCurrentHome(self.houseIndex)
+    if pos then
+      return pos
+    end
+  end
+  local pos = HomeManager.Me():GetRandomPosInCurrentHome()
+  if pos then
+    return pos
+  end
+  return Game.Myself:GetPosition()
 end
 
 function PetHouseData:SetCost()

@@ -20578,6 +20578,576 @@ Table_EffectLodMap = {
     id = 104154,
     Path = "Skill/sfx_danmachiais_weapon_prf",
     LodPaths = "Skill/sfx_danmachiais_weapon_prf,Skill/sfx_danmachiais_weapon_prf,Skill/sfx_danmachiais_weapon_prf"
+  },
+  [104155] = {
+    id = 104155,
+    Path = "Skill/sfx_oscar_skyq_atk_prf",
+    LodPaths = "Skill/sfx_oscar_skyq_atk_prf,Skill/sfx_oscar_skyq_atk_lod1_prf,Skill/sfx_oscar_skyq_atk_lod2_prf"
+  },
+  [104156] = {
+    id = 104156,
+    Path = "Skill/sfx_oscar_cyjj_buff_prf",
+    LodPaths = "Skill/sfx_oscar_cyjj_buff_prf,Skill/sfx_oscar_cyjj_buff_lod1_prf,Skill/sfx_oscar_cyjj_buff_lod2_prf"
+  },
+  [104157] = {
+    id = 104157,
+    Path = "Skill/sfx_oscar_sknx_atk_prf",
+    LodPaths = "Skill/sfx_oscar_sknx_atk_prf,Skill/sfx_oscar_sknx_atk_lod1_prf,Skill/sfx_oscar_sknx_atk_lod2_prf"
+  },
+  [104158] = {
+    id = 104158,
+    Path = "Skill/sfx_oscar_qdbp_buff_prf",
+    LodPaths = "Skill/sfx_oscar_qdbp_buff_prf,Skill/sfx_oscar_qdbp_buff_lod1_prf,Skill/sfx_oscar_qdbp_buff_lod2_prf"
+  },
+  [104159] = {
+    id = 104159,
+    Path = "Skill/sfx_oscar_sxxl_buff_prf",
+    LodPaths = "Skill/sfx_oscar_sxxl_buff_prf,Skill/sfx_oscar_sxxl_buff_lod1_prf,Skill/sfx_oscar_sxxl_buff_lod2_prf"
+  },
+  [104160] = {
+    id = 104160,
+    Path = "Skill/sfx_oscar_fs_buff_prf",
+    LodPaths = "Skill/sfx_oscar_fs_buff_prf,Skill/sfx_oscar_fs_buff_lod1_prf,Skill/sfx_oscar_fs_buff_lod1_prf"
+  },
+  [104161] = {
+    id = 104161,
+    Path = "Skill/sfx_oscar_skjl_buff_prf",
+    LodPaths = "Skill/sfx_oscar_skjl_buff_prf,Skill/sfx_oscar_skjl_buff_lod1_prf,Skill/sfx_oscar_skjl_buff_lod2_prf"
+  },
+  [104162] = {
+    id = 104162,
+    Path = "Skill/sfx_oscar_qdbp_atk_prf",
+    LodPaths = "Skill/sfx_oscar_qdbp_atk_prf,Skill/sfx_oscar_qdbp_atk_lod1_prf,Skill/sfx_oscar_qdbp_atk_lod2_prf"
+  },
+  [104163] = {
+    id = 104163,
+    Path = "Skill/sfx_oscar_yhly_floor_prf",
+    LodPaths = "Skill/sfx_oscar_yhly_floor_prf,Skill/sfx_oscar_yhly_floor_lod1_prf,Skill/sfx_oscar_yhly_floor_lod2_prf"
+  },
+  [104164] = {
+    id = 104164,
+    Path = "Skill/sfx_oscar_cyjj_atk_prf",
+    LodPaths = "Skill/sfx_oscar_cyjj_atk_prf,Skill/sfx_oscar_cyjj_atk_lod1_prf,Skill/sfx_oscar_cyjj_atk_lod2_prf"
+  },
+  [104165] = {
+    id = 104165,
+    Path = "Skill/sfx_oscar_cyjj_buff_01_prf",
+    LodPaths = "Skill/sfx_oscar_cyjj_buff_01_prf,Skill/sfx_oscar_cyjj_buff_01_lod1_prf,Skill/sfx_oscar_cyjj_buff_01_lod2_prf"
+  },
+  [104166] = {
+    id = 104166,
+    Path = "Skill/sfx_oscar_yhly_atk_prf",
+    LodPaths = "Skill/sfx_oscar_yhly_atk_prf,Skill/sfx_oscar_yhly_atk_lod1_prf,Skill/sfx_oscar_yhly_atk_lod2_prf"
+  },
+  [104167] = {
+    id = 104167,
+    Path = "Skill/sfx_oscar_sknx_floor_prf",
+    LodPaths = "Skill/sfx_oscar_sknx_floor_prf,Skill/sfx_oscar_sknx_floor_lod1_prf,Skill/sfx_oscar_sknx_floor_lod2_prf"
+  },
+  [104168] = {
+    id = 104168,
+    Path = "Skill/sfx_oscar_sxmy_buff_prf",
+    LodPaths = "Skill/sfx_oscar_sxmy_buff_prf,Skill/sfx_oscar_sxmy_buff_lod1_prf,Skill/sfx_oscar_sxmy_buff_lod2_prf"
+  },
+  [104169] = {
+    id = 104169,
+    Path = "Skill/sfx_oscar_sxmy_atk_prf",
+    LodPaths = "Skill/sfx_oscar_sxmy_atk_prf,Skill/sfx_oscar_sxmy_atk_lod1_prf,Skill/sfx_oscar_sxmy_atk_lod2_prf"
+  },
+  [104170] = {
+    id = 104170,
+    Path = "Skill/sfx_oscar_skyq_atk_01_prf",
+    LodPaths = "Skill/sfx_oscar_skyq_atk_01_prf,Skill/sfx_oscar_skyq_atk_01_lod1_prf,Skill/sfx_oscar_skyq_atk_01_lod2_prf"
+  },
+  [104171] = {
+    id = 104171,
+    Path = "Skill/sfx_oscar_yhly_floor_01_prf",
+    LodPaths = "Skill/sfx_oscar_yhly_floor_01_prf,Skill/sfx_oscar_yhly_floor_01_lod1_prf,Skill/sfx_oscar_yhly_floor_01_lod1_prf"
+  },
+  [104172] = {
+    id = 104172,
+    Path = "Skill/sfx_oscar_yhly_buff_start_prf",
+    LodPaths = "Skill/sfx_oscar_yhly_buff_start_prf,Skill/sfx_oscar_yhly_buff_start_lod1_prf,Skill/sfx_oscar_yhly_buff_start_lod1_prf"
+  },
+  [104173] = {
+    id = 104173,
+    Path = "Skill/sfx_oscar_zysl_atk_prf",
+    LodPaths = "Skill/sfx_oscar_zysl_atk_prf,Skill/sfx_oscar_zysl_atk_lod1_prf,Skill/sfx_oscar_zysl_atk_lod2_prf"
+  },
+  [104174] = {
+    id = 104174,
+    Path = "Skill/sfx_oscar_yhly_buff_loop_prf",
+    LodPaths = "Skill/sfx_oscar_yhly_buff_loop_prf,Skill/sfx_oscar_yhly_buff_loop_lod1_prf,Skill/sfx_oscar_yhly_buff_loop_lod2_prf"
+  },
+  [104175] = {
+    id = 104175,
+    Path = "Skill/sfx_liumang_DS3_LQCJ_Buff_prf",
+    LodPaths = "Skill/sfx_liumang_DS3_LQCJ_Buff_prf,Skill/sfx_liumang_DS3_LQCJ_Buff_prf,Skill/sfx_liumang_DS3_LQCJ_Buff_prf"
+  },
+  [104176] = {
+    id = 104176,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Bullet_huo_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Bullet_huo_prf,Skill/sfx_fashi_DS3_XJTX_Bullet_huo_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Bullet_huo_prf_lod2"
+  },
+  [104177] = {
+    id = 104177,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Atk_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Atk_prf,Skill/sfx_fashi_DS3_XJTX_Atk_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Atk_prf_lod2"
+  },
+  [104178] = {
+    id = 104178,
+    Path = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Atk_prf",
+    LodPaths = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Atk_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Atk_prf_lod1,Skill/sfx_jinyinxuezhe_DS3_JYRH_Atk_prf_lod2"
+  },
+  [104179] = {
+    id = 104179,
+    Path = "Skill/sfx_cike_DS3_ZMYZ_Atk_prf",
+    LodPaths = "Skill/sfx_cike_DS3_ZMYZ_Atk_prf,Skill/sfx_cike_DS3_ZMYZ_Atk_prf_lod1,Skill/sfx_cike_DS3_ZMYZ_Atk_prf_lod2"
+  },
+  [104180] = {
+    id = 104180,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Floor_01_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Floor_01_prf,Skill/sfx_fashi_DS3_XJTX_Floor_01_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Floor_01_prf_lod2"
+  },
+  [104181] = {
+    id = 104181,
+    Path = "Skill/sfx_wuseng_DS3_WSBTQ_Atk_prf",
+    LodPaths = "Skill/sfx_wuseng_DS3_WSBTQ_Atk_prf,Skill/sfx_wuseng_DS3_WSBTQ_Atk_prf_lod1,Skill/sfx_wuseng_DS3_WSBTQ_Atk_prf_lod2"
+  },
+  [104182] = {
+    id = 104182,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Floor_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Floor_prf,Skill/sfx_fashi_DS3_XJTX_Floor_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Floor_prf_lod2"
+  },
+  [104183] = {
+    id = 104183,
+    Path = "Skill/sfx_jijiang_DS3_GZSTC_Floor_01_prf",
+    LodPaths = "Skill/sfx_jijiang_DS3_GZSTC_Floor_01_prf,Skill/sfx_jijiang_DS3_GZSTC_Floor_01_prf_lod1,Skill/sfx_jijiang_DS3_GZSTC_Floor_01_prf_lod2"
+  },
+  [104184] = {
+    id = 104184,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Bullet_tu_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Bullet_tu_prf,Skill/sfx_fashi_DS3_XJTX_Bullet_tu_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Bullet_tu_prf_lod2"
+  },
+  [104185] = {
+    id = 104185,
+    Path = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_02_prf",
+    LodPaths = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_02_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_02_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_02_prf"
+  },
+  [104186] = {
+    id = 104186,
+    Path = "Skill/sfx_jijiang_DS3_GZSTC_Atk_prf",
+    LodPaths = "Skill/sfx_jijiang_DS3_GZSTC_Atk_prf,Skill/sfx_jijiang_DS3_GZSTC_Atk_prf_lod1,Skill/sfx_jijiang_DS3_GZSTC_Atk_prf_lod2"
+  },
+  [104187] = {
+    id = 104187,
+    Path = "Skill/sfx_xianzhe_DS3_NLKJ_Buff_03_prf",
+    LodPaths = "Skill/sfx_xianzhe_DS3_NLKJ_Buff_03_prf,Skill/sfx_xianzhe_DS3_NLKJ_Buff_03_prf_lod1,Skill/sfx_xianzhe_DS3_NLKJ_Buff_03_prf_lod1"
+  },
+  [104188] = {
+    id = 104188,
+    Path = "Skill/sfx_wuseng_DS3_WSBTQ_Guide_prf",
+    LodPaths = "Skill/sfx_wuseng_DS3_WSBTQ_Guide_prf,Skill/sfx_wuseng_DS3_WSBTQ_Guide_prf_lod1,Skill/sfx_wuseng_DS3_WSBTQ_Guide_prf_lod2"
+  },
+  [104189] = {
+    id = 104189,
+    Path = "Skill/sfx_xianzhe_DS3_NLKJ_Buff_02_prf",
+    LodPaths = "Skill/sfx_xianzhe_DS3_NLKJ_Buff_02_prf,Skill/sfx_xianzhe_DS3_NLKJ_Buff_02_prf_lod1,Skill/sfx_xianzhe_DS3_NLKJ_Buff_02_prf_lod2"
+  },
+  [104190] = {
+    id = 104190,
+    Path = "Skill/sfx_xianzhe_DS3_NLKJ_Hit_prf",
+    LodPaths = "Skill/sfx_xianzhe_DS3_NLKJ_Hit_prf,Skill/sfx_xianzhe_DS3_NLKJ_Hit_prf_lod1,Skill/sfx_xianzhe_DS3_NLKJ_Hit_prf_lod2"
+  },
+  [104191] = {
+    id = 104191,
+    Path = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_04_prf",
+    LodPaths = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_04_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_04_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_04_prf"
+  },
+  [104192] = {
+    id = 104192,
+    Path = "Skill/sfx_fuwenqishi_DS3_KBFS_Buff_prf",
+    LodPaths = "Skill/sfx_fuwenqishi_DS3_KBFS_Buff_prf,Skill/sfx_fuwenqishi_DS3_KBFS_Buff_prf,Skill/sfx_fuwenqishi_DS3_KBFS_Buff_prf"
+  },
+  [104193] = {
+    id = 104193,
+    Path = "Skill/sfx_liumang_DS3_LQCJ_Floor_prf",
+    LodPaths = "Skill/sfx_liumang_DS3_LQCJ_Floor_prf,Skill/sfx_liumang_DS3_LQCJ_Floor_prf_lod1,Skill/sfx_liumang_DS3_LQCJ_Floor_prf_lod2"
+  },
+  [104194] = {
+    id = 104194,
+    Path = "Skill/sfx_youxia_DS3_LXJS_Atk_prf",
+    LodPaths = "Skill/sfx_youxia_DS3_LXJS_Atk_prf,Skill/sfx_youxia_DS3_LXJS_Atk_prf_lod1,Skill/sfx_youxia_DS3_LXJS_Atk_prf_lod2"
+  },
+  [104195] = {
+    id = 104195,
+    Path = "Skill/sfx_fuwenqishi_DS3_KBFS_Atk_prf",
+    LodPaths = "Skill/sfx_fuwenqishi_DS3_KBFS_Atk_prf,Skill/sfx_fuwenqishi_DS3_KBFS_Atk_prf_lod1,Skill/sfx_fuwenqishi_DS3_KBFS_Atk_prf_lod2"
+  },
+  [104196] = {
+    id = 104196,
+    Path = "Skill/sfx_mushi_DS3_ZCZG_Atk_prf",
+    LodPaths = "Skill/sfx_mushi_DS3_ZCZG_Atk_prf,Skill/sfx_mushi_DS3_ZCZG_Atk_prf_lod1,Skill/sfx_mushi_DS3_ZCZG_Atk_prf_lod2"
+  },
+  [104197] = {
+    id = 104197,
+    Path = "Skill/sfx_shizijun_DS3_DPTZ_Atk_prf",
+    LodPaths = "Skill/sfx_shizijun_DS3_DPTZ_Atk_prf,Skill/sfx_shizijun_DS3_DPTZ_Atk_prf_lod1,Skill/sfx_shizijun_DS3_DPTZ_Atk_prf_lod2"
+  },
+  [104198] = {
+    id = 104198,
+    Path = "Skill/sfx_shiwu_DS3_MGJS_Buff_prf",
+    LodPaths = "Skill/sfx_shiwu_DS3_MGJS_Buff_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_prf_lod1,Skill/sfx_shiwu_DS3_MGJS_Buff_prf_lod2"
+  },
+  [104199] = {
+    id = 104199,
+    Path = "Skill/sfx_youxia_DS3_LXJS_Buff_01_prf",
+    LodPaths = "Skill/sfx_youxia_DS3_LXJS_Buff_01_prf,Skill/sfx_youxia_DS3_LXJS_Buff_01_prf,Skill/sfx_youxia_DS3_LXJS_Buff_01_prf"
+  },
+  [104200] = {
+    id = 104200,
+    Path = "Skill/sfx_xianzhe_DS3_NLKJ_Buff_01_prf",
+    LodPaths = "Skill/sfx_xianzhe_DS3_NLKJ_Buff_01_prf,Skill/sfx_xianzhe_DS3_NLKJ_Buff_01_prf_lod1,Skill/sfx_xianzhe_DS3_NLKJ_Buff_01_prf_lod2"
+  },
+  [104201] = {
+    id = 104201,
+    Path = "Skill/sfx_youxia_DS3_LXJS_Buff_02_prf",
+    LodPaths = "Skill/sfx_youxia_DS3_LXJS_Buff_02_prf,Skill/sfx_youxia_DS3_LXJS_Buff_02_prf_lod1,Skill/sfx_youxia_DS3_LXJS_Buff_02_prf_lod2"
+  },
+  [104202] = {
+    id = 104202,
+    Path = "Skill/sfx_youxia_DS3_LXJS_Bullet_prf",
+    LodPaths = "Skill/sfx_youxia_DS3_LXJS_Bullet_prf,Skill/sfx_youxia_DS3_LXJS_Bullet_prf_lod1,Skill/sfx_youxia_DS3_LXJS_Bullet_prf_lod2"
+  },
+  [104203] = {
+    id = 104203,
+    Path = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_01_prf",
+    LodPaths = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_01_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_01_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_01_prf"
+  },
+  [104204] = {
+    id = 104204,
+    Path = "Skill/sfx_jijiang_DS3_GZSTC_Floor_prf",
+    LodPaths = "Skill/sfx_jijiang_DS3_GZSTC_Floor_prf,Skill/sfx_jijiang_DS3_GZSTC_Floor_prf_lod1,Skill/sfx_jijiang_DS3_GZSTC_Floor_prf_lod2"
+  },
+  [104205] = {
+    id = 104205,
+    Path = "Skill/sfx_shiwu_DS3_MGJS_Buff_02_prf",
+    LodPaths = "Skill/sfx_shiwu_DS3_MGJS_Buff_02_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_02_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_02_prf"
+  },
+  [104206] = {
+    id = 104206,
+    Path = "Skill/sfx_youxia_DS3_LXJS_Buff_03_prf",
+    LodPaths = "Skill/sfx_youxia_DS3_LXJS_Buff_03_prf,Skill/sfx_youxia_DS3_LXJS_Buff_03_prf_lod1,Skill/sfx_youxia_DS3_LXJS_Buff_03_prf_lod2"
+  },
+  [104207] = {
+    id = 104207,
+    Path = "Skill/sfx_shiwu_DS3_MGJS_Atk_prf",
+    LodPaths = "Skill/sfx_shiwu_DS3_MGJS_Atk_prf,Skill/sfx_shiwu_DS3_MGJS_Atk_prf_lod1,Skill/sfx_shiwu_DS3_MGJS_Atk_prf_lod2"
+  },
+  [104208] = {
+    id = 104208,
+    Path = "Skill/sfx_youxia_DS3_LXJS_Buff_04_prf",
+    LodPaths = "Skill/sfx_youxia_DS3_LXJS_Buff_04_prf,Skill/sfx_youxia_DS3_LXJS_Buff_04_prf_lod1,Skill/sfx_youxia_DS3_LXJS_Buff_04_prf_lod2"
+  },
+  [104209] = {
+    id = 104209,
+    Path = "Skill/sfx_liumang_DS3_LQCJ_Atk_prf",
+    LodPaths = "Skill/sfx_liumang_DS3_LQCJ_Atk_prf,Skill/sfx_liumang_DS3_LQCJ_Atk_prf_lod1,Skill/sfx_liumang_DS3_LQCJ_Atk_prf_lod1"
+  },
+  [104210] = {
+    id = 104210,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Bullet_feng_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Bullet_feng_prf,Skill/sfx_fashi_DS3_XJTX_Bullet_feng_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Bullet_feng_prf_lod2"
+  },
+  [104211] = {
+    id = 104211,
+    Path = "Skill/sfx_cike_DS3_ZMYZ_Buff_prf",
+    LodPaths = "Skill/sfx_cike_DS3_ZMYZ_Buff_prf,Skill/sfx_cike_DS3_ZMYZ_Buff_prf_lod1,Skill/sfx_cike_DS3_ZMYZ_Buff_prf_lod1"
+  },
+  [104212] = {
+    id = 104212,
+    Path = "Skill/sfx_mushi_DS3_ZCZG_Hit_prf",
+    LodPaths = "Skill/sfx_mushi_DS3_ZCZG_Hit_prf,Skill/sfx_mushi_DS3_ZCZG_Hit_prf_lod1,Skill/sfx_mushi_DS3_ZCZG_Hit_prf_lod2"
+  },
+  [104213] = {
+    id = 104213,
+    Path = "Skill/sfx_xianzhe_DS3_NLKJ_Atk_prf",
+    LodPaths = "Skill/sfx_xianzhe_DS3_NLKJ_Atk_prf,Skill/sfx_xianzhe_DS3_NLKJ_Atk_prf_lod1,Skill/sfx_xianzhe_DS3_NLKJ_Atk_prf_lod2"
+  },
+  [104214] = {
+    id = 104214,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Bullet_shui_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Bullet_shui_prf,Skill/sfx_fashi_DS3_XJTX_Bullet_shui_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Bullet_shui_prf_lod2"
+  },
+  [104215] = {
+    id = 104215,
+    Path = "Skill/sfx_shiwu_DS3_MGJS_Buff_03_prf",
+    LodPaths = "Skill/sfx_shiwu_DS3_MGJS_Buff_03_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_03_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_03_prf"
+  },
+  [104216] = {
+    id = 104216,
+    Path = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_03_prf",
+    LodPaths = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_03_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_03_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_03_prf"
+  },
+  [104217] = {
+    id = 104217,
+    Path = "Skill/sfx_fuwenqishi_DS3_KBFS_Floor_prf",
+    LodPaths = "Skill/sfx_fuwenqishi_DS3_KBFS_Floor_prf,Skill/sfx_fuwenqishi_DS3_KBFS_Floor_prf_lod1,Skill/sfx_fuwenqishi_DS3_KBFS_Floor_prf_lod2"
+  },
+  [104218] = {
+    id = 104218,
+    Path = "Skill/sfx_shizijun_DS3_DPTZ_Bullet_prf",
+    LodPaths = "Skill/sfx_shizijun_DS3_DPTZ_Bullet_prf,Skill/sfx_shizijun_DS3_DPTZ_Bullet_prf_lod1,Skill/sfx_shizijun_DS3_DPTZ_Bullet_prf_lod2"
+  },
+  [104219] = {
+    id = 104219,
+    Path = "Skill/sfx_mushi_DS3_ZCZG_Buff_prf",
+    LodPaths = "Skill/sfx_mushi_DS3_ZCZG_Buff_prf,Skill/sfx_mushi_DS3_ZCZG_Buff_prf_lod1,Skill/sfx_mushi_DS3_ZCZG_Buff_prf_lod2"
+  },
+  [104220] = {
+    id = 104220,
+    Path = "Skill/sfx_shizijun_DS3_DPTZ_Buff_prf",
+    LodPaths = "Skill/sfx_shizijun_DS3_DPTZ_Buff_prf,Skill/sfx_shizijun_DS3_DPTZ_Buff_prf,Skill/sfx_shizijun_DS3_DPTZ_Buff_prf"
+  },
+  [104221] = {
+    id = 104221,
+    Path = "Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf",
+    LodPaths = "Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf_lod1,Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf_lod1"
+  },
+  [104222] = {
+    id = 104222,
+    Path = "Skill/sfx_liumang_DS3_LQCJ_Buff_prf",
+    LodPaths = "Skill/sfx_liumang_DS3_LQCJ_Buff_prf,Skill/sfx_liumang_DS3_LQCJ_Buff_prf,Skill/sfx_liumang_DS3_LQCJ_Buff_prf"
+  },
+  [104223] = {
+    id = 104223,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Bullet_huo_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Bullet_huo_prf,Skill/sfx_fashi_DS3_XJTX_Bullet_huo_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Bullet_huo_prf_lod2"
+  },
+  [104224] = {
+    id = 104224,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Atk_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Atk_prf,Skill/sfx_fashi_DS3_XJTX_Atk_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Atk_prf_lod2"
+  },
+  [104225] = {
+    id = 104225,
+    Path = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Atk_prf",
+    LodPaths = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Atk_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Atk_prf_lod1,Skill/sfx_jinyinxuezhe_DS3_JYRH_Atk_prf_lod2"
+  },
+  [104226] = {
+    id = 104226,
+    Path = "Skill/sfx_cike_DS3_ZMYZ_Atk_prf",
+    LodPaths = "Skill/sfx_cike_DS3_ZMYZ_Atk_prf,Skill/sfx_cike_DS3_ZMYZ_Atk_prf_lod1,Skill/sfx_cike_DS3_ZMYZ_Atk_prf_lod2"
+  },
+  [104227] = {
+    id = 104227,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Floor_01_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Floor_01_prf,Skill/sfx_fashi_DS3_XJTX_Floor_01_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Floor_01_prf_lod2"
+  },
+  [104228] = {
+    id = 104228,
+    Path = "Skill/sfx_wuseng_DS3_WSBTQ_Atk_prf",
+    LodPaths = "Skill/sfx_wuseng_DS3_WSBTQ_Atk_prf,Skill/sfx_wuseng_DS3_WSBTQ_Atk_prf_lod1,Skill/sfx_wuseng_DS3_WSBTQ_Atk_prf_lod2"
+  },
+  [104229] = {
+    id = 104229,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Floor_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Floor_prf,Skill/sfx_fashi_DS3_XJTX_Floor_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Floor_prf_lod2"
+  },
+  [104230] = {
+    id = 104230,
+    Path = "Skill/sfx_jijiang_DS3_GZSTC_Floor_01_prf",
+    LodPaths = "Skill/sfx_jijiang_DS3_GZSTC_Floor_01_prf,Skill/sfx_jijiang_DS3_GZSTC_Floor_01_prf_lod1,Skill/sfx_jijiang_DS3_GZSTC_Floor_01_prf_lod2"
+  },
+  [104231] = {
+    id = 104231,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Bullet_tu_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Bullet_tu_prf,Skill/sfx_fashi_DS3_XJTX_Bullet_tu_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Bullet_tu_prf_lod2"
+  },
+  [104232] = {
+    id = 104232,
+    Path = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_02_prf",
+    LodPaths = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_02_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_02_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_02_prf"
+  },
+  [104233] = {
+    id = 104233,
+    Path = "Skill/sfx_jijiang_DS3_GZSTC_Atk_prf",
+    LodPaths = "Skill/sfx_jijiang_DS3_GZSTC_Atk_prf,Skill/sfx_jijiang_DS3_GZSTC_Atk_prf_lod1,Skill/sfx_jijiang_DS3_GZSTC_Atk_prf_lod2"
+  },
+  [104234] = {
+    id = 104234,
+    Path = "Skill/sfx_xianzhe_DS3_NLKJ_Buff_03_prf",
+    LodPaths = "Skill/sfx_xianzhe_DS3_NLKJ_Buff_03_prf,Skill/sfx_xianzhe_DS3_NLKJ_Buff_03_prf_lod1,Skill/sfx_xianzhe_DS3_NLKJ_Buff_03_prf_lod1"
+  },
+  [104235] = {
+    id = 104235,
+    Path = "Skill/sfx_wuseng_DS3_WSBTQ_Guide_prf",
+    LodPaths = "Skill/sfx_wuseng_DS3_WSBTQ_Guide_prf,Skill/sfx_wuseng_DS3_WSBTQ_Guide_prf_lod1,Skill/sfx_wuseng_DS3_WSBTQ_Guide_prf_lod2"
+  },
+  [104236] = {
+    id = 104236,
+    Path = "Skill/sfx_xianzhe_DS3_NLKJ_Buff_02_prf",
+    LodPaths = "Skill/sfx_xianzhe_DS3_NLKJ_Buff_02_prf,Skill/sfx_xianzhe_DS3_NLKJ_Buff_02_prf_lod1,Skill/sfx_xianzhe_DS3_NLKJ_Buff_02_prf_lod2"
+  },
+  [104237] = {
+    id = 104237,
+    Path = "Skill/sfx_xianzhe_DS3_NLKJ_Hit_prf",
+    LodPaths = "Skill/sfx_xianzhe_DS3_NLKJ_Hit_prf,Skill/sfx_xianzhe_DS3_NLKJ_Hit_prf_lod1,Skill/sfx_xianzhe_DS3_NLKJ_Hit_prf_lod2"
+  },
+  [104238] = {
+    id = 104238,
+    Path = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_04_prf",
+    LodPaths = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_04_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_04_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_04_prf"
+  },
+  [104239] = {
+    id = 104239,
+    Path = "Skill/sfx_fuwenqishi_DS3_KBFS_Buff_prf",
+    LodPaths = "Skill/sfx_fuwenqishi_DS3_KBFS_Buff_prf,Skill/sfx_fuwenqishi_DS3_KBFS_Buff_prf,Skill/sfx_fuwenqishi_DS3_KBFS_Buff_prf"
+  },
+  [104240] = {
+    id = 104240,
+    Path = "Skill/sfx_liumang_DS3_LQCJ_Floor_prf",
+    LodPaths = "Skill/sfx_liumang_DS3_LQCJ_Floor_prf,Skill/sfx_liumang_DS3_LQCJ_Floor_prf_lod1,Skill/sfx_liumang_DS3_LQCJ_Floor_prf_lod2"
+  },
+  [104241] = {
+    id = 104241,
+    Path = "Skill/sfx_youxia_DS3_LXJS_Atk_prf",
+    LodPaths = "Skill/sfx_youxia_DS3_LXJS_Atk_prf,Skill/sfx_youxia_DS3_LXJS_Atk_prf_lod1,Skill/sfx_youxia_DS3_LXJS_Atk_prf_lod2"
+  },
+  [104242] = {
+    id = 104242,
+    Path = "Skill/sfx_fuwenqishi_DS3_KBFS_Atk_prf",
+    LodPaths = "Skill/sfx_fuwenqishi_DS3_KBFS_Atk_prf,Skill/sfx_fuwenqishi_DS3_KBFS_Atk_prf_lod1,Skill/sfx_fuwenqishi_DS3_KBFS_Atk_prf_lod2"
+  },
+  [104243] = {
+    id = 104243,
+    Path = "Skill/sfx_mushi_DS3_ZCZG_Atk_prf",
+    LodPaths = "Skill/sfx_mushi_DS3_ZCZG_Atk_prf,Skill/sfx_mushi_DS3_ZCZG_Atk_prf_lod1,Skill/sfx_mushi_DS3_ZCZG_Atk_prf_lod2"
+  },
+  [104244] = {
+    id = 104244,
+    Path = "Skill/sfx_shizijun_DS3_DPTZ_Atk_prf",
+    LodPaths = "Skill/sfx_shizijun_DS3_DPTZ_Atk_prf,Skill/sfx_shizijun_DS3_DPTZ_Atk_prf_lod1,Skill/sfx_shizijun_DS3_DPTZ_Atk_prf_lod2"
+  },
+  [104245] = {
+    id = 104245,
+    Path = "Skill/sfx_shiwu_DS3_MGJS_Buff_prf",
+    LodPaths = "Skill/sfx_shiwu_DS3_MGJS_Buff_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_prf_lod1,Skill/sfx_shiwu_DS3_MGJS_Buff_prf_lod2"
+  },
+  [104246] = {
+    id = 104246,
+    Path = "Skill/sfx_youxia_DS3_LXJS_Buff_01_prf",
+    LodPaths = "Skill/sfx_youxia_DS3_LXJS_Buff_01_prf,Skill/sfx_youxia_DS3_LXJS_Buff_01_prf,Skill/sfx_youxia_DS3_LXJS_Buff_01_prf"
+  },
+  [104247] = {
+    id = 104247,
+    Path = "Skill/sfx_xianzhe_DS3_NLKJ_Buff_01_prf",
+    LodPaths = "Skill/sfx_xianzhe_DS3_NLKJ_Buff_01_prf,Skill/sfx_xianzhe_DS3_NLKJ_Buff_01_prf_lod1,Skill/sfx_xianzhe_DS3_NLKJ_Buff_01_prf_lod2"
+  },
+  [104248] = {
+    id = 104248,
+    Path = "Skill/sfx_youxia_DS3_LXJS_Buff_02_prf",
+    LodPaths = "Skill/sfx_youxia_DS3_LXJS_Buff_02_prf,Skill/sfx_youxia_DS3_LXJS_Buff_02_prf_lod1,Skill/sfx_youxia_DS3_LXJS_Buff_02_prf_lod2"
+  },
+  [104249] = {
+    id = 104249,
+    Path = "Skill/sfx_youxia_DS3_LXJS_Bullet_prf",
+    LodPaths = "Skill/sfx_youxia_DS3_LXJS_Bullet_prf,Skill/sfx_youxia_DS3_LXJS_Bullet_prf_lod1,Skill/sfx_youxia_DS3_LXJS_Bullet_prf_lod2"
+  },
+  [104250] = {
+    id = 104250,
+    Path = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_01_prf",
+    LodPaths = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_01_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_01_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_01_prf"
+  },
+  [104251] = {
+    id = 104251,
+    Path = "Skill/sfx_jijiang_DS3_GZSTC_Floor_prf",
+    LodPaths = "Skill/sfx_jijiang_DS3_GZSTC_Floor_prf,Skill/sfx_jijiang_DS3_GZSTC_Floor_prf_lod1,Skill/sfx_jijiang_DS3_GZSTC_Floor_prf_lod2"
+  },
+  [104252] = {
+    id = 104252,
+    Path = "Skill/sfx_shiwu_DS3_MGJS_Buff_02_prf",
+    LodPaths = "Skill/sfx_shiwu_DS3_MGJS_Buff_02_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_02_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_02_prf"
+  },
+  [104253] = {
+    id = 104253,
+    Path = "Skill/sfx_youxia_DS3_LXJS_Buff_03_prf",
+    LodPaths = "Skill/sfx_youxia_DS3_LXJS_Buff_03_prf,Skill/sfx_youxia_DS3_LXJS_Buff_03_prf_lod1,Skill/sfx_youxia_DS3_LXJS_Buff_03_prf_lod2"
+  },
+  [104254] = {
+    id = 104254,
+    Path = "Skill/sfx_shiwu_DS3_MGJS_Atk_prf",
+    LodPaths = "Skill/sfx_shiwu_DS3_MGJS_Atk_prf,Skill/sfx_shiwu_DS3_MGJS_Atk_prf_lod1,Skill/sfx_shiwu_DS3_MGJS_Atk_prf_lod2"
+  },
+  [104255] = {
+    id = 104255,
+    Path = "Skill/sfx_youxia_DS3_LXJS_Buff_04_prf",
+    LodPaths = "Skill/sfx_youxia_DS3_LXJS_Buff_04_prf,Skill/sfx_youxia_DS3_LXJS_Buff_04_prf_lod1,Skill/sfx_youxia_DS3_LXJS_Buff_04_prf_lod2"
+  },
+  [104256] = {
+    id = 104256,
+    Path = "Skill/sfx_liumang_DS3_LQCJ_Atk_prf",
+    LodPaths = "Skill/sfx_liumang_DS3_LQCJ_Atk_prf,Skill/sfx_liumang_DS3_LQCJ_Atk_prf_lod1,Skill/sfx_liumang_DS3_LQCJ_Atk_prf_lod1"
+  },
+  [104257] = {
+    id = 104257,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Bullet_feng_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Bullet_feng_prf,Skill/sfx_fashi_DS3_XJTX_Bullet_feng_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Bullet_feng_prf_lod2"
+  },
+  [104258] = {
+    id = 104258,
+    Path = "Skill/sfx_cike_DS3_ZMYZ_Buff_prf",
+    LodPaths = "Skill/sfx_cike_DS3_ZMYZ_Buff_prf,Skill/sfx_cike_DS3_ZMYZ_Buff_prf_lod1,Skill/sfx_cike_DS3_ZMYZ_Buff_prf_lod1"
+  },
+  [104259] = {
+    id = 104259,
+    Path = "Skill/sfx_mushi_DS3_ZCZG_Hit_prf",
+    LodPaths = "Skill/sfx_mushi_DS3_ZCZG_Hit_prf,Skill/sfx_mushi_DS3_ZCZG_Hit_prf_lod1,Skill/sfx_mushi_DS3_ZCZG_Hit_prf_lod2"
+  },
+  [104260] = {
+    id = 104260,
+    Path = "Skill/sfx_xianzhe_DS3_NLKJ_Atk_prf",
+    LodPaths = "Skill/sfx_xianzhe_DS3_NLKJ_Atk_prf,Skill/sfx_xianzhe_DS3_NLKJ_Atk_prf_lod1,Skill/sfx_xianzhe_DS3_NLKJ_Atk_prf_lod2"
+  },
+  [104261] = {
+    id = 104261,
+    Path = "Skill/sfx_fashi_DS3_XJTX_Bullet_shui_prf",
+    LodPaths = "Skill/sfx_fashi_DS3_XJTX_Bullet_shui_prf,Skill/sfx_fashi_DS3_XJTX_Bullet_shui_prf_lod1,Skill/sfx_fashi_DS3_XJTX_Bullet_shui_prf_lod2"
+  },
+  [104262] = {
+    id = 104262,
+    Path = "Skill/sfx_shiwu_DS3_MGJS_Buff_03_prf",
+    LodPaths = "Skill/sfx_shiwu_DS3_MGJS_Buff_03_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_03_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_03_prf"
+  },
+  [104263] = {
+    id = 104263,
+    Path = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_03_prf",
+    LodPaths = "Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_03_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_03_prf,Skill/sfx_jinyinxuezhe_DS3_JYRH_Buff_03_prf"
+  },
+  [104264] = {
+    id = 104264,
+    Path = "Skill/sfx_fuwenqishi_DS3_KBFS_Floor_prf",
+    LodPaths = "Skill/sfx_fuwenqishi_DS3_KBFS_Floor_prf,Skill/sfx_fuwenqishi_DS3_KBFS_Floor_prf_lod1,Skill/sfx_fuwenqishi_DS3_KBFS_Floor_prf_lod2"
+  },
+  [104265] = {
+    id = 104265,
+    Path = "Skill/sfx_shizijun_DS3_DPTZ_Bullet_prf",
+    LodPaths = "Skill/sfx_shizijun_DS3_DPTZ_Bullet_prf,Skill/sfx_shizijun_DS3_DPTZ_Bullet_prf_lod1,Skill/sfx_shizijun_DS3_DPTZ_Bullet_prf_lod2"
+  },
+  [104266] = {
+    id = 104266,
+    Path = "Skill/sfx_mushi_DS3_ZCZG_Buff_prf",
+    LodPaths = "Skill/sfx_mushi_DS3_ZCZG_Buff_prf,Skill/sfx_mushi_DS3_ZCZG_Buff_prf_lod1,Skill/sfx_mushi_DS3_ZCZG_Buff_prf_lod2"
+  },
+  [104267] = {
+    id = 104267,
+    Path = "Skill/sfx_shizijun_DS3_DPTZ_Buff_prf",
+    LodPaths = "Skill/sfx_shizijun_DS3_DPTZ_Buff_prf,Skill/sfx_shizijun_DS3_DPTZ_Buff_prf,Skill/sfx_shizijun_DS3_DPTZ_Buff_prf"
+  },
+  [104268] = {
+    id = 104268,
+    Path = "Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf",
+    LodPaths = "Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf_lod1,Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf_lod1"
   }
 }
 Table_EffectLodMap_fields = {

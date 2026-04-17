@@ -14,6 +14,11 @@ function RecallActivityBattlePassTaskCell:SetData(data)
       local datas = ReusableTable.CreateArray()
       if staticData.Exp then
         local expItem = 10000351
+        local curConfigIndex = RecallActivityBattlePassProxy.Instance:GetCurConfigIndex() or 1
+        local gameConfig = GameConfig.RecallActivityBattlePass[curConfigIndex]
+        if gameConfig and gameConfig.ExpItem then
+          expItem = gameConfig.ExpItem
+        end
         local itemData = ItemData.new("Reward", expItem)
         if itemData then
           itemData:SetItemNum(staticData.Exp)

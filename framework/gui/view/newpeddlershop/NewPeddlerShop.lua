@@ -47,6 +47,7 @@ function NewPeddlerShop:FindObjs()
   PictureManager.Instance:SetUI(Tex_Bg_2, self.m_uiTexBg2)
   PictureManager.Instance:SetUI(Tex_Bg_2, self.m_uiTexBg3)
   PictureManager.Instance:SetUI(Tex_Name_Bg, self.m_uiTexNameBg)
+  PictureManager.ReFitFullScreen(self.m_uiTexBg, 1)
 end
 
 function NewPeddlerShop:AddEvts()

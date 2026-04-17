@@ -243,7 +243,7 @@ Table_Pet_Adventure = {
       10002,
       10003
     },
-    Baseexp = 4952.666667,
+    Baseexp = 4952.66666666667,
     Times = 273
   },
   [101] = {
@@ -270,7 +270,7 @@ Table_Pet_Adventure = {
       10012,
       10013
     },
-    Baseexp = 4952.666667,
+    Baseexp = 4952.66666666667,
     Times = 273
   },
   [102] = {
@@ -299,7 +299,7 @@ Table_Pet_Adventure = {
       10008,
       10009
     },
-    Baseexp = 4952.666667,
+    Baseexp = 4952.66666666667,
     Times = 273
   },
   [104] = {
@@ -406,7 +406,7 @@ Table_Pet_Adventure = {
       10024,
       10025
     },
-    Baseexp = 35165.511111,
+    Baseexp = 35165.5111111111,
     Times = 273
   },
   [108] = {
@@ -433,7 +433,7 @@ Table_Pet_Adventure = {
       10027,
       10028
     },
-    Baseexp = 35165.511111,
+    Baseexp = 35165.5111111111,
     Times = 273
   },
   [109] = {
@@ -463,7 +463,7 @@ Table_Pet_Adventure = {
       10034,
       10035
     },
-    Baseexp = 35165.511111,
+    Baseexp = 35165.5111111111,
     Times = 273
   },
   [110] = {
@@ -494,7 +494,7 @@ Table_Pet_Adventure = {
       10038,
       10039
     },
-    Baseexp = 77364.124444,
+    Baseexp = 77364.1244444444,
     Times = 273
   },
   [111] = {
@@ -528,7 +528,7 @@ Table_Pet_Adventure = {
       10045,
       10051
     },
-    Baseexp = 77364.124444,
+    Baseexp = 77364.1244444444,
     Times = 273
   },
   [113] = {
@@ -561,7 +561,7 @@ Table_Pet_Adventure = {
       10047,
       10048
     },
-    Baseexp = 67923.555556,
+    Baseexp = 67923.5555555556,
     Times = 273
   },
   [114] = {
@@ -593,7 +593,7 @@ Table_Pet_Adventure = {
       10049,
       10101
     },
-    Baseexp = 67923.555556,
+    Baseexp = 67923.5555555556,
     Times = 273
   },
   [115] = {
@@ -624,7 +624,7 @@ Table_Pet_Adventure = {
       10052,
       10053
     },
-    Baseexp = 67923.555556,
+    Baseexp = 67923.5555555556,
     Times = 273
   },
   [116] = {
@@ -658,7 +658,7 @@ Table_Pet_Adventure = {
       10063,
       10064
     },
-    Baseexp = 67923.555556,
+    Baseexp = 67923.5555555556,
     Times = 273
   },
   [117] = {
@@ -692,7 +692,7 @@ Table_Pet_Adventure = {
       10055,
       10056
     },
-    Baseexp = 67923.555556,
+    Baseexp = 67923.5555555556,
     Times = 273
   },
   [118] = {
@@ -727,7 +727,7 @@ Table_Pet_Adventure = {
       10057,
       10058
     },
-    Baseexp = 110428.444444,
+    Baseexp = 110428.444444444,
     Times = 273
   },
   [119] = {
@@ -765,7 +765,7 @@ Table_Pet_Adventure = {
       10066,
       10067
     },
-    Baseexp = 110428.444444,
+    Baseexp = 110428.444444444,
     Times = 273
   },
   [121] = {
@@ -801,7 +801,7 @@ Table_Pet_Adventure = {
       10105,
       10106
     },
-    Baseexp = 110428.444444,
+    Baseexp = 110428.444444444,
     Times = 273
   },
   [122] = {
@@ -835,7 +835,7 @@ Table_Pet_Adventure = {
       10069,
       10070
     },
-    Baseexp = 138876.444444,
+    Baseexp = 138876.444444444,
     Times = 273
   },
   [123] = {
@@ -869,7 +869,7 @@ Table_Pet_Adventure = {
       10075,
       10076
     },
-    Baseexp = 138876.444444,
+    Baseexp = 138876.444444444,
     Times = 273
   },
   [124] = {
@@ -903,7 +903,7 @@ Table_Pet_Adventure = {
       10072,
       10073
     },
-    Baseexp = 138876.444444,
+    Baseexp = 138876.444444444,
     Times = 273
   },
   [125] = {
@@ -937,7 +937,7 @@ Table_Pet_Adventure = {
       10078,
       10079
     },
-    Baseexp = 138876.444444,
+    Baseexp = 138876.444444444,
     Times = 273
   },
   [126] = {
@@ -972,7 +972,7 @@ Table_Pet_Adventure = {
       10120,
       10121
     },
-    Baseexp = 156191.822222,
+    Baseexp = 156191.822222222,
     Times = 273
   },
   [127] = {
@@ -1006,7 +1006,7 @@ Table_Pet_Adventure = {
       10083,
       10084
     },
-    Baseexp = 156191.822222,
+    Baseexp = 156191.822222222,
     Times = 273
   },
   [128] = {
@@ -1041,7 +1041,7 @@ Table_Pet_Adventure = {
       10087,
       10088
     },
-    Baseexp = 156191.822222,
+    Baseexp = 156191.822222222,
     Times = 273
   },
   [129] = {
@@ -1076,7 +1076,7 @@ Table_Pet_Adventure = {
       10091,
       10092
     },
-    Baseexp = 156191.822222,
+    Baseexp = 156191.822222222,
     Times = 273
   },
   [130] = {
@@ -1111,7 +1111,7 @@ Table_Pet_Adventure = {
       10095,
       10096
     },
-    Baseexp = 156191.822222,
+    Baseexp = 156191.822222222,
     Times = 273
   },
   [131] = {
@@ -1148,7 +1148,7 @@ Table_Pet_Adventure = {
       10130,
       10131
     },
-    Baseexp = 254149.688889,
+    Baseexp = 254149.688888889,
     Times = 273
   },
   [133] = {
@@ -1183,7 +1183,7 @@ Table_Pet_Adventure = {
       10134,
       10135
     },
-    Baseexp = 254149.688889,
+    Baseexp = 254149.688888889,
     Times = 273
   },
   [134] = {
@@ -1218,7 +1218,7 @@ Table_Pet_Adventure = {
       10124,
       10125
     },
-    Baseexp = 67923.555556,
+    Baseexp = 67923.5555555556,
     Times = 273
   },
   [135] = {
@@ -1256,7 +1256,7 @@ Table_Pet_Adventure = {
       10145,
       10146
     },
-    Baseexp = 254149.688889,
+    Baseexp = 254149.688888889,
     Times = 273
   },
   [136] = {
@@ -1293,7 +1293,7 @@ Table_Pet_Adventure = {
       10155,
       10156
     },
-    Baseexp = 628444.444444,
+    Baseexp = 628444.444444444,
     Times = 273
   },
   [137] = {
@@ -1327,7 +1327,7 @@ Table_Pet_Adventure = {
       10154,
       10155
     },
-    Baseexp = 628444.444444,
+    Baseexp = 628444.444444444,
     Times = 273
   },
   [138] = {
@@ -1636,7 +1636,7 @@ Table_Pet_Adventure = {
       5028
     },
     MonsterReward = {56883},
-    Baseexp = 4952.666667,
+    Baseexp = 4952.66666666667,
     Times = 273,
     DailyAdventureCount = 3
   },
@@ -1667,7 +1667,7 @@ Table_Pet_Adventure = {
       5028
     },
     MonsterReward = {56883},
-    Baseexp = 4952.666667,
+    Baseexp = 4952.66666666667,
     Times = 273,
     DailyAdventureCount = 3
   }

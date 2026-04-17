@@ -1670,7 +1670,8 @@ function BlackSmithProxy.GetRefineTicketType(equip)
       end
     end
   end
-  return CommonFun.GetRefineTicketType(equip.equipInfo:IsNextGen(), equip.equipInfo:GetEquipType(), hsDecomposeID)
+  local isNew = equip.equipInfo.equipData.IsNew or 0
+  return CommonFun.GetRefineTicketType(isNew, equip.equipInfo:GetEquipType(), hsDecomposeID)
 end
 
 function BlackSmithProxy.IsTicketCanUseFor(ticket, equip)

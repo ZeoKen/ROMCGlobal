@@ -252,6 +252,18 @@ function FunctionVisitNpc:AccessTarget(target, custom, customType)
         return
       end
     end
+    if ntype == NpcData.NpcDetailedType.HomeMessageBoard then
+      if self:TryCallVisitNpcUserCmd(target.data.id) then
+        local questData = self:CheckNpcQuest(target, target.data.uniqueid)
+        if questData and questData.staticData.Params and questData.staticData.Params.ifAccessFc and not QuestProxy.Instance:IsQuestInNotifyCD(questData.id) then
+          QuestProxy.Instance:notifyQuestState(questData.scope, questData.id)
+        end
+      end
+      FunctionDialogEvent.SetDialogEventEnter("VisitHomeMessageBoard", target, {
+        addconfig = npcData.NpcFunction
+      })
+      return
+    end
     if customType == AccessCustomType.Quest then
       local questData = QuestProxy.Instance:getQuestDataByIdAndType(custom)
       if not questData then
@@ -511,7 +523,7 @@ function FunctionVisitNpc:CheckNpcQuest(target, uniqueid)
       table.insert(triggerlsts, d)
     end
     local autoFinishTag = d.staticData and d.staticData.Params and d.staticData.Params.ifAccessFc
-    if (d.type == QuestDataType.QuestDataType_SMITHY or d.type == "abyss_daily") and autoFinishTag then
+    if (d.type == QuestDataType.QuestDataType_SMITHY or d.type == "abyss_daily" or d.type == "snow_realm_daily") and autoFinishTag then
     else
       table.insert(branchlsts, d)
     end
@@ -540,7 +552,8 @@ local SpecialQuestType = {
   [QuestDataType.QuestDataType_WANTED] = 1,
   [QuestDataType.QuestDataType_VERSION or "version"] = 1,
   [QuestDataType.QuestDataType_SMITHY or "smithy"] = 1,
-  abyss_daily = 1
+  abyss_daily = 1,
+  snow_realm_daily = 1
 }
 
 function FunctionVisitNpc:ExcuteDialogEvent(target, questData)

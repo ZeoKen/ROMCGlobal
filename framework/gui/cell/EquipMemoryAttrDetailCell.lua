@@ -94,7 +94,8 @@ function EquipMemoryAttrDetailCell:SetData(data)
         if waxLevel < 3 then
           local staticId = attrConfig.level and attrConfig.level[3]
           local staticData = staticId and Table_ItemMemoryEffect[staticId]
-          local maxEffect = staticData and staticData.WaxDesc
+          local maxEffectKey = staticData and staticData.WaxDesc or ""
+          local maxEffect = OverSea.LangManager.Instance():GetLangByKey(maxEffectKey) or maxEffectKey
           if maxEffect and maxEffect ~= "" then
             waxDesc = waxDesc .. "\n" .. string.format(ZhString.EquipMemory_WaxProcessMaxEffect, maxEffect)
           end

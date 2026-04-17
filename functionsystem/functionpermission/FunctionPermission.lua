@@ -220,30 +220,36 @@ function FunctionPermission:RequestRWPermissionForA13()
   if p < 33 then
     return self:RequestReadWriteExternalStoragePermission()
   end
-  local permission = "android.permission.READ_MEDIA_IMAGES"
-  if self:GetRawPermissionIsOpen(permission) then
-    return AllowCode
-  else
-    local needShow = self:GetRawPermissionIsNeedShow(permission)
-    local config = self:GetPermissionMsgConfig(permission)
-    local first = self:GetPermissionIsFirst(permission)
-    if needShow or first then
-      MsgManager.AndroidPerissonMsg(config.msgId, function()
-        AndroidPermissionUtil.Instance:RequestPermissions({permission}, requestCode, RequestCallback)
-      end)
-      self:SetPlayerPrefsPermission(permission)
-      config.requestCode = requestCode
-    elseif not needShow and not first then
-      local setingMsgID = config.msgId
-      if config.setingMsgID then
-        setingMsgID = config.setingMsgID
-      end
-      MsgManager.ConfirmMsgByID(setingMsgID, function()
-        ExternalInterfaces.OpenNtfSettingView()
-      end, nil)
+  if BranchMgr.IsChina() then
+    local permission = "android.permission.READ_MEDIA_IMAGES"
+    if self:GetRawPermissionIsOpen(permission) then
+      return AllowCode
     else
-      AndroidPermissionUtil.Instance:RequestPermissions({permission}, requestCode, RequestCallback)
+      do
+        local needShow = self:GetRawPermissionIsNeedShow(permission)
+        local config = self:GetPermissionMsgConfig(permission)
+        local first = self:GetPermissionIsFirst(permission)
+        if needShow or first then
+          MsgManager.AndroidPerissonMsg(config.msgId, function()
+            AndroidPermissionUtil.Instance:RequestPermissions({permission}, requestCode, RequestCallback)
+          end)
+          self:SetPlayerPrefsPermission(permission)
+          config.requestCode = requestCode
+        elseif not needShow and not first then
+          local setingMsgID = config.msgId
+          if config.setingMsgID then
+            setingMsgID = config.setingMsgID
+          end
+          MsgManager.ConfirmMsgByID(setingMsgID, function()
+            ExternalInterfaces.OpenNtfSettingView()
+          end, nil)
+        else
+          AndroidPermissionUtil.Instance:RequestPermissions({permission}, requestCode, RequestCallback)
+        end
+      end
     end
+  else
+    return AllowCode
   end
   return requestCode
 end

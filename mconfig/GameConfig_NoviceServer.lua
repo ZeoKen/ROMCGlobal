@@ -2269,7 +2269,8 @@ GameConfig.Pve = {
     [80] = "装备记忆",
     [79] = "星座徽章",
     [81] = "装备记忆",
-    [82] = "限时活动"
+    [82] = "限时活动",
+    [87] = "雪花装备"
   },
   SweepInvalidMsg = {
     [43] = 43456,
@@ -2606,6 +2607,13 @@ GameConfig.Pve = {
       sortID = 2800,
       typeIcon = "tonghuawangguo",
       detailIcon = "raidbgicon_mvp01",
+      openTime = "2025-07-27 05:00:00"
+    },
+    [47] = {
+      modelTexture = "PveModel_sc_gcfb_001",
+      sortID = 3000,
+      typeIcon = "StarArk",
+      detailIcon = "calendar_statistics_icon_16",
       openTime = "2025-07-27 05:00:00"
     }
   },
@@ -3974,7 +3982,8 @@ GameConfig.ServerMerge = {
     [71] = 1,
     [79] = 1,
     [81] = 1,
-    [82] = 1
+    [82] = 1,
+    [87] = 1
   }
 }
 GameConfig.SkillCommon = {
@@ -8820,6 +8829,10 @@ GameConfig.AdventureCategoryMapType = {
     [6] = 5021,
     [7] = 6021
   },
+  [4023] = {
+    [6] = 5022,
+    [7] = 6022
+  },
   default = {
     [6] = 5100,
     [7] = 6100,
@@ -9534,7 +9547,7 @@ GameConfig.AdventurePropClassify = {
     },
     extraType = "locked",
     group = {},
-    TypeLimit = 1
+    TypeLimit = {1, 2}
   },
   [11] = {
     id = 11,
@@ -9544,7 +9557,7 @@ GameConfig.AdventurePropClassify = {
     },
     extraType = "available",
     group = {},
-    TypeLimit = 1
+    TypeLimit = {1, 2}
   },
   [12] = {
     id = 12,
@@ -9554,7 +9567,7 @@ GameConfig.AdventurePropClassify = {
     },
     extraType = "notsaved",
     group = {},
-    TypeLimit = 1
+    TypeLimit = {1, 2}
   },
   [13] = {
     id = 13,
@@ -9564,7 +9577,7 @@ GameConfig.AdventurePropClassify = {
     },
     extraType = "saved",
     group = {},
-    TypeLimit = 1
+    TypeLimit = {1, 2}
   }
 }
 GameConfig.StateEffect2PropTag = {
@@ -9606,31 +9619,38 @@ GameConfig.Astral = {
       [2] = 7502,
       [3] = 7503,
       [4] = 7504,
-      [5] = 7505
+      [5] = 7505,
+      [6] = 7521
     },
     [2] = {
       [1] = 7506,
       [2] = 7507,
       [3] = 7508,
       [4] = 7509,
-      [5] = 7510
+      [5] = 7510,
+      [6] = 7522
     },
     [3] = {
       [1] = 7511,
       [2] = 7512,
       [3] = 7513,
       [4] = 7514,
-      [5] = 7515
+      [5] = 7515,
+      [6] = 7523
     },
     [4] = {
       [1] = 7516,
       [2] = 7517,
       [3] = 7518,
       [4] = 7519,
-      [5] = 7520
+      [5] = 7520,
+      [6] = 7524
     }
   },
   GroupNum = 4,
+  DifficultyOpenSeason = {
+    [6] = 17
+  },
   DiscountInfos = {
     [3] = 0.8,
     [6] = 0.6,
@@ -13539,6 +13559,9 @@ GameConfig.Equip = {
     },
     [4] = {
       {100, 250000}
+    },
+    [5] = {
+      {100, 3000000}
     }
   },
   HeadWearRefineTransferCost = {
@@ -14064,7 +14087,13 @@ GameConfig.PackageMaterialCheck = {
     8,
     9
   },
-  user_recall = {1}
+  user_recall = {1},
+  snow_levelup = {
+    1,
+    7,
+    8,
+    9
+  }
 }
 GameConfig.PostFilter = {
   [0] = "全部",
@@ -14163,9 +14192,11 @@ GameConfig.PotionStore = {
     [12007] = 1
   },
   sp_potion = {
-    [12117] = 4,
-    [12024] = 3,
-    [12005] = 2,
+    [12117] = 6,
+    [12024] = 5,
+    [12310] = 4,
+    [12005] = 3,
+    [12121] = 2,
     [12006] = 1
   },
   default_per = 60,
@@ -14549,10 +14580,54 @@ GameConfig.EquipMemory = {
     }
   },
   AutoDecomposeValid = {2, 3},
+  ForbidMap = {7001},
   Excess = {
-    LvIndexUnlock = {
-      [1] = 10,
-      [2] = 20
+    EffectLevelUp = {
+      [1] = {
+        MemoryLvLimit = 40,
+        Cost = {
+          [1] = {
+            {52902, 40}
+          },
+          [3] = {
+            {52902, 200}
+          }
+        }
+      }
+    },
+    ForbidEffectIndex = {
+      [4703] = {2, 4},
+      [4753] = {2, 4},
+      [4706] = {
+        2,
+        3,
+        4
+      },
+      [4756] = {
+        2,
+        3,
+        4
+      },
+      [4709] = {
+        2,
+        3,
+        4
+      },
+      [4759] = {
+        2,
+        3,
+        4
+      },
+      [4714] = {
+        2,
+        3,
+        4
+      },
+      [4764] = {
+        2,
+        3,
+        4
+      }
     }
   }
 }
@@ -14896,7 +14971,8 @@ GameConfig.Being = {
 }
 GameConfig.BigMapUIEffect = {
   [149] = "ufx_map_transfer_prf",
-  [154] = "ufx_map_abyss_transfer_prf"
+  [154] = "ufx_map_abyss_transfer_prf",
+  [155] = "ufx_xhzd_transfer_prf"
 }
 GameConfig.BindItem = {
   [140] = 141,
@@ -15492,6 +15568,113 @@ GameConfig.SafeRefineNewEquipCost = {
     [15] = {
       {
         6916,
+        98,
+        78
+      }
+    }
+  },
+  [5] = {
+    [1] = {
+      {
+        8425,
+        0,
+        0
+      }
+    },
+    [2] = {
+      {
+        8425,
+        0,
+        0
+      }
+    },
+    [3] = {
+      {
+        8425,
+        0,
+        0
+      }
+    },
+    [4] = {
+      {
+        8425,
+        0,
+        0
+      }
+    },
+    [5] = {
+      {
+        8425,
+        1,
+        1
+      }
+    },
+    [6] = {
+      {
+        8425,
+        2,
+        2
+      }
+    },
+    [7] = {
+      {
+        8425,
+        3,
+        2
+      }
+    },
+    [8] = {
+      {
+        8425,
+        4,
+        3
+      }
+    },
+    [9] = {
+      {
+        8425,
+        6,
+        5
+      }
+    },
+    [10] = {
+      {
+        8425,
+        10,
+        8
+      }
+    },
+    [11] = {
+      {
+        8425,
+        22,
+        18
+      }
+    },
+    [12] = {
+      {
+        8425,
+        30,
+        24
+      }
+    },
+    [13] = {
+      {
+        8425,
+        45,
+        36
+      }
+    },
+    [14] = {
+      {
+        8425,
+        69,
+        56
+      }
+    },
+    [15] = {
+      {
+        8425,
         98,
         78
       }
@@ -19197,447 +19380,6 @@ GameConfig.CrackRaidReward = {
         24
       },
       battleTime = 1800
-    },
-    [7081] = {
-      groupId = 14,
-      difficulty = 1,
-      recommendLv = 135,
-      rewardA = 74101,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74010,
-      achieveIds = {
-        7,
-        8,
-        9
-      },
-      battleTime = 1800
-    },
-    [7082] = {
-      groupId = 14,
-      difficulty = 2,
-      recommendLv = 135,
-      rewardA = 74111,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74020,
-      achieveIds = {
-        7,
-        8,
-        9
-      },
-      battleTime = 1800
-    },
-    [7083] = {
-      groupId = 14,
-      difficulty = 3,
-      recommendLv = 135,
-      rewardA = 74112,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74030,
-      achieveIds = {
-        7,
-        8,
-        9
-      },
-      battleTime = 1800
-    },
-    [7084] = {
-      groupId = 15,
-      difficulty = 1,
-      recommendLv = 145,
-      rewardA = 74101,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74040,
-      achieveIds = {
-        4,
-        5,
-        6
-      },
-      battleTime = 1800
-    },
-    [7085] = {
-      groupId = 15,
-      difficulty = 2,
-      recommendLv = 145,
-      rewardA = 74121,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74050,
-      achieveIds = {
-        4,
-        5,
-        6
-      },
-      battleTime = 1800
-    },
-    [7086] = {
-      groupId = 15,
-      difficulty = 3,
-      recommendLv = 145,
-      rewardA = 74122,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74060,
-      achieveIds = {
-        4,
-        5,
-        6
-      },
-      battleTime = 1800
-    },
-    [7087] = {
-      groupId = 16,
-      difficulty = 1,
-      recommendLv = 160,
-      rewardA = 74101,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74070,
-      achieveIds = {
-        1,
-        2,
-        3
-      },
-      battleTime = 1800
-    },
-    [7088] = {
-      groupId = 16,
-      difficulty = 2,
-      recommendLv = 160,
-      rewardA = 74131,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74080,
-      achieveIds = {
-        1,
-        2,
-        3
-      },
-      battleTime = 1800
-    },
-    [7089] = {
-      groupId = 16,
-      difficulty = 3,
-      recommendLv = 160,
-      rewardA = 74132,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74090,
-      achieveIds = {
-        1,
-        2,
-        3
-      },
-      battleTime = 1800
-    },
-    [7090] = {
-      groupId = 9,
-      difficulty = 4,
-      recommendLv = 120,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74602,
-      achieveIds = {
-        10,
-        11,
-        12
-      },
-      battleTime = 1800
-    },
-    [7091] = {
-      groupId = 10,
-      difficulty = 4,
-      recommendLv = 120,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74612,
-      achieveIds = {
-        13,
-        14,
-        15
-      },
-      battleTime = 1800
-    },
-    [7092] = {
-      groupId = 11,
-      difficulty = 4,
-      recommendLv = 120,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74622,
-      achieveIds = {
-        16,
-        17,
-        18
-      },
-      battleTime = 1800
-    },
-    [7093] = {
-      groupId = 12,
-      difficulty = 4,
-      recommendLv = 120,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74632,
-      achieveIds = {
-        19,
-        20,
-        21
-      },
-      battleTime = 1800
-    },
-    [7094] = {
-      groupId = 13,
-      difficulty = 4,
-      recommendLv = 120,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74642,
-      achieveIds = {
-        22,
-        23,
-        24
-      },
-      battleTime = 1800
-    },
-    [7130] = {
-      groupId = 23,
-      difficulty = 1,
-      recommendLv = 130,
-      rewardA = 74531,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74865,
-      achieveIds = {
-        31,
-        32,
-        33
-      },
-      battleTime = 1800
-    },
-    [7131] = {
-      groupId = 23,
-      difficulty = 2,
-      recommendLv = 130,
-      rewardA = 74561,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74875,
-      rewardD = 0,
-      achieveIds = {
-        31,
-        32,
-        33
-      },
-      battleTime = 1800
-    },
-    [7132] = {
-      groupId = 23,
-      difficulty = 3,
-      recommendLv = 130,
-      rewardA = 74561,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74885,
-      rewardD = 0,
-      achieveIds = {
-        31,
-        32,
-        33
-      },
-      battleTime = 1800
-    },
-    [7133] = {
-      groupId = 23,
-      difficulty = 4,
-      recommendLv = 130,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74910,
-      achieveIds = {
-        31,
-        32,
-        33
-      },
-      battleTime = 1800
-    },
-    [7095] = {
-      groupId = 14,
-      difficulty = 4,
-      recommendLv = 160,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74662,
-      achieveIds = {
-        7,
-        8,
-        9
-      },
-      battleTime = 1800
-    },
-    [7096] = {
-      groupId = 15,
-      difficulty = 4,
-      recommendLv = 160,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74672,
-      achieveIds = {
-        4,
-        5,
-        6
-      },
-      battleTime = 1800
-    },
-    [7097] = {
-      groupId = 16,
-      difficulty = 4,
-      recommendLv = 160,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74682,
-      achieveIds = {
-        1,
-        2,
-        3
-      },
-      battleTime = 1800
-    },
-    [7098] = {
-      groupId = 17,
-      difficulty = 1,
-      recommendLv = 170,
-      rewardA = 74742,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74710,
-      achieveIds = {
-        25,
-        26,
-        27
-      },
-      battleTime = 1800
-    },
-    [7099] = {
-      groupId = 17,
-      difficulty = 2,
-      recommendLv = 170,
-      rewardA = 74743,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74720,
-      rewardD = 74715,
-      achieveIds = {
-        25,
-        26,
-        27
-      },
-      battleTime = 1800
-    },
-    [7100] = {
-      groupId = 17,
-      difficulty = 3,
-      recommendLv = 170,
-      rewardA = 74744,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74730,
-      rewardD = 74725,
-      achieveIds = {
-        25,
-        26,
-        27
-      },
-      battleTime = 1800
-    },
-    [7101] = {
-      groupId = 17,
-      difficulty = 4,
-      recommendLv = 170,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74843,
-      achieveIds = {
-        25,
-        26,
-        27
-      },
-      battleTime = 1800
-    },
-    [7102] = {
-      groupId = 18,
-      difficulty = 1,
-      recommendLv = 170,
-      rewardA = 74752,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74810,
-      achieveIds = {
-        28,
-        29,
-        30
-      },
-      battleTime = 1800
-    },
-    [7103] = {
-      groupId = 18,
-      difficulty = 2,
-      recommendLv = 170,
-      rewardA = 74753,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74820,
-      rewardD = 74815,
-      achieveIds = {
-        28,
-        29,
-        30
-      },
-      battleTime = 1800
-    },
-    [7104] = {
-      groupId = 18,
-      difficulty = 3,
-      recommendLv = 170,
-      rewardA = 74754,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74830,
-      rewardD = 74825,
-      achieveIds = {
-        28,
-        29,
-        30
-      },
-      battleTime = 1800
-    },
-    [7105] = {
-      groupId = 18,
-      difficulty = 4,
-      recommendLv = 170,
-      rewardA = 0,
-      rewardB = 0,
-      rewardBTimes = 0,
-      rewardC = 74853,
-      achieveIds = {
-        28,
-        29,
-        30
-      },
-      battleTime = 1800
     }
   }
 }
@@ -20248,6 +19990,7 @@ GameConfig.Exchange = {
   EquipPurchaseLimit = 20,
   TakePackageLimit = 500,
   GiveLvLimit = 1,
+  QuickSellInterval = 1500,
   ExchangeLevel = {
     [1] = {
       minlv = 1,
@@ -23178,7 +22921,7 @@ GameConfig.Guild = {
       [80] = 45,
       [90] = 50,
       [100] = 100,
-      [110] = 150
+      [110] = 200
     },
     [1] = {
       [1] = 2,
@@ -23187,7 +22930,7 @@ GameConfig.Guild = {
       [80] = 8,
       [90] = 10,
       [100] = 20,
-      [110] = 30
+      [110] = 40
     },
     [2] = {
       [1] = 2,
@@ -23196,7 +22939,7 @@ GameConfig.Guild = {
       [80] = 8,
       [90] = 10,
       [100] = 20,
-      [110] = 30
+      [110] = 40
     },
     [3] = {
       [1] = 2,
@@ -23205,7 +22948,7 @@ GameConfig.Guild = {
       [80] = 8,
       [90] = 10,
       [100] = 20,
-      [110] = 30
+      [110] = 40
     }
   },
   all_open_guild_create_time = "2022-05-06 05:00:00",
@@ -25917,9 +25660,185 @@ GameConfig.Home = {
     MessageNum_max = 900,
     VisitorLog_max = 300,
     RefreshNum = 50
+  },
+  Recommend = {
+    PageClickCD = 10,
+    CameraOffset = {
+      [3007] = {
+        Normal = {
+          [1] = {
+            pos = {
+              -5,
+              3,
+              -5
+            },
+            rot = {
+              0,
+              60,
+              0
+            }
+          },
+          [2] = {
+            pos = {
+              12,
+              3,
+              -8
+            },
+            rot = {
+              0,
+              -60,
+              0
+            }
+          }
+        },
+        Review = {
+          [1] = {
+            pos = {
+              2.5,
+              30,
+              1
+            },
+            rot = {
+              90,
+              0,
+              0
+            },
+            size = 13
+          }
+        }
+      },
+      [3008] = {
+        Normal = {
+          [1] = {
+            pos = {
+              -5,
+              3,
+              -5
+            },
+            rot = {
+              0,
+              60,
+              0
+            }
+          },
+          [2] = {
+            pos = {
+              12,
+              3,
+              -8
+            },
+            rot = {
+              0,
+              -60,
+              0
+            }
+          }
+        },
+        Review = {
+          [1] = {
+            pos = {
+              2.5,
+              30,
+              1
+            },
+            rot = {
+              90,
+              0,
+              0
+            },
+            size = 13
+          }
+        }
+      },
+      [3011] = {
+        Normal = {
+          [1] = {
+            pos = {
+              16,
+              10,
+              -40
+            },
+            rot = {
+              20,
+              -50,
+              3
+            }
+          }
+        },
+        Review = {
+          [1] = {
+            pos = {
+              -14,
+              30,
+              -20
+            },
+            rot = {
+              90,
+              0,
+              0
+            },
+            size = 17.5
+          }
+        }
+      },
+      [1000467] = {
+        Normal = {
+          [1] = {
+            pos = {
+              10,
+              5,
+              -8
+            },
+            rot = {
+              10,
+              -60,
+              2
+            }
+          },
+          [2] = {
+            pos = {
+              10,
+              5,
+              8
+            },
+            rot = {
+              10,
+              -120,
+              2
+            }
+          }
+        },
+        Review = {
+          [1] = {
+            pos = {
+              0,
+              30,
+              0
+            },
+            rot = {
+              90,
+              90,
+              0
+            },
+            size = 12
+          }
+        }
+      }
+    }
+  },
+  HomeTypeMap = {
+    [1] = {
+      3007,
+      3008,
+      3011
+    },
+    [2] = {1000467}
+  },
+  HomeTypeMenu = {
+    [1] = 9901,
+    [2] = 9896
   }
 }
-GameConfig.BuyFurnitureInManual = {shopType = 3284, shopID = 1}
 GameConfig.HomeRenovationDefaultMat = {
   [10001] = {default = 30020},
   [10002] = {default = 30019},
@@ -27342,6 +27261,34 @@ GameConfig.MultiBoss = {
         3,
         4
       }
+    },
+    [87] = {
+      Levellimit = 110,
+      Diff = {
+        [1] = {
+          name = "初心难度",
+          raidID = 7661
+        },
+        [2] = {
+          name = "勇士难度",
+          raidID = 7662
+        },
+        [3] = {
+          name = "英灵难度",
+          raidID = 7663
+        }
+      },
+      StatisticFilterConfig = {
+        [1] = "造成伤害",
+        [2] = "承受伤害",
+        [3] = "治疗",
+        [4] = "死亡次数"
+      },
+      BossFilterConfig = {
+        [1] = "超级海蝴蝶",
+        [2] = "天鹰座",
+        [3] = "总计"
+      }
     }
   },
   Map = {
@@ -27564,6 +27511,69 @@ GameConfig.MultiBoss = {
             30033031,
             30033051,
             30033054
+          }
+        }
+      }
+    },
+    [7661] = {
+      Stages = {
+        [1] = {
+          bossid = {276530},
+          buffs = {
+            12162,
+            12186,
+            12190,
+            12191
+          }
+        },
+        [2] = {
+          bossid = {276560, 276569},
+          buffs = {
+            12186,
+            12190,
+            12191
+          }
+        }
+      }
+    },
+    [7662] = {
+      Stages = {
+        [1] = {
+          bossid = {276540},
+          buffs = {
+            12162,
+            12186,
+            12190,
+            12191
+          }
+        },
+        [2] = {
+          bossid = {276570, 276579},
+          buffs = {
+            12186,
+            12190,
+            12191
+          }
+        }
+      }
+    },
+    [7663] = {
+      Stages = {
+        [1] = {
+          bossid = {276550},
+          buffs = {
+            12162,
+            12186,
+            12190,
+            12191
+          }
+        },
+        [2] = {
+          bossid = {276580, 276589},
+          buffs = {
+            12186,
+            12190,
+            12191
           }
         }
       }
@@ -28207,6 +28217,26 @@ GameConfig.PropTabConfig = {
     name = "体型-伤害减免",
     desc = "受到对应体型目标的攻击时，降低造成的伤害",
     id = 13
+  },
+  [14] = {
+    name = "属性-透击",
+    desc = "攻击目标时，无视目标的属性伤害减免",
+    id = 14
+  },
+  [15] = {
+    name = "属性-抗性",
+    desc = "受到属性伤害时，抵消攻击方的属性攻击",
+    id = 15
+  },
+  [16] = {
+    name = "种族-透击",
+    desc = "对带有种族标签的目标攻击时，无视目标的种族伤害减免",
+    id = 16
+  },
+  [17] = {
+    name = "种族-抗性",
+    desc = "受到带有种族标签的目标攻击时，抵消攻击方的种族加伤",
+    id = 17
   }
 }
 GameConfig.CreateRole = {
@@ -29438,7 +29468,8 @@ GameConfig.TrapNpcID = {
   806612,
   811013,
   806613,
-  806614
+  806614,
+  1437
 }
 GameConfig.MonsterBodyDisappear = {
   Monster = 3000,
@@ -31899,17 +31930,19 @@ GameConfig.Prestige = {
   }
 }
 GameConfig.PreviewSaleRole = {
-  icon = "tab_icon_165",
-  name = "深渊的呼唤",
+  icon = "DispatchArea_11",
+  name = "雪花之地",
   [6] = {
-    HeroName = {"无名者"},
+    HeroName = {
+      "拉斯甘德"
+    },
     NamePos = {
       {-10, -30}
     },
-    RoleBg = "malibefore_bg_06",
-    Title = "深渊中的潮汐",
+    RoleBg = "malibefore_bg_07",
+    Title = "雪花的呼唤",
     TitlePos = {452, -179},
-    Desc = "命运之歌在深渊回响，乱流之力在湖面低语。\n完成主线任务，探寻时间的真相。",
+    Desc = "大雪落下之地，冰封的意识在苏醒。\n完成主线任务，赴一场初雪的约定。",
     DescPos = {345, -280}
   }
 }
@@ -31939,7 +31972,8 @@ GameConfig.Profession = {
     10,
     37,
     41,
-    66
+    66,
+    86
   },
   forbidChangeEquipRaidType = {},
   show_shield_typeBranches = {11, 12},
@@ -32994,6 +33028,10 @@ GameConfig.Quest = {
     [9] = {
       map = {154},
       Title = "深渊之湖任务"
+    },
+    [10] = {
+      map = {155},
+      Title = "伊斯加尔特任务"
     }
   },
   QuestSort = {
@@ -33162,6 +33200,54 @@ GameConfig.Quest = {
       [4] = "赤鳞团",
       [5] = "暗爪营",
       [6] = "鸢尾团"
+    }
+  },
+  SnowRealm = {
+    [1] = {
+      MaxQuestCount = 6,
+      MaxHelpCount = 6,
+      MenuId = 19392,
+      ArtifactLvToUnlockCount = {
+        [1] = 2,
+        [3] = 3,
+        [5] = 4,
+        [7] = 5,
+        [11] = 6
+      },
+      AreaName = "白鹰族",
+      FriendHelpMsgId = 43668
+    },
+    [2] = {
+      MaxQuestCount = 8,
+      MaxHelpCount = 6,
+      MenuId = 19393,
+      ArtifactLvToUnlockCount = {
+        [10] = 2,
+        [11] = 3,
+        [12] = 4,
+        [14] = 5,
+        [16] = 6,
+        [18] = 7,
+        [20] = 8
+      },
+      AreaName = "白鹰族",
+      FriendHelpMsgId = 43669
+    },
+    [3] = {
+      MaxQuestCount = 8,
+      MaxHelpCount = 6,
+      MenuId = 19394,
+      ArtifactLvToUnlockCount = {
+        [20] = 2,
+        [21] = 3,
+        [22] = 4,
+        [24] = 5,
+        [26] = 6,
+        [28] = 7,
+        [30] = 8
+      },
+      AreaName = "白鹰族",
+      FriendHelpMsgId = 43670
     }
   }
 }
@@ -34813,7 +34899,11 @@ GameConfig.SafeRefineNewConfig = {
     [1] = 6830,
     [2] = 6886,
     [3] = 6896,
-    [4] = 6916
+    [4] = 6916,
+    [5] = 8425
+  },
+  snow_equip_cost = {
+    [5] = 8425
   },
   novice_refine_material_value = {
     [0] = 0,
@@ -37324,6 +37414,14 @@ GameConfig.Shop = {
         }
       }
     }
+  },
+  ManualCheck = {
+    Furniture = {
+      [3284] = {1},
+      [12028] = {1},
+      [12029] = {1},
+      [12030] = {1}
+    }
   }
 }
 GameConfig.FurnitureShopMoney = {151, 5665}
@@ -38354,6 +38452,10 @@ GameConfig.SkillType = {
     type = "SummonCompanion",
     name = "主动技能"
   },
+  MechanicSummonHandcart = {
+    type = "MechanicSummonHandcart",
+    name = "主动技能"
+  },
   GvgPointIllusion = {
     type = "GvgPointIllusion",
     name = "主动技能"
@@ -38368,6 +38470,10 @@ GameConfig.SkillType = {
   },
   GvgPointForbidTransfer = {
     type = "GvgPointForbidTransfer",
+    name = "主动技能"
+  },
+  TrapCanMove = {
+    type = "TrapCanMove",
     name = "主动技能"
   }
 }
@@ -39222,6 +39328,305 @@ GameConfig.SkillView_SkillCell_GuideId = {
   [447] = 1802001,
   [448] = 1700001
 }
+GameConfig.Snow = {
+  FashionItemId = 45563,
+  BatchInfo = {
+    [1] = {
+      level_limit = 15,
+      name = "雪花之冠·初雪"
+    },
+    [2] = {
+      level_limit = 30,
+      name = "雪花之冠·深寒"
+    },
+    [3] = {
+      level_limit = 45,
+      name = "雪花之冠·永寂"
+    }
+  },
+  LevelUpCost = {
+    [2] = {
+      {12907, 750}
+    },
+    [3] = {
+      {12907, 1250}
+    },
+    [4] = {
+      {12907, 2500}
+    },
+    [5] = {
+      {12907, 3000}
+    },
+    [6] = {
+      {12907, 3500}
+    },
+    [7] = {
+      {12907, 4000}
+    },
+    [8] = {
+      {12907, 4000}
+    },
+    [9] = {
+      {12907, 4500}
+    },
+    [10] = {
+      {12907, 4500}
+    },
+    [11] = {
+      {12907, 5500}
+    },
+    [12] = {
+      {12907, 6000}
+    },
+    [13] = {
+      {12907, 6500}
+    },
+    [14] = {
+      {12907, 7000}
+    },
+    [15] = {
+      {12907, 8000}
+    },
+    [16] = {
+      {12907, 150}
+    },
+    [17] = {
+      {12907, 160}
+    },
+    [18] = {
+      {12907, 170}
+    },
+    [19] = {
+      {12907, 180}
+    },
+    [20] = {
+      {12907, 190}
+    },
+    [21] = {
+      {12907, 200}
+    },
+    [22] = {
+      {12907, 210}
+    },
+    [23] = {
+      {12907, 220}
+    },
+    [24] = {
+      {12907, 230}
+    },
+    [25] = {
+      {12907, 240}
+    },
+    [26] = {
+      {12907, 250}
+    },
+    [27] = {
+      {12907, 260}
+    },
+    [28] = {
+      {12907, 270}
+    },
+    [29] = {
+      {12907, 280}
+    },
+    [30] = {
+      {12907, 290}
+    },
+    [31] = {
+      {12907, 300}
+    },
+    [32] = {
+      {12907, 310}
+    },
+    [33] = {
+      {12907, 320}
+    },
+    [34] = {
+      {12907, 330}
+    },
+    [35] = {
+      {12907, 340}
+    },
+    [36] = {
+      {12907, 350}
+    },
+    [37] = {
+      {12907, 360}
+    },
+    [38] = {
+      {12907, 370}
+    },
+    [39] = {
+      {12907, 380}
+    },
+    [40] = {
+      {12907, 390}
+    },
+    [41] = {
+      {12907, 400}
+    },
+    [42] = {
+      {12907, 410}
+    },
+    [43] = {
+      {12907, 420}
+    },
+    [44] = {
+      {12907, 430}
+    },
+    [45] = {
+      {12907, 440}
+    }
+  },
+  Fashion = {
+    [1] = {
+      [1] = 45563,
+      [2] = 45711,
+      [3] = 45713
+    },
+    [2] = {
+      [1] = 45710,
+      [2] = 45712,
+      [3] = 45714
+    },
+    [3] = {
+      [1] = 45715,
+      [2] = 45717,
+      [3] = 45719
+    },
+    [4] = {
+      [1] = 45716,
+      [2] = 45718,
+      [3] = 45720
+    },
+    [5] = {
+      [1] = 45721,
+      [2] = 45723,
+      [3] = 45725
+    },
+    [6] = {
+      [1] = 45722,
+      [2] = 45724,
+      [3] = 45726
+    }
+  },
+  FashionEffect = {
+    [1] = "Common/sfx_snowlandcrown_001_prf",
+    [2] = "Common/sfx_snowlandcrown_004_prf",
+    [3] = "Common/sfx_snowlandcrown_002_prf",
+    [4] = "Common/sfx_snowlandcrown_005_prf",
+    [5] = "Common/sfx_snowlandcrown_003_prf",
+    [6] = "Common/sfx_snowlandcrown_006_prf"
+  },
+  StoneToMaterial = {
+    [2] = {
+      {100, 10000}
+    },
+    [3] = {
+      {100, 100000}
+    }
+  },
+  StoneAdvanceCount = {
+    [1] = 1,
+    [2] = 2,
+    [3] = 3,
+    [4] = 4,
+    [5] = 5
+  }
+}
+GameConfig.SnowRealm = {
+  HouseRaid = {
+    BpPointRange = {
+      21,
+      22,
+      23,
+      24
+    },
+    MaxUser = 100,
+    RaidID = 1000467,
+    RaidBpPointRange = {
+      21,
+      22,
+      23,
+      24
+    }
+  },
+  MaxHouseCount = 6,
+  MaxVisitCount = 94,
+  MapDatas = {
+    [1000467] = {
+      Name = "冰羽之家",
+      Area = 1,
+      DefaultFurnitureRotate = 0
+    }
+  },
+  CameraStartPosOffset = {
+    [1000467] = {
+      0,
+      20,
+      -20
+    }
+  },
+  CameraStartRotate = {
+    [1000467] = {
+      45,
+      0,
+      0
+    }
+  },
+  CameraStartFov = {
+    [1000467] = 20
+  },
+  CameraMinFov = 18,
+  CameraMaxFov = 35,
+  CameraMinPosOffset = {
+    [1000467] = {-7, -10}
+  },
+  CameraMaxPosOffset = {
+    [1000467] = {7, 10}
+  },
+  home_safe_point = {
+    [1000467] = {
+      default_safe_pos_offset = {
+        0,
+        0,
+        0
+      }
+    }
+  },
+  SceneEffect = {
+    BpPoint = 25,
+    RaidBp = 25,
+    Effect = "sfx_xhxz_range_prf"
+  },
+  MessageBoardEffect = "sfx_xhxz_house_range_prf",
+  MapSymbols = {
+    myself = "map_icon_home01",
+    other = "map_icon_home02"
+  },
+  SnowmanProgressEffect = {
+    Name = "sfx_snowman_xuehua_prf",
+    LoopTime = 1
+  },
+  DailyQuestRewardBonus = {
+    [1608004] = 2000,
+    [1608005] = 3000
+  }
+}
+GameConfig.ExtraHomeFunctions = {
+  [0] = {
+    name = "冒险家园"
+  },
+  [1] = {
+    name = "冰羽之家",
+    mode = 1
+  }
+}
+GameConfig.FashionEquip = {
+  EquipPosToFashionPos = {
+    [16] = 8
+  }
+}
 GameConfig.SpaceTimeIllusion = {
   Affix = {
     AllMonsterAffix = 9,
@@ -39413,7 +39818,7 @@ GameConfig.SpaceTimeIllusion = {
         }
       }
     },
-    MaxLevel = 40,
+    MaxExcess = {Index = 1, Count = 1},
     RandomPos = {
       1,
       2,
@@ -42712,6 +43117,13 @@ GameConfig.Transmitter = {
     TransmitterType = "传送点",
     IconSmall = "map_icon_chuansong",
     IconBig = "map_icon_chuansong"
+  },
+  [23] = {
+    MainTransmitter = "雪花之地传送器1",
+    SubTransmitter = "功能建筑",
+    TransmitterType = "传送点",
+    IconSmall = "map_icon_chuansong",
+    IconBig = "map_icon_chuansong"
   }
 }
 GameConfig.Tutor = {
@@ -44339,7 +44751,9 @@ GameConfig.UseItemLimitMap = {
     142,
     143
   },
-  [500501] = {154}
+  [500501] = {154},
+  [5024] = {1000467, 155},
+  [50003] = {1000467, 155}
 }
 GameConfig.UseSkillLimitMap = {
   [483] = {
@@ -51953,6 +52367,33 @@ GameConfig.TeamSeasonTime = {
         Mail = 50024
       }
     },
+    [5] = {
+      {
+        beginRank = 1,
+        endRank = 1,
+        Mail = 50025
+      },
+      {
+        beginRank = 2,
+        endRank = 2,
+        Mail = 50026
+      },
+      {
+        beginRank = 3,
+        endRank = 8,
+        Mail = 50027
+      },
+      {
+        beginRank = 9,
+        endRank = 16,
+        Mail = 50028
+      },
+      {
+        beginRank = 17,
+        endRank = 32,
+        Mail = 50029
+      }
+    },
     [15] = {
       {
         beginRank = 1,
@@ -55016,6 +55457,28 @@ GameConfig.PaySign = {
     entryBgTexture = "recall_bg_bottom",
     isfree = 1,
     ShopInfo = {DepositID = 400025}
+  },
+  [12014] = {
+    activityIcon = "tab_icon_122",
+    activityName = "雪花宝库",
+    noviceMode = false,
+    entryDesc1 = "雪花宝库",
+    entryDesc2 = "",
+    entryDesc3 = "累积登录领好礼",
+    entryBgTexture = "recall_bg_bottom",
+    isfree = 1,
+    ShopInfo = {DepositID = 400032}
+  },
+  [12015] = {
+    activityIcon = "tab_icon_122",
+    activityName = "星河宝库",
+    noviceMode = false,
+    entryDesc1 = "星河宝库",
+    entryDesc2 = "",
+    entryDesc3 = "累积登录领好礼",
+    entryBgTexture = "recall_bg_bottom",
+    isfree = 1,
+    ShopInfo = {DepositID = 400033}
   }
 }
 GameConfig.Doll = {
@@ -59339,7 +59802,7 @@ GameConfig.ReturnBattlePass = {
 }
 GameConfig.AccumDeposit = {
   ActivityIcon = "tab_icon_dicheng_1",
-  ActivityName = "异界馈赠",
+  ActivityName = "雪花馈赠",
   EndMail = 12402
 }
 GameConfig.PhotoBoard = {

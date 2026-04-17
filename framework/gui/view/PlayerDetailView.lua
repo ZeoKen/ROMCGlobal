@@ -787,16 +787,23 @@ function PlayerDetailView:SetExtraData(extractions)
   if not extractions then
     return
   end
-  local gridid
+  local tempExtractionData = ExtractionData.new(0)
   for i = 1, #extractions do
-    gridid = extractions[i].gridid
-    if gridid then
-      local extractionData = self.playerExtractionDatas[gridid]
+    tempExtractionData:Update(extractions[i])
+    local attrType = tempExtractionData:GetAttrType()
+    local equipPos
+    if attrType == 1 then
+      equipPos = _Extra_Off
+    elseif attrType == 2 then
+      equipPos = _Extra_Def
+    end
+    if equipPos then
+      local extractionData = self.playerExtractionDatas[equipPos]
       if extractionData then
         extractionData:Update(extractions[i])
         local data = ExtractionItemData.new("PlayerExtractionItemData_" .. extractionData.gridid, extractionData.itemid)
-        data:ParseFromExtractionData(extData)
-        self.playerExtractionItemDatas[gridid] = data
+        data:ParseFromExtractionData(extractionData)
+        self.playerExtractionItemDatas[equipPos] = data
       end
     end
   end
@@ -840,10 +847,11 @@ function PlayerDetailView:GetTotalEquipMemoryLevels()
   for _pos, _itemData in pairs(self.playerEquipMemoryDatas) do
     local _memoryData = _itemData.equipMemoryData
     local _attrs = _memoryData and _memoryData.memoryAttrs or {}
-    local stage = _memoryData and _memoryData.excess_lv or 0
     for i = 1, #_attrs do
-      local attrid = _attrs[i].id
+      local attrData = _attrs[i]
+      local attrid = attrData and attrData.id
       if attrid and attrid ~= 0 then
+        local stage = attrData.excess_level or 0
         if not memoryLevels[attrid] then
           memoryLevels[attrid] = {}
         end

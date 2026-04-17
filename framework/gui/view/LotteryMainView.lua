@@ -342,6 +342,7 @@ function LotteryMainView:FindObjs()
   self.colliderMaskObj:SetActive(false)
   self.helpBtn = self:FindGO("LotteryHelpButton")
   self.bgTexture = self:FindComponent("BgTexture", UITexture)
+  self.cardBgMask = self:FindGO("Mask", self.bgTexture.gameObject)
   self.successEffectContainer = self:FindGO("SuccessEffectContainer")
   self.lotteryInfoRoot = self:FindGO("LotteryInfoRoot")
   self.skipBtn = self:FindComponent("SkipBtn", UISprite, self.lotteryInfoRoot)
@@ -760,6 +761,9 @@ function LotteryMainView:UpdateInfo()
   self.lotteryName.text = self.activityData.name
   self.lotteryTextureName = self.activityData.texture
   local cur_lotteryType = self.activityData.lotteryType
+  if self.cardBgMask then
+    self.cardBgMask:SetActive(LotteryProxy.IsCardLottery(cur_lotteryType))
+  end
   self:UpdateNewTip(cur_lotteryType, self.currentLotteryNew)
   self:UpdateFreeRedTip()
   self:loadLotteryTexture()

@@ -68,7 +68,7 @@ function AI_Base:_InitIdleAI(idleAIManager)
 end
 
 function AI_Base:_Idle(time, deltaTime, creature)
-  if nil ~= self.parent and not self.forceUpdate then
+  if nil ~= self.parent and not self.forceUpdate and not creature:IsOnHandcart() then
     return false
   end
   local creatureData = creature.data

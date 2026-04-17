@@ -476,6 +476,11 @@ function EquipQuenchView:GetValidEquips()
     if l_isPreviewItem ~= r_isPreviewItem then
       return l_isPreviewItem > r_isPreviewItem
     end
+    local l_equiped = l.equiped or 0
+    local r_equiped = r.equiped or 0
+    if l_equiped ~= r_equiped then
+      return l_equiped > r_equiped
+    end
     local l_QuenchPer = l:GetQuenchPer() or 0
     local r_QuenchPer = r:GetQuenchPer() or 0
     if l_QuenchPer ~= r_QuenchPer then

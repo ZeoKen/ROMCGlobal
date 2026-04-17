@@ -2724,6 +2724,61 @@ Table_Viewspot_t = {
       282.93,
       192.82,
       -366.29
+    },
+    {
+      -36.33,
+      10.57,
+      -466.83
+    },
+    {
+      -30.72,
+      5.88,
+      -235.45
+    },
+    {
+      288.01,
+      2.22,
+      -234.3
+    },
+    {
+      348.18,
+      3.85,
+      -186.11
+    },
+    {
+      357.06,
+      16.76,
+      -34.29
+    },
+    {
+      481.07,
+      15.11,
+      -71.79
+    },
+    {
+      -56.93,
+      16.0,
+      -455.95
+    },
+    {
+      110.31,
+      6.75,
+      -268.8
+    },
+    {
+      154.86,
+      6.47,
+      -282.84
+    },
+    {
+      430.05,
+      17.82,
+      -146.02
+    },
+    {
+      580.87,
+      26.13,
+      -35.67
     }
   }
 }
@@ -3122,6 +3177,7 @@ Table_Viewspot = {
   [45] = {
     id = 45,
     MapName = 15,
+    SpotName = "遗迹·虫王的陵寝",
     Type = 2,
     Coordinate = Table_Viewspot_t.Coordinate[45],
     AdventureSort = 47,
@@ -6963,7 +7019,6 @@ Table_Viewspot = {
   [512] = {
     id = 512,
     MapNum = 33,
-    SpotName = "旧城塔",
     Coordinate = Table_Viewspot_t.Coordinate[506],
     AdventureSort = 512
   },
@@ -7269,6 +7324,165 @@ Table_Viewspot = {
     SpotName = "黄金树",
     Coordinate = Table_Viewspot_t.Coordinate[545],
     AdventureSort = 551
+  },
+  [552] = {
+    id = 552,
+    MapName = 155,
+    SpotName = "初雪之地",
+    Coordinate = Table_Viewspot_t.Coordinate[546],
+    AdventureSort = 552
+  },
+  [553] = {
+    id = 553,
+    MapName = 155,
+    MapNum = 2,
+    SpotName = "雪霜银堡",
+    Coordinate = Table_Viewspot_t.Coordinate[547],
+    AdventureSort = 553
+  },
+  [554] = {
+    id = 554,
+    MapName = 155,
+    MapNum = 3,
+    SpotName = "蛇族的温床",
+    Coordinate = Table_Viewspot_t.Coordinate[548],
+    AdventureSort = 554
+  },
+  [555] = {
+    id = 555,
+    MapName = 155,
+    MapNum = 4,
+    SpotName = "雪镜月湖",
+    Coordinate = Table_Viewspot_t.Coordinate[549],
+    AdventureSort = 555
+  },
+  [556] = {
+    id = 556,
+    MapName = 155,
+    MapNum = 5,
+    SpotName = "雪落圣坛",
+    Coordinate = Table_Viewspot_t.Coordinate[550],
+    AdventureSort = 556
+  },
+  [557] = {
+    id = 557,
+    MapName = 155,
+    MapNum = 6,
+    SpotName = "雪崩边界",
+    Coordinate = Table_Viewspot_t.Coordinate[551],
+    AdventureSort = 557
+  },
+  [558] = {
+    id = 558,
+    MapName = 155,
+    MapNum = 7,
+    SpotName = "黄金树·伊斯加尔特",
+    Coordinate = Table_Viewspot_t.Coordinate[552],
+    AdventureSort = 558
+  },
+  [559] = {
+    id = 559,
+    MapName = 155,
+    MapNum = 8,
+    SpotName = "雪鹰广场",
+    Coordinate = Table_Viewspot_t.Coordinate[553],
+    AdventureSort = 559
+  },
+  [560] = {
+    id = 560,
+    MapName = 155,
+    MapNum = 9,
+    SpotName = "雪语之墙",
+    Coordinate = Table_Viewspot_t.Coordinate[554],
+    AdventureSort = 560
+  },
+  [561] = {
+    id = 561,
+    MapName = 155,
+    MapNum = 10,
+    SpotName = "雪地花海",
+    Coordinate = Table_Viewspot_t.Coordinate[555],
+    AdventureSort = 561
+  },
+  [562] = {
+    id = 562,
+    MapName = 155,
+    MapNum = 11,
+    SpotName = "旋转木马",
+    Coordinate = Table_Viewspot_t.Coordinate[556],
+    AdventureSort = 562
+  },
+  [563] = {
+    id = 563,
+    MapName = 155,
+    MapNum = 12,
+    SpotName = "迎新雪人",
+    Type = 6,
+    AdventureSort = 563,
+    AdventureValue = 1
+  },
+  [564] = {
+    id = 564,
+    MapName = 155,
+    MapNum = 13,
+    SpotName = "仰鹰雪人",
+    Type = 6,
+    AdventureSort = 564,
+    AdventureValue = 1
+  },
+  [565] = {
+    id = 565,
+    MapName = 155,
+    MapNum = 14,
+    SpotName = "守炉雪人",
+    Type = 6,
+    AdventureSort = 565,
+    AdventureValue = 1
+  },
+  [566] = {
+    id = 566,
+    MapName = 155,
+    MapNum = 15,
+    SpotName = "听风雪人",
+    Type = 6,
+    AdventureSort = 566,
+    AdventureValue = 1
+  },
+  [567] = {
+    id = 567,
+    MapName = 155,
+    MapNum = 16,
+    SpotName = "照影雪人",
+    Type = 6,
+    AdventureSort = 567,
+    AdventureValue = 1
+  },
+  [568] = {
+    id = 568,
+    MapName = 155,
+    MapNum = 17,
+    SpotName = "簪花雪人",
+    Type = 6,
+    AdventureSort = 568,
+    AdventureValue = 1
+  },
+  [569] = {
+    id = 569,
+    MapName = 155,
+    MapNum = 18,
+    SpotName = "止界雪人",
+    Type = 6,
+    AdventureSort = 569,
+    AdventureValue = 1
+  },
+  [570] = {
+    id = 570,
+    MapName = 155,
+    MapNum = 19,
+    SpotName = "祈誓雪人",
+    Type = 6,
+    AdventureSort = 570,
+    AdventureValue = 1
   }
 }
 local cell_mt = {
@@ -7280,7 +7494,7 @@ local cell_mt = {
     Coordinate = _EmptyTable,
     MapName = 149,
     MapNum = 1,
-    SpotName = "遗迹·虫王的陵寝",
+    SpotName = "旧城塔",
     Type = 1,
     id = 1
   }

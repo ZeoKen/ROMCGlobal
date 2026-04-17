@@ -3966,6 +3966,136 @@ Table_GuideID = {
     ButtonID = 551,
     press = 1
   },
+  [552] = {
+    id = 552,
+    Explain = "童话王国护送（点击查看玩法）",
+    ButtonID = 552,
+    press = 1
+  },
+  [553] = {
+    id = 553,
+    Explain = "点击雪花之钻蓝钻",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 553,
+    press = 1
+  },
+  [554] = {
+    id = 554,
+    Explain = "点击物理模式",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 554,
+    press = 1
+  },
+  [555] = {
+    id = 555,
+    Explain = "点击升级按钮",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 555,
+    press = 1
+  },
+  [556] = {
+    id = 556,
+    Explain = "点击属性解锁",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 556,
+    press = 1
+  },
+  [557] = {
+    id = 557,
+    Explain = "点击外观定制",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 557,
+    press = 1
+  },
+  [558] = {
+    id = 558,
+    Explain = "点击区域属性",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 558,
+    press = 1
+  },
+  [559] = {
+    id = 559,
+    Explain = "点击红宝石",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 559,
+    press = 1
+  },
+  [560] = {
+    id = 560,
+    Explain = "点击关闭按钮",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 560,
+    press = 1
+  },
+  [561] = {
+    id = 561,
+    Explain = "选择攻击模式",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 561,
+    press = 1
+  },
+  [562] = {
+    id = 562,
+    Explain = "选择属性",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 562,
+    press = 1
+  },
+  [563] = {
+    id = 563,
+    Explain = "点击雪花之冠",
+    uiID = "PackageView",
+    ButtonID = 563,
+    press = 1
+  },
+  [564] = {
+    id = 564,
+    Explain = "点击培养",
+    uiID = "PackageView",
+    ButtonID = 564,
+    press = 1
+  },
+  [565] = {
+    id = 565,
+    Explain = "点击雪花祝福外观",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 565,
+    press = 1
+  },
+  [566] = {
+    id = 566,
+    Explain = "点击激活属性",
+    uiID = "SnowCrownContainerView",
+    ButtonID = 566,
+    press = 1
+  },
+  [567] = {
+    id = 567,
+    Explain = "选择模式",
+    uiID = "SnowModePopup",
+    ButtonID = 567,
+    press = 1
+  },
+  [568] = {
+    id = 568,
+    Explain = "点击确认",
+    uiID = "SnowModePopup",
+    ButtonID = 568,
+    press = 1
+  },
+  [569] = {
+    id = 569,
+    Explain = "雪花之冠升级引导（点击查看雪花之冠）",
+    ButtonID = 569,
+    press = 1
+  },
+  [570] = {
+    id = 570,
+    Explain = "点击融雪小镇家园建造",
+    ButtonID = 570,
+    press = 1
+  },
   [1001] = {
     id = 1001,
     Explain = "强化功能引导（点击进入包包）",

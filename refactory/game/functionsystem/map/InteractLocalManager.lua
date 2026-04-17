@@ -124,6 +124,7 @@ function InteractLocalManager:ClearTrigger()
 end
 
 function InteractLocalManager:RegisterInteractNpc(staticid, id)
+  redlog("InteractLocalManager:RegisterInteractNpc staticid id", staticid, id)
   local data = Table_InteractNpc[staticid]
   if data == nil then
     return
@@ -148,7 +149,7 @@ function InteractLocalManager:_Register(data, id)
   if not interactGroup then
     return
   end
-  if interactGroup.config.type == "placeto" then
+  if interactGroup.config.type == "placeto" or interactGroup.config.type == "placeto_snowman" then
     interactNpc = InteractLocalHug.Create(data, id)
   else
     interactNpc = InteractLocalSimple.Create(data, id)
@@ -237,6 +238,7 @@ function InteractLocalManager:TryStartInteract(id)
 end
 
 function InteractLocalManager:EndInteract()
+  redlog("InteractLocalManager:EndInteract isMyselfDuringInteract=" .. tostring(self:IsMyselfDuringInteract()), "myselfDuringInteractGuid=" .. tostring(self.myselfDuringInteractGuid))
   if self:IsMyselfDuringInteract() then
     local interactNpc = self.interactNpcMap[self.myselfDuringInteractGuid]
     local groupInteractEnd = true
@@ -455,6 +457,7 @@ function InteractLocalManager:DestroyInteractGroup(id, keepOnSuccess)
 end
 
 function InteractLocalManager:ActivateInteractGroup(id)
+  redlog("InteractLocalManager:ActivateInteractGroup", id)
   local interactGroup = self.interactGroupMap[id]
   if interactGroup ~= nil then
     interactGroup:Activate()
@@ -551,6 +554,7 @@ end
 
 function InteractLocalGroup:_CreateCreature(uid, nid, pos, dir, npc_uid)
   local creature = NSceneNpcProxy.Instance:Find(uid)
+  redlog("InteractLocalGroup:_CreateCreature uid nid npc_uid", uid, nid, npc_uid)
   if not creature then
     local data = {}
     data.ID = nid
@@ -608,6 +612,7 @@ function InteractLocalGroup:_CreateCreature(uid, nid, pos, dir, npc_uid)
 end
 
 function InteractLocalGroup:_RemoveCreature(uid)
+  redlog("InteractLocalGroup:_RemoveCreature uid", uid)
   NSceneNpcProxy.Instance:Remove(uid)
 end
 
@@ -655,6 +660,7 @@ function InteractLocalGroup:StartInteract(id)
 end
 
 function InteractLocalGroup:EndInteract(id)
+  redlog("InteractLocalGroup:EndInteract id", id)
   self.inInteract = false
   return not self:FinalCheck(id)
 end
@@ -755,6 +761,8 @@ function InteractLocalGroup.Create(config)
     return InteractLocalGroup_PlaceTo.new()
   elseif config.type == "serversimple" then
     return InteractLocalGroup_ServerSimple.new()
+  elseif config.type == "placeto_snowman" then
+    return InteractLocalGroup_PlaceTo_Snowman.new()
   end
 end
 
@@ -1053,4 +1061,133 @@ end
 
 function InteractLocalGroup_PlaceTo:ResetCheck()
   self.record_slot = nil
+end
+
+InteractLocalGroup_PlaceTo_Snowman = class("InteractLocalGroup_PlaceTo_Snowman", InteractLocalGroup_PlaceTo)
+
+function InteractLocalGroup_PlaceTo_Snowman:Activate()
+  redlog("InteractLocalGroup_PlaceTo_Snowman:Activate", self.uid)
+  if self.isActive then
+    return
+  end
+  self.isActive = true
+  if next(self.interactNpcInGroup) then
+    return
+  end
+  if not self.initialPosMap then
+    self.initialPosMap = {}
+  end
+  TableUtility.TableClear(self.initialPosMap)
+  local member, uid, pos, npc_uid
+  local randomNum = self.config.random_num
+  local memberCount = #self.config.members
+  local indexOrder
+  if randomNum and 0 < randomNum and randomNum < memberCount then
+    indexOrder = {}
+    for i = 1, memberCount do
+      indexOrder[i] = i
+    end
+    for i = memberCount, 2, -1 do
+      local j = math.random(i)
+      indexOrder[i], indexOrder[j] = indexOrder[j], indexOrder[i]
+    end
+    memberCount = randomNum
+  end
+  for idx = 1, memberCount do
+    local i = indexOrder and indexOrder[idx] or idx
+    member = self.config.members[i]
+    uid = self.uid * 100 + i
+    pos = self.config.pos[i]
+    npc_uid = self.config.member_uids and self.config.member_uids[i]
+    local interactNpc = self.interactNpcInGroup[uid]
+    if not interactNpc then
+      self:_CreateCreature(uid, member, pos, pos[4], npc_uid)
+      local posX, posY, posZ = 0, 0, 0
+      if pos then
+        posX = pos.x or pos[1] or posX
+        posY = pos.y or pos[2] or posY
+        posZ = pos.z or pos[3] or posZ
+      end
+      self.initialPosMap[uid] = {
+        posX,
+        posY,
+        posZ
+      }
+      interactNpc = self.interactNpcInGroup[uid]
+      if interactNpc then
+        interactNpc:CreateEffect(self.config.member_effect)
+      end
+    end
+  end
+end
+
+function InteractLocalGroup_PlaceTo_Snowman:GetInitialPos(id)
+  if id and self.initialPosMap then
+    local pos = self.initialPosMap[id]
+    if pos then
+      return pos
+    end
+  end
+  return InteractLocalGroup_PlaceTo_Snowman.super.GetInitialPos(self)
+end
+
+function InteractLocalGroup_PlaceTo_Snowman:Deactivate(keepOnSuccess, isDestroy)
+  self.isActive = false
+  for uid, interactLocal in pairs(self.interactNpcInGroup) do
+    if isDestroy then
+      self:RemoveCreature(uid)
+    elseif interactLocal.RequestGetOffAll then
+      interactLocal:RequestGetOffAll()
+    end
+  end
+  self:ResetCheck()
+end
+
+function InteractLocalGroup_PlaceTo_Snowman:Check(id)
+  if not self.record_slot then
+    self.record_slot = {}
+  end
+  for uid, v in pairs(self.interactNpcInGroup) do
+    if v:IsHug() then
+      return
+    end
+    local slot = v:GetPlaceSlot()
+    redlog("InteractLocalGroup_PlaceTo_Snowman:Check slot", uid, tostring(slot))
+    self.record_slot[v:GetIdInGroup()] = slot
+  end
+  local found_match_id = next(self.record_slot)
+  local found_match_all = found_match_id ~= nil
+  redlog("InteractLocalGroup_PlaceTo_Snowman:Check found_match_all=" .. tostring(found_match_all), "found_match_id=" .. tostring(found_match_id))
+  if found_match_all then
+    self:OnInteractSuccess()
+    self:RemoveMatchedNpcs()
+    return true
+  end
+end
+
+function InteractLocalGroup_PlaceTo_Snowman:RemoveMatchedNpcs()
+  local ids = {}
+  for uid, v in pairs(self.interactNpcInGroup) do
+    local ori_index = v:GetIdInGroup()
+    local final_index = self.record_slot and self.record_slot[ori_index]
+    if final_index then
+      ids[#ids + 1] = uid
+      self.record_slot[ori_index] = nil
+    end
+  end
+  for i = 1, #ids do
+    self:RemoveCreature(ids[i])
+  end
+end
+
+function InteractLocalGroup_PlaceTo_Snowman:RemoveCreature(uid)
+  InteractLocalManager.Me():UnregisterInteractNpc(uid)
+  local clientNpc = NSceneNpcProxy.Instance:GetClientNpcByGUID(uid)
+  if clientNpc then
+    NSceneNpcProxy.Instance:RemoveFromClientMap(clientNpc.data.uniqueid)
+    clientNpc:Destroy()
+  end
+  if self.initialPosMap then
+    self.initialPosMap[uid] = nil
+  end
 end

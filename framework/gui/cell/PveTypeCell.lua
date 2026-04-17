@@ -45,7 +45,9 @@ function PveTypeCell:FindObj()
   self:SetEvent(self.bg, function()
     if self.groupid and not self:IsGridType() then
       _RedTipProxy:SeenNew(_EntranceRedTipEnum, self.groupid)
-      self.redtip:SetActive(false)
+      if not self.data.staticEntranceData:IsGeffenMagic() then
+        self.redtip:SetActive(false)
+      end
     end
     self:PassEvent(MouseEvent.MouseClick, self)
   end)

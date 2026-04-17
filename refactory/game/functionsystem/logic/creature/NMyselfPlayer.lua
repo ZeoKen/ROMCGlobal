@@ -115,6 +115,23 @@ function NMyselfPlayer:Server_BreakSkill(skillID)
   NMyselfPlayer.super.Server_BreakSkill(self, skillID)
 end
 
+function NMyselfPlayer:CheckNextEndSkill(endSkillId)
+  if self.nextEndPrepareSkillId and self.nextEndPrepareSkillId == endSkillId then
+    self.nextEndPrepareSkillId = nil
+    return true
+  end
+  return false
+end
+
+function NMyselfPlayer:CheckLeadCompleteSkill(skillID, leadSuccess)
+  local skillConf = Table_Skill[skillID]
+  local logic_param = skillConf and skillConf.Logic_Param
+  if logic_param and logic_param.end_skill_id and self:CheckNextEndSkill(logic_param.end_skill_id) then
+    self:Client_UseSkill(logic_param.end_skill_id, nil, nil, nil, nil, nil, nil, true)
+  end
+  NMyselfPlayer.super.CheckLeadCompleteSkill(self, skillID, leadSuccess)
+end
+
 function NMyselfPlayer:Server_CameraFlash()
 end
 
@@ -147,6 +164,7 @@ function NMyselfPlayer:Update(time, deltaTime)
   superUpdate(self, time, deltaTime)
   if time > (self.nextInteractUpdateTime or 0) then
     self:CheckInteractMount()
+    self:CheckInteractHandcart()
     self.nextInteractUpdateTime = time + 1
   end
   if self.closeToWallCheck and time > self.nextClose2WallCheckTime then
@@ -393,6 +411,22 @@ function NMyselfPlayer:CheckInteractMount()
   end
   local player = self.NSceneUserProxy_Instance:FindTeamMemberInRange(self:GetPosition(), self.multiMountSearchRange, IsMultiMountRidable)
   _Game.InteractNpcManager:SetTargetInteractMountID(player and player.data.id)
+end
+
+local IsEquipHandcart = function(teamPlayer)
+  local userdata = teamPlayer.data.userdata
+  local ownHandcart = userdata and userdata:Get(_UDEnum.OWN_HANDCART) or 0
+  return 0 < ownHandcart
+end
+
+function NMyselfPlayer:CheckInteractHandcart()
+  local riding = self:IsOnHandcart()
+  if riding then
+    _Game.InteractNpcManager:SetTargetInteractHandcartMasterID(nil)
+    return
+  end
+  local player = self.NSceneUserProxy_Instance:FindTeamMemberInRange(self:GetPosition(), self.handcartSearchRange, IsEquipHandcart)
+  _Game.InteractNpcManager:SetTargetInteractHandcartMasterID(player and player.data.id)
 end
 
 function NMyselfPlayer:GetCurChantTime()
@@ -784,6 +818,7 @@ function NMyselfPlayer:DoConstruct(asArray, data)
   self:InitLogicTransform()
   self.sceneui = Creature_SceneUI.CreateAsTable(self)
   self.multiMountSearchRange = GameConfig.MultiMount and GameConfig.MultiMount.SearchRange or 3
+  self.handcartSearchRange = GameConfig.HandCart and GameConfig.HandCart.SearchRange or 3
   self.NSceneUserProxy_Instance = NSceneUserProxy.Instance
 end
 

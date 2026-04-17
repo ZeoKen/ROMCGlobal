@@ -353,6 +353,13 @@ function GvgProxy:RecvQueryGvgZoneGroupGuildCCmd(data)
   ServiceSceneUser3Proxy.Instance:CallGvgExcellectQueryUserCmd()
 end
 
+function GvgProxy:InBreakTime(stamp)
+  if self.break_begintime and self.break_endtime and stamp > self.break_begintime and stamp < self.break_endtime then
+    return true
+  end
+  return false
+end
+
 function GvgProxy:CheckCurMapIsInGuildUnionGroup()
   if GuildDateBattleProxy.Instance:IsOpen() then
     return true

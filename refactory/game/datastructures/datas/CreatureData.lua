@@ -332,6 +332,18 @@ function CreatureDataWithPropUserdata:GetLernedSkillLevel(skillID)
   return 0
 end
 
+function CreatureDataWithPropUserdata:GetBlendBeingNpcID()
+  return 0
+end
+
+function CreatureDataWithPropUserdata:SetDoubleDamage(value)
+  self.doubleDamage = value and 1 or -1
+end
+
+function CreatureDataWithPropUserdata:GetDoubleDamage()
+  return self.doubleDamage or -1
+end
+
 function CreatureDataWithPropUserdata:GetDynamicSkillInfo(skillID)
   return nil
 end
@@ -450,6 +462,10 @@ function CreatureDataWithPropUserdata:GetArrowID()
 end
 
 function CreatureDataWithPropUserdata:GetEquipedRefineLv(site)
+  return 0
+end
+
+function CreatureDataWithPropUserdata:GetSnowStoreRefineLv(site)
   return 0
 end
 
@@ -648,6 +664,19 @@ end
 
 function CreatureDataWithPropUserdata:NoNormalAttack()
   return self.props:GetPropByName("NoNormalAttack"):GetValue() > 0
+end
+
+function CreatureDataWithPropUserdata:IsRideOnHandcart()
+  return self:GetRideOnHandcarTOwner() > 0
+end
+
+function CreatureDataWithPropUserdata:GetRideOnHandcarTOwner()
+  return self.userdata and self.userdata:Get(UDEnum.RIDING_HANDCART_OWNER) or 0
+end
+
+function CreatureDataWithPropUserdata:HasAbsorbDamageBuff()
+  local sheild = self.userdata and self.userdata:Get(UDEnum.SHIELD) or 0
+  return 0 < sheild
 end
 
 function CreatureDataWithPropUserdata:GetNpcID()
@@ -1206,6 +1235,7 @@ function CreatureDataWithPropUserdata:GetDressParts()
     end
     parts[PartIndex.Mount] = userData:Get(UDEnum.MOUNT) or default == nil and 0 or default[PartIndex.Mount]
     self:SetMountFashionParts(parts, userData)
+    self:SetHeadFashionParts(parts, userData)
   else
     for i = 1, 12 do
       parts[i] = 0
@@ -1644,6 +1674,27 @@ function CreatureDataWithPropUserdata:SetMountFashionParts(parts, userData)
           end
         end
       end
+    end
+  end
+end
+
+function CreatureDataWithPropUserdata:SetHeadFashionParts(parts, userData)
+  local head = userData:Get(UDEnum.HEAD)
+  if not head or head == 0 then
+    return
+  end
+  local bytes = userData:GetBytes(UDEnum.HEAD_FASHION)
+  if bytes then
+    local rets = string.split(bytes, ";")
+    local PartIndexEx = Asset_Role.PartIndexEx
+    if rets[1] then
+      parts[PartIndexEx.HeadFashionIndex1] = tonumber(rets[1]) or 0
+    end
+    if rets[2] then
+      parts[PartIndexEx.HeadFashionIndex2] = tonumber(rets[2]) or 0
+    end
+    if rets[3] then
+      parts[PartIndexEx.HeadFashionIndex3] = tonumber(rets[3]) or 0
     end
   end
 end

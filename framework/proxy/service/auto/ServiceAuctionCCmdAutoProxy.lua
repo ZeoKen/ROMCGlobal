@@ -1832,6 +1832,24 @@ function ServiceAuctionCCmdAutoProxy:CallUpdateAuctionInfoCCmd(iteminfo, batchid
       end
       msg.iteminfo.itemdata.furniture.npc.damage_reduce_type = iteminfo.itemdata.furniture.npc.damage_reduce_type
     end
+    if iteminfo.itemdata.furniture.anim ~= nil and iteminfo.itemdata.furniture.anim.start_time ~= nil then
+      if msg.iteminfo.itemdata.furniture == nil then
+        msg.iteminfo.itemdata.furniture = {}
+      end
+      if msg.iteminfo.itemdata.furniture.anim == nil then
+        msg.iteminfo.itemdata.furniture.anim = {}
+      end
+      msg.iteminfo.itemdata.furniture.anim.start_time = iteminfo.itemdata.furniture.anim.start_time
+    end
+    if iteminfo.itemdata.furniture.anim ~= nil and iteminfo.itemdata.furniture.anim.anim_id ~= nil then
+      if msg.iteminfo.itemdata.furniture == nil then
+        msg.iteminfo.itemdata.furniture = {}
+      end
+      if msg.iteminfo.itemdata.furniture.anim == nil then
+        msg.iteminfo.itemdata.furniture.anim = {}
+      end
+      msg.iteminfo.itemdata.furniture.anim.anim_id = iteminfo.itemdata.furniture.anim.anim_id
+    end
     if iteminfo.itemdata.attr ~= nil and iteminfo.itemdata.attr.id ~= nil then
       if msg.iteminfo.itemdata == nil then
         msg.iteminfo.itemdata = {}
@@ -3766,6 +3784,24 @@ function ServiceAuctionCCmdAutoProxy:CallUpdateAuctionInfoCCmd(iteminfo, batchid
         msgParam.iteminfo.itemdata.furniture.npc = {}
       end
       msgParam.iteminfo.itemdata.furniture.npc.damage_reduce_type = iteminfo.itemdata.furniture.npc.damage_reduce_type
+    end
+    if iteminfo.itemdata.furniture.anim ~= nil and iteminfo.itemdata.furniture.anim.start_time ~= nil then
+      if msgParam.iteminfo.itemdata.furniture == nil then
+        msgParam.iteminfo.itemdata.furniture = {}
+      end
+      if msgParam.iteminfo.itemdata.furniture.anim == nil then
+        msgParam.iteminfo.itemdata.furniture.anim = {}
+      end
+      msgParam.iteminfo.itemdata.furniture.anim.start_time = iteminfo.itemdata.furniture.anim.start_time
+    end
+    if iteminfo.itemdata.furniture.anim ~= nil and iteminfo.itemdata.furniture.anim.anim_id ~= nil then
+      if msgParam.iteminfo.itemdata.furniture == nil then
+        msgParam.iteminfo.itemdata.furniture = {}
+      end
+      if msgParam.iteminfo.itemdata.furniture.anim == nil then
+        msgParam.iteminfo.itemdata.furniture.anim = {}
+      end
+      msgParam.iteminfo.itemdata.furniture.anim.anim_id = iteminfo.itemdata.furniture.anim.anim_id
     end
     if iteminfo.itemdata.attr ~= nil and iteminfo.itemdata.attr.id ~= nil then
       if msgParam.iteminfo.itemdata == nil then

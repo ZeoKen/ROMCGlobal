@@ -174,10 +174,26 @@ function PropTypeTip:initData()
   self.firstContent.transform.localPosition = tempVector3
   TableUtility.ArrayClear(self.propDatas)
   local config = GameConfig.AdventurePropClassify
-  local single
+  local single, typeLimitMatch, tabLimitMatch
   for i = 1, #config do
     single = config[i]
-    if (not single.TypeLimit or single.TypeLimit == self.type) and (not single.TabLimit or single.TabLimit == self.tabID) then
+    typeLimitMatch = true
+    if single.TypeLimit then
+      if type(single.TypeLimit) == "table" then
+        typeLimitMatch = 0 < TableUtility.ArrayFindIndex(single.TypeLimit, self.type)
+      else
+        typeLimitMatch = single.TypeLimit == self.type
+      end
+    end
+    tabLimitMatch = true
+    if single.TabLimit then
+      if type(single.TabLimit) == "table" then
+        tabLimitMatch = 0 < TableUtility.ArrayFindIndex(single.TabLimit, self.tabID)
+      else
+        tabLimitMatch = single.TabLimit == self.tabID
+      end
+    end
+    if typeLimitMatch and tabLimitMatch then
       self.propDatas[#self.propDatas + 1] = single
     end
   end

@@ -41,7 +41,7 @@ function IdleAI_AutoBattle:Clear(idleElapsed, time, deltaTime, creature)
 end
 
 function IdleAI_AutoBattle:Prepare(idleElapsed, time, deltaTime, creature)
-  if nil ~= creature.ai.parent and not creature.ai.forceUpdate then
+  if nil ~= creature.ai.parent and not creature.ai.forceUpdate and not creature:IsOnHandcart() then
     return false
   end
   if nil ~= self.requestOn then

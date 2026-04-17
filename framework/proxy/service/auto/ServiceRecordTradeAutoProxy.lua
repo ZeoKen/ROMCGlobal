@@ -2219,6 +2219,24 @@ function ServiceRecordTradeAutoProxy:CallTakeLogCmd(log, success)
       end
       msg.log.itemdata.furniture.npc.damage_reduce_type = log.itemdata.furniture.npc.damage_reduce_type
     end
+    if log.itemdata.furniture.anim ~= nil and log.itemdata.furniture.anim.start_time ~= nil then
+      if msg.log.itemdata.furniture == nil then
+        msg.log.itemdata.furniture = {}
+      end
+      if msg.log.itemdata.furniture.anim == nil then
+        msg.log.itemdata.furniture.anim = {}
+      end
+      msg.log.itemdata.furniture.anim.start_time = log.itemdata.furniture.anim.start_time
+    end
+    if log.itemdata.furniture.anim ~= nil and log.itemdata.furniture.anim.anim_id ~= nil then
+      if msg.log.itemdata.furniture == nil then
+        msg.log.itemdata.furniture = {}
+      end
+      if msg.log.itemdata.furniture.anim == nil then
+        msg.log.itemdata.furniture.anim = {}
+      end
+      msg.log.itemdata.furniture.anim.anim_id = log.itemdata.furniture.anim.anim_id
+    end
     if log.itemdata.attr ~= nil and log.itemdata.attr.id ~= nil then
       if msg.log.itemdata == nil then
         msg.log.itemdata = {}
@@ -4362,6 +4380,24 @@ function ServiceRecordTradeAutoProxy:CallTakeLogCmd(log, success)
         msgParam.log.itemdata.furniture.npc = {}
       end
       msgParam.log.itemdata.furniture.npc.damage_reduce_type = log.itemdata.furniture.npc.damage_reduce_type
+    end
+    if log.itemdata.furniture.anim ~= nil and log.itemdata.furniture.anim.start_time ~= nil then
+      if msgParam.log.itemdata.furniture == nil then
+        msgParam.log.itemdata.furniture = {}
+      end
+      if msgParam.log.itemdata.furniture.anim == nil then
+        msgParam.log.itemdata.furniture.anim = {}
+      end
+      msgParam.log.itemdata.furniture.anim.start_time = log.itemdata.furniture.anim.start_time
+    end
+    if log.itemdata.furniture.anim ~= nil and log.itemdata.furniture.anim.anim_id ~= nil then
+      if msgParam.log.itemdata.furniture == nil then
+        msgParam.log.itemdata.furniture = {}
+      end
+      if msgParam.log.itemdata.furniture.anim == nil then
+        msgParam.log.itemdata.furniture.anim = {}
+      end
+      msgParam.log.itemdata.furniture.anim.anim_id = log.itemdata.furniture.anim.anim_id
     end
     if log.itemdata.attr ~= nil and log.itemdata.attr.id ~= nil then
       if msgParam.log.itemdata == nil then
@@ -6513,6 +6549,24 @@ function ServiceRecordTradeAutoProxy:CallAddNewLog(charid, log, total_page_count
       end
       msg.log.itemdata.furniture.npc.damage_reduce_type = log.itemdata.furniture.npc.damage_reduce_type
     end
+    if log.itemdata.furniture.anim ~= nil and log.itemdata.furniture.anim.start_time ~= nil then
+      if msg.log.itemdata.furniture == nil then
+        msg.log.itemdata.furniture = {}
+      end
+      if msg.log.itemdata.furniture.anim == nil then
+        msg.log.itemdata.furniture.anim = {}
+      end
+      msg.log.itemdata.furniture.anim.start_time = log.itemdata.furniture.anim.start_time
+    end
+    if log.itemdata.furniture.anim ~= nil and log.itemdata.furniture.anim.anim_id ~= nil then
+      if msg.log.itemdata.furniture == nil then
+        msg.log.itemdata.furniture = {}
+      end
+      if msg.log.itemdata.furniture.anim == nil then
+        msg.log.itemdata.furniture.anim = {}
+      end
+      msg.log.itemdata.furniture.anim.anim_id = log.itemdata.furniture.anim.anim_id
+    end
     if log.itemdata.attr ~= nil and log.itemdata.attr.id ~= nil then
       if msg.log.itemdata == nil then
         msg.log.itemdata = {}
@@ -8660,6 +8714,24 @@ function ServiceRecordTradeAutoProxy:CallAddNewLog(charid, log, total_page_count
       end
       msgParam.log.itemdata.furniture.npc.damage_reduce_type = log.itemdata.furniture.npc.damage_reduce_type
     end
+    if log.itemdata.furniture.anim ~= nil and log.itemdata.furniture.anim.start_time ~= nil then
+      if msgParam.log.itemdata.furniture == nil then
+        msgParam.log.itemdata.furniture = {}
+      end
+      if msgParam.log.itemdata.furniture.anim == nil then
+        msgParam.log.itemdata.furniture.anim = {}
+      end
+      msgParam.log.itemdata.furniture.anim.start_time = log.itemdata.furniture.anim.start_time
+    end
+    if log.itemdata.furniture.anim ~= nil and log.itemdata.furniture.anim.anim_id ~= nil then
+      if msgParam.log.itemdata.furniture == nil then
+        msgParam.log.itemdata.furniture = {}
+      end
+      if msgParam.log.itemdata.furniture.anim == nil then
+        msgParam.log.itemdata.furniture.anim = {}
+      end
+      msgParam.log.itemdata.furniture.anim.anim_id = log.itemdata.furniture.anim.anim_id
+    end
     if log.itemdata.attr ~= nil and log.itemdata.attr.id ~= nil then
       if msgParam.log.itemdata == nil then
         msgParam.log.itemdata = {}
@@ -10676,6 +10748,24 @@ function ServiceRecordTradeAutoProxy:CallReqServerPriceRecordTradeCmd(charid, it
       end
       msg.itemData.furniture.npc.damage_reduce_type = itemData.furniture.npc.damage_reduce_type
     end
+    if itemData.furniture.anim ~= nil and itemData.furniture.anim.start_time ~= nil then
+      if msg.itemData.furniture == nil then
+        msg.itemData.furniture = {}
+      end
+      if msg.itemData.furniture.anim == nil then
+        msg.itemData.furniture.anim = {}
+      end
+      msg.itemData.furniture.anim.start_time = itemData.furniture.anim.start_time
+    end
+    if itemData.furniture.anim ~= nil and itemData.furniture.anim.anim_id ~= nil then
+      if msg.itemData.furniture == nil then
+        msg.itemData.furniture = {}
+      end
+      if msg.itemData.furniture.anim == nil then
+        msg.itemData.furniture.anim = {}
+      end
+      msg.itemData.furniture.anim.anim_id = itemData.furniture.anim.anim_id
+    end
     if itemData.attr ~= nil and itemData.attr.id ~= nil then
       if msg.itemData == nil then
         msg.itemData = {}
@@ -12523,6 +12613,24 @@ function ServiceRecordTradeAutoProxy:CallReqServerPriceRecordTradeCmd(charid, it
         msgParam.itemData.furniture.npc = {}
       end
       msgParam.itemData.furniture.npc.damage_reduce_type = itemData.furniture.npc.damage_reduce_type
+    end
+    if itemData.furniture.anim ~= nil and itemData.furniture.anim.start_time ~= nil then
+      if msgParam.itemData.furniture == nil then
+        msgParam.itemData.furniture = {}
+      end
+      if msgParam.itemData.furniture.anim == nil then
+        msgParam.itemData.furniture.anim = {}
+      end
+      msgParam.itemData.furniture.anim.start_time = itemData.furniture.anim.start_time
+    end
+    if itemData.furniture.anim ~= nil and itemData.furniture.anim.anim_id ~= nil then
+      if msgParam.itemData.furniture == nil then
+        msgParam.itemData.furniture = {}
+      end
+      if msgParam.itemData.furniture.anim == nil then
+        msgParam.itemData.furniture.anim = {}
+      end
+      msgParam.itemData.furniture.anim.anim_id = itemData.furniture.anim.anim_id
     end
     if itemData.attr ~= nil and itemData.attr.id ~= nil then
       if msgParam.itemData == nil then
@@ -14443,6 +14551,24 @@ function ServiceRecordTradeAutoProxy:CallBuyItemRecordTradeCmd(item_info, charid
         msg.item_info.item_data.furniture.npc = {}
       end
       msg.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.start_time ~= nil then
+      if msg.item_info.item_data.furniture == nil then
+        msg.item_info.item_data.furniture = {}
+      end
+      if msg.item_info.item_data.furniture.anim == nil then
+        msg.item_info.item_data.furniture.anim = {}
+      end
+      msg.item_info.item_data.furniture.anim.start_time = item_info.item_data.furniture.anim.start_time
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.anim_id ~= nil then
+      if msg.item_info.item_data.furniture == nil then
+        msg.item_info.item_data.furniture = {}
+      end
+      if msg.item_info.item_data.furniture.anim == nil then
+        msg.item_info.item_data.furniture.anim = {}
+      end
+      msg.item_info.item_data.furniture.anim.anim_id = item_info.item_data.furniture.anim.anim_id
     end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msg.item_info.item_data == nil then
@@ -16429,6 +16555,24 @@ function ServiceRecordTradeAutoProxy:CallBuyItemRecordTradeCmd(item_info, charid
         msgParam.item_info.item_data.furniture.npc = {}
       end
       msgParam.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.start_time ~= nil then
+      if msgParam.item_info.item_data.furniture == nil then
+        msgParam.item_info.item_data.furniture = {}
+      end
+      if msgParam.item_info.item_data.furniture.anim == nil then
+        msgParam.item_info.item_data.furniture.anim = {}
+      end
+      msgParam.item_info.item_data.furniture.anim.start_time = item_info.item_data.furniture.anim.start_time
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.anim_id ~= nil then
+      if msgParam.item_info.item_data.furniture == nil then
+        msgParam.item_info.item_data.furniture = {}
+      end
+      if msgParam.item_info.item_data.furniture.anim == nil then
+        msgParam.item_info.item_data.furniture.anim = {}
+      end
+      msgParam.item_info.item_data.furniture.anim.anim_id = item_info.item_data.furniture.anim.anim_id
     end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msgParam.item_info.item_data == nil then
@@ -18419,6 +18563,24 @@ function ServiceRecordTradeAutoProxy:CallSellItemRecordTradeCmd(item_info, chari
       end
       msg.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
     end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.start_time ~= nil then
+      if msg.item_info.item_data.furniture == nil then
+        msg.item_info.item_data.furniture = {}
+      end
+      if msg.item_info.item_data.furniture.anim == nil then
+        msg.item_info.item_data.furniture.anim = {}
+      end
+      msg.item_info.item_data.furniture.anim.start_time = item_info.item_data.furniture.anim.start_time
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.anim_id ~= nil then
+      if msg.item_info.item_data.furniture == nil then
+        msg.item_info.item_data.furniture = {}
+      end
+      if msg.item_info.item_data.furniture.anim == nil then
+        msg.item_info.item_data.furniture.anim = {}
+      end
+      msg.item_info.item_data.furniture.anim.anim_id = item_info.item_data.furniture.anim.anim_id
+    end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msg.item_info.item_data == nil then
         msg.item_info.item_data = {}
@@ -20404,6 +20566,24 @@ function ServiceRecordTradeAutoProxy:CallSellItemRecordTradeCmd(item_info, chari
         msgParam.item_info.item_data.furniture.npc = {}
       end
       msgParam.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.start_time ~= nil then
+      if msgParam.item_info.item_data.furniture == nil then
+        msgParam.item_info.item_data.furniture = {}
+      end
+      if msgParam.item_info.item_data.furniture.anim == nil then
+        msgParam.item_info.item_data.furniture.anim = {}
+      end
+      msgParam.item_info.item_data.furniture.anim.start_time = item_info.item_data.furniture.anim.start_time
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.anim_id ~= nil then
+      if msgParam.item_info.item_data.furniture == nil then
+        msgParam.item_info.item_data.furniture = {}
+      end
+      if msgParam.item_info.item_data.furniture.anim == nil then
+        msgParam.item_info.item_data.furniture.anim = {}
+      end
+      msgParam.item_info.item_data.furniture.anim.anim_id = item_info.item_data.furniture.anim.anim_id
     end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msgParam.item_info.item_data == nil then
@@ -22393,6 +22573,24 @@ function ServiceRecordTradeAutoProxy:CallCancelItemRecordTrade(item_info, charid
         msg.item_info.item_data.furniture.npc = {}
       end
       msg.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.start_time ~= nil then
+      if msg.item_info.item_data.furniture == nil then
+        msg.item_info.item_data.furniture = {}
+      end
+      if msg.item_info.item_data.furniture.anim == nil then
+        msg.item_info.item_data.furniture.anim = {}
+      end
+      msg.item_info.item_data.furniture.anim.start_time = item_info.item_data.furniture.anim.start_time
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.anim_id ~= nil then
+      if msg.item_info.item_data.furniture == nil then
+        msg.item_info.item_data.furniture = {}
+      end
+      if msg.item_info.item_data.furniture.anim == nil then
+        msg.item_info.item_data.furniture.anim = {}
+      end
+      msg.item_info.item_data.furniture.anim.anim_id = item_info.item_data.furniture.anim.anim_id
     end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msg.item_info.item_data == nil then
@@ -24388,6 +24586,24 @@ function ServiceRecordTradeAutoProxy:CallCancelItemRecordTrade(item_info, charid
         msgParam.item_info.item_data.furniture.npc = {}
       end
       msgParam.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.start_time ~= nil then
+      if msgParam.item_info.item_data.furniture == nil then
+        msgParam.item_info.item_data.furniture = {}
+      end
+      if msgParam.item_info.item_data.furniture.anim == nil then
+        msgParam.item_info.item_data.furniture.anim = {}
+      end
+      msgParam.item_info.item_data.furniture.anim.start_time = item_info.item_data.furniture.anim.start_time
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.anim_id ~= nil then
+      if msgParam.item_info.item_data.furniture == nil then
+        msgParam.item_info.item_data.furniture = {}
+      end
+      if msgParam.item_info.item_data.furniture.anim == nil then
+        msgParam.item_info.item_data.furniture.anim = {}
+      end
+      msgParam.item_info.item_data.furniture.anim.anim_id = item_info.item_data.furniture.anim.anim_id
     end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msgParam.item_info.item_data == nil then
@@ -26387,6 +26603,24 @@ function ServiceRecordTradeAutoProxy:CallResellPendingRecordTrade(item_info, cha
       end
       msg.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
     end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.start_time ~= nil then
+      if msg.item_info.item_data.furniture == nil then
+        msg.item_info.item_data.furniture = {}
+      end
+      if msg.item_info.item_data.furniture.anim == nil then
+        msg.item_info.item_data.furniture.anim = {}
+      end
+      msg.item_info.item_data.furniture.anim.start_time = item_info.item_data.furniture.anim.start_time
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.anim_id ~= nil then
+      if msg.item_info.item_data.furniture == nil then
+        msg.item_info.item_data.furniture = {}
+      end
+      if msg.item_info.item_data.furniture.anim == nil then
+        msg.item_info.item_data.furniture.anim = {}
+      end
+      msg.item_info.item_data.furniture.anim.anim_id = item_info.item_data.furniture.anim.anim_id
+    end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msg.item_info.item_data == nil then
         msg.item_info.item_data = {}
@@ -28378,6 +28612,24 @@ function ServiceRecordTradeAutoProxy:CallResellPendingRecordTrade(item_info, cha
         msgParam.item_info.item_data.furniture.npc = {}
       end
       msgParam.item_info.item_data.furniture.npc.damage_reduce_type = item_info.item_data.furniture.npc.damage_reduce_type
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.start_time ~= nil then
+      if msgParam.item_info.item_data.furniture == nil then
+        msgParam.item_info.item_data.furniture = {}
+      end
+      if msgParam.item_info.item_data.furniture.anim == nil then
+        msgParam.item_info.item_data.furniture.anim = {}
+      end
+      msgParam.item_info.item_data.furniture.anim.start_time = item_info.item_data.furniture.anim.start_time
+    end
+    if item_info.item_data.furniture.anim ~= nil and item_info.item_data.furniture.anim.anim_id ~= nil then
+      if msgParam.item_info.item_data.furniture == nil then
+        msgParam.item_info.item_data.furniture = {}
+      end
+      if msgParam.item_info.item_data.furniture.anim == nil then
+        msgParam.item_info.item_data.furniture.anim = {}
+      end
+      msgParam.item_info.item_data.furniture.anim.anim_id = item_info.item_data.furniture.anim.anim_id
     end
     if item_info.item_data.attr ~= nil and item_info.item_data.attr.id ~= nil then
       if msgParam.item_info.item_data == nil then
@@ -30588,6 +30840,24 @@ function ServiceRecordTradeAutoProxy:CallReqGiveItemInfoCmd(id, iteminfo)
       end
       msg.iteminfo.itemdata.furniture.npc.damage_reduce_type = iteminfo.itemdata.furniture.npc.damage_reduce_type
     end
+    if iteminfo.itemdata.furniture.anim ~= nil and iteminfo.itemdata.furniture.anim.start_time ~= nil then
+      if msg.iteminfo.itemdata.furniture == nil then
+        msg.iteminfo.itemdata.furniture = {}
+      end
+      if msg.iteminfo.itemdata.furniture.anim == nil then
+        msg.iteminfo.itemdata.furniture.anim = {}
+      end
+      msg.iteminfo.itemdata.furniture.anim.start_time = iteminfo.itemdata.furniture.anim.start_time
+    end
+    if iteminfo.itemdata.furniture.anim ~= nil and iteminfo.itemdata.furniture.anim.anim_id ~= nil then
+      if msg.iteminfo.itemdata.furniture == nil then
+        msg.iteminfo.itemdata.furniture = {}
+      end
+      if msg.iteminfo.itemdata.furniture.anim == nil then
+        msg.iteminfo.itemdata.furniture.anim = {}
+      end
+      msg.iteminfo.itemdata.furniture.anim.anim_id = iteminfo.itemdata.furniture.anim.anim_id
+    end
     if iteminfo.itemdata.attr ~= nil and iteminfo.itemdata.attr.id ~= nil then
       if msg.iteminfo.itemdata == nil then
         msg.iteminfo.itemdata = {}
@@ -32531,6 +32801,24 @@ function ServiceRecordTradeAutoProxy:CallReqGiveItemInfoCmd(id, iteminfo)
         msgParam.iteminfo.itemdata.furniture.npc = {}
       end
       msgParam.iteminfo.itemdata.furniture.npc.damage_reduce_type = iteminfo.itemdata.furniture.npc.damage_reduce_type
+    end
+    if iteminfo.itemdata.furniture.anim ~= nil and iteminfo.itemdata.furniture.anim.start_time ~= nil then
+      if msgParam.iteminfo.itemdata.furniture == nil then
+        msgParam.iteminfo.itemdata.furniture = {}
+      end
+      if msgParam.iteminfo.itemdata.furniture.anim == nil then
+        msgParam.iteminfo.itemdata.furniture.anim = {}
+      end
+      msgParam.iteminfo.itemdata.furniture.anim.start_time = iteminfo.itemdata.furniture.anim.start_time
+    end
+    if iteminfo.itemdata.furniture.anim ~= nil and iteminfo.itemdata.furniture.anim.anim_id ~= nil then
+      if msgParam.iteminfo.itemdata.furniture == nil then
+        msgParam.iteminfo.itemdata.furniture = {}
+      end
+      if msgParam.iteminfo.itemdata.furniture.anim == nil then
+        msgParam.iteminfo.itemdata.furniture.anim = {}
+      end
+      msgParam.iteminfo.itemdata.furniture.anim.anim_id = iteminfo.itemdata.furniture.anim.anim_id
     end
     if iteminfo.itemdata.attr ~= nil and iteminfo.itemdata.attr.id ~= nil then
       if msgParam.iteminfo.itemdata == nil then
@@ -34926,6 +35214,24 @@ function ServiceRecordTradeAutoProxy:CallUpdateOrderTradeCmd(charid, info, type)
       end
       msg.info.item_data.furniture.npc.damage_reduce_type = info.item_data.furniture.npc.damage_reduce_type
     end
+    if info.item_data.furniture.anim ~= nil and info.item_data.furniture.anim.start_time ~= nil then
+      if msg.info.item_data.furniture == nil then
+        msg.info.item_data.furniture = {}
+      end
+      if msg.info.item_data.furniture.anim == nil then
+        msg.info.item_data.furniture.anim = {}
+      end
+      msg.info.item_data.furniture.anim.start_time = info.item_data.furniture.anim.start_time
+    end
+    if info.item_data.furniture.anim ~= nil and info.item_data.furniture.anim.anim_id ~= nil then
+      if msg.info.item_data.furniture == nil then
+        msg.info.item_data.furniture = {}
+      end
+      if msg.info.item_data.furniture.anim == nil then
+        msg.info.item_data.furniture.anim = {}
+      end
+      msg.info.item_data.furniture.anim.anim_id = info.item_data.furniture.anim.anim_id
+    end
     if info.item_data.attr ~= nil and info.item_data.attr.id ~= nil then
       if msg.info.item_data == nil then
         msg.info.item_data = {}
@@ -36908,6 +37214,24 @@ function ServiceRecordTradeAutoProxy:CallUpdateOrderTradeCmd(charid, info, type)
         msgParam.info.item_data.furniture.npc = {}
       end
       msgParam.info.item_data.furniture.npc.damage_reduce_type = info.item_data.furniture.npc.damage_reduce_type
+    end
+    if info.item_data.furniture.anim ~= nil and info.item_data.furniture.anim.start_time ~= nil then
+      if msgParam.info.item_data.furniture == nil then
+        msgParam.info.item_data.furniture = {}
+      end
+      if msgParam.info.item_data.furniture.anim == nil then
+        msgParam.info.item_data.furniture.anim = {}
+      end
+      msgParam.info.item_data.furniture.anim.start_time = info.item_data.furniture.anim.start_time
+    end
+    if info.item_data.furniture.anim ~= nil and info.item_data.furniture.anim.anim_id ~= nil then
+      if msgParam.info.item_data.furniture == nil then
+        msgParam.info.item_data.furniture = {}
+      end
+      if msgParam.info.item_data.furniture.anim == nil then
+        msgParam.info.item_data.furniture.anim = {}
+      end
+      msgParam.info.item_data.furniture.anim.anim_id = info.item_data.furniture.anim.anim_id
     end
     if info.item_data.attr ~= nil and info.item_data.attr.id ~= nil then
       if msgParam.info.item_data == nil then

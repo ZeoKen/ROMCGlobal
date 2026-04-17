@@ -10,7 +10,8 @@ InteractNpc.InteractType = {
   LocalVisit = 8,
   LocalCollect = 9,
   LocalServerSimple = 10,
-  LocalCollectHug = 11
+  LocalCollectHug = 11,
+  Handcart = 12
 }
 InteractNpc.Features = {ForbidMove = 1}
 local updateInterval = 1
@@ -46,6 +47,8 @@ function InteractNpc.Create(data, id)
     return ReusableObject.Create(InteractLocalServerSimple, false, args)
   elseif interactType == InteractNpc.InteractType.LocalCollectHug then
     return ReusableObject.Create(InteractLocalCollectHug, false, args)
+  elseif interactType == InteractNpc.InteractType.Handcart then
+    return ReusableObject.Create(InteractHandcartNpc, false, args)
   end
 end
 

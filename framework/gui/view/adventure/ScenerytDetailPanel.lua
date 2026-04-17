@@ -98,18 +98,25 @@ function ScenerytDetailPanel:ROOShare()
   self:AddClickEvent(self.goButtonWechatMoments, function()
     self:sharePicture("line", "", "")
   end)
-  self:AddClickEvent(self.goButtonWechat, function()
-    self:sharePicture("twitter", OverseaHostHelper.TWITTER_MSG, "")
-  end)
+  if not BranchMgr.IsJapan() then
+    self:AddClickEvent(self.goButtonWechat, function()
+      self:sharePicture("twitter", OverseaHostHelper.TWITTER_MSG, "")
+    end)
+  end
   self:AddClickEvent(self.goButtonQQ, function()
     self:sharePicture("fb", "", "")
   end)
   local lbl = self:FindGO("Label", self.goButtonWechatMoments):GetComponent(UILabel)
   lbl.text = "LINE"
-  lbl = self:FindGO("Label", self.goButtonWechat):GetComponent(UILabel)
-  lbl.text = "Twitter"
+  if not BranchMgr.IsJapan() then
+    lbl = self:FindGO("Label", self.goButtonWechat):GetComponent(UILabel)
+    lbl.text = "Twitter"
+  end
   lbl = self:FindGO("Label", self.goButtonQQ):GetComponent(UILabel)
   lbl.text = "Facebook"
+  if BranchMgr.IsJapan() then
+    GameObject.Destroy(self.goButtonWechat)
+  end
 end
 
 function ScenerytDetailPanel:initDefaultTextureSize()

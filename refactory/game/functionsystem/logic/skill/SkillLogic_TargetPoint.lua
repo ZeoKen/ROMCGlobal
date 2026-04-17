@@ -19,7 +19,9 @@ function SkillLogic_TargetPoint:Cast(creature)
   if SuperClass.Cast(self, creature) then
     local p = self.phaseData:GetPosition()
     local skillInfo = self.info
-    if skillInfo:GetRotateOnly() then
+    if skillInfo:CheckIsMoveAroundPrepare() then
+      creature:LogSpinStartAngleY(self.phaseData:GetAngleY())
+    elseif skillInfo:GetRotateOnly() or skillInfo:CheckIsMoveAroundAttack() then
     else
       creature.logicTransform:LookAt(p)
     end
@@ -61,7 +63,10 @@ end
 
 function SkillLogic_TargetPoint:Attack(creature, isAttackSkill, isTriggerSkill, noAttackCallback)
   local p = self.phaseData:GetPosition()
-  creature.logicTransform:LookAt(p)
+  if self.info:CheckIsMoveAround(false, true) then
+  else
+    creature.logicTransform:LookAt(p)
+  end
   return SuperClass.Attack(self, creature, isAttackSkill, isTriggerSkill, noAttackCallback)
 end
 

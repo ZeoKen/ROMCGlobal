@@ -103,6 +103,19 @@ function NSceneUserProxy:Add(data, classRef)
       role.data:UpdateSecretLand(secret_land_gem[i].id, secret_land_gem[i].lv)
     end
   end
+  role.data:ClearRefineLv()
+  local equip_refine_lv = data.equip_refine_lv
+  if nil ~= equip_refine_lv then
+    for i = 1, #equip_refine_lv do
+      role.data:UpdateEquipRefineLv(equip_refine_lv[i].pos, equip_refine_lv[i].lv)
+    end
+  end
+  local snow_refine_lv = data.snow_refine_lv
+  if nil ~= snow_refine_lv then
+    for i = 1, #snow_refine_lv do
+      role.data:UpdateSnowRefineLv(snow_refine_lv[i].pos, snow_refine_lv[i].lv)
+    end
+  end
   role:RegistCulling()
   role.data:SyncBuffSource(data.syncbuff)
   SceneAINpcProxy.Instance:AddHandNpc(role, data.handnpc, data.pos)

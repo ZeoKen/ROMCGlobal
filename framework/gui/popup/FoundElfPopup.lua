@@ -7,20 +7,38 @@ function FoundElfPopup:Init()
   self:InitView()
 end
 
-local field_name = {
-  "found_abyss_lake_elf_num",
-  "found_elf_num"
+local FoundElfConfigs = {
+  [154] = {
+    Game.abyssLakeFoundElfConfigs,
+    "found_abyss_lake_elf_num"
+  },
+  [155] = {
+    Game.snowRealmFoundElfConfigs,
+    "found_snow_realm_elf_num"
+  }
+}
+local VarType = {
+  [154] = Var_pb.EVARTYPE_FOUND_ABYSS_LAKE_ELF_NUM,
+  [155] = Var_pb.EVARTYPE_FOUND_SNOW_REALM_ELF_NUM
 }
 
 function FoundElfPopup.GetConfigs()
-  if Game.MapManager:IsInAbyssLake() then
-    return Game.abyssLakeFoundElfConfigs, field_name[1]
+  local mapId = Game.MapManager:GetMapID()
+  local config = FoundElfConfigs[mapId]
+  local configs, field_name = config and config[1], config and config[2]
+  if configs and field_name then
+    return configs, field_name
   end
-  return Game.FoundElfConfigs, field_name[2]
+  return Game.FoundElfConfigs, "found_elf_num"
 end
 
 function FoundElfPopup.GetVarType()
-  return Game.MapManager:IsInAbyssLake() and Var_pb.EVARTYPE_FOUND_ABYSS_LAKE_ELF_NUM or Var_pb.EVARTYPE_FOUND_ELF_NUM
+  local mapId = Game.MapManager:GetMapID()
+  local varType = VarType[mapId]
+  if varType then
+    return varType
+  end
+  return Var_pb.EVARTYPE_FOUND_ELF_NUM
 end
 
 function FoundElfPopup:FindObj()

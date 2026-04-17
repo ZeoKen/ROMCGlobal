@@ -403,6 +403,42 @@ Table_MainQuestStory = {
     Mstory = {509198},
     PuzzleReward = _EmptyTable,
     LvRange = {110}
+  },
+  [50] = {
+    id = 50,
+    version = "17.0",
+    index = 5,
+    QuestName = "##44722262",
+    Mstory = {509209},
+    PuzzleReward = _EmptyTable,
+    LvRange = {110}
+  },
+  [51] = {
+    id = 51,
+    version = "18.0",
+    index = 1,
+    QuestName = "##44728105",
+    Mstory = {509363},
+    PuzzleReward = _EmptyTable,
+    LvRange = {110}
+  },
+  [52] = {
+    id = 52,
+    version = "18.0",
+    index = 2,
+    QuestName = "##1106993",
+    Mstory = {664636},
+    PuzzleReward = _EmptyTable,
+    LvRange = {110}
+  },
+  [53] = {
+    id = 53,
+    version = "18.0",
+    index = 3,
+    QuestName = "##1106993",
+    Mstory = {664636},
+    PuzzleReward = _EmptyTable,
+    LvRange = {110}
   }
 }
 Table_MainQuestStory_fields = {

@@ -187,6 +187,11 @@ Table_MapTransport = {
     id = 17,
     ZoneName = "##42635503",
     MapID = {154}
+  },
+  [18] = {
+    id = 18,
+    ZoneName = "##44722391",
+    MapID = {155}
   }
 }
 Table_MapTransport_fields = {

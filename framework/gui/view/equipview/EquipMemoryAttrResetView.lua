@@ -507,18 +507,9 @@ function EquipMemoryAttrResetView:updateTargetMemoryInfo()
       local _tempData = {
         id = attrs[i].id
       }
-      local curExcess = memoryData.excess_lv or 0
-      local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
-      if type(excessCfg) == "table" and curExcess and 0 < curExcess then
-        for stageKey, mappedKey in pairs(excessCfg) do
-          local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
-          if slotIndex and slotIndex == i then
-            if stageKey <= curExcess then
-              _tempData.excess_lv = curExcess
-            end
-            break
-          end
-        end
+      local curExcessLevel = attrs[i].excess_level or 0
+      if 0 < curExcessLevel then
+        _tempData.excess_lv = curExcessLevel
       end
       if i == maxAttrCount then
         _tempData.text = ZhString.EquipMemory_NotChosen
@@ -671,29 +662,14 @@ function EquipMemoryAttrResetView:_UpdateMemoryPreviewResult()
       return
     else
       local curAttrID = attrs[self.targetEffectIndex].id
-      local passExcess
-      do
-        local curExcess = self.targetData.equipMemoryData.excess_lv or 0
-        local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
-        if type(excessCfg) == "table" and curExcess and 0 < curExcess then
-          for stageKey, mappedKey in pairs(excessCfg) do
-            local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
-            if slotIndex and slotIndex == self.targetEffectIndex then
-              if stageKey <= curExcess then
-                passExcess = curExcess
-              end
-              break
-            end
-          end
-        end
-      end
+      local curExcessLevel = attrs[self.targetEffectIndex].excess_level or 0
       for i = 1, #previewids do
         if previewids[i] ~= curAttrID then
           local _tempData = {
             id = previewids[i]
           }
-          if passExcess then
-            _tempData.excess_lv = passExcess
+          if 0 < curExcessLevel then
+            _tempData.excess_lv = curExcessLevel
           end
           table.insert(chooseList, _tempData)
         end
@@ -702,28 +678,13 @@ function EquipMemoryAttrResetView:_UpdateMemoryPreviewResult()
   elseif cacheIndex and attrs[cacheIndex] then
     local previewids = attrs[cacheIndex].previewid
     if previewids and 0 < #previewids then
-      local passExcess
-      do
-        local curExcess = self.targetData.equipMemoryData.excess_lv or 0
-        local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
-        if type(excessCfg) == "table" and curExcess and 0 < curExcess then
-          for stageKey, mappedKey in pairs(excessCfg) do
-            local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
-            if slotIndex and cacheIndex and slotIndex == cacheIndex then
-              if stageKey <= curExcess then
-                passExcess = curExcess
-              end
-              break
-            end
-          end
-        end
-      end
+      local curExcessLevel = attrs[cacheIndex].excess_level or 0
       for i = 1, #previewids do
         local _tempData = {
           id = previewids[i]
         }
-        if passExcess then
-          _tempData.excess_lv = passExcess
+        if 0 < curExcessLevel then
+          _tempData.excess_lv = curExcessLevel
         end
         table.insert(chooseList, _tempData)
       end

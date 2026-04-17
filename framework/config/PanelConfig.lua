@@ -3780,6 +3780,38 @@ PanelConfig = {
     prefab = "TicketPreview",
     class = "GiftDetailPreview"
   },
+  SnowCrownContainerView = {
+    id = 1753,
+    tab = nil,
+    name = "雪冠界面",
+    desc = "",
+    prefab = "SnowCrownContainerView",
+    class = "SnowCrownContainerView"
+  },
+  SnowCrownCollectAttrPopup = {
+    id = 1754,
+    tab = nil,
+    name = "冰珀收藏属性弹框",
+    desc = "",
+    prefab = "SnowCrownCollectAttrPopup",
+    class = "SnowCrownCollectAttrPopup"
+  },
+  SnowGemRewardPopup = {
+    id = 1755,
+    tab = nil,
+    name = "冰珀升级奖励",
+    desc = "",
+    prefab = "SnowGemRewardPopup",
+    class = "SnowGemRewardPopup"
+  },
+  SnowModePopup = {
+    id = 1756,
+    tab = nil,
+    name = "冰珀模式选择",
+    desc = "",
+    prefab = "SnowModePopup",
+    class = "SnowModePopup"
+  },
   ExpRaidMapView = {
     id = 1761,
     tab = nil,
@@ -4081,7 +4113,7 @@ PanelConfig = {
   },
   HomeInfoPage = {
     id = 1843,
-    tab = 1,
+    tab = 2,
     name = "家园信息页",
     desc = "",
     prefab = "HomeInfoPage",
@@ -4090,7 +4122,7 @@ PanelConfig = {
   },
   HomeScorePage = {
     id = 1844,
-    tab = 2,
+    tab = 3,
     name = "家具评分页",
     desc = "",
     prefab = "HomeScorePage",
@@ -4099,7 +4131,7 @@ PanelConfig = {
   },
   HomeSettingPage = {
     id = 1845,
-    tab = 3,
+    tab = 4,
     name = "家园设置页",
     desc = "",
     prefab = "HomeSettingPage",
@@ -4181,6 +4213,23 @@ PanelConfig = {
     prefab = "EquipIntegrateView",
     class = "EquipIntegrateView",
     hideCollider = true
+  },
+  HomeRecommendPage = {
+    id = 1855,
+    tab = 1,
+    name = "家园推荐页",
+    desc = "",
+    prefab = "HomeRecommendPage",
+    class = "HomeRecommendPage",
+    hideCollider = true
+  },
+  HomePhotoResultPanel = {
+    id = 1856,
+    tab = nil,
+    name = "家园照片大图页",
+    desc = "",
+    prefab = "HomePhotoResultPanel",
+    class = "HomePhotoResultPanel"
   },
   PrestigeShopView = {
     id = 1860,
@@ -5893,6 +5942,14 @@ PanelConfig = {
     prefab = "PveAffixSubview",
     class = "PveAffixPopUp"
   },
+  PveGeffenMagicScorePopUp = {
+    id = 4023,
+    tab = nil,
+    name = "吉芬魔法大赛",
+    desc = "",
+    prefab = "PveGeffenMagicScorePopUp",
+    class = "PveGeffenMagicScorePopUp"
+  },
   RoadOfHeroView = {
     id = 4120,
     tab = nil,
@@ -6005,6 +6062,14 @@ PanelConfig = {
     prefab = "SetAutoHealingView",
     class = "SetAutoHealingView",
     hideCollider = true
+  },
+  SnowRealmDailyQuestBoardView = {
+    id = 4301,
+    tab = nil,
+    name = "雪花之地任务",
+    desc = "",
+    prefab = "AbyssDailyQuestBoardView",
+    class = "SnowRealmDailyQuestBoardView"
   },
   InheritSkillView = {
     id = 4310,
@@ -6637,6 +6702,22 @@ PanelConfig = {
     desc = "",
     prefab = "ChangeGvgLineView_MultyZone",
     class = "ChangeGvgLineView_MultyZone"
+  },
+  AsyncPvpRaidDiffSetView = {
+    id = 30100,
+    tab = nil,
+    name = "吉芬魔法大赛副本难度选择",
+    desc = "",
+    prefab = "AsyncPvpRaidDiffSetView",
+    class = "AsyncPvpRaidDiffSetView"
+  },
+  AsyncPvpRaidWaveResultPopup = {
+    id = 30101,
+    tab = nil,
+    name = "吉芬魔法大赛副本胜利结果",
+    desc = "",
+    prefab = "AsyncPvpRaidWaveResultPopup",
+    class = "AsyncPvpRaidWaveResultPopup"
   },
   FaceBookFavPanel = {
     id = 100001,

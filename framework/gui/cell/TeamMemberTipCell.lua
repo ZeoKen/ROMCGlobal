@@ -52,6 +52,7 @@ function TeamMemberTipCell:SetModel()
   self.parts[partIndexEx.Gender] = self.data.gender or 0
   self.parts[partIndexEx.HairColorIndex] = self.data.haircolor or 0
   self.parts[partIndexEx.BodyColorIndex] = self.data.bodycolor or 0
+  Asset_Role.ProcessHeadFashionForParts(self.parts, self.data.headID, self.data.head_fashion)
   UIModelUtil.Instance:SetRoleModelTexture(self.roleTexture, self.parts, self.modelCameraConfig, nil, nil, TeamMemberTip.ShowStaticPicture)
 end
 

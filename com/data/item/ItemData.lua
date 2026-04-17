@@ -58,6 +58,7 @@ function ItemData:ctor(id, staticId)
   self.artifact = nil
   self.noPileSlot = false
   self.equipMemoryData = nil
+  self.snowGemData = nil
 end
 
 function ItemData:ResetData(id, staticId)
@@ -757,7 +758,7 @@ function ItemData:IsLimitUse()
   if 0 < uselimit & 16 and Game.MapManager:IsPVPMode_MvpFight() then
     return true
   end
-  if 0 < uselimit & 64 and (Game.MapManager:IsPVPMode_TeamPws() or Game.MapManager:IsPVPMode_3Teams()) then
+  if 0 < uselimit & 64 and (Game.MapManager:IsPVPMode_TeamPws() or Game.MapManager:IsPVPMode_3Teams() or Game.MapManager:IsPVPMode_AsyncPvpRaid()) then
     return true
   end
   if 0 < uselimit & 256 and not Game.MapManager:IsPVEMode_ExpRaid() then
@@ -1197,6 +1198,10 @@ end
 
 function ItemData:IsHideMemoryCorner()
   return self.hideMemoryCorner
+end
+
+function ItemData:IsSnowGem()
+  return Table_SnowStone and Table_SnowStone[self.staticData.id] ~= nil
 end
 
 function ItemData:GetFoodEffectDesc()
@@ -1725,4 +1730,15 @@ function ItemData:GetCardAttrs(iconPrefix)
     end
   end
   return attrs
+end
+
+function ItemData:SetSnowGemData(data)
+  if not data then
+    return
+  end
+  self.snowGemData = {
+    id = data.id or 0,
+    level = data.level or 0,
+    advlv = data.advlv or 0
+  }
 end
