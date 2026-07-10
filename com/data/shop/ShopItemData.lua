@@ -309,6 +309,15 @@ function ShopItemData:GetItemData()
       self.itemData.equipInfo:SetRefine(self.refinelv)
     end
   end
+  if self.itemData and self.itemData.IsSnowGem and self.itemData:IsSnowGem() and self.itemData.SetSnowGemData then
+    local stoneData = SnowCrownProxy and SnowCrownProxy.Instance and SnowCrownProxy.Instance:GetStoneBookData(self.goodsID)
+    self.itemData:SetSnowGemData({
+      id = self.goodsID,
+      level = stoneData and stoneData.lv or 0,
+      advlv = stoneData and stoneData.advlv or 1,
+      advexp = stoneData and stoneData.advexp or 0
+    })
+  end
   return self.itemData
 end
 

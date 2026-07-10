@@ -4109,7 +4109,7 @@ function ServiceNUserAutoProxy:CallHandStatusUserCmd(build, masterid, followid, 
   end
 end
 
-function ServiceNUserAutoProxy:CallQueryShow(actionid, expression)
+function ServiceNUserAutoProxy:CallQueryShow(actionid, expression, actioninfos)
   if not NetConfig.PBC then
     local msg = SceneUser2_pb.QueryShow()
     if actionid ~= nil then
@@ -4132,6 +4132,17 @@ function ServiceNUserAutoProxy:CallQueryShow(actionid, expression)
       end
       for i = 1, #expression do
         table.insert(msg.expression, expression[i])
+      end
+    end
+    if actioninfos ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.actioninfos == nil then
+        msg.actioninfos = {}
+      end
+      for i = 1, #actioninfos do
+        table.insert(msg.actioninfos, actioninfos[i])
       end
     end
     self:SendProto(msg)
@@ -4158,6 +4169,17 @@ function ServiceNUserAutoProxy:CallQueryShow(actionid, expression)
       end
       for i = 1, #expression do
         table.insert(msgParam.expression, expression[i])
+      end
+    end
+    if actioninfos ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.actioninfos == nil then
+        msgParam.actioninfos = {}
+      end
+      for i = 1, #actioninfos do
+        table.insert(msgParam.actioninfos, actioninfos[i])
       end
     end
     self:SendProto2(msgId, msgParam)
@@ -4406,7 +4428,7 @@ function ServiceNUserAutoProxy:CallSetDirection(dir)
   end
 end
 
-function ServiceNUserAutoProxy:CallBattleTimelenUserCmd(timelen, totaltime, musictime, tutortime, estatus, powertime, playtime, usedplaytime, extraplaytime, used_count, total_count, used_playtime_extra_daily, total_playtime_extra_daily, used_playtime_extra, total_playtime_extra, config)
+function ServiceNUserAutoProxy:CallBattleTimelenUserCmd(timelen, totaltime, musictime, tutortime, estatus, powertime, playtime, usedplaytime, extraplaytime, used_count, total_count, used_playtime_extra_daily, total_playtime_extra_daily, used_playtime_extra, total_playtime_extra, group_playtimes, config)
   if not NetConfig.PBC then
     local msg = SceneUser2_pb.BattleTimelenUserCmd()
     if timelen ~= nil then
@@ -4453,6 +4475,17 @@ function ServiceNUserAutoProxy:CallBattleTimelenUserCmd(timelen, totaltime, musi
     end
     if total_playtime_extra ~= nil then
       msg.total_playtime_extra = total_playtime_extra
+    end
+    if group_playtimes ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.group_playtimes == nil then
+        msg.group_playtimes = {}
+      end
+      for i = 1, #group_playtimes do
+        table.insert(msg.group_playtimes, group_playtimes[i])
+      end
     end
     if config ~= nil and config.weekly_base_time ~= nil then
       if msg == nil then
@@ -4520,6 +4553,17 @@ function ServiceNUserAutoProxy:CallBattleTimelenUserCmd(timelen, totaltime, musi
     end
     if total_playtime_extra ~= nil then
       msgParam.total_playtime_extra = total_playtime_extra
+    end
+    if group_playtimes ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.group_playtimes == nil then
+        msgParam.group_playtimes = {}
+      end
+      for i = 1, #group_playtimes do
+        table.insert(msgParam.group_playtimes, group_playtimes[i])
+      end
     end
     if config ~= nil and config.weekly_base_time ~= nil then
       if msgParam == nil then

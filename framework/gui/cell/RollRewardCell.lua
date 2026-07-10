@@ -37,9 +37,9 @@ function RollRewardCell:Enter()
       MsgManager.FloatMsg(nil, ZhString.RollReward_LackingRollTimes)
       return
     end
-    local myCount, needCount = DungeonProxy.GetMyRollCoinCount(), self.data.coinCost
+    local myCount, needCount = DungeonProxy.GetMyRollCoinCount(self.data.coinid), self.data.coinCost
     local deltaCount = needCount - myCount
-    if 0 < deltaCount then
+    if (not self.data.coinid or self.data.coinid == GameConfig.RollRaid.roll_coin_itemid) and 0 < deltaCount then
       DungeonProxy.SetMyRollNeedCatB(deltaCount)
     else
       DungeonProxy.SetMyRollNeedCatB(nil)
@@ -66,23 +66,29 @@ function RollRewardCell:SetData(data)
 end
 
 function RollRewardCell:UpdateRestRollTimes()
-  self.countLeftLabel.text = string.format(ZhString.RollReward_CountLeftFormat, DungeonProxy.GetRestRollTimes(self.data), DungeonProxy.GetTotalRollTimes(self.data))
+  local totalRollTimes = DungeonProxy.GetTotalRollTimes(self.data)
+  if totalRollTimes ~= math.huge then
+    self.countLeftLabel.text = string.format(ZhString.RollReward_CountLeftFormat, DungeonProxy.GetRestRollTimes(self.data), totalRollTimes)
+  else
+    self.countLeftLabel.text = ""
+  end
 end
 
 function RollRewardCell:UpdateRollCoin()
   self.cost:Reset()
-  local myCount, needCount = DungeonProxy.GetMyRollCoinCount(), self.data and self.data.coinCost or math.huge
+  local myCount, needCount = DungeonProxy.GetMyRollCoinCount(self.data and self.data.coinid), self.data and self.data.coinCost or math.huge
   TimeTickManager.Me():CreateOnceDelayTick(40, function()
     if not self.cost then
       return
     end
     local content
+    local coinid = self.data and self.data.coinid or self.cfg.roll_coin_itemid
     if myCount >= needCount then
       self.rollBtn:SetActive(true)
-      content = string.format(ZhString.RollReward_CostFormat, needCount, self.cfg.roll_coin_itemid, myCount)
-    elseif BranchMgr.IsJapan() or MyselfProxy.Instance:GetLottery() < needCount - myCount then
+      content = string.format(ZhString.RollReward_CostFormat, needCount, coinid, myCount)
+    elseif BranchMgr.IsJapan() or coinid ~= self.cfg.roll_coin_itemid or MyselfProxy.Instance:GetLottery() < needCount - myCount then
       self.rollBtn:SetActive(false)
-      content = string.format(ZhString.RollReward_CatBCost_Japan, self.cfg.roll_coin_itemid)
+      content = string.format(ZhString.RollReward_CatBCost_Japan, coinid)
     else
       self.rollBtn:SetActive(true)
       content = string.format(ZhString.RollReward_CatBCost, self.cfg.roll_coin_itemid, 151, needCount - myCount)

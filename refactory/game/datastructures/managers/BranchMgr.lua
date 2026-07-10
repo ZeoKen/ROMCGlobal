@@ -161,6 +161,10 @@ function BranchMgr.IsNOEN()
   return BranchMgr.NOEN
 end
 
+function BranchMgr.IsNOKR()
+  return BranchMgr.NOKR
+end
+
 function BranchMgr.IsAll()
   return BranchMgr.None
 end

@@ -111,7 +111,8 @@ function RecallActivityBattlePassView:FindObjs()
 end
 
 function RecallActivityBattlePassView:AddEvts()
-  self:AddListenEvt(ServiceEvent.RecallCCmdBattlePassQueryInfoRecallCmd, self.RefreshPanel)
+  self:AddDispatcherEvt(ServiceEvent.RecallCCmdBattlePassQueryInfoRecallCmd, self.RefreshPanel)
+  self:AddDispatcherEvt(ServiceEvent.UserEventChargeNtfUserEvent, self.OnReceivePurchaseSuccess)
 end
 
 function RecallActivityBattlePassView:OnEnter()
@@ -147,7 +148,74 @@ function RecallActivityBattlePassView:OnUpgradeBtnClick()
       redlog("no deposit info, depositID:", depositID)
       return
     end
-    self:PurchaseDeposit(info, 1)
+    local doPurchase = function()
+      self:PurchaseDeposit(info, 1)
+    end
+    if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
+      self:InvokeRecallBPDepositConfirmPanel(info, doPurchase)
+    else
+      doPurchase()
+    end
+  end
+end
+
+function RecallActivityBattlePassView:GetCurrentDepositId()
+  local config = GameConfig.RecallActivityBattlePass[self.curConfigIndex]
+  return config and config.DepositId
+end
+
+function RecallActivityBattlePassView:PurchaseDeposit(info, count)
+  local productConf = info and info.productConf
+  self.depositId = productConf and productConf.id
+  self.productId = productConf and productConf.ProductID
+  return RecallActivityBattlePassView.super.PurchaseDeposit(self, info, count)
+end
+
+function RecallActivityBattlePassView:OnReceivePurchaseSuccess(message)
+  local dataId = message and message.dataid
+  local depositId = self.depositId or self:GetCurrentDepositId()
+  if dataId == depositId then
+    local productId = self.productId
+    if not productId and depositId then
+      local productConf = Table_Deposit[depositId]
+      productId = productConf and productConf.ProductID
+    end
+    if productId then
+      PurchaseDeltaTimeLimit.Instance():End(productId)
+    end
+    self:DelayRefreshBattlePassInfo()
+  end
+end
+
+function RecallActivityBattlePassView:DelayRefreshBattlePassInfo()
+  if not TimeTickManager or not TimeTickManager.Me then
+    ServiceRecallCCmdProxy.Instance:CallBattlePassQueryInfoRecallCmd({})
+    return
+  end
+  TimeTickManager.Me():ClearTick(self, 991235)
+  TimeTickManager.Me():CreateOnceDelayTick(500, function()
+    ServiceRecallCCmdProxy.Instance:CallBattlePassQueryInfoRecallCmd({})
+  end, self, 991235)
+end
+
+function RecallActivityBattlePassView:InvokeRecallBPDepositConfirmPanel(depositInfo, cb)
+  local productConf = depositInfo and depositInfo.productConf
+  local productID = productConf and productConf.ProductID
+  if productID then
+    local productName = OverSea.LangManager.Instance():GetLangByKey(Table_Item[productConf.ItemId].NameZh)
+    local productPrice = productConf.Rmb
+    local productCount = productConf.Count
+    local currencyType = productConf.CurrencyType
+    local productDesc = OverSea.LangManager.Instance():GetLangByKey(Table_Deposit[productConf.id].Desc)
+    local productD = " [0075BCFF]" .. productCount .. "[-] " .. productName
+    if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
+      productD = " [0075BCFF]" .. productDesc .. "[-] "
+    end
+    OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FunctionNewRecharge.FormatMilComma(productPrice)), ZhString.ShopConfirmDes, productName, productPrice, function()
+      if cb then
+        cb()
+      end
+    end)
   end
 end
 

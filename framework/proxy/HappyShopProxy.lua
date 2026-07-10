@@ -13,7 +13,8 @@ HappyShopProxy.LimitType = {
   GuildMaterialWeek = SessionShop_pb.ESHOPLIMITTYPE_GUILD_MATERIAL_MAXCOUNT,
   UserAlways = SessionShop_pb.ESHOPLIMITTYPE_USER_ALWAYS,
   GVGSeasonLimit = SessionShop_pb.ESHOPLIMITTYPE_GVG_SEASON,
-  EveryGVGLimit = SessionShop_pb.ESHOPLIMITTYPE_EVERY_GVG
+  EveryGVGLimit = SessionShop_pb.ESHOPLIMITTYPE_EVERY_GVG,
+  MultiMonth = SessionShop_pb.ESHOPLIMITTYPE_ACC_MULTIMONTH
 }
 HappyShopProxy.SourceType = {
   User = SessionShop_pb.ESHOPSOURCE_USER,
@@ -24,6 +25,7 @@ local totalCostList = {}
 local packageCheck = GameConfig.PackageMaterialCheck and GameConfig.PackageMaterialCheck.shop
 local _SourceShop = ProtoCommon_pb.ESOURCE_SHOP
 local GUILD_MATERIAL_TYPE = 988
+local NOKR_DIAMOND_SHOP_CONFIRM_URL = "https://member.gnjoy.com/support/terms/common/commonterm.asp?category=mobile_terms1"
 
 function HappyShopProxy:ctor(proxyName, data)
   self.proxyName = proxyName or HappyShopProxy.NAME
@@ -40,6 +42,7 @@ end
 function HappyShopProxy:Init()
   self.shopItems = {}
   self.myProfessionItems = {}
+  self.isSnowStoneScreen = false
   self.limitCountMap = {}
   self.tabItems = {}
   self.qualityItems = {}
@@ -98,6 +101,8 @@ end
 
 function HappyShopProxy:InitShopData(shopType)
   TableUtility.ArrayClear(self.shopItems)
+  TableUtility.ArrayClear(self.myProfessionItems)
+  self.isSnowStoneScreen = false
   local shopData = ShopProxy.Instance:GetShopDataByTypeId(shopType, self.params)
   local checkQuality = false
   if shopData then
@@ -111,7 +116,7 @@ function HappyShopProxy:InitShopData(shopType)
       end
     end
     table.sort(self.shopItems, HappyShopProxy._SortItem)
-    if shopData:CheckScreen() then
+    if not self:SetSnowStoneItems(self.shopItems) and shopData:CheckScreen() then
       self:SetMyProfessionItems(self.shopItems)
     end
     if shopData:CheckTab() then
@@ -253,6 +258,27 @@ function HappyShopProxy:GetMyProfessionItems()
   return self.myProfessionItems
 end
 
+function HappyShopProxy:SetSnowStoneItems(datas)
+  TableUtility.ArrayClear(self.myProfessionItems)
+  local myClass = MyselfProxy.Instance:GetMyProfession() or 0
+  for i = 1, #datas do
+    local data = self:GetShopItemDataByTypeId(datas[i])
+    local snowStoneConfig = data and data.goodsID and Table_SnowStone and Table_SnowStone[data.goodsID]
+    if snowStoneConfig then
+      self.isSnowStoneScreen = true
+      local classIDs = snowStoneConfig.ClassID
+      if classIDs and 0 < #classIDs and 0 < TableUtility.ArrayFindIndex(classIDs, myClass) then
+        TableUtility.ArrayPushBack(self.myProfessionItems, datas[i])
+      end
+    end
+  end
+  return self.isSnowStoneScreen
+end
+
+function HappyShopProxy:IsSnowStoneScreen()
+  return self.isSnowStoneScreen
+end
+
 function HappyShopProxy:SetSelectId(id)
   self.selectId = id
 end
@@ -266,6 +292,9 @@ function HappyShopProxy:GetMoneyType()
 end
 
 function HappyShopProxy:GetScreen()
+  if self.isSnowStoneScreen then
+    return true
+  end
   local shopData = ShopProxy.Instance:GetShopDataByTypeId(self.shopType, self.params)
   if shopData then
     return shopData:CheckScreen()
@@ -296,7 +325,90 @@ function HappyShopProxy:BuyItem(id, count, hideNetDelayPrompt)
   return self:BuyItemByShopItemData(item, count, nil, hideNetDelayPrompt)
 end
 
+function HappyShopProxy:NeedConfirmNOKRDiamondCost(item, costList)
+  local moneyId = GameConfig.MoneyId
+  if not (BranchMgr.IsNOKR() and moneyId and moneyId.NOKR_Diamond) or not item then
+    return false
+  end
+  for i = 1, 5 do
+    local temp = i
+    if temp == 1 then
+      temp = ""
+    end
+    local itemId = item["ItemID" .. temp]
+    if itemId == moneyId.NOKR_Diamond then
+      local cost = costList and costList[i] or item["ItemCount" .. temp]
+      if cost == nil or 0 < cost then
+        return true
+      end
+    end
+  end
+  return false
+end
+
+function HappyShopProxy:TryConfirmNOKRDiamondCost(item, costList, confirmHandler)
+  if self:NeedConfirmNOKRDiamondCost(item, costList) then
+    local url = GameConfig.NOKRDiamondShopConfirmUrl or NOKR_DIAMOND_SHOP_CONFIRM_URL
+    local text = string.format(ZhString.NOKRDiamondShopConfirmText, url)
+    UIUtil.PopUpConfirmYesNoView("", text, confirmHandler, nil, nil, ZhString.UniqueConfirmView_Confirm, ZhString.UniqueConfirmView_CanCel, nil, nil, nil, function(clickUrl)
+      ApplicationInfo.OpenUrl(clickUrl)
+    end)
+    return true
+  end
+  if confirmHandler then
+    confirmHandler()
+  end
+  return false
+end
+
+function HappyShopProxy:NeedConfirmSnowStoneOverflow(item, count)
+  local goodsID = item and item.goodsID
+  local snowConfig = GameConfig.Snow
+  local stoneAdvanceCount = snowConfig and snowConfig.StoneAdvanceCount
+  if not (goodsID and Table_SnowStone and Table_SnowStone[goodsID]) or not stoneAdvanceCount then
+    return false
+  end
+  count = tonumber(count) or 0
+  if count <= 0 then
+    return false
+  end
+  local stoneData = SnowCrownProxy and SnowCrownProxy.Instance and SnowCrownProxy.Instance:GetStoneBookData(goodsID)
+  local advlv = tonumber(stoneData and stoneData.advlv) or 0
+  local advexp = tonumber(stoneData and stoneData.advexp) or 0
+  local maxAdvanceLevel = 0
+  for lv, _ in pairs(stoneAdvanceCount) do
+    if type(lv) == "number" and lv > maxAdvanceLevel then
+      maxAdvanceLevel = lv
+    end
+  end
+  if maxAdvanceLevel <= 0 then
+    return false
+  end
+  local needCount = 0
+  for lv = advlv + 1, maxAdvanceLevel do
+    needCount = needCount + (stoneAdvanceCount[lv] or 0)
+  end
+  needCount = math.max(0, needCount - advexp)
+  return count > needCount
+end
+
+function HappyShopProxy:TryOpenNOKRDiamondShopWhenNotEnough(itemid)
+  local moneyId = GameConfig.MoneyId
+  if not (BranchMgr.IsNOKR() and moneyId and moneyId.NOKR_Diamond) or itemid ~= moneyId.NOKR_Diamond then
+    return false
+  end
+  MsgManager.ConfirmMsgByID(41164, function()
+    FunctionNewRecharge.Instance():OpenUI(PanelConfig.NewRecharge_TShop, FunctionNewRecharge.InnerTab.Shop_Normal2)
+    EventManager.Me():DispatchEvent(NewRechargeEvent.SelectGood, 5054)
+  end)
+  return true
+end
+
 function HappyShopProxy:BuyItemByShopItemData(item, count, skipCheckMoney, hideNetDelayPrompt)
+  if self:GetShopType() == 4045 and not GuildProxy.Instance:ImGuildChairman() then
+    MsgManager.ShowMsgByID(2707)
+    return false
+  end
   if item:CheckCanRemove() then
     MsgManager.ShowMsgByID(990)
     self:CallQueryShopConfig()
@@ -362,10 +474,19 @@ function HappyShopProxy:BuyItemByShopItemData(item, count, skipCheckMoney, hideN
         end
         local moneyCount = self:GetItemNum(ItemID, item.source)
         if moneyCount < totalCostList[i] and not skipCheckMoney then
+          if self:TryOpenNOKRDiamondShopWhenNotEnough(ItemID) then
+            return false
+          end
           OverSeaFunc.SpecialItemNotEnoughMsg(ItemID)
           return
         end
       end
+    end
+    local buyFunc = function()
+      ServiceSessionShopProxy.Instance:CallBuyShopItem(item.id, count, totalCostList[1], totalCostList[2], nil, hideNetDelayPrompt)
+    end
+    local confirmBuyFunc = function()
+      self:TryConfirmNOKRDiamondCost(item, totalCostList, buyFunc)
     end
     if item.IfMsg ~= nil then
       local itemName = ""
@@ -373,14 +494,16 @@ function HappyShopProxy:BuyItemByShopItemData(item, count, skipCheckMoney, hideN
         itemName = Table_Item[item.ItemID].NameZh or ""
       end
       MsgManager.ConfirmMsgByID(item.IfMsg, function()
-        ServiceSessionShopProxy.Instance:CallBuyShopItem(item.id, count, totalCostList[1], totalCostList[2], nil, hideNetDelayPrompt)
+        confirmBuyFunc()
       end, nil, nil, item.ItemCount, itemName, goodsStaticData.NameZh or "")
     elseif item.presentMsgid ~= nil and item:CheckPresentMenu() then
       MsgManager.ConfirmMsgByID(item.presentMsgid, function()
-        ServiceSessionShopProxy.Instance:CallBuyShopItem(item.id, count, totalCostList[1], totalCostList[2], nil, hideNetDelayPrompt)
+        confirmBuyFunc()
       end)
     else
-      ServiceSessionShopProxy.Instance:CallBuyShopItem(item.id, count, totalCostList[1], totalCostList[2], nil, hideNetDelayPrompt)
+      if self:TryConfirmNOKRDiamondCost(item, totalCostList, buyFunc) then
+        return false
+      end
       return true
     end
   else
@@ -428,6 +551,8 @@ function HappyShopProxy:GetItemNum(itemid, source)
       moneyCount = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_HAPPYVALUE) or 0
     elseif config and (config.Type == 104 or config.Type == 105) then
       moneyCount = Game.Myself and Game.Myself.data.userdata:GetNoEnterPackItemNum(itemid)
+    elseif moneyId.NOKR_Diamond ~= nil and itemid == moneyId.NOKR_Diamond then
+      moneyCount = MyselfProxy.Instance:GetNokrDiamond()
     else
       moneyCount = self:GetItemNumByStaticID(itemid)
     end
@@ -467,6 +592,8 @@ function HappyShopProxy:GetTodayCanBuyCountStr(data)
       repStr = ZhString.HappyShop_AccWeekCanBuy
     elseif limitType == HappyShopProxy.LimitType.AccMonth then
       repStr = ZhString.HappyShop_AccMonthCanBuy
+    elseif limitType == HappyShopProxy.LimitType.MultiMonth then
+      repStr = ZhString.HappyShop_AccMultiMonthCanBuy
     elseif limitType == HappyShopProxy.LimitType.UserWeek then
       repStr = ZhString.HappyShop_AccUserWeekCanBuy
     elseif limitType == HappyShopProxy.LimitType.GVGSeasonLimit then
@@ -492,6 +619,7 @@ function HappyShopProxy:GetCanBuyCount(data)
   local isUserWeek = data:CheckLimitType(self.LimitType.UserWeek)
   local isAccWeek = data:CheckLimitType(self.LimitType.AccWeek)
   local isAccMonth = data:CheckLimitType(self.LimitType.AccMonth)
+  local isMultiMonth = data:CheckLimitType(self.LimitType.MultiMonth)
   local isGuildMaterial = data:CheckLimitType(self.LimitType.GuildMaterialWeek)
   local isUserAlways = data:CheckLimitType(self.LimitType.UserAlways)
   local isGVGSeason = data:CheckLimitType(self.LimitType.GVGSeasonLimit)
@@ -503,7 +631,7 @@ function HappyShopProxy:GetCanBuyCount(data)
       return limitCount - myGuildData.material_machine_count, self.LimitType.GuildMaterialWeek
     end
   end
-  if data.LimitNum ~= 0 and (isOneDay or isAccUser or isAccUserAlways or isUserWeek or isAccWeek or isAccMonth or isUserAlways or isGVGSeason or isEveryGVGLimit) then
+  if data.LimitNum ~= 0 and (isOneDay or isAccUser or isAccUserAlways or isUserWeek or isAccWeek or isAccMonth or isMultiMonth or isUserAlways or isGVGSeason or isEveryGVGLimit) then
     local boughtCount = 0
     local haveBoughtItemCount = self:GetCachedHaveBoughtItemCount()
     if haveBoughtItemCount ~= nil then
@@ -523,6 +651,8 @@ function HappyShopProxy:GetCanBuyCount(data)
       return count, self.LimitType.AccWeek
     elseif isAccMonth then
       return count, self.LimitType.AccMonth
+    elseif isMultiMonth then
+      return count, self.LimitType.MultiMonth
     elseif isUserWeek then
       return count, self.LimitType.UserWeek
     elseif isUserAlways then
@@ -759,13 +889,13 @@ end
 
 local shopDatasArray = {}
 
-function HappyShopProxy:GetShopDataByName(name, tabid)
+function HappyShopProxy:GetShopDataByName(name, tabid, sourceDatas)
   TableUtility.ArrayClear(shopDatasArray)
-  local shopitems = {}
-  if tabid and self:GetTab() then
+  local shopDatas = sourceDatas
+  if not shopDatas and tabid and self:GetTab() then
     shopDatas = self:GetTabItem(tabid)
   else
-    shopDatas = self.shopItems
+    shopDatas = shopDatas or self.shopItems
   end
   if not shopDatas then
     return

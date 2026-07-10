@@ -2365,6 +2365,158 @@ Table_EnchantMustBuff_t = {
         BuffID = 500054,
         Weight = 25
       }
+    },
+    {
+      {
+        AttrType = "EquipASPD",
+        AttrType2 = "CriDamPer",
+        BuffID = 500123,
+        Weight = 50
+      },
+      {
+        AttrType = "EquipASPD",
+        AttrType2 = "CriDamPer",
+        BuffID = 500124,
+        Weight = 25
+      },
+      {
+        AttrType = "CriDefPer",
+        AttrType2 = "Vit",
+        BuffID = 500113,
+        Weight = 50
+      },
+      {
+        AttrType = "CriDefPer",
+        AttrType2 = "Vit",
+        BuffID = 500114,
+        Weight = 25
+      }
+    },
+    {
+      {
+        AttrType = "Int",
+        AttrType2 = "MaxSpPer",
+        BuffID = 500133,
+        Weight = 50
+      },
+      {
+        AttrType = "Int",
+        AttrType2 = "MaxSpPer",
+        BuffID = 500134,
+        Weight = 25
+      },
+      {
+        AttrType = "Atk",
+        AttrType2 = "Str",
+        BuffID = 500013,
+        Weight = 50
+      },
+      {
+        AttrType = "Atk",
+        AttrType2 = "Str",
+        BuffID = 500014,
+        Weight = 25
+      }
+    },
+    {
+      {
+        AttrType = "Int",
+        AttrType2 = "MaxSpPer",
+        BuffID = 500133,
+        Weight = 50
+      },
+      {
+        AttrType = "Int",
+        AttrType2 = "MaxSpPer",
+        BuffID = 500134,
+        Weight = 25
+      },
+      {
+        AttrType = "Agi",
+        AttrType2 = "Luk",
+        BuffID = 500043,
+        Weight = 50
+      },
+      {
+        AttrType = "Agi",
+        AttrType2 = "Luk",
+        BuffID = 500044,
+        Weight = 25
+      },
+      {
+        AttrType = "Atk",
+        AttrType2 = "Str",
+        BuffID = 500013,
+        Weight = 50
+      },
+      {
+        AttrType = "Atk",
+        AttrType2 = "Str",
+        BuffID = 500014,
+        Weight = 25
+      },
+      {
+        AttrType = "Vit",
+        AttrType2 = "Int",
+        BuffID = 500143,
+        Weight = 50
+      },
+      {
+        AttrType = "Vit",
+        AttrType2 = "Int",
+        BuffID = 500144,
+        Weight = 25
+      }
+    },
+    {
+      {
+        AttrType = "MaxSpPer",
+        AttrType2 = "MAtk",
+        BuffID = 500093,
+        Weight = 50
+      },
+      {
+        AttrType = "MaxSpPer",
+        AttrType2 = "MAtk",
+        BuffID = 500094,
+        Weight = 25
+      },
+      {
+        AttrType = "Hit",
+        AttrType2 = "Dex",
+        BuffID = 500033,
+        Weight = 50
+      },
+      {
+        AttrType = "Hit",
+        AttrType2 = "Dex",
+        BuffID = 500034,
+        Weight = 25
+      },
+      {
+        AttrType = "EquipASPD",
+        AttrType2 = "DamIncrease",
+        BuffID = 500083,
+        Weight = 50
+      },
+      {
+        AttrType = "EquipASPD",
+        AttrType2 = "DamIncrease",
+        BuffID = 500084,
+        Weight = 25
+      },
+      {
+        AttrType = "Vit",
+        AttrType2 = "Int",
+        BuffID = 500143,
+        Weight = 50
+      },
+      {
+        AttrType = "Vit",
+        AttrType2 = "Int",
+        BuffID = 500144,
+        Weight = 25
+      }
     }
   },
   Position = {
@@ -3262,6 +3414,36 @@ Table_EnchantMustBuff = {
     ItemID = 7473,
     Position = Table_EnchantMustBuff_t.Position[6],
     Effect = Table_EnchantMustBuff_t.Effect[91]
+  },
+  [142] = {
+    id = 142,
+    ItemID = 7476,
+    Position = Table_EnchantMustBuff_t.Position[7],
+    Effect = Table_EnchantMustBuff_t.Effect[92]
+  },
+  [143] = {
+    id = 143,
+    ItemID = 7477,
+    Position = Table_EnchantMustBuff_t.Position[8],
+    Effect = Table_EnchantMustBuff_t.Effect[93]
+  },
+  [144] = {
+    id = 144,
+    ItemID = 7478,
+    Position = Table_EnchantMustBuff_t.Position[9],
+    Effect = Table_EnchantMustBuff_t.Effect[92]
+  },
+  [145] = {
+    id = 145,
+    ItemID = 7479,
+    Position = Table_EnchantMustBuff_t.Position[10],
+    Effect = Table_EnchantMustBuff_t.Effect[94]
+  },
+  [146] = {
+    id = 146,
+    ItemID = 7480,
+    Position = Table_EnchantMustBuff_t.Position[11],
+    Effect = Table_EnchantMustBuff_t.Effect[95]
   }
 }
 local cell_mt = {

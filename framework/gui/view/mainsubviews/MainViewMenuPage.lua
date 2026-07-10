@@ -443,6 +443,7 @@ function MainViewMenuPage:InitActivityBtn()
   self:RegisterRedTipCheck(ActivitySelfChooseProxy.RedTipId, self.DoujinshiButton, 17)
   self:RegisterRedTipCheck(ActivityExchangeProxy.RedTipId, self.DoujinshiButton, 17)
   self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_MISSION_REWARD, self.DoujinshiButton, 17)
+  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.DoujinshiButton, 17)
   self.noviceCommunityMenuid = GameConfig.SystemOpen_MenuId and GameConfig.SystemOpen_MenuId.NoviceCommunity or 6100
   FunctionUnLockFunc.Me():RegisteEnterBtn(self.noviceCommunityMenuid, self.DoujinshiButton)
   self.Label_UILabel = self:FindGO("Label", self.DoujinshiButton):GetComponent(UILabel)
@@ -4724,9 +4725,10 @@ function MainViewMenuPage:UpdateActivityIntegrationBtns()
       end
       local paySignActId = ActivityIntegrationProxy.Instance:GetPaySignActID(groupid)
       if paySignActId then
-        local isNew = RedTipProxy.Instance:InRedTip(SceneTip_pb.EREDSYS_ACT_PAY_SIGN)
+        self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.actIntegerBtns[groupid])
+        local isNew = RedTipProxy.Instance:IsNew(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, paySignActId)
         if isNew then
-          self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.actIntegerBtns[groupid], 39)
+          self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.actIntegerBtns[groupid], 39, nil, nil, paySignActId)
         else
           self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.actIntegerBtns[groupid])
         end
@@ -4807,6 +4809,7 @@ function MainViewMenuPage:UpdateLoopActIntegrationBtns()
           self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_ACT_BP, self.loopActIntegerBtns[groupid])
           self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_NEW_SERVER_CHALLENGE, self.loopActIntegerBtns[groupid])
           self:UnRegisterSingleRedTipCheck(ActivityFlipCardProxy.RedTipId, self.loopActIntegerBtns[groupid])
+          self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.loopActIntegerBtns[groupid])
           for i = 1, #allActivityIDs do
             local activityID = allActivityIDs[i]
             local staticData = Table_ActivityNew[activityID]
@@ -4822,6 +4825,7 @@ function MainViewMenuPage:UpdateLoopActIntegrationBtns()
                 local isNew = RedTipProxy.Instance:IsNew(SceneTip_pb.EREDSYS_NEW_SERVER_CHALLENGE, activityId)
                 if isNew then
                   self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_NEW_SERVER_CHALLENGE, self.loopActIntegerBtns[groupid], 39, nil, nil, activityId)
+                  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_NEW_SERVER_CHALLENGE, self.DoujinshiButton, 17)
                 end
               elseif subType == 3 then
                 local isNew = RedTipProxy.Instance:IsNew(ActivityFlipCardProxy.RedTipId, activityId)
@@ -4829,11 +4833,9 @@ function MainViewMenuPage:UpdateLoopActIntegrationBtns()
                   self:RegisterRedTipCheck(ActivityFlipCardProxy.RedTipId, self.loopActIntegerBtns[groupid], 39, nil, nil, activityId)
                 end
               elseif subType == ActivityCmd_pb.GACTIVITY_ACT_PAY_SIGN then
-                local isNew = RedTipProxy.Instance:InRedTip(SceneTip_pb.EREDSYS_ACT_PAY_SIGN)
+                local isNew = RedTipProxy.Instance:IsNew(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, activityId)
                 if isNew then
-                  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.loopActIntegerBtns[groupid], 39)
-                else
-                  self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.loopActIntegerBtns[groupid])
+                  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.loopActIntegerBtns[groupid], 39, nil, nil, activityId)
                 end
               end
             end

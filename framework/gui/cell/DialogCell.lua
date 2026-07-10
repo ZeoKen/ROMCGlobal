@@ -123,7 +123,7 @@ function DialogCell:SetData(dialogData, params, npcguid, isExtendDialog)
         self:PlayAction(speakerID, dialogData.Action.actionid, dialogData.Action.num)
       end
       if self.voiceBtn then
-        if BranchMgr.IsKorea() then
+        if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
           self:SetNpcVoiceBtnState(false)
         elseif not StringUtil.IsEmpty(dialogData.Voice) and FunctionPlotCmd.Me():PlayNpcVisitVocal(dialogData.Voice) ~= false then
           self:SetNpcVoiceBtnState(true)
@@ -151,7 +151,7 @@ function DialogCell:SetData(dialogData, params, npcguid, isExtendDialog)
       end
       self:SetContext(context)
       if dialogData.Speaker == 1024 and dialogData.id == 2251 then
-        if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+        if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
           OverSeas_TW.OverSeasManager.GetInstance():TrackEvent(AppBundleConfig.GetAdjustByName("changeJob"))
         elseif BranchMgr.IsSEA() or BranchMgr.IsNA() or BranchMgr.IsEU() then
           OverSeas_TW.OverSeasManager.GetInstance():EvtUnlockAchievement()
@@ -310,9 +310,13 @@ end
 local QuestParamPattern = "%[QuestParam%]"
 
 function DialogCell:_ReplaceQuestParams(text, params)
-  local resultStr = string.gsub(text, QuestParamPattern, function()
-    return table.remove(params, 1) or ""
-  end)
+  local index = 0
+  local GetNextParam = function()
+    index = index + 1
+    return params[index] or ""
+  end
+  local resultStr = string.gsub(text, QuestParamPattern, GetNextParam)
+  resultStr = string.gsub(resultStr, "%(QuestParam%)", GetNextParam)
   return resultStr
 end
 

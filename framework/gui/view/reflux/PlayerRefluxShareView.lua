@@ -90,6 +90,7 @@ function PlayerRefluxShareView:OverseaShare()
     IconManager:SetUIIcon("Twitter", sp)
     sp = self:FindComponent("Sprite", UISprite, self.shareWeiChat)
     IconManager:SetUIIcon("line", sp)
+    self.shareWeiBoBtn:SetActive(false)
   else
     self.shareWeiBoBtn:SetActive(false)
     self.shareWeiChat:SetActive(false)

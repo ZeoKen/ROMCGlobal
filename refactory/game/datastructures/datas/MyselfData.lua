@@ -437,7 +437,9 @@ end
 local StarBuff = GameConfig.StarShape.starBuff or 136190
 local Hero_SanityBuff = GameConfig.SkillCommon.Hero_SanityBuff or 136400
 local Hero_FeatherBuff = GameConfig.SkillCommon.Hero_FeatherBuff or 137392
-local Heinrich_EnergyBuff = 137710
+local Heinrich_AtkSpdSerialConfig = GameConfig.AtkSpdSerialSkills or {}
+local Heinrich_EnergyBuff = Heinrich_AtkSpdSerialConfig.full_buff_id or 137710
+local Heinrich_SnowStoneID = Heinrich_AtkSpdSerialConfig.snow_stone_id
 local Hero_SolarEnergyBuff = 139610
 
 function MyselfData:InitBuffHandler()
@@ -568,6 +570,10 @@ function MyselfData:InitBuffHandler()
     [BuffType.SummonElement] = {
       Add = self.SummonElement_Add,
       Remove = self.SummonElement_Remove
+    },
+    [BuffType.ReplaceSkillBaseCd] = {
+      Add = self._ReplaceSkillBaseCd_Add,
+      Remove = self._ReplaceSkillBaseCd_Remove
     }
   }
   self.buffClientPropsHandler = {
@@ -890,6 +896,99 @@ end
 
 function MyselfData:IsBuffStateValid(buffInfo)
   return true
+end
+
+function MyselfData:_ReplaceSkillBaseCd_Add(buffeffect, fromID, isInit, level)
+  local skillFamilyID = buffeffect and buffeffect.skill_family_id
+  if skillFamilyID == nil then
+    return
+  end
+  CDProxy.Instance:UpdateSkillCDMaxByReplaceBaseCD(skillFamilyID)
+end
+
+function MyselfData:_ReplaceSkillBaseCd_Remove(buffeffect, level)
+  local skillFamilyID = buffeffect and buffeffect.skill_family_id
+  if skillFamilyID == nil then
+    return
+  end
+  CDProxy.Instance:UpdateSkillCDMaxByReplaceBaseCD(skillFamilyID)
+end
+
+function MyselfData:CheckSnowAutoSkillIsActive(skillId)
+  return self:CheckSnowAutoSkillIsActiveBySortID(math.floor(skillId / 1000))
+end
+
+function MyselfData:CheckSnowAutoSkillIsActiveBySortID(sortID)
+  if self:CheckCanAutoTrigger(sortID) and self:CheckSkillInAutoTriggerBar(sortID) then
+    return true
+  end
+  return false
+end
+
+function MyselfData:CheckCanAutoTrigger(sortID)
+  local map = self.buffTypes and self.buffTypes[BuffType.AutoTriggerSkill]
+  if map == nil then
+    return false
+  end
+  for buffID, _ in pairs(map) do
+    if self.buffIDActives and self.buffIDActives[buffID] then
+      local buff = Table_Buffer[buffID]
+      local buffeffect = buff and buff.BuffEffect
+      if buffeffect and buffeffect.CastFamilyID == sortID then
+        return true
+      end
+    end
+  end
+  return false
+end
+
+function MyselfData:CheckSkillInAutoTriggerBar(sortID)
+  local skill = SkillProxy.Instance:GetLearnedSkillBySortID(sortID)
+  if not skill then
+    return false
+  end
+  local currentAuto = ShortCutProxy.Instance:GetCurrentAuto()
+  if not currentAuto then
+    return false
+  end
+  local pos = skill:GetPosInShortCutGroup(currentAuto)
+  if not pos or pos <= 0 then
+    return false
+  end
+  if Game.AutoBattleManager.on then
+    return true
+  end
+  return false
+end
+
+function MyselfData:GetReplaceSkillBaseCD(skillID, calLogicReal)
+  local map = self.buffTypes and self.buffTypes[BuffType.ReplaceSkillBaseCd]
+  if map == nil then
+    return nil
+  end
+  local skillSortID = math.floor(skillID / 1000)
+  for buffID, _ in pairs(map) do
+    if self.buffIDActives and self.buffIDActives[buffID] then
+      local buff = Table_Buffer[buffID]
+      local buffeffect = buff and buff.BuffEffect
+      if buffeffect then
+        local skillFamilyID = buffeffect.skill_family_id
+        if skillFamilyID == skillSortID then
+          local replaceCD = buffeffect.cd
+          if replaceCD ~= nil then
+            if type(replaceCD) == "table" then
+              return CommonFun.calcBuffValue(self, self, replaceCD.type, replaceCD.a, replaceCD.b, replaceCD.c, replaceCD.d, 0, 0)
+            end
+            local replaceCDNum = tonumber(replaceCD)
+            if replaceCDNum ~= nil then
+              return replaceCDNum
+            end
+          end
+        end
+      end
+    end
+  end
+  return nil
 end
 
 function MyselfData:GetWeaponPetLevel()
@@ -1476,20 +1575,43 @@ end
 function MyselfData:UpdateEnergyBuff(bufffID, layer)
   Game.Myself:UpdateEnergyBuff(layer)
   self.energyBuffLayer = layer
-  local data = Table_Buffer[bufffID]
-  self.energyBuffLimitLayer = data.limit_layer or 10
+  self.energyBuffID = bufffID
+end
+
+function MyselfData:GetSnowStoneLimitLayer(stoneID)
+  if not stoneID then
+    return 0
+  end
+  return self:GetEquipSnowStoneLv(stoneID) or 0
+end
+
+function MyselfData:GetBuffLimitLayerData(buffID, defaultLimitLayer)
+  local data = Table_Buffer[buffID]
+  local buffeffect = data and data.BuffEffect
+  local baseLimitLayer = buffeffect and buffeffect.limit_layer or defaultLimitLayer or 0
+  local extraLimitLayer = self:GetBuffMaxLayer(buffID) or 0
+  if buffID == Heinrich_EnergyBuff then
+    extraLimitLayer = extraLimitLayer + self:GetSnowStoneLimitLayer(Heinrich_SnowStoneID)
+  end
+  return baseLimitLayer, extraLimitLayer, baseLimitLayer + extraLimitLayer
+end
+
+function MyselfData:GetEnergyBuffLimitLayer(buffID)
+  local _, _, totalLimitLayer = self:GetBuffLimitLayerData(buffID, 10)
+  return totalLimitLayer
 end
 
 function MyselfData:CheckEnergyBuffFull()
-  if not self.energyBuffLayer or not self.energyBuffLimitLayer then
+  if not self.energyBuffLayer or not self.energyBuffID then
     return false
   end
-  return self.energyBuffLayer >= self.energyBuffLimitLayer
+  return self.energyBuffLayer >= self:GetEnergyBuffLimitLayer(self.energyBuffID)
 end
 
 function MyselfData:RemoveEnergyBuff()
   local profId = MyselfProxy:GetMyProfession()
   self.energyBuffLayer = 0
+  self.energyBuffID = nil
   if profId == 685 then
     Game.Myself:UpdateEnergyBuff(0)
   else

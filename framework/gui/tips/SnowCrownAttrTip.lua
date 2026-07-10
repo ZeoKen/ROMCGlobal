@@ -72,9 +72,10 @@ function SnowCrownAttrTip:SetData(data)
         local bagNum = BagProxy.Instance:GetItemNumByStaticID(cost[1], checkPackage)
         local colorStr = bagNum >= cost[2] and "" or TextColorRed
         if bagNum < cost[2] then
+          local needCount = cost[2] - bagNum
           table.insert(self.lackMats, {
             id = cost[1],
-            count = cost[2]
+            count = needCount
           })
         end
         itemData.num = colorStr .. bagNum .. "[-][/c]/" .. cost[2]
@@ -82,11 +83,11 @@ function SnowCrownAttrTip:SetData(data)
       end
       self.lack = #self.lackMats > 0
     end
+    self.maxLv:SetActive(isMax)
+    self.costPart:SetActive(not isMax)
     self.costListCtrl:ResetDatas(datas)
     self.upgradeBtn:SetActive(not isMax)
     self.upgradeLabel.text = self.lack and ZhString.EquipUpgradePopUp_QuickBuy or ZhString.EquipUpgradePopUp_Upgrade
-    self.maxLv:SetActive(isMax)
-    self.costPart:SetActive(not isMax)
     local x, y, z = LuaGameObject.GetLocalPositionGO(self.bottomBg)
     y = isMax and LongBottomBgY or DefaultBottomBgY
     LuaGameObject.SetLocalPositionGO(self.bottomBg, x, y, z)

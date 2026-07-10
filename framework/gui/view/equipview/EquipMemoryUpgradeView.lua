@@ -8,6 +8,7 @@ autoImport("EquipMemoryCombineView")
 EquipMemoryUpgradeView.BrotherView = EquipMemoryCombineView
 local _PACKAGECHECK = GameConfig.PackageMaterialCheck.EquipMemory_levelup or {1, 22}
 local _attrUnlockLvStep = {}
+local NOKRRateUrl = "https://game.naver.com/lounge/Ragnarok_M_Classic/board/16"
 
 function EquipMemoryUpgradeView:OnEnter()
   EquipMemoryUpgradeView.super.OnEnter(self)
@@ -253,6 +254,10 @@ function EquipMemoryUpgradeView:FindObjs()
   self.upgradeResult = self:FindGO("UpgradeResult")
   self.upgradeResultScrollView = self:FindGO("ScrollView", self.upgradeResult):GetComponent(UIScrollView)
   self.upgradeResultGrid = self:FindGO("ResultGrid", self.upgradeResult):GetComponent(UITable)
+  self.showRateBtn = self:FindGO("ShowRateBtn", self.upgradeResultGrid.gameObject)
+  if self.showRateBtn then
+    self.showRateBtn:SetActive(BranchMgr.IsNOKR())
+  end
   self.baseAttrChangePart = self:FindGO("BaseAttrChange"):GetComponent(UISprite)
   self.baseAttriGrid = self:FindGO("BaseAttrGrid", self.upgradeResult):GetComponent(UIGrid)
   self.baseAttris = {}
@@ -349,6 +354,11 @@ function EquipMemoryUpgradeView:AddEvts()
     self.showDescDetail = not self.showDescDetail
     self:PlayDescTween(self.showDescDetail)
   end)
+  if self.showRateBtn then
+    self:AddClickEvent(self.showRateBtn, function()
+      Application.OpenURL(NOKRRateUrl)
+    end)
+  end
   self:AddPressEvent(self.countPlusBg.gameObject, function(g, b)
     self:PlusPressCount(b)
   end)

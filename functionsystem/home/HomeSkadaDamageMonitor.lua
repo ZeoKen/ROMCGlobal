@@ -36,7 +36,8 @@ function HomeSkadaDamageMonitor:ResetMonitor()
   self.monitorTime = nil
 end
 
-function HomeSkadaDamageMonitor:AddDamage(type, value)
+function HomeSkadaDamageMonitor:AddDamage(type, value, doubledamage)
+  value = doubledamage and value * 2 or value
   local currentTime = ServerTime.CurServerTime() / 1000
   if not self.startMonitorTime then
     self.startMonitorTime = currentTime

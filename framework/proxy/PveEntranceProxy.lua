@@ -21,7 +21,9 @@ PveRaidType = {
   SpaceTimeIllusion = FuBenCmd_pb.ERAIDTYPE_SPACETIME_ILLUSION or 81,
   FairyTale = FuBenCmd_pb.ERAIDTYPE_FAIRY_TALE or 82,
   GeffenMagic = 84,
-  DestroyAirShip = FuBenCmd_pb.ERAIDTYPE_DESTROY_AIR_SHIP or 87
+  DestroyAirShip = FuBenCmd_pb.ERAIDTYPE_DESTROY_AIR_SHIP or 87,
+  BageLab = FuBenCmd_pb.ERAIDTYPE_BAGE_LAB or 88,
+  LotteryRaid = FuBenCmd_pb.ERAIDTYPE_LOTTERY_RAID or 91
 }
 RaidType2AERewardMode = {
   [PveRaidType.Crack] = ActivityEvent_pb.EAEREWARDMODE_SEAL,
@@ -78,6 +80,11 @@ PveSortEnum = {
   Forbidden = 3
 }
 local _SortFunc = function(l, r)
+  local l_lotteryActive = l.staticEntranceData:IsLotteryRaidActive()
+  local r_lotteryActive = r.staticEntranceData:IsLotteryRaidActive()
+  if l_lotteryActive ~= r_lotteryActive then
+    return l_lotteryActive
+  end
   local l_sortId = l:GetSortId()
   local r_sortId = r:GetSortId()
   local l_configSortId = l.staticEntranceData.configSortID
@@ -131,6 +138,7 @@ function PveEntranceProxy:Init()
   self.catalogAll_Memory = {}
   self.catalogAll_FairyTale = {}
   self.catalogAll_GeffenMagic = {}
+  self.catalogAll_LotteryRaid = {}
   self.catalogMap = {}
   self.catalogMap_raid = {}
   self.catalogMap_crack = {}
@@ -141,6 +149,7 @@ function PveEntranceProxy:Init()
   self.catalogMap_SpaceTimeIllusion = {}
   self.catalogMap_FairyTale = {}
   self.catalogMap_GeffenMagic = {}
+  self.catalogMap_LotteryRaid = {}
   self.passInfoMap = {}
   self.targetMap = {}
   self.dropMap = {}
@@ -166,6 +175,7 @@ function PveEntranceProxy:TryResetCatalogAll()
   _ArrayClear(self.catalogAll_Memory)
   _ArrayClear(self.catalogAll_FairyTale)
   _ArrayClear(self.catalogAll_GeffenMagic)
+  _ArrayClear(self.catalogAll_LotteryRaid)
   _TableClear(self.catalogMap_raid)
   self:SetAllCatalogByRaidMap()
   _TableClear(self.dirtyRaidForbiddenMap)
@@ -203,6 +213,10 @@ function PveEntranceProxy:SetAllCatalogByRaidMap()
     elseif firstPveData.staticEntranceData:IsGeffenMagic() then
       if not firstPveData:Forbidden() then
         _ArrayPushBack(self.catalogAll_GeffenMagic, firstPveData)
+      end
+    elseif firstPveData.staticEntranceData:IsLotteryRaid() then
+      if not firstPveData:Forbidden() then
+        _ArrayPushBack(self.catalogAll_LotteryRaid, firstPveData)
       end
     else
       local catalogs = firstPveData.staticEntranceData.staticData.Catalog
@@ -335,6 +349,20 @@ function PveEntranceProxy:PreprocessGeffenMagicEntrance()
   end
 end
 
+function PveEntranceProxy:PreprocessLotteryRaidEntrance()
+  _TableClear(self.catalogMap_LotteryRaid)
+  self.lotteryRaidFirstPveData = self.catalogAll_LotteryRaid[1]
+  if self.lotteryRaidFirstPveData then
+    local catalogs = self.lotteryRaidFirstPveData.staticEntranceData.staticData.Catalog
+    for i = 1, #catalogs do
+      local catalogData = self.catalogMap_LotteryRaid[catalogs[i]]
+      catalogData = catalogData or {}
+      catalogData[#catalogData + 1] = self.lotteryRaidFirstPveData
+      self.catalogMap_LotteryRaid[catalogs[i]] = catalogData
+    end
+  end
+end
+
 function PveEntranceProxy:_setCatalogMap(targetMap)
   for catalog, list in pairs(targetMap) do
     local catalogData = self.catalogMap[catalog]
@@ -357,6 +385,7 @@ function PveEntranceProxy:SetCatalogMap()
   self:_setCatalogMap(self.catalogMap_SpaceTimeIllusion)
   self:_setCatalogMap(self.catalogMap_FairyTale)
   self:_setCatalogMap(self.catalogMap_GeffenMagic)
+  self:_setCatalogMap(self.catalogMap_LotteryRaid)
 end
 
 function PveEntranceProxy:SetCatalogAll()
@@ -372,6 +401,7 @@ function PveEntranceProxy:SetCatalogAll()
   _ArrayPushBack(self.catalogAll, self.spaceTimeIllusionFirstPveData)
   _ArrayPushBack(self.catalogAll, self.fairyTaleFirstPveData)
   _ArrayPushBack(self.catalogAll, self.geffenMagicFirstPveData)
+  _ArrayPushBack(self.catalogAll, self.lotteryRaidFirstPveData)
 end
 
 function PveEntranceProxy:GetCatalogAll()
@@ -464,6 +494,10 @@ function PveEntranceProxy:GetAllFairyTaleData()
   return self.catalogAll_FairyTale
 end
 
+function PveEntranceProxy:GetAllLotteryRaidData()
+  return self.catalogAll_LotteryRaid
+end
+
 function PveEntranceProxy:StaticSortEntrance()
   table.sort(self.catalogAll_raid, _SortFunc)
   table.sort(self.catalogAll_crack, _SortFunc)
@@ -474,6 +508,7 @@ function PveEntranceProxy:StaticSortEntrance()
   table.sort(self.catalogAll_Memory, _SortFunc)
   table.sort(self.catalogAll_FairyTale, _SortFunc)
   table.sort(self.catalogAll_GeffenMagic, _SortFunc)
+  table.sort(self.catalogAll_LotteryRaid, _SortFunc)
 end
 
 function PveEntranceProxy:SortEntrance()
@@ -593,6 +628,7 @@ function PveEntranceProxy:HandleCombinePveData()
   self:PreprocessMemoryRaidEntrance()
   self:PreprocessFairyTaleEntrance()
   self:PreprocessGeffenMagicEntrance()
+  self:PreprocessLotteryRaidEntrance()
   self:SetCatalogAll()
   self:SetCatalogMap()
   self:SortEntrance()
@@ -818,6 +854,10 @@ end
 
 function PveEntranceProxy:GetCurFairyTaleFirstPveData()
   return self.fairyTaleFirstPveData
+end
+
+function PveEntranceProxy:GetCurLotteryRaidFirstPveData()
+  return self.lotteryRaidFirstPveData
 end
 
 function PveEntranceProxy:HandleSyncPveRaidAchieveFubenCmd(server_data)

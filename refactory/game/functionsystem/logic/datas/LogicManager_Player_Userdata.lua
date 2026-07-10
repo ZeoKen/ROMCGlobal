@@ -30,6 +30,7 @@ function LogicManager_Player_Userdata:ctor()
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_BLACK_MUCK, self.UpdateBlackMuck)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_OWN_HANDCART, self.UpdateOwnHandcart)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_ROBOT_USER, self.UpdateRobotUser)
+  self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_ROBOT_MASTER, self.UpdateRobotMaster)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_JOBLEVEL, self.UpdateJobLevel)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_JOBEXP, self.UpdateJobExpLevel)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_PROFESSION, self.UpdateProfession)
@@ -59,6 +60,7 @@ function LogicManager_Player_Userdata:ctor()
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_BLACK_MUCK, self.UpdateBlackMuck)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_OWN_HANDCART, self.UpdateOwnHandcart)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_ROBOT_USER, self.UpdateRobotUser)
+  self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_ROBOT_MASTER, self.UpdateRobotMaster)
   self:AddDirtyCall(ProtoCommon_pb.EUSERDATATYPE_MOUNT, self.UpdateMount)
   self:AddDirtyCall(ProtoCommon_pb.EUSERDATATYPE_RIDING_NPC, self.UpdateMultiMountNpc)
   self:AddDirtyCall(ProtoCommon_pb.EUSERDATATYPE_RIDING_HANDCART_OWNER, self.UpdateRidingHandcartCharID)
@@ -278,4 +280,22 @@ function LogicManager_Player_Userdata:UpdateOwnHandcart(ncreature, userDataID, o
   if Game.Myself and Game.Myself.data.id == ncreature.data.id then
     GameFacade.Instance:sendNotification(InteractNpcEvent.MyselfOnOffHandcartChange)
   end
+end
+
+function LogicManager_Player_Userdata:_RefreshRobotMasterCamp(ncreature)
+  if not (ncreature and ncreature.data) or not ncreature.data.userdata then
+    return
+  end
+  local userdata = ncreature.data.userdata
+  local robotMaster = userdata:Get(UDEnum.ROBOT_MASTER) or 0
+  local myID = Game.Myself and Game.Myself.data and Game.Myself.data.id or 0
+  local isSameTeam = false
+  if robotMaster ~= 0 and myID ~= 0 then
+    isSameTeam = robotMaster == myID or TeamProxy.Instance:IsInMyTeam(robotMaster)
+    ncreature.data:Camp_SetIsInMyTeam(isSameTeam)
+  end
+end
+
+function LogicManager_Player_Userdata:UpdateRobotMaster(ncreature, userDataID, oldValue, newValue)
+  self:_RefreshRobotMasterCamp(ncreature)
 end

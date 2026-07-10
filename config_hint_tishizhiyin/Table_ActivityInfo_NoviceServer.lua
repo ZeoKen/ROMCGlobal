@@ -34,6 +34,16 @@ Table_ActivityInfo = {
     Size = 9,
     HelpID = 35269,
     Share = 1
+  },
+  [49] = {
+    id = 49,
+    ActivityName = "异世界归来的舅舅",
+    PuzzlePic = "ov_Uncle",
+    ActivityTitle = "异世界归来的舅舅",
+    Size = 9,
+    HelpID = 35269,
+    Share = 1,
+    Extra = 1
   }
 }
 Table_ActivityInfo_fields = {

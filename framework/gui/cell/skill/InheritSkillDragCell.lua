@@ -13,7 +13,7 @@ function InheritSkillDragCell:FindObjs()
   self.costBg = self:FindGO("CostBg")
   self.costLabel = self:FindComponent("Cost", UILabel)
   local dragItem = self.gameObject:GetComponent(UIDragItem)
-  self.dragDrop = DragDropCell.new(dragItem, 0.01)
+  self.dragDrop = DragDropCell.new(dragItem, 1)
   self.dragDrop.dragDropComponent.data = self
   
   function self.dragDrop.dragDropComponent.OnReplace(obj)
@@ -43,17 +43,29 @@ function InheritSkillDragCell:SetData(data)
   self.data = data
   if data and data ~= InheritSkillDragCell.Empty then
     IconManager:SetSkillIconByProfess(data.staticData.Icon, self.icon, MyselfProxy.Instance:GetMyProfessionType(), true)
-    self.skillLevel.text = data.level > 0 and string.format("Lv.%s", data.level) or ""
+    self:SetLevel(data.level)
     self.bg:SetActive(false)
-    self.costBg:SetActive(true)
-    self.costLabel.text = data:GetCostPoint()
+    self:SetCost(data:GetCostPoint())
     self:UpdateDragable(true)
   else
     self.icon.spriteName = nil
-    self.skillLevel.text = ""
+    self:SetLevel()
     self.bg:SetActive(true)
-    self.costBg:SetActive(false)
+    self:SetCost()
     self:UpdateDragable(false)
+  end
+end
+
+function InheritSkillDragCell:SetLevel(level)
+  self.skillLevel.text = level and 0 < level and string.format("Lv.%s", level) or ""
+end
+
+function InheritSkillDragCell:SetCost(cost)
+  if cost then
+    self.costBg:SetActive(true)
+    self.costLabel.text = cost
+  else
+    self.costBg:SetActive(false)
   end
 end
 

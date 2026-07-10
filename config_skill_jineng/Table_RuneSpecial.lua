@@ -444,7 +444,7 @@ Table_RuneSpecial_t = {
     {1143},
     {268},
     {208, 1800},
-    {231},
+    {231, 854},
     {210},
     {204},
     {230},
@@ -457,6 +457,7 @@ Table_RuneSpecial_t = {
     {1263},
     {1144},
     {125},
+    {231},
     {1147},
     {504},
     {150},
@@ -1737,7 +1738,7 @@ Table_RuneSpecial = {
   [32050] = {
     id = 32050,
     RuneName = "##168445",
-    SkillID = Table_RuneSpecial_t.SkillID[404],
+    SkillID = Table_RuneSpecial_t.SkillID[405],
     Runetip = 3021,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[58],
     Recommend = 1
@@ -1809,7 +1810,7 @@ Table_RuneSpecial = {
   [33030] = {
     id = 33030,
     RuneName = "##168547",
-    SkillID = Table_RuneSpecial_t.SkillID[403],
+    SkillID = Table_RuneSpecial_t.SkillID[404],
     Runetip = 3303,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[7]
   },
@@ -1859,21 +1860,21 @@ Table_RuneSpecial = {
   [34060] = {
     id = 34060,
     RuneName = "##168342",
-    SkillID = Table_RuneSpecial_t.SkillID[402],
+    SkillID = Table_RuneSpecial_t.SkillID[403],
     Runetip = 3406,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[7]
   },
   [34070] = {
     id = 34070,
     RuneName = "##168471",
-    SkillID = Table_RuneSpecial_t.SkillID[402],
+    SkillID = Table_RuneSpecial_t.SkillID[403],
     Runetip = 3407,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[10]
   },
   [34080] = {
     id = 34080,
     RuneName = "##168162",
-    SkillID = Table_RuneSpecial_t.SkillID[401],
+    SkillID = Table_RuneSpecial_t.SkillID[402],
     Runetip = 3408,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[13]
   },
@@ -2223,7 +2224,7 @@ Table_RuneSpecial = {
   [43030] = {
     id = 43030,
     RuneName = "##161224",
-    SkillID = Table_RuneSpecial_t.SkillID[400],
+    SkillID = Table_RuneSpecial_t.SkillID[401],
     Runetip = 4303,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[1]
   },
@@ -2294,14 +2295,14 @@ Table_RuneSpecial = {
   [44070] = {
     id = 44070,
     RuneName = "##168404",
-    SkillID = Table_RuneSpecial_t.SkillID[399],
+    SkillID = Table_RuneSpecial_t.SkillID[400],
     Runetip = 4407,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[9]
   },
   [44080] = {
     id = 44080,
     RuneName = "##168512",
-    SkillID = Table_RuneSpecial_t.SkillID[398],
+    SkillID = Table_RuneSpecial_t.SkillID[399],
     Runetip = 4408,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[11]
   },
@@ -2336,7 +2337,7 @@ Table_RuneSpecial = {
   [51004] = {
     id = 51004,
     RuneName = "##168487",
-    SkillID = Table_RuneSpecial_t.SkillID[397],
+    SkillID = Table_RuneSpecial_t.SkillID[398],
     Runetip = 5003,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[81]
   },
@@ -2445,7 +2446,7 @@ Table_RuneSpecial = {
   [52008] = {
     id = 52008,
     RuneName = "##168072",
-    SkillID = Table_RuneSpecial_t.SkillID[396],
+    SkillID = Table_RuneSpecial_t.SkillID[397],
     Runetip = 5014,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[10]
   },
@@ -2620,7 +2621,7 @@ Table_RuneSpecial = {
   [52130] = {
     id = 52130,
     RuneName = "##168044",
-    SkillID = Table_RuneSpecial_t.SkillID[382],
+    SkillID = Table_RuneSpecial_t.SkillID[395],
     Runetip = 5033,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[7]
   },
@@ -2648,7 +2649,7 @@ Table_RuneSpecial = {
     id = 52160,
     Type = 2,
     RuneName = "##168463",
-    SkillID = Table_RuneSpecial_t.SkillID[405],
+    SkillID = Table_RuneSpecial_t.SkillID[406],
     Runetip = 5037,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[3]
   },
@@ -3952,14 +3953,14 @@ Table_RuneSpecial = {
   [94080] = {
     id = 94080,
     RuneName = "##168185",
-    SkillID = Table_RuneSpecial_t.SkillID[395],
+    SkillID = Table_RuneSpecial_t.SkillID[396],
     Runetip = 9408,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[7]
   },
   [94090] = {
     id = 94090,
     RuneName = "##168299",
-    SkillID = Table_RuneSpecial_t.SkillID[395],
+    SkillID = Table_RuneSpecial_t.SkillID[396],
     Runetip = 9409,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[3]
   },
@@ -6952,14 +6953,14 @@ Table_RuneSpecial = {
   [223005] = {
     id = 223005,
     RuneName = "##533722",
-    SkillID = Table_RuneSpecial_t.SkillID[406],
+    SkillID = Table_RuneSpecial_t.SkillID[407],
     Runetip = 22305,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[4]
   },
   [223006] = {
     id = 223006,
     RuneName = "##533729",
-    SkillID = Table_RuneSpecial_t.SkillID[407],
+    SkillID = Table_RuneSpecial_t.SkillID[408],
     Runetip = 22306,
     SkillTipParm = Table_RuneSpecial_t.SkillTipParm[9]
   },

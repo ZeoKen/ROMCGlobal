@@ -60,11 +60,12 @@ function PetAdventureHeadTip:SetData(data)
     else
       self.level_slider.value = 1
     end
-    if self.petEggData.skillids and 0 < #self.petEggData.skillids then
+    local skillids = self.petEggData.GetSkillDisplayDatasForUI and self.petEggData:GetSkillDisplayDatasForUI() or self.petEggData.skillids
+    if skillids and 0 < #skillids then
       local skilldatas = {}
       skilldatas[1] = PetInfoLabelCell.Type.Skill
-      skilldatas[2] = self.petEggData.skillids
-      local length = #self.petEggData.skillids
+      skilldatas[2] = skillids
+      local length = #skillids
       if 4 < length then
         self.bgImg.height = (length - 4) * const_cellHeight + self.bgInitHeight
       else

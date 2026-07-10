@@ -236,6 +236,10 @@ function ScenePlayerRevive:UpdatePlayerReviveState(playerid)
   if MyselfProxy.Instance:InOb() then
     return
   end
+  local player = FindPlayer(playerid)
+  if player and player.data:IsHaveRobotMaster() then
+    return
+  end
   local reviveEffectId, reviveFunc, reviveItem
   if Func_HaveReviveSkill() then
     local reviveStone = self:GetReviveStoneItem()
@@ -253,7 +257,6 @@ function ScenePlayerRevive:UpdatePlayerReviveState(playerid)
       reviveItem = reviveLeaf
     end
   end
-  local player = FindPlayer(playerid)
   local _bokiProxy = BokiProxy.Instance
   if not player or playerid == _bokiProxy:GetBokiGuid() and _bokiProxy:BokiHiding() then
     self:RemoveReviveEffect(playerid)

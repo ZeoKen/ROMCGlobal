@@ -336,7 +336,6 @@ function GemFunctionPage:InitSkillQualityFilter()
       if self.curSkillClassFilterPopData == key then
         return
       end
-      self:ResetDecompose()
       if key == 0 then
         self.curSkillClassFilterPopData = self.pageState == GemFunctionState.UpdateAttr and _UpdateAttrQualities or 0
       else

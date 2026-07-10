@@ -55,8 +55,12 @@ function PetHeadCell:UpdateRestTime()
   resttime = resttime or 0
   local restSec = resttime - ServerTime.CurServerTime() / 1000
   if 0 < restSec then
-    local min, sec = ClientTimeUtil.GetFormatSecTimeStr(restSec)
-    self.restTime.text = string.format(ZhString.TMInfoCell_RestTip, min, sec)
+    if 60 <= restSec then
+      local min, sec = ClientTimeUtil.GetFormatSecTimeStr(restSec)
+      self.restTime.text = string.format(ZhString.TMInfoCell_RestTip, min, sec)
+    else
+      self.restTime.text = string.format(ZhString.TMInfoCell_RestTipSecond, math.ceil(restSec))
+    end
   else
     self:RemoveRestTimeTick()
   end

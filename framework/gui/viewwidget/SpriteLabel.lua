@@ -39,8 +39,32 @@ local exclude_placeholder = "\006"
 local iconpattern = "{%g-}"
 local iconplaceholder = "\003 \003 \003 \003 \003 "
 local activeEquipUpgradeColor, inactiveEquipUpgradeColor = LuaColor.New(0.43137254901960786, 0.5372549019607843, 0.8196078431372549, 1), LuaColor.New(0.6392156862745098, 0.6588235294117647, 0.6980392156862745, 1)
+local PriceIndicatorHighlightFlag = "highlight"
+local PriceIndicatorSellBtnFlag = "sell"
+local priceIndicatorHighlightBgColor = LuaColor.New(1, 0.9333333333333333, 0.6039215686274509, 1)
+local priceIndicatorHighlightIconColor = LuaColor.New(1, 0.9647058823529412, 0.7294117647058823, 1)
+local priceIndicatorHighlightLabelColor = LuaColor.New(1, 0.9647058823529412, 0.49411764705882355, 1)
+local priceIndicatorHighlightLabelEffectColor = LuaColor.New(0.47843137254901963, 0.24313725490196078, 0.0196078431372549, 1)
+local priceIndicatorBreathDuration = 0.85
+local priceIndicatorHighlightBgBreathColor = LuaColor.New(1, 1, 0.8235294117647058, 1)
+local priceIndicatorHighlightIconBreathColor = LuaColor.New(1, 1, 0.9019607843137255, 1)
+local priceIndicatorHighlightLabelBreathColor = LuaColor.New(1, 1, 0.7058823529411765, 1)
 local spriteForcePixelPerfectMap = {}
 local spriteOptPattern = "%[(.-)=(.-)%]"
+local OffsetWidgetDepthByRoot = function(root, targetRootDepth)
+  if not root or not targetRootDepth then
+    return
+  end
+  local rootWidget = root:GetComponent(UIWidget)
+  if not rootWidget then
+    return
+  end
+  local offset = targetRootDepth - rootWidget.depth
+  local widgets = root:GetComponentsInChildren(UIWidget)
+  for i = 1, #widgets do
+    widgets[i].depth = widgets[i].depth + offset
+  end
+end
 local rllog = function(arg1, arg2, arg3, arg4, arg5)
 end
 
@@ -311,7 +335,7 @@ function SpriteLabel:AddSprite(data)
     end
   end
   for _, str in string.gmatch(data.info, SpriteLabel.PatternMap.price) do
-    local indicatorSp, indicatorLabel = self:CreatePriceIndicator()
+    local indicatorSp, indicatorLabel, indicatorBg, sellBtn = self:CreatePriceIndicator()
     if indicatorSp then
       self:SetSpritePos(indicatorSp, data.pos, data.lineWidth)
       local arr = string.split(str, ",")
@@ -320,6 +344,12 @@ function SpriteLabel:AddSprite(data)
         if itemId and Table_Item[itemId] and price and 0 <= price then
           IconManager:SetItemIcon(Table_Item[itemId].Icon, indicatorSp)
           indicatorLabel.text = StringUtil.NumThousandFormat(price)
+          self:SetPriceIndicatorHighlight(indicatorSp, indicatorLabel, indicatorBg, arr[3] == PriceIndicatorHighlightFlag or arr[4] == PriceIndicatorHighlightFlag)
+          if (arr[3] == PriceIndicatorSellBtnFlag or arr[4] == PriceIndicatorSellBtnFlag) and sellBtn then
+            sellBtn:SetActive(true)
+            self.priceIndicatorBtns = self.priceIndicatorBtns or {}
+            self.priceIndicatorBtns[PriceIndicatorSellBtnFlag] = sellBtn
+          end
         end
       end
     end
@@ -492,11 +522,57 @@ function SpriteLabel:CreatePriceIndicator()
   if not labelObj then
     return
   end
-  local itemSp, label = obj:GetComponent(UISprite), labelObj:GetComponent(UILabel)
-  itemSp.depth = self.richLabel.depth + 1
-  label.depth = itemSp.depth
+  local bgObj = Game.GameObjectUtil:DeepFind(obj, "Bg")
+  local sellBtn = Game.GameObjectUtil:DeepFind(obj, "SellBtn")
+  local itemSp, label, bg = obj:GetComponent(UISprite), labelObj:GetComponent(UILabel), bgObj and bgObj:GetComponent(UISprite)
+  itemSp.depth = self.richLabel.depth + 2
+  if bg then
+    bg.depth = self.richLabel.depth + 1
+  end
+  label.depth = itemSp.depth + 1
+  if sellBtn then
+    OffsetWidgetDepthByRoot(sellBtn, label.depth + 1)
+    sellBtn:SetActive(false)
+  end
   self.richLabel.sprites:Add(itemSp)
-  return itemSp, label
+  return itemSp, label, bg, sellBtn
+end
+
+function SpriteLabel:PlayPriceIndicatorColorBreath(widget, fromColor, toColor)
+  if not (widget and widget.gameObject and fromColor) or not toColor then
+    return
+  end
+  widget.color = fromColor
+  local tween = TweenColor.Begin(widget.gameObject, priceIndicatorBreathDuration, toColor)
+  if tween then
+    tween.from = fromColor
+    tween.to = toColor
+    tween.duration = priceIndicatorBreathDuration
+    tween.style = 2
+    tween.method = 2
+    tween:ResetToBeginning()
+    tween:PlayForward()
+  end
+end
+
+function SpriteLabel:SetPriceIndicatorHighlight(itemSp, label, bg, active)
+  if not active or not BranchMgr.IsNOKR() then
+    return
+  end
+  if itemSp then
+    itemSp.color = priceIndicatorHighlightIconColor
+  end
+  if bg then
+    bg.color = priceIndicatorHighlightBgColor
+  end
+  if label then
+    label.color = priceIndicatorHighlightLabelColor
+    label.effectStyle = UILabel.Effect.Outline8
+    label.effectColor = priceIndicatorHighlightLabelEffectColor
+  end
+  self:PlayPriceIndicatorColorBreath(itemSp, priceIndicatorHighlightIconColor, priceIndicatorHighlightIconBreathColor)
+  self:PlayPriceIndicatorColorBreath(bg, priceIndicatorHighlightBgColor, priceIndicatorHighlightBgBreathColor)
+  self:PlayPriceIndicatorColorBreath(label, priceIndicatorHighlightLabelColor, priceIndicatorHighlightLabelBreathColor)
 end
 
 function SpriteLabel:CreateEquipInlineButton()
@@ -540,6 +616,7 @@ function SpriteLabel:CreateQuickCopyButton(context_str)
 end
 
 function SpriteLabel:Reset()
+  self.priceIndicatorBtns = nil
   if SpriteLabel.useLuaVersion and self.richLabel and self.icons_info then
     for i = 1, #self.icons_info do
       self.icons_info[i] = nil
@@ -761,7 +838,7 @@ function SpriteLabel:SetRichLabelByLine(text, lineIdx, checkSpace)
             end
           end
           oneline = utf8sub(curText, 1, lastSpaceIndex - 1)
-          if lastSpaceIndex ~= curTextLen and oneline ~= iconplaceholder and oneline ~= iconplaceholder .. " " and oneline ~= utf8sub(iconplaceholder, 1, utf8len(iconplaceholder) - 1) and not BranchMgr.IsKorea() then
+          if lastSpaceIndex ~= curTextLen and oneline ~= iconplaceholder and oneline ~= iconplaceholder .. " " and oneline ~= utf8sub(iconplaceholder, 1, utf8len(iconplaceholder) - 1) and not BranchMgr.IsKorea() and not BranchMgr.IsNOKR() then
             oneline = utf8sub(curText, 1, lastSpaceIndex - 1)
             res = res .. oneline .. "\n"
             rllog("空格换行", curText, oneline, lastSpaceIndex)
@@ -900,7 +977,7 @@ function SpriteLabel:AddSprite2(data)
     end
   end
   for _, str in string.gmatch(data.info, SpriteLabel.PatternMap.price) do
-    local indicatorSp, indicatorLabel = self:CreatePriceIndicator()
+    local indicatorSp, indicatorLabel, indicatorBg, sellBtn = self:CreatePriceIndicator()
     if indicatorSp then
       self:SetSpritePos2(indicatorSp, data)
       local arr = string.split(str, ",")
@@ -909,6 +986,12 @@ function SpriteLabel:AddSprite2(data)
         if itemId and Table_Item[itemId] and price and -1 < price then
           IconManager:SetItemIcon(Table_Item[itemId].Icon, indicatorSp)
           indicatorLabel.text = StringUtil.NumThousandFormat(price)
+          self:SetPriceIndicatorHighlight(indicatorSp, indicatorLabel, indicatorBg, arr[3] == PriceIndicatorHighlightFlag or arr[4] == PriceIndicatorHighlightFlag)
+          if (arr[3] == PriceIndicatorSellBtnFlag or arr[4] == PriceIndicatorSellBtnFlag) and sellBtn then
+            sellBtn:SetActive(true)
+            self.priceIndicatorBtns = self.priceIndicatorBtns or {}
+            self.priceIndicatorBtns[PriceIndicatorSellBtnFlag] = sellBtn
+          end
         end
       end
     end

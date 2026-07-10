@@ -303,6 +303,57 @@ Table_UserEffectInfo = {
     SoundEffectPath = "UI/UI_6V6_Defeat",
     Item = 709
   },
+  [34] = {
+    id = 34,
+    Type = 2,
+    EffectPath = {
+      "Common/cfx_6v6_win_01_prf"
+    },
+    VideoPath = "6V6S4_Kill01.mp4",
+    SoundEffectPath = "UI/UI_6V6_Defeat",
+    Item = 710
+  },
+  [35] = {
+    id = 35,
+    Type = 2,
+    EffectPath = {
+      "Common/cfx_6v6_win_02_prf"
+    },
+    VideoPath = "6V6S4_Kill02.mp4",
+    SoundEffectPath = "UI/UI_6V6_Defeat",
+    Item = 711
+  },
+  [36] = {
+    id = 36,
+    Type = 2,
+    EffectPath = {
+      "Common/cfx_6v6_win_03_prf"
+    },
+    VideoPath = "6V6S4_Kill03.mp4",
+    SoundEffectPath = "UI/UI_6V6_Defeat",
+    Item = 712
+  },
+  [40] = {
+    id = 40,
+    Type = 2,
+    EffectPath = {
+      "Common/cfx_waiguanshengxing_jibai_prf"
+    },
+    VideoPath = "waiguanshengxing_jibainew.mp4",
+    SoundEffectPath = "UI/UI_6V6_Defeat",
+    Item = 3042164
+  },
+  [41] = {
+    id = 41,
+    Type = 3,
+    EffectPath = {
+      "Common/sfx_waiguanshengxing_trail_prf"
+    },
+    VideoPath = "waiguanshengxing_trail.mp4",
+    BuffId = 6978,
+    SoundEffectPath = "",
+    Item = 3042166
+  },
   [43] = {
     id = 43,
     Type = 2,
@@ -319,6 +370,7 @@ Table_UserEffectInfo_fields = {
   "Type",
   "EffectPath",
   "VideoPath",
+  "BuffId",
   "SoundEffectPath",
   "Item"
 }

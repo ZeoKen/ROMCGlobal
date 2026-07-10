@@ -7,6 +7,7 @@ local notify = function(eventname, eventbody)
   _gameFacade:sendNotification(eventname, eventbody)
 end
 local HandleRolesBase = function(roles)
+  local myselfID = Game.Myself.data.id
   local teamProxy = TeamProxy.Instance
   local _myProxy = MyselfProxy.Instance
   local _ObProxy = PvpObserveProxy.Instance
@@ -14,10 +15,11 @@ local HandleRolesBase = function(roles)
   local role, teamid
   for i = 1, #roles do
     role = roles[i]
-    if myself ~= role then
+    local robotMaster = role.data.userdata and role.data.userdata:Get(UDEnum.ROBOT_MASTER) or 0
+    if robotMaster ~= myselfID and myself ~= role then
+      local playerid = robotMaster ~= 0 and robotMaster or role.data.id
       teamid = role.data:GetTeamID()
       role.data:Camp_SetIsInPVP(true)
-      local playerid = role.data.id
       if inOB then
         role.data:Camp_SetIsInMyTeam(_ObProxy:IsInFriendCamp(playerid))
         if _myProxy:IsObTarget(playerid) then
@@ -46,12 +48,14 @@ local HandleRolesGVG = function(roles, isGVGStart, ignoreTeam, includeMercenary)
   local role, teamid, guildData
   for i = 1, #roles do
     role = roles[i]
-    if myself ~= role then
+    local robotMaster = role.data.userdata and role.data.userdata:Get(UDEnum.ROBOT_MASTER) or 0
+    if robotMaster ~= myselfData.id and myself ~= role then
+      local playerid = robotMaster ~= 0 and robotMaster or role.data.id
       teamid = role.data:GetTeamID()
       guildData = includeMercenary and role.data:GetMercenaryGuildData() or role.data:GetGuildData()
       role.data:Camp_SetIsInGVG(isGVGStart)
       if ignoreTeam ~= true then
-        role.data:Camp_SetIsInMyTeam(TeamProxy.Instance:IsInMyGroup(role.data.id))
+        role.data:Camp_SetIsInMyTeam(TeamProxy.Instance:IsInMyGroup(playerid))
       end
       if myselfGuildData ~= nil and guildData ~= nil then
         role.data:Camp_SetIsInMyGuild(myselfGuildData.id == guildData.id)
@@ -166,9 +170,11 @@ local HandleRolesPVP = function(roles)
   local _TeamProxy = TeamProxy.Instance
   for i = 1, #roles do
     local role = roles[i]
-    if role ~= myself then
+    local robotMaster = role.data.userdata and role.data.userdata:Get(UDEnum.ROBOT_MASTER) or 0
+    if robotMaster ~= myself.data.id and myself ~= role then
+      local playerid = robotMaster ~= 0 and robotMaster or role.data.id
       role.data:Camp_SetIsInPVP(true)
-      role.data:Camp_SetIsInMyTeam(_TeamProxy:IsInMyGroup(role.data.id))
+      role.data:Camp_SetIsInMyTeam(_TeamProxy:IsInMyGroup(playerid))
       local camp = role.data:GetNormalPVPCamp()
       role.data:Camp_SetInSameCamp(camp == myCamp)
     end
@@ -202,8 +208,13 @@ local HandleRolesPVPIncludeRobotUser = function(roles)
   for i = 1, #roles do
     local role = roles[i]
     if role ~= myself then
+      local playerid = role.data.id
+      local robotMaster = role.data.userdata and role.data.userdata:Get(UDEnum.ROBOT_MASTER) or 0
+      if robotMaster ~= 0 then
+        playerid = robotMaster
+      end
       role.data:Camp_SetIsInPVP(true)
-      role.data:Camp_SetIsInMyTeam(_TeamProxy:IsInMyGroup(role.data.id))
+      role.data:Camp_SetIsInMyTeam(_TeamProxy:IsInMyGroup(playerid))
       local isRobotUser = role.data:IsRobotUser()
       if not isRobotUser then
         local camp = role.data:GetNormalPVPCamp()

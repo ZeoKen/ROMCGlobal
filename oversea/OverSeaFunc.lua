@@ -1,7 +1,7 @@
 OverSeaFunc = class("OverSeaFunc")
 
 function OverSeaFunc.MsgToExtraOperation(title, text, param)
-  if BranchMgr.IsChina() or BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+  if BranchMgr.IsChina() or BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
     local data = MsgData.new(nil, text, param)
     UIUtil.FloatMsgByData(data)
     return

@@ -98,6 +98,9 @@ function ColorFillingShareView:InitView()
     IconManager:SetUIIcon("Facebook", sp)
     sp = self.shareTwitterBtn:GetComponent(UISprite)
     IconManager:SetUIIcon("Twitter", sp)
+    if BranchMgr.IsJapan() then
+      self.shareTwitterBtn:SetActive(false)
+    end
     sp = self.shareLineBtn:GetComponent(UISprite)
     IconManager:SetUIIcon("line", sp)
   end

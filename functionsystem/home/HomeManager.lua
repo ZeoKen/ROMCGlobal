@@ -1334,6 +1334,7 @@ function HomeManager:UpdateFurniture(nFurnitureData, customCallback, customCallb
     if not nFurniture.inited then
       return
     end
+    self.nFurnitureMap[nFurnitureData.id] = nFurniture
     nFurniture:SetData(nFurnitureData)
     self:UpdateFurnitureCallBack(nFurniture, 0.2, customCallback, customCallbackArg)
   else
@@ -1355,10 +1356,11 @@ function HomeManager:UpdateFurniture(nFurnitureData, customCallback, customCallb
       else
         furniture:SetColliderLayer(furniture:HaveFunction() and Game.ELayer.Accessable or Game.ELayer.Default)
       end
+      self.nFurnitureMap[nFurnitureData.id] = furniture
       self:UpdateFurnitureCallBack(furniture, 0.5, customCallback, customCallbackArg)
     end)
+    self.nFurnitureMap[nFurnitureData.id] = nFurniture
   end
-  self.nFurnitureMap[nFurnitureData.id] = nFurniture
 end
 
 function HomeManager:UpdateFurnitureCallBack(nFurniture, fadeTime, customCallback, customCallbackArg)
@@ -1861,13 +1863,14 @@ function HomeManager:GetRandomFurnitureByFurnitureType(itemType)
 end
 
 function HomeManager:TryGetHomeWorkbenchDiscount(key)
-  local myHouseData = HomeProxy.Instance:GetMyHouseData()
+  local homeProxy = HomeProxy.__RealInstance or HomeProxy.Instance
+  local myHouseData = homeProxy and homeProxy:GetMyHouseData(HomeProxy.HouseType.Home)
   local homeBuff = myHouseData and Game.HomeBuff[myHouseData.houseType]
   if not homeBuff then
     redlog("HomeManager:TryGetHomeWorkbenchDiscount homeBuff is nil! houseType = " .. tostring(myHouseData and myHouseData.houseType or "nil"))
     return 100
   end
-  local buff = homeBuff[HomeProxy.Instance:GetMyHomeScoreLv()]
+  local buff = homeBuff[myHouseData.lv or 0]
   if not buff or not next(buff) then
     return 100
   end

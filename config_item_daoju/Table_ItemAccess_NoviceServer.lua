@@ -971,6 +971,16 @@ Table_ItemAccess = {
     GotoMode = {732},
     Desc = "于巴克龙处进行装备提升",
     ErrorMsgEvent = _EmptyTable
+  },
+  [107] = {
+    id = 107,
+    ItemName = "狩猎之证",
+    ItemID = 12908,
+    Name = "雪芙芙",
+    Icon = "raidbgicon_mvp01",
+    GotoMode = {8389},
+    Desc = "冰原狩猎获胜后消耗以换取奖励",
+    ErrorMsgEvent = _EmptyTable
   }
 }
 Table_ItemAccess_fields = {

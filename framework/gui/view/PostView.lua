@@ -244,6 +244,33 @@ function PostView:OnClickReturnBtn()
   self:UpdateReveiveAllBtn()
 end
 
+local NOKR_DEPOSIT_MAIL_IDS = {10001, 10002}
+local IsNOKRDepositMail = function(mail)
+  if not (BranchMgr.IsNOKR() and mail) or not mail.mailid then
+    return false
+  end
+  return TableUtility.ArrayFindIndex(NOKR_DEPOSIT_MAIL_IDS, mail.mailid) > 0
+end
+local TryConfirmNOKRDepositMails = function(mails, confirmHandler, cancelHandler)
+  if not BranchMgr.IsNOKR() then
+    confirmHandler()
+    return
+  end
+  local hasDepositMail = false
+  for i = 1, #mails do
+    local mail = mails[i]
+    if mail and mail:CheckAttachValid() and IsNOKRDepositMail(mail) then
+      hasDepositMail = true
+      break
+    end
+  end
+  if hasDepositMail then
+    MsgManager.ConfirmMsgWithCustomText("", ZhString.Post_NOKRDepositMailConfirmText, confirmHandler, cancelHandler, nil, ZhString.UniqueConfirmView_Confirm, ZhString.UniqueConfirmView_CanCel)
+  else
+    confirmHandler()
+  end
+end
+
 function PostView:OnClickPostCheckBtn()
   if not self.curPost then
     return
@@ -252,14 +279,18 @@ function PostView:OnClickPostCheckBtn()
     ServiceItemProxy.Instance:CallPackMailActionItemCmd(SceneItem_pb.EPACKMAILACTION_GET, self.curPost.id)
     return
   end
-  local array = ReusableTable.CreateArray()
-  TableUtility.ArrayPushBack(array, self.curPost.id)
+  local array = {
+    self.curPost.id
+  }
   if self.curPost:CheckAttachValid() then
-    PostView.CallAttach(array)
+    TryConfirmNOKRDepositMails({
+      self.curPost
+    }, function()
+      PostView.CallAttach(array)
+    end)
   else
     ServiceSessionMailProxy.Instance:CallMailRemove(array)
   end
-  ReusableTable.DestroyAndClearArray(array)
 end
 
 function PostView:OnClickConfirmDel()
@@ -282,15 +313,14 @@ function PostView:OnClickReceiveAll()
     return
   end
   self:_GatherTrackUnreadReceiveCount()
-  local mailIDlist = ReusableTable.CreateArray()
+  local mailIDlist = {}
   local postDatas = PostProxy.Instance:GetPostArray()
   for i = 1, #postDatas do
-    if not postDatas[i]:IsAttachStatus() then
+    if not postDatas[i]:IsAttachStatus() and not IsNOKRDepositMail(postDatas[i]) then
       TableUtility.ArrayPushBack(mailIDlist, postDatas[i].id)
     end
   end
   PostView.CallAttach(mailIDlist)
-  ReusableTable.DestroyAndClearArray(mailIDlist)
   ServiceItemProxy.Instance:CallPackMailActionItemCmd(SceneItem_pb.EPACKMAILACTION_GET, 0)
 end
 

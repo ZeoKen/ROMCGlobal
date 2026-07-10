@@ -134,7 +134,7 @@ function LotterySpaceTime:HandleLotteryRateQuery(data)
   if not GameConfig.SystemForbid.LotteryRateUrl then
     self.rateSb:AppendLine(ZhString.Lottery_RateUrl)
   end
-  if not BranchMgr.IsKorea() then
+  if not BranchMgr.IsKorea() and not BranchMgr.IsNOKR() then
     self.rateSb:AppendLine(ZhString.Lottery_MagicRateTip)
     self.rateSb:AppendLine("")
     local _ItemType = GameConfig.Lottery.ItemType

@@ -41,7 +41,7 @@ function UIEmojiView:InitEmojiCtl()
     disableDragIfFit = true
   }
   self.emojiCtl = WrapCellHelper.new(wrapConfig)
-  self.emojiCtl:AddEventListener(MouseEvent.MouseClick, self.ClickCell, self)
+  self.emojiCtl:AddEventListener(MouseEvent.MouseClick, self.HandleClick, self)
   self.emojiCtl:AddEventListener(EmojiEvent.SwapEmoji, self.SwapEmoji, self)
   self.emojiCtl:AddEventListener(EmojiEvent.DeleteEmoji, self.DeleteEmoji, self)
   self:_ForEachEmojiCell(function(cell)
@@ -59,6 +59,9 @@ function UIEmojiView:InitTabs()
   self.favoriteTabToggle = self:FindTabToggle("FavoriteTab")
   self.emojiTabToggle = self:FindTabToggle("EmojiTab")
   self.actionTabToggle = self:FindTabToggle("ActionTab")
+  self.actTab = self:FindGO("ActionTab")
+  self.actWidget = self:FindComponent("Background", UISprite, self.actTab)
+  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ACTION, self.actWidget, 7, {-5, -5})
   self.roleExpressionToggle = self:FindTabToggle("RoleExpressionTab")
   self.tabToggles = {
     self.favoriteTabToggle,
@@ -99,12 +102,32 @@ function UIEmojiView:InitEditModeCtrls()
   self.favoriteCountLabel = self:FindComponent("FavoriteCount", UILabel)
 end
 
+function UIEmojiView:HandleClick(cellctl)
+  local interval = cellctl and cellctl.actCfg and cellctl.actCfg.IntervalTime
+  if interval then
+    if MyselfProxy.Instance:IsActionInCD(cellctl.id) then
+      return
+    end
+    local hour, min, sec = ClientTimeUtil.GetHourMinSec(interval)
+    local msgMin = hour * 60 + min + sec / 60
+    local hour_format = string.format(ZhString.FashionStar_CDMsg, msgMin)
+    MsgManager.ConfirmMsgByID(43718, function()
+      self:ClickCell(cellctl)
+    end, nil, nil, hour_format)
+  else
+    self:ClickCell(cellctl)
+  end
+end
+
 function UIEmojiView:ClickCell(cellctl)
   if not cellctl.content.activeSelf then
     return
   end
   if self.BlockEmojiClick then
     MsgManager.ShowMsgByID(49)
+    return
+  end
+  if cellctl.forbiddenByScene then
     return
   end
   local downID = Game.Myself.data:GetDownID()
@@ -343,6 +366,9 @@ function UIEmojiView:SelectTab(index)
   end
   self.currentTabIndex = index
   self:UpdateTab(index)
+  if index == 3 then
+    RedTipProxy.Instance:SeenNew(SceneTip_pb.EREDSYS_ACTION)
+  end
   local wrapPosY = self.emojiWrapTrans.localPosition.y
   self.emojiCtl:ResetPosition()
   local wrapPosX, _, wrapPosZ = LuaGameObject.GetLocalPosition(self.emojiWrapTrans)
@@ -369,14 +395,32 @@ function UIEmojiView:UpdateTab(index)
   elseif index == 3 then
     self.actionDatas = self.actionDatas or {}
     TableUtility.ArrayClear(self.actionDatas)
+    local doubleActions, skillActions = {}, {}
     for _, d in pairs(Table_ActionAnime) do
       if d.DoubleAction and not UIEmojiCell.CheckIsPassiveActionByName(d.Name) and UIEmojiCell.CheckDoubleActionValid(d.id) then
-        ChatRoomProxy._InsertNewExpressionData(self.actionDatas, UIEmojiType.Action, d.id)
+        ChatRoomProxy._InsertNewExpressionData(doubleActions, UIEmojiType.Action, d.id)
+      elseif d.SkillAction and SkillProxy.Instance:GetLearnedSkill(d.SkillAction) then
+        ChatRoomProxy._InsertNewExpressionData(skillActions, UIEmojiType.Action, d.id)
       end
+    end
+    for i = 1, #doubleActions do
+      TableUtility.ArrayPushBack(self.actionDatas, doubleActions[i])
+    end
+    for i = 1, #skillActions do
+      TableUtility.ArrayPushBack(self.actionDatas, skillActions[i])
     end
     local remoteDatas = chatRoomProxy:GetActionExpressions()
     for i = 1, #remoteDatas do
       TableUtility.ArrayPushBack(self.actionDatas, remoteDatas[i])
+    end
+    local cfg = GameConfig.FashionStar and GameConfig.FashionStar.ActionLimit
+    if cfg then
+      for i = 1, #self.actionDatas do
+        if cfg[self.actionDatas[i].id] and 1 < i then
+          local item = table.remove(self.actionDatas, i)
+          table.insert(self.actionDatas, 1, item)
+        end
+      end
     end
     datas = self.actionDatas
   elseif index == 4 then

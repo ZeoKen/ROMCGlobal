@@ -12,6 +12,8 @@ end
 
 local hideType = {hideClickSound = true, hideClickEffect = false}
 local uiCamera
+local SNOW_STONE_OVERFLOW_CONFIRM_MSGID = 43728
+local GUIDE_ITEM_ID = 114
 
 function HappyShopBuyItemCell:FindObjs()
   HappyShopBuyItemCell.super.FindObjs(self)
@@ -35,6 +37,16 @@ function HappyShopBuyItemCell:FindObjs()
   self.helpButton = self:FindGO("HelpInfoButton")
   self.closeWhenClickOtherPlace = self.gameObject:GetComponent(CloseWhenClickOtherPlace)
   self.changeCostTipBtn = self:FindGO("ChangeCostTip", self.priceRoot)
+end
+
+function HappyShopBuyItemCell:UpdateGuideIds(data)
+  local active = data and data.goodsID == GUIDE_ITEM_ID
+  if self.countPlusBg then
+    self:AddOrRemoveGuideId(self.countPlusBg.gameObject, active and 1104 or nil)
+  end
+  if self.confirmButton then
+    self:AddOrRemoveGuideId(self.confirmButton, active and 1105 or nil)
+  end
 end
 
 function HappyShopBuyItemCell:AddEvts()
@@ -229,6 +241,7 @@ function HappyShopBuyItemCell:SetData(data)
     end
   end
   self:UpdateHelpInfoButton()
+  self:UpdateGuideIds(data)
   HappyShopBuyItemCell.super.SetData(self, data)
 end
 
@@ -238,6 +251,11 @@ function HappyShopBuyItemCell:UpdateOwnInfo(checkBagTypes)
     if shopdata.source == HappyShopProxy.SourceType.UserGuild then
       local guildOwn = GuildProxy.Instance:GetGuildPackItemNumByItemid(shopdata.goodsID)
       self.ownInfo.text = string.format(ZhString.HappyShop_OwnGuild, guildOwn)
+      return
+    end
+    if Table_SnowStone and Table_SnowStone[shopdata.goodsID] then
+      local stoneData = SnowCrownProxy and SnowCrownProxy.Instance and SnowCrownProxy.Instance:GetStoneBookData(shopdata.goodsID)
+      self.ownInfo.text = string.format(ZhString.HappyShop_OwnInfo, stoneData and 1 or 0)
       return
     end
     local own
@@ -321,11 +339,15 @@ function HappyShopBuyItemCell:PlayBuySound(isBuy)
   end
 end
 
-function HappyShopBuyItemCell:Confirm()
+function HappyShopBuyItemCell:Confirm(snowStoneOverflowConfirmed)
   if BranchMgr.IsJapan() then
     self.gameObject:SetActive(false)
   end
-  if tonumber(self.shopdata.ItemID) == 151 then
+  if not snowStoneOverflowConfirmed and self:NeedConfirmSnowStoneOverflow() then
+    MsgManager.ConfirmMsgByID(SNOW_STONE_OVERFLOW_CONFIRM_MSGID, function()
+      self:Confirm(true)
+    end)
+  elseif tonumber(self.shopdata.ItemID) == 151 then
     OverseaHostHelper:GachaUseComfirm(self.xdetotal, function()
       self:RealConfirm()
     end, 650)
@@ -352,6 +374,14 @@ function HappyShopBuyItemCell:Confirm()
   else
     self:RealConfirm()
   end
+end
+
+function HappyShopBuyItemCell:NeedConfirmSnowStoneOverflow()
+  local count = tonumber(self.countInput and self.countInput.value)
+  if count == nil then
+    count = self.count or 0
+  end
+  return HappyShopProxy.Instance:NeedConfirmSnowStoneOverflow(self.shopdata, count)
 end
 
 function HappyShopBuyItemCell:UpdateCount(change)

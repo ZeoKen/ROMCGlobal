@@ -75,6 +75,23 @@ function PveDropItemData:SetRate(rate)
   self.rate = rate
 end
 
+function PveDropItemData:SetGuaranteeInfo(guaranteed, showcount)
+  self.guaranteed = guaranteed
+  self.showcount = showcount
+end
+
+function PveDropItemData:HasGuaranteeInfo()
+  return nil ~= self.guaranteed and nil ~= self.showcount
+end
+
+function PveDropItemData:GetGuaranteeRemainCount()
+  if not self:HasGuaranteeInfo() then
+    return nil
+  end
+  local remain = self.guaranteed - self.showcount
+  return 0 < remain and remain or 0
+end
+
 function PveDropItemData:IsPickup()
   return PveEntranceProxy.Instance:IsPickup(self.ownerid)
 end

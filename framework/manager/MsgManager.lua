@@ -350,6 +350,11 @@ function MsgManager.ConfirmMsg(title, text, ...)
   UIUtil.PopUpConfirmYesNoView(title, text)
 end
 
+function MsgManager.ConfirmMsgWithCustomText(title, text, confirmHandler, cancelHandler, source, confirmtext, canceltext, unique, ...)
+  text = MsgParserProxy.Instance:TryParse(text, ...)
+  UIUtil.PopUpConfirmYesNoView(title, text, confirmHandler, cancelHandler, source, confirmtext, canceltext, unique)
+end
+
 function MsgManager.ConfirmMsgTableParam(title, text, param, roleid, data, removeTime, lockreason)
   local confirmHandler, cancelHandler
   if param ~= nil then

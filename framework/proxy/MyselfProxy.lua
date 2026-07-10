@@ -5,6 +5,8 @@ local MyselfProxy = class("MyselfProxy", pm.Proxy)
 MyselfProxy.Instance = nil
 MyselfProxy.NAME = "MyselfProxy"
 local FakeNormalAtk = GameConfig.FakeNormalAtk
+local AtkSpdSerialSkillConfig = GameConfig.AtkSpdSerialSkills or {}
+local AtkSpdSerialFullSkill = AtkSpdSerialSkillConfig.buff_full_skill or 2734001
 
 function MyselfProxy:ctor(proxyName, data)
   self.proxyName = proxyName or MyselfProxy.NAME
@@ -30,6 +32,7 @@ function MyselfProxy:onRegister()
   self.traceItems = {}
   self.equipPosStateTimeMap, self.equipPosOnCdEndTimeMap, self.equipPosEffectTimeMap = {}, {}, {}
   self.unlockActionIds = {}
+  self.actionPlayStamp = {}
   self.unlockEmojiIds = {}
   self:InitPropsTab()
   self.debtDatas = {}
@@ -356,6 +359,14 @@ end
 
 function MyselfProxy:GetBcatDiamond()
   return Game.Myself and Game.Myself.data.userdata:Get(UDEnum.BCAT_DIAMOND) or 0
+end
+
+function MyselfProxy:GetNokrDiamond()
+  return Game.Myself and Game.Myself.data.userdata:Get(UDEnum.NOKR_DIAMOND) or 0
+end
+
+function MyselfProxy:GetNokrFreeDiamond()
+  return Game.Myself and Game.Myself.data.userdata:Get(UDEnum.NOKR_FREE_DIAMOND) or 0
 end
 
 function MyselfProxy:GetGuildHonor()
@@ -798,11 +809,32 @@ function MyselfProxy:GetTraceItemByItemId(itemid)
   return self.traceItems[itemid]
 end
 
-function MyselfProxy:SetUnlockActionIdMap(ids)
+function MyselfProxy:SetUnlockActionIdMap(ids, action_infos)
   for i = 1, #ids do
     local id = ids[i]
     self.unlockActionIds[id] = 1
   end
+  for i = 1, #action_infos do
+    redlog("actionPlayStamp", action_infos[i].actionid, action_infos[i].timestamp)
+    self.actionPlayStamp[action_infos[i].actionid] = action_infos[i].timestamp
+  end
+end
+
+function MyselfProxy:GetRecentAction(action_id)
+  return self.actionPlayStamp[action_id]
+end
+
+function MyselfProxy:IsActionInCD(action_id)
+  local lastPlayStamp = self.actionPlayStamp[action_id]
+  if not lastPlayStamp or lastPlayStamp == 0 then
+    return false
+  end
+  local interval = Table_ActionAnime[action_id].IntervalTime
+  if not interval or interval == 0 then
+    return false
+  end
+  local now = ServerTime.CurServerTime() / 1000
+  return interval > now - lastPlayStamp
 end
 
 function MyselfProxy:GetUnlockActionMap()
@@ -1452,7 +1484,7 @@ end
 
 function MyselfProxy:GetFakeNormalAtkID()
   if Game.Myself.data:CheckEnergyBuffFull() then
-    return 2734001
+    return AtkSpdSerialFullSkill
   end
   local myPro = MyselfProxy.Instance:GetMyProfession()
   local myTypeBranch = ProfessionProxy.GetTypeBranchFromProf(myPro)

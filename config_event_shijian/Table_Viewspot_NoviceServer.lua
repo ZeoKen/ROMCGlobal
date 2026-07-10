@@ -5748,7 +5748,6 @@ Table_Viewspot = {
     id = 348,
     MapName = 101,
     MapNum = 4,
-    SpotName = "落枫广场",
     Coordinate = Table_Viewspot_t.Coordinate[342],
     AdventureSort = 348
   },
@@ -7019,6 +7018,7 @@ Table_Viewspot = {
   [512] = {
     id = 512,
     MapNum = 33,
+    SpotName = "旧城塔",
     Coordinate = Table_Viewspot_t.Coordinate[506],
     AdventureSort = 512
   },
@@ -7494,7 +7494,7 @@ local cell_mt = {
     Coordinate = _EmptyTable,
     MapName = 149,
     MapNum = 1,
-    SpotName = "旧城塔",
+    SpotName = "落枫广场",
     Type = 1,
     id = 1
   }

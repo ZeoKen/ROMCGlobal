@@ -2282,16 +2282,16 @@ function Asset_Role:PlayActionEffect(action, bodyID)
           if effectConfig.Loop == 1 then
             local effect
             if effectConfig.EPFollow == 1 then
-              effect = self:PlayEffectOn(effectConfig.Path, effectConfig.EPID, nil, nil, nil, nil, nil, nil, nil, nil, true)
+              effect = self:PlayEffectOn(effectConfig.Path, effectConfig.EPID, nil, nil, nil, nil, nil, nil, nil, nil)
             else
-              effect = self:PlayEffectAt(effectConfig.Path, effectConfig.EPID, nil, nil, nil, nil, nil, nil, nil, nil, true)
+              effect = self:PlayEffectAt(effectConfig.Path, effectConfig.EPID, nil, nil, nil, nil, nil, nil, nil, nil)
             end
             self:CreateWeakData()
             self:SetWeakData(WeakDataKeys.ActionEffect, effect)
           elseif effectConfig.EPFollow == 1 then
-            self:PlayEffectOneShotOn(effectConfig.Path, effectConfig.EPID, nil, nil, nil, nil, nil, nil, nil, nil, true)
+            self:PlayEffectOneShotOn(effectConfig.Path, effectConfig.EPID, nil, nil, nil, nil, nil, nil, nil, nil)
           else
-            self:PlayEffectOneShotAt(effectConfig.Path, effectConfig.EPID, nil, nil, nil, nil, nil, nil, nil, nil, true)
+            self:PlayEffectOneShotAt(effectConfig.Path, effectConfig.EPID, nil, nil, nil, nil, nil, nil, nil, nil)
           end
         end
       end
@@ -2789,6 +2789,10 @@ function Asset_Role:_DestroyPartObject(part, oldID, undress)
   self:ReSetEPNode(part)
   self.partObjs[part] = nil
   if nil ~= oldPartObj then
+    if IsNull(oldPartObj) then
+      self.realPartIDs[part] = nil
+      return
+    end
     self:RestoreShader(part, oldPartObj)
     if undress then
       self.complete:SetPart(part - 1, nil, undress)
@@ -2941,8 +2945,12 @@ function Asset_Role:DestroySubPart(partIndex, undress)
   self:ReSetEPNode(partIndex)
   self.partObjs[partIndex] = nil
   if nil ~= partObj then
-    self:RestoreShader(partIndex, partObj)
     local mainPartIndex, subPartIndex = DecodeSubPartIndex(partIndex)
+    if IsNull(partObj) then
+      self:SetRealSubPartID(mainPartIndex, subPartIndex, nil)
+      return
+    end
+    self:RestoreShader(partIndex, partObj)
     if undress then
       self.complete:SetSubPart(mainPartIndex - 1, subPartIndex - 1, nil, undress)
     end

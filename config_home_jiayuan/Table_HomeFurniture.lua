@@ -6115,7 +6115,6 @@ Table_HomeFurniture = {
   },
   [32135] = {
     id = 32135,
-    Name = "Xhzd_02_Chair",
     NameZh = "##44721766",
     Row = 6,
     Col = 9,
@@ -8516,6 +8515,7 @@ Table_HomeFurniture = {
   },
   [39002] = {
     id = 39002,
+    Name = "Normal_01_MagicMirror",
     NameZh = "##123373",
     Row = 3,
     EndHeight = 4,
@@ -9437,7 +9437,7 @@ local cell_mt = {
     FurnitureFunction = _EmptyTable,
     HomeScore = 10,
     LoadShowPosition = _EmptyTable,
-    Name = "Normal_01_MagicMirror",
+    Name = "Xhzd_02_Chair",
     NameZh = "##1134421",
     NormalType = 1,
     Npc = _EmptyTable,

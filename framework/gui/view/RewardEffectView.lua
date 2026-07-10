@@ -66,9 +66,11 @@ function RewardEffectView:InitView()
   end
 end
 
+local _TabCnt = 3
+
 function RewardEffectView:UpdateTabList()
   local tabDatas = ReusableTable.CreateArray()
-  for i = 1, 2 do
+  for i = 1, _TabCnt do
     local data = {id = i}
     table.insert(tabDatas, data)
   end
@@ -122,6 +124,7 @@ function RewardEffectView:Switch(show)
     self.gameObject:SetActive(true)
     self:ClickFirstCell()
   elseif self.pageInited then
+    self:CloseVideo()
     self.gameObject:SetActive(false)
   end
 end
@@ -182,6 +185,9 @@ local F_SafeOpenVideo = function(videoPlayerNGUI, videoPath, pathAbsolute)
     local url = XDCDNInfo.GetVideoServerURL() .. FunctionVideoStorage.GetVideoPath(video)
     HTTPRequest.Head(url_b, function(x)
       if not NetIngPersonalPhoto.Ins().netIngTerminated then
+        if Slua.IsNull(videoPlayerNGUI) or not videoPlayerNGUI.gameObject.activeInHierarchy then
+          return
+        end
         local unityWebRequest = x
         local responseCode = unityWebRequest.responseCode
         if responseCode == 200 then

@@ -438,7 +438,6 @@ Table_ItemMemoryEffect = {
     id = 15,
     EffectID = 20001,
     BuffID = Table_ItemMemoryEffect_t.BuffID[15],
-    PreviewDesc = "物理防御",
     WaxDesc = "物理防御＋2%",
     UpgradeDesc = "物理防御＋4%"
   },
@@ -1036,19 +1035,22 @@ Table_ItemMemoryEffect = {
     id = 95,
     EffectID = 30306,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[64],
+    PreviewDesc = "时空护盾",
     WaxDesc = "使用技能时，给自身及周边5米范围内的队员添加一个生命上限*2%的护盾，持续5秒（目标10秒内只能受到一次该护盾效果）\n（效果可叠加，叠加3层时额外获得效果：使用技能时，给自身及周边5米范围内的队员添加一个生命上限*4%的护盾，持续5秒（目标10秒内只能受到一次该护盾效果））"
   },
   [96] = {
     id = 96,
     EffectID = 30306,
     Level = 2,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[65]
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[65],
+    PreviewDesc = "时空护盾"
   },
   [97] = {
     id = 97,
     EffectID = 30306,
     Level = 3,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[66]
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[66],
+    PreviewDesc = "时空护盾"
   },
   [98] = {
     id = 98,
@@ -1152,7 +1154,6 @@ Table_ItemMemoryEffect = {
     id = 136,
     EffectID = 40101,
     BuffID = Table_ItemMemoryEffect_t.BuffID[40],
-    PreviewDesc = "物理防御",
     WaxDesc = "物理防御＋12%"
   },
   [137] = {
@@ -1250,7 +1251,6 @@ Table_ItemMemoryEffect = {
     id = 150,
     EffectID = 40207,
     BuffID = Table_ItemMemoryEffect_t.BuffID[54],
-    PreviewDesc = "物理防御",
     WaxDesc = "物理防御＋12%"
   },
   [151] = {
@@ -1323,7 +1323,7 @@ local cell_mt = {
     EffectID = 30103,
     ExcessWaxBuffID = _EmptyTable,
     Level = 1,
-    PreviewDesc = "时空护盾",
+    PreviewDesc = "物理防御",
     UpgradeDesc = "",
     WaxBuffID = _EmptyTable,
     WaxDesc = "",

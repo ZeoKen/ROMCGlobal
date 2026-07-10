@@ -10,6 +10,15 @@ function TalentSkillCell:SetData(data)
   self:EnableGray(false)
 end
 
+function TalentSkillCell:UpdateName(skillData)
+  skillData = skillData or self.data.staticData
+  if self.skillName ~= skillData.NameZh then
+    local name = OverSea.LangManager.Instance():GetLangByKey(skillData.NameZh)
+    self.skillName.text = name
+    UIUtil.WrapLabel(self.skillName)
+  end
+end
+
 function TalentSkillCell:SetLevel(curLevel)
   TalentSkillCell.super.SetLevel(self, curLevel, nil, false)
   self.curLevel = curLevel

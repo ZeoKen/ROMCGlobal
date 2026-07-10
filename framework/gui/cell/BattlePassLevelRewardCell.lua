@@ -100,7 +100,8 @@ function BattlePassLevelRewardCell:SetData(data)
   self.cellgo:SetActive(true)
   self.data = data
   self.level = data.Level or 0
-  self.name.text = "Lv" .. self.level
+  self.name.text = data.IsOverflowReward and ZhString.BattlePassLevelView_OverflowReward or "Lv" .. self.level
+  self.name.gameObject:SetActive(true)
   self:SetRewardIcon(self.basicCon, data.ReplaceRewardItems or data.RewardItems)
   self:SetRewardIcon(self.adv1Con, data.ReplaceProRewardItems or data.ProRewardItems)
   self:SetRewardIcon(self.adv2Con, data.ReplaceSuperRewardItems or data.SuperRewardItems)
@@ -111,8 +112,17 @@ function BattlePassLevelRewardCell:SetData(data)
     for i = 1, #self.collParts do
       self.collParts[i]:SetActive(hasColl)
     end
-    self.collCover:SetActive(self.isSuLock and hasColl)
+    if self:IsOverflowReward() then
+      self.adv2Con.go:SetActive(hasColl and self.isSuHasReward)
+      self.collCover:SetActive(self.isSuHasReward and self.isSuLock and hasColl)
+    else
+      self.collCover:SetActive(self.isSuLock and hasColl)
+    end
   end
+end
+
+function BattlePassLevelRewardCell:IsOverflowReward()
+  return self.data and self.data.IsOverflowReward
 end
 
 function BattlePassLevelRewardCell:SetAllRewardUnSelect()
@@ -122,6 +132,10 @@ function BattlePassLevelRewardCell:SetAllRewardUnSelect()
 end
 
 function BattlePassLevelRewardCell:UpdateStatus()
+  if self:IsOverflowReward() then
+    self:UpdateOverflowStatus()
+    return
+  end
   self.isNormalGet = BattlePassProxy.Instance:IsNormalRewardGet(self.level)
   self.isAdvGet = BattlePassProxy.Instance:IsAdvRewardGet(self.level)
   self.isSuGet = BattlePassProxy.Instance:IsSuRewardGet(self.level)
@@ -144,6 +158,45 @@ function BattlePassLevelRewardCell:UpdateStatus()
   self.getBtn:SetActive(self.isNormalAvail or self.isAdvAvail or self.isSuAvail)
 end
 
+function BattlePassLevelRewardCell:UpdateOverflowStatus()
+  local proxy = BattlePassProxy.Instance
+  local data = proxy:GetOverflowRewardConfig() or self.data
+  self.data = data
+  if not data then
+    return
+  end
+  local hasColl = proxy:HasColPass()
+  self:SetRewardIcon(self.basicCon, data.RewardItems)
+  self:SetRewardIcon(self.adv1Con, data.ProRewardItems)
+  self:SetRewardIcon(self.adv2Con, hasColl and data.SuperRewardItems or nil)
+  local isFullLevel = BattlePassProxy.BPLevel() >= (proxy.maxBpLevel or 0)
+  local overflowTotalRounds = proxy:GetOverflowTotalRounds()
+  local normalAvailableRounds = proxy:GetOverflowNormalAvailableRounds()
+  local proAvailableRounds = proxy:GetOverflowProAvailableRounds()
+  local superAvailableRounds = proxy:GetOverflowSuperAvailableRounds()
+  self.isNormalHasReward = data.RewardItems and #data.RewardItems > 0 or false
+  self.isAdvHasReward = data.ProRewardItems and #data.ProRewardItems > 0 or false
+  self.isSuHasReward = hasColl and data.SuperRewardItems and #data.SuperRewardItems > 0 or false
+  self.isNormalLock = not isFullLevel
+  self.isAdvLock = not isFullLevel or 0 >= (proxy:AdvLevel() or 0)
+  self.isSuLock = not isFullLevel or 0 >= (proxy:SuLevel() or 0)
+  self.isNormalAvail = isFullLevel and not self.isNormalLock and self.isNormalHasReward and data.NormalOverflowAvailable
+  self.isAdvAvail = isFullLevel and not self.isAdvLock and self.isAdvHasReward and data.ProOverflowAvailable
+  self.isSuAvail = isFullLevel and not self.isSuLock and self.isSuHasReward and data.SuperOverflowAvailable
+  self.isNormalGet = self.isNormalHasReward and not self.isNormalLock and 0 < overflowTotalRounds and normalAvailableRounds <= 0
+  self.isAdvGet = self.isAdvHasReward and not self.isAdvLock and 0 < overflowTotalRounds and proAvailableRounds <= 0
+  self.isSuGet = self.isSuHasReward and not self.isSuLock and 0 < overflowTotalRounds and superAvailableRounds <= 0
+  self.basicCover:SetActive(self.isNormalHasReward and self.isNormalLock)
+  self.advCover:SetActive(self.isAdvHasReward and self.isAdvLock)
+  self.collCover:SetActive(self.isSuHasReward and self.isSuLock and hasColl)
+  self:UpdateRewardIcon(self.basicCon, self.isNormalGet, self.isNormalHasReward and self.isNormalLock)
+  self:UpdateRewardIcon(self.adv1Con, self.isAdvGet, self.isAdvHasReward and self.isAdvLock)
+  self:UpdateRewardIcon(self.adv2Con, self.isSuGet, self.isSuHasReward and self.isSuLock)
+  local canGet = self.isNormalAvail or self.isAdvAvail or self.isSuAvail
+  self.getBtn:SetActive(canGet)
+  self.name.gameObject:SetActive(not canGet)
+end
+
 function BattlePassLevelRewardCell:SetRewardIcon(icon, data)
   if not icon then
     return
@@ -162,7 +215,7 @@ function BattlePassLevelRewardCell:SetRewardIcon(icon, data)
       icon.item = BagItemCell.new(self:FindGO("holder", icon.go))
     end
     local itemData = ItemData.new("", sData.itemid)
-    itemData:SetItemNum(sData.num)
+    itemData:SetItemNum(sData.num or 1)
     icon.item:SetData(itemData)
     icon.go:SetActive(true)
     icon.mt1:SetActive(#icon.data > 1)
@@ -180,7 +233,7 @@ function BattlePassLevelRewardCell:SwitchShowRewardIcon(icon)
       icon.item = BagItemCell.new(self:FindGO("holder", icon.go))
     end
     local itemData = ItemData.new("", sData.itemid)
-    itemData:SetItemNum(sData.num)
+    itemData:SetItemNum(sData.num or 1)
     icon.item:SetData(itemData)
   end
 end
@@ -194,6 +247,12 @@ function BattlePassLevelRewardCell:UpdateRewardIcon(icon, isGet, isLock)
 end
 
 function BattlePassLevelRewardCell:GetLevelReward()
+  if self:IsOverflowReward() then
+    if self.isNormalAvail or self.isAdvAvail or self.isSuAvail then
+      ServiceBattlePassProxy.Instance:CallGetRewardBattlePassCmd(nil, nil, nil, nil, true)
+    end
+    return
+  end
   if self.isNormalAvail then
     ServiceBattlePassProxy.Instance:CallGetRewardBattlePassCmd(nil, self.level, nil, nil)
   end

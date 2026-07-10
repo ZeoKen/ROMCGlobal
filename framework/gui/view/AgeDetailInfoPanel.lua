@@ -8,13 +8,14 @@ function AgeDetailInfoPanel:Init()
 end
 
 function AgeDetailInfoPanel:InitData()
+  local viewdata = not self.viewdata or self.viewdata.viewdata or self.viewdata
   local title = self:FindComponent("Title", UILabel)
-  title.text = ZhString.NewAgreeMentPanel_AgeDetailTitle
+  title.text = viewdata and viewdata.title or ZhString.NewAgreeMentPanel_AgeDetailTitle
   local scrolMsg = self:FindComponent("Msg", UILabel)
   local agreeText = self:FindComponent("agreeText", UILabel)
   local cancelText = self:FindComponent("cancelText", UILabel)
   self.bgTexture = self:FindComponent("BGTexture", UITexture)
-  scrolMsg.text = ZhString.NewAgreeMentPanel_AgeDetailInfo
+  scrolMsg.text = viewdata and viewdata.msg or ZhString.NewAgreeMentPanel_AgeDetailInfo
 end
 
 function AgeDetailInfoPanel:AddEvt()

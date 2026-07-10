@@ -46,6 +46,9 @@ function GeneralShareView:ROOShare()
   IconManager:SetUIIcon("Facebook", sp)
   sp = self.goButtonWechat:GetComponent(UISprite)
   IconManager:SetUIIcon("Twitter", sp)
+  if BranchMgr.IsJapan() then
+    self.goButtonWechat:SetActive(false)
+  end
   sp = self.goButtonWechatMoments:GetComponent(UISprite)
   IconManager:SetUIIcon("line", sp)
   GameObject.Destroy(self.goButtonSina)

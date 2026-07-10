@@ -147,7 +147,7 @@ end
 function ItemData:GetCdConfigTime()
   local useItemData = Table_UseItem[self.staticData.id]
   if useItemData == nil then
-    return 0
+    return self.configCdTime and self.configCdTime > 0 and self.configCdTime or 0
   end
   if useItemData.PVPCDtime and Game.MapManager:IsPVPMode() then
     return useItemData.PVPCDtime or 0
@@ -162,7 +162,7 @@ function ItemData:GetCdConfigTime()
       end
     end
   end
-  return useItemData.CDTime or 0
+  return self.configCdTime and self.configCdTime > 0 and self.configCdTime or useItemData.CDTime or 0
 end
 
 function ItemData:SetEquipCards(cards)
@@ -882,7 +882,9 @@ function ItemData:ParseFromServerData(serverItem)
     self.loveLetter:SetDataByItemServerData(sItemData.id, sLoveLetter)
   end
   if serverItem.egg and serverItem.egg.id ~= nil and serverItem.egg.id ~= 0 then
-    self.petEggInfo = PetEggInfo.new(self.staticData)
+    if not self.petEggInfo then
+      self.petEggInfo = PetEggInfo.new(self.staticData)
+    end
     self.petEggInfo:Server_SetData(serverItem.egg)
   end
   if serverItem.code and serverItem.code.code ~= "" then
@@ -1739,6 +1741,7 @@ function ItemData:SetSnowGemData(data)
   self.snowGemData = {
     id = data.id or 0,
     level = data.level or 0,
-    advlv = data.advlv or 0
+    advlv = data.advlv or 0,
+    advexp = data.advexp or 0
   }
 end

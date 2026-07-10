@@ -6,6 +6,9 @@ function LoginInitCommand:execute(note)
 end
 
 function LoginInitCommand:Init(data)
+  if Game.GameHealthProtector and (not data or not data.reInit) then
+    Game.GameHealthProtector:StartLoginDurationTipTimer()
+  end
   ServiceItemProxy.Instance:CallPackageItem(SceneItem_pb.EPACKTYPE_WALLET)
   ServiceItemProxy.Instance:CallPackageItem(SceneItem_pb.EPACKTYPE_MAIN)
   ServiceItemProxy.Instance:CallPackageItem(SceneItem_pb.EPACKTYPE_EQUIP)

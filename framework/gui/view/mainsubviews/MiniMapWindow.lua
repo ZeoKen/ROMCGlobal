@@ -3045,15 +3045,20 @@ end
 
 function MiniMapWindow:SetMiniMapBorder(name)
   local mapTexName = self.mapTexName
+  local texture = self.mapBorderTexture
   if mapTexName == name then
+    if name == nil and texture and not IsNull(texture) then
+      texture.mainTexture = nil
+    end
     return
   end
-  local texture = self.mapBorderTexture
   if mapTexName ~= nil then
     _PictureManager:UnLoadMiniMap(mapTexName .. "_border", texture)
   end
   if name ~= nil and not miniMapPrefab[name] then
     _PictureManager:SetMiniMap(name .. "_border", texture)
+  elseif texture and not IsNull(texture) then
+    texture.mainTexture = nil
   end
 end
 

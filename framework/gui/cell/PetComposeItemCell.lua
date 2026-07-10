@@ -1,5 +1,9 @@
 local BaseCell = autoImport("BaseCell")
 PetComposeItemCell = class("PetComposeItemCell", BaseCell)
+local IsContractPet = function(petid)
+  local petData = petid and Table_Pet and Table_Pet[petid]
+  return petData ~= nil and petData.ContractSkill ~= nil and petData.ContractSkill[1] ~= nil and petData.ContractSkill[2] ~= nil
+end
 
 function PetComposeItemCell:Init()
   self:InitView()
@@ -12,6 +16,7 @@ function PetComposeItemCell:InitView()
   self.icon = self:FindComponent("Icon", UISprite)
   self.starGrid = self:FindComponent("StarGrid", UIGrid)
   self.starPrefab = self:FindGO("StarPrefab")
+  self.contractIcon = self:FindComponent("ContractIcon", UISprite)
 end
 
 function PetComposeItemCell:SetData(data)
@@ -20,9 +25,18 @@ function PetComposeItemCell:SetData(data)
   if data then
     self:Show(self.pos)
     IconManager:SetNpcMonsterIconByID(data, self.icon)
+    self:SetContractIcon(data)
   else
+    self:SetContractIcon()
     self:Hide(self.pos)
   end
+end
+
+function PetComposeItemCell:SetContractIcon(petid)
+  if self.contractIcon == nil then
+    return
+  end
+  self.contractIcon.gameObject:SetActive(IsContractPet(petid))
 end
 
 function PetComposeItemCell:SetStar()

@@ -1744,7 +1744,6 @@ Table_PoemStep = {
   [3] = {
     id = 3,
     Questid = 600100004,
-    name = "黑暗降临·故事三",
     Descrip = Table_PoemStep_t.Descrip[3],
     TraceInfo = "危机--黑暗之王"
   },
@@ -2264,6 +2263,7 @@ Table_PoemStep = {
   [71] = {
     id = 71,
     Questid = 311120011,
+    name = "休朗克·故事一",
     Descrip = Table_PoemStep_t.Descrip[71],
     TraceInfo = "米尔特家族的骑士"
   },
@@ -2376,7 +2376,8 @@ Table_PoemStep = {
     id = 85,
     Questid = 311140011,
     name = "巴尔洛·故事一",
-    Descrip = Table_PoemStep_t.Descrip[85]
+    Descrip = Table_PoemStep_t.Descrip[85],
+    TraceInfo = "梦罗克大陆卫队的建立"
   },
   [86] = {
     id = 86,
@@ -2554,8 +2555,7 @@ Table_PoemStep = {
     Questid = 311180011,
     name = "统帅·故事一",
     step = 7,
-    Descrip = Table_PoemStep_t.Descrip[108],
-    TraceInfo = "斐扬毁灭？斐扬新生？"
+    Descrip = Table_PoemStep_t.Descrip[108]
   },
   [109] = {
     id = 109,
@@ -2796,9 +2796,9 @@ local cell_mt = {
   __index = {
     Descrip = _EmptyTable,
     Questid = 311150001,
-    TraceInfo = "梦罗克大陆卫队的建立",
+    TraceInfo = "斐扬毁灭？斐扬新生？",
     id = 1,
-    name = "休朗克·故事一",
+    name = "黑暗降临·故事三",
     step = 0
   }
 }

@@ -979,7 +979,7 @@ function BlackSmithProxy:GetEnchantCost(enchantType, itemType)
   TableUtility.ArrayClear(_EnchantCost)
   local actDiscount = self:GetEquipOptDiscounts(ActivityCmd_pb.GACTIVITY_ENCHATN_DISCOUNT)
   actDiscount = actDiscount and actDiscount[1]
-  local homeDiscount = not actDiscount and HomeManager.Me():TryGetHomeWorkbenchDiscount("Enchant") or nil
+  local homeDiscount = not actDiscount and HomeManager.GetInstance():TryGetHomeWorkbenchDiscount("Enchant") or nil
   if math.Approximately(homeDiscount or 0, 100) then
     homeDiscount = nil
   end

@@ -488,6 +488,7 @@ end
 
 function PackageView:AddCloseButtonEvent()
   self:AddButtonEvent("CloseButton", function()
+    self.mainPage:HideAllPackageBords()
     self.mainPage:CheckFavoriteModeOnExit(function()
       self:CloseSelf()
     end)

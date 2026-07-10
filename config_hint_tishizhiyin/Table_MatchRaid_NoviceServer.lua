@@ -2078,6 +2078,36 @@ Table_MatchRaid = {
     EnterLevel = 110,
     NoviceCanJoin = 1
   },
+  [206803] = {
+    id = 206803,
+    Type = 54,
+    RaidConfigID = 7671,
+    EnterLevel = 110,
+    NoviceCanJoin = 1,
+    RobotSummonTime = 25,
+    RobotAttrRate = 0.8
+  },
+  [206804] = {
+    id = 206804,
+    Type = 54,
+    RaidConfigID = 7672,
+    EnterLevel = 110,
+    NoviceCanJoin = 1
+  },
+  [206805] = {
+    id = 206805,
+    Type = 54,
+    RaidConfigID = 7673,
+    EnterLevel = 110,
+    NoviceCanJoin = 1
+  },
+  [206900] = {
+    id = 206900,
+    Type = 56,
+    RaidConfigID = 7206,
+    EnterLevel = 100,
+    NoviceCanJoin = 1
+  },
   [400100] = {
     id = 400100,
     Type = 46,

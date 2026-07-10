@@ -75,7 +75,7 @@ Table_BossSceneSeason = {
         70000526
       }
     },
-    UpCard = 23487
+    UpCard = 23467
   },
   [7] = {
     id = 7,
@@ -88,7 +88,7 @@ Table_BossSceneSeason = {
         70000530
       }
     },
-    UpCard = 23487
+    UpCard = 23364
   }
 }
 Table_BossSceneSeason_fields = {

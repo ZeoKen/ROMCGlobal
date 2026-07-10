@@ -13,6 +13,7 @@ function InheritSkillCell:FindObjs()
   self.cost = self:FindComponent("Cost", UILabel)
   self.selectSp = self:FindComponent("Select", UIMultiSprite)
   self.lockGO = self:FindGO("Lock")
+  self.lockGO:SetActive(false)
   self.nameBg = self:FindComponent("NameBg", UIMultiSprite)
   local dragItem = self:FindComponent("SkillBg", UIDragItem)
   self.dragDrop = DragDropCell.new(dragItem, 0.01)
@@ -52,8 +53,8 @@ end
 function InheritSkillCell:UpdateLock()
   local isLock = not self.data or not self.data.isUnlock
   local isInherited = self.data and self.data.isInherited or false
-  self.lockGO:SetActive(isLock)
-  self.inheritGO:SetActive(not isLock and not isInherited)
+  local isLack = self.data and self.data:IsMaterialLack() or false
+  self.inheritGO:SetActive(not isLock and not isInherited and not isLack)
   self.nameBg.alpha = not (not isLock and isInherited) and 0.5 or 1
   self.skillName.alpha = not (not isLock and isInherited) and 0.5 or 1
   if isLock then

@@ -49,9 +49,9 @@ function ShopSaleItemPage:UpdateShopSaleInfo(datas)
   self.itemCtl:ResetDatas(datas)
   self.nonetip:SetActive(#datas == 0)
   local discount = 0.2
-  local totalCost, pureTotalCost = ShopSaleProxy.Instance:GetTotalPrice()
-  local discount, discountCount, discountTotal = ShopSaleProxy.Instance:GetTotalSellDiscount(pureTotalCost)
-  self.totalCostNums.text = StringUtil.NumThousandFormat(discountTotal + (totalCost - pureTotalCost))
+  local totalCost, _, discountPureTotalCost = ShopSaleProxy.Instance:GetTotalPrice()
+  local discount, discountCount = ShopSaleProxy.Instance:GetTotalSellDiscount(discountPureTotalCost)
+  self.totalCostNums.text = StringUtil.NumThousandFormat(totalCost + discountCount)
   self:UpdateSale(discount, discountCount)
   local canMove = 3 < #datas
   if not canMove then
@@ -103,7 +103,9 @@ function ShopSaleItemPage:AddEvts()
 end
 
 function ShopSaleItemPage:InitShow()
-  self.npc = self.viewdata.viewdata.npcdata
+  local viewdata = self.viewdata and self.viewdata.viewdata
+  self.npc = viewdata and viewdata.npcdata
+  self.npcId = self.npc and self.npc.data and self.npc.data.id or 0
   self:UpdateShopSaleInfo()
   self:ResetPosition()
 end
@@ -112,7 +114,7 @@ function ShopSaleItemPage:ClickSaleButton(go)
   if #ShopSaleProxy.Instance.waitSaleItems > 0 then
     local _ShopSaleProxy = ShopSaleProxy.Instance
     TableUtility.ArrayClear(temp.stDatas)
-    temp.npcId = self.npc.data.id
+    temp.npcId = self.npcId or 0
     for i = 1, #_ShopSaleProxy.waitSaleItems do
       local data = _ShopSaleProxy:GetItemByGuid(_ShopSaleProxy.waitSaleItems[i].guid)
       if data and data.staticData then
@@ -123,10 +125,10 @@ function ShopSaleItemPage:ClickSaleButton(go)
       local isSaleConfirmMsg = ShopSaleProxy.Instance:IsSaleConfirmMsg()
       if isSaleConfirmMsg then
         MsgManager.ConfirmMsgByID(1405, function()
-          ServiceItemProxy.Instance:CallSellItem(arg.npcId)
+          ServiceItemProxy.Instance:CallSellItem(arg and arg.npcId or 0)
         end, nil)
       else
-        ServiceItemProxy.Instance:CallSellItem(arg.npcId)
+        ServiceItemProxy.Instance:CallSellItem(arg and arg.npcId or 0)
       end
     end, temp)
   else

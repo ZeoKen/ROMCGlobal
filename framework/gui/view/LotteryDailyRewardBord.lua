@@ -124,22 +124,7 @@ end
 function LotteryDailyRewardBord:SetRewardDayTime()
   self.rewardDay, self.rewardTime = _LotteryProxy:TryGetDailyReward(self.lotteryType)
   if self.rewardTime and self.rewardTime > 0 then
-    local startDate = os.date("*t", self.rewardTime)
-    if 0 <= startDate.hour and startDate.hour < 5 then
-      self.reward5ClockTime = os.time({
-        year = startDate.year,
-        month = startDate.month,
-        day = startDate.day,
-        hour = 5
-      }) - 86400
-    else
-      self.reward5ClockTime = os.time({
-        year = startDate.year,
-        month = startDate.month,
-        day = startDate.day,
-        hour = 5
-      })
-    end
+    self.reward5ClockTime = ClientTimeUtil.GetNextDailyRefreshTimeByTimeStamp(self.rewardTime) - 86400
   end
 end
 

@@ -2,6 +2,26 @@ autoImport("BattlePassRankShowData")
 BattlePassProxy = class("BattlePassProxy", pm.Proxy)
 BattlePassProxy.Instance = nil
 BattlePassProxy.NAME = "BattlePassProxy"
+local HasRewardItems = function(rewards)
+  return rewards and 0 < #rewards
+end
+local BuildOverflowRewardItems = function(rewards, rounds)
+  if not HasRewardItems(rewards) then
+    return nil
+  end
+  rounds = rounds or 1
+  local result = {}
+  for i = 1, #rewards do
+    local reward = rewards[i]
+    if reward and reward.itemid then
+      TableUtility.ArrayPushBack(result, {
+        itemid = reward.itemid,
+        num = (reward.num or 1) * rounds
+      })
+    end
+  end
+  return 0 < #result and result or nil
+end
 
 function BattlePassProxy:ctor(proxyName, data)
   self.proxyName = proxyName or BattlePassProxy.NAME
@@ -100,6 +120,7 @@ function BattlePassProxy:InitStaticData()
     redlog("BattlePass 未找到重要配置信息: 当前战令版本!")
     return
   end
+  redlog("self.currentVersion = ", self.currentVersion)
   self.CurrentBPConfig = self.CurServerBattlePassVersion and self.CurServerBattlePassVersion[self.currentVersion]
   if not self.CurrentBPConfig then
     redlog("BattlePass 未找到重要配置信息: self.CurServerBattlePassVersion")
@@ -109,13 +130,18 @@ function BattlePassProxy:InitStaticData()
   self.IdOffset = self.CurrentBPConfig.IdOffset or 0
   self.BattlePassCoin = self.CurrentBPConfig.BattlePassCoin or GameConfig.MoneyId.BattlePassCoin
   self.UpgradeDepositItem = self.CurrentBPConfig.UpgradeDepositItem
+  self.overflowRewardLevel = nil
+  self.overflowRewardConfig = nil
   if self.UpgradeDepositIds then
     TableUtility.ArrayClear(self.UpgradeDepositIds)
   else
     self.UpgradeDepositIds = {}
   end
   for i = 1, #self.UpgradeDepositItem do
-    TableUtility.ArrayPushBack(self.UpgradeDepositIds, self.UpgradeDepositItem[i].DepositeId)
+    local depositId = self.UpgradeDepositItem[i].DepositeId
+    if depositId then
+      TableUtility.ArrayPushBack(self.UpgradeDepositIds, depositId)
+    end
   end
   if self.importantLvs then
     TableUtility.ArrayClear(self.importantLvs)
@@ -126,6 +152,10 @@ function BattlePassProxy:InitStaticData()
     if self:LevelConfig(i).Important == 1 then
       TableUtility.ArrayPushBack(self.importantLvs, i)
     end
+  end
+  self:InitOverflowRewardConfig()
+  if self.overflowRewardConfig then
+    TableUtility.ArrayPushBack(self.importantLvs, self.overflowRewardLevel)
   end
   return true
 end
@@ -181,6 +211,73 @@ function BattlePassProxy:GetNextImportantLv(lv)
   return self.importantLvs[#self.importantLvs]
 end
 
+function BattlePassProxy:InitOverflowRewardConfig()
+  local overflowReward = self.CurrentBPConfig and self.CurrentBPConfig.OverflowReward
+  if not (overflowReward and overflowReward.Exp) or overflowReward.Exp <= 0 or 0 >= self.maxBpLevel then
+    return
+  end
+  if not HasRewardItems(overflowReward.RewardItems) and not HasRewardItems(overflowReward.ProRewardItems) and not HasRewardItems(overflowReward.SuperRewardItems) then
+    return
+  end
+  self.overflowRewardLevel = self.maxBpLevel + 1
+  self.overflowRewardConfig = {
+    Level = self.overflowRewardLevel,
+    IsOverflowReward = true,
+    Important = 1
+  }
+  self:RefreshOverflowRewardConfig()
+end
+
+function BattlePassProxy:GetOverflowTotalRounds()
+  local overflowReward = self.CurrentBPConfig and self.CurrentBPConfig.OverflowReward
+  if not (overflowReward and overflowReward.Exp) or overflowReward.Exp <= 0 then
+    return 0
+  end
+  local maxLevelConfig = Table_BattlePassLevel[(self.maxBpLevel or 0) + (self.IdOffset or 0)]
+  local maxNeedExp = maxLevelConfig and maxLevelConfig.NeedExp or 0
+  local bpExp = Game and Game.Myself and Game.Myself.data and Game.Myself.data.userdata and Game.Myself.data.userdata:Get(UDEnum.BATTLEPASS_EXP) or 0
+  return math.floor(math.max(0, bpExp - maxNeedExp) / overflowReward.Exp)
+end
+
+function BattlePassProxy:GetOverflowNormalAvailableRounds()
+  local getRounds = self.bpInfo and self.bpInfo.overflowRewardLevel or 0
+  return math.max(0, self:GetOverflowTotalRounds() - getRounds)
+end
+
+function BattlePassProxy:GetOverflowProAvailableRounds()
+  local getRounds = self.bpInfo and self.bpInfo.proOverflowRewardLevel or 0
+  return math.max(0, self:GetOverflowTotalRounds() - getRounds)
+end
+
+function BattlePassProxy:GetOverflowSuperAvailableRounds()
+  local getRounds = self.bpInfo and self.bpInfo.superOverflowRewardLevel or 0
+  return math.max(0, self:GetOverflowTotalRounds() - getRounds)
+end
+
+function BattlePassProxy:RefreshOverflowRewardConfig()
+  if not self.overflowRewardConfig then
+    return
+  end
+  local overflowReward = self.CurrentBPConfig and self.CurrentBPConfig.OverflowReward
+  if not overflowReward then
+    return
+  end
+  local normalRounds = self:GetOverflowNormalAvailableRounds()
+  local proRounds = self:GetOverflowProAvailableRounds()
+  local superRounds = self:GetOverflowSuperAvailableRounds()
+  self.overflowRewardConfig.RewardItems = BuildOverflowRewardItems(overflowReward.RewardItems, math.max(normalRounds, 1))
+  self.overflowRewardConfig.ProRewardItems = BuildOverflowRewardItems(overflowReward.ProRewardItems, math.max(proRounds, 1))
+  self.overflowRewardConfig.SuperRewardItems = BuildOverflowRewardItems(overflowReward.SuperRewardItems, math.max(superRounds, 1))
+  self.overflowRewardConfig.NormalOverflowAvailable = 0 < normalRounds and HasRewardItems(overflowReward.RewardItems) or false
+  self.overflowRewardConfig.ProOverflowAvailable = 0 < proRounds and HasRewardItems(overflowReward.ProRewardItems) or false
+  self.overflowRewardConfig.SuperOverflowAvailable = 0 < superRounds and HasRewardItems(overflowReward.SuperRewardItems) or false
+end
+
+function BattlePassProxy:GetOverflowRewardConfig()
+  self:RefreshOverflowRewardConfig()
+  return self.overflowRewardConfig
+end
+
 function BattlePassProxy:IsBattlePassUpgradeItem(depositId)
   if not self.inited then
     return false
@@ -220,14 +317,23 @@ function BattlePassProxy:CheckBattlePassUpgradeDepositForbidShow(depositId)
 end
 
 function BattlePassProxy:IsUpgradeDepositBought(info)
-  if info and info.DepositeId then
-    local advReach = info.AdvLevel and self:AdvLevel() >= info.AdvLevel
-    local suReach = info.SuLevel and self:SuLevel() >= info.SuLevel
-    if advReach ~= false and suReach ~= false then
-      return true
-    else
-      local buyTimes = NewRechargeProxy.Ins:Deposit_GetLuckyBagPurchaseTimes(info.DepositeId)
-      return buyTimes and 0 < buyTimes or false
+  if not info then
+    return false
+  end
+  local advReach = info.AdvLevel and self:AdvLevel() >= info.AdvLevel
+  local suReach = info.SuLevel and self:SuLevel() >= info.SuLevel
+  local hasLevel = info.AdvLevel ~= nil or info.SuLevel ~= nil
+  if hasLevel and advReach ~= false and suReach ~= false then
+    return true
+  end
+  if info.DepositeId then
+    local buyTimes = NewRechargeProxy.Ins:Deposit_GetLuckyBagPurchaseTimes(info.DepositeId)
+    return buyTimes and 0 < buyTimes or false
+  elseif info.ShopType and info.ShopId and info.ShopItemId then
+    local shopItemData = ShopProxy.Instance:GetShopItemDataByTypeId(info.ShopType, info.ShopId, info.ShopItemId)
+    if shopItemData then
+      local buyCount = shopItemData.sum_count or shopItemData.accAreadyBuyCount or 0
+      return 0 < buyCount
     end
   end
   return false
@@ -255,6 +361,30 @@ function BattlePassProxy:IsUpgradeDepositReachCondition(info)
   return true
 end
 
+function BattlePassProxy:GetUpgradeDepositByShow(show)
+  if not self.UpgradeDepositItem then
+    return
+  end
+  for i = 1, #self.UpgradeDepositItem do
+    local item = self.UpgradeDepositItem[i]
+    if item and item.Show == show then
+      return item
+    end
+  end
+end
+
+function BattlePassProxy:IsUpgradeDepositInSale(info)
+  if not info then
+    return false
+  end
+  if info.DepositeId then
+    return ShopProxy.Instance:IsThisItemCanBuyNow(info.DepositeId)
+  elseif info.ShopType and info.ShopId and info.ShopItemId then
+    return true
+  end
+  return false
+end
+
 function BattlePassProxy:GetUpgradeDepositToBuy(checkCondition, checkInSale)
   local items, item, reason_notInSale
   if not self.UpgradeDepositItem then
@@ -269,7 +399,7 @@ function BattlePassProxy:GetUpgradeDepositToBuy(checkCondition, checkInSale)
         nextToBuy = self:IsUpgradeDepositReachCondition(item)
       end
       if checkInSale then
-        inSale = ShopProxy.Instance:IsThisItemCanBuyNow(item.DepositeId)
+        inSale = self:IsUpgradeDepositInSale(item)
       end
       reason_notInSale = not inSale
       if nextToBuy and inSale then
@@ -295,6 +425,9 @@ function BattlePassProxy:RecvSyncInfoBattlePassCmd(data)
   end
   self.bpInfo.advLevel = data.pro_level or 0
   self.bpInfo.suLevel = data.su_level or 0
+  self.bpInfo.overflowRewardLevel = data.overflow_reward_level or 0
+  self.bpInfo.proOverflowRewardLevel = data.pro_overflow_reward_level or 0
+  self.bpInfo.superOverflowRewardLevel = data.super_overflow_reward_level or 0
   self.bpInfo.normalGet = {}
   self.bpInfo.advGet = {}
   self.bpInfo.suGet = {}
@@ -313,6 +446,7 @@ function BattlePassProxy:RecvSyncInfoBattlePassCmd(data)
       TableUtility.ArrayPushBack(self.bpInfo.suGet, data.reward_sulvs[i])
     end
   end
+  self:RefreshOverflowRewardConfig()
   self:UpdateWholeRedTip()
 end
 
@@ -321,24 +455,40 @@ function BattlePassProxy:RecvUpdateRewardBattlePassCmd(data)
     return
   end
   local lv
-  for i = 1, #data.levels do
-    lv = data.levels[i]
-    if 0 == TableUtility.ArrayFindIndex(self.bpInfo.normalGet, lv) then
-      TableUtility.ArrayPushBack(self.bpInfo.normalGet, lv)
+  if data.levels then
+    for i = 1, #data.levels do
+      lv = data.levels[i]
+      if 0 == TableUtility.ArrayFindIndex(self.bpInfo.normalGet, lv) then
+        TableUtility.ArrayPushBack(self.bpInfo.normalGet, lv)
+      end
     end
   end
-  for i = 1, #data.prolevels do
-    lv = data.prolevels[i]
-    if 0 == TableUtility.ArrayFindIndex(self.bpInfo.advGet, lv) then
-      TableUtility.ArrayPushBack(self.bpInfo.advGet, lv)
+  if data.prolevels then
+    for i = 1, #data.prolevels do
+      lv = data.prolevels[i]
+      if 0 == TableUtility.ArrayFindIndex(self.bpInfo.advGet, lv) then
+        TableUtility.ArrayPushBack(self.bpInfo.advGet, lv)
+      end
     end
   end
-  for i = 1, #data.sulevels do
-    lv = data.sulevels[i]
-    if 0 == TableUtility.ArrayFindIndex(self.bpInfo.suGet, lv) then
-      TableUtility.ArrayPushBack(self.bpInfo.suGet, lv)
+  if data.sulevels then
+    for i = 1, #data.sulevels do
+      lv = data.sulevels[i]
+      if 0 == TableUtility.ArrayFindIndex(self.bpInfo.suGet, lv) then
+        TableUtility.ArrayPushBack(self.bpInfo.suGet, lv)
+      end
     end
   end
+  if data.overflow_reward_level ~= nil then
+    self.bpInfo.overflowRewardLevel = math.max(self.bpInfo.overflowRewardLevel or 0, data.overflow_reward_level)
+  end
+  if data.pro_overflow_reward_level ~= nil then
+    self.bpInfo.proOverflowRewardLevel = math.max(self.bpInfo.proOverflowRewardLevel or 0, data.pro_overflow_reward_level)
+  end
+  if data.super_overflow_reward_level ~= nil then
+    self.bpInfo.superOverflowRewardLevel = math.max(self.bpInfo.superOverflowRewardLevel or 0, data.super_overflow_reward_level)
+  end
+  self:RefreshOverflowRewardConfig()
   self:UpdateWholeRedTip()
 end
 
@@ -348,6 +498,7 @@ function BattlePassProxy:UpdateBattlePassLv(oldV, newV)
   end
   if oldV ~= newV then
     self:MarkFriendRankDataDirty()
+    self:RefreshOverflowRewardConfig()
     self:UpdateWholeRedTip()
   end
 end
@@ -358,6 +509,8 @@ function BattlePassProxy:UpdateBattlePassExp(oldV, newV)
   end
   if oldV ~= newV then
     self:MarkFriendRankDataDirty()
+    self:RefreshOverflowRewardConfig()
+    self:UpdateWholeRedTip()
   end
 end
 
@@ -452,6 +605,9 @@ function BattlePassProxy:AddFriendRankData(item)
 end
 
 function BattlePassProxy:LevelConfig(lv)
+  if self.overflowRewardLevel and lv == self.overflowRewardLevel then
+    return self:GetOverflowRewardConfig()
+  end
   return Table_BattlePassLevel[lv + self.IdOffset]
 end
 
@@ -559,7 +715,7 @@ function BattlePassProxy:GetBuyPriceByLevelRange(startLevel, endLevel)
   end
 end
 
-function BattlePassProxy:HasAvailReward()
+function BattlePassProxy:HasAvailLevelReward()
   local bplv = BattlePassProxy.BPLevel()
   for i = 1, bplv do
     if self:IsNormalRewardNotEmpty(i) and not self:IsNormalRewardGet(i) then
@@ -579,6 +735,30 @@ function BattlePassProxy:HasAvailReward()
     end
   end
   return false
+end
+
+function BattlePassProxy:HasAvailOverflowReward()
+  local overflowReward = self:GetOverflowRewardConfig()
+  if not overflowReward then
+    return false
+  end
+  if BattlePassProxy.BPLevel() < (self.maxBpLevel or 0) then
+    return false
+  end
+  if overflowReward.NormalOverflowAvailable then
+    return true
+  end
+  if 0 < (self:AdvLevel() or 0) and overflowReward.ProOverflowAvailable then
+    return true
+  end
+  if self:HasColPass() and 0 < (self:SuLevel() or 0) and overflowReward.SuperOverflowAvailable then
+    return true
+  end
+  return false
+end
+
+function BattlePassProxy:HasAvailReward()
+  return self:HasAvailLevelReward() or self:HasAvailOverflowReward()
 end
 
 BattlePassProxy.WholeRedTipID = 10413

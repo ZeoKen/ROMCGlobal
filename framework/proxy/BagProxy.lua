@@ -1,4 +1,5 @@
 autoImport("BagData")
+autoImport("PetBagData")
 autoImport("FashionBagData")
 autoImport("RoleEquipBagData")
 autoImport("FashionEquipBagData")
@@ -136,7 +137,7 @@ function BagProxy:ctor(proxyName, data)
       data = GameConfig.ItemPage[5]
     }
   }, nil, BagProxy.BagType.Quest)
-  self.petBagData = BagData.new(nil, nil, BagProxy.BagType.Pet)
+  self.petBagData = PetBagData.new(nil, nil, BagProxy.BagType.Pet)
   self.attributeGemBagData = BagData.new(nil, nil, BagProxy.BagType.AttributeGem)
   self.skillGemBagData = BagData.new(nil, nil, BagProxy.BagType.SkillGem)
   self.secretLandGemBagData = BagData.new(nil, nil, BagProxy.BagType.SecretLand)
@@ -199,6 +200,9 @@ function BagProxy:ctor(proxyName, data)
   end
   self._moneyGet[GameConfig.MoneyId.Lottery] = function()
     return MyselfProxy.Instance:GetLottery()
+  end
+  self._moneyGet[GameConfig.MoneyId.BcatDiamond or 166] = function()
+    return MyselfProxy.Instance:GetBcatDiamond()
   end
   self.callBattletime = false
   self.curEquipType = BagEquipType.Equip
@@ -1478,7 +1482,11 @@ function BagProxy:InitMoneyItem()
         end
       end
       item:SetItemNum(value)
-      if v.KeepDisplay == 1 or 0 < value then
+      local keepDisplay = v.KeepDisplay == 1
+      if BranchMgr.IsNOKR() and v.ItemID == 111 and value <= 0 then
+        keepDisplay = false
+      end
+      if keepDisplay or 0 < value then
         self.moneyItems[#self.moneyItems + 1] = item
       end
     end

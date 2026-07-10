@@ -486,24 +486,6 @@ local Scene_sc_sjdmj_002 = {
       }
     },
     [7515] = {
-      cameraInfo = {
-        focusOffset = {
-          0,
-          0,
-          0
-        },
-        focusViewPort = {
-          0.5,
-          0.400000005960464,
-          23
-        },
-        rotation = {
-          30,
-          -135,
-          0
-        },
-        fieldOfView = 1
-      },
       bps = {
         {
           ID = 1,

@@ -204,6 +204,7 @@ function FunctionNpcFunc:ctor()
   self.funcMap.DeathTransfer = FunctionNpcFunc.DeathTransfer
   self.funcMap.CourageRanking = FunctionNpcFunc.CourageRanking
   self.funcMap.GuildDateBattle = FunctionNpcFunc.GuildDateBattle
+  self.funcMap.FashionStar = FunctionNpcFunc.FashionStar
   self.funcMap.HeadWearStart = FunctionNpcFunc.HeadWearStart
   self.funcMap.ActivityHeadWearStart = FunctionNpcFunc.ActivityHeadWearStart
   self.funcMap.StartRaid = FunctionNpcFunc.StartRaid
@@ -2507,6 +2508,10 @@ function FunctionNpcFunc.GuildDateBattle(nnpc, param)
   FunctionNpcFunc.JumpPanel(PanelConfig.GuildDateBattleOverview)
 end
 
+function FunctionNpcFunc.FashionStar(nnpc, param)
+  FashionStarProxy.Instance:DoQuery()
+end
+
 function FunctionNpcFunc.MoroccSeal(nnpc)
   FunctionRepairSeal.Me():DoMoroccConfirmRepair(nnpc.data.staticData.id)
 end
@@ -3600,6 +3605,15 @@ function FunctionNpcFunc.ChangePVPAction(npc, param, npcFunctionData)
 end
 
 function FunctionNpcFunc.OpenAchieveRewardView(npc, params, npcFunctionData)
+  local menuId = npcFunctionData and npcFunctionData.Parama and npcFunctionData.Parama.MenuID
+  if not FunctionUnLockFunc.Me():CheckCanOpen(menuId) then
+    local menuConfig = menuId and Table_Menu[menuId]
+    local sysMsg = menuConfig and menuConfig.sysMsg
+    if sysMsg and sysMsg.id then
+      MsgManager.ShowMsgByIDTable(sysMsg.id, sysMsg.params)
+    end
+    return
+  end
   FunctionNpcFunc.JumpPanel(PanelConfig.AchieveRewardView, {
     groupid = params,
     npc = npc,

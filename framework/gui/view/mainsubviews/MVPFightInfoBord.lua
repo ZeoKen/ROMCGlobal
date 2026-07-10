@@ -54,6 +54,7 @@ function MVPFightInfoBord:AddViewEvts()
   self:AddListenEvt(ServiceEvent.FuBenCmdSyncMvpInfoFubenCmd, self.SetData)
   self:AddListenEvt(ServiceEvent.FuBenCmdUpdateUserNumFubenCmd, self.HandleUserInfoUpdate)
   self:AddListenEvt(ServiceEvent.NUserVarUpdate, self.HandleNUserVarUpdate)
+  self:AddListenEvt(ServiceEvent.AchieveCmdNewAchieveNtfAchCmd, self.HandleNUserVarUpdate)
   self:AddListenEvt(ServiceEvent.FuBenCmdBossDieFubenCmd, self.HandleUpdateBossesInfo)
   self:AddListenEvt(ServiceEvent.ActivityCmdStartActCmd, self.HandleUpdateLeftTime)
   self:AddListenEvt(ServiceEvent.ActivityCmdStopActCmd, self.HandleUpdateLeftTime)
@@ -94,11 +95,11 @@ end
 function MVPFightInfoBord:HandleNUserVarUpdate(note)
   if Var_pb.EVARTYPE_MVPREWARDNUM then
     local mvpLeft = MyselfProxy.Instance:getVarValueByType(Var_pb.EVARTYPE_MVPREWARDNUM) or 0
-    mvpLeft = GameConfig.MvpBattle.MvpRewardTimes - mvpLeft
+    mvpLeft = GameConfig.MvpBattle.MvpRewardTimes + AdventureAchieveProxy.Instance:GetMvpLimitIncrease() - mvpLeft
     mvpLeft = 0 <= mvpLeft and mvpLeft or 0
     self.mvpLeftNum.text = string.format(ZhString.MVPFightInfoBord_MvpLeftTime, mvpLeft)
     local miniLeft = MyselfProxy.Instance:getVarValueByType(Var_pb.EVARTYPE_MINIREWARDNUM) or 0
-    miniLeft = GameConfig.MvpBattle.MiniRewardTimes - miniLeft
+    miniLeft = GameConfig.MvpBattle.MiniRewardTimes + AdventureAchieveProxy.Instance:GetMiniLimitIncrease() - miniLeft
     miniLeft = 0 <= miniLeft and miniLeft or 0
     self.miniLeftNum.text = string.format(ZhString.MVPFightInfoBord_MiniLeftTime, miniLeft)
   end

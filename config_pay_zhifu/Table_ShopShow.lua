@@ -184,6 +184,32 @@ Table_ShopShow = {
     IconScale = 1.5,
     IconTip = _EmptyTable
   },
+  [1024] = {
+    id = 1024,
+    Type = 1,
+    ShopID = 20001234,
+    Icon = "",
+    Picture = "item_8417",
+    IconScale = 1.1,
+    IconTip = _EmptyTable
+  },
+  [1025] = {
+    id = 1025,
+    Type = 1,
+    ShopID = 20001390,
+    Icon = "",
+    Picture = "libao_5856",
+    IconTip = _EmptyTable
+  },
+  [1026] = {
+    id = 1026,
+    Type = 1,
+    ShopID = 20001631,
+    Icon = "",
+    Picture = "item_8437",
+    IconScale = 1.1,
+    IconTip = _EmptyTable
+  },
   [2001] = {
     id = 2001,
     Type = 2,
@@ -266,14 +292,35 @@ Table_ShopShow = {
     Picture = "",
     IconTip = _EmptyTable
   },
-  [1024] = {
-    id = 1024,
+  [1027] = {
+    id = 1027,
     Type = 1,
-    ShopID = 20001234,
+    ShopID = 20001662,
     Icon = "",
-    Picture = "item_8417",
+    Picture = "item_8437",
     IconScale = 1.1,
     IconTip = _EmptyTable
+  },
+  [1028] = {
+    id = 1028,
+    Type = 1,
+    ShopID = 20001663,
+    Sort = 8,
+    Order = 12,
+    Icon = "",
+    Picture = "item_12984",
+    IconScale = 1.5,
+    IconTip = _EmptyTable
+  },
+  [3135001] = {
+    id = 3135001,
+    Type = 1,
+    ShopID = 3135001,
+    Order = 1,
+    Icon = "",
+    Picture = "",
+    IconTip = _EmptyTable,
+    KeyShow = 1
   },
   [3001] = {
     id = 3001,
@@ -336,6 +383,7 @@ Table_ShopShow_fields = {
   "Picture",
   "SuperValue",
   "IconScale",
-  "IconTip"
+  "IconTip",
+  "KeyShow"
 }
 return Table_ShopShow

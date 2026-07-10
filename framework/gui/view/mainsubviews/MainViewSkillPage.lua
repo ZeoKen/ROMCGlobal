@@ -668,10 +668,15 @@ end
 
 function MainViewSkillPage:SkillGuideEndHandler(skillInfo)
   if skillInfo then
+    local cell = self:GetCell(skillInfo:GetSkillID())
+    if cell then
+      cell:GuideEnd()
+      return
+    end
     local cells = self.skillShotCutList:GetCells()
-    for index, cell in pairs(cells) do
-      if cell.data.sortID == math.floor(skillInfo:GetSkillID() / 1000) then
-        cell:GuideEnd()
+    for index, c in pairs(cells) do
+      if c.data.sortID == math.floor(skillInfo:GetSkillID() / 1000) then
+        c:GuideEnd()
         break
       end
     end

@@ -349,8 +349,9 @@ function EquipIntegrateView:UpdateMoney()
       self.cost[i].go:SetActive(true)
       IconManager:SetItemIconById(costID, self.cost[i].icon)
       self.cost[i].label.text = StringUtil.NumThousandFormat(HappyShopProxy.Instance:GetItemNum(costID))
-      local isMoney = costID == GameConfig.MoneyId.Zeny or costID == GameConfig.MoneyId.Lottery
-      self.cost[i].plus:SetActive(isMoney and not BranchMgr.IsJapan())
+      local isZeny = costID == GameConfig.MoneyId.Zeny
+      local isMoney = isZeny or costID == GameConfig.MoneyId.Lottery
+      self.cost[i].plus:SetActive(isMoney and not BranchMgr.IsJapan() and (not BranchMgr.IsNOKR() or not isZeny))
     else
       self.cost[i].go:SetActive(false)
     end

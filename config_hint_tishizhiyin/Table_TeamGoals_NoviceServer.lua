@@ -57,6 +57,7 @@ Table_TeamGoals_t = {
     {18, 12},
     {18, 13},
     {18, 14},
+    {99, 1},
     {3, 10001},
     {3, 10002},
     {3, 10003}
@@ -111,6 +112,7 @@ Table_TeamGoals = {
   },
   [10103] = {
     id = 10103,
+    NameZh = "恩德勒斯塔21·30层",
     type = 10100,
     Filter = 2,
     Level = 50,
@@ -450,7 +452,6 @@ Table_TeamGoals = {
   },
   [50100] = {
     id = 50100,
-    NameZh = "达纳托斯塔",
     type = 50100,
     Filter = 42,
     Level = 60,
@@ -675,7 +676,7 @@ Table_TeamGoals = {
     RaidType = 102011,
     RaidID = 1041,
     GoalGroup = 2,
-    Difficulty = Table_TeamGoals_t.Difficulty[58]
+    Difficulty = Table_TeamGoals_t.Difficulty[59]
   },
   [70112] = {
     id = 70112,
@@ -686,7 +687,7 @@ Table_TeamGoals = {
     RaidType = 102012,
     RaidID = 1041,
     GoalGroup = 2,
-    Difficulty = Table_TeamGoals_t.Difficulty[59]
+    Difficulty = Table_TeamGoals_t.Difficulty[60]
   },
   [70113] = {
     id = 70113,
@@ -697,7 +698,7 @@ Table_TeamGoals = {
     RaidType = 102013,
     RaidID = 1041,
     GoalGroup = 2,
-    Difficulty = Table_TeamGoals_t.Difficulty[60]
+    Difficulty = Table_TeamGoals_t.Difficulty[61]
   },
   [90100] = {
     id = 90100,
@@ -1022,6 +1023,18 @@ Table_TeamGoals = {
     RaidID = 7610,
     GoalGroup = 2,
     Difficulty = Table_TeamGoals_t.Difficulty[30]
+  },
+  [91300] = {
+    id = 91300,
+    NameZh = "波纳佩秘境·活动",
+    type = 91300,
+    Filter = 52,
+    Level = 100,
+    RaidType = 206900,
+    FuncState = 178,
+    RaidID = 7206,
+    GoalGroup = 2,
+    Difficulty = Table_TeamGoals_t.Difficulty[58]
   },
   [91500] = {
     id = 91500,
@@ -1631,6 +1644,47 @@ Table_TeamGoals = {
     RaidID = 7663,
     GoalGroup = 2,
     Difficulty = Table_TeamGoals_t.Difficulty[31]
+  },
+  [92500] = {
+    id = 92500,
+    NameZh = "巴格的实验室",
+    type = 92500,
+    Filter = 60,
+    Level = 110,
+    GoalGroup = 2
+  },
+  [92501] = {
+    id = 92501,
+    NameZh = "巴格的实验室·初心",
+    type = 92500,
+    Filter = 60,
+    Level = 110,
+    RaidType = 206803,
+    RaidID = 7671,
+    GoalGroup = 2,
+    Difficulty = Table_TeamGoals_t.Difficulty[20]
+  },
+  [92502] = {
+    id = 92502,
+    NameZh = "巴格的实验室·勇士",
+    type = 92500,
+    Filter = 60,
+    Level = 110,
+    RaidType = 206804,
+    RaidID = 7672,
+    GoalGroup = 2,
+    Difficulty = Table_TeamGoals_t.Difficulty[21]
+  },
+  [92503] = {
+    id = 92503,
+    NameZh = "巴格的实验室·英灵",
+    type = 92500,
+    Filter = 60,
+    Level = 110,
+    RaidType = 206805,
+    RaidID = 7673,
+    GoalGroup = 2,
+    Difficulty = Table_TeamGoals_t.Difficulty[31]
   }
 }
 local cell_mt = {
@@ -1638,7 +1692,7 @@ local cell_mt = {
     Difficulty = _EmptyTable,
     Filter = 55,
     Level = 40,
-    NameZh = "恩德勒斯塔21·30层",
+    NameZh = "达纳托斯塔",
     RootRaidDesc = "",
     SetShow = 1,
     id = 10710,

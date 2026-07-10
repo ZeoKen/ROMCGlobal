@@ -52,6 +52,14 @@ function SnowCrownCollectAttrPopup:RefreshShow()
       propConfig = propConfig
     })
   end
+  table.sort(attrDataList, function(l, r)
+    local lid = l.propConfig and l.propConfig.id or math.huge
+    local rid = r.propConfig and r.propConfig.id or math.huge
+    if lid == rid then
+      return tostring(l.varName or "") < tostring(r.varName or "")
+    end
+    return lid < rid
+  end)
   self.profitAttrListCtrl:ResetDatas(attrDataList)
   self.noneTip:SetActive(#attrDataList == 0)
   if self.profitScrollView then

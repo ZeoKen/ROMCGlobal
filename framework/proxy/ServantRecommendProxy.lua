@@ -51,6 +51,7 @@ function ServantRecommendProxy:Init()
   self.groupTaskListMap = {}
   self.groupTaskList = {}
   self.roundRewardDatas = {}
+  self.dailyRecommendRefreshTime = nil
 end
 
 function ServantRecommendProxy:InitDailyMonster()
@@ -312,7 +313,12 @@ function ServantRecommendProxy:HandleRecommendData(data)
       return self:_sortData(l, r)
     end)
   end
+  self.dailyRecommendRefreshTime = ClientTimeUtil.GetCurrentDaily5ClockTime()
   self:UpdateWholeRedTip()
+end
+
+function ServantRecommendProxy:IsDailyRecommendDataFresh()
+  return self.dailyRecommendRefreshTime == ClientTimeUtil.GetCurrentDaily5ClockTime()
 end
 
 function ServantRecommendProxy:RecommendIsFull()

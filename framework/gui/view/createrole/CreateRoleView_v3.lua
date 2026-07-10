@@ -632,7 +632,7 @@ function CreateRoleView_v3:CallSelectAndEnter(newRoleId)
     ServiceUserProxy.Instance:CallSelect(newRoleId)
     UIModelRolesList.Ins():SetSelectedRole(newRoleId)
     if not BranchMgr.IsChina() then
-      if BranchMgr.IsTW() or BranchMgr.IsKorea() then
+      if BranchMgr.IsTW() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
         OverSeas_TW.OverSeasManager.GetInstance():TrackEvent("rt19op")
       else
         OverSeas_TW.OverSeasManager.GetInstance():TrackCreateRole()

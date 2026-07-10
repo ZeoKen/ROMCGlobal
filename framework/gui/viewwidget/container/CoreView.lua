@@ -214,6 +214,12 @@ function CoreView:AddPressEvent(obj, event, hideType)
     if event then
       event(obj, isPress)
     end
+    if not isPress and obj and not Game.GameObjectUtil:ObjectIsNULL(obj) then
+      local cmt = obj:GetComponent(GuideTagCollection)
+      if cmt and cmt.id ~= -1 then
+        FunctionGuide.Me():triggerWithTag(cmt.id)
+      end
+    end
     local hideRet = not hideType or hideType and not hideType.hideClickEffect
     local start = hideRet and isPress
     if not self.effectCache then

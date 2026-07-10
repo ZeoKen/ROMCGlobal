@@ -182,24 +182,11 @@ function NewHappyShopBuyItemCell:shopDeposit(data)
   self:SetCountSubtract(0.5)
   self.countChangeRate = 1
   self.countInput.value = 1
-  local runtimePlatform = ApplicationInfo.GetRunPlatform()
-  if runtimePlatform == RuntimePlatform.IPhonePlayer and (BranchMgr.IsNO() or BranchMgr.IsNOTW()) then
-    self.m_uiBtnMax.gameObject:SetActive(true)
-    self.countPlusBg.gameObject:SetActive(true)
-    self.countSubtractBg.gameObject:SetActive(true)
-    self.countInput.enabled = true
-    self.countInputBc.enabled = true
-    self.maxcount = limitCount - buyCount
-    if self.maxcount > 10 then
-      self.maxcount = 10
-    end
-  else
-    self.m_uiBtnMax.gameObject:SetActive(false)
-    self.countPlusBg.gameObject:SetActive(false)
-    self.countSubtractBg.gameObject:SetActive(false)
-    self.countInput.enabled = false
-    self.countInputBc.enabled = false
-  end
+  self.m_uiBtnMax.gameObject:SetActive(false)
+  self.countPlusBg.gameObject:SetActive(false)
+  self.countSubtractBg.gameObject:SetActive(false)
+  self.countInput.enabled = false
+  self.countInputBc.enabled = false
   self.totalPriceIcon.gameObject:SetActive(false)
   self.totalPrice.text = self.shopdata.productConf.priceStr or string.format("%s%s", self.shopdata.productConf.CurrencyType, StringUtil.NumThousandFormat(self:getRealPrice(), nil, true))
   self:UpdateAttriContext()
@@ -213,6 +200,10 @@ function NewHappyShopBuyItemCell:ShowFashionPreview()
     self.m_gwt:Hide()
   end
   NewHappyShopBuyItemCell.super.ShowFashionPreview(self)
+end
+
+function NewHappyShopBuyItemCell:ShowGainWayTip()
+  self:ShowItemGetWay()
 end
 
 function NewHappyShopBuyItemCell:ShowItemGetWay()

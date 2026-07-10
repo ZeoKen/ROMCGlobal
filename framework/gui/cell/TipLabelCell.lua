@@ -256,6 +256,7 @@ function TipLabelCell:SetLabels(labels, labelConfig)
       end
       self:TryHandleClickUrl(lab.richLabel, labels[i])
       self:TryHandleInlineButton(lab)
+      self:TryHandlePriceIndicatorButton(lab)
     end
   end
   local cacheNum = #self.labelMap
@@ -472,6 +473,19 @@ function TipLabelCell:TryHandleInlineButton(spriteLabel)
   end
   for i = 1, #pendingrm do
     spriteLabel.inlineBtns[pendingrm[i]] = nil
+  end
+end
+
+function TipLabelCell:TryHandlePriceIndicatorButton(spriteLabel)
+  if not spriteLabel.priceIndicatorBtns then
+    return
+  end
+  for k, v in pairs(spriteLabel.priceIndicatorBtns) do
+    if not Slua.IsNull(v) and self.data.priceIndicatorBtnCb then
+      self:SetEvent(v.gameObject, function()
+        self.data.priceIndicatorBtnCb(k)
+      end)
+    end
   end
 end
 

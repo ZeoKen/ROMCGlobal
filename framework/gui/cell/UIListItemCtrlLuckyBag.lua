@@ -96,7 +96,7 @@ function UIListItemCtrlLuckyBag:BTNPurchase()
     goto lbl_18
   end
   ::lbl_18::
-  if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+  if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
     local productID = self.productConf.ProductID
     if productID then
       local productName = OverSea.LangManager.Instance():GetLangByKey(Table_Item[self.productConf.ItemId].NameZh)
@@ -105,7 +105,7 @@ function UIListItemCtrlLuckyBag:BTNPurchase()
       local currencyType = self.productConf.CurrencyType
       local productDesc = OverSea.LangManager.Instance():GetLangByKey(Table_Deposit[self.productConf.id].Desc)
       local productD = " [0075BCFF]" .. productCount .. "[-] " .. productName
-      if BranchMgr.IsKorea() then
+      if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
         productD = " [0075BCFF]" .. productDesc .. "[-] "
       end
       OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FuncZenyShop.FormatMilComma(productPrice)), ZhString.ShopConfirmDes, productName, productPrice, function()
@@ -254,7 +254,7 @@ function UIListItemCtrlLuckyBag:LoadView()
           self.goDiscount:SetActive(true)
           local originPrice = Table_Deposit[self.productID].Rmb
           local discount = math.ceil(self.currency / originPrice * 100)
-          if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+          if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
             discount = 100 - discount
           end
           self.labPercent.text = discount

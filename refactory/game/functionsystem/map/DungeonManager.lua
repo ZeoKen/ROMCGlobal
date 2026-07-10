@@ -105,6 +105,14 @@ local PVERaidConfig = {
     Type = FuBenCmd_pb.ERAIDTYPE_DESTROY_AIR_SHIP,
     DungeonSpawner = PVEFactory.GetDestroyAirShip
   },
+  PVE_BageLab = {
+    Type = FuBenCmd_pb.ERAIDTYPE_BAGE_LAB,
+    DungeonSpawner = PVEFactory.GetBageLab
+  },
+  PVE_LotteryRaid = {
+    Type = FuBenCmd_pb.ERAIDTYPE_LOTTERY_RAID,
+    DungeonSpawner = PVEFactory.GetSevenRoyals
+  },
   GVG_Lobby = {
     Type = FuBenCmd_pb.ERAIDTYPE_GVG_LOBBY,
     DungeonSpawner = PVEFactory.GetGvgLobby
@@ -459,6 +467,10 @@ end
 
 function DungeonManager:IsPVEMode_DestroyAirShip()
   return self.currentDungeon ~= nil and self.currentDungeon.isDestroyAirShipRaid or false
+end
+
+function DungeonManager:IsPVEMode_BageLab()
+  return self.currentDungeon ~= nil and self.currentDungeon.isBageLabRaid or false
 end
 
 function DungeonManager:IsPVEMode_MultiBossRaid()

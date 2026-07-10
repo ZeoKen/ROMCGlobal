@@ -13,10 +13,13 @@ function ShopData:SetData(data)
     self.shopID = data.shopid
     self.screen = data.screen
     self.tab = data.tab
+    self.quality = nil
     TableUtility.TableClear(tempTable)
     for i = 1, #data.goods do
       local goods = data.goods[i]
-      self.quality = goods.quality
+      if goods.quality and goods.quality > 0 and (not self.quality or self.quality == 0) then
+        self.quality = goods.quality
+      end
       self:AddShopItemData(goods)
       local id = goods.id
       tempTable[id] = id

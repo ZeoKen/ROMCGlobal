@@ -48,12 +48,20 @@ function PetMakeNamePopUp:DoHatch()
         return
       end
       local id = self.item.id
+      local petid = self.item and self.item.petEggInfo and self.item.petEggInfo.petid
       if id == "Fake" then
         local item = FunctionPet.Me():GetNewestEgg(self.item.staticData.id)
         id = item.id
+        petid = item and item.petEggInfo and item.petEggInfo.petid
+      end
+      if petid == nil then
+        local petData = PetProxy.Instance:GetPetDataByEggID(self.item.staticData.id)
+        if petData then
+          petid = petData.id
+        end
       end
       helplog("Hatch", id)
-      ServiceScenePetProxy.Instance:CallEggHatchPetCmd(nameValue, id)
+      ServiceScenePetProxy.Instance:CallEggHatchPetCmd(nameValue, id, petid)
       self:CloseSelf()
     else
       MsgManager.ShowMsgByIDTable(1006)

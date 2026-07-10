@@ -1389,14 +1389,24 @@ function ChatRoomProxy:TryUpdateUnlockEmojiExpressions()
 end
 
 function ChatRoomProxy:TryUpdateUnlockActionExpressions()
-  if not self.isUnlockActionsDirty then
+  local assetRole = Game.Myself.assetRole
+  local nowBodyId = assetRole:GetPartID(Asset_Role.PartIndex.Body)
+  local bodyDirty = self.cacheBodyId and nowBodyId ~= self.cacheBodyId
+  if not self.isUnlockActionsDirty and not bodyDirty then
     return
   end
-  local assetRole = Game.Myself.assetRole
   local actionMap = MyselfProxy.Instance:GetUnlockActionMap()
   ChatRoomProxy._UpdateUnlockExpressions(self.actionExpressions, ChatRoomProxy.ExpressionType.Action, Table_ActionAnime, function(data)
-    return data.Type == 2 and actionMap[data.id] == 1 and assetRole and assetRole:HasActionRaw(data.Name)
+    local result = data.Type == 2 and actionMap[data.id] == 1 and assetRole and assetRole:HasActionRaw(data.Name)
+    if result then
+      local fashionStarBodys = GameConfig.FashionStar and GameConfig.FashionStar.ActionLimit and GameConfig.FashionStar.ActionLimit[data.id]
+      if fashionStarBodys then
+        return TableUtility.ArrayFindIndex(fashionStarBodys, nowBodyId) > 0
+      end
+    end
+    return result
   end)
+  self.cacheBodyId = assetRole:GetPartID(Asset_Role.PartIndex.Body)
   self.isUnlockActionsDirty = false
 end
 
@@ -1479,7 +1489,8 @@ function ChatRoomProxy:CallExpressionChatCmd(channel, t, id, targetData)
 end
 
 function ChatRoomProxy:RecvExpressionChatCmd(data)
-  local text = ChatRoomProxy.MakeExpressionText(data.msgid, data.sendername, data.targetname)
+  local targetName = ChatRoomProxy.GetExpressionTargetName(data.targetid, data.targetname)
+  local text = ChatRoomProxy.MakeExpressionText(data.msgid, data.sendername, targetName)
   if not text then
     return
   end
@@ -1492,6 +1503,20 @@ end
 
 local remove002Chara = function(str)
   return str and str:gsub("\002", "")
+end
+
+function ChatRoomProxy.GetExpressionTargetName(targetId, fallbackName)
+  if targetId and targetId ~= 0 then
+    local targetData = Game.SocialManager:Find(targetId)
+    if not targetData then
+      local targetCreature = SceneCreatureProxy.FindCreature(targetId)
+      targetData = targetCreature and targetCreature.data
+    end
+    if targetData then
+      return targetData.GetName and targetData:GetName() or targetData.name or fallbackName
+    end
+  end
+  return fallbackName
 end
 
 function ChatRoomProxy.MakeExpressionText(text, senderName, targetName)

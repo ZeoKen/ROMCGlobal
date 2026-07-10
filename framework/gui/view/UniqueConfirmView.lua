@@ -118,6 +118,11 @@ function UniqueConfirmView:FillContent(text)
     else
       self.contentLabel.text = text
     end
+    if self.viewdata.clickUrlCallback and string.match(self.contentLabel.text, "%[url=") then
+      UIUtil.TryAddClickUrlCompToGameObject(self.contentLabel.gameObject, self.viewdata.clickUrlCallback)
+    else
+      UIUtil.TryRemoveClickUrlCompFromGameObject(self.contentLabel.gameObject)
+    end
     self:ResizeView()
   end
 end

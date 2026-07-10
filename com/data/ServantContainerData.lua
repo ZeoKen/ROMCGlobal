@@ -231,10 +231,7 @@ function ServantContainerData:SetActivityData()
         if v.id == 14 then
           valid = WarbandProxy.Instance:CheckCalendarTimeValid(PvpProxy.Type.TeamPwsChampion, self.dayStartTime)
         elseif v.id == 8 then
-          valid = WarbandProxy.Instance:CheckCalendarTimeValid(PvpProxy.Type.SuGVG, self.dayStartTime)
-          if valid then
-            valid = not GvgProxy.Instance:InBreakTime(self.dayStartTime)
-          end
+          valid = not GvgProxy.Instance:InBreakTime(self.dayStartTime)
         elseif v.id == 6 or v.id == 7 then
           valid = not GvgProxy.Instance:InBreakTime(self.dayStartTime)
         elseif v.id == 4 then

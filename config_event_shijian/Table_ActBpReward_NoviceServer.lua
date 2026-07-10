@@ -8919,6 +8919,55 @@ Table_ActBpReward = {
     BatchID = 20260501,
     RewardItems = Table_ActBpReward_t.RewardItems[90],
     Important = 1
+  },
+  [1484] = {
+    id = 1484,
+    ActID = 105636,
+    BatchID = 20260601,
+    RewardItems = Table_ActBpReward_t.RewardItems[92],
+    Important = 1
+  },
+  [1485] = {
+    id = 1485,
+    ActID = 105636,
+    BatchID = 20260701,
+    RewardItems = Table_ActBpReward_t.RewardItems[96],
+    Important = 1
+  },
+  [1486] = {
+    id = 1486,
+    ActID = 105636,
+    BatchID = 20260801,
+    RewardItems = Table_ActBpReward_t.RewardItems[82],
+    Important = 1
+  },
+  [1487] = {
+    id = 1487,
+    ActID = 105636,
+    BatchID = 20260901,
+    RewardItems = Table_ActBpReward_t.RewardItems[87],
+    Important = 1
+  },
+  [1488] = {
+    id = 1488,
+    ActID = 105636,
+    BatchID = 20261001,
+    RewardItems = Table_ActBpReward_t.RewardItems[88],
+    Important = 1
+  },
+  [1489] = {
+    id = 1489,
+    ActID = 105636,
+    BatchID = 20261101,
+    RewardItems = Table_ActBpReward_t.RewardItems[90],
+    Important = 1
+  },
+  [1490] = {
+    id = 1490,
+    ActID = 105636,
+    BatchID = 20261201,
+    RewardItems = Table_ActBpReward_t.RewardItems[92],
+    Important = 1
   }
 }
 local cell_mt = {

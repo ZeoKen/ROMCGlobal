@@ -1656,6 +1656,13 @@ PanelConfig = {
     prefab = "PCHotKeySetView",
     class = "PCHotKeySetView"
   },
+  LoginDurationTip = {
+    id = 648,
+    name = "登录时长提示",
+    prefab = "LoginDurationTip",
+    class = "LoginDurationTip",
+    hideCollider = true
+  },
   NoticeMsgView = {
     id = 649,
     name = "公告",
@@ -2522,6 +2529,14 @@ PanelConfig = {
     prefab = "LotteryResultView",
     class = "MountLotteryResultView"
   },
+  LotteryRaidResultView = {
+    id = 999,
+    tab = nil,
+    name = "抽奖副本结算",
+    desc = "",
+    prefab = "LotteryRaidResultView",
+    class = "LotteryRaidResultView"
+  },
   HeadWearRecoverView = {
     id = 1997,
     tab = nil,
@@ -3174,6 +3189,14 @@ PanelConfig = {
     desc = "",
     prefab = "FinanceView",
     class = "FinanceView"
+  },
+  BattlePassNewUpgradeView = {
+    id = 1623,
+    tab = nil,
+    name = "进阶冒险录购买",
+    desc = "",
+    prefab = "BattlePassNewUpgradeView",
+    class = "BattlePassNewUpgradeView"
   },
   ServantImproveViewNew = {
     id = 1624,
@@ -5966,6 +5989,14 @@ PanelConfig = {
     prefab = "HeroRoadPicPopUp",
     class = "HeroRoadPicPopUp"
   },
+  PveViewSuperSweepPopUp = {
+    id = 4122,
+    tab = nil,
+    name = "Pve超级扫荡",
+    desc = "",
+    prefab = "PveViewSuperSweepPopUp",
+    class = "PveViewSuperSweepPopUp"
+  },
   AstralPrayPopUp = {
     id = 4200,
     tab = nil,
@@ -6719,6 +6750,70 @@ PanelConfig = {
     prefab = "AsyncPvpRaidWaveResultPopup",
     class = "AsyncPvpRaidWaveResultPopup"
   },
+  FashionStarView = {
+    id = 30200,
+    tab = nil,
+    name = "时装升星",
+    desc = "",
+    prefab = "FashionStarView",
+    class = "FashionStarView"
+  },
+  FashionStarPage1 = {
+    id = 30201,
+    tab = 1,
+    name = "基础外观",
+    desc = "",
+    prefab = "FashionStarPage1",
+    class = "FashionStarPage1"
+  },
+  FashionStarPage2 = {
+    id = 30202,
+    tab = 2,
+    name = "配套头饰",
+    desc = "",
+    prefab = "FashionStarPage2",
+    class = "FashionStarPage2"
+  },
+  FashionStarPage3 = {
+    id = 30203,
+    tab = 3,
+    name = "额外配色",
+    desc = "",
+    prefab = "FashionStarPage3",
+    class = "FashionStarPage3"
+  },
+  FashionStarPage4 = {
+    id = 30204,
+    tab = 4,
+    name = "限定头像框",
+    desc = "",
+    prefab = "FashionStarPage4",
+    class = "FashionStarPage4"
+  },
+  FashionStarPage5 = {
+    id = 30205,
+    tab = 5,
+    name = "进阶外观",
+    desc = "",
+    prefab = "FashionStarPage5",
+    class = "FashionStarPage5"
+  },
+  FashionStarPage6 = {
+    id = 30206,
+    tab = 6,
+    name = "行走特效",
+    desc = "",
+    prefab = "FashionStarPage6",
+    class = "FashionStarPage6"
+  },
+  FashionStarPage7 = {
+    id = 30207,
+    tab = 7,
+    name = "穿戴特效/额外技能",
+    desc = "",
+    prefab = "FashionStarPage7",
+    class = "FashionStarPage7"
+  },
   FaceBookFavPanel = {
     id = 100001,
     tab = nil,
@@ -6829,8 +6924,7 @@ PanelConfig = {
     name = "LotteryCoinInfo",
     desc = "",
     prefab = "LotteryCoinInfo",
-    class = "LotteryCoinInfo",
-    hideCollider = true
+    class = "LotteryCoinInfo"
   },
   QualitySelect = {
     id = 100014,
@@ -7157,6 +7251,14 @@ PanelConfig = {
     prefab = "NewContentPushView",
     class = "NewContentPushView"
   },
+  LotteryRaidShopView = {
+    id = 2972,
+    tab = nil,
+    name = "LotteryRaidShop",
+    desc = "",
+    prefab = "LotteryRaidShopView",
+    class = "LotteryRaidShopView"
+  },
   SgMachineView = {
     id = 14000,
     tab = nil,
@@ -7316,6 +7418,14 @@ PanelConfig = {
     desc = "",
     prefab = "ShareNew/PhotoStandShareView",
     class = "PhotoStandShareView"
+  },
+  LotteryRaidResultShareView = {
+    id = 16014,
+    tab = nil,
+    name = "抽奖副本分享界面",
+    desc = "",
+    prefab = "ShareNew/LotteryRaidResultShareView",
+    class = "LotteryRaidResultShareView"
   },
   LotteryResultChatShareView = {
     id = 16051,

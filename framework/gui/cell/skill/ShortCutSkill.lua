@@ -147,6 +147,10 @@ function ShortCutSkill:ClickSkill(auto)
     return
   end
   local id = self.data:GetID()
+  if id ~= 0 and Game.Myself.data:CheckSnowAutoSkillIsActive(id) then
+    MsgManager.FloatMsg(nil, ZhString.ShortCutSkill_ForbidAutoTrigger)
+    return
+  end
   local time = SkillProxy.Instance:SkillInForgetTime(id // 1000)
   if id == 0 then
     self:DispatchEvent(MouseEvent.MouseClick, self)
@@ -670,7 +674,15 @@ function ShortCutSkill:UpdateLeftCDtimes()
   else
     self:Show(self.lefttime)
   end
-  self:SetLeftTime(self.data:GetLeftCDTimes())
+  local sortID = self.data:GetSortID()
+  local leftCD = self.data:GetLeftCDTimes() or 0
+  if self.lastMaxtime == nil and maxtime > leftCD and not CDProxy.Instance:GetSkillInCD(sortID) then
+    SkillProxy.Instance:UpdateSkillLeftCD(sortID, maxtime, true)
+    leftCD = maxtime
+  end
+  self.lastMaxtime = maxtime
+  local leftVal = math.min(leftCD, maxtime)
+  self:SetLeftTime(leftVal)
 end
 
 function ShortCutSkill:SetLeftTime(time)

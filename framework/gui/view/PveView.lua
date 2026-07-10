@@ -19,23 +19,40 @@ local _sweepBtn = {
 }
 local labelBgHeight = 48
 local labelBgHeight_Extra = 73
+local SuperSweepLeftTime = 600
 local dropTexture = "Novicecopy_diaoluo_bg2"
 local _PveConfig = GameConfig.Pve
-local _AddPlayTimeItmeID = _PveConfig and _PveConfig.AddPlayTimeItemId and _PveConfig.AddPlayTimeItemId[1]
 local ERedSys = SceneTip_pb.EREDSYS_PVERAID_ACHIEVE
 local _HearwearShortcutPowerId = 4099
 local MVPCostTime = GameConfig.BossScene and GameConfig.BossScene.MVPTimeCost or 3600
 local MiniCostTime = GameConfig.BossScene and GameConfig.BossScene.MiniTimeCost or 1800
+local lotteryRaidTexName = "Novicecopy_zhudiaoluo_bg"
+local lotteryRaidRewardColumnCount = 3
+local lotteryRaidRewardChildInterval = 97
+local GetAddPlayTimeItemId = function(groupid)
+  local itemConfig = _PveConfig and _PveConfig.AddPlayTimeItemId
+  if not itemConfig then
+    return
+  end
+  local groupConfig = itemConfig.byGroupId
+  return groupConfig and groupid and groupConfig[groupid] or itemConfig[1]
+end
+local GetAddPlayTimeDepositeId = function(groupid)
+  local groupConfig = _PveConfig and _PveConfig.AddPlayTimeDepositeIdByGroupId
+  return (not (groupConfig and groupid) or not groupConfig[groupid]) and _PveConfig and _PveConfig.AddPlayTimeDepositeId
+end
 local EContentType = {
   RecommendPlayerNum = 1,
   LeftRewardCount = 2,
   CostTime = 3,
   EquipRate = 4,
-  DailyTokenLimit = 5
+  DailyTokenLimit = 5,
+  GroupPlayTime = 6
 }
 autoImport("PveEntranceData")
 autoImport("PveTypeCell")
 autoImport("PveDropItemCell")
+autoImport("WrapListCtrl")
 autoImport("PveMonsterCell")
 autoImport("PveDifficultyCell")
 autoImport("PveBossCell")
@@ -45,6 +62,7 @@ autoImport("PveAffixSubview")
 autoImport("HeroRoadView")
 autoImport("PveGeffenMagicSubView")
 autoImport("SweepTicketUtil")
+autoImport("LoopActIntegrationProxy")
 PveView = class("PveView", ContainerView)
 PveView.ViewType = UIViewType.NormalLayer
 local _SubViewMapByRaidType = {
@@ -65,6 +83,7 @@ function PveView:Init()
   _RedTipProxy = RedTipProxy.Instance
   _PictureManager = PictureManager.Instance
   _BattleTimeData = BattleTimeDataProxy.Instance
+  self.useBattleTimeGroupPlayTime = false
   self.root = self:FindGO("Root")
   self.root:SetActive(false)
   self.loadingRoot = self:FindGO("LoadingRoot")
@@ -84,6 +103,7 @@ function PveView:InitRaidRoot()
   self.raidRoot[PveRaidType.Rugelike] = self.roguelikeRoot
   self.raidRoot[PveRaidType.StarArk] = self.starArkRoot
   self.raidRoot[PveRaidType.SpaceTimeIllusion] = self.starArkRoot
+  self.raidRoot[PveRaidType.LotteryRaid] = self.lotteryRoot
   self.raidTipRoot = self:FindGO("RaidTipRoot")
   self.raidTipLab = self:FindComponent("Tip", UILabel, self.raidTipRoot)
 end
@@ -199,6 +219,8 @@ function PveView:FindObj()
   self.shopBtn = self:FindGO("ShopBtn")
   self.shopBtnLab = self:FindComponent("Label", UILabel, self.shopBtn)
   self.shopBtnLab.text = ZhString.Pve_Shop
+  self.lotteryShopBtn = self:FindGO("LotteryShopBtn")
+  self.lotteryShopBtn:SetActive(false)
   self.publishBtn = self:FindGO("PublishBtn")
   self.initialPublishXAxis = self.publishBtn.transform.localPosition.x
   self.publishBtnSp = self.publishBtn:GetComponent(UISprite)
@@ -210,6 +232,7 @@ function PveView:FindObj()
   self.pveWraplist = UIGridListCtrl.new(self.raidTypeTable, PveTypeCell, "PveTypeCell")
   self.pveWraplist:AddEventListener(MouseEvent.MouseClick, self.OnClickRaidTypeCell, self)
   self.itemScrollViewPanel = self:FindComponent("ItemScrollView", UIPanel)
+  self.itemDragScrollView = self:FindGO("ItemDragScrollView")
   local itemGrid = self:FindComponent("ItemGrid", UIGrid, self.itemScrollViewPanel.gameObject)
   self.itemCtl = UIGridListCtrl.new(itemGrid, PveDropItemCell, "PveDropItemCell")
   self.itemCtl:AddEventListener(MouseEvent.MouseClick, self.OnClickRewardItem, self)
@@ -222,11 +245,13 @@ function PveView:FindObj()
     self:OnClickPveResetBtn()
   end)
   self.sweepBtn = self:FindGO("SweepBtn", self.root)
+  self.superSweepBtn = self:FindGO("SuperSweepBtn", self.root)
   self.extraSweepRoot = self:FindGO("ExtraSweepRoot", self.root)
   self.labelBg = self:FindComponent("LabelBg", UISprite, self.root)
   self.leftSweepText = self:FindComponent("LeftSweepText", UILabel, self.extraSweepRoot)
   self.sweepCostText = self:FindComponent("SweepCostTimeText", UILabel, self.extraSweepRoot)
   self.initialSweepXAxis = self.sweepBtn.transform.localPosition.x
+  self.initialSuperSweepXAxis = self.superSweepBtn.transform.localPosition.x
   self:AddClickEvent(self.sweepBtn, function()
     if self.call_lock then
       MsgManager.ShowMsgByID(49)
@@ -248,8 +273,13 @@ function PveView:FindObj()
     end
     self:TrySweep()
   end)
+  self:AddClickEvent(self.superSweepBtn, function()
+    self:OnClickSuperSweepBtn()
+  end)
   self.sweepSp = self.sweepBtn:GetComponent(UISprite)
   self.sweepBtnLab = self:FindComponent("Label", UILabel, self.sweepBtn)
+  self.superSweepSp = self.superSweepBtn:GetComponent(UISprite)
+  self.superSweepBtnLab = self:FindComponent("Label", UILabel, self.superSweepBtn)
   self:InitMonster()
   self:InitStar()
   self:InitStarArk()
@@ -261,6 +291,7 @@ function PveView:FindObj()
   self:InitBoss()
   self:InitEndlessTower()
   self:InitHeadwear()
+  self:InitLotteryRaidRoot()
   self:InitRaidRoot()
   self:InitDifficultyMode()
   self:InitContentFunc()
@@ -327,6 +358,7 @@ function PveView:InitContentFunc()
   self.setContentFunc[EContentType.CostTime] = self._SetContent_CostTime
   self.setContentFunc[EContentType.EquipRate] = self._SetContent_EquipRate
   self.setContentFunc[EContentType.DailyTokenLimit] = self._SetContent_DailyTokenLimit
+  self.setContentFunc[EContentType.GroupPlayTime] = self._SetContent_GroupPlayTime
 end
 
 function PveView:OnDragModelTexture(go, delta)
@@ -661,7 +693,7 @@ function PveView:InitBuyItemCell()
   go.transform.localPosition = LuaGeometry.GetTempVector3(185, 40, 0)
   self.buyCell = HappyShopBuyItemCell.new(go)
   self.buyCell:Hide()
-  local shopCfg = _PveConfig.AddPlayTimeDepositeId
+  local shopCfg = self:GetAddPlayTimeDepositeId()
   if shopCfg then
     local sType, sId = next(shopCfg)
     if sType and sId and type(sId) == "table" then
@@ -671,10 +703,14 @@ function PveView:InitBuyItemCell()
 end
 
 function PveView:OnClickPveCardAddMaxCnt()
-  local d = BagProxy.Instance:GetItemByStaticID(_AddPlayTimeItmeID)
+  local addPlayTimeItemId = self:GetAddPlayTimeItemId()
+  if not addPlayTimeItemId then
+    return
+  end
+  local d = BagProxy.Instance:GetItemByStaticID(addPlayTimeItemId)
   if not d then
-    d = BagProxy.Instance:GetItemByStaticID(_AddPlayTimeItmeID, BagProxy.BagType.Storage)
-    d = d or BagProxy.Instance:GetItemByStaticID(_AddPlayTimeItmeID, BagProxy.BagType.Barrow)
+    d = BagProxy.Instance:GetItemByStaticID(addPlayTimeItemId, BagProxy.BagType.Storage)
+    d = d or BagProxy.Instance:GetItemByStaticID(addPlayTimeItemId, BagProxy.BagType.Barrow)
   end
   if d then
     local sdata = {
@@ -687,10 +723,10 @@ function PveView:OnClickPveCardAddMaxCnt()
         BattleTimeDataProxy.QueryBattleTimelenUserCmd()
       end
     }
-    sdata.funcConfig = FunctionItemFunc.GetItemFuncIds(_AddPlayTimeItmeID)
+    sdata.funcConfig = FunctionItemFunc.GetItemFuncIds(addPlayTimeItemId)
     self:ShowItemTip(sdata, self.pveCard_addMaxCountBtnSp, NGUIUtil.AnchorSide.Right, {210, 300})
   else
-    local shopCfg = _PveConfig.AddPlayTimeDepositeId
+    local shopCfg = self:GetAddPlayTimeDepositeId()
     if shopCfg then
       local sType, sId = next(shopCfg)
       if sType and sId and type(sId) == "table" then
@@ -710,6 +746,16 @@ function PveView:OnClickPveCardAddMaxCnt()
       end
     end
   end
+end
+
+function PveView:GetAddPlayTimeItemId()
+  local groupid = self.curData and self.curData.staticEntranceData and self.curData.staticEntranceData.groupid
+  return GetAddPlayTimeItemId(groupid)
+end
+
+function PveView:GetAddPlayTimeDepositeId()
+  local groupid = self.curData and self.curData.staticEntranceData and self.curData.staticEntranceData.groupid
+  return GetAddPlayTimeDepositeId(groupid)
 end
 
 function PveView:LockCall()
@@ -735,15 +781,47 @@ function PveView:CancelLockCall()
   end
 end
 
-function PveView:_DoSweep_PveCard(raidid, groupid, use_sweep_ticket)
+function PveView:OnClickSuperSweepBtn()
+  if self.call_lock then
+    MsgManager.ShowMsgByID(49)
+    return
+  end
+  if not self:CheckSweepValid(true) then
+    return
+  end
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.PveViewSuperSweepPopUp,
+    viewdata = {
+      pveData = self.curData,
+      costTime = self.costTime,
+      groupLeftTime = self:GetCurrentGroupPlayTime(),
+      useBattleTimeGroupPlayTime = self.useBattleTimeGroupPlayTime,
+      confirmCallback = function(count)
+        self:TrySuperSweep(count)
+      end
+    }
+  })
+end
+
+function PveView:TrySuperSweep(count)
+  if not self:CheckSweepValid(true) then
+    return
+  end
+  self:ConfirmLotteryRaidGroupPlayTime(function()
+    self:LockCall()
+    self:DoSweep(false, count)
+  end, self.costTime and count and self.costTime * count)
+end
+
+function PveView:_DoSweep_PveCard(raidid, groupid, use_sweep_ticket, count)
   if not LocalSaveProxy.Instance:GetDontShowAgain(28112) then
     local desc = ZhString.PveShenYu .. GameConfig.CardRaid.cardraid_DifficultyName[raidid]
     MsgManager.DontAgainConfirmMsgByID(28112, function()
-      ServiceFuBenCmdProxy.Instance:CallQuickFinishPveRaidFubenCmd(raidid, groupid, nil, use_sweep_ticket)
+      ServiceFuBenCmdProxy.Instance:CallQuickFinishPveRaidFubenCmd(raidid, groupid, nil, use_sweep_ticket, count)
       FunctionPlayerPrefs.Me():SetInt("PveQuickFinish_LastDataTime", os.time())
     end, nil, nil, desc)
   else
-    ServiceFuBenCmdProxy.Instance:CallQuickFinishPveRaidFubenCmd(raidid, groupid, nil, use_sweep_ticket)
+    ServiceFuBenCmdProxy.Instance:CallQuickFinishPveRaidFubenCmd(raidid, groupid, nil, use_sweep_ticket, count)
   end
 end
 
@@ -759,41 +837,52 @@ function PveView:_DoSweep_Crack(raidid, groupid, use_sweep_ticket)
   end
 end
 
-function PveView:_DoSweep_Default(raidid, groupid, use_sweep_ticket)
+function PveView:_DoSweep_Default(raidid, groupid, use_sweep_ticket, count)
   local msgID = self.timeType == BattleTimeDataProxy.ETime.BATTLE and 43113 or 43214
   local dont = LocalSaveProxy.Instance:GetDontShowAgain(msgID)
+  local costTime = count and 1 < count and tostring(count * self.costTime // 60) or self.needCostTime or tostring(self.costTime // 60)
   if not dont and not self:HasDifferenceTime() and not self.curData:IsFree() and BattleTimeDataProxy.Instance:CheckSwitchOn(self.timeType) then
     MsgManager.DontAgainConfirmMsgByID(msgID, function()
-      ServiceFuBenCmdProxy.Instance:CallQuickFinishPveRaidFubenCmd(raidid, groupid, self.curBossId, use_sweep_ticket)
-    end, nil, nil, self.needCostTime or tostring(self.costTime // 60))
+      ServiceFuBenCmdProxy.Instance:CallQuickFinishPveRaidFubenCmd(raidid, groupid, self.curBossId, use_sweep_ticket, count)
+    end, nil, nil, costTime)
   else
-    ServiceFuBenCmdProxy.Instance:CallQuickFinishPveRaidFubenCmd(raidid, groupid, self.curBossId, use_sweep_ticket)
+    ServiceFuBenCmdProxy.Instance:CallQuickFinishPveRaidFubenCmd(raidid, groupid, self.curBossId, use_sweep_ticket, count)
   end
 end
 
-function PveView:_DoSweep_StarArk(raidid, groupid, use_sweep_ticket)
+function PveView:_DoSweep_StarArk(raidid, groupid, use_sweep_ticket, count)
   local dont = LocalSaveProxy.Instance:GetDontShowAgain(30004)
   if not dont then
     local staticDifficulty = self.curData.staticEntranceData.staticDifficulty
     local diff = GameConfig.CardRaid.cardraid_DifficultyName[staticDifficulty] or tostring(staticDifficulty)
     local grade = self.curData:GetGradeDesc()
     MsgManager.DontAgainConfirmMsgByID(30004, function()
-      ServiceFuBenCmdProxy.Instance:CallQuickFinishPveRaidFubenCmd(raidid, groupid, nil, use_sweep_ticket)
+      ServiceFuBenCmdProxy.Instance:CallQuickFinishPveRaidFubenCmd(raidid, groupid, nil, use_sweep_ticket, count)
     end, nil, nil, diff, grade)
   else
-    ServiceFuBenCmdProxy.Instance:CallQuickFinishPveRaidFubenCmd(raidid, groupid, nil, use_sweep_ticket)
+    ServiceFuBenCmdProxy.Instance:CallQuickFinishPveRaidFubenCmd(raidid, groupid, nil, use_sweep_ticket, count)
   end
 end
 
 function PveView:ShowSweepTicketConfirm(ticketCount, requiredTime, noTimeCost)
   SweepTicketUtil.ShowSweepTicketConfirm(ticketCount, requiredTime, noTimeCost, function(use_sweep_ticket)
-    self:DoSweep(use_sweep_ticket)
+    local costTime = requiredTime
+    if use_sweep_ticket then
+      local ticketConfig = SweepTicketUtil.GetSweepTicketConfig()
+      local ticketTime = ticketConfig and ticketConfig.time or 0
+      costTime = math.max(0, requiredTime - ticketCount * ticketTime)
+    end
+    self:ConfirmLotteryRaidGroupPlayTime(function()
+      self:DoSweep(use_sweep_ticket)
+    end, costTime)
   end)
 end
 
 function PveView:ShowSweepTicketOverflowConfirm(ticketCount, requiredTime)
   SweepTicketUtil.ShowSweepTicketOverflowConfirm(ticketCount, requiredTime, function(use_sweep_ticket)
-    self:DoSweep(use_sweep_ticket)
+    self:ConfirmLotteryRaidGroupPlayTime(function()
+      self:DoSweep(use_sweep_ticket)
+    end, 0)
   end)
 end
 
@@ -830,7 +919,7 @@ function PveView:CheckSweepValid(ignoreSufficientTime, ignoreMsg)
   return true
 end
 
-function PveView:DoSweep(use_sweep_ticket)
+function PveView:DoSweep(use_sweep_ticket, count)
   if not self.curData then
     return
   end
@@ -840,7 +929,7 @@ function PveView:DoSweep(use_sweep_ticket)
   local groupid = entranceData.groupid
   local func = self.sweepFunc[type] or self._DoSweep_Default
   if func then
-    func(self, raidid, groupid, use_sweep_ticket)
+    func(self, raidid, groupid, use_sweep_ticket, count)
   end
 end
 
@@ -863,12 +952,45 @@ function PveView:OnClickShopBtn()
   FunctionNpcFunc.JumpPanel(PanelConfig.HappyShop, {onExit = endCall})
 end
 
+function PveView:GetLotteryRaidActivityInfo()
+  if not self.curData or not self.curData.staticEntranceData then
+    return
+  end
+  local entranceData = self.curData.staticEntranceData
+  if not (entranceData:IsLotteryRaid() and Table_ActivityNew) or not LoopActIntegrationProxy.Instance then
+    return
+  end
+  local entranceId = self.curData.id
+  for activityID, staticData in pairs(Table_ActivityNew) do
+    if staticData.Type == "lottery_raid" and staticData.RaidEntrance and TableUtility.ArrayFindIndex(staticData.RaidEntrance, entranceId) > 0 then
+      local groupInfo = LoopActIntegrationProxy.Instance:GetGroupInfo(staticData.Group)
+      if groupInfo and groupInfo.activityIDs and 0 < TableUtility.ArrayFindIndex(groupInfo.activityIDs, activityID) then
+        return staticData.Group, activityID
+      end
+    end
+  end
+end
+
+function PveView:OnClickLotteryShopBtn()
+  local groupID, activityID = self:GetLotteryRaidActivityInfo()
+  if not groupID or not activityID then
+    return
+  end
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.LoopActIntegrationView,
+    viewdata = {group = groupID, tab = activityID}
+  })
+end
+
 function PveView:AddUIEvts()
   self:AddClickEvent(self.publishBtn, function()
     self:OnClickPublishBtn()
   end)
   self:AddClickEvent(self.shopBtn, function()
     self:OnClickShopBtn()
+  end)
+  self:AddClickEvent(self.lotteryShopBtn, function()
+    self:OnClickLotteryShopBtn()
   end)
   self:AddClickEvent(self.matchBtn, function()
     self:OnClickMatchBtn()
@@ -959,6 +1081,7 @@ end
 function PveView:OnExit()
   PveView.super.OnExit(self)
   _PictureManager:UnLoadUI(dropTexture, self.dropBgTex)
+  _PictureManager:UnLoadUI(lotteryRaidTexName, self.lotteryRaidTex)
   FunctionPve.Me():ClearClientData()
   TimeTickManager.Me():ClearTick(self)
   if self.pveWraplist then
@@ -1282,13 +1405,18 @@ function PveView:_SetContent_CostTime(_, label)
   if not self.costTime then
     return
   end
-  self.pveCard_addMaxCountBtn.gameObject:SetActive(self.curIsOpen == true and nil ~= _AddPlayTimeItmeID)
+  self.pveCard_addMaxCountBtn.gameObject:SetActive(self.curIsOpen == true and nil ~= self:GetAddPlayTimeItemId())
   self.sufficientTime = BattleTimeDataProxy.ETime.BATTLE
+  local entranceData = self.curData and self.curData.staticEntranceData
+  local lotteryRaidPlayTime
+  if entranceData and entranceData:IsLotteryRaid() then
+    lotteryRaidPlayTime = (self:GetCurrentGroupPlayTime(true) or 0) + (_BattleTimeData:GetLeftTime(BattleTimeDataProxy.ETime.PLAY, true) or 0)
+  end
   local timeType
   if ISNoviceServerType then
     timeType = BattleTimeDataProxy.ETime.PLAY
     local battleTime = _BattleTimeData:GetLeftTime(timeType, true)
-    if battleTime >= self.costTime then
+    if battleTime >= self.costTime or lotteryRaidPlayTime and lotteryRaidPlayTime >= self.costTime then
       self.sufficientTime = BattleTimeDataProxy.ETime.PLAY
     end
   else
@@ -1296,6 +1424,9 @@ function PveView:_SetContent_CostTime(_, label)
     local battleTime = _BattleTimeData:GetLeftTime(timeType, true)
     if battleTime >= self.costTime then
       self.sufficientTime = BattleTimeDataProxy.ETime.PLAY
+    elseif lotteryRaidPlayTime and lotteryRaidPlayTime >= self.costTime then
+      self.sufficientTime = BattleTimeDataProxy.ETime.PLAY
+      timeType = BattleTimeDataProxy.ETime.PLAY
     else
       local repTimeType = BattleTimeDataProxy.ReverseType[timeType]
       local repBattleTime = _BattleTimeData:GetLeftTime(repTimeType, true)
@@ -1341,6 +1472,23 @@ function PveView:_SetContent_DailyTokenLimit(param, label)
   self.pveCard_addMaxCountBtn.gameObject:SetActive(false)
 end
 
+function PveView:GetCurrentGroupPlayTime(sec)
+  local groupid = self.curData and self.curData.staticEntranceData and self.curData.staticEntranceData.groupid
+  if not self.useBattleTimeGroupPlayTime and self.curData and self.curData.GetExclusiveLeftTime then
+    local lefttime = self.curData:GetExclusiveLeftTime(sec)
+    if nil ~= lefttime then
+      return lefttime
+    end
+  end
+  return _BattleTimeData:GetGroupPlayTime(groupid, sec)
+end
+
+function PveView:_SetContent_GroupPlayTime(_, label)
+  label.color = _NewBlackColor
+  local lefttime = self:GetCurrentGroupPlayTime()
+  label.text = string.format(ZhString.PveView_GroupPlayTime, lefttime)
+end
+
 function PveView:SetContentLabel(type, param, label)
   local setFunc = type and self.setContentFunc[type]
   if setFunc then
@@ -1364,6 +1512,28 @@ end
 
 function PveView:HasDifferenceTime()
   return nil ~= self.differenceCostTime and self.costTime ~= nil
+end
+
+function PveView:ConfirmLotteryRaidGroupPlayTime(handler, costTime)
+  if not self.curData then
+    return
+  end
+  local entranceData = self.curData.staticEntranceData
+  if not (entranceData and entranceData:IsLotteryRaid()) or self.curData:IsFree() then
+    handler()
+    return
+  end
+  costTime = costTime or self.costTime
+  if not costTime or costTime <= 0 then
+    handler()
+    return
+  end
+  local leftTime = self:GetCurrentGroupPlayTime(true)
+  if costTime > leftTime then
+    MsgManager.ConfirmMsgByID(43724, handler)
+    return
+  end
+  handler()
 end
 
 function PveView:UpdateContentLabel()
@@ -1403,6 +1573,8 @@ function PveView:UpdateOptionBtn()
   end
   self:UpdateMultiReward()
   self.shopBtn:SetActive(self.curData.staticEntranceData:HasShopConfig() and open)
+  local lotteryActivityGroup = self:GetLotteryRaidActivityInfo()
+  self.lotteryShopBtn:SetActive(lotteryActivityGroup ~= nil and open)
   local goalid = self.curData.staticEntranceData.staticData.Goal or 0
   self:_UpdateSweep()
   self:_UpdateChallenge(open)
@@ -1417,6 +1589,10 @@ end
 
 function PveView:_UpdatePublish(open)
   if not self.curData then
+    return
+  end
+  if self.curData.staticEntranceData and self.curData.staticEntranceData:IsLotteryRaid() then
+    self:Hide(self.publishBtn)
     return
   end
   local show_publish = self.curData:CheckPublishShow()
@@ -1446,22 +1622,37 @@ local Sweep_PublicXAxis = {
   [PveRaidType.Comodo] = 1
 }
 
+function PveView:CheckSuperSweepShow()
+  local raid_type = self.curData and self.curData.staticEntranceData and self.curData.staticEntranceData.raidType
+  if raid_type == PveRaidType.Crack then
+    return false
+  end
+  local groupPlayTime = self:GetCurrentGroupPlayTime()
+  local normalLeftTime = (_BattleTimeData:GetLeftTime(BattleTimeDataProxy.ETime.PLAY) or 0) // 60
+  return groupPlayTime + normalLeftTime > SuperSweepLeftTime
+end
+
 function PveView:_UpdateSweep()
   local sweep_open = self.curData:CheckSweepShow()
-  self.sweepBtn:SetActive(sweep_open)
+  local super_sweep_open = sweep_open and self:CheckSuperSweepShow()
+  self.sweepBtn:SetActive(sweep_open and not super_sweep_open)
+  self.superSweepBtn:SetActive(super_sweep_open)
   local bgHeight
   if sweep_open then
-    local x, y, z = LuaGameObject.GetLocalPositionGO(self.sweepBtn)
+    local cur_sweep_btn = super_sweep_open and self.superSweepBtn or self.sweepBtn
+    local cur_sweep_sp = super_sweep_open and self.superSweepSp or self.sweepSp
+    local cur_sweep_lab = super_sweep_open and self.superSweepBtnLab or self.sweepBtnLab
+    local x, y, z = LuaGameObject.GetLocalPositionGO(cur_sweep_btn)
     local raid_type = self.curData.staticEntranceData.raidType
-    x = nil ~= Sweep_PublicXAxis[raid_type] and self.initialPublishXAxis or self.initialSweepXAxis
-    LuaGameObject.SetLocalPositionGO(self.sweepBtn, x, y, z)
+    x = nil ~= Sweep_PublicXAxis[raid_type] and self.initialPublishXAxis or super_sweep_open and self.initialSuperSweepXAxis or self.initialSweepXAxis
+    LuaGameObject.SetLocalPositionGO(cur_sweep_btn, x, y, z)
     if self:CanQuick() then
-      ColorUtil.WhiteUIWidget(self.sweepSp)
-      self.sweepSp.spriteName = _sweepBtn.sp[1]
-      self.sweepBtnLab.effectColor = _sweepBtn.lab[1]
+      ColorUtil.WhiteUIWidget(cur_sweep_sp)
+      cur_sweep_sp.spriteName = _sweepBtn.sp[1]
+      cur_sweep_lab.effectColor = _sweepBtn.lab[1]
     else
-      self.sweepSp.spriteName = _sweepBtn.sp[2]
-      self.sweepBtnLab.effectColor = _sweepBtn.lab[2]
+      cur_sweep_sp.spriteName = _sweepBtn.sp[2]
+      cur_sweep_lab.effectColor = _sweepBtn.lab[2]
     end
     local check_leftSweepShow = self.curData:CheckExtraSweepShow()
     if check_leftSweepShow then
@@ -1565,6 +1756,9 @@ function PveView:UpdateServerInfoData()
   self:UpdateDiff()
   self:UpdateMultiReward()
   self:_UpdateSweep()
+  if self.curData and not _SubViewMapByRaidType[self.curData.staticEntranceData.raidType] then
+    self:UpdateCurRaidRoot()
+  end
 end
 
 function PveView:UpdateAffix()
@@ -1826,6 +2020,7 @@ function PveView:AddEvt()
   self:AddListenEvt(PVEEvent.AutoCreatTeamForInvite, self.CloseSelf)
   self:AddListenEvt(ServiceEvent.UserEventDepositCardInfo, self.UpdateMonthCard)
   self:AddListenEvt(ServiceEvent.NUserBattleTimelenUserCmd, self.HandleTimelen)
+  self:AddListenEvt(ServiceEvent.SceneUser3GroupPlayTimeUpdateUserCmd, self.HandleGroupPlayTimeUpdate)
   self:AddListenEvt(ServiceEvent.FuBenCmdSyncPvePassInfoFubenCmd, self.HandleSyncPvePassInfo)
   self:AddListenEvt(ServiceEvent.FuBenCmdAddPveCardTimesFubenCmd, self.HandleAddPveCardTimes)
   self:AddListenEvt(ServiceEvent.FuBenCmdSyncPveRaidAchieveFubenCmd, self.UpdateAchieve)
@@ -1936,10 +2131,19 @@ function PveView:RefreshRaidCombinedCountDown()
 end
 
 function PveView:HandleTimelen(note)
+  self.useBattleTimeGroupPlayTime = true
   self:UpdateLeftTimeInfo()
   self:UpdateContentLabel()
   if self.currentSubView and self.currentSubView.RefreshView then
     self.currentSubView:RefreshView()
+  end
+end
+
+function PveView:HandleGroupPlayTimeUpdate(note)
+  self.useBattleTimeGroupPlayTime = true
+  self:UpdateContentLabel()
+  if self.curData then
+    self:_UpdateSweep()
   end
 end
 
@@ -2011,13 +2215,16 @@ function PveView:addGuideData(list)
 end
 
 function PveView:ConfirmOption(handler)
-  if self:HasDifferenceTime() then
-    local timeType = _BattleTimeData:GetGameTimeSetting()
-    local id = timeType == BattleTimeDataProxy.ETime.PLAY and 43242 or 43243
-    MsgManager.ConfirmMsgByID(id, handler, nil, nil, self.differenceCostTime)
-    return
+  local confirmHandler = function()
+    if self:HasDifferenceTime() then
+      local timeType = _BattleTimeData:GetGameTimeSetting()
+      local id = timeType == BattleTimeDataProxy.ETime.PLAY and 43242 or 43243
+      MsgManager.ConfirmMsgByID(id, handler, nil, nil, self.differenceCostTime)
+      return
+    end
+    handler()
   end
-  handler()
+  self:ConfirmLotteryRaidGroupPlayTime(confirmHandler)
 end
 
 function PveView:UpdateRedTips()
@@ -2066,4 +2273,46 @@ function PveView:UpdateAstral()
   self.astralPrayBtn:SetActive(isAstral)
   self.challengeBtn:SetActive(not isAstral)
   self.gotoBtn:SetActive(isAstral)
+end
+
+function PveView:InitLotteryRaidRoot()
+  self.lotteryRoot = self:FindGO("LotteryRaidRoot")
+  local scrollView = self:FindGO("LotteryItemScrollView", self.lotteryRoot)
+  local itemContainer = self:FindGO("ItemGrid", scrollView)
+  self.lotteryItemList = WrapListCtrl.new(itemContainer, PveDropItemCell, "PveDropItemCell", WrapListCtrl_Dir.Vertical, lotteryRaidRewardColumnCount, lotteryRaidRewardChildInterval, true)
+  self.lotteryItemList:AddEventListener(MouseEvent.MouseClick, self.OnClickRewardItem, self)
+  local guaranteeItemGO = self:FindGO("ItemCell", self.lotteryRoot)
+  self.guaranteeItemCell = ItemCell.new(guaranteeItemGO)
+  self.guaranteeItemCell:AddCellClickEvent()
+  self.guaranteeItemCell:AddEventListener(MouseEvent.MouseClick, self.OnClickRewardItem, self)
+  self.lotteryRemainNumLabel = self:FindComponent("LotteryRemainNum", UILabel, self.lotteryRoot)
+  self.lotteryRaidTex = self:FindComponent("LotteryRaidTex", UITexture, self.lotteryRoot)
+  _PictureManager:SetUI(lotteryRaidTexName, self.lotteryRaidTex)
+  self.lotteryItemRoot = self:FindGO("LotteryItemRoot")
+  self.lotteryRewardItems = {}
+  self:Hide(self.lotteryRoot)
+  self:Hide(self.lotteryItemRoot)
+end
+
+function PveView:UpdateLotteryRaid()
+  if not self.curData then
+    return
+  end
+  local guaranteeRewardData = self.curData:GetGuaranteeRewardData(self.curBossId)
+  TableUtility.ArrayClear(self.lotteryRewardItems)
+  local rewards = self.curData:GetAllRewards(self.curBossId)
+  if rewards then
+    for i = 1, #rewards do
+      if rewards[i] ~= guaranteeRewardData then
+        self.lotteryRewardItems[#self.lotteryRewardItems + 1] = rewards[i]
+      end
+    end
+  end
+  self.lotteryItemList:ResetDatas(self.lotteryRewardItems, true)
+  self.guaranteeItemCell:SetData(guaranteeRewardData)
+  if guaranteeRewardData then
+    self.guaranteeItemCell:UpdateNumLabel(guaranteeRewardData:GetNumDesc())
+  end
+  local remainCount = guaranteeRewardData and guaranteeRewardData:GetGuaranteeRemainCount()
+  self.lotteryRemainNumLabel.text = string.format(ZhString.Pve_Lottery_GuaranteedRemainNum, remainCount and tostring(remainCount) or "")
 end

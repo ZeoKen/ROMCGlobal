@@ -31,9 +31,10 @@ function SnowFashionItemCell:SetData(data)
 end
 
 function SnowFashionItemCell:RegisterGuide(data)
-  self:AddOrRemoveGuideId(self.gameObject)
+  local guideTarget = self:FindGO("Common_BagItemCell") or self.gameObject
+  self:AddOrRemoveGuideId(guideTarget)
   if data and data.fashionData and data.fashionData.id == 10 then
-    self:AddOrRemoveGuideId(self.gameObject, 565)
+    self:AddOrRemoveGuideId(guideTarget, 565)
   end
 end
 

@@ -204,11 +204,6 @@ Table_ItemDisplay = {
     Type = 1,
     NoDisplay = _EmptyTable
   },
-  [6634] = {
-    id = 6634,
-    Type = 2,
-    NoDisplay = _EmptyTable
-  },
   [6816] = {
     id = 6816,
     Type = 2,
@@ -1054,6 +1049,11 @@ Table_ItemDisplay = {
     Type = 1,
     NoDisplay = _EmptyTable
   },
+  [3042032] = {
+    id = 3042032,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
   [10000000] = {
     id = 10000000,
     Type = 3,
@@ -1121,6 +1121,86 @@ Table_ItemDisplay = {
   },
   [10000457] = {
     id = 10000457,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000643] = {
+    id = 10000643,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000644] = {
+    id = 10000644,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000647] = {
+    id = 10000647,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000648] = {
+    id = 10000648,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000649] = {
+    id = 10000649,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000650] = {
+    id = 10000650,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [10000651] = {
+    id = 10000651,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [3042396] = {
+    id = 3042396,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [3042381] = {
+    id = 3042381,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [3042382] = {
+    id = 3042382,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [3042383] = {
+    id = 3042383,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [3042384] = {
+    id = 3042384,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [3042385] = {
+    id = 3042385,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [3042386] = {
+    id = 3042386,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [3042387] = {
+    id = 3042387,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [12984] = {
+    id = 12984,
     Type = 1,
     NoDisplay = _EmptyTable
   }

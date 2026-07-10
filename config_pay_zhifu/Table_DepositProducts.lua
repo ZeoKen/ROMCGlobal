@@ -583,6 +583,14 @@ Table_DepositProducts = {
     CurrencyType = "USD",
     Rmb = 9.99
   },
+  [74] = {
+    id = 74,
+    DepositID = 400037,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pack_no_37",
+    CurrencyType = "USD",
+    Rmb = 45.99
+  },
   [75] = {
     id = 75,
     DepositID = 400038,
@@ -703,21 +711,277 @@ Table_DepositProducts = {
     CurrencyType = "USD",
     Rmb = 4.99
   },
-  [80] = {
-    id = 80,
+  [92] = {
+    id = 92,
     DepositID = 410011,
     region = 2,
     ProductID = "com.gravity.romg.noen.libao32_no",
     CurrencyType = "USD",
     Rmb = 45.99
   },
-  [81] = {
-    id = 81,
+  [93] = {
+    id = 93,
     DepositID = 400043,
     region = 2,
     ProductID = "com.gravity.romg.noen.libao33_no",
     CurrencyType = "USD",
     Rmb = 89.99
+  },
+  [94] = {
+    id = 94,
+    DepositID = 400060,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.snowgem_1",
+    CurrencyType = "USD",
+    Rmb = 0.99
+  },
+  [95] = {
+    id = 95,
+    DepositID = 400044,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.snowgem_2",
+    CurrencyType = "USD",
+    Rmb = 4.99
+  },
+  [96] = {
+    id = 96,
+    DepositID = 400045,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.snowgem_3",
+    CurrencyType = "USD",
+    Rmb = 4.99
+  },
+  [97] = {
+    id = 97,
+    DepositID = 400046,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.snowgem_4",
+    CurrencyType = "USD",
+    Rmb = 9.99
+  },
+  [98] = {
+    id = 98,
+    DepositID = 400047,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.snowgem_5",
+    CurrencyType = "USD",
+    Rmb = 17.99
+  },
+  [99] = {
+    id = 99,
+    DepositID = 400048,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.Fund_8",
+    CurrencyType = "USD",
+    Rmb = 23.99
+  },
+  [100] = {
+    id = 100,
+    DepositID = 377,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.fund_9",
+    CurrencyType = "USD",
+    Rmb = 15.99
+  },
+  [101] = {
+    id = 101,
+    DepositID = 381,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.snowgemcheckin",
+    CurrencyType = "USD",
+    Rmb = 23.99
+  },
+  [102] = {
+    id = 102,
+    DepositID = 400050,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pack_no_50",
+    CurrencyType = "USD",
+    Rmb = 45.99
+  },
+  [103] = {
+    id = 103,
+    DepositID = 400051,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pack_no_51",
+    CurrencyType = "USD",
+    Rmb = 89.99
+  },
+  [104] = {
+    id = 104,
+    DepositID = 400052,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pack_no_52",
+    CurrencyType = "USD",
+    Rmb = 45.99
+  },
+  [105] = {
+    id = 105,
+    DepositID = 400053,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.shopping2606_1",
+    CurrencyType = "USD",
+    Rmb = 0.99
+  },
+  [106] = {
+    id = 106,
+    DepositID = 400054,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.shopping2606_2",
+    CurrencyType = "USD",
+    Rmb = 9.99
+  },
+  [107] = {
+    id = 107,
+    DepositID = 400055,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.shopping2606_3",
+    CurrencyType = "USD",
+    Rmb = 17.99
+  },
+  [108] = {
+    id = 108,
+    DepositID = 400056,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.shopping2606_4",
+    CurrencyType = "USD",
+    Rmb = 45.99
+  },
+  [109] = {
+    id = 109,
+    DepositID = 400057,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.shopping2606_5",
+    CurrencyType = "USD",
+    Rmb = 89.99
+  },
+  [110] = {
+    id = 110,
+    DepositID = 400058,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.shopping2606_6",
+    CurrencyType = "USD",
+    Rmb = 89.99
+  },
+  [111] = {
+    id = 111,
+    DepositID = 400101,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.snowgem_6",
+    CurrencyType = "USD",
+    Rmb = 4.99
+  },
+  [112] = {
+    id = 112,
+    DepositID = 400102,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.snowgem_7",
+    CurrencyType = "USD",
+    Rmb = 4.99
+  },
+  [113] = {
+    id = 113,
+    DepositID = 400103,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.snowgem_8",
+    CurrencyType = "USD",
+    Rmb = 9.99
+  },
+  [114] = {
+    id = 114,
+    DepositID = 400104,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.snowgem_9",
+    CurrencyType = "USD",
+    Rmb = 23.99
+  },
+  [115] = {
+    id = 115,
+    DepositID = 400105,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.snowgem_10",
+    CurrencyType = "USD",
+    Rmb = 45.99
+  },
+  [116] = {
+    id = 116,
+    DepositID = 387,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.snowgemcheckin_2",
+    CurrencyType = "USD",
+    Rmb = 23.99
+  },
+  [117] = {
+    id = 117,
+    DepositID = 400106,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_1",
+    CurrencyType = "USD",
+    Rmb = 0.99
+  },
+  [118] = {
+    id = 118,
+    DepositID = 400107,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_2",
+    CurrencyType = "USD",
+    Rmb = 4.99
+  },
+  [119] = {
+    id = 119,
+    DepositID = 400108,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_3",
+    CurrencyType = "USD",
+    Rmb = 4.99
+  },
+  [120] = {
+    id = 120,
+    DepositID = 400109,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_4",
+    CurrencyType = "USD",
+    Rmb = 9.99
+  },
+  [121] = {
+    id = 121,
+    DepositID = 400110,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_5",
+    CurrencyType = "USD",
+    Rmb = 17.99
+  },
+  [122] = {
+    id = 122,
+    DepositID = 400111,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_6",
+    CurrencyType = "USD",
+    Rmb = 45.99
+  },
+  [123] = {
+    id = 123,
+    DepositID = 400112,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_7",
+    CurrencyType = "USD",
+    Rmb = 45.99
+  },
+  [124] = {
+    id = 124,
+    DepositID = 300039,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.battlepass9_no",
+    CurrencyType = "USD",
+    Rmb = 6.99
+  },
+  [125] = {
+    id = 125,
+    DepositID = 300040,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.battlepass10_no",
+    CurrencyType = "USD",
+    Rmb = 23.99
   }
 }
 Table_DepositProducts_fields = {

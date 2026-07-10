@@ -14,24 +14,8 @@ function InheritSkillItemData:ctor(familyId)
       self.costPoint = config[quality].Point
       self.maxLvCostPoint = config[quality].MaxLvPoint
     end
-    local professes = self.inheritStaticData.ProfessionDepend
-    if professes then
-      if 1 < #professes then
-        self.unlockProfess = professes[1]
-      else
-        local sex = MyselfProxy.Instance:GetMySex()
-        self.unlockProfess = TableUtility.ArrayFindByPredicate(professes, function(v, args)
-          local classConfig = Table_Class[v]
-          if classConfig then
-            local gender = classConfig.gender
-            return not gender or gender == 0 or gender == sex
-          end
-          return false
-        end, sex)
-      end
-    end
   end
-  self.isUnlock = false
+  self.isUnlock = true
   self.isInherited = false
   self.isLoad = false
 end
@@ -84,4 +68,44 @@ function InheritSkillItemData:IsProfessionForbid(pro)
     end
   end
   return false
+end
+
+function InheritSkillItemData:GetUpgradeMaterialConfig()
+  local materials = self.inheritStaticData and self.inheritStaticData.Materials
+  if not materials then
+    return
+  end
+  local quality = self.inheritStaticData and self.inheritStaticData.Quality
+  local matNum = 0
+  if GameConfig.SkillInherit and GameConfig.SkillInherit.Quality then
+    local qualityConf = GameConfig.SkillInherit.Quality[quality]
+    if qualityConf then
+      matNum = qualityConf.LvUpCost[self.level + 1] or 0
+      local specificLevel = qualityConf.SpecificLevel
+      if specificLevel and 0 < TableUtility.ArrayFindIndex(specificLevel, self.level + 1) and qualityConf.SpecificLevelCostMaterials then
+        materials = qualityConf.SpecificLevelCostMaterials
+      end
+    end
+  end
+  return materials, matNum
+end
+
+function InheritSkillItemData:GetUpgradeMaterialState()
+  local materials, matNum = self:GetUpgradeMaterialConfig()
+  if materials then
+    local totalNum = 0
+    local checkPackage = GameConfig.PackageMaterialCheck.skill_inherit
+    for i = 1, #materials do
+      local itemId = materials[i]
+      local num = BagProxy.Instance:GetItemNumByStaticID(itemId, checkPackage)
+      totalNum = totalNum + num
+    end
+    return materials, matNum, totalNum, matNum > totalNum
+  end
+  return nil, 0, 0, false
+end
+
+function InheritSkillItemData:IsMaterialLack()
+  local _, _, _, isLack = self:GetUpgradeMaterialState()
+  return isLack
 end

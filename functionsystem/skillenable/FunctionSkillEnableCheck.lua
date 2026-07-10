@@ -35,6 +35,7 @@ function FunctionSkillEnableCheck:ctor()
   self.typeChecks[SkillPrecondCheck.PreConditionType.InterferenceValue] = self.InterferenceValueCheck
   self.typeChecks[SkillPrecondCheck.PreConditionType.IsRideOnTeammate] = self.IsRideOnTeammateCheck
   self.typeChecks[SkillPrecondCheck.PreConditionType.SkillOptionValid] = self.SkillOptionValidCheck
+  self.typeChecks[SkillPrecondCheck.PreConditionType.HasSoulPuppet] = self.HasSoulPuppetCheck
   self.typeOnAdd = {}
   self.typeOnAdd[SkillPrecondCheck.PreConditionType.MyselfState] = self.OnAddStateCheckSkill
   self.typeOnRemove = {}
@@ -82,6 +83,7 @@ function FunctionSkillEnableCheck:AddListener()
   EventManager.Me():AddEventListener(MyselfEvent.InterferenceValueChange, self.InterferenceValueUpdateCheck, self)
   EventManager.Me():AddEventListener(MyselfEvent.RidePlayerChange, self.RidePlayerCheck, self)
   EventManager.Me():AddEventListener(MyselfEvent.AsEquipChange, self.EquipCheck, self)
+  EventManager.Me():AddEventListener(MyselfEvent.SoulPuppetUpdate, self.SoulPuppetUpdateCheck, self)
 end
 
 function FunctionSkillEnableCheck:Log(arg1, arg2, arg3, arg4, arg5)
@@ -1372,6 +1374,39 @@ function FunctionSkillEnableCheck:SkillOptionValidCheckMain()
   if preConditions then
     for k, v in pairs(preConditions) do
       self:SkillOptionValidCheck(v)
+    end
+  end
+end
+
+function FunctionSkillEnableCheck:HasSoulPuppetCheck(conditionCheck, targetId)
+  if self.myself then
+    local skill = conditionCheck.skillItemData
+    local needChecks = conditionCheck:GetPrecondtionsByType(SkillPrecondCheck.PreConditionType.HasSoulPuppet)
+    if needChecks then
+      local preCondition
+      local currentTargetId = targetId
+      if currentTargetId == nil then
+        currentTargetId = Game.Myself.data.userdata:Get(UDEnum.SOUL_PUPPET)
+      end
+      currentTargetId = tonumber(currentTargetId) or 0
+      for i = 1, #needChecks do
+        preCondition = needChecks[i]
+        if 0 < currentTargetId then
+          self:UpdateReason(conditionCheck, true, skill, preCondition)
+        else
+          self:UpdateReason(conditionCheck, false, skill, preCondition)
+        end
+      end
+    end
+  end
+end
+
+function FunctionSkillEnableCheck:SoulPuppetUpdateCheck(data)
+  local targetId = data and data.targetId
+  local preConditions = self.skillsTypeCheck[SkillPrecondCheck.PreConditionType.HasSoulPuppet]
+  if preConditions then
+    for k, v in pairs(preConditions) do
+      self:HasSoulPuppetCheck(v, targetId)
     end
   end
 end

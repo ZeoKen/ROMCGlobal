@@ -12,6 +12,7 @@ local skillautoQueue_opt = 9998
 local skillQuickRide_opt = 10086
 local skillAutoLock_opt = 10087
 local skillAutoReload_opt = 10088
+local skillSnowJem_opt = 10089
 local tmpPos = LuaVector3(0, 0, 0)
 local tempList = {}
 local tempList2 = {}
@@ -204,6 +205,7 @@ function SkillTip:_MultiSelectFunc(bgHeight)
   local tip = self.multiSelectTip
   self.multiSelectDatas = nil
   self.funcCheck_opt = none_opt
+  local logicParam = self.data.staticData.Logic_Param
   if SkillTip.IsTypeAvailable(SkillTip.FuncTipType.MultiSelect) and self.data:CheckFuncOpen(SkillItemData.FuncType.Normal) then
     if tip == nil then
       local obj = self:LoadPreferb("tip/SkillSelectTip", self.funcGO, true)
@@ -234,6 +236,19 @@ function SkillTip:_MultiSelectFunc(bgHeight)
       local data = {}
       data.text = GameConfig.SkillQuickRideID[2]
       data.select = _SkillOptionManager:GetSkillOption(SkillOptionManager.OptionEnum.QuickRide) == 0
+      datas[#datas + 1] = data
+    end
+    local replaceSeriesID = logicParam.select_replace_skill_single
+    if replaceSeriesID then
+      self.funcCheck_opt = skillSnowJem_opt
+      local opt = SkillOptionManager.OptionEnum.ReplaceSkillSingle
+      local skillFamilyID = self.data.id // 1000
+      local list = Game.SkillOptionManager:GetMultiSkillOption(opt, replaceSeriesID)
+      local selectedId = list and list[1] or 0
+      local data = {}
+      data.text = ZhString.SkillTip_SnowJemReplace
+      data.select = selectedId == skillFamilyID
+      data.oldSelect = selectedId
       datas[#datas + 1] = data
     end
     local funcCfg = GameConfig.SkillFunc and GameConfig.SkillFunc.AutoLockBossID
@@ -292,7 +307,6 @@ function SkillTip:_MultiSelectFunc(bgHeight)
       }
       datas[#datas + 1] = data
     end
-    local logicParam = self.data.staticData.Logic_Param
     local buffer = logicParam.select_buff_ids
     if buffer and 1 < logicParam.select_num then
       self.funcCheck_opt = SkillOptionManager.OptionEnum.SelectBuffs
@@ -388,6 +402,9 @@ function SkillTip:ClickMultiSelect(cell)
         end
       end
     end
+    if data.oldSelect and data.oldSelect > 0 and isSelect then
+      data.oldSelect = 0
+    end
     cell:SetSelect(isSelect)
   end
   return true
@@ -461,6 +478,18 @@ function SkillTip:CheckMultiSelectModified()
     local result = selectRes * 10
     if result ~= sOption then
       _SkillOptionManager:SetSkillOption(SkillOptionManager.OptionEnum.AutoReload, result)
+    end
+  elseif opt == skillSnowJem_opt then
+    local logicParam = self.data.staticData.Logic_Param
+    if logicParam.select_replace_skill_single then
+      local groupId = logicParam.select_replace_skill_single
+      local _SkillOptionManager = Game.SkillOptionManager
+      local skillFamilyID = self.data.id // 1000
+      local skillOpt = SkillOptionManager.OptionEnum.ReplaceSkillSingle
+      local isSelect = datas[1].select
+      local oldSelectId = datas[1].oldSelect
+      local selectedSkill = isSelect and skillFamilyID or oldSelectId or 0
+      _SkillOptionManager:AskSetMultiSkillOption(SkillOptionManager.OptionEnum.ReplaceSkillSingle, groupId, nil, nil, nil, selectedSkill)
     end
   elseif opt == SkillOptionManager.OptionEnum.AbyssContract then
     local isSelect = datas[1].select

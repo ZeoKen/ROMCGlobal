@@ -1158,6 +1158,12 @@ end
 
 function SkillInfo:GetTargetsMaxCount(creature)
   local logicParam_range_num = self.logicParam.range_num
+  if type(logicParam_range_num) == "table" then
+    if logicParam_range_num.type then
+      return CommonFun.CalcBuffFuncs[logicParam_range_num.type](creature.data)
+    end
+    return 1
+  end
   if not logicParam_range_num then
     local logicName = self.staticData.Logic
     if "SkillSelfRange" == logicName then
@@ -1181,12 +1187,20 @@ function SkillInfo:GetTargetsMaxCount(creature)
 end
 
 function SkillInfo:GetTargetRange(creature)
-  local range = self.logicParam.range or self.logicParam.multi_range and self.logicParam.multi_range[1] or 0
+  local range = self.logicParam.range or self.logicParam.max_range or self.logicParam.multi_range and self.logicParam.multi_range[1] or 0
   local dynamicSkillInfo = creature.data:GetDynamicSkillInfo(self.staticData.id)
   if dynamicSkillInfo ~= nil then
     range = range + dynamicSkillInfo:GetTargetRange()
   end
   return range
+end
+
+function SkillInfo:GetTargetMinRange()
+  return self.logicParam.min_range or 0
+end
+
+function SkillInfo:UseCircleTraceCenter(creature)
+  return self.logicParam.use_circle_trace_center == 1
 end
 
 function SkillInfo:GetTargetForwardRect(creature, offset, size)
@@ -1507,6 +1521,11 @@ local GetSkillCD = function(creature, calLogicReal, staticData)
   local logicRealCd = staticData.Logic_Param and staticData.Logic_Param.real_cd or nil
   if calLogicReal and logicRealCd then
     cd = logicRealCd
+  end
+  local data = creature and creature.data
+  local replaceCD = data and data:GetReplaceSkillBaseCD(staticData.id, calLogicReal)
+  if replaceCD ~= nil then
+    cd = replaceCD
   end
   local props = creature and creature.data.props
   if props and cd then
@@ -1977,6 +1996,10 @@ function SkillInfo:GetExtraEffectPath()
   if pre_attack then
     return pre_attack.extraEffect
   end
+end
+
+function SkillInfo:NoSetNpcAngle()
+  return self.logicParam.no_set_npc_angle == 1
 end
 
 function SkillInfo:GetSwitchEffectPath()

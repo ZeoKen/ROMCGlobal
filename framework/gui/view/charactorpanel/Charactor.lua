@@ -506,10 +506,12 @@ function Charactor:SetGameTime(data)
   local color = battleTimeMgr:GetStatus()
   local playTimeLen = battleTimeMgr:UsedPlayTime()
   local playTotalTimeLen = battleTimeMgr:TotalPlayTime()
+  local groupPlayTimeLen = battleTimeMgr:TotalGroupPlayTime()
+  local playTotalTimeText = 0 < groupPlayTimeLen and string.format("%s(%s)", playTotalTimeLen, groupPlayTimeLen) or playTotalTimeLen
   local gameTime_str = ISNoviceServerType and ZhString.Charactor_GameTime_DailyValidKillCount or ZhString.Charactor_GameTime
   self.gameTime.text = string.format(gameTime_str, string.format(BattleTimeStringColor[color], timeLen), timeTotal)
   local str = battleTimeMgr:UseDailyPlayTime() and ZhString.Charactor_PlayTime_Daily or ZhString.Charactor_PlayTime
-  self.playTime.text = string.format(str, playTimeLen, playTotalTimeLen)
+  self.playTime.text = string.format(str, playTimeLen, playTotalTimeText)
 end
 
 function Charactor:OnClickHelpBtn()

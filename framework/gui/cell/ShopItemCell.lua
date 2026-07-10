@@ -178,6 +178,9 @@ function ShopItemCell:SetData(data)
       if itemId == 12001 then
         self:AddOrRemoveGuideId(self.gameObject, 11)
       end
+      if itemId == 114 then
+        self:AddOrRemoveGuideId(self.gameObject, 1103)
+      end
       if itemId == 14076 then
         self:AddOrRemoveGuideId(self.gameObject, 19)
       end

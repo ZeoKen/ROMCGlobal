@@ -25,7 +25,8 @@ function SnowCrownProxy:Init()
   self.currentGuid = nil
   self.snowManualData = {
     positions = {},
-    stoneBook = {}
+    stoneBook = {},
+    equippedStoneIDs = {}
   }
 end
 
@@ -79,17 +80,26 @@ function SnowCrownProxy:RecvQuerySnowManualSnowCmd(data)
   end
   self.snowManualData.positions = {}
   self.snowManualData.stoneBook = {}
+  self.snowManualData.equippedStoneIDs = {}
   if data.pos then
+    local equipped = self.snowManualData.equippedStoneIDs
     for i = 1, #data.pos do
       local posData = data.pos[i]
       if posData and posData.id then
         local equipData = self:ParseServerItemData(posData.equip)
+        local stoneids = posData.stoneids or {}
         self.snowManualData.positions[posData.id] = {
           id = posData.id,
           equip = equipData,
-          stoneids = posData.stoneids or {}
+          stoneids = stoneids
         }
-        xdlog("装备数据", posData.id, equipData and equipData.id or 0, posData.stoneids and #posData.stoneids)
+        for j = 1, #stoneids do
+          local sid = stoneids[j]
+          if sid and 0 < sid then
+            equipped[sid] = true
+          end
+        end
+        xdlog("装备数据", posData.id, equipData and equipData.id or 0, #stoneids)
       end
     end
   end
@@ -243,7 +253,17 @@ function SnowCrownProxy:RecvSnowManualStoneUpdateSnowCmd(data)
       stoneids = {}
     }
   end
-  self.snowManualData.positions[equipPos].stoneids[stonePos + 1] = stoneId
+  local stoneids = self.snowManualData.positions[equipPos].stoneids
+  local idx = stonePos + 1
+  local oldStoneId = stoneids[idx]
+  local equipped = self.snowManualData.equippedStoneIDs
+  if oldStoneId and 0 < oldStoneId then
+    equipped[oldStoneId] = nil
+  end
+  if stoneId and 0 < stoneId then
+    equipped[stoneId] = true
+  end
+  stoneids[idx] = stoneId
   xdlog("RecvSnowManualStoneUpdateSnowCmd | equipPos:", equipPos, "| stonePos:", stonePos, "| stoneId:", stoneId)
 end
 
@@ -278,7 +298,8 @@ function SnowCrownProxy:GetSlotGemData(slotIndex, gemIndex)
       return {
         id = stoneId,
         level = bookData and bookData.lv or 0,
-        starLevel = bookData and bookData.advlv or 0
+        starLevel = bookData and bookData.advlv or 0,
+        advexp = bookData and bookData.advexp or 0
       }
     end
   end
@@ -307,6 +328,14 @@ end
 
 function SnowCrownProxy:IsGemUnlocked(gemId)
   return self.snowManualData.stoneBook[gemId] ~= nil
+end
+
+function SnowCrownProxy:IsGemEquipped(stoneID)
+  if not stoneID then
+    return false
+  end
+  local equipped = self.snowManualData and self.snowManualData.equippedStoneIDs
+  return equipped ~= nil and equipped[stoneID] == true
 end
 
 function SnowCrownProxy:GetUnlockedGemIds()

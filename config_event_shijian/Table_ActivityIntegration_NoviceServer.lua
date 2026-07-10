@@ -1,6 +1,10 @@
 Table_ActivityIntegration_t = {
   Duration = {
     {
+      "2026-06-08 05:00:00",
+      "2026-06-22 05:00:00"
+    },
+    {
       "2025-11-10 05:00:00",
       "2025-11-24 05:00:00"
     },
@@ -66,6 +70,10 @@ Table_ActivityIntegration_t = {
     },
     {
       "2025-12-22 05:00:00",
+      "2026-01-05 05:00:00"
+    },
+    {
+      "2025-12-22 05:00:00",
       "2025-12-29 05:00:00"
     },
     {
@@ -93,6 +101,14 @@ Table_ActivityIntegration_t = {
       "2024-07-01 05:00:00"
     },
     {
+      "2025-10-01 05:00:00",
+      "2025-11-01 05:00:00"
+    },
+    {
+      "2025-11-17 05:00:00",
+      "2025-12-01 05:00:00"
+    },
+    {
       "2025-09-15 05:00:00",
       "2025-09-29 05:00:00"
     },
@@ -105,24 +121,28 @@ Table_ActivityIntegration_t = {
       "2025-03-01 05:00:00"
     },
     {
+      "2025-09-01 05:00:00",
+      "2025-10-01 05:00:00"
+    },
+    {
       "2025-11-11 05:00:00",
       "2025-11-14 05:00:00"
     },
     {
-      "2025-12-22 05:00:00",
-      "2026-01-05 05:00:00"
-    },
-    {
-      "2025-10-01 05:00:00",
-      "2025-11-01 05:00:00"
+      "2025-05-01 05:00:00",
+      "2025-06-01 05:00:00"
     },
     {
       "2025-08-18 05:00:00",
       "2025-09-01 05:00:00"
     },
     {
-      "2025-11-17 05:00:00",
-      "2025-12-01 05:00:00"
+      "2026-07-08 05:00:00",
+      "2026-07-15 05:00:00"
+    },
+    {
+      "2024-02-01 05:00:00",
+      "2029-01-01 05:00:00"
     },
     {
       "2025-06-01 05:00:00",
@@ -145,28 +165,16 @@ Table_ActivityIntegration_t = {
       "2025-01-27 05:00:00"
     },
     {
-      "2025-07-21 05:00:00",
-      "2025-08-04 05:00:00"
-    },
-    {
-      "2024-02-01 05:00:00",
-      "2029-01-01 05:00:00"
-    },
-    {
       "2023-12-01 05:00:00",
       "2029-12-01 05:00:00"
     },
     {
+      "2025-07-21 05:00:00",
+      "2025-08-04 05:00:00"
+    },
+    {
       "2025-03-24 05:00:00",
       "2025-04-07 05:00:00"
-    },
-    {
-      "2025-05-01 05:00:00",
-      "2025-06-01 05:00:00"
-    },
-    {
-      "2025-09-01 05:00:00",
-      "2025-10-01 05:00:00"
     },
     {
       "2025-06-16 05:00:00",
@@ -194,6 +202,10 @@ Table_ActivityIntegration_t = {
     }
   },
   Params = {
+    {
+      ActivityId = 106105,
+      Variant = "ActivityExchangeView_Snow"
+    },
     {
       GoToMode = 10000047,
       Texture = "activityintegration_bg_pic18"
@@ -596,6 +608,11 @@ Table_ActivityIntegration_t = {
       Texture = "openactivity_bg_11"
     },
     {
+      ActivityId = 105838,
+      ColorTheme = 1,
+      Texture = "openactivity_bg_11"
+    },
+    {
       ShopId = 1,
       ShopItemID = 3041401,
       ShopType = 20737
@@ -721,6 +738,31 @@ Table_ActivityIntegration_t = {
       Texture = "openactivity_bg_03"
     },
     {
+      GoToMode = 10000020,
+      ItemBgColor = "F58280",
+      ItemIDs = {
+        10000360,
+        10000361,
+        10000362,
+        3006532,
+        3005932,
+        3006530,
+        3006682,
+        3005192,
+        3007270,
+        3011390
+      },
+      ShowType = 8,
+      TextBgColor = "F15C5A",
+      TextColor = "FFFFFF",
+      Texture = "activityintegration_bg_Novice2510"
+    },
+    {
+      ActivityId = 105837,
+      ColorTheme = 1,
+      Texture = "openactivity_bg_11"
+    },
+    {
       GoToMode = 10000022,
       Item = 23064,
       Texture = "activityintegration_bg_yijie"
@@ -729,6 +771,21 @@ Table_ActivityIntegration_t = {
       ActivityId = 105832,
       ColorTheme = 1,
       Texture = "openactivity_bg_11"
+    },
+    {
+      ShopId = 1,
+      ShopItemID = 10000317,
+      ShopType = 10000028
+    },
+    {
+      ShopId = 1,
+      ShopItemID = 10000449,
+      ShopType = 10000045
+    },
+    {
+      ShopId = 1,
+      ShopItemID = 10000450,
+      ShopType = 10000046
     },
     {
       ItemBgColor = "FD90A0",
@@ -890,29 +947,40 @@ Table_ActivityIntegration_t = {
     },
     {ActivityId = 105624},
     {
-      ActivityId = 105838,
-      ColorTheme = 1,
-      Texture = "openactivity_bg_11"
+      ShopId = 1,
+      ShopItemID = 10000452,
+      ShopType = 10000048
+    },
+    {
+      ActivityId = 105828,
+      ColorTheme = 2,
+      Texture = "openactivity_bg_05"
+    },
+    {ActivityId = 105632},
+    {ActivityId = 105631},
+    {
+      GoToMode = 10000020,
+      Texture = "activityintegration_bg_Novice2505"
     },
     {
       GoToMode = 10000020,
-      ItemBgColor = "F58280",
+      ItemBgColor = "7CC6EF",
       ItemIDs = {
-        10000360,
-        10000361,
-        10000362,
-        3006532,
-        3005932,
-        3006530,
-        3006682,
-        3005192,
-        3007270,
-        3011390
+        10000220,
+        10000221,
+        10000222,
+        3005692,
+        3003150,
+        3004620,
+        3003062,
+        3003280,
+        3004850,
+        25133
       },
       ShowType = 8,
-      TextBgColor = "F15C5A",
+      TextBgColor = "06658A",
       TextColor = "FFFFFF",
-      Texture = "activityintegration_bg_Novice2510"
+      Texture = "activityintegration_bg_Novice2508"
     },
     {
       GoToMode = 10000022,
@@ -925,24 +993,18 @@ Table_ActivityIntegration_t = {
       Texture = "openactivity_bg_11"
     },
     {
-      ActivityId = 105837,
-      ColorTheme = 1,
-      Texture = "openactivity_bg_11"
+      ActivityId = 106102,
+      IntegrationBottom = "risingstar_bg_bottom_02",
+      Texture = "risingstar_bg_bottom_03"
     },
     {
       ShopId = 1,
-      ShopItemID = 10000317,
-      ShopType = 10000028
+      ShopItemID = 3013671,
+      ShopType = 20795
     },
     {
-      ShopId = 1,
-      ShopItemID = 10000449,
-      ShopType = 10000045
-    },
-    {
-      ShopId = 1,
-      ShopItemID = 10000450,
-      ShopType = 10000046
+      ActivityId = 1058001,
+      Texture = "Sailingparadise_bg_2"
     },
     {
       ItemBgColor = "F9DCAC",
@@ -1121,56 +1183,6 @@ Table_ActivityIntegration_t = {
     },
     {ActivityId = 105620},
     {
-      ShopId = 1,
-      ShopItemID = 10000452,
-      ShopType = 10000048
-    },
-    {
-      ActivityId = 105828,
-      ColorTheme = 2,
-      Texture = "openactivity_bg_05"
-    },
-    {ActivityId = 105632},
-    {
-      GoToMode = 10000020,
-      ItemBgColor = "7CC6EF",
-      ItemIDs = {
-        10000220,
-        10000221,
-        10000222,
-        3005692,
-        3003150,
-        3004620,
-        3003062,
-        3003280,
-        3004850,
-        25133
-      },
-      ShowType = 8,
-      TextBgColor = "06658A",
-      TextColor = "FFFFFF",
-      Texture = "activityintegration_bg_Novice2508"
-    },
-    {
-      GoToMode = 10000022,
-      Item = 23063,
-      Texture = "activityintegration_bg_yijie"
-    },
-    {
-      ActivityId = 105830,
-      ColorTheme = 1,
-      Texture = "openactivity_bg_11"
-    },
-    {
-      ActivityId = 106102,
-      IntegrationBottom = "risingstar_bg_bottom_02",
-      Texture = "risingstar_bg_bottom_03"
-    },
-    {
-      ActivityId = 1058001,
-      Texture = "Sailingparadise_bg_2"
-    },
-    {
       ActivityId = 1058004,
       ColorTheme = 3,
       Texture = "openactivity_bg_03"
@@ -1179,16 +1191,6 @@ Table_ActivityIntegration_t = {
       ActivityId = 1058003,
       ColorTheme = 3,
       Texture = "openactivity_bg_05"
-    },
-    {
-      GoToMode = 10000015,
-      Item = 23067,
-      Texture = "activityintegration_bg_yijie"
-    },
-    {
-      ActivityId = 105826,
-      ColorTheme = 1,
-      Texture = "openactivity_bg_11"
     },
     {
       ActivityId = 1058002,
@@ -1201,10 +1203,53 @@ Table_ActivityIntegration_t = {
       Texture = "openactivity_bg_01"
     },
     {
-      GoToMode = 10000020,
-      Texture = "activityintegration_bg_Novice2505"
+      GoToMode = 10000022,
+      Item = 23063,
+      Texture = "activityintegration_bg_yijie"
     },
-    {ActivityId = 105631},
+    {
+      ActivityId = 105830,
+      ColorTheme = 1,
+      Texture = "openactivity_bg_11"
+    },
+    {ActivityId = 105623},
+    {
+      ShopId = 1,
+      ShopItemID = 3012452,
+      ShopItemID2 = 100,
+      ShopType = 20640
+    },
+    {ActivityId = 105625},
+    {
+      ShopId = 1,
+      ShopItemID = 10000650,
+      ShopType = 10000068
+    },
+    {
+      GoToMode = 10000015,
+      Item = 23067,
+      Texture = "activityintegration_bg_yijie"
+    },
+    {
+      ActivityId = 105826,
+      ColorTheme = 1,
+      Texture = "openactivity_bg_11"
+    },
+    {
+      ShopId = 1,
+      ShopItemID = 10000651,
+      ShopType = 10000070
+    },
+    {
+      ShopId = 1,
+      ShopItemID = 10000652,
+      ShopType = 10000072
+    },
+    {ActivityId = 105628},
+    {
+      GoToMode = 10000020,
+      Texture = "activityintegration_bg_Novice2506"
+    },
     {
       ShopId = 1,
       ShopItemID = 3013670,
@@ -1518,10 +1563,14 @@ Table_ActivityIntegration_t = {
     },
     {ActivityId = 105629},
     {
-      GoToMode = 10000020,
-      Texture = "activityintegration_bg_Novice2506"
+      GoToMode = 31954,
+      Texture = "activityintegration_bg_pic18"
     },
-    {ActivityId = 105628},
+    {
+      ActivityId = 105850,
+      ColorTheme = 2,
+      Texture = "openactivity_bg_05"
+    },
     {
       ItemBgColor = "6E2D16",
       ShortCut = {
@@ -1656,20 +1705,31 @@ Table_ActivityIntegration_t = {
       Texture = "activityintegration_bg_pic2504"
     },
     {ActivityId = 105626},
-    {ActivityId = 105625},
     {
       ShopId = 1,
-      ShopItemID = 3012452,
-      ShopItemID2 = 100,
-      ShopType = 20640
+      ShopItemID = 10000647,
+      ShopType = 10000069
     },
-    {ActivityId = 105623},
+    {
+      ShopId = 1,
+      ShopItemID = 10000649,
+      ShopType = 10000067
+    },
+    {
+      ShopId = 1,
+      ShopItemID = 10000648,
+      ShopType = 10000066
+    },
     {ActivityId = 105622}
   },
   ServerID = {
     {1}
   },
   TFDuration = {
+    {
+      "2026-06-01 05:00:00",
+      "2026-06-15 05:00:00"
+    },
     {
       "2025-11-03 05:00:00",
       "2025-11-17 05:00:00"
@@ -1736,6 +1796,10 @@ Table_ActivityIntegration_t = {
     },
     {
       "2025-12-15 05:00:00",
+      "2025-12-29 05:00:00"
+    },
+    {
+      "2025-12-15 05:00:00",
       "2025-12-22 05:00:00"
     },
     {
@@ -1763,6 +1827,14 @@ Table_ActivityIntegration_t = {
       "2024-07-01 05:00:00"
     },
     {
+      "2025-09-24 05:00:00",
+      "2025-10-25 05:00:00"
+    },
+    {
+      "2025-11-10 05:00:00",
+      "2025-11-24 05:00:00"
+    },
+    {
       "2025-09-08 05:00:00",
       "2025-09-22 05:00:00"
     },
@@ -1775,24 +1847,28 @@ Table_ActivityIntegration_t = {
       "2025-02-22 05:00:00"
     },
     {
+      "2025-08-25 05:00:00",
+      "2025-09-24 05:00:00"
+    },
+    {
       "2025-11-04 05:00:00",
       "2025-11-07 05:00:00"
     },
     {
-      "2025-12-15 05:00:00",
-      "2025-12-29 05:00:00"
-    },
-    {
-      "2025-09-24 05:00:00",
-      "2025-10-25 05:00:00"
+      "2025-04-24 05:00:00",
+      "2025-05-25 05:00:00"
     },
     {
       "2025-08-11 05:00:00",
       "2025-08-25 05:00:00"
     },
     {
-      "2025-11-10 05:00:00",
-      "2025-11-24 05:00:00"
+      "2026-07-01 05:00:00",
+      "2026-07-08 05:00:00"
+    },
+    {
+      "2024-02-01 05:00:00",
+      "2029-01-01 05:00:00"
     },
     {
       "2025-05-25 05:00:00",
@@ -1815,28 +1891,20 @@ Table_ActivityIntegration_t = {
       "2025-01-20 05:00:00"
     },
     {
-      "2025-07-14 05:00:00",
-      "2025-07-28 05:00:00"
-    },
-    {
-      "2024-02-01 05:00:00",
-      "2029-01-01 05:00:00"
-    },
-    {
       "2023-12-01 05:00:00",
       "2029-12-01 05:00:00"
+    },
+    {
+      "2025-07-14 05:00:00",
+      "2025-07-28 05:00:00"
     },
     {
       "2025-03-20 05:00:00",
       "2025-04-03 05:00:00"
     },
     {
-      "2025-04-24 05:00:00",
-      "2025-05-25 05:00:00"
-    },
-    {
-      "2025-08-25 05:00:00",
-      "2025-09-24 05:00:00"
+      "2025-05-25 05:00:00",
+      "2025-06-25 05:00:00"
     },
     {
       "2025-06-16 05:00:00",
@@ -1859,10 +1927,6 @@ Table_ActivityIntegration_t = {
       "2025-05-12 05:00:00"
     },
     {
-      "2025-05-25 05:00:00",
-      "2025-06-25 05:00:00"
-    },
-    {
       "2025-03-25 05:00:00",
       "2025-04-24 05:00:00"
     }
@@ -1872,753 +1936,864 @@ Table_ActivityIntegration = {
   [29001] = {
     id = 29001,
     Group = 29,
-    Params = Table_ActivityIntegration_t.Params[31],
+    Params = Table_ActivityIntegration_t.Params[33],
     TitleName = "波利电音节",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[20],
-    Duration = Table_ActivityIntegration_t.Duration[20]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[22],
+    Duration = Table_ActivityIntegration_t.Duration[22]
   },
   [29002] = {
     id = 29002,
     Group = 29,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[32],
+    Params = Table_ActivityIntegration_t.Params[34],
     TitleName = "电音冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[20],
-    Duration = Table_ActivityIntegration_t.Duration[20]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[22],
+    Duration = Table_ActivityIntegration_t.Duration[22]
   },
   [29003] = {
     id = 29003,
     Group = 29,
-    Params = Table_ActivityIntegration_t.Params[20],
+    Params = Table_ActivityIntegration_t.Params[21],
     TitleName = "无限塔双倍",
     TabDesc = "恩德勒斯塔双倍掉落",
     Desc = "活动期间，账号下首次通关「恩德勒斯塔」的角色将获得双倍副本奖励！、",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[21],
-    Duration = Table_ActivityIntegration_t.Duration[21]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[23],
+    Duration = Table_ActivityIntegration_t.Duration[23]
   },
   [29004] = {
     id = 29004,
     Group = 29,
-    Params = Table_ActivityIntegration_t.Params[21],
+    Params = Table_ActivityIntegration_t.Params[22],
     TitleName = "团本双倍",
     TabDesc = "达纳托斯之塔双倍掉落",
     Desc = "活动期间，账号下首次通关「达纳托斯之塔」副本的角色将获得双倍副本奖励！",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[22],
-    Duration = Table_ActivityIntegration_t.Duration[22]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[24],
+    Duration = Table_ActivityIntegration_t.Duration[24]
   },
   [31001] = {
     id = 31001,
     Group = 31,
-    Params = Table_ActivityIntegration_t.Params[10],
+    Params = Table_ActivityIntegration_t.Params[11],
     TitleName = "花嫁誓约",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic07",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[5],
-    Duration = Table_ActivityIntegration_t.Duration[5]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[6],
+    Duration = Table_ActivityIntegration_t.Duration[6]
   },
   [31002] = {
     id = 31002,
     Group = 31,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[11],
+    Params = Table_ActivityIntegration_t.Params[12],
     TitleName = "花嫁冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic07",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[5],
-    Duration = Table_ActivityIntegration_t.Duration[5]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[6],
+    Duration = Table_ActivityIntegration_t.Duration[6]
   },
   [31003] = {
     id = 31003,
     Group = 31,
-    Params = Table_ActivityIntegration_t.Params[12],
+    Params = Table_ActivityIntegration_t.Params[13],
     TitleName = "博物岛双倍",
     TabDesc = "博物岛副本双倍掉落",
     Desc = "活动期间，账号下首次通关「波纳佩博物岛」副本的角色将获得双倍副本奖励！",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[6],
-    Duration = Table_ActivityIntegration_t.Duration[6]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[7],
+    Duration = Table_ActivityIntegration_t.Duration[7]
   },
   [31004] = {
     id = 31004,
     Group = 31,
-    Params = Table_ActivityIntegration_t.Params[13],
+    Params = Table_ActivityIntegration_t.Params[14],
     TitleName = "迷踪岛双倍",
     TabDesc = "迷踪岛副本双倍掉落",
     Desc = "活动期间，账号下首次通关「探秘迷踪岛」副本的角色将获得双倍副本奖励！",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[7],
-    Duration = Table_ActivityIntegration_t.Duration[7]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[8],
+    Duration = Table_ActivityIntegration_t.Duration[8]
   },
   [33001] = {
     id = 33001,
     Group = 33,
-    Params = Table_ActivityIntegration_t.Params[80],
+    Params = Table_ActivityIntegration_t.Params[90],
     TitleName = "月圆之夜",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[44],
-    Duration = Table_ActivityIntegration_t.Duration[44]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[47],
+    Duration = Table_ActivityIntegration_t.Duration[46]
   },
   [33002] = {
     id = 33002,
     Group = 33,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[81],
+    Params = Table_ActivityIntegration_t.Params[91],
     TitleName = "满月冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[44],
-    Duration = Table_ActivityIntegration_t.Duration[44]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[47],
+    Duration = Table_ActivityIntegration_t.Duration[46]
   },
   [33003] = {
     id = 33003,
     Group = 33,
-    Params = Table_ActivityIntegration_t.Params[20],
+    Params = Table_ActivityIntegration_t.Params[21],
     TitleName = "无限塔双倍",
     TabDesc = "恩德勒斯塔双倍掉落",
     Desc = "活动期间，账号下首次通关「恩德勒斯塔」的角色将获得双倍副本奖励！、",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[45],
-    Duration = Table_ActivityIntegration_t.Duration[45]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[48],
+    Duration = Table_ActivityIntegration_t.Duration[47]
   },
   [33004] = {
     id = 33004,
     Group = 33,
-    Params = Table_ActivityIntegration_t.Params[21],
+    Params = Table_ActivityIntegration_t.Params[22],
     TitleName = "团本双倍",
     TabDesc = "达纳托斯之塔双倍掉落",
     Desc = "活动期间，账号下首次通关「达纳托斯之塔」副本的角色将获得双倍副本奖励！",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[46],
-    Duration = Table_ActivityIntegration_t.Duration[46]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[49],
+    Duration = Table_ActivityIntegration_t.Duration[48]
   },
   [35001] = {
     id = 35001,
     Group = 35,
-    Params = Table_ActivityIntegration_t.Params[50],
+    Params = Table_ActivityIntegration_t.Params[60],
     TitleName = "美味嘉年华",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[34],
-    Duration = Table_ActivityIntegration_t.Duration[34]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[39],
+    Duration = Table_ActivityIntegration_t.Duration[39]
   },
   [35002] = {
     id = 35002,
     Group = 35,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[51],
+    Params = Table_ActivityIntegration_t.Params[61],
     TitleName = "美食冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[34],
-    Duration = Table_ActivityIntegration_t.Duration[34]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[39],
+    Duration = Table_ActivityIntegration_t.Duration[39]
   },
   [38001] = {
     id = 38001,
     Group = 38,
-    Params = Table_ActivityIntegration_t.Params[18],
+    Params = Table_ActivityIntegration_t.Params[19],
     TitleName = "普隆德拉购物节",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic05",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
-    Duration = Table_ActivityIntegration_t.Duration[12]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[13],
+    Duration = Table_ActivityIntegration_t.Duration[13]
   },
   [38002] = {
     id = 38002,
     Group = 38,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[19],
+    Params = Table_ActivityIntegration_t.Params[20],
     TitleName = "购物节冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic02",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
-    Duration = Table_ActivityIntegration_t.Duration[12]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[13],
+    Duration = Table_ActivityIntegration_t.Duration[13]
   },
   [38003] = {
     id = 38003,
     Group = 38,
-    Params = Table_ActivityIntegration_t.Params[20],
+    Params = Table_ActivityIntegration_t.Params[21],
     TitleName = "无限塔双倍",
     TabDesc = "恩德勒斯塔双倍掉落",
     Desc = "活动期间，账号下首次通关「恩德勒斯塔」的角色将获得双倍副本奖励！、",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[13],
-    Duration = Table_ActivityIntegration_t.Duration[13]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[14],
+    Duration = Table_ActivityIntegration_t.Duration[14]
   },
   [38004] = {
     id = 38004,
     Group = 38,
-    Params = Table_ActivityIntegration_t.Params[21],
+    Params = Table_ActivityIntegration_t.Params[22],
     TitleName = "团本双倍",
     TabDesc = "达纳托斯之塔双倍掉落",
     Desc = "活动期间，账号下首次通关「达纳托斯之塔」副本的角色将获得双倍副本奖励！",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[14],
-    Duration = Table_ActivityIntegration_t.Duration[14]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[15],
+    Duration = Table_ActivityIntegration_t.Duration[15]
   },
   [38005] = {
     id = 38005,
     Group = 38,
-    Params = Table_ActivityIntegration_t.Params[22],
+    Params = Table_ActivityIntegration_t.Params[23],
     TitleName = "限时精炼折扣",
     TabDesc = "错过这次再等一年",
     Desc = "1.普通精炼Zeny消耗半价\n2.安全精炼材料、Zeny、装备消耗8折",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[15],
-    Duration = Table_ActivityIntegration_t.Duration[15]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[16],
+    Duration = Table_ActivityIntegration_t.Duration[16]
   },
   [39001] = {
     id = 39001,
     Group = 39,
-    Params = Table_ActivityIntegration_t.Params[9],
+    Params = Table_ActivityIntegration_t.Params[10],
     TitleName = "雪境追忆",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[4],
-    Duration = Table_ActivityIntegration_t.Duration[4]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[5],
+    Duration = Table_ActivityIntegration_t.Duration[5]
   },
   [39002] = {
     id = 39002,
     Group = 39,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[97],
+    Params = Table_ActivityIntegration_t.Params[107],
     TitleName = "圣诞冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[4],
-    Duration = Table_ActivityIntegration_t.Duration[4]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[5],
+    Duration = Table_ActivityIntegration_t.Duration[5]
   },
   [43001] = {
     id = 43001,
     Group = 43,
-    Params = Table_ActivityIntegration_t.Params[49],
+    Params = Table_ActivityIntegration_t.Params[59],
     TitleName = "皇家庆典",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic05",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[33],
-    Duration = Table_ActivityIntegration_t.Duration[33]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[38],
+    Duration = Table_ActivityIntegration_t.Duration[38]
   },
   [43002] = {
     id = 43002,
     Group = 43,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[96],
+    Params = Table_ActivityIntegration_t.Params[68],
     TitleName = "庆典冒险录",
     TabDesc = "领棒球帽！",
     BgTextture = "activityintegration_bg_pic02",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[33],
-    Duration = Table_ActivityIntegration_t.Duration[33]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[38],
+    Duration = Table_ActivityIntegration_t.Duration[38]
   },
   [43003] = {
     id = 43003,
     Group = 43,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[95],
+    Params = Table_ActivityIntegration_t.Params[69],
     TitleName = "庆典商店",
     TabDesc = "庆典外观，+15头饰券",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[33],
-    Duration = Table_ActivityIntegration_t.Duration[33]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[38],
+    Duration = Table_ActivityIntegration_t.Duration[38]
   },
   [43004] = {
     id = 43004,
     Group = 43,
-    Params = Table_ActivityIntegration_t.Params[20],
+    Params = Table_ActivityIntegration_t.Params[21],
     TitleName = "无限塔双倍",
     TabDesc = "恩德勒斯塔双倍掉落",
     Desc = "活动期间，账号下首次通关「恩德勒斯塔」的角色将获得双倍副本奖励！",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[35],
-    Duration = Table_ActivityIntegration_t.Duration[35]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[40],
+    Duration = Table_ActivityIntegration_t.Duration[40]
   },
   [43005] = {
     id = 43005,
     Group = 43,
-    Params = Table_ActivityIntegration_t.Params[21],
+    Params = Table_ActivityIntegration_t.Params[22],
     TitleName = "团本双倍",
     TabDesc = "达纳托斯之塔双倍掉落",
     Desc = "活动期间，账号下首次通关「达纳托斯之塔」副本的角色将获得双倍副本奖励！",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[36],
-    Duration = Table_ActivityIntegration_t.Duration[36]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[41],
+    Duration = Table_ActivityIntegration_t.Duration[41]
   },
   [44001] = {
     id = 44001,
     Group = 44,
-    Params = Table_ActivityIntegration_t.Params[38],
+    Params = Table_ActivityIntegration_t.Params[45],
     TitleName = "甜蜜之约",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[26],
-    Duration = Table_ActivityIntegration_t.Duration[26]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[30],
+    Duration = Table_ActivityIntegration_t.Duration[30]
   },
   [44002] = {
     id = 44002,
     Group = 44,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[39],
+    Params = Table_ActivityIntegration_t.Params[46],
     TitleName = "甜蜜冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[26],
-    Duration = Table_ActivityIntegration_t.Duration[26]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[30],
+    Duration = Table_ActivityIntegration_t.Duration[30]
   },
   [45001] = {
     id = 45001,
     Group = 45,
     Type = 2,
-    Params = Table_ActivityIntegration_t.Params[29],
+    Params = Table_ActivityIntegration_t.Params[31],
     TitleName = "春节签到",
     TabDesc = "春节时装免费领",
     BgTextture = "activityintegration_bg_pic08",
     HelpID = 35288,
-    TFDuration = Table_ActivityIntegration_t.TFDuration[19],
-    Duration = Table_ActivityIntegration_t.Duration[19]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[21],
+    Duration = Table_ActivityIntegration_t.Duration[21]
   },
   [46001] = {
     id = 46001,
     Group = 46,
-    Params = Table_ActivityIntegration_t.Params[17],
+    Params = Table_ActivityIntegration_t.Params[18],
     TitleName = "花开踏青时",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
-    Duration = Table_ActivityIntegration_t.Duration[11]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
+    Duration = Table_ActivityIntegration_t.Duration[12]
   },
   [46002] = {
     id = 46002,
     Group = 46,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[94],
+    Params = Table_ActivityIntegration_t.Params[70],
     TitleName = "春灵冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
-    Duration = Table_ActivityIntegration_t.Duration[11]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
+    Duration = Table_ActivityIntegration_t.Duration[12]
   },
   [48001] = {
     id = 48001,
     Group = 48,
-    Params = Table_ActivityIntegration_t.Params[92],
+    Params = Table_ActivityIntegration_t.Params[102],
     TitleName = "哥布灵庆典",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[49],
-    Duration = Table_ActivityIntegration_t.Duration[48]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[51],
+    Duration = Table_ActivityIntegration_t.Duration[50]
   },
   [48002] = {
     id = 48002,
     Group = 48,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[93],
+    Params = Table_ActivityIntegration_t.Params[103],
     TitleName = "哥布灵冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[49],
-    Duration = Table_ActivityIntegration_t.Duration[48]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[51],
+    Duration = Table_ActivityIntegration_t.Duration[50]
   },
   [49001] = {
     id = 49001,
     Group = 49,
-    Params = Table_ActivityIntegration_t.Params[78],
+    Params = Table_ActivityIntegration_t.Params[88],
     TitleName = "波利庆典",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[41],
-    Duration = Table_ActivityIntegration_t.Duration[41]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[33],
+    Duration = Table_ActivityIntegration_t.Duration[33]
   },
   [49002] = {
     id = 49002,
     Group = 49,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[79],
+    Params = Table_ActivityIntegration_t.Params[89],
     TitleName = "波利冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[41],
-    Duration = Table_ActivityIntegration_t.Duration[41]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[33],
+    Duration = Table_ActivityIntegration_t.Duration[33]
   },
   [49003] = {
     id = 49003,
     Group = 49,
-    Params = Table_ActivityIntegration_t.Params[66],
+    Params = Table_ActivityIntegration_t.Params[51],
     TitleName = "限时外观",
     TabDesc = "限时外观上新！",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[41],
-    Duration = Table_ActivityIntegration_t.Duration[41]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[33],
+    Duration = Table_ActivityIntegration_t.Duration[33]
   },
   [50001] = {
     id = 50001,
     Group = 50,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[62],
+    Params = Table_ActivityIntegration_t.Params[72],
     TabDesc = "「巴尔特卡片」限时获取",
     Desc = "福利MVP「卡牌屋精灵」登场！\n  3/24~4/7期间，「巴尔特卡片」掉落几率提升10倍！\n  「国王波利」限时UP开启，活动结束后，限时UP卡片将不进普通卡池！",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[40],
-    Duration = Table_ActivityIntegration_t.Duration[40]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[44],
+    Duration = Table_ActivityIntegration_t.Duration[44]
   },
   [50002] = {
     id = 50002,
     Group = 50,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[63],
+    Params = Table_ActivityIntegration_t.Params[73],
     TitleName = "异界挑战",
     TabDesc = "古拉姆结晶免费领",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[40],
-    Duration = Table_ActivityIntegration_t.Duration[40]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[44],
+    Duration = Table_ActivityIntegration_t.Duration[44]
   },
   [51001] = {
     id = 51001,
     Group = 51,
-    Params = Table_ActivityIntegration_t.Params[48],
+    Params = Table_ActivityIntegration_t.Params[58],
     TitleName = "童趣夏日",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[32],
-    Duration = Table_ActivityIntegration_t.Duration[32]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[37],
+    Duration = Table_ActivityIntegration_t.Duration[37]
   },
   [51002] = {
     id = 51002,
     Group = 51,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[90],
+    Params = Table_ActivityIntegration_t.Params[76],
     TitleName = "童趣冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[32],
-    Duration = Table_ActivityIntegration_t.Duration[32]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[37],
+    Duration = Table_ActivityIntegration_t.Duration[37]
   },
   [51003] = {
     id = 51003,
     Group = 51,
-    Params = Table_ActivityIntegration_t.Params[89],
+    Params = Table_ActivityIntegration_t.Params[77],
     TitleName = "限时外观",
     TabDesc = "限时外观上新！",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[48],
-    Duration = Table_ActivityIntegration_t.Duration[32]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[45],
+    Duration = Table_ActivityIntegration_t.Duration[37]
   },
   [53001] = {
     id = 53001,
     Group = 53,
-    Params = Table_ActivityIntegration_t.Params[28],
+    Params = Table_ActivityIntegration_t.Params[30],
     TitleName = "波利电音节",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[18],
-    Duration = Table_ActivityIntegration_t.Duration[18]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[20],
+    Duration = Table_ActivityIntegration_t.Duration[20]
   },
   [53002] = {
     id = 53002,
     Group = 53,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[88],
+    Params = Table_ActivityIntegration_t.Params[98],
     TitleName = "电音冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[18],
-    Duration = Table_ActivityIntegration_t.Duration[18]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[20],
+    Duration = Table_ActivityIntegration_t.Duration[20]
   },
   [53003] = {
     id = 53003,
     Group = 53,
-    Params = Table_ActivityIntegration_t.Params[30],
+    Params = Table_ActivityIntegration_t.Params[32],
     TitleName = "月度外观",
     TabDesc = "精美月度外观来袭",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[18],
-    Duration = Table_ActivityIntegration_t.Duration[18]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[20],
+    Duration = Table_ActivityIntegration_t.Duration[20]
   },
   [54001] = {
     id = 54001,
-    Params = Table_ActivityIntegration_t.Params[16],
+    Group = 54,
+    Params = Table_ActivityIntegration_t.Params[17],
     TitleName = "年中钜惠开启",
     TabDesc = "绝版返场，自选好礼",
     Desc = "年中钜惠开启，自选绝版好礼！",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
+    Duration = Table_ActivityIntegration_t.Duration[11]
   },
   [54002] = {
     id = 54002,
+    Group = 54,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[53],
+    Params = Table_ActivityIntegration_t.Params[48],
     TitleName = "神谕挑战",
     TabDesc = "海量鱼干等你领",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
+    Duration = Table_ActivityIntegration_t.Duration[11]
   },
   [54003] = {
     id = 54003,
+    Group = 54,
     Type = 11,
-    Params = Table_ActivityIntegration_t.Params[58],
+    Params = Table_ActivityIntegration_t.Params[55],
     TitleName = "奇迹魔术营",
     TabDesc = "熊MM坐骑限时合成",
     BgTextture = "risingstar_bg_bottom_01",
     HelpID = 32612,
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
+    Duration = Table_ActivityIntegration_t.Duration[11]
   },
   [54004] = {
     id = 54004,
+    Group = 54,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[45],
+    Params = Table_ActivityIntegration_t.Params[40],
     TitleName = "钜惠商店",
     TabDesc = "绝版返场，自选好礼",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
+    Duration = Table_ActivityIntegration_t.Duration[11]
   },
   [54005] = {
     id = 54005,
+    Group = 54,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[84],
+    Params = Table_ActivityIntegration_t.Params[94],
     TitleName = "高级外观",
     TabDesc = "绝美翅膀，酷炫坐骑",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
+    Duration = Table_ActivityIntegration_t.Duration[11]
   },
   [54006] = {
     id = 54006,
+    Group = 54,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[83],
+    Params = Table_ActivityIntegration_t.Params[93],
     TitleName = "返场时装",
     TabDesc = "时装返场，机不可失",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
+    Duration = Table_ActivityIntegration_t.Duration[11]
   },
   [54007] = {
     id = 54007,
+    Group = 54,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[82],
+    Params = Table_ActivityIntegration_t.Params[92],
     TitleName = "时装头饰",
     TabDesc = "时装头饰，配套搭配",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
+    Duration = Table_ActivityIntegration_t.Duration[11]
   },
   [54008] = {
     id = 54008,
+    Group = 54,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[23],
+    Params = Table_ActivityIntegration_t.Params[24],
     TitleName = "SSR头饰",
     TabDesc = "强力属性，不可错过",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
+    Duration = Table_ActivityIntegration_t.Duration[11]
   },
   [54009] = {
     id = 54009,
+    Group = 54,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[24],
+    Params = Table_ActivityIntegration_t.Params[25],
     TitleName = "SR头饰",
     TabDesc = "海量头饰，任意挑选",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
+    Duration = Table_ActivityIntegration_t.Duration[11]
   },
   [55001] = {
     id = 55001,
     Group = 55,
-    Params = Table_ActivityIntegration_t.Params[7],
+    Params = Table_ActivityIntegration_t.Params[8],
     TitleName = "花嫁誓约",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic07",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[3],
-    Duration = Table_ActivityIntegration_t.Duration[3]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[4],
+    Duration = Table_ActivityIntegration_t.Duration[4]
   },
   [55002] = {
     id = 55002,
     Group = 55,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[8],
+    Params = Table_ActivityIntegration_t.Params[9],
     TitleName = "花嫁冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic07",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[3],
-    Duration = Table_ActivityIntegration_t.Duration[3]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[4],
+    Duration = Table_ActivityIntegration_t.Duration[4]
   },
   [55003] = {
     id = 55003,
     Group = 55,
-    Params = Table_ActivityIntegration_t.Params[55],
+    Params = Table_ActivityIntegration_t.Params[52],
     TitleName = "月度外观",
     TabDesc = "精美月度外观来袭",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[3],
-    Duration = Table_ActivityIntegration_t.Duration[3]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[4],
+    Duration = Table_ActivityIntegration_t.Duration[4]
   },
   [56001] = {
     id = 56001,
     Group = 56,
-    Params = Table_ActivityIntegration_t.Params[91],
+    Params = Table_ActivityIntegration_t.Params[101],
     TitleName = "月圆之夜",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[42],
-    Duration = Table_ActivityIntegration_t.Duration[42]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[31],
+    Duration = Table_ActivityIntegration_t.Duration[31]
   },
   [56002] = {
     id = 56002,
     Group = 56,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[67],
+    Params = Table_ActivityIntegration_t.Params[50],
     TitleName = "满月冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[42],
-    Duration = Table_ActivityIntegration_t.Duration[42]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[31],
+    Duration = Table_ActivityIntegration_t.Duration[31]
   },
   [56003] = {
     id = 56003,
     Group = 56,
-    Params = Table_ActivityIntegration_t.Params[74],
+    Params = Table_ActivityIntegration_t.Params[84],
     TitleName = "月度外观",
     TabDesc = "精美月度外观来袭",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[42],
-    Duration = Table_ActivityIntegration_t.Duration[42]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[31],
+    Duration = Table_ActivityIntegration_t.Duration[31]
   },
   [57001] = {
     id = 57001,
     Group = 57,
-    Params = Table_ActivityIntegration_t.Params[77],
+    Params = Table_ActivityIntegration_t.Params[87],
     TitleName = "美味嘉年华",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[29],
-    Duration = Table_ActivityIntegration_t.Duration[29]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[26],
+    Duration = Table_ActivityIntegration_t.Duration[26]
   },
   [57002] = {
     id = 57002,
     Group = 57,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[54],
+    Params = Table_ActivityIntegration_t.Params[49],
     TitleName = "美食冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[29],
-    Duration = Table_ActivityIntegration_t.Duration[29]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[26],
+    Duration = Table_ActivityIntegration_t.Duration[26]
   },
   [57003] = {
     id = 57003,
     Group = 57,
-    Params = Table_ActivityIntegration_t.Params[41],
+    Params = Table_ActivityIntegration_t.Params[36],
     TitleName = "月度外观",
     TabDesc = "精美月度外观来袭",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[29],
-    Duration = Table_ActivityIntegration_t.Duration[29]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[26],
+    Duration = Table_ActivityIntegration_t.Duration[26]
   },
   [60001] = {
     id = 60001,
     Group = 60,
-    Params = Table_ActivityIntegration_t.Params[36],
+    Params = Table_ActivityIntegration_t.Params[43],
     TitleName = "普隆德拉购物节",
-    TabDesc = "参与领海量豪礼",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[25],
-    Duration = Table_ActivityIntegration_t.Duration[25]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[29],
+    Duration = Table_ActivityIntegration_t.Duration[29]
   },
   [60002] = {
     id = 60002,
     Group = 60,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[37],
+    Params = Table_ActivityIntegration_t.Params[44],
     TitleName = "购物节冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[25],
-    Duration = Table_ActivityIntegration_t.Duration[25]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[29],
+    Duration = Table_ActivityIntegration_t.Duration[29]
   },
   [60003] = {
     id = 60003,
     Group = 60,
-    Params = Table_ActivityIntegration_t.Params[70],
+    Params = Table_ActivityIntegration_t.Params[80],
     TitleName = "月度外观",
     TabDesc = "精美月度外观来袭",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[25],
-    Duration = Table_ActivityIntegration_t.Duration[25]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[29],
+    Duration = Table_ActivityIntegration_t.Duration[29]
   },
   [60004] = {
     id = 60004,
     Group = 60,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[69],
+    Params = Table_ActivityIntegration_t.Params[79],
     TitleName = "英灵挑战",
     TabDesc = "挑战副本领双倍奖励",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
-    Duration = Table_ActivityIntegration_t.Duration[1]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
+    Duration = Table_ActivityIntegration_t.Duration[2]
   },
   [60009] = {
     id = 60009,
     Group = 60,
-    Params = Table_ActivityIntegration_t.Params[22],
+    Params = Table_ActivityIntegration_t.Params[23],
     TitleName = "限时精炼折扣",
     TabDesc = "错过这次再等一年",
     Desc = "1.普通精炼Zeny消耗半价\n2.安全精炼材料、Zeny、装备消耗8折",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[27],
-    Duration = Table_ActivityIntegration_t.Duration[27]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[32],
+    Duration = Table_ActivityIntegration_t.Duration[32]
   },
   [62001] = {
     id = 62001,
     Group = 62,
-    Params = Table_ActivityIntegration_t.Params[15],
+    Params = Table_ActivityIntegration_t.Params[16],
     TitleName = "彩虹巡游守护战",
     TabDesc = "全新活动副本",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[9],
-    Duration = Table_ActivityIntegration_t.Duration[9]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
+    Duration = Table_ActivityIntegration_t.Duration[10]
   },
   [62002] = {
     id = 62002,
     Group = 62,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[68],
+    Params = Table_ActivityIntegration_t.Params[78],
     TitleName = "虹灵徽章",
     TabDesc = "兑换限定头饰",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[9],
-    Duration = Table_ActivityIntegration_t.Duration[9]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
+    Duration = Table_ActivityIntegration_t.Duration[10]
   },
   [63001] = {
     id = 63001,
     Group = 63,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[6],
+    Params = Table_ActivityIntegration_t.Params[7],
     TitleName = "圣诞冒险录",
+    TabDesc = "提升等级领奖励",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
-    Duration = Table_ActivityIntegration_t.Duration[2]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[3],
+    Duration = Table_ActivityIntegration_t.Duration[3]
   },
   [69001] = {
     id = 69001,
     Group = 69,
-    Params = Table_ActivityIntegration_t.Params[15],
+    Params = Table_ActivityIntegration_t.Params[16],
     TitleName = "彩虹巡游守护战",
     TabDesc = "圣诞活动副本",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[17],
-    Duration = Table_ActivityIntegration_t.Duration[17]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[19],
+    Duration = Table_ActivityIntegration_t.Duration[19]
   },
   [69002] = {
     id = 69002,
     Group = 69,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[27],
+    Params = Table_ActivityIntegration_t.Params[29],
     TitleName = "圣诞老人的心意",
     TabDesc = "兑换限定头饰",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[17],
-    Duration = Table_ActivityIntegration_t.Duration[17]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[19],
+    Duration = Table_ActivityIntegration_t.Duration[19]
+  },
+  [72001] = {
+    id = 72001,
+    Params = Table_ActivityIntegration_t.Params[99],
+    TitleName = "年中钜惠开启",
+    TabDesc = "绝版返场，自选好礼",
+    Desc = "年中钜惠开启，自选绝版好礼！",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
+    Duration = Table_ActivityIntegration_t.Duration[1]
+  },
+  [72002] = {
+    id = 72002,
+    Type = 6,
+    Params = Table_ActivityIntegration_t.Params[100],
+    TitleName = "神谕挑战",
+    TabDesc = "海量鱼干等你领",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
+    Duration = Table_ActivityIntegration_t.Duration[1]
+  },
+  [72003] = {
+    id = 72003,
+    Type = 4,
+    Params = Table_ActivityIntegration_t.Params[75],
+    TitleName = "钜惠商店",
+    TabDesc = "绝版返场，自选好礼",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
+    Duration = Table_ActivityIntegration_t.Duration[1]
+  },
+  [72004] = {
+    id = 72004,
+    Type = 4,
+    Params = Table_ActivityIntegration_t.Params[74],
+    TitleName = "高级外观",
+    TabDesc = "绝美翅膀，酷炫坐骑",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
+    Duration = Table_ActivityIntegration_t.Duration[1]
+  },
+  [72005] = {
+    id = 72005,
+    Type = 4,
+    Params = Table_ActivityIntegration_t.Params[71],
+    TitleName = "返场时装",
+    TabDesc = "时装返场，机不可失",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
+    Duration = Table_ActivityIntegration_t.Duration[1]
+  },
+  [72006] = {
+    id = 72006,
+    Type = 4,
+    Params = Table_ActivityIntegration_t.Params[104],
+    TitleName = "时装头饰",
+    TabDesc = "时装头饰，配套搭配",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
+    Duration = Table_ActivityIntegration_t.Duration[1]
+  },
+  [72007] = {
+    id = 72007,
+    Type = 4,
+    Params = Table_ActivityIntegration_t.Params[105],
+    TitleName = "SSR头饰",
+    TabDesc = "强力属性，不可错过",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
+    Duration = Table_ActivityIntegration_t.Duration[1]
+  },
+  [72008] = {
+    id = 72008,
+    Type = 4,
+    Params = Table_ActivityIntegration_t.Params[106],
+    TitleName = "SR头饰",
+    TabDesc = "海量头饰，任意挑选",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
+    Duration = Table_ActivityIntegration_t.Duration[1]
+  },
+  [72009] = {
+    Type = 11,
+    Params = Table_ActivityIntegration_t.Params[1],
+    TitleName = "奇迹魔术营",
+    TabDesc = "坐骑升星",
+    BgTextture = "qiji_bg_bottom_01",
+    HelpID = 32612,
+    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
+    Duration = Table_ActivityIntegration_t.Duration[1]
+  },
+  [75001] = {
+    id = 75001,
+    Group = 75,
+    Params = Table_ActivityIntegration_t.Params[16],
+    TitleName = "彩虹巡游守护战",
+    TabDesc = "夏日狂欢副本",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[35],
+    Duration = Table_ActivityIntegration_t.Duration[35]
+  },
+  [75002] = {
+    id = 75002,
+    Group = 75,
+    Type = 4,
+    Params = Table_ActivityIntegration_t.Params[56],
+    TitleName = "狂欢好礼",
+    TabDesc = "兑换限定头饰",
+    BgTextture = "activityintegration_bg_pic06",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[35],
+    Duration = Table_ActivityIntegration_t.Duration[35]
   },
   [1000101] = {
     id = 1000101,
     Group = 10001,
     Type = 9,
-    Params = Table_ActivityIntegration_t.Params[75],
+    Params = Table_ActivityIntegration_t.Params[85],
     TitleName = "初心启程",
     TabDesc = "珍稀道具免费领",
     HelpID = 500001,
-    TFDuration = Table_ActivityIntegration_t.TFDuration[39],
-    Duration = Table_ActivityIntegration_t.Duration[39],
+    TFDuration = Table_ActivityIntegration_t.TFDuration[42],
+    Duration = Table_ActivityIntegration_t.Duration[42],
     ServerID = Table_ActivityIntegration_t.ServerID[1]
   },
   [1000102] = {
     id = 1000102,
     Group = 10001,
     Type = 10,
-    Params = Table_ActivityIntegration_t.Params[76],
+    Params = Table_ActivityIntegration_t.Params[86],
     TitleName = "MVP卡自选",
     TabDesc = "自选MVP卡片",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[39],
-    Duration = Table_ActivityIntegration_t.Duration[39],
+    TFDuration = Table_ActivityIntegration_t.TFDuration[42],
+    Duration = Table_ActivityIntegration_t.Duration[42],
     ServerID = Table_ActivityIntegration_t.ServerID[1]
   },
   [1000103] = {
@@ -2628,8 +2803,8 @@ Table_ActivityIntegration = {
     Params = Table_ActivityIntegration_t.Params[65],
     TitleName = "升级送礼",
     TabDesc = "升级送限定时装",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[39],
-    Duration = Table_ActivityIntegration_t.Duration[39],
+    TFDuration = Table_ActivityIntegration_t.TFDuration[42],
+    Duration = Table_ActivityIntegration_t.Duration[42],
     ServerID = Table_ActivityIntegration_t.ServerID[1]
   },
   [1000104] = {
@@ -2639,304 +2814,305 @@ Table_ActivityIntegration = {
     Params = Table_ActivityIntegration_t.Params[64],
     TitleName = "头饰狂欢",
     TabDesc = "解锁头饰送翅膀",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[39],
-    Duration = Table_ActivityIntegration_t.Duration[39],
+    TFDuration = Table_ActivityIntegration_t.TFDuration[42],
+    Duration = Table_ActivityIntegration_t.Duration[42],
     ServerID = Table_ActivityIntegration_t.ServerID[1]
   },
   [1000105] = {
     id = 1000105,
     Group = 10001,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[61],
+    Params = Table_ActivityIntegration_t.Params[63],
     TitleName = "卡片福利",
     TabDesc = "专属卡片等你拿",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[39],
-    Duration = Table_ActivityIntegration_t.Duration[39],
+    TFDuration = Table_ActivityIntegration_t.TFDuration[42],
+    Duration = Table_ActivityIntegration_t.Duration[42],
     ServerID = Table_ActivityIntegration_t.ServerID[1]
   },
   [1000106] = {
     id = 1000106,
     Group = 10001,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[60],
+    Params = Table_ActivityIntegration_t.Params[62],
     TitleName = "精炼特权",
     TabDesc = "精炼装备领坐骑",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[39],
-    Duration = Table_ActivityIntegration_t.Duration[39],
+    TFDuration = Table_ActivityIntegration_t.TFDuration[42],
+    Duration = Table_ActivityIntegration_t.Duration[42],
     ServerID = Table_ActivityIntegration_t.ServerID[1]
   },
   [1000201] = {
     id = 1000201,
     Group = 10002,
     Type = 2,
-    Params = Table_ActivityIntegration_t.Params[59],
+    Params = Table_ActivityIntegration_t.Params[57],
     TitleName = "每日福利",
     TabDesc = "完成日常领福利",
     BgTextture = "activityintegration_bg_pic08",
     HelpID = 35288,
-    TFDuration = Table_ActivityIntegration_t.TFDuration[38],
-    Duration = Table_ActivityIntegration_t.Duration[38],
+    TFDuration = Table_ActivityIntegration_t.TFDuration[36],
+    Duration = Table_ActivityIntegration_t.Duration[36],
     ServerID = Table_ActivityIntegration_t.ServerID[1]
   },
   [1000301] = {
     id = 1000301,
     Group = 10003,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[33],
+    Params = Table_ActivityIntegration_t.Params[35],
     TitleName = "精炼好礼",
     TabDesc = "精炼装备领好礼",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[23],
-    Duration = Table_ActivityIntegration_t.Duration[23],
+    TFDuration = Table_ActivityIntegration_t.TFDuration[25],
+    Duration = Table_ActivityIntegration_t.Duration[25],
     ServerID = Table_ActivityIntegration_t.ServerID[1]
   },
   [2001001] = {
     id = 2001001,
     Group = 2001,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[86],
+    Params = Table_ActivityIntegration_t.Params[96],
     TabDesc = "「生化巴风特卡片」限时获取",
     Desc = "福利MVP「卡牌屋精灵」登场！\n  4/28~5/12期间，「生化巴风特卡片」掉落几率提升10倍！\n  「熊猫波利」限时UP开启，活动结束后，限时UP卡片将不进普通卡池！",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[47],
-    Duration = Table_ActivityIntegration_t.Duration[47]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[50],
+    Duration = Table_ActivityIntegration_t.Duration[49]
   },
   [2001002] = {
     id = 2001002,
     Group = 2001,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[87],
+    Params = Table_ActivityIntegration_t.Params[97],
     TitleName = "异界挑战",
     TabDesc = "古拉姆结晶免费领",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[47],
-    Duration = Table_ActivityIntegration_t.Duration[47]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[50],
+    Duration = Table_ActivityIntegration_t.Duration[49]
   },
   [2002001] = {
     id = 2002001,
     Group = 2002,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[72],
+    Params = Table_ActivityIntegration_t.Params[82],
     TabDesc = "「索斯卡片」限时获取",
     Desc = "福利MVP「卡牌屋精灵」登场！\n  6/16~6/30期间，「索斯卡片」掉落几率提升10倍！\n  「熊猫波利」限时UP开启，活动结束后，限时UP卡片将不进普通卡池！",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[43],
-    Duration = Table_ActivityIntegration_t.Duration[43]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[46],
+    Duration = Table_ActivityIntegration_t.Duration[45]
   },
   [2002002] = {
     id = 2002002,
     Group = 2002,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[73],
+    Params = Table_ActivityIntegration_t.Params[83],
     TitleName = "异界挑战",
     TabDesc = "古拉姆结晶免费领",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[43],
-    Duration = Table_ActivityIntegration_t.Duration[43]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[46],
+    Duration = Table_ActivityIntegration_t.Duration[45]
   },
   [2003001] = {
     id = 2003001,
     Group = 2003,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[56],
+    Params = Table_ActivityIntegration_t.Params[66],
     TabDesc = "「贞奴比亚卡片」限时获取",
     Desc = "福利MVP「卡牌屋精灵」登场！\n  7/21~8/4期间，「贞奴比亚卡片」掉落几率提升10倍！\n  「熊猫波利」限时UP开启，首抽必中！活动结束后，限时UP卡片将不进普通卡池！\n  「圣天使波利」卡片升级追加「贞奴比亚卡片」！",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[37],
-    Duration = Table_ActivityIntegration_t.Duration[37]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[43],
+    Duration = Table_ActivityIntegration_t.Duration[43]
   },
   [2003002] = {
     id = 2003002,
     Group = 2003,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[57],
+    Params = Table_ActivityIntegration_t.Params[67],
     TitleName = "异界挑战",
     TabDesc = "古拉姆结晶免费领",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[37],
-    Duration = Table_ActivityIntegration_t.Duration[37]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[43],
+    Duration = Table_ActivityIntegration_t.Duration[43]
   },
   [2004001] = {
     id = 2004001,
     Group = 2004,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[42],
+    Params = Table_ActivityIntegration_t.Params[53],
     TabDesc = "「剑士赛尼亚卡片」限时获取",
     Desc = "福利MVP「卡牌屋精灵」登场！ 8/18~9/1期间，「剑士赛尼亚卡片」掉落几率提升10倍！\n  「熊猫波利」限时UP开启，卡片升级追加「剑士赛尼亚卡片」，活动结束后，限时UP卡片将不进普通卡池！",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[30],
-    Duration = Table_ActivityIntegration_t.Duration[30]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[34],
+    Duration = Table_ActivityIntegration_t.Duration[34]
   },
   [2004002] = {
     id = 2004002,
     Group = 2004,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[43],
+    Params = Table_ActivityIntegration_t.Params[54],
     TitleName = "异界挑战",
     TabDesc = "古拉姆结晶免费领",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[30],
-    Duration = Table_ActivityIntegration_t.Duration[30]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[34],
+    Duration = Table_ActivityIntegration_t.Duration[34]
   },
   [2005001] = {
     id = 2005001,
     Group = 2005,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[34],
+    Params = Table_ActivityIntegration_t.Params[38],
     TabDesc = "「灾厄魔女卡片」限时获取",
     Desc = " 9/15~9/29期间，「灾厄魔女卡片」掉落几率提升10倍！\n  「熊猫波利」限时UP开启，活动结束后，限时UP卡片将不进普通卡池！",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[24],
-    Duration = Table_ActivityIntegration_t.Duration[24]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[28],
+    Duration = Table_ActivityIntegration_t.Duration[28]
   },
   [2005002] = {
     id = 2005002,
     Group = 2005,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[35],
+    Params = Table_ActivityIntegration_t.Params[39],
     TitleName = "异界挑战",
     TabDesc = "古拉姆结晶免费领",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[24],
-    Duration = Table_ActivityIntegration_t.Duration[24]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[28],
+    Duration = Table_ActivityIntegration_t.Duration[28]
   },
   [2006001] = {
     id = 2006001,
     Group = 2006,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[25],
+    Params = Table_ActivityIntegration_t.Params[26],
     TabDesc = "「神工匠·哈沃德卡片」限时获取",
     Desc = "10/20~11/3期间，「神工匠·哈沃德卡片」掉落几率提升10倍！\n  「熊猫波利」限时UP开启，活动结束后，限时UP卡片将不进普通卡池！",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[16],
-    Duration = Table_ActivityIntegration_t.Duration[16]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[17],
+    Duration = Table_ActivityIntegration_t.Duration[17]
   },
   [2006002] = {
     id = 2006002,
     Group = 2006,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[26],
+    Params = Table_ActivityIntegration_t.Params[27],
     TitleName = "异界挑战",
     TabDesc = "古拉姆结晶免费领",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[16],
-    Duration = Table_ActivityIntegration_t.Duration[16]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[17],
+    Duration = Table_ActivityIntegration_t.Duration[17]
   },
   [2007001] = {
     id = 2007001,
     Group = 2007,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[14],
+    Params = Table_ActivityIntegration_t.Params[15],
     TitleName = "英灵挑战",
     TabDesc = "通关英灵副本领额外奖励",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[8],
-    Duration = Table_ActivityIntegration_t.Duration[8]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[9],
+    Duration = Table_ActivityIntegration_t.Duration[9]
   },
   [2008001] = {
+    id = 2008001,
     Group = 2008,
-    Params = Table_ActivityIntegration_t.Params[1],
+    Params = Table_ActivityIntegration_t.Params[2],
     TitleName = "年终钜惠开启",
     TabDesc = "绝版返场，自选好礼",
     Desc = "年终钜惠开启，自选复刻卡片！",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
-    Duration = Table_ActivityIntegration_t.Duration[1]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
+    Duration = Table_ActivityIntegration_t.Duration[2]
   },
   [2008002] = {
     id = 2008002,
     Group = 2008,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[2],
+    Params = Table_ActivityIntegration_t.Params[3],
     TitleName = "副本大挑战",
     TabDesc = "海量鱼干等你领",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
-    Duration = Table_ActivityIntegration_t.Duration[1]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
+    Duration = Table_ActivityIntegration_t.Duration[2]
   },
   [2008003] = {
     id = 2008003,
     Group = 2008,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[3],
+    Params = Table_ActivityIntegration_t.Params[4],
     TitleName = "钜惠商店",
     TabDesc = "绝版返场，自选好礼",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
-    Duration = Table_ActivityIntegration_t.Duration[1]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
+    Duration = Table_ActivityIntegration_t.Duration[2]
   },
   [2008004] = {
     id = 2008004,
     Group = 2008,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[4],
+    Params = Table_ActivityIntegration_t.Params[5],
     TitleName = "高级外观",
     TabDesc = "绝美翅膀，酷炫坐骑",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
-    Duration = Table_ActivityIntegration_t.Duration[1]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
+    Duration = Table_ActivityIntegration_t.Duration[2]
   },
   [2008005] = {
     id = 2008005,
     Group = 2008,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[5],
+    Params = Table_ActivityIntegration_t.Params[6],
     TitleName = "返场时装",
     TabDesc = "时装返场，机不可失",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
-    Duration = Table_ActivityIntegration_t.Duration[1]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
+    Duration = Table_ActivityIntegration_t.Duration[2]
   },
   [2008006] = {
     id = 2008006,
     Group = 2008,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[52],
+    Params = Table_ActivityIntegration_t.Params[47],
     TitleName = "时装头饰",
     TabDesc = "时装头饰，配套搭配",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
-    Duration = Table_ActivityIntegration_t.Duration[1]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
+    Duration = Table_ActivityIntegration_t.Duration[2]
   },
   [2008007] = {
     id = 2008007,
     Group = 2008,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[47],
+    Params = Table_ActivityIntegration_t.Params[42],
     TitleName = "SSR头饰",
     TabDesc = "强力属性，不可错过",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
-    Duration = Table_ActivityIntegration_t.Duration[1]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
+    Duration = Table_ActivityIntegration_t.Duration[2]
   },
   [2008008] = {
     id = 2008008,
     Group = 2008,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[46],
+    Params = Table_ActivityIntegration_t.Params[41],
     TitleName = "SR头饰",
     TabDesc = "海量头饰，任意挑选",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[1],
-    Duration = Table_ActivityIntegration_t.Duration[1]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
+    Duration = Table_ActivityIntegration_t.Duration[2]
   },
   [2009001] = {
     id = 2009001,
     Group = 2009,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[85],
+    Params = Table_ActivityIntegration_t.Params[95],
     TabDesc = "「暗·十字刺客艾勒梅斯卡片」限时获取",
     Desc = "11/17~12/01期间，「暗·十字刺客艾勒梅斯卡片」掉落几率提升10倍！\n  「熊猫波利」限时UP开启，活动结束后，限时UP卡片将不进普通卡池！",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[31],
-    Duration = Table_ActivityIntegration_t.Duration[31]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[27],
+    Duration = Table_ActivityIntegration_t.Duration[27]
   },
   [2009002] = {
     id = 2009002,
     Group = 2009,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[44],
+    Params = Table_ActivityIntegration_t.Params[37],
     TitleName = "异界挑战",
     TabDesc = "古拉姆结晶免费领",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[31],
-    Duration = Table_ActivityIntegration_t.Duration[31]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[27],
+    Duration = Table_ActivityIntegration_t.Duration[27]
   },
   [2010001] = {
     id = 2010001,
     Group = 2010,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[71],
+    Params = Table_ActivityIntegration_t.Params[81],
     TabDesc = "「暗·赛依连卡片」限时获取",
     Desc = "12/22~01/05期间，「暗·赛依连卡片」掉落几率提升10倍！\n  「熊猫波利」限时UP开启，活动结束后，限时UP卡片将不进普通卡池！",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[28],
-    Duration = Table_ActivityIntegration_t.Duration[28]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[18],
+    Duration = Table_ActivityIntegration_t.Duration[18]
   },
   [2010002] = {
     id = 2010002,
     Group = 2010,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[40],
+    Params = Table_ActivityIntegration_t.Params[28],
     TitleName = "异界挑战",
     TabDesc = "古拉姆结晶免费领",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[28],
-    Duration = Table_ActivityIntegration_t.Duration[28]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[18],
+    Duration = Table_ActivityIntegration_t.Duration[18]
   }
 }
 local cell_mt = {
@@ -2944,14 +3120,14 @@ local cell_mt = {
     BgTextture = "mall_twistedegg_bg_bottom",
     Desc = "",
     Duration = _EmptyTable,
-    Group = 54,
+    Group = 72,
     Params = _EmptyTable,
     ServerID = _EmptyTable,
     TFDuration = _EmptyTable,
-    TabDesc = "提升等级领奖励",
+    TabDesc = "参与领海量豪礼",
     TitleName = "异界入侵",
     Type = 3,
-    id = 2008001
+    id = 72009
   }
 }
 for _, d in pairs(Table_ActivityIntegration) do

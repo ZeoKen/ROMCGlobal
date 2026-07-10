@@ -264,7 +264,34 @@ function SnowGemSetCell:FormatAttrText(attrData)
   for attrName, attrValue in pairs(attrData) do
     local propConfig = Game.Config_PropName and Game.Config_PropName[attrName]
     local displayName = propConfig and propConfig.PropName or attrName
-    table.insert(attrTexts, displayName .. "+" .. tostring(attrValue))
+    if (attrName == "MaxHP" or attrName == "MaxHp") and ZhString.EquipMemory_MaxHp then
+      displayName = ZhString.EquipMemory_MaxHp
+    end
+    local isPercent = propConfig and (propConfig.IsPercent == 1 or propConfig.IsClientPercent == 1)
+    if isPercent and string.sub(attrName, -3) == "Per" then
+      local baseAttrName = string.sub(attrName, 1, -4)
+      local basePropConfig = Game.Config_PropName and Game.Config_PropName[baseAttrName]
+      if basePropConfig and basePropConfig.PropName then
+        displayName = basePropConfig.PropName
+      end
+      if (baseAttrName == "MaxHP" or baseAttrName == "MaxHp") and ZhString.EquipMemory_MaxHp then
+        displayName = ZhString.EquipMemory_MaxHp
+      end
+    end
+    local valueText
+    if isPercent then
+      local percentValue = attrValue * 100
+      if percentValue == math.floor(percentValue) then
+        valueText = string.format("+%d%%", percentValue)
+      else
+        valueText = string.format("+%.1f%%", percentValue)
+      end
+    elseif attrValue == math.floor(attrValue) then
+      valueText = string.format("+%d", attrValue)
+    else
+      valueText = string.format("+%.1f", attrValue)
+    end
+    table.insert(attrTexts, displayName .. valueText)
   end
   return table.concat(attrTexts, ", ")
 end

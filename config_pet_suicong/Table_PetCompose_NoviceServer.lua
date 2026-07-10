@@ -5,6 +5,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500010, friendlv = 10},
     MaterialPet2 = {id = 500110, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500390] = {
@@ -13,6 +14,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500030, friendlv = 10},
     MaterialPet2 = {id = 500300, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500400] = {
@@ -21,6 +23,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500320, friendlv = 10},
     MaterialPet2 = {id = 500010, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500410] = {
@@ -29,6 +32,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500110, friendlv = 10},
     MaterialPet2 = {id = 500280, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500420] = {
@@ -37,6 +41,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500020, friendlv = 10},
     MaterialPet2 = {id = 500290, friendlv = 10},
     MaterialPet3 = {id = 500370, friendlv = 10},
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500430] = {
@@ -45,6 +50,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500250, friendlv = 10},
     MaterialPet2 = {id = 500040, friendlv = 10},
     MaterialPet3 = {id = 500050, friendlv = 10},
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500440] = {
@@ -53,6 +59,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500350, friendlv = 10},
     MaterialPet2 = {id = 500360, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500450] = {
@@ -61,6 +68,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500070, friendlv = 10},
     MaterialPet2 = {id = 500410, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500460] = {
@@ -69,6 +77,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500060, friendlv = 10},
     MaterialPet2 = {id = 500360, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500470] = {
@@ -77,6 +86,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500100, friendlv = 10},
     MaterialPet2 = {id = 500430, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500720] = {
@@ -85,6 +95,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500330, friendlv = 10},
     MaterialPet2 = {id = 500320, friendlv = 10},
     MaterialPet3 = {id = 500280, friendlv = 10},
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500730] = {
@@ -93,6 +104,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500040, friendlv = 10},
     MaterialPet2 = {id = 500070, friendlv = 10},
     MaterialPet3 = {id = 500690, friendlv = 10},
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500740] = {
@@ -101,6 +113,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500090, friendlv = 10},
     MaterialPet2 = {id = 500340, friendlv = 10},
     MaterialPet3 = {id = 500270, friendlv = 10},
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500750] = {
@@ -109,6 +122,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500230, friendlv = 10},
     MaterialPet2 = {id = 500390, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500760] = {
@@ -117,6 +131,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500370, friendlv = 10},
     MaterialPet2 = {id = 500710, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500770] = {
@@ -125,6 +140,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500330, friendlv = 10},
     MaterialPet2 = {id = 500720, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [500780] = {
@@ -133,6 +149,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500080, friendlv = 10},
     MaterialPet2 = {id = 500460, friendlv = 10},
     MaterialPet3 = {id = 500710, friendlv = 10},
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [501020] = {
@@ -141,6 +158,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500050, friendlv = 10},
     MaterialPet2 = {id = 500010, friendlv = 10},
     MaterialPet3 = {id = 500300, friendlv = 10},
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [501040] = {
@@ -149,6 +167,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500510, friendlv = 10},
     MaterialPet2 = {id = 500990, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [501060] = {
@@ -157,6 +176,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500210, friendlv = 10},
     MaterialPet2 = {id = 500400, friendlv = 10},
     MaterialPet3 = {id = 500340, friendlv = 10},
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [501070] = {
@@ -165,6 +185,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500100, friendlv = 10},
     MaterialPet2 = {id = 501010, friendlv = 10},
     MaterialPet3 = {id = 500730, friendlv = 10},
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [501450] = {
@@ -173,6 +194,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500990, friendlv = 10},
     MaterialPet2 = {id = 500340, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [501210] = {
@@ -181,6 +203,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500700, friendlv = 10},
     MaterialPet2 = {id = 500510, friendlv = 10},
     MaterialPet3 = _EmptyTable,
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [501220] = {
@@ -189,6 +212,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500010, friendlv = 10},
     MaterialPet2 = {id = 500370, friendlv = 10},
     MaterialPet3 = {id = 500310, friendlv = 10},
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   },
   [501230] = {
@@ -197,6 +221,7 @@ Table_PetCompose = {
     MaterialPet1 = {id = 500710, friendlv = 10},
     MaterialPet2 = {id = 500430, friendlv = 10},
     MaterialPet3 = {id = 501190, friendlv = 10},
+    MaterialItem = _EmptyTable,
     ZenyCost = 10000
   }
 }
@@ -206,6 +231,7 @@ Table_PetCompose_fields = {
   "MaterialPet1",
   "MaterialPet2",
   "MaterialPet3",
+  "MaterialItem",
   "ZenyCost"
 }
 return Table_PetCompose

@@ -21,6 +21,17 @@ PetInfoView.EventTip = {
   body = ZhString.PetInfoView_Unlock_Fashion,
   equip = ZhString.PetInfoView_Unlock_Equip
 }
+local DefaultContractResetSkillSlots = {
+  [12394] = {
+    1,
+    3,
+    4
+  },
+  [12395] = {1},
+  [12396] = {3},
+  [12397] = {4},
+  [12369] = {2, 5}
+}
 
 function PetInfoView:Init()
   self:InitView()
@@ -121,8 +132,12 @@ end
 
 function PetInfoView:ClickSkill(skillCell)
   local skillData = skillCell.data
-  if type(skillData) == "number" then
-    TipManager.Instance:ShowPetSkillTip(SkillItemData.new(skillCell.data), self.skillTipStick, NGUIUtil.AnchorSide.TopLeft, {-185, 0})
+  local sid = skillData
+  if type(skillData) == "table" and skillData.skillId then
+    sid = skillData.skillId
+  end
+  if type(sid) == "number" then
+    TipManager.Instance:ShowPetSkillTip(SkillItemData.new(sid), self.skillTipStick, NGUIUtil.AnchorSide.TopLeft, {-185, 0})
   end
 end
 
@@ -133,13 +148,24 @@ function PetInfoView:ClickResetSkillItem(cell)
     if data.id == "Reset_Grey" then
       MsgManager.ShowMsgByIDTable(9012, {itemName})
     else
-      local dont = LocalSaveProxy.Instance:GetDontShowAgain(9011)
+      local confirmId = 9011
+      if self.petInfoData and self.petInfoData:HasContractSkill() then
+        local map = GameConfig.Pet.contract_reset_skill_confirm_msg
+        if map then
+          confirmId = map[data.staticData.id] or 9011
+        end
+      end
+      local DoResetSkill = function()
+        self.lastResetSkillItemId = data.staticData.id
+        FunctionPet.Me():DoResetSkill(data.staticData.id)
+      end
+      local dont = LocalSaveProxy.Instance:GetDontShowAgain(confirmId)
       if dont == nil then
-        MsgManager.DontAgainConfirmMsgByID(9011, function()
-          FunctionPet.Me():DoResetSkill(data.staticData.id)
+        MsgManager.DontAgainConfirmMsgByID(confirmId, function()
+          DoResetSkill()
         end, nil, nil, itemName)
       else
-        FunctionPet.Me():DoResetSkill(data.staticData.id)
+        DoResetSkill()
       end
     end
     self.skillResetBord:SetActive(false)
@@ -193,10 +219,17 @@ function PetInfoView:DoChangeName()
 end
 
 function PetInfoView.SortResetSkillItems(a, b)
-  if a.id ~= b.id then
-    return a.id ~= "Reset_Grey"
+  local aGrey = a.id == "Reset_Grey"
+  local bGrey = b.id == "Reset_Grey"
+  if aGrey ~= bGrey then
+    return not aGrey
   end
-  return a.staticData.id < b.staticData.id
+  local aStaticId = a.staticData and a.staticData.id or 0
+  local bStaticId = b.staticData and b.staticData.id or 0
+  if aStaticId ~= bStaticId then
+    return aStaticId < bStaticId
+  end
+  return tostring(a.id) < tostring(b.id)
 end
 
 function PetInfoView:DoResetSkill()
@@ -209,7 +242,12 @@ function PetInfoView:DoResetSkill()
   else
     TableUtility.ArrayClear(self.resetSkillItems)
   end
-  local resetSkill_Config = GameConfig.Pet.reset_skill
+  local resetSkill_Config
+  if self.petInfoData and self.petInfoData:HasContractSkill() then
+    resetSkill_Config = GameConfig.Pet.contract_pet_reset_skills_item or {}
+  else
+    resetSkill_Config = GameConfig.Pet.reset_skill
+  end
   for j = 1, #resetSkill_Config do
     local itemid = resetSkill_Config[j]
     local item = BagProxy.Instance:GetItemByStaticID(itemid)
@@ -499,7 +537,7 @@ function PetInfoView:UpdateAtrtri()
     if self.petInfoData.skills and #self.petInfoData.skills > 0 then
       local skilldatas = {}
       skilldatas[1] = PetInfoLabelCell.Type.Skill
-      skilldatas[2] = self.petInfoData.skills
+      skilldatas[2] = self.petInfoData:GetSkillDisplayDatasForUI()
       table.insert(attriDatas, skilldatas)
     end
     for i = 1, #PetShowAttris2 do
@@ -580,6 +618,7 @@ function PetInfoView:MapEvent()
   self:AddListenEvt(ServiceEvent.ScenePetUnlockNtfPetCmd, self.HandlePetUnlockNtfPetCmd)
   self:AddListenEvt(ServiceEvent.ScenePetPetOffPetCmd, self.HandleScenePetPetOff)
   self:AddListenEvt(ServiceEvent.ScenePetResetSkillPetCmd, self.HandleSkillReset)
+  self:AddListenEvt(ServiceEvent.ScenePetContractSkillLevelUpPetCmd, self.UpdatePetTotalInfo)
   self:AddListenEvt(ServiceEvent.NUserBeFollowUserCmd, self.UpdateHandSymbol)
   self:AddDispatcherEvt(FunctionFollowCaptainEvent.StateChanged, self.UpdateHandSymbol)
   self:AddListenEvt(SceneUserEvent.SceneRemovePets, self.HandleSceneRemovePets)
@@ -618,10 +657,21 @@ function PetInfoView:HandleItemUpdate()
 end
 
 function PetInfoView:HandleSkillReset(note)
+  local skillSlots
+  if self.petInfoData and self.petInfoData:HasContractSkill() then
+    local body = note and note.body
+    local itemid = body and body.id
+    if itemid == nil or itemid == 0 then
+      itemid = self.lastResetSkillItemId
+    end
+    local slotConfig = GameConfig.Pet.reset_skills_slot_limit or DefaultContractResetSkillSlots
+    skillSlots = itemid and slotConfig and slotConfig[itemid]
+  end
+  self.lastResetSkillItemId = nil
   local cells = self.attriCtl:GetCells()
   if cells then
     for i = 1, #cells do
-      cells[i]:PlayResetEffect()
+      cells[i]:PlayResetEffect(skillSlots)
     end
   end
 end

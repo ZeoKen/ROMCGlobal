@@ -35,7 +35,7 @@ function ServiceBattlePassAutoProxy:onRegister()
   end)
 end
 
-function ServiceBattlePassAutoProxy:CallGetRewardBattlePassCmd(all, normal_lv, pro_lv, su_lv)
+function ServiceBattlePassAutoProxy:CallGetRewardBattlePassCmd(all, normal_lv, pro_lv, su_lv, cycle)
   if not NetConfig.PBC then
     local msg = BattlePass_pb.GetRewardBattlePassCmd()
     if all ~= nil then
@@ -49,6 +49,9 @@ function ServiceBattlePassAutoProxy:CallGetRewardBattlePassCmd(all, normal_lv, p
     end
     if su_lv ~= nil then
       msg.su_lv = su_lv
+    end
+    if cycle ~= nil then
+      msg.cycle = cycle
     end
     self:SendProto(msg)
   else
@@ -66,11 +69,14 @@ function ServiceBattlePassAutoProxy:CallGetRewardBattlePassCmd(all, normal_lv, p
     if su_lv ~= nil then
       msgParam.su_lv = su_lv
     end
+    if cycle ~= nil then
+      msgParam.cycle = cycle
+    end
     self:SendProto2(msgId, msgParam)
   end
 end
 
-function ServiceBattlePassAutoProxy:CallUpdateRewardBattlePassCmd(levels, prolevels, sulevels)
+function ServiceBattlePassAutoProxy:CallUpdateRewardBattlePassCmd(levels, prolevels, sulevels, pro_overflow_reward_level, super_overflow_reward_level, overflow_reward_level)
   if not NetConfig.PBC then
     local msg = BattlePass_pb.UpdateRewardBattlePassCmd()
     if levels ~= nil then
@@ -105,6 +111,15 @@ function ServiceBattlePassAutoProxy:CallUpdateRewardBattlePassCmd(levels, prolev
       for i = 1, #sulevels do
         table.insert(msg.sulevels, sulevels[i])
       end
+    end
+    if pro_overflow_reward_level ~= nil then
+      msg.pro_overflow_reward_level = pro_overflow_reward_level
+    end
+    if super_overflow_reward_level ~= nil then
+      msg.super_overflow_reward_level = super_overflow_reward_level
+    end
+    if overflow_reward_level ~= nil then
+      msg.overflow_reward_level = overflow_reward_level
     end
     self:SendProto(msg)
   else
@@ -142,6 +157,15 @@ function ServiceBattlePassAutoProxy:CallUpdateRewardBattlePassCmd(levels, prolev
       for i = 1, #sulevels do
         table.insert(msgParam.sulevels, sulevels[i])
       end
+    end
+    if pro_overflow_reward_level ~= nil then
+      msgParam.pro_overflow_reward_level = pro_overflow_reward_level
+    end
+    if super_overflow_reward_level ~= nil then
+      msgParam.super_overflow_reward_level = super_overflow_reward_level
+    end
+    if overflow_reward_level ~= nil then
+      msgParam.overflow_reward_level = overflow_reward_level
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -187,7 +211,7 @@ function ServiceBattlePassAutoProxy:CallAdvanceBattlePassCmd(level, super)
   end
 end
 
-function ServiceBattlePassAutoProxy:CallSyncInfoBattlePassCmd(level, pro_level, rewardlvs, reward_prolvs, exp, su_level, reward_sulvs, version)
+function ServiceBattlePassAutoProxy:CallSyncInfoBattlePassCmd(level, pro_level, rewardlvs, reward_prolvs, exp, su_level, reward_sulvs, version, pro_overflow_reward_level, super_overflow_reward_level, overflow_reward_level)
   if not NetConfig.PBC then
     local msg = BattlePass_pb.SyncInfoBattlePassCmd()
     if level ~= nil then
@@ -237,6 +261,15 @@ function ServiceBattlePassAutoProxy:CallSyncInfoBattlePassCmd(level, pro_level, 
     end
     if version ~= nil then
       msg.version = version
+    end
+    if pro_overflow_reward_level ~= nil then
+      msg.pro_overflow_reward_level = pro_overflow_reward_level
+    end
+    if super_overflow_reward_level ~= nil then
+      msg.super_overflow_reward_level = super_overflow_reward_level
+    end
+    if overflow_reward_level ~= nil then
+      msg.overflow_reward_level = overflow_reward_level
     end
     self:SendProto(msg)
   else
@@ -289,6 +322,15 @@ function ServiceBattlePassAutoProxy:CallSyncInfoBattlePassCmd(level, pro_level, 
     end
     if version ~= nil then
       msgParam.version = version
+    end
+    if pro_overflow_reward_level ~= nil then
+      msgParam.pro_overflow_reward_level = pro_overflow_reward_level
+    end
+    if super_overflow_reward_level ~= nil then
+      msgParam.super_overflow_reward_level = super_overflow_reward_level
+    end
+    if overflow_reward_level ~= nil then
+      msgParam.overflow_reward_level = overflow_reward_level
     end
     self:SendProto2(msgId, msgParam)
   end

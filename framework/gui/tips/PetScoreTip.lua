@@ -2,6 +2,9 @@ autoImport("BaseTip")
 PetScoreTip = class("PetScoreTip", BaseView)
 autoImport("TipLabelCell")
 autoImport("ProfessionSkillCell")
+local PET_SKILL_COL_COUNT = 5
+local PET_SKILL_DIVIDER_DEFAULT_Y = 9
+local PET_SKILL_ROW_HEIGHT = 92
 
 function PetScoreTip:ctor(parent)
   self.resID = ResourcePathHelper.UITip("PetScoreTip")
@@ -68,6 +71,7 @@ function PetScoreTip:Init()
   local skillGrid = self:FindComponent("PetSkillTable", UITable)
   self.gridList = UIGridListCtrl.new(skillGrid, ProfessionSkillCell, "ProfessionSkillCell")
   self.gridList:AddEventListener(MouseEvent.MouseClick, self.clickHandler, self)
+  self.petSkillDivider = self:FindGO("Sprite", self.scrollView.gameObject)
   self.MonstPro = self:FindComponent("MonstPro", UISprite)
   self.MonstRace = self:FindComponent("MonstRace", UISprite)
 end
@@ -292,6 +296,22 @@ function PetScoreTip:Show3DModel()
   return false
 end
 
+local GetPetScoreTipSkillId = function(skillTb)
+  if not skillTb or not skillTb[1] then
+    return nil
+  end
+  return skillTb[1]
+end
+
+function PetScoreTip:UpdatePetSkillDivider(skillCount)
+  if not self.petSkillDivider then
+    return
+  end
+  local rowCount = math.max(math.ceil((skillCount or 0) / PET_SKILL_COL_COUNT), 1)
+  local y = PET_SKILL_DIVIDER_DEFAULT_Y - (rowCount - 1) * PET_SKILL_ROW_HEIGHT
+  self.petSkillDivider.transform.localPosition = LuaGeometry.GetTempVector3(0, y, 0)
+end
+
 function PetScoreTip:UpdatePetSkill()
   local contextData = {}
   local data = self.data
@@ -300,24 +320,29 @@ function PetScoreTip:UpdatePetSkill()
     local sdata = self.data.staticData
     local petData = Table_Pet[sdata.id]
     if petData then
-      local profession = Game.Myself.data:GetCurOcc().profession
-      local id = 1
-      local idStr = string.format("Skill_%d", id)
-      local skillTb = petData[idStr]
-      local skillId = skillTb and skillTb[1] or nil
-      while skillTb and skillId do
-        local data = {}
-        data[1] = nil
-        data[2] = skillId
-        contextData[#contextData + 1] = data
-        id = id + 1
-        idStr = string.format("Skill_%d", id)
-        skillTb = petData[idStr]
-        skillId = skillTb and skillTb[1] or nil
+      local sortedIndex = {
+        "Skill_1",
+        "ContractSkill",
+        "Skill_3",
+        "Skill_4",
+        "Skill_2",
+        "Skill_5"
+      }
+      for i = 1, #sortedIndex do
+        local skillKey = sortedIndex[i]
+        local skillTb = petData[skillKey]
+        local skillId = GetPetScoreTipSkillId(skillTb)
+        if skillId then
+          local data = {}
+          data[1] = nil
+          data[2] = skillId
+          contextData[#contextData + 1] = data
+        end
       end
     end
   end
   self.gridList:ResetDatas(contextData)
+  self:UpdatePetSkillDivider(#contextData)
 end
 
 function PetScoreTip:UpdateAttriContext()

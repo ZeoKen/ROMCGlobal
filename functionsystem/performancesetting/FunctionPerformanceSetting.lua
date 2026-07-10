@@ -939,32 +939,38 @@ function FunctionPerformanceSetting:Apply(setting)
   if nil ~= setting.push then
     local _PushEventConfig = PushConfig.EventConfig
     local list = LuaUtils.CreateStringList()
+    local hasSdkPushTag = false
     for i = 0, #_PushEventConfig do
       if _PushEventConfig[i] ~= nil then
         local value = setting.push >> i & 1
         local keys = _PushEventConfig[i].key
         for j = 1, #keys do
-          if value == 0 then
-            list:Add(keys[j] .. ":1")
-          else
-            list:Add(keys[j] .. ":0")
+          if keys[j] ~= "daytime_push" and keys[j] ~= "night_push" then
+            hasSdkPushTag = true
+            if value == 0 then
+              list:Add(keys[j] .. ":1")
+            else
+              list:Add(keys[j] .. ":0")
+            end
           end
         end
       end
     end
-    list:Add(PushConfig.Channel)
-    local lang_id = ApplicationInfo.GetSystemLanguage()
-    list:Add(string.format("lang_%d:1", lang_id))
-    local area_key = EAREA["EAREA_" .. BranchMgr.Get_EAREA()] or 0
-    local server_key = MyselfProxy.Instance:GetServerId() or 0
-    list:Add(string.format("area_%d_server_%d:1", area_key, server_key))
-    if ApplicationInfo.IsRunOnEditor() then
-      for i = 1, list.Count do
-        local item = list:getItem(i - 1)
-        redlog("push config :" .. item)
+    if hasSdkPushTag then
+      list:Add(PushConfig.Channel)
+      local lang_id = ApplicationInfo.GetSystemLanguage()
+      list:Add(string.format("lang_%d:1", lang_id))
+      local area_key = EAREA["EAREA_" .. BranchMgr.Get_EAREA()] or 0
+      local server_key = MyselfProxy.Instance:GetServerId() or 0
+      list:Add(string.format("area_%d_server_%d:1", area_key, server_key))
+      if ApplicationInfo.IsRunOnEditor() then
+        for i = 1, list.Count do
+          local item = list:getItem(i - 1)
+          redlog("push config :" .. item)
+        end
+      else
+        PushProxy.Instance:SetTags(os.time(), list)
       end
-    else
-      PushProxy.Instance:SetTags(os.time(), list)
     end
   end
   if nil ~= setting.targetFrameRate then

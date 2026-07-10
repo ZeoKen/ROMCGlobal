@@ -33,12 +33,12 @@ function HomeSkadaManager:OnReceiveSkillDamageData(data)
       for i = 1, #hittargets do
         hit = hittargets[i]
         if hit.damage >= 0 and self.skadaDamageMonitors[hit.charid] then
-          self.skadaDamageMonitors[hit.charid]:AddDamage(damageType, hit.damage)
+          self.skadaDamageMonitors[hit.charid]:AddDamage(damageType, hit.damage, hit.doubledamage)
         end
         for j = 1, #hit.shareTargets do
           sharehit = hit.shareTargets[j]
           if sharehit.damage >= 0 and self.skadaDamageMonitors[sharehit.charid] then
-            self.skadaDamageMonitors[sharehit.charid]:AddDamage(damageType, sharehit.damage)
+            self.skadaDamageMonitors[sharehit.charid]:AddDamage(damageType, sharehit.damage, sharehit.doubledamage)
           end
         end
       end
@@ -49,7 +49,7 @@ end
 function HomeSkadaManager:OnReceiveBuffDamageData(data)
   local damageData = data and data.data
   if damageData and self.skadaDamageMonitors[damageData.charid] and damageData.fromid == Game.Myself.data.id then
-    self.skadaDamageMonitors[damageData.charid]:AddDamage(DamageMonitorType.Other, damageData.damage)
+    self.skadaDamageMonitors[damageData.charid]:AddDamage(DamageMonitorType.Other, damageData.damage, damageData.doubledamage)
   end
 end
 

@@ -98,13 +98,14 @@ function PetInfoLabelCell:ClickSkill(skillCell)
   self:PassEvent(MouseEvent.MouseClick, skillCell)
 end
 
-function PetInfoLabelCell:PlayResetEffect()
+function PetInfoLabelCell:PlayResetEffect(skillSlots)
   if self.skillsCell then
-    local cells = self.skillsCell:GetCells()
-    if cells then
-      for i = 1, #cells do
-        cells[i]:PlayResetEffect()
-      end
-    end
+    self.skillsCell:PlayResetEffect(skillSlots)
+  end
+end
+
+function PetInfoLabelCell:OnCellDestroy()
+  if self.skillsCell and self.skillsCell.OnCellDestroy then
+    self.skillsCell:OnCellDestroy()
   end
 end

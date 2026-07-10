@@ -455,7 +455,7 @@ function ServiceUserEventAutoProxy:CallUpdateRandomUserEvent(beginindex, endinde
   end
 end
 
-function ServiceUserEventAutoProxy:CallBuffDamageUserEvent(charid, damage, etype, fromid)
+function ServiceUserEventAutoProxy:CallBuffDamageUserEvent(charid, damage, etype, fromid, doubledamage)
   if not NetConfig.PBC then
     local msg = UserEvent_pb.BuffDamageUserEvent()
     if charid ~= nil then
@@ -469,6 +469,9 @@ function ServiceUserEventAutoProxy:CallBuffDamageUserEvent(charid, damage, etype
     end
     if fromid ~= nil then
       msg.fromid = fromid
+    end
+    if doubledamage ~= nil then
+      msg.doubledamage = doubledamage
     end
     self:SendProto(msg)
   else
@@ -485,6 +488,9 @@ function ServiceUserEventAutoProxy:CallBuffDamageUserEvent(charid, damage, etype
     end
     if fromid ~= nil then
       msgParam.fromid = fromid
+    end
+    if doubledamage ~= nil then
+      msgParam.doubledamage = doubledamage
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -1739,11 +1745,14 @@ function ServiceUserEventAutoProxy:CallGiftTimeLimitBuyUserEvent(id)
   end
 end
 
-function ServiceUserEventAutoProxy:CallGiftTimeLimitActiveUserEvent(id)
+function ServiceUserEventAutoProxy:CallGiftTimeLimitActiveUserEvent(id, type)
   if not NetConfig.PBC then
     local msg = UserEvent_pb.GiftTimeLimitActiveUserEvent()
     if id ~= nil then
       msg.id = id
+    end
+    if type ~= nil then
+      msg.type = type
     end
     self:SendProto(msg)
   else
@@ -1751,6 +1760,9 @@ function ServiceUserEventAutoProxy:CallGiftTimeLimitActiveUserEvent(id)
     local msgParam = {}
     if id ~= nil then
       msgParam.id = id
+    end
+    if type ~= nil then
+      msgParam.type = type
     end
     self:SendProto2(msgId, msgParam)
   end

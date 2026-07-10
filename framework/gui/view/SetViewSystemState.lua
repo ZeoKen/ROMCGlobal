@@ -407,18 +407,19 @@ function SetViewSystemState:AddButtonEvt()
     end)
   end
   for i = 1, #self.pushToggle do
+    local pushCell = self.pushToggle[i]
     self:AddClickEvent(self.pushToggle[i].tog.gameObject, function(obj)
-      if not self.pushToggle[i].tog.value or ExternalInterfaces.isUserNotificationEnable() then
+      if not pushCell.tog.value or self:IsKoreaDayNightPushCell(pushCell) or ExternalInterfaces.isUserNotificationEnable() then
       else
         ExternalInterfaces.ShowHintOpenPushView(ZhString.Push_title, ZhString.Push_message, ZhString.Push_cancelButtonTitle, ZhString.Push_otherButtonTitles)
-        goto lbl_26
+        goto lbl_29
       end
-      ::lbl_26::
+      ::lbl_29::
       EventManager.Me():PassEvent(SetViewEvent.SaveBtnStatus, self:IsChanged())
     end)
-    if self.pushToggle[i].toggleTween then
-      EventDelegate.Add(self.pushToggle[i].tog.onChange, function()
-        self.pushToggle[i].toggleTween:Play(not self.pushToggle[i].tog.value)
+    if pushCell.toggleTween then
+      EventDelegate.Add(pushCell.tog.onChange, function()
+        pushCell.toggleTween:Play(not pushCell.tog.value)
       end)
     end
   end
@@ -732,10 +733,11 @@ function SetViewSystemState:Show()
     end
   end
   if ExternalInterfaces.isUserNotificationEnable() then
-  elseif ApplicationInfo.GetRunPlatform() == RuntimePlatform.Android then
   else
     for i = 1, #self.pushToggle do
-      self.pushToggle[i].tog.value = false
+      if not self:IsKoreaDayNightPushCell(self.pushToggle[i]) then
+        self.pushToggle[i].tog.value = false
+      end
     end
   end
   self.nPCSoundToggle.value = setting:GetSetting().plotVolumeToggle
@@ -819,6 +821,76 @@ function SetViewSystemState:UpdatePushSetFold(reposition)
   end
 end
 
+function SetViewSystemState:IsDayNightPushCell(pushCell)
+  local data = pushCell and pushCell.data
+  local keys = data and data.key
+  if not keys then
+    return false
+  end
+  for i = 1, #keys do
+    if keys[i] == "daytime_push" or keys[i] == "night_push" then
+      return true
+    end
+  end
+  return false
+end
+
+function SetViewSystemState:IsKoreaDayNightPushCell(pushCell)
+  return (BranchMgr.IsKorea() or BranchMgr.IsNOKR()) and self:IsDayNightPushCell(pushCell)
+end
+
+function SetViewSystemState:GetDayNightPushSaveTipFlags(oldPush, newPush)
+  if not BranchMgr.IsNOKR() or oldPush == nil or newPush == nil then
+    return false, false
+  end
+  local showAgreeTip = false
+  local showRejectTip = false
+  for i = 1, #self.pushToggle do
+    local pushCell = self.pushToggle[i]
+    if self:IsDayNightPushCell(pushCell) then
+      local oldValue = self:GetBitByInt(oldPush, i - 1)
+      local newValue = self:GetBitByInt(newPush, i - 1)
+      if oldValue ~= newValue then
+        if newValue then
+          showAgreeTip = true
+        else
+          showRejectTip = true
+        end
+      end
+    end
+  end
+  return showAgreeTip, showRejectTip
+end
+
+function SetViewSystemState:ShowDayNightPushSaveTips(showAgreeTip, showRejectTip)
+  if not showAgreeTip and not showRejectTip then
+    return
+  end
+  local y, m, d = self:GetSaveTime()
+  if showAgreeTip then
+    MsgManager.ShowMsgByIDTable(1000011, {
+      y,
+      m,
+      d
+    })
+  end
+  if showRejectTip then
+    MsgManager.ShowMsgByIDTable(1000012, {
+      y,
+      m,
+      d
+    })
+  end
+end
+
+function SetViewSystemState:GetSaveTime()
+  local curServerTime = ServerTime.CurServerTime() / 1000
+  local year = os.date("%Y", curServerTime)
+  local month = os.date("%m", curServerTime)
+  local day = os.date("%d", curServerTime)
+  return year, month, day
+end
+
 function SetViewSystemState:Save()
   local speech = {}
   if self.AutoAudio.activeInHierarchy then
@@ -847,13 +919,15 @@ function SetViewSystemState:Save()
   tempSound = self.soundSlider.value
   local setting = FunctionPerformanceSetting.Me()
   setting:SetBegin()
+  local oldPush = setting.oldSetting and setting.oldSetting.push
+  local newPush = self:SetPush()
   setting:SetBgmVolume(self.bgmSlider.value)
   setting:SetSoundVolume(self.soundSlider.value)
   setting:SetAutoPlayChatChannel(speech)
   setting:SetShowWedding(showWedding)
   setting:SetVoiceLanguage(voiceIndex)
   setting:SetOtherPlayerExterior(self:GetEquipHideWhenSaving())
-  setting:SetPush(self:SetPush())
+  setting:SetPush(newPush)
   setting:SetGVoice(self:SetGVoice())
   setting:SetPlotVolume(self.plotSlider.value)
   setting:SetPlotVolumeToggle(self.nPCSoundToggle.value)
@@ -877,7 +951,9 @@ function SetViewSystemState:Save()
   end
   setting:SetLuckyNotify(self.luckyNotify)
   setting:SetAutoLockMode(self.autoLock_Weak.value)
+  local showAgreeTip, showRejectTip = self:GetDayNightPushSaveTipFlags(oldPush, newPush)
   setting:SetEnd()
+  self:ShowDayNightPushSaveTips(showAgreeTip, showRejectTip)
   local iconstr = FunctionPlayerPrefs.Me():GetString(LocalSaveProxy.SAVE_KEY.ChangedAppIcon, IconConfig[1])
   if not iconstr or iconstr == "" then
     iconstr = IconConfig[1]

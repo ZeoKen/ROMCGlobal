@@ -266,7 +266,7 @@ function ReturnActivityShopPage:HandleClickDepositItem(cellctl)
     end
   end
   local m_funcRmbBuy = function(count)
-    if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+    if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
       self:Invoke_DepositConfirmPanel(cbfunc)
     else
       cbfunc(count)
@@ -356,7 +356,7 @@ function ReturnActivityShopPage:Invoke_DepositConfirmPanel(cb)
     local currencyType = self.info.productConf.CurrencyType
     local productDesc = OverSea.LangManager.Instance():GetLangByKey(Table_Deposit[self.info.productConf.id].Desc)
     local productD = " [0075BCFF]" .. productCount .. "[-] " .. productName
-    if BranchMgr.IsKorea() then
+    if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
       productD = " [0075BCFF]" .. productDesc .. "[-] "
     end
     OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FunctionNewRecharge.FormatMilComma(productPrice)), ZhString.ShopConfirmDes, productName, productPrice, function()

@@ -1,5 +1,6 @@
 SceneEnergyGrid = reusableClass("SceneEnergyGrid")
 SceneEnergyGrid.PoolSize = 2
+SceneEnergyGrid.MaxEnergyStars = 10
 local PATH_PFB = "part/EnergyGrid"
 local _gameUtilInstance = GameObjectUtil.Instance
 local func_deepFind = _gameUtilInstance.DeepFind
@@ -9,7 +10,7 @@ function SceneEnergyGrid:DoConstruct(asArray, args)
   if not LuaGameObject.ObjectIsNull(parent) then
     self.gameObject = Game.AssetManager_UI:CreateAsset(ResourcePathHelper.UIV1(PATH_PFB), parent.transform)
     self.stars = {}
-    for i = 1, 10 do
+    for i = 1, SceneEnergyGrid.MaxEnergyStars do
       local go = func_deepFind(_gameUtilInstance, self.gameObject, "layer" .. i)
       self.stars[i] = go
       self.stars[i]:SetActive(false)
@@ -27,15 +28,10 @@ end
 
 function SceneEnergyGrid:UpdateEnergy(bufflayer)
   if self.stars then
-    for i = 1, bufflayer do
-      self.stars[i]:SetActive(true)
+    for i = 1, SceneEnergyGrid.MaxEnergyStars do
+      self.stars[i]:SetActive(i <= bufflayer)
     end
-    if bufflayer <= 10 then
-      for i = bufflayer + 1, 10 do
-        self.stars[i]:SetActive(false)
-      end
-    end
-    if 10 <= bufflayer and self.fullEffectGO then
+    if bufflayer >= SceneEnergyGrid.MaxEnergyStars and self.fullEffectGO then
       self.fullEffectGO:SetActive(true)
     end
   end

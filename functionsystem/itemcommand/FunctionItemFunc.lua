@@ -31,6 +31,7 @@ function FunctionItemFunc:ctor()
   self.funcMap.DepositFashion = FunctionItemFunc.DepositFashionEvt
   self.funcMap.Dress = FunctionItemFunc.EquipEvt
   self.funcMap.Apply = FunctionItemFunc.ItemUseEvt
+  self.funcMap.UseEffectItem = FunctionItemFunc.UseEffectItemEvt
   self.funcMap.Shortcutkey = FunctionItemFunc.ShortcutkeyEvt
   self.funcMap.Sale = FunctionItemFunc.SaleEvt
   self.funcMap.Discharge = FunctionItemFunc.OffEquip_Equip
@@ -49,6 +50,10 @@ function FunctionItemFunc:ctor()
   self.funcMap.OpenBarrowBag = FunctionItemFunc.OpenBarrowBag
   self.funcMap.Adventure = FunctionItemFunc.Adventure
   self.funcMap.Hatch = FunctionItemFunc.Hatch
+  self.funcMap.PetFight = FunctionItemFunc.PetFight
+  self.funcMap.CallbackPet = FunctionItemFunc.CallbackPet
+  self.funcMap.QuickPetPackIn = FunctionItemFunc.QuickPetPackIn
+  self.funcMap.QuickPetPackOut = FunctionItemFunc.QuickPetPackOut
   self.funcMap.PutInBarrow = FunctionItemFunc.PutInBarrow
   self.funcMap.PutBackBarrow = FunctionItemFunc.PutBackBarrow
   self.funcMap.PutFood_Public = FunctionItemFunc.PutFood_Public
@@ -91,6 +96,7 @@ function FunctionItemFunc:ctor()
   self.checkMap.DepositFashion = FunctionItemFunc.CheckEquip
   self.checkMap.Dress = FunctionItemFunc.CheckEquip
   self.checkMap.Apply = FunctionItemFunc.CheckApply
+  self.checkMap.UseEffectItem = FunctionItemFunc.CheckUseEffectItem
   self.checkMap.GotoUse = FunctionItemFunc.CheckGotoUse
   self.checkMap.Send_WeddingDress = FunctionItemFunc.CheckSend_WeddingDress
   self.checkMap.PutFood = FunctionItemFunc.CheckPutFood
@@ -104,6 +110,11 @@ function FunctionItemFunc:ctor()
   self.checkMap.AdvancedCostEnchant = FunctionItemFunc.CheckAdvancedCostEnchant
   self.checkMap.Strength = FunctionItemFunc.CheckStrength
   self.checkMap.Train = FunctionItemFunc.CheckTrain
+  self.checkMap.QuickPetPackIn = FunctionItemFunc.CheckQuickPetPackIn
+  self.checkMap.QuickPetPackOut = FunctionItemFunc.CheckQuickPetPackOut
+  self.checkMap.Hatch = FunctionItemFunc.CheckHatch
+  self.checkMap.PetFight = FunctionItemFunc.CheckPetFight
+  self.checkMap.CallbackPet = FunctionItemFunc.CheckCallbackPet
 end
 
 function FunctionItemFunc:GetItemDefaultFunc(data, source, dest_isfashion)
@@ -289,6 +300,16 @@ end
 function FunctionItemFunc.ItemUseEvt(data, count, cellCtl)
   FunctionSecurity.Me():UseItem(function()
     FunctionItemFunc.TryUseItem(data, nil, count, cellCtl)
+  end, {itemData = data})
+end
+
+function FunctionItemFunc.UseEffectItemEvt(data, count, cellCtl)
+  FunctionSecurity.Me():UseItem(function()
+    if Table_UseItem[data.staticData.id] then
+      FunctionItemFunc.DoUseItem(data, nil, count)
+    else
+      FunctionItemFunc.TryUseItem(data, nil, count, cellCtl)
+    end
   end, {itemData = data})
 end
 
@@ -633,8 +654,9 @@ function FunctionItemFunc.TryUseItem(data, target, count)
       return
     end
   end
-  if sdata.UseMode ~= nil and sdata.Type ~= 75 then
-    if sdata.id == 5800 and sdata.UseMode == 92 then
+  local useMode = sdata.UseMode
+  if useMode ~= nil and sdata.Type ~= 75 then
+    if sdata.id == 5800 and useMode == 92 then
       local canuse = LotteryProxy.Instance:CheckCanUseTicket()
       if not canuse then
         MsgManager.ShowMsgByID(3605)
@@ -646,9 +668,9 @@ function FunctionItemFunc.TryUseItem(data, target, count)
       return
     end
     if GameConfig.ShortcutFuncParam and GameConfig.ShortcutFuncParam[sdata.id] then
-      FuncShortCutFunc.Me():CallByID(sdata.UseMode, GameConfig.ShortcutFuncParam[sdata.id], nil, nil, nil, data and data.cellCtl)
+      FuncShortCutFunc.Me():CallByID(useMode, GameConfig.ShortcutFuncParam[sdata.id], nil, nil, nil, data and data.cellCtl)
     else
-      FuncShortCutFunc.Me():CallByID(sdata.UseMode, data.id, nil, nil, nil, data and data.cellCtl)
+      FuncShortCutFunc.Me():CallByID(useMode, data.id, nil, nil, nil, data and data.cellCtl)
     end
     return
   end
@@ -726,12 +748,15 @@ function FunctionItemFunc.TryUseItem(data, target, count)
           MsgManager.ShowMsgByID(1358)
           return
         end
+        local equipGen = euqipData.equipInfo.equipData.IsNew or 0
         if useEffect.new then
-          local equipGen = euqipData.equipInfo.equipData.IsNew or 0
           if equipGen ~= useEffect.new then
             MsgManager.ShowMsgByID(1361)
             return
           end
+        elseif equipGen == 2 then
+          MsgManager.ShowMsgByID(1361)
+          return
         end
         if useEffect.refusedamage == 1 and euqipData.equipInfo.damage then
           MsgManager.ShowMsgByID(26106)
@@ -1584,17 +1609,165 @@ function FunctionItemFunc.PutFood_Pet(data, count)
   ServiceSceneFoodProxy.Instance:CallPutFood(data.id, SceneFood_pb.EEATPOWR_SELF, count, true)
 end
 
-function FunctionItemFunc.Hatch(data)
-  local petInfoData = PetProxy.Instance:GetMyPetInfoData()
-  local eggInfo = data.petEggInfo
-  if eggInfo ~= nil and eggInfo.name ~= "" then
-    ServiceScenePetProxy.Instance:CallEggHatchPetCmd(nil, data.id)
-  else
-    GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
-      view = PanelConfig.PetMakeNamePopUp,
-      viewdata = {etype = 1, item = data}
-    })
+function FunctionItemFunc.QuickPetPackIn(data)
+  if data == nil or data.petEggInfo == nil then
+    return
   end
+  local pcfg = Table_Pet[data.petEggInfo.petid]
+  if pcfg == nil or pcfg.IsPvpPet == nil or pcfg.IsPvpPet == 0 then
+    MsgManager.ShowMsgByIDTable(43710)
+    return
+  end
+  local cap = GameConfig.Pet.quick_pack_capacity or 3
+  local petBag = BagProxy.Instance and BagProxy.Instance.petBagData
+  if petBag and cap <= petBag:GetPetEggQuickPackUsedCount() then
+    MsgManager.ShowMsgByIDTable(43709)
+    return
+  end
+  ServiceScenePetProxy.Instance:CallQuickPackOperPetCmd(true, data.id)
+end
+
+function FunctionItemFunc.CheckQuickPetPackIn(itemdata)
+  if not (itemdata ~= nil and itemdata:IsPetEgg()) or itemdata.petEggInfo == nil then
+    return ItemFuncState.InActive
+  end
+  local egg = itemdata.petEggInfo
+  if egg.quick_pack_slot and egg.quick_pack_slot > 0 then
+    return ItemFuncState.InActive
+  end
+  local pcfg = Table_Pet[egg.petid]
+  if pcfg and (pcfg.IsPvpPet == nil or pcfg.IsPvpPet == 0) then
+    return ItemFuncState.Grey
+  end
+  return ItemFuncState.Active
+end
+
+function FunctionItemFunc.QuickPetPackOut(data)
+  if Game.MapManager:IsPVPMode() then
+    MsgManager.ShowMsgByID(43714)
+    return
+  end
+  MsgManager.ConfirmMsgByID(43711, function()
+    ServiceScenePetProxy.Instance:CallQuickPackOperPetCmd(false, data.id)
+    EventManager.Me():PassEvent(PetEvent.CallbackPetConfirm, true)
+  end)
+  EventManager.Me():PassEvent(PetEvent.CallbackPetConfirm, false)
+end
+
+function FunctionItemFunc.CheckQuickPetPackOut(itemdata)
+  if not (itemdata ~= nil and itemdata:IsPetEgg()) or itemdata.petEggInfo == nil then
+    return ItemFuncState.InActive
+  end
+  local egg = itemdata.petEggInfo
+  if not egg:IsQuickPet() then
+    return ItemFuncState.InActive
+  end
+  return ItemFuncState.Active
+end
+
+function FunctionItemFunc.GetPetEggCD(data)
+  if data == nil then
+    return 0
+  end
+  local cdData, cdType
+  if data.cdGroup then
+    cdData = CDProxy.Instance:GetItemGroupInCD(data.cdGroup)
+    cdType = SceneUser2_pb.CD_TYPE_ITEMGROUP
+  end
+  if not cdData and data.staticData then
+    cdData = CDProxy.Instance:GetItemInCD(data.staticData.id)
+    cdType = SceneUser2_pb.CD_TYPE_ITEM
+  end
+  if not cdData then
+    data:SetCdTime(0)
+    return 0
+  end
+  local cd = 0
+  if cdData.time and 0 < cdData.time then
+    cd = math.max(0, (cdData.time - ServerTime.CurServerTime()) / 1000)
+  else
+    cd = cdData:GetCd()
+  end
+  cdData.cd = cd
+  if cd <= 0 then
+    if cdType == SceneUser2_pb.CD_TYPE_ITEMGROUP and data.cdGroup then
+      CDProxy.Instance:RemoveItemGroupCD(data.cdGroup)
+    elseif cdType == SceneUser2_pb.CD_TYPE_ITEM and data.staticData then
+      CDProxy.Instance:RemoveItemCD(data.staticData.id)
+    end
+    data:SetCdTime(0)
+    return 0
+  end
+  data:SetCdTime(cd)
+  return cd
+end
+
+function FunctionItemFunc.CheckPetFight(data)
+  if data == nil then
+    return ItemFuncState.InActive
+  end
+  local eggInfo = data.petEggInfo
+  if not eggInfo or StringUtil.IsEmpty(eggInfo.name) then
+    return ItemFuncState.InActive
+  end
+  if eggInfo:IsFighting() then
+    return ItemFuncState.InActive
+  end
+  if FunctionItemFunc.GetPetEggCD(data) > 0 then
+    return ItemFuncState.Grey
+  end
+  return ItemFuncState.Active
+end
+
+function FunctionItemFunc.PetFight(itemdata)
+  local egg = itemdata.petEggInfo
+  if egg and egg.quick_pack_slot and egg.quick_pack_slot == 0 and Game.MapManager:IsPVPMode() then
+    MsgManager.ShowMsgByID(43713)
+    return
+  end
+  ServiceScenePetProxy.Instance:CallEggHatchPetCmd(nil, itemdata.id, itemdata.petEggInfo and itemdata.petEggInfo.petid)
+end
+
+function FunctionItemFunc.CheckHatch(data)
+  local isPetEgg = data:IsPetEgg()
+  if not isPetEgg then
+    return ItemFuncState.InActive
+  end
+  local eggInfo = data.petEggInfo
+  if not eggInfo then
+    return ItemFuncState.Active
+  end
+  if not StringUtil.IsEmpty(eggInfo.name) then
+    return ItemFuncState.InActive
+  end
+  if eggInfo:IsFighting() then
+    return ItemFuncState.InActive
+  end
+  return ItemFuncState.Active
+end
+
+function FunctionItemFunc.Hatch(data)
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.PetMakeNamePopUp,
+    viewdata = {etype = 1, item = data}
+  })
+end
+
+function FunctionItemFunc.CallbackPet(item_data)
+  if BagProxy.Instance:CheckPetBagIsFull() then
+    MsgManager.ShowMsgByID(43465)
+    return
+  end
+  local eggInfo = item_data.petEggInfo
+  ServiceScenePetProxy.Instance:CallEggRestorePetCmd(eggInfo.petid)
+end
+
+function FunctionItemFunc.CheckCallbackPet(item_data)
+  local eggInfo = item_data.petEggInfo
+  if eggInfo and eggInfo:IsFighting() then
+    return ItemFuncState.Active
+  end
+  return ItemFuncState.InActive
 end
 
 function FunctionItemFunc.Open_Letter(data)
@@ -1961,6 +2134,14 @@ function FunctionItemFunc.CheckApply(itemdata)
     if nil ~= LotteryProxy.Instance:GetLotteryTypeByTicket(sData.id) then
       return ItemFuncState.Active
     end
+  end
+  return ItemFuncState.InActive
+end
+
+function FunctionItemFunc.CheckUseEffectItem(itemdata)
+  local sData = itemdata and itemdata.staticData
+  if sData and Table_UseItem[sData.id] then
+    return ItemFuncState.Active
   end
   return ItemFuncState.InActive
 end

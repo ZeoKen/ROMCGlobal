@@ -1,6 +1,7 @@
 autoImport("ItemTipBaseCell")
 ShopItemInfoCell = class("ShopItemInfoCell", ItemTipBaseCell)
 local DEFAULT_LIMIT = GameConfig.Shop.default_item_limit
+local previewUrlTipOffset = {196, 0}
 
 function ShopItemInfoCell:Exit()
   ShopItemInfoCell.super.Exit(self)
@@ -329,6 +330,44 @@ function ShopItemInfoCell:ShowFashionPreview()
     self:PassEvent(ItemTipEvent.ShowFashionPreview, self.sfp)
   else
     self:CloseFashionPreview()
+  end
+end
+
+function ShopItemInfoCell:OnClickPreview()
+  if self.cardPreviewBtn then
+    ShopItemInfoCell.super.OnClickPreview(self)
+    return
+  end
+  self:ShowPreviewUrlTip()
+end
+
+function ShopItemInfoCell:ShowPreviewUrlTip()
+  local itemid = self.data and self.data.staticData and self.data.staticData.id
+  if not itemid then
+    return
+  end
+  local tipData = {}
+  tipData.itemdata = ItemData.new("itemClickPreview", itemid)
+  tipData.itemdata.INIT_cardPreview = true
+  local stick = self.bg or self.gameObject:GetComponent(UIWidget)
+  local tip = TipManager.Instance:ShowItemFloatTip(tipData, stick, NGUIUtil.AnchorSide.Right, previewUrlTipOffset)
+  if tip then
+    tip:AddIgnoreBounds(self.gameObject)
+    self:AddIgnoreBounds(tip.gameObject)
+    tip:AddEventListener(ItemTipEvent.ShowFashionPreview, self.OnPreviewUrlTipFashionPreviewShow, self)
+    tip:AddEventListener(FashionPreviewEvent.Close, self.OnPreviewUrlTipFashionPreviewClose, self)
+  end
+end
+
+function ShopItemInfoCell:OnPreviewUrlTipFashionPreviewShow(preview)
+  if preview then
+    self:AddIgnoreBounds(preview.gameObject)
+  end
+end
+
+function ShopItemInfoCell:OnPreviewUrlTipFashionPreviewClose()
+  if self.closecomp then
+    self.closecomp:ReCalculateBound()
   end
 end
 

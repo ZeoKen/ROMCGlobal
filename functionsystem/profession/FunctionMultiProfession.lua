@@ -210,6 +210,7 @@ function FunctionMultiProfession:GetRolePartsByClassID(classid, parts, gender)
     parts[_PartIndex.Hair] = userData:Get(UDEnum.HAIR)
     parts[_PartIndex.Eye] = ProfessionProxy.GetOriginalEye(userData:Get(UDEnum.EYE), classBody)
   end
+  parts[_PartIndex.Head] = userData:Get(UDEnum.HEAD) or 0
   local weapon = classStaticData.DefaultWeapon
   parts[_PartIndex.RightWeapon] = weapon or 0
   if ProfessionProxy.IsHero(classid) then
@@ -220,6 +221,7 @@ function FunctionMultiProfession:GetRolePartsByClassID(classid, parts, gender)
       parts[_PartIndex.Eye] = classStaticData.Eye
     end
   end
+  Asset_Role.ProcessHeadFashionForParts(parts, parts[_PartIndex.Head], userData:GetBytes(UDEnum.HEAD_FASHION))
   parts[_PartIndexEX.Gender] = gender
   parts[_PartIndexEX.HairColorIndex] = userData:Get(UDEnum.HAIRCOLOR)
   parts[_PartIndexEX.EyeColorIndex] = userData:Get(UDEnum.EYECOLOR)

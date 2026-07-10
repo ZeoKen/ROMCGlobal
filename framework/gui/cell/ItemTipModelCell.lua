@@ -172,6 +172,17 @@ function ItemTipModelCell:initDropRelate()
     end
     self:ShowFashionPreview()
   end)
+  self.fashionStarBtn = self.trans:Find("MainPanel/Bottom/FashionStarBtn").gameObject
+  self.fashionStarLab = self:FindComponent("Label", UILabel, self.fashionStarBtn)
+  self.fashionStarLab.text = ZhString.UpgradeAppearance_Title
+  self:AddClickEvent(self.fashionStarBtn, function(go)
+    GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+      view = PanelConfig.FashionStarView,
+      viewdata = {
+        batchid = self.fashionBatch_id
+      }
+    })
+  end)
   self.PackageBtn = self.trans:Find("MainPanel/Bottom/PackageBtn").gameObject
   self.PackageBtnComp = self.PackageBtn:GetComponent(UIButton)
   self.PackageLabel = self:FindComponent("Label", UILabel, self.PackageBtn)
@@ -281,6 +292,15 @@ function ItemTipModelCell:initDropRelate()
         return
       end
       local skillid = cells[1].id
+      local config = Table_Skill[skillid]
+      local limitMap = config and config.Logic_Param and config.Logic_Param.use_limit_map
+      if limitMap then
+        local mapId = Game.MapManager:GetMapID()
+        if TableUtility.ArrayFindIndex(limitMap, mapId) == 0 then
+          MsgManager.ShowMsgByID(40907)
+          return
+        end
+      end
       FunctionSkill.Me():TryUseSkill(skillid)
       GameFacade.Instance:sendNotification(AdventurePanel.ClosePanel)
     end
@@ -431,6 +451,7 @@ function ItemTipModelCell:UpdateCardTabBtns()
   self.wearBtn:SetActive(false)
   self.UseToy:SetActive(false)
   self.UseEffectSkill:SetActive(false)
+  self.fashionStarBtn:SetActive(false)
   local showMakeBtn = false
   self.MakeHeadDress:SetActive(showMakeBtn)
   self.PackageBtn:SetActive(not showMakeBtn)
@@ -923,6 +944,15 @@ function ItemTipModelCell:SelectGroupItemCell(groupItemCell)
   self:UpdateTopModel()
 end
 
+function ItemTipModelCell:UpdateFashionStarBtn(staticId)
+  self.fashionBatch_id = FashionStarProxy.Instance:GetFashionStarBatchByEquip(staticId)
+  if self.fashionBatch_id and self.fashionBatch_id > 0 then
+    self:Show(self.fashionStarBtn)
+  else
+    self:Hide(self.fashionStarBtn)
+  end
+end
+
 function ItemTipModelCell:UpdateSkillContext()
   local contextDatas, itemData, store = {}
   if self.curSelectGroupItemCell then
@@ -949,6 +979,7 @@ function ItemTipModelCell:UpdateSkillContext()
       end
     end
   end
+  self:UpdateFashionStarBtn(staticId)
   if next(contextDatas) then
     self.skillTable:SetActive(true)
     self.skillCtl:ResetDatas(contextDatas)

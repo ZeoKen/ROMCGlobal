@@ -66661,6 +66661,505 @@ Table_GemParam = {
     SameName_Max = 20,
     SameName_Weight = 1,
     StarSign = 2
+  },
+  [6393] = {
+    id = 6393,
+    ParamID = 223101,
+    Nor_Max = 18,
+    Nor_Weight = 50,
+    SameName_Min = 18,
+    SameName_Max = 18,
+    SameName_Weight = 10,
+    Digit = 1000
+  },
+  [6394] = {
+    id = 6394,
+    ParamID = 223101,
+    Nor_Min = 18,
+    Nor_Max = 24,
+    Nor_Weight = 35,
+    SameName_Min = 18,
+    SameName_Max = 24,
+    Digit = 1000
+  },
+  [6395] = {
+    id = 6395,
+    ParamID = 223101,
+    Nor_Min = 24,
+    Nor_Weight = 5,
+    SameName_Min = 24,
+    Digit = 1000
+  },
+  [6396] = {
+    id = 6396,
+    ParamID = 223101,
+    Nor_Min = 30,
+    Nor_Max = 36,
+    Nor_Weight = 3,
+    SameName_Min = 30,
+    SameName_Max = 36,
+    SameName_Weight = 20,
+    Digit = 1000
+  },
+  [6397] = {
+    id = 6397,
+    ParamID = 223101,
+    Nor_Min = 36,
+    Nor_Max = 42,
+    SameName_Min = 36,
+    SameName_Max = 42,
+    SameName_Weight = 9,
+    Digit = 1000,
+    StarSign = 1
+  },
+  [6398] = {
+    id = 6398,
+    ParamID = 223101,
+    Nor_Min = 42,
+    Nor_Max = 48,
+    SameName_Min = 42,
+    SameName_Max = 48,
+    SameName_Weight = 7,
+    Digit = 1000,
+    StarSign = 1
+  },
+  [6399] = {
+    id = 6399,
+    ParamID = 223101,
+    Nor_Min = 48,
+    Nor_Max = 54,
+    SameName_Min = 48,
+    SameName_Max = 54,
+    SameName_Weight = 3,
+    Digit = 1000,
+    StarSign = 2
+  },
+  [6400] = {
+    id = 6400,
+    ParamID = 223101,
+    Nor_Min = 54,
+    Nor_Max = 60,
+    Nor_Weight = 1,
+    SameName_Min = 54,
+    SameName_Max = 60,
+    SameName_Weight = 1,
+    Digit = 1000,
+    StarSign = 2
+  },
+  [6401] = {
+    id = 6401,
+    ParamID = 223111,
+    Nor_Max = 6.7,
+    Nor_Weight = 50,
+    SameName_Min = 6.7,
+    SameName_Max = 6.7,
+    SameName_Weight = 10
+  },
+  [6402] = {
+    id = 6402,
+    ParamID = 223111,
+    Nor_Min = 6.7,
+    Nor_Max = 8.6,
+    Nor_Weight = 35,
+    SameName_Min = 6.7,
+    SameName_Max = 8.6
+  },
+  [6403] = {
+    id = 6403,
+    ParamID = 223111,
+    Nor_Min = 8.6,
+    Nor_Max = 10.5,
+    Nor_Weight = 5,
+    SameName_Min = 8.6,
+    SameName_Max = 10.5
+  },
+  [6404] = {
+    id = 6404,
+    ParamID = 223111,
+    Nor_Min = 10.5,
+    Nor_Max = 12.4,
+    Nor_Weight = 3,
+    SameName_Min = 10.5,
+    SameName_Max = 12.4,
+    SameName_Weight = 20
+  },
+  [6405] = {
+    id = 6405,
+    ParamID = 223111,
+    Nor_Min = 12.4,
+    Nor_Max = 14.3,
+    SameName_Min = 12.4,
+    SameName_Max = 14.3,
+    SameName_Weight = 9,
+    StarSign = 1
+  },
+  [6406] = {
+    id = 6406,
+    ParamID = 223111,
+    Nor_Min = 14.3,
+    Nor_Max = 16.2,
+    SameName_Min = 14.3,
+    SameName_Max = 16.2,
+    SameName_Weight = 7,
+    StarSign = 1
+  },
+  [6407] = {
+    id = 6407,
+    ParamID = 223111,
+    Nor_Min = 16.2,
+    Nor_Max = 18.1,
+    SameName_Min = 16.2,
+    SameName_Max = 18.1,
+    SameName_Weight = 3,
+    StarSign = 2
+  },
+  [6408] = {
+    id = 6408,
+    ParamID = 223111,
+    Nor_Min = 18.1,
+    Nor_Max = 20,
+    Nor_Weight = 1,
+    SameName_Min = 18.1,
+    SameName_Max = 20,
+    SameName_Weight = 1,
+    StarSign = 2
+  },
+  [6409] = {
+    id = 6409,
+    ParamID = 223121,
+    Nor_Min = -1,
+    Nor_Max = -9,
+    Nor_Weight = 50,
+    SameName_Min = -9,
+    SameName_Max = -9,
+    SameName_Weight = 10,
+    Digit = 1000
+  },
+  [6410] = {
+    id = 6410,
+    ParamID = 223121,
+    Nor_Min = -9,
+    Nor_Max = -12,
+    Nor_Weight = 35,
+    SameName_Min = -9,
+    SameName_Max = -12,
+    Digit = 1000
+  },
+  [6411] = {
+    id = 6411,
+    ParamID = 223121,
+    Nor_Min = -12,
+    Nor_Max = -15,
+    Nor_Weight = 5,
+    SameName_Min = -12,
+    SameName_Max = -15,
+    Digit = 1000
+  },
+  [6412] = {
+    id = 6412,
+    ParamID = 223121,
+    Nor_Min = -15,
+    Nor_Max = -18,
+    Nor_Weight = 3,
+    SameName_Min = -15,
+    SameName_Max = -18,
+    SameName_Weight = 20,
+    Digit = 1000
+  },
+  [6413] = {
+    id = 6413,
+    ParamID = 223121,
+    Nor_Min = -18,
+    Nor_Max = -21,
+    SameName_Min = -18,
+    SameName_Max = -21,
+    SameName_Weight = 9,
+    Digit = 1000,
+    StarSign = 1
+  },
+  [6414] = {
+    id = 6414,
+    ParamID = 223121,
+    Nor_Min = -21,
+    Nor_Max = -24,
+    SameName_Min = -21,
+    SameName_Max = -24,
+    SameName_Weight = 7,
+    Digit = 1000,
+    StarSign = 1
+  },
+  [6415] = {
+    id = 6415,
+    ParamID = 223121,
+    Nor_Min = -24,
+    Nor_Max = -27,
+    SameName_Min = -24,
+    SameName_Max = -27,
+    SameName_Weight = 3,
+    Digit = 1000,
+    StarSign = 2
+  },
+  [6416] = {
+    id = 6416,
+    ParamID = 223121,
+    Nor_Min = -27,
+    Nor_Max = -30,
+    Nor_Weight = 1,
+    SameName_Min = -27,
+    SameName_Max = -30,
+    SameName_Weight = 1,
+    Digit = 1000,
+    StarSign = 2
+  },
+  [6417] = {
+    id = 6417,
+    ParamID = 223131,
+    Nor_Min = -1,
+    Nor_Max = -6.7,
+    Nor_Weight = 50,
+    SameName_Min = -6.7,
+    SameName_Max = -6.7,
+    SameName_Weight = 10
+  },
+  [6418] = {
+    id = 6418,
+    ParamID = 223131,
+    Nor_Min = -6.7,
+    Nor_Max = -8.6,
+    Nor_Weight = 35,
+    SameName_Min = -6.7,
+    SameName_Max = -8.6
+  },
+  [6419] = {
+    id = 6419,
+    ParamID = 223131,
+    Nor_Min = -8.6,
+    Nor_Max = -10.5,
+    Nor_Weight = 5,
+    SameName_Min = -8.6,
+    SameName_Max = -10.5
+  },
+  [6420] = {
+    id = 6420,
+    ParamID = 223131,
+    Nor_Min = -10.5,
+    Nor_Max = -12.4,
+    Nor_Weight = 3,
+    SameName_Min = -10.5,
+    SameName_Max = -12.4,
+    SameName_Weight = 20
+  },
+  [6421] = {
+    id = 6421,
+    ParamID = 223131,
+    Nor_Min = -12.4,
+    Nor_Max = -14.3,
+    SameName_Min = -12.4,
+    SameName_Max = -14.3,
+    SameName_Weight = 9,
+    StarSign = 1
+  },
+  [6422] = {
+    id = 6422,
+    ParamID = 223131,
+    Nor_Min = -14.3,
+    Nor_Max = -16.2,
+    SameName_Min = -14.3,
+    SameName_Max = -16.2,
+    SameName_Weight = 7,
+    StarSign = 1
+  },
+  [6423] = {
+    id = 6423,
+    ParamID = 223131,
+    Nor_Min = -16.2,
+    Nor_Max = -18.1,
+    SameName_Min = -16.2,
+    SameName_Max = -18.1,
+    SameName_Weight = 3,
+    StarSign = 2
+  },
+  [6424] = {
+    id = 6424,
+    ParamID = 223131,
+    Nor_Min = -18.1,
+    Nor_Max = -20,
+    Nor_Weight = 1,
+    SameName_Min = -18.1,
+    SameName_Max = -20,
+    SameName_Weight = 1,
+    StarSign = 2
+  },
+  [6425] = {
+    id = 6425,
+    ParamID = 223141,
+    Nor_Min = -1,
+    Nor_Max = -6,
+    Nor_Weight = 50,
+    SameName_Min = -6,
+    SameName_Max = -6,
+    SameName_Weight = 10,
+    Digit = 1000
+  },
+  [6426] = {
+    id = 6426,
+    ParamID = 223141,
+    Nor_Min = -6,
+    Nor_Max = -8,
+    Nor_Weight = 35,
+    SameName_Min = -6,
+    SameName_Max = -8,
+    Digit = 1000
+  },
+  [6427] = {
+    id = 6427,
+    ParamID = 223141,
+    Nor_Min = -8,
+    Nor_Max = -10,
+    Nor_Weight = 5,
+    SameName_Min = -8,
+    SameName_Max = -10,
+    Digit = 1000
+  },
+  [6428] = {
+    id = 6428,
+    ParamID = 223141,
+    Nor_Min = -10,
+    Nor_Max = -12,
+    Nor_Weight = 3,
+    SameName_Min = -10,
+    SameName_Max = -12,
+    SameName_Weight = 20,
+    Digit = 1000
+  },
+  [6429] = {
+    id = 6429,
+    ParamID = 223141,
+    Nor_Min = -12,
+    Nor_Max = -14,
+    SameName_Min = -12,
+    SameName_Max = -14,
+    SameName_Weight = 9,
+    Digit = 1000,
+    StarSign = 1
+  },
+  [6430] = {
+    id = 6430,
+    ParamID = 223141,
+    Nor_Min = -14,
+    Nor_Max = -16,
+    SameName_Min = -14,
+    SameName_Max = -16,
+    SameName_Weight = 7,
+    Digit = 1000,
+    StarSign = 1
+  },
+  [6431] = {
+    id = 6431,
+    ParamID = 223141,
+    Nor_Min = -16,
+    Nor_Max = -18,
+    SameName_Min = -16,
+    SameName_Max = -18,
+    SameName_Weight = 3,
+    Digit = 1000,
+    StarSign = 2
+  },
+  [6432] = {
+    id = 6432,
+    ParamID = 223141,
+    Nor_Min = -18,
+    Nor_Max = -20,
+    Nor_Weight = 1,
+    SameName_Min = -18,
+    SameName_Max = -20,
+    SameName_Weight = 1,
+    Digit = 1000,
+    StarSign = 2
+  },
+  [6433] = {
+    id = 6433,
+    ParamID = 223151,
+    Nor_Max = 15,
+    Nor_Weight = 50,
+    SameName_Min = 15,
+    SameName_Max = 15,
+    SameName_Weight = 10,
+    Digit = 1000
+  },
+  [6434] = {
+    id = 6434,
+    ParamID = 223151,
+    Nor_Min = 15,
+    Nor_Max = 20,
+    Nor_Weight = 35,
+    SameName_Min = 15,
+    SameName_Max = 20,
+    Digit = 1000
+  },
+  [6435] = {
+    id = 6435,
+    ParamID = 223151,
+    Nor_Min = 20,
+    Nor_Max = 25,
+    Nor_Weight = 5,
+    SameName_Min = 20,
+    SameName_Max = 25,
+    Digit = 1000
+  },
+  [6436] = {
+    id = 6436,
+    ParamID = 223151,
+    Nor_Min = 25,
+    Nor_Weight = 3,
+    SameName_Min = 25,
+    SameName_Weight = 20,
+    Digit = 1000
+  },
+  [6437] = {
+    id = 6437,
+    ParamID = 223151,
+    Nor_Min = 30,
+    Nor_Max = 35,
+    SameName_Min = 30,
+    SameName_Max = 35,
+    SameName_Weight = 9,
+    Digit = 1000,
+    StarSign = 1
+  },
+  [6438] = {
+    id = 6438,
+    ParamID = 223151,
+    Nor_Min = 35,
+    Nor_Max = 40,
+    SameName_Min = 35,
+    SameName_Max = 40,
+    SameName_Weight = 7,
+    Digit = 1000,
+    StarSign = 1
+  },
+  [6439] = {
+    id = 6439,
+    ParamID = 223151,
+    Nor_Min = 40,
+    Nor_Max = 45,
+    SameName_Min = 40,
+    SameName_Max = 45,
+    SameName_Weight = 3,
+    Digit = 1000,
+    StarSign = 2
+  },
+  [6440] = {
+    id = 6440,
+    ParamID = 223151,
+    Nor_Min = 45,
+    Nor_Max = 50,
+    Nor_Weight = 1,
+    SameName_Min = 45,
+    SameName_Max = 50,
+    SameName_Weight = 1,
+    Digit = 1000,
+    StarSign = 2
   }
 }
 local cell_mt = {

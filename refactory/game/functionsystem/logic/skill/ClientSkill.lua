@@ -38,7 +38,12 @@ function ClientSkill:Launch(targetCreature, targetPosition, creature, ignoreCast
     self.targetCreatureGUID = 0
   end
   local p
-  if nil ~= targetPosition then
+  local skillTargetType = self.info:GetTargetType(creature)
+  if skillTargetType == SkillTargetType.None then
+    p = creature:GetPosition()
+    self.phaseData:SetPosition(p)
+    self.phaseData:SetAngleY(nil)
+  elseif nil ~= targetPosition then
     p = targetPosition
     self.phaseData:SetPosition(targetPosition)
     local angleY = VectorHelper.GetAngleByAxisY(creature:GetPosition(), targetPosition)
@@ -417,7 +422,7 @@ function ClientSkill:SyncDirMoveFromServer(creature, phaseData)
               creature:HideMyself(false)
             end
             dirPoint:Destroy()
-          end, nil, dirPoint, true, allowMergeMove)
+          end, nil, dirPoint, self.info and self.info:IsIgnoreTerrain() or false, allowMergeMove)
         end
       end
     end
@@ -447,7 +452,7 @@ function ClientSkill:SyncDirMoveFromServer(creature, phaseData)
           targetCreature.logicTransform:ExtraDirMove(dirAngleY, dirMoveDistance, sHT_Gopos[4] * attackSpeed, function(logicTransform, arg)
             SkillLogic_Base.CheckExtraDirMove(logicTransform, arg)
             dirPoint:Destroy()
-          end, nil, dirPoint, true, allowMergeMove)
+          end, nil, dirPoint, self.info and self.info:IsIgnoreTerrain() or false, allowMergeMove)
         end
       end
     end

@@ -1,5 +1,6 @@
 SdkLoginPanel = class("SdkLoginPanel", BaseView)
 SdkLoginPanel.ViewType = UIViewType.PopUpLayer
+SdkLoginPanel.GuestLoginConfirmMsgID = 1000014
 
 function SdkLoginPanel:Init()
   self.callback = self.viewdata.data
@@ -16,6 +17,8 @@ function SdkLoginPanel:initView()
   self.googleBtn_first = self:FindGO("FirstLayer/Google")
   self.appleBtn = self:FindGO("FirstLayer/Apple")
   self.facebookBtn = self:FindGO("FirstLayer/Facebook")
+  self.facebookSp = self.facebookBtn:GetComponent("UISprite")
+  self.facebookLabel = self:FindComponent("Label", UILabel, self.facebookBtn)
   self.guestBtn = self:FindGO("Guest")
   self.moreBtn = self:FindGO("More")
   self.moreSp = self.moreBtn:GetComponent("UISprite")
@@ -40,7 +43,7 @@ end
 
 function SdkLoginPanel:AddEvt()
   self:AddClickEvent(self.guestBtn, function(go)
-    self:LoginByType(0, self.callback)
+    self:LoginByGuest()
   end)
   self:AddClickEvent(self.appleBtn, function(go)
     self:LoginByType(2, self.callback)
@@ -52,7 +55,11 @@ function SdkLoginPanel:AddEvt()
     self:LoginByType(3, self.callback)
   end)
   self:AddClickEvent(self.facebookBtn, function(go)
-    self:LoginByType(4, self.callback)
+    if self.facebookAsEmail then
+      self:LoginByType(12, self.callback)
+    else
+      self:LoginByType(4, self.callback)
+    end
   end)
   self:AddClickEvent(self.lineBtn, function(go)
     self:LoginByType(6, self.callback)
@@ -108,6 +115,23 @@ function SdkLoginPanel:AppleOrGoogle()
       self.moreLabel.text = "Facebook"
     end
   end
+  if BranchMgr.IsNOKR() then
+    if FunctionLoginTDSG.Me():GetPlat() == "68" then
+      self.facebookBtn:SetActive(true)
+      self.facebookAsEmail = true
+      if self.facebookSp then
+        self.facebookSp.spriteName = "sdk_btn_email"
+      end
+      if self.facebookLabel then
+        self.facebookLabel.text = "Email"
+      end
+    else
+      self.facebookBtn:SetActive(false)
+    end
+    self.moreBtn:SetActive(false)
+    self.googleBtn_first:SetActive(true)
+    self.appleBtn:SetActive(true)
+  end
 end
 
 function SdkLoginPanel:SortByBranch()
@@ -122,6 +146,17 @@ function SdkLoginPanel:SwitchLayer()
   self.firstLayer:SetActive(self.moreTypes)
   self.secondLayer:SetActive(not self.moreTypes)
   self.moreTypes = not self.moreTypes
+end
+
+function SdkLoginPanel:LoginByGuest()
+  local msgId = SdkLoginPanel.GuestLoginConfirmMsgID
+  if (BranchMgr.IsKorea() or BranchMgr.IsNOKR()) and msgId ~= nil and Table_Sysmsg ~= nil and Table_Sysmsg[msgId] ~= nil then
+    MsgManager.ConfirmMsgByID(msgId, function()
+      self:LoginByType(0, self.callback)
+    end)
+  else
+    self:LoginByType(0, self.callback)
+  end
 end
 
 function SdkLoginPanel:LoginByType(loginType, callback)

@@ -584,6 +584,15 @@ function ServiceMapAutoProxy:CallSpEffectCmd(senderid, data, isadd)
         table.insert(msg.data.freeobj, data.freeobj[i])
       end
     end
+    if data ~= nil and data.replace_max_distance ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.data == nil then
+        msg.data = {}
+      end
+      msg.data.replace_max_distance = data.replace_max_distance
+    end
     if isadd ~= nil then
       msg.isadd = isadd
     end
@@ -642,6 +651,15 @@ function ServiceMapAutoProxy:CallSpEffectCmd(senderid, data, isadd)
       for i = 1, #data.freeobj do
         table.insert(msgParam.data.freeobj, data.freeobj[i])
       end
+    end
+    if data ~= nil and data.replace_max_distance ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.data == nil then
+        msgParam.data = {}
+      end
+      msgParam.data.replace_max_distance = data.replace_max_distance
     end
     if isadd ~= nil then
       msgParam.isadd = isadd

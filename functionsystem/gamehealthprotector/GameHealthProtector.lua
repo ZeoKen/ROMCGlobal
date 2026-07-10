@@ -8,6 +8,8 @@ GameHealthProtector.E_EvtType = {
   NPC = SceneUser2_pb.EGHEVENTTYPE_NPC,
   Barrage = SceneUser2_pb.EGHEVENTTYPE_BARRAGE
 }
+local LoginDurationTipTickId = 9991
+local LoginDurationTipDefaultInterval = 3600
 local _GVGSettingOptions = {
   [1] = {
     func = FunctionPerformanceSetting.Me().SetHurtNumStyleDetail,
@@ -74,8 +76,74 @@ function GameHealthProtector:OptimizeGVGSettingOption()
 end
 
 function GameHealthProtector:GameEnd()
+  self:StopLoginDurationTipTimer()
   self:TryRestoreFpsCacheSetting()
   GvgProxy.Instance:ClearFPSCheckTime()
+end
+
+function GameHealthProtector:GetLoginDurationTipInterval()
+  local interval = GameConfig.GameHealth and GameConfig.GameHealth.LoginDurationTipInterval
+  interval = tonumber(interval)
+  return interval and 0 < interval and interval or LoginDurationTipDefaultInterval
+end
+
+function GameHealthProtector:GetLoginDurationTipTime()
+  return ServerTime.CurClientTime() / 1000
+end
+
+function GameHealthProtector:CanShowLoginDurationTip()
+  return BranchMgr.IsNOKR() and ApplicationInfo.IsRunOnWindowns()
+end
+
+function GameHealthProtector:GetLoginDurationTipText(hour)
+  return string.format(ZhString.LoginDurationTip_Text, hour)
+end
+
+function GameHealthProtector:SendLoginDurationTipChatMessage(hour)
+  if not (ChatRoomProxy and ChatRoomProxy.Instance) or not ChatChannelEnum then
+    return
+  end
+  ChatRoomProxy.Instance:AddSystemMessage(ChatChannelEnum.System, self:GetLoginDurationTipText(hour))
+end
+
+function GameHealthProtector:StartLoginDurationTipTimer()
+  if not self:CanShowLoginDurationTip() then
+    self:StopLoginDurationTipTimer()
+    return
+  end
+  if self.loginDurationTipStartTime then
+    return
+  end
+  self.loginDurationTipStartTime = self:GetLoginDurationTipTime()
+  self.loginDurationTipShowHour = 0
+  self.loginDurationTipInterval = self:GetLoginDurationTipInterval()
+  TimeTickManager.Me():CreateTick(self.loginDurationTipInterval * 1000, self.loginDurationTipInterval * 1000, self.UpdateLoginDurationTip, self, LoginDurationTipTickId)
+end
+
+function GameHealthProtector:StopLoginDurationTipTimer()
+  TimeTickManager.Me():ClearTick(self, LoginDurationTipTickId)
+  self.loginDurationTipStartTime = nil
+  self.loginDurationTipShowHour = nil
+  self.loginDurationTipInterval = nil
+end
+
+function GameHealthProtector:UpdateLoginDurationTip()
+  if not self:CanShowLoginDurationTip() then
+    self:StopLoginDurationTipTimer()
+    return
+  end
+  if not self.loginDurationTipStartTime then
+    self:StopLoginDurationTipTimer()
+    return
+  end
+  local interval = self.loginDurationTipInterval or self:GetLoginDurationTipInterval()
+  local hour = math.floor((self:GetLoginDurationTipTime() - self.loginDurationTipStartTime) / interval)
+  if hour <= 0 or hour == self.loginDurationTipShowHour then
+    return
+  end
+  self.loginDurationTipShowHour = hour
+  UIUtil.ShowLoginDurationTip(hour)
+  self:SendLoginDurationTipChatMessage(hour)
 end
 
 function GameHealthProtector:TryRestoreFpsCacheSetting()

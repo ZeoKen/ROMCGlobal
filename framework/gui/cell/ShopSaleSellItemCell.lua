@@ -1,6 +1,10 @@
 autoImport("ShopItemInfoCell")
 ShopSaleSellItemCell = class("ShopSaleSellItemCell", ShopItemInfoCell)
 
+function ShopSaleSellItemCell:CanShowSellPriceButton(itemData)
+  return false
+end
+
 function ShopSaleSellItemCell:SetData(data)
   if data then
     self.data = data
@@ -9,7 +13,7 @@ function ShopSaleSellItemCell:SetData(data)
     self.maxcount = data.maxcount
     IconManager:SetMoneyIcon(moneytype, self.priceIcon)
     IconManager:SetMoneyIcon(moneytype, self.totalPriceIcon)
-    local pureCost = ShopSaleProxy.Instance:GetPurePrice(self.data)
+    local pureCost = ShopSaleProxy.Instance:GetDiscountPurePrice(self.data)
     self.discount, self.discountCount = ShopSaleProxy.Instance:GetTotalSellDiscount(pureCost)
     if self.discount ~= 0 then
       self.salePrice:SetActive(true)
@@ -37,7 +41,7 @@ end
 
 function ShopSaleSellItemCell:CalcTotalPrice(count)
   self.totalCost = ShopSaleSellItemCell.super.CalcTotalPrice(self, count)
-  local pureCost = ShopSaleProxy.Instance:GetPurePrice(self.data)
+  local pureCost = ShopSaleProxy.Instance:GetDiscountPurePrice(self.data)
   self.discount, self.discountCount = ShopSaleProxy.Instance:GetTotalSellDiscount(pureCost)
   self.discountCount = self.discountCount * count
   self.discountTotal = self.discountCount + self.totalCost

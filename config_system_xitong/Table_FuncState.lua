@@ -291,6 +291,27 @@ Table_FuncState = {
     MapID = _EmptyTable,
     MenuID = _EmptyTable
   },
+  [178] = {
+    id = 178,
+    Type = "",
+    Param = _EmptyTable,
+    ServerID = {
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    },
+    NpcFunction = _EmptyTable,
+    NpcID = _EmptyTable,
+    QuestID = _EmptyTable,
+    ShopItemID = _EmptyTable,
+    ItemID = _EmptyTable,
+    MapID = _EmptyTable,
+    MenuID = _EmptyTable,
+    ActivityID = 108036
+  },
   [1000] = {
     id = 1000,
     Type = "personal_artifact_forbidden",
@@ -922,6 +943,7 @@ Table_FuncState_fields = {
   "ShopItemID",
   "ItemID",
   "MapID",
-  "MenuID"
+  "MenuID",
+  "ActivityID"
 }
 return Table_FuncState

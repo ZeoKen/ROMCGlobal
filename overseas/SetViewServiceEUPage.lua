@@ -24,6 +24,7 @@ function SetViewServiceEUPage:Init(initParama)
     local playerName = "未登入"
     if Game ~= nil and Game.Myself ~= nil then
       playerName = Game.Myself.data:GetName()
+      playerName = RemoveSpecialChara(playerName)
     end
     local lineName = ChangeZoneProxy.Instance:ZoneNumToString(MyselfProxy.Instance:GetZoneId())
     xdlog(playerName, lineName)
@@ -34,6 +35,7 @@ function SetViewServiceEUPage:Init(initParama)
       roleInfo = roleInfo ~= nil and roleInfo or ServiceUserProxy.Instance:GetRoleInfo()
       local roleId = roleInfo.id
       local roleName = Game.Myself.data:GetName()
+      roleName = RemoveSpecialChara(roleName)
       FunctionSDK.Instance:EnterBugReport(serverID, roleId, roleName)
     else
       FunctionSDK.Instance:EnterUserCenter(serverID, info, version)

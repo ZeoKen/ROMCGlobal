@@ -975,11 +975,34 @@ end
 function PhotographPanel:getValidScenery(scenicSpotID)
   local scenicSpot
   if scenicSpotID then
-    scenicSpot = FunctionScenicSpot.Me():GetScenicSpot(scenicSpotID)
-    if scenicSpot then
-      local camera = self.cameraController.activeCamera
-      local viewport = camera:WorldToViewportPoint(scenicSpot.position)
-      if not (0 < viewport.x and viewport.x < 1 and 0 < viewport.y and 1 > viewport.y and camera.nearClipPlane < viewport.z) or not (camera.farClipPlane > viewport.z) then
+    local scenicSpotMgr = FunctionScenicSpot.Me()
+    local scenicSpots = scenicSpotMgr:GetScenicSpots(scenicSpotID)
+    if scenicSpots then
+      if scenicSpots.ID then
+        scenicSpot = scenicSpots
+      else
+        local playerPos = Game.Myself:GetPosition()
+        local camera = self.cameraController.activeCamera
+        local bestSpot, bestResult, bestViewportVisible, bestDistance
+        for i = 1, #scenicSpots do
+          local single = scenicSpots[i]
+          if single and single.position and single.guid and FindCreature(single.guid) then
+            scenicSpotMgr:UpdateScenicCreaturePos(single)
+            local viewport = camera:WorldToViewportPoint(single.position)
+            local viewportVisible = 0 < viewport.x and 1 > viewport.x and 0 < viewport.y and 1 > viewport.y and camera.nearClipPlane < viewport.z and camera.farClipPlane > viewport.z
+            local result = self:checkFocus(playerPos, single.position)
+            if result ~= PhotographPanel.FocusStatus.FarMore then
+              local distance = LuaVector3.Distance_Square(playerPos, single.position)
+              if not (bestSpot and (not viewportVisible or bestViewportVisible)) or viewportVisible == bestViewportVisible and bestResult > result or viewportVisible == bestViewportVisible and result == bestResult and bestDistance > distance then
+                bestSpot = single
+                bestResult = result
+                bestViewportVisible = viewportVisible
+                bestDistance = distance
+              end
+            end
+          end
+        end
+        scenicSpot = bestSpot
       end
     end
   else

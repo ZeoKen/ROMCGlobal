@@ -681,7 +681,7 @@ function ChatMessageData:GetMainViewText()
         local targetCreature = SceneCreatureProxy.FindCreature(targetId)
         targetData = targetCreature and targetCreature.data
       end
-      str = ChatRoomProxy.MakeExpressionText(self:GetStr(true), self:GetName(), targetData and targetData.name)
+      str = ChatRoomProxy.MakeExpressionText(self:GetStr(true), self:GetName(), ChatRoomProxy.GetExpressionTargetName(targetId, targetData and targetData.name))
     else
       str = AppendSpace2Str(self:GetStr(true))
     end

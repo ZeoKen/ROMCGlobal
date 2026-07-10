@@ -19,6 +19,34 @@ function LoopActIntegrationProxy:Init()
   self:InitActivityGroups()
 end
 
+function LoopActIntegrationProxy:GetAreaAndServerName()
+  local branchName = BranchMgr.Get_EAREA()
+  if branchName == "CH" and ISNoviceServerType then
+    branchName = "NOCH"
+  elseif branchName == "NOTW" then
+    branchName = "NO"
+  elseif branchName == "NOEN" then
+    branchName = "NONA"
+  end
+  return branchName
+end
+
+function LoopActIntegrationProxy:CheckAreaAndServerValid(staticData, branchName)
+  local areaAndServer = staticData and staticData.AreaAndServer
+  if not areaAndServer or #areaAndServer <= 0 then
+    return false
+  end
+  return 0 < TableUtility.ArrayFindIndex(areaAndServer, branchName or self:GetAreaAndServerName())
+end
+
+function LoopActIntegrationProxy:CheckRoleLevelValid(staticData)
+  local roleLevel = staticData and staticData.RoleLevel
+  if not roleLevel then
+    return true
+  end
+  return roleLevel <= MyselfProxy.Instance:RoleLevel()
+end
+
 function LoopActIntegrationProxy:InitActivityGroups()
   if not Table_ActivityNew then
     return
@@ -47,29 +75,19 @@ function LoopActIntegrationProxy:GetGroupInfo(groupID)
   local bannerActivityID
   local currentTime = ServerTime.CurServerTime() / 1000
   local isTF = EnvChannel.IsTFBranch()
-  local tfDayInAdvance = 0
-  local currentTimeForBaseCompare = currentTime
-  if isTF and 0 < tfDayInAdvance then
-    currentTimeForBaseCompare = currentTime + tfDayInAdvance * 86400
-  end
-  local branchName = BranchMgr.Get_EAREA()
-  if branchName == "CH" and ISNoviceServerType then
-    branchName = "NOCH"
-  elseif branchName == "NOTW" then
-    branchName = "NO"
-  elseif branchName == "NOEN" then
-    branchName = "NONA"
-  end
+  local branchName = self:GetAreaAndServerName()
   for i = 1, #groupInfo.activityIDs do
     local activityID = groupInfo.activityIDs[i]
     local staticData = Table_ActivityNew[activityID]
     if staticData then
-      local serverValid = true
-      local areaAndServer = staticData.AreaAndServer
-      if areaAndServer and 0 < #areaAndServer then
-        serverValid = 0 < TableUtility.ArrayFindIndex(areaAndServer, branchName)
+      local tfDayInAdvance = staticData.TfDayInAdvance or 0
+      local currentTimeForBaseCompare = currentTime
+      if isTF and 0 < tfDayInAdvance then
+        currentTimeForBaseCompare = currentTime + tfDayInAdvance * 86400
       end
-      if staticData.Type == "banner" and serverValid then
+      local serverValid = self:CheckAreaAndServerValid(staticData, branchName)
+      local roleLevelValid = self:CheckRoleLevelValid(staticData)
+      if staticData.Type == "banner" and serverValid and roleLevelValid then
         local timeValid, realStartTime, realEndTime = self:CheckTimeValid(staticData)
         if timeValid then
           local baseStartTime = self:ParseDateTime(staticData.StartTime)
@@ -110,13 +128,10 @@ function LoopActIntegrationProxy:GetGroupInfo(groupID)
             bannerActivityID = activityID
           end
         end
-      elseif serverValid then
+      elseif serverValid and roleLevelValid then
         if staticData.Cycle and staticData.Cycle ~= "" then
           local timeValid, realStartTime, realEndTime = self:CheckTimeValid(staticData)
           if timeValid then
-            local startTimeStr = realStartTime and ServerTime.Ori_OsDate("%Y-%m-%d %H:%M:%S", realStartTime) or "nil"
-            local endTimeStr = realEndTime and ServerTime.Ori_OsDate("%Y-%m-%d %H:%M:%S", realEndTime) or "nil"
-            xdlog(string.format("[LoopActIntegrationProxy] 时间合法 activityID: %s, realStartTime: %s, realEndTime: %s, startTimeStr: %s, endTimeStr: %s", tostring(activityID), tostring(realStartTime), tostring(realEndTime), startTimeStr, endTimeStr))
             table.insert(filteredActivityIDs, activityID)
           elseif self:CheckActivityValid(activityID) then
             table.insert(filteredActivityIDs, activityID)
@@ -128,8 +143,6 @@ function LoopActIntegrationProxy:GetGroupInfo(groupID)
             table.insert(filteredActivityIDs, activityID)
           end
         end
-      else
-        redlog("serverValid is false", activityID)
       end
     end
   end
@@ -162,21 +175,10 @@ function LoopActIntegrationProxy:GetAllGroupShowInfo()
     if _config.Type == "banner" then
       local groupID = _config.Group
       if groupID then
-        local serverValid = true
-        local areaAndServer = _config.AreaAndServer
-        if areaAndServer and 0 < #areaAndServer then
-          local branchName = BranchMgr.Get_EAREA()
-          if branchName == "CH" and ISNoviceServerType then
-            branchName = "NOCH"
-          elseif branchName == "NOTW" then
-            branchName = "NO"
-          elseif branchName == "NOEN" then
-            branchName = "NONA"
-          end
-          serverValid = 0 < TableUtility.ArrayFindIndex(areaAndServer, branchName)
-        end
+        local serverValid = self:CheckAreaAndServerValid(_config)
+        local roleLevelValid = self:CheckRoleLevelValid(_config)
         local timeValid, realStartTime, realEndTime = self:CheckTimeValid(_config)
-        if serverValid and realStartTime then
+        if serverValid and roleLevelValid and realStartTime then
           local paramsInte = _config.Params_Inte or {}
           if not candidateBanners[groupID] then
             candidateBanners[groupID] = {}
@@ -283,17 +285,11 @@ function LoopActIntegrationProxy:GetMaxDayInMonth(year, month)
 end
 
 function LoopActIntegrationProxy:ConvertToGameDay(timestamp)
-  local displayDate = os.date("*t", timestamp)
-  local timezoneDiff = 0
-  if ServerTime.DATE_TIMEZONE and ServerTime.SERVER_TIMEZONE then
-    timezoneDiff = ServerTime.DATE_TIMEZONE - ServerTime.SERVER_TIMEZONE
+  local refreshTime = ClientTimeUtil.GetDailyRefreshTimeByTimeStamp(timestamp)
+  if timestamp >= refreshTime then
+    return refreshTime
   end
-  local gameDayHour = 5 + timezoneDiff
-  if gameDayHour <= displayDate.hour then
-    return ClientTimeUtil.GetDailyRefreshTimeByTimeStamp(timestamp)
-  else
-    return ClientTimeUtil.GetDailyRefreshTimeByTimeStamp(timestamp - 86400)
-  end
+  return refreshTime - 86400
 end
 
 function LoopActIntegrationProxy:CheckTimeValid(config)
@@ -378,10 +374,10 @@ function LoopActIntegrationProxy:CalculateMonthlyTime(baseStartDate, baseEndDate
   local targetYear = currentDate.year
   local targetMonth = currentDate.month
   if checkCurrentTime then
-    local currentTimestamp = os.time(currentDate)
+    local currentTimestamp = ServerTime.Ori_OsTime(currentDate)
     local bestStartTime, bestEndTime, bestStartTimeDiff
-    local baseStartTime = os.time(baseStartDate)
-    local baseEndTime = os.time(baseEndDate)
+    local baseStartTime = ServerTime.Ori_OsTime(baseStartDate)
+    local baseEndTime = ServerTime.Ori_OsTime(baseEndDate)
     local currentGameDay = self:ConvertToGameDay(currentTimestamp)
     local baseStartGameDay = self:ConvertToGameDay(baseStartTime)
     if currentGameDay < baseStartGameDay then
@@ -410,7 +406,7 @@ function LoopActIntegrationProxy:CalculateMonthlyTime(baseStartDate, baseEndDate
       if endDay > maxDayInEndMonth then
         endDay = maxDayInEndMonth
       end
-      local realStartTime = os.time({
+      local realStartTime = ServerTime.Ori_OsTime({
         year = testYear,
         month = testMonth,
         day = startDay,
@@ -418,7 +414,7 @@ function LoopActIntegrationProxy:CalculateMonthlyTime(baseStartDate, baseEndDate
         min = baseStartDate.min,
         sec = baseStartDate.sec
       })
-      local realEndTime = os.time({
+      local realEndTime = ServerTime.Ori_OsTime({
         year = endYear,
         month = endMonth,
         day = endDay,
@@ -491,7 +487,7 @@ function LoopActIntegrationProxy:CalculateMonthlyTime(baseStartDate, baseEndDate
         if maxDayInEndMonth < actualEndDay then
           actualEndDay = maxDayInEndMonth
         end
-        local realStartTime = os.time({
+        local realStartTime = ServerTime.Ori_OsTime({
           year = testYear,
           month = testMonth,
           day = actualStartDay,
@@ -499,7 +495,7 @@ function LoopActIntegrationProxy:CalculateMonthlyTime(baseStartDate, baseEndDate
           min = baseStartDate.min,
           sec = baseStartDate.sec
         })
-        local realEndTime = os.time({
+        local realEndTime = ServerTime.Ori_OsTime({
           year = endYear,
           month = endMonth,
           day = actualEndDay,
@@ -535,9 +531,9 @@ function LoopActIntegrationProxy:CalculateYearlyTime(baseStartDate, baseEndDate,
   local targetYear = currentDate.year
   local targetMonth = currentDate.month
   if checkCurrentTime then
-    local currentTimestamp = os.time(currentDate)
+    local currentTimestamp = ServerTime.Ori_OsTime(currentDate)
     local bestStartTime, bestEndTime, bestStartTimeDiff, baseYearPeriod
-    local baseStartTime = os.time(baseStartDate)
+    local baseStartTime = ServerTime.Ori_OsTime(baseStartDate)
     local startYear = baseStartDate.year - 2
     local endYear = math.max(baseStartDate.year, currentDate.year) + 2
     for testYear = startYear, endYear do
@@ -557,7 +553,7 @@ function LoopActIntegrationProxy:CalculateYearlyTime(baseStartDate, baseEndDate,
       if endDay > maxDayInEndMonth then
         endDay = maxDayInEndMonth
       end
-      local realStartTime = os.time({
+      local realStartTime = ServerTime.Ori_OsTime({
         year = testYear,
         month = startMonth,
         day = startDay,
@@ -565,7 +561,7 @@ function LoopActIntegrationProxy:CalculateYearlyTime(baseStartDate, baseEndDate,
         min = baseStartDate.min,
         sec = baseStartDate.sec
       })
-      local realEndTime = os.time({
+      local realEndTime = ServerTime.Ori_OsTime({
         year = endYearForPeriod,
         month = endMonth,
         day = endDay,
@@ -607,7 +603,7 @@ function LoopActIntegrationProxy:CalculateYearlyTime(baseStartDate, baseEndDate,
     end
     return nil, nil
   else
-    local baseStartTime = os.time(baseStartDate)
+    local baseStartTime = ServerTime.Ori_OsTime(baseStartDate)
     local startDay = baseStartDate.day
     local endDay = baseEndDate.day
     local startMonth = baseStartDate.month
@@ -639,7 +635,7 @@ function LoopActIntegrationProxy:CalculateYearlyTime(baseStartDate, baseEndDate,
     if endDay > maxDayInEndMonth then
       endDay = maxDayInEndMonth
     end
-    local realStartTime = os.time({
+    local realStartTime = ServerTime.Ori_OsTime({
       year = startYear,
       month = startMonth,
       day = startDay,
@@ -647,7 +643,7 @@ function LoopActIntegrationProxy:CalculateYearlyTime(baseStartDate, baseEndDate,
       min = baseStartDate.min,
       sec = baseStartDate.sec
     })
-    local realEndTime = os.time({
+    local realEndTime = ServerTime.Ori_OsTime({
       year = endYear,
       month = endMonth,
       day = endDay,
@@ -678,7 +674,7 @@ function LoopActIntegrationProxy:CalculateSeasonlyTime(baseStartDate, baseEndDat
   local testYear = baseStartDate.year
   local testMonth = baseStartDate.month
   if checkCurrentTime then
-    local currentTimestamp = os.time(currentDate)
+    local currentTimestamp = ServerTime.Ori_OsTime(currentDate)
     local bestStartTime, bestEndTime, bestEndYear
     while testYear < currentDate.year or testYear == currentDate.year and testMonth <= currentDate.month + 3 do
       local startDay = baseStartDate.day
@@ -701,7 +697,7 @@ function LoopActIntegrationProxy:CalculateSeasonlyTime(baseStartDate, baseEndDat
       if endDay > maxDayInEndMonth then
         endDay = maxDayInEndMonth
       end
-      local realStartTime = os.time({
+      local realStartTime = ServerTime.Ori_OsTime({
         year = testYear,
         month = testMonth,
         day = startDay,
@@ -709,7 +705,7 @@ function LoopActIntegrationProxy:CalculateSeasonlyTime(baseStartDate, baseEndDat
         min = baseStartDate.min,
         sec = baseStartDate.sec
       })
-      local realEndTime = os.time({
+      local realEndTime = ServerTime.Ori_OsTime({
         year = endYear,
         month = endMonth,
         day = endDay,
@@ -773,7 +769,7 @@ function LoopActIntegrationProxy:CalculateSeasonlyTime(baseStartDate, baseEndDat
         endDay = maxDayInEndMonth
       end
       if testYear == targetYear and testMonth == targetMonth then
-        local realStartTime = os.time({
+        local realStartTime = ServerTime.Ori_OsTime({
           year = testYear,
           month = testMonth,
           day = startDay,
@@ -781,7 +777,7 @@ function LoopActIntegrationProxy:CalculateSeasonlyTime(baseStartDate, baseEndDat
           min = baseStartDate.min,
           sec = baseStartDate.sec
         })
-        local realEndTime = os.time({
+        local realEndTime = ServerTime.Ori_OsTime({
           year = endYear,
           month = endMonth,
           day = endDay,
@@ -820,25 +816,10 @@ function LoopActIntegrationProxy:GetMonthlyShowInfo(groupID)
   local targetDate = ServerTime.Ori_OsDate("*t", gameDayTimestamp)
   local targetMonth = targetDate.month
   local targetYear = targetDate.year
-  local branchName = BranchMgr.Get_EAREA()
-  if branchName == "CH" and ISNoviceServerType then
-    branchName = "NOCH"
-  elseif branchName == "NOTW" then
-    branchName = "NO"
-  elseif branchName == "NOEN" then
-    branchName = "NONA"
-  end
+  local branchName = self:GetAreaAndServerName()
   for actID, config in pairs(Table_ActivityNew) do
     if config.Group == groupID and config.Params_Inte then
-      local serverValid = false
-      local areaAndServer = config.AreaAndServer
-      if areaAndServer and 0 < #areaAndServer then
-        if 0 < TableUtility.ArrayFindIndex(areaAndServer, branchName) then
-          serverValid = true
-        end
-      else
-        serverValid = true
-      end
+      local serverValid = self:CheckAreaAndServerValid(config, branchName)
       if serverValid then
         local cycle = config.Cycle
         if not cycle or cycle == "" then
@@ -921,6 +902,7 @@ local SubTypeMap = {
   new_server_challenge = 2,
   flip_card = 3,
   act_bp_shop = 4,
+  lottery_raid = 14,
   boss_scene_season = 12
 }
 
@@ -947,6 +929,9 @@ function LoopActIntegrationProxy:GetActivityTime(staticData)
   local actType = tonumber(staticData.Type)
   local actID = staticData.id
   if isGlobalActivity == 1 then
+    if actType == ActivityCmd_pb.GACTIVITY_ACT_PAY_SIGN then
+      return ActivityPaySignProxy.Instance:GetGlobalActTime(actID)
+    end
     return self:GetGlobalActivityTime(actType, actID)
   else
     return self:GetPersonalActivityTime(actID)
@@ -983,10 +968,15 @@ function LoopActIntegrationProxy:CheckActivityValid(activityID)
   if not staticData then
     return false
   end
+  if not self:CheckRoleLevelValid(staticData) then
+    return false
+  end
   if staticData.IsGlobalActivity == 1 then
     local type = staticData.Type
     if type == "act_bp" then
       return ActivityBattlePassProxy.Instance:IsBPAvailable(activityID)
+    elseif type == tostring(ActivityCmd_pb.GACTIVITY_ACT_PAY_SIGN) then
+      return ActivityPaySignProxy.Instance:IsPaySignAvailable(activityID)
     else
       return FunctionActivity.Me():IsActivityRunning(tonumber(type))
     end

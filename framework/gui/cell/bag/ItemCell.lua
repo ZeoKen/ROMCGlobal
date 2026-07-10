@@ -181,6 +181,7 @@ function ItemCell:SetData(data)
     self:SetShopCorner(itemType)
   end
   self:SetPetFlag(itemType)
+  self:SetContractPetFlag(data)
   self:SetUseItemInvalid(data)
   self:SetFoodStars(data)
   self:SetPersonalArtifact(data)
@@ -995,7 +996,7 @@ end
 
 function ItemCell:UpdateNumLabel(scount, x, y, z)
   local needHide = false
-  if type(scount) == "number" and scount <= 1 then
+  if type(scount) == "number" and scount <= 1 and (not self.data or not self.data.forceShowNum) then
     needHide = true
   end
   if self.numHide or needHide then
@@ -1146,4 +1147,23 @@ function ItemCell:SetSnowGemStarsAlpha(advLv)
       self.snowGemAdvStarSprites[i].alpha = i <= advLv and 1 or 0
     end
   end
+end
+
+local IsContractPetData = function(petData)
+  return petData ~= nil and petData.ContractSkill ~= nil and petData.ContractSkill[1] ~= nil and petData.ContractSkill[2] ~= nil
+end
+local IsContractPetItemData = function(data)
+  local petData
+  local petid = data and data.petEggInfo and data.petEggInfo.petid
+  if petid and petid ~= 0 then
+    petData = Table_Pet and Table_Pet[petid]
+  end
+  if petData == nil and data and data.staticData then
+    petData = Game.Config_EggPet and Game.Config_EggPet[data.staticData.id]
+  end
+  return IsContractPetData(petData)
+end
+
+function ItemCell:SetContractPetFlag(data)
+  self:SetShowCellPart("ContractPet", IsContractPetItemData(data))
 end

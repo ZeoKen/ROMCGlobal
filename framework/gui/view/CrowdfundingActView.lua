@@ -52,7 +52,7 @@ function CrowdfundingActView:InitData()
     funcConfig = _EmptyTable,
     itemdata = ItemData.new()
   }
-  self.isShowRewardPartLeft = false
+  self.isShowRewardPartLeft = true
 end
 
 function CrowdfundingActView:FindObjs()
@@ -91,11 +91,20 @@ function CrowdfundingActView:InitView()
     self.rewardCells[i] = CrowdfundingRewardCell.new(self:FindGO("Reward" .. i))
     self.rewardCells[i]:AddEventListener(MouseEvent.MouseClick, self.OnClickRewardCell, self)
   end
-  self.pRewardBoxes, self.pProgressTips, self.pProgressLabels, self.pRewardEffects = {}, {}, {}, {}
+  self.pRewardBoxes, self.pProgressTips, self.pProgressLabels, self.pRewardEffects, self.pRewardIcons = {}, {}, {}, {}, {}
   for i = 1, pRewardCount do
+    local pRewardData
     self.pRewardBoxes[i] = self:FindGO("PReward" .. i)
     self.pProgressTips[i] = self:FindGO("PProgressTip" .. i)
     self.pProgressLabels[i] = self:FindComponent("Label", UILabel, self.pProgressTips[i])
+    self.pRewardIcons[i] = self:FindComponent("RewardIcon", UISprite, self.pRewardBoxes[i])
+    pRewardData = self.cfg.personalreward[i]
+    if self.pRewardIcons[i] then
+      self.pRewardIcons[i].gameObject:SetActive(pRewardData ~= nil and Table_Item[pRewardData.itemid] ~= nil)
+      if pRewardData and Table_Item[pRewardData.itemid] then
+        IconManager:SetItemIcon(Table_Item[pRewardData.itemid].Icon, self.pRewardIcons[i])
+      end
+    end
   end
   local iconName, icon = Table_Item[self.cfg.item].Icon
   self.itemIcons = {}

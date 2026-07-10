@@ -58,6 +58,10 @@ function TargetHeadCell:Init()
   self.prestigeGO = self:FindGO("PrestigeLevelBG")
   self.prestigeBg = self.prestigeGO:GetComponent(UIMultiSprite)
   self.prestigeLevel = self:FindGO("PrestigeLevel", self.prestigeGO):GetComponent(UILabel)
+  self.cdMask = self:FindComponent("CDMask", UISprite)
+  if self.cdMask then
+    self.cdMask.fillAmount = 0
+  end
 end
 
 function TargetHeadCell:InitHeadIconCell()
@@ -74,6 +78,19 @@ function TargetHeadCell:SetData(data)
     local target = SceneCreatureProxy.FindCreature(data.creatureId)
     if target then
       self:SetResistanceValue(target)
+    end
+  end
+  if data then
+    local headType = data:GetCustomParam("HeadType")
+    if headType == MainViewHeadPage.HeadType.SoulPuppet then
+      local cdTotalDuration = data:GetCustomParam("cd_total_duration")
+      local cdEndTime = data:GetCustomParam("cd_end_time")
+      if cdTotalDuration and cdEndTime then
+        self:StartCDMaskCountdown(cdTotalDuration, cdEndTime)
+      end
+    else
+      self:ClearCDMaskTick()
+      self:ShowCDMask(false)
     end
   end
 end
@@ -161,6 +178,8 @@ function TargetHeadCell:RefreshSelf(data)
     self:UpdateHeadBg(2)
   elseif headType == MainViewHeadPage.HeadType.Boki then
     self:UpdatePetHead()
+  elseif headType == MainViewHeadPage.HeadType.SoulPuppet then
+    self:UpdateHeadBg(3)
   end
   if self.hp then
     self.hp.gameObject:SetActive(headType == MainViewHeadPage.HeadType.Pet or headType == MainViewHeadPage.HeadType.Being or headType == MainViewHeadPage.HeadType.Boki or headType == MainViewHeadPage.HeadType.Pippi)
@@ -250,7 +269,18 @@ end
 
 function TargetHeadCell:UpdatePetHead()
   self:UpdateRestTip(self.data:GetCustomParam("relivetime"))
+  self:UpdateAlive()
   self:UpdateHp()
+end
+
+function TargetHeadCell:UpdateAlive()
+  if type(self.data) ~= "table" then
+    return
+  end
+  local alive = self.data:GetCustomParam("alive")
+  if alive ~= nil then
+    self:SetIconActive(alive, alive)
+  end
 end
 
 function TargetHeadCell:UpdateRestTip(resttime)
@@ -291,8 +321,12 @@ function TargetHeadCell:UpdateRestTime()
   resttime = resttime or 0
   local restSec = resttime - ServerTime.CurServerTime() / 1000
   if 0 < restSec then
-    local min, sec = ClientTimeUtil.GetFormatSecTimeStr(restSec)
-    self.restTime.text = string.format(ZhString.TMInfoCell_RestTip, min, sec)
+    if 60 <= restSec then
+      local min, sec = ClientTimeUtil.GetFormatSecTimeStr(restSec)
+      self.restTime.text = string.format(ZhString.TMInfoCell_RestTip, min, sec)
+    else
+      self.restTime.text = string.format(ZhString.TMInfoCell_RestTipSecond, math.ceil(restSec))
+    end
   else
     self:RemoveRestTimeTick()
   end
@@ -327,7 +361,9 @@ function TargetHeadCell:UpdateHp()
       local hp = props:GetPropByName("Hp"):GetValue()
       local maxhp = props:GetPropByName("MaxHp"):GetValue()
       self.data.hp = hp / maxhp
-      if headType == MainViewHeadPage.HeadType.Boki then
+      if headType == MainViewHeadPage.HeadType.Pet then
+        self:UpdateAlive()
+      elseif headType == MainViewHeadPage.HeadType.Boki then
         self:SetIconActive(0 ~= hp, 0 ~= hp)
       end
     end
@@ -410,4 +446,61 @@ end
 
 function TargetHeadCell:OnCellDestroy()
   self:ClearResistanceTick()
+  self:ClearCDMaskTick()
+end
+
+function TargetHeadCell:SetCDMask(fillAmount)
+  if not self.cdMask then
+    return
+  end
+  self.cdMask.fillAmount = fillAmount or 0
+end
+
+function TargetHeadCell:ShowCDMask(show)
+  if not self.cdMask then
+    return
+  end
+  if not show then
+    self.cdMask.fillAmount = 0
+  end
+end
+
+function TargetHeadCell:UpdateCDMaskValue()
+  if not self.cdMask then
+    return
+  end
+  local currentTime = ServerTime.CurServerTime() / 1000
+  local remaining = self.cdEndTime - currentTime
+  if 0 < remaining then
+    self.cdMask.fillAmount = 1 - remaining / self.cdTotalDuration
+  else
+    self.cdMask.fillAmount = 1
+    self:ClearCDMaskTick()
+  end
+end
+
+function TargetHeadCell:StartCDMaskCountdown(totalDuration, endTime)
+  if not self.cdMask then
+    return
+  end
+  self:ClearCDMaskTick()
+  if totalDuration and 0 < totalDuration and endTime then
+    self.cdTotalDuration = totalDuration
+    self.cdEndTime = endTime
+    self:UpdateCDMaskValue()
+    self.cdMaskTick = TimeTickManager.Me():CreateTick(0, 33, function(owner, deltaTime)
+      self:UpdateCDMaskValue()
+    end, self, 1112)
+  else
+    self.cdMask.fillAmount = 0
+  end
+end
+
+function TargetHeadCell:ClearCDMaskTick()
+  if self.cdMaskTick then
+    TimeTickManager.Me():ClearTick(self, 1112)
+    self.cdMaskTick = nil
+    self.cdTotalDuration = nil
+    self.cdEndTime = nil
+  end
 end

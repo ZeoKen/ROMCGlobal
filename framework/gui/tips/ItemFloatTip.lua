@@ -79,7 +79,7 @@ function ItemFloatTip:InitCells()
   end
 end
 
-function ItemFloatTip:ClickTipFuncEvent()
+function ItemFloatTip:ClickTipFuncEvent(cellCtl)
   self:CloseSelf()
 end
 
@@ -635,10 +635,11 @@ function ItemFloatTip:DefaultClickItemUrl(id, pivot)
     itemClickUrlData.equipInfo:SetRefine(tonumber(split[2]))
   end
   self.cells[2]:SetData(itemClickUrlData)
+  self.cells[2]:HideGetPath()
   self.cells[3]:SetData()
-  self.closecomp:ReCalculateBound()
-  self:RestrictInView()
   self:Reposition(pivot)
+  self:RestrictInViewByBounds()
+  self.closecomp:ReCalculateBound()
 end
 
 function ItemFloatTip:ClickBufferUrl(id)
@@ -684,32 +685,81 @@ end
 
 function ItemFloatTip:RestrictInView()
   local rsSizeX = (UIManagerProxy.Instance:GetUIRootSize()[1] - 400) / 2
+  local offsetX = 0
   local go1 = self.cells[1] and self.cells[1].gameObject
   if not Slua.IsNull(go1) and go1.activeInHierarchy then
-    local x, y, z = NGUIUtil.GetUIPositionXYZ(go1)
+    local x = NGUIUtil.GetUIPositionXYZ(go1)
     if x < -rsSizeX then
-      local tx, ty, tz = LuaGameObject.GetLocalPositionGO(self.gameObject)
-      LuaGameObject.SetLocalPositionGO(self.gameObject, tx + (-rsSizeX - x), ty, tz)
-      return
+      offsetX = -rsSizeX - x
     end
   end
+  local rightOverflow = 0
   local go2 = self.cells[2] and self.cells[2].gameObject
   if not Slua.IsNull(go2) and go2.activeInHierarchy then
-    local x, y, z = NGUIUtil.GetUIPositionXYZ(go2)
+    local x = NGUIUtil.GetUIPositionXYZ(go2)
     if rsSizeX < x then
-      local tx, ty, tz = LuaGameObject.GetLocalPositionGO(self.gameObject)
-      LuaGameObject.SetLocalPositionGO(self.gameObject, tx - (x - rsSizeX), ty, tz)
-      return
+      rightOverflow = math.max(rightOverflow, x - rsSizeX)
     end
   end
   local go3 = self.cells[3] and self.cells[3].gameObject
   if not Slua.IsNull(go3) and go3.activeInHierarchy then
-    local x, y, z = NGUIUtil.GetUIPositionXYZ(go3)
+    local x = NGUIUtil.GetUIPositionXYZ(go3)
     if rsSizeX < x then
-      local tx, ty, tz = LuaGameObject.GetLocalPositionGO(self.gameObject)
-      LuaGameObject.SetLocalPositionGO(self.gameObject, tx - (x - rsSizeX), ty, tz)
-      return
+      rightOverflow = math.max(rightOverflow, x - rsSizeX)
     end
+  end
+  if 0 < rightOverflow then
+    offsetX = offsetX - rightOverflow
+  end
+  if offsetX ~= 0 then
+    local tx, ty, tz = LuaGameObject.GetLocalPositionGO(self.gameObject)
+    LuaGameObject.SetLocalPositionGO(self.gameObject, tx + offsetX, ty, tz)
+  end
+end
+
+function ItemFloatTip:RestrictInViewByBounds()
+  local screenWidth = UIManagerProxy.Instance:GetUIRootSize()[1]
+  local halfScreen = screenWidth / 2
+  local margin = 0
+  local leftLimit = -halfScreen + margin
+  local rightLimit = halfScreen - margin
+  local minX, maxX
+  local cellHalfWidth = 197
+  for i = 1, 3 do
+    local cell = self.cells[i]
+    if cell and cell.data and not Slua.IsNull(cell.gameObject) and cell.gameObject.activeInHierarchy then
+      local x = NGUIUtil.GetUIPositionXYZ(cell.gameObject)
+      local cellLeft = x - cellHalfWidth
+      local cellRight = x + cellHalfWidth
+      if minX == nil or minX > cellLeft then
+        minX = cellLeft
+      end
+      if maxX == nil or maxX < cellRight then
+        maxX = cellRight
+      end
+    end
+  end
+  if minX == nil or maxX == nil then
+    return
+  end
+  local offsetX = 0
+  if leftLimit > minX then
+    offsetX = leftLimit - minX
+  end
+  local adjustedMaxX = maxX + offsetX
+  if rightLimit < adjustedMaxX then
+    local rightOverflow = adjustedMaxX - rightLimit
+    local finalOffset = offsetX - rightOverflow
+    local finalMinX = minX + finalOffset
+    if leftLimit > finalMinX then
+      offsetX = leftLimit - minX
+    else
+      offsetX = finalOffset
+    end
+  end
+  if offsetX ~= 0 then
+    local tx, ty, tz = LuaGameObject.GetLocalPositionGO(self.gameObject)
+    LuaGameObject.SetLocalPositionGO(self.gameObject, tx + offsetX, ty, tz)
   end
 end
 

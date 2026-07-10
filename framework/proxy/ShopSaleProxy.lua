@@ -279,16 +279,18 @@ end
 function ShopSaleProxy:GetTotalPrice()
   local price = 0
   local purePrice = 0
+  local discountPurePrice = 0
   local data, item
   for i = 1, #self.waitSaleItems do
     item = self.waitSaleItems[i]
     data = self:GetItemByGuid(item.guid)
     if data then
       purePrice = purePrice + self:GetPurePrice(data) * item.nums
+      discountPurePrice = discountPurePrice + self:GetDiscountPurePrice(data) * item.nums
     end
     price = price + item.price
   end
-  return price, purePrice
+  return price, purePrice, discountPurePrice
 end
 
 function ShopSaleProxy:IsHaveHighQualityItem()
@@ -420,6 +422,34 @@ function ShopSaleProxy:GetPurePrice(data)
   return 0
 end
 
+function ShopSaleProxy:IsNoSellDiscountItem(data)
+  local config = GameConfig and GameConfig.Item and GameConfig.Item.no_sell_discount_item_ids
+  if not config then
+    return false
+  end
+  local staticId = data and data.staticData and data.staticData.id
+  if not staticId then
+    return false
+  end
+  local configFlag = config[staticId] or config[tostring(staticId)]
+  if configFlag == true or configFlag == 1 then
+    return true
+  end
+  for i = 1, #config do
+    if config[i] == staticId or tonumber(config[i]) == staticId then
+      return true
+    end
+  end
+  return false
+end
+
+function ShopSaleProxy:GetDiscountPurePrice(data)
+  if self:IsNoSellDiscountItem(data) then
+    return 0
+  end
+  return self:GetPurePrice(data)
+end
+
 function ShopSaleProxy:SetBagType(bagType)
   self.bagType = bagType
 end
@@ -472,6 +502,10 @@ function ShopSaleProxy:GetItemByGuid(guid)
 end
 
 function ShopSaleProxy:GetTotalSellDiscount(totalCost)
+  totalCost = totalCost or 0
+  if totalCost <= 0 then
+    return 0, 0, totalCost
+  end
   local sellDiscount = Game.Myself.data.props:GetPropByName("SellDiscount"):GetValue() / 1000
   local discount = math.floor(totalCost * sellDiscount)
   return sellDiscount, discount, totalCost + discount

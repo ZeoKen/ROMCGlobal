@@ -233,6 +233,24 @@ Table_ActPersonalTimer = {
       ShopShowID = 1019
     }
   },
+  [105850] = {
+    id = 105850,
+    Type = "new_server_challenge",
+    Servers = _EmptyTable,
+    TfStartTime = "2026-06-01 05:00:00",
+    TfEndTime = "2026-06-15 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2026-06-08 05:00:00",
+    EndTime = "2026-06-22 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "神谕挑战",
+    Misc = {
+      ShopType = 650,
+      ShopId = 36,
+      ShopShowID = 1025
+    }
+  },
   [106001] = {
     id = 106001,
     Type = "fate_select",
@@ -287,6 +305,39 @@ Table_ActPersonalTimer = {
           item = {3011821, 1},
           cost = {
             {3011820, 2}
+          },
+          exchange_count = 1,
+          red_tip = 1
+        }
+      }
+    }
+  },
+  [106105] = {
+    id = 106105,
+    Type = "exchange",
+    Servers = _EmptyTable,
+    TfStartTime = "2026-06-01 05:00:00",
+    TfEndTime = "2026-06-15 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2026-06-08 05:00:00",
+    EndTime = "2026-06-22 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "奇迹魔术营",
+    Misc = {
+      exchange_item = {
+        [1] = {
+          item = {25295, 1},
+          cost = {
+            {25294, 3}
+          },
+          exchange_count = 1,
+          red_tip = 1
+        },
+        [2] = {
+          item = {25296, 1},
+          cost = {
+            {25295, 2}
           },
           exchange_count = 1,
           red_tip = 1

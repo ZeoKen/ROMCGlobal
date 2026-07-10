@@ -1591,7 +1591,7 @@ function ProfessionNewPage:HandleUpdateBranchInfo(note)
 end
 
 function ProfessionNewPage:OnInheritSkillBtnClick(params)
-  if not FunctionUnLockFunc.Me():CheckCanOpen(19390) then
+  if not FunctionUnLockFunc.Me():CheckCanOpen(19391) then
     MsgManager.ShowMsgByID(43661)
     return
   end

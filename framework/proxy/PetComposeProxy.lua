@@ -27,6 +27,7 @@ end
 
 function PetComposeProxy:InitProxy()
   self.petMap = {}
+  self.petMapContract = {}
   self.unlockIgnorePosItems = {}
   self.unlockItems = {}
   self.petSkinCfg = GameConfig.PetAdvance and GameConfig.PetAdvance or PET_SKIN_CFG
@@ -110,6 +111,11 @@ function PetComposeProxy:ResetComposeGuilds()
   else
     TableUtility.TableClear(self.composeEggGuids)
   end
+  if nil == self.composeMaterialItemGuids then
+    self.composeMaterialItemGuids = {}
+  else
+    TableUtility.TableClear(self.composeMaterialItemGuids)
+  end
 end
 
 function PetComposeProxy:AddComposeGuid(index, guid)
@@ -121,6 +127,20 @@ function PetComposeProxy:GetComposeGuid(index)
     return nil
   end
   return self.composeEggGuids[index]
+end
+
+function PetComposeProxy:SetComposeMaterialItemGuid(materialId, guid)
+  if self.composeMaterialItemGuids == nil then
+    self.composeMaterialItemGuids = {}
+  end
+  self.composeMaterialItemGuids[materialId] = guid
+end
+
+function PetComposeProxy:GetComposeMaterialItemGuid(materialId)
+  if self.composeMaterialItemGuids == nil then
+    return nil
+  end
+  return self.composeMaterialItemGuids[materialId]
 end
 
 function PetComposeProxy:GetGuids()
@@ -136,6 +156,21 @@ function PetComposeProxy:CanCompose()
     local materialPet = queryCfg["MaterialPet" .. i]
     if materialPet and materialPet.id and nil == self.composeEggGuids[i] then
       return false
+    end
+  end
+  local _bagProxy = BagProxy.Instance
+  local _materialItem = queryCfg.MaterialItem
+  if _materialItem then
+    for i = 1, #_materialItem do
+      local entry = _materialItem[i]
+      local itemid = entry.id or entry[1]
+      local need = entry.count or entry[2]
+      if itemid and need then
+        local have = _bagProxy:GetItemNumByStaticID(itemid) or 0
+        if need > have then
+          return false
+        end
+      end
     end
   end
   return true
@@ -172,9 +207,13 @@ function PetComposeProxy:GetDendrogramData(pet_id)
 end
 
 local validDateArray = {}
+local PetHasContractSkill = function(petCsv)
+  return petCsv and petCsv.ContractSkill and petCsv.ContractSkill[1] and petCsv.ContractSkill[2]
+end
 
 function PetComposeProxy:InitStaticData()
   TableUtility.TableClear(self.petMap)
+  self.petMapContract = {}
   for _, v in pairs(Table_Pet) do
     if AdventureDataProxy.Instance:checkPetIsInManual(v.id) then
       local staticdata = Table_Item[v.EggID]
@@ -183,10 +222,17 @@ function PetComposeProxy:InitStaticData()
         validDateArray[2] = staticdata.TFValidDate
       end
       if ItemUtil.CheckDateValid(validDateArray) then
-        if not self.petMap[v.Star] then
-          self.petMap[v.Star] = {}
+        if PetHasContractSkill(v) then
+          if not self.petMapContract[v.Star] then
+            self.petMapContract[v.Star] = {}
+          end
+          _ArrayPushBack(self.petMapContract[v.Star], v.id)
+        else
+          if not self.petMap[v.Star] then
+            self.petMap[v.Star] = {}
+          end
+          _ArrayPushBack(self.petMap[v.Star], v.id)
         end
-        _ArrayPushBack(self.petMap[v.Star], v.id)
       end
     end
   end
@@ -194,6 +240,48 @@ end
 
 function PetComposeProxy:GetPetsIDByStar()
   return self.petMap
+end
+
+function PetComposeProxy:GetPetComposeTableRows()
+  local rows = {}
+  local pushRow = function(sortKey, row)
+    local list = row.value
+    if list and 0 < #list then
+      row.sortKey = sortKey
+      rows[#rows + 1] = row
+    end
+  end
+  pushRow(60, {
+    contractSymbol = true,
+    star = 3,
+    value = self.petMapContract[3] or {}
+  })
+  pushRow(50, {
+    contractSymbol = true,
+    star = 2,
+    value = self.petMapContract[2] or {}
+  })
+  pushRow(40, {
+    contractSymbol = true,
+    star = 1,
+    value = self.petMapContract[1] or {}
+  })
+  pushRow(30, {
+    star = 3,
+    value = self.petMap[3] or {}
+  })
+  pushRow(20, {
+    star = 2,
+    value = self.petMap[2] or {}
+  })
+  pushRow(10, {
+    star = 1,
+    value = self.petMap[1] or {}
+  })
+  table.sort(rows, function(a, b)
+    return a.sortKey > b.sortKey
+  end)
+  return rows
 end
 
 local defaultLv = 1

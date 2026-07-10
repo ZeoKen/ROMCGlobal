@@ -88,7 +88,6 @@ Table_Appellation = {
   },
   [1006] = {
     id = 1006,
-    Name = "C级冒险家",
     GroupID = 1,
     PostID = 1007,
     Level = "C",
@@ -96,6 +95,7 @@ Table_Appellation = {
   },
   [1007] = {
     id = 1007,
+    Name = "B级冒险家",
     GroupID = 1,
     PostID = 1008,
     Level = "B",
@@ -711,7 +711,6 @@ Table_Appellation = {
   },
   [1204] = {
     id = 1204,
-    Name = "C级冒险家",
     GroupID = 3,
     TitleSort = 1204,
     PostID = 1205,
@@ -720,6 +719,7 @@ Table_Appellation = {
   },
   [1205] = {
     id = 1205,
+    Name = "B级冒险家",
     GroupID = 3,
     TitleSort = 1205,
     PostID = 1290,
@@ -1704,6 +1704,12 @@ Table_Appellation = {
     TitleSort = 3031857,
     OrderType = 0,
     BaseProp = Table_Appellation_t.BaseProp[7]
+  },
+  [3042165] = {
+    id = 3042165,
+    Name = "[c][edadff]幽寂纨仪客[-][/c]",
+    TitleSort = 3042165,
+    OrderType = 0
   }
 }
 local cell_mt = {
@@ -1711,7 +1717,7 @@ local cell_mt = {
     BaseProp = _EmptyTable,
     GroupID = 2,
     Level = "",
-    Name = "B级冒险家",
+    Name = "C级冒险家",
     id = 1275
   }
 }

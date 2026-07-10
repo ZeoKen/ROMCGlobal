@@ -1638,7 +1638,7 @@ function SnowRealmManager:GetBluePrintFurnitureFinishedNum(staticID)
 end
 
 function SnowRealmManager:TryGetHomeWorkbenchDiscount(key)
-  LogUtility.Error("SnowRealmManager:TryGetHomeWorkbenchDiscount not implemented yet")
+  return HomeManager.GetInstance():TryGetHomeWorkbenchDiscount(key)
 end
 
 function SnowRealmManager:RegisterWorkingHomeStore(furniture)
@@ -2366,62 +2366,37 @@ function SnowRealmManager:IsSnowRealmMap(mapId)
   return true
 end
 
-function SnowRealmManager:HandleQuerySnowHouseDataHomeCmd(data)
-  self:CreateMessageBoardEffect()
-end
-
-function SnowRealmManager:CreateMessageBoardEffect()
-  self:DestroyMessageBoardEffect()
-  local myHomeIndex = SnowRealmProxy.Instance:GetMySelfHomeIndex()
-  if myHomeIndex and 0 < myHomeIndex then
-    local configName = "sc_xhzd_home_" .. tostring(myHomeIndex)
-    pcall(function()
-      autoImport(configName)
-    end)
-    local mapInfo = _G[configName]
-    local data = mapInfo and mapInfo[1]
-    if data and data.x and data.y and data.z then
-      do
-        local path = EffectMap.Maps[GameConfig.SnowRealm and GameConfig.SnowRealm.MessageBoardEffect or ""]
-        if path then
-          local effect = Asset_Effect.PlayAtXYZ(path, data.x, data.y, data.z)
-          self.messageBoardEffect = effect
+function SnowRealmManager:CreateSceneEffect()
+  local curMapID = Game.MapManager:GetMapID()
+  local snowCfg = GameConfig.SnowRealm
+  local effectPos = LuaVector3.Zero()
+  if not self.sceneEffect then
+    local sceneEffectCfg = snowCfg and snowCfg.SceneEffect
+    if sceneEffectCfg and sceneEffectCfg.Effect then
+      local areaRaidInfo = snowCfg and snowCfg.HouseRaid
+      local bpPoint = areaRaidInfo and curMapID == areaRaidInfo.RaidID and sceneEffectCfg.RaidBp or sceneEffectCfg.BpPoint
+      if bpPoint ~= nil then
+        local bp = Game.MapManager:FindBornPoint(bpPoint)
+        if bp then
+          local path = "Common/" .. sceneEffectCfg.Effect
+          LuaVector3.Better_Set(effectPos, bp.position[1], bp.position[2], bp.position[3])
+          self.sceneEffect = Asset_Effect.PlayAt(path, effectPos)
         end
       end
     end
   end
-end
-
-function SnowRealmManager:DestroyMessageBoardEffect()
-  if self.messageBoardEffect then
-    self.messageBoardEffect:Destroy()
-    self.messageBoardEffect = nil
-  end
-end
-
-function SnowRealmManager:EnterEditModeUseNpcFunction()
-  self.currentUseNpcFunction = true
-  local myHomeIndex = SnowRealmProxy and SnowRealmProxy.Instance and SnowRealmProxy.Instance:GetMySelfHomeIndex()
-  self:HandleEnterSnowRealmRoom(myHomeIndex)
-  self:EnterEditMode()
-end
-
-function SnowRealmManager:CreateSceneEffect()
-  if not self.sceneEffect then
-    local sceneEffectCfg = GameConfig.SnowRealm and GameConfig.SnowRealm.SceneEffect
-    if not sceneEffectCfg or not sceneEffectCfg.Effect then
-      return
-    end
-    local curMapID = Game.MapManager:GetMapID()
-    local areaRaidInfo = GameConfig.SnowRealm and GameConfig.SnowRealm.HouseRaid
-    local bpPoint = areaRaidInfo and curMapID == areaRaidInfo.RaidID and sceneEffectCfg.RaidBp or sceneEffectCfg.BpPoint
-    if nil ~= bpPoint then
-      local bp = Game.MapManager:FindBornPoint(bpPoint)
+  if not self.mvpBossRaidSceneEffect and curMapID == 155 then
+    local mvpCfg = snowCfg and snowCfg.MVPBossRaidEffect
+    if mvpCfg and mvpCfg.Effect and mvpCfg.BpPoint then
+      local bp = Game.MapManager:FindBornPoint(mvpCfg.BpPoint)
       if bp then
-        local path = "Common/" .. sceneEffectCfg.Effect
-        local effectPos = LuaVector3.Zero()
+        local effectName = mvpCfg.Effect
+        local path = effectName
+        if type(effectName) == "string" and string.sub(effectName, 1, 7) ~= "Common/" then
+          path = "Common/" .. effectName
+        end
         LuaVector3.Better_Set(effectPos, bp.position[1], bp.position[2], bp.position[3])
-        self.sceneEffect = Asset_Effect.PlayAt(path, effectPos)
+        self.mvpBossRaidSceneEffect = Asset_Effect.PlayAt(path, effectPos)
       end
     end
   end
@@ -2431,6 +2406,10 @@ function SnowRealmManager:DestroySceneEffect()
   if self.sceneEffect then
     self.sceneEffect:Destroy()
     self.sceneEffect = nil
+  end
+  if self.mvpBossRaidSceneEffect then
+    self.mvpBossRaidSceneEffect:Destroy()
+    self.mvpBossRaidSceneEffect = nil
   end
 end
 

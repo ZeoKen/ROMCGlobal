@@ -16,12 +16,14 @@ function InheritSkillProxy:ctor(proxyName, data)
   self.extendCostPointBuffEffects = {}
   self.extendCostPointCurBuffEffect = {}
   self.extendCostPointAttrs = {}
+  self.skillExpandStateMap = {}
 end
 
 function InheritSkillProxy:InitInheritSkills()
   for familyId, data in pairs(Table_SkillInherit) do
     local skill = InheritSkillItemData.new(familyId)
-    self:AddInheritSkill(0, skill)
+    local pro = InheritSkillProxy.GetSkillProfess(familyId)
+    self:AddInheritSkill(pro, skill)
   end
 end
 
@@ -53,7 +55,7 @@ function InheritSkillProxy:InitCostPointAttr()
 end
 
 function InheritSkillProxy:ServerReInit(serverData)
-  if not self.skillProfessDatas[0] then
+  if not next(self.skillProfessDatas) then
     self:InitInheritSkills()
     self:InitCostPointAttr()
   end
@@ -78,6 +80,9 @@ function InheritSkillProxy:UpdateInheritSkills(serverSkillItems)
     if pro then
       self:UpdateInheritSkill(pro, skillItem)
     end
+  end
+  for pro, professData in pairs(self.skillProfessDatas) do
+    professData:UpdateConditionSkills()
   end
 end
 
@@ -153,40 +158,17 @@ end
 function InheritSkillProxy.GetSkillProfess(familyId)
   local config = Table_SkillInherit[familyId]
   if config then
-    local professes = config.ProfessionDepend
+    local typeBranches = config.BranchForbid
     local sex = MyselfProxy.Instance:GetMySex()
-    for i = 1, #professes do
-      local pro = professes[i]
-      local classConfig = Table_Class[pro]
+    for i = 1, #typeBranches do
+      local branch = typeBranches[i]
+      local proList = ProfessionProxy.GetProfList(branch)
+      local pro = proList and proList[1]
+      local classConfig = pro and Table_Class[pro]
       if classConfig then
-        local continue = false
-        local ids = classConfig.OriginId
-        if ids and 0 < #ids then
-          for j = 1, #ids do
-            local id = ids[j]
-            local staticData = Table_Class[id]
-            if staticData then
-              local gender = staticData.gender
-              if not gender or gender == 0 then
-                classConfig = staticData
-                break
-              end
-              if gender == sex then
-                classConfig = staticData
-                break
-              end
-            end
-          end
-        else
-          local gender = classConfig.gender
-          if gender and gender ~= 0 and gender ~= sex then
-            continue = true
-          end
-        end
-        if not continue then
-          local typeBranch = classConfig.TypeBranch
-          local proList = ProfessionProxy.GetProfList(typeBranch)
-          return proList and proList[1], classConfig.id
+        local gender = classConfig.gender
+        if not gender or gender == 0 or gender == sex then
+          return pro
         end
       end
     end
@@ -238,6 +220,26 @@ function InheritSkillProxy:GetLoadSkillCount()
   return #self.loadedSkills
 end
 
+function InheritSkillProxy:GetSkillExpandState(profession)
+  if not profession then
+    return true
+  end
+  local state = self.skillExpandStateMap[profession]
+  if state == nil then
+    state = true
+    self.skillExpandStateMap[profession] = true
+  end
+  return state
+end
+
+function InheritSkillProxy:SetSkillExpandState(profession, isExpand)
+  if not profession then
+    return
+  end
+  isExpand = isExpand and true or false
+  self.skillExpandStateMap[profession] = isExpand
+end
+
 function InheritSkillProxy:GetExtendedCostPoints()
   return self.extendedCostPoints
 end
@@ -254,13 +256,28 @@ function InheritSkillProxy:IsLoadedInheritSkill(skillId)
   return skill ~= nil
 end
 
-function InheritSkillProxy:IsCostPointsEnough(costPoint)
+function InheritSkillProxy:IsCostPointsEnough(skillItemData)
+  local costPoint = skillItemData and skillItemData:GetCostPoint() or 0
+  local targetFamilyId = skillItemData and skillItemData.sortID
   local initPoint = GameConfig.SkillInherit and GameConfig.SkillInherit.InitPointMax or 0
   local totalCostPoints = self.extendedCostPoints + initPoint
   local usedCostPoint = 0
+  local conditionFamilyId = skillItemData and skillItemData.inheritStaticData and skillItemData.inheritStaticData.Condition
+  conditionFamilyId = conditionFamilyId and conditionFamilyId // 1000 or nil
+  local isReplaced = false
   for i = 1, #self.loadedSkills do
     local skill = self.loadedSkills[i]
-    usedCostPoint = usedCostPoint + skill:GetCostPoint()
+    local shouldReplace = false
+    if not isReplaced then
+      local curCondition = skill.inheritStaticData and skill.inheritStaticData.Condition
+      curCondition = curCondition and curCondition // 1000 or nil
+      shouldReplace = curCondition and curCondition == targetFamilyId or conditionFamilyId and skill.sortID == conditionFamilyId
+    end
+    if shouldReplace then
+      isReplaced = true
+    else
+      usedCostPoint = usedCostPoint + skill:GetCostPoint()
+    end
   end
   local remainCostPoint = totalCostPoints - usedCostPoint
   return costPoint <= remainCostPoint

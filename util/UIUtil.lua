@@ -220,7 +220,7 @@ function UIUtil.StopEightTypeMsg()
   FloatingPanel.Instance:StopFloatTypeEightMsg()
 end
 
-function UIUtil.PopUpRichConfirmView(titleText, contentText, confirmtext, canceltext, confirm, cancel, src, needCloseBtn, needExitDefaultHandle, unique, lockreason)
+function UIUtil.PopUpRichConfirmView(titleText, contentText, confirmtext, canceltext, confirm, cancel, src, needCloseBtn, needExitDefaultHandle, unique, lockreason, clickUrlCallback)
   if needExitDefaultHandle == nil then
     needExitDefaultHandle = true
   end
@@ -236,13 +236,14 @@ function UIUtil.PopUpRichConfirmView(titleText, contentText, confirmtext, cancel
     needCloseBtn = needCloseBtn,
     needExitDefaultHandle = needExitDefaultHandle,
     unique = unique,
-    lockreason = lockreason
+    lockreason = lockreason,
+    clickUrlCallback = clickUrlCallback
   }
   redlog("lockreason", lockreason)
   GameFacade.Instance:sendNotification(UIEvent.ShowUI, viewData)
 end
 
-function UIUtil.PopUpConfirmView(titleText, contentText, confirmtext, canceltext, confirm, cancel, src, needCloseBtn, needExitDefaultHandle, unique, lockreason)
+function UIUtil.PopUpConfirmView(titleText, contentText, confirmtext, canceltext, confirm, cancel, src, needCloseBtn, needExitDefaultHandle, unique, lockreason, clickUrlCallback)
   if needExitDefaultHandle == nil then
     needExitDefaultHandle = true
   end
@@ -258,7 +259,8 @@ function UIUtil.PopUpConfirmView(titleText, contentText, confirmtext, canceltext
     needCloseBtn = needCloseBtn,
     needExitDefaultHandle = needExitDefaultHandle,
     unique = unique,
-    lockreason = lockreason
+    lockreason = lockreason,
+    clickUrlCallback = clickUrlCallback
   }
   redlog("lockreason", lockreason)
   GameFacade.Instance:sendNotification(UIEvent.ShowUI, viewData)
@@ -301,12 +303,12 @@ function UIUtil.PopUpDontAgainConfirmView(contentText, confirm, cancel, src, dat
   GameFacade.Instance:sendNotification(UIEvent.ShowUI, viewData)
 end
 
-function UIUtil.PopUpRichConfirmYesNoView(title, content, confirmHandler, cancelHandler, source, confirmtext, canceltext, unique, lockreason, needCloseBtn)
-  UIUtil.PopUpRichConfirmView(title, content, confirmtext, canceltext, confirmHandler, cancelHandler, source, needCloseBtn, false, unique, lockreason)
+function UIUtil.PopUpRichConfirmYesNoView(title, content, confirmHandler, cancelHandler, source, confirmtext, canceltext, unique, lockreason, needCloseBtn, clickUrlCallback)
+  UIUtil.PopUpRichConfirmView(title, content, confirmtext, canceltext, confirmHandler, cancelHandler, source, needCloseBtn, false, unique, lockreason, clickUrlCallback)
 end
 
-function UIUtil.PopUpConfirmYesNoView(title, content, confirmHandler, cancelHandler, source, confirmtext, canceltext, unique, lockreason, needCloseBtn)
-  UIUtil.PopUpConfirmView(title, content, confirmtext, canceltext, confirmHandler, cancelHandler, source, needCloseBtn, false, unique, lockreason)
+function UIUtil.PopUpConfirmYesNoView(title, content, confirmHandler, cancelHandler, source, confirmtext, canceltext, unique, lockreason, needCloseBtn, clickUrlCallback)
+  UIUtil.PopUpConfirmView(title, content, confirmtext, canceltext, confirmHandler, cancelHandler, source, needCloseBtn, false, unique, lockreason, clickUrlCallback)
 end
 
 function UIUtil.PopUpFuncView(title, content, confirmHandler, cancelHandler, source, confirmtext, canceltext)
@@ -330,6 +332,22 @@ function UIUtil.WarnPopup(titleText, contentText, confirm, cancel, src, confirmt
   if UIWarning.Instance ~= nil then
     UIWarning.Instance:AddWarnPopUp(data)
   end
+end
+
+function UIUtil.ShowLoginDurationTip(hour)
+  if not BranchMgr.IsNOKR() or not ApplicationInfo.IsRunOnWindowns() then
+    return
+  end
+  if UIManagerProxy.Instance then
+    local node = UIManagerProxy.Instance:GetNodeByClassName("LoginDurationTip")
+    if node and node.viewCtrl then
+      UIManagerProxy.Instance:CloseUI(node.viewCtrl)
+    end
+  end
+  GameFacade.Instance:sendNotification(UIEvent.ShowUI, {
+    viewname = "LoginDurationTip",
+    hour = hour
+  })
 end
 
 function UIUtil.ShowScreenMask(fadeInTime, fadeOutTime, fadeInCallBack, fadeOutCallBack, color)

@@ -40,7 +40,7 @@ function GuildTreasureData:SetTreasure()
   end
   local myGuildData = GuildProxy.Instance.myGuildData
   local openCount = myGuildData.bcoin_treasure_count + 1
-  if data.GuildMemberReward then
+  if data.GuildMemberReward and not BranchMgr.IsKorea() then
     local staticCount = #data.GuildMemberReward
     openCount = math.min(openCount, staticCount)
     local rewardData = data.GuildMemberReward[openCount]

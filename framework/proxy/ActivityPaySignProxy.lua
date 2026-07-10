@@ -164,3 +164,27 @@ function ActivityPaySignProxy:GetBatchID(act_id)
   local signData = self.signDatas[act_id]
   return signData and signData.batch_id or 0
 end
+
+function ActivityPaySignProxy:IsPaySignAvailable(act_id)
+  local signData = self.signDatas[act_id]
+  local curTime = ServerTime.CurServerTime() / 1000
+  local startTime = signData and signData.startTime
+  local endTime = signData and signData.endTime
+  if startTime and endTime then
+    return curTime >= startTime and curTime < endTime
+  end
+  return false
+end
+
+function ActivityPaySignProxy:UpdateGlobalActTime(act_id, startTime, endTime)
+  local signData = self.signDatas[act_id]
+  if signData then
+    signData.startTime = startTime
+    signData.endTime = endTime
+  end
+end
+
+function ActivityPaySignProxy:GetGlobalActTime(act_id)
+  local signData = self.signDatas[act_id]
+  return signData and signData.startTime, signData and signData.endTime
+end

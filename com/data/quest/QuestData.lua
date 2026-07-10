@@ -691,7 +691,18 @@ function QuestData:parseTranceInfo(step)
   result = string.gsub(result, "%[(%w+)]", function(str)
     local value = self.names and self.names[index]
     index = index + 1
-    return value
+    if value then
+      return value
+    end
+    if str == "QuestParam" then
+      return ""
+    end
+    return nil
+  end)
+  result = string.gsub(result, "%(QuestParam%)", function()
+    local value = self.names and self.names[index]
+    index = index + 1
+    return value or ""
   end)
   if self.type == QuestDataType.QuestDataType_GUILDQUEST and self.time then
     local deltaTime = self.time - ServerTime.CurServerTime() / 1000

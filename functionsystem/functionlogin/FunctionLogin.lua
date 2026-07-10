@@ -239,7 +239,7 @@ function FunctionLogin:ChangeServerType(serverType)
   CurrentServerType = serverType
   autoImport("GainWayTipProxy")
   GainWayTipProxy.new()
-  if self.serverData and self.serverData.servertype == "novice" and not BranchMgr.IsNO() and not BranchMgr.IsNOTW() and not BranchMgr.IsNOEN() then
+  if self.serverData and self.serverData.servertype == "novice" and not BranchMgr.IsNO() and not BranchMgr.IsNOTW() and not BranchMgr.IsNOEN() and not BranchMgr.IsNOKR() then
     autoImport("Table_NoviceServer")
     GainWayTipProxy.V1 = false
   else
@@ -406,7 +406,7 @@ function FunctionLogin:IsNoviceServer()
   if not self.serverData then
     return false
   end
-  if not BranchMgr.IsNO() and not BranchMgr.IsNOTW() and not BranchMgr.IsNOEN() then
+  if not BranchMgr.IsNO() and not BranchMgr.IsNOTW() and not BranchMgr.IsNOEN() and not BranchMgr.IsNOKR() then
     ISNoviceServerType = self.serverData.servertype and self.serverData.servertype == "novice" or false
   end
   return ISNoviceServerType

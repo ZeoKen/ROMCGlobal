@@ -1084,8 +1084,8 @@ function DungeonProxy.GetRoguelikeRoomTypeByIndex(i)
   return Table_RoguelikeRoom[subScenes[i]].Type
 end
 
-function DungeonProxy.GetMyRollCoinCount()
-  return BagProxy.Instance:GetItemNumByStaticID(GameConfig.RollRaid.roll_coin_itemid, GameConfig.PackageMaterialCheck.rollcoin_pack)
+function DungeonProxy.GetMyRollCoinCount(coinid)
+  return BagProxy.Instance:GetItemNumByStaticID(coinid or GameConfig.RollRaid.roll_coin_itemid, GameConfig.PackageMaterialCheck.rollcoin_pack)
 end
 
 local RollNeedCatB
@@ -1098,7 +1098,7 @@ function DungeonProxy.GetMyRollNeedCatB(count)
   return RollNeedCatB
 end
 
-function DungeonProxy._RollInvitationTypeSwitch(invitation, pveRaidHandler, groupRaidHandler, worldBossHandler, deadBossHandler, guildHandler, comodoRaidHandle, multiBossRaidHandler, bossSceneMvpHandler, bossSceneMiniHandler, memoryPalaceHandler, defaultRet)
+function DungeonProxy._RollInvitationTypeSwitch(invitation, pveRaidHandler, groupRaidHandler, worldBossHandler, deadBossHandler, guildHandler, comodoRaidHandle, multiBossRaidHandler, bossSceneMvpHandler, bossSceneMiniHandler, memoryPalaceHandler, snowMvpHandler, defaultRet)
   local t, param = invitation and invitation.type, invitation and invitation.param
   if t == FuBenCmd_pb.EROLLRAIDREWARD_PVERAID then
     return pveRaidHandler(param) or defaultRet
@@ -1120,6 +1120,8 @@ function DungeonProxy._RollInvitationTypeSwitch(invitation, pveRaidHandler, grou
     return bossSceneMiniHandler(param) or defaultRet
   elseif t == FuBenCmd_pb.EROLLRAIDREWARD_MEMORY_PALACE then
     return memoryPalaceHandler(param) or defaultRet
+  elseif t == FuBenCmd_pb.EROLLRAIDREWARD_SNOW_MVP then
+    return snowMvpHandler(param) or defaultRet
   end
   return defaultRet
 end
@@ -1147,6 +1149,8 @@ function DungeonProxy.GetTotalRollTimes(invitation)
     return GameConfig.RollRaid.boss_scene_mini_count
   end, function()
     return GameConfig.RollRaid.memory_palace_count
+  end, function()
+    return math.huge
   end, 0)
 end
 
@@ -1161,6 +1165,8 @@ function DungeonProxy.GetRestRollTimes(invitation)
     return MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_ROLL_DEADBOSS)
   end, function()
     return MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_ROLL_GUILD)
+  end, function()
+    return invitation.count
   end, function()
     return invitation.count
   end, function()
@@ -1207,6 +1213,10 @@ function DungeonProxy.GetRollRaidDesc(invitation)
     return GameConfig.RollRaid.roll_bossscene_desc
   end, function(param)
     return GameConfig.RollRaid.roll_chisehunli_desc
+  end, function(param)
+    local npcid = param
+    redlog("[SnowMvp] npcid=", npcid)
+    return string.format(GameConfig.RollRaid.roll_guildraid_desc, Table_Monster[npcid] and Table_Monster[npcid].NameZh or "")
   end, "")
 end
 
@@ -1246,7 +1256,7 @@ function DungeonProxy:GetRollingPlayerCount()
   return self.rollPlayers and #self.rollPlayers or -1
 end
 
-function DungeonProxy:RecvInviteRollReward(t, param, coinCost, count)
+function DungeonProxy:RecvInviteRollReward(t, param, coinCost, count, coinid)
   self.rollInvitations = self.rollInvitations or LuaQueue.new()
   local inv = ReusableTable.CreateTable()
   inv.playerid = Game.Myself.data.id
@@ -1254,6 +1264,7 @@ function DungeonProxy:RecvInviteRollReward(t, param, coinCost, count)
   inv.param = param
   inv.coinCost = coinCost
   inv.count = count
+  inv.coinid = coinid
   self.rollInvitations:Push(inv)
 end
 

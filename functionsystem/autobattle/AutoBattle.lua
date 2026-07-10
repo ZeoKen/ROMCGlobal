@@ -512,6 +512,9 @@ function AutoBattle:IsSkillItemValid(creature, skillItem, filter, onlyNoTargetAu
     return false
   end
   local skillIDAndLevel = skillItem:GetID()
+  if Game.Myself.data:CheckSnowAutoSkillIsActive(skillIDAndLevel) then
+    return false
+  end
   local skillInfo = Game.LogicManager_Skill:GetSkillInfo(skillIDAndLevel)
   local nowSkillInfo = creature.skill.info
   if nowSkillInfo and nowSkillInfo:GetChant_can_use_skill(Game.Myself) and creature.skill:IsCastSkill(creature.skill.phaseData:GetSkillPhase()) then

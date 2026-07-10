@@ -138,12 +138,12 @@ function SkillPhaseData:ParseFromServer(msg, force)
       end
       if 0 > hit.damage then
         if CommonFun.DamageType.Normal_Sp == hit.type or CommonFun.DamageType.Treatment_Sp == hit.type then
-          self:AddTarget(hit.charid, CommonFun.DamageType.Treatment_sp, -hit.damage, hit.shareTargets, nil, hit.doubledamage and 10 or -10)
+          self:AddTarget(hit.charid, CommonFun.DamageType.Treatment_sp, -hit.damage, hit.shareTargets, nil, hit.doubledamage and 1 or -1)
         else
-          self:AddTarget(hit.charid, CommonFun.DamageType.Treatment, -hit.damage, hit.shareTargets, nil, hit.doubledamage and 10 or -10)
+          self:AddTarget(hit.charid, CommonFun.DamageType.Treatment, -hit.damage, hit.shareTargets, nil, hit.doubledamage and 1 or -1)
         end
       else
-        self:AddTarget(hit.charid, hit.type, hit.damage, hit.shareTargets, nil, hit.doubledamage and 10 or -10)
+        self:AddTarget(hit.charid, hit.type, hit.damage, hit.shareTargets, nil, hit.doubledamage and 1 or -1)
       end
       if hit.gopos and (hit.gopos.x ~= 0 or hit.gopos.y ~= 0 or hit.gopos.z ~= 0) then
         local hitEffect = self:GetSpecialHitEffect()
@@ -332,7 +332,7 @@ function SkillPhaseData:AddTarget(guid, damageType, damage, shareDamageInfos, da
   data[index + 2] = damageType
   data[index + 3] = damage
   data[index + 4] = CreateShareDamageInfos(shareDamageInfos, data[index + 4])
-  data[index + 5] = damageCount or 1
+  data[index + 5] = damageCount
   data[index + 6] = doubleDamage
 end
 
@@ -353,7 +353,7 @@ function SkillPhaseData:SetTarget(index, guid, damageType, damage, shareDamageIn
   data[index + 2] = damageType
   data[index + 3] = damage
   data[index + 4] = CreateShareDamageInfos(shareDamageInfos, data[index + 4])
-  data[index + 5] = damageCount or 1
+  data[index + 5] = damageCount
   data[index + 6] = doubleDamage
 end
 

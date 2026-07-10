@@ -19,11 +19,17 @@ function BagItemCell:Init()
   self.unlock = self:FindGO("Unlock")
   self.emptyTip = self:FindGO("EmptyTip")
   self.petAdvDot = self:FindGO("PetAdvDot")
+  self.petFighting = self:FindComponent("PetFighting", UISprite)
+  self.petPvp = self:FindComponent("PetPvp", UISprite)
   self.favoriteTip = self:FindGO("FavoriteTip")
   self.spMask = self:FindComponent("Mask", UISprite)
   self.gender = self:FindComponent("Gender", UISprite)
   self.get = self:FindGO("Get")
   self.checkMark = self:FindGO("CheckMark")
+  self.recommend = self:FindGO("Recommend")
+  if self.recommend then
+    self.recommend:SetActive(false)
+  end
   self:AddCellDoubleClickEvt()
 end
 
@@ -39,8 +45,10 @@ function BagItemCell:SetData(data)
   self:UpdateGrey(data)
   self:UpdateChoose()
   self:CheckPetAdventureTip()
+  self:UpdatePetFighting(data)
   self:UpdateEquipUpgradeTip()
   self:UpdateFavoriteTip(data)
+  self:UpdateRecommend(data)
   self:HideMask()
   self:UpdateGuideTarget()
   self:UpdateGetFlag()
@@ -135,6 +143,35 @@ function BagItemCell:CheckPetAdventureTip()
   end
 end
 
+function BagItemCell:UpdatePetFighting(data)
+  if not self.petFighting then
+    return
+  end
+  if not BagItemCell.CheckData(data) then
+    self:Hide(self.petFighting)
+    self:Hide(self.petPvp)
+    return
+  end
+  local eggInfo = data.petEggInfo
+  if eggInfo and eggInfo:IsPvpPet() then
+    self:Show(self.petPvp)
+  else
+    self:Hide(self.petPvp)
+  end
+  if eggInfo and eggInfo:IsFighting() then
+    self:Show(self.petFighting)
+  else
+    self:Hide(self.petFighting)
+  end
+  if self.cdCtrl and eggInfo then
+    if self:GetCD() > 0 then
+      self.cdCtrl:Add(self)
+    else
+      self.cdCtrl:Remove(self)
+    end
+  end
+end
+
 function BagItemCell:UpdateFavoriteTip(data)
   if not self.favoriteTip then
     return
@@ -152,6 +189,13 @@ function BagItemCell:UpdateFavoriteTip(data)
       self.favoriteTip:SetActive(true)
     end
   end
+end
+
+function BagItemCell:UpdateRecommend(data)
+  if not self.recommend then
+    return
+  end
+  self.recommend:SetActive(BagItemCell.CheckData(data) and type(data) == "table" and data.isRecommend == true)
 end
 
 function BagItemCell:SetFavoriteTipActive(isActive)

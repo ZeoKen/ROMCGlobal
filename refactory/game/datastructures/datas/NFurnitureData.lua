@@ -162,6 +162,7 @@ function NFurnitureData:TryUpdateSkada(serverData)
   self.woodBossType = serverSkadaData.bosstype
   self.woodType = serverSkadaData.wood_type
   self.woodMonsterId = serverSkadaData.monster_id or 0
+  self.woodDamageReduceType = serverSkadaData.damage_reduce_type or 0
   return serverSkadaData
 end
 

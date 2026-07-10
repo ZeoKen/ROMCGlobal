@@ -971,3 +971,22 @@ end
 function PVEFactory.GetDestroyAirShip()
   return DestroyAirShipRaid.new()
 end
+
+local BageLabRaid = class("BageLabRaid", Dungeon_Handle)
+
+function BageLabRaid:ctor()
+  self.isBageLabRaid = true
+end
+
+function BageLabRaid:Launch()
+  notify(PVEEvent.BageLab_Launch)
+end
+
+function BageLabRaid:Shutdown()
+  GroupRaidProxy.Instance:SetMultiBossRaidPhase(0)
+  notify(PVEEvent.BageLab_ShutDown)
+end
+
+function PVEFactory.GetBageLab()
+  return BageLabRaid.new()
+end

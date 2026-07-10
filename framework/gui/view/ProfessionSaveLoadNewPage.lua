@@ -176,6 +176,7 @@ function ProfessionSaveLoadNewPage:SetModel(classid, isCurRole)
   local parts = Asset_Role.CreatePartArray()
   local config = Table_Class[classid]
   local userData = MultiProfessionSaveProxy.Instance:GetUserDataByID(self.curSaveId)
+  local saveData = MultiProfessionSaveProxy.Instance:GetUsersaveData(self.curSaveId)
   if userData and config then
     local savedClassID = MultiProfessionSaveProxy.Instance:GetProfession(self.curSaveId)
     local savedConfig = Table_Class[savedClassID]
@@ -210,6 +211,8 @@ function ProfessionSaveLoadNewPage:SetModel(classid, isCurRole)
     parts[PartIndexEx.HairColorIndex] = userData:Get(UDEnum.HAIRCOLOR) or 0
     parts[PartIndexEx.EyeColorIndex] = userData:Get(UDEnum.EYECOLOR) or 0
     parts[PartIndexEx.BodyColorIndex] = userData:Get(UDEnum.CLOTHCOLOR) or 0
+    local headFashionString = saveData and saveData.GetSnowHeadFashionString and saveData:GetSnowHeadFashionString() or nil
+    Asset_Role.ProcessHeadFashionForParts(parts, parts[PartIndex.Head], headFashionString)
   end
   FunctionMultiProfession.Me():UpdateRoleModel(parts)
   Asset_Role.DestroyPartArray(parts)
@@ -673,7 +676,7 @@ function ProfessionSaveLoadNewPage:OnExtractBtnClick(param)
 end
 
 function ProfessionSaveLoadNewPage:OnInheritSkillBtnClick(param)
-  if not FunctionUnLockFunc.Me():CheckCanOpen(19390) then
+  if not FunctionUnLockFunc.Me():CheckCanOpen(19391) then
     MsgManager.ShowMsgByID(43661)
     return
   end

@@ -1,4 +1,7 @@
 Table_Dialog_Left_12 = {
+  [85020] = "{id=85020,Text='##195836',Speaker=1106,Option='明白',}",
+  [85021] = "{id=85021,Text='##196219',Speaker=1106,Option='{带来了,3},{没有,2}',}",
+  [85022] = "{id=85022,Text='##195711',Speaker=1106,}",
   [85023] = "{id=85023,Text='##196067',Speaker=1106,}",
   [85024] = "{id=85024,Text='##196014',Speaker=1106,Option='好吧。',}",
   [85025] = "{id=85025,Text='##195679',Speaker=1106,}",
@@ -1996,9 +1999,6 @@ Table_Dialog_Left_12 = {
   [96018] = "{id=96018,Text='##201013',Speaker=1059,}",
   [96019] = "{id=96019,Text='##201102',Speaker=1059,Emoji=24,}",
   [96020] = "{id=96020,Text='##200747',Speaker=1059,Option='偷来的吧…',Emoji=17,}",
-  [96021] = "{id=96021,Text='##200750',Speaker=1059,Option='[c][ffff00]枯树枝[-][/c]？！',}",
-  [96022] = "{id=96022,Text='##201118',Speaker=1059,}",
-  [96023] = "{id=96023,Text='##175166',Speaker=1059,Emoji=9,}",
-  [96024] = "{id=96024,Text='##174844',Speaker=1059,}"
+  [96021] = "{id=96021,Text='##200750',Speaker=1059,Option='[c][ffff00]枯树枝[-][/c]？！',}"
 }
 Table_Dialog_Left_12.count = 2001

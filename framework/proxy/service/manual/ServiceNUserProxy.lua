@@ -587,7 +587,7 @@ function ServiceNUserProxy:RecvCDTimeUserCmd(data)
     else
       _CDProxy:AddCD(cdData.type, cdData.id, cdData.time)
       FunctionCDCommand.Me():Refresh()
-      if cdData.type == SceneUser2_pb.CD_TYPE_ITEMGROUP then
+      if cdData.type == SceneUser2_pb.CD_TYPE_ITEM or cdData.type == SceneUser2_pb.CD_TYPE_ITEMGROUP then
         GameFacade.Instance:sendNotification(ItemEvent.ItemUpdate)
       elseif cdData.type == SceneUser2_pb.CD_TYPE_TRAINACTION then
         GameFacade.Instance:sendNotification(InteractNpcEvent.FlowerCarPhotographActionCDUpdate)
@@ -763,7 +763,7 @@ function ServiceNUserProxy:RecvBuffForeverCmd(data)
 end
 
 function ServiceNUserProxy:RecvQueryShow(data)
-  MyselfProxy.Instance:SetUnlockActionIdMap(data.actionid)
+  MyselfProxy.Instance:SetUnlockActionIdMap(data.actionid, data.actioninfos)
   MyselfProxy.Instance:SetUnlockEmojiMap(data.expression)
   ChatRoomProxy.Instance:SetUnlockActionsDirty()
   ChatRoomProxy.Instance:SetUnlockEmojisDirty()

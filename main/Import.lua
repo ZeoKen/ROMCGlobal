@@ -32,11 +32,11 @@ function autoImport(moduleName)
     if ISNoviceServerType and moduleName ~= "Table_NoviceServer" then
       local p = moduleName:match("^Table_([%w_]+)$")
       local s = moduleName:match("^Scene_([%w_]+)$")
-      if p and not BranchMgr.IsNO() and not BranchMgr.IsNOTW() and not BranchMgr.IsNOEN() then
+      if p and not BranchMgr.IsNO() and not BranchMgr.IsNOTW() and not BranchMgr.IsNOEN() and not BranchMgr.IsNOKR() then
         moduleNameNovice = "Table_" .. p .. "_NoviceServer"
       elseif s then
         moduleNameNovice = "Scene_" .. s .. "_NoviceServer"
-      elseif mConfig_Special[moduleName] and not BranchMgr.IsNO() and not BranchMgr.IsNOTW() and not BranchMgr.IsNOEN() then
+      elseif mConfig_Special[moduleName] and not BranchMgr.IsNO() and not BranchMgr.IsNOTW() and not BranchMgr.IsNOEN() and not BranchMgr.IsNOKR() then
         moduleNameNovice = moduleName .. "_NoviceServer"
       end
     end

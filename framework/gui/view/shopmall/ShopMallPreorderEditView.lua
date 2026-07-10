@@ -7,6 +7,7 @@ local TradeTipPos = {
   [1] = LuaVector3.New(39, -15, 0),
   [2] = LuaVector3.New(39, 232, 0)
 }
+local TradeTipGap = 8
 
 function ShopMallPreorderEditView:OnExit()
   if self.cell then
@@ -33,9 +34,27 @@ function ShopMallPreorderEditView:FindObjs()
   self.helpButton = self:FindGO("HelpButton")
   self:TryOpenHelpViewById(35279, nil, self.helpButton)
   self.tip = self:FindGO("Tip")
+  self.tipLabel = self.tip:GetComponent(UILabel)
   self.filterGO = self:FindGO("filterPanel")
   self.cardFilterGO = self:FindGO("cardFilterPanel")
   self.tradeCount = self:FindGO("TradeCount"):GetComponent(UILabel)
+end
+
+function ShopMallPreorderEditView:UpdateTradeCountPos(showTip)
+  if not self.tradeCount then
+    return
+  end
+  if showTip then
+    local tipPos = self.tip and self.tip.transform.localPosition
+    local tipHeight = self.tipLabel and self.tipLabel.printedSize.y
+    if tipPos and tipHeight and 0 < tipHeight then
+      self.tradeCount.gameObject.transform.localPosition = LuaGeometry.GetTempVector3(TradeTipPos[1].x, tipPos.y - tipHeight - TradeTipGap, TradeTipPos[1].z)
+    else
+      self.tradeCount.gameObject.transform.localPosition = TradeTipPos[1]
+    end
+  else
+    self.tradeCount.gameObject.transform.localPosition = TradeTipPos[2]
+  end
 end
 
 local RefineFilter = GameConfig.PreorderFilter.RefineFilter
@@ -75,20 +94,20 @@ function ShopMallPreorderEditView:InitShow()
     self.cardFilterGO:SetActive(false)
     self.isEquip = true
     self.cardHasLv = false
-    self.tradeCount.gameObject.transform.localPosition = TradeTipPos[1]
+    self:UpdateTradeCountPos(true)
   elseif not GameConfig.Exchange.CardLvTradeForbid and Game.CardUpgradeMap and self.itemid and Game.CardUpgradeMap[self.itemid] then
     self.tip:SetActive(true)
     self.filterGO:SetActive(false)
     self.cardFilterGO:SetActive(true)
     self.cardHasLv = true
-    self.tradeCount.gameObject.transform.localPosition = TradeTipPos[1]
+    self:UpdateTradeCountPos(true)
   else
     self.tip:SetActive(false)
     self.filterGO:SetActive(false)
     self.cardFilterGO:SetActive(false)
     self.isEquip = false
     self.cardHasLv = false
-    self.tradeCount.gameObject.transform.localPosition = TradeTipPos[2]
+    self:UpdateTradeCountPos(false)
   end
 end
 

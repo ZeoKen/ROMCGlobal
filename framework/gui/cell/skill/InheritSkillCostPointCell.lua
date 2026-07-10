@@ -5,15 +5,18 @@ function InheritSkillCostPointCell:Init()
 end
 
 function InheritSkillCostPointCell:FindObjs()
-  self.sp = self.gameObject:GetComponent(UIMultiSprite)
+  self.leftSp = self:FindComponent("Left", UIMultiSprite)
+  self.rightSp = self:FindComponent("Right", UIMultiSprite)
   self.effectContainer = self:FindGO("effectContainer")
 end
 
 function InheritSkillCostPointCell:SetData(data)
   self.data = data
   if data then
-    self.sp.CurrentState = data
-    self.sp:MakePixelPerfect()
+    self.leftSp.gameObject:SetActive(data.isLeftUnlock or data.isLeftLoad or false)
+    self.rightSp.gameObject:SetActive(not data.isLock)
+    self.leftSp.CurrentState = data.isLeftLoad and 1 or 0
+    self.rightSp.CurrentState = data.isRightLoad and 2 or data.isRightUnlock and 1 or 0
   end
 end
 

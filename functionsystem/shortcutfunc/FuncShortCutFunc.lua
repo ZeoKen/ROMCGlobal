@@ -11,7 +11,8 @@ FuncShortCutFunc.FuncType = {
   PveGuide = 9,
   ClientGuide = 10,
   Quest = 11,
-  MiniMapHint = 12
+  MiniMapHint = 12,
+  LotteryRaidShop = 13
 }
 
 function FuncShortCutFunc.Me()
@@ -35,6 +36,7 @@ function FuncShortCutFunc:ctor()
   self.FuncMap[FuncShortCutFunc.FuncType.ClientGuide] = self.ClientGuide
   self.FuncMap[FuncShortCutFunc.FuncType.Quest] = self.HandleQuest
   self.FuncMap[FuncShortCutFunc.FuncType.MiniMapHint] = self.HandleMiniMapHint
+  self.FuncMap[FuncShortCutFunc.FuncType.LotteryRaidShop] = self.LotteryRaidShop
   EventManager.Me():AddEventListener(LoadSceneEvent.FinishLoadScene, self.OnSceneLoadFinished, self)
 end
 
@@ -374,6 +376,13 @@ end
 
 function FuncShortCutFunc:OpenUrl(data, param)
   Application.OpenURL(data.Event.url)
+end
+
+function FuncShortCutFunc:LotteryRaidShop(data, param)
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.LotteryRaidShopView
+  })
+  TipsView.Me():HideCurrent()
 end
 
 function FuncShortCutFunc:NpcFunc(data, param)

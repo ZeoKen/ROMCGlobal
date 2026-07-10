@@ -253,7 +253,7 @@ function ShopMallExchangeSellView:ClickQuickSell()
   if #expiredItems == 0 then
     return
   end
-  MsgManager.ConfirmMsgByID(1000013, function()
+  MsgManager.ConfirmMsgByID(900013, function()
     self.isQuickSelling = true
     self.hasQuickSellSuccess = false
     self.quickSellSuccessCount = 0

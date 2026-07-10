@@ -6,6 +6,10 @@ OverseaHostHelper.accId = 0
 OverseaHostHelper.hasShowAge = false
 OverseaHostHelper.regions = nil
 OverseaHostHelper.langZone = ApplicationInfo.GetSystemLanguage()
+local NOKR_RECHARGE_SHOP_CONFIRM_URL = "https://member.gnjoy.com/support/terms/common/commonterm.asp?category=mobile_terms1"
+local OpenNOKRRechargeShopConfirmUrl = function(url)
+  ApplicationInfo.OpenUrl(url)
+end
 OverseaHostHelper.KRfireBaseFirstAgreent = "KRfireBaseFirstAgreent"
 OverseaHostHelper.accountUID = nil
 OverseaHostHelper.firebaseNotify = nil
@@ -28,32 +32,15 @@ end
 
 function OverseaHostHelper:ShowfirebaseNotifyExpired()
   if OverseaHostHelper.firebaseNotifyExpired ~= nil and OverseaHostHelper.firebaseNotifyExpired == "true" then
-    MsgManager.ConfirmMsgByID(1000013)
+    MsgManager.ConfirmMsgByID(900013)
   end
 end
 
 function OverseaHostHelper:ShowFirstFireBaseAgreet()
-  if OverseaHostHelper:GetIsFireBaseFirst() then
-    local firebasestatus = OverSeas_TW.OverSeasManager.GetInstance():GetNotificationStatus()
-    local y, m, d = OverseaHostHelper:GetFireBaseChangeTime()
-    if firebasestatus then
-      MsgManager.ShowMsgByIDTable(1000011, {
-        y,
-        m,
-        d
-      })
-    else
-      MsgManager.ShowMsgByIDTable(1000012, {
-        y,
-        m,
-        d
-      })
-    end
-  end
 end
 
 function OverseaHostHelper:CheckFirstFirebaseCallServer()
-  if not BranchMgr.IsKorea() then
+  if not BranchMgr.IsKorea() and not BranchMgr.IsNOKR() then
     return
   end
   local firebasestatus = OverSeas_TW.OverSeasManager.GetInstance():GetNotificationStatus()
@@ -448,7 +435,15 @@ function OverseaHostHelper:GachaUseComfirm(count, cb, z, ccb)
   end
 end
 
-function OverseaHostHelper:FeedXDConfirm(titleVal, descVal, productName, productPrice, callback, cancelcallback)
+function OverseaHostHelper:GetRechargeShopConfirmDesc()
+  if BranchMgr.IsNOKR() then
+    local url = GameConfig.NOKRRechargeShopConfirmUrl or NOKR_RECHARGE_SHOP_CONFIRM_URL
+    return string.format(ZhString.NOKRRechargeShopConfirmDes, url), OpenNOKRRechargeShopConfirmUrl
+  end
+  return ZhString.ShopConfirmDes
+end
+
+function OverseaHostHelper:FeedXDConfirm(titleVal, descVal, productName, productPrice, callback, cancelcallback, clickUrlCallback)
   local view
   if BranchMgr.IsJapan() then
     local msgData = Table_Sysmsg[43234]
@@ -474,7 +469,8 @@ function OverseaHostHelper:FeedXDConfirm(titleVal, descVal, productName, product
         data = {
           title = titleVal,
           desc = descVal,
-          callback = callback
+          callback = callback,
+          clickUrlCallback = clickUrlCallback
         }
       }
     }

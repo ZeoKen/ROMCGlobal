@@ -26,6 +26,7 @@ function BWMiniMapContentPage:InitDatas()
   self.tempMap = {}
   self.monsterDataMap = {}
   self.fixedTreasureMap = {}
+  self.minimapTreasureInfo = {}
 end
 
 function BWMiniMapContentPage:InitView()
@@ -89,6 +90,8 @@ function BWMiniMapContentPage:InitView()
     self.container:CloseSelf()
   end)
   self:UpdateCurrentLine()
+  self.mapTreasure = self:FindGO("MapTreasure"):GetComponent(UILabel)
+  self.mapTreasure_Icon = self:FindGO("MapTreasureIcon"):GetComponent(UISprite)
   self.beforePanel = self:FindGO("BeforePanel")
   self.beforeCollider = self:FindGO("BeforeCollider")
   self.beforeCollider:SetActive(false)
@@ -282,6 +285,7 @@ function BWMiniMapContentPage:InitEvents()
   self:AddListenEvt(ServiceEvent.MessCCmdSyncMapStepForeverRewardInfo, self.UpdateZoneTipsProgress)
   self:AddListenEvt(PVEEvent.AbyssDragon_UpdateArea, self.UpdateAbyssDragonMapInfo)
   self:AddListenEvt(PVEEvent.AbyssDragon_Shutdown, self.ClearAbyssDragonMapInfo)
+  self:AddListenEvt(ServiceEvent.QuestSyncTreasureBoxNumCmd, self.UpdateMapTreasure)
 end
 
 function BWMiniMapContentPage:HandleUpdateDestPos(note)
@@ -320,6 +324,7 @@ function BWMiniMapContentPage:ResetWindow()
     self.window:UpdateQuestFocuses(self.focusMap)
     self:UpdateTransmitter()
     self:UpdateBigMapButton()
+    self:UpdateMapTreasure()
     self.window:UpdateServerNpcPointMap(self.showNpcs, true)
     self.window:Show()
   else
@@ -1119,6 +1124,19 @@ end
 
 function BWMiniMapContentPage:UpdateBigMapButton()
   self.bigMapLab.text = MapManager:IsRaidMode(true) and ZhString.MainViewMiniMap_ReturnHome or ZhString.MainViewMiniMap_WorldMap
+end
+
+function BWMiniMapContentPage:UpdateMapTreasure()
+  local mapid = Game.MapManager:GetMapID()
+  local treasureData = QuestProxy.Instance:GetTreasureBoxData(mapid)
+  if treasureData then
+    self.mapTreasure.gameObject:SetActive(true)
+    local gotNum = treasureData.gotten_num or 0
+    local maxNum = treasureData.total_num or 0
+    self.mapTreasure.text = gotNum .. " / " .. maxNum
+  else
+    self.mapTreasure.gameObject:SetActive(false)
+  end
 end
 
 function BWMiniMapContentPage:OnEnter()

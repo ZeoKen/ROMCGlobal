@@ -791,19 +791,6 @@ Table_SpEffect = {
     OnAdd = _EmptyTable,
     CutLine = _EmptyTable
   },
-  [1001] = {
-    id = 1001,
-    Name = "Line",
-    Type = 1,
-    Perform = {
-      ep1 = 4,
-      ep2 = 6,
-      effect = "Skill/sfx_liumang_DS_LSSJ_line_prf"
-    },
-    Duration = 1,
-    OnAdd = _EmptyTable,
-    CutLine = _EmptyTable
-  },
   [63] = {
     id = 63,
     Name = "Line",
@@ -814,6 +801,45 @@ Table_SpEffect = {
       effect = "Skill/sfx_aquila_fyzl_line_prf"
     },
     Duration = 20,
+    OnAdd = _EmptyTable,
+    CutLine = _EmptyTable
+  },
+  [64] = {
+    id = 64,
+    Name = "Line",
+    Type = 1,
+    Perform = {
+      ep1 = 4,
+      ep2 = 6,
+      effect = "Skill/sfx_pvp_pet_buff_red_line"
+    },
+    Duration = 10,
+    OnAdd = _EmptyTable,
+    CutLine = _EmptyTable
+  },
+  [65] = {
+    id = 65,
+    Name = "Line",
+    Type = 1,
+    Perform = {
+      ep1 = 4,
+      ep2 = 6,
+      effect = "Skill/sfx_pvp_pet_buff_blue_line"
+    },
+    Duration = 10,
+    OnAdd = _EmptyTable,
+    CutLine = _EmptyTable
+  },
+  [1001] = {
+    id = 1001,
+    Name = "Line",
+    Type = 1,
+    Perform = {
+      ep1 = 4,
+      ep2 = 6,
+      effect = "Skill/sfx_liumang_DS_LSSJ_line_prf"
+    },
+    Duration = 1,
     OnAdd = _EmptyTable,
     CutLine = _EmptyTable
   }

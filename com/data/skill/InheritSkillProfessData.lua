@@ -4,10 +4,14 @@ InheritSkillProfessData = class("InheritSkillProfessData")
 function InheritSkillProfessData:ctor(profession)
   self.profession = profession
   self.skills = {}
+  self.conditionSkillMap = {}
 end
 
 function InheritSkillProfessData:AddSkill(skillItemData)
   self.skills[#self.skills + 1] = skillItemData
+  if skillItemData.inheritStaticData and skillItemData.inheritStaticData.Condition then
+    self.conditionSkillMap[skillItemData.sortID] = skillItemData.inheritStaticData.Condition
+  end
 end
 
 function InheritSkillProfessData:RemoveSkill(skillItemData)
@@ -53,4 +57,22 @@ end
 
 function InheritSkillProfessData:IsEmpty()
   return #self.skills == 0
+end
+
+function InheritSkillProfessData:UpdateConditionSkills()
+  for familyId, condition in pairs(self.conditionSkillMap) do
+    local skillItemData = self:FindSkill(familyId)
+    if skillItemData then
+      local conditionFamilyId = condition // 1000
+      local conditionLevel = condition % 1000
+      local conditionSkill = self:FindSkill(conditionFamilyId)
+      if conditionSkill then
+        if conditionLevel > conditionSkill.level then
+          skillItemData:SetUnlock(false)
+        else
+          skillItemData:SetUnlock(true)
+        end
+      end
+    end
+  end
 end

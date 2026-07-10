@@ -163,7 +163,7 @@ end
 
 function UIListItemViewControllerZenyShopItem:RegisterButtonClickEvent()
   self:AddClickEvent(self.goBTNPurchase, function()
-    if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+    if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
       local productID = self.productConf.ProductID
       if productID then
         local productName = OverSea.LangManager.Instance():GetLangByKey(Table_Item[self.productConf.ItemId].NameZh)
@@ -171,7 +171,7 @@ function UIListItemViewControllerZenyShopItem:RegisterButtonClickEvent()
         local productCount = self.productConf.Count
         local productDesc = OverSea.LangManager.Instance():GetLangByKey(Table_Deposit[self.productConf.id].Desc)
         local productD = " [0075BCFF]" .. productDesc .. "[-] "
-        if not BranchMgr.IsKorea() then
+        if not BranchMgr.IsKorea() and not BranchMgr.IsNOKR() then
           if self.goAddition.activeSelf then
             productCount = tostring(tonumber(productCount) * 2)
           end
@@ -256,7 +256,7 @@ function UIListItemViewControllerZenyShopItem:OnPaySuccess(str_result)
   if not BackwardCompatibilityUtil.CompatibilityMode(BackwardCompatibilityUtil.V6) then
     local runtimePlatform = ApplicationInfo.GetRunPlatform()
     if runtimePlatform == RuntimePlatform.IPhonePlayer then
-      if BranchMgr.IsChina() or BranchMgr.IsKorea() then
+      if BranchMgr.IsChina() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
         if self.orderIDOfXDSDKPay ~= nil then
           FunctionADBuiltInTyrantdb.Instance():ChargeTo3rd(self.orderIDOfXDSDKPay, self.productConf.Rmb)
         end
@@ -265,12 +265,12 @@ function UIListItemViewControllerZenyShopItem:OnPaySuccess(str_result)
       end
     elseif runtimePlatform == RuntimePlatform.Android then
       if not BackwardCompatibilityUtil.CompatibilityMode(BackwardCompatibilityUtil.V13) then
-        if BranchMgr.IsChina() or BranchMgr.IsKorea() then
+        if BranchMgr.IsChina() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
           FunctionADBuiltInTyrantdb.Instance():ChargeTo3rd("", self.productConf.Rmb)
         else
           FunctionADBuiltInTyrantdb.Instance():ChargeTo3rd(OverseaHostHelper:GetRoleIde(), self.productConf.Rmb)
         end
-      elseif BranchMgr.IsChina() or BranchMgr.IsKorea() then
+      elseif BranchMgr.IsChina() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
         local orderID = FunctionSDK.Instance:GetOrderID()
         FunctionADBuiltInTyrantdb.Instance():ChargeTo3rd(orderID, self.productConf.Rmb)
       else

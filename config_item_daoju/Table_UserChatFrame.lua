@@ -161,6 +161,24 @@ Table_UserChatFrame = {
     TextColor = "",
     BBCodeColor = "01c3ed"
   },
+  [29] = {
+    id = 29,
+    ItemID = 494,
+    Name = "##45912488",
+    IconName = "new_chatroom_decorate_37",
+    BubbleName = "new_chatroom_frame_36",
+    TextColor = "",
+    BBCodeColor = "01c3ed"
+  },
+  [30] = {
+    id = 30,
+    ItemID = 497,
+    Name = "##44726204",
+    IconName = "new_chatroom_decorate_36",
+    BubbleName = "new_chatroom_frame_36",
+    TextColor = "",
+    BBCodeColor = ""
+  },
   [1001] = {
     id = 1001,
     ItemID = 1568,

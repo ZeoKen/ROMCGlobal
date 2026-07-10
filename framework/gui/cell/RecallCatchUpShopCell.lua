@@ -85,8 +85,15 @@ end
 function RecallCatchUpShopCell:Purchase_Deposit()
   self:RequestQueryChargeVirgin()
   local couldPurchaseWithActivity = true
-  if self:Exec_Deposit_Purchase() then
-    self.isActivity = couldPurchaseWithActivity
+  local doPurchase = function()
+    if self:Exec_Deposit_Purchase() then
+      self.isActivity = couldPurchaseWithActivity
+    end
+  end
+  if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
+    self:Invoke_DepositConfirmPanel(doPurchase)
+  else
+    doPurchase()
   end
 end
 
@@ -153,6 +160,28 @@ function RecallCatchUpShopCell:Exec_Deposit_Purchase()
   else
     MsgManager.ShowMsgByID(49)
     return false
+  end
+end
+
+function RecallCatchUpShopCell:Invoke_DepositConfirmPanel(cb)
+  local depositInfo = self.depositData
+  local productConf = depositInfo and depositInfo.productConf
+  local productID = productConf and productConf.ProductID
+  if productID then
+    local productName = OverSea.LangManager.Instance():GetLangByKey(Table_Item[productConf.ItemId].NameZh)
+    local productPrice = productConf.Rmb
+    local productCount = productConf.Count
+    local currencyType = productConf.CurrencyType
+    local productDesc = OverSea.LangManager.Instance():GetLangByKey(Table_Deposit[productConf.id].Desc)
+    local productD = " [0075BCFF]" .. productCount .. "[-] " .. productName
+    if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
+      productD = " [0075BCFF]" .. productDesc .. "[-] "
+    end
+    OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FunctionNewRecharge.FormatMilComma(productPrice)), ZhString.ShopConfirmDes, productName, productPrice, function()
+      if cb then
+        cb()
+      end
+    end)
   end
 end
 

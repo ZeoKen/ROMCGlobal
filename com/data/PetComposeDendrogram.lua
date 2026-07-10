@@ -1,4 +1,16 @@
 local COMPOSE_MAX_PET = 3
+MaterialItemPart = class("MaterialItemPart")
+
+function MaterialItemPart:ctor(entry, uiIndex, materialIdx, needRecursive)
+  self.entry = entry
+  self.itemid = entry.id or entry[1]
+  self.needCount = entry.count or entry[2] or 1
+  self.index = uiIndex
+  self.materialIdx = materialIdx
+  self.__cname = "MaterialItemPart"
+  self.needRecursive = needRecursive
+end
+
 DendrogramPart = class("DendrogramPart")
 
 function DendrogramPart:ctor(csv, index, needRecursive)
@@ -29,8 +41,18 @@ function PetComposeDendrogram:ctor(rootId, recursiveFlag)
 end
 
 function PetComposeDendrogram:RecursiveNode(rootid)
+  local csv = self.csv
+  if csv.MaterialItem then
+    for mi = 1, #csv.MaterialItem do
+      local entry = csv.MaterialItem[mi]
+      if entry and (entry.id or entry[1]) then
+        local index = #self.uiData + 1
+        self.uiData[index] = MaterialItemPart.new(entry, index, mi, self.needRecursive)
+      end
+    end
+  end
   for i = 1, COMPOSE_MAX_PET do
-    local materialPet = self.csv["MaterialPet" .. i]
+    local materialPet = csv["MaterialPet" .. i]
     local childId = materialPet and materialPet.id
     if childId then
       local index = #self.uiData + 1

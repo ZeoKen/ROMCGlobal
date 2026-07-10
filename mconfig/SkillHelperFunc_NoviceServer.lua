@@ -23,6 +23,7 @@ local SKILL_ENSEMBLE = 9
 local SKILL_PIONEER = 10
 local SKILL_STONE = 11
 local SKILL_ENSEMBLEDOUBLE = 12
+local SKILL_ROTATE_POINT = 13
 local Pro_PreCondtionType = {
   [SKILL_ABACHECK] = {
     baseTypes = {6}
@@ -59,6 +60,9 @@ local Pro_PreCondtionType = {
   },
   [SKILL_ENSEMBLEDOUBLE] = {
     baseTypes = {2, 6}
+  },
+  [SKILL_ROTATE_POINT] = {
+    baseTypes = {6}
   }
 }
 
@@ -85,6 +89,9 @@ end
 function SkillHelperFunc.AbaPreCheck(srcuser)
   if not srcuser:HasBuffID(100510) then
     return false
+  end
+  if srcuser:HasBuffID(35010430) then
+    return true
   end
   local powerLayer = srcuser:GetBuffLayer(100500)
   if powerLayer == 0 then
@@ -206,6 +213,17 @@ function SkillHelperFunc.STONE(srcuser)
   return true
 end
 
+function SkillHelperFunc.ROTATEPOINT(srcuser)
+  if not srcuser:HasBuffID(35010310) then
+    return true
+  end
+  local num = srcuser:GetBuffLayer(116080) or 0
+  local value = srcuser:GetGemValue(31132) or 0
+  local snowStoneLv = srcuser:GetEquipSnowStoneLv(385504) or 0
+  local limit = 15 + value / 1000 + snowStoneLv
+  return num >= limit
+end
+
 Pro_PreCondtionType[SKILL_ABACHECK].Func = SkillHelperFunc.AbaPreCheck
 Pro_PreCondtionType[SKILL_ARCH].Func = SkillHelperFunc.ARCH
 Pro_PreCondtionType[SKILL_Lianhuan].Func = SkillHelperFunc.Lianhuan
@@ -218,18 +236,22 @@ Pro_PreCondtionType[SKILL_ENSEMBLE].Func = SkillHelperFunc.ENSEMBLE
 Pro_PreCondtionType[SKILL_PIONEER].Func = SkillHelperFunc.PIONEER
 Pro_PreCondtionType[SKILL_STONE].Func = SkillHelperFunc.STONE
 Pro_PreCondtionType[SKILL_ENSEMBLEDOUBLE].Func = SkillHelperFunc.ENSEMBLEDOUBLE
+Pro_PreCondtionType[SKILL_ROTATE_POINT].Func = SkillHelperFunc.ROTATEPOINT
 
 function SkillHelperFunc.DoDynamicCost(costtype, srcUser, skillid)
   local func = SkillHelperFunc.DynamicCostFunc[costtype]
   if func == nil then
     return
   end
-  func(srcUser)
+  return func(srcUser, skillid)
 end
 
 function SkillHelperFunc.DoDynamicCost_Aba(srcUser, skillid)
   if not srcUser:HasBuffID(100510) then
     return false
+  end
+  if srcUser:HasBuffID(35010430) then
+    return true
   end
   local powerLayer = srcUser:GetBuffLayer(100500)
   if powerLayer == 0 then

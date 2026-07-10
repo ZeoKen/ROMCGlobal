@@ -9,6 +9,19 @@ autoImport("FurniturePackagePart")
 autoImport("PersonalArtifactPackagePart")
 autoImport("ExtractionPackagePart")
 local addFavoriteItems, delFavoriteItems, readyToPutInItems = {}, {}, {}
+local coinTipOffset = {200, -50}
+local NokrDiamondItemId = 111
+local NokrDiamondItemGuid = "PackageMainPageNokrDiamond"
+local nokrDiamondItemData
+local EnsureCoinCollider = function(obj)
+  if not obj then
+    return
+  end
+  if not obj:GetComponent(BoxCollider) then
+    obj:AddComponent(BoxCollider)
+  end
+  NGUITools.UpdateWidgetCollider(obj)
+end
 
 function PackageMainPage:Init()
   self:AddViewEvts()
@@ -29,6 +42,43 @@ function PackageMainPage:OnEnter()
 end
 
 local tabDatas = {}
+local IsNokrDiamondItemEnabled = function()
+  return BranchMgr.IsNOKR() and Table_Item and Table_Item[NokrDiamondItemId] ~= nil
+end
+local GetNokrDiamondItemData = function()
+  if not IsNokrDiamondItemEnabled() then
+    return
+  end
+  local diamondNum = MyselfProxy.Instance:GetNokrDiamond() or 0
+  if diamondNum <= 0 then
+    return
+  end
+  if not nokrDiamondItemData then
+    nokrDiamondItemData = ItemData.new(NokrDiamondItemGuid, NokrDiamondItemId)
+    nokrDiamondItemData.isVirtualNokrDiamond = true
+    nokrDiamondItemData.forceShowNum = true
+    nokrDiamondItemData.showCount = true
+  end
+  nokrDiamondItemData:SetItemNum(diamondNum)
+  nokrDiamondItemData.isMark = false
+  nokrDiamondItemData.isFavorite = false
+  return nokrDiamondItemData
+end
+local IsNokrDiamondShowTab = function(tabData)
+  local index = tabData and tabData.index
+  return index == 0 or index == 2
+end
+local TryInsertNokrDiamondItem = function(tabData)
+  if not IsNokrDiamondShowTab(tabData) then
+    return false
+  end
+  local itemData = GetNokrDiamondItemData()
+  if itemData then
+    table.insert(tabDatas, itemData)
+    return true
+  end
+  return false
+end
 
 function PackageMainPage:InitUI()
   self.packageBordMap = {}
@@ -39,16 +89,43 @@ function PackageMainPage:InitUI()
   self.lottery = self:FindChild("Lottery", coins)
   self.lotterylabel = self:FindComponent("Label", UILabel, self.lottery)
   local icon = self:FindComponent("symbol", UISprite, self.lottery)
-  IconManager:SetItemIcon(Table_Item[151].Icon, icon)
   self.userRob = self:FindChild("Silver", coins)
   self.robLabel = self:FindComponent("Label", UILabel, self.userRob)
-  icon = self:FindComponent("symbol", UISprite, self.userRob)
-  IconManager:SetItemIcon(Table_Item[100].Icon, icon)
-  if FunctionLogin.Me():IsNoviceServer() then
-    self.lottery:SetActive(false)
-  else
+  local robIcon = self:FindComponent("symbol", UISprite, self.userRob)
+  IconManager:SetItemIcon(Table_Item[100].Icon, robIcon)
+  self:AddClickEvent(self.userRob, function()
+    self:ShowCoinItemTip(100, robIcon)
+  end)
+  EnsureCoinCollider(self.userRob)
+  if BranchMgr.IsNOKR() and Table_Item[111] then
     self.lottery:SetActive(true)
+    self.lotteryItemId = 111
+    IconManager:SetItemIcon(Table_Item[111].Icon, icon)
+  elseif not FunctionLogin.Me():IsNoviceServer() then
+    self.lottery:SetActive(true)
+    self.lotteryItemId = 151
+    IconManager:SetItemIcon(Table_Item[151].Icon, icon)
+  else
+    self.lottery:SetActive(false)
+    self.lotteryItemId = nil
   end
+  self:AddClickEvent(self.lottery, function()
+    self:ShowCoinItemTip(self.lotteryItemId, icon)
+  end)
+  EnsureCoinCollider(self.lottery)
+end
+
+function PackageMainPage:ShowCoinItemTip(itemid, stick)
+  if not itemid or not Table_Item[itemid] then
+    self:ShowItemTip()
+    return
+  end
+  self.coinTipData = self.coinTipData or {
+    itemdata = ItemData.new()
+  }
+  self.coinTipData.itemdata:ResetData("PackageMainPageCoin", itemid)
+  self.coinTipData.funcConfig = FunctionItemFunc.GetItemFuncIds(itemid, nil, false)
+  self:ShowItemTip(self.coinTipData, stick, NGUIUtil.AnchorSide.Right, coinTipOffset)
 end
 
 function PackageMainPage:InitItemList()
@@ -321,6 +398,7 @@ PackageMainPage.iSFashionType = false
 
 function PackageMainPage.GetTabDatas(itemTabConfig, tabData)
   TableUtility.ArrayClear(tabDatas)
+  local hasNokrDiamondItem = TryInsertNokrDiamondItem(tabData)
   local bagData = BagProxy.Instance.bagData
   local datas
   if tabData.index == -1 then
@@ -331,7 +409,7 @@ function PackageMainPage.GetTabDatas(itemTabConfig, tabData)
   else
     datas = bagData:GetItems(itemTabConfig)
   end
-  if datas and #datas == 0 then
+  if datas and #datas == 0 and not hasNokrDiamondItem then
     return tabDatas
   end
   if datas then
@@ -424,6 +502,9 @@ function PackageMainPage:ClickItem(cellCtl)
     })
     return
   end
+  if data and data.isVirtualNokrDiamond and (self.markingFavoriteMode or self.markingMode) then
+    return
+  end
   local newChooseId = data and data.id or 0
   local go = cellCtl and cellCtl.gameObject
   if self.markingFavoriteMode then
@@ -512,6 +593,9 @@ function PackageMainPage:DoubleClickItem(cellCtl)
   if data ~= nil and data.id == BagItemEmptyType.Unlock then
     return
   end
+  if data and data.isVirtualNokrDiamond then
+    return
+  end
   if self.markingFavoriteMode then
     return
   end
@@ -519,6 +603,9 @@ function PackageMainPage:DoubleClickItem(cellCtl)
     return
   end
   if data then
+    if data.staticData and data.staticData.id == 113 then
+      return
+    end
     if data.staticData and data.staticData.id == 5544 then
       local jumpConfig = Table_ShortcutPower[data.staticData.UseMode]
       local jumpEvent = jumpConfig and jumpConfig.Event
@@ -588,12 +675,18 @@ end
 function PackageMainPage:OnDragStart(cellCtrl)
   xdlog("PackageMainPage OnDragStart")
   local data = cellCtrl.data
+  if data and data.isVirtualNokrDiamond then
+    return
+  end
   self.container:OnBagItemDragStart(data)
 end
 
 function PackageMainPage:OnDragEnd(cellCtrl)
   xdlog("PackageMainPage OnDragEnd")
   local data = cellCtrl.data
+  if data and data.isVirtualNokrDiamond then
+    return
+  end
   self.container:OnBagItemDragEnd(data)
 end
 
@@ -623,10 +716,11 @@ function PackageMainPage:ShowPackageItemTip(data, ignoreBounds)
     self.chooseId = 0
     self:UpdateItemChoose()
   end
+  local funcConfig = data.isVirtualNokrDiamond and FunctionItemFunc.GetItemFuncIds(data.staticData.id, nil, false) or self.container:GetDataFuncs(data)
   local sdata = {
     itemdata = data,
     showUpTip = true,
-    funcConfig = self.container:GetDataFuncs(data),
+    funcConfig = funcConfig or _EmptyTable,
     ignoreBounds = ignoreBounds,
     callback = callback,
     showFrom = "bag",
@@ -651,14 +745,14 @@ function PackageMainPage:ShowPackageItemTip(data, ignoreBounds)
     tipOffset[1] = 0
   end
   local tip = self:ShowItemTip(sdata, self.normalStick, nil, tipOffset)
-  if tip and tip.ActiveFavorite then
+  if not data.isVirtualNokrDiamond and tip and tip.ActiveFavorite then
     tip:ActiveFavorite()
   end
 end
 
 function PackageMainPage:SetItemDragEnabled(b)
   for _, cell in pairs(self.itemCells) do
-    cell:CanDrag(b)
+    cell:CanDrag(b and (not cell.data or not cell.data.isVirtualNokrDiamond))
   end
 end
 
@@ -712,7 +806,11 @@ end
 
 function PackageMainPage:UpdateCoins()
   self.robLabel.text = StringUtil.NumThousandFormat(MyselfProxy.Instance:GetROB())
-  self.lotterylabel.text = StringUtil.NumThousandFormat(MyselfProxy.Instance:GetLottery())
+  if BranchMgr.IsNOKR() and Table_Item[111] then
+    self.lotterylabel.text = StringUtil.NumThousandFormat(MyselfProxy.Instance:GetNokrDiamond())
+  else
+    self.lotterylabel.text = StringUtil.NumThousandFormat(MyselfProxy.Instance:GetLottery())
+  end
 end
 
 function PackageMainPage:AddViewEvts()
@@ -720,7 +818,7 @@ function PackageMainPage:AddViewEvts()
   self:AddListenEvt(ItemEvent.EquipUpdate, self.HandleItemUpdate)
   self:AddListenEvt(ItemEvent.MemoryUpdate, self.HandleItemUpdate)
   self:AddListenEvt(ItemEvent.ItemReArrage, self.HandleItemReArrage)
-  self:AddListenEvt(MyselfEvent.MyDataChange, self.UpdateCoins)
+  self:AddListenEvt(MyselfEvent.MyDataChange, self.HandleMyDataChange)
   self:AddListenEvt(MyselfEvent.MyProfessionChange, self.HandleItemUpdate)
   self:AddListenEvt(ServiceEvent.ItemPackSlotNtfItemCmd, self.HandleItemUpdate)
   self:AddListenEvt(ServiceEvent.ItemPackageSort, self.HandleItemUpdate)
@@ -730,7 +828,21 @@ function PackageMainPage:AddViewEvts()
   self:AddListenEvt(PlayerEvent.AnonymousStateChange, self.HandleItemUpdate)
 end
 
+function PackageMainPage:HandleMyDataChange(note)
+  self:UpdateCoins()
+  if IsNokrDiamondItemEnabled() then
+    self:UpdateList()
+  end
+end
+
 function PackageMainPage:HandleItemUpdate(note)
+  local petBord = self.packageBordMap and self.packageBordMap.Pet
+  if petBord and petBord.gameObject and petBord.gameObject.activeSelf and (not note or not note.body) then
+    if petBord.UpdatePetCD then
+      petBord:UpdatePetCD()
+    end
+    return
+  end
   self:RemoveDelayedCall("delayedUpdateList")
   self:UpdateList()
   local tip = TipsView.Me().currentTip
@@ -834,7 +946,9 @@ end
 
 function PackageMainPage:ShowPackageBord(bordKey)
   local bord = self:GetPackageBord(bordKey)
-  bord:UpdateInfo()
+  if bordKey ~= "Pet" then
+    bord:UpdateInfo()
+  end
   bord:Show()
 end
 
@@ -900,6 +1014,7 @@ end
 function PackageMainPage:OnExit()
   self:RemoveReArrageSafeLT()
   self:RemoveDelayedCall("delayedUpdateList")
+  self:HideAllPackageBords()
   self.chooseId = 0
   self:ShowPackageItemTip()
   self:UpdateItemChoose()
@@ -908,8 +1023,18 @@ function PackageMainPage:OnExit()
 end
 
 function PackageMainPage:OnDestroy()
+  self:HideAllPackageBords()
   self.itemlist:OnExit()
   self.itemlist = nil
+end
+
+function PackageMainPage:HideAllPackageBords()
+  if not self.packageBordMap then
+    return
+  end
+  for _, bord in pairs(self.packageBordMap) do
+    self:HidePackageBord(bord)
+  end
 end
 
 function PackageMainPage:UpdateItemChoose()
@@ -982,7 +1107,7 @@ end
 function PackageMainPage:MarkingChooseAll(bool)
   local datas = self.itemlist:GetDatas()
   for i = 1, #datas do
-    if type(datas[i]) == "table" then
+    if type(datas[i]) == "table" and not datas[i].isVirtualNokrDiamond then
       if bool then
         if TableUtility.ArrayFindIndex(readyToPutInItems, datas[i].id) == 0 then
           TableUtility.ArrayPushBack(readyToPutInItems, datas[i].id)
@@ -998,7 +1123,7 @@ function PackageMainPage:MarkingChooseAll(bool)
   for _, cell in pairs(self.itemCells) do
     local guid = cell.data and cell.data.id
     if guid then
-      cell.data.isMark = bool
+      cell.data.isMark = bool and not cell.data.isVirtualNokrDiamond
       cell:UpdateCheckMark()
     end
   end
@@ -1027,7 +1152,7 @@ function PackageMainPage:UpdateChooseAllLabel()
   local datas = self.itemlist:GetDatas()
   self.chooseAllSwitch = false
   for i = 1, #datas do
-    if type(datas[i]) == "table" and datas[i].isMark then
+    if type(datas[i]) == "table" and not datas[i].isVirtualNokrDiamond and datas[i].isMark then
       self.chooseAllSwitch = true
     end
   end

@@ -10,6 +10,25 @@ local StringData = {
   [SceneSkill_pb.ESKILLOPTION_SELECT_MOUNT] = 1
 }
 
+function UserSaveInfoData:CacheSnowData(data)
+  self.snowData = data
+  self.snowUseMode = data and data.usemode or nil
+  self.snowFashionIndexMap = {}
+  if data and data.fashiondatas then
+    for i = 1, #data.fashiondatas do
+      local single = data.fashiondatas[i]
+      if single and single.pos then
+        self.snowFashionIndexMap[single.pos] = single.useid or 0
+      end
+    end
+  end
+  if next(self.snowFashionIndexMap) ~= nil then
+    self.snowHeadFashionString = string.format("%s;%s;%s", self.snowFashionIndexMap[1] or 0, self.snowFashionIndexMap[2] or 0, self.snowFashionIndexMap[3] or 0)
+  else
+    self.snowHeadFashionString = nil
+  end
+end
+
 function UserSaveInfoData:ctor(data)
   self.id = data.id
   self.profession = data.profession
@@ -47,6 +66,7 @@ function UserSaveInfoData:ctor(data)
     end
   end
   self.extracts = ExtractSaveData.new(data.extraction_data)
+  self:CacheSnowData(data.snow_data)
   self.memoryDatas = {}
   local serverMemorys = data.memory_pos or {}
   if serverMemorys and 0 < #serverMemorys then
@@ -290,6 +310,14 @@ end
 
 function UserSaveInfoData:GetExtractData()
   return self.extracts
+end
+
+function UserSaveInfoData:GetSnowUseMode()
+  return self.snowUseMode
+end
+
+function UserSaveInfoData:GetSnowHeadFashionString()
+  return self.snowHeadFashionString
 end
 
 function UserSaveInfoData:GetMasterSkillProfessData()

@@ -148,6 +148,7 @@ function SkillProxy:ctor(proxyName, data)
   self.blockMasterSkills = {}
   self.fakeDeadSkillID = 0
   self.fakeDeadSkillAutoMode = 0
+  self.endSkillExecutedMap = {}
   self:InitMonsterSkill()
 end
 
@@ -1054,12 +1055,40 @@ function SkillProxy:SkillCanBeUsedByID(skillID, allowNoLearned, isTrigger)
     end
     return canBeUsed
   else
+    if self.endSkillExecutedMap[skillID] ~= nil and not self:GetEndSkillState(skillID) then
+      return false
+    end
     learnedSkill = self:FindSkill(skillID)
     if learnedSkill then
       return self:SkillCanBeUsed(learnedSkill)
     end
     return allowNoLearned or false
   end
+end
+
+function SkillProxy:SetEndSkillState(skillID, state)
+  if skillID and skillID ~= 0 then
+    self.endSkillExecutedMap[skillID] = state
+  end
+end
+
+function SkillProxy:GetEndSkillState(skillID)
+  if skillID and skillID ~= 0 then
+    local state = self.endSkillExecutedMap[skillID]
+    return state ~= nil and state == 0
+  end
+  return false
+end
+
+function SkillProxy:TryMarkEndSkillExecuted(skillID)
+  if skillID and skillID ~= 0 then
+    local currentState = self.endSkillExecutedMap[skillID]
+    if currentState and currentState == 0 then
+      self.endSkillExecutedMap[skillID] = 1
+      return true
+    end
+  end
+  return false
 end
 
 function SkillProxy:IsInCD(skillItem, isTrigger)
@@ -1218,8 +1247,10 @@ function SkillProxy:HasFitSpecialCost(skillItem)
     end
     local isNoItem = dynamicAllSkillInfo ~= nil and dynamicAllSkillInfo:GetIsNoItem()
     local skillCost = self:GetOriginSpecialCost(skillStaticData)
+    local skillCostRecord = {}
+    local skillBuffRecord = {}
+    local lackCost, specialCost, num
     if 0 < #skillCost then
-      local lackCost, specialCost, num
       for i = 1, #skillCost do
         specialCost = skillCost[i]
         if not (not specialCost.itemID or isNoItem) or specialCost.specialType == 4 then
@@ -1240,6 +1271,9 @@ function SkillProxy:HasFitSpecialCost(skillItem)
               num
             })
           end
+          if specialCost.itemID then
+            skillCostRecord[specialCost.itemID] = num
+          end
         end
         if specialCost.buffID and not isNoBuff then
           if dynamicSkillInfo then
@@ -1250,22 +1284,39 @@ function SkillProxy:HasFitSpecialCost(skillItem)
           if num > myself:GetBuffLayer(specialCost.buffID) then
             return false, nil, false
           end
+          skillBuffRecord[specialCost.buffID] = num
         end
       end
-      if lackCost then
-        return false, lackCost, true
-      end
-    elseif dynamicSkillInfo and dynamicSkillInfo.costs and not isNoItem then
-      local lackCost
-      for k, cost in pairs(dynamicSkillInfo.costs) do
-        if cost[1] ~= nil and 0 < cost[2] and self:GetItemNumBySkillCostCfg(cost[1], nil) < cost[2] then
-          lackCost = lackCost or {}
-          table.insert(lackCost, cost)
+    end
+    if dynamicSkillInfo and dynamicSkillInfo.costs then
+      for itemid, cost in pairs(dynamicSkillInfo.costs) do
+        if cost[4] == 1 then
+          if skillCostRecord[itemid] or isNoItem then
+          else
+            local newNum = math.floor(math.max(0, (0 + cost[2]) * (1 + cost[3])))
+            if 0 < newNum and newNum > self:GetItemNumBySkillCostCfg(cost[1], nil) then
+              lackCost = lackCost or {}
+              table.insert(lackCost, {
+                cost[1],
+                newNum
+              })
+            end
+          end
+        elseif cost[4] ~= 2 or skillBuffRecord[itemid] or isNoBuff then
+        else
+          local newNum = math.floor(math.max(0, (0 + cost[2]) * (1 + cost[3])))
+          if 0 < newNum and newNum > myself:GetBuffLayer(cost[1]) then
+            lackCost = lackCost or {}
+            table.insert(lackCost, {
+              cost[1],
+              newNum
+            })
+          end
         end
       end
-      if lackCost then
-        return false, lackCost, true
-      end
+    end
+    if lackCost then
+      return false, lackCost, true
     end
   end
   return true
@@ -1461,10 +1512,15 @@ function SkillProxy:Server_UpdateDynamicSkillInfos(serverData)
       self.dynamicSkillInfos[dynamicServerData.id] = dynamicData
     end
     local skill = self:GetLearnedSkillBySortID(dynamicServerData.id)
+    local oldMax = skill and skill:GetMaxCDTimes(Game.Myself) or 0
     dynamicData:SetServerInfo(dynamicServerData)
-    local skillMaxCount = skill and skill:GetMaxCDTimes() or 0
-    if dynamicServerData.cd_times and 1 < skillMaxCount then
-      self:InitSkillLeftCD(dynamicServerData.id, skill:GetMaxCDTimes(Game.Myself))
+    local newMax = skill and skill:GetMaxCDTimes(Game.Myself) or 0
+    if newMax ~= oldMax then
+      local delta = newMax - oldMax
+      local currentCount = self.skillLeftCDMap[dynamicServerData.id] or 0
+      local newCount = math.max(0, math.min(newMax, currentCount + delta))
+      self.skillLeftCDMap[dynamicServerData.id] = newCount
+      self.skillLeftCD_DirtyMap[dynamicServerData.id] = true
       GameFacade.Instance:sendNotification(SkillEvent.UpdateCDTimes, dynamicServerData.id)
     end
     if skill and self:_CheckPosInShortCut(skill) then

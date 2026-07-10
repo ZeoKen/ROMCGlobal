@@ -712,7 +712,7 @@ function Game:XDELogin()
       NGUIText.RemoveIgnoreEasternRange(3584)
     end
     ZhString.QuickUsePopupFuncCell_EquipBtn = ZhString.Verb_Translation_1
-  elseif BranchMgr.IsKorea() then
+  elseif BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
     ZhString.StartGamePanel_CopyRightTips = ZhString.StartGamePanel_CopyRightTips_KR
     ZhString.Lottery_DetailRate = ZhString.Lottery_DetailRate_KR
     ZhString.Lottery_RateTip = ZhString.Lottery_RateTip_KR

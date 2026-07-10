@@ -66,6 +66,7 @@ BuffType = {
   ShowDefAttr = "ShowDefAttr",
   ShieldPosCanEquipWeapon = "ShieldPosCanEquipWeapon",
   ChangeWalkAction = "ChangeWalkAction",
+  ReplaceSkillBaseCd = "ReplaceSkillBaseCd",
   InitLaunchRangeMoreThenAdd = "InitLaunchRangeMoreThenAdd",
   InvalidLastSkill = "InvalidLastSkill",
   NoEnemyLocked = "NoEnemyLocked",
@@ -92,7 +93,8 @@ BuffType = {
   PerfectServiceTemporary = "PerfectServiceTemporary",
   BellCharge = "BellCharge",
   AttrCanMove = "AttrCanMove",
-  RoseSeedCount = "RoseSeedCount"
+  RoseSeedCount = "RoseSeedCount",
+  AutoTriggerSkill = "AutoTriggerSkill"
 }
 SkillTargetType = {
   None = 1,

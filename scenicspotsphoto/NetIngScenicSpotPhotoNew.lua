@@ -190,7 +190,7 @@ end
 
 function NetIngScenicSpotPhotoNew:GetPathOfServerNew(scenic_spot_id)
   local the_account_id = GamePhoto.playerAccount
-  if BranchMgr.IsKorea() and EnvChannel.IsReleaseBranch() and FunctionLogin.Me():getCurServerDataSid() == 82002 then
+  if (BranchMgr.IsKorea() or BranchMgr.IsNOKR()) and EnvChannel.IsReleaseBranch() and FunctionLogin.Me():getCurServerDataSid() == 82002 then
     the_account_id = GamePhoto.playerSdkUid or 0
   end
   return self.userPathOfServerNew .. "/" .. the_account_id .. "/" .. scenic_spot_id .. "." .. PhotoFileInfo.Extension

@@ -51,6 +51,7 @@ function PvePassInfo:ctor(id)
   self.mini_rest_time = 0
   self.reset_time = 0
   self.kill_boss_num = 0
+  self.exclusive_lefttime = nil
   self.activeAffixs = {}
   self:initBoss()
   self:InitRewardCheckFunc()
@@ -176,6 +177,9 @@ function PvePassInfo:SetServerData(serverdata)
   end
   if nil ~= serverdata.free then
     self.is_free = serverdata.free
+  end
+  if nil ~= serverdata.exclusive_lefttime then
+    self.exclusive_lefttime = serverdata.exclusive_lefttime
   end
   if serverdata.stars then
     if not self.heroRoadStars then
@@ -570,6 +574,16 @@ function PvePassInfo:IsFree()
   return self.is_free == true
 end
 
+function PvePassInfo:GetExclusiveLeftTime(sec)
+  if nil == self.exclusive_lefttime then
+    return nil
+  end
+  if sec then
+    return self.exclusive_lefttime
+  end
+  return self.exclusive_lefttime // 60
+end
+
 function PvePassInfo:_resetBossInfo(bossinfo)
   if not self.isBoss then
     return
@@ -630,6 +644,31 @@ function PvePassInfo:GetAllRewards(bossid)
   else
     return self:_getRewards()
   end
+end
+
+local _GetGuaranteeRewardData = function(rewards)
+  if not rewards then
+    return nil
+  end
+  for i = 1, #rewards do
+    local reward = rewards[i]
+    if reward:HasGuaranteeInfo() then
+      return reward
+    end
+  end
+  return nil
+end
+
+function PvePassInfo:GetGuaranteeRewardData(bossid)
+  if self.isBoss then
+    if not bossid then
+      return nil
+    end
+    local info = self.bossInfoMap and self.bossInfoMap[bossid]
+    local bossRewards = info and info:GetRewards()
+    return _GetGuaranteeRewardData(bossRewards)
+  end
+  return _GetGuaranteeRewardData(self:_getRewards())
 end
 
 function PvePassInfo:HasBossInfo(bossid)

@@ -29,29 +29,32 @@ function BagDragItemCell:SetData(data)
   else
     self.dragDrop.dragDropComponent.data = nil
   end
-  if data and data.CodeData and data.CodeData.staticData.id then
-    if data.CodeData.staticData.id == 5400 then
-      self:AddOrRemoveGuideId(self.gameObject, 201)
-    else
-      self:AddOrRemoveGuideId(self.gameObject)
-    end
+  self:AddOrRemoveGuideId(self.gameObject)
+  local guideId
+  if data and data.CodeData and data.CodeData.staticData.id and data.CodeData.staticData.id == 5400 then
+    guideId = 201
   end
   if data and data.staticData then
-    if data.staticData.id == 5501 then
-      self:AddOrRemoveGuideId(self.gameObject, 1011)
+    if data.staticData.id == 114 then
+      guideId = 1106
+    elseif data.staticData.id == 5501 then
+      guideId = 1011
     elseif data.staticData.id == 5670 then
-      self:AddOrRemoveGuideId(self.gameObject, 1031)
+      guideId = 1031
     elseif data.staticData.id == 14175 then
-      self:AddOrRemoveGuideId(self.gameObject, 490)
+      guideId = 490
     elseif data.staticData.id == 14176 then
-      self:AddOrRemoveGuideId(self.gameObject, 491)
+      guideId = 491
     elseif data.staticData.id == 42691 then
-      self:AddOrRemoveGuideId(self.gameObject, 537)
+      guideId = 537
     elseif data.staticData.id == 42692 then
-      self:AddOrRemoveGuideId(self.gameObject, 540)
+      guideId = 540
     elseif data.staticData.id == 45563 then
-      self:AddOrRemoveGuideId(self.gameObject, 563)
+      guideId = 563
     end
+  end
+  if guideId then
+    self:AddOrRemoveGuideId(self.gameObject, guideId)
   end
 end
 

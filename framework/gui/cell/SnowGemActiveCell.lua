@@ -93,17 +93,15 @@ function SnowGemActiveCell:ClearData()
   self:ClearEffect()
 end
 
-function SnowGemActiveCell:SetEquipRefineLv(refineLv)
+function SnowGemActiveCell:SetEquipRefineLv(refineLv, isActive)
   if not self.effectContainer then
     return
   end
-  refineLv = refineLv or 0
   self:ClearEffect()
-  if 10 <= refineLv then
-    self.slotEffect = self:PlayUIEffect(EffectMap.UI.SnowGem_SlotGrade2, self.effectContainer)
-  elseif 5 <= refineLv then
-    self.slotEffect = self:PlayUIEffect(EffectMap.UI.SnowGem_SlotGrade1, self.effectContainer)
+  if not isActive then
+    return
   end
+  self.slotEffect = self:PlayUIEffect(EffectMap.UI.SnowGem_SlotGrade2, self.effectContainer)
 end
 
 function SnowGemActiveCell:ClearEffect()

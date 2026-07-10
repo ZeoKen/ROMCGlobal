@@ -28,6 +28,7 @@ function CrownAccessoriesPage:Init()
   self.currentChooseType = CrownAccessoriesPage.ChoosePanelType.None
   self.currentSlotIndex = nil
   self.currentGemIndex = nil
+  self.isCodexMaxPreview = false
   self:InitInnerTabs()
   self:InitInnerPages()
   self:InitEmbedPage()
@@ -233,6 +234,14 @@ function CrownAccessoriesPage:InitCodexContainer(codexPage)
     self.codexCostCount = self:FindComponent("CostCount", UILabel, self.codexCostTip)
   end
   self.codexStatusLabel = self:FindComponent("StatusLabel", UILabel, self.codexContainer)
+  self.codexMaxPreviewBtn = self:FindGO("MaxPreviewBtn", codexPage)
+  if self.codexMaxPreviewBtn then
+    self.codexMaxPreviewLabel = self:FindComponent("MaxPreviewLabel", UILabel, self.codexMaxPreviewBtn)
+    self:AddClickEvent(self.codexMaxPreviewBtn, function()
+      self:OnCodexMaxPreviewClick()
+    end)
+  end
+  self:RefreshCodexMaxPreviewBtn()
 end
 
 function CrownAccessoriesPage:InitCodexAttrLists()
@@ -249,9 +258,22 @@ function CrownAccessoriesPage:InitCodexAttrLists()
     self.basicAttrLabel = self:FindComponent("Label", UILabel, basicAttrGO)
     local basicAttrTable = self:FindGO("AttrTable", basicAttrGO)
     if basicAttrTable then
-      local table = basicAttrTable:GetComponent(UITable)
-      if table then
-        self.basicAttrCtrl = UIGridListCtrl.new(table, TipLabelCell, "SnowTipLabelCell")
+      self.basicAttrTable = basicAttrTable:GetComponent(UITable)
+      self.baseAttrBg = self:FindComponent("BaseAttrBg", UISprite, basicAttrGO)
+      self.curLvAttrGO = self:FindGO("CurLvAttr", basicAttrTable)
+      self.nextLvTipGO = self:FindGO("NextLvTip", basicAttrTable)
+      self.nextLvAttrGO = self:FindGO("NextLvAttr", basicAttrTable)
+      if self.curLvAttrGO then
+        local curLvAttrTable = self.curLvAttrGO:GetComponent(UITable)
+        if curLvAttrTable then
+          self.basicAttrCtrl = UIGridListCtrl.new(curLvAttrTable, TipLabelCell, "SnowTipLabelCell")
+        end
+      end
+      if self.nextLvAttrGO then
+        local nextLvAttrTable = self.nextLvAttrGO:GetComponent(UITable)
+        if nextLvAttrTable then
+          self.nextLvAttrCtrl = UIGridListCtrl.new(nextLvAttrTable, TipLabelCell, "SnowTipLabelCell")
+        end
       end
     end
   end
@@ -276,7 +298,7 @@ local ROMAN_NUMERALS = {
   [4] = "IV",
   [5] = "V"
 }
-local MAX_ADV_LEVEL = 4
+local MAX_ADV_LEVEL = 5
 local GetMaxStoneLevel = function()
   local maxLevel = 0
   if Table_SnowStoneLevel then
@@ -288,8 +310,48 @@ local GetMaxStoneLevel = function()
   end
   return maxLevel
 end
+local GetSnowGemAdvanceProgress = function(advlv, advexp)
+  advlv = advlv or 0
+  advexp = advexp or 0
+  if advlv >= MAX_ADV_LEVEL then
+    return 0, true
+  end
+  local stoneAdvanceCount = GameConfig.Snow and GameConfig.Snow.StoneAdvanceCount or {}
+  local maxCount = stoneAdvanceCount[advlv + 1]
+  if not maxCount then
+    return 0, true
+  end
+  local progressValue = advexp / maxCount
+  if 1 < progressValue then
+    progressValue = 1
+  end
+  return math.floor(progressValue * 100 + 0.5), false
+end
 
-function CrownAccessoriesPage:RefreshCodexAttrList(gemId, level, advLevel)
+function CrownAccessoriesPage:RefreshCodexMaxPreviewBtn()
+  if self.codexMaxPreviewLabel then
+    self.codexMaxPreviewLabel.text = self.isCodexMaxPreview and (ZhString.CrownAccessoriesPage_CancelPreview or "取消预览") or ZhString.CrownAccessoriesPage_MaxPreview or "满级预览"
+  end
+end
+
+function CrownAccessoriesPage:RefreshSelectedCodexGemDetail()
+  if not self.selectedGemId then
+    return
+  end
+  local isUnlocked = false
+  if SnowCrownProxy.Instance then
+    isUnlocked = SnowCrownProxy.Instance:IsGemUnlocked(self.selectedGemId)
+  end
+  self:ShowCodexGemDetail(self.selectedGemId, isUnlocked)
+end
+
+function CrownAccessoriesPage:OnCodexMaxPreviewClick()
+  self.isCodexMaxPreview = not self.isCodexMaxPreview
+  self:RefreshCodexMaxPreviewBtn()
+  self:RefreshSelectedCodexGemDetail()
+end
+
+function CrownAccessoriesPage:RefreshCodexAttrList(gemId, level, advLevel, advexp)
   if not gemId then
     return
   end
@@ -298,18 +360,23 @@ function CrownAccessoriesPage:RefreshCodexAttrList(gemId, level, advLevel)
     return
   end
   level = level or 0
-  advLevel = advLevel or 0
+  advLevel = advLevel or 1
+  if advLevel < 1 then
+    advLevel = 1
+  end
   if self.basicAttrLabel then
     local maxLevel = GetMaxStoneLevel()
     self.basicAttrLabel.text = string.format(ZhString.CrownAccessoriesPage_BasicAttr, level, maxLevel)
   end
   if self.upgradeAttrLabel then
-    local currentRoman = ROMAN_NUMERALS[advLevel] or tostring(advLevel)
-    local maxRoman = ROMAN_NUMERALS[MAX_ADV_LEVEL] or tostring(MAX_ADV_LEVEL)
-    self.upgradeAttrLabel.text = string.format(ZhString.CrownAccessoriesPage_UpgradeAttr, currentRoman, maxRoman)
+    local currentRoman = ROMAN_NUMERALS[advLevel] or "I"
+    local maxRoman = ROMAN_NUMERALS[MAX_ADV_LEVEL] or "V"
+    local advProgress, isMaxAdvLevel = GetSnowGemAdvanceProgress(advLevel, advexp)
+    local progressText = isMaxAdvLevel and "" or string.format(ZhString.CrownAccessoriesPage_UpgradeProgress, advProgress)
+    self.upgradeAttrLabel.text = string.format(ZhString.CrownAccessoriesPage_UpgradeAttr, currentRoman, maxRoman, progressText)
   end
-  self:RefreshBasicAttrList(stoneConfig)
-  self:RefreshUpgradeAttrList(stoneConfig, advLevel)
+  self:RefreshBasicAttrList(level)
+  self:RefreshUpgradeAttrList(gemId, advLevel)
   if self.codexAttrTable then
     self.codexAttrTable:Reposition()
   end
@@ -320,18 +387,21 @@ end
 
 local ATTR_ICON_PREFIX = "{uiicon=new-com_icon_tips}"
 local ATTR_LABEL_COLOR = "FFFFFF"
-local ATTR_LABEL_CONFIG = {iconColorHexStr = "FFFFFF"}
-
-function CrownAccessoriesPage:RefreshBasicAttrList(stoneConfig)
-  if not self.basicAttrCtrl then
-    return
-  end
+local ATTR_LABEL_CONFIG = {
+  width = 290,
+  labwidth = 290,
+  iconColorHexStr = "FFFFFF"
+}
+local BuildBasicAttrList = function(level)
   local attrList = {}
-  local storeAttr = stoneConfig.StoreAttr
+  level = level or 0
+  local levelConfig = Table_SnowStoneLevel and Table_SnowStoneLevel[level]
+  local storeAttr = levelConfig and levelConfig.Attr
   if storeAttr then
-    for attrName, attrValue in pairs(storeAttr) do
-      local attrText = self:FormatAttrText(attrName, attrValue)
-      if attrText then
+    local mergedGroups = ItemTipBaseCell.MergeAttrsByValue(storeAttr)
+    for _, group in ipairs(mergedGroups) do
+      local attrText = ItemTipBaseCell.FormatMergedAttrText(group)
+      if attrText and attrText ~= "" then
         local labelText = ATTR_ICON_PREFIX .. attrText
         table.insert(attrList, {
           label = labelText,
@@ -342,39 +412,95 @@ function CrownAccessoriesPage:RefreshBasicAttrList(stoneConfig)
       end
     end
   end
-  self.basicAttrCtrl:ResetDatas(attrList)
+  return attrList, levelConfig ~= nil
 end
 
-function CrownAccessoriesPage:RefreshUpgradeAttrList(stoneConfig, advLevel)
+function CrownAccessoriesPage:UpdateBasicAttrLayout()
+  if self.basicAttrTable then
+    self.basicAttrTable:Reposition()
+  end
+  if self.baseAttrBg and self.basicAttrTable then
+    local bound = NGUIMath.CalculateRelativeWidgetBounds(self.basicAttrTable.transform)
+    if bound then
+      self.baseAttrBg.height = math.ceil(bound.size.y) + 10
+    end
+  end
+end
+
+function CrownAccessoriesPage:RefreshBasicAttrList(level)
+  if not self.basicAttrCtrl then
+    return
+  end
+  local attrList = BuildBasicAttrList(level)
+  self.basicAttrCtrl:ResetDatas(attrList)
+  local nextLevel = (level or 0) + 1
+  local nextAttrList, hasNextLevel = BuildBasicAttrList(nextLevel)
+  if self.curLvAttrGO then
+    self.curLvAttrGO:SetActive(true)
+  end
+  if self.nextLvTipGO then
+    self.nextLvTipGO:SetActive(hasNextLevel)
+  end
+  if self.nextLvAttrGO then
+    self.nextLvAttrGO:SetActive(hasNextLevel)
+  end
+  if self.nextLvAttrCtrl then
+    self.nextLvAttrCtrl:ResetDatas(hasNextLevel and nextAttrList or {})
+  end
+  self:UpdateBasicAttrLayout()
+end
+
+function CrownAccessoriesPage:RefreshUpgradeAttrList(stoneId, advLevel)
   if not self.upgradeAttrCtrl then
     return
   end
   local attrList = {}
   advLevel = advLevel or 0
-  local advanceAttrs = {
-    stoneConfig.AdvanceAttr,
-    stoneConfig.AdvanceAttr2,
-    stoneConfig.AdvanceAttr3
-  }
-  for i, advanceAttr in ipairs(advanceAttrs) do
-    if advanceAttr then
-      for unlockLevel, stageData in pairs(advanceAttr) do
-        local bufferId = stageData[advLevel] or stageData[0]
-        if bufferId then
-          local buffDesc = self:GetBuffDesc(bufferId)
-          if buffDesc and buffDesc ~= "" then
-            local labelText = ATTR_ICON_PREFIX .. buffDesc
-            table.insert(attrList, {
-              label = labelText,
-              hideline = true,
-              color = ATTR_LABEL_COLOR,
-              labelConfig = ATTR_LABEL_CONFIG
-            })
-          end
-        end
+  local stoneConfig = Table_SnowStone and Table_SnowStone[stoneId]
+  if not stoneConfig or not stoneConfig.Desc then
+    self.upgradeAttrCtrl:ResetDatas(attrList)
+    return
+  end
+  local effectConfig
+  if Table_SnowStoneEffect then
+    for _, config in pairs(Table_SnowStoneEffect) do
+      if config.StoneID == stoneId and config.Level == advLevel then
+        effectConfig = config
+        break
       end
     end
   end
+  local SafeFormatDesc = function(desc, values)
+    if not desc then
+      return ""
+    end
+    desc = OverSea.LangManager.Instance():GetLangByKey(desc) or desc
+    if not values or #values == 0 then
+      return string.gsub(desc, "%%s", "-")
+    end
+    local _, count = string.gsub(desc, "%%s", "")
+    local safeValues = {}
+    for i = 1, count do
+      safeValues[i] = values[i] or "-"
+    end
+    if 0 < #safeValues then
+      return string.format(desc, unpack(safeValues))
+    end
+    return desc
+  end
+  local descText
+  if effectConfig and effectConfig.Value then
+    descText = SafeFormatDesc(stoneConfig.Desc, effectConfig.Value)
+  else
+    descText = SafeFormatDesc(stoneConfig.Desc, nil)
+  end
+  local labelText = descText
+  table.insert(attrList, {
+    label = labelText,
+    hideline = true,
+    color = ATTR_LABEL_COLOR,
+    labelConfig = ATTR_LABEL_CONFIG
+  })
   self.upgradeAttrCtrl:ResetDatas(attrList)
 end
 
@@ -382,7 +508,6 @@ function CrownAccessoriesPage:FormatAttrText(attrName, attrValue)
   local propMap = Game.Config_PropName
   local propConfig = propMap and propMap[attrName]
   local displayName = propConfig and OverSea.LangManager.Instance():GetLangByKey(propConfig.PropName) or attrName
-  xdlog("displayName", attrName, propConfig.PropName)
   return string.format("%s +%d", displayName, attrValue)
 end
 
@@ -467,18 +592,29 @@ function CrownAccessoriesPage:ShowCodexGemDetail(gemId, isUnlocked)
   end
   local level = 0
   local advLevel = 0
+  local advexp = 0
   if SnowCrownProxy.Instance then
-    level = SnowCrownProxy.Instance:GetGemLevel(gemId)
-    advLevel = SnowCrownProxy.Instance:GetGemAdvanceLevel(gemId)
+    local bookData = SnowCrownProxy.Instance:GetStoneBookData(gemId)
+    level = bookData and bookData.lv or 0
+    advLevel = bookData and bookData.advlv or 0
+    advexp = bookData and bookData.advexp or 0
+  end
+  local displayLevel = level
+  local displayAdvLevel = advLevel
+  local displayAdvexp = advexp
+  if self.isCodexMaxPreview then
+    displayLevel = GetMaxStoneLevel()
+    displayAdvLevel = MAX_ADV_LEVEL
+    displayAdvexp = 0
   end
   if self.codexGemLevel then
-    self.codexGemLevel.text = string.format(ZhString.CrownAccessoriesPage_GemLevel, level)
+    self.codexGemLevel.text = string.format(ZhString.CrownAccessoriesPage_GemLevel, displayLevel)
   end
-  self:RefreshCodexAttrList(gemId, level, advLevel)
+  self:RefreshCodexAttrList(gemId, displayLevel, displayAdvLevel, displayAdvexp)
   local nextLevel = level + 1
   local isMaxLevel = not Table_SnowStoneLevel or not Table_SnowStoneLevel[nextLevel]
-  local showLevelUp = isUnlocked and not isMaxLevel
-  xdlog("ShowLevelUp", isUnlocked, isMaxLevel)
+  local showLevelUp = isUnlocked and not isMaxLevel and not self.isCodexMaxPreview
+  xdlog("ShowLevelUp", isUnlocked, isMaxLevel, self.isCodexMaxPreview)
   if showLevelUp then
     if self.codexStatusLabel and self.codexStatusLabel.gameObject then
       self.codexStatusLabel.gameObject:SetActive(false)
@@ -493,7 +629,9 @@ function CrownAccessoriesPage:ShowCodexGemDetail(gemId, isUnlocked)
   else
     if self.codexStatusLabel and self.codexStatusLabel.gameObject then
       self.codexStatusLabel.gameObject:SetActive(true)
-      if not isUnlocked then
+      if self.isCodexMaxPreview then
+        self.codexStatusLabel.text = ZhString.CrownAccessoriesPage_PreviewCantLevelUp or "预览状态无法升级"
+      elseif not isUnlocked then
         self.codexStatusLabel.text = ZhString.CrownAccessoriesPage_GemLocked or "未解锁"
       else
         self.codexStatusLabel.text = ZhString.CrownAccessoriesPage_GemMaxLevel or "已满级"
@@ -506,6 +644,23 @@ function CrownAccessoriesPage:ShowCodexGemDetail(gemId, isUnlocked)
       self.codexCostTip:SetActive(false)
     end
   end
+end
+
+function CrownAccessoriesPage:GetCodexLevelUpCostData(level)
+  local nextLevel = (level or 0) + 1
+  local levelConfig = Table_SnowStoneLevel and Table_SnowStoneLevel[nextLevel]
+  if not (levelConfig and levelConfig.Material) or not levelConfig.Material[1] then
+    return
+  end
+  local costData = levelConfig.Material[1]
+  local itemId = costData[1]
+  local itemCount = costData[2] or 0
+  local ownCount = 0
+  local bagTypes = GameConfig.PackageMaterialCheck and GameConfig.PackageMaterialCheck.default
+  if BagProxy.Instance and itemId then
+    ownCount = BagProxy.Instance:GetItemNumByStaticID(itemId, bagTypes) or 0
+  end
+  return itemId, itemCount, ownCount
 end
 
 function CrownAccessoriesPage:RefreshCodexLevelUpCost(level)
@@ -531,6 +686,13 @@ end
 
 function CrownAccessoriesPage:OnCodexLevelUpClick()
   if not self.selectedGemId then
+    return
+  end
+  if self.isCodexMaxPreview then
+    if self.codexStatusLabel and self.codexStatusLabel.gameObject then
+      self.codexStatusLabel.gameObject:SetActive(true)
+      self.codexStatusLabel.text = ZhString.CrownAccessoriesPage_PreviewCantLevelUp or "预览状态无法升级"
+    end
     return
   end
   if SnowCrownProxy.Instance then
@@ -565,6 +727,7 @@ function CrownAccessoriesPage:InitChoosePanel()
     self:AddClickEvent(self.embedBtn, function()
       self:OnEmbedBtnClick()
     end)
+    self.embedBtnCollider = self.embedBtn:GetComponent(BoxCollider)
     self.embedBtnLabel = self:FindComponent("EmbedLabel", UILabel, self.embedBtn)
   end
   local closeBtn = self:FindGO("CloseBtn", self.choosePanel)
@@ -592,6 +755,7 @@ function CrownAccessoriesPage:ShowChoosePanel(chooseType)
     return
   end
   self.currentChooseType = chooseType
+  self.selectedItemData = nil
   self:Show(self.choosePanel)
   ServiceItemProxy.Instance:CallBrowsePackage(SceneItem_pb.EPACKTYPE_MAIN)
   if self.choosePanelTitle then
@@ -605,6 +769,71 @@ function CrownAccessoriesPage:ShowChoosePanel(chooseType)
   self:UpdateSlotsAlpha(self.currentSlotIndex)
   self:UpdateChooseSymbol(self.currentSlotIndex, chooseType, self.currentGemIndex)
   self:RefreshChooseList()
+end
+
+function CrownAccessoriesPage:SetEmbedBtnEnabled(enabled)
+  if not self.embedBtn then
+    return
+  end
+  if enabled then
+    self:SetTextureWhite(self.embedBtn, ColorUtil.ButtonLabelOrange)
+  else
+    self:SetTextureGrey(self.embedBtn)
+  end
+  if self.embedBtnCollider then
+    self.embedBtnCollider.enabled = enabled
+  end
+end
+
+function CrownAccessoriesPage:GetEquipSites(itemData)
+  if not itemData or not itemData.equipInfo then
+    return nil
+  end
+  local equipType = itemData.equipInfo:GetEquipType()
+  if not equipType then
+    return nil
+  end
+  local equipTypeConfig = GameConfig.EquipType and GameConfig.EquipType[equipType]
+  return equipTypeConfig and equipTypeConfig.site
+end
+
+function CrownAccessoriesPage:GetRoleSnowEquipSites()
+  local siteMap = {}
+  if not BagProxy.Instance or not BagProxy.Instance.roleEquip then
+    return siteMap
+  end
+  local items = BagProxy.Instance.roleEquip:GetItems()
+  if not items then
+    return siteMap
+  end
+  for i = 1, #items do
+    local itemData = items[i]
+    if itemData and itemData.equipInfo and itemData.equipInfo:IsSnowEquip() then
+      local sites = self:GetEquipSites(itemData)
+      if sites then
+        for _, site in ipairs(sites) do
+          siteMap[site] = true
+        end
+      end
+    end
+  end
+  return siteMap
+end
+
+function CrownAccessoriesPage:CheckEquipSiteOccupied(itemData, occupiedSites)
+  if not occupiedSites then
+    return false
+  end
+  local sites = self:GetEquipSites(itemData)
+  if not sites then
+    return false
+  end
+  for _, site in ipairs(sites) do
+    if occupiedSites[site] then
+      return true
+    end
+  end
+  return false
 end
 
 function CrownAccessoriesPage:UpdateEmbedBtnLabel()
@@ -624,6 +853,13 @@ function CrownAccessoriesPage:UpdateEmbedBtnLabel()
   else
     self.embedBtnLabel.text = ZhString.CrownAccessoriesPage_Embed or "镶嵌"
   end
+  local enabled = true
+  if self.currentChooseType == CrownAccessoriesPage.ChoosePanelType.Equip then
+    enabled = isEquipped or not self.selectedItemData or self.selectedItemData.snowInvalid ~= true
+  elseif self.currentChooseType == CrownAccessoriesPage.ChoosePanelType.Gem then
+    enabled = isEquipped or not self.selectedItemData or self.selectedItemData.snowInvalid ~= true
+  end
+  self:SetEmbedBtnEnabled(enabled)
 end
 
 function CrownAccessoriesPage:HideChoosePanel()
@@ -701,6 +937,16 @@ function CrownAccessoriesPage:RefreshChooseList()
   elseif self.currentChooseType == CrownAccessoriesPage.ChoosePanelType.Gem then
     itemList = self:GetSnowGemList()
     table.sort(itemList, function(a, b)
+      local invalidA = a.snowInvalid == true
+      local invalidB = b.snowInvalid == true
+      if invalidA ~= invalidB then
+        return not invalidA
+      end
+      local recommendA = a.isRecommend == true
+      local recommendB = b.isRecommend == true
+      if recommendA ~= recommendB then
+        return recommendA
+      end
       local advlvA = a.snowGemData and a.snowGemData.advlv or 0
       local advlvB = b.snowGemData and b.snowGemData.advlv or 0
       if advlvA ~= advlvB then
@@ -717,6 +963,10 @@ function CrownAccessoriesPage:RefreshChooseList()
     end)
   end
   self.chooseListCtrl:ResetDatas(itemList)
+  self:TrySelectCurrentGemInChooseList(itemList)
+  if self.currentChooseType == CrownAccessoriesPage.ChoosePanelType.Equip or self.currentChooseType == CrownAccessoriesPage.ChoosePanelType.Gem then
+    self:UpdateChooseListInvalidState()
+  end
   local isEmpty = #itemList == 0
   if self.noneTip then
     self.noneTip.gameObject:SetActive(isEmpty)
@@ -731,8 +981,59 @@ function CrownAccessoriesPage:RefreshChooseList()
   if self.embedBtn then
     self.embedBtn:SetActive(not isEmpty)
   end
+  self:UpdateEmbedBtnLabel()
   if self.chooseScrollView then
     self.chooseScrollView:ResetPosition()
+  end
+end
+
+function CrownAccessoriesPage:TrySelectCurrentGemInChooseList(itemList)
+  if self.currentChooseType ~= CrownAccessoriesPage.ChoosePanelType.Gem then
+    return
+  end
+  if not self.chooseListCtrl or not SnowCrownProxy.Instance then
+    return
+  end
+  if not self.currentSlotIndex or not self.currentGemIndex then
+    return
+  end
+  if not itemList or #itemList == 0 then
+    return
+  end
+  local slotGemData = SnowCrownProxy.Instance:GetSlotGemData(self.currentSlotIndex, self.currentGemIndex)
+  local currentGemId = slotGemData and slotGemData.id
+  local selectedData
+  if currentGemId then
+    for i = 1, #itemList do
+      local itemData = itemList[i]
+      local itemId = itemData and itemData.staticData and itemData.staticData.id
+      if itemId == currentGemId then
+        selectedData = itemData
+        break
+      end
+    end
+  else
+    selectedData = itemList[1]
+  end
+  if not selectedData then
+    return
+  end
+  self.selectedItemData = selectedData
+  local selectedGemId = selectedData.staticData and selectedData.staticData.id
+  local selectedCell
+  local cells = self.chooseListCtrl:GetCells()
+  if cells then
+    for _, cell in pairs(cells) do
+      local itemData = cell and cell.data
+      local itemId = itemData and itemData.staticData and itemData.staticData.id
+      if itemData == selectedData or itemId == selectedGemId then
+        selectedCell = cell
+        break
+      end
+    end
+  end
+  if selectedCell then
+    self:UpdateChooseListSelection(selectedCell)
   end
 end
 
@@ -746,6 +1047,8 @@ function CrownAccessoriesPage:GetSnowEquipList()
   if self.currentSlotIndex and Table_SnowEquip and Table_SnowEquip[self.currentSlotIndex] then
     validEquipPos = Table_SnowEquip[self.currentSlotIndex].ValidEquipPos
   end
+  local equippedStaticIds = self:GetRoleEquippedStaticIds()
+  local occupiedSites = self:GetRoleSnowEquipSites()
   local currentEquippedId
   if self.currentSlotIndex and SnowCrownProxy.Instance then
     local slotEquipData = SnowCrownProxy.Instance:GetSlotEquipData(self.currentSlotIndex)
@@ -768,6 +1071,7 @@ function CrownAccessoriesPage:GetSnowEquipList()
             if Table_Equip and Table_Equip[equipId] then
               local equipConfig = Table_Equip[equipId]
               if equipConfig.IsNew == 2 and self:CheckEquipPosValid(itemData, validEquipPos) then
+                itemData.snowInvalid = self:CheckEquipSiteOccupied(itemData, occupiedSites) or equippedStaticIds[equipId] == true
                 table.insert(equipList, itemData)
               end
             end
@@ -777,6 +1081,47 @@ function CrownAccessoriesPage:GetSnowEquipList()
     end
   end
   return equipList
+end
+
+function CrownAccessoriesPage:GetRoleEquippedStaticIds()
+  local staticIds = {}
+  if not BagProxy.Instance or not BagProxy.Instance.roleEquip then
+    return staticIds
+  end
+  local items = BagProxy.Instance.roleEquip:GetItems()
+  if items then
+    for i = 1, #items do
+      local itemData = items[i]
+      if itemData and itemData.staticData then
+        local staticId = itemData.staticData.id
+        if staticId then
+          staticIds[staticId] = true
+        end
+      end
+    end
+  end
+  return staticIds
+end
+
+function CrownAccessoriesPage:UpdateChooseListInvalidState()
+  if not self.chooseListCtrl then
+    return
+  end
+  local cells = self.chooseListCtrl:GetCells()
+  if not cells then
+    return
+  end
+  for i = 1, #cells do
+    local cell = cells[i]
+    if cell and cell.data then
+      local isInvalid = cell.data.snowInvalid == true
+      if cell.SetInvalid then
+        cell:SetInvalid(isInvalid)
+      elseif cell.itemCell and cell.itemCell.SetInvalid then
+        cell.itemCell:SetInvalid(isInvalid)
+      end
+    end
+  end
 end
 
 function CrownAccessoriesPage:CheckEquipPosValid(itemData, validEquipPos)
@@ -800,6 +1145,26 @@ function CrownAccessoriesPage:CheckEquipPosValid(itemData, validEquipPos)
     end
   end
   return false
+end
+
+function CrownAccessoriesPage:IsMyProfessionGem(gemId)
+  local stoneConfig = Table_SnowStone and Table_SnowStone[gemId]
+  if not (stoneConfig and stoneConfig.ClassID) or #stoneConfig.ClassID == 0 then
+    return false
+  end
+  local myClass = MyselfProxy.Instance and MyselfProxy.Instance:GetMyProfession() or 0
+  if not myClass or myClass == 0 then
+    return false
+  end
+  return 0 < TableUtility.ArrayFindIndex(stoneConfig.ClassID, myClass)
+end
+
+function CrownAccessoriesPage:IsSnowGemProfessionValid(gemId)
+  local stoneConfig = Table_SnowStone and Table_SnowStone[gemId]
+  if not (stoneConfig and stoneConfig.ClassID) or #stoneConfig.ClassID == 0 then
+    return true
+  end
+  return self:IsMyProfessionGem(gemId)
 end
 
 function CrownAccessoriesPage:GetSnowGemList()
@@ -836,8 +1201,11 @@ function CrownAccessoriesPage:GetSnowGemList()
     itemData:SetSnowGemData({
       id = currentEquippedGemId,
       level = bookData.lv or 0,
-      advlv = bookData.advlv or 0
+      advlv = bookData.advlv or 0,
+      advexp = bookData.advexp or 0
     })
+    itemData.isRecommend = self:IsMyProfessionGem(currentEquippedGemId)
+    itemData.snowInvalid = not self:IsSnowGemProfessionValid(currentEquippedGemId)
     itemData.isactive = true
     table.insert(gemList, itemData)
   end
@@ -847,8 +1215,11 @@ function CrownAccessoriesPage:GetSnowGemList()
       itemData:SetSnowGemData({
         id = stoneId,
         level = bookData.lv or 0,
-        advlv = bookData.advlv or 0
+        advlv = bookData.advlv or 0,
+        advexp = bookData.advexp or 0
       })
+      itemData.isRecommend = self:IsMyProfessionGem(stoneId)
+      itemData.snowInvalid = not self:IsSnowGemProfessionValid(stoneId)
       table.insert(gemList, itemData)
     end
   end
@@ -866,6 +1237,10 @@ function CrownAccessoriesPage:OnChooseItemClick(cell)
     self.tipData = {}
   end
   local clonedData = cell.data:Clone()
+  if cell.data.snowGemData and clonedData.SetSnowGemData then
+    clonedData:SetSnowGemData(cell.data.snowGemData)
+  end
+  clonedData.snowInvalid = cell.data.snowInvalid
   clonedData.snowStoreMode = true
   self.tipData.itemdata = clonedData
   TipManager.Instance:CloseItemTip()
@@ -897,12 +1272,18 @@ function CrownAccessoriesPage:OnEmbedBtnClick()
     return
   end
   if self.currentChooseType == CrownAccessoriesPage.ChoosePanelType.Equip then
+    if self.selectedItemData.snowInvalid == true and not self:IsSelectedEquipEquipped(self.currentSlotIndex, self.selectedItemData) then
+      return
+    end
     if self:IsSelectedEquipEquipped(self.currentSlotIndex, self.selectedItemData) then
       self:RequestTakeoutEquip()
     else
       self:RequestStoreEquip(self.selectedItemData)
     end
   elseif self.currentChooseType == CrownAccessoriesPage.ChoosePanelType.Gem then
+    if self.selectedItemData.snowInvalid == true and not self:IsSelectedGemEquipped(self.currentSlotIndex, self.currentGemIndex, self.selectedItemData) then
+      return
+    end
     if self:IsSelectedGemEquipped(self.currentSlotIndex, self.currentGemIndex, self.selectedItemData) then
       self:RequestTakeoutStone()
     else
@@ -972,6 +1353,9 @@ end
 
 function CrownAccessoriesPage:RequestStoreStone(itemData)
   if not (self.currentSlotIndex and self.currentGemIndex) or not itemData then
+    return
+  end
+  if itemData.snowInvalid == true then
     return
   end
   local stoneId = itemData.staticData and itemData.staticData.id
@@ -1061,10 +1445,14 @@ function CrownAccessoriesPage:RefreshSlotGems(slotData, slotIndex)
     return
   end
   local equipRefineLv = 0
+  local hasEquip = false
   if SnowCrownProxy.Instance then
     local equipData = SnowCrownProxy.Instance:GetSlotEquipData(slotIndex)
-    if equipData and equipData.equipInfo then
-      equipRefineLv = equipData.equipInfo.refinelv or 0
+    if equipData then
+      hasEquip = true
+      if equipData.equipInfo then
+        equipRefineLv = equipData.equipInfo.refinelv or 0
+      end
     end
   end
   for j = 1, 2 do
@@ -1075,20 +1463,22 @@ function CrownAccessoriesPage:RefreshSlotGems(slotData, slotIndex)
         gemData = SnowCrownProxy.Instance:GetSlotGemData(slotIndex, j)
       end
       gemCell:SetData(gemData)
-      gemCell:SetEquipRefineLv(equipRefineLv)
+      gemCell:SetEquipRefineLv(equipRefineLv, hasEquip)
     end
   end
 end
 
 function CrownAccessoriesPage:RefreshCodexPage()
+  if not self.selectedGemId then
+    self.selectedGemId = self:GetDefaultCodexGemId()
+  end
   self:RefreshGemCategory("ProfessionGem")
   self:RefreshGemCategory("NormalGem")
   if self.codexContainer then
     self:Show(self.codexContainer)
   end
-  if not self.selectedGemId then
-    self:SelectDefaultGem()
-  else
+  if self.selectedGemId then
+    self:UpdateCodexSelection(self.selectedGemId)
     local isUnlocked = false
     if SnowCrownProxy.Instance then
       isUnlocked = SnowCrownProxy.Instance:IsGemUnlocked(self.selectedGemId)
@@ -1104,6 +1494,9 @@ function CrownAccessoriesPage:RefreshGemCategory(categoryName)
   end
   local gemList = self:GetGemListByCategory(categoryName)
   categoryData.listCtrl:ResetDatas(gemList)
+  if self.selectedGemId then
+    self:UpdateCodexSelection(self.selectedGemId)
+  end
   if categoryData.grid then
     categoryData.grid:Reposition()
   end
@@ -1115,10 +1508,13 @@ function CrownAccessoriesPage:GetGemListByCategory(categoryName)
   if SnowCrownProxy.Instance then
     unlockedGems = SnowCrownProxy.Instance:GetUnlockedGemIds()
   end
-  local myBranch = MyselfProxy.Instance:GetMyProfessionTypeBranch() or 0
+  local myClass = MyselfProxy.Instance:GetMyProfession() or 0
+  local IsProfessionGem = function(config)
+    return config.ClassID and #config.ClassID > 0
+  end
   if categoryName == "ProfessionGem" then
     for id, config in pairs(Table_SnowStone or {}) do
-      if config.GroupID then
+      if IsProfessionGem(config) then
         local isUnlocked = unlockedGems[id] == true
         local level = 0
         local advlv = 0
@@ -1126,11 +1522,11 @@ function CrownAccessoriesPage:GetGemListByCategory(categoryName)
           level = SnowCrownProxy.Instance:GetGemLevel(id)
           advlv = SnowCrownProxy.Instance:GetGemAdvanceLevel(id)
         end
-        local isRecommend = config.Branch and 0 < TableUtility.ArrayFindIndex(config.Branch, myBranch)
+        local isRecommend = 0 < TableUtility.ArrayFindIndex(config.ClassID, myClass)
         table.insert(gemList, {
           id = id,
           isUnlocked = isUnlocked,
-          isSelected = false,
+          isSelected = self.selectedGemId == id,
           level = level,
           advlv = advlv,
           isRecommend = isRecommend
@@ -1139,7 +1535,7 @@ function CrownAccessoriesPage:GetGemListByCategory(categoryName)
     end
   elseif categoryName == "NormalGem" then
     for id, config in pairs(Table_SnowStone or {}) do
-      if not config.GroupID then
+      if not IsProfessionGem(config) then
         local isUnlocked = unlockedGems[id] == true
         local level = 0
         local advlv = 0
@@ -1147,14 +1543,13 @@ function CrownAccessoriesPage:GetGemListByCategory(categoryName)
           level = SnowCrownProxy.Instance:GetGemLevel(id)
           advlv = SnowCrownProxy.Instance:GetGemAdvanceLevel(id)
         end
-        local isRecommend = config.Branch and 0 < TableUtility.ArrayFindIndex(config.Branch, myBranch)
         table.insert(gemList, {
           id = id,
           isUnlocked = isUnlocked,
-          isSelected = false,
+          isSelected = self.selectedGemId == id,
           level = level,
           advlv = advlv,
-          isRecommend = isRecommend
+          isRecommend = false
         })
       end
     end
@@ -1171,22 +1566,24 @@ function CrownAccessoriesPage:GetGemListByCategory(categoryName)
   return gemList
 end
 
+function CrownAccessoriesPage:GetDefaultCodexGemId()
+  local professionGems = self:GetGemListByCategory("ProfessionGem")
+  if professionGems and 0 < #professionGems then
+    return professionGems[1].id
+  end
+  local normalGems = self:GetGemListByCategory("NormalGem")
+  if normalGems and 0 < #normalGems then
+    return normalGems[1].id
+  end
+end
+
 function CrownAccessoriesPage:ClearCodexSelection()
   self.selectedGemId = nil
   self:SelectDefaultGem()
 end
 
 function CrownAccessoriesPage:SelectDefaultGem()
-  local firstGemId
-  local professionGems = self:GetGemListByCategory("ProfessionGem")
-  if professionGems and 0 < #professionGems then
-    firstGemId = professionGems[1].id
-  else
-    local normalGems = self:GetGemListByCategory("NormalGem")
-    if normalGems and 0 < #normalGems then
-      firstGemId = normalGems[1].id
-    end
-  end
+  local firstGemId = self:GetDefaultCodexGemId()
   if firstGemId then
     local isUnlocked = false
     if SnowCrownProxy.Instance then
@@ -1336,28 +1733,33 @@ end
 
 function CrownAccessoriesPage:GetAllGroupData()
   local groupDataList = {}
-  local groupGemMap = {}
-  for gemId, config in pairs(Table_SnowStone or {}) do
-    local groupId = config.GroupID
-    if groupId then
-      if not groupGemMap[groupId] then
-        groupGemMap[groupId] = {
-          groupId = groupId,
-          gemIds = {}
-        }
+  if not Table_SnowStoneAttr then
+    return groupDataList
+  end
+  local sortedIds = {}
+  for id, _ in pairs(Table_SnowStoneAttr) do
+    table.insert(sortedIds, id)
+  end
+  table.sort(sortedIds)
+  for _, id in ipairs(sortedIds) do
+    local attrConfig = Table_SnowStoneAttr[id]
+    local stoneIDGroup = attrConfig.StoneIDGroup
+    if stoneIDGroup and #stoneIDGroup ~= 0 then
+      local validGemIds = {}
+      for _, gemId in ipairs(stoneIDGroup) do
+        if Table_SnowStone and Table_SnowStone[gemId] then
+          table.insert(validGemIds, gemId)
+        end
       end
-      table.insert(groupGemMap[groupId].gemIds, gemId)
+      if #validGemIds ~= 0 then
+        local groupData = {
+          groupId = id,
+          groupName = attrConfig.Name or string.format("组合%d", id),
+          gemIds = validGemIds
+        }
+        table.insert(groupDataList, groupData)
+      end
     end
-  end
-  local sortedGroupIds = {}
-  for groupId, _ in pairs(groupGemMap) do
-    table.insert(sortedGroupIds, groupId)
-  end
-  table.sort(sortedGroupIds)
-  for _, groupId in ipairs(sortedGroupIds) do
-    local groupData = groupGemMap[groupId]
-    groupData.groupName = string.format("组%d", groupId)
-    table.insert(groupDataList, groupData)
   end
   return groupDataList
 end
@@ -1375,6 +1777,10 @@ function CrownAccessoriesPage:GetAllUnlockedAttrs()
   if not self.collectionListCtrl then
     return totalAttrs
   end
+  local unlockedGems = {}
+  if SnowCrownProxy.Instance then
+    unlockedGems = SnowCrownProxy.Instance:GetUnlockedGemIds()
+  end
   local groupDataList = self:GetAllGroupData()
   for _, groupData in ipairs(groupDataList) do
     local groupId = groupData.groupId
@@ -1390,9 +1796,23 @@ function CrownAccessoriesPage:GetAllUnlockedAttrs()
           end
         end
       end
+      if groupConfig.ActiveAttr then
+        local isAllUnlocked = true
+        for _, gemId in ipairs(groupData.gemIds or EmptyTable) do
+          if unlockedGems[gemId] ~= true then
+            isAllUnlocked = false
+            break
+          end
+        end
+        if isAllUnlocked then
+          for attrName, attrValue in pairs(groupConfig.ActiveAttr) do
+            totalAttrs[attrName] = (totalAttrs[attrName] or 0) + attrValue
+          end
+        end
+      end
       if groupConfig.AdvanceLevelAttr then
         for requiredAdvLevel, attrData in pairs(groupConfig.AdvanceLevelAttr) do
-          if requiredAdvLevel <= totalAdvLevel then
+          if totalAdvLevel >= requiredAdvLevel then
             for attrName, attrValue in pairs(attrData) do
               totalAttrs[attrName] = (totalAttrs[attrName] or 0) + attrValue
             end
@@ -1542,6 +1962,34 @@ function CrownAccessoriesPage:CalcSnowStoreBuffAttrValue(attrEffect)
   return 0
 end
 
+function CrownAccessoriesPage:AddAttrChangeBuffToAttrSum(buffId, attrSum)
+  if not (buffId and attrSum and Table_Buffer) or not Table_Buffer[buffId] then
+    return false
+  end
+  local buffData = Table_Buffer[buffId]
+  local buffEffect = buffData.BuffEffect
+  if not buffEffect or buffEffect.type ~= "AttrChange" then
+    return false
+  end
+  local propMap = Game.Config_PropName or {}
+  local handled = false
+  for attrName, attrEffect in pairs(buffEffect) do
+    if attrName ~= "type" and propMap[attrName] then
+      local attrValue
+      if type(attrEffect) == "number" then
+        attrValue = attrEffect
+      elseif type(attrEffect) == "table" and attrEffect.type then
+        attrValue = self:CalcSnowStoreBuffAttrValue(attrEffect)
+      end
+      if attrValue and attrValue ~= 0 then
+        attrSum[attrName] = (attrSum[attrName] or 0) + attrValue
+        handled = true
+      end
+    end
+  end
+  return handled
+end
+
 local CalcSnowShadowBuffRate = function(refineLv)
   local rate = refineLv * 0.5
   if 15 <= refineLv then
@@ -1551,10 +1999,8 @@ local CalcSnowShadowBuffRate = function(refineLv)
 end
 
 function CrownAccessoriesPage:GetAllSlotActivatedAttrList()
-  xdlog("GetAllSlotActivatedAttrList start")
   local attrList = {}
   if not SnowCrownProxy.Instance then
-    xdlog("GetAllSlotActivatedAttrList SnowCrownProxy.Instance is nil")
     return attrList
   end
   local storeAttrSum = {}
@@ -1613,34 +2059,67 @@ function CrownAccessoriesPage:GetAllSlotActivatedAttrList()
         end
       end
     end
-    for gemIndex = 1, 2 do
-      local gemData = SnowCrownProxy.Instance:GetSlotGemData(slotIndex, gemIndex)
-      if gemData and gemData.id then
-        local stoneConfig = Table_SnowStone and Table_SnowStone[gemData.id]
-        if stoneConfig then
-          local advLevel = gemData.advlv or 0
-          if stoneConfig.StoreAttr then
-            for attrName, attrValue in pairs(stoneConfig.StoreAttr) do
-              storeAttrSum[attrName] = (storeAttrSum[attrName] or 0) + attrValue
+    if equipData then
+      for gemIndex = 1, 2 do
+        local gemData = SnowCrownProxy.Instance:GetSlotGemData(slotIndex, gemIndex)
+        if gemData and gemData.id then
+          local stoneConfig = Table_SnowStone and Table_SnowStone[gemData.id]
+          if stoneConfig then
+            local gemLevel = gemData.level or 0
+            local advLevel = gemData.starLevel or 0
+            local levelConfig = Table_SnowStoneLevel and Table_SnowStoneLevel[gemLevel]
+            if levelConfig and levelConfig.Attr then
+              for attrName, attrValue in pairs(levelConfig.Attr) do
+                storeAttrSum[attrName] = (storeAttrSum[attrName] or 0) + attrValue
+              end
             end
-          end
-          local advanceAttrs = {
-            stoneConfig.AdvanceAttr,
-            stoneConfig.AdvanceAttr2,
-            stoneConfig.AdvanceAttr3
-          }
-          for advIdx, advanceAttr in ipairs(advanceAttrs) do
-            if advanceAttr then
-              for unlockLevel, stageData in pairs(advanceAttr) do
-                if equipRefineLv >= unlockLevel then
-                  local bufferId = stageData[advLevel] or stageData[0]
-                  if bufferId and Table_Buffer and Table_Buffer[bufferId] then
-                    local buffName = Table_Buffer[bufferId].BuffName or ""
-                    if buffName ~= "" then
-                      table.insert(advanceAttrList, {name = buffName})
-                    end
+            if 0 < advLevel then
+              local effectConfig
+              if Table_SnowStoneEffect then
+                for _, config in pairs(Table_SnowStoneEffect) do
+                  if config.StoneID == gemData.id and config.Level == advLevel then
+                    effectConfig = config
+                    break
                   end
                 end
+              end
+              local SafeFormatDesc = function(desc, values)
+                if not desc then
+                  return ""
+                end
+                desc = OverSea.LangManager.Instance():GetLangByKey(desc) or desc
+                if not values or #values == 0 then
+                  return string.gsub(desc, "%%s", "-")
+                end
+                local _, count = string.gsub(desc, "%%s", "")
+                local safeValues = {}
+                for i = 1, count do
+                  safeValues[i] = values[i] or "-"
+                end
+                if 0 < #safeValues then
+                  return string.format(desc, unpack(safeValues))
+                end
+                return desc
+              end
+              local effectBuffHandled = false
+              if effectConfig and effectConfig.Buff then
+                for _, buffId in ipairs(effectConfig.Buff) do
+                  if self:AddAttrChangeBuffToAttrSum(buffId, storeAttrSum) then
+                    effectBuffHandled = true
+                  end
+                end
+              end
+              local descText
+              if effectConfig and effectConfig.Value then
+                descText = SafeFormatDesc(stoneConfig.Desc, effectConfig.Value)
+              else
+                descText = SafeFormatDesc(stoneConfig.Desc, nil)
+              end
+              if effectBuffHandled then
+                descText = nil
+              end
+              if descText and descText ~= "" then
+                table.insert(advanceAttrList, {name = descText})
               end
             end
           end
@@ -1669,4 +2148,65 @@ end
 
 function CrownAccessoriesPage:OnExit()
   CrownAccessoriesPage.super.OnExit(self)
+end
+
+function CrownAccessoriesPage:GetCodexLevelUpCostData(level)
+  local nextLevel = (level or 0) + 1
+  local levelConfig = Table_SnowStoneLevel and Table_SnowStoneLevel[nextLevel]
+  if not (levelConfig and levelConfig.Material) or not levelConfig.Material[1] then
+    return
+  end
+  local costData = levelConfig.Material[1]
+  local itemId = costData[1]
+  local itemCount = costData[2] or 0
+  local ownCount = 0
+  local bagTypes = GameConfig.PackageMaterialCheck and GameConfig.PackageMaterialCheck.default
+  if BagProxy.Instance and itemId then
+    ownCount = BagProxy.Instance:GetItemNumByStaticID(itemId, bagTypes) or 0
+  end
+  return itemId, itemCount, ownCount
+end
+
+function CrownAccessoriesPage:RefreshCodexLevelUpCost(level)
+  if not self.codexCostIcon or not self.codexCostCount then
+    return
+  end
+  local itemId, itemCount, ownCount = self:GetCodexLevelUpCostData(level)
+  if not itemId then
+    self.codexCostCount.text = ""
+    ColorUtil.WhiteUIWidget(self.codexCostCount)
+    return
+  end
+  local itemConfig = Table_Item and Table_Item[itemId]
+  if itemConfig and itemConfig.Icon then
+    IconManager:SetItemIcon(itemConfig.Icon, self.codexCostIcon)
+    self.codexCostIcon:MakePixelPerfect()
+    self.codexCostIcon.transform.localScale = LuaVector3.New(0.5, 0.5, 0.5)
+  end
+  local ownColor = ownCount < itemCount and "FF3B0D" or "FFFFFF"
+  self.codexCostCount.text = string.format("[c][%s]%s[-][/c]/%s", ownColor, tostring(ownCount), tostring(itemCount))
+  ColorUtil.WhiteUIWidget(self.codexCostCount)
+end
+
+function CrownAccessoriesPage:OnCodexLevelUpClick()
+  if not self.selectedGemId then
+    return
+  end
+  if self.isCodexMaxPreview then
+    if self.codexStatusLabel and self.codexStatusLabel.gameObject then
+      self.codexStatusLabel.gameObject:SetActive(true)
+      self.codexStatusLabel.text = ZhString.CrownAccessoriesPage_PreviewCantLevelUp or "预览状态无法升级"
+    end
+    return
+  end
+  local gemLevel = SnowCrownProxy.Instance and SnowCrownProxy.Instance:GetGemLevel(self.selectedGemId) or 0
+  local itemId, itemCount, ownCount = self:GetCodexLevelUpCostData(gemLevel)
+  if itemId and ownCount < itemCount then
+    MsgManager.ShowMsgByID(8)
+    return
+  end
+  if SnowCrownProxy.Instance then
+    SnowCrownProxy.Instance:RequestOperSnowStone(SnowCrownProxy.StoneOperEnum.LEVELUP, 0, 0, self.selectedGemId)
+  end
+  xdlog("OnCodexLevelUpClick", "gemId:", self.selectedGemId)
 end

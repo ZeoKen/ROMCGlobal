@@ -229,9 +229,17 @@ function NCreatureWithPropUserdata:AddBuff(buffID, init, needhit, fromID, layer,
   else
     buff = self.buffs and self.buffs[buffID] or nil
   end
-  if buff ~= nil and buffStateID ~= nil and buff.staticData ~= nil and buffStateID ~= buff.staticData.id then
-    self:_RemoveBuff(buffID)
-    buff = nil
+  if buff ~= nil then
+    local expectStateBuff = buffStateID ~= nil and 0 < buffStateID
+    local currentStateBuff = buff:GetType() == Buff.Type.State
+    local needRecreateBuff = expectStateBuff ~= currentStateBuff
+    if not needRecreateBuff and expectStateBuff and buff.staticData ~= nil and buffStateID ~= buff.staticData.id then
+      needRecreateBuff = true
+    end
+    if needRecreateBuff then
+      self:_RemoveBuff(buffID)
+      buff = nil
+    end
   end
   if buff == nil then
     self.data:AddBuff(buffID, fromID, layer, level, active, true, layers, buffeffect, maxLayer)
@@ -383,7 +391,7 @@ function NCreatureWithPropUserdata:TryHandleAddSpecialBuff(buffInfo, fromID, par
     elseif buffType == BuffType.BeTaunt then
       self:Logic_BeTaunt(true, fromID)
     elseif buffType == BuffType.HandStatus then
-      if not self:HasAllPartLoadedStrictCheck() then
+      if not self:HasAllPartLoaded() then
         self:AddPostModelLoadHandleBuffs(buffInfo.id, params)
       else
         local npcId = buffeffect.npcId or params[1]
@@ -636,6 +644,7 @@ function NCreatureWithPropUserdata:TryHandleRemoveSpecialBuff(buffInfo)
   elseif buffType == BuffType.SetShader then
     if self.shaderConfigID == buffeffect.ShaderConfigID then
       self:ResetMaterials()
+      self.shaderConfigID = nil
     end
   elseif buffType == BuffType.UpgradeRefineLv then
     if self == Game.Myself then
@@ -1138,15 +1147,18 @@ function NCreatureWithPropUserdata:UpdatePlayerRider_Up()
       self.assetRole:PutInCreatureToCP(RoleDefines_CP.Wing, up_role)
       up_role.assetRole:PlayAction_Idle()
       up_role:Client_SetDirCmd(AI_CMD_SetAngleY.Mode.SetAngleY, 0)
+      up_role:SetRideCreatureId(self.data.id)
     else
       up_role.assetRole:PutInCreatureToCP(-1, self)
       up_role.assetRole:SetMountRole(self.assetRole.complete)
       up_role:Logic_NavMeshPlaceTo(self:GetRealPosition())
+      up_role:SetRideCreatureId(self.data.id)
     end
   end
 end
 
 function NCreatureWithPropUserdata:UpdatePlayerRider_Down(syncPos)
+  self:SetRideCreatureId(nil)
   if self == Game.Myself then
     EventManager.Me():DispatchEvent(MyselfEvent.RidePlayerChange)
   end
@@ -1176,6 +1188,7 @@ function NCreatureWithPropUserdata:UpdatePlayerRider_Down(syncPos)
     self.assetRole:TakeOutCreatureInCP(-1)
     self.assetRole:ResetMountRole()
     last_down_role.assetRole:TakeOutCreatureInCP(RoleDefines_CP.Wing)
+    last_down_role:SetRideCreatureId(nil)
   end
   local down_role = SceneCreatureProxy.FindCreature(downID)
   self.last_down_roleID = downID
@@ -1216,6 +1229,12 @@ function NCreatureWithPropUserdata:UpdatePlayerRider_Down(syncPos)
     end
     self.assetRole:PlayAction_Idle()
     self:Client_SetDirCmd(AI_CMD_SetAngleY.Mode.SetAngleY, 0)
+  end
+end
+
+function NCreatureWithPropUserdata:SetRideCreatureId(rideCreatureId)
+  if self.data then
+    self.data.rideCreatureId = rideCreatureId
   end
 end
 

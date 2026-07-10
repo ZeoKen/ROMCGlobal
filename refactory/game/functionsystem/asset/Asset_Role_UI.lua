@@ -20,7 +20,7 @@ end
 
 function Asset_Role_UI:OnPartCreated(tag, obj, part, ID, oldID)
   Asset_Role_UI.super.OnPartCreated(self, tag, obj, part, ID, oldID)
-  if obj then
+  if obj and not Slua.IsNull(obj) then
     self:NotifyObserver({
       Asset_Role_UI_Event.PartCreated,
       obj.gameObject,
@@ -31,7 +31,7 @@ end
 
 function Asset_Role_UI:_DestroyPartObject(part, oldID, undress)
   local oldPartObj = self.partObjs[part]
-  if oldPartObj then
+  if oldPartObj and not Slua.IsNull(oldPartObj) then
     self:NotifyObserver({
       Asset_Role_UI_Event.PartDestroyed,
       oldPartObj.gameObject,

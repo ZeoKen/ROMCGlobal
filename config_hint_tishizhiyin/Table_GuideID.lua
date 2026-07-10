@@ -4496,6 +4496,62 @@ Table_GuideID = {
     position = Table_GuideID_t.position[1],
     rotation = Table_GuideID_t.rotation[1],
     press = 1
+  },
+  [1102] = {
+    id = 1102,
+    Explain = "##45938972",
+    uiID = "DialogView",
+    ButtonID = 10,
+    press = 1
+  },
+  [1103] = {
+    id = 1103,
+    Explain = "##45938973",
+    Preguide = 1102,
+    uiID = "HappyShop",
+    ButtonID = 1103,
+    press = 1,
+    ServerEvent = "GuideEvent_SessionShopQueryShopConfigCmd"
+  },
+  [1104] = {
+    id = 1104,
+    Explain = "##45938974",
+    Preguide = 1103,
+    uiID = "HappyShop",
+    ButtonID = 1104,
+    press = 1
+  },
+  [1105] = {
+    id = 1105,
+    Explain = "##45938975",
+    Preguide = 1104,
+    uiID = "HappyShop",
+    ButtonID = 1105,
+    press = 1
+  },
+  [1106] = {
+    id = 1106,
+    Explain = "##45938976",
+    Preguide = 65,
+    uiID = "PackageView",
+    ButtonID = 1106,
+    press = 1
+  },
+  [1107] = {
+    id = 1107,
+    Explain = "##45938977",
+    Preguide = 1106,
+    uiID = "PackageView",
+    ButtonID = 1107,
+    press = 1
+  },
+  [1108] = {
+    id = 1108,
+    Explain = "##45938978",
+    Preguide = 1107,
+    uiID = "PackageView",
+    ButtonID = 202,
+    press = 1
   }
 }
 local cell_mt = {

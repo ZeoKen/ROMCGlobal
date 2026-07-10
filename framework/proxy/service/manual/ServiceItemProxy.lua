@@ -144,13 +144,26 @@ function ServiceItemProxy:RecvItemShow64(data)
   })
 end
 
+function ServiceItemProxy:RecvFashionStarQueryItemCmd(data)
+  helplog("RecvFashionStarQueryItemCmd")
+  TableUtil.Print(data.infos)
+  FashionStarProxy.Instance:HandleQueryFashionStar(data.infos)
+  self:Notify(ServiceEvent.ItemFashionStarQueryItemCmd, data)
+end
+
 function ServiceItemProxy:RecvItemShow(data)
   ServiceItemProxy.spec_icon = nil
   local spec_icon = data.spec_icon
+  local safety_itemid = data.safety_itemid
   if data.delay and data.delay > 0 then
     local items = table.deepcopy(data.items)
     TimeTickManager.Me():CreateOnceDelayTick(data.delay, function(owner, deltaTime)
-      self:RecvItemShow({items = items, spec_icon = spec_icon})
+      self:RecvItemShow({
+        items = items,
+        spec_icon = spec_icon,
+        lottery_show = data.lottery_show,
+        safety_itemid = safety_itemid
+      })
     end, self)
     return
   end
@@ -182,6 +195,13 @@ function ServiceItemProxy:RecvItemShow(data)
       end
       table.insert(list, itemData)
     end
+  end
+  if data.lottery_show == true then
+    GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+      view = PanelConfig.LotteryRaidResultView,
+      viewdata = {list = list, safety_itemid = safety_itemid}
+    })
+    return
   end
   local modelShowList = {}
   local itemShowList = {}

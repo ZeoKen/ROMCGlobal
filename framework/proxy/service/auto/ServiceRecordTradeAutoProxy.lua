@@ -1795,6 +1795,24 @@ function ServiceRecordTradeAutoProxy:CallTakeLogCmd(log, success)
       end
       msg.log.itemdata.egg.cdtime = log.itemdata.egg.cdtime
     end
+    if log.itemdata.egg ~= nil and log.itemdata.egg.already_hatched ~= nil then
+      if msg.log.itemdata == nil then
+        msg.log.itemdata = {}
+      end
+      if msg.log.itemdata.egg == nil then
+        msg.log.itemdata.egg = {}
+      end
+      msg.log.itemdata.egg.already_hatched = log.itemdata.egg.already_hatched
+    end
+    if log.itemdata.egg ~= nil and log.itemdata.egg.quick_pack_slot ~= nil then
+      if msg.log.itemdata == nil then
+        msg.log.itemdata = {}
+      end
+      if msg.log.itemdata.egg == nil then
+        msg.log.itemdata.egg = {}
+      end
+      msg.log.itemdata.egg.quick_pack_slot = log.itemdata.egg.quick_pack_slot
+    end
     if log.itemdata.letter ~= nil and log.itemdata.letter.sendUserName ~= nil then
       if msg.log.itemdata == nil then
         msg.log.itemdata = {}
@@ -3956,6 +3974,24 @@ function ServiceRecordTradeAutoProxy:CallTakeLogCmd(log, success)
         msgParam.log.itemdata.egg = {}
       end
       msgParam.log.itemdata.egg.cdtime = log.itemdata.egg.cdtime
+    end
+    if log.itemdata.egg ~= nil and log.itemdata.egg.already_hatched ~= nil then
+      if msgParam.log.itemdata == nil then
+        msgParam.log.itemdata = {}
+      end
+      if msgParam.log.itemdata.egg == nil then
+        msgParam.log.itemdata.egg = {}
+      end
+      msgParam.log.itemdata.egg.already_hatched = log.itemdata.egg.already_hatched
+    end
+    if log.itemdata.egg ~= nil and log.itemdata.egg.quick_pack_slot ~= nil then
+      if msgParam.log.itemdata == nil then
+        msgParam.log.itemdata = {}
+      end
+      if msgParam.log.itemdata.egg == nil then
+        msgParam.log.itemdata.egg = {}
+      end
+      msgParam.log.itemdata.egg.quick_pack_slot = log.itemdata.egg.quick_pack_slot
     end
     if log.itemdata.letter ~= nil and log.itemdata.letter.sendUserName ~= nil then
       if msgParam.log.itemdata == nil then
@@ -6125,6 +6161,24 @@ function ServiceRecordTradeAutoProxy:CallAddNewLog(charid, log, total_page_count
       end
       msg.log.itemdata.egg.cdtime = log.itemdata.egg.cdtime
     end
+    if log.itemdata.egg ~= nil and log.itemdata.egg.already_hatched ~= nil then
+      if msg.log.itemdata == nil then
+        msg.log.itemdata = {}
+      end
+      if msg.log.itemdata.egg == nil then
+        msg.log.itemdata.egg = {}
+      end
+      msg.log.itemdata.egg.already_hatched = log.itemdata.egg.already_hatched
+    end
+    if log.itemdata.egg ~= nil and log.itemdata.egg.quick_pack_slot ~= nil then
+      if msg.log.itemdata == nil then
+        msg.log.itemdata = {}
+      end
+      if msg.log.itemdata.egg == nil then
+        msg.log.itemdata.egg = {}
+      end
+      msg.log.itemdata.egg.quick_pack_slot = log.itemdata.egg.quick_pack_slot
+    end
     if log.itemdata.letter ~= nil and log.itemdata.letter.sendUserName ~= nil then
       if msg.log.itemdata == nil then
         msg.log.itemdata = {}
@@ -8290,6 +8344,24 @@ function ServiceRecordTradeAutoProxy:CallAddNewLog(charid, log, total_page_count
       end
       msgParam.log.itemdata.egg.cdtime = log.itemdata.egg.cdtime
     end
+    if log.itemdata.egg ~= nil and log.itemdata.egg.already_hatched ~= nil then
+      if msgParam.log.itemdata == nil then
+        msgParam.log.itemdata = {}
+      end
+      if msgParam.log.itemdata.egg == nil then
+        msgParam.log.itemdata.egg = {}
+      end
+      msgParam.log.itemdata.egg.already_hatched = log.itemdata.egg.already_hatched
+    end
+    if log.itemdata.egg ~= nil and log.itemdata.egg.quick_pack_slot ~= nil then
+      if msgParam.log.itemdata == nil then
+        msgParam.log.itemdata = {}
+      end
+      if msgParam.log.itemdata.egg == nil then
+        msgParam.log.itemdata.egg = {}
+      end
+      msgParam.log.itemdata.egg.quick_pack_slot = log.itemdata.egg.quick_pack_slot
+    end
     if log.itemdata.letter ~= nil and log.itemdata.letter.sendUserName ~= nil then
       if msgParam.log.itemdata == nil then
         msgParam.log.itemdata = {}
@@ -10324,6 +10396,24 @@ function ServiceRecordTradeAutoProxy:CallReqServerPriceRecordTradeCmd(charid, it
       end
       msg.itemData.egg.cdtime = itemData.egg.cdtime
     end
+    if itemData.egg ~= nil and itemData.egg.already_hatched ~= nil then
+      if msg.itemData == nil then
+        msg.itemData = {}
+      end
+      if msg.itemData.egg == nil then
+        msg.itemData.egg = {}
+      end
+      msg.itemData.egg.already_hatched = itemData.egg.already_hatched
+    end
+    if itemData.egg ~= nil and itemData.egg.quick_pack_slot ~= nil then
+      if msg.itemData == nil then
+        msg.itemData = {}
+      end
+      if msg.itemData.egg == nil then
+        msg.itemData.egg = {}
+      end
+      msg.itemData.egg.quick_pack_slot = itemData.egg.quick_pack_slot
+    end
     if itemData.letter ~= nil and itemData.letter.sendUserName ~= nil then
       if msg.itemData == nil then
         msg.itemData = {}
@@ -12189,6 +12279,24 @@ function ServiceRecordTradeAutoProxy:CallReqServerPriceRecordTradeCmd(charid, it
         msgParam.itemData.egg = {}
       end
       msgParam.itemData.egg.cdtime = itemData.egg.cdtime
+    end
+    if itemData.egg ~= nil and itemData.egg.already_hatched ~= nil then
+      if msgParam.itemData == nil then
+        msgParam.itemData = {}
+      end
+      if msgParam.itemData.egg == nil then
+        msgParam.itemData.egg = {}
+      end
+      msgParam.itemData.egg.already_hatched = itemData.egg.already_hatched
+    end
+    if itemData.egg ~= nil and itemData.egg.quick_pack_slot ~= nil then
+      if msgParam.itemData == nil then
+        msgParam.itemData = {}
+      end
+      if msgParam.itemData.egg == nil then
+        msgParam.itemData.egg = {}
+      end
+      msgParam.itemData.egg.quick_pack_slot = itemData.egg.quick_pack_slot
     end
     if itemData.letter ~= nil and itemData.letter.sendUserName ~= nil then
       if msgParam.itemData == nil then
@@ -14127,6 +14235,24 @@ function ServiceRecordTradeAutoProxy:CallBuyItemRecordTradeCmd(item_info, charid
         msg.item_info.item_data.egg = {}
       end
       msg.item_info.item_data.egg.cdtime = item_info.item_data.egg.cdtime
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.already_hatched ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.egg == nil then
+        msg.item_info.item_data.egg = {}
+      end
+      msg.item_info.item_data.egg.already_hatched = item_info.item_data.egg.already_hatched
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.quick_pack_slot ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.egg == nil then
+        msg.item_info.item_data.egg = {}
+      end
+      msg.item_info.item_data.egg.quick_pack_slot = item_info.item_data.egg.quick_pack_slot
     end
     if item_info.item_data.letter ~= nil and item_info.item_data.letter.sendUserName ~= nil then
       if msg.item_info.item_data == nil then
@@ -16131,6 +16257,24 @@ function ServiceRecordTradeAutoProxy:CallBuyItemRecordTradeCmd(item_info, charid
         msgParam.item_info.item_data.egg = {}
       end
       msgParam.item_info.item_data.egg.cdtime = item_info.item_data.egg.cdtime
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.already_hatched ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.egg == nil then
+        msgParam.item_info.item_data.egg = {}
+      end
+      msgParam.item_info.item_data.egg.already_hatched = item_info.item_data.egg.already_hatched
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.quick_pack_slot ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.egg == nil then
+        msgParam.item_info.item_data.egg = {}
+      end
+      msgParam.item_info.item_data.egg.quick_pack_slot = item_info.item_data.egg.quick_pack_slot
     end
     if item_info.item_data.letter ~= nil and item_info.item_data.letter.sendUserName ~= nil then
       if msgParam.item_info.item_data == nil then
@@ -18139,6 +18283,24 @@ function ServiceRecordTradeAutoProxy:CallSellItemRecordTradeCmd(item_info, chari
       end
       msg.item_info.item_data.egg.cdtime = item_info.item_data.egg.cdtime
     end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.already_hatched ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.egg == nil then
+        msg.item_info.item_data.egg = {}
+      end
+      msg.item_info.item_data.egg.already_hatched = item_info.item_data.egg.already_hatched
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.quick_pack_slot ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.egg == nil then
+        msg.item_info.item_data.egg = {}
+      end
+      msg.item_info.item_data.egg.quick_pack_slot = item_info.item_data.egg.quick_pack_slot
+    end
     if item_info.item_data.letter ~= nil and item_info.item_data.letter.sendUserName ~= nil then
       if msg.item_info.item_data == nil then
         msg.item_info.item_data = {}
@@ -20142,6 +20304,24 @@ function ServiceRecordTradeAutoProxy:CallSellItemRecordTradeCmd(item_info, chari
         msgParam.item_info.item_data.egg = {}
       end
       msgParam.item_info.item_data.egg.cdtime = item_info.item_data.egg.cdtime
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.already_hatched ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.egg == nil then
+        msgParam.item_info.item_data.egg = {}
+      end
+      msgParam.item_info.item_data.egg.already_hatched = item_info.item_data.egg.already_hatched
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.quick_pack_slot ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.egg == nil then
+        msgParam.item_info.item_data.egg = {}
+      end
+      msgParam.item_info.item_data.egg.quick_pack_slot = item_info.item_data.egg.quick_pack_slot
     end
     if item_info.item_data.letter ~= nil and item_info.item_data.letter.sendUserName ~= nil then
       if msgParam.item_info.item_data == nil then
@@ -22149,6 +22329,24 @@ function ServiceRecordTradeAutoProxy:CallCancelItemRecordTrade(item_info, charid
         msg.item_info.item_data.egg = {}
       end
       msg.item_info.item_data.egg.cdtime = item_info.item_data.egg.cdtime
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.already_hatched ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.egg == nil then
+        msg.item_info.item_data.egg = {}
+      end
+      msg.item_info.item_data.egg.already_hatched = item_info.item_data.egg.already_hatched
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.quick_pack_slot ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.egg == nil then
+        msg.item_info.item_data.egg = {}
+      end
+      msg.item_info.item_data.egg.quick_pack_slot = item_info.item_data.egg.quick_pack_slot
     end
     if item_info.item_data.letter ~= nil and item_info.item_data.letter.sendUserName ~= nil then
       if msg.item_info.item_data == nil then
@@ -24162,6 +24360,24 @@ function ServiceRecordTradeAutoProxy:CallCancelItemRecordTrade(item_info, charid
         msgParam.item_info.item_data.egg = {}
       end
       msgParam.item_info.item_data.egg.cdtime = item_info.item_data.egg.cdtime
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.already_hatched ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.egg == nil then
+        msgParam.item_info.item_data.egg = {}
+      end
+      msgParam.item_info.item_data.egg.already_hatched = item_info.item_data.egg.already_hatched
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.quick_pack_slot ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.egg == nil then
+        msgParam.item_info.item_data.egg = {}
+      end
+      msgParam.item_info.item_data.egg.quick_pack_slot = item_info.item_data.egg.quick_pack_slot
     end
     if item_info.item_data.letter ~= nil and item_info.item_data.letter.sendUserName ~= nil then
       if msgParam.item_info.item_data == nil then
@@ -26179,6 +26395,24 @@ function ServiceRecordTradeAutoProxy:CallResellPendingRecordTrade(item_info, cha
       end
       msg.item_info.item_data.egg.cdtime = item_info.item_data.egg.cdtime
     end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.already_hatched ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.egg == nil then
+        msg.item_info.item_data.egg = {}
+      end
+      msg.item_info.item_data.egg.already_hatched = item_info.item_data.egg.already_hatched
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.quick_pack_slot ~= nil then
+      if msg.item_info.item_data == nil then
+        msg.item_info.item_data = {}
+      end
+      if msg.item_info.item_data.egg == nil then
+        msg.item_info.item_data.egg = {}
+      end
+      msg.item_info.item_data.egg.quick_pack_slot = item_info.item_data.egg.quick_pack_slot
+    end
     if item_info.item_data.letter ~= nil and item_info.item_data.letter.sendUserName ~= nil then
       if msg.item_info.item_data == nil then
         msg.item_info.item_data = {}
@@ -28188,6 +28422,24 @@ function ServiceRecordTradeAutoProxy:CallResellPendingRecordTrade(item_info, cha
         msgParam.item_info.item_data.egg = {}
       end
       msgParam.item_info.item_data.egg.cdtime = item_info.item_data.egg.cdtime
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.already_hatched ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.egg == nil then
+        msgParam.item_info.item_data.egg = {}
+      end
+      msgParam.item_info.item_data.egg.already_hatched = item_info.item_data.egg.already_hatched
+    end
+    if item_info.item_data.egg ~= nil and item_info.item_data.egg.quick_pack_slot ~= nil then
+      if msgParam.item_info.item_data == nil then
+        msgParam.item_info.item_data = {}
+      end
+      if msgParam.item_info.item_data.egg == nil then
+        msgParam.item_info.item_data.egg = {}
+      end
+      msgParam.item_info.item_data.egg.quick_pack_slot = item_info.item_data.egg.quick_pack_slot
     end
     if item_info.item_data.letter ~= nil and item_info.item_data.letter.sendUserName ~= nil then
       if msgParam.item_info.item_data == nil then
@@ -30416,6 +30668,24 @@ function ServiceRecordTradeAutoProxy:CallReqGiveItemInfoCmd(id, iteminfo)
       end
       msg.iteminfo.itemdata.egg.cdtime = iteminfo.itemdata.egg.cdtime
     end
+    if iteminfo.itemdata.egg ~= nil and iteminfo.itemdata.egg.already_hatched ~= nil then
+      if msg.iteminfo.itemdata == nil then
+        msg.iteminfo.itemdata = {}
+      end
+      if msg.iteminfo.itemdata.egg == nil then
+        msg.iteminfo.itemdata.egg = {}
+      end
+      msg.iteminfo.itemdata.egg.already_hatched = iteminfo.itemdata.egg.already_hatched
+    end
+    if iteminfo.itemdata.egg ~= nil and iteminfo.itemdata.egg.quick_pack_slot ~= nil then
+      if msg.iteminfo.itemdata == nil then
+        msg.iteminfo.itemdata = {}
+      end
+      if msg.iteminfo.itemdata.egg == nil then
+        msg.iteminfo.itemdata.egg = {}
+      end
+      msg.iteminfo.itemdata.egg.quick_pack_slot = iteminfo.itemdata.egg.quick_pack_slot
+    end
     if iteminfo.itemdata.letter ~= nil and iteminfo.itemdata.letter.sendUserName ~= nil then
       if msg.iteminfo.itemdata == nil then
         msg.iteminfo.itemdata = {}
@@ -32377,6 +32647,24 @@ function ServiceRecordTradeAutoProxy:CallReqGiveItemInfoCmd(id, iteminfo)
         msgParam.iteminfo.itemdata.egg = {}
       end
       msgParam.iteminfo.itemdata.egg.cdtime = iteminfo.itemdata.egg.cdtime
+    end
+    if iteminfo.itemdata.egg ~= nil and iteminfo.itemdata.egg.already_hatched ~= nil then
+      if msgParam.iteminfo.itemdata == nil then
+        msgParam.iteminfo.itemdata = {}
+      end
+      if msgParam.iteminfo.itemdata.egg == nil then
+        msgParam.iteminfo.itemdata.egg = {}
+      end
+      msgParam.iteminfo.itemdata.egg.already_hatched = iteminfo.itemdata.egg.already_hatched
+    end
+    if iteminfo.itemdata.egg ~= nil and iteminfo.itemdata.egg.quick_pack_slot ~= nil then
+      if msgParam.iteminfo.itemdata == nil then
+        msgParam.iteminfo.itemdata = {}
+      end
+      if msgParam.iteminfo.itemdata.egg == nil then
+        msgParam.iteminfo.itemdata.egg = {}
+      end
+      msgParam.iteminfo.itemdata.egg.quick_pack_slot = iteminfo.itemdata.egg.quick_pack_slot
     end
     if iteminfo.itemdata.letter ~= nil and iteminfo.itemdata.letter.sendUserName ~= nil then
       if msgParam.iteminfo.itemdata == nil then
@@ -34790,6 +35078,24 @@ function ServiceRecordTradeAutoProxy:CallUpdateOrderTradeCmd(charid, info, type)
       end
       msg.info.item_data.egg.cdtime = info.item_data.egg.cdtime
     end
+    if info.item_data.egg ~= nil and info.item_data.egg.already_hatched ~= nil then
+      if msg.info.item_data == nil then
+        msg.info.item_data = {}
+      end
+      if msg.info.item_data.egg == nil then
+        msg.info.item_data.egg = {}
+      end
+      msg.info.item_data.egg.already_hatched = info.item_data.egg.already_hatched
+    end
+    if info.item_data.egg ~= nil and info.item_data.egg.quick_pack_slot ~= nil then
+      if msg.info.item_data == nil then
+        msg.info.item_data = {}
+      end
+      if msg.info.item_data.egg == nil then
+        msg.info.item_data.egg = {}
+      end
+      msg.info.item_data.egg.quick_pack_slot = info.item_data.egg.quick_pack_slot
+    end
     if info.item_data.letter ~= nil and info.item_data.letter.sendUserName ~= nil then
       if msg.info.item_data == nil then
         msg.info.item_data = {}
@@ -36790,6 +37096,24 @@ function ServiceRecordTradeAutoProxy:CallUpdateOrderTradeCmd(charid, info, type)
         msgParam.info.item_data.egg = {}
       end
       msgParam.info.item_data.egg.cdtime = info.item_data.egg.cdtime
+    end
+    if info.item_data.egg ~= nil and info.item_data.egg.already_hatched ~= nil then
+      if msgParam.info.item_data == nil then
+        msgParam.info.item_data = {}
+      end
+      if msgParam.info.item_data.egg == nil then
+        msgParam.info.item_data.egg = {}
+      end
+      msgParam.info.item_data.egg.already_hatched = info.item_data.egg.already_hatched
+    end
+    if info.item_data.egg ~= nil and info.item_data.egg.quick_pack_slot ~= nil then
+      if msgParam.info.item_data == nil then
+        msgParam.info.item_data = {}
+      end
+      if msgParam.info.item_data.egg == nil then
+        msgParam.info.item_data.egg = {}
+      end
+      msgParam.info.item_data.egg.quick_pack_slot = info.item_data.egg.quick_pack_slot
     end
     if info.item_data.letter ~= nil and info.item_data.letter.sendUserName ~= nil then
       if msgParam.info.item_data == nil then

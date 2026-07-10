@@ -135,8 +135,8 @@ function BossView:SetLimitData()
   end
   local mvpNum = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_DAY_MVP_COUNT) or 0
   local miniNum = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_DAY_MINI_COUNT) or 0
-  MaxMVP = GameConfig.MvpLimit.MvpRewardTimes
-  MaxMini = GameConfig.MvpLimit.MiniRewardTimes
+  MaxMVP = GameConfig.MvpLimit.MvpRewardTimes + AdventureAchieveProxy.Instance:GetMvpLimitIncrease()
+  MaxMini = GameConfig.MvpLimit.MiniRewardTimes + AdventureAchieveProxy.Instance:GetMiniLimitIncrease()
   self.mvpLimitLabel.text = string.format(ZhString.BossView_LimitCount, mvpNum, MaxMVP or 5)
   self.miniLimitLabel.text = string.format(ZhString.BossView_LimitCount, miniNum, MaxMini or 10)
 end
@@ -427,6 +427,7 @@ function BossView:MapViewListen()
   self:AddListenEvt(ServiceEvent.BossCmdQueryKillerInfoBossCmd, self.OnRecvQueryKillerInfoBoss)
   self:AddListenEvt(ServiceEvent.BossCmdQueryFavaouiteBossCmd, self.HandleBosslstUpdate)
   self:AddListenEvt(ServiceEvent.NUserVarUpdate, self.SetLimitData)
+  self:AddListenEvt(ServiceEvent.AchieveCmdNewAchieveNtfAchCmd, self.SetLimitData)
 end
 
 function BossView:HandleBosslstUpdate(note)

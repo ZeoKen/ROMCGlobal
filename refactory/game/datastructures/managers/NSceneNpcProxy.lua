@@ -259,6 +259,8 @@ function NSceneNpcProxy:PureAddSome(datas)
       local npcType = staticData and staticData.Type or -1
       if npcType == "UserHandcartNpc" then
         tmpNpcs[#tmpNpcs + 1] = self:Add(data, NFollowOwnerNpc, isTrap)
+      elseif npcType == "RotateNpc" then
+        tmpNpcs[#tmpNpcs + 1] = self:Add(data, NCircleTraceNpc, isTrap)
       elseif npcType == "Firework" then
         tmpNpcs[#tmpNpcs + 1] = self:Add(data, nil, isTrap)
       elseif data.owner == 0 or isTrap then
@@ -930,5 +932,33 @@ end
 function NSceneNpcProxy:HandleRemoveScenicBuffs(guids)
   for i = 1, #guids do
     FunctionScenicSpot.Me():RemoveCreatureScenicSpot(guids[i])
+  end
+end
+
+function NSceneNpcProxy:HandleNpcCircleTraceNtf(data)
+  if not (data and data.items) or #data.items == 0 then
+    return
+  end
+  for i = 1, #data.items do
+    local item = data.items[i]
+    if item and item.guid then
+      local npc = self:Find(item.guid)
+      if npc and npc.isCircleTraceNpc then
+        if item.center then
+          item.center.x = item.center.x / 1000
+          item.center.y = item.center.y / 1000
+          item.center.z = item.center.z / 1000
+        end
+        local moveData = {
+          guid = item.guid,
+          center = item.center,
+          radius = item.radius,
+          angle = item.angle,
+          angle_speed = item.angle_speed,
+          center_guid = item.center_guid
+        }
+        npc:UpdateNpcMovement(moveData)
+      end
+    end
   end
 end

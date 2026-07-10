@@ -461,6 +461,38 @@ function FunctionPet:DoResetSkill(itemid)
   ServiceScenePetProxy.Instance:CallResetSkillPetCmd(itemid)
 end
 
+function FunctionPet:TryContractSkillLevelUp(petid)
+  local petData = PetProxy.Instance:GetMyPetInfoData(petid)
+  if petData == nil or not petData:HasContractSkill() then
+    return
+  end
+  local curLv = petData:GetContractSkillLevel()
+  local maxLv = petData:GetContractSkillMaxLevel()
+  if curLv >= maxLv then
+    MsgManager.ShowMsgByIDTable(9010)
+    return
+  end
+  local nextLv = curLv + 1
+  local costArr = petData.staticData.ContractSkillLevelUpCost
+  local matId = petData.staticData.ContractSkillLevelUpMaterial
+  if costArr == nil or matId == nil then
+    return
+  end
+  local costCount = costArr[curLv]
+  if costCount == nil then
+    return
+  end
+  local matName = Table_Item[matId] and Table_Item[matId].NameZh or ""
+  local have = BagProxy.Instance:GetItemNumByStaticID(matId) or 0
+  MsgManager.ConfirmMsgByID(43703, function()
+    if have < costCount then
+      MsgManager.ShowMsgByIDTable(43702)
+      return
+    end
+    ServiceScenePetProxy.Instance:CallContractSkillLevelUpPetCmd(nextLv)
+  end, nil, nil, costCount, matName, have)
+end
+
 local forbidden_cfg
 
 function FunctionPet:IsChangeNameForbidden(petid)

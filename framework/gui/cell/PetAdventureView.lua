@@ -1059,6 +1059,15 @@ function PetAdventureView:_updateDropItem(rewardData)
   self.dropScroll:ResetPosition()
 end
 
+function PetAdventureView:RefreshListScrollPosition()
+  if self.petQuestlist then
+    self.petQuestlist:ResetPosition()
+  end
+  if self.dropScroll then
+    self.dropScroll:ResetPosition()
+  end
+end
+
 function PetAdventureView:_refreshAdventureTime()
   if self.startTime + self.ConsumeTime <= ServerTime.CurServerTime() / 1000 then
     local v = PetAdventureProxy.Instance:HandleFinished()

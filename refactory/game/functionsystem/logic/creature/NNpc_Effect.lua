@@ -56,47 +56,18 @@ function NNpc:PlayEBStatueEffect(score, camp)
   end
 end
 
+local NpcEffectKey = "NpcServerEffect"
+
 function NNpc:InitNpcEffect(serverData)
   local effectPath = serverData.effect
   if not effectPath or effectPath == "" then
     return
   end
   local epID = serverData.effectpos or 0
-  local effectIndex = serverData.effectindex or 0
-  local npcID = self.data and self.data.staticData and self.data.staticData.id or 0
   local npcGuid = self.data and self.data.id or 0
-  local effectData = {
-    charid = npcGuid,
-    effect = effectPath,
-    effectpos = epID,
-    index = effectIndex,
-    times = 0,
-    epbind = true,
-    posbind = false,
-    pos = {
-      x = 0,
-      y = 0,
-      z = 0
-    },
-    dir3d = {
-      x = 0,
-      y = 0,
-      z = 0
-    },
-    delay = 0,
-    id = 0,
-    skillid = 0,
-    ignorenavmesh = false,
-    scale = 1,
-    msec = 0
-  }
-  self.serverEffectData = effectData
-  NSceneEffectProxy.Instance:Add(effectData)
+  self:PlayEffect(NpcEffectKey, effectPath, epID, nil, true, true)
 end
 
 function NNpc:ClearNpcEffect()
-  if self.serverEffectData then
-    NSceneEffectProxy.Instance:Remove(self.serverEffectData)
-    self.serverEffectData = nil
-  end
+  self:RemoveEffect(NpcEffectKey)
 end

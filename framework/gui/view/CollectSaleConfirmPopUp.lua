@@ -97,6 +97,7 @@ function CollectSaleConfirmPopUp:UpdateInfo()
   if 0 < length then
     local zenyCost = 0
     local noDiscountCost = 0
+    local discountZenyCost = 0
     local addZenyCost = 0
     local itemMap = self.itemMap
     if itemMap == nil then
@@ -121,11 +122,13 @@ function CollectSaleConfirmPopUp:UpdateInfo()
       end
       local price = (shopProxy:GetPrice(item) or 0) * num
       local purePrice = (shopProxy:GetPurePrice(item) or 0) * num
+      local discountPurePrice = (shopProxy:GetDiscountPurePrice(item) or 0) * num
       zenyCost = zenyCost + purePrice
+      discountZenyCost = discountZenyCost + discountPurePrice
       noDiscountCost = noDiscountCost + (price - purePrice)
     end
     if disCount ~= 0 then
-      addZenyCost = math.floor(disCount * zenyCost / 1000)
+      addZenyCost = math.floor(disCount * discountZenyCost / 1000)
     end
     local namesList = self.namesList
     if namesList == nil then

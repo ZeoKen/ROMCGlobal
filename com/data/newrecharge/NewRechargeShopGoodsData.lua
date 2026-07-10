@@ -15,7 +15,8 @@ function NewRechargeShopGoodsData.GetLimitStr()
       [32] = ZhString.NewRecharge_BuyLimit_Char_Monthly,
       [64] = ZhString.NewRecharge_BuyLimit_Acc_Weekly,
       [128] = ZhString.NewRecharge_BuyLimit_Acc_Monthly,
-      [512] = ZhString.NewRecharge_BuyLimit_Char_Permanent
+      [512] = ZhString.NewRecharge_BuyLimit_Char_Permanent,
+      [4096] = ZhString.NewRecharge_BuyLimit_MultiMonth
     }
   end
   return NewRechargeShopGoodsData.LimitStr

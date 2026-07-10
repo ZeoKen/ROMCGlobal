@@ -468,6 +468,17 @@ function SkillItemData:CheckFuncOpen(funcType)
     if logicParam.fake_normalAtk then
       return true
     end
+    if logicParam.select_replace_skill_single then
+      local replaceFamilyBuffs = GameConfig.SkillCommon and GameConfig.SkillCommon.ReplaceSkillSingleFamilyBuffs
+      local replaceSeriesID = logicParam.select_replace_skill_single
+      local replaceConfig = replaceFamilyBuffs and replaceFamilyBuffs[replaceSeriesID]
+      local stoneBuff = replaceConfig and replaceConfig.stone_buff
+      local myselfData = Game.Myself and Game.Myself.data
+      local hasStoneBuff = stoneBuff ~= nil and myselfData ~= nil and myselfData:HasBuffID(stoneBuff)
+      if hasStoneBuff then
+        return true
+      end
+    end
     return false
   elseif funcType == self.FuncType.Rune then
     return self:GetRuneSelectSpecials() ~= nil

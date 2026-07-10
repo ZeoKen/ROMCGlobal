@@ -144,6 +144,10 @@ function NCreature:GetCreatureType()
   return nil
 end
 
+function NCreature:GetCircleTraceCenterPosition()
+  return nil
+end
+
 function NCreature:IsRobotNpc()
   return false
 end

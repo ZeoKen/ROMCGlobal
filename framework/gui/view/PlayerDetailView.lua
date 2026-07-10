@@ -18,6 +18,7 @@ PlayerDetailView.State = {
   None = "PlayerDetailView_State_None",
   Equip = "PlayerDetailView_State_Equip",
   Attri = "PlayerDetailView_State_Attri",
+  EquipMemory = "PlayerDetailView_State_EquipMemory",
   Fashion = "PlayerDetailView_State_Fashion",
   Gem = "PlayerDetailView_State_Gem"
 }
@@ -143,7 +144,8 @@ function PlayerDetailView:InitUI()
       local memoryLevels = self:GetTotalEquipMemoryLevels()
       self.equipMemoryPage:UpdateView(memoryLevels)
     end
-    self:Show(self.equipMemoryHolder)
+    self.leftState = PlayerDetailView.State.EquipMemory
+    self:UpdateLeftState()
   end)
   self.equipMemoryHolder = self:FindGO("EquipMemoryHolder")
   self.myAttriHolder = self:FindGO("attrViewHolder")
@@ -515,12 +517,14 @@ function PlayerDetailView:AddTabClickEvents()
 end
 
 function PlayerDetailView:UpdateLeftState()
-  local isEquip, isAttri = self.leftState == PlayerDetailView.State.Equip, self.leftState == PlayerDetailView.State.Attri
+  local isEquip = self.leftState == PlayerDetailView.State.Equip
+  local isAttri = self.leftState == PlayerDetailView.State.Attri
+  local isEquipMemory = self.leftState == PlayerDetailView.State.EquipMemory
   self.leftequipInfoTab.transform.localRotation = isEquip and Quaternion.Euler(0, 180, 0) or Quaternion.identity
   self.rightattrInfoTab.transform.localRotation = isAttri and Quaternion.Euler(0, 180, 0) or Quaternion.identity
   self.myEquips.gameObject:SetActive(isEquip)
   self.myAttriHolder:SetActive(isAttri)
-  self.equipMemoryHolder:SetActive(false)
+  self.equipMemoryHolder:SetActive(isEquipMemory)
   if isAttri then
     self.myBaseAttriView:showMySelf()
   end

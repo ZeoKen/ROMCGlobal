@@ -115,7 +115,11 @@ function NewRechargeView:FindObjs()
   self.goLabGachaCoinBalance = self:FindGO("Lab", self.goGachaCoinBalance)
   self.labGachaCoinBalance = self.goLabGachaCoinBalance:GetComponent(UILabel)
   self.spGachaCoin = self:FindGO("Icon", self.goGachaCoinBalance):GetComponent(UISprite)
-  IconManager:SetItemIcon("item_151", self.spGachaCoin)
+  if BranchMgr.IsNOKR() and Table_Item[111] then
+    IconManager:SetItemIcon(Table_Item[111].Icon, self.spGachaCoin)
+  else
+    IconManager:SetItemIcon("item_151", self.spGachaCoin)
+  end
   self.u_GachaCoinBalance_ChargeBtn = self:FindGO("ChargeBtn", self.goGachaCoinBalance)
   self.widgetTipRelative = self:FindGO("TipRelative", self.gameObject):GetComponent(UIWidget)
   self.texBG = self:FindComponent("BG", UITexture, self.gameObject)
@@ -127,6 +131,9 @@ function NewRechargeView:FindObjs()
   self:ShopItemPurchaseDetailCell_Create()
   self:onLoadGiftTipView()
   self:onLoadGiftRightDetailView()
+  self.tips = self:FindComponent("Tips", UILabel, self.gameObject)
+  self.tipsBG = self:FindComponent("TipsBg", UISprite, self.tips.gameObject)
+  self:InitCommonTip()
   if BranchMgr.IsJapan() then
     self.helpButton.gameObject:SetActive(false)
     local overSeaRoot = self:FindGO("overseaRoot")
@@ -144,9 +151,13 @@ function NewRechargeView:FindObjs()
     self.goZenyBalance:SetActive(false)
   end
   if FunctionNewRecharge.Instance():IsChuXinServer() then
-    self.goGachaCoinBalance:SetActive(false)
     self.goZenyBalance:SetActive(true)
-    self.goZenyBalance.transform.localPosition = LuaGeometry.GetTempVector3(246, -17.6, 0)
+    if BranchMgr.IsNOKR() then
+      self.goGachaCoinBalance:SetActive(true)
+    else
+      self.goGachaCoinBalance:SetActive(false)
+      self.goZenyBalance.transform.localPosition = LuaGeometry.GetTempVector3(246, -17.6, 0)
+    end
   end
   self:InitNoviceShopTip()
 end
@@ -169,6 +180,18 @@ function NewRechargeView:InitNoviceShopTip()
       end
     end)
     self:UpdateNoviceShopTip()
+  end
+end
+
+function NewRechargeView:InitCommonTip()
+  if not self.tips then
+    return
+  end
+  local branchTipKey = "NewRecharge_CommonTip_" .. BranchMgr.GetBranchName()
+  self.tips.text = ZhString[branchTipKey] or ZhString.NewRecharge_CommonTip
+  if self.tipsBG then
+    self.tipsBG.width = self.tips.printedSize.x + 50
+    self.tipsBG.height = self.tips.printedSize.y + 12
   end
 end
 
@@ -253,7 +276,11 @@ function NewRechargeView:LoadZenyBalanceView()
   if milCommaBalance then
     self.labZenyBalance.text = milCommaBalance
   end
-  milCommaBalance = FunctionNewRecharge.FormatMilComma(MyselfProxy.Instance:GetLottery())
+  if BranchMgr.IsNOKR() then
+    milCommaBalance = FunctionNewRecharge.FormatMilComma(MyselfProxy.Instance:GetNokrDiamond())
+  else
+    milCommaBalance = FunctionNewRecharge.FormatMilComma(MyselfProxy.Instance:GetLottery())
+  end
   if milCommaBalance then
     self.labGachaCoinBalance.text = milCommaBalance
   end

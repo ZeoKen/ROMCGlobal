@@ -35,7 +35,7 @@ function PetView:FindObjs()
   elseif self.viewdata.viewdata and self.viewdata.viewdata.tab then
     self:TabChangeHandler(self.viewdata.viewdata.tab)
   else
-    self:TabChangeHandler(PanelConfig.PetAdventureView.tab)
+    self:TabChangeHandler(PanelConfig.PetComposeView.tab)
   end
   local tabList, icon = {
     self.adventureToggle,
@@ -106,6 +106,10 @@ function PetView:TabChangeHandler(key)
     if not self.PetComposeView then
       self.PetComposeView = self:AddSubView("PetComposeView", PetComposeView)
     end
+  elseif key == PanelConfig.PetAdventureView.tab then
+    if self.PetAdventureView and self.PetAdventureView.RefreshListScrollPosition then
+      self.PetAdventureView:RefreshListScrollPosition()
+    end
   elseif key == PanelConfig.PetWorkSpaceView.tab and not self.PetWorkSpaceView then
     self.PetWorkSpaceView = self:AddSubView("PetWorkSpaceView", PetWorkSpaceView)
   end
@@ -147,6 +151,9 @@ end
 function PetView:OnEnter()
   EventManager.Me():AddEventListener(QuickBuyEvent.CloseUI, self.HandleClose, self)
   PetView.super.OnEnter(self)
+  if self.PetAdventureView and self.PetAdventureView.RefreshListScrollPosition then
+    self.PetAdventureView:RefreshListScrollPosition()
+  end
 end
 
 function PetView:OnExit()

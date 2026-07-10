@@ -510,11 +510,12 @@ function NewRechargeRecommendTShopGoodsCell:Invoke_DepositConfirmPanel(cb)
     if BranchMgr.IsKorea() then
       productD = " [0075BCFF]" .. productDesc .. "[-] "
     end
-    OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FunctionNewRecharge.FormatMilComma(productPrice)), ZhString.ShopConfirmDes, productName, productPrice, function()
+    local confirmDesc, clickUrlCallback = OverseaHostHelper:GetRechargeShopConfirmDesc()
+    OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FunctionNewRecharge.FormatMilComma(productPrice)), confirmDesc, productName, productPrice, function()
       if cb then
         cb()
       end
-    end)
+    end, nil, clickUrlCallback)
   end
 end
 
@@ -590,6 +591,12 @@ function NewRechargeRecommendTShopGoodsCell:Purchase_Deposit()
 end
 
 function NewRechargeRecommendTShopGoodsCell:Purchase_Shop()
+  if not self.info then
+    return
+  end
+  if not self.info.shopItemData then
+    return
+  end
   if not self.info.shopItemData:CheckCanRemove() then
     self.info.shopItemData.m_checkFunc = self.IsHaveEnoughVirtualCurrency
     self.info.shopItemData.m_checkTable = self

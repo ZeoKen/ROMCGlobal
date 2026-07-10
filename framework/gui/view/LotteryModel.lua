@@ -356,6 +356,7 @@ function LotteryModel:LoadModel()
   self.roleParts[_PartIndex.Body] = _FunctionLottery:GetDressID(_PartIndex.Body) or self:GetRolePart(UDEnum.BODY)
   self.roleParts[_PartIndex.Eye] = self:GetRolePart(UDEnum.EYE)
   Asset_RoleUtility.ReviseEyeByBody(self.roleParts)
+  self.roleParts[_PartIndex.DefaultTail] = 0
   self.roleParts[_PartIndex.Mount] = _FunctionLottery:GetDressID(_PartIndex.Mount) or 0
   self.roleParts[_PartIndex.Head] = _FunctionLottery:GetDressID(_PartIndex.Head) or self:GetRolePart(UDEnum.HEAD)
   self.roleParts[_PartIndex.Face] = _FunctionLottery:GetDressID(_PartIndex.Face) or self:GetRolePart(UDEnum.FACE)
@@ -367,6 +368,10 @@ function LotteryModel:LoadModel()
   self.roleParts[_PartIndexEx.BodyColorIndex] = _FunctionLottery:GetDressID(_PartIndexEx.BodyColorIndex) or self:GetRolePart(UDEnum.CLOTHCOLOR)
   self.roleParts[_PartIndexEx.Gender] = _MyGender
   local hasMount = self.roleParts[_PartIndex.Mount] ~= 0
+  local _onRoleLoaded = function(assetRole)
+    assetRole:IgnoreTerrainLightColor(true)
+    assetRole:RefreshLightMapColor()
+  end
   if not self.assetRole then
     self.assetRole = Asset_Role_UI.Create(self.roleParts)
     self.assetRole:SetParent(self.rolePos, false)
@@ -381,6 +386,11 @@ function LotteryModel:LoadModel()
     self.assetRole:SetForceShowMount(true)
   else
     self.assetRole:Redress(self.roleParts, true)
+  end
+  if self.assetRole:_IsLoading() then
+    self.assetRole:SetExOnCreatedCallback(_onRoleLoaded)
+  else
+    _onRoleLoaded(self.assetRole)
   end
   if hasMount then
     self.assetRole:PlayAction_Simple(_ride_Animation)

@@ -66,6 +66,7 @@ function AI_CMD_Myself_Skill_Run:Start(time, deltaTime, creature, targetCreature
     return
   end
   local ret, allowInterrupt = skill:Launch(targetCreature, targetPosition, creature, ignoreCast, invalid, isAttackSkill, autoInterrupt, isTrigger, self.args[16])
+  SkillProxy.Instance:TryMarkEndSkillExecuted(skillid)
   if ret then
     if isAttackSkill or isFakeNormalAttack then
       lastAttackTime = time

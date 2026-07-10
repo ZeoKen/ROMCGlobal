@@ -17426,6 +17426,7 @@ Table_MapStep_t = {
       territory = 5
     },
     {
+      boss_type = 1,
       dead_disp_time = 20,
       dir = 300,
       group_id = 1,
@@ -20154,6 +20155,21 @@ Table_MapStep_t = {
         20.68,
         -21.12
       }
+    },
+    {
+      boss_type = 1,
+      dead_disp_time = 20,
+      dir = 300,
+      group_id = 1,
+      id = 30075,
+      pos = {
+        358,
+        1,
+        -209
+      },
+      pursue = 15,
+      search = 0,
+      territory = 5
     },
     {
       ids = {40040}
@@ -35566,23 +35582,40 @@ Table_MapStep = {
     Params = Table_MapStep_t.Params[34],
     MapID = 155
   },
+  [2855] = {
+    id = 2855,
+    Params = Table_MapStep_t.Params[1601],
+    MapID = 155
+  },
+  [2856] = {
+    id = 2856,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [2857] = {
+    id = 2857,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[190],
+    MapID = 155
+  },
   [10001] = {
     id = 10001,
     Content = "broadcast_msg",
-    Params = Table_MapStep_t.Params[1669],
+    Params = Table_MapStep_t.Params[1670],
     MapID = 62,
     StartCondition = Table_MapStep_t.StartCondition[7]
   },
   [10002] = {
     id = 10002,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1668],
+    Params = Table_MapStep_t.Params[1669],
     MapID = 62
   },
   [10003] = {
     id = 10003,
     Content = "broadcast_msg",
-    Params = Table_MapStep_t.Params[1667],
+    Params = Table_MapStep_t.Params[1668],
     MapID = 62
   },
   [10004] = {
@@ -35593,48 +35626,48 @@ Table_MapStep = {
   },
   [10005] = {
     id = 10005,
-    Params = Table_MapStep_t.Params[1666],
+    Params = Table_MapStep_t.Params[1667],
     MapID = 62
   },
   [10006] = {
     id = 10006,
-    Params = Table_MapStep_t.Params[1665],
+    Params = Table_MapStep_t.Params[1666],
     MapID = 62
   },
   [10007] = {
     id = 10007,
-    Params = Table_MapStep_t.Params[1664],
+    Params = Table_MapStep_t.Params[1665],
     MapID = 62
   },
   [10008] = {
     id = 10008,
-    Params = Table_MapStep_t.Params[1663],
+    Params = Table_MapStep_t.Params[1664],
     MapID = 62
   },
   [10009] = {
     id = 10009,
-    Params = Table_MapStep_t.Params[1662],
+    Params = Table_MapStep_t.Params[1663],
     MapID = 62
   },
   [10010] = {
     id = 10010,
-    Params = Table_MapStep_t.Params[1661],
+    Params = Table_MapStep_t.Params[1662],
     MapID = 62
   },
   [10011] = {
     id = 10011,
-    Params = Table_MapStep_t.Params[1660],
+    Params = Table_MapStep_t.Params[1661],
     MapID = 62
   },
   [10012] = {
     id = 10012,
-    Params = Table_MapStep_t.Params[1659],
+    Params = Table_MapStep_t.Params[1660],
     MapID = 62
   },
   [10013] = {
     id = 10013,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1658],
+    Params = Table_MapStep_t.Params[1659],
     MapID = 62
   },
   [10014] = {
@@ -35646,13 +35679,13 @@ Table_MapStep = {
   [10015] = {
     id = 10015,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1657],
+    Params = Table_MapStep_t.Params[1658],
     MapID = 62
   },
   [10016] = {
     id = 10016,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1656],
+    Params = Table_MapStep_t.Params[1657],
     MapID = 62
   },
   [10017] = {
@@ -35664,7 +35697,7 @@ Table_MapStep = {
   [10018] = {
     id = 10018,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1655],
+    Params = Table_MapStep_t.Params[1656],
     MapID = 62
   },
   [10019] = {
@@ -35676,7 +35709,7 @@ Table_MapStep = {
   [10020] = {
     id = 10020,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1654],
+    Params = Table_MapStep_t.Params[1655],
     MapID = 62
   },
   [10021] = {
@@ -35688,7 +35721,7 @@ Table_MapStep = {
   [10022] = {
     id = 10022,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1653],
+    Params = Table_MapStep_t.Params[1654],
     MapID = 62
   },
   [10023] = {
@@ -35700,27 +35733,27 @@ Table_MapStep = {
   [10024] = {
     id = 10024,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1652],
+    Params = Table_MapStep_t.Params[1653],
     MapID = 62
   },
   [10025] = {
     id = 10025,
-    Params = Table_MapStep_t.Params[1651],
+    Params = Table_MapStep_t.Params[1652],
     MapID = 62
   },
   [10026] = {
     id = 10026,
-    Params = Table_MapStep_t.Params[1650],
+    Params = Table_MapStep_t.Params[1651],
     MapID = 62
   },
   [10027] = {
     id = 10027,
-    Params = Table_MapStep_t.Params[1649],
+    Params = Table_MapStep_t.Params[1650],
     MapID = 62
   },
   [10028] = {
     id = 10028,
-    Params = Table_MapStep_t.Params[1648],
+    Params = Table_MapStep_t.Params[1649],
     MapID = 62
   },
   [10029] = {
@@ -35732,25 +35765,25 @@ Table_MapStep = {
   [10030] = {
     id = 10030,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1632],
+    Params = Table_MapStep_t.Params[1633],
     MapID = 62
   },
   [10031] = {
     id = 10031,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1647],
+    Params = Table_MapStep_t.Params[1648],
     MapID = 62
   },
   [10032] = {
     id = 10032,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1630],
+    Params = Table_MapStep_t.Params[1631],
     MapID = 62
   },
   [10033] = {
     id = 10033,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1646],
+    Params = Table_MapStep_t.Params[1647],
     MapID = 62
   },
   [10034] = {
@@ -35762,37 +35795,37 @@ Table_MapStep = {
   [10035] = {
     id = 10035,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1645],
+    Params = Table_MapStep_t.Params[1646],
     MapID = 62
   },
   [10036] = {
     id = 10036,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1644],
+    Params = Table_MapStep_t.Params[1645],
     MapID = 62
   },
   [10037] = {
     id = 10037,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1632],
+    Params = Table_MapStep_t.Params[1633],
     MapID = 62
   },
   [10038] = {
     id = 10038,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1643],
+    Params = Table_MapStep_t.Params[1644],
     MapID = 62
   },
   [10039] = {
     id = 10039,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1630],
+    Params = Table_MapStep_t.Params[1631],
     MapID = 62
   },
   [10040] = {
     id = 10040,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1642],
+    Params = Table_MapStep_t.Params[1643],
     MapID = 62
   },
   [10041] = {
@@ -35810,31 +35843,31 @@ Table_MapStep = {
   [10043] = {
     id = 10043,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1632],
+    Params = Table_MapStep_t.Params[1633],
     MapID = 62
   },
   [10044] = {
     id = 10044,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1641],
+    Params = Table_MapStep_t.Params[1642],
     MapID = 62
   },
   [10045] = {
     id = 10045,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1630],
+    Params = Table_MapStep_t.Params[1631],
     MapID = 62
   },
   [10046] = {
     id = 10046,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1640],
+    Params = Table_MapStep_t.Params[1641],
     MapID = 62
   },
   [10047] = {
     id = 10047,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1639],
+    Params = Table_MapStep_t.Params[1640],
     MapID = 62
   },
   [10048] = {
@@ -35845,51 +35878,51 @@ Table_MapStep = {
   },
   [10049] = {
     id = 10049,
-    Params = Table_MapStep_t.Params[1638],
+    Params = Table_MapStep_t.Params[1639],
     MapID = 62
   },
   [10050] = {
     id = 10050,
-    Params = Table_MapStep_t.Params[1637],
+    Params = Table_MapStep_t.Params[1638],
     MapID = 62
   },
   [10051] = {
     id = 10051,
-    Params = Table_MapStep_t.Params[1636],
+    Params = Table_MapStep_t.Params[1637],
     MapID = 62
   },
   [10052] = {
     id = 10052,
-    Params = Table_MapStep_t.Params[1635],
+    Params = Table_MapStep_t.Params[1636],
     MapID = 62
   },
   [10053] = {
     id = 10053,
-    Params = Table_MapStep_t.Params[1634],
+    Params = Table_MapStep_t.Params[1635],
     MapID = 62
   },
   [10054] = {
     id = 10054,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1633],
+    Params = Table_MapStep_t.Params[1634],
     MapID = 62
   },
   [10055] = {
     id = 10055,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1632],
+    Params = Table_MapStep_t.Params[1633],
     MapID = 62
   },
   [10056] = {
     id = 10056,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1631],
+    Params = Table_MapStep_t.Params[1632],
     MapID = 62
   },
   [10057] = {
     id = 10057,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1630],
+    Params = Table_MapStep_t.Params[1631],
     MapID = 62
   },
   [10058] = {
@@ -35901,19 +35934,19 @@ Table_MapStep = {
   [10059] = {
     id = 10059,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1629],
+    Params = Table_MapStep_t.Params[1630],
     MapID = 62
   },
   [10060] = {
     id = 10060,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1625],
+    Params = Table_MapStep_t.Params[1626],
     MapID = 62
   },
   [10061] = {
     id = 10061,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1607],
+    Params = Table_MapStep_t.Params[1608],
     MapID = 62
   },
   [10062] = {
@@ -35925,13 +35958,13 @@ Table_MapStep = {
   [10063] = {
     id = 10063,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1628],
+    Params = Table_MapStep_t.Params[1629],
     MapID = 62
   },
   [10064] = {
     id = 10064,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1624],
+    Params = Table_MapStep_t.Params[1625],
     MapID = 62
   },
   [10065] = {
@@ -35943,7 +35976,7 @@ Table_MapStep = {
   [10066] = {
     id = 10066,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1627],
+    Params = Table_MapStep_t.Params[1628],
     MapID = 62
   },
   [10067] = {
@@ -35955,7 +35988,7 @@ Table_MapStep = {
   [10068] = {
     id = 10068,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1626],
+    Params = Table_MapStep_t.Params[1627],
     MapID = 62
   },
   [10069] = {
@@ -35967,7 +36000,7 @@ Table_MapStep = {
   [10070] = {
     id = 10070,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1625],
+    Params = Table_MapStep_t.Params[1626],
     MapID = 62
   },
   [10071] = {
@@ -35979,7 +36012,7 @@ Table_MapStep = {
   [10072] = {
     id = 10072,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1624],
+    Params = Table_MapStep_t.Params[1625],
     MapID = 62
   },
   [10073] = {
@@ -35991,25 +36024,25 @@ Table_MapStep = {
   [10074] = {
     id = 10074,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1623],
+    Params = Table_MapStep_t.Params[1624],
     MapID = 62
   },
   [10075] = {
     id = 10075,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1622],
+    Params = Table_MapStep_t.Params[1623],
     MapID = 62
   },
   [10076] = {
     id = 10076,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1621],
+    Params = Table_MapStep_t.Params[1622],
     MapID = 62
   },
   [10077] = {
     id = 10077,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1620],
+    Params = Table_MapStep_t.Params[1621],
     MapID = 62
   },
   [10078] = {
@@ -36021,19 +36054,19 @@ Table_MapStep = {
   [10079] = {
     id = 10079,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1619],
+    Params = Table_MapStep_t.Params[1620],
     MapID = 62
   },
   [10080] = {
     id = 10080,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1618],
+    Params = Table_MapStep_t.Params[1619],
     MapID = 62
   },
   [10081] = {
     id = 10081,
     Content = "cutscene",
-    Params = Table_MapStep_t.Params[1617],
+    Params = Table_MapStep_t.Params[1618],
     MapID = 62,
     Auto = 1
   },
@@ -36045,30 +36078,30 @@ Table_MapStep = {
   },
   [10083] = {
     id = 10083,
-    Params = Table_MapStep_t.Params[1616],
+    Params = Table_MapStep_t.Params[1617],
     MapID = 62
   },
   [10084] = {
     id = 10084,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1615],
+    Params = Table_MapStep_t.Params[1616],
     MapID = 62
   },
   [10085] = {
     id = 10085,
-    Params = Table_MapStep_t.Params[1614],
+    Params = Table_MapStep_t.Params[1615],
     MapID = 62
   },
   [10086] = {
     id = 10086,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1613],
+    Params = Table_MapStep_t.Params[1614],
     MapID = 62
   },
   [10087] = {
     id = 10087,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1612],
+    Params = Table_MapStep_t.Params[1613],
     MapID = 62
   },
   [10088] = {
@@ -36080,19 +36113,19 @@ Table_MapStep = {
   [10089] = {
     id = 10089,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1611],
+    Params = Table_MapStep_t.Params[1612],
     MapID = 62
   },
   [10090] = {
     id = 10090,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1610],
+    Params = Table_MapStep_t.Params[1611],
     MapID = 62
   },
   [10091] = {
     id = 10091,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1609],
+    Params = Table_MapStep_t.Params[1610],
     MapID = 62
   },
   [10092] = {
@@ -36104,19 +36137,19 @@ Table_MapStep = {
   [10093] = {
     id = 10093,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1608],
+    Params = Table_MapStep_t.Params[1609],
     MapID = 62
   },
   [10094] = {
     id = 10094,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1607],
+    Params = Table_MapStep_t.Params[1608],
     MapID = 62
   },
   [10095] = {
     id = 10095,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1606],
+    Params = Table_MapStep_t.Params[1607],
     MapID = 62
   },
   [10096] = {
@@ -36128,13 +36161,13 @@ Table_MapStep = {
   [10097] = {
     id = 10097,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1605],
+    Params = Table_MapStep_t.Params[1606],
     MapID = 62
   },
   [10098] = {
     id = 10098,
     Content = "killmonster",
-    Params = Table_MapStep_t.Params[1604],
+    Params = Table_MapStep_t.Params[1605],
     MapID = 62
   },
   [10099] = {
@@ -36145,7 +36178,7 @@ Table_MapStep = {
   [10100] = {
     id = 10100,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1603],
+    Params = Table_MapStep_t.Params[1604],
     MapID = 62
   },
   [10101] = {
@@ -36157,13 +36190,13 @@ Table_MapStep = {
   [10102] = {
     id = 10102,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1602],
+    Params = Table_MapStep_t.Params[1603],
     MapID = 62
   },
   [10103] = {
     id = 10103,
     Content = "cutscene",
-    Params = Table_MapStep_t.Params[1601],
+    Params = Table_MapStep_t.Params[1602],
     MapID = 62,
     Auto = 1
   },

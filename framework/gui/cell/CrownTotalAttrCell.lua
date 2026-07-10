@@ -17,11 +17,23 @@ function CrownTotalAttrCell:SetData(data)
   local varName = data.varName
   local value = data.value or 0
   local propConfig = data.propConfig
+  local displayVarName = varName
+  local displayPropConfig = propConfig
+  if varName and string.sub(varName, -3) == "Per" then
+    local baseVarName = string.sub(varName, 1, -4)
+    local basePropConfig = Game.Config_PropName and Game.Config_PropName[baseVarName]
+    if basePropConfig then
+      displayVarName = baseVarName
+      displayPropConfig = basePropConfig
+    end
+  end
   if self.attrName then
-    if propConfig and propConfig.PropName then
-      self.attrName.text = propConfig.PropName
+    if (displayVarName == "MaxHP" or displayVarName == "MaxHp") and ZhString.EquipMemory_MaxHp then
+      self.attrName.text = ZhString.EquipMemory_MaxHp
+    elseif displayPropConfig and displayPropConfig.PropName then
+      self.attrName.text = displayPropConfig.PropName
     else
-      self.attrName.text = varName or ""
+      self.attrName.text = displayVarName or varName or ""
     end
   end
   if self.attrValue then
@@ -36,7 +48,8 @@ function CrownTotalAttrCell:SetData(data)
         self.attrName.width = 300
       end
       local valueStr = ""
-      if propConfig and propConfig.IsPercent == 1 then
+      local isPercent = propConfig and (propConfig.IsPercent == 1 or propConfig.IsClientPercent == 1) or varName and string.sub(varName, -3) == "Per"
+      if isPercent then
         local percentValue = value * 100
         if percentValue == math.floor(percentValue) then
           valueStr = string.format("%d%%", percentValue)

@@ -2,6 +2,37 @@ ClientTimeUtil = {}
 DATA_FORMAT = "%y-%m-%d %H:%M:%S"
 local _calendarFormat = "%s/%s %s:%s - %s/%s %s:%s"
 local _DateMatchFormat = "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)"
+local _GetServerTimeZone = function()
+  if ServerTime.SERVER_TIMEZONE then
+    return ServerTime.SERVER_TIMEZONE
+  end
+  return tonumber(ServerTime.Ori_OsDate("%z", 0)) / 100
+end
+local _GetServerDate = function(timestamp)
+  local timezone = _GetServerTimeZone() or 0
+  return ServerTime.Ori_OsDate("!*t", timestamp + timezone * 3600)
+end
+local _GetTimestampByServerDate = function(serverDate, hour, min, sec, dayOffset)
+  return os.time({
+    year = serverDate.year,
+    month = serverDate.month,
+    day = serverDate.day + (dayOffset or 0),
+    hour = hour or 0,
+    min = min or 0,
+    sec = sec or 0
+  })
+end
+local _GetFixedHourTimeByTimeStamp = function(timestamp, hour, min, sec)
+  local serverDate = _GetServerDate(timestamp)
+  return _GetTimestampByServerDate(serverDate, hour, min, sec)
+end
+local _GetCurrentDailyRefreshTimeByTimeStamp = function(timestamp)
+  local refreshTime = _GetFixedHourTimeByTimeStamp(timestamp, 5, 0, 0)
+  if timestamp < refreshTime then
+    refreshTime = refreshTime - 86400
+  end
+  return refreshTime
+end
 
 function ClientTimeUtil.IsCurTimeInRegion(startStrTime, endStrTime)
   return DateTimeHelper.IsCurTimeInRegion(startStrTime, endStrTime)
@@ -114,91 +145,24 @@ end
 
 function ClientTimeUtil.GetDailyRefreshTime()
   local mycreatetime = Game.Myself.data.userdata:Get(UDEnum.CREATETIME) or 0
-  local year = tonumber(os.date("%Y", mycreatetime))
-  local month = tonumber(os.date("%m", mycreatetime))
-  local day = tonumber(os.date("%d", mycreatetime))
-  local hour = tonumber(os.date("%H", mycreatetime))
-  if 0 <= hour and hour < 5 then
-    day = day - 1
-  end
-  hour = 5
-  mycreatetime = os.time({
-    year = year,
-    month = month,
-    day = day,
-    hour = hour,
-    min = 0,
-    sec = 0
-  })
-  return mycreatetime
+  return _GetCurrentDailyRefreshTimeByTimeStamp(mycreatetime)
 end
 
 function ClientTimeUtil.GetNextDailyRefreshTime()
   local curServerTime = ServerTime.CurServerTime() / 1000
-  local nextRefreshTime
-  local startDate = os.date("*t", curServerTime)
-  if startDate.hour >= 0 and startDate.hour < 5 then
-    nextRefreshTime = os.time({
-      year = startDate.year,
-      month = startDate.month,
-      day = startDate.day,
-      hour = 5
-    })
-  else
-    nextRefreshTime = os.time({
-      year = startDate.year,
-      month = startDate.month,
-      day = startDate.day,
-      hour = 5
-    }) + 86400
-  end
-  return nextRefreshTime
+  return ClientTimeUtil.GetNextDailyRefreshTimeByTimeStamp(curServerTime)
 end
 
 function ClientTimeUtil.GetNextDailyRefreshTimeByTimeStamp(timestamp)
   if not timestamp then
     return
   end
-  local nextRefreshTime
-  local startDate = os.date("*t", timestamp)
-  if startDate.hour >= 0 and startDate.hour < 5 then
-    nextRefreshTime = os.time({
-      year = startDate.year,
-      month = startDate.month,
-      day = startDate.day,
-      hour = 5
-    })
-  else
-    nextRefreshTime = os.time({
-      year = startDate.year,
-      month = startDate.month,
-      day = startDate.day,
-      hour = 5
-    }) + 86400
-  end
-  return nextRefreshTime
+  return _GetCurrentDailyRefreshTimeByTimeStamp(timestamp) + 86400
 end
 
 function ClientTimeUtil.GetCurrentDaily5ClockTime()
   local curServerTime = ServerTime.CurServerTime() / 1000
-  local time
-  local startDate = os.date("*t", curServerTime)
-  if startDate.hour >= 0 and startDate.hour < 5 then
-    time = os.time({
-      year = startDate.year,
-      month = startDate.month,
-      day = startDate.day,
-      hour = 5
-    }) - 86400
-  else
-    time = os.time({
-      year = startDate.year,
-      month = startDate.month,
-      day = startDate.day,
-      hour = 5
-    })
-  end
-  return time
+  return _GetCurrentDailyRefreshTimeByTimeStamp(curServerTime)
 end
 
 function ClientTimeUtil.GetNextDaily5ClockTime(interval)
@@ -207,41 +171,20 @@ end
 
 function ClientTimeUtil.GetWeeklyRefreshTime()
   local curServerTime = ServerTime.CurServerTime() / 1000
-  local startDate = os.date("*t", curServerTime)
-  local curDay = os.date("*t", curServerTime)
-  local weekDay = curDay.wday - 1
+  local serverDate = _GetServerDate(curServerTime)
+  local weekDay = serverDate.wday - 1
   if weekDay == 0 then
     weekDay = 7
   end
-  local diffDays = 0
-  local nextRefreshTime
-  diffDays = 7 - weekDay + 1
-  if weekDay == 1 then
-    if 0 <= startDate.hour and startDate.hour < 5 then
-      nextRefreshTime = os.time({
-        year = startDate.year,
-        month = startDate.month,
-        day = startDate.day,
-        hour = 5
-      })
-    else
-      nextRefreshTime = os.time({
-        year = startDate.year,
-        month = startDate.month,
-        day = startDate.day,
-        hour = 5
-      }) + diffDays * 86400
-    end
-  else
-    nextRefreshTime = os.time({
-      year = startDate.year,
-      month = startDate.month,
-      day = startDate.day,
-      hour = 5
-    }) + diffDays * 86400
+  local todayRefreshTime = _GetTimestampByServerDate(serverDate, 5, 0, 0)
+  if weekDay == 1 and curServerTime < todayRefreshTime then
+    return todayRefreshTime
   end
-  local timeStr3 = os.date("%Y-%m-%d %H:%M:%S", nextRefreshTime)
-  return nextRefreshTime
+  local diffDays = 8 - weekDay
+  if diffDays <= 0 then
+    diffDays = diffDays + 7
+  end
+  return todayRefreshTime + diffDays * 86400
 end
 
 function ClientTimeUtil.GetOSDateTime(format_Time)
@@ -269,18 +212,11 @@ end
 
 function ClientTimeUtil.GetTimeStampByWeekday(wday, hour, min, sec)
   local curTime = ServerTime.CurServerTime() / 1000
-  local curDate = os.date("*t", curTime)
+  local curDate = _GetServerDate(curTime)
   local curWday = (curDate.wday - 1) % 7
   curWday = 0 < curWday and curWday or 7
   local diffWday = wday - curWday
-  local timeStamp = os.time({
-    year = curDate.year,
-    month = curDate.month,
-    day = curDate.day + diffWday,
-    hour = hour,
-    min = min,
-    sec = sec
-  })
+  local timeStamp = _GetTimestampByServerDate(curDate, hour, min, sec, diffWday)
   return timeStamp
 end
 
@@ -308,7 +244,7 @@ end
 
 function ClientTimeUtil.GetServerHourMinStr()
   local serverTime = ServerTime.CurServerTime() / 1000
-  local now = os.date("*t", serverTime)
+  local now = _GetServerDate(serverTime)
   return string.format("%02d:%02d", now.hour, now.min)
 end
 
@@ -316,16 +252,7 @@ function ClientTimeUtil.GetDailyRefreshTimeByTimeStamp(timestamp)
   if not timestamp then
     return nil
   end
-  local targetDate = os.date("*t", timestamp)
-  local refreshTime = os.time({
-    year = targetDate.year,
-    month = targetDate.month,
-    day = targetDate.day,
-    hour = 5,
-    min = 0,
-    sec = 0
-  })
-  return refreshTime
+  return _GetFixedHourTimeByTimeStamp(timestamp, 5, 0, 0)
 end
 
 function ClientTimeUtil.GetTimeDate(st, et, strFormat)

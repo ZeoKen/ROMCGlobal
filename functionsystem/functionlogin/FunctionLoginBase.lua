@@ -436,7 +436,7 @@ function FunctionLoginBase:LoginDataHandler(status, content, callback, novice)
       else
         FunctionLogin.Me():set_IsTmp(accData.is_tmp)
       end
-      if BranchMgr.IsKorea() then
+      if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
         OverseaHostHelper:SetFireBaseNotify(accData.uid, accData.firebaseNotify, accData.firebaseNotifyUpdated, accData.firebaseNotifyExpired)
       end
       if novice then
@@ -637,7 +637,7 @@ function FunctionLoginBase:startSdkLogin(callback)
           })
         elseif callback then
           eventMap[index] = sucMsg
-          if index == 1 and (BranchMgr.IsTW() or BranchMgr.IsKorea()) then
+          if index == 1 and (BranchMgr.IsTW() or BranchMgr.IsKorea() or BranchMgr.IsNOKR()) then
             OverSeas_TW.OverSeasManager.GetInstance():TrackEvent(AppBundleConfig.GetAdjustByName("sdkLogin"))
           end
           index = index + 1

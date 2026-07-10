@@ -23,6 +23,9 @@ function PetEggInfo:Server_SetData(serverdata)
   self.relivetime = serverdata.relivetime
   self.hp = serverdata.hp
   self.restoretime = serverdata.restoretime
+  self.cdtime = serverdata.cdtime
+  self.already_hatched = serverdata.already_hatched
+  self.quick_pack_slot = serverdata.quick_pack_slot
   self.time_happly = serverdata.time_happly
   self.time_excite = serverdata.time_excite
   self.time_happiness = serverdata.time_happiness
@@ -103,6 +106,22 @@ function PetEggInfo:PetMountCanEquip()
   return false
 end
 
+function PetEggInfo:IsQuickPet()
+  return self.quick_pack_slot and self.quick_pack_slot > 0
+end
+
+function PetEggInfo:IsFighting()
+  return self.already_hatched == true
+end
+
+function PetEggInfo:IsPvpPet()
+  local petCfg = Table_Pet[self.petid]
+  if petCfg and petCfg.IsPvpPet and petCfg.IsPvpPet > 0 then
+    return true
+  end
+  return false
+end
+
 function PetEggInfo:GetRaceIcon()
   local data = Table_Monster[self.petid]
   if data then
@@ -175,6 +194,176 @@ function PetEggInfo:bOwnSkill(skillParam)
     return true
   end
   return false
+end
+
+function PetEggInfo:GetContractSkillLevel()
+  local cfg = Table_Pet[self.petid]
+  if not (cfg and cfg.ContractSkill) or not cfg.ContractSkill[1] then
+    return 0
+  end
+  if self.already_hatched and PetProxy and PetProxy.Instance then
+    local petData = PetProxy.Instance:GetMyPetInfoData(self.petid)
+    if petData and petData.GetContractSkillLevel then
+      local petLv = petData:GetContractSkillLevel()
+      if petLv and 0 < petLv then
+        return petLv
+      end
+    end
+  end
+  local baseId = cfg.ContractSkill[1]
+  local baseFloor = math.floor(baseId / 1000)
+  local maxLv = cfg.ContractSkill[2] or 0
+  if not self.skillids then
+    return 0
+  end
+  local bestLv = 0
+  for i = 1, #self.skillids do
+    local sid = self.skillids[i]
+    local lv = sid % 1000
+    if math.floor(sid / 1000) == baseFloor then
+      lv = math.min(lv, maxLv)
+    end
+    if math.floor(sid / 1000) == baseFloor and bestLv < lv then
+      bestLv = lv
+    end
+  end
+  return bestLv
+end
+
+function PetEggInfo:SetContractSkillLevel(level)
+  local cfg = Table_Pet[self.petid]
+  if not (cfg and cfg.ContractSkill) or not cfg.ContractSkill[1] then
+    return
+  end
+  local maxLv = cfg.ContractSkill[2] or 0
+  level = tonumber(level) or 0
+  if level <= 0 or maxLv < level then
+    return
+  end
+  local baseId = cfg.ContractSkill[1]
+  local baseFloor = math.floor(baseId / 1000)
+  local fullSkillId = baseId - baseId % 1000 + level
+  self.skillids = self.skillids or {}
+  local replaced = false
+  for i = 1, #self.skillids do
+    if math.floor(self.skillids[i] / 1000) == baseFloor then
+      self.skillids[i] = fullSkillId
+      replaced = true
+    end
+  end
+  if not replaced then
+    table.insert(self.skillids, fullSkillId)
+  end
+end
+
+function PetEggInfo:GetSkillDisplayDatasForUI()
+  local result = {}
+  if not self.skillids or #self.skillids == 0 then
+    return result
+  end
+  local cfg = Table_Pet[self.petid]
+  if not cfg then
+    for i = 1, #self.skillids do
+      table.insert(result, self.skillids[i])
+    end
+    return result
+  end
+  local usedIndex = {}
+  local contractCfg = cfg.ContractSkill
+  local contractBase = contractCfg and contractCfg[1]
+  local contractBaseFloor = contractBase and math.floor(contractBase / 1000)
+  local contractMaxLv = contractCfg and contractCfg[2] or 0
+  local contractLv = self:GetContractSkillLevel()
+  local GetBestSkillId = function(skillCfg, isContract)
+    if not skillCfg or not skillCfg[1] then
+      return nil, nil
+    end
+    local baseFloor = math.floor(skillCfg[1] / 1000)
+    local bestSkillId, bestLv, bestIndex, fallbackSkillId, fallbackLv, fallbackIndex
+    for i = 1, #self.skillids do
+      if not usedIndex[i] then
+        local skillId = self.skillids[i]
+        local skillFloor = math.floor(skillId / 1000)
+        local lv = skillId % 1000
+        if skillFloor == baseFloor and (not contractBaseFloor or isContract or skillFloor ~= contractBaseFloor) then
+          if isContract and 0 < contractMaxLv then
+            lv = math.min(lv, contractMaxLv)
+          end
+          if not fallbackLv or fallbackLv < lv then
+            fallbackSkillId = skillId
+            fallbackLv = lv
+            fallbackIndex = i
+          end
+          if Table_Skill[skillId] and (not bestLv or bestLv < lv) then
+            bestSkillId = skillId
+            bestLv = lv
+            bestIndex = i
+          end
+        end
+      end
+    end
+    if bestSkillId then
+      return bestSkillId, bestIndex
+    end
+    if fallbackSkillId then
+      local displayLv = fallbackLv or skillCfg[2] or 1
+      local displaySkillId = skillCfg[1] - skillCfg[1] % 1000 + displayLv
+      if Table_Skill[displaySkillId] then
+        return displaySkillId, fallbackIndex
+      end
+      if Table_Skill[skillCfg[1]] then
+        return skillCfg[1], fallbackIndex
+      end
+      return fallbackSkillId, fallbackIndex
+    end
+    return nil, nil
+  end
+  local sortedIndex = {
+    "Skill_1",
+    "ContractSkill",
+    "Skill_3",
+    "Skill_4",
+    "Skill_2",
+    "Skill_5"
+  }
+  for i = 1, #sortedIndex do
+    local key = sortedIndex[i]
+    local isContract = key == "ContractSkill"
+    local skillId, rawIndex = GetBestSkillId(cfg[key], isContract)
+    if skillId then
+      local data = {
+        skillId = skillId,
+        petid = self.petid,
+        inactive = false,
+        isContract = isContract,
+        canUpgradeContract = false
+      }
+      if isContract then
+        data.level = contractLv
+      end
+      table.insert(result, data)
+      usedIndex[rawIndex] = true
+    end
+  end
+  for i = 1, #self.skillids do
+    if not usedIndex[i] then
+      table.insert(result, self.skillids[i])
+    end
+  end
+  return result
+end
+
+function PetEggInfo:IsContractSkillMaxForCompose()
+  local cfg = Table_Pet[self.petid]
+  if not (cfg and cfg.ContractSkill) or not cfg.ContractSkill[1] then
+    return true
+  end
+  local maxLv = cfg.ContractSkill[2]
+  local cur = self:GetContractSkillLevel()
+  if cur == nil then
+    return false
+  end
+  return maxLv <= cur
 end
 
 function PetEggInfo.GetPetDessParts(petid, equips)

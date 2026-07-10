@@ -679,6 +679,11 @@ function CreatureDataWithPropUserdata:HasAbsorbDamageBuff()
   return 0 < sheild
 end
 
+function CreatureDataWithPropUserdata:HasShieldBuff()
+  local shieldHp = self.userdata and self.userdata:Get(UDEnum.SHIELD_HP) or 0
+  return 0 < shieldHp
+end
+
 function CreatureDataWithPropUserdata:GetNpcID()
   return 0
 end
@@ -823,6 +828,10 @@ function CreatureDataWithPropUserdata:GetBuffActive(buffID)
     return false
   end
   return active
+end
+
+function CreatureDataWithPropUserdata:GetReplaceSkillBaseCD(skillID, calLogicReal)
+  return nil
 end
 
 function CreatureDataWithPropUserdata:_GetBuffRelate(t, buffID, defaultValue)
@@ -1041,7 +1050,7 @@ function CreatureDataWithPropUserdata:AddBuff(buffID, fromID, layer, level, acti
   if self.buffTypes == nil then
     self.buffTypes = ReusableTable.CreateTable()
   end
-  local type = buffeffect.type
+  local type = buffeffect and buffeffect.type
   if type ~= nil then
     local map = self.buffTypes[type]
     if map == nil then
@@ -1072,15 +1081,15 @@ function CreatureDataWithPropUserdata:RemoveBuff(buffID, buffeffect)
     end
   end
   if self.buffTypes ~= nil then
-    local type = buffeffect.type
+    local type = buffeffect and buffeffect.type
     if type ~= nil then
       local map = self.buffTypes[type]
       if map ~= nil then
         map[buffID] = nil
-      end
-      if next(map) == nil then
-        ReusableTable.DestroyAndClearTable(map)
-        self.buffTypes[type] = nil
+        if next(map) == nil then
+          ReusableTable.DestroyAndClearTable(map)
+          self.buffTypes[type] = nil
+        end
       end
     end
   end
@@ -2108,10 +2117,26 @@ function CreatureDataWithPropUserdata:GetDamReduceType()
   return 0
 end
 
+function CreatureDataWithPropUserdata:IsHaveRobotMaster()
+  return false
+end
+
 function CreatureDataWithPropUserdata:DoConstruct(asArray, parts)
   self:SetAttackSpeed(1)
   self.bodyScale = self:GetDefaultScale()
   CreatureDataWithPropUserdata.super.DoConstruct(self, asArray, parts)
+end
+
+function CreatureDataWithPropUserdata:GetEquipSnowStoneLv(stoneID)
+  return 0
+end
+
+function CreatureDataWithPropUserdata:GetRaceTypeNumInTeam(raceType)
+  return 0
+end
+
+function CreatureDataWithPropUserdata:IsRideEnemy()
+  return false
 end
 
 function CreatureDataWithPropUserdata:DoDeconstruct(asArray)
@@ -2136,4 +2161,5 @@ function CreatureDataWithPropUserdata:DoDeconstruct(asArray)
   self.buffSources = nil
   self.stageBuffLayer = nil
   self.attrCanMove = false
+  self.rideCreatureId = nil
 end

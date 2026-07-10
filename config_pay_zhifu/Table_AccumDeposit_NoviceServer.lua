@@ -120,6 +120,46 @@ Table_AccumDeposit = {
     ShowNpc = 894475,
     AdText = "累计打赏648，赠限定新月之翼！"
   },
+  [5] = {
+    id = 5,
+    ServerID = _EmptyTable,
+    Duration = {
+      "2026-05-13 05:00:00",
+      "2026-06-13 05:00:00"
+    },
+    TfDuration = {
+      "2026-04-30 05:00:00",
+      "2026-05-31 05:00:00"
+    },
+    Reward = {
+      [1] = {
+        need_deposit = 0,
+        reward = {3042032, 5}
+      },
+      [2] = {
+        need_deposit = 30,
+        reward = {3042032, 5}
+      },
+      [3] = {
+        need_deposit = 68,
+        reward = {3042032, 15}
+      },
+      [4] = {
+        need_deposit = 128,
+        reward = {52838, 1}
+      },
+      [5] = {
+        need_deposit = 328,
+        reward = {3042032, 50}
+      },
+      [6] = {
+        need_deposit = 648,
+        reward = {3009081, 1}
+      }
+    },
+    ShowNpc = 894483,
+    AdText = "累计打赏648，「魔炎龙」坐骑免费领！"
+  },
   [6] = {
     id = 6,
     ServerID = _EmptyTable,

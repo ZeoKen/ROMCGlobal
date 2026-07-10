@@ -1081,6 +1081,24 @@ function ServiceChatCmdAutoProxy:CallQueryItemData(guid, data)
       end
       msg.data.egg.cdtime = data.egg.cdtime
     end
+    if data.egg ~= nil and data.egg.already_hatched ~= nil then
+      if msg.data == nil then
+        msg.data = {}
+      end
+      if msg.data.egg == nil then
+        msg.data.egg = {}
+      end
+      msg.data.egg.already_hatched = data.egg.already_hatched
+    end
+    if data.egg ~= nil and data.egg.quick_pack_slot ~= nil then
+      if msg.data == nil then
+        msg.data = {}
+      end
+      if msg.data.egg == nil then
+        msg.data.egg = {}
+      end
+      msg.data.egg.quick_pack_slot = data.egg.quick_pack_slot
+    end
     if data.letter ~= nil and data.letter.sendUserName ~= nil then
       if msg.data == nil then
         msg.data = {}
@@ -2925,6 +2943,24 @@ function ServiceChatCmdAutoProxy:CallQueryItemData(guid, data)
         msgParam.data.egg = {}
       end
       msgParam.data.egg.cdtime = data.egg.cdtime
+    end
+    if data.egg ~= nil and data.egg.already_hatched ~= nil then
+      if msgParam.data == nil then
+        msgParam.data = {}
+      end
+      if msgParam.data.egg == nil then
+        msgParam.data.egg = {}
+      end
+      msgParam.data.egg.already_hatched = data.egg.already_hatched
+    end
+    if data.egg ~= nil and data.egg.quick_pack_slot ~= nil then
+      if msgParam.data == nil then
+        msgParam.data = {}
+      end
+      if msgParam.data.egg == nil then
+        msgParam.data.egg = {}
+      end
+      msgParam.data.egg.quick_pack_slot = data.egg.quick_pack_slot
     end
     if data.letter ~= nil and data.letter.sendUserName ~= nil then
       if msgParam.data == nil then

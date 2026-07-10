@@ -79,7 +79,8 @@ function ServerTime.SetServerOpenTime(time)
     time = ServerTime.ServerTime / 1000
   end
   ServerTime.serverOpenTime = time
-  local date = os.date("*t", time)
+  local timezone = ServerTime.SERVER_TIMEZONE or tonumber(ServerTime.Ori_OsDate("%z", 0)) / 100
+  local date = ServerTime.Ori_OsDate("!*t", time + timezone * 3600)
   ServerTime.formatServerOpenTime = os.time({
     year = date.year,
     month = date.month,

@@ -323,3 +323,13 @@ function ServiceSceneUser3Proxy:RecvGeffenMagicGetRewardUserCmd(data)
   GeffenMagicWaveScoreProxy.Instance:HandleGetReward(data)
   self:Notify(ServiceEvent.SceneUser3GeffenMagicGetRewardUserCmd, data)
 end
+
+function ServiceSceneUser3Proxy:RecvNpcCircleTraceNtf(data)
+  NSceneNpcProxy.Instance:HandleNpcCircleTraceNtf(data)
+  self:Notify(ServiceEvent.SceneUser3NpcCircleTraceNtf, data)
+end
+
+function ServiceSceneUser3Proxy:RecvGroupPlayTimeUpdateUserCmd(data)
+  BattleTimeDataProxy.Instance:HandleGroupPlayTimeUpdate(data.updates)
+  self:Notify(ServiceEvent.SceneUser3GroupPlayTimeUpdateUserCmd, data)
+end

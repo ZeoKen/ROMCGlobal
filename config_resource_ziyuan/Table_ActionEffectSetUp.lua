@@ -2421,6 +2421,13 @@ Table_ActionEffectSetUp = {
     EPFollow = 1,
     Loop = 1
   },
+  [357] = {
+    id = 357,
+    Path = "Common/cfx_sunshinehero_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
   [358] = {
     id = 358,
     Path = "Common/cfx_morocc_playshow_01_prf",
@@ -2701,6 +2708,34 @@ Table_ActionEffectSetUp = {
     EPFollow = 1,
     Loop = 1
   },
+  [398] = {
+    id = 398,
+    Path = "Common/cfx_p_darkphantom_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [399] = {
+    id = 399,
+    Path = "Common/cfx_p_darkphantom_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [400] = {
+    id = 400,
+    Path = "Common/cfx_p_darkphantom_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [401] = {
+    id = 401,
+    Path = "Common/cfx_p_darkphantom_004_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
   [402] = {
     id = 402,
     Path = "Common/cfx_p_sweetattack_001_playshow_prf",
@@ -2809,6 +2844,97 @@ Table_ActionEffectSetUp = {
   [417] = {
     id = 417,
     Path = "Common/cfx_miaoethnic_004_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [420] = {
+    id = 420,
+    Path = "Common/cfx_darkphantom_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [421] = {
+    id = 421,
+    Path = "Common/cfx_darkphantom_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [422] = {
+    id = 422,
+    Path = "Common/cfx_darkphantom_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [423] = {
+    id = 423,
+    Path = "Common/cfx_darkphantom_004_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [424] = {
+    id = 424,
+    Path = "Common/cfx_darkphantomugrd_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [425] = {
+    id = 425,
+    Path = "Common/cfx_darkphantomugrd_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [426] = {
+    id = 426,
+    Path = "Common/cfx_darkphantomugrd_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [427] = {
+    id = 427,
+    Path = "Common/cfx_darkphantomugrd_004_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [428] = {
+    id = 428,
+    Path = "Common/cfx_footballworld_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [429] = {
+    id = 429,
+    Path = "Common/cfx_footballworld_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [430] = {
+    id = 430,
+    Path = "Common/cfx_footballworld_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [431] = {
+    id = 431,
+    Path = "Common/cfx_footballworld_004_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [436] = {
+    id = 436,
+    Path = "Common/cfx_himemmeth_playshow_prf",
     EPID = 2,
     EPFollow = 1,
     Loop = 1

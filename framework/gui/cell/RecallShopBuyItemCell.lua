@@ -315,11 +315,34 @@ function RecallShopBuyItemCell:Confirm()
   if not self:CanBuyItem(buyCount) then
     return
   end
-  xdlog("RecallShopBuyItemCell:Confirm", "购买商品", self.recallShopData.id, "数量:", buyCount)
-  if self.buyCallback then
-    self.buyCallback(self.recallShopData, buyCount)
+  local realConfirm = function()
+    xdlog("RecallShopBuyItemCell:Confirm", "buy item", self.recallShopData.id, "count:", buyCount)
+    if self.buyCallback then
+      self.buyCallback(self.recallShopData, buyCount)
+    end
+    self:Cancel()
   end
-  self:Cancel()
+  local lotteryCost
+  local serverData = self.recallShopData.serverData
+  if serverData and serverData.cost then
+    for _, costInfo in pairs(serverData.cost) do
+      if costInfo.id == GameConfig.MoneyId.Lottery then
+        local singleCost = costInfo.count or 0
+        if serverData.off and serverData.off < 100 then
+          singleCost = math.floor(singleCost * serverData.off / 100)
+        end
+        lotteryCost = singleCost * buyCount
+        break
+      end
+    end
+  end
+  if lotteryCost and 0 < lotteryCost then
+    OverseaHostHelper:GachaUseComfirm(lotteryCost, function()
+      realConfirm()
+    end, 650)
+  else
+    realConfirm()
+  end
 end
 
 function RecallShopBuyItemCell:CanBuyItem(buyCount)

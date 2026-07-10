@@ -136,7 +136,7 @@ function SetView:AddSubPages()
     self:AddSubPage("SetViewServicePage", ZhString.SetViewTabAbout)
   elseif BranchMgr.IsTW() then
     self:AddSubPage("SetViewServiceTWPage", ZhString.SetViewTabCustomerService)
-  elseif BranchMgr.IsKorea() then
+  elseif BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
     self:AddSubPage("SetViewServiceKRPage", ZhString.SetViewTabCustomerService)
   elseif BranchMgr.IsSEA() then
     self:AddSubPage("SetViewServiceWWPage", ZhString.SetViewTabCustomerService)
@@ -276,6 +276,8 @@ function SetView:SetGameTime(data)
   local color = battleTimeMgr:GetStatus()
   local playTimeLen = battleTimeMgr:UsedPlayTime()
   local playTotalTimeLen = battleTimeMgr:TotalPlayTime()
+  local groupPlayTimeLen = battleTimeMgr:TotalGroupPlayTime()
+  local playTotalTimeText = 0 < groupPlayTimeLen and string.format("%s(%s)", playTotalTimeLen, groupPlayTimeLen) or playTotalTimeLen
   local gameTime_str = ISNoviceServerType and ZhString.Set_GameTime_DailyValidKillCount or ZhString.Set_GameTime
   self.gameTime.text = string.format(gameTime_str, string.format(BattleTimeStringColor[color], timeLen), timeTotal)
   self.battleTimeSlider.value = 0
@@ -293,7 +295,7 @@ function SetView:SetGameTime(data)
   self.gameTimeDetailGrid:Reposition()
   self.gameTimeDetailBg.height = 98 + showDetailNum * 36
   local str = battleTimeMgr:UseDailyPlayTime() and ZhString.SetView_PlayTime_Daily or ZhString.SetView_PlayTime
-  self.playTime.text = string.format(str, playTimeLen, playTotalTimeLen)
+  self.playTime.text = string.format(str, playTimeLen, playTotalTimeText)
   self.playTimeSlider.value = 0
   if 0 < playTotalTimeLen then
     self.playTimeSlider.value = playTimeLen < playTotalTimeLen and playTimeLen / playTotalTimeLen or 1

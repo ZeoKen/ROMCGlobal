@@ -871,6 +871,22 @@ Table_DungeonManual = {
       2532
     }
   },
+  [21203] = {
+    id = 21203,
+    Type = 2,
+    Name = "仿真蓉可儿",
+    MainpageID = 2,
+    SubpageID = 212,
+    Typesetting = 3,
+    MonsterType = 1,
+    TextID = {
+      2540,
+      5,
+      2541,
+      3,
+      2542
+    }
+  },
   [29100] = {
     id = 29100,
     Type = 1,

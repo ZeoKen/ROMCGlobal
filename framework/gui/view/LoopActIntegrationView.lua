@@ -4,9 +4,11 @@ autoImport("ActivityIntegrationTabCell")
 autoImport("ActivityBattlePassView")
 autoImport("ActivityFlipCardView")
 autoImport("ActivityIntegrationTaskSubView")
+autoImport("ActivityIntegrationTaskSubViewType2")
 autoImport("LoopActBannerSubView")
 autoImport("LoopActIntegrationProxy")
 autoImport("ActivityIntegrationShopSubView")
+autoImport("ActivityIntegrationLotteryRaidShopSubView")
 autoImport("ActivityDungeonMvpCardView")
 autoImport("ActivityPaySignView")
 local picIns = PictureManager.Instance
@@ -122,6 +124,7 @@ function LoopActIntegrationView:InitShow()
       if staticData then
         local subType = LoopActIntegrationProxy.Instance:GetSubType(staticData)
         local isValid = LoopActIntegrationProxy.Instance:CheckActivityValid(activityID)
+        redlog("CheckActivityValid", activityID, tostring(isValid))
         if subType and self.subViews[subType] and (isValid or self:CheckIdValid(activityID)) then
           local redtip = RedTipMap[subType]
           local subRedtip
@@ -224,12 +227,22 @@ function LoopActIntegrationView:InitSubViewLoaders()
     return self.bpView
   end
   local loadTaskView = function(viewdata)
-    if not self.taskView then
-      self.taskView = self:AddSubView("ActivityIntegrationTaskSubView", ActivityIntegrationTaskSubView, nil, viewdata)
-      self.taskView.parentView = self
-      self.taskView.gameObject:SetActive(false)
+    local taskType = viewdata and viewdata.Type
+    if taskType == 2 then
+      if not self.taskViewType2 then
+        self.taskViewType2 = self:AddSubView("ActivityIntegrationTaskSubViewType2", ActivityIntegrationTaskSubViewType2, nil, viewdata)
+        self.taskViewType2.parentView = self
+        self.taskViewType2.gameObject:SetActive(false)
+      end
+      return self.taskViewType2
+    else
+      if not self.taskView then
+        self.taskView = self:AddSubView("ActivityIntegrationTaskSubView", ActivityIntegrationTaskSubView, nil, viewdata)
+        self.taskView.parentView = self
+        self.taskView.gameObject:SetActive(false)
+      end
+      return self.taskView
     end
-    return self.taskView
   end
   local loadFlipCardView = function(viewdata)
     if not self.flipCardView then
@@ -246,6 +259,14 @@ function LoopActIntegrationView:InitSubViewLoaders()
       self.shopView.gameObject:SetActive(false)
     end
     return self.shopView
+  end
+  local loadLotteryRaidShopView = function(viewdata)
+    if not self.lotteryRaidShopView then
+      self.lotteryRaidShopView = self:AddSubView("ActivityIntegrationLotteryRaidShopSubView", ActivityIntegrationLotteryRaidShopSubView, nil, viewdata)
+      self.lotteryRaidShopView.parentView = self
+      self.lotteryRaidShopView.gameObject:SetActive(false)
+    end
+    return self.lotteryRaidShopView
   end
   local loadDungeonMvpCardView = function(viewdata)
     if not self.dungeonMvpCardView then
@@ -268,6 +289,7 @@ function LoopActIntegrationView:InitSubViewLoaders()
   self.subViews[2] = loadTaskView
   self.subViews[3] = loadFlipCardView
   self.subViews[4] = loadShopView
+  self.subViews[14] = loadLotteryRaidShopView
   self.subViews[12] = loadDungeonMvpCardView
   self.subViews[ActivityCmd_pb.GACTIVITY_ACT_PAY_SIGN] = loadPaySignView
 end
@@ -303,7 +325,8 @@ function LoopActIntegrationView:GetViewDataForSubType(subType, staticData)
     return {ActivityId = activityId}
   elseif subType == 2 then
     return {
-      activityId = staticData.id
+      activityId = staticData.id,
+      Type = staticData.Params_Inte and staticData.Params_Inte.Type
     }
   elseif subType == 3 then
     return {ActivityId = activityId}
@@ -351,7 +374,12 @@ function LoopActIntegrationView:handleClickTabCell(cellCtrl)
     viewdata = self:GetViewDataForSubType(subType, staticData)
   end
   local subView = self.subViews[subType](viewdata)
-  if self.currentSubType and self.currentSubType ~= subType then
+  if self.currentSubView and self.currentSubView ~= subView then
+    self.currentSubView.gameObject:SetActive(false)
+    if self.currentSubView.OnHide then
+      self.currentSubView:OnHide()
+    end
+  elseif self.currentSubType and self.currentSubType ~= subType then
     local prevSubView = self.subViews[self.currentSubType]()
     if prevSubView then
       prevSubView.gameObject:SetActive(false)
@@ -361,6 +389,7 @@ function LoopActIntegrationView:handleClickTabCell(cellCtrl)
     end
   end
   self.currentSubType = subType
+  self.currentSubView = subView
   self.currentTab = id
   self.currentData = data
   if subView then
@@ -416,6 +445,10 @@ function LoopActIntegrationView:Destroy()
     self.taskView:CloseSelf()
     self.taskView = nil
   end
+  if self.taskViewType2 then
+    self.taskViewType2:CloseSelf()
+    self.taskViewType2 = nil
+  end
   if self.flipCardView then
     self.flipCardView:CloseSelf()
     self.flipCardView = nil
@@ -426,6 +459,7 @@ function LoopActIntegrationView:Destroy()
   end
   self.subViews = nil
   self.currentSubType = nil
+  self.currentSubView = nil
 end
 
 return LoopActIntegrationView

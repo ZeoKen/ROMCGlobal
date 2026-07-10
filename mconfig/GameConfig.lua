@@ -1674,9 +1674,9 @@ GameConfig.HeadWearActivity = {
     [15] = 60003499
   },
   reward = {
-    [5] = 61004432,
-    [10] = 61004433,
-    [15] = 61004434
+    [5] = 61004753,
+    [10] = 61004754,
+    [15] = 61004755
   },
   towerskillCD = 5000,
   noSkipRound = {
@@ -2140,6 +2140,16 @@ GameConfig.PlotQuestKeepScene = {
 }
 GameConfig.PronteraneoRefactor = {kick_user_to_map_id = 2}
 GameConfig.Pve = {
+  AddPlayTimeItemId = {
+    byGroupId = {
+      [24] = 6998
+    }
+  },
+  AddPlayTimeDepositeIdByGroupId = {
+    [24] = {
+      [650] = {1, 20001666}
+    }
+  },
   RaidFeatureDesc = {
     [59] = "精品时装/头饰",
     [62] = "精品时装/头饰",
@@ -2160,7 +2170,9 @@ GameConfig.Pve = {
     [79] = "星座徽章",
     [81] = "装备记忆",
     [82] = "限时活动",
-    [87] = "雪花装备"
+    [87] = "雪花装备",
+    [88] = "雪花宝石",
+    [91] = "限时活动"
   },
   SweepInvalidMsg = {
     [43] = 43456,
@@ -2505,6 +2517,13 @@ GameConfig.Pve = {
       typeIcon = "StarArk",
       detailIcon = "calendar_statistics_icon_16",
       openTime = "2025-07-27 05:00:00"
+    },
+    [48] = {
+      modelTexture = "PveModel_bgdyjs_fb1",
+      sortID = 3100,
+      typeIcon = "bagedeyanjiushi",
+      detailIcon = "calendar_statistics_icon_16",
+      openTime = "2025-07-27 05:00:00"
     }
   },
   Difficulty = {
@@ -2638,6 +2657,9 @@ GameConfig.Pve = {
     [23] = {
       [1] = "初心",
       [2] = "无尽"
+    },
+    [99] = {
+      [1] = "活动"
     }
   },
   special_icon_bg = {
@@ -3512,7 +3534,19 @@ GameConfig.RollRaid = {
     [7065003] = "妖灵提督[c][ff8a00](英灵)[-][/c]",
     [7200001] = "远古幻龙[c][ff8a00](英灵)[-][/c]"
   },
-  roll_bossscene_desc = "[c][B85CF6]混沌入侵[-][/c]"
+  roll_bossscene_desc = "[c][B85CF6]混沌入侵[-][/c]",
+  snow_mvp_cfgs = {
+    [74070] = {
+      cost_itemid = 12908,
+      cost_itemnum = 1,
+      rewards = {30691}
+    },
+    [74071] = {
+      cost_itemid = 12908,
+      cost_itemnum = 1,
+      rewards = {30701}
+    }
+  }
 }
 GameConfig.ServantRaidStat = {
   GenderTrueIntent = {
@@ -3873,12 +3907,52 @@ GameConfig.ServerMerge = {
     [79] = 1,
     [81] = 1,
     [82] = 1,
-    [87] = 1
+    [87] = 1,
+    [88] = 1
   }
 }
 GameConfig.SkillCommon = {
   JoystickRange = -1,
   Hero_SanityBuff = 136400,
+  ReplaceSkillSingleFamilyBuffs = {
+    [1] = {
+      stone_buff = 35010040,
+      replace_skill_buff = {
+        [1301] = 35010046,
+        [1302] = 35010047,
+        [1303] = 35010048,
+        [1304] = 35010049,
+        [3203] = 35010050,
+        [3204] = 35010051
+      }
+    }
+  },
+  ConcertExtraBuff = {
+    {
+      need_buffid = 35010375,
+      Solo = {
+        friend_buff = {35010376},
+        team_buff = {35010376}
+      },
+      Ensemble = {
+        friend_buff = {35010376},
+        team_buff = {35010376}
+      }
+    },
+    {
+      need_buffid = 35010380,
+      Solo = {
+        self_buff = {35010381},
+        friend_buff = {35010382},
+        team_buff = {35010382}
+      },
+      Ensemble = {
+        self_buff = {35010381},
+        friend_buff = {35010382},
+        team_buff = {35010382}
+      }
+    }
+  },
   ElementHitSE = {
     [1] = {
       "Common/sfx_general_hit_lightning_01",
@@ -11661,7 +11735,10 @@ GameConfig.ItemPage = {
       948,
       949,
       950,
-      553
+      553,
+      4400,
+      4401,
+      4402
     }
   },
   [3] = {
@@ -13983,6 +14060,13 @@ GameConfig.PackageMaterialCheck = {
     7,
     8,
     9
+  },
+  fashion_star = {
+    1,
+    6,
+    7,
+    8,
+    13
   }
 }
 GameConfig.PostFilter = {
@@ -14521,6 +14605,37 @@ GameConfig.EquipMemory = {
     }
   }
 }
+GameConfig.FashionStar = {
+  ActionLimit = {
+    [10001] = {
+      62347,
+      62348,
+      62349,
+      62350
+    },
+    [10002] = {
+      62347,
+      62348,
+      62349,
+      62350
+    }
+  },
+  Deposit = {
+    GiftTimeLimit = {
+      [1] = {56}
+    },
+    GiftBase = {
+      [1] = {
+        [400034] = {400036}
+      }
+    }
+  }
+}
+GameConfig.MountStar = {
+  FashionSeries = {
+    [25296] = {25295, 25294}
+  }
+}
 GameConfig.Barrage = {
   MessageCountMax = 60,
   BarrageScale = 0.3,
@@ -14741,9 +14856,9 @@ GameConfig.BattlePassVersion = {
   },
   [3] = {
     TFVersionStartTime = "2025-06-01 05:00:00",
-    TFVersionEndTime = "2030-01-01 05:00:00",
+    TFVersionEndTime = "2026-07-01 05:00:00",
     ReleaseVersionStartTime = "2025-06-01 05:00:00",
-    ReleaseVersionEndTime = "2030-01-01 05:00:00",
+    ReleaseVersionEndTime = "2026-07-01 05:00:00",
     BattlePass_Icon = "battlePass_14",
     IdOffset = 14000,
     MaxLevel = 50,
@@ -14769,11 +14884,6 @@ GameConfig.BattlePassVersion = {
         [1] = {
           Text = "解锁50级的进阶奖励"
         },
-        [11] = {Text = "头饰"},
-        [12] = {
-          Text = "卡普拉进阶礼盒"
-        },
-        [13] = {Text = "大量Zeny"},
         [2] = {
           Text = "每周经验上限+20%"
         },
@@ -14785,11 +14895,6 @@ GameConfig.BattlePassVersion = {
         [1] = {
           Text = "解锁50级的典藏奖励"
         },
-        [11] = {
-          Text = "卡普拉心动礼盒"
-        },
-        [12] = {Text = "头饰"},
-        [13] = {Text = "时装"},
         [2] = {
           Text = "每周经验上限提升至30%"
         },
@@ -14797,6 +14902,173 @@ GameConfig.BattlePassVersion = {
           Text = "任务额外经验提升至20%"
         }
       }
+    },
+    UpgradeModelItems = {
+      [202605] = {
+        Fashion = {3007940, 3007941},
+        Parts = {3007182, 3007241},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202606] = {
+        Fashion = {3003330, 3003331},
+        Parts = {3009152, 3009121},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      }
+    }
+  },
+  [4] = {
+    TFVersionStartTime = "2026-07-01 05:00:00",
+    TFVersionEndTime = "2030-01-01 05:00:00",
+    ReleaseVersionStartTime = "2026-07-01 05:00:00",
+    ReleaseVersionEndTime = "2030-01-01 05:00:00",
+    BattlePass_Icon = "battlePass_14",
+    IdOffset = 15000,
+    MaxLevel = 50,
+    UpgradeDepositItem = {
+      [1] = {
+        DepositeId = 300032,
+        Show = 1,
+        Name = "进阶版·卡普拉冒险录",
+        AdvLevel = 100,
+        Desc = 1,
+        Rebate = 1716
+      },
+      [2] = {
+        DepositeId = 300033,
+        Show = 2,
+        Name = "典藏版·卡普拉冒险录",
+        SuLevel = 100,
+        Condition = {AdvLevel = 50, Index = 1},
+        Desc = 2,
+        Rebate = 826
+      }
+    },
+    UpgradeDesc = {
+      [1] = {
+        [1] = {
+          Text = "解锁50级的进阶奖励"
+        },
+        [2] = {
+          Text = "每周经验上限+20%"
+        },
+        [3] = {
+          Text = "完成任务额外经验+10%"
+        }
+      },
+      [2] = {
+        [1] = {
+          Text = "解锁50级的典藏奖励"
+        },
+        [2] = {
+          Text = "每周经验上限提升至30%"
+        },
+        [3] = {
+          Text = "任务额外经验提升至20%"
+        }
+      }
+    },
+    UpgradeModelItems = {
+      [202607] = {
+        Fashion = {3008322, 3008323},
+        Parts = {3009181, 3009122},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202608] = {
+        Fashion = {3010502, 3010503},
+        Parts = {3009191, 3009141},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202609] = {
+        Fashion = {3002670, 3002671},
+        Parts = {3009201, 3009151},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202610] = {
+        Fashion = {3006580, 3006581},
+        Parts = {3009222, 3009161},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202611] = {
+        Fashion = {3010702, 3010703},
+        Parts = {3011662, 3009171},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      }
+    },
+    OverflowReward = {
+      Exp = 100,
+      RewardItems = {
+        {itemid = 100, num = 100}
+      },
+      ProRewardItems = {
+        {itemid = 3042393, num = 12}
+      },
+      SuperRewardItems = {
+        {itemid = 3042394, num = 24}
+      },
+      OverflowRewardLimit = 2000
     }
   }
 }
@@ -15817,7 +16089,9 @@ GameConfig.MvpLimit = {
   MiniRewardTimes = 10,
   MsgInterval = 3600,
   MvpLimitBuff = 313,
-  MiniLimitBuff = 314
+  MiniLimitBuff = 314,
+  MvpLimitIncreaseAchievements = {1501144},
+  MiniLimitIncreaseAchievements = {1501143}
 }
 GameConfig.BossScene = {
   MVPTimeCost = 3600,
@@ -20592,7 +20866,7 @@ GameConfig.PreorderFilter = {
   }
 }
 GameConfig.FairyTaleRaid = {
-  CoinID = 3041401,
+  CoinID = 3013671,
   CoinDayMax = 200,
   RaidMisc = {
     [1004250] = {
@@ -21321,7 +21595,8 @@ GameConfig.GVGConfig = {
         times = 1000,
         items = {
           {3720, 2},
-          {913000, 50}
+          {913000, 50},
+          {12984, 4}
         },
         desc = "本场个人目标基础荣誉值达到%s/1000"
       },
@@ -21329,7 +21604,8 @@ GameConfig.GVGConfig = {
         times = 2000,
         items = {
           {3720, 2},
-          {913000, 100}
+          {913000, 100},
+          {12984, 4}
         },
         desc = "本场个人目标基础荣誉值达到%s/2000"
       },
@@ -27232,6 +27508,54 @@ GameConfig.MultiBoss = {
         [2] = "天鹰座",
         [3] = "总计"
       }
+    },
+    [88] = {
+      Levellimit = 100,
+      Diff = {
+        [1] = {
+          name = "初心难度",
+          raidID = 7671
+        },
+        [2] = {
+          name = "勇士难度",
+          raidID = 7672
+        },
+        [3] = {
+          name = "英灵难度",
+          raidID = 7673
+        }
+      },
+      StatisticFilterConfig = {
+        [1] = "造成伤害",
+        [2] = "承受伤害",
+        [3] = "治疗",
+        [4] = "死亡次数"
+      },
+      BossFilterConfig = {
+        [1] = "晶化卢甘族",
+        [2] = "仿真蓉可儿",
+        [3] = "总计"
+      }
+    },
+    [91] = {
+      Levellimit = 100,
+      EnterDialogId = 854441,
+      Diff = {
+        [1] = {
+          name = "活动难度",
+          raidID = 7206
+        }
+      },
+      StatisticFilterConfig = {
+        [1] = "造成伤害",
+        [2] = "承受伤害",
+        [3] = "治疗",
+        [4] = "死亡次数"
+      },
+      BossFilterConfig = {
+        [1] = "远古幻龙",
+        [4] = "总计"
+      }
     }
   },
   Map = {
@@ -27359,6 +27683,21 @@ GameConfig.MultiBoss = {
       Stages = {
         [1] = {
           bossid = {276100},
+          buffs = {
+            10570,
+            10580,
+            10630,
+            10631,
+            10620,
+            10593
+          }
+        }
+      }
+    },
+    [7206] = {
+      Stages = {
+        [1] = {
+          bossid = {277300},
           buffs = {
             10570,
             10580,
@@ -27517,6 +27856,54 @@ GameConfig.MultiBoss = {
             12186,
             12190,
             12191
+          }
+        }
+      }
+    },
+    [7671] = {
+      Stages = {
+        [1] = {
+          bossid = {277001},
+          buffs = {178403}
+        },
+        [2] = {
+          bossid = {277002},
+          buffs = {
+            178411,
+            178410,
+            178409
+          }
+        }
+      }
+    },
+    [7672] = {
+      Stages = {
+        [1] = {
+          bossid = {277003},
+          buffs = {178403}
+        },
+        [2] = {
+          bossid = {277004},
+          buffs = {
+            178411,
+            178410,
+            178409
+          }
+        }
+      }
+    },
+    [7673] = {
+      Stages = {
+        [1] = {
+          bossid = {277005},
+          buffs = {178403}
+        },
+        [2] = {
+          bossid = {277006},
+          buffs = {
+            178411,
+            178410,
+            178409
           }
         }
       }
@@ -31216,6 +31603,21 @@ GameConfig.Pet = {
     12375,
     12377
   },
+  quick_pack_capacity = 3,
+  contract_pet_reset_skills_item = {
+    12394,
+    12395,
+    12396,
+    12397,
+    12369
+  },
+  contract_reset_skill_confirm_msg = {
+    [12394] = 43705,
+    [12395] = 43706,
+    [12396] = 43707,
+    [12397] = 43708,
+    [12369] = 43716
+  },
   cancel_special_effects = {
     500180,
     500540,
@@ -33151,9 +33553,7 @@ GameConfig.Quest = {
       MaxHelpCount = 6,
       MenuId = 19392,
       ArtifactLvToUnlockCount = {
-        [1] = 2,
-        [3] = 3,
-        [5] = 4,
+        [1] = 4,
         [7] = 5,
         [11] = 6
       },
@@ -33161,33 +33561,25 @@ GameConfig.Quest = {
       FriendHelpMsgId = 43668
     },
     [2] = {
-      MaxQuestCount = 8,
+      MaxQuestCount = 6,
       MaxHelpCount = 6,
       MenuId = 19393,
       ArtifactLvToUnlockCount = {
-        [10] = 2,
-        [11] = 3,
-        [12] = 4,
-        [14] = 5,
-        [16] = 6,
-        [18] = 7,
-        [20] = 8
+        [16] = 4,
+        [22] = 5,
+        [26] = 6
       },
       AreaName = "白鹰族",
       FriendHelpMsgId = 43669
     },
     [3] = {
-      MaxQuestCount = 8,
+      MaxQuestCount = 6,
       MaxHelpCount = 6,
       MenuId = 19394,
       ArtifactLvToUnlockCount = {
-        [20] = 2,
-        [21] = 3,
-        [22] = 4,
-        [24] = 5,
-        [26] = 6,
-        [28] = 7,
-        [30] = 8
+        [31] = 4,
+        [37] = 5,
+        [41] = 6
       },
       AreaName = "白鹰族",
       FriendHelpMsgId = 43670
@@ -36850,6 +37242,63 @@ GameConfig.Shop = {
         },
         [7473] = {
           {3006025, 5}
+        },
+        [7476] = {
+          {3006025, 15}
+        },
+        [7467] = {
+          {3006025, 15}
+        },
+        [7478] = {
+          {3006025, 15}
+        },
+        [7479] = {
+          {3006025, 45}
+        },
+        [7480] = {
+          {3006025, 45}
+        },
+        [7405] = {
+          {3006025, 30}
+        },
+        [7406] = {
+          {3006025, 30}
+        },
+        [7434] = {
+          {3006025, 30}
+        },
+        [7435] = {
+          {3006025, 30}
+        },
+        [7425] = {
+          {3006025, 30}
+        },
+        [7426] = {
+          {3006025, 30}
+        },
+        [7393] = {
+          {3006025, 180}
+        },
+        [7394] = {
+          {3006025, 180}
+        },
+        [7395] = {
+          {3006025, 180}
+        },
+        [7396] = {
+          {3006025, 180}
+        },
+        [7380] = {
+          {3006025, 180}
+        },
+        [7381] = {
+          {3006025, 180}
+        },
+        [7382] = {
+          {3006025, 180}
+        },
+        [7383] = {
+          {3006025, 180}
         }
       },
       [20000470] = {
@@ -37919,6 +38368,10 @@ GameConfig.SkillType = {
   TrapCanMove = {
     type = "TrapCanMove",
     name = "主动技能"
+  },
+  DeadBranch = {
+    type = "DeadBranch",
+    name = "主动技能"
   }
 }
 GameConfig.NormalSerialSkills = {
@@ -38702,6 +39155,106 @@ GameConfig.SkillInherit = {
       Items = {52910, 52911},
       Count = 7,
       Buffs = {30020614}
+    },
+    [16] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020615}
+    },
+    [17] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020616}
+    },
+    [18] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020617}
+    },
+    [19] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020618}
+    },
+    [20] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020619}
+    },
+    [21] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020620}
+    },
+    [22] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020621}
+    },
+    [23] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020622}
+    },
+    [24] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020623}
+    },
+    [25] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020624}
+    },
+    [26] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020625}
+    },
+    [27] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020626}
+    },
+    [28] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020627}
+    },
+    [29] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020628}
+    },
+    [30] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020629}
+    },
+    [31] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020630}
+    },
+    [32] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020631}
+    },
+    [33] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020632}
+    },
+    [34] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020633}
+    },
+    [35] = {
+      Items = {52910, 52911},
+      Count = 5,
+      Buffs = {30020634}
     }
   },
   Quality = {
@@ -38752,7 +39305,61 @@ GameConfig.SkillInherit = {
         200
       },
       MaxLvPoint = 5
+    },
+    [12] = {
+      Point = 6,
+      LvUpCost = {
+        1,
+        8,
+        12,
+        16,
+        24,
+        32,
+        42,
+        60,
+        90,
+        1
+      },
+      SpecificLevel = {1, 10},
+      SpecificLevelCostMaterials = {52910, 52911},
+      MaxLvPoint = 5
+    },
+    [13] = {
+      Point = 8,
+      LvUpCost = {
+        1,
+        20,
+        30,
+        40,
+        50,
+        70,
+        100,
+        140,
+        200,
+        1
+      },
+      SpecificLevel = {1, 10},
+      SpecificLevelCostMaterials = {52910, 52911},
+      MaxLvPoint = 7
     }
+  },
+  PatchItem = {
+    ProfessionItem = {
+      52920,
+      52921,
+      52922,
+      52923,
+      52924,
+      52925,
+      52926,
+      52927,
+      52928,
+      52929,
+      52930,
+      52931
+    },
+    CommonItem = 52913,
+    MailID = 12762
   }
 }
 GameConfig.SkillView_SkillCell_GuideId = {
@@ -38964,18 +39571,18 @@ GameConfig.Snow = {
   },
   StoneToMaterial = {
     [2] = {
-      {100, 10000}
+      {8438, 1}
     },
     [3] = {
-      {100, 100000}
+      {8438, 2}
     }
   },
   StoneAdvanceCount = {
     [1] = 1,
     [2] = 2,
-    [3] = 3,
-    [4] = 4,
-    [5] = 5
+    [3] = 4,
+    [4] = 8,
+    [5] = 16
   }
 }
 GameConfig.SnowRealm = {
@@ -39055,6 +39662,10 @@ GameConfig.SnowRealm = {
   DailyQuestRewardBonus = {
     [1608004] = 2000,
     [1608005] = 3000
+  },
+  MVPBossRaidEffect = {
+    BpPoint = 200,
+    Effect = "Common/sfx_syzh_lhsj_zdqy_05_prf"
   }
 }
 GameConfig.ExtraHomeFunctions = {
@@ -41709,6 +42320,28 @@ GameConfig.ItemFunction = {
     name = "记忆升级",
     type = "MemoryUpgrade",
     showtype = 3
+  },
+  [84] = {
+    name = "设为对战",
+    type = "QuickPetPackIn",
+    showtype = 1,
+    btnStyle = 2
+  },
+  [85] = {
+    name = "取回宠物",
+    type = "QuickPetPackOut",
+    showtype = 1,
+    btnStyle = 3
+  },
+  [89] = {
+    name = "休息",
+    type = "CallbackPet",
+    showtype = 1
+  },
+  [90] = {
+    name = "出战",
+    type = "PetFight",
+    showtype = 1
   }
 }
 GameConfig.ExtractionItemFuncIds = {74, 75}
@@ -41856,7 +42489,11 @@ GameConfig.SpecialItemFunction = {
   [12006] = {1, 73},
   [12024] = {1, 73},
   [5128] = {50},
-  [5129] = {50}
+  [5129] = {50},
+  [3042211] = {50},
+  [3042346] = {50},
+  [10000646] = {50},
+  [10000654] = {50}
 }
 GameConfig.ItemsNoUseWhenRoleStates = {
   [4] = {
@@ -42062,6 +42699,10 @@ GameConfig.HotEntrance = {
     "tab_icon_dicheng_2",
     "tab_icon_dicheng_1",
     "tab_icon_dicheng_3",
+    "tab_icon_uncle_4",
+    "tab_icon_uncle_3",
+    "tab_icon_uncle_2",
+    "tab_icon_uncle_1",
     "tab_icon_101",
     "tab_icon_100",
     "tab_icon_70",
@@ -44213,7 +44854,8 @@ GameConfig.UseSkillLimitMap = {
     1004207,
     1004208,
     1004209,
-    1004210
+    1004210,
+    155
   },
   [505] = {
     7201,
@@ -51838,6 +52480,60 @@ GameConfig.TeamSeasonTime = {
         Mail = 50029
       }
     },
+    [6] = {
+      {
+        beginRank = 1,
+        endRank = 1,
+        Mail = 50030
+      },
+      {
+        beginRank = 2,
+        endRank = 2,
+        Mail = 50031
+      },
+      {
+        beginRank = 3,
+        endRank = 8,
+        Mail = 50032
+      },
+      {
+        beginRank = 9,
+        endRank = 16,
+        Mail = 50033
+      },
+      {
+        beginRank = 17,
+        endRank = 32,
+        Mail = 50034
+      }
+    },
+    [7] = {
+      {
+        beginRank = 1,
+        endRank = 1,
+        Mail = 50035
+      },
+      {
+        beginRank = 2,
+        endRank = 2,
+        Mail = 50036
+      },
+      {
+        beginRank = 3,
+        endRank = 8,
+        Mail = 50037
+      },
+      {
+        beginRank = 9,
+        endRank = 16,
+        Mail = 50038
+      },
+      {
+        beginRank = 17,
+        endRank = 32,
+        Mail = 50039
+      }
+    },
     [15] = {
       {
         beginRank = 1,
@@ -52563,9 +53259,13 @@ GameConfig.ActivityIntegration = {
     ActivityIcon = "tab_icon_101",
     ActivityName = "彩虹巡游"
   },
-  [67] = {
+  [72] = {
     ActivityIcon = "tab_icon_101",
-    ActivityName = "付费签到"
+    ActivityName = "年中钜惠"
+  },
+  [75] = {
+    ActivityIcon = "tab_icon_101",
+    ActivityName = "彩虹巡游"
   }
 }
 GameConfig.Altman = {
@@ -54901,6 +55601,17 @@ GameConfig.PaySign = {
     entryBgTexture = "recall_bg_bottom",
     isfree = 1,
     ShopInfo = {DepositID = 400025}
+  },
+  [12013] = {
+    activityIcon = "tab_icon_122",
+    activityName = "异世界宝库",
+    noviceMode = false,
+    entryDesc1 = "异世界宝库",
+    entryDesc2 = "",
+    entryDesc3 = "累积登录领好礼",
+    entryBgTexture = "recall_bg_bottom",
+    isfree = 1,
+    ShopInfo = {DepositID = 400026}
   },
   [12014] = {
     activityIcon = "tab_icon_122",
@@ -57966,6 +58677,69 @@ GameConfig.DonationActivity = {
         num = 1
       }
     }
+  },
+  [104007] = {
+    activityIcon = "tab_icon_110",
+    activityName = "猫咪后院",
+    donatingtext = "捐献小鱼干，助力全服进度增长，领更多好礼",
+    completetext = "全服目标达成！\n请尽快领取进度奖励哦~",
+    showingtext = "活动已结束",
+    noticetext = "全服目标达成！\n请尽快领取进度奖励哦~",
+    item = 3043001,
+    globalreward = {
+      [1] = {
+        processpct = 20,
+        day = 1,
+        RewardId = 70000598
+      },
+      [2] = {
+        processpct = 40,
+        day = 2,
+        RewardId = 70000308
+      },
+      [3] = {
+        processpct = 60,
+        day = 3,
+        RewardId = 70000309
+      },
+      [4] = {
+        processpct = 80,
+        day = 5,
+        RewardId = 70000310
+      },
+      [5] = {
+        processpct = 100,
+        day = 7,
+        RewardId = 70000311
+      }
+    },
+    personalreward = {
+      [1] = {
+        processnum = 50,
+        itemid = 5931,
+        num = 1
+      },
+      [2] = {
+        processnum = 150,
+        itemid = 10000653,
+        num = 1
+      },
+      [3] = {
+        processnum = 300,
+        itemid = 25294,
+        num = 1
+      },
+      [4] = {
+        processnum = 500,
+        itemid = 10000643,
+        num = 1
+      },
+      [5] = {
+        processnum = 1000,
+        itemid = 25295,
+        num = 1
+      }
+    }
   }
 }
 GameConfig.RedPacket = {
@@ -59084,6 +59858,198 @@ GameConfig.BattleFund = {
         {3720, 5}
       }
     }
+  },
+  [105109] = {
+    bg = "Fund_text",
+    RewardIcon = "item_10000001",
+    RewardNum = "16800000",
+    ActivityIcon = "tab_icon_134",
+    ActivityName = "基金",
+    Title = "限时专享",
+    BannerLine1 = "购买波利基金",
+    BannerLine2 = "畅享 『5』 倍超值返利！",
+    ConfirmText = "现在购买基金，领取更多奖励",
+    MenuID = 100062,
+    DepositID = 371,
+    BuyLimitTime = 1209600,
+    Reward = {
+      [1] = {
+        {100, 5600000}
+      },
+      [2] = {
+        {8439, 2}
+      },
+      [3] = {
+        {8437, 30}
+      },
+      [5] = {
+        {100, 5600000}
+      },
+      [7] = {
+        {8439, 3}
+      },
+      [14] = {
+        {100, 5600000}
+      },
+      [21] = {
+        {8439, 3}
+      }
+    },
+    FreeReward = {
+      [1] = {
+        {8437, 2}
+      },
+      [2] = {
+        {8437, 2}
+      },
+      [3] = {
+        {8437, 2}
+      },
+      [5] = {
+        {8437, 2}
+      },
+      [7] = {
+        {8437, 2}
+      },
+      [14] = {
+        {8437, 2}
+      },
+      [21] = {
+        {8437, 2}
+      }
+    }
+  },
+  [105110] = {
+    bg = "Fund_text",
+    RewardIcon = "item_10000001",
+    RewardNum = "60200000",
+    ActivityIcon = "tab_icon_134",
+    ActivityName = "基金",
+    Title = "限时专享",
+    BannerLine1 = "购买波利基金",
+    BannerLine2 = "畅享 『6』 倍超值返利！",
+    ConfirmText = "现在购买基金，领取更多奖励",
+    MenuID = 100062,
+    DepositID = 377,
+    BuyLimitTime = 1209600,
+    Reward = {
+      [1] = {
+        {100, 9800000}
+      },
+      [2] = {
+        {100, 2800000}
+      },
+      [3] = {
+        {100, 3800000}
+      },
+      [5] = {
+        {100, 4800000}
+      },
+      [7] = {
+        {100, 5800000}
+      },
+      [14] = {
+        {100, 6800000}
+      },
+      [21] = {
+        {100, 7800000}
+      },
+      [28] = {
+        {100, 8800000}
+      },
+      [30] = {
+        {100, 9800000}
+      }
+    },
+    FreeReward = {
+      [1] = {
+        {7300, 2}
+      },
+      [2] = {
+        {7300, 2}
+      },
+      [3] = {
+        {7300, 2}
+      },
+      [4] = {
+        {7300, 2}
+      },
+      [5] = {
+        {7300, 2}
+      },
+      [6] = {
+        {7300, 2}
+      },
+      [7] = {
+        {7300, 2}
+      }
+    }
+  },
+  [105210] = {
+    bg = "Fund_text",
+    RewardIcon = "item_10000001",
+    RewardNum = "60200000",
+    ActivityIcon = "tab_icon_134",
+    ActivityName = "基金",
+    Title = "限时专享",
+    BannerLine1 = "购买波利基金",
+    BannerLine2 = "畅享 『6』 倍超值返利！",
+    ConfirmText = "现在购买基金，领取更多奖励",
+    MenuID = 100062,
+    DepositID = 377,
+    BuyLimitTime = 1209600,
+    Reward = {
+      [1] = {
+        {100, 9800000}
+      },
+      [2] = {
+        {100, 2800000}
+      },
+      [3] = {
+        {100, 3800000}
+      },
+      [5] = {
+        {100, 4800000}
+      },
+      [7] = {
+        {100, 5800000}
+      },
+      [14] = {
+        {100, 6800000}
+      },
+      [21] = {
+        {100, 7800000}
+      },
+      [28] = {
+        {100, 8800000}
+      },
+      [30] = {
+        {100, 9800000}
+      }
+    },
+    FreeReward = {
+      [1] = {
+        {7300, 2}
+      },
+      [2] = {
+        {7300, 2}
+      },
+      [3] = {
+        {7300, 2}
+      },
+      [4] = {
+        {7300, 2}
+      },
+      [5] = {
+        {7300, 2}
+      },
+      [6] = {
+        {7300, 2}
+      },
+      [7] = {
+        {7300, 2}
+      }
+    }
   }
 }
 GameConfig.RecommendAct = {
@@ -59245,8 +60211,8 @@ GameConfig.ReturnBattlePass = {
   }
 }
 GameConfig.AccumDeposit = {
-  ActivityIcon = "tab_icon_dicheng_1",
-  ActivityName = "雪花馈赠",
+  ActivityIcon = "tab_icon_uncle_1",
+  ActivityName = "打赏赠礼",
   EndMail = 12402
 }
 GameConfig.PhotoBoard = {
@@ -59927,8 +60893,8 @@ GameConfig.ActivityPuzzle = {
       }
     }
   },
-  labelText = "新春拼图",
-  iconSprite = "tab_icon_70"
+  labelText = "联动拼图",
+  iconSprite = "tab_icon_uncle_3"
 }
 GameConfig.ActivitySignIn = {
   [1] = {
@@ -60973,6 +61939,33 @@ GameConfig.AfricanPoring = {
       BestRewardID = 23375,
       ShopType = 20364,
       ShopId = 1
+    },
+    [105333] = {
+      ActivityIcon = "tab_icon_152",
+      ActivityName = "球魂转盘",
+      CoinID1 = 3007410,
+      CoinID2 = 3007411,
+      ResetCost = {ItemID = 151, ItemNum = 6},
+      NormalCost = {151, 6},
+      LotteryCost = {
+        [0] = {151, 6},
+        [1] = {151, 12},
+        [2] = {151, 12},
+        [3] = {151, 12},
+        [4] = {151, 12},
+        [5] = {151, 24},
+        [6] = {151, 24},
+        [7] = {151, 24},
+        [8] = {151, 48},
+        [9] = {151, 48},
+        [10] = {151, 48},
+        [11] = {151, 96}
+      },
+      NormalFreeCount = {ctype = "day", count = 3},
+      SecurityLotteryCount = 3,
+      BestRewardID = 23392,
+      ShopType = 20364,
+      ShopId = 1
     }
   }
 }
@@ -61062,11 +62055,11 @@ GameConfig.Astrology = {
     reward = "星座馈赠"
   },
   ActivityConfig = {
-    Title = "拆开今天的巧克力吧",
+    Title = "请揭晓今日运势",
     Pic = "constellation_bg_water2",
-    desc = "百味巧克力",
-    reward = "百味巧克力",
-    groupid = 27
+    desc = "异世界占卜术",
+    reward = "异世界占卜术",
+    groupid = 29
   }
 }
 GameConfig.BattleFund = {
@@ -61563,6 +62556,198 @@ GameConfig.BattleFund = {
       },
       [14] = {
         {152, 108}
+      }
+    },
+    FreeReward = {
+      [1] = {
+        {7300, 2}
+      },
+      [2] = {
+        {7300, 2}
+      },
+      [3] = {
+        {7300, 2}
+      },
+      [4] = {
+        {7300, 2}
+      },
+      [5] = {
+        {7300, 2}
+      },
+      [6] = {
+        {7300, 2}
+      },
+      [7] = {
+        {7300, 2}
+      }
+    }
+  },
+  [105109] = {
+    bg = "Fund_text",
+    RewardIcon = "item_151",
+    RewardNum = "168",
+    ActivityIcon = "tab_icon_134",
+    ActivityName = "基金",
+    Title = "限时专享",
+    BannerLine1 = "购买波利基金",
+    BannerLine2 = "畅享 『5』 倍超值返利！",
+    ConfirmText = "现在购买基金，领取更多奖励",
+    MenuID = 100062,
+    DepositID = 371,
+    BuyLimitTime = 1209600,
+    Reward = {
+      [1] = {
+        {152, 56}
+      },
+      [2] = {
+        {8439, 2}
+      },
+      [3] = {
+        {8437, 30}
+      },
+      [5] = {
+        {152, 56}
+      },
+      [7] = {
+        {8439, 3}
+      },
+      [14] = {
+        {152, 56}
+      },
+      [21] = {
+        {8439, 3}
+      }
+    },
+    FreeReward = {
+      [1] = {
+        {8437, 2}
+      },
+      [2] = {
+        {8437, 2}
+      },
+      [3] = {
+        {8437, 2}
+      },
+      [5] = {
+        {8437, 2}
+      },
+      [7] = {
+        {8437, 2}
+      },
+      [14] = {
+        {8437, 2}
+      },
+      [21] = {
+        {8437, 2}
+      }
+    }
+  },
+  [105110] = {
+    bg = "Fund_text",
+    RewardIcon = "item_151",
+    RewardNum = "602",
+    ActivityIcon = "tab_icon_134",
+    ActivityName = "基金",
+    Title = "限时专享",
+    BannerLine1 = "购买波利基金",
+    BannerLine2 = "畅享 『6』 倍超值返利！",
+    ConfirmText = "现在购买基金，领取更多奖励",
+    MenuID = 100062,
+    DepositID = 377,
+    BuyLimitTime = 1209600,
+    Reward = {
+      [1] = {
+        {152, 98}
+      },
+      [2] = {
+        {152, 28}
+      },
+      [3] = {
+        {152, 38}
+      },
+      [5] = {
+        {152, 48}
+      },
+      [7] = {
+        {152, 58}
+      },
+      [14] = {
+        {152, 68}
+      },
+      [21] = {
+        {152, 78}
+      },
+      [28] = {
+        {152, 88}
+      },
+      [30] = {
+        {152, 98}
+      }
+    },
+    FreeReward = {
+      [1] = {
+        {7300, 2}
+      },
+      [2] = {
+        {7300, 2}
+      },
+      [3] = {
+        {7300, 2}
+      },
+      [4] = {
+        {7300, 2}
+      },
+      [5] = {
+        {7300, 2}
+      },
+      [6] = {
+        {7300, 2}
+      },
+      [7] = {
+        {7300, 2}
+      }
+    }
+  },
+  [105210] = {
+    bg = "Fund_text",
+    RewardIcon = "item_10000001",
+    RewardNum = "60200000",
+    ActivityIcon = "tab_icon_134",
+    ActivityName = "基金",
+    Title = "限时专享",
+    BannerLine1 = "购买波利基金",
+    BannerLine2 = "畅享 『6』 倍超值返利！",
+    ConfirmText = "现在购买基金，领取更多奖励",
+    MenuID = 100062,
+    DepositID = 377,
+    BuyLimitTime = 1209600,
+    Reward = {
+      [1] = {
+        {100, 9800000}
+      },
+      [2] = {
+        {100, 2800000}
+      },
+      [3] = {
+        {100, 3800000}
+      },
+      [5] = {
+        {100, 4800000}
+      },
+      [7] = {
+        {100, 5800000}
+      },
+      [14] = {
+        {100, 6800000}
+      },
+      [21] = {
+        {100, 7800000}
+      },
+      [28] = {
+        {100, 8800000}
+      },
+      [30] = {
+        {100, 9800000}
       }
     },
     FreeReward = {
@@ -67116,6 +68301,35 @@ GameConfig.GainWay = {
     desc = "通过烹饪制作获取"
   }
 }
+GameConfig.LotteryRaidShop = {
+  TitleName = "波纳佩商店",
+  HelpID = 32658,
+  ShopType = 20799,
+  ShopId = 200,
+  ShopItemID = 10000701,
+  ModelItems = {
+    Fashion = {},
+    Parts = {
+      25290,
+      3013516,
+      3013517,
+      3013518,
+      3013519
+    },
+    ModelScale = 0.8,
+    ModelPos = {
+      0,
+      0,
+      0
+    },
+    ModelRotation = {
+      0,
+      0,
+      0
+    }
+  },
+  BgTexture = "PayRaid_bg"
+}
 GameConfig.Activity.FollowRewardAct = {
   [10011] = {52836, 50},
   [10022] = {5516, 30}
@@ -67160,6 +68374,32 @@ GameConfig.AppBundleConfig = {
   AndroidAppTeasingUrl = "https://play.google.com/store/apps/details?id=com.gravityus.romzeny.aos"
 }
 GameConfig.Astral.DifficultyOpenSeason[6] = 13
+GameConfig.FashionStar = {
+  ActionLimit = {
+    [10001] = {
+      62347,
+      62348,
+      62349,
+      62350
+    },
+    [10002] = {
+      62347,
+      62348,
+      62349,
+      62350
+    }
+  },
+  Deposit = {
+    GiftTimeLimit = {
+      [1] = {56}
+    },
+    GiftBase = {
+      [1] = {
+        [400050] = {400052}
+      }
+    }
+  }
+}
 GameConfig.BattlePass = {
   ExpWeekLimit = 1500,
   RankCount = 100,
@@ -67297,9 +68537,9 @@ GameConfig.BattlePassVersion = {
   },
   [3] = {
     TFVersionStartTime = "2025-06-01 05:00:00",
-    TFVersionEndTime = "2030-01-01 05:00:00",
+    TFVersionEndTime = "2026-07-01 05:00:00",
     ReleaseVersionStartTime = "2025-06-01 05:00:00",
-    ReleaseVersionEndTime = "2030-01-01 05:00:00",
+    ReleaseVersionEndTime = "2026-07-01 05:00:00",
     BattlePass_Icon = "battlePass_14",
     IdOffset = 14000,
     MaxLevel = 50,
@@ -67325,11 +68565,6 @@ GameConfig.BattlePassVersion = {
         [1] = {
           Text = "解锁50级的进阶奖励"
         },
-        [11] = {Text = "头饰"},
-        [12] = {
-          Text = "卡普拉进阶礼盒"
-        },
-        [13] = {Text = "大量Zeny"},
         [2] = {
           Text = "每周经验上限+20%"
         },
@@ -67341,11 +68576,6 @@ GameConfig.BattlePassVersion = {
         [1] = {
           Text = "解锁50级的典藏奖励"
         },
-        [11] = {
-          Text = "卡普拉心动礼盒"
-        },
-        [12] = {Text = "头饰"},
-        [13] = {Text = "时装"},
         [2] = {
           Text = "每周经验上限提升至30%"
         },
@@ -67353,6 +68583,173 @@ GameConfig.BattlePassVersion = {
           Text = "任务额外经验提升至20%"
         }
       }
+    },
+    UpgradeModelItems = {
+      [202605] = {
+        Fashion = {3008872, 3008873},
+        Parts = {3004852, 3004871},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202606] = {
+        Fashion = {3010542, 3010543},
+        Parts = {3005502, 3004872},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      }
+    }
+  },
+  [4] = {
+    TFVersionStartTime = "2026-07-01 05:00:00",
+    TFVersionEndTime = "2030-01-01 05:00:00",
+    ReleaseVersionStartTime = "2026-07-01 05:00:00",
+    ReleaseVersionEndTime = "2030-01-01 05:00:00",
+    BattlePass_Icon = "battlePass_14",
+    IdOffset = 15000,
+    MaxLevel = 50,
+    UpgradeDepositItem = {
+      [1] = {
+        DepositeId = 300039,
+        Show = 1,
+        Name = "进阶版·卡普拉冒险录",
+        AdvLevel = 100,
+        Desc = 1,
+        Rebate = 1716
+      },
+      [2] = {
+        DepositeId = 300040,
+        Show = 2,
+        Name = "典藏版·卡普拉冒险录",
+        SuLevel = 100,
+        Condition = {AdvLevel = 50, Index = 1},
+        Desc = 2,
+        Rebate = 826
+      }
+    },
+    UpgradeDesc = {
+      [1] = {
+        [1] = {
+          Text = "解锁50级的进阶奖励"
+        },
+        [2] = {
+          Text = "每周经验上限+20%"
+        },
+        [3] = {
+          Text = "完成任务额外经验+10%"
+        }
+      },
+      [2] = {
+        [1] = {
+          Text = "解锁50级的典藏奖励"
+        },
+        [2] = {
+          Text = "每周经验上限提升至30%"
+        },
+        [3] = {
+          Text = "任务额外经验提升至20%"
+        }
+      }
+    },
+    UpgradeModelItems = {
+      [202607] = {
+        Fashion = {3010622, 3010623},
+        Parts = {3003152, 3003882},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202608] = {
+        Fashion = {3005130, 3005131},
+        Parts = {3005202, 3005802},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202609] = {
+        Fashion = {3000971, 3000970},
+        Parts = {3005191, 3005501},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202610] = {
+        Fashion = {3001561, 3001560},
+        Parts = {3005991, 3006531},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202611] = {
+        Fashion = {3005530, 3005531},
+        Parts = {3006032, 3006681},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      }
+    },
+    OverflowReward = {
+      Exp = 100,
+      RewardItems = {
+        {itemid = 100, num = 100}
+      },
+      ProRewardItems = {
+        {itemid = 3042393, num = 12}
+      },
+      SuperRewardItems = {
+        {itemid = 3042394, num = 24}
+      },
+      OverflowRewardLimit = 2000
     }
   }
 }
@@ -67824,9 +69221,13 @@ GameConfig.ActivityIntegration = {
     ActivityIcon = "tab_icon_101",
     ActivityName = "彩虹巡游"
   },
-  [67] = {
+  [72] = {
     ActivityIcon = "tab_icon_101",
-    ActivityName = "付费签到"
+    ActivityName = "年中钜惠"
+  },
+  [75] = {
+    ActivityIcon = "tab_icon_101",
+    ActivityName = "彩虹巡游"
   }
 }
 GameConfig.Altman = {
@@ -70162,6 +71563,17 @@ GameConfig.PaySign = {
     entryBgTexture = "recall_bg_bottom",
     isfree = 1,
     ShopInfo = {DepositID = 400025}
+  },
+  [12013] = {
+    activityIcon = "tab_icon_122",
+    activityName = "异世界宝库",
+    noviceMode = false,
+    entryDesc1 = "异世界宝库",
+    entryDesc2 = "",
+    entryDesc3 = "累积登录领好礼",
+    entryBgTexture = "recall_bg_bottom",
+    isfree = 1,
+    ShopInfo = {DepositID = 400026}
   },
   [12014] = {
     activityIcon = "tab_icon_122",
@@ -73227,6 +74639,69 @@ GameConfig.DonationActivity = {
         num = 1
       }
     }
+  },
+  [104007] = {
+    activityIcon = "tab_icon_110",
+    activityName = "猫咪后院",
+    donatingtext = "捐献小鱼干，助力全服进度增长，领更多好礼",
+    completetext = "全服目标达成！\n请尽快领取进度奖励哦~",
+    showingtext = "活动已结束",
+    noticetext = "全服目标达成！\n请尽快领取进度奖励哦~",
+    item = 3043001,
+    globalreward = {
+      [1] = {
+        processpct = 20,
+        day = 1,
+        RewardId = 70000598
+      },
+      [2] = {
+        processpct = 40,
+        day = 2,
+        RewardId = 70000308
+      },
+      [3] = {
+        processpct = 60,
+        day = 3,
+        RewardId = 70000309
+      },
+      [4] = {
+        processpct = 80,
+        day = 5,
+        RewardId = 70000310
+      },
+      [5] = {
+        processpct = 100,
+        day = 7,
+        RewardId = 70000311
+      }
+    },
+    personalreward = {
+      [1] = {
+        processnum = 50,
+        itemid = 5931,
+        num = 1
+      },
+      [2] = {
+        processnum = 150,
+        itemid = 10000653,
+        num = 1
+      },
+      [3] = {
+        processnum = 300,
+        itemid = 25294,
+        num = 1
+      },
+      [4] = {
+        processnum = 500,
+        itemid = 10000643,
+        num = 1
+      },
+      [5] = {
+        processnum = 1000,
+        itemid = 25295,
+        num = 1
+      }
+    }
   }
 }
 GameConfig.RedPacket = {
@@ -74345,6 +75820,198 @@ GameConfig.BattleFund = {
         {3720, 5}
       }
     }
+  },
+  [105109] = {
+    bg = "Fund_text",
+    RewardIcon = "item_10000001",
+    RewardNum = "16800000",
+    ActivityIcon = "tab_icon_134",
+    ActivityName = "基金",
+    Title = "限时专享",
+    BannerLine1 = "购买波利基金",
+    BannerLine2 = "畅享 『5』 倍超值返利！",
+    ConfirmText = "现在购买基金，领取更多奖励",
+    MenuID = 100062,
+    DepositID = 371,
+    BuyLimitTime = 1209600,
+    Reward = {
+      [1] = {
+        {100, 5600000}
+      },
+      [2] = {
+        {8439, 2}
+      },
+      [3] = {
+        {8437, 30}
+      },
+      [5] = {
+        {100, 5600000}
+      },
+      [7] = {
+        {8439, 3}
+      },
+      [14] = {
+        {100, 5600000}
+      },
+      [21] = {
+        {8439, 3}
+      }
+    },
+    FreeReward = {
+      [1] = {
+        {8437, 2}
+      },
+      [2] = {
+        {8437, 2}
+      },
+      [3] = {
+        {8437, 2}
+      },
+      [5] = {
+        {8437, 2}
+      },
+      [7] = {
+        {8437, 2}
+      },
+      [14] = {
+        {8437, 2}
+      },
+      [21] = {
+        {8437, 2}
+      }
+    }
+  },
+  [105110] = {
+    bg = "Fund_text",
+    RewardIcon = "item_10000001",
+    RewardNum = "60200000",
+    ActivityIcon = "tab_icon_134",
+    ActivityName = "基金",
+    Title = "限时专享",
+    BannerLine1 = "购买波利基金",
+    BannerLine2 = "畅享 『6』 倍超值返利！",
+    ConfirmText = "现在购买基金，领取更多奖励",
+    MenuID = 100062,
+    DepositID = 377,
+    BuyLimitTime = 1209600,
+    Reward = {
+      [1] = {
+        {100, 9800000}
+      },
+      [2] = {
+        {100, 2800000}
+      },
+      [3] = {
+        {100, 3800000}
+      },
+      [5] = {
+        {100, 4800000}
+      },
+      [7] = {
+        {100, 5800000}
+      },
+      [14] = {
+        {100, 6800000}
+      },
+      [21] = {
+        {100, 7800000}
+      },
+      [28] = {
+        {100, 8800000}
+      },
+      [30] = {
+        {100, 9800000}
+      }
+    },
+    FreeReward = {
+      [1] = {
+        {7300, 2}
+      },
+      [2] = {
+        {7300, 2}
+      },
+      [3] = {
+        {7300, 2}
+      },
+      [4] = {
+        {7300, 2}
+      },
+      [5] = {
+        {7300, 2}
+      },
+      [6] = {
+        {7300, 2}
+      },
+      [7] = {
+        {7300, 2}
+      }
+    }
+  },
+  [105210] = {
+    bg = "Fund_text",
+    RewardIcon = "item_10000001",
+    RewardNum = "60200000",
+    ActivityIcon = "tab_icon_134",
+    ActivityName = "基金",
+    Title = "限时专享",
+    BannerLine1 = "购买波利基金",
+    BannerLine2 = "畅享 『6』 倍超值返利！",
+    ConfirmText = "现在购买基金，领取更多奖励",
+    MenuID = 100062,
+    DepositID = 377,
+    BuyLimitTime = 1209600,
+    Reward = {
+      [1] = {
+        {100, 9800000}
+      },
+      [2] = {
+        {100, 2800000}
+      },
+      [3] = {
+        {100, 3800000}
+      },
+      [5] = {
+        {100, 4800000}
+      },
+      [7] = {
+        {100, 5800000}
+      },
+      [14] = {
+        {100, 6800000}
+      },
+      [21] = {
+        {100, 7800000}
+      },
+      [28] = {
+        {100, 8800000}
+      },
+      [30] = {
+        {100, 9800000}
+      }
+    },
+    FreeReward = {
+      [1] = {
+        {7300, 2}
+      },
+      [2] = {
+        {7300, 2}
+      },
+      [3] = {
+        {7300, 2}
+      },
+      [4] = {
+        {7300, 2}
+      },
+      [5] = {
+        {7300, 2}
+      },
+      [6] = {
+        {7300, 2}
+      },
+      [7] = {
+        {7300, 2}
+      }
+    }
   }
 }
 GameConfig.RecommendAct = {
@@ -74506,8 +76173,8 @@ GameConfig.ReturnBattlePass = {
   }
 }
 GameConfig.AccumDeposit = {
-  ActivityIcon = "tab_icon_dicheng_1",
-  ActivityName = "雪花馈赠",
+  ActivityIcon = "tab_icon_uncle_1",
+  ActivityName = "打赏赠礼",
   EndMail = 12402
 }
 GameConfig.PhotoBoard = {
@@ -75188,8 +76855,8 @@ GameConfig.ActivityPuzzle = {
       }
     }
   },
-  labelText = "新春拼图",
-  iconSprite = "tab_icon_70"
+  labelText = "联动拼图",
+  iconSprite = "tab_icon_uncle_3"
 }
 GameConfig.ActivitySignIn = {
   [1] = {
@@ -75371,6 +77038,17 @@ GameConfig.PaySign = {
     isfree = 1,
     ShopInfo = {DepositID = 400036}
   },
+  [12013] = {
+    activityIcon = "tab_icon_122",
+    activityName = "异世界宝库",
+    noviceMode = false,
+    entryDesc1 = "异世界宝库",
+    entryDesc2 = "",
+    entryDesc3 = "累积登录领好礼",
+    entryBgTexture = "recall_bg_bottom",
+    isfree = 1,
+    ShopInfo = {DepositID = 400037}
+  },
   [12014] = {
     activityIcon = "tab_icon_122",
     activityName = "雪花宝库",
@@ -75457,11 +77135,74 @@ GameConfig.DonationActivity = {
         num = 1
       }
     }
+  },
+  [104007] = {
+    activityIcon = "tab_icon_110",
+    activityName = "猫咪后院",
+    donatingtext = "捐献小鱼干，助力全服进度增长，领更多好礼",
+    completetext = "全服目标达成！\n请尽快领取进度奖励哦~",
+    showingtext = "活动已结束",
+    noticetext = "全服目标达成！\n请尽快领取进度奖励哦~",
+    item = 3043001,
+    globalreward = {
+      [1] = {
+        processpct = 20,
+        day = 1,
+        RewardId = 70000598
+      },
+      [2] = {
+        processpct = 40,
+        day = 2,
+        RewardId = 70000308
+      },
+      [3] = {
+        processpct = 60,
+        day = 3,
+        RewardId = 70000309
+      },
+      [4] = {
+        processpct = 80,
+        day = 5,
+        RewardId = 70000310
+      },
+      [5] = {
+        processpct = 100,
+        day = 7,
+        RewardId = 70000311
+      }
+    },
+    personalreward = {
+      [1] = {
+        processnum = 50,
+        itemid = 5931,
+        num = 1
+      },
+      [2] = {
+        processnum = 150,
+        itemid = 10000653,
+        num = 1
+      },
+      [3] = {
+        processnum = 300,
+        itemid = 25294,
+        num = 1
+      },
+      [4] = {
+        processnum = 500,
+        itemid = 10000643,
+        num = 1
+      },
+      [5] = {
+        processnum = 1000,
+        itemid = 25295,
+        num = 1
+      }
+    }
   }
 }
 GameConfig.AccumDeposit = {
-  ActivityIcon = "tab_icon_dicheng_1",
-  ActivityName = "雪花馈赠",
+  ActivityIcon = "tab_icon_uncle_1",
+  ActivityName = "打赏赠礼",
   EndMail = 12402
 }
 GameConfig.AdventureNoPackage = {
@@ -76440,6 +78181,33 @@ GameConfig.AfricanPoring = {
       BestRewardID = 23375,
       ShopType = 20364,
       ShopId = 1
+    },
+    [105333] = {
+      ActivityIcon = "tab_icon_152",
+      ActivityName = "球魂转盘",
+      CoinID1 = 3007410,
+      CoinID2 = 3007411,
+      ResetCost = {ItemID = 151, ItemNum = 6},
+      NormalCost = {151, 6},
+      LotteryCost = {
+        [0] = {151, 6},
+        [1] = {151, 12},
+        [2] = {151, 12},
+        [3] = {151, 12},
+        [4] = {151, 12},
+        [5] = {151, 24},
+        [6] = {151, 24},
+        [7] = {151, 24},
+        [8] = {151, 48},
+        [9] = {151, 48},
+        [10] = {151, 48},
+        [11] = {151, 96}
+      },
+      NormalFreeCount = {ctype = "day", count = 3},
+      SecurityLotteryCount = 3,
+      BestRewardID = 23392,
+      ShopType = 20364,
+      ShopId = 1
     }
   }
 }
@@ -76536,11 +78304,11 @@ GameConfig.Astrology = {
     reward = "星座馈赠"
   },
   ActivityConfig = {
-    Title = "拆开今天的巧克力吧",
+    Title = "请揭晓今日运势",
     Pic = "constellation_bg_water2",
-    desc = "百味巧克力",
-    reward = "百味巧克力",
-    groupid = 27
+    desc = "异世界占卜术",
+    reward = "异世界占卜术",
+    groupid = 29
   }
 }
 GameConfig.BattleFund = {
@@ -77037,6 +78805,198 @@ GameConfig.BattleFund = {
       },
       [14] = {
         {152, 108}
+      }
+    },
+    FreeReward = {
+      [1] = {
+        {7300, 2}
+      },
+      [2] = {
+        {7300, 2}
+      },
+      [3] = {
+        {7300, 2}
+      },
+      [4] = {
+        {7300, 2}
+      },
+      [5] = {
+        {7300, 2}
+      },
+      [6] = {
+        {7300, 2}
+      },
+      [7] = {
+        {7300, 2}
+      }
+    }
+  },
+  [105109] = {
+    bg = "Fund_text",
+    RewardIcon = "item_151",
+    RewardNum = "168",
+    ActivityIcon = "tab_icon_134",
+    ActivityName = "基金",
+    Title = "限时专享",
+    BannerLine1 = "购买波利基金",
+    BannerLine2 = "畅享 『5』 倍超值返利！",
+    ConfirmText = "现在购买基金，领取更多奖励",
+    MenuID = 100062,
+    DepositID = 371,
+    BuyLimitTime = 1209600,
+    Reward = {
+      [1] = {
+        {152, 56}
+      },
+      [2] = {
+        {8439, 2}
+      },
+      [3] = {
+        {8437, 30}
+      },
+      [5] = {
+        {152, 56}
+      },
+      [7] = {
+        {8439, 3}
+      },
+      [14] = {
+        {152, 56}
+      },
+      [21] = {
+        {8439, 3}
+      }
+    },
+    FreeReward = {
+      [1] = {
+        {8437, 2}
+      },
+      [2] = {
+        {8437, 2}
+      },
+      [3] = {
+        {8437, 2}
+      },
+      [5] = {
+        {8437, 2}
+      },
+      [7] = {
+        {8437, 2}
+      },
+      [14] = {
+        {8437, 2}
+      },
+      [21] = {
+        {8437, 2}
+      }
+    }
+  },
+  [105110] = {
+    bg = "Fund_text",
+    RewardIcon = "item_151",
+    RewardNum = "602",
+    ActivityIcon = "tab_icon_134",
+    ActivityName = "基金",
+    Title = "限时专享",
+    BannerLine1 = "购买波利基金",
+    BannerLine2 = "畅享 『6』 倍超值返利！",
+    ConfirmText = "现在购买基金，领取更多奖励",
+    MenuID = 100062,
+    DepositID = 377,
+    BuyLimitTime = 1209600,
+    Reward = {
+      [1] = {
+        {152, 98}
+      },
+      [2] = {
+        {152, 28}
+      },
+      [3] = {
+        {152, 38}
+      },
+      [5] = {
+        {152, 48}
+      },
+      [7] = {
+        {152, 58}
+      },
+      [14] = {
+        {152, 68}
+      },
+      [21] = {
+        {152, 78}
+      },
+      [28] = {
+        {152, 88}
+      },
+      [30] = {
+        {152, 98}
+      }
+    },
+    FreeReward = {
+      [1] = {
+        {7300, 2}
+      },
+      [2] = {
+        {7300, 2}
+      },
+      [3] = {
+        {7300, 2}
+      },
+      [4] = {
+        {7300, 2}
+      },
+      [5] = {
+        {7300, 2}
+      },
+      [6] = {
+        {7300, 2}
+      },
+      [7] = {
+        {7300, 2}
+      }
+    }
+  },
+  [105210] = {
+    bg = "Fund_text",
+    RewardIcon = "item_10000001",
+    RewardNum = "60200000",
+    ActivityIcon = "tab_icon_134",
+    ActivityName = "基金",
+    Title = "限时专享",
+    BannerLine1 = "购买波利基金",
+    BannerLine2 = "畅享 『6』 倍超值返利！",
+    ConfirmText = "现在购买基金，领取更多奖励",
+    MenuID = 100062,
+    DepositID = 377,
+    BuyLimitTime = 1209600,
+    Reward = {
+      [1] = {
+        {100, 9800000}
+      },
+      [2] = {
+        {100, 2800000}
+      },
+      [3] = {
+        {100, 3800000}
+      },
+      [5] = {
+        {100, 4800000}
+      },
+      [7] = {
+        {100, 5800000}
+      },
+      [14] = {
+        {100, 6800000}
+      },
+      [21] = {
+        {100, 7800000}
+      },
+      [28] = {
+        {100, 8800000}
+      },
+      [30] = {
+        {100, 9800000}
       }
     },
     FreeReward = {

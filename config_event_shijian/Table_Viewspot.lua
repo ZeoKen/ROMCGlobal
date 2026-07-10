@@ -3564,6 +3564,7 @@ Table_Viewspot = {
     id = 87,
     MapName = 24,
     MapNum = 2,
+    SpotName = "##114291",
     Type = 2,
     Coordinate = Table_Viewspot_t.Coordinate[87],
     AdventureSort = 90,
@@ -4929,7 +4930,6 @@ Table_Viewspot = {
     id = 249,
     MapName = 16,
     MapNum = 7,
-    SpotName = "##114242",
     Coordinate = Table_Viewspot_t.Coordinate[244],
     AdventureSort = 249
   },
@@ -7494,7 +7494,7 @@ local cell_mt = {
     Coordinate = _EmptyTable,
     MapName = 149,
     MapNum = 1,
-    SpotName = "##114291",
+    SpotName = "##114242",
     Type = 1,
     id = 1
   }

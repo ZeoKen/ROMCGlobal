@@ -17,7 +17,8 @@ UIAtlasConfig.IconAtlas = {
     [4] = "GUI/atlas/preferb/Skill_buff",
     [5] = "GUI/atlas/preferb/Skill_4",
     [6] = "GUI/atlas/preferb/Skill_5",
-    [7] = "GUI/atlas/preferb/Skill_6"
+    [7] = "GUI/atlas/preferb/Skill_6",
+    [8] = "GUI/atlas/preferb/Skill_7"
   },
   SkillProfess_1 = {
     [1] = "GUI/atlas/preferb/Skill_1",
@@ -278,6 +279,13 @@ UIAtlasConfig.IconAtlas = {
     [4] = "GUI/atlas/preferb/Skill_yxzy",
     [5] = "GUI/atlas/preferb/Skill_yxzy3"
   },
+  SkillProfess_83 = {
+    [1] = "GUI/atlas/preferb/Skill_1",
+    [2] = "GUI/atlas/preferb/Skill_2",
+    [3] = "GUI/atlas/preferb/Skill_buff",
+    [4] = "GUI/atlas/preferb/Skill_yxzy",
+    [5] = "GUI/atlas/preferb/Skill_yxzy3"
+  },
   Action = {
     [1] = "GUI/atlas/preferb/action"
   },
@@ -319,7 +327,8 @@ UIAtlasConfig.IconAtlas = {
     [20] = "GUI/atlas/preferb/face_20",
     [21] = "GUI/atlas/preferb/face_21",
     [22] = "GUI/atlas/preferb/face_22",
-    [23] = "GUI/atlas/preferb/face_23"
+    [23] = "GUI/atlas/preferb/face_23",
+    [24] = "GUI/atlas/preferb/face_24"
   },
   HeadAccessoryFront = {
     [1] = "GUI/atlas/preferb/Assesories_Front_1",
@@ -342,7 +351,8 @@ UIAtlasConfig.IconAtlas = {
     [18] = "GUI/atlas/preferb/Assesories_Front_18",
     [19] = "GUI/atlas/preferb/Assesories_Front_19",
     [20] = "GUI/atlas/preferb/Assesories_Front_20",
-    [21] = "GUI/atlas/preferb/Assesories_Front_21"
+    [21] = "GUI/atlas/preferb/Assesories_Front_21",
+    [22] = "GUI/atlas/preferb/Assesories_Front_os1"
   },
   HeadAccessoryBack = {
     [1] = "GUI/atlas/preferb/Assesories_Back_1",
@@ -351,12 +361,14 @@ UIAtlasConfig.IconAtlas = {
     [4] = "GUI/atlas/preferb/Assesories_Back_4",
     [5] = "GUI/atlas/preferb/Assesories_Back_5",
     [6] = "GUI/atlas/preferb/Assesories_Back_6",
-    [7] = "GUI/atlas/preferb/Assesories_Back_7"
+    [7] = "GUI/atlas/preferb/Assesories_Back_7",
+    [8] = "GUI/atlas/preferb/Assesories_Back_os1"
   },
   HeadFaceMouth = {
     [1] = "GUI/atlas/preferb/Aface_1",
     [2] = "GUI/atlas/preferb/Aface_2",
-    [3] = "GUI/atlas/preferb/Aface_3"
+    [3] = "GUI/atlas/preferb/Aface_3",
+    [4] = "GUI/atlas/preferb/Aface_os1"
   },
   keyword = {
     [1] = "GUI/atlas/preferb/keyword"
@@ -388,7 +400,8 @@ UIAtlasConfig.IconAtlas = {
     [7] = "GUI/atlas/preferb/ZenyShopItem6",
     [8] = "GUI/atlas/preferb/ZenyShopItem7",
     [9] = "GUI/atlas/preferb/ZenyShopItem8",
-    [10] = "GUI/atlas/preferb/ZenyShopItem9"
+    [10] = "GUI/atlas/preferb/ZenyShopItem9",
+    [11] = "GUI/atlas/preferb/ZenyShopItem10"
   },
   puzzle = {
     [1] = "GUI/atlas/preferb/pic",

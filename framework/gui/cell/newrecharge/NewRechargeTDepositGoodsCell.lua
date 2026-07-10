@@ -21,7 +21,7 @@ function NewRechargeTDepositGoodsCell:Init()
 end
 
 function NewRechargeTDepositGoodsCell:Pre_Purchase()
-  if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+  if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
     local productConf = self.info.productConf
     local productID = productConf.ProductID
     if productID then
@@ -30,7 +30,7 @@ function NewRechargeTDepositGoodsCell:Pre_Purchase()
       local productCount = productConf.Count
       local productDesc = OverSea.LangManager.Instance():GetLangByKey(Table_Deposit[productConf.id].Desc)
       local productD = " [0075BCFF]" .. productDesc .. "[-] "
-      if not BranchMgr.IsKorea() then
+      if not BranchMgr.IsKorea() and not BranchMgr.IsNOKR() then
         local zenyAdditionCount = self.info:GetFreeBonusCount()
         if 0 < zenyAdditionCount then
           productCount = tostring(productCount + zenyAdditionCount)
@@ -38,9 +38,10 @@ function NewRechargeTDepositGoodsCell:Pre_Purchase()
         productD = " [0075BCFF]" .. productCount .. "[-] " .. productName
       end
       local currencyType = productConf.CurrencyType
-      OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FunctionNewRecharge.FormatMilComma(productPrice)), ZhString.ShopConfirmDes, productName, productPrice, function()
+      local confirmDesc, clickUrlCallback = OverseaHostHelper:GetRechargeShopConfirmDesc()
+      OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FunctionNewRecharge.FormatMilComma(productPrice)), confirmDesc, productName, productPrice, function()
         self:Purchase()
-      end)
+      end, nil, clickUrlCallback)
     end
   else
     self:Purchase()

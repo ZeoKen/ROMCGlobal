@@ -90,6 +90,7 @@ function ProfessionProxy:ParseStaticInfo()
   ProfessionProxy.Ais = 815
   ProfessionProxy.Bell = 805
   ProfessionProxy.Oscar = 825
+  ProfessionProxy.Himemmeth = 835
   ProfessionProxy.specialDepthJobs = {
     ProfessionProxy.moshentandoushiJob,
     ProfessionProxy.shenlongdoushiJob,
@@ -120,7 +121,8 @@ function ProfessionProxy:ParseStaticInfo()
     ProfessionProxy.Kafra,
     ProfessionProxy.Ais,
     ProfessionProxy.Bell,
-    ProfessionProxy.Oscar
+    ProfessionProxy.Oscar,
+    ProfessionProxy.Himemmeth
   }
   ProfessionProxy.specialJobs = {
     ProfessionProxy.superNovice,
@@ -153,7 +155,8 @@ function ProfessionProxy:ParseStaticInfo()
     ProfessionProxy.Kafra,
     ProfessionProxy.Ais,
     ProfessionProxy.Bell,
-    ProfessionProxy.Oscar
+    ProfessionProxy.Oscar,
+    ProfessionProxy.Himemmeth
   }
   for i = #ProfessionProxy.specialJobs, 1, -1 do
     if not Table_Class[ProfessionProxy.specialJobs[i]] then

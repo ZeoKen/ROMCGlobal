@@ -154,7 +154,7 @@ function BattleFundView:Purchase()
 end
 
 function BattleFundView:OnPurchaseClicked()
-  if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+  if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
     local proxy = BattleFundProxy.Instance
     local config = proxy:GetConfig()
     local productConf = Table_Deposit[config.DepositID or 0]
@@ -170,7 +170,7 @@ function BattleFundView:OnPurchaseClicked()
       local currencyType = productConf.CurrencyType
       local productDesc = OverSea.LangManager.Instance():GetLangByKey(productConf.Desc)
       local productD = " [0075BCFF]" .. productCount .. "[-] " .. productName
-      if BranchMgr.IsKorea() then
+      if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
         productD = " [0075BCFF]" .. productDesc .. "[-] "
         GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
           view = PanelConfig.ShopConfirmPanel,

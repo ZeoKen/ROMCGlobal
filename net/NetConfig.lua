@@ -125,4 +125,6 @@ elseif BranchMgr.IsNO() or BranchMgr.IsNOTW() then
   autoImport("NetConfig_NO")
 elseif BranchMgr.IsNOEN() then
   autoImport("NetConfig_NOEN")
+elseif BranchMgr.IsNOKR() then
+  autoImport("NetConfig_NOKR")
 end

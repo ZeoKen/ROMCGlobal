@@ -154,6 +154,9 @@ function PveEntranceData:IsGeffenMagic()
 end
 
 function PveEntranceData:IsNew()
+  if self:IsLotteryRaidActive() then
+    return true
+  end
   local openTime = self.groupid and GameConfig.Pve.RaidType[self.groupid] and GameConfig.Pve.RaidType[self.groupid].openTime
   if not openTime then
     return false
@@ -167,6 +170,14 @@ function PveEntranceData:IsNew()
     end
   end
   return false
+end
+
+function PveEntranceData:IsLotteryRaidActive()
+  if not self:IsLotteryRaid() then
+    return false
+  end
+  local passInfo = PveEntranceProxy.Instance and PveEntranceProxy.Instance:GetPassInfo(self.id)
+  return passInfo ~= nil and not passInfo:Forbidden()
 end
 
 function PveEntranceData:IsRaidCombined()
@@ -196,4 +207,8 @@ end
 
 function PveEntranceData:IsFairyTale()
   return self.raidType == PveRaidType.FairyTale
+end
+
+function PveEntranceData:IsLotteryRaid()
+  return self.raidType == PveRaidType.LotteryRaid
 end

@@ -3,10 +3,12 @@ ActivityIntegrationView.ViewType = UIViewType.NormalLayer
 autoImport("ActivityIntegrationTabCell")
 autoImport("ActivityIntegrationPreviewSubView")
 autoImport("ActivityIntegrationShopSubView")
+autoImport("ActivityIntegrationLotteryRaidShopSubView")
 autoImport("ActivityBattlePassView")
 autoImport("ActivityFlipCardView")
 autoImport("ActivityIntegrationSignInSubView")
 autoImport("ActivityIntegrationTaskSubView")
+autoImport("ActivityIntegrationTaskSubViewType2")
 autoImport("ActivityIntegrationQuestSubView")
 autoImport("ActivityIntegrationMemorySubView")
 autoImport("ActivityIntegrationBriefSubView")
@@ -413,6 +415,13 @@ function ActivityIntegrationView:LoadSubView(tabList)
     end
     return self.shopView
   end
+  local loadLotteryRaidShopPage = function(viewdata)
+    if not self.lotteryRaidShopView then
+      self.lotteryRaidShopView = self:AddSubView("ActivityIntegrationLotteryRaidShopSubView", ActivityIntegrationLotteryRaidShopSubView, nil, viewdata)
+      self.lotteryRaidShopView.parentView = self
+    end
+    return self.lotteryRaidShopView
+  end
   local loadBPPage = function(viewdata)
     if not self.bpView then
       self.bpView = self:AddSubView("ActivityBattlePassView", ActivityBattlePassView, nil, viewdata)
@@ -428,11 +437,20 @@ function ActivityIntegrationView:LoadSubView(tabList)
     return self.flipCardView
   end
   local loadTaskPage = function(viewdata)
-    if not self.taskPage then
-      self.taskPage = self:AddSubView("ActivityIntegrationTaskSubView", ActivityIntegrationTaskSubView, nil, viewdata)
-      self.taskPage.parentView = self
+    local taskType = viewdata and viewdata.Type
+    if taskType == 2 then
+      if not self.taskPageType2 then
+        self.taskPageType2 = self:AddSubView("ActivityIntegrationTaskSubViewType2", ActivityIntegrationTaskSubViewType2, nil, viewdata)
+        self.taskPageType2.parentView = self
+      end
+      return self.taskPageType2
+    else
+      if not self.taskPage then
+        self.taskPage = self:AddSubView("ActivityIntegrationTaskSubView", ActivityIntegrationTaskSubView, nil, viewdata)
+        self.taskPage.parentView = self
+      end
+      return self.taskPage
     end
-    return self.taskPage
   end
   local loadDailyQuestPage = function(viewdata)
     if not self.questPage then
@@ -468,8 +486,16 @@ function ActivityIntegrationView:LoadSubView(tabList)
     return self.selfChooseCardView
   end
   local loadExchangePage = function(viewdata)
+    local viewName = "ActivityExchangeView"
+    local viewClass = ActivityExchangeView
+    local variant = viewdata and viewdata.Variant
+    if variant and variant ~= "" then
+      viewName = variant
+      autoImport(viewName)
+      viewClass = _G[viewName] or ActivityExchangeView
+    end
     if not self.exchangeView then
-      self.exchangeView = self:AddSubView("ActivityExchangeView", ActivityExchangeView, nil, viewdata)
+      self.exchangeView = self:AddSubView(viewName, viewClass, nil, viewdata)
       self.exchangeView.parentView = self
     end
     return self.exchangeView
@@ -502,6 +528,7 @@ function ActivityIntegrationView:LoadSubView(tabList)
   self.subViews[11] = loadExchangePage
   self.subViews[12] = loadDungeonMvpCardPage
   self.subViews[13] = loadActPaySignPage
+  self.subViews[14] = loadLotteryRaidShopPage
   for i = 1, #tabList do
     local staticData = tabList[i].staticData
     if staticData then
@@ -518,13 +545,23 @@ function ActivityIntegrationView:handleClickTabCell(cellCtrl)
   local id = data.id
   local type = data.Type
   xdlog(type)
-  local subView = self.subViews[type]()
-  if self.currentType and self.currentType ~= type then
+  local subView = self.subViews[type](data.Params)
+  if self.currentSubView and self.currentSubView ~= subView then
+    self.currentSubView.gameObject:SetActive(false)
+    if self.currentSubView.OnHide then
+      self.currentSubView:OnHide()
+    end
+  elseif self.currentType and self.currentType ~= type then
     local curSubView = self.subViews[self.currentType]()
-    curSubView.gameObject:SetActive(false)
-    curSubView:OnHide()
+    if curSubView then
+      curSubView.gameObject:SetActive(false)
+      if curSubView.OnHide then
+        curSubView:OnHide()
+      end
+    end
   end
   self.currentType = type
+  self.currentSubView = subView
   if self.currentID and self.currentID == id then
     return
   end

@@ -159,6 +159,8 @@ function SmilingLadyShopBuyItemCell:SetData(data)
           repStr = ZhString.HappyShop_AccWeekCanBuy
         elseif limitType == _HappyShopProxyLimitType.AccMonth then
           repStr = ZhString.HappyShop_AccMonthCanBuy
+        elseif limitType == _HappyShopProxyLimitType.MultiMonth then
+          repStr = ZhString.HappyShop_AccMultiMonthCanBuy
         elseif limitType == _HappyShopProxyLimitType.UserWeek then
           repStr = ZhString.HappyShop_AccUserWeekCanBuy
         end

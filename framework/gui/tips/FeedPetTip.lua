@@ -76,7 +76,12 @@ function FeedPetTip:Update()
   end
   local itemDatas = {}
   for i = 1, #goods do
-    itemDatas[#itemDatas + 1] = ItemData.new("FeedPet", goods[i])
+    local itemid = goods[i]
+    if Table_Item[itemid] then
+      itemDatas[#itemDatas + 1] = ItemData.new("FeedPet", itemid)
+    else
+      LogUtility.WarningFormat("FeedPetTip: HobbyItem {0} not found in Table_Item, skipped.", tostring(itemid))
+    end
   end
   table.sort(itemDatas, function(a, b)
     local aOwned = BagProxy.Instance:GetItemNumByStaticID(a.staticData.id, PACKAGE_CHECK) > 0

@@ -8,7 +8,9 @@ function ActivityIntegrationTaskCell:Init()
 end
 
 function ActivityIntegrationTaskCell:FindObjs()
-  self.descLabel = self:FindComponent("Label", UILabel)
+  self.labelTable = self:FindGO("Table"):GetComponent(UITable)
+  self.descLabel = self:FindComponent("Label", UILabel, self.labelTable.gameObject)
+  self.buyBtn_LimitLabel = self:FindGO("LimitLabel", self.labelTable.gameObject):GetComponent(UILabel)
   self.receiveBtn = self:FindGO("ReceiveBtn")
   self:AddClickEvent(self.receiveBtn, function()
     self:PassEvent(MouseEvent.MouseClick, self)
@@ -23,7 +25,13 @@ function ActivityIntegrationTaskCell:FindObjs()
   self.buyBtn = self:FindGO("BuyBtn")
   self.buyBtn_Price = self:FindGO("Label", self.buyBtn):GetComponent(UILabel)
   self.buyBtn_Icon = self:FindGO("icon", self.buyBtn):GetComponent(UISprite)
-  self.buyBtn_LimitLabel = self:FindGO("LimitLabel", self.buyBtn):GetComponent(UILabel)
+  self.buyBtn_OriPrice = self:FindComponent("OriPrice", UILabel, self.gameObject)
+  self.buyBtn_DiscountMark = self:FindGO("DiscountMark", self.gameObject)
+  self.buyBtn_OriPrice.gameObject:SetActive(false)
+  self.buyBtn_LimitLabel.gameObject:SetActive(false)
+  if self.buyBtn_DiscountMark then
+    self.buyBtn_DiscountValue = self:FindComponent("Value1", UILabel, self.buyBtn_DiscountMark)
+  end
   self:AddClickEvent(self.buyBtn, function()
     self:PassEvent(UICellEvent.OnCellClicked, self)
   end)
@@ -34,6 +42,12 @@ function ActivityIntegrationTaskCell:SetData(data)
   self.id = data.id
   self.state = data.state
   self.process = data.process
+  self.shopItemData = nil
+  self.shopConfig = nil
+  self.shopItemID = nil
+  self.depositID = nil
+  self.canBuy = false
+  self:Set_DiscountMark(false)
   local config = Table_NewServerChallengeTarget[self.id]
   if not config then
     return
@@ -42,7 +56,10 @@ function ActivityIntegrationTaskCell:SetData(data)
   self.receiveUnlock:SetActive(false)
   self.finishSymbol:SetActive(false)
   self.buyBtn:SetActive(false)
-  self.depositID = config.Shop and config.Shop.DepositID
+  self.buyBtn_LimitLabel.gameObject:SetActive(false)
+  self.shopConfig = config.Shop
+  self.shopItemID = self.shopConfig and self.shopConfig.ShopItemID or config.ShopItemID
+  self.depositID = self.shopConfig and self.shopConfig.DepositID or config.DepositID
   if self:UpdateShopItemData() then
     return
   elseif self:UpdateDeposit() then
@@ -71,6 +88,7 @@ function ActivityIntegrationTaskCell:SetData(data)
     itemData:SetItemNum(num)
     self.rewardCell:SetData(itemData)
   end
+  self:RefreshLabelTable()
 end
 
 function ActivityIntegrationTaskCell:SetShopItemData(shopItemData)
@@ -85,11 +103,60 @@ function ActivityIntegrationTaskCell:SetDepositData()
   self:UpdateDeposit()
 end
 
+function ActivityIntegrationTaskCell:RefreshLabelTable()
+  if self.labelTable then
+    self.labelTable.repositionNow = true
+    self.labelTable:Reposition()
+  end
+end
+
+function ActivityIntegrationTaskCell:GetShopDiscount()
+  local discount = self.shopConfig and self.shopConfig.Discount
+  discount = discount and tonumber(discount)
+  if discount and 0 < discount and discount < 100 then
+    return discount
+  end
+end
+
+function ActivityIntegrationTaskCell:GetOriginPriceByDiscount(curPrice)
+  local discount = self:GetShopDiscount()
+  if discount and curPrice then
+    return math.ceil(curPrice * 100 / discount), discount
+  end
+end
+
+function ActivityIntegrationTaskCell:Set_DiscountMark(active, oriPrice, curPrice, showDiscount, priceCurrencyPrefix, discountPercent)
+  priceCurrencyPrefix = priceCurrencyPrefix or ""
+  if active then
+    if self.buyBtn_OriPrice and oriPrice then
+      self.buyBtn_OriPrice.text = string.format(ZhString.Shop_OriginPrice, priceCurrencyPrefix .. FunctionNewRecharge.FormatMilComma(oriPrice))
+    end
+    if curPrice then
+      self.buyBtn_Price.text = priceCurrencyPrefix .. FunctionNewRecharge.FormatMilComma(curPrice)
+    end
+  end
+  if self.buyBtn_OriPrice then
+    self.buyBtn_OriPrice.gameObject:SetActive(active == true)
+  end
+  if self.buyBtn_DiscountMark then
+    self.buyBtn_DiscountMark:SetActive(showDiscount == true and active == true)
+    if showDiscount and active and oriPrice and curPrice and self.buyBtn_DiscountValue then
+      local discount = discountPercent or math.ceil(curPrice / oriPrice * 100)
+      self.buyBtn_DiscountValue.text = discount .. "%"
+      Game.convert2OffLbl(self.buyBtn_DiscountValue)
+    end
+  end
+end
+
 function ActivityIntegrationTaskCell:UpdateShopItemData()
   if not self.shopItemData then
     return
   end
   self.canBuy = false
+  self:Set_DiscountMark(false)
+  self.buyBtn:SetActive(false)
+  self.buyBtn_LimitLabel.gameObject:SetActive(false)
+  self:RefreshLabelTable()
   if self.state == 2 then
     local _HappyShopProxy = HappyShopProxy.Instance
     local canBuyCount, limitType = _HappyShopProxy:GetCanBuyCount(self.shopItemData)
@@ -105,7 +172,23 @@ function ActivityIntegrationTaskCell:UpdateShopItemData()
     else
       self.buyBtn_LimitLabel.gameObject:SetActive(false)
     end
-    self.buyBtn_Price.text = StringUtil.NumThousandFormat(self.shopItemData.ItemCount)
+    self.finishSymbol:SetActive(false)
+    self.buyBtn:SetActive(true)
+    local moneyItem = Table_Item[self.shopItemData.ItemID]
+    if moneyItem and moneyItem.Icon then
+      self.buyBtn_Icon.gameObject:SetActive(true)
+      IconManager:SetItemIcon(moneyItem.Icon, self.buyBtn_Icon)
+    else
+      self.buyBtn_Icon.gameObject:SetActive(false)
+    end
+    local curPrice = self.shopItemData.GetChangeCost and self.shopItemData:GetChangeCost() or self.shopItemData.ItemCount
+    local oriPrice, discount = self:GetOriginPriceByDiscount(curPrice)
+    if oriPrice then
+      self:Set_DiscountMark(true, oriPrice, curPrice, true, nil, discount)
+    else
+      self:Set_DiscountMark(false)
+      self.buyBtn_Price.text = StringUtil.NumThousandFormat(curPrice)
+    end
     local goodsID = self.shopItemData.goodsID
     local staticData = Table_Item[goodsID]
     self.descLabel.text = staticData.NameZh
@@ -113,12 +196,17 @@ function ActivityIntegrationTaskCell:UpdateShopItemData()
     itemData:SetItemNum(self.shopItemData.goodsCount)
     self.rewardCell:SetData(itemData)
     self.canBuy = true
+    self:RefreshLabelTable()
     return true
   end
 end
 
 function ActivityIntegrationTaskCell:UpdateDeposit()
   self.canBuy = false
+  self:Set_DiscountMark(false)
+  self.buyBtn:SetActive(false)
+  self.buyBtn_LimitLabel.gameObject:SetActive(false)
+  self:RefreshLabelTable()
   local depositid = self.depositID
   if self.state == 2 and ShopProxy.Instance:GetDepositItemCanBuy(depositid) then
     local info = NewRechargeProxy.Ins:GenerateDepositGoodsInfo(depositid)
@@ -145,11 +233,20 @@ function ActivityIntegrationTaskCell:UpdateDeposit()
     if itemData then
       self.descLabel.text = itemData.NameZh
     end
-    self.buyBtn_Price.text = info.productConf.priceStr or info.productConf.CurrencyType .. " " .. FunctionNewRecharge.FormatMilComma(info.productConf.Rmb)
+    local curPrice = info.productConf.Rmb
+    local priceCurrencyPrefix = info.productConf.CurrencyType .. " "
+    local oriPrice, discount = self:GetOriginPriceByDiscount(curPrice)
+    if oriPrice then
+      self:Set_DiscountMark(true, oriPrice, curPrice, true, priceCurrencyPrefix, discount)
+    else
+      self:Set_DiscountMark(false)
+      self.buyBtn_Price.text = info.productConf.priceStr or priceCurrencyPrefix .. FunctionNewRecharge.FormatMilComma(curPrice)
+    end
     local _itemData = ItemData.new("Reward", itemData.id)
     _itemData:SetItemNum(info.productConf.Count)
     self.rewardCell:SetData(_itemData)
     self.canBuy = true
+    self:RefreshLabelTable()
     return true
   end
 end

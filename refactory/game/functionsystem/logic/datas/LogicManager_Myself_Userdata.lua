@@ -51,6 +51,7 @@ function LogicManager_Myself_Userdata:ctor()
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_SKILL_POINT, self.UpdateAddPointNotice)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_TOTALPOINT, self.UpdateAddPointNotice)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_RECALL_TIME, self.UpdateRecallTime)
+  self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_SOUL_PUPPET, self.UpdateSoulPuppet)
   self.spProfessionHandler = {
     [111] = self.TryShowBullets,
     [601] = self.TryShowFrenzy,
@@ -403,7 +404,8 @@ function LogicManager_Myself_Userdata:SetMountForm(ncreature, userDataID, oldVal
   end
 end
 
-local Heinrich_EnergyBuff = 137710
+local Heinrich_AtkSpdSerialConfig = GameConfig.AtkSpdSerialSkills or {}
+local Heinrich_EnergyBuff = Heinrich_AtkSpdSerialConfig.full_buff_id or 137710
 
 function LogicManager_Myself_Userdata:TryUpdateHeinrich(ncreature, userDataID, oldbranch, newbranch)
   local myself = Game.Myself
@@ -456,4 +458,9 @@ function LogicManager_Myself_Userdata:TryUpdateSunShine(ncreature, userDataID, o
       end
     end
   end
+end
+
+function LogicManager_Myself_Userdata:UpdateSoulPuppet(ncreature, userDataID, oldValue, newValue)
+  EventManager.Me():PassEvent(MyselfEvent.SoulPuppetUpdate, {targetId = newValue})
+  GameFacade.Instance:sendNotification(MyselfEvent.SoulPuppetUpdate, {targetId = newValue})
 end

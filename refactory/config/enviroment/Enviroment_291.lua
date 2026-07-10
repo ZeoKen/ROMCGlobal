@@ -113,214 +113,6 @@ local Enviroment_291 = {
           0
         },
         extents = {
-          175,
-          100,
-          175
-        },
-        worldToLocalMatrix = {
-          {
-            1,
-            0,
-            0,
-            -453.799987792969
-          },
-          {
-            0,
-            1,
-            0,
-            -9.69999980926514
-          },
-          {
-            0,
-            0,
-            1,
-            -163.800003051758
-          },
-          {
-            0,
-            0,
-            0,
-            1
-          }
-        },
-        radius = 1,
-        priority = 0,
-        worldCenter = {
-          453.799987792969,
-          9.69999980926514,
-          163.800003051758
-        },
-        worldRange = 266.926971435547
-      },
-      fog = {
-        fog = true,
-        weight = 1,
-        blendDuration = 0.5,
-        fogMode = 1,
-        fogStartDistance = 5,
-        fogEndDistance = 180,
-        globalFogTuner = 0,
-        heightFogMode = 1,
-        heightFogCutoff = 9.99999974737875E-6,
-        heightFogStart = -20,
-        heightFogEnd = 1500,
-        scatteringDensity = 0,
-        scatteringFalloff = 1,
-        scatteringExponent = 12.5,
-        heightFogMinOpacity = 0,
-        radiusFogFactor = 1,
-        nearFogColor = {
-          0.0589622557163239,
-          0.212812706828117,
-          0.5,
-          1
-        },
-        nearFogDistance = 50,
-        farFogColor = {
-          0.570754706859589,
-          0.817173361778259,
-          1,
-          1
-        },
-        farFogDistance = 350,
-        enableLocalHeightFog = 0,
-        localHeightFogStart = 0,
-        localHeightFogEnd = 1,
-        localHeightFogColor = {
-          0,
-          0,
-          0,
-          0
-        }
-      },
-      skybox = {
-        texPath = "Enviroment/CustomSkyboxes/skybox_room_dis",
-        tint = {
-          1,
-          1,
-          1,
-          1
-        },
-        rotation = 0,
-        exposure = 1,
-        finite = true,
-        sunSize = 0,
-        applyFog = false
-      }
-    },
-    [2] = {
-      volume = {
-        type = 0,
-        center = {
-          0,
-          0,
-          0
-        },
-        extents = {
-          200,
-          100,
-          165
-        },
-        worldToLocalMatrix = {
-          {
-            1,
-            0,
-            0,
-            -79
-          },
-          {
-            0,
-            1,
-            0,
-            -43.2999992370605
-          },
-          {
-            0,
-            0,
-            1,
-            -137.100006103516
-          },
-          {
-            0,
-            0,
-            0,
-            1
-          }
-        },
-        radius = 1,
-        priority = 0,
-        worldCenter = {
-          79,
-          43.2999992370605,
-          137.100006103516
-        },
-        worldRange = 277.893859863281
-      },
-      fog = {
-        fog = true,
-        weight = 1,
-        blendDuration = 0.5,
-        fogMode = 1,
-        fogStartDistance = 5,
-        fogEndDistance = 130,
-        globalFogTuner = 0,
-        heightFogMode = 1,
-        heightFogCutoff = 9.99999974737875E-6,
-        heightFogStart = -20,
-        heightFogEnd = 1000,
-        scatteringDensity = 0,
-        scatteringFalloff = 1,
-        scatteringExponent = 12.5,
-        heightFogMinOpacity = 0,
-        radiusFogFactor = 1,
-        nearFogColor = {
-          0.0589622557163239,
-          0.212812706828117,
-          0.5,
-          1
-        },
-        nearFogDistance = 10,
-        farFogColor = {
-          0.570754706859589,
-          0.817173361778259,
-          1,
-          1
-        },
-        farFogDistance = 300,
-        enableLocalHeightFog = 1,
-        localHeightFogStart = -10,
-        localHeightFogEnd = 80,
-        localHeightFogColor = {
-          0.490196108818054,
-          0.729411780834198,
-          0.847058892250061,
-          0
-        }
-      },
-      skybox = {
-        texPath = "Enviroment/CustomSkyboxes/sky_szsj_001_d",
-        tint = {
-          1,
-          1,
-          1,
-          1
-        },
-        rotation = 0,
-        exposure = 1,
-        finite = true,
-        sunSize = 0,
-        applyFog = false
-      }
-    },
-    [3] = {
-      volume = {
-        type = 0,
-        center = {
-          0,
-          0,
-          0
-        },
-        extents = {
           50,
           50,
           50
@@ -416,7 +208,7 @@ local Enviroment_291 = {
         applyFog = false
       }
     },
-    [4] = {
+    [2] = {
       volume = {
         type = 0,
         center = {
@@ -520,7 +312,7 @@ local Enviroment_291 = {
         applyFog = false
       }
     },
-    [5] = {
+    [3] = {
       volume = {
         type = 0,
         center = {
@@ -611,6 +403,110 @@ local Enviroment_291 = {
       },
       skybox = {
         texPath = "Enviroment/CustomSkyboxes/sky_sc_xhzd_02",
+        tint = {
+          1,
+          1,
+          1,
+          1
+        },
+        rotation = 0,
+        exposure = 1,
+        finite = true,
+        sunSize = 0,
+        applyFog = false
+      }
+    },
+    [4] = {
+      volume = {
+        type = 1,
+        center = {
+          0,
+          0,
+          0
+        },
+        extents = {
+          10,
+          10,
+          10
+        },
+        worldToLocalMatrix = {
+          {
+            1,
+            0,
+            0,
+            -400.779998779297
+          },
+          {
+            0,
+            1,
+            0,
+            -39.5999984741211
+          },
+          {
+            0,
+            0,
+            1,
+            -16.25
+          },
+          {
+            0,
+            0,
+            0,
+            1
+          }
+        },
+        radius = 32,
+        priority = 0,
+        worldCenter = {
+          400.779998779297,
+          39.5999984741211,
+          16.25
+        },
+        worldRange = 32
+      },
+      fog = {
+        fog = true,
+        weight = 1,
+        blendDuration = 0.5,
+        fogMode = 1,
+        fogStartDistance = 0,
+        fogEndDistance = 180,
+        globalFogTuner = 0,
+        heightFogMode = 1,
+        heightFogCutoff = 0,
+        heightFogStart = -50,
+        heightFogEnd = 1000,
+        scatteringDensity = 0,
+        scatteringFalloff = 1,
+        scatteringExponent = 0,
+        heightFogMinOpacity = 0,
+        radiusFogFactor = 1,
+        nearFogColor = {
+          0.146207556128502,
+          0.529132187366486,
+          0.73800003528595,
+          1
+        },
+        nearFogDistance = 200,
+        farFogColor = {
+          0.0941176414489746,
+          0.642605364322662,
+          0.800000011920929,
+          1
+        },
+        farFogDistance = 400,
+        enableLocalHeightFog = 0,
+        localHeightFogStart = 0,
+        localHeightFogEnd = 1,
+        localHeightFogColor = {
+          0,
+          0,
+          0,
+          0
+        }
+      },
+      skybox = {
+        texPath = "Enviroment/CustomSkyboxes/sky_szsj_001_d",
         tint = {
           1,
           1,

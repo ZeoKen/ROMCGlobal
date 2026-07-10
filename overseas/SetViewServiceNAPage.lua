@@ -29,6 +29,7 @@ function SetViewServiceNAPage:InitUnique()
     local playerName = "未登入"
     if Game ~= nil and Game.Myself ~= nil then
       playerName = Game.Myself.data:GetName()
+      playerName = RemoveSpecialChara(playerName)
     end
     local lineName = ChangeZoneProxy.Instance:ZoneNumToString(MyselfProxy.Instance:GetZoneId())
     xdlog(playerName, lineName)
@@ -37,6 +38,7 @@ function SetViewServiceNAPage:InitUnique()
     local charid
     if Game ~= nil and Game.Myself ~= nil then
       playerName = Game.Myself.data:GetName()
+      playerName = RemoveSpecialChara(playerName)
       if Game.Myself.data ~= nil and Game.Myself.data.userdata ~= nil then
         local server = FunctionLogin.Me():getCurServerData()
         level = Game.Myself.data.userdata:Get(UDEnum.ROLELEVEL)

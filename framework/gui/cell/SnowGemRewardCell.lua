@@ -4,6 +4,7 @@ SnowGemRewardCell.CellType = {Progress = 1, Overflow = 2}
 
 function SnowGemRewardCell:Init()
   SnowGemRewardCell.super.Init(self)
+  self:AddGameObjectComp()
   self:FindObjs()
   self:AddCellClickEvent()
 end
@@ -64,7 +65,8 @@ function SnowGemRewardCell:SetSnowGemCell(data)
     isUnlocked = true,
     isSelected = false,
     level = data.level or 0,
-    advlv = displayAdvlv
+    advlv = displayAdvlv,
+    advexp = data.newAdvexp or 0
   })
 end
 
@@ -142,7 +144,7 @@ end
 function SnowGemRewardCell:PlayProgressAnimation(data, oldAdvlv, newAdvlv, oldProgress, newProgress)
   self:CancelProgressTween()
   local animDuration = 0.5
-  local sliderActive = self.slider and self.sliderGO and self.sliderGO.activeSelf
+  local sliderActive = self.slider and not self:ObjIsNil(self.sliderGO) and self.sliderGO.activeSelf
   local isLevelUp = oldAdvlv < newAdvlv
   if not isLevelUp then
     if sliderActive then
@@ -155,7 +157,7 @@ function SnowGemRewardCell:PlayProgressAnimation(data, oldAdvlv, newAdvlv, oldPr
       self.slider.value = oldProgress
       self:TweenSliderValue(oldProgress, 1, animDuration, function()
         self:PlayStarUpEffectAndUpdate(data, oldAdvlv, newAdvlv, function()
-          if self.slider then
+          if self.slider and not self:ObjIsNil(self.sliderGO) then
             self.slider.value = 0
             self:TweenSliderValue(0, newProgress, animDuration)
           end
@@ -168,18 +170,18 @@ function SnowGemRewardCell:PlayProgressAnimation(data, oldAdvlv, newAdvlv, oldPr
 end
 
 function SnowGemRewardCell:TweenSliderValue(fromValue, toValue, duration, onComplete)
-  if not self.slider or not self.sliderGO then
+  if not self.slider or self:ObjIsNil(self.sliderGO) then
     return
   end
   if onComplete then
     LeanTween.value(self.sliderGO, function(v)
-      if self.slider then
+      if self.slider and not self:ObjIsNil(self.sliderGO) then
         self.slider.value = v
       end
     end, fromValue, toValue, duration):setOnComplete(onComplete)
   else
     LeanTween.value(self.sliderGO, function(v)
-      if self.slider then
+      if self.slider and not self:ObjIsNil(self.sliderGO) then
         self.slider.value = v
       end
     end, fromValue, toValue, duration)
@@ -187,7 +189,7 @@ function SnowGemRewardCell:TweenSliderValue(fromValue, toValue, duration, onComp
 end
 
 function SnowGemRewardCell:CancelProgressTween()
-  if self.sliderGO then
+  if not self:ObjIsNil(self.sliderGO) then
     LeanTween.cancel(self.sliderGO)
   end
 end
@@ -234,4 +236,9 @@ end
 
 function SnowGemRewardCell:GetData()
   return self.data
+end
+
+function SnowGemRewardCell:OnDestroy()
+  self:CancelProgressTween()
+  SnowGemRewardCell.super.OnDestroy(self)
 end

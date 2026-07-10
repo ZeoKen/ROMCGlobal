@@ -1068,7 +1068,7 @@ end
 function SkillContentPage:SetInheritSkills()
   local loadInheritSkills = InheritSkillProxy.Instance:GetLoadSkills()
   local count = #loadInheritSkills
-  local menuUnlock = FunctionUnLockFunc.Me():CheckCanOpen(19390) or false
+  local menuUnlock = FunctionUnLockFunc.Me():CheckCanOpen(19391) or false
   self.inheritSkillGO:SetActive(menuUnlock)
   self.inheritSkillList:ResetDatas(loadInheritSkills)
   self.inheritGrid.repositionNow = true
@@ -1084,7 +1084,7 @@ function SkillContentPage:SetInheritSkills()
 end
 
 function SkillContentPage:OnInheritSkillGotoBtnClick()
-  if not FunctionUnLockFunc.Me():CheckCanOpen(19390) then
+  if not FunctionUnLockFunc.Me():CheckCanOpen(19391) then
     MsgManager.ShowMsgByID(43661)
     return
   end

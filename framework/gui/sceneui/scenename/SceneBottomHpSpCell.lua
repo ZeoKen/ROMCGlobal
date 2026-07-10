@@ -12,6 +12,7 @@ SceneBottomHpSpCell.PoolSize = 30
 local TwelvePvpConfig = GameConfig.TwelvePvp.HpShow
 local ColorRed = LuaColor.New(1, 0.4627450980392157, 0.7176470588235294, 1)
 local ColorGreen = LuaColor.New(0.6627450980392157, 0.9411764705882353, 0.3058823529411765, 1)
+local maxHpGridCount = 20
 
 function SceneBottomHpSpCell:Construct(asArray, args)
   self:DoConstruct(asArray, args)
@@ -112,8 +113,16 @@ function SceneBottomHpSpCell:Deconstruct(asArray)
       self.hpGrid:SetActive(false)
     end
   end
+  if self.hpGridElements then
+    for i = 1, #self.hpGridElements do
+      if not Slua.IsNull(self.hpGridElements[i]) then
+        GameObject.Destroy(self.hpGridElements[i])
+      end
+    end
+  end
   self.hpGrid = nil
   self.hpGridElements = nil
+  self.hpSplitTemplate = nil
   self.spGrid = nil
   self.spGridElements = nil
   self.bulletsContainer = nil
@@ -481,6 +490,18 @@ function SceneBottomHpSpCell:setHpValueAndColor(value, finalHp)
   if value <= 0 and finalHp <= 0 then
     self.deadSlideAnim = false
     self:setHpSpVisible(false)
+    if self.shieldbg then
+      self.shieldbg:SetActive(false)
+    end
+    if self.shieldFrame then
+      self.shieldFrame:SetActive(false)
+    end
+    if self.shield then
+      self.shield:SetActive(false)
+    end
+    if self.frame then
+      self.frame:SetActive(false)
+    end
     return
   end
   if 0.2 >= self.uibloodslider.value and self.uibloodslider.value > 0 then
@@ -787,6 +808,7 @@ function SceneBottomHpSpCell:UpdateHpGrid(maxCount)
   if not maxCount or maxCount == 0 then
     return
   end
+  maxCount = math.min(maxCount, maxHpGridCount)
   if self.exMaxHp == maxCount then
     return
   end
@@ -796,13 +818,29 @@ function SceneBottomHpSpCell:UpdateHpGrid(maxCount)
   end
   if not self.hpGridElements then
     self.hpGridElements = {}
-    for i = 1, 9 do
-      self.hpGridElements[i] = self:FindGO(i, self.hpGrid)
-    end
+    self.hpSplitTemplate = self:FindGO("hpSplit", self.hpGrid)
     self.hpGridLayerout = self.hpGrid:GetComponent(HorizontalLayoutGroup)
   end
+  if self.hpSplitTemplate then
+    for i = #self.hpGridElements + 1, maxCount - 1 do
+      local clone = GameObject.Instantiate(self.hpSplitTemplate)
+      clone.transform:SetParent(self.hpGrid.transform, false)
+      clone.transform:SetAsLastSibling()
+      self.hpGridElements[i] = clone
+    end
+  elseif #self.hpGridElements == 0 then
+    local i = 1
+    while 2 do
+      local go = self:FindGO(i, self.hpGrid)
+      if not go then
+        break
+      end
+      self.hpGridElements[i] = go
+      i = i + 1
+    end
+  end
   local dis = (115 - maxCount * 2) / maxCount
-  for i = 1, 9 do
+  for i = 1, #self.hpGridElements do
     self.hpGridElements[i]:SetActive(maxCount > i)
   end
   local padding = self.hpGridLayerout.padding

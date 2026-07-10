@@ -39,15 +39,15 @@ function PetWorkSpaceView:Init()
 end
 
 function PetWorkSpaceView:LoadSubView()
-  local obj = self:LoadPreferb_ByFullPath(SUB_VIEW_PATH, self.container.workObj, true)
-  obj.name = "PetWorkSpaceView"
+  self.workObj = self:LoadPreferb_ByFullPath(SUB_VIEW_PATH, self.container.workObj, true)
+  self.workObj.name = "PetWorkSpaceView"
 end
 
 function PetWorkSpaceView:FindObjs()
   self.root = self:FindGO("Root")
   self.loading = self:FindGO("Loading")
   self.pageScrollView = self:FindComponent("PageScrollView", UIScrollView)
-  self.bgTexture = self:FindComponent("BgTexture", UITexture)
+  self.bgTexture = self:FindComponent("BgTexture", UITexture, self.workObj)
   self.pageTexture = self:FindComponent("PageTexture", UITexture)
   self.spaceName = self:FindComponent("spaceName", UILabel, self.pageTexture.gameObject)
   self.introducePos = self:FindGO("IntroducePos", self.pageScrollView.gameObject)

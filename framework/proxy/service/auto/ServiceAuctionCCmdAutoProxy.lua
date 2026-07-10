@@ -1408,6 +1408,24 @@ function ServiceAuctionCCmdAutoProxy:CallUpdateAuctionInfoCCmd(iteminfo, batchid
       end
       msg.iteminfo.itemdata.egg.cdtime = iteminfo.itemdata.egg.cdtime
     end
+    if iteminfo.itemdata.egg ~= nil and iteminfo.itemdata.egg.already_hatched ~= nil then
+      if msg.iteminfo.itemdata == nil then
+        msg.iteminfo.itemdata = {}
+      end
+      if msg.iteminfo.itemdata.egg == nil then
+        msg.iteminfo.itemdata.egg = {}
+      end
+      msg.iteminfo.itemdata.egg.already_hatched = iteminfo.itemdata.egg.already_hatched
+    end
+    if iteminfo.itemdata.egg ~= nil and iteminfo.itemdata.egg.quick_pack_slot ~= nil then
+      if msg.iteminfo.itemdata == nil then
+        msg.iteminfo.itemdata = {}
+      end
+      if msg.iteminfo.itemdata.egg == nil then
+        msg.iteminfo.itemdata.egg = {}
+      end
+      msg.iteminfo.itemdata.egg.quick_pack_slot = iteminfo.itemdata.egg.quick_pack_slot
+    end
     if iteminfo.itemdata.letter ~= nil and iteminfo.itemdata.letter.sendUserName ~= nil then
       if msg.iteminfo.itemdata == nil then
         msg.iteminfo.itemdata = {}
@@ -3360,6 +3378,24 @@ function ServiceAuctionCCmdAutoProxy:CallUpdateAuctionInfoCCmd(iteminfo, batchid
         msgParam.iteminfo.itemdata.egg = {}
       end
       msgParam.iteminfo.itemdata.egg.cdtime = iteminfo.itemdata.egg.cdtime
+    end
+    if iteminfo.itemdata.egg ~= nil and iteminfo.itemdata.egg.already_hatched ~= nil then
+      if msgParam.iteminfo.itemdata == nil then
+        msgParam.iteminfo.itemdata = {}
+      end
+      if msgParam.iteminfo.itemdata.egg == nil then
+        msgParam.iteminfo.itemdata.egg = {}
+      end
+      msgParam.iteminfo.itemdata.egg.already_hatched = iteminfo.itemdata.egg.already_hatched
+    end
+    if iteminfo.itemdata.egg ~= nil and iteminfo.itemdata.egg.quick_pack_slot ~= nil then
+      if msgParam.iteminfo.itemdata == nil then
+        msgParam.iteminfo.itemdata = {}
+      end
+      if msgParam.iteminfo.itemdata.egg == nil then
+        msgParam.iteminfo.itemdata.egg = {}
+      end
+      msgParam.iteminfo.itemdata.egg.quick_pack_slot = iteminfo.itemdata.egg.quick_pack_slot
     end
     if iteminfo.itemdata.letter ~= nil and iteminfo.itemdata.letter.sendUserName ~= nil then
       if msgParam.iteminfo.itemdata == nil then

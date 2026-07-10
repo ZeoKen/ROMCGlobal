@@ -1,7 +1,6 @@
 autoImport("BattlePassLevelView")
 autoImport("BattlePassExchangeView")
 autoImport("BattlePassRankView")
-autoImport("BattlePassUpgradeView")
 autoImport("BattlePassPreviewView")
 autoImport("BattlePassBuyLevelCell")
 autoImport("BattlePassTaskView")
@@ -38,6 +37,7 @@ function ServantBattlePassView:OnEnter()
   PictureManager.Instance:SetUI(patternBgName, self.pattern2Tex)
   PictureManager.Instance:SetUI(bgTexName, self.bgTex)
   PictureManager.ReFitFullScreen(self.bgTex)
+  self:TryDelayAutoOpenUpgradeView()
 end
 
 function ServantBattlePassView:OnExit()
@@ -165,10 +165,15 @@ function ServantBattlePassView:InitView()
   self.exp_expSlider = self:FindComponent("expslider", UISlider, self.expPanel)
   self.exp_explimitLab = self:FindComponent("explimitlb", UILabel, self.expPanel)
   self:FindComponent("text1", UILabel, self.expPanel).text = ZhString.ServantBattlePassView_text1
-  self:FindComponent("text3", UILabel, self.expPanel).text = ZhString.ServantBattlePassView_text3
-  self:AddClickEvent(self:FindGO("buylevelbtn"), function()
+  self.buyLevelBtn = self:FindGO("buylevelbtn")
+  self.maxLevelBtn = self:FindGO("maxlevelbtn")
+  self.buyLevelBtnLabel = self:FindComponent("text3", UILabel, self.expPanel)
+  self.buyLevelBtnCollider = self.buyLevelBtn and self.buyLevelBtn:GetComponent(BoxCollider)
+  self.buyLevelBtnLabel.text = ZhString.ServantBattlePassView_text3
+  self:AddClickEvent(self.buyLevelBtn, function()
     self:ShowBuyLevel()
   end)
+  self:RefreshBuyLevelBtn()
   local hasColl = BattlePassProxy.Instance:HasColPass()
   local pos = self.expPanel.transform.localPosition
   if hasColl then
@@ -248,17 +253,101 @@ function ServantBattlePassView:ShowBuyLevel()
   self.buylevelCell:SetData()
 end
 
-function ServantBattlePassView:ShowUpgrade()
-  if not self.upgradeView then
-    self.upgradeView = self:AddSubView("BattlePassUpgradeView", BattlePassUpgradeView)
+function ServantBattlePassView:IsBattlePassLevelMax()
+  local maxLv = BattlePassProxy.Instance.maxBpLevel or 0
+  return 0 < maxLv and maxLv <= BattlePassProxy.BPLevel()
+end
+
+function ServantBattlePassView:RefreshBuyLevelBtn()
+  local isMax = self:IsBattlePassLevelMax()
+  if self.buyLevelBtn then
+    self.buyLevelBtn:SetActive(not isMax)
   end
-  self.expPanel:SetActive(false)
-  self.exhibitPanel:SetActive(false)
-  self:Hide(self.levelPos)
-  self:Hide(self.exchangePos)
-  self:Hide(self.rankPos)
-  self:Show(self.upgradePos)
-  self.upgradeView:OnEnter()
+  if self.maxLevelBtn then
+    self.maxLevelBtn:SetActive(isMax)
+  end
+end
+
+function ServantBattlePassView:ShowUpgrade()
+  self:SetPushToStack(true)
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.BattlePassNewUpgradeView
+  })
+end
+
+function ServantBattlePassView:GetAutoOpenUpgradeKey()
+  local version = BattlePassProxy.Instance and BattlePassProxy.Instance.currentVersion
+  if not version then
+    return
+  end
+  return "BattlePassUpgradeOpened_" .. tostring(version)
+end
+
+function ServantBattlePassView:IsCurrentBattlePassUpgradeBought()
+  local advInfo = BattlePassProxy.Instance:GetUpgradeDepositByShow(1)
+  local superInfo = BattlePassProxy.Instance:GetUpgradeDepositByShow(2)
+  return BattlePassProxy.Instance:IsUpgradeDepositBought(advInfo) or BattlePassProxy.Instance:IsUpgradeDepositBought(superInfo)
+end
+
+function ServantBattlePassView:CanAutoOpenUpgradeView()
+  local key = self:GetAutoOpenUpgradeKey()
+  if not key then
+    return false
+  end
+  if FunctionPlayerPrefs.Me():GetBool(key, false, true) then
+    return false
+  end
+  if self:IsCurrentBattlePassUpgradeBought() then
+    return false
+  end
+  local advInfo = BattlePassProxy.Instance:GetUpgradeDepositByShow(1)
+  if not advInfo then
+    return false
+  end
+  if not BattlePassProxy.Instance:IsUpgradeDepositReachCondition(advInfo) then
+    return false
+  end
+  if not BattlePassProxy.Instance:IsUpgradeDepositInSale(advInfo) then
+    return false
+  end
+  return true
+end
+
+function ServantBattlePassView:TryDelayAutoOpenUpgradeView()
+  if self.autoOpenUpgradeDelay then
+    return true
+  end
+  self.autoOpenUpgradeDelay = true
+  self:DelayCall(function()
+    self.autoOpenUpgradeDelay = nil
+    if not (not self.__destroyed and self.gameObject) or self:ObjIsNil(self.gameObject) then
+      return
+    end
+    self:TryAutoOpenUpgradeView()
+  end, 1)
+  return true
+end
+
+function ServantBattlePassView:TryAutoOpenUpgradeView()
+  if not BattlePassProxy.Instance or not BattlePassProxy.Instance.inited then
+    return false
+  end
+  local version = BattlePassProxy.Instance.currentVersion
+  if not version or self.autoOpenUpgradeOpenedVersion == version then
+    return false
+  end
+  if not self:CanAutoOpenUpgradeView() then
+    return false
+  end
+  if UIManagerProxy.Instance:HasUINode(PanelConfig.BattlePassNewUpgradeView) then
+    return false
+  end
+  local key = self:GetAutoOpenUpgradeKey()
+  FunctionPlayerPrefs.Me():SetBool(key, true, true)
+  FunctionPlayerPrefs.Me():Save()
+  self.autoOpenUpgradeOpenedVersion = version
+  self:ShowUpgrade()
+  return true
 end
 
 function ServantBattlePassView:ShowRewardPreview()
@@ -347,24 +436,42 @@ end
 function ServantBattlePassView:UpdateExpInfo()
   local curLv = BattlePassProxy.BPLevel()
   self.exp_levelLab.text = curLv
-  local nextLv = curLv + 1
-  local curLvExp = BattlePassProxy.Instance:LevelConfig(curLv)
-  curLvExp = curLvExp and curLvExp.NeedExp or 0
-  local nextLvExp = BattlePassProxy.Instance:LevelConfig(nextLv)
-  nextLvExp = nextLvExp and nextLvExp.NeedExp or 0
   local bpExp = Game.Myself.data.userdata:Get(UDEnum.BATTLEPASS_EXP) or 0
-  if nextLvExp > bpExp then
-    local nextExp = nextLvExp - curLvExp
-    local curExp = bpExp - curLvExp
-    self.exp_expLab.text = curExp .. "/" .. nextExp
-    self.exp_expSlider.value = curExp / nextExp
+  local maxLv = BattlePassProxy.Instance.maxBpLevel or 0
+  if 0 < maxLv and curLv >= maxLv then
+    local overflowReward = BattlePassProxy.Instance.CurrentBPConfig and BattlePassProxy.Instance.CurrentBPConfig.OverflowReward
+    local overflowNeedExp = overflowReward and overflowReward.Exp or 0
+    if 0 < overflowNeedExp then
+      local maxLvConfig = BattlePassProxy.Instance:LevelConfig(maxLv)
+      local maxNeedExp = maxLvConfig and maxLvConfig.NeedExp or 0
+      local overflowRounds = BattlePassProxy.Instance:GetOverflowTotalRounds()
+      local curOverflowExp = bpExp - maxNeedExp - overflowRounds * overflowNeedExp
+      self.exp_expLab.text = curOverflowExp .. "/" .. overflowNeedExp
+      self.exp_expSlider.value = curOverflowExp / overflowNeedExp
+    else
+      self.exp_expLab.text = "MAX"
+      self.exp_expSlider.value = 1
+    end
   else
-    self.exp_expLab.text = "MAX"
-    self.exp_expSlider.value = 1
+    local nextLv = curLv + 1
+    local curLvExp = BattlePassProxy.Instance:LevelConfig(curLv)
+    curLvExp = curLvExp and curLvExp.NeedExp or 0
+    local nextLvExp = BattlePassProxy.Instance:LevelConfig(nextLv)
+    nextLvExp = nextLvExp and nextLvExp.NeedExp or 0
+    if bpExp < nextLvExp then
+      local nextExp = nextLvExp - curLvExp
+      local curExp = bpExp - curLvExp
+      self.exp_expLab.text = curExp .. "/" .. nextExp
+      self.exp_expSlider.value = curExp / nextExp
+    else
+      self.exp_expLab.text = "MAX"
+      self.exp_expSlider.value = 1
+    end
   end
   local weekExp = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_WEEK_BATTLEPASS_EXP) or 0
   local weekExpLimit = Game.Myself.data.userdata:Get(UDEnum.BATTLEPASS_MAXEXP) or 0
   self.exp_explimitLab.text = string.format(ZhString.ServantBattlePassView_explimit, weekExp, weekExpLimit)
+  self:RefreshBuyLevelBtn()
 end
 
 local tipData = {}
@@ -493,6 +600,7 @@ end
 
 function ServantBattlePassView:OnSessionShopQueryShopConfigCmd(data)
   self:BattlePassExchangeUpdateExchangeShop(data)
+  self:TryDelayAutoOpenUpgradeView()
 end
 
 function ServantBattlePassView:OnBattlePassLevelChange(data)
@@ -502,9 +610,18 @@ end
 
 function ServantBattlePassView:BattlePassUpdateExpInfo(data)
   self:UpdateExpInfo(data)
+  if self.levelView then
+    self.levelView:UpdateLevelView(data)
+  end
 end
 
 function ServantBattlePassView:OnBattlePassSyncInfo(data)
+  if self:TryDelayAutoOpenUpgradeView() then
+    return
+  end
+  if PanelConfig.BattlePassNewUpgradeView and UIManagerProxy.Instance:HasUINode(PanelConfig.BattlePassNewUpgradeView) then
+    return
+  end
   MsgManager.ShowMsgByID(34004)
   self:CloseSelf()
 end
@@ -518,9 +635,6 @@ end
 function ServantBattlePassView:BattlePassLevelUpdateLevelView(data)
   if self.levelView then
     self.levelView:UpdateLevelView(data)
-  end
-  if self.upgradeView then
-    self.upgradeView:UpdateView()
   end
 end
 

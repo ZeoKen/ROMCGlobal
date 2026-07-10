@@ -410,7 +410,7 @@ function ItemHandleCommand:TryAddSpecialFashionCheck(bagData, item)
     return
   end
   local itemType = item.staticData and item.staticData.Type
-  if itemType == 4301 then
+  if itemType == 4301 or itemType == 90 then
     return
   end
   GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {

@@ -7,7 +7,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45907879"
+    Desc = "##45923911"
   },
   [100102] = {
     id = 100102,
@@ -20,7 +20,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45907880"
+    Desc = "##45923912"
   },
   [100103] = {
     id = 100103,
@@ -33,7 +33,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45907881"
+    Desc = "##45923913"
   },
   [100104] = {
     id = 100104,
@@ -46,7 +46,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45907882"
+    Desc = "##45923914"
   },
   [100105] = {
     id = 100105,
@@ -59,7 +59,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45907883"
+    Desc = "##45923915"
   },
   [100106] = {
     id = 100106,
@@ -73,7 +73,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45907884"
+    Desc = "##45923916"
   },
   [100107] = {
     id = 100107,
@@ -87,7 +87,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45907885"
+    Desc = "##45923917"
   },
   [100108] = {
     id = 100108,
@@ -101,7 +101,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45907886"
+    Desc = "##45923918"
   },
   [100109] = {
     id = 100109,
@@ -115,7 +115,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45907887"
+    Desc = "##45923919"
   },
   [100110] = {
     id = 100110,
@@ -129,7 +129,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45907888"
+    Desc = "##45923920"
   },
   [100201] = {
     id = 100201,
@@ -139,7 +139,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45907889"
+    Desc = "##45923921"
   },
   [100202] = {
     id = 100202,
@@ -152,7 +152,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45907890"
+    Desc = "##45923922"
   },
   [100203] = {
     id = 100203,
@@ -165,7 +165,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45907891"
+    Desc = "##45923923"
   },
   [100204] = {
     id = 100204,
@@ -178,7 +178,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45907892"
+    Desc = "##45923924"
   },
   [100205] = {
     id = 100205,
@@ -191,7 +191,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45907893"
+    Desc = "##45923925"
   },
   [100206] = {
     id = 100206,
@@ -205,7 +205,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45907894"
+    Desc = "##45923926"
   },
   [100207] = {
     id = 100207,
@@ -219,7 +219,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45907895"
+    Desc = "##45923927"
   },
   [100208] = {
     id = 100208,
@@ -233,7 +233,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45907896"
+    Desc = "##45923928"
   },
   [100209] = {
     id = 100209,
@@ -247,7 +247,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45907897"
+    Desc = "##45923929"
   },
   [100210] = {
     id = 100210,
@@ -261,7 +261,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45907898"
+    Desc = "##45923930"
   },
   [100301] = {
     id = 100301,
@@ -271,7 +271,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45907899"
+    Desc = "##45923931"
   },
   [100302] = {
     id = 100302,
@@ -284,7 +284,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45907900"
+    Desc = "##45923932"
   },
   [100303] = {
     id = 100303,
@@ -297,7 +297,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45907901"
+    Desc = "##45923933"
   },
   [100304] = {
     id = 100304,
@@ -310,7 +310,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45907902"
+    Desc = "##45923934"
   },
   [100305] = {
     id = 100305,
@@ -323,7 +323,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45907903"
+    Desc = "##45923935"
   },
   [100306] = {
     id = 100306,
@@ -337,7 +337,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45907904"
+    Desc = "##45923936"
   },
   [100307] = {
     id = 100307,
@@ -351,7 +351,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45907905"
+    Desc = "##45923937"
   },
   [100308] = {
     id = 100308,
@@ -365,7 +365,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45907906"
+    Desc = "##45923938"
   },
   [100309] = {
     id = 100309,
@@ -379,7 +379,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45907907"
+    Desc = "##45923939"
   },
   [100310] = {
     id = 100310,
@@ -392,7 +392,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45907908"
+    Desc = "##45923940"
   },
   [100401] = {
     id = 100401,
@@ -402,7 +402,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45907909"
+    Desc = "##45923941"
   },
   [100402] = {
     id = 100402,
@@ -411,11 +411,11 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2272, 2362},
     ItemCost = {
-      {100, 20000}
+      {52121, 500}
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45907910"
+    Desc = "##45923942"
   },
   [100403] = {
     id = 100403,
@@ -424,11 +424,11 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2273, 2363},
     ItemCost = {
-      {100, 30000}
+      {52121, 1000}
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45907911"
+    Desc = "##45923943"
   },
   [100404] = {
     id = 100404,
@@ -437,11 +437,11 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2274, 2364},
     ItemCost = {
-      {100, 40000}
+      {52121, 1500}
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45907912"
+    Desc = "##45923944"
   },
   [100405] = {
     id = 100405,
@@ -450,11 +450,11 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2275, 2365},
     ItemCost = {
-      {100, 50000}
+      {52121, 2000}
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45907913"
+    Desc = "##45923945"
   },
   [100406] = {
     id = 100406,
@@ -463,11 +463,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2276, 2366},
     ItemCost = {
-      {100, 60000}
+      {52121, 2500},
+      {52426, 500}
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45907914"
+    Desc = "##45923946"
   },
   [100407] = {
     id = 100407,
@@ -476,11 +477,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2277, 2367},
     ItemCost = {
-      {100, 70000}
+      {52121, 3000},
+      {52426, 1000}
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45907915"
+    Desc = "##45923947"
   },
   [100408] = {
     id = 100408,
@@ -489,11 +491,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2278, 2368},
     ItemCost = {
-      {100, 80000}
+      {52121, 3000},
+      {52539, 10}
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45907916"
+    Desc = "##45923948"
   },
   [100409] = {
     id = 100409,
@@ -502,11 +505,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2279, 2369},
     ItemCost = {
-      {100, 90000}
+      {52121, 3000},
+      {52539, 15}
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45907917"
+    Desc = "##45923949"
   },
   [100410] = {
     id = 100410,
@@ -515,11 +519,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2280, 2370},
     ItemCost = {
-      {100, 100000}
+      {52121, 3000},
+      {52359, 2}
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45907918"
+    Desc = "##45923950"
   },
   [100501] = {
     id = 100501,
@@ -529,7 +534,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45907919"
+    Desc = "##45923951"
   },
   [100502] = {
     id = 100502,
@@ -538,11 +543,11 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2282, 2372},
     ItemCost = {
-      {100, 20000}
+      {52171, 500}
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45907920"
+    Desc = "##45923952"
   },
   [100503] = {
     id = 100503,
@@ -551,11 +556,11 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2283, 2373},
     ItemCost = {
-      {100, 30000}
+      {52171, 1000}
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45907921"
+    Desc = "##45923953"
   },
   [100504] = {
     id = 100504,
@@ -564,11 +569,11 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2284, 2374},
     ItemCost = {
-      {100, 40000}
+      {52171, 1500}
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45907922"
+    Desc = "##45923954"
   },
   [100505] = {
     id = 100505,
@@ -577,11 +582,11 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2285, 2375},
     ItemCost = {
-      {100, 50000}
+      {52171, 2000}
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45907923"
+    Desc = "##45923955"
   },
   [100506] = {
     id = 100506,
@@ -590,11 +595,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2286, 2376},
     ItemCost = {
-      {100, 60000}
+      {52171, 2500},
+      {52426, 500}
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45907924"
+    Desc = "##45923956"
   },
   [100507] = {
     id = 100507,
@@ -603,11 +609,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2287, 2377},
     ItemCost = {
-      {100, 70000}
+      {52171, 3000},
+      {52426, 1000}
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45907925"
+    Desc = "##45923957"
   },
   [100508] = {
     id = 100508,
@@ -616,11 +623,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2288, 2378},
     ItemCost = {
-      {100, 80000}
+      {52171, 3000},
+      {52539, 10}
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45907926"
+    Desc = "##45923958"
   },
   [100509] = {
     id = 100509,
@@ -629,11 +637,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2289, 2379},
     ItemCost = {
-      {100, 90000}
+      {52171, 3000},
+      {52539, 15}
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45907927"
+    Desc = "##45923959"
   },
   [100510] = {
     id = 100510,
@@ -642,11 +651,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2290, 2380},
     ItemCost = {
-      {100, 100000}
+      {52171, 3000},
+      {52359, 2}
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45907928"
+    Desc = "##45923960"
   },
   [100601] = {
     id = 100601,
@@ -656,7 +666,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45907929"
+    Desc = "##45923961"
   },
   [100602] = {
     id = 100602,
@@ -665,11 +675,11 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2312, 2402},
     ItemCost = {
-      {100, 20000}
+      {52426, 200}
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45907930"
+    Desc = "##45923962"
   },
   [100603] = {
     id = 100603,
@@ -678,11 +688,11 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2313, 2403},
     ItemCost = {
-      {100, 30000}
+      {52426, 400}
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45907931"
+    Desc = "##45923963"
   },
   [100604] = {
     id = 100604,
@@ -691,11 +701,11 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2314, 2404},
     ItemCost = {
-      {100, 40000}
+      {52426, 600}
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45907932"
+    Desc = "##45923964"
   },
   [100605] = {
     id = 100605,
@@ -704,11 +714,11 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2315, 2405},
     ItemCost = {
-      {100, 50000}
+      {52426, 800}
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45907933"
+    Desc = "##45923965"
   },
   [100606] = {
     id = 100606,
@@ -717,11 +727,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2316, 2406},
     ItemCost = {
-      {100, 60000}
+      {52426, 1000},
+      {52539, 10}
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45907934"
+    Desc = "##45923966"
   },
   [100607] = {
     id = 100607,
@@ -730,11 +741,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2317, 2407},
     ItemCost = {
-      {100, 70000}
+      {52426, 1000},
+      {52539, 15}
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45907935"
+    Desc = "##45923967"
   },
   [100608] = {
     id = 100608,
@@ -743,11 +755,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2318, 2408},
     ItemCost = {
-      {100, 80000}
+      {52539, 20},
+      {52359, 2}
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45907936"
+    Desc = "##45923968"
   },
   [100609] = {
     id = 100609,
@@ -756,11 +769,12 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2319, 2409},
     ItemCost = {
-      {100, 90000}
+      {52539, 25},
+      {52359, 4}
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45907937"
+    Desc = "##45923969"
   },
   [100610] = {
     id = 100610,
@@ -769,11 +783,11 @@ Table_SnowCrown = {
     Batch = 2,
     Effects = {2320, 2410},
     ItemCost = {
-      {100, 100000}
+      {52359, 6}
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45907938"
+    Desc = "##45923970"
   },
   [100701] = {
     id = 100701,
@@ -783,7 +797,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45907939"
+    Desc = "##45923971"
   },
   [100702] = {
     id = 100702,
@@ -792,11 +806,11 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2262, 2352},
     ItemCost = {
-      {100, 20000}
+      {52121, 500}
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45907940"
+    Desc = "##45923972"
   },
   [100703] = {
     id = 100703,
@@ -805,11 +819,11 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2263, 2353},
     ItemCost = {
-      {100, 30000}
+      {52121, 1000}
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45907941"
+    Desc = "##45923973"
   },
   [100704] = {
     id = 100704,
@@ -818,11 +832,11 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2264, 2354},
     ItemCost = {
-      {100, 40000}
+      {52121, 1500}
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45907942"
+    Desc = "##45923974"
   },
   [100705] = {
     id = 100705,
@@ -831,11 +845,11 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2265, 2355},
     ItemCost = {
-      {100, 50000}
+      {52121, 2000}
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45907943"
+    Desc = "##45923975"
   },
   [100706] = {
     id = 100706,
@@ -844,11 +858,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2266, 2356},
     ItemCost = {
-      {100, 60000}
+      {52121, 2500},
+      {52426, 500}
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45907944"
+    Desc = "##45923976"
   },
   [100707] = {
     id = 100707,
@@ -857,11 +872,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2267, 2357},
     ItemCost = {
-      {100, 70000}
+      {52121, 3000},
+      {52426, 1000}
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45907945"
+    Desc = "##45923977"
   },
   [100708] = {
     id = 100708,
@@ -870,11 +886,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2268, 2358},
     ItemCost = {
-      {100, 80000}
+      {52121, 3000},
+      {52539, 10}
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45907946"
+    Desc = "##45923978"
   },
   [100709] = {
     id = 100709,
@@ -883,11 +900,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2269, 2359},
     ItemCost = {
-      {100, 90000}
+      {52121, 3000},
+      {52539, 15}
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45907947"
+    Desc = "##45923979"
   },
   [100710] = {
     id = 100710,
@@ -896,11 +914,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2270, 2360},
     ItemCost = {
-      {100, 100000}
+      {52121, 3000},
+      {52359, 2}
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45907948"
+    Desc = "##45923980"
   },
   [100801] = {
     id = 100801,
@@ -910,7 +929,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45907949"
+    Desc = "##45923981"
   },
   [100802] = {
     id = 100802,
@@ -919,11 +938,11 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2292, 2382},
     ItemCost = {
-      {100, 20000}
+      {52171, 500}
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45907950"
+    Desc = "##45923982"
   },
   [100803] = {
     id = 100803,
@@ -932,11 +951,11 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2293, 2383},
     ItemCost = {
-      {100, 30000}
+      {52171, 1000}
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45907951"
+    Desc = "##45923983"
   },
   [100804] = {
     id = 100804,
@@ -945,11 +964,11 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2294, 2384},
     ItemCost = {
-      {100, 40000}
+      {52171, 1500}
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45907952"
+    Desc = "##45923984"
   },
   [100805] = {
     id = 100805,
@@ -958,11 +977,11 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2295, 2385},
     ItemCost = {
-      {100, 50000}
+      {52171, 2000}
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45907953"
+    Desc = "##45923985"
   },
   [100806] = {
     id = 100806,
@@ -971,11 +990,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2296, 2386},
     ItemCost = {
-      {100, 60000}
+      {52171, 2500},
+      {52426, 500}
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45907954"
+    Desc = "##45923986"
   },
   [100807] = {
     id = 100807,
@@ -984,11 +1004,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2297, 2387},
     ItemCost = {
-      {100, 70000}
+      {52171, 3000},
+      {52426, 1000}
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45907955"
+    Desc = "##45923987"
   },
   [100808] = {
     id = 100808,
@@ -997,11 +1018,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2298, 2388},
     ItemCost = {
-      {100, 80000}
+      {52171, 3000},
+      {52539, 10}
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45907956"
+    Desc = "##45923988"
   },
   [100809] = {
     id = 100809,
@@ -1010,11 +1032,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2299, 2389},
     ItemCost = {
-      {100, 90000}
+      {52171, 3000},
+      {52539, 15}
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45907957"
+    Desc = "##45923989"
   },
   [100810] = {
     id = 100810,
@@ -1023,11 +1046,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2300, 2390},
     ItemCost = {
-      {100, 100000}
+      {52171, 3000},
+      {52359, 2}
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45907958"
+    Desc = "##45923990"
   },
   [100901] = {
     id = 100901,
@@ -1037,7 +1061,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45907959"
+    Desc = "##45923991"
   },
   [100902] = {
     id = 100902,
@@ -1046,11 +1070,11 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2302, 2392},
     ItemCost = {
-      {100, 20000}
+      {52426, 200}
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45907960"
+    Desc = "##45923992"
   },
   [100903] = {
     id = 100903,
@@ -1059,11 +1083,11 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2303, 2393},
     ItemCost = {
-      {100, 30000}
+      {52426, 400}
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45907961"
+    Desc = "##45923993"
   },
   [100904] = {
     id = 100904,
@@ -1072,11 +1096,11 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2304, 2394},
     ItemCost = {
-      {100, 40000}
+      {52426, 600}
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45907962"
+    Desc = "##45923994"
   },
   [100905] = {
     id = 100905,
@@ -1085,11 +1109,11 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2305, 2395},
     ItemCost = {
-      {100, 50000}
+      {52426, 800}
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45907963"
+    Desc = "##45923995"
   },
   [100906] = {
     id = 100906,
@@ -1098,11 +1122,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2306, 2396},
     ItemCost = {
-      {100, 60000}
+      {52426, 1000},
+      {52539, 10}
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45907964"
+    Desc = "##45923996"
   },
   [100907] = {
     id = 100907,
@@ -1111,11 +1136,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2307, 2397},
     ItemCost = {
-      {100, 70000}
+      {52426, 1000},
+      {52539, 15}
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45907965"
+    Desc = "##45923997"
   },
   [100908] = {
     id = 100908,
@@ -1124,11 +1150,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2308, 2398},
     ItemCost = {
-      {100, 80000}
+      {52539, 20},
+      {52359, 2}
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45907966"
+    Desc = "##45923998"
   },
   [100909] = {
     id = 100909,
@@ -1137,11 +1164,12 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2309, 2399},
     ItemCost = {
-      {100, 90000}
+      {52539, 25},
+      {52359, 4}
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45907967"
+    Desc = "##45923999"
   },
   [100910] = {
     id = 100910,
@@ -1150,11 +1178,11 @@ Table_SnowCrown = {
     Batch = 3,
     Effects = {2310, 2400},
     ItemCost = {
-      {100, 100000}
+      {52359, 6}
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45907968"
+    Desc = "##45924000"
   }
 }
 Table_SnowCrown_fields = {

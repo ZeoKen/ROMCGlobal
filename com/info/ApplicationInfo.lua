@@ -33,7 +33,7 @@ function ApplicationInfo.IsRunOnMSWindows()
 end
 
 function ApplicationInfo.IsPcWebPay()
-  if ApplicationInfo.IsRunOnWindowns() and (BranchMgr.IsTW() or BranchMgr.IsJapan() or BranchMgr.IsKorea()) then
+  if ApplicationInfo.IsRunOnWindowns() and (BranchMgr.IsTW() or BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR()) then
     return true
   else
     return false

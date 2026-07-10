@@ -1,6 +1,13 @@
 autoImport("BaseTip")
 GeneralHelp = class("GeneralHelp", BaseTip)
 
+function GeneralHelp:IsExternalUrl(url)
+  if type(url) ~= "string" then
+    return false
+  end
+  return string.sub(url, 1, 7) == "http://" or string.sub(url, 1, 8) == "https://" or string.sub(url, 1, 7) == "sysurl:"
+end
+
 function GeneralHelp:ctor(prefab, parent, independent, closecallback, closecallbackArg)
   GeneralHelp.super.ctor(self, prefab, parent)
   self.parent = parent
@@ -49,6 +56,10 @@ function GeneralHelp:FindObjs()
   end
   
   function self.urlLable.callback(url)
+    if self:IsExternalUrl(url) then
+      ApplicationInfo.OpenUrl(url)
+      return
+    end
     local tb = Table_ShortcutPower[tonumber(url)]
     if tb ~= nil then
       self:CloseSelf()
@@ -66,7 +77,14 @@ end
 function GeneralHelp:SetData(data)
   self.data = data
   if data then
-    self.spritelabel:SetText(OverSea.LangManager.Instance():GetLangByKey(data))
+    local text = OverSea.LangManager.Instance():GetLangByKey(data)
+    if text then
+      text = text:gsub("^([ \t]*%d+%.)[ \t]+", "%1")
+      text = text:gsub([[
+(
+[ 	]*%d+%.)[ 	]+]], "%1")
+    end
+    self.spritelabel:SetText(text)
     self.boundHelper:UpdateAnchors()
     self.scrollView:ResetPosition()
   end

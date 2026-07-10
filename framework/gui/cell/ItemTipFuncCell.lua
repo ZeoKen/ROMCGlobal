@@ -1,12 +1,23 @@
 local BaseCell = autoImport("BaseCell")
 ItemTipFuncCell = class("ItemTipFuncCell", BaseCell)
-local backgroundSprite = {
-  [1] = "new-com_btn_c",
-  [2] = "new-com_btn_a"
+ItemTipFuncCell.EBtnStyle = {
+  Yellow = 1,
+  Blue = 2,
+  Red = 3,
+  Grey = 4
 }
-local outlineColor = {
-  [1] = Color(0.7686274509803922, 0.5254901960784314, 0, 1),
-  [2] = Color(0.27058823529411763, 0.37254901960784315, 0.6823529411764706, 1)
+local BtnStyle = ItemTipFuncCell.EBtnStyle
+ItemTipFuncCell.backgroundSprite = {
+  [BtnStyle.Yellow] = "new-com_btn_c",
+  [BtnStyle.Blue] = "new-com_btn_a",
+  [BtnStyle.Red] = "new-com_btn_red",
+  [BtnStyle.Grey] = "new-com_btn_a_gray"
+}
+ItemTipFuncCell.outlineColor = {
+  [BtnStyle.Yellow] = Color(0.7686274509803922, 0.5254901960784314, 0, 1),
+  [BtnStyle.Blue] = Color(0.27058823529411763, 0.37254901960784315, 0.6823529411764706, 1),
+  [BtnStyle.Red] = Color(0.6901960784313725, 0.29411764705882354, 0.29411764705882354, 1),
+  [BtnStyle.Grey] = Color(0.39215686274509803, 0.40784313725490196, 0.4627450980392157, 1)
 }
 
 function ItemTipFuncCell:Init()
@@ -30,8 +41,8 @@ function ItemTipFuncCell:SetData(data)
     if self.funcTip then
       self:Hide(self.funcTip)
     end
-    self.bg.spriteName = backgroundSprite[data.btnStyle or 1]
-    self.label.effectColor = outlineColor[data.btnStyle or 1]
+    self.bg.spriteName = ItemTipFuncCell.backgroundSprite[data.btnStyle or BtnStyle.Yellow]
+    self.label.effectColor = ItemTipFuncCell.outlineColor[data.btnStyle or BtnStyle.Yellow]
     if data.type == "Active" then
       if data.itemData and data.itemData.isactive then
         self.label.text = ZhString.ItemTipFuncCell_Down
@@ -75,7 +86,7 @@ function ItemTipFuncCell:SetData(data)
     else
       self.collider.enabled = true
       self.bg.color = ColorUtil.NGUIWhite
-      self.label.effectColor = outlineColor[data.btnStyle or 1]
+      self.label.effectColor = ItemTipFuncCell.outlineColor[data.btnStyle or 1]
     end
   else
     self.gameObject:SetActive(false)

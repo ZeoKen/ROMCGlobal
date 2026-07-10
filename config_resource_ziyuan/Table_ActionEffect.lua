@@ -4381,1191 +4381,1491 @@ Table_ActionEffect = {
   },
   [731] = {
     id = 731,
+    BodyID = 61667,
+    NameAction = "playshow",
+    EffectID = 357
+  },
+  [732] = {
+    id = 732,
     BodyID = 61663,
     NameAction = "playshow",
     EffectID = 353
   },
-  [732] = {
-    id = 732,
+  [733] = {
+    id = 733,
     BodyID = 61664,
     NameAction = "playshow",
     EffectID = 354
   },
-  [733] = {
-    id = 733,
+  [734] = {
+    id = 734,
     BodyID = 61665,
     NameAction = "playshow",
     EffectID = 355
   },
-  [734] = {
-    id = 734,
+  [735] = {
+    id = 735,
     BodyID = 61666,
     NameAction = "playshow",
     EffectID = 356
   },
-  [735] = {
-    id = 735,
+  [736] = {
+    id = 736,
     BodyID = 61637,
     NameAction = "playshow",
     EffectID = 340
   },
-  [736] = {
-    id = 736,
+  [737] = {
+    id = 737,
     BodyID = 61642,
     NameAction = "playshow",
     EffectID = 341
   },
-  [737] = {
-    id = 737,
+  [738] = {
+    id = 738,
     BodyID = 61635,
     NameAction = "playshow",
     EffectID = 342
   },
-  [738] = {
-    id = 738,
+  [739] = {
+    id = 739,
     BodyID = 61640,
     NameAction = "playshow",
     EffectID = 343
   },
-  [739] = {
-    id = 739,
+  [740] = {
+    id = 740,
     BodyID = 61636,
     NameAction = "playshow",
     EffectID = 344
   },
-  [740] = {
-    id = 740,
+  [741] = {
+    id = 741,
     BodyID = 61641,
     NameAction = "playshow",
     EffectID = 345
   },
-  [741] = {
-    id = 741,
+  [742] = {
+    id = 742,
     BodyID = 61634,
     NameAction = "playshow",
     EffectID = 346
   },
-  [742] = {
-    id = 742,
+  [743] = {
+    id = 743,
     BodyID = 61639,
     NameAction = "playshow",
     EffectID = 347
   },
-  [743] = {
-    id = 743,
+  [744] = {
+    id = 744,
     BodyID = 61716,
     NameAction = "playshow",
     EffectID = 358
   },
-  [744] = {
-    id = 744,
+  [745] = {
+    id = 745,
     BodyID = 61998,
     NameAction = "playshow",
     EffectID = 359
   },
-  [745] = {
-    id = 745,
+  [746] = {
+    id = 746,
     BodyID = 61999,
     NameAction = "playshow",
     EffectID = 360
   },
-  [746] = {
-    id = 746,
+  [747] = {
+    id = 747,
     BodyID = 62000,
     NameAction = "playshow",
     EffectID = 361
   },
-  [747] = {
-    id = 747,
+  [748] = {
+    id = 748,
     BodyID = 62001,
     NameAction = "playshow",
     EffectID = 362
   },
-  [748] = {
-    id = 748,
+  [749] = {
+    id = 749,
     BodyID = 61777,
     NameAction = "playshow",
     EffectID = 364
   },
-  [749] = {
-    id = 749,
+  [750] = {
+    id = 750,
     BodyID = 61782,
     NameAction = "playshow",
     EffectID = 365
   },
-  [750] = {
-    id = 750,
-    BodyID = 61778,
-    NameAction = "playshow",
-    EffectID = 364
-  },
   [751] = {
     id = 751,
-    BodyID = 61779,
+    BodyID = 61778,
     NameAction = "playshow",
     EffectID = 364
   },
   [752] = {
     id = 752,
-    BodyID = 61780,
+    BodyID = 61779,
     NameAction = "playshow",
     EffectID = 364
   },
   [753] = {
     id = 753,
-    BodyID = 61781,
+    BodyID = 61780,
     NameAction = "playshow",
     EffectID = 364
   },
   [754] = {
     id = 754,
-    BodyID = 61783,
+    BodyID = 61781,
     NameAction = "playshow",
-    EffectID = 365
+    EffectID = 364
   },
   [755] = {
     id = 755,
-    BodyID = 61784,
+    BodyID = 61783,
     NameAction = "playshow",
     EffectID = 365
   },
   [756] = {
     id = 756,
-    BodyID = 61785,
+    BodyID = 61784,
     NameAction = "playshow",
     EffectID = 365
   },
   [757] = {
     id = 757,
-    BodyID = 61786,
+    BodyID = 61785,
     NameAction = "playshow",
     EffectID = 365
   },
   [758] = {
     id = 758,
-    BodyID = 61787,
+    BodyID = 61786,
     NameAction = "playshow",
-    EffectID = 366
+    EffectID = 365
   },
   [759] = {
     id = 759,
-    BodyID = 61788,
+    BodyID = 61787,
     NameAction = "playshow",
     EffectID = 366
   },
   [760] = {
     id = 760,
-    BodyID = 61789,
+    BodyID = 61788,
     NameAction = "playshow",
     EffectID = 366
   },
   [761] = {
     id = 761,
-    BodyID = 61790,
+    BodyID = 61789,
     NameAction = "playshow",
     EffectID = 366
   },
   [762] = {
     id = 762,
-    BodyID = 61791,
+    BodyID = 61790,
     NameAction = "playshow",
     EffectID = 366
   },
   [763] = {
     id = 763,
-    BodyID = 61792,
+    BodyID = 61791,
     NameAction = "playshow",
-    EffectID = 367
+    EffectID = 366
   },
   [764] = {
     id = 764,
-    BodyID = 61793,
+    BodyID = 61792,
     NameAction = "playshow",
     EffectID = 367
   },
   [765] = {
     id = 765,
-    BodyID = 61794,
+    BodyID = 61793,
     NameAction = "playshow",
     EffectID = 367
   },
   [766] = {
     id = 766,
-    BodyID = 61795,
+    BodyID = 61794,
     NameAction = "playshow",
     EffectID = 367
   },
   [767] = {
     id = 767,
-    BodyID = 61796,
+    BodyID = 61795,
     NameAction = "playshow",
     EffectID = 367
   },
   [768] = {
     id = 768,
-    BodyID = 61797,
+    BodyID = 61796,
     NameAction = "playshow",
-    EffectID = 368
+    EffectID = 367
   },
   [769] = {
     id = 769,
-    BodyID = 61798,
+    BodyID = 61797,
     NameAction = "playshow",
     EffectID = 368
   },
   [770] = {
     id = 770,
-    BodyID = 61799,
+    BodyID = 61798,
     NameAction = "playshow",
     EffectID = 368
   },
   [771] = {
     id = 771,
-    BodyID = 61800,
+    BodyID = 61799,
     NameAction = "playshow",
     EffectID = 368
   },
   [772] = {
     id = 772,
-    BodyID = 61801,
+    BodyID = 61800,
     NameAction = "playshow",
     EffectID = 368
   },
   [773] = {
     id = 773,
-    BodyID = 61802,
+    BodyID = 61801,
     NameAction = "playshow",
-    EffectID = 369
+    EffectID = 368
   },
   [774] = {
     id = 774,
-    BodyID = 61803,
+    BodyID = 61802,
     NameAction = "playshow",
     EffectID = 369
   },
   [775] = {
     id = 775,
-    BodyID = 61804,
+    BodyID = 61803,
     NameAction = "playshow",
     EffectID = 369
   },
   [776] = {
     id = 776,
-    BodyID = 61805,
+    BodyID = 61804,
     NameAction = "playshow",
     EffectID = 369
   },
   [777] = {
     id = 777,
-    BodyID = 61806,
+    BodyID = 61805,
     NameAction = "playshow",
     EffectID = 369
   },
   [778] = {
     id = 778,
-    BodyID = 61807,
+    BodyID = 61806,
     NameAction = "playshow",
-    EffectID = 370
+    EffectID = 369
   },
   [779] = {
     id = 779,
-    BodyID = 61808,
+    BodyID = 61807,
     NameAction = "playshow",
     EffectID = 370
   },
   [780] = {
     id = 780,
-    BodyID = 61809,
+    BodyID = 61808,
     NameAction = "playshow",
     EffectID = 370
   },
   [781] = {
     id = 781,
-    BodyID = 61810,
+    BodyID = 61809,
     NameAction = "playshow",
     EffectID = 370
   },
   [782] = {
     id = 782,
-    BodyID = 61811,
+    BodyID = 61810,
     NameAction = "playshow",
     EffectID = 370
   },
   [783] = {
     id = 783,
-    BodyID = 61812,
+    BodyID = 61811,
     NameAction = "playshow",
-    EffectID = 371
+    EffectID = 370
   },
   [784] = {
     id = 784,
-    BodyID = 61813,
+    BodyID = 61812,
     NameAction = "playshow",
     EffectID = 371
   },
   [785] = {
     id = 785,
-    BodyID = 61814,
+    BodyID = 61813,
     NameAction = "playshow",
     EffectID = 371
   },
   [786] = {
     id = 786,
-    BodyID = 61815,
+    BodyID = 61814,
     NameAction = "playshow",
     EffectID = 371
   },
   [787] = {
     id = 787,
-    BodyID = 61816,
+    BodyID = 61815,
     NameAction = "playshow",
     EffectID = 371
   },
   [788] = {
     id = 788,
-    BodyID = 62012,
+    BodyID = 61816,
     NameAction = "playshow",
-    EffectID = 372
+    EffectID = 371
   },
   [789] = {
     id = 789,
-    BodyID = 62014,
+    BodyID = 62012,
     NameAction = "playshow",
     EffectID = 372
   },
   [790] = {
     id = 790,
+    BodyID = 62014,
+    NameAction = "playshow",
+    EffectID = 372
+  },
+  [791] = {
+    id = 791,
     BodyID = 62002,
     NameAction = "playshow",
     EffectID = 358
   },
-  [791] = {
-    id = 791,
+  [792] = {
+    id = 792,
     BodyID = 62011,
     NameAction = "playshow",
     EffectID = 363
   },
-  [792] = {
-    id = 792,
+  [793] = {
+    id = 793,
     BodyID = 61921,
     NameAction = "playshow",
     EffectID = 374
   },
-  [793] = {
-    id = 793,
+  [794] = {
+    id = 794,
     BodyID = 61926,
     NameAction = "playshow",
     EffectID = 375
   },
-  [794] = {
-    id = 794,
+  [795] = {
+    id = 795,
     BodyID = 61931,
     NameAction = "playshow",
     EffectID = 376
   },
-  [795] = {
-    id = 795,
+  [796] = {
+    id = 796,
     BodyID = 61936,
     NameAction = "playshow",
     EffectID = 377
   },
-  [796] = {
-    id = 796,
-    BodyID = 61917,
-    NameAction = "playshow",
-    EffectID = 374
-  },
   [797] = {
     id = 797,
-    BodyID = 61918,
+    BodyID = 61917,
     NameAction = "playshow",
     EffectID = 374
   },
   [798] = {
     id = 798,
-    BodyID = 61919,
+    BodyID = 61918,
     NameAction = "playshow",
     EffectID = 374
   },
   [799] = {
     id = 799,
-    BodyID = 61920,
+    BodyID = 61919,
     NameAction = "playshow",
     EffectID = 374
   },
   [800] = {
     id = 800,
-    BodyID = 61922,
+    BodyID = 61920,
     NameAction = "playshow",
-    EffectID = 375
+    EffectID = 374
   },
   [801] = {
     id = 801,
-    BodyID = 61923,
+    BodyID = 61922,
     NameAction = "playshow",
     EffectID = 375
   },
   [802] = {
     id = 802,
-    BodyID = 61924,
+    BodyID = 61923,
     NameAction = "playshow",
     EffectID = 375
   },
   [803] = {
     id = 803,
-    BodyID = 61925,
+    BodyID = 61924,
     NameAction = "playshow",
     EffectID = 375
   },
   [804] = {
     id = 804,
-    BodyID = 61927,
+    BodyID = 61925,
     NameAction = "playshow",
-    EffectID = 376
+    EffectID = 375
   },
   [805] = {
     id = 805,
-    BodyID = 61928,
+    BodyID = 61927,
     NameAction = "playshow",
     EffectID = 376
   },
   [806] = {
     id = 806,
-    BodyID = 61929,
+    BodyID = 61928,
     NameAction = "playshow",
     EffectID = 376
   },
   [807] = {
     id = 807,
-    BodyID = 61930,
+    BodyID = 61929,
     NameAction = "playshow",
     EffectID = 376
   },
   [808] = {
     id = 808,
-    BodyID = 61932,
+    BodyID = 61930,
     NameAction = "playshow",
-    EffectID = 377
+    EffectID = 376
   },
   [809] = {
     id = 809,
-    BodyID = 61933,
+    BodyID = 61932,
     NameAction = "playshow",
     EffectID = 377
   },
   [810] = {
     id = 810,
-    BodyID = 61934,
+    BodyID = 61933,
     NameAction = "playshow",
     EffectID = 377
   },
   [811] = {
     id = 811,
-    BodyID = 61935,
+    BodyID = 61934,
     NameAction = "playshow",
     EffectID = 377
   },
   [812] = {
     id = 812,
+    BodyID = 61935,
+    NameAction = "playshow",
+    EffectID = 377
+  },
+  [813] = {
+    id = 813,
     BodyID = 62035,
     NameAction = "playshow",
     EffectID = 378
   },
-  [813] = {
-    id = 813,
+  [814] = {
+    id = 814,
     BodyID = 62036,
     NameAction = "playshow",
     EffectID = 379
   },
-  [814] = {
-    id = 814,
+  [815] = {
+    id = 815,
     BodyID = 62037,
     NameAction = "playshow",
     EffectID = 380
   },
-  [815] = {
-    id = 815,
+  [816] = {
+    id = 816,
     BodyID = 62038,
     NameAction = "playshow",
     EffectID = 381
   },
-  [816] = {
-    id = 816,
-    BodyID = 61937,
-    NameAction = "playshow",
-    EffectID = 382
-  },
   [817] = {
     id = 817,
-    BodyID = 61938,
+    BodyID = 61937,
     NameAction = "playshow",
     EffectID = 382
   },
   [818] = {
     id = 818,
-    BodyID = 61939,
+    BodyID = 61938,
     NameAction = "playshow",
     EffectID = 382
   },
   [819] = {
     id = 819,
-    BodyID = 61940,
+    BodyID = 61939,
     NameAction = "playshow",
     EffectID = 382
   },
   [820] = {
     id = 820,
-    BodyID = 61941,
+    BodyID = 61940,
     NameAction = "playshow",
     EffectID = 382
   },
   [821] = {
     id = 821,
-    BodyID = 61942,
+    BodyID = 61941,
     NameAction = "playshow",
-    EffectID = 383
+    EffectID = 382
   },
   [822] = {
     id = 822,
-    BodyID = 61943,
+    BodyID = 61942,
     NameAction = "playshow",
     EffectID = 383
   },
   [823] = {
     id = 823,
-    BodyID = 61944,
+    BodyID = 61943,
     NameAction = "playshow",
     EffectID = 383
   },
   [824] = {
     id = 824,
-    BodyID = 61945,
+    BodyID = 61944,
     NameAction = "playshow",
     EffectID = 383
   },
   [825] = {
     id = 825,
-    BodyID = 61946,
+    BodyID = 61945,
     NameAction = "playshow",
     EffectID = 383
   },
   [826] = {
     id = 826,
-    BodyID = 61947,
+    BodyID = 61946,
     NameAction = "playshow",
-    EffectID = 384
+    EffectID = 383
   },
   [827] = {
     id = 827,
-    BodyID = 61948,
+    BodyID = 61947,
     NameAction = "playshow",
     EffectID = 384
   },
   [828] = {
     id = 828,
-    BodyID = 61949,
+    BodyID = 61948,
     NameAction = "playshow",
     EffectID = 384
   },
   [829] = {
     id = 829,
-    BodyID = 61950,
+    BodyID = 61949,
     NameAction = "playshow",
     EffectID = 384
   },
   [830] = {
     id = 830,
-    BodyID = 61951,
+    BodyID = 61950,
     NameAction = "playshow",
     EffectID = 384
   },
   [831] = {
     id = 831,
-    BodyID = 61952,
+    BodyID = 61951,
     NameAction = "playshow",
-    EffectID = 385
+    EffectID = 384
   },
   [832] = {
     id = 832,
-    BodyID = 61953,
+    BodyID = 61952,
     NameAction = "playshow",
     EffectID = 385
   },
   [833] = {
     id = 833,
-    BodyID = 61954,
+    BodyID = 61953,
     NameAction = "playshow",
     EffectID = 385
   },
   [834] = {
     id = 834,
-    BodyID = 61955,
+    BodyID = 61954,
     NameAction = "playshow",
     EffectID = 385
   },
   [835] = {
     id = 835,
-    BodyID = 61956,
+    BodyID = 61955,
     NameAction = "playshow",
     EffectID = 385
   },
   [836] = {
     id = 836,
+    BodyID = 61956,
+    NameAction = "playshow",
+    EffectID = 385
+  },
+  [837] = {
+    id = 837,
     BodyID = 62028,
     NameAction = "playshow",
     EffectID = 373
   },
-  [837] = {
-    id = 837,
-    BodyID = 61957,
-    NameAction = "playshow",
-    EffectID = 390
-  },
   [838] = {
     id = 838,
-    BodyID = 61958,
+    BodyID = 61957,
     NameAction = "playshow",
     EffectID = 390
   },
   [839] = {
     id = 839,
-    BodyID = 61959,
+    BodyID = 61958,
     NameAction = "playshow",
     EffectID = 390
   },
   [840] = {
     id = 840,
-    BodyID = 61960,
+    BodyID = 61959,
     NameAction = "playshow",
     EffectID = 390
   },
   [841] = {
     id = 841,
-    BodyID = 61961,
+    BodyID = 61960,
     NameAction = "playshow",
     EffectID = 390
   },
   [842] = {
     id = 842,
-    BodyID = 61962,
+    BodyID = 61961,
     NameAction = "playshow",
-    EffectID = 391
+    EffectID = 390
   },
   [843] = {
     id = 843,
-    BodyID = 61963,
+    BodyID = 61962,
     NameAction = "playshow",
     EffectID = 391
   },
   [844] = {
     id = 844,
-    BodyID = 61964,
+    BodyID = 61963,
     NameAction = "playshow",
     EffectID = 391
   },
   [845] = {
     id = 845,
-    BodyID = 61965,
+    BodyID = 61964,
     NameAction = "playshow",
     EffectID = 391
   },
   [846] = {
     id = 846,
-    BodyID = 61966,
+    BodyID = 61965,
     NameAction = "playshow",
     EffectID = 391
   },
   [847] = {
     id = 847,
-    BodyID = 61967,
+    BodyID = 61966,
     NameAction = "playshow",
-    EffectID = 392
+    EffectID = 391
   },
   [848] = {
     id = 848,
-    BodyID = 61968,
+    BodyID = 61967,
     NameAction = "playshow",
     EffectID = 392
   },
   [849] = {
     id = 849,
-    BodyID = 61969,
+    BodyID = 61968,
     NameAction = "playshow",
     EffectID = 392
   },
   [850] = {
     id = 850,
-    BodyID = 61970,
+    BodyID = 61969,
     NameAction = "playshow",
     EffectID = 392
   },
   [851] = {
     id = 851,
-    BodyID = 61971,
+    BodyID = 61970,
     NameAction = "playshow",
     EffectID = 392
   },
   [852] = {
     id = 852,
-    BodyID = 61972,
+    BodyID = 61971,
     NameAction = "playshow",
-    EffectID = 393
+    EffectID = 392
   },
   [853] = {
     id = 853,
-    BodyID = 61973,
+    BodyID = 61972,
     NameAction = "playshow",
     EffectID = 393
   },
   [854] = {
     id = 854,
-    BodyID = 61974,
+    BodyID = 61973,
     NameAction = "playshow",
     EffectID = 393
   },
   [855] = {
     id = 855,
-    BodyID = 61975,
+    BodyID = 61974,
     NameAction = "playshow",
     EffectID = 393
   },
   [856] = {
     id = 856,
-    BodyID = 61976,
+    BodyID = 61975,
     NameAction = "playshow",
     EffectID = 393
   },
   [857] = {
     id = 857,
+    BodyID = 61976,
+    NameAction = "playshow",
+    EffectID = 393
+  },
+  [858] = {
+    id = 858,
     BodyID = 62020,
     NameAction = "playshow",
     EffectID = 386
   },
-  [858] = {
-    id = 858,
+  [859] = {
+    id = 859,
     BodyID = 62022,
     NameAction = "playshow",
     EffectID = 387
   },
-  [859] = {
-    id = 859,
+  [860] = {
+    id = 860,
     BodyID = 62024,
     NameAction = "playshow",
     EffectID = 388
   },
-  [860] = {
-    id = 860,
+  [861] = {
+    id = 861,
     BodyID = 62026,
     NameAction = "playshow",
     EffectID = 389
   },
-  [861] = {
-    id = 861,
-    BodyID = 61977,
-    NameAction = "playshow",
-    EffectID = 394
-  },
   [862] = {
     id = 862,
-    BodyID = 61978,
+    BodyID = 61977,
     NameAction = "playshow",
     EffectID = 394
   },
   [863] = {
     id = 863,
-    BodyID = 61979,
+    BodyID = 61978,
     NameAction = "playshow",
     EffectID = 394
   },
   [864] = {
     id = 864,
-    BodyID = 61980,
+    BodyID = 61979,
     NameAction = "playshow",
     EffectID = 394
   },
   [865] = {
     id = 865,
-    BodyID = 61981,
+    BodyID = 61980,
     NameAction = "playshow",
     EffectID = 394
   },
   [866] = {
     id = 866,
-    BodyID = 61982,
+    BodyID = 61981,
     NameAction = "playshow",
-    EffectID = 395
+    EffectID = 394
   },
   [867] = {
     id = 867,
-    BodyID = 61983,
+    BodyID = 61982,
     NameAction = "playshow",
     EffectID = 395
   },
   [868] = {
     id = 868,
-    BodyID = 61984,
+    BodyID = 61983,
     NameAction = "playshow",
     EffectID = 395
   },
   [869] = {
     id = 869,
-    BodyID = 61985,
+    BodyID = 61984,
     NameAction = "playshow",
     EffectID = 395
   },
   [870] = {
     id = 870,
-    BodyID = 61986,
+    BodyID = 61985,
     NameAction = "playshow",
     EffectID = 395
   },
   [871] = {
     id = 871,
-    BodyID = 61987,
+    BodyID = 61986,
     NameAction = "playshow",
-    EffectID = 396
+    EffectID = 395
   },
   [872] = {
     id = 872,
-    BodyID = 61988,
+    BodyID = 61987,
     NameAction = "playshow",
     EffectID = 396
   },
   [873] = {
     id = 873,
-    BodyID = 61990,
+    BodyID = 61988,
     NameAction = "playshow",
     EffectID = 396
   },
   [874] = {
     id = 874,
-    BodyID = 61991,
+    BodyID = 61990,
     NameAction = "playshow",
     EffectID = 396
   },
   [875] = {
     id = 875,
-    BodyID = 61992,
+    BodyID = 61991,
     NameAction = "playshow",
-    EffectID = 397
+    EffectID = 396
   },
   [876] = {
     id = 876,
-    BodyID = 61993,
+    BodyID = 61992,
     NameAction = "playshow",
     EffectID = 397
   },
   [877] = {
     id = 877,
-    BodyID = 61994,
+    BodyID = 61993,
     NameAction = "playshow",
     EffectID = 397
   },
   [878] = {
     id = 878,
-    BodyID = 61995,
+    BodyID = 61994,
     NameAction = "playshow",
     EffectID = 397
   },
   [879] = {
     id = 879,
-    BodyID = 61996,
+    BodyID = 61995,
     NameAction = "playshow",
     EffectID = 397
   },
   [880] = {
     id = 880,
+    BodyID = 61996,
+    NameAction = "playshow",
+    EffectID = 397
+  },
+  [881] = {
+    id = 881,
     BodyID = 61989,
     NameAction = "playshow",
     EffectID = 396
   },
-  [881] = {
-    id = 881,
-    BodyID = 62060,
-    NameAction = "playshow",
-    EffectID = 406
-  },
   [882] = {
     id = 882,
-    BodyID = 62061,
+    BodyID = 62060,
     NameAction = "playshow",
     EffectID = 406
   },
   [883] = {
     id = 883,
-    BodyID = 62062,
+    BodyID = 62061,
     NameAction = "playshow",
     EffectID = 406
   },
   [884] = {
     id = 884,
-    BodyID = 62063,
+    BodyID = 62062,
     NameAction = "playshow",
     EffectID = 406
   },
   [885] = {
     id = 885,
-    BodyID = 62064,
+    BodyID = 62063,
     NameAction = "playshow",
     EffectID = 406
   },
   [886] = {
     id = 886,
-    BodyID = 62065,
+    BodyID = 62064,
     NameAction = "playshow",
-    EffectID = 407
+    EffectID = 406
   },
   [887] = {
     id = 887,
-    BodyID = 62066,
+    BodyID = 62065,
     NameAction = "playshow",
     EffectID = 407
   },
   [888] = {
     id = 888,
-    BodyID = 62067,
+    BodyID = 62066,
     NameAction = "playshow",
     EffectID = 407
   },
   [889] = {
     id = 889,
-    BodyID = 62068,
+    BodyID = 62067,
     NameAction = "playshow",
     EffectID = 407
   },
   [890] = {
     id = 890,
-    BodyID = 62069,
+    BodyID = 62068,
     NameAction = "playshow",
     EffectID = 407
   },
   [891] = {
     id = 891,
-    BodyID = 62070,
+    BodyID = 62069,
     NameAction = "playshow",
-    EffectID = 408
+    EffectID = 407
   },
   [892] = {
     id = 892,
-    BodyID = 62071,
+    BodyID = 62070,
     NameAction = "playshow",
     EffectID = 408
   },
   [893] = {
     id = 893,
-    BodyID = 62072,
+    BodyID = 62071,
     NameAction = "playshow",
     EffectID = 408
   },
   [894] = {
     id = 894,
-    BodyID = 62073,
+    BodyID = 62072,
     NameAction = "playshow",
     EffectID = 408
   },
   [895] = {
     id = 895,
-    BodyID = 62074,
+    BodyID = 62073,
     NameAction = "playshow",
     EffectID = 408
   },
   [896] = {
     id = 896,
-    BodyID = 62075,
+    BodyID = 62074,
     NameAction = "playshow",
-    EffectID = 409
+    EffectID = 408
   },
   [897] = {
     id = 897,
-    BodyID = 62076,
+    BodyID = 62075,
     NameAction = "playshow",
     EffectID = 409
   },
   [898] = {
     id = 898,
-    BodyID = 62077,
+    BodyID = 62076,
     NameAction = "playshow",
     EffectID = 409
   },
   [899] = {
     id = 899,
-    BodyID = 62078,
+    BodyID = 62077,
     NameAction = "playshow",
     EffectID = 409
   },
   [900] = {
     id = 900,
-    BodyID = 62079,
+    BodyID = 62078,
     NameAction = "playshow",
     EffectID = 409
   },
   [901] = {
     id = 901,
+    BodyID = 62079,
+    NameAction = "playshow",
+    EffectID = 409
+  },
+  [902] = {
+    id = 902,
     BodyID = 62293,
     NameAction = "playshow",
     EffectID = 402
   },
-  [902] = {
-    id = 902,
+  [903] = {
+    id = 903,
     BodyID = 62294,
     NameAction = "playshow",
     EffectID = 403
   },
-  [903] = {
-    id = 903,
+  [904] = {
+    id = 904,
     BodyID = 62295,
     NameAction = "playshow",
     EffectID = 404
   },
-  [904] = {
-    id = 904,
+  [905] = {
+    id = 905,
     BodyID = 62296,
     NameAction = "playshow",
     EffectID = 405
   },
-  [905] = {
-    id = 905,
-    BodyID = 62100,
-    NameAction = "playshow",
-    EffectID = 414
-  },
   [906] = {
     id = 906,
-    BodyID = 62101,
+    BodyID = 62100,
     NameAction = "playshow",
     EffectID = 414
   },
   [907] = {
     id = 907,
-    BodyID = 62102,
+    BodyID = 62101,
     NameAction = "playshow",
     EffectID = 414
   },
   [908] = {
     id = 908,
-    BodyID = 62103,
+    BodyID = 62102,
     NameAction = "playshow",
     EffectID = 414
   },
   [909] = {
     id = 909,
-    BodyID = 62104,
+    BodyID = 62103,
     NameAction = "playshow",
     EffectID = 414
   },
   [910] = {
     id = 910,
-    BodyID = 62105,
+    BodyID = 62104,
     NameAction = "playshow",
-    EffectID = 415
+    EffectID = 414
   },
   [911] = {
     id = 911,
-    BodyID = 62106,
+    BodyID = 62105,
     NameAction = "playshow",
     EffectID = 415
   },
   [912] = {
     id = 912,
-    BodyID = 62107,
+    BodyID = 62106,
     NameAction = "playshow",
     EffectID = 415
   },
   [913] = {
     id = 913,
-    BodyID = 62108,
+    BodyID = 62107,
     NameAction = "playshow",
     EffectID = 415
   },
   [914] = {
     id = 914,
-    BodyID = 62109,
+    BodyID = 62108,
     NameAction = "playshow",
     EffectID = 415
   },
   [915] = {
     id = 915,
-    BodyID = 62110,
+    BodyID = 62109,
     NameAction = "playshow",
-    EffectID = 416
+    EffectID = 415
   },
   [916] = {
     id = 916,
-    BodyID = 62111,
+    BodyID = 62110,
     NameAction = "playshow",
     EffectID = 416
   },
   [917] = {
     id = 917,
-    BodyID = 62112,
+    BodyID = 62111,
     NameAction = "playshow",
     EffectID = 416
   },
   [918] = {
     id = 918,
-    BodyID = 62113,
+    BodyID = 62112,
     NameAction = "playshow",
     EffectID = 416
   },
   [919] = {
     id = 919,
-    BodyID = 62114,
+    BodyID = 62113,
     NameAction = "playshow",
     EffectID = 416
   },
   [920] = {
     id = 920,
-    BodyID = 62115,
+    BodyID = 62114,
     NameAction = "playshow",
-    EffectID = 417
+    EffectID = 416
   },
   [921] = {
     id = 921,
-    BodyID = 62116,
+    BodyID = 62115,
     NameAction = "playshow",
     EffectID = 417
   },
   [922] = {
     id = 922,
-    BodyID = 62117,
+    BodyID = 62116,
     NameAction = "playshow",
     EffectID = 417
   },
   [923] = {
     id = 923,
-    BodyID = 62118,
+    BodyID = 62117,
     NameAction = "playshow",
     EffectID = 417
   },
   [924] = {
     id = 924,
-    BodyID = 62119,
+    BodyID = 62118,
     NameAction = "playshow",
     EffectID = 417
   },
   [925] = {
     id = 925,
+    BodyID = 62119,
+    NameAction = "playshow",
+    EffectID = 417
+  },
+  [926] = {
+    id = 926,
     BodyID = 62306,
     NameAction = "playshow",
     EffectID = 410
   },
-  [926] = {
-    id = 926,
+  [927] = {
+    id = 927,
     BodyID = 62307,
     NameAction = "playshow",
     EffectID = 411
   },
-  [927] = {
-    id = 927,
+  [928] = {
+    id = 928,
     BodyID = 62308,
     NameAction = "playshow",
     EffectID = 412
   },
-  [928] = {
-    id = 928,
+  [929] = {
+    id = 929,
     BodyID = 62309,
     NameAction = "playshow",
     EffectID = 413
+  },
+  [930] = {
+    id = 930,
+    BodyID = 62280,
+    NameAction = "playshow",
+    EffectID = 398
+  },
+  [931] = {
+    id = 931,
+    BodyID = 62281,
+    NameAction = "playshow",
+    EffectID = 399
+  },
+  [932] = {
+    id = 932,
+    BodyID = 62282,
+    NameAction = "playshow",
+    EffectID = 400
+  },
+  [933] = {
+    id = 933,
+    BodyID = 62283,
+    NameAction = "playshow",
+    EffectID = 401
+  },
+  [934] = {
+    id = 934,
+    BodyID = 62347,
+    NameAction = "playshow",
+    EffectID = 398
+  },
+  [935] = {
+    id = 935,
+    BodyID = 62347,
+    NameAction = "playshow2",
+    EffectID = 420
+  },
+  [936] = {
+    id = 936,
+    BodyID = 62347,
+    NameAction = "playshow3",
+    EffectID = 424
+  },
+  [937] = {
+    id = 937,
+    BodyID = 62348,
+    NameAction = "playshow",
+    EffectID = 399
+  },
+  [938] = {
+    id = 938,
+    BodyID = 62348,
+    NameAction = "playshow2",
+    EffectID = 421
+  },
+  [939] = {
+    id = 939,
+    BodyID = 62348,
+    NameAction = "playshow3",
+    EffectID = 425
+  },
+  [940] = {
+    id = 940,
+    BodyID = 62349,
+    NameAction = "playshow",
+    EffectID = 400
+  },
+  [941] = {
+    id = 941,
+    BodyID = 62349,
+    NameAction = "playshow2",
+    EffectID = 422
+  },
+  [942] = {
+    id = 942,
+    BodyID = 62349,
+    NameAction = "playshow3",
+    EffectID = 426
+  },
+  [943] = {
+    id = 943,
+    BodyID = 62350,
+    NameAction = "playshow",
+    EffectID = 401
+  },
+  [944] = {
+    id = 944,
+    BodyID = 62350,
+    NameAction = "playshow2",
+    EffectID = 423
+  },
+  [945] = {
+    id = 945,
+    BodyID = 62350,
+    NameAction = "playshow3",
+    EffectID = 427
+  },
+  [946] = {
+    id = 946,
+    BodyID = 62332,
+    NameAction = "playshow",
+    EffectID = 398
+  },
+  [947] = {
+    id = 947,
+    BodyID = 62332,
+    NameAction = "playshow2",
+    EffectID = 420
+  },
+  [948] = {
+    id = 948,
+    BodyID = 62332,
+    NameAction = "playshow3",
+    EffectID = 424
+  },
+  [949] = {
+    id = 949,
+    BodyID = 62333,
+    NameAction = "playshow",
+    EffectID = 399
+  },
+  [950] = {
+    id = 950,
+    BodyID = 62333,
+    NameAction = "playshow2",
+    EffectID = 421
+  },
+  [951] = {
+    id = 951,
+    BodyID = 62333,
+    NameAction = "playshow3",
+    EffectID = 425
+  },
+  [952] = {
+    id = 952,
+    BodyID = 62334,
+    NameAction = "playshow",
+    EffectID = 400
+  },
+  [953] = {
+    id = 953,
+    BodyID = 62334,
+    NameAction = "playshow2",
+    EffectID = 422
+  },
+  [954] = {
+    id = 954,
+    BodyID = 62334,
+    NameAction = "playshow3",
+    EffectID = 426
+  },
+  [955] = {
+    id = 955,
+    BodyID = 62335,
+    NameAction = "playshow",
+    EffectID = 401
+  },
+  [956] = {
+    id = 956,
+    BodyID = 62335,
+    NameAction = "playshow2",
+    EffectID = 423
+  },
+  [957] = {
+    id = 957,
+    BodyID = 62335,
+    NameAction = "playshow3",
+    EffectID = 427
+  },
+  [958] = {
+    id = 958,
+    BodyID = 62346,
+    NameAction = "playshow",
+    EffectID = 436
+  },
+  [959] = {
+    id = 959,
+    BodyID = 62160,
+    NameAction = "playshow",
+    EffectID = 428
+  },
+  [960] = {
+    id = 960,
+    BodyID = 62161,
+    NameAction = "playshow",
+    EffectID = 428
+  },
+  [961] = {
+    id = 961,
+    BodyID = 62162,
+    NameAction = "playshow",
+    EffectID = 428
+  },
+  [962] = {
+    id = 962,
+    BodyID = 62163,
+    NameAction = "playshow",
+    EffectID = 428
+  },
+  [963] = {
+    id = 963,
+    BodyID = 62164,
+    NameAction = "playshow",
+    EffectID = 428
+  },
+  [964] = {
+    id = 964,
+    BodyID = 62165,
+    NameAction = "playshow",
+    EffectID = 429
+  },
+  [965] = {
+    id = 965,
+    BodyID = 62166,
+    NameAction = "playshow",
+    EffectID = 429
+  },
+  [966] = {
+    id = 966,
+    BodyID = 62167,
+    NameAction = "playshow",
+    EffectID = 429
+  },
+  [967] = {
+    id = 967,
+    BodyID = 62168,
+    NameAction = "playshow",
+    EffectID = 429
+  },
+  [968] = {
+    id = 968,
+    BodyID = 62169,
+    NameAction = "playshow",
+    EffectID = 429
+  },
+  [969] = {
+    id = 969,
+    BodyID = 62170,
+    NameAction = "playshow",
+    EffectID = 430
+  },
+  [970] = {
+    id = 970,
+    BodyID = 62171,
+    NameAction = "playshow",
+    EffectID = 430
+  },
+  [971] = {
+    id = 971,
+    BodyID = 62172,
+    NameAction = "playshow",
+    EffectID = 430
+  },
+  [972] = {
+    id = 972,
+    BodyID = 62173,
+    NameAction = "playshow",
+    EffectID = 430
+  },
+  [973] = {
+    id = 973,
+    BodyID = 62174,
+    NameAction = "playshow",
+    EffectID = 430
+  },
+  [974] = {
+    id = 974,
+    BodyID = 62175,
+    NameAction = "playshow",
+    EffectID = 431
+  },
+  [975] = {
+    id = 975,
+    BodyID = 62176,
+    NameAction = "playshow",
+    EffectID = 431
+  },
+  [976] = {
+    id = 976,
+    BodyID = 62177,
+    NameAction = "playshow",
+    EffectID = 431
+  },
+  [977] = {
+    id = 977,
+    BodyID = 62178,
+    NameAction = "playshow",
+    EffectID = 431
+  },
+  [978] = {
+    id = 978,
+    BodyID = 62179,
+    NameAction = "playshow",
+    EffectID = 431
   }
 }
 Table_ActionEffect_fields = {

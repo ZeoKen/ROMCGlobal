@@ -41,6 +41,7 @@ function SettingViewHelp:GetTitleDatas(index)
   elseif helpData.id == GameConfig.Setting.PlaytimeHelpId then
     local servant_time = battleTimeMgr:TotalPlaytime_extra_daily(true)
     local item_time = battleTimeMgr:TotalPlaytime_extra(true)
+    local group_playtime = battleTimeMgr:TotalGroupPlayTotalTime(true)
     local playtime = battleTimeMgr:TotalPlayTime(true)
     playtime = playtime - item_time - servant_time
     if 0 < playtime then
@@ -50,7 +51,13 @@ function SettingViewHelp:GetTitleDatas(index)
       table.insert(self.titleDatas, getTitleData("+" .. servant_time // 60 .. "min", "item_5827", true))
     end
     if 0 < item_time then
-      table.insert(self.titleDatas, getTitleData("+" .. item_time // 60 .. "min", "item_6959", false))
+      table.insert(self.titleDatas, getTitleData("+" .. item_time // 60 .. "min", "item_6959", true))
+    end
+    if 0 < group_playtime then
+      table.insert(self.titleDatas, getTitleData("+" .. group_playtime // 60 .. "min", "item_3005420", true))
+    end
+    if #self.titleDatas > 0 then
+      self.titleDatas[#self.titleDatas].line = false
     end
   end
   return self.titleDatas

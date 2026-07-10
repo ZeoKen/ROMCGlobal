@@ -1385,6 +1385,24 @@ function ServiceSnowCmdAutoProxy:CallSnowManualEquipUpdateSnowCmd(pos, update)
       end
       msg.update.egg.cdtime = update.egg.cdtime
     end
+    if update.egg ~= nil and update.egg.already_hatched ~= nil then
+      if msg.update == nil then
+        msg.update = {}
+      end
+      if msg.update.egg == nil then
+        msg.update.egg = {}
+      end
+      msg.update.egg.already_hatched = update.egg.already_hatched
+    end
+    if update.egg ~= nil and update.egg.quick_pack_slot ~= nil then
+      if msg.update == nil then
+        msg.update = {}
+      end
+      if msg.update.egg == nil then
+        msg.update.egg = {}
+      end
+      msg.update.egg.quick_pack_slot = update.egg.quick_pack_slot
+    end
     if update.letter ~= nil and update.letter.sendUserName ~= nil then
       if msg.update == nil then
         msg.update = {}
@@ -3229,6 +3247,24 @@ function ServiceSnowCmdAutoProxy:CallSnowManualEquipUpdateSnowCmd(pos, update)
         msgParam.update.egg = {}
       end
       msgParam.update.egg.cdtime = update.egg.cdtime
+    end
+    if update.egg ~= nil and update.egg.already_hatched ~= nil then
+      if msgParam.update == nil then
+        msgParam.update = {}
+      end
+      if msgParam.update.egg == nil then
+        msgParam.update.egg = {}
+      end
+      msgParam.update.egg.already_hatched = update.egg.already_hatched
+    end
+    if update.egg ~= nil and update.egg.quick_pack_slot ~= nil then
+      if msgParam.update == nil then
+        msgParam.update = {}
+      end
+      if msgParam.update.egg == nil then
+        msgParam.update.egg = {}
+      end
+      msgParam.update.egg.quick_pack_slot = update.egg.quick_pack_slot
     end
     if update.letter ~= nil and update.letter.sendUserName ~= nil then
       if msgParam.update == nil then

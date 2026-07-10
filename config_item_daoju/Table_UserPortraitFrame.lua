@@ -567,6 +567,38 @@ Table_UserPortraitFrame = {
     Effect = "Eff_S27_Frame_Lv3",
     GroupEffect = "Eff_S27_Frame_Lv3_V12"
   },
+  [84] = {
+    id = 84,
+    ItemID = 650,
+    Name = "##44721649",
+    Icon = "Avatarbox_S28_Lv1"
+  },
+  [85] = {
+    id = 85,
+    ItemID = 651,
+    Name = "##44721650",
+    Icon = "Avatarbox_S28_Lv2"
+  },
+  [86] = {
+    id = 86,
+    ItemID = 652,
+    Name = "##44721651",
+    Icon = "Avatarbox_S28_Lv3",
+    Effect = "Eff_S28_Frame_Lv3",
+    GroupEffect = "Eff_S28_Frame_Lv3_V12"
+  },
+  [87] = {
+    id = 87,
+    ItemID = 495,
+    Name = "##3502782",
+    Icon = "Avatarbox_495"
+  },
+  [496] = {
+    id = 496,
+    ItemID = 496,
+    Name = "##44723718",
+    Icon = "Avatarbox_496"
+  },
   [1001] = {
     id = 1001,
     ItemID = 1500,
@@ -1049,6 +1081,12 @@ Table_UserPortraitFrame = {
     ItemID = 3014036,
     Name = "##44715649",
     Icon = "Avatarbox_3014036"
+  },
+  [1084] = {
+    id = 1084,
+    ItemID = 498,
+    Name = "##44726202",
+    Icon = "Avatarbox_498"
   },
   [10036] = {
     id = 10036,

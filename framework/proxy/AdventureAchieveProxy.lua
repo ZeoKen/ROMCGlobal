@@ -278,3 +278,41 @@ function AdventureAchieveProxy:getAllUnlockedAchieveProp()
   end
   return achieveAttrMap
 end
+
+function AdventureAchieveProxy:IsAchievementUnlocked(id)
+  local type = self:getTopCategoryIdByAchiveId(id)
+  local bagData = self.bagMap[type]
+  if not bagData then
+    return false
+  end
+  local item = bagData:GetItemByStaticID(id)
+  return item ~= nil and item:getCompleteString() ~= nil
+end
+
+function AdventureAchieveProxy:GetMvpLimitIncrease()
+  local cfg = GameConfig.MvpLimit and GameConfig.MvpLimit.MvpLimitIncreaseAchievements
+  if not cfg then
+    return 0
+  end
+  local count = 0
+  for i = 1, #cfg do
+    if self:IsAchievementUnlocked(cfg[i]) then
+      count = count + 1
+    end
+  end
+  return count
+end
+
+function AdventureAchieveProxy:GetMiniLimitIncrease()
+  local cfg = GameConfig.MvpLimit and GameConfig.MvpLimit.MiniLimitIncreaseAchievements
+  if not cfg then
+    return 0
+  end
+  local count = 0
+  for i = 1, #cfg do
+    if self:IsAchievementUnlocked(cfg[i]) then
+      count = count + 1
+    end
+  end
+  return count
+end

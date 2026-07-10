@@ -670,6 +670,30 @@ Table_Astrology = {
     Pic = "constellation_constellation_bg_fire1",
     Title = "小天使的祝福",
     Reward = 61004690
+  },
+  [85] = {
+    id = 85,
+    Type = 2,
+    Group = 29,
+    Pic = "constellation_bg_water1",
+    Title = "异世界占卜术",
+    Reward = 61004751
+  },
+  [86] = {
+    id = 86,
+    Type = 2,
+    Group = 29,
+    Pic = "constellation_bg_water1",
+    Title = "异世界占卜术",
+    Reward = 61004751
+  },
+  [87] = {
+    id = 87,
+    Type = 2,
+    Group = 29,
+    Pic = "constellation_bg_water1",
+    Title = "异世界占卜术",
+    Reward = 61004751
   }
 }
 Table_Astrology_fields = {

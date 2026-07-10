@@ -31,6 +31,7 @@ function BagData:AddItems(items, tabType)
     end
   end
   self.wholeTab:AddItems(items)
+  self:TryRefreshPetEggQuickPackCount()
   BagProxy.Instance:RefreshUpgradeCheckInfo(self)
 end
 
@@ -40,6 +41,7 @@ function BagData:AddItem(item)
     tab:AddItem(item)
   end
   self.wholeTab:AddItem(item)
+  self:TryRefreshPetEggQuickPackCount()
 end
 
 function BagData:RemoveItems(items, recordMap)
@@ -65,6 +67,7 @@ function BagData:RemoveItemByGuid(itemId)
       tab:RemoveItemByGuid(itemId)
     end
   end
+  self:TryRefreshPetEggQuickPackCount()
 end
 
 function BagData:UpdateItems(serverItems, recordMap)
@@ -91,6 +94,7 @@ function BagData:UpdateItems(serverItems, recordMap)
     end
     recordMap[item.id] = 1
   end
+  self:TryRefreshPetEggQuickPackCount()
   BagProxy.Instance:RefreshUpgradeCheckInfo(self)
 end
 
@@ -134,6 +138,7 @@ function BagData:Reset()
   for k, v in pairs(self.tabs) do
     v:Reset()
   end
+  self:TryRefreshPetEggQuickPackCount()
 end
 
 function BagData:GetTab(tabType)
@@ -235,4 +240,52 @@ function BagData:GetNoPileSlotItemNum()
     end
   end
   return num
+end
+
+function BagData:RefreshPetEggQuickPackUsedCount()
+  if self.type ~= SceneItem_pb.EPACKTYPE_PET then
+    return
+  end
+  local items = self.wholeTab:GetItems()
+  local n = 0
+  if items then
+    for i = 1, #items do
+      local egg = items[i].petEggInfo
+      if egg and egg.quick_pack_slot and 0 < egg.quick_pack_slot then
+        n = n + 1
+      end
+    end
+  end
+  self.petEggQuickPackUsedCount = n
+end
+
+function BagData:GetQuickItems()
+  if self.type ~= SceneItem_pb.EPACKTYPE_PET then
+    return _EmptyTable
+  end
+  local items = self.wholeTab:GetItems()
+  local quickItems = {}
+  for i = 1, #items do
+    local egg = items[i].petEggInfo
+    if egg and egg.quick_pack_slot and egg.quick_pack_slot > 0 then
+      table.insert(quickItems, items[i])
+    end
+  end
+  return quickItems
+end
+
+function BagData:GetPetEggQuickPackUsedCount()
+  if self.type ~= SceneItem_pb.EPACKTYPE_PET then
+    return 0
+  end
+  if self.petEggQuickPackUsedCount == nil then
+    self:RefreshPetEggQuickPackUsedCount()
+  end
+  return self.petEggQuickPackUsedCount
+end
+
+function BagData:TryRefreshPetEggQuickPackCount()
+  if self.type == SceneItem_pb.EPACKTYPE_PET then
+    self:RefreshPetEggQuickPackUsedCount()
+  end
 end

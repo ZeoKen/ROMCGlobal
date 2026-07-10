@@ -39,6 +39,13 @@ function SkillLogic_Base.error(...)
   errorLog(...)
 end
 
+function SkillLogic_Base.ResolveDoubleDamage(targetCreature, doubleDamage)
+  if doubleDamage and doubleDamage ~= 0 then
+    return doubleDamage
+  end
+  return targetCreature and targetCreature:GetDoubleDamage() or 0
+end
+
 local CreateSearchTargetInfo = ReusableTable.CreateSearchTargetInfo
 local DestroySearchTargetInfo = ReusableTable.DestroySearchTargetInfo
 local CreateArray = ReusableTable.CreateArray
@@ -302,12 +309,7 @@ function SkillLogic_Base.ShowDamage_Single(damageType, damage, position, labelTy
   if DamageType.None == damageType or DamageType.Block == damageType or DamageType.AutoBlock == damageType or DamageType.WeaponBlock == damageType then
     return
   end
-  if not doubleDamage or doubleDamage == 0 then
-    doubleDamage = targetCreature and targetCreature:GetDoubleDamage() or 0
-  end
-  if doubleDamage and 1 < doubleDamage then
-    damage = damage / 2
-  end
+  doubleDamage = SkillLogic_Base.ResolveDoubleDamage(targetCreature, doubleDamage)
   local damageStr
   local crit = HurtNum_CritType.None
   if DamageType.Miss == damageType or CommonFun.DamageType.Barrier == damageType then
@@ -748,6 +750,7 @@ function SkillLogic_Base:CreateHitTargetWorker(creature, phaseData, assetRole, s
   hitWorker:SetHitedTargetGoPos(phaseData:GetHitedTargetPos())
   hitWorker:SetEmitTarget(phaseData:GetEmitTarget())
   local targetGUID, damageType, damage, shareDamageInfos, damageCount, doubleDamage = phaseData:GetTarget(targetIndex)
+  doubleDamage = 1
   hitWorker:AddTarget(targetGUID, damageType, damage, shareDamageInfos, self:GetComboDamageLabel(targetIndex), damageCount, doubleDamage)
   return hitWorker
 end

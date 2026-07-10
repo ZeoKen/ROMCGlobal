@@ -32,7 +32,8 @@ function ActivityIntegrationSignInSubView:FindObjs()
   self.confirmBtnLock_Label = self:FindGO("Label", self.confirmBtnLock):GetComponent(UILabel)
   self.bgTexture = self:FindGO("BgTexture", self.gameObject):GetComponent(UITexture)
   self:AddClickEvent(self.confirmBtn, function()
-    if ActivityIntegrationProxy.Instance:CheckSuperSignInCanSign(self.activityID) then
+    local canSign, status, curProcess, targetCount = ActivityIntegrationProxy.Instance:CheckSuperSignInCanSign(self.activityID)
+    if canSign then
       ActivityIntegrationProxy.Instance:CallSignInUserCmd(self.activityID)
     end
   end)
@@ -50,10 +51,10 @@ end
 
 function ActivityIntegrationSignInSubView:AddViewEvts()
   self:AddListenEvt(ServiceEvent.SceneUser3SuperSignInUserCmd, self.RefreshPage)
+  self:AddListenEvt(ServiceEvent.NUserRecommendServantUserCmd, self.RefreshPage)
 end
 
 function ActivityIntegrationSignInSubView:RefreshPage(id)
-  xdlog("ActivityIntegrationSignInSubView RefreshPage")
   self.titleLabel.text = self.staticData.TitleName
   local helpID = self.staticData.HelpID
   self.helpBtn:SetActive(helpID ~= nil or false)
@@ -75,7 +76,6 @@ function ActivityIntegrationSignInSubView:RefreshPage(id)
     signInList[i].index = i
     table.insert(showList, signInList[i])
   end
-  xdlog("首尾", (curBatch - 1) * 30 + 1, curBatch * 30, #showList)
   self.signListCtrl:ResetDatas(showList, true)
   local cells = self.signListCtrl:GetCells()
   for i = 1, #cells do
@@ -86,7 +86,6 @@ function ActivityIntegrationSignInSubView:RefreshPage(id)
     end
   end
   local canSign, status, curProcess, targetCount = _activityIntegrationProxy:CheckSuperSignInCanSign(self.activityID)
-  xdlog(canSign, signInDay, status, targetCount)
   if canSign then
     self.conditionPart:SetActive(false)
     self.confirmBtn:SetActive(true)
@@ -129,7 +128,6 @@ function ActivityIntegrationSignInSubView:UpdateRefreshTime()
   local leftDay, leftHour, leftMin, leftSec = ClientTimeUtil.GetFormatRefreshTimeStr(self.nextRefreshTime)
   self.timeLabel.text = string.format(ZhString.ActivityIntegration_SignInRefreshTime, leftHour, leftMin, leftSec)
   if leftHour <= 0 and leftMin <= 0 and leftSec <= 0 then
-    xdlog("活动结束 尝试刷新界面")
     TimeTickManager.Me():ClearTick(self, 1)
     self:RefreshPage()
   end
@@ -138,7 +136,6 @@ end
 function ActivityIntegrationSignInSubView:HandleClickSignInCell(cellCtrl)
   local status = cellCtrl.status or 0
   if status == 2 then
-    xdlog("当日  签到")
     ActivityIntegrationProxy.Instance:CallSignInUserCmd(self.activityID)
   else
     self:ShowItemInfo(cellCtrl)

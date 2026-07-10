@@ -2,6 +2,7 @@ SnowGemCell = class("SnowGemCell", BaseCell)
 
 function SnowGemCell:Init()
   SnowGemCell.super.Init(self)
+  self:AddGameObjectComp()
   self:FindObjs()
   self:AddCellClickEvent()
 end
@@ -31,6 +32,7 @@ end
 
 function SnowGemCell:SetData(data)
   SnowGemCell.super.SetData(self, data)
+  self:ClearStarUnlockTick()
   self.data = data
   if not data then
     return
@@ -53,7 +55,8 @@ function SnowGemCell:SetItemCellData(data)
   itemData:SetSnowGemData({
     id = data.id,
     level = data.level or 0,
-    advlv = data.advlv or 0
+    advlv = data.advlv or data.starLevel or 0,
+    advexp = data.advexp or 0
   })
   if data.count and 0 < data.count then
     itemData.num = data.count
@@ -140,6 +143,10 @@ function SnowGemCell:PlayStarUpEffect(oldAdvLv, newAdvLv, onComplete)
 end
 
 function SnowGemCell:PlayStarUnlockSequence(starsToUnlock, index, onComplete)
+  if self.isDestroyed or self:ObjIsNil(self.gameObject) then
+    self:ClearStarUnlockTick()
+    return
+  end
   if index > #starsToUnlock then
     self:ClearStarUnlockTick()
     if onComplete then
@@ -150,15 +157,22 @@ function SnowGemCell:PlayStarUnlockSequence(starsToUnlock, index, onComplete)
   local starIndex = starsToUnlock[index]
   local starGO = self.itemCell and self.itemCell.snowGemAdvStars and self.itemCell.snowGemAdvStars[starIndex]
   local starSprite = self.itemCell and self.itemCell.snowGemAdvStarSprites and self.itemCell.snowGemAdvStarSprites[starIndex]
-  if starGO and starSprite then
+  if starGO and starSprite and not self:ObjIsNil(starGO) and not self:ObjIsNil(starSprite) then
     starSprite.alpha = 0
     LeanTween.value(starGO, function(v)
+      if self.isDestroyed or self:ObjIsNil(starSprite) then
+        return
+      end
       starSprite.alpha = v
     end, 0, 1, 0.15)
     self:PlayUIEffect(EffectMap.UI.SnowGem_StarLevelUp, starGO, true)
     self:ClearStarUnlockTick()
     self.starUnlockTickId = self:GetStarUnlockTickId()
-    TimeTickManager.Me():CreateTick(200, 0, function()
+    TimeTickManager.Me():CreateOnceDelayTick(200, function()
+      if self.isDestroyed or self:ObjIsNil(self.gameObject) then
+        self:ClearStarUnlockTick()
+        return
+      end
       self:PlayStarUnlockSequence(starsToUnlock, index + 1, onComplete)
     end, self, self.starUnlockTickId)
   else
@@ -175,4 +189,10 @@ function SnowGemCell:ClearStarUnlockTick()
     TimeTickManager.Me():ClearTick(self.starUnlockTickId)
     self.starUnlockTickId = nil
   end
+end
+
+function SnowGemCell:OnDestroy()
+  self.isDestroyed = true
+  self:ClearStarUnlockTick()
+  SnowGemCell.super.OnDestroy(self)
 end

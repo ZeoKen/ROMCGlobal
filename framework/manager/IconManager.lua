@@ -272,6 +272,8 @@ function IconManager:SetMoneyIcon(moneyType, sprite)
       item = ItemData.new(0, 147)
     elseif moneyType == ProtoCommon_pb.EMONEYTYPE_BATTLEPASS then
       item = ItemData.new(0, 5841)
+    elseif moneyType == ProtoCommon_pb.EMONEYTYPE_NOKR_DIAMOND then
+      item = ItemData.new(0, 50)
     end
     IconManager:SetItemIcon(item.staticData.Icon, sprite)
   end

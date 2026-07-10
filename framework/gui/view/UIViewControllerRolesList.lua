@@ -12,6 +12,8 @@ UIViewControllerRolesList = class("UIViewControllerRolesList", BaseView)
 UIViewControllerRolesList.ViewType = UIViewType.MainLayer
 local tempTable = {}
 local afkMsgTable = {}
+local DELETE_HELP_ICON_SIZE = 36
+local DELETE_HELP_ICON_SPACE = 8
 
 function UIViewControllerRolesList:Init()
   Buglylog("UIViewControllerRolesList:Init")
@@ -190,6 +192,12 @@ function UIViewControllerRolesList:GetGameObjects()
   self.goButtonNoOfDeleteConfirm = self:FindGO("ButtonNo", self.goDeleteConfirm)
   self.goButtonYesOfCancelDeleteConfirm = self:FindGO("ButtonYes", self.goCancelDeleteConfirm)
   self.goButtonNoOfCancelDeleteConfirm = self:FindGO("ButtonNo", self.goCancelDeleteConfirm)
+  self.labDeleteTip = self:FindComponent("labDeleteTip", UILabel, self.goDeleteConfirm) or self:FindComponent("Lab", UILabel, self.goDeleteConfirm)
+  local labDeleteTipGO = self.labDeleteTip and self.labDeleteTip.gameObject
+  self.goDeleteHelpIcon = labDeleteTipGO and (self:FindGO("spDeleteHelpIcon", labDeleteTipGO) or self:FindGO("spDeleteHelpBtn", labDeleteTipGO) or self:FindGO("Icon", labDeleteTipGO)) or nil
+  self.goDeleteHelpIcon = self.goDeleteHelpIcon or self:FindGO("spDeleteHelpIcon", self.goDeleteConfirm) or self:FindGO("spDeleteHelpBtn", self.goDeleteConfirm) or self:FindGO("Icon", self.goDeleteConfirm)
+  self.spDeleteHelpIcon = self.goDeleteHelpIcon and self.goDeleteHelpIcon:GetComponent(UISprite)
+  self.widDeleteHelpIcon = self.goDeleteHelpIcon and self.goDeleteHelpIcon:GetComponent(UIWidget)
   self.preCreatePart = self:FindGO("PreCreate")
   self.labServerName = self:FindGO("ServerName"):GetComponent(UILabel)
   self.labOpenTime = self:FindGO("OpenTimeLabel"):GetComponent(UILabel)
@@ -387,10 +395,32 @@ function UIViewControllerRolesList:CoundDownServerOpen()
   end
 end
 
+function UIViewControllerRolesList:RefreshDeleteTip()
+  if not self.labDeleteTip then
+    return
+  end
+  self.labDeleteTip.text = BranchMgr.IsNOKR() and ZhString.LoginRole_DeleteTip_NOKR or ZhString.LoginRole_DeleteTip
+  if self.goDeleteHelpIcon then
+    self.goDeleteHelpIcon:SetActive(true)
+    local iconWidget = self.spDeleteHelpIcon or self.widDeleteHelpIcon
+    if iconWidget then
+      iconWidget.width = DELETE_HELP_ICON_SIZE
+      iconWidget.height = DELETE_HELP_ICON_SIZE
+    end
+    local labelPivot = self.labDeleteTip.pivotOffset
+    local printedSize = self.labDeleteTip.printedSize
+    local textWidth = printedSize and printedSize.x or self.labDeleteTip.width or 0
+    local labelLeftX = -textWidth * (labelPivot and labelPivot.x or 0.5)
+    local _, y, z = LuaGameObject.GetLocalPositionGO(self.goDeleteHelpIcon)
+    LuaGameObject.SetLocalPositionGO(self.goDeleteHelpIcon, labelLeftX - DELETE_HELP_ICON_SPACE - DELETE_HELP_ICON_SIZE / 2, y, z)
+  end
+end
+
 function UIViewControllerRolesList:OpenDeleteConfirm(roleID)
   local roleInfo = self:GetRoleInfoFromID(roleID)
   if roleInfo then
     self.goDeleteConfirm:SetActive(true)
+    self:RefreshDeleteTip()
     local professionName = ProfessionProxy.GetProfessionNameFromSocialData(roleInfo)
     self.labRoleDetailOfDeleteConfirm.text = roleInfo.name .. "  " .. ZhString.MonsterTip_Characteristic_Level .. roleInfo.baselv .. "   " .. professionName
   end
@@ -750,7 +780,7 @@ function UIViewControllerRolesList:OnClickForButtonDelete()
       if self.selectedRoleID ~= nil and self.selectedRoleID > 0 then
         local roleInfo = self:GetRoleInfoFromID(self.selectedRoleID)
         local deleteMarks = roleInfo.delete_marks
-        if bit.band(deleteMarks, EDELETECHARMARK.EDELETECHARMARK_PACKAGE) ~= 0 then
+        if not BranchMgr.IsNOKR() and bit.band(deleteMarks, EDELETECHARMARK.EDELETECHARMARK_PACKAGE) ~= 0 then
           MsgManager.ConfirmMsgByID(41140, function()
             self:OpenDeleteConfirm(self.selectedRoleID)
           end)

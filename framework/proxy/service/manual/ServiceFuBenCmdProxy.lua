@@ -361,7 +361,7 @@ function ServiceFuBenCmdProxy:RecvTransferFightChooseFubenCmd(data)
 end
 
 function ServiceFuBenCmdProxy:RecvInviteRollRewardFubenCmd(data)
-  DungeonProxy.Instance:RecvInviteRollReward(data.etype, data.param1, data.costcoin, data.count)
+  DungeonProxy.Instance:RecvInviteRollReward(data.etype, data.param1, data.costcoin, data.count, data.coinid)
   ServiceFuBenCmdProxy.super.RecvInviteRollRewardFubenCmd(self, data)
 end
 

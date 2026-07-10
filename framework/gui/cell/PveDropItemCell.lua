@@ -55,6 +55,12 @@ local _checkId = {
 }
 
 function PveDropItemCell:SetData(data)
+  if data == nil then
+    self.gameObject:SetActive(false)
+    self.data = nil
+    return
+  end
+  self.gameObject:SetActive(true)
   local isEmpty = data == PveDropItemCell.Empty
   self.itemobj:SetActive(not isEmpty)
   self.dropEmptyBg:SetActive(isEmpty)

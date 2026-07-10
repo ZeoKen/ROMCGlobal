@@ -17,7 +17,7 @@ function InheritSkillExtendCostPointPopUp:FindObjs()
   self.costPointLabel = self:FindComponent("CostPointLabel", UILabel)
   self.materialTitleLabel = self:FindComponent("MaterialTitle", UILabel)
   local grid = self:FindComponent("CostPointGrid", UIGrid)
-  self.costPointListCtrl = UIGridListCtrl.new(grid, InheritSkillCostPointCell, "InheritSkillCostPointCell")
+  self.costPointListCtrl = UIGridListCtrl.new(grid, InheritSkillCostPointCell, "InheritSkillExpendPointCell")
   grid = self:FindComponent("MaterialGrid", UIGrid)
   self.materialListCtrl = UIGridListCtrl.new(grid, InheritSkillMaterialCell, "InheritSkillMaterialCell")
   self.materialListCtrl:AddEventListener(MouseEvent.MouseClick, self.OnClickMaterial, self)
@@ -49,7 +49,7 @@ function InheritSkillExtendCostPointPopUp:HandleExtendCostPoint()
   local cells = self.costPointListCtrl:GetCells()
   local initPoint = GameConfig.SkillInherit and GameConfig.SkillInherit.InitPointMax or 0
   local extendedCostPoints = InheritSkillProxy.Instance:GetExtendedCostPoints()
-  local cell = cells[initPoint + extendedCostPoints]
+  local cell = cells[math.ceil((initPoint + extendedCostPoints) / 2)]
   if cell then
     cell:PlayEffect(EffectMap.UI.SkillInherit_CostPointUnlock)
   end
@@ -75,9 +75,12 @@ function InheritSkillExtendCostPointPopUp:RefreshCostPoint()
   self.materialPart:SetActive(max > curCostPoint)
   self.maxLvTip:SetActive(max <= curCostPoint)
   local datas = {}
-  for i = 1, max do
-    local state = curCostPoint >= i and 1 or 3
-    datas[#datas + 1] = state
+  for i = 1, NumberUtility.RoundToInt(max / 2) do
+    local data = {}
+    data.isLock = i > math.ceil(curCostPoint / 2)
+    data.isLeftLoad = curCostPoint >= 2 * i - 1
+    data.isRightLoad = curCostPoint >= 2 * i
+    datas[#datas + 1] = data
   end
   self.costPointListCtrl:ResetDatas(datas)
 end
@@ -92,7 +95,7 @@ function InheritSkillExtendCostPointPopUp:RefreshMaterial()
   if extendPointCost and extendedCostPoints < #extendPointCost then
     local config = extendPointCost[extendedCostPoints + 1]
     if config then
-      local checkPackage = GameConfig.PackageMaterialCheck.inherit_skill
+      local checkPackage = GameConfig.PackageMaterialCheck.skill_inherit
       if config.Items then
         local totalNum = 0
         local count = config.Count or 0
@@ -115,7 +118,6 @@ function InheritSkillExtendCostPointPopUp:RefreshMaterial()
         TableUtility.ArrayClear(self.lackMats)
         local isLack = count > totalNum
         local cells = self.materialListCtrl:GetCells()
-        local names = ""
         for i = 1, #cells do
           local cell = cells[i]
           cell:SetNumLabelState(isLack)
@@ -127,7 +129,8 @@ function InheritSkillExtendCostPointPopUp:RefreshMaterial()
           end
         end
         local firstItem = cells[1].data:GetName()
-        local secondItem = string.sub(str, string.find(str, "/") + 1)
+        local slashPos = string.find(str, "/")
+        local secondItem = slashPos and string.sub(str, slashPos + 1) or ""
         self.tipLabel.text = string.format(ZhString.InheritSkill_CostPointTip, firstItem, secondItem)
         self.materialProgressBar.value = math.clamp(totalNum / count, 0, 1)
         self.progressLabel.text = string.format("%d/%d", totalNum, count)
@@ -153,23 +156,29 @@ function InheritSkillExtendCostPointPopUp:RefreshAttr()
       data.curValue = initPoint + extendedCostPoints
       data.nextValue = nextAttrs and initPoint + extendedCostPoints + 1
     else
+      if not curAttrs or not curAttrs[i - 1] then
+        datas[#datas + 1] = data
+        goto lbl_114
+      end
       local curName = curAttrs[i - 1].name
       local curValue = curAttrs[i - 1].value
-      if nextAttrs and nextAttrs[i - 1].name ~= curAttrs[i - 1].name then
-        curName = nextAttrs[i - 1].name
+      local nextAttr = nextAttrs and nextAttrs[i - 1]
+      if nextAttr and nextAttr.name ~= curAttrs[i - 1].name then
+        curName = nextAttr.name
         curValue = 0
       end
       local config = Game.Config_PropName[curName]
       data.name = config and config.PropName .. ":" or ""
       if config and config.IsPercent == 1 then
         data.curValue = string.format(StrFormat, curValue * 100)
-        data.nextValue = nextAttrs and string.format(StrFormat, nextAttrs[i - 1].value * 100)
+        data.nextValue = nextAttr and string.format(StrFormat, nextAttr.value * 100)
       else
         data.curValue = curValue
-        data.nextValue = nextAttrs and nextAttrs[i - 1].value
+        data.nextValue = nextAttr and nextAttr.value
       end
     end
     datas[#datas + 1] = data
+    ::lbl_114::
   end
   self.attrListCtrl:ResetDatas(datas)
 end

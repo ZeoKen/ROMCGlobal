@@ -486,6 +486,12 @@ function ServiceItemAutoProxy:onRegister()
   self:Listen(6, 169, function(data)
     self:RecvMemoryExcessItemCmd(data)
   end)
+  self:Listen(6, 170, function(data)
+    self:RecvFashionStarQueryItemCmd(data)
+  end)
+  self:Listen(6, 171, function(data)
+    self:RecvFashionStarUpItemCmd(data)
+  end)
 end
 
 function ServiceItemAutoProxy:CallPackageItem(type, data, maxslot)
@@ -1488,7 +1494,7 @@ function ServiceItemAutoProxy:CallEquipCard(oper, cardguid, equipguid, pos)
   end
 end
 
-function ServiceItemAutoProxy:CallItemShow(items, delay, spec_icon)
+function ServiceItemAutoProxy:CallItemShow(items, delay, spec_icon, lottery_show, safety_itemid)
   if not NetConfig.PBC then
     local msg = SceneItem_pb.ItemShow()
     if items ~= nil then
@@ -1507,6 +1513,12 @@ function ServiceItemAutoProxy:CallItemShow(items, delay, spec_icon)
     end
     if spec_icon ~= nil then
       msg.spec_icon = spec_icon
+    end
+    if lottery_show ~= nil then
+      msg.lottery_show = lottery_show
+    end
+    if safety_itemid ~= nil then
+      msg.safety_itemid = safety_itemid
     end
     self:SendProto(msg)
   else
@@ -1528,6 +1540,12 @@ function ServiceItemAutoProxy:CallItemShow(items, delay, spec_icon)
     end
     if spec_icon ~= nil then
       msgParam.spec_icon = spec_icon
+    end
+    if lottery_show ~= nil then
+      msgParam.lottery_show = lottery_show
+    end
+    if safety_itemid ~= nil then
+      msgParam.safety_itemid = safety_itemid
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -8427,6 +8445,56 @@ function ServiceItemAutoProxy:CallMemoryExcessItemCmd(memory_guid, equip_pos, in
   end
 end
 
+function ServiceItemAutoProxy:CallFashionStarQueryItemCmd(infos)
+  if not NetConfig.PBC then
+    local msg = SceneItem_pb.FashionStarQueryItemCmd()
+    if infos ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.infos == nil then
+        msg.infos = {}
+      end
+      for i = 1, #infos do
+        table.insert(msg.infos, infos[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.FashionStarQueryItemCmd.id
+    local msgParam = {}
+    if infos ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.infos == nil then
+        msgParam.infos = {}
+      end
+      for i = 1, #infos do
+        table.insert(msgParam.infos, infos[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceItemAutoProxy:CallFashionStarUpItemCmd(batchid)
+  if not NetConfig.PBC then
+    local msg = SceneItem_pb.FashionStarUpItemCmd()
+    if batchid ~= nil then
+      msg.batchid = batchid
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.FashionStarUpItemCmd.id
+    local msgParam = {}
+    if batchid ~= nil then
+      msgParam.batchid = batchid
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceItemAutoProxy:RecvPackageItem(data)
   self:Notify(ServiceEvent.ItemPackageItem, data)
 end
@@ -9055,6 +9123,14 @@ function ServiceItemAutoProxy:RecvMemoryExcessItemCmd(data)
   self:Notify(ServiceEvent.ItemMemoryExcessItemCmd, data)
 end
 
+function ServiceItemAutoProxy:RecvFashionStarQueryItemCmd(data)
+  self:Notify(ServiceEvent.ItemFashionStarQueryItemCmd, data)
+end
+
+function ServiceItemAutoProxy:RecvFashionStarUpItemCmd(data)
+  self:Notify(ServiceEvent.ItemFashionStarUpItemCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.ItemPackageItem = "ServiceEvent_ItemPackageItem"
 ServiceEvent.ItemPackageUpdate = "ServiceEvent_ItemPackageUpdate"
@@ -9213,3 +9289,5 @@ ServiceEvent.ItemCardLevelupItemCmd = "ServiceEvent_ItemCardLevelupItemCmd"
 ServiceEvent.ItemBalanceModeMemorySetItemCmd = "ServiceEvent_ItemBalanceModeMemorySetItemCmd"
 ServiceEvent.ItemBalanceModeMemoryUpdateItemCmd = "ServiceEvent_ItemBalanceModeMemoryUpdateItemCmd"
 ServiceEvent.ItemMemoryExcessItemCmd = "ServiceEvent_ItemMemoryExcessItemCmd"
+ServiceEvent.ItemFashionStarQueryItemCmd = "ServiceEvent_ItemFashionStarQueryItemCmd"
+ServiceEvent.ItemFashionStarUpItemCmd = "ServiceEvent_ItemFashionStarUpItemCmd"

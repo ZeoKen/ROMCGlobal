@@ -132,6 +132,10 @@ function BattlePassLevelView:SetLevelReward()
   for i = 1, maxLv do
     TableUtility.ArrayPushBack(levelRewards, BattlePassProxy.Instance:LevelConfig(i))
   end
+  local overflowReward = BattlePassProxy.Instance:GetOverflowRewardConfig()
+  if overflowReward then
+    TableUtility.ArrayPushBack(levelRewards, overflowReward)
+  end
   self.itemWrapHelper:UpdateInfo(levelRewards)
   
   function self.lrcellsv.onDragStarted()
@@ -162,20 +166,54 @@ end
 function BattlePassLevelView:OnEnter()
   EventManager.Me():AddEventListener(ChargeLimitPanel.SelectEvent, self.OnChargeLimitConfirm, self)
   EventManager.Me():AddEventListener(ChargeLimitPanel.RefreshZenyCell, self.OnChargeLimitSelect, self)
+  EventManager.Me():AddEventListener(ServiceEvent.SessionShopUpdateShopConfigCmd, self.HandleShopUpdate, self)
+  EventManager.Me():AddEventListener(ServiceEvent.SessionShopShopDataUpdateCmd, self.HandleShopUpdate, self)
+  EventManager.Me():AddEventListener(ServiceEvent.UserEventQueryChargeCnt, self.ObtainUpgradeStatus, self)
   BattlePassLevelView.super.OnEnter(self)
   self:UpdateLevelView()
   self:SetAllRewardUnSelect()
   if BattlePassProxy.Instance:GetUpgradeDepositToBuy(false) then
     self.upgradeStatusObtained = false
-    ServiceUserEventProxy.Instance:CallQueryChargeCnt()
+    self:QueryUpgradeItemStatus()
   end
   local startLv = BattlePassProxy.BPLevel()
   self.itemWrapHelper:SetStartPositionByIndex(startLv, true)
 end
 
+function BattlePassLevelView:QueryUpgradeItemStatus()
+  local upgradeItems = BattlePassProxy.Instance.UpgradeDepositItem
+  if not upgradeItems then
+    return
+  end
+  local hasDeposit, hasShop = false, false
+  for i = 1, #upgradeItems do
+    local item = upgradeItems[i]
+    if item.DepositeId then
+      hasDeposit = true
+    elseif item.ShopType and item.ShopId and item.ShopItemId then
+      hasShop = true
+      ShopProxy.Instance:CallQueryShopConfig(item.ShopType, item.ShopId)
+      HappyShopProxy.Instance:InitShop(nil, item.ShopId, item.ShopType)
+    end
+  end
+  if hasDeposit then
+    ServiceUserEventProxy.Instance:CallQueryChargeCnt()
+  end
+  if hasShop and not hasDeposit then
+    self:ObtainUpgradeStatus()
+  end
+end
+
+function BattlePassLevelView:HandleShopUpdate()
+  self:ObtainUpgradeStatus()
+end
+
 function BattlePassLevelView:OnExit()
   EventManager.Me():RemoveEventListener(ChargeLimitPanel.SelectEvent, self.OnChargeLimitConfirm, self)
   EventManager.Me():RemoveEventListener(ChargeLimitPanel.RefreshZenyCell, self.OnChargeLimitSelect, self)
+  EventManager.Me():RemoveEventListener(ServiceEvent.SessionShopUpdateShopConfigCmd, self.HandleShopUpdate, self)
+  EventManager.Me():RemoveEventListener(ServiceEvent.SessionShopShopDataUpdateCmd, self.HandleShopUpdate, self)
+  EventManager.Me():RemoveEventListener(ServiceEvent.UserEventQueryChargeCnt, self.ObtainUpgradeStatus, self)
   if self.nextLevelRewardCell then
     self.nextLevelRewardCell:OnCellDestroy()
     self.nextLevelRewardCell = nil
@@ -239,6 +277,7 @@ function BattlePassLevelView:UpdateShowNextLevelReward()
     self.nextLevelRewardCell:SetData(BattlePassProxy.Instance:LevelConfig(nextLv))
     self.nextLevelRewardCell:SetShowType(1, self.HandleSelectRewardIcon, self)
   end
+  self.nextLevelRewardCell:UpdateStatus()
 end
 
 function BattlePassLevelView:ObtainUpgradeStatus()

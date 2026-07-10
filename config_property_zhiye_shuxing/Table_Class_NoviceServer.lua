@@ -933,7 +933,8 @@ Table_Class_t = {
       1248001,
       1256001,
       815001,
-      4008001
+      4008001,
+      4013001
     },
     {
       1200001,
@@ -1337,6 +1338,7 @@ Table_Class = {
   },
   [11] = {
     id = 11,
+    NameZh = "剑士",
     NameEn = "Swordman",
     MaleBody = 3,
     FemaleBody = 4,
@@ -1429,7 +1431,6 @@ Table_Class = {
   },
   [14] = {
     id = 14,
-    NameZh = "符文骑士",
     NameEn = "RuneKnight",
     MaleBody = 9,
     FemaleBody = 10,
@@ -1649,7 +1650,6 @@ Table_Class = {
   [33] = {
     id = 33,
     NameZh = "十字刺客",
-    NameEn = "AssassinCross",
     MaleBody = 23,
     FemaleBody = 24,
     MaleEye = 1,
@@ -1742,6 +1742,7 @@ Table_Class = {
   [42] = {
     id = 42,
     NameZh = "猎人",
+    NameEn = "Hunter",
     MaleBody = 29,
     FemaleBody = 30,
     MaleEye = 1,
@@ -1845,6 +1846,7 @@ Table_Class = {
     AdvanceClass = Table_Class_t.AdvanceClass[34],
     Type = 5,
     TypeBranch = 51,
+    icon = "icon_5_1",
     InitialAttr = Table_Class_t.InitialAttr[14],
     AddPointSolution = Table_Class_t.AddPointSolution[18],
     SkillPointSolution = Table_Class_t.SkillPointSolution[13],
@@ -1874,7 +1876,6 @@ Table_Class = {
     AdvanceClass = Table_Class_t.AdvanceClass[35],
     Type = 5,
     TypeBranch = 51,
-    icon = "icon_5_2",
     InitialAttr = Table_Class_t.InitialAttr[15],
     AddPointSolution = Table_Class_t.AddPointSolution[19],
     SkillPointSolution = Table_Class_t.SkillPointSolution[13],
@@ -2742,9 +2743,9 @@ local cell_mt = {
     LimitMasterSkills = _EmptyTable,
     MasterSkills = _EmptyTable,
     MaxJobLevel = 130,
-    NameEn = "Hunter",
+    NameEn = "AssassinCross",
     NameEnFemale = "",
-    NameZh = "剑士",
+    NameZh = "符文骑士",
     NameZhFemale = "",
     ProfessionalFashion = _EmptyTable,
     ShowEndTime = "",
@@ -2759,7 +2760,7 @@ local cell_mt = {
     TypeBranch = 61,
     UnlockAttr = _EmptyTable,
     UnlockTips = "",
-    icon = "icon_5_1",
+    icon = "icon_5_2",
     id = 1
   }
 }

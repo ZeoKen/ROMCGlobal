@@ -478,3 +478,61 @@ end
 function PlayerData:IsRobotUser()
   return self.userdata:Get(UDEnum.ROBOT_USER) == 1
 end
+
+function PlayerData:IsHaveRobotMaster()
+  local robotMaster = self.userdata:Get(UDEnum.ROBOT_MASTER) or 0
+  return robotMaster ~= 0
+end
+
+function PlayerData:GetEquipSnowStoneLv(stoneID)
+  if not stoneID then
+    return 0
+  end
+  local proxy = SnowCrownProxy.Instance
+  if not proxy:IsGemEquipped(stoneID) then
+    return 0
+  end
+  return proxy:GetGemAdvanceLevel(stoneID) or 0
+end
+
+function PlayerData:GetRaceTypeNumInTeam(raceType)
+  if not raceType then
+    return 0
+  end
+  local num = 0
+  local _TeamProxy = TeamProxy.Instance
+  if _TeamProxy and _TeamProxy:IHaveTeam() then
+    local memberMap = _TeamProxy.myTeam:GetMemberMap()
+    for _, v in pairs(memberMap) do
+      if v.id ~= self.id then
+        local memberRace
+        if v.id then
+          local role = NSceneUserProxy.Instance:Find(v.id)
+          if role and role.data then
+            memberRace = role.data.race
+          end
+        end
+        if not memberRace and v.profession ~= nil then
+          local class = Table_Class[v.profession]
+          memberRace = class and class.Race
+        end
+        if memberRace == raceType then
+          num = num + 1
+        end
+      end
+    end
+  end
+  return num
+end
+
+function PlayerData:IsRideEnemy()
+  local rideCreatureId = self.rideCreatureId
+  if not rideCreatureId then
+    return false
+  end
+  local rideCreature = SceneCreatureProxy.FindCreature(rideCreatureId)
+  if not rideCreature or not rideCreature.data then
+    return false
+  end
+  return self:IsEnemy(rideCreature.data)
+end

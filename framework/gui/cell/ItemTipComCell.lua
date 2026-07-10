@@ -7,7 +7,23 @@ autoImport("UICycledScrollCtrl")
 ItemTipComCell = class("ItemTipComCell", ItemTipBaseCell)
 local BottomY = -194
 local BottomY_Long = -264
+local NOKRGiftProbabilityUrl = "https://game.naver.com/lounge/Ragnarok_M_Classic/board/16"
 local isNil = LuaGameObject.ObjectIsNull
+local IsNOKRItemShowRate = function(itemId)
+  if not (BranchMgr.IsNOKR() and itemId) or not GameConfig.ItemShowRate then
+    return false
+  end
+  local itemShowRate = GameConfig.ItemShowRate
+  if itemShowRate[itemId] ~= nil then
+    return true
+  end
+  for i = 1, #itemShowRate do
+    if itemShowRate[i] == itemId then
+      return true
+    end
+  end
+  return false
+end
 
 function ItemTipComCell:ctor(obj, index)
   ItemTipComCell.super.ctor(self, obj)
@@ -92,13 +108,35 @@ function ItemTipComCell:Init()
       self:PassEvent(ItemTipEvent.StoreToAdvManual, self)
     end)
   end
+  self.fashionStarBtn = self:FindGO("FashionStarBtn")
+  if self.fashionStarBtn then
+    self:AddClickEvent(self.fashionStarBtn, function()
+      GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+        view = PanelConfig.FashionStarView,
+        viewdata = {
+          batchid = self.fashionBatch_id
+        }
+      })
+    end)
+  end
   self.helpInfoButton = self:FindGO("HelpInfoButton")
   if self.helpInfoButton then
     self:AddClickEvent(self.helpInfoButton, function()
-      if not self.data then
+      if not self.data or not self.data.staticData then
         return
       end
-      OverseaHostHelper:ShowGiftProbability(self.data.staticData.id)
+      local itemId = self.data.staticData.id
+      OverseaHostHelper:ShowGiftProbability(itemId)
+    end)
+  end
+  self.showRateBtn = self:FindGO("ShowRateBtn")
+  if self.showRateBtn then
+    self.showRateBtn:SetActive(false)
+    self:AddClickEvent(self.showRateBtn, function()
+      local itemId = self.data and self.data.staticData and self.data.staticData.id
+      if IsNOKRItemShowRate(itemId) then
+        Application.OpenURL(NOKRGiftProbabilityUrl)
+      end
     end)
   end
   if self.bg then
@@ -159,6 +197,14 @@ function ItemTipComCell:InitFuncBtnStyle(num, container)
   end
 end
 
+function ItemTipComCell:UpdateGuideIds()
+  local itemId = self.data and self.data.staticData and self.data.staticData.id
+  local active = itemId == 114
+  if self.countChoose_AddButton then
+    self:AddOrRemoveGuideId(self.countChoose_AddButton, active and 1107 or nil)
+  end
+end
+
 function ItemTipComCell:ClickTipFunc(cellCtl)
   local data = cellCtl.data
   if data then
@@ -185,10 +231,7 @@ function ItemTipComCell:ClickTipFunc(cellCtl)
       if not self.applyClose and data.type == "Apply" and count < self.data.num and (not self.data.staticData.UseMode or self.data.staticData.UseMode == 0) then
         return
       end
-      if data.noClose then
-        return
-      end
-      self:PassEvent(ItemTipEvent.ClickTipFuncEvent)
+      self:PassEvent(ItemTipEvent.ClickTipFuncEvent, cellCtl)
     end
   end
 end
@@ -218,12 +261,16 @@ function ItemTipComCell:SetData(data, showFrom, showFullAttr, equipBuffUpSource,
     self:UpdateShowUpButton()
     self:UpdateFavorite()
     self:UpdateStoreButton()
+    self:UpdateFashionStarBtn()
     self:UpdateCardPreviewBtn()
     self:UpdateShowTpBtn()
     self:UpdateHelpInfoButton()
+    self:UpdateShowRateBtn()
     self:UpdateGiftDetailButton()
+    self:UpdateGuideIds()
   else
     self.gameObject:SetActive(false)
+    self:UpdateGuideIds()
   end
 end
 
@@ -247,6 +294,18 @@ function ItemTipComCell:UpdateStoreButton()
     self.isStoreButtonAvailable = canStore
     self.storeButtonSp.color = canStore and ItemTipSpriteNormalColor or ItemTipSpriteInvalidColor
     self.storeButtonSp.spriteName = canStore and "tips_icon_02" or "tips_icon_03"
+  end
+end
+
+function ItemTipComCell:UpdateFashionStarBtn()
+  self.fashionBatch_id = nil
+  if self.fashionStarBtn then
+    self.fashionBatch_id = FashionStarProxy.Instance:GetFashionStarBatchByEquip(self.data.staticData.id)
+    if self.fashionBatch_id and self.fashionBatch_id > 0 then
+      self:Show(self.fashionStarBtn)
+    else
+      self:Hide(self.fashionStarBtn)
+    end
   end
 end
 
@@ -388,6 +447,7 @@ end
 
 local UseFuncKey = {
   Apply = 1,
+  UseEffectItem = 1,
   PutFood = 1,
   CombineTip = 1
 }
@@ -419,6 +479,7 @@ function ItemTipComCell:UpdateTipFunc(config)
   self.hasUseFunc = false
   self.hasStoreFunc = false
   self.hasCombineFunc = false
+  self.funcConfig = config
   for i = 1, #config do
     local cfgid = config[i]
     local cfgdata = GameConfig.ItemFunction[cfgid]
@@ -437,6 +498,12 @@ function ItemTipComCell:UpdateTipFunc(config)
         if CombineFuncKey[cfgdata.type] then
           self.hasCombineFunc = true
         end
+        local _btnStyle
+        if state == ItemFuncState.Grey then
+          _btnStyle = ItemTipFuncCell.EBtnStyle.Grey
+        else
+          _btnStyle = cfgdata.btnStyle or ItemTipFuncCell.EBtnStyle.Yellow
+        end
         local data = {
           itemData = self.data,
           name = cfgdata.name,
@@ -444,7 +511,8 @@ function ItemTipComCell:UpdateTipFunc(config)
           callback = FunctionItemFunc.Me():GetFuncById(cfgid),
           callbackParam = self.data,
           childFunction = cfgdata.childFunction,
-          childFunction_Tip = cfgdata.childFunction_Tip
+          childFunction_Tip = cfgdata.childFunction_Tip,
+          btnStyle = _btnStyle
         }
         table.insert(funcDatas, data)
       end
@@ -472,7 +540,7 @@ function ItemTipComCell:UpdateCustomTipFunc(customCfg)
   self.funcDatas = nil
   local needCountChoose, hasStoreFunc
   local insertData = function(cfg)
-    self:AddTipFunc(cfg.name, cfg.callback, cfg.callbackParam, cfg.noClose, cfg.inactive, cfg.btnStyle)
+    self:AddTipFunc(cfg.name, cfg.callback, cfg.callbackParam, cfg.inactive, cfg.btnStyle)
     if cfg.needCountChoose then
       needCountChoose = true
     end
@@ -526,6 +594,7 @@ function ItemTipComCell:UpdateTipButtons(funcDatas)
     end
   end
   self:UpdateBgHeight()
+  self:UpdateGuideIds()
 end
 
 function ItemTipComCell:UpdateBgHeight()
@@ -670,11 +739,10 @@ function ItemTipComCell:UpdateNoneItemTipCountChooseBord(useMaxNumber)
   end
 end
 
-function ItemTipComCell:AddTipFunc(funcname, callback, callbackParam, noClose, inactive, btnStyle)
+function ItemTipComCell:AddTipFunc(funcname, callback, callbackParam, inactive, btnStyle)
   local data = {
     name = funcname,
     itemData = self.data,
-    noClose = noClose,
     callback = callback,
     callbackParam = callbackParam,
     inactive = inactive,
@@ -780,7 +848,7 @@ function ItemTipComCell:CheckIfCanActiveFavoriteButton()
   if not self.favoriteButton then
     return false
   end
-  if not self.data or self.data.staticData.Type == 65 then
+  if not (self.data and not self.data.isVirtualNokrDiamond and self.data.staticData) or self.data.staticData.Type == 65 then
     self.favoriteButton:SetActive(false)
     return false
   end
@@ -820,11 +888,19 @@ end
 
 function ItemTipComCell:UpdateHelpInfoButton()
   if self.helpInfoButton then
-    local isActive = self.data ~= nil and ItemTipBaseCell.ShowHelpInfoPredicate(self.data.staticData.id)
+    local itemId = self.data and self.data.staticData and self.data.staticData.id
+    local isActive = itemId ~= nil and ItemTipBaseCell.ShowHelpInfoPredicate(itemId)
     self.helpInfoButton:SetActive(isActive)
     if self.typeLabel then
       self.typeLabel.rightAnchor.absolute = isActive and -40 or 0
     end
+  end
+end
+
+function ItemTipComCell:UpdateShowRateBtn()
+  if self.showRateBtn then
+    local itemId = self.data and self.data.staticData and self.data.staticData.id
+    self.showRateBtn:SetActive(IsNOKRItemShowRate(itemId))
   end
 end
 

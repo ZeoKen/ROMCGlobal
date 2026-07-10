@@ -33,7 +33,7 @@ end
 function PetComposePreviewCell:OnClickItem(cellCtl)
   local data = cellCtl and cellCtl.data
   if self.clickCall then
-    self.clickCall(self.clickCallParam, data)
+    self.clickCall(self.clickCallParam, data, cellCtl)
   end
 end
 
@@ -47,8 +47,7 @@ function PetComposePreviewCell:ResetCell()
   if self.data then
     self:Show(self.pos)
     self:SetBaseInfo()
-    local uiData = self.data:GetUIData()
-    self.dendrogramCellCtl:ResetDatas(uiData)
+    self:ResetDatas()
   else
     self:Hide(self.pos)
   end
@@ -63,7 +62,8 @@ function PetComposePreviewCell:SetBaseInfo()
   local rootId = PetComposeProxy.Instance:GetCurPet()
   local rootCsv = Table_PetCompose[rootId]
   local nextPet = false
-  local nodeCount = self.data:GetNodeCount()
+  local uiData = self.data:GetUIData()
+  local nodeCount = uiData and #uiData or self.data:GetNodeCount()
   for i = 1, 3 do
     local materialPet = rootCsv["MaterialPet" .. i]
     local childId = materialPet and materialPet.id

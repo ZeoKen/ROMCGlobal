@@ -474,10 +474,6 @@ function AI_Myself:_TrySwitchCommand(time, deltaTime, creature)
           oldCurrentCmd:Destroy()
           oldCurrentCmd = nil
         end
-        if oldCurrentCmd and oldCurrentCmd.AIClass == AI_CMD_Myself_Skill then
-          oldCurrentCmd:Destroy()
-          oldCurrentCmd = nil
-        end
         self.nextCmd = oldCurrentCmd
       end
     end

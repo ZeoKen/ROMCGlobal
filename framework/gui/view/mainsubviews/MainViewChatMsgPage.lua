@@ -63,7 +63,8 @@ function MainViewChatMsgPage:FindObjs()
   self.ButtonGrid_UIGrid = self:FindGO("VoiceGrid"):GetComponent(UIGrid)
   self.worldMsgCollider = self.worldMsgTween.gameObject:GetComponent(BoxCollider)
   self.actPartTrans = self:FindGO("ACTPart").transform
-  self.actPartBtn = self:FindGO("btnACT")
+  self.actPartBtn = self:FindComponent("btnACT", UISprite)
+  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ACTION, self.actPartBtn, 4, {15, -5})
   self.cameraPartTrans = self:FindGO("CameraPart").transform
   self.voicePart = self:FindGO("VoicePart")
   self.voicePartTrans = self.voicePart.transform
@@ -95,7 +96,7 @@ function MainViewChatMsgPage:FindObjs()
 end
 
 function MainViewChatMsgPage:AddEvts()
-  self:AddClickEvent(self.actPartBtn, function(go)
+  self:AddClickEvent(self.actPartBtn.gameObject, function(go)
     self:sendNotification(MainViewEvent.EmojiBtnClick)
   end)
   self:AddClickEvent(self.chatPrivately, function(go)

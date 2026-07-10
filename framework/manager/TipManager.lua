@@ -68,6 +68,7 @@ autoImport("BalanceModeSkillTip")
 autoImport("AstralDestinyGraphPointTip")
 autoImport("RoguelikeSkillRemoveTip")
 autoImport("SnowCrownAttrTip")
+autoImport("InheritSkillMaxLevelPreviewTip")
 TipManager.Instance = nil
 
 function TipManager:ctor()
@@ -437,6 +438,7 @@ end
 
 function TipManager:ShowEquipChooseTip(datas, stick, offset, closecall, closeCallParam)
   self:CloseTip()
+  local side = NGUIUtil.AnchorSide.Right
   TipsView.Me():ShowStickTip(EquipChooseTip, datas, side, stick, offset, "EquipChooseTip")
   return TipsView.Me().currentTip
 end
@@ -757,5 +759,12 @@ function TipManager:ShowSnowCrownAttrTip(data, stick, side, offset)
   side = side or NGUIUtil.AnchorSide.TopRight
   offset = offset or {0, 0}
   TipsView.Me():ShowStickTip(SnowCrownAttrTip, data, side, stick, offset, "SnowCrownAttrTip")
+  return TipsView.Me().currentTip
+end
+
+function TipManager:ShowInheritSkillMaxLevelPreviewTip(data, stick, side, offset)
+  side = side or NGUIUtil.AnchorSide.TopLeft
+  offset = offset or {0, 0}
+  TipsView.Me():ShowStickTip(InheritSkillMaxLevelPreviewTip, data, side, stick, offset, "InheritSkillMaxLevelPreviewTip")
   return TipsView.Me().currentTip
 end

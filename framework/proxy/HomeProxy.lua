@@ -498,16 +498,20 @@ function HomeProxy:CalMyHouseScore_Client()
 end
 
 function HomeProxy:GenerateSingleHouseScoreMap_Client(houseType, targetMap, invalidMap)
+  local myHouseData = self:GetMyHouseData(houseType)
+  local houseConfig = myHouseData and myHouseData.houseConfig
+  local areaType = houseConfig and houseConfig.Area
   local simpleFurnitureMap = self:GetMyFurnitureSimpleDatas(houseType)
   if simpleFurnitureMap then
-    local typeHighestItem, invalidHighestItem, areaLimit
+    local typeHighestItem, invalidHighestItem, areaLimit, isValid
     for itemType, typeDatas in pairs(simpleFurnitureMap) do
       typeHighestItem = targetMap[itemType]
       invalidHighestItem = nil
       for guid, staticData in pairs(typeDatas) do
+        areaLimit = staticData.AreaForceLimit or staticData.AreaLimit
+        isValid = not areaLimit or areaType and 0 < areaLimit & areaType
         if not typeHighestItem or staticData.HomeScore > typeHighestItem.HomeScore then
-          areaLimit = staticData.AreaForceLimit or staticData.AreaLimit
-          if not areaLimit or 0 < areaLimit & houseType then
+          if isValid then
             typeHighestItem = staticData
           else
             invalidHighestItem = staticData
@@ -520,14 +524,13 @@ function HomeProxy:GenerateSingleHouseScoreMap_Client(houseType, targetMap, inva
       end
     end
   end
-  local myHouseData = self:GetMyHouseData(houseType)
   local renovationMap = myHouseData and myHouseData:GetRenovationDataMap()
   if renovationMap then
     local tableItem = Table_Item
     local itemStaticData, itemType, typeHighestItem
     for floorIndex, floorMap in pairs(renovationMap) do
       for typeID, matStaticData in pairs(floorMap) do
-        if matStaticData.HomeScore and matStaticData.HomeScore > 0 then
+        if matStaticData.HomeScore and 0 < matStaticData.HomeScore then
           itemStaticData = tableItem[matStaticData.id]
           itemType = itemStaticData and itemStaticData.Type
           typeHighestItem = targetMap[itemType]
@@ -599,7 +602,7 @@ function HomeProxy:HandleQueryHomeDataHomeCmd(serverDatas)
       SnowRealmProxy.Instance:HandleQueryHomeDataHomeCmd(serverDatas)
     end
   end
-  if serverDatas.garden then
+  if serverDatas.garden and serverDatas.garden.id ~= 0 then
     self.myGardenData = BaseHouseData.new(serverDatas.garden)
   end
 end
@@ -965,10 +968,28 @@ function HomeProxy:_HandlePhotoDataUpdate(data, nFurniture)
   end
 end
 
+function HomeProxy:_UpdateSkadaNpcCombatAttrsByFurnitureData(furnitureData)
+  if not furnitureData then
+    return
+  end
+  local userMap = NSceneNpcProxy.Instance and NSceneNpcProxy.Instance.userMap
+  if not userMap then
+    return
+  end
+  local npcData
+  for _, nCreature in pairs(userMap) do
+    npcData = nCreature and nCreature.data
+    if npcData and npcData.GetRelativeFurnitureID and npcData:GetRelativeFurnitureID() == furnitureData.id and npcData.UpdateSkadaCombatAttrsByFurnitureData then
+      npcData:UpdateSkadaCombatAttrsByFurnitureData(furnitureData)
+    end
+  end
+end
+
 function HomeProxy:_HandleSkadaDataUpdate(data, nFurniture, serverSkadaData)
   if not serverSkadaData then
     return
   end
+  self:_UpdateSkadaNpcCombatAttrsByFurnitureData(data)
   self:ClearSkadaData()
   self.skadaHistoryMax = ReusableTable.CreateArray()
   local serverArray = serverSkadaData.history_max

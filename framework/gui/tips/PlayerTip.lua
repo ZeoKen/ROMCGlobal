@@ -1,6 +1,7 @@
 autoImport("BaseTip")
 autoImport("UIEmojiCell")
 autoImport("PlayerTipHomeCell")
+autoImport("PetBagItemCell")
 PlayerTip = class("PlayerTip", BaseTip)
 local FindCreature = SceneCreatureProxy.FindCreature
 local tempVector3 = LuaVector3.Zero()
@@ -55,6 +56,13 @@ function PlayerTip:InitTip()
   self.m_scrollView:ResetPosition()
   self.infoTable = self:FindGO("InfoTable"):GetComponent(UITable)
   self.profilePart = self:FindGO("ProfilePart")
+  self.petQuickFightPart = self:FindGO("PetQuickFightPart")
+  self.quickGrid = self:FindComponent("PetGrid", UIGrid, self.petQuickFightPart)
+  self.quickPetTipLab = self:FindComponent("Tip", UILabel, self.petQuickFightPart)
+  self.quickPetTipLab.text = ZhString.FightPet_Tip
+  self.quickItemCtrl = UIGridListCtrl.new(self.quickGrid, PetBagItemCell, "BagItemCell")
+  self.quickItemCtrl:SetNoScrollView(true)
+  self.quickItemCtrl:AddEventListener(MouseEvent.MouseClick, self.ClickQuickItemCell, self)
   self.tagsPart = self:FindGO("Tags")
   self.tags = {}
   for i = 1, 3 do
@@ -102,6 +110,7 @@ end
 function PlayerTip:AddListener()
   EventManager.Me():AddEventListener(ServiceEvent.UserEventQueryProfileUserEvent, self.HandleQueryUserInfo, self)
   EventManager.Me():AddEventListener(ServiceEvent.UserEventSyncFateRelationEvent, self.HandleFateRelation, self)
+  EventManager.Me():AddEventListener(ItemEvent.PetUpdate, self.UpdateQuickPet, self)
 end
 
 function PlayerTip:AcitiveIdObj(b)
@@ -207,6 +216,11 @@ function PlayerTip:SetData(data)
             end
           end
         end
+        if data.ispet then
+          self:UpdateQuickPet()
+        else
+          self:Hide(self.petQuickFightPart)
+        end
         if playerTipData.guildname and playerTipData.guildname ~= "" then
           self.guildName.text = string.format(ZhString.PlayerTip_GuildTip, playerTipData.guildname)
           self.guildIcon.color = LuaGeometry.GetTempVector4(0.6588235294117647, 0.6588235294117647, 0.6588235294117647, 1)
@@ -233,6 +247,33 @@ function PlayerTip:SetData(data)
     end
     self.closecallback = data.closecallback
   end
+end
+
+function PlayerTip:UpdateQuickPet()
+  local petBagData = BagProxy.Instance.petBagData
+  local quickPetCtn = petBagData:GetPetEggQuickPackUsedCount()
+  if 0 < quickPetCtn then
+    self:Show(self.petQuickFightPart)
+    local quickItems = petBagData:GetQuickItems()
+    self.quickItemCtrl:ResetDatas(quickItems)
+  else
+    self:Hide(self.petQuickFightPart)
+  end
+end
+
+function PlayerTip:ClickQuickItemCell(cellCtl)
+  local data = cellCtl.data
+  if not data then
+    return
+  end
+  local eggInfo = data.petEggInfo
+  if not eggInfo then
+    return
+  end
+  if eggInfo:IsFighting() then
+    return
+  end
+  ServiceScenePetProxy.Instance:CallEggHatchPetCmd(nil, data.id, eggInfo.petid)
 end
 
 function PlayerTip:UpdateTipFunc(funckeys, playerTipData)
@@ -421,6 +462,7 @@ function PlayerTip:OnExit()
   self:RemoveExpireTimeCheck()
   EventManager.Me():RemoveEventListener(ServiceEvent.UserEventQueryProfileUserEvent, self.HandleQueryUserInfo, self)
   EventManager.Me():RemoveEventListener(ServiceEvent.UserEventSyncFateRelationEvent, self.HandleFateRelation, self)
+  EventManager.Me():RemoveEventListener(ItemEvent.PetUpdate, self.UpdateQuickPet, self)
   if self.closecallback then
     self.closecallback()
   end

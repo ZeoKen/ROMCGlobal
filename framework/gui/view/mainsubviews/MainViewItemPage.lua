@@ -7,6 +7,7 @@ autoImport("GemPackagePart")
 autoImport("FurniturePackagePart")
 autoImport("PersonalArtifactPackagePart")
 autoImport("ExtractionPackagePart")
+autoImport("PetQuickFightPackagePart")
 autoImport("RaidItemCell")
 MainViewItemPage.ButterflyWingId = 50001
 MainViewItemPage.PetItemId = 5682
@@ -170,13 +171,13 @@ function MainViewItemPage:GetPackageBord(bordKey)
   return bord
 end
 
-function MainViewItemPage:ShowPackageBord(bordKey, cellCtl)
+function MainViewItemPage:ShowPackageBord(bordKey, cellCtl, offset_x, offset_y)
   local ctrl = self:GetPackageBord(bordKey)
   ctrl:UpdateInfo()
   ctrl:Show()
   local x, y, z = LuaGameObject.GetPosition(cellCtl.gameObject.transform)
   ctrl:SetPos(x, y, z)
-  ctrl:SetLocalOffset(-257.1, 214, 0)
+  ctrl:SetLocalOffset(-257.1 + (offset_x or 0), 214 + (offset_y or 0), 0)
   local thefrontPanel = self:FindComponent("ThefrontPanel", UIPanel)
   if thefrontPanel and ctrl.gameObject then
     thefrontPanel:ConstrainTargetToBounds(ctrl.gameObject.transform, true)
@@ -196,7 +197,12 @@ function MainViewItemPage:ClickItem(cellCtl)
       return
     end
     if data.staticData.id == 5640 then
-      self:ShowPackageBord("Pet", cellCtl)
+      local isPvP, isGvG = Game.MapManager:IsPVPMode(), Game.MapManager:IsInGVG()
+      if isPvP or isGvG then
+        self:ShowPackageBord("PetQuickFight", cellCtl, 250, -100)
+      else
+        self:ShowPackageBord("Pet", cellCtl, -300)
+      end
       return
     end
     if data.staticData.id == 5047 then

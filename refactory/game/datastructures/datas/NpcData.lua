@@ -73,7 +73,8 @@ NpcData.NpcDetailedType = {
   NormalPhantom = "NormalPhantom",
   WarehouseNpc = "WarehouseNpc",
   UserHandcartNpc = "UserHandcartNpc",
-  HomeMessageBoard = "HomeMessageBoard"
+  HomeMessageBoard = "HomeMessageBoard",
+  RotateNpc = "RotateNpc"
 }
 NpcData.ZoneType = {
   ZONE_MIN = 0,
@@ -749,7 +750,53 @@ function NpcData.GetZoneTypeByStaticData(staticData)
 end
 
 function NpcData:GetZoneType()
+  if self.hasSkadaFurnitureCombatAttrs and self.zoneType then
+    return self.zoneType
+  end
   return NpcData.GetZoneTypeByStaticData(self.staticData)
+end
+
+function NpcData:GetRelativeFurnitureData()
+  if not HomeManager.Me():IsAtHome() or StringUtil.IsEmpty(self.furnitureID) then
+    return
+  end
+  local curMapID = Game.MapManager:GetMapID()
+  local isSnowRealm = HomeManager.GetInstance():IsSnowRealmMap(curMapID)
+  local homeManager = HomeManager.Me()
+  if isSnowRealm and SnowRealmProxy and SnowRealmProxy.Instance then
+    local houseIndex = homeManager:GetCurHomeIdx()
+    if houseIndex and 0 < houseIndex then
+      return SnowRealmProxy.Instance:FindFurnitureData(self.furnitureID, houseIndex)
+    end
+    return
+  end
+  return HomeProxy.Instance:FindFurnitureData(self.furnitureID)
+end
+
+function NpcData:UpdateSkadaCombatAttrsByFurnitureData(furnitureData)
+  self.hasSkadaFurnitureCombatAttrs = nil
+  if not furnitureData or not furnitureData.woodType then
+    return false
+  end
+  local zoneType = NpcData.ZoneType.ZONE_FIELD
+  local damReduceType = furnitureData.woodDamageReduceType or 0
+  if furnitureData.woodType == EWOODTYPE.EWOODTYPE_SPEC_MONSTER then
+    local staticData = furnitureData.woodMonsterId and _Table_Monster(furnitureData.woodMonsterId)
+    if staticData then
+      zoneType = NpcData.GetZoneTypeByStaticData(staticData) or zoneType
+      if damReduceType <= 0 then
+        damReduceType = NpcData.GetDamReduceTypeByStaticData(staticData)
+      end
+    end
+  end
+  self.zoneType = zoneType
+  self.damReduceType = damReduceType or 0
+  self.hasSkadaFurnitureCombatAttrs = true
+  return true
+end
+
+function NpcData:UpdateSkadaCombatAttrsByFurnitureID()
+  return self:UpdateSkadaCombatAttrsByFurnitureData(self:GetRelativeFurnitureData())
 end
 
 function NpcData:SetUseServerDressData(v)
@@ -1181,6 +1228,7 @@ function NpcData:InitByClient(clientData)
   self.isSkada = GameConfig.Home.SkadaNpcIDs and TableUtility.ArrayFindIndex(GameConfig.Home.SkadaNpcIDs, self.staticData.id) > 0
   local comodoconfig = GameConfig.ComodoRaid
   self.isSanityNPC = (comodoconfig and comodoconfig.SanityNpc) == self.staticData.id
+  self.hasSkadaFurnitureCombatAttrs = nil
   self.zoneType = self:GetZoneType()
   self:SetBehaviourData(self.staticData.Behaviors)
   self.changelinepunish = self:GetFeature_ChangeLinePunish()
@@ -1292,6 +1340,7 @@ function NpcData:InitByServerData(serverData)
   self.isSkada = GameConfig.Home.SkadaNpcIDs and 0 < TableUtility.ArrayFindIndex(GameConfig.Home.SkadaNpcIDs, self.staticData.id)
   local comodoconfig = GameConfig.ComodoRaid
   self.isSanityNPC = (comodoconfig and comodoconfig.SanityNpc) == self.staticData.id
+  self.hasSkadaFurnitureCombatAttrs = nil
   self.zoneType = self:GetZoneType()
   self:SetBehaviourData(serverData.behaviour)
   self.changelinepunish = self:GetFeature_ChangeLinePunish()
@@ -1317,7 +1366,9 @@ function NpcData:InitByServerData(serverData)
   self.born_se = serverData.se
   self.born_se_loop = serverData.se_loop
   self.postcard = serverData.postcard
-  self.damReduceType = self:GetDamReduceType()
+  if not self:UpdateSkadaCombatAttrsByFurnitureID() then
+    self.damReduceType = self:GetDamReduceType()
+  end
   self.boxOpened = serverData.box_opened
   if self:IsHandcart_Detail() then
     self.followData = Table_NPCFollow[serverData.npcID]
@@ -1333,6 +1384,9 @@ function NpcData:GetNoAutoLock(val)
 end
 
 function NpcData:GetDamReduceType()
+  if self.hasSkadaFurnitureCombatAttrs then
+    return self.damReduceType or 0
+  end
   self.damReduceType = self.userdata:Get(UDEnum.DAM_REDUCE_TYPE)
   if not self.damReduceType or self.damReduceType <= 0 then
     return NpcData.GetDamReduceTypeByStaticData(self.staticData)
@@ -1370,6 +1424,7 @@ function NpcData:DoDeconstruct(asArray)
   self.postcard = nil
   self.serverBossType = nil
   self.followData = nil
+  self.hasSkadaFurnitureCombatAttrs = nil
   self:ClearClientData()
 end
 

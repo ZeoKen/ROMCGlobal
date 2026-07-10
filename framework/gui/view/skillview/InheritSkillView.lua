@@ -94,6 +94,24 @@ function InheritSkillView:FindObjs()
   self.barSp = self:FindComponent("Foreground", UIMultiSprite)
   self.oldDescScrollView = self:FindComponent("OldDescScrollView", UIScrollView)
   self.newDescScrollView = self:FindComponent("NewDescScrollView", UIScrollView)
+  local previewLongPress = self:FindComponent("PreviewBtn", UILongPress)
+  if previewLongPress then
+    function previewLongPress.pressEvent(obj, isPress)
+      if isPress then
+        self:ShowMaxLevelPreview()
+      else
+        TipManager.Instance:CloseTip()
+      end
+    end
+  end
+  self.previewBtnSp = self:FindComponent("PreviewBtn", UISprite)
+  self.attrExpandBtnSp = self:FindComponent("AttrExpandBtn", UISprite)
+  self:AddClickEvent(self.attrExpandBtnSp.gameObject, function()
+    self:OnAttrExpandBtnClick()
+  end)
+  self.attrExpandPanel = self:FindGO("AttrPanel")
+  local expandAttrGrid = self:FindComponent("ExpandAttrGrid", UIGrid)
+  self.expandAttrListCtrl = UIGridListCtrl.new(expandAttrGrid, InheritSkillCostPointAttrCell, "InheritSkillCostPointAttrCell")
 end
 
 function InheritSkillView:AddListenEvts()
@@ -158,12 +176,12 @@ function InheritSkillView:SwapSkill(obj)
     return
   end
   local costPoint = source.data:GetCostPoint()
-  if not InheritSkillProxy.Instance:IsCostPointsEnough(costPoint) then
+  if not InheritSkillProxy.Instance:IsCostPointsEnough(source.data) then
     MsgManager.ShowMsgByID(43613)
     local cells = self.costPointListCtrl:GetCells()
     for i = 1, #cells do
       local cell = cells[i]
-      if cell.data == 0 or cell.data == 1 then
+      if not cell.data.isLock and (not cell.data.isLeftLoad or not cell.data.isRightLoad) then
         cell:PlayEffect(EffectMap.UI.SkillInherit_CostPointRed)
       end
     end
@@ -212,14 +230,25 @@ function InheritSkillView:RefreshCostPoint()
     local loadSkill = loadSkills[i]
     loadCostPoint = loadCostPoint + loadSkill:GetCostPoint()
   end
-  for i = 1, max do
-    local state = i <= loadCostPoint and 2 or i <= costPoints and 1 or 0
-    datas[#datas + 1] = state
+  for i = 1, NumberUtility.RoundToInt(max / 2) do
+    local data = {}
+    data.isLock = i > math.ceil(costPoints / 2)
+    data.isLeftUnlock = costPoints >= 2 * i - 1
+    data.isRightUnlock = costPoints >= 2 * i
+    data.isLeftLoad = loadCostPoint >= 2 * i - 1
+    data.isRightLoad = loadCostPoint >= 2 * i
+    datas[#datas + 1] = data
   end
   self.costPointListCtrl:ResetDatas(datas)
   self.costPointLabel.text = string.format("(%d/%d)", loadCostPoint, costPoints)
   local attrs = self.multiSaveId and SaveInfoProxy.Instance:GetTotalCostPointAttrs(self.multiSaveId, self.multiSaveType, extendedCostPoints) or InheritSkillProxy.Instance:GetTotalCostPointAttrs(extendedCostPoints)
-  self.costPointAttrListCtrl:ResetDatas(attrs)
+  local count = math.min(#attrs, 4)
+  local attrDatas = {}
+  for i = 1, count do
+    attrDatas[#attrDatas + 1] = attrs[i]
+  end
+  self.costPointAttrListCtrl:ResetDatas(attrDatas)
+  self.expandAttrListCtrl:ResetDatas(attrs)
   self.costPointMax:SetActive(max <= costPoints)
   self.addCostBtn:SetActive(not self.multiSaveId and max > costPoints)
 end
@@ -260,7 +289,7 @@ end
 function InheritSkillView:RefreshLoadSkills()
   local datas = {}
   local skills = self.multiSaveId and SaveInfoProxy.Instance:GetInheritSkillLoadSkills(self.multiSaveId, self.multiSaveType) or InheritSkillProxy.Instance:GetLoadSkills()
-  local count = #skills < 3 and 3 or math.min(#skills + 1, 8)
+  local count = #skills < 1 and 1 or #skills + 1
   for i = 1, count do
     local data = skills[i] or InheritSkillDragCell.Empty
     datas[#datas + 1] = data
@@ -321,14 +350,20 @@ function InheritSkillView:RefreshSelectSkillInfo(data)
   self:SetButtonEnable(self.upgradeBtn, not isMaxLv, EnabledLabelEffectColor)
   self.equipBtn:SetActive(not data.isLoad)
   self.unequipBtn:SetActive(data.isLoad)
+  self.previewBtnSp.gameObject:SetActive(not isMaxLv)
   if isMaxLv then
     self.upgradeLabel.text = ZhString.InheritSkill_MaxLevel
     self.maxLv.text = string.format(ZhString.InheritSkill_MaxLv, data.maxLevel)
     self.maxLvDesc.text = SkillProxy.GetDesc(data.id)
   elseif not data.isUnlock then
-    local config = Table_Class[data.unlockProfess]
-    local className = config and config.NameZh or ""
-    self.upgradeTipLabel.text = string.format(ZhString.InheritSkill_UnlockTip, className)
+    if data.inheritStaticData and data.inheritStaticData.Condition then
+      local condition = data.inheritStaticData.Condition
+      local conditionFamilyId = condition // 1000
+      local conditionLevel = condition % 1000
+      local _, conditionSkill = InheritSkillProxy.Instance:FindSkillByFamilyId(conditionFamilyId)
+      local conditionSkillName = conditionSkill and conditionSkill.staticData.NameZh or ""
+      self.upgradeTipLabel.text = string.format(ZhString.InheritSkill_UnlockTip, conditionSkillName, conditionLevel)
+    end
     self:UpdateCurLevelSkillInfo(data)
     self:UpdateNextLevelSkillInfo(data)
   else
@@ -364,54 +399,44 @@ local NormalColor = Color(0.3333333333333333, 0.3568627450980392, 0.431372549019
 local LackColor = Color(0.9333333333333333, 0.3568627450980392, 0.3568627450980392, 1)
 
 function InheritSkillView:UpdateMaterialInfo(data)
-  local materials = data and data.inheritStaticData and data.inheritStaticData.Materials
-  if materials then
-    local quality = data.inheritStaticData and data.inheritStaticData.Quality
-    local matNum
-    if GameConfig.SkillInherit and GameConfig.SkillInherit.Quality then
-      local qualityConf = GameConfig.SkillInherit.Quality[quality]
-      if qualityConf then
-        matNum = qualityConf.LvUpCost[data.level + 1]
+  if not data then
+    return
+  end
+  local materials, matNum, totalNum, isLack = data:GetUpgradeMaterialState()
+  if materials and matNum then
+    local datas = {}
+    local str = ""
+    local count = #materials
+    local checkPackage = GameConfig.PackageMaterialCheck.skill_inherit
+    for i = 1, count do
+      local itemId = materials[i]
+      local itemData = ItemData.new("", itemId)
+      local num = BagProxy.Instance:GetItemNumByStaticID(itemId, checkPackage)
+      itemData.num = num
+      str = str .. itemData:GetName()
+      if i < count then
+        str = str .. "/"
+      end
+      datas[#datas + 1] = itemData
+    end
+    self.materialListCtrl:ResetDatas(datas)
+    TableUtility.ArrayClear(self.lackMats)
+    self.materialTipLabel.text = string.format(ZhString.InheritSkill_MaterialTip, str, matNum)
+    local cells = self.materialListCtrl:GetCells()
+    for i = 1, #cells do
+      local cell = cells[i]
+      cell:SetNumLabelState(isLack)
+      if isLack and ItemData.CheckItemCanTrade(cell.data.staticData.id) then
+        self.lackMats[#self.lackMats + 1] = {
+          id = cell.data.staticData.id,
+          count = matNum - totalNum
+        }
       end
     end
-    if matNum then
-      local datas = {}
-      local str = ""
-      local count = #materials
-      local totalNum = 0
-      local checkPackage = GameConfig.PackageMaterialCheck.inherit_skill
-      for i = 1, count do
-        local itemId = materials[i]
-        local itemData = ItemData.new("", itemId)
-        local num = BagProxy.Instance:GetItemNumByStaticID(itemId, checkPackage)
-        itemData.num = num
-        str = str .. itemData:GetName()
-        if i < count then
-          str = str .. "/"
-        end
-        datas[#datas + 1] = itemData
-        totalNum = totalNum + num
-      end
-      self.materialListCtrl:ResetDatas(datas)
-      TableUtility.ArrayClear(self.lackMats)
-      self.materialTipLabel.text = string.format(ZhString.InheritSkill_MaterialTip, str, matNum)
-      local isLack = matNum > totalNum
-      local cells = self.materialListCtrl:GetCells()
-      for i = 1, #cells do
-        local cell = cells[i]
-        cell:SetNumLabelState(isLack)
-        if isLack and ItemData.CheckItemCanTrade(cell.data.staticData.id) then
-          self.lackMats[#self.lackMats + 1] = {
-            id = cell.data.staticData.id,
-            count = matNum - totalNum
-          }
-        end
-      end
-      self.materialProgressBar.value = math.clamp(totalNum / matNum, 0, 1)
-      self.progressLabel.text = string.format("%d/%d", totalNum, matNum)
-      self.progressLabel.color = isLack and LackColor or NormalColor
-      self.barSp.CurrentState = isLack and 0 or 1
-    end
+    self.materialProgressBar.value = math.clamp(totalNum / matNum, 0, 1)
+    self.progressLabel.text = string.format("%d/%d", totalNum, matNum)
+    self.progressLabel.color = isLack and LackColor or NormalColor
+    self.barSp.CurrentState = isLack and 0 or 1
   end
 end
 
@@ -443,16 +468,13 @@ function InheritSkillView:OnUpgradeBtnClick()
     local skillIds = {
       self.selectSkillItemData.id
     }
-    redlog("CallLevelupSkill", self.selectSkillItemData.id)
     self.isLvUp = true
     ServiceSkillProxy.Instance:CallLevelupSkill(SceneSkill_pb.ELEVELUPTYPE_INHERIT, skillIds)
   end
 end
 
 function InheritSkillView:HandleItemUpdate()
-  if self.selectSkillItemData then
-    self:UpdateMaterialInfo(self.selectSkillItemData)
-  end
+  self:RefreshView()
 end
 
 function InheritSkillView:ScrollToSkill(familyId)
@@ -468,12 +490,17 @@ function InheritSkillView:ScrollToSkill(familyId)
       end
     end
     if 0 < index then
-      local totalY = cells[#cells].trans.localPosition.y - cells[#cells].height
-      local targetY = cells[index].trans.localPosition.y - cells[index].height
-      local per = targetY / totalY
-      redlog("InheritSkillView:ScrollToSkill", per)
-      per = math.clamp(per, 0, 1)
-      self.skillScrollView:SetDragAmount(0, per, false)
+      self.skillScrollView:InvalidateBounds()
+      local panel = self.skillScrollView.panel
+      panel = panel or self.skillScrollView.gameObject:GetComponent(UIPanel)
+      if panel and cells[index] and cells[index].gameObject then
+        local clip = panel.baseClipRegion
+        local clipOffset = panel.clipOffset
+        local topY = clip.y + clipOffset.y + clip.w * 0.5
+        local _, pivotY = LuaGameObject.InverseTransformPointByTransform(panel.cachedTransform, cells[index].gameObject.transform, Space.World)
+        self.skillScrollView:MoveRelative(LuaGeometry.GetTempVector3(0, topY - pivotY, 0))
+        self.skillScrollView:RestrictWithinBounds(true)
+      end
     end
     local skillCells = cells[index]:GetSkillCells()
     local selectCell = TableUtility.ArrayFindByPredicate(skillCells, function(v, args)
@@ -492,20 +519,15 @@ function InheritSkillView:OnEquipBtnClick()
       return
     end
     local costPoint = self.selectSkillItemData:GetCostPoint()
-    if not InheritSkillProxy.Instance:IsCostPointsEnough(costPoint) then
+    if not InheritSkillProxy.Instance:IsCostPointsEnough(self.selectSkillItemData) then
       MsgManager.ShowMsgByID(43613)
       local cells = self.costPointListCtrl:GetCells()
       for i = 1, #cells do
         local cell = cells[i]
-        if cell.data == 0 or cell.data == 1 then
+        if not cell.data.isLock and (not cell.data.isLeftLoad or not cell.data.isRightLoad) then
           cell:PlayEffect(EffectMap.UI.SkillInherit_CostPointRed)
         end
       end
-      return
-    end
-    local skills = InheritSkillProxy.Instance:GetLoadSkills()
-    if 8 <= #skills then
-      MsgManager.ShowMsgByID(43660)
       return
     end
     ServiceSkillProxy.Instance:CallLoadInheritSkillCmd(self.selectSkillItemData.id, nil, 0)
@@ -516,4 +538,20 @@ function InheritSkillView:OnUnequipBtnClick()
   if self.selectSkillItemData and self.selectSkillItemData.isLoad then
     ServiceSkillProxy.Instance:CallLoadInheritSkillCmd(self.selectSkillItemData.id, nil, 1)
   end
+end
+
+function InheritSkillView:ShowMaxLevelPreview()
+  if not self.selectSkillItemData then
+    return
+  end
+  local maxLevel = GameConfig.SkillInherit and GameConfig.SkillInherit.MaxLv
+  local previewId = self.selectSkillItemData.sortID * 1000 + maxLevel
+  local desc = SkillProxy.GetDesc(previewId)
+  TipManager.Instance:ShowInheritSkillMaxLevelPreviewTip({maxLevel = maxLevel, desc = desc}, self.previewBtnSp, NGUIUtil.AnchorSide.TopLeft, {-150, -254})
+end
+
+function InheritSkillView:OnAttrExpandBtnClick()
+  local curActive = self.attrExpandPanel.activeSelf
+  self.attrExpandPanel:SetActive(not curActive)
+  self.attrExpandBtnSp.flip = curActive and 0 or 2
 end

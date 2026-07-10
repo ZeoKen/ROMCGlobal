@@ -1,6 +1,39 @@
 ActivityIntegrationProxy = class("ActivityIntegrationProxy", pm.Proxy)
 ActivityIntegrationProxy.Instance = nil
 ActivityIntegrationProxy.NAME = "ActivityIntegrationProxy"
+local _SuperSignTimeStr = function(timestamp)
+  if not timestamp then
+    return "nil"
+  end
+  return os.date("%Y-%m-%d %H:%M:%S", math.floor(timestamp))
+end
+local _SuperSignServerTimeZone = function()
+  if ServerTime.SERVER_TIMEZONE then
+    return ServerTime.SERVER_TIMEZONE
+  end
+  if ServerTime.DATE_TIMEZONE then
+    return ServerTime.DATE_TIMEZONE
+  end
+  return tonumber(ServerTime.Ori_OsDate("%z", 0)) / 100
+end
+local _SuperSignGameDayIndex = function(timestamp)
+  if not timestamp then
+    return nil
+  end
+  local timezone = _SuperSignServerTimeZone() or 0
+  return math.floor((timestamp + timezone * 3600 - 18000) / 86400)
+end
+local _SuperSignNextRefreshTime = function(timestamp)
+  if not timestamp then
+    return nil
+  end
+  local gameDayIndex = _SuperSignGameDayIndex(timestamp)
+  if not gameDayIndex then
+    return nil
+  end
+  local timezone = _SuperSignServerTimeZone() or 0
+  return (gameDayIndex + 1) * 86400 - timezone * 3600 + 18000
+end
 
 function ActivityIntegrationProxy:ctor(proxyName, data)
   self.proxyName = proxyName or ActivityIntegrationProxy.NAME
@@ -176,7 +209,7 @@ function ActivityIntegrationProxy:RecvSuperSignInNtfUserCmd(data)
         day = single.day,
         last_sign_time = single.last_sign_time
       }
-      xdlog("签到信息", single.actid, single.day, single.last_sign_time)
+      xdlog(string.format("[SuperSign][RecvNtfItem] actid=%s day=%s last_sign_time=%s(%s)", tostring(single.actid), tostring(single.day), tostring(single.last_sign_time), _SuperSignTimeStr(single.last_sign_time)))
     end
   end
   self:UpdateSignInRedtip()
@@ -192,9 +225,17 @@ function ActivityIntegrationProxy:RecvSuperSignInUserCmd(data)
       day = signInfo.day,
       last_sign_time = signInfo.last_sign_time
     }
-    xdlog("签到成功信息", signInfo.actid, signInfo.day, signInfo.last_sign_time)
+    xdlog(string.format("[SuperSign][RecvSignResp] actid=%s day=%s last_sign_time=%s(%s)", tostring(signInfo.actid), tostring(signInfo.day), tostring(signInfo.last_sign_time), _SuperSignTimeStr(signInfo.last_sign_time)))
   end
   self:UpdateSignInRedtip()
+end
+
+local _IsSuperSignDailyRecommendFresh = function()
+  local proxy = ServantRecommendProxy.Instance
+  if proxy and proxy.IsDailyRecommendDataFresh then
+    return proxy:IsDailyRecommendDataFresh()
+  end
+  return true
 end
 
 function ActivityIntegrationProxy:UpdateSignInRedtip()
@@ -205,8 +246,7 @@ function ActivityIntegrationProxy:UpdateSignInRedtip()
     if not self.activitySignInInfo[actid] and curTime >= actinfo.starttime and curTime <= actinfo.endtime then
       local signInList = self:GetActivitySignInData(actid)
       if signInList and signInList[1] and signInList[1].DailyServantNum then
-        local finishCount = ServantRecommendProxy.Instance:GetRecommendFinishCountByType(1)
-        if finishCount >= signInList[1].DailyServantNum then
+        if _IsSuperSignDailyRecommendFresh() and ServantRecommendProxy.Instance:GetRecommendFinishCountByType(1) >= signInList[1].DailyServantNum then
           table.insert(actList, actid)
         end
       else
@@ -217,8 +257,12 @@ function ActivityIntegrationProxy:UpdateSignInRedtip()
   for actid, info in pairs(self.activitySignInInfo) do
     local entranceValid = false
     for groupid, info in pairs(self.activityIntegrationGroup) do
-      if info.SignInID and TableUtility.ArrayFindIndex(info.SignInID, actid) > 0 and self:CheckGroupValid(groupid) and self:CheckSuperSignInCanSign(actid) then
-        table.insert(actList, actid)
+      if info.SignInID and TableUtility.ArrayFindIndex(info.SignInID, actid) > 0 then
+        local groupValid = self:CheckGroupValid(groupid)
+        local canSign = self:CheckSuperSignInCanSign(actid)
+        if groupValid and canSign then
+          table.insert(actList, actid)
+        end
       end
     end
   end
@@ -270,13 +314,18 @@ function ActivityIntegrationProxy:CheckSuperSignInCanSign(actid)
       local curTimeStamp = ServerTime.CurServerTime() / 1000
       if startTime <= curTimeStamp and endTime >= curTimeStamp then
         if signInList[day + 1] and signInList[day + 1].DailyServantNum then
+          local targetCount = signInList[day + 1].DailyServantNum
+          if not _IsSuperSignDailyRecommendFresh() then
+            xdlog(string.format("[SuperSign][CanSignResult] actid=%s result=false reason=daily_data_stale finish=%s target=%s", tostring(actid), tostring(0), tostring(targetCount)))
+            return false, ActivityIntegrationProxy.SignInStatus.DailyServantNum, 0, targetCount
+          end
           local finishCount = ServantRecommendProxy.Instance:GetRecommendFinishCountByType(1)
           if finishCount < signInList[day + 1].DailyServantNum then
             redlog("不成", signInList[day + 1].DailyServantNum)
+            xdlog(string.format("[SuperSign][CanSignResult] actid=%s result=false reason=daily_not_enough finish=%s target=%s", tostring(actid), tostring(finishCount), tostring(signInList[day + 1].DailyServantNum)))
             return false, ActivityIntegrationProxy.SignInStatus.DailyServantNum, finishCount, signInList[day + 1].DailyServantNum
           end
         end
-        xdlog("可以签到")
         return true, ActivityIntegrationProxy.SignInStatus.CanSign
       end
     end
@@ -287,12 +336,21 @@ function ActivityIntegrationProxy:CheckSuperSignInCanSign(actid)
     local lastSignTime = signInInfo.last_sign_time
     if lastSignTime then
       local curTimeStamp = ServerTime.CurServerTime() / 1000
-      local lastDailyRefresh = ClientTimeUtil.GetNextDailyRefreshTimeByTimeStamp(lastSignTime)
-      local newDailyRefresh = ClientTimeUtil.GetNextDailyRefreshTimeByTimeStamp(curTimeStamp)
-      if lastDailyRefresh < newDailyRefresh then
+      local lastGameDay = _SuperSignGameDayIndex(lastSignTime)
+      local curGameDay = _SuperSignGameDayIndex(curTimeStamp)
+      local nextRefreshTime = _SuperSignNextRefreshTime(lastSignTime)
+      local timeGatePass = lastGameDay and curGameDay and lastGameDay < curGameDay
+      xdlog(string.format("[SuperSign][CanSignTimeGate] actid=%s day=%s lastSign=%s(%s) cur=%s(%s) lastGameDay=%s curGameDay=%s nextRefresh=%s(%s) pass=%s serverTZ=%s dateTZ=%s", tostring(actid), tostring(day), tostring(lastSignTime), _SuperSignTimeStr(lastSignTime), tostring(curTimeStamp), _SuperSignTimeStr(curTimeStamp), tostring(lastGameDay), tostring(curGameDay), tostring(nextRefreshTime), _SuperSignTimeStr(nextRefreshTime), tostring(timeGatePass), tostring(ServerTime.SERVER_TIMEZONE), tostring(ServerTime.DATE_TIMEZONE)))
+      if timeGatePass then
         if signInList[day + 1] and signInList[day + 1].DailyServantNum then
+          local targetCount = signInList[day + 1].DailyServantNum
+          if not _IsSuperSignDailyRecommendFresh() then
+            xdlog(string.format("[SuperSign][CanSignResult] actid=%s result=false reason=daily_data_stale finish=%s target=%s", tostring(actid), tostring(0), tostring(targetCount)))
+            return false, ActivityIntegrationProxy.SignInStatus.DailyServantNum, 0, targetCount
+          end
           local finishCount = ServantRecommendProxy.Instance:GetRecommendFinishCountByType(1)
           if finishCount < signInList[day + 1].DailyServantNum then
+            xdlog(string.format("[SuperSign][CanSignResult] actid=%s result=false reason=daily_not_enough finish=%s target=%s", tostring(actid), tostring(finishCount), tostring(signInList[day + 1].DailyServantNum)))
             return false, ActivityIntegrationProxy.SignInStatus.DailyServantNum, finishCount, signInList[day + 1].DailyServantNum
           end
         end
@@ -311,7 +369,7 @@ function ActivityIntegrationProxy:CallSignInUserCmd(actid)
   local curInfo = self:GetSuperSignInInfo(actid)
   local nextDay = curInfo and curInfo.day and curInfo.day + 1 or 1
   local data = {actid = actid, day = nextDay}
-  xdlog("申请签到", data.actid, data.day)
+  xdlog(string.format("[SuperSign][CallSign] actid=%s day=%s cur=%s(%s)", tostring(data.actid), tostring(data.day), tostring(ServerTime.CurServerTime() / 1000), _SuperSignTimeStr(ServerTime.CurServerTime() / 1000)))
   ServiceSceneUser3Proxy.Instance:CallSuperSignInUserCmd(data)
 end
 

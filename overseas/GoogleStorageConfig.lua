@@ -15,6 +15,9 @@ elseif BranchMgr.IsSEA() then
 elseif BranchMgr.IsKorea() then
   GoogleStorageConfig.googleStorageDownLoad = "http://kr-ugc.ro.com"
   GoogleStorageConfig.googleStorageUpLoad = "http://ro-kr-gcs.storage.googleapis.com"
+elseif BranchMgr.IsNOKR() then
+  GoogleStorageConfig.googleStorageDownLoad = "http://nokr-cdn.ro.com"
+  GoogleStorageConfig.googleStorageUpLoad = "http://ro-nokr-gcs.storage.googleapis.com"
 elseif BranchMgr.IsJapan() then
   GoogleStorageConfig.googleStorageUpLoad = "http://ro-kr-gcs.storage.googleapis.com"
   GoogleStorageConfig.googleStorageDownLoad = "http://jp-cdn.ro.com"
@@ -30,4 +33,7 @@ elseif BranchMgr.IsNO() or BranchMgr.IsNOTW() then
 elseif BranchMgr.IsNOEN() then
   GoogleStorageConfig.googleStorageUpLoad = "http://ro-noen-gcs.storage.googleapis.com"
   GoogleStorageConfig.googleStorageDownLoad = "http://noen-cdn.ro.com"
+elseif BranchMgr.IsNOKR() then
+  GoogleStorageConfig.googleStorageUpLoad = "http://ro-nokr-gcs.storage.googleapis.com"
+  GoogleStorageConfig.googleStorageDownLoad = "http://nokr-cdn.ro.com"
 end

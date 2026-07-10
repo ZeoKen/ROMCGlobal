@@ -901,10 +901,11 @@ end
 
 function ProfessionPageBasePart:UpdateViewInfo_byUserSaveInfoData(dataInfo)
   local saveEquips = dataInfo:GetRoleEquipsSaveDatas(BagProxy.BagType.RoleEquip) or {}
-  local roleEquipsMap = self:TransRoleEquipData_ByEquipsInfoSaveDatas(saveEquips)
+  local snowUseMode = dataInfo.GetSnowUseMode and dataInfo:GetSnowUseMode() or nil
+  local roleEquipsMap = self:TransRoleEquipData_ByEquipsInfoSaveDatas(saveEquips, snowUseMode)
   self:UpdatePlayerRoleEquips(roleEquipsMap)
   local saveViceEquips = dataInfo:GetRoleEquipsSaveDatas(BagProxy.BagType.ShadowEquip) or {}
-  local roleViceEquipsMap = self:TransRoleEquipData_ByEquipsInfoSaveDatas(saveViceEquips)
+  local roleViceEquipsMap = self:TransRoleEquipData_ByEquipsInfoSaveDatas(saveViceEquips, snowUseMode)
   self:UpdatePlayerRoleViceEquips(roleEquipsMap, roleViceEquipsMap, dataInfo.extracts)
   local equipMemoryDatas = dataInfo:GetEquipMemorySaveDatas()
   self:UpdatePlayerEquipMemorys(equipMemoryDatas)
@@ -931,7 +932,7 @@ local SearChBagTypes = {
   20
 }
 
-function ProfessionPageBasePart:TransRoleEquipData_ByEquipsInfoSaveDatas(saveEquipDatas)
+function ProfessionPageBasePart:TransRoleEquipData_ByEquipsInfoSaveDatas(saveEquipDatas, snowUseMode)
   local roleEquipsMap = {}
   local _BagProxy = BagProxy.Instance
   for k, v in pairs(saveEquipDatas) do
@@ -945,6 +946,9 @@ function ProfessionPageBasePart:TransRoleEquipData_ByEquipsInfoSaveDatas(saveEqu
       end
     end
     local clone = itemData:Clone()
+    if snowUseMode and clone.staticData and clone.staticData.Type == 4301 then
+      clone.snowUseMode = snowUseMode
+    end
     local recordCards = v.itemData.equipedCardInfo
     if recordCards then
       if not clone.equipedCardInfo then

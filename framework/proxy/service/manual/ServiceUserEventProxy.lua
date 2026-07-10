@@ -46,7 +46,7 @@ function ServiceUserEventProxy:RecvBuffDamageUserEvent(data)
   EventManager.Me():DispatchEvent(ServiceEvent.UserEventBuffDamageUserEvent, data)
   local creature = SceneCreatureProxy.FindCreature(data.charid)
   if creature then
-    creature:PlayDamage_Effect(data.damage, data.etype, data.fromid)
+    creature:PlayDamage_Effect(data.damage, data.etype, data.fromid, data.doubledamage and 1 or 0)
   end
 end
 

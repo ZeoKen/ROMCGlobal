@@ -17,7 +17,8 @@ PetInfoData.KeyValue = {
   [ScenePet_pb.EPETDATA_REWARD_COUNT] = "reward_count",
   [ScenePet_pb.EPETDATA_BODY] = "body",
   [ScenePet_pb.EPETDATA_SKILL] = "skills",
-  [ScenePet_pb.EPETDATA_SKILLSWITCH] = "skilloff"
+  [ScenePet_pb.EPETDATA_SKILLSWITCH] = "skilloff",
+  [ScenePet_pb.EPETDATA_ACTIVE_SKILL] = "active_skills"
 }
 local _HeadUpdateKey = {
   [ScenePet_pb.EPETDATA_NAME] = 1,
@@ -136,6 +137,12 @@ function PetInfoData:Server_SetData(serverData)
       end
     end
   end
+  if (self.active_skills == nil or #self.active_skills == 0) and self.skills and 0 < #self.skills then
+    self.active_skills = {}
+    for i = 1, #self.skills do
+      table.insert(self.active_skills, self.skills[i])
+    end
+  end
 end
 
 function PetInfoData:GetDressingWearByEpos(epos)
@@ -154,22 +161,28 @@ function PetInfoData:Server_UpdateData(petMemberDatas)
   local needUpdatePetHeadData = false
   for i = 1, #petMemberDatas do
     local single = petMemberDatas[i]
-    local v = PetInfoData.KeyValue[single.etype]
     if nil ~= _HeadUpdateKey[single.etype] then
       needUpdatePetHeadData = true
-    end
-    if not v then
-      redlog("未定义宠物的数据类型EPetDataType ", single.etype)
-    else
-      self[v] = single.value
     end
     if single.etype == ScenePet_pb.EPETDATA_SKILL and single.values then
       self.skills = {}
       for j = 1, #single.values do
         table.insert(self.skills, single.values[j])
       end
+    elseif single.etype == ScenePet_pb.EPETDATA_ACTIVE_SKILL and single.values then
+      self.active_skills = {}
+      for j = 1, #single.values do
+        table.insert(self.active_skills, single.values[j])
+      end
     elseif single.etype == ScenePet_pb.EPETDATA_NAME and single.data then
       self.name = single.data
+    else
+      local v = PetInfoData.KeyValue[single.etype]
+      if not v then
+        redlog("未定义宠物的数据类型EPetDataType ", single.etype)
+      else
+        self[v] = single.value
+      end
     end
   end
   if needUpdatePetHeadData then
@@ -405,24 +418,206 @@ function PetInfoData:CanHug()
   return limitFriendLv <= self.friendlv
 end
 
-function PetInfoData:IsSkillPerfect()
-  if #self.skills == 0 then
+function PetInfoData:HasContractSkill()
+  return self.staticData ~= nil and self.staticData.ContractSkill ~= nil and #self.staticData.ContractSkill >= 2
+end
+
+function PetInfoData:GetContractSkillMaxLevel()
+  if not self:HasContractSkill() then
+    return 0
+  end
+  return self.staticData.ContractSkill[2] or 0
+end
+
+function PetInfoData:GetContractSkillBaseId()
+  if not self:HasContractSkill() then
+    return nil
+  end
+  return self.staticData.ContractSkill[1]
+end
+
+function PetInfoData:GetContractSkillLevel()
+  local baseId = self:GetContractSkillBaseId()
+  if baseId == nil or not self.skills then
+    return 0
+  end
+  local baseFloor = math.floor(baseId / 1000)
+  local maxLv = self:GetContractSkillMaxLevel()
+  local bestLv = 0
+  for i = 1, #self.skills do
+    local sid = self.skills[i]
+    local lv = sid % 1000
+    if math.floor(sid / 1000) == baseFloor then
+      lv = math.min(lv, maxLv)
+    end
+    if math.floor(sid / 1000) == baseFloor and bestLv < lv then
+      bestLv = lv
+    end
+  end
+  return bestLv
+end
+
+function PetInfoData:SetContractSkillLevel(level)
+  local baseId = self:GetContractSkillBaseId()
+  local maxLv = self:GetContractSkillMaxLevel()
+  level = tonumber(level) or 0
+  if baseId == nil or level <= 0 or maxLv < level then
+    return
+  end
+  local baseFloor = math.floor(baseId / 1000)
+  local fullSkillId = baseId - baseId % 1000 + level
+  self.skills = self.skills or {}
+  local replaced = false
+  for i = 1, #self.skills do
+    if math.floor(self.skills[i] / 1000) == baseFloor then
+      self.skills[i] = fullSkillId
+      replaced = true
+    end
+  end
+  if not replaced then
+    table.insert(self.skills, fullSkillId)
+  end
+  if self.active_skills and 0 < #self.active_skills then
+    replaced = false
+    for i = 1, #self.active_skills do
+      if math.floor(self.active_skills[i] / 1000) == baseFloor then
+        self.active_skills[i] = fullSkillId
+        replaced = true
+      end
+    end
+    if not replaced then
+      table.insert(self.active_skills, fullSkillId)
+    end
+  end
+end
+
+function PetInfoData:IsSkillIdActive(skillFullId)
+  if skillFullId == nil then
     return true
   end
-  for i = 1, 4 do
-    local skillRandomConfig = self.staticData["Skill_" .. i]
-    if skillRandomConfig[1] and skillRandomConfig[2] then
-      local fullSkillid = skillRandomConfig[1] - skillRandomConfig[1] % 10 + skillRandomConfig[2]
-      local isPerfect = true
-      for j = 1, #self.skills do
-        if fullSkillid > self.skills[j] then
-          isPerfect = false
-          break
+  if not self.active_skills or #self.active_skills == 0 then
+    return true
+  end
+  for i = 1, #self.active_skills do
+    if self.active_skills[i] == skillFullId then
+      return true
+    end
+  end
+  return false
+end
+
+local IsPetSkillConfigPerfect = function(skills, skillConfig)
+  if not (skillConfig and skillConfig[1]) or not skillConfig[2] then
+    return true
+  end
+  local baseFloor = math.floor(skillConfig[1] / 1000)
+  local fullSkillid = skillConfig[1] - skillConfig[1] % 10 + skillConfig[2]
+  local best = 0
+  for i = 1, #skills do
+    if math.floor(skills[i] / 1000) == baseFloor and best < skills[i] then
+      best = skills[i]
+    end
+  end
+  return fullSkillid <= best
+end
+
+function PetInfoData:IsRandomSkillPerfectForReset()
+  if not self.skills or #self.skills == 0 then
+    return true
+  end
+  if not self.staticData then
+    return true
+  end
+  for i = 1, 5 do
+    if not IsPetSkillConfigPerfect(self.skills, self.staticData["Skill_" .. i]) then
+      return false
+    end
+  end
+  return true
+end
+
+function PetInfoData:GetSkillDisplayDatasForUI()
+  local result = {}
+  if not self.skills or #self.skills == 0 then
+    return result
+  end
+  local contractBase = self:GetContractSkillBaseId()
+  local contractBaseFloor = contractBase and math.floor(contractBase / 1000)
+  local maxCL = self:GetContractSkillMaxLevel()
+  local curCL = self:GetContractSkillLevel()
+  local GetSkillByConfig = function(skillConfig, isContract)
+    if not skillConfig or not skillConfig[1] then
+      return nil
+    end
+    local baseFloor = math.floor(skillConfig[1] / 1000)
+    local best
+    for i = 1, #self.skills do
+      local sid = self.skills[i]
+      local lv = sid % 1000
+      if math.floor(sid / 1000) == baseFloor then
+        if isContract then
+          lv = math.min(lv, maxCL)
+          local contractSkillId = skillConfig[1] - skillConfig[1] % 1000 + lv
+          if best == nil or best < contractSkillId then
+            best = contractSkillId
+          end
+        elseif (contractBaseFloor == nil or baseFloor ~= contractBaseFloor) and (best == nil or sid > best) then
+          best = sid
         end
       end
-      if not isPerfect then
-        return false
+    end
+    return best
+  end
+  local sortedIndex = {
+    "Skill_1",
+    "ContractSkill",
+    "Skill_3",
+    "Skill_4",
+    "Skill_2",
+    "Skill_5"
+  }
+  for i = 1, #sortedIndex do
+    local key = sortedIndex[i]
+    local isContract = key == "ContractSkill"
+    local skillSlot = tonumber(string.match(key, "^Skill_(%d+)$"))
+    local sid = GetSkillByConfig(self.staticData and self.staticData[key], isContract)
+    if sid ~= nil then
+      local one = {
+        skillId = sid,
+        petid = self.petid,
+        inactive = false,
+        isContract = isContract,
+        canUpgradeContract = false,
+        skillSlot = skillSlot
+      }
+      if isContract then
+        one.level = curCL
+        if 0 < maxCL and maxCL > curCL then
+          one.canUpgradeContract = true
+        end
       end
+      if self.active_skills and 0 < #self.active_skills and not isContract then
+        one.inactive = not self:IsSkillIdActive(sid)
+      end
+      table.insert(result, one)
+    end
+  end
+  return result
+end
+
+function PetInfoData:IsSkillPerfect()
+  if not self.skills or #self.skills == 0 then
+    return true
+  end
+  if not self.staticData then
+    return true
+  end
+  if self:HasContractSkill() then
+    return self:IsRandomSkillPerfectForReset()
+  end
+  for i = 1, 5 do
+    if not IsPetSkillConfigPerfect(self.skills, self.staticData["Skill_" .. i]) then
+      return false
     end
   end
   return true

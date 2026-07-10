@@ -488,6 +488,10 @@ function MapManager:IsPVEMode_DestroyAirShip()
   return self.dungeonManager:IsPVEMode_DestroyAirShip()
 end
 
+function MapManager:IsPVEMode_BageLab()
+  return self.dungeonManager:IsPVEMode_BageLab()
+end
+
 function MapManager:IsPVPMode_3Teams()
   return self.dungeonManager:IsPVPMode_3Teams()
 end

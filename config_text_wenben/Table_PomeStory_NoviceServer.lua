@@ -1729,7 +1729,6 @@ Table_PomeStory = {
     id = 3,
     QuestID = Table_PomeStory_t.QuestID[3],
     version = Table_PomeStory_t.version[1],
-    QuestName = "百年智家",
     Pstory = Table_PomeStory_t.Pstory[3]
   },
   [4] = {
@@ -1818,6 +1817,7 @@ Table_PomeStory = {
     id = 14,
     QuestID = Table_PomeStory_t.QuestID[14],
     version = Table_PomeStory_t.version[4],
+    QuestName = "白帽子黑帽子",
     Npcid = 1598,
     Pstory = Table_PomeStory_t.Pstory[14]
   },
@@ -2119,7 +2119,7 @@ local cell_mt = {
     Npcid = 1595,
     Pstory = _EmptyTable,
     QuestID = _EmptyTable,
-    QuestName = "白帽子黑帽子",
+    QuestName = "百年智家",
     id = 1,
     version = _EmptyTable
   }

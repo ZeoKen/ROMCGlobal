@@ -6,6 +6,7 @@ autoImport("NewRechargeRecommendTShopGoodsCell")
 autoImport("ActivityIntegrationShopItemCell")
 autoImport("ActivityChallengeProxy")
 local Prefab_Path = ResourcePathHelper.UIView("ActivityIntegrationTaskSubView")
+local Default_Shop_Bg = "openactivity_bottom_01"
 local picIns = PictureManager.Instance
 local tempVector3 = LuaVector3.Zero()
 local colorTheme = {
@@ -40,6 +41,16 @@ local colorTheme = {
     DescColor = Color(0.5411764705882353, 0.47058823529411764, 0.7529411764705882, 1),
     LimitColor = Color(0.2784313725490196, 0.047058823529411764, 0.4745098039215686, 0.4),
     ConditionBgColor = Color(0.4196078431372549, 0.3137254901960784, 0.4666666666666667, 1)
+  },
+  [5] = {
+    TitleEffectColor = Color(0.41568627450980394, 0.592156862745098, 0.8196078431372549, 0.7),
+    TimeColor = Color(0.10588235294117647, 0.27450980392156865, 0.5843137254901961, 1),
+    TimeEffectColor = Color(0.36470588235294116, 0.7411764705882353, 0.8313725490196079, 0),
+    ShopTitle = Color(0.44313725490196076, 0.5176470588235295, 0.6549019607843137, 1),
+    DescColor = Color(0.3568627450980392, 0.5450980392156862, 0.7725490196078432, 1),
+    LimitColor = Color(0.2784313725490196, 0.47058823529411764, 0.6705882352941176, 0.4),
+    ConditionBgColor = Color(0.4, 0.6352941176470588, 0.8196078431372549, 1),
+    ShowTimeBG = true
   }
 }
 
@@ -54,25 +65,30 @@ function ActivityIntegrationTaskSubView:Init()
 end
 
 function ActivityIntegrationTaskSubView:LoadPrefab()
-  local obj = self:LoadPreferb_ByFullPath(Prefab_Path, self.container, true)
-  obj.name = "ActivityIntegrationTaskSubView"
+  local obj = self:LoadPreferb_ByFullPath(self.prefabPath or Prefab_Path, self.container, true)
+  obj.name = self.prefabName or "ActivityIntegrationTaskSubView"
   self.gameObject = obj
 end
 
 function ActivityIntegrationTaskSubView:FindObjs()
   self.titleLabel = self:FindGO("TitleLabel", self.gameObject):GetComponent(UILabel)
   self.timeLabel = self:FindGO("TimeLabel", self.gameObject):GetComponent(UILabel)
+  self.timeLabelBG = self:FindGO("TimeLabelBG", self.gameObject)
   self.helpBtn = self:FindGO("HelpBtn", self.gameObject)
   self.taskScrollView = self:FindGO("TaskScrollView", self.gameObject):GetComponent(UIScrollView)
   self.taskGrid = self:FindGO("Grid", self.gameObject):GetComponent(UIGrid)
-  self.taskListCtrl = UIGridListCtrl.new(self.taskGrid, ActivityIntegrationTaskCell, "ActivityIntegrationTaskCell")
+  self.taskListCtrl = UIGridListCtrl.new(self.taskGrid, self.cellClass or ActivityIntegrationTaskCell, self.cellPfbName or "ActivityIntegrationTaskCell")
   self.taskListCtrl:AddEventListener(MouseEvent.MouseClick, self.HandleClickTaskItem, self)
   self.taskListCtrl:AddEventListener(MouseEvent.DoubleClick, self.HandleShowItemTip, self)
   self.taskListCtrl:AddEventListener(UICellEvent.OnCellClicked, self.HandleBuyCell, self)
   self.bgTexture = self:FindGO("BgTexture", self.gameObject):GetComponent(UITexture)
   self.shopBg = self:FindGO("BG3", self.gameObject):GetComponent(UITexture)
   self.curConditionLabel = self:FindGO("CurConditionLabel", self.gameObject):GetComponent(UILabel)
-  self.curConditionBg = self:FindGO("ConditionBg", self.gameObject):GetComponent(UISprite)
+  local curConditionBgGO = self:FindGO("ConditionBg", self.gameObject)
+  if curConditionBgGO then
+    self.curConditionBg = curConditionBgGO:GetComponent(UISprite) or curConditionBgGO:GetComponent(UITexture)
+    self.curConditionBgTexture = curConditionBgGO:GetComponent(UITexture)
+  end
   self.shopItemGO = self:FindGO("ShopItemContainer")
   self.shopItemCell = ActivityIntegrationShopItemCell.new(self.shopItemGO)
   self.shopItemCell:AddEventListener(MouseEvent.MouseClick, self.HandleClickBuyItem, self)
@@ -212,20 +228,21 @@ function ActivityIntegrationTaskSubView:RefreshPage(id)
   for id, info in pairs(processList) do
     local config = ActivityChallengeProxy.Instance:GetChallengeConfig(id)
     info.canBuy = false
-    local shopItemID = config and config.ShopItemID
+    local shopConfig = config and config.Shop
+    local shopItemID = shopConfig and shopConfig.ShopItemID or config and config.ShopItemID
+    local depositID = shopConfig and shopConfig.DepositID or config and config.DepositID
     local _shopItemData = shopItemID and ShopProxy.Instance:GetShopItemDataByTypeId(self.shopType, self.shopId, shopItemID)
-    if _shopItemData then
+    if info.state == 2 and _shopItemData then
       local canBuyCount, limitType = _HappyShopProxy:GetCanBuyCount(_shopItemData)
-      local maxLimit = _shopItemData.LimitNum
-      if canBuyCount == 0 then
+      if canBuyCount ~= 0 then
         info.canBuy = true
       end
-    elseif config and config.DepositID then
-      local info = NewRechargeProxy.Ins:GenerateDepositGoodsInfo(config.DepositID)
+    elseif info.state == 2 and depositID then
+      local depositInfo = NewRechargeProxy.Ins:GenerateDepositGoodsInfo(depositID)
       local purchasedTimes, purchaseLimitTimes
-      purchasedTimes = info.purchaseTimes or 0
-      purchaseLimitTimes = info.purchaseLimit_N or 0
-      if purchasedTimes < purchaseLimitTimes then
+      purchasedTimes = depositInfo.purchaseTimes or 0
+      purchaseLimitTimes = depositInfo.purchaseLimit_N or 0
+      if ShopProxy.Instance:GetDepositItemCanBuy(depositID) and (purchaseLimitTimes <= 0 or purchasedTimes < purchaseLimitTimes) then
         info.canBuy = true
       end
     end
@@ -261,6 +278,7 @@ function ActivityIntegrationTaskSubView:RefreshPage(id)
     end
   end)
   self.taskListCtrl:ResetDatas(result)
+  self:UpdateTaskCellShopInfo()
   local commonProcess, activeGem, gemStar_Sliver, gemStar_Gold = 0, 0, 0, 0
   local allFinish = true
   local isGemCheck = false
@@ -300,7 +318,7 @@ function ActivityIntegrationTaskSubView:RefreshPage(id)
     if self.endTime and actPersonalData and actPersonalData.CloseDay then
       self.curConditionLabel.gameObject:SetActive(true)
       self.curConditionLabel.text = string.format(ZhString.ActivityIntegration_CloseDayTip, actPersonalData.CloseDay * 24)
-      self.curConditionBg.width = self.curConditionLabel.printedSize.x + 100
+      self:UpdateCurConditionBgWidth()
     else
       self.curConditionLabel.gameObject:SetActive(false)
     end
@@ -319,13 +337,22 @@ function ActivityIntegrationTaskSubView:RefreshPage(id)
     else
       self.curConditionLabel.gameObject:SetActive(false)
     end
-    self.curConditionBg.width = self.curConditionLabel.printedSize.x + 100
+    self:UpdateCurConditionBgWidth()
+  end
+  if self.UpdateTaskScrollViewLayout then
+    self:UpdateTaskScrollViewLayout(self.curConditionLabel.gameObject.activeSelf)
   end
 end
 
 function ActivityIntegrationTaskSubView:RecvQueryShopConfig(note)
   self:UpdateShopInfo()
   self:UpdateTaskCellShopInfo()
+end
+
+function ActivityIntegrationTaskSubView:UpdateCurConditionBgWidth()
+  if self.curConditionBg and self.curConditionLabel then
+    self.curConditionBg.width = self.curConditionLabel.printedSize.x + 100
+  end
 end
 
 function ActivityIntegrationTaskSubView:UpdateShopInfo()
@@ -365,11 +392,14 @@ function ActivityIntegrationTaskSubView:UpdateTaskCellShopInfo()
     for i = 1, #cells do
       local single = cells[i]
       local config = ActivityChallengeProxy.Instance:GetChallengeConfig(single.id)
-      if config and config.ShopItemID then
-        if shopDatas and shopDatas[config.ShopItemID] then
-          single:SetShopItemData()
+      local shopConfig = config and config.Shop
+      local shopItemID = shopConfig and shopConfig.ShopItemID or config and config.ShopItemID
+      local depositID = shopConfig and shopConfig.DepositID or config and config.DepositID
+      if shopItemID then
+        if shopDatas and shopDatas[shopItemID] then
+          single:SetShopItemData(shopDatas[shopItemID])
         end
-      elseif config and config.DepositID then
+      elseif depositID then
         single:SetDepositData()
       end
     end
@@ -391,7 +421,9 @@ function ActivityIntegrationTaskSubView:HandleClickBuyItem(cellctl)
 end
 
 function ActivityIntegrationTaskSubView:HandleBuyCell(cellCtrl)
-  xdlog("Handle buycell")
+  if self.currentItem ~= cellCtrl then
+    self.currentItem = cellCtrl
+  end
   local shopItemData = cellCtrl.shopItemData
   if shopItemData then
     self:HandleClickShopItem(shopItemData)
@@ -402,20 +434,23 @@ end
 
 function ActivityIntegrationTaskSubView:HandleClickDepositItem(cellctl)
   local depositID = cellctl.depositID
-  xdlog("click deposit", depositID)
   local info = NewRechargeProxy.Ins:GenerateDepositGoodsInfo(depositID)
   if not info then
     redlog("no info")
     return
   end
+  self.currentDepositInfo = info
+  self.currentDepositID = depositID
   local cbfunc = function(count)
     if not self.endTime or self.endTime - ServerTime.CurServerTime() / 1000 > 0 then
       self:PurchaseDeposit(info, count)
     end
   end
   local m_funcRmbBuy = function(count)
-    if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
-      self:Invoke_DepositConfirmPanel(cbfunc)
+    if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
+      self:Invoke_DepositConfirmPanel(function()
+        cbfunc(count)
+      end)
     else
       cbfunc(count)
     end
@@ -496,8 +531,12 @@ function ActivityIntegrationTaskSubView:PurchaseDeposit(info, count)
 end
 
 function ActivityIntegrationTaskSubView:Invoke_DepositConfirmPanel(cb)
-  local depositInfo = self.currentItem.data and self.currentItem.data.info
-  local productConf = depositInfo.productConf
+  local currentData = self.currentItem and self.currentItem.data
+  local depositInfo = currentData and currentData.info
+  if not depositInfo and self.currentDepositInfo then
+    depositInfo = self.currentDepositInfo
+  end
+  local productConf = depositInfo and depositInfo.productConf
   local productID = depositInfo and depositInfo.productConf and depositInfo.productConf.ProductID
   if productID then
     local productName = OverSea.LangManager.Instance():GetLangByKey(Table_Item[productConf.ItemId].NameZh)
@@ -506,7 +545,7 @@ function ActivityIntegrationTaskSubView:Invoke_DepositConfirmPanel(cb)
     local currencyType = productConf.CurrencyType
     local productDesc = OverSea.LangManager.Instance():GetLangByKey(Table_Deposit[productConf.id].Desc)
     local productD = " [0075BCFF]" .. productCount .. "[-] " .. productName
-    if BranchMgr.IsKorea() then
+    if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
       productD = " [0075BCFF]" .. productDesc .. "[-] "
     end
     OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FunctionNewRecharge.FormatMilComma(productPrice)), ZhString.ShopConfirmDes, productName, productPrice, function()
@@ -656,12 +695,26 @@ function ActivityIntegrationTaskSubView:ResetColorTheme(index)
     return
   end
   xdlog("颜色主题变更")
+  if themeConfig.TitleEffectColor then
+    self.titleLabel.effectColor = themeConfig.TitleEffectColor
+  end
   self.timeLabel.color = themeConfig.TimeColor
   self.timeLabel.effectColor = themeConfig.TimeEffectColor
   self.shopTitleBg.color = themeConfig.ShopTitle
   self.shopDescBg.color = themeConfig.DescColor
   self.shopLimitBg.color = themeConfig.LimitColor
-  self.curConditionBg.color = themeConfig.ConditionBgColor
+  if self.curConditionBg then
+    self.curConditionBg.color = themeConfig.ConditionBgColor
+  end
+  self.timeLabelBG:SetActive(themeConfig.ShowTimeBG or false)
+end
+
+function ActivityIntegrationTaskSubView:GetShopBgTextureName()
+  return Default_Shop_Bg
+end
+
+function ActivityIntegrationTaskSubView:GetConditionBgTextureName()
+  return nil
 end
 
 local itemClickUrlTipData = {}
@@ -735,7 +788,12 @@ function ActivityIntegrationTaskSubView:OnEnter(id)
     self.textureName = params and params.Texture
   end
   picIns:SetUI(self.textureName, self.bgTexture)
-  picIns:SetUI("openactivity_bottom_01", self.shopBg)
+  self.shopBgTextureName = self:GetShopBgTextureName()
+  picIns:SetUI(self.shopBgTextureName, self.shopBg)
+  self.conditionBgTextureName = self:GetConditionBgTextureName()
+  if self.conditionBgTextureName and self.curConditionBgTexture then
+    picIns:SetUI(self.conditionBgTextureName, self.curConditionBgTexture)
+  end
   ServiceUserEventProxy.Instance:CallQueryChargeCnt()
   ShopProxy.Instance:CallQueryShopConfig(self.shopType, self.shopId)
   HappyShopProxy.Instance:InitShop(nil, self.shopId, self.shopType)
@@ -766,6 +824,11 @@ function ActivityIntegrationTaskSubView:OnExit()
   ActivityIntegrationTaskSubView.super.OnExit(self)
   TimeTickManager.Me():ClearTick(self)
   picIns:UnLoadUI(self.textureName, self.bgTexture)
-  picIns:UnLoadUI("openactivity_bottom_01", self.shopBg)
+  picIns:UnLoadUI(self.shopBgTextureName or Default_Shop_Bg, self.shopBg)
+  if self.conditionBgTextureName and self.curConditionBgTexture then
+    picIns:UnLoadUI(self.conditionBgTextureName, self.curConditionBgTexture)
+  end
   self.textureName = nil
+  self.shopBgTextureName = nil
+  self.conditionBgTextureName = nil
 end

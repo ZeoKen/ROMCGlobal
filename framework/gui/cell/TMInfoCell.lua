@@ -335,8 +335,12 @@ function TMInfoCell:_updateRestTime()
   if cur < expiretime and resttime and 0 < resttime then
     local restSec = resttime - cur
     if 0 < restSec then
-      local min, sec = ClientTimeUtil.GetFormatSecTimeStr(restSec)
-      self.restTime.text = string.format(ZhString.TMInfoCell_RestTip, min, sec)
+      if 60 <= restSec then
+        local min, sec = ClientTimeUtil.GetFormatSecTimeStr(restSec)
+        self.restTime.text = string.format(ZhString.TMInfoCell_RestTip, min, sec)
+      else
+        self.restTime.text = string.format(ZhString.TMInfoCell_RestTipSecond, math.ceil(restSec))
+      end
     else
       self:RemoveRestTimeTick()
     end

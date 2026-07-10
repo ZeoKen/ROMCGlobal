@@ -21,6 +21,16 @@ local tempVector3_1 = LuaVector3.Zero()
 local tempList = {}
 local arrayCount = 7
 local SpecialHitEffectTypes = {HitEffectMove = 1, MultiTargetConnect = 2}
+local SyncMyselfHitMovePosition = function(pos)
+  if not pos or not Game.Myself then
+    return false
+  end
+  if not FunctionCheck.Me():CanSyncMove() then
+    return false
+  end
+  Game.Myself:Client_MoveHandler(pos, true)
+  return true
+end
 local CreateShareDamageInfos = function(origin, infos)
   if nil ~= origin and 0 < #origin then
     if nil == infos then
@@ -114,7 +124,7 @@ function SkillHitWorker:AddTarget(targetGUID, damageType, damage, shareDamageInf
   args[index + 3] = damage
   args[index + 4] = CreateShareDamageInfos(shareDamageInfos, args[index + 4])
   args[index + 5] = comboDamageLabel
-  args[index + 6] = damageCount or 1
+  args[index + 6] = damageCount
   args[index + 7] = doubleDamage
 end
 
@@ -186,7 +196,8 @@ function SkillHitWorker:_Work(creature, targetGUID, damageType, damage, shareDam
     hitDistance = cfgSniper and cfgSniper.DamageShowDistance or 12
   end
   self:_SpecialHit(creature, targetCreature)
-  local isMySelf = creature ~= nil and Game.Myself.data.id == creature.data.id or Game.Myself.data.id == targetGUID
+  local ownerid = creature and creature.data.ownerID or 0
+  local isMySelf = creature ~= nil and (Game.Myself.data.id == creature.data.id or ownerid == Game.Myself.data.id) or Game.Myself.data.id == targetGUID
   if not isMySelf then
     local priority = Game.LogicManager_MapCell:GetPriority(targetCreature.mapCellIndex)
     if priority >= Game.LogicManager_MapCell.invisiblePriority or targetCreature.updateFrequency ~= nil and targetCreature.updateFrequency >= hitCheckFrame then
@@ -409,9 +420,7 @@ function SkillHitWorker:_Hit(creature, targetCreature, damageType, damage, combo
             crit = HurtNum_CritType.PAtk
           end
         end
-        if not doubleDamage or doubleDamage == 0 then
-          doubleDamage = targetCreature and targetCreature:GetDoubleDamage()
-        end
+        doubleDamage = SkillLogic_Base.ResolveDoubleDamage(targetCreature, doubleDamage)
         comboDamageLabel:Show(damage, labelPosition, creature == Game.Myself, crit, targetCreature == Game.Myself)
         if doubleDamage and 0 < doubleDamage then
           comboDamageLabel:Show(damage, labelPosition + doubleDamageOffset, creature == Game.Myself, crit, targetCreature == Game.Myself)
@@ -463,6 +472,9 @@ function SkillHitWorker:_SpecialHit(creature, targetCreature)
       dirAngleY = NumberUtility.Repeat(dirAngleY + 180, 360)
     end
     targetCreatureLogicTransform:ExtraDirMove(dirAngleY, dirMoveDistance, speed, function(logicTransform, arg)
+      if targetCreature == Game.Myself and nil ~= logicTransform and nil ~= logicTransform.currentPosition then
+        SyncMyselfHitMovePosition(logicTransform.currentPosition)
+      end
       dirPoint:Destroy()
     end, nil, dirPoint, skillInfo:IsIgnoreTerrain(), skillInfo:GetNoHitMoveIntercept())
   end

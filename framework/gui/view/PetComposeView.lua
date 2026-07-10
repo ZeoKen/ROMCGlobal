@@ -18,12 +18,8 @@ local BTN_STSTE = {
     color = Color(0.6196078431372549, 0.33725490196078434, 0 / 255)
   }
 }
-local SortPet = function(left, right)
-  if left == nil or right == nil then
-    return false
-  end
-  return left.star > right.star
-end
+local BG_Texture = "pet_bg_list_01"
+local Mask_Texture = "pet_bg_effect_a"
 local SUB_VIEW_PATH = ResourcePathHelper.UIView("PetComposeView")
 PetComposeView.TabName = {
   SkillTog = ZhString.PetComposeView_SkillTogTabName,
@@ -64,7 +60,7 @@ function PetComposeView:FindObjs()
   self.modelContainer = self:FindGO("ModelContainer")
   self.modelTexture = self.modelContainer:GetComponent(UITexture)
   self.maskTexture = self:FindComponent("MaskTexture", UITexture)
-  PictureManager.Instance:SetUI("pet_bg_effect_a", self.maskTexture)
+  PictureManager.Instance:SetUI(Mask_Texture, self.maskTexture)
   self.dragScroll = self:FindComponent("DragScrollView", UIDragScrollView)
   self.raceLab = self:FindComponent("RaceLab", UILabel)
   self.raceLab.text = ZhString.PetComposeView_Race
@@ -73,6 +69,8 @@ function PetComposeView:FindObjs()
   self.race = self:FindComponent("Race", UISprite)
   self.nature = self:FindComponent("Nature", UISprite)
   self.noneTip = self:FindGO("NoneTip")
+  self.composeBgTexture = self:FindComponent("ComposeBgTexture", UITexture)
+  PictureManager.Instance:SetUI(BG_Texture, self.composeBgTexture)
 end
 
 function PetComposeView:AddToggleChange(toggle, handler)
@@ -115,23 +113,10 @@ function PetComposeView:InitView()
     self.petTableCtl = UIGridListCtrl.new(self.petTable, PetCombineTableCell, "PetCombineTableCell")
     self.petTableCtl:AddEventListener(MouseEvent.MouseClick, self.ClickItemPet, self)
   end
-  local starData = PetComposeProxy.Instance:GetPetsIDByStar()
-  local petData = {}
-  for k, v in pairs(starData) do
-    TableUtility.ArrayPushBack(petData, {star = k, value = v})
-  end
-  table.sort(petData, function(l, r)
-    return SortPet(l, r)
-  end)
+  local petData = PetComposeProxy.Instance:GetPetComposeTableRows()
   self.petTableCtl:ResetDatas(petData)
-  local petSkillContainer = self:FindGO("skillWrap")
-  local wrapConfig = {
-    wrapObj = petSkillContainer,
-    pfbNum = 5,
-    cellName = "PetComposeSkillCell",
-    control = PetComposeSkillCell
-  }
-  self.petSkillWrap = WrapCellHelper.new(wrapConfig)
+  local petSkillGrid = self:FindComponent("SkillGrid", UIGrid)
+  self.petSkillWrap = UIGridListCtrl.new(petSkillGrid, PetComposeSkillCell, "PetComposeSkillCell")
   if not self.petSkinCtl then
     self.petSkinCtl = UIGridListCtrl.new(self.skinGrid, PetComposeItemCell, "PetComposeItemCell")
     self.petSkinCtl:AddEventListener(MouseEvent.MouseClick, self.ClickItemPetSkin, self)
@@ -291,6 +276,7 @@ function PetComposeView:ClickSkillTog()
   end
   self.dragScroll.scrollView = self.skillPos
   self.petSkillWrap:ResetDatas(data)
+  self.petSkillWrap:ResetPosition()
   self:Show(self.skillPos.gameObject)
   self:Hide(self.attrPos)
   self:Hide(self.skinPos.gameObject)
@@ -385,11 +371,26 @@ function PetComposeView:GetSkillData()
   if not petData then
     return
   end
-  for i = 1, 5 do
-    local skillConfig = petData["Skill_" .. i]
+  local sortedIndex = {
+    "Skill_1",
+    "ContractSkill",
+    "Skill_3",
+    "Skill_4",
+    "Skill_2",
+    "Skill_5"
+  }
+  local hasContractSkill = petData.ContractSkill and petData.ContractSkill[1] and petData.ContractSkill[2]
+  for i = 1, #sortedIndex do
+    local skillConfig = petData[sortedIndex[i]]
     if skillConfig[1] and skillConfig[2] then
       local fullSkillid = skillConfig[1] - skillConfig[1] % 10 + skillConfig[2]
-      TableUtility.ArrayPushBack(skillData, fullSkillid)
+      TableUtility.ArrayPushBack(skillData, {
+        skillid = fullSkillid,
+        hasContractSkill = hasContractSkill,
+        index = i,
+        isEnd = i == #sortedIndex,
+        isContract = sortedIndex[i] == "ContractSkill"
+      })
     end
   end
   return skillData

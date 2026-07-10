@@ -6709,6 +6709,18 @@ ProtoReqInfoList = {
     ack = "Cmd.MemoryExcessItemCmd",
     from = "SceneItem"
   },
+  FashionStarQueryItemCmd = {
+    id = 60170,
+    req = "Cmd.FashionStarQueryItemCmd",
+    ack = "Cmd.FashionStarQueryItemCmd",
+    from = "SceneItem"
+  },
+  FashionStarUpItemCmd = {
+    id = 60171,
+    req = "Cmd.FashionStarUpItemCmd",
+    ack = "Cmd.FashionStarUpItemCmd",
+    from = "SceneItem"
+  },
   BuildDataNtfManorCmd = {
     id = 2330001,
     req = "Cmd.BuildDataNtfManorCmd",
@@ -7487,6 +7499,18 @@ ProtoReqInfoList = {
     id = 100054,
     req = "Cmd.SevenRoyalsFollowNpc",
     ack = "Cmd.SevenRoyalsFollowNpc",
+    from = "ScenePet"
+  },
+  ContractSkillLevelUpPetCmd = {
+    id = 100056,
+    req = "Cmd.ContractSkillLevelUpPetCmd",
+    ack = "Cmd.ContractSkillLevelUpPetCmd",
+    from = "ScenePet"
+  },
+  QuickPackOperPetCmd = {
+    id = 100057,
+    req = "Cmd.QuickPackOperPetCmd",
+    ack = "Cmd.QuickPackOperPetCmd",
     from = "ScenePet"
   },
   QuestList = {
@@ -10061,6 +10085,18 @@ ProtoReqInfoList = {
     id = 820061,
     req = "Cmd.UserHoldingNpcCmd",
     ack = "Cmd.UserHoldingNpcCmd",
+    from = "SceneUser3"
+  },
+  NpcCircleTraceNtf = {
+    id = 820062,
+    req = "Cmd.NpcCircleTraceNtf",
+    ack = "Cmd.NpcCircleTraceNtf",
+    from = "SceneUser3"
+  },
+  GroupPlayTimeUpdateUserCmd = {
+    id = 820064,
+    req = "Cmd.GroupPlayTimeUpdateUserCmd",
+    ack = "Cmd.GroupPlayTimeUpdateUserCmd",
     from = "SceneUser3"
   },
   QueryAllMail = {
@@ -12808,6 +12844,8 @@ ProtoReqInfoList[60166] = ProtoReqInfoList.CardLevelupItemCmd
 ProtoReqInfoList[60167] = ProtoReqInfoList.BalanceModeMemorySetItemCmd
 ProtoReqInfoList[60168] = ProtoReqInfoList.BalanceModeMemoryUpdateItemCmd
 ProtoReqInfoList[60169] = ProtoReqInfoList.MemoryExcessItemCmd
+ProtoReqInfoList[60170] = ProtoReqInfoList.FashionStarQueryItemCmd
+ProtoReqInfoList[60171] = ProtoReqInfoList.FashionStarUpItemCmd
 ProtoReqInfoList[2330001] = ProtoReqInfoList.BuildDataNtfManorCmd
 ProtoReqInfoList[2330002] = ProtoReqInfoList.BuildQueryManorCmd
 ProtoReqInfoList[2330003] = ProtoReqInfoList.BuildLevelUpManorCmd
@@ -12938,6 +12976,8 @@ ProtoReqInfoList[100051] = ProtoReqInfoList.BoKiSkillUpdatePetCmd
 ProtoReqInfoList[100052] = ProtoReqInfoList.BoKiSkillInUseUpdatePetCmd
 ProtoReqInfoList[100053] = ProtoReqInfoList.BoKiSkillInUseSetPetCmd
 ProtoReqInfoList[100054] = ProtoReqInfoList.SevenRoyalsFollowNpc
+ProtoReqInfoList[100056] = ProtoReqInfoList.ContractSkillLevelUpPetCmd
+ProtoReqInfoList[100057] = ProtoReqInfoList.QuickPackOperPetCmd
 ProtoReqInfoList[80001] = ProtoReqInfoList.QuestList
 ProtoReqInfoList[1] = ProtoReqInfoList.QuestUpdateItem
 ProtoReqInfoList[80002] = ProtoReqInfoList.QuestUpdate
@@ -13367,6 +13407,8 @@ ProtoReqInfoList[820057] = ProtoReqInfoList.GeffenMagicRankQueryCmd
 ProtoReqInfoList[820058] = ProtoReqInfoList.GeffenMagicWaveScoreQueryCmd
 ProtoReqInfoList[820059] = ProtoReqInfoList.GeffenMagicGetRewardUserCmd
 ProtoReqInfoList[820061] = ProtoReqInfoList.UserHoldingNpcCmd
+ProtoReqInfoList[820062] = ProtoReqInfoList.NpcCircleTraceNtf
+ProtoReqInfoList[820064] = ProtoReqInfoList.GroupPlayTimeUpdateUserCmd
 ProtoReqInfoList[550001] = ProtoReqInfoList.QueryAllMail
 ProtoReqInfoList[550002] = ProtoReqInfoList.MailUpdate
 ProtoReqInfoList[550003] = ProtoReqInfoList.GetMailAttach

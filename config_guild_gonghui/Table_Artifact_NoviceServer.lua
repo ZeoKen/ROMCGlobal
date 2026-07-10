@@ -1156,7 +1156,6 @@ Table_Artifact = {
   },
   [40753] = {
     id = 40753,
-    Name = "银槲之剑II",
     NextLevelID = 40754,
     Type = 6,
     Level = 2,
@@ -1549,6 +1548,7 @@ Table_Artifact = {
   },
   [62805] = {
     id = 62805,
+    Name = "拂晓之光III",
     NextLevelID = 62860,
     Type = 11,
     Level = 3,
@@ -1631,7 +1631,7 @@ local cell_mt = {
     DistributeCount = 999,
     Level = 1,
     Material = _EmptyTable,
-    Name = "拂晓之光III",
+    Name = "银槲之剑II",
     Type = 1,
     id = 47371
   }

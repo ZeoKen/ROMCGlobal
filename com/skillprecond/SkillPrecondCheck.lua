@@ -19,7 +19,8 @@ SkillPrecondCheck.PreConditionType = {
   TargetHpLessThan = 16,
   InterferenceValue = 17,
   IsRideOnTeammate = 18,
-  SkillOptionValid = 19
+  SkillOptionValid = 19,
+  HasSoulPuppet = 20
 }
 SkillPrecondCheck.CheckReason = {Skill = 1, SubSkill = 2}
 local MapMsgID = {
@@ -41,7 +42,8 @@ local MapMsgID = {
   [SkillPrecondCheck.PreConditionType.TargetHpLessThan] = 609,
   [SkillPrecondCheck.PreConditionType.InterferenceValue] = 609,
   [SkillPrecondCheck.PreConditionType.IsRideOnTeammate] = 609,
-  [SkillPrecondCheck.PreConditionType.SkillOptionValid] = 609
+  [SkillPrecondCheck.PreConditionType.SkillOptionValid] = 609,
+  [SkillPrecondCheck.PreConditionType.HasSoulPuppet] = 609
 }
 
 function SkillPrecondCheck:ctor(skillItemData)
@@ -115,6 +117,8 @@ function SkillPrecondCheck:GetKey(preCond)
     return preCond.type .. "_" .. preCond.value
   elseif preCond.type == SkillPrecondCheck.PreConditionType.SkillOptionValid then
     return preCond.type .. "_" .. preCond.option
+  elseif preCond.type == SkillPrecondCheck.PreConditionType.HasSoulPuppet then
+    return preCond.type
   end
   errorLog(string.format("SkillPrecondCheck hasnt support %s type precondition check", preCond.type))
   return "whatfuck?"

@@ -870,17 +870,19 @@ function NewRechargeTCardSubView:OnClickForButtonPurchaseCard(show_card_index)
     local productName = OverSea.LangManager.Instance():GetLangByKey(self.monthlyVIPShopItemConf.Desc)
     local productPrice = self.monthlyVIPShopItemConf.Rmb
     local currencyType = self.monthlyVIPShopItemConf.CurrencyType
-    OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", "[0075BCFF]" .. productName .. "[-]", currencyType, FunctionNewRecharge.FormatMilComma(productPrice)), ZhString.ShopConfirmDes, productName, productPrice, function()
+    local confirmDesc, clickUrlCallback = OverseaHostHelper:GetRechargeShopConfirmDesc()
+    OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", "[0075BCFF]" .. productName .. "[-]", currencyType, FunctionNewRecharge.FormatMilComma(productPrice)), confirmDesc, productName, productPrice, function()
       self:RequestChargeQuery(self.monthlyVIPShopItemConf.id)
       self.queryChargeAndPurchaseMonthlyVIPCard = true
       self.dazhe = false
-    end)
+    end, nil, clickUrlCallback)
   elseif 0 < showCardIndex then
     local card = self.epCards[showCardIndex]
     local purchaseEPCardID = card.id2 or card.id1
     local cardConf = Table_Deposit[purchaseEPCardID]
     local productName = OverSea.LangManager.Instance():GetLangByKey(cardConf.Desc)
-    OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle2 .. "[-]", "[0075BCFF]" .. productName .. "[-]", "", self.u_PurchaseBtnText.text), ZhString.ShopConfirmDes, productName, cardConf.Rmb, function()
+    local confirmDesc, clickUrlCallback = OverseaHostHelper:GetRechargeShopConfirmDesc()
+    OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle2 .. "[-]", "[0075BCFF]" .. productName .. "[-]", "", self.u_PurchaseBtnText.text), confirmDesc, productName, cardConf.Rmb, function()
       self:RequestQueryChargeCnt()
       self.queryChargeAndPurchaseEPCardID = purchaseEPCardID
       if card.id2 == card.id1 then
@@ -889,7 +891,7 @@ function NewRechargeTCardSubView:OnClickForButtonPurchaseCard(show_card_index)
         self.budazheid = card.id1
         self.dazhe = true
       end
-    end)
+    end, nil, clickUrlCallback)
   end
 end
 

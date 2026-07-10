@@ -171,6 +171,12 @@ function ServiceScenePetAutoProxy:onRegister()
   self:Listen(10, 54, function(data)
     self:RecvSevenRoyalsFollowNpc(data)
   end)
+  self:Listen(10, 56, function(data)
+    self:RecvContractSkillLevelUpPetCmd(data)
+  end)
+  self:Listen(10, 57, function(data)
+    self:RecvQuickPackOperPetCmd(data)
+  end)
 end
 
 function ServiceScenePetAutoProxy:CallPetList(datas)
@@ -246,7 +252,7 @@ function ServiceScenePetAutoProxy:CallHireCatPetCmd(catid, etype)
   end
 end
 
-function ServiceScenePetAutoProxy:CallEggHatchPetCmd(name, guid)
+function ServiceScenePetAutoProxy:CallEggHatchPetCmd(name, guid, petid)
   if not NetConfig.PBC then
     local msg = ScenePet_pb.EggHatchPetCmd()
     if name ~= nil then
@@ -254,6 +260,9 @@ function ServiceScenePetAutoProxy:CallEggHatchPetCmd(name, guid)
     end
     if guid ~= nil then
       msg.guid = guid
+    end
+    if petid ~= nil then
+      msg.petid = petid
     end
     self:SendProto(msg)
   else
@@ -264,6 +273,9 @@ function ServiceScenePetAutoProxy:CallEggHatchPetCmd(name, guid)
     end
     if guid ~= nil then
       msgParam.guid = guid
+    end
+    if petid ~= nil then
+      msgParam.petid = petid
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -1498,6 +1510,24 @@ function ServiceScenePetAutoProxy:CallEquipUpdatePetCmd(petid, update, del)
         msg.update.egg = {}
       end
       msg.update.egg.cdtime = update.egg.cdtime
+    end
+    if update.egg ~= nil and update.egg.already_hatched ~= nil then
+      if msg.update == nil then
+        msg.update = {}
+      end
+      if msg.update.egg == nil then
+        msg.update.egg = {}
+      end
+      msg.update.egg.already_hatched = update.egg.already_hatched
+    end
+    if update.egg ~= nil and update.egg.quick_pack_slot ~= nil then
+      if msg.update == nil then
+        msg.update = {}
+      end
+      if msg.update.egg == nil then
+        msg.update.egg = {}
+      end
+      msg.update.egg.quick_pack_slot = update.egg.quick_pack_slot
     end
     if update.letter ~= nil and update.letter.sendUserName ~= nil then
       if msg.update == nil then
@@ -3346,6 +3376,24 @@ function ServiceScenePetAutoProxy:CallEquipUpdatePetCmd(petid, update, del)
         msgParam.update.egg = {}
       end
       msgParam.update.egg.cdtime = update.egg.cdtime
+    end
+    if update.egg ~= nil and update.egg.already_hatched ~= nil then
+      if msgParam.update == nil then
+        msgParam.update = {}
+      end
+      if msgParam.update.egg == nil then
+        msgParam.update.egg = {}
+      end
+      msgParam.update.egg.already_hatched = update.egg.already_hatched
+    end
+    if update.egg ~= nil and update.egg.quick_pack_slot ~= nil then
+      if msgParam.update == nil then
+        msgParam.update = {}
+      end
+      if msgParam.update.egg == nil then
+        msgParam.update.egg = {}
+      end
+      msgParam.update.egg.quick_pack_slot = update.egg.quick_pack_slot
     end
     if update.letter ~= nil and update.letter.sendUserName ~= nil then
       if msgParam.update == nil then
@@ -5907,6 +5955,46 @@ function ServiceScenePetAutoProxy:CallSevenRoyalsFollowNpc(npcids, create)
   end
 end
 
+function ServiceScenePetAutoProxy:CallContractSkillLevelUpPetCmd(target_level)
+  if not NetConfig.PBC then
+    local msg = ScenePet_pb.ContractSkillLevelUpPetCmd()
+    if target_level ~= nil then
+      msg.target_level = target_level
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.ContractSkillLevelUpPetCmd.id
+    local msgParam = {}
+    if target_level ~= nil then
+      msgParam.target_level = target_level
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceScenePetAutoProxy:CallQuickPackOperPetCmd(is_add, guid)
+  if not NetConfig.PBC then
+    local msg = ScenePet_pb.QuickPackOperPetCmd()
+    if is_add ~= nil then
+      msg.is_add = is_add
+    end
+    if guid ~= nil then
+      msg.guid = guid
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.QuickPackOperPetCmd.id
+    local msgParam = {}
+    if is_add ~= nil then
+      msgParam.is_add = is_add
+    end
+    if guid ~= nil then
+      msgParam.guid = guid
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceScenePetAutoProxy:RecvPetList(data)
   self:Notify(ServiceEvent.ScenePetPetList, data)
 end
@@ -6115,6 +6203,14 @@ function ServiceScenePetAutoProxy:RecvSevenRoyalsFollowNpc(data)
   self:Notify(ServiceEvent.ScenePetSevenRoyalsFollowNpc, data)
 end
 
+function ServiceScenePetAutoProxy:RecvContractSkillLevelUpPetCmd(data)
+  self:Notify(ServiceEvent.ScenePetContractSkillLevelUpPetCmd, data)
+end
+
+function ServiceScenePetAutoProxy:RecvQuickPackOperPetCmd(data)
+  self:Notify(ServiceEvent.ScenePetQuickPackOperPetCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.ScenePetPetList = "ServiceEvent_ScenePetPetList"
 ServiceEvent.ScenePetFireCatPetCmd = "ServiceEvent_ScenePetFireCatPetCmd"
@@ -6168,3 +6264,5 @@ ServiceEvent.ScenePetBoKiSkillUpdatePetCmd = "ServiceEvent_ScenePetBoKiSkillUpda
 ServiceEvent.ScenePetBoKiSkillInUseUpdatePetCmd = "ServiceEvent_ScenePetBoKiSkillInUseUpdatePetCmd"
 ServiceEvent.ScenePetBoKiSkillInUseSetPetCmd = "ServiceEvent_ScenePetBoKiSkillInUseSetPetCmd"
 ServiceEvent.ScenePetSevenRoyalsFollowNpc = "ServiceEvent_ScenePetSevenRoyalsFollowNpc"
+ServiceEvent.ScenePetContractSkillLevelUpPetCmd = "ServiceEvent_ScenePetContractSkillLevelUpPetCmd"
+ServiceEvent.ScenePetQuickPackOperPetCmd = "ServiceEvent_ScenePetQuickPackOperPetCmd"

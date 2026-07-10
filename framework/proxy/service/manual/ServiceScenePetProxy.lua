@@ -73,8 +73,8 @@ function ServiceScenePetProxy:RecvPetInfoUpdatePetCmd(data)
   self:Notify(ServiceEvent.ScenePetPetInfoUpdatePetCmd, data)
 end
 
-function ServiceScenePetProxy:CallEggHatchPetCmd(name, guid)
-  ServiceScenePetProxy.super.CallEggHatchPetCmd(self, name, guid)
+function ServiceScenePetProxy:CallEggHatchPetCmd(name, guid, petid)
+  ServiceScenePetProxy.super.CallEggHatchPetCmd(self, name, guid, petid)
 end
 
 function ServiceScenePetProxy:RecvPetOffPetCmd(data)
@@ -205,4 +205,9 @@ function ServiceScenePetProxy:RecvSevenRoyalsFollowNpc(data)
   redlog("ServiceScenePetProxy:RecvSevenRoyalsFollowNpc")
   FollowNpcAIManager.Me():SetFollowNpc(data.npcids)
   self:Notify(ServiceEvent.ScenePetSevenRoyalsFollowNpc, data)
+end
+
+function ServiceScenePetProxy:RecvContractSkillLevelUpPetCmd(data)
+  MsgManager.ShowMsgByIDTable(43704)
+  ServiceScenePetProxy.super.RecvContractSkillLevelUpPetCmd(self, data)
 end

@@ -257,7 +257,7 @@ function PictureWallManager:GetPicThumbnailByCell(cell)
     local hasIn = self:HasInToBeDownload(data)
     if not hasIn then
       self.toBeDownload[#self.toBeDownload + 1] = data
-      if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+      if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
         TableUtility.ArrayClear(self.toBeDownload)
       end
       if #self.toBeDownload > 0 then
@@ -291,7 +291,7 @@ function PictureWallManager:trySetThumbnailTexture(photoData)
     end
     if not exsit then
       self.toBeDownload[#self.toBeDownload + 1] = photoData
-      if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+      if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
         TableUtility.ArrayClear(self.toBeDownload)
       end
     end
@@ -522,7 +522,7 @@ function PictureWallManager:_DestroyDatas()
 end
 
 function PictureWallManager:ShowDetailPicure(frameId, frameObj)
-  if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+  if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
     return
   end
   local serverData = self:getServerDataByFrameId(frameId)

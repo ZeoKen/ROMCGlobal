@@ -73,8 +73,12 @@ local updateLeftCDTimes = function(sortID, cdData)
   local leftTimes = skill:GetLeftCDTimes() or 0
   if maxTimes > leftTimes then
     SkillProxy.Instance:AddLeftCDTimes(sortID)
-    cdData:SetCdCount(maxTimes - (leftTimes + 1))
+    local remaining = maxTimes - (leftTimes + 1)
+    cdData:SetCdCount(remaining)
     GameFacade.Instance:sendNotification(SkillEvent.SkillStartEvent)
+    if remaining <= 0 then
+      CDProxy.Instance:RemoveSkillCD(sortID)
+    end
   end
 end
 
@@ -181,7 +185,13 @@ function CDProxy:AddSkillCD(sortID, time, cd, cdMax, isFromServer, coldtime)
         needRefresh = true
         cd = (time - serverTime) / 1000
       else
-        needRefresh = false
+        local forceRefreshBySnowAuto = Game.Myself.data:CheckSnowAutoSkillIsActiveBySortID(sortID)
+        if forceRefreshBySnowAuto then
+          needRefresh = true
+          cd = (time - serverTime) / 1000
+        else
+          needRefresh = false
+        end
       end
     else
       needRefresh = true
@@ -292,6 +302,17 @@ function CDProxy:UpdateCDData(skillitemdata)
       GameFacade.Instance:sendNotification(SkillEvent.SkillStartEvent)
     end
   end
+end
+
+function CDProxy:UpdateSkillCDMaxByReplaceBaseCD(sortID)
+  if sortID == nil then
+    return
+  end
+  local skillItemData = SkillProxy.Instance:GetLearnedSkillBySortID(sortID)
+  if not skillItemData then
+    return
+  end
+  self:UpdateCDData(skillItemData)
 end
 
 function CDProxy:IsInCD(cdType, id)

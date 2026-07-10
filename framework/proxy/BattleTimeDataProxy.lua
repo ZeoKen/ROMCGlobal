@@ -57,6 +57,7 @@ function BattleTimeDataProxy:Init()
   self.total_playtime_extra_daily = 0
   self.used_playtime_extra = 0
   self.total_playtime_extra = 0
+  self.group_playtimes = {}
   self.switchStatus = {
     [BattleTimeDataProxy.ESwitchType.BATTLE] = true,
     [BattleTimeDataProxy.ESwitchType.PLAY] = true
@@ -115,7 +116,40 @@ function BattleTimeDataProxy:HandleRecvBattleTimelenUserCmd(data)
   self.total_playtime_extra_daily = data.total_playtime_extra_daily
   self.used_playtime_extra = data.used_playtime_extra
   self.total_playtime_extra = data.total_playtime_extra
+  self:SetGroupPlayTimes(data.group_playtimes)
   ServiceFuBenCmdProxy.Instance:CallTeamExpQueryInfoFubenCmd()
+end
+
+function BattleTimeDataProxy:SetGroupPlayTimes(group_playtimes)
+  TableUtility.TableClear(self.group_playtimes)
+  if not group_playtimes then
+    return
+  end
+  for i = 1, #group_playtimes do
+    local data = group_playtimes[i]
+    if data and data.groupid then
+      self.group_playtimes[data.groupid] = {
+        lefttime = data.lefttime or 0,
+        totaltime = data.totaltime or 0
+      }
+    end
+  end
+end
+
+function BattleTimeDataProxy:HandleGroupPlayTimeUpdate(updates)
+  if not updates then
+    return
+  end
+  self.group_playtimes = self.group_playtimes or {}
+  for i = 1, #updates do
+    local data = updates[i]
+    if data and data.groupid then
+      self.group_playtimes[data.groupid] = {
+        lefttime = data.lefttime or 0,
+        totaltime = data.totaltime or 0
+      }
+    end
+  end
 end
 
 function BattleTimeDataProxy:HandleRecvSyncPvePassInfoFubenCmd(data)
@@ -233,6 +267,35 @@ end
 
 function BattleTimeDataProxy:UsedPlayTime(sec)
   return GetValue(self.usedplaytime, sec)
+end
+
+function BattleTimeDataProxy:GetGroupPlayTime(groupid, sec)
+  if not groupid then
+    return 0
+  end
+  local data = self.group_playtimes and self.group_playtimes[groupid]
+  local lefttime = data and data.lefttime or 0
+  return GetValue(lefttime or 0, sec)
+end
+
+function BattleTimeDataProxy:TotalGroupPlayTime(sec)
+  local total = 0
+  if self.group_playtimes then
+    for _, data in pairs(self.group_playtimes) do
+      total = total + (data.lefttime or 0)
+    end
+  end
+  return GetValue(total, sec)
+end
+
+function BattleTimeDataProxy:TotalGroupPlayTotalTime(sec)
+  local total = 0
+  if self.group_playtimes then
+    for _, data in pairs(self.group_playtimes) do
+      total = total + (data.totaltime or 0)
+    end
+  end
+  return GetValue(total, sec)
 end
 
 function BattleTimeDataProxy:TutorTime(sec)

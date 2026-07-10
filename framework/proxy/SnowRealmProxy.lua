@@ -134,10 +134,28 @@ function SnowRealmProxy:_HandlePhotoDataUpdate(data, nFurniture)
   end
 end
 
+function SnowRealmProxy:_UpdateSkadaNpcCombatAttrsByFurnitureData(furnitureData)
+  if not furnitureData then
+    return
+  end
+  local userMap = NSceneNpcProxy.Instance and NSceneNpcProxy.Instance.userMap
+  if not userMap then
+    return
+  end
+  local npcData
+  for _, nCreature in pairs(userMap) do
+    npcData = nCreature and nCreature.data
+    if npcData and npcData.GetRelativeFurnitureID and npcData:GetRelativeFurnitureID() == furnitureData.id and npcData.UpdateSkadaCombatAttrsByFurnitureData then
+      npcData:UpdateSkadaCombatAttrsByFurnitureData(furnitureData)
+    end
+  end
+end
+
 function SnowRealmProxy:_HandleSkadaDataUpdate(data, nFurniture, serverSkadaData)
   if not serverSkadaData then
     return
   end
+  self:_UpdateSkadaNpcCombatAttrsByFurnitureData(data)
   self:ClearSkadaData()
   self.skadaHistoryMax = ReusableTable.CreateArray()
   local serverArray = serverSkadaData.history_max
@@ -528,6 +546,8 @@ function SnowRealmProxy:HandleQuerySnowHouseDataHomeCmd(serverDatas)
       self.furnitureDatas[houseIndex].houseData = HouseData.new(serverDatas.house, houseIndex)
       if serverDatas.house.accid == FunctionLogin.Me():getLoginData().accid then
         self.mySelfHomeIndex = houseIndex
+      elseif self.mySelfHomeIndex == houseIndex then
+        self.mySelfHomeIndex = 0
       end
       SnowRealmManager.Me():SetHomeState(houseIndex, false)
     else
@@ -535,15 +555,18 @@ function SnowRealmProxy:HandleQuerySnowHouseDataHomeCmd(serverDatas)
       self.furnitureDatas[houseIndex].houseData = nil
       self:ClearFurnitureDatas(houseIndex)
       SnowRealmManager.Me():ClearFurnituresByHouseIndex(true, houseIndex)
+      if self.mySelfHomeIndex == houseIndex then
+        self.mySelfHomeIndex = 0
+      end
     end
   end
 end
 
 function SnowRealmProxy:FindFurnitureData(id, houseIndex)
   if nil == houseIndex then
-    houseIndex = self.mySelfHomeIndex
+    houseIndex = SnowRealmManager.Me():GetCurHomeIdx()
   end
-  local furnitureData = self.furnitureDatas[houseIndex].nFurnitureMap[id]
+  local furnitureData = self.furnitureDatas[houseIndex] and self.furnitureDatas[houseIndex].nFurnitureMap[id]
   return furnitureData
 end
 

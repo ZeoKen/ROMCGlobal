@@ -971,6 +971,16 @@ Table_ItemAccess = {
     GotoMode = {732},
     Desc = "##2308960",
     ErrorMsgEvent = _EmptyTable
+  },
+  [107] = {
+    id = 107,
+    ItemName = "##1056112",
+    ItemID = 12908,
+    Name = "##42531042",
+    Icon = "raidbgicon_mvp01",
+    GotoMode = {8389},
+    Desc = "##45912473",
+    ErrorMsgEvent = _EmptyTable
   }
 }
 Table_ItemAccess_fields = {

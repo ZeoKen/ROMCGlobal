@@ -1453,7 +1453,7 @@ local LinkWord = function(i)
   if i == 5 then
     if BranchMgr.IsJapan() then
       return "と"
-    elseif BranchMgr.IsKorea() or BranchMgr.IsSEA() or BranchMgr.IsNA() or BranchMgr.IsEU() then
+    elseif BranchMgr.IsKorea() or BranchMgr.IsNOKR() or BranchMgr.IsSEA() or BranchMgr.IsNA() or BranchMgr.IsEU() then
       return "와(과) "
     end
   end

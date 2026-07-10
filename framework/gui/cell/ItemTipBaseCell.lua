@@ -91,6 +91,111 @@ local MaxRefine = 15
 local LimitCheckCfg = GameConfig.TechTree.LimitCheck
 local SpeedUpBuff = 6788
 local _Separator = "[Quench]"
+local DefaultSellPriceHighlightThreshold = 100000
+local SellPriceHighlightFlag = "highlight"
+local SellPriceButtonFlag = "sell"
+local SellPriceButtonBagTypes = {
+  1,
+  8,
+  10,
+  11,
+  12,
+  17
+}
+local IsSellPriceHighlight = function(price)
+  if not BranchMgr.IsNOKR() then
+    return false
+  end
+  local cfg = GameConfig.ItemTipSellPriceHighlight
+  local threshold = type(cfg) == "table" and cfg.Threshold or cfg
+  if not threshold and GameConfig.Item then
+    threshold = GameConfig.Item.sell_price_highlight_threshold
+  end
+  threshold = threshold or DefaultSellPriceHighlightThreshold
+  return price and threshold and 0 < threshold and price >= threshold
+end
+
+function ItemTipBaseCell.MergeAttrsByValue(attrData)
+  if not attrData then
+    return {}
+  end
+  local propMap = Game.Config_PropName
+  local valueGroups = {}
+  for attrName, attrValue in pairs(attrData) do
+    local propConfig = propMap and propMap[attrName]
+    local isPercent = propConfig and (propConfig.IsPercent == 1 or propConfig.IsClientPercent == 1)
+    local propId = propConfig and propConfig.id or 9999
+    local displayName = propConfig and OverSea.LangManager.Instance():GetLangByKey(propConfig.PropName) or attrName
+    if attrName == "MaxHp" and ZhString.EquipMemory_MaxHp then
+      displayName = ZhString.EquipMemory_MaxHp
+    end
+    if isPercent and string.sub(attrName, -3) == "Per" then
+      local baseAttrName = string.sub(attrName, 1, -4)
+      local basePropConfig = propMap and propMap[baseAttrName]
+      displayName = basePropConfig and basePropConfig.PropName and OverSea.LangManager.Instance():GetLangByKey(basePropConfig.PropName) or displayName
+    end
+    local valueKey = tostring(attrValue) .. "_" .. (isPercent and "1" or "0")
+    if not valueGroups[valueKey] then
+      valueGroups[valueKey] = {
+        names = {},
+        value = attrValue,
+        isPercent = isPercent,
+        minId = propId
+      }
+    end
+    table.insert(valueGroups[valueKey].names, {name = displayName, id = propId})
+    if propId < valueGroups[valueKey].minId then
+      valueGroups[valueKey].minId = propId
+    end
+  end
+  local result = {}
+  for _, group in pairs(valueGroups) do
+    table.sort(group.names, function(a, b)
+      return a.id < b.id
+    end)
+    table.insert(result, group)
+  end
+  table.sort(result, function(a, b)
+    return a.minId < b.minId
+  end)
+  return result
+end
+
+function ItemTipBaseCell.FormatMergedAttrText(mergedGroup)
+  if not (mergedGroup and mergedGroup.names) or #mergedGroup.names == 0 then
+    return ""
+  end
+  local nameList = {}
+  for _, nameData in ipairs(mergedGroup.names) do
+    table.insert(nameList, nameData.name)
+  end
+  local namesStr = table.concat(nameList, "、")
+  local valueText
+  if mergedGroup.isPercent then
+    local percentValue = mergedGroup.value * 100
+    if percentValue == math.floor(percentValue) then
+      valueText = string.format("+%d%%", percentValue)
+    else
+      valueText = string.format("+%.1f%%", percentValue)
+    end
+  elseif mergedGroup.value == math.floor(mergedGroup.value) then
+    valueText = string.format("+%d", mergedGroup.value)
+  else
+    valueText = string.format("+%.1f", mergedGroup.value)
+  end
+  return namesStr .. valueText
+end
+
+local IsOwnedBagItemForSellButton = function(itemData)
+  if not (itemData and itemData.id and BagProxy) or not BagProxy.Instance then
+    return false
+  end
+  return nil ~= BagProxy.Instance:GetItemByGuid(itemData.id, SellPriceButtonBagTypes)
+end
+
+function ItemTipBaseCell:CanShowSellPriceButton(itemData)
+  return BranchMgr.IsNOKR() and IsOwnedBagItemForSellButton(itemData)
+end
 
 function ItemTipBaseCell:Init()
   self.main = self:FindComponent("Main", UIWidget)
@@ -172,6 +277,7 @@ function ItemTipBaseCell:InitCountChooseBord()
     return
   end
   local countChoose_AddButton = self:FindGO("AddButton", self.countChooseBord)
+  self.countChoose_AddButton = countChoose_AddButton
   self.countChoose_AddButton_Sp = countChoose_AddButton:GetComponent(UISprite)
   self.countChoose_AddButton_Collider = countChoose_AddButton:GetComponent(BoxCollider)
   self:AddClickEvent(countChoose_AddButton, function(go)
@@ -566,9 +672,16 @@ function ItemTipBaseCell:UpdateNormalItemInfo(data)
   if not bHairType then
     local price = sData.SellPrice or 0
     if 0 < price and sData.NoSale ~= 1 then
+      local highLightFlag = IsSellPriceHighlight(price) and SellPriceHighlightFlag or ""
+      local sellBtnFlag = self:CanShowSellPriceButton(data) and SellPriceButtonFlag or ""
       self.contextDatas[ItemTipAttriType.SellPrice] = {
-        label = string.format("%s{priceicon=100,%s}", ZhString.ItemTip_SellPrice, price),
-        hideline = true
+        label = string.format("%s{priceicon=100,%s,%s,%s}", ZhString.ItemTip_SellPrice, price, highLightFlag, sellBtnFlag),
+        hideline = true,
+        priceIndicatorBtnCb = function(btnFlag)
+          if btnFlag == SellPriceButtonFlag then
+            FunctionNpcFunc.Sell(nil, 1)
+          end
+        end
       }
     end
   end
@@ -989,6 +1102,10 @@ function ItemTipBaseCell:UpdateNormalItemInfo(data)
         self.contextDatas[ItemTipAttriType.SnowGemAdvAttr] = snowGemAttrData.advAttr
       end
     end
+    local snowGemProfession = ItemTipBaseCell.GetSnowGemProfession(data)
+    if snowGemProfession then
+      self.contextDatas[ItemTipAttriType.EquipJobs] = snowGemProfession
+    end
   end
 end
 
@@ -1070,7 +1187,7 @@ function ItemTipBaseCell:UpdateEquipAttriInfo(data)
       end
     end
     if data.staticData and data.staticData.Type == 4301 then
-      singleData = ItemTipBaseCell.GetSnowCrownAttriByItemData(data)
+      singleData = ItemTipBaseCell.GetSnowCrownAttriByItemData(data, self.equipBuffUpSource)
       if singleData then
         self.contextDatas[ItemTipAttriType.SnowCrownAttri] = singleData
       end
@@ -1560,7 +1677,7 @@ function ItemTipBaseCell:UpdatePetEggInfo(data)
       table.insert(briefInfo.label, string.format(ZhString.ItemTip_PetEgg_Friendly, string.format(colorFormat, petEggInfo.friendlv)))
     end
     local skillInfo
-    local skillids = petEggInfo.skillids
+    local skillids = petEggInfo.GetSkillDisplayDatasForUI and petEggInfo:GetSkillDisplayDatasForUI() or petEggInfo.skillids
     if skillids and 0 < #skillids then
       skillInfo = {
         label = {
@@ -1568,9 +1685,12 @@ function ItemTipBaseCell:UpdatePetEggInfo(data)
         }
       }
       for i = 1, #skillids do
-        local skillConfig = Table_Skill[skillids[i]]
+        local skillData = skillids[i]
+        local skillId = type(skillData) == "table" and skillData.skillId or skillData
+        local skillConfig = Table_Skill[skillId]
         if skillConfig then
-          table.insert(skillInfo.label, OverSea.LangManager.Instance():GetLangByKey(skillConfig.NameZh) .. "    " .. string.format(colorFormat, "Lv." .. skillConfig.Level))
+          local skillLv = type(skillData) == "table" and skillData.level or skillConfig.Level
+          table.insert(skillInfo.label, OverSea.LangManager.Instance():GetLangByKey(skillConfig.NameZh) .. "    " .. string.format(colorFormat, "Lv." .. skillLv))
         end
       end
     end
@@ -3036,14 +3156,17 @@ function ItemTipBaseCell.GetEquipBaseAttriByItemData(itemData, hideIcon, vstrCol
   end
 end
 
-function ItemTipBaseCell.GetSnowCrownAttriByItemData(itemData)
+function ItemTipBaseCell.GetSnowCrownAttriByItemData(itemData, equipBuffUpSource)
   if not (itemData and itemData.staticData) or itemData.staticData.Type ~= 4301 then
+    return nil
+  end
+  if equipBuffUpSource and Game.Myself and Game.Myself.data and equipBuffUpSource ~= Game.Myself.data.id then
     return nil
   end
   if not SnowCrownProxy.Instance or not SnowCrownProxy.Instance.snowData then
     return nil
   end
-  local currentMode = SnowCrownProxy.Instance:GetCurrentUseMode()
+  local currentMode = itemData.snowUseMode or SnowCrownProxy.Instance:GetCurrentUseMode()
   if not currentMode then
     return nil
   end
@@ -3103,6 +3226,21 @@ function ItemTipBaseCell.GetSnowCrownAttriByItemData(itemData)
   return nil
 end
 
+local GetSnowGemAdvanceProgress = function(advlv, advexp)
+  advlv = advlv or 0
+  advexp = advexp or 0
+  local stoneAdvanceCount = GameConfig.Snow and GameConfig.Snow.StoneAdvanceCount or {}
+  local maxCount = stoneAdvanceCount[advlv + 1]
+  if not maxCount then
+    return 0, true
+  end
+  local progressValue = advexp / maxCount
+  if 1 < progressValue then
+    progressValue = 1
+  end
+  return math.floor(progressValue * 100 + 0.5), false
+end
+
 function ItemTipBaseCell.GetSnowGemAttrByItemData(itemData, theCell)
   if not itemData then
     return nil
@@ -3118,31 +3256,34 @@ function ItemTipBaseCell.GetSnowGemAttrByItemData(itemData, theCell)
   if not stoneConfig then
     return nil
   end
-  local level, advLevel = 0, 0
+  local level, advLevel, advexp = 0, 0, 0
   if itemData.snowGemData then
     level = itemData.snowGemData.level or 0
     advLevel = itemData.snowGemData.advlv or 0
+    advexp = itemData.snowGemData.advexp or 0
   elseif SnowCrownProxy and SnowCrownProxy.Instance then
     local stoneData = SnowCrownProxy.Instance:GetStoneBookData(staticId)
     if stoneData then
       level = stoneData.lv or 0
       advLevel = stoneData.advlv or 0
+      advexp = stoneData.advexp or 0
     end
   end
   local result = {basicAttr = nil, advAttr = nil}
-  local storeAttr = stoneConfig.StoreAttr
+  local levelConfig = Table_SnowStoneLevel and Table_SnowStoneLevel[level]
+  local storeAttr = levelConfig and levelConfig.Attr
   if storeAttr then
     local basicInfo = {
       tiplabel = string.format(ZhString.ItemTip_SnowGemBasicAttr, level),
       label = {}
     }
-    local propMap = Game.Config_PropName
-    for attrName, attrValue in pairs(storeAttr) do
-      local propConfig = propMap and propMap[attrName]
-      local displayName = propConfig and OverSea.LangManager.Instance():GetLangByKey(propConfig.PropName) or attrName
-      local attrText = string.format("%s +%d", displayName, attrValue)
-      local labelText = ItemTipDefaultUiIconPrefix .. attrText
-      table.insert(basicInfo.label, labelText)
+    local mergedGroups = ItemTipBaseCell.MergeAttrsByValue(storeAttr)
+    for _, group in ipairs(mergedGroups) do
+      local attrText = ItemTipBaseCell.FormatMergedAttrText(group)
+      if attrText and attrText ~= "" then
+        local labelText = ItemTipDefaultUiIconPrefix .. attrText
+        table.insert(basicInfo.label, labelText)
+      end
     end
     if _SHOWBTN_ and theCell then
       basicInfo.aTipInlineButton = {
@@ -3169,46 +3310,171 @@ function ItemTipBaseCell.GetSnowGemAttrByItemData(itemData, theCell)
     [4] = "IV",
     [5] = "V"
   }
-  local advanceAttrs = {
-    stoneConfig.AdvanceAttr,
-    stoneConfig.AdvanceAttr2,
-    stoneConfig.AdvanceAttr3
-  }
-  local advLabels = {}
-  local maxAdvLevel = 0
-  for _, advanceAttr in ipairs(advanceAttrs) do
-    if advanceAttr then
-      for unlockLevel, stageData in pairs(advanceAttr) do
-        for stageLevel, _ in pairs(stageData) do
-          if stageLevel > maxAdvLevel then
-            maxAdvLevel = stageLevel
-          end
-        end
+  local maxAdvLevel = 5
+  local SafeFormatDesc = function(desc, values)
+    if not desc then
+      return ""
+    end
+    desc = OverSea.LangManager.Instance():GetLangByKey(desc) or desc
+    if not values or #values == 0 then
+      return string.gsub(desc, "%%s", "-")
+    end
+    local _, count = string.gsub(desc, "%%s", "")
+    local safeValues = {}
+    for i = 1, count do
+      safeValues[i] = values[i] or "-"
+    end
+    if 0 < #safeValues then
+      return string.format(desc, unpack(safeValues))
+    end
+    return desc
+  end
+  local effectConfig
+  if Table_SnowStoneEffect then
+    for _, config in pairs(Table_SnowStoneEffect) do
+      if config.StoneID == staticId and config.Level == advLevel then
+        effectConfig = config
+        break
       end
     end
   end
-  for i, advanceAttr in ipairs(advanceAttrs) do
-    if advanceAttr then
-      for unlockLevel, stageData in pairs(advanceAttr) do
-        local bufferId = stageData[advLevel] or stageData[0]
-        if bufferId and Table_Buffer and Table_Buffer[bufferId] then
-          local bufferData = Table_Buffer[bufferId]
-          local buffDesc = bufferData.Dsc and bufferData.Dsc ~= "" and bufferData.Dsc or bufferData.BuffName or ""
-          if buffDesc and buffDesc ~= "" then
-            local labelText = ItemTipDefaultUiIconPrefix .. buffDesc
-            table.insert(advLabels, labelText)
-          end
-        end
-      end
+  local advLabels = {}
+  if stoneConfig.Desc then
+    local descText
+    if effectConfig and effectConfig.Value then
+      descText = SafeFormatDesc(stoneConfig.Desc, effectConfig.Value)
+    else
+      descText = SafeFormatDesc(stoneConfig.Desc, nil)
+    end
+    if descText and descText ~= "" then
+      local labelText = descText
+      table.insert(advLabels, labelText)
     end
   end
   if 0 < #advLabels then
-    local currentRoman = romanNumerals[advLevel] or tostring(advLevel)
-    local maxRoman = romanNumerals[maxAdvLevel] or tostring(maxAdvLevel)
-    local advTitle = string.format(ZhString.ItemTip_SnowGemAdvAttr, currentRoman, maxRoman)
+    local displayAdvLevel = advLevel
+    if displayAdvLevel < 1 then
+      displayAdvLevel = 1
+    end
+    local currentRoman = romanNumerals[displayAdvLevel] or "I"
+    local maxRoman = romanNumerals[maxAdvLevel] or "V"
+    local advProgress, isMaxAdvLevel = GetSnowGemAdvanceProgress(advLevel, advexp)
+    local progressText = isMaxAdvLevel and "" or string.format(ZhString.ItemTip_SnowGemAdvProgress, advProgress)
+    local advTitle = string.format(ZhString.ItemTip_SnowGemAdvAttr, currentRoman, maxRoman, progressText)
     result.advAttr = {tiplabel = advTitle, label = advLabels}
   end
   return result
+end
+
+local GetSnowGemClassIdsOfTypeBranch = function(typeBranch)
+  local result = {}
+  for id, classData in pairs(Table_Class or {}) do
+    if classData.TypeBranch == typeBranch and id ~= typeBranch then
+      local lastNum = id % 10
+      if 2 <= lastNum and lastNum <= 4 then
+        table.insert(result, id)
+      end
+    end
+  end
+  table.sort(result)
+  return result
+end
+local GetSnowGemProfessionNameList = function(classList, mySex)
+  local names, classSet, remainClassSet, branchSet = {}, {}, {}, {}
+  for i = 1, #classList do
+    local classId = classList[i]
+    local classData = Table_Class and Table_Class[classId]
+    if classData then
+      classSet[classId] = true
+      remainClassSet[classId] = true
+      if classData.TypeBranch and classData.TypeBranch > 0 then
+        branchSet[classData.TypeBranch] = true
+      end
+    end
+  end
+  local branches = {}
+  for branch in pairs(branchSet) do
+    table.insert(branches, branch)
+  end
+  table.sort(branches)
+  local typeBranchNameIdMap = GameConfig.NewClassEquip and GameConfig.NewClassEquip.typeBranchNameIdMap
+  local addedNameMap = {}
+  for i = 1, #branches do
+    local branch = branches[i]
+    local nameClassId = typeBranchNameIdMap and typeBranchNameIdMap[branch]
+    if nameClassId then
+      local mergeClassIds = GetSnowGemClassIdsOfTypeBranch(branch)
+      local canMerge = 0 < #mergeClassIds
+      for j = 1, #mergeClassIds do
+        if not classSet[mergeClassIds[j]] then
+          canMerge = false
+          break
+        end
+      end
+      if canMerge then
+        local professionName = ProfessionProxy.GetProfessionName(nameClassId, mySex)
+        if professionName and professionName ~= "" and not addedNameMap[professionName] then
+          table.insert(names, professionName .. ZhString.ItemTip_ProSeriesPrefix)
+          addedNameMap[professionName] = true
+        end
+        for classId in pairs(classSet) do
+          local classData = Table_Class and Table_Class[classId]
+          if classData and classData.TypeBranch == branch then
+            remainClassSet[classId] = nil
+          end
+        end
+      end
+    end
+  end
+  local remainClassIds = {}
+  for classId in pairs(remainClassSet) do
+    table.insert(remainClassIds, classId)
+  end
+  table.sort(remainClassIds)
+  for i = 1, #remainClassIds do
+    local professionName = ProfessionProxy.GetProfessionName(remainClassIds[i], mySex)
+    if professionName and professionName ~= "" and not addedNameMap[professionName] then
+      table.insert(names, professionName)
+      addedNameMap[professionName] = true
+    end
+  end
+  return names
+end
+
+function ItemTipBaseCell.GetSnowGemProfession(itemData)
+  if not itemData then
+    return nil
+  end
+  if not itemData:IsSnowGem() then
+    return nil
+  end
+  local staticId = itemData.staticData and itemData.staticData.id
+  if not staticId then
+    return nil
+  end
+  local stoneConfig = Table_SnowStone and Table_SnowStone[staticId]
+  if not stoneConfig then
+    return nil
+  end
+  local classList = stoneConfig.ClassID
+  local proInfo = {}
+  local proban = true
+  local prostr = ""
+  if not classList or #classList == 0 then
+    proban = false
+    prostr = ZhString.ItemTip_AllPro
+  else
+    local myPro = MyselfProxy.Instance:GetMyProfession()
+    proban = TableUtility.ArrayFindIndex(classList, myPro) == 0
+    local professionNames = GetSnowGemProfessionNameList(classList, MyselfProxy.Instance:GetMySex())
+    prostr = table.concat(professionNames, "/")
+  end
+  if proban then
+    proInfo.label = string.format("[c]%s%s%s[-][/c]", ItemTipBanRedColorStr, ZhString.ItemTip_Profession, prostr)
+  else
+    proInfo.label = string.format("[c]%s%s[-][/c]%s", ItemTipProfessionPrefixColorStr, ZhString.ItemTip_Profession, prostr)
+  end
+  return proInfo
 end
 
 function ItemTipBaseCell.GetEquipPvpBaseAttri(equipInfo, hideIcon, vstrColorStr)
@@ -4075,7 +4341,13 @@ function ItemTipBaseCell:UpdateCardPreviewBtn()
 end
 
 function ItemTipBaseCell:OnClickPreview()
-  local itemid = self.data.staticData and self.data.staticData.id
+  if not self.cardPreviewBtn or not self.cardPreviewInited then
+    return
+  end
+  local itemid = self.data and self.data.staticData and self.data.staticData.id
+  if not itemid then
+    return
+  end
   local cardvalid, displayvalid = ItemUtil.CheckCardPreviewValid(itemid), ItemUtil.CheckItemDisplayValid(itemid)
   self.cardPreview = not self.cardPreview
   if cardvalid then

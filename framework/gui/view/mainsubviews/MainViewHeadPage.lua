@@ -10,7 +10,8 @@ MainViewHeadPage.HeadType = {
   LockTarget = 4,
   Boki = 5,
   Pippi = 6,
-  Max = 6
+  SoulPuppet = 7,
+  Max = 7
 }
 local M_HeadType = MainViewHeadPage.HeadType
 local M_HeadListType = {
@@ -18,6 +19,7 @@ local M_HeadListType = {
 }
 local FrenzyBuffID = 124120
 local _BokiNpcID
+local HeadRepositionDelay = UnityDeltaTime * 6000
 
 function MainViewHeadPage:Init()
   _BokiNpcID = GameConfig.BoKiConfig and GameConfig.BoKiConfig.BoKiNpcID or 300105
@@ -43,6 +45,12 @@ function MainViewHeadPage:InitUI()
   self.frenzy = self:FindComponent("Frenzy", UISlider, headContainer)
   self.frenzyContainer = self:FindGO("EffectContainer", self.frenzy.gameObject)
   self.headGrid = self:FindComponent("HeadGrid", UIGrid, targetsBord)
+  local headGridLuaComp = Game.GameObjectUtil:GetOrAddComponent(self.headGrid.gameObject, GameObjectForLua)
+  
+  function headGridLuaComp.onEnable(go)
+    self:HandleHeadGridEnable()
+  end
+  
   self.targetHeadsCtl = UIGridListCtrl.new(self.headGrid, TargetHeadCell, "TargetHeadCell")
   self.targetHeadsCtl:AddEventListener(MouseEvent.MouseClick, self.ClickTargetHead, self)
   self.targetHeadsCtl:AddEventListener(TargetHeadEvent.CancelChoose, self.CancelChooseTarget, self)
@@ -86,6 +94,7 @@ function MainViewHeadPage:ClickMyHead()
 end
 
 function MainViewHeadPage:ClickTargetHead(cell)
+  self.clickTargetHeadCell = cell
   local data = cell.data
   if data == nil then
     return
@@ -278,6 +287,8 @@ function MainViewHeadPage:ClickTargetHead(cell)
       FunctionPlayerTip.Me():CloseTip()
       self.pippiTipShow = false
     end
+  elseif headType == M_HeadType.SoulPuppet then
+    return
   end
 end
 
@@ -497,6 +508,29 @@ function MainViewHeadPage:UpdatePippiHeadData()
   pippiImageData:SetCustomParam("pippi_revivetime", pTime)
 end
 
+function MainViewHeadPage:UpdateSoulPuppetHeadData(playerID, cdTotalDuration, cdEndTime)
+  local soulPuppetImageData = self.headTargetDataMap[M_HeadType.SoulPuppet]
+  local creature = playerID and SceneCreatureProxy.FindCreature(playerID)
+  if not creature then
+    if soulPuppetImageData then
+      soulPuppetImageData:Reset()
+      self.targetDatas_Dirty = true
+    end
+    return
+  end
+  self.targetDatas_Dirty = true
+  if not soulPuppetImageData then
+    soulPuppetImageData = HeadImageData.new()
+    soulPuppetImageData:SetCustomParam("HeadType", M_HeadType.SoulPuppet)
+    self.headTargetDataMap[M_HeadType.SoulPuppet] = soulPuppetImageData
+  end
+  soulPuppetImageData:TransformByCreature(creature)
+  if cdTotalDuration and cdEndTime then
+    soulPuppetImageData:SetCustomParam("cd_total_duration", cdTotalDuration)
+    soulPuppetImageData:SetCustomParam("cd_end_time", cdEndTime)
+  end
+end
+
 function MainViewHeadPage:_DoUpdateHeadTargetsUI()
   if not self.targetDatas_Dirty then
     return
@@ -520,11 +554,7 @@ function MainViewHeadPage:_DoUpdateHeadTargetsUI()
     end
   end
   self.targetHeadsCtl:ResetDatas(self.headTargetsDatas)
-  self:ClearHeadRepositonTick()
-  self.repositionHeadTick = TimeTickManager.Me():CreateOnceDelayTick(UnityDeltaTime * 6000, function(owner, deltaTime)
-    self.headGrid.repositionNow = true
-    self.repositionHeadTick = nil
-  end, self)
+  self:RequestHeadReposition()
 end
 
 function MainViewHeadPage:RegistRedTip()
@@ -564,6 +594,7 @@ function MainViewHeadPage:MapInterestEvent()
   self:AddListenEvt(ServiceEvent.ScenePetBoKiDataUpdatePetCmd, self.HandleUpdateBoki)
   self:AddListenEvt(MyselfEvent.AddBoki, self.HandleUpdateBoki)
   self:AddListenEvt(MyselfEvent.RemoveBoki, self.HandleUpdateBoki)
+  self:AddListenEvt(MyselfEvent.SoulPuppetUpdate, self.HandleSoulPuppetUpdate)
   self:AddListenEvt(ServiceEvent.SceneBeingBeingInfoQuery, self.HandleBeingHeadUpdate)
   self:AddListenEvt(ServiceEvent.SceneBeingBeingInfoUpdate, self.HandleBeingHeadUpdate)
   self:AddListenEvt(ServiceEvent.SceneBeingBeingOffCmd, self.HandleBeingHeadUpdate)
@@ -719,10 +750,37 @@ end
 function MainViewHeadPage:HandlePetHeadUpdate(note)
   self:UpdatePetHeadData()
   self:_DoUpdateHeadTargetsUI()
+  redlog("petTipShow: ", self.petTipShow)
+  redlog("clickTargetHeadCell: ", self.clickTargetHeadCell)
+  if self.clickTargetHeadCell and self.petTipShow then
+    self:ClickTargetHead(self.clickTargetHeadCell)
+    redlog("xx")
+  end
 end
 
 function MainViewHeadPage:HandleUpdateBoki()
   self:UpdateBokiHeadData()
+  self:_DoUpdateHeadTargetsUI()
+end
+
+function MainViewHeadPage:HandleSoulPuppetUpdate(note)
+  local data = note.body
+  if not data then
+    return
+  end
+  local targetId = data.targetId
+  if targetId == 0 then
+    local soulPuppetImageData = self.headTargetDataMap[M_HeadType.SoulPuppet]
+    if soulPuppetImageData then
+      soulPuppetImageData:Reset()
+      self.targetDatas_Dirty = true
+    end
+  else
+    local duration = 30
+    local currentTime = ServerTime.CurServerTime() / 1000
+    local endTime = currentTime + duration
+    self:UpdateSoulPuppetHeadData(targetId, duration, endTime)
+  end
   self:_DoUpdateHeadTargetsUI()
 end
 
@@ -742,7 +800,7 @@ function MainViewHeadPage:HandlePetHpChange(creature)
   for i = 1, #cells do
     local d = cells[i].data
     if d and d.guid == creature.data.id then
-      cells[i]:UpdateHp()
+      cells[i]:UpdatePetHead()
     end
   end
 end
@@ -774,6 +832,9 @@ function MainViewHeadPage:HandleTargetFurnitureChange(note)
     self:UpdateLockTargetHeadData(creature)
     self:_DoUpdateHeadTargetsUI()
   end
+end
+
+function MainViewHeadPage:HandleSoulPuppetChange(creatureId, cdTotalDuration, cdEndTime)
 end
 
 function MainViewHeadPage:HidePetsHeads(note)
@@ -956,6 +1017,43 @@ function MainViewHeadPage:ClearHeadRepositonTick()
   if nil ~= self.repositionHeadTick then
     self.repositionHeadTick:Destroy()
     self.repositionHeadTick = nil
+  end
+  self.needRepositionHeadOnShow = nil
+end
+
+function MainViewHeadPage:RequestHeadReposition()
+  self:ClearHeadRepositonTick()
+  self.needRepositionHeadOnShow = true
+  self:DelayRepositionHeadGrid()
+end
+
+function MainViewHeadPage:TryRepositionHeadGrid()
+  if nil == self.headGrid or self:ObjIsNil(self.headGrid) then
+    self:ClearHeadRepositonTick()
+    return
+  end
+  if self.headGrid.gameObject.activeInHierarchy then
+    self.headGrid:Reposition()
+    self.headGrid.repositionNow = true
+    self.needRepositionHeadOnShow = nil
+    return
+  end
+end
+
+function MainViewHeadPage:DelayRepositionHeadGrid()
+  if nil == self.headGrid or self:ObjIsNil(self.headGrid) or not self.headGrid.gameObject.activeInHierarchy then
+    return
+  end
+  self.repositionHeadTick = TimeTickManager.Me():CreateOnceDelayTick(HeadRepositionDelay, function(owner, deltaTime)
+    self.repositionHeadTick = nil
+    self.needRepositionHeadOnShow = true
+    self:TryRepositionHeadGrid()
+  end, self)
+end
+
+function MainViewHeadPage:HandleHeadGridEnable()
+  if self.needRepositionHeadOnShow then
+    self:DelayRepositionHeadGrid()
   end
 end
 

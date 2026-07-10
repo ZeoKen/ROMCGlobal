@@ -445,7 +445,7 @@ function GroupRaidProxy:RecvQueryMultiBossRaidStat(serverdata)
     local MultiBossConfig = GameConfig.MultiBoss
     local raidtype = Table_MapRaid[raidid].Type or 0
     local raidConfig = MultiBossConfig.Raid[raidtype]
-    if raidConfig then
+    if raidConfig and raidConfig.BossFilterConfig then
       self.multiBossRecord[count].boss_index = #raidConfig.BossFilterConfig
     else
       self.multiBossRecord[count].boss_index = 4
@@ -476,7 +476,7 @@ function GroupRaidProxy:GetMultiBossRecordFilter()
   end
   local filterconfig = {}
   if raidtype ~= PveRaidType.MemoryRaid then
-    BossFilterConfig = raidConfig.BossFilterConfig
+    local BossFilterConfig = raidConfig.BossFilterConfig
     local name = ""
     if self.multiBossRecord then
       for k, v in pairs(self.multiBossRecord) do

@@ -29,6 +29,7 @@ function StartGamePanel:Init()
   VideoPanel.DeleteUnuseVideo()
   self:initView()
   self:AddEvt()
+  self:RefreshNoticeBtnState()
   FunctionNetError.Me():DisConnect()
   self:MapSwitchHandler()
   selfIns = self
@@ -52,7 +53,7 @@ end
 
 function StartGamePanel:OnEnter()
   CurrentServerType = nil
-  if not BranchMgr.IsNO() and not BranchMgr.IsNOTW() and not BranchMgr.IsNOEN() then
+  if not BranchMgr.IsNO() and not BranchMgr.IsNOTW() and not BranchMgr.IsNOEN() and not BranchMgr.IsNOKR() then
     ISNoviceServerType = false
   end
   if BranchMgr.IsJapan() then
@@ -221,6 +222,8 @@ function StartGamePanel:initView()
   local quitBtnLabel = self:FindComponent("Lb", UILabel, self.quitBtn)
   quitBtnLabel.gameObject:SetActive(false)
   quitBtnLabel.text = ZhString.StartGamePanel_Quit
+  self.noticeBtn = self:FindGO("NoticeBtn")
+  self:Hide(self.noticeBtn)
   self.waitingView = self:FindGO("WaitingView")
   local WaitingLabel = self:FindComponent("WaitingLabel", UILabel)
   WaitingLabel.text = ZhString.StartGamePanel_WaitingLabel
@@ -242,14 +245,14 @@ function StartGamePanel:initView()
   EventDelegate.Set(self.checkBox.onChange, closure)
   if not BranchMgr.IsChina() then
     local copyRightCt = self:FindGO("copyrightCt")
-    if not BranchMgr.IsKorea() then
+    if not BranchMgr.IsKorea() and not BranchMgr.IsNOKR() then
       copyRightCt:SetActive(false)
     end
     local checkBox = self:FindGO("checkBox")
     checkBox:SetActive(false)
+    agreetmentMsg.gameObject:SetActive(false)
     agreetmentLabel.gameObject:SetActive(false)
     networkPrivacyLabel.gameObject:SetActive(false)
-    agreetmentMsg.gameObject:SetActive(false)
   end
   if FunctionLogin.Me():getSdkEnable() then
     self:DisenableCollider()
@@ -267,6 +270,11 @@ function StartGamePanel:initView()
   elseif BranchMgr.IsNOTW() then
     self.ageDetailBtn:SetActive(true)
     self.ageDetailBtn_Sprite.spriteName = "TW_12+"
+    self.ageDetailBtn_Sprite:MakePixelPerfect()
+    self.ageDetailBtn.transform.localScale = LuaGeometry.GetTempVector3(0.5, 0.5, 0.5)
+  elseif BranchMgr.IsNOKR() then
+    self.ageDetailBtn:SetActive(true)
+    self.ageDetailBtn_Sprite.spriteName = "KR_15+"
     self.ageDetailBtn_Sprite:MakePixelPerfect()
     self.ageDetailBtn.transform.localScale = LuaGeometry.GetTempVector3(0.5, 0.5, 0.5)
   else
@@ -438,7 +446,7 @@ function StartGamePanel:AddEvt()
     TipManager.Instance:ShowServerPopupList(popupHolderSp, NGUIUtil.AnchorSide.Bottom, {0, -80})
   end)
   self:AddClickEvent(self.goPlatformEntrance, function(go)
-    if BranchMgr.IsKorea() and not FunctionLogin.Me():getSdkEnable() then
+    if (BranchMgr.IsKorea() or BranchMgr.IsNOKR()) and not FunctionLogin.Me():getSdkEnable() then
       self:ShowTXWYPlatform()
       return
     end
@@ -463,7 +471,7 @@ function StartGamePanel:AddEvt()
       if Application.platform == RuntimePlatform.WindowsPlayer or Application.platform == RuntimePlatform.WindowsEditor then
         FunctionSDK.Instance:Logout(nil, nil)
         FunctionLogin.Me():ClearLoginData()
-      elseif not BranchMgr.IsKorea() then
+      elseif not BranchMgr.IsKorea() and not BranchMgr.IsNOKR() then
         FunctionSDK.Instance:EnterPlatform()
       end
     elseif not self.BlockRequest then
@@ -485,8 +493,34 @@ function StartGamePanel:AddEvt()
     end
   end)
   self:AddClickEvent(self.ageDetailBtn, function()
-    self:ShowAgeDetailInfo()
+    if BranchMgr.IsChina() then
+      self:ShowAgeDetailInfo()
+    end
   end)
+  if BranchMgr.IsNOKR() then
+    self:AddClickEvent(self.noticeBtn, function()
+      self:OnClickNoticeBtn()
+    end)
+  end
+end
+
+function StartGamePanel:OnClickNoticeBtn()
+  if not BranchMgr.IsNOKR() then
+    return
+  end
+  GameFacade.Instance:sendNotification(UIEvent.ShowUI, {
+    viewname = "AgeDetailInfoPanel",
+    title = ZhString.StartGamePanel_NOKRNoticeTitle,
+    msg = ZhString.StartGamePanel_NOKRNoticeMsg
+  })
+end
+
+function StartGamePanel:RefreshNoticeBtnState()
+  if BranchMgr.IsNOKR() then
+    self:Show(self.noticeBtn)
+  else
+    self:Hide(self.noticeBtn)
+  end
 end
 
 function StartGamePanel:OnClickStartGame()

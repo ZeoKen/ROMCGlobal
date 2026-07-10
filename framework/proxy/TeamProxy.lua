@@ -42,7 +42,8 @@ local _ClientRaidTypeForMergeServer = {
   [FuBenCmd_pb.ERAIDTYPE_SEVEN_ROYAL_TEAM_RAID] = 1,
   [FuBenCmd_pb.ERAIDTYPE_ELEMENT] = 1,
   [FuBenCmd_pb.ERAIDTYPE_CRACK] = 1,
-  [FuBenCmd_pb.ERAIDTYPE_DESTROY_AIR_SHIP] = 1
+  [FuBenCmd_pb.ERAIDTYPE_DESTROY_AIR_SHIP] = 1,
+  [FuBenCmd_pb.ERAIDTYPE_BAGE_LAB] = 1
 }
 local _RaidTypeForMergeServer = GameConfig.ServerMerge and GameConfig.ServerMerge.RaidTypeForMergeServer or _ClientRaidTypeForMergeServer
 local NeedCheckUniteTeam = function(raid)
@@ -70,6 +71,41 @@ function TeamProxy:ctor(proxyName, data)
 end
 
 local PublishGoal = GameConfig.Team.publish_goal
+local CheckTeamGoalActivityValid = function(goalCfg)
+  local funcStateID = goalCfg and goalCfg.FuncState
+  local funcState = funcStateID and Table_FuncState[funcStateID]
+  local activityID = funcState and funcState.ActivityID
+  if not activityID or activityID == 0 then
+    return true
+  end
+  local activityCfg = Table_ActivityNew and Table_ActivityNew[activityID]
+  local actProxy = LoopActIntegrationProxy and LoopActIntegrationProxy.Instance
+  if not activityCfg then
+    return false
+  end
+  if not actProxy then
+    return false
+  end
+  if not actProxy:CheckAreaAndServerValid(activityCfg) then
+    return false
+  end
+  local valid = actProxy:CheckActivityValid(activityID)
+  if not valid then
+    return false
+  end
+  return true
+end
+local CheckTeamGoalFuncStateValid = function(goalCfg)
+  local funcStateID = goalCfg and goalCfg.FuncState
+  local funcState = funcStateID and Table_FuncState[funcStateID]
+  if nil == funcStateID or nil == funcState then
+    return true
+  end
+  if funcState.ActivityID and funcState.ActivityID ~= 0 then
+    return CheckTeamGoalActivityValid(goalCfg)
+  end
+  return FunctionUnLockFunc.checkFuncStateValid(funcStateID)
+end
 
 function TeamProxy:InitTeamProxy()
   self.myTeam = nil
@@ -116,7 +152,7 @@ function TeamProxy:InitTeamGoals()
   local childGoals = {}
   local grandGoals = {}
   for k, v in pairs(Table_TeamGoals) do
-    if (nil == v.FuncState or nil == Table_FuncState[v.FuncState] or FunctionUnLockFunc.checkFuncStateValid(v.FuncState)) and v.GoalGroup then
+    if CheckTeamGoalFuncStateValid(v) and v.GoalGroup then
       local gourp = grandGoals[v.GoalGroup]
       if not group then
         group = {}

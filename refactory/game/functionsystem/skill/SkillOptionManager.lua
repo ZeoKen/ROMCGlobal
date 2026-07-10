@@ -21,7 +21,8 @@ SkillOptionManager.OptionEnum = {
   SuperPositionSkill = SceneSkill_pb.ESKILLOPTION_SUPERPOSITION_SKILL,
   DelMultiTrap = SceneSkill_pb.ESKILLOPTION_DEL_MULTI_TRAP,
   Companion_Skill = SceneSkill_pb.ESKILLOPTION_COMPANION_SKILLLIST,
-  BlendBeing = SceneSkill_pb.ESKILLOPTION_BLENDBEING
+  BlendBeing = SceneSkill_pb.ESKILLOPTION_BLENDBEING,
+  ReplaceSkillSingle = SceneSkill_pb.ESKILLOPTION_REPLACE_SKILL_SINGLE
 }
 local StringData = {
   [SkillOptionManager.OptionEnum.SelectMount] = 1
@@ -228,6 +229,10 @@ function SkillOptionManager:UpdateMultiSkillOption(skillOption)
       self._dirtySkills[subSkillList[i]] = 1
     end
     TableUtility.TableClear(self._options[skillOption.opt])
+  elseif skillOption.opt == self.OptionEnum.ReplaceSkillSingle then
+    self._options[skillOption.opt][skillOption.value] = {
+      skillOption.param1 or 0
+    }
   end
   if StringData[skillOption.opt] and skillOption.guid ~= "" then
     TableUtility.ArrayClear(subSkillList)

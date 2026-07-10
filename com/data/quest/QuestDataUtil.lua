@@ -803,6 +803,8 @@ function QuestDataUtil.getUserDataEnum(moneyType)
     return UDEnum.FRIENDSHIP
   elseif moneyType == ProtoCommon_pb.EMONEYTYPE_DEADCOIN then
     return UDEnum.DEADCOIN
+  elseif moneyType == ProtoCommon_pb.EMONEYTYPE_NOKR_DIAMOND then
+    return UDEnum.NOKR_DIAMOND
   end
 end
 

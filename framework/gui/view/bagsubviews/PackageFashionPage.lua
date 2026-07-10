@@ -315,6 +315,7 @@ function PackageFashionPage:InitFashionTabNameTip()
   self.fashionRightTabBgSp = fashionRightTab:GetComponent(UISprite)
   self.skillEffectTabBgSp = skillEffectTab:GetComponent(UISprite)
   self.rewardEffectTabBgSp = RewardEffectTab:GetComponent(UISprite)
+  RedTipProxy.Instance:RegisterUIByGroupID(5, self.rewardEffectTabBgSp, 4, {-5, -5})
   self.tabStick = {
     self.fashionRightTabBgSp,
     self.skillEffectTabBgSp,
@@ -354,6 +355,25 @@ end
 
 local unEquipedDatas = {}
 local tabDatas = {}
+local dedupTabDatas = {}
+local DeduplicateTabDatas = function(datas)
+  TableUtility.ArrayClear(dedupTabDatas)
+  local idMap = {}
+  for i = 1, #datas do
+    local data = datas[i]
+    local staticId = data and data.staticData and data.staticData.id
+    if not staticId or not idMap[staticId] then
+      if staticId then
+        idMap[staticId] = true
+      end
+      table.insert(dedupTabDatas, data)
+    end
+  end
+  TableUtility.ArrayClear(datas)
+  for i = 1, #dedupTabDatas do
+    table.insert(datas, dedupTabDatas[i])
+  end
+end
 
 function PackageFashionPage.GetTabDatas(itemTabConfig, tabData)
   TableUtility.ArrayClear(unEquipedDatas)
@@ -402,10 +422,17 @@ function PackageFashionPage.GetTabDatas(itemTabConfig, tabData)
       table.insert(tabDatas, spFashionItems[i])
     end
   end
+  if cfg[1] == SceneManual_pb.EMANUALTYPE_MOUNT then
+    local spMountItems = BagProxy.Instance:GetBagItemsByTypes({90}, BagProxy.BagType.SpecialFashion)
+    for i = 1, #spMountItems do
+      table.insert(tabDatas, spMountItems[i])
+    end
+  end
   for i = 1, #unEquipedDatas do
     unEquipedDatas[i].forcePos = cfg.forcePos
     table.insert(tabDatas, unEquipedDatas[i])
   end
+  DeduplicateTabDatas(tabDatas)
   if AdvFashion2FashionHideType[cfg[2]] then
     TableUtility.ArrayPushFront(tabDatas, BagItemEmptyType.Empty)
   end

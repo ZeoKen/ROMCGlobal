@@ -491,11 +491,19 @@ end
 function SkillTip:_FormatItemCostDesc(str, itemID, dynamicSkillInfo, originNum, isNoItem)
   local item = Table_Item[itemID]
   if item then
-    local changed = originNum
+    local newCost = originNum
+    if dynamicSkillInfo then
+      newCost = dynamicSkillInfo:GetItemNewCost(itemID, originNum)
+    end
+    if newCost == 0 then
+      return str
+    end
+    if originNum == 0 then
+      originNum = newCost
+    end
+    local changed = newCost
     if isNoItem then
       changed = 0
-    elseif dynamicSkillInfo then
-      changed = dynamicSkillInfo:GetItemNewCost(item.id, changed)
     end
     local msg
     if changed == originNum then
@@ -522,11 +530,19 @@ end
 function SkillTip:_FormatBuffCostDesc(str, buffID, dynamicSkillInfo, originNum, isNoBuff)
   local buff = Table_Buffer[buffID]
   if buff then
-    local changed = originNum
+    local newCost = originNum
+    if dynamicSkillInfo and not isNoBuff then
+      newCost = dynamicSkillInfo:GetBuffNewCost(buffID, originNum)
+    end
+    if newCost == 0 then
+      return str
+    end
+    if originNum == 0 then
+      originNum = newCost
+    end
+    local changed = newCost
     if isNoBuff then
       changed = 0
-    elseif dynamicSkillInfo then
-      changed = dynamicSkillInfo:GetBuffNewCost(buffID, changed)
     end
     local msg
     if changed == originNum then

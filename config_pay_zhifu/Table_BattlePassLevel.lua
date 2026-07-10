@@ -106,6 +106,30 @@ Table_BattlePassLevel_t = {
       {itemid = 52836, num = 300}
     },
     {
+      {itemid = 10000669, num = 5}
+    },
+    {
+      {itemid = 100, num = 1200000}
+    },
+    {
+      {itemid = 8427, num = 1}
+    },
+    {
+      {itemid = 3042396, num = 5}
+    },
+    {
+      {itemid = 8439, num = 1}
+    },
+    {
+      {itemid = 100, num = 800000}
+    },
+    {
+      {itemid = 10000671, num = 10}
+    },
+    {
+      {itemid = 10000136, num = 1}
+    },
+    {
       {itemid = 100, num = 1500000}
     },
     {
@@ -121,10 +145,10 @@ Table_BattlePassLevel_t = {
       {itemid = 10000321, num = 20}
     },
     {
-      {itemid = 10000136, num = 1}
+      {itemid = 10000323, num = 1}
     },
     {
-      {itemid = 10000323, num = 1}
+      {itemid = 10000669, num = 2}
     },
     {
       {itemid = 10000321, num = 40}
@@ -225,6 +249,9 @@ Table_BattlePassLevel_t = {
       {itemid = 52836, num = 200}
     },
     {
+      {itemid = 10000669, num = 2}
+    },
+    {
       {itemid = 10000319, num = 1}
     }
   },
@@ -283,6 +310,116 @@ Table_BattlePassLevel_t = {
         month = 12,
         num = 1,
         year = 2024
+      }
+    },
+    {
+      {
+        itemid = 3003152,
+        month = 7,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3005202,
+        month = 8,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3005191,
+        month = 9,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3005991,
+        month = 10,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3006032,
+        month = 11,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3005931,
+        month = 12,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3006181,
+        month = 1,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3007211,
+        month = 2,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3007182,
+        month = 3,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009152,
+        month = 4,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009181,
+        month = 5,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009191,
+        month = 6,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009201,
+        month = 7,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009222,
+        month = 8,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3011662,
+        month = 9,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3011671,
+        month = 10,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3011711,
+        month = 11,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3011752,
+        month = 12,
+        num = 1,
+        year = 2027
       }
     },
     {
@@ -375,6 +512,102 @@ Table_BattlePassLevel_t = {
         month = 8,
         num = 1,
         year = 2026
+      },
+      {
+        itemid = 3005191,
+        month = 9,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3005991,
+        month = 10,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3006032,
+        month = 11,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3005931,
+        month = 12,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3006181,
+        month = 1,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3007211,
+        month = 2,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3007182,
+        month = 3,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009152,
+        month = 4,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009181,
+        month = 5,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009191,
+        month = 6,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009201,
+        month = 7,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009222,
+        month = 8,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3011662,
+        month = 9,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3011671,
+        month = 10,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3011711,
+        month = 11,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3011752,
+        month = 12,
+        num = 1,
+        year = 2027
       }
     },
     {
@@ -505,6 +738,56 @@ Table_BattlePassLevel_t = {
     },
     {
       {
+        itemid = 10000505,
+        month = 7,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000506,
+        month = 8,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000507,
+        month = 9,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000508,
+        month = 10,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000509,
+        month = 11,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000510,
+        month = 12,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000511,
+        month = 1,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000512,
+        month = 2,
+        num = 1,
+        year = 2027
+      }
+    },
+    {
+      {
         itemid = 10000235,
         month = 6,
         num = 1,
@@ -581,6 +864,54 @@ Table_BattlePassLevel_t = {
         month = 6,
         num = 1,
         year = 2026
+      },
+      {
+        itemid = 10000505,
+        month = 7,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000506,
+        month = 8,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000507,
+        month = 9,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000508,
+        month = 10,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000509,
+        month = 11,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000510,
+        month = 12,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000511,
+        month = 1,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000512,
+        month = 2,
+        num = 1,
+        year = 2027
       }
     },
     {
@@ -841,6 +1172,184 @@ Table_BattlePassLevel_t = {
     },
     {
       {
+        itemid = 10000231,
+        month = 7,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000232,
+        month = 8,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000385,
+        month = 9,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000386,
+        month = 10,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000387,
+        month = 11,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000388,
+        month = 12,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000389,
+        month = 1,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000390,
+        month = 2,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000391,
+        month = 3,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000513,
+        month = 4,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000514,
+        month = 5,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000515,
+        month = 6,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000516,
+        month = 7,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000517,
+        month = 8,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000518,
+        month = 9,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000519,
+        month = 10,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000520,
+        month = 11,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000521,
+        month = 12,
+        num = 1,
+        year = 2027
+      }
+    },
+    {
+      {
+        itemid = 10000113,
+        month = 2,
+        num = 1,
+        year = 2025
+      },
+      {
+        itemid = 10000114,
+        month = 3,
+        num = 1,
+        year = 2025
+      },
+      {
+        itemid = 10000115,
+        month = 4,
+        num = 1,
+        year = 2025
+      },
+      {
+        itemid = 10000116,
+        month = 5,
+        num = 1,
+        year = 2025
+      },
+      {
+        itemid = 10000117,
+        month = 6,
+        num = 1,
+        year = 2025
+      },
+      {
+        itemid = 10000118,
+        month = 7,
+        num = 1,
+        year = 2025
+      },
+      {
+        itemid = 10000140,
+        month = 8,
+        num = 1,
+        year = 2025
+      },
+      {
+        itemid = 10000141,
+        month = 9,
+        num = 1,
+        year = 2025
+      },
+      {
+        itemid = 10000142,
+        month = 10,
+        num = 1,
+        year = 2025
+      },
+      {
+        itemid = 10000143,
+        month = 11,
+        num = 1,
+        year = 2025
+      },
+      {
+        itemid = 10000144,
+        month = 12,
+        num = 1,
+        year = 2025
+      }
+    },
+    {
+      {
         itemid = 10000117,
         month = 6,
         num = 1,
@@ -929,74 +1438,212 @@ Table_BattlePassLevel_t = {
         month = 8,
         num = 1,
         year = 2026
+      },
+      {
+        itemid = 10000385,
+        month = 9,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000386,
+        month = 10,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000387,
+        month = 11,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000388,
+        month = 12,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 10000389,
+        month = 1,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000390,
+        month = 2,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000391,
+        month = 3,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000513,
+        month = 4,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000514,
+        month = 5,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000515,
+        month = 6,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000516,
+        month = 7,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000517,
+        month = 8,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000518,
+        month = 9,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000519,
+        month = 10,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000520,
+        month = 11,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 10000521,
+        month = 12,
+        num = 1,
+        year = 2027
       }
     },
     {
       {
-        itemid = 10000113,
-        month = 2,
-        num = 1,
-        year = 2025
-      },
-      {
-        itemid = 10000114,
-        month = 3,
-        num = 1,
-        year = 2025
-      },
-      {
-        itemid = 10000115,
-        month = 4,
-        num = 1,
-        year = 2025
-      },
-      {
-        itemid = 10000116,
-        month = 5,
-        num = 1,
-        year = 2025
-      },
-      {
-        itemid = 10000117,
-        month = 6,
-        num = 1,
-        year = 2025
-      },
-      {
-        itemid = 10000118,
+        itemid = 3003882,
         month = 7,
         num = 1,
-        year = 2025
+        year = 2026
       },
       {
-        itemid = 10000140,
+        itemid = 3005802,
         month = 8,
         num = 1,
-        year = 2025
+        year = 2026
       },
       {
-        itemid = 10000141,
+        itemid = 3005501,
         month = 9,
         num = 1,
-        year = 2025
+        year = 2026
       },
       {
-        itemid = 10000142,
+        itemid = 3006531,
         month = 10,
         num = 1,
-        year = 2025
+        year = 2026
       },
       {
-        itemid = 10000143,
+        itemid = 3006681,
         month = 11,
         num = 1,
-        year = 2025
+        year = 2026
       },
       {
-        itemid = 10000144,
+        itemid = 3007181,
         month = 12,
         num = 1,
-        year = 2025
+        year = 2026
+      },
+      {
+        itemid = 3007192,
+        month = 1,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3006941,
+        month = 2,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3007241,
+        month = 3,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009121,
+        month = 4,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009122,
+        month = 5,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009141,
+        month = 6,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009151,
+        month = 7,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009161,
+        month = 8,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009171,
+        month = 9,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009212,
+        month = 10,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009221,
+        month = 11,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3011762,
+        month = 12,
+        num = 1,
+        year = 2027
       }
     },
     {
@@ -1089,6 +1736,102 @@ Table_BattlePassLevel_t = {
         month = 8,
         num = 1,
         year = 2026
+      },
+      {
+        itemid = 3005501,
+        month = 9,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3006531,
+        month = 10,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3006681,
+        month = 11,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3007181,
+        month = 12,
+        num = 1,
+        year = 2026
+      },
+      {
+        itemid = 3007192,
+        month = 1,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3006941,
+        month = 2,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3007241,
+        month = 3,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009121,
+        month = 4,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009122,
+        month = 5,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009141,
+        month = 6,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009151,
+        month = 7,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009161,
+        month = 8,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009171,
+        month = 9,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009212,
+        month = 10,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3009221,
+        month = 11,
+        num = 1,
+        year = 2027
+      },
+      {
+        itemid = 3011762,
+        month = 12,
+        num = 1,
+        year = 2027
       }
     }
   },
@@ -1187,6 +1930,30 @@ Table_BattlePassLevel_t = {
       {itemid = 12572, num = 12}
     },
     {
+      {itemid = 3042396, num = 5}
+    },
+    {
+      {itemid = 52836, num = 400}
+    },
+    {
+      {itemid = 52912, num = 1}
+    },
+    {
+      {itemid = 10000670, num = 2}
+    },
+    {
+      {itemid = 110, num = 3500}
+    },
+    {
+      {itemid = 8439, num = 1}
+    },
+    {
+      {itemid = 10000671, num = 30}
+    },
+    {
+      {itemid = 10000670, num = 1}
+    },
+    {
       {itemid = 10000320, num = 2}
     },
     {
@@ -1199,10 +1966,16 @@ Table_BattlePassLevel_t = {
       {itemid = 10000194, num = 1}
     },
     {
-      {itemid = 10000321, num = 40}
+      {itemid = 10000671, num = 15}
     },
     {
       {itemid = 10000322, num = 1}
+    },
+    {
+      {itemid = 8427, num = 1}
+    },
+    {
+      {itemid = 10000321, num = 40}
     }
   }
 }
@@ -1627,9 +2400,9 @@ Table_BattlePassLevel = {
     Version = 2,
     RewardItems = Table_BattlePassLevel_t.RewardItems[13],
     ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[12],
-    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[32],
-    Server_RewardItems = Table_BattlePassLevel_t.Server_RewardItems[3],
-    Server_ProRewardItems = Table_BattlePassLevel_t.Server_ProRewardItems[3],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[40],
+    Server_RewardItems = Table_BattlePassLevel_t.Server_RewardItems[4],
+    Server_ProRewardItems = Table_BattlePassLevel_t.Server_ProRewardItems[4],
     Important = 1
   },
   [13002] = {
@@ -1660,7 +2433,6 @@ Table_BattlePassLevel = {
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[7]
   },
   [13005] = {
-    id = 13005,
     Version = 2,
     Level = 5,
     NeedExp = 400,
@@ -1851,7 +2623,7 @@ Table_BattlePassLevel = {
     NeedExp = 2400,
     RewardItems = Table_BattlePassLevel_t.RewardItems[16],
     ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[17],
-    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[31],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[39],
     Important = 1
   },
   [13026] = {
@@ -2080,7 +2852,7 @@ Table_BattlePassLevel = {
     Level = 50,
     NeedExp = 4900,
     RewardItems = Table_BattlePassLevel_t.RewardItems[30],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[38],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[40],
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[5],
     Server_SuperRewardItems = Table_BattlePassLevel_t.Server_SuperRewardItems[5],
     AdvanceEffect = Table_BattlePassLevel_t.AdvanceEffect[1],
@@ -2091,9 +2863,9 @@ Table_BattlePassLevel = {
     id = 14001,
     Version = 3,
     RewardItems = Table_BattlePassLevel_t.RewardItems[13],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[39],
-    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[32],
-    Server_RewardItems = Table_BattlePassLevel_t.Server_RewardItems[2],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[46],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[40],
+    Server_RewardItems = Table_BattlePassLevel_t.Server_RewardItems[3],
     Important = 1
   },
   [14002] = {
@@ -2104,8 +2876,8 @@ Table_BattlePassLevel = {
     RewardItems = Table_BattlePassLevel_t.RewardItems[14],
     ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[13],
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[2],
-    Server_ProRewardItems = Table_BattlePassLevel_t.Server_ProRewardItems[2],
-    Server_SuperRewardItems = Table_BattlePassLevel_t.Server_SuperRewardItems[6]
+    Server_ProRewardItems = Table_BattlePassLevel_t.Server_ProRewardItems[3],
+    Server_SuperRewardItems = Table_BattlePassLevel_t.Server_SuperRewardItems[8]
   },
   [14003] = {
     id = 14003,
@@ -2141,7 +2913,7 @@ Table_BattlePassLevel = {
     Level = 6,
     NeedExp = 500,
     RewardItems = Table_BattlePassLevel_t.RewardItems[2],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[35],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[43],
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[2]
   },
   [14007] = {
@@ -2159,8 +2931,8 @@ Table_BattlePassLevel = {
     Level = 8,
     NeedExp = 700,
     RewardItems = Table_BattlePassLevel_t.RewardItems[4],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[37],
-    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[33]
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[45],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[44]
   },
   [14009] = {
     id = 14009,
@@ -2188,7 +2960,7 @@ Table_BattlePassLevel = {
     NeedExp = 1000,
     RewardItems = Table_BattlePassLevel_t.RewardItems[6],
     ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[5],
-    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[33]
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[44]
   },
   [14012] = {
     id = 14012,
@@ -2205,7 +2977,7 @@ Table_BattlePassLevel = {
     Level = 13,
     NeedExp = 1200,
     RewardItems = Table_BattlePassLevel_t.RewardItems[4],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[35],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[43],
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[8]
   },
   [14014] = {
@@ -2224,7 +2996,7 @@ Table_BattlePassLevel = {
     NeedExp = 1400,
     RewardItems = Table_BattlePassLevel_t.RewardItems[9],
     ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[8],
-    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[34],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[42],
     Important = 1
   },
   [14016] = {
@@ -2233,7 +3005,7 @@ Table_BattlePassLevel = {
     Level = 16,
     NeedExp = 1500,
     RewardItems = Table_BattlePassLevel_t.RewardItems[10],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[40],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[48],
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[8]
   },
   [14017] = {
@@ -2260,7 +3032,7 @@ Table_BattlePassLevel = {
     Level = 19,
     NeedExp = 1800,
     RewardItems = Table_BattlePassLevel_t.RewardItems[8],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[35],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[43],
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[8]
   },
   [14020] = {
@@ -2269,8 +3041,8 @@ Table_BattlePassLevel = {
     Level = 20,
     NeedExp = 1900,
     RewardItems = Table_BattlePassLevel_t.RewardItems[12],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[36],
-    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[34],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[44],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[42],
     Important = 1
   },
   [14021] = {
@@ -2288,7 +3060,7 @@ Table_BattlePassLevel = {
     Level = 22,
     NeedExp = 2100,
     RewardItems = Table_BattlePassLevel_t.RewardItems[8],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[37],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[45],
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[1]
   },
   [14023] = {
@@ -2310,12 +3082,13 @@ Table_BattlePassLevel = {
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[8]
   },
   [14025] = {
+    id = 14025,
     Version = 3,
     Level = 25,
     NeedExp = 2400,
     RewardItems = Table_BattlePassLevel_t.RewardItems[16],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[35],
-    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[31],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[43],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[39],
     Important = 1
   },
   [14026] = {
@@ -2342,7 +3115,7 @@ Table_BattlePassLevel = {
     Level = 28,
     NeedExp = 2700,
     RewardItems = Table_BattlePassLevel_t.RewardItems[8],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[35],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[43],
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[8]
   },
   [14029] = {
@@ -2359,9 +3132,9 @@ Table_BattlePassLevel = {
     Version = 3,
     Level = 30,
     NeedExp = 2900,
-    RewardItems = Table_BattlePassLevel_t.RewardItems[32],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[36],
-    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[30],
+    RewardItems = Table_BattlePassLevel_t.RewardItems[33],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[44],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[38],
     Important = 1
   },
   [14031] = {
@@ -2406,7 +3179,7 @@ Table_BattlePassLevel = {
     Level = 35,
     NeedExp = 3400,
     RewardItems = Table_BattlePassLevel_t.RewardItems[23],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[35],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[43],
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[22],
     Important = 1
   },
@@ -2451,9 +3224,9 @@ Table_BattlePassLevel = {
     Version = 3,
     Level = 40,
     NeedExp = 3900,
-    RewardItems = Table_BattlePassLevel_t.RewardItems[32],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[35],
-    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[29],
+    RewardItems = Table_BattlePassLevel_t.RewardItems[33],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[43],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[37],
     Important = 1
   },
   [14041] = {
@@ -2498,7 +3271,7 @@ Table_BattlePassLevel = {
     Level = 45,
     NeedExp = 4400,
     RewardItems = Table_BattlePassLevel_t.RewardItems[28],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[34],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[42],
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[26],
     Important = 1
   },
@@ -2517,7 +3290,7 @@ Table_BattlePassLevel = {
     Level = 47,
     NeedExp = 4600,
     RewardItems = Table_BattlePassLevel_t.RewardItems[24],
-    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[33],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[41],
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[27]
   },
   [14048] = {
@@ -2546,10 +3319,477 @@ Table_BattlePassLevel = {
     RewardItems = Table_BattlePassLevel_t.RewardItems[31],
     ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[8],
     SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[5],
+    Server_SuperRewardItems = Table_BattlePassLevel_t.Server_SuperRewardItems[6],
+    AdvanceEffect = Table_BattlePassLevel_t.AdvanceEffect[1],
+    SuperEffect = Table_BattlePassLevel_t.SuperEffect[1],
+    Important = 1,
+    ImportantSort = 1
+  },
+  [15001] = {
+    id = 15001,
+    Version = 4,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[13],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[46],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[40],
+    Server_RewardItems = Table_BattlePassLevel_t.Server_RewardItems[2],
+    Important = 1
+  },
+  [15002] = {
+    id = 15002,
+    Version = 4,
+    Level = 2,
+    NeedExp = 100,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[14],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[13],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[2],
+    Server_ProRewardItems = Table_BattlePassLevel_t.Server_ProRewardItems[2],
+    Server_SuperRewardItems = Table_BattlePassLevel_t.Server_SuperRewardItems[7]
+  },
+  [15003] = {
+    id = 15003,
+    Version = 4,
+    Level = 3,
+    NeedExp = 200,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[10],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[14],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[11]
+  },
+  [15004] = {
+    id = 15004,
+    Version = 4,
+    Level = 4,
+    NeedExp = 300,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[3],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[6],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[7]
+  },
+  [15005] = {
+    id = 15005,
+    Version = 4,
+    Level = 5,
+    NeedExp = 400,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[1],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[36],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[34],
+    Important = 1
+  },
+  [15006] = {
+    id = 15006,
+    Version = 4,
+    Level = 6,
+    NeedExp = 500,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[2],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[47],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[36]
+  },
+  [15007] = {
+    id = 15007,
+    Version = 4,
+    Level = 7,
+    NeedExp = 600,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[3],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[3],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[3]
+  },
+  [15008] = {
+    id = 15008,
+    Version = 4,
+    Level = 8,
+    NeedExp = 700,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[4],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[39],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[41]
+  },
+  [15009] = {
+    id = 15009,
+    Version = 4,
+    Level = 9,
+    NeedExp = 800,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[2],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[7],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[2]
+  },
+  [15010] = {
+    id = 15010,
+    Version = 4,
+    Level = 10,
+    NeedExp = 900,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[5],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[13],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[27],
+    Important = 1
+  },
+  [15011] = {
+    id = 15011,
+    Version = 4,
+    Level = 11,
+    NeedExp = 1000,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[6],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[5],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[41]
+  },
+  [15012] = {
+    id = 15012,
+    Version = 4,
+    Level = 12,
+    NeedExp = 1100,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[7],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[6],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[7]
+  },
+  [15013] = {
+    id = 15013,
+    Version = 4,
+    Level = 13,
+    NeedExp = 1200,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[4],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[7],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[8]
+  },
+  [15014] = {
+    id = 15014,
+    Version = 4,
+    Level = 14,
+    NeedExp = 1300,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[8],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[7],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[8]
+  },
+  [15015] = {
+    id = 15015,
+    Version = 4,
+    Level = 15,
+    NeedExp = 1400,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[9],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[8],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[42],
+    Important = 1
+  },
+  [15016] = {
+    id = 15016,
+    Version = 4,
+    Level = 16,
+    NeedExp = 1500,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[10],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[39],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[8]
+  },
+  [15017] = {
+    id = 15017,
+    Version = 4,
+    Level = 17,
+    NeedExp = 1600,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[7],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[7],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[8]
+  },
+  [15018] = {
+    id = 15018,
+    Version = 4,
+    Level = 18,
+    NeedExp = 1700,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[11],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[10],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[10]
+  },
+  [15019] = {
+    id = 15019,
+    Version = 4,
+    Level = 19,
+    NeedExp = 1800,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[8],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[7],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[25]
+  },
+  [15020] = {
+    id = 15020,
+    Version = 4,
+    Level = 20,
+    NeedExp = 1900,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[12],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[44],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[43],
+    Important = 1
+  },
+  [15021] = {
+    id = 15021,
+    Version = 4,
+    Level = 21,
+    NeedExp = 2000,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[15],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[6],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[36]
+  },
+  [15022] = {
+    id = 15022,
+    Version = 4,
+    Level = 22,
+    NeedExp = 2100,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[8],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[39],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[35]
+  },
+  [15023] = {
+    id = 15023,
+    Version = 4,
+    Level = 23,
+    NeedExp = 2200,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[11],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[7],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[8]
+  },
+  [15024] = {
+    id = 15024,
+    Version = 4,
+    Level = 24,
+    NeedExp = 2300,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[8],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[7],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[25]
+  },
+  [15025] = {
+    id = 15025,
+    Version = 4,
+    Level = 25,
+    NeedExp = 2400,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[16],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[33],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[34],
+    Important = 1
+  },
+  [15026] = {
+    id = 15026,
+    Version = 4,
+    Level = 26,
+    NeedExp = 2500,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[17],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[18],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[33]
+  },
+  [15027] = {
+    id = 15027,
+    Version = 4,
+    Level = 27,
+    NeedExp = 2600,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[18],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[19],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[16]
+  },
+  [15028] = {
+    id = 15028,
+    Version = 4,
+    Level = 28,
+    NeedExp = 2700,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[8],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[38],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[25]
+  },
+  [15029] = {
+    id = 15029,
+    Version = 4,
+    Level = 29,
+    NeedExp = 2800,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[19],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[20],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[14]
+  },
+  [15030] = {
+    id = 15030,
+    Version = 4,
+    Level = 30,
+    NeedExp = 2900,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[32],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[35],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[32],
+    Important = 1
+  },
+  [15031] = {
+    id = 15031,
+    Version = 4,
+    Level = 31,
+    NeedExp = 3000,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[21],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[36],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[29]
+  },
+  [15032] = {
+    id = 15032,
+    Version = 4,
+    Level = 32,
+    NeedExp = 3100,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[17],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[21],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[20]
+  },
+  [15033] = {
+    id = 15033,
+    Version = 4,
+    Level = 33,
+    NeedExp = 3200,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[21],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[30],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[25]
+  },
+  [15034] = {
+    id = 15034,
+    Version = 4,
+    Level = 34,
+    NeedExp = 3300,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[22],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[22],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[26]
+  },
+  [15035] = {
+    id = 15035,
+    Version = 4,
+    Level = 35,
+    NeedExp = 3400,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[23],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[37],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[22],
+    Important = 1
+  },
+  [15036] = {
+    id = 15036,
+    Version = 4,
+    Level = 36,
+    NeedExp = 3500,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[18],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[8],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[29]
+  },
+  [15037] = {
+    id = 15037,
+    Version = 4,
+    Level = 37,
+    NeedExp = 3600,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[24],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[24],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[23]
+  },
+  [15038] = {
+    id = 15038,
+    Version = 4,
+    Level = 38,
+    NeedExp = 3700,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[22],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[21],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[20]
+  },
+  [15039] = {
+    id = 15039,
+    Version = 4,
+    Level = 39,
+    NeedExp = 3800,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[24],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[36],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[25]
+  },
+  [15040] = {
+    id = 15040,
+    Version = 4,
+    Level = 40,
+    NeedExp = 3900,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[32],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[35],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[31],
+    Important = 1
+  },
+  [15041] = {
+    id = 15041,
+    Version = 4,
+    Level = 41,
+    NeedExp = 4000,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[26],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[27],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[24]
+  },
+  [15042] = {
+    id = 15042,
+    Version = 4,
+    Level = 42,
+    NeedExp = 4100,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[24],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[8],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[17]
+  },
+  [15043] = {
+    id = 15043,
+    Version = 4,
+    Level = 43,
+    NeedExp = 4200,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[27],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[28],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[25]
+  },
+  [15044] = {
+    id = 15044,
+    Version = 4,
+    Level = 44,
+    NeedExp = 4300,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[24],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[34],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[29]
+  },
+  [15045] = {
+    id = 15045,
+    Version = 4,
+    Level = 45,
+    NeedExp = 4400,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[28],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[33],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[30],
+    Important = 1
+  },
+  [15046] = {
+    id = 15046,
+    Version = 4,
+    Level = 46,
+    NeedExp = 4500,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[26],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[21],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[25]
+  },
+  [15047] = {
+    id = 15047,
+    Version = 4,
+    Level = 47,
+    NeedExp = 4600,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[24],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[30],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[27]
+  },
+  [15048] = {
+    id = 15048,
+    Version = 4,
+    Level = 48,
+    NeedExp = 4700,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[27],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[28],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[28]
+  },
+  [15049] = {
+    id = 15049,
+    Version = 4,
+    Level = 49,
+    NeedExp = 4800,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[29],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[31],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[29]
+  },
+  [15050] = {
+    id = 15050,
+    Version = 4,
+    Level = 50,
+    NeedExp = 4900,
+    RewardItems = Table_BattlePassLevel_t.RewardItems[31],
+    ProRewardItems = Table_BattlePassLevel_t.ProRewardItems[8],
+    SuperRewardItems = Table_BattlePassLevel_t.SuperRewardItems[5],
     Server_SuperRewardItems = Table_BattlePassLevel_t.Server_SuperRewardItems[4],
     AdvanceEffect = Table_BattlePassLevel_t.AdvanceEffect[1],
     SuperEffect = Table_BattlePassLevel_t.SuperEffect[1],
-    Important = 1
+    Important = 1,
+    ImportantSort = 1
   }
 }
 local cell_mt = {
@@ -2566,7 +3806,7 @@ local cell_mt = {
     SuperEffect = _EmptyTable,
     SuperRewardItems = _EmptyTable,
     Version = 1,
-    id = 14025
+    id = 13005
   }
 }
 for _, d in pairs(Table_BattlePassLevel) do

@@ -28,6 +28,8 @@ function BattlePassUpgradeView:InitView()
     self:UpdateView()
   end)
   self.virtualTShopGoodsCell2:AddEventListener(NewRechargeEvent.GoodsCell_ShowShopItemPurchaseDetail, self.ShopItemPurchase, self)
+  self:AddListenEvt(ServiceEvent.SessionShopUpdateShopConfigCmd, self.HandleShopUpdate)
+  self:AddListenEvt(ServiceEvent.SessionShopShopDataUpdateCmd, self.HandleShopUpdate)
   self.singlePanel = self:FindGO("Single")
   self.singleTitle = self:FindComponent("singletext", UILabel)
   self.singleLock = self:FindGO("singlelock")
@@ -71,7 +73,22 @@ end
 
 function BattlePassUpgradeView:OnEnter()
   BattlePassUpgradeView.super.OnEnter(self)
+  self:InitShopData()
   self:UpdateView()
+end
+
+function BattlePassUpgradeView:InitShopData()
+  local allItems = BattlePassProxy.Instance.UpgradeDepositItem
+  if not allItems then
+    return
+  end
+  for i = 1, #allItems do
+    local item = allItems[i]
+    if item.ShopType and item.ShopId then
+      ShopProxy.Instance:CallQueryShopConfig(item.ShopType, item.ShopId)
+      HappyShopProxy.Instance:InitShop(nil, item.ShopId, item.ShopType)
+    end
+  end
 end
 
 function BattlePassUpgradeView:UpdateView()
@@ -105,14 +122,15 @@ function BattlePassUpgradeView:UpdateView()
     self.dualPanel:SetActive(false)
     notInSale = true
   elseif not self.show[2] then
-    self.virtualTShopGoodsCell1:VirtualSetData(NewRechargePrototypeGoodsCell.GoodsTypeEnum.Deposit, self.show[1].DepositeId)
+    self:SetVirtualCellData(self.virtualTShopGoodsCell1, self.show[1])
     self.virtualTShopGoodsCell2:VirtualClearSetData()
     self.singlePanel:SetActive(true)
     self.dualPanel:SetActive(false)
-    local canbuy, bought, name, price = self:GenerateStatusInfo(self.show[1])
+    local canbuy, bought, name, price, priceItemId = self:GenerateStatusInfo(self.show[1])
     local descTab = self:GenerateDescTable(self.show[1])
     self.singleTitle.text = name
     self.singlePriceNum.text = price
+    self:SetPriceIcon(self.singlePriceIcon, priceItemId)
     self.singleLock:SetActive(not canbuy)
     if not canbuy or bought then
       self:SetTextureGrey(self.singleBuy)
@@ -124,14 +142,15 @@ function BattlePassUpgradeView:UpdateView()
     self.introContent:ResetDatas(descTab)
     self:CheckCanBuyInJapanBranch(self.show[1], self.singleBuy, self.singleBuyColl)
   else
-    self.virtualTShopGoodsCell1:VirtualSetData(NewRechargePrototypeGoodsCell.GoodsTypeEnum.Deposit, self.show[1].DepositeId)
-    self.virtualTShopGoodsCell2:VirtualSetData(NewRechargePrototypeGoodsCell.GoodsTypeEnum.Deposit, self.show[2].DepositeId)
+    self:SetVirtualCellData(self.virtualTShopGoodsCell1, self.show[1])
+    self:SetVirtualCellData(self.virtualTShopGoodsCell2, self.show[2])
     self.singlePanel:SetActive(false)
     self.dualPanel:SetActive(true)
-    local canbuy, bought, name, price = self:GenerateStatusInfo(self.show[1])
+    local canbuy, bought, name, price, priceItemId = self:GenerateStatusInfo(self.show[1])
     local descTab = self:GenerateDescTable(self.show[1])
     self.normalTitle.text = name
     self.normalPriceNum.text = price
+    self:SetPriceIcon(self.normalPriceIcon, priceItemId)
     self.normalLock:SetActive(not canbuy)
     self.normalContent:ResetDatas(descTab)
     if not canbuy or bought then
@@ -142,10 +161,11 @@ function BattlePassUpgradeView:UpdateView()
       self.normalBuyColl.enabled = true
     end
     self:CheckCanBuyInJapanBranch(self.show[1], self.normalBuy, self.normalBuyColl)
-    local canbuy, bought, name, price = self:GenerateStatusInfo(self.show[2])
+    local canbuy, bought, name, price, priceItemId = self:GenerateStatusInfo(self.show[2])
     local descTab = self:GenerateDescTable(self.show[2])
     self.quickTitle.text = name
     self.quickPriceNum.text = price
+    self:SetPriceIcon(self.quickPriceIcon, priceItemId)
     self.quickLock:SetActive(not canbuy)
     self.quickContent:ResetDatas(descTab)
     if not canbuy or bought then
@@ -176,16 +196,52 @@ function BattlePassUpgradeView:GenerateStatusInfo(info)
     canbuy = true
   end
   local name = info.Name
-  local price = info.DepositeId
-  if price then
-    price = Table_Deposit and Table_Deposit[price] and Table_Deposit[price].CurrencyType and Table_Deposit[price].Rmb and Table_Deposit[price].CurrencyType .. Table_Deposit[price].Rmb
-  else
-    price = ZhString.HappyShop_Buy
+  local price, priceItemId
+  if info.DepositeId then
+    price = Table_Deposit and Table_Deposit[info.DepositeId] and Table_Deposit[info.DepositeId].CurrencyType and Table_Deposit[info.DepositeId].Rmb and Table_Deposit[info.DepositeId].CurrencyType .. Table_Deposit[info.DepositeId].Rmb
+  elseif info.ShopType and info.ShopId and info.ShopItemId then
+    local shopItemData = ShopProxy.Instance:GetShopItemDataByTypeId(info.ShopType, info.ShopId, info.ShopItemId)
+    if shopItemData then
+      priceItemId = shopItemData.ItemID
+      local priceNum = shopItemData.ItemCount
+      if priceItemId and priceNum then
+        price = tostring(priceNum)
+      end
+    end
   end
+  price = price or ZhString.HappyShop_Buy
   if bought then
     price = ZhString.BattlePassUpgradeView_bought
   end
-  return canbuy, bought, name, price
+  return canbuy, bought, name, price, priceItemId
+end
+
+function BattlePassUpgradeView:SetVirtualCellData(cell, info)
+  if not cell or not info then
+    return
+  end
+  if info.DepositeId then
+    cell:VirtualSetData(NewRechargePrototypeGoodsCell.GoodsTypeEnum.Deposit, info.DepositeId)
+  elseif info.ShopType and info.ShopId and info.ShopItemId then
+    NewRechargeProxy.Instance.ShopType = info.ShopType
+    NewRechargeProxy.Instance.ShopID = info.ShopId
+    cell:VirtualSetData(NewRechargePrototypeGoodsCell.GoodsTypeEnum.Shop, info.ShopItemId)
+    cell.shopType = info.ShopType
+    cell.shopId = info.ShopId
+  end
+end
+
+function BattlePassUpgradeView:IsShopItem(info)
+  return info and info.ShopType and info.ShopId and info.ShopItemId
+end
+
+function BattlePassUpgradeView:SetPriceIcon(priceIcon, priceItemId)
+  if priceItemId and Table_Item[priceItemId] then
+    priceIcon.gameObject:SetActive(true)
+    IconManager:SetItemIcon(Table_Item[priceItemId].Icon, priceIcon)
+  else
+    priceIcon.gameObject:SetActive(false)
+  end
 end
 
 function BattlePassUpgradeView:GenerateDescTable(info)
@@ -220,6 +276,12 @@ function BattlePassUpgradeView:OnExit()
 end
 
 function BattlePassUpgradeView:BuyUpgrade(type)
+  local info = self.show[type]
+  if info and self:IsShopItem(info) then
+    NewRechargeProxy.Instance.ShopType = info.ShopType
+    NewRechargeProxy.Instance.ShopID = info.ShopId
+    HappyShopProxy.Instance:InitShop(nil, info.ShopId, info.ShopType)
+  end
   if type == 1 then
     self.virtualTShopGoodsCell1:Pre_Purchase()
   elseif type == 2 then
@@ -230,7 +292,13 @@ end
 function BattlePassUpgradeView:ShopItemPurchase(data)
   if data.m_funcRmbBuy then
     data.m_funcRmbBuy()
+  elseif data.info and data.info.id then
+    HappyShopProxy.Instance:BuyItem(data.info.id, 1)
   end
+end
+
+function BattlePassUpgradeView:HandleShopUpdate()
+  self:UpdateView()
 end
 
 function BattlePassUpgradeView:CheckCanBuyInJapanBranch(info, button, collider)
@@ -239,9 +307,13 @@ function BattlePassUpgradeView:CheckCanBuyInJapanBranch(info, button, collider)
   end
   local left = ChargeComfirmPanel.left
   if left then
-    local depositId = info.DepositeId
-    local currency = Table_Deposit[depositId] and Table_Deposit[depositId].Rmb
-    currency = currency or 0
+    local currency = 0
+    if info.DepositeId then
+      currency = Table_Deposit[info.DepositeId] and Table_Deposit[info.DepositeId].Rmb or 0
+    elseif self:IsShopItem(info) then
+      local shopItemData = ShopProxy.Instance:GetShopItemDataByTypeId(info.ShopType, info.ShopId, info.ShopItemId)
+      currency = shopItemData and shopItemData.price or 0
+    end
     if left < currency then
       self:SetTextureGrey(button)
       collider.enabled = false

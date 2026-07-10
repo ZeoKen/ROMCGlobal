@@ -159,6 +159,46 @@ Table_AccumDeposit = {
     },
     ShowNpc = 894484,
     AdText = "##45910389"
+  },
+  [6] = {
+    id = 6,
+    ServerID = _EmptyTable,
+    Duration = {
+      "2026-05-14 05:00:00",
+      "2026-06-14 05:00:00"
+    },
+    TfDuration = {
+      "2026-04-30 05:00:00",
+      "2026-05-31 05:00:00"
+    },
+    Reward = {
+      [1] = {
+        need_deposit = 0,
+        reward = {3042032, 5}
+      },
+      [2] = {
+        need_deposit = 4.99,
+        reward = {3042032, 5}
+      },
+      [3] = {
+        need_deposit = 9.99,
+        reward = {3042032, 15}
+      },
+      [4] = {
+        need_deposit = 17.99,
+        reward = {52838, 1}
+      },
+      [5] = {
+        need_deposit = 45.99,
+        reward = {3042032, 50}
+      },
+      [6] = {
+        need_deposit = 89.99,
+        reward = {3009081, 1}
+      }
+    },
+    ShowNpc = 894483,
+    AdText = "##45915179"
   }
 }
 Table_AccumDeposit_fields = {

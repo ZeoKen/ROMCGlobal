@@ -14,6 +14,7 @@ end
 
 function RecommendScoreView:FindObjs()
   self.contentLabel = self:FindComponent("ContentLabel", UILabel)
+  self.contentLabel.effectStyle = UILabel.Effect.Outline8
   self.giftLable = self:FindComponent("GiftLabel", UILabel)
   self.cancelLabel = self:FindComponent("CancelLabel", UILabel)
   self.confirmLabel = self:FindComponent("ConfirmLabel", UILabel)

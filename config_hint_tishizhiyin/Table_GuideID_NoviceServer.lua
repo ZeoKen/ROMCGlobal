@@ -4496,6 +4496,62 @@ Table_GuideID = {
     position = Table_GuideID_t.position[1],
     rotation = Table_GuideID_t.rotation[1],
     press = 1
+  },
+  [1102] = {
+    id = 1102,
+    Explain = "点击活动商品",
+    uiID = "DialogView",
+    ButtonID = 10,
+    press = 1
+  },
+  [1103] = {
+    id = 1103,
+    Explain = "选择冒险者勋章碎片",
+    Preguide = 1102,
+    uiID = "HappyShop",
+    ButtonID = 1103,
+    press = 1,
+    ServerEvent = "GuideEvent_SessionShopQueryShopConfigCmd"
+  },
+  [1104] = {
+    id = 1104,
+    Explain = "点击购买数量",
+    Preguide = 1103,
+    uiID = "HappyShop",
+    ButtonID = 1104,
+    press = 1
+  },
+  [1105] = {
+    id = 1105,
+    Explain = "点击购买",
+    Preguide = 1104,
+    uiID = "HappyShop",
+    ButtonID = 1105,
+    press = 1
+  },
+  [1106] = {
+    id = 1106,
+    Explain = "选择包包里冒险者勋章碎片",
+    Preguide = 65,
+    uiID = "PackageView",
+    ButtonID = 1106,
+    press = 1
+  },
+  [1107] = {
+    id = 1107,
+    Explain = "点击使用数量",
+    Preguide = 1106,
+    uiID = "PackageView",
+    ButtonID = 1107,
+    press = 1
+  },
+  [1108] = {
+    id = 1108,
+    Explain = "点击合成",
+    Preguide = 1107,
+    uiID = "PackageView",
+    ButtonID = 202,
+    press = 1
   }
 }
 local cell_mt = {

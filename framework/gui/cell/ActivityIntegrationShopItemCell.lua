@@ -14,9 +14,9 @@ function ActivityIntegrationShopItemCell:FindObjs()
   self.u_itemPriceBtnBg = self:FindComponent("PriceBtn", UISprite)
   self.u_itemPriceBtnBc = self:FindComponent("PriceBtn", BoxCollider)
   self.u_itemPricePH = self:FindGO("PricePosHolder", self.u_itemPriceBtnBg.gameObject)
-  self.u_itemPriceIcon = self:FindComponent("PriceIcon", UISprite)
-  self.u_itemPrice = self:FindComponent("Price", UILabel)
-  self.u_itemOriPrice = self:FindComponent("OriPrice", UILabel)
+  self.u_itemPriceIcon = self:FindComponent("PriceIcon", UISprite, self.u_itemPricePH)
+  self.u_itemPrice = self:FindComponent("Price", UILabel, self.u_itemPricePH)
+  self.u_itemOriPrice = self:FindComponent("OriPrice", UILabel, self.u_itemPricePH)
   self.u_container = self:FindComponent("container", UIWidget)
   self.u_desMark = self:FindGO("DesMark", self.gameObject)
   self.u_desMarkText = self:FindComponent("Des", UILabel, self.u_desMark)
@@ -130,7 +130,6 @@ function ActivityIntegrationShopItemCell:UpdateShopItem()
       break
     end
   end
-  self.u_itemOriPrice.gameObject:SetActive(false)
 end
 
 function ActivityIntegrationShopItemCell:UpdateDepositItem()

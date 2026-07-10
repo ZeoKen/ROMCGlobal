@@ -722,7 +722,6 @@ Table_NpcAchieve = {
     Param1 = 852258,
     TargetNum = 30,
     Title = "解救盟友Ⅲ",
-    Desc = "累计解救被俘虏的士兵%s/30次",
     Reward = Table_NpcAchieve_t.Reward[12]
   },
   [58] = {
@@ -770,6 +769,7 @@ Table_NpcAchieve = {
     Type = 52,
     Param1 = 154,
     TargetNum = 15,
+    Title = "清剿营地Ⅱ",
     Desc = "累计开启深渊之湖魔物营地的宝箱%s/15次",
     Reward = Table_NpcAchieve_t.Reward[26]
   },
@@ -981,6 +981,7 @@ Table_NpcAchieve = {
     Param1 = 1,
     TargetNum = 2,
     Title = "传承技能Ⅳ",
+    Desc = "累计传承主动技能2个",
     Reward = Table_NpcAchieve_t.Reward[15]
   },
   [84] = {
@@ -1074,7 +1075,6 @@ Table_NpcAchieve = {
     Type = 64,
     Param1 = 1,
     TargetNum = 6,
-    Title = "融雪筑梦II",
     Desc = "制作融雪边境区域家具%s/6件",
     Reward = Table_NpcAchieve_t.Reward[33]
   },
@@ -1212,11 +1212,11 @@ Table_NpcAchieve = {
 local cell_mt = {
   __index = {
     Condition = _EmptyTable,
-    Desc = "累计传承主动技能2个",
+    Desc = "累计解救被俘虏的士兵%s/30次",
     GroupID = 1,
     Reward = _EmptyTable,
     TargetNum = 5,
-    Title = "清剿营地Ⅱ",
+    Title = "融雪筑梦II",
     Type = 61,
     id = 1
   }

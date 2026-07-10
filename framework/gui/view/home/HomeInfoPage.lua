@@ -9,6 +9,7 @@ HomeInfoPage.texName_homeScene = {
 }
 HomeInfoPage.texName_roMark = "home_information_icon_ro"
 HomeInfoPage.sprName_PopularityIcon = "poring_fight"
+local homeSnowIcon = "homeSnow"
 local color_effectGray = LuaColor(0.4980392156862745, 0.4980392156862745, 0.4980392156862745, 1)
 local color_effectActive = LuaColor(0.6235294117647059, 0.30980392156862746, 0.03529411764705882, 1)
 
@@ -272,6 +273,7 @@ function HomeInfoPage:UpdateHouseIcon()
       IconManager:SetHomeBuildingIcon(staticData.Icon, self.sprHouseIcon)
     end
   elseif self.houseType == HomeProxy.HouseType.Snow then
+    IconManager:SetHomeBuildingIcon(homeSnowIcon, self.sprHouseIcon)
   end
 end
 

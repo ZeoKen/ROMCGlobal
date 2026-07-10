@@ -189,6 +189,9 @@ function RecallFundSubView:OnReceivePurchaseSuccess(message)
   local dataId = message.dataid
   if dataId == self.depositId then
     PurchaseDeltaTimeLimit.Instance():End(self.productId)
+    if RecallFundProxy.Instance then
+      RecallFundProxy.Instance:RequestFundData()
+    end
   end
 end
 
@@ -267,7 +270,7 @@ function RecallFundSubView:Purchase()
 end
 
 function RecallFundSubView:HandleBuyBtnClick()
-  if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+  if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
     local depositId = GameConfig.UserRecall.FundDeposit
     if not depositId then
       redlog("[rf] FundDeposit not configured")
@@ -286,7 +289,7 @@ function RecallFundSubView:HandleBuyBtnClick()
       local currencyType = productConf.CurrencyType
       local productDesc = OverSea.LangManager.Instance():GetLangByKey(productConf.Desc)
       local productD = " [0075BCFF]" .. productCount .. "[-] " .. productName
-      if BranchMgr.IsKorea() then
+      if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
         productD = " [0075BCFF]" .. productDesc .. "[-] "
         GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
           view = PanelConfig.ShopConfirmPanel,

@@ -192,6 +192,12 @@ function ServiceSceneUser3AutoProxy:onRegister()
   self:Listen(82, 61, function(data)
     self:RecvUserHoldingNpcCmd(data)
   end)
+  self:Listen(82, 62, function(data)
+    self:RecvNpcCircleTraceNtf(data)
+  end)
+  self:Listen(82, 64, function(data)
+    self:RecvGroupPlayTimeUpdateUserCmd(data)
+  end)
 end
 
 function ServiceSceneUser3AutoProxy:CallFirstDepositInfo(end_time, got_gear, accumlated_deposit, first_deposit_rewarded, version)
@@ -3099,6 +3105,72 @@ function ServiceSceneUser3AutoProxy:CallUserHoldingNpcCmd(npc_id)
   end
 end
 
+function ServiceSceneUser3AutoProxy:CallNpcCircleTraceNtf(items)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.NpcCircleTraceNtf()
+    if items ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.items == nil then
+        msg.items = {}
+      end
+      for i = 1, #items do
+        table.insert(msg.items, items[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.NpcCircleTraceNtf.id
+    local msgParam = {}
+    if items ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.items == nil then
+        msgParam.items = {}
+      end
+      for i = 1, #items do
+        table.insert(msgParam.items, items[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallGroupPlayTimeUpdateUserCmd(updates)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.GroupPlayTimeUpdateUserCmd()
+    if updates ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.updates == nil then
+        msg.updates = {}
+      end
+      for i = 1, #updates do
+        table.insert(msg.updates, updates[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.GroupPlayTimeUpdateUserCmd.id
+    local msgParam = {}
+    if updates ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.updates == nil then
+        msgParam.updates = {}
+      end
+      for i = 1, #updates do
+        table.insert(msgParam.updates, updates[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceSceneUser3AutoProxy:RecvFirstDepositInfo(data)
   self:Notify(ServiceEvent.SceneUser3FirstDepositInfo, data)
 end
@@ -3335,6 +3407,14 @@ function ServiceSceneUser3AutoProxy:RecvUserHoldingNpcCmd(data)
   self:Notify(ServiceEvent.SceneUser3UserHoldingNpcCmd, data)
 end
 
+function ServiceSceneUser3AutoProxy:RecvNpcCircleTraceNtf(data)
+  self:Notify(ServiceEvent.SceneUser3NpcCircleTraceNtf, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvGroupPlayTimeUpdateUserCmd(data)
+  self:Notify(ServiceEvent.SceneUser3GroupPlayTimeUpdateUserCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.SceneUser3FirstDepositInfo = "ServiceEvent_SceneUser3FirstDepositInfo"
 ServiceEvent.SceneUser3FirstDepositReward = "ServiceEvent_SceneUser3FirstDepositReward"
@@ -3395,3 +3475,5 @@ ServiceEvent.SceneUser3GeffenMagicRankQueryCmd = "ServiceEvent_SceneUser3GeffenM
 ServiceEvent.SceneUser3GeffenMagicWaveScoreQueryCmd = "ServiceEvent_SceneUser3GeffenMagicWaveScoreQueryCmd"
 ServiceEvent.SceneUser3GeffenMagicGetRewardUserCmd = "ServiceEvent_SceneUser3GeffenMagicGetRewardUserCmd"
 ServiceEvent.SceneUser3UserHoldingNpcCmd = "ServiceEvent_SceneUser3UserHoldingNpcCmd"
+ServiceEvent.SceneUser3NpcCircleTraceNtf = "ServiceEvent_SceneUser3NpcCircleTraceNtf"
+ServiceEvent.SceneUser3GroupPlayTimeUpdateUserCmd = "ServiceEvent_SceneUser3GroupPlayTimeUpdateUserCmd"

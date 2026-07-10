@@ -133,9 +133,13 @@ function SkillSaveData:ctor(serverSkillData, pro, jobLv)
     for familyId, data in pairs(Table_SkillInherit) do
       local pro = self:FindInheritSkillByFamilyId(familyId)
       if not pro then
+        pro = InheritSkillProxy.GetSkillProfess(familyId)
         local skill = InheritSkillItemData.new(familyId)
-        self:AddInheritSkill(0, skill)
+        self:AddInheritSkill(pro, skill)
       end
+    end
+    for _, professData in pairs(self.inheritSkillProfessDatas) do
+      professData:UpdateConditionSkills()
     end
     self.extendCostPoints = serverSkillData.inherit.extendpoints or 0
     self:InitCostPointAttr()

@@ -2000,6 +2000,46 @@ Table_EquipFake = {
     id = 600408,
     Type = "Face",
     TemplateID = 4172
+  },
+  [600669] = {
+    id = 600669,
+    GroupID = 3013695,
+    TemplateID = 4182
+  },
+  [600670] = {
+    id = 600670,
+    GroupID = 3013695,
+    TemplateID = 4181
+  },
+  [600701] = {
+    id = 600701,
+    GroupID = 3013695,
+    TemplateID = 4182
+  },
+  [600702] = {
+    id = 600702,
+    GroupID = 3013695,
+    TemplateID = 4182
+  },
+  [600703] = {
+    id = 600703,
+    GroupID = 3013695,
+    TemplateID = 4182
+  },
+  [600704] = {
+    id = 600704,
+    GroupID = 3013695,
+    TemplateID = 4182
+  },
+  [600705] = {
+    id = 600705,
+    GroupID = 3013695,
+    TemplateID = 4181
+  },
+  [600706] = {
+    id = 600706,
+    GroupID = 3013695,
+    TemplateID = 4181
   }
 }
 local cell_mt = {

@@ -3,6 +3,7 @@ PushConfig.EventConfig = {}
 PushConfig.ChannelConfig = {
   CN = "CN",
   KR = "KR",
+  NOKR = "NOKR",
   OR = "OR"
 }
 PushConfig.CommonEventCount = #PushConfig.EventConfig
@@ -18,6 +19,8 @@ if BranchMgr.IsKorea() then
     name = ZhString.PushConfig_Night
   }
   PushConfig.Channel = PushConfig.ChannelConfig.KR
+elseif BranchMgr.IsNOKR() then
+  PushConfig.Channel = PushConfig.ChannelConfig.NOKR
 elseif BranchMgr.IsChina() then
   PushConfig.Channel = PushConfig.ChannelConfig.CN
 else

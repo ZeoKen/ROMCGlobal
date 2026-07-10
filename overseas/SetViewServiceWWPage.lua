@@ -19,6 +19,7 @@ function SetViewServiceWWPage:Init(initParama)
     local playerName = "未登入"
     if Game ~= nil and Game.Myself ~= nil then
       playerName = Game.Myself.data:GetName()
+      playerName = RemoveSpecialChara(playerName)
     end
     local lineName = ChangeZoneProxy.Instance:ZoneNumToString(MyselfProxy.Instance:GetZoneId())
     xdlog(playerName, lineName)

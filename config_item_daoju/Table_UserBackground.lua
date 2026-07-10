@@ -735,6 +735,36 @@ Table_UserBackground = {
     Condition = _EmptyTable,
     Background = "Bg_zuduibeijing_27"
   },
+  [79] = {
+    id = 79,
+    ItemID = 653,
+    Name = "##44721652",
+    Icon = "Avatarbox_S28_Kuang_Lv1",
+    Effect = "",
+    GroupEffect = "",
+    Condition = _EmptyTable,
+    Background = "Bg_zuduibeijing_28"
+  },
+  [80] = {
+    id = 80,
+    ItemID = 654,
+    Name = "##44721653",
+    Icon = "Avatarbox_S28_Kuang_Lv2",
+    Effect = "",
+    GroupEffect = "",
+    Condition = _EmptyTable,
+    Background = "Bg_zuduibeijing_28"
+  },
+  [81] = {
+    id = 81,
+    ItemID = 655,
+    Name = "##44721654",
+    Icon = "Avatarbox_S28_Kuang_Lv3",
+    Effect = "",
+    GroupEffect = "",
+    Condition = _EmptyTable,
+    Background = "Bg_zuduibeijing_28"
+  },
   [1001] = {
     id = 1001,
     ItemID = 1501,
@@ -1314,6 +1344,16 @@ Table_UserBackground = {
     GroupEffect = "",
     Condition = _EmptyTable,
     Background = "Bg_zuduibeijing_23"
+  },
+  [1063] = {
+    id = 1063,
+    ItemID = 499,
+    Name = "##44726203",
+    Icon = "Avatarbox_SZ_499",
+    Effect = "",
+    GroupEffect = "",
+    Condition = _EmptyTable,
+    Background = "Bg_zuduibeijing_SZ"
   },
   [10035] = {
     id = 10035,

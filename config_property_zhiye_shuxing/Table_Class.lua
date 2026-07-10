@@ -933,7 +933,8 @@ Table_Class_t = {
       1248001,
       1256001,
       815001,
-      4008001
+      4008001,
+      4013001
     },
     {
       1200001,
@@ -1389,7 +1390,6 @@ Table_Class = {
     AdvanceClass = Table_Class_t.AdvanceClass[11],
     Type = 1,
     TypeBranch = 11,
-    icon = "icon_1_4",
     InitialAttr = Table_Class_t.InitialAttr[5],
     AddPointSolution = Table_Class_t.AddPointSolution[6],
     SkillPointSolution = Table_Class_t.SkillPointSolution[4],
@@ -1406,6 +1406,7 @@ Table_Class = {
   },
   [21] = {
     id = 21,
+    NameZh = "##103362",
     NameEn = "Magician",
     MaleBody = 11,
     FemaleBody = 12,
@@ -1655,7 +1656,6 @@ Table_Class = {
   },
   [41] = {
     id = 41,
-    NameZh = "##142857",
     NameEn = "Archer",
     MaleBody = 27,
     FemaleBody = 28,
@@ -2118,6 +2118,7 @@ Table_Class = {
   [82] = {
     id = 82,
     NameZh = "##140928",
+    NameEn = "Sage",
     MaleBody = 85,
     FemaleBody = 86,
     MaleEye = 1,
@@ -2176,7 +2177,6 @@ Table_Class = {
   [84] = {
     id = 84,
     NameZh = "##146060",
-    NameEn = "Sorcerer",
     MaleBody = 89,
     FemaleBody = 90,
     MaleEye = 1,
@@ -2367,6 +2367,7 @@ Table_Class = {
     AdvancedJobOccupation = 70,
     AdvanceClass = Table_Class_t.AdvanceClass[40],
     TypeBranch = 42,
+    icon = "icon_8_3",
     InitialAttr = Table_Class_t.InitialAttr[10],
     AddPointSolution = Table_Class_t.AddPointSolution[13],
     SkillPointSolution = Table_Class_t.SkillPointSolution[9],
@@ -2685,9 +2686,9 @@ local cell_mt = {
     LimitMasterSkills = _EmptyTable,
     MasterSkills = _EmptyTable,
     MaxJobLevel = 130,
-    NameEn = "Sage",
+    NameEn = "Sorcerer",
     NameEnFemale = "",
-    NameZh = "##103362",
+    NameZh = "##142857",
     NameZhFemale = "",
     ProfessionalFashion = _EmptyTable,
     ShowEndTime = "",
@@ -2702,7 +2703,7 @@ local cell_mt = {
     TypeBranch = 61,
     UnlockAttr = _EmptyTable,
     UnlockTips = "",
-    icon = "icon_8_3",
+    icon = "icon_1_4",
     id = 1
   }
 }

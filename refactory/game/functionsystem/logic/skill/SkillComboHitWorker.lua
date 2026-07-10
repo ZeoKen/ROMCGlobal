@@ -102,19 +102,13 @@ function SkillComboHitWorker:Update(time, deltaTime)
   if nil ~= args[10] then
     local damage = SkillLogic_Base.GetSplitDamage(args[3], args[14], args[4])
     local creature = FindCreature(args[11])
-    local doubleDamage = args[26]
-    if not doubleDamage or doubleDamage == 0 then
-      doubleDamage = targetCreature and targetCreature:GetDoubleDamage()
-    end
-    if doubleDamage and 1 < doubleDamage then
-      damage = damage / 2
-    end
+    local doubleDamage = SkillLogic_Base.ResolveDoubleDamage(targetCreature, args[26])
     if not Game.MapManager:IsInAllGVG() then
       SkillLogic_Base.ShowDamage_Single(args[2], damage, args[25], args[8], args[9], targetCreature, args[13], creature, -1)
     end
     self.args[10]:Show(damage, args[17], creature == Game.Myself, self.args[18], targetCreature == Game.Myself)
     if args[14] >= args[4] and doubleDamage and 0 < doubleDamage then
-      local showDamage = 1 < doubleDamage and args[3] / 2 or args[3]
+      local showDamage = args[3]
       self.args[27] = SceneUIManager.Instance:GetStaticHurtLabelWorker()
       self.args[27]:AddRef()
       self.args[27]:Show(showDamage, args[17] + doubleDamageOffset, creature == Game.Myself, self.args[18], targetCreature == Game.Myself)

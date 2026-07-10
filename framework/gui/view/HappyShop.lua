@@ -48,6 +48,7 @@ function HappyShop:FindObjs()
   self.limitLab = self:FindComponent("LimitLab", UILabel)
   local titleBg = self:FindGO("titleBg")
   self.titleLab = self:FindComponent("Label", UILabel, titleBg)
+  self.titleIcon = self:FindComponent("icon", UISprite, titleBg)
   self.money1GO = self:FindGO("money1")
   if self.money1GO then
     self.money1tg = self.money1GO:GetComponent(UIToggle)
@@ -221,6 +222,16 @@ function HappyShop:InitShow()
   }
 end
 
+function HappyShop:RefreshTitleDisplay()
+  local hideTitle = HappyShopProxy.Instance:GetShopType() == 12000001
+  if self.titleLab then
+    self.titleLab.gameObject:SetActive(not hideTitle)
+  end
+  if self.titleIcon then
+    self.titleIcon.gameObject:SetActive(not hideTitle)
+  end
+end
+
 function HappyShop:OnShow()
   Game.Myself:UpdateEpNodeDisplay(true)
 end
@@ -237,6 +248,7 @@ function HappyShop:InitUI()
   self.descLab.text = HappyShopProxy.Instance.desc
   self:SetScrollView()
   self:SetLimitLab()
+  self:RefreshTitleDisplay()
   self.buyCell.gameObject:SetActive(false)
   self.default = HappyShopProxy.Instance:GetShopType()
   self.lastSelect = nil
@@ -321,6 +333,11 @@ end
 
 function HappyShop:InitShowtoggle()
   self.tabid = 1
+  if HappyShopProxy.Instance:IsSnowStoneScreen() then
+    self.showtoggle:SetActive(false)
+    self.customToggleRoot:SetActive(false)
+    return
+  end
   if HappyShopProxy.Instance:GetTab() then
     local config = Table_NpcFunction[HappyShopProxy.Instance:GetShopType()]
     if not config or not config.Parama then
@@ -581,32 +598,36 @@ end
 
 function HappyShop:UpdateShopInfo(isReset)
   local datas
+  local isSnowStoneScreen = HappyShopProxy.Instance:IsSnowStoneScreen()
   if self.infoType == ShopInfoType.MyProfession then
     datas = HappyShopProxy.Instance:GetMyProfessionItems()
   elseif self.infoType == ShopInfoType.All then
     datas = HappyShopProxy.Instance:GetShopItems()
   end
-  if HappyShopProxy.Instance:GetTab() then
+  if not isSnowStoneScreen and HappyShopProxy.Instance:GetTab() then
     if datas then
       TableUtility.ArrayClear(datas)
     end
     datas = HappyShopProxy.Instance:GetTabItem(self.tabid)
   end
-  local config = Table_NpcFunction[HappyShopProxy.Instance:GetShopType()]
-  local tabSystemIDConfig = config and config.Parama and config.Parama.TabSystemID
-  local tabSysID = tabSystemIDConfig and self.tabid and tabSystemIDConfig[self.tabid]
-  if tabSysID then
-    MsgManager.ShowMsgByID(tabSysID)
+  if not isSnowStoneScreen then
+    local config = Table_NpcFunction[HappyShopProxy.Instance:GetShopType()]
+    local tabSystemIDConfig = config and config.Parama and config.Parama.TabSystemID
+    local tabSysID = tabSystemIDConfig and self.tabid and tabSystemIDConfig[self.tabid]
+    if tabSysID then
+      MsgManager.ShowMsgByID(tabSysID)
+    end
   end
-  if HappyShopProxy.Instance:CheckQuality() then
+  if not isSnowStoneScreen and HappyShopProxy.Instance:CheckQuality() then
     if datas then
       TableUtility.ArrayClear(datas)
     end
     datas = HappyShopProxy.Instance:GetQualityItem(self.quality)
   end
   if self.searchToggle.activeSelf and self.searchInput and self.searchInput.value ~= "" then
-    datas = HappyShopProxy.Instance:GetShopDataByName(self.searchInput.value, self.tabid)
+    datas = HappyShopProxy.Instance:GetShopDataByName(self.searchInput.value, self.tabid, datas)
   end
+  self:RefreshTitleDisplay()
   if self.titleLab then
     self.titleLab.text = HappyShopProxy.Instance:IsRent() and ZhString.HappyShop_Title_Rent or ZhString.HappyShop_Title
   end
@@ -873,7 +894,8 @@ function HappyShop:InitServantList()
       self.servantBtn.gameObject.transform.localPosition = tempVector3
       self.servantSp.transform.localRotation = offRotation
       self.servantSC.panel.baseClipRegion = Vector4(0, 184, 64.8, 64)
-      self.descBg:SetActive(not FunctionUnLockFunc.Me():CheckCanOpen(defaultdata.menuid2))
+      local showDescBg = npcstaticid ~= 0 and not FunctionUnLockFunc.Me():CheckCanOpen(defaultdata.menuid2)
+      self.descBg:SetActive(showDescBg)
     else
       delta = (#servantShopList < 6 and #servantShopList or 5.7) - 1
       self.servantCtl:ResetDatas(servantShopList, true)
@@ -882,10 +904,12 @@ function HappyShop:InitServantList()
       self.servantBtn.gameObject.transform.localPosition = tempVector3
       self.servantSp.transform.localRotation = onRotation
       self.servantSC.panel.baseClipRegion = Vector4(0, 184 - delta * 31, 64.8, 64 + delta * 62)
+      self.descBg:SetActive(false)
     end
     self.servantSC:ResetPosition()
   else
     self.servantExp:SetActive(false)
+    self.descBg:SetActive(false)
   end
 end
 
@@ -897,8 +921,9 @@ function HappyShop:ClickServantHead(cell)
     self:InitLeftUpIcon()
     self:UpdateShopInfo(true)
     self:UpdateMoney()
+    local npcstaticid = HappyShopProxy.Instance:GetNPCStaticid()
     local canopen = FunctionUnLockFunc.Me():CheckCanOpen(data.menuid2)
-    if canopen then
+    if npcstaticid == 0 or canopen then
       self.descBg:SetActive(false)
     else
       self.descBg:SetActive(true)
@@ -971,19 +996,7 @@ function HappyShop:InitSearchToggle()
 end
 
 function HappyShop:OnSearchSubmit()
-  local shopDatas = HappyShopProxy.Instance:GetShopDataByName(self.searchInput.value, self.tabid)
-  local wrap = self:GetWrapHelper()
-  if shopDatas then
-    self:NeedUpdateSold(shopDatas)
-    wrap:UpdateInfo(shopDatas)
-    HappyShopProxy.Instance:SetSelectId(nil)
-  else
-    printRed("HappyShop:UpdateShopInfo : shopDatas is nil ~")
-  end
-  if self.noneTip then
-    self.noneTip:SetActive(#shopDatas == 0)
-  end
-  wrap:ResetPosition()
+  self:UpdateShopInfo(true)
 end
 
 function HappyShop:RefreshIndicator()

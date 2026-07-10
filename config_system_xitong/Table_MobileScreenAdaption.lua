@@ -1720,6 +1720,48 @@ Table_MobileScreenAdaption = {
     offset_left = 50,
     offset_bottom = 0,
     offset_right = 0
+  },
+  [83] = {
+    id = 83,
+    IsValid = 1,
+    DeviceInfo = "iPhone18,5",
+    SpecialView = {
+      WebviewPanel = {
+        SavedInsets = {
+          40,
+          80,
+          20,
+          80
+        }
+      },
+      GuildBuildingMatSubmitCell = {InfoPosY = 20}
+    },
+    RotationType = 1,
+    offset_top = 0,
+    offset_left = 153,
+    offset_bottom = 0,
+    offset_right = 100
+  },
+  [84] = {
+    id = 84,
+    IsValid = 1,
+    DeviceInfo = "iPhone18,5",
+    SpecialView = {
+      WebviewPanel = {
+        SavedInsets = {
+          40,
+          80,
+          20,
+          80
+        }
+      },
+      GuildBuildingMatSubmitCell = {InfoPosY = 20}
+    },
+    RotationType = 2,
+    offset_top = 0,
+    offset_left = 100,
+    offset_bottom = 0,
+    offset_right = 153
   }
 }
 Table_MobileScreenAdaption_fields = {

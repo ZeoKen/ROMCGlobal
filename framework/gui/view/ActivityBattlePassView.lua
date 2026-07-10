@@ -599,7 +599,7 @@ function ActivityBattlePassView:HandleClickDepositItem(cellctl)
     self:PurchaseDeposit(info, count)
   end
   local m_funcRmbBuy = function(count)
-    if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+    if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
       self:Invoke_DepositConfirmPanel(cbfunc)
     else
       cbfunc(count)
@@ -691,7 +691,7 @@ function ActivityBattlePassView:Invoke_DepositConfirmPanel(cb)
     local currencyType = productConf.CurrencyType
     local productDesc = OverSea.LangManager.Instance():GetLangByKey(Table_Deposit[productConf.id].Desc)
     local productD = " [0075BCFF]" .. productCount .. "[-] " .. productName
-    if BranchMgr.IsKorea() then
+    if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
       productD = " [0075BCFF]" .. productDesc .. "[-] "
     end
     OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FunctionNewRecharge.FormatMilComma(productPrice)), ZhString.ShopConfirmDes, productName, productPrice, function()

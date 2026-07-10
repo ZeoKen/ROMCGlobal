@@ -24,26 +24,55 @@ function FunctionScenicSpot:Reset()
 end
 
 function FunctionScenicSpot:GetAllScenicSpot()
-  return self.scenicSpots
+  if nil == self.creatureScenicSpots then
+    return self.scenicSpots
+  end
+  if nil == self.scenicSpots then
+    return self.creatureScenicSpots
+  end
+  local allScenicSpots = {}
+  for k, v in pairs(self.scenicSpots) do
+    allScenicSpots[k] = v
+  end
+  for k, v in pairs(self.creatureScenicSpots) do
+    if allScenicSpots[k] == nil then
+      allScenicSpots[k] = v
+    else
+      allScenicSpots[string.format("creature_%s", tostring(k))] = v
+    end
+  end
+  return allScenicSpots
 end
 
 function FunctionScenicSpot:GetScenicSpots(ssID)
   if nil == self.scenicSpots then
+    if self.creatureScenicSpots then
+      return self.creatureScenicSpots[ssID]
+    end
     return nil
   end
-  return self.scenicSpots[ssID]
+  if self.scenicSpots[ssID] then
+    return self.scenicSpots[ssID]
+  end
+  if self.creatureScenicSpots and self.creatureScenicSpots[ssID] then
+    return self.creatureScenicSpots[ssID]
+  end
+  return nil
 end
 
 function FunctionScenicSpot:GetScenicSpot(ssID)
-  if nil == self.scenicSpots then
-    return nil
+  local spot = self.scenicSpots and self.scenicSpots[ssID]
+  if spot then
+    return spot
   end
-  local spot = self.scenicSpots[ssID]
-  if spot and not spot.ID and spot[1] then
-    self:UpdateScenicCreaturePos(spot[1])
-    return spot[1]
+  if self.creatureScenicSpots and self.creatureScenicSpots[ssID] then
+    spot = self.creatureScenicSpots[ssID]
+    if spot[1] then
+      self:UpdateScenicCreaturePos(spot[1])
+      return spot[1]
+    end
   end
-  return spot
+  return nil
 end
 
 function FunctionScenicSpot:RemoveScenicSpot(ssID)
@@ -68,8 +97,8 @@ function FunctionScenicSpot:AddCreatureScenicSpot(guid, ssID)
     self.hideScenicSpots[guid] = ssID
     return
   end
-  self.scenicSpots = self.scenicSpots or {}
-  local ss = self.scenicSpots[ssID]
+  self.creatureScenicSpots = self.creatureScenicSpots or {}
+  local ss = self.creatureScenicSpots[ssID]
   if ss then
     for i = 1, #ss do
       local single = ss[i]
@@ -90,18 +119,18 @@ function FunctionScenicSpot:AddCreatureScenicSpot(guid, ssID)
     data.position = LuaVector3(posX, posY, posZ)
   end
   ss[#ss + 1] = data
-  self.scenicSpots[ssID] = ss
+  self.creatureScenicSpots[ssID] = ss
   return data
 end
 
 function FunctionScenicSpot:RemoveCreatureScenicSpot(guid, ssID)
   self.hideScenicSpots[guid] = nil
-  if nil == self.scenicSpots then
+  if nil == self.creatureScenicSpots then
     return nil
   end
   local removeData
   if ssID then
-    local ss = self.scenicSpots[ssID]
+    local ss = self.creatureScenicSpots[ssID]
     if not ss then
       return
     end
@@ -111,7 +140,7 @@ function FunctionScenicSpot:RemoveCreatureScenicSpot(guid, ssID)
         table.remove(ss, i)
         removeData = single
         if #ss == 0 then
-          self.scenicSpots[ssID] = nil
+          self.creatureScenicSpots[ssID] = nil
         end
         break
       end
@@ -121,20 +150,21 @@ function FunctionScenicSpot:RemoveCreatureScenicSpot(guid, ssID)
     end
     return
   end
-  for k, v in pairs(self.scenicSpots) do
-    if not v.ID then
-      for i = 1, #v do
-        local single = v[i]
-        if single.guid == guid then
-          ssID = single.ID
-          removeData = single
-          table.remove(v, i)
-          if #v == 0 then
-            self.scenicSpots[single.ID] = nil
-          end
-          break
+  for k, v in pairs(self.creatureScenicSpots) do
+    for i = 1, #v do
+      local single = v[i]
+      if single.guid == guid then
+        ssID = single.ID
+        removeData = single
+        table.remove(v, i)
+        if #v == 0 then
+          self.creatureScenicSpots[single.ID] = nil
         end
+        break
       end
+    end
+    if removeData then
+      break
     end
   end
   if removeData then
@@ -143,12 +173,12 @@ function FunctionScenicSpot:RemoveCreatureScenicSpot(guid, ssID)
 end
 
 function FunctionScenicSpot:GetNearestScenicSpot(originPos, camera)
-  if nil == self.scenicSpots then
+  if nil == self.scenicSpots and nil == self.creatureScenicSpots then
     return nil
   end
   local nearestScenicSpot
   local minDistance = 9999999
-  for k, v in pairs(self.scenicSpots) do
+  for k, v in pairs(self.scenicSpots or {}) do
     local ss = v
     local distance = -1
     if v.ID then
@@ -165,23 +195,24 @@ function FunctionScenicSpot:GetNearestScenicSpot(originPos, camera)
         minDistance = distance
         nearestScenicSpot = ss
       end
-    else
-      for i = 1, #v do
-        local single = v[i]
-        self:UpdateScenicCreaturePos(single)
-        if nil ~= camera then
-          local viewport = camera:WorldToViewportPoint(single.position)
-          if 0 < viewport.x and viewport.x < 1 and 0 < viewport.y and 1 > viewport.y and camera.nearClipPlane < viewport.z and camera.farClipPlane > viewport.z then
-            distance = viewport.z
-          end
-        else
-          distance = LuaVector3.Distance(single.position, originPos)
+    end
+  end
+  for k, v in pairs(self.creatureScenicSpots or {}) do
+    for i = 1, #v do
+      local single = v[i]
+      self:UpdateScenicCreaturePos(single)
+      local distance = -1
+      if nil ~= camera then
+        local viewport = camera:WorldToViewportPoint(single.position)
+        if 0 < viewport.x and viewport.x < 1 and 0 < viewport.y and 1 > viewport.y and camera.nearClipPlane < viewport.z and camera.farClipPlane > viewport.z then
+          distance = viewport.z
         end
-        if not (0 < distance and minDistance > distance) or self:IsThisSceneSpotShouldBeRemoved(single) then
-        else
-          minDistance = distance
-          nearestScenicSpot = single
-        end
+      else
+        distance = LuaVector3.Distance(single.position, originPos)
+      end
+      if 0 < distance and minDistance > distance and not self:IsThisSceneSpotShouldBeRemoved(single) then
+        minDistance = distance
+        nearestScenicSpot = single
       end
     end
   end
@@ -191,7 +222,7 @@ end
 function FunctionScenicSpot:IsThisSceneSpotShouldBeRemoved(nearestScenicSpot)
   if nearestScenicSpot and nearestScenicSpot.ID then
     local viewSpotData = Table_Viewspot[nearestScenicSpot.ID]
-    if AdventureDataProxy.Instance:IsSceneryUnlock(nearestScenicSpot.ID) and viewSpotData.Type == 3 then
+    if viewSpotData and AdventureDataProxy.Instance:IsSceneryUnlock(nearestScenicSpot.ID) and viewSpotData.Type == 3 then
       return true
     end
   end
@@ -233,21 +264,7 @@ function FunctionScenicSpot:ResetValidScenicSpots(validScenicSpotIDs)
       end
     end
   end
-  if not self.scenicSpots then
-    self.scenicSpots = validScenicSpots
-  else
-    for k, v in pairs(self.scenicSpots) do
-      if not v.ID then
-        local ss = validScenicSpots[k] or {}
-        for i = 1, #v do
-          local single = v[i]
-          ss[#ss + 1] = v[i]
-        end
-        validScenicSpots[k] = ss
-      end
-    end
-    self.scenicSpots = validScenicSpots
-  end
+  self.scenicSpots = validScenicSpots
   local data = {
     validScenicSpots = {}
   }
@@ -256,6 +273,9 @@ function FunctionScenicSpot:ResetValidScenicSpots(validScenicSpotIDs)
     if info.mapid == curMapID then
       table.insert(data.validScenicSpots, info)
     end
+  end
+  for k, v in pairs(self.creatureScenicSpots or {}) do
+    table.insert(data.validScenicSpots, v)
   end
   self:Notify(FunctionScenicSpot.Event.StateChanged, data)
   return true
@@ -278,7 +298,7 @@ function FunctionScenicSpot:HandleCreatureHideChange(guid)
     if Game.Myself and Game.Myself.data and Game.Myself.data.id == guid then
       return
     end
-    if not self.scenicSpots or self.hideScenicSpots[guid] then
+    if not self.creatureScenicSpots or self.hideScenicSpots[guid] then
       return
     end
   else
@@ -289,16 +309,17 @@ function FunctionScenicSpot:HandleCreatureHideChange(guid)
     end
     return
   end
-  for k, v in pairs(self.scenicSpots) do
-    if not v.ID then
-      for i = 1, #v do
-        local single = v[i]
-        if single.guid == guid then
-          self:RemoveCreatureScenicSpot(guid, single.ID)
-          self.hideScenicSpots[guid] = single.ID
-          break
-        end
+  for k, v in pairs(self.creatureScenicSpots or {}) do
+    for i = 1, #v do
+      local single = v[i]
+      if single.guid == guid then
+        self:RemoveCreatureScenicSpot(guid, single.ID)
+        self.hideScenicSpots[guid] = single.ID
+        break
       end
+    end
+    if self.hideScenicSpots[guid] then
+      break
     end
   end
 end
@@ -309,19 +330,16 @@ function FunctionScenicSpot:Update(time, deltaTime)
     return
   end
   self.deltaTime = 0
-  if not self.scenicSpots then
+  if not self.creatureScenicSpots then
     return
   end
   local changeList = {}
-  for k, v in pairs(self.scenicSpots) do
-    local ss = v
-    if not v.ID then
-      for i = 1, #v do
-        local single = v[i]
-        local changed = self:UpdateScenicCreaturePos(single)
-        if changed then
-          changeList[#changeList + 1] = single
-        end
+  for k, v in pairs(self.creatureScenicSpots) do
+    for i = 1, #v do
+      local single = v[i]
+      local changed = self:UpdateScenicCreaturePos(single)
+      if changed then
+        changeList[#changeList + 1] = single
       end
     end
   end

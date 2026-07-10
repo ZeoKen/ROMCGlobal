@@ -13,7 +13,12 @@ function PetDendrogramCell:InitView()
   self.plus = self:FindGO("Plus")
   self.friendlyImg = self:FindGO("FriendlyImg")
   self.lvLabel = self:FindComponent("LvLab", UILabel)
+  self.matLab = self:FindComponent("MatLab", UILabel)
   self.effectContainer = self:FindGO("EffectContainer")
+  self.starSp = self:FindComponent("StarSp", UISprite)
+  if self.starSp then
+    self.baseStarWidth = self.starSp.width
+  end
 end
 
 function PetDendrogramCell:SetData(data)
@@ -24,10 +29,17 @@ function PetDendrogramCell:SetData(data)
       local obj = self:CreatSubTree()
       if obj then
         IconManager:SetNpcMonsterIconByID(data.rootId, self.icon)
+        if self.starSp then
+          self.starSp.width = self.baseStarWidth * Table_Pet[data.rootId].Star
+        end
         self.subTree = PetComposePreviewCell.new(obj, data.rootId, data.needRecursive)
       end
     elseif "DendrogramPart" == data.__cname then
       IconManager:SetNpcMonsterIconByID(data.root, self.icon)
+      if self.starSp then
+        self.starSp.gameObject:SetActive(true)
+        self.starSp.width = self.baseStarWidth * Table_Pet[data.root].Star
+      end
       self:SetFriendLvl()
       if data.needRecursive then
         ColorUtil.WhiteUIWidget(self.icon)
@@ -38,6 +50,27 @@ function PetDendrogramCell:SetData(data)
       else
         ColorUtil.WhiteUIWidget(self.icon)
         self:Hide(self.plus)
+      end
+      self:Hide(self.matLab)
+    elseif "MaterialItemPart" == data.__cname then
+      if self.starSp then
+        self.starSp.gameObject:SetActive(false)
+      end
+      self:Hide(self.friendlyImg)
+      self:Show(self.matLab)
+      local sdata = Table_Item[data.itemid]
+      if sdata then
+        self.matLab.text = sdata.NameZh or ""
+        IconManager:SetItemIcon(sdata.Icon, self.icon)
+      end
+      local have = PetComposeProxy.Instance:GetComposeMaterialItemGuid(data.itemid)
+      self:Hide(self.lvLabel)
+      if have or data.needRecursive then
+        ColorUtil.WhiteUIWidget(self.icon)
+        self:Hide(self.plus)
+      else
+        ColorUtil.ShaderLightGrayUIWidget(self.icon)
+        self:Show(self.plus)
       end
     end
   else

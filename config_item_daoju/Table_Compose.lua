@@ -8374,6 +8374,20 @@ Table_Compose = {
     Type = 1,
     Category = 10
   },
+  [16429] = {
+    id = 16429,
+    ROB = 203000,
+    BeCostItem = {
+      {id = 16429, num = 1},
+      {id = 52171, num = 2218},
+      {id = 52328, num = 18},
+      {id = 52359, num = 18},
+      {id = 52539, num = 35}
+    },
+    Product = {id = 47429},
+    Type = 1,
+    Category = 10
+  },
   [16432] = {
     id = 16432,
     ROB = 51000,
@@ -28584,6 +28598,40 @@ Table_Compose = {
     },
     Type = 1
   },
+  [3042211] = {
+    id = 3042211,
+    ROB = 0,
+    BeCostItem = {
+      {id = 3042211, num = 40}
+    },
+    Product = {id = 3042169},
+    Type = 1,
+    Category = 10,
+    MultiCompose = 1
+  },
+  [3042346] = {
+    id = 3042346,
+    ROB = 0,
+    BeCostItem = {
+      {id = 3042346, num = 3}
+    },
+    Product = {id = 3042347},
+    Type = 1
+  },
+  [3042361] = {
+    id = 3042361,
+    ROB = 0,
+    BeCostItem = {
+      {id = 3042361, num = 1}
+    },
+    RandomProduct = {
+      {id = 25290, weight = 100}
+    },
+    FemaleRandomProduct = {
+      {id = 25290, weight = 100}
+    },
+    Type = 1
+  },
   [4000001] = {
     id = 4000001,
     ROB = 0,
@@ -30673,6 +30721,20 @@ Table_Compose = {
     },
     Type = 1
   },
+  [4000225] = {
+    id = 4000225,
+    ROB = 0,
+    BeCostItem = {
+      {id = 3042034, num = 5}
+    },
+    RandomProduct = {
+      {id = 3009070, weight = 100}
+    },
+    FemaleRandomProduct = {
+      {id = 3009070, weight = 100}
+    },
+    Type = 1
+  },
   [4200013] = {
     id = 4200013,
     BeCostItem = {
@@ -32565,6 +32627,36 @@ Table_Compose = {
       {id = 10000457, weight = 100}
     },
     Type = 1
+  },
+  [10000005] = {
+    id = 10000005,
+    ROB = 0,
+    BeCostItem = {
+      {id = 10000646, num = 50}
+    },
+    RandomProduct = {
+      {id = 10000645, weight = 100}
+    },
+    FemaleRandomProduct = {
+      {id = 10000645, weight = 100}
+    },
+    Type = 1,
+    MultiCompose = 1
+  },
+  [10000006] = {
+    id = 10000006,
+    ROB = 0,
+    BeCostItem = {
+      {id = 10000654, num = 5}
+    },
+    RandomProduct = {
+      {id = 10000644, weight = 100}
+    },
+    FemaleRandomProduct = {
+      {id = 10000644, weight = 100}
+    },
+    Type = 1,
+    MultiCompose = 1
   }
 }
 local cell_mt = {

@@ -74,7 +74,7 @@ Table_HeadImage = {
     id = 55134,
     Picture = "face_morocc"
   },
-  [55139] = {id = 55139, Picture = "boli"},
+  [55140] = {id = 55140, Picture = "item_55139"},
   [56000] = {id = 56000, Picture = "boli"},
   [56001] = {id = 56001, Picture = "fengtu"},
   [56002] = {
@@ -991,6 +991,10 @@ Table_HeadImage = {
   [56895] = {
     id = 56895,
     Picture = "n_seabutterfly"
+  },
+  [56896] = {
+    id = 56896,
+    Picture = "Fake_Juncea"
   },
   [56901] = {id = 56901, Picture = "Red_Plant"},
   [56902] = {

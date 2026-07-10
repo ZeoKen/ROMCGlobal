@@ -23,6 +23,7 @@ local DEFAULT_MATERIAL_SEARCH_BAGTYPES, REFINE_MATERIAL_SEARCH_BAGTYPES, REPAIR_
 local Mat_MaxRefineLv = GameConfig.EquipRefine.repair_stuff_max_lv or 12
 local itemTipOffset, tempTable, tempArr = {-370, 0}, {}, {}
 local resultTickId = 788
+local NOKRRateUrl = "https://game.naver.com/lounge/Ragnarok_M_Classic/board/16"
 local DefaultAddDatas = {"Add"}
 local DefaultAdd2Datas = {"Add2"}
 local GetLackItem = function(id, count)
@@ -67,6 +68,13 @@ end
 function EquipRefineBordNew:InitBord()
   self.tipStick = self:FindComponent("TipStick", UIWidget)
   self.effContainerRq = self:FindComponent("EffectContainer", ChangeRqByTex)
+  self.showRateBtn = self:FindGO("ShowRateBtn")
+  if self.showRateBtn then
+    self.showRateBtn:SetActive(BranchMgr.IsNOKR())
+    self:AddClickEvent(self.showRateBtn, function()
+      Application.OpenURL(NOKRRateUrl)
+    end)
+  end
   self.targetCellGO = self:FindGO("TargetCell")
   local itemGO = self:FindGO("ItemCell", self.targetCellGO)
   self.targetItemCell = ItemCell.new(itemGO)
@@ -1302,7 +1310,7 @@ function EquipRefineBordNew:UpdateRefineParams()
     if safeds and safeds[1] and safeds and safeds[1] < 100 then
       self.safeDiscount = safeds[1]
     end
-    self.homeDisCount = HomeManager.Me():TryGetHomeWorkbenchDiscount("Refine")
+    self.homeDisCount = HomeManager.GetInstance():TryGetHomeWorkbenchDiscount("Refine")
     if self.homeDisCount == 100 then
       self.homeDisCount = nil
     end

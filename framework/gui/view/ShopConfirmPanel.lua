@@ -15,8 +15,18 @@ function ShopConfirmPanel:Init()
   end)
   local title = self:FindGO("title"):GetComponent(UILabel)
   title.text = self.data.title
-  local des = self:FindGO("des"):GetComponent(UILabel)
-  des.text = self.data.desc
+  self.des = self:FindGO("des"):GetComponent(UILabel)
+  self.des.text = self.data.desc
+  self:RefreshDescClickUrl()
+end
+
+function ShopConfirmPanel:RefreshDescClickUrl()
+  local desc = self.data and self.data.desc or ""
+  if self.data and self.data.clickUrlCallback and string.match(desc, "%[url=") then
+    UIUtil.TryAddClickUrlCompToGameObject(self.des.gameObject, self.data.clickUrlCallback)
+  else
+    UIUtil.TryRemoveClickUrlCompFromGameObject(self.des.gameObject)
+  end
 end
 
 function ShopConfirmPanel:RefreshDetail()

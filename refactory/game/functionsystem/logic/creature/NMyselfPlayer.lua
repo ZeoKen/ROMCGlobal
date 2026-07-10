@@ -26,6 +26,8 @@ local AtkSpdSerialSkills = {
   [2733001] = 2734001,
   [2734001] = 2731001
 }
+local AtkSpdSerialSkillConfig = GameConfig.AtkSpdSerialSkills or {}
+local AtkSpdSerialFullSkill = AtkSpdSerialSkillConfig.buff_full_skill or 2734001
 
 function NMyselfPlayer:ctor()
   NMyselfPlayer.super.ctor(self, AI_Myself)
@@ -127,7 +129,9 @@ function NMyselfPlayer:CheckLeadCompleteSkill(skillID, leadSuccess)
   local skillConf = Table_Skill[skillID]
   local logic_param = skillConf and skillConf.Logic_Param
   if logic_param and logic_param.end_skill_id and self:CheckNextEndSkill(logic_param.end_skill_id) then
-    self:Client_UseSkill(logic_param.end_skill_id, nil, nil, nil, nil, nil, nil, true)
+    local endSkillID = logic_param.end_skill_id
+    SkillProxy.Instance:SetEndSkillState(endSkillID, 0)
+    self:Client_UseSkill(endSkillID)
   end
   NMyselfPlayer.super.CheckLeadCompleteSkill(self, skillID, leadSuccess)
 end
@@ -767,7 +771,7 @@ end
 function NMyselfPlayer:SetNextNormalAttack(skillID, time)
   local nextSkill = AtkSpdSerialSkills[skillID]
   if self.data:CheckEnergyBuffFull() then
-    nextSkill = 2734001
+    nextSkill = AtkSpdSerialFullSkill
   end
   local curServerTime = ServerTime.CurServerTime() / 1000 + 5
   self.nextNormalAttack = {skillID = nextSkill, time = curServerTime}
@@ -787,7 +791,7 @@ function NMyselfPlayer:GetFakeNormalAtkID()
   local useTime = self.nextNormalAttack and self.nextNormalAttack.time
   local curServerTime = ServerTime.CurServerTime() / 1000
   if self.data:CheckEnergyBuffFull() then
-    return skillID or 2734001
+    return skillID or AtkSpdSerialFullSkill
   end
   if useTime and useTime < curServerTime or not skillID then
     return MyselfProxy.Instance:GetFakeNormalAtkID()

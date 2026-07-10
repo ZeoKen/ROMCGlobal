@@ -7,7 +7,7 @@ function WeGameHelper:trackCreatRole(serverId, level)
     local overseasManager = OverSeas_TW.OverSeasManager.GetInstance()
     local passportInfoStr
     if FunctionLogin.Me():getSdkType() == FunctionSDK.E_SDKType.TDSG then
-      if BranchMgr.IsTW() or BranchMgr.IsKorea() then
+      if BranchMgr.IsTW() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
         overseasManager:TrackEvent("charater create")
       else
         overseasManager:TrackCreateRole()

@@ -3837,7 +3837,7 @@ function ServiceFuBenCmdAutoProxy:CallTransferFightEndFubenCmd(rank, myrank)
   end
 end
 
-function ServiceFuBenCmdAutoProxy:CallInviteRollRewardFubenCmd(etype, param1, costcoin, count)
+function ServiceFuBenCmdAutoProxy:CallInviteRollRewardFubenCmd(etype, param1, costcoin, count, coinid)
   if not NetConfig.PBC then
     local msg = FuBenCmd_pb.InviteRollRewardFubenCmd()
     if etype ~= nil then
@@ -3851,6 +3851,9 @@ function ServiceFuBenCmdAutoProxy:CallInviteRollRewardFubenCmd(etype, param1, co
     end
     if count ~= nil then
       msg.count = count
+    end
+    if coinid ~= nil then
+      msg.coinid = coinid
     end
     self:SendProto(msg)
   else
@@ -3867,6 +3870,9 @@ function ServiceFuBenCmdAutoProxy:CallInviteRollRewardFubenCmd(etype, param1, co
     end
     if count ~= nil then
       msgParam.count = count
+    end
+    if coinid ~= nil then
+      msgParam.coinid = coinid
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -5458,7 +5464,7 @@ function ServiceFuBenCmdAutoProxy:CallSyncPveCardOpenStateFubenCmd(passinfos)
   end
 end
 
-function ServiceFuBenCmdAutoProxy:CallQuickFinishPveRaidFubenCmd(raidid, etype, bossid, use_sweep_ticket)
+function ServiceFuBenCmdAutoProxy:CallQuickFinishPveRaidFubenCmd(raidid, etype, bossid, use_sweep_ticket, count)
   if not NetConfig.PBC then
     local msg = FuBenCmd_pb.QuickFinishPveRaidFubenCmd()
     if raidid ~= nil then
@@ -5472,6 +5478,9 @@ function ServiceFuBenCmdAutoProxy:CallQuickFinishPveRaidFubenCmd(raidid, etype, 
     end
     if use_sweep_ticket ~= nil then
       msg.use_sweep_ticket = use_sweep_ticket
+    end
+    if count ~= nil then
+      msg.count = count
     end
     self:SendProto(msg)
   else
@@ -5488,6 +5497,9 @@ function ServiceFuBenCmdAutoProxy:CallQuickFinishPveRaidFubenCmd(raidid, etype, 
     end
     if use_sweep_ticket ~= nil then
       msgParam.use_sweep_ticket = use_sweep_ticket
+    end
+    if count ~= nil then
+      msgParam.count = count
     end
     self:SendProto2(msgId, msgParam)
   end

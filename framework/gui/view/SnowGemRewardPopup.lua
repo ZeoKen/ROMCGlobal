@@ -49,6 +49,9 @@ function SnowGemRewardPopup:OnCellClick(cellCtl)
 end
 
 function SnowGemRewardPopup:OnEnter()
+  if TipManager.Instance then
+    TipManager.Instance:CloseItemTip()
+  end
   self:RefreshView()
   self:PlayUIEffect(EffectMap.UI.SnowGem_Reward, self.gameObject)
 end
@@ -77,6 +80,19 @@ function SnowGemRewardPopup:RefreshView()
   end
   if self.uiTable then
     self.uiTable:Reposition()
+  end
+  if self.scrollView and self.uiTable then
+    local panel = self.scrollView.panel
+    if panel then
+      local bounds = NGUIMath.CalculateRelativeWidgetBounds(self.uiTable.transform)
+      local contentWidth = bounds and bounds.size and bounds.size.x or 0
+      local viewWidth = panel.baseClipRegion and panel.baseClipRegion.z or 0
+      if contentWidth > viewWidth then
+        self.scrollView.contentPivot = UIWidget.Pivot.TopLeft
+      else
+        self.scrollView.contentPivot = UIWidget.Pivot.Top
+      end
+    end
   end
   if self.scrollView then
     self.scrollView:ResetPosition()

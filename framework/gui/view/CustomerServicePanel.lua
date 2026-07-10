@@ -15,6 +15,11 @@ function CustomerServicePanel:InitData()
   self.cancelBtn = self:FindGO("Cancel")
   self.spHolder = self:FindComponent("SpHolder", UISprite)
   self.serverBg = self:FindGO("ServerBg")
+  if BranchMgr.IsNOKR() then
+    self.title.text = ZhString.CustomerServicePane1_Title_NOKR
+  else
+    self.title.text = ZhString.CustomerServicePanel_Title
+  end
 end
 
 function CustomerServicePanel:AddEvt()
@@ -52,7 +57,7 @@ function CustomerServicePanel:ConfirmClick()
     helplog("serverid = ", self.serverData.serverid)
     helplog("sid = ", self.serverData.sid)
     helplog("accid = ", self.serverData.accid)
-    FunctionSDK.Instance:EnterBugReport(self.serverData.sid, "NoEnter", self.serverData.accid)
+    FunctionSDK.Instance:EnterBugReport(self.serverData.sid, self.serverData.accid, "NoEnter")
   end
   self:CloseSelf()
 end

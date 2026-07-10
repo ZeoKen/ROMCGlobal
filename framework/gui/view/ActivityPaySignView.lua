@@ -199,7 +199,15 @@ function ActivityPaySignView:PurchaseDeposit(info, count)
     end
     return
   end
-  if PurchaseDeltaTimeLimit.Instance():IsEnd(productID) then
+  if not PurchaseDeltaTimeLimit.Instance():IsEnd(productID) then
+    MsgManager.ShowMsgByID(49)
+    return
+  end
+  local doPurchase = function()
+    if not PurchaseDeltaTimeLimit.Instance():IsEnd(productID) then
+      MsgManager.ShowMsgByID(49)
+      return
+    end
     local callbacks = {}
     callbacks[1] = function(str_result)
       local str_result = str_result or "nil"
@@ -241,7 +249,19 @@ function ActivityPaySignView:PurchaseDeposit(info, count)
     local interval = GameConfig.PurchaseMonthlyVIP.interval / 1000
     PurchaseDeltaTimeLimit.Instance():Start(productID, interval)
     return true
-  else
-    MsgManager.ShowMsgByID(49)
   end
+  if not BranchMgr.IsJapan() and not BranchMgr.IsKorea() and not BranchMgr.IsNOKR() then
+    return doPurchase()
+  end
+  local productName = OverSea.LangManager.Instance():GetLangByKey(Table_Item[productConf.ItemId].NameZh)
+  local productPrice = productConf.Rmb
+  local productCount = productConf.Count
+  local currencyType = productConf.CurrencyType
+  local productDesc = OverSea.LangManager.Instance():GetLangByKey(Table_Deposit[productConf.id].Desc)
+  local productD = " [0075BCFF]" .. productCount .. "[-] " .. productName
+  if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
+    productD = " [0075BCFF]" .. productDesc .. "[-] "
+  end
+  OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FunctionNewRecharge.FormatMilComma(productPrice)), ZhString.ShopConfirmDes, productName, productPrice, doPurchase)
+  return true
 end

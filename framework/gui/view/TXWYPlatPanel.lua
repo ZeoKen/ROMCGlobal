@@ -79,14 +79,6 @@ TXWYPlatPanel.BranchConfig = {
         view = PanelConfig.CustomerServicePanel
       })
     end,
-    LangBtn = function(go)
-      GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
-        view = PanelConfig.LangSwitchPanel
-      })
-      if SelfInstance then
-        SelfInstance:CloseSelf()
-      end
-    end,
     LogoIcon = "index2-ro"
   },
   Korea = {
@@ -236,8 +228,15 @@ function TXWYPlatPanel:Init()
   end
   self:AddButtonEvent("LogOut", function()
     self:CloseSelf()
-    OverSeas_TW.OverSeasManager.GetInstance():SignOut()
-    Game.Me():BackToLogo()
+    if BranchMgr.IsNOKR() then
+      FunctionSDK.Instance:ListenProtocolAgreedAfterLogout(function(msg)
+        Game.Me():BackToLogo()
+      end)
+      OverSeas_TW.OverSeasManager.GetInstance():SignOut()
+    else
+      OverSeas_TW.OverSeasManager.GetInstance():SignOut()
+      Game.Me():BackToLogo()
+    end
   end)
 end
 

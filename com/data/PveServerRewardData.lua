@@ -4,6 +4,8 @@ PveServerRewardData = class("PveServerRewardData")
 function PveServerRewardData:ctor(serverdata)
   self.rewards = {}
   self.showtype = serverdata.showtype
+  self.guaranteed = serverdata.guaranteed
+  self.showcount = serverdata.showcount
   self:SetData(serverdata)
 end
 
@@ -17,7 +19,11 @@ function PveServerRewardData:_setItemInfo(itemInfo)
     local item = PveDropItemData.new("PveDropReward", itemInfo.id)
     item.num = itemInfo.count or 1
     item:SetType(self.showtype)
+    item:SetGuaranteeInfo(self.guaranteed, self.showcount)
     self.rewards[#self.rewards + 1] = item
+    if self.guaranteed and 0 < self.guaranteed then
+      redlog("PveServerRewardData:_setItemInfo", itemInfo.id)
+    end
   end
 end
 

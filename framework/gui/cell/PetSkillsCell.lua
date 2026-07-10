@@ -50,3 +50,31 @@ function PetSkillsCell:GetCells()
     return self.skillsCtl:GetCells()
   end
 end
+
+local IsSkillSlotMatch = function(skillSlots, skillSlot)
+  if skillSlots == nil then
+    return true
+  end
+  if skillSlot == nil then
+    return false
+  end
+  for i = 1, #skillSlots do
+    if skillSlots[i] == skillSlot then
+      return true
+    end
+  end
+  return false
+end
+
+function PetSkillsCell:PlayResetEffect(skillSlots)
+  local cells = self:GetCells()
+  if not cells then
+    return
+  end
+  for i = 1, #cells do
+    local data = cells[i].data
+    if skillSlots == nil or type(data) == "table" and IsSkillSlotMatch(skillSlots, data.skillSlot) then
+      cells[i]:PlayResetEffect()
+    end
+  end
+end

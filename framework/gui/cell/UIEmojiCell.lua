@@ -25,6 +25,7 @@ function UIEmojiCell:Init()
   self.toggleBg = self:FindGO("ToggleBg")
   self.boxCollider = self.gameObject:GetComponent(BoxCollider)
   self.mask = self:FindGO("Mask")
+  self.cdMask = self:FindGO("CdMask")
   self:AddClickEvents()
   self:SetEditMode(UIEmojiEditMode.None)
   self:InitDrag()
@@ -61,6 +62,8 @@ function UIEmojiCell:InitDrag()
   self:SetDragEnable(false)
 end
 
+local forbiddenAction = {playshow2 = 1, playshow3 = 1}
+
 function UIEmojiCell:SetData(data)
   self.content:SetActive(data ~= nil)
   if not data then
@@ -74,6 +77,14 @@ function UIEmojiCell:SetData(data)
   if data.type == UIEmojiType.Action or data.type == UIEmojiType.RoleExpression then
     self.actionObj:SetActive(true)
     self:SetAction(data.name)
+    local isPvP, isGvG = Game.MapManager:IsPVPMode(), Game.MapManager:IsInGVG()
+    if (isPvP or isGvG) and forbiddenAction[data.name] then
+      self.forbiddenByScene = true
+    else
+      self.forbiddenByScene = false
+    end
+    self.actionSymbol.color = self.forbiddenByScene and ColorUtil.NGUIGray or ColorUtil.NGUIWhite
+    self:UpdateCDTime()
     if data.type == UIEmojiType.Action and data.id == 3 then
       Game.HotKeyTipManager:RegisterHotKeyTip(7, self.actionBg, NGUIUtil.AnchorSide.TopLeft, {11, -8})
     else
@@ -125,13 +136,63 @@ function UIEmojiCell:UnloadEmoji()
   self.emoji = nil
 end
 
+local defaultActionBg = "com_btn_7"
+local definedActionBg = {
+  playshow2 = "com_btn_icon3",
+  playshow3 = "com_btn_icon4"
+}
+
 function UIEmojiCell:SetAction(name)
   if self.actionSymbol and IconManager:SetActionIcon(name, self.actionSymbol) then
     self.actionSymbol:MakePixelPerfect()
   end
+  local needDebug = definedActionBg[name] ~= nil
   if self.actionBg then
-    local cfg = Game.Config_Action[name]
-    self.actionBg.spriteName = cfg and cfg.DoubleAction and "com_btn_21" or "com_btn_7"
+    self.actCfg = Game.Config_Action[name]
+    local _atlasName = "NewCom"
+    if self.actCfg then
+      local _spriteName
+      local _definedSpName = definedActionBg[name]
+      if self.actCfg.DoubleAction then
+        _spriteName = "com_btn_21"
+      elseif self.actCfg.SkillAction then
+        _spriteName = "com_btn_22"
+      end
+    end
+    if needDebug then
+      self.actionBg.atlas = RO.AtlasMap.GetAtlas("UI_Reflux")
+      self.actionBg.spriteName = definedActionBg[name]
+    else
+      self.actionBg.atlas = RO.AtlasMap.GetAtlas("NewCom")
+      self.actionBg.spriteName = _spriteName or defaultActionBg
+    end
+  end
+end
+
+function UIEmojiCell:UpdateCDTime()
+  if not self.id or not MyselfProxy.Instance:IsActionInCD(self.id) then
+    self:Hide(self.cdMask)
+    return
+  end
+  self:Show(self.cdMask)
+  local interval = Table_ActionAnime[self.id].IntervalTime
+  local starttime = MyselfProxy.Instance:GetRecentAction(self.id)
+  local endtime = starttime + interval
+  if starttime and endtime then
+    local totalDeltaTime = endtime - starttime
+    if totalDeltaTime <= 0 then
+      return
+    end
+    TimeTickManager.Me():ClearTick(self, 1)
+    TimeTickManager.Me():CreateTick(0, 33, function(self, deltatime)
+      local nowDelteTime = math.max(ServerTime.CurServerTime() - starttime, 0)
+      local fillAmount = nowDelteTime / totalDeltaTime
+      if fillAmount < 1 then
+        self.cdMask.fillAmount = fillAmount
+      else
+        TimeTickManager.Me():ClearTick(self, 1)
+      end
+    end, self, 1)
   end
 end
 
@@ -144,6 +205,7 @@ end
 function UIEmojiCell:OnCellDestroy()
   self:UnloadEmoji()
   Game.HotKeyTipManager:RemoveHotKeyTip(7, self.actionBg)
+  TimeTickManager.Me():ClearTick(self, 1)
 end
 
 local tempColor = LuaColor(1, 1, 1, 1)

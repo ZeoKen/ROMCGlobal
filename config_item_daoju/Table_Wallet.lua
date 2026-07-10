@@ -3141,6 +3141,34 @@ Table_Wallet = {
     Type = 3,
     Sort = 473,
     KeepDisplay = 0
+  },
+  [664] = {
+    id = 664,
+    ItemID = 3042032,
+    Type = 3,
+    Sort = 456,
+    KeepDisplay = 0
+  },
+  [630] = {
+    id = 630,
+    ItemID = 10000418,
+    Type = 3,
+    Sort = 421,
+    KeepDisplay = 0
+  },
+  [151] = {
+    id = 151,
+    ItemID = 8438,
+    Type = 2,
+    Sort = 52,
+    KeepDisplay = 0
+  },
+  [152] = {
+    id = 152,
+    ItemID = 12984,
+    Type = 2,
+    Sort = 53,
+    KeepDisplay = 0
   }
 }
 Table_Wallet_fields = {

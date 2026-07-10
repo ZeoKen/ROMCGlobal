@@ -665,17 +665,18 @@ end
 function MainView:HandleTimeLimitShopPopup(note)
   local data = note.body
   local activeID = data.id
+  local activeType = data.type or 0
   if not self.loginViewSequence then
     self.loginViewSequence = ViewSequenceManager.Me():CreateViewSequence(self)
   end
-  self.newInStock = activeID
+  self.newInStock = TimeLimitShopProxy.Instance:CreateGoodData(activeID, activeType)
   local goods = TimeLimitShopProxy.Instance.timeLimitGoods
   if goods and 0 <= #goods then
     xdlog("有商品")
     local newIncome = false
     for i = 1, #goods do
       local single = goods[i]
-      if single == self.newInStock and not self.loginViewSequence:IsHaveView("TimeLimitShopView") and not UIManagerProxy.Instance:GetNodeByViewName("TimeLimitShopView") then
+      if TimeLimitShopProxy.Instance:IsSameGood(single, self.newInStock) and not self.loginViewSequence:IsHaveView("TimeLimitShopView") and not UIManagerProxy.Instance:GetNodeByViewName("TimeLimitShopView") then
         newIncome = true
         self.loginViewSequence:Append("TimeLimitShopView")
         TimeLimitShopProxy.Instance.showView = false

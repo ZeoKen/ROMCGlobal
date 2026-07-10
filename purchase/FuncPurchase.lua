@@ -23,7 +23,7 @@ end
 function FuncPurchase:OnPaySuccess(product_conf, str_result)
   ServiceUserEventProxy.Instance:CallChargeSdkReplyUserEvent(product_conf.id, ServerTime.CurServerTime(), true)
   if not BackwardCompatibilityUtil.CompatibilityMode(BackwardCompatibilityUtil.V6) then
-    if BranchMgr.IsChina() or BranchMgr.IsKorea() then
+    if BranchMgr.IsChina() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
       local runtimePlatform = ApplicationInfo.GetRunPlatform()
       if runtimePlatform == RuntimePlatform.IPhonePlayer then
         if self.orderIDOfXDSDKPay ~= nil then
@@ -222,10 +222,14 @@ function FuncPurchase:Purchase(product_conf_id, callbacks, buycount)
       MsgManager.ShowMsgByID(43466)
     end
     return
-  elseif Application.platform == RuntimePlatform.IPhonePlayer and (BranchMgr.IsNO() or BranchMgr.IsNOTW() or BranchMgr.IsNOEN()) then
+  elseif Application.platform == RuntimePlatform.IPhonePlayer and (BranchMgr.IsNO() or BranchMgr.IsNOTW() or BranchMgr.IsNOEN() or BranchMgr.IsNOKR()) then
     local payForbid = GameConfig.System and GameConfig.System.IOSPayForbid
     if payForbid then
-      MsgManager.ConfirmMsgByID(3000004)
+      if BranchMgr.IsNOKR() then
+        MsgManager.FloatMsg(nil, "테스트 기간 동안에는 iOS 기기에서 결제가 지원되지 않습니다. 공식 홈페이지를 통해 구매를 진행해주시기 바랍니다.")
+      else
+        MsgManager.ConfirmMsgByID(1000015)
+      end
       return
     end
   end

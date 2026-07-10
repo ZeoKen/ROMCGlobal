@@ -743,7 +743,7 @@ function NMyselfPlayer:TryAutoAttackTarget(npc, funcSelfType, autoLockType, func
     keepTarget = false
   elseif funcCheckTypes then
     for i = 1, #funcCheckTypes do
-      if funcCheckTypes[i](npc.data) then
+      if funcCheckTypes[i](curTarget.data) then
         keepTarget = true
         break
       end

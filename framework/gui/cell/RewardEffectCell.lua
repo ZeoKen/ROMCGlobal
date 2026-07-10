@@ -1,7 +1,13 @@
 RewardEffectCell = class("RewardEffectCell", ItemCell)
 local TabConfig = {
   [1] = "bag_tx_2",
-  [2] = "bag_tx_1"
+  [2] = "bag_tx_1",
+  [3] = "bag_tx_3"
+}
+local _RedTip = {
+  [1] = SceneTip_pb.EREDSYS_USEREFFECT_TRANSMIT,
+  [2] = SceneTip_pb.EREDSYS_USEREFFECT_KILL,
+  [3] = SceneTip_pb.EREDSYS_USEREFFECT_RUN
 }
 
 function RewardEffectCell:Init()
@@ -11,7 +17,7 @@ function RewardEffectCell:Init()
     go.name = "Common_ItemCell"
   end
   self.objInUse = self:FindGO("InUse")
-  self.emptyPart = self:FindGO("Eye")
+  self.emptyPart = self:FindComponent("Eye", UISprite)
   self.emptyIcon = self:FindComponent("EmptyIcon", UISprite)
   self.limitTimeFlag = self:FindGO("FlagSp")
   RewardEffectCell.super.Init(self)
@@ -28,12 +34,12 @@ function RewardEffectCell:SetData(data)
       itemdata = ItemData.new("reward", config.Item)
       self.objInUse:SetActive(data.isused == true)
       self.limitTimeFlag:SetActive(data.endtime and 0 < data.endtime or data.end_gvg_season and 0 < data.end_gvg_season or false)
-      self.emptyPart:SetActive(false)
+      self:Hide(self.emptyPart)
     else
       itemdata = ItemData.new("reward", 0)
       self.objInUse:SetActive(false)
       self.limitTimeFlag:SetActive(false)
-      self.emptyPart:SetActive(true)
+      self:Show(self.emptyPart)
       local spName = TabConfig[data.tabType]
       IconManager:SetUIIcon(spName, self.emptyIcon)
       self.emptyIcon:MakePixelPerfect()
@@ -42,6 +48,15 @@ function RewardEffectCell:SetData(data)
     self.gameObject:SetActive(true)
   else
     self.gameObject:SetActive(false)
+  end
+  local redtip = _RedTip[data.tabType]
+  if not redtip then
+    return
+  end
+  if RedTipProxy.Instance:IsNew(redtip, data.id) then
+    RedTipProxy.Instance:RegisterUI(redtip, self.emptyPart, 100, {20, 0}, NGUIUtil.AnchorSide.TopLeft, data.id)
+  else
+    RedTipProxy.Instance:UnRegisterUI(redtip, self.emptyPart)
   end
 end
 
