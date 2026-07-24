@@ -484,14 +484,15 @@ function MainViewItemPage:HandleBattleTime(note)
   if note and note.body and BagProxy.Instance.callBattletime then
     local data = note.body
     local itemdata = BagProxy.Instance:GetBattleTimeItem()
+    local count = BagProxy.Instance:GetBattleTimeItemCount()
     if data.tutortime and itemdata then
-      if itemdata:GetUseEffectTime() + data.tutortime > MaxBattletime and data.tutortime < MaxBattletime then
+      if itemdata:GetUseEffectTime() * count + data.tutortime > MaxBattletime and data.tutortime < MaxBattletime then
         MsgManager.ConfirmMsgByID(39012, function()
-          FunctionItemFunc.DoUseItem(itemdata, nil, 1)
+          FunctionItemFunc.DoUseItem(itemdata, nil, count)
         end, nil, nil)
         BagProxy.Instance.callBattletime = false
       else
-        FunctionItemFunc.DoUseItem(itemdata, nil, 1)
+        FunctionItemFunc.DoUseItem(itemdata, nil, count)
         BagProxy.Instance.callBattletime = false
       end
     end

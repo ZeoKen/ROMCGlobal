@@ -748,6 +748,15 @@ Table_WorldQuest = {
     StartCondition = _EmptyTable,
     Map = 155,
     Version = 10
+  },
+  [1016530001] = {
+    id = 1016530001,
+    Type = 2020,
+    Describe = "##45940728",
+    Name = "##45913605",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Version = 8
   }
 }
 Table_WorldQuest_fields = {

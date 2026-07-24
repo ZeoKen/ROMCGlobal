@@ -1000,7 +1000,11 @@ function MyHeadIconCell:Refresh(pFrame)
           if rets and 2 <= #rets then
             local index1 = tonumber(rets[1]) or 0
             local index2 = tonumber(rets[2]) or 0
-            if 0 < index1 and 0 < index2 and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[index2] then
+            if SnowCrownProxy and SnowCrownProxy.CheckFashionIndexesSameGroup and not SnowCrownProxy.CheckFashionIndexesSameGroup(index1, index2) then
+              headID = 0
+            elseif SnowCrownProxy and SnowCrownProxy.ResolveFashionBody then
+              headID = SnowCrownProxy.ResolveFashionBody(index1, index2) or headID
+            elseif 0 < index1 and 0 < index2 and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[index2] then
               local fashionConfig = GameConfig.Snow.Fashion[index2]
               if fashionConfig[index1] then
                 headID = fashionConfig[index1]

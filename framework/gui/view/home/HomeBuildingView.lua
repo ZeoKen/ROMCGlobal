@@ -10,6 +10,7 @@ autoImport("HomeBuildingWorldGridControl")
 autoImport("HomeBuildingGuideView")
 autoImport("HomeBuildingSceneBPControl")
 autoImport("QuickUsePopupFuncCell")
+autoImport("HomePictureManager")
 HomeBuildingView = class("HomeBuildingView", ContainerView)
 HomeBuildingView.ViewType = UIViewType.NormalLayer
 HomeBuildingView.CellSize = 0.5
@@ -232,6 +233,9 @@ function HomeBuildingView:InitEventListeners()
     if not self.cameraControl.isForbidOperate then
       self:CloseSelf()
     end
+  end)
+  self:AddClickEvent(self:FindGO("btnSave", l_objRightTopButtons), function()
+    self:OnSaveBtnClick()
   end)
   self:AddClickEvent(self.tabItemTip.homeContentCell.gameObject, function()
     if self.tabItemTip.homeContentCell.data then
@@ -1236,9 +1240,10 @@ function HomeBuildingView:OnClickBtnConfirm()
     local x, y, z = self.curOperateItem.assetFurniture:GetPositionXYZ()
     self.curOperateItem.assetFurniture:SetParent(HomeManager.Me():GetNearestWall(self.curOperateItem.curFloor, x, z).transform, true)
   end
+  local isFurnitureChanged = HomeManager.ClientTest or self.curOperateItem:IsMoved() or not self.curOperateItem.data:IsServerInited()
   HomeManager.Me():ConfirmPlaceFurniture(self.curOperateItem)
   self.guideView:OnFurniturePlaced(self.curOperateItem)
-  self.bpControl:RefreshStatus()
+  self.bpControl:RefreshStatus(nil, not isFurnitureChanged)
   self:ClearCurSelectItem()
   self:ShowBuildUI(true)
 end
@@ -1337,6 +1342,33 @@ function HomeBuildingView:UpdateCurOperateItemMoving(isResetPos)
       self.curOperateItem.assetFurniture:SetPosition(itemPos)
     end
   end
+end
+
+function HomeBuildingView:OnSaveBtnClick()
+  local curHouseConfig = HomeManager.Me():GetCurHouseConfig()
+  if curHouseConfig and curHouseConfig.Area == HomeProxy.HouseType.Garden then
+    MsgManager.ShowMsgByID(43683)
+    return
+  end
+  local mapId = Game.MapManager:GetMapID()
+  local snowHomeIdx
+  if HomeManager.Me():IsSnowRealmMap(mapId) then
+    snowHomeIdx = HomeManager.Me():GetCurHomeIdx()
+  end
+  local filters = self.filtersWhenViewOpen
+  FunctionSceneFilter.Me():StartFilter(filters)
+  local poses = HomePictureManager.Me():GetCapturePoses(false, snowHomeIdx)
+  HomePictureManager.Me():CaptureHomePhotoTextureAtRandomPose(poses, nil, function(texture, errMsg)
+    FunctionSceneFilter.Me():EndFilter(filters)
+    if not texture then
+      redlog("HomeBuildingView:OnSaveBtnClick capture failed", tostring(errMsg))
+      return
+    end
+    GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+      view = PanelConfig.HomeBluePrintSavePopup,
+      viewdata = {captureTexture = texture}
+    })
+  end)
 end
 
 function HomeBuildingView:OnEnter()

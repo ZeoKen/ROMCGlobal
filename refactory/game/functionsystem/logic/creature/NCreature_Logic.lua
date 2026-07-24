@@ -1,5 +1,9 @@
 local tempVector3 = LuaVector3.Zero()
-RideActionReason = {BattleInRiding = 1, RideWolf = 2}
+RideActionReason = {
+  BattleInRiding = 1,
+  RideWolf = 2,
+  SnakeCoaster = 3
+}
 PassengerAnim = {Wait = 0, Walk = 1}
 
 function NCreature:FreezeHold(b)

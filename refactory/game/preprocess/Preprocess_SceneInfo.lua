@@ -56,6 +56,33 @@ function Game.DoPreprocess_ScenePartInfo(info, sceneInfoName)
   end
 end
 
+function Game.DoPreprocess_CoasterInfo(coaster)
+  if nil == coaster then
+    return
+  end
+  if coaster.CoasterRoadPoints ~= nil then
+    local map = Game.PreprocessHelper_BuildMap(coaster.CoasterRoadPoints, "ID")
+    if nil ~= map then
+      coaster.coasterRoadPointMap = map
+    end
+  end
+  if coaster.CoasterCheckPoints ~= nil then
+    local groups = {}
+    local cps = coaster.CoasterCheckPoints
+    for i = 1, #cps do
+      local cp = cps[i]
+      local id = cp.ID
+      if id ~= nil then
+        if groups[id] == nil then
+          groups[id] = {}
+        end
+        groups[id][#groups[id] + 1] = cp
+      end
+    end
+    coaster.coasterCheckPointGroups = groups
+  end
+end
+
 function Game.DoPreprocess_SceneInfo(info)
   if nil == info then
     return
@@ -65,6 +92,11 @@ function Game.DoPreprocess_SceneInfo(info)
   if nil ~= info.Raids then
     for k, v in pairs(info.Raids) do
       Game.DoPreprocess_ScenePartInfo(v)
+    end
+  end
+  if nil ~= info.Coasters then
+    for k, v in pairs(info.Coasters) do
+      Game.DoPreprocess_CoasterInfo(v)
     end
   end
 end

@@ -14,6 +14,48 @@ local Title = {
   [25229] = ZhString.MountFashion_Tortoise,
   [25234] = ZhString.MountFashion_LandBird
 }
+local NoLightColor = LuaColor.New(1, 1, 1, 1)
+local SetRendererLightMapColor = function(renderers)
+  if not renderers then
+    return
+  end
+  for i = 1, #renderers do
+    local renderer = renderers[i]
+    local mats = renderer and renderer.materials
+    if mats then
+      for _, mat in pairs(mats) do
+        if mat then
+          RolePart.SetLightMapColor(mat, NoLightColor)
+        end
+      end
+    end
+  end
+end
+
+local function SetRolePartNoLight(rolePart)
+  if not rolePart then
+    return
+  end
+  SetRendererLightMapColor(rolePart.smrs)
+  SetRendererLightMapColor(rolePart.mrs)
+  local subparts = rolePart.subparts
+  if subparts then
+    for i = 1, #subparts do
+      SetRolePartNoLight(subparts[i])
+    end
+  end
+end
+
+local function SetAssetRolePartNoLight(assetRolePart)
+  local rolePart = assetRolePart and assetRolePart.args and assetRolePart.args[9]
+  SetRolePartNoLight(rolePart)
+  local subparts = assetRolePart and assetRolePart.subparts
+  if subparts then
+    for _, subpart in pairs(subparts) do
+      SetAssetRolePartNoLight(subpart)
+    end
+  end
+end
 
 function MountDressingView:Init()
   self:AddListenEvts()
@@ -44,11 +86,7 @@ function MountDressingView:InitData()
   self.categories = {}
   TableUtil.InsertArray(self.categories, categories)
   self.selectedIndex = {}
-  local _mountFashionProxy = MountFashionProxy.Instance
-  for i = 1, #self.categories do
-    local category = self.categories[i]
-    self.selectedIndex[i] = _mountFashionProxy:GetEquipedIndex(self.mountId, category)
-  end
+  self:RefreshSelectedIndex()
 end
 
 function MountDressingView:FindObjs()
@@ -87,7 +125,7 @@ function MountDressingView:FindObjs()
 end
 
 function MountDressingView:InitView()
-  self.titleLabel.text = Title[self.mountId] or ""
+  self.titleLabel.text = GameConfig.MountFashion.Title and GameConfig.MountFashion.Title[self.mountId] or Title[self.mountId] or ""
   self:InitToggle()
   self:InitScene()
   self:InitRole()
@@ -122,7 +160,9 @@ function MountDressingView:InitRole()
     assetRolePart:SetLayer(Game.ELayer.Outline)
     assetRolePart:ResetLocalEulerAnglesXYZ(0, 180, 0)
     assetRolePart:ResetLocalScaleXYZ(0.6, 0.6, 0.6)
+    SetAssetRolePartNoLight(assetRolePart)
   end, nil, Asset_RolePart.SkinQuality.Bone4, subparts, partColors)
+  self.role:SetSubPartCreatedCallBack(MountDressingView.OnRoleSubPartCreated, self)
 end
 
 function MountDressingView:InitScene()
@@ -134,10 +174,33 @@ function MountDressingView:InitScene()
   UIManagerProxy.Instance:RefitSceneModel(self.cameraPos, self.roleBg)
 end
 
-function MountDressingView:OnMountFashionChanged()
-  local config = Table_MountFashion[self.curStyleId]
-  if config then
-    MountFashionProxy.Instance:UpdateMountFashionData(self.mountId, config.Pos, self.curStyleId)
+function MountDressingView:OnMountFashionChanged(note)
+  local data = note and note.body or note
+  local mountId = data and (data.mount_id or data.mountid) or self.mountId
+  local pos = data and data.pos or self.curPos
+  local operateStyleId = data and data.style_id
+  if operateStyleId == nil and data then
+    operateStyleId = data.styleid
+  end
+  if operateStyleId == nil then
+    operateStyleId = self:GetOperateStyleId()
+  end
+  local _mountFashionProxy = MountFashionProxy.Instance
+  if operateStyleId == 0 and pos then
+    _mountFashionProxy:UpdateMountFashionData(mountId, pos, 0)
+  else
+    local config = Table_MountFashion[operateStyleId]
+    if config then
+      _mountFashionProxy:UpdateMountFashionData(mountId, config.Pos, operateStyleId)
+    end
+  end
+  if mountId == self.mountId and pos then
+    for i = 1, #self.categories do
+      if self.categories[i] == pos then
+        self.selectedIndex[i] = _mountFashionProxy:GetEquipedIndex(mountId, pos)
+        break
+      end
+    end
   end
   self:RefreshView(self.curTab)
 end
@@ -148,8 +211,14 @@ function MountDressingView:OnMountFashionActived()
 end
 
 function MountDressingView:OnMountFashionQueryState()
+  self:RefreshSelectedIndex()
   self:TabChangeHandler(1)
   self.inited = true
+  local cells = self.fashionListCtrl:GetCells()
+  local cell = cells[self.selectedIndex[self.curTab] or 1]
+  if cell then
+    self:RefreshModel(self.curStyleId, cell, false)
+  end
 end
 
 function MountDressingView:OnEnter()
@@ -166,6 +235,7 @@ end
 
 function MountDressingView:OnDestroy()
   if self.role then
+    self.role:RemoveSubPartCreatedCallBack()
     ReusableObject.Destroy(self.role)
     self.role = nil
   end
@@ -233,18 +303,41 @@ end
 function MountDressingView:RefreshView(tab)
   local toggleCells = self.toggleListCtrl:GetCells()
   local toggleCell = toggleCells[tab]
-  local list = MountFashionProxy.Instance:GetFashionList(self.mountId, toggleCell.data.category)
+  local category = toggleCell.data.category
+  local _mountFashionProxy = MountFashionProxy.Instance
+  local list = _mountFashionProxy:GetFashionList(self.mountId, category)
+  local fashionType = _mountFashionProxy:GetFashionType(self.mountId, category)
+  local defaultStyleId = _mountFashionProxy:GetDefaultFashionId(self.mountId, category)
   local datas = ReusableTable.CreateArray()
+  datas[#datas + 1] = {
+    id = 0,
+    index = 1,
+    isHideSwitch = true,
+    mountId = self.mountId,
+    pos = category,
+    type = fashionType,
+    defaultStyleId = defaultStyleId
+  }
+  local index = 1
   for i = 1, #list do
+    index = index + 1
     local data = {
       id = list[i],
-      index = i
+      index = index
     }
     datas[#datas + 1] = data
   end
   self.fashionListCtrl:ResetDatas(datas)
   ReusableTable.DestroyArray(datas)
-  self:SelectFashion(self.selectedIndex[self.curTab])
+  self:SelectFashion(self.selectedIndex[self.curTab] or 1)
+end
+
+function MountDressingView:RefreshSelectedIndex()
+  local _mountFashionProxy = MountFashionProxy.Instance
+  for i = 1, #self.categories do
+    local category = self.categories[i]
+    self.selectedIndex[i] = _mountFashionProxy:GetEquipedIndex(self.mountId, category)
+  end
 end
 
 function MountDressingView:SelectFashion(index)
@@ -256,34 +349,61 @@ function MountDressingView:SelectFashion(index)
 end
 
 function MountDressingView:OnFashionClick(cell)
-  self.curStyleId = cell.id
+  self.curIsHideSwitch = cell.isHideSwitch
+  self.curFashionType = cell.type
+  self.curStyleId = cell.isHideSwitch and 0 or cell.id
+  self.curPos = cell.pos
   redlog("curStyleId", tostring(self.curStyleId))
   self.selectedIndex[self.curTab] = cell.index
   self.isFashionLocked = cell.isLocked
-  self.changeBtn:SetActive(not (cell.isEquiped or cell.isLocked) and cell.isActived or false)
-  local needMat = MountFashionProxy.Instance:IsFashionNeedCostMaterial(self.curStyleId)
-  self.changeBtnDisable:SetActive(not cell.isEquiped and cell.isLocked and not needMat or false)
-  local showActive = not cell.isEquiped and needMat and not cell.isActived or false
+  local showEquiped = cell.isEquiped
+  self.changeBtn:SetActive(not (showEquiped or cell.isLocked) and cell.isActived or false)
+  local needMat = self.curStyleId ~= 0 and MountFashionProxy.Instance:IsFashionNeedCostMaterial(self.curStyleId) or false
+  self.changeBtnDisable:SetActive(not showEquiped and cell.isLocked and not needMat or false)
+  local showActive = not showEquiped and needMat and not cell.isActived or false
   self.activeContainer:SetActive(showActive)
   self:SetActivecContainer(showActive)
-  self.equiped:SetActive(cell.isEquiped or false)
+  self.equiped:SetActive(showEquiped or false)
   self:SetUnlockTipState(cell.isLocked and not needMat or false)
   local cells = self.fashionListCtrl:GetCells()
   for i = 1, #cells do
     cells[i]:SetSelectState(cells[i] == cell)
   end
-  local config = Table_MountFashion[self.curStyleId]
-  if config then
-    self.nameLabel.text = config.Name
+  self.nameLabel.gameObject:SetActive(not cell.isHideSwitch)
+  if not cell.isHideSwitch then
+    local config = Table_MountFashion[self.curStyleId]
+    if config then
+      self.nameLabel.text = config.Name
+    else
+      self.nameLabel.text = ""
+    end
+  else
+    self.nameLabel.text = ""
   end
   if self.inited then
-    self:RefreshModel(cell.id)
+    self:RefreshModel(self.curStyleId, cell)
     self:PlayFashionEffect()
-    self:PlayRoleAction()
+    self:PlayRoleActionWhenReady()
   end
 end
 
-function MountDressingView:RefreshModel(styleId)
+function MountDressingView:GetOperateStyleId()
+  return self.curStyleId
+end
+
+function MountDressingView:RefreshModel(styleId, cell, playAudio)
+  if cell and cell.isHideSwitch then
+    if cell.type == FashionType.SKIN and cell.defaultStyleId then
+      self:SetSkin(cell.defaultStyleId)
+    elseif cell.type == FashionType.SUBPART then
+      self:SetSubPartHidden(cell.pos)
+    end
+    if playAudio ~= false then
+      self:PlayFashionAudio(self.mountId, cell.pos)
+    end
+    SetAssetRolePartNoLight(self.role)
+    return
+  end
   local config = Table_MountFashion[styleId]
   if config then
     local type = config.Type
@@ -294,13 +414,21 @@ function MountDressingView:RefreshModel(styleId)
     end
     local pos = config.Pos
     local mountId = config.Mount
-    if GameConfig.MountFashion.PartAudio[mountId] then
-      local audio = GameConfig.MountFashion.PartAudio[mountId][pos]
-      if AudioMap.UI[audio] then
-        self:PlayUISound(AudioMap.UI[audio])
-      else
-        LogUtility.ErrorFormat("audio not exist! mountId={0}, pos={1}", mountId, pos)
-      end
+    if playAudio ~= false then
+      self:PlayFashionAudio(mountId, pos)
+    end
+    SetAssetRolePartNoLight(self.role)
+  end
+end
+
+function MountDressingView:PlayFashionAudio(mountId, pos)
+  local partAudio = GameConfig.MountFashion.PartAudio
+  if partAudio and partAudio[mountId] then
+    local audio = partAudio[mountId][pos]
+    if AudioMap.UI[audio] then
+      self:PlayUISound(AudioMap.UI[audio])
+    else
+      LogUtility.ErrorFormat("audio not exist! mountId={0}, pos={1}", mountId, pos)
     end
   end
 end
@@ -333,14 +461,36 @@ function MountDressingView:SetSubPart(styleId)
   end
 end
 
+function MountDressingView:SetSubPartHidden(pos)
+  local defaultStyleId = MountFashionProxy.Instance:GetDefaultFashionId(self.mountId, pos)
+  local config = defaultStyleId and Table_MountFashion[defaultStyleId]
+  if config then
+    if MountFashionProxy.Instance:IsDefaultFashionHide(self.mountId, pos) then
+      for i = 1, #config.PartIndex do
+        local subPartIndex = config.PartIndex[i]
+        local partIndex = Asset_Role.EncodeSubPartIndex(Asset_Role.PartIndex.Mount, subPartIndex)
+        self.role:ResetSubPart(partIndex, 0)
+      end
+    else
+      self:SetSubPart(defaultStyleId)
+    end
+  end
+end
+
 function MountDressingView:OnChangeMountFashionClick()
   if self.isFashionLocked then
     return
   end
-  local config = Table_MountFashion[self.curStyleId]
-  if config then
-    redlog("CallMountFashionChangeCmd", tostring(self.mountId), tostring(config.Pos), tostring(self.curStyleId))
-    ServiceItemProxy.Instance:CallMountFashionChangeCmd(self.mountId, config.Pos, self.curStyleId)
+  local operateStyleId = self:GetOperateStyleId()
+  if operateStyleId == 0 and self.curPos then
+    redlog("CallMountFashionChangeCmd", tostring(self.mountId), tostring(self.curPos), tostring(self.curStyleId))
+    ServiceItemProxy.Instance:CallMountFashionChangeCmd(self.mountId, self.curPos, 0)
+  else
+    local config = Table_MountFashion[operateStyleId]
+    if config then
+      redlog("CallMountFashionChangeCmd", tostring(self.mountId), tostring(config.Pos), tostring(operateStyleId))
+      ServiceItemProxy.Instance:CallMountFashionChangeCmd(self.mountId, config.Pos, operateStyleId)
+    end
   end
 end
 
@@ -375,24 +525,92 @@ local roleActionFinish = function(args)
   end
 end
 
+function MountDressingView.OnRoleSubPartCreated(subpart, view, assetRolePart, partIndex)
+  SetAssetRolePartNoLight(subpart)
+  if view then
+    TimeTickManager.Me():CreateOnceDelayTick(16, function(owner, deltaTime)
+      if owner and owner.role == assetRolePart then
+        SetAssetRolePartNoLight(owner.role)
+      else
+        SetAssetRolePartNoLight(subpart)
+      end
+    end, view)
+  end
+  if view and view.role == assetRolePart and view.inited and view.playRoleActionVersion then
+    view:PlayRoleAction()
+  end
+end
+
+function MountDressingView:PlayRoleActionWhenReady()
+  if not self.role then
+    return
+  end
+  self.playRoleActionVersion = (self.playRoleActionVersion or 0) + 1
+  self:PlayRoleAction()
+end
+
+function MountDressingView:PlayCurrentRoleActionFromStart()
+  if not self.role then
+    return false
+  end
+  local rolePart = self.role.args and self.role.args[9]
+  if not rolePart then
+    return false
+  end
+  if not self.role:GetPartAction() then
+    self.role:SetPartAction(true)
+  end
+  local animator = rolePart.animators and rolePart.animators[1]
+  if not animator then
+    return false
+  end
+  local ok, state = pcall(function()
+    return animator:GetCurrentAnimatorStateInfo(0)
+  end)
+  if not ok or not state then
+    return false
+  end
+  local actionHash = state.shortNameHash
+  if actionHash == nil or actionHash == 0 then
+    actionHash = state.fullPathHash
+  end
+  if actionHash == nil or actionHash == 0 then
+    return false
+  end
+  local args = {
+    self.role,
+    true
+  }
+  rolePart:PlayAction(actionHash, actionHash, 1, 0, roleActionFinish, args)
+  return true
+end
+
 function MountDressingView:PlayRoleAction()
   local config = GameConfig.MountFashion.PartAnim[self.mountId]
-  if config then
-    if not self.role:GetPartAction() then
-      self.role:SetPartAction(true)
-    end
-    local toggles = self.toggleListCtrl:GetCells()
-    local toggle = toggles[self.curTab]
-    local actionId = config[toggle.data.category]
-    local actionData = Table_ActionAnime[actionId]
-    if actionData then
-      local args = {
-        self.role,
-        true
-      }
-      self.role:PlayAction(actionData.Name, Asset_Role.ActionName.Idle, 1, 0, roleActionFinish, args)
-    end
+  if not config then
+    self:PlayCurrentRoleActionFromStart()
+    return
   end
+  if not self.role:GetPartAction() then
+    self.role:SetPartAction(true)
+  end
+  local toggles = self.toggleListCtrl:GetCells()
+  local toggle = toggles[self.curTab]
+  if not toggle then
+    return
+  end
+  local category = toggle.data and toggle.data.category
+  local actionId = config[category]
+  local actionData = Table_ActionAnime[actionId]
+  if not actionData then
+    self:PlayCurrentRoleActionFromStart()
+    return
+  end
+  local args = {
+    self.role,
+    true
+  }
+  self.role:PlayAction(actionData.Name, Asset_Role.ActionName.Idle, 1, 0, roleActionFinish, args)
 end
 
 function MountDressingView:InitActiveContainer()

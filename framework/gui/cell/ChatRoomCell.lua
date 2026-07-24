@@ -1,4 +1,5 @@
 autoImport("HeadIconCell")
+autoImport("HomeBlueprintProxy")
 local baseCell = autoImport("BaseCell")
 local tempVector3 = LuaVector3.Zero()
 ChatRoomCell = reusableClass("ChatRoomCell", baseCell)
@@ -14,6 +15,7 @@ end
 function ChatRoomCell:Deconstruct()
   self._alive = false
   self.data = nil
+  self.pendingBlueprintPrintItemKey = nil
   self.voiceid = nil
   self.voicetime = nil
   self.photoTex.mainTexture = nil
@@ -43,6 +45,7 @@ function ChatRoomCell:Finalize()
   EventManager.Me():RemoveEventListener(HomeWallPicManager.WallPicThumbnailDownloadProgressCallback, self.ChatPhotoThumbnailPhDlPgCallback, self)
   EventManager.Me():RemoveEventListener(HomeWallPicManager.WallPicThumbnailDownloadCompleteCallback, self.ChatPhotoThumbnailPhDlCpCallback, self)
   EventManager.Me():RemoveEventListener(HomeWallPicManager.WallPicThumbnailDownloadErrorCallback, self.ChatPhotoThumbnailPhDlErCallback, self)
+  EventManager.Me():RemoveEventListener(ServiceEvent.ChatCmdQueryPrintItem, self.HandleQueryPrintItemForBlueprint, self)
   self:ClearCB()
   GameObject.Destroy(self.gameObject)
 end
@@ -106,6 +109,50 @@ function ChatRoomCell:FindObjs()
   self:InitTipoff()
 end
 
+function ChatRoomCell:OpenBlueprintDetail()
+  local printItem = self.data and self.data:GetPrintItem()
+  local proxy = HomeBlueprintProxy.Instance
+  local key = proxy:GetPrintItemKey(printItem)
+  if key then
+    if self.pendingBlueprintPrintItemKey == key then
+      return
+    end
+    self.pendingBlueprintPrintItemKey = key
+    proxy:QueryPrintItem(printItem, true)
+  end
+end
+
+function ChatRoomCell:HandleQueryPrintItemForBlueprint(note)
+  local pendingKey = self.pendingBlueprintPrintItemKey
+  if not pendingKey or not self:Alive() then
+    return
+  end
+  local data = note and note.body
+  data = data or note and note.data or note
+  local proxy = HomeBlueprintProxy.Instance
+  local itemKey = proxy:GetPrintItemKey(data and data.item)
+  if not itemKey then
+    self.pendingBlueprintPrintItemKey = nil
+    return
+  end
+  if itemKey ~= pendingKey then
+    return
+  end
+  local printItem = self.data and self.data:GetPrintItem()
+  if proxy:GetPrintItemKey(printItem) ~= pendingKey then
+    self.pendingBlueprintPrintItemKey = nil
+    return
+  end
+  local itemData = proxy:GetQueryPrintItemData(printItem)
+  self.pendingBlueprintPrintItemKey = nil
+  if itemData then
+    GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+      view = PanelConfig.HomeBlueprintDetailPanel,
+      viewdata = itemData
+    })
+  end
+end
+
 function ChatRoomCell:AddEvts()
   self:SetEvent(self.headIcon.clickObj.gameObject, function()
     self:PassEvent(ChatRoomEvent.SelectHead, self)
@@ -116,6 +163,10 @@ function ChatRoomCell:AddEvts()
       return
     end
     local split = string.split(url, ChatRoomProxy.ItemCodeSymbol)
+    if split[1] == ChatRoomProxy.BlueprintUrlType then
+      self:OpenBlueprintDetail()
+      return
+    end
     local splitLength = #split
     if splitLength == 2 then
       if split[1] == "treasure" then
@@ -191,6 +242,7 @@ function ChatRoomCell:AddEvts()
   EventManager.Me():AddEventListener(HomeWallPicManager.WallPicThumbnailDownloadProgressCallback, self.ChatPhotoThumbnailPhDlPgCallback, self)
   EventManager.Me():AddEventListener(HomeWallPicManager.WallPicThumbnailDownloadCompleteCallback, self.ChatPhotoThumbnailPhDlCpCallback, self)
   EventManager.Me():AddEventListener(HomeWallPicManager.WallPicThumbnailDownloadErrorCallback, self.ChatPhotoThumbnailPhDlErCallback, self)
+  EventManager.Me():AddEventListener(ServiceEvent.ChatCmdQueryPrintItem, self.HandleQueryPrintItemForBlueprint, self)
 end
 
 function ChatRoomCell:InitShow()
@@ -276,6 +328,7 @@ end
 
 function ChatRoomCell:SetData(data)
   self.data = data
+  self.pendingBlueprintPrintItemKey = nil
   self.gameObject:SetActive(data ~= nil)
   self.tipoffForbidden = nil
   if data ~= nil then

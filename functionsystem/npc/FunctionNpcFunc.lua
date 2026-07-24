@@ -4,6 +4,7 @@ autoImport("FuncAdventureSkill")
 autoImport("FunctionMiyinStrengthen")
 autoImport("UIMapAreaList")
 autoImport("UIMapMapList")
+autoImport("SnakeCoasterManager")
 autoImport("RaidEnterWaitView")
 NpcFuncState = {
   Active = 1,
@@ -274,6 +275,7 @@ function FunctionNpcFunc:ctor()
   self.funcMap.FourthSkillCostGet = FunctionNpcFunc.FourthSkillCostGet
   self.funcMap.Stake = FunctionNpcFunc.Stake
   self.funcMap.MiniGameEntrance = FunctionNpcFunc.MiniGameEntrance
+  self.funcMap.SnakeCoasterEntrance = FunctionNpcFunc.SnakeCoasterEntrance
   self.funcMap.TechTree = FunctionNpcFunc.TechTree
   self.funcMap.TransferFight = FunctionNpcFunc.TransferFightEnter
   self.funcMap.DeadBossRaid = FunctionNpcFunc.DeadBossRaid
@@ -371,6 +373,11 @@ function FunctionNpcFunc:ctor()
   self.funcMap.OpenHomeMessageBoard = FunctionNpcFunc.OpenHomeMessageBoard
   self.funcMap.EnterHomeEditMode = FunctionNpcFunc.EnterHomeEditMode
   self.funcMap.ExitSnowHouseRaid = FunctionNpcFunc.ExitSnowHouseRaid
+  self.funcMap.HomeSaveBlueprint = FunctionNpcFunc.HomeSaveBlueprint
+  self.funcMap.SnowRealmSaveBlueprint = FunctionNpcFunc.SnowRealmSaveBlueprint
+  self.funcMap.AddBuffMyself = FunctionNpcFunc.AddBuffMyself
+  self.funcMap.DelBuffMyself = FunctionNpcFunc.DelBuffMyself
+  self.funcMap.StartSnowRealmActivity = FunctionNpcFunc.StartSnowRealmActivity
   self.checkMap.CreateGuild = FunctionNpcFunc.CheckCreateGuild
   self.checkMap.ApplyGuild = FunctionNpcFunc.CheckCreateGuild
   self.checkMap.QuickTeam = FunctionNpcFunc.CheckQuickTeam
@@ -504,6 +511,8 @@ function FunctionNpcFunc:ctor()
   self.checkMap.SnowCrown = FunctionNpcFunc.CheckSnowCrown
   self.checkMap.OpenHomeMessageBoard = FunctionNpcFunc.CheckOpenHomeMessageBoard
   self.checkMap.EnterHomeEditMode = FunctionNpcFunc.CheckEnterHomeEditMode
+  self.checkMap.SnowRealmSaveBlueprint = FunctionNpcFunc.CheckSnowRealmSaveBlueprint
+  self.checkMap.StartSnowRealmActivity = FunctionNpcFunc.CheckStartSnowRealmActivity
   self.updateCheckCache = {}
 end
 
@@ -2839,6 +2848,11 @@ function FunctionNpcFunc.MiniGameEntrance(npc, params, npcFunctionData)
   FunctionNpcFunc.JumpPanel(PanelConfig.MiniGameEntranceView)
 end
 
+function FunctionNpcFunc.SnakeCoasterEntrance(npc, params, npcFunctionData)
+  SnakeCoasterManager.Me():RequestServerInfo()
+  FunctionNpcFunc.JumpPanel(PanelConfig.SnakeCoasterEntranceView)
+end
+
 local TechTreeMapIDToggle = {
   [102] = 3,
   [104] = 3,
@@ -5005,6 +5019,164 @@ end
 
 function FunctionNpcFunc.CheckExitSnowHouseRaid(npc, param)
   if Game.MapManager:IsInSnowRealmHouseRaid() then
+    return NpcFuncState.Active
+  end
+  return NpcFuncState.InActive
+end
+
+local _GenNextSaveBlueprintId = function(houseType)
+  local myList = HomeBlueprintProxy.Instance:GetMyList()
+  local maxBase = 0
+  for i = 1, #myList do
+    local id = myList[i].photoId
+    if id then
+      local base = math.floor(id / 10)
+      if maxBase < base then
+        maxBase = base
+      end
+    end
+  end
+  return (maxBase + 1) * 10 + houseType
+end
+
+function FunctionNpcFunc:ListenSaveBlueprintResult(id, accid, houseType, snowHomeIdx)
+  EventManager.Me():RemoveEventListener(ServiceEvent.HomeCmdPrintUpdateHomeCmd, self.HandleSaveBlueprintResult, self)
+  self.pendingSaveBlueprint = {
+    id = id,
+    accid = accid,
+    houseType = houseType,
+    snowHomeIdx = snowHomeIdx
+  }
+  EventManager.Me():AddEventListener(ServiceEvent.HomeCmdPrintUpdateHomeCmd, self.HandleSaveBlueprintResult, self)
+end
+
+function FunctionNpcFunc:ClearSaveBlueprintResult()
+  self.pendingSaveBlueprint = nil
+  EventManager.Me():RemoveEventListener(ServiceEvent.HomeCmdPrintUpdateHomeCmd, self.HandleSaveBlueprintResult, self)
+end
+
+function FunctionNpcFunc:HandleSaveBlueprintResult(data)
+  local pending = self.pendingSaveBlueprint
+  if not (pending and data) or data.action ~= HomeCmd_pb.EPRINTACTION_SAVE then
+    return
+  end
+  local item = data.items and data.items[1]
+  if not item or item.id ~= pending.id then
+    return
+  end
+  self:ClearSaveBlueprintResult()
+  self:CaptureAndUploadSavedBlueprint(item, item.etype or pending.houseType, pending.snowHomeIdx)
+end
+
+function FunctionNpcFunc:CaptureAndUploadSavedBlueprint(item, houseType, snowHomeIdx)
+  if not item then
+    return
+  end
+  if houseType == HomeCmd_pb.EHOUSETYPE_SNOW and (not snowHomeIdx or snowHomeIdx <= 0) then
+    snowHomeIdx = HomeManager.Me():GetCurHomeIdx()
+  end
+  local poses = HomePictureManager.Me():GetCapturePoses(false, snowHomeIdx)
+  HomePictureManager.Me():CaptureHomePhotoTextureAtRandomPose(poses, nil, function(texture, errMsg)
+    if not texture then
+      LogUtility.Error("[FunctionNpcFunc] capture blueprint photo failed: " .. tostring(errMsg))
+      return
+    end
+    FunctionPhotoStorage.Me():SaveHomePhoto(FunctionPhotoStorage.PhotoType.HomeBlueprint, texture, item.id, ServerTime.CurServerTime() // 1000, nil, nil, function(success, uploadErrMsg)
+      Object.DestroyImmediate(texture)
+      if success then
+        redlog("[FunctionNpcFunc] upload blueprint photo success, id=", tostring(item.id))
+        self:UploadSavedBlueprintCheckPhoto(item, houseType, snowHomeIdx)
+      else
+        LogUtility.Error("[FunctionNpcFunc] upload blueprint photo failed: " .. tostring(uploadErrMsg))
+      end
+    end)
+  end)
+end
+
+function FunctionNpcFunc:UploadSavedBlueprintCheckPhoto(item, houseType, snowHomeIdx)
+  if not item then
+    return
+  end
+  local blueprintReviewLayer = Game.ELayer.PhotographPanel
+  local reviewPoses = HomePictureManager.Me():GetCapturePoses(true, snowHomeIdx)
+  HomeManager.Me():SetAllFurnituresLayer(blueprintReviewLayer, snowHomeIdx)
+  HomePictureManager.Me():CaptureAndUploadReviewAtPoses(reviewPoses, FunctionPhotoStorage.PhotoType.BlueprintCheck, item.id, function(index, success, errorMsg, photoId, timestamp)
+    redlog("[FunctionNpcFunc] upload blueprint check photo index=" .. tostring(index), "success=" .. tostring(success), "errorMsg=" .. tostring(errorMsg), "photoId=" .. tostring(photoId), "timestamp=" .. tostring(timestamp))
+  end, function(allSuccess)
+    HomeManager.Me():ResetFurnitureLayers()
+    redlog("[FunctionNpcFunc] upload blueprint check photo all finish allSuccess=", tostring(allSuccess))
+    if allSuccess then
+      ServiceHomeCmdProxy.Instance:CallReqHomeCheckHomeCmd(houseType)
+      MsgManager.ShowMsgByID(43675)
+    end
+  end, nil, blueprintReviewLayer)
+end
+
+local _TrySaveBlueprint = function(accid, houseType, snowHomeIdx)
+  local maxMyBlueprintNum = GameConfig.HomeBlueprint and GameConfig.HomeBlueprint.Limit and GameConfig.HomeBlueprint.Limit.MaxMyBlueprint or 6
+  if maxMyBlueprintNum <= HomeBlueprintProxy.Instance:GetMyBlueprintNum() then
+    MsgManager.ShowMsgByID(43676)
+    return
+  end
+  local name = ZhString.HomeBluePrint_SaveDefaultNamePrefix
+  local id = _GenNextSaveBlueprintId(houseType)
+  FunctionNpcFunc.Me():ListenSaveBlueprintResult(id, accid, houseType, snowHomeIdx)
+  ServiceHomeCmdProxy.Instance:CallPrintActionHomeCmd(HomeCmd_pb.EPRINTACTION_SAVE, {
+    accid = accid,
+    id = id,
+    datas = {
+      {
+        data = HomeCmd_pb.EPRINTDATA_NAME,
+        sdata = name
+      }
+    }
+  })
+end
+
+function FunctionNpcFunc.HomeSaveBlueprint(npc, param, npcFunctionData)
+  local curHouseData = HomeProxy.Instance:GetCurHouseData()
+  if not curHouseData then
+    return
+  end
+  _TrySaveBlueprint(curHouseData.accid, curHouseData.houseType)
+end
+
+function FunctionNpcFunc.SnowRealmSaveBlueprint(npc, param, npcFunctionData)
+  local houseData = SnowRealmProxy.Instance:GetHouseData(npc.data.uniqueid)
+  if not (houseData and houseData.accid) or houseData.accid == 0 then
+    MsgManager.ShowMsgByID(43681)
+    return
+  end
+  local snowHomeIdx = npc.data.uniqueid
+  _TrySaveBlueprint(houseData.accid, HomeCmd_pb.EHOUSETYPE_SNOW, snowHomeIdx)
+end
+
+function FunctionNpcFunc.CheckSnowRealmSaveBlueprint(npc, param)
+  local houseData = SnowRealmProxy.Instance:GetHouseData(npc.data.uniqueid)
+  if houseData and houseData.accid and houseData.accid ~= 0 then
+    return NpcFuncState.Active
+  end
+  return NpcFuncState.InActive
+end
+
+function FunctionNpcFunc.AddBuffMyself(npc, param, npcFunctionData)
+  local funcid = npcFunctionData.id
+  ServiceSceneUser3Proxy.Instance:CallNpcFuncOperateBuffUserCmd(funcid, true)
+end
+
+function FunctionNpcFunc.DelBuffMyself(npc, param, npcFunctionData)
+  local funcid = npcFunctionData.id
+  ServiceSceneUser3Proxy.Instance:CallNpcFuncOperateBuffUserCmd(funcid)
+end
+
+function FunctionNpcFunc.StartSnowRealmActivity(npc, param, npcFunctionData)
+  redlog("CallSnowRealmPartyStartSnowCmd")
+  ServiceSnowCmdProxy.Instance:CallSnowRealmPartyStartSnowCmd()
+end
+
+function FunctionNpcFunc.CheckStartSnowRealmActivity(npc, param)
+  local isActive = SnowRealmActivityProxy.Instance:IsActive()
+  if Game.MapManager:IsInSnowRealmHouseRaid() and not isActive then
     return NpcFuncState.Active
   end
   return NpcFuncState.InActive

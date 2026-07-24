@@ -34,7 +34,8 @@ function SetViewServiceKRPage:Init(initParama)
           playerName = Game.Myself.data:GetName()
           playerName = RemoveSpecialChara(playerName)
         end
-        FunctionSDK.Instance:EnterBugReport(tostring(serverData.sid), accid, playerName)
+        local charid = Game.Myself.data.id
+        FunctionSDK.Instance:EnterBugReport(tostring(serverData.sid), charid, playerName)
       end
     else
       Application.OpenURL("http://member.gnjoy.com/mobile/inquiry/rom")

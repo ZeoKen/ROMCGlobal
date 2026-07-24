@@ -4393,6 +4393,7 @@ Table_HomeFurniture = {
   },
   [31303] = {
     id = 31303,
+    Name = "Immortal_02_Chair",
     NameZh = "椅·雅正",
     Col = 2,
     Height = 3,
@@ -6025,7 +6026,6 @@ Table_HomeFurniture = {
   },
   [32129] = {
     id = 32129,
-    Name = "Xhzd_01_Cupboard",
     NameZh = "藏梦小柜·零星",
     Col = 2,
     EndHeight = 3,
@@ -9440,7 +9440,7 @@ local cell_mt = {
     FurnitureFunction = _EmptyTable,
     HomeScore = 10,
     LoadShowPosition = _EmptyTable,
-    Name = "Immortal_02_Chair",
+    Name = "Xhzd_01_Cupboard",
     NameZh = "南瓜马车",
     NormalType = 1,
     Npc = _EmptyTable,

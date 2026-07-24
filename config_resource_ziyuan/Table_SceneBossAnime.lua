@@ -3448,6 +3448,48 @@ Table_SceneBossAnime = {
     ObjID = 3,
     Name = "state2002",
     DescInfo = "##44726855"
+  },
+  [666] = {
+    id = 666,
+    ObjID = 4,
+    Name = "state2002",
+    DescInfo = "##45940266"
+  },
+  [668] = {
+    id = 668,
+    ObjID = 5,
+    Name = "state2002",
+    DescInfo = "##45940268"
+  },
+  [670] = {
+    id = 670,
+    ObjID = 6,
+    Name = "state2002",
+    DescInfo = "##45940270"
+  },
+  [671] = {
+    id = 671,
+    ObjID = 7,
+    Name = "mfx_snowfrost_worship_seal_state1001",
+    DescInfo = "##45940272"
+  },
+  [672] = {
+    id = 672,
+    ObjID = 7,
+    Name = "mfx_snowfrost_worship_seal_state2001",
+    DescInfo = "##45940273"
+  },
+  [673] = {
+    id = 673,
+    ObjID = 8,
+    Name = "mfx_frostsnow_jg_state2001",
+    DescInfo = "##45940274"
+  },
+  [674] = {
+    id = 674,
+    ObjID = 8,
+    Name = "mfx_frostsnow_jg_state1001",
+    DescInfo = "##45940274"
   }
 }
 Table_SceneBossAnime_fields = {

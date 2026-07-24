@@ -5,6 +5,8 @@ autoImport("ChatRoomRedPacketMyselfCell")
 autoImport("ChatRoomRedPacketSomeoneCell")
 autoImport("ChatRoomMyselfRecruitCell")
 autoImport("ChatRoomSomeoneRecruitCell")
+autoImport("ChatRoomMyselfTeamRecruitCell")
+autoImport("ChatRoomSomeoneTeamRecruitCell")
 local baseCell = autoImport("BaseCell")
 ChatRoomCombineCell = class("ChatRoomCombineCell", baseCell)
 
@@ -21,6 +23,8 @@ function ChatRoomCombineCell:InitShow()
   self.controlMap[ChatTypeEnum.SomeoneRedPacket] = ChatRoomRedPacketSomeoneCell
   self.controlMap[ChatTypeEnum.MyselfRecruit] = ChatRoomMyselfRecruitCell
   self.controlMap[ChatTypeEnum.SomeoneRecruit] = ChatRoomSomeoneRecruitCell
+  self.controlMap[ChatTypeEnum.MyselfTeamRecruit] = ChatRoomMyselfTeamRecruitCell
+  self.controlMap[ChatTypeEnum.SomeoneTeamRecruit] = ChatRoomSomeoneTeamRecruitCell
   self.cellMap = {}
   self.eventMap = {}
 end

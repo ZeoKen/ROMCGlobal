@@ -1598,6 +1598,10 @@ function HomeManager:GetPlacedFurnitureCells(tag)
   return self.buildingGrid:GetPlacedFurnitureCells(tag)
 end
 
+function HomeManager:GetCurrentBuildingGrid()
+  return self.buildingGrid
+end
+
 function HomeManager:ConvertWorldPositionToRowAndCol(floorIndex, posX, posZ)
   return self.buildingGrid:ConvertWorldPositionToRowAndCol(floorIndex, posX, posZ)
 end

@@ -12,6 +12,9 @@ end
 function AI_CMD_Myself_DirMoveEnd:Start(time, deltaTime, creature)
   creature:Client_SetIsDirMoving(false)
   creature.ai:SetIdleAction(self.args[1])
+  if creature.OnSkatingDirInputEnd then
+    creature:OnSkatingDirInputEnd()
+  end
   return false
 end
 

@@ -53,6 +53,21 @@ local mFSameRefine = function(dstRefine, srcRefine)
   end
   return (dstRefine == 1 or dstRefine == 2) and (srcRefine == 1 or srcRefine == 2)
 end
+local getTransferType = function(equip)
+  if not equip then
+    return
+  end
+  local equipInfo = equip.equipInfo
+  if equipInfo and equipInfo:IsSnowEquip() then
+    local cfg = GameConfig.Equip.SnowEquipTransferType
+    return cfg and cfg[equipInfo:GetEquipType()]
+  end
+  local cfg = GameConfig.Equip.EquipTransferType
+  if not cfg or not equip.staticData then
+    return
+  end
+  return cfg[equip.staticData.Type]
+end
 
 function mFGetTransferCost(srcData, dstData)
   if not srcData or not dstData then
@@ -75,23 +90,16 @@ function mFGetTransferCost(srcData, dstData)
   local costParam = CostParamName[srcRefine] and CostParamName[srcRefine][dstRefine]
   if costParam then
     local refinelv = srcData.equipInfo.refinelv
-    local rtype = GameConfig.Equip.EquipTransferType[srcData.staticData.Type]
+    local rtype = getTransferType(srcData)
     if rtype and refinelv then
       if not mReverse_Table_RefineTransfer then
         mFInitTransferCostConfig()
       end
-      retCost = mReverse_Table_RefineTransfer[rtype][refinelv] and mReverse_Table_RefineTransfer[rtype][refinelv][costParam]
+      local costConfig = mReverse_Table_RefineTransfer[rtype]
+      retCost = costConfig and costConfig[refinelv] and costConfig[refinelv][costParam]
     end
   end
   return retCost
-end
-
-local getTransferType = function(equip)
-  local cfg = GameConfig.Equip.EquipTransferType
-  if not equip or not cfg then
-    return
-  end
-  return cfg[equip.staticData.Type]
 end
 
 function CheckIsSameType(equip1, equip2)

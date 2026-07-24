@@ -887,6 +887,22 @@ Table_DungeonManual = {
       2542
     }
   },
+  [21204] = {
+    id = 21204,
+    Type = 2,
+    Name = "##45939775",
+    MainpageID = 2,
+    SubpageID = 212,
+    Typesetting = 3,
+    MonsterType = 1,
+    TextID = {
+      2550,
+      5,
+      2551,
+      3,
+      2552
+    }
+  },
   [29100] = {
     id = 29100,
     Type = 1,

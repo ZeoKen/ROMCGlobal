@@ -2218,6 +2218,13 @@ Table_Mount = {
     TransformStartSE = "",
     TransformEndSE = ""
   },
+  [29454] = {
+    id = 29454,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
   [600321] = {
     id = 600321,
     EquipCondition = _EmptyTable,

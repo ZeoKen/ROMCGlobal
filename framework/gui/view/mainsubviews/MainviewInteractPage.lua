@@ -169,6 +169,10 @@ function MainviewInteractPage:UpdateReason_Nonmount(type, value, prompt, icon)
   if hasReason ~= value then
     self.reasonMap_Nonmount[type] = value
     self:ShowInteractBtn_Nonmount(prompt, icon)
+    self._lastNonmountPrompt = prompt
+  elseif type == ForbidShowReason.Trigger and value == 0 and prompt ~= self._lastNonmountPrompt then
+    self:ShowInteractBtn_Nonmount(prompt, icon)
+    self._lastNonmountPrompt = prompt
   end
 end
 
@@ -177,7 +181,8 @@ function MainviewInteractPage:ShowInteractBtn()
     return
   end
   for k, v in pairs(self.reasonMap) do
-    if v == 1 then
+    if k == ForbidShowReason.AutoBattle and Game.InteractNpcManager:IsCurTriggerForceMove() then
+    elseif v == 1 then
       if self.interactBtnGO.activeSelf then
         self.interactBtnGO:SetActive(false)
         self.interactBtnGrid:Reposition()
@@ -220,7 +225,7 @@ function MainviewInteractPage:UpdateInteractBtn(note)
   local isMyselfOnNpc = note and note.body or Game.InteractNpcManager:IsMyselfOnNpc()
   self.interactBtn.CurrentState = isMyselfOnNpc and 1 or 0
   self.interactBtn:MakePixelPerfect()
-  self.interactLabel.text = isMyselfOnNpc and ZhString.InteractNpc_GetOff or ZhString.InteractNpc_GetOn
+  self.interactLabel.text = Game.InteractNpcManager:GetInteractPrompt(isMyselfOnNpc)
 end
 
 function MainviewInteractPage:UpdateInteractBtn_Nonmount(note, prompt, icon)

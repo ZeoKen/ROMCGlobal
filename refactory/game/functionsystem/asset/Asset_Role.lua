@@ -391,6 +391,11 @@ function Asset_Role:LoadHeadFashionEffect()
   if not effectIndex or effectIndex == 0 then
     return
   end
+  local index1 = self.partIDs[Asset_Role.PartIndexEx.HeadFashionIndex1]
+  local index2 = self.partIDs[Asset_Role.PartIndexEx.HeadFashionIndex2]
+  if SnowCrownProxy and SnowCrownProxy.CheckFashionIndexesSameGroup and not SnowCrownProxy.CheckFashionIndexesSameGroup(index1, index2, effectIndex) then
+    return
+  end
   local effectPath = GameConfig.Snow and GameConfig.Snow.FashionEffect and GameConfig.Snow.FashionEffect[effectIndex]
   if not effectPath or effectPath == "" then
     return
@@ -606,7 +611,11 @@ function Asset_Role.PreprocessParts(parts, gender)
       local index2 = parts[PartIndexEx.HeadFashionIndex2]
       if index1 and 0 < index1 or index2 and 0 < index2 then
         local snowBodyId
-        if index1 and index2 and 0 < index1 and 0 < index2 then
+        if SnowCrownProxy and SnowCrownProxy.CheckFashionIndexesSameGroup and not SnowCrownProxy.CheckFashionIndexesSameGroup(index1, index2) then
+          snowBodyId = nil
+        elseif SnowCrownProxy and SnowCrownProxy.ResolveFashionBody then
+          snowBodyId = SnowCrownProxy.ResolveFashionBody(index1, index2)
+        elseif index1 and index2 and 0 < index1 and 0 < index2 then
           if GameConfig.Snow and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[index2] then
             local fashionConfig = GameConfig.Snow.Fashion[index2]
             if fashionConfig[index1] then

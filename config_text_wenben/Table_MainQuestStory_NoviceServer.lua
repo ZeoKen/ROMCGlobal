@@ -426,8 +426,8 @@ Table_MainQuestStory = {
     id = 52,
     version = "18.0",
     index = 2,
-    QuestName = "敬请期待",
-    Mstory = {664636},
+    QuestName = "雪中邂逅",
+    Mstory = {556376},
     PuzzleReward = _EmptyTable,
     LvRange = {110}
   },

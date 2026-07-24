@@ -4254,6 +4254,22 @@ PanelConfig = {
     prefab = "HomePhotoResultPanel",
     class = "HomePhotoResultPanel"
   },
+  HomeBluePrintSavePopup = {
+    id = 1857,
+    tab = nil,
+    name = "蓝图保存弹窗",
+    desc = "",
+    prefab = "HomeBluePrintSavePopup",
+    class = "HomeBluePrintSavePopup"
+  },
+  HomeBlueprintDetailPanel = {
+    id = 1858,
+    tab = nil,
+    name = "蓝图详情界面",
+    desc = "",
+    prefab = "HomeBlueprintDetailPanel",
+    class = "HomeBlueprintDetailPanel"
+  },
   PrestigeShopView = {
     id = 1860,
     tab = nil,
@@ -4514,6 +4530,14 @@ PanelConfig = {
     prefab = "MiniGameRankPopUp",
     class = "MiniGameRankPopUp"
   },
+  MiniGameSnakeCoasterPage = {
+    id = 2035,
+    tab = nil,
+    name = "巨蛇过山车主界面",
+    desc = "",
+    prefab = "MiniGameSnakeCoasterPage",
+    class = "MiniGameSnakeCoasterPage"
+  },
   AppStoreCodeRewardPopup = {
     id = 2040,
     tab = nil,
@@ -4561,6 +4585,22 @@ PanelConfig = {
     desc = "",
     prefab = "SkadaRankingPopup",
     class = "SkadaRankingPopup"
+  },
+  SnakeCoasterEntranceView = {
+    id = 2055,
+    tab = nil,
+    name = "巨蛇过山车入口",
+    desc = "",
+    prefab = "SnakeCoasterEntranceView",
+    class = "SnakeCoasterEntranceView"
+  },
+  SnakeCoasterRankPopUp = {
+    id = 2056,
+    tab = nil,
+    name = "巨蛇过山车排行榜",
+    desc = "",
+    prefab = "MiniGameRankPopUp",
+    class = "SnakeCoasterRankPopUp"
   },
   QuestMiniGame1Panel = {
     id = 2060,

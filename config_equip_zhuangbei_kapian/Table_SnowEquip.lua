@@ -6,16 +6,16 @@ Table_SnowEquip = {
   },
   [2] = {
     id = 2,
-    ValidEquipPos = {
-      5,
-      6,
-      7
-    },
+    ValidEquipPos = {2, 7},
     EquipStoneCount = 2
   },
   [3] = {
     id = 3,
-    ValidEquipPos = {2, 4},
+    ValidEquipPos = {
+      4,
+      5,
+      6
+    },
     EquipStoneCount = 2
   }
 }

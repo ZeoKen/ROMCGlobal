@@ -186,7 +186,7 @@ end
 
 function SkillFreeCast:ShowWarningEffect(creature)
   if creature then
-    local path = self:GetCastWarningEffectPath(creature)
+    local warningType, path, path02 = self:GetCastWarningEffectPath(creature)
     if not path then
       return
     end
@@ -196,20 +196,37 @@ function SkillFreeCast:ShowWarningEffect(creature)
     local scale = creature:GetScale() or 1
     self.sourceCreatureGuid = creature.data.id
     if scale ~= 0 and endSize then
-      creature:PlayCastWarningEffect(key, path, endSize / scale, (endSize2 or endSize) / scale, castTime)
+      if warningType == Asset_Effect.WarningEffectType.Sweep then
+        local sweepAngle = self.info:GetWarningAngle()
+        local warningDir = self.info:GetWarningDir()
+        local targetAngles = self.info:GetWarningExtendAngles()
+        local noZeroAngle = self.info:GetWarningNoZeroAngle()
+        if not noZeroAngle then
+          table.insert(targetAngles, 0)
+        end
+        self.sweepWarningKeys = self.sweepWarningKeys or {}
+        TableUtility.ArrayClear(self.sweepWarningKeys)
+        for i = 1, #targetAngles do
+          local subKey = key * 1000 + i
+          self.sweepWarningKeys[#self.sweepWarningKeys + 1] = subKey
+          creature:PlayCastSweepWarningEffect(subKey, path, path02, endSize / scale, (endSize2 or endSize) / scale, castTime, sweepAngle, warningDir, targetAngles[i])
+        end
+      else
+        creature:PlayCastWarningEffect(key, path, endSize / scale, (endSize2 or endSize) / scale, castTime)
+      end
     end
   end
 end
 
 function SkillFreeCast:GetCastWarningEffectPath(creature)
   if self.info.logicParam.angle then
-    return EffectMap.SkillEffectMap.Eff_sector_buff
+    return Asset_Effect.WarningEffectType.Sweep, EffectMap.SkillEffectMap.Eff_sweep_buff01, EffectMap.SkillEffectMap.Eff_sweep_buff02
   elseif self.info.logicParam.range then
-    return EffectMap.SkillEffectMap.Eff_circular_buff
+    return Asset_Effect.WarningEffectType.Circle, EffectMap.SkillEffectMap.Eff_circular_buff
   elseif self.info.logicParam.distance then
-    return EffectMap.SkillEffectMap.Eff_square_buff
+    return Asset_Effect.WarningEffectType.Rect, EffectMap.SkillEffectMap.Eff_square_buff
   end
-  return nil
+  return nil, nil
 end
 
 function SkillFreeCast:GetCastTime(creature)
@@ -223,9 +240,15 @@ function SkillFreeCast:ShutdownCastWarningEffect(creature)
     local guid = self.phaseData:GetSkillPhase()
     sourceCreature = FindCreature(self.sourceCreatureGuid)
   end
-  local key = self.info:GetSkillID()
-  if sourceCreature then
-    sourceCreature:ClearCastWarningEffect(key)
+  if not sourceCreature then
+    return
+  end
+  sourceCreature:ClearCastWarningEffect(self.info:GetSkillID())
+  if self.sweepWarningKeys and #self.sweepWarningKeys > 0 then
+    for i = 1, #self.sweepWarningKeys do
+      sourceCreature:ClearCastWarningEffect(self.sweepWarningKeys[i])
+    end
+    TableUtility.ArrayClear(self.sweepWarningKeys)
   end
 end
 

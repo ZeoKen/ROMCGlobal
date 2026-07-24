@@ -22,6 +22,7 @@ autoImport("RaidPuzzleManager")
 autoImport("LightPuzzleManager")
 autoImport("CookMasterManager")
 autoImport("RunnerChallengeManager")
+autoImport("SnakeCoasterManager")
 autoImport("RandomAIManager")
 autoImport("TappingManager")
 autoImport("FollowNpcAIManager")
@@ -1126,6 +1127,7 @@ function MapManager:Launch()
   FunctionAbyssLake.Me():Launch(self.mapInfo[1])
   FunctionAbyssDragon.Me():Launch()
   FunctionSnowman.Me():Launch()
+  self:_LoadSceneAreaTriggers()
   if MapManager.Mode.Raid == self.mode then
     self.dungeonManager:SetRaidID(self.curActiveMapID)
   else
@@ -1247,6 +1249,7 @@ function MapManager:Shutdown()
   self.visitNpcManager:Shutdown()
   LightPuzzleManager.Me():Shutdown()
   FunctionSniperMode.Me():LeaveScene()
+  SnakeCoasterManager.Me():Shutdown()
   RunnerChallengeManager.Me():Shutdown()
   RandomAIManager.Me():Shutdown()
   FunctionLocalActivity.Me():OnLeaveScene()
@@ -1347,6 +1350,39 @@ end
 
 function MapManager:GetImageID()
   return self.mapInfo[8] or 0
+end
+
+function MapManager:_LoadSceneAreaTriggers()
+  local mapId = self.mapInfo and self.mapInfo[1]
+  local config = mapId and Table_Map[mapId]
+  if config == nil then
+    return
+  end
+  local sceneInfo = autoImport("Scene_" .. config.NameEn)
+  if sceneInfo == nil then
+    return
+  end
+  local triggers = sceneInfo.SceneAreaTrigger
+  if not triggers or #triggers == 0 then
+    return
+  end
+  for i = 1, #triggers do
+    local t = triggers[i]
+    if t and t.ID and t.position then
+      SceneTriggerProxy.Instance:Add({
+        id = string.format("SceneTrigger_%d", t.ID),
+        type = AreaTrigger_Common_ClientType.SceneBossAnime_Area,
+        pos = {
+          t.position[1],
+          t.position[2],
+          t.position[3]
+        },
+        range = t.range or 5,
+        enterAnimeID = t.enterAnimeID,
+        leaveAnimeID = t.leaveAnimeID
+      })
+    end
+  end
 end
 
 function MapManager:SetInnerAreaTrigger(mapId)

@@ -16,15 +16,15 @@ local Enviroment_293 = {
   fog = {
     fog = true,
     fogColor = {
-      0.226057112216949,
-      0.511085748672485,
-      0.688000023365021,
+      0.364705890417099,
+      0.674509823322296,
+      0.866666734218597,
       1
     },
     fogMode = 1,
     fogStartDistance = 10,
     fogEndDistance = 110,
-    globalFogTuner = 0.224999994039536,
+    globalFogTuner = 0.300000011920929,
     heightFogMode = 1,
     heightFogCutoff = 9.99999974737875E-6,
     heightFogStart = 0,
@@ -35,16 +35,16 @@ local Enviroment_293 = {
     heightFogMinOpacity = 0,
     radiusFogFactor = 1,
     nearFogColor = {
-      0.262857139110565,
-      0.414000064134598,
-      0.551999986171722,
+      0.14509804546833,
+      0.298039227724075,
+      0.435294151306152,
       1
     },
     nearFogDistance = 10,
     farFogColor = {
-      0.226057112216949,
-      0.511085748672485,
-      0.688000023365021,
+      0.364705890417099,
+      0.674509823322296,
+      0.866666734218597,
       1
     },
     farFogDistance = 120,

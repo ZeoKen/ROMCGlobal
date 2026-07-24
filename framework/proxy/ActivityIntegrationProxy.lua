@@ -7,6 +7,38 @@ local _SuperSignTimeStr = function(timestamp)
   end
   return os.date("%Y-%m-%d %H:%M:%S", math.floor(timestamp))
 end
+local _GetActPersonalConfigEndTime = function(actPersonalData)
+  if not actPersonalData then
+    return nil
+  end
+  local stamp = EnvChannel.IsTFBranch() and actPersonalData.TfEndTimeStamp or actPersonalData.EndTimeStamp
+  if stamp then
+    return stamp
+  end
+  local endTime = EnvChannel.IsTFBranch() and actPersonalData.TfEndTime or actPersonalData.EndTime
+  if endTime and endTime ~= "" then
+    return KFCARCameraProxy.Instance:GetSelfCustomDate(endTime)
+  end
+end
+local _CanAcceptActPersonalShortEndTime = function(actid, serverEndTime, existEndTime)
+  if not (serverEndTime and existEndTime) or existEndTime <= serverEndTime then
+    return false
+  end
+  local actPersonalData = Table_ActPersonalTimer and Table_ActPersonalTimer[actid]
+  local misc = actPersonalData and actPersonalData.Misc
+  if not (actPersonalData and actPersonalData.Type == "new_server_challenge" and actPersonalData.CloseDay and misc) or misc.end_when_finish ~= 1 then
+    return false
+  end
+  local curTime = ServerTime.CurServerTime() / 1000
+  if serverEndTime <= curTime then
+    return false
+  end
+  local configEndTime = _GetActPersonalConfigEndTime(actPersonalData)
+  if configEndTime and serverEndTime > configEndTime then
+    return false
+  end
+  return true
+end
 local _SuperSignServerTimeZone = function()
   if ServerTime.SERVER_TIMEZONE then
     return ServerTime.SERVER_TIMEZONE
@@ -382,7 +414,8 @@ function ActivityIntegrationProxy:RecvActPersonalTimeSyncCmd(data)
     for i = 1, #actTimes do
       local single = actTimes[i]
       local existData = self.activityTaskActMap[single.act_id]
-      if existData and existData.endtime and existData.endtime > single.end_time then
+      local acceptShortEndTime = _CanAcceptActPersonalShortEndTime(single.act_id, single.end_time, existData and existData.endtime)
+      if existData and existData.endtime and existData.endtime > single.end_time and not acceptShortEndTime then
       else
         self.activityTaskActMap[single.act_id] = {
           starttime = single.start_time,

@@ -50,6 +50,12 @@ FactoryAICMD.DirMoveCmd = {
 FactoryAICMD.DirMoveEndCmd = {
   AI_CMD_DirMoveEnd
 }
+FactoryAICMD.CoasterMoveCmd = {
+  AI_CMD_CoasterMove
+}
+FactoryAICMD.CoasterMoveEndCmd = {
+  AI_CMD_CoasterMoveEnd
+}
 FactoryAICMD.SpinCmd = {
   AI_CMD_Spin
 }
@@ -61,6 +67,9 @@ FactoryAICMD.BreakdownCmd = {
 }
 FactoryAICMD.BreakdownEndCmd = {
   AI_CMD_BreakdownEnd
+}
+FactoryAICMD.GlidingCmd = {
+  AI_CMD_Gliding
 }
 FactoryAICMD.Me_PlaceToCmd = {
   AI_CMD_Myself_PlaceTo
@@ -103,6 +112,9 @@ FactoryAICMD.Me_SpinCmd = {
 }
 FactoryAICMD.Me_SpinEndCmd = {
   AI_CMD_Myself_SpinEnd
+}
+FactoryAICMD.Me_BeHoldedCmd = {
+  AI_CMD_Myself_BeHolded
 }
 
 function FactoryAICMD.GetPlaceToCmd(pos, ignoreNavMesh)
@@ -256,6 +268,20 @@ function FactoryAICMD.GetDirMoveEndCmd(customIdleAction)
   return cmd
 end
 
+function FactoryAICMD.GetCoasterMoveCmd(coasterMove, ignoreNavMesh, customMoveActionName)
+  local cmd = FactoryAICMD.CoasterMoveCmd
+  cmd[2] = coasterMove
+  cmd[3] = ignoreNavMesh
+  cmd[4] = customMoveActionName
+  return cmd
+end
+
+function FactoryAICMD.GetCoasterMoveEndCmd(customIdleAction)
+  local cmd = FactoryAICMD.CoasterMoveEndCmd
+  cmd[2] = customIdleAction
+  return cmd
+end
+
 function FactoryAICMD.GetSpinEndCmd()
   local cmd = FactoryAICMD.SpinEndCmd
   return cmd
@@ -304,6 +330,16 @@ function FactoryAICMD.Me_GetDirMoveEndCmd(customIdleAction)
   local cmd = FactoryAICMD.Me_DirMoveEndCmd
   cmd[2] = customIdleAction
   return cmd
+end
+
+function FactoryAICMD.Me_GetBeHoldedCmd(masterGUID)
+  local cmd = FactoryAICMD.Me_BeHoldedCmd
+  cmd[2] = masterGUID
+  return cmd
+end
+
+function FactoryAICMD.GetGlidingCmd()
+  return FactoryAICMD.GlidingCmd
 end
 
 function FactoryAICMD.Me_GetSetScaleCmd(scaleX, scaleY, scaleZ, noSmooth)

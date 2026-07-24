@@ -8,8 +8,12 @@ function AI_CMD_MoveToHelper.OnMoveFinished(creatureGUID)
   creature.assetRole:PlayActionSE(Asset_Role.ActionName.Move)
 end
 
+function AI_CMD_MoveToHelper.GetMoveHost(creature)
+  return creature:_GetRemoteCoasterMoveHost() or creature
+end
+
 function AI_CMD_MoveToHelper:Start(time, deltaTime, creature, p, ignoreNavMesh, range, customMoveActionName)
-  if creature.ai.parent ~= nil then
+  if creature.ai.parent ~= nil and not creature:_GetRemoteCoasterMoveHost() then
     return false
   end
   if creature.data:DeepFreeze() then
@@ -32,19 +36,32 @@ function AI_CMD_MoveToHelper:Start(time, deltaTime, creature, p, ignoreNavMesh, 
       return false
     end
   end
+  local remoteHost = creature:_GetRemoteCoasterMoveHost()
+  if remoteHost then
+    return true
+  end
   creature:Client_SetIsMoveToWorking(true, customMoveActionName)
   creature:Logic_PlayAction_Move(customMoveActionName, nil, AI_CMD_MoveToHelper.OnMoveFinished)
+  if creature.PrepareSkatingMoveTo then
+    creature:PrepareSkatingMoveTo(p)
+  end
   return true
 end
 
 function AI_CMD_MoveToHelper:End(time, deltaTime, creature)
   creature:Client_SetIsMoveToWorking(false)
   creature:Logic_StopMove()
+  if creature.OnSkatingMoveToEnd then
+    creature:OnSkatingMoveToEnd()
+  end
 end
 
 function AI_CMD_MoveToHelper:Update(time, deltaTime, creature, ignoreNavMesh, range)
   if nil ~= creature.logicTransform.targetPosition then
     if nil ~= range and VectorUtility.DistanceXZ_Square(creature:GetPosition(), creature.logicTransform.targetPosition) <= range * range then
+      if creature.MarkSkatingMoveToArrived then
+        creature:MarkSkatingMoveToArrived()
+      end
       self:End(time, deltaTime, creature)
       return true
     end
@@ -52,6 +69,9 @@ function AI_CMD_MoveToHelper:Update(time, deltaTime, creature, ignoreNavMesh, ra
       creature:Logic_SamplePosition(time)
     end
   else
+    if creature.MarkSkatingMoveToArrived then
+      creature:MarkSkatingMoveToArrived()
+    end
     self:End(time, deltaTime, creature)
     return true
   end

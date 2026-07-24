@@ -8,6 +8,16 @@ local GetTable_Buffer = function(ID)
   return _Table_Buffer[ID]
 end
 
+function NCreatureWithPropUserdata:InterruptSkatingGlide()
+end
+
+function NCreatureWithPropUserdata:OnSkatingBuffChanged(buffInfo, active, level)
+end
+
+function NCreatureWithPropUserdata:IsSkatingChasing()
+  return false
+end
+
 function NCreatureWithPropUserdata:ctor(aiClass)
   NCreatureWithPropUserdata.super.ctor(self, aiClass)
   self.userDataManager = nil
@@ -299,6 +309,11 @@ function NCreatureWithPropUserdata:AddBuff(buffID, init, needhit, fromID, layer,
   end
   if buffeffect.type == BuffType.BellCharge then
     GameFacade.Instance:sendNotification(SkillEvent.BellCharge, buffeffect.sortID)
+  elseif buffeffect.type == BuffType.CanBeCarried then
+    EventManager.Me():PassEvent(SkillEvent.CanBeCarriedAdd, {
+      charid = self.data and self.data.id or nil,
+      buffEffect = buffeffect
+    })
   end
   return buff
 end
@@ -423,12 +438,12 @@ function NCreatureWithPropUserdata:TryHandleAddSpecialBuff(buffInfo, fromID, par
           self.assetRole:SetMaterials(true)
         end
       end
+    elseif buffType == BuffType.SetShieldHp then
+      self.data.sliderlen = buffeffect.sliderlen or 0.2
     elseif buffType == BuffType.UpgradeRefineLv then
       if self == Game.Myself then
         GameFacade.Instance:sendNotification(MyselfEvent.UpdateRefineBuff, self.data)
       end
-    elseif buffType == BuffType.SetShieldHp then
-      self.data.shieldLen = buffeffect.sliderlen or 0.2
     elseif buffType == BuffType.ShowDefAttr then
       GameFacade.Instance:sendNotification(MyselfEvent.ShowDefAttr, self.data.id)
     elseif buffType == BuffType.NoBreakSkill then
@@ -532,6 +547,10 @@ function NCreatureWithPropUserdata:RemoveBuff(buffID)
   end
   if buffeffect.type == BuffType.BellCharge then
     GameFacade.Instance:sendNotification(SkillEvent.BellCharge, buffeffect.sortID)
+  elseif buffeffect.type == BuffType.CanBeCarried then
+    EventManager.Me():PassEvent(SkillEvent.CanBeCarriedRemove, {
+      charid = self.data and self.data.id or nil
+    })
   end
 end
 
@@ -651,7 +670,7 @@ function NCreatureWithPropUserdata:TryHandleRemoveSpecialBuff(buffInfo)
       GameFacade.Instance:sendNotification(MyselfEvent.UpdateRefineBuff, self.data)
     end
   elseif buffType == BuffType.SetShieldHp then
-    self.data.shieldLen = nil
+    self.data.sliderlen = nil
   elseif buffType == BuffType.ChangeWalkAction then
     self:ChangeWalkAction()
   elseif buffType == BuffType.ShowDefAttr then
@@ -833,6 +852,8 @@ function NCreatureWithPropUserdata:TryUpdateSpecialBuff(buffInfo, active, fromID
     if self ~= Game.Myself then
       self:SetHideHp(active)
     end
+  elseif buffType == BuffType.IceSlide then
+    self:OnSkatingBuffChanged(buffInfo, active, level)
   elseif buffType == BuffType.InWarehouse then
     if self == Game.Myself then
       self.isInWarehouse = active
@@ -1405,4 +1426,8 @@ function NCreatureWithPropUserdata:UpdateRidingHandcartCharID(lastCharID, curCha
   end
   local seatId = 0 < curCharID and self:GetRidingHandcartSeat() or -1
   Game.InteractNpcManager:DoUpdateRidingHandcartCharID(self, lastCharID, curCharID, seatId)
+end
+
+function NCreatureWithPropUserdata:_GetRemoteCoasterMoveHost()
+  return nil
 end

@@ -571,6 +571,7 @@ function NCreature:SetVisible(v, reason)
   self:SetPartnerVisible(v, reason)
   self:SetHandNpcVisible(v, reason)
   self:SetExpressNpcVisible(v, reason)
+  self:SetCircleTraceNpcVisible(v, reason)
 end
 
 function NCreature:SetPartnerVisible(v, reason)
@@ -595,6 +596,18 @@ function NCreature:SetExpressNpcVisible(v, reason)
       if npc then
         npc:SetVisible(v, reason)
       end
+    end
+  end
+end
+
+function NCreature:SetCircleTraceNpcVisible(v, reason)
+  local data = self.data
+  local rotateID = data and data.rotateID
+  local npcProxy = NSceneNpcProxy and NSceneNpcProxy.Instance
+  if rotateID and rotateID ~= 0 and npcProxy then
+    local npc = npcProxy:Find(rotateID)
+    if npc and npc.isCircleTraceNpc then
+      npc:SetVisible(v, reason)
     end
   end
 end

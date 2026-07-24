@@ -1,3 +1,4 @@
+autoImport("TeamRecruitData")
 ChatMessageData = reusableClass("ChatMessageData")
 ChatMessageData.PoolSize = 5
 local Channel_Enum_String = {
@@ -19,6 +20,7 @@ end
 
 function ChatMessageData:SetData(data)
   if data then
+    local hasSnowParty = data.snow_party and not StringUtil.IsEmpty(data.snow_party.launch_name)
     if data.id == Game.Myself.data.id then
       self[1] = data.targetid
     elseif data.targetid == Game.Myself.data.id then
@@ -42,11 +44,15 @@ function ChatMessageData:SetData(data)
       if self[2] == Game.Myself.data.id then
         if data.redpacketret and not StringUtil.IsEmpty(data.redpacketret.strRedPacketID) then
           self[14] = ChatTypeEnum.MyselfRedPacket
+        elseif hasSnowParty then
+          self[14] = ChatTypeEnum.MyselfTeamRecruit
         else
           self[14] = ChatTypeEnum.MySelfMessage
         end
       elseif data.redpacketret and not StringUtil.IsEmpty(data.redpacketret.strRedPacketID) then
         self[14] = ChatTypeEnum.SomeoneRedPacket
+      elseif hasSnowParty then
+        self[14] = ChatTypeEnum.SomeoneTeamRecruit
       else
         self[14] = ChatTypeEnum.SomeoneMessage
       end
@@ -76,11 +82,21 @@ function ChatMessageData:SetData(data)
     self[41] = data.recall_time
     self[42] = data.snowroomid
     self[43] = data.head_fashion
+    if data.print_item then
+      local printItem = {}
+      printItem.id = data.print_item.id
+      printItem.accid = data.print_item.accid
+      printItem.etype = data.print_item.etype
+      self[44] = printItem
+    end
     self[22] = HeadImageData.ProcessSnowCrownFashion(self[22], data.head_fashion)
     if data.postcard and data.postcard.url and data.postcard.url ~= "" then
       self[37] = PostcardData.new()
       self[37]:Server_SetData(data.postcard)
       self[37]:SetAsReceiveTemp()
+    end
+    if hasSnowParty then
+      self[38] = TeamRecruitData.new(data.snow_party)
     end
     if data.photo and data.photo.source and data.photo.sourceid and data.photo.source ~= 0 and data.photo.sourceid ~= 0 then
       self[31] = PhotoData.new(data.photo)
@@ -109,7 +125,6 @@ function ChatMessageData:SetData(data)
     if self[14] ~= ChatTypeEnum.SystemMessage then
       self[12] = ChatRoomProxy.Instance:StripSymbols(self[12])
     end
-    redlog("ChatMessageData:SetData content str =", self[12])
     self.isSelf = self[2] == Game.Myself.data.id
     self.portraitImage = data.portraitImage
     self.roleType = data.roleType
@@ -253,7 +268,6 @@ function ChatMessageData:SetStr(str)
     str = string.gsub(str, "colortext", "1F74BF")
   end
   self[12] = str
-  redlog("ChatMessageData:SetStr str =", self[12])
 end
 
 function ChatMessageData:SetChannelName(channelName)
@@ -482,6 +496,10 @@ function ChatMessageData:GetCellType()
   return self[14]
 end
 
+function ChatMessageData:GetTeamRecruit()
+  return self[38]
+end
+
 function ChatMessageData:GetVoiceid()
   return self[15]
 end
@@ -581,6 +599,10 @@ end
 
 function ChatMessageData:GetSnowRoomId()
   return self[42]
+end
+
+function ChatMessageData:GetPrintItem()
+  return self[44]
 end
 
 function ChatMessageData:GetPhoto(isParse)

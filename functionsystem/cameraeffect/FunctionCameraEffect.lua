@@ -960,6 +960,7 @@ function FunctionCameraEffect.ResetFreeCameraFocusOffset(assetRole, notRestoreDe
   end
   cameraController:InterruptSmoothTo()
   cameraController:RestoreDefault(0, nil)
+  EventManager.Me():PassEvent(MyselfEvent.OnFreeCameraRestoreDefault)
 end
 
 function FunctionCameraEffect.GetFreeCameraFocusOffset(assetRole)

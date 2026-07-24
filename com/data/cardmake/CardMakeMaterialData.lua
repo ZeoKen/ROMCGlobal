@@ -10,6 +10,7 @@ function CardMakeMaterialData:SetData(data)
   if data then
     self.id = data.id
     self.itemData = ItemData.new("CardMake", self.id)
+    self.checkPackage = data.checkPackage
     if data.num then
       self.itemData.num = data.num
       self.costNum = data.num
@@ -28,7 +29,7 @@ function CardMakeMaterialData:UpdateOwnNum()
       if id == GameConfig.MoneyId.Zeny then
         bagNum = MyselfProxy.Instance:GetROB()
       else
-        bagNum = CardMakeProxy.Instance:GetItemNumByStaticIDExceptFavoriteCard(id)
+        bagNum = CardMakeProxy.Instance:GetItemNumByStaticIDExceptFavoriteCard(id, self.checkPackage)
       end
       ownNum = ownNum + bagNum
     end

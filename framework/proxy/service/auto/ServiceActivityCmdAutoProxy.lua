@@ -3467,6 +3467,24 @@ function ServiceActivityCmdAutoProxy:CallPaySignSyncActCmd(info)
       end
       msg.info.batch_id = info.batch_id
     end
+    if info ~= nil and info.is_super ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.is_super = info.is_super
+    end
+    if info ~= nil and info.rewarded_super_day ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.rewarded_super_day = info.rewarded_super_day
+    end
     self:SendProto(msg)
   else
     local msgId = ProtoReqInfoList.PaySignSyncActCmd.id
@@ -3533,6 +3551,24 @@ function ServiceActivityCmdAutoProxy:CallPaySignSyncActCmd(info)
         msgParam.info = {}
       end
       msgParam.info.batch_id = info.batch_id
+    end
+    if info ~= nil and info.is_super ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.is_super = info.is_super
+    end
+    if info ~= nil and info.rewarded_super_day ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.rewarded_super_day = info.rewarded_super_day
     end
     self:SendProto2(msgId, msgParam)
   end

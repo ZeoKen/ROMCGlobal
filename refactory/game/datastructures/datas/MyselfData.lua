@@ -1971,10 +1971,8 @@ function MyselfData:SetMountFashionParts(parts, userData)
   end
   local bytes = userData:GetBytes(UDEnum.MOUNT_FASHION)
   if not StringUtil.IsEmpty(bytes) then
-    local rets = string.split(bytes, ";")
-    local styleId = tonumber(rets[1])
-    local config = Table_MountFashion[styleId]
-    if config and config.Mount == mount then
+    local mountFashionProxy = MountFashionProxy.Instance
+    if mountFashionProxy and mountFashionProxy:IsLocalSaveBytesValid(mount, bytes) then
       local role = ServiceUserProxy.Instance:GetRoleInfo()
       if role then
         local oldBytes = LocalSaveProxy.Instance:GetMountFashion(role.id, mount)

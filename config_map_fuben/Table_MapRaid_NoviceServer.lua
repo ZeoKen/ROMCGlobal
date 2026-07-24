@@ -2282,6 +2282,45 @@ Table_MapRaid = {
     ServerMergeTime = "2021-12-29 05:00:00",
     TFServerMergeTime = "2021-12-12 05:00:00"
   },
+  [7681] = {
+    id = 7681,
+    NameZh = "霜厄研究室·初心",
+    NameEn = "sc_zbfb_002",
+    Type = 90,
+    CameraAdj = 0,
+    EndWait = 60,
+    Restrict = 2,
+    ShowAllNpc = 1,
+    ForbidAritfact = 1,
+    ServerMergeTime = "2021-12-29 05:00:00",
+    TFServerMergeTime = "2021-12-12 05:00:00"
+  },
+  [7682] = {
+    id = 7682,
+    NameZh = "霜厄研究室·勇士",
+    NameEn = "sc_zbfb_002",
+    Type = 90,
+    CameraAdj = 0,
+    EndWait = 60,
+    Restrict = 2,
+    ShowAllNpc = 1,
+    ForbidAritfact = 1,
+    ServerMergeTime = "2021-12-29 05:00:00",
+    TFServerMergeTime = "2021-12-12 05:00:00"
+  },
+  [7683] = {
+    id = 7683,
+    NameZh = "霜厄研究室·英灵",
+    NameEn = "sc_zbfb_002",
+    Type = 90,
+    CameraAdj = 0,
+    EndWait = 60,
+    Restrict = 2,
+    ShowAllNpc = 1,
+    ForbidAritfact = 1,
+    ServerMergeTime = "2021-12-29 05:00:00",
+    TFServerMergeTime = "2021-12-12 05:00:00"
+  },
   [9001] = {
     id = 9001,
     NameZh = "普隆德拉",
@@ -12728,6 +12767,14 @@ Table_MapRaid = {
     ShowAllNpc = 1,
     ServerMergeTime = "2021-12-29 05:00:00",
     TFServerMergeTime = "2021-12-12 05:00:00"
+  },
+  [1000473] = {
+    id = 1000473,
+    NameZh = "幻雪松林",
+    NameEn = "sc_xhzd",
+    CameraAdj = 0,
+    EndWait = 0,
+    ShowAllNpc = 1
   },
   [1000475] = {
     id = 1000475,

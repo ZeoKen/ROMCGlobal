@@ -5866,6 +5866,30 @@ Table_ActionEffect = {
     BodyID = 62179,
     NameAction = "playshow",
     EffectID = 431
+  },
+  [979] = {
+    id = 979,
+    BodyID = 62342,
+    NameAction = "playshow",
+    EffectID = 432
+  },
+  [980] = {
+    id = 980,
+    BodyID = 62343,
+    NameAction = "playshow",
+    EffectID = 433
+  },
+  [981] = {
+    id = 981,
+    BodyID = 62344,
+    NameAction = "playshow",
+    EffectID = 434
+  },
+  [982] = {
+    id = 982,
+    BodyID = 62345,
+    NameAction = "playshow",
+    EffectID = 435
   }
 }
 Table_ActionEffect_fields = {

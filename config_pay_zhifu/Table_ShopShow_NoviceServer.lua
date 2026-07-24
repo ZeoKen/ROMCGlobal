@@ -321,6 +321,15 @@ Table_ShopShow = {
     Picture = "",
     IconTip = _EmptyTable,
     KeyShow = 1
+  },
+  [1029] = {
+    id = 1029,
+    Type = 1,
+    ShopID = 20001668,
+    Icon = "",
+    Picture = "item_8416",
+    IconScale = 1.1,
+    IconTip = _EmptyTable
   }
 }
 Table_ShopShow_fields = {

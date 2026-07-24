@@ -50,6 +50,10 @@ function ActivityIntegrationShopItemCell:SetData(data)
   end
 end
 
+function ActivityIntegrationShopItemCell:SetBuyLimitFirst(active)
+  self.buyLimitFirst = active == true
+end
+
 function ActivityIntegrationShopItemCell:UpdateShopItem()
   local data = self.data
   local goodsID = self.data.goodsID
@@ -191,6 +195,9 @@ function ActivityIntegrationShopItemCell:Set_BuyTimesMark(active, buy_times)
   end
   self.buyCountLimitLabel.gameObject:SetActive(active)
   self.buyCountLimitLabel.text = buy_times or ""
+  if self.buyLimitFirst and self.u_itemOriPrice then
+    self.u_itemOriPrice.gameObject:SetActive(self.oriPriceActive == true and active ~= true)
+  end
 end
 
 function ActivityIntegrationShopItemCell:Set_DiscountMark(active, oriPrice, curPrice, showDiscount, priceCurrencyPrefix)
@@ -211,7 +218,12 @@ function ActivityIntegrationShopItemCell:Set_DiscountMark(active, oriPrice, curP
   elseif oriPrice then
     self.u_itemPrice.text = priceCurrencyPrefix .. FunctionNewRecharge.FormatMilComma(oriPrice)
   end
-  self.u_itemOriPrice.gameObject:SetActive(active)
+  self.oriPriceActive = active == true
+  local showOriPrice = active == true
+  if self.buyLimitFirst and self.buyCountLimitLabel then
+    showOriPrice = showOriPrice and self.buyCountLimitLabel.gameObject.activeSelf ~= true
+  end
+  self.u_itemOriPrice.gameObject:SetActive(showOriPrice)
   if self.u_discountMark then
     self.u_discountMark:SetActive(showDiscount == true and active == true)
     if showDiscount and active and oriPrice and curPrice then

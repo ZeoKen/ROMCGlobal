@@ -9,6 +9,82 @@ SnowCrownProxy.ModeEnum = {
   Ele = 3
 }
 
+function SnowCrownProxy.GetFashionConfig(pos, index)
+  if not (pos and index) or not Table_SnowFashion then
+    return nil
+  end
+  for id, config in pairs(Table_SnowFashion) do
+    if config and config.Pos == pos and config.Index == index then
+      return config, id
+    end
+  end
+  return nil
+end
+
+function SnowCrownProxy.GetFashionGroup(pos, index)
+  local config = SnowCrownProxy.GetFashionConfig(pos, index)
+  return config and (config.Group or 1) or nil
+end
+
+function SnowCrownProxy.CheckFashionIndexesSameGroup(index1, index2, index3)
+  local group
+  local indexes = {
+    index1,
+    index2,
+    index3
+  }
+  for pos = 1, 3 do
+    local index = indexes[pos]
+    if index and 0 < index then
+      local curGroup = SnowCrownProxy.GetFashionGroup(pos, index)
+      if not curGroup then
+        return false
+      end
+      if group and group ~= curGroup then
+        return false
+      end
+      group = curGroup
+    end
+  end
+  return true
+end
+
+function SnowCrownProxy.ResolveFashionBody(index1, index2)
+  if index1 and 0 < index1 and index2 and 0 < index2 then
+    if GameConfig.Snow and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[index2] then
+      local fashionConfig = GameConfig.Snow.Fashion[index2]
+      if fashionConfig[index1] then
+        return fashionConfig[index1]
+      end
+    end
+  elseif index1 and 0 < index1 then
+    if GameConfig.Snow and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[1] then
+      local fashionConfig = GameConfig.Snow.Fashion[1]
+      if fashionConfig[index1] then
+        return fashionConfig[index1]
+      end
+    end
+  elseif index2 and 0 < index2 and GameConfig.Snow and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[index2] then
+    local fashionConfig = GameConfig.Snow.Fashion[index2]
+    if fashionConfig[1] then
+      return fashionConfig[1]
+    end
+  end
+  return nil
+end
+
+function SnowCrownProxy.ResolveFashionEffect(index3, useUIPath)
+  if not index3 or index3 <= 0 then
+    return nil
+  end
+  local effectPath = GameConfig.Snow and GameConfig.Snow.FashionEffect and GameConfig.Snow.FashionEffect[index3]
+  if effectPath and useUIPath then
+    effectPath = string.gsub(effectPath, "sfx", "ufx")
+    effectPath = string.gsub(effectPath, "Common", "UI")
+  end
+  return effectPath
+end
+
 function SnowCrownProxy:ctor(proxyName, data)
   self.proxyName = proxyName or SnowCrownProxy.NAME
   if SnowCrownProxy.Instance == nil then
@@ -87,7 +163,10 @@ function SnowCrownProxy:RecvQuerySnowManualSnowCmd(data)
       local posData = data.pos[i]
       if posData and posData.id then
         local equipData = self:ParseServerItemData(posData.equip)
-        local stoneids = posData.stoneids or {}
+        local stoneids = {}
+        if posData.stoneids then
+          TableUtility.ArrayShallowCopy(stoneids, posData.stoneids)
+        end
         self.snowManualData.positions[posData.id] = {
           id = posData.id,
           equip = equipData,
@@ -253,7 +332,12 @@ function SnowCrownProxy:RecvSnowManualStoneUpdateSnowCmd(data)
       stoneids = {}
     }
   end
-  local stoneids = self.snowManualData.positions[equipPos].stoneids
+  local posData = self.snowManualData.positions[equipPos]
+  local stoneids = {}
+  if posData.stoneids then
+    TableUtility.ArrayShallowCopy(stoneids, posData.stoneids)
+  end
+  posData.stoneids = stoneids
   local idx = stonePos + 1
   local oldStoneId = stoneids[idx]
   local equipped = self.snowManualData.equippedStoneIDs
@@ -757,6 +841,106 @@ function SnowCrownProxy:GetEquippedFashionIdByPos(pos)
   return nil
 end
 
+function SnowCrownProxy:IsFashionIndexInGroup(pos, index, group)
+  if not (pos and index and group) or index <= 0 then
+    return false
+  end
+  return SnowCrownProxy.GetFashionGroup(pos, index) == group
+end
+
+function SnowCrownProxy:GetFirstFashionIndexByGroup(pos, group, unlockedOnly)
+  if not pos or not group then
+    return nil
+  end
+  local fashionList = self:GetFashionDataListByPos(pos)
+  for i = 1, #fashionList do
+    local fashionData = fashionList[i]
+    if fashionData and fashionData.group == group and (not unlockedOnly or fashionData.isUnlocked) then
+      return fashionData.index
+    end
+  end
+  return nil
+end
+
+function SnowCrownProxy:GetCurrentFashionGroup()
+  for pos = 1, 3 do
+    local index = self:GetEquippedFashionIdByPos(pos)
+    local group = SnowCrownProxy.GetFashionGroup(pos, index)
+    if group then
+      return group
+    end
+  end
+  return nil
+end
+
+function SnowCrownProxy:GetCompatibleFashionIndex(pos, group, allowEmpty, forceFirstUnlocked)
+  if forceFirstUnlocked then
+    local index = self:GetFirstFashionIndexByGroup(pos, group, true)
+    if index then
+      return index
+    end
+    return allowEmpty and 0 or nil
+  end
+  local equippedIndex = self:GetEquippedFashionIdByPos(pos)
+  if self:IsFashionIndexInGroup(pos, equippedIndex, group) then
+    return equippedIndex
+  end
+  local index = self:GetFirstFashionIndexByGroup(pos, group, true)
+  if index then
+    return index
+  end
+  return allowEmpty and 0 or nil
+end
+
+function SnowCrownProxy:GetCompatibleFashionIndexes(selectedPos, selectedIndex, forceFirstUnlockedWhenSwitchGroup)
+  if not (selectedPos and selectedIndex) or selectedIndex <= 0 then
+    return nil
+  end
+  local group = SnowCrownProxy.GetFashionGroup(selectedPos, selectedIndex)
+  if not group then
+    return nil
+  end
+  local currentGroup = self:GetCurrentFashionGroup()
+  local forceFirstUnlocked = forceFirstUnlockedWhenSwitchGroup and currentGroup and currentGroup ~= group
+  local indexes = {}
+  for pos = 1, 3 do
+    local allowEmpty = pos == 3 and selectedPos ~= 3
+    if pos == selectedPos and not forceFirstUnlocked then
+      indexes[pos] = selectedIndex
+    else
+      indexes[pos] = self:GetCompatibleFashionIndex(pos, group, allowEmpty, forceFirstUnlocked)
+    end
+    if (not indexes[pos] or indexes[pos] <= 0) and not allowEmpty then
+      return nil
+    end
+  end
+  return indexes
+end
+
+function SnowCrownProxy:GetCompatibleFashionUseOps(selectedPos, selectedIndex, forceFirstUnlockedWhenSwitchGroup)
+  local indexes = self:GetCompatibleFashionIndexes(selectedPos, selectedIndex, forceFirstUnlockedWhenSwitchGroup)
+  if not indexes then
+    return nil
+  end
+  local ops = {}
+  for pos = 1, 3 do
+    local currentIndex = self:GetEquippedFashionIdByPos(pos) or 0
+    local targetIndex = indexes[pos] or 0
+    if currentIndex ~= targetIndex and (0 < targetIndex or pos == 3) then
+      table.insert(ops, {pos = pos, index = targetIndex})
+    end
+  end
+  table.sort(ops, function(a, b)
+    if a.pos == selectedPos then
+      return true
+    elseif b.pos == selectedPos then
+      return false
+    end
+    return a.pos < b.pos
+  end)
+  return ops, indexes
+end
+
 function SnowCrownProxy:GetFashionIdsByPos(pos)
   local fashionIds = {}
   for id, config in pairs(Table_SnowFashion) do
@@ -767,7 +951,7 @@ function SnowCrownProxy:GetFashionIdsByPos(pos)
   return fashionIds
 end
 
-function SnowCrownProxy:GetFashionDataListByPos(pos)
+function SnowCrownProxy:GetFashionDataListByPos(pos, group)
   local unlockedIndexes = self:GetUnlockedFashionIdsByPos(pos)
   local unlockedIndexMap = {}
   for i = 1, #unlockedIndexes do
@@ -776,8 +960,9 @@ function SnowCrownProxy:GetFashionDataListByPos(pos)
   local equippedIndex = self:GetEquippedFashionIdByPos(pos)
   local fashionList = {}
   for id, config in pairs(Table_SnowFashion) do
-    if config.Pos == pos then
-      local isUnlocked = config.Index and unlockedIndexMap[config.Index] == true
+    local configGroup = config.Group or 1
+    if config.Pos == pos and (not group or configGroup == group) then
+      local isUnlocked = not config.Menu or config.Menu == 0 or config.Index and unlockedIndexMap[config.Index] == true
       local isEquipped = equippedIndex ~= nil and 0 < equippedIndex and config.Index and equippedIndex == config.Index
       local unlockDesc = ""
       if not isUnlocked and config.Menu then
@@ -791,6 +976,7 @@ function SnowCrownProxy:GetFashionDataListByPos(pos)
         id = id,
         itemId = itemId,
         index = config.Index,
+        group = configGroup,
         isUnlocked = isUnlocked,
         isEquipped = isEquipped,
         unlockDesc = unlockDesc,

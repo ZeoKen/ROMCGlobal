@@ -294,6 +294,11 @@ function QuickBuyView:Buy()
       MsgManager.ShowMsgByID(2969)
       return
     end
+    local beforeBuyHook = QuickBuyProxy.Instance:GetBeforeBuyHook()
+    if beforeBuyHook then
+      beforeBuyHook(self.checkBtn.value)
+      return
+    end
     QuickBuyProxy.Instance:StartBuyItem(self.checkBtn.value)
     self:UpdateBuyReason(BuyReason.Buying, false)
     self.canClose = false

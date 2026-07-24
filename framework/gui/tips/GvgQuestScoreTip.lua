@@ -39,7 +39,7 @@ function GvgQuestScoreTip:FindQuestObj()
   local citytype = GvgProxy.Instance.cityType
   local config = GameConfig.GVGConfig.citytype_data[citytype]
   if config then
-    local rate = config.user_task_rate - 1
+    local rate = (config and config.user_task_rate or 1) - 1
     if 0 < rate then
       self.rate.text = string.format(ZhString.MainViewGvgPage_GvgQuestTip_PersonalRate, rate * 100)
     else

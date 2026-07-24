@@ -8,6 +8,16 @@ Table_Evaluation = {
       {id = 5525, num = 200}
     },
     MenuId = {9007}
+  },
+  [2] = {
+    id = 2,
+    Describe = "##119804",
+    Reward = {
+      {id = 5832, num = 2},
+      {id = 700131, num = 2},
+      {id = 5525, num = 200}
+    },
+    MenuId = {10000012}
   }
 }
 Table_Evaluation_fields = {

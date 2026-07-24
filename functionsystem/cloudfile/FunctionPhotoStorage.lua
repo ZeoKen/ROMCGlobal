@@ -10,7 +10,8 @@ FunctionPhotoStorage.PhotoType = {
   HomeRecommend = 8,
   HomeBlueprint = 9,
   HomeCheckPrivate = 10,
-  HomeCheckSnow = 11
+  HomeCheckSnow = 11,
+  BlueprintCheck = 12
 }
 local m_divideChar = "!"
 FunctionPhotoStorage.DivideCharacter = m_divideChar
@@ -75,9 +76,10 @@ function FunctionPhotoStorage:Init()
     [FunctionPhotoStorage.PhotoType.Wedding] = PhotoCmd_pb.EPHOTOTYPE_WEDDING or 4,
     [FunctionPhotoStorage.PhotoType.PhotoBoard] = PhotoCmd_pb.EPHOTOTYPE_BOARD or 5,
     [FunctionPhotoStorage.PhotoType.HomeRecommend] = PhotoCmd_pb.EPHOTOTYPE_HOME_RECOMMEND or 7,
-    [FunctionPhotoStorage.PhotoType.HomeBlueprint] = PhotoCmd_pb.EPHOTOTYPE_HOME_BLUEPRINT or 10,
+    [FunctionPhotoStorage.PhotoType.HomeBlueprint] = PhotoCmd_pb.EPHOTOTYPE_BLUEPRINT_RECOMMEND or 11,
     [FunctionPhotoStorage.PhotoType.HomeCheckPrivate] = PhotoCmd_pb.EPHOTOTYPE_HOME_CHECK_PRIVATE or 8,
-    [FunctionPhotoStorage.PhotoType.HomeCheckSnow] = PhotoCmd_pb.EPHOTOTYPE_HOME_CHECK_SNOW or 9
+    [FunctionPhotoStorage.PhotoType.HomeCheckSnow] = PhotoCmd_pb.EPHOTOTYPE_HOME_CHECK_SNOW or 9,
+    [FunctionPhotoStorage.PhotoType.BlueprintCheck] = PhotoCmd_pb.EPHOTOTYPE_BLUEPRINT or 10
   }
   self.photoPath = {
     [FunctionPhotoStorage.PhotoType.SceneryRole] = IOPathConfig.Paths.Extension.ScenicSpotPhotoRolesOrigin,

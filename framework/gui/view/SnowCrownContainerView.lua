@@ -243,19 +243,10 @@ function SnowCrownContainerView:SetModelByEquippedFashion()
   local equippedIndex2 = SnowCrownProxy.Instance:GetEquippedFashionIdByPos(2)
   local equippedIndex3 = SnowCrownProxy.Instance:GetEquippedFashionIdByPos(3)
   local bodyId = self.defaultBodyId
-  if equippedIndex1 and 0 < equippedIndex1 and equippedIndex2 and 0 < equippedIndex2 and GameConfig.Snow and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[equippedIndex2] then
-    local fashionConfig = GameConfig.Snow.Fashion[equippedIndex2]
-    if fashionConfig[equippedIndex1] then
-      bodyId = fashionConfig[equippedIndex1]
-    end
-  end
   local effectPath
-  if equippedIndex3 and 0 < equippedIndex3 and GameConfig.Snow and GameConfig.Snow.FashionEffect and GameConfig.Snow.FashionEffect[equippedIndex3] then
-    effectPath = GameConfig.Snow.FashionEffect[equippedIndex3]
-    if effectPath then
-      effectPath = string.gsub(effectPath, "sfx", "ufx")
-      effectPath = string.gsub(effectPath, "Common", "UI")
-    end
+  if SnowCrownProxy.CheckFashionIndexesSameGroup(equippedIndex1, equippedIndex2, equippedIndex3) then
+    bodyId = SnowCrownProxy.ResolveFashionBody(equippedIndex1, equippedIndex2) or bodyId
+    effectPath = SnowCrownProxy.ResolveFashionEffect(equippedIndex3, true)
   end
   xdlog("SetModelByEquippedFashion", equippedIndex1, equippedIndex2, equippedIndex3, bodyId, effectPath)
   self:SetModelBody(bodyId, effectPath)

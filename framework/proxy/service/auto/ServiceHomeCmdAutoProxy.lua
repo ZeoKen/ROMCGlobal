@@ -3131,11 +3131,87 @@ function ServiceHomeCmdAutoProxy:CallOptUpdateHomeCmd(accid, type, data, value, 
   end
 end
 
-function ServiceHomeCmdAutoProxy:CallPrintActionHomeCmd(action, id)
+function ServiceHomeCmdAutoProxy:CallPrintActionHomeCmd(action, item, id)
   if not NetConfig.PBC then
     local msg = HomeCmd_pb.PrintActionHomeCmd()
     if action ~= nil then
       msg.action = action
+    end
+    if item ~= nil and item.id ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.item == nil then
+        msg.item = {}
+      end
+      msg.item.id = item.id
+    end
+    if item ~= nil and item.datas ~= nil then
+      if msg.item == nil then
+        msg.item = {}
+      end
+      if msg.item.datas == nil then
+        msg.item.datas = {}
+      end
+      for i = 1, #item.datas do
+        table.insert(msg.item.datas, item.datas[i])
+      end
+    end
+    if item ~= nil and item.furns ~= nil then
+      if msg.item == nil then
+        msg.item = {}
+      end
+      if msg.item.furns == nil then
+        msg.item.furns = {}
+      end
+      for i = 1, #item.furns do
+        table.insert(msg.item.furns, item.furns[i])
+      end
+    end
+    if item ~= nil and item.accid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.item == nil then
+        msg.item = {}
+      end
+      msg.item.accid = item.accid
+    end
+    if item ~= nil and item.etype ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.item == nil then
+        msg.item = {}
+      end
+      msg.item.etype = item.etype
+    end
+    if item ~= nil and item.is_offical ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.item == nil then
+        msg.item = {}
+      end
+      msg.item.is_offical = item.is_offical
+    end
+    if item ~= nil and item.charid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.item == nil then
+        msg.item = {}
+      end
+      msg.item.charid = item.charid
+    end
+    if item ~= nil and item.timestamp ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.item == nil then
+        msg.item = {}
+      end
+      msg.item.timestamp = item.timestamp
     end
     if id ~= nil then
       msg.id = id
@@ -3147,6 +3223,82 @@ function ServiceHomeCmdAutoProxy:CallPrintActionHomeCmd(action, id)
     if action ~= nil then
       msgParam.action = action
     end
+    if item ~= nil and item.id ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      msgParam.item.id = item.id
+    end
+    if item ~= nil and item.datas ~= nil then
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      if msgParam.item.datas == nil then
+        msgParam.item.datas = {}
+      end
+      for i = 1, #item.datas do
+        table.insert(msgParam.item.datas, item.datas[i])
+      end
+    end
+    if item ~= nil and item.furns ~= nil then
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      if msgParam.item.furns == nil then
+        msgParam.item.furns = {}
+      end
+      for i = 1, #item.furns do
+        table.insert(msgParam.item.furns, item.furns[i])
+      end
+    end
+    if item ~= nil and item.accid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      msgParam.item.accid = item.accid
+    end
+    if item ~= nil and item.etype ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      msgParam.item.etype = item.etype
+    end
+    if item ~= nil and item.is_offical ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      msgParam.item.is_offical = item.is_offical
+    end
+    if item ~= nil and item.charid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      msgParam.item.charid = item.charid
+    end
+    if item ~= nil and item.timestamp ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      msgParam.item.timestamp = item.timestamp
+    end
     if id ~= nil then
       msgParam.id = id
     end
@@ -3154,9 +3306,12 @@ function ServiceHomeCmdAutoProxy:CallPrintActionHomeCmd(action, id)
   end
 end
 
-function ServiceHomeCmdAutoProxy:CallPrintUpdateHomeCmd(items)
+function ServiceHomeCmdAutoProxy:CallPrintUpdateHomeCmd(action, items, cdn_path, etype)
   if not NetConfig.PBC then
     local msg = HomeCmd_pb.PrintUpdateHomeCmd()
+    if action ~= nil then
+      msg.action = action
+    end
     if items ~= nil then
       if msg == nil then
         msg = {}
@@ -3168,10 +3323,19 @@ function ServiceHomeCmdAutoProxy:CallPrintUpdateHomeCmd(items)
         table.insert(msg.items, items[i])
       end
     end
+    if cdn_path ~= nil then
+      msg.cdn_path = cdn_path
+    end
+    if etype ~= nil then
+      msg.etype = etype
+    end
     self:SendProto(msg)
   else
     local msgId = ProtoReqInfoList.PrintUpdateHomeCmd.id
     local msgParam = {}
+    if action ~= nil then
+      msgParam.action = action
+    end
     if items ~= nil then
       if msgParam == nil then
         msgParam = {}
@@ -3182,6 +3346,12 @@ function ServiceHomeCmdAutoProxy:CallPrintUpdateHomeCmd(items)
       for i = 1, #items do
         table.insert(msgParam.items, items[i])
       end
+    end
+    if cdn_path ~= nil then
+      msgParam.cdn_path = cdn_path
+    end
+    if etype ~= nil then
+      msgParam.etype = etype
     end
     self:SendProto2(msgId, msgParam)
   end

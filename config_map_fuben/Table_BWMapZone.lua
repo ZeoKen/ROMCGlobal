@@ -184,6 +184,21 @@ Table_BWMapZone_t = {
       442.5,
       0.0,
       -229.5
+    },
+    {
+      603.0,
+      0.0,
+      9.0
+    },
+    {
+      551.0,
+      0.0,
+      288.0
+    },
+    {
+      387.0,
+      0.0,
+      104.5
     }
   },
   Center = {
@@ -426,6 +441,26 @@ Table_BWMapZone_t = {
       392.62,
       9.69,
       -115.82
+    },
+    {
+      447.2,
+      29.15,
+      140.59
+    },
+    {
+      565.38,
+      33.58,
+      117.56
+    },
+    {
+      451.08,
+      18.35,
+      290.85
+    },
+    {
+      388.5,
+      38.92,
+      64.07
     }
   },
   Event = {
@@ -946,6 +981,42 @@ Table_BWMapZone_t = {
         1014740001,
         1016250002
       }
+    },
+    {
+      MapStep = {281},
+      Quest = {
+        1014750001,
+        1014760001,
+        1014810001,
+        1014820001,
+        1014850001,
+        1014870001,
+        1014880001,
+        1016550002
+      }
+    },
+    {
+      MapStep = {282, 283},
+      Quest = {
+        1014770001,
+        1014830001,
+        1014860001,
+        1014910001,
+        1016560002
+      }
+    },
+    {
+      MapStep = {284, 285},
+      Quest = {
+        1014780001,
+        1014790001,
+        1014800001,
+        1014840001,
+        1014890001,
+        1014900001,
+        1014920001,
+        1016570002
+      }
     }
   }
 }
@@ -963,7 +1034,8 @@ Table_BWMapZone = {
     GroupId = 1,
     Center = Table_BWMapZone_t.Center[2],
     BlockCenter = Table_BWMapZone_t.BlockCenter[1],
-    Event = Table_BWMapZone_t.Event[1]
+    Event = Table_BWMapZone_t.Event[1],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [3] = {
     id = 3,
@@ -971,7 +1043,6 @@ Table_BWMapZone = {
     Type = 3,
     RegionId = 2,
     GroupId = 1,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##2843905"
   },
   [4] = {
@@ -981,7 +1052,8 @@ Table_BWMapZone = {
     GroupId = 2,
     Center = Table_BWMapZone_t.Center[3],
     BlockCenter = Table_BWMapZone_t.BlockCenter[2],
-    Event = Table_BWMapZone_t.Event[2]
+    Event = Table_BWMapZone_t.Event[2],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [5] = {
     id = 5,
@@ -989,7 +1061,6 @@ Table_BWMapZone = {
     Type = 3,
     RegionId = 4,
     GroupId = 2,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##2843908"
   },
   [6] = {
@@ -999,7 +1070,8 @@ Table_BWMapZone = {
     GroupId = 3,
     Center = Table_BWMapZone_t.Center[4],
     BlockCenter = Table_BWMapZone_t.BlockCenter[3],
-    Event = Table_BWMapZone_t.Event[3]
+    Event = Table_BWMapZone_t.Event[3],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [7] = {
     id = 7,
@@ -1007,7 +1079,6 @@ Table_BWMapZone = {
     Type = 3,
     RegionId = 6,
     GroupId = 3,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##2843911"
   },
   [8] = {
@@ -1017,7 +1088,8 @@ Table_BWMapZone = {
     GroupId = 4,
     Center = Table_BWMapZone_t.Center[5],
     BlockCenter = Table_BWMapZone_t.BlockCenter[4],
-    Event = Table_BWMapZone_t.Event[4]
+    Event = Table_BWMapZone_t.Event[4],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [9] = {
     id = 9,
@@ -1025,7 +1097,6 @@ Table_BWMapZone = {
     Type = 3,
     RegionId = 8,
     GroupId = 4,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##2843914"
   },
   [10] = {
@@ -1035,7 +1106,8 @@ Table_BWMapZone = {
     GroupId = 5,
     Center = Table_BWMapZone_t.Center[6],
     BlockCenter = Table_BWMapZone_t.BlockCenter[5],
-    Event = Table_BWMapZone_t.Event[5]
+    Event = Table_BWMapZone_t.Event[5],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [11] = {
     id = 11,
@@ -1043,7 +1115,6 @@ Table_BWMapZone = {
     Type = 3,
     RegionId = 10,
     GroupId = 5,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##2843917"
   },
   [12] = {
@@ -1060,7 +1131,8 @@ Table_BWMapZone = {
     GroupId = 6,
     Center = Table_BWMapZone_t.Center[8],
     BlockCenter = Table_BWMapZone_t.BlockCenter[6],
-    Event = Table_BWMapZone_t.Event[6]
+    Event = Table_BWMapZone_t.Event[6],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [14] = {
     id = 14,
@@ -1068,7 +1140,6 @@ Table_BWMapZone = {
     Type = 3,
     RegionId = 12,
     GroupId = 6,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##2843921"
   },
   [15] = {
@@ -1078,7 +1149,8 @@ Table_BWMapZone = {
     GroupId = 7,
     Center = Table_BWMapZone_t.Center[9],
     BlockCenter = Table_BWMapZone_t.BlockCenter[7],
-    Event = Table_BWMapZone_t.Event[7]
+    Event = Table_BWMapZone_t.Event[7],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [16] = {
     id = 16,
@@ -1086,7 +1158,6 @@ Table_BWMapZone = {
     Type = 3,
     RegionId = 14,
     GroupId = 7,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##2843922"
   },
   [17] = {
@@ -1096,7 +1167,8 @@ Table_BWMapZone = {
     GroupId = 8,
     Center = Table_BWMapZone_t.Center[10],
     BlockCenter = Table_BWMapZone_t.BlockCenter[8],
-    Event = Table_BWMapZone_t.Event[8]
+    Event = Table_BWMapZone_t.Event[8],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [18] = {
     id = 18,
@@ -1104,7 +1176,6 @@ Table_BWMapZone = {
     Type = 3,
     RegionId = 16,
     GroupId = 8,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##2843925"
   },
   [19] = {
@@ -1114,7 +1185,8 @@ Table_BWMapZone = {
     GroupId = 9,
     Center = Table_BWMapZone_t.Center[11],
     BlockCenter = Table_BWMapZone_t.BlockCenter[9],
-    Event = Table_BWMapZone_t.Event[9]
+    Event = Table_BWMapZone_t.Event[9],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [20] = {
     id = 20,
@@ -1122,7 +1194,6 @@ Table_BWMapZone = {
     Type = 3,
     RegionId = 18,
     GroupId = 9,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##2843926"
   },
   [21] = {
@@ -1203,7 +1274,8 @@ Table_BWMapZone = {
     GroupId = 13,
     Center = Table_BWMapZone_t.Center[17],
     BlockCenter = Table_BWMapZone_t.BlockCenter[13],
-    Event = Table_BWMapZone_t.Event[13]
+    Event = Table_BWMapZone_t.Event[13],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [30] = {
     id = 30,
@@ -1211,7 +1283,6 @@ Table_BWMapZone = {
     Type = 3,
     RegionId = 26,
     GroupId = 13,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##3359107"
   },
   [31] = {
@@ -1221,7 +1292,8 @@ Table_BWMapZone = {
     GroupId = 14,
     Center = Table_BWMapZone_t.Center[18],
     BlockCenter = Table_BWMapZone_t.BlockCenter[14],
-    Event = Table_BWMapZone_t.Event[14]
+    Event = Table_BWMapZone_t.Event[14],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [32] = {
     id = 32,
@@ -1229,7 +1301,6 @@ Table_BWMapZone = {
     Type = 3,
     RegionId = 28,
     GroupId = 14,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##3359110"
   },
   [33] = {
@@ -1239,7 +1310,8 @@ Table_BWMapZone = {
     GroupId = 15,
     Center = Table_BWMapZone_t.Center[19],
     BlockCenter = Table_BWMapZone_t.BlockCenter[15],
-    Event = Table_BWMapZone_t.Event[15]
+    Event = Table_BWMapZone_t.Event[15],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [34] = {
     id = 34,
@@ -1247,7 +1319,6 @@ Table_BWMapZone = {
     Type = 3,
     RegionId = 30,
     GroupId = 15,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##3359113"
   },
   [35] = {
@@ -1263,14 +1334,14 @@ Table_BWMapZone = {
     GroupId = 16,
     Center = Table_BWMapZone_t.Center[21],
     BlockCenter = Table_BWMapZone_t.BlockCenter[16],
-    Event = Table_BWMapZone_t.Event[16]
+    Event = Table_BWMapZone_t.Event[16],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [37] = {
     id = 37,
     Type = 3,
     RegionId = 32,
     GroupId = 16,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##3449464"
   },
   [38] = {
@@ -1280,7 +1351,8 @@ Table_BWMapZone = {
     GroupId = 17,
     Center = Table_BWMapZone_t.Center[22],
     BlockCenter = Table_BWMapZone_t.BlockCenter[17],
-    Event = Table_BWMapZone_t.Event[17]
+    Event = Table_BWMapZone_t.Event[17],
+    BGM = "bgm_ancientcity_outskirts_layer_01"
   },
   [39] = {
     id = 39,
@@ -1288,7 +1360,6 @@ Table_BWMapZone = {
     Type = 3,
     RegionId = 34,
     GroupId = 17,
-    BGM = "bgm_ancientcity_outskirts_layer_02",
     Desc = "##3449467"
   },
   [40] = {
@@ -1747,11 +1818,82 @@ Table_BWMapZone = {
     GroupId = 3,
     BGM = "Bgm_197_CallOfCathulhu",
     Desc = "##44726600"
+  },
+  [86] = {
+    id = 86,
+    MapId = 155,
+    NameZh = "##45908077",
+    Type = 1,
+    Center = Table_BWMapZone_t.Center[49],
+    BGM = ""
+  },
+  [87] = {
+    id = 87,
+    MapId = 155,
+    NameZh = "##45912059",
+    RegionId = 7,
+    GroupId = 4,
+    Center = Table_BWMapZone_t.Center[50],
+    BlockCenter = Table_BWMapZone_t.BlockCenter[38],
+    Event = Table_BWMapZone_t.Event[38],
+    BGM = "Bgm_187_WordsFromTheMyths"
+  },
+  [88] = {
+    id = 88,
+    MapId = 155,
+    NameZh = "##45912059",
+    Type = 3,
+    RegionId = 8,
+    GroupId = 4,
+    BGM = "Bgm_188_AtLastlHeard",
+    Desc = "##45939758"
+  },
+  [89] = {
+    id = 89,
+    MapId = 155,
+    NameZh = "##45918459",
+    RegionId = 9,
+    GroupId = 5,
+    Center = Table_BWMapZone_t.Center[51],
+    BlockCenter = Table_BWMapZone_t.BlockCenter[39],
+    Event = Table_BWMapZone_t.Event[39],
+    BGM = "Bgm_187_WordsFromTheMyths"
+  },
+  [90] = {
+    id = 90,
+    MapId = 155,
+    NameZh = "##45918459",
+    Type = 3,
+    RegionId = 10,
+    GroupId = 5,
+    BGM = "Bgm_188_AtLastlHeard",
+    Desc = "##45939759"
+  },
+  [91] = {
+    id = 91,
+    MapId = 155,
+    NameZh = "##45918461",
+    RegionId = 11,
+    GroupId = 6,
+    Center = Table_BWMapZone_t.Center[52],
+    BlockCenter = Table_BWMapZone_t.BlockCenter[40],
+    Event = Table_BWMapZone_t.Event[40],
+    BGM = "Bgm_187_WordsFromTheMyths"
+  },
+  [92] = {
+    id = 92,
+    MapId = 155,
+    NameZh = "##45918461",
+    Type = 3,
+    RegionId = 12,
+    GroupId = 6,
+    BGM = "Bgm_188_AtLastlHeard",
+    Desc = "##45939760"
   }
 }
 local cell_mt = {
   __index = {
-    BGM = "bgm_ancientcity_outskirts_layer_01",
+    BGM = "bgm_ancientcity_outskirts_layer_02",
     BlockCenter = _EmptyTable,
     Center = _EmptyTable,
     Desc = "",

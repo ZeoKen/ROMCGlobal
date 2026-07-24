@@ -665,7 +665,6 @@ Table_NpcAchieve = {
     Condition = Table_NpcAchieve_t.Condition[1],
     Param1 = 852260,
     TargetNum = 20,
-    Title = "摧毁法器Ⅲ",
     Desc = "累计摧毁邪龙法器%s/20次",
     Reward = Table_NpcAchieve_t.Reward[25]
   },
@@ -722,6 +721,7 @@ Table_NpcAchieve = {
     Param1 = 852258,
     TargetNum = 30,
     Title = "解救盟友Ⅲ",
+    Desc = "累计解救被俘虏的士兵%s/30次",
     Reward = Table_NpcAchieve_t.Reward[12]
   },
   [58] = {
@@ -1075,6 +1075,7 @@ Table_NpcAchieve = {
     Type = 64,
     Param1 = 1,
     TargetNum = 6,
+    Title = "融雪筑梦II",
     Desc = "制作融雪边境区域家具%s/6件",
     Reward = Table_NpcAchieve_t.Reward[33]
   },
@@ -1175,7 +1176,6 @@ Table_NpcAchieve = {
     Param1 = 3,
     TargetNum = 6,
     Title = "冰封建构II",
-    Desc = "制作冰封之城区域家具%s/6件",
     Reward = Table_NpcAchieve_t.Reward[43]
   },
   [104] = {
@@ -1212,11 +1212,11 @@ Table_NpcAchieve = {
 local cell_mt = {
   __index = {
     Condition = _EmptyTable,
-    Desc = "累计解救被俘虏的士兵%s/30次",
+    Desc = "制作冰封之城区域家具%s/6件",
     GroupID = 1,
     Reward = _EmptyTable,
     TargetNum = 5,
-    Title = "融雪筑梦II",
+    Title = "摧毁法器Ⅲ",
     Type = 61,
     id = 1
   }

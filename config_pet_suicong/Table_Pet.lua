@@ -1438,6 +1438,7 @@ Table_Pet = {
   },
   [500520] = {
     id = 500520,
+    Name = "##139511",
     PetFriend = 5,
     HobbyItem = Table_Pet_t.HobbyItem[8],
     ComPetItemValue = 2000,
@@ -1776,7 +1777,6 @@ Table_Pet = {
   },
   [500820] = {
     id = 500820,
-    Name = "##141928",
     HobbyItem = Table_Pet_t.HobbyItem[31],
     ComPetItemValue = 2000,
     EggID = 900181,
@@ -2549,7 +2549,7 @@ local cell_mt = {
     EquipFake = _EmptyTable,
     EquipID = _EmptyTable,
     HobbyItem = _EmptyTable,
-    Name = "##139511",
+    Name = "##141928",
     PetFriend = 3,
     Skill_1 = _EmptyTable,
     Skill_2 = _EmptyTable,

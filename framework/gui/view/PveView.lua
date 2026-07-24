@@ -1623,8 +1623,12 @@ local Sweep_PublicXAxis = {
 }
 
 function PveView:CheckSuperSweepShow()
-  local raid_type = self.curData and self.curData.staticEntranceData and self.curData.staticEntranceData.raidType
+  local entrance_data = self.curData and self.curData.staticEntranceData
+  local raid_type = entrance_data and entrance_data.raidType
   if raid_type == PveRaidType.Crack then
+    return false
+  end
+  if not (entrance_data and entrance_data.staticData) or entrance_data.staticData.MultiQuickFinish ~= 1 then
     return false
   end
   local groupPlayTime = self:GetCurrentGroupPlayTime()

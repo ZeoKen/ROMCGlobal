@@ -189,6 +189,9 @@ function Asset_RolePart:OnSubPartCreated(partIndex, subpart)
   local partObj = subpart.args[9]
   mainPartObj:SetSubPart(subPartIndex - 1, partObj, true)
   subpart:SetMounted(true)
+  if self.subPartCreatedCallback then
+    self.subPartCreatedCallback(subpart, self.subPartCreatedCallbackArg, self, partIndex)
+  end
   self:TryCallCreatedCallback()
 end
 
@@ -261,9 +264,19 @@ function Asset_RolePart:SetCreatedCallBack(callback, callbackArg)
   self.args[8] = callbackArg
 end
 
+function Asset_RolePart:SetSubPartCreatedCallBack(callback, callbackArg)
+  self.subPartCreatedCallback = callback
+  self.subPartCreatedCallbackArg = callbackArg
+end
+
 function Asset_RolePart:RemoveCreatedCallBack()
   self.args[7] = nil
   self.args[8] = nil
+end
+
+function Asset_RolePart:RemoveSubPartCreatedCallBack()
+  self.subPartCreatedCallback = nil
+  self.subPartCreatedCallbackArg = nil
 end
 
 function Asset_RolePart:RemoveCreateFailCallBack()
@@ -329,8 +342,41 @@ function Asset_RolePart:ResetPartColor(partIndex, n)
   end
 end
 
+function Asset_RolePart:ClearSubPart(partIndex)
+  if not Asset_Role.IsSubPartIndex(partIndex) then
+    return
+  end
+  local subpart = self.subparts and self.subparts[partIndex]
+  if subpart then
+    if subpart:_IsLoading() then
+      subpart:_CancelLoading()
+    else
+      subpart:Destroy()
+    end
+    self.subparts[partIndex] = nil
+  end
+  if self.subpartIDs then
+    self.subpartIDs[partIndex] = nil
+  end
+  local mainPartObj = self.args[9]
+  if not IsNull(mainPartObj) then
+    local _, subPartIndex = Asset_Role.DecodeSubPartIndex(partIndex)
+    mainPartObj:SetSubPart(subPartIndex - 1, nil, true)
+  end
+end
+
 function Asset_RolePart:ResetSubPart(partIndex, partID, n)
-  if Asset_Role.IsSubPartIndex(partIndex) and partID and partID ~= 0 then
+  if Asset_Role.IsSubPartIndex(partIndex) and partID then
+    if partID == 0 then
+      self:ClearSubPart(partIndex)
+      return
+    end
+    if not self.subparts then
+      self.subparts = ReusableTable.CreateTable()
+    end
+    if not self.subpartIDs then
+      self.subpartIDs = {}
+    end
     local subpart = self.subparts[partIndex]
     local oldID = self.subpartIDs[partIndex]
     if oldID == partID then
@@ -482,6 +528,7 @@ function Asset_RolePart:DoDeconstruct(asArray)
   self.subpartIDs = nil
   self.isMounted = nil
   self.loadingPartCount = nil
+  self:RemoveSubPartCreatedCallBack()
   self.partColorIndex = nil
   self.partColors = nil
 end

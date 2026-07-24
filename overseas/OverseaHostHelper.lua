@@ -444,6 +444,9 @@ function OverseaHostHelper:GetRechargeShopConfirmDesc()
 end
 
 function OverseaHostHelper:FeedXDConfirm(titleVal, descVal, productName, productPrice, callback, cancelcallback, clickUrlCallback)
+  if BranchMgr.IsNOKR() and descVal == ZhString.ShopConfirmDes then
+    descVal, clickUrlCallback = self:GetRechargeShopConfirmDesc()
+  end
   local view
   if BranchMgr.IsJapan() then
     local msgData = Table_Sysmsg[43234]

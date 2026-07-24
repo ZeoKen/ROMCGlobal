@@ -126,6 +126,7 @@ function AI_CMD_Myself_Access:Update(time, deltaTime, creature)
     local custom, customType = self.args[4], self.args[6]
     self:End(time, deltaTime, creature)
     if canAccess then
+      creature:InterruptSkatingGlide()
       creature:Client_ArrivedAccessTarget(targetCreature, custom, customType)
     end
   end

@@ -843,10 +843,8 @@ function MiniMapWindow:CenterOnTrans(trans, restrictWithPanel)
     return
   end
   local mapPanelTrans = self.mapPanel.transform
-  local mx, my, mz = GetLocalPosition(self.mTrans)
-  local tx, ty, tz = GetLocalPosition(trans)
-  cc[1], cc[2], cc[3] = mx, my, mz
-  cp[1], cp[2], cp[3] = tx, ty, tz
+  cc[1], cc[2], cc[3] = LuaGameObject.InverseTransformPointByVector3(mapPanelTrans, self.mTrans.position)
+  cp[1], cp[2], cp[3] = LuaGameObject.InverseTransformPointByVector3(mapPanelTrans, trans.position)
   if restrictWithPanel then
     local mBound = NGUIMath.CalculateRelativeWidgetBounds(self.mapTexture.transform)
     local mBound_Size = mBound.size

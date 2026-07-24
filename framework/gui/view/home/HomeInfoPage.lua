@@ -81,6 +81,15 @@ function HomeInfoPage:InitUI()
   self.texBgScene = self:FindComponent("texBgScene", UITexture)
   self.texBgFrame = self:FindComponent("texBgFrame", UITexture)
   self.texROMark = self:FindComponent("texROMark", UITexture)
+  local bpBtn = self:FindGO("BpButton")
+  self:AddClickEvent(bpBtn, function()
+    self:sendNotification(UIEvent.JumpPanel, {
+      view = PanelConfig.HomeBluePrintView,
+      viewdata = {
+        houseType = self.houseType
+      }
+    })
+  end)
 end
 
 function HomeInfoPage:AddEvts()

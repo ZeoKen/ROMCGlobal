@@ -244,12 +244,27 @@ function PostView:OnClickReturnBtn()
   self:UpdateReveiveAllBtn()
 end
 
-local NOKR_DEPOSIT_MAIL_IDS = {10001, 10002}
+local NOKR_DEPOSIT_MAIL_IDS = {
+  10001,
+  10002,
+  12548
+}
+local NOKR_DEPOSIT_ITEM_IDS = {111, 112}
 local IsNOKRDepositMail = function(mail)
-  if not (BranchMgr.IsNOKR() and mail) or not mail.mailid then
+  if not BranchMgr.IsNOKR() or not mail then
     return false
   end
-  return TableUtility.ArrayFindIndex(NOKR_DEPOSIT_MAIL_IDS, mail.mailid) > 0
+  if mail.mailid and TableUtility.ArrayFindIndex(NOKR_DEPOSIT_MAIL_IDS, mail.mailid) > 0 then
+    return true
+  end
+  for i = 1, #mail.postItems do
+    local item = mail.postItems[i]
+    local itemID = item and item.staticData and item.staticData.id
+    if itemID and TableUtility.ArrayFindIndex(NOKR_DEPOSIT_ITEM_IDS, itemID) > 0 then
+      return true
+    end
+  end
+  return false
 end
 local TryConfirmNOKRDepositMails = function(mails, confirmHandler, cancelHandler)
   if not BranchMgr.IsNOKR() then

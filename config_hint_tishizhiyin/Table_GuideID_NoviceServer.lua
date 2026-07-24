@@ -4096,6 +4096,25 @@ Table_GuideID = {
     ButtonID = 570,
     press = 1
   },
+  [571] = {
+    id = 571,
+    Explain = "点击风雪之鹰换装",
+    ButtonID = 571,
+    press = 1
+  },
+  [572] = {
+    id = 572,
+    Explain = "点击巨蛇过山车",
+    ButtonID = 572,
+    press = 1
+  },
+  [574] = {
+    id = 574,
+    Explain = "点击开始游戏",
+    uiID = "SnakeCoasterEntranceView",
+    ButtonID = 574,
+    press = 1
+  },
   [1001] = {
     id = 1001,
     Explain = "强化功能引导（点击进入包包）",

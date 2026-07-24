@@ -1362,12 +1362,17 @@ function BagProxy.CheckIfCanDoFavoriteActions(itemData)
   return true
 end
 
-function BagProxy:SaveBattleTimeItem(itemData)
+function BagProxy:SaveBattleTimeItem(itemData, count)
   self.battletimeItem = itemData
+  self.battletimeItemCount = tonumber(count) or 1
 end
 
 function BagProxy:GetBattleTimeItem()
   return self.battletimeItem
+end
+
+function BagProxy:GetBattleTimeItemCount()
+  return self.battletimeItemCount or 1
 end
 
 function BagProxy:GetMountPets()

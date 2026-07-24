@@ -6,7 +6,6 @@ function MultiBossRaidStatView:AddListenEvts()
   self:AddListenEvt(ServiceEvent.FuBenCmdQueryMultiBossRaidStat, self.HandleRecvQuery)
   self:AddListenEvt(PVEEvent.MultiBossRaid_Shutdown, self.CloseSelf)
   self:AddListenEvt(PVEEvent.DestroyAirShipRaid_Shutdown, self.CloseSelf)
-  self:AddListenEvt(PVEEvent.BageLab_ShutDown, self.CloseSelf)
 end
 
 function MultiBossRaidStatView:InitView()

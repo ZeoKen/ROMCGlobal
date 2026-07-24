@@ -31,6 +31,10 @@ function LogicManager_Player_Userdata:ctor()
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_OWN_HANDCART, self.UpdateOwnHandcart)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_ROBOT_USER, self.UpdateRobotUser)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_ROBOT_MASTER, self.UpdateRobotMaster)
+  self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_CARRY_DOWN_CHARID, self.UpdateCarryDownCharid)
+  self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_CARRY_UP_CHARID, self.UpdateCarryUpCharid)
+  self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_SNAKE_COASTER_NPCID, self.UpdateSnakeCoasterNpcID)
+  self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_SNAKE_COASTER_EMOTION, self.UpdateSnakeCoasterEmotion)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_JOBLEVEL, self.UpdateJobLevel)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_JOBEXP, self.UpdateJobExpLevel)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_PROFESSION, self.UpdateProfession)
@@ -61,6 +65,10 @@ function LogicManager_Player_Userdata:ctor()
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_OWN_HANDCART, self.UpdateOwnHandcart)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_ROBOT_USER, self.UpdateRobotUser)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_ROBOT_MASTER, self.UpdateRobotMaster)
+  self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_CARRY_DOWN_CHARID, self.UpdateCarryDownCharid)
+  self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_CARRY_UP_CHARID, self.UpdateCarryUpCharid)
+  self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_SNAKE_COASTER_NPCID, self.UpdateSnakeCoasterNpcID)
+  self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_SNAKE_COASTER_EMOTION, self.UpdateSnakeCoasterEmotion)
   self:AddDirtyCall(ProtoCommon_pb.EUSERDATATYPE_MOUNT, self.UpdateMount)
   self:AddDirtyCall(ProtoCommon_pb.EUSERDATATYPE_RIDING_NPC, self.UpdateMultiMountNpc)
   self:AddDirtyCall(ProtoCommon_pb.EUSERDATATYPE_RIDING_HANDCART_OWNER, self.UpdateRidingHandcartCharID)
@@ -298,4 +306,96 @@ end
 
 function LogicManager_Player_Userdata:UpdateRobotMaster(ncreature, userDataID, oldValue, newValue)
   self:_RefreshRobotMasterCamp(ncreature)
+end
+
+function LogicManager_Player_Userdata:UpdateCarryDownCharid(ncreature, userDataID, oldValue, newValue)
+  if not ncreature or not ncreature.data then
+    return
+  end
+  EventManager.Me():PassEvent(MyselfEvent.CarryDownCharidUpdate, {
+    charid = ncreature.data.id,
+    oldId = oldValue,
+    newId = newValue
+  })
+  if Game.Myself and Game.Myself.data and ncreature.data.id == Game.Myself.data.id then
+    Game.Myself:OnSelfCarryDownChange(newValue)
+  end
+end
+
+function LogicManager_Player_Userdata:UpdateCarryUpCharid(ncreature, userDataID, oldValue, newValue)
+  if not ncreature or not ncreature.data then
+    return
+  end
+  local oldId, newId = oldValue or 0, newValue or 0
+  if oldId == newId then
+    return
+  end
+  if newId ~= 0 then
+    self:_HugTarget(ncreature, newId)
+  else
+    self:_PutDownTarget(ncreature, oldId)
+  end
+end
+
+function LogicManager_Player_Userdata:_HugTarget(master, targetId)
+  if not master or not master.data then
+    return
+  end
+  local target = SceneCreatureProxy.FindCreature(targetId)
+  if not target then
+    return
+  end
+  target.logicTransform:NavMeshPlaceTo(master:GetPosition())
+  target:Server_SetHandInHand(master.data.id, true, true)
+  if target.ai and target.ai.idleAI_BeHolded then
+    target.ai.idleAI_BeHolded.scale = 0.5
+  end
+  target.logicTransform:SetScaleXYZ(0.5, 0.5, 0.5)
+  master:Hold()
+end
+
+function LogicManager_Player_Userdata:_PutDownTarget(master, targetId)
+  local target = SceneCreatureProxy.FindCreature(targetId)
+  if not target then
+    return
+  end
+  target.logicTransform:SetScaleXYZ(target:GetScaleWithFixHW())
+  target:Server_SetHandInHand(0, false, true)
+  if master then
+    master:ClearHold()
+  end
+end
+
+function LogicManager_Player_Userdata:UpdateSnakeCoasterNpcID(ncreature, userDataID, oldValue, newValue)
+  if not ncreature or not ncreature.data then
+    return
+  end
+  if ncreature.data.id == Game.Myself.data.id then
+    return
+  end
+  newValue = newValue or 0
+  if newValue ~= 0 then
+    ncreature:CreateRemoteCoasterNpc(newValue)
+  else
+    ncreature:DestroyRemoteCoasterNpc()
+  end
+end
+
+function LogicManager_Player_Userdata:UpdateSnakeCoasterEmotion(ncreature, userDataID, oldValue, newValue)
+  if not ncreature or not ncreature.data then
+    return
+  end
+  if ncreature.data.id == Game.Myself.data.id then
+    return
+  end
+  newValue = newValue or 0
+  local coasterNpc = ncreature.remoteCoasterNpc
+  if not coasterNpc then
+    return
+  end
+  if newValue == 0 then
+    ncreature:Logic_PlayAction_Simple("ride_wait", "wait")
+  else
+    ncreature:PlayRemoteCoasterAction(newValue)
+  end
 end

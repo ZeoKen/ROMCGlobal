@@ -49,6 +49,17 @@ end
 local RemoveCullingLayer = function(cullingMask, layer)
   return cullingMask & ~(1 << layer)
 end
+local AttachHiddenTarget = function(camera)
+  local rt = RenderTexture.GetTemporary(1, 1, 0)
+  camera.targetTexture = rt
+  return rt
+end
+local ReleaseHiddenTarget = function(camera, rt)
+  camera.targetTexture = nil
+  if rt then
+    RenderTexture.ReleaseTemporary(rt)
+  end
+end
 local _cameraOffset = {
   {
     pos = {
@@ -195,9 +206,11 @@ function HomePictureManager:CaptureAndUploadAtPositions(poses, photoType, photoI
   local CaptureOnce = function(pose, onCaptured)
     SetCameraPose(tempCamera, pose)
     LogTempCameraPose(tempCamera, "HomePictureTempCamera")
+    local hiddenRT = AttachHiddenTarget(tempCamera)
     tempCamera.enabled = true
     helper:GetScreenShot(function(texture)
       tempCamera.enabled = false
+      ReleaseHiddenTarget(tempCamera, hiddenRT)
       onCaptured(texture)
     end, tempCamera)
   end
@@ -229,7 +242,67 @@ function HomePictureManager:CaptureAndUploadAtPositions(poses, photoType, photoI
   end)
 end
 
-function HomePictureManager:CaptureAndUploadReviewAtPoses(poses, photoType, customParam, onSingleFinish, onAllFinish, opts, layer)
+function HomePictureManager:CaptureHomePhotoTextureAtRandomPose(poses, opts, onCaptured)
+  if not poses or #poses == 0 then
+    if onCaptured then
+      onCaptured(nil, "no_poses")
+    end
+    return
+  end
+  local sourceCamera = Camera.main
+  if not sourceCamera then
+    if onCaptured then
+      onCaptured(nil, "no_source_camera")
+    end
+    return
+  end
+  local tempGo = GameObject("HomePictureTempCamera")
+  local tempCamera = tempGo:AddComponent(Camera)
+  tempCamera:CopyFrom(sourceCamera)
+  tempCamera.enabled = false
+  tempCamera.cullingMask = RemoveCullingLayer(tempCamera.cullingMask, Game.ELayer.SceneUI)
+  local helper = tempGo:AddComponent(ScreenShotHelper)
+  if not helper then
+    Object.DestroyImmediate(tempGo)
+    if onCaptured then
+      onCaptured(nil, "create_helper_failed")
+    end
+    return
+  end
+  helper:Setting(opts and opts.width or 1920, opts and opts.height or 1080, opts and opts.textureFormat or TextureFormat.RGB24, opts and opts.textureDepth or 24, opts and opts.antiAliasing or ScreenShot.AntiAliasing.None)
+  local CleanupTemp = function()
+    if tempGo then
+      Object.DestroyImmediate(tempGo)
+      tempGo = nil
+    end
+  end
+  local CaptureOnce = function(pose, onShotDone)
+    SetCameraPose(tempCamera, pose)
+    LogTempCameraPose(tempCamera, "HomePictureTempCamera")
+    local hiddenRT = AttachHiddenTarget(tempCamera)
+    tempCamera.enabled = true
+    helper:GetScreenShot(function(texture)
+      tempCamera.enabled = false
+      ReleaseHiddenTarget(tempCamera, hiddenRT)
+      onShotDone(texture)
+    end, tempCamera)
+  end
+  local index = math.random(1, #poses)
+  CaptureOnce(poses[index], function(texture)
+    CleanupTemp()
+    if not texture then
+      if onCaptured then
+        onCaptured(nil, "capture_failed")
+      end
+      return
+    end
+    if onCaptured then
+      onCaptured(texture, nil)
+    end
+  end)
+end
+
+function HomePictureManager:CaptureAndUploadReviewAtPoses(poses, photoType, photoId, onSingleFinish, onAllFinish, opts, layer)
   if not poses or #poses == 0 then
     if onAllFinish then
       onAllFinish(false)
@@ -264,9 +337,11 @@ function HomePictureManager:CaptureAndUploadReviewAtPoses(poses, photoType, cust
   local CaptureOnce = function(pose, onCaptured)
     SetCameraPose(tempCamera, pose)
     LogTempCameraPose(tempCamera, "HomePictureReviewTempCamera")
+    local hiddenRT = AttachHiddenTarget(tempCamera)
     tempCamera.enabled = true
     helper:GetScreenShot(function(texture)
       tempCamera.enabled = false
+      ReleaseHiddenTarget(tempCamera, hiddenRT)
       onCaptured(texture)
     end, tempCamera)
   end
@@ -290,8 +365,13 @@ function HomePictureManager:CaptureAndUploadReviewAtPoses(poses, photoType, cust
         return
       end
       local reviewPhotoId = i
+      local reviewCustomParam
+      if photoId ~= nil then
+        reviewPhotoId = photoId
+        reviewCustomParam = i
+      end
       local reviewTimestamp = math.floor(ServerTime.CurServerTime() / 1000)
-      FunctionPhotoStorage.Me():SaveHomePhoto(photoType, reviewTexture, reviewPhotoId, reviewTimestamp, customParam, opts and opts.onProgress or nil, function(reviewSuccess, reviewError)
+      FunctionPhotoStorage.Me():SaveHomePhoto(photoType, reviewTexture, reviewPhotoId, reviewTimestamp, reviewCustomParam, opts and opts.onProgress or nil, function(reviewSuccess, reviewError)
         if not reviewSuccess then
           allSuccess = false
         end

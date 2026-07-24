@@ -20,6 +20,8 @@ if not AI_Creature.AI_Creature_inited then
   AI_CMD_Die.BreakIdle = true
   AI_CMD_Spin.BreakIdle = true
   AI_CMD_Breakdown.BreakIdle = true
+  AI_CMD_CoasterMove.BreakIdle = true
+  AI_CMD_Gliding.BreakIdle = true
   AI_CMD_PlaceTo.IgnoreBreak = true
   AI_CMD_GetOnSeat.IgnoreBreak = true
   AI_CMD_GetOffSeat.IgnoreBreak = true
@@ -29,6 +31,8 @@ if not AI_Creature.AI_Creature_inited then
   AI_CMD_PlaceTo.IsMoveCmd = true
   AI_CMD_MoveTo.IsMoveCmd = true
   AI_CMD_SetAngleY.IsMoveCmd = true
+  AI_CMD_CoasterMove.IsMoveCmd = true
+  AI_CMD_Gliding.IsMoveCmd = true
   AI_CMD_PlaceTo.ReqEatReq = {
     AI_CMD_MoveTo,
     AI_CMD_GetOnSeat
@@ -107,6 +111,16 @@ if not AI_Creature.AI_Creature_inited then
   }
   AI_CMD_DirMoveEnd.Interrupts = {
     AI_CMD_DirMove
+  }
+  AI_CMD_CoasterMove.Interrupts = {
+    AI_CMD_MoveTo,
+    AI_CMD_PlayAction,
+    AI_CMD_Skill,
+    AI_CMD_Hit,
+    AI_CMD_Spin
+  }
+  AI_CMD_CoasterMoveEnd.Interrupts = {
+    AI_CMD_CoasterMove
   }
   AI_CMD_SpinEnd.Interrupts = {
     AI_CMD_Spin
@@ -758,6 +772,7 @@ function AI_Creature:_Clear(time, deltaTime, creature)
 end
 
 local UpdateCurrentAI = IdleAIManager.UpdateCurrentAI
+local FullUpdateIdleAI = IdleAIManager.Update
 local selfTryExecuteCommands = AI_Creature._TryExecuteCommands
 local superDoUpdate = AI_Creature.super._DoUpdate
 local superIdle = AI_Creature.super._Idle
@@ -771,6 +786,17 @@ function AI_Creature:_DoUpdate(time, deltaTime, creature)
       superDoUpdate(self, time, deltaTime, creature)
       UpdateCurrentAI(self.idleAIManager, self.idleElapsed, time, deltaTime, creature)
       return false
+    end
+    if self.idleAI_BeHolded ~= nil then
+      local bh = self.idleAI_BeHolded
+      if bh.masterGUID ~= 0 or bh.requestMasterGUID ~= nil then
+        local cd = creature.data
+        if cd ~= nil and (cd:Freeze() or cd:DeepFreeze()) then
+          superDoUpdate(self, time, deltaTime, creature)
+          FullUpdateIdleAI(self.idleAIManager, self.idleElapsed, time, deltaTime, creature)
+          return false
+        end
+      end
     end
     local isIdle = superIdle(self, time, deltaTime, creature)
     superDoUpdate(self, time, deltaTime, creature)

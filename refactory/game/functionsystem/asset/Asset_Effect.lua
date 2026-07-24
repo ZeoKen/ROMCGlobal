@@ -30,6 +30,13 @@ Asset_Effect.EffectTypes = {
   Hit = 2,
   Other = 3
 }
+Asset_Effect.WarningEffectType = {
+  None = 0,
+  Circle = 1,
+  Rect = 2,
+  Sweep = 3,
+  Sector = 4
+}
 
 function Asset_Effect._Create(args)
   local effect = ReusableObject.Create(Asset_Effect, true, args)
@@ -371,6 +378,18 @@ function Asset_Effect:ResetLocalScaleXYZ(x, y, z)
   end
 end
 
+function Asset_Effect:ResetParticleOffsetHandler(handler, fromX, fromY, toX, toY)
+  self.args[26] = handler
+  self.args[27] = fromX
+  self.args[28] = fromY
+  self.args[29] = toX
+  self.args[30] = toY
+  if nil ~= self.args[6] then
+    handler(self.args[6], fromX, fromY, toX, toY, self)
+    self:RemoveOffsetCallBack()
+  end
+end
+
 function Asset_Effect:ResetLocalScale(p)
   self:ResetLocalScaleXYZ(p[1], p[2], p[3])
 end
@@ -515,6 +534,11 @@ function Asset_Effect:OnEffectCreated(tag, obj, path)
     self.args[9](obj, self.args[10], self)
     self:RemoveCreatedCallBack()
   end
+  if nil ~= self.args[26] then
+    self.args[26](obj, self.args[27], self.args[28], self.args[29], self.args[30], self)
+    self:RemoveOffsetCallBack()
+  end
+  self:_ApplyTweenScale()
   if self.args[24] then
     local animator = obj.animators and obj.animators[1]
     if animator then
@@ -529,6 +553,14 @@ end
 function Asset_Effect:RemoveCreatedCallBack()
   self.args[9] = nil
   self.args[10] = nil
+end
+
+function Asset_Effect:RemoveOffsetCallBack()
+  self.args[26] = nil
+  self.args[27] = nil
+  self.args[28] = nil
+  self.args[29] = nil
+  self.args[30] = nil
 end
 
 function Asset_Effect:SetUVSpeed(speed, meshname)
@@ -572,6 +604,30 @@ function Asset_Effect:SetLookAtTrans(trans)
   end
 end
 
+function Asset_Effect:SetParticleOffset(fromX, fromY, toX, toY)
+  if nil ~= self.args[6] then
+    if not self.tweenMat then
+      self.tweenMat = self.effectObj:GetComponent(TweenParitcleMat)
+    end
+    if self.tweenMat then
+      self.tweenMat.offsetFrom = Vector2(fromX, fromY)
+      self.tweenMat.offsetTo = Vector2(toX, toY)
+    end
+  end
+end
+
+function Asset_Effect:_ApplyTweenScale()
+  local args = self.args
+  if nil == args[31] or nil == args[6] then
+    return
+  end
+  local scale = LuaGeometry.GetTempVector3(args[32], 1, args[32])
+  self.tweenScale = TweenScale.Begin(self.effectObj, args[31] or 0, scale)
+  LuaVector3.Better_Set(args[4], args[32], 1, args[32])
+  args[31] = nil
+  args[32] = nil
+end
+
 function Asset_Effect:ClearTrailRenderer(nameMap)
   if self.args[6] and self.effectObj and nameMap then
     for _, cName in pairs(nameMap) do
@@ -587,16 +643,12 @@ function Asset_Effect:ClearTrailRenderer(nameMap)
 end
 
 function Asset_Effect:SetTweenScale(duration, scale)
-  if nil ~= self.args[6] then
-    if not self.tweenScale then
-      self.tweenScale = self.effectObj:GetComponent(TweenScale)
-    end
-    if self.tweenScale then
-      self.tweenScale.duration = duration
-      self.tweenScale.scale = scale
-      self.tweenScale:PlayForward()
-    end
+  if nil == scale then
+    return
   end
+  self.args[31] = duration or 0
+  self.args[32] = scale
+  self:_ApplyTweenScale()
 end
 
 function Asset_Effect:DoConstruct(asArray, args)
@@ -625,6 +677,13 @@ function Asset_Effect:DoConstruct(asArray, args)
   self.args[21] = args[21]
   self.args[23] = args[23]
   self.args[24] = args[24]
+  self.args[26] = args[26]
+  self.args[27] = args[27]
+  self.args[28] = args[28]
+  self.args[29] = args[29]
+  self.args[30] = args[30]
+  self.args[31] = nil
+  self.args[32] = nil
   self.effectTrans = nil
   self.effectObj = nil
   self.isDestroyFromCSharp = nil
@@ -663,6 +722,13 @@ function Asset_Effect:DoDeconstruct(asArray)
   self.args[19] = nil
   self.args[24] = nil
   self.args[25] = nil
+  self.args[26] = nil
+  self.args[27] = nil
+  self.args[28] = nil
+  self.args[29] = nil
+  self.args[30] = nil
+  self.args[31] = nil
+  self.args[32] = nil
   self:RemoveCreatedCallBack()
   self.createTime = nil
   self.effectTrans = nil
@@ -673,6 +739,9 @@ function Asset_Effect:DoDeconstruct(asArray)
   end
   if self.lookAtTrans then
     self.lookAtTrans = nil
+  end
+  if self.tweenScale then
+    self.tweenScale = nil
   end
 end
 

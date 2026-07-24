@@ -8,6 +8,9 @@ InheritSkillView.ViewType = UIViewType.NormalLayer
 local BgName = "skill_inherit_bg_00"
 local SkillBgName = "skill_inherit_bg_04"
 local EnabledLabelEffectColor = Color(0.6196078431372549, 0.33725490196078434, 0, 1)
+local OpenRechargeShop = function()
+  FunctionNewRecharge.Instance():OpenUIDefaultPage()
+end
 
 function InheritSkillView:Init()
   self.multiSaveId = self.viewdata and self.viewdata.viewdata and self.viewdata.viewdata.saveId
@@ -78,6 +81,10 @@ function InheritSkillView:FindObjs()
   self.unequipBtn = self:FindGO("UnequipBtn")
   self:AddClickEvent(self.unequipBtn, function()
     self:OnUnequipBtnClick()
+  end)
+  self.resetBtn = self:FindGO("ResetBtn")
+  self:AddClickEvent(self.resetBtn, function()
+    self:OnResetBtnClick()
   end)
   self.upgradeTipLabel = self:FindComponent("UpgradeTip", UILabel)
   self.upgradeTip = self:FindGO("UpgradeTipBg")
@@ -347,6 +354,7 @@ function InheritSkillView:RefreshSelectSkillInfo(data)
   self.upgradeLabel.text = ZhString.InheritSkill_Upgrade
   self.inheritBtn:SetActive(not self.multiSaveId and data.isUnlock and not data.isInherited)
   self.equipUpgradeBtns:SetActive(not self.multiSaveId and data.isInherited)
+  self.resetBtn:SetActive(not self.multiSaveId and data.isInherited)
   self:SetButtonEnable(self.upgradeBtn, not isMaxLv, EnabledLabelEffectColor)
   self.equipBtn:SetActive(not data.isLoad)
   self.unequipBtn:SetActive(data.isLoad)
@@ -462,7 +470,8 @@ end
 function InheritSkillView:OnUpgradeBtnClick()
   if self.selectSkillItemData then
     if #self.lackMats > 0 then
-      QuickBuyProxy.Instance:TryOpenView(self.lackMats)
+      local beforeBuyHook = BranchMgr.IsJapan() and OpenRechargeShop or nil
+      QuickBuyProxy.Instance:TryOpenView(self.lackMats, nil, nil, beforeBuyHook)
       return
     end
     local skillIds = {
@@ -538,6 +547,50 @@ function InheritSkillView:OnUnequipBtnClick()
   if self.selectSkillItemData and self.selectSkillItemData.isLoad then
     ServiceSkillProxy.Instance:CallLoadInheritSkillCmd(self.selectSkillItemData.id, nil, 1)
   end
+end
+
+function InheritSkillView:OnResetBtnClick()
+  if self.selectSkillItemData and self.selectSkillItemData.isInherited then
+    if InheritSkillProxy.Instance:HasInheritedConditionSkill(self.selectSkillItemData.sortID) then
+      MsgManager.ShowMsgByID(43726)
+      return
+    end
+    local resetCostItems = GameConfig.SkillInherit and GameConfig.SkillInherit.ResetCostItems
+    local itemId, needNum = resetCostItems and resetCostItems[1], resetCostItems and resetCostItems[2]
+    if not itemId or not needNum then
+      return
+    end
+    local skillData = self.selectSkillItemData
+    local itemConfig = Table_Item[itemId]
+    local content = string.format(ZhString.InheritSkill_ResetConfirmContent, needNum, itemConfig and itemConfig.NameZh or "")
+    UIUtil.PopUpItemConfirmYesNoView(ZhString.InheritSkill_ResetConfirmTitle, content, skillData:GetResetReturnMaterials(), function()
+      self:ConfirmResetInheritSkill(skillData)
+    end, nil, nil, ZhString.UniqueConfirmView_Confirm, ZhString.UniqueConfirmView_CanCel)
+  end
+end
+
+function InheritSkillView:ConfirmResetInheritSkill(skillData)
+  if not skillData or not skillData.isInherited then
+    return
+  end
+  local resetCostItems = GameConfig.SkillInherit and GameConfig.SkillInherit.ResetCostItems
+  local itemId, needNum = resetCostItems and resetCostItems[1], resetCostItems and resetCostItems[2]
+  if not itemId or not needNum then
+    return
+  end
+  local checkPackage = GameConfig.PackageMaterialCheck.skill_inherit
+  local ownNum = BagProxy.Instance:GetItemNumByStaticID(itemId, checkPackage)
+  if needNum > ownNum then
+    local beforeBuyHook = BranchMgr.IsJapan() and OpenRechargeShop or nil
+    QuickBuyProxy.Instance:TryOpenView({
+      {
+        id = itemId,
+        count = needNum - ownNum
+      }
+    }, nil, nil, beforeBuyHook)
+    return
+  end
+  ServiceSkillProxy.Instance:CallResetInheritSkillCmd(skillData.id)
 end
 
 function InheritSkillView:ShowMaxLevelPreview()

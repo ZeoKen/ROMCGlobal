@@ -438,6 +438,7 @@ Table_ItemMemoryEffect = {
     id = 15,
     EffectID = 20001,
     BuffID = Table_ItemMemoryEffect_t.BuffID[15],
+    PreviewDesc = "物理防御",
     WaxDesc = "物理防御＋2%",
     UpgradeDesc = "物理防御＋4%"
   },
@@ -742,7 +743,6 @@ Table_ItemMemoryEffect = {
     EffectID = 30008,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[22],
     ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[22],
-    PreviewDesc = "诅咒力界",
     WaxDesc = "力量达到180点时，物理伤害＋3%\n（效果可叠加，叠加3层时额外获得效果：力量达到180点时，物理伤害＋6%）"
   },
   [54] = {
@@ -750,16 +750,14 @@ Table_ItemMemoryEffect = {
     EffectID = 30008,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[23],
-    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[23],
-    PreviewDesc = "诅咒力界"
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[23]
   },
   [55] = {
     id = 55,
     EffectID = 30008,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[24],
-    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[24],
-    PreviewDesc = "诅咒力界"
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[24]
   },
   [56] = {
     id = 56,
@@ -1154,6 +1152,7 @@ Table_ItemMemoryEffect = {
     id = 136,
     EffectID = 40101,
     BuffID = Table_ItemMemoryEffect_t.BuffID[40],
+    PreviewDesc = "物理防御",
     WaxDesc = "物理防御＋12%"
   },
   [137] = {
@@ -1251,6 +1250,7 @@ Table_ItemMemoryEffect = {
     id = 150,
     EffectID = 40207,
     BuffID = Table_ItemMemoryEffect_t.BuffID[54],
+    PreviewDesc = "物理防御",
     WaxDesc = "物理防御＋12%"
   },
   [151] = {
@@ -1323,7 +1323,7 @@ local cell_mt = {
     EffectID = 30103,
     ExcessWaxBuffID = _EmptyTable,
     Level = 1,
-    PreviewDesc = "物理防御",
+    PreviewDesc = "诅咒力界",
     UpgradeDesc = "",
     WaxBuffID = _EmptyTable,
     WaxDesc = "",

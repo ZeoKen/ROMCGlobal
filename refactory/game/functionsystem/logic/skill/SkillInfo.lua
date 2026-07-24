@@ -1142,6 +1142,20 @@ function SkillInfo:TargetIncludeHide(creature)
   return self.logicParam.select_hide == 1
 end
 
+function SkillInfo:IgnoreNoAccessable()
+  return self.logicParam.ignore_no_accessable == 1
+end
+
+function SkillInfo:IsForceMoveNpcTarget(targetCreature)
+  local targetData = targetCreature and targetCreature.data
+  if not (targetData and targetData.IsForceMoveNpc) or not targetData:IsForceMoveNpc() then
+    return false
+  end
+  local params = targetData.staticData and targetData.staticData.Params
+  local forceMove = params and params.ForceMove
+  return forceMove and forceMove.UseSkillId == self:GetSkillID()
+end
+
 function SkillInfo:CheckTeamPriority()
   if self.logicParam.team_priority == 1 then
     return true
@@ -1208,6 +1222,10 @@ function SkillInfo:GetTargetForwardRect(creature, offset, size)
   size[2] = self.logicParam.distance
   offset[1] = 0
   offset[2] = size[2] / 2 + self.logicParam.forward_offset or 0
+end
+
+function SkillInfo:GetTargetForwardArch(creature)
+  return self.logicParam.distance
 end
 
 function SkillInfo:GetTargetRect(creature, offset, size)
@@ -1374,14 +1392,17 @@ function SkillInfo:CheckTarget(creature, targetCreature)
   if targetData:NoAttacked() then
     return false
   end
-  if targetData:NoAccessable() and not self:TargetIncludeHide() then
-    return false
-  end
-  if self:TargetInFilter(creature, targetCreature) then
-    return false
-  end
-  if not self:CheckCamps(creature, targetCreature) then
-    return false
+  if self:IgnoreNoAccessable() then
+  else
+    if targetData:NoAccessable() and not self:TargetIncludeHide() and not self:IgnoreNoAccessable() then
+      return false
+    end
+    if self:TargetInFilter(creature, targetCreature) then
+      return false
+    end
+    if not self:CheckCamps(creature, targetCreature) then
+      return false
+    end
   end
   local lifeCheck, reason = self:CheckSelectLife(targetCreature)
   if not lifeCheck then
@@ -1770,6 +1791,26 @@ end
 
 function SkillInfo:ShowWarningEffect()
   return self.logicParam.ShowWarningEffect ~= nil
+end
+
+function SkillInfo:GetWarningAngle()
+  return self.logicParam.angle
+end
+
+function SkillInfo:GetWarningDir()
+  return self.logicParam.WarningDir
+end
+
+function SkillInfo:GetWarningExtendAngles()
+  local v = self.logicParam.extend_angles
+  if type(v) ~= "table" then
+    return {}
+  end
+  return v
+end
+
+function SkillInfo:GetWarningNoZeroAngle()
+  return self.logicParam.no_zero_angle == 1
 end
 
 function SkillInfo:GetWarnRingEffectPath(creature)

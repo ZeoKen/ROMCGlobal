@@ -7418,7 +7418,8 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     local randomRatio = skilllv_yj * 0.15 + 0.35
     if 0 < snowStoneLv386201 then
       local lowAdd = snowStoneLv386201 * 10 - 50
-      if skillID == 5314 or skillID == 5315 or skillID == 5316 or skillID == 5317 or skillID == 5321 or skillID == 5322 or skillID == 5323 or skillID == 5324 or skillID == 5324 or skillID == 422 or skillID == 422 or skillID == 1122 then
+      if skillID == 5314 or skillID == 5315 or skillID == 5316 or skillID == 5317 or skillID == 5321 or skillID == 5322 or skillID == 5323 or skillID == 5324 or skillID == 422 or skillID == 1122 then
+        lowAdd = 0
       else
         base = base + lowAdd
       end
@@ -9737,6 +9738,8 @@ function CommonFun.DoCalcDamage(srcUser, targetUser, params, logger)
       return math.floor(damage * (1 + RealDamage)), damageType
     elseif srcUser:GetNpcID() == 291100 or srcUser:GetNpcID() == 291200 or srcUser:GetNpcID() == 291300 or srcUser:GetNpcID() == 292100 or srcUser:GetNpcID() == 292200 or srcUser:GetNpcID() == 292300 or srcUser:GetNpcID() == 293100 or srcUser:GetNpcID() == 293200 or srcUser:GetNpcID() == 293300 then
       return math.floor(damage * (1 + RealDamage)), damageType
+    elseif srcUser:GetNpcID() == 2055581 then
+      return math.floor(damage * (1 + RealDamage)), damageType
     elseif srcUser:GetNpcID() == 294104 or srcUser:GetNpcID() == 294105 or srcUser:GetNpcID() == 294204 or srcUser:GetNpcID() == 294205 or srcUser:GetNpcID() == 294304 or srcUser:GetNpcID() == 294305 or srcUser:GetNpcID() == 295107 or srcUser:GetNpcID() == 295207 or srcUser:GetNpcID() == 295307 then
       return math.floor(damage * (1 + RealDamage)) + math.floor(MaxHp * math.random(1, 5) / 300) * (1 + (BaseLv1 - BaseLv) / 200), damageType
     elseif BaseLv <= BaseLv1 and 70 <= BaseLv1 then
@@ -9777,6 +9780,9 @@ function CommonFun.DoCalcDamage(srcUser, targetUser, params, logger)
       temp = true
     end
     if 80089 <= TransformID and TransformID <= 80094 then
+      temp = true
+    end
+    if TransformID == 84001 or TransformID == 84002 or TransformID == 84003 or TransformID == 84004 or TransformID == 84005 or TransformID == 84006 then
       temp = true
     end
     if temp == false then
@@ -10394,7 +10400,7 @@ function CommonFun.calcDamage_21(srcUser, targetUser, params, damageParam, logge
   local VitPer2 = targetUser:GetProperty("VitPer")
   local DamReduc2 = CommonFun.calcDamReDuc(srcUser, targetUser)
   local LongRangeDamReduc2 = targetUser:GetProperty("LongRangeDamReduc")
-  local RefineDamReduc = CommonFun.calcRefineDamReduc(srcUser, targetUser)
+  local RefineDamReduc = targetUser:GetProperty("RefineDamReduc")
   local damChangePer = damageParam.damChangePer
   local raceparam = CommonFun.CalcRaceParam(srcUser, targetUser, params, damageParam, logger)
   local bodyparam = CommonFun.CalcBodyParam(srcUser, targetUser, params, damageParam, logger)
@@ -17224,7 +17230,7 @@ function CommonFun.calcDamage_4101(srcUser, targetUser, params, damageParam, log
   local VitPer2 = targetUser:GetProperty("VitPer")
   local DamReduc2 = CommonFun.calcDamReDuc(srcUser, targetUser)
   local LongRangeDamReduc2 = targetUser:GetProperty("LongRangeDamReduc")
-  local RefineDamReduc = targetUser:GetProperty("RefineDamReduc")
+  local RefineDamReduc = CommonFun.calcRefineDamReduc(srcUser, targetUser)
   local damChangePer = damageParam.damChangePer
   local damChangePer1 = damageParam.damChangePer1
   local raceparam = CommonFun.CalcRaceParam(srcUser, targetUser, params, damageParam, logger)
@@ -20650,6 +20656,49 @@ function CommonFun.calcDamage_8021(srcUser, targetUser, params, damageParam, log
     AtkFinal = 0
   end
   local A = AtkFinal
+  if A <= 1 then
+    return 1
+  end
+  return A
+end
+
+function CommonFun.calcDamage_8022(srcUser, targetUser, params, damageParam, logger)
+  local Str = srcUser:GetProperty("Str")
+  local Dex = srcUser:GetProperty("Dex")
+  local Luk = srcUser:GetProperty("Luk")
+  local Atk = srcUser:GetProperty("Atk")
+  local AtkPer = srcUser:GetProperty("AtkPer")
+  local DamIncrease = srcUser:GetProperty("DamIncrease")
+  local IgnoreDef = 0
+  local IgnoreDef1 = srcUser:GetProperty("IgnoreDef")
+  local IgnoreDef2 = srcUser:GetProperty("IgnoreEquipDef")
+  if targetUser.boss or targetUser.mini then
+    IgnoreDef = IgnoreDef1
+  else
+    IgnoreDef = IgnoreDef1 + IgnoreDef2
+  end
+  if 1 <= IgnoreDef then
+    IgnoreDef = 1
+  end
+  local Refine = srcUser:GetProperty("Refine")
+  local damChangePer = damageParam.damChangePer
+  if targetUser:HasBuffID(121600) then
+    local targetid = targetUser:GetGuid()
+    local distance = srcUser:GetDistance(targetid)
+    damChangePer = damChangePer * math.max(0.5 - distance * 0.05, 0.01)
+  end
+  local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
+  if skillID == 962 then
+    local count = params.hitedCount
+    damChangePer = damChangePer * (1 + 0.4 * (count - 1))
+    if targetUser:GetNpcID() == 2055581 then
+      damChangePer = 40
+    end
+  end
+  local A = damChangePer * CommonFun.calcMagicElement(srcUser, targetUser, params, damageParam)
+  if srcUser:HasBuffID(121560) then
+    A = A * 1.5
+  end
   if A <= 1 then
     return 1
   end
@@ -29909,6 +29958,7 @@ CommonFun.CalcDamageFuncs = {
   [8016] = CommonFun.calcDamage_8016,
   [8020] = CommonFun.calcDamage_8020,
   [8021] = CommonFun.calcDamage_8021,
+  [8022] = CommonFun.calcDamage_8022,
   [8030] = CommonFun.calcDamage_8030,
   [8031] = CommonFun.calcDamage_8031,
   [8032] = CommonFun.calcDamage_8032,
@@ -52866,6 +52916,17 @@ function CommonFun.calcBuff_100570(srcUser, targetUser, a, b, c, d, lv)
   return A
 end
 
+function CommonFun.calcBuff_9930(srcUser, targetUser, a, b, c, d, lv)
+  local A = 0
+  if srcUser == nil or srcUser.race == nil then
+    return 0
+  end
+  local guid = srcUser:GetGuid()
+  local zhongdu = targetUser:GetBuffLayerByIDAndFromID(121522, guid)
+  A = zhongdu * 50
+  return -A
+end
+
 CommonFun.BaseAttrCalNoPer = {
   "Cri",
   "MaxHp",
@@ -54163,6 +54224,7 @@ CommonFun.CalcBuffFuncs = {
   [9811] = CommonFun.calcBuff_9811,
   [9812] = CommonFun.calcBuff_9812,
   [9813] = CommonFun.calcBuff_9813,
+  [9930] = CommonFun.calcBuff_9930,
   [9981] = CommonFun.calcBuff_9981,
   [9985] = CommonFun.calcBuff_9985,
   [9986] = CommonFun.calcBuff_9986,

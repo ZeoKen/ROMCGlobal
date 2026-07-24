@@ -57,7 +57,11 @@ function CustomerServicePanel:ConfirmClick()
     helplog("serverid = ", self.serverData.serverid)
     helplog("sid = ", self.serverData.sid)
     helplog("accid = ", self.serverData.accid)
-    FunctionSDK.Instance:EnterBugReport(self.serverData.sid, self.serverData.accid, "NoEnter")
+    local charid = ""
+    if Game ~= nil and Game.Myself ~= nil then
+      charid = Game.Myself.data.id
+    end
+    FunctionSDK.Instance:EnterBugReport(self.serverData.sid, charid, "NoEnter")
   end
   self:CloseSelf()
 end

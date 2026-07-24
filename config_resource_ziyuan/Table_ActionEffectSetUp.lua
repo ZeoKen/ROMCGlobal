@@ -2932,6 +2932,34 @@ Table_ActionEffectSetUp = {
     EPFollow = 1,
     Loop = 1
   },
+  [432] = {
+    id = 432,
+    Path = "Common/cfx_sorcerersrobe_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [433] = {
+    id = 433,
+    Path = "Common/cfx_sorcerersrobe_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [434] = {
+    id = 434,
+    Path = "Common/cfx_sorcerersrobe_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [435] = {
+    id = 435,
+    Path = "Common/cfx_sorcerersrobe_004_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
   [436] = {
     id = 436,
     Path = "Common/cfx_himemmeth_playshow_prf",

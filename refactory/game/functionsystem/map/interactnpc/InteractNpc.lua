@@ -11,7 +11,9 @@ InteractNpc.InteractType = {
   LocalCollect = 9,
   LocalServerSimple = 10,
   LocalCollectHug = 11,
-  Handcart = 12
+  Handcart = 12,
+  Snowball = 13,
+  ForceMoveNpc = 14
 }
 InteractNpc.Features = {ForbidMove = 1}
 local updateInterval = 1
@@ -49,6 +51,10 @@ function InteractNpc.Create(data, id)
     return ReusableObject.Create(InteractLocalCollectHug, false, args)
   elseif interactType == InteractNpc.InteractType.Handcart then
     return ReusableObject.Create(InteractHandcartNpc, false, args)
+  elseif interactType == InteractNpc.InteractType.ForceMoveNpc then
+    return ReusableObject.Create(InteractForceMoveNpc, false, args)
+  elseif interactType == InteractNpc.InteractType.Snowball then
+    return ReusableObject.Create(InteractSnowballNpc, false, args)
   end
 end
 
@@ -212,6 +218,20 @@ end
 
 function InteractNpc:IsAuto()
   return self.staticData.Auto == 1
+end
+
+function InteractNpc:IsForceMoveNpc()
+  return false
+end
+
+function InteractNpc:GetInteractPrompt(isMyselfOnNpc)
+  if isMyselfOnNpc and self.staticData.InteractPromptOff ~= nil then
+    return self.staticData.InteractPromptOff
+  end
+  if not isMyselfOnNpc and self.staticData.InteractPrompt ~= nil then
+    return self.staticData.InteractPrompt
+  end
+  return isMyselfOnNpc and ZhString.InteractNpc_GetOff or ZhString.InteractNpc_GetOn
 end
 
 function InteractNpc:PlayOffAction(creature)

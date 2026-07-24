@@ -1,219 +1,161 @@
-autoImport("HomeBluePrintCell")
-autoImport("PageSymbolCell")
-HomeBluePrintView = class("HomeBluePrintView", BaseView)
-HomeBluePrintView.ViewType = UIViewType.NormalLayer
-HomeBluePrintView.BrotherView = HomeBuildingView
-HomeBluePrintView.TexName = {
-  bgUp = "home_blueprint_bg_paper2_upper",
-  bgDown = "home_blueprint_bg_paper2_lower",
-  bgLeft = "home_blueprint_bg_paper2_left",
-  bgRight = "home_blueprint_bg_paper2_right"
+autoImport("HomeBluePrintRecommendPage")
+autoImport("HomeBluePrintCollectionPage")
+autoImport("HomeBluePrintMyPage")
+autoImport("HomeBuildingSceneBPControl")
+HomeBluePrintView = class("HomeBluePrintView", ContainerView)
+HomeBluePrintView.ViewType = UIViewType.PopUpLayer
+local TabName = {
+  [1] = ZhString.HomeBluePrint_Recommend,
+  [2] = ZhString.HomeBluePrint_Collection,
+  [3] = ZhString.HomeBluePrint_My
 }
-local vec_arrowEulerOpen = LuaVector3(0, 0, 180)
-local vec_arrowEulerClose = LuaVector3.Zero()
-HomeBluePrintView.SortType = {
-  Default = ZhString.Home_Default,
-  Like = ZhString.Home_LikeLevel,
-  Score = ZhString.Home_Score
-}
-HomeBluePrintView.CurSortType = HomeBluePrintView.SortType.Default
+local BpTexName = "home_compose_BG4"
 
 function HomeBluePrintView:Init()
-  self.bpDatas = {}
-  self.pageIndexDatas = {}
-  self:InitUI()
-  self:AddEvts()
-  self:AddViewEvts()
+  self:FindObjs()
+  self:AddListenEvts()
 end
 
-function HomeBluePrintView:InitUI()
-  local l_objPopSort = self:FindGO("popSort")
-  self.popSort = l_objPopSort:GetComponent(UIPopupList)
-  self.tsfPopArrow = self:FindGO("Arrow", l_objPopSort).transform
-  self.objPopSortSelect = self:FindGO("ItemTabsBgSelect", l_objPopSort)
-  self.popSort:AddItem(HomeBluePrintView.SortType.Default)
-  self.popSort:AddItem(HomeBluePrintView.SortType.Like)
-  self.popSort:AddItem(HomeBluePrintView.SortType.Score)
-  self.popSort.value = HomeBluePrintView.CurSortType
-  self.objNoneTip = self:FindGO("NoneTip")
-  self.listBluePrints = WrapListCtrl.new(self:FindGO("wrapBP"), HomeBluePrintCell, "HomeBluePrintCell", WrapListCtrl_Dir.Horizontal, 2, 267)
-  self.listPageSymbols = UIGridListCtrl.new(self:FindComponent("gridPageSymbol", UIGrid), PageSymbolCell, "PageSymbolCell")
-  self.itemSize = self.listBluePrints.wrap.itemSize
+function HomeBluePrintView:AddListenEvts()
 end
 
-function HomeBluePrintView:AddEvts()
-  self.listBluePrints:AddEventListener(MouseEvent.MouseClick, self.ClickBPCell, self)
-  self.listBluePrints:AddEventListener(HomeBluePrintCell.ClickLike, self.ClickBPCellLike, self)
-  EventDelegate.Add(self.popSort.onChange, function()
-    self:UpdateBPInfos(true)
-  end)
-  self:AddClickEvent(self:FindGO("CloseButton"), function()
+function HomeBluePrintView:FindObjs()
+  local toggleList = {}
+  self.toggleIconList = {}
+  for i = 1, 3 do
+    local toggleObj = self:FindGO("Toggle" .. i)
+    local toggleLongPress = toggleObj:GetComponent(UILongPress)
+    local bg = self:FindComponent("Background", UISprite, toggleObj)
+    
+    function toggleLongPress.pressEvent(obj, state)
+      self:OnToggleLongPress(bg, state, i)
+    end
+    
+    local icon = self:FindComponent("Icon", UISprite, toggleObj)
+    TabNameTip.SwitchShowTabIconOrLabel(icon.gameObject)
+    toggleList[#toggleList + 1] = toggleObj
+    self.toggleIconList[#self.toggleIconList + 1] = icon
+  end
+  local closeBtn = self:FindGO("CloseButton")
+  self:AddClickEvent(closeBtn, function()
     self:CloseSelf()
   end)
+  self.recommendPage = self:AddSubView("HomeBluePrintRecommendPage", HomeBluePrintRecommendPage)
+  self.collectionPage = self:AddSubView("HomeBluePrintCollectionPage", HomeBluePrintCollectionPage)
+  self.myPage = self:AddSubView("HomeBluePrintMyPage", HomeBluePrintMyPage)
+  self:AddTabChangeEvent(toggleList[1], self.recommendPage.gameObject, 1)
+  self:AddTabChangeEvent(toggleList[2], self.collectionPage.gameObject, 2)
+  self:AddTabChangeEvent(toggleList[3], self.myPage.gameObject, 3)
+  self.bpTex = self:FindComponent("BpTex", UITexture)
+  self.emptyTip = self:FindComponent("EmptyTip", UILabel)
+  local btnHelp = self:FindGO("BtnHelp")
+  self:RegistShowGeneralHelpByHelpID(10000, btnHelp)
 end
 
-function HomeBluePrintView:AddViewEvts()
-  self:AddListenEvt(ServiceEvent.HomeCmdPrintUpdateHomeCmd, self.HandlePrintUpdateHomeCmd)
+function HomeBluePrintView:OnToggleLongPress(sp, state, index)
+  TabNameTip.OnLongPress(state, TabName[index], false, sp)
 end
 
-function HomeBluePrintView:ReloadBPInfos()
-  local showMapIDs = ReusableTable.CreateArray()
-  if HomeManager.Me():IsInEditMode() then
-    local curHouseData = HomeProxy.Instance:GetCurHouseData()
-    showMapIDs[#showMapIDs + 1] = curHouseData and curHouseData.mapID
-  else
-    for k, v in pairs(HomeProxy.HouseType) do
-      local myHouseData = HomeProxy.__RealInstance:GetMyHouseData(v)
-      if myHouseData and myHouseData.mapID then
-        showMapIDs[#showMapIDs + 1] = myHouseData.mapID
-      end
-    end
-  end
-  TableUtility.TableClear(self.bpDatas)
-  if Table_HomeOfficialBluePrint then
-    for id, data in pairs(Table_HomeOfficialBluePrint) do
-      if TableUtility.ArrayFindIndex(showMapIDs, data.MapID) > 0 then
-        self.bpDatas[#self.bpDatas + 1] = data
-      end
-    end
-  end
-  ReusableTable.DestroyAndClearArray(showMapIDs)
-  self.listBluePrints:ResetDatas(self.bpDatas)
-  self.objNoneTip:SetActive(1 > #self.bpDatas)
-  TableUtility.ArrayClear(self.pageIndexDatas)
-  for i = 1, math.ceil(#self.bpDatas / 6) do
-    self.pageIndexDatas[i] = i
-  end
-  self.listPageSymbols:ResetDatas(self.pageIndexDatas)
-end
-
-function HomeBluePrintView:UpdateBPInfos(keepPos)
-  HomeBluePrintView.CurSortType = self.popSort.value
-  if HomeBluePrintView.CurSortType == HomeBluePrintView.SortType.Default then
-    table.sort(self.bpDatas, function(l, r)
-      return l.id < r.id
-    end)
-  elseif HomeBluePrintView.CurSortType == HomeBluePrintView.SortType.Like then
-    table.sort(self.bpDatas, function(l, r)
-      local lLikeNum, rLikeNum = HomeProxy.Instance:GetBluePrintLikeNum(l.id), HomeProxy.Instance:GetBluePrintLikeNum(r.id)
-      if lLikeNum == rLikeNum then
-        return l.id < r.id
-      end
-      return lLikeNum > rLikeNum
-    end)
-  elseif HomeBluePrintView.CurSortType == HomeBluePrintView.SortType.Score then
-    table.sort(self.bpDatas, function(l, r)
-      if l.TotalScore == r.TotalScore then
-        return l.id < r.id
-      end
-      return l.TotalScore > r.TotalScore
-    end)
-  end
-  self.listBluePrints:ResetDatas(self.bpDatas, not keepPos)
-end
-
-function HomeBluePrintView:HandlePrintUpdateHomeCmd(note)
-  local cells = self.listBluePrints:GetCells()
-  for i = 1, #cells do
-    if cells[i].isActive then
-      cells[i]:RefreshLikeStatus()
-    end
-  end
-  if not self.serverInited and HomeBluePrintView.CurSortType == HomeBluePrintView.SortType.Like then
-    self:UpdateBPInfos(true)
-  end
-  self.serverInited = true
-end
-
-function HomeBluePrintView:ClickBPCell(cell)
-  if not cell.bpData then
+function HomeBluePrintView:TabChangeHandler(key)
+  if self.curKey and self.curKey == key then
     return
   end
-  if HomeManager.Me():IsInEditMode() then
-    if cell.isUsing then
-      MsgManager.ShowMsgByID(38007)
-      return
+  HomeBluePrintView.super.TabChangeHandler(self, key)
+  self.bpTex.gameObject:SetActive(key ~= 1)
+  if key == 1 then
+    self.recommendPage:OnSwitch(true)
+  elseif key == 2 then
+    self.collectionPage:OnSwitch(true)
+  elseif key == 3 then
+    self.myPage:OnSwitch(true)
+  end
+  if not GameConfig.SystemForbid.TabNameTip then
+    if self.curKey then
+      local icon = self.toggleIconList[self.curKey]
+      if icon then
+        icon.color = ColorUtil.TabColor_White
+      end
     end
-    if cell.bpData:CheckIsFinished() then
-      MsgManager.ShowMsgByID(38009)
-      return
+    local icon = self.toggleIconList[key]
+    if icon then
+      icon.color = ColorUtil.TabColor_DeepBlue
     end
-    local curMapData = HomeManager.Me():GetCurMapSData()
-    if not curMapData or curMapData.id ~= cell.data.MapID then
-      redlog("此蓝图不能在当前地图使用", tostring(curMapData and curMapData.id), tostring(cell.data.MapID))
-      return
-    end
-    self:sendNotification(HomeBuildingSceneBPControl.ShowBluePrint, cell.bpData)
-    self:CloseSelf()
-  else
-    self.keepBPCache = true
-    self:sendNotification(UIEvent.JumpPanel, {
-      view = PanelConfig.HomeBPDetailView,
-      viewdata = cell.bpData
-    })
   end
-end
-
-function HomeBluePrintView:ClickBPCellLike(cell)
-  if self.ltForbidClick then
-    MsgManager.ShowMsgByID(49)
-    return
-  end
-  local likeIDConfig = GameConfig.Home.BluePrintLikeID
-  local realID = likeIDConfig and likeIDConfig[cell.data.id] or cell.data.id
-  ServiceHomeCmdProxy.Instance:CallPrintActionHomeCmd(cell.isLike and HomeCmd_pb.EPRINTACTION_UNPRAISE or HomeCmd_pb.EPRINTACTION_PRAISE, realID)
-  self.ltForbidClick = TimeTickManager.Me():CreateOnceDelayTick(1000, function(owner, deltaTime)
-    self.ltForbidClick = nil
-  end, self)
-end
-
-function HomeBluePrintView:UpdatePage()
-  if self.popSort.isOpen ~= self.isPopOpen then
-    self.isPopOpen = self.popSort.isOpen
-    self.objPopSortSelect:SetActive(self.isPopOpen == true)
-    self.tsfPopArrow.localEulerAngles = self.isPopOpen and vec_arrowEulerOpen or vec_arrowEulerClose
-  end
-  if #self.pageIndexDatas < 1 then
-    return
-  end
-  local index = math.ceil(self.listBluePrints.panel.clipOffset.x / self.itemSize / 3)
-  local cells = self.listPageSymbols:GetCells()
-  cells[math.clamp(index, 1, #cells)]:Select()
+  self.curKey = key
+  self:RequestCurrentPage()
 end
 
 function HomeBluePrintView:OnEnter()
+  self.initialRecommendHouseType = self:GetViewDataHouseType()
+  if self.recommendPage then
+    self.recommendPage:SetHouseType(self.initialRecommendHouseType)
+  end
+  PictureManager.Instance:SetHomeBluePrint(BpTexName, self.bpTex)
+  self:TabChangeHandler(1)
   HomeBluePrintView.super.OnEnter(self)
-  self.serverInited = false
-  PictureManager.Instance:SetHome(HomeBluePrintView.TexName.bgUp, self:FindComponent("texUp", UITexture))
-  PictureManager.Instance:SetHome(HomeBluePrintView.TexName.bgDown, self:FindComponent("texDown", UITexture))
-  PictureManager.Instance:SetHome(HomeBluePrintView.TexName.bgLeft, self:FindComponent("texLeft", UITexture))
-  PictureManager.Instance:SetHome(HomeBluePrintView.TexName.bgRight, self:FindComponent("texRight", UITexture))
-  self:ReloadBPInfos()
-  TimeTickManager.Me():CreateTick(0, 100, self.UpdatePage, self, 1)
-  ServiceHomeCmdProxy.Instance:CallPrintActionHomeCmd(HomeCmd_pb.EPRINTACTION_QUERY)
 end
 
 function HomeBluePrintView:OnExit()
-  TimeTickManager.Me():ClearTick(self)
-  for k, v in pairs(HomeBluePrintView.TexName) do
-    PictureManager.Instance:UnLoadHome(v)
-  end
-  PictureManager.Instance:UnLoadHomeBluePrint()
-  if not self.keepBPCache then
-    HomeProxy.Instance:ClearBluePrintsInfoCache()
-    HomeProxy.Instance:ClearBPLikeInfo()
-    HomeBluePrintView.CurSortType = HomeBluePrintView.SortType.Default
-  end
-  self.keepBPCache = false
-  if self.ltForbidClick then
-    self.ltForbidClick:Destroy()
-    self.ltForbidClick = nil
-  end
+  PictureManager.Instance:UnLoadHomeBluePrint(BpTexName, self.bpTex)
   HomeBluePrintView.super.OnExit(self)
 end
 
-function HomeBluePrintView:OnDestroy()
-  self.listBluePrints:Destroy()
-  self.listPageSymbols:Destroy()
-  HomeBluePrintView.super.OnDestroy(self)
+function HomeBluePrintView:GetViewDataHouseType()
+  local viewData = self.viewdata and self.viewdata.viewdata
+  return viewData and viewData.houseType
+end
+
+function HomeBluePrintView:GetCurrentContextHouseType()
+  local cur = HomeProxy.Instance:GetCurHouseData()
+  if cur and cur.houseType and cur.houseType ~= 0 then
+    return cur.houseType
+  end
+  if HomeManager.Me():IsSnowRealmMap(Game.MapManager:GetMapID()) then
+    return HomeCmd_pb.EHOUSETYPE_SNOW
+  end
+  return HomeCmd_pb.EHOUSETYPE_PRIVATE
+end
+
+function HomeBluePrintView:RequestCurrentPage()
+  if self.curKey == 1 then
+    self.recommendPage:RequestData()
+  elseif self.curKey == 2 then
+    ServiceHomeCmdProxy.Instance:CallPrintActionHomeCmd(HomeCmd_pb.EPRINTACTION_QUERY_SELF_COLLECTION)
+  elseif self.curKey == 3 then
+    ServiceHomeCmdProxy.Instance:CallPrintActionHomeCmd(HomeCmd_pb.EPRINTACTION_QUERY_SELF)
+  end
+end
+
+function HomeBluePrintView:ApplyBlueprintFromCell(itemData)
+  if not itemData then
+    return
+  end
+  if not HomeManager.Me():IsInEditMode() then
+    self:sendNotification(UIEvent.JumpPanel, {
+      view = PanelConfig.HomeBlueprintDetailPanel,
+      viewdata = itemData
+    })
+    return
+  end
+  local curHouseType = self:GetCurrentContextHouseType()
+  if itemData.houseType ~= curHouseType then
+    MsgManager.ShowMsgByID(43679)
+    return
+  end
+  if itemData.isOfficial then
+    local officialBpData = itemData._officialBpData
+    if not officialBpData or not officialBpData.inited then
+      return
+    end
+    self:sendNotification(HomeBuildingSceneBPControl.ShowBluePrint, officialBpData)
+    self:CloseSelf()
+  else
+    local bluePrintData = itemData._bpData
+    if not bluePrintData then
+      return
+    end
+    HomeBlueprintProxy.Instance:SetCurDisplayingItem(itemData)
+    self:sendNotification(HomeBuildingSceneBPControl.ShowBluePrint, bluePrintData)
+    self:CloseSelf()
+  end
 end

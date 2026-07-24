@@ -15,7 +15,8 @@ NpcMenuBtnCell.GuideType = {
   strengthen = 1002,
   OpenInheritSkillView = 551,
   SnowCrown = 569,
-  EnterHomeEditMode = 570
+  EnterHomeEditMode = 570,
+  SnakeCoasterEntrance = 572
 }
 NpcMenuBtnCell.Style = {
   Primary = 1,

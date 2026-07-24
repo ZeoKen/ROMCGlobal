@@ -86,6 +86,94 @@ Table_SnowRealmSnowman = {
     AreaRange = 22.5,
     MaxProgress = 5,
     UniqueID = 854009101
+  },
+  [9] = {
+    id = 9,
+    AreaPos = {
+      543.08,
+      29.85,
+      57.93
+    },
+    AreaRange = 22.5,
+    MaxProgress = 5,
+    UniqueID = 855010101
+  },
+  [10] = {
+    id = 10,
+    AreaPos = {
+      574.25,
+      32.88,
+      96.63
+    },
+    AreaRange = 22.5,
+    MaxProgress = 5,
+    UniqueID = 855011101
+  },
+  [11] = {
+    id = 11,
+    AreaPos = {
+      543.42,
+      34.6,
+      158.51
+    },
+    AreaRange = 22.5,
+    MaxProgress = 5,
+    UniqueID = 855012101
+  },
+  [12] = {
+    id = 12,
+    AreaPos = {
+      501.34,
+      30.78,
+      194.14
+    },
+    AreaRange = 22.5,
+    MaxProgress = 5,
+    UniqueID = 855013101
+  },
+  [13] = {
+    id = 13,
+    AreaPos = {
+      473.09,
+      19.31,
+      245.15
+    },
+    AreaRange = 22.5,
+    MaxProgress = 5,
+    UniqueID = 855014101
+  },
+  [14] = {
+    id = 14,
+    AreaPos = {
+      447.55,
+      40.63,
+      135.51
+    },
+    AreaRange = 22.5,
+    MaxProgress = 5,
+    UniqueID = 855015101
+  },
+  [15] = {
+    id = 15,
+    AreaPos = {
+      333.85,
+      39.84,
+      92.6
+    },
+    AreaRange = 22.5,
+    MaxProgress = 5,
+    UniqueID = 855016101
+  },
+  [16] = {
+    id = 16,
+    AreaPos = {
+      383.53,
+      31.03,
+      152.52
+    },
+    AreaRange = 22.5,
+    MaxProgress = 5,
+    UniqueID = 855017101
   }
 }
 Table_SnowRealmSnowman_fields = {

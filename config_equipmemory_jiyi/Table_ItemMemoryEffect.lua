@@ -868,19 +868,22 @@ Table_ItemMemoryEffect = {
     id = 71,
     EffectID = 30106,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[40],
+    PreviewDesc = "##3491286",
     WaxDesc = "##42535869"
   },
   [72] = {
     id = 72,
     EffectID = 30106,
     Level = 2,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[41]
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[41],
+    PreviewDesc = "##3491286"
   },
   [73] = {
     id = 73,
     EffectID = 30106,
     Level = 3,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[42]
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[42],
+    PreviewDesc = "##3491286"
   },
   [74] = {
     id = 74,
@@ -928,22 +931,19 @@ Table_ItemMemoryEffect = {
     id = 80,
     EffectID = 30301,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[49],
-    PreviewDesc = "##42628584",
     WaxDesc = "##42628585"
   },
   [81] = {
     id = 81,
     EffectID = 30301,
     Level = 2,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[50],
-    PreviewDesc = "##42628584"
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[50]
   },
   [82] = {
     id = 82,
     EffectID = 30301,
     Level = 3,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[51],
-    PreviewDesc = "##42628584"
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[51]
   },
   [83] = {
     id = 83,
@@ -1323,7 +1323,7 @@ local cell_mt = {
     EffectID = 30103,
     ExcessWaxBuffID = _EmptyTable,
     Level = 1,
-    PreviewDesc = "##3491286",
+    PreviewDesc = "##42628584",
     UpgradeDesc = "",
     WaxBuffID = _EmptyTable,
     WaxDesc = "",

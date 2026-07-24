@@ -263,14 +263,23 @@ function Game.Input_JoyStick(x, y, z)
   myself:Client_ManualControlled()
   local dir = Game.JoyStickDir
   LuaVector3.Better_Set(dir, x, y, z)
-  myself:Client_DirMove(dir)
+  if myself.snakeCoasterMove ~= nil then
+    myself:PrepareSnakeCoasterDirInput(dir, true)
+  else
+    myself:Client_DirMove(dir)
+  end
   myself:Client_SetSkillDir(dir)
   Game.GameHealthProtector:OnInputJoyStick(dir)
 end
 
 function Game.Input_JoyStickEnd()
   Game.IsJoyStick = false
-  Game.Myself:Client_DirMoveEnd()
+  local myself = Game.Myself
+  if myself.snakeCoasterMove ~= nil then
+    myself:OnSnakeCoasterDirInputEnd()
+  else
+    myself:Client_DirMoveEnd()
+  end
   Game.GameHealthProtector:OnInputJoyStickEnd()
 end
 

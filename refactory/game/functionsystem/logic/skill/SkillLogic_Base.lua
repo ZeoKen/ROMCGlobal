@@ -46,6 +46,27 @@ function SkillLogic_Base.ResolveDoubleDamage(targetCreature, doubleDamage)
   return targetCreature and targetCreature:GetDoubleDamage() or 0
 end
 
+function SkillLogic_Base.CanHitMoveTargetBySkillID(skillID, targetCreature)
+  if targetCreature == nil then
+    return false
+  end
+  local staticData = targetCreature.data and targetCreature.data.staticData
+  local canHitSkillIDs = staticData and staticData.Params and staticData.Params.CanHitSkillIDs
+  if not canHitSkillIDs then
+    return true
+  end
+  local skillSortID = skillID and math.floor(skillID / 1000) or 0
+  if skillSortID <= 0 then
+    return false
+  end
+  for i = 1, #canHitSkillIDs do
+    if canHitSkillIDs[i] == skillSortID then
+      return true
+    end
+  end
+  return false
+end
+
 local CreateSearchTargetInfo = ReusableTable.CreateSearchTargetInfo
 local DestroySearchTargetInfo = ReusableTable.DestroySearchTargetInfo
 local CreateArray = ReusableTable.CreateArray
@@ -750,7 +771,6 @@ function SkillLogic_Base:CreateHitTargetWorker(creature, phaseData, assetRole, s
   hitWorker:SetHitedTargetGoPos(phaseData:GetHitedTargetPos())
   hitWorker:SetEmitTarget(phaseData:GetEmitTarget())
   local targetGUID, damageType, damage, shareDamageInfos, damageCount, doubleDamage = phaseData:GetTarget(targetIndex)
-  doubleDamage = 1
   hitWorker:AddTarget(targetGUID, damageType, damage, shareDamageInfos, self:GetComboDamageLabel(targetIndex), damageCount, doubleDamage)
   return hitWorker
 end
@@ -1062,10 +1082,16 @@ function SkillLogic_Base:Client_DeterminTargets(creature)
     local removedCount = 0
     for i = targetCount, 1, -1 do
       local targetCreature = tempCreatureArray[i]
-      if targetCreature.data:NoPicked() or targetCreature.data:NoAttacked() or targetCreature:NoAttackedByTarget(Game.Myself) then
+      local targetData = targetCreature.data
+      local isForceMoveNpcTarget = skillInfo:IsForceMoveNpcTarget(targetCreature)
+      local noPicked = targetData:NoPicked()
+      local noAttacked = targetData:NoAttacked()
+      local noAttackedByTarget = targetCreature:NoAttackedByTarget(Game.Myself)
+      local canNotBeSkillTargetByEnemy = targetData:CanNotBeSkillTargetByEnemy() and targetData:GetCamp() == _RoleDefines_Camp.ENEMY
+      if not isForceMoveNpcTarget and (noPicked or noAttacked or noAttackedByTarget) then
         table.remove(tempCreatureArray, i)
         removedCount = removedCount + 1
-      elseif targetCreature.data:CanNotBeSkillTargetByEnemy() and targetCreature.data:GetCamp() == _RoleDefines_Camp.ENEMY then
+      elseif not isForceMoveNpcTarget and canNotBeSkillTargetByEnemy then
         table.remove(tempCreatureArray, i)
         removedCount = removedCount + 1
       elseif skillInfo:TargetExcludeSelf(creature) and targetCreature == creature then
@@ -1307,9 +1333,14 @@ function SkillLogic_Base:CalSpeicalHitedMove(creature)
     if i ~= 1 and skillInfo:OnlyRepelMajor() then
       skipHitEffect = true
     end
+    if targetCreature and not SkillLogic_Base.CanHitMoveTargetBySkillID(phaseData:GetSkillID(), targetCreature) then
+      skipHitEffect = true
+    end
     for j = 1, #specialEffects do
       local specialEffect = specialEffects[j]
-      if 1 == specialEffect.type and (not skillInfo:NoHitEffectMove(targetCreature, damageType, damage) or skillInfo:IgnoreNoHit()) and (not pvpMap or 1 ~= specialEffect.no_pvp) and (not isGVG or "back" ~= specialEffect.direction) and not skipHitEffect then
+      if specialEffect.hit_to_npc_id then
+      end
+      if 1 == specialEffect.type and not skipHitEffect and (not skillInfo:NoHitEffectMove(targetCreature, damageType, damage) or skillInfo:IgnoreNoHit()) and (not pvpMap or 1 ~= specialEffect.no_pvp) and (not isGVG or "back" ~= specialEffect.direction) then
         local targetCreaturePosition = targetCreature:GetPosition()
         local dirMoveAngleY, dirMoveDistance, specialEffectDistance
         if type(specialEffect.distance) == "table" then

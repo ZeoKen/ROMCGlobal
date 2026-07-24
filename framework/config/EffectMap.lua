@@ -510,5 +510,7 @@ EffectMap.SkillEffectMap = {
   Eff_square_buff = "Skill/Eff_square_buff02",
   Eff_sector_buff = "Skill/Eff_sector_buff",
   Eff_circular_buff = "Skill/Eff_circular_buff",
-  sfx_kafra_csfw_floor_prf = "Skill/sfx_kafra_csfw_floor_prf"
+  sfx_kafra_csfw_floor_prf = "Skill/sfx_kafra_csfw_floor_prf",
+  Eff_sweep_buff01 = "Skill/Eff_sweep_buff01",
+  Eff_sweep_buff02 = "Skill/Eff_sweep_buff02"
 }

@@ -38,7 +38,6 @@ function MiniGameRankCell:SetData(data)
   end
   self:UpdateHead(data)
   self:UpdateRank()
-  self.rankLv.text = self.data.rank
   self.name.text = self.data.name
   self.record.text = self.data.record
   self.recordTime.text = os.date(DATA_FORMAT, self.data.recordtime)
@@ -74,14 +73,12 @@ function MiniGameRankCell:UpdateRank()
   if not self.rankLv or not self.rankSp then
     return
   end
-  if self.data.rank > 10 then
-    self.rankLv.text = "10+"
-  end
-  self.rankLv.text = self.data.rank
-  if self.data.rank < 4 then
+  local rank = tonumber(self.data.rank) or 0
+  self.rankLv.text = self.data.rankText or self.data.rank
+  if 0 < rank and rank < 4 then
     self.rankSp.gameObject:SetActive(true)
     self.rankLv.color = LuaGeometry.GetTempColor()
-    self.rankSp.spriteName = string.format("Adventure_icon_%s", self.data.rank)
+    self.rankSp.spriteName = string.format("Adventure_icon_%s", rank)
   else
     self.rankSp.gameObject:SetActive(false)
     self.rankLv.color = LuaGeometry.GetTempColor(0, 0, 0, 1)

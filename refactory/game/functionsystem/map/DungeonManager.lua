@@ -141,6 +141,10 @@ local PVERaidConfig = {
     Type = FuBenCmd_pb.ERAIDTYPE_MEMORY_RAID,
     DungeonSpawner = PVEFactory.GetSevenRoyals
   },
+  PVE_IceLab = {
+    Type = FuBenCmd_pb.ERAIDTYPE_ICE_LAB,
+    DungeonSpawner = PVEFactory.GetSevenRoyals
+  },
   PVE_HeroJourney = {
     Type = FuBenCmd_pb.ERAIDTYPE_HERO_JOURNEY,
     DungeonSpawner = PVEFactory.GetHeroJourney

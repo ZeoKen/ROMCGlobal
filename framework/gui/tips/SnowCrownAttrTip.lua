@@ -2,8 +2,13 @@ autoImport("BaseTip")
 autoImport("SnowCrownCostItemCell")
 SnowCrownAttrTip = class("SnowCrownAttrTip", BaseTip)
 local NextGap = 34
-local TextColorRed = "[c][FF3B35]"
+local TextFormatNormal = "%s/%s"
+local TextFormatRed = "[c][FF3B35]%s[-][/c]/%s"
 local DefaultBottomBgY, LongBottomBgY = -107, -253
+local FormatCostNum = function(num, needNum, isLack)
+  local format = isLack and TextFormatRed or TextFormatNormal
+  return string.format(format, num, needNum)
+end
 
 function SnowCrownAttrTip:Init()
   self:FindObjs()
@@ -49,6 +54,13 @@ function SnowCrownAttrTip:FindObjs()
   self.maxLv = self:FindGO("MaxLv")
   self.costPart = self:FindGO("CostPart")
   self.bottomBg = self:FindGO("BottomBg")
+  local checkBtnGO = self:FindGO("CheckBtn")
+  if checkBtnGO then
+    self.checkBtn = checkBtnGO:GetComponent(UIToggle)
+    self:AddClickEvent(checkBtnGO, function()
+      self:RefreshCost()
+    end)
+  end
 end
 
 function SnowCrownAttrTip:SetData(data)
@@ -60,38 +72,82 @@ function SnowCrownAttrTip:SetData(data)
     local isMax = maxLevel ~= nil and maxLevel <= data.level or false
     self.level.text = isMax and ZhString.SnowCrown_MaxLevel or "Lv." .. data.level
     self:SetDesc(data, isMax)
-    local datas = {}
-    local nextStatic = self:GetNextStatic(data.id)
-    self.lack = false
-    TableUtility.ArrayClear(self.lackMats)
-    if nextStatic and nextStatic.ItemCost then
-      local checkPackage = GameConfig.PackageMaterialCheck.snow_levelup
-      for i = 1, #nextStatic.ItemCost do
-        local cost = nextStatic.ItemCost[i]
-        local itemData = ItemData.new(cost[1], cost[1])
-        local bagNum = BagProxy.Instance:GetItemNumByStaticID(cost[1], checkPackage)
-        local colorStr = bagNum >= cost[2] and "" or TextColorRed
-        if bagNum < cost[2] then
-          local needCount = cost[2] - bagNum
-          table.insert(self.lackMats, {
-            id = cost[1],
-            count = needCount
-          })
-        end
-        itemData.num = colorStr .. bagNum .. "[-][/c]/" .. cost[2]
-        datas[#datas + 1] = itemData
-      end
-      self.lack = #self.lackMats > 0
+    self.nextStatic = self:GetNextStatic(data.id)
+    self.isMax = isMax
+    if self.checkBtn then
+      self.checkBtn.value = false
+      self.checkBtn.gameObject:SetActive(not isMax and self.nextStatic ~= nil)
     end
     self.maxLv:SetActive(isMax)
     self.costPart:SetActive(not isMax)
-    self.costListCtrl:ResetDatas(datas)
     self.upgradeBtn:SetActive(not isMax)
-    self.upgradeLabel.text = self.lack and ZhString.EquipUpgradePopUp_QuickBuy or ZhString.EquipUpgradePopUp_Upgrade
+    self:RefreshCost()
     local x, y, z = LuaGameObject.GetLocalPositionGO(self.bottomBg)
     y = isMax and LongBottomBgY or DefaultBottomBgY
     LuaGameObject.SetLocalPositionGO(self.bottomBg, x, y, z)
   end
+end
+
+function SnowCrownAttrTip:RefreshCost()
+  if not self.costListCtrl then
+    return
+  end
+  local datas = {}
+  self.lack = false
+  TableUtility.ArrayClear(self.lackMats)
+  if self.isMax then
+    self.costListCtrl:ResetDatas(datas)
+    return
+  end
+  if self.nextStatic and self.nextStatic.ItemCost then
+    local checkPackage = GameConfig.PackageMaterialCheck.snow_levelup
+    local costs = {}
+    for i = 1, #self.nextStatic.ItemCost do
+      local cost = self.nextStatic.ItemCost[i]
+      costs[#costs + 1] = {
+        id = cost[1],
+        num = cost[2]
+      }
+    end
+    if self.checkBtn and self.checkBtn.value and 0 < #costs then
+      local use, has = false, false
+      costs, use, has = BlackSmithProxy.Instance:UpdateMaterialListUsingDeduction(costs, checkPackage)
+      if not use then
+        if not has then
+          MsgManager.ShowMsgByID(28117)
+        else
+          MsgManager.ShowMsgByID(28118)
+        end
+        self.checkBtn.value = false
+        self:RefreshCost()
+        return
+      end
+    end
+    for i = 1, #costs do
+      local cost = costs[i]
+      local itemData = ItemData.new(cost.id, cost.id)
+      local bagNum = BagProxy.Instance:GetItemNumByStaticID(cost.id, checkPackage)
+      local needNum = cost.num
+      local displayNum, displayNeedNum = bagNum, needNum
+      if cost.deduction then
+        displayNum = bagNum + cost.ori_num - cost.num
+        displayNeedNum = cost.ori_num
+        itemData.deduction = cost.deduction
+      end
+      local isLack = bagNum < needNum
+      if isLack then
+        table.insert(self.lackMats, {
+          id = cost.id,
+          count = needNum - bagNum
+        })
+      end
+      itemData.num = FormatCostNum(displayNum, displayNeedNum, isLack)
+      datas[#datas + 1] = itemData
+    end
+    self.lack = #self.lackMats > 0
+  end
+  self.costListCtrl:ResetDatas(datas)
+  self.upgradeLabel.text = self.lack and ZhString.EquipUpgradePopUp_QuickBuy or ZhString.EquipUpgradePopUp_Upgrade
 end
 
 function SnowCrownAttrTip:OnUpgradeBtnClick()
@@ -105,7 +161,7 @@ function SnowCrownAttrTip:OnUpgradeBtnClick()
     if not nextStatic then
       return
     end
-    ServiceSnowCmdProxy.Instance:CallSnowCrownActiveSnowCmd(nextStatic.id)
+    ServiceSnowCmdProxy.Instance:CallSnowCrownActiveSnowCmd(nextStatic.id, self.checkBtn and self.checkBtn.value or false)
   end
 end
 

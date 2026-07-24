@@ -21148,6 +21148,161 @@ Table_EffectLodMap = {
     id = 104268,
     Path = "Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf",
     LodPaths = "Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf_lod1,Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf_lod1"
+  },
+  [104318] = {
+    id = 104318,
+    Path = "Skill/sfx_himemmeth_kszw_floor_prf",
+    LodPaths = "Skill/sfx_himemmeth_kszw_floor_prf,Skill/sfx_himemmeth_kszw_floor_lod1_prf,Skill/sfx_himemmeth_kszw_floor_lod2_prf"
+  },
+  [104319] = {
+    id = 104319,
+    Path = "Skill/sfx_himemmeth_nszn_prf",
+    LodPaths = "Skill/sfx_himemmeth_nszn_prf,Skill/sfx_himemmeth_nszn_lod1_prf,Skill/sfx_himemmeth_nszn_lod2_prf"
+  },
+  [104320] = {
+    id = 104320,
+    Path = "Skill/sfx_himemmeth_nqly_buff_prf",
+    LodPaths = "Skill/sfx_himemmeth_nqly_buff_prf,Skill/sfx_himemmeth_nqly_buff_lod1_prf,Skill/sfx_himemmeth_nqly_buff_lod2_prf"
+  },
+  [104321] = {
+    id = 104321,
+    Path = "Skill/sfx_himemmeth_swywq_release_prf",
+    LodPaths = "Skill/sfx_himemmeth_swywq_release_prf,Skill/sfx_himemmeth_swywq_release_lod1_prf,Skill/sfx_himemmeth_swywq_release_lod2_prf"
+  },
+  [104322] = {
+    id = 104322,
+    Path = "Skill/sfx_himemmeth_swywq_buff02_prf",
+    LodPaths = "Skill/sfx_himemmeth_swywq_buff02_prf,Skill/sfx_himemmeth_swywq_buff02_prf,Skill/sfx_himemmeth_swywq_buff02_prf"
+  },
+  [104323] = {
+    id = 104323,
+    Path = "Skill/sfx_himemmeth_bonespur02_prf",
+    LodPaths = "Skill/sfx_himemmeth_bonespur02_prf,Skill/sfx_himemmeth_bonespur02_lod1_prf,Skill/sfx_himemmeth_bonespur02_lod2_prf"
+  },
+  [104324] = {
+    id = 104324,
+    Path = "Skill/sfx_himemmeth_kszw_yj6_10_prf",
+    LodPaths = "Skill/sfx_himemmeth_kszw_yj6_10_prf,Skill/sfx_himemmeth_kszw_yj6_10_lod1_prf,Skill/sfx_himemmeth_kszw_yj6_10_lod2_prf"
+  },
+  [104325] = {
+    id = 104325,
+    Path = "Skill/sfx_himemmeth_wsdly_release_prf",
+    LodPaths = "Skill/sfx_himemmeth_wsdly_release_prf,Skill/sfx_himemmeth_wsdly_release_lod1_prf,Skill/sfx_himemmeth_wsdly_release_lod2_prf"
+  },
+  [104326] = {
+    id = 104326,
+    Path = "Skill/sfx_himemmeth_bonespur01_prf",
+    LodPaths = "Skill/sfx_himemmeth_bonespur01_prf,Skill/sfx_himemmeth_bonespur01_lod1_prf,Skill/sfx_himemmeth_bonespur01_lod2_prf"
+  },
+  [104327] = {
+    id = 104327,
+    Path = "Skill/sfx_himemmeth_kszw_yj10_14_prf",
+    LodPaths = "Skill/sfx_himemmeth_kszw_yj10_14_prf,Skill/sfx_himemmeth_kszw_yj10_14_lod1_prf,Skill/sfx_himemmeth_kszw_yj10_14_lod2_prf"
+  },
+  [104328] = {
+    id = 104328,
+    Path = "Skill/sfx_himemmeth_nszn_release_prf",
+    LodPaths = "Skill/sfx_himemmeth_nszn_release_prf,Skill/sfx_himemmeth_nszn_release_lod1_prf,Skill/sfx_himemmeth_nszn_release_lod2_prf"
+  },
+  [104329] = {
+    id = 104329,
+    Path = "Skill/sfx_himemmeth_kszw_yj2_6_prf",
+    LodPaths = "Skill/sfx_himemmeth_kszw_yj2_6_prf,Skill/sfx_himemmeth_kszw_yj2_6_lod1_prf,Skill/sfx_himemmeth_kszw_yj2_6_lod2_prf"
+  },
+  [104330] = {
+    id = 104330,
+    Path = "Skill/sfx_himemmeth_nqly_End_prf",
+    LodPaths = "Skill/sfx_himemmeth_nqly_End_prf,Skill/sfx_himemmeth_nqly_End_lod1_prf,Skill/sfx_himemmeth_nqly_End_lod2_prf"
+  },
+  [104331] = {
+    id = 104331,
+    Path = "Skill/sfx_himemmeth_bonespur04_prf",
+    LodPaths = "Skill/sfx_himemmeth_bonespur04_prf,Skill/sfx_himemmeth_bonespur04_lod1_prf,Skill/sfx_himemmeth_bonespur04_lod2_prf"
+  },
+  [104332] = {
+    id = 104332,
+    Path = "Skill/sfx_himemmeth_kszw_cz01_prf",
+    LodPaths = "Skill/sfx_himemmeth_kszw_cz01_prf,Skill/sfx_himemmeth_kszw_cz01_lod1_prf,Skill/sfx_himemmeth_kszw_cz01_lod2_prf"
+  },
+  [104333] = {
+    id = 104333,
+    Path = "Skill/sfx_himemmeth_swywq_buff01_prf",
+    LodPaths = "Skill/sfx_himemmeth_swywq_buff01_prf,Skill/sfx_himemmeth_swywq_buff01_lod1_prf,Skill/sfx_himemmeth_swywq_buff01_lod2_prf"
+  },
+  [104334] = {
+    id = 104334,
+    Path = "Skill/sfx_himemmeth_shield_prf",
+    LodPaths = "Skill/sfx_himemmeth_shield_prf,Skill/sfx_himemmeth_shield_lod1_prf,Skill/sfx_himemmeth_shield_lod2_prf"
+  },
+  [104335] = {
+    id = 104335,
+    Path = "Skill/sfx_himemmeth_kszw_buff_prf",
+    LodPaths = "Skill/sfx_himemmeth_kszw_buff_prf,Skill/sfx_himemmeth_kszw_buff_lod1_prf,Skill/sfx_himemmeth_kszw_buff_lod2_prf"
+  },
+  [104336] = {
+    id = 104336,
+    Path = "Skill/sfx_himemmeth_hqzw_release_prf",
+    LodPaths = "Skill/sfx_himemmeth_hqzw_release_prf,Skill/sfx_himemmeth_hqzw_release_lod1_prf,Skill/sfx_himemmeth_hqzw_release_lod2_prf"
+  },
+  [104337] = {
+    id = 104337,
+    Path = "Skill/sfx_himemmeth_hqzw_prf",
+    LodPaths = "Skill/sfx_himemmeth_hqzw_prf,Skill/sfx_himemmeth_hqzw_lod1_prf,Skill/sfx_himemmeth_hqzw_lod2_prf"
+  },
+  [104338] = {
+    id = 104338,
+    Path = "Skill/sfx_himemmeth_hit02_prf",
+    LodPaths = "Skill/sfx_himemmeth_hit02_prf,Skill/sfx_himemmeth_hit02_lod1_prf,Skill/sfx_himemmeth_hit02_lod2_prf"
+  },
+  [104339] = {
+    id = 104339,
+    Path = "Skill/sfx_himemmeth_nqly_loop_prf",
+    LodPaths = "Skill/sfx_himemmeth_nqly_loop_prf,Skill/sfx_himemmeth_nqly_loop_lod1_prf,Skill/sfx_himemmeth_nqly_loop_lod2_prf"
+  },
+  [104340] = {
+    id = 104340,
+    Path = "Skill/sfx_himemmeth_wsdly_prf",
+    LodPaths = "Skill/sfx_himemmeth_wsdly_prf,Skill/sfx_himemmeth_wsdly_lod1_prf,Skill/sfx_himemmeth_wsdly_lod2_prf"
+  },
+  [104341] = {
+    id = 104341,
+    Path = "Skill/sfx_himemmeth_cczx_release_prf",
+    LodPaths = "Skill/sfx_himemmeth_cczx_release_prf,Skill/sfx_himemmeth_cczx_release_lod1_prf,Skill/sfx_himemmeth_cczx_release_lod2_prf"
+  },
+  [104342] = {
+    id = 104342,
+    Path = "Skill/sfx_himemmeth_cczx_prf",
+    LodPaths = "Skill/sfx_himemmeth_cczx_prf,Skill/sfx_himemmeth_cczx_lod1_prf,Skill/sfx_himemmeth_cczx_lod2_prf"
+  },
+  [104343] = {
+    id = 104343,
+    Path = "Skill/sfx_himemmeth_buff_prf",
+    LodPaths = "Skill/sfx_himemmeth_buff_prf,Skill/sfx_himemmeth_buff_lod1_prf,Skill/sfx_himemmeth_buff_lod2_prf"
+  },
+  [104344] = {
+    id = 104344,
+    Path = "Skill/sfx_himemmeth_kszw_cz03_prf",
+    LodPaths = "Skill/sfx_himemmeth_kszw_cz03_prf,Skill/sfx_himemmeth_kszw_cz03_lod1_prf,Skill/sfx_himemmeth_kszw_cz03_lod2_prf"
+  },
+  [104345] = {
+    id = 104345,
+    Path = "Skill/sfx_himemmeth_skill2_release_prf",
+    LodPaths = "Skill/sfx_himemmeth_skill2_release_prf,Skill/sfx_himemmeth_skill2_release_lod1_prf,Skill/sfx_himemmeth_skill2_release_lod2_prf"
+  },
+  [104346] = {
+    id = 104346,
+    Path = "Skill/sfx_himemmeth_swywq_floor_prf",
+    LodPaths = "Skill/sfx_himemmeth_swywq_floor_prf,Skill/sfx_himemmeth_swywq_floor_lod1_prf,Skill/sfx_himemmeth_swywq_floor_lod2_prf"
+  },
+  [104347] = {
+    id = 104347,
+    Path = "Skill/sfx_himemmeth_bonespur03_prf",
+    LodPaths = "Skill/sfx_himemmeth_bonespur03_prf,Skill/sfx_himemmeth_bonespur03_lod1_prf,Skill/sfx_himemmeth_bonespur03_lod2_prf"
+  },
+  [104348] = {
+    id = 104348,
+    Path = "Skill/sfx_himemmeth_kszw_cz02_prf",
+    LodPaths = "Skill/sfx_himemmeth_kszw_cz02_prf,Skill/sfx_himemmeth_kszw_cz02_lod1_prf,Skill/sfx_himemmeth_kszw_cz02_lod2_prf"
   }
 }
 Table_EffectLodMap_fields = {

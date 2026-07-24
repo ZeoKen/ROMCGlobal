@@ -748,6 +748,15 @@ Table_WorldQuest = {
     StartCondition = _EmptyTable,
     Map = 155,
     Version = 10
+  },
+  [1016530001] = {
+    id = 1016530001,
+    Type = 2020,
+    Describe = "在啾啾派对中击杀暗影海蝴蝶",
+    Name = "啾啾派对",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Version = 8
   }
 }
 Table_WorldQuest_fields = {

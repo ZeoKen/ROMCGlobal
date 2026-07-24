@@ -44,9 +44,22 @@ function ServiceHomeCmdProxy:RecvOptUpdateHomeCmd(data)
 end
 
 function ServiceHomeCmdProxy:RecvPrintUpdateHomeCmd(data)
-  HomeProxy.Instance:HandlePrintUpdateHomeCmd(data)
-  SnowRealmProxy.Instance:HandlePrintUpdateHomeCmd(data)
+  local action = data.action
+  if action == HomeCmd_pb.EPRINTACTION_QUERY_RECOMMEND_ALL or action == HomeCmd_pb.EPRINTACTION_QUERY_RECOMMEND_SOCIAL or action == HomeCmd_pb.EPRINTACTION_QUERY_RECOMMEND_HOT then
+    HomeBlueprintProxy.Instance:UpdateRecommendList(data)
+  elseif action == HomeCmd_pb.EPRINTACTION_QUERY_SELF_COLLECTION then
+    HomeBlueprintProxy.Instance:UpdateCollectionList(data)
+  elseif action == HomeCmd_pb.EPRINTACTION_QUERY_SELF then
+    HomeBlueprintProxy.Instance:UpdateMyList(data)
+  elseif action == HomeCmd_pb.EPRINTACTION_QUERY then
+    HomeBlueprintProxy.Instance:UpdateOfficialList(data)
+  elseif action == HomeCmd_pb.EPRINTACTION_PRAISE or action == HomeCmd_pb.EPRINTACTION_UNPRAISE or action == HomeCmd_pb.EPRINTACTION_SAVE or action == HomeCmd_pb.EPRINTACTION_COLLECT_IN or action == HomeCmd_pb.EPRINTACTION_COLLECT_OUT then
+    HomeBlueprintProxy.Instance:UpdateItemAction(data)
+  elseif action == HomeCmd_pb.EPRINTACTION_DELETE then
+    HomeBlueprintProxy.Instance:UpdateItemDelete(data)
+  end
   self:Notify(ServiceEvent.HomeCmdPrintUpdateHomeCmd, data)
+  EventManager.Me():PassEvent(ServiceEvent.HomeCmdPrintUpdateHomeCmd, data)
 end
 
 function ServiceHomeCmdProxy:RecvFurnitureOperHomeCmd(data)
@@ -128,3 +141,5 @@ function ServiceHomeCmdProxy:RecvSnowFurnitureOperHomeCmd(data)
   SnowRealmProxy.Instance:RecvSnowFurnitureOperHomeCmd(data)
   self:Notify(ServiceEvent.HomeCmdSnowFurnitureOperHomeCmd, data)
 end
+
+ServiceEvent.HomeCmdQueryBlueprintFurnitureHomeCmd = "ServiceEvent_HomeCmdQueryBlueprintFurnitureHomeCmd"

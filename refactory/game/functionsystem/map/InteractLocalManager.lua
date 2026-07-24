@@ -2,6 +2,7 @@ autoImport("InteractLocalSimple")
 autoImport("InteractLocalHug")
 autoImport("InteractLocalVisit")
 autoImport("InteractLocalCollect")
+autoImport("InteractPlayerHug")
 InteractLocalManager = class("InteractLocalManager")
 local GameFacade = GameFacade.Instance
 local ArrayPushBack = TableUtility.ArrayPushBack
@@ -18,6 +19,8 @@ function InteractLocalManager:ctor()
   self.interactGroupMap = {}
   self.interactNpcCount = 0
   self.isInTrigger = false
+  self.interactPlayerMap = {}
+  self.interactPlayerCount = 0
 end
 
 function InteractLocalManager.Me()
@@ -59,6 +62,40 @@ function InteractLocalManager:Update(time, deltaTime)
       self.isInTrigger = isInTrigger
     end
   end
+  self.lockPlayerCharid = nil
+  if 0 < self.interactPlayerCount and not self:IsMyselfDuringInteract() and not Game.InteractNpcManager:IsInteractBusy() then
+    local pIsInTrigger, pPrompt, pIcon = false
+    if self.last_lockPlayerCharid and self.interactPlayerMap[self.last_lockPlayerCharid] then
+      local interact = self.interactPlayerMap[self.last_lockPlayerCharid]
+      if interact:Update(time, deltaTime) then
+        pIsInTrigger = true
+        pPrompt = interact:GetInteractPrompt()
+        pIcon = interact:GetInteractIcon()
+        self.lockPlayerCharid = self.last_lockPlayerCharid
+      end
+    end
+    if not self.lockPlayerCharid then
+      for charid, interact in pairs(self.interactPlayerMap) do
+        if charid ~= self.last_lockPlayerCharid and interact:Update(time, deltaTime) then
+          pIsInTrigger = true
+          pPrompt = interact:GetInteractPrompt()
+          pIcon = interact:GetInteractIcon()
+          self.lockPlayerCharid = charid
+          self.last_lockPlayerCharid = charid
+          break
+        end
+      end
+    end
+    if self.playerIsInTrigger ~= pIsInTrigger or self.playerLastPrompt ~= pPrompt then
+      self:_TrySendMyselfTriggerChange(pIsInTrigger, pPrompt, pIcon)
+      self.playerIsInTrigger = pIsInTrigger
+      self.playerLastPrompt = pPrompt
+    end
+  elseif self.playerIsInTrigger then
+    self:_TrySendMyselfTriggerChange(false, nil, nil)
+    self.playerIsInTrigger = false
+    self.playerLastPrompt = nil
+  end
 end
 
 function InteractLocalManager:Launch()
@@ -78,6 +115,9 @@ function InteractLocalManager:Launch()
   EventManager.Me():AddEventListener(MyselfEvent.BeHited, self.HandleMyselfPlayerBeHit, self)
   EventManager.Me():AddEventListener(ItemEvent.EquipUpdate, self.HandleMyselfMountChange, self)
   EventManager.Me():AddEventListener(EscortEvent.HandStatusBuff, self.TryHandleCollectHugHandStatusBuff, self)
+  EventManager.Me():AddEventListener(SkillEvent.CanBeCarriedAdd, self.OnCanBeCarriedAdd, self)
+  EventManager.Me():AddEventListener(SkillEvent.CanBeCarriedRemove, self.OnCanBeCarriedRemove, self)
+  EventManager.Me():AddEventListener(MyselfEvent.CarryDownCharidUpdate, self.OnCarryDownChange, self)
 end
 
 function InteractLocalManager:Shutdown()
@@ -96,6 +136,9 @@ function InteractLocalManager:Shutdown()
   EventManager.Me():RemoveEventListener(MyselfEvent.BeHited, self.HandleMyselfPlayerBeHit, self)
   EventManager.Me():RemoveEventListener(ItemEvent.EquipUpdate, self.HandleMyselfMountChange, self)
   EventManager.Me():RemoveEventListener(EscortEvent.HandStatusBuff, self.TryHandleCollectHugHandStatusBuff, self)
+  EventManager.Me():RemoveEventListener(SkillEvent.CanBeCarriedAdd, self.OnCanBeCarriedAdd, self)
+  EventManager.Me():RemoveEventListener(SkillEvent.CanBeCarriedRemove, self.OnCanBeCarriedRemove, self)
+  EventManager.Me():RemoveEventListener(MyselfEvent.CarryDownCharidUpdate, self.OnCarryDownChange, self)
   self:OnLeaveScene()
   self:Clear()
 end
@@ -110,6 +153,17 @@ function InteractLocalManager:Clear()
   end
   self.interactNpcMap = {}
   self.interactNpcCount = 0
+  if self.interactPlayerMap then
+    for _, interact in pairs(self.interactPlayerMap) do
+      if interact and interact.Destroy then
+        interact:Destroy()
+      end
+    end
+  end
+  self.interactPlayerMap = {}
+  self.interactPlayerCount = 0
+  self.lockPlayerCharid = nil
+  self.playerIsInTrigger = false
   if self.myselfDuringInteractGuid then
     self.myselfDuringInteractGuid = nil
     GameFacade:sendNotification(InteractLocalEvent.MyselfInteractChange, false)
@@ -121,6 +175,104 @@ end
 function InteractLocalManager:ClearTrigger()
   self.isInTrigger = false
   GameFacade:sendNotification(InteractLocalEvent.MyselfTriggerChange, {trigger = false})
+end
+
+function InteractLocalManager:_ClearPlayerTrigger()
+  self.lockPlayerCharid = nil
+  self.last_lockPlayerCharid = nil
+  self.playerLastPrompt = nil
+  if self.playerIsInTrigger then
+    self:_TrySendMyselfTriggerChange(false, nil, nil)
+  end
+  self.playerIsInTrigger = false
+end
+
+function InteractLocalManager:OnCanBeCarriedAdd(note)
+  if not note then
+    return
+  end
+  local charid, buffEffect = note.charid, note.buffEffect
+  if not charid or not buffEffect then
+    return
+  end
+  self:_AddCarryablePlayer(charid, buffEffect)
+end
+
+function InteractLocalManager:OnCanBeCarriedRemove(note)
+  if not note or not note.charid then
+    return
+  end
+  self:_RemoveCarryablePlayer(note.charid)
+end
+
+function InteractLocalManager:OnCarryDownChange(note)
+  if not note or not note.charid then
+    return
+  end
+  local charid = note.charid
+  local newId = note.newId or 0
+  if newId ~= 0 then
+    if newId ~= Game.Myself.data.id then
+      self:_RemoveCarryablePlayer(charid)
+    end
+  else
+    local target = SceneCreatureProxy.FindCreature(charid)
+    if target then
+      local buffEffect = target.data:GetBuffEffectActiveByType(BuffType.CanBeCarried)
+      if buffEffect then
+        self:_AddCarryablePlayer(charid, buffEffect)
+      end
+    end
+  end
+end
+
+function InteractLocalManager:OnOtherPlayerOut(playerId)
+  if not playerId then
+    return
+  end
+  self:_RemoveCarryablePlayer(playerId)
+end
+
+function InteractLocalManager:_AddCarryablePlayer(charid, buffEffect)
+  if not charid or not buffEffect then
+    return
+  end
+  if charid == Game.Myself.data.id then
+    return
+  end
+  if self.interactPlayerMap[charid] then
+    return
+  end
+  local interact = InteractPlayerHug.Create(charid, buffEffect)
+  self.interactPlayerMap[charid] = interact
+  self.interactPlayerCount = self.interactPlayerCount + 1
+end
+
+function InteractLocalManager:_RemoveCarryablePlayer(charid)
+  if not charid then
+    return
+  end
+  local interact = self.interactPlayerMap[charid]
+  if not interact then
+    return
+  end
+  self.interactPlayerMap[charid] = nil
+  self.interactPlayerCount = self.interactPlayerCount - 1
+  if interact.Destroy then
+    interact:Destroy()
+  end
+  if self.lockPlayerCharid == charid then
+    self.lockPlayerCharid = nil
+    if self.playerIsInTrigger then
+      self:_TrySendMyselfTriggerChange(false, nil, nil)
+      self.playerIsInTrigger = false
+    end
+  end
+  local userdata = Game.Myself and Game.Myself.data and Game.Myself.data.userdata
+  local curCarryId = userdata and userdata:Get(UDEnum.CARRY_UP_CHARID) or 0
+  if curCarryId == charid then
+    ServiceMessCCmdProxy.Instance:CallCarryUserMessCCmd(0)
+  end
 end
 
 function InteractLocalManager:RegisterInteractNpc(staticid, id)
@@ -234,6 +386,13 @@ function InteractLocalManager:TryStartInteract(id)
       return true
     end
   end
+  if not self:IsMyselfDuringInteract() and self.lockPlayerCharid then
+    local interactPlayer = self.interactPlayerMap and self.interactPlayerMap[self.lockPlayerCharid]
+    if interactPlayer and interactPlayer.StartInteract then
+      interactPlayer:StartInteract()
+      return true
+    end
+  end
   return false
 end
 
@@ -341,11 +500,13 @@ end
 function InteractLocalManager:HandleMyselfPlayerDeath(note)
   self:EndInteract()
   self:GetOffAll()
+  self:_ClearPlayerTrigger()
 end
 
 function InteractLocalManager:HandleHugPet(note)
   if note.isHug then
     self:BreakInteractLocalHug()
+    self:BreakInteractPlayerHug()
     self.hugPetIdCache = note.id
   else
     self.hugPetIdCache = nil
@@ -354,11 +515,13 @@ end
 
 function InteractLocalManager:HandleSkillBroadcastCheck(note)
   self:BreakInteractLocalHug()
+  self:BreakInteractPlayerHug()
 end
 
 function InteractLocalManager:HandleMyselfPlayerBeHit(note)
   TimeTickManager.Me():CreateOnceDelayTick(10, function(owner, deltaTime)
     self:BreakInteractLocalHug()
+    self:BreakInteractPlayerHug()
   end, self)
 end
 
@@ -366,6 +529,7 @@ function InteractLocalManager:HandleMyselfMountChange()
   local mount = BagProxy.Instance.roleEquip:GetMount()
   if mount then
     self:BreakInteractLocalHug()
+    self:BreakInteractPlayerHug()
   end
 end
 
@@ -420,6 +584,14 @@ function InteractLocalManager:BreakInteractLocalHug()
       self:TryStartInteract()
       return
     end
+  end
+end
+
+function InteractLocalManager:BreakInteractPlayerHug()
+  local userdata = Game.Myself and Game.Myself.data and Game.Myself.data.userdata
+  local curCarryId = userdata and userdata:Get(UDEnum.CARRY_UP_CHARID) or 0
+  if curCarryId ~= 0 then
+    ServiceMessCCmdProxy.Instance:CallCarryUserMessCCmd(0)
   end
 end
 

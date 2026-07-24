@@ -579,16 +579,16 @@ function CardMakeProxy:GetItemNumByStaticID(itemid)
   return count
 end
 
-function CardMakeProxy:GetItemNumByStaticIDExceptFavoriteCard(itemId)
+function CardMakeProxy:GetItemNumByStaticIDExceptFavoriteCard(itemId, checkPackage)
   local items = self:GetItemsByStaticIDAndPredicate(itemId, function(itemData)
     if not itemData or not itemData.staticData then
       return false
     end
-    if Table_Card[itemData.staticData.id] and BagProxy.Instance:CheckIsFavorite(itemData) then
+    if Table_Card[itemData.staticData.id] and BagProxy.Instance:CheckIsFavorite(itemData, checkPackage) then
       return false
     end
     return true
-  end)
+  end, nil, checkPackage)
   if not items then
     return 0
   end

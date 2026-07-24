@@ -36,6 +36,10 @@ function SelfClass:Client_DoDeterminTargets(creature, creatureArray, maxCount, s
 end
 
 function SelfClass.GetShowLength(skillinfo, creature)
+  if skillinfo:IsArc() then
+    local dist = skillinfo:GetTargetForwardArch(creature)
+    return dist, nil
+  end
   skillinfo:GetTargetForwardRect(creature, tempVector2, tempVector2_1)
   return tempVector2_1[1], tempVector2_1[2]
 end

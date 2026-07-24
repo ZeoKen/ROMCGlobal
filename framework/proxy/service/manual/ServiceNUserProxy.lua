@@ -578,6 +578,7 @@ function ServiceNUserProxy:RecvCDTimeUserCmd(data)
     end
     _CDProxy:ClearSkillDelayCD()
   end
+  local needSendItemUpdate = false
   for i = 1, #data.list do
     cdData = data.list[i]
     if cdData.type == SceneUser2_pb.CD_TYPE_SKILL then
@@ -588,11 +589,14 @@ function ServiceNUserProxy:RecvCDTimeUserCmd(data)
       _CDProxy:AddCD(cdData.type, cdData.id, cdData.time)
       FunctionCDCommand.Me():Refresh()
       if cdData.type == SceneUser2_pb.CD_TYPE_ITEM or cdData.type == SceneUser2_pb.CD_TYPE_ITEMGROUP then
-        GameFacade.Instance:sendNotification(ItemEvent.ItemUpdate)
+        needSendItemUpdate = true
       elseif cdData.type == SceneUser2_pb.CD_TYPE_TRAINACTION then
         GameFacade.Instance:sendNotification(InteractNpcEvent.FlowerCarPhotographActionCDUpdate)
       end
     end
+  end
+  if needSendItemUpdate then
+    GameFacade.Instance:sendNotification(ItemEvent.ItemUpdate)
   end
   if needSendEvent or needSendEvent2 then
     GameFacade.Instance:sendNotification(SkillEvent.SkillStartEvent)

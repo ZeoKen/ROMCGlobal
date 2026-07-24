@@ -4,6 +4,7 @@ autoImport("AreaTrigger_Common")
 autoImport("AreaTrigger_Skill")
 autoImport("AreaTrigger_Buff")
 autoImport("AreaTrigger_Npc")
+autoImport("AreaTrigger_Coaster")
 AreaTriggerManager = class("AreaTriggerManager")
 
 function AreaTriggerManager:ctor()
@@ -13,12 +14,14 @@ function AreaTriggerManager:ctor()
   self.atSkill = AreaTrigger_Skill.CreateAsTable()
   self.atBuff = AreaTrigger_Buff.CreateAsTable()
   self.atNpc = AreaTrigger_Npc.new()
+  self.atCoaster = AreaTrigger_Coaster.new()
   Game.AreaTrigger_ExitPoint = self.atExitPoint
   Game.AreaTrigger_Mission = self.atMission
   Game.AreaTrigger_Common = self.atCommon
   Game.AreaTrigger_Skill = self.atSkill
   Game.AreaTrigger_Buff = self.atBuff
   Game.AreaTrigger_Npc = self.atNpc
+  Game.AreaTrigger_Coaster = self.atCoaster
   self.ignoreCount = 0
   self:SetIgnore(true)
 end
@@ -59,6 +62,7 @@ function AreaTriggerManager:Launch()
   self.atSkill:Launch()
   self.atBuff:Launch()
   self.atNpc:Launch()
+  self.atCoaster:Launch()
 end
 
 function AreaTriggerManager:Shutdown()
@@ -73,6 +77,7 @@ function AreaTriggerManager:Shutdown()
   self.atSkill:Shutdown()
   self.atBuff:Shutdown()
   self.atNpc:Shutdown()
+  self.atCoaster:Shutdown()
 end
 
 function AreaTriggerManager:Update(time, deltaTime)
@@ -84,6 +89,7 @@ function AreaTriggerManager:Update(time, deltaTime)
   self.atSkill:Update(time, deltaTime)
   self.atBuff:Update(time, deltaTime)
   self.atNpc:Update(time, deltaTime)
+  self.atCoaster:Update(time, deltaTime)
   if 0 < self.ignoreCount then
     return
   end

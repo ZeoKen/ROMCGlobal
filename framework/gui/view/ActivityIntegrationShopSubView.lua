@@ -31,6 +31,7 @@ function ActivityIntegrationShopSubView:FindObjs()
   self.shopScrollView = self:FindGO("ShopScrollView", self.gameObject):GetComponent(UIScrollView)
   self.shopGrid = self:FindGO("Grid", self.gameObject):GetComponent(UIGrid)
   self.shopListCtrl = UIGridListCtrl.new(self.shopGrid, ActivityIntegrationShopItemCell, "NewRechargeCommonGoodsCellType2")
+  self.shopListCtrl:SetAddCellHandler(self.HandleAddShopItemCell, self)
   self.shopListCtrl:AddEventListener(MouseEvent.MouseClick, self.HandleClickItem, self)
   self.goGachaCoinBalance = self:FindGO("GachaCoinBalance", self.gameObject)
   self.goLabGachaCoinBalance = self:FindGO("Lab", self.goGachaCoinBalance)
@@ -60,6 +61,12 @@ function ActivityIntegrationShopSubView:AddMapEvts()
   self:AddListenEvt(MyselfEvent.MyDataChange, self.UpdateBalance)
   self:AddListenEvt(ItemEvent.ItemUpdate, self.UpdateBalance)
   self:AddListenEvt(ServiceEvent.NUserUpdateShopGotItem, self.UpdateBalance)
+end
+
+function ActivityIntegrationShopSubView:HandleAddShopItemCell(cell)
+  if cell and cell.SetBuyLimitFirst then
+    cell:SetBuyLimitFirst(true)
+  end
 end
 
 function ActivityIntegrationShopSubView:InitDatas()

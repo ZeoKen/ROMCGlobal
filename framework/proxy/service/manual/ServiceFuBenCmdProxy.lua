@@ -779,3 +779,13 @@ function ServiceFuBenCmdProxy:RecvGeffenMagicWinCmd(data)
   AsyncPvpRaidProxy.Instance:SyncGeffenMagicResultInfo(data)
   self:Notify(ServiceEvent.FuBenCmdGeffenMagicWinCmd, data)
 end
+
+function ServiceFuBenCmdProxy:RecvSnowRealmPartySyncFubenCmd(data)
+  SnowRealmActivityProxy.Instance:UpdateActivityInfo(data)
+  self:Notify(ServiceEvent.FuBenCmdSnowRealmPartySyncFubenCmd, data)
+end
+
+function ServiceFuBenCmdProxy:RecvSnowRealmDamageRankSyncFubenCmd(data)
+  SnowRealmActivityProxy.Instance:UpdateDamageRanks(data.datas)
+  self:Notify(ServiceEvent.FuBenCmdSnowRealmDamageRankSyncFubenCmd, data)
+end

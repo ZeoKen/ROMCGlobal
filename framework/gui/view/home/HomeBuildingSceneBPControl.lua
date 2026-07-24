@@ -3,6 +3,7 @@ HomeBuildingSceneBPControl = class("HomeBuildingSceneBPControl", SubView)
 local m_color_yellowBP = LuaColor(1, 1, 0, 1)
 local m_color_blueBP = LuaColor(0, 0.19607843137254902, 1, 1)
 HomeBuildingSceneBPControl.ShowBluePrint = "HomeBuildingSceneBPControl_ShowBluePrint"
+HomeBuildingSceneBPControl.ExitBluePrint = "HomeBuildingSceneBPControl_ExitBluePrint"
 
 function HomeBuildingSceneBPControl:Init()
   self.bpFurnitureMap = {}
@@ -25,6 +26,7 @@ function HomeBuildingSceneBPControl:FindObjs()
   self.objBtnShowBPOnly = self:FindGO("BtnShowBPOnly", self.objBuildUI)
   self.sprBtnShowBPOnly = self:FindComponent("Icon", UISprite, self.objBtnShowBPOnly)
   self.objBtnExitBP = self:FindGO("BtnExitBP", self.objBuildUI)
+  self.btnApply = self:FindGO("BtnApply", self.objBuildUI)
 end
 
 function HomeBuildingSceneBPControl:AddEvts()
@@ -37,16 +39,21 @@ function HomeBuildingSceneBPControl:AddEvts()
   self:AddClickEvent(self.objBtnExitBP, function()
     self:ExitBPMode()
   end)
+  self:AddClickEvent(self.btnApply, function()
+    self:ApplyBluePrintMap()
+  end)
 end
 
 function HomeBuildingSceneBPControl:AddViewEvts()
   self:AddListenEvt(HomeBuildingSceneBPControl.ShowBluePrint, self.ShowBluePrint)
+  self:AddListenEvt(HomeBuildingSceneBPControl.ExitBluePrint, self.ExitBPMode)
   self:AddListenEvt(ServiceEvent.HomeCmdFurnitureUpdateHomeCmd, self.RefreshStatus)
 end
 
 function HomeBuildingSceneBPControl:InitView()
   self.objBtnShowBPOnly:SetActive(false)
   self.objBtnExitBP:SetActive(false)
+  self.btnApply:SetActive(false)
 end
 
 function HomeBuildingSceneBPControl:OnEnter()
@@ -67,27 +74,25 @@ function HomeBuildingSceneBPControl:ExitBPMode()
   end
 end
 
+function HomeBuildingSceneBPControl:GetCurrentContextLocalHouseType()
+  local cur = HomeProxy.Instance:GetCurHouseData()
+  if cur and cur.houseType == HomeCmd_pb.EHOUSETYPE_SNOW then
+    return HomeProxy.HouseType.Snow
+  end
+  if cur and cur.houseType == HomeCmd_pb.EHOUSETYPE_PRIVATE then
+    return HomeProxy.HouseType.Home
+  end
+end
+
 function HomeBuildingSceneBPControl:OpenBPSelectView()
   if self.container.guideView and self.container.guideView:CheckOperateForbid() then
     return
   end
-  local curMapData = HomeManager.Me():GetCurMapSData()
-  local curMapID = curMapData and curMapData.id
-  local found = false
-  if Table_HomeOfficialBluePrint then
-    for id, data in pairs(Table_HomeOfficialBluePrint) do
-      if curMapID == data.MapID then
-        found = true
-        break
-      end
-    end
-  end
-  if not found then
-    MsgManager.ShowMsgByID(40558)
-    return
-  end
   self:sendNotification(UIEvent.JumpPanel, {
-    view = PanelConfig.HomeBluePrintView
+    view = PanelConfig.HomeBluePrintView,
+    viewdata = {
+      houseType = self:GetCurrentContextLocalHouseType()
+    }
   })
 end
 
@@ -100,6 +105,7 @@ function HomeBuildingSceneBPControl:ShowBluePrint(note)
   local curMapData = HomeManager.Me():GetCurMapSData()
   if curMapData.id ~= bluePrintData.mapID then
     LogUtility.Error("此蓝图不可在当前地图使用", tostring(curMapData.id), tostring(bluePrintData.mapID))
+    MsgManager.ShowMsgByID(43679)
     return
   end
   self:ClearBPFurnitures()
@@ -110,7 +116,7 @@ function HomeBuildingSceneBPControl:ShowBluePrint(note)
   TableUtility.TableClear(self.bpFinishNumMap)
   self.selectBlueData = bluePrintData
   self:CreateBP(bluePrintData, 1, #bluePrintData.furnitureBPStaticDatas, function()
-    self:RefreshStatus()
+    self:RefreshStatus(nil, true)
   end)
   local furnitureContentDatas = HomeProxy.Instance:GetDatasByType(HomeProxy.BuildType.Furniture, HomeProxy.FurnitureSpecialCatagory.All)
   local typeDatas, singleContentData
@@ -130,6 +136,7 @@ function HomeBuildingSceneBPControl:ShowBluePrint(note)
   self.objHideInBPMode:SetActive(false)
   self.objBtnShowBPOnly:SetActive(true)
   self.objBtnExitBP:SetActive(true)
+  self.btnApply:SetActive(true)
   self.isShowBPOnly = false
   self.container:ClearSelectContent()
   HomeManager.Me():SetBluePrintMode(bluePrintData)
@@ -171,6 +178,7 @@ function HomeBuildingSceneBPControl:CreateBP(bluePrintData, index, count, finish
     if nFurniture_BluePrint:IsHideWithWall() then
       nFurniture_BluePrint.assetFurniture:SetParent(HomeManager.Me():GetNearestWall(nFurniture_BluePrint.placeFloor, pos.x, pos.z).transform, true)
     end
+    self:ApplyShowBPOnlyDisplay(nFurniture_BluePrint)
     if index < count then
       index = index + 1
       self:CreateBP(bluePrintData, index, count, finishedCall)
@@ -185,8 +193,18 @@ function HomeBuildingSceneBPControl:ApplyBluePrintMap()
   if not blueprints or not next(blueprints) then
     return
   end
+  MsgManager.ConfirmMsgByID(43682, function()
+    self:DoApplyBluePrintMap()
+  end)
+end
+
+function HomeBuildingSceneBPControl:DoApplyBluePrintMap()
+  local blueprints = self.bpFurnitureMap
+  if not blueprints or not next(blueprints) then
+    return
+  end
   local homeManager = HomeManager.Me()
-  local buildingGrid = homeManager.buildingGrid
+  local buildingGrid = homeManager:GetCurrentBuildingGrid()
   if not buildingGrid then
     return
   end
@@ -438,7 +456,26 @@ function HomeBuildingSceneBPControl:TrySelectBPFurniture(id)
   end
 end
 
-function HomeBuildingSceneBPControl:RefreshStatus()
+function HomeBuildingSceneBPControl:ApplyShowBPOnlyDisplay(bpNFurniture)
+  if not self.isShowBPOnly then
+    return
+  end
+  if bpNFurniture then
+    if bpNFurniture.assetFurniture then
+      bpNFurniture.assetFurniture:SetActive(true)
+      bpNFurniture.assetFurniture:SetAlpha(1)
+    end
+    return
+  end
+  for id, bpNFurniture in pairs(self.bpFurnitureMap) do
+    if bpNFurniture and bpNFurniture.assetFurniture then
+      bpNFurniture.assetFurniture:SetActive(true)
+      bpNFurniture.assetFurniture:SetAlpha(1)
+    end
+  end
+end
+
+function HomeBuildingSceneBPControl:RefreshStatus(note, refreshOnly)
   if not HomeManager.Me():IsBluePrintMode() then
     return
   end
@@ -457,7 +494,7 @@ function HomeBuildingSceneBPControl:RefreshStatus()
       finished = false
     end
   end
-  if finished then
+  if finished and not refreshOnly then
     MsgManager.ShowMsgByID(38008)
     self:ExitBluePrint()
   else
@@ -468,6 +505,7 @@ function HomeBuildingSceneBPControl:RefreshStatus()
         contentCells[i]:RefreshBPStatus()
       end
     end
+    self:ApplyShowBPOnlyDisplay()
   end
 end
 
@@ -492,10 +530,7 @@ function HomeBuildingSceneBPControl:SwitchShowBPOnly()
   self.objFurnituresRoot:SetActive(not self.isShowBPOnly)
   self.sprBtnShowBPOnly.spriteName = self.isShowBPOnly and "com_icon_hide" or "com_icon_show"
   if self.isShowBPOnly then
-    for id, bpNFurniture in pairs(self.bpFurnitureMap) do
-      bpNFurniture.assetFurniture:SetActive(true)
-      bpNFurniture.assetFurniture:SetAlpha(1)
-    end
+    self:ApplyShowBPOnlyDisplay()
     for i = 1, #self.bpFurnitureOutlineMap do
       if not self.bpFurnitureOutlineMap[i].isSelect then
         HomeFurniturOutLine.Me():RemoveTarget(self.bpFurnitureOutlineMap[i]:GetInstanceID())
@@ -517,6 +552,7 @@ function HomeBuildingSceneBPControl:ExitBluePrint()
   self.objHideInBPMode:SetActive(true)
   self.objBtnShowBPOnly:SetActive(false)
   self.objBtnExitBP:SetActive(false)
+  self.btnApply:SetActive(false)
   self.objListItem:SetActive(true)
   self.isShowBPOnly = false
   self:ResetScene()

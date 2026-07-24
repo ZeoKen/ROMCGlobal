@@ -78,6 +78,9 @@ function ServiceMessCCmdAutoProxy:onRegister()
   self:Listen(83, 21, function(data)
     self:RecvSyncForbidCardsMessCCmd(data)
   end)
+  self:Listen(83, 22, function(data)
+    self:RecvCarryUserMessCCmd(data)
+  end)
 end
 
 function ServiceMessCCmdAutoProxy:CallChooseNewProfessionMessCCmd(bornprofession, chooseprofession)
@@ -1003,6 +1006,23 @@ function ServiceMessCCmdAutoProxy:CallSyncForbidCardsMessCCmd(datas)
   end
 end
 
+function ServiceMessCCmdAutoProxy:CallCarryUserMessCCmd(charid)
+  if not NetConfig.PBC then
+    local msg = MessCCmd_pb.CarryUserMessCCmd()
+    if charid ~= nil then
+      msg.charid = charid
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.CarryUserMessCCmd.id
+    local msgParam = {}
+    if charid ~= nil then
+      msgParam.charid = charid
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceMessCCmdAutoProxy:RecvChooseNewProfessionMessCCmd(data)
   self:Notify(ServiceEvent.MessCCmdChooseNewProfessionMessCCmd, data)
 end
@@ -1087,6 +1107,10 @@ function ServiceMessCCmdAutoProxy:RecvSyncForbidCardsMessCCmd(data)
   self:Notify(ServiceEvent.MessCCmdSyncForbidCardsMessCCmd, data)
 end
 
+function ServiceMessCCmdAutoProxy:RecvCarryUserMessCCmd(data)
+  self:Notify(ServiceEvent.MessCCmdCarryUserMessCCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.MessCCmdChooseNewProfessionMessCCmd = "ServiceEvent_MessCCmdChooseNewProfessionMessCCmd"
 ServiceEvent.MessCCmdInviterSendLoveConfessionMessCCmd = "ServiceEvent_MessCCmdInviterSendLoveConfessionMessCCmd"
@@ -1109,3 +1133,4 @@ ServiceEvent.MessCCmdSetPvpChampionStatueMessCCmd = "ServiceEvent_MessCCmdSetPvp
 ServiceEvent.MessCCmdSyncQuickPassItemInfoMessCCmd = "ServiceEvent_MessCCmdSyncQuickPassItemInfoMessCCmd"
 ServiceEvent.MessCCmdSyncPvpChampionStatueMessCCmd = "ServiceEvent_MessCCmdSyncPvpChampionStatueMessCCmd"
 ServiceEvent.MessCCmdSyncForbidCardsMessCCmd = "ServiceEvent_MessCCmdSyncForbidCardsMessCCmd"
+ServiceEvent.MessCCmdCarryUserMessCCmd = "ServiceEvent_MessCCmdCarryUserMessCCmd"

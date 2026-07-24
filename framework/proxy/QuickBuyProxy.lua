@@ -55,14 +55,20 @@ function QuickBuyProxy:Init()
   self.sellTradeItem = {}
 end
 
-function QuickBuyProxy:TryOpenView(list, queryType, filterRefinelv)
+function QuickBuyProxy:TryOpenView(list, queryType, filterRefinelv, beforeBuyHook)
   self.filterRefinelv = filterRefinelv
   self:SetItemList(list, queryType)
   if #self.itemList > 0 then
+    self.beforeBuyHook = beforeBuyHook
     FunctionSecurity.Me():TryDoRealNameCentify(RealNameCentify, self)
     return true
   end
+  self.beforeBuyHook = nil
   return false
+end
+
+function QuickBuyProxy:GetBeforeBuyHook()
+  return self.beforeBuyHook
 end
 
 function QuickBuyProxy:SetItemList(list, queryType)
@@ -453,6 +459,7 @@ function QuickBuyProxy:Clear()
   self.callBuyItemIndex = nil
   self.callRecordIndex = nil
   self.safeRefineLimitVal = nil
+  self.beforeBuyHook = nil
 end
 
 function QuickBuyProxy:TryGetItemCount(list, itemid)

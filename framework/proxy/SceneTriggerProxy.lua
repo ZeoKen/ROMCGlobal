@@ -28,10 +28,13 @@ function SceneTriggerProxy:ctor(proxyName, data)
   self.typeFunc[AreaTrigger_Common_ClientType.Snowman_Area] = self.SnowRealm_Snowman_Area_Handle
   self.typeFunc[AreaTrigger_Common_ClientType.SnowRealm_Area] = self.SnowRealm_Area_Handle
   self.typeFunc[AreaTrigger_Common_ClientType.SnowRealm_Room] = self.SnowRealm_Room_Handle
+  self.typeFunc[AreaTrigger_Coaster_ClientType.SnakeCoaster] = self.SnakeCoaster_Checkpoint_Handle
+  self.typeFunc[AreaTrigger_Common_ClientType.SceneBossAnime_Area] = self.SceneBossAnime_Area_Handle
 end
 
 function SceneTriggerProxy:Reset()
   self.userMap = {}
+  self.coasterMap = {}
 end
 
 function SceneTriggerProxy:onRegister()
@@ -56,6 +59,49 @@ function SceneTriggerProxy:Add(data)
       Game.AreaTrigger_Common:AddCheck(trigger)
     end
   end
+end
+
+function SceneTriggerProxy:FindCoaster(guid)
+  return self.coasterMap[guid]
+end
+
+function SceneTriggerProxy:AddCoaster(data)
+  if self:FindCoaster(data.id) == nil then
+    local func = self.typeFunc[data.type]
+    if func then
+      local trigger = func(self, data)
+      self.coasterMap[trigger.id] = trigger
+      if Game.AreaTrigger_Coaster then
+        Game.AreaTrigger_Coaster:AddCheck(trigger)
+      end
+    end
+  end
+end
+
+function SceneTriggerProxy:RemoveCoaster(guid)
+  local trigger = self:FindCoaster(guid)
+  if trigger ~= nil then
+    self.coasterMap[guid] = nil
+    if Game.AreaTrigger_Coaster then
+      local removed = Game.AreaTrigger_Coaster:RemoveCheck(guid)
+      if removed then
+        ReusableTable.DestroyAndClearTable(removed)
+      end
+    end
+  end
+end
+
+function SceneTriggerProxy:ClearCoaster()
+  if Game.AreaTrigger_Coaster then
+    local removed
+    for k, v in pairs(self.coasterMap) do
+      removed = Game.AreaTrigger_Coaster:RemoveCheck(k)
+      if removed then
+        ReusableTable.DestroyAndClearTable(removed)
+      end
+    end
+  end
+  self.coasterMap = {}
 end
 
 function SceneTriggerProxy:SpawnPurify(data)
@@ -137,6 +183,7 @@ function SceneTriggerProxy:Clear()
       end
     end
   end
+  self:ClearCoaster()
   self:Reset()
 end
 
@@ -188,6 +235,27 @@ function SceneTriggerProxy:MetalGvgCheck_Handle(data)
   result.reachDis = data.range
   result.type = data.type
   result.serverData = data
+  return result
+end
+
+function SceneTriggerProxy:SnakeCoaster_Checkpoint_Handle(data)
+  local result = ReusableTable.CreateTable()
+  result.id = data.id
+  result.pos = LuaVector3(data.pos.x, data.pos.y, data.pos.z)
+  result.reachDis = data.range
+  result.type = data.type
+  result.customData = data.customData
+  return result
+end
+
+function SceneTriggerProxy:SceneBossAnime_Area_Handle(data)
+  local result = ReusableTable.CreateTable()
+  result.id = data.id
+  result.pos = LuaVector3(data.pos[1], data.pos[2], data.pos[3])
+  result.reachDis = data.range
+  result.type = data.type
+  result.enterAnimeID = data.enterAnimeID
+  result.leaveAnimeID = data.leaveAnimeID
   return result
 end
 

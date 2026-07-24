@@ -43,10 +43,12 @@ autoImport("MainViewAbyssLakePage")
 autoImport("MainViewAbyssDragonPage")
 autoImport("MainViewFairyTaleRaidPage")
 autoImport("MainViewAsyncPvpRaidPage")
+autoImport("MainViewSnowRealmActivityPage")
 MainViewShortCutBord = {
   "ShortCutGrid",
   "SkillBord"
 }
+local SnowRealmActivityCloseTick = 1001
 
 function MainView:Init()
   self:AddSubView("skillShortCutPage", MainViewSkillPage)
@@ -133,6 +135,7 @@ function MainView:OnEnter()
 end
 
 function MainView:OnExit()
+  self:ClearSnowRealmActivityCloseTick()
   MainView.super.OnExit(self)
 end
 
@@ -259,6 +262,8 @@ function MainView:MapViewListener()
   self:AddListenEvt(PVEEvent.FairyTale_Launch, self.HandleFairyTaleRaidLaunch)
   self:AddListenEvt(PVEEvent.FairyTale_Shutdown, self.HandleFairyTaleRaidShutdown)
   self:AddListenEvt(ServiceEvent.FuBenCmdFairyTaleRaidSyncCmd, self.HandleFairyTaleRaidSync)
+  self:AddListenEvt(ServiceEvent.FuBenCmdSnowRealmPartySyncFubenCmd, self.HandleSnowRealmActivitySync)
+  self:AddListenEvt(HomeEvent.ExitHome, self.HandleSnowRealmExitHome)
   self:AddListenEvt(PVPEvent.AsyncPvpRaid_Shutdown, self.HandleAsyncPvpRaidShutdown)
   self:AddListenEvt(ServiceEvent.FuBenCmdGeffenMagicInfoSyncCmd, self.HandleSyncGeffenMagicInfo)
   self:AddListenEvt(ServiceEvent.FuBenCmdGeffenMagicStatUpdateCmd, self.HandleGeffenMagicStatUpdate)
@@ -808,6 +813,55 @@ function MainView:HandleFairyTaleRaidShutdown()
 end
 
 function MainView:HandleFairyTaleRaidSync(note)
+end
+
+function MainView:HandleSnowRealmActivitySync(note)
+  redlog("MainView:HandleSnowRealmActivitySync")
+  if not SnowRealmActivityProxy.Instance:IsActive() then
+    SnowRealmActivityProxy.Instance:SetActive(true)
+  end
+  if not self.snowRealmActivityPage then
+    self.snowRealmActivityPage = self:AddSubView("SnowRealmActivityPage", MainViewSnowRealmActivityPage)
+  end
+  local stage = SnowRealmActivityProxy.Instance:GetStage()
+  if stage == FuBenCmd_pb.ESNOW_REALM_PARTY_STAGE_SUCCESS or stage == FuBenCmd_pb.ESNOW_REALM_PARTY_STAGE_FAIL then
+    self:StartSnowRealmActivityCloseTick()
+  else
+    self:ClearSnowRealmActivityCloseTick()
+  end
+end
+
+function MainView:HandleSnowRealmExitHome()
+  if Game.MapManager:IsInSnowRealmHouseRaid() then
+    self:CloseSnowRealmActivityPage()
+  end
+end
+
+function MainView:StartSnowRealmActivityCloseTick()
+  if self.snowRealmActivityCloseTicking then
+    return
+  end
+  self:ClearSnowRealmActivityCloseTick()
+  self.snowRealmActivityCloseTicking = true
+  TimeTickManager.Me():CreateOnceDelayTick(10000, function(owner, deltaTime)
+    owner:CloseSnowRealmActivityPage()
+  end, self, SnowRealmActivityCloseTick)
+end
+
+function MainView:ClearSnowRealmActivityCloseTick()
+  if self.snowRealmActivityCloseTicking then
+    self.snowRealmActivityCloseTicking = false
+    TimeTickManager.Me():ClearTick(self, SnowRealmActivityCloseTick)
+  end
+end
+
+function MainView:CloseSnowRealmActivityPage()
+  self:ClearSnowRealmActivityCloseTick()
+  if self.snowRealmActivityPage then
+    self:RemoveSubView("SnowRealmActivityPage")
+    self.snowRealmActivityPage = nil
+  end
+  SnowRealmActivityProxy.Instance:SetActive(false)
 end
 
 function MainView:HandleAsyncPvpRaidShutdown()

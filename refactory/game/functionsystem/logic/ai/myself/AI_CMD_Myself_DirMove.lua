@@ -4,8 +4,14 @@ local NotifyServerDistance = 0.25
 local nextNotifyTime = 0
 local prevNotifyPosition = LuaVector3.Zero()
 local tempVector3 = LuaVector3.Zero()
+local IsSnakeCoasterInputProxyMode = function(creature)
+  return creature ~= nil and creature.snakeCoasterMove ~= nil and creature.snakeCoasterMove:IsNpcDriveMode()
+end
 
 function AI_CMD_Myself_DirMoveHelper:Step(time, deltaTime, creature, dir, stepTarget, rotateDir)
+  if creature.StepSkatingDirMove and creature:StepSkatingDirMove(time, deltaTime, dir, stepTarget, rotateDir) then
+    return
+  end
   local p = creature:GetPosition()
   local ret, _ = NavMeshUtility.Better_RaycastDirection(p, stepTarget, dir)
   if not ret then
@@ -43,22 +49,25 @@ function AI_CMD_Myself_DirMove:Construct(args)
   self.args[5] = false
   self.args[6] = false
   self.args[7] = args[4]
-  return 7
+  self.args[8] = LuaVector3.Better_Clone(args[2])
+  return 8
 end
 
 function AI_CMD_Myself_DirMove:Deconstruct()
   LuaVector3.Destroy(self.args[1])
   LuaVector3.Destroy(self.args[3])
   LuaVector3.Destroy(self.args[4])
+  LuaVector3.Destroy(self.args[8])
   self.args[1] = nil
   self.args[3] = nil
   self.args[4] = nil
   self.args[6] = nil
+  self.args[8] = nil
 end
 
 function AI_CMD_Myself_DirMove:TryRestart(args, creature)
   local p = args[2]
-  LuaVector3.Better_Set(self.args[1], p[1], p[2], p[3])
+  LuaVector3.Better_Set(self.args[8], p[1], p[2], p[3])
   self.args[2] = args[3]
   if not self.running then
     return true
@@ -66,11 +75,29 @@ function AI_CMD_Myself_DirMove:TryRestart(args, creature)
   return AI_CMD_Myself_DirMove.Start(self, time, deltaTime, creature)
 end
 
+function AI_CMD_Myself_DirMove:UpdateSkatingDir(creature, keepCurrentMove)
+  local rawDir = self.args[8] or self.args[1]
+  if creature.PrepareSkatingDirInput then
+    local dir = creature:PrepareSkatingDirInput(rawDir, keepCurrentMove)
+    if dir ~= nil then
+      LuaVector3.Better_Set(self.args[1], dir[1], dir[2], dir[3])
+      return
+    end
+  end
+  if rawDir ~= self.args[1] then
+    LuaVector3.Better_Set(self.args[1], rawDir[1], rawDir[2], rawDir[3])
+  end
+end
+
 function AI_CMD_Myself_DirMove:Start(time, deltaTime, creature)
+  if IsSnakeCoasterInputProxyMode(creature) then
+    return false
+  end
   if creature.data:NoMove() then
     self:SetKeepAlive(true)
     return false
   end
+  AI_CMD_Myself_DirMove.UpdateSkatingDir(self, creature)
   if creature:IsConcurrentRotateOnly() then
     self.args[6] = true
     LuaVector3.Better_Add(creature:GetPosition(), self.args[1], self.args[4])
@@ -117,6 +144,7 @@ function AI_CMD_Myself_DirMove:Update(time, deltaTime, creature)
       creature:Logic_SamplePosition(time)
     end
   else
+    AI_CMD_Myself_DirMove.UpdateSkatingDir(self, creature, true)
     AI_CMD_Myself_DirMoveHelper.Step(self, time, deltaTime, creature, self.args[1], self.args[3], self.args[4])
   end
   AI_CMD_Myself_DirMoveHelper.NotifyServer(self, time, deltaTime, creature)

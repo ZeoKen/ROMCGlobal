@@ -4096,6 +4096,25 @@ Table_GuideID = {
     ButtonID = 570,
     press = 1
   },
+  [571] = {
+    id = 571,
+    Explain = "##45938968",
+    ButtonID = 571,
+    press = 1
+  },
+  [572] = {
+    id = 572,
+    Explain = "##45938969",
+    ButtonID = 572,
+    press = 1
+  },
+  [574] = {
+    id = 574,
+    Explain = "##45938971",
+    uiID = "SnakeCoasterEntranceView",
+    ButtonID = 574,
+    press = 1
+  },
   [1001] = {
     id = 1001,
     Explain = "##1242836",

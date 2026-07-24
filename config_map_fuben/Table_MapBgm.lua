@@ -1683,6 +1683,11 @@ Table_MapBgm = {
     id = 341,
     NameEn = "sc_zbfb_001",
     SceneBgm = "bgm_heartlock"
+  },
+  [342] = {
+    id = 342,
+    NameEn = "sc_zbfb_002",
+    SceneBgm = "bgm_heartlock"
   }
 }
 Table_MapBgm_fields = {

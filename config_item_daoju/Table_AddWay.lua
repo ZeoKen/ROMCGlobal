@@ -128,6 +128,8 @@ Table_AddWay_t = {
     {8354},
     {8355},
     {8356},
+    {8372},
+    {8373},
     {8360},
     {8358},
     {7},
@@ -168,11 +170,11 @@ Table_AddWay_t = {
     {99},
     {8370},
     {8371},
-    {8372},
-    {8373},
     {8369},
     {8375},
     {8377},
+    {8378},
+    {8379},
     {8380},
     {5031},
     {93},
@@ -194,7 +196,9 @@ Table_AddWay_t = {
     {31953},
     {31952},
     {8390},
+    {8393},
     {8392},
+    {8395},
     {8368},
     {8367},
     {8342},
@@ -3956,6 +3960,54 @@ Table_AddWay_t = {
           "id",
           "compare",
           "=",
+          4913
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          4914
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132122
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132130
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
           52913
         }
       }
@@ -4047,6 +4099,18 @@ Table_AddWay_t = {
           "compare",
           "=",
           1
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132191
         }
       }
     },
@@ -4382,6 +4446,18 @@ Table_AddWay_t = {
           "id",
           "compare",
           "=",
+          132143
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
           23075
         }
       }
@@ -4417,6 +4493,18 @@ Table_AddWay_t = {
       }
     },
     {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132200
+        }
+      }
+    },
+    {
       "Table_Shop",
       "items",
       {
@@ -4425,6 +4513,42 @@ Table_AddWay_t = {
           "compare",
           "=",
           12028
+        },
+        {
+          "ShopID",
+          "compare",
+          "=",
+          1
+        }
+      }
+    },
+    {
+      "Table_Shop",
+      "items",
+      {
+        {
+          "type",
+          "compare",
+          "=",
+          12029
+        },
+        {
+          "ShopID",
+          "compare",
+          "=",
+          1
+        }
+      }
+    },
+    {
+      "Table_Shop",
+      "items",
+      {
+        {
+          "type",
+          "compare",
+          "=",
+          12030
         },
         {
           "ShopID",
@@ -4831,6 +4955,258 @@ Table_AddWay_t = {
       }
     },
     {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132183
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132154
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132162
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132136
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132202
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132149
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132153
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132124
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132157
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132129
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132132
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132196
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132184
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132187
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132189
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132139
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132172
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132199
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132148
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132179
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132208
+        }
+      }
+    },
+    {
       "Table_Shop",
       "items",
       {
@@ -4845,6 +5221,414 @@ Table_AddWay_t = {
           "compare",
           "=",
           10
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132142
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132169
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132178
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132209
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132185
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132156
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132133
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132165
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132201
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132146
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132125
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132163
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132137
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132168
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132186
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132167
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132193
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132195
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132138
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132144
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132171
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132204
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132150
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132176
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132210
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132155
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132126
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132135
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132198
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132197
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132141
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132174
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132180
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132206
         }
       }
     },
@@ -4957,6 +5741,30 @@ Table_AddWay_t = {
       }
     },
     {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132192
+        }
+      }
+    },
+    {
+      "Table_Item",
+      "id",
+      {
+        {
+          "id",
+          "compare",
+          "=",
+          132166
+        }
+      }
+    },
+    {
       "Table_Reward",
       "item",
       {
@@ -4969,14 +5777,26 @@ Table_AddWay_t = {
       }
     },
     {
-      "Table_Item",
-      "id",
+      "Table_Reward",
+      "item",
       {
         {
-          "id",
+          "team",
           "compare",
           "=",
-          132130
+          125120
+        }
+      }
+    },
+    {
+      "Table_Reward",
+      "item",
+      {
+        {
+          "team",
+          "compare",
+          "=",
+          30710
         }
       }
     },
@@ -4988,7 +5808,7 @@ Table_AddWay_t = {
           "id",
           "compare",
           "=",
-          132191
+          132159
         }
       }
     },
@@ -5000,7 +5820,7 @@ Table_AddWay_t = {
           "id",
           "compare",
           "=",
-          132143
+          132127
         }
       }
     },
@@ -5012,7 +5832,7 @@ Table_AddWay_t = {
           "id",
           "compare",
           "=",
-          132200
+          132123
         }
       }
     },
@@ -5167,38 +5987,38 @@ Table_AddWay_t = {
       }
     },
     {
-      "Table_Item",
-      "id",
+      "Table_Reward",
+      "item",
       {
         {
-          "id",
+          "team",
           "compare",
           "=",
-          132122
+          125110
         }
       }
     },
     {
-      "Table_Item",
-      "id",
+      "Table_Reward",
+      "item",
       {
         {
-          "id",
+          "team",
           "compare",
           "=",
-          4914
+          125100
         }
       }
     },
     {
-      "Table_Item",
-      "id",
+      "Table_Reward",
+      "item",
       {
         {
-          "id",
+          "team",
           "compare",
           "=",
-          4913
+          126203
         }
       }
     },
@@ -10347,270 +11167,270 @@ Table_AddWay = {
     NameEn = "##123999",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[111]
+    GotoMode = Table_AddWay_t.GotoMode[113]
   },
   [401] = {
     id = 401,
     NameEn = "##124088",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[112]
+    GotoMode = Table_AddWay_t.GotoMode[114]
   },
   [402] = {
     id = 402,
     NameEn = "##123963",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[247],
+    Search1 = Table_AddWay_t.Search1[252],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[113]
+    GotoMode = Table_AddWay_t.GotoMode[115]
   },
   [403] = {
     id = 403,
     NameEn = "##124114",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[248],
+    Search1 = Table_AddWay_t.Search1[253],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[114]
+    GotoMode = Table_AddWay_t.GotoMode[116]
   },
   [404] = {
     id = 404,
     NameEn = "##124096",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[249],
+    Search1 = Table_AddWay_t.Search1[254],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[115]
+    GotoMode = Table_AddWay_t.GotoMode[117]
   },
   [405] = {
     id = 405,
     NameEn = "##124002",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[249],
+    Search1 = Table_AddWay_t.Search1[254],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[116]
+    GotoMode = Table_AddWay_t.GotoMode[118]
   },
   [406] = {
     id = 406,
     NameEn = "##123927",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[250],
+    Search1 = Table_AddWay_t.Search1[255],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[117]
+    GotoMode = Table_AddWay_t.GotoMode[119]
   },
   [407] = {
     id = 407,
     NameEn = "##1206354",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[250],
+    Search1 = Table_AddWay_t.Search1[255],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[117]
+    GotoMode = Table_AddWay_t.GotoMode[119]
   },
   [408] = {
     id = 408,
     NameEn = "##123927",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[250],
+    Search1 = Table_AddWay_t.Search1[255],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[118]
+    GotoMode = Table_AddWay_t.GotoMode[120]
   },
   [409] = {
     id = 409,
     NameEn = "##1206354",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[118]
+    GotoMode = Table_AddWay_t.GotoMode[120]
   },
   [410] = {
     id = 410,
     NameEn = "##1206355",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[119]
+    GotoMode = Table_AddWay_t.GotoMode[121]
   },
   [411] = {
     id = 411,
     NameEn = "##1206356",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[120]
+    GotoMode = Table_AddWay_t.GotoMode[122]
   },
   [412] = {
     id = 412,
     NameEn = "##123927",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[121]
+    GotoMode = Table_AddWay_t.GotoMode[123]
   },
   [413] = {
     id = 413,
     NameEn = "##1206357",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[251],
+    Search1 = Table_AddWay_t.Search1[256],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[122]
+    GotoMode = Table_AddWay_t.GotoMode[124]
   },
   [414] = {
     id = 414,
     NameEn = "##1206358",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[123]
+    GotoMode = Table_AddWay_t.GotoMode[125]
   },
   [415] = {
     id = 415,
     NameEn = "##1206359",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[124]
+    GotoMode = Table_AddWay_t.GotoMode[126]
   },
   [416] = {
     id = 416,
     NameEn = "##1206360",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[125]
+    GotoMode = Table_AddWay_t.GotoMode[127]
   },
   [417] = {
     id = 417,
     NameEn = "##1206361",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[126]
+    GotoMode = Table_AddWay_t.GotoMode[128]
   },
   [418] = {
     id = 418,
     NameEn = "##1206362",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[127]
+    GotoMode = Table_AddWay_t.GotoMode[129]
   },
   [419] = {
     id = 419,
     NameEn = "##1206363",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[128]
+    GotoMode = Table_AddWay_t.GotoMode[130]
   },
   [420] = {
     id = 420,
     NameEn = "##1206364",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[251],
+    Search1 = Table_AddWay_t.Search1[256],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[129]
+    GotoMode = Table_AddWay_t.GotoMode[131]
   },
   [421] = {
     id = 421,
     NameEn = "##124053",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[252],
+    Search1 = Table_AddWay_t.Search1[257],
     Desc = "##124150",
-    GotoMode = Table_AddWay_t.GotoMode[130]
+    GotoMode = Table_AddWay_t.GotoMode[132]
   },
   [422] = {
     id = 422,
     NameEn = "##304574",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[253],
+    Search1 = Table_AddWay_t.Search1[258],
     Desc = "##124083",
-    GotoMode = Table_AddWay_t.GotoMode[131]
+    GotoMode = Table_AddWay_t.GotoMode[133]
   },
   [423] = {
     id = 423,
     NameEn = "##530672",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[254],
+    Search1 = Table_AddWay_t.Search1[259],
     Desc = "##530681",
-    GotoMode = Table_AddWay_t.GotoMode[132]
+    GotoMode = Table_AddWay_t.GotoMode[134]
   },
   [499] = {
     id = 499,
     NameEn = "##117340",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[301],
+    Search1 = Table_AddWay_t.Search1[331],
     Desc = "##124046",
-    GotoMode = Table_AddWay_t.GotoMode[148]
+    GotoMode = Table_AddWay_t.GotoMode[150]
   },
   [500] = {
     id = 500,
     NameEn = "##124225",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[149]
+    GotoMode = Table_AddWay_t.GotoMode[151]
   },
   [501] = {
     id = 501,
     NameEn = "##124216",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[150]
+    GotoMode = Table_AddWay_t.GotoMode[152]
   },
   [502] = {
     id = 502,
     NameEn = "##124197",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[151]
+    GotoMode = Table_AddWay_t.GotoMode[153]
   },
   [503] = {
     id = 503,
     NameEn = "##124118",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[246],
+    Search1 = Table_AddWay_t.Search1[251],
     Desc = "##124193",
-    GotoMode = Table_AddWay_t.GotoMode[152]
+    GotoMode = Table_AddWay_t.GotoMode[154]
   },
   [600] = {
     id = 600,
     NameEn = "##123968",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[350],
+    Search1 = Table_AddWay_t.Search1[417],
     Desc = "##124152",
-    GotoMode = Table_AddWay_t.GotoMode[165]
+    GotoMode = Table_AddWay_t.GotoMode[169]
   },
   [699] = {
     id = 699,
@@ -10618,9 +11438,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[381],
+    Search1 = Table_AddWay_t.Search1[448],
     Desc = "##123979",
-    GotoMode = Table_AddWay_t.GotoMode[168]
+    GotoMode = Table_AddWay_t.GotoMode[172]
   },
   [700] = {
     id = 700,
@@ -10628,9 +11448,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[382],
+    Search1 = Table_AddWay_t.Search1[449],
     Desc = "##123908",
-    GotoMode = Table_AddWay_t.GotoMode[169]
+    GotoMode = Table_AddWay_t.GotoMode[173]
   },
   [701] = {
     id = 701,
@@ -10638,9 +11458,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[383],
+    Search1 = Table_AddWay_t.Search1[450],
     Desc = "##124171",
-    GotoMode = Table_AddWay_t.GotoMode[170]
+    GotoMode = Table_AddWay_t.GotoMode[174]
   },
   [702] = {
     id = 702,
@@ -10648,9 +11468,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[384],
+    Search1 = Table_AddWay_t.Search1[451],
     Desc = "##123994",
-    GotoMode = Table_AddWay_t.GotoMode[171]
+    GotoMode = Table_AddWay_t.GotoMode[175]
   },
   [703] = {
     id = 703,
@@ -10658,9 +11478,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[385],
+    Search1 = Table_AddWay_t.Search1[452],
     Desc = "##123962",
-    GotoMode = Table_AddWay_t.GotoMode[172]
+    GotoMode = Table_AddWay_t.GotoMode[176]
   },
   [704] = {
     id = 704,
@@ -10668,9 +11488,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[386],
+    Search1 = Table_AddWay_t.Search1[453],
     Desc = "##124057",
-    GotoMode = Table_AddWay_t.GotoMode[173]
+    GotoMode = Table_AddWay_t.GotoMode[177]
   },
   [705] = {
     id = 705,
@@ -10678,9 +11498,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[387],
+    Search1 = Table_AddWay_t.Search1[454],
     Desc = "##123984",
-    GotoMode = Table_AddWay_t.GotoMode[174]
+    GotoMode = Table_AddWay_t.GotoMode[178]
   },
   [706] = {
     id = 706,
@@ -10688,9 +11508,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[388],
+    Search1 = Table_AddWay_t.Search1[455],
     Desc = "##124042",
-    GotoMode = Table_AddWay_t.GotoMode[175]
+    GotoMode = Table_AddWay_t.GotoMode[179]
   },
   [707] = {
     id = 707,
@@ -10698,9 +11518,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[389],
+    Search1 = Table_AddWay_t.Search1[456],
     Desc = "##124091",
-    GotoMode = Table_AddWay_t.GotoMode[176]
+    GotoMode = Table_AddWay_t.GotoMode[180]
   },
   [708] = {
     id = 708,
@@ -10708,9 +11528,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[390],
+    Search1 = Table_AddWay_t.Search1[457],
     Desc = "##123980",
-    GotoMode = Table_AddWay_t.GotoMode[177]
+    GotoMode = Table_AddWay_t.GotoMode[181]
   },
   [709] = {
     id = 709,
@@ -10718,9 +11538,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[391],
+    Search1 = Table_AddWay_t.Search1[458],
     Desc = "##124021",
-    GotoMode = Table_AddWay_t.GotoMode[178]
+    GotoMode = Table_AddWay_t.GotoMode[182]
   },
   [710] = {
     id = 710,
@@ -10728,9 +11548,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[392],
+    Search1 = Table_AddWay_t.Search1[459],
     Desc = "##124095",
-    GotoMode = Table_AddWay_t.GotoMode[179]
+    GotoMode = Table_AddWay_t.GotoMode[183]
   },
   [711] = {
     id = 711,
@@ -10738,9 +11558,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[393],
+    Search1 = Table_AddWay_t.Search1[460],
     Desc = "##124001",
-    GotoMode = Table_AddWay_t.GotoMode[180]
+    GotoMode = Table_AddWay_t.GotoMode[184]
   },
   [712] = {
     id = 712,
@@ -10748,9 +11568,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[394],
+    Search1 = Table_AddWay_t.Search1[461],
     Desc = "##124188",
-    GotoMode = Table_AddWay_t.GotoMode[181]
+    GotoMode = Table_AddWay_t.GotoMode[185]
   },
   [713] = {
     id = 713,
@@ -10758,9 +11578,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[395],
+    Search1 = Table_AddWay_t.Search1[462],
     Desc = "##123975",
-    GotoMode = Table_AddWay_t.GotoMode[182]
+    GotoMode = Table_AddWay_t.GotoMode[186]
   },
   [714] = {
     id = 714,
@@ -10768,9 +11588,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[396],
+    Search1 = Table_AddWay_t.Search1[463],
     Desc = "##124226",
-    GotoMode = Table_AddWay_t.GotoMode[183]
+    GotoMode = Table_AddWay_t.GotoMode[187]
   },
   [715] = {
     id = 715,
@@ -10778,9 +11598,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[397],
+    Search1 = Table_AddWay_t.Search1[464],
     Desc = "##123946",
-    GotoMode = Table_AddWay_t.GotoMode[184]
+    GotoMode = Table_AddWay_t.GotoMode[188]
   },
   [716] = {
     id = 716,
@@ -10788,9 +11608,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[398],
+    Search1 = Table_AddWay_t.Search1[465],
     Desc = "##124103",
-    GotoMode = Table_AddWay_t.GotoMode[185]
+    GotoMode = Table_AddWay_t.GotoMode[189]
   },
   [717] = {
     id = 717,
@@ -10798,9 +11618,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[399],
+    Search1 = Table_AddWay_t.Search1[466],
     Desc = "##123926",
-    GotoMode = Table_AddWay_t.GotoMode[186]
+    GotoMode = Table_AddWay_t.GotoMode[190]
   },
   [718] = {
     id = 718,
@@ -10808,25 +11628,25 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[400],
+    Search1 = Table_AddWay_t.Search1[467],
     Desc = "##123977",
-    GotoMode = Table_AddWay_t.GotoMode[187]
+    GotoMode = Table_AddWay_t.GotoMode[191]
   },
   [719] = {
     id = 719,
     NameEn = "##124018",
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[401],
+    Search1 = Table_AddWay_t.Search1[468],
     Desc = "##124018",
-    GotoMode = Table_AddWay_t.GotoMode[188]
+    GotoMode = Table_AddWay_t.GotoMode[192]
   },
   [720] = {
     id = 720,
     NameEn = "##124189",
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[402],
+    Search1 = Table_AddWay_t.Search1[469],
     Desc = "##124189",
-    GotoMode = Table_AddWay_t.GotoMode[189]
+    GotoMode = Table_AddWay_t.GotoMode[193]
   },
   [725] = {
     id = 725,
@@ -10834,9 +11654,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[403],
+    Search1 = Table_AddWay_t.Search1[470],
     Desc = "##124048",
-    GotoMode = Table_AddWay_t.GotoMode[190]
+    GotoMode = Table_AddWay_t.GotoMode[194]
   },
   [726] = {
     id = 726,
@@ -10844,9 +11664,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[404],
+    Search1 = Table_AddWay_t.Search1[471],
     Desc = "##123942",
-    GotoMode = Table_AddWay_t.GotoMode[191]
+    GotoMode = Table_AddWay_t.GotoMode[195]
   },
   [727] = {
     id = 727,
@@ -10854,9 +11674,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[405],
+    Search1 = Table_AddWay_t.Search1[472],
     Desc = "##124030",
-    GotoMode = Table_AddWay_t.GotoMode[192]
+    GotoMode = Table_AddWay_t.GotoMode[196]
   },
   [728] = {
     id = 728,
@@ -10864,9 +11684,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[406],
+    Search1 = Table_AddWay_t.Search1[473],
     Desc = "##124074",
-    GotoMode = Table_AddWay_t.GotoMode[193]
+    GotoMode = Table_AddWay_t.GotoMode[197]
   },
   [729] = {
     id = 729,
@@ -10874,9 +11694,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[407],
+    Search1 = Table_AddWay_t.Search1[474],
     Desc = "##124139",
-    GotoMode = Table_AddWay_t.GotoMode[194]
+    GotoMode = Table_AddWay_t.GotoMode[198]
   },
   [730] = {
     id = 730,
@@ -10884,9 +11704,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[408],
+    Search1 = Table_AddWay_t.Search1[475],
     Desc = "##530680",
-    GotoMode = Table_AddWay_t.GotoMode[195]
+    GotoMode = Table_AddWay_t.GotoMode[199]
   },
   [731] = {
     id = 731,
@@ -10894,16 +11714,16 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 4,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[409],
+    Search1 = Table_AddWay_t.Search1[476],
     Desc = "##1134480",
-    GotoMode = Table_AddWay_t.GotoMode[196]
+    GotoMode = Table_AddWay_t.GotoMode[200]
   },
   [780] = {
     id = 780,
     NameEn = "##124142",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[451],
+    Search1 = Table_AddWay_t.Search1[518],
     Desc = "##3501141"
   },
   [795] = {
@@ -10911,7 +11731,7 @@ Table_AddWay = {
     NameEn = "##119329",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[465],
+    Search1 = Table_AddWay_t.Search1[532],
     Desc = "##124151"
   },
   [796] = {
@@ -10919,7 +11739,7 @@ Table_AddWay = {
     NameEn = "##124075",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[466],
+    Search1 = Table_AddWay_t.Search1[533],
     Desc = "##124151"
   },
   [797] = {
@@ -10927,7 +11747,7 @@ Table_AddWay = {
     NameEn = "##124104",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[467],
+    Search1 = Table_AddWay_t.Search1[534],
     Desc = "##124151"
   },
   [798] = {
@@ -10935,7 +11755,7 @@ Table_AddWay = {
     NameEn = "##124097",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[468],
+    Search1 = Table_AddWay_t.Search1[535],
     Desc = "##124097"
   },
   [799] = {
@@ -10943,16 +11763,16 @@ Table_AddWay = {
     NameEn = "##123972",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[469],
+    Search1 = Table_AddWay_t.Search1[536],
     Desc = "##123972",
-    GotoMode = Table_AddWay_t.GotoMode[218]
+    GotoMode = Table_AddWay_t.GotoMode[222]
   },
   [800] = {
     id = 800,
     NameEn = "##124161",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[470],
+    Search1 = Table_AddWay_t.Search1[537],
     Desc = "##124161"
   },
   [801] = {
@@ -10961,9 +11781,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[471],
+    Search1 = Table_AddWay_t.Search1[538],
     Desc = "##124166",
-    GotoMode = Table_AddWay_t.GotoMode[141]
+    GotoMode = Table_AddWay_t.GotoMode[143]
   },
   [802] = {
     id = 802,
@@ -10971,9 +11791,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[472],
+    Search1 = Table_AddWay_t.Search1[539],
     Desc = "##124166",
-    GotoMode = Table_AddWay_t.GotoMode[141]
+    GotoMode = Table_AddWay_t.GotoMode[143]
   },
   [803] = {
     id = 803,
@@ -10981,16 +11801,16 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[473],
+    Search1 = Table_AddWay_t.Search1[540],
     Desc = "##124166",
-    GotoMode = Table_AddWay_t.GotoMode[141]
+    GotoMode = Table_AddWay_t.GotoMode[143]
   },
   [804] = {
     id = 804,
     NameEn = "##124026",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[474],
+    Search1 = Table_AddWay_t.Search1[541],
     Desc = "##124026",
     GotoMode = Table_AddWay_t.GotoMode[29]
   },
@@ -10999,7 +11819,7 @@ Table_AddWay = {
     NameEn = "##124026",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[475],
+    Search1 = Table_AddWay_t.Search1[542],
     Desc = "##124026",
     GotoMode = Table_AddWay_t.GotoMode[29]
   },
@@ -11009,9 +11829,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[476],
+    Search1 = Table_AddWay_t.Search1[543],
     Desc = "##124166",
-    GotoMode = Table_AddWay_t.GotoMode[141]
+    GotoMode = Table_AddWay_t.GotoMode[143]
   },
   [807] = {
     id = 807,
@@ -11019,16 +11839,16 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[477],
+    Search1 = Table_AddWay_t.Search1[544],
     Desc = "##124006",
-    GotoMode = Table_AddWay_t.GotoMode[141]
+    GotoMode = Table_AddWay_t.GotoMode[143]
   },
   [808] = {
     id = 808,
     NameEn = "##124123",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[478],
+    Search1 = Table_AddWay_t.Search1[545],
     Desc = "##124026"
   },
   [809] = {
@@ -11036,7 +11856,7 @@ Table_AddWay = {
     NameEn = "##124186",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[479],
+    Search1 = Table_AddWay_t.Search1[546],
     Desc = "##124185"
   },
   [810] = {
@@ -11045,7 +11865,7 @@ Table_AddWay = {
     Icon = "bigcat_icon_03",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[480],
+    Search1 = Table_AddWay_t.Search1[547],
     Desc = "##124196"
   },
   [811] = {
@@ -11053,7 +11873,7 @@ Table_AddWay = {
     NameEn = "##124132",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[481],
+    Search1 = Table_AddWay_t.Search1[548],
     Desc = "##124132"
   },
   [813] = {
@@ -11061,34 +11881,34 @@ Table_AddWay = {
     NameEn = "##113986",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[483],
+    Search1 = Table_AddWay_t.Search1[550],
     Desc = "##124169",
-    GotoMode = Table_AddWay_t.GotoMode[219]
+    GotoMode = Table_AddWay_t.GotoMode[223]
   },
   [814] = {
     id = 814,
     NameEn = "##124136",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[484],
+    Search1 = Table_AddWay_t.Search1[551],
     Desc = "##124136",
-    GotoMode = Table_AddWay_t.GotoMode[220]
+    GotoMode = Table_AddWay_t.GotoMode[224]
   },
   [815] = {
     id = 815,
     NameEn = "##124043",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[485],
+    Search1 = Table_AddWay_t.Search1[552],
     Desc = "##124038",
-    GotoMode = Table_AddWay_t.GotoMode[221]
+    GotoMode = Table_AddWay_t.GotoMode[225]
   },
   [816] = {
     id = 816,
     NameEn = "##124180",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[486],
+    Search1 = Table_AddWay_t.Search1[553],
     Desc = "##124054"
   },
   [817] = {
@@ -11096,7 +11916,7 @@ Table_AddWay = {
     NameEn = "##124104",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[487],
+    Search1 = Table_AddWay_t.Search1[554],
     Desc = "##124151"
   },
   [818] = {
@@ -11104,9 +11924,9 @@ Table_AddWay = {
     NameEn = "##123955",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[488],
+    Search1 = Table_AddWay_t.Search1[555],
     Desc = "##124019",
-    GotoMode = Table_AddWay_t.GotoMode[144]
+    GotoMode = Table_AddWay_t.GotoMode[146]
   },
   [819] = {
     id = 819,
@@ -11114,9 +11934,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[489],
+    Search1 = Table_AddWay_t.Search1[556],
     Desc = "##124084",
-    GotoMode = Table_AddWay_t.GotoMode[222]
+    GotoMode = Table_AddWay_t.GotoMode[226]
   },
   [820] = {
     id = 820,
@@ -11124,9 +11944,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[490],
+    Search1 = Table_AddWay_t.Search1[557],
     Desc = "##124084",
-    GotoMode = Table_AddWay_t.GotoMode[222]
+    GotoMode = Table_AddWay_t.GotoMode[226]
   },
   [821] = {
     id = 821,
@@ -11134,9 +11954,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[491],
+    Search1 = Table_AddWay_t.Search1[558],
     Desc = "##124084",
-    GotoMode = Table_AddWay_t.GotoMode[222]
+    GotoMode = Table_AddWay_t.GotoMode[226]
   },
   [822] = {
     id = 822,
@@ -11144,9 +11964,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[492],
+    Search1 = Table_AddWay_t.Search1[559],
     Desc = "##124084",
-    GotoMode = Table_AddWay_t.GotoMode[222]
+    GotoMode = Table_AddWay_t.GotoMode[226]
   },
   [823] = {
     id = 823,
@@ -11154,9 +11974,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[493],
+    Search1 = Table_AddWay_t.Search1[560],
     Desc = "##124084",
-    GotoMode = Table_AddWay_t.GotoMode[222]
+    GotoMode = Table_AddWay_t.GotoMode[226]
   },
   [824] = {
     id = 824,
@@ -11164,9 +11984,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[494],
+    Search1 = Table_AddWay_t.Search1[561],
     Desc = "##124084",
-    GotoMode = Table_AddWay_t.GotoMode[222]
+    GotoMode = Table_AddWay_t.GotoMode[226]
   },
   [825] = {
     id = 825,
@@ -11174,9 +11994,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[495],
+    Search1 = Table_AddWay_t.Search1[562],
     Desc = "##124084",
-    GotoMode = Table_AddWay_t.GotoMode[222]
+    GotoMode = Table_AddWay_t.GotoMode[226]
   },
   [826] = {
     id = 826,
@@ -11184,16 +12004,16 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[496],
+    Search1 = Table_AddWay_t.Search1[563],
     Desc = "##124084",
-    GotoMode = Table_AddWay_t.GotoMode[222]
+    GotoMode = Table_AddWay_t.GotoMode[226]
   },
   [827] = {
     id = 827,
     NameEn = "##307817",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[497],
+    Search1 = Table_AddWay_t.Search1[564],
     Desc = "##307817"
   },
   [828] = {
@@ -11202,7 +12022,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[498],
+    Search1 = Table_AddWay_t.Search1[565],
     Desc = "##307815"
   },
   [829] = {
@@ -11211,7 +12031,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[499],
+    Search1 = Table_AddWay_t.Search1[566],
     Desc = "##307815"
   },
   [830] = {
@@ -11220,7 +12040,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[500],
+    Search1 = Table_AddWay_t.Search1[567],
     Desc = "##307815"
   },
   [832] = {
@@ -11228,7 +12048,7 @@ Table_AddWay = {
     NameEn = "##124104",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[502],
+    Search1 = Table_AddWay_t.Search1[569],
     Desc = "##124151"
   },
   [833] = {
@@ -11237,9 +12057,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[503],
+    Search1 = Table_AddWay_t.Search1[570],
     Desc = "##124084",
-    GotoMode = Table_AddWay_t.GotoMode[222]
+    GotoMode = Table_AddWay_t.GotoMode[226]
   },
   [834] = {
     id = 834,
@@ -11247,7 +12067,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[503],
+    Search1 = Table_AddWay_t.Search1[570],
     Desc = "##307398"
   },
   [835] = {
@@ -11256,9 +12076,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[504],
+    Search1 = Table_AddWay_t.Search1[571],
     Desc = "##124084",
-    GotoMode = Table_AddWay_t.GotoMode[222]
+    GotoMode = Table_AddWay_t.GotoMode[226]
   },
   [836] = {
     id = 836,
@@ -11266,7 +12086,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[505],
+    Search1 = Table_AddWay_t.Search1[572],
     Desc = "##307398"
   },
   [837] = {
@@ -11275,7 +12095,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[506],
+    Search1 = Table_AddWay_t.Search1[573],
     Desc = "##307815"
   },
   [838] = {
@@ -11284,7 +12104,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[507],
+    Search1 = Table_AddWay_t.Search1[574],
     Desc = "##307815"
   },
   [839] = {
@@ -11293,7 +12113,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[508],
+    Search1 = Table_AddWay_t.Search1[575],
     Desc = "##307815"
   },
   [840] = {
@@ -11302,7 +12122,7 @@ Table_AddWay = {
     Icon = "item_5924",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[509],
+    Search1 = Table_AddWay_t.Search1[576],
     Desc = "##307815"
   },
   [841] = {
@@ -11310,7 +12130,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[510],
+    Search1 = Table_AddWay_t.Search1[577],
     Desc = "##315242"
   },
   [842] = {
@@ -11318,7 +12138,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[511],
+    Search1 = Table_AddWay_t.Search1[578],
     Desc = "##315242"
   },
   [843] = {
@@ -11326,7 +12146,7 @@ Table_AddWay = {
     NameEn = "##124104",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[512],
+    Search1 = Table_AddWay_t.Search1[579],
     Desc = "##124151"
   },
   [844] = {
@@ -11334,7 +12154,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[513],
+    Search1 = Table_AddWay_t.Search1[580],
     Desc = "##315242"
   },
   [845] = {
@@ -11342,7 +12162,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[514],
+    Search1 = Table_AddWay_t.Search1[581],
     Desc = "##315242"
   },
   [846] = {
@@ -11351,9 +12171,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[515],
+    Search1 = Table_AddWay_t.Search1[582],
     Desc = "##124084",
-    GotoMode = Table_AddWay_t.GotoMode[222]
+    GotoMode = Table_AddWay_t.GotoMode[226]
   },
   [847] = {
     id = 847,
@@ -11361,16 +12181,16 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[516],
+    Search1 = Table_AddWay_t.Search1[583],
     Desc = "##124084",
-    GotoMode = Table_AddWay_t.GotoMode[222]
+    GotoMode = Table_AddWay_t.GotoMode[226]
   },
   [848] = {
     id = 848,
     NameEn = "##1098875",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[517],
+    Search1 = Table_AddWay_t.Search1[584],
     Desc = "##315242"
   },
   [849] = {
@@ -11378,7 +12198,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[518],
+    Search1 = Table_AddWay_t.Search1[585],
     Desc = "##315242"
   },
   [850] = {
@@ -11386,7 +12206,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[519],
+    Search1 = Table_AddWay_t.Search1[586],
     Desc = "##315242"
   },
   [851] = {
@@ -11394,7 +12214,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[520],
+    Search1 = Table_AddWay_t.Search1[587],
     Desc = "##315242"
   },
   [852] = {
@@ -11403,7 +12223,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[521],
+    Search1 = Table_AddWay_t.Search1[588],
     Desc = "##124026",
     GotoMode = Table_AddWay_t.GotoMode[29]
   },
@@ -11412,7 +12232,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[522],
+    Search1 = Table_AddWay_t.Search1[589],
     Desc = "##315242"
   },
   [860] = {
@@ -11420,7 +12240,7 @@ Table_AddWay = {
     NameEn = "##1235274",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[529],
+    Search1 = Table_AddWay_t.Search1[596],
     Desc = "##1235274"
   },
   [861] = {
@@ -11428,7 +12248,7 @@ Table_AddWay = {
     NameEn = "##1235274",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[530],
+    Search1 = Table_AddWay_t.Search1[597],
     Desc = "##1235274"
   },
   [862] = {
@@ -11436,7 +12256,7 @@ Table_AddWay = {
     NameEn = "##124104",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[531],
+    Search1 = Table_AddWay_t.Search1[598],
     Desc = "##124151"
   },
   [863] = {
@@ -11444,7 +12264,7 @@ Table_AddWay = {
     NameEn = "##124104",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[532],
+    Search1 = Table_AddWay_t.Search1[599],
     Desc = "##315242"
   },
   [864] = {
@@ -11452,7 +12272,7 @@ Table_AddWay = {
     NameEn = "##124104",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[533],
+    Search1 = Table_AddWay_t.Search1[600],
     Desc = "##315242"
   },
   [865] = {
@@ -11460,7 +12280,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[534],
+    Search1 = Table_AddWay_t.Search1[601],
     Desc = "##315242"
   },
   [866] = {
@@ -11468,7 +12288,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[535],
+    Search1 = Table_AddWay_t.Search1[602],
     Desc = "##315242"
   },
   [867] = {
@@ -11476,7 +12296,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[536],
+    Search1 = Table_AddWay_t.Search1[603],
     Desc = "##315242"
   },
   [868] = {
@@ -11484,7 +12304,7 @@ Table_AddWay = {
     NameEn = "##124104",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[537],
+    Search1 = Table_AddWay_t.Search1[604],
     Desc = "##124151"
   },
   [869] = {
@@ -11493,7 +12313,7 @@ Table_AddWay = {
     Icon = "n_rootofcorruption",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[538],
+    Search1 = Table_AddWay_t.Search1[605],
     Desc = "##2835115",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11503,7 +12323,7 @@ Table_AddWay = {
     Icon = "n_rootofcorruption",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[539],
+    Search1 = Table_AddWay_t.Search1[606],
     Desc = "##2835115",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11513,7 +12333,7 @@ Table_AddWay = {
     Icon = "n_rootofcorruption",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[540],
+    Search1 = Table_AddWay_t.Search1[607],
     Desc = "##2835115",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11533,7 +12353,7 @@ Table_AddWay = {
     Icon = "n_rootofcorruption",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[541],
+    Search1 = Table_AddWay_t.Search1[608],
     Desc = "##2835115",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11543,7 +12363,7 @@ Table_AddWay = {
     Icon = "n_darklaicorpse",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[542],
+    Search1 = Table_AddWay_t.Search1[609],
     Desc = "##2835115",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11553,7 +12373,7 @@ Table_AddWay = {
     Icon = "n_darklaicorpse",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[543],
+    Search1 = Table_AddWay_t.Search1[610],
     Desc = "##2835115",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11563,7 +12383,7 @@ Table_AddWay = {
     Icon = "n_darklaicorpse",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[540],
+    Search1 = Table_AddWay_t.Search1[607],
     Desc = "##2835115",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11583,7 +12403,7 @@ Table_AddWay = {
     Icon = "n_darklaicorpse",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[544],
+    Search1 = Table_AddWay_t.Search1[611],
     Desc = "##2835115",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11593,7 +12413,7 @@ Table_AddWay = {
     Icon = "n_earlymutantdragon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[545],
+    Search1 = Table_AddWay_t.Search1[612],
     Desc = "##2835115",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11603,7 +12423,7 @@ Table_AddWay = {
     Icon = "n_earlymutantdragon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[546],
+    Search1 = Table_AddWay_t.Search1[613],
     Desc = "##2835115",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11613,7 +12433,7 @@ Table_AddWay = {
     Icon = "n_earlymutantdragon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[540],
+    Search1 = Table_AddWay_t.Search1[607],
     Desc = "##2835115",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11623,7 +12443,7 @@ Table_AddWay = {
     Icon = "n_earlymutantdragon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[547],
+    Search1 = Table_AddWay_t.Search1[614],
     Desc = "##2835115",
     GotoMode = Table_AddWay_t.GotoMode[84]
   },
@@ -11633,7 +12453,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[564],
+    Search1 = Table_AddWay_t.Search1[631],
     Desc = "##1134482",
     GotoMode = Table_AddWay_t.GotoMode[37]
   },
@@ -11643,7 +12463,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[565],
+    Search1 = Table_AddWay_t.Search1[632],
     Desc = "##1134482",
     GotoMode = Table_AddWay_t.GotoMode[37]
   },
@@ -11653,7 +12473,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[566],
+    Search1 = Table_AddWay_t.Search1[633],
     Desc = "##1134483",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11663,9 +12483,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[567],
+    Search1 = Table_AddWay_t.Search1[634],
     Desc = "##1134485",
-    GotoMode = Table_AddWay_t.GotoMode[227]
+    GotoMode = Table_AddWay_t.GotoMode[231]
   },
   [903] = {
     id = 903,
@@ -11673,7 +12493,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[568],
+    Search1 = Table_AddWay_t.Search1[635],
     Desc = "##1134483",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11683,7 +12503,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[569],
+    Search1 = Table_AddWay_t.Search1[636],
     Desc = ""
   },
   [905] = {
@@ -11692,7 +12512,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[570],
+    Search1 = Table_AddWay_t.Search1[637],
     Desc = ""
   },
   [906] = {
@@ -11701,7 +12521,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[571],
+    Search1 = Table_AddWay_t.Search1[638],
     Desc = ""
   },
   [907] = {
@@ -11710,7 +12530,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[572],
+    Search1 = Table_AddWay_t.Search1[639],
     Desc = ""
   },
   [908] = {
@@ -11718,7 +12538,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[573],
+    Search1 = Table_AddWay_t.Search1[640],
     Desc = "##315242"
   },
   [909] = {
@@ -11727,7 +12547,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[574],
+    Search1 = Table_AddWay_t.Search1[641],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11737,7 +12557,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[575],
+    Search1 = Table_AddWay_t.Search1[642],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11747,7 +12567,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[576],
+    Search1 = Table_AddWay_t.Search1[643],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11757,9 +12577,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[577],
+    Search1 = Table_AddWay_t.Search1[644],
     Desc = "##1134485",
-    GotoMode = Table_AddWay_t.GotoMode[227]
+    GotoMode = Table_AddWay_t.GotoMode[231]
   },
   [913] = {
     id = 913,
@@ -11767,7 +12587,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[578],
+    Search1 = Table_AddWay_t.Search1[645],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11777,7 +12597,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[579],
+    Search1 = Table_AddWay_t.Search1[646],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11787,7 +12607,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[580],
+    Search1 = Table_AddWay_t.Search1[647],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11797,7 +12617,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[581],
+    Search1 = Table_AddWay_t.Search1[648],
     Desc = "##1211835"
   },
   [917] = {
@@ -11806,7 +12626,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[582],
+    Search1 = Table_AddWay_t.Search1[649],
     Desc = "##1211835"
   },
   [918] = {
@@ -11815,7 +12635,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[583],
+    Search1 = Table_AddWay_t.Search1[650],
     Desc = "##1211835"
   },
   [919] = {
@@ -11824,7 +12644,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[584],
+    Search1 = Table_AddWay_t.Search1[651],
     Desc = "##1211835"
   },
   [920] = {
@@ -11833,7 +12653,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[585],
+    Search1 = Table_AddWay_t.Search1[652],
     Desc = "##1211835"
   },
   [921] = {
@@ -11842,7 +12662,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[586],
+    Search1 = Table_AddWay_t.Search1[653],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11852,7 +12672,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[587],
+    Search1 = Table_AddWay_t.Search1[654],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11862,7 +12682,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[588],
+    Search1 = Table_AddWay_t.Search1[655],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11872,7 +12692,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[589],
+    Search1 = Table_AddWay_t.Search1[656],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11882,7 +12702,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[590],
+    Search1 = Table_AddWay_t.Search1[657],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11892,7 +12712,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[591],
+    Search1 = Table_AddWay_t.Search1[658],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11902,7 +12722,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[592],
+    Search1 = Table_AddWay_t.Search1[659],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -11912,7 +12732,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[593],
+    Search1 = Table_AddWay_t.Search1[660],
     Desc = "##1211835"
   },
   [929] = {
@@ -11921,7 +12741,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[594],
+    Search1 = Table_AddWay_t.Search1[661],
     Desc = "##1211835"
   },
   [930] = {
@@ -11930,7 +12750,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[595],
+    Search1 = Table_AddWay_t.Search1[662],
     Desc = "##1211835"
   },
   [931] = {
@@ -11939,7 +12759,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[596],
+    Search1 = Table_AddWay_t.Search1[663],
     Desc = "##1211835"
   },
   [932] = {
@@ -11948,7 +12768,7 @@ Table_AddWay = {
     Icon = "item_6861",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[597],
+    Search1 = Table_AddWay_t.Search1[664],
     Desc = "##1211835"
   },
   [933] = {
@@ -11956,7 +12776,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[598],
+    Search1 = Table_AddWay_t.Search1[665],
     Desc = "##315242"
   },
   [934] = {
@@ -11964,7 +12784,7 @@ Table_AddWay = {
     NameEn = "##1098875",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[599],
+    Search1 = Table_AddWay_t.Search1[666],
     Desc = "##315242"
   },
   [935] = {
@@ -11973,7 +12793,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[593],
+    Search1 = Table_AddWay_t.Search1[660],
     Desc = "##2308961",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11983,7 +12803,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[594],
+    Search1 = Table_AddWay_t.Search1[661],
     Desc = "##2308961",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -11993,7 +12813,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[595],
+    Search1 = Table_AddWay_t.Search1[662],
     Desc = "##2308961",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12003,7 +12823,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[596],
+    Search1 = Table_AddWay_t.Search1[663],
     Desc = "##2308961",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12013,7 +12833,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[597],
+    Search1 = Table_AddWay_t.Search1[664],
     Desc = "##2308961",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12023,7 +12843,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[600],
+    Search1 = Table_AddWay_t.Search1[667],
     Desc = "##2308961",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12033,7 +12853,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[601],
+    Search1 = Table_AddWay_t.Search1[668],
     Desc = "##2308961",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12043,7 +12863,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[602],
+    Search1 = Table_AddWay_t.Search1[669],
     Desc = "##2308961",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12053,7 +12873,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[586],
+    Search1 = Table_AddWay_t.Search1[653],
     Desc = "##2308961",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12063,7 +12883,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[603],
+    Search1 = Table_AddWay_t.Search1[670],
     Desc = "##1134483",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12073,7 +12893,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[604],
+    Search1 = Table_AddWay_t.Search1[671],
     Desc = "##1134483",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12083,7 +12903,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[605],
+    Search1 = Table_AddWay_t.Search1[672],
     Desc = "##1134483",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12093,7 +12913,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[606],
+    Search1 = Table_AddWay_t.Search1[673],
     Desc = "##1134483",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12103,7 +12923,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[607],
+    Search1 = Table_AddWay_t.Search1[674],
     Desc = "##1134483",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12113,7 +12933,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[608],
+    Search1 = Table_AddWay_t.Search1[675],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -12123,7 +12943,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[609],
+    Search1 = Table_AddWay_t.Search1[676],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -12133,9 +12953,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[610],
+    Search1 = Table_AddWay_t.Search1[677],
     Desc = "##2843772",
-    GotoMode = Table_AddWay_t.GotoMode[228]
+    GotoMode = Table_AddWay_t.GotoMode[232]
   },
   [952] = {
     id = 952,
@@ -12143,7 +12963,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[611],
+    Search1 = Table_AddWay_t.Search1[678],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -12153,7 +12973,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[612],
+    Search1 = Table_AddWay_t.Search1[679],
     Desc = "##124026",
     GotoMode = Table_AddWay_t.GotoMode[29]
   },
@@ -12163,7 +12983,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[613],
+    Search1 = Table_AddWay_t.Search1[680],
     Desc = "##1134483",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12173,7 +12993,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[613],
+    Search1 = Table_AddWay_t.Search1[680],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -12183,7 +13003,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[614],
+    Search1 = Table_AddWay_t.Search1[681],
     Desc = "##1134483",
     GotoMode = Table_AddWay_t.GotoMode[30]
   },
@@ -12193,7 +13013,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[614],
+    Search1 = Table_AddWay_t.Search1[681],
     Desc = "##1187387",
     GotoMode = Table_AddWay_t.GotoMode[36]
   },
@@ -12203,9 +13023,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[532],
+    Search1 = Table_AddWay_t.Search1[599],
     Desc = "##124169",
-    GotoMode = Table_AddWay_t.GotoMode[219]
+    GotoMode = Table_AddWay_t.GotoMode[223]
   },
   [959] = {
     id = 959,
@@ -12213,9 +13033,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[615],
+    Search1 = Table_AddWay_t.Search1[682],
     Desc = "##124169",
-    GotoMode = Table_AddWay_t.GotoMode[219]
+    GotoMode = Table_AddWay_t.GotoMode[223]
   },
   [960] = {
     id = 960,
@@ -12223,7 +13043,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[616],
+    Search1 = Table_AddWay_t.Search1[683],
     Desc = "##124026",
     GotoMode = Table_AddWay_t.GotoMode[29]
   },
@@ -12233,9 +13053,9 @@ Table_AddWay = {
     Icon = "exchange",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[647],
+    Search1 = Table_AddWay_t.Search1[714],
     Desc = "##124144",
-    GotoMode = Table_AddWay_t.GotoMode[235]
+    GotoMode = Table_AddWay_t.GotoMode[239]
   },
   [1001] = {
     id = 1001,
@@ -12243,7 +13063,7 @@ Table_AddWay = {
     Icon = "item_111",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[648],
+    Search1 = Table_AddWay_t.Search1[715],
     Desc = "##124172"
   },
   [1002] = {
@@ -12252,7 +13072,7 @@ Table_AddWay = {
     Icon = "item_111",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[649],
+    Search1 = Table_AddWay_t.Search1[716],
     Desc = "##123974"
   },
   [1003] = {
@@ -12261,7 +13081,7 @@ Table_AddWay = {
     Icon = "item_111",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[650],
+    Search1 = Table_AddWay_t.Search1[717],
     Desc = "##123899"
   },
   [1006] = {
@@ -12270,7 +13090,7 @@ Table_AddWay = {
     Icon = "item_3707",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[652],
+    Search1 = Table_AddWay_t.Search1[719],
     Desc = "##123950"
   },
   [1007] = {
@@ -12279,7 +13099,7 @@ Table_AddWay = {
     Icon = "item_3635",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[652],
+    Search1 = Table_AddWay_t.Search1[719],
     Desc = "##123907"
   },
   [1008] = {
@@ -12288,9 +13108,9 @@ Table_AddWay = {
     Icon = "bigcat_icon_03",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[653],
+    Search1 = Table_AddWay_t.Search1[720],
     Desc = "##3501145",
-    GotoMode = Table_AddWay_t.GotoMode[236]
+    GotoMode = Table_AddWay_t.GotoMode[240]
   },
   [1009] = {
     id = 1009,
@@ -12298,7 +13118,7 @@ Table_AddWay = {
     Icon = "summer",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[654],
+    Search1 = Table_AddWay_t.Search1[721],
     Desc = "##123898",
     EndTime = "2021-01-06  00:00:00"
   },
@@ -12308,9 +13128,9 @@ Table_AddWay = {
     Icon = "bigcat_icon_03",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[655],
+    Search1 = Table_AddWay_t.Search1[722],
     Desc = "##3501145",
-    GotoMode = Table_AddWay_t.GotoMode[236]
+    GotoMode = Table_AddWay_t.GotoMode[240]
   },
   [1011] = {
     id = 1011,
@@ -12318,7 +13138,7 @@ Table_AddWay = {
     Icon = "item_3866",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[656],
+    Search1 = Table_AddWay_t.Search1[723],
     Desc = "##124020"
   },
   [1012] = {
@@ -12327,7 +13147,7 @@ Table_AddWay = {
     Icon = "item_3866",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[657],
+    Search1 = Table_AddWay_t.Search1[724],
     Desc = "##124020"
   },
   [1013] = {
@@ -12336,7 +13156,7 @@ Table_AddWay = {
     Icon = "item_3866",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[658],
+    Search1 = Table_AddWay_t.Search1[725],
     Desc = "##124020"
   },
   [1014] = {
@@ -12345,7 +13165,7 @@ Table_AddWay = {
     Icon = "item_3867",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[657],
+    Search1 = Table_AddWay_t.Search1[724],
     Desc = "##124082"
   },
   [1015] = {
@@ -12354,7 +13174,7 @@ Table_AddWay = {
     Icon = "item_3867",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[658],
+    Search1 = Table_AddWay_t.Search1[725],
     Desc = "##124082"
   },
   [1050] = {
@@ -12608,7 +13428,7 @@ Table_AddWay = {
     Icon = "item_3504",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[659],
+    Search1 = Table_AddWay_t.Search1[726],
     Desc = "##123912"
   },
   [1136] = {
@@ -12908,9 +13728,9 @@ Table_AddWay = {
     Icon = "Guild",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[642],
+    Search1 = Table_AddWay_t.Search1[709],
     Desc = "##1235278",
-    GotoMode = Table_AddWay_t.GotoMode[147]
+    GotoMode = Table_AddWay_t.GotoMode[149]
   },
   [2011] = {
     id = 2011,
@@ -12918,7 +13738,7 @@ Table_AddWay = {
     Icon = "Wanted",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[643],
+    Search1 = Table_AddWay_t.Search1[710],
     Desc = "##123913",
     GotoMode = Table_AddWay_t.GotoMode[2],
     EndTime = "2020-06-11 22:00:00"
@@ -12929,7 +13749,7 @@ Table_AddWay = {
     Icon = "Map",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[643],
+    Search1 = Table_AddWay_t.Search1[710],
     Desc = "##124058",
     EndTime = "2020-06-11 22:00:00"
   },
@@ -12939,7 +13759,7 @@ Table_AddWay = {
     Icon = "Quest",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[643],
+    Search1 = Table_AddWay_t.Search1[710],
     Desc = "##123959",
     EndTime = "2020-06-11 22:00:00"
   },
@@ -12949,7 +13769,7 @@ Table_AddWay = {
     Icon = "Quest",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[643],
+    Search1 = Table_AddWay_t.Search1[710],
     Desc = "##124090",
     EndTime = "2020-06-11 22:00:00"
   },
@@ -12959,9 +13779,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[643],
+    Search1 = Table_AddWay_t.Search1[710],
     Desc = "##124099",
-    GotoMode = Table_AddWay_t.GotoMode[141],
+    GotoMode = Table_AddWay_t.GotoMode[143],
     EndTime = "2020-06-11 22:00:00"
   },
   [2016] = {
@@ -12970,7 +13790,7 @@ Table_AddWay = {
     Icon = "Guild_Dojo",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[644],
+    Search1 = Table_AddWay_t.Search1[711],
     Desc = "##124068",
     EndTime = "2020-06-11 22:00:00"
   },
@@ -12980,9 +13800,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[644],
+    Search1 = Table_AddWay_t.Search1[711],
     Desc = "##124000",
-    GotoMode = Table_AddWay_t.GotoMode[141],
+    GotoMode = Table_AddWay_t.GotoMode[143],
     EndTime = "2020-06-11 22:00:00"
   },
   [2018] = {
@@ -12991,7 +13811,7 @@ Table_AddWay = {
     Icon = "Quest",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[644],
+    Search1 = Table_AddWay_t.Search1[711],
     Desc = "##123938",
     EndTime = "2020-06-11 22:00:00"
   },
@@ -13001,7 +13821,7 @@ Table_AddWay = {
     Icon = "Map",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[644],
+    Search1 = Table_AddWay_t.Search1[711],
     Desc = "##123939",
     EndTime = "2020-06-11 22:00:00"
   },
@@ -13011,7 +13831,7 @@ Table_AddWay = {
     Icon = "Wanted",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[644],
+    Search1 = Table_AddWay_t.Search1[711],
     Desc = "##123941",
     GotoMode = Table_AddWay_t.GotoMode[2],
     EndTime = "2020-06-11 22:00:00"
@@ -13021,36 +13841,36 @@ Table_AddWay = {
     NameEn = "##124204",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[646],
+    Search1 = Table_AddWay_t.Search1[713],
     Desc = "##123966",
-    GotoMode = Table_AddWay_t.GotoMode[234]
+    GotoMode = Table_AddWay_t.GotoMode[238]
   },
   [2023] = {
     id = 2023,
     NameEn = "##123925",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[374],
+    Search1 = Table_AddWay_t.Search1[441],
     Desc = "##124056",
-    GotoMode = Table_AddWay_t.GotoMode[166]
+    GotoMode = Table_AddWay_t.GotoMode[170]
   },
   [2024] = {
     id = 2024,
     NameEn = "##123925",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[375],
+    Search1 = Table_AddWay_t.Search1[442],
     Desc = "##124056",
-    GotoMode = Table_AddWay_t.GotoMode[166]
+    GotoMode = Table_AddWay_t.GotoMode[170]
   },
   [2025] = {
     id = 2025,
     NameEn = "##123925",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[376],
+    Search1 = Table_AddWay_t.Search1[443],
     Desc = "##124056",
-    GotoMode = Table_AddWay_t.GotoMode[166]
+    GotoMode = Table_AddWay_t.GotoMode[170]
   },
   [2026] = {
     id = 2026,
@@ -13058,7 +13878,7 @@ Table_AddWay = {
     Icon = "item_3669",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[377],
+    Search1 = Table_AddWay_t.Search1[444],
     Desc = "##124203"
   },
   [2027] = {
@@ -13067,7 +13887,7 @@ Table_AddWay = {
     Icon = "item_3669",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[651],
+    Search1 = Table_AddWay_t.Search1[718],
     Desc = "##124203"
   },
   [2028] = {
@@ -13076,7 +13896,7 @@ Table_AddWay = {
     Icon = "item_3669",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[376],
+    Search1 = Table_AddWay_t.Search1[443],
     Desc = "##124203"
   },
   [2500] = {
@@ -13085,7 +13905,7 @@ Table_AddWay = {
     Icon = "CardMech",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[277],
+    Search1 = Table_AddWay_t.Search1[286],
     Desc = "##124128"
   },
   [2502] = {
@@ -13094,7 +13914,7 @@ Table_AddWay = {
     Icon = "23",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[279],
+    Search1 = Table_AddWay_t.Search1[288],
     Desc = "##123948"
   },
   [2503] = {
@@ -13103,9 +13923,9 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[280],
+    Search1 = Table_AddWay_t.Search1[289],
     Desc = "##124166",
-    GotoMode = Table_AddWay_t.GotoMode[141]
+    GotoMode = Table_AddWay_t.GotoMode[143]
   },
   [2504] = {
     id = 2504,
@@ -13113,9 +13933,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[281],
+    Search1 = Table_AddWay_t.Search1[290],
     Desc = "##123924",
-    GotoMode = Table_AddWay_t.GotoMode[142]
+    GotoMode = Table_AddWay_t.GotoMode[144]
   },
   [2507] = {
     id = 2507,
@@ -13123,7 +13943,7 @@ Table_AddWay = {
     Icon = "MVPfight",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[284],
+    Search1 = Table_AddWay_t.Search1[293],
     Desc = "##124186"
   },
   [2508] = {
@@ -13132,18 +13952,18 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[285],
+    Search1 = Table_AddWay_t.Search1[294],
     Desc = "##124164",
-    GotoMode = Table_AddWay_t.GotoMode[143]
+    GotoMode = Table_AddWay_t.GotoMode[145]
   },
   [2509] = {
     id = 2509,
     NameEn = "##122894",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[286],
+    Search1 = Table_AddWay_t.Search1[295],
     Desc = "##124184",
-    GotoMode = Table_AddWay_t.GotoMode[144]
+    GotoMode = Table_AddWay_t.GotoMode[146]
   },
   [2510] = {
     id = 2510,
@@ -13151,9 +13971,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[287],
+    Search1 = Table_AddWay_t.Search1[296],
     Desc = "##788587",
-    GotoMode = Table_AddWay_t.GotoMode[145]
+    GotoMode = Table_AddWay_t.GotoMode[147]
   },
   [2511] = {
     id = 2511,
@@ -13161,9 +13981,9 @@ Table_AddWay = {
     Icon = "Guild",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[288],
+    Search1 = Table_AddWay_t.Search1[297],
     Desc = "##1235279",
-    GotoMode = Table_AddWay_t.GotoMode[146]
+    GotoMode = Table_AddWay_t.GotoMode[148]
   },
   [2512] = {
     id = 2512,
@@ -13171,7 +13991,7 @@ Table_AddWay = {
     Icon = "Guild",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[289],
+    Search1 = Table_AddWay_t.Search1[298],
     Desc = "##1235280",
     GotoMode = Table_AddWay_t.GotoMode[2]
   },
@@ -13181,9 +14001,9 @@ Table_AddWay = {
     Icon = "Guild",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[290],
+    Search1 = Table_AddWay_t.Search1[299],
     Desc = "##1235279",
-    GotoMode = Table_AddWay_t.GotoMode[146]
+    GotoMode = Table_AddWay_t.GotoMode[148]
   },
   [2514] = {
     id = 2514,
@@ -13191,9 +14011,9 @@ Table_AddWay = {
     Icon = "Guild",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[291],
+    Search1 = Table_AddWay_t.Search1[300],
     Desc = "##1235278",
-    GotoMode = Table_AddWay_t.GotoMode[147]
+    GotoMode = Table_AddWay_t.GotoMode[149]
   },
   [2515] = {
     id = 2515,
@@ -13201,7 +14021,7 @@ Table_AddWay = {
     Icon = "item_5763",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[292],
+    Search1 = Table_AddWay_t.Search1[301],
     Desc = "##2841764"
   },
   [4100] = {
@@ -13210,7 +14030,7 @@ Table_AddWay = {
     Icon = "Reward",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[378],
+    Search1 = Table_AddWay_t.Search1[445],
     Desc = "##123954"
   },
   [4101] = {
@@ -13255,9 +14075,9 @@ Table_AddWay = {
     NameEn = "##122900",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[379],
+    Search1 = Table_AddWay_t.Search1[446],
     Desc = "##124187",
-    GotoMode = Table_AddWay_t.GotoMode[167]
+    GotoMode = Table_AddWay_t.GotoMode[171]
   },
   [5002] = {
     id = 5002,
@@ -13265,7 +14085,7 @@ Table_AddWay = {
     Icon = "homeliy",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[380],
+    Search1 = Table_AddWay_t.Search1[447],
     Desc = "##124178"
   },
   [5003] = {
@@ -13273,34 +14093,34 @@ Table_AddWay = {
     NameEn = "##124194",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[413],
+    Search1 = Table_AddWay_t.Search1[480],
     Desc = "##124215",
-    GotoMode = Table_AddWay_t.GotoMode[198]
+    GotoMode = Table_AddWay_t.GotoMode[202]
   },
   [5004] = {
     id = 5004,
     NameEn = "##123906",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[423],
+    Search1 = Table_AddWay_t.Search1[490],
     Desc = "##124051",
-    GotoMode = Table_AddWay_t.GotoMode[205]
+    GotoMode = Table_AddWay_t.GotoMode[209]
   },
   [5005] = {
     id = 5005,
     NameEn = "##124079",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[424],
+    Search1 = Table_AddWay_t.Search1[491],
     Desc = "##123901",
-    GotoMode = Table_AddWay_t.GotoMode[206]
+    GotoMode = Table_AddWay_t.GotoMode[210]
   },
   [5006] = {
     id = 5006,
     NameEn = "##124121",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[425],
+    Search1 = Table_AddWay_t.Search1[492],
     Desc = "##124093"
   },
   [5007] = {
@@ -13308,27 +14128,27 @@ Table_AddWay = {
     NameEn = "##124111",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[426],
+    Search1 = Table_AddWay_t.Search1[493],
     Desc = "##123960",
-    GotoMode = Table_AddWay_t.GotoMode[207]
+    GotoMode = Table_AddWay_t.GotoMode[211]
   },
   [5008] = {
     id = 5008,
     NameEn = "##124194",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[637],
+    Search1 = Table_AddWay_t.Search1[704],
     Desc = "##789594",
-    GotoMode = Table_AddWay_t.GotoMode[231]
+    GotoMode = Table_AddWay_t.GotoMode[235]
   },
   [5009] = {
     id = 5009,
     NameEn = "##531716",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[636],
+    Search1 = Table_AddWay_t.Search1[703],
     Desc = "##1159985",
-    GotoMode = Table_AddWay_t.GotoMode[230]
+    GotoMode = Table_AddWay_t.GotoMode[234]
   },
   [6000] = {
     id = 6000,
@@ -13336,54 +14156,54 @@ Table_AddWay = {
     Icon = "MaleAssistant",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[550],
+    Search1 = Table_AddWay_t.Search1[617],
     Desc = "##124108",
-    GotoMode = Table_AddWay_t.GotoMode[223]
+    GotoMode = Table_AddWay_t.GotoMode[227]
   },
   [6001] = {
     id = 6001,
     NameEn = "##123932",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[551],
+    Search1 = Table_AddWay_t.Search1[618],
     Desc = "##123904",
-    GotoMode = Table_AddWay_t.GotoMode[224]
+    GotoMode = Table_AddWay_t.GotoMode[228]
   },
   [6002] = {
     id = 6002,
     NameEn = "##123932",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[552],
+    Search1 = Table_AddWay_t.Search1[619],
     Desc = "##123904",
-    GotoMode = Table_AddWay_t.GotoMode[224]
+    GotoMode = Table_AddWay_t.GotoMode[228]
   },
   [6003] = {
     id = 6003,
     NameEn = "##123932",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[553],
+    Search1 = Table_AddWay_t.Search1[620],
     Desc = "##123904",
-    GotoMode = Table_AddWay_t.GotoMode[224]
+    GotoMode = Table_AddWay_t.GotoMode[228]
   },
   [6004] = {
     id = 6004,
     NameEn = "##124191",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[554],
+    Search1 = Table_AddWay_t.Search1[621],
     Desc = "##124047",
-    GotoMode = Table_AddWay_t.GotoMode[225]
+    GotoMode = Table_AddWay_t.GotoMode[229]
   },
   [6005] = {
     id = 6005,
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[555],
+    Search1 = Table_AddWay_t.Search1[622],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6006] = {
@@ -13391,9 +14211,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[556],
+    Search1 = Table_AddWay_t.Search1[623],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6007] = {
@@ -13401,9 +14221,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[557],
+    Search1 = Table_AddWay_t.Search1[624],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6008] = {
@@ -13411,9 +14231,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[558],
+    Search1 = Table_AddWay_t.Search1[625],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6010] = {
@@ -13421,27 +14241,27 @@ Table_AddWay = {
     NameEn = "##123944",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[560],
+    Search1 = Table_AddWay_t.Search1[627],
     Desc = "##124198",
-    GotoMode = Table_AddWay_t.GotoMode[226]
+    GotoMode = Table_AddWay_t.GotoMode[230]
   },
   [6011] = {
     id = 6011,
     NameEn = "##124111",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[561],
+    Search1 = Table_AddWay_t.Search1[628],
     Desc = "##123896",
-    GotoMode = Table_AddWay_t.GotoMode[207]
+    GotoMode = Table_AddWay_t.GotoMode[211]
   },
   [6012] = {
     id = 6012,
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[562],
+    Search1 = Table_AddWay_t.Search1[629],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6013] = {
@@ -13449,9 +14269,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[563],
+    Search1 = Table_AddWay_t.Search1[630],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6014] = {
@@ -13459,9 +14279,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[635],
+    Search1 = Table_AddWay_t.Search1[702],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6015] = {
@@ -13469,9 +14289,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[634],
+    Search1 = Table_AddWay_t.Search1[701],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6016] = {
@@ -13479,9 +14299,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[633],
+    Search1 = Table_AddWay_t.Search1[700],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6017] = {
@@ -13489,16 +14309,16 @@ Table_AddWay = {
     NameEn = "##124194",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[632],
+    Search1 = Table_AddWay_t.Search1[699],
     Desc = "##124143",
-    GotoMode = Table_AddWay_t.GotoMode[229]
+    GotoMode = Table_AddWay_t.GotoMode[233]
   },
   [6018] = {
     id = 6018,
     NameEn = "##124121",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[427],
+    Search1 = Table_AddWay_t.Search1[494],
     Desc = "##124093"
   },
   [6019] = {
@@ -13506,9 +14326,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[428],
+    Search1 = Table_AddWay_t.Search1[495],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6020] = {
@@ -13516,9 +14336,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[429],
+    Search1 = Table_AddWay_t.Search1[496],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6021] = {
@@ -13526,9 +14346,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[629],
+    Search1 = Table_AddWay_t.Search1[696],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6022] = {
@@ -13536,9 +14356,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[628],
+    Search1 = Table_AddWay_t.Search1[695],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6023] = {
@@ -13546,9 +14366,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[627],
+    Search1 = Table_AddWay_t.Search1[694],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6024] = {
@@ -13556,9 +14376,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[626],
+    Search1 = Table_AddWay_t.Search1[693],
     Desc = "##123993",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6026] = {
@@ -13567,7 +14387,7 @@ Table_AddWay = {
     Icon = "Longhai",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[625],
+    Search1 = Table_AddWay_t.Search1[692],
     Desc = "##123965"
   },
   [6027] = {
@@ -13576,9 +14396,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[624],
+    Search1 = Table_AddWay_t.Search1[691],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6028] = {
@@ -13587,9 +14407,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[623],
+    Search1 = Table_AddWay_t.Search1[690],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6029] = {
@@ -13598,9 +14418,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[622],
+    Search1 = Table_AddWay_t.Search1[689],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6030] = {
@@ -13609,9 +14429,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[430],
+    Search1 = Table_AddWay_t.Search1[497],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6031] = {
@@ -13620,9 +14440,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[431],
+    Search1 = Table_AddWay_t.Search1[498],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6032] = {
@@ -13631,9 +14451,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[432],
+    Search1 = Table_AddWay_t.Search1[499],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6033] = {
@@ -13642,9 +14462,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[433],
+    Search1 = Table_AddWay_t.Search1[500],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6034] = {
@@ -13653,9 +14473,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[434],
+    Search1 = Table_AddWay_t.Search1[501],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6035] = {
@@ -13664,9 +14484,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[559],
+    Search1 = Table_AddWay_t.Search1[626],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6036] = {
@@ -13675,9 +14495,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[549],
+    Search1 = Table_AddWay_t.Search1[616],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6037] = {
@@ -13686,9 +14506,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[548],
+    Search1 = Table_AddWay_t.Search1[615],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6038] = {
@@ -13697,9 +14517,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[528],
+    Search1 = Table_AddWay_t.Search1[595],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6039] = {
@@ -13708,9 +14528,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[527],
+    Search1 = Table_AddWay_t.Search1[594],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6040] = {
@@ -13719,9 +14539,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[526],
+    Search1 = Table_AddWay_t.Search1[593],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6041] = {
@@ -13730,9 +14550,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[525],
+    Search1 = Table_AddWay_t.Search1[592],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6042] = {
@@ -13741,9 +14561,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[524],
+    Search1 = Table_AddWay_t.Search1[591],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6043] = {
@@ -13752,9 +14572,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[523],
+    Search1 = Table_AddWay_t.Search1[590],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6044] = {
@@ -13763,9 +14583,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[501],
+    Search1 = Table_AddWay_t.Search1[568],
     Desc = "##123973",
-    GotoMode = Table_AddWay_t.GotoMode[209],
+    GotoMode = Table_AddWay_t.GotoMode[213],
     EndTime = "2022-02-15 22:00:00"
   },
   [6045] = {
@@ -13773,9 +14593,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[482],
+    Search1 = Table_AddWay_t.Search1[549],
     Desc = "##123900",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6046] = {
@@ -13783,9 +14603,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[464],
+    Search1 = Table_AddWay_t.Search1[531],
     Desc = "##123900",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6047] = {
@@ -13793,9 +14613,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[463],
+    Search1 = Table_AddWay_t.Search1[530],
     Desc = "##123900",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6048] = {
@@ -13803,9 +14623,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[462],
+    Search1 = Table_AddWay_t.Search1[529],
     Desc = "##123900",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6049] = {
@@ -13813,9 +14633,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[461],
+    Search1 = Table_AddWay_t.Search1[528],
     Desc = "##123900",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6050] = {
@@ -13823,9 +14643,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[460],
+    Search1 = Table_AddWay_t.Search1[527],
     Desc = "##123900",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6051] = {
@@ -13833,9 +14653,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[459],
+    Search1 = Table_AddWay_t.Search1[526],
     Desc = "##123900",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6052] = {
@@ -13843,9 +14663,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[458],
+    Search1 = Table_AddWay_t.Search1[525],
     Desc = "##123900",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6053] = {
@@ -13853,9 +14673,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[457],
+    Search1 = Table_AddWay_t.Search1[524],
     Desc = "##123900",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6054] = {
@@ -13863,9 +14683,9 @@ Table_AddWay = {
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[456],
+    Search1 = Table_AddWay_t.Search1[523],
     Desc = "##123900",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6055] = {
@@ -13874,9 +14694,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[455],
+    Search1 = Table_AddWay_t.Search1[522],
     Desc = "##124205",
-    GotoMode = Table_AddWay_t.GotoMode[217],
+    GotoMode = Table_AddWay_t.GotoMode[221],
     EndTime = "2022-02-15 22:00:00"
   },
   [6056] = {
@@ -13885,9 +14705,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[454],
+    Search1 = Table_AddWay_t.Search1[521],
     Desc = "##124205",
-    GotoMode = Table_AddWay_t.GotoMode[217],
+    GotoMode = Table_AddWay_t.GotoMode[221],
     EndTime = "2022-02-15 22:00:00"
   },
   [6057] = {
@@ -13896,9 +14716,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[453],
+    Search1 = Table_AddWay_t.Search1[520],
     Desc = "##124205",
-    GotoMode = Table_AddWay_t.GotoMode[217],
+    GotoMode = Table_AddWay_t.GotoMode[221],
     EndTime = "2022-02-15 22:00:00"
   },
   [6058] = {
@@ -13907,9 +14727,9 @@ Table_AddWay = {
     Icon = "pet_equip_3",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[452],
+    Search1 = Table_AddWay_t.Search1[519],
     Desc = "##124205",
-    GotoMode = Table_AddWay_t.GotoMode[217],
+    GotoMode = Table_AddWay_t.GotoMode[221],
     EndTime = "2022-02-15 22:00:00"
   },
   [6059] = {
@@ -13918,9 +14738,9 @@ Table_AddWay = {
     Icon = "MIntrusion",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[450],
+    Search1 = Table_AddWay_t.Search1[517],
     Desc = "##289380",
-    GotoMode = Table_AddWay_t.GotoMode[209]
+    GotoMode = Table_AddWay_t.GotoMode[213]
   },
   [6060] = {
     id = 6060,
@@ -13928,9 +14748,9 @@ Table_AddWay = {
     Icon = "MIntrusion",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[450],
+    Search1 = Table_AddWay_t.Search1[517],
     Desc = "##289381",
-    GotoMode = Table_AddWay_t.GotoMode[216]
+    GotoMode = Table_AddWay_t.GotoMode[220]
   },
   [6061] = {
     id = 6061,
@@ -13938,18 +14758,18 @@ Table_AddWay = {
     Icon = "Incantation_Samurai_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[449],
+    Search1 = Table_AddWay_t.Search1[516],
     Desc = "##302630",
-    GotoMode = Table_AddWay_t.GotoMode[209]
+    GotoMode = Table_AddWay_t.GotoMode[213]
   },
   [6062] = {
     id = 6062,
     NameEn = "##123918",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[448],
+    Search1 = Table_AddWay_t.Search1[515],
     Desc = "##123900",
-    GotoMode = Table_AddWay_t.GotoMode[208],
+    GotoMode = Table_AddWay_t.GotoMode[212],
     EndTime = "2022-02-15 22:00:00"
   },
   [6063] = {
@@ -13958,54 +14778,54 @@ Table_AddWay = {
     Icon = "huangjing_icon02",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[447],
+    Search1 = Table_AddWay_t.Search1[514],
     Desc = "##1235283",
-    GotoMode = Table_AddWay_t.GotoMode[215]
+    GotoMode = Table_AddWay_t.GotoMode[219]
   },
   [6064] = {
     id = 6064,
     NameEn = "##530671",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[446],
+    Search1 = Table_AddWay_t.Search1[513],
     Desc = "##530685",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [6065] = {
     id = 6065,
     NameEn = "##530674",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[445],
+    Search1 = Table_AddWay_t.Search1[512],
     Desc = "##1126129",
-    GotoMode = Table_AddWay_t.GotoMode[214]
+    GotoMode = Table_AddWay_t.GotoMode[218]
   },
   [6066] = {
     id = 6066,
     NameEn = "##530671",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[444],
+    Search1 = Table_AddWay_t.Search1[511],
     Desc = "##530685",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [6067] = {
     id = 6067,
     NameEn = "##530686",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[443],
+    Search1 = Table_AddWay_t.Search1[510],
     Desc = "##1126130",
-    GotoMode = Table_AddWay_t.GotoMode[213]
+    GotoMode = Table_AddWay_t.GotoMode[217]
   },
   [6068] = {
     id = 6068,
     NameEn = "##530674",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[442],
+    Search1 = Table_AddWay_t.Search1[509],
     Desc = "##780991",
-    GotoMode = Table_AddWay_t.GotoMode[212]
+    GotoMode = Table_AddWay_t.GotoMode[216]
   },
   [6069] = {
     id = 6069,
@@ -14013,9 +14833,9 @@ Table_AddWay = {
     Icon = "Quest",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[441],
+    Search1 = Table_AddWay_t.Search1[508],
     Desc = "##832720",
-    GotoMode = Table_AddWay_t.GotoMode[211],
+    GotoMode = Table_AddWay_t.GotoMode[215],
     EndTime = "2022-12-01 22:00:00"
   },
   [6070] = {
@@ -14024,7 +14844,7 @@ Table_AddWay = {
     Icon = "Dungeon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[440],
+    Search1 = Table_AddWay_t.Search1[507],
     Desc = "##832722"
   },
   [6071] = {
@@ -14032,99 +14852,99 @@ Table_AddWay = {
     NameEn = "##1101196",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[439],
+    Search1 = Table_AddWay_t.Search1[506],
     Desc = "##1101197",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [6072] = {
     id = 6072,
     NameEn = "##1101196",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[438],
+    Search1 = Table_AddWay_t.Search1[505],
     Desc = "##1101197",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [6073] = {
     id = 6073,
     NameEn = "##1101196",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[437],
+    Search1 = Table_AddWay_t.Search1[504],
     Desc = "##1101197",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [6074] = {
     id = 6074,
     NameEn = "##1101196",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[436],
+    Search1 = Table_AddWay_t.Search1[503],
     Desc = "##1101197",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [6075] = {
     id = 6075,
     NameEn = "##1101196",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[435],
+    Search1 = Table_AddWay_t.Search1[502],
     Desc = "##1101197",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [6076] = {
     id = 6076,
     NameEn = "##1111497",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[617],
+    Search1 = Table_AddWay_t.Search1[684],
     Desc = "##1123893",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [6077] = {
     id = 6077,
     NameEn = "##1111497",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[618],
+    Search1 = Table_AddWay_t.Search1[685],
     Desc = "##1123893",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [6078] = {
     id = 6078,
     NameEn = "##1101196",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[619],
+    Search1 = Table_AddWay_t.Search1[686],
     Desc = "##1101197",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [6079] = {
     id = 6079,
     NameEn = "##1111497",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[620],
+    Search1 = Table_AddWay_t.Search1[687],
     Desc = "##1123893",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [6080] = {
     id = 6080,
     NameEn = "##531884",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[621],
+    Search1 = Table_AddWay_t.Search1[688],
     Desc = "##1127197",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [6089] = {
     id = 6089,
     NameEn = "##1111800",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[630],
+    Search1 = Table_AddWay_t.Search1[697],
     Desc = "##1127198",
-    GotoMode = Table_AddWay_t.GotoMode[210]
+    GotoMode = Table_AddWay_t.GotoMode[214]
   },
   [6090] = {
     id = 6090,
@@ -14132,9 +14952,9 @@ Table_AddWay = {
     Icon = "Longhai",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[631],
+    Search1 = Table_AddWay_t.Search1[698],
     Desc = "##123965",
-    GotoMode = Table_AddWay_t.GotoMode[217]
+    GotoMode = Table_AddWay_t.GotoMode[221]
   },
   [6091] = {
     id = 6091,
@@ -14142,9 +14962,9 @@ Table_AddWay = {
     Icon = "Incantation_Samurai_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[631],
+    Search1 = Table_AddWay_t.Search1[698],
     Desc = "##302630",
-    GotoMode = Table_AddWay_t.GotoMode[209]
+    GotoMode = Table_AddWay_t.GotoMode[213]
   },
   [6098] = {
     id = 6098,
@@ -14152,9 +14972,9 @@ Table_AddWay = {
     Icon = "ManorBuild_03",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[638],
+    Search1 = Table_AddWay_t.Search1[705],
     Desc = "##1134488",
-    GotoMode = Table_AddWay_t.GotoMode[232],
+    GotoMode = Table_AddWay_t.GotoMode[236],
     menu = 9990
   },
   [6099] = {
@@ -14163,9 +14983,9 @@ Table_AddWay = {
     Icon = "ManorBuild_03",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[639],
+    Search1 = Table_AddWay_t.Search1[706],
     Desc = "##1134488",
-    GotoMode = Table_AddWay_t.GotoMode[232],
+    GotoMode = Table_AddWay_t.GotoMode[236],
     menu = 9990
   },
   [6100] = {
@@ -14174,9 +14994,9 @@ Table_AddWay = {
     Icon = "ManorBuild_02",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[640],
+    Search1 = Table_AddWay_t.Search1[707],
     Desc = "##1134490",
-    GotoMode = Table_AddWay_t.GotoMode[202]
+    GotoMode = Table_AddWay_t.GotoMode[206]
   },
   [6101] = {
     id = 6101,
@@ -14184,9 +15004,9 @@ Table_AddWay = {
     Icon = "ManorBuild_06",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[641],
+    Search1 = Table_AddWay_t.Search1[708],
     Desc = "##1134492",
-    GotoMode = Table_AddWay_t.GotoMode[233]
+    GotoMode = Table_AddWay_t.GotoMode[237]
   },
   [6102] = {
     id = 6102,
@@ -14194,9 +15014,9 @@ Table_AddWay = {
     Icon = "ManorBuild_07",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[422],
+    Search1 = Table_AddWay_t.Search1[489],
     Desc = "##1134493",
-    GotoMode = Table_AddWay_t.GotoMode[204]
+    GotoMode = Table_AddWay_t.GotoMode[208]
   },
   [6103] = {
     id = 6103,
@@ -14204,9 +15024,9 @@ Table_AddWay = {
     Icon = "ManorBuildType_09",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[421],
+    Search1 = Table_AddWay_t.Search1[488],
     Desc = "##1134495",
-    GotoMode = Table_AddWay_t.GotoMode[203]
+    GotoMode = Table_AddWay_t.GotoMode[207]
   },
   [6104] = {
     id = 6104,
@@ -14214,9 +15034,9 @@ Table_AddWay = {
     Icon = "ManorBuild_02",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[420],
+    Search1 = Table_AddWay_t.Search1[487],
     Desc = "##1134490",
-    GotoMode = Table_AddWay_t.GotoMode[202]
+    GotoMode = Table_AddWay_t.GotoMode[206]
   },
   [6105] = {
     id = 6105,
@@ -14226,7 +15046,7 @@ Table_AddWay = {
     Materialdisplay = 1,
     Search1 = Table_AddWay_t.Search1[202],
     Desc = "##3359249",
-    GotoMode = Table_AddWay_t.GotoMode[201]
+    GotoMode = Table_AddWay_t.GotoMode[205]
   },
   [6106] = {
     id = 6106,
@@ -14236,7 +15056,7 @@ Table_AddWay = {
     Materialdisplay = 1,
     Search1 = Table_AddWay_t.Search1[202],
     Desc = "##3359251",
-    GotoMode = Table_AddWay_t.GotoMode[200]
+    GotoMode = Table_AddWay_t.GotoMode[204]
   },
   [6107] = {
     id = 6107,
@@ -14244,9 +15064,9 @@ Table_AddWay = {
     Icon = "jianbei",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[419],
+    Search1 = Table_AddWay_t.Search1[486],
     Desc = "##1208053",
-    GotoMode = Table_AddWay_t.GotoMode[199],
+    GotoMode = Table_AddWay_t.GotoMode[203],
     menu = 10030
   },
   [6108] = {
@@ -14255,7 +15075,7 @@ Table_AddWay = {
     Icon = "RiskBook",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[418],
+    Search1 = Table_AddWay_t.Search1[485],
     Desc = "##1211844"
   },
   [6109] = {
@@ -14264,9 +15084,9 @@ Table_AddWay = {
     Icon = "jianbei",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[417],
+    Search1 = Table_AddWay_t.Search1[484],
     Desc = "##1208053",
-    GotoMode = Table_AddWay_t.GotoMode[199],
+    GotoMode = Table_AddWay_t.GotoMode[203],
     menu = 10030
   },
   [6110] = {
@@ -14274,7 +15094,7 @@ Table_AddWay = {
     NameEn = "##1224335",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[416],
+    Search1 = Table_AddWay_t.Search1[483],
     Desc = "##1224336"
   },
   [6111] = {
@@ -14283,9 +15103,9 @@ Table_AddWay = {
     Icon = "Quest",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[415],
+    Search1 = Table_AddWay_t.Search1[482],
     Desc = "##1208059",
-    GotoMode = Table_AddWay_t.GotoMode[199]
+    GotoMode = Table_AddWay_t.GotoMode[203]
   },
   [6112] = {
     id = 6112,
@@ -14293,7 +15113,7 @@ Table_AddWay = {
     Icon = "126",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[414],
+    Search1 = Table_AddWay_t.Search1[481],
     Desc = "##304411"
   },
   [6113] = {
@@ -14302,7 +15122,7 @@ Table_AddWay = {
     Icon = "xunshoudui",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[645],
+    Search1 = Table_AddWay_t.Search1[712],
     Desc = "##1216478"
   },
   [6114] = {
@@ -14311,7 +15131,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi06",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[412],
+    Search1 = Table_AddWay_t.Search1[479],
     Desc = "##1235285"
   },
   [6115] = {
@@ -14320,7 +15140,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi06",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[411],
+    Search1 = Table_AddWay_t.Search1[478],
     Desc = "##1235285"
   },
   [6116] = {
@@ -14329,7 +15149,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi07",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[412],
+    Search1 = Table_AddWay_t.Search1[479],
     Desc = "##1235289"
   },
   [6117] = {
@@ -14338,7 +15158,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi07",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[411],
+    Search1 = Table_AddWay_t.Search1[478],
     Desc = "##1235289"
   },
   [6118] = {
@@ -14347,7 +15167,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi08",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[412],
+    Search1 = Table_AddWay_t.Search1[479],
     Desc = "##1235293"
   },
   [6119] = {
@@ -14356,7 +15176,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi08",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[411],
+    Search1 = Table_AddWay_t.Search1[478],
     Desc = "##1235293"
   },
   [6120] = {
@@ -14365,9 +15185,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[410],
+    Search1 = Table_AddWay_t.Search1[477],
     Desc = "##1134485",
-    GotoMode = Table_AddWay_t.GotoMode[197]
+    GotoMode = Table_AddWay_t.GotoMode[201]
   },
   [6121] = {
     id = 6121,
@@ -15082,7 +15902,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[373],
+    Search1 = Table_AddWay_t.Search1[440],
     Desc = "##1243279",
     GotoMode = Table_AddWay_t.GotoMode[7]
   },
@@ -15091,7 +15911,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[370],
+    Search1 = Table_AddWay_t.Search1[437],
     Desc = "##1243279",
     GotoMode = Table_AddWay_t.GotoMode[7]
   },
@@ -15253,7 +16073,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[372],
+    Search1 = Table_AddWay_t.Search1[439],
     Desc = "##1243279",
     GotoMode = Table_AddWay_t.GotoMode[7]
   },
@@ -15271,7 +16091,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[369],
+    Search1 = Table_AddWay_t.Search1[436],
     Desc = "##1243279",
     GotoMode = Table_AddWay_t.GotoMode[7]
   },
@@ -15280,7 +16100,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[371],
+    Search1 = Table_AddWay_t.Search1[438],
     Desc = "##1243279",
     GotoMode = Table_AddWay_t.GotoMode[7]
   },
@@ -15344,7 +16164,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[370],
+    Search1 = Table_AddWay_t.Search1[437],
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
   [6226] = {
@@ -15425,7 +16245,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[369],
+    Search1 = Table_AddWay_t.Search1[436],
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
   [6235] = {
@@ -15452,7 +16272,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[370],
+    Search1 = Table_AddWay_t.Search1[437],
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
   [6238] = {
@@ -15533,7 +16353,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[369],
+    Search1 = Table_AddWay_t.Search1[436],
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
   [6247] = {
@@ -15866,7 +16686,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[368],
+    Search1 = Table_AddWay_t.Search1[435],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15876,7 +16696,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[367],
+    Search1 = Table_AddWay_t.Search1[434],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15886,7 +16706,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[366],
+    Search1 = Table_AddWay_t.Search1[433],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15896,7 +16716,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[365],
+    Search1 = Table_AddWay_t.Search1[432],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15906,7 +16726,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[364],
+    Search1 = Table_AddWay_t.Search1[431],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15916,7 +16736,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[363],
+    Search1 = Table_AddWay_t.Search1[430],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15926,7 +16746,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[362],
+    Search1 = Table_AddWay_t.Search1[429],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15936,7 +16756,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[361],
+    Search1 = Table_AddWay_t.Search1[428],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15946,7 +16766,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[360],
+    Search1 = Table_AddWay_t.Search1[427],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15956,7 +16776,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[359],
+    Search1 = Table_AddWay_t.Search1[426],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15966,7 +16786,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi03",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[358],
+    Search1 = Table_AddWay_t.Search1[425],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15976,7 +16796,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi03",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[357],
+    Search1 = Table_AddWay_t.Search1[424],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15986,7 +16806,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi03",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[356],
+    Search1 = Table_AddWay_t.Search1[423],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -15996,7 +16816,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi03",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[355],
+    Search1 = Table_AddWay_t.Search1[422],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16006,7 +16826,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi04",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[354],
+    Search1 = Table_AddWay_t.Search1[421],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16016,7 +16836,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi04",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[353],
+    Search1 = Table_AddWay_t.Search1[420],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16026,7 +16846,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi04",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[352],
+    Search1 = Table_AddWay_t.Search1[419],
     Desc = "##1235370",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16404,7 +17224,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi01",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[351],
+    Search1 = Table_AddWay_t.Search1[418],
     Desc = "##1258580",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16414,7 +17234,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi02",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[351],
+    Search1 = Table_AddWay_t.Search1[418],
     Desc = "##1258581",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16424,7 +17244,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi03",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[351],
+    Search1 = Table_AddWay_t.Search1[418],
     Desc = "##1258582",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16434,7 +17254,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi04",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[351],
+    Search1 = Table_AddWay_t.Search1[418],
     Desc = "##1258583",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16444,7 +17264,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi05",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[351],
+    Search1 = Table_AddWay_t.Search1[418],
     Desc = "##1258584",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16454,7 +17274,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi09",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[349],
+    Search1 = Table_AddWay_t.Search1[416],
     Desc = "##1249766",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16464,7 +17284,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi09",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[348],
+    Search1 = Table_AddWay_t.Search1[415],
     Desc = "##1249766",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16474,7 +17294,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi09",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[347],
+    Search1 = Table_AddWay_t.Search1[414],
     Desc = "##1249766",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16484,7 +17304,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi09",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[346],
+    Search1 = Table_AddWay_t.Search1[413],
     Desc = "##1249766",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16494,7 +17314,7 @@ Table_AddWay = {
     Icon = "raidbgicon_liexi10",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[345],
+    Search1 = Table_AddWay_t.Search1[412],
     Desc = "##1249754",
     GotoMode = Table_AddWay_t.GotoMode[1]
   },
@@ -16503,7 +17323,7 @@ Table_AddWay = {
     NameEn = "##1252947",
     Type = 3,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[344],
+    Search1 = Table_AddWay_t.Search1[411],
     Search2 = Table_AddWay_t.Search2[1],
     Desc = "%s"
   },
@@ -16985,7 +17805,7 @@ Table_AddWay = {
     NameEn = "##2846501",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[343],
+    Search1 = Table_AddWay_t.Search1[410],
     Desc = "##124127",
     GotoMode = Table_AddWay_t.GotoMode[63]
   },
@@ -16995,7 +17815,7 @@ Table_AddWay = {
     Icon = "Kafra7",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[342],
+    Search1 = Table_AddWay_t.Search1[409],
     Desc = "##3501151",
     GotoMode = Table_AddWay_t.GotoMode[33]
   },
@@ -17005,7 +17825,7 @@ Table_AddWay = {
     Icon = "Kafra7",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[341],
+    Search1 = Table_AddWay_t.Search1[408],
     Desc = "##3501151",
     GotoMode = Table_AddWay_t.GotoMode[33]
   },
@@ -17015,7 +17835,7 @@ Table_AddWay = {
     Icon = "CardMech",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[340],
+    Search1 = Table_AddWay_t.Search1[407],
     Desc = "##124128"
   },
   [6445] = {
@@ -17024,9 +17844,9 @@ Table_AddWay = {
     Icon = "Man",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[339],
+    Search1 = Table_AddWay_t.Search1[406],
     Desc = "##3490080",
-    GotoMode = Table_AddWay_t.GotoMode[164]
+    GotoMode = Table_AddWay_t.GotoMode[168]
   },
   [6446] = {
     id = 6446,
@@ -17034,7 +17854,7 @@ Table_AddWay = {
     Icon = "item_710001",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[338],
+    Search1 = Table_AddWay_t.Search1[405],
     Desc = "##124195",
     GotoMode = Table_AddWay_t.GotoMode[10]
   },
@@ -17310,9 +18130,9 @@ Table_AddWay = {
     Icon = "cracks",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[239],
+    Search1 = Table_AddWay_t.Search1[243],
     Desc = "##42636065",
-    GotoMode = Table_AddWay_t.GotoMode[109]
+    GotoMode = Table_AddWay_t.GotoMode[111]
   },
   [6529] = {
     id = 6529,
@@ -17320,9 +18140,9 @@ Table_AddWay = {
     Icon = "item_52914",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[240],
+    Search1 = Table_AddWay_t.Search1[244],
     Desc = "##42636065",
-    GotoMode = Table_AddWay_t.GotoMode[109]
+    GotoMode = Table_AddWay_t.GotoMode[111]
   },
   [6530] = {
     id = 6530,
@@ -17330,9 +18150,9 @@ Table_AddWay = {
     Icon = "cracks",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[241],
+    Search1 = Table_AddWay_t.Search1[245],
     Desc = "##42636069",
-    GotoMode = Table_AddWay_t.GotoMode[109]
+    GotoMode = Table_AddWay_t.GotoMode[111]
   },
   [6531] = {
     id = 6531,
@@ -17340,9 +18160,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_003",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[242],
+    Search1 = Table_AddWay_t.Search1[246],
     Desc = "##42641006",
-    GotoMode = Table_AddWay_t.GotoMode[109]
+    GotoMode = Table_AddWay_t.GotoMode[111]
   },
   [6532] = {
     id = 6532,
@@ -17350,7 +18170,7 @@ Table_AddWay = {
     Icon = "item_52912",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[243],
+    Search1 = Table_AddWay_t.Search1[247],
     Desc = "##42636070"
   },
   [6533] = {
@@ -17359,9 +18179,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_003",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[244],
+    Search1 = Table_AddWay_t.Search1[248],
     Desc = "##42641007",
-    GotoMode = Table_AddWay_t.GotoMode[109]
+    GotoMode = Table_AddWay_t.GotoMode[111]
   },
   [6534] = {
     id = 6534,
@@ -17369,9 +18189,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[245],
+    Search1 = Table_AddWay_t.Search1[249],
     Desc = "##42636072",
-    GotoMode = Table_AddWay_t.GotoMode[110]
+    GotoMode = Table_AddWay_t.GotoMode[112]
   },
   [6536] = {
     id = 6536,
@@ -17379,9 +18199,9 @@ Table_AddWay = {
     Icon = "cracks",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[242],
+    Search1 = Table_AddWay_t.Search1[246],
     Desc = "##42636074",
-    GotoMode = Table_AddWay_t.GotoMode[109]
+    GotoMode = Table_AddWay_t.GotoMode[111]
   },
   [6537] = {
     id = 6537,
@@ -17389,9 +18209,9 @@ Table_AddWay = {
     Icon = "cracks",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[244],
+    Search1 = Table_AddWay_t.Search1[248],
     Desc = "##42636074",
-    GotoMode = Table_AddWay_t.GotoMode[109]
+    GotoMode = Table_AddWay_t.GotoMode[111]
   },
   [6538] = {
     id = 6538,
@@ -17399,9 +18219,9 @@ Table_AddWay = {
     Icon = "n_thackeray",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[337],
+    Search1 = Table_AddWay_t.Search1[404],
     Desc = "##42635503",
-    GotoMode = Table_AddWay_t.GotoMode[109]
+    GotoMode = Table_AddWay_t.GotoMode[111]
   },
   [6539] = {
     id = 6539,
@@ -17409,9 +18229,9 @@ Table_AddWay = {
     Icon = "cracks",
     Type = 1,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[336],
+    Search1 = Table_AddWay_t.Search1[403],
     Desc = "##42636065",
-    GotoMode = Table_AddWay_t.GotoMode[109]
+    GotoMode = Table_AddWay_t.GotoMode[111]
   },
   [6543] = {
     id = 6543,
@@ -17419,9 +18239,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_003",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[265],
+    Search1 = Table_AddWay_t.Search1[270],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[133]
+    GotoMode = Table_AddWay_t.GotoMode[135]
   },
   [6544] = {
     id = 6544,
@@ -17429,7 +18249,7 @@ Table_AddWay = {
     Icon = "CardMech",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[335],
+    Search1 = Table_AddWay_t.Search1[402],
     Desc = "##124128"
   },
   [6548] = {
@@ -17438,9 +18258,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[334],
+    Search1 = Table_AddWay_t.Search1[401],
     Desc = "##42642380",
-    GotoMode = Table_AddWay_t.GotoMode[163]
+    GotoMode = Table_AddWay_t.GotoMode[167]
   },
   [6552] = {
     id = 6552,
@@ -17448,9 +18268,9 @@ Table_AddWay = {
     Icon = "act_pve",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[333],
+    Search1 = Table_AddWay_t.Search1[400],
     Desc = "##44696968",
-    GotoMode = Table_AddWay_t.GotoMode[162],
+    GotoMode = Table_AddWay_t.GotoMode[166],
     BeginTime = "2025-07-21 05:00",
     EndTime = "2025-08-18 05:00"
   },
@@ -17460,9 +18280,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_003",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[266],
+    Search1 = Table_AddWay_t.Search1[271],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[133]
+    GotoMode = Table_AddWay_t.GotoMode[135]
   },
   [6554] = {
     id = 6554,
@@ -17471,7 +18291,7 @@ Table_AddWay = {
     Type = 2,
     Materialdisplay = 0,
     Desc = "##44703938",
-    GotoMode = Table_AddWay_t.GotoMode[133]
+    GotoMode = Table_AddWay_t.GotoMode[135]
   },
   [6555] = {
     id = 6555,
@@ -17480,7 +18300,7 @@ Table_AddWay = {
     Type = 2,
     Materialdisplay = 0,
     Desc = "##44703940",
-    GotoMode = Table_AddWay_t.GotoMode[134]
+    GotoMode = Table_AddWay_t.GotoMode[136]
   },
   [6556] = {
     id = 6556,
@@ -17489,7 +18309,7 @@ Table_AddWay = {
     Type = 2,
     Materialdisplay = 0,
     Desc = "##44703942",
-    GotoMode = Table_AddWay_t.GotoMode[135]
+    GotoMode = Table_AddWay_t.GotoMode[109]
   },
   [6557] = {
     id = 6557,
@@ -17498,7 +18318,7 @@ Table_AddWay = {
     Type = 2,
     Materialdisplay = 0,
     Desc = "##44709689",
-    GotoMode = Table_AddWay_t.GotoMode[136]
+    GotoMode = Table_AddWay_t.GotoMode[110]
   },
   [6558] = {
     id = 6558,
@@ -17506,9 +18326,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_003",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[332],
+    Search1 = Table_AddWay_t.Search1[399],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[133]
+    GotoMode = Table_AddWay_t.GotoMode[135]
   },
   [6559] = {
     id = 6559,
@@ -17516,9 +18336,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_001",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[331],
+    Search1 = Table_AddWay_t.Search1[398],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[134]
+    GotoMode = Table_AddWay_t.GotoMode[136]
   },
   [6560] = {
     id = 6560,
@@ -17526,9 +18346,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_002",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[330],
+    Search1 = Table_AddWay_t.Search1[239],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[135]
+    GotoMode = Table_AddWay_t.GotoMode[109]
   },
   [6561] = {
     id = 6561,
@@ -17536,9 +18356,9 @@ Table_AddWay = {
     Icon = "n_lostdragon",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[329],
+    Search1 = Table_AddWay_t.Search1[240],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[136]
+    GotoMode = Table_AddWay_t.GotoMode[110]
   },
   [6562] = {
     id = 6562,
@@ -17546,9 +18366,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_003",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[255],
+    Search1 = Table_AddWay_t.Search1[260],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[133]
+    GotoMode = Table_AddWay_t.GotoMode[135]
   },
   [6563] = {
     id = 6563,
@@ -17556,9 +18376,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_001",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[256],
+    Search1 = Table_AddWay_t.Search1[261],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[134]
+    GotoMode = Table_AddWay_t.GotoMode[136]
   },
   [6564] = {
     id = 6564,
@@ -17566,9 +18386,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_002",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[257],
+    Search1 = Table_AddWay_t.Search1[262],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[135]
+    GotoMode = Table_AddWay_t.GotoMode[109]
   },
   [6565] = {
     id = 6565,
@@ -17576,9 +18396,9 @@ Table_AddWay = {
     Icon = "n_lostdragon",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[258],
+    Search1 = Table_AddWay_t.Search1[263],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[136]
+    GotoMode = Table_AddWay_t.GotoMode[110]
   },
   [6566] = {
     id = 6566,
@@ -17586,9 +18406,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_001",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[259],
+    Search1 = Table_AddWay_t.Search1[264],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[134]
+    GotoMode = Table_AddWay_t.GotoMode[136]
   },
   [6567] = {
     id = 6567,
@@ -17596,9 +18416,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_002",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[260],
+    Search1 = Table_AddWay_t.Search1[265],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[135]
+    GotoMode = Table_AddWay_t.GotoMode[109]
   },
   [6568] = {
     id = 6568,
@@ -17606,7 +18426,7 @@ Table_AddWay = {
     Icon = "Reward",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[261],
+    Search1 = Table_AddWay_t.Search1[266],
     Desc = "##2846500"
   },
   [6569] = {
@@ -17615,7 +18435,7 @@ Table_AddWay = {
     Icon = "Reward",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[262],
+    Search1 = Table_AddWay_t.Search1[267],
     Desc = "##2846500"
   },
   [6570] = {
@@ -17624,7 +18444,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[263],
+    Search1 = Table_AddWay_t.Search1[268],
     Desc = "##44703576",
     GotoMode = Table_AddWay_t.GotoMode[137]
   },
@@ -17634,7 +18454,7 @@ Table_AddWay = {
     Icon = "Reward",
     Type = 1,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[264],
+    Search1 = Table_AddWay_t.Search1[269],
     Desc = "##2846500"
   },
   [6572] = {
@@ -17643,9 +18463,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_001",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[265],
+    Search1 = Table_AddWay_t.Search1[270],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[134]
+    GotoMode = Table_AddWay_t.GotoMode[136]
   },
   [6573] = {
     id = 6573,
@@ -17653,9 +18473,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_002",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[265],
+    Search1 = Table_AddWay_t.Search1[270],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[135]
+    GotoMode = Table_AddWay_t.GotoMode[109]
   },
   [6574] = {
     id = 6574,
@@ -17663,9 +18483,9 @@ Table_AddWay = {
     Icon = "n_lostdragon",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[265],
+    Search1 = Table_AddWay_t.Search1[270],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[136]
+    GotoMode = Table_AddWay_t.GotoMode[110]
   },
   [6575] = {
     id = 6575,
@@ -17673,9 +18493,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_001",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[266],
+    Search1 = Table_AddWay_t.Search1[271],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[134]
+    GotoMode = Table_AddWay_t.GotoMode[136]
   },
   [6576] = {
     id = 6576,
@@ -17683,9 +18503,9 @@ Table_AddWay = {
     Icon = "n_lostdragon_002",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[266],
+    Search1 = Table_AddWay_t.Search1[271],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[135]
+    GotoMode = Table_AddWay_t.GotoMode[109]
   },
   [6577] = {
     id = 6577,
@@ -17693,9 +18513,9 @@ Table_AddWay = {
     Icon = "n_lostdragon",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[266],
+    Search1 = Table_AddWay_t.Search1[271],
     Desc = "##42641008",
-    GotoMode = Table_AddWay_t.GotoMode[136]
+    GotoMode = Table_AddWay_t.GotoMode[110]
   },
   [6579] = {
     id = 6579,
@@ -17703,9 +18523,9 @@ Table_AddWay = {
     Icon = "n_dragonblackflame",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[267],
+    Search1 = Table_AddWay_t.Search1[273],
     Desc = "##44709632",
-    GotoMode = Table_AddWay_t.GotoMode[109]
+    GotoMode = Table_AddWay_t.GotoMode[111]
   },
   [6580] = {
     id = 6580,
@@ -17713,7 +18533,7 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[268],
+    Search1 = Table_AddWay_t.Search1[274],
     Desc = "##44714056",
     GotoMode = Table_AddWay_t.GotoMode[138]
   },
@@ -17723,18 +18543,38 @@ Table_AddWay = {
     Icon = "n_dragonblackflame",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[269],
+    Search1 = Table_AddWay_t.Search1[275],
     Desc = "##44709632",
-    GotoMode = Table_AddWay_t.GotoMode[109]
+    GotoMode = Table_AddWay_t.GotoMode[111]
   },
   [6583] = {
     id = 6583,
     NameEn = "##44726415",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[270],
+    Search1 = Table_AddWay_t.Search1[277],
     Desc = "##44726416",
     GotoMode = Table_AddWay_t.GotoMode[139]
+  },
+  [6584] = {
+    id = 6584,
+    NameEn = "##44726415",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[278],
+    Desc = "##45908069",
+    GotoMode = Table_AddWay_t.GotoMode[140],
+    BeginTime = "2026-07-09 05:00:00"
+  },
+  [6585] = {
+    id = 6585,
+    NameEn = "##44726415",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[279],
+    Desc = "##45908070",
+    GotoMode = Table_AddWay_t.GotoMode[141],
+    BeginTime = "2026-10-29 05:00:00"
   },
   [6586] = {
     id = 6586,
@@ -17742,9 +18582,9 @@ Table_AddWay = {
     Icon = "elf_icon_01",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[271],
+    Search1 = Table_AddWay_t.Search1[280],
     Desc = "##44726421",
-    GotoMode = Table_AddWay_t.GotoMode[140]
+    GotoMode = Table_AddWay_t.GotoMode[142]
   },
   [6587] = {
     id = 6587,
@@ -17752,9 +18592,9 @@ Table_AddWay = {
     Icon = "elf_icon_01",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[272],
+    Search1 = Table_AddWay_t.Search1[281],
     Desc = "##44726422",
-    GotoMode = Table_AddWay_t.GotoMode[140]
+    GotoMode = Table_AddWay_t.GotoMode[142]
   },
   [6588] = {
     id = 6588,
@@ -17762,9 +18602,9 @@ Table_AddWay = {
     Icon = "elf_icon_01",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[273],
+    Search1 = Table_AddWay_t.Search1[282],
     Desc = "##44726423",
-    GotoMode = Table_AddWay_t.GotoMode[140]
+    GotoMode = Table_AddWay_t.GotoMode[142]
   },
   [6589] = {
     id = 6589,
@@ -17772,9 +18612,9 @@ Table_AddWay = {
     Icon = "elf_icon_01",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[274],
+    Search1 = Table_AddWay_t.Search1[283],
     Desc = "##44726424",
-    GotoMode = Table_AddWay_t.GotoMode[140]
+    GotoMode = Table_AddWay_t.GotoMode[142]
   },
   [6590] = {
     id = 6590,
@@ -17782,9 +18622,9 @@ Table_AddWay = {
     Icon = "elf_icon_01",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[275],
+    Search1 = Table_AddWay_t.Search1[284],
     Desc = "##44726425",
-    GotoMode = Table_AddWay_t.GotoMode[140]
+    GotoMode = Table_AddWay_t.GotoMode[142]
   },
   [6591] = {
     id = 6591,
@@ -17792,9 +18632,9 @@ Table_AddWay = {
     Icon = "elf_icon_01",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[276],
+    Search1 = Table_AddWay_t.Search1[285],
     Desc = "##44726426",
-    GotoMode = Table_AddWay_t.GotoMode[140]
+    GotoMode = Table_AddWay_t.GotoMode[142]
   },
   [6592] = {
     id = 6592,
@@ -17802,7 +18642,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[328],
+    Search1 = Table_AddWay_t.Search1[241],
     Desc = "##44726428"
   },
   [6593] = {
@@ -17811,7 +18651,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[278],
+    Search1 = Table_AddWay_t.Search1[287],
     Desc = "##44726428"
   },
   [6594] = {
@@ -17820,7 +18660,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[312],
+    Search1 = Table_AddWay_t.Search1[242],
     Desc = "##44726428"
   },
   [6595] = {
@@ -17829,7 +18669,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[326],
+    Search1 = Table_AddWay_t.Search1[393],
     Desc = "##44726428"
   },
   [6596] = {
@@ -17838,7 +18678,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[325],
+    Search1 = Table_AddWay_t.Search1[392],
     Desc = "##44726428"
   },
   [6597] = {
@@ -17847,7 +18687,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[282],
+    Search1 = Table_AddWay_t.Search1[291],
     Desc = "##44726428"
   },
   [6598] = {
@@ -17856,7 +18696,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[283],
+    Search1 = Table_AddWay_t.Search1[292],
     Desc = "##44726428"
   },
   [6599] = {
@@ -17865,7 +18705,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[324],
+    Search1 = Table_AddWay_t.Search1[391],
     Desc = "##44726428"
   },
   [6600] = {
@@ -17874,7 +18714,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[313],
+    Search1 = Table_AddWay_t.Search1[250],
     Desc = "##44726428"
   },
   [6601] = {
@@ -17883,7 +18723,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[314],
+    Search1 = Table_AddWay_t.Search1[272],
     Desc = "##44726428"
   },
   [6602] = {
@@ -17892,7 +18732,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[315],
+    Search1 = Table_AddWay_t.Search1[276],
     Desc = "##44726428"
   },
   [6603] = {
@@ -17901,7 +18741,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[320],
+    Search1 = Table_AddWay_t.Search1[387],
     Desc = "##44726428"
   },
   [6604] = {
@@ -17910,7 +18750,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[319],
+    Search1 = Table_AddWay_t.Search1[386],
     Desc = "##44726428"
   },
   [6605] = {
@@ -17919,7 +18759,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[318],
+    Search1 = Table_AddWay_t.Search1[385],
     Desc = "##44726428"
   },
   [6606] = {
@@ -17928,7 +18768,7 @@ Table_AddWay = {
     Icon = "icon_2",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[317],
+    Search1 = Table_AddWay_t.Search1[384],
     Desc = "##44726428"
   },
   [6607] = {
@@ -17937,7 +18777,7 @@ Table_AddWay = {
     Icon = "photo",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[316],
+    Search1 = Table_AddWay_t.Search1[383],
     Desc = "##44726458"
   },
   [6608] = {
@@ -17946,7 +18786,7 @@ Table_AddWay = {
     Icon = "photo",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[293],
+    Search1 = Table_AddWay_t.Search1[302],
     Desc = "##44726458"
   },
   [6609] = {
@@ -17955,7 +18795,7 @@ Table_AddWay = {
     Icon = "photo",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[294],
+    Search1 = Table_AddWay_t.Search1[303],
     Desc = "##44726458"
   },
   [6610] = {
@@ -17964,7 +18804,7 @@ Table_AddWay = {
     Icon = "photo",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[295],
+    Search1 = Table_AddWay_t.Search1[304],
     Desc = "##44726458"
   },
   [6611] = {
@@ -17973,7 +18813,7 @@ Table_AddWay = {
     Icon = "photo",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[296],
+    Search1 = Table_AddWay_t.Search1[305],
     Desc = "##44726458"
   },
   [6612] = {
@@ -17982,7 +18822,7 @@ Table_AddWay = {
     Icon = "photo",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[297],
+    Search1 = Table_AddWay_t.Search1[306],
     Desc = "##44726458"
   },
   [6613] = {
@@ -17991,7 +18831,7 @@ Table_AddWay = {
     Icon = "photo",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[298],
+    Search1 = Table_AddWay_t.Search1[307],
     Desc = "##44726458"
   },
   [6614] = {
@@ -18000,7 +18840,7 @@ Table_AddWay = {
     Icon = "photo",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[299],
+    Search1 = Table_AddWay_t.Search1[308],
     Desc = "##44726458"
   },
   [6615] = {
@@ -18009,8 +18849,560 @@ Table_AddWay = {
     Icon = "photo",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[300],
+    Search1 = Table_AddWay_t.Search1[309],
     Desc = "##44726474"
+  },
+  [6616] = {
+    id = 6616,
+    NameEn = "##2846519",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[310],
+    Desc = "##45908071",
+    GotoMode = Table_AddWay_t.GotoMode[142]
+  },
+  [6617] = {
+    id = 6617,
+    NameEn = "##2846519",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[311],
+    Desc = "##45908072",
+    GotoMode = Table_AddWay_t.GotoMode[142]
+  },
+  [6618] = {
+    id = 6618,
+    NameEn = "##2846519",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[312],
+    Desc = "##45908073",
+    GotoMode = Table_AddWay_t.GotoMode[142]
+  },
+  [6619] = {
+    id = 6619,
+    NameEn = "##2846519",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[313],
+    Desc = "##45908074",
+    GotoMode = Table_AddWay_t.GotoMode[142]
+  },
+  [6620] = {
+    id = 6620,
+    NameEn = "##2846519",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[314],
+    Desc = "##45908075",
+    GotoMode = Table_AddWay_t.GotoMode[142]
+  },
+  [6621] = {
+    id = 6621,
+    NameEn = "##2846519",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[315],
+    Desc = "##45908076",
+    GotoMode = Table_AddWay_t.GotoMode[142]
+  },
+  [6622] = {
+    id = 6622,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[316],
+    Desc = "##45908078"
+  },
+  [6623] = {
+    id = 6623,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[317],
+    Desc = "##45908078"
+  },
+  [6624] = {
+    id = 6624,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[318],
+    Desc = "##45908078"
+  },
+  [6625] = {
+    id = 6625,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[319],
+    Desc = "##45908078"
+  },
+  [6626] = {
+    id = 6626,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[320],
+    Desc = "##45908078"
+  },
+  [6627] = {
+    id = 6627,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[321],
+    Desc = "##45908078"
+  },
+  [6628] = {
+    id = 6628,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[322],
+    Desc = "##45908078"
+  },
+  [6629] = {
+    id = 6629,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[323],
+    Desc = "##45908078"
+  },
+  [6630] = {
+    id = 6630,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[324],
+    Desc = "##45908078"
+  },
+  [6631] = {
+    id = 6631,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[325],
+    Desc = "##45908078"
+  },
+  [6632] = {
+    id = 6632,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[326],
+    Desc = "##45908078"
+  },
+  [6633] = {
+    id = 6633,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[327],
+    Desc = "##45908078"
+  },
+  [6634] = {
+    id = 6634,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[328],
+    Desc = "##45908078"
+  },
+  [6635] = {
+    id = 6635,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[329],
+    Desc = "##45908078"
+  },
+  [6636] = {
+    id = 6636,
+    NameEn = "##45908077",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[330],
+    Desc = "##45908078"
+  },
+  [6637] = {
+    id = 6637,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[382],
+    Desc = "##45908107"
+  },
+  [6638] = {
+    id = 6638,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[381],
+    Desc = "##45908107"
+  },
+  [6639] = {
+    id = 6639,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[380],
+    Desc = "##45908107"
+  },
+  [6640] = {
+    id = 6640,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[375],
+    Desc = "##45908107"
+  },
+  [6641] = {
+    id = 6641,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[376],
+    Desc = "##45908107"
+  },
+  [6642] = {
+    id = 6642,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[332],
+    Desc = "##45908107"
+  },
+  [6643] = {
+    id = 6643,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[333],
+    Desc = "##45908107"
+  },
+  [6644] = {
+    id = 6644,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[334],
+    Desc = "##45908107"
+  },
+  [6645] = {
+    id = 6645,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[335],
+    Desc = "##45908115"
+  },
+  [6646] = {
+    id = 6646,
+    NameEn = "##2846519",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[336],
+    Desc = "##45908116",
+    GotoMode = Table_AddWay_t.GotoMode[142]
+  },
+  [6647] = {
+    id = 6647,
+    NameEn = "##2846519",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[337],
+    Desc = "##45908117",
+    GotoMode = Table_AddWay_t.GotoMode[142]
+  },
+  [6648] = {
+    id = 6648,
+    NameEn = "##2846519",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[338],
+    Desc = "##45908118",
+    GotoMode = Table_AddWay_t.GotoMode[142]
+  },
+  [6649] = {
+    id = 6649,
+    NameEn = "##2846519",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[339],
+    Desc = "##45908119",
+    GotoMode = Table_AddWay_t.GotoMode[142]
+  },
+  [6650] = {
+    id = 6650,
+    NameEn = "##2846519",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[340],
+    Desc = "##45908120",
+    GotoMode = Table_AddWay_t.GotoMode[142]
+  },
+  [6651] = {
+    id = 6651,
+    NameEn = "##2846519",
+    Icon = "elf_icon_01",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[341],
+    Desc = "##45908121",
+    GotoMode = Table_AddWay_t.GotoMode[142]
+  },
+  [6652] = {
+    id = 6652,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[342],
+    Desc = "##45908123"
+  },
+  [6653] = {
+    id = 6653,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[343],
+    Desc = "##45908123"
+  },
+  [6654] = {
+    id = 6654,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[344],
+    Desc = "##45908123"
+  },
+  [6655] = {
+    id = 6655,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[345],
+    Desc = "##45908123"
+  },
+  [6656] = {
+    id = 6656,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[346],
+    Desc = "##45908123"
+  },
+  [6657] = {
+    id = 6657,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[347],
+    Desc = "##45908123"
+  },
+  [6658] = {
+    id = 6658,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[348],
+    Desc = "##45908123"
+  },
+  [6659] = {
+    id = 6659,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[349],
+    Desc = "##45908123"
+  },
+  [6660] = {
+    id = 6660,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[350],
+    Desc = "##45908123"
+  },
+  [6661] = {
+    id = 6661,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[351],
+    Desc = "##45908123"
+  },
+  [6662] = {
+    id = 6662,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[352],
+    Desc = "##45908123"
+  },
+  [6663] = {
+    id = 6663,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[353],
+    Desc = "##45908123"
+  },
+  [6664] = {
+    id = 6664,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[354],
+    Desc = "##45908123"
+  },
+  [6665] = {
+    id = 6665,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[355],
+    Desc = "##45908123"
+  },
+  [6666] = {
+    id = 6666,
+    NameEn = "##45908122",
+    Icon = "icon_2",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[356],
+    Desc = "##45908123"
+  },
+  [6667] = {
+    id = 6667,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[357],
+    Desc = "##45912474"
+  },
+  [6668] = {
+    id = 6668,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[358],
+    Desc = "##45912474"
+  },
+  [6669] = {
+    id = 6669,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[359],
+    Desc = "##45912474"
+  },
+  [6670] = {
+    id = 6670,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[360],
+    Desc = "##45912474"
+  },
+  [6671] = {
+    id = 6671,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[361],
+    Desc = "##45912474"
+  },
+  [6672] = {
+    id = 6672,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[362],
+    Desc = "##45912474"
+  },
+  [6673] = {
+    id = 6673,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[363],
+    Desc = "##45912474"
+  },
+  [6674] = {
+    id = 6674,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[364],
+    Desc = "##45912474"
+  },
+  [6675] = {
+    id = 6675,
+    NameEn = "##44726457",
+    Icon = "photo",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[365],
+    Desc = "##45912482"
   },
   [6676] = {
     id = 6676,
@@ -18018,9 +19410,9 @@ Table_AddWay = {
     Icon = "Quest",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[302],
+    Search1 = Table_AddWay_t.Search1[366],
     Desc = "##45912483",
-    GotoMode = Table_AddWay_t.GotoMode[153]
+    GotoMode = Table_AddWay_t.GotoMode[155]
   },
   [6677] = {
     id = 6677,
@@ -18028,7 +19420,7 @@ Table_AddWay = {
     Icon = "map_icon_jingying03",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[302],
+    Search1 = Table_AddWay_t.Search1[366],
     Desc = "##45912484"
   },
   [6678] = {
@@ -18037,7 +19429,7 @@ Table_AddWay = {
     Icon = "elf_icon_01",
     Type = 2,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[302],
+    Search1 = Table_AddWay_t.Search1[366],
     Desc = "##45912485"
   },
   [6679] = {
@@ -18045,9 +19437,9 @@ Table_AddWay = {
     NameEn = "##45917962",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[303],
+    Search1 = Table_AddWay_t.Search1[367],
     Desc = "##45919993",
-    GotoMode = Table_AddWay_t.GotoMode[154]
+    GotoMode = Table_AddWay_t.GotoMode[156]
   },
   [6680] = {
     id = 6680,
@@ -18055,9 +19447,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[304],
+    Search1 = Table_AddWay_t.Search1[368],
     Desc = "##45919995",
-    GotoMode = Table_AddWay_t.GotoMode[155]
+    GotoMode = Table_AddWay_t.GotoMode[157]
   },
   [6681] = {
     id = 6681,
@@ -18065,9 +19457,9 @@ Table_AddWay = {
     Icon = "n_seabutterfly",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[305],
+    Search1 = Table_AddWay_t.Search1[369],
     Desc = "##44716044",
-    GotoMode = Table_AddWay_t.GotoMode[140]
+    GotoMode = Table_AddWay_t.GotoMode[142]
   },
   [6682] = {
     id = 6682,
@@ -18075,9 +19467,9 @@ Table_AddWay = {
     Icon = "act_pve",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[306],
+    Search1 = Table_AddWay_t.Search1[370],
     Desc = "##45910367",
-    GotoMode = Table_AddWay_t.GotoMode[156]
+    GotoMode = Table_AddWay_t.GotoMode[158]
   },
   [6683] = {
     id = 6683,
@@ -18085,9 +19477,9 @@ Table_AddWay = {
     Icon = "act_pve",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[307],
+    Search1 = Table_AddWay_t.Search1[371],
     Desc = "##45910367",
-    GotoMode = Table_AddWay_t.GotoMode[156]
+    GotoMode = Table_AddWay_t.GotoMode[158]
   },
   [6684] = {
     id = 6684,
@@ -18095,9 +19487,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[308],
+    Search1 = Table_AddWay_t.Search1[372],
     Desc = "##42532774",
-    GotoMode = Table_AddWay_t.GotoMode[157],
+    GotoMode = Table_AddWay_t.GotoMode[159],
     BeginTime = "2026-06-08 05:00",
     EndTime = "2026-06-22 05:00"
   },
@@ -18107,7 +19499,7 @@ Table_AddWay = {
     Icon = "blessing_3",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[308],
+    Search1 = Table_AddWay_t.Search1[372],
     Desc = "##42532775",
     GotoMode = Table_AddWay_t.GotoMode[102],
     BeginTime = "2026-06-08 05:00",
@@ -18119,9 +19511,9 @@ Table_AddWay = {
     Icon = "oracle",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[308],
+    Search1 = Table_AddWay_t.Search1[372],
     Desc = "##42532776",
-    GotoMode = Table_AddWay_t.GotoMode[158],
+    GotoMode = Table_AddWay_t.GotoMode[160],
     BeginTime = "2026-06-08 05:00",
     EndTime = "2026-06-22 05:00"
   },
@@ -18131,9 +19523,9 @@ Table_AddWay = {
     Icon = "item_3004829",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[309],
+    Search1 = Table_AddWay_t.Search1[373],
     Desc = "##42532771",
-    GotoMode = Table_AddWay_t.GotoMode[159],
+    GotoMode = Table_AddWay_t.GotoMode[161],
     BeginTime = "2026-06-08 05:00",
     EndTime = "2026-06-22 05:00"
   },
@@ -18143,9 +19535,9 @@ Table_AddWay = {
     Icon = "oracle",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[309],
+    Search1 = Table_AddWay_t.Search1[373],
     Desc = "##42532776",
-    GotoMode = Table_AddWay_t.GotoMode[158],
+    GotoMode = Table_AddWay_t.GotoMode[160],
     BeginTime = "2026-06-08 05:00",
     EndTime = "2026-06-22 05:00"
   },
@@ -18155,9 +19547,9 @@ Table_AddWay = {
     Icon = "item_3004829",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[310],
+    Search1 = Table_AddWay_t.Search1[374],
     Desc = "##42532771",
-    GotoMode = Table_AddWay_t.GotoMode[159],
+    GotoMode = Table_AddWay_t.GotoMode[161],
     BeginTime = "2026-06-08 05:00",
     EndTime = "2026-06-22 05:00"
   },
@@ -18167,16 +19559,36 @@ Table_AddWay = {
     Icon = "act_pve",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[311],
+    Search1 = Table_AddWay_t.Search1[377],
     Desc = "##45915232",
-    GotoMode = Table_AddWay_t.GotoMode[160]
+    GotoMode = Table_AddWay_t.GotoMode[162]
+  },
+  [6693] = {
+    id = 6693,
+    NameEn = "##46115110",
+    Icon = "act_pve",
+    Type = 2,
+    Materialdisplay = 0,
+    Search1 = Table_AddWay_t.Search1[378],
+    Desc = "##46115111",
+    GotoMode = Table_AddWay_t.GotoMode[163]
+  },
+  [6694] = {
+    id = 6694,
+    NameEn = "##45939775",
+    Icon = "ResearcherBagot_ice",
+    Type = 4,
+    Materialdisplay = 0,
+    Search1 = Table_AddWay_t.Search1[379],
+    Desc = "##46115793",
+    GotoMode = Table_AddWay_t.GotoMode[142]
   },
   [6703] = {
     id = 6703,
     NameEn = "##1235274",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[321],
+    Search1 = Table_AddWay_t.Search1[388],
     Desc = "##45926286"
   },
   [6704] = {
@@ -18185,9 +19597,9 @@ Table_AddWay = {
     Icon = "Fake_Juncea",
     Type = 4,
     Materialdisplay = 0,
-    Search1 = Table_AddWay_t.Search1[322],
+    Search1 = Table_AddWay_t.Search1[389],
     Desc = "##45925011",
-    GotoMode = Table_AddWay_t.GotoMode[140]
+    GotoMode = Table_AddWay_t.GotoMode[142]
   },
   [6705] = {
     id = 6705,
@@ -18195,9 +19607,9 @@ Table_AddWay = {
     Icon = "Shopping",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[323],
+    Search1 = Table_AddWay_t.Search1[390],
     Desc = "##45919995",
-    GotoMode = Table_AddWay_t.GotoMode[155]
+    GotoMode = Table_AddWay_t.GotoMode[157]
   },
   [6709] = {
     id = 6709,
@@ -18205,9 +19617,39 @@ Table_AddWay = {
     Icon = "act_pve",
     Type = 2,
     Materialdisplay = 1,
-    Search1 = Table_AddWay_t.Search1[327],
+    Search1 = Table_AddWay_t.Search1[394],
     Desc = "##45926280",
-    GotoMode = Table_AddWay_t.GotoMode[161]
+    GotoMode = Table_AddWay_t.GotoMode[164]
+  },
+  [6710] = {
+    id = 6710,
+    NameEn = "##46115114",
+    Icon = "act_pve",
+    Type = 2,
+    Materialdisplay = 0,
+    Search1 = Table_AddWay_t.Search1[395],
+    Desc = "##46115115",
+    GotoMode = Table_AddWay_t.GotoMode[163]
+  },
+  [6711] = {
+    id = 6711,
+    NameEn = "##46115112",
+    Icon = "act_pve",
+    Type = 2,
+    Materialdisplay = 0,
+    Search1 = Table_AddWay_t.Search1[396],
+    Desc = "##46115113",
+    GotoMode = Table_AddWay_t.GotoMode[163]
+  },
+  [6712] = {
+    id = 6712,
+    NameEn = "##45913605",
+    Icon = "SnowParty",
+    Type = 2,
+    Materialdisplay = 1,
+    Search1 = Table_AddWay_t.Search1[397],
+    Desc = "##46115274",
+    GotoMode = Table_AddWay_t.GotoMode[165]
   }
 }
 local cell_mt = {

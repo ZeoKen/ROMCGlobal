@@ -99,6 +99,9 @@ function ServiceChatCmdAutoProxy:onRegister()
   self:Listen(59, 31, function(data)
     self:RecvCheckRecvRedPacketChatCmd(data)
   end)
+  self:Listen(59, 32, function(data)
+    self:RecvQueryPrintItem(data)
+  end)
 end
 
 function ServiceChatCmdAutoProxy:CallQueryItemData(guid, data)
@@ -4263,7 +4266,7 @@ function ServiceChatCmdAutoProxy:CallBarrageMsgChatCmd(str, msgpos, clr, speed, 
   end
 end
 
-function ServiceChatCmdAutoProxy:CallChatCmd(channel, str, desID, voice, voicetime, msgid, msgover, photo, expression, bshieldword, items, love_confession)
+function ServiceChatCmdAutoProxy:CallChatCmd(channel, str, desID, voice, voicetime, msgid, msgover, photo, expression, bshieldword, items, love_confession, print_item)
   if not NetConfig.PBC then
     local msg = ChatCmd_pb.ChatCmd()
     if channel ~= nil then
@@ -4403,6 +4406,82 @@ function ServiceChatCmdAutoProxy:CallChatCmd(channel, str, desID, voice, voiceti
     end
     if love_confession ~= nil then
       msg.love_confession = love_confession
+    end
+    if print_item ~= nil and print_item.id ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      msg.print_item.id = print_item.id
+    end
+    if print_item ~= nil and print_item.datas ~= nil then
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      if msg.print_item.datas == nil then
+        msg.print_item.datas = {}
+      end
+      for i = 1, #print_item.datas do
+        table.insert(msg.print_item.datas, print_item.datas[i])
+      end
+    end
+    if print_item ~= nil and print_item.furns ~= nil then
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      if msg.print_item.furns == nil then
+        msg.print_item.furns = {}
+      end
+      for i = 1, #print_item.furns do
+        table.insert(msg.print_item.furns, print_item.furns[i])
+      end
+    end
+    if print_item ~= nil and print_item.accid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      msg.print_item.accid = print_item.accid
+    end
+    if print_item ~= nil and print_item.etype ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      msg.print_item.etype = print_item.etype
+    end
+    if print_item ~= nil and print_item.is_offical ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      msg.print_item.is_offical = print_item.is_offical
+    end
+    if print_item ~= nil and print_item.charid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      msg.print_item.charid = print_item.charid
+    end
+    if print_item ~= nil and print_item.timestamp ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      msg.print_item.timestamp = print_item.timestamp
     end
     self:SendProto(msg)
   else
@@ -4546,11 +4625,87 @@ function ServiceChatCmdAutoProxy:CallChatCmd(channel, str, desID, voice, voiceti
     if love_confession ~= nil then
       msgParam.love_confession = love_confession
     end
+    if print_item ~= nil and print_item.id ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      msgParam.print_item.id = print_item.id
+    end
+    if print_item ~= nil and print_item.datas ~= nil then
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      if msgParam.print_item.datas == nil then
+        msgParam.print_item.datas = {}
+      end
+      for i = 1, #print_item.datas do
+        table.insert(msgParam.print_item.datas, print_item.datas[i])
+      end
+    end
+    if print_item ~= nil and print_item.furns ~= nil then
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      if msgParam.print_item.furns == nil then
+        msgParam.print_item.furns = {}
+      end
+      for i = 1, #print_item.furns do
+        table.insert(msgParam.print_item.furns, print_item.furns[i])
+      end
+    end
+    if print_item ~= nil and print_item.accid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      msgParam.print_item.accid = print_item.accid
+    end
+    if print_item ~= nil and print_item.etype ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      msgParam.print_item.etype = print_item.etype
+    end
+    if print_item ~= nil and print_item.is_offical ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      msgParam.print_item.is_offical = print_item.is_offical
+    end
+    if print_item ~= nil and print_item.charid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      msgParam.print_item.charid = print_item.charid
+    end
+    if print_item ~= nil and print_item.timestamp ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      msgParam.print_item.timestamp = print_item.timestamp
+    end
     self:SendProto2(msgId, msgParam)
   end
 end
 
-function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, frame, baselevel, voiceid, voicetime, hair, haircolor, body, appellation, msgid, head, face, mouth, eye, roomid, snowroomid, portrait_frame, serverid, channel, rolejob, gender, blink, str, name, guildname, sysmsgid, photo, expression, redpacketret, isreturnuser, chat_frame, items, share_data, love_confession, postcard, timestamp, recall_time, head_fashion)
+function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, frame, baselevel, voiceid, voicetime, hair, haircolor, body, appellation, msgid, head, face, mouth, eye, roomid, snowroomid, portrait_frame, serverid, channel, rolejob, gender, blink, str, name, guildname, sysmsgid, photo, expression, redpacketret, isreturnuser, chat_frame, items, share_data, love_confession, postcard, timestamp, recall_time, head_fashion, snow_party, print_item)
   if not NetConfig.PBC then
     local msg = ChatCmd_pb.ChatRetCmd()
     if msg == nil then
@@ -4970,6 +5125,136 @@ function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, f
     end
     if head_fashion ~= nil then
       msg.head_fashion = head_fashion
+    end
+    if snow_party ~= nil and snow_party.launch_name ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.snow_party == nil then
+        msg.snow_party = {}
+      end
+      msg.snow_party.launch_name = snow_party.launch_name
+    end
+    if snow_party ~= nil and snow_party.serverid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.snow_party == nil then
+        msg.snow_party = {}
+      end
+      msg.snow_party.serverid = snow_party.serverid
+    end
+    if snow_party ~= nil and snow_party.zoneid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.snow_party == nil then
+        msg.snow_party = {}
+      end
+      msg.snow_party.zoneid = snow_party.zoneid
+    end
+    if snow_party ~= nil and snow_party.activity_name ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.snow_party == nil then
+        msg.snow_party = {}
+      end
+      msg.snow_party.activity_name = snow_party.activity_name
+    end
+    if snow_party ~= nil and snow_party.owner_count ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.snow_party == nil then
+        msg.snow_party = {}
+      end
+      msg.snow_party.owner_count = snow_party.owner_count
+    end
+    if snow_party ~= nil and snow_party.max_count ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.snow_party == nil then
+        msg.snow_party = {}
+      end
+      msg.snow_party.max_count = snow_party.max_count
+    end
+    if print_item ~= nil and print_item.id ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      msg.print_item.id = print_item.id
+    end
+    if print_item ~= nil and print_item.datas ~= nil then
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      if msg.print_item.datas == nil then
+        msg.print_item.datas = {}
+      end
+      for i = 1, #print_item.datas do
+        table.insert(msg.print_item.datas, print_item.datas[i])
+      end
+    end
+    if print_item ~= nil and print_item.furns ~= nil then
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      if msg.print_item.furns == nil then
+        msg.print_item.furns = {}
+      end
+      for i = 1, #print_item.furns do
+        table.insert(msg.print_item.furns, print_item.furns[i])
+      end
+    end
+    if print_item ~= nil and print_item.accid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      msg.print_item.accid = print_item.accid
+    end
+    if print_item ~= nil and print_item.etype ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      msg.print_item.etype = print_item.etype
+    end
+    if print_item ~= nil and print_item.is_offical ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      msg.print_item.is_offical = print_item.is_offical
+    end
+    if print_item ~= nil and print_item.charid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      msg.print_item.charid = print_item.charid
+    end
+    if print_item ~= nil and print_item.timestamp ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.print_item == nil then
+        msg.print_item = {}
+      end
+      msg.print_item.timestamp = print_item.timestamp
     end
     self:SendProto(msg)
   else
@@ -5393,6 +5678,136 @@ function ServiceChatCmdAutoProxy:CallChatRetCmd(accid, id, targetid, portrait, f
     if head_fashion ~= nil then
       msgParam.head_fashion = head_fashion
     end
+    if snow_party ~= nil and snow_party.launch_name ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.snow_party == nil then
+        msgParam.snow_party = {}
+      end
+      msgParam.snow_party.launch_name = snow_party.launch_name
+    end
+    if snow_party ~= nil and snow_party.serverid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.snow_party == nil then
+        msgParam.snow_party = {}
+      end
+      msgParam.snow_party.serverid = snow_party.serverid
+    end
+    if snow_party ~= nil and snow_party.zoneid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.snow_party == nil then
+        msgParam.snow_party = {}
+      end
+      msgParam.snow_party.zoneid = snow_party.zoneid
+    end
+    if snow_party ~= nil and snow_party.activity_name ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.snow_party == nil then
+        msgParam.snow_party = {}
+      end
+      msgParam.snow_party.activity_name = snow_party.activity_name
+    end
+    if snow_party ~= nil and snow_party.owner_count ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.snow_party == nil then
+        msgParam.snow_party = {}
+      end
+      msgParam.snow_party.owner_count = snow_party.owner_count
+    end
+    if snow_party ~= nil and snow_party.max_count ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.snow_party == nil then
+        msgParam.snow_party = {}
+      end
+      msgParam.snow_party.max_count = snow_party.max_count
+    end
+    if print_item ~= nil and print_item.id ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      msgParam.print_item.id = print_item.id
+    end
+    if print_item ~= nil and print_item.datas ~= nil then
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      if msgParam.print_item.datas == nil then
+        msgParam.print_item.datas = {}
+      end
+      for i = 1, #print_item.datas do
+        table.insert(msgParam.print_item.datas, print_item.datas[i])
+      end
+    end
+    if print_item ~= nil and print_item.furns ~= nil then
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      if msgParam.print_item.furns == nil then
+        msgParam.print_item.furns = {}
+      end
+      for i = 1, #print_item.furns do
+        table.insert(msgParam.print_item.furns, print_item.furns[i])
+      end
+    end
+    if print_item ~= nil and print_item.accid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      msgParam.print_item.accid = print_item.accid
+    end
+    if print_item ~= nil and print_item.etype ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      msgParam.print_item.etype = print_item.etype
+    end
+    if print_item ~= nil and print_item.is_offical ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      msgParam.print_item.is_offical = print_item.is_offical
+    end
+    if print_item ~= nil and print_item.charid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      msgParam.print_item.charid = print_item.charid
+    end
+    if print_item ~= nil and print_item.timestamp ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.print_item == nil then
+        msgParam.print_item = {}
+      end
+      msgParam.print_item.timestamp = print_item.timestamp
+    end
     self:SendProto2(msgId, msgParam)
   end
 end
@@ -5709,6 +6124,82 @@ function ServiceChatCmdAutoProxy:CallChatSelfNtf(chat)
       end
       msg.chat.love_confession = chat.love_confession
     end
+    if chat.print_item ~= nil and chat.print_item.id ~= nil then
+      if msg.chat == nil then
+        msg.chat = {}
+      end
+      if msg.chat.print_item == nil then
+        msg.chat.print_item = {}
+      end
+      msg.chat.print_item.id = chat.print_item.id
+    end
+    if chat ~= nil and chat.print_item.datas ~= nil then
+      if msg.chat.print_item == nil then
+        msg.chat.print_item = {}
+      end
+      if msg.chat.print_item.datas == nil then
+        msg.chat.print_item.datas = {}
+      end
+      for i = 1, #chat.print_item.datas do
+        table.insert(msg.chat.print_item.datas, chat.print_item.datas[i])
+      end
+    end
+    if chat ~= nil and chat.print_item.furns ~= nil then
+      if msg.chat.print_item == nil then
+        msg.chat.print_item = {}
+      end
+      if msg.chat.print_item.furns == nil then
+        msg.chat.print_item.furns = {}
+      end
+      for i = 1, #chat.print_item.furns do
+        table.insert(msg.chat.print_item.furns, chat.print_item.furns[i])
+      end
+    end
+    if chat.print_item ~= nil and chat.print_item.accid ~= nil then
+      if msg.chat == nil then
+        msg.chat = {}
+      end
+      if msg.chat.print_item == nil then
+        msg.chat.print_item = {}
+      end
+      msg.chat.print_item.accid = chat.print_item.accid
+    end
+    if chat.print_item ~= nil and chat.print_item.etype ~= nil then
+      if msg.chat == nil then
+        msg.chat = {}
+      end
+      if msg.chat.print_item == nil then
+        msg.chat.print_item = {}
+      end
+      msg.chat.print_item.etype = chat.print_item.etype
+    end
+    if chat.print_item ~= nil and chat.print_item.is_offical ~= nil then
+      if msg.chat == nil then
+        msg.chat = {}
+      end
+      if msg.chat.print_item == nil then
+        msg.chat.print_item = {}
+      end
+      msg.chat.print_item.is_offical = chat.print_item.is_offical
+    end
+    if chat.print_item ~= nil and chat.print_item.charid ~= nil then
+      if msg.chat == nil then
+        msg.chat = {}
+      end
+      if msg.chat.print_item == nil then
+        msg.chat.print_item = {}
+      end
+      msg.chat.print_item.charid = chat.print_item.charid
+    end
+    if chat.print_item ~= nil and chat.print_item.timestamp ~= nil then
+      if msg.chat == nil then
+        msg.chat = {}
+      end
+      if msg.chat.print_item == nil then
+        msg.chat.print_item = {}
+      end
+      msg.chat.print_item.timestamp = chat.print_item.timestamp
+    end
     self:SendProto(msg)
   else
     local msgId = ProtoReqInfoList.ChatSelfNtf.id
@@ -5916,6 +6407,82 @@ function ServiceChatCmdAutoProxy:CallChatSelfNtf(chat)
         msgParam.chat = {}
       end
       msgParam.chat.love_confession = chat.love_confession
+    end
+    if chat.print_item ~= nil and chat.print_item.id ~= nil then
+      if msgParam.chat == nil then
+        msgParam.chat = {}
+      end
+      if msgParam.chat.print_item == nil then
+        msgParam.chat.print_item = {}
+      end
+      msgParam.chat.print_item.id = chat.print_item.id
+    end
+    if chat ~= nil and chat.print_item.datas ~= nil then
+      if msgParam.chat.print_item == nil then
+        msgParam.chat.print_item = {}
+      end
+      if msgParam.chat.print_item.datas == nil then
+        msgParam.chat.print_item.datas = {}
+      end
+      for i = 1, #chat.print_item.datas do
+        table.insert(msgParam.chat.print_item.datas, chat.print_item.datas[i])
+      end
+    end
+    if chat ~= nil and chat.print_item.furns ~= nil then
+      if msgParam.chat.print_item == nil then
+        msgParam.chat.print_item = {}
+      end
+      if msgParam.chat.print_item.furns == nil then
+        msgParam.chat.print_item.furns = {}
+      end
+      for i = 1, #chat.print_item.furns do
+        table.insert(msgParam.chat.print_item.furns, chat.print_item.furns[i])
+      end
+    end
+    if chat.print_item ~= nil and chat.print_item.accid ~= nil then
+      if msgParam.chat == nil then
+        msgParam.chat = {}
+      end
+      if msgParam.chat.print_item == nil then
+        msgParam.chat.print_item = {}
+      end
+      msgParam.chat.print_item.accid = chat.print_item.accid
+    end
+    if chat.print_item ~= nil and chat.print_item.etype ~= nil then
+      if msgParam.chat == nil then
+        msgParam.chat = {}
+      end
+      if msgParam.chat.print_item == nil then
+        msgParam.chat.print_item = {}
+      end
+      msgParam.chat.print_item.etype = chat.print_item.etype
+    end
+    if chat.print_item ~= nil and chat.print_item.is_offical ~= nil then
+      if msgParam.chat == nil then
+        msgParam.chat = {}
+      end
+      if msgParam.chat.print_item == nil then
+        msgParam.chat.print_item = {}
+      end
+      msgParam.chat.print_item.is_offical = chat.print_item.is_offical
+    end
+    if chat.print_item ~= nil and chat.print_item.charid ~= nil then
+      if msgParam.chat == nil then
+        msgParam.chat = {}
+      end
+      if msgParam.chat.print_item == nil then
+        msgParam.chat.print_item = {}
+      end
+      msgParam.chat.print_item.charid = chat.print_item.charid
+    end
+    if chat.print_item ~= nil and chat.print_item.timestamp ~= nil then
+      if msgParam.chat == nil then
+        msgParam.chat = {}
+      end
+      if msgParam.chat.print_item == nil then
+        msgParam.chat.print_item = {}
+      end
+      msgParam.chat.print_item.timestamp = chat.print_item.timestamp
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -8285,6 +8852,175 @@ function ServiceChatCmdAutoProxy:CallCheckRecvRedPacketChatCmd(channel, red_pack
   end
 end
 
+function ServiceChatCmdAutoProxy:CallQueryPrintItem(item, cdn_path)
+  if not NetConfig.PBC then
+    local msg = ChatCmd_pb.QueryPrintItem()
+    if item ~= nil and item.id ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.item == nil then
+        msg.item = {}
+      end
+      msg.item.id = item.id
+    end
+    if item ~= nil and item.datas ~= nil then
+      if msg.item == nil then
+        msg.item = {}
+      end
+      if msg.item.datas == nil then
+        msg.item.datas = {}
+      end
+      for i = 1, #item.datas do
+        table.insert(msg.item.datas, item.datas[i])
+      end
+    end
+    if item ~= nil and item.furns ~= nil then
+      if msg.item == nil then
+        msg.item = {}
+      end
+      if msg.item.furns == nil then
+        msg.item.furns = {}
+      end
+      for i = 1, #item.furns do
+        table.insert(msg.item.furns, item.furns[i])
+      end
+    end
+    if item ~= nil and item.accid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.item == nil then
+        msg.item = {}
+      end
+      msg.item.accid = item.accid
+    end
+    if item ~= nil and item.etype ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.item == nil then
+        msg.item = {}
+      end
+      msg.item.etype = item.etype
+    end
+    if item ~= nil and item.is_offical ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.item == nil then
+        msg.item = {}
+      end
+      msg.item.is_offical = item.is_offical
+    end
+    if item ~= nil and item.charid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.item == nil then
+        msg.item = {}
+      end
+      msg.item.charid = item.charid
+    end
+    if item ~= nil and item.timestamp ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.item == nil then
+        msg.item = {}
+      end
+      msg.item.timestamp = item.timestamp
+    end
+    if cdn_path ~= nil then
+      msg.cdn_path = cdn_path
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.QueryPrintItem.id
+    local msgParam = {}
+    if item ~= nil and item.id ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      msgParam.item.id = item.id
+    end
+    if item ~= nil and item.datas ~= nil then
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      if msgParam.item.datas == nil then
+        msgParam.item.datas = {}
+      end
+      for i = 1, #item.datas do
+        table.insert(msgParam.item.datas, item.datas[i])
+      end
+    end
+    if item ~= nil and item.furns ~= nil then
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      if msgParam.item.furns == nil then
+        msgParam.item.furns = {}
+      end
+      for i = 1, #item.furns do
+        table.insert(msgParam.item.furns, item.furns[i])
+      end
+    end
+    if item ~= nil and item.accid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      msgParam.item.accid = item.accid
+    end
+    if item ~= nil and item.etype ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      msgParam.item.etype = item.etype
+    end
+    if item ~= nil and item.is_offical ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      msgParam.item.is_offical = item.is_offical
+    end
+    if item ~= nil and item.charid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      msgParam.item.charid = item.charid
+    end
+    if item ~= nil and item.timestamp ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.item == nil then
+        msgParam.item = {}
+      end
+      msgParam.item.timestamp = item.timestamp
+    end
+    if cdn_path ~= nil then
+      msgParam.cdn_path = cdn_path
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceChatCmdAutoProxy:RecvQueryItemData(data)
   self:Notify(ServiceEvent.ChatCmdQueryItemData, data)
 end
@@ -8397,6 +9133,10 @@ function ServiceChatCmdAutoProxy:RecvCheckRecvRedPacketChatCmd(data)
   self:Notify(ServiceEvent.ChatCmdCheckRecvRedPacketChatCmd, data)
 end
 
+function ServiceChatCmdAutoProxy:RecvQueryPrintItem(data)
+  self:Notify(ServiceEvent.ChatCmdQueryPrintItem, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.ChatCmdQueryItemData = "ServiceEvent_ChatCmdQueryItemData"
 ServiceEvent.ChatCmdPlayExpressionChatCmd = "ServiceEvent_ChatCmdPlayExpressionChatCmd"
@@ -8426,3 +9166,4 @@ ServiceEvent.ChatCmdShareMsgCmd = "ServiceEvent_ChatCmdShareMsgCmd"
 ServiceEvent.ChatCmdShareSuccessNofityCmd = "ServiceEvent_ChatCmdShareSuccessNofityCmd"
 ServiceEvent.ChatCmdQueryGuildRedPacketChatCmd = "ServiceEvent_ChatCmdQueryGuildRedPacketChatCmd"
 ServiceEvent.ChatCmdCheckRecvRedPacketChatCmd = "ServiceEvent_ChatCmdCheckRecvRedPacketChatCmd"
+ServiceEvent.ChatCmdQueryPrintItem = "ServiceEvent_ChatCmdQueryPrintItem"

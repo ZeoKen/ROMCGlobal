@@ -30,6 +30,9 @@ function NMyselfPlayer:Client_SetDirCmd(mode, dir, noSmooth)
 end
 
 function NMyselfPlayer:Client_MoveTo(pos, ignoreNavMesh, callback, callbackOwner, callbackCustom, range, customMoveActionName)
+  if self.snakeCoasterMove ~= nil and self.snakeCoasterMove.IsNpcDriveMode ~= nil and self.snakeCoasterMove:IsNpcDriveMode() then
+    return
+  end
   self.ai:PushCommand(FactoryAICMD.Me_GetMoveToCmd(pos, ignoreNavMesh, callback, callbackOwner, callbackCustom, range), self)
 end
 

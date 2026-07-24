@@ -15,6 +15,12 @@ function ServiceFuBenCmdAutoProxy:Init()
 end
 
 function ServiceFuBenCmdAutoProxy:onRegister()
+  self:Listen(11, 192, function(data)
+    self:RecvSnowRealmPartySyncFubenCmd(data)
+  end)
+  self:Listen(11, 193, function(data)
+    self:RecvSnowRealmDamageRankSyncFubenCmd(data)
+  end)
   self:Listen(11, 1, function(data)
     self:RecvTrackFuBenUserCmd(data)
   end)
@@ -531,6 +537,98 @@ function ServiceFuBenCmdAutoProxy:onRegister()
   self:Listen(11, 191, function(data)
     self:RecvGeffenMagicEnemyInfoQueryCmd(data)
   end)
+end
+
+function ServiceFuBenCmdAutoProxy:CallSnowRealmPartySyncFubenCmd(stage, transformed_user, total_user, killed_monster, total_monster, boss_guid, end_time, is_finish)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.SnowRealmPartySyncFubenCmd()
+    if stage ~= nil then
+      msg.stage = stage
+    end
+    if transformed_user ~= nil then
+      msg.transformed_user = transformed_user
+    end
+    if total_user ~= nil then
+      msg.total_user = total_user
+    end
+    if killed_monster ~= nil then
+      msg.killed_monster = killed_monster
+    end
+    if total_monster ~= nil then
+      msg.total_monster = total_monster
+    end
+    if boss_guid ~= nil then
+      msg.boss_guid = boss_guid
+    end
+    if end_time ~= nil then
+      msg.end_time = end_time
+    end
+    if is_finish ~= nil then
+      msg.is_finish = is_finish
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnowRealmPartySyncFubenCmd.id
+    local msgParam = {}
+    if stage ~= nil then
+      msgParam.stage = stage
+    end
+    if transformed_user ~= nil then
+      msgParam.transformed_user = transformed_user
+    end
+    if total_user ~= nil then
+      msgParam.total_user = total_user
+    end
+    if killed_monster ~= nil then
+      msgParam.killed_monster = killed_monster
+    end
+    if total_monster ~= nil then
+      msgParam.total_monster = total_monster
+    end
+    if boss_guid ~= nil then
+      msgParam.boss_guid = boss_guid
+    end
+    if end_time ~= nil then
+      msgParam.end_time = end_time
+    end
+    if is_finish ~= nil then
+      msgParam.is_finish = is_finish
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceFuBenCmdAutoProxy:CallSnowRealmDamageRankSyncFubenCmd(datas)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.SnowRealmDamageRankSyncFubenCmd()
+    if datas ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.datas == nil then
+        msg.datas = {}
+      end
+      for i = 1, #datas do
+        table.insert(msg.datas, datas[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnowRealmDamageRankSyncFubenCmd.id
+    local msgParam = {}
+    if datas ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.datas == nil then
+        msgParam.datas = {}
+      end
+      for i = 1, #datas do
+        table.insert(msgParam.datas, datas[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
 end
 
 function ServiceFuBenCmdAutoProxy:CallTrackFuBenUserCmd(data, dmapid, endtime)
@@ -8817,6 +8915,14 @@ function ServiceFuBenCmdAutoProxy:CallGeffenMagicEnemyInfoQueryCmd(enemy_infos, 
   end
 end
 
+function ServiceFuBenCmdAutoProxy:RecvSnowRealmPartySyncFubenCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdSnowRealmPartySyncFubenCmd, data)
+end
+
+function ServiceFuBenCmdAutoProxy:RecvSnowRealmDamageRankSyncFubenCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdSnowRealmDamageRankSyncFubenCmd, data)
+end
+
 function ServiceFuBenCmdAutoProxy:RecvTrackFuBenUserCmd(data)
   self:Notify(ServiceEvent.FuBenCmdTrackFuBenUserCmd, data)
 end
@@ -9506,6 +9612,8 @@ function ServiceFuBenCmdAutoProxy:RecvGeffenMagicEnemyInfoQueryCmd(data)
 end
 
 ServiceEvent = _G.ServiceEvent or {}
+ServiceEvent.FuBenCmdSnowRealmPartySyncFubenCmd = "ServiceEvent_FuBenCmdSnowRealmPartySyncFubenCmd"
+ServiceEvent.FuBenCmdSnowRealmDamageRankSyncFubenCmd = "ServiceEvent_FuBenCmdSnowRealmDamageRankSyncFubenCmd"
 ServiceEvent.FuBenCmdTrackFuBenUserCmd = "ServiceEvent_FuBenCmdTrackFuBenUserCmd"
 ServiceEvent.FuBenCmdFailFuBenUserCmd = "ServiceEvent_FuBenCmdFailFuBenUserCmd"
 ServiceEvent.FuBenCmdLeaveFuBenUserCmd = "ServiceEvent_FuBenCmdLeaveFuBenUserCmd"

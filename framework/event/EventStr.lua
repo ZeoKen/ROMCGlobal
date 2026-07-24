@@ -214,8 +214,8 @@ PVEEvent = {
   ElementRaid_ShutDown = "ElementRaid_ShutDown",
   DestroyAirShipRaid_Launch = "DestroyAirShipRaid_Launch",
   DestroyAirShipRaid_ShutDown = "DestroyAirShipRaid_ShutDown",
-  BageLab_Launch = "BageLab_Launch",
-  BageLab_ShutDown = "BageLab_ShutDown",
+  SnakeCoasterRaid_Launch = "SnakeCoasterRaid_Launch",
+  SnakeCoasterRaid_ShutDown = "SnakeCoasterRaid_ShutDown",
   DemoRaid_Launch = "DemoRaidRaid_Launch",
   DemoRaidRaid_Shutdown = "DemoRaidRaid_Shutdown",
   HeroJourney_Launch = "HeroJourney_Launch",
@@ -400,7 +400,9 @@ MyselfEvent = {
   MyPippiChange = "MyselfEvent_MyPippiChange",
   AsEquipChange = "MyselfEvent_AsEquipChange",
   RecallTimeChange = "MyselfEvent_RecallTimeChange",
-  SoulPuppetUpdate = "MyselfEvent_SoulPuppetUpdate"
+  SoulPuppetUpdate = "MyselfEvent_SoulPuppetUpdate",
+  CarryDownCharidUpdate = "MyselfEvent_CarryDownCharidUpdate",
+  OnFreeCameraRestoreDefault = "MyselfEvent_OnFreeCameraRestoreDefault"
 }
 ItemEvent = {
   ItemCmd = "ItemEvent_ItemCmd",
@@ -591,7 +593,9 @@ SkillEvent = {
   CheckSkillForbid = "SkillEvent_CheckSkillForbid",
   EnterWarehouse = "SkillEvent_EnterWarehouse",
   LeaveWarehouse = "SkillEvent_LeaveWarehouse",
-  BellCharge = "SkillEvent_BellCharge"
+  BellCharge = "SkillEvent_BellCharge",
+  CanBeCarriedAdd = "SkillEvent_CanBeCarriedAdd",
+  CanBeCarriedRemove = "SkillEvent_CanBeCarriedRemove"
 }
 QuestEvent = {
   QuestDelete = "QuestEvent_QuestDelete",
@@ -1706,4 +1710,15 @@ FakeDragonEvent = {
 }
 AsyncPvpRaidEvent = {
   SelectAffix = "AsyncPvpRaidEvent_SelectAffix"
+}
+SnakeCoasterEvent = {
+  StartCoaster = "SnakeCoasterEvent_StartCoaster",
+  EndCoaster = "SnakeCoasterEvent_EndCoaster",
+  ScoreUpdate = "SnakeCoasterEvent_ScoreUpdate",
+  InfoUpdate = "SnakeCoasterEvent_InfoUpdate",
+  StartResult = "SnakeCoasterEvent_StartResult",
+  StateUpdate = "SnakeCoasterEvent_StateUpdate",
+  FinishResult = "SnakeCoasterEvent_FinishResult",
+  InnerGameStart = "SnakeCoasterEvent_InnerGameStart",
+  InnerGameFinish = "SnakeCoasterEvent_InnerGameFinish"
 }

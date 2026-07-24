@@ -24,6 +24,9 @@ function AI_CMD_Myself_MoveToHelper:Update(time, deltaTime, creature, ignoreNavM
     self:End(time, deltaTime, creature)
     return false
   end
+  if creature:IsSkatingChasing() then
+    return false
+  end
   return AI_CMD_MoveToHelper.Update(self, time, deltaTime, creature, ignoreNavMesh)
 end
 
@@ -103,6 +106,7 @@ function AI_CMD_Myself_MoveTo:Update(time, deltaTime, creature)
     return
   end
   if Helper.Update(self, time, deltaTime, creature, self.args[2], self.args[6]) and nil ~= self.args[3] then
+    creature:InterruptSkatingGlide()
     self.args[3](self.args[4], self.args[5])
     self.args[3] = nil
     self.args[4] = nil

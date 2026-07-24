@@ -2040,6 +2040,16 @@ Table_EquipFake = {
     id = 600706,
     GroupID = 3013695,
     TemplateID = 4181
+  },
+  [600711] = {
+    id = 600711,
+    GroupID = 149770,
+    TemplateID = 4182
+  },
+  [600712] = {
+    id = 600712,
+    GroupID = 149772,
+    TemplateID = 4182
   }
 }
 local cell_mt = {

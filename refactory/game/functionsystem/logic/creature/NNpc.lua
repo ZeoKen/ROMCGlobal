@@ -51,6 +51,10 @@ end
 
 function NNpc:RegisterInteractNpc()
   if self.data.staticData then
+    if self.data:IsForceMoveNpc() then
+      Game.InteractNpcManager:RegisterInteractForceMoveNpc(self.data.staticData.id, self.data.id)
+      return
+    end
     local interactConfig = Table_InteractNpc[self.data.staticData.id]
     if self.data.isInteractLocal then
       InteractLocalManager.Me():RegisterInteractNpc(self.data.staticData.id, self.data.id)
@@ -87,6 +91,8 @@ function NNpc:UnregisterInteractNpc()
   if self.data.isInteractLocal then
     InteractLocalManager.Me():UnregisterInteractNpc(self.data.id)
     self.data.isInteractLocal = nil
+  elseif self.data:IsForceMoveNpc() then
+    Game.InteractNpcManager:UnregisterInteractForceMoveNpc(self.data.id)
   elseif self.data.isInteractLocalServer then
     InteractLocalManager.Me():UnregisterInteractServerNpc(self.data.interactLocalServerNpcKey)
     self.data.isInteractLocalServer = nil
@@ -379,7 +385,12 @@ end
 
 function NNpc:IsReinitNoMove()
   local id = self.data.staticData.id
-  return Table_InteractNpc[id] and Table_InteractNpc[id].Type > 5
+  local interactNpc = Table_InteractNpc[id]
+  if not interactNpc then
+    return false
+  end
+  local interactType = interactNpc.Type
+  return interactType == InteractNpc.InteractType.LocalSimple or interactType == InteractNpc.InteractType.LocalHug or interactType == InteractNpc.InteractType.LocalVisit or interactType == InteractNpc.InteractType.LocalCollect or interactType == InteractNpc.InteractType.LocalServerSimple or interactType == InteractNpc.InteractType.LocalCollectHug
 end
 
 function NNpc:Init(serverData, reinit)
@@ -910,6 +921,7 @@ function NNpc:DoDeconstruct(asArray)
   self.sceneui = nil
   self.assetRole:Destroy()
   self.assetRole = nil
+  self.isDirMoving = false
   if Game.MapManager:IsHomeMap(Game.MapManager:GetMapID()) then
     self.ai:RemovePatrol()
   end

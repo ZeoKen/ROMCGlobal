@@ -13,6 +13,47 @@ function ServiceSceneUser3Proxy:ctor(proxyName)
   end
 end
 
+function ServiceSceneUser3Proxy:CallUserIceSlideStopUserCmd(pos, dir, speed, stop)
+  local charid = Game.Myself.data.id
+  if stop then
+    ServiceSceneUser3Proxy.super.CallUserIceSlideStopUserCmd(self, charid, nil, nil, nil, true)
+    return
+  end
+  local startpos
+  if pos ~= nil then
+    startpos = {
+      x = self:ToServerFloat(pos[1] or 0),
+      y = self:ToServerFloat(pos[2] or 0),
+      z = self:ToServerFloat(pos[3] or 0)
+    }
+  end
+  dir = dir ~= nil and GeometryUtils.UniformAngle(dir) or nil
+  ServiceSceneUser3Proxy.super.CallUserIceSlideStopUserCmd(self, charid, dir, speed, startpos, false)
+end
+
+function ServiceSceneUser3Proxy:RecvUserIceSlideStopUserCmd(data)
+  self:Notify(ServiceEvent.SceneUser3UserIceSlideStopUserCmd, data)
+  local charid = data and data.charid
+  if charid == Game.Myself.data.id then
+    return
+  end
+  local player = NSceneUserProxy.Instance:Find(charid)
+  if player == nil or player.skatingMove == nil then
+    return
+  end
+  if data.stop then
+    player.skatingMove:ApplyRemoteIceSlideSync(nil, nil, nil, true)
+  else
+    local startpos = data.startpos
+    local pos = startpos ~= nil and {
+      x = self:ToFloat(startpos.x or 0),
+      y = self:ToFloat(startpos.y or 0),
+      z = self:ToFloat(startpos.z or 0)
+    } or nil
+    player.skatingMove:ApplyRemoteIceSlideSync(pos, data.dir, data.speed, false)
+  end
+end
+
 function ServiceSceneUser3Proxy:RecvFirstDepositInfo(data)
   NoviceShopProxy.Instance:RecvFirstDepositInfo(data)
   self:Notify(ServiceEvent.SceneUser3FirstDepositInfo, data)
@@ -332,4 +373,42 @@ end
 function ServiceSceneUser3Proxy:RecvGroupPlayTimeUpdateUserCmd(data)
   BattleTimeDataProxy.Instance:HandleGroupPlayTimeUpdate(data.updates)
   self:Notify(ServiceEvent.SceneUser3GroupPlayTimeUpdateUserCmd, data)
+end
+
+function ServiceSceneUser3Proxy:CallSnakeCoasterQueryRankCmd(page, page_size)
+  if NetConfig.PBC then
+    local msgId = ProtoReqInfoList.SnakeCoasterQueryRankCmd.id
+    local msgParam = {}
+    if page ~= nil then
+      msgParam.page = page
+    end
+    if page_size ~= nil then
+      msgParam.page_size = page_size
+    end
+    self:SendProto2(msgId, msgParam)
+  else
+    local msg = SceneUser3_pb.SnakeCoasterQueryRankCmd()
+    if page ~= nil then
+      msg.page = page
+    end
+    if page_size ~= nil then
+      msg.page_size = page_size
+    end
+    self:SendProto(msg)
+  end
+end
+
+function ServiceSceneUser3Proxy:RecvSnakeCoasterInfoCmd(data)
+  SnakeCoasterManager.Me():HandleSnakeCoasterInfoCmd(data)
+  self:Notify(ServiceEvent.SceneUser3SnakeCoasterInfoCmd, data)
+end
+
+function ServiceSceneUser3Proxy:RecvSnakeCoasterStateNtf(data)
+  SnakeCoasterManager.Me():HandleSnakeCoasterStateNtf(data)
+  self:Notify(ServiceEvent.SceneUser3SnakeCoasterStateNtf, data)
+end
+
+function ServiceSceneUser3Proxy:RecvSnakeCoasterFinishCmd(data)
+  SnakeCoasterManager.Me():HandleSnakeCoasterFinishCmd(data)
+  self:Notify(ServiceEvent.SceneUser3SnakeCoasterFinishCmd, data)
 end

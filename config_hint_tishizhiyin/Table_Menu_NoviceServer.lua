@@ -1506,6 +1506,13 @@ Table_Menu_t = {
       quest = {1001080002}
     },
     {
+      menu = {
+        2,
+        9896,
+        9893
+      }
+    },
+    {
       quest = {399140001}
     },
     {reach_map = 1000467},
@@ -3288,6 +3295,12 @@ Table_Menu_t = {
     {found_snow_realm_elf_num = 12},
     {found_snow_realm_elf_num = 15},
     {found_snow_realm_elf_num = 18},
+    {found_snow_realm_elf_num = 21},
+    {found_snow_realm_elf_num = 24},
+    {found_snow_realm_elf_num = 27},
+    {found_snow_realm_elf_num = 30},
+    {found_snow_realm_elf_num = 33},
+    {found_snow_realm_elf_num = 36},
     {acc_level = 110},
     {acc_level = 108},
     {acc_level = 100},
@@ -3304,6 +3317,32 @@ Table_Menu_t = {
     },
     {
       quest = {322580001}
+    },
+    {
+      tree = {4, 22}
+    },
+    {
+      tree = {4, 23}
+    },
+    {
+      tree = {4, 24}
+    },
+    {
+      tree = {4, 25}
+    },
+    {
+      menu = {
+        0,
+        18233,
+        18216
+      }
+    },
+    {
+      menu = {
+        0,
+        18234,
+        18217
+      }
     },
     {
       menu = {
@@ -3388,6 +3427,33 @@ Table_Menu_t = {
         455,
         18232
       }
+    },
+    {
+      hero_growth_quest = {655, 2}
+    },
+    {
+      hero_growth_quest = {655, 3}
+    },
+    {
+      hero_growth_quest = {655, 4}
+    },
+    {
+      hero_growth_quest = {655, 5}
+    },
+    {
+      quest = {320330001}
+    },
+    {
+      quest = {320340003}
+    },
+    {
+      quest = {320350001}
+    },
+    {
+      quest = {320360001}
+    },
+    {
+      quest = {1006700001}
     },
     {
       quest = {1006710001}
@@ -3569,31 +3635,58 @@ Table_Menu_t = {
       quest = {1014740001}
     },
     {
-      quest = {1006700001}
+      quest = {1014750001}
     },
     {
-      quest = {320360001}
+      quest = {1014760001}
     },
     {
-      quest = {320350001}
+      quest = {1014770001}
     },
     {
-      quest = {320340003}
+      quest = {1014780001}
     },
     {
-      quest = {320330001}
+      quest = {1014790001}
     },
     {
-      hero_growth_quest = {655, 5}
+      quest = {1014800001}
     },
     {
-      hero_growth_quest = {655, 4}
+      quest = {1014810001}
     },
     {
-      hero_growth_quest = {655, 3}
+      quest = {1014820001}
     },
     {
-      hero_growth_quest = {655, 2}
+      quest = {1014830001}
+    },
+    {
+      quest = {1014840001}
+    },
+    {
+      quest = {1014850001}
+    },
+    {
+      quest = {1014860001}
+    },
+    {
+      quest = {1014870001}
+    },
+    {
+      quest = {1014880001}
+    },
+    {
+      quest = {1014890001}
+    },
+    {
+      quest = {1014900001}
+    },
+    {
+      quest = {1014910001}
+    },
+    {
+      quest = {1014920001}
     },
     {
       menu = {
@@ -3747,32 +3840,6 @@ Table_Menu_t = {
         455,
         18233
       }
-    },
-    {
-      menu = {
-        0,
-        18234,
-        18217
-      }
-    },
-    {
-      menu = {
-        0,
-        18233,
-        18216
-      }
-    },
-    {
-      tree = {4, 25}
-    },
-    {
-      tree = {4, 24}
-    },
-    {
-      tree = {4, 23}
-    },
-    {
-      tree = {4, 22}
     },
     {
       tree = {4, 21}
@@ -5210,6 +5277,32 @@ Table_Menu_t = {
     {uiicon = "item_8244"},
     {uiicon = "item_8245"},
     {uiicon = "item_8246"},
+    {uiicon = "item_8384"},
+    {uiicon = "item_8385"},
+    {uiicon = "item_8386"},
+    {uiicon = "item_8387"},
+    {uiicon = "item_8388"},
+    {uiicon = "item_8389"},
+    {uiicon = "item_8390"},
+    {uiicon = "item_8391"},
+    {uiicon = "item_8392"},
+    {uiicon = "item_8394"},
+    {uiicon = "item_8395"},
+    {uiicon = "item_8396"},
+    {uiicon = "item_8397"},
+    {uiicon = "item_8398"},
+    {uiicon = "item_8399"},
+    {uiicon = "item_8400"},
+    {uiicon = "item_8401"},
+    {uiicon = "item_8402"},
+    {uiicon = "item_8404"},
+    {uiicon = "item_8405"},
+    {uiicon = "item_8406"},
+    {uiicon = "item_8407"},
+    {uiicon = "item_8408"},
+    {uiicon = "item_8409"},
+    {uiicon = "item_8410"},
+    {uiicon = "item_8411"},
     {
       uiicon = "challengetower"
     },
@@ -10739,6 +10832,96 @@ Table_Menu_t = {
       type = "additem"
     },
     {
+      extra_param = {
+        item_show = 1,
+        show_delay = 5700,
+        spec_icon = "elf_icon_01"
+      },
+      param = {
+        1,
+        52359,
+        1,
+        132183,
+        1
+      },
+      type = "additem"
+    },
+    {
+      extra_param = {
+        item_show = 1,
+        show_delay = 5700,
+        spec_icon = "elf_icon_01"
+      },
+      param = {
+        1,
+        700008,
+        1,
+        132154,
+        1
+      },
+      type = "additem"
+    },
+    {
+      extra_param = {
+        item_show = 1,
+        show_delay = 5700,
+        spec_icon = "elf_icon_01"
+      },
+      param = {
+        1,
+        52359,
+        1,
+        132162,
+        1
+      },
+      type = "additem"
+    },
+    {
+      extra_param = {
+        item_show = 1,
+        show_delay = 5700,
+        spec_icon = "elf_icon_01"
+      },
+      param = {
+        1,
+        700008,
+        1,
+        132136,
+        1
+      },
+      type = "additem"
+    },
+    {
+      extra_param = {
+        item_show = 1,
+        show_delay = 5700,
+        spec_icon = "elf_icon_01"
+      },
+      param = {
+        1,
+        52359,
+        1,
+        132202,
+        1
+      },
+      type = "additem"
+    },
+    {
+      extra_param = {
+        item_show = 1,
+        show_delay = 5700,
+        spec_icon = "elf_icon_01"
+      },
+      param = {
+        1,
+        700008,
+        1,
+        132149,
+        1
+      },
+      type = "additem"
+    },
+    {
       param = {
         3,
         40087,
@@ -10781,6 +10964,10 @@ Table_Menu_t = {
       type = "unlockmanual"
     },
     {
+      param = {474},
+      type = "scenery"
+    },
+    {
       param = {497},
       type = "scenery"
     },
@@ -10791,10 +10978,6 @@ Table_Menu_t = {
     {
       param = {3},
       type = "unlock_snow_batch"
-    },
-    {
-      param = {474},
-      type = "scenery"
     },
     {
       param = {473},
@@ -10918,6 +11101,30 @@ Table_Menu_t = {
     },
     {
       param = {562},
+      type = "scenery"
+    },
+    {
+      param = {571},
+      type = "scenery"
+    },
+    {
+      param = {572},
+      type = "scenery"
+    },
+    {
+      param = {573},
+      type = "scenery"
+    },
+    {
+      param = {574},
+      type = "scenery"
+    },
+    {
+      param = {575},
+      type = "scenery"
+    },
+    {
+      param = {576},
       type = "scenery"
     },
     {
@@ -11943,6 +12150,7 @@ Table_Menu = {
   },
   [46] = {
     id = 46,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[5],
     Tip = "解锁·新武器外观收集",
@@ -18939,7 +19147,7 @@ Table_Menu = {
   [1905] = {
     id = 1905,
     text = "冒险手册中激活%s/5只宠物",
-    Condition = Table_Menu_t.Condition[630],
+    Condition = Table_Menu_t.Condition[631],
     Tip = "宠物打工·宠物协会开启",
     Show = 1,
     Acc = 1,
@@ -18948,7 +19156,7 @@ Table_Menu = {
   [1906] = {
     id = 1906,
     text = "厨师等级达到Lv.%s/6",
-    Condition = Table_Menu_t.Condition[631],
+    Condition = Table_Menu_t.Condition[632],
     Tip = "宠物打工·料理协会开启",
     Show = 1,
     Acc = 1,
@@ -18979,28 +19187,28 @@ Table_Menu = {
     id = 3001,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[916],
+    Condition = Table_Menu_t.Condition[917],
     event = Table_Menu_t.event[898]
   },
   [3002] = {
     id = 3002,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[917],
+    Condition = Table_Menu_t.Condition[918],
     event = Table_Menu_t.event[899]
   },
   [3003] = {
     id = 3003,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[918],
+    Condition = Table_Menu_t.Condition[919],
     event = Table_Menu_t.event[900]
   },
   [3004] = {
     id = 3004,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[624],
+    Condition = Table_Menu_t.Condition[625],
     event = Table_Menu_t.event[901]
   },
   [3005] = {
@@ -19020,7 +19228,7 @@ Table_Menu = {
     id = 3007,
     type = 2,
     text = "联动NPC",
-    Condition = Table_Menu_t.Condition[919],
+    Condition = Table_Menu_t.Condition[920],
     event = Table_Menu_t.event[903]
   },
   [3008] = {
@@ -19033,181 +19241,181 @@ Table_Menu = {
     id = 3009,
     type = 2,
     text = "NPC隐藏",
-    Condition = Table_Menu_t.Condition[920],
+    Condition = Table_Menu_t.Condition[921],
     event = Table_Menu_t.event[904]
   },
   [3010] = {
     id = 3010,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[536],
+    Condition = Table_Menu_t.Condition[537],
     event = Table_Menu_t.event[905]
   },
   [3011] = {
     id = 3011,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[921],
+    Condition = Table_Menu_t.Condition[922],
     event = Table_Menu_t.event[906]
   },
   [3012] = {
     id = 3012,
     type = 2,
     text = "NPC隐藏",
-    Condition = Table_Menu_t.Condition[922],
+    Condition = Table_Menu_t.Condition[923],
     event = Table_Menu_t.event[907]
   },
   [3013] = {
     id = 3013,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[922],
+    Condition = Table_Menu_t.Condition[923],
     event = Table_Menu_t.event[908]
   },
   [3014] = {
     id = 3014,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[923],
+    Condition = Table_Menu_t.Condition[924],
     event = Table_Menu_t.event[909]
   },
   [3015] = {
     id = 3015,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[924],
+    Condition = Table_Menu_t.Condition[925],
     event = Table_Menu_t.event[910]
   },
   [3016] = {
     id = 3016,
     type = 2,
     text = "NPC隐藏",
-    Condition = Table_Menu_t.Condition[925],
+    Condition = Table_Menu_t.Condition[926],
     event = Table_Menu_t.event[911]
   },
   [3017] = {
     id = 3017,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[925],
+    Condition = Table_Menu_t.Condition[926],
     event = Table_Menu_t.event[912]
   },
   [3018] = {
     id = 3018,
     type = 2,
     text = "NPC隐藏",
-    Condition = Table_Menu_t.Condition[926],
+    Condition = Table_Menu_t.Condition[927],
     event = Table_Menu_t.event[913]
   },
   [3019] = {
     id = 3019,
     type = 2,
     text = "NPC隐藏",
-    Condition = Table_Menu_t.Condition[927],
+    Condition = Table_Menu_t.Condition[928],
     event = Table_Menu_t.event[914]
   },
   [3020] = {
     id = 3020,
     type = 2,
     text = "NPC隐藏",
-    Condition = Table_Menu_t.Condition[928],
+    Condition = Table_Menu_t.Condition[929],
     event = Table_Menu_t.event[915]
   },
   [3021] = {
     id = 3021,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[535],
+    Condition = Table_Menu_t.Condition[536],
     event = Table_Menu_t.event[916]
   },
   [3022] = {
     id = 3022,
     type = 2,
     text = "NPC隐藏",
-    Condition = Table_Menu_t.Condition[929],
+    Condition = Table_Menu_t.Condition[930],
     event = Table_Menu_t.event[917]
   },
   [3023] = {
     id = 3023,
     type = 2,
     text = "NPC隐藏",
-    Condition = Table_Menu_t.Condition[929],
+    Condition = Table_Menu_t.Condition[930],
     event = Table_Menu_t.event[918]
   },
   [3024] = {
     id = 3024,
     type = 2,
     text = "NPC隐藏",
-    Condition = Table_Menu_t.Condition[929],
+    Condition = Table_Menu_t.Condition[930],
     event = Table_Menu_t.event[919]
   },
   [3025] = {
     id = 3025,
     type = 2,
     text = "NPC隐藏",
-    Condition = Table_Menu_t.Condition[929],
+    Condition = Table_Menu_t.Condition[930],
     event = Table_Menu_t.event[920]
   },
   [3026] = {
     id = 3026,
     type = 2,
     text = "NPC隐藏",
-    Condition = Table_Menu_t.Condition[929],
+    Condition = Table_Menu_t.Condition[930],
     event = Table_Menu_t.event[921]
   },
   [3027] = {
     id = 3027,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[929],
+    Condition = Table_Menu_t.Condition[930],
     event = Table_Menu_t.event[922]
   },
   [3028] = {
     id = 3028,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[929],
+    Condition = Table_Menu_t.Condition[930],
     event = Table_Menu_t.event[923]
   },
   [3029] = {
     id = 3029,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[929],
+    Condition = Table_Menu_t.Condition[930],
     event = Table_Menu_t.event[924]
   },
   [3030] = {
     id = 3030,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[929],
+    Condition = Table_Menu_t.Condition[930],
     event = Table_Menu_t.event[925]
   },
   [3031] = {
     id = 3031,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[929],
+    Condition = Table_Menu_t.Condition[930],
     event = Table_Menu_t.event[926]
   },
   [3032] = {
     id = 3032,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[930],
+    Condition = Table_Menu_t.Condition[931],
     event = Table_Menu_t.event[927]
   },
   [3033] = {
     id = 3033,
     type = 2,
     text = "显示世界地图中的蕾娜斯NPC",
-    Condition = Table_Menu_t.Condition[931]
+    Condition = Table_Menu_t.Condition[932]
   },
   [3034] = {
     id = 3034,
     type = 2,
     text = "显示NPC8199",
-    Condition = Table_Menu_t.Condition[932],
+    Condition = Table_Menu_t.Condition[933],
     event = Table_Menu_t.event[928]
   },
   [3035] = {
@@ -19221,35 +19429,35 @@ Table_Menu = {
     id = 3036,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[535],
+    Condition = Table_Menu_t.Condition[536],
     event = Table_Menu_t.event[930]
   },
   [3037] = {
     id = 3037,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[534],
+    Condition = Table_Menu_t.Condition[535],
     event = Table_Menu_t.event[931]
   },
   [3038] = {
     id = 3038,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[533],
+    Condition = Table_Menu_t.Condition[534],
     event = Table_Menu_t.event[932]
   },
   [3039] = {
     id = 3039,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[526],
+    Condition = Table_Menu_t.Condition[527],
     event = Table_Menu_t.event[933]
   },
   [3040] = {
     id = 3040,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[536],
+    Condition = Table_Menu_t.Condition[537],
     event = Table_Menu_t.event[934]
   },
   [3041] = {
@@ -19282,15 +19490,15 @@ Table_Menu = {
     type = 1,
     PanelID = 1620,
     text = "执事",
-    Condition = Table_Menu_t.Condition[938],
+    Condition = Table_Menu_t.Condition[939],
     Tip = "执事 已开放",
-    Icon = Table_Menu_t.Icon[298],
+    Icon = Table_Menu_t.Icon[324],
     Enterhide = 1
   },
   [3051] = {
     id = 3051,
     text = "任务手册开放",
-    Condition = Table_Menu_t.Condition[939]
+    Condition = Table_Menu_t.Condition[940]
   },
   [3052] = {
     id = 3052,
@@ -19298,254 +19506,254 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[2],
     event = Table_Menu_t.event[936],
     Tip = "旅行者笔记 已开放",
-    Icon = Table_Menu_t.Icon[299]
+    Icon = Table_Menu_t.Icon[325]
   },
   [3053] = {
     id = 3053,
     text = "地下城手册开放",
     Condition = Table_Menu_t.Condition[14],
     Tip = "地下城手册 已开放",
-    Icon = Table_Menu_t.Icon[299]
+    Icon = Table_Menu_t.Icon[325]
   },
   [3054] = {
     id = 3054,
     text = "新手冒险录开放",
-    Condition = Table_Menu_t.Condition[681],
+    Condition = Table_Menu_t.Condition[682],
     Tip = "新手冒险录 已开放"
   },
   [3055] = {
     id = 3055,
     type = 2,
     text = "NPC解锁可见",
-    Condition = Table_Menu_t.Condition[940],
+    Condition = Table_Menu_t.Condition[941],
     event = Table_Menu_t.event[937]
   },
   [4001] = {
     id = 4001,
     text = "古城珍藏品",
     Condition = Table_Menu_t.Condition[24],
-    event = Table_Menu_t.event[1090],
+    event = Table_Menu_t.event[1102],
     Acc = 1
   },
   [4002] = {
     id = 4002,
     text = "古城下水道珍藏品",
     Condition = Table_Menu_t.Condition[45],
-    event = Table_Menu_t.event[1091],
+    event = Table_Menu_t.event[1103],
     Acc = 1
   },
   [4003] = {
     id = 4003,
     text = "古城地下墓地珍藏品",
     Condition = Table_Menu_t.Condition[51],
-    event = Table_Menu_t.event[1092],
+    event = Table_Menu_t.event[1104],
     Acc = 1
   },
   [4004] = {
     id = 4004,
     text = "古城骑士团珍藏品",
     Condition = Table_Menu_t.Condition[23],
-    event = Table_Menu_t.event[1093],
+    event = Table_Menu_t.event[1105],
     Acc = 1
   },
   [4005] = {
     id = 4005,
     text = "古城大厅珍藏品",
     Condition = Table_Menu_t.Condition[46],
-    event = Table_Menu_t.event[1094],
+    event = Table_Menu_t.event[1106],
     Acc = 1
   },
   [4006] = {
     id = 4006,
     text = "钟楼珍藏品",
     Condition = Table_Menu_t.Condition[53],
-    event = Table_Menu_t.event[1095],
+    event = Table_Menu_t.event[1107],
     Acc = 1
   },
   [4007] = {
     id = 4007,
     text = "普隆德拉北部珍藏品",
     Condition = Table_Menu_t.Condition[52],
-    event = Table_Menu_t.event[1096],
+    event = Table_Menu_t.event[1108],
     Acc = 1
   },
   [4008] = {
     id = 4008,
     text = "GLC.A031号档案",
-    Condition = Table_Menu_t.Condition[1383],
+    Condition = Table_Menu_t.Condition[1408],
     Acc = 1
   },
   [4009] = {
     id = 4009,
     text = "GLC.X114号档案",
-    Condition = Table_Menu_t.Condition[1384],
+    Condition = Table_Menu_t.Condition[1409],
     Acc = 1
   },
   [4010] = {
     id = 4010,
     text = "GLC.E109号档案",
-    Condition = Table_Menu_t.Condition[1385],
+    Condition = Table_Menu_t.Condition[1410],
     Acc = 1
   },
   [4011] = {
     id = 4011,
     text = "永恒之翼",
-    Condition = Table_Menu_t.Condition[1386],
+    Condition = Table_Menu_t.Condition[1411],
     Acc = 1
   },
   [4012] = {
     id = 4012,
     text = "GLC.A014号档案",
-    Condition = Table_Menu_t.Condition[1387],
+    Condition = Table_Menu_t.Condition[1412],
     Acc = 1
   },
   [4013] = {
     id = 4013,
     text = "GLC.X157号档案",
-    Condition = Table_Menu_t.Condition[1388],
+    Condition = Table_Menu_t.Condition[1413],
     Acc = 1
   },
   [4014] = {
     id = 4014,
     text = "GLC.X163号档案",
-    Condition = Table_Menu_t.Condition[1389],
+    Condition = Table_Menu_t.Condition[1414],
     Acc = 1
   },
   [4015] = {
     id = 4015,
     text = "GLC.X185号档案",
-    Condition = Table_Menu_t.Condition[1390],
+    Condition = Table_Menu_t.Condition[1415],
     Acc = 1
   },
   [4016] = {
     id = 4016,
     text = "米莫斯的战袍",
-    Condition = Table_Menu_t.Condition[1391],
+    Condition = Table_Menu_t.Condition[1416],
     Acc = 1
   },
   [4017] = {
     id = 4017,
     text = "无形箭",
-    Condition = Table_Menu_t.Condition[1392],
+    Condition = Table_Menu_t.Condition[1417],
     Acc = 1
   },
   [4018] = {
     id = 4018,
     text = "生命魔剑",
-    Condition = Table_Menu_t.Condition[1393],
+    Condition = Table_Menu_t.Condition[1418],
     Acc = 1
   },
   [4019] = {
     id = 4019,
     text = "命运纸牌",
-    Condition = Table_Menu_t.Condition[1394],
+    Condition = Table_Menu_t.Condition[1419],
     Acc = 1
   },
   [4020] = {
     id = 4020,
     text = "钟楼异闻录·毁灭卷",
-    Condition = Table_Menu_t.Condition[1395],
+    Condition = Table_Menu_t.Condition[1420],
     Acc = 1
   },
   [4021] = {
     id = 4021,
     text = "钟楼异闻录·噩梦卷",
-    Condition = Table_Menu_t.Condition[1396],
+    Condition = Table_Menu_t.Condition[1421],
     Acc = 1
   },
   [4022] = {
     id = 4022,
     text = "时光匕首",
-    Condition = Table_Menu_t.Condition[1397],
+    Condition = Table_Menu_t.Condition[1422],
     Acc = 1
   },
   [4023] = {
     id = 4023,
     text = "时间轮盘",
-    Condition = Table_Menu_t.Condition[1398],
+    Condition = Table_Menu_t.Condition[1423],
     Acc = 1
   },
   [4024] = {
     id = 4024,
     text = "星界棱晶",
-    Condition = Table_Menu_t.Condition[1399],
+    Condition = Table_Menu_t.Condition[1424],
     Acc = 1
   },
   [4025] = {
     id = 4025,
     text = "钟楼异闻录·丧钟卷",
-    Condition = Table_Menu_t.Condition[1400],
+    Condition = Table_Menu_t.Condition[1425],
     Acc = 1
   },
   [4026] = {
     id = 4026,
     text = "钟楼异闻录·魅影卷",
-    Condition = Table_Menu_t.Condition[1401],
+    Condition = Table_Menu_t.Condition[1426],
     Acc = 1
   },
   [4027] = {
     id = 4027,
     text = "森灵之心",
-    Condition = Table_Menu_t.Condition[1402],
+    Condition = Table_Menu_t.Condition[1427],
     Acc = 1
   },
   [4028] = {
     id = 4028,
     text = "时钟守卫者勋章",
-    Condition = Table_Menu_t.Condition[1403],
+    Condition = Table_Menu_t.Condition[1428],
     Acc = 1
   },
   [4029] = {
     id = 4029,
     text = "灵魂静谧",
-    Condition = Table_Menu_t.Condition[1404],
+    Condition = Table_Menu_t.Condition[1429],
     Acc = 1
   },
   [4032] = {
     id = 4032,
     text = "圣诞树的铃铛",
-    Condition = Table_Menu_t.Condition[1405],
+    Condition = Table_Menu_t.Condition[1430],
     Acc = 1
   },
   [4033] = {
     id = 4033,
     text = "炼金术士的日记本",
-    Condition = Table_Menu_t.Condition[1406]
+    Condition = Table_Menu_t.Condition[1431]
   },
   [4034] = {
     id = 4034,
     text = "坎卜斯的礼物",
-    Condition = Table_Menu_t.Condition[1407]
+    Condition = Table_Menu_t.Condition[1432]
   },
   [4035] = {
     id = 4035,
     text = "腹语师之死",
-    Condition = Table_Menu_t.Condition[1408]
+    Condition = Table_Menu_t.Condition[1433]
   },
   [4036] = {
     id = 4036,
     text = "魔灵娃娃的诅咒",
-    Condition = Table_Menu_t.Condition[1409]
+    Condition = Table_Menu_t.Condition[1434]
   },
   [4037] = {
     id = 4037,
     text = "永恒的夏宫",
-    Condition = Table_Menu_t.Condition[1410]
+    Condition = Table_Menu_t.Condition[1435]
   },
   [4038] = {
     id = 4038,
     text = "圣诞香包",
-    Condition = Table_Menu_t.Condition[1411]
+    Condition = Table_Menu_t.Condition[1436]
   },
   [4039] = {
     id = 4039,
     text = "樱城的故事",
-    Condition = Table_Menu_t.Condition[1412]
+    Condition = Table_Menu_t.Condition[1437]
   },
   [4040] = {
     id = 4040,
     text = "狐狸旧事",
-    Condition = Table_Menu_t.Condition[1413]
+    Condition = Table_Menu_t.Condition[1438]
   },
   [4041] = {
     id = 4041,
@@ -19553,7 +19761,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「爱葛妮斯·雷根弗莱格」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[332]
+    Icon = Table_Menu_t.Icon[358]
   },
   [4042] = {
     id = 4042,
@@ -19561,7 +19769,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「尼希尔·海涅」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[333]
+    Icon = Table_Menu_t.Icon[359]
   },
   [4043] = {
     id = 4043,
@@ -19569,7 +19777,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「奈特·乔治」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[334]
+    Icon = Table_Menu_t.Icon[360]
   },
   [4044] = {
     id = 4044,
@@ -19577,7 +19785,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「特里斯坦·乔治」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[334]
+    Icon = Table_Menu_t.Icon[360]
   },
   [4045] = {
     id = 4045,
@@ -19585,7 +19793,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「凯瑟琳·乔治」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[334]
+    Icon = Table_Menu_t.Icon[360]
   },
   [4046] = {
     id = 4046,
@@ -19593,7 +19801,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「珀·力哈尔特」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[335]
+    Icon = Table_Menu_t.Icon[361]
   },
   [4047] = {
     id = 4047,
@@ -19601,7 +19809,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「爱丽丝·可可」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[334]
+    Icon = Table_Menu_t.Icon[360]
   },
   [4048] = {
     id = 4048,
@@ -19609,7 +19817,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「马丁·琼斯」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[334]
+    Icon = Table_Menu_t.Icon[360]
   },
   [4049] = {
     id = 4049,
@@ -19617,7 +19825,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「艾伦斯特」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[334]
+    Icon = Table_Menu_t.Icon[360]
   },
   [4050] = {
     id = 4050,
@@ -19625,7 +19833,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「海尔穆特·雷根弗莱格」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[332]
+    Icon = Table_Menu_t.Icon[358]
   },
   [4051] = {
     id = 4051,
@@ -19633,7 +19841,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「派特·海涅」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[333]
+    Icon = Table_Menu_t.Icon[359]
   },
   [4052] = {
     id = 4052,
@@ -19641,7 +19849,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「阿伦·巴尔特」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[336]
+    Icon = Table_Menu_t.Icon[362]
   },
   [4053] = {
     id = 4053,
@@ -19649,7 +19857,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「伊安·巴尔特」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[336]
+    Icon = Table_Menu_t.Icon[362]
   },
   [4054] = {
     id = 4054,
@@ -19657,7 +19865,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「阿诺·巴尔特」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[336]
+    Icon = Table_Menu_t.Icon[362]
   },
   [4055] = {
     id = 4055,
@@ -19665,7 +19873,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「帕维尔」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[336]
+    Icon = Table_Menu_t.Icon[362]
   },
   [4056] = {
     id = 4056,
@@ -19673,15 +19881,15 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[9],
     Tip = "获得人物档案「安德鲁」",
     Show = 1,
-    Icon = Table_Menu_t.Icon[337]
+    Icon = Table_Menu_t.Icon[363]
   },
   [5000] = {
     id = 5000,
     type = 1,
     PanelID = 547,
     text = "可获得阿萨神碑",
-    Condition = Table_Menu_t.Condition[1431],
-    event = Table_Menu_t.event[1118],
+    Condition = Table_Menu_t.Condition[1456],
+    event = Table_Menu_t.event[1130],
     Tip = "阿萨神碑 已开放",
     Icon = Table_Menu_t.Icon[183]
   },
@@ -20344,7 +20552,7 @@ Table_Menu = {
   [5396] = {
     id = 5396,
     text = "许仙的家商品1",
-    Condition = Table_Menu_t.Condition[1430],
+    Condition = Table_Menu_t.Condition[1455],
     Tip = "影枫司声望商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -20353,7 +20561,7 @@ Table_Menu = {
   [5397] = {
     id = 5397,
     text = "许仙的家商品2",
-    Condition = Table_Menu_t.Condition[1429],
+    Condition = Table_Menu_t.Condition[1454],
     Tip = "影枫司声望商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -20362,7 +20570,7 @@ Table_Menu = {
   [5398] = {
     id = 5398,
     text = "许仙的家商品3",
-    Condition = Table_Menu_t.Condition[1428],
+    Condition = Table_Menu_t.Condition[1453],
     Tip = "影枫司声望商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -20371,7 +20579,7 @@ Table_Menu = {
   [5399] = {
     id = 5399,
     text = "许仙的家商品4",
-    Condition = Table_Menu_t.Condition[1427],
+    Condition = Table_Menu_t.Condition[1452],
     Tip = "影枫司声望商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -20380,7 +20588,7 @@ Table_Menu = {
   [5400] = {
     id = 5400,
     text = "许仙的家商品5",
-    Condition = Table_Menu_t.Condition[1426],
+    Condition = Table_Menu_t.Condition[1451],
     Tip = "影枫司声望商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -20389,7 +20597,7 @@ Table_Menu = {
   [5401] = {
     id = 5401,
     text = "许仙的家商品6",
-    Condition = Table_Menu_t.Condition[1425],
+    Condition = Table_Menu_t.Condition[1450],
     Tip = "影枫司声望商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -20700,20 +20908,20 @@ Table_Menu = {
     type = 2,
     PanelID = 6008,
     text = "完成后解锁预订婚期功能",
-    Condition = Table_Menu_t.Condition[1424],
+    Condition = Table_Menu_t.Condition[1449],
     Tip = "订婚功能已解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[340]
+    Icon = Table_Menu_t.Icon[366]
   },
   [6001] = {
     id = 6001,
     type = 2,
     PanelID = 6013,
     text = "完成后解锁进入樱花之间功能",
-    Condition = Table_Menu_t.Condition[1423],
+    Condition = Table_Menu_t.Condition[1448],
     Tip = "樱花之间已开放",
     Show = 1,
-    Icon = Table_Menu_t.Icon[340]
+    Icon = Table_Menu_t.Icon[366]
   },
   [6098] = {
     id = 6098,
@@ -20728,7 +20936,7 @@ Table_Menu = {
   [6100] = {
     id = 6100,
     text = "热点开启",
-    Condition = Table_Menu_t.Condition[681],
+    Condition = Table_Menu_t.Condition[682],
     Tip = "热点 已开放",
     Icon = Table_Menu_t.Icon[248],
     Enterhide = 1
@@ -20744,7 +20952,7 @@ Table_Menu = {
   [6102] = {
     id = 6102,
     text = "逛街功能开启",
-    Condition = Table_Menu_t.Condition[682],
+    Condition = Table_Menu_t.Condition[683],
     Tip = "逛街功能 已开放",
     Icon = Table_Menu_t.Icon[250],
     Enterhide = 1
@@ -20764,7 +20972,7 @@ Table_Menu = {
   [6200] = {
     id = 6200,
     text = "符文功能开启",
-    Condition = Table_Menu_t.Condition[701],
+    Condition = Table_Menu_t.Condition[702],
     event = Table_Menu_t.event[694],
     sysMsg = Table_Menu_t.sysMsg[68],
     Tip = "符文功能 已开启",
@@ -20776,7 +20984,7 @@ Table_Menu = {
     id = 6201,
     type = 2,
     text = "三合一开启",
-    Condition = Table_Menu_t.Condition[701],
+    Condition = Table_Menu_t.Condition[702],
     Tip = "三合一开启",
     Acc = 1
   },
@@ -20784,7 +20992,7 @@ Table_Menu = {
     id = 6202,
     type = 2,
     text = "五合一开启",
-    Condition = Table_Menu_t.Condition[701],
+    Condition = Table_Menu_t.Condition[702],
     Tip = "五合一开启",
     Acc = 1
   },
@@ -20792,7 +21000,7 @@ Table_Menu = {
     id = 6203,
     type = 2,
     text = "同名融合开启",
-    Condition = Table_Menu_t.Condition[701],
+    Condition = Table_Menu_t.Condition[702],
     Tip = "同名融合开启",
     Acc = 1
   },
@@ -20800,21 +21008,21 @@ Table_Menu = {
     id = 6204,
     type = 2,
     text = "符文商店开启",
-    Condition = Table_Menu_t.Condition[701],
+    Condition = Table_Menu_t.Condition[702],
     Tip = "符文商店开启",
     Acc = 1
   },
   [6205] = {
     id = 6205,
     text = "符文背包 已获得",
-    Condition = Table_Menu_t.Condition[701],
+    Condition = Table_Menu_t.Condition[702],
     event = Table_Menu_t.event[695]
   },
   [6206] = {
     id = 6206,
     type = 2,
     text = "符文置换 开启",
-    Condition = Table_Menu_t.Condition[701],
+    Condition = Table_Menu_t.Condition[702],
     Tip = "符文置换 开启",
     Acc = 1
   },
@@ -20835,7 +21043,7 @@ Table_Menu = {
     id = 6209,
     type = 2,
     text = "符文雕刻 开启",
-    Condition = Table_Menu_t.Condition[701],
+    Condition = Table_Menu_t.Condition[702],
     Tip = "符文雕刻 开启",
     Acc = 1
   },
@@ -20843,7 +21051,7 @@ Table_Menu = {
     id = 6210,
     type = 2,
     text = "奥秘符文",
-    Condition = Table_Menu_t.Condition[702],
+    Condition = Table_Menu_t.Condition[703],
     Tip = "奥秘符文开启",
     Acc = 1
   },
@@ -20851,7 +21059,7 @@ Table_Menu = {
     id = 6211,
     type = 2,
     text = "装备记忆",
-    Condition = Table_Menu_t.Condition[703],
+    Condition = Table_Menu_t.Condition[704],
     Tip = "装备记忆开启",
     Acc = 1
   },
@@ -20891,12 +21099,12 @@ Table_Menu = {
     id = 6305,
     type = 2,
     text = "蛋糕保卫战开放（仅任务手册-功能引导使用）",
-    Condition = Table_Menu_t.Condition[704]
+    Condition = Table_Menu_t.Condition[705]
   },
   [6400] = {
     id = 6400,
     text = "冒险手册 精炼头饰存入加成 已开放",
-    Condition = Table_Menu_t.Condition[723],
+    Condition = Table_Menu_t.Condition[724],
     Tip = "冒险手册 精炼头饰存入加成 已开放",
     Show = 1,
     Acc = 1,
@@ -20905,14 +21113,14 @@ Table_Menu = {
   [6401] = {
     id = 6401,
     text = "任务背包解锁",
-    Condition = Table_Menu_t.Condition[724],
+    Condition = Table_Menu_t.Condition[725],
     Tip = "任务背包解锁",
     Acc = 1
   },
   [6402] = {
     id = 6402,
     text = "任务背包解锁",
-    Condition = Table_Menu_t.Condition[725]
+    Condition = Table_Menu_t.Condition[726]
   },
   [6403] = {
     id = 6403,
@@ -20922,12 +21130,12 @@ Table_Menu = {
   [6404] = {
     id = 6404,
     text = "任务手册解锁",
-    Condition = Table_Menu_t.Condition[575]
+    Condition = Table_Menu_t.Condition[576]
   },
   [6405] = {
     id = 6405,
     text = "任务手册解锁",
-    Condition = Table_Menu_t.Condition[726]
+    Condition = Table_Menu_t.Condition[727]
   },
   [7001] = {
     id = 7001,
@@ -20938,123 +21146,123 @@ Table_Menu = {
   [8001] = {
     id = 8001,
     text = "南门宠物商店·追加宠物书包",
-    Condition = Table_Menu_t.Condition[1329],
+    Condition = Table_Menu_t.Condition[1354],
     Tip = "南门宠物商店·追加宠物书包",
     Show = 1,
-    Icon = Table_Menu_t.Icon[320]
+    Icon = Table_Menu_t.Icon[346]
   },
   [8002] = {
     id = 8002,
     text = "南门宠物商店·追加猴子发箍",
-    Condition = Table_Menu_t.Condition[1330],
+    Condition = Table_Menu_t.Condition[1355],
     Tip = "南门宠物商店·追加猴子发箍",
     Show = 1,
-    Icon = Table_Menu_t.Icon[321]
+    Icon = Table_Menu_t.Icon[347]
   },
   [8003] = {
     id = 8003,
     text = "南门宠物商店·追加宠物围裙",
-    Condition = Table_Menu_t.Condition[1331],
+    Condition = Table_Menu_t.Condition[1356],
     Tip = "南门宠物商店·追加宠物围裙",
     Show = 1,
-    Icon = Table_Menu_t.Icon[322]
+    Icon = Table_Menu_t.Icon[348]
   },
   [8004] = {
     id = 8004,
     text = "南门宠物商店·追加潜水头盔",
-    Condition = Table_Menu_t.Condition[1332],
+    Condition = Table_Menu_t.Condition[1357],
     Tip = "南门宠物商店·追加潜水头盔",
     Show = 1,
-    Icon = Table_Menu_t.Icon[323]
+    Icon = Table_Menu_t.Icon[349]
   },
   [8005] = {
     id = 8005,
     text = "南门宠物商店·追加蛇饰发簪",
-    Condition = Table_Menu_t.Condition[1333],
+    Condition = Table_Menu_t.Condition[1358],
     Tip = "南门宠物商店·追加蛇饰发簪",
     Show = 1,
-    Icon = Table_Menu_t.Icon[324]
+    Icon = Table_Menu_t.Icon[350]
   },
   [8006] = {
     id = 8006,
     text = "南门宠物商店·追加宠物围兜兜",
-    Condition = Table_Menu_t.Condition[1334],
+    Condition = Table_Menu_t.Condition[1359],
     Tip = "南门宠物商店·追加宠物围兜兜",
     Show = 1,
-    Icon = Table_Menu_t.Icon[325]
+    Icon = Table_Menu_t.Icon[351]
   },
   [8007] = {
     id = 8007,
     text = "南门宠物商店·追加宠物发带",
-    Condition = Table_Menu_t.Condition[1335],
+    Condition = Table_Menu_t.Condition[1360],
     Tip = "南门宠物商店·追加宠物发带",
     Show = 1,
-    Icon = Table_Menu_t.Icon[326]
+    Icon = Table_Menu_t.Icon[352]
   },
   [8008] = {
     id = 8008,
     text = "南门宠物商店·追加宠物铃铛",
-    Condition = Table_Menu_t.Condition[1336],
+    Condition = Table_Menu_t.Condition[1361],
     Tip = "南门宠物商店·追加宠物铃铛",
     Show = 1,
-    Icon = Table_Menu_t.Icon[327]
+    Icon = Table_Menu_t.Icon[353]
   },
   [8009] = {
     id = 8009,
     text = "南门宠物商店·追加宠物奶嘴",
-    Condition = Table_Menu_t.Condition[1337],
+    Condition = Table_Menu_t.Condition[1362],
     Tip = "南门宠物商店·追加宠物奶嘴",
     Show = 1,
-    Icon = Table_Menu_t.Icon[328]
+    Icon = Table_Menu_t.Icon[354]
   },
   [8010] = {
     id = 8010,
     text = "南门宠物商店·追加宠物发夹",
-    Condition = Table_Menu_t.Condition[1338],
+    Condition = Table_Menu_t.Condition[1363],
     Tip = "南门宠物商店·追加宠物发夹",
     Show = 1,
-    Icon = Table_Menu_t.Icon[329]
+    Icon = Table_Menu_t.Icon[355]
   },
   [8011] = {
     id = 8011,
     text = "南门宠物商店·追加牛骨头盔",
-    Condition = Table_Menu_t.Condition[1339],
+    Condition = Table_Menu_t.Condition[1364],
     Tip = "南门宠物商店·追加牛骨头盔",
     Show = 1,
-    Icon = Table_Menu_t.Icon[330]
+    Icon = Table_Menu_t.Icon[356]
   },
   [8100] = {
     id = 8100,
     text = "完成后宠物冒险开放",
     Condition = Table_Menu_t.Condition[101],
     Tip = "请开始宠物冒险吧！",
-    Icon = Table_Menu_t.Icon[339]
+    Icon = Table_Menu_t.Icon[365]
   },
   [8101] = {
     id = 8101,
     text = "完成后宠物打工开放",
     Condition = Table_Menu_t.Condition[101],
     Tip = "宠物打工 已开启",
-    Icon = Table_Menu_t.Icon[338]
+    Icon = Table_Menu_t.Icon[364]
   },
   [8102] = {
     id = 8102,
     text = "完成后发放不思议宠物袋",
     Condition = Table_Menu_t.Condition[101],
     Tip = "不思议宠物袋 已开启",
-    Icon = Table_Menu_t.Icon[338]
+    Icon = Table_Menu_t.Icon[364]
   },
   [8103] = {
     id = 8103,
     text = "完成后开放初心补给站",
-    Condition = Table_Menu_t.Condition[671],
+    Condition = Table_Menu_t.Condition[672],
     Tip = "完成后开放初心补给站",
     Acc = 1
   },
   [8104] = {
     id = 8104,
     text = "完成后开放副本入口",
-    Condition = Table_Menu_t.Condition[1422],
+    Condition = Table_Menu_t.Condition[1447],
     Tip = "完成后开放副本入口",
     Acc = 1,
     Enterhide = 1
@@ -21062,7 +21270,7 @@ Table_Menu = {
   [8105] = {
     id = 8105,
     text = "完成后开放副本入口",
-    Condition = Table_Menu_t.Condition[672],
+    Condition = Table_Menu_t.Condition[673],
     Tip = "完成后开放副本入口",
     Acc = 1
   },
@@ -21076,8 +21284,8 @@ Table_Menu = {
   [8501] = {
     id = 8501,
     text = "发现景点·辰星殿堂",
-    Condition = Table_Menu_t.Condition[1421],
-    event = Table_Menu_t.event[1117],
+    Condition = Table_Menu_t.Condition[1446],
+    event = Table_Menu_t.event[1129],
     Tip = "发现景点·辰星殿堂",
     Show = 1,
     Acc = 1,
@@ -21086,8 +21294,8 @@ Table_Menu = {
   [8502] = {
     id = 8502,
     text = "发现景点·时之轮",
-    Condition = Table_Menu_t.Condition[1420],
-    event = Table_Menu_t.event[1116],
+    Condition = Table_Menu_t.Condition[1445],
+    event = Table_Menu_t.event[1128],
     Tip = "发现景点·时之轮",
     Show = 1,
     Acc = 1,
@@ -21096,8 +21304,8 @@ Table_Menu = {
   [8503] = {
     id = 8503,
     text = "发现景点·天空塔",
-    Condition = Table_Menu_t.Condition[1419],
-    event = Table_Menu_t.event[1115],
+    Condition = Table_Menu_t.Condition[1444],
+    event = Table_Menu_t.event[1127],
     Tip = "发现景点·天空塔",
     Show = 1,
     Acc = 1,
@@ -21106,8 +21314,8 @@ Table_Menu = {
   [8504] = {
     id = 8504,
     text = "发现景点·彩虹桥",
-    Condition = Table_Menu_t.Condition[1419],
-    event = Table_Menu_t.event[1114],
+    Condition = Table_Menu_t.Condition[1444],
+    event = Table_Menu_t.event[1126],
     Tip = "发现景点·彩虹桥",
     Show = 1,
     Acc = 1,
@@ -21117,7 +21325,7 @@ Table_Menu = {
     id = 8505,
     text = "发现景点·羽斯缇卡的祝福",
     Condition = Table_Menu_t.Condition[2],
-    event = Table_Menu_t.event[1113],
+    event = Table_Menu_t.event[1125],
     Tip = "发现景点·羽斯缇卡的祝福",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21125,8 +21333,8 @@ Table_Menu = {
   [8506] = {
     id = 8506,
     text = "发现景点·星之扉",
-    Condition = Table_Menu_t.Condition[1418],
-    event = Table_Menu_t.event[1086],
+    Condition = Table_Menu_t.Condition[1443],
+    event = Table_Menu_t.event[1098],
     Tip = "发现景点·星之扉",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21135,7 +21343,7 @@ Table_Menu = {
     id = 8507,
     text = "发现景点·安息之地",
     Condition = Table_Menu_t.Condition[2],
-    event = Table_Menu_t.event[1112],
+    event = Table_Menu_t.event[1124],
     Tip = "发现景点·安息之地",
     Show = 1,
     Acc = 1,
@@ -21145,7 +21353,7 @@ Table_Menu = {
     id = 8508,
     text = "发现景点·风影树",
     Condition = Table_Menu_t.Condition[2],
-    event = Table_Menu_t.event[1111],
+    event = Table_Menu_t.event[1123],
     Tip = "发现景点·风影树",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21154,7 +21362,7 @@ Table_Menu = {
     id = 8509,
     text = "发现景点·无声的拘束",
     Condition = Table_Menu_t.Condition[2],
-    event = Table_Menu_t.event[1110],
+    event = Table_Menu_t.event[1122],
     Tip = "发现景点·无声的拘束",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21162,8 +21370,8 @@ Table_Menu = {
   [8510] = {
     id = 8510,
     text = "发现景点·星降之森",
-    Condition = Table_Menu_t.Condition[1417],
-    event = Table_Menu_t.event[1085],
+    Condition = Table_Menu_t.Condition[1442],
+    event = Table_Menu_t.event[1097],
     Tip = "发现景点·星降之森",
     Show = 1,
     Acc = 1,
@@ -21173,7 +21381,7 @@ Table_Menu = {
     id = 8511,
     text = "发现景点·星河的归处",
     Condition = Table_Menu_t.Condition[2],
-    event = Table_Menu_t.event[1109],
+    event = Table_Menu_t.event[1121],
     Tip = "发现景点·星河的归处",
     Show = 1,
     Acc = 1,
@@ -21183,7 +21391,7 @@ Table_Menu = {
     id = 8512,
     text = "发现景点·云之眼",
     Condition = Table_Menu_t.Condition[2],
-    event = Table_Menu_t.event[1108],
+    event = Table_Menu_t.event[1120],
     Tip = "发现景点·云之眼",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21192,7 +21400,7 @@ Table_Menu = {
     id = 8513,
     text = "发现景点·风息的角落",
     Condition = Table_Menu_t.Condition[2],
-    event = Table_Menu_t.event[1107],
+    event = Table_Menu_t.event[1119],
     Tip = "发现景点·风息的角落",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21200,8 +21408,8 @@ Table_Menu = {
   [8514] = {
     id = 8514,
     text = "发现景点·浮游魔菇",
-    Condition = Table_Menu_t.Condition[1416],
-    event = Table_Menu_t.event[1087],
+    Condition = Table_Menu_t.Condition[1441],
+    event = Table_Menu_t.event[1099],
     Tip = "发现景点·浮游魔菇",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21210,7 +21418,7 @@ Table_Menu = {
     id = 8515,
     text = "发现景点·逐虹的光辉",
     Condition = Table_Menu_t.Condition[2],
-    event = Table_Menu_t.event[1106],
+    event = Table_Menu_t.event[1118],
     Tip = "发现景点·逐虹的光辉",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21218,8 +21426,8 @@ Table_Menu = {
   [8516] = {
     id = 8516,
     text = "发现景点·叹息桥",
-    Condition = Table_Menu_t.Condition[1415],
-    event = Table_Menu_t.event[1105],
+    Condition = Table_Menu_t.Condition[1440],
+    event = Table_Menu_t.event[1117],
     Tip = "发现景点·叹息桥",
     Show = 1,
     Acc = 1,
@@ -21229,7 +21437,7 @@ Table_Menu = {
     id = 8517,
     text = "发现景点·神域彼岸",
     Condition = Table_Menu_t.Condition[2],
-    event = Table_Menu_t.event[1104],
+    event = Table_Menu_t.event[1116],
     Tip = "发现景点·神域彼岸",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21238,7 +21446,7 @@ Table_Menu = {
     id = 8518,
     text = "发现景点·辉光长桥",
     Condition = Table_Menu_t.Condition[2],
-    event = Table_Menu_t.event[1103],
+    event = Table_Menu_t.event[1115],
     Tip = "发现景点·学院入口",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21246,8 +21454,8 @@ Table_Menu = {
   [8519] = {
     id = 8519,
     text = "发现景点·克里图拉广场",
-    Condition = Table_Menu_t.Condition[1382],
-    event = Table_Menu_t.event[1102],
+    Condition = Table_Menu_t.Condition[1407],
+    event = Table_Menu_t.event[1114],
     Tip = "发现景点·克里图拉广场",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21255,8 +21463,8 @@ Table_Menu = {
   [8520] = {
     id = 8520,
     text = "发现景点·皇家藏书馆",
-    Condition = Table_Menu_t.Condition[1414],
-    event = Table_Menu_t.event[1101],
+    Condition = Table_Menu_t.Condition[1439],
+    event = Table_Menu_t.event[1113],
     Tip = "发现景点·皇家藏书馆",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21264,8 +21472,8 @@ Table_Menu = {
   [8521] = {
     id = 8521,
     text = "发现景点·初心殿堂",
-    Condition = Table_Menu_t.Condition[1414],
-    event = Table_Menu_t.event[1100],
+    Condition = Table_Menu_t.Condition[1439],
+    event = Table_Menu_t.event[1112],
     Tip = "发现景点·初心殿堂",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21273,8 +21481,8 @@ Table_Menu = {
   [8522] = {
     id = 8522,
     text = "发现景点·圣咏礼堂",
-    Condition = Table_Menu_t.Condition[1414],
-    event = Table_Menu_t.event[1099],
+    Condition = Table_Menu_t.Condition[1439],
+    event = Table_Menu_t.event[1111],
     Tip = "发现景点·圣咏礼堂",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21283,7 +21491,7 @@ Table_Menu = {
     id = 8523,
     text = "发现景点·圣伊兰草药园",
     Condition = Table_Menu_t.Condition[2],
-    event = Table_Menu_t.event[1098],
+    event = Table_Menu_t.event[1110],
     Tip = "发现景点·圣伊兰草药园",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21292,7 +21500,7 @@ Table_Menu = {
     id = 8524,
     text = "发现景点·加拉尔哨塔",
     Condition = Table_Menu_t.Condition[2],
-    event = Table_Menu_t.event[1097],
+    event = Table_Menu_t.event[1109],
     Tip = "发现景点·加拉尔哨塔",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21300,8 +21508,8 @@ Table_Menu = {
   [8525] = {
     id = 8525,
     text = "发现景点·真理长廊",
-    Condition = Table_Menu_t.Condition[1382],
-    event = Table_Menu_t.event[1089],
+    Condition = Table_Menu_t.Condition[1407],
+    event = Table_Menu_t.event[1101],
     Tip = "发现景点·真理长廊",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21309,8 +21517,8 @@ Table_Menu = {
   [8526] = {
     id = 8526,
     text = "发现景点·紫藤树餐厅",
-    Condition = Table_Menu_t.Condition[1382],
-    event = Table_Menu_t.event[1088],
+    Condition = Table_Menu_t.Condition[1407],
+    event = Table_Menu_t.event[1100],
     Tip = "发现景点·紫藤树餐厅",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21318,8 +21526,8 @@ Table_Menu = {
   [8527] = {
     id = 8527,
     text = "发现景点·浮游魔菇",
-    Condition = Table_Menu_t.Condition[1381],
-    event = Table_Menu_t.event[1087],
+    Condition = Table_Menu_t.Condition[1406],
+    event = Table_Menu_t.event[1099],
     Tip = "发现景点·浮游魔菇",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21327,8 +21535,8 @@ Table_Menu = {
   [8528] = {
     id = 8528,
     text = "发现景点·浮游魔菇",
-    Condition = Table_Menu_t.Condition[1380],
-    event = Table_Menu_t.event[1087],
+    Condition = Table_Menu_t.Condition[1405],
+    event = Table_Menu_t.event[1099],
     Tip = "发现景点·浮游魔菇",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21336,8 +21544,8 @@ Table_Menu = {
   [8529] = {
     id = 8529,
     text = "发现景点·星之扉",
-    Condition = Table_Menu_t.Condition[1379],
-    event = Table_Menu_t.event[1086],
+    Condition = Table_Menu_t.Condition[1404],
+    event = Table_Menu_t.event[1098],
     Tip = "发现景点·星之扉",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21345,8 +21553,8 @@ Table_Menu = {
   [8530] = {
     id = 8530,
     text = "发现景点·星之扉",
-    Condition = Table_Menu_t.Condition[1378],
-    event = Table_Menu_t.event[1086],
+    Condition = Table_Menu_t.Condition[1403],
+    event = Table_Menu_t.event[1098],
     Tip = "发现景点·星之扉",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21354,8 +21562,8 @@ Table_Menu = {
   [8531] = {
     id = 8531,
     text = "发现景点·星降之森",
-    Condition = Table_Menu_t.Condition[1379],
-    event = Table_Menu_t.event[1085],
+    Condition = Table_Menu_t.Condition[1404],
+    event = Table_Menu_t.event[1097],
     Tip = "发现景点·星降之森",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21363,8 +21571,8 @@ Table_Menu = {
   [8532] = {
     id = 8532,
     text = "发现景点·星降之森",
-    Condition = Table_Menu_t.Condition[1378],
-    event = Table_Menu_t.event[1085],
+    Condition = Table_Menu_t.Condition[1403],
+    event = Table_Menu_t.event[1097],
     Tip = "发现景点·星降之森",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21372,8 +21580,8 @@ Table_Menu = {
   [8533] = {
     id = 8533,
     text = "发现景点·王者的威严",
-    Condition = Table_Menu_t.Condition[1255],
-    event = Table_Menu_t.event[1084],
+    Condition = Table_Menu_t.Condition[1280],
+    event = Table_Menu_t.event[1096],
     Tip = "发现景点·王者的威严",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21381,8 +21589,8 @@ Table_Menu = {
   [8534] = {
     id = 8534,
     text = "发现景点·至高王座",
-    Condition = Table_Menu_t.Condition[1374],
-    event = Table_Menu_t.event[1083],
+    Condition = Table_Menu_t.Condition[1399],
+    event = Table_Menu_t.event[1095],
     Tip = "发现景点·至高王座",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21390,8 +21598,8 @@ Table_Menu = {
   [8535] = {
     id = 8535,
     text = "发现景点·辉煌交响",
-    Condition = Table_Menu_t.Condition[1377],
-    event = Table_Menu_t.event[1082],
+    Condition = Table_Menu_t.Condition[1402],
+    event = Table_Menu_t.event[1094],
     Tip = "发现景点·辉煌交响",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21399,8 +21607,8 @@ Table_Menu = {
   [8536] = {
     id = 8536,
     text = "发现景点·缄默之泉",
-    Condition = Table_Menu_t.Condition[1376],
-    event = Table_Menu_t.event[1081],
+    Condition = Table_Menu_t.Condition[1401],
+    event = Table_Menu_t.event[1093],
     Tip = "发现景点·缄默之泉",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21408,8 +21616,8 @@ Table_Menu = {
   [8537] = {
     id = 8537,
     text = "发现景点·宴会时刻",
-    Condition = Table_Menu_t.Condition[1375],
-    event = Table_Menu_t.event[1080],
+    Condition = Table_Menu_t.Condition[1400],
+    event = Table_Menu_t.event[1092],
     Tip = "发现景点·宴会时刻",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21417,8 +21625,8 @@ Table_Menu = {
   [8538] = {
     id = 8538,
     text = "发现景点·荣光的长廊",
-    Condition = Table_Menu_t.Condition[1255],
-    event = Table_Menu_t.event[1079],
+    Condition = Table_Menu_t.Condition[1280],
+    event = Table_Menu_t.event[1091],
     Tip = "发现景点·荣光的长廊",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21426,8 +21634,8 @@ Table_Menu = {
   [8539] = {
     id = 8539,
     text = "发现景点·黑暗中的秘密",
-    Condition = Table_Menu_t.Condition[1374],
-    event = Table_Menu_t.event[1078],
+    Condition = Table_Menu_t.Condition[1399],
+    event = Table_Menu_t.event[1090],
     Tip = "发现景点·黑暗中的秘密",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21435,8 +21643,8 @@ Table_Menu = {
   [8540] = {
     id = 8540,
     text = "发现景点·寂静宫廷",
-    Condition = Table_Menu_t.Condition[1373],
-    event = Table_Menu_t.event[1077],
+    Condition = Table_Menu_t.Condition[1398],
+    event = Table_Menu_t.event[1089],
     Tip = "发现景点·寂静宫廷",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21444,8 +21652,8 @@ Table_Menu = {
   [8541] = {
     id = 8541,
     text = "发现景点·贵宾之间",
-    Condition = Table_Menu_t.Condition[1372],
-    event = Table_Menu_t.event[1076],
+    Condition = Table_Menu_t.Condition[1397],
+    event = Table_Menu_t.event[1088],
     Tip = "发现景点·贵宾之间",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21453,8 +21661,8 @@ Table_Menu = {
   [8542] = {
     id = 8542,
     text = "发现景点·美食诞生",
-    Condition = Table_Menu_t.Condition[1371],
-    event = Table_Menu_t.event[1075],
+    Condition = Table_Menu_t.Condition[1396],
+    event = Table_Menu_t.event[1087],
     Tip = "发现景点·美食诞生",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21462,8 +21670,8 @@ Table_Menu = {
   [8543] = {
     id = 8543,
     text = "发现景点·幕后的秘密",
-    Condition = Table_Menu_t.Condition[1370],
-    event = Table_Menu_t.event[1074],
+    Condition = Table_Menu_t.Condition[1395],
+    event = Table_Menu_t.event[1086],
     Tip = "发现景点·幕后的秘密",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21472,7 +21680,7 @@ Table_Menu = {
     id = 8546,
     text = "发现景点·剑碑",
     Condition = Table_Menu_t.Condition[103],
-    event = Table_Menu_t.event[1073],
+    event = Table_Menu_t.event[1085],
     Tip = "发现景点·剑碑",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21481,7 +21689,7 @@ Table_Menu = {
     id = 8547,
     text = "发现景点·王室竞技场",
     Condition = Table_Menu_t.Condition[103],
-    event = Table_Menu_t.event[1072],
+    event = Table_Menu_t.event[1084],
     Tip = "发现景点·王室竞技场",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21490,7 +21698,7 @@ Table_Menu = {
     id = 8548,
     text = "发现景点·猎场仓库",
     Condition = Table_Menu_t.Condition[103],
-    event = Table_Menu_t.event[1071],
+    event = Table_Menu_t.event[1083],
     Tip = "发现景点·猎场仓库",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21499,7 +21707,7 @@ Table_Menu = {
     id = 8549,
     text = "发现景点·林间溪涧",
     Condition = Table_Menu_t.Condition[103],
-    event = Table_Menu_t.event[1070],
+    event = Table_Menu_t.event[1082],
     Tip = "发现景点·林间溪涧",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21508,7 +21716,7 @@ Table_Menu = {
     id = 8550,
     text = "发现景点·箭靶营地",
     Condition = Table_Menu_t.Condition[103],
-    event = Table_Menu_t.event[1069],
+    event = Table_Menu_t.event[1081],
     Tip = "发现景点·箭靶营地",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21517,7 +21725,7 @@ Table_Menu = {
     id = 8551,
     text = "发现景点·英魂剑碑",
     Condition = Table_Menu_t.Condition[104],
-    event = Table_Menu_t.event[1068],
+    event = Table_Menu_t.event[1080],
     Tip = "发现景点·英魂剑碑",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21526,7 +21734,7 @@ Table_Menu = {
     id = 8552,
     text = "发现景点·英魂传记",
     Condition = Table_Menu_t.Condition[104],
-    event = Table_Menu_t.event[1067],
+    event = Table_Menu_t.event[1079],
     Tip = "发现景点·英魂传记",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21534,8 +21742,8 @@ Table_Menu = {
   [8553] = {
     id = 8553,
     text = "发现景点·竹隐山门",
-    Condition = Table_Menu_t.Condition[1369],
-    event = Table_Menu_t.event[1066],
+    Condition = Table_Menu_t.Condition[1394],
+    event = Table_Menu_t.event[1078],
     Tip = "发现景点·竹隐山门",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21543,8 +21751,8 @@ Table_Menu = {
   [8554] = {
     id = 8554,
     text = "发现景点·天衍轮",
-    Condition = Table_Menu_t.Condition[1368],
-    event = Table_Menu_t.event[1065],
+    Condition = Table_Menu_t.Condition[1393],
+    event = Table_Menu_t.event[1077],
     Tip = "发现景点·天衍轮",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21552,8 +21760,8 @@ Table_Menu = {
   [8555] = {
     id = 8555,
     text = "发现景点·万象殿",
-    Condition = Table_Menu_t.Condition[1369],
-    event = Table_Menu_t.event[1064],
+    Condition = Table_Menu_t.Condition[1394],
+    event = Table_Menu_t.event[1076],
     Tip = "发现景点·万象殿",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21561,8 +21769,8 @@ Table_Menu = {
   [8556] = {
     id = 8556,
     text = "发现景点·演武场",
-    Condition = Table_Menu_t.Condition[1369],
-    event = Table_Menu_t.event[1063],
+    Condition = Table_Menu_t.Condition[1394],
+    event = Table_Menu_t.event[1075],
     Tip = "发现景点·演武场",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21570,8 +21778,8 @@ Table_Menu = {
   [8557] = {
     id = 8557,
     text = "发现景点·宗门禁地",
-    Condition = Table_Menu_t.Condition[1369],
-    event = Table_Menu_t.event[1062],
+    Condition = Table_Menu_t.Condition[1394],
+    event = Table_Menu_t.event[1074],
     Tip = "发现景点·宗门禁地",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21579,8 +21787,8 @@ Table_Menu = {
   [8558] = {
     id = 8558,
     text = "发现景点·坠星湖",
-    Condition = Table_Menu_t.Condition[1368],
-    event = Table_Menu_t.event[1061],
+    Condition = Table_Menu_t.Condition[1393],
+    event = Table_Menu_t.event[1073],
     Tip = "发现景点·坠星湖",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -21589,17 +21797,17 @@ Table_Menu = {
     id = 9000,
     PanelID = 485,
     text = "导师系统开放",
-    Condition = Table_Menu_t.Condition[1367],
+    Condition = Table_Menu_t.Condition[1392],
     sysMsg = Table_Menu_t.sysMsg[83],
     Tip = "导师系统 已开启",
-    Icon = Table_Menu_t.Icon[331]
+    Icon = Table_Menu_t.Icon[357]
   },
   [9001] = {
     id = 9001,
     text = "完成后可成为导师",
-    Condition = Table_Menu_t.Condition[1366],
+    Condition = Table_Menu_t.Condition[1391],
     Tip = "恭喜！进阶为导师",
-    Icon = Table_Menu_t.Icon[331]
+    Icon = Table_Menu_t.Icon[357]
   },
   [9002] = {
     id = 9002,
@@ -21622,7 +21830,7 @@ Table_Menu = {
   [9005] = {
     id = 9005,
     text = "学习时空断裂解锁存档功能",
-    Condition = Table_Menu_t.Condition[1365],
+    Condition = Table_Menu_t.Condition[1390],
     sysMsg = Table_Menu_t.sysMsg[81],
     Tip = "伊米尔的记事簿 已开放",
     Show = 1,
@@ -21702,7 +21910,7 @@ Table_Menu = {
     id = 9101,
     text = "追加新美瞳爱丽丝",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1060],
+    event = Table_Menu_t.event[1072],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21711,7 +21919,7 @@ Table_Menu = {
     id = 9102,
     text = "追加新美瞳爱丽丝·红",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1059],
+    event = Table_Menu_t.event[1071],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21720,7 +21928,7 @@ Table_Menu = {
     id = 9103,
     text = "追加新美瞳爱丽丝·黑",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1058],
+    event = Table_Menu_t.event[1070],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21729,7 +21937,7 @@ Table_Menu = {
     id = 9104,
     text = "追加新美瞳爱丽丝·白",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1057],
+    event = Table_Menu_t.event[1069],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21738,7 +21946,7 @@ Table_Menu = {
     id = 9105,
     text = "追加新美瞳爱丽丝·紫",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1056],
+    event = Table_Menu_t.event[1068],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21747,7 +21955,7 @@ Table_Menu = {
     id = 9106,
     text = "追加新美瞳爱丽丝·黄",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1055],
+    event = Table_Menu_t.event[1067],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21756,7 +21964,7 @@ Table_Menu = {
     id = 9107,
     text = "追加新美瞳爱丽丝·蓝",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1054],
+    event = Table_Menu_t.event[1066],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21765,7 +21973,7 @@ Table_Menu = {
     id = 9108,
     text = "追加新美瞳爱丽丝·棕",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1053],
+    event = Table_Menu_t.event[1065],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21774,7 +21982,7 @@ Table_Menu = {
     id = 9109,
     text = "追加新美瞳黄金午后",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1052],
+    event = Table_Menu_t.event[1064],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21783,7 +21991,7 @@ Table_Menu = {
     id = 9110,
     text = "追加新美瞳黄金午后·红",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1051],
+    event = Table_Menu_t.event[1063],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21792,7 +22000,7 @@ Table_Menu = {
     id = 9111,
     text = "追加新美瞳黄金午后·黑",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1050],
+    event = Table_Menu_t.event[1062],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21801,7 +22009,7 @@ Table_Menu = {
     id = 9112,
     text = "追加新美瞳黄金午后·白",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1049],
+    event = Table_Menu_t.event[1061],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21810,7 +22018,7 @@ Table_Menu = {
     id = 9113,
     text = "追加新美瞳黄金午后·紫",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1048],
+    event = Table_Menu_t.event[1060],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21819,7 +22027,7 @@ Table_Menu = {
     id = 9114,
     text = "追加新美瞳黄金午后·黄",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1047],
+    event = Table_Menu_t.event[1059],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21828,7 +22036,7 @@ Table_Menu = {
     id = 9115,
     text = "追加新美瞳黄金午后·蓝",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1046],
+    event = Table_Menu_t.event[1058],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21837,7 +22045,7 @@ Table_Menu = {
     id = 9116,
     text = "追加新美瞳黄金午后·棕",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1045],
+    event = Table_Menu_t.event[1057],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21846,7 +22054,7 @@ Table_Menu = {
     id = 9117,
     text = "追加新美瞳人鱼之心",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1044],
+    event = Table_Menu_t.event[1056],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -21855,7 +22063,7 @@ Table_Menu = {
     id = 9118,
     text = "追加新美瞳人鱼之心·红",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1043],
+    event = Table_Menu_t.event[1055],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -22260,7 +22468,7 @@ Table_Menu = {
     id = 9190,
     text = "追加新美瞳静谧回响",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1042],
+    event = Table_Menu_t.event[1054],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -22269,7 +22477,7 @@ Table_Menu = {
     id = 9200,
     text = "追加新美瞳水色祝福",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1041],
+    event = Table_Menu_t.event[1053],
     Tip = "美瞳商店追加新美瞳",
     Show = 1,
     Icon = Table_Menu_t.Icon[184]
@@ -22625,84 +22833,84 @@ Table_Menu = {
   [9414] = {
     id = 9414,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1364],
+    Condition = Table_Menu_t.Condition[1389],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9415] = {
     id = 9415,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1363],
+    Condition = Table_Menu_t.Condition[1388],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9416] = {
     id = 9416,
     text = "解锁组队竞技赛·传说段位商店",
-    Condition = Table_Menu_t.Condition[1362],
+    Condition = Table_Menu_t.Condition[1387],
     Tip = "解锁组队竞技赛·传说段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9417] = {
     id = 9417,
     text = "解锁组队竞技赛·战神段位商店",
-    Condition = Table_Menu_t.Condition[1361],
+    Condition = Table_Menu_t.Condition[1386],
     Tip = "解锁组队竞技赛·战神段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9418] = {
     id = 9418,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1360],
+    Condition = Table_Menu_t.Condition[1385],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9419] = {
     id = 9419,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1359],
+    Condition = Table_Menu_t.Condition[1384],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9420] = {
     id = 9420,
     text = "解锁组队竞技赛·传说段位商店",
-    Condition = Table_Menu_t.Condition[1358],
+    Condition = Table_Menu_t.Condition[1383],
     Tip = "解锁组队竞技赛·传说段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9421] = {
     id = 9421,
     text = "解锁组队竞技赛·战神段位商店",
-    Condition = Table_Menu_t.Condition[1357],
+    Condition = Table_Menu_t.Condition[1382],
     Tip = "解锁组队竞技赛·战神段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9422] = {
     id = 9422,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1356],
+    Condition = Table_Menu_t.Condition[1381],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9423] = {
     id = 9423,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1355],
+    Condition = Table_Menu_t.Condition[1380],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9424] = {
     id = 9424,
     text = "解锁组队竞技赛·传说段位商店",
-    Condition = Table_Menu_t.Condition[1354],
+    Condition = Table_Menu_t.Condition[1379],
     Tip = "解锁组队竞技赛·传说段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9425] = {
     id = 9425,
     text = "解锁组队竞技赛·战神段位商店",
-    Condition = Table_Menu_t.Condition[1353],
+    Condition = Table_Menu_t.Condition[1378],
     Tip = "解锁组队竞技赛·战神段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
@@ -22765,84 +22973,84 @@ Table_Menu = {
   [9434] = {
     id = 9434,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1352],
+    Condition = Table_Menu_t.Condition[1377],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9435] = {
     id = 9435,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1351],
+    Condition = Table_Menu_t.Condition[1376],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9436] = {
     id = 9436,
     text = "解锁组队竞技赛·传说段位商店",
-    Condition = Table_Menu_t.Condition[1350],
+    Condition = Table_Menu_t.Condition[1375],
     Tip = "解锁组队竞技赛·传说段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9437] = {
     id = 9437,
     text = "解锁组队竞技赛·战神段位商店",
-    Condition = Table_Menu_t.Condition[1349],
+    Condition = Table_Menu_t.Condition[1374],
     Tip = "解锁组队竞技赛·战神段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9438] = {
     id = 9438,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1348],
+    Condition = Table_Menu_t.Condition[1373],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9439] = {
     id = 9439,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1347],
+    Condition = Table_Menu_t.Condition[1372],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9440] = {
     id = 9440,
     text = "解锁组队竞技赛·传说段位商店",
-    Condition = Table_Menu_t.Condition[1346],
+    Condition = Table_Menu_t.Condition[1371],
     Tip = "解锁组队竞技赛·传说段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9441] = {
     id = 9441,
     text = "解锁组队竞技赛·战神段位商店",
-    Condition = Table_Menu_t.Condition[1345],
+    Condition = Table_Menu_t.Condition[1370],
     Tip = "解锁组队竞技赛·战神段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9442] = {
     id = 9442,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1344],
+    Condition = Table_Menu_t.Condition[1369],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9443] = {
     id = 9443,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1343],
+    Condition = Table_Menu_t.Condition[1368],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9444] = {
     id = 9444,
     text = "解锁组队竞技赛·传说段位商店",
-    Condition = Table_Menu_t.Condition[1342],
+    Condition = Table_Menu_t.Condition[1367],
     Tip = "解锁组队竞技赛·传说段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9445] = {
     id = 9445,
     text = "解锁组队竞技赛·战神段位商店",
-    Condition = Table_Menu_t.Condition[1341],
+    Condition = Table_Menu_t.Condition[1366],
     Tip = "解锁组队竞技赛·战神段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
@@ -22905,453 +23113,453 @@ Table_Menu = {
   [9454] = {
     id = 9454,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1340],
+    Condition = Table_Menu_t.Condition[1365],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9455] = {
     id = 9455,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1328],
+    Condition = Table_Menu_t.Condition[1353],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9456] = {
     id = 9456,
     text = "解锁组队竞技赛·传说段位商店",
-    Condition = Table_Menu_t.Condition[1327],
+    Condition = Table_Menu_t.Condition[1352],
     Tip = "解锁组队竞技赛·传说段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9457] = {
     id = 9457,
     text = "解锁组队竞技赛·战神段位商店",
-    Condition = Table_Menu_t.Condition[1326],
+    Condition = Table_Menu_t.Condition[1351],
     Tip = "解锁组队竞技赛·战神段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9458] = {
     id = 9458,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1325],
+    Condition = Table_Menu_t.Condition[1350],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9459] = {
     id = 9459,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1324],
+    Condition = Table_Menu_t.Condition[1349],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9460] = {
     id = 9460,
     text = "解锁组队竞技赛·传说段位商店",
-    Condition = Table_Menu_t.Condition[1323],
+    Condition = Table_Menu_t.Condition[1348],
     Tip = "解锁组队竞技赛·传说段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9461] = {
     id = 9461,
     text = "解锁组队竞技赛·战神段位商店",
-    Condition = Table_Menu_t.Condition[1322],
+    Condition = Table_Menu_t.Condition[1347],
     Tip = "解锁组队竞技赛·战神段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9462] = {
     id = 9462,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1321],
+    Condition = Table_Menu_t.Condition[1346],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9463] = {
     id = 9463,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1320],
+    Condition = Table_Menu_t.Condition[1345],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9464] = {
     id = 9464,
     text = "解锁组队竞技赛·传说段位商店",
-    Condition = Table_Menu_t.Condition[1319],
+    Condition = Table_Menu_t.Condition[1344],
     Tip = "解锁组队竞技赛·传说段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9465] = {
     id = 9465,
     text = "解锁组队竞技赛·战神段位商店",
-    Condition = Table_Menu_t.Condition[1318],
+    Condition = Table_Menu_t.Condition[1343],
     Tip = "解锁组队竞技赛·战神段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9466] = {
     id = 9466,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1317],
+    Condition = Table_Menu_t.Condition[1342],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9467] = {
     id = 9467,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1316],
+    Condition = Table_Menu_t.Condition[1341],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9468] = {
     id = 9468,
     text = "解锁组队竞技赛·传说段位商店",
-    Condition = Table_Menu_t.Condition[1315],
+    Condition = Table_Menu_t.Condition[1340],
     Tip = "解锁组队竞技赛·传说段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9469] = {
     id = 9469,
     text = "解锁组队竞技赛·战神段位商店",
-    Condition = Table_Menu_t.Condition[1314],
+    Condition = Table_Menu_t.Condition[1339],
     Tip = "解锁组队竞技赛·战神段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9470] = {
     id = 9470,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1313],
+    Condition = Table_Menu_t.Condition[1338],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9471] = {
     id = 9471,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1312],
+    Condition = Table_Menu_t.Condition[1337],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9472] = {
     id = 9472,
     text = "解锁组队竞技赛·传说段位商店",
-    Condition = Table_Menu_t.Condition[1311],
+    Condition = Table_Menu_t.Condition[1336],
     Tip = "解锁组队竞技赛·传说段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9473] = {
     id = 9473,
     text = "解锁组队竞技赛·战神段位商店",
-    Condition = Table_Menu_t.Condition[1310],
+    Condition = Table_Menu_t.Condition[1335],
     Tip = "解锁组队竞技赛·战神段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9474] = {
     id = 9474,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1309],
+    Condition = Table_Menu_t.Condition[1334],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9475] = {
     id = 9475,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1308],
+    Condition = Table_Menu_t.Condition[1333],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9476] = {
     id = 9476,
     text = "解锁组队竞技赛·传说段位商店",
-    Condition = Table_Menu_t.Condition[1307],
+    Condition = Table_Menu_t.Condition[1332],
     Tip = "解锁组队竞技赛·传说段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9477] = {
     id = 9477,
     text = "解锁组队竞技赛·战神段位商店",
-    Condition = Table_Menu_t.Condition[1306],
+    Condition = Table_Menu_t.Condition[1331],
     Tip = "解锁组队竞技赛·战神段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9478] = {
     id = 9478,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1305],
+    Condition = Table_Menu_t.Condition[1330],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9479] = {
     id = 9479,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1304],
+    Condition = Table_Menu_t.Condition[1329],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9480] = {
     id = 9480,
     text = "解锁组队竞技赛·传说段位商店",
-    Condition = Table_Menu_t.Condition[1303],
+    Condition = Table_Menu_t.Condition[1328],
     Tip = "解锁组队竞技赛·传说段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9481] = {
     id = 9481,
     text = "解锁组队竞技赛·战神段位商店",
-    Condition = Table_Menu_t.Condition[1302],
+    Condition = Table_Menu_t.Condition[1327],
     Tip = "解锁组队竞技赛·战神段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9482] = {
     id = 9482,
     text = "解锁组队竞技赛·精英段位商店",
-    Condition = Table_Menu_t.Condition[1301],
+    Condition = Table_Menu_t.Condition[1326],
     Tip = "解锁组队竞技赛·精英段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9483] = {
     id = 9483,
     text = "解锁组队竞技赛·斗士段位商店",
-    Condition = Table_Menu_t.Condition[1300],
+    Condition = Table_Menu_t.Condition[1325],
     Tip = "解锁组队竞技赛·斗士段位商店",
     Icon = Table_Menu_t.Icon[189]
   },
   [9500] = {
     id = 9500,
     text = "已解锁3张限定特典",
-    Condition = Table_Menu_t.Condition[1299],
+    Condition = Table_Menu_t.Condition[1324],
     Tip = "已解锁3张限定特典",
     Acc = 1
   },
   [9501] = {
     id = 9501,
     text = "已解锁5张限定特典",
-    Condition = Table_Menu_t.Condition[1298],
+    Condition = Table_Menu_t.Condition[1323],
     Tip = "已解锁5张限定特典",
     Acc = 1
   },
   [9502] = {
     id = 9502,
     text = "已解锁7张限定特典",
-    Condition = Table_Menu_t.Condition[1297],
+    Condition = Table_Menu_t.Condition[1322],
     Tip = "已解锁7张限定特典",
     Acc = 1
   },
   [9503] = {
     id = 9503,
     text = "已解锁10张限定特典",
-    Condition = Table_Menu_t.Condition[1296],
+    Condition = Table_Menu_t.Condition[1321],
     Tip = "已解锁10张限定特典",
     Acc = 1
   },
   [9504] = {
     id = 9504,
     text = "已解锁20个头饰",
-    Condition = Table_Menu_t.Condition[1295],
+    Condition = Table_Menu_t.Condition[1320],
     Tip = "已解锁20个头饰",
     Acc = 1
   },
   [9505] = {
     id = 9505,
     text = "已解锁30张头饰",
-    Condition = Table_Menu_t.Condition[761],
+    Condition = Table_Menu_t.Condition[762],
     Tip = "已解锁30张头饰",
     Acc = 1
   },
   [9506] = {
     id = 9506,
     text = "已解锁40张头饰",
-    Condition = Table_Menu_t.Condition[1294],
+    Condition = Table_Menu_t.Condition[1319],
     Tip = "已解锁40张头饰",
     Acc = 1
   },
   [9507] = {
     id = 9507,
     text = "已解锁50张头饰",
-    Condition = Table_Menu_t.Condition[766],
+    Condition = Table_Menu_t.Condition[767],
     Tip = "已解锁50张头饰",
     Acc = 1
   },
   [9508] = {
     id = 9508,
     text = "已解锁60张头饰",
-    Condition = Table_Menu_t.Condition[760],
+    Condition = Table_Menu_t.Condition[761],
     Tip = "已解锁60张头饰",
     Acc = 1
   },
   [9509] = {
     id = 9509,
     text = "已解锁80张头饰",
-    Condition = Table_Menu_t.Condition[1293],
+    Condition = Table_Menu_t.Condition[1318],
     Tip = "已解锁80张头饰",
     Acc = 1
   },
   [9510] = {
     id = 9510,
     text = "冒险手册中激活%s/5个头饰",
-    Condition = Table_Menu_t.Condition[1292],
+    Condition = Table_Menu_t.Condition[1317],
     Tip = "宠物打工·微笑小姐开启",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[319]
+    Icon = Table_Menu_t.Icon[345]
   },
   [9520] = {
     id = 9520,
     text = "已解锁12张限定特典",
-    Condition = Table_Menu_t.Condition[1291],
+    Condition = Table_Menu_t.Condition[1316],
     Tip = "已解锁12张限定特典",
     Acc = 1
   },
   [9521] = {
     id = 9521,
     text = "已解锁28张限定特典",
-    Condition = Table_Menu_t.Condition[1290],
+    Condition = Table_Menu_t.Condition[1315],
     Tip = "已解锁28张限定特典",
     Acc = 1
   },
   [9522] = {
     id = 9522,
     text = "已解锁100个成就",
-    Condition = Table_Menu_t.Condition[758],
+    Condition = Table_Menu_t.Condition[759],
     Tip = "已解锁100个成就",
     Acc = 1
   },
   [9523] = {
     id = 9523,
     text = "已解锁200个成就",
-    Condition = Table_Menu_t.Condition[757],
+    Condition = Table_Menu_t.Condition[758],
     Tip = "已解锁200个成就",
     Acc = 1
   },
   [9524] = {
     id = 9524,
     text = "已解锁300个成就",
-    Condition = Table_Menu_t.Condition[755],
+    Condition = Table_Menu_t.Condition[756],
     Tip = "已解锁300个成就",
     Acc = 1
   },
   [9525] = {
     id = 9525,
     text = "已解锁400个成就",
-    Condition = Table_Menu_t.Condition[1289],
+    Condition = Table_Menu_t.Condition[1314],
     Tip = "已解锁400个成就",
     Acc = 1
   },
   [9600] = {
     id = 9600,
     text = "祈祷卡片包购买次数+1",
-    Condition = Table_Menu_t.Condition[1288],
-    event = Table_Menu_t.event[1040],
+    Condition = Table_Menu_t.Condition[1313],
+    event = Table_Menu_t.event[1052],
     Tip = "祈祷卡片包购买次数+1",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[318]
+    Icon = Table_Menu_t.Icon[344]
   },
   [9601] = {
     id = 9601,
     text = "祈祷卡片包购买次数+1",
-    Condition = Table_Menu_t.Condition[1287],
-    event = Table_Menu_t.event[1040],
+    Condition = Table_Menu_t.Condition[1312],
+    event = Table_Menu_t.event[1052],
     Tip = "祈祷卡片包购买次数+1",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[318]
+    Icon = Table_Menu_t.Icon[344]
   },
   [9602] = {
     id = 9602,
     text = "祈祷卡片包购买次数+1",
-    Condition = Table_Menu_t.Condition[1286],
-    event = Table_Menu_t.event[1040],
+    Condition = Table_Menu_t.Condition[1311],
+    event = Table_Menu_t.event[1052],
     Tip = "祈祷卡片包购买次数+1",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[318]
+    Icon = Table_Menu_t.Icon[344]
   },
   [9603] = {
     id = 9603,
     text = "祈祷卡片包购买次数+1",
-    Condition = Table_Menu_t.Condition[1285],
-    event = Table_Menu_t.event[1040],
+    Condition = Table_Menu_t.Condition[1310],
+    event = Table_Menu_t.event[1052],
     Tip = "祈祷卡片包购买次数+1",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[318]
+    Icon = Table_Menu_t.Icon[344]
   },
   [9604] = {
     id = 9604,
     text = "祈祷卡片包购买次数+1",
-    Condition = Table_Menu_t.Condition[1284],
-    event = Table_Menu_t.event[1040],
+    Condition = Table_Menu_t.Condition[1309],
+    event = Table_Menu_t.event[1052],
     Tip = "祈祷卡片包购买次数+1",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[318]
+    Icon = Table_Menu_t.Icon[344]
   },
   [9605] = {
     id = 9605,
     text = "祈祷卡片包购买次数+1",
-    Condition = Table_Menu_t.Condition[1283],
-    event = Table_Menu_t.event[1040],
+    Condition = Table_Menu_t.Condition[1308],
+    event = Table_Menu_t.event[1052],
     Tip = "祈祷卡片包购买次数+1",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[318]
+    Icon = Table_Menu_t.Icon[344]
   },
   [9606] = {
     id = 9606,
     text = "祈祷卡片包购买次数+1",
-    Condition = Table_Menu_t.Condition[1282],
-    event = Table_Menu_t.event[1040],
+    Condition = Table_Menu_t.Condition[1307],
+    event = Table_Menu_t.event[1052],
     Tip = "祈祷卡片包购买次数+1",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[318]
+    Icon = Table_Menu_t.Icon[344]
   },
   [9607] = {
     id = 9607,
     text = "祈祷卡片包购买次数+1",
-    Condition = Table_Menu_t.Condition[1281],
-    event = Table_Menu_t.event[1040],
+    Condition = Table_Menu_t.Condition[1306],
+    event = Table_Menu_t.event[1052],
     Tip = "祈祷卡片包购买次数+1",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[318]
+    Icon = Table_Menu_t.Icon[344]
   },
   [9608] = {
     id = 9608,
     text = "祈祷卡片包购买次数+1",
-    Condition = Table_Menu_t.Condition[1280],
-    event = Table_Menu_t.event[1040],
+    Condition = Table_Menu_t.Condition[1305],
+    event = Table_Menu_t.event[1052],
     Tip = "祈祷卡片包购买次数+1",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[318]
+    Icon = Table_Menu_t.Icon[344]
   },
   [9609] = {
     id = 9609,
     text = "祈祷卡片包购买次数+1",
-    Condition = Table_Menu_t.Condition[1279],
-    event = Table_Menu_t.event[1040],
+    Condition = Table_Menu_t.Condition[1304],
+    event = Table_Menu_t.event[1052],
     Tip = "祈祷卡片包购买次数+1",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[318]
+    Icon = Table_Menu_t.Icon[344]
   },
   [9610] = {
     id = 9610,
     text = "祈祷卡片包购买次数+2",
-    Condition = Table_Menu_t.Condition[1278],
-    event = Table_Menu_t.event[1039],
+    Condition = Table_Menu_t.Condition[1303],
+    event = Table_Menu_t.event[1051],
     Tip = "祈祷卡片包购买次数+2",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[318]
+    Icon = Table_Menu_t.Icon[344]
   },
   [9611] = {
     id = 9611,
     text = "祈祷卡片包购买次数+3",
-    Condition = Table_Menu_t.Condition[1277],
-    event = Table_Menu_t.event[1038],
+    Condition = Table_Menu_t.Condition[1302],
+    event = Table_Menu_t.event[1050],
     Tip = "祈祷卡片包购买次数+3",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[318]
+    Icon = Table_Menu_t.Icon[344]
   },
   [9612] = {
     id = 9612,
@@ -24083,8 +24291,8 @@ Table_Menu = {
   [9691] = {
     id = 9691,
     text = "发现景点·企鹅工坊",
-    Condition = Table_Menu_t.Condition[1276],
-    event = Table_Menu_t.event[1037],
+    Condition = Table_Menu_t.Condition[1301],
+    event = Table_Menu_t.event[1049],
     Tip = "发现景点·企鹅工坊",
     Show = 1,
     Acc = 1,
@@ -24093,8 +24301,8 @@ Table_Menu = {
   [9692] = {
     id = 9692,
     text = "发现景点·不归之桥",
-    Condition = Table_Menu_t.Condition[1274],
-    event = Table_Menu_t.event[1036],
+    Condition = Table_Menu_t.Condition[1299],
+    event = Table_Menu_t.event[1048],
     Tip = "发现景点·不归之桥",
     Show = 1,
     Acc = 1,
@@ -24104,15 +24312,15 @@ Table_Menu = {
     id = 9693,
     text = "发现景点·魔女要塞",
     Condition = Table_Menu_t.Condition[96],
-    event = Table_Menu_t.event[1035],
+    event = Table_Menu_t.event[1047],
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
   },
   [9694] = {
     id = 9694,
     text = "发现景点·光阴神木",
-    Condition = Table_Menu_t.Condition[1275],
-    event = Table_Menu_t.event[1034],
+    Condition = Table_Menu_t.Condition[1300],
+    event = Table_Menu_t.event[1046],
     Tip = "发现景点·光阴神木",
     Show = 1,
     Acc = 1,
@@ -24121,8 +24329,8 @@ Table_Menu = {
   [9695] = {
     id = 9695,
     text = "发现景点·晨星余晖",
-    Condition = Table_Menu_t.Condition[1274],
-    event = Table_Menu_t.event[1033],
+    Condition = Table_Menu_t.Condition[1299],
+    event = Table_Menu_t.event[1045],
     Tip = "发现景点·晨星余晖",
     Show = 1,
     Acc = 1,
@@ -24144,9 +24352,9 @@ Table_Menu = {
     id = 9698,
     type = 1,
     text = "艾卡拉奇·辛格拉万事箱 已开放",
-    Condition = Table_Menu_t.Condition[826],
+    Condition = Table_Menu_t.Condition[827],
     Tip = "艾卡拉奇·辛格拉万事箱 已开放",
-    Icon = Table_Menu_t.Icon[317]
+    Icon = Table_Menu_t.Icon[343]
   },
   [9699] = {
     id = 9699,
@@ -24154,7 +24362,7 @@ Table_Menu = {
     text = "洛阳·辛格拉万事箱 已开放",
     Condition = Table_Menu_t.Condition[221],
     Tip = "洛阳·辛格拉万事箱 已开放",
-    Icon = Table_Menu_t.Icon[317]
+    Icon = Table_Menu_t.Icon[343]
   },
   [9700] = {
     id = 9700,
@@ -24162,7 +24370,7 @@ Table_Menu = {
     text = "里希塔乐镇·辛格拉万事箱 已开放",
     Condition = Table_Menu_t.Condition[221],
     Tip = "里希塔乐镇·辛格拉万事箱 已开放",
-    Icon = Table_Menu_t.Icon[317]
+    Icon = Table_Menu_t.Icon[343]
   },
   [9701] = {
     id = 9701,
@@ -24175,7 +24383,7 @@ Table_Menu = {
   [9703] = {
     id = 9703,
     text = "解锁坐骑商店·剑狮购买权限",
-    Condition = Table_Menu_t.Condition[1273],
+    Condition = Table_Menu_t.Condition[1298],
     Tip = "解锁坐骑商店·剑狮购买权限",
     Show = 1,
     Icon = Table_Menu_t.Icon[14]
@@ -24183,7 +24391,7 @@ Table_Menu = {
   [9705] = {
     id = 9705,
     text = "解锁坐骑商店·豪猪购买权限",
-    Condition = Table_Menu_t.Condition[1272],
+    Condition = Table_Menu_t.Condition[1297],
     Tip = "解锁坐骑商店·豪猪购买权限",
     Show = 1,
     Icon = Table_Menu_t.Icon[14]
@@ -24191,7 +24399,7 @@ Table_Menu = {
   [9707] = {
     id = 9707,
     text = "解锁坐骑商店·九尾购买权限",
-    Condition = Table_Menu_t.Condition[1271],
+    Condition = Table_Menu_t.Condition[1296],
     Tip = "解锁坐骑商店·九尾购买权限",
     Show = 1,
     Icon = Table_Menu_t.Icon[14]
@@ -24199,7 +24407,7 @@ Table_Menu = {
   [9709] = {
     id = 9709,
     text = "解锁坐骑商店·斑鬣购买权限",
-    Condition = Table_Menu_t.Condition[1270],
+    Condition = Table_Menu_t.Condition[1295],
     Tip = "解锁坐骑商店·斑鬣购买权限",
     Show = 1,
     Icon = Table_Menu_t.Icon[14]
@@ -24207,7 +24415,7 @@ Table_Menu = {
   [9711] = {
     id = 9711,
     text = "解锁坐骑商店·波利购买权限",
-    Condition = Table_Menu_t.Condition[1269],
+    Condition = Table_Menu_t.Condition[1294],
     Tip = "解锁坐骑商店·波利购买权限",
     Show = 1,
     Icon = Table_Menu_t.Icon[14]
@@ -24215,7 +24423,7 @@ Table_Menu = {
   [9712] = {
     id = 9712,
     text = "解锁坐骑商店·鸵鸟购买权限",
-    Condition = Table_Menu_t.Condition[1268],
+    Condition = Table_Menu_t.Condition[1293],
     Tip = "解锁坐骑商店·鸵鸟购买权限",
     Show = 1,
     Icon = Table_Menu_t.Icon[14]
@@ -24223,7 +24431,7 @@ Table_Menu = {
   [9713] = {
     id = 9713,
     text = "解锁坐骑商店·豚鼠购买权限",
-    Condition = Table_Menu_t.Condition[1267],
+    Condition = Table_Menu_t.Condition[1292],
     Tip = "解锁坐骑商店·豚鼠购买权限",
     Show = 1,
     Icon = Table_Menu_t.Icon[14]
@@ -24231,7 +24439,7 @@ Table_Menu = {
   [9714] = {
     id = 9714,
     text = "解锁坐骑商店·忍蛙购买权限",
-    Condition = Table_Menu_t.Condition[1266],
+    Condition = Table_Menu_t.Condition[1291],
     Tip = "解锁坐骑商店·忍蛙购买权限",
     Show = 1,
     Icon = Table_Menu_t.Icon[14]
@@ -24239,7 +24447,7 @@ Table_Menu = {
   [9715] = {
     id = 9715,
     text = "解锁坐骑商店·摩托车购买权限",
-    Condition = Table_Menu_t.Condition[1265],
+    Condition = Table_Menu_t.Condition[1290],
     Tip = "解锁坐骑商店·摩托车购买权限",
     Show = 1,
     Icon = Table_Menu_t.Icon[14]
@@ -24247,7 +24455,7 @@ Table_Menu = {
   [9716] = {
     id = 9716,
     text = "解锁坐骑商店·梦魂兽购买权限",
-    Condition = Table_Menu_t.Condition[1264],
+    Condition = Table_Menu_t.Condition[1289],
     Tip = "解锁坐骑商店·梦魂兽购买权限",
     Show = 1,
     Icon = Table_Menu_t.Icon[14]
@@ -24255,7 +24463,7 @@ Table_Menu = {
   [9717] = {
     id = 9717,
     text = "解锁坐骑商店·山麟购买权限",
-    Condition = Table_Menu_t.Condition[1263],
+    Condition = Table_Menu_t.Condition[1288],
     Tip = "解锁坐骑商店·山麟购买权限",
     Show = 1,
     Icon = Table_Menu_t.Icon[14]
@@ -24263,7 +24471,7 @@ Table_Menu = {
   [9800] = {
     id = 9800,
     text = "解锁执事可可",
-    Condition = Table_Menu_t.Condition[1262],
+    Condition = Table_Menu_t.Condition[1287],
     Tip = "解锁可可的兑换商店",
     Acc = 1
   },
@@ -24277,7 +24485,7 @@ Table_Menu = {
   [9802] = {
     id = 9802,
     text = "解锁执事伊斯菲尔",
-    Condition = Table_Menu_t.Condition[1261],
+    Condition = Table_Menu_t.Condition[1286],
     Tip = "解锁伊斯菲尔的兑换商店",
     Acc = 1
   },
@@ -24396,53 +24604,66 @@ Table_Menu = {
   [9819] = {
     id = 9819,
     text = "解锁艾卡拉奇主线CG",
-    Condition = Table_Menu_t.Condition[1258],
+    Condition = Table_Menu_t.Condition[1283],
     Tip = "解锁艾卡拉奇主线CG"
   },
   [9820] = {
     id = 9820,
     text = "解锁梦幻城主线CG",
-    Condition = Table_Menu_t.Condition[1257],
+    Condition = Table_Menu_t.Condition[1282],
     Tip = "解锁梦幻城主线CG"
   },
   [9821] = {
     id = 9821,
     text = "解锁梦幻城主线CG",
-    Condition = Table_Menu_t.Condition[1256],
+    Condition = Table_Menu_t.Condition[1281],
     Tip = "解锁梦幻城主线CG"
   },
   [9822] = {
     id = 9822,
     text = "解锁七王室主线CG",
-    Condition = Table_Menu_t.Condition[1255],
+    Condition = Table_Menu_t.Condition[1280],
     Tip = "解锁七王室主线CG"
   },
   [9823] = {
     id = 9823,
     text = "创建公会",
-    Condition = Table_Menu_t.Condition[1254]
+    Condition = Table_Menu_t.Condition[1279]
   },
   [9824] = {
     id = 9824,
     text = "加入公会",
-    Condition = Table_Menu_t.Condition[1253]
+    Condition = Table_Menu_t.Condition[1278]
   },
   [9825] = {
     id = 9825,
     text = "解锁海港的愿望主线CG",
-    Condition = Table_Menu_t.Condition[1252],
+    Condition = Table_Menu_t.Condition[1277],
     Tip = "解锁海港的愿望主线CG"
   },
   [9826] = {
     id = 9826,
     text = "解锁古城之泪主线CG",
-    Condition = Table_Menu_t.Condition[1251],
+    Condition = Table_Menu_t.Condition[1276],
     Tip = "解锁古城之泪主线CG"
+  },
+  [9893] = {
+    id = 9893,
+    type = 1,
+    text = "解锁啾啾派对",
+    Condition = Table_Menu_t.Condition[221],
+    Acc = 1
+  },
+  [9894] = {
+    id = 9894,
+    text = "解锁啾啾派对",
+    Condition = Table_Menu_t.Condition[526],
+    Acc = 1
   },
   [9895] = {
     id = 9895,
     text = "家园·引导任务",
-    Condition = Table_Menu_t.Condition[526],
+    Condition = Table_Menu_t.Condition[527],
     Acc = 1
   },
   [9896] = {
@@ -24450,7 +24671,7 @@ Table_Menu = {
     type = 1,
     PanelID = 1842,
     text = "家园·冰羽之家解锁",
-    Condition = Table_Menu_t.Condition[527],
+    Condition = Table_Menu_t.Condition[528],
     Tip = "家园·冰羽之家解锁",
     Show = 1,
     Acc = 1,
@@ -24460,7 +24681,7 @@ Table_Menu = {
   [9897] = {
     id = 9897,
     text = "花园解锁",
-    Condition = Table_Menu_t.Condition[528],
+    Condition = Table_Menu_t.Condition[529],
     Tip = "花园解锁",
     Show = 1,
     Acc = 1,
@@ -24469,14 +24690,14 @@ Table_Menu = {
   [9898] = {
     id = 9898,
     text = "中型房升阶任务解锁",
-    Condition = Table_Menu_t.Condition[529],
+    Condition = Table_Menu_t.Condition[530],
     Tip = "中型房升阶任务解锁",
     Acc = 1
   },
   [9899] = {
     id = 9899,
     text = "中型房屋解锁",
-    Condition = Table_Menu_t.Condition[530],
+    Condition = Table_Menu_t.Condition[531],
     Tip = "解锁·中型房屋",
     Show = 1,
     Acc = 1,
@@ -24485,7 +24706,7 @@ Table_Menu = {
   [9900] = {
     id = 9900,
     text = "解锁家具收纳包",
-    Condition = Table_Menu_t.Condition[531],
+    Condition = Table_Menu_t.Condition[532],
     Tip = "家具收纳包的解锁",
     Show = 1,
     Acc = 1,
@@ -24506,7 +24727,7 @@ Table_Menu = {
   [9902] = {
     id = 9902,
     text = "冒险手册·家具图鉴开放",
-    Condition = Table_Menu_t.Condition[531],
+    Condition = Table_Menu_t.Condition[532],
     Tip = "解锁·家具图鉴",
     Show = 1,
     Acc = 1,
@@ -24516,7 +24737,7 @@ Table_Menu = {
   [9903] = {
     id = 9903,
     text = "解锁日夜恋人CG",
-    Condition = Table_Menu_t.Condition[532],
+    Condition = Table_Menu_t.Condition[533],
     Tip = "解锁日夜恋人CG"
   },
   [9904] = {
@@ -24528,13 +24749,13 @@ Table_Menu = {
   [9905] = {
     id = 9905,
     text = "解锁克雷斯特汉姆CG",
-    Condition = Table_Menu_t.Condition[533],
+    Condition = Table_Menu_t.Condition[534],
     Tip = "解锁克雷斯特汉姆CG"
   },
   [9906] = {
     id = 9906,
     text = "解锁艾尔帕兰主线CG",
-    Condition = Table_Menu_t.Condition[534],
+    Condition = Table_Menu_t.Condition[535],
     Tip = "解锁艾尔帕兰主线CG"
   },
   [9907] = {
@@ -24546,7 +24767,7 @@ Table_Menu = {
   [9908] = {
     id = 9908,
     text = "解锁朱诺主线CG",
-    Condition = Table_Menu_t.Condition[535],
+    Condition = Table_Menu_t.Condition[536],
     Tip = "解锁朱诺主线CG"
   },
   [9909] = {
@@ -24574,7 +24795,7 @@ Table_Menu = {
   [9912] = {
     id = 9912,
     text = "解锁天津町主线CG",
-    Condition = Table_Menu_t.Condition[536],
+    Condition = Table_Menu_t.Condition[537],
     Tip = "解锁天津町主线CG"
   },
   [9913] = {
@@ -24598,7 +24819,7 @@ Table_Menu = {
   [9916] = {
     id = 9916,
     text = "解锁洛阳主线CG",
-    Condition = Table_Menu_t.Condition[537],
+    Condition = Table_Menu_t.Condition[538],
     Tip = "解锁洛阳主线CG"
   },
   [9917] = {
@@ -24610,13 +24831,13 @@ Table_Menu = {
   [9918] = {
     id = 9918,
     text = "解锁洛阳主线CG",
-    Condition = Table_Menu_t.Condition[538],
+    Condition = Table_Menu_t.Condition[539],
     Tip = "解锁洛阳主线CG"
   },
   [9919] = {
     id = 9919,
     text = "解锁月之湖主线CG",
-    Condition = Table_Menu_t.Condition[539],
+    Condition = Table_Menu_t.Condition[540],
     Tip = "解锁月之湖主线CG"
   },
   [9920] = {
@@ -24675,7 +24896,7 @@ Table_Menu = {
     id = 9926,
     type = 1,
     text = "美之宫2F开启",
-    Condition = Table_Menu_t.Condition[540],
+    Condition = Table_Menu_t.Condition[541],
     Tip = "美之宫2F开启"
   },
   [9927] = {
@@ -24705,6 +24926,7 @@ Table_Menu = {
   },
   [9931] = {
     id = 9931,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[637],
     Tip = "解锁·新武器外观收集",
@@ -24713,6 +24935,7 @@ Table_Menu = {
   },
   [9932] = {
     id = 9932,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[638],
     Tip = "解锁·新武器外观收集",
@@ -24721,6 +24944,7 @@ Table_Menu = {
   },
   [9933] = {
     id = 9933,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[639],
     Tip = "解锁·新武器外观收集",
@@ -24736,6 +24960,7 @@ Table_Menu = {
   },
   [9936] = {
     id = 9936,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[640],
     Tip = "解锁·新武器外观收集",
@@ -24744,6 +24969,7 @@ Table_Menu = {
   },
   [9937] = {
     id = 9937,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[641],
     Tip = "解锁·新武器外观收集",
@@ -24773,6 +24999,7 @@ Table_Menu = {
   },
   [9941] = {
     id = 9941,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[645],
     Tip = "解锁·新武器外观收集",
@@ -24802,6 +25029,7 @@ Table_Menu = {
   },
   [9945] = {
     id = 9945,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[649],
     Tip = "解锁·新武器外观收集",
@@ -24810,6 +25038,7 @@ Table_Menu = {
   },
   [9947] = {
     id = 9947,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[650],
     Tip = "解锁·新武器外观收集",
@@ -24818,6 +25047,7 @@ Table_Menu = {
   },
   [9948] = {
     id = 9948,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[651],
     Tip = "解锁·新武器外观收集",
@@ -24826,6 +25056,7 @@ Table_Menu = {
   },
   [9949] = {
     id = 9949,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[652],
     Tip = "解锁·新武器外观收集",
@@ -24834,6 +25065,7 @@ Table_Menu = {
   },
   [9950] = {
     id = 9950,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[653],
     Tip = "解锁·新武器外观收集",
@@ -24842,6 +25074,7 @@ Table_Menu = {
   },
   [9951] = {
     id = 9951,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[654],
     Tip = "解锁·新武器外观收集",
@@ -24850,6 +25083,7 @@ Table_Menu = {
   },
   [9952] = {
     id = 9952,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[655],
     Tip = "解锁·新武器外观收集",
@@ -24858,6 +25092,7 @@ Table_Menu = {
   },
   [9954] = {
     id = 9954,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[656],
     Tip = "解锁·新武器外观收集",
@@ -24866,6 +25101,7 @@ Table_Menu = {
   },
   [9955] = {
     id = 9955,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[657],
     Tip = "解锁·新武器外观收集",
@@ -24874,6 +25110,7 @@ Table_Menu = {
   },
   [9958] = {
     id = 9958,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[658],
     Tip = "解锁·新武器外观收集",
@@ -24882,6 +25119,7 @@ Table_Menu = {
   },
   [9959] = {
     id = 9959,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[659],
     Tip = "解锁·新武器外观收集",
@@ -24890,6 +25128,7 @@ Table_Menu = {
   },
   [9960] = {
     id = 9960,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[660],
     Tip = "解锁·新武器外观收集",
@@ -24899,10 +25138,11 @@ Table_Menu = {
   [9961] = {
     id = 9961,
     text = "王立克里图拉学院任务",
-    Condition = Table_Menu_t.Condition[547]
+    Condition = Table_Menu_t.Condition[548]
   },
   [9962] = {
     id = 9962,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[661],
     Tip = "解锁·新武器外观收集",
@@ -24913,18 +25153,19 @@ Table_Menu = {
     id = 9963,
     type = 1,
     text = "美之宫2F真正开启",
-    Condition = Table_Menu_t.Condition[548],
+    Condition = Table_Menu_t.Condition[549],
     Tip = "美之宫2F开启"
   },
   [9964] = {
     id = 9964,
     type = 1,
     text = "美之宫2F界面是否展示",
-    Condition = Table_Menu_t.Condition[549],
+    Condition = Table_Menu_t.Condition[550],
     Tip = "美之宫2F开启"
   },
   [9965] = {
     id = 9965,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[662],
     Tip = "解锁·新武器外观收集",
@@ -24933,6 +25174,7 @@ Table_Menu = {
   },
   [9966] = {
     id = 9966,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[663],
     Tip = "解锁·新武器外观收集",
@@ -24943,14 +25185,14 @@ Table_Menu = {
     id = 9967,
     type = 1,
     text = "美之宫3F开启",
-    Condition = Table_Menu_t.Condition[540],
+    Condition = Table_Menu_t.Condition[541],
     Tip = "美之宫3F开启"
   },
   [9968] = {
     id = 9968,
     type = 1,
     text = "美之宫3F界面是否展示",
-    Condition = Table_Menu_t.Condition[550],
+    Condition = Table_Menu_t.Condition[551],
     Tip = "波姬石像建造"
   },
   [9969] = {
@@ -24968,6 +25210,7 @@ Table_Menu = {
   },
   [9971] = {
     id = 9971,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[664],
     Tip = "解锁·新武器外观收集",
@@ -24976,6 +25219,7 @@ Table_Menu = {
   },
   [9972] = {
     id = 9972,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[665],
     Tip = "解锁·新武器外观收集",
@@ -24984,6 +25228,7 @@ Table_Menu = {
   },
   [9973] = {
     id = 9973,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[666],
     Tip = "解锁·新武器外观收集",
@@ -24992,6 +25237,7 @@ Table_Menu = {
   },
   [9974] = {
     id = 9974,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[667],
     Tip = "解锁·新武器外观收集",
@@ -25000,6 +25246,7 @@ Table_Menu = {
   },
   [9975] = {
     id = 9975,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[668],
     Tip = "解锁·新武器外观收集",
@@ -25008,6 +25255,7 @@ Table_Menu = {
   },
   [9976] = {
     id = 9976,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[669],
     Tip = "解锁·新武器外观收集",
@@ -25016,6 +25264,7 @@ Table_Menu = {
   },
   [9977] = {
     id = 9977,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[670],
     Tip = "解锁·新武器外观收集",
@@ -25024,6 +25273,7 @@ Table_Menu = {
   },
   [9978] = {
     id = 9978,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[671],
     Tip = "解锁·新武器外观收集",
@@ -25032,6 +25282,7 @@ Table_Menu = {
   },
   [9979] = {
     id = 9979,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[672],
     Tip = "解锁·新武器外观收集",
@@ -25040,6 +25291,7 @@ Table_Menu = {
   },
   [9980] = {
     id = 9980,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[673],
     Tip = "解锁·新武器外观收集",
@@ -25048,6 +25300,7 @@ Table_Menu = {
   },
   [9981] = {
     id = 9981,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[674],
     Tip = "解锁·新武器外观收集",
@@ -25056,6 +25309,7 @@ Table_Menu = {
   },
   [9982] = {
     id = 9982,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[675],
     Tip = "解锁·新武器外观收集",
@@ -25064,6 +25318,7 @@ Table_Menu = {
   },
   [9984] = {
     id = 9984,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[676],
     Tip = "解锁·新武器外观收集",
@@ -25072,6 +25327,7 @@ Table_Menu = {
   },
   [9985] = {
     id = 9985,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[677],
     Tip = "解锁·新武器外观收集",
@@ -25088,6 +25344,7 @@ Table_Menu = {
   },
   [9991] = {
     id = 9991,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[678],
     Tip = "解锁·新武器外观收集",
@@ -25096,6 +25353,7 @@ Table_Menu = {
   },
   [9992] = {
     id = 9992,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[679],
     Tip = "解锁·新武器外观收集",
@@ -25104,6 +25362,7 @@ Table_Menu = {
   },
   [9993] = {
     id = 9993,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[680],
     Tip = "解锁·新武器外观收集",
@@ -25112,6 +25371,7 @@ Table_Menu = {
   },
   [9994] = {
     id = 9994,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[681],
     Tip = "解锁·新武器外观收集",
@@ -25120,6 +25380,7 @@ Table_Menu = {
   },
   [9996] = {
     id = 9996,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[682],
     Tip = "解锁·新武器外观收集",
@@ -25128,6 +25389,7 @@ Table_Menu = {
   },
   [9997] = {
     id = 9997,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[683],
     Tip = "解锁·新武器外观收集",
@@ -25136,6 +25398,7 @@ Table_Menu = {
   },
   [9998] = {
     id = 9998,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[684],
     Tip = "解锁·新武器外观收集",
@@ -25144,6 +25407,7 @@ Table_Menu = {
   },
   [9999] = {
     id = 9999,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[685],
     Tip = "解锁·新武器外观收集",
@@ -25170,7 +25434,7 @@ Table_Menu = {
   [10003] = {
     id = 10003,
     text = "神树之灵已苏醒",
-    Condition = Table_Menu_t.Condition[558],
+    Condition = Table_Menu_t.Condition[559],
     Tip = "神树之灵已苏醒",
     Show = 1,
     Acc = 1,
@@ -25179,7 +25443,7 @@ Table_Menu = {
   [10004] = {
     id = 10004,
     text = "神谕镜鉴萃取功能开启",
-    Condition = Table_Menu_t.Condition[559],
+    Condition = Table_Menu_t.Condition[560],
     event = Table_Menu_t.event[687],
     Tip = "神谕镜鉴萃取功能开放",
     Icon = Table_Menu_t.Icon[231]
@@ -25219,7 +25483,7 @@ Table_Menu = {
   [10010] = {
     id = 10010,
     text = "解锁达纳托斯之塔·魔剑商店",
-    Condition = Table_Menu_t.Condition[561],
+    Condition = Table_Menu_t.Condition[562],
     Tip = "解锁达纳托斯之塔·魔剑商店",
     Show = 1,
     Icon = Table_Menu_t.Icon[14]
@@ -25234,7 +25498,7 @@ Table_Menu = {
   [10012] = {
     id = 10012,
     text = "神树之灵已进阶",
-    Condition = Table_Menu_t.Condition[562],
+    Condition = Table_Menu_t.Condition[563],
     Tip = "神树之灵已进阶",
     Show = 1,
     Acc = 1,
@@ -25244,13 +25508,13 @@ Table_Menu = {
     id = 10013,
     type = 1,
     text = "解锁职业预览UI",
-    Condition = Table_Menu_t.Condition[563],
+    Condition = Table_Menu_t.Condition[564],
     Enterhide = 1
   },
   [10014] = {
     id = 10014,
     text = "解锁上古遗物",
-    Condition = Table_Menu_t.Condition[564],
+    Condition = Table_Menu_t.Condition[565],
     Tip = "上古遗物 已开放",
     Show = 1,
     Acc = 1,
@@ -25260,54 +25524,55 @@ Table_Menu = {
     id = 10015,
     type = 1,
     text = "人物表情功能·已解锁",
-    Condition = Table_Menu_t.Condition[565],
+    Condition = Table_Menu_t.Condition[566],
     Tip = "人物表情页签解锁",
     Icon = Table_Menu_t.Icon[233]
   },
   [10016] = {
     id = 10016,
     text = "解锁上古遗物背包",
-    Condition = Table_Menu_t.Condition[566],
+    Condition = Table_Menu_t.Condition[567],
     event = Table_Menu_t.event[689],
     Tip = "解锁上古遗物"
   },
   [10017] = {
     id = 10017,
     text = "21天武器兑换券购买资格",
-    Condition = Table_Menu_t.Condition[567],
+    Condition = Table_Menu_t.Condition[568],
     Tip = "21天武器兑换券购买资格"
   },
   [10018] = {
     id = 10018,
     text = "21天武器升级券购买资格",
-    Condition = Table_Menu_t.Condition[568],
+    Condition = Table_Menu_t.Condition[569],
     Tip = "21天武器升级券购买资格"
   },
   [10019] = {
     id = 10019,
     text = "21天首饰兑换券购买资格",
-    Condition = Table_Menu_t.Condition[569],
+    Condition = Table_Menu_t.Condition[570],
     Tip = "21天首饰兑换券购买资格"
   },
   [10020] = {
     id = 10020,
     text = "21天武器升级券购买资格",
-    Condition = Table_Menu_t.Condition[570],
+    Condition = Table_Menu_t.Condition[571],
     Tip = "21天武器升级券购买资格"
   },
   [10021] = {
     id = 10021,
     text = "21天臂铠兑换券购买资格",
-    Condition = Table_Menu_t.Condition[571],
+    Condition = Table_Menu_t.Condition[572],
     Tip = "21天臂铠兑换券购买资格"
   },
   [10022] = {
     id = 10022,
     text = "克魔岛漂流瓶",
-    Condition = Table_Menu_t.Condition[572]
+    Condition = Table_Menu_t.Condition[573]
   },
   [10023] = {
     id = 10023,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[690],
     Tip = "解锁·新武器外观收集",
@@ -25317,7 +25582,7 @@ Table_Menu = {
   [10030] = {
     id = 10030,
     text = "剑碑解锁",
-    Condition = Table_Menu_t.Condition[577],
+    Condition = Table_Menu_t.Condition[578],
     sysMsg = Table_Menu_t.sysMsg[67],
     Tip = "剑碑解锁",
     Show = 1,
@@ -25327,7 +25592,7 @@ Table_Menu = {
   [10031] = {
     id = 10031,
     text = "幻宝秘筑·疯狂炸弹已解锁",
-    Condition = Table_Menu_t.Condition[578],
+    Condition = Table_Menu_t.Condition[579],
     Tip = "幻宝秘筑·疯狂炸弹已解锁",
     Show = 1,
     Acc = 1,
@@ -25336,7 +25601,7 @@ Table_Menu = {
   [10032] = {
     id = 10032,
     text = "幻宝秘筑·幸运福袋已解锁",
-    Condition = Table_Menu_t.Condition[579],
+    Condition = Table_Menu_t.Condition[580],
     Tip = "幻宝秘筑·幸运福袋已解锁",
     Show = 1,
     Acc = 1,
@@ -25345,7 +25610,7 @@ Table_Menu = {
   [10033] = {
     id = 10033,
     text = "幻宝秘筑·亡灵之笛已解锁",
-    Condition = Table_Menu_t.Condition[580],
+    Condition = Table_Menu_t.Condition[581],
     Tip = "幻宝秘筑·亡灵之笛已解锁",
     Show = 1,
     Acc = 1,
@@ -25354,7 +25619,7 @@ Table_Menu = {
   [10034] = {
     id = 10034,
     text = "幻宝秘筑·幻力药水已解锁",
-    Condition = Table_Menu_t.Condition[581],
+    Condition = Table_Menu_t.Condition[582],
     Tip = "幻宝秘筑·幻力药水已解锁",
     Show = 1,
     Acc = 1,
@@ -25363,31 +25628,31 @@ Table_Menu = {
   [10035] = {
     id = 10035,
     text = "幻宝秘筑·应急补给箱已解锁",
-    Condition = Table_Menu_t.Condition[582],
+    Condition = Table_Menu_t.Condition[583],
     Acc = 1
   },
   [10036] = {
     id = 10036,
     text = "幻宝秘筑·阴郁雨云已解锁",
-    Condition = Table_Menu_t.Condition[582],
+    Condition = Table_Menu_t.Condition[583],
     Acc = 1
   },
   [10037] = {
     id = 10037,
     text = "幻宝秘筑·瞬息龙影已解锁",
-    Condition = Table_Menu_t.Condition[582],
+    Condition = Table_Menu_t.Condition[583],
     Acc = 1
   },
   [10038] = {
     id = 10038,
     text = "幻宝秘筑·烈焰舞铳已解锁",
-    Condition = Table_Menu_t.Condition[582],
+    Condition = Table_Menu_t.Condition[583],
     Acc = 1
   },
   [10039] = {
     id = 10039,
     text = "幻宝秘筑·荒野之刃已解锁",
-    Condition = Table_Menu_t.Condition[583],
+    Condition = Table_Menu_t.Condition[584],
     Tip = "幻宝秘筑·荒野之刃已解锁",
     Show = 1,
     Acc = 1,
@@ -25396,7 +25661,7 @@ Table_Menu = {
   [10040] = {
     id = 10040,
     text = "幻宝秘筑·雪花盒子已解锁",
-    Condition = Table_Menu_t.Condition[584],
+    Condition = Table_Menu_t.Condition[585],
     Tip = "幻宝秘筑·雪花盒子已解锁",
     Show = 1,
     Acc = 1,
@@ -25404,6 +25669,7 @@ Table_Menu = {
   },
   [10041] = {
     id = 10041,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[691],
     Tip = "解锁·新武器外观收集",
@@ -25412,6 +25678,7 @@ Table_Menu = {
   },
   [10042] = {
     id = 10042,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[692],
     Tip = "解锁·新武器外观收集",
@@ -25421,7 +25688,7 @@ Table_Menu = {
   [10043] = {
     id = 10043,
     text = "混沌入侵 开放",
-    Condition = Table_Menu_t.Condition[585]
+    Condition = Table_Menu_t.Condition[586]
   },
   [10044] = {
     id = 10044,
@@ -25431,7 +25698,7 @@ Table_Menu = {
   [10045] = {
     id = 10045,
     text = "解锁普隆德拉微笑小姐·武器外观购买权限",
-    Condition = Table_Menu_t.Condition[586],
+    Condition = Table_Menu_t.Condition[587],
     Tip = "普隆德拉微笑小姐·追加新饰品",
     Show = 1,
     Acc = 1,
@@ -25440,7 +25707,7 @@ Table_Menu = {
   [10046] = {
     id = 10046,
     text = "普隆德拉微笑小姐·声望商品1",
-    Condition = Table_Menu_t.Condition[587],
+    Condition = Table_Menu_t.Condition[588],
     Tip = "普隆德拉微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25449,7 +25716,7 @@ Table_Menu = {
   [10047] = {
     id = 10047,
     text = "普隆德拉微笑小姐·声望商品2",
-    Condition = Table_Menu_t.Condition[588],
+    Condition = Table_Menu_t.Condition[589],
     Tip = "普隆德拉微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25458,7 +25725,7 @@ Table_Menu = {
   [10048] = {
     id = 10048,
     text = "普隆德拉微笑小姐·声望商品3",
-    Condition = Table_Menu_t.Condition[589],
+    Condition = Table_Menu_t.Condition[590],
     Tip = "普隆德拉微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25467,7 +25734,7 @@ Table_Menu = {
   [10049] = {
     id = 10049,
     text = "普隆德拉微笑小姐·声望商品4",
-    Condition = Table_Menu_t.Condition[590],
+    Condition = Table_Menu_t.Condition[591],
     Tip = "普隆德拉微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25476,7 +25743,7 @@ Table_Menu = {
   [10050] = {
     id = 10050,
     text = "普隆德拉微笑小姐·声望商品5",
-    Condition = Table_Menu_t.Condition[591],
+    Condition = Table_Menu_t.Condition[592],
     Tip = "普隆德拉微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25485,7 +25752,7 @@ Table_Menu = {
   [10051] = {
     id = 10051,
     text = "普隆德拉微笑小姐·声望商品6",
-    Condition = Table_Menu_t.Condition[592],
+    Condition = Table_Menu_t.Condition[593],
     Tip = "普隆德拉微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25494,7 +25761,7 @@ Table_Menu = {
   [10052] = {
     id = 10052,
     text = "普隆德拉微笑小姐·声望商品7",
-    Condition = Table_Menu_t.Condition[593],
+    Condition = Table_Menu_t.Condition[594],
     Tip = "普隆德拉微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25503,7 +25770,7 @@ Table_Menu = {
   [10053] = {
     id = 10053,
     text = "普隆德拉微笑小姐·声望商品8",
-    Condition = Table_Menu_t.Condition[594],
+    Condition = Table_Menu_t.Condition[595],
     Tip = "普隆德拉微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25512,7 +25779,7 @@ Table_Menu = {
   [10054] = {
     id = 10054,
     text = "普隆德拉微笑小姐·声望商品9",
-    Condition = Table_Menu_t.Condition[595],
+    Condition = Table_Menu_t.Condition[596],
     Tip = "普隆德拉微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25521,7 +25788,7 @@ Table_Menu = {
   [10060] = {
     id = 10060,
     text = "克魔岛微笑小姐·声望商品1",
-    Condition = Table_Menu_t.Condition[601],
+    Condition = Table_Menu_t.Condition[602],
     Tip = "克魔岛微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25530,7 +25797,7 @@ Table_Menu = {
   [10061] = {
     id = 10061,
     text = "克魔岛微笑小姐·声望商品2",
-    Condition = Table_Menu_t.Condition[602],
+    Condition = Table_Menu_t.Condition[603],
     Tip = "克魔岛微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25539,7 +25806,7 @@ Table_Menu = {
   [10062] = {
     id = 10062,
     text = "克魔岛微笑小姐·声望商品3",
-    Condition = Table_Menu_t.Condition[603],
+    Condition = Table_Menu_t.Condition[604],
     Tip = "克魔岛微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25548,7 +25815,7 @@ Table_Menu = {
   [10063] = {
     id = 10063,
     text = "克魔岛微笑小姐·声望商品4",
-    Condition = Table_Menu_t.Condition[604],
+    Condition = Table_Menu_t.Condition[605],
     Tip = "克魔岛微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25557,7 +25824,7 @@ Table_Menu = {
   [10064] = {
     id = 10064,
     text = "克魔岛微笑小姐·声望商品5",
-    Condition = Table_Menu_t.Condition[605],
+    Condition = Table_Menu_t.Condition[606],
     Tip = "克魔岛微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25566,7 +25833,7 @@ Table_Menu = {
   [10065] = {
     id = 10065,
     text = "克魔岛微笑小姐·声望商品6",
-    Condition = Table_Menu_t.Condition[606],
+    Condition = Table_Menu_t.Condition[607],
     Tip = "克魔岛微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25575,7 +25842,7 @@ Table_Menu = {
   [10066] = {
     id = 10066,
     text = "克魔岛微笑小姐·声望商品7",
-    Condition = Table_Menu_t.Condition[607],
+    Condition = Table_Menu_t.Condition[608],
     Tip = "克魔岛微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25584,7 +25851,7 @@ Table_Menu = {
   [10067] = {
     id = 10067,
     text = "克魔岛微笑小姐·声望商品8",
-    Condition = Table_Menu_t.Condition[608],
+    Condition = Table_Menu_t.Condition[609],
     Tip = "克魔岛微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25593,7 +25860,7 @@ Table_Menu = {
   [10068] = {
     id = 10068,
     text = "克魔岛微笑小姐·声望商品9",
-    Condition = Table_Menu_t.Condition[609],
+    Condition = Table_Menu_t.Condition[610],
     Tip = "克魔岛微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25602,7 +25869,7 @@ Table_Menu = {
   [10069] = {
     id = 10069,
     text = "克魔岛微笑小姐·声望商品10",
-    Condition = Table_Menu_t.Condition[610],
+    Condition = Table_Menu_t.Condition[611],
     Tip = "克魔岛微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25611,7 +25878,7 @@ Table_Menu = {
   [10070] = {
     id = 10070,
     text = "克魔岛微笑小姐·声望商品11",
-    Condition = Table_Menu_t.Condition[611],
+    Condition = Table_Menu_t.Condition[612],
     Tip = "克魔岛微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25620,7 +25887,7 @@ Table_Menu = {
   [10071] = {
     id = 10071,
     text = "解锁克魔岛微笑小姐·武器外观购买权限",
-    Condition = Table_Menu_t.Condition[612],
+    Condition = Table_Menu_t.Condition[613],
     Tip = "克魔岛微笑小姐·解锁武器外观购买权限",
     Show = 1,
     Acc = 1,
@@ -25629,7 +25896,7 @@ Table_Menu = {
   [10072] = {
     id = 10072,
     text = "混沌入侵 开放",
-    Condition = Table_Menu_t.Condition[613],
+    Condition = Table_Menu_t.Condition[614],
     Tip = "混沌入侵 已开放",
     Show = 1,
     Acc = 1,
@@ -25638,7 +25905,7 @@ Table_Menu = {
   [10073] = {
     id = 10073,
     text = "普隆德拉王宫微笑小姐·声望商品1",
-    Condition = Table_Menu_t.Condition[614],
+    Condition = Table_Menu_t.Condition[615],
     Tip = "普隆德拉王宫微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25647,7 +25914,7 @@ Table_Menu = {
   [10074] = {
     id = 10074,
     text = "普隆德拉王宫微笑小姐·声望商品2",
-    Condition = Table_Menu_t.Condition[615],
+    Condition = Table_Menu_t.Condition[616],
     Tip = "普隆德拉王宫微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25656,7 +25923,7 @@ Table_Menu = {
   [10075] = {
     id = 10075,
     text = "普隆德拉王宫微笑小姐·声望商品3",
-    Condition = Table_Menu_t.Condition[616],
+    Condition = Table_Menu_t.Condition[617],
     Tip = "普隆德拉王宫微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25665,7 +25932,7 @@ Table_Menu = {
   [10076] = {
     id = 10076,
     text = "普隆德拉王宫微笑小姐·声望商品4",
-    Condition = Table_Menu_t.Condition[617],
+    Condition = Table_Menu_t.Condition[618],
     Tip = "普隆德拉王宫微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25674,7 +25941,7 @@ Table_Menu = {
   [10077] = {
     id = 10077,
     text = "普隆德拉王宫微笑小姐·声望商品5",
-    Condition = Table_Menu_t.Condition[618],
+    Condition = Table_Menu_t.Condition[619],
     Tip = "普隆德拉王宫微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25683,7 +25950,7 @@ Table_Menu = {
   [10078] = {
     id = 10078,
     text = "普隆德拉王宫微笑小姐·声望商品6",
-    Condition = Table_Menu_t.Condition[619],
+    Condition = Table_Menu_t.Condition[620],
     Tip = "普隆德拉王宫微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25692,7 +25959,7 @@ Table_Menu = {
   [10079] = {
     id = 10079,
     text = "普隆德拉王宫微笑小姐·声望商品7",
-    Condition = Table_Menu_t.Condition[620],
+    Condition = Table_Menu_t.Condition[621],
     Tip = "普隆德拉王宫微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25701,7 +25968,7 @@ Table_Menu = {
   [10080] = {
     id = 10080,
     text = "普隆德拉王宫微笑小姐·声望商品8",
-    Condition = Table_Menu_t.Condition[621],
+    Condition = Table_Menu_t.Condition[622],
     Tip = "普隆德拉王宫微笑小姐商店·追加新道具",
     Show = 1,
     Acc = 1,
@@ -25719,7 +25986,7 @@ Table_Menu = {
   [10082] = {
     id = 10082,
     text = "解锁里希塔乐微笑小姐·武器外观购买权限",
-    Condition = Table_Menu_t.Condition[622],
+    Condition = Table_Menu_t.Condition[623],
     Tip = "里希塔乐微笑小姐·解锁武器外观购买权限",
     Show = 1,
     Acc = 1,
@@ -25728,7 +25995,7 @@ Table_Menu = {
   [10083] = {
     id = 10083,
     text = "解锁王宫微笑小姐·武器外观购买权限",
-    Condition = Table_Menu_t.Condition[623],
+    Condition = Table_Menu_t.Condition[624],
     Tip = "王宫微笑小姐·解锁武器外观购买权限",
     Show = 1,
     Acc = 1,
@@ -25737,7 +26004,7 @@ Table_Menu = {
   [10084] = {
     id = 10084,
     text = "解锁古城微笑小姐·武器外观购买权限",
-    Condition = Table_Menu_t.Condition[624],
+    Condition = Table_Menu_t.Condition[625],
     Tip = "古城微笑小姐·解锁武器外观购买权限",
     Show = 1,
     Acc = 1,
@@ -25746,7 +26013,7 @@ Table_Menu = {
   [10085] = {
     id = 10085,
     text = "解锁艾尔帕兰微笑小姐·武器外观购买权限",
-    Condition = Table_Menu_t.Condition[534],
+    Condition = Table_Menu_t.Condition[535],
     Tip = "艾尔帕兰微笑小姐·解锁武器外观购买权限",
     Show = 1,
     Acc = 1,
@@ -25755,12 +26022,12 @@ Table_Menu = {
   [10086] = {
     id = 10086,
     text = "幽灵皇宫 开放",
-    Condition = Table_Menu_t.Condition[625]
+    Condition = Table_Menu_t.Condition[626]
   },
   [10087] = {
     id = 10087,
     text = "装备记忆副本 开放",
-    Condition = Table_Menu_t.Condition[626],
+    Condition = Table_Menu_t.Condition[627],
     Tip = "装备记忆副本 已开放",
     Show = 1,
     Acc = 1,
@@ -25772,7 +26039,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "糖姐姐的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11001] = {
     id = 11001,
@@ -25780,7 +26047,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "哈奇奇的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11002] = {
     id = 11002,
@@ -25788,7 +26055,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "司平塔的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11003] = {
     id = 11003,
@@ -25796,7 +26063,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "鹿蒂亚的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11004] = {
     id = 11004,
@@ -25804,7 +26071,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "狐老佛的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11005] = {
     id = 11005,
@@ -25812,7 +26079,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "萨芙芙的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11006] = {
     id = 11006,
@@ -25820,7 +26087,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "麦克唐的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11007] = {
     id = 11007,
@@ -25828,7 +26095,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "阿加加的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11008] = {
     id = 11008,
@@ -25836,7 +26103,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "萨耶耶的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11009] = {
     id = 11009,
@@ -25844,7 +26111,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "波洛的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11010] = {
     id = 11010,
@@ -25852,7 +26119,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "鹿利利的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11011] = {
     id = 11011,
@@ -25860,7 +26127,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "安格斯的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11012] = {
     id = 11012,
@@ -25868,7 +26135,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "星夜的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11013] = {
     id = 11013,
@@ -25876,7 +26143,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "麦娜娜的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11014] = {
     id = 11014,
@@ -25884,7 +26151,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "芽芽的礼物",
     Show = 1,
-    Icon = Table_Menu_t.Icon[296]
+    Icon = Table_Menu_t.Icon[322]
   },
   [11015] = {
     id = 11015,
@@ -25892,7 +26159,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "眼药水【主人的礼物】",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11016] = {
     id = 11016,
@@ -25900,7 +26167,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "椅子【关爱和歉意】",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11017] = {
     id = 11017,
@@ -25908,7 +26175,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "狗爪杯【兄弟的羁绊·上】",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11018] = {
     id = 11018,
@@ -25916,7 +26183,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "跑鞋【Sprint！】",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11019] = {
     id = 11019,
@@ -25924,7 +26191,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "跌打损伤膏【萨芙芙的冒险·失败】",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11020] = {
     id = 11020,
@@ -25932,7 +26199,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "三叶草【萨芙芙的冒险·再开】",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11021] = {
     id = 11021,
@@ -25940,7 +26207,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "主线任务用道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11022] = {
     id = 11022,
@@ -25948,7 +26215,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "摇摇缆车部件",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11023] = {
     id = 11023,
@@ -25956,7 +26223,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "羊皮卷1",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11024] = {
     id = 11024,
@@ -25964,7 +26231,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "羊皮卷2",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11025] = {
     id = 11025,
@@ -25972,7 +26239,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "羊皮卷3",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11026] = {
     id = 11026,
@@ -25980,7 +26247,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "羊皮卷4",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11027] = {
     id = 11027,
@@ -25988,7 +26255,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "羊皮卷5",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11028] = {
     id = 11028,
@@ -25996,7 +26263,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "一份菜谱",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11029] = {
     id = 11029,
@@ -26004,7 +26271,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "兴奋剂",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11030] = {
     id = 11030,
@@ -26012,7 +26279,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "金币1",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11031] = {
     id = 11031,
@@ -26020,7 +26287,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "金币2",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11032] = {
     id = 11032,
@@ -26028,7 +26295,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "主线任务用道具2",
     Show = 1,
-    Icon = Table_Menu_t.Icon[297]
+    Icon = Table_Menu_t.Icon[323]
   },
   [11033] = {
     id = 11033,
@@ -26047,8 +26314,8 @@ Table_Menu = {
   [12000] = {
     id = 12000,
     text = "冤家聚头",
-    Condition = Table_Menu_t.Condition[1259],
-    event = Table_Menu_t.event[1023],
+    Condition = Table_Menu_t.Condition[1284],
+    event = Table_Menu_t.event[1035],
     Tip = "羁绊·冤家聚头解锁",
     Show = 1,
     Icon = Table_Menu_t.Icon[276]
@@ -26056,8 +26323,8 @@ Table_Menu = {
   [12001] = {
     id = 12001,
     text = "老一辈的交情",
-    Condition = Table_Menu_t.Condition[1246],
-    event = Table_Menu_t.event[1024],
+    Condition = Table_Menu_t.Condition[1271],
+    event = Table_Menu_t.event[1036],
     Tip = "羁绊·老一辈的交情解锁",
     Show = 1,
     Icon = Table_Menu_t.Icon[276]
@@ -26065,8 +26332,8 @@ Table_Menu = {
   [12002] = {
     id = 12002,
     text = "云海群岛开荒团",
-    Condition = Table_Menu_t.Condition[1238],
-    event = Table_Menu_t.event[1025],
+    Condition = Table_Menu_t.Condition[1263],
+    event = Table_Menu_t.event[1037],
     Tip = "羁绊·云海群岛开荒团解锁",
     Show = 1,
     Icon = Table_Menu_t.Icon[276]
@@ -26075,7 +26342,7 @@ Table_Menu = {
     id = 12004,
     text = "美食寻荐联盟",
     Condition = Table_Menu_t.Condition[497],
-    event = Table_Menu_t.event[1026],
+    event = Table_Menu_t.event[1038],
     Tip = "羁绊·美食寻荐联盟解锁",
     Show = 1,
     Icon = Table_Menu_t.Icon[276]
@@ -26083,8 +26350,8 @@ Table_Menu = {
   [12005] = {
     id = 12005,
     text = "一家三傻",
-    Condition = Table_Menu_t.Condition[1241],
-    event = Table_Menu_t.event[1027],
+    Condition = Table_Menu_t.Condition[1266],
+    event = Table_Menu_t.event[1039],
     Tip = "羁绊·一家三傻解锁",
     Show = 1,
     Icon = Table_Menu_t.Icon[276]
@@ -26092,8 +26359,8 @@ Table_Menu = {
   [12006] = {
     id = 12006,
     text = "英雄不会迟到",
-    Condition = Table_Menu_t.Condition[1229],
-    event = Table_Menu_t.event[1028],
+    Condition = Table_Menu_t.Condition[1254],
+    event = Table_Menu_t.event[1040],
     Tip = "羁绊·英雄不会迟到解锁",
     Show = 1,
     Icon = Table_Menu_t.Icon[276]
@@ -26101,8 +26368,8 @@ Table_Menu = {
   [12007] = {
     id = 12007,
     text = "名侦探的智慧",
-    Condition = Table_Menu_t.Condition[1214],
-    event = Table_Menu_t.event[1029],
+    Condition = Table_Menu_t.Condition[1239],
+    event = Table_Menu_t.event[1041],
     Tip = "羁绊·名侦探的智慧解锁",
     Show = 1,
     Icon = Table_Menu_t.Icon[276]
@@ -26110,8 +26377,8 @@ Table_Menu = {
   [12008] = {
     id = 12008,
     text = "暗恋是逐空的流星",
-    Condition = Table_Menu_t.Condition[1205],
-    event = Table_Menu_t.event[1030],
+    Condition = Table_Menu_t.Condition[1230],
+    event = Table_Menu_t.event[1042],
     Tip = "羁绊·暗恋是逐空的流星解锁",
     Show = 1,
     Icon = Table_Menu_t.Icon[276]
@@ -26119,8 +26386,8 @@ Table_Menu = {
   [12009] = {
     id = 12009,
     text = "友情与歌声",
-    Condition = Table_Menu_t.Condition[1209],
-    event = Table_Menu_t.event[1031],
+    Condition = Table_Menu_t.Condition[1234],
+    event = Table_Menu_t.event[1043],
     Tip = "羁绊·友情与歌声解锁",
     Show = 1,
     Icon = Table_Menu_t.Icon[276]
@@ -26128,8 +26395,8 @@ Table_Menu = {
   [12010] = {
     id = 12010,
     text = "力大如牛",
-    Condition = Table_Menu_t.Condition[1260],
-    event = Table_Menu_t.event[1032],
+    Condition = Table_Menu_t.Condition[1285],
+    event = Table_Menu_t.event[1044],
     Tip = "羁绊·力大如牛",
     Show = 1,
     Icon = Table_Menu_t.Icon[276]
@@ -26138,136 +26405,136 @@ Table_Menu = {
     id = 13000,
     text = "糖姐姐解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1022],
+    event = Table_Menu_t.event[1034],
     Tip = "糖姐姐解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13001] = {
     id = 13001,
     text = "哈奇奇解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1021],
+    event = Table_Menu_t.event[1033],
     Tip = "哈奇奇解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13002] = {
     id = 13002,
     text = "司平塔解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1020],
+    event = Table_Menu_t.event[1032],
     Tip = "司平塔解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13003] = {
     id = 13003,
     text = "鹿蒂亚解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1019],
+    event = Table_Menu_t.event[1031],
     Tip = "鹿蒂亚解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13004] = {
     id = 13004,
     text = "狐老佛解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1018],
+    event = Table_Menu_t.event[1030],
     Tip = "狐老佛解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13005] = {
     id = 13005,
     text = "萨芙芙解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1017],
+    event = Table_Menu_t.event[1029],
     Tip = "萨芙芙解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13006] = {
     id = 13006,
     text = "麦克唐解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1016],
+    event = Table_Menu_t.event[1028],
     Tip = "麦克唐解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13007] = {
     id = 13007,
     text = "阿加加解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1015],
+    event = Table_Menu_t.event[1027],
     Tip = "阿加加解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13008] = {
     id = 13008,
     text = "萨耶耶解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1014],
+    event = Table_Menu_t.event[1026],
     Tip = "萨耶耶解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13009] = {
     id = 13009,
     text = "波洛解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1013],
+    event = Table_Menu_t.event[1025],
     Tip = "波洛解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13010] = {
     id = 13010,
     text = "鹿利利解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1012],
+    event = Table_Menu_t.event[1024],
     Tip = "鹿利利解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13011] = {
     id = 13011,
     text = "安格斯解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1011],
+    event = Table_Menu_t.event[1023],
     Tip = "安格斯解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13012] = {
     id = 13012,
     text = "星夜解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1010],
+    event = Table_Menu_t.event[1022],
     Tip = "星夜解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13013] = {
     id = 13013,
     text = "麦娜娜解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1009],
+    event = Table_Menu_t.event[1021],
     Tip = "麦娜娜解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [13014] = {
     id = 13014,
     text = "芽芽解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1008],
+    event = Table_Menu_t.event[1020],
     Tip = "芽芽解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[316]
+    Icon = Table_Menu_t.Icon[342]
   },
   [14000] = {
     id = 14000,
@@ -26275,7 +26542,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "酒泉哨所解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[315]
+    Icon = Table_Menu_t.Icon[341]
   },
   [14001] = {
     id = 14001,
@@ -26283,7 +26550,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "警戒缆车解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[311]
+    Icon = Table_Menu_t.Icon[337]
   },
   [14002] = {
     id = 14002,
@@ -26291,7 +26558,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "星芒矿山解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[314]
+    Icon = Table_Menu_t.Icon[340]
   },
   [14003] = {
     id = 14003,
@@ -26299,7 +26566,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "刨刀锯木厂解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[313]
+    Icon = Table_Menu_t.Icon[339]
   },
   [14004] = {
     id = 14004,
@@ -26307,7 +26574,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "融化时光解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[312]
+    Icon = Table_Menu_t.Icon[338]
   },
   [14005] = {
     id = 14005,
@@ -26315,7 +26582,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [14006] = {
     id = 14006,
@@ -26323,7 +26590,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "警戒缆车已经损坏",
     Show = 1,
-    Icon = Table_Menu_t.Icon[311]
+    Icon = Table_Menu_t.Icon[337]
   },
   [14007] = {
     id = 14007,
@@ -26331,7 +26598,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "警戒缆车已重新开放",
     Show = 1,
-    Icon = Table_Menu_t.Icon[311]
+    Icon = Table_Menu_t.Icon[337]
   },
   [14008] = {
     id = 14008,
@@ -26339,7 +26606,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "依古波古工作坊解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[310]
+    Icon = Table_Menu_t.Icon[336]
   },
   [14009] = {
     id = 14009,
@@ -26352,295 +26619,295 @@ Table_Menu = {
   [14010] = {
     id = 14010,
     text = "依古波古工作坊解锁购买",
-    Condition = Table_Menu_t.Condition[1207],
+    Condition = Table_Menu_t.Condition[1232],
     Tip = "工作坊\"副手锻造\"功能解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[310]
+    Icon = Table_Menu_t.Icon[336]
   },
   [14011] = {
     id = 14011,
     text = "超级螺丝解锁",
-    Condition = Table_Menu_t.Condition[1250],
+    Condition = Table_Menu_t.Condition[1275],
     Tip = "超级螺丝解锁购买",
     Show = 1,
-    Icon = Table_Menu_t.Icon[310]
+    Icon = Table_Menu_t.Icon[336]
   },
   [15001] = {
     id = 15001,
     text = "糖姐姐故事1",
-    Condition = Table_Menu_t.Condition[843],
+    Condition = Table_Menu_t.Condition[844],
     event = Table_Menu_t.event[794],
     Tip = "糖姐姐故事1"
   },
   [15002] = {
     id = 15002,
     text = "糖姐姐故事2",
-    Condition = Table_Menu_t.Condition[844],
+    Condition = Table_Menu_t.Condition[845],
     event = Table_Menu_t.event[795],
     Tip = "糖姐姐故事2"
   },
   [15003] = {
     id = 15003,
     text = "糖姐姐故事3",
-    Condition = Table_Menu_t.Condition[845],
+    Condition = Table_Menu_t.Condition[846],
     event = Table_Menu_t.event[796],
     Tip = "糖姐姐故事3"
   },
   [15004] = {
     id = 15004,
     text = "糖姐姐故事4",
-    Condition = Table_Menu_t.Condition[846],
+    Condition = Table_Menu_t.Condition[847],
     event = Table_Menu_t.event[797],
     Tip = "糖姐姐故事4"
   },
   [15005] = {
     id = 15005,
     text = "哈奇奇故事1",
-    Condition = Table_Menu_t.Condition[847],
+    Condition = Table_Menu_t.Condition[848],
     event = Table_Menu_t.event[798],
     Tip = "哈奇奇故事1"
   },
   [15006] = {
     id = 15006,
     text = "哈奇奇故事2",
-    Condition = Table_Menu_t.Condition[847],
+    Condition = Table_Menu_t.Condition[848],
     event = Table_Menu_t.event[799],
     Tip = "哈奇奇故事2"
   },
   [15007] = {
     id = 15007,
     text = "哈奇奇故事3",
-    Condition = Table_Menu_t.Condition[848],
+    Condition = Table_Menu_t.Condition[849],
     event = Table_Menu_t.event[800],
     Tip = "哈奇奇故事3"
   },
   [15008] = {
     id = 15008,
     text = "哈奇奇故事4",
-    Condition = Table_Menu_t.Condition[849],
+    Condition = Table_Menu_t.Condition[850],
     event = Table_Menu_t.event[801],
     Tip = "哈奇奇故事4"
   },
   [15009] = {
     id = 15009,
     text = "哈奇奇故事5",
-    Condition = Table_Menu_t.Condition[850],
+    Condition = Table_Menu_t.Condition[851],
     event = Table_Menu_t.event[802],
     Tip = "哈奇奇故事5"
   },
   [15010] = {
     id = 15010,
     text = "司平塔故事1",
-    Condition = Table_Menu_t.Condition[851],
+    Condition = Table_Menu_t.Condition[852],
     event = Table_Menu_t.event[803],
     Tip = "司平塔故事1"
   },
   [15011] = {
     id = 15011,
     text = "司平塔故事2",
-    Condition = Table_Menu_t.Condition[852],
+    Condition = Table_Menu_t.Condition[853],
     event = Table_Menu_t.event[804],
     Tip = "司平塔故事2"
   },
   [15012] = {
     id = 15012,
     text = "司平塔故事3",
-    Condition = Table_Menu_t.Condition[853],
+    Condition = Table_Menu_t.Condition[854],
     event = Table_Menu_t.event[805],
     Tip = "司平塔故事3"
   },
   [15013] = {
     id = 15013,
     text = "司平塔故事4",
-    Condition = Table_Menu_t.Condition[854],
+    Condition = Table_Menu_t.Condition[855],
     event = Table_Menu_t.event[806],
     Tip = "鹿蒂亚故事1"
   },
   [15014] = {
     id = 15014,
     text = "鹿蒂亚故事1",
-    Condition = Table_Menu_t.Condition[855],
+    Condition = Table_Menu_t.Condition[856],
     event = Table_Menu_t.event[807],
     Tip = "鹿蒂亚故事2"
   },
   [15015] = {
     id = 15015,
     text = "鹿蒂亚故事2",
-    Condition = Table_Menu_t.Condition[856],
+    Condition = Table_Menu_t.Condition[857],
     event = Table_Menu_t.event[808],
     Tip = "鹿蒂亚故事3"
   },
   [15016] = {
     id = 15016,
     text = "鹿蒂亚故事3",
-    Condition = Table_Menu_t.Condition[857],
+    Condition = Table_Menu_t.Condition[858],
     event = Table_Menu_t.event[809],
     Tip = "鹿蒂亚故事4"
   },
   [15017] = {
     id = 15017,
     text = "鹿蒂亚故事4",
-    Condition = Table_Menu_t.Condition[858],
+    Condition = Table_Menu_t.Condition[859],
     event = Table_Menu_t.event[810]
   },
   [15018] = {
     id = 15018,
     text = "狐老佛故事1",
-    Condition = Table_Menu_t.Condition[859],
+    Condition = Table_Menu_t.Condition[860],
     event = Table_Menu_t.event[811],
     Tip = "狐老佛故事1"
   },
   [15019] = {
     id = 15019,
     text = "狐老佛故事2",
-    Condition = Table_Menu_t.Condition[860],
+    Condition = Table_Menu_t.Condition[861],
     event = Table_Menu_t.event[812],
     Tip = "狐老佛故事2"
   },
   [15020] = {
     id = 15020,
     text = "狐老佛故事3",
-    Condition = Table_Menu_t.Condition[861],
+    Condition = Table_Menu_t.Condition[862],
     event = Table_Menu_t.event[813],
     Tip = "狐老佛故事3"
   },
   [15021] = {
     id = 15021,
     text = "狐老佛故事4",
-    Condition = Table_Menu_t.Condition[862],
+    Condition = Table_Menu_t.Condition[863],
     event = Table_Menu_t.event[814],
     Tip = "狐老佛故事4"
   },
   [15022] = {
     id = 15022,
     text = "萨芙芙故事1",
-    Condition = Table_Menu_t.Condition[863],
+    Condition = Table_Menu_t.Condition[864],
     event = Table_Menu_t.event[815],
     Tip = "萨芙芙故事1"
   },
   [15023] = {
     id = 15023,
     text = "萨芙芙故事2",
-    Condition = Table_Menu_t.Condition[864],
+    Condition = Table_Menu_t.Condition[865],
     event = Table_Menu_t.event[816],
     Tip = "萨芙芙故事2"
   },
   [15024] = {
     id = 15024,
     text = "萨芙芙故事3",
-    Condition = Table_Menu_t.Condition[865],
+    Condition = Table_Menu_t.Condition[866],
     event = Table_Menu_t.event[817],
     Tip = "萨芙芙故事3"
   },
   [15025] = {
     id = 15025,
     text = "萨芙芙故事4",
-    Condition = Table_Menu_t.Condition[866],
+    Condition = Table_Menu_t.Condition[867],
     event = Table_Menu_t.event[818],
     Tip = "萨芙芙故事4"
   },
   [15026] = {
     id = 15026,
     text = "萨芙芙故事5",
-    Condition = Table_Menu_t.Condition[867],
+    Condition = Table_Menu_t.Condition[868],
     event = Table_Menu_t.event[819],
     Tip = "萨芙芙故事5"
   },
   [15027] = {
     id = 15027,
     text = "麦克唐故事1",
-    Condition = Table_Menu_t.Condition[868],
+    Condition = Table_Menu_t.Condition[869],
     event = Table_Menu_t.event[820],
     Tip = "麦克唐故事1"
   },
   [15028] = {
     id = 15028,
     text = "麦克唐故事2",
-    Condition = Table_Menu_t.Condition[869],
+    Condition = Table_Menu_t.Condition[870],
     event = Table_Menu_t.event[821],
     Tip = "麦克唐故事2"
   },
   [15029] = {
     id = 15029,
     text = "麦克唐故事3",
-    Condition = Table_Menu_t.Condition[870],
+    Condition = Table_Menu_t.Condition[871],
     event = Table_Menu_t.event[822],
     Tip = "麦克唐故事3"
   },
   [15030] = {
     id = 15030,
     text = "麦克唐故事4",
-    Condition = Table_Menu_t.Condition[871],
+    Condition = Table_Menu_t.Condition[872],
     event = Table_Menu_t.event[823],
     Tip = "麦克唐故事4"
   },
   [15031] = {
     id = 15031,
     text = "阿加加故事1",
-    Condition = Table_Menu_t.Condition[872],
+    Condition = Table_Menu_t.Condition[873],
     event = Table_Menu_t.event[824],
     Tip = "阿加加故事1"
   },
   [15032] = {
     id = 15032,
     text = "阿加加故事2",
-    Condition = Table_Menu_t.Condition[873],
+    Condition = Table_Menu_t.Condition[874],
     event = Table_Menu_t.event[825],
     Tip = "阿加加故事2"
   },
   [15033] = {
     id = 15033,
     text = "阿加加故事3",
-    Condition = Table_Menu_t.Condition[874],
+    Condition = Table_Menu_t.Condition[875],
     event = Table_Menu_t.event[826],
     Tip = "阿加加故事3"
   },
   [15034] = {
     id = 15034,
     text = "阿加加故事4",
-    Condition = Table_Menu_t.Condition[875],
+    Condition = Table_Menu_t.Condition[876],
     event = Table_Menu_t.event[827],
     Tip = "阿加加故事4"
   },
   [15035] = {
     id = 15035,
     text = "萨耶耶故事1",
-    Condition = Table_Menu_t.Condition[876],
+    Condition = Table_Menu_t.Condition[877],
     event = Table_Menu_t.event[828],
     Tip = "萨耶耶故事1"
   },
   [15036] = {
     id = 15036,
     text = "萨耶耶故事2",
-    Condition = Table_Menu_t.Condition[877],
+    Condition = Table_Menu_t.Condition[878],
     event = Table_Menu_t.event[829],
     Tip = "萨耶耶故事2"
   },
   [15037] = {
     id = 15037,
     text = "萨耶耶故事3",
-    Condition = Table_Menu_t.Condition[878],
+    Condition = Table_Menu_t.Condition[879],
     event = Table_Menu_t.event[830],
     Tip = "萨耶耶故事3"
   },
   [15038] = {
     id = 15038,
     text = "萨耶耶故事4",
-    Condition = Table_Menu_t.Condition[879],
+    Condition = Table_Menu_t.Condition[880],
     event = Table_Menu_t.event[831],
     Tip = "萨耶耶故事4"
   },
   [15039] = {
     id = 15039,
     text = "波洛故事1",
-    Condition = Table_Menu_t.Condition[880],
+    Condition = Table_Menu_t.Condition[881],
     event = Table_Menu_t.event[832],
     Tip = "波洛故事1"
   },
   [15040] = {
     id = 15040,
     text = "波洛故事2",
-    Condition = Table_Menu_t.Condition[881],
+    Condition = Table_Menu_t.Condition[882],
     event = Table_Menu_t.event[833],
     Tip = "波洛故事2"
   },
@@ -26657,14 +26924,14 @@ Table_Menu = {
   [15043] = {
     id = 15043,
     text = "鹿利利故事1",
-    Condition = Table_Menu_t.Condition[882],
+    Condition = Table_Menu_t.Condition[883],
     event = Table_Menu_t.event[834],
     Tip = "鹿利利故事1"
   },
   [15044] = {
     id = 15044,
     text = "鹿利利故事2",
-    Condition = Table_Menu_t.Condition[883],
+    Condition = Table_Menu_t.Condition[884],
     event = Table_Menu_t.event[835],
     Tip = "鹿利利故事2"
   },
@@ -26681,14 +26948,14 @@ Table_Menu = {
   [15047] = {
     id = 15047,
     text = "安格斯故事1",
-    Condition = Table_Menu_t.Condition[884],
+    Condition = Table_Menu_t.Condition[885],
     event = Table_Menu_t.event[836],
     Tip = "安格斯故事1"
   },
   [15048] = {
     id = 15048,
     text = "安格斯故事2",
-    Condition = Table_Menu_t.Condition[885],
+    Condition = Table_Menu_t.Condition[886],
     event = Table_Menu_t.event[837],
     Tip = "安格斯故事2"
   },
@@ -26705,21 +26972,21 @@ Table_Menu = {
   [15051] = {
     id = 15051,
     text = "星夜故事1",
-    Condition = Table_Menu_t.Condition[886],
+    Condition = Table_Menu_t.Condition[887],
     event = Table_Menu_t.event[838],
     Tip = "星夜故事1"
   },
   [15052] = {
     id = 15052,
     text = "星夜故事2",
-    Condition = Table_Menu_t.Condition[887],
+    Condition = Table_Menu_t.Condition[888],
     event = Table_Menu_t.event[839],
     Tip = "星夜故事2"
   },
   [15053] = {
     id = 15053,
     text = "星夜故事3",
-    Condition = Table_Menu_t.Condition[888],
+    Condition = Table_Menu_t.Condition[889],
     event = Table_Menu_t.event[840],
     Tip = "星夜故事3"
   },
@@ -26731,14 +26998,14 @@ Table_Menu = {
   [15055] = {
     id = 15055,
     text = "麦娜娜故事1",
-    Condition = Table_Menu_t.Condition[889],
+    Condition = Table_Menu_t.Condition[890],
     event = Table_Menu_t.event[841],
     Tip = "麦娜娜故事1"
   },
   [15056] = {
     id = 15056,
     text = "麦娜娜故事2",
-    Condition = Table_Menu_t.Condition[890],
+    Condition = Table_Menu_t.Condition[891],
     event = Table_Menu_t.event[842],
     Tip = "麦娜娜故事2"
   },
@@ -26755,21 +27022,21 @@ Table_Menu = {
   [15059] = {
     id = 15059,
     text = "芽芽故事1",
-    Condition = Table_Menu_t.Condition[891],
+    Condition = Table_Menu_t.Condition[892],
     event = Table_Menu_t.event[843],
     Tip = "芽芽故事1"
   },
   [15060] = {
     id = 15060,
     text = "芽芽故事2",
-    Condition = Table_Menu_t.Condition[892],
+    Condition = Table_Menu_t.Condition[893],
     event = Table_Menu_t.event[844],
     Tip = "芽芽故事2"
   },
   [15061] = {
     id = 15061,
     text = "芽芽故事3",
-    Condition = Table_Menu_t.Condition[893],
+    Condition = Table_Menu_t.Condition[894],
     event = Table_Menu_t.event[845],
     Tip = "芽芽故事3"
   },
@@ -26781,28 +27048,28 @@ Table_Menu = {
   [15063] = {
     id = 15063,
     text = "萨芙芙故事6",
-    Condition = Table_Menu_t.Condition[894],
+    Condition = Table_Menu_t.Condition[895],
     event = Table_Menu_t.event[846],
     Tip = "萨芙芙故事6"
   },
   [15064] = {
     id = 15064,
     text = "麦克唐故事5",
-    Condition = Table_Menu_t.Condition[895],
+    Condition = Table_Menu_t.Condition[896],
     event = Table_Menu_t.event[847],
     Tip = "麦克唐故事5"
   },
   [15065] = {
     id = 15065,
     text = "阿加加故事5",
-    Condition = Table_Menu_t.Condition[896],
+    Condition = Table_Menu_t.Condition[897],
     event = Table_Menu_t.event[848],
     Tip = "阿加加故事5"
   },
   [15066] = {
     id = 15066,
     text = "萨耶耶故事5",
-    Condition = Table_Menu_t.Condition[897],
+    Condition = Table_Menu_t.Condition[898],
     event = Table_Menu_t.event[849],
     Tip = "萨耶耶故事5"
   },
@@ -27235,128 +27502,128 @@ Table_Menu = {
   [16000] = {
     id = 16000,
     text = "糖姐姐好感度解锁",
-    Condition = Table_Menu_t.Condition[1244],
-    event = Table_Menu_t.event[994],
+    Condition = Table_Menu_t.Condition[1269],
+    event = Table_Menu_t.event[1006],
     Tip = "糖姐姐好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [16001] = {
     id = 16001,
     text = "哈奇奇好感度解锁",
-    Condition = Table_Menu_t.Condition[1240],
-    event = Table_Menu_t.event[995],
+    Condition = Table_Menu_t.Condition[1265],
+    event = Table_Menu_t.event[1007],
     Tip = "哈奇奇好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [16002] = {
     id = 16002,
     text = "阿加加好感度解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[996],
+    event = Table_Menu_t.event[1008],
     Tip = "阿加加好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [16003] = {
     id = 16003,
     text = "鹿蒂亚好感度解锁",
-    Condition = Table_Menu_t.Condition[1249],
-    event = Table_Menu_t.event[997],
+    Condition = Table_Menu_t.Condition[1274],
+    event = Table_Menu_t.event[1009],
     Tip = "鹿蒂亚好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [16004] = {
     id = 16004,
     text = "狐老佛好感度解锁",
-    Condition = Table_Menu_t.Condition[1231],
-    event = Table_Menu_t.event[998],
+    Condition = Table_Menu_t.Condition[1256],
+    event = Table_Menu_t.event[1010],
     Tip = "狐老佛好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [16005] = {
     id = 16005,
     text = "萨芙芙好感度解锁",
-    Condition = Table_Menu_t.Condition[1227],
-    event = Table_Menu_t.event[999],
+    Condition = Table_Menu_t.Condition[1252],
+    event = Table_Menu_t.event[1011],
     Tip = "萨芙芙好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [16006] = {
     id = 16006,
     text = "麦克唐好感度解锁",
-    Condition = Table_Menu_t.Condition[1224],
-    event = Table_Menu_t.event[1000],
+    Condition = Table_Menu_t.Condition[1249],
+    event = Table_Menu_t.event[1012],
     Tip = "麦克唐好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [16007] = {
     id = 16007,
     text = "萨耶耶好感度解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1001],
+    event = Table_Menu_t.event[1013],
     Tip = "萨耶耶好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [16008] = {
     id = 16008,
     text = "波洛好感度解锁",
-    Condition = Table_Menu_t.Condition[1215],
-    event = Table_Menu_t.event[1002],
+    Condition = Table_Menu_t.Condition[1240],
+    event = Table_Menu_t.event[1014],
     Tip = "波洛好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [16009] = {
     id = 16009,
     text = "鹿利利好感度解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1003],
+    event = Table_Menu_t.event[1015],
     Tip = "鹿利利好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [16010] = {
     id = 16010,
     text = "安格斯好感度解锁",
-    Condition = Table_Menu_t.Condition[1213],
-    event = Table_Menu_t.event[1004],
+    Condition = Table_Menu_t.Condition[1238],
+    event = Table_Menu_t.event[1016],
     Tip = "安格斯好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [16011] = {
     id = 16011,
     text = "星夜好感度解锁",
-    Condition = Table_Menu_t.Condition[1211],
-    event = Table_Menu_t.event[1005],
+    Condition = Table_Menu_t.Condition[1236],
+    event = Table_Menu_t.event[1017],
     Tip = "星夜好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [16012] = {
     id = 16012,
     text = "麦娜娜好感度解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1006],
+    event = Table_Menu_t.event[1018],
     Tip = "麦娜娜好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [16013] = {
     id = 16013,
     text = "芽芽好感度解锁",
     Condition = Table_Menu_t.Condition[212],
-    event = Table_Menu_t.event[1007],
+    event = Table_Menu_t.event[1019],
     Tip = "芽芽好感度解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[309]
+    Icon = Table_Menu_t.Icon[335]
   },
   [17000] = {
     id = 17000,
@@ -27364,7 +27631,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加隐藏道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17001] = {
     id = 17001,
@@ -27372,7 +27639,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加隐藏道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17002] = {
     id = 17002,
@@ -27380,7 +27647,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加隐藏道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17003] = {
     id = 17003,
@@ -27388,7 +27655,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加隐藏道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17004] = {
     id = 17004,
@@ -27396,7 +27663,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加隐藏道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17005] = {
     id = 17005,
@@ -27404,7 +27671,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加新道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17006] = {
     id = 17006,
@@ -27412,7 +27679,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加新道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17007] = {
     id = 17007,
@@ -27420,7 +27687,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加新道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17008] = {
     id = 17008,
@@ -27428,7 +27695,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加新道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17009] = {
     id = 17009,
@@ -27436,7 +27703,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加新道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17010] = {
     id = 17010,
@@ -27444,7 +27711,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加新道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17011] = {
     id = 17011,
@@ -27452,7 +27719,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加新道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17012] = {
     id = 17012,
@@ -27460,7 +27727,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加新道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17013] = {
     id = 17013,
@@ -27468,7 +27735,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加新道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17014] = {
     id = 17014,
@@ -27476,38 +27743,38 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "魔盒百宝屋·追加新道具",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17015] = {
     id = 17015,
     text = "金铲铲购买解锁",
-    Condition = Table_Menu_t.Condition[1248],
+    Condition = Table_Menu_t.Condition[1273],
     Tip = "魔盒百宝屋·追加金铲铲",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [17016] = {
     id = 17016,
     text = "轻云酥酪购买解锁",
-    Condition = Table_Menu_t.Condition[1247],
+    Condition = Table_Menu_t.Condition[1272],
     Tip = "魔盒百宝屋·追加轻云酥酪",
     Show = 1,
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [18001] = {
     id = 18001,
     text = "糖姐姐故事1完成",
-    Condition = Table_Menu_t.Condition[1246]
+    Condition = Table_Menu_t.Condition[1271]
   },
   [18002] = {
     id = 18002,
     text = "糖姐姐故事2完成",
-    Condition = Table_Menu_t.Condition[1245]
+    Condition = Table_Menu_t.Condition[1270]
   },
   [18003] = {
     id = 18003,
     text = "糖姐姐故事3完成",
-    Condition = Table_Menu_t.Condition[1244]
+    Condition = Table_Menu_t.Condition[1269]
   },
   [18004] = {
     id = 18004,
@@ -27516,57 +27783,57 @@ Table_Menu = {
   [18005] = {
     id = 18005,
     text = "哈奇奇故事1完成",
-    Condition = Table_Menu_t.Condition[1243]
+    Condition = Table_Menu_t.Condition[1268]
   },
   [18006] = {
     id = 18006,
     text = "哈奇奇故事3完成",
-    Condition = Table_Menu_t.Condition[1242]
+    Condition = Table_Menu_t.Condition[1267]
   },
   [18007] = {
     id = 18007,
     text = "哈奇奇故事4完成",
-    Condition = Table_Menu_t.Condition[1241]
+    Condition = Table_Menu_t.Condition[1266]
   },
   [18008] = {
     id = 18008,
     text = "哈奇奇故事5完成",
-    Condition = Table_Menu_t.Condition[1240]
+    Condition = Table_Menu_t.Condition[1265]
   },
   [18009] = {
     id = 18009,
     text = "哈奇奇故事2完成",
-    Condition = Table_Menu_t.Condition[1239]
+    Condition = Table_Menu_t.Condition[1264]
   },
   [18010] = {
     id = 18010,
     text = "司平塔故事2完成",
-    Condition = Table_Menu_t.Condition[1238]
+    Condition = Table_Menu_t.Condition[1263]
   },
   [18011] = {
     id = 18011,
     text = "司平塔故事3完成",
-    Condition = Table_Menu_t.Condition[1237]
+    Condition = Table_Menu_t.Condition[1262]
   },
   [18012] = {
     id = 18012,
     text = "司平塔故事4完成",
-    Condition = Table_Menu_t.Condition[1236]
+    Condition = Table_Menu_t.Condition[1261]
   },
   [18013] = {
     id = 18013,
     text = "鹿蒂亚故事1完成",
-    Condition = Table_Menu_t.Condition[1235]
+    Condition = Table_Menu_t.Condition[1260]
   },
   [18014] = {
     id = 18014,
     text = "鹿蒂亚故事2完成",
-    Condition = Table_Menu_t.Condition[1234]
+    Condition = Table_Menu_t.Condition[1259]
   },
   [18015] = {
     id = 18015,
     text = "鹿蒂亚故事3完成",
-    Condition = Table_Menu_t.Condition[1233]
+    Condition = Table_Menu_t.Condition[1258]
   },
   [18016] = {
     id = 18016,
@@ -27575,17 +27842,17 @@ Table_Menu = {
   [18017] = {
     id = 18017,
     text = "狐老佛故事1完成",
-    Condition = Table_Menu_t.Condition[1232]
+    Condition = Table_Menu_t.Condition[1257]
   },
   [18018] = {
     id = 18018,
     text = "狐老佛故事2完成",
-    Condition = Table_Menu_t.Condition[1231]
+    Condition = Table_Menu_t.Condition[1256]
   },
   [18019] = {
     id = 18019,
     text = "狐老佛故事3完成",
-    Condition = Table_Menu_t.Condition[1230]
+    Condition = Table_Menu_t.Condition[1255]
   },
   [18020] = {
     id = 18020,
@@ -27594,27 +27861,27 @@ Table_Menu = {
   [18021] = {
     id = 18021,
     text = "萨芙芙故事1完成",
-    Condition = Table_Menu_t.Condition[1229]
+    Condition = Table_Menu_t.Condition[1254]
   },
   [18022] = {
     id = 18022,
     text = "萨芙芙故事2完成",
-    Condition = Table_Menu_t.Condition[1228]
+    Condition = Table_Menu_t.Condition[1253]
   },
   [18023] = {
     id = 18023,
     text = "萨芙芙故事3完成",
-    Condition = Table_Menu_t.Condition[1227]
+    Condition = Table_Menu_t.Condition[1252]
   },
   [18024] = {
     id = 18024,
     text = "萨芙芙故事4完成",
-    Condition = Table_Menu_t.Condition[1226]
+    Condition = Table_Menu_t.Condition[1251]
   },
   [18025] = {
     id = 18025,
     text = "萨芙芙故事5完成",
-    Condition = Table_Menu_t.Condition[1225]
+    Condition = Table_Menu_t.Condition[1250]
   },
   [18026] = {
     id = 18026,
@@ -27624,32 +27891,32 @@ Table_Menu = {
   [18027] = {
     id = 18027,
     text = "麦克唐故事2完成",
-    Condition = Table_Menu_t.Condition[1224]
+    Condition = Table_Menu_t.Condition[1249]
   },
   [18028] = {
     id = 18028,
     text = "麦克唐故事3完成",
-    Condition = Table_Menu_t.Condition[1223]
+    Condition = Table_Menu_t.Condition[1248]
   },
   [18029] = {
     id = 18029,
     text = "麦克唐故事4完成",
-    Condition = Table_Menu_t.Condition[1222]
+    Condition = Table_Menu_t.Condition[1247]
   },
   [18030] = {
     id = 18030,
     text = "阿加加故事1完成",
-    Condition = Table_Menu_t.Condition[1221]
+    Condition = Table_Menu_t.Condition[1246]
   },
   [18031] = {
     id = 18031,
     text = "阿加加故事2完成",
-    Condition = Table_Menu_t.Condition[1220]
+    Condition = Table_Menu_t.Condition[1245]
   },
   [18032] = {
     id = 18032,
     text = "阿加加故事3完成",
-    Condition = Table_Menu_t.Condition[1219]
+    Condition = Table_Menu_t.Condition[1244]
   },
   [18033] = {
     id = 18033,
@@ -27658,17 +27925,17 @@ Table_Menu = {
   [18034] = {
     id = 18034,
     text = "萨耶耶故事1完成",
-    Condition = Table_Menu_t.Condition[1218]
+    Condition = Table_Menu_t.Condition[1243]
   },
   [18035] = {
     id = 18035,
     text = "萨耶耶故事2完成",
-    Condition = Table_Menu_t.Condition[1217]
+    Condition = Table_Menu_t.Condition[1242]
   },
   [18036] = {
     id = 18036,
     text = "萨耶耶故事3完成",
-    Condition = Table_Menu_t.Condition[1216]
+    Condition = Table_Menu_t.Condition[1241]
   },
   [18037] = {
     id = 18037,
@@ -27681,7 +27948,7 @@ Table_Menu = {
   [18039] = {
     id = 18039,
     text = "波洛故事2完成",
-    Condition = Table_Menu_t.Condition[1215]
+    Condition = Table_Menu_t.Condition[1240]
   },
   [18040] = {
     id = 18040,
@@ -27690,7 +27957,7 @@ Table_Menu = {
   [18041] = {
     id = 18041,
     text = "鹿利利故事2完成",
-    Condition = Table_Menu_t.Condition[1214]
+    Condition = Table_Menu_t.Condition[1239]
   },
   [18042] = {
     id = 18042,
@@ -27699,7 +27966,7 @@ Table_Menu = {
   [18043] = {
     id = 18043,
     text = "安格斯故事2完成",
-    Condition = Table_Menu_t.Condition[1213]
+    Condition = Table_Menu_t.Condition[1238]
   },
   [18044] = {
     id = 18044,
@@ -27708,12 +27975,12 @@ Table_Menu = {
   [18045] = {
     id = 18045,
     text = "星夜故事2完成",
-    Condition = Table_Menu_t.Condition[1212]
+    Condition = Table_Menu_t.Condition[1237]
   },
   [18046] = {
     id = 18046,
     text = "星夜故事3完成",
-    Condition = Table_Menu_t.Condition[1211]
+    Condition = Table_Menu_t.Condition[1236]
   },
   [18047] = {
     id = 18047,
@@ -27722,7 +27989,7 @@ Table_Menu = {
   [18048] = {
     id = 18048,
     text = "麦娜娜故事2完成",
-    Condition = Table_Menu_t.Condition[1210]
+    Condition = Table_Menu_t.Condition[1235]
   },
   [18049] = {
     id = 18049,
@@ -27731,32 +27998,32 @@ Table_Menu = {
   [18050] = {
     id = 18050,
     text = "芽芽故事2完成",
-    Condition = Table_Menu_t.Condition[1209]
+    Condition = Table_Menu_t.Condition[1234]
   },
   [18051] = {
     id = 18051,
     text = "芽芽故事3完成",
-    Condition = Table_Menu_t.Condition[1208]
+    Condition = Table_Menu_t.Condition[1233]
   },
   [18052] = {
     id = 18052,
     text = "萨芙芙故事6完成",
-    Condition = Table_Menu_t.Condition[1207]
+    Condition = Table_Menu_t.Condition[1232]
   },
   [18053] = {
     id = 18053,
     text = "麦克唐故事5完成",
-    Condition = Table_Menu_t.Condition[1206]
+    Condition = Table_Menu_t.Condition[1231]
   },
   [18054] = {
     id = 18054,
     text = "阿加加故事5完成",
-    Condition = Table_Menu_t.Condition[1205]
+    Condition = Table_Menu_t.Condition[1230]
   },
   [18055] = {
     id = 18055,
     text = "萨耶耶故事5完成",
-    Condition = Table_Menu_t.Condition[1204]
+    Condition = Table_Menu_t.Condition[1229]
   },
   [18056] = {
     id = 18056,
@@ -27764,518 +28031,518 @@ Table_Menu = {
     text = "证据手册·解锁",
     Condition = Table_Menu_t.Condition[212],
     Tip = "证据手册·解锁",
-    Icon = Table_Menu_t.Icon[308]
+    Icon = Table_Menu_t.Icon[334]
   },
   [18101] = {
     id = 18101,
     text = "海涅-贤者的职责1",
-    Condition = Table_Menu_t.Condition[1203],
+    Condition = Table_Menu_t.Condition[1228],
     Acc = 1
   },
   [18102] = {
     id = 18102,
     text = "海涅-贤者的职责2",
-    Condition = Table_Menu_t.Condition[1202],
+    Condition = Table_Menu_t.Condition[1227],
     Acc = 1
   },
   [18103] = {
     id = 18103,
     text = "海涅-贤者的职责3",
-    Condition = Table_Menu_t.Condition[1201],
+    Condition = Table_Menu_t.Condition[1226],
     Acc = 1
   },
   [18104] = {
     id = 18104,
     text = "海涅-贤者的职责4",
-    Condition = Table_Menu_t.Condition[1200],
+    Condition = Table_Menu_t.Condition[1225],
     Acc = 1
   },
   [18105] = {
     id = 18105,
     text = "奈利乌斯-双子星1",
-    Condition = Table_Menu_t.Condition[1199],
+    Condition = Table_Menu_t.Condition[1224],
     Acc = 1
   },
   [18106] = {
     id = 18106,
     text = "奈利乌斯-双子星2",
-    Condition = Table_Menu_t.Condition[1198],
+    Condition = Table_Menu_t.Condition[1223],
     Acc = 1
   },
   [18107] = {
     id = 18107,
     text = "奈利乌斯-双子星3",
-    Condition = Table_Menu_t.Condition[1197],
+    Condition = Table_Menu_t.Condition[1222],
     Acc = 1
   },
   [18108] = {
     id = 18108,
     text = "奈利乌斯-双子星4",
-    Condition = Table_Menu_t.Condition[1196],
+    Condition = Table_Menu_t.Condition[1221],
     Acc = 1
   },
   [18109] = {
     id = 18109,
     text = "力哈尔特-机甲失窃案1",
-    Condition = Table_Menu_t.Condition[1195],
+    Condition = Table_Menu_t.Condition[1220],
     Acc = 1
   },
   [18110] = {
     id = 18110,
     text = "力哈尔特-机甲失窃案2",
-    Condition = Table_Menu_t.Condition[1194],
+    Condition = Table_Menu_t.Condition[1219],
     Acc = 1
   },
   [18111] = {
     id = 18111,
     text = "力哈尔特-机甲失窃案3",
-    Condition = Table_Menu_t.Condition[1193],
+    Condition = Table_Menu_t.Condition[1218],
     Acc = 1
   },
   [18112] = {
     id = 18112,
     text = "力哈尔特-机甲失窃案4",
-    Condition = Table_Menu_t.Condition[1192],
+    Condition = Table_Menu_t.Condition[1217],
     Acc = 1
   },
   [18113] = {
     id = 18113,
     text = "巴尔特-心之所向1",
-    Condition = Table_Menu_t.Condition[1191],
+    Condition = Table_Menu_t.Condition[1216],
     Acc = 1
   },
   [18114] = {
     id = 18114,
     text = "巴尔特-心之所向2",
-    Condition = Table_Menu_t.Condition[1190],
+    Condition = Table_Menu_t.Condition[1215],
     Acc = 1
   },
   [18115] = {
     id = 18115,
     text = "巴尔特-心之所向3",
-    Condition = Table_Menu_t.Condition[1189],
+    Condition = Table_Menu_t.Condition[1214],
     Acc = 1
   },
   [18116] = {
     id = 18116,
     text = "凯沃宝乐格-荣誉的真谛1",
-    Condition = Table_Menu_t.Condition[1188],
+    Condition = Table_Menu_t.Condition[1213],
     Acc = 1
   },
   [18117] = {
     id = 18117,
     text = "凯沃宝乐格-荣誉的真谛2",
-    Condition = Table_Menu_t.Condition[1187],
+    Condition = Table_Menu_t.Condition[1212],
     Acc = 1
   },
   [18118] = {
     id = 18118,
     text = "凯沃宝乐格-荣誉的真谛3",
-    Condition = Table_Menu_t.Condition[541],
+    Condition = Table_Menu_t.Condition[542],
     Acc = 1
   },
   [18119] = {
     id = 18119,
     text = "凯沃宝乐格-荣誉的真谛4",
-    Condition = Table_Menu_t.Condition[1186],
+    Condition = Table_Menu_t.Condition[1211],
     Acc = 1
   },
   [18120] = {
     id = 18120,
     text = "韦格纳-昔日的荣光1",
-    Condition = Table_Menu_t.Condition[1185],
+    Condition = Table_Menu_t.Condition[1210],
     Acc = 1
   },
   [18121] = {
     id = 18121,
     text = "韦格纳-昔日的荣光2",
-    Condition = Table_Menu_t.Condition[1184],
+    Condition = Table_Menu_t.Condition[1209],
     Acc = 1
   },
   [18122] = {
     id = 18122,
     text = "韦格纳-昔日的荣光3",
-    Condition = Table_Menu_t.Condition[1183],
+    Condition = Table_Menu_t.Condition[1208],
     Acc = 1
   },
   [18123] = {
     id = 18123,
     text = "雷根弗莱格-守护的力量1",
-    Condition = Table_Menu_t.Condition[1182],
+    Condition = Table_Menu_t.Condition[1207],
     Acc = 1
   },
   [18124] = {
     id = 18124,
     text = "雷根弗莱格-守护的力量2",
-    Condition = Table_Menu_t.Condition[1181],
+    Condition = Table_Menu_t.Condition[1206],
     Acc = 1
   },
   [18125] = {
     id = 18125,
     text = "雷根弗莱格-守护的力量3",
-    Condition = Table_Menu_t.Condition[542],
+    Condition = Table_Menu_t.Condition[543],
     Acc = 1
   },
   [18126] = {
     id = 18126,
     text = "剑碑修复·一",
-    Condition = Table_Menu_t.Condition[1180],
-    event = Table_Menu_t.event[993],
+    Condition = Table_Menu_t.Condition[1205],
+    event = Table_Menu_t.event[1005],
     Acc = 1
   },
   [18127] = {
     id = 18127,
     text = "剑碑修复·二",
-    Condition = Table_Menu_t.Condition[1179],
-    event = Table_Menu_t.event[992],
+    Condition = Table_Menu_t.Condition[1204],
+    event = Table_Menu_t.event[1004],
     Acc = 1
   },
   [18128] = {
     id = 18128,
     text = "剑碑修复·一（已完成）",
-    Condition = Table_Menu_t.Condition[1178],
+    Condition = Table_Menu_t.Condition[1203],
     Acc = 1
   },
   [18131] = {
     id = 18131,
     text = "神树之灵Lv.1",
-    Condition = Table_Menu_t.Condition[1177],
+    Condition = Table_Menu_t.Condition[1202],
     Acc = 1
   },
   [18132] = {
     id = 18132,
     text = "神树之灵Lv.2",
-    Condition = Table_Menu_t.Condition[1176],
+    Condition = Table_Menu_t.Condition[1201],
     Acc = 1
   },
   [18133] = {
     id = 18133,
     text = "神树之灵Lv.3",
-    Condition = Table_Menu_t.Condition[1175],
+    Condition = Table_Menu_t.Condition[1200],
     Acc = 1
   },
   [18134] = {
     id = 18134,
     text = "神树之灵Lv.4",
-    Condition = Table_Menu_t.Condition[1174],
+    Condition = Table_Menu_t.Condition[1199],
     Acc = 1
   },
   [18135] = {
     id = 18135,
     text = "神树之灵Lv.5",
-    Condition = Table_Menu_t.Condition[1173],
+    Condition = Table_Menu_t.Condition[1198],
     Acc = 1
   },
   [18136] = {
     id = 18136,
     text = "神树之灵Lv.6",
-    Condition = Table_Menu_t.Condition[543],
+    Condition = Table_Menu_t.Condition[544],
     Acc = 1
   },
   [18137] = {
     id = 18137,
     text = "神树之灵Lv.7",
-    Condition = Table_Menu_t.Condition[1172],
+    Condition = Table_Menu_t.Condition[1197],
     Acc = 1
   },
   [18138] = {
     id = 18138,
     text = "神树之灵Lv.8",
-    Condition = Table_Menu_t.Condition[1171],
+    Condition = Table_Menu_t.Condition[1196],
     Acc = 1
   },
   [18139] = {
     id = 18139,
     text = "神树之灵Lv.9",
-    Condition = Table_Menu_t.Condition[1170],
+    Condition = Table_Menu_t.Condition[1195],
     Acc = 1
   },
   [18140] = {
     id = 18140,
     text = "神树之灵Lv.10",
-    Condition = Table_Menu_t.Condition[1169],
+    Condition = Table_Menu_t.Condition[1194],
     Acc = 1
   },
   [18141] = {
     id = 18141,
     text = "神树之灵Lv.11",
-    Condition = Table_Menu_t.Condition[1168],
+    Condition = Table_Menu_t.Condition[1193],
     Acc = 1
   },
   [18142] = {
     id = 18142,
     text = "神树之灵Lv.12",
-    Condition = Table_Menu_t.Condition[1167],
+    Condition = Table_Menu_t.Condition[1192],
     Acc = 1
   },
   [18143] = {
     id = 18143,
     text = "神树之灵Lv.13",
-    Condition = Table_Menu_t.Condition[544],
+    Condition = Table_Menu_t.Condition[545],
     Acc = 1
   },
   [18144] = {
     id = 18144,
     text = "神树之灵Lv.14",
-    Condition = Table_Menu_t.Condition[1166],
+    Condition = Table_Menu_t.Condition[1191],
     Acc = 1
   },
   [18145] = {
     id = 18145,
     text = "神树之灵Lv.15",
-    Condition = Table_Menu_t.Condition[1165],
+    Condition = Table_Menu_t.Condition[1190],
     Acc = 1
   },
   [18146] = {
     id = 18146,
     text = "神树之灵Lv.16",
-    Condition = Table_Menu_t.Condition[545],
+    Condition = Table_Menu_t.Condition[546],
     Acc = 1
   },
   [18147] = {
     id = 18147,
     text = "神树之灵Lv.17",
-    Condition = Table_Menu_t.Condition[546],
+    Condition = Table_Menu_t.Condition[547],
     Acc = 1
   },
   [18148] = {
     id = 18148,
     text = "神树之灵Lv.18",
-    Condition = Table_Menu_t.Condition[1164],
+    Condition = Table_Menu_t.Condition[1189],
     Acc = 1
   },
   [18149] = {
     id = 18149,
     text = "神树之灵Lv.19",
-    Condition = Table_Menu_t.Condition[1163],
+    Condition = Table_Menu_t.Condition[1188],
     Acc = 1
   },
   [18150] = {
     id = 18150,
     text = "神树之灵Lv.20",
-    Condition = Table_Menu_t.Condition[1162],
+    Condition = Table_Menu_t.Condition[1187],
     Acc = 1
   },
   [18151] = {
     id = 18151,
     text = "神树之灵Lv.21",
-    Condition = Table_Menu_t.Condition[1161],
+    Condition = Table_Menu_t.Condition[1186],
     Acc = 1
   },
   [18152] = {
     id = 18152,
     text = "神树之灵Lv.22",
-    Condition = Table_Menu_t.Condition[1160],
+    Condition = Table_Menu_t.Condition[1185],
     Acc = 1
   },
   [18153] = {
     id = 18153,
     text = "神树之灵Lv.23",
-    Condition = Table_Menu_t.Condition[1159],
+    Condition = Table_Menu_t.Condition[1184],
     Acc = 1
   },
   [18154] = {
     id = 18154,
     text = "神树之灵Lv.24",
-    Condition = Table_Menu_t.Condition[1158],
+    Condition = Table_Menu_t.Condition[1183],
     Acc = 1
   },
   [18155] = {
     id = 18155,
     text = "神树之灵Lv.25",
-    Condition = Table_Menu_t.Condition[1157],
+    Condition = Table_Menu_t.Condition[1182],
     Acc = 1
   },
   [18156] = {
     id = 18156,
     text = "神树之灵Lv.26",
-    Condition = Table_Menu_t.Condition[1156],
+    Condition = Table_Menu_t.Condition[1181],
     Acc = 1
   },
   [18157] = {
     id = 18157,
     text = "神树之灵Lv.27",
-    Condition = Table_Menu_t.Condition[1155],
+    Condition = Table_Menu_t.Condition[1180],
     Acc = 1
   },
   [18158] = {
     id = 18158,
     text = "神树之灵Lv.28",
-    Condition = Table_Menu_t.Condition[1154],
+    Condition = Table_Menu_t.Condition[1179],
     Acc = 1
   },
   [18159] = {
     id = 18159,
     text = "神树之灵Lv.29",
-    Condition = Table_Menu_t.Condition[1153],
+    Condition = Table_Menu_t.Condition[1178],
     Acc = 1
   },
   [18160] = {
     id = 18160,
     text = "神树之灵Lv.30",
-    Condition = Table_Menu_t.Condition[1152],
+    Condition = Table_Menu_t.Condition[1177],
     Acc = 1
   },
   [18161] = {
     id = 18161,
     text = "神树之灵Lv.31",
-    Condition = Table_Menu_t.Condition[1151],
+    Condition = Table_Menu_t.Condition[1176],
     Acc = 1
   },
   [18162] = {
     id = 18162,
     text = "神树之灵Lv.32",
-    Condition = Table_Menu_t.Condition[1150],
+    Condition = Table_Menu_t.Condition[1175],
     Acc = 1
   },
   [18170] = {
     id = 18170,
     text = "前置任务：[荒境]遇袭的神木",
-    Condition = Table_Menu_t.Condition[1149],
+    Condition = Table_Menu_t.Condition[1174],
     Acc = 1
   },
   [18171] = {
     id = 18171,
     text = "前置任务：[冒险]捣乱的土拨鼠",
-    Condition = Table_Menu_t.Condition[1130],
+    Condition = Table_Menu_t.Condition[1155],
     Acc = 1
   },
   [18172] = {
     id = 18172,
     text = "前置任务：[荒境]神秘的笛音",
-    Condition = Table_Menu_t.Condition[1148],
+    Condition = Table_Menu_t.Condition[1173],
     Acc = 1
   },
   [18173] = {
     id = 18173,
     text = "前置任务：[荒境]将逝的灵魂",
-    Condition = Table_Menu_t.Condition[551],
+    Condition = Table_Menu_t.Condition[552],
     Acc = 1
   },
   [18174] = {
     id = 18174,
     text = "前置任务：[荒境]涌动的恶意",
-    Condition = Table_Menu_t.Condition[1147],
+    Condition = Table_Menu_t.Condition[1172],
     Acc = 1
   },
   [18175] = {
     id = 18175,
     text = "前置任务：[荒境]洞中的旧梦",
-    Condition = Table_Menu_t.Condition[1146],
+    Condition = Table_Menu_t.Condition[1171],
     Acc = 1
   },
   [18176] = {
     id = 18176,
     text = "前置任务：[荒境]失落的真相",
-    Condition = Table_Menu_t.Condition[552],
+    Condition = Table_Menu_t.Condition[553],
     Acc = 1
   },
   [18177] = {
     id = 18177,
     text = "前置任务：[荒境]崩溃的天空",
-    Condition = Table_Menu_t.Condition[553],
+    Condition = Table_Menu_t.Condition[554],
     Acc = 1
   },
   [18178] = {
     id = 18178,
     text = "前置任务：[荒境]终焉的死斗",
-    Condition = Table_Menu_t.Condition[554],
+    Condition = Table_Menu_t.Condition[555],
     Acc = 1
   },
   [18179] = {
     id = 18179,
     text = "前置任务：[荒境]溯逆的时光",
-    Condition = Table_Menu_t.Condition[555],
+    Condition = Table_Menu_t.Condition[556],
     Acc = 1
   },
   [18180] = {
     id = 18180,
     text = "前置任务：[荒境]汇聚的疑云",
-    Condition = Table_Menu_t.Condition[1145],
+    Condition = Table_Menu_t.Condition[1170],
     Acc = 1
   },
   [18181] = {
     id = 18181,
     text = "前置任务：[荒境]揭晓的谜底",
-    Condition = Table_Menu_t.Condition[1144],
+    Condition = Table_Menu_t.Condition[1169],
     Acc = 1
   },
   [18182] = {
     id = 18182,
     text = "前置任务：[荒境]遥远的重逢",
-    Condition = Table_Menu_t.Condition[1143],
+    Condition = Table_Menu_t.Condition[1168],
     Acc = 1
   },
   [18183] = {
     id = 18183,
     text = "升级神树之灵至Lv2，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1142],
+    Condition = Table_Menu_t.Condition[1167],
     Acc = 1
   },
   [18184] = {
     id = 18184,
     text = "升级神树之灵至Lv4，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1141],
+    Condition = Table_Menu_t.Condition[1166],
     Acc = 1
   },
   [18185] = {
     id = 18185,
     text = "升级神树之灵至Lv6，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[556],
+    Condition = Table_Menu_t.Condition[557],
     Acc = 1
   },
   [18186] = {
     id = 18186,
     text = "升级神树之灵至Lv7，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1140],
+    Condition = Table_Menu_t.Condition[1165],
     Acc = 1
   },
   [18187] = {
     id = 18187,
     text = "升级神树之灵至Lv8，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1139],
+    Condition = Table_Menu_t.Condition[1164],
     Acc = 1
   },
   [18188] = {
     id = 18188,
     text = "升级神树之灵至Lv10，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1138],
+    Condition = Table_Menu_t.Condition[1163],
     Acc = 1
   },
   [18189] = {
     id = 18189,
     text = "升级神树之灵至Lv11，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1137],
+    Condition = Table_Menu_t.Condition[1162],
     Acc = 1
   },
   [18190] = {
     id = 18190,
     text = "升级神树之灵至Lv16，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[557],
+    Condition = Table_Menu_t.Condition[558],
     Acc = 1
   },
   [18191] = {
     id = 18191,
     text = "升级神树之灵至Lv18，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1136],
+    Condition = Table_Menu_t.Condition[1161],
     Acc = 1
   },
   [18192] = {
     id = 18192,
     text = "升级神树之灵至Lv20，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1135],
+    Condition = Table_Menu_t.Condition[1160],
     Acc = 1
   },
   [18193] = {
     id = 18193,
     text = "升级神树之灵至Lv22，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1134],
+    Condition = Table_Menu_t.Condition[1159],
     Acc = 1
   },
   [18194] = {
     id = 18194,
     text = "荒境科技树解锁",
-    Condition = Table_Menu_t.Condition[1133],
+    Condition = Table_Menu_t.Condition[1158],
     sysMsg = Table_Menu_t.sysMsg[80],
     Tip = "神树之灵已解锁",
     Show = 1,
@@ -28285,7 +28552,7 @@ Table_Menu = {
   [18195] = {
     id = 18195,
     text = "魔物秘闻页签解锁",
-    Condition = Table_Menu_t.Condition[560],
+    Condition = Table_Menu_t.Condition[561],
     Tip = "神树之灵·追加新内容魔物秘闻",
     Show = 1,
     Acc = 1,
@@ -28294,7 +28561,7 @@ Table_Menu = {
   [18196] = {
     id = 18196,
     text = "枫叶彼岸科技树解锁",
-    Condition = Table_Menu_t.Condition[1132],
+    Condition = Table_Menu_t.Condition[1157],
     Tip = "神树之灵已进阶",
     Show = 1,
     Acc = 1,
@@ -28303,7 +28570,7 @@ Table_Menu = {
   [18197] = {
     id = 18197,
     text = "完成四转",
-    Condition = Table_Menu_t.Condition[1131],
+    Condition = Table_Menu_t.Condition[1156],
     Acc = 1
   },
   [18198] = {
@@ -28315,7 +28582,7 @@ Table_Menu = {
   [18199] = {
     id = 18199,
     text = "开启荒境冒险任务",
-    Condition = Table_Menu_t.Condition[1130],
+    Condition = Table_Menu_t.Condition[1155],
     Tip = "荒境冒险任务已开启",
     Show = 1,
     Acc = 1,
@@ -28324,13 +28591,13 @@ Table_Menu = {
   [18200] = {
     id = 18200,
     text = "裂隙副本·材料模式开启",
-    Condition = Table_Menu_t.Condition[1129],
+    Condition = Table_Menu_t.Condition[1154],
     Acc = 1
   },
   [18201] = {
     id = 18201,
     text = "普隆德拉任务屏蔽解除",
-    Condition = Table_Menu_t.Condition[1128],
+    Condition = Table_Menu_t.Condition[1153],
     Tip = "普隆德拉任务屏蔽解除",
     Acc = 1
   },
@@ -28340,7 +28607,7 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "女神祈祷功能已解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[307]
+    Icon = Table_Menu_t.Icon[333]
   },
   [18203] = {
     id = 18203,
@@ -28348,12 +28615,12 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "女神祝福功能已解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[307]
+    Icon = Table_Menu_t.Icon[333]
   },
   [18205] = {
     id = 18205,
     text = "版本推送解锁等级",
-    Condition = Table_Menu_t.Condition[1127]
+    Condition = Table_Menu_t.Condition[1152]
   },
   [18206] = {
     id = 18206,
@@ -28368,19 +28635,19 @@ Table_Menu = {
     Condition = Table_Menu_t.Condition[212],
     Tip = "女神赐福功能已解锁",
     Show = 1,
-    Icon = Table_Menu_t.Icon[307]
+    Icon = Table_Menu_t.Icon[333]
   },
   [18214] = {
     id = 18214,
     text = "新手科技树主界面入口隐藏",
-    Condition = Table_Menu_t.Condition[573],
+    Condition = Table_Menu_t.Condition[574],
     Tip = "新手科技树主界面入口隐藏",
     Acc = 1
   },
   [18215] = {
     id = 18215,
     text = "心之始源·解锁",
-    Condition = Table_Menu_t.Condition[574],
+    Condition = Table_Menu_t.Condition[575],
     Tip = "心之始源·解锁",
     Acc = 1,
     Icon = Table_Menu_t.Icon[234]
@@ -28394,13 +28661,13 @@ Table_Menu = {
   [18217] = {
     id = 18217,
     text = "1阶段任务卡点2",
-    Condition = Table_Menu_t.Condition[575],
+    Condition = Table_Menu_t.Condition[576],
     Acc = 1
   },
   [18218] = {
     id = 18218,
     text = "1阶段任务卡点3",
-    Condition = Table_Menu_t.Condition[576],
+    Condition = Table_Menu_t.Condition[577],
     Acc = 1
   },
   [18219] = {
@@ -28418,7 +28685,7 @@ Table_Menu = {
   [18221] = {
     id = 18221,
     text = "2阶段任务卡点1",
-    Condition = Table_Menu_t.Condition[1126],
+    Condition = Table_Menu_t.Condition[1151],
     Acc = 1
   },
   [18222] = {
@@ -28430,694 +28697,694 @@ Table_Menu = {
   [18223] = {
     id = 18223,
     text = "主线任务中收集纯洁之心解锁",
-    Condition = Table_Menu_t.Condition[1125],
+    Condition = Table_Menu_t.Condition[1150],
     Acc = 1
   },
   [18224] = {
     id = 18224,
     text = "3阶段任务卡点1",
-    Condition = Table_Menu_t.Condition[1124],
+    Condition = Table_Menu_t.Condition[1149],
     Acc = 1
   },
   [18225] = {
     id = 18225,
     text = "3阶段任务卡点2",
-    Condition = Table_Menu_t.Condition[1123],
+    Condition = Table_Menu_t.Condition[1148],
     Acc = 1
   },
   [18226] = {
     id = 18226,
     text = "主线任务中收集忠贞之心解锁",
-    Condition = Table_Menu_t.Condition[1122],
+    Condition = Table_Menu_t.Condition[1147],
     Acc = 1
   },
   [18227] = {
     id = 18227,
     text = "4阶段任务卡点1",
-    Condition = Table_Menu_t.Condition[1121],
+    Condition = Table_Menu_t.Condition[1146],
     Acc = 1
   },
   [18228] = {
     id = 18228,
     text = "4阶段任务卡点2",
-    Condition = Table_Menu_t.Condition[1120],
+    Condition = Table_Menu_t.Condition[1145],
     Acc = 1
   },
   [18229] = {
     id = 18229,
     text = "主线任务中收集守护之心解锁",
-    Condition = Table_Menu_t.Condition[1119],
+    Condition = Table_Menu_t.Condition[1144],
     Acc = 1
   },
   [18230] = {
     id = 18230,
     text = "5阶段任务卡点1",
-    Condition = Table_Menu_t.Condition[1118],
+    Condition = Table_Menu_t.Condition[1143],
     Acc = 1
   },
   [18231] = {
     id = 18231,
     text = "5阶段任务卡点2",
-    Condition = Table_Menu_t.Condition[1117],
+    Condition = Table_Menu_t.Condition[1142],
     Acc = 1
   },
   [18232] = {
     id = 18232,
     text = "心之始源1级",
-    Condition = Table_Menu_t.Condition[1116],
+    Condition = Table_Menu_t.Condition[1141],
     Acc = 1
   },
   [18233] = {
     id = 18233,
     text = "心之始源2级",
-    Condition = Table_Menu_t.Condition[1115],
+    Condition = Table_Menu_t.Condition[1140],
     Acc = 1
   },
   [18234] = {
     id = 18234,
     text = "心之始源3级",
-    Condition = Table_Menu_t.Condition[1114],
+    Condition = Table_Menu_t.Condition[1139],
     Acc = 1
   },
   [18235] = {
     id = 18235,
     text = "心之始源4级",
-    Condition = Table_Menu_t.Condition[1113],
+    Condition = Table_Menu_t.Condition[1138],
     Acc = 1
   },
   [18236] = {
     id = 18236,
     text = "心之始源5级",
-    Condition = Table_Menu_t.Condition[1112],
+    Condition = Table_Menu_t.Condition[1137],
     Acc = 1
   },
   [18237] = {
     id = 18237,
     text = "心之始源6级",
-    Condition = Table_Menu_t.Condition[1111],
+    Condition = Table_Menu_t.Condition[1136],
     Acc = 1
   },
   [18238] = {
     id = 18238,
     text = "心之始源7级",
-    Condition = Table_Menu_t.Condition[1110],
+    Condition = Table_Menu_t.Condition[1135],
     Acc = 1
   },
   [18239] = {
     id = 18239,
     text = "心之始源8级",
-    Condition = Table_Menu_t.Condition[1109],
+    Condition = Table_Menu_t.Condition[1134],
     Acc = 1
   },
   [18240] = {
     id = 18240,
     text = "心之始源9级",
-    Condition = Table_Menu_t.Condition[1108],
+    Condition = Table_Menu_t.Condition[1133],
     Acc = 1
   },
   [18241] = {
     id = 18241,
     text = "心之始源10级",
-    Condition = Table_Menu_t.Condition[1107],
+    Condition = Table_Menu_t.Condition[1132],
     Acc = 1
   },
   [18242] = {
     id = 18242,
     text = "心之始源11级",
-    Condition = Table_Menu_t.Condition[1106],
+    Condition = Table_Menu_t.Condition[1131],
     Acc = 1
   },
   [18243] = {
     id = 18243,
     text = "心之始源12级",
-    Condition = Table_Menu_t.Condition[1105],
+    Condition = Table_Menu_t.Condition[1130],
     Acc = 1
   },
   [18244] = {
     id = 18244,
     text = "心之始源13级",
-    Condition = Table_Menu_t.Condition[1104],
+    Condition = Table_Menu_t.Condition[1129],
     Acc = 1
   },
   [18245] = {
     id = 18245,
     text = "心之始源14级",
-    Condition = Table_Menu_t.Condition[596],
+    Condition = Table_Menu_t.Condition[597],
     Acc = 1
   },
   [18246] = {
     id = 18246,
     text = "心之始源15级",
-    Condition = Table_Menu_t.Condition[597],
+    Condition = Table_Menu_t.Condition[598],
     Acc = 1
   },
   [18247] = {
     id = 18247,
     text = "心之始源16级",
-    Condition = Table_Menu_t.Condition[598],
+    Condition = Table_Menu_t.Condition[599],
     Acc = 1
   },
   [18248] = {
     id = 18248,
     text = "心之始源17级",
-    Condition = Table_Menu_t.Condition[599],
+    Condition = Table_Menu_t.Condition[600],
     Acc = 1
   },
   [18249] = {
     id = 18249,
     text = "心之始源18级",
-    Condition = Table_Menu_t.Condition[600],
+    Condition = Table_Menu_t.Condition[601],
     Acc = 1
   },
   [18250] = {
     id = 18250,
     text = "心之始源19级",
-    Condition = Table_Menu_t.Condition[1103],
+    Condition = Table_Menu_t.Condition[1128],
     Acc = 1
   },
   [18251] = {
     id = 18251,
     text = "心之始源20级",
-    Condition = Table_Menu_t.Condition[1102],
+    Condition = Table_Menu_t.Condition[1127],
     Acc = 1
   },
   [18252] = {
     id = 18252,
     text = "心之始源21级",
-    Condition = Table_Menu_t.Condition[1101],
+    Condition = Table_Menu_t.Condition[1126],
     Acc = 1
   },
   [18253] = {
     id = 18253,
     text = "心之始源22级",
-    Condition = Table_Menu_t.Condition[1100],
+    Condition = Table_Menu_t.Condition[1003],
     Acc = 1
   },
   [18254] = {
     id = 18254,
     text = "心之始源23级",
-    Condition = Table_Menu_t.Condition[1099],
+    Condition = Table_Menu_t.Condition[1004],
     Acc = 1
   },
   [18255] = {
     id = 18255,
     text = "心之始源24级",
-    Condition = Table_Menu_t.Condition[1098],
+    Condition = Table_Menu_t.Condition[1005],
     Acc = 1
   },
   [18256] = {
     id = 18256,
     text = "心之始源25级",
-    Condition = Table_Menu_t.Condition[1097],
+    Condition = Table_Menu_t.Condition[1006],
     Acc = 1
   },
   [18257] = {
     id = 18257,
     text = "升级心之始源至Lv.2，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1096],
+    Condition = Table_Menu_t.Condition[1007],
     Acc = 1
   },
   [18258] = {
     id = 18258,
     text = "升级心之始源至Lv.3，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1095],
+    Condition = Table_Menu_t.Condition[1008],
     Acc = 1
   },
   [18259] = {
     id = 18259,
     text = "升级心之始源至Lv.4，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[996],
+    Condition = Table_Menu_t.Condition[1009],
     Acc = 1
   },
   [18260] = {
     id = 18260,
     text = "升级心之始源至Lv.5，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[997],
+    Condition = Table_Menu_t.Condition[1010],
     Acc = 1
   },
   [18261] = {
     id = 18261,
     text = "升级心之始源至Lv.7，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[998],
+    Condition = Table_Menu_t.Condition[1011],
     Acc = 1
   },
   [18262] = {
     id = 18262,
     text = "升级心之始源至Lv.10，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[999],
+    Condition = Table_Menu_t.Condition[1012],
     Acc = 1
   },
   [18263] = {
     id = 18263,
     text = "升级心之始源至Lv.12，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1000],
+    Condition = Table_Menu_t.Condition[1013],
     Acc = 1
   },
   [18264] = {
     id = 18264,
     text = "升级心之始源至Lv.15，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1001],
+    Condition = Table_Menu_t.Condition[1014],
     Acc = 1
   },
   [18265] = {
     id = 18265,
     text = "升级心之始源至Lv.17，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1002],
+    Condition = Table_Menu_t.Condition[1015],
     Acc = 1
   },
   [18266] = {
     id = 18266,
     text = "升级心之始源至Lv.20，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1003],
+    Condition = Table_Menu_t.Condition[1016],
     Acc = 1
   },
   [18267] = {
     id = 18267,
     text = "升级心之始源至Lv.22，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1004],
+    Condition = Table_Menu_t.Condition[1017],
     Acc = 1
   },
   [18268] = {
     id = 18268,
     text = "升级心之始源至Lv.25，解锁后续剧情",
-    Condition = Table_Menu_t.Condition[1005],
+    Condition = Table_Menu_t.Condition[1018],
     Acc = 1
   },
   [18269] = {
     id = 18269,
     text = "裂隙副本材料模式开启",
-    Condition = Table_Menu_t.Condition[1006],
+    Condition = Table_Menu_t.Condition[1019],
     Acc = 1
   },
   [18270] = {
     id = 18270,
     text = "心之始源1级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1007],
+    Condition = Table_Menu_t.Condition[1020],
     Tip = "升级心之始源至1级解锁",
     Acc = 1
   },
   [18271] = {
     id = 18271,
     text = "心之始源2级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1094],
+    Condition = Table_Menu_t.Condition[1125],
     Tip = "升级心之始源至2级解锁",
     Acc = 1
   },
   [18272] = {
     id = 18272,
     text = "心之始源3级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1093],
+    Condition = Table_Menu_t.Condition[1124],
     Tip = "升级心之始源至3级解锁",
     Acc = 1
   },
   [18273] = {
     id = 18273,
     text = "心之始源4级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1092],
+    Condition = Table_Menu_t.Condition[1123],
     Tip = "升级心之始源至4级解锁",
     Acc = 1
   },
   [18274] = {
     id = 18274,
     text = "心之始源5级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1091],
+    Condition = Table_Menu_t.Condition[1122],
     Tip = "升级心之始源至5级解锁",
     Acc = 1
   },
   [18275] = {
     id = 18275,
     text = "心之始源6级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1090],
+    Condition = Table_Menu_t.Condition[1121],
     Tip = "升级心之始源至6级解锁",
     Acc = 1
   },
   [18276] = {
     id = 18276,
     text = "心之始源7级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1089],
+    Condition = Table_Menu_t.Condition[1120],
     Tip = "升级心之始源至7级解锁",
     Acc = 1
   },
   [18277] = {
     id = 18277,
     text = "心之始源8级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1088],
+    Condition = Table_Menu_t.Condition[1119],
     Tip = "升级心之始源至8级解锁",
     Acc = 1
   },
   [18278] = {
     id = 18278,
     text = "心之始源9级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[627],
+    Condition = Table_Menu_t.Condition[628],
     Tip = "升级心之始源至9级解锁",
     Acc = 1
   },
   [18279] = {
     id = 18279,
     text = "心之始源10级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[628],
+    Condition = Table_Menu_t.Condition[629],
     Tip = "升级心之始源至10级解锁",
     Acc = 1
   },
   [18280] = {
     id = 18280,
     text = "心之始源11级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[629],
+    Condition = Table_Menu_t.Condition[630],
     Tip = "升级心之始源至11级解锁",
     Acc = 1
   },
   [18281] = {
     id = 18281,
     text = "心之始源12级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1087],
+    Condition = Table_Menu_t.Condition[1118],
     Tip = "升级心之始源至12级解锁",
     Acc = 1
   },
   [18282] = {
     id = 18282,
     text = "心之始源13级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1086],
+    Condition = Table_Menu_t.Condition[1117],
     Tip = "升级心之始源至13级解锁",
     Acc = 1
   },
   [18283] = {
     id = 18283,
     text = "心之始源14级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1085],
+    Condition = Table_Menu_t.Condition[1116],
     Tip = "升级心之始源至14级解锁",
     Acc = 1
   },
   [18284] = {
     id = 18284,
     text = "心之始源15级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1084],
+    Condition = Table_Menu_t.Condition[1115],
     Tip = "升级心之始源至15级解锁",
     Acc = 1
   },
   [18285] = {
     id = 18285,
     text = "心之始源16级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1083],
+    Condition = Table_Menu_t.Condition[1114],
     Tip = "升级心之始源至16级解锁",
     Acc = 1
   },
   [18286] = {
     id = 18286,
     text = "心之始源17级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1082],
+    Condition = Table_Menu_t.Condition[1113],
     Tip = "升级心之始源至17级解锁",
     Acc = 1
   },
   [18287] = {
     id = 18287,
     text = "心之始源18级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[632],
+    Condition = Table_Menu_t.Condition[633],
     Tip = "升级心之始源至18级解锁",
     Acc = 1
   },
   [18288] = {
     id = 18288,
     text = "心之始源19级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[1081],
+    Condition = Table_Menu_t.Condition[1112],
     Tip = "升级心之始源至19级解锁",
     Acc = 1
   },
   [18289] = {
     id = 18289,
     text = "心之始源20级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[633],
+    Condition = Table_Menu_t.Condition[634],
     Tip = "升级心之始源至20级解锁",
     Acc = 1
   },
   [18290] = {
     id = 18290,
     text = "心之始源21级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[634],
+    Condition = Table_Menu_t.Condition[635],
     Tip = "升级心之始源至21级解锁",
     Acc = 1
   },
   [18291] = {
     id = 18291,
     text = "心之始源22级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[635],
+    Condition = Table_Menu_t.Condition[636],
     Tip = "升级心之始源至22级解锁",
     Acc = 1
   },
   [18292] = {
     id = 18292,
     text = "心之始源23级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[636],
+    Condition = Table_Menu_t.Condition[637],
     Tip = "升级心之始源至23级解锁",
     Acc = 1
   },
   [18293] = {
     id = 18293,
     text = "心之始源24级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[637],
+    Condition = Table_Menu_t.Condition[638],
     Tip = "升级心之始源至24级解锁",
     Acc = 1
   },
   [18294] = {
     id = 18294,
     text = "心之始源25级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[638],
+    Condition = Table_Menu_t.Condition[639],
     Tip = "升级心之始源至25级解锁",
     Acc = 1
   },
   [18295] = {
     id = 18295,
     text = "神树之灵1级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[639],
+    Condition = Table_Menu_t.Condition[640],
     Tip = "升级神树之灵至1级解锁",
     Acc = 1
   },
   [18296] = {
     id = 18296,
     text = "神树之灵2级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[640],
+    Condition = Table_Menu_t.Condition[641],
     Tip = "升级神树之灵至2级解锁",
     Acc = 1
   },
   [18297] = {
     id = 18297,
     text = "神树之灵3级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[641],
+    Condition = Table_Menu_t.Condition[642],
     Tip = "升级神树之灵至3级解锁",
     Acc = 1
   },
   [18298] = {
     id = 18298,
     text = "神树之灵4级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[642],
+    Condition = Table_Menu_t.Condition[643],
     Tip = "升级神树之灵至4级解锁",
     Acc = 1
   },
   [18299] = {
     id = 18299,
     text = "神树之灵5级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[643],
+    Condition = Table_Menu_t.Condition[644],
     Tip = "升级神树之灵至5级解锁",
     Acc = 1
   },
   [18300] = {
     id = 18300,
     text = "神树之灵6级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[644],
+    Condition = Table_Menu_t.Condition[645],
     Tip = "升级神树之灵至6级解锁",
     Acc = 1
   },
   [18301] = {
     id = 18301,
     text = "神树之灵7级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[645],
+    Condition = Table_Menu_t.Condition[646],
     Tip = "升级神树之灵至7级解锁",
     Acc = 1
   },
   [18302] = {
     id = 18302,
     text = "神树之灵8级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[646],
+    Condition = Table_Menu_t.Condition[647],
     Tip = "升级神树之灵至8级解锁",
     Acc = 1
   },
   [18303] = {
     id = 18303,
     text = "神树之灵9级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[647],
+    Condition = Table_Menu_t.Condition[648],
     Tip = "升级神树之灵至9级解锁",
     Acc = 1
   },
   [18304] = {
     id = 18304,
     text = "神树之灵10级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[648],
+    Condition = Table_Menu_t.Condition[649],
     Tip = "升级神树之灵至10级解锁",
     Acc = 1
   },
   [18305] = {
     id = 18305,
     text = "神树之灵11级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[649],
+    Condition = Table_Menu_t.Condition[650],
     Tip = "升级神树之灵至11级解锁",
     Acc = 1
   },
   [18306] = {
     id = 18306,
     text = "神树之灵12级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[650],
+    Condition = Table_Menu_t.Condition[651],
     Tip = "升级神树之灵至12级解锁",
     Acc = 1
   },
   [18307] = {
     id = 18307,
     text = "神树之灵13级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[651],
+    Condition = Table_Menu_t.Condition[652],
     Tip = "升级神树之灵至13级解锁",
     Acc = 1
   },
   [18308] = {
     id = 18308,
     text = "神树之灵14级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[652],
+    Condition = Table_Menu_t.Condition[653],
     Tip = "升级神树之灵至14级解锁",
     Acc = 1
   },
   [18309] = {
     id = 18309,
     text = "神树之灵15级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[653],
+    Condition = Table_Menu_t.Condition[654],
     Tip = "升级神树之灵至15级解锁",
     Acc = 1
   },
   [18310] = {
     id = 18310,
     text = "神树之灵16级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[654],
+    Condition = Table_Menu_t.Condition[655],
     Tip = "升级神树之灵至16级解锁",
     Acc = 1
   },
   [18311] = {
     id = 18311,
     text = "神树之灵17级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[655],
+    Condition = Table_Menu_t.Condition[656],
     Tip = "升级神树之灵至17级解锁",
     Acc = 1
   },
   [18312] = {
     id = 18312,
     text = "神树之灵18级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[656],
+    Condition = Table_Menu_t.Condition[657],
     Tip = "升级神树之灵至18级解锁",
     Acc = 1
   },
   [18313] = {
     id = 18313,
     text = "神树之灵19级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[657],
+    Condition = Table_Menu_t.Condition[658],
     Tip = "升级神树之灵至19级解锁",
     Acc = 1
   },
   [18314] = {
     id = 18314,
     text = "神树之灵20级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[658],
+    Condition = Table_Menu_t.Condition[659],
     Tip = "升级神树之灵至20级解锁",
     Acc = 1
   },
   [18315] = {
     id = 18315,
     text = "神树之灵21级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[659],
+    Condition = Table_Menu_t.Condition[660],
     Tip = "升级神树之灵至21级解锁",
     Acc = 1
   },
   [18316] = {
     id = 18316,
     text = "神树之灵22级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[660],
+    Condition = Table_Menu_t.Condition[661],
     Tip = "升级神树之灵至22级解锁",
     Acc = 1
   },
   [18317] = {
     id = 18317,
     text = "神树之灵23级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[661],
+    Condition = Table_Menu_t.Condition[662],
     Tip = "升级神树之灵至23级解锁",
     Acc = 1
   },
   [18318] = {
     id = 18318,
     text = "神树之灵24级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[662],
+    Condition = Table_Menu_t.Condition[663],
     Tip = "升级神树之灵至24级解锁",
     Acc = 1
   },
   [18319] = {
     id = 18319,
     text = "神树之灵25级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[663],
+    Condition = Table_Menu_t.Condition[664],
     Tip = "升级神树之灵至25级解锁",
     Acc = 1
   },
   [18320] = {
     id = 18320,
     text = "神树之灵26级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[664],
+    Condition = Table_Menu_t.Condition[665],
     Tip = "升级神树之灵至26级解锁",
     Acc = 1
   },
   [18321] = {
     id = 18321,
     text = "神树之灵27级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[665],
+    Condition = Table_Menu_t.Condition[666],
     Tip = "升级神树之灵至27级解锁",
     Acc = 1
   },
   [18322] = {
     id = 18322,
     text = "神树之灵28级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[666],
+    Condition = Table_Menu_t.Condition[667],
     Tip = "升级神树之灵至28级解锁",
     Acc = 1
   },
   [18323] = {
     id = 18323,
     text = "神树之灵29级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[667],
+    Condition = Table_Menu_t.Condition[668],
     Tip = "升级神树之灵至29级解锁",
     Acc = 1
   },
   [18324] = {
     id = 18324,
     text = "神树之灵30级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[668],
+    Condition = Table_Menu_t.Condition[669],
     Tip = "升级神树之灵至30级解锁",
     Acc = 1
   },
   [18325] = {
     id = 18325,
     text = "神树之灵31级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[669],
+    Condition = Table_Menu_t.Condition[670],
     Tip = "升级神树之灵至31级解锁",
     Acc = 1
   },
   [18326] = {
     id = 18326,
     text = "神树之灵32级（黑心商店用）",
-    Condition = Table_Menu_t.Condition[670],
+    Condition = Table_Menu_t.Condition[671],
     Tip = "升级神树之灵至32级解锁",
     Acc = 1
   },
   [18327] = {
     id = 18327,
     text = "等级达到120级",
-    Condition = Table_Menu_t.Condition[671],
+    Condition = Table_Menu_t.Condition[672],
     Acc = 1
   },
   [18328] = {
     id = 18328,
     text = "等级达到160级",
-    Condition = Table_Menu_t.Condition[540],
+    Condition = Table_Menu_t.Condition[541],
     Acc = 1
   },
   [18329] = {
@@ -29164,13 +29431,13 @@ Table_Menu = {
   [18335] = {
     id = 18335,
     text = "裂隙1解锁任务",
-    Condition = Table_Menu_t.Condition[672],
+    Condition = Table_Menu_t.Condition[673],
     Acc = 1
   },
   [18336] = {
     id = 18336,
     text = "裂隙2解锁任务",
-    Condition = Table_Menu_t.Condition[673],
+    Condition = Table_Menu_t.Condition[674],
     Acc = 1
   },
   [18337] = {
@@ -29182,43 +29449,43 @@ Table_Menu = {
   [18338] = {
     id = 18338,
     text = "裂隙4解锁任务",
-    Condition = Table_Menu_t.Condition[674],
+    Condition = Table_Menu_t.Condition[675],
     Acc = 1
   },
   [18339] = {
     id = 18339,
     text = "裂隙5解锁任务",
-    Condition = Table_Menu_t.Condition[675],
+    Condition = Table_Menu_t.Condition[676],
     Acc = 1
   },
   [18340] = {
     id = 18340,
     text = "裂隙1最终解锁条件",
-    Condition = Table_Menu_t.Condition[676],
+    Condition = Table_Menu_t.Condition[677],
     Acc = 1
   },
   [18341] = {
     id = 18341,
     text = "裂隙2最终解锁条件",
-    Condition = Table_Menu_t.Condition[677],
+    Condition = Table_Menu_t.Condition[678],
     Acc = 1
   },
   [18342] = {
     id = 18342,
     text = "裂隙3最终解锁条件",
-    Condition = Table_Menu_t.Condition[678],
+    Condition = Table_Menu_t.Condition[679],
     Acc = 1
   },
   [18343] = {
     id = 18343,
     text = "裂隙4最终解锁条件",
-    Condition = Table_Menu_t.Condition[679],
+    Condition = Table_Menu_t.Condition[680],
     Acc = 1
   },
   [18344] = {
     id = 18344,
     text = "裂隙5最终解锁条件",
-    Condition = Table_Menu_t.Condition[680],
+    Condition = Table_Menu_t.Condition[681],
     Acc = 1
   },
   [18400] = {
@@ -29324,7 +29591,7 @@ Table_Menu = {
   [18413] = {
     id = 18413,
     text = "完成乌龟将军1支线解锁",
-    Condition = Table_Menu_t.Condition[683],
+    Condition = Table_Menu_t.Condition[684],
     Tip = "铁匠铺[每日任务]·追加新内容",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -29332,7 +29599,7 @@ Table_Menu = {
   [18414] = {
     id = 18414,
     text = "完成乌龟将军2支线解锁",
-    Condition = Table_Menu_t.Condition[684],
+    Condition = Table_Menu_t.Condition[685],
     Tip = "铁匠铺[每日任务]·追加新内容",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -29340,7 +29607,7 @@ Table_Menu = {
   [18415] = {
     id = 18415,
     text = "完成莎拉艾琳1支线解锁",
-    Condition = Table_Menu_t.Condition[685],
+    Condition = Table_Menu_t.Condition[686],
     Tip = "铁匠铺[每日任务]·追加新内容",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -29348,7 +29615,7 @@ Table_Menu = {
   [18416] = {
     id = 18416,
     text = "完成莎拉艾琳2支线解锁",
-    Condition = Table_Menu_t.Condition[686],
+    Condition = Table_Menu_t.Condition[687],
     Tip = "铁匠铺[每日任务]·追加新内容",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -29372,7 +29639,7 @@ Table_Menu = {
   [18419] = {
     id = 18419,
     text = "完成影子装备支线1解锁",
-    Condition = Table_Menu_t.Condition[687],
+    Condition = Table_Menu_t.Condition[688],
     Tip = "铁匠铺[每日任务]·追加新内容",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -29380,7 +29647,7 @@ Table_Menu = {
   [18420] = {
     id = 18420,
     text = "完成影子装备支线2解锁",
-    Condition = Table_Menu_t.Condition[688],
+    Condition = Table_Menu_t.Condition[689],
     Tip = "铁匠铺[每日任务]·追加新内容",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -29388,7 +29655,7 @@ Table_Menu = {
   [18421] = {
     id = 18421,
     text = "完成主线任务\"寒风中的港湾\"解锁铁匠铺",
-    Condition = Table_Menu_t.Condition[689],
+    Condition = Table_Menu_t.Condition[690],
     Tip = "\"忽克连的铁匠铺\"已解锁",
     Show = 1,
     Icon = Table_Menu_t.Icon[234]
@@ -29492,7 +29759,7 @@ Table_Menu = {
   [18433] = {
     id = 18433,
     text = "完成任务“龟甲研究·熔焰”后解锁",
-    Condition = Table_Menu_t.Condition[690],
+    Condition = Table_Menu_t.Condition[691],
     Tip = "已解锁“熔焰护甲”",
     Show = 1,
     Acc = 1,
@@ -29501,7 +29768,7 @@ Table_Menu = {
   [18434] = {
     id = 18434,
     text = "完成任务“龟甲研究·幽海”后解锁",
-    Condition = Table_Menu_t.Condition[691],
+    Condition = Table_Menu_t.Condition[692],
     Tip = "已解锁“幽海护甲”",
     Show = 1,
     Acc = 1,
@@ -29510,7 +29777,7 @@ Table_Menu = {
   [18435] = {
     id = 18435,
     text = "完成任务“龟甲研究·凝岩”后解锁",
-    Condition = Table_Menu_t.Condition[692],
+    Condition = Table_Menu_t.Condition[693],
     Tip = "已解锁“凝岩护甲”",
     Show = 1,
     Acc = 1,
@@ -29519,7 +29786,7 @@ Table_Menu = {
   [18436] = {
     id = 18436,
     text = "完成任务“龟甲研究·凛风 ”后解锁",
-    Condition = Table_Menu_t.Condition[693],
+    Condition = Table_Menu_t.Condition[694],
     Tip = "已解锁“凛风护甲”",
     Show = 1,
     Acc = 1,
@@ -29528,7 +29795,7 @@ Table_Menu = {
   [18437] = {
     id = 18437,
     text = "完成任务“龟甲研究·神赐 ”后解锁",
-    Condition = Table_Menu_t.Condition[694],
+    Condition = Table_Menu_t.Condition[695],
     Tip = "已解锁“神赐护甲”",
     Show = 1,
     Acc = 1,
@@ -29537,7 +29804,7 @@ Table_Menu = {
   [18438] = {
     id = 18438,
     text = "完成任务“龟甲研究·噬毒 ”后解锁",
-    Condition = Table_Menu_t.Condition[695],
+    Condition = Table_Menu_t.Condition[696],
     Tip = "已解锁“噬毒护甲”",
     Show = 1,
     Acc = 1,
@@ -29546,7 +29813,7 @@ Table_Menu = {
   [18439] = {
     id = 18439,
     text = "完成任务“龟甲研究·冥夜 ”后解锁",
-    Condition = Table_Menu_t.Condition[696],
+    Condition = Table_Menu_t.Condition[697],
     Tip = "已解锁“冥夜护甲”",
     Show = 1,
     Acc = 1,
@@ -29555,7 +29822,7 @@ Table_Menu = {
   [18440] = {
     id = 18440,
     text = "完成任务“龟甲研究·骸骨 ”后解锁",
-    Condition = Table_Menu_t.Condition[697],
+    Condition = Table_Menu_t.Condition[698],
     Tip = "已解锁“骸骨护甲”",
     Show = 1,
     Acc = 1,
@@ -29564,7 +29831,7 @@ Table_Menu = {
   [18441] = {
     id = 18441,
     text = "完成任务“龟甲研究·祈愿 ”后解锁",
-    Condition = Table_Menu_t.Condition[698],
+    Condition = Table_Menu_t.Condition[699],
     Tip = "已解锁“祈愿护甲”",
     Show = 1,
     Acc = 1,
@@ -29573,7 +29840,7 @@ Table_Menu = {
   [18442] = {
     id = 18442,
     text = "击杀野外Mvp\"乌龟将军\"获取",
-    Condition = Table_Menu_t.Condition[699],
+    Condition = Table_Menu_t.Condition[700],
     Tip = "已解锁“神谕护甲”",
     Show = 1,
     Acc = 1,
@@ -29582,7 +29849,7 @@ Table_Menu = {
   [18443] = {
     id = 18443,
     text = "铁匠铺等级2级时解锁乌龟坐骑幻化",
-    Condition = Table_Menu_t.Condition[700],
+    Condition = Table_Menu_t.Condition[701],
     Tip = "“乌龟换装”功能已开启",
     Show = 1,
     Icon = Table_Menu_t.Icon[273]
@@ -30679,7 +30946,7 @@ Table_Menu = {
     Tip = "解锁\"红日之盔\"",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[306]
+    Icon = Table_Menu_t.Icon[332]
   },
   [18586] = {
     id = 18586,
@@ -30688,7 +30955,7 @@ Table_Menu = {
     Tip = "解锁\"翱翔之盔\"",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[305]
+    Icon = Table_Menu_t.Icon[331]
   },
   [18587] = {
     id = 18587,
@@ -30697,7 +30964,7 @@ Table_Menu = {
     Tip = "解锁\"迅雷坚盔\"",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[304]
+    Icon = Table_Menu_t.Icon[330]
   },
   [18588] = {
     id = 18588,
@@ -30706,7 +30973,7 @@ Table_Menu = {
     Tip = "解锁\"烈焰坚盔\"",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[303]
+    Icon = Table_Menu_t.Icon[329]
   },
   [18589] = {
     id = 18589,
@@ -30715,7 +30982,7 @@ Table_Menu = {
     Tip = "解锁\"鸣沙坚盔\"",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[302]
+    Icon = Table_Menu_t.Icon[328]
   },
   [18590] = {
     id = 18590,
@@ -30724,7 +30991,7 @@ Table_Menu = {
     Tip = "解锁\"卓越之冠\"",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[301]
+    Icon = Table_Menu_t.Icon[327]
   },
   [18591] = {
     id = 18591,
@@ -30819,63 +31086,63 @@ Table_Menu = {
   [18601] = {
     id = 18601,
     text = "找到1个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[705],
+    Condition = Table_Menu_t.Condition[706],
     event = Table_Menu_t.event[711],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [18602] = {
     id = 18602,
     text = "找到4个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[706],
+    Condition = Table_Menu_t.Condition[707],
     event = Table_Menu_t.event[712],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [18603] = {
     id = 18603,
     text = "找到7个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[707],
+    Condition = Table_Menu_t.Condition[708],
     event = Table_Menu_t.event[713],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [18604] = {
     id = 18604,
     text = "找到10个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[708],
+    Condition = Table_Menu_t.Condition[709],
     event = Table_Menu_t.event[712],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [18605] = {
     id = 18605,
     text = "找到13个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[709],
+    Condition = Table_Menu_t.Condition[710],
     event = Table_Menu_t.event[713],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [18606] = {
     id = 18606,
     text = "找到16个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[710],
+    Condition = Table_Menu_t.Condition[711],
     event = Table_Menu_t.event[714],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [18607] = {
     id = 18607,
     text = "找到21个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[711],
+    Condition = Table_Menu_t.Condition[712],
     event = Table_Menu_t.event[715],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [18608] = {
     id = 18608,
     text = "找到26个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[712],
+    Condition = Table_Menu_t.Condition[713],
     event = Table_Menu_t.event[716],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [18609] = {
     id = 18609,
     text = "找到32个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[713],
+    Condition = Table_Menu_t.Condition[714],
     event = Table_Menu_t.event[717],
     Tip = "解锁\"西尔芙的赠礼\""
   },
@@ -30975,7 +31242,7 @@ Table_Menu = {
   [18631] = {
     id = 18631,
     text = "解锁白骑士团声望",
-    Condition = Table_Menu_t.Condition[714],
+    Condition = Table_Menu_t.Condition[715],
     Tip = "解锁白骑士团声望",
     Show = 1,
     Icon = Table_Menu_t.Icon[196]
@@ -30983,17 +31250,17 @@ Table_Menu = {
   [18632] = {
     id = 18632,
     text = "累计解锁1个古城传送器（成就）",
-    Condition = Table_Menu_t.Condition[715]
+    Condition = Table_Menu_t.Condition[716]
   },
   [18633] = {
     id = 18633,
     text = "累计解锁5个古城传送器（成就）",
-    Condition = Table_Menu_t.Condition[716]
+    Condition = Table_Menu_t.Condition[717]
   },
   [18634] = {
     id = 18634,
     text = "累计解锁12个古城传送器（成就）",
-    Condition = Table_Menu_t.Condition[717]
+    Condition = Table_Menu_t.Condition[718]
   },
   [18635] = {
     id = 18635,
@@ -31028,27 +31295,27 @@ Table_Menu = {
   [18641] = {
     id = 18641,
     text = "累计解锁1个神龛（成就）",
-    Condition = Table_Menu_t.Condition[718]
+    Condition = Table_Menu_t.Condition[719]
   },
   [18642] = {
     id = 18642,
     text = "累计解锁6个神龛（成就）",
-    Condition = Table_Menu_t.Condition[719]
+    Condition = Table_Menu_t.Condition[720]
   },
   [18643] = {
     id = 18643,
     text = "解锁布里托里亚地区所有景点",
-    Condition = Table_Menu_t.Condition[720]
+    Condition = Table_Menu_t.Condition[721]
   },
   [18644] = {
     id = 18644,
     text = "解锁克雷斯特南门地区所有景点",
-    Condition = Table_Menu_t.Condition[721]
+    Condition = Table_Menu_t.Condition[722]
   },
   [18645] = {
     id = 18645,
     text = "解锁卢恩王宫地区所有景点",
-    Condition = Table_Menu_t.Condition[722]
+    Condition = Table_Menu_t.Condition[723]
   },
   [18678] = {
     id = 18678,
@@ -31098,12 +31365,12 @@ Table_Menu = {
   [18687] = {
     id = 18687,
     text = "累计解锁5个深渊之湖传送器（成就）",
-    Condition = Table_Menu_t.Condition[1080]
+    Condition = Table_Menu_t.Condition[1111]
   },
   [18688] = {
     id = 18688,
     text = "累计解锁9个深渊之湖传送器（成就）",
-    Condition = Table_Menu_t.Condition[1079]
+    Condition = Table_Menu_t.Condition[1110]
   },
   [18689] = {
     id = 18689,
@@ -31128,7 +31395,7 @@ Table_Menu = {
   [18693] = {
     id = 18693,
     text = "累计解锁13个深渊之湖传送器（成就）",
-    Condition = Table_Menu_t.Condition[727]
+    Condition = Table_Menu_t.Condition[728]
   },
   [18694] = {
     id = 18694,
@@ -31145,265 +31412,514 @@ Table_Menu = {
     text = "解锁雪花之地3号传送器",
     Condition = Table_Menu_t.Condition[202]
   },
+  [18697] = {
+    id = 18697,
+    text = "获取“冰羽之冠·白呼呼”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰羽之冠·白呼呼”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[294]
+  },
+  [18698] = {
+    id = 18698,
+    text = "获取“冰羽之冠·绿莹莹”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰羽之冠·绿莹莹”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[295]
+  },
+  [18699] = {
+    id = 18699,
+    text = "获取“冰羽之冠·金灿灿”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰羽之冠·金灿灿”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[296]
+  },
+  [18700] = {
+    id = 18700,
+    text = "获取“冰羽之冠·亮晶晶”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰羽之冠·亮晶晶”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[297]
+  },
+  [18701] = {
+    id = 18701,
+    text = "获取“冰海之冠·执舵”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰海之冠·执舵”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[298]
+  },
+  [18702] = {
+    id = 18702,
+    text = "获取“冰海之冠·领航”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰海之冠·领航”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[299]
+  },
+  [18703] = {
+    id = 18703,
+    text = "获取“冰海之冠·夜巡”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰海之冠·夜巡”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[300]
+  },
+  [18704] = {
+    id = 18704,
+    text = "获取“冰海之冠·望晓”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰海之冠·望晓”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[301]
+  },
+  [18705] = {
+    id = 18705,
+    text = "获取“冰海之冠·归港”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰海之冠·归港”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[302]
+  },
+  [18706] = {
+    id = 18706,
+    text = "获取“冰羽背包·白呼呼”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰羽背包·白呼呼”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[303]
+  },
+  [18707] = {
+    id = 18707,
+    text = "获取“冰羽背包·绿莹莹”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰羽背包·绿莹莹”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[304]
+  },
+  [18708] = {
+    id = 18708,
+    text = "获取“冰羽背包·金灿灿”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰羽背包·金灿灿”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[305]
+  },
+  [18709] = {
+    id = 18709,
+    text = "获取“冰羽背包·亮晶晶”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰羽背包·亮晶晶”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[306]
+  },
+  [18710] = {
+    id = 18710,
+    text = "获取“冰海行囊·执舵”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰海行囊·执舵”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[307]
+  },
+  [18711] = {
+    id = 18711,
+    text = "获取“冰海行囊·领航”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰海行囊·领航”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[308]
+  },
+  [18712] = {
+    id = 18712,
+    text = "获取“冰海行囊·夜巡”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰海行囊·夜巡”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[309]
+  },
+  [18713] = {
+    id = 18713,
+    text = "获取“冰海行囊·望晓”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰海行囊·望晓”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[310]
+  },
+  [18714] = {
+    id = 18714,
+    text = "获取“冰海行囊·归港”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“冰海行囊·归港”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[311]
+  },
+  [18715] = {
+    id = 18715,
+    text = "获取“风雪之鹰·归巢”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“风雪之鹰·归巢”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[312]
+  },
+  [18716] = {
+    id = 18716,
+    text = "获取“风雪之鹰·逐光”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“风雪之鹰·逐光”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[313]
+  },
+  [18717] = {
+    id = 18717,
+    text = "获取“风雪之鹰·巡风”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“风雪之鹰·巡风”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[314]
+  },
+  [18718] = {
+    id = 18718,
+    text = "获取“风雪之鹰·穿暮”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“风雪之鹰·穿暮”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[315]
+  },
+  [18719] = {
+    id = 18719,
+    text = "获取“风雪之鹰·盘空”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“风雪之鹰·盘空”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[316]
+  },
+  [18720] = {
+    id = 18720,
+    text = "获取“风雪之鹰·追霞”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“风雪之鹰·追霞”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[317]
+  },
+  [18721] = {
+    id = 18721,
+    text = "获取“风雪之鹰·穿林”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“风雪之鹰·穿林”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[318]
+  },
+  [18722] = {
+    id = 18722,
+    text = "获取“风雪之鹰·望月”图纸解锁",
+    Condition = Table_Menu_t.Condition[212],
+    Tip = "解锁“风雪之鹰·望月”",
+    Show = 1,
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[319]
+  },
+  [18723] = {
+    id = 18723,
+    text = "解锁雪花之地4号传送器",
+    Condition = Table_Menu_t.Condition[202]
+  },
+  [18724] = {
+    id = 18724,
+    text = "解锁雪花之地5号传送器",
+    Condition = Table_Menu_t.Condition[202]
+  },
+  [18725] = {
+    id = 18725,
+    text = "解锁雪花之地6号传送器",
+    Condition = Table_Menu_t.Condition[202]
+  },
   [19001] = {
     id = 19001,
     text = "达纳托斯故事1解锁",
-    Condition = Table_Menu_t.Condition[772]
+    Condition = Table_Menu_t.Condition[773]
   },
   [19002] = {
     id = 19002,
     text = "达纳托斯故事2解锁",
-    Condition = Table_Menu_t.Condition[773]
+    Condition = Table_Menu_t.Condition[774]
   },
   [19003] = {
     id = 19003,
     text = "达纳托斯故事3解锁",
-    Condition = Table_Menu_t.Condition[774]
+    Condition = Table_Menu_t.Condition[775]
   },
   [19004] = {
     id = 19004,
     text = "达纳托斯故事4解锁",
-    Condition = Table_Menu_t.Condition[775]
+    Condition = Table_Menu_t.Condition[776]
   },
   [19005] = {
     id = 19005,
     text = "达纳托斯故事5解锁",
-    Condition = Table_Menu_t.Condition[776]
+    Condition = Table_Menu_t.Condition[777]
   },
   [19006] = {
     id = 19006,
     text = "达纳托斯成长任务完成2",
-    Condition = Table_Menu_t.Condition[777]
+    Condition = Table_Menu_t.Condition[778]
   },
   [19007] = {
     id = 19007,
     text = "达纳托斯成长任务完成3",
-    Condition = Table_Menu_t.Condition[778]
+    Condition = Table_Menu_t.Condition[779]
   },
   [19008] = {
     id = 19008,
     text = "达纳托斯成长任务完成4",
-    Condition = Table_Menu_t.Condition[779]
+    Condition = Table_Menu_t.Condition[780]
   },
   [19009] = {
     id = 19009,
     text = "达纳托斯成长任务完成5",
-    Condition = Table_Menu_t.Condition[780]
+    Condition = Table_Menu_t.Condition[781]
   },
   [19010] = {
     id = 19010,
     text = "达纳托斯售后任务完成1",
-    Condition = Table_Menu_t.Condition[781]
+    Condition = Table_Menu_t.Condition[782]
   },
   [19011] = {
     id = 19011,
     text = "达纳托斯售后任务完成2",
-    Condition = Table_Menu_t.Condition[782]
+    Condition = Table_Menu_t.Condition[783]
   },
   [19012] = {
     id = 19012,
     text = "达纳托斯售后任务完成3",
-    Condition = Table_Menu_t.Condition[783]
+    Condition = Table_Menu_t.Condition[784]
   },
   [19013] = {
     id = 19013,
     text = "达纳托斯售后任务完成4",
-    Condition = Table_Menu_t.Condition[784]
+    Condition = Table_Menu_t.Condition[785]
   },
   [19014] = {
     id = 19014,
     text = "尼德霍格故事1解锁",
-    Condition = Table_Menu_t.Condition[785]
+    Condition = Table_Menu_t.Condition[786]
   },
   [19015] = {
     id = 19015,
     text = "尼德霍格故事2解锁",
-    Condition = Table_Menu_t.Condition[786]
+    Condition = Table_Menu_t.Condition[787]
   },
   [19016] = {
     id = 19016,
     text = "尼德霍格故事3解锁",
-    Condition = Table_Menu_t.Condition[787]
+    Condition = Table_Menu_t.Condition[788]
   },
   [19017] = {
     id = 19017,
     text = "尼德霍格故事4解锁",
-    Condition = Table_Menu_t.Condition[788]
+    Condition = Table_Menu_t.Condition[789]
   },
   [19018] = {
     id = 19018,
     text = "尼德霍格故事5解锁",
-    Condition = Table_Menu_t.Condition[789]
+    Condition = Table_Menu_t.Condition[790]
   },
   [19019] = {
     id = 19019,
     text = "尼德霍格成长任务完成2",
-    Condition = Table_Menu_t.Condition[790]
+    Condition = Table_Menu_t.Condition[791]
   },
   [19020] = {
     id = 19020,
     text = "尼德霍格成长任务完成3",
-    Condition = Table_Menu_t.Condition[791]
+    Condition = Table_Menu_t.Condition[792]
   },
   [19021] = {
     id = 19021,
     text = "尼德霍格成长任务完成4",
-    Condition = Table_Menu_t.Condition[792]
+    Condition = Table_Menu_t.Condition[793]
   },
   [19022] = {
     id = 19022,
     text = "尼德霍格成长任务完成5",
-    Condition = Table_Menu_t.Condition[793]
+    Condition = Table_Menu_t.Condition[794]
   },
   [19023] = {
     id = 19023,
     text = "尼德霍格售后任务完成1",
-    Condition = Table_Menu_t.Condition[794]
+    Condition = Table_Menu_t.Condition[795]
   },
   [19024] = {
     id = 19024,
     text = "尼德霍格售后任务完成2",
-    Condition = Table_Menu_t.Condition[795]
+    Condition = Table_Menu_t.Condition[796]
   },
   [19025] = {
     id = 19025,
     text = "尼德霍格售后任务完成3",
-    Condition = Table_Menu_t.Condition[796]
+    Condition = Table_Menu_t.Condition[797]
   },
   [19026] = {
     id = 19026,
     text = "尼德霍格售后任务完成4",
-    Condition = Table_Menu_t.Condition[797]
+    Condition = Table_Menu_t.Condition[798]
   },
   [19027] = {
     id = 19027,
     text = "熊弟弟故事1解锁",
-    Condition = Table_Menu_t.Condition[798]
+    Condition = Table_Menu_t.Condition[799]
   },
   [19028] = {
     id = 19028,
     text = "熊弟弟故事2解锁",
-    Condition = Table_Menu_t.Condition[799]
+    Condition = Table_Menu_t.Condition[800]
   },
   [19029] = {
     id = 19029,
     text = "熊弟弟故事3解锁",
-    Condition = Table_Menu_t.Condition[800]
+    Condition = Table_Menu_t.Condition[801]
   },
   [19030] = {
     id = 19030,
     text = "熊弟弟故事4解锁",
-    Condition = Table_Menu_t.Condition[801]
+    Condition = Table_Menu_t.Condition[802]
   },
   [19031] = {
     id = 19031,
     text = "熊弟弟故事5解锁",
-    Condition = Table_Menu_t.Condition[802]
+    Condition = Table_Menu_t.Condition[803]
   },
   [19032] = {
     id = 19032,
     text = "熊弟弟成长任务完成2",
-    Condition = Table_Menu_t.Condition[803]
+    Condition = Table_Menu_t.Condition[804]
   },
   [19033] = {
     id = 19033,
     text = "熊弟弟成长任务完成3",
-    Condition = Table_Menu_t.Condition[804]
+    Condition = Table_Menu_t.Condition[805]
   },
   [19034] = {
     id = 19034,
     text = "熊弟弟成长任务完成4",
-    Condition = Table_Menu_t.Condition[805]
+    Condition = Table_Menu_t.Condition[806]
   },
   [19035] = {
     id = 19035,
     text = "熊弟弟成长任务完成5",
-    Condition = Table_Menu_t.Condition[806]
+    Condition = Table_Menu_t.Condition[807]
   },
   [19036] = {
     id = 19036,
     text = "熊弟弟售后任务完成1",
-    Condition = Table_Menu_t.Condition[807]
+    Condition = Table_Menu_t.Condition[808]
   },
   [19037] = {
     id = 19037,
     text = "熊弟弟售后任务完成2",
-    Condition = Table_Menu_t.Condition[808]
+    Condition = Table_Menu_t.Condition[809]
   },
   [19038] = {
     id = 19038,
     text = "熊弟弟售后任务完成3",
-    Condition = Table_Menu_t.Condition[809]
+    Condition = Table_Menu_t.Condition[810]
   },
   [19039] = {
     id = 19039,
     text = "熊弟弟售后任务完成4",
-    Condition = Table_Menu_t.Condition[810]
+    Condition = Table_Menu_t.Condition[811]
   },
   [19040] = {
     id = 19040,
     text = "熊哥哥故事1解锁",
-    Condition = Table_Menu_t.Condition[811]
+    Condition = Table_Menu_t.Condition[812]
   },
   [19041] = {
     id = 19041,
     text = "熊哥哥故事2解锁",
-    Condition = Table_Menu_t.Condition[812]
+    Condition = Table_Menu_t.Condition[813]
   },
   [19042] = {
     id = 19042,
     text = "熊哥哥故事3解锁",
-    Condition = Table_Menu_t.Condition[813]
+    Condition = Table_Menu_t.Condition[814]
   },
   [19043] = {
     id = 19043,
     text = "熊哥哥故事4解锁",
-    Condition = Table_Menu_t.Condition[814]
+    Condition = Table_Menu_t.Condition[815]
   },
   [19044] = {
     id = 19044,
     text = "熊哥哥故事5解锁",
-    Condition = Table_Menu_t.Condition[815]
+    Condition = Table_Menu_t.Condition[816]
   },
   [19045] = {
     id = 19045,
     text = "熊哥哥成长任务完成2",
-    Condition = Table_Menu_t.Condition[816]
+    Condition = Table_Menu_t.Condition[817]
   },
   [19046] = {
     id = 19046,
     text = "熊哥哥成长任务完成3",
-    Condition = Table_Menu_t.Condition[817]
+    Condition = Table_Menu_t.Condition[818]
   },
   [19047] = {
     id = 19047,
     text = "熊哥哥成长任务完成4",
-    Condition = Table_Menu_t.Condition[818]
+    Condition = Table_Menu_t.Condition[819]
   },
   [19048] = {
     id = 19048,
     text = "熊哥哥成长任务完成5",
-    Condition = Table_Menu_t.Condition[819]
+    Condition = Table_Menu_t.Condition[820]
   },
   [19049] = {
     id = 19049,
     text = "熊哥哥售后任务完成1",
-    Condition = Table_Menu_t.Condition[820]
+    Condition = Table_Menu_t.Condition[821]
   },
   [19050] = {
     id = 19050,
     text = "熊哥哥售后任务完成2",
-    Condition = Table_Menu_t.Condition[821]
+    Condition = Table_Menu_t.Condition[822]
   },
   [19051] = {
     id = 19051,
     text = "熊哥哥售后任务完成3",
-    Condition = Table_Menu_t.Condition[822]
+    Condition = Table_Menu_t.Condition[823]
   },
   [19052] = {
     id = 19052,
     text = "熊哥哥售后任务完成4",
-    Condition = Table_Menu_t.Condition[823]
+    Condition = Table_Menu_t.Condition[824]
   },
   [19053] = {
     id = 19053,
@@ -31420,7 +31936,7 @@ Table_Menu = {
   [19055] = {
     id = 19055,
     text = "等级达到75级后解锁",
-    Condition = Table_Menu_t.Condition[824],
+    Condition = Table_Menu_t.Condition[825],
     Tip = "等级达到75级后解锁"
   },
   [19056] = {
@@ -31438,7 +31954,7 @@ Table_Menu = {
   [19058] = {
     id = 19058,
     text = "等级达到95级后解锁",
-    Condition = Table_Menu_t.Condition[825],
+    Condition = Table_Menu_t.Condition[826],
     Tip = "等级达到95级后解锁"
   },
   [19059] = {
@@ -31450,57 +31966,57 @@ Table_Menu = {
   [19060] = {
     id = 19060,
     text = "等级达到110级后解锁",
-    Condition = Table_Menu_t.Condition[826],
+    Condition = Table_Menu_t.Condition[827],
     Tip = "等级达到110级后解锁"
   },
   [19061] = {
     id = 19061,
     text = "等级达到120级后解锁",
-    Condition = Table_Menu_t.Condition[671],
+    Condition = Table_Menu_t.Condition[672],
     Tip = "等级达到120级后解锁"
   },
   [19062] = {
     id = 19062,
     text = "等级达到140级后解锁",
-    Condition = Table_Menu_t.Condition[566],
+    Condition = Table_Menu_t.Condition[567],
     Tip = "等级达到140级后解锁"
   },
   [19063] = {
     id = 19063,
     text = "等级达到160级后解锁",
-    Condition = Table_Menu_t.Condition[540],
+    Condition = Table_Menu_t.Condition[541],
     Tip = "等级达到160级后解锁"
   },
   [19064] = {
     id = 19064,
     text = "等级达到170级后解锁",
-    Condition = Table_Menu_t.Condition[827],
+    Condition = Table_Menu_t.Condition[828],
     Tip = "完成艾尔贝塔主线后解锁"
   },
   [19066] = {
     id = 19066,
     text = "影子秘境解锁任务",
-    Condition = Table_Menu_t.Condition[828],
+    Condition = Table_Menu_t.Condition[829],
     Tip = "影子秘境解锁任务"
   },
   [19067] = {
     id = 19067,
     text = "影子秘境解锁",
-    Condition = Table_Menu_t.Condition[829],
+    Condition = Table_Menu_t.Condition[830],
     Tip = "影子秘境解锁",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[294]
+    Icon = Table_Menu_t.Icon[320]
   },
   [19068] = {
     id = 19068,
     text = "影子装备副手披风部位解锁",
-    Condition = Table_Menu_t.Condition[829],
+    Condition = Table_Menu_t.Condition[830],
     sysMsg = Table_Menu_t.sysMsg[74],
     Tip = "影子装备副手披风部位解锁",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[295]
+    Icon = Table_Menu_t.Icon[321]
   },
   [19069] = {
     id = 19069,
@@ -31519,67 +32035,67 @@ Table_Menu = {
   [19071] = {
     id = 19071,
     text = "海拉故事1解锁",
-    Condition = Table_Menu_t.Condition[830]
+    Condition = Table_Menu_t.Condition[831]
   },
   [19072] = {
     id = 19072,
     text = "海拉故事2解锁",
-    Condition = Table_Menu_t.Condition[831]
+    Condition = Table_Menu_t.Condition[832]
   },
   [19073] = {
     id = 19073,
     text = "海拉故事3解锁",
-    Condition = Table_Menu_t.Condition[832]
+    Condition = Table_Menu_t.Condition[833]
   },
   [19074] = {
     id = 19074,
     text = "海拉故事4解锁",
-    Condition = Table_Menu_t.Condition[833]
+    Condition = Table_Menu_t.Condition[834]
   },
   [19075] = {
     id = 19075,
     text = "海拉故事5解锁",
-    Condition = Table_Menu_t.Condition[834]
+    Condition = Table_Menu_t.Condition[835]
   },
   [19076] = {
     id = 19076,
     text = "海拉成长任务完成2",
-    Condition = Table_Menu_t.Condition[835]
+    Condition = Table_Menu_t.Condition[836]
   },
   [19077] = {
     id = 19077,
     text = "海拉成长任务完成3",
-    Condition = Table_Menu_t.Condition[836]
+    Condition = Table_Menu_t.Condition[837]
   },
   [19078] = {
     id = 19078,
     text = "海拉成长任务完成4",
-    Condition = Table_Menu_t.Condition[837]
+    Condition = Table_Menu_t.Condition[838]
   },
   [19079] = {
     id = 19079,
     text = "海拉成长任务完成5",
-    Condition = Table_Menu_t.Condition[838]
+    Condition = Table_Menu_t.Condition[839]
   },
   [19080] = {
     id = 19080,
     text = "海拉售后任务完成1",
-    Condition = Table_Menu_t.Condition[839]
+    Condition = Table_Menu_t.Condition[840]
   },
   [19081] = {
     id = 19081,
     text = "海拉售后任务完成2",
-    Condition = Table_Menu_t.Condition[840]
+    Condition = Table_Menu_t.Condition[841]
   },
   [19082] = {
     id = 19082,
     text = "海拉售后任务完成3",
-    Condition = Table_Menu_t.Condition[841]
+    Condition = Table_Menu_t.Condition[842]
   },
   [19083] = {
     id = 19083,
     text = "海拉售后任务完成4",
-    Condition = Table_Menu_t.Condition[842]
+    Condition = Table_Menu_t.Condition[843]
   },
   [19084] = {
     id = 19084,
@@ -31693,7 +32209,7 @@ Table_Menu = {
     id = 19096,
     text = "发现景点·锻铁工匠专门店",
     Condition = Table_Menu_t.Condition[105],
-    event = Table_Menu_t.event[980],
+    event = Table_Menu_t.event[986],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31702,7 +32218,7 @@ Table_Menu = {
     id = 19097,
     text = "发现景点·白银商店街",
     Condition = Table_Menu_t.Condition[105],
-    event = Table_Menu_t.event[979],
+    event = Table_Menu_t.event[985],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31711,7 +32227,7 @@ Table_Menu = {
     id = 19098,
     text = "发现景点·望海风车",
     Condition = Table_Menu_t.Condition[105],
-    event = Table_Menu_t.event[978],
+    event = Table_Menu_t.event[984],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31720,7 +32236,7 @@ Table_Menu = {
     id = 19099,
     text = "发现景点·来杯咖啡",
     Condition = Table_Menu_t.Condition[105],
-    event = Table_Menu_t.event[977],
+    event = Table_Menu_t.event[983],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31729,7 +32245,7 @@ Table_Menu = {
     id = 19100,
     text = "发现景点·度假小憩",
     Condition = Table_Menu_t.Condition[105],
-    event = Table_Menu_t.event[976],
+    event = Table_Menu_t.event[982],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31738,7 +32254,7 @@ Table_Menu = {
     id = 19101,
     text = "发现景点·碧海星眸",
     Condition = Table_Menu_t.Condition[105],
-    event = Table_Menu_t.event[975],
+    event = Table_Menu_t.event[981],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31747,7 +32263,7 @@ Table_Menu = {
     id = 19102,
     text = "发现景点·艾尔贝塔港口集市",
     Condition = Table_Menu_t.Condition[105],
-    event = Table_Menu_t.event[974],
+    event = Table_Menu_t.event[980],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31756,7 +32272,7 @@ Table_Menu = {
     id = 19103,
     text = "发现景点·垂钓时光",
     Condition = Table_Menu_t.Condition[105],
-    event = Table_Menu_t.event[973],
+    event = Table_Menu_t.event[979],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31765,7 +32281,7 @@ Table_Menu = {
     id = 19104,
     text = "发现景点·失落之碑",
     Condition = Table_Menu_t.Condition[106],
-    event = Table_Menu_t.event[972],
+    event = Table_Menu_t.event[978],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31774,7 +32290,7 @@ Table_Menu = {
     id = 19105,
     text = "发现景点·迷雾龟岛",
     Condition = Table_Menu_t.Condition[106],
-    event = Table_Menu_t.event[971],
+    event = Table_Menu_t.event[977],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31783,7 +32299,7 @@ Table_Menu = {
     id = 19106,
     text = "发现景点·将军石卫",
     Condition = Table_Menu_t.Condition[106],
-    event = Table_Menu_t.event[970],
+    event = Table_Menu_t.event[976],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31792,7 +32308,7 @@ Table_Menu = {
     id = 19107,
     text = "发现景点·沉船遗物",
     Condition = Table_Menu_t.Condition[106],
-    event = Table_Menu_t.event[969],
+    event = Table_Menu_t.event[975],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31801,7 +32317,7 @@ Table_Menu = {
     id = 19108,
     text = "发现景点·远眺海域",
     Condition = Table_Menu_t.Condition[106],
-    event = Table_Menu_t.event[968],
+    event = Table_Menu_t.event[974],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31810,7 +32326,7 @@ Table_Menu = {
     id = 19109,
     text = "发现景点·异界古迹",
     Condition = Table_Menu_t.Condition[106],
-    event = Table_Menu_t.event[967],
+    event = Table_Menu_t.event[973],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31819,7 +32335,7 @@ Table_Menu = {
     id = 19110,
     text = "发现景点·深幽冰海",
     Condition = Table_Menu_t.Condition[106],
-    event = Table_Menu_t.event[966],
+    event = Table_Menu_t.event[972],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31828,7 +32344,7 @@ Table_Menu = {
     id = 19111,
     text = "发现景点·灵魂收容站",
     Condition = Table_Menu_t.Condition[107],
-    event = Table_Menu_t.event[965],
+    event = Table_Menu_t.event[971],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31837,7 +32353,7 @@ Table_Menu = {
     id = 19112,
     text = "发现景点·霜炎矿洞",
     Condition = Table_Menu_t.Condition[107],
-    event = Table_Menu_t.event[964],
+    event = Table_Menu_t.event[970],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31846,7 +32362,7 @@ Table_Menu = {
     id = 19113,
     text = "发现景点·护魂之尊",
     Condition = Table_Menu_t.Condition[107],
-    event = Table_Menu_t.event[963],
+    event = Table_Menu_t.event[969],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31855,7 +32371,7 @@ Table_Menu = {
     id = 19114,
     text = "发现景点·盛燃腹地",
     Condition = Table_Menu_t.Condition[107],
-    event = Table_Menu_t.event[962],
+    event = Table_Menu_t.event[968],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31864,7 +32380,7 @@ Table_Menu = {
     id = 19115,
     text = "发现景点·久经遗弃的隐秘之门",
     Condition = Table_Menu_t.Condition[107],
-    event = Table_Menu_t.event[961],
+    event = Table_Menu_t.event[967],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31872,73 +32388,73 @@ Table_Menu = {
   [19116] = {
     id = 19116,
     text = "忽克连故事1解锁",
-    Condition = Table_Menu_t.Condition[1078]
+    Condition = Table_Menu_t.Condition[1109]
   },
   [19117] = {
     id = 19117,
     text = "忽克连故事2解锁",
-    Condition = Table_Menu_t.Condition[1077]
+    Condition = Table_Menu_t.Condition[1108]
   },
   [19118] = {
     id = 19118,
     text = "忽克连故事3解锁",
-    Condition = Table_Menu_t.Condition[1076]
+    Condition = Table_Menu_t.Condition[1107]
   },
   [19119] = {
     id = 19119,
     text = "忽克连故事4解锁",
-    Condition = Table_Menu_t.Condition[1075]
+    Condition = Table_Menu_t.Condition[1106]
   },
   [19120] = {
     id = 19120,
     text = "忽克连故事5解锁",
-    Condition = Table_Menu_t.Condition[1074]
+    Condition = Table_Menu_t.Condition[1105]
   },
   [19121] = {
     id = 19121,
     text = "忽克连成长任务完成2",
-    Condition = Table_Menu_t.Condition[1073]
+    Condition = Table_Menu_t.Condition[1021]
   },
   [19122] = {
     id = 19122,
     text = "忽克连成长任务完成3",
-    Condition = Table_Menu_t.Condition[1072]
+    Condition = Table_Menu_t.Condition[1022]
   },
   [19123] = {
     id = 19123,
     text = "忽克连成长任务完成4",
-    Condition = Table_Menu_t.Condition[1071]
+    Condition = Table_Menu_t.Condition[1023]
   },
   [19124] = {
     id = 19124,
     text = "忽克连成长任务完成5",
-    Condition = Table_Menu_t.Condition[1070]
+    Condition = Table_Menu_t.Condition[1024]
   },
   [19125] = {
     id = 19125,
     text = "忽克连售后任务完成1",
-    Condition = Table_Menu_t.Condition[1069]
+    Condition = Table_Menu_t.Condition[1025]
   },
   [19126] = {
     id = 19126,
     text = "忽克连售后任务完成2",
-    Condition = Table_Menu_t.Condition[1068]
+    Condition = Table_Menu_t.Condition[1026]
   },
   [19127] = {
     id = 19127,
     text = "忽克连售后任务完成3",
-    Condition = Table_Menu_t.Condition[1067]
+    Condition = Table_Menu_t.Condition[1027]
   },
   [19128] = {
     id = 19128,
     text = "忽克连售后任务完成4",
-    Condition = Table_Menu_t.Condition[1066]
+    Condition = Table_Menu_t.Condition[1028]
   },
   [19129] = {
     id = 19129,
     text = "发现景点·异族洞天",
     Condition = Table_Menu_t.Condition[107],
-    event = Table_Menu_t.event[960],
+    event = Table_Menu_t.event[963],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -31946,7 +32462,7 @@ Table_Menu = {
   [19130] = {
     id = 19130,
     text = "完成乌龟将军1支线解锁",
-    Condition = Table_Menu_t.Condition[683],
+    Condition = Table_Menu_t.Condition[684],
     Tip = "将军的灵魂I·任务完成",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -31954,7 +32470,7 @@ Table_Menu = {
   [19131] = {
     id = 19131,
     text = "完成乌龟将军2支线解锁",
-    Condition = Table_Menu_t.Condition[684],
+    Condition = Table_Menu_t.Condition[685],
     Tip = "将军的灵魂II·任务完成",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -31962,7 +32478,7 @@ Table_Menu = {
   [19132] = {
     id = 19132,
     text = "完成莎拉艾琳1支线解锁",
-    Condition = Table_Menu_t.Condition[685],
+    Condition = Table_Menu_t.Condition[686],
     Tip = "调查教国I·任务完成",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -31970,7 +32486,7 @@ Table_Menu = {
   [19133] = {
     id = 19133,
     text = "完成莎拉艾琳2支线解锁",
-    Condition = Table_Menu_t.Condition[686],
+    Condition = Table_Menu_t.Condition[687],
     Tip = "调查教国II·任务完成",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -31978,7 +32494,7 @@ Table_Menu = {
   [19136] = {
     id = 19136,
     text = "完成影子装备支线1解锁",
-    Condition = Table_Menu_t.Condition[687],
+    Condition = Table_Menu_t.Condition[688],
     Tip = "老师的试炼I·任务完成",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -31986,7 +32502,7 @@ Table_Menu = {
   [19137] = {
     id = 19137,
     text = "完成影子装备支线2解锁",
-    Condition = Table_Menu_t.Condition[688],
+    Condition = Table_Menu_t.Condition[689],
     Tip = "老师的试炼II·任务完成",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -31994,7 +32510,7 @@ Table_Menu = {
   [19138] = {
     id = 19138,
     text = "完成莎拉艾琳3支线解锁",
-    Condition = Table_Menu_t.Condition[1065],
+    Condition = Table_Menu_t.Condition[1029],
     Tip = "调查教国III·任务完成",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -32002,7 +32518,7 @@ Table_Menu = {
   [19139] = {
     id = 19139,
     text = "完成莎拉艾琳4支线解锁",
-    Condition = Table_Menu_t.Condition[1008],
+    Condition = Table_Menu_t.Condition[1030],
     Tip = "调查教国IV·任务完成",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -32010,7 +32526,7 @@ Table_Menu = {
   [19140] = {
     id = 19140,
     text = "完成莎拉艾琳3支线解锁",
-    Condition = Table_Menu_t.Condition[1065],
+    Condition = Table_Menu_t.Condition[1029],
     Tip = "铁匠铺[每日任务]·追加新内容",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -32018,7 +32534,7 @@ Table_Menu = {
   [19141] = {
     id = 19141,
     text = "完成莎拉艾琳4支线解锁",
-    Condition = Table_Menu_t.Condition[1008],
+    Condition = Table_Menu_t.Condition[1030],
     Tip = "铁匠铺[每日任务]·追加新内容",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -32026,7 +32542,7 @@ Table_Menu = {
   [19146] = {
     id = 19146,
     text = "完成旧良宫1支线解锁",
-    Condition = Table_Menu_t.Condition[1009],
+    Condition = Table_Menu_t.Condition[1031],
     Tip = "旧良族往事I·任务完成",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -32034,7 +32550,7 @@ Table_Menu = {
   [19147] = {
     id = 19147,
     text = "完成旧良宫2支线解锁",
-    Condition = Table_Menu_t.Condition[1010],
+    Condition = Table_Menu_t.Condition[1032],
     Tip = "旧良族往事II·任务完成",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -32042,7 +32558,7 @@ Table_Menu = {
   [19148] = {
     id = 19148,
     text = "完成旧良宫3支线解锁",
-    Condition = Table_Menu_t.Condition[1011],
+    Condition = Table_Menu_t.Condition[1033],
     Tip = "旧良族往事III·任务完成",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -32050,7 +32566,7 @@ Table_Menu = {
   [19149] = {
     id = 19149,
     text = "完成旧良宫4支线解锁",
-    Condition = Table_Menu_t.Condition[1012],
+    Condition = Table_Menu_t.Condition[1034],
     Tip = "旧良族往事IV·任务完成",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -32058,7 +32574,7 @@ Table_Menu = {
   [19150] = {
     id = 19150,
     text = "完成旧良宫1支线解锁",
-    Condition = Table_Menu_t.Condition[1009],
+    Condition = Table_Menu_t.Condition[1031],
     Tip = "铁匠铺[每日任务]·追加新内容",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -32066,7 +32582,7 @@ Table_Menu = {
   [19151] = {
     id = 19151,
     text = "完成旧良宫2支线解锁",
-    Condition = Table_Menu_t.Condition[1010],
+    Condition = Table_Menu_t.Condition[1032],
     Tip = "铁匠铺[每日任务]·追加新内容",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -32074,7 +32590,7 @@ Table_Menu = {
   [19152] = {
     id = 19152,
     text = "完成旧良宫3支线解锁",
-    Condition = Table_Menu_t.Condition[1011],
+    Condition = Table_Menu_t.Condition[1033],
     Tip = "铁匠铺[每日任务]·追加新内容",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -32082,7 +32598,7 @@ Table_Menu = {
   [19153] = {
     id = 19153,
     text = "完成旧良宫4支线解锁",
-    Condition = Table_Menu_t.Condition[1012],
+    Condition = Table_Menu_t.Condition[1034],
     Tip = "铁匠铺[每日任务]·追加新内容",
     Show = 1,
     Icon = Table_Menu_t.Icon[252]
@@ -32090,67 +32606,67 @@ Table_Menu = {
   [19159] = {
     id = 19159,
     text = "拉斯格瑞丝故事1解锁",
-    Condition = Table_Menu_t.Condition[1013]
+    Condition = Table_Menu_t.Condition[1035]
   },
   [19160] = {
     id = 19160,
     text = "拉斯格瑞丝故事2解锁",
-    Condition = Table_Menu_t.Condition[1014]
+    Condition = Table_Menu_t.Condition[1036]
   },
   [19161] = {
     id = 19161,
     text = "拉斯格瑞丝故事3解锁",
-    Condition = Table_Menu_t.Condition[1015]
+    Condition = Table_Menu_t.Condition[1037]
   },
   [19162] = {
     id = 19162,
     text = "拉斯格瑞丝故事4解锁",
-    Condition = Table_Menu_t.Condition[898]
+    Condition = Table_Menu_t.Condition[899]
   },
   [19163] = {
     id = 19163,
     text = "拉斯格瑞丝故事5解锁",
-    Condition = Table_Menu_t.Condition[899]
+    Condition = Table_Menu_t.Condition[900]
   },
   [19164] = {
     id = 19164,
     text = "拉斯格瑞丝成长任务完成2",
-    Condition = Table_Menu_t.Condition[900]
+    Condition = Table_Menu_t.Condition[901]
   },
   [19165] = {
     id = 19165,
     text = "拉斯格瑞丝成长任务完成3",
-    Condition = Table_Menu_t.Condition[901]
+    Condition = Table_Menu_t.Condition[902]
   },
   [19166] = {
     id = 19166,
     text = "拉斯格瑞丝成长任务完成4",
-    Condition = Table_Menu_t.Condition[902]
+    Condition = Table_Menu_t.Condition[903]
   },
   [19167] = {
     id = 19167,
     text = "拉斯格瑞丝成长任务完成5",
-    Condition = Table_Menu_t.Condition[903]
+    Condition = Table_Menu_t.Condition[904]
   },
   [19168] = {
     id = 19168,
     text = "拉斯格瑞丝售后任务完成1",
-    Condition = Table_Menu_t.Condition[904]
+    Condition = Table_Menu_t.Condition[905]
   },
   [19169] = {
     id = 19169,
     text = "拉斯格瑞丝售后任务完成2",
-    Condition = Table_Menu_t.Condition[905]
+    Condition = Table_Menu_t.Condition[906]
   },
   [19170] = {
     id = 19170,
     text = "拉斯格瑞丝售后任务完成3",
-    Condition = Table_Menu_t.Condition[906]
+    Condition = Table_Menu_t.Condition[907]
   },
   [19171] = {
     id = 19171,
     text = "拉斯格瑞丝售后任务完成4",
-    Condition = Table_Menu_t.Condition[907]
+    Condition = Table_Menu_t.Condition[908]
   },
   [19172] = {
     id = 19172,
@@ -32318,7 +32834,7 @@ Table_Menu = {
     id = 19190,
     text = "发现景点·繁星苇滩",
     Condition = Table_Menu_t.Condition[109],
-    event = Table_Menu_t.event[957],
+    event = Table_Menu_t.event[964],
     Tip = "发现景点·%s",
     Acc = 1,
     Icon = Table_Menu_t.Icon[3]
@@ -32371,7 +32887,7 @@ Table_Menu = {
   [19330] = {
     id = 19330,
     text = "发现景点·湖畔龙骸",
-    Condition = Table_Menu_t.Condition[908],
+    Condition = Table_Menu_t.Condition[909],
     event = Table_Menu_t.event[867],
     Tip = "发现景点·%s",
     Acc = 1,
@@ -32398,7 +32914,7 @@ Table_Menu = {
   [19333] = {
     id = 19333,
     text = "发现景点·始源之树",
-    Condition = Table_Menu_t.Condition[909],
+    Condition = Table_Menu_t.Condition[910],
     event = Table_Menu_t.event[870],
     Tip = "发现景点·%s",
     Acc = 1,
@@ -32407,7 +32923,7 @@ Table_Menu = {
   [19334] = {
     id = 19334,
     text = "发现景点·失落的神殿",
-    Condition = Table_Menu_t.Condition[910],
+    Condition = Table_Menu_t.Condition[911],
     event = Table_Menu_t.event[871],
     Tip = "发现景点·%s",
     Acc = 1,
@@ -32443,7 +32959,7 @@ Table_Menu = {
   [19338] = {
     id = 19338,
     text = "发现景点·时空乱流回收站",
-    Condition = Table_Menu_t.Condition[911],
+    Condition = Table_Menu_t.Condition[912],
     event = Table_Menu_t.event[875],
     Tip = "发现景点·%s",
     Acc = 1,
@@ -32461,7 +32977,7 @@ Table_Menu = {
   [19340] = {
     id = 19340,
     text = "发现景点·烈焰堡垒正门",
-    Condition = Table_Menu_t.Condition[912],
+    Condition = Table_Menu_t.Condition[913],
     event = Table_Menu_t.event[877],
     Tip = "发现景点·%s",
     Acc = 1,
@@ -32479,7 +32995,7 @@ Table_Menu = {
   [19342] = {
     id = 19342,
     text = "发现景点·霞照王座",
-    Condition = Table_Menu_t.Condition[913],
+    Condition = Table_Menu_t.Condition[914],
     event = Table_Menu_t.event[879],
     Tip = "发现景点·%s",
     Acc = 1,
@@ -32497,7 +33013,7 @@ Table_Menu = {
   [19344] = {
     id = 19344,
     text = "发现景点·未亡人之径",
-    Condition = Table_Menu_t.Condition[914],
+    Condition = Table_Menu_t.Condition[915],
     event = Table_Menu_t.event[881],
     Tip = "发现景点·%s",
     Acc = 1,
@@ -32551,7 +33067,7 @@ Table_Menu = {
   [19350] = {
     id = 19350,
     text = "发现景点·苍白之塔",
-    Condition = Table_Menu_t.Condition[915],
+    Condition = Table_Menu_t.Condition[916],
     event = Table_Menu_t.event[887],
     Tip = "发现景点·%s",
     Acc = 1,
@@ -32630,13 +33146,13 @@ Table_Menu = {
   [19390] = {
     id = 19390,
     text = "传承技能已开放",
-    Condition = Table_Menu_t.Condition[826],
+    Condition = Table_Menu_t.Condition[827],
     Acc = 1
   },
   [19391] = {
     id = 19391,
     text = "传承技能已开放",
-    Condition = Table_Menu_t.Condition[826],
+    Condition = Table_Menu_t.Condition[827],
     Tip = "传承技能已开放",
     Acc = 1,
     Icon = Table_Menu_t.Icon[10]
@@ -32655,7 +33171,7 @@ Table_Menu = {
     id = 19393,
     text = "完成任务“雪花之冠·深寒”后解锁",
     Condition = Table_Menu_t.Condition[202],
-    event = Table_Menu_t.event[958],
+    event = Table_Menu_t.event[965],
     sysMsg = Table_Menu_t.sysMsg[78],
     Tip = "解锁雪花之冠·深寒",
     Show = 1,
@@ -32666,7 +33182,7 @@ Table_Menu = {
     id = 19394,
     text = "完成任务“雪花之冠·永寂”后解锁",
     Condition = Table_Menu_t.Condition[202],
-    event = Table_Menu_t.event[959],
+    event = Table_Menu_t.event[966],
     sysMsg = Table_Menu_t.sysMsg[79],
     Tip = "解锁雪花之冠·永寂",
     Show = 1,
@@ -32720,288 +33236,231 @@ Table_Menu = {
   },
   [19400] = {
     id = 19400,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1046]
+    Condition = Table_Menu_t.Condition[1068]
   },
   [19401] = {
     id = 19401,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1045]
+    Condition = Table_Menu_t.Condition[1067]
   },
   [19402] = {
     id = 19402,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1044]
+    Condition = Table_Menu_t.Condition[1066]
   },
   [19403] = {
     id = 19403,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1043]
+    Condition = Table_Menu_t.Condition[1065]
   },
   [19404] = {
     id = 19404,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1042]
+    Condition = Table_Menu_t.Condition[1064]
   },
   [19405] = {
     id = 19405,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1041]
+    Condition = Table_Menu_t.Condition[1063]
   },
   [19406] = {
     id = 19406,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1040]
+    Condition = Table_Menu_t.Condition[1062]
   },
   [19407] = {
     id = 19407,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1039]
+    Condition = Table_Menu_t.Condition[1061]
   },
   [19408] = {
     id = 19408,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1038]
+    Condition = Table_Menu_t.Condition[1060]
   },
   [19409] = {
     id = 19409,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1037]
+    Condition = Table_Menu_t.Condition[1059]
   },
   [19410] = {
     id = 19410,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1036]
+    Condition = Table_Menu_t.Condition[1058]
   },
   [19411] = {
     id = 19411,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1035]
+    Condition = Table_Menu_t.Condition[1057]
   },
   [19412] = {
     id = 19412,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1034]
+    Condition = Table_Menu_t.Condition[1056]
   },
   [19413] = {
     id = 19413,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1033]
+    Condition = Table_Menu_t.Condition[1055]
   },
   [19414] = {
     id = 19414,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1032]
+    Condition = Table_Menu_t.Condition[1054]
   },
   [19415] = {
     id = 19415,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1031]
+    Condition = Table_Menu_t.Condition[1053]
   },
   [19416] = {
     id = 19416,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1030]
+    Condition = Table_Menu_t.Condition[1052]
   },
   [19417] = {
     id = 19417,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1029]
+    Condition = Table_Menu_t.Condition[1051]
   },
   [19418] = {
     id = 19418,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1028]
+    Condition = Table_Menu_t.Condition[1050]
   },
   [19419] = {
     id = 19419,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1027]
+    Condition = Table_Menu_t.Condition[1049]
   },
   [19420] = {
     id = 19420,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1026]
+    Condition = Table_Menu_t.Condition[1048]
   },
   [19421] = {
     id = 19421,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1025]
+    Condition = Table_Menu_t.Condition[1047]
   },
   [19422] = {
     id = 19422,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1024]
+    Condition = Table_Menu_t.Condition[1046]
   },
   [19423] = {
     id = 19423,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[933]
+    Condition = Table_Menu_t.Condition[934]
   },
   [19424] = {
     id = 19424,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[934]
+    Condition = Table_Menu_t.Condition[935]
   },
   [19425] = {
     id = 19425,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[935]
+    Condition = Table_Menu_t.Condition[936]
   },
   [19426] = {
     id = 19426,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[936]
+    Condition = Table_Menu_t.Condition[937]
   },
   [19427] = {
     id = 19427,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[937]
+    Condition = Table_Menu_t.Condition[938]
   },
   [19428] = {
     id = 19428,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1023]
+    Condition = Table_Menu_t.Condition[1045]
   },
   [19429] = {
     id = 19429,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1022]
+    Condition = Table_Menu_t.Condition[1044]
   },
   [19430] = {
     id = 19430,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1021]
+    Condition = Table_Menu_t.Condition[1043]
   },
   [19431] = {
     id = 19431,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1020]
+    Condition = Table_Menu_t.Condition[1042]
   },
   [19432] = {
     id = 19432,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1019]
+    Condition = Table_Menu_t.Condition[1041]
   },
   [19433] = {
     id = 19433,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1018]
+    Condition = Table_Menu_t.Condition[1040]
   },
   [19434] = {
     id = 19434,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1017]
+    Condition = Table_Menu_t.Condition[1039]
   },
   [19435] = {
     id = 19435,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1016]
+    Condition = Table_Menu_t.Condition[1038]
   },
   [19436] = {
     id = 19436,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[941]
+    Condition = Table_Menu_t.Condition[942]
   },
   [19437] = {
     id = 19437,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[942]
+    Condition = Table_Menu_t.Condition[943]
   },
   [19438] = {
     id = 19438,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[943]
+    Condition = Table_Menu_t.Condition[944]
   },
   [19439] = {
     id = 19439,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[944]
+    Condition = Table_Menu_t.Condition[945]
   },
   [19440] = {
     id = 19440,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[945]
+    Condition = Table_Menu_t.Condition[946]
   },
   [19441] = {
     id = 19441,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[946]
+    Condition = Table_Menu_t.Condition[947]
   },
   [19442] = {
     id = 19442,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[947]
+    Condition = Table_Menu_t.Condition[948]
   },
   [19443] = {
     id = 19443,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[948]
+    Condition = Table_Menu_t.Condition[949]
   },
   [19444] = {
     id = 19444,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[949]
+    Condition = Table_Menu_t.Condition[950]
   },
   [19445] = {
     id = 19445,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[950]
+    Condition = Table_Menu_t.Condition[951]
   },
   [19446] = {
     id = 19446,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[951]
+    Condition = Table_Menu_t.Condition[952]
   },
   [19447] = {
     id = 19447,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[952]
+    Condition = Table_Menu_t.Condition[953]
   },
   [19448] = {
     id = 19448,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[953]
+    Condition = Table_Menu_t.Condition[954]
   },
   [19449] = {
     id = 19449,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[954]
+    Condition = Table_Menu_t.Condition[955]
   },
   [19450] = {
     id = 19450,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[955]
+    Condition = Table_Menu_t.Condition[956]
   },
   [19451] = {
     id = 19451,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[956]
+    Condition = Table_Menu_t.Condition[957]
   },
   [19452] = {
     id = 19452,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[957]
+    Condition = Table_Menu_t.Condition[958]
   },
   [19453] = {
     id = 19453,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[958]
+    Condition = Table_Menu_t.Condition[959]
   },
   [19454] = {
     id = 19454,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[959]
+    Condition = Table_Menu_t.Condition[960]
   },
   [19455] = {
     id = 19455,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[960]
+    Condition = Table_Menu_t.Condition[961]
   },
   [19456] = {
     id = 19456,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[961]
+    Condition = Table_Menu_t.Condition[962]
   },
   [19499] = {
     id = 19499,
@@ -33010,267 +33469,363 @@ Table_Menu = {
   [19500] = {
     id = 19500,
     text = "找到3个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[962],
+    Condition = Table_Menu_t.Condition[963],
     event = Table_Menu_t.event[938],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19501] = {
     id = 19501,
     text = "找到6个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[963],
+    Condition = Table_Menu_t.Condition[964],
     event = Table_Menu_t.event[939],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19502] = {
     id = 19502,
     text = "找到9个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[964],
+    Condition = Table_Menu_t.Condition[965],
     event = Table_Menu_t.event[938],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19503] = {
     id = 19503,
     text = "找到12个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[965],
+    Condition = Table_Menu_t.Condition[966],
     event = Table_Menu_t.event[940],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19504] = {
     id = 19504,
     text = "找到15个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[966],
+    Condition = Table_Menu_t.Condition[967],
     event = Table_Menu_t.event[941],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19505] = {
     id = 19505,
     text = "找到18个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[967],
+    Condition = Table_Menu_t.Condition[968],
     event = Table_Menu_t.event[940],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19506] = {
     id = 19506,
     text = "找到21个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[968],
+    Condition = Table_Menu_t.Condition[969],
     event = Table_Menu_t.event[942],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19507] = {
     id = 19507,
     text = "找到24个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[969],
+    Condition = Table_Menu_t.Condition[970],
     event = Table_Menu_t.event[943],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19508] = {
     id = 19508,
     text = "找到27个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[970],
+    Condition = Table_Menu_t.Condition[971],
     event = Table_Menu_t.event[938],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19509] = {
     id = 19509,
     text = "找到30个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[971],
+    Condition = Table_Menu_t.Condition[972],
     event = Table_Menu_t.event[939],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19510] = {
     id = 19510,
     text = "找到33个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[972],
+    Condition = Table_Menu_t.Condition[973],
     event = Table_Menu_t.event[941],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19511] = {
     id = 19511,
     text = "找到36个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[973],
+    Condition = Table_Menu_t.Condition[974],
     event = Table_Menu_t.event[944],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19512] = {
     id = 19512,
     text = "找到39个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[974],
+    Condition = Table_Menu_t.Condition[975],
     event = Table_Menu_t.event[941],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19513] = {
     id = 19513,
     text = "找到42个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[975],
+    Condition = Table_Menu_t.Condition[976],
     event = Table_Menu_t.event[944],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19514] = {
     id = 19514,
     text = "找到45个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[976],
+    Condition = Table_Menu_t.Condition[977],
     event = Table_Menu_t.event[945],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19515] = {
     id = 19515,
     text = "找到48个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[977],
+    Condition = Table_Menu_t.Condition[978],
     event = Table_Menu_t.event[946],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19516] = {
     id = 19516,
     text = "找到51个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[978],
+    Condition = Table_Menu_t.Condition[979],
     event = Table_Menu_t.event[947],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19517] = {
     id = 19517,
     text = "找到54个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[979],
+    Condition = Table_Menu_t.Condition[980],
     event = Table_Menu_t.event[946],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19518] = {
     id = 19518,
     text = "找到57个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[980],
+    Condition = Table_Menu_t.Condition[981],
     event = Table_Menu_t.event[948],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19519] = {
     id = 19519,
     text = "找到3个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[981],
+    Condition = Table_Menu_t.Condition[982],
     event = Table_Menu_t.event[949],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19520] = {
     id = 19520,
     text = "找到6个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[982],
+    Condition = Table_Menu_t.Condition[983],
     event = Table_Menu_t.event[950],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19521] = {
     id = 19521,
     text = "找到9个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[983],
+    Condition = Table_Menu_t.Condition[984],
     event = Table_Menu_t.event[951],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19522] = {
     id = 19522,
     text = "找到12个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[984],
+    Condition = Table_Menu_t.Condition[985],
     event = Table_Menu_t.event[952],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19523] = {
     id = 19523,
     text = "找到15个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[985],
+    Condition = Table_Menu_t.Condition[986],
     event = Table_Menu_t.event[953],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19524] = {
     id = 19524,
     text = "找到18个西尔芙时解锁",
-    Condition = Table_Menu_t.Condition[986],
+    Condition = Table_Menu_t.Condition[987],
     event = Table_Menu_t.event[954],
+    Tip = "解锁\"西尔芙的赠礼\""
+  },
+  [19525] = {
+    id = 19525,
+    text = "找到21个西尔芙时解锁",
+    Condition = Table_Menu_t.Condition[988],
+    event = Table_Menu_t.event[955],
+    Tip = "解锁\"西尔芙的赠礼\""
+  },
+  [19526] = {
+    id = 19526,
+    text = "找到24个西尔芙时解锁",
+    Condition = Table_Menu_t.Condition[989],
+    event = Table_Menu_t.event[956],
+    Tip = "解锁\"西尔芙的赠礼\""
+  },
+  [19527] = {
+    id = 19527,
+    text = "找到27个西尔芙时解锁",
+    Condition = Table_Menu_t.Condition[990],
+    event = Table_Menu_t.event[957],
+    Tip = "解锁\"西尔芙的赠礼\""
+  },
+  [19528] = {
+    id = 19528,
+    text = "找到30个西尔芙时解锁",
+    Condition = Table_Menu_t.Condition[991],
+    event = Table_Menu_t.event[958],
+    Tip = "解锁\"西尔芙的赠礼\""
+  },
+  [19529] = {
+    id = 19529,
+    text = "找到33个西尔芙时解锁",
+    Condition = Table_Menu_t.Condition[992],
+    event = Table_Menu_t.event[959],
+    Tip = "解锁\"西尔芙的赠礼\""
+  },
+  [19530] = {
+    id = 19530,
+    text = "找到36个西尔芙时解锁",
+    Condition = Table_Menu_t.Condition[993],
+    event = Table_Menu_t.event[960],
     Tip = "解锁\"西尔芙的赠礼\""
   },
   [19800] = {
     id = 19800,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1047]
+    Condition = Table_Menu_t.Condition[1069]
   },
   [19801] = {
     id = 19801,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1048]
+    Condition = Table_Menu_t.Condition[1070]
   },
   [19802] = {
     id = 19802,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1049]
+    Condition = Table_Menu_t.Condition[1071]
   },
   [19803] = {
     id = 19803,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1050]
+    Condition = Table_Menu_t.Condition[1072]
   },
   [19804] = {
     id = 19804,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1051]
+    Condition = Table_Menu_t.Condition[1073]
   },
   [19805] = {
     id = 19805,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1052]
+    Condition = Table_Menu_t.Condition[1074]
   },
   [19806] = {
     id = 19806,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1053]
+    Condition = Table_Menu_t.Condition[1075]
   },
   [19807] = {
     id = 19807,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1054]
+    Condition = Table_Menu_t.Condition[1076]
   },
   [19808] = {
     id = 19808,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1055]
+    Condition = Table_Menu_t.Condition[1077]
   },
   [19809] = {
     id = 19809,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1056]
+    Condition = Table_Menu_t.Condition[1078]
   },
   [19810] = {
     id = 19810,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1057]
+    Condition = Table_Menu_t.Condition[1079]
   },
   [19811] = {
     id = 19811,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1058]
+    Condition = Table_Menu_t.Condition[1080]
   },
   [19812] = {
     id = 19812,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1059]
+    Condition = Table_Menu_t.Condition[1081]
   },
   [19813] = {
     id = 19813,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1060]
+    Condition = Table_Menu_t.Condition[1082]
   },
   [19814] = {
     id = 19814,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1061]
+    Condition = Table_Menu_t.Condition[1083]
   },
   [19815] = {
     id = 19815,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1062]
+    Condition = Table_Menu_t.Condition[1084]
   },
   [19816] = {
     id = 19816,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1063]
+    Condition = Table_Menu_t.Condition[1085]
   },
   [19817] = {
     id = 19817,
-    text = "发现呀哈哈",
-    Condition = Table_Menu_t.Condition[1064]
+    Condition = Table_Menu_t.Condition[1086]
+  },
+  [19818] = {
+    id = 19818,
+    Condition = Table_Menu_t.Condition[1087]
+  },
+  [19819] = {
+    id = 19819,
+    Condition = Table_Menu_t.Condition[1088]
+  },
+  [19820] = {
+    id = 19820,
+    Condition = Table_Menu_t.Condition[1089]
+  },
+  [19821] = {
+    id = 19821,
+    Condition = Table_Menu_t.Condition[1090]
+  },
+  [19822] = {
+    id = 19822,
+    Condition = Table_Menu_t.Condition[1091]
+  },
+  [19823] = {
+    id = 19823,
+    Condition = Table_Menu_t.Condition[1092]
+  },
+  [19824] = {
+    id = 19824,
+    Condition = Table_Menu_t.Condition[1093]
+  },
+  [19825] = {
+    id = 19825,
+    Condition = Table_Menu_t.Condition[1094]
+  },
+  [19826] = {
+    id = 19826,
+    Condition = Table_Menu_t.Condition[1095]
+  },
+  [19827] = {
+    id = 19827,
+    Condition = Table_Menu_t.Condition[1096]
+  },
+  [19828] = {
+    id = 19828,
+    Condition = Table_Menu_t.Condition[1097]
+  },
+  [19829] = {
+    id = 19829,
+    Condition = Table_Menu_t.Condition[1098]
+  },
+  [19830] = {
+    id = 19830,
+    Condition = Table_Menu_t.Condition[1099]
+  },
+  [19831] = {
+    id = 19831,
+    Condition = Table_Menu_t.Condition[1100]
+  },
+  [19832] = {
+    id = 19832,
+    Condition = Table_Menu_t.Condition[1101]
+  },
+  [19833] = {
+    id = 19833,
+    Condition = Table_Menu_t.Condition[1102]
+  },
+  [19834] = {
+    id = 19834,
+    Condition = Table_Menu_t.Condition[1103]
+  },
+  [19835] = {
+    id = 19835,
+    Condition = Table_Menu_t.Condition[1104]
   },
   [19899] = {
     id = 19899,
@@ -33280,77 +33835,119 @@ Table_Menu = {
     id = 19900,
     text = "发现景点·初雪之地",
     Condition = Table_Menu_t.Condition[111],
-    event = Table_Menu_t.event[981],
+    event = Table_Menu_t.event[987],
     Tip = "发现景点·%s"
   },
   [19901] = {
     id = 19901,
     text = "发现景点·雪霜银堡",
     Condition = Table_Menu_t.Condition[111],
-    event = Table_Menu_t.event[982],
+    event = Table_Menu_t.event[988],
     Tip = "发现景点·%s"
   },
   [19902] = {
     id = 19902,
     text = "发现景点·蛇族的温床",
     Condition = Table_Menu_t.Condition[111],
-    event = Table_Menu_t.event[983],
+    event = Table_Menu_t.event[989],
     Tip = "发现景点·%s"
   },
   [19903] = {
     id = 19903,
     text = "发现景点·雪镜月湖",
     Condition = Table_Menu_t.Condition[111],
-    event = Table_Menu_t.event[984],
+    event = Table_Menu_t.event[990],
     Tip = "发现景点·%s"
   },
   [19904] = {
     id = 19904,
     text = "发现景点·雪落圣坛",
     Condition = Table_Menu_t.Condition[111],
-    event = Table_Menu_t.event[985],
+    event = Table_Menu_t.event[991],
     Tip = "发现景点·%s"
   },
   [19905] = {
     id = 19905,
     text = "发现景点·雪崩边界",
     Condition = Table_Menu_t.Condition[111],
-    event = Table_Menu_t.event[986],
+    event = Table_Menu_t.event[992],
     Tip = "发现景点·%s"
   },
   [19906] = {
     id = 19906,
     text = "发现景点·黄金树·伊斯加尔特",
     Condition = Table_Menu_t.Condition[111],
-    event = Table_Menu_t.event[987],
+    event = Table_Menu_t.event[993],
     Tip = "发现景点·%s"
   },
   [19907] = {
     id = 19907,
     text = "发现景点·雪鹰广场",
     Condition = Table_Menu_t.Condition[111],
-    event = Table_Menu_t.event[988],
+    event = Table_Menu_t.event[994],
     Tip = "发现景点·%s"
   },
   [19908] = {
     id = 19908,
     text = "发现景点·雪语之墙",
     Condition = Table_Menu_t.Condition[111],
-    event = Table_Menu_t.event[989],
+    event = Table_Menu_t.event[995],
     Tip = "发现景点·%s"
   },
   [19909] = {
     id = 19909,
     text = "发现景点·雪地花海",
     Condition = Table_Menu_t.Condition[111],
-    event = Table_Menu_t.event[990],
+    event = Table_Menu_t.event[996],
     Tip = "发现景点·%s"
   },
   [19910] = {
     id = 19910,
     text = "发现景点·旋转木马",
     Condition = Table_Menu_t.Condition[111],
-    event = Table_Menu_t.event[991],
+    event = Table_Menu_t.event[997],
+    Tip = "发现景点·%s"
+  },
+  [19911] = {
+    id = 19911,
+    text = "发现景点·幻雪松林",
+    Condition = Table_Menu_t.Condition[111],
+    event = Table_Menu_t.event[998],
+    Tip = "发现景点·%s"
+  },
+  [19912] = {
+    id = 19912,
+    text = "发现景点·冰川战场",
+    Condition = Table_Menu_t.Condition[111],
+    event = Table_Menu_t.event[999],
+    Tip = "发现景点·%s"
+  },
+  [19913] = {
+    id = 19913,
+    text = "发现景点·朝圣之地",
+    Condition = Table_Menu_t.Condition[111],
+    event = Table_Menu_t.event[1000],
+    Tip = "发现景点·%s"
+  },
+  [19914] = {
+    id = 19914,
+    text = "发现景点·雪糖原野",
+    Condition = Table_Menu_t.Condition[111],
+    event = Table_Menu_t.event[1001],
+    Tip = "发现景点·%s"
+  },
+  [19915] = {
+    id = 19915,
+    text = "发现景点·极光之地",
+    Condition = Table_Menu_t.Condition[111],
+    event = Table_Menu_t.event[1002],
+    Tip = "发现景点·%s"
+  },
+  [19916] = {
+    id = 19916,
+    text = "发现景点·冰封鳞桥",
+    Condition = Table_Menu_t.Condition[111],
+    event = Table_Menu_t.event[1003],
     Tip = "发现景点·%s"
   },
   [100000] = {
@@ -33360,17 +33957,18 @@ Table_Menu = {
   [100057] = {
     id = 100057,
     text = "调整博物岛解锁等级",
-    Condition = Table_Menu_t.Condition[572]
+    Condition = Table_Menu_t.Condition[573]
   },
   [100058] = {
     id = 100058,
     text = "调整迷踪岛解锁等级",
-    Condition = Table_Menu_t.Condition[572]
+    Condition = Table_Menu_t.Condition[573]
   },
   [100061] = {
     id = 100061,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
-    event = Table_Menu_t.event[956],
+    event = Table_Menu_t.event[962],
     Tip = "解锁·新武器外观收集",
     Acc = 1,
     Enterhide = 1
@@ -33378,14 +33976,15 @@ Table_Menu = {
   [100062] = {
     id = 100062,
     text = "备战基金",
-    Condition = Table_Menu_t.Condition[681],
+    Condition = Table_Menu_t.Condition[682],
     Acc = 1,
     Enterhide = 1
   },
   [100066] = {
     id = 100066,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
-    event = Table_Menu_t.event[955],
+    event = Table_Menu_t.event[961],
     Tip = "解锁·新武器外观收集",
     Acc = 1,
     Enterhide = 1
@@ -33402,12 +34001,12 @@ Table_Menu = {
   [100096] = {
     id = 100096,
     text = "星座之塔 开放",
-    Condition = Table_Menu_t.Condition[995]
+    Condition = Table_Menu_t.Condition[1002]
   },
   [100097] = {
     id = 100097,
     text = "星座之塔 开放",
-    Condition = Table_Menu_t.Condition[994],
+    Condition = Table_Menu_t.Condition[1001],
     Tip = "星座之塔 开放",
     Show = 1,
     Acc = 1,
@@ -33430,7 +34029,7 @@ Table_Menu = {
   [3000001] = {
     id = 3000001,
     text = "解锁米特商店·鎏金纹章购买资格",
-    Condition = Table_Menu_t.Condition[728],
+    Condition = Table_Menu_t.Condition[729],
     Tip = "解锁弗雷硬币商店·鎏金纹章购买资格",
     Show = 1,
     Acc = 1,
@@ -33439,112 +34038,112 @@ Table_Menu = {
   [3000002] = {
     id = 3000002,
     text = "已解锁388个头饰",
-    Condition = Table_Menu_t.Condition[729],
+    Condition = Table_Menu_t.Condition[730],
     Tip = "已解锁388个头饰",
     Acc = 1
   },
   [3000003] = {
     id = 3000003,
     text = "已解锁288个头饰",
-    Condition = Table_Menu_t.Condition[730],
+    Condition = Table_Menu_t.Condition[731],
     Tip = "已解锁288个头饰",
     Acc = 1
   },
   [3000004] = {
     id = 3000004,
     text = "已解锁188个头饰",
-    Condition = Table_Menu_t.Condition[731],
+    Condition = Table_Menu_t.Condition[732],
     Tip = "已解锁188个头饰",
     Acc = 1
   },
   [3000005] = {
     id = 3000005,
     text = "已解锁88个头饰",
-    Condition = Table_Menu_t.Condition[732],
+    Condition = Table_Menu_t.Condition[733],
     Tip = "已解锁88个头饰",
     Acc = 1
   },
   [3000006] = {
     id = 3000006,
     text = "已解锁198个头饰",
-    Condition = Table_Menu_t.Condition[733],
+    Condition = Table_Menu_t.Condition[734],
     Tip = "已解锁198个头饰",
     Acc = 1
   },
   [3000007] = {
     id = 3000007,
     text = "已解锁128个头饰",
-    Condition = Table_Menu_t.Condition[734],
+    Condition = Table_Menu_t.Condition[735],
     Tip = "已解锁128个头饰",
     Acc = 1
   },
   [3000008] = {
     id = 3000008,
     text = "已解锁88个头饰",
-    Condition = Table_Menu_t.Condition[732],
+    Condition = Table_Menu_t.Condition[733],
     Tip = "已解锁88个头饰",
     Acc = 1
   },
   [3000009] = {
     id = 3000009,
     text = "已解锁68个头饰",
-    Condition = Table_Menu_t.Condition[735],
+    Condition = Table_Menu_t.Condition[736],
     Tip = "已解锁68个头饰",
     Acc = 1
   },
   [3000010] = {
     id = 3000010,
     text = "已解锁466个成就",
-    Condition = Table_Menu_t.Condition[736],
+    Condition = Table_Menu_t.Condition[737],
     Tip = "已解锁466个成就",
     Acc = 1
   },
   [3000011] = {
     id = 3000011,
     text = "已解锁366个成就",
-    Condition = Table_Menu_t.Condition[737],
+    Condition = Table_Menu_t.Condition[738],
     Tip = "已解锁366个成就",
     Acc = 1
   },
   [3000012] = {
     id = 3000012,
     text = "已解锁266个成就",
-    Condition = Table_Menu_t.Condition[738],
+    Condition = Table_Menu_t.Condition[739],
     Tip = "已解锁266个成就",
     Acc = 1
   },
   [3000013] = {
     id = 3000013,
     text = "已解锁166个成就",
-    Condition = Table_Menu_t.Condition[739],
+    Condition = Table_Menu_t.Condition[740],
     Tip = "已解锁166个成就",
     Acc = 1
   },
   [3000014] = {
     id = 3000014,
     text = "已解锁326个成就",
-    Condition = Table_Menu_t.Condition[740],
+    Condition = Table_Menu_t.Condition[741],
     Tip = "已解锁326个成就",
     Acc = 1
   },
   [3000015] = {
     id = 3000015,
     text = "已解锁226个成就",
-    Condition = Table_Menu_t.Condition[741],
+    Condition = Table_Menu_t.Condition[742],
     Tip = "已解锁226个成就",
     Acc = 1
   },
   [3000016] = {
     id = 3000016,
     text = "已解锁126个成就",
-    Condition = Table_Menu_t.Condition[742],
+    Condition = Table_Menu_t.Condition[743],
     Tip = "已解锁126个成就",
     Acc = 1
   },
   [3000017] = {
     id = 3000017,
     text = "已解锁66个成就",
-    Condition = Table_Menu_t.Condition[743],
+    Condition = Table_Menu_t.Condition[744],
     Tip = "已解锁66个成就",
     Acc = 1
   },
@@ -33568,6 +34167,7 @@ Table_Menu = {
   },
   [3000020] = {
     id = 3000020,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[724],
     Tip = "解锁·新武器外观收集",
@@ -33577,7 +34177,7 @@ Table_Menu = {
   [3000021] = {
     id = 3000021,
     text = "海姆达尔之眼",
-    Condition = Table_Menu_t.Condition[744],
+    Condition = Table_Menu_t.Condition[745],
     Enterhide = 1
   },
   [3000022] = {
@@ -33654,6 +34254,7 @@ Table_Menu = {
   },
   [3000031] = {
     id = 3000031,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[733],
     Tip = "解锁·新武器外观收集",
@@ -33662,6 +34263,7 @@ Table_Menu = {
   },
   [3000032] = {
     id = 3000032,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[734],
     Tip = "解锁·新武器外观收集",
@@ -33670,6 +34272,7 @@ Table_Menu = {
   },
   [3000033] = {
     id = 3000033,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[735],
     Tip = "解锁·新武器外观收集",
@@ -33678,6 +34281,7 @@ Table_Menu = {
   },
   [3000034] = {
     id = 3000034,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[736],
     Tip = "解锁·新武器外观收集",
@@ -33687,7 +34291,7 @@ Table_Menu = {
   [3000042] = {
     id = 3000042,
     text = "发现景点·罗森主题店",
-    Condition = Table_Menu_t.Condition[745],
+    Condition = Table_Menu_t.Condition[746],
     event = Table_Menu_t.event[737],
     Tip = "发现景点·罗森主题店",
     Acc = 1,
@@ -33735,6 +34339,7 @@ Table_Menu = {
   },
   [3000047] = {
     id = 3000047,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[742],
     Tip = "解锁·新武器外观收集",
@@ -33743,6 +34348,7 @@ Table_Menu = {
   },
   [3000048] = {
     id = 3000048,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[743],
     Tip = "解锁·新武器外观收集",
@@ -33753,13 +34359,14 @@ Table_Menu = {
     id = 3000049,
     type = 6,
     text = "弹出APP评价引导框",
-    Condition = Table_Menu_t.Condition[746],
+    Condition = Table_Menu_t.Condition[747],
     sysMsg = Table_Menu_t.sysMsg[73],
     Acc = 1,
     Icon = Table_Menu_t.Icon[179]
   },
   [3000050] = {
     id = 3000050,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[744],
     Tip = "解锁·新武器外观收集",
@@ -33768,6 +34375,7 @@ Table_Menu = {
   },
   [3000051] = {
     id = 3000051,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[745],
     Tip = "解锁·新武器外观收集",
@@ -33777,10 +34385,11 @@ Table_Menu = {
   [3000052] = {
     id = 3000052,
     text = "解锁职业·悟灵士",
-    Condition = Table_Menu_t.Condition[747]
+    Condition = Table_Menu_t.Condition[748]
   },
   [3000053] = {
     id = 3000053,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[746],
     Tip = "解锁·新武器外观收集",
@@ -33789,6 +34398,7 @@ Table_Menu = {
   },
   [3000054] = {
     id = 3000054,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[747],
     Tip = "解锁·新武器外观收集",
@@ -33797,6 +34407,7 @@ Table_Menu = {
   },
   [3000055] = {
     id = 3000055,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[748],
     Tip = "解锁·新武器外观收集",
@@ -33805,6 +34416,7 @@ Table_Menu = {
   },
   [3000056] = {
     id = 3000056,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[749],
     Tip = "解锁·新武器外观收集",
@@ -33814,12 +34426,13 @@ Table_Menu = {
   [3000057] = {
     id = 3000057,
     text = "备战基金",
-    Condition = Table_Menu_t.Condition[748],
+    Condition = Table_Menu_t.Condition[749],
     Acc = 1,
     Enterhide = 1
   },
   [3000058] = {
     id = 3000058,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[750],
     Tip = "解锁·新武器外观收集",
@@ -33828,6 +34441,7 @@ Table_Menu = {
   },
   [3000059] = {
     id = 3000059,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[751],
     Tip = "解锁·新武器外观收集",
@@ -33836,6 +34450,7 @@ Table_Menu = {
   },
   [3000060] = {
     id = 3000060,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[752],
     Tip = "解锁·新武器外观收集",
@@ -33844,6 +34459,7 @@ Table_Menu = {
   },
   [3000061] = {
     id = 3000061,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[753],
     Tip = "解锁·新武器外观收集",
@@ -33852,6 +34468,7 @@ Table_Menu = {
   },
   [3000062] = {
     id = 3000062,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[754],
     Tip = "解锁·新武器外观收集",
@@ -33861,7 +34478,7 @@ Table_Menu = {
   [3000071] = {
     id = 3000071,
     text = "解锁联动职业·影·埼玉",
-    Condition = Table_Menu_t.Condition[749],
+    Condition = Table_Menu_t.Condition[750],
     event = Table_Menu_t.event[755],
     Tip = "联动职业·影·埼玉 已解锁",
     Show = 1,
@@ -33870,7 +34487,7 @@ Table_Menu = {
   [3000072] = {
     id = 3000072,
     text = "解锁联动职业·影·杰诺斯",
-    Condition = Table_Menu_t.Condition[750],
+    Condition = Table_Menu_t.Condition[751],
     event = Table_Menu_t.event[756],
     Tip = "联动职业·影·杰诺斯 已解锁",
     Show = 1,
@@ -33878,6 +34495,7 @@ Table_Menu = {
   },
   [3000080] = {
     id = 3000080,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[757],
     Tip = "解锁·新武器外观收集",
@@ -33886,6 +34504,7 @@ Table_Menu = {
   },
   [3000081] = {
     id = 3000081,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[758],
     Tip = "解锁·新武器外观收集",
@@ -33894,6 +34513,7 @@ Table_Menu = {
   },
   [3000082] = {
     id = 3000082,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[759],
     Tip = "解锁·新武器外观收集",
@@ -33902,6 +34522,7 @@ Table_Menu = {
   },
   [3000083] = {
     id = 3000083,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[760],
     Tip = "解锁·新武器外观收集",
@@ -33910,6 +34531,7 @@ Table_Menu = {
   },
   [3000084] = {
     id = 3000084,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[761],
     Tip = "解锁·新武器外观收集",
@@ -33918,6 +34540,7 @@ Table_Menu = {
   },
   [3000085] = {
     id = 3000085,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[762],
     Tip = "解锁·新武器外观收集",
@@ -33926,6 +34549,7 @@ Table_Menu = {
   },
   [3000086] = {
     id = 3000086,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[763],
     Tip = "解锁·新武器外观收集",
@@ -33934,6 +34558,7 @@ Table_Menu = {
   },
   [3000087] = {
     id = 3000087,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[764],
     Tip = "解锁·新武器外观收集",
@@ -33942,6 +34567,7 @@ Table_Menu = {
   },
   [3000088] = {
     id = 3000088,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[765],
     Tip = "解锁·新武器外观收集",
@@ -33950,6 +34576,7 @@ Table_Menu = {
   },
   [3000089] = {
     id = 3000089,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[766],
     Tip = "解锁·新武器外观收集",
@@ -33958,6 +34585,7 @@ Table_Menu = {
   },
   [3000090] = {
     id = 3000090,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[767],
     Tip = "解锁·新武器外观收集",
@@ -33966,6 +34594,7 @@ Table_Menu = {
   },
   [3000091] = {
     id = 3000091,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[768],
     Tip = "解锁·新武器外观收集",
@@ -33974,6 +34603,7 @@ Table_Menu = {
   },
   [3000092] = {
     id = 3000092,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[769],
     Tip = "解锁·新武器外观收集",
@@ -33982,6 +34612,7 @@ Table_Menu = {
   },
   [3000093] = {
     id = 3000093,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[770],
     Tip = "解锁·新武器外观收集",
@@ -33990,6 +34621,7 @@ Table_Menu = {
   },
   [3000094] = {
     id = 3000094,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[771],
     Tip = "解锁·新武器外观收集",
@@ -33998,6 +34630,7 @@ Table_Menu = {
   },
   [3000095] = {
     id = 3000095,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[772],
     Tip = "解锁·新武器外观收集",
@@ -34006,6 +34639,7 @@ Table_Menu = {
   },
   [3000096] = {
     id = 3000096,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[773],
     Tip = "解锁·新武器外观收集",
@@ -34015,7 +34649,7 @@ Table_Menu = {
   [3000097] = {
     id = 3000097,
     text = "备战基金",
-    Condition = Table_Menu_t.Condition[748],
+    Condition = Table_Menu_t.Condition[749],
     Acc = 1,
     Enterhide = 1
   },
@@ -34038,117 +34672,118 @@ Table_Menu = {
   [3000100] = {
     id = 3000100,
     text = "已解锁300个头饰",
-    Condition = Table_Menu_t.Condition[751],
+    Condition = Table_Menu_t.Condition[752],
     Tip = "已解锁368个头饰",
     Acc = 1
   },
   [3000101] = {
     id = 3000101,
     text = "已解锁200个头饰",
-    Condition = Table_Menu_t.Condition[752],
+    Condition = Table_Menu_t.Condition[753],
     Tip = "已解锁268个头饰",
     Acc = 1
   },
   [3000102] = {
     id = 3000102,
     text = "已解锁150个头饰",
-    Condition = Table_Menu_t.Condition[753],
+    Condition = Table_Menu_t.Condition[754],
     Tip = "已解锁168个头饰",
     Acc = 1
   },
   [3000103] = {
     id = 3000103,
     text = "已解锁100个头饰",
-    Condition = Table_Menu_t.Condition[754],
+    Condition = Table_Menu_t.Condition[755],
     Tip = "已解锁68个头饰",
     Acc = 1
   },
   [3000104] = {
     id = 3000104,
     text = "已解锁300个成就",
-    Condition = Table_Menu_t.Condition[755],
+    Condition = Table_Menu_t.Condition[756],
     Tip = "已解锁368个成就",
     Acc = 1
   },
   [3000105] = {
     id = 3000105,
     text = "已解锁250个成就",
-    Condition = Table_Menu_t.Condition[756],
+    Condition = Table_Menu_t.Condition[757],
     Tip = "已解锁268个成就",
     Acc = 1
   },
   [3000106] = {
     id = 3000106,
     text = "已解锁200个成就",
-    Condition = Table_Menu_t.Condition[757],
+    Condition = Table_Menu_t.Condition[758],
     Tip = "已解锁168个成就",
     Acc = 1
   },
   [3000107] = {
     id = 3000107,
     text = "已解锁100个成就",
-    Condition = Table_Menu_t.Condition[758],
+    Condition = Table_Menu_t.Condition[759],
     Tip = "已解锁68个成就",
     Acc = 1
   },
   [3000108] = {
     id = 3000108,
     text = "已解锁150个头饰",
-    Condition = Table_Menu_t.Condition[753],
+    Condition = Table_Menu_t.Condition[754],
     Tip = "已解锁368个头饰",
     Acc = 1
   },
   [3000109] = {
     id = 3000109,
     text = "已解锁90个头饰",
-    Condition = Table_Menu_t.Condition[759],
+    Condition = Table_Menu_t.Condition[760],
     Tip = "已解锁268个头饰",
     Acc = 1
   },
   [3000110] = {
     id = 3000110,
     text = "已解锁60个头饰",
-    Condition = Table_Menu_t.Condition[760],
+    Condition = Table_Menu_t.Condition[761],
     Tip = "已解锁168个头饰",
     Acc = 1
   },
   [3000111] = {
     id = 3000111,
     text = "已解锁30个头饰",
-    Condition = Table_Menu_t.Condition[761],
+    Condition = Table_Menu_t.Condition[762],
     Tip = "已解锁68个头饰",
     Acc = 1
   },
   [3000112] = {
     id = 3000112,
     text = "已解锁150个成就",
-    Condition = Table_Menu_t.Condition[762],
+    Condition = Table_Menu_t.Condition[763],
     Tip = "已解锁368个成就",
     Acc = 1
   },
   [3000113] = {
     id = 3000113,
     text = "已解锁120个成就",
-    Condition = Table_Menu_t.Condition[763],
+    Condition = Table_Menu_t.Condition[764],
     Tip = "已解锁268个成就",
     Acc = 1
   },
   [3000114] = {
     id = 3000114,
     text = "已解锁90个成就",
-    Condition = Table_Menu_t.Condition[764],
+    Condition = Table_Menu_t.Condition[765],
     Tip = "已解锁168个成就",
     Acc = 1
   },
   [3000115] = {
     id = 3000115,
     text = "已解锁60个成就",
-    Condition = Table_Menu_t.Condition[765],
+    Condition = Table_Menu_t.Condition[766],
     Tip = "已解锁68个成就",
     Acc = 1
   },
   [3000116] = {
     id = 3000116,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[776],
     Tip = "解锁·新武器外观收集",
@@ -34157,6 +34792,7 @@ Table_Menu = {
   },
   [3000117] = {
     id = 3000117,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[777],
     Tip = "解锁·新武器外观收集",
@@ -34165,6 +34801,7 @@ Table_Menu = {
   },
   [3000118] = {
     id = 3000118,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[778],
     Tip = "解锁·新武器外观收集",
@@ -34173,6 +34810,7 @@ Table_Menu = {
   },
   [3000119] = {
     id = 3000119,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[779],
     Tip = "解锁·新武器外观收集",
@@ -34181,6 +34819,7 @@ Table_Menu = {
   },
   [3000120] = {
     id = 3000120,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[780],
     Tip = "解锁·新武器外观收集",
@@ -34190,75 +34829,76 @@ Table_Menu = {
   [3000121] = {
     id = 3000121,
     text = "已解锁30个头饰",
-    Condition = Table_Menu_t.Condition[761],
+    Condition = Table_Menu_t.Condition[762],
     Tip = "已解锁30个头饰",
     Acc = 1
   },
   [3000122] = {
     id = 3000122,
     text = "已解锁50个头饰",
-    Condition = Table_Menu_t.Condition[766],
+    Condition = Table_Menu_t.Condition[767],
     Tip = "已解锁50个头饰",
     Acc = 1
   },
   [3000123] = {
     id = 3000123,
     text = "已解锁100个头饰",
-    Condition = Table_Menu_t.Condition[754],
+    Condition = Table_Menu_t.Condition[755],
     Tip = "已解锁100个头饰",
     Acc = 1
   },
   [3000124] = {
     id = 3000124,
     text = "已解锁200个头饰",
-    Condition = Table_Menu_t.Condition[752],
+    Condition = Table_Menu_t.Condition[753],
     Tip = "已解锁200个头饰",
     Acc = 1
   },
   [3000125] = {
     id = 3000125,
     text = "已解锁300个头饰",
-    Condition = Table_Menu_t.Condition[751],
+    Condition = Table_Menu_t.Condition[752],
     Tip = "已解锁300个头饰",
     Acc = 1
   },
   [3000126] = {
     id = 3000126,
     text = "卡片解锁1张",
-    Condition = Table_Menu_t.Condition[767],
+    Condition = Table_Menu_t.Condition[768],
     Tip = "卡片解锁1张",
     Acc = 1
   },
   [3000127] = {
     id = 3000127,
     text = "卡片解锁10张",
-    Condition = Table_Menu_t.Condition[768],
+    Condition = Table_Menu_t.Condition[769],
     Tip = "卡片解锁10张",
     Acc = 1
   },
   [3000128] = {
     id = 3000128,
     text = "卡片解锁50张",
-    Condition = Table_Menu_t.Condition[769],
+    Condition = Table_Menu_t.Condition[770],
     Tip = "卡片解锁50张",
     Acc = 1
   },
   [3000129] = {
     id = 3000129,
     text = "卡片解锁100张",
-    Condition = Table_Menu_t.Condition[770],
+    Condition = Table_Menu_t.Condition[771],
     Tip = "卡片解锁100张",
     Acc = 1
   },
   [3000130] = {
     id = 3000130,
     text = "卡片解锁200张",
-    Condition = Table_Menu_t.Condition[771],
+    Condition = Table_Menu_t.Condition[772],
     Tip = "卡片解锁200张",
     Acc = 1
   },
   [3000140] = {
     id = 3000140,
+    text = "冒险手册·武器外观收集解锁2",
     Condition = Table_Menu_t.Condition[15],
     event = Table_Menu_t.event[781],
     Tip = "解锁·新武器外观收集",
@@ -34268,7 +34908,7 @@ Table_Menu = {
   [10000001] = {
     id = 10000001,
     text = "诺伦卡片购买上限提升",
-    Condition = Table_Menu_t.Condition[993],
+    Condition = Table_Menu_t.Condition[1000],
     Tip = "诺伦卡片购买上限提升",
     Acc = 1,
     Enterhide = 1
@@ -34276,7 +34916,7 @@ Table_Menu = {
   [10000002] = {
     id = 10000002,
     text = "诺伦卡片购买上限提升",
-    Condition = Table_Menu_t.Condition[992],
+    Condition = Table_Menu_t.Condition[999],
     Tip = "诺伦卡片购买上限提升",
     Acc = 1,
     Enterhide = 1
@@ -34284,7 +34924,7 @@ Table_Menu = {
   [10000003] = {
     id = 10000003,
     text = "诺伦卡片购买上限提升",
-    Condition = Table_Menu_t.Condition[991],
+    Condition = Table_Menu_t.Condition[998],
     Tip = "诺伦卡片购买上限提升",
     Acc = 1,
     Enterhide = 1
@@ -34292,7 +34932,7 @@ Table_Menu = {
   [10000004] = {
     id = 10000004,
     text = "诺伦卡片购买上限提升",
-    Condition = Table_Menu_t.Condition[990],
+    Condition = Table_Menu_t.Condition[997],
     Tip = "诺伦卡片购买上限提升",
     Acc = 1,
     Enterhide = 1
@@ -34300,7 +34940,7 @@ Table_Menu = {
   [10000005] = {
     id = 10000005,
     text = "诺伦卡片购买上限提升",
-    Condition = Table_Menu_t.Condition[989],
+    Condition = Table_Menu_t.Condition[996],
     Tip = "诺伦卡片购买上限提升",
     Acc = 1,
     Enterhide = 1
@@ -34312,13 +34952,13 @@ Table_Menu = {
     Tip = "初心启程活动开启",
     Show = 1,
     Acc = 1,
-    Icon = Table_Menu_t.Icon[300]
+    Icon = Table_Menu_t.Icon[326]
   },
   [10000007] = {
     id = 10000007,
     type = 1,
     text = "每日福利活动开启",
-    Condition = Table_Menu_t.Condition[938],
+    Condition = Table_Menu_t.Condition[939],
     Tip = "每日福利活动开启",
     Acc = 1,
     Enterhide = 1
@@ -34334,7 +34974,7 @@ Table_Menu = {
   [10000009] = {
     id = 10000009,
     text = "朱诺黎明 开放",
-    Condition = Table_Menu_t.Condition[989],
+    Condition = Table_Menu_t.Condition[996],
     Tip = "朱诺黎明 已开放",
     Acc = 1,
     Enterhide = 1
@@ -34342,7 +34982,7 @@ Table_Menu = {
   [10000010] = {
     id = 10000010,
     text = "黑色派对 开放",
-    Condition = Table_Menu_t.Condition[988],
+    Condition = Table_Menu_t.Condition[995],
     Tip = "黑色派对 已开放",
     Acc = 1,
     Enterhide = 1
@@ -34350,7 +34990,7 @@ Table_Menu = {
   [10000011] = {
     id = 10000011,
     text = "光影之都 开放",
-    Condition = Table_Menu_t.Condition[987],
+    Condition = Table_Menu_t.Condition[994],
     Tip = "光影之都 已开放",
     Acc = 1,
     Enterhide = 1
@@ -34365,7 +35005,7 @@ local cell_mt = {
     event = _EmptyTable,
     id = 1,
     sysMsg = _EmptyTable,
-    text = "冒险手册·武器外观收集解锁2",
+    text = "发现呀哈哈",
     type = 3
   }
 }

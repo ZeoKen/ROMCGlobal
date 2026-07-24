@@ -8,6 +8,8 @@ autoImport("InteractMount")
 autoImport("InteractMountNpc")
 autoImport("InteractSceneObject")
 autoImport("InteractHandcartNpc")
+autoImport("InteractForceMoveNpc")
+autoImport("InteractSnowballNpc")
 InteractNpcManager = class("InteractNpcManager")
 local TableInteractFurnitureName = "Table_InteractFurniture"
 local GameFacade = GameFacade.Instance
@@ -39,18 +41,20 @@ function InteractNpcManager:Update(time, deltaTime)
   if self.interactNpcCount > 0 then
     local isInTrigger = false
     local interactLocalBlock = InteractLocalManager.Me():IsInteractBusy()
+    local normalNpcGuid
     if not interactLocalBlock then
       self.lockNpcGuid = nil
       if not self:IsMyselfOnInteractMount() then
         for k, v in pairs(self.interactNpcMap) do
           if v:Update(time, deltaTime) then
+            normalNpcGuid = normalNpcGuid or k
             isInTrigger = true
-            self.lockNpcGuid = k
-            break
           end
         end
       end
     end
+    self.lockNpcGuid = normalNpcGuid
+    isInTrigger = normalNpcGuid ~= nil
     if self.isInTrigger ~= isInTrigger then
       self:_TrySendMyselfTriggerChange(isInTrigger)
       self.isInTrigger = isInTrigger
@@ -143,6 +147,36 @@ function InteractNpcManager:RegisterInteractNpc(staticid, id)
     return
   end
   self:_Register(InteractNpc, data, id)
+end
+
+function InteractNpcManager:GetForceMoveConfig(staticId)
+  local staticData = Table_Monster[staticId]
+  if not staticData then
+    return nil
+  end
+  local params = staticData.Params
+  return params and params.ForceMove
+end
+
+function InteractNpcManager:RegisterInteractForceMoveNpc(staticId, id)
+  local config = self:GetForceMoveConfig(staticId)
+  if not config then
+    return
+  end
+  local data = {
+    id = staticId,
+    Type = InteractNpc.InteractType.ForceMoveNpc,
+    Param = config
+  }
+  self:_Register(InteractForceMoveNpc, data, id)
+end
+
+function InteractNpcManager:UnregisterInteractForceMoveNpc(id)
+  local count = self.interactNpcCount
+  self:_Unregister(id)
+  if 0 < count and self.interactNpcCount == 0 then
+    self:ClearTrigger()
+  end
 end
 
 function InteractNpcManager:UnregisterInteractNpc(id)
@@ -565,6 +599,15 @@ function InteractNpcManager:MyselfManualClick()
   end
 end
 
+function InteractNpcManager:GetInteractPrompt(isMyselfOnNpc)
+  local npcguid = isMyselfOnNpc and self.myselfOnNpcGuid or self.lockNpcGuid
+  local interactNpc = npcguid and self.interactNpcMap[npcguid]
+  if interactNpc and interactNpc.GetInteractPrompt then
+    return interactNpc:GetInteractPrompt(isMyselfOnNpc)
+  end
+  return isMyselfOnNpc and ZhString.InteractNpc_GetOff or ZhString.InteractNpc_GetOn
+end
+
 function InteractNpcManager:Client_MyselfGetOff(interactNpc)
   interactNpc:RequestGetOff(Game.Myself.data.id)
   self:_ChangeMyselfOnOff(nil, interactNpc)
@@ -574,7 +617,7 @@ function InteractNpcManager:AddMountInter(npcguid, mountid, charid)
   local interactNpc = self.interactNpcMap[npcguid]
   if interactNpc ~= nil then
     interactNpc:RequestGetOn(mountid, charid)
-    if charid == Game.Myself.data.id then
+    if charid == Game.Myself.data.id and interactNpc:ShouldChangeMyselfOnOff() then
       self:_ChangeMyselfOnOff(npcguid, interactNpc)
     end
   end
@@ -584,7 +627,7 @@ function InteractNpcManager:DelMountInter(npcguid, charid)
   local interactNpc = self.interactNpcMap[npcguid]
   if interactNpc ~= nil then
     interactNpc:RequestGetOff(charid)
-    if charid == Game.Myself.data.id then
+    if charid == Game.Myself.data.id and interactNpc:ShouldChangeMyselfOnOff() then
       self:_ChangeMyselfOnOff(nil, interactNpc)
     end
   end
@@ -781,6 +824,14 @@ function InteractNpcManager:_GetDressParts(serverdata)
     end
   end
   return parts
+end
+
+function InteractNpcManager:IsCurTriggerForceMove()
+  if self.lockNpcGuid == nil then
+    return false
+  end
+  local npc = self.interactNpcMap[self.lockNpcGuid]
+  return npc ~= nil and npc:IsForceMoveNpc()
 end
 
 function InteractNpcManager:_TrySendMyselfTriggerChange(isInTrigger)

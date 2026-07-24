@@ -11,6 +11,12 @@ local SetTweenParticel = function(effectHandle, duration, assetEffect)
     assetEffect:SetParticleTween(duration)
   end
 end
+local SetTweenOffset = function(effectHandle, fromX, fromY, toX, toY, assetEffect)
+  if assetEffect then
+    assetEffect:SetParticleOffset(fromX, fromY, toX, toY)
+  end
+end
+local _sweepFactor = -1.96
 
 function NCreature:PlayEffect(key, path, epID, offset, loop, stick, callback, callbackArg)
   if loop then
@@ -202,6 +208,12 @@ function NCreature:ClearCastWarningEffect(key)
     effect:Destroy()
     effect = nil
   end
+  local key02 = -key
+  local effect02 = self:GetWeakData(key02)
+  if effect02 then
+    effect02:Destroy()
+    effect02 = nil
+  end
 end
 
 function NCreature:PlayCastWarningEffect(key, path, targetSize, targetSize2, casttime)
@@ -215,6 +227,44 @@ function NCreature:PlayCastWarningEffect(key, path, targetSize, targetSize2, cas
   effect:ResetLocalScaleXYZ(targetSize or 1, 1, targetSize2 or targetSize or 1)
   self:_AddCastWarningEffect(key)
   self:SetWeakData(key, effect)
+end
+
+function NCreature:PlayCastSweepWarningEffect(key, path, path02, targetSize, targetSize2, casttime, sweepAngle, warningDir, extendAngle)
+  local effect = self:GetWeakData(key)
+  if effect then
+    return
+  end
+  local assetRole = self.assetRole
+  local completeTransform = assetRole.completeTransform
+  local angleParam = 1 - sweepAngle / 360 * 0.95
+  local isExpand = warningDir == 2
+  local isReverse = warningDir == nil or warningDir == 0
+  local rotY = (isReverse and -1 or 1) * (90 + sweepAngle / 2) + (extendAngle or 0)
+  local scaleX = (targetSize or 1) * (isReverse and -1 or 1)
+  local scaleZ = targetSize2 or targetSize or 1
+  effect = Asset_Effect.PlayOn(path, completeTransform, SetTweenParticel, casttime)
+  effect:ResetLocalEulerAnglesXYZ(0, rotY, 0)
+  if isExpand then
+    local tweenScale = targetSize or 1
+    effect:ResetLocalScaleXYZ(0, 1, 0)
+    effect:ResetParticleOffsetHandler(SetTweenOffset, angleParam, _sweepFactor, angleParam, _sweepFactor)
+    effect:SetTweenScale(casttime, tweenScale)
+  else
+    effect:ResetLocalScaleXYZ(scaleX, 1, scaleZ)
+    effect:ResetParticleOffsetHandler(SetTweenOffset, 1, _sweepFactor, angleParam, _sweepFactor)
+  end
+  self:_AddCastWarningEffect(key)
+  self:SetWeakData(key, effect)
+  local key02 = -key
+  local effect02 = self:GetWeakData(key02)
+  if not effect02 then
+    effect02 = Asset_Effect.PlayOn(path02, completeTransform, SetTweenParticel, casttime)
+    effect02:ResetLocalScaleXYZ(scaleX, 1, scaleZ)
+    effect02:ResetLocalEulerAnglesXYZ(0, rotY, 0)
+    effect02:ResetParticleOffsetHandler(SetTweenOffset, angleParam, _sweepFactor, angleParam, _sweepFactor)
+    self:_AddCastWarningEffect(key02)
+    self:SetWeakData(key02, effect02)
+  end
 end
 
 function NCreature:PlayLookAtEffect(key, path, epID, offset, loop, stick, lookAtTrans, callback, callbackArg)

@@ -110,6 +110,10 @@ function RecallMvpCardComposeView:OnHelpBtnClick()
   end
 end
 
+function RecallMvpCardComposeView:GetMaterialCheckPackage()
+  return GameConfig.PackageMaterialCheck.user_recall
+end
+
 function RecallMvpCardComposeView:HandleItemUpdate()
   self:UpdateMaterial()
 end

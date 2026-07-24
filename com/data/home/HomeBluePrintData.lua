@@ -110,3 +110,51 @@ end
 function HomeBluePrintData:IsBPEqualsFurniture(nFurniture, bpStaticData)
   return nFurniture.staticID == bpStaticData.FurnitureId and nFurniture.placeFloor == bpStaticData.Floor and nFurniture.placeRow == bpStaticData.Row and nFurniture.placeCol == bpStaticData.Col and nFurniture.placeAngle == bpStaticData.Angle
 end
+
+function HomeBluePrintData.CreateFromServerData(serverData, mapID)
+  local o = HomeBluePrintData.new(nil)
+  o.mapID = mapID
+  local furns = serverData.furns or {}
+  o.furnitureBPStaticDatas = {}
+  o.totalFurnitureNum = #furns
+  local simpleDataMap = HomeProxy.Instance:GetMyFurnitureSimpleDatas()
+  local tbItem = Table_Item
+  for i = 1, #furns do
+    local f = furns[i]
+    local staticID = f.id
+    o.furnitureBPStaticDatas[i] = {
+      FurnitureId = staticID,
+      Floor = f.floor,
+      Row = f.row,
+      Col = f.col,
+      Angle = f.angle
+    }
+    local info = o.furnitureInfoMap[staticID]
+    if not info then
+      local haveNum = BagProxy.Instance:GetItemNumByStaticID(staticID, BagProxy.BagType.Furniture) or 0
+      local itemSData = tbItem[staticID]
+      local typeItems = simpleDataMap and simpleDataMap[itemSData and itemSData.Type]
+      if typeItems then
+        for _, staticData in pairs(typeItems) do
+          if staticData.id == staticID then
+            haveNum = haveNum + 1
+          end
+        end
+      end
+      info = {
+        staticID = staticID,
+        staticData = Table_HomeFurniture[staticID],
+        haveNum = haveNum,
+        needNum = 0
+      }
+      o.furnitureInfoMap[staticID] = info
+    end
+    info.needNum = info.needNum + 1
+  end
+  o.haveFurnitureNum = 0
+  for _, info in pairs(o.furnitureInfoMap) do
+    o.haveFurnitureNum = o.haveFurnitureNum + math.min(info.haveNum, info.needNum)
+  end
+  o.inited = true
+  return o
+end

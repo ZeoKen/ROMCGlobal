@@ -177,7 +177,15 @@ function InteractBase:IsNotifyChange()
   return false
 end
 
+function InteractBase:ShouldChangeMyselfOnOff()
+  return true
+end
+
 function InteractBase:IsAuto()
+  return false
+end
+
+function InteractBase:IsForceMoveNpc()
   return false
 end
 

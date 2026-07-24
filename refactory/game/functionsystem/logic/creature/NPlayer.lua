@@ -1,4 +1,5 @@
 autoImport("Creature_SceneUI")
+autoImport("Creature_SkatingMove")
 NPlayer = reusableClass("NPlayer", NCreatureWithPropUserdata)
 NPlayer.PoolSize = 80
 autoImport("NPlayer_Effect")
@@ -11,6 +12,7 @@ function NPlayer:ctor(aiClass)
   self.skill = ServerSkill.new()
   self.userDataManager = Game.LogicManager_Player_Userdata
   self.propmanager = Game.LogicManager_Player_Props
+  self.skatingMove = Creature_SkatingMove.new(self)
 end
 
 function NPlayer:GetCreatureType()
@@ -34,9 +36,76 @@ end
 local selfUpdateEffect = NPlayer._UpdateEffect
 local superUpdate = NPlayer.super.Update
 
+function NPlayer:OnSkatingBuffChanged(buffInfo, active, level)
+  if self.skatingMove ~= nil then
+    self.skatingMove:UpdateBuff(buffInfo, active, level)
+  end
+end
+
+function NPlayer:PrepareSkatingMoveTo(targetPos)
+  if self ~= Game.Myself then
+    return
+  end
+  if self.skatingMove ~= nil then
+    self.skatingMove:PrepareMoveTo(targetPos)
+  end
+end
+
+function NPlayer:StepSkatingDirMove(time, deltaTime, dir, stepTarget, rotateDir)
+  if self.skatingMove ~= nil then
+    return self.skatingMove:StepDirMove(time, deltaTime, dir, stepTarget, rotateDir)
+  end
+  return false
+end
+
+function NPlayer:MarkSkatingMoveToArrived()
+  if self.skatingMove ~= nil then
+    self.skatingMove:MarkMoveToArrived()
+  end
+end
+
+function NPlayer:OnSkatingMoveToEnd()
+  return self.skatingMove ~= nil and self.skatingMove:OnMoveToEnd()
+end
+
+function NPlayer:InterruptSkatingGlide()
+  if self ~= Game.Myself then
+    return
+  end
+  if self.skatingMove ~= nil then
+    self.skatingMove:InterruptGlide()
+  end
+end
+
+function NPlayer:IsSkatingChasing()
+  return self.skatingMove ~= nil and self.skatingMove:IsChasing()
+end
+
+function NPlayer:UpdateRemoteSkatingGlide(time, deltaTime)
+  if self ~= Game.Myself and self.skatingMove ~= nil then
+    self.skatingMove:Update(time, deltaTime)
+  end
+end
+
 function NPlayer:Update(time, deltaTime)
   superUpdate(self, time, deltaTime)
+  self:UpdateRemoteCoasterMount()
+  self:UpdateRemoteSkatingGlide(time, deltaTime)
   selfUpdateEffect(self, time, deltaTime)
+end
+
+function NPlayer:UpdateRemoteCoasterMount()
+  local coasterNpc = self.remoteCoasterNpc
+  if coasterNpc == nil then
+    return
+  end
+  if not self.remoteCoasterNpcMounted then
+    self:_TryMountToRemoteCoasterNpc()
+  end
+  if self.remoteCoasterMovePlayed and coasterNpc.logicTransform ~= nil and coasterNpc.logicTransform.targetPosition == nil then
+    coasterNpc:Logic_PlayAction_Idle()
+    self.remoteCoasterMovePlayed = false
+  end
 end
 
 function NPlayer:InitAssetRole()
@@ -135,6 +204,10 @@ end
 
 function NPlayer:UnregisterRoleDress()
   Game.LogicManager_RoleDress:Remove(self)
+end
+
+function NPlayer:UnregisterInteractLocalPlayer()
+  InteractLocalManager.Me():OnOtherPlayerOut(self.data.id)
 end
 
 local _ClickTopChatRoom = function(playerID)
@@ -360,13 +433,121 @@ function NPlayer:DoConstruct(asArray, serverData)
   self.serverid = serverData.serverid
 end
 
+function NPlayer:_GetRemoteCoasterMoveHost()
+  return self.remoteCoasterNpc
+end
+
+function NPlayer:CreateRemoteCoasterNpc(npcid)
+  self:DestroyRemoteCoasterNpc()
+  local pos = self:GetPosition()
+  local coasterNpc = SnakeCoasterManager.Me():CreateRemoteCoasterNpc(self.data.id, npcid, pos)
+  if coasterNpc == nil then
+    return
+  end
+  self.remoteCoasterNpc = coasterNpc
+  coasterNpc.mountedPlayerID = self.data.id
+  self.remoteCoasterNpcMounted = false
+  self.remoteCoasterMovePlayed = false
+  self:_TryMountToRemoteCoasterNpc()
+  if pos ~= nil then
+    self:_DriveRemoteCoasterMove(coasterNpc)
+    coasterNpc.logicTransform:NavMeshMoveTo(pos)
+  end
+end
+
+function NPlayer:_TryMountToRemoteCoasterNpc()
+  if self.remoteCoasterNpcMounted then
+    return true
+  end
+  local coasterNpc = self.remoteCoasterNpc
+  if coasterNpc == nil or coasterNpc.assetRole == nil then
+    return false
+  end
+  local cp = coasterNpc.assetRole:GetCP(0)
+  if cp == nil then
+    return false
+  end
+  self:Logic_StopMove()
+  self:SetParent(cp)
+  self:Logic_SetAngleY(0, true)
+  self:Logic_LockRotation(true)
+  self:Logic_PlayAction_Simple("ride_wait", "wait")
+  if self.logicTransform ~= nil and self.logicTransform.SetScaleXYZ ~= nil then
+    self.logicTransform:SetScaleXYZ(1, 1, 1)
+  end
+  self.remoteCoasterNpcMounted = true
+  return true
+end
+
+function NPlayer:DestroyRemoteCoasterNpc()
+  if not self.remoteCoasterNpc then
+    return
+  end
+  self.remoteCoasterNpc.mountedPlayerID = nil
+  if self.remoteCoasterNpcMounted then
+    self:Logic_LockRotation(false)
+    self:SetParent(nil)
+  end
+  self.remoteCoasterNpcMounted = false
+  self.remoteCoasterMovePlayed = false
+  SnakeCoasterManager.Me():DestroyRemoteCoasterNpc(self.data.id)
+  self.remoteCoasterNpc = nil
+end
+
+function NPlayer:PlayRemoteCoasterAction(actionId)
+  if not self.remoteCoasterNpc then
+    return
+  end
+  local actionConfig = Table_ActionAnime and Table_ActionAnime[actionId]
+  if actionConfig == nil or actionConfig.Name == nil then
+    return
+  end
+  self:Client_PlayAction(actionConfig.Name, nil, true)
+end
+
+function NPlayer:Logic_MoveTo(p)
+  local coasterNpc = self:_GetRemoteCoasterMoveHost()
+  if coasterNpc ~= nil then
+    coasterNpc.logicTransform:NavMeshMoveTo(p)
+    self:_DriveRemoteCoasterMove(coasterNpc)
+    return
+  end
+  NPlayer.super.Logic_MoveTo(self, p)
+end
+
+function NPlayer:Logic_NavMeshMoveTo(p)
+  local coasterNpc = self:_GetRemoteCoasterMoveHost()
+  if coasterNpc ~= nil then
+    coasterNpc.logicTransform:NavMeshMoveTo(p)
+    self:_DriveRemoteCoasterMove(coasterNpc)
+    return true
+  end
+  return NPlayer.super.Logic_NavMeshMoveTo(self, p)
+end
+
+function NPlayer:_DriveRemoteCoasterMove(coasterNpc)
+  if coasterNpc.logicTransform ~= nil and self.logicTransform ~= nil then
+    coasterNpc.logicTransform:SetMoveSpeed(self.logicTransform:GetMoveSpeed())
+  end
+  if not self.remoteCoasterMovePlayed then
+    coasterNpc:Logic_PlayAction_Move(nil, false)
+    self.remoteCoasterMovePlayed = true
+  end
+  self:_TryMountToRemoteCoasterNpc()
+end
+
 function NPlayer:DoDeconstruct(asArray)
+  if self.skatingMove ~= nil then
+    self.skatingMove:Reset()
+  end
   self:ResetRiderCamera()
   self:PlayTeamCircle(0)
   Game.InteractNpcManager:OnCreatureRecycle(self.data.id)
   Game.InteractNpcManager:UpdateRegisterInteractMount(self.data.id)
   self:UnRegistCulling()
   self:UnregisterRoleDress()
+  self:UnregisterInteractLocalPlayer()
+  self:DestroyRemoteCoasterNpc()
   NPlayer.super.DoDeconstruct(self, asArray)
   if self.sceneui then
     self.sceneui:Destroy()

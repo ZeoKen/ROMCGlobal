@@ -1,6 +1,16 @@
 Table_InteractNpc_t = {
   CameraRotation = {
     {
+      10,
+      1,
+      0
+    },
+    {
+      35,
+      -35,
+      0
+    },
+    {
       18,
       -4,
       0
@@ -21,13 +31,13 @@ Table_InteractNpc_t = {
       0
     },
     {
-      35,
-      -75,
+      10,
+      116,
       0
     },
     {
-      10,
-      116,
+      35,
+      -75,
       0
     },
     {
@@ -46,32 +56,12 @@ Table_InteractNpc_t = {
       0
     },
     {
-      10,
-      1,
-      0
-    },
-    {
-      35,
-      -35,
-      0
-    },
-    {
       30,
       -50,
       0
     }
   },
   CameraViewPort = {
-    {
-      0.5,
-      0.4,
-      25
-    },
-    {
-      0.5,
-      0.5,
-      30
-    },
     {
       0.5,
       0.45,
@@ -81,25 +71,40 @@ Table_InteractNpc_t = {
       0.5,
       0.55,
       32
+    },
+    {
+      0.5,
+      0.4,
+      25
+    },
+    {
+      0.5,
+      0.5,
+      30
     }
   },
   MountInfo = {
-    {37},
-    {57, 57},
+    {60, 57},
     {
-      [3] = 57,
-      [4] = 57
+      100,
+      57,
+      57,
+      57,
+      3,
+      60,
+      3,
+      57,
+      57
     },
+    {57, 57},
+    {37},
+    {57},
     {
       [3] = 57
     },
-    {60, 57},
     {
-      -1,
-      -1,
-      -1,
-      -1,
-      -1
+      [3] = 57,
+      [4] = 57
     },
     {100},
     {
@@ -117,41 +122,26 @@ Table_InteractNpc_t = {
       57,
       60
     },
-    {57},
     {
-      100,
-      57,
-      57,
-      57,
-      3,
-      60,
-      3,
-      57,
-      57
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
     }
   },
   Param = {
     {
-      MoveTime = 26,
-      WaitOffTime = 1,
-      WaitStartTime = 3
-    },
-    {MyselfActionId = 39},
-    {
-      MoveTime = 50,
-      WaitOffTime = 6,
-      WaitStartTime = 6
-    },
-    {
-      MoveTime = 68,
-      WaitOffTime = 0,
-      WaitStartTime = 6
+      achieveItem = "play_snow_ball",
+      buffs = {30033303, 30033312},
+      radius = 10
     },
     {
       MoveTime = 142.31,
       WaitOffTime = 1,
       WaitStartTime = 9
     },
+    {MyselfActionId = 39},
     {
       FlowerCarConfigId = 1,
       RunTime = {
@@ -320,6 +310,21 @@ Table_InteractNpc_t = {
       }
     },
     {
+      MoveTime = 26,
+      WaitOffTime = 1,
+      WaitStartTime = 3
+    },
+    {
+      MoveTime = 50,
+      WaitOffTime = 6,
+      WaitStartTime = 6
+    },
+    {
+      MoveTime = 68,
+      WaitOffTime = 0,
+      WaitStartTime = 6
+    },
+    {
       buffs = {25013, 502}
     }
   }
@@ -329,483 +334,484 @@ Table_InteractNpc = {
     id = 1726,
     Type = 12,
     Range = 2,
-    MountInfo = Table_InteractNpc_t.MountInfo[6]
+    MountInfo = Table_InteractNpc_t.MountInfo[11]
   },
   [9348] = {
     id = 9348,
     Type = 3,
     Auto = 1,
-    MountInfo = Table_InteractNpc_t.MountInfo[7]
+    MountInfo = Table_InteractNpc_t.MountInfo[8]
   },
   [9349] = {
     id = 9349,
     Type = 3,
     Auto = 1,
-    MountInfo = Table_InteractNpc_t.MountInfo[7]
+    MountInfo = Table_InteractNpc_t.MountInfo[8]
   },
   [9350] = {
     id = 9350,
     Type = 2,
     Range = 5,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[11],
-    MountInfo = Table_InteractNpc_t.MountInfo[8],
-    Param = Table_InteractNpc_t.Param[3]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[2],
+    MountInfo = Table_InteractNpc_t.MountInfo[9],
+    Param = Table_InteractNpc_t.Param[6]
   },
   [9351] = {
     id = 9351,
     Type = 1,
     Range = 5,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[9]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[10]
   },
   [9352] = {
     id = 9352,
     Type = 1,
     Range = 5,
     ActionID = 2001,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
     CameraRotation = Table_InteractNpc_t.CameraRotation[12],
-    MountInfo = Table_InteractNpc_t.MountInfo[5]
+    MountInfo = Table_InteractNpc_t.MountInfo[1]
   },
   [9353] = {
     id = 9353,
     Type = 2,
     Range = 5,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[11],
-    MountInfo = Table_InteractNpc_t.MountInfo[10],
-    Param = Table_InteractNpc_t.Param[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[2],
+    MountInfo = Table_InteractNpc_t.MountInfo[5],
+    Param = Table_InteractNpc_t.Param[7]
   },
   [9354] = {
     id = 9354,
     Type = 2,
     Range = 5,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[11],
-    MountInfo = Table_InteractNpc_t.MountInfo[10],
-    Param = Table_InteractNpc_t.Param[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[2],
+    MountInfo = Table_InteractNpc_t.MountInfo[5],
+    Param = Table_InteractNpc_t.Param[7]
   },
   [9355] = {
     id = 9355,
     Type = 2,
     Range = 5,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[11],
-    MountInfo = Table_InteractNpc_t.MountInfo[10],
-    Param = Table_InteractNpc_t.Param[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[2],
+    MountInfo = Table_InteractNpc_t.MountInfo[5],
+    Param = Table_InteractNpc_t.Param[7]
   },
   [808454] = {
     id = 808454,
     Type = 4,
     Range = 5,
-    MountInfo = Table_InteractNpc_t.MountInfo[10],
-    Param = Table_InteractNpc_t.Param[6]
+    MountInfo = Table_InteractNpc_t.MountInfo[5],
+    Param = Table_InteractNpc_t.Param[4]
   },
   [808455] = {
     id = 808455,
     Type = 4,
     Range = 5,
-    Param = Table_InteractNpc_t.Param[6]
+    Param = Table_InteractNpc_t.Param[4]
   },
   [808456] = {
     id = 808456,
     Type = 4,
     Range = 5,
-    Param = Table_InteractNpc_t.Param[6]
+    Param = Table_InteractNpc_t.Param[4]
   },
   [808457] = {
     id = 808457,
     Type = 4,
     Range = 5,
-    Param = Table_InteractNpc_t.Param[6]
+    Param = Table_InteractNpc_t.Param[4]
   },
   [821147] = {
     id = 821147,
     Type = 2,
     Range = 10,
-    MountInfo = Table_InteractNpc_t.MountInfo[2],
-    Param = Table_InteractNpc_t.Param[5]
+    MountInfo = Table_InteractNpc_t.MountInfo[3],
+    Param = Table_InteractNpc_t.Param[2]
   },
   [821148] = {
     id = 821148,
     Type = 2,
     Range = 10,
-    MountInfo = Table_InteractNpc_t.MountInfo[2],
-    Param = Table_InteractNpc_t.Param[5]
+    MountInfo = Table_InteractNpc_t.MountInfo[3],
+    Param = Table_InteractNpc_t.Param[2]
   },
   [821149] = {
     id = 821149,
     Type = 2,
     Range = 10,
-    MountInfo = Table_InteractNpc_t.MountInfo[2],
-    Param = Table_InteractNpc_t.Param[5]
+    MountInfo = Table_InteractNpc_t.MountInfo[3],
+    Param = Table_InteractNpc_t.Param[2]
   },
   [821632] = {
     id = 821632,
     Type = 1,
     Range = 5,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[10],
-    MountInfo = Table_InteractNpc_t.MountInfo[5]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
+    MountInfo = Table_InteractNpc_t.MountInfo[1]
   },
   [822193] = {
     id = 822193,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [822194] = {
     id = 822194,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [822195] = {
     id = 822195,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [822196] = {
     id = 822196,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [822197] = {
     id = 822197,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [822198] = {
+    id = 822198,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [822199] = {
     id = 822199,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [822200] = {
     id = 822200,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [822201] = {
     id = 822201,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [822202] = {
     id = 822202,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[2],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[4],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [822210] = {
     id = 822210,
     Type = 1,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [822211] = {
     id = 822211,
     Type = 1,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[4],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[6],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [822220] = {
     id = 822220,
     Type = 5,
     Range = 5,
-    Param = Table_InteractNpc_t.Param[2]
+    Param = Table_InteractNpc_t.Param[3]
   },
   [822232] = {
     id = 822232,
     Type = 1,
     Range = 3,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[3]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[7]
   },
   [822233] = {
     id = 822233,
     Type = 1,
     Range = 3,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[3]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[7]
   },
   [822234] = {
     id = 822234,
     Type = 1,
     Range = 3,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[3]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[7]
   },
   [825031] = {
     id = 825031,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825032] = {
     id = 825032,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825033] = {
     id = 825033,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[6],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[7],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825034] = {
     id = 825034,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825035] = {
     id = 825035,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[7],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[9],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825036] = {
     id = 825036,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[7],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[9],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825037] = {
     id = 825037,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[7],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[9],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825038] = {
     id = 825038,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[7],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[9],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825039] = {
     id = 825039,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825040] = {
     id = 825040,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825041] = {
     id = 825041,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825042] = {
     id = 825042,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825043] = {
     id = 825043,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825044] = {
     id = 825044,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[10],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [825045] = {
     id = 825045,
     Type = 5,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[9],
-    MountInfo = Table_InteractNpc_t.MountInfo[4]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[11],
+    MountInfo = Table_InteractNpc_t.MountInfo[6]
   },
   [828388] = {
     id = 828388,
     Type = 1,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [828389] = {
     id = 828389,
     Type = 1,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [828390] = {
     id = 828390,
     Type = 1,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [828391] = {
     id = 828391,
     Type = 1,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [828392] = {
     id = 828392,
     Type = 1,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[3]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[7]
   },
   [828393] = {
     id = 828393,
     Type = 1,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[3]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[7]
   },
   [828394] = {
     id = 828394,
     Type = 1,
     Range = 1,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[3]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[7]
   },
   [828395] = {
     id = 828395,
     Type = 1,
     Range = 1,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[3]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[7]
   },
   [828396] = {
     id = 828396,
     Type = 1,
     Range = 1,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[3]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[7]
   },
   [828397] = {
     id = 828397,
     Type = 1,
     Range = 1,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[3]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[7]
   },
   [828398] = {
     id = 828398,
     Type = 1,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[3]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[7]
   },
   [828399] = {
     id = 828399,
     Type = 1,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[3]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[7]
   },
   [828400] = {
     id = 828400,
     Type = 1,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[5],
-    MountInfo = Table_InteractNpc_t.MountInfo[3]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[8],
+    MountInfo = Table_InteractNpc_t.MountInfo[7]
   },
   [828401] = {
     id = 828401,
     Type = 1,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[1],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[1],
-    MountInfo = Table_InteractNpc_t.MountInfo[1]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[3],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[3],
+    MountInfo = Table_InteractNpc_t.MountInfo[4]
   },
   [828722] = {
     id = 828722,
@@ -816,7 +822,7 @@ Table_InteractNpc = {
     id = 840017,
     Type = 8,
     Range = 2,
-    Param = Table_InteractNpc_t.Param[7]
+    Param = Table_InteractNpc_t.Param[8]
   },
   [842005] = {id = 842005, Range = 2},
   [842006] = {
@@ -847,9 +853,9 @@ Table_InteractNpc = {
     id = 842310,
     Type = 1,
     Range = 2,
-    CameraViewPort = Table_InteractNpc_t.CameraViewPort[4],
-    CameraRotation = Table_InteractNpc_t.CameraRotation[11],
-    MountInfo = Table_InteractNpc_t.MountInfo[11]
+    CameraViewPort = Table_InteractNpc_t.CameraViewPort[2],
+    CameraRotation = Table_InteractNpc_t.CameraRotation[2],
+    MountInfo = Table_InteractNpc_t.MountInfo[2]
   },
   [842326] = {id = 842326, Range = 1},
   [842327] = {id = 842327, Range = 2},
@@ -872,15 +878,15 @@ Table_InteractNpc = {
     id = 842397,
     Type = 2,
     Range = 10,
-    MountInfo = Table_InteractNpc_t.MountInfo[2],
-    Param = Table_InteractNpc_t.Param[1]
+    MountInfo = Table_InteractNpc_t.MountInfo[3],
+    Param = Table_InteractNpc_t.Param[5]
   },
   [842398] = {
     id = 842398,
     Type = 2,
     Range = 10,
-    MountInfo = Table_InteractNpc_t.MountInfo[2],
-    Param = Table_InteractNpc_t.Param[1]
+    MountInfo = Table_InteractNpc_t.MountInfo[3],
+    Param = Table_InteractNpc_t.Param[5]
   },
   [850026] = {
     id = 850026,
@@ -935,6 +941,17 @@ Table_InteractNpc = {
   [853254] = {id = 853254, Range = 2},
   [853255] = {id = 853255, Range = 2},
   [853256] = {id = 853256, Range = 5},
+  [853257] = {id = 853257, Range = 2},
+  [853258] = {id = 853258, Range = 3},
+  [853259] = {id = 853259, Range = 2},
+  [853260] = {id = 853260, Range = 2},
+  [853261] = {id = 853261, Range = 2},
+  [853262] = {id = 853262, Range = 5},
+  [854000] = {
+    Type = 13,
+    Range = 2,
+    Param = Table_InteractNpc_t.Param[1]
+  },
   [854001] = {
     id = 854001,
     Type = 6,
@@ -950,7 +967,7 @@ local cell_mt = {
     MountInfo = _EmptyTable,
     Param = _EmptyTable,
     Type = 10,
-    id = 822198
+    id = 854000
   }
 }
 for _, d in pairs(Table_InteractNpc) do

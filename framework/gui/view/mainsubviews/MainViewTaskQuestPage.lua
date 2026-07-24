@@ -1367,8 +1367,8 @@ function MainViewTaskQuestPage:handlePlayerMapChange(note)
   if note.type == LoadSceneEvent.StartLoad then
     self.isInFuben = false
     self:folderSymbol(true)
-    self:selectShowDirQuest(self.onGoingQuestId)
     GameFacade.Instance:sendNotification(MainViewEvent.RemoveDungeonInfoBord, "MainViewRaidInfoPage")
+    self:selectShowDirQuest(self.onGoingQuestId)
     return
   end
   self:MapChange()
@@ -1379,6 +1379,7 @@ function MainViewTaskQuestPage:handlePlayerMapChange(note)
     end
     self.isInFuben = false
     GameFacade.Instance:sendNotification(MainViewEvent.RemoveDungeonInfoBord, "MainViewRaidInfoPage")
+    self:selectShowDirQuest(self.onGoingQuestId)
     self:sendNotification(UIEvent.CloseUI, DeathPopView.ViewType)
   else
     local raidConfig = Table_MapRaid[data.dmapID]

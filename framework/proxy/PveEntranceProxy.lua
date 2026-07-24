@@ -23,6 +23,7 @@ PveRaidType = {
   GeffenMagic = 84,
   DestroyAirShip = FuBenCmd_pb.ERAIDTYPE_DESTROY_AIR_SHIP or 87,
   BageLab = FuBenCmd_pb.ERAIDTYPE_BAGE_LAB or 88,
+  IceLab = FuBenCmd_pb.ERAIDTYPE_ICE_LAB or 90,
   LotteryRaid = FuBenCmd_pb.ERAIDTYPE_LOTTERY_RAID or 91
 }
 RaidType2AERewardMode = {
@@ -52,7 +53,8 @@ RaidType2GroupID = {
   [PveRaidType.NormalMaterials] = EPVEGROUPTYPE_COMMON_MATERIALS or 32,
   [PveRaidType.MemoryPalace] = 33,
   [PveRaidType.MemoryRaid] = 40,
-  [PveRaidType.SpaceTimeIllusion] = 44
+  [PveRaidType.SpaceTimeIllusion] = 44,
+  [PveRaidType.IceLab] = 49
 }
 RaidType2AERewardMode = {
   [PveRaidType.Comodo] = AERewardType.ComodoRaid,
@@ -136,6 +138,7 @@ function PveEntranceProxy:Init()
   self.catalogAll_RoadOfHero = {}
   self.catalogAll_Astral = {}
   self.catalogAll_Memory = {}
+  self.catalogAll_IceLab = {}
   self.catalogAll_FairyTale = {}
   self.catalogAll_GeffenMagic = {}
   self.catalogAll_LotteryRaid = {}
@@ -146,6 +149,7 @@ function PveEntranceProxy:Init()
   self.catalogMap_RoadOfHero = {}
   self.catalogMap_Astral = {}
   self.catalogMap_Memory = {}
+  self.catalogMap_IceLab = {}
   self.catalogMap_SpaceTimeIllusion = {}
   self.catalogMap_FairyTale = {}
   self.catalogMap_GeffenMagic = {}
@@ -173,6 +177,7 @@ function PveEntranceProxy:TryResetCatalogAll()
   _ArrayClear(self.catalogAll_RoadOfHero)
   _ArrayClear(self.catalogAll_Astral)
   _ArrayClear(self.catalogAll_Memory)
+  _ArrayClear(self.catalogAll_IceLab)
   _ArrayClear(self.catalogAll_FairyTale)
   _ArrayClear(self.catalogAll_GeffenMagic)
   _ArrayClear(self.catalogAll_LotteryRaid)
@@ -206,6 +211,8 @@ function PveEntranceProxy:SetAllCatalogByRaidMap()
       _ArrayPushBack(self.catalogAll_Astral, firstPveData)
     elseif firstPveData.staticEntranceData:IsMemoryRaid() then
       _ArrayPushBack(self.catalogAll_Memory, firstPveData)
+    elseif firstPveData.staticEntranceData:IsIceLab() then
+      _ArrayPushBack(self.catalogAll_IceLab, firstPveData)
     elseif firstPveData.staticEntranceData:IsFairyTale() then
       if not firstPveData:Forbidden() then
         _ArrayPushBack(self.catalogAll_FairyTale, firstPveData)
@@ -321,6 +328,20 @@ function PveEntranceProxy:PreprocessMemoryRaidEntrance()
   end
 end
 
+function PveEntranceProxy:PreprocessIceLabEntrance()
+  _TableClear(self.catalogMap_IceLab)
+  self.iceLabFirstPveData = self.catalogAll_IceLab[1]
+  if self.iceLabFirstPveData then
+    local catalogs = self.iceLabFirstPveData.staticEntranceData.staticData.Catalog
+    for i = 1, #catalogs do
+      local catalogData = self.catalogMap_IceLab[catalogs[i]]
+      catalogData = catalogData or {}
+      catalogData[#catalogData + 1] = self.iceLabFirstPveData
+      self.catalogMap_IceLab[catalogs[i]] = catalogData
+    end
+  end
+end
+
 function PveEntranceProxy:PreprocessFairyTaleEntrance()
   _TableClear(self.catalogMap_FairyTale)
   self.fairyTaleFirstPveData = self.catalogAll_FairyTale[1]
@@ -382,6 +403,7 @@ function PveEntranceProxy:SetCatalogMap()
   self:_setCatalogMap(self.catalogMap_RoadOfHero)
   self:_setCatalogMap(self.catalogMap_Astral)
   self:_setCatalogMap(self.catalogMap_Memory)
+  self:_setCatalogMap(self.catalogMap_IceLab)
   self:_setCatalogMap(self.catalogMap_SpaceTimeIllusion)
   self:_setCatalogMap(self.catalogMap_FairyTale)
   self:_setCatalogMap(self.catalogMap_GeffenMagic)
@@ -398,6 +420,7 @@ function PveEntranceProxy:SetCatalogAll()
   _ArrayPushBack(self.catalogAll, self.heroRoadFirstPveData)
   _ArrayPushBack(self.catalogAll, self.astralFirstPveData)
   _ArrayPushBack(self.catalogAll, self.memoryFirstPveData)
+  _ArrayPushBack(self.catalogAll, self.iceLabFirstPveData)
   _ArrayPushBack(self.catalogAll, self.spaceTimeIllusionFirstPveData)
   _ArrayPushBack(self.catalogAll, self.fairyTaleFirstPveData)
   _ArrayPushBack(self.catalogAll, self.geffenMagicFirstPveData)
@@ -490,6 +513,10 @@ function PveEntranceProxy:GetAllMemoryRaidData()
   return self.catalogAll_Memory
 end
 
+function PveEntranceProxy:GetAllIceLabData()
+  return self.catalogAll_IceLab
+end
+
 function PveEntranceProxy:GetAllFairyTaleData()
   return self.catalogAll_FairyTale
 end
@@ -506,6 +533,7 @@ function PveEntranceProxy:StaticSortEntrance()
   table.sort(self.catalogAll_RoadOfHero, _SortFunc)
   table.sort(self.catalogAll_Astral, _SortFunc)
   table.sort(self.catalogAll_Memory, _SortFunc)
+  table.sort(self.catalogAll_IceLab, _SortFunc)
   table.sort(self.catalogAll_FairyTale, _SortFunc)
   table.sort(self.catalogAll_GeffenMagic, _SortFunc)
   table.sort(self.catalogAll_LotteryRaid, _SortFunc)
@@ -626,6 +654,7 @@ function PveEntranceProxy:HandleCombinePveData()
   self:PreprocessHeroRoadEntrance()
   self:PreprocessAstralEntrance()
   self:PreprocessMemoryRaidEntrance()
+  self:PreprocessIceLabEntrance()
   self:PreprocessFairyTaleEntrance()
   self:PreprocessGeffenMagicEntrance()
   self:PreprocessLotteryRaidEntrance()
@@ -850,6 +879,10 @@ end
 
 function PveEntranceProxy:GetCurMemoryFirstPveData()
   return self.memoryFirstPveData
+end
+
+function PveEntranceProxy:GetCurIceLabFirstPveData()
+  return self.iceLabFirstPveData
 end
 
 function PveEntranceProxy:GetCurFairyTaleFirstPveData()

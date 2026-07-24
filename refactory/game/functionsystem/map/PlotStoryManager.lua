@@ -796,6 +796,9 @@ function PlotStoryManager:Start_PQTLP(pqtl_name, plotEndCall, plotEndCallParam, 
   else
     pqtl_id = PQTL_Manager.Instance:Create_PQTL(pqtl_name)
   end
+  if pqtl_id == 0 then
+    redlog(string.format("找不到名为'%s'的Timeline啦！！！！！！", tostring(pqtl_name)))
+  end
   return self:Create_PSTLP(pqtl_id, pqtl_name, plotEndCall, plotEndCallParam, customNpclist, plotStoryShowSkip, fixedDuration, extraParams, isLoopPlay, startFromPct, plotStartCall, plotStartCallParam, needRestore, skipDelay)
 end
 

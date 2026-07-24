@@ -149,6 +149,10 @@ function PveEntranceData:IsMemoryRaid()
   return self.raidType == PveRaidType.MemoryRaid
 end
 
+function PveEntranceData:IsIceLab()
+  return self.raidType == PveRaidType.IceLab
+end
+
 function PveEntranceData:IsGeffenMagic()
   return self.raidType == PveRaidType.GeffenMagic
 end

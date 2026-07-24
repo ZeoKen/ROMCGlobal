@@ -13,6 +13,46 @@ local CompatibilityMode_V9 = BackwardCompatibilityUtil.CompatibilityMode_V9
 local CullingIDUtility = CullingIDUtility
 local ArrayRemove = TableUtility.ArrayRemove
 local DestroyArray = ReusableTable.DestroyArray
+local MountFashionGetDefaultConfig = function(mount, index)
+  local defaults = Game.MountDefaultFashion and Game.MountDefaultFashion[mount]
+  if not defaults then
+    return
+  end
+  local categories = Game.MountFashionCategories and Game.MountFashionCategories[mount]
+  local pos = categories and categories[index]
+  if pos then
+    for i = 1, #defaults do
+      local config = Table_MountFashion[defaults[i]]
+      if config and config.Pos == pos then
+        return config
+      end
+    end
+  end
+  return Table_MountFashion[defaults[index]]
+end
+local MountFashionApplyHiddenPart = function(parts, config)
+  if not config then
+    return
+  end
+  for i = 1, #config.PartIndex do
+    local partIndex = config.PartIndex[i]
+    if config.Type == 1 then
+      local skin = config.Skin
+      if skin and 0 < skin[i] then
+        Asset_Role.SetMountPartColor(parts, partIndex, skin[i])
+      end
+    elseif config.Type == 2 and partIndex and 0 < partIndex then
+      if config.Hide == 1 then
+        Asset_Role.SetMountSubPart(parts, partIndex, 0)
+      else
+        Asset_Role.SetMountSubPart(parts, partIndex, config.PartID[i])
+        if config.Skin and config.Skin ~= _EmptyTable then
+          Asset_Role.SetMountPartColor(parts, partIndex, config.Skin[i])
+        end
+      end
+    end
+  end
+end
 local MaxStateEffect = 0
 for k, v in pairs(CommonFun.StateEffect) do
   if v > MaxStateEffect then
@@ -173,6 +213,36 @@ function CreatureData:RemovePetID(petID)
   end
 end
 
+function CreatureData:AddRotateID(rotateID)
+  if rotateID == nil or rotateID == 0 then
+    return
+  end
+  if self.rotateID == rotateID then
+    return
+  end
+  local oldRotateID = self.rotateID or 0
+  self.rotateID = rotateID
+  local oldNpc = NSceneNpcProxy.Instance:Find(oldRotateID)
+  if oldNpc and oldNpc.isCircleTraceNpc then
+    oldNpc:HandleOwnerRemoved()
+  end
+end
+
+function CreatureData:RemoveRotateID()
+  self.rotateID = 0
+end
+
+function CreatureData:HandleRotateNpcsOwnerRemoved()
+  local rotateID = self.rotateID or 0
+  if 0 < rotateID then
+    local npc = NSceneNpcProxy.Instance:Find(rotateID)
+    if npc and npc.isCircleTraceNpc then
+      npc:HandleOwnerRemoved()
+    end
+  end
+  self.rotateID = 0
+end
+
 function CreatureData:GetPetCount(type)
   if self.petIDs == nil then
     return 0
@@ -265,6 +335,7 @@ function CreatureData:DoDeconstruct(asArray)
     ReusableTable.DestroyArray(self.petIDs)
     self.petIDs = nil
   end
+  self:HandleRotateNpcsOwnerRemoved()
   self:ClearCullingID()
 end
 
@@ -1638,16 +1709,24 @@ end
 
 function CreatureDataWithPropUserdata:SetMountFashionParts(parts, userData)
   local mount = userData:Get(UDEnum.MOUNT)
+  local bytes = userData:GetBytes(UDEnum.MOUNT_FASHION)
   if not mount or mount == 0 then
     return
   end
-  local bytes = userData:GetBytes(UDEnum.MOUNT_FASHION)
   if bytes then
     local rets = string.split(bytes, ";")
+    local serverPosMap = {}
     for i = 1, #rets do
       local styleId = tonumber(rets[i])
       local config = Table_MountFashion[styleId]
-      if config and config.Mount == mount then
+      if styleId == 0 then
+        local defaultConfig = MountFashionGetDefaultConfig(mount, i)
+        if defaultConfig then
+          serverPosMap[defaultConfig.Pos] = 0
+          MountFashionApplyHiddenPart(parts, defaultConfig)
+        end
+      elseif config and config.Mount == mount then
+        serverPosMap[config.Pos] = styleId
         local partIndex = config.PartIndex
         for j = 1, #partIndex do
           if config.Type == 1 then
@@ -1668,16 +1747,12 @@ function CreatureDataWithPropUserdata:SetMountFashionParts(parts, userData)
         local config = Table_MountFashion[id]
         if config then
           local pos = config.Pos
-          if not TableUtility.ArrayFindByPredicate(rets, function(ret, arg)
-            local staticData = Table_MountFashion[tonumber(ret)]
-            return staticData and staticData.Pos == arg
-          end, pos) then
+          local serverStyleId = serverPosMap[pos]
+          if serverStyleId == nil then
             local partIndex = config.PartIndex
             for j = 1, #partIndex do
               if config.Type == 1 then
                 Asset_Role.SetMountPartColor(parts, partIndex[j], config.Skin[j])
-              elseif config.Type == 2 then
-                Asset_Role.SetMountSubPart(parts, partIndex[j], config.PartID[j])
               end
             end
           end
@@ -1722,24 +1797,6 @@ function CreatureDataWithPropUserdata:SetMountSubParts(parts, userData)
       if config and config.Type == 2 then
         for j = 1, #config.PartIndex do
           Asset_Role.SetMountSubPart(parts, config.PartIndex[j], config.PartID[j])
-        end
-      end
-    end
-    local defaults = Game.MountDefaultFashion[mount]
-    if defaults then
-      for i = 1, #defaults do
-        local id = defaults[i]
-        local config = Table_MountFashion[id]
-        if config then
-          local pos = config.Pos
-          if not TableUtility.ArrayFindByPredicate(rets, function(ret, arg)
-            local staticData = Table_MountFashion[tonumber(ret)]
-            return staticData and staticData.Pos == arg
-          end, pos) and config.Type == 2 then
-            for j = 1, #config.PartIndex do
-              Asset_Role.SetMountSubPart(parts, config.PartIndex[j], config.PartID[j])
-            end
-          end
         end
       end
     end

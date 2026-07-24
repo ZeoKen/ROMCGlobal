@@ -1744,6 +1744,7 @@ Table_PoemStep = {
   [3] = {
     id = 3,
     Questid = 600100004,
+    name = "黑暗降临·故事三",
     Descrip = Table_PoemStep_t.Descrip[3],
     TraceInfo = "危机--黑暗之王"
   },
@@ -1804,7 +1805,6 @@ Table_PoemStep = {
   [11] = {
     id = 11,
     Questid = 600170003,
-    name = "百年智家·故事三",
     step = 6,
     Descrip = Table_PoemStep_t.Descrip[11],
     TraceInfo = "殊死一战--智家对妖君！"
@@ -2188,8 +2188,7 @@ Table_PoemStep = {
     Questid = 311110001,
     name = "忽克连·故事三",
     step = 7,
-    Descrip = Table_PoemStep_t.Descrip[61],
-    TraceInfo = "失败是成功之母"
+    Descrip = Table_PoemStep_t.Descrip[61]
   },
   [62] = {
     id = 62,
@@ -2555,7 +2554,8 @@ Table_PoemStep = {
     Questid = 311180011,
     name = "统帅·故事一",
     step = 7,
-    Descrip = Table_PoemStep_t.Descrip[108]
+    Descrip = Table_PoemStep_t.Descrip[108],
+    TraceInfo = "斐扬毁灭？斐扬新生？"
   },
   [109] = {
     id = 109,
@@ -2796,9 +2796,9 @@ local cell_mt = {
   __index = {
     Descrip = _EmptyTable,
     Questid = 311150001,
-    TraceInfo = "斐扬毁灭？斐扬新生？",
+    TraceInfo = "失败是成功之母",
     id = 1,
-    name = "黑暗降临·故事三",
+    name = "百年智家·故事三",
     step = 0
   }
 }

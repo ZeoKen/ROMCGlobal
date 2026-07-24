@@ -375,6 +375,7 @@ function PlayerTipData:SetByPlayerData(data)
   self.headData:TransByPlayerData(data)
   self.zoneid = data.userdata and data.userdata:Get(UDEnum.ZONEID) or MyselfProxy.Instance:GetZoneId()
   self.homeid = data.userdata and data.userdata:Get(UDEnum.HOME_ROOMID)
+  self.snow_room_id = data.userdata and data.userdata:Get(UDEnum.SNOW_ROOMID)
   self.accid = data.accid
   self.serverid = data.serverid
   local mercenaryGuildData = data.GetMercenaryGuildData and data:GetMercenaryGuildData()

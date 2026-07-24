@@ -36,6 +36,13 @@ if not AI_Myself.AI_Myself_inited then
   AI_CMD_Myself_DirMoveEnd.Interrupt = {
     [AI_CMD_Myself_DirMove] = 1
   }
+  AI_CMD_Myself_BeHolded.Interrupt = {
+    [AI_CMD_Myself_MoveTo] = 1,
+    [AI_CMD_Myself_DirMove] = 1,
+    [AI_CMD_Myself_DirMoveEnd] = 1,
+    [AI_CMD_Gliding] = 1,
+    [AI_CMD_Myself_Access] = 1
+  }
   AI_CMD_Myself_Access.Interrupt = {
     [AI_CMD_Myself_MoveTo] = 1,
     [AI_CMD_Myself_DirMove] = 1,
@@ -118,8 +125,10 @@ local CancelSkillLockTargetDelay = 1
 local Move_CMD = {
   [AI_CMD_Myself_DirMove] = 1,
   [AI_CMD_Myself_DirMoveEnd] = 1,
+  [AI_CMD_Gliding] = 1,
   [AI_CMD_Myself_MoveTo] = 1,
-  [AI_CMD_Myself_Access] = 1
+  [AI_CMD_Myself_Access] = 1,
+  [AI_CMD_Myself_BeHolded] = 1
 }
 
 function AI_Myself:ctor()
@@ -298,7 +307,11 @@ function AI_Myself:_DoAllowInterrupt(currentCmd, nextAIClass, creature, ignoreHi
   if nil == nextInterruptMap then
     return false
   end
-  local interruptLevel = nextInterruptMap[currentCmd.AIClass]
+  local lookupClass = currentCmd.AIClass
+  if lookupClass == AI_CMD_Gliding then
+    lookupClass = AI_CMD_Myself_DirMove
+  end
+  local interruptLevel = nextInterruptMap[lookupClass]
   if nil == interruptLevel then
     return false
   end
@@ -396,7 +409,8 @@ function AI_Myself:_TrySwitchCommand(time, deltaTime, creature)
   end
   if creatureData:Freeze() or creatureData:DeepFreeze() then
     local nextCmd = self.nextCmd or self.nextCmd1
-    if self:_NextSkillCmdCanUse(creature, nextCmd) == false and self:_NextMoveCmdCanUse(creature, nextCmd) == false then
+    local isBeHolded = nextCmd ~= nil and nextCmd.AIClass == AI_CMD_Myself_BeHolded
+    if not isBeHolded and self:_NextSkillCmdCanUse(creature, nextCmd) == false and self:_NextMoveCmdCanUse(creature, nextCmd) == false then
       return
     end
   elseif creatureData:NoAct() or creatureData:FearRun() then
@@ -416,10 +430,14 @@ function AI_Myself:_TrySwitchCommand(time, deltaTime, creature)
     self.nextCmd1 = nil
   end
   if self.prepareStopMove then
+    local startSkatingGlide = self.moveCmd ~= nil and self.moveCmd.AIClass == AI_CMD_Myself_DirMove
     if self.moveCmd ~= nil then
       self.moveCmd:End(time, deltaTime, creature)
       self.moveCmd:Destroy()
       self.moveCmd = nil
+    end
+    if startSkatingGlide then
+      creature:OnSkatingDirInputEnd()
     end
     self.prepareStopMove = false
   end

@@ -74,7 +74,8 @@ NpcData.NpcDetailedType = {
   WarehouseNpc = "WarehouseNpc",
   UserHandcartNpc = "UserHandcartNpc",
   HomeMessageBoard = "HomeMessageBoard",
-  RotateNpc = "RotateNpc"
+  RotateNpc = "RotateNpc",
+  CoasterNpc = "CoasterNpc"
 }
 NpcData.ZoneType = {
   ZONE_MIN = 0,
@@ -376,6 +377,15 @@ end
 
 function NpcData:IsHandcart_Detail()
   return self.detailedType == NpcData.NpcDetailedType.UserHandcartNpc
+end
+
+function NpcData:IsRotateNpc_Detail()
+  return self.detailedType == NpcData.NpcDetailedType.RotateNpc
+end
+
+function NpcData:IsForceMoveNpc()
+  local params = self.staticData and self.staticData.Params
+  return params and params.ForceMove ~= nil
 end
 
 local MusicNpcConfig = GameConfig.System.musicboxnpc
@@ -1469,6 +1479,9 @@ function NpcData:UpdateDressEnable()
 end
 
 function NpcData:ShouldUpdateDressEnable()
+  if self:IsRotateNpc_Detail() then
+    return true
+  end
   local config = GameConfig.TextMesh
   if config[self.staticData.id] ~= nil then
     return true

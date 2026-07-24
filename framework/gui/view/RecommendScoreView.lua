@@ -1,5 +1,6 @@
 RecommendScoreView = class("RecommendScoreView", ContainerView)
-RecommendScoreView.ViewType = UIViewType.TipLayer
+RecommendScoreView.ViewType = UIViewType.FloatLayer
+RecommendScoreView.ForceCoExist = true
 autoImport("RecommendScoreItemCell")
 
 function RecommendScoreView:Init()

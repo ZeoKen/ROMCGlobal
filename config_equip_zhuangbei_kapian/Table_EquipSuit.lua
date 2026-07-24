@@ -4286,49 +4286,57 @@ Table_EquipSuit = {
     id = 740,
     Suitid = Table_EquipSuit_t.Suitid[554],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[18],
-    SameTeam = 65
+    SameTeam = 65,
+    EquipSuitDsc = "##3500469"
   },
   [741] = {
     id = 741,
     Suitid = Table_EquipSuit_t.Suitid[555],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[18],
-    SameTeam = 65
+    SameTeam = 65,
+    EquipSuitDsc = "##3500469"
   },
   [742] = {
     id = 742,
     Suitid = Table_EquipSuit_t.Suitid[556],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[18],
-    SameTeam = 65
+    SameTeam = 65,
+    EquipSuitDsc = "##3500469"
   },
   [743] = {
     id = 743,
     Suitid = Table_EquipSuit_t.Suitid[557],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[18],
-    SameTeam = 65
+    SameTeam = 65,
+    EquipSuitDsc = "##3500469"
   },
   [744] = {
     id = 744,
     Suitid = Table_EquipSuit_t.Suitid[558],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[18],
-    SameTeam = 65
+    SameTeam = 65,
+    EquipSuitDsc = "##3500469"
   },
   [745] = {
     id = 745,
     Suitid = Table_EquipSuit_t.Suitid[559],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[18],
-    SameTeam = 65
+    SameTeam = 65,
+    EquipSuitDsc = "##3500469"
   },
   [746] = {
     id = 746,
     Suitid = Table_EquipSuit_t.Suitid[560],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[18],
-    SameTeam = 65
+    SameTeam = 65,
+    EquipSuitDsc = "##3500469"
   },
   [747] = {
     id = 747,
     Suitid = Table_EquipSuit_t.Suitid[561],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[18],
-    SameTeam = 65
+    SameTeam = 65,
+    EquipSuitDsc = "##3500469"
   },
   [750] = {
     id = 750,
@@ -7709,57 +7717,49 @@ Table_EquipSuit = {
     id = 1750,
     Suitid = Table_EquipSuit_t.Suitid[541],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[16],
-    SameTeam = 166,
-    EquipSuitDsc = "##3500880"
+    SameTeam = 166
   },
   [1751] = {
     id = 1751,
     Suitid = Table_EquipSuit_t.Suitid[542],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[16],
-    SameTeam = 166,
-    EquipSuitDsc = "##3500880"
+    SameTeam = 166
   },
   [1752] = {
     id = 1752,
     Suitid = Table_EquipSuit_t.Suitid[543],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[16],
-    SameTeam = 166,
-    EquipSuitDsc = "##3500880"
+    SameTeam = 166
   },
   [1753] = {
     id = 1753,
     Suitid = Table_EquipSuit_t.Suitid[589],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[16],
-    SameTeam = 166,
-    EquipSuitDsc = "##3500880"
+    SameTeam = 166
   },
   [1754] = {
     id = 1754,
     Suitid = Table_EquipSuit_t.Suitid[690],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[16],
-    SameTeam = 166,
-    EquipSuitDsc = "##3500880"
+    SameTeam = 166
   },
   [1755] = {
     id = 1755,
     Suitid = Table_EquipSuit_t.Suitid[689],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[16],
-    SameTeam = 166,
-    EquipSuitDsc = "##3500880"
+    SameTeam = 166
   },
   [1756] = {
     id = 1756,
     Suitid = Table_EquipSuit_t.Suitid[688],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[16],
-    SameTeam = 166,
-    EquipSuitDsc = "##3500880"
+    SameTeam = 166
   },
   [1757] = {
     id = 1757,
     Suitid = Table_EquipSuit_t.Suitid[548],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[16],
-    SameTeam = 166,
-    EquipSuitDsc = "##3500880"
+    SameTeam = 166
   },
   [1760] = {
     id = 1760,
@@ -8885,7 +8885,7 @@ Table_EquipSuit = {
 local cell_mt = {
   __index = {
     EffectDesc = "##112270",
-    EquipSuitDsc = "##3500469",
+    EquipSuitDsc = "##3500880",
     RefineBuff = _EmptyTable,
     SameTeam = 1,
     SuitFiveAdd = _EmptyTable,

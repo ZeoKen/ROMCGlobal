@@ -9,6 +9,7 @@ autoImport("GVGPointPerTip")
 autoImport("MiniMapChangeCell")
 autoImport("BigMapGvgInfoTip")
 autoImport("EndlessBattleFieldEventBoard")
+autoImport("SnakeCoasterManager")
 local _PvpProxy = PvpProxy.Instance
 local MapManager = Game.MapManager
 local _Game = Game

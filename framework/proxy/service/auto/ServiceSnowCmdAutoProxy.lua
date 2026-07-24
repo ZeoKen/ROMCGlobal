@@ -15,6 +15,9 @@ function ServiceSnowCmdAutoProxy:Init()
 end
 
 function ServiceSnowCmdAutoProxy:onRegister()
+  self:Listen(85, 13, function(data)
+    self:RecvSnowRealmPartyStartSnowCmd(data)
+  end)
   self:Listen(85, 1, function(data)
     self:RecvSnowHeadQuerySnowCmd(data)
   end)
@@ -51,6 +54,17 @@ function ServiceSnowCmdAutoProxy:onRegister()
   self:Listen(85, 12, function(data)
     self:RecvOperSnowStoneSnowCmd(data)
   end)
+end
+
+function ServiceSnowCmdAutoProxy:CallSnowRealmPartyStartSnowCmd()
+  if not NetConfig.PBC then
+    local msg = SnowCmd_pb.SnowRealmPartyStartSnowCmd()
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnowRealmPartyStartSnowCmd.id
+    local msgParam = {}
+    self:SendProto2(msgId, msgParam)
+  end
 end
 
 function ServiceSnowCmdAutoProxy:CallSnowHeadQuerySnowCmd(guid, data)
@@ -300,11 +314,14 @@ function ServiceSnowCmdAutoProxy:CallSnowHeadFashionSelectSnowCmd(guid, pos, ind
   end
 end
 
-function ServiceSnowCmdAutoProxy:CallSnowCrownActiveSnowCmd(id)
+function ServiceSnowCmdAutoProxy:CallSnowCrownActiveSnowCmd(id, use_deduction)
   if not NetConfig.PBC then
     local msg = SnowCmd_pb.SnowCrownActiveSnowCmd()
     if id ~= nil then
       msg.id = id
+    end
+    if use_deduction ~= nil then
+      msg.use_deduction = use_deduction
     end
     self:SendProto(msg)
   else
@@ -312,6 +329,9 @@ function ServiceSnowCmdAutoProxy:CallSnowCrownActiveSnowCmd(id)
     local msgParam = {}
     if id ~= nil then
       msgParam.id = id
+    end
+    if use_deduction ~= nil then
+      msgParam.use_deduction = use_deduction
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -4227,6 +4247,10 @@ function ServiceSnowCmdAutoProxy:CallOperSnowStoneSnowCmd(oper, equip_pos, stone
   end
 end
 
+function ServiceSnowCmdAutoProxy:RecvSnowRealmPartyStartSnowCmd(data)
+  self:Notify(ServiceEvent.SnowCmdSnowRealmPartyStartSnowCmd, data)
+end
+
 function ServiceSnowCmdAutoProxy:RecvSnowHeadQuerySnowCmd(data)
   self:Notify(ServiceEvent.SnowCmdSnowHeadQuerySnowCmd, data)
 end
@@ -4276,6 +4300,7 @@ function ServiceSnowCmdAutoProxy:RecvOperSnowStoneSnowCmd(data)
 end
 
 ServiceEvent = _G.ServiceEvent or {}
+ServiceEvent.SnowCmdSnowRealmPartyStartSnowCmd = "ServiceEvent_SnowCmdSnowRealmPartyStartSnowCmd"
 ServiceEvent.SnowCmdSnowHeadQuerySnowCmd = "ServiceEvent_SnowCmdSnowHeadQuerySnowCmd"
 ServiceEvent.SnowCmdSnowHeadLvupSnowCmd = "ServiceEvent_SnowCmdSnowHeadLvupSnowCmd"
 ServiceEvent.SnowCmdSnowHeadActiveSnowCmd = "ServiceEvent_SnowCmdSnowHeadActiveSnowCmd"

@@ -2,6 +2,7 @@ autoImport("SocialData")
 autoImport("ChatMessageData")
 autoImport("PresetMsgData")
 autoImport("PermissionUtil")
+autoImport("HomeBlueprintProxy")
 ChatRoomProxy = class("ChatRoomProxy", pm.Proxy)
 ChatRoomProxy.Instance = nil
 ChatRoomProxy.NAME = "ChatRoomProxy"
@@ -28,7 +29,9 @@ ChatTypeEnum = {
   MyselfRedPacket = "MyselfRedPacket",
   SomeoneRedPacket = "SomeoneRedPacket",
   MyselfRecruit = "MyselfRecruit",
-  SomeoneRecruit = "SomeoneRecruit"
+  SomeoneRecruit = "SomeoneRecruit",
+  MyselfTeamRecruit = "MyselfTeamRecruit",
+  SomeoneTeamRecruit = "SomeoneTeamRecruit"
 }
 ChatRoleEnum = {Pet = 1, Npc = 2}
 BarrageStateEnum = {Off = 0, On = 1}
@@ -46,6 +49,8 @@ ChatRoomProxy.ItemBBCodeLabel = "[c][colortext]{[url=%s][u]%s[/u][/url]}[-][/c]"
 ChatRoomProxy.ItemColorLabel = "[c][%s]{[url=%s][u]%s[/u][/url]}[-][/c]"
 ChatRoomProxy.TreasureCodeString = "{ts="
 ChatRoomProxy.TreasureCode = "({ts=(.-)})"
+ChatRoomProxy.BlueprintBBCodeLabel = "[url=%s][u]%s[/u][/url]"
+ChatRoomProxy.BlueprintUrlType = "blueprint"
 ChatRoomProxy.ExpressionType = {
   Action = ChatCmd_pb.EFAVORITEEXPRESSION_ACTION,
   Emoji = ChatCmd_pb.EFAVORITEEXPRESSION_EMOJI
@@ -185,6 +190,7 @@ function ChatRoomProxy:RecvChatMessage(data)
   local chat = ChatMessageData.CreateAsArray(data)
   local channel = chat:GetChannel()
   self:HandleItemCode(chat)
+  self:HandleBlueprintPrintItem(chat)
   self:HandleSpeech(chat, channel)
   self:HandleShareItem(chat)
   self:HandleLoveConfession(chat)
@@ -202,6 +208,17 @@ function ChatRoomProxy:HandleShareItem(data)
   if share_data and #share_data.items > 0 then
     local str = string.format("[url=%s%d][u]%s[/u][/url]", "shareitem;", share_data.type, GameConfig.Share.WorldChatText[share_data.type] or "")
     data:SetStr(str)
+  end
+end
+
+function ChatRoomProxy:HandleBlueprintPrintItem(data)
+  local printItem = data and data:GetPrintItem()
+  if not printItem then
+    return
+  end
+  local str = data:GetStr()
+  if str then
+    data:SetStr(string.format(self.BlueprintBBCodeLabel, self.BlueprintUrlType, str))
   end
 end
 
@@ -810,6 +827,17 @@ function ChatRoomProxy:TryParseTeamGoalToString(teamGoalID)
     end
   end
   return nil
+end
+
+function ChatRoomProxy:BuildBlueprintPrintItem(data)
+  if not data then
+    return nil
+  end
+  return {
+    id = data.photoId,
+    accid = data.accId,
+    etype = data.houseType
+  }
 end
 
 function ChatRoomProxy:TryParseItemCodeToNormal(content, isBBCode, items)

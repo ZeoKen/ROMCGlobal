@@ -180,6 +180,9 @@ function ServiceSceneUser3AutoProxy:onRegister()
   self:Listen(82, 60, function(data)
     self:RecvLeaveUserHandcartCmd(data)
   end)
+  self:Listen(82, 63, function(data)
+    self:RecvNpcFuncOperateBuffUserCmd(data)
+  end)
   self:Listen(82, 57, function(data)
     self:RecvGeffenMagicRankQueryCmd(data)
   end)
@@ -197,6 +200,30 @@ function ServiceSceneUser3AutoProxy:onRegister()
   end)
   self:Listen(82, 64, function(data)
     self:RecvGroupPlayTimeUpdateUserCmd(data)
+  end)
+  self:Listen(82, 66, function(data)
+    self:RecvSnakeCoasterInfoCmd(data)
+  end)
+  self:Listen(82, 67, function(data)
+    self:RecvSnakeCoasterStartCmd(data)
+  end)
+  self:Listen(82, 70, function(data)
+    self:RecvSnakeCoasterStateNtf(data)
+  end)
+  self:Listen(82, 68, function(data)
+    self:RecvSnakeCoasterFinishCmd(data)
+  end)
+  self:Listen(82, 71, function(data)
+    self:RecvSnakeCoasterLeaveCmd(data)
+  end)
+  self:Listen(82, 69, function(data)
+    self:RecvSnakeCoasterQueryRankCmd(data)
+  end)
+  self:Listen(82, 72, function(data)
+    self:RecvSnakeCoasterActionNtf(data)
+  end)
+  self:Listen(82, 65, function(data)
+    self:RecvUserIceSlideStopUserCmd(data)
   end)
 end
 
@@ -2937,6 +2964,29 @@ function ServiceSceneUser3AutoProxy:CallLeaveUserHandcartCmd(success)
   end
 end
 
+function ServiceSceneUser3AutoProxy:CallNpcFuncOperateBuffUserCmd(funid, add)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.NpcFuncOperateBuffUserCmd()
+    if funid ~= nil then
+      msg.funid = funid
+    end
+    if add ~= nil then
+      msg.add = add
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.NpcFuncOperateBuffUserCmd.id
+    local msgParam = {}
+    if funid ~= nil then
+      msgParam.funid = funid
+    end
+    if add ~= nil then
+      msgParam.add = add
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceSceneUser3AutoProxy:CallGeffenMagicRankQueryCmd(serverid, accid, charid, zoneid, total_score, rank_percent, has_rank, last_season_has_rank, last_season_rank_percent, last_season_gotten_reward)
   if not NetConfig.PBC then
     local msg = SceneUser3_pb.GeffenMagicRankQueryCmd()
@@ -3171,6 +3221,726 @@ function ServiceSceneUser3AutoProxy:CallGroupPlayTimeUpdateUserCmd(updates)
   end
 end
 
+function ServiceSceneUser3AutoProxy:CallSnakeCoasterInfoCmd(infos, record)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.SnakeCoasterInfoCmd()
+    if infos ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.infos == nil then
+        msg.infos = {}
+      end
+      for i = 1, #infos do
+        table.insert(msg.infos, infos[i])
+      end
+    end
+    if record ~= nil and record.score ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.record == nil then
+        msg.record = {}
+      end
+      msg.record.score = record.score
+    end
+    if record ~= nil and record.timestamp ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.record == nil then
+        msg.record = {}
+      end
+      msg.record.timestamp = record.timestamp
+    end
+    if record ~= nil and record.difficulty ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.record == nil then
+        msg.record = {}
+      end
+      msg.record.difficulty = record.difficulty
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnakeCoasterInfoCmd.id
+    local msgParam = {}
+    if infos ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.infos == nil then
+        msgParam.infos = {}
+      end
+      for i = 1, #infos do
+        table.insert(msgParam.infos, infos[i])
+      end
+    end
+    if record ~= nil and record.score ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.record == nil then
+        msgParam.record = {}
+      end
+      msgParam.record.score = record.score
+    end
+    if record ~= nil and record.timestamp ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.record == nil then
+        msgParam.record = {}
+      end
+      msgParam.record.timestamp = record.timestamp
+    end
+    if record ~= nil and record.difficulty ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.record == nil then
+        msgParam.record = {}
+      end
+      msgParam.record.difficulty = record.difficulty
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallSnakeCoasterStartCmd(difficulty, errcode)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.SnakeCoasterStartCmd()
+    if difficulty ~= nil then
+      msg.difficulty = difficulty
+    end
+    if errcode ~= nil then
+      msg.errcode = errcode
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnakeCoasterStartCmd.id
+    local msgParam = {}
+    if difficulty ~= nil then
+      msgParam.difficulty = difficulty
+    end
+    if errcode ~= nil then
+      msgParam.errcode = errcode
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallSnakeCoasterStateNtf(state, difficulty, wait_endtime, endtime, timeout)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.SnakeCoasterStateNtf()
+    if state ~= nil then
+      msg.state = state
+    end
+    if difficulty ~= nil then
+      msg.difficulty = difficulty
+    end
+    if wait_endtime ~= nil then
+      msg.wait_endtime = wait_endtime
+    end
+    if endtime ~= nil then
+      msg.endtime = endtime
+    end
+    if timeout ~= nil then
+      msg.timeout = timeout
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnakeCoasterStateNtf.id
+    local msgParam = {}
+    if state ~= nil then
+      msgParam.state = state
+    end
+    if difficulty ~= nil then
+      msgParam.difficulty = difficulty
+    end
+    if wait_endtime ~= nil then
+      msgParam.wait_endtime = wait_endtime
+    end
+    if endtime ~= nil then
+      msgParam.endtime = endtime
+    end
+    if timeout ~= nil then
+      msgParam.timeout = timeout
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallSnakeCoasterFinishCmd(difficulty, score, errcode, new_record, first_pass_reward, record)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.SnakeCoasterFinishCmd()
+    if difficulty ~= nil then
+      msg.difficulty = difficulty
+    end
+    if score ~= nil then
+      msg.score = score
+    end
+    if errcode ~= nil then
+      msg.errcode = errcode
+    end
+    if new_record ~= nil then
+      msg.new_record = new_record
+    end
+    if first_pass_reward ~= nil then
+      msg.first_pass_reward = first_pass_reward
+    end
+    if record ~= nil and record.score ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.record == nil then
+        msg.record = {}
+      end
+      msg.record.score = record.score
+    end
+    if record ~= nil and record.timestamp ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.record == nil then
+        msg.record = {}
+      end
+      msg.record.timestamp = record.timestamp
+    end
+    if record ~= nil and record.difficulty ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.record == nil then
+        msg.record = {}
+      end
+      msg.record.difficulty = record.difficulty
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnakeCoasterFinishCmd.id
+    local msgParam = {}
+    if difficulty ~= nil then
+      msgParam.difficulty = difficulty
+    end
+    if score ~= nil then
+      msgParam.score = score
+    end
+    if errcode ~= nil then
+      msgParam.errcode = errcode
+    end
+    if new_record ~= nil then
+      msgParam.new_record = new_record
+    end
+    if first_pass_reward ~= nil then
+      msgParam.first_pass_reward = first_pass_reward
+    end
+    if record ~= nil and record.score ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.record == nil then
+        msgParam.record = {}
+      end
+      msgParam.record.score = record.score
+    end
+    if record ~= nil and record.timestamp ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.record == nil then
+        msgParam.record = {}
+      end
+      msgParam.record.timestamp = record.timestamp
+    end
+    if record ~= nil and record.difficulty ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.record == nil then
+        msgParam.record = {}
+      end
+      msgParam.record.difficulty = record.difficulty
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallSnakeCoasterLeaveCmd(errcode)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.SnakeCoasterLeaveCmd()
+    if errcode ~= nil then
+      msg.errcode = errcode
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnakeCoasterLeaveCmd.id
+    local msgParam = {}
+    if errcode ~= nil then
+      msgParam.errcode = errcode
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallSnakeCoasterQueryRankCmd(page, page_size, items, selfrank)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.SnakeCoasterQueryRankCmd()
+    if page ~= nil then
+      msg.page = page
+    end
+    if page_size ~= nil then
+      msg.page_size = page_size
+    end
+    if items ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.items == nil then
+        msg.items = {}
+      end
+      for i = 1, #items do
+        table.insert(msg.items, items[i])
+      end
+    end
+    if selfrank ~= nil and selfrank.rank ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      msg.selfrank.rank = selfrank.rank
+    end
+    if selfrank ~= nil and selfrank.charid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      msg.selfrank.charid = selfrank.charid
+    end
+    if selfrank ~= nil and selfrank.name ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      msg.selfrank.name = selfrank.name
+    end
+    if selfrank ~= nil and selfrank.score ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      msg.selfrank.score = selfrank.score
+    end
+    if selfrank ~= nil and selfrank.timestamp ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      msg.selfrank.timestamp = selfrank.timestamp
+    end
+    if selfrank ~= nil and selfrank.difficulty ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      msg.selfrank.difficulty = selfrank.difficulty
+    end
+    if selfrank ~= nil and selfrank.profession ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      msg.selfrank.profession = selfrank.profession
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.portrait ~= nil then
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      if msg.selfrank.portrait == nil then
+        msg.selfrank.portrait = {}
+      end
+      msg.selfrank.portrait.portrait = selfrank.portrait.portrait
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.body ~= nil then
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      if msg.selfrank.portrait == nil then
+        msg.selfrank.portrait = {}
+      end
+      msg.selfrank.portrait.body = selfrank.portrait.body
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.hair ~= nil then
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      if msg.selfrank.portrait == nil then
+        msg.selfrank.portrait = {}
+      end
+      msg.selfrank.portrait.hair = selfrank.portrait.hair
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.haircolor ~= nil then
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      if msg.selfrank.portrait == nil then
+        msg.selfrank.portrait = {}
+      end
+      msg.selfrank.portrait.haircolor = selfrank.portrait.haircolor
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.gender ~= nil then
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      if msg.selfrank.portrait == nil then
+        msg.selfrank.portrait = {}
+      end
+      msg.selfrank.portrait.gender = selfrank.portrait.gender
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.head ~= nil then
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      if msg.selfrank.portrait == nil then
+        msg.selfrank.portrait = {}
+      end
+      msg.selfrank.portrait.head = selfrank.portrait.head
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.face ~= nil then
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      if msg.selfrank.portrait == nil then
+        msg.selfrank.portrait = {}
+      end
+      msg.selfrank.portrait.face = selfrank.portrait.face
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.mouth ~= nil then
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      if msg.selfrank.portrait == nil then
+        msg.selfrank.portrait = {}
+      end
+      msg.selfrank.portrait.mouth = selfrank.portrait.mouth
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.eye ~= nil then
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      if msg.selfrank.portrait == nil then
+        msg.selfrank.portrait = {}
+      end
+      msg.selfrank.portrait.eye = selfrank.portrait.eye
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.portrait_frame ~= nil then
+      if msg.selfrank == nil then
+        msg.selfrank = {}
+      end
+      if msg.selfrank.portrait == nil then
+        msg.selfrank.portrait = {}
+      end
+      msg.selfrank.portrait.portrait_frame = selfrank.portrait.portrait_frame
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnakeCoasterQueryRankCmd.id
+    local msgParam = {}
+    if page ~= nil then
+      msgParam.page = page
+    end
+    if page_size ~= nil then
+      msgParam.page_size = page_size
+    end
+    if items ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.items == nil then
+        msgParam.items = {}
+      end
+      for i = 1, #items do
+        table.insert(msgParam.items, items[i])
+      end
+    end
+    if selfrank ~= nil and selfrank.rank ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      msgParam.selfrank.rank = selfrank.rank
+    end
+    if selfrank ~= nil and selfrank.charid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      msgParam.selfrank.charid = selfrank.charid
+    end
+    if selfrank ~= nil and selfrank.name ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      msgParam.selfrank.name = selfrank.name
+    end
+    if selfrank ~= nil and selfrank.score ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      msgParam.selfrank.score = selfrank.score
+    end
+    if selfrank ~= nil and selfrank.timestamp ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      msgParam.selfrank.timestamp = selfrank.timestamp
+    end
+    if selfrank ~= nil and selfrank.difficulty ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      msgParam.selfrank.difficulty = selfrank.difficulty
+    end
+    if selfrank ~= nil and selfrank.profession ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      msgParam.selfrank.profession = selfrank.profession
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.portrait ~= nil then
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      if msgParam.selfrank.portrait == nil then
+        msgParam.selfrank.portrait = {}
+      end
+      msgParam.selfrank.portrait.portrait = selfrank.portrait.portrait
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.body ~= nil then
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      if msgParam.selfrank.portrait == nil then
+        msgParam.selfrank.portrait = {}
+      end
+      msgParam.selfrank.portrait.body = selfrank.portrait.body
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.hair ~= nil then
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      if msgParam.selfrank.portrait == nil then
+        msgParam.selfrank.portrait = {}
+      end
+      msgParam.selfrank.portrait.hair = selfrank.portrait.hair
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.haircolor ~= nil then
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      if msgParam.selfrank.portrait == nil then
+        msgParam.selfrank.portrait = {}
+      end
+      msgParam.selfrank.portrait.haircolor = selfrank.portrait.haircolor
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.gender ~= nil then
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      if msgParam.selfrank.portrait == nil then
+        msgParam.selfrank.portrait = {}
+      end
+      msgParam.selfrank.portrait.gender = selfrank.portrait.gender
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.head ~= nil then
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      if msgParam.selfrank.portrait == nil then
+        msgParam.selfrank.portrait = {}
+      end
+      msgParam.selfrank.portrait.head = selfrank.portrait.head
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.face ~= nil then
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      if msgParam.selfrank.portrait == nil then
+        msgParam.selfrank.portrait = {}
+      end
+      msgParam.selfrank.portrait.face = selfrank.portrait.face
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.mouth ~= nil then
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      if msgParam.selfrank.portrait == nil then
+        msgParam.selfrank.portrait = {}
+      end
+      msgParam.selfrank.portrait.mouth = selfrank.portrait.mouth
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.eye ~= nil then
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      if msgParam.selfrank.portrait == nil then
+        msgParam.selfrank.portrait = {}
+      end
+      msgParam.selfrank.portrait.eye = selfrank.portrait.eye
+    end
+    if selfrank.portrait ~= nil and selfrank.portrait.portrait_frame ~= nil then
+      if msgParam.selfrank == nil then
+        msgParam.selfrank = {}
+      end
+      if msgParam.selfrank.portrait == nil then
+        msgParam.selfrank.portrait = {}
+      end
+      msgParam.selfrank.portrait.portrait_frame = selfrank.portrait.portrait_frame
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallSnakeCoasterActionNtf(emotion_id)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.SnakeCoasterActionNtf()
+    if emotion_id ~= nil then
+      msg.emotion_id = emotion_id
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.SnakeCoasterActionNtf.id
+    local msgParam = {}
+    if emotion_id ~= nil then
+      msgParam.emotion_id = emotion_id
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallUserIceSlideStopUserCmd(charid, dir, speed, startpos, stop)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.UserIceSlideStopUserCmd()
+    if charid ~= nil then
+      msg.charid = charid
+    end
+    if dir ~= nil then
+      msg.dir = dir
+    end
+    if speed ~= nil then
+      msg.speed = speed
+    end
+    if startpos ~= nil and startpos.x ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.startpos == nil then
+        msg.startpos = {}
+      end
+      msg.startpos.x = startpos.x
+    end
+    if startpos ~= nil and startpos.y ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.startpos == nil then
+        msg.startpos = {}
+      end
+      msg.startpos.y = startpos.y
+    end
+    if startpos ~= nil and startpos.z ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.startpos == nil then
+        msg.startpos = {}
+      end
+      msg.startpos.z = startpos.z
+    end
+    if stop ~= nil then
+      msg.stop = stop
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.UserIceSlideStopUserCmd.id
+    local msgParam = {}
+    if charid ~= nil then
+      msgParam.charid = charid
+    end
+    if dir ~= nil then
+      msgParam.dir = dir
+    end
+    if speed ~= nil then
+      msgParam.speed = speed
+    end
+    if startpos ~= nil and startpos.x ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.startpos == nil then
+        msgParam.startpos = {}
+      end
+      msgParam.startpos.x = startpos.x
+    end
+    if startpos ~= nil and startpos.y ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.startpos == nil then
+        msgParam.startpos = {}
+      end
+      msgParam.startpos.y = startpos.y
+    end
+    if startpos ~= nil and startpos.z ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.startpos == nil then
+        msgParam.startpos = {}
+      end
+      msgParam.startpos.z = startpos.z
+    end
+    if stop ~= nil then
+      msgParam.stop = stop
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceSceneUser3AutoProxy:RecvFirstDepositInfo(data)
   self:Notify(ServiceEvent.SceneUser3FirstDepositInfo, data)
 end
@@ -3391,6 +4161,10 @@ function ServiceSceneUser3AutoProxy:RecvLeaveUserHandcartCmd(data)
   self:Notify(ServiceEvent.SceneUser3LeaveUserHandcartCmd, data)
 end
 
+function ServiceSceneUser3AutoProxy:RecvNpcFuncOperateBuffUserCmd(data)
+  self:Notify(ServiceEvent.SceneUser3NpcFuncOperateBuffUserCmd, data)
+end
+
 function ServiceSceneUser3AutoProxy:RecvGeffenMagicRankQueryCmd(data)
   self:Notify(ServiceEvent.SceneUser3GeffenMagicRankQueryCmd, data)
 end
@@ -3413,6 +4187,38 @@ end
 
 function ServiceSceneUser3AutoProxy:RecvGroupPlayTimeUpdateUserCmd(data)
   self:Notify(ServiceEvent.SceneUser3GroupPlayTimeUpdateUserCmd, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvSnakeCoasterInfoCmd(data)
+  self:Notify(ServiceEvent.SceneUser3SnakeCoasterInfoCmd, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvSnakeCoasterStartCmd(data)
+  self:Notify(ServiceEvent.SceneUser3SnakeCoasterStartCmd, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvSnakeCoasterStateNtf(data)
+  self:Notify(ServiceEvent.SceneUser3SnakeCoasterStateNtf, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvSnakeCoasterFinishCmd(data)
+  self:Notify(ServiceEvent.SceneUser3SnakeCoasterFinishCmd, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvSnakeCoasterLeaveCmd(data)
+  self:Notify(ServiceEvent.SceneUser3SnakeCoasterLeaveCmd, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvSnakeCoasterQueryRankCmd(data)
+  self:Notify(ServiceEvent.SceneUser3SnakeCoasterQueryRankCmd, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvSnakeCoasterActionNtf(data)
+  self:Notify(ServiceEvent.SceneUser3SnakeCoasterActionNtf, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvUserIceSlideStopUserCmd(data)
+  self:Notify(ServiceEvent.SceneUser3UserIceSlideStopUserCmd, data)
 end
 
 ServiceEvent = _G.ServiceEvent or {}
@@ -3471,9 +4277,18 @@ ServiceEvent.SceneUser3WareHouseOperationCmd = "ServiceEvent_SceneUser3WareHouse
 ServiceEvent.SceneUser3FairyTaleRankQueryCmd = "ServiceEvent_SceneUser3FairyTaleRankQueryCmd"
 ServiceEvent.SceneUser3AboardUserHandcartCmd = "ServiceEvent_SceneUser3AboardUserHandcartCmd"
 ServiceEvent.SceneUser3LeaveUserHandcartCmd = "ServiceEvent_SceneUser3LeaveUserHandcartCmd"
+ServiceEvent.SceneUser3NpcFuncOperateBuffUserCmd = "ServiceEvent_SceneUser3NpcFuncOperateBuffUserCmd"
 ServiceEvent.SceneUser3GeffenMagicRankQueryCmd = "ServiceEvent_SceneUser3GeffenMagicRankQueryCmd"
 ServiceEvent.SceneUser3GeffenMagicWaveScoreQueryCmd = "ServiceEvent_SceneUser3GeffenMagicWaveScoreQueryCmd"
 ServiceEvent.SceneUser3GeffenMagicGetRewardUserCmd = "ServiceEvent_SceneUser3GeffenMagicGetRewardUserCmd"
 ServiceEvent.SceneUser3UserHoldingNpcCmd = "ServiceEvent_SceneUser3UserHoldingNpcCmd"
 ServiceEvent.SceneUser3NpcCircleTraceNtf = "ServiceEvent_SceneUser3NpcCircleTraceNtf"
 ServiceEvent.SceneUser3GroupPlayTimeUpdateUserCmd = "ServiceEvent_SceneUser3GroupPlayTimeUpdateUserCmd"
+ServiceEvent.SceneUser3SnakeCoasterInfoCmd = "ServiceEvent_SceneUser3SnakeCoasterInfoCmd"
+ServiceEvent.SceneUser3SnakeCoasterStartCmd = "ServiceEvent_SceneUser3SnakeCoasterStartCmd"
+ServiceEvent.SceneUser3SnakeCoasterStateNtf = "ServiceEvent_SceneUser3SnakeCoasterStateNtf"
+ServiceEvent.SceneUser3SnakeCoasterFinishCmd = "ServiceEvent_SceneUser3SnakeCoasterFinishCmd"
+ServiceEvent.SceneUser3SnakeCoasterLeaveCmd = "ServiceEvent_SceneUser3SnakeCoasterLeaveCmd"
+ServiceEvent.SceneUser3SnakeCoasterQueryRankCmd = "ServiceEvent_SceneUser3SnakeCoasterQueryRankCmd"
+ServiceEvent.SceneUser3SnakeCoasterActionNtf = "ServiceEvent_SceneUser3SnakeCoasterActionNtf"
+ServiceEvent.SceneUser3UserIceSlideStopUserCmd = "ServiceEvent_SceneUser3UserIceSlideStopUserCmd"

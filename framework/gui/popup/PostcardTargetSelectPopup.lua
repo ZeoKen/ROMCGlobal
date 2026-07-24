@@ -52,7 +52,7 @@ function PostcardTargetSelectPopup:initView()
   self:AddClickEvent(self:FindGO("CloseButton", self.gameObject), function(go)
     self.satab = nil
     self:Hide()
-    if self.container and self.container.context.flag_PendingSelectTarget then
+    if self.container and self.container.context and self.container.context.flag_PendingSelectTarget then
       self.container:CloseSelf()
     end
   end)

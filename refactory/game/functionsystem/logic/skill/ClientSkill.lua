@@ -437,23 +437,22 @@ function ClientSkill:SyncDirMoveFromServer(creature, phaseData)
     }
     if sHT_Gopos and 1 < helpDisFunc(cHT_Gopos[1], cHT_Gopos[2], cHT_Gopos[3], sHT_Gopos[1], sHT_Gopos[2], sHT_Gopos[3]) then
       local targetCreature = FindCreature(targetID)
-      local dirPoint = LuaVector3.New(sHT_Gopos[1], sHT_Gopos[2], sHT_Gopos[3])
-      local dirMoveDistance = LuaVector3.Distance(creature:GetPosition(), dirPoint)
-      if targetCreature then
+      if targetCreature and SkillLogic_Base.CanHitMoveTargetBySkillID(phaseData:GetSkillID(), targetCreature) then
+        local dirPoint = LuaVector3.New(sHT_Gopos[1], sHT_Gopos[2], sHT_Gopos[3])
+        local targetPosition = targetCreature:GetPosition()
+        local dirMoveDistance = LuaVector3.Distance(targetPosition, dirPoint)
         redlog("修正玩家的hit位置", targetCreature.data.name, sHT_Gopos[1], sHT_Gopos[2], sHT_Gopos[3])
         cHT_Gopos[1], cHT_Gopos[2], cHT_Gopos[3] = sHT_Gopos[1], sHT_Gopos[2], sHT_Gopos[3]
-        do
-          local direction = sHT_Gopos[5]
-          local dirAngleY = VectorHelper.GetAngleByAxisY(creature:GetPosition(), dirPoint)
-          if "forward" == direction then
-            dirAngleY = NumberUtility.Repeat(dirAngleY + 180, 360)
-          end
-          local allowMergeMove = self.info and self.info:GetNoHitMoveIntercept() or false
-          targetCreature.logicTransform:ExtraDirMove(dirAngleY, dirMoveDistance, sHT_Gopos[4] * attackSpeed, function(logicTransform, arg)
-            SkillLogic_Base.CheckExtraDirMove(logicTransform, arg)
-            dirPoint:Destroy()
-          end, nil, dirPoint, self.info and self.info:IsIgnoreTerrain() or false, allowMergeMove)
+        local direction = sHT_Gopos[5]
+        local dirAngleY = VectorHelper.GetAngleByAxisY(targetPosition, dirPoint)
+        if "forward" == direction then
+          dirAngleY = NumberUtility.Repeat(dirAngleY + 180, 360)
         end
+        local allowMergeMove = self.info and self.info:GetNoHitMoveIntercept() or false
+        targetCreature.logicTransform:ExtraDirMove(dirAngleY, dirMoveDistance, sHT_Gopos[4] * attackSpeed, function(logicTransform, arg)
+          SkillLogic_Base.CheckExtraDirMove(logicTransform, arg)
+          dirPoint:Destroy()
+        end, nil, dirPoint, self.info and self.info:IsIgnoreTerrain() or false, allowMergeMove)
       end
     end
   end

@@ -26,6 +26,12 @@ function InheritSkillItemData:UpdateSkill(serverSkill)
     if not self.isInherited then
       self:SetInherit(true)
     end
+  else
+    local familyId = serverSkill.id // 1000
+    self:Reset(familyId * 1000 + 1)
+    self.id = serverSkill.id
+    self.level = 0
+    self:SetInherit(false)
   end
   self:UpdateShortcuts(serverSkill.shortcuts)
   self:SetLoad(serverSkill.load)
@@ -103,6 +109,45 @@ function InheritSkillItemData:GetUpgradeMaterialState()
     return materials, matNum, totalNum, matNum > totalNum
   end
   return nil, 0, 0, false
+end
+
+function InheritSkillItemData:GetResetReturnMaterials()
+  local datas = {}
+  if not self.inheritStaticData or self.level <= 0 then
+    return datas
+  end
+  local quality = self.inheritStaticData.Quality
+  local qualityConf = GameConfig.SkillInherit and GameConfig.SkillInherit.Quality and GameConfig.SkillInherit.Quality[quality]
+  local lvUpCost = qualityConf and qualityConf.LvUpCost
+  if not lvUpCost then
+    return datas
+  end
+  local itemIds = {}
+  local itemNums = {}
+  local AddReturnItem = function(itemId, num)
+    if itemId and num and 0 < num then
+      if not itemNums[itemId] then
+        itemIds[#itemIds + 1] = itemId
+        itemNums[itemId] = num
+      else
+        itemNums[itemId] = itemNums[itemId] + num
+      end
+    end
+  end
+  for level = 1, self.level do
+    local itemId = self.inheritStaticData.RefundMaterial
+    if qualityConf.SpecificLevel and TableUtility.ArrayFindIndex(qualityConf.SpecificLevel, level) > 0 and qualityConf.SpecificLevelRefundMaterial then
+      itemId = qualityConf.SpecificLevelRefundMaterial
+    end
+    AddReturnItem(itemId, lvUpCost[level])
+  end
+  for i = 1, #itemIds do
+    local itemId = itemIds[i]
+    local itemData = ItemData.new("InheritSkillResetReturn", itemId)
+    itemData.num = itemNums[itemId]
+    datas[#datas + 1] = itemData
+  end
+  return datas
 end
 
 function InheritSkillItemData:IsMaterialLack()

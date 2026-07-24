@@ -756,6 +756,9 @@ GameConfig.CookGame = {
 }
 GameConfig.MountFashion = {
   DefaultFashionMountId = 25229,
+  Title = {
+    [29454] = "风雪之鹰换装"
+  },
   PartIcon = {
     [25229] = {
       [0] = "tortoise_page_btn_shizhuang",
@@ -765,6 +768,11 @@ GameConfig.MountFashion = {
       [2] = "tortoise_page_btn_niao_yumao",
       [3] = "tortoise_page_btn_niao_toukui",
       [4] = "tortoise_page_btn_niao_kuijia"
+    },
+    [29454] = {
+      [7] = "tortoise_page_btn_niao_yumao",
+      [5] = "tortoise_page_btn_niao_toukui",
+      [6] = "tortoise_page_btn_niao_kuijia"
     }
   },
   PartAnim = {
@@ -783,6 +791,11 @@ GameConfig.MountFashion = {
       [2] = "MountDressing_landBird_feather",
       [3] = "MountDressing_landBird_helmet",
       [4] = "MountDressing_landBird_armor"
+    },
+    [29454] = {
+      [7] = "MountDressing_landBird_feather",
+      [5] = "MountDressing_landBird_helmet",
+      [6] = "MountDressing_landBird_armor"
     }
   },
   ShowPos = {
@@ -2311,6 +2324,7 @@ GameConfig.Pve = {
     [82] = "限时活动",
     [87] = "雪花装备",
     [88] = "雪花宝石",
+    [90] = "雪花装备",
     [91] = "限时活动"
   },
   SweepInvalidMsg = {
@@ -2661,6 +2675,13 @@ GameConfig.Pve = {
       modelTexture = "PveModel_bgdyjs_fb1",
       sortID = 3100,
       typeIcon = "bagedeyanjiushi",
+      detailIcon = "calendar_statistics_icon_16",
+      openTime = "2025-07-27 05:00:00"
+    },
+    [49] = {
+      modelTexture = "PveModel_seyjs_fb1",
+      sortID = 3200,
+      typeIcon = "shuangeyanjiushi",
       detailIcon = "calendar_statistics_icon_16",
       openTime = "2025-07-27 05:00:00"
     }
@@ -4047,7 +4068,8 @@ GameConfig.ServerMerge = {
     [81] = 1,
     [82] = 1,
     [87] = 1,
-    [88] = 1
+    [88] = 1,
+    [90] = 1
   }
 }
 GameConfig.SkillCommon = {
@@ -13760,6 +13782,16 @@ GameConfig.Equip = {
     [840] = 25,
     [850] = 26
   },
+  SnowEquipTransferType = {
+    [1] = 1,
+    [2] = 2,
+    [3] = 3,
+    [16] = 3,
+    [17] = 3,
+    [18] = 3,
+    [19] = 3,
+    [4] = 4
+  },
   AncientEquipItemType = {
     [500] = "远古盔甲",
     [510] = "远古盾牌",
@@ -14193,7 +14225,12 @@ GameConfig.PackageMaterialCheck = {
     8,
     9
   },
-  user_recall = {1},
+  user_recall = {
+    1,
+    6,
+    7,
+    17
+  },
   snow_levelup = {
     1,
     7,
@@ -15075,9 +15112,9 @@ GameConfig.BattlePassVersion = {
   },
   [4] = {
     TFVersionStartTime = "2026-07-01 05:00:00",
-    TFVersionEndTime = "2030-01-01 05:00:00",
+    TFVersionEndTime = "2026-08-01 05:00:00",
     ReleaseVersionStartTime = "2026-07-01 05:00:00",
-    ReleaseVersionEndTime = "2030-01-01 05:00:00",
+    ReleaseVersionEndTime = "2026-08-01 05:00:00",
     BattlePass_Icon = "battlePass_14",
     IdOffset = 15000,
     MaxLevel = 50,
@@ -15208,6 +15245,143 @@ GameConfig.BattlePassVersion = {
         {itemid = 3042394, num = 24}
       },
       OverflowRewardLimit = 2000
+    }
+  },
+  [5] = {
+    TFVersionStartTime = "2026-08-01 05:00:00",
+    TFVersionEndTime = "2030-01-01 05:00:00",
+    ReleaseVersionStartTime = "2026-08-01 05:00:00",
+    ReleaseVersionEndTime = "2030-01-01 05:00:00",
+    BattlePass_Icon = "battlePass_14",
+    IdOffset = 16000,
+    MaxLevel = 50,
+    UpgradeDepositItem = {
+      [1] = {
+        DepositeId = 300035,
+        Show = 1,
+        Name = "进阶版·卡普拉冒险录",
+        AdvLevel = 50,
+        Desc = 1,
+        Rebate = 1716
+      },
+      [2] = {
+        DepositeId = 300036,
+        Show = 2,
+        Name = "典藏版·卡普拉冒险录",
+        SuLevel = 50,
+        Condition = {AdvLevel = 50, Index = 1},
+        Desc = 2,
+        Rebate = 826
+      }
+    },
+    UpgradeDesc = {
+      [1] = {
+        [1] = {
+          Text = "解锁50级的进阶奖励"
+        },
+        [2] = {
+          Text = "每周经验上限+20%"
+        },
+        [3] = {
+          Text = "完成任务额外经验+10%"
+        }
+      },
+      [2] = {
+        [1] = {
+          Text = "解锁50级的典藏奖励"
+        },
+        [2] = {
+          Text = "每周经验上限提升至30%"
+        },
+        [3] = {
+          Text = "任务额外经验提升至20%"
+        }
+      }
+    },
+    UpgradeModelItems = {
+      [202607] = {
+        Fashion = {3008322, 3008323},
+        Parts = {3009181, 3009122},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202608] = {
+        Fashion = {3010502, 3010503},
+        Parts = {3009191, 3009141},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202609] = {
+        Fashion = {3002670, 3002671},
+        Parts = {3009201, 3009151},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202610] = {
+        Fashion = {3006580, 3006581},
+        Parts = {3009222, 3009161},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      },
+      [202611] = {
+        Fashion = {3010702, 3010703},
+        Parts = {3011662, 3009171},
+        ModelPos = {
+          0,
+          0,
+          0
+        },
+        ModelRotation = {
+          0,
+          0,
+          0
+        }
+      }
+    },
+    OverflowReward = {
+      Exp = 200,
+      RewardItems = {
+        {itemid = 100, num = 100}
+      },
+      ProRewardItems = {
+        {itemid = 3042393, num = 1}
+      },
+      SuperRewardItems = {
+        {itemid = 3042394, num = 1}
+      },
+      OverflowRewardLimit = 10000
     }
   }
 }
@@ -21720,8 +21894,7 @@ GameConfig.GVGConfig = {
         times = 1000,
         items = {
           {3720, 2},
-          {913000, 50},
-          {12984, 4}
+          {913000, 50}
         },
         desc = "本场个人目标基础荣誉值达到%s/1000"
       },
@@ -21729,8 +21902,7 @@ GameConfig.GVGConfig = {
         times = 2000,
         items = {
           {3720, 2},
-          {913000, 100},
-          {12984, 4}
+          {913000, 100}
         },
         desc = "本场个人目标基础荣誉值达到%s/2000"
       },
@@ -26144,6 +26316,15 @@ GameConfig.Home = {
     [2] = 9896
   }
 }
+GameConfig.HomeBlueprint = {
+  Limit = {
+    MaxMyBlueprint = 6,
+    MaxCollect = 20,
+    MinFurnCount = 20
+  },
+  Recommend = {PerCount = 6},
+  Share = {CD = 10}
+}
 GameConfig.HomeRenovationDefaultMat = {
   [10001] = {default = 30020},
   [10002] = {default = 30019},
@@ -27623,6 +27804,34 @@ GameConfig.MultiBoss = {
         [3] = "总计"
       }
     },
+    [90] = {
+      Levellimit = 110,
+      Diff = {
+        [1] = {
+          name = "初心难度",
+          raidID = 7681
+        },
+        [2] = {
+          name = "勇士难度",
+          raidID = 7682
+        },
+        [3] = {
+          name = "英灵难度",
+          raidID = 7683
+        }
+      },
+      StatisticFilterConfig = {
+        [1] = "造成伤害",
+        [2] = "承受伤害",
+        [3] = "治疗",
+        [4] = "死亡次数"
+      },
+      BossFilterConfig = {
+        [1] = "霜厄猛犸",
+        [2] = "旧日的巴格",
+        [3] = "总计"
+      }
+    },
     [91] = {
       Levellimit = 100,
       EnterDialogId = 854441,
@@ -27990,6 +28199,54 @@ GameConfig.MultiBoss = {
             178411,
             178410,
             178409
+          }
+        }
+      }
+    },
+    [7681] = {
+      Stages = {
+        [1] = {
+          bossid = {277016},
+          buffs = {178419}
+        },
+        [2] = {
+          bossid = {277017},
+          buffs = {
+            178430,
+            178463,
+            178450
+          }
+        }
+      }
+    },
+    [7682] = {
+      Stages = {
+        [1] = {
+          bossid = {277018},
+          buffs = {178419}
+        },
+        [2] = {
+          bossid = {277019},
+          buffs = {
+            178430,
+            178463,
+            178450
+          }
+        }
+      }
+    },
+    [7683] = {
+      Stages = {
+        [1] = {
+          bossid = {277020},
+          buffs = {178419}
+        },
+        [2] = {
+          bossid = {277021},
+          buffs = {
+            178430,
+            178463,
+            178450
           }
         }
       }
@@ -33651,7 +33908,7 @@ GameConfig.Quest = {
       MaxHelpCount = 6,
       MenuId = 19393,
       ArtifactLvToUnlockCount = {
-        [16] = 4,
+        [1] = 4,
         [22] = 5,
         [26] = 6
       },
@@ -33663,7 +33920,7 @@ GameConfig.Quest = {
       MaxHelpCount = 6,
       MenuId = 19394,
       ArtifactLvToUnlockCount = {
-        [31] = 4,
+        [1] = 4,
         [37] = 5,
         [41] = 6
       },
@@ -39907,6 +40164,7 @@ GameConfig.SkillInherit = {
       },
       SpecificLevel = {1, 10},
       SpecificLevelCostMaterials = {52910, 52911},
+      SpecificLevelRefundMaterial = 52910,
       MaxLvPoint = 5
     },
     [13] = {
@@ -39925,6 +40183,7 @@ GameConfig.SkillInherit = {
       },
       SpecificLevel = {1, 10},
       SpecificLevelCostMaterials = {52910, 52911},
+      SpecificLevelRefundMaterial = 52910,
       MaxLvPoint = 7
     }
   },
@@ -39945,7 +40204,8 @@ GameConfig.SkillInherit = {
     },
     CommonItem = 52913,
     MailID = 12762
-  }
+  },
+  ResetCostItems = {12988, 1}
 }
 GameConfig.SkillView_SkillCell_GuideId = {
   [422] = 15001,
@@ -40024,94 +40284,94 @@ GameConfig.Snow = {
       {12907, 8000}
     },
     [16] = {
-      {12907, 150}
+      {12907, 1500}
     },
     [17] = {
-      {12907, 160}
+      {12907, 3000}
     },
     [18] = {
-      {12907, 170}
+      {12907, 4500}
     },
     [19] = {
-      {12907, 180}
+      {12907, 6000}
     },
     [20] = {
-      {12907, 190}
+      {12907, 7000}
     },
     [21] = {
-      {12907, 200}
+      {12907, 8000}
     },
     [22] = {
-      {12907, 210}
+      {12907, 9000}
     },
     [23] = {
-      {12907, 220}
+      {12907, 9500}
     },
     [24] = {
-      {12907, 230}
+      {12907, 10500}
     },
     [25] = {
-      {12907, 240}
+      {12907, 11500}
     },
     [26] = {
-      {12907, 250}
+      {12907, 12000}
     },
     [27] = {
-      {12907, 260}
+      {12907, 13500}
     },
     [28] = {
-      {12907, 270}
+      {12907, 14000}
     },
     [29] = {
-      {12907, 280}
+      {12907, 15000}
     },
     [30] = {
-      {12907, 290}
+      {12907, 16500}
     },
     [31] = {
-      {12907, 300}
+      {12907, 3000}
     },
     [32] = {
-      {12907, 310}
+      {12907, 5000}
     },
     [33] = {
-      {12907, 320}
+      {12907, 7000}
     },
     [34] = {
-      {12907, 330}
+      {12907, 9000}
     },
     [35] = {
-      {12907, 340}
+      {12907, 11000}
     },
     [36] = {
-      {12907, 350}
+      {12907, 13000}
     },
     [37] = {
-      {12907, 360}
+      {12907, 15000}
     },
     [38] = {
-      {12907, 370}
+      {12907, 16000}
     },
     [39] = {
-      {12907, 380}
+      {12907, 17500}
     },
     [40] = {
-      {12907, 390}
+      {12907, 18500}
     },
     [41] = {
-      {12907, 400}
+      {12907, 19500}
     },
     [42] = {
-      {12907, 410}
+      {12907, 21000}
     },
     [43] = {
-      {12907, 420}
+      {12907, 22500}
     },
     [44] = {
-      {12907, 430}
+      {12907, 23500}
     },
     [45] = {
-      {12907, 440}
+      {12907, 25000}
     }
   },
   Fashion = {
@@ -40126,14 +40386,12 @@ GameConfig.Snow = {
       [3] = 45714
     },
     [3] = {
-      [1] = 45715,
-      [2] = 45717,
-      [3] = 45719
+      [4] = 45717,
+      [5] = 45716
     },
     [4] = {
-      [1] = 45716,
-      [2] = 45718,
-      [3] = 45720
+      [4] = 45720,
+      [5] = 45719
     },
     [5] = {
       [1] = 45721,
@@ -40147,10 +40405,10 @@ GameConfig.Snow = {
     }
   },
   FashionEffect = {
-    [1] = "Common/sfx_snowlandcrown_001_prf",
-    [2] = "Common/sfx_snowlandcrown_004_prf",
-    [3] = "Common/sfx_snowlandcrown_002_prf",
-    [4] = "Common/sfx_snowlandcrown_005_prf",
+    [1] = "Common/sfx_snowlandcrown_003_prf",
+    [2] = "Common/sfx_snowlandcrown_006_prf",
+    [3] = "Common/sfx_snowlandcrown_002_03_prf",
+    [4] = "Common/sfx_snowlandcrown_002_06_prf",
     [5] = "Common/sfx_snowlandcrown_003_prf",
     [6] = "Common/sfx_snowlandcrown_006_prf"
   },
@@ -40251,6 +40509,27 @@ GameConfig.SnowRealm = {
   MVPBossRaidEffect = {
     BpPoint = 200,
     Effect = "Common/sfx_syzh_lhsj_zdqy_05_prf"
+  },
+  Party = {
+    BossNpcID = 2055581,
+    MonsterNpcID = {
+      2055598,
+      2055599,
+      2055600,
+      2055601,
+      2055602
+    },
+    MonsterTotal = 25,
+    PartyName = "啾啾派对",
+    PrepareTime = 60,
+    TotalTime = 1800,
+    CompleteQuestID = 1016530001,
+    StageDesc = {
+      [1] = "准备变身，迎战~ ",
+      [2] = "魔物入侵，战斗吧~ ",
+      [3] = "暗影蝴蝶已降临，对抗它！ ",
+      [4] = "对抗结束~ "
+    }
   }
 }
 GameConfig.ExtraHomeFunctions = {
@@ -40265,6 +40544,213 @@ GameConfig.ExtraHomeFunctions = {
 GameConfig.FashionEquip = {
   EquipPosToFashionPos = {
     [16] = 8
+  }
+}
+GameConfig.SnakeCoaster = {
+  MalePoints = {
+    [1] = {
+      icon = "RollerCoaster_male_1",
+      actionType = 1,
+      actionId = 71,
+      text = "1",
+      effectPath = "Common/sfx_gsc_pose_guide_01_prf"
+    },
+    [2] = {
+      icon = "RollerCoaster_male_2",
+      actionType = 2,
+      actionId = 309,
+      text = "2",
+      effectPath = "Common/sfx_gsc_pose_guide_02_prf"
+    },
+    [3] = {
+      icon = "RollerCoaster_male_3",
+      actionType = 3,
+      actionId = 80,
+      text = "3",
+      effectPath = "Common/sfx_gsc_pose_guide_03_prf"
+    },
+    [4] = {
+      icon = "RollerCoaster_male_4",
+      actionType = 4,
+      actionId = 301,
+      text = "4",
+      effectPath = "Common/sfx_gsc_pose_guide_04_prf"
+    },
+    [5] = {
+      icon = "RollerCoaster_male_5",
+      actionType = 5,
+      actionId = 302,
+      text = "5",
+      effectPath = "Common/sfx_gsc_pose_guide_05_prf"
+    }
+  },
+  FemalePoints = {
+    [1] = {
+      icon = "RollerCoaster_female_1",
+      actionType = 1,
+      actionId = 71,
+      text = "1",
+      effectPath = "Common/sfx_gsc_pose_guide_06_prf"
+    },
+    [2] = {
+      icon = "RollerCoaster_female_2",
+      actionType = 2,
+      actionId = 309,
+      text = "2",
+      effectPath = "Common/sfx_gsc_pose_guide_07_prf"
+    },
+    [3] = {
+      icon = "RollerCoaster_female_3",
+      actionType = 3,
+      actionId = 80,
+      text = "3",
+      effectPath = "Common/sfx_gsc_pose_guide_08_prf"
+    },
+    [4] = {
+      icon = "RollerCoaster_female_4",
+      actionType = 4,
+      actionId = 301,
+      text = "4",
+      effectPath = "Common/sfx_gsc_pose_guide_09_prf"
+    },
+    [5] = {
+      icon = "RollerCoaster_female_5",
+      actionType = 5,
+      actionId = 302,
+      text = "5",
+      effectPath = "Common/sfx_gsc_pose_guide_10_prf"
+    }
+  },
+  CameraParams = {
+    BackTraceDistance = 8,
+    BackTracePitch = 10,
+    BackTraceFollowLerpTime = 0.3,
+    BackTraceSwitchDuration = 0.08,
+    BackTraceFocusDistance = 0.5,
+    BackTraceFocusHeight = 0.2,
+    LookUpHeight = 5
+  },
+  RankDisplayCount = 100,
+  WaitTimeMsg = 3608,
+  StartWaitTime = 8,
+  EndWaitTime = 5,
+  CheckPointEffect = "Common/sfx_gsc_success_prf",
+  CheckPointPerfectEffect = "Common/sfx_gsc_success_perfect_prf",
+  CheckPointTriggerAnim = "sfx_gsc_pose_guide_01_prf_am",
+  CheckPointDefaultAnim = "sfx_gsc_pose_guide_01_prf_am_state2001",
+  Difficulties = {
+    [3] = {
+      PreDifficulty = 2,
+      PlayMap = 155,
+      StartPos = {
+        282.91,
+        38.096,
+        101.82
+      },
+      StartDir = 6,
+      FirstPassRewardID = 8522,
+      EnterBuffIDs = {
+        955,
+        956,
+        957
+      },
+      PlayTime = 120,
+      MinScore = 0,
+      MaxScore = 10000,
+      RankEnabled = true,
+      Name = "挑战",
+      CoasterNpcID = 855018,
+      LaneHalfWidth = 3,
+      LateralSpeed = 3,
+      NormalScore = 50,
+      PerfectScore = 100,
+      Male = {
+        1,
+        2,
+        3,
+        4,
+        5
+      },
+      Female = {
+        1,
+        2,
+        3,
+        4,
+        5
+      }
+    },
+    [2] = {
+      PreDifficulty = 1,
+      PlayMap = 155,
+      StartPos = {
+        282.91,
+        38.096,
+        101.82
+      },
+      StartDir = 6,
+      FirstPassRewardID = 8521,
+      EnterBuffIDs = {955, 956},
+      PlayTime = 120,
+      MinScore = 0,
+      MaxScore = 10000,
+      RankEnabled = true,
+      Name = "困难",
+      CoasterNpcID = 855018,
+      LaneHalfWidth = 3,
+      LateralSpeed = 3,
+      NormalScore = 50,
+      PerfectScore = 100,
+      Male = {
+        1,
+        2,
+        3,
+        4,
+        5
+      },
+      Female = {
+        1,
+        2,
+        3,
+        4,
+        5
+      }
+    },
+    [1] = {
+      PreDifficulty = 0,
+      PlayMap = 155,
+      StartPos = {
+        282.91,
+        38.096,
+        101.82
+      },
+      StartDir = 6,
+      FirstPassRewardID = 8520,
+      EnterBuffIDs = {955, 956},
+      PlayTime = 120,
+      MinScore = 0,
+      MaxScore = 10000,
+      RankEnabled = true,
+      Name = "简单",
+      CoasterNpcID = 855018,
+      LaneHalfWidth = 3,
+      LateralSpeed = 3,
+      NormalScore = 50,
+      PerfectScore = 100,
+      Male = {
+        1,
+        2,
+        3,
+        4,
+        5
+      },
+      Female = {
+        1,
+        2,
+        3,
+        4,
+        5
+      }
+    }
   }
 }
 GameConfig.SpaceTimeIllusion = {

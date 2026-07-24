@@ -138,6 +138,9 @@ function ServiceSkillAutoProxy:onRegister()
   self:Listen(7, 41, function(data)
     self:RecvSyncBlockMasterSkill(data)
   end)
+  self:Listen(7, 42, function(data)
+    self:RecvResetInheritSkillCmd(data)
+  end)
 end
 
 function ServiceSkillAutoProxy:CallReqSkillData(data, talentdata, forth_skill_fulled, auto_shortcut, master_skill_data, inherit_skill_data)
@@ -2123,6 +2126,23 @@ function ServiceSkillAutoProxy:CallSyncBlockMasterSkill(block_skills)
   end
 end
 
+function ServiceSkillAutoProxy:CallResetInheritSkillCmd(id)
+  if not NetConfig.PBC then
+    local msg = SceneSkill_pb.ResetInheritSkillCmd()
+    if id ~= nil then
+      msg.id = id
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.ResetInheritSkillCmd.id
+    local msgParam = {}
+    if id ~= nil then
+      msgParam.id = id
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceSkillAutoProxy:RecvReqSkillData(data)
   self:Notify(ServiceEvent.SkillReqSkillData, data)
 end
@@ -2287,6 +2307,10 @@ function ServiceSkillAutoProxy:RecvSyncBlockMasterSkill(data)
   self:Notify(ServiceEvent.SkillSyncBlockMasterSkill, data)
 end
 
+function ServiceSkillAutoProxy:RecvResetInheritSkillCmd(data)
+  self:Notify(ServiceEvent.SkillResetInheritSkillCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.SkillReqSkillData = "ServiceEvent_SkillReqSkillData"
 ServiceEvent.SkillSkillUpdate = "ServiceEvent_SkillSkillUpdate"
@@ -2329,3 +2353,4 @@ ServiceEvent.SkillUpdateInheritSkillCmd = "ServiceEvent_SkillUpdateInheritSkillC
 ServiceEvent.SkillLoadInheritSkillCmd = "ServiceEvent_SkillLoadInheritSkillCmd"
 ServiceEvent.SkillExtendInheritSkillCmd = "ServiceEvent_SkillExtendInheritSkillCmd"
 ServiceEvent.SkillSyncBlockMasterSkill = "ServiceEvent_SkillSyncBlockMasterSkill"
+ServiceEvent.SkillResetInheritSkillCmd = "ServiceEvent_SkillResetInheritSkillCmd"

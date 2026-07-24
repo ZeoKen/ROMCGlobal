@@ -7,7 +7,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45923911"
+    Desc = "##46024080"
   },
   [100102] = {
     id = 100102,
@@ -20,7 +20,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45923912"
+    Desc = "##46024081"
   },
   [100103] = {
     id = 100103,
@@ -33,7 +33,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45923913"
+    Desc = "##46024082"
   },
   [100104] = {
     id = 100104,
@@ -46,7 +46,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45923914"
+    Desc = "##46024083"
   },
   [100105] = {
     id = 100105,
@@ -59,7 +59,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45923915"
+    Desc = "##46024084"
   },
   [100106] = {
     id = 100106,
@@ -73,7 +73,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45923916"
+    Desc = "##46024085"
   },
   [100107] = {
     id = 100107,
@@ -87,7 +87,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45923917"
+    Desc = "##46024086"
   },
   [100108] = {
     id = 100108,
@@ -101,7 +101,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45923918"
+    Desc = "##46024087"
   },
   [100109] = {
     id = 100109,
@@ -115,7 +115,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45923919"
+    Desc = "##46024088"
   },
   [100110] = {
     id = 100110,
@@ -129,7 +129,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_01",
     Name = "##1110983",
-    Desc = "##45923920"
+    Desc = "##46024089"
   },
   [100201] = {
     id = 100201,
@@ -139,7 +139,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45923921"
+    Desc = "##46024091"
   },
   [100202] = {
     id = 100202,
@@ -152,7 +152,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45923922"
+    Desc = "##46024093"
   },
   [100203] = {
     id = 100203,
@@ -165,7 +165,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45923923"
+    Desc = "##46024095"
   },
   [100204] = {
     id = 100204,
@@ -178,7 +178,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45923924"
+    Desc = "##46024097"
   },
   [100205] = {
     id = 100205,
@@ -191,7 +191,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45923925"
+    Desc = "##46024099"
   },
   [100206] = {
     id = 100206,
@@ -205,7 +205,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45923926"
+    Desc = "##46024101"
   },
   [100207] = {
     id = 100207,
@@ -219,7 +219,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45923927"
+    Desc = "##46024103"
   },
   [100208] = {
     id = 100208,
@@ -233,7 +233,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45923928"
+    Desc = "##46024105"
   },
   [100209] = {
     id = 100209,
@@ -247,7 +247,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45923929"
+    Desc = "##46024107"
   },
   [100210] = {
     id = 100210,
@@ -261,7 +261,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_02",
     Name = "##44721409",
-    Desc = "##45923930"
+    Desc = "##46024109"
   },
   [100301] = {
     id = 100301,
@@ -271,7 +271,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45923931"
+    Desc = "##46024110"
   },
   [100302] = {
     id = 100302,
@@ -284,7 +284,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45923932"
+    Desc = "##46024111"
   },
   [100303] = {
     id = 100303,
@@ -297,7 +297,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45923933"
+    Desc = "##46024112"
   },
   [100304] = {
     id = 100304,
@@ -310,7 +310,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45923934"
+    Desc = "##46024113"
   },
   [100305] = {
     id = 100305,
@@ -323,7 +323,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45923935"
+    Desc = "##46024114"
   },
   [100306] = {
     id = 100306,
@@ -337,7 +337,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45923936"
+    Desc = "##46024115"
   },
   [100307] = {
     id = 100307,
@@ -351,7 +351,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45923937"
+    Desc = "##46024116"
   },
   [100308] = {
     id = 100308,
@@ -365,7 +365,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45923938"
+    Desc = "##46024117"
   },
   [100309] = {
     id = 100309,
@@ -379,7 +379,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45923939"
+    Desc = "##46024118"
   },
   [100310] = {
     id = 100310,
@@ -392,7 +392,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_03",
     Name = "##172515",
-    Desc = "##45923940"
+    Desc = "##46024119"
   },
   [100401] = {
     id = 100401,
@@ -402,7 +402,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45923941"
+    Desc = "##46024121"
   },
   [100402] = {
     id = 100402,
@@ -415,7 +415,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45923942"
+    Desc = "##46024123"
   },
   [100403] = {
     id = 100403,
@@ -428,7 +428,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45923943"
+    Desc = "##46024125"
   },
   [100404] = {
     id = 100404,
@@ -441,7 +441,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45923944"
+    Desc = "##46024127"
   },
   [100405] = {
     id = 100405,
@@ -454,7 +454,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45923945"
+    Desc = "##46024129"
   },
   [100406] = {
     id = 100406,
@@ -468,7 +468,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45923946"
+    Desc = "##46024131"
   },
   [100407] = {
     id = 100407,
@@ -482,7 +482,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45923947"
+    Desc = "##46024133"
   },
   [100408] = {
     id = 100408,
@@ -496,7 +496,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45923948"
+    Desc = "##46024135"
   },
   [100409] = {
     id = 100409,
@@ -510,7 +510,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45923949"
+    Desc = "##46024137"
   },
   [100410] = {
     id = 100410,
@@ -524,7 +524,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_04",
     Name = "##44721439",
-    Desc = "##45923950"
+    Desc = "##46024139"
   },
   [100501] = {
     id = 100501,
@@ -534,7 +534,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45923951"
+    Desc = "##46024141"
   },
   [100502] = {
     id = 100502,
@@ -547,7 +547,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45923952"
+    Desc = "##46024143"
   },
   [100503] = {
     id = 100503,
@@ -560,7 +560,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45923953"
+    Desc = "##46024145"
   },
   [100504] = {
     id = 100504,
@@ -573,7 +573,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45923954"
+    Desc = "##46024147"
   },
   [100505] = {
     id = 100505,
@@ -586,7 +586,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45923955"
+    Desc = "##46024149"
   },
   [100506] = {
     id = 100506,
@@ -600,7 +600,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45923956"
+    Desc = "##46024151"
   },
   [100507] = {
     id = 100507,
@@ -614,7 +614,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45923957"
+    Desc = "##46024153"
   },
   [100508] = {
     id = 100508,
@@ -628,7 +628,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45923958"
+    Desc = "##46024155"
   },
   [100509] = {
     id = 100509,
@@ -642,7 +642,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45923959"
+    Desc = "##46024157"
   },
   [100510] = {
     id = 100510,
@@ -656,7 +656,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_05",
     Name = "##44721459",
-    Desc = "##45923960"
+    Desc = "##46024159"
   },
   [100601] = {
     id = 100601,
@@ -666,7 +666,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45923961"
+    Desc = "##46024161"
   },
   [100602] = {
     id = 100602,
@@ -679,7 +679,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45923962"
+    Desc = "##46024163"
   },
   [100603] = {
     id = 100603,
@@ -692,7 +692,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45923963"
+    Desc = "##46024165"
   },
   [100604] = {
     id = 100604,
@@ -705,7 +705,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45923964"
+    Desc = "##46024167"
   },
   [100605] = {
     id = 100605,
@@ -718,7 +718,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45923965"
+    Desc = "##46024169"
   },
   [100606] = {
     id = 100606,
@@ -732,7 +732,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45923966"
+    Desc = "##46024171"
   },
   [100607] = {
     id = 100607,
@@ -746,7 +746,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45923967"
+    Desc = "##46024173"
   },
   [100608] = {
     id = 100608,
@@ -760,7 +760,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45923968"
+    Desc = "##46024175"
   },
   [100609] = {
     id = 100609,
@@ -774,7 +774,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45923969"
+    Desc = "##46024177"
   },
   [100610] = {
     id = 100610,
@@ -787,7 +787,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_06",
     Name = "##44721479",
-    Desc = "##45923970"
+    Desc = "##46024179"
   },
   [100701] = {
     id = 100701,
@@ -797,7 +797,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45923971"
+    Desc = "##46024181"
   },
   [100702] = {
     id = 100702,
@@ -810,7 +810,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45923972"
+    Desc = "##46024183"
   },
   [100703] = {
     id = 100703,
@@ -823,7 +823,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45923973"
+    Desc = "##46024185"
   },
   [100704] = {
     id = 100704,
@@ -836,7 +836,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45923974"
+    Desc = "##46024187"
   },
   [100705] = {
     id = 100705,
@@ -849,7 +849,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45923975"
+    Desc = "##46024189"
   },
   [100706] = {
     id = 100706,
@@ -863,7 +863,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45923976"
+    Desc = "##46024191"
   },
   [100707] = {
     id = 100707,
@@ -877,7 +877,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45923977"
+    Desc = "##46024193"
   },
   [100708] = {
     id = 100708,
@@ -891,7 +891,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45923978"
+    Desc = "##46024195"
   },
   [100709] = {
     id = 100709,
@@ -905,7 +905,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45923979"
+    Desc = "##46024197"
   },
   [100710] = {
     id = 100710,
@@ -919,7 +919,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_07",
     Name = "##1234734",
-    Desc = "##45923980"
+    Desc = "##46024199"
   },
   [100801] = {
     id = 100801,
@@ -929,7 +929,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45923981"
+    Desc = "##46024201"
   },
   [100802] = {
     id = 100802,
@@ -942,7 +942,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45923982"
+    Desc = "##46024203"
   },
   [100803] = {
     id = 100803,
@@ -955,7 +955,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45923983"
+    Desc = "##46024205"
   },
   [100804] = {
     id = 100804,
@@ -968,7 +968,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45923984"
+    Desc = "##46024207"
   },
   [100805] = {
     id = 100805,
@@ -981,7 +981,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45923985"
+    Desc = "##46024209"
   },
   [100806] = {
     id = 100806,
@@ -995,7 +995,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45923986"
+    Desc = "##46024211"
   },
   [100807] = {
     id = 100807,
@@ -1009,7 +1009,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45923987"
+    Desc = "##46024213"
   },
   [100808] = {
     id = 100808,
@@ -1023,7 +1023,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45923988"
+    Desc = "##46024215"
   },
   [100809] = {
     id = 100809,
@@ -1037,7 +1037,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45923989"
+    Desc = "##46024217"
   },
   [100810] = {
     id = 100810,
@@ -1051,7 +1051,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_08",
     Name = "##44721509",
-    Desc = "##45923990"
+    Desc = "##46024219"
   },
   [100901] = {
     id = 100901,
@@ -1061,7 +1061,7 @@ Table_SnowCrown = {
     ItemCost = _EmptyTable,
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45923991"
+    Desc = "##46024221"
   },
   [100902] = {
     id = 100902,
@@ -1074,7 +1074,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45923992"
+    Desc = "##46024223"
   },
   [100903] = {
     id = 100903,
@@ -1087,7 +1087,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45923993"
+    Desc = "##46024225"
   },
   [100904] = {
     id = 100904,
@@ -1100,7 +1100,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45923994"
+    Desc = "##46024227"
   },
   [100905] = {
     id = 100905,
@@ -1113,7 +1113,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45923995"
+    Desc = "##46024229"
   },
   [100906] = {
     id = 100906,
@@ -1127,7 +1127,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45923996"
+    Desc = "##46024231"
   },
   [100907] = {
     id = 100907,
@@ -1141,7 +1141,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45923997"
+    Desc = "##46024233"
   },
   [100908] = {
     id = 100908,
@@ -1155,7 +1155,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45923998"
+    Desc = "##46024235"
   },
   [100909] = {
     id = 100909,
@@ -1169,7 +1169,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45923999"
+    Desc = "##46024237"
   },
   [100910] = {
     id = 100910,
@@ -1182,7 +1182,7 @@ Table_SnowCrown = {
     },
     Icon = "snowflake_icon_gem_09",
     Name = "##44721529",
-    Desc = "##45924000"
+    Desc = "##46024239"
   }
 }
 Table_SnowCrown_fields = {

@@ -164,7 +164,10 @@ function SkillHitWorker:Work(damageIndex, damageCount, forceSingleDamage)
   end
   mylog("SkillHitWorker:Work ", damageIndex, damageCount, targetCount)
   local creature = FindCreature(args[3])
-  self:_Work(creature, args[8], args[9], SkillLogic_Base.GetSplitDamage(args[10], damageIndex, damageCount), args[11], args[12], forceSingleDamage, 1, targetCount, args[13], args[14])
+  local mainDamage = SkillLogic_Base.GetSplitDamage(args[10], damageIndex, damageCount)
+  local splitDamageCount = damageCount and 1 < damageCount and damageCount or 1
+  local isLastSplitDamage = splitDamageCount <= (damageIndex or 1)
+  self:_Work(creature, args[8], args[9], mainDamage, args[11], args[12], forceSingleDamage, 1, targetCount, args[13], args[14], args[10], isLastSplitDamage)
   tempList[#tempList + 1] = args[8]
   local subCount = targetCount - 1
   if 0 < subCount then
@@ -172,7 +175,8 @@ function SkillHitWorker:Work(damageIndex, damageCount, forceSingleDamage)
     args[5] = nil
     for i = 1, subCount do
       local index = 7 + i * arrayCount
-      self:_Work(creature, args[index + 1], args[index + 2], SkillLogic_Base.GetSplitDamage(args[index + 3], damageIndex, damageCount), args[index + 4], args[index + 5], forceSingleDamage, i + 1, targetCount, args[index + 6], args[index + 7])
+      local subDamage = SkillLogic_Base.GetSplitDamage(args[index + 3], damageIndex, damageCount)
+      self:_Work(creature, args[index + 1], args[index + 2], subDamage, args[index + 4], args[index + 5], forceSingleDamage, i + 1, targetCount, args[index + 6], args[index + 7], args[index + 3], isLastSplitDamage)
       tempList[#tempList + 1] = args[index + 1]
     end
     args[5] = effectPath
@@ -184,7 +188,7 @@ end
 local hitCheckFrame = 4
 local hitCheckDistance = 8
 
-function SkillHitWorker:_Work(creature, targetGUID, damageType, damage, shareDamageInfos, comboDamageLabel, forceSingleDamage, targetIndex, targetCount, damageCount, doubleDamage)
+function SkillHitWorker:_Work(creature, targetGUID, damageType, damage, shareDamageInfos, comboDamageLabel, forceSingleDamage, targetIndex, targetCount, damageCount, doubleDamage, rawDamage, isLastSplitDamage)
   local args = self.args
   local targetCreature = FindCreature(targetGUID)
   if nil == targetCreature then
@@ -219,7 +223,7 @@ function SkillHitWorker:_Work(creature, targetGUID, damageType, damage, shareDam
     local allowHurtNum = SkillLogic_Base.AllowTargetHurtNum(creature, targetCreature)
     local effectPath, targetPosition, lodLevel, priority, effectType, dirAngleY = self:_PlayEffect(creature, targetCreature, damageType, damage, hitEP, allowEffect)
     mylog("before hit", damageCount)
-    self:_Hit(creature, targetCreature, damageType, damage, comboDamageLabel, forceSingleDamage, hitEP, targetPosition, allowEffect, allowHurtNum, damageCount, effectPath, lodLevel, priority, effectType, dirAngleY, doubleDamage)
+    self:_Hit(creature, targetCreature, damageType, damage, comboDamageLabel, forceSingleDamage, hitEP, targetPosition, allowEffect, allowHurtNum, damageCount, effectPath, lodLevel, priority, effectType, dirAngleY, doubleDamage, targetIndex, rawDamage, isLastSplitDamage)
   end
   if nil ~= shareDamageInfos then
     local shareDamageHitEP = RoleDefines_EP.Middle
@@ -300,7 +304,7 @@ end
 
 local doubleDamageOffset = LuaVector3.New(0, 0.3, 0)
 
-function SkillHitWorker:_Hit(creature, targetCreature, damageType, damage, comboDamageLabel, forceSingleDamage, hitEP, targetPosition, allowEffect, allowHurtNum, damageCount, effectPath, lodLevel, priority, effectType, dirAngleY, doubleDamage)
+function SkillHitWorker:_Hit(creature, targetCreature, damageType, damage, comboDamageLabel, forceSingleDamage, hitEP, targetPosition, allowEffect, allowHurtNum, damageCount, effectPath, lodLevel, priority, effectType, dirAngleY, doubleDamage, targetIndex, rawDamage, isLastSplitDamage)
   local args = self.args
   local skillInfo = args[1]
   mylog("_Hit", UnityFrameCount)
@@ -422,8 +426,9 @@ function SkillHitWorker:_Hit(creature, targetCreature, damageType, damage, combo
         end
         doubleDamage = SkillLogic_Base.ResolveDoubleDamage(targetCreature, doubleDamage)
         comboDamageLabel:Show(damage, labelPosition, creature == Game.Myself, crit, targetCreature == Game.Myself)
-        if doubleDamage and 0 < doubleDamage then
-          comboDamageLabel:Show(damage, labelPosition + doubleDamageOffset, creature == Game.Myself, crit, targetCreature == Game.Myself)
+        if doubleDamage and 0 < doubleDamage and isLastSplitDamage then
+          local doubleComboDamageLabel = self:GetDoubleComboDamageLabel(targetIndex or 1)
+          doubleComboDamageLabel:Show(rawDamage or damage, labelPosition + doubleDamageOffset, creature == Game.Myself, crit, targetCreature == Game.Myself)
         end
       end
     end
@@ -431,6 +436,27 @@ function SkillHitWorker:_Hit(creature, targetCreature, damageType, damage, combo
       local delay = skillInfo:GetHitSEDelay(creature)
       targetCreature.assetRole:PlaySEOneShotOn(sePath, AudioSourceType.SKILL_Hit, nil, delay)
     end
+  end
+end
+
+function SkillHitWorker:GetDoubleComboDamageLabel(index)
+  self.doubleComboDamageLabels = self.doubleComboDamageLabels or {}
+  local label = self.doubleComboDamageLabels[index]
+  if nil == label then
+    label = SceneUIManager.Instance:GetStaticHurtLabelWorker()
+    label:AddRef()
+    self.doubleComboDamageLabels[index] = label
+  end
+  return label
+end
+
+function SkillHitWorker:DestroyDoubleComboDamageLabels(labels)
+  if nil == labels then
+    return
+  end
+  for i = #labels, 1, -1 do
+    labels[i]:SubRef()
+    labels[i] = nil
   end
 end
 
@@ -461,6 +487,9 @@ function SkillHitWorker:_SpecialHit(creature, targetCreature)
   local isGVG = Game.MapManager:IsPVPMode_GVGDetailed()
   local hitedMovePos = self.hitedTarget_gopos and self.hitedTarget_gopos[targetCreature.data.id]
   if not hitedMovePos then
+    return
+  end
+  if not SkillLogic_Base.CanHitMoveTargetBySkillID(skillInfo:GetSkillID(creature), targetCreature) then
     return
   end
   local x, y, z, speed, direction = hitedMovePos[1], hitedMovePos[2], hitedMovePos[3], hitedMovePos[4], hitedMovePos[5]
@@ -568,6 +597,7 @@ function SkillHitWorker:DoDeconstruct(asArray)
       end
     end
   end
+  self:DestroyDoubleComboDamageLabels(self.doubleComboDamageLabels)
   args[7] = 0
   self.hitedTarget_gopos = nil
   self.noHitEffect = false

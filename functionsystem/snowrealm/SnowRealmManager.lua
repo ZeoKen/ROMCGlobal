@@ -228,6 +228,8 @@ function SnowRealmManager:Shutdown()
     self.curAtHome = false
   end
   self.isInEditMode = false
+  self.curBlurPrintData = nil
+  self.bpFinishNumMap = nil
   self.clientPrepareBuild = false
   self.curMapSData = nil
   self.curHouseConfig = nil
@@ -414,6 +416,8 @@ end
 function SnowRealmManager:ExitEditMode(skipFurnitureLayerChange)
   self.isInEditMode = false
   self.hasEditedFurnitureInThisEditSession = false
+  self.curBlurPrintData = nil
+  self.bpFinishNumMap = nil
   if self.currentUseNpcFunction then
     self:HandleLeaveSnowRealmRoom(self.curHomeIdx)
     self.currentUseNpcFunction = nil
@@ -1866,6 +1870,11 @@ function SnowRealmManager:GetPlacedFurnitureCells(tag, houseIndex)
     houseIndex = SnowRealmProxy.Instance:GetMySelfHomeIndex()
   end
   return self.nHomeMap[houseIndex].buildingGrid:GetPlacedFurnitureCells(tag)
+end
+
+function SnowRealmManager:GetCurrentBuildingGrid()
+  local homeData = self.curHomeIdx and self.nHomeMap[self.curHomeIdx]
+  return homeData and homeData.buildingGrid
 end
 
 function SnowRealmManager:CalculateRotationCloseToNearestWall(staticID, posX, posZ, houseIndex)

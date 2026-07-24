@@ -1863,7 +1863,6 @@ end
 
 function QuestProxy:updateSingleQuestData(stepid)
   if Table_MapStep[stepid] then
-    helplog("当前同步添加大荒魔物任务step", stepid)
     local questData = QuestData.CreateAsArray(QuestDataScopeType.QuestDataScopeType_DAHUANG)
     questData:updateDahuangData(Table_MapStep[stepid])
     questData.map = Table_MapStep[stepid].MapID

@@ -99,8 +99,6 @@ function MainViewTraceInfoPage:AddViewEvts()
   self:AddListenEvt(PVEEvent.ComodoRaid_Shutdown, self.HandleComodoRaidShutdown)
   self:AddListenEvt(PVEEvent.DestroyAirShipRaid_Launch, self.HandleDestroyAirShipRaidLaunch)
   self:AddListenEvt(PVEEvent.DestroyAirShipRaid_ShutDown, self.HandleDestroyAirShipRaidShutdown)
-  self:AddListenEvt(PVEEvent.BageLab_Launch, self.HandleBageLabLaunch)
-  self:AddListenEvt(PVEEvent.BageLab_ShutDown, self.HandleBageLabShutdown)
   self:AddListenEvt(PVEEvent.MultiBossRaid_Launch, self.HandleMultiBossRaidLaunch)
   self:AddListenEvt(PVEEvent.MultiBossRaid_Shutdown, self.HandleMultiBossRaidShutdown)
   self:MapCardEvent()
@@ -887,26 +885,6 @@ function MainViewTraceInfoPage:HandleDestroyAirShipRaidShutdown()
     self.destroyAirShipRaidPage:Hide()
     self:RemoveSubView("MainViewDestroyAirShipRaid")
     self.destroyAirShipRaidPage = nil
-  end
-  self.curBord = nil
-end
-
-function MainViewTraceInfoPage:HandleBageLabLaunch()
-  if not self.bageLabPage then
-    self.bageLabPage = self:AddSubView("MainViewMultiBossBase", MainViewMultiBossBase)
-  end
-  self.taskBord:Hide()
-  self.bageLabPage:Show()
-  self.bageLabPage:ResetDatas()
-  self.curBord = self.bageLabPage
-end
-
-function MainViewTraceInfoPage:HandleBageLabShutdown()
-  self.taskBord:Show()
-  if self.bageLabPage then
-    self.bageLabPage:Hide()
-    self:RemoveSubView("MainViewMultiBossBase")
-    self.bageLabPage = nil
   end
   self.curBord = nil
 end

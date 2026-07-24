@@ -16,6 +16,7 @@ CrownAccessoriesPage.InnerTogglePageMap = {
   CollectionTab = "CollectionPage"
 }
 local _InnerTabNamePrefix = "CrownAccessoriesPage_TabName_"
+local _EmbedSlotMoveDuration = 0.3
 
 function CrownAccessoriesPage:Init()
   CrownAccessoriesPage.super.Init(self)
@@ -25,6 +26,8 @@ function CrownAccessoriesPage:Init()
   self.innerToggleMap = {}
   self.innerPageMap = {}
   self.slotList = {}
+  self.embedSlotGridGO = nil
+  self.embedSlotGridOriginPos = nil
   self.currentChooseType = CrownAccessoriesPage.ChoosePanelType.None
   self.currentSlotIndex = nil
   self.currentGemIndex = nil
@@ -113,6 +116,14 @@ function CrownAccessoriesPage:InitEmbedPage()
   for i = 1, 3 do
     local slotGO = self:FindGO("Slot" .. i, embedPage)
     if slotGO then
+      if not self.embedSlotGridGO and slotGO.transform.parent then
+        local parentGO = slotGO.transform.parent.gameObject
+        if parentGO and parentGO:GetComponent(UIGrid) then
+          self.embedSlotGridGO = parentGO
+          local gridPos = self.embedSlotGridGO.transform.localPosition
+          self.embedSlotGridOriginPos = LuaVector3.New(gridPos.x, gridPos.y, gridPos.z)
+        end
+      end
       local slotData = {
         gameObject = slotGO,
         slotIndex = i,
@@ -707,6 +718,12 @@ function CrownAccessoriesPage:InitChoosePanel()
     return
   end
   self:Hide(self.choosePanel)
+  self.choosePanelCloseComp = self.choosePanel:GetComponent(CloseWhenClickOtherPlace)
+  if self.choosePanelCloseComp then
+    function self.choosePanelCloseComp.callBack()
+      self:HideChoosePanel()
+    end
+  end
   self.selectedItemData = nil
   self.choosePanelTitle = self:FindComponent("ChoosePanelTitle", UILabel, self.choosePanel)
   self.chooseBg = self:FindComponent("Bg", UIWidget, self.choosePanel)
@@ -738,6 +755,25 @@ function CrownAccessoriesPage:InitChoosePanel()
   end
 end
 
+function CrownAccessoriesPage:ClearChoosePanelTipTarget()
+  if self.choosePanelCloseComp then
+    if self.choosePanelTipTarget then
+      self.choosePanelCloseComp:RemoveTarget(self.choosePanelTipTarget)
+    else
+      self.choosePanelCloseComp:ReCalculateBound()
+    end
+  end
+  self.choosePanelTipTarget = nil
+end
+
+function CrownAccessoriesPage:AddChoosePanelTipTarget(tip)
+  self:ClearChoosePanelTipTarget()
+  if self.choosePanelCloseComp and tip and tip.gameObject then
+    self.choosePanelTipTarget = tip.gameObject.transform
+    self.choosePanelCloseComp:AddTarget(self.choosePanelTipTarget)
+  end
+end
+
 function CrownAccessoriesPage:OnEquipSlotClick(slotIndex)
   self.currentSlotIndex = slotIndex
   self.currentGemIndex = nil
@@ -754,6 +790,7 @@ function CrownAccessoriesPage:ShowChoosePanel(chooseType)
   if not self.choosePanel then
     return
   end
+  self:ClearChoosePanelTipTarget()
   self.currentChooseType = chooseType
   self.selectedItemData = nil
   self:Show(self.choosePanel)
@@ -766,8 +803,9 @@ function CrownAccessoriesPage:ShowChoosePanel(chooseType)
     end
   end
   self:UpdateEmbedBtnLabel()
-  self:UpdateSlotsAlpha(self.currentSlotIndex)
+  self:UpdateSlotsAlpha()
   self:UpdateChooseSymbol(self.currentSlotIndex, chooseType, self.currentGemIndex)
+  self:UpdateEmbedSlotGridPosition(self.currentSlotIndex)
   self:RefreshChooseList()
 end
 
@@ -866,9 +904,11 @@ function CrownAccessoriesPage:HideChoosePanel()
   if self.choosePanel then
     self:Hide(self.choosePanel)
   end
+  self:ClearChoosePanelTipTarget()
   self:ShowItemTip()
-  self:UpdateSlotsAlpha(nil)
+  self:UpdateSlotsAlpha()
   self:UpdateChooseSymbol(nil, nil, nil)
+  self:ResetEmbedSlotGridPosition()
   self.currentChooseType = CrownAccessoriesPage.ChoosePanelType.None
   self.currentSlotIndex = nil
   self.currentGemIndex = nil
@@ -897,23 +937,49 @@ function CrownAccessoriesPage:UpdateChooseSymbol(selectedSlotIndex, chooseType, 
   end
 end
 
-function CrownAccessoriesPage:UpdateSlotsAlpha(selectedSlotIndex)
+function CrownAccessoriesPage:UpdateSlotsAlpha()
   if not self.slotList then
     return
   end
   for i = 1, 3 do
     local slotData = self.slotList[i]
     if slotData and slotData.widget then
-      if selectedSlotIndex then
-        if i == selectedSlotIndex then
-          slotData.widget.alpha = 1
-        else
-          slotData.widget.alpha = 0.5
-        end
-      else
-        slotData.widget.alpha = 1
-      end
+      slotData.widget.alpha = 1
     end
+  end
+end
+
+function CrownAccessoriesPage:UpdateEmbedSlotGridPosition(selectedSlotIndex)
+  if not self.embedSlotGridGO or not self.embedSlotGridOriginPos then
+    return
+  end
+  if not selectedSlotIndex then
+    self:ResetEmbedSlotGridPosition()
+    return
+  end
+  local originPos = self.embedSlotGridOriginPos
+  local targetX = originPos.x
+  if self.slotList then
+    local selectedSlot = self.slotList[selectedSlotIndex]
+    if selectedSlot and selectedSlot.gameObject then
+      local selectedX = selectedSlot.gameObject.transform.localPosition.x
+      targetX = originPos.x - selectedX
+    end
+  end
+  local tween = TweenPosition.Begin(self.embedSlotGridGO, _EmbedSlotMoveDuration, LuaGeometry.GetTempVector3(targetX, originPos.y, originPos.z))
+  if tween then
+    tween.method = 2
+  end
+end
+
+function CrownAccessoriesPage:ResetEmbedSlotGridPosition()
+  if not self.embedSlotGridGO or not self.embedSlotGridOriginPos then
+    return
+  end
+  local originPos = self.embedSlotGridOriginPos
+  local tween = TweenPosition.Begin(self.embedSlotGridGO, _EmbedSlotMoveDuration, LuaGeometry.GetTempVector3(originPos.x, originPos.y, originPos.z))
+  if tween then
+    tween.method = 2
   end
 end
 
@@ -1053,8 +1119,9 @@ function CrownAccessoriesPage:GetSnowEquipList()
   if self.currentSlotIndex and SnowCrownProxy.Instance then
     local slotEquipData = SnowCrownProxy.Instance:GetSlotEquipData(self.currentSlotIndex)
     if slotEquipData then
-      slotEquipData.isactive = true
-      table.insert(equipList, slotEquipData)
+      local activeEquipData = slotEquipData.Clone and slotEquipData:Clone() or slotEquipData
+      activeEquipData.isactive = true
+      table.insert(equipList, activeEquipData)
       currentEquippedId = slotEquipData.id
     end
   end
@@ -1071,8 +1138,10 @@ function CrownAccessoriesPage:GetSnowEquipList()
             if Table_Equip and Table_Equip[equipId] then
               local equipConfig = Table_Equip[equipId]
               if equipConfig.IsNew == 2 and self:CheckEquipPosValid(itemData, validEquipPos) then
-                itemData.snowInvalid = self:CheckEquipSiteOccupied(itemData, occupiedSites) or equippedStaticIds[equipId] == true
-                table.insert(equipList, itemData)
+                local equipData = itemData.Clone and itemData:Clone() or itemData
+                equipData.snowInvalid = self:CheckEquipSiteOccupied(itemData, occupiedSites) or equippedStaticIds[equipId] == true
+                equipData.isactive = false
+                table.insert(equipList, equipData)
               end
             end
           end
@@ -1243,8 +1312,15 @@ function CrownAccessoriesPage:OnChooseItemClick(cell)
   clonedData.snowInvalid = cell.data.snowInvalid
   clonedData.snowStoreMode = true
   self.tipData.itemdata = clonedData
+  
+  function self.tipData.callback()
+    self:ClearChoosePanelTipTarget()
+  end
+  
+  self:ClearChoosePanelTipTarget()
   TipManager.Instance:CloseItemTip()
-  self:ShowItemTip(self.tipData, self.chooseBg, NGUIUtil.AnchorSide.Left, {-200, 0})
+  local tip = self:ShowItemTip(self.tipData, self.chooseBg, NGUIUtil.AnchorSide.Left, {-200, 0})
+  self:AddChoosePanelTipTarget(tip)
   xdlog("OnChooseItemClick | type:", self.currentChooseType, "| itemId:", cell.data.staticData and cell.data.staticData.id)
 end
 
@@ -1407,6 +1483,9 @@ function CrownAccessoriesPage:OnInnerPageActivate(pageName)
 end
 
 function CrownAccessoriesPage:OnInnerPageDeactivate(pageName)
+  if pageName == "EmbedPage" then
+    self:HideChoosePanel()
+  end
 end
 
 function CrownAccessoriesPage:RefreshEmbedPage()
@@ -1434,7 +1513,11 @@ function CrownAccessoriesPage:RefreshSlotEquip(slotData, slotIndex)
     if slotData.equipCell.gameObject then
       slotData.equipCell.gameObject:SetActive(true)
     end
-    slotData.equipCell:SetData(equipData)
+    local showEquipData = equipData.Clone and equipData:Clone() or equipData
+    showEquipData.isactive = false
+    showEquipData.snowInvalid = false
+    slotData.equipCell:SetData(showEquipData)
+    slotData.equipCell:SetInvalid(false)
   elseif slotData.equipCell.gameObject then
     slotData.equipCell.gameObject:SetActive(false)
   end
@@ -1997,6 +2080,75 @@ local CalcSnowShadowBuffRate = function(refineLv)
   end
   return rate
 end
+local _SnowStoreSpecialBuffDisplayConfigs = {
+  DoubleShadow = {
+    key = "DoubleShadow",
+    format = function(rate)
+      return string.format(ZhString.CrownAccessoriesPage_DoubleShadow, rate)
+    end
+  },
+  ShadowGuard = {
+    key = "ShadowGuard",
+    format = function(rate)
+      return string.format(ZhString.CrownAccessoriesPage_ShadowGuard, rate)
+    end
+  }
+}
+local _SnowStoreSpecialBuffSiteConfigs = {
+  [1] = _SnowStoreSpecialBuffDisplayConfigs.DoubleShadow,
+  [7] = _SnowStoreSpecialBuffDisplayConfigs.DoubleShadow,
+  [2] = _SnowStoreSpecialBuffDisplayConfigs.ShadowGuard,
+  [3] = _SnowStoreSpecialBuffDisplayConfigs.ShadowGuard
+}
+local _SnowStoreSpecialBuffEquipTypeConfigs = {
+  [1] = _SnowStoreSpecialBuffDisplayConfigs.DoubleShadow,
+  [3] = _SnowStoreSpecialBuffDisplayConfigs.DoubleShadow,
+  [2] = _SnowStoreSpecialBuffDisplayConfigs.ShadowGuard,
+  [4] = _SnowStoreSpecialBuffDisplayConfigs.ShadowGuard
+}
+local GetSnowStoreSpecialBuffConfig = function(buffId, equipConfig)
+  local buffData = Table_Buffer and Table_Buffer[buffId]
+  local buffEffect = buffData and buffData.BuffEffect
+  if not buffEffect or next(buffEffect) ~= nil then
+    return nil
+  end
+  if not equipConfig then
+    return nil
+  end
+  local equipType = equipConfig.EquipType
+  local equipTypeConfig = GameConfig and GameConfig.EquipType and GameConfig.EquipType[equipType]
+  local equipSites = equipTypeConfig and equipTypeConfig.site
+  if equipSites then
+    for i = 1, #equipSites do
+      local config = _SnowStoreSpecialBuffSiteConfigs[equipSites[i]]
+      if config then
+        return config
+      end
+    end
+  end
+  return _SnowStoreSpecialBuffEquipTypeConfigs[equipType]
+end
+local AddSnowStoreSpecialBuffRate = function(buffId, refineLv, equipConfig, rateMap, orderList)
+  local config = GetSnowStoreSpecialBuffConfig(buffId, equipConfig)
+  if not config then
+    return false
+  end
+  local rate = CalcSnowShadowBuffRate(refineLv)
+  if 0 < rate then
+    local groupKey = config.key
+    local groupData = rateMap[groupKey]
+    if not groupData then
+      groupData = {
+        rate = 0,
+        format = config.format
+      }
+      rateMap[groupKey] = groupData
+      orderList[#orderList + 1] = groupKey
+    end
+    groupData.rate = groupData.rate + rate
+  end
+  return true
+end
 
 function CrownAccessoriesPage:GetAllSlotActivatedAttrList()
   local attrList = {}
@@ -2006,9 +2158,8 @@ function CrownAccessoriesPage:GetAllSlotActivatedAttrList()
   local storeAttrSum = {}
   local advanceAttrList = {}
   local snowStoreBuffAttrSum = {}
-  local specialBuffList = {}
-  local hasDoubleShadow = false
-  local hasShadowGuard = false
+  local specialBuffRateMap = {}
+  local specialBuffOrder = {}
   for slotIndex = 1, 3 do
     local equipRefineLv = 0
     local equipData = SnowCrownProxy.Instance:GetSlotEquipData(slotIndex)
@@ -2026,35 +2177,8 @@ function CrownAccessoriesPage:GetAllSlotActivatedAttrList()
       local snowStoreBuffs = equipConfig.SnowStoreBuff
       if snowStoreBuffs and 0 < #snowStoreBuffs then
         for _, buffId in ipairs(snowStoreBuffs) do
-          if buffId == 800250 and not hasDoubleShadow then
-            local rate = CalcSnowShadowBuffRate(equipRefineLv)
-            if 0 < rate then
-              table.insert(specialBuffList, {
-                name = string.format(ZhString.CrownAccessoriesPage_DoubleShadow, rate)
-              })
-              hasDoubleShadow = true
-            end
-          elseif buffId == 800260 and not hasShadowGuard then
-            local rate = CalcSnowShadowBuffRate(equipRefineLv)
-            if 0 < rate then
-              table.insert(specialBuffList, {
-                name = string.format(ZhString.CrownAccessoriesPage_ShadowGuard, rate)
-              })
-              hasShadowGuard = true
-            end
-          elseif Table_Buffer and Table_Buffer[buffId] then
-            local buffData = Table_Buffer[buffId]
-            local buffEffect = buffData.BuffEffect
-            if buffEffect and buffEffect.type == "AttrChange" then
-              for attrName, attrEffect in pairs(buffEffect) do
-                if attrName ~= "type" and type(attrEffect) == "table" then
-                  local attrValue = self:CalcSnowStoreBuffAttrValue(attrEffect)
-                  if 0 < attrValue then
-                    snowStoreBuffAttrSum[attrName] = (snowStoreBuffAttrSum[attrName] or 0) + attrValue
-                  end
-                end
-              end
-            end
+          if not AddSnowStoreSpecialBuffRate(buffId, equipRefineLv, equipConfig, specialBuffRateMap, specialBuffOrder) then
+            self:AddAttrChangeBuffToAttrSum(buffId, snowStoreBuffAttrSum)
           end
         end
       end
@@ -2133,8 +2257,13 @@ function CrownAccessoriesPage:GetAllSlotActivatedAttrList()
   for attrName, attrValue in pairs(snowStoreBuffAttrSum) do
     table.insert(attrList, {name = attrName, value = attrValue})
   end
-  for _, specialBuff in ipairs(specialBuffList) do
-    table.insert(attrList, specialBuff)
+  for _, groupKey in ipairs(specialBuffOrder) do
+    local groupData = specialBuffRateMap[groupKey]
+    if groupData and groupData.rate > 0 and groupData.format then
+      table.insert(attrList, {
+        name = groupData.format(groupData.rate)
+      })
+    end
   end
   for _, advAttr in ipairs(advanceAttrList) do
     table.insert(attrList, advAttr)
@@ -2147,6 +2276,11 @@ function CrownAccessoriesPage:OnDeactivate()
 end
 
 function CrownAccessoriesPage:OnExit()
+  self:ClearChoosePanelTipTarget()
+  if self.choosePanelCloseComp then
+    self.choosePanelCloseComp.callBack = nil
+    self.choosePanelCloseComp = nil
+  end
   CrownAccessoriesPage.super.OnExit(self)
 end
 

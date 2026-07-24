@@ -352,6 +352,8 @@ function CrownCustomPage:InitLevel2FashionCustom()
     return
   end
   self.selectedFashionCells = {}
+  self.currentFashionStage = self.currentFashionStage or 1
+  self:InitFashionInnerTabs()
   local fashionTable = self:FindGO("FashionTable", self.level2FashionCustom)
   if fashionTable then
     self.fashionPartList = {}
@@ -411,6 +413,112 @@ function CrownCustomPage:InitLevel2FashionCustom()
     end)
     self:Hide(doUseBtn)
   end
+end
+
+function CrownCustomPage:InitFashionInnerTabs()
+  self.fashionInnerTabs = self:FindGO("InnerTabs", self.level2FashionCustom)
+  if not self.fashionInnerTabs then
+    return
+  end
+  self.fashionStageTabs = {}
+  self.fashionInnerTabGrid = self.fashionInnerTabs:GetComponent(UIGrid)
+  for i = 1, 3 do
+    local stageGO = self:FindGO("Stage" .. i, self.fashionInnerTabs)
+    if stageGO then
+      local stageData = {
+        gameObject = stageGO,
+        stage = i,
+        toggle = stageGO:GetComponent(UIToggle),
+        lock = self:FindGO("Lock", stageGO)
+      }
+      self:AddClickEvent(stageGO, function()
+        self:OnFashionStageTabClick(i)
+      end)
+      self.fashionStageTabs[i] = stageData
+    end
+  end
+  if self.fashionInnerTabGrid then
+    self.fashionInnerTabGrid:Reposition()
+  end
+end
+
+function CrownCustomPage:IsFashionStageUnlocked(stage)
+  if not stage then
+    return false
+  end
+  if SnowCrownProxy.Instance then
+    return SnowCrownProxy.Instance:IsStageUnlocked(stage)
+  end
+  return stage == 1
+end
+
+function CrownCustomPage:GetDefaultFashionStage()
+  local proxy = SnowCrownProxy.Instance
+  if proxy then
+    local currentGroup = proxy:GetCurrentFashionGroup()
+    if currentGroup and self:IsFashionStageUnlocked(currentGroup) then
+      return currentGroup
+    end
+  end
+  for i = 1, 3 do
+    if self:IsFashionStageUnlocked(i) then
+      return i
+    end
+  end
+  return 1
+end
+
+function CrownCustomPage:EnsureCurrentFashionStage()
+  if not self.currentFashionStage or not self:IsFashionStageUnlocked(self.currentFashionStage) then
+    self.currentFashionStage = self:GetDefaultFashionStage()
+  end
+  return self.currentFashionStage or 1
+end
+
+function CrownCustomPage:RefreshFashionStageTabs()
+  if not self.fashionStageTabs then
+    return
+  end
+  local currentStage = self:EnsureCurrentFashionStage()
+  for i = 1, 3 do
+    local stageData = self.fashionStageTabs[i]
+    if stageData then
+      local isUnlocked = self:IsFashionStageUnlocked(i)
+      if stageData.lock then
+        stageData.lock:SetActive(not isUnlocked)
+      end
+      if stageData.toggle then
+        stageData.toggle.value = i == currentStage
+      end
+    end
+  end
+end
+
+function CrownCustomPage:HideFashionStatus()
+  if self.fashionUnlockTip then
+    self:Hide(self.fashionUnlockTip)
+  end
+  if self.fashionInUse then
+    self:Hide(self.fashionInUse)
+  end
+  if self.doUseBtn then
+    self:Hide(self.doUseBtn)
+  end
+end
+
+function CrownCustomPage:OnFashionStageTabClick(stage)
+  if not self:IsFashionStageUnlocked(stage) then
+    self:RefreshFashionStageTabs()
+    return
+  end
+  if self.currentFashionStage == stage then
+    return
+  end
+  self.currentFashionStage = stage
+  self:ClearFashionCellSelection()
+  self:HideFashionStatus()
+  self:RefreshFashionStageTabs()
+  self:RefreshFashionCustom()
 end
 
 function CrownCustomPage:InitViewState()
@@ -1010,6 +1118,9 @@ function CrownCustomPage:OnShowCustomBtnClick()
   end
   if self.level2FashionCustom then
     self:Show(self.level2FashionCustom)
+    self.currentFashionStage = self:GetDefaultFashionStage()
+    self:ClearFashionCellSelection()
+    self:HideFashionStatus()
     self:RefreshFashionCustom()
   end
   if self.container and self.container.TweenModelTexturePosition then
@@ -1089,10 +1200,18 @@ function CrownCustomPage:RefreshFashionCustom()
     redlog("RefreshFashionCustom not self.fashionPartList")
     return
   end
+  if not SnowCrownProxy.Instance then
+    return
+  end
+  local fashionGroup
+  if self.fashionStageTabs and next(self.fashionStageTabs) then
+    fashionGroup = self:EnsureCurrentFashionStage()
+    self:RefreshFashionStageTabs()
+  end
   for partIndex = 1, 3 do
     local partData = self.fashionPartList[partIndex]
     if partData and partData.listCtrl then
-      local fashionList = SnowCrownProxy.Instance:GetFashionDataListByPos(partIndex)
+      local fashionList = SnowCrownProxy.Instance:GetFashionDataListByPos(partIndex, fashionGroup)
       local itemDataList = {}
       for i = 1, #fashionList do
         local fashionData = fashionList[i]
@@ -1147,37 +1266,10 @@ function CrownCustomPage:OnFashionCellClick(cell)
       return
     end
     if self.container and self.container.SetModelBody then
-      local selectedIndex = fashionData.index
-      local selectedPos = partIndex
-      local previewIndex1, previewIndex2, previewIndex3
-      if selectedPos == 1 then
-        previewIndex1 = selectedIndex
-        previewIndex2 = SnowCrownProxy.Instance:GetEquippedFashionIdByPos(2)
-        previewIndex3 = SnowCrownProxy.Instance:GetEquippedFashionIdByPos(3)
-      elseif selectedPos == 2 then
-        previewIndex2 = selectedIndex
-        previewIndex1 = SnowCrownProxy.Instance:GetEquippedFashionIdByPos(1)
-        previewIndex3 = SnowCrownProxy.Instance:GetEquippedFashionIdByPos(3)
-      elseif selectedPos == 3 then
-        previewIndex3 = selectedIndex
-        previewIndex1 = SnowCrownProxy.Instance:GetEquippedFashionIdByPos(1)
-        previewIndex2 = SnowCrownProxy.Instance:GetEquippedFashionIdByPos(2)
-      end
-      local previewBodyId
-      if previewIndex1 and 0 < previewIndex1 and previewIndex2 and 0 < previewIndex2 and GameConfig.Snow and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[previewIndex2] then
-        local fashionConfig = GameConfig.Snow.Fashion[previewIndex2]
-        if fashionConfig[previewIndex1] then
-          previewBodyId = fashionConfig[previewIndex1]
-        end
-      end
-      local previewEffectPath
-      if previewIndex3 and 0 < previewIndex3 and GameConfig.Snow and GameConfig.Snow.FashionEffect and GameConfig.Snow.FashionEffect[previewIndex3] then
-        previewEffectPath = GameConfig.Snow.FashionEffect[previewIndex3]
-        if previewEffectPath then
-          previewEffectPath = string.gsub(previewEffectPath, "sfx", "ufx")
-          previewEffectPath = string.gsub(previewEffectPath, "Common", "UI")
-        end
-      end
+      local previewIndexes = SnowCrownProxy.Instance and SnowCrownProxy.Instance:GetCompatibleFashionIndexes(partIndex, fashionData.index, true)
+      self.selectedFashionUseIndexes = previewIndexes
+      local previewBodyId = previewIndexes and SnowCrownProxy.ResolveFashionBody(previewIndexes[1], previewIndexes[2])
+      local previewEffectPath = previewIndexes and SnowCrownProxy.ResolveFashionEffect(previewIndexes[3], true)
       if previewBodyId then
         self.container:SetModelBody(previewBodyId, previewEffectPath)
       end
@@ -1211,8 +1303,15 @@ function CrownCustomPage:UpdateFashionCellStatus(cell, partIndex, fashionData)
       if self.fashionInUse then
         self:Show(self.fashionInUse)
       end
-    elseif self.doUseBtn then
-      self:Show(self.doUseBtn)
+    else
+      local canUse = SnowCrownProxy.Instance and SnowCrownProxy.Instance:GetCompatibleFashionIndexes(partIndex, fashionData.index, true) ~= nil
+      if self.doUseBtn then
+        if canUse then
+          self:Show(self.doUseBtn)
+        else
+          self:Hide(self.doUseBtn)
+        end
+      end
     end
   end
 end
@@ -1227,6 +1326,7 @@ function CrownCustomPage:ClearFashionCellSelection()
   end
   self.selectedFashionCells = {}
   self.selectedFashionId = nil
+  self.selectedFashionUseIndexes = nil
 end
 
 function CrownCustomPage:OnDoUseBtnClick()
@@ -1247,6 +1347,22 @@ function CrownCustomPage:OnDoUseBtnClick()
     helplog("CrownCustomPage:OnDoUseBtnClick | 未找到Index")
     return
   end
-  xdlog("CrownCustomPage:OnDoUseBtnClick | guid:", guid, "| pos:", partIndex, "| index:", index)
-  ServiceSnowCmdProxy.Instance:CallSnowHeadFashionSelectSnowCmd(guid, partIndex, index)
+  local proxy = SnowCrownProxy.Instance
+  local guid = self.viewdata and self.viewdata.guid
+  if (not guid or guid == "") and proxy then
+    guid = proxy.currentGuid or proxy:GetSnowCrownGuidFromBag()
+    proxy.currentGuid = guid
+  end
+  if not guid or not ServiceSnowCmdProxy.Instance then
+    return
+  end
+  local ops = proxy and proxy:GetCompatibleFashionUseOps(partIndex, index, true)
+  if not ops or #ops == 0 then
+    return
+  end
+  for i = 1, #ops do
+    local op = ops[i]
+    xdlog("CrownCustomPage:OnDoUseBtnClick | guid:", guid, "| pos:", op.pos, "| index:", op.index)
+    ServiceSnowCmdProxy.Instance:CallSnowHeadFashionSelectSnowCmd(guid, op.pos, op.index)
+  end
 end

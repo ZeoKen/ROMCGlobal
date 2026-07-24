@@ -146,6 +146,18 @@ function NMyselfPlayer:Server_SetHandInHand(masterID, running)
   end
 end
 
+function NMyselfPlayer:OnSelfCarryDownChange(masterID)
+  masterID = masterID or 0
+  if masterID ~= 0 then
+    if self.beHoldedCmdPushed then
+      return
+    end
+    self.beHoldedCmdPushed = true
+    FunctionSystem.InterruptMyselfAll()
+    self.ai:PushCommand(FactoryAICMD.Me_GetBeHoldedCmd(masterID), self)
+  end
+end
+
 function NMyselfPlayer:Server_SetDoubleAction(masterID, running)
   helplog("NMyselfPlayer Server_SetDoubleAction", masterID, running)
   self.doubleaction_build = running
@@ -160,6 +172,67 @@ function NMyselfPlayer:Server_GetOnSeat(seatID, fromCreature)
   end
   FunctionSystem.InterruptMyselfAll()
   self.ai:PushCommand(FactoryAICMD.GetGetOnSeatCmd(seatID, fromCreature), self)
+end
+
+function NMyselfPlayer:PrepareSnakeCoasterDirInput(dir, keepCurrentMove)
+  if self.snakeCoasterMove ~= nil and self.snakeCoasterMove:IsRunning() then
+    self.snakeCoasterMove:PrepareDirInput(dir, keepCurrentMove)
+    local snakeCoasterDir = self.snakeCoasterMove:GetCurrentMoveDir()
+    if snakeCoasterDir ~= nil then
+      return snakeCoasterDir
+    end
+  end
+  return dir
+end
+
+function NMyselfPlayer:OnSnakeCoasterDirInputEnd()
+  if self.snakeCoasterMove ~= nil and self.snakeCoasterMove:IsRunning() then
+    return self.snakeCoasterMove:OnDirInputEnd()
+  end
+  return false
+end
+
+function NMyselfPlayer:UpdateSnakeCoaster(time, deltaTime)
+  if self.snakeCoasterMove ~= nil then
+    self.snakeCoasterMove:Update(time, deltaTime)
+  end
+end
+
+function NMyselfPlayer:CreateSnakeCoasterGame()
+  if self.snakeCoasterMove ~= nil then
+    self.snakeCoasterMove:Shutdown()
+  else
+    autoImport("Creature_SnakeCoaster")
+    self.snakeCoasterMove = Creature_SnakeCoaster.new(self)
+  end
+  return self.snakeCoasterMove
+end
+
+function NMyselfPlayer:ClearSnakeCoasterGame()
+  if self.snakeCoasterMove ~= nil then
+    self.snakeCoasterMove:Shutdown()
+    self.snakeCoasterMove = nil
+  end
+end
+
+function NMyselfPlayer:PrepareSkatingDirInput(dir, keepCurrentMove)
+  if self.skatingMove ~= nil then
+    return self.skatingMove:PrepareDirInput(dir, keepCurrentMove)
+  end
+  return dir
+end
+
+function NMyselfPlayer:OnSkatingDirInputEnd()
+  if self.skatingMove ~= nil then
+    return self.skatingMove:OnDirInputEnd()
+  end
+  return false
+end
+
+function NMyselfPlayer:UpdateSkatingGlide(time, deltaTime)
+  if self.skatingMove ~= nil then
+    self.skatingMove:Update(time, deltaTime)
+  end
 end
 
 local superUpdate = NMyselfPlayer.Update
@@ -203,6 +276,8 @@ function NMyselfPlayer:Update(time, deltaTime)
     self:UpdateNormalAtk(time, deltaTime)
     self.nextUpdateNormalAtkTime = time + ReloadCheckInterval
   end
+  self:UpdateSnakeCoaster(time, deltaTime)
+  self:UpdateSkatingGlide(time, deltaTime)
   BigWorld.BigWorldManager.Instance:Refresh(self.logicTransform.currentPosition)
 end
 

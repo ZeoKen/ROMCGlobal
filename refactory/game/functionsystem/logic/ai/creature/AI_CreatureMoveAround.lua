@@ -9,12 +9,12 @@ function AI_CreatureMoveAround:AttachMoveAround()
   self.idleAIManager:PushAI_Sort(self.ai_moveAround)
 end
 
-function AI_CreatureMoveAround:MoveAroundTarget(targetCreature, distance, angularSpeed, centerPos, orbitMoveSpeed, moveSpeed)
+function AI_CreatureMoveAround:MoveAroundTarget(targetCreatureID, distance, angularSpeed, centerPos, orbitMoveSpeed, moveSpeed)
   if self.ai_moveAround == nil then
     self.ai_moveAround = IdleAI_MoveAround.new()
     self.idleAIManager:PushAI_Sort(self.ai_moveAround)
   end
-  self.ai_moveAround:Request_Set(targetCreature, distance, angularSpeed, centerPos, orbitMoveSpeed, moveSpeed)
+  self.ai_moveAround:Request_Set(targetCreatureID, distance, angularSpeed, centerPos, orbitMoveSpeed, moveSpeed)
 end
 
 function AI_CreatureMoveAround:StopMoveAround()
@@ -23,9 +23,9 @@ function AI_CreatureMoveAround:StopMoveAround()
   end
 end
 
-function AI_CreatureMoveAround:Request_Set(targetCreature, distance, angularSpeed, centerPos, orbitMoveSpeed, moveSpeed, requestAngle)
+function AI_CreatureMoveAround:Request_Set(targetCreatureID, distance, angularSpeed, centerPos, orbitMoveSpeed, moveSpeed, requestAngle)
   if self.ai_moveAround ~= nil then
-    self.ai_moveAround:Request_Set(targetCreature, distance, angularSpeed, centerPos, orbitMoveSpeed, moveSpeed, requestAngle)
+    self.ai_moveAround:Request_Set(targetCreatureID, distance, angularSpeed, centerPos, orbitMoveSpeed, moveSpeed, requestAngle)
   end
 end
 

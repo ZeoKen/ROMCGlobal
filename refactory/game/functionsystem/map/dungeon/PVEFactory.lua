@@ -979,12 +979,12 @@ function BageLabRaid:ctor()
 end
 
 function BageLabRaid:Launch()
-  notify(PVEEvent.BageLab_Launch)
+  notify(PVEEvent.MultiBossRaid_Launch)
 end
 
 function BageLabRaid:Shutdown()
   GroupRaidProxy.Instance:SetMultiBossRaidPhase(0)
-  notify(PVEEvent.BageLab_ShutDown)
+  notify(PVEEvent.MultiBossRaid_Shutdown)
 end
 
 function PVEFactory.GetBageLab()

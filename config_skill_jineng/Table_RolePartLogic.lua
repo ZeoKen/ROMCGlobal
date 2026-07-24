@@ -2649,6 +2649,10 @@ Table_RolePartLogic = {
     id = 3013224,
     Params = Table_RolePartLogic_t.Params[40]
   },
+  [3013235] = {
+    id = 3013235,
+    Params = Table_RolePartLogic_t.Params[40]
+  },
   [3013336] = {
     id = 3013336,
     Params = Table_RolePartLogic_t.Params[40]
@@ -2667,6 +2671,10 @@ Table_RolePartLogic = {
   },
   [3013516] = {
     id = 3013516,
+    Params = Table_RolePartLogic_t.Params[40]
+  },
+  [3013546] = {
+    id = 3013546,
     Params = Table_RolePartLogic_t.Params[40]
   },
   [3031521] = {

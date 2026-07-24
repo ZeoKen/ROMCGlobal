@@ -10,8 +10,8 @@ local StopMoveSpeed = 15
 local UpdateInterval = 0.05
 
 function IdleAI_MoveAround:ctor()
-  self.targetCreature = nil
-  self.requestTargetCreature = nil
+  self.targetCreatureID = nil
+  self.requestTargetCreatureID = nil
   self.centerPos = nil
   self.requestCenterPos = nil
   self.distance = DefaultDistance
@@ -30,8 +30,8 @@ function IdleAI_MoveAround:ctor()
   self.priority = 2
 end
 
-function IdleAI_MoveAround:Request_Set(targetCreature, distance, angularSpeed, centerPos, orbitMoveSpeed, moveSpeed, requestAngle)
-  self.requestTargetCreature = targetCreature
+function IdleAI_MoveAround:Request_Set(targetCreatureID, distance, angularSpeed, centerPos, orbitMoveSpeed, moveSpeed, requestAngle)
+  self.requestTargetCreatureID = targetCreatureID or 0
   self.requestCenterPos = centerPos
   self.requestAngle = requestAngle
   if distance then
@@ -58,8 +58,8 @@ function IdleAI_MoveAround:Request_Set(targetCreature, distance, angularSpeed, c
 end
 
 function IdleAI_MoveAround:Clear(idleElapsed, time, deltaTime, creature)
-  self.targetCreature = nil
-  self.requestTargetCreature = nil
+  self.targetCreatureID = nil
+  self.requestTargetCreatureID = nil
   self.centerPos = nil
   self.requestCenterPos = nil
   self.targetDistance = nil
@@ -79,16 +79,19 @@ end
 function IdleAI_MoveAround:Prepare(idleElapsed, time, deltaTime, creature)
   if self.dirtyFlag then
     self.dirtyFlag = false
-    self.targetCreature = self.requestTargetCreature
-    self.isActive = self.targetCreature ~= nil
-    self.requestTargetCreature = nil
+    self.targetCreatureID = self.requestTargetCreatureID or 0
+    self.isActive = self.targetCreatureID > 0
+    self.requestTargetCreatureID = nil
     self.centerPos = self.requestCenterPos
     self.requestCenterPos = nil
     if self.isActive or self.centerPos ~= nil then
       local creaturePos = creature:GetPosition()
       local targetPos
-      if self.targetCreature ~= nil then
-        targetPos = self.targetCreature:GetPosition()
+      if self.targetCreatureID ~= nil and self.targetCreatureID ~= 0 then
+        local targetCreature = SceneCreatureProxy.FindCreature(self.targetCreatureID)
+        if targetCreature ~= nil then
+          targetPos = targetCreature:GetPosition()
+        end
       elseif self.centerPos ~= nil then
         targetPos = self.centerPos
       end
@@ -128,8 +131,8 @@ end
 
 function IdleAI_MoveAround:Update(idleElapsed, time, deltaTime, creature)
   if self.phase == Phase_Moving then
-    local target = self.targetCreature
-    if self.targetDistance ~= nil and self.orbitMoveSpeed ~= nil and self.orbitMoveSpeed > 0 then
+    local target = SceneCreatureProxy.FindCreature(self.targetCreatureID or 0)
+    if self.targetDistance ~= nil and self.orbitMoveSpeed ~= nil and 0 < self.orbitMoveSpeed then
       local maxStep = self.orbitMoveSpeed * deltaTime
       local diff = self.targetDistance - self.distance
       if maxStep >= math.abs(diff) then

@@ -87,6 +87,7 @@ BuffType = {
   SkillWeather = "SkillWeather",
   SummonElement = "SummonElement",
   HideHP = "HideHP",
+  IceSlide = "IceSlide",
   SignAssassinate = "SignAssassinate",
   PerfectService = "PerfectService",
   InWarehouse = "InWarehouse",
@@ -94,7 +95,8 @@ BuffType = {
   BellCharge = "BellCharge",
   AttrCanMove = "AttrCanMove",
   RoseSeedCount = "RoseSeedCount",
-  AutoTriggerSkill = "AutoTriggerSkill"
+  AutoTriggerSkill = "AutoTriggerSkill",
+  CanBeCarried = "CanBeCarried"
 }
 SkillTargetType = {
   None = 1,

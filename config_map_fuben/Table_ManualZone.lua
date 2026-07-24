@@ -467,7 +467,7 @@ Table_ManualZone = {
   },
   [155] = {
     id = 155,
-    MonsterNum = 4,
+    MonsterNum = 10,
     NpcNum = 4,
     NpcReward = 33269,
     GoodReward = 33290,

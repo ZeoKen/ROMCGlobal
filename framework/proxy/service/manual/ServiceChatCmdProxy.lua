@@ -1,4 +1,5 @@
 autoImport("ServiceChatCmdAutoProxy")
+autoImport("HomeBlueprintProxy")
 ServiceChatCmdProxy = class("ServiceChatCmdProxy", ServiceChatCmdAutoProxy)
 ServiceChatCmdProxy.Instance = nil
 ServiceChatCmdProxy.NAME = "ServiceChatCmdProxy"
@@ -53,7 +54,7 @@ function ServiceChatCmdProxy:RecvQueryUserInfoChatCmd(data)
   end
 end
 
-function ServiceChatCmdProxy:CallChatCmd(channel, str, desID, voice, voicetime, msgid, msgover, photo, expression, loveconfession)
+function ServiceChatCmdProxy:CallChatCmd(channel, str, desID, voice, voicetime, msgid, msgover, photo, expression, loveconfession, print_item)
   if channel == ChatChannelEnum.World and MyselfProxy.Instance:RoleLevel() < GameConfig.System.chat_world_reqlv then
     MsgManager.ShowMsgByID(77)
     return
@@ -78,7 +79,7 @@ function ServiceChatCmdProxy:CallChatCmd(channel, str, desID, voice, voicetime, 
         local isOver = false
         if i == splitLength then
           isOver = true
-          ServiceChatCmdProxy.super.CallChatCmd(self, channel, str, desID, splitByteStr, voicetime, msgid, isOver, photo, expression, nil, items, loveconfession)
+          ServiceChatCmdProxy.super.CallChatCmd(self, channel, str, desID, splitByteStr, voicetime, msgid, isOver, photo, expression, nil, items, loveconfession, print_item)
           ServiceChatCmdProxy.Instance:CallGetVoiceIDChatCmd()
         else
           ServiceChatCmdProxy.super.CallChatCmd(self, nil, "", nil, splitByteStr, nil, msgid, isOver, photo, expression, nil, items, loveconfession)
@@ -86,7 +87,7 @@ function ServiceChatCmdProxy:CallChatCmd(channel, str, desID, voice, voicetime, 
       end
     end
   else
-    ServiceChatCmdProxy.super.CallChatCmd(self, channel, str, desID, voice, voicetime, msgid, msgover, photo, expression, nil, items, loveconfession)
+    ServiceChatCmdProxy.super.CallChatCmd(self, channel, str, desID, voice, voicetime, msgid, msgover, photo, expression, nil, items, loveconfession, print_item)
   end
 end
 
@@ -157,6 +158,12 @@ function ServiceChatCmdProxy:CallQueryItemData(guid, data)
     end
     self:SendProto(msg)
   end
+end
+
+function ServiceChatCmdProxy:RecvQueryPrintItem(data)
+  HomeBlueprintProxy.Instance:UpdateQueryPrintItem(data)
+  self:Notify(ServiceEvent.ChatCmdQueryPrintItem, data)
+  EventManager.Me():DispatchEvent(ServiceEvent.ChatCmdQueryPrintItem, data)
 end
 
 function ServiceChatCmdProxy:CallGetVoiceIDChatCmd(id)

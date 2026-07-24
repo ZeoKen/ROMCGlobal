@@ -12,7 +12,8 @@ FuncShortCutFunc.FuncType = {
   ClientGuide = 10,
   Quest = 11,
   MiniMapHint = 12,
-  LotteryRaidShop = 13
+  LotteryRaidShop = 13,
+  SnowRealmHome = 14
 }
 
 function FuncShortCutFunc.Me()
@@ -37,6 +38,7 @@ function FuncShortCutFunc:ctor()
   self.FuncMap[FuncShortCutFunc.FuncType.Quest] = self.HandleQuest
   self.FuncMap[FuncShortCutFunc.FuncType.MiniMapHint] = self.HandleMiniMapHint
   self.FuncMap[FuncShortCutFunc.FuncType.LotteryRaidShop] = self.LotteryRaidShop
+  self.FuncMap[FuncShortCutFunc.FuncType.SnowRealmHome] = self.SnowRealmHome
   EventManager.Me():AddEventListener(LoadSceneEvent.FinishLoadScene, self.OnSceneLoadFinished, self)
 end
 
@@ -382,6 +384,34 @@ function FuncShortCutFunc:LotteryRaidShop(data, param)
   GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
     view = PanelConfig.LotteryRaidShopView
   })
+  TipsView.Me():HideCurrent()
+end
+
+function FuncShortCutFunc:SnowRealmHome(data, param)
+  if Game.Myself:IsDead() then
+    MsgManager.ShowMsgByIDTable(2500)
+    return
+  end
+  if Game.MapManager:IsPVPMode() or Game.MapManager:IsPveMode_Thanatos() then
+    MsgManager.ShowMsgByIDTable(38025)
+    return
+  end
+  local event = data and data.Event
+  if event and event.npcid then
+    local traceData = {
+      Event = {
+        npcid = event.npcid,
+        mapid = event.mapid,
+        uniqueid = event.uniqueid
+      }
+    }
+    FunctionChangeScene.Me():SetSceneLoadFinishActionForOnce(function(traceData)
+      FuncShortCutFunc.Me():MoveToNpc(traceData)
+    end, traceData)
+  end
+  ServiceHomeCmdProxy.Instance:CallEnterHomeCmd(FunctionLogin.Me():getLoginData().accid, Game.Myself.data.id, HomeCmd_pb.EHOUSETYPE_SNOW)
+  GameFacade.Instance:sendNotification(UIEvent.CloseUI, UIViewType.NormalLayer)
+  GameFacade.Instance:sendNotification(UIEvent.CloseUI, UIViewType.PopUpLayer)
   TipsView.Me():HideCurrent()
 end
 

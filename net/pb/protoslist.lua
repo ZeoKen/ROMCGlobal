@@ -13,16 +13,16 @@ ProtoFileList = {
   "PuzzleCmd",
   "PveCard",
   "QueueEnterCmd",
-  "SceneTip",
   "NoviceNotebook",
-  "BattlePass",
+  "SceneTip",
   "ActHitPolly",
+  "Authorize",
   "ActMiniRoCmd",
   "AstrolabeCmd",
   "ErrorUserCmd",
   "UserShow",
+  "BattlePass",
   "AchieveCmd",
-  "Authorize",
   "WeddingCCmd",
   "SceneInterlocution",
   "SceneChatRoom",
@@ -33,30 +33,30 @@ ProtoFileList = {
   "DisneyActivity",
   "TechTreeCmd",
   "TeamGroupRaid",
-  "SessionShop",
   "BossCmd",
-  "OverseasTaiwanCmd",
-  "MiniGameCmd",
   "SceneUser",
+  "MiniGameCmd",
+  "OverseasTaiwanCmd",
+  "SessionShop",
   "SceneSkill",
   "SceneItem",
-  "RecallCCmd",
-  "Dojo",
-  "AuctionCCmd",
-  "SceneBeing",
-  "SceneQuest",
-  "HomeCmd",
   "SnowCmd",
-  "SceneManual",
+  "RecallCCmd",
+  "AuctionCCmd",
+  "Dojo",
+  "SceneBeing",
   "RecordTrade",
-  "ScenePet",
   "RoguelikeCmd",
+  "HomeCmd",
+  "SceneManual",
+  "ScenePet",
+  "SceneQuest",
   "SceneUser2",
   "NoviceBattlePass",
   "UserAfkCmd",
   "SceneMap",
-  "MessCCmd",
   "LoginUserCmd",
+  "MessCCmd",
   "GuildCmd",
   "PhotoCmd",
   "ChatCmd",
@@ -1249,6 +1249,12 @@ ProtoReqInfoList = {
     ack = "Cmd.CheckRecvRedPacketChatCmd",
     from = "ChatCmd"
   },
+  QueryPrintItem = {
+    id = 590032,
+    req = "Cmd.QueryPrintItem",
+    ack = "Cmd.QueryPrintItem",
+    from = "ChatCmd"
+  },
   QueryDisneyGuideInfoCmd = {
     id = 2320001,
     req = "Cmd.QueryDisneyGuideInfoCmd",
@@ -1446,6 +1452,18 @@ ProtoReqInfoList = {
     req = "Cmd.ClueRewardFamilyCmd",
     ack = "Cmd.ClueRewardFamilyCmd",
     from = "FamilyCmd"
+  },
+  SnowRealmPartySyncFubenCmd = {
+    id = 110192,
+    req = "Cmd.SnowRealmPartySyncFubenCmd",
+    ack = "Cmd.SnowRealmPartySyncFubenCmd",
+    from = "FuBenCmd"
+  },
+  SnowRealmDamageRankSyncFubenCmd = {
+    id = 110193,
+    req = "Cmd.SnowRealmDamageRankSyncFubenCmd",
+    ack = "Cmd.SnowRealmDamageRankSyncFubenCmd",
+    from = "FuBenCmd"
   },
   TrackFuBenUserCmd = {
     id = 110001,
@@ -4211,6 +4229,12 @@ ProtoReqInfoList = {
     id = 830021,
     req = "Cmd.SyncForbidCardsMessCCmd",
     ack = "Cmd.SyncForbidCardsMessCCmd",
+    from = "MessCCmd"
+  },
+  CarryUserMessCCmd = {
+    id = 830022,
+    req = "Cmd.CarryUserMessCCmd",
+    ack = "Cmd.CarryUserMessCCmd",
     from = "MessCCmd"
   },
   MiniGameNtfMonsterShot = {
@@ -8107,6 +8131,12 @@ ProtoReqInfoList = {
     ack = "Cmd.SyncBlockMasterSkill",
     from = "SceneSkill"
   },
+  ResetInheritSkillCmd = {
+    id = 70042,
+    req = "Cmd.ResetInheritSkillCmd",
+    ack = "Cmd.ResetInheritSkillCmd",
+    from = "SceneSkill"
+  },
   GameTipCmd = {
     id = 180001,
     req = "Cmd.GameTipCmd",
@@ -10063,6 +10093,12 @@ ProtoReqInfoList = {
     ack = "Cmd.LeaveUserHandcartCmd",
     from = "SceneUser3"
   },
+  NpcFuncOperateBuffUserCmd = {
+    id = 820063,
+    req = "Cmd.NpcFuncOperateBuffUserCmd",
+    ack = "Cmd.NpcFuncOperateBuffUserCmd",
+    from = "SceneUser3"
+  },
   GeffenMagicRankQueryCmd = {
     id = 820057,
     req = "Cmd.GeffenMagicRankQueryCmd",
@@ -10097,6 +10133,54 @@ ProtoReqInfoList = {
     id = 820064,
     req = "Cmd.GroupPlayTimeUpdateUserCmd",
     ack = "Cmd.GroupPlayTimeUpdateUserCmd",
+    from = "SceneUser3"
+  },
+  SnakeCoasterInfoCmd = {
+    id = 820066,
+    req = "Cmd.SnakeCoasterInfoCmd",
+    ack = "Cmd.SnakeCoasterInfoCmd",
+    from = "SceneUser3"
+  },
+  SnakeCoasterStartCmd = {
+    id = 820067,
+    req = "Cmd.SnakeCoasterStartCmd",
+    ack = "Cmd.SnakeCoasterStartCmd",
+    from = "SceneUser3"
+  },
+  SnakeCoasterStateNtf = {
+    id = 820070,
+    req = "Cmd.SnakeCoasterStateNtf",
+    ack = "Cmd.SnakeCoasterStateNtf",
+    from = "SceneUser3"
+  },
+  SnakeCoasterFinishCmd = {
+    id = 820068,
+    req = "Cmd.SnakeCoasterFinishCmd",
+    ack = "Cmd.SnakeCoasterFinishCmd",
+    from = "SceneUser3"
+  },
+  SnakeCoasterLeaveCmd = {
+    id = 820071,
+    req = "Cmd.SnakeCoasterLeaveCmd",
+    ack = "Cmd.SnakeCoasterLeaveCmd",
+    from = "SceneUser3"
+  },
+  SnakeCoasterQueryRankCmd = {
+    id = 820069,
+    req = "Cmd.SnakeCoasterQueryRankCmd",
+    ack = "Cmd.SnakeCoasterQueryRankCmd",
+    from = "SceneUser3"
+  },
+  SnakeCoasterActionNtf = {
+    id = 820072,
+    req = "Cmd.SnakeCoasterActionNtf",
+    ack = "Cmd.SnakeCoasterActionNtf",
+    from = "SceneUser3"
+  },
+  UserIceSlideStopUserCmd = {
+    id = 820065,
+    req = "Cmd.UserIceSlideStopUserCmd",
+    ack = "Cmd.UserIceSlideStopUserCmd",
     from = "SceneUser3"
   },
   QueryAllMail = {
@@ -10680,6 +10764,12 @@ ProtoReqInfoList = {
     req = "Cmd.SkyChange",
     ack = "Cmd.SkyChange",
     from = "SessionWeather"
+  },
+  SnowRealmPartyStartSnowCmd = {
+    id = 850013,
+    req = "Cmd.SnowRealmPartyStartSnowCmd",
+    ack = "Cmd.SnowRealmPartyStartSnowCmd",
+    from = "SnowCmd"
   },
   SnowHeadQuerySnowCmd = {
     id = 850001,
@@ -11934,6 +12024,7 @@ ProtoReqInfoList[590028] = ProtoReqInfoList.ShareMsgCmd
 ProtoReqInfoList[590029] = ProtoReqInfoList.ShareSuccessNofityCmd
 ProtoReqInfoList[590030] = ProtoReqInfoList.QueryGuildRedPacketChatCmd
 ProtoReqInfoList[590031] = ProtoReqInfoList.CheckRecvRedPacketChatCmd
+ProtoReqInfoList[590032] = ProtoReqInfoList.QueryPrintItem
 ProtoReqInfoList[2320001] = ProtoReqInfoList.QueryDisneyGuideInfoCmd
 ProtoReqInfoList[2320002] = ProtoReqInfoList.ReceiveGuideRewardCmd
 ProtoReqInfoList[2320003] = ProtoReqInfoList.ReceiveMickeyRewardCmd
@@ -11967,6 +12058,8 @@ ProtoReqInfoList[20003] = ProtoReqInfoList.MaintainUserCmd
 ProtoReqInfoList[2340001] = ProtoReqInfoList.ClueDataNtfFamilyCmd
 ProtoReqInfoList[2340002] = ProtoReqInfoList.ClueUnlockFamilyCmd
 ProtoReqInfoList[2340003] = ProtoReqInfoList.ClueRewardFamilyCmd
+ProtoReqInfoList[110192] = ProtoReqInfoList.SnowRealmPartySyncFubenCmd
+ProtoReqInfoList[110193] = ProtoReqInfoList.SnowRealmDamageRankSyncFubenCmd
 ProtoReqInfoList[110001] = ProtoReqInfoList.TrackFuBenUserCmd
 ProtoReqInfoList[110002] = ProtoReqInfoList.FailFuBenUserCmd
 ProtoReqInfoList[110003] = ProtoReqInfoList.LeaveFuBenUserCmd
@@ -12428,6 +12521,7 @@ ProtoReqInfoList[830018] = ProtoReqInfoList.SetPvpChampionStatueMessCCmd
 ProtoReqInfoList[830019] = ProtoReqInfoList.SyncQuickPassItemInfoMessCCmd
 ProtoReqInfoList[830020] = ProtoReqInfoList.SyncPvpChampionStatueMessCCmd
 ProtoReqInfoList[830021] = ProtoReqInfoList.SyncForbidCardsMessCCmd
+ProtoReqInfoList[830022] = ProtoReqInfoList.CarryUserMessCCmd
 ProtoReqInfoList[2230001] = ProtoReqInfoList.MiniGameNtfMonsterShot
 ProtoReqInfoList[2230002] = ProtoReqInfoList.MiniGameMonsterShotAction
 ProtoReqInfoList[2230009] = ProtoReqInfoList.MiniGameNtfMonsterAnswer
@@ -13077,6 +13171,7 @@ ProtoReqInfoList[70038] = ProtoReqInfoList.UpdateInheritSkillCmd
 ProtoReqInfoList[70039] = ProtoReqInfoList.LoadInheritSkillCmd
 ProtoReqInfoList[70040] = ProtoReqInfoList.ExtendInheritSkillCmd
 ProtoReqInfoList[70041] = ProtoReqInfoList.SyncBlockMasterSkill
+ProtoReqInfoList[70042] = ProtoReqInfoList.ResetInheritSkillCmd
 ProtoReqInfoList[180001] = ProtoReqInfoList.GameTipCmd
 ProtoReqInfoList[180002] = ProtoReqInfoList.BrowseRedTipCmd
 ProtoReqInfoList[180003] = ProtoReqInfoList.AddRedTip
@@ -13403,12 +13498,21 @@ ProtoReqInfoList[820054] = ProtoReqInfoList.WareHouseOperationCmd
 ProtoReqInfoList[820055] = ProtoReqInfoList.FairyTaleRankQueryCmd
 ProtoReqInfoList[820056] = ProtoReqInfoList.AboardUserHandcartCmd
 ProtoReqInfoList[820060] = ProtoReqInfoList.LeaveUserHandcartCmd
+ProtoReqInfoList[820063] = ProtoReqInfoList.NpcFuncOperateBuffUserCmd
 ProtoReqInfoList[820057] = ProtoReqInfoList.GeffenMagicRankQueryCmd
 ProtoReqInfoList[820058] = ProtoReqInfoList.GeffenMagicWaveScoreQueryCmd
 ProtoReqInfoList[820059] = ProtoReqInfoList.GeffenMagicGetRewardUserCmd
 ProtoReqInfoList[820061] = ProtoReqInfoList.UserHoldingNpcCmd
 ProtoReqInfoList[820062] = ProtoReqInfoList.NpcCircleTraceNtf
 ProtoReqInfoList[820064] = ProtoReqInfoList.GroupPlayTimeUpdateUserCmd
+ProtoReqInfoList[820066] = ProtoReqInfoList.SnakeCoasterInfoCmd
+ProtoReqInfoList[820067] = ProtoReqInfoList.SnakeCoasterStartCmd
+ProtoReqInfoList[820070] = ProtoReqInfoList.SnakeCoasterStateNtf
+ProtoReqInfoList[820068] = ProtoReqInfoList.SnakeCoasterFinishCmd
+ProtoReqInfoList[820071] = ProtoReqInfoList.SnakeCoasterLeaveCmd
+ProtoReqInfoList[820069] = ProtoReqInfoList.SnakeCoasterQueryRankCmd
+ProtoReqInfoList[820072] = ProtoReqInfoList.SnakeCoasterActionNtf
+ProtoReqInfoList[820065] = ProtoReqInfoList.UserIceSlideStopUserCmd
 ProtoReqInfoList[550001] = ProtoReqInfoList.QueryAllMail
 ProtoReqInfoList[550002] = ProtoReqInfoList.MailUpdate
 ProtoReqInfoList[550003] = ProtoReqInfoList.GetMailAttach
@@ -13506,6 +13610,7 @@ ProtoReqInfoList[510052] = ProtoReqInfoList.PublishReqHelpTeamCmd
 ProtoReqInfoList[510053] = ProtoReqInfoList.AskForTeamInfoTeamCmd
 ProtoReqInfoList[530001] = ProtoReqInfoList.WeatherChange
 ProtoReqInfoList[530002] = ProtoReqInfoList.SkyChange
+ProtoReqInfoList[850013] = ProtoReqInfoList.SnowRealmPartyStartSnowCmd
 ProtoReqInfoList[850001] = ProtoReqInfoList.SnowHeadQuerySnowCmd
 ProtoReqInfoList[850002] = ProtoReqInfoList.SnowHeadLvupSnowCmd
 ProtoReqInfoList[850003] = ProtoReqInfoList.SnowHeadActiveSnowCmd

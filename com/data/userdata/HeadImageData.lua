@@ -23,6 +23,12 @@ function HeadImageData.ProcessSnowCrownFashion(headID, headFashionBytes)
   end
   local index1 = tonumber(rets[1]) or 0
   local index2 = tonumber(rets[2]) or 0
+  if SnowCrownProxy and SnowCrownProxy.CheckFashionIndexesSameGroup and not SnowCrownProxy.CheckFashionIndexesSameGroup(index1, index2) then
+    return headID
+  end
+  if SnowCrownProxy and SnowCrownProxy.ResolveFashionBody then
+    return SnowCrownProxy.ResolveFashionBody(index1, index2) or headID
+  end
   if 0 < index1 and 0 < index2 and GameConfig.Snow.Fashion and GameConfig.Snow.Fashion[index2] then
     local fashionConfig = GameConfig.Snow.Fashion[index2]
     if fashionConfig[index1] then
@@ -224,55 +230,61 @@ function HeadImageData:TransformByCreature(creature)
       local userdata = creature.data.userdata
       local portrait = userdata:Get(UDEnum.PORTRAIT)
       local portraitData = Table_HeadImage[portrait]
+      local keepFigure = true
       if creature.data:IsTransformed() then
         local monsterId = creature.data.props:GetPropByName("TransformID"):GetValue()
         local monsterIcon = monsterId and Table_Monster[monsterId] and Table_Monster[monsterId].Icon
-        if monsterIcon then
+        local params = monsterId and Table_Monster[monsterId] and Table_Monster[monsterId].Params
+        keepFigure = params and params.keepFigure == 1 or false
+        if monsterIcon and not keepFigure then
           self.iconData.type = HeadImageIconType.Simple
           self.iconData.icon = monsterIcon
         end
-      elseif portrait and portrait ~= 0 and portraitData and portraitData.Picture then
-        self.iconData.type = HeadImageIconType.Simple
-        self.iconData.icon = portraitData.Picture
-        self.iconData.frameType = portraitData.Frame
-      else
-        local isAnonymous = creature.data:IsAnonymous()
-        self.iconData.type = HeadImageIconType.Avatar
-        self.iconData.id = creature.data.id
-        if isAnonymous then
-          local classId = userdata:Get(UDEnum.PROFESSION)
-          local gender = userdata:Get(UDEnum.SEX)
-          FunctionAnonymous.Me():GetAnonymousHeadIconData(classId, gender, self.iconData)
+      end
+      if keepFigure then
+        if portrait and portrait ~= 0 and portraitData and portraitData.Picture then
+          self.iconData.type = HeadImageIconType.Simple
+          self.iconData.icon = portraitData.Picture
+          self.iconData.frameType = portraitData.Frame
         else
-          self.iconData.bodyID = userdata:Get(UDEnum.BODY)
-          self.iconData.hairID = userdata:Get(UDEnum.HAIR)
-          self.iconData.haircolor = userdata:Get(UDEnum.HAIRCOLOR)
-          self.iconData.gender = userdata:Get(UDEnum.SEX)
-          self.iconData.blink = creature.data:CanBlink()
-          local headID = userdata:Get(UDEnum.HEAD)
-          self.iconData.headID = headID
-          self.iconData.faceID = userdata:Get(UDEnum.FACE)
-          self.iconData.mouthID = userdata:Get(UDEnum.MOUTH)
-          self.iconData.eyeID = userdata:Get(UDEnum.EYE)
-          local headFashionBytes = userdata:GetBytes(UDEnum.HEAD_FASHION)
-          self.iconData.headID = HeadImageData.ProcessSnowCrownFashion(headID, headFashionBytes)
-        end
-        local monsterPortrait = userdata:Get(UDEnum.MONSTER_PORTRAIT)
-        if monsterPortrait and monsterPortrait ~= 0 then
-          local monsterIcon
-          if Table_Monster[monsterPortrait] and Table_Monster[monsterPortrait].Icon ~= "" then
-            monsterIcon = Table_Monster[monsterPortrait].Icon
-          elseif Table_Npc[monsterPortrait] and Table_Npc[monsterPortrait].Icon ~= "" then
-            monsterIcon = Table_Npc[monsterPortrait].Icon
+          local isAnonymous = creature.data:IsAnonymous()
+          self.iconData.type = HeadImageIconType.Avatar
+          self.iconData.id = creature.data.id
+          if isAnonymous then
+            local classId = userdata:Get(UDEnum.PROFESSION)
+            local gender = userdata:Get(UDEnum.SEX)
+            FunctionAnonymous.Me():GetAnonymousHeadIconData(classId, gender, self.iconData)
           else
-            self.iconData.type = HeadImageIconType.Avatar
+            self.iconData.bodyID = userdata:Get(UDEnum.BODY)
+            self.iconData.hairID = userdata:Get(UDEnum.HAIR)
+            self.iconData.haircolor = userdata:Get(UDEnum.HAIRCOLOR)
+            self.iconData.gender = userdata:Get(UDEnum.SEX)
+            self.iconData.blink = creature.data:CanBlink()
+            local headID = userdata:Get(UDEnum.HEAD)
+            self.iconData.headID = headID
+            self.iconData.faceID = userdata:Get(UDEnum.FACE)
+            self.iconData.mouthID = userdata:Get(UDEnum.MOUTH)
+            self.iconData.eyeID = userdata:Get(UDEnum.EYE)
+            local headFashionBytes = userdata:GetBytes(UDEnum.HEAD_FASHION)
+            self.iconData.headID = HeadImageData.ProcessSnowCrownFashion(headID, headFashionBytes)
           end
-          if monsterIcon then
-            self.iconData.type = HeadImageIconType.Simple
-            self.iconData.icon = monsterIcon
-          else
-            self.iconData.type = HeadImageIconType.Simple
-            self.iconData.icon = "item_12929"
+          local monsterPortrait = userdata:Get(UDEnum.MONSTER_PORTRAIT)
+          if monsterPortrait and monsterPortrait ~= 0 then
+            local monsterIcon
+            if Table_Monster[monsterPortrait] and Table_Monster[monsterPortrait].Icon ~= "" then
+              monsterIcon = Table_Monster[monsterPortrait].Icon
+            elseif Table_Npc[monsterPortrait] and Table_Npc[monsterPortrait].Icon ~= "" then
+              monsterIcon = Table_Npc[monsterPortrait].Icon
+            else
+              self.iconData.type = HeadImageIconType.Avatar
+            end
+            if monsterIcon then
+              self.iconData.type = HeadImageIconType.Simple
+              self.iconData.icon = monsterIcon
+            else
+              self.iconData.type = HeadImageIconType.Simple
+              self.iconData.icon = "item_12929"
+            end
           end
         end
       end

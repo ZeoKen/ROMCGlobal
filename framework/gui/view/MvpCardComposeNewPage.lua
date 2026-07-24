@@ -47,6 +47,7 @@ function MvpCardComposeNewPage:InitMaterial()
   if beCostItem and beCostItem[self.makeType] then
     self.materialItems = {}
     local costItems = beCostItem[self.makeType]
+    local checkPackage = self.GetMaterialCheckPackage and self:GetMaterialCheckPackage()
     for i = 1, #costItems do
       local costItem = costItems[i]
       local itemId, ownNum = nil, 0
@@ -54,7 +55,8 @@ function MvpCardComposeNewPage:InitMaterial()
       local data = CardMakeMaterialData.new({
         id = itemId,
         num = costItem.count,
-        extraItems = costItem.items
+        extraItems = costItem.items,
+        checkPackage = checkPackage
       }, i)
       TableUtility.ArrayPushBack(self.materialItems, data)
     end

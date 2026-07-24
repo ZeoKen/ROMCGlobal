@@ -16,7 +16,8 @@ AreaTrigger_Common_ClientType = {
   AbyssDragon_Area = 100021,
   Snowman_Area = 100024,
   SnowRealm_Area = 100022,
-  SnowRealm_Room = 100023
+  SnowRealm_Room = 100023,
+  SceneBossAnime_Area = 100026
 }
 
 function AreaTrigger_Common:ctor()
@@ -41,6 +42,7 @@ function AreaTrigger_Common:ctor()
   self.triggerEnterCall[AreaTrigger_Common_ClientType.Snowman_Area] = self.Enter_SnowmanArea
   self.triggerEnterCall[AreaTrigger_Common_ClientType.SnowRealm_Area] = self.Enter_SnowRealmArea
   self.triggerEnterCall[AreaTrigger_Common_ClientType.SnowRealm_Room] = self.Enter_SnowRealmRoom
+  self.triggerEnterCall[AreaTrigger_Common_ClientType.SceneBossAnime_Area] = self.Enter_SceneBossAnimeArea
   self.triggerLeaveCall = {}
   self.triggerLeaveCall[SceneMap_pb.EACTTYPE_PURIFY] = self.LeavePurify
   self.triggerLeaveCall[SceneMap_pb.EACTTYPE_SEAL] = self.LeaveSeal
@@ -61,6 +63,7 @@ function AreaTrigger_Common:ctor()
   self.triggerLeaveCall[AreaTrigger_Common_ClientType.Snowman_Area] = self.Leave_SnowmanArea
   self.triggerLeaveCall[AreaTrigger_Common_ClientType.SnowRealm_Area] = self.Leave_SnowRealmArea
   self.triggerLeaveCall[AreaTrigger_Common_ClientType.SnowRealm_Room] = self.Leave_SnowRealmRoom
+  self.triggerLeaveCall[AreaTrigger_Common_ClientType.SceneBossAnime_Area] = self.Leave_SceneBossAnimeArea
   self.triggerRemoveCall = {}
   self.triggerRemoveCall[SceneMap_pb.EACTTYPE_PURIFY] = self.LeavePurify
   self.triggerRemoveCall[SceneMap_pb.EACTTYPE_SEAL] = self.RemoveSeal
@@ -420,4 +423,16 @@ function AreaTrigger_Common:Remove_SnowRealmRoom(trigger)
   redlog("Remove_SnowRealmRoom", trigger.id)
   GameFacade.Instance:sendNotification(TriggerEvent.RemoveSnowRealmRoom, trigger.id)
   EventManager.Me():PassEvent(TriggerEvent.RemoveSnowRealmRoom, trigger.id)
+end
+
+function AreaTrigger_Common:Enter_SceneBossAnimeArea(trigger)
+  if trigger.enterAnimeID then
+    Game.GameObjectManagers[Game.GameObjectType.SceneBossAnime]:PlayAnimationByID(trigger.enterAnimeID)
+  end
+end
+
+function AreaTrigger_Common:Leave_SceneBossAnimeArea(trigger)
+  if trigger.leaveAnimeID then
+    Game.GameObjectManagers[Game.GameObjectType.SceneBossAnime]:PlayAnimationByID(trigger.leaveAnimeID)
+  end
 end

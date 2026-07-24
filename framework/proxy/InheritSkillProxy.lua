@@ -155,6 +155,23 @@ function InheritSkillProxy:FindSkillInProfessData(pro, familyId)
   end
 end
 
+function InheritSkillProxy:HasInheritedConditionSkill(familyId)
+  if not familyId then
+    return false
+  end
+  for _, professData in pairs(self.skillProfessDatas) do
+    local skills = professData:GetSkills()
+    for i = 1, #skills do
+      local skill = skills[i]
+      local condition = skill.inheritStaticData and skill.inheritStaticData.Condition
+      if condition and condition // 1000 == familyId and skill.isInherited then
+        return true
+      end
+    end
+  end
+  return false
+end
+
 function InheritSkillProxy.GetSkillProfess(familyId)
   local config = Table_SkillInherit[familyId]
   if config then

@@ -1974,7 +1974,7 @@ Table_Dialog_Left_16 = {
   [392974] = "{id=392974,Text='Skill/Mechanic_Command     播放完毕',}",
   [392975] = "{id=392975,Text='Skill/Mechanic_Electrostatic     播放完毕',}",
   [392976] = "{id=392976,Text='Skill/Mechanic_Emergency_atk     播放完毕',}",
-  [653007] = "{id=653007,Text='不要回答她！这是陷阱！',Speaker=811714,}",
+  [392977] = "{id=392977,Text='Skill/Mechanic_Emergency_hit     播放完毕',}",
   [653008] = "{id=653008,Text='没错……不要着急回答我……',Speaker=811825,}",
   [653009] = "{id=653009,Text='再想一想……',Speaker=811825,}",
   [653010] = "{id=653010,Text='再……看一看！',Speaker=811825,}",

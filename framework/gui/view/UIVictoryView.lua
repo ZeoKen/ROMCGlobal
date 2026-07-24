@@ -87,6 +87,10 @@ function UIVictoryView:OnExit()
 end
 
 function UIVictoryView:CloseSelf()
+  local cb = self.viewdata and self.viewdata.viewdata and self.viewdata.viewdata.closeCallback
+  if cb then
+    cb()
+  end
   self.super.CloseSelf(self)
 end
 

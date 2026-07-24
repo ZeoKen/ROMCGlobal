@@ -961,7 +961,7 @@ function FunctionItemFunc.TryUseItem(data, target, count)
       return
     elseif useEffect.type == "addtutorbattletime" then
       BattleTimeDataProxy.QueryBattleTimelenUserCmd()
-      BagProxy.Instance:SaveBattleTimeItem(data)
+      BagProxy.Instance:SaveBattleTimeItem(data, count)
       BagProxy.Instance.callBattletime = true
       return
     elseif useEffect.type == "addbaseexp" then
