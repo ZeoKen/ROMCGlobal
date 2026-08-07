@@ -434,23 +434,41 @@ function SkillPhaseData:GetIsFirstHit()
   return self.isFirstHit
 end
 
-function SkillPhaseData:GetForceServerDamage()
+function SkillPhaseData:IsMonokumaRelatedDamage(sourceCreatureGUID)
+  local myself = Game.Myself
+  if sourceCreatureGUID ~= myself.data.id then
+    return false
+  end
+  if myself.data:IsMonokuma() then
+    return true
+  end
+  for i = 1, self:GetTargetCount() do
+    local targetGUID = self:GetTarget(i)
+    local targetCreature = SceneCreatureProxy.FindCreature(targetGUID)
+    if targetCreature and targetCreature.data and targetCreature.data:IsMonokuma() then
+      return true
+    end
+  end
+  return false
+end
+
+function SkillPhaseData:GetForceServerDamage(sourceCreatureGUID)
   if not self.data[1] then
     return false
   end
   local sData = _Table_Skill[self.data[1]]
   if not sData then
-    return false
+    return self:IsMonokumaRelatedDamage(sourceCreatureGUID)
   end
   local LogicParam = sData.Logic_Param
   if not LogicParam then
-    return false
+    return self:IsMonokumaRelatedDamage(sourceCreatureGUID)
   end
   local logicName = sData.Logic
   if "SkillTargetBehindRect" == logicName or "SkillTargetRect" == logicName or "MultiLockedTarget" == logicName then
     return true
   end
-  return LogicParam.force_service_damage == 1
+  return LogicParam.force_service_damage == 1 or self:IsMonokumaRelatedDamage(sourceCreatureGUID)
 end
 
 function SkillPhaseData:IsSkipBreak()

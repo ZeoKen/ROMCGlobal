@@ -395,6 +395,7 @@ function FunctionLogin:ImportTableForSelectRole()
   Game.Preprocess_Table_ActionAnime()
   Game.Preprocess_GameConfig()
   Game.Preprocess_Table_Deposit()
+  Game.Preprocess_Table_MountFashion()
   Game.track(Table_Class, {
     "NameZh",
     "NameZhFemale"

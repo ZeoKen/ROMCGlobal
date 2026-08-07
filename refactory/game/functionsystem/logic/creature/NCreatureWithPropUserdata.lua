@@ -144,6 +144,42 @@ function NCreatureWithPropUserdata:OnBodyCreated()
       end
     end
   end
+  self:TryPlayDieAfterDeadRedress()
+end
+
+function NCreatureWithPropUserdata:_ReDress(isLoadFirst)
+  NCreatureWithPropUserdata.super._ReDress(self, isLoadFirst)
+  self:TryPlayDieAfterDeadRedress()
+end
+
+function NCreatureWithPropUserdata:TryPlayDieAfterDeadRedress()
+  if not self.needPlayDieAfterDeadRedress then
+    return false
+  end
+  if not self:IsDead() or self:IsDeadCanMove() then
+    self.needPlayDieAfterDeadRedress = nil
+    return false
+  end
+  if not self.assetRole then
+    return false
+  end
+  local dieActionName = Asset_Role.ActionName.Die
+  local hasDie = self.assetRole:HasActionRaw(dieActionName)
+  local isLoading = self.assetRole._IsLoading and self.assetRole:_IsLoading()
+  if isLoading then
+    return false
+  end
+  self:Logic_StopMove()
+  self:Logic_StopBaseAction()
+  if not hasDie then
+    return false
+  end
+  local params = Asset_Role.GetPlayActionParams(dieActionName)
+  params[6] = true
+  local played = self:Logic_PlayAction(params, true)
+  Asset_Role.ClearPlayActionParams(params)
+  self.needPlayDieAfterDeadRedress = nil
+  return played
 end
 
 function NCreatureWithPropUserdata:InitBuffs(serverData, needhit)
@@ -383,6 +419,11 @@ function NCreatureWithPropUserdata:TryHandleAddSpecialBuff(buffInfo, fromID, par
     local buffType = buffeffect.type
     if buffType == BuffType.RideWolf then
       self:Logic_RideAction(true, RideActionReason.RideWolf)
+    elseif buffType == BuffType.MonokumaSkillAnnounce then
+      Game.MonokumaAnnounceManager:SaveKumaBuffInfo(buffInfo)
+      self:SetMonokumaStealth(true)
+    elseif buffType == BuffType.NoActionUseSkill then
+      self:SetNoActionUseSkill(true)
     elseif buffType == BuffType.NoRelive then
       self:Client_NoRelive(1)
     elseif buffType == BuffType.ClientHide then
@@ -497,6 +538,12 @@ function NCreatureWithPropUserdata:TryHandleAddSpecialBuff(buffInfo, fromID, par
       end
     elseif buffType == BuffType.AttrCanMove then
       self.data:SetAttrCanMove(true)
+    elseif buffType == BuffType.DespairRemnant then
+      self.deadCanMove = (self.deadCanMove or 0) + 1
+      local dieCmd = self.ai and self.ai.currentCmd
+      if dieCmd ~= nil and dieCmd.AIClass == AI_CMD_Die then
+        dieCmd:SetConcurrent(true)
+      end
     end
     if buffeffect.isStageEffect ~= nil and buffeffect.isStageEffect == 1 then
       self:SetStageEffectScale()
@@ -625,6 +672,10 @@ function NCreatureWithPropUserdata:TryHandleRemoveSpecialBuff(buffInfo)
   local buffType = buffeffect.type
   if buffType == BuffType.RideWolf then
     self:Logic_RideAction(false, RideActionReason.RideWolf)
+  elseif buffType == BuffType.MonokumaSkillAnnounce then
+    self:SetMonokumaStealth(false)
+  elseif buffType == BuffType.NoActionUseSkill then
+    self:SetNoActionUseSkill(false)
   elseif buffType == BuffType.NoRelive then
     self:Client_NoRelive(-1)
     if not self.data:NoRelive() then
@@ -721,7 +772,25 @@ function NCreatureWithPropUserdata:TryHandleRemoveSpecialBuff(buffInfo)
     end
   elseif buffType == BuffType.AttrCanMove then
     self.data:SetAttrCanMove(false)
+  elseif buffType == BuffType.DespairRemnant then
+    self.deadCanMove = (self.deadCanMove or 0) - 1
+    if 0 >= self.deadCanMove then
+      self.deadCanMove = nil
+      local dieCmd = self.ai and self.ai.currentCmd
+      if dieCmd ~= nil and dieCmd.AIClass == AI_CMD_Die then
+        dieCmd:SetConcurrent(false)
+      end
+      if self:IsDead() then
+        self.needPlayDieAfterDeadRedress = true
+        self:Logic_StopMove()
+        self:Server_DieCmd()
+      end
+    end
   end
+end
+
+function NCreatureWithPropUserdata:IsDeadCanMove()
+  return self.deadCanMove ~= nil and self.deadCanMove > 0
 end
 
 function NCreatureWithPropUserdata:TryUpdateSpecialBuff(buffInfo, active, fromID, layer, maxLayer, level)
@@ -1053,6 +1122,8 @@ function NCreatureWithPropUserdata:DoDeconstruct(asArray)
   Game.SkillDynamicManager:Clear(self.data.id)
   NCreatureWithPropUserdata.super.DoDeconstruct(self, asArray)
   self:ClearBuff()
+  self.deadCanMove = nil
+  self.needPlayDieAfterDeadRedress = nil
   self.playWalkEffect = false
   self.playWalkEffect_path = nil
   self.forbidUseItem = nil

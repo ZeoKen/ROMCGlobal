@@ -198,11 +198,12 @@ end
 
 function PetPackagePart:UpdateDataSign(items, quickItems)
   self.itemDataCount = items and #items or 0
+  self.itemDataSign = GetPetItemSign(items)
   self.quickItemDataSign = GetPetItemSign(quickItems)
 end
 
 function PetPackagePart:IsDataSignChanged(items, quickItems)
-  return self.itemDataCount ~= (items and #items or 0) or self.quickItemDataSign ~= GetPetItemSign(quickItems)
+  return self.itemDataCount ~= (items and #items or 0) or self.itemDataSign ~= GetPetItemSign(items) or self.quickItemDataSign ~= GetPetItemSign(quickItems)
 end
 
 function PetPackagePart:RefreshPetCellState()

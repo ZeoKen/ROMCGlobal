@@ -199,6 +199,46 @@ Table_AccumDeposit = {
     },
     ShowNpc = 894484,
     AdText = "累计打赏1000，赠限定坐骑沐光巡游车！"
+  },
+  [7] = {
+    id = 7,
+    ServerID = _EmptyTable,
+    Duration = {
+      "2026-08-05 05:00:00",
+      "2026-09-05 05:00:00"
+    },
+    TfDuration = {
+      "2026-07-23 05:00:00",
+      "2026-08-23 05:00:00"
+    },
+    Reward = {
+      [1] = {
+        need_deposit = 0,
+        reward = {3042133, 5}
+      },
+      [2] = {
+        need_deposit = 30,
+        reward = {3042133, 15}
+      },
+      [3] = {
+        need_deposit = 68,
+        reward = {10000320, 3}
+      },
+      [4] = {
+        need_deposit = 128,
+        reward = {3042133, 50}
+      },
+      [5] = {
+        need_deposit = 328,
+        reward = {52838, 1}
+      },
+      [6] = {
+        need_deposit = 648,
+        reward = {3042119, 1}
+      }
+    },
+    ShowNpc = 894489,
+    AdText = "累计充值达到648，赠限定黑白熊之翼！"
   }
 }
 Table_AccumDeposit_fields = {

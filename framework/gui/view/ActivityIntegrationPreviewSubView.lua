@@ -437,6 +437,13 @@ function ActivityIntegrationPreviewSubView:UpdateLeftTime()
   end
 end
 
+function ActivityIntegrationPreviewSubView.FitBgTextureToOriginalSize(owner, uiTexture, asset)
+  if not (asset and owner) or owner.bgTexture ~= uiTexture or owner.bgTexture.mainTexture ~= asset then
+    return
+  end
+  owner.bgTexture:MakePixelPerfect()
+end
+
 function ActivityIntegrationPreviewSubView:OnEnter(id)
   self.staticData = Table_ActivityIntegration[id]
   if not self.staticData then
@@ -456,7 +463,7 @@ function ActivityIntegrationPreviewSubView:OnEnter(id)
     end
   end
   self.textureName = params and params.Texture
-  picIns:SetUI(self.textureName, self.bgTexture)
+  picIns:SetUIWithCallback(self.textureName, self.bgTexture, ActivityIntegrationPreviewSubView.FitBgTextureToOriginalSize, self)
   if self.textureName == "activityintegration_bg_pic01" then
     if self.Ornament then
       self.Ornament.gameObject:SetActive(true)

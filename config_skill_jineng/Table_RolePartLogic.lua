@@ -2730,6 +2730,10 @@ Table_RolePartLogic = {
     id = 3033965,
     Params = Table_RolePartLogic_t.Params[41]
   },
+  [3042113] = {
+    id = 3042113,
+    Params = Table_RolePartLogic_t.Params[40]
+  },
   [4000006] = {
     id = 4000006,
     Params = Table_RolePartLogic_t.Params[1]

@@ -1712,6 +1712,14 @@ Table_SkillDynamicEffect = {
     SkillEffect = _EmptyTable,
     BuffID = 141854,
     Profession = 825
+  },
+  [1067] = {
+    id = 1067,
+    ItemID = 849,
+    SkillID = 4958,
+    SkillEffect = _EmptyTable,
+    BuffID = 143152,
+    Profession = 855
   }
 }
 Table_SkillDynamicEffect_fields = {

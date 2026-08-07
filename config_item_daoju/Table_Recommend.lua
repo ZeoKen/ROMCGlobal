@@ -126,8 +126,7 @@ Table_Recommend = {
     Del_Params = _EmptyTable,
     GotoMode = _EmptyTable,
     Difficulty = 0,
-    ServerID = _EmptyTable,
-    InDoublePool = 1
+    ServerID = _EmptyTable
   },
   [10] = {
     id = 10,
@@ -149,8 +148,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [11] = {
     id = 11,
@@ -172,8 +170,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [12] = {
     id = 12,
@@ -195,8 +192,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [13] = {
     id = 13,
@@ -218,8 +214,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [14] = {
     id = 14,
@@ -241,8 +236,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [15] = {
     id = 15,
@@ -264,8 +258,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [16] = {
     id = 16,
@@ -287,8 +280,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [17] = {
     id = 17,
@@ -310,8 +302,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [18] = {
     id = 18,
@@ -333,8 +324,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [19] = {
     id = 19,
@@ -356,8 +346,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [20] = {
     id = 20,
@@ -379,8 +368,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [21] = {
     id = 21,
@@ -402,8 +390,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [22] = {
     id = 22,
@@ -425,8 +412,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [23] = {
     id = 23,
@@ -448,8 +434,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [24] = {
     id = 24,
@@ -471,8 +456,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [25] = {
     id = 25,
@@ -494,8 +478,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [26] = {
     id = 26,
@@ -517,8 +500,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [27] = {
     id = 27,
@@ -540,8 +522,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [28] = {
     id = 28,
@@ -563,8 +544,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [29] = {
     id = 29,
@@ -586,8 +566,7 @@ Table_Recommend = {
     GotoMode = _EmptyTable,
     Difficulty = 0,
     ServerID = _EmptyTable,
-    GroupID = 1,
-    InDoublePool = 1
+    GroupID = 1
   },
   [112] = {
     id = 112,

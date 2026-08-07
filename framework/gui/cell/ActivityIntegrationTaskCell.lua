@@ -1,6 +1,8 @@
 autoImport("BaseCell")
 autoImport("ActivityBattlePassItemCell")
 ActivityIntegrationTaskCell = class("ActivityIntegrationTaskCell", BaseCell)
+ActivityIntegrationTaskCellEvent = ActivityIntegrationTaskCellEvent or {}
+ActivityIntegrationTaskCellEvent.ClickReward = "ActivityIntegrationTaskCellEvent_ClickReward"
 
 function ActivityIntegrationTaskCell:Init()
   ActivityBattlePassTaskCell.super.Init(self)
@@ -19,9 +21,7 @@ function ActivityIntegrationTaskCell:FindObjs()
   self.finishSymbol = self:FindGO("FinishSymbol")
   local rewardHolder = self:FindGO("RewardHolder")
   self.rewardCell = ActivityBattlePassItemCell.new(rewardHolder)
-  self:AddClickEvent(rewardHolder, function()
-    self:PassEvent(MouseEvent.DoubleClick, self)
-  end)
+  self.rewardCell:AddEventListener(MouseEvent.MouseClick, self.HandleClickRewardCell, self)
   self.buyBtn = self:FindGO("BuyBtn")
   self.buyBtn_Price = self:FindGO("Label", self.buyBtn):GetComponent(UILabel)
   self.buyBtn_Icon = self:FindGO("icon", self.buyBtn):GetComponent(UISprite)
@@ -35,6 +35,10 @@ function ActivityIntegrationTaskCell:FindObjs()
   self:AddClickEvent(self.buyBtn, function()
     self:PassEvent(UICellEvent.OnCellClicked, self)
   end)
+end
+
+function ActivityIntegrationTaskCell:HandleClickRewardCell()
+  self:PassEvent(ActivityIntegrationTaskCellEvent.ClickReward, self)
 end
 
 function ActivityIntegrationTaskCell:SetData(data)

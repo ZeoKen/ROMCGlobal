@@ -1805,6 +1805,7 @@ Table_PoemStep = {
   [11] = {
     id = 11,
     Questid = 600170003,
+    name = "百年智家·故事三",
     step = 6,
     Descrip = Table_PoemStep_t.Descrip[11],
     TraceInfo = "殊死一战--智家对妖君！"
@@ -1866,7 +1867,6 @@ Table_PoemStep = {
   [19] = {
     id = 19,
     Questid = 600550002,
-    name = "默斯曼·岁月·故事一",
     Descrip = Table_PoemStep_t.Descrip[19],
     TraceInfo = "黄金时钟暗处的危机"
   },
@@ -2188,7 +2188,8 @@ Table_PoemStep = {
     Questid = 311110001,
     name = "忽克连·故事三",
     step = 7,
-    Descrip = Table_PoemStep_t.Descrip[61]
+    Descrip = Table_PoemStep_t.Descrip[61],
+    TraceInfo = "失败是成功之母"
   },
   [62] = {
     id = 62,
@@ -2421,8 +2422,7 @@ Table_PoemStep = {
     id = 91,
     name = "拉武雷·故事三",
     step = 7,
-    Descrip = Table_PoemStep_t.Descrip[91],
-    TraceInfo = "古魔法--禁·神灵之咒"
+    Descrip = Table_PoemStep_t.Descrip[91]
   },
   [92] = {
     id = 92,
@@ -2796,9 +2796,9 @@ local cell_mt = {
   __index = {
     Descrip = _EmptyTable,
     Questid = 311150001,
-    TraceInfo = "失败是成功之母",
+    TraceInfo = "古魔法--禁·神灵之咒",
     id = 1,
-    name = "百年智家·故事三",
+    name = "默斯曼·岁月·故事一",
     step = 0
   }
 }

@@ -6,6 +6,11 @@ Table_Dialog_Left_47 = {
   [662684] = "{id=662684,Text='##3449689',Speaker=829266,Option='请说',}",
   [662685] = "{id=662685,Text='##3449690',Speaker=829266,}",
   [662686] = "{id=662686,Text='##3449691',Speaker=829266,}",
+  [784236] = "{id=784236,Voice='Npc_Quest/784236',Text='##1193610',Speaker=824420,}",
+  [784237] = "{id=784237,Voice='Npc_Quest/784237',Text='##1193611',Speaker=824421,}",
+  [784238] = "{id=784238,Voice='Npc_Quest/784238',Text='##195377',Speaker=824420,}",
+  [784239] = "{id=784239,Voice='Npc_Quest/784239',Text='##1193612',Speaker=824421,}",
+  [784240] = "{id=784240,Voice='Npc_Quest/784240',Text='##1209455',Speaker=824421,}",
   [784241] = "{id=784241,Text='##1193614',Speaker=824421,}",
   [784242] = "{id=784242,Text='##1193602',Speaker=824417,}",
   [784243] = "{id=784243,Voice='Npc_Quest/784119',Text='##1209456',Speaker=824263,}",
@@ -698,4 +703,4 @@ Table_Dialog_Left_47 = {
   [786427] = "{id=786427,Text='##2835987',Speaker=840149,Option='{就是九个,115},{二十七个,120},{我也不知道,115}',}",
   [786428] = "{id=786428,Text='##2835989',Speaker=840149,}"
 }
-Table_Dialog_Left_47.count = 698
+Table_Dialog_Left_47.count = 703

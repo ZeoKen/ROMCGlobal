@@ -667,6 +667,24 @@ ProtoReqInfoList = {
     ack = "Cmd.PaySignRewardActCmd",
     from = "ActivityCmd"
   },
+  TieredBundleSyncActCmd = {
+    id = 600087,
+    req = "Cmd.TieredBundleSyncActCmd",
+    ack = "Cmd.TieredBundleSyncActCmd",
+    from = "ActivityCmd"
+  },
+  TieredBundleDayRewardActCmd = {
+    id = 600088,
+    req = "Cmd.TieredBundleDayRewardActCmd",
+    ack = "Cmd.TieredBundleDayRewardActCmd",
+    from = "ActivityCmd"
+  },
+  TieredBundleRewardActCmd = {
+    id = 600089,
+    req = "Cmd.TieredBundleRewardActCmd",
+    ack = "Cmd.TieredBundleRewardActCmd",
+    from = "ActivityCmd"
+  },
   ActivityEventNtf = {
     id = 640001,
     req = "Cmd.ActivityEventNtf",
@@ -7063,6 +7081,12 @@ ProtoReqInfoList = {
     ack = "Cmd.UserSecretGetMapCmd",
     from = "SceneMap"
   },
+  ShowNpcInfoMapCmd = {
+    id = 120043,
+    req = "Cmd.ShowNpcInfoMapCmd",
+    ack = "Cmd.ShowNpcInfoMapCmd",
+    from = "SceneMap"
+  },
   EditNpcTextMapCmd = {
     id = 120015,
     req = "Cmd.EditNpcTextMapCmd",
@@ -11927,6 +11951,9 @@ ProtoReqInfoList[600081] = ProtoReqInfoList.LeaveActStaticMapCmd
 ProtoReqInfoList[600084] = ProtoReqInfoList.ActCardLevelUpInfoSyncCmd
 ProtoReqInfoList[600085] = ProtoReqInfoList.PaySignSyncActCmd
 ProtoReqInfoList[600086] = ProtoReqInfoList.PaySignRewardActCmd
+ProtoReqInfoList[600087] = ProtoReqInfoList.TieredBundleSyncActCmd
+ProtoReqInfoList[600088] = ProtoReqInfoList.TieredBundleDayRewardActCmd
+ProtoReqInfoList[600089] = ProtoReqInfoList.TieredBundleRewardActCmd
 ProtoReqInfoList[640001] = ProtoReqInfoList.ActivityEventNtf
 ProtoReqInfoList[640002] = ProtoReqInfoList.ActivityEventUserDataNtf
 ProtoReqInfoList[640003] = ProtoReqInfoList.ActivityEventNtfEventCntCmd
@@ -12993,6 +13020,7 @@ ProtoReqInfoList[120013] = ProtoReqInfoList.GingerBreadNpcCmd
 ProtoReqInfoList[120014] = ProtoReqInfoList.GoCityGateMapCmd
 ProtoReqInfoList[120016] = ProtoReqInfoList.UserSecretQueryMapCmd
 ProtoReqInfoList[120017] = ProtoReqInfoList.UserSecretGetMapCmd
+ProtoReqInfoList[120043] = ProtoReqInfoList.ShowNpcInfoMapCmd
 ProtoReqInfoList[120015] = ProtoReqInfoList.EditNpcTextMapCmd
 ProtoReqInfoList[120018] = ProtoReqInfoList.ObjStateSyncMapCmd
 ProtoReqInfoList[120019] = ProtoReqInfoList.AddMapObjNpc

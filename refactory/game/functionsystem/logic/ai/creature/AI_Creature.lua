@@ -156,6 +156,7 @@ if not AI_Creature.AI_Creature_inited then
   AI_CMD_MoveTo.BlockedBy = {
     AI_CMD_Die
   }
+  AI_CMD_MoveTo.DeadCanMoveBlockedBy = {}
   AI_CMD_PlayAction.BlockedBy = {
     AI_CMD_Hit,
     AI_CMD_Die,
@@ -164,6 +165,7 @@ if not AI_Creature.AI_Creature_inited then
   AI_CMD_Skill.BlockedBy = {
     AI_CMD_Die
   }
+  AI_CMD_Skill.DeadCanMoveBlockedBy = {}
   AI_CMD_Hit.BlockedBy = {
     AI_CMD_Breakdown
   }
@@ -346,6 +348,7 @@ local TryWeakInterruptCommands = function(checkCmd, cmds, currentCmds, time, del
 end
 local AllowStart = function(AIClass, cmd, ai, creature)
   local blockedBy = AIClass.BlockedBy
+  blockedBy = creature:IsDeadCanMove() and AIClass.DeadCanMoveBlockedBy or blockedBy
   if nil ~= blockedBy then
     local requestCmds = ai.requestCmds
     local runningCmds = ai.runningCmds

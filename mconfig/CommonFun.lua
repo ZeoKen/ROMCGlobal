@@ -5394,8 +5394,6 @@ function CommonFun.calcMagicElement(srcUser, targetUser, params, damageParam, at
     ElementRate = ElementRate * (1 + baseRateAdd)
     if 1 < rawElementRate then
       ElementRate = ElementRate * (1 + baseRateAdd)
-    elseif rawElementRate < 1 then
-      ElementRate = ElementRate * (1 - snowStoneLv385402 * 0.06)
     end
   end
   local ElementRateAdd = 1
@@ -5734,7 +5732,7 @@ function CommonFun.CalcHitRate(srcUser, targetUser, skillParams)
   if srcUser:HasBuffID(165540) then
     rate = 100
   end
-  if math.floor(skilllv_1 / 1000) == 6110 and srcUser:GetBuffLayer(116080) == 15 then
+  if math.floor(skilllv_1 / 1000) == 6110 and srcUser:GetBuffLayer(116080) >= 15 then
     rate = 100
   end
   if math.floor(skilllv_1 / 1000) == 5524 then
@@ -6230,7 +6228,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
   if 7 <= skill_qy and srcUser:HasBuffID(136780) and targetUser:HasBuffID(136781) then
     isCanBlock = false
   end
-  if skillID == 6110 and srcUser:GetBuffLayer(116080) == 15 then
+  if skillID == 6110 and srcUser:GetBuffLayer(116080) >= 15 then
     isCanBlock = false
   end
   if skillID == 5524 then
@@ -6362,7 +6360,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     if isCanBlock == false then
       judu = false
     end
-    if skillID == 6110 and srcUser:GetBuffLayer(116080) == 15 then
+    if skillID == 6110 and srcUser:GetBuffLayer(116080) >= 15 then
       judu = false
     end
     if skillID == 5524 then
@@ -6670,7 +6668,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
         elseif launchRange < distance then
           distance = launchRange
         end
-        snowStone385101 = 0.75 + (maxRatio - 0.75) * (distance - 1) / (launchRange - 1)
+        snowStone385101 = 1 + (maxRatio - 1) * (distance - 1) / (launchRange - 1)
       end
     end
     if (profressionID == 92 or profressionID == 93 or profressionID == 94 or profressionID == 95) and WeaponType == 210 then
@@ -6814,16 +6812,6 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
           SpAtk = math.max(Sp, MaxSp * (0.05 * skilllv_liuxing3)) * skilllv_liuxing * 0.1
         end
         damage = (((Atk - BaseAtk1 + SpAtk) * (1 + AtkPer) * CommonFun.ShapeCorrection(srcUser, targetUser) * bodyparam * elementparam * elementparam2 + BaseAtk3) * raceparam * bossparam * bossparam2 * (1 - DamReduc2) + Refine + SkillRealDamage - Vit2 * (1 + VitPer2)) * CommonFun.CalcCrit(srcUser, targetUser, skillParams) * (1 - RefineDamReduc) * (1 + DamIncrease) * (1 + RealDamage) * (1 + skillLevel2 * 0.05) * DisDam * BUffDam
-        if skillID == 252 then
-          local snowStoneLv385701 = srcUser:GetEquipSnowStoneLv(385701) or 0
-          if 0 < snowStoneLv385701 then
-            local count = params.hitedCount or 1
-            local extraTargetCount = math.max(count - 1, 0)
-            local reducePer = 0.1 - (snowStoneLv385701 - 1) * 0.0125
-            local meteorDamPer = math.max(1 - extraTargetCount * reducePer, 0.1)
-            damage = damage * meteorDamPer
-          end
-        end
         if damage <= 0 then
           damage = 0
         end
@@ -7443,6 +7431,13 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
       elseif targetUser:GetNpcID() == 0 then
         damage = damage * 0.825
       end
+    end
+  end
+  local mapid, maptype = srcUser:GetMapInfo()
+  if 0 < damage and maptype ~= 2 and maptype ~= 4 then
+    local monster = Table_Monster[targetUser:GetNpcID()]
+    if monster ~= nil and monster.Type == "PetNpc" then
+      damage = damage / (math.random(0, 10) + 35)
     end
   end
   if 0 < damage then
@@ -8192,6 +8187,12 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
   local snowStoneLv386003 = srcUser:GetEquipSnowStoneLv(386003) or 0
   if 0 < snowStoneLv386003 and snowStoneSkill386003 and index ~= 1 then
     return math.min(damage * 0.5, 2147483647), damageType
+  end
+  if skillID == 252 then
+    local snowStoneLv385701 = srcUser:GetEquipSnowStoneLv(385701) or 0
+    if 0 < snowStoneLv385701 and srcUser:HasBuffID(131070) then
+      damage = damage * (1 + snowStoneLv385701 * 0.04)
+    end
   end
   if skillParams.Logic_Param.spotter ~= nil and index ~= 1 then
     local spotter = srcUser:GetSpotter(params.skillIDAndLevel) + skillParams.Logic_Param.spotter
@@ -10298,7 +10299,7 @@ function CommonFun.calcDamage_19(srcUser, targetUser, params, damageParam, logge
         elseif launchRange < distance then
           distance = launchRange
         end
-        A = A * (0.75 + (maxRatio - 0.75) * (distance - 1) / (launchRange - 1))
+        A = A * (1 + (maxRatio - 1) * (distance - 1) / (launchRange - 1))
       end
     end
   end
@@ -10469,16 +10470,6 @@ function CommonFun.calcDamage_21(srcUser, targetUser, params, damageParam, logge
     local Debuff_Layer_2 = targetUser:GetBuffLayerByIDAndFromID(96083, guid)
     local sw_dam = math.max(Debuff_Layer_1, Debuff_Layer_2) * 0.06 + 1
     A = ((AtkFinal * DefReduc * (1 - DamReduc2) + Refine) * damChangePer * (1 - RefineDamReduc) * (1 + DamIncrease - LongRangeDamReduc2) - Vit2 * (1 + VitPer2)) * DisDam * Injured * sw_dam * bafeng
-    if skillID == 252 then
-      local snowStoneLv385701 = srcUser:GetEquipSnowStoneLv(385701) or 0
-      if 0 < snowStoneLv385701 then
-        local count = params.hitedCount or 1
-        local extraTargetCount = math.max(count - 1, 0)
-        local reducePer = 0.1 - (snowStoneLv385701 - 1) * 0.0125
-        local meteorDamPer = math.max(1 - extraTargetCount * reducePer, 0.1)
-        A = A * meteorDamPer
-      end
-    end
   end
   if skillID == 404 then
     local GemValue = srcUser:GetGemValue(41131)
@@ -14500,7 +14491,7 @@ function CommonFun.calcDamage_1201(srcUser, targetUser, params, damageParam, log
         elseif launchRange < distance then
           distance = launchRange
         end
-        A = A * (0.75 + (maxRatio - 0.75) * (distance - 1) / (launchRange - 1))
+        A = A * (1 + (maxRatio - 1) * (distance - 1) / (launchRange - 1))
       end
     end
   end
@@ -14893,7 +14884,7 @@ function CommonFun.calcDamage_1206(srcUser, targetUser, params, damageParam, log
         elseif launchRange < distance then
           distance = launchRange
         end
-        A = A * (0.75 + (maxRatio - 0.75) * (distance - 1) / (launchRange - 1))
+        A = A * (1 + (maxRatio - 1) * (distance - 1) / (launchRange - 1))
       end
     end
   end
@@ -15043,7 +15034,7 @@ function CommonFun.calcDamage_1301(srcUser, targetUser, params, damageParam, log
         elseif launchRange < distance then
           distance = launchRange
         end
-        A = A * (0.75 + (maxRatio - 0.75) * (distance - 1) / (launchRange - 1))
+        A = A * (1 + (maxRatio - 1) * (distance - 1) / (launchRange - 1))
       end
     end
   end
@@ -15345,7 +15336,7 @@ function CommonFun.calcDamage_1402(srcUser, targetUser, params, damageParam, log
         elseif launchRange < distance then
           distance = launchRange
         end
-        A = A * (0.75 + (maxRatio - 0.75) * (distance - 1) / (launchRange - 1))
+        A = A * (1 + (maxRatio - 1) * (distance - 1) / (launchRange - 1))
       end
     end
   end
@@ -15993,6 +15984,7 @@ function CommonFun.calcDamage_2320(srcUser, targetUser, params, damageParam, log
   if 1 <= NumDebuff then
     A = A * (1 + 0.06 * skilllv_xingji1)
   end
+  local skillID, skillLevel = CommonFun.UnmergeSkillID(params.skillIDAndLevel)
   local snowStoneLv385301 = srcUser:GetEquipSnowStoneLv(385301)
   if 0 < snowStoneLv385301 and (skillID == 5024 or skillID == 5025 or skillID == 5026 or skillID == 5027) then
     A = A * (1 + (0.08 + (snowStoneLv385301 - 1) * 0.03) * 4)
@@ -45326,16 +45318,17 @@ function CommonFun.calcBuff_6550(srcUser, targetUser, a, b, c, d, lv)
   return A
 end
 
-function CommonFun.calcBuff_6551(srcUser, targetUser, a, b, c, d, lv, damage)
+function CommonFun.calcBuff_6551(srcUser, targetUser, a, b, c, d, lv, damage, param)
   if srcUser == nil or targetUser == nil then
     return 0
   end
+  local realDamage = param.realDamage
   local Ratio = 1
   local mapid, maptype = srcUser:GetMapInfo()
   if maptype == 2 or maptype == 4 then
     Ratio = 0.25
   end
-  local A = damage * lv * 0.02 * Ratio
+  local A = realDamage * lv * 0.02 * Ratio
   return A
 end
 
@@ -51070,29 +51063,31 @@ function CommonFun.calcBuff_8540(srcUser, targetUser, a, b, c, d, lv, damage)
   return A
 end
 
-function CommonFun.calcBuff_9160(srcUser, targetUser, a, b, c, d, lv, damage)
+function CommonFun.calcBuff_9160(srcUser, targetUser, a, b, c, d, lv, damage, param)
   if srcUser == nil or targetUser == nil then
     return 0
   end
+  local realDamage = param.realDamage
   local Ratio = 1
   local mapid, maptype = srcUser:GetMapInfo()
   if maptype == 2 or maptype == 4 then
     Ratio = 0.25
   end
-  local A = damage * lv * 0.005 * Ratio
+  local A = realDamage * lv * 0.005 * Ratio
   return A
 end
 
-function CommonFun.calcBuff_9161(srcUser, targetUser, a, b, c, d, lv, damage)
+function CommonFun.calcBuff_9161(srcUser, targetUser, a, b, c, d, lv, damage, param)
   if srcUser == nil or targetUser == nil then
     return 0
   end
+  local realDamage = param.realDamage
   local Ratio = 1
   local mapid, maptype = srcUser:GetMapInfo()
   if maptype == 2 or maptype == 4 then
     Ratio = 0.25
   end
-  local A = damage * (lv * 0.005 + 0.05) * Ratio
+  local A = realDamage * (lv * 0.005 + 0.05) * Ratio
   return A
 end
 
@@ -52900,10 +52895,10 @@ function CommonFun.calcBuff_100570(srcUser, targetUser, a, b, c, d, lv)
   if srcUser == nil or targetUser == nil then
     return 0
   end
-  local skillid = a or 5912
-  local stoneid = b or 385904
-  local baseTime = c or 12
-  local stoneAddTime = d or 12
+  local skillid = 5912
+  local stoneid = 385904
+  local baseTime = 12
+  local stoneAddTime = 6
   local skilllv = srcUser:GetLernedSkillLevel(skillid) or 0
   local stonelv = srcUser:GetEquipSnowStoneLv(stoneid) or 0
   local A = baseTime - skilllv * 1.2

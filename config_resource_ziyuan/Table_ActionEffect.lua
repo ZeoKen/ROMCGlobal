@@ -5890,6 +5890,138 @@ Table_ActionEffect = {
     BodyID = 62345,
     NameAction = "playshow",
     EffectID = 435
+  },
+  [983] = {
+    id = 983,
+    BodyID = 62310,
+    NameAction = "playshow",
+    EffectID = 418
+  },
+  [984] = {
+    id = 984,
+    BodyID = 62315,
+    NameAction = "playshow",
+    EffectID = 419
+  },
+  [985] = {
+    id = 985,
+    BodyID = 62220,
+    NameAction = "playshow",
+    EffectID = 437
+  },
+  [986] = {
+    id = 986,
+    BodyID = 62221,
+    NameAction = "playshow",
+    EffectID = 437
+  },
+  [987] = {
+    id = 987,
+    BodyID = 62222,
+    NameAction = "playshow",
+    EffectID = 437
+  },
+  [988] = {
+    id = 988,
+    BodyID = 62223,
+    NameAction = "playshow",
+    EffectID = 437
+  },
+  [989] = {
+    id = 989,
+    BodyID = 62224,
+    NameAction = "playshow",
+    EffectID = 437
+  },
+  [990] = {
+    id = 990,
+    BodyID = 62225,
+    NameAction = "playshow",
+    EffectID = 438
+  },
+  [991] = {
+    id = 991,
+    BodyID = 62226,
+    NameAction = "playshow",
+    EffectID = 438
+  },
+  [992] = {
+    id = 992,
+    BodyID = 62227,
+    NameAction = "playshow",
+    EffectID = 438
+  },
+  [993] = {
+    id = 993,
+    BodyID = 62228,
+    NameAction = "playshow",
+    EffectID = 438
+  },
+  [994] = {
+    id = 994,
+    BodyID = 62229,
+    NameAction = "playshow",
+    EffectID = 438
+  },
+  [995] = {
+    id = 995,
+    BodyID = 62230,
+    NameAction = "playshow",
+    EffectID = 439
+  },
+  [996] = {
+    id = 996,
+    BodyID = 62231,
+    NameAction = "playshow",
+    EffectID = 439
+  },
+  [997] = {
+    id = 997,
+    BodyID = 62232,
+    NameAction = "playshow",
+    EffectID = 439
+  },
+  [998] = {
+    id = 998,
+    BodyID = 62233,
+    NameAction = "playshow",
+    EffectID = 439
+  },
+  [999] = {
+    id = 999,
+    BodyID = 62234,
+    NameAction = "playshow",
+    EffectID = 439
+  },
+  [1000] = {
+    id = 1000,
+    BodyID = 62235,
+    NameAction = "playshow",
+    EffectID = 440
+  },
+  [1001] = {
+    id = 1001,
+    BodyID = 62236,
+    NameAction = "playshow",
+    EffectID = 440
+  },
+  [1002] = {
+    id = 1002,
+    BodyID = 62237,
+    NameAction = "playshow",
+    EffectID = 440
+  },
+  [1003] = {
+    id = 1003,
+    BodyID = 62238,
+    NameAction = "playshow",
+    EffectID = 440
+  },
+  [1004] = {
+    id = 1004,
+    BodyID = 62239,
+    NameAction = "playshow",
+    EffectID = 440
   }
 }
 Table_ActionEffect_fields = {

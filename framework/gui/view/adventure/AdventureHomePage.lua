@@ -334,6 +334,10 @@ end
 
 function AdventureHomePage:OnEnter()
   AdventureHomePage.super.OnEnter(self)
+  local foodProxy = FoodProxy.Instance
+  if foodProxy and not next(foodProxy.food_cook_info) then
+    foodProxy:InitManualFoodInfo()
+  end
   self:setAchievementScore()
   ServiceSessionSocialityProxy.Instance:CallFrameStatusSocialCmd(true)
   self:setFriendAdData(true)

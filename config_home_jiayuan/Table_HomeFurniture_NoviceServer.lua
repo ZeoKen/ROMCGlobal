@@ -3498,7 +3498,6 @@ Table_HomeFurniture = {
   },
   [30900] = {
     id = 30900,
-    Name = "Normal_02_Carousel",
     NameZh = "木马·蓝光琉璃",
     Row = 13,
     Col = 13,
@@ -6026,6 +6025,7 @@ Table_HomeFurniture = {
   },
   [32129] = {
     id = 32129,
+    Name = "Xhzd_01_Cupboard",
     NameZh = "藏梦小柜·零星",
     Col = 2,
     EndHeight = 3,
@@ -9440,7 +9440,7 @@ local cell_mt = {
     FurnitureFunction = _EmptyTable,
     HomeScore = 10,
     LoadShowPosition = _EmptyTable,
-    Name = "Xhzd_01_Cupboard",
+    Name = "Normal_02_Carousel",
     NameZh = "南瓜马车",
     NormalType = 1,
     Npc = _EmptyTable,

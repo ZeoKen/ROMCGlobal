@@ -31439,6 +31439,16 @@ Table_Compose = {
     Type = 1,
     Category = 10
   },
+  [3042131] = {
+    id = 3042131,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 3042131, num = 5}
+    },
+    Product = {id = 3042132},
+    Type = 1
+  },
   [3042205] = {
     id = 3042205,
     ROB = 0,

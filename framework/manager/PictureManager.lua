@@ -193,6 +193,10 @@ function PictureManager:SetUI(sName, uiTexture)
   return self:SetTexture(sName, uiTexture, PictureManager.Config.Pic.UI, self.uiCache)
 end
 
+function PictureManager:SetUIWithCallback(sName, uiTexture, callback, owner)
+  return self:SetTextureWithCallback(sName, uiTexture, PictureManager.Config.Pic.UI, self.uiCache, callback, owner)
+end
+
 function PictureManager:SetMonthCardUI(sName, uiTexture)
   return self:SetTexture(sName, uiTexture, PictureManager.Config.Pic.MonthCard, self.monthCardCache)
 end
@@ -511,6 +515,36 @@ end
 
 function PictureManager._LoadTexture(uiTexture, asset)
   uiTexture.mainTexture = asset
+end
+
+function PictureManager:SetTextureWithCallback(sName, uiTexture, path, cache, callback, owner)
+  local rID = path .. sName
+  local cacheInfo = cache[sName]
+  if cacheInfo == nil then
+    cacheInfo = {}
+    cache[sName] = cacheInfo
+  end
+  cacheInfo[1] = rID
+  if cacheInfo[2] then
+    cacheInfo[2] = cacheInfo[2] + 1
+  else
+    cacheInfo[2] = 1
+  end
+  Game.AssetManager_UI:LoadAsset(rID, Texture, PictureManager._LoadTextureWithCallback, {
+    uiTexture = uiTexture,
+    callback = callback,
+    owner = owner
+  })
+  return true
+end
+
+function PictureManager._LoadTextureWithCallback(args, asset)
+  if args and args.uiTexture then
+    args.uiTexture.mainTexture = asset
+  end
+  if args and args.callback then
+    args.callback(args.owner, args.uiTexture, asset)
+  end
 end
 
 function PictureManager.ReFitManualHeight(uiTexture)

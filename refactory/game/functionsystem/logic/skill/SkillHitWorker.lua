@@ -88,6 +88,7 @@ function SkillHitWorker:Init(skillInfo, fromPosition, fromGUID, fromWeaponID, no
   args[5] = nil
   args[6] = nil
   args[7] = 0
+  self.serverDamageOnly = false
   self.noHitEffect = noHitEffect
 end
 
@@ -108,6 +109,10 @@ end
 
 function SkillHitWorker:SetForceEffectPath(effectPath)
   self.args[5] = effectPath
+end
+
+function SkillHitWorker:SetServerDamageOnly(value)
+  self.serverDamageOnly = value
 end
 
 function SkillHitWorker:AddTargetFromPhaseData(targetGUID, damageType, damage, shareDamageInfos, damageCount, doubleDamage)
@@ -220,7 +225,7 @@ function SkillHitWorker:_Work(creature, targetGUID, damageType, damage, shareDam
     if skillInfo:NoHitEffect() then
       allowEffect = false
     end
-    local allowHurtNum = SkillLogic_Base.AllowTargetHurtNum(creature, targetCreature)
+    local allowHurtNum = not self.serverDamageOnly and SkillLogic_Base.AllowTargetHurtNum(creature, targetCreature)
     local effectPath, targetPosition, lodLevel, priority, effectType, dirAngleY = self:_PlayEffect(creature, targetCreature, damageType, damage, hitEP, allowEffect)
     mylog("before hit", damageCount)
     self:_Hit(creature, targetCreature, damageType, damage, comboDamageLabel, forceSingleDamage, hitEP, targetPosition, allowEffect, allowHurtNum, damageCount, effectPath, lodLevel, priority, effectType, dirAngleY, doubleDamage, targetIndex, rawDamage, isLastSplitDamage)
@@ -243,7 +248,7 @@ function SkillHitWorker:_DoShareDamage(creature, targetGUID, shareDamageType, da
   local targetPosition = tempVector3
   LuaVector3.Better_Set(targetPosition, targetCreature.assetRole:GetEPOrRootPosition(hitEP))
   local allowEffect = SkillLogic_Base.AllowTargetEffect(creature, targetCreature)
-  local allowHurtNum = SkillLogic_Base.AllowTargetHurtNum(creature, targetCreature)
+  local allowHurtNum = not self.serverDamageOnly and SkillLogic_Base.AllowTargetHurtNum(creature, targetCreature)
   self:_Hit(creature, targetCreature, shareDamageType, damage, nil, forceSingleDamage, hitEP, targetPosition, allowEffect, allowHurtNum)
 end
 

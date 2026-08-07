@@ -462,6 +462,10 @@ function CreatureDataWithPropUserdata:GetProfressionID()
   return nil ~= self.userdata and self.userdata:Get(UDEnum.PROFESSION) or 0
 end
 
+function CreatureDataWithPropUserdata:IsMonokuma()
+  return self:GetProfressionID() == ProfessionProxy.Monokuma
+end
+
 function CreatureDataWithPropUserdata:DefiniteHitAndCritical()
   return nil ~= self.attrEffect and self.attrEffect:DefiniteHitAndCritical()
 end
@@ -1610,6 +1614,7 @@ function CreatureDataWithPropUserdata:AddElementAttrBuff(buffInfo)
   local buffID = buffInfo.id
   local atk_element = buffeffect.atkParam
   local def_element = buffeffect.defParam
+  local upLevel = (buffeffect.upLevel or 0) - (buffeffect.downLevel or 0)
   if atk_element and rollTypes then
     for i = 1, #rollTypes do
       local rolltype = rollTypes[i]
@@ -1620,7 +1625,7 @@ function CreatureDataWithPropUserdata:AddElementAttrBuff(buffInfo)
         self.elementBuffs[rolltype][atk_element] = {}
       end
       local elemtents = self.elementBuffs[rolltype][atk_element]
-      elemtents[buffID] = buffeffect.upLevel or 0
+      elemtents[buffID] = upLevel
     end
   elseif def_element then
     local rolltype = 0
@@ -1631,7 +1636,7 @@ function CreatureDataWithPropUserdata:AddElementAttrBuff(buffInfo)
       self.elementDefBuffs[rolltype][def_element] = {}
     end
     local elemtents = self.elementDefBuffs[rolltype][def_element]
-    elemtents[buffID] = buffeffect.upLevel or 0
+    elemtents[buffID] = upLevel
   end
 end
 
@@ -2194,6 +2199,18 @@ end
 
 function CreatureDataWithPropUserdata:IsRideEnemy()
   return false
+end
+
+function CreatureDataWithPropUserdata:getTeamAliveCountEx()
+  return 1
+end
+
+function CreatureDataWithPropUserdata:getSceneTrapCountBySkillID()
+  return 0
+end
+
+function CreatureDataWithPropUserdata:getTrapNpcCountByNpcID()
+  return 0
 end
 
 function CreatureDataWithPropUserdata:DoDeconstruct(asArray)

@@ -44,6 +44,15 @@ Table_ActivityInfo = {
     HelpID = 35269,
     Share = 1,
     Extra = 1
+  },
+  [50] = {
+    id = 50,
+    ActivityName = "##45942108",
+    PuzzlePic = "Puzzle_danwan",
+    ActivityTitle = "##45942108",
+    Size = 9,
+    HelpID = 35269,
+    Share = 1
   }
 }
 Table_ActivityInfo_fields = {

@@ -360,7 +360,6 @@ Table_FestivalSignin = {
   [104310105] = {
     id = 104310105,
     Month = 5,
-    ActivityName = "##44716156",
     SigninReward = Table_FestivalSignin_t.SigninReward[1]
   },
   [104310106] = {
@@ -384,6 +383,7 @@ Table_FestivalSignin = {
   [104310109] = {
     id = 104310109,
     Month = 9,
+    ActivityName = "##44716160",
     SigninReward = Table_FestivalSignin_t.SigninReward[1]
   },
   [104310110] = {
@@ -520,7 +520,6 @@ Table_FestivalSignin = {
     id = 104310305,
     ActID = 1043103,
     Month = 5,
-    ActivityName = "##44716156",
     SigninReward = Table_FestivalSignin_t.SigninReward[2]
   },
   [104310306] = {
@@ -548,6 +547,7 @@ Table_FestivalSignin = {
     id = 104310309,
     ActID = 1043103,
     Month = 9,
+    ActivityName = "##44716160",
     SigninReward = Table_FestivalSignin_t.SigninReward[2]
   },
   [104310310] = {
@@ -610,7 +610,7 @@ local cell_mt = {
   __index = {
     ActID = 1043101,
     ActivityIcon = "tab_icon_124",
-    ActivityName = "##44716160",
+    ActivityName = "##44716156",
     HelpID = 35209,
     SigninReward = _EmptyTable,
     id = 104310801

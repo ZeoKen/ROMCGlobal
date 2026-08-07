@@ -291,6 +291,18 @@ function AI_Myself:_AllowInterrupt(time, deltaTime, creature)
   if nil ~= currentCmd.AIClass.AllowInterrupt and currentCmd.AIClass.AllowInterrupt(currentCmd, self.nextCmd, time, deltaTime, creature) then
     return true
   end
+  if currentCmd.AIClass == AI_CMD_Myself_Die and creature:IsDeadCanMove() then
+    local nextClass = self.nextCmd.AIClass
+    if nextClass == AI_CMD_Myself_MoveTo or nextClass == AI_CMD_Myself_DirMove or nextClass == AI_CMD_Myself_DirMoveEnd then
+      return true
+    end
+    if nextClass == AI_CMD_Myself_Skill then
+      local skillInfo = Game.LogicManager_Skill:GetSkillInfo(self.nextCmd.args[1])
+      if skillInfo and skillInfo:CanCastWhenDead() then
+        return true
+      end
+    end
+  end
   local ignoreHit = self.nextCmd.args and self.nextCmd.args[14]
   return self:_DoAllowInterrupt(self.currentCmd, self.nextCmd.AIClass, creature, ignoreHit)
 end
@@ -653,6 +665,9 @@ function AI_Myself:GetCurrentCommand(creature)
 end
 
 function AI_Myself:PushCommand(args, creature)
+  if args[1] == AI_CMD_Myself_Access and creature:IsDead() and creature:IsDeadCanMove() then
+    return
+  end
   if args[1] == AI_CMD_Myself_MoveTo then
   end
   if args[1].Parallel then
@@ -665,7 +680,13 @@ function AI_Myself:PushCommand(args, creature)
       self.dieCmd = AI_CMD.Create(args)
       return
     elseif nil ~= self.dieCmd and AI_CMD_Myself_Hit ~= args[1] then
-      return
+      if not creature:IsDeadCanMove() then
+        return
+      end
+      local isMove = args[1] == AI_CMD_Myself_MoveTo or args[1] == AI_CMD_Myself_DirMove or args[1] == AI_CMD_Myself_DirMoveEnd
+      if not isMove and not isDeadCallSkill then
+        return
+      end
     end
     if nil ~= self.currentCmd then
       if self.currentCmd.AIClass == args[1] and self.currentCmd:TryRestart(args, creature) then
@@ -675,6 +696,7 @@ function AI_Myself:PushCommand(args, creature)
       if nil ~= block then
         local blockLevel = block[args[1]]
         if not (nil ~= blockLevel and blockLevel >= self.currentCmd.interruptLevel) or AI_CMD_Myself_Hit == args[1] and self.currentCmd.args[14] then
+        elseif self.currentCmd.AIClass == AI_CMD_Myself_Die and creature:IsDeadCanMove() and args[1] ~= AI_CMD_Myself_Access then
         else
           return
         end

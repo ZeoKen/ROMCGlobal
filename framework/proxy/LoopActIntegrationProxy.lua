@@ -931,6 +931,8 @@ function LoopActIntegrationProxy:GetActivityTime(staticData)
   if isGlobalActivity == 1 then
     if actType == ActivityCmd_pb.GACTIVITY_ACT_PAY_SIGN then
       return ActivityPaySignProxy.Instance:GetGlobalActTime(actID)
+    elseif actType == ActivityCmd_pb.GACTIVITY_ACT_TIERED_BUNDLE then
+      return ActivityTieredBundleProxy.Instance:GetGlobalActTime(actID)
     end
     return self:GetGlobalActivityTime(actType, actID)
   else
@@ -977,6 +979,8 @@ function LoopActIntegrationProxy:CheckActivityValid(activityID)
       return ActivityBattlePassProxy.Instance:IsBPAvailable(activityID)
     elseif type == tostring(ActivityCmd_pb.GACTIVITY_ACT_PAY_SIGN) then
       return ActivityPaySignProxy.Instance:IsPaySignAvailable(activityID)
+    elseif type == tostring(ActivityCmd_pb.GACTIVITY_ACT_TIERED_BUNDLE) then
+      return ActivityTieredBundleProxy.Instance:IsActivityAvailable(activityID)
     else
       return FunctionActivity.Me():IsActivityRunning(tonumber(type))
     end

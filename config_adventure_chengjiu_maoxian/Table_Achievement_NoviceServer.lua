@@ -32756,7 +32756,7 @@ Table_Achievement = {
     AdventureSort = 1700182,
     behavior = "achievementfinish",
     time = Table_Achievement_t.time[112],
-    combination = "拍摄所有伊斯加尔特霜雪之原区域的雪人景点 %s/8",
+    combination = "拍摄所有伊斯加尔特的雪人景点 %s/8",
     RewardExp = 1,
     RewardItems = Table_Achievement_t.RewardItems[32]
   },
@@ -32863,7 +32863,7 @@ Table_Achievement = {
     AdventureSort = 1700192,
     behavior = "achievementfinish",
     time = Table_Achievement_t.time[92],
-    combination = "拍摄所有伊斯加尔特的雪人景点 %s/8",
+    combination = "拍摄所有伊斯加尔特霜雪之原区域的雪人景点 %s/8",
     RewardExp = 1,
     RewardItems = Table_Achievement_t.RewardItems[19]
   },

@@ -21149,6 +21149,251 @@ Table_EffectLodMap = {
     Path = "Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf",
     LodPaths = "Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf,Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf_lod1,Skill/sfx_shiwu_DS3_MGJS_Buff_01_prf_lod1"
   },
+  [104269] = {
+    id = 104269,
+    Path = "Skill/sfx_danganmonokuma_tzgy_buff02_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_tzgy_buff02_prf,Skill/sfx_danganmonokuma_tzgy_buff02_lod1_prf,Skill/sfx_danganmonokuma_tzgy_buff02_lod2_prf"
+  },
+  [104270] = {
+    id = 104270,
+    Path = "Skill/sfx_danganmonokuma_scgmdx_atk_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_scgmdx_atk_prf,Skill/sfx_danganmonokuma_scgmdx_atk_lod1_prf,Skill/sfx_danganmonokuma_scgmdx_atk_lod2_prf"
+  },
+  [104271] = {
+    id = 104271,
+    Path = "Skill/sfx_danganmonokuma_scgmdx_buff_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_scgmdx_buff_prf,Skill/sfx_danganmonokuma_scgmdx_buff_lod1_prf,Skill/sfx_danganmonokuma_scgmdx_buff_lod2_prf"
+  },
+  [104272] = {
+    id = 104272,
+    Path = "Skill/sfx_danganmonokuma_jztxdqy_buff_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_jztxdqy_buff_prf,Skill/sfx_danganmonokuma_jztxdqy_buff_lod1_prf,Skill/sfx_danganmonokuma_jztxdqy_buff_lod2_prf"
+  },
+  [104273] = {
+    id = 104273,
+    Path = "Skill/sfx_danganmonokuma_xjcp_atk_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_xjcp_atk_prf,Skill/sfx_danganmonokuma_xjcp_atk_lod1_prf,Skill/sfx_danganmonokuma_xjcp_atk_lod1_prf"
+  },
+  [104274] = {
+    id = 104274,
+    Path = "Skill/sfx_danganmonokuma_cxzb_buff01_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_cxzb_buff01_prf,Skill/sfx_danganmonokuma_cxzb_buff01_lod1_prf,Skill/sfx_danganmonokuma_cxzb_buff01_lod2_prf"
+  },
+  [104275] = {
+    id = 104275,
+    Path = "Skill/sfx_danganmonokuma_khdxyj_atk_01_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_khdxyj_atk_01_prf,Skill/sfx_danganmonokuma_khdxyj_atk_01_lod1_prf,Skill/sfx_danganmonokuma_khdxyj_atk_01_lod2_prf"
+  },
+  [104276] = {
+    id = 104276,
+    Path = "Skill/sfx_danganmonokuma_tzgy_buff_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_tzgy_buff_prf,Skill/sfx_danganmonokuma_tzgy_buff_lod1_prf,Skill/sfx_danganmonokuma_tzgy_buff_lod2_prf"
+  },
+  [104277] = {
+    id = 104277,
+    Path = "Skill/sfx_danganmonokuma_jwdzxz_gsdr_buff_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_jwdzxz_gsdr_buff_prf,Skill/sfx_danganmonokuma_jwdzxz_gsdr_buff_prf,Skill/sfx_danganmonokuma_jwdzxz_gsdr_buff_prf"
+  },
+  [104278] = {
+    id = 104278,
+    Path = "Skill/sfx_danganmonokuma_bczdtd_buff_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_bczdtd_buff_prf,Skill/sfx_danganmonokuma_bczdtd_buff_lod1_prf,Skill/sfx_danganmonokuma_bczdtd_buff_lod1_prf"
+  },
+  [104279] = {
+    id = 104279,
+    Path = "Skill/sfx_danganmonokuma_jwdzxz_qfld_buff_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_jwdzxz_qfld_buff_prf,Skill/sfx_danganmonokuma_jwdzxz_qfld_buff_prf,Skill/sfx_danganmonokuma_jwdzxz_qfld_buff_prf"
+  },
+  [104280] = {
+    id = 104280,
+    Path = "Skill/sfx_danganmonokuma_hbxzd_atk_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_hbxzd_atk_prf,Skill/sfx_danganmonokuma_hbxzd_atk_lod1_prf,Skill/sfx_danganmonokuma_hbxzd_atk_lod2_prf"
+  },
+  [104281] = {
+    id = 104281,
+    Path = "Skill/sfx_danganmonokuma_khdxyj_buff_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_khdxyj_buff_prf,Skill/sfx_danganmonokuma_khdxyj_buff_lod1_prf,Skill/sfx_danganmonokuma_khdxyj_buff_lod1_prf"
+  },
+  [104282] = {
+    id = 104282,
+    Path = "Skill/sfx_danganmonokuma_xjcp_floor_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_xjcp_floor_prf,Skill/sfx_danganmonokuma_xjcp_floor_lod1_prf,Skill/sfx_danganmonokuma_xjcp_floor_lod1_prf"
+  },
+  [104283] = {
+    id = 104283,
+    Path = "Skill/sfx_danganmonokuma_xjcp_floor01_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_xjcp_floor01_prf,Skill/sfx_danganmonokuma_xjcp_floor01_lod1_prf,Skill/sfx_danganmonokuma_xjcp_floor01_lod2_prf"
+  },
+  [104284] = {
+    id = 104284,
+    Path = "Skill/sfx_danganmonokuma_tzgy_buff01_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_tzgy_buff01_prf,Skill/sfx_danganmonokuma_tzgy_buff01_lod1_prf,Skill/sfx_danganmonokuma_tzgy_buff01_lod2_prf"
+  },
+  [104285] = {
+    id = 104285,
+    Path = "Skill/sfx_danganmonokuma_jztxdqy_atk_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_jztxdqy_atk_prf,Skill/sfx_danganmonokuma_jztxdqy_atk_lod1_prf,Skill/sfx_danganmonokuma_jztxdqy_atk_lod2_prf"
+  },
+  [104286] = {
+    id = 104286,
+    Path = "Skill/sfx_danganmonokuma_cxzb_buff_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_cxzb_buff_prf,Skill/sfx_danganmonokuma_cxzb_buff_lod1_prf,Skill/sfx_danganmonokuma_cxzb_buff_lod2_prf"
+  },
+  [104287] = {
+    id = 104287,
+    Path = "Skill/sfx_danganmonokuma_jwdzxz_hxcx_buff_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_jwdzxz_hxcx_buff_prf,Skill/sfx_danganmonokuma_jwdzxz_hxcx_buff_prf,Skill/sfx_danganmonokuma_jwdzxz_hxcx_buff_prf"
+  },
+  [104288] = {
+    id = 104288,
+    Path = "Skill/sfx_danganmonokuma_xjcp_buff_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_xjcp_buff_prf,Skill/sfx_danganmonokuma_xjcp_buff_lod1_prf,Skill/sfx_danganmonokuma_xjcp_buff_lod2_prf"
+  },
+  [104289] = {
+    id = 104289,
+    Path = "Skill/sfx_danganmonokuma_khdxyj_atk_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_khdxyj_atk_prf,Skill/sfx_danganmonokuma_khdxyj_atk_lod1_prf,Skill/sfx_danganmonokuma_khdxyj_atk_lod2_prf"
+  },
+  [104290] = {
+    id = 104290,
+    Path = "Skill/sfx_danganmonokuma_rzsqdx_buff_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_rzsqdx_buff_prf,Skill/sfx_danganmonokuma_rzsqdx_buff_lod1_prf,Skill/sfx_danganmonokuma_rzsqdx_buff_lod2_prf"
+  },
+  [104291] = {
+    id = 104291,
+    Path = "Skill/sfx_danganmonokuma_xjcp_buff01_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_xjcp_buff01_prf,Skill/sfx_danganmonokuma_xjcp_buff01_lod1_prf,Skill/sfx_danganmonokuma_xjcp_buff01_lod1_prf"
+  },
+  [104292] = {
+    id = 104292,
+    Path = "Skill/sfx_danganmonokuma_hbxzd_buff_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_hbxzd_buff_prf,Skill/sfx_danganmonokuma_hbxzd_buff_lod1_prf,Skill/sfx_danganmonokuma_hbxzd_buff_lod2_prf"
+  },
+  [104293] = {
+    id = 104293,
+    Path = "Skill/sfx_danganjunko_cgxjdjw_buff_03_prf",
+    LodPaths = "Skill/sfx_danganjunko_cgxjdjw_buff_03_prf,Skill/sfx_danganjunko_cgxjdjw_buff_03_lod1_prf,Skill/sfx_danganjunko_cgxjdjw_buff_03_lod2_prf"
+  },
+  [104294] = {
+    id = 104294,
+    Path = "Skill/sfx_danganjunko_jwddy_atk_prf",
+    LodPaths = "Skill/sfx_danganjunko_jwddy_atk_prf,Skill/sfx_danganjunko_jwddy_atk_lod1_prf,Skill/sfx_danganjunko_jwddy_atk_lod2_prf"
+  },
+  [104295] = {
+    id = 104295,
+    Path = "Skill/sfx_danganjunko_cgxjdjw_buff_02_prf",
+    LodPaths = "Skill/sfx_danganjunko_cgxjdjw_buff_02_prf,Skill/sfx_danganjunko_cgxjdjw_buff_02_lod1_prf,Skill/sfx_danganjunko_cgxjdjw_buff_02_lod2_prf"
+  },
+  [104296] = {
+    id = 104296,
+    Path = "Skill/sfx_danganjunko_cgxjdjw_buff_01_prf",
+    LodPaths = "Skill/sfx_danganjunko_cgxjdjw_buff_01_prf,Skill/sfx_danganjunko_cgxjdjw_buff_01_lod1_prf,Skill/sfx_danganjunko_cgxjdjw_buff_01_lod1_prf"
+  },
+  [104297] = {
+    id = 104297,
+    Path = "Skill/sfx_danganjunko_jwdjj_atk_prf",
+    LodPaths = "Skill/sfx_danganjunko_jwdjj_atk_prf,Skill/sfx_danganjunko_jwdjj_atk_lod1_prf,Skill/sfx_danganjunko_jwdjj_atk_lod2_prf"
+  },
+  [104298] = {
+    id = 104298,
+    Path = "Skill/sfx_danganjunko_jwdcx_buff_prf",
+    LodPaths = "Skill/sfx_danganjunko_jwdcx_buff_prf,Skill/sfx_danganjunko_jwdcx_buff_lod1_prf,Skill/sfx_danganjunko_jwdcx_buff_lod2_prf"
+  },
+  [104299] = {
+    id = 104299,
+    Path = "Skill/sfx_danganjunko_jwdcx_atk_prf",
+    LodPaths = "Skill/sfx_danganjunko_jwdcx_atk_prf,Skill/sfx_danganjunko_jwdcx_atk_lod1_prf,Skill/sfx_danganjunko_jwdcx_atk_lod2_prf"
+  },
+  [104300] = {
+    id = 104300,
+    Path = "Skill/sfx_danganjunko_cgxjdfxs_buff_prf",
+    LodPaths = "Skill/sfx_danganjunko_cgxjdfxs_buff_prf,Skill/sfx_danganjunko_cgxjdfxs_buff_lod1_prf,Skill/sfx_danganjunko_cgxjdfxs_buff_lod1_prf"
+  },
+  [104301] = {
+    id = 104301,
+    Path = "Skill/sfx_danganjunko_cgxjdjw_atk_prf",
+    LodPaths = "Skill/sfx_danganjunko_cgxjdjw_atk_prf,Skill/sfx_danganjunko_cgxjdjw_atk_lod1_prf,Skill/sfx_danganjunko_cgxjdjw_atk_lod2_prf"
+  },
+  [104302] = {
+    id = 104302,
+    Path = "Skill/sfx_danganjunko_xlwm_buff_prf",
+    LodPaths = "Skill/sfx_danganjunko_xlwm_buff_prf,Skill/sfx_danganjunko_xlwm_buff_lod1_prf,Skill/sfx_danganjunko_xlwm_buff_lod1_prf"
+  },
+  [104303] = {
+    id = 104303,
+    Path = "Skill/sfx_danganjunko_zjcfzwhm_buff_prf",
+    LodPaths = "Skill/sfx_danganjunko_zjcfzwhm_buff_prf,Skill/sfx_danganjunko_zjcfzwhm_buff_lod1_prf,Skill/sfx_danganjunko_zjcfzwhm_buff_lod2_prf"
+  },
+  [104304] = {
+    id = 104304,
+    Path = "Skill/sfx_danganjunko_zjcfzwhm_atk_prf",
+    LodPaths = "Skill/sfx_danganjunko_zjcfzwhm_atk_prf,Skill/sfx_danganjunko_zjcfzwhm_atk_lod1_prf,Skill/sfx_danganjunko_zjcfzwhm_atk_lod2_prf"
+  },
+  [104305] = {
+    id = 104305,
+    Path = "Skill/sfx_danganjunko_xlwm_atk_prf",
+    LodPaths = "Skill/sfx_danganjunko_xlwm_atk_prf,Skill/sfx_danganjunko_xlwm_atk_lod1_prf,Skill/sfx_danganjunko_xlwm_atk_lod1_prf"
+  },
+  [104306] = {
+    id = 104306,
+    Path = "Skill/sfx_danganjunko_jwlc_buff_prf",
+    LodPaths = "Skill/sfx_danganjunko_jwlc_buff_prf,Skill/sfx_danganjunko_jwlc_buff_lod1_prf,Skill/sfx_danganjunko_jwlc_buff_lod2_prf"
+  },
+  [104307] = {
+    id = 104307,
+    Path = "Skill/sfx_danganjunko_jwlc_buff_01_prf",
+    LodPaths = "Skill/sfx_danganjunko_jwlc_buff_01_prf,Skill/sfx_danganjunko_jwlc_buff_01_lod1_prf,Skill/sfx_danganjunko_jwlc_buff_01_lod2_prf"
+  },
+  [104308] = {
+    id = 104308,
+    Path = "Skill/sfx_danganjunko_jwdjj_buff_prf",
+    LodPaths = "Skill/sfx_danganjunko_jwdjj_buff_prf,Skill/sfx_danganjunko_jwdjj_buff_lod1_prf,Skill/sfx_danganjunko_jwdjj_buff_lod2_prf"
+  },
+  [104309] = {
+    id = 104309,
+    Path = "Skill/sfx_danganjunko_jwddy_buff_prf",
+    LodPaths = "Skill/sfx_danganjunko_jwddy_buff_prf,Skill/sfx_danganjunko_jwddy_buff_lod1_prf,Skill/sfx_danganjunko_jwddy_buff_lod2_prf"
+  },
+  [104310] = {
+    id = 104310,
+    Path = "Skill/sfx_danganjunko_jwlc_atk_prf",
+    LodPaths = "Skill/sfx_danganjunko_jwlc_atk_prf,Skill/sfx_danganjunko_jwlc_atk_lod1_prf,Skill/sfx_danganjunko_jwlc_atk_lod2_prf"
+  },
+  [104311] = {
+    id = 104311,
+    Path = "Skill/sfx_danganjunko_jwdmy_bullet_prf",
+    LodPaths = "Skill/sfx_danganjunko_jwdmy_bullet_prf,Skill/sfx_danganjunko_jwdmy_bullet_lod1_prf,Skill/sfx_danganjunko_jwdmy_bullet_lod1_prf"
+  },
+  [104312] = {
+    id = 104312,
+    Path = "Skill/sfx_danganjunko_jwdmy_buff_prf",
+    LodPaths = "Skill/sfx_danganjunko_jwdmy_buff_prf,Skill/sfx_danganjunko_jwdmy_buff_lod1_prf,Skill/sfx_danganjunko_jwdmy_buff_lod2_prf"
+  },
+  [104313] = {
+    id = 104313,
+    Path = "Skill/sfx_danganjunko_jwdjj_bullet_prf",
+    LodPaths = "Skill/sfx_danganjunko_jwdjj_bullet_prf,Skill/sfx_danganjunko_jwdjj_bullet_lod1_prf,Skill/sfx_danganjunko_jwdjj_bullet_lod2_prf"
+  },
+  [104314] = {
+    id = 104314,
+    Path = "Skill/sfx_danganmonokuma_jwdzxz_buff_01_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_jwdzxz_buff_01_prf,Skill/sfx_danganmonokuma_jwdzxz_buff_01_lod1_prf,Skill/sfx_danganmonokuma_jwdzxz_buff_01_lod2_prf"
+  },
+  [104315] = {
+    id = 104315,
+    Path = "Skill/sfx_danganmonokuma_jwdzxz_buff_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_jwdzxz_buff_prf,Skill/sfx_danganmonokuma_jwdzxz_buff_lod1_prf,Skill/sfx_danganmonokuma_jwdzxz_buff_lod2_prf"
+  },
+  [104316] = {
+    id = 104316,
+    Path = "Skill/sfx_danganjunko_zjcfzwhm_buff01_prf",
+    LodPaths = "Skill/sfx_danganjunko_zjcfzwhm_buff01_prf,Skill/sfx_danganjunko_zjcfzwhm_buff01_lod1_prf,Skill/sfx_danganjunko_zjcfzwhm_buff01_lod2_prf"
+  },
+  [104317] = {
+    id = 104317,
+    Path = "Skill/sfx_danganmonokuma_hbxzd_buff_01_prf",
+    LodPaths = "Skill/sfx_danganmonokuma_hbxzd_buff_01_prf,Skill/sfx_danganmonokuma_hbxzd_buff_01_lod1_prf,Skill/sfx_danganmonokuma_hbxzd_buff_01_lod2_prf"
+  },
   [104318] = {
     id = 104318,
     Path = "Skill/sfx_himemmeth_kszw_floor_prf",

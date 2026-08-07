@@ -333,8 +333,13 @@ function MountFashionProxy:SetMountSubParts(parts, mountId)
   local categories = Game.MountFashionCategories and Game.MountFashionCategories[mountId]
   if categories then
     for i = 1, #categories do
-      local styleId = self:GetEquipedFashionId(mountId, categories[i])
+      local pos = categories[i]
+      local styleId = self:GetEquipedFashionId(mountId, pos)
       local config = styleId and Table_MountFashion[styleId]
+      if not config and self:IsMountFashionExplicitHidden(mountId, pos) and not self:IsDefaultFashionHide(mountId, pos) then
+        local defaultStyleId = self:GetDefaultFashionId(mountId, pos)
+        config = defaultStyleId and Table_MountFashion[defaultStyleId]
+      end
       if config and config.Type == 2 then
         for j = 1, #config.PartIndex do
           Asset_Role.SetMountSubPart(parts, config.PartIndex[j], config.PartID[j])

@@ -507,7 +507,7 @@ function NewRechargeRecommendTShopGoodsCell:Invoke_DepositConfirmPanel(cb)
     local currencyType = self.info.productConf.CurrencyType
     local productDesc = OverSea.LangManager.Instance():GetLangByKey(Table_Deposit[self.info.productConf.id].Desc)
     local productD = " [0075BCFF]" .. productCount .. "[-] " .. productName
-    if BranchMgr.IsKorea() then
+    if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
       productD = " [0075BCFF]" .. productDesc .. "[-] "
     end
     local confirmDesc, clickUrlCallback = OverseaHostHelper:GetRechargeShopConfirmDesc()
@@ -580,7 +580,7 @@ function NewRechargeRecommendTShopGoodsCell:Purchase_Deposit()
   data.info = self.info
   
   function data.m_funcRmbBuy(count)
-    if BranchMgr.IsJapan() or BranchMgr.IsKorea() then
+    if BranchMgr.IsJapan() or BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
       self:Invoke_DepositConfirmPanel(cbfunc)
     else
       cbfunc(count)

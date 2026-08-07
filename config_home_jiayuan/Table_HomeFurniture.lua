@@ -2585,6 +2585,7 @@ Table_HomeFurniture = {
   },
   [30511] = {
     id = 30511,
+    Name = "Summer_01_Art",
     NameZh = "##123504",
     Row = 5,
     Col = 6,
@@ -2886,7 +2887,6 @@ Table_HomeFurniture = {
   },
   [30709] = {
     id = 30709,
-    Name = "School_01_Chair",
     NameZh = "##123364",
     Row = 1,
     Col = 1,
@@ -9437,7 +9437,7 @@ local cell_mt = {
     FurnitureFunction = _EmptyTable,
     HomeScore = 10,
     LoadShowPosition = _EmptyTable,
-    Name = "Summer_01_Art",
+    Name = "School_01_Chair",
     NameZh = "##1134421",
     NormalType = 1,
     Npc = _EmptyTable,

@@ -238,6 +238,26 @@ function ServiceMapProxy:RecvDropItem(data)
   self:Notify(ServiceEvent.MapDropItem, data)
 end
 
+function ServiceMapProxy:RecvShowNpcInfoMapCmd(data)
+  local npc = SceneCreatureProxy.FindCreature(data.npcguid)
+  if npc == nil then
+    return
+  end
+  local skillInfo = Game.LogicManager_Skill:GetSkillInfo(data.skillid)
+  if skillInfo == nil then
+    return
+  end
+  local skillName = skillInfo:GetSpeakName(npc)
+  if skillName == nil or skillInfo:NoSpeak(npc) then
+    return
+  end
+  local sceneUI = npc:GetSceneUI()
+  if sceneUI ~= nil and sceneUI.roleTopUI ~= nil then
+    local castTime = skillInfo:GetCastTime(npc) or 0
+    sceneUI.roleTopUI:SpeakSkill(skillName, npc, (castTime + 2) * 1000)
+  end
+end
+
 function ServiceMapProxy:RecvCardRewardQueryCmd(data)
   WildMvpProxy.Instance:RecvCardRewardQueryCmd(data)
   self:Notify(ServiceEvent.MapCardRewardQueryCmd, data)

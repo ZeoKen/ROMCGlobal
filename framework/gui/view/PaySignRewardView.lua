@@ -177,9 +177,9 @@ function PaySignRewardView:OnEnter()
   if shopInfo then
     if shopInfo.DepositID then
       ServiceUserEventProxy.Instance:CallQueryChargeCnt()
-    elseif shopInfo.ShopId and shopInfo.ShopType then
+    elseif shopInfo.ShopID and shopInfo.ShopId and shopInfo.ShopType then
       self.shopType = shopInfo.ShopType
-      self.shopId = shopInfo.ShopId
+      self.shopId = shopInfo.ShopID
       ShopProxy.Instance:CallQueryShopConfig(self.shopType, self.shopId)
       HappyShopProxy.Instance:InitShop(nil, self.shopId, self.shopType)
     end
@@ -291,9 +291,12 @@ end
 
 function PaySignRewardView:AddEvts()
   self:AddListenEvt(ServiceEvent.NUserPaySignRewardUserCmd, self.HandleSign)
+  self:AddListenEvt(ServiceEvent.SessionShopQueryShopConfigCmd, self.HandleShopUpdate)
   self:AddListenEvt(ServiceEvent.SessionShopUpdateShopConfigCmd, self.HandleShopUpdate)
-  self:AddListenEvt(ServiceEvent.SessionShopUpdateShopConfigCmd, self.HandleShopUpdate)
-  self:AddListenEvt(ServiceEvent.SessionShopShopDataUpdateCmd, self.HandleShopUpdate)
+  self:AddListenEvt(ServiceEvent.SessionShopShopDataUpdateCmd, self.HandleShopDataUpdate)
+  self:AddListenEvt(ServiceEvent.SessionShopServerLimitSellCountCmd, self.HandleShopUpdate)
+  self:AddListenEvt(ServiceEvent.SessionShopBuyShopItem, self.HandleShopUpdate)
+  self:AddListenEvt(ServiceEvent.NUserUpdateShopGotItem, self.HandleShopUpdate)
   self:AddListenEvt(ServiceEvent.UserEventQueryChargeCnt, self.HandleShopUpdate)
 end
 
@@ -339,7 +342,9 @@ function PaySignRewardView:RefreshReward()
       self.reward[i]:AddEventListener(UICellEvent.OnCellClicked, self.OnRewardButton, self)
       self.reward[i]:AddEventListener(UICellEvent.OnLeftBtnClicked, self.HandleBuyCell, self)
     end
-    self.reward[i]:SetFinishFlag(self.actData.rewardDay and i <= self.actData.rewardDay)
+    if not self.hasShop or i < cellNum then
+      self.reward[i]:SetFinishFlag(self.actData.rewardDay and i <= self.actData.rewardDay)
+    end
     self.reward[i]:SetSignBtnActive(i > rewardDay and i <= rewardDay + unrewardDay)
     self.reward[i]:SetLock(i > rewardDay + unrewardDay and i < cellNum)
     if i <= self.actData.rewardDay then
@@ -384,8 +389,16 @@ function PaySignRewardView:HandleSign()
 end
 
 function PaySignRewardView:HandleShopUpdate()
-  if self.hasShop then
-    self.reward[#self.reward]:RefreshSelf()
+  local shopCell = self.hasShop and self.reward and self.reward[#self.reward]
+  if shopCell then
+    shopCell:RefreshSelf()
+  end
+end
+
+function PaySignRewardView:HandleShopDataUpdate(note)
+  local data = note and note.body
+  if data and data.type == self.shopType and data.shopid == self.shopId then
+    ShopProxy.Instance:CallQueryShopConfig(self.shopType, self.shopId)
   end
 end
 

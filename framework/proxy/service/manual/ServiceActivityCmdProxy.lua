@@ -207,6 +207,9 @@ function ServiceActivityCmdProxy:RecvStartGlobalActCmd(data)
       FunctionTrainEscort.Me():SetActivityOpen(true)
     elseif data.type == ActivityCmd_pb.GACTIVITY_ACT_PAY_SIGN then
       ActivityPaySignProxy.Instance:UpdateGlobalActTime(data.id, data.starttime, data.endtime)
+    elseif data.type == ActivityCmd_pb.GACTIVITY_ACT_TIERED_BUNDLE then
+      ActivityTieredBundleProxy.Instance:UpdateGlobalActTime(data.id, data.starttime, data.endtime)
+      FunctionActivity.Me():Launch(data.type, nil, data.starttime, data.endtime)
     end
   elseif data.type == ActivityCmd_pb.GACTIVITY_CHARGE_DISCOUNT then
     NewRechargeProxy.Ins:Deposit_SetProductActivity_Discount(data.open, data)
@@ -288,6 +291,9 @@ function ServiceActivityCmdProxy:RecvStartGlobalActCmd(data)
     FunctionActivity.Me():ShutDownActivity(data.type)
   elseif data.type == ActivityCmd_pb.GACTIVITY_ESCORT_TRAIN then
     FunctionTrainEscort.Me():SetActivityOpen(false)
+    FunctionActivity.Me():ShutDownActivity(data.type)
+  elseif data.type == ActivityCmd_pb.GACTIVITY_ACT_TIERED_BUNDLE then
+    ActivityTieredBundleProxy.Instance:ClearGlobalAct(data.id)
     FunctionActivity.Me():ShutDownActivity(data.type)
   end
   self:Notify(ServiceEvent.ActivityCmdStartGlobalActCmd, data)
@@ -618,4 +624,19 @@ end
 function ServiceActivityCmdProxy:RecvPaySignSyncActCmd(data)
   ActivityPaySignProxy.Instance:UpdatePaySignDatas(data.info)
   self:Notify(ServiceEvent.ActivityCmdPaySignSyncActCmd, data)
+end
+
+function ServiceActivityCmdProxy:RecvTieredBundleSyncActCmd(data)
+  ActivityTieredBundleProxy.Instance:UpdateTieredBundleInfo(data.info)
+  self:Notify(ServiceEvent.ActivityCmdTieredBundleSyncActCmd, data)
+end
+
+function ServiceActivityCmdProxy:RecvTieredBundleDayRewardActCmd(data)
+  ActivityTieredBundleProxy.Instance:MarkDayRewarded(data.act_id)
+  self:Notify(ServiceEvent.ActivityCmdTieredBundleDayRewardActCmd, data)
+end
+
+function ServiceActivityCmdProxy:RecvTieredBundleRewardActCmd(data)
+  ActivityTieredBundleProxy.Instance:MarkRewarded(data.act_id, data.id)
+  self:Notify(ServiceEvent.ActivityCmdTieredBundleRewardActCmd, data)
 end

@@ -2,6 +2,8 @@ HomeBlueprintDetailPanel = class("HomeBlueprintDetailPanel", ContainerView)
 HomeBlueprintDetailPanel.ViewType = UIViewType.PopUpLayer
 HomeBlueprintDetailPanel.picNameName = "RO_Blueprint"
 autoImport("HomeBluePrintView")
+autoImport("PersonalPicturePanel")
+autoImport("PermissionUtil")
 HomeBlueprintDetailPanel.BrotherView = HomeBluePrintView
 autoImport("PostcardTargetSelectPopup")
 local playerTipFunc = {
@@ -42,6 +44,9 @@ function HomeBlueprintDetailPanel:FindObjs()
   self:AddClickEvent(closeBtn, function()
     if FunctionPlayerTip.Me():CurPlayerTip() then
       FunctionPlayerTip.Me():CloseTip()
+      return
+    end
+    if self.noClose then
       return
     end
     self:CloseSelf()
@@ -94,7 +99,18 @@ function HomeBlueprintDetailPanel:FindObjs()
   end)
   self.confirmBtn = self:FindGO("confirmBtn")
   self:AddClickEvent(self.confirmBtn, function()
-    self:CloseSelf()
+    if self.noClose then
+      return
+    end
+    self:savePicture()
+  end)
+  self.saveToAlbumBtn = self:FindGO("saveToAlbumBtn")
+  self:AddClickEvent(self.saveToAlbumBtn, function()
+    if self.toUploadIndex ~= nil then
+      MsgManager.ShowMsgByIDTable(991)
+    else
+      self:saveToPhotoAlbum()
+    end
   end)
   self:GetGameObjects()
   self:RegisterButtonClickEvent()
@@ -115,6 +131,16 @@ function HomeBlueprintDetailPanel:AddListenEvts()
   self:AddListenEvt(ServiceEvent.SessionSocialityQuerySocialData, self.OnSocialDataUpdate)
   self:AddListenEvt(ServiceEvent.SessionSocialitySocialDataUpdate, self.OnSocialDataUpdate)
   self:AddListenEvt(ServiceEvent.HomeCmdPrintUpdateHomeCmd, self.OnPrintUpdateHomeCmd)
+  self:AddListenEvt(ServiceEvent.ChatCmdChatRetCmd, self.RecvChatRetCmd)
+  self:AddListenEvt(ServiceEvent.PhotoCmdPhotoUpdateNtf, self.PhotoCmdPhotoUpdateNtf)
+end
+
+function HomeBlueprintDetailPanel:PhotoCmdPhotoUpdateNtf(note)
+  local data = note.body
+  if data.opttype == PhotoCmd_pb.EPHOTOOPTTYPE_REPLACE or data.opttype == PhotoCmd_pb.EPHOTOOPTTYPE_ADD then
+    self.noClose = false
+    self:startUploadPhoto(data.photo.index, data.photo.time)
+  end
 end
 
 function HomeBlueprintDetailPanel:OnSocialDataUpdate()
@@ -480,7 +506,70 @@ function HomeBlueprintDetailPanel:Sender_SetTarget(data)
   local linkText = string.format(ZhString.HomeBluePrint_ShareChatText, bp.userName, bp.homeName)
   local printItem = ChatRoomProxy.Instance:BuildBlueprintPrintItem(bp)
   ServiceChatCmdProxy.Instance:CallChatCmd(ChatChannelEnum.Private, linkText, data.guid, nil, nil, nil, nil, nil, nil, nil, printItem)
-  MsgManager.ShowMsgByIDTable(43187)
+end
+
+function HomeBlueprintDetailPanel:RecvChatRetCmd(note)
+  local data = note and note.body
+  local printItem = data and data:GetPrintItem()
+  local blueprintId = self.blueprintData and self.blueprintData.photoId
+  if blueprintId and blueprintId ~= 0 and printItem and printItem.id == blueprintId then
+    MsgManager.ShowMsgByIDTable(43187)
+  end
+end
+
+function HomeBlueprintDetailPanel:saveToPhotoAlbum()
+  local isFull = PhotoDataProxy.Instance:isPhotoAlbumFull()
+  local isOutOfBounds = PhotoDataProxy.Instance:isPhotoAlbumOutofbounds()
+  if isOutOfBounds then
+    MsgManager.ShowMsgByIDTable(994)
+  elseif isFull then
+    local func = function(index)
+      ServicePhotoCmdProxy.Instance:CallPhotoOptCmd(PhotoCmd_pb.EPHOTOOPTTYPE_REPLACE, index, 0, Game.MapManager:GetMapID())
+      self.toUploadIndex = index
+      self.noClose = true
+      MsgManager.ShowMsgByIDTable(991)
+    end
+    PersonalPicturePanel.ViewType = UIViewType.Lv4PopUpLayer
+    local viewdata = {
+      ShowMode = PersonalPicturePanel.ShowMode.ReplaceMode,
+      callback = func
+    }
+    MsgManager.ShowMsgByIDTable(994)
+    GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+      view = PanelConfig.PersonalPicturePanel,
+      viewdata = viewdata
+    })
+  else
+    MsgManager.ShowMsgByIDTable(991)
+    self.toUploadIndex = PhotoDataProxy.Instance:getEmptyCellIndex()
+    ServicePhotoCmdProxy.Instance:CallPhotoOptCmd(PhotoCmd_pb.EPHOTOOPTTYPE_ADD, self.toUploadIndex, 0, Game.MapManager:GetMapID())
+    self.noClose = true
+  end
+end
+
+function HomeBlueprintDetailPanel:startUploadPhoto(index, time)
+  PersonalPictureManager.Instance():saveToPhotoAlbum(self.photoTex.mainTexture, index, time)
+end
+
+function HomeBlueprintDetailPanel:savePicture()
+  local result = PermissionUtil.Access_SavePicToMediaStorage()
+  if result and self.photoTex and self.photoTex.mainTexture then
+    local picName = HomeBlueprintDetailPanel.picNameName .. tostring(os.time())
+    local path = PathUtil.GetSavePath(PathConfig.PhotographPath) .. "/" .. picName
+    ScreenShot.SaveJPG(self.photoTex.mainTexture, path, 100)
+    path = path .. ".jpg"
+    if BranchMgr.IsJapan() and RuntimePlatform.IPhonePlayer == Application.platform then
+      local overseasManager = OverSeas_TW.OverSeasManager.GetInstance()
+      overseasManager:SetSavePhotoCallback(function(msg)
+        ROFileUtils.FileDelete(path)
+        if msg ~= "1" then
+          MsgManager.FloatMsg("", OverseaHostHelper.SAVE_FAILED)
+        end
+      end)
+    end
+    FunctionSaveToDCIM.Me():TrySavePicToDCIM(path)
+    self:CloseSelf()
+  end
 end
 
 function HomeBlueprintDetailPanel:sharePicture(platform_type, content_title, content_body)

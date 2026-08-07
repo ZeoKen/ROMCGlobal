@@ -13,11 +13,15 @@ function AI_CMD_Die:Deconstruct()
 end
 
 function AI_CMD_Die:Start(time, deltaTime, creature)
-  local params = Asset_Role.GetPlayActionParams(Asset_Role.ActionName.Die)
-  if self.args[1] then
-    params[4] = 1
+  if creature:IsDeadCanMove() then
+    self:SetConcurrent(true)
+  else
+    local params = Asset_Role.GetPlayActionParams(Asset_Role.ActionName.Die)
+    if self.args[1] then
+      params[4] = 1
+    end
+    creature:Logic_PlayAction(params, true)
   end
-  creature:Logic_PlayAction(params, true)
   creature:Logic_DeathBegin()
   return true
 end

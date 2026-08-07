@@ -69,6 +69,9 @@ function ServiceMapAutoProxy:onRegister()
   self:Listen(12, 17, function(data)
     self:RecvUserSecretGetMapCmd(data)
   end)
+  self:Listen(12, 43, function(data)
+    self:RecvShowNpcInfoMapCmd(data)
+  end)
   self:Listen(12, 15, function(data)
     self:RecvEditNpcTextMapCmd(data)
   end)
@@ -1277,6 +1280,31 @@ function ServiceMapAutoProxy:CallUserSecretGetMapCmd(id)
   end
 end
 
+function ServiceMapAutoProxy:CallShowNpcInfoMapCmd(npcguid, skillid)
+  if not NetConfig.PBC then
+    local msg = SceneMap_pb.ShowNpcInfoMapCmd()
+    if msg == nil then
+      msg = {}
+    end
+    msg.npcguid = npcguid
+    if skillid ~= nil then
+      msg.skillid = skillid
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.ShowNpcInfoMapCmd.id
+    local msgParam = {}
+    if msgParam == nil then
+      msgParam = {}
+    end
+    msgParam.npcguid = npcguid
+    if skillid ~= nil then
+      msgParam.skillid = skillid
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceMapAutoProxy:CallEditNpcTextMapCmd(etype, tempid, text)
   if not NetConfig.PBC then
     local msg = SceneMap_pb.EditNpcTextMapCmd()
@@ -2253,6 +2281,10 @@ function ServiceMapAutoProxy:RecvUserSecretGetMapCmd(data)
   self:Notify(ServiceEvent.MapUserSecretGetMapCmd, data)
 end
 
+function ServiceMapAutoProxy:RecvShowNpcInfoMapCmd(data)
+  self:Notify(ServiceEvent.MapShowNpcInfoMapCmd, data)
+end
+
 function ServiceMapAutoProxy:RecvEditNpcTextMapCmd(data)
   self:Notify(ServiceEvent.MapEditNpcTextMapCmd, data)
 end
@@ -2368,6 +2400,7 @@ ServiceEvent.MapGingerBreadNpcCmd = "ServiceEvent_MapGingerBreadNpcCmd"
 ServiceEvent.MapGoCityGateMapCmd = "ServiceEvent_MapGoCityGateMapCmd"
 ServiceEvent.MapUserSecretQueryMapCmd = "ServiceEvent_MapUserSecretQueryMapCmd"
 ServiceEvent.MapUserSecretGetMapCmd = "ServiceEvent_MapUserSecretGetMapCmd"
+ServiceEvent.MapShowNpcInfoMapCmd = "ServiceEvent_MapShowNpcInfoMapCmd"
 ServiceEvent.MapEditNpcTextMapCmd = "ServiceEvent_MapEditNpcTextMapCmd"
 ServiceEvent.MapObjStateSyncMapCmd = "ServiceEvent_MapObjStateSyncMapCmd"
 ServiceEvent.MapAddMapObjNpc = "ServiceEvent_MapAddMapObjNpc"

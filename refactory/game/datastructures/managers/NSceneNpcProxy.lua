@@ -263,6 +263,8 @@ function NSceneNpcProxy:PureAddSome(datas)
         tmpNpcs[#tmpNpcs + 1] = self:Add(data, NCircleTraceNpc, isTrap)
       elseif npcType == "Firework" then
         tmpNpcs[#tmpNpcs + 1] = self:Add(data, nil, isTrap)
+      elseif npcType == "ShowNpc" then
+        tmpNpcs[#tmpNpcs + 1] = self:Add(data, NShowNpc, isTrap)
       elseif data.owner == 0 or isTrap then
         tmpNpcs[#tmpNpcs + 1] = self:Add(data, nil, isTrap)
       else

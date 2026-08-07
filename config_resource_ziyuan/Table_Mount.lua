@@ -1349,6 +1349,20 @@ Table_Mount = {
     TransformStartSE = "",
     TransformEndSE = ""
   },
+  [25281] = {
+    id = 25281,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [25282] = {
+    id = 25282,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
   [25289] = {
     id = 25289,
     EquipCondition = _EmptyTable,
@@ -1365,6 +1379,13 @@ Table_Mount = {
   },
   [25291] = {
     id = 25291,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [25292] = {
+    id = 25292,
     EquipCondition = _EmptyTable,
     ActionPrefix = "",
     TransformStartSE = "",
@@ -2879,6 +2900,27 @@ Table_Mount = {
   },
   [900341] = {
     id = 900341,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [900343] = {
+    id = 900343,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [900344] = {
+    id = 900344,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [900345] = {
+    id = 900345,
     EquipCondition = _EmptyTable,
     ActionPrefix = "",
     TransformStartSE = "",

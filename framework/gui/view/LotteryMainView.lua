@@ -77,6 +77,20 @@ local extraBonusProgressGridMap = {
       1
     },
     progressGridLocalYPos = 170
+  },
+  [7] = {
+    cellHeight = 130,
+    sliderHeight = 860,
+    progressNode = {
+      0.1,
+      0.25,
+      0.42,
+      0.56,
+      0.72,
+      0.88,
+      1
+    },
+    progressGridLocalYPos = 170
   }
 }
 local spaceTimeExtraBonusConfig = {

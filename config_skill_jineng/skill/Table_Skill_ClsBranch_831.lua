@@ -80,7 +80,6 @@ Table_Skill_ClsBranch_831 = {
   [4891008] = "{id=4891008,NameZh='亵神之殇',Level=8,Icon='skill_4891001',Cost=1,NextID=4891009,Desc={{id=4891000,params={4}}},Buff={self={142190}},Pvp_buff={self={142190}},}",
   [4891009] = "{id=4891009,NameZh='亵神之殇',Level=9,Icon='skill_4891001',Cost=1,NextID=4891010,Desc={{id=4891000,params={4.5}}},Buff={self={142190}},Pvp_buff={self={142190}},}",
   [4891010] = "{id=4891010,NameZh='亵神之殇',Level=10,Icon='skill_4891001',Cost=1,Desc={{id=4891000,params={5}}},Buff={self={142190}},Pvp_buff={self={142190}},}",
-  [4892001] = "{id=4892001,NameZh='堕落天使',Level=1,Icon='skill_4892001',Cost=1,Contidion={skillid=4886003},Desc={{id=4892000,params=_EmptyTable}},Buff={self={142180}},Pvp_buff={self={142180}},}",
-  [4896001] = "{id=4896001,Level=1,Icon='skill_10000',Cost=0,Desc={{id=10000,params={100}}},RollType=1,Launch_Type=1,SkillType='Attack',Camps='Enemy',Launch_Range=1.5,Fire_EP=3,Target_EP=3,Attack_EP=3,Logic='SkillLockedTarget',Damage={{skill1_id=29,skill2_id=179,type=19}},DamTime={type=1,value=1},CastAct='reading',AttackAct={'attack'},}"
+  [4892001] = "{id=4892001,NameZh='堕落天使',Level=1,Icon='skill_4892001',Cost=1,Contidion={skillid=4886003},Desc={{id=4892000,params=_EmptyTable}},Buff={self={142180}},Pvp_buff={self={142180}},}"
 }
-Table_Skill_ClsBranch_831.count = 83
+Table_Skill_ClsBranch_831.count = 82

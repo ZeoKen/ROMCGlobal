@@ -1852,7 +1852,6 @@ Table_PomeStory = {
     id = 18,
     QuestID = Table_PomeStory_t.QuestID[18],
     version = Table_PomeStory_t.version[6],
-    QuestName = "忽克连",
     Npcid = 802077,
     Pstory = Table_PomeStory_t.Pstory[18],
     NpcSpace = 38
@@ -1989,6 +1988,7 @@ Table_PomeStory = {
     id = 34,
     QuestID = Table_PomeStory_t.QuestID[34],
     version = Table_PomeStory_t.version[6],
+    QuestName = "凯特莉娜",
     Npcid = 1226,
     Pstory = Table_PomeStory_t.Pstory[34]
   },
@@ -2119,7 +2119,7 @@ local cell_mt = {
     Npcid = 1595,
     Pstory = _EmptyTable,
     QuestID = _EmptyTable,
-    QuestName = "凯特莉娜",
+    QuestName = "忽克连",
     id = 1,
     version = _EmptyTable
   }

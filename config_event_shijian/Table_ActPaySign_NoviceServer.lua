@@ -1041,6 +1041,164 @@ Table_ActPaySign = {
       ProTitle = "特惠奖励",
       SuperTitle = "进阶奖励"
     }
+  },
+  [55] = {
+    id = 55,
+    ActID = 1060002,
+    BatchID = 20260901,
+    Day = 1,
+    RewardItems = {
+      {135, 10}
+    },
+    ProRewardItems = {
+      {100, 600000}
+    },
+    SuperRewardItems = {
+      {100, 6800000}
+    },
+    Important = 0,
+    Params = {DepositID = 400082, SuperDepositID = 363}
+  },
+  [56] = {
+    id = 56,
+    ActID = 1060002,
+    BatchID = 20260901,
+    Day = 2,
+    RewardItems = {
+      {3720, 2}
+    },
+    ProRewardItems = {
+      {3720, 1}
+    },
+    SuperRewardItems = {
+      {3720, 4}
+    },
+    Important = 0,
+    Params = {DepositID = 400082, SuperDepositID = 363}
+  },
+  [57] = {
+    id = 57,
+    ActID = 1060002,
+    BatchID = 20260901,
+    Day = 3,
+    RewardItems = {
+      {6914, 2}
+    },
+    ProRewardItems = {
+      {3720, 1}
+    },
+    SuperRewardItems = {
+      {3720, 4}
+    },
+    Important = 0,
+    Params = {DepositID = 400082, SuperDepositID = 363}
+  },
+  [58] = {
+    id = 58,
+    ActID = 1060002,
+    BatchID = 20260901,
+    Day = 4,
+    RewardItems = {
+      {5832, 5}
+    },
+    ProRewardItems = {
+      {3720, 1}
+    },
+    SuperRewardItems = {
+      {3720, 4}
+    },
+    Important = 0,
+    Params = {DepositID = 400082, SuperDepositID = 363}
+  },
+  [59] = {
+    id = 59,
+    ActID = 1060002,
+    BatchID = 20260901,
+    Day = 5,
+    RewardItems = {
+      {7300, 5}
+    },
+    ProRewardItems = {
+      {3720, 1}
+    },
+    SuperRewardItems = {
+      {3720, 4}
+    },
+    Important = 0,
+    Params = {DepositID = 400082, SuperDepositID = 363}
+  },
+  [60] = {
+    id = 60,
+    ActID = 1060002,
+    BatchID = 20260901,
+    Day = 6,
+    RewardItems = {
+      {5503, 200}
+    },
+    ProRewardItems = {
+      {3720, 1}
+    },
+    SuperRewardItems = {
+      {3720, 4}
+    },
+    Important = 0,
+    Params = {DepositID = 400082, SuperDepositID = 363}
+  },
+  [61] = {
+    id = 61,
+    ActID = 1060002,
+    BatchID = 20260901,
+    Day = 7,
+    RewardItems = {
+      {3690, 4}
+    },
+    ProRewardItems = {
+      {3720, 1}
+    },
+    SuperRewardItems = {
+      {3720, 4}
+    },
+    Important = 0,
+    Params = {DepositID = 400082, SuperDepositID = 363}
+  },
+  [62] = {
+    id = 62,
+    ActID = 1060002,
+    BatchID = 20260901,
+    Day = 8,
+    RewardItems = {
+      {6087, 4}
+    },
+    ProRewardItems = {
+      {3720, 1}
+    },
+    SuperRewardItems = {
+      {3720, 4}
+    },
+    Important = 0,
+    Params = {DepositID = 400082, SuperDepositID = 363}
+  },
+  [63] = {
+    id = 63,
+    ActID = 1060002,
+    BatchID = 20260901,
+    Day = 9,
+    RewardItems = {
+      {3720, 3}
+    },
+    ProRewardItems = {
+      {3720, 1}
+    },
+    SuperRewardItems = {
+      {3720, 10}
+    },
+    Important = 1,
+    Params = {
+      DepositID = 400082,
+      SuperDepositID = 363,
+      ProTitle = "特惠奖励",
+      SuperTitle = "进阶奖励"
+    }
   }
 }
 Table_ActPaySign_fields = {

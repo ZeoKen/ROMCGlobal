@@ -164,10 +164,10 @@ function PaySignEntryView:OnPurchase()
     self:DoPurchase()
     return
   end
-  if MyselfProxy.Instance:GetLottery() < self.actConfigData.rechargeNum then
-    MsgManager.ConfirmMsgByID(3551, function()
-      FunctionNewRecharge.Instance():OpenUI(PanelConfig.NewRecharge_TDeposit)
-    end)
+  local rechargeItemId = self.actConfigData.rechargeItemId
+  local ownNum = HappyShopProxy.Instance:GetItemNum(rechargeItemId)
+  if ownNum < self.actConfigData.rechargeNum then
+    OverSeaFunc.SpecialItemNotEnoughMsg(rechargeItemId)
   else
     local callback = function()
       ServiceNUserProxy.Instance:CallPaySignBuyUserCmd(self.actID)

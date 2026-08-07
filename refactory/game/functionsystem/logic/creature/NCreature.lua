@@ -43,6 +43,10 @@ function NCreature.IsForceVisible()
   return NCreature.isForceVisible
 end
 
+function NCreature:IsDeadCanMove()
+  return false
+end
+
 function NCreature:ctor(aiClass)
   NCreature.super.ctor(self)
   config_Action = Game.Config_Action
@@ -563,6 +567,20 @@ function NCreature:GetSceneUI()
   return nil
 end
 
+function NCreature:IsMonokumaStealth()
+  return false
+end
+
+function NCreature:SetMonokumaStealth(active)
+end
+
+function NCreature:IsNoActionUseSkill()
+  return false
+end
+
+function NCreature:SetNoActionUseSkill(active)
+end
+
 function NCreature:SetVisible(v, reason)
   if self.visibleHandler == nil then
     self.visibleHandler = CreatureVisibleHandler.CreateAsTable()
@@ -866,6 +884,9 @@ function NCreature:Server_BreakSkill(skillID, phaseData)
       self:Client_PlayAction(BalanceConfig.StiffAction, nil, false)
     end
   end
+end
+
+function NCreature:PlayDeadCallSkill(phaseData)
 end
 
 function NCreature:CheckLeadCompleteSkill(skillID, leadSuccess)
@@ -1313,7 +1334,10 @@ function NCreature:ForceUpdateTransform(time, deltaTime)
   if not self:CanForbidLogic() then
     logicTransformUpdate(self.logicTransform, time, deltaTime)
   end
-  AI_Base._DoUpdate(self.ai, time, deltaTime, self)
+  local deadCanMove = self:IsDeadCanMove()
+  if deadCanMove and self.ai ~= nil then
+    AI_Base._DoUpdate(self.ai, time, deltaTime, self)
+  end
 end
 
 function NCreature:GetDressDisableDistanceLevel()

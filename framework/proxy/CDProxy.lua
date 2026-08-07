@@ -123,8 +123,16 @@ function CDProxy:Server_AddSkillCD(id, time, isall, coldtime, leftTimes, maxtime
       else
         totalCD = cd
         local maxTimes = skill:GetMaxCDTimes(Game.Myself) or 0
-        local leftTimes = math.max(0, maxTimes - math.ceil(cd / cdMax))
-        cd = cd % cdMax
+        local leftTimes
+        if maxTimes <= 1 and cdMax and 0 < cdMax and cdMax < cd then
+          local epsilon = 0.1
+          leftTimes = math.max(0, maxTimes - math.ceil(math.max(cd - epsilon, 0) / cdMax))
+          cd = cdMax
+          totalCD = cd
+        else
+          leftTimes = math.max(0, maxTimes - math.ceil(cd / cdMax))
+          cd = cd % cdMax
+        end
         local cdCount = math.ceil(cd / cdMax)
         SkillProxy.Instance:UpdateSkillLeftCD(sortID, leftTimes)
       end

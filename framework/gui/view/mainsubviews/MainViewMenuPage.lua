@@ -444,6 +444,8 @@ function MainViewMenuPage:InitActivityBtn()
   self:RegisterRedTipCheck(ActivityExchangeProxy.RedTipId, self.DoujinshiButton, 17)
   self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_MISSION_REWARD, self.DoujinshiButton, 17)
   self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.DoujinshiButton, 17)
+  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_TIERED_BUNDLE, self.DoujinshiButton, 17)
+  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_TIERED_BUNDLE_DAY_REWARD, self.DoujinshiButton, 17)
   self.noviceCommunityMenuid = GameConfig.SystemOpen_MenuId and GameConfig.SystemOpen_MenuId.NoviceCommunity or 6100
   FunctionUnLockFunc.Me():RegisteEnterBtn(self.noviceCommunityMenuid, self.DoujinshiButton)
   self.Label_UILabel = self:FindGO("Label", self.DoujinshiButton):GetComponent(UILabel)
@@ -2148,6 +2150,10 @@ function MainViewMenuPage:HandleRedTipUpdate(note)
   local data = note.body
   if data and data.id then
     self:UpdateMainViewRedTipRegister(data.id)
+    if data.id == SceneTip_pb.EREDSYS_TIERED_BUNDLE or data.id == SceneTip_pb.EREDSYS_TIERED_BUNDLE_DAY_REWARD then
+      self:UpdateActivityIntegrationBtns()
+      self:UpdateLoopActIntegrationBtns()
+    end
   end
 end
 
@@ -2218,6 +2224,7 @@ function MainViewMenuPage:UpdateTimeLimitActButton()
   self:RefreshNewPartnerAct()
   self:RefreshRecommendAct()
   self:RefreshAnniversary2023Btn()
+  self:UpdateLoopActIntegrationBtns()
 end
 
 function MainViewMenuPage:RefreshUserReturnInvite()
@@ -4733,6 +4740,19 @@ function MainViewMenuPage:UpdateActivityIntegrationBtns()
           self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.actIntegerBtns[groupid])
         end
       end
+      local tieredBundleActId = ActivityIntegrationProxy.Instance:GetTieredBundleActID(groupid)
+      if tieredBundleActId then
+        self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_TIERED_BUNDLE, self.actIntegerBtns[groupid])
+        self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_TIERED_BUNDLE_DAY_REWARD, self.actIntegerBtns[groupid])
+        local isRewardNew = RedTipProxy.Instance:IsNew(SceneTip_pb.EREDSYS_TIERED_BUNDLE, tieredBundleActId)
+        local isDayNew = RedTipProxy.Instance:IsNew(SceneTip_pb.EREDSYS_TIERED_BUNDLE_DAY_REWARD, tieredBundleActId)
+        if isRewardNew then
+          self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_TIERED_BUNDLE, self.actIntegerBtns[groupid], 39, nil, nil, tieredBundleActId)
+        end
+        if isDayNew then
+          self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_TIERED_BUNDLE_DAY_REWARD, self.actIntegerBtns[groupid], 39, nil, nil, tieredBundleActId)
+        end
+      end
     elseif self.actIntegerBtns[groupid] then
       self.actIntegerBtns[groupid]:SetActive(false)
     end
@@ -4774,7 +4794,15 @@ function MainViewMenuPage:UpdateLoopActIntegrationBtns()
   end
   for groupid, showInfo in pairs(groupShowInfos) do
     if showInfo and showInfo.activityName and showInfo.activityIcon then
-      local isValid = LoopActIntegrationProxy.Instance:CheckGroupValid(groupid)
+      local activeActivityIDs = LoopActIntegrationProxy.Instance:GetValidActivityIDs(groupid)
+      local loopActivityIDs = {}
+      for i = 1, #activeActivityIDs do
+        local activeActivityData = Table_ActivityNew[activeActivityIDs[i]]
+        if activeActivityData and tostring(activeActivityData.Type) ~= "1043" then
+          table.insert(loopActivityIDs, activeActivityIDs[i])
+        end
+      end
+      local isValid = LoopActIntegrationProxy.Instance:CheckGroupValid(groupid) and 0 < #loopActivityIDs
       if isValid then
         local currentActivityID = showInfo.activityID
         local cachedActivityID = self.loopActIntegerBtnActivityIDs[groupid]
@@ -4810,6 +4838,8 @@ function MainViewMenuPage:UpdateLoopActIntegrationBtns()
           self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_NEW_SERVER_CHALLENGE, self.loopActIntegerBtns[groupid])
           self:UnRegisterSingleRedTipCheck(ActivityFlipCardProxy.RedTipId, self.loopActIntegerBtns[groupid])
           self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.loopActIntegerBtns[groupid])
+          self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_TIERED_BUNDLE, self.loopActIntegerBtns[groupid])
+          self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_TIERED_BUNDLE_DAY_REWARD, self.loopActIntegerBtns[groupid])
           for i = 1, #allActivityIDs do
             local activityID = allActivityIDs[i]
             local staticData = Table_ActivityNew[activityID]
@@ -4836,6 +4866,15 @@ function MainViewMenuPage:UpdateLoopActIntegrationBtns()
                 local isNew = RedTipProxy.Instance:IsNew(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, activityId)
                 if isNew then
                   self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.loopActIntegerBtns[groupid], 39, nil, nil, activityId)
+                end
+              elseif subType == ActivityCmd_pb.GACTIVITY_ACT_TIERED_BUNDLE then
+                local isRewardNew = RedTipProxy.Instance:IsNew(SceneTip_pb.EREDSYS_TIERED_BUNDLE, activityId)
+                local isDayNew = RedTipProxy.Instance:IsNew(SceneTip_pb.EREDSYS_TIERED_BUNDLE_DAY_REWARD, activityId)
+                if isRewardNew then
+                  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_TIERED_BUNDLE, self.loopActIntegerBtns[groupid], 39, nil, nil, activityId)
+                end
+                if isDayNew then
+                  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_TIERED_BUNDLE_DAY_REWARD, self.loopActIntegerBtns[groupid], 39, nil, nil, activityId)
                 end
               end
             end

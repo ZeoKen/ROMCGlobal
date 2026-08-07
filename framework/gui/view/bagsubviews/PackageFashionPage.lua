@@ -237,6 +237,7 @@ function PackageFashionPage:ClickItemTab(cellCtl)
   end
   self:TrySetFashionHide()
   self:SetMountFashionBtnState(self.isFashionTab, cellCfg[1] == SceneManual_pb.EMANUALTYPE_MOUNT)
+  self:RefreshMountDisplayByTab()
 end
 
 function PackageFashionPage:AddViewEvts()
@@ -298,6 +299,7 @@ function PackageFashionPage:SwitchFashionTab(tabIndex)
   self.skillTog:Set(tabIndex == TabIndex.SkillEffectTab)
   self.rewardTog:Set(tabIndex == TabIndex.RewardEffectTab)
   self:SetMountFashionBtnState(tabIndex == TabIndex.FashionTab, self.isMountTab)
+  self:RefreshMountDisplayByTab()
 end
 
 function PackageFashionPage:InitFashionTabNameTip()
@@ -926,9 +928,28 @@ function PackageFashionPage:ObserverEvent(role, param)
   end
   if evt == Asset_Role_UI_Event.PartCreated then
     UIUtil.NormalizedSortingOrder(partObj)
+    self:RefreshMountDisplayByTab()
   elseif evt == Asset_Role_UI_Event.PartCreated then
     UIUtil.RevertSortingOrder(partObj.gameObject)
   end
+end
+
+function PackageFashionPage:RefreshMountDisplayByTab()
+  if not self.isFashionTab or not self.isMountTab then
+    if self.role then
+      self:ActiveRoleMount(false)
+      self:ActiveAssetMount(false)
+    end
+    if self.lastActId == m_actionID_ride or self.lastActId == m_actionID_withMount then
+      self.lastActId = nil
+      self:PlayRoleAction("wait")
+    end
+    return
+  end
+  if not self.role or self.role:_IsLoading() or not self.mountId then
+    return
+  end
+  self:DoPlayEmojiAct(m_actionID_ride)
 end
 
 function PackageFashionPage:ObserverDestroyed(obj)

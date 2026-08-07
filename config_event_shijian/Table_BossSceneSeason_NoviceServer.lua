@@ -102,6 +102,19 @@ Table_BossSceneSeason = {
       }
     },
     UpCard = 23441
+  },
+  [9] = {
+    id = 9,
+    YearMonth = 202609,
+    Reward = {
+      [916430] = {
+        70000622,
+        70000623,
+        70000624,
+        70000625
+      }
+    },
+    UpCard = 23503
   }
 }
 Table_BossSceneSeason_fields = {

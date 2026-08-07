@@ -226,7 +226,8 @@ Table_HighRefine_t = {
           745,
           775,
           785,
-          835
+          835,
+          845
         },
         Refine = 6
       },
@@ -269,7 +270,8 @@ Table_HighRefine_t = {
           795,
           805,
           815,
-          825
+          825,
+          855
         },
         MRefine = 6
       }
@@ -351,7 +353,9 @@ Table_HighRefine_t = {
           745,
           775,
           785,
-          835
+          835,
+          845,
+          845
         },
         Refine = 2
       },
@@ -394,7 +398,8 @@ Table_HighRefine_t = {
           795,
           805,
           815,
-          825
+          825,
+          855
         },
         MRefine = 2
       }
@@ -476,7 +481,135 @@ Table_HighRefine_t = {
           745,
           775,
           785,
-          835
+          835,
+          845
+        },
+        Refine = 2
+      },
+      {
+        Job = {
+          21,
+          22,
+          23,
+          24,
+          25,
+          51,
+          52,
+          53,
+          54,
+          55,
+          82,
+          83,
+          84,
+          85,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          223,
+          224,
+          225,
+          183,
+          184,
+          185,
+          615,
+          635,
+          645,
+          675,
+          695,
+          735,
+          755,
+          765,
+          795,
+          805,
+          815,
+          825,
+          855
+        },
+        MRefine = 2
+      }
+    },
+    {
+      {
+        Job = {
+          1,
+          11,
+          12,
+          13,
+          14,
+          15,
+          72,
+          73,
+          74,
+          75,
+          31,
+          32,
+          33,
+          34,
+          35,
+          41,
+          42,
+          43,
+          44,
+          45,
+          61,
+          62,
+          63,
+          64,
+          65,
+          92,
+          93,
+          94,
+          95,
+          102,
+          103,
+          104,
+          105,
+          112,
+          113,
+          114,
+          115,
+          122,
+          123,
+          124,
+          125,
+          132,
+          133,
+          134,
+          135,
+          143,
+          144,
+          145,
+          203,
+          204,
+          205,
+          213,
+          214,
+          215,
+          163,
+          164,
+          165,
+          173,
+          174,
+          175,
+          193,
+          194,
+          195,
+          605,
+          625,
+          655,
+          665,
+          685,
+          705,
+          715,
+          725,
+          745,
+          775,
+          785,
+          835,
+          845
         },
         Refine = 4
       },
@@ -519,7 +652,8 @@ Table_HighRefine_t = {
           795,
           805,
           815,
-          825
+          825,
+          855
         },
         MRefine = 4
       }
@@ -601,7 +735,8 @@ Table_HighRefine_t = {
           745,
           775,
           785,
-          835
+          835,
+          845
         },
         Refine = 8
       },
@@ -644,7 +779,8 @@ Table_HighRefine_t = {
           795,
           805,
           815,
-          825
+          825,
+          855
         },
         MRefine = 8
       }
@@ -726,7 +862,8 @@ Table_HighRefine_t = {
           745,
           775,
           785,
-          835
+          835,
+          845
         },
         Refine = 10
       },
@@ -769,7 +906,8 @@ Table_HighRefine_t = {
           795,
           805,
           815,
-          825
+          825,
+          855
         },
         MRefine = 10
       }
@@ -801,7 +939,7 @@ Table_HighRefine = {
     Level = 1003,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[4],
-    Effect = Table_HighRefine_t.Effect[2]
+    Effect = Table_HighRefine_t.Effect[3]
   },
   [4] = {
     id = 4,
@@ -809,7 +947,7 @@ Table_HighRefine = {
     Level = 1004,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[5],
-    Effect = Table_HighRefine_t.Effect[2]
+    Effect = Table_HighRefine_t.Effect[3]
   },
   [5] = {
     id = 5,
@@ -817,7 +955,7 @@ Table_HighRefine = {
     Level = 1005,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[6],
-    Effect = Table_HighRefine_t.Effect[2]
+    Effect = Table_HighRefine_t.Effect[3]
   },
   [6] = {
     id = 6,
@@ -825,7 +963,7 @@ Table_HighRefine = {
     Level = 1006,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[7],
-    Effect = Table_HighRefine_t.Effect[2]
+    Effect = Table_HighRefine_t.Effect[3]
   },
   [7] = {
     id = 7,
@@ -833,14 +971,14 @@ Table_HighRefine = {
     Level = 1007,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[8],
-    Effect = Table_HighRefine_t.Effect[2]
+    Effect = Table_HighRefine_t.Effect[3]
   },
   [8] = {
     id = 8,
     PosType = 7,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[9],
-    Effect = Table_HighRefine_t.Effect[2]
+    Effect = Table_HighRefine_t.Effect[3]
   },
   [9] = {
     id = 9,
@@ -848,7 +986,7 @@ Table_HighRefine = {
     Level = 1009,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[10],
-    Effect = Table_HighRefine_t.Effect[2]
+    Effect = Table_HighRefine_t.Effect[3]
   },
   [10] = {
     id = 10,
@@ -856,7 +994,7 @@ Table_HighRefine = {
     Level = 1010,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[11],
-    Effect = Table_HighRefine_t.Effect[2]
+    Effect = Table_HighRefine_t.Effect[3]
   },
   [11] = {
     id = 11,
@@ -865,7 +1003,7 @@ Table_HighRefine = {
     PreLevel = 1001,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[12],
-    Effect = Table_HighRefine_t.Effect[3]
+    Effect = Table_HighRefine_t.Effect[4]
   },
   [12] = {
     id = 12,
@@ -873,7 +1011,7 @@ Table_HighRefine = {
     Level = 2002,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[13],
-    Effect = Table_HighRefine_t.Effect[3]
+    Effect = Table_HighRefine_t.Effect[4]
   },
   [13] = {
     id = 13,
@@ -881,7 +1019,7 @@ Table_HighRefine = {
     Level = 2003,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[14],
-    Effect = Table_HighRefine_t.Effect[3]
+    Effect = Table_HighRefine_t.Effect[4]
   },
   [14] = {
     id = 14,
@@ -889,7 +1027,7 @@ Table_HighRefine = {
     Level = 2004,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[15],
-    Effect = Table_HighRefine_t.Effect[3]
+    Effect = Table_HighRefine_t.Effect[4]
   },
   [15] = {
     id = 15,
@@ -897,7 +1035,7 @@ Table_HighRefine = {
     Level = 2005,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[16],
-    Effect = Table_HighRefine_t.Effect[3]
+    Effect = Table_HighRefine_t.Effect[4]
   },
   [16] = {
     id = 16,
@@ -905,7 +1043,7 @@ Table_HighRefine = {
     Level = 2006,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[17],
-    Effect = Table_HighRefine_t.Effect[3]
+    Effect = Table_HighRefine_t.Effect[4]
   },
   [17] = {
     id = 17,
@@ -913,7 +1051,7 @@ Table_HighRefine = {
     Level = 2007,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[18],
-    Effect = Table_HighRefine_t.Effect[3]
+    Effect = Table_HighRefine_t.Effect[4]
   },
   [18] = {
     id = 18,
@@ -921,7 +1059,7 @@ Table_HighRefine = {
     Level = 2008,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[19],
-    Effect = Table_HighRefine_t.Effect[3]
+    Effect = Table_HighRefine_t.Effect[4]
   },
   [19] = {
     id = 19,
@@ -929,7 +1067,7 @@ Table_HighRefine = {
     Level = 2009,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[20],
-    Effect = Table_HighRefine_t.Effect[3]
+    Effect = Table_HighRefine_t.Effect[4]
   },
   [20] = {
     id = 20,
@@ -937,7 +1075,7 @@ Table_HighRefine = {
     Level = 2010,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[1],
-    Effect = Table_HighRefine_t.Effect[3]
+    Effect = Table_HighRefine_t.Effect[4]
   },
   [21] = {
     id = 21,
@@ -1026,70 +1164,70 @@ Table_HighRefine = {
     Level = 4001,
     PreLevel = 3001,
     Cost = Table_HighRefine_t.Cost[30],
-    Effect = Table_HighRefine_t.Effect[4]
+    Effect = Table_HighRefine_t.Effect[5]
   },
   [32] = {
     id = 32,
     PosType = 7,
     Level = 4002,
     Cost = Table_HighRefine_t.Cost[31],
-    Effect = Table_HighRefine_t.Effect[4]
+    Effect = Table_HighRefine_t.Effect[5]
   },
   [33] = {
     id = 33,
     PosType = 7,
     Level = 4003,
     Cost = Table_HighRefine_t.Cost[32],
-    Effect = Table_HighRefine_t.Effect[4]
+    Effect = Table_HighRefine_t.Effect[5]
   },
   [34] = {
     id = 34,
     PosType = 7,
     Level = 4004,
     Cost = Table_HighRefine_t.Cost[33],
-    Effect = Table_HighRefine_t.Effect[4]
+    Effect = Table_HighRefine_t.Effect[5]
   },
   [35] = {
     id = 35,
     PosType = 7,
     Level = 4005,
     Cost = Table_HighRefine_t.Cost[34],
-    Effect = Table_HighRefine_t.Effect[4]
+    Effect = Table_HighRefine_t.Effect[5]
   },
   [36] = {
     id = 36,
     PosType = 7,
     Level = 4006,
     Cost = Table_HighRefine_t.Cost[35],
-    Effect = Table_HighRefine_t.Effect[4]
+    Effect = Table_HighRefine_t.Effect[5]
   },
   [37] = {
     id = 37,
     PosType = 7,
     Level = 4007,
     Cost = Table_HighRefine_t.Cost[36],
-    Effect = Table_HighRefine_t.Effect[4]
+    Effect = Table_HighRefine_t.Effect[5]
   },
   [38] = {
     id = 38,
     PosType = 7,
     Level = 4008,
     Cost = Table_HighRefine_t.Cost[37],
-    Effect = Table_HighRefine_t.Effect[4]
+    Effect = Table_HighRefine_t.Effect[5]
   },
   [39] = {
     id = 39,
     PosType = 7,
     Level = 4009,
     Cost = Table_HighRefine_t.Cost[38],
-    Effect = Table_HighRefine_t.Effect[4]
+    Effect = Table_HighRefine_t.Effect[5]
   },
   [40] = {
     id = 40,
     PosType = 7,
     Level = 4010,
     Cost = Table_HighRefine_t.Cost[39],
-    Effect = Table_HighRefine_t.Effect[4]
+    Effect = Table_HighRefine_t.Effect[5]
   },
   [41] = {
     id = 41,
@@ -1097,77 +1235,77 @@ Table_HighRefine = {
     Level = 5001,
     PreLevel = 4001,
     Cost = Table_HighRefine_t.Cost[40],
-    Effect = Table_HighRefine_t.Effect[5]
+    Effect = Table_HighRefine_t.Effect[6]
   },
   [42] = {
     id = 42,
     PosType = 7,
     Level = 5002,
     Cost = Table_HighRefine_t.Cost[41],
-    Effect = Table_HighRefine_t.Effect[5]
+    Effect = Table_HighRefine_t.Effect[6]
   },
   [43] = {
     id = 43,
     PosType = 7,
     Level = 5003,
     Cost = Table_HighRefine_t.Cost[42],
-    Effect = Table_HighRefine_t.Effect[5]
+    Effect = Table_HighRefine_t.Effect[6]
   },
   [44] = {
     id = 44,
     PosType = 7,
     Level = 5004,
     Cost = Table_HighRefine_t.Cost[43],
-    Effect = Table_HighRefine_t.Effect[5]
+    Effect = Table_HighRefine_t.Effect[6]
   },
   [45] = {
     id = 45,
     PosType = 7,
     Level = 5005,
     Cost = Table_HighRefine_t.Cost[44],
-    Effect = Table_HighRefine_t.Effect[5]
+    Effect = Table_HighRefine_t.Effect[6]
   },
   [46] = {
     id = 46,
     PosType = 7,
     Level = 5006,
     Cost = Table_HighRefine_t.Cost[45],
-    Effect = Table_HighRefine_t.Effect[5]
+    Effect = Table_HighRefine_t.Effect[6]
   },
   [47] = {
     id = 47,
     PosType = 7,
     Level = 5007,
     Cost = Table_HighRefine_t.Cost[46],
-    Effect = Table_HighRefine_t.Effect[5]
+    Effect = Table_HighRefine_t.Effect[6]
   },
   [48] = {
     id = 48,
     PosType = 7,
     Level = 5008,
     Cost = Table_HighRefine_t.Cost[47],
-    Effect = Table_HighRefine_t.Effect[5]
+    Effect = Table_HighRefine_t.Effect[6]
   },
   [49] = {
     id = 49,
     PosType = 7,
     Level = 5009,
     Cost = Table_HighRefine_t.Cost[48],
-    Effect = Table_HighRefine_t.Effect[5]
+    Effect = Table_HighRefine_t.Effect[6]
   },
   [50] = {
     id = 50,
     PosType = 7,
     Level = 5010,
     Cost = Table_HighRefine_t.Cost[49],
-    Effect = Table_HighRefine_t.Effect[5]
+    Effect = Table_HighRefine_t.Effect[6]
   },
   [101] = {
     id = 101,
     Level = 1001,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[2],
-    Effect = Table_HighRefine_t.Effect[2],
+    Effect = Table_HighRefine_t.Effect[3],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [102] = {
@@ -1175,7 +1313,7 @@ Table_HighRefine = {
     Level = 1002,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[3],
-    Effect = Table_HighRefine_t.Effect[2],
+    Effect = Table_HighRefine_t.Effect[3],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [103] = {
@@ -1183,7 +1321,7 @@ Table_HighRefine = {
     Level = 1003,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[4],
-    Effect = Table_HighRefine_t.Effect[2],
+    Effect = Table_HighRefine_t.Effect[3],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [104] = {
@@ -1191,7 +1329,7 @@ Table_HighRefine = {
     Level = 1004,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[5],
-    Effect = Table_HighRefine_t.Effect[2],
+    Effect = Table_HighRefine_t.Effect[3],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [105] = {
@@ -1199,7 +1337,7 @@ Table_HighRefine = {
     Level = 1005,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[6],
-    Effect = Table_HighRefine_t.Effect[2],
+    Effect = Table_HighRefine_t.Effect[3],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [106] = {
@@ -1207,7 +1345,7 @@ Table_HighRefine = {
     Level = 1006,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[7],
-    Effect = Table_HighRefine_t.Effect[2],
+    Effect = Table_HighRefine_t.Effect[3],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [107] = {
@@ -1215,14 +1353,14 @@ Table_HighRefine = {
     Level = 1007,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[8],
-    Effect = Table_HighRefine_t.Effect[2],
+    Effect = Table_HighRefine_t.Effect[3],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [108] = {
     id = 108,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[9],
-    Effect = Table_HighRefine_t.Effect[2],
+    Effect = Table_HighRefine_t.Effect[3],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [109] = {
@@ -1230,7 +1368,7 @@ Table_HighRefine = {
     Level = 1009,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[10],
-    Effect = Table_HighRefine_t.Effect[2],
+    Effect = Table_HighRefine_t.Effect[3],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [110] = {
@@ -1238,7 +1376,7 @@ Table_HighRefine = {
     Level = 1010,
     RefineLv = 1,
     Cost = Table_HighRefine_t.Cost[11],
-    Effect = Table_HighRefine_t.Effect[2],
+    Effect = Table_HighRefine_t.Effect[3],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [111] = {
@@ -1247,7 +1385,7 @@ Table_HighRefine = {
     PreLevel = 1001,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[12],
-    Effect = Table_HighRefine_t.Effect[3],
+    Effect = Table_HighRefine_t.Effect[4],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [112] = {
@@ -1255,7 +1393,7 @@ Table_HighRefine = {
     Level = 2002,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[13],
-    Effect = Table_HighRefine_t.Effect[3],
+    Effect = Table_HighRefine_t.Effect[4],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [113] = {
@@ -1263,7 +1401,7 @@ Table_HighRefine = {
     Level = 2003,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[14],
-    Effect = Table_HighRefine_t.Effect[3],
+    Effect = Table_HighRefine_t.Effect[4],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [114] = {
@@ -1271,7 +1409,7 @@ Table_HighRefine = {
     Level = 2004,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[15],
-    Effect = Table_HighRefine_t.Effect[3],
+    Effect = Table_HighRefine_t.Effect[4],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [115] = {
@@ -1279,7 +1417,7 @@ Table_HighRefine = {
     Level = 2005,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[16],
-    Effect = Table_HighRefine_t.Effect[3],
+    Effect = Table_HighRefine_t.Effect[4],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [116] = {
@@ -1287,7 +1425,7 @@ Table_HighRefine = {
     Level = 2006,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[17],
-    Effect = Table_HighRefine_t.Effect[3],
+    Effect = Table_HighRefine_t.Effect[4],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [117] = {
@@ -1295,7 +1433,7 @@ Table_HighRefine = {
     Level = 2007,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[18],
-    Effect = Table_HighRefine_t.Effect[3],
+    Effect = Table_HighRefine_t.Effect[4],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [118] = {
@@ -1303,7 +1441,7 @@ Table_HighRefine = {
     Level = 2008,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[19],
-    Effect = Table_HighRefine_t.Effect[3],
+    Effect = Table_HighRefine_t.Effect[4],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [119] = {
@@ -1311,7 +1449,7 @@ Table_HighRefine = {
     Level = 2009,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[20],
-    Effect = Table_HighRefine_t.Effect[3],
+    Effect = Table_HighRefine_t.Effect[4],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [120] = {
@@ -1319,7 +1457,7 @@ Table_HighRefine = {
     Level = 2010,
     RefineLv = 5,
     Cost = Table_HighRefine_t.Cost[1],
-    Effect = Table_HighRefine_t.Effect[3],
+    Effect = Table_HighRefine_t.Effect[4],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [121] = {
@@ -1408,70 +1546,70 @@ Table_HighRefine = {
     Level = 4001,
     PreLevel = 3001,
     Cost = Table_HighRefine_t.Cost[30],
-    Effect = Table_HighRefine_t.Effect[4],
+    Effect = Table_HighRefine_t.Effect[5],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [132] = {
     id = 132,
     Level = 4002,
     Cost = Table_HighRefine_t.Cost[31],
-    Effect = Table_HighRefine_t.Effect[4],
+    Effect = Table_HighRefine_t.Effect[5],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [133] = {
     id = 133,
     Level = 4003,
     Cost = Table_HighRefine_t.Cost[32],
-    Effect = Table_HighRefine_t.Effect[4],
+    Effect = Table_HighRefine_t.Effect[5],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [134] = {
     id = 134,
     Level = 4004,
     Cost = Table_HighRefine_t.Cost[33],
-    Effect = Table_HighRefine_t.Effect[4],
+    Effect = Table_HighRefine_t.Effect[5],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [135] = {
     id = 135,
     Level = 4005,
     Cost = Table_HighRefine_t.Cost[34],
-    Effect = Table_HighRefine_t.Effect[4],
+    Effect = Table_HighRefine_t.Effect[5],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [136] = {
     id = 136,
     Level = 4006,
     Cost = Table_HighRefine_t.Cost[35],
-    Effect = Table_HighRefine_t.Effect[4],
+    Effect = Table_HighRefine_t.Effect[5],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [137] = {
     id = 137,
     Level = 4007,
     Cost = Table_HighRefine_t.Cost[36],
-    Effect = Table_HighRefine_t.Effect[4],
+    Effect = Table_HighRefine_t.Effect[5],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [138] = {
     id = 138,
     Level = 4008,
     Cost = Table_HighRefine_t.Cost[37],
-    Effect = Table_HighRefine_t.Effect[4],
+    Effect = Table_HighRefine_t.Effect[5],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [139] = {
     id = 139,
     Level = 4009,
     Cost = Table_HighRefine_t.Cost[38],
-    Effect = Table_HighRefine_t.Effect[4],
+    Effect = Table_HighRefine_t.Effect[5],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [140] = {
     id = 140,
     Level = 4010,
     Cost = Table_HighRefine_t.Cost[39],
-    Effect = Table_HighRefine_t.Effect[4],
+    Effect = Table_HighRefine_t.Effect[5],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [141] = {
@@ -1479,70 +1617,70 @@ Table_HighRefine = {
     Level = 5001,
     PreLevel = 4001,
     Cost = Table_HighRefine_t.Cost[40],
-    Effect = Table_HighRefine_t.Effect[5],
+    Effect = Table_HighRefine_t.Effect[6],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [142] = {
     id = 142,
     Level = 5002,
     Cost = Table_HighRefine_t.Cost[41],
-    Effect = Table_HighRefine_t.Effect[5],
+    Effect = Table_HighRefine_t.Effect[6],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [143] = {
     id = 143,
     Level = 5003,
     Cost = Table_HighRefine_t.Cost[42],
-    Effect = Table_HighRefine_t.Effect[5],
+    Effect = Table_HighRefine_t.Effect[6],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [144] = {
     id = 144,
     Level = 5004,
     Cost = Table_HighRefine_t.Cost[43],
-    Effect = Table_HighRefine_t.Effect[5],
+    Effect = Table_HighRefine_t.Effect[6],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [145] = {
     id = 145,
     Level = 5005,
     Cost = Table_HighRefine_t.Cost[44],
-    Effect = Table_HighRefine_t.Effect[5],
+    Effect = Table_HighRefine_t.Effect[6],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [146] = {
     id = 146,
     Level = 5006,
     Cost = Table_HighRefine_t.Cost[45],
-    Effect = Table_HighRefine_t.Effect[5],
+    Effect = Table_HighRefine_t.Effect[6],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [147] = {
     id = 147,
     Level = 5007,
     Cost = Table_HighRefine_t.Cost[46],
-    Effect = Table_HighRefine_t.Effect[5],
+    Effect = Table_HighRefine_t.Effect[6],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [148] = {
     id = 148,
     Level = 5008,
     Cost = Table_HighRefine_t.Cost[47],
-    Effect = Table_HighRefine_t.Effect[5],
+    Effect = Table_HighRefine_t.Effect[6],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [149] = {
     id = 149,
     Level = 5009,
     Cost = Table_HighRefine_t.Cost[48],
-    Effect = Table_HighRefine_t.Effect[5],
+    Effect = Table_HighRefine_t.Effect[6],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   },
   [150] = {
     id = 150,
     Level = 5010,
     Cost = Table_HighRefine_t.Cost[49],
-    Effect = Table_HighRefine_t.Effect[5],
+    Effect = Table_HighRefine_t.Effect[6],
     EqualPos = Table_HighRefine_t.EqualPos[1]
   }
 }

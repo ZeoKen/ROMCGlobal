@@ -2848,6 +2848,20 @@ Table_ActionEffectSetUp = {
     EPFollow = 1,
     Loop = 1
   },
+  [418] = {
+    id = 418,
+    Path = "Common/cfx_danganmakoto_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [419] = {
+    id = 419,
+    Path = "Common/cfx_danganmakoto_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
   [420] = {
     id = 420,
     Path = "Common/cfx_darkphantom_001_playshow_prf",
@@ -2963,6 +2977,34 @@ Table_ActionEffectSetUp = {
   [436] = {
     id = 436,
     Path = "Common/cfx_himemmeth_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [437] = {
+    id = 437,
+    Path = "Common/cfx_ghostbride_001_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [438] = {
+    id = 438,
+    Path = "Common/cfx_ghostbride_002_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [439] = {
+    id = 439,
+    Path = "Common/cfx_ghostbride_003_playshow_prf",
+    EPID = 2,
+    EPFollow = 1,
+    Loop = 1
+  },
+  [440] = {
+    id = 440,
+    Path = "Common/cfx_ghostbride_004_playshow_prf",
     EPID = 2,
     EPFollow = 1,
     Loop = 1

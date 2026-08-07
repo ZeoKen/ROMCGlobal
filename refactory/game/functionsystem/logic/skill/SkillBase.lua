@@ -66,6 +66,10 @@ function SkillBase:SetEffectVisible(visible)
 end
 
 function SkillBase:Speak(creature)
+  if creature:IsMonokumaStealth() then
+    Game.MonokumaAnnounceManager:OnPlayerSkillSpeak(self.info:GetSkillID(), creature)
+    return
+  end
   if self:IsAttackSkill(creature) and not self:IsTriggerKickSkill(self.info:GetSkillID(), creature) then
     return
   end

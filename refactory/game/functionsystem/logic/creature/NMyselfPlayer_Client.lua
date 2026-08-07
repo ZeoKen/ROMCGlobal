@@ -367,6 +367,8 @@ function NMyselfPlayer:Client_UseSkill(skillID, targetCreature, targetPosition, 
     end
   end
   local lockedCreature = self:GetLockTarget()
+  local skillTargetType = skillInfo:GetTargetType(self)
+  local selectTargetForTargetNone = SkillTargetType.None == skillTargetType and skillInfo:SelectLockedTarget(self) and nil ~= skillInfo.logicParam.no_target_skill_id
   local oldTargetCreature = targetCreature
   local teamFirst = skillInfo:TeamFirst(self)
   local hatredFirst = self:IsAutoBattleProtectingTeam() and skillInfo:TargetEnemy(self)
@@ -385,8 +387,16 @@ function NMyselfPlayer:Client_UseSkill(skillID, targetCreature, targetPosition, 
       end
     end
   end
+  if selectTargetForTargetNone and nil ~= oldTargetCreature then
+    if nil == targetCreature or noSearch and not skillInfo:CheckTarget(self, targetCreature) then
+      targetCreature = nil
+      forceTargetCreature = false
+    else
+      forceTargetCreature = forceTargetCreature or true
+    end
+  end
   if nil == targetCreature then
-    if SkillTargetType.Creature == skillInfo:GetTargetType(self) then
+    if SkillTargetType.Creature == skillTargetType then
       if noSearch then
         return false
       end
@@ -448,11 +458,11 @@ function NMyselfPlayer:Client_UseSkill(skillID, targetCreature, targetPosition, 
           return false
         end
       end
-    elseif SkillTargetType.Point == skillInfo:GetTargetType(self) and nil ~= targetPosition then
+    elseif SkillTargetType.Point == skillTargetType and nil ~= targetPosition then
       forceTargetCreature = false
     end
   elseif targetCreature ~= lockedCreature then
-    if (SkillTargetType.Creature == skillInfo:GetTargetType(self) or forceTargetCreature) and self:IsAutoBattleStanding() then
+    if (SkillTargetType.Creature == skillTargetType or forceTargetCreature) and self:IsAutoBattleStanding() then
       local skillLaunchRanage = skillInfo:GetLaunchRange(self)
       if VectorUtility.DistanceXZ_Square(self:GetPosition(), targetCreature:GetPosition()) > skillLaunchRanage * skillLaunchRanage then
         self:Client_ClearAutoBattleCurrentTarget()

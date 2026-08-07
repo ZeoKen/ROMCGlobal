@@ -104,7 +104,11 @@ function FunctionSkill:TryUseSkill(skillIDAndLevel, target, noSearch, auto, quic
               isUseSkill = myself:Client_QuickUseSkill(skillIDAndLevel, target, nil, noSearch, nil, nil, manual)
             end
           elseif skillTargetType == SkillTargetType.None then
-            isUseSkill = myself:Client_UseSkill(skillIDAndLevel, nil, nil, nil, noSearch, nil, nil, nil, nil, nil, manual)
+            local selectTarget
+            if skillInfo:SelectLockedTarget(myself) then
+              selectTarget = target or lockedTarget
+            end
+            isUseSkill = myself:Client_UseSkill(skillIDAndLevel, selectTarget, nil, nil, noSearch, nil, nil, nil, nil, nil, manual)
           elseif skillTargetType == SkillTargetType.Creature then
             if target then
               myself:Client_UseSkill(skillIDAndLevel, target, nil, nil, noSearch, nil, nil, nil, nil, nil, manual)

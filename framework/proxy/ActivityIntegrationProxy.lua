@@ -139,8 +139,12 @@ function ActivityIntegrationProxy:InitGroupData()
         end
         table.insert(self.activityIntegrationGroup[groupID].ExchangeActIds, v.Params.ActivityId)
       end
-    elseif v.Type == 13 and v.Params and v.Params.ActivityId then
-      self.activityIntegrationGroup[groupID].PaySignActId = v.Params.ActivityId
+    elseif v.Type == 13 then
+      if v.Params and v.Params.ActivityId then
+        self.activityIntegrationGroup[groupID].PaySignActId = v.Params.ActivityId
+      end
+    elseif v.Type == 15 and v.Params and v.Params.ActivityId then
+      self.activityIntegrationGroup[groupID].TieredBundleActId = v.Params.ActivityId
     end
   end
 end
@@ -212,6 +216,10 @@ end
 
 function ActivityIntegrationProxy:GetPaySignActID(groupid)
   return self.activityIntegrationGroup[groupid] and self.activityIntegrationGroup[groupid].PaySignActId
+end
+
+function ActivityIntegrationProxy:GetTieredBundleActID(groupid)
+  return self.activityIntegrationGroup[groupid] and self.activityIntegrationGroup[groupid].TieredBundleActId
 end
 
 function ActivityIntegrationProxy:AddSuperSignIn(actid, starttime, endtime)
@@ -696,6 +704,17 @@ function ActivityIntegrationProxy:CheckGroupValid(groupid)
       if not overallEndTime or endTime and overallEndTime < endTime then
         overallEndTime = endTime
       end
+    elseif type == 15 then
+      local activityId = staticData.Params.ActivityId
+      local startTime, endTime = ActivityTieredBundleProxy.Instance:GetGlobalActTime(activityId)
+      local isAvailable = ActivityTieredBundleProxy.Instance:IsActivityAvailable(activityId)
+      isValid = isValid or isAvailable
+      if not overallStartTime or startTime and overallStartTime > startTime then
+        overallStartTime = startTime
+      end
+      if not overallEndTime or endTime and overallEndTime < endTime then
+        overallEndTime = endTime
+      end
     elseif type == 9 then
     else
       local serverValid = true
@@ -792,6 +811,9 @@ function ActivityIntegrationProxy:CheckSubTabValid(tabid)
       end
     end
     return timeValid
+  elseif type == 15 then
+    local activityId = staticData.Params.ActivityId
+    return ActivityTieredBundleProxy.Instance:IsActivityAvailable(activityId)
   else
     return true
   end

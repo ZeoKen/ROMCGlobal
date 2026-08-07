@@ -4622,6 +4622,7 @@ Table_Deposit = {
     Count_iOS = 1,
     Quota_iOS = 1680000,
     ReplaceName = "",
+    PreBuyID = 300042,
     DailyMail = _EmptyTable,
     ServerID = _EmptyTable,
     Replace = 300045,

@@ -308,6 +308,7 @@ function NMyselfPlayer:_ReDress()
   self.assetRole:Redress(parts, true)
   self:CheckBodyPlayShow(parts[Asset_Role.PartIndex.Body])
   self:DestroyDressParts(parts, partsNoDestroy)
+  self:TryPlayDieAfterDeadRedress()
 end
 
 function NMyselfPlayer:AllowDress()

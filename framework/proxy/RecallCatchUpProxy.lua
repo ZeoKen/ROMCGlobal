@@ -1,6 +1,8 @@
 RecallCatchUpProxy = class("RecallCatchUpProxy", pm.Proxy)
 RecallCatchUpProxy.Instance = nil
 RecallCatchUpProxy.NAME = "RecallCatchUpProxy"
+RecallCatchUpProxy.ShopType = 20326
+RecallCatchUpProxy.ShopID = 1
 
 function RecallCatchUpProxy:ctor(proxyName, data)
   self.proxyName = proxyName or RecallCatchUpProxy.NAME
@@ -27,14 +29,17 @@ function RecallCatchUpProxy:InitStaticData()
   self.staticCatchUpData = {}
   for configId, config in pairs(Table_UserRecall_CatchUp) do
     local index = config.Index
-    if index and config.Deposit then
+    if index and (config.Deposit or config.ShopID) then
       if not self.staticCatchUpData[index] then
         self.staticCatchUpData[index] = {}
       end
       local depositData = {
         configId = configId,
         config = config,
-        depositID = config.Deposit
+        depositID = config.Deposit,
+        shopID = RecallCatchUpProxy.ShopID,
+        shopType = RecallCatchUpProxy.ShopType,
+        shopItemID = config.ShopID
       }
       table.insert(self.staticCatchUpData[index], depositData)
     end
@@ -79,33 +84,6 @@ function RecallCatchUpProxy:GetStaticCatchUpData(index)
   return self.staticCatchUpData[index] or {}
 end
 
-function RecallCatchUpProxy:GetDisplayDataList()
-  local dataList = {}
-  local latestCatchUpData = self.latestCatchUpData
-  if latestCatchUpData then
-    local latestIndex = latestCatchUpData.index
-    local staticDataArray = self:GetStaticCatchUpData(latestIndex + 1)
-    if staticDataArray and 0 < #staticDataArray then
-      for _, staticData in ipairs(staticDataArray) do
-        local depositConfig = Table_Deposit and Table_Deposit[staticData.depositID]
-        if depositConfig then
-          local displayData = {
-            index = latestIndex,
-            depositID = staticData.depositID,
-            depositConfig = depositConfig,
-            catchUpData = latestCatchUpData,
-            startTime = latestCatchUpData.start_time,
-            configId = staticData.configId,
-            staticConfig = staticData.config
-          }
-          table.insert(dataList, displayData)
-        end
-      end
-    end
-  end
-  return dataList
-end
-
 function RecallCatchUpProxy:GetDisplayInfo()
   local latestCatchUpData = self.latestCatchUpData
   if latestCatchUpData then
@@ -139,4 +117,63 @@ end
 
 function RecallCatchUpProxy:RequestCatchUpData()
   ServiceRecallCCmdProxy.Instance:CallCatchUpQueryInfoRecallCmd()
+end
+
+function RecallCatchUpProxy:GetDisplayDataList()
+  local dataList = {}
+  local latestCatchUpData = self.latestCatchUpData
+  if latestCatchUpData then
+    local latestIndex = latestCatchUpData.index
+    local staticDataArray = self:GetStaticCatchUpData(latestIndex + 1)
+    if staticDataArray and 0 < #staticDataArray then
+      for _, staticData in ipairs(staticDataArray) do
+        if staticData.depositID then
+          local depositConfig = Table_Deposit and Table_Deposit[staticData.depositID]
+          if depositConfig then
+            table.insert(dataList, {
+              index = latestIndex,
+              depositID = staticData.depositID,
+              depositConfig = depositConfig,
+              catchUpData = latestCatchUpData,
+              startTime = latestCatchUpData.start_time,
+              configId = staticData.configId,
+              staticConfig = staticData.config
+            })
+          end
+        elseif staticData.shopItemID then
+          local shopType = staticData.shopType or RecallCatchUpProxy.ShopType
+          local shopID = staticData.shopID or RecallCatchUpProxy.ShopID
+          local shopItemData = ShopProxy.Instance:GetShopItemDataByTypeId(shopType, shopID, staticData.shopItemID)
+          if shopItemData and not shopItemData.menuHide then
+            table.insert(dataList, {
+              index = latestIndex,
+              shopType = shopType,
+              shopID = shopID,
+              shopItemID = staticData.shopItemID,
+              shopItemData = shopItemData,
+              catchUpData = latestCatchUpData,
+              startTime = latestCatchUpData.start_time,
+              configId = staticData.configId,
+              staticConfig = staticData.config
+            })
+          end
+        end
+      end
+    end
+  end
+  return dataList
+end
+
+function RecallCatchUpProxy:QueryShopConfig()
+  local latestCatchUpData = self.latestCatchUpData
+  if not latestCatchUpData then
+    return
+  end
+  local staticDataArray = self:GetStaticCatchUpData(latestCatchUpData.index + 1)
+  for _, staticData in ipairs(staticDataArray) do
+    if staticData.shopItemID then
+      HappyShopProxy.Instance:InitShop(nil, RecallCatchUpProxy.ShopID, RecallCatchUpProxy.ShopType)
+      return
+    end
+  end
 end

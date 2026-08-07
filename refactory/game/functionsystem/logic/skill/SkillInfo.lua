@@ -8,12 +8,14 @@ local _Table_Buffer = function(id)
   return m_Table_Buffer[id]
 end
 local SpecialCamp_Team = -1
+local SpecialCamp_All = -2
 local DamageType = CommonFun.DamageType
 local CampMap = {
   Neutral = RoleDefines_Camp.NEUTRAL,
   Enemy = RoleDefines_Camp.ENEMY,
   Friend = RoleDefines_Camp.FRIEND,
-  Team = SpecialCamp_Team
+  Team = SpecialCamp_Team,
+  All = SpecialCamp_All
 }
 local pointTargetLargeLaunchRange = 5
 local LockSkillType = GameConfig.DirtyBuff.lock_skill_type
@@ -198,6 +200,11 @@ local GetCastTime = function(creature, staticData)
   return castTime, castAllowInterrupted
 end
 SkillInfo.GetCastTime = GetCastTime
+
+function SkillInfo:CanCastWhenDead()
+  return self.logicParam ~= nil and self.logicParam.dead_call_skill == 1
+end
+
 local mapMode = 1
 
 function SkillInfo.SetMapMode(mode)
@@ -1048,7 +1055,13 @@ function SkillInfo:GetLaunchRange(creature)
 end
 
 function SkillInfo:NoAction(creature)
-  return 1 == self.logicParam.no_action
+  if 1 == self.logicParam.no_action then
+    return true
+  end
+  if creature ~= nil and creature:IsNoActionUseSkill() then
+    return true
+  end
+  return false
 end
 
 function SkillInfo:NoSelect(creature)
@@ -1247,10 +1260,16 @@ function SkillInfo:SelectLockedTarget(creature)
   return 1 == self.logicParam.select_target
 end
 
+function SkillInfo:GetVoiceBulletDamageCount(creature)
+  return CommonFun.GetVoiceBulletCount(creature.data)
+end
+
 function SkillInfo:GetDamageCount(creature, targetCreature, damageType, damage)
   local damageCount = 1
   if DamageType.ErLianJi == damageType then
     damageCount = 2
+  elseif DamageType.VoiceBullet == damageType then
+    damageCount = self:GetVoiceBulletDamageCount(creature)
   else
     local damageCountInfo = self.staticData.DamTime
     if 1 == damageCountInfo.type then
@@ -1352,7 +1371,9 @@ function SkillInfo:CheckCamps(creature, targetCreature)
     end
     for i = 1, #camps do
       local c = camps[i]
-      if targetCamp == c then
+      if SpecialCamp_All == c then
+        return true
+      elseif targetCamp == c then
         return true
       elseif SpecialCamp_Team == c then
         if Game.Myself == creature then
@@ -2187,6 +2208,10 @@ end
 
 function SkillInfo:CheckReplaceMap()
   return self.logicParam.checkReplaceMap == 1
+end
+
+function SkillInfo:IsDeadCallSkill()
+  return self.logicParam.dead_call_skill == 1
 end
 
 function SkillInfo:IsArc()

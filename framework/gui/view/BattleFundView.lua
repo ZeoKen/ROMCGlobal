@@ -221,6 +221,8 @@ function BattleFundView:UpdateLeftContent()
     self.buyCostLabel.text = costStr
     if moneyId then
       IconManager:SetItemIcon(Table_Item[moneyId].Icon, self.buyCostIcon)
+      self.buyCostIcon:MakePixelPerfect()
+      self.buyCostIcon.transform.localScale = LuaGeometry.GetTempVector3(0.4, 0.4, 0.4)
       self.buyCostIcon.gameObject:SetActive(true)
     else
       self.buyCostIcon.gameObject:SetActive(false)

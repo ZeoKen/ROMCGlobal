@@ -465,6 +465,7 @@ Table_NpcAchieve = {
     Param1 = 4,
     TargetNum = 70,
     Title = "##42635629",
+    Desc = "##42641560",
     Reward = Table_NpcAchieve_t.Reward[15]
   },
   [32] = {
@@ -475,7 +476,6 @@ Table_NpcAchieve = {
     Param1 = 4,
     TargetNum = 100,
     Title = "##42635631",
-    Desc = "##42641561",
     Reward = Table_NpcAchieve_t.Reward[16]
   },
   [33] = {
@@ -943,7 +943,6 @@ Table_NpcAchieve = {
     GroupID = 5,
     Type = 57,
     TargetNum = 10,
-    Title = "##42641603",
     Desc = "##44181934",
     Reward = Table_NpcAchieve_t.Reward[17]
   },
@@ -1175,6 +1174,7 @@ Table_NpcAchieve = {
     Type = 64,
     Param1 = 3,
     TargetNum = 6,
+    Title = "##45910425",
     Desc = "##45910426",
     Reward = Table_NpcAchieve_t.Reward[43]
   },
@@ -1212,11 +1212,11 @@ Table_NpcAchieve = {
 local cell_mt = {
   __index = {
     Condition = _EmptyTable,
-    Desc = "##42641560",
+    Desc = "##42641561",
     GroupID = 1,
     Reward = _EmptyTable,
     TargetNum = 5,
-    Title = "##45910425",
+    Title = "##42641603",
     Type = 61,
     id = 1
   }

@@ -133,7 +133,7 @@ function SceneCreatureProxy.HitTargetByPhaseData(data)
     end
     return
   end
-  if not phasedata:GetForceServerDamage() and SceneCreatureProxy.FindCreature(data.charid) ~= nil then
+  if not phasedata:GetForceServerDamage(data.charid) and SceneCreatureProxy.FindCreature(data.charid) ~= nil then
     return
   end
   SkillLogic_Base.HitTargetByPhaseData(phasedata, data.charid)
@@ -214,15 +214,18 @@ function SceneCreatureProxy:SyncServerSkill(data)
     if not phasedata:IsClientUse() and phasedata:BuffSkillEffect() then
       SkillLogic_Base.ShowBuffSkillEffect(phasedata, data.charid)
     end
+    if skillInfo:IsDeadCallSkill() then
+      local role = self:Find(data.charid)
+      if role ~= nil then
+        role:PlayDeadCallSkill(phasedata)
+      end
+    end
     return true
   else
     local role = self:Find(data.charid)
     if nil ~= role then
       if Game.Myself ~= role then
         role:Server_SyncSkill(phasedata)
-        if phasedata:GetForceServerDamage() then
-          SkillLogic_Base.HitTargetByPhaseData(phasedata, data.charid)
-        end
         return true
       else
         role.skill:SyncDirMoveFromServer(role, phasedata)

@@ -384,6 +384,11 @@ Table_ItemDisplay = {
     Type = 1,
     NoDisplay = _EmptyTable
   },
+  [12984] = {
+    id = 12984,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
   [30530] = {
     id = 30530,
     Type = 3,
@@ -1054,6 +1059,56 @@ Table_ItemDisplay = {
     Type = 1,
     NoDisplay = _EmptyTable
   },
+  [3042129] = {
+    id = 3042129,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [3042133] = {
+    id = 3042133,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
+  [3042381] = {
+    id = 3042381,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [3042382] = {
+    id = 3042382,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [3042383] = {
+    id = 3042383,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [3042384] = {
+    id = 3042384,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [3042385] = {
+    id = 3042385,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [3042386] = {
+    id = 3042386,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [3042387] = {
+    id = 3042387,
+    Type = 3,
+    NoDisplay = _EmptyTable
+  },
+  [3042396] = {
+    id = 3042396,
+    Type = 1,
+    NoDisplay = _EmptyTable
+  },
   [10000000] = {
     id = 10000000,
     Type = 3,
@@ -1156,51 +1211,6 @@ Table_ItemDisplay = {
   },
   [10000651] = {
     id = 10000651,
-    Type = 1,
-    NoDisplay = _EmptyTable
-  },
-  [3042396] = {
-    id = 3042396,
-    Type = 1,
-    NoDisplay = _EmptyTable
-  },
-  [3042381] = {
-    id = 3042381,
-    Type = 3,
-    NoDisplay = _EmptyTable
-  },
-  [3042382] = {
-    id = 3042382,
-    Type = 3,
-    NoDisplay = _EmptyTable
-  },
-  [3042383] = {
-    id = 3042383,
-    Type = 3,
-    NoDisplay = _EmptyTable
-  },
-  [3042384] = {
-    id = 3042384,
-    Type = 3,
-    NoDisplay = _EmptyTable
-  },
-  [3042385] = {
-    id = 3042385,
-    Type = 3,
-    NoDisplay = _EmptyTable
-  },
-  [3042386] = {
-    id = 3042386,
-    Type = 3,
-    NoDisplay = _EmptyTable
-  },
-  [3042387] = {
-    id = 3042387,
-    Type = 3,
-    NoDisplay = _EmptyTable
-  },
-  [12984] = {
-    id = 12984,
     Type = 1,
     NoDisplay = _EmptyTable
   }

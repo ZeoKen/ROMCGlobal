@@ -79,7 +79,7 @@ function ActivityIntegrationTaskSubView:FindObjs()
   self.taskGrid = self:FindGO("Grid", self.gameObject):GetComponent(UIGrid)
   self.taskListCtrl = UIGridListCtrl.new(self.taskGrid, self.cellClass or ActivityIntegrationTaskCell, self.cellPfbName or "ActivityIntegrationTaskCell")
   self.taskListCtrl:AddEventListener(MouseEvent.MouseClick, self.HandleClickTaskItem, self)
-  self.taskListCtrl:AddEventListener(MouseEvent.DoubleClick, self.HandleShowItemTip, self)
+  self.taskListCtrl:AddEventListener(ActivityIntegrationTaskCellEvent.ClickReward, self.HandleShowItemTip, self)
   self.taskListCtrl:AddEventListener(UICellEvent.OnCellClicked, self.HandleBuyCell, self)
   self.bgTexture = self:FindGO("BgTexture", self.gameObject):GetComponent(UITexture)
   self.shopBg = self:FindGO("BG3", self.gameObject):GetComponent(UITexture)
@@ -119,6 +119,9 @@ end
 
 function ActivityIntegrationTaskSubView:HandleShowItemTip(cellCtrl)
   local itemData = cellCtrl and cellCtrl.rewardCell and cellCtrl.rewardCell.data
+  if not itemData then
+    return
+  end
   local sdata = {
     itemdata = itemData,
     funcConfig = {}

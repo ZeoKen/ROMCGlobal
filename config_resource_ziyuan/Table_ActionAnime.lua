@@ -11417,6 +11417,172 @@ Table_ActionAnime = {
     ShowWeapon_5 = 1,
     ShowWeapon_6 = 1
   },
+  [1511] = {
+    id = 1511,
+    Name = "attack_danganjunko",
+    Type = 2,
+    RestoreType = 1
+  },
+  [1512] = {
+    id = 1512,
+    Name = "attack_wait_danganjunko",
+    Type = 2,
+    RestoreType = 2,
+    CheckMatching = 1
+  },
+  [1513] = {
+    id = 1513,
+    Name = "use_skill_danganjunko",
+    Type = 1,
+    RestoreType = 1
+  },
+  [1514] = {
+    id = 1514,
+    Name = "use_skill2_danganjunko",
+    Type = 1,
+    RestoreType = 1
+  },
+  [1515] = {
+    id = 1515,
+    Name = "use_skill3_danganjunko",
+    Type = 2,
+    RestoreType = 1
+  },
+  [1516] = {
+    id = 1516,
+    Name = "use_skill4_danganjunko",
+    Type = 1,
+    RestoreType = 1
+  },
+  [1517] = {
+    id = 1517,
+    Name = "use_skill5_danganjunko",
+    Type = 2,
+    RestoreType = 1
+  },
+  [1518] = {
+    id = 1518,
+    Name = "use_skill6_danganjunko",
+    Type = 2,
+    RestoreType = 1,
+    CheckMatching = 1
+  },
+  [1519] = {
+    id = 1519,
+    Name = "die_danganjunko",
+    Type = 2,
+    RestoreType = 1,
+    CheckMatching = 1
+  },
+  [1520] = {
+    id = 1520,
+    Name = "hit_danganjunko",
+    Type = 2,
+    RestoreType = 1,
+    CheckMatching = 1
+  },
+  [1521] = {
+    id = 1521,
+    Name = "walk_danganjunko",
+    Type = 1,
+    RestoreType = 2,
+    CheckMatching = 1
+  },
+  [1522] = {
+    id = 1522,
+    Name = "attack_danganmonokuma",
+    Type = 2,
+    RestoreType = 1,
+    CheckMatching = 1
+  },
+  [1523] = {
+    id = 1523,
+    Name = "attack_wait_danganmonokuma",
+    Type = 2,
+    RestoreType = 2,
+    CheckMatching = 1
+  },
+  [1524] = {
+    id = 1524,
+    Name = "use_skill_danganmonokuma",
+    Type = 1,
+    RestoreType = 1
+  },
+  [1525] = {
+    id = 1525,
+    Name = "use_skill2_danganmonokuma",
+    Type = 1,
+    RestoreType = 1
+  },
+  [1526] = {
+    id = 1526,
+    Name = "use_skill3_danganmonokuma",
+    Type = 2,
+    RestoreType = 1
+  },
+  [1527] = {
+    id = 1527,
+    Name = "use_skill4_danganmonokuma",
+    Type = 1,
+    RestoreType = 1
+  },
+  [1528] = {
+    id = 1528,
+    Name = "use_skill5_danganmonokuma",
+    Type = 2,
+    RestoreType = 1
+  },
+  [1529] = {
+    id = 1529,
+    Name = "use_skill6_danganmonokuma",
+    Type = 2,
+    RestoreType = 1,
+    CheckMatching = 1
+  },
+  [1530] = {
+    id = 1530,
+    Name = "die_danganmonokuma",
+    Type = 2,
+    RestoreType = 1,
+    CheckMatching = 1
+  },
+  [1531] = {
+    id = 1531,
+    Name = "hit_danganmonokuma",
+    Type = 2,
+    RestoreType = 1,
+    CheckMatching = 1,
+    ShowWeapon_1 = 1,
+    ShowWeapon_2 = 1,
+    ShowWeapon_3 = 1,
+    ShowWeapon_4 = 1,
+    ShowWeapon_5 = 1,
+    ShowWeapon_6 = 1
+  },
+  [1532] = {
+    id = 1532,
+    Name = "walk_danganmonokuma",
+    Type = 1,
+    RestoreType = 2,
+    CheckMatching = 1,
+    ShowWeapon_1 = 1,
+    ShowWeapon_2 = 1,
+    ShowWeapon_3 = 1,
+    ShowWeapon_4 = 1,
+    ShowWeapon_5 = 1,
+    ShowWeapon_6 = 1
+  },
+  [1533] = {
+    id = 1533,
+    Name = "skill_ready2_Staff",
+    Type = 1,
+    RestoreType = 2,
+    CheckMatching = 1,
+    ShowWeapon_3 = 1,
+    ShowWeapon_4 = 1,
+    ShowWeapon_5 = 1,
+    ShowWeapon_6 = 1
+  },
   [10001] = {
     id = 10001,
     Name = "playshow2",

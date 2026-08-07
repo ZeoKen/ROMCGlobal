@@ -213,6 +213,7 @@ Table_UserRecall_CatchUp = {
 Table_UserRecall_CatchUp_fields = {
   "id",
   "Index",
-  "Deposit"
+  "Deposit",
+  "ShopID"
 }
 return Table_UserRecall_CatchUp

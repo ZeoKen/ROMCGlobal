@@ -2679,7 +2679,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[145],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[3],
     SameTeam = 12,
-    EquipSuitDsc = "[哥夫内的铠甲][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [211] = {
@@ -2687,7 +2686,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[146],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[3],
     SameTeam = 12,
-    EquipSuitDsc = "[哥夫内的铠甲][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [212] = {
@@ -2695,7 +2693,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[147],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[3],
     SameTeam = 12,
-    EquipSuitDsc = "[哥夫内的铠甲][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [213] = {
@@ -2703,7 +2700,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[148],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[3],
     SameTeam = 12,
-    EquipSuitDsc = "[哥夫内的铠甲][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [214] = {
@@ -2711,7 +2707,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[149],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[3],
     SameTeam = 12,
-    EquipSuitDsc = "[哥夫内的铠甲][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [215] = {
@@ -2719,7 +2714,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[150],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[3],
     SameTeam = 12,
-    EquipSuitDsc = "[哥夫内的铠甲][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [216] = {
@@ -2727,7 +2721,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[151],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[3],
     SameTeam = 12,
-    EquipSuitDsc = "[哥夫内的铠甲][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [217] = {
@@ -2735,7 +2728,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[152],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[3],
     SameTeam = 12,
-    EquipSuitDsc = "[哥夫内的铠甲][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [220] = {
@@ -5262,6 +5254,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[5],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1031] = {
@@ -5269,6 +5262,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[6],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1032] = {
@@ -5276,6 +5270,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[7],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1033] = {
@@ -5283,6 +5278,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[8],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1034] = {
@@ -5290,6 +5286,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[9],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1035] = {
@@ -5297,6 +5294,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[10],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1036] = {
@@ -5304,6 +5302,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[11],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1037] = {
@@ -5311,6 +5310,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[12],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1040] = {
@@ -8885,7 +8885,7 @@ Table_EquipSuit = {
 local cell_mt = {
   __index = {
     EffectDesc = "【赞歌】伤害＋10%",
-    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
+    EquipSuitDsc = "[哥夫内的铠甲][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     RefineBuff = _EmptyTable,
     SameTeam = 1,
     SuitFiveAdd = _EmptyTable,

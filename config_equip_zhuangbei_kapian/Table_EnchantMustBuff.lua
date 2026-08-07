@@ -2517,6 +2517,14 @@ Table_EnchantMustBuff_t = {
         BuffID = 500144,
         Weight = 25
       }
+    },
+    {
+      {
+        AttrType = "Dex",
+        AttrType2 = "Int",
+        BuffID = 500162,
+        Weight = 5
+      }
     }
   },
   Position = {
@@ -3444,6 +3452,12 @@ Table_EnchantMustBuff = {
     ItemID = 7480,
     Position = Table_EnchantMustBuff_t.Position[11],
     Effect = Table_EnchantMustBuff_t.Effect[95]
+  },
+  [147] = {
+    id = 147,
+    ItemID = 7481,
+    Position = Table_EnchantMustBuff_t.Position[5],
+    Effect = Table_EnchantMustBuff_t.Effect[96]
   }
 }
 local cell_mt = {

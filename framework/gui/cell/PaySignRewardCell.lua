@@ -96,6 +96,10 @@ function PaySignRewardCell:Init()
       local info = NewRechargeProxy.Ins:GenerateDepositGoodsInfo(self.data.DepositID)
       local itemID = info.productConf.ItemId
       tipdata.itemdata = ItemData.new("Reward", itemID)
+    elseif self.shopItemData then
+      local itemData = ItemData.new("Reward", self.shopItemData.goodsID)
+      itemData:SetItemNum(self.shopItemData.goodsCount)
+      tipdata.itemdata = itemData
     else
       tipdata.itemdata = self.data
     end
@@ -165,10 +169,20 @@ function PaySignRewardCell:SetData(data)
       self:SetGOActive(self.empty, false)
       self.index.text = string.format(ZhString.PaySignRewardView_DayIndex, data.index)
       self.customNum.text = "x" .. data.num
-    elseif data.ShopID then
-      self.shopItemData = ShopProxy.Instance:GetConfigByTypeId(data.ShopType, data.ShopID)
+    elseif data.ShopID and data.ShopId then
+      self.shopItemData = ShopProxy.Instance:GetShopItemDataByTypeId(data.ShopType, data.ShopID, data.ShopId)
+      if not self.shopItemData then
+        xdlog("no shopItemData")
+        self.buyBtn:SetActive(false)
+        self.buyBtn_LimitLabel.gameObject:SetActive(false)
+        self:SetFinishFlag(false)
+        self.gameObject:SetActive(true)
+        return
+      end
       local _HappyShopProxy = HappyShopProxy.Instance
       local canBuyCount, limitType = _HappyShopProxy:GetCanBuyCount(self.shopItemData)
+      local maxLimit = self.shopItemData.LimitNum
+      local isSoldOut = canBuyCount == 0
       if canBuyCount == 0 then
         redlog("已售罄")
         self.buyBtn:SetActive(false)
@@ -183,7 +197,23 @@ function PaySignRewardCell:SetData(data)
         self.buyBtn_LimitLabel.gameObject:SetActive(false)
       end
       self.buyBtn_Price.text = StringUtil.NumThousandFormat(self.shopItemData.ItemCount)
+      local moneyItem = Table_Item[self.shopItemData.ItemID]
+      self.buyBtn_Icon.gameObject:SetActive(moneyItem ~= nil)
+      if moneyItem then
+        IconManager:SetItemIcon(moneyItem.Icon, self.buyBtn_Icon)
+      end
+      local itemData = ItemData.new("Reward", self.shopItemData.goodsID)
+      itemData:SetItemNum(self.shopItemData.goodsCount)
+      self:SetIcon(itemData)
+      self:UpdateNumLabel(self.shopItemData.goodsCount)
+      self.customNum.text = "x" .. self.shopItemData.goodsCount
+      self.index.text = itemData.staticData and itemData.staticData.NameZh
+      self:SetFinishFlag(isSoldOut)
+      if isSoldOut then
+        self.finishLabel.text = ZhString.NewRechargeRecommendTShopGoodsCell_SoldOut
+      end
     elseif data.DepositID then
+      self:SetFinishFlag(false)
       self.buyBtn:SetActive(true)
       self.buyBtn_Icon.gameObject:SetActive(false)
       local info = NewRechargeProxy.Ins:GenerateDepositGoodsInfo(data.DepositID)

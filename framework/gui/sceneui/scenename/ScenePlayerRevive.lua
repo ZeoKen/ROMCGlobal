@@ -162,6 +162,10 @@ function ScenePlayerRevive._ReviveBySkill(playerid, reviveItem)
 end
 
 function ScenePlayerRevive._ReviveByLeaf(playerid, reviveItem)
+  local myself = Game.Myself
+  if myself and myself:IsDead() then
+    return
+  end
   local player = FindPlayer(playerid)
   if not player then
     return

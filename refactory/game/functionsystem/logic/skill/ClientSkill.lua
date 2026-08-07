@@ -102,8 +102,11 @@ function ClientSkill:Interrupt(creature)
 end
 
 function ClientSkill:InterruptCast(creature)
-  if self.running and self.phaseData:GetSkillPhase() == SkillPhase.Cast then
-    self:End(creature)
+  if self.running then
+    local skillPhase = self.phaseData:GetSkillPhase()
+    if skillPhase == SkillPhase.Cast or skillPhase == SkillPhase.None then
+      self:End(creature)
+    end
   end
 end
 

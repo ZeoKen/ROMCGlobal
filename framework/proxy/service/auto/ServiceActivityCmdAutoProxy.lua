@@ -252,6 +252,15 @@ function ServiceActivityCmdAutoProxy:onRegister()
   self:Listen(60, 86, function(data)
     self:RecvPaySignRewardActCmd(data)
   end)
+  self:Listen(60, 87, function(data)
+    self:RecvTieredBundleSyncActCmd(data)
+  end)
+  self:Listen(60, 88, function(data)
+    self:RecvTieredBundleDayRewardActCmd(data)
+  end)
+  self:Listen(60, 89, function(data)
+    self:RecvTieredBundleRewardActCmd(data)
+  end)
 end
 
 function ServiceActivityCmdAutoProxy:CallStartActCmd(items)
@@ -3597,6 +3606,181 @@ function ServiceActivityCmdAutoProxy:CallPaySignRewardActCmd(act_id, batch_id)
   end
 end
 
+function ServiceActivityCmdAutoProxy:CallTieredBundleSyncActCmd(info)
+  if not NetConfig.PBC then
+    local msg = ActivityCmd_pb.TieredBundleSyncActCmd()
+    if info ~= nil and info.act_id ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.act_id = info.act_id
+    end
+    if info ~= nil and info.batch_id ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.batch_id = info.batch_id
+    end
+    if info ~= nil and info.start_time ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.start_time = info.start_time
+    end
+    if info ~= nil and info.end_time ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.end_time = info.end_time
+    end
+    if info ~= nil and info.day_reward_time ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.day_reward_time = info.day_reward_time
+    end
+    if info ~= nil and info.rewarded_ids ~= nil then
+      if msg.info == nil then
+        msg.info = {}
+      end
+      if msg.info.rewarded_ids == nil then
+        msg.info.rewarded_ids = {}
+      end
+      for i = 1, #info.rewarded_ids do
+        table.insert(msg.info.rewarded_ids, info.rewarded_ids[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.TieredBundleSyncActCmd.id
+    local msgParam = {}
+    if info ~= nil and info.act_id ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.act_id = info.act_id
+    end
+    if info ~= nil and info.batch_id ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.batch_id = info.batch_id
+    end
+    if info ~= nil and info.start_time ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.start_time = info.start_time
+    end
+    if info ~= nil and info.end_time ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.end_time = info.end_time
+    end
+    if info ~= nil and info.day_reward_time ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.day_reward_time = info.day_reward_time
+    end
+    if info ~= nil and info.rewarded_ids ~= nil then
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      if msgParam.info.rewarded_ids == nil then
+        msgParam.info.rewarded_ids = {}
+      end
+      for i = 1, #info.rewarded_ids do
+        table.insert(msgParam.info.rewarded_ids, info.rewarded_ids[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceActivityCmdAutoProxy:CallTieredBundleDayRewardActCmd(act_id, batch_id)
+  if not NetConfig.PBC then
+    local msg = ActivityCmd_pb.TieredBundleDayRewardActCmd()
+    if act_id ~= nil then
+      msg.act_id = act_id
+    end
+    if batch_id ~= nil then
+      msg.batch_id = batch_id
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.TieredBundleDayRewardActCmd.id
+    local msgParam = {}
+    if act_id ~= nil then
+      msgParam.act_id = act_id
+    end
+    if batch_id ~= nil then
+      msgParam.batch_id = batch_id
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceActivityCmdAutoProxy:CallTieredBundleRewardActCmd(act_id, batch_id, id)
+  if not NetConfig.PBC then
+    local msg = ActivityCmd_pb.TieredBundleRewardActCmd()
+    if act_id ~= nil then
+      msg.act_id = act_id
+    end
+    if batch_id ~= nil then
+      msg.batch_id = batch_id
+    end
+    if id ~= nil then
+      msg.id = id
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.TieredBundleRewardActCmd.id
+    local msgParam = {}
+    if act_id ~= nil then
+      msgParam.act_id = act_id
+    end
+    if batch_id ~= nil then
+      msgParam.batch_id = batch_id
+    end
+    if id ~= nil then
+      msgParam.id = id
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceActivityCmdAutoProxy:RecvStartActCmd(data)
   self:Notify(ServiceEvent.ActivityCmdStartActCmd, data)
 end
@@ -3913,6 +4097,18 @@ function ServiceActivityCmdAutoProxy:RecvPaySignRewardActCmd(data)
   self:Notify(ServiceEvent.ActivityCmdPaySignRewardActCmd, data)
 end
 
+function ServiceActivityCmdAutoProxy:RecvTieredBundleSyncActCmd(data)
+  self:Notify(ServiceEvent.ActivityCmdTieredBundleSyncActCmd, data)
+end
+
+function ServiceActivityCmdAutoProxy:RecvTieredBundleDayRewardActCmd(data)
+  self:Notify(ServiceEvent.ActivityCmdTieredBundleDayRewardActCmd, data)
+end
+
+function ServiceActivityCmdAutoProxy:RecvTieredBundleRewardActCmd(data)
+  self:Notify(ServiceEvent.ActivityCmdTieredBundleRewardActCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.ActivityCmdStartActCmd = "ServiceEvent_ActivityCmdStartActCmd"
 ServiceEvent.ActivityCmdStopActCmd = "ServiceEvent_ActivityCmdStopActCmd"
@@ -3993,3 +4189,6 @@ ServiceEvent.ActivityCmdLeaveActStaticMapCmd = "ServiceEvent_ActivityCmdLeaveAct
 ServiceEvent.ActivityCmdActCardLevelUpInfoSyncCmd = "ServiceEvent_ActivityCmdActCardLevelUpInfoSyncCmd"
 ServiceEvent.ActivityCmdPaySignSyncActCmd = "ServiceEvent_ActivityCmdPaySignSyncActCmd"
 ServiceEvent.ActivityCmdPaySignRewardActCmd = "ServiceEvent_ActivityCmdPaySignRewardActCmd"
+ServiceEvent.ActivityCmdTieredBundleSyncActCmd = "ServiceEvent_ActivityCmdTieredBundleSyncActCmd"
+ServiceEvent.ActivityCmdTieredBundleDayRewardActCmd = "ServiceEvent_ActivityCmdTieredBundleDayRewardActCmd"
+ServiceEvent.ActivityCmdTieredBundleRewardActCmd = "ServiceEvent_ActivityCmdTieredBundleRewardActCmd"

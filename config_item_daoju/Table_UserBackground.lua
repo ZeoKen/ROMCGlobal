@@ -765,6 +765,36 @@ Table_UserBackground = {
     Condition = _EmptyTable,
     Background = "Bg_zuduibeijing_28"
   },
+  [82] = {
+    id = 82,
+    ItemID = 659,
+    Name = "##44721652",
+    Icon = "Avatarbox_S29_Kuang_Lv1",
+    Effect = "",
+    GroupEffect = "",
+    Condition = _EmptyTable,
+    Background = "Bg_zuduibeijing_28"
+  },
+  [83] = {
+    id = 83,
+    ItemID = 660,
+    Name = "##44721653",
+    Icon = "Avatarbox_S29_Kuang_Lv2",
+    Effect = "",
+    GroupEffect = "",
+    Condition = _EmptyTable,
+    Background = "Bg_zuduibeijing_28"
+  },
+  [84] = {
+    id = 84,
+    ItemID = 661,
+    Name = "##44721654",
+    Icon = "Avatarbox_S29_Kuang_Lv3",
+    Effect = "",
+    GroupEffect = "",
+    Condition = _EmptyTable,
+    Background = "Bg_zuduibeijing_28"
+  },
   [1001] = {
     id = 1001,
     ItemID = 1501,

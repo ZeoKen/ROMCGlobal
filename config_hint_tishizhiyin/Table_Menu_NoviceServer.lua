@@ -34994,6 +34994,14 @@ Table_Menu = {
     Tip = "光影之都 已开放",
     Acc = 1,
     Enterhide = 1
+  },
+  [10000012] = {
+    id = 10000012,
+    type = 6,
+    text = "弹出APP评价引导框",
+    Condition = Table_Menu_t.Condition[202],
+    Acc = 1,
+    Icon = Table_Menu_t.Icon[179]
   }
 }
 local cell_mt = {

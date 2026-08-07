@@ -318,7 +318,6 @@ Table_NpcAchieve = {
     Param1 = 54555,
     TargetNum = 25,
     Title = "摧毁失控炮台Ⅰ",
-    Desc = "累计摧毁失控炮台%s/25次",
     Reward = Table_NpcAchieve_t.Reward[9]
   },
   [17] = {
@@ -665,6 +664,7 @@ Table_NpcAchieve = {
     Condition = Table_NpcAchieve_t.Condition[1],
     Param1 = 852260,
     TargetNum = 20,
+    Title = "摧毁法器Ⅲ",
     Desc = "累计摧毁邪龙法器%s/20次",
     Reward = Table_NpcAchieve_t.Reward[25]
   },
@@ -1176,6 +1176,7 @@ Table_NpcAchieve = {
     Param1 = 3,
     TargetNum = 6,
     Title = "冰封建构II",
+    Desc = "制作冰封之城区域家具%s/6件",
     Reward = Table_NpcAchieve_t.Reward[43]
   },
   [104] = {
@@ -1184,7 +1185,6 @@ Table_NpcAchieve = {
     Type = 64,
     Param1 = 3,
     TargetNum = 9,
-    Title = "冰封建构III",
     Desc = "制作冰封之城区域家具%s/9件",
     Reward = Table_NpcAchieve_t.Reward[44]
   },
@@ -1212,11 +1212,11 @@ Table_NpcAchieve = {
 local cell_mt = {
   __index = {
     Condition = _EmptyTable,
-    Desc = "制作冰封之城区域家具%s/6件",
+    Desc = "累计摧毁失控炮台%s/25次",
     GroupID = 1,
     Reward = _EmptyTable,
     TargetNum = 5,
-    Title = "摧毁法器Ⅲ",
+    Title = "冰封建构III",
     Type = 61,
     id = 1
   }

@@ -16,6 +16,7 @@ autoImport("ActivitySelfChooseCardView")
 autoImport("ActivityExchangeView")
 autoImport("ActivityDungeonMvpCardView")
 autoImport("ActivityPaySignView")
+autoImport("ActivityIntegrationStepRechargeSubView")
 local picIns = PictureManager.Instance
 local DefaultDecorateTexName = "activityintegration_bg_bottom_01"
 
@@ -71,7 +72,8 @@ end
 local redtips = {
   [8] = SceneTip_pb.EREDSYS_NEW_YEAR_MEMORY,
   [11] = ActivityExchangeProxy.RedTipId,
-  [13] = SceneTip_pb.EREDSYS_ACT_PAY_SIGN
+  [13] = SceneTip_pb.EREDSYS_ACT_PAY_SIGN,
+  [15] = SceneTip_pb.EREDSYS_TIERED_BUNDLE
 }
 
 function ActivityIntegrationView:InitShow()
@@ -306,6 +308,26 @@ function ActivityIntegrationView:InitShow()
               table.insert(tabList, data)
             end
           end
+        elseif type == 15 then
+          local activityId = staticData.Params.ActivityId
+          local isValid = ActivityTieredBundleProxy.Instance:IsActivityAvailable(activityId)
+          if isValid or self:CheckIdValid(single) then
+            local startTime, endTime = ActivityTieredBundleProxy.Instance:GetGlobalActTime(activityId)
+            local startTimeStr = startTime and StringUtil.FormatTimeStamp2NormalTimeStr(startTime)
+            local endTimeStr = endTime and StringUtil.FormatTimeStamp2NormalTimeStr(endTime)
+            local data = {
+              startTime = startTimeStr,
+              endTime = endTimeStr,
+              id = single,
+              staticData = staticData,
+              Redtip = SceneTip_pb.EREDSYS_TIERED_BUNDLE,
+              subRedtip = activityId,
+              extraRedtips = {
+                SceneTip_pb.EREDSYS_TIERED_BUNDLE_DAY_REWARD
+              }
+            }
+            table.insert(tabList, data)
+          end
         else
           local activityId = staticData.Params.ActivityId
           local serverValid = true
@@ -360,6 +382,12 @@ function ActivityIntegrationView:InitShow()
   for i = 1, #cells do
     if cells[i].data.Redtip then
       self:RegisterRedTipCheck(cells[i].data.Redtip, cells[i].gameObject, 42, {-90, -30}, nil, cells[i].data.subRedtip)
+    end
+    local extraRedtips = cells[i].data.extraRedtips
+    if extraRedtips then
+      for j = 1, #extraRedtips do
+        self:RegisterRedTipCheck(extraRedtips[j], cells[i].gameObject, 42, {-90, -30}, nil, cells[i].data.subRedtip)
+      end
     end
   end
   local targetCell
@@ -514,6 +542,13 @@ function ActivityIntegrationView:LoadSubView(tabList)
     end
     return self.actPaySignView
   end
+  local loadStepRechargePage = function(viewdata)
+    if not self.stepRechargeView then
+      self.stepRechargeView = self:AddSubView("ActivityIntegrationStepRechargeSubView", ActivityIntegrationStepRechargeSubView, nil, viewdata)
+      self.stepRechargeView.parentView = self
+    end
+    return self.stepRechargeView
+  end
   self.subViews = {}
   self.subViews[1] = loadBPPage
   self.subViews[2] = loadSignInPage
@@ -529,6 +564,7 @@ function ActivityIntegrationView:LoadSubView(tabList)
   self.subViews[12] = loadDungeonMvpCardPage
   self.subViews[13] = loadActPaySignPage
   self.subViews[14] = loadLotteryRaidShopPage
+  self.subViews[15] = loadStepRechargePage
   for i = 1, #tabList do
     local staticData = tabList[i].staticData
     if staticData then

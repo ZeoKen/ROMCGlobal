@@ -43,43 +43,25 @@ function RecallCatchUpShopCell:CheckValidTime()
 end
 
 function RecallCatchUpShopCell:SetData(data)
-  if data then
-    self.data = data
-    self.depositData = NewRechargeDepositGoodsData.new()
-    self.depositData:ResetData(data.depositID)
-    self.itemid = self.depositData.productConf.ItemId
-    local item = Table_Item[self.itemid]
-    if item then
-      IconManager:SetItemIcon(item.Icon, self.itemicon)
-      self.name.text = item.NameZh
-      self.itemicon:MakePixelPerfect()
-    end
-    local extraDes = self.depositData.productConf.ExtraDes
-    if extraDes and extraDes ~= "" then
-      self.desMark:SetActive(true)
-      self.desc.text = extraDes
-    else
-      self.desMark:SetActive(false)
-    end
-    self.count.text = "x " .. tostring(self.depositData.productConf.Count)
-    local purchasedTimes = self.depositData.purchaseTimes or 0
-    local purchaseLimitTimes = self.depositData.purchaseLimit_N or 0
-    self.leftCount = purchaseLimitTimes - purchasedTimes
-    self.limit.text = string.format(ZhString.NoviceShop_BuyLimit, purchasedTimes, purchaseLimitTimes)
-    self.mask:SetActive(purchaseLimitTimes > self.leftCount)
-    self.soldOutLabel.gameObject:SetActive(0 >= self.leftCount)
-    self.pricePos:SetActive(0 < self.leftCount)
-    self.priceIcon.gameObject:SetActive(false)
-    self.priceSprite.spriteName = self.depositSprite
-    self.priceLabel.text = self.depositData.productConf.priceStr or self.depositData.productConf.CurrencyType .. FunctionNewRecharge.FormatMilComma(self.depositData.productConf.Rmb)
-    local lLen = self.priceIcon.gameObject.activeSelf and self.priceIcon.width or 0
-    local rLen = self.priceLabel.width
-    self.pricePos.transform.localPosition = LuaGeometry.GetTempVector3(lLen / 2 - rLen / 2, 0, 0)
+  self.data = data
+  self.depositData = nil
+  self.shopItemData = data and data.shopItemData
+  if not data then
+    return
+  end
+  if self.shopItemData then
+    self:SetShopData(data)
+  else
+    self:SetDepositData(data)
   end
 end
 
 function RecallCatchUpShopCell:Purchase()
-  self:Purchase_Deposit()
+  if self.shopItemData then
+    self:Purchase_Shop()
+  else
+    self:Purchase_Deposit()
+  end
 end
 
 function RecallCatchUpShopCell:Purchase_Deposit()
@@ -191,4 +173,80 @@ end
 
 function RecallCatchUpShopCell:GetIndex()
   return self.data and self.data.index or nil
+end
+
+function RecallCatchUpShopCell:SetDepositData(data)
+  self.depositData = NewRechargeDepositGoodsData.new()
+  self.depositData:ResetData(data.depositID)
+  self.itemid = self.depositData.productConf.ItemId
+  local item = Table_Item[self.itemid]
+  if item then
+    IconManager:SetItemIcon(item.Icon, self.itemicon)
+    self.name.text = item.NameZh
+    self.itemicon:MakePixelPerfect()
+  end
+  local extraDes = self.depositData.productConf.ExtraDes
+  if extraDes and extraDes ~= "" then
+    self.desMark:SetActive(true)
+    self.desc.text = extraDes
+  else
+    self.desMark:SetActive(false)
+  end
+  self.count.text = "x " .. tostring(self.depositData.productConf.Count)
+  local purchasedTimes = self.depositData.purchaseTimes or 0
+  local purchaseLimitTimes = self.depositData.purchaseLimit_N or 0
+  self.leftCount = purchaseLimitTimes - purchasedTimes
+  self.limit.gameObject:SetActive(true)
+  self.limit.text = string.format(ZhString.NoviceShop_BuyLimit, purchasedTimes, purchaseLimitTimes)
+  self.mask:SetActive(purchaseLimitTimes > self.leftCount)
+  self.soldOutLabel.gameObject:SetActive(0 >= self.leftCount)
+  self.pricePos:SetActive(0 < self.leftCount)
+  self.priceIcon.gameObject:SetActive(false)
+  self.priceSprite.spriteName = self.depositSprite
+  self.priceLabel.text = self.depositData.productConf.priceStr or self.depositData.productConf.CurrencyType .. FunctionNewRecharge.FormatMilComma(self.depositData.productConf.Rmb)
+  local lLen = self.priceIcon.gameObject.activeSelf and self.priceIcon.width or 0
+  local rLen = self.priceLabel.width
+  self.pricePos.transform.localPosition = LuaGeometry.GetTempVector3(lLen / 2 - rLen / 2, 0, 0)
+end
+
+function RecallCatchUpShopCell:SetShopData(data)
+  local shopItemData = self.shopItemData
+  self.itemid = shopItemData.goodsID
+  local item = Table_Item[self.itemid]
+  if item then
+    IconManager:SetItemIcon(item.Icon, self.itemicon)
+    self.name.text = item.NameZh
+    self.itemicon:MakePixelPerfect()
+  end
+  self.desMark:SetActive(false)
+  self.count.text = "x " .. tostring(shopItemData.goodsCount or 1)
+  local canBuyCount = HappyShopProxy.Instance:GetCanBuyCount(shopItemData)
+  self.leftCount = canBuyCount or 1
+  local isSaleOut = canBuyCount and canBuyCount <= 0 or false
+  self.limit.gameObject:SetActive(canBuyCount ~= nil)
+  if canBuyCount ~= nil then
+    self.limit.text = string.format(ZhString.NewRecharge_BuyLimit_Acc_Ever, (shopItemData.LimitNum or 0) - canBuyCount, shopItemData.LimitNum or 0)
+  end
+  self.mask:SetActive(isSaleOut)
+  self.soldOutLabel.gameObject:SetActive(isSaleOut)
+  self.pricePos:SetActive(not isSaleOut)
+  local moneyItem = Table_Item[shopItemData.ItemID]
+  self.priceIcon.gameObject:SetActive(moneyItem ~= nil)
+  if moneyItem then
+    IconManager:SetItemIcon(moneyItem.Icon, self.priceIcon)
+    self.priceIcon:ResetAndUpdateAnchors()
+  end
+  self.priceLabel.text = StringUtil.NumThousandFormat(shopItemData.ItemCount or 0)
+  local lLen = self.priceIcon.gameObject.activeSelf and self.priceIcon.width or 0
+  local rLen = self.priceLabel.width
+  self.pricePos.transform.localPosition = LuaGeometry.GetTempVector3(lLen / 2 - rLen / 2, 0, 0)
+end
+
+function RecallCatchUpShopCell:Purchase_Shop()
+  if not self.data or not self.shopItemData then
+    return
+  end
+  HappyShopProxy.Instance:InitShop(nil, self.data.shopID or RecallCatchUpProxy.ShopID, self.data.shopType or RecallCatchUpProxy.ShopType)
+  HappyShopProxy.Instance:SetSelectId(self.shopItemData.id)
+  HappyShopProxy.Instance:BuyItemByShopItemData(self.shopItemData, 1)
 end

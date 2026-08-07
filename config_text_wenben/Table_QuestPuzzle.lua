@@ -889,6 +889,7 @@ Table_QuestPuzzle = {
   [89] = {
     id = 89,
     version = "5.0",
+    PicId = "taskmanual_bic_6_09",
     indexss = 9,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[82]
   },
@@ -937,7 +938,6 @@ Table_QuestPuzzle = {
   [96] = {
     id = 96,
     version = "5.0",
-    PicId = "taskmanual_bic_6_16",
     indexss = 16,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[89]
   },
@@ -1221,6 +1221,7 @@ Table_QuestPuzzle = {
   [137] = {
     id = 137,
     version = "6.0",
+    PicId = "taskmanual_bic_6_09",
     indexss = 9,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[121]
   },
@@ -1269,7 +1270,6 @@ Table_QuestPuzzle = {
   [144] = {
     id = 144,
     version = "6.0",
-    PicId = "taskmanual_bic_6_16",
     indexss = 16,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[128]
   },
@@ -1331,6 +1331,7 @@ Table_QuestPuzzle = {
   [153] = {
     id = 153,
     version = "0.01",
+    PicId = "taskmanual_bic_6_09",
     indexss = 9,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[137]
   },
@@ -1379,117 +1380,100 @@ Table_QuestPuzzle = {
   [160] = {
     id = 160,
     version = "0.01",
-    PicId = "taskmanual_bic_6_16",
     indexss = 16,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[144]
   },
   [161] = {
     id = 161,
-    version = "0.02",
     PicId = "taskmanual_bic_6_01",
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[145]
   },
   [162] = {
     id = 162,
-    version = "0.02",
     PicId = "taskmanual_bic_6_02",
     indexss = 2,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[146]
   },
   [163] = {
     id = 163,
-    version = "0.02",
     PicId = "taskmanual_bic_6_03",
     indexss = 3,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[147]
   },
   [164] = {
     id = 164,
-    version = "0.02",
     PicId = "taskmanual_bic_6_04",
     indexss = 4,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[148]
   },
   [165] = {
     id = 165,
-    version = "0.02",
     PicId = "taskmanual_bic_6_05",
     indexss = 5,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[149]
   },
   [166] = {
     id = 166,
-    version = "0.02",
     PicId = "taskmanual_bic_6_06",
     indexss = 6,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[150]
   },
   [167] = {
     id = 167,
-    version = "0.02",
     PicId = "taskmanual_bic_6_07",
     indexss = 7,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[151]
   },
   [168] = {
     id = 168,
-    version = "0.02",
     PicId = "taskmanual_bic_6_08",
     indexss = 8,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[152]
   },
   [169] = {
     id = 169,
-    version = "0.02",
+    PicId = "taskmanual_bic_6_09",
     indexss = 9,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[153]
   },
   [170] = {
     id = 170,
-    version = "0.02",
     PicId = "taskmanual_bic_6_10",
     indexss = 10,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[154]
   },
   [171] = {
     id = 171,
-    version = "0.02",
     PicId = "taskmanual_bic_6_11",
     indexss = 11,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[155]
   },
   [172] = {
     id = 172,
-    version = "0.02",
     PicId = "taskmanual_bic_6_12",
     indexss = 12,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[156]
   },
   [173] = {
     id = 173,
-    version = "0.02",
     PicId = "taskmanual_bic_6_13",
     indexss = 13,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[157]
   },
   [174] = {
     id = 174,
-    version = "0.02",
     PicId = "taskmanual_bic_6_14",
     indexss = 14,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[158]
   },
   [175] = {
     id = 175,
-    version = "0.02",
     PicId = "taskmanual_bic_6_15",
     indexss = 15,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[159]
   },
   [176] = {
     id = 176,
-    version = "0.02",
-    PicId = "taskmanual_bic_6_16",
     indexss = 16,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[160]
   },
@@ -1551,6 +1535,7 @@ Table_QuestPuzzle = {
   [185] = {
     id = 185,
     version = "7.0",
+    PicId = "taskmanual_bic_6_09",
     indexss = 9,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[169]
   },
@@ -1599,7 +1584,6 @@ Table_QuestPuzzle = {
   [192] = {
     id = 192,
     version = "7.0",
-    PicId = "taskmanual_bic_6_16",
     indexss = 16,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[176]
   },
@@ -1661,6 +1645,7 @@ Table_QuestPuzzle = {
   [201] = {
     id = 201,
     version = "8.0",
+    PicId = "taskmanual_bic_6_09",
     indexss = 9,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[185]
   },
@@ -1709,7 +1694,6 @@ Table_QuestPuzzle = {
   [208] = {
     id = 208,
     version = "8.0",
-    PicId = "taskmanual_bic_6_16",
     indexss = 16,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[192]
   },
@@ -1771,6 +1755,7 @@ Table_QuestPuzzle = {
   [217] = {
     id = 217,
     version = "8.5",
+    PicId = "taskmanual_bic_6_09",
     indexss = 9,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[195]
   },
@@ -1819,7 +1804,6 @@ Table_QuestPuzzle = {
   [224] = {
     id = 224,
     version = "8.5",
-    PicId = "taskmanual_bic_6_16",
     indexss = 16,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[196]
   },
@@ -1881,6 +1865,7 @@ Table_QuestPuzzle = {
   [233] = {
     id = 233,
     version = "9.0",
+    PicId = "taskmanual_bic_6_09",
     indexss = 9,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[205]
   },
@@ -1929,7 +1914,6 @@ Table_QuestPuzzle = {
   [240] = {
     id = 240,
     version = "9.0",
-    PicId = "taskmanual_bic_6_16",
     indexss = 16,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[212]
   },
@@ -1991,6 +1975,7 @@ Table_QuestPuzzle = {
   [249] = {
     id = 249,
     version = "9.5",
+    PicId = "taskmanual_bic_6_09",
     indexss = 9,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[220]
   },
@@ -2039,7 +2024,6 @@ Table_QuestPuzzle = {
   [256] = {
     id = 256,
     version = "9.5",
-    PicId = "taskmanual_bic_6_16",
     indexss = 16,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[225]
   },
@@ -2101,6 +2085,7 @@ Table_QuestPuzzle = {
   [265] = {
     id = 265,
     version = "10.0",
+    PicId = "taskmanual_bic_6_09",
     indexss = 9,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[234]
   },
@@ -2149,101 +2134,116 @@ Table_QuestPuzzle = {
   [272] = {
     id = 272,
     version = "10.0",
-    PicId = "taskmanual_bic_6_16",
     indexss = 16,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[241]
   },
   [273] = {
     id = 273,
+    version = "7.1",
     PicId = "taskmanual_bic_6_01",
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[242]
   },
   [274] = {
     id = 274,
+    version = "7.1",
     PicId = "taskmanual_bic_6_02",
     indexss = 2,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[243]
   },
   [275] = {
     id = 275,
+    version = "7.1",
     PicId = "taskmanual_bic_6_03",
     indexss = 3,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[244]
   },
   [276] = {
     id = 276,
+    version = "7.1",
     PicId = "taskmanual_bic_6_04",
     indexss = 4,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[245]
   },
   [277] = {
     id = 277,
+    version = "7.1",
     PicId = "taskmanual_bic_6_05",
     indexss = 5,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[246]
   },
   [278] = {
     id = 278,
+    version = "7.1",
     PicId = "taskmanual_bic_6_06",
     indexss = 6,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[247]
   },
   [279] = {
     id = 279,
+    version = "7.1",
     PicId = "taskmanual_bic_6_07",
     indexss = 7,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[248]
   },
   [280] = {
     id = 280,
+    version = "7.1",
     PicId = "taskmanual_bic_6_08",
     indexss = 8,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[249]
   },
   [281] = {
     id = 281,
+    version = "7.1",
+    PicId = "taskmanual_bic_6_09",
     indexss = 9,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[250]
   },
   [282] = {
     id = 282,
+    version = "7.1",
     PicId = "taskmanual_bic_6_10",
     indexss = 10,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[251]
   },
   [283] = {
     id = 283,
+    version = "7.1",
     PicId = "taskmanual_bic_6_11",
     indexss = 11,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[252]
   },
   [284] = {
     id = 284,
+    version = "7.1",
     PicId = "taskmanual_bic_6_12",
     indexss = 12,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[253]
   },
   [285] = {
     id = 285,
+    version = "7.1",
     PicId = "taskmanual_bic_6_13",
     indexss = 13,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[253]
   },
   [286] = {
     id = 286,
+    version = "7.1",
     PicId = "taskmanual_bic_6_14",
     indexss = 14,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[253]
   },
   [287] = {
     id = 287,
+    version = "7.1",
     PicId = "taskmanual_bic_6_15",
     indexss = 15,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[253]
   },
   [288] = {
     id = 288,
-    PicId = "taskmanual_bic_6_16",
+    version = "7.1",
     indexss = 16,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[253]
   },
@@ -2305,6 +2305,7 @@ Table_QuestPuzzle = {
   [297] = {
     id = 297,
     version = "11.0",
+    PicId = "taskmanual_bic_6_09",
     indexss = 9,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[259]
   },
@@ -2353,7 +2354,6 @@ Table_QuestPuzzle = {
   [304] = {
     id = 304,
     version = "11.0",
-    PicId = "taskmanual_bic_6_16",
     indexss = 16,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[263]
   },
@@ -2415,6 +2415,7 @@ Table_QuestPuzzle = {
   [313] = {
     id = 313,
     version = "12.0",
+    PicId = "taskmanual_bic_6_09",
     indexss = 9,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[270]
   },
@@ -2463,20 +2464,19 @@ Table_QuestPuzzle = {
   [320] = {
     id = 320,
     version = "12.0",
-    PicId = "taskmanual_bic_6_16",
     indexss = 16,
     QuestIDs = Table_QuestPuzzle_t.QuestIDs[274]
   }
 }
 local cell_mt = {
   __index = {
-    PicId = "taskmanual_bic_6_09",
+    PicId = "taskmanual_bic_6_16",
     QuestIDs = _EmptyTable,
     id = 1,
     indexss = 1,
     reward = _EmptyTable,
     type = "active",
-    version = "7.1"
+    version = "0.02"
   }
 }
 for _, d in pairs(Table_QuestPuzzle) do

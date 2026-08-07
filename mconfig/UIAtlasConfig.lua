@@ -286,6 +286,20 @@ UIAtlasConfig.IconAtlas = {
     [4] = "GUI/atlas/preferb/Skill_yxzy",
     [5] = "GUI/atlas/preferb/Skill_yxzy3"
   },
+  SkillProfess_84 = {
+    [1] = "GUI/atlas/preferb/Skill_1",
+    [2] = "GUI/atlas/preferb/Skill_2",
+    [3] = "GUI/atlas/preferb/Skill_buff",
+    [4] = "GUI/atlas/preferb/Skill_yxzy",
+    [5] = "GUI/atlas/preferb/Skill_yxzy4"
+  },
+  SkillProfess_85 = {
+    [1] = "GUI/atlas/preferb/Skill_1",
+    [2] = "GUI/atlas/preferb/Skill_2",
+    [3] = "GUI/atlas/preferb/Skill_buff",
+    [4] = "GUI/atlas/preferb/Skill_yxzy",
+    [5] = "GUI/atlas/preferb/Skill_yxzy4"
+  },
   Action = {
     [1] = "GUI/atlas/preferb/action"
   },

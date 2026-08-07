@@ -2,10 +2,11 @@ Trap = reusableClass("Trap")
 Trap.PoolSize = 20
 local CullingIDUtility = CullingIDUtility
 
-function Trap:Init(guid, skillID, masterID, pos, dir)
+function Trap:Init(guid, skillID, masterID, pos, dir, entertime)
   self.id = guid
   self.skillID = skillID
   self.masterID = masterID
+  self.entertime = entertime
   self.pos = ProtolUtility.S2C_Vector3(pos)
   self.rotation = ProtolUtility.S2C_Number(dir)
   local skillinfo = Game.LogicManager_Skill:GetSkillInfo(skillID)
@@ -29,6 +30,7 @@ function Trap:Init(guid, skillID, masterID, pos, dir)
   self:_SpawnCullingID()
   local path, lodLevel, priority, effectType = skillinfo:GetTrapEffectPath(masterCreature)
   self:_CreateEffect(path, self.pos, lodLevel, priority, effectType, nil, skillinfo:IsOneShotTrap())
+  self:_InitRangeGrow(skillinfo)
 end
 
 local _Distance = LuaVector3.Distance
@@ -68,6 +70,66 @@ function Trap:ClearMoveTick()
   if self.moveTick then
     TimeTickManager.Me():ClearTick(self, 1)
     self.moveTick = nil
+  end
+end
+
+function Trap:_InitRangeGrow(skillinfo)
+  self.rangeGrow = nil
+  self:ClearRangeTick()
+  local lp = skillinfo and skillinfo.logicParam
+  if not (lp and lp.range_inc_per_tick) or not lp.max_range then
+    return
+  end
+  self.rangeGrow = {
+    initRange = lp.range or 0,
+    inc = lp.range_inc_per_tick,
+    maxRange = lp.max_range,
+    interval = lp.interval and 0 < lp.interval and lp.interval or 1
+  }
+  if not self:_RefreshGrowRange() then
+    self.rangeTick = TimeTickManager.Me():CreateTick(0, self.rangeGrow.interval * 1000, Trap.RangeGrowTick, self, 2)
+  end
+end
+
+function Trap:_RefreshGrowRange()
+  local g = self.rangeGrow
+  if not g then
+    return true
+  end
+  local elapsedSec = 0
+  if self.entertime and 0 < self.entertime then
+    elapsedSec = ServerTime.CurServerTime() / 1000 - self.entertime
+    if elapsedSec < 0 then
+      elapsedSec = 0
+    end
+  end
+  local tickCount = math.floor(elapsedSec / g.interval)
+  local curRange = math.min(g.initRange + tickCount * g.inc, g.maxRange)
+  self:_ApplyRangeScale(curRange)
+  return curRange >= g.maxRange
+end
+
+function Trap:_ApplyRangeScale(range)
+  if not self.effect or not self.rangeGrow then
+    return
+  end
+  local base = self.rangeGrow.initRange
+  if base and 0 < base then
+    local s = range / base
+    self.effect:ResetLocalScaleXYZ(s, 1, s)
+  end
+end
+
+function Trap:RangeGrowTick(time, deltatime)
+  if self:_RefreshGrowRange() then
+    self:ClearRangeTick()
+  end
+end
+
+function Trap:ClearRangeTick()
+  if self.rangeTick then
+    TimeTickManager.Me():ClearTick(self, 2)
+    self.rangeTick = nil
   end
 end
 
@@ -153,6 +215,8 @@ end
 
 function Trap:DoDeconstruct(asArray)
   self:ClearMoveTick()
+  self:ClearRangeTick()
+  self.rangeGrow = nil
   self:_ClearCullingID()
   if self.pos then
     self.pos:Destroy()

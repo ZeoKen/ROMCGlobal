@@ -4944,6 +4944,8 @@ x%s
   ActivityIntegration_UnlockTip = "%m.%d开启",
   ActivityIntegration_CloseDayTip = "已领取完所有活动奖励，将在%s小时后关闭活动界面",
   ActivityIntegration_MVPCardRateUpTip = "【%s】 期间，「【%s】」掉落几率提升10倍！\n  「熊猫波利」限时UP开启，活动结束后，限时UP卡片将不进普通卡池！",
+  ActivityIntegrationStepRecharge_UnlockPreTip = "解锁上一级奖励后可购买",
+  ActivityIntegrationStepRecharge_Free = "免费",
   TrainEscort_Tip1 = "%s后开始行进",
   TrainEscort_Tip2 = "活动时间: %s~%s",
   TrainEscort_TheName = "礼物大作战",

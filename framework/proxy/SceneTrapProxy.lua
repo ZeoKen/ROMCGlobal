@@ -43,6 +43,7 @@ function SceneTrapProxy:Add(data)
     cache.id = id
     cache.skillID = data.skillID
     cache.masterid = data.masterid
+    cache.entertime = data.entertime
     local pos = ReusableTable.CreateTable()
     pos.x = data.pos.x
     pos.y = data.pos.y
@@ -134,7 +135,7 @@ function SceneTrapProxy:Update()
   for k, v in pairs(self.trapAddCaches) do
     local id = v.id
     local trap = Trap.CreateAsTable()
-    trap:Init(id, v.skillID, v.masterid, v.pos, v.dir)
+    trap:Init(id, v.skillID, v.masterid, v.pos, v.dir, v.entertime)
     self.trapMap[id] = trap
     ReusableTable.DestroyAndClearTable(v.pos)
     ReusableTable.DestroyAndClearTable(v)

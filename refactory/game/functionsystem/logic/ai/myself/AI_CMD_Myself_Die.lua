@@ -19,6 +19,10 @@ end
 function AI_CMD_Myself_Die:Start(time, deltaTime, creature)
   FunctionSystem.InterruptMyMissionCommand()
   creature:Logic_DeathBegin()
+  if creature:IsDeadCanMove() then
+    creature:Logic_DeathEnd()
+    return true
+  end
   local dieActionName = Asset_Role.ActionName.Die
   local assetRole = creature.assetRole
   if assetRole:HasActionRaw(dieActionName) then

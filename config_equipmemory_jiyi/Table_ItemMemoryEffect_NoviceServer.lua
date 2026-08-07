@@ -719,7 +719,6 @@ Table_ItemMemoryEffect = {
     EffectID = 30007,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[19],
     ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[19],
-    PreviewDesc = "诅咒迅疾",
     WaxDesc = "攻击速度达到360%时，物理穿刺＋3%\n（效果可叠加，叠加3层时额外获得效果：攻击速度达到360%时，物理穿刺＋6%）"
   },
   [51] = {
@@ -727,22 +726,21 @@ Table_ItemMemoryEffect = {
     EffectID = 30007,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[20],
-    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[20],
-    PreviewDesc = "诅咒迅疾"
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[20]
   },
   [52] = {
     id = 52,
     EffectID = 30007,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[21],
-    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[21],
-    PreviewDesc = "诅咒迅疾"
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[21]
   },
   [53] = {
     id = 53,
     EffectID = 30008,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[22],
     ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[22],
+    PreviewDesc = "诅咒力界",
     WaxDesc = "力量达到180点时，物理伤害＋3%\n（效果可叠加，叠加3层时额外获得效果：力量达到180点时，物理伤害＋6%）"
   },
   [54] = {
@@ -750,14 +748,16 @@ Table_ItemMemoryEffect = {
     EffectID = 30008,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[23],
-    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[23]
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[23],
+    PreviewDesc = "诅咒力界"
   },
   [55] = {
     id = 55,
     EffectID = 30008,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[24],
-    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[24]
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[24],
+    PreviewDesc = "诅咒力界"
   },
   [56] = {
     id = 56,
@@ -1323,7 +1323,7 @@ local cell_mt = {
     EffectID = 30103,
     ExcessWaxBuffID = _EmptyTable,
     Level = 1,
-    PreviewDesc = "诅咒力界",
+    PreviewDesc = "诅咒迅疾",
     UpgradeDesc = "",
     WaxBuffID = _EmptyTable,
     WaxDesc = "",

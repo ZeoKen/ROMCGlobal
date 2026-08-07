@@ -536,3 +536,22 @@ function PlayerData:IsRideEnemy()
   end
   return self:IsEnemy(rideCreature.data)
 end
+
+function PlayerData:getTeamAliveCountEx()
+  local _TeamProxy = TeamProxy.Instance
+  if not _TeamProxy or not _TeamProxy:IHaveTeam() then
+    return 1
+  end
+  local isMyTeam = self.id == Game.Myself.data.id or _TeamProxy:IsInMyTeam(self.id)
+  if isMyTeam then
+    local memberMap = _TeamProxy.myTeam:GetMemberMap()
+    local aliveCount = 0
+    for _, member in pairs(memberMap) do
+      if not member.dead then
+        aliveCount = aliveCount + 1
+      end
+    end
+    return aliveCount
+  end
+  return 1
+end

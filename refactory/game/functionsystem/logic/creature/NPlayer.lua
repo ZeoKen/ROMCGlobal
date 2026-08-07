@@ -13,6 +13,8 @@ function NPlayer:ctor(aiClass)
   self.userDataManager = Game.LogicManager_Player_Userdata
   self.propmanager = Game.LogicManager_Player_Props
   self.skatingMove = Creature_SkatingMove.new(self)
+  self.monokumaStealth = false
+  self.noActionUseSkill = false
 end
 
 function NPlayer:GetCreatureType()
@@ -21,6 +23,22 @@ end
 
 function NPlayer:GetSceneUI()
   return self.sceneui
+end
+
+function NPlayer:IsMonokumaStealth()
+  return self.monokumaStealth == true
+end
+
+function NPlayer:SetMonokumaStealth(active)
+  self.monokumaStealth = active
+end
+
+function NPlayer:IsNoActionUseSkill()
+  return self.noActionUseSkill == true
+end
+
+function NPlayer:SetNoActionUseSkill(active)
+  self.noActionUseSkill = active
 end
 
 function NPlayer:AllowSpEffect_OnFloor()
@@ -556,6 +574,8 @@ function NPlayer:DoDeconstruct(asArray)
   self.assetRole:Destroy()
   self.assetRole = nil
   self._changeJobTimeFlag = nil
+  self.monokumaStealth = nil
+  self.noActionUseSkill = nil
   self.skillOverAction = nil
   self.serverid = nil
   self.handcartID = nil
@@ -725,5 +745,21 @@ function NPlayer:RemoveHandcartNpc()
   self.handcartID = 0
   if sceneCart ~= nil then
     sceneCart:SetMaster(nil)
+  end
+end
+
+function NPlayer:PlayDeadCallSkill(phaseData)
+  local skillID = phaseData:GetSkillID()
+  local skillInfo = Game.LogicManager_Skill:GetSkillInfo(skillID)
+  if nil == skillInfo then
+    return
+  end
+  local deadCanUseSkill = skillInfo:CanCastWhenDead()
+  if not deadCanMove and not deadCanUseSkill then
+    return
+  end
+  self.skill:SetSkillID(skillID)
+  if skillInfo.LogicClass then
+    skillInfo.LogicClass.PlayAttackEffect(self.skill, self)
   end
 end

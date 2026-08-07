@@ -82,7 +82,7 @@ function ChatMessageData:SetData(data)
     self[41] = data.recall_time
     self[42] = data.snowroomid
     self[43] = data.head_fashion
-    if data.print_item then
+    if data.print_item and data.print_item.id and data.print_item.id ~= 0 then
       local printItem = {}
       printItem.id = data.print_item.id
       printItem.accid = data.print_item.accid

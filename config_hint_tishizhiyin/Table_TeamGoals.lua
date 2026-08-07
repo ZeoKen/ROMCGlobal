@@ -1380,7 +1380,6 @@ Table_TeamGoals = {
   },
   [91717] = {
     id = 91717,
-    NameZh = "##42533626",
     Level = 80,
     RaidType = 206316,
     RaidID = 7517,
@@ -1708,6 +1707,7 @@ Table_TeamGoals = {
   },
   [92602] = {
     id = 92602,
+    NameZh = "##45939770",
     type = 92600,
     Filter = 60,
     Level = 110,
@@ -1733,7 +1733,7 @@ local cell_mt = {
     Difficulty = _EmptyTable,
     Filter = 55,
     Level = 40,
-    NameZh = "##45939770",
+    NameZh = "##42533626",
     RootRaidDesc = "",
     SetShow = 1,
     id = 10710,

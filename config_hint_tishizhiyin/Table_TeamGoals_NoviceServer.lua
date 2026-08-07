@@ -1344,6 +1344,7 @@ Table_TeamGoals = {
   },
   [91713] = {
     id = 91713,
+    NameZh = "时空之塔·Ⅲ",
     Level = 90,
     RaidType = 206312,
     RaidID = 7513,
@@ -1442,7 +1443,6 @@ Table_TeamGoals = {
   },
   [91724] = {
     id = 91724,
-    NameZh = "死亡之塔·Ⅵ",
     Level = 110,
     RaidType = 206323,
     RaidID = 7524,
@@ -1733,7 +1733,7 @@ local cell_mt = {
     Difficulty = _EmptyTable,
     Filter = 55,
     Level = 40,
-    NameZh = "时空之塔·Ⅲ",
+    NameZh = "死亡之塔·Ⅵ",
     RootRaidDesc = "",
     SetShow = 1,
     id = 10710,

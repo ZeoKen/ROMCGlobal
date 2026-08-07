@@ -51,7 +51,7 @@ Table_SnowStone = {
     id = 385101,
     ClassID = {14},
     Name = "##45915908",
-    Desc = "##45935112",
+    Desc = "##46385797",
     Batch = 1
   },
   [385102] = {
@@ -79,7 +79,7 @@ Table_SnowStone = {
     id = 385201,
     ClassID = {74},
     Name = "##45915912",
-    Desc = "##45935799",
+    Desc = "##46371242",
     Batch = 1
   },
   [385202] = {
@@ -142,7 +142,7 @@ Table_SnowStone = {
     id = 385402,
     ClassID = {84},
     Name = "##45915921",
-    Desc = "##45935122",
+    Desc = "##46385798",
     Batch = 1
   },
   [385403] = {
@@ -177,7 +177,7 @@ Table_SnowStone = {
     id = 385504,
     ClassID = {34},
     Name = "##45915927",
-    Desc = "##45935125",
+    Desc = "##46371272",
     Batch = 1
   },
   [385505] = {
@@ -219,14 +219,14 @@ Table_SnowStone = {
     id = 385701,
     ClassID = {44},
     Name = "##45917257",
-    Desc = "##45927666",
+    Desc = "##46371284",
     Batch = 1
   },
   [385702] = {
     id = 385702,
     ClassID = {44},
     Name = "##45917259",
-    Desc = "##45927667",
+    Desc = "##46371286",
     Batch = 1
   },
   [385703] = {
@@ -240,7 +240,7 @@ Table_SnowStone = {
     id = 385704,
     ClassID = {44},
     Name = "##45917258",
-    Desc = "##45927669",
+    Desc = "##46371290",
     Batch = 1
   },
   [385801] = {
@@ -289,7 +289,7 @@ Table_SnowStone = {
     id = 385904,
     ClassID = {54},
     Name = "##45915683",
-    Desc = "##45987206",
+    Desc = "##46385799",
     Batch = 1
   },
   [385905] = {
