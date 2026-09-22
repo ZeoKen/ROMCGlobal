@@ -684,7 +684,7 @@ function AI_Myself:PushCommand(args, creature)
         return
       end
       local isMove = args[1] == AI_CMD_Myself_MoveTo or args[1] == AI_CMD_Myself_DirMove or args[1] == AI_CMD_Myself_DirMoveEnd
-      if not isMove and not isDeadCallSkill then
+      if not isMove then
         return
       end
     end

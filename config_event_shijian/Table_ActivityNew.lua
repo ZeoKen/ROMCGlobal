@@ -1,5 +1,5 @@
 Table_ActivityNew_t = {
-  AreaAndServer = {
+  AreaSpecCfg = {
     {
       "CH",
       "TW",
@@ -9,36 +9,44 @@ Table_ActivityNew_t = {
       "EU",
       "NOCH",
       "NO",
-      "NONA"
-    },
-    {
-      "NOCH",
-      "NO",
-      "NONA"
-    },
-    {
-      "NOCH",
-      "NO",
-      "NONA",
+      "NOEN",
       "NOKR"
     },
     {
+      "NOCH",
       "NO",
-      "NONA",
-      "NOCH"
+      "NOEN"
     },
     {
-      "NO",
-      "NONA",
       "NOCH",
+      "NO",
+      "NOEN",
       "NOKR"
     },
     {"NOCH"},
     {
+      "TW",
+      "WW",
+      "NA"
+    },
+    {"CH"},
+    {
       "NO",
-      "NONA",
+      "NOEN",
+      "NOCH"
+    },
+    {
+      "NO",
+      "NOEN",
+      "NOCH",
       "NOKR"
     },
+    {
+      "NO",
+      "NOEN",
+      "NOKR"
+    },
+    {"TW", "WW"},
     {
       "TW",
       "WW",
@@ -47,6 +55,7 @@ Table_ActivityNew_t = {
       "EU"
     },
     {"JP"},
+    {"NO", "NOEN"},
     {
       "CH",
       "TW",
@@ -55,23 +64,12 @@ Table_ActivityNew_t = {
       "NA",
       "EU"
     },
-    {
-      "TW",
-      "WW",
-      "NA"
-    },
-    {"CH"},
-    {"TW", "WW"},
-    {"NO", "NONA"},
-    {"WW", "TW"},
-    {"EU", "KR"},
-    {"NA"},
     {"KR", "EU"},
-    {"KR"},
-    {"NO"},
+    {"NA"},
     {"NOKR"},
+    {"NO"},
+    {"KR"},
     {"CH", "NA"},
-    {"EU"},
     {
       "CH",
       "TW",
@@ -81,10 +79,48 @@ Table_ActivityNew_t = {
       "EU",
       "NOCH",
       "NO",
-      "NONA",
-      "NOKR"
+      "NOEN"
     },
-    {"CH", "NOCH"}
+    {"WW", "TW"},
+    {"EU", "KR"},
+    {"EU"},
+    {"CH", "NOCH"},
+    {
+      [1] = "CH",
+      [2] = "NOCH",
+      EU = {
+        end_time = "2026-09-21 5:00:00",
+        start_time = "2026-09-08 5:00:00"
+      },
+      KR = {
+        end_time = "2026-09-21 5:00:00",
+        start_time = "2026-09-08 5:00:00"
+      },
+      NA = {
+        end_time = "2026-09-22 5:00:00",
+        start_time = "2026-09-09 5:00:00"
+      },
+      NO = {
+        end_time = "2026-09-16 5:00:00",
+        start_time = "2026-09-03 5:00:00"
+      },
+      NOEN = {
+        end_time = "2026-09-16 5:00:00",
+        start_time = "2026-09-03 5:00:00"
+      },
+      NOKR = {
+        end_time = "2026-09-16 5:00:00",
+        start_time = "2026-09-03 5:00:00"
+      },
+      TW = {
+        end_time = "2026-09-20 5:00:00",
+        start_time = "2026-09-07 5:00:00"
+      },
+      WW = {
+        end_time = "2026-09-20 5:00:00",
+        start_time = "2026-09-07 5:00:00"
+      }
+    }
   },
   DepositIds = {
     {
@@ -101,15 +137,25 @@ Table_ActivityNew_t = {
     }
   },
   Misc = {
+    {ShopShowID = 673},
+    {ShopShowID = 688},
+    {ShopShowID = 1029},
     {ShopShowID = 1021},
     {ShortCutPower = 10000022},
     {ShopItemID = 3013973},
+    {MailId = 12760},
+    {ShopItemID = 151, ShopItemID2 = 100},
+    {ShopShowID = 1027},
+    {upbatch = 1},
+    {upbatch = 2},
     {
       ExpItem = 3013971,
       ProPrice = {itemid = 151, num = 68},
       ShopItemId = 3129342
     },
-    {ShopShowID = 673},
+    {ShopShowID = 566},
+    {ShopShowID = 1024},
+    {ShopShowID = 661},
     {
       activityIcon = "tab_icon_84",
       activityName = "##530450",
@@ -156,15 +202,10 @@ Table_ActivityNew_t = {
       },
       freedice = {interval = 21600, max = 5}
     },
-    {ShopShowID = 566},
-    {ShopShowID = 688},
-    {ShopShowID = 1029},
-    {MailId = 12760},
     {ExchangeNumPerDay = 10},
     {Des = "##2857121", ShopShowID = 655},
     {Des = "##2857121", ShopShowID = 1022},
     {id = 1},
-    {ShopItemID = 151, ShopItemID2 = 100},
     {ShopShowID = 1026},
     {ShopShowID = 670},
     {
@@ -174,7 +215,6 @@ Table_ActivityNew_t = {
       npcfunction = 20741
     },
     {ShopShowID = 1028},
-    {ShopShowID = 661},
     {
       buy_chance_price = {151, 8},
       chance_token = 3041410,
@@ -190,8 +230,6 @@ Table_ActivityNew_t = {
     },
     {Des = "##2857121", ShopShowID = 645},
     {Des = "##2857121", ShopShowID = 455},
-    {upbatch = 1},
-    {upbatch = 2},
     {
       RankReward = {
         [1] = {
@@ -208,9 +246,11 @@ Table_ActivityNew_t = {
         }
       }
     },
-    {ShopShowID = 1024},
     {
       Param = {1, 28}
+    },
+    {
+      AdventureIds = {160, 161}
     },
     {ShopShowID = 664}
   },
@@ -330,6 +370,48 @@ Table_ActivityNew_t = {
           -14.26,
           7.38,
           66.06
+        },
+        visibleinmap = 1
+      }
+    },
+    {
+      {
+        dir = 105,
+        id = 894478,
+        map = 1,
+        num = 1,
+        pos = {
+          6.6,
+          7.25,
+          68.5
+        },
+        visibleinmap = 1
+      }
+    },
+    {
+      {
+        dir = 229,
+        id = 894426,
+        map = 1,
+        num = 1,
+        pos = {
+          14.54,
+          7.34,
+          66.29
+        },
+        visibleinmap = 1
+      }
+    },
+    {
+      {
+        dir = 229,
+        id = 894424,
+        map = 1,
+        num = 1,
+        pos = {
+          14.54,
+          7.34,
+          66.29
         },
         visibleinmap = 1
       }
@@ -803,48 +885,6 @@ Table_ActivityNew_t = {
     },
     {
       {
-        dir = 229,
-        id = 894426,
-        map = 1,
-        num = 1,
-        pos = {
-          14.54,
-          7.34,
-          66.29
-        },
-        visibleinmap = 1
-      }
-    },
-    {
-      {
-        dir = 229,
-        id = 894424,
-        map = 1,
-        num = 1,
-        pos = {
-          14.54,
-          7.34,
-          66.29
-        },
-        visibleinmap = 1
-      }
-    },
-    {
-      {
-        dir = 105,
-        id = 894478,
-        map = 1,
-        num = 1,
-        pos = {
-          6.6,
-          7.25,
-          68.5
-        },
-        visibleinmap = 1
-      }
-    },
-    {
-      {
         dir = 135,
         id = 894472,
         map = 1,
@@ -972,27 +1012,6 @@ Table_ActivityNew_t = {
       Texture = "activityintegration_bg_pic2412c"
     },
     {
-      ColorTheme = 1,
-      Texture = "openactivity_bg_11"
-    },
-    {
-      GoToMode = 10000022,
-      Texture = "activityintegration_bg_yijie"
-    },
-    {
-      ActivityIcon = "tab_icon_shenyuan_1",
-      ActivityName = "##42634292",
-      ItemBgColor = "FDE38C",
-      ShowType = 6,
-      TextColor = "9D4824",
-      Texture = "activityintegration_bg_pic2501"
-    },
-    {
-      {
-        {item = 3720, name = "##44715678"}
-      }
-    },
-    {
       ActivityIcon = "tab_icon_shenyuan_1",
       ActivityName = "##45935392",
       ItemBgColor = "FDE38C",
@@ -1014,24 +1033,24 @@ Table_ActivityNew_t = {
       Texture = "activityintegration_bg_pic2501"
     },
     {
-      [2] = {
-        {item = 3013836, name = "##44707942"}
-      },
-      [5] = {
-        {item = 3013836, name = "##44707942"}
-      },
-      [8] = {
-        {item = 3013836, name = "##44707942"}
-      },
-      [11] = {
-        {item = 3013836, name = "##44707942"}
-      },
-      ColorTheme = 3,
+      ColorTheme = 5,
+      Texture = "openactivity_bg_xuhua"
+    },
+    {
+      ColorTheme = 1,
       Texture = "openactivity_bg_11"
     },
     {
-      ColorTheme = 5,
-      Texture = "openactivity_bg_xuhua"
+      GoToMode = 10000022,
+      Texture = "activityintegration_bg_yijie"
+    },
+    {
+      ActivityIcon = "tab_icon_shenyuan_1",
+      ActivityName = "##42634292",
+      ItemBgColor = "FDE38C",
+      ShowType = 6,
+      TextColor = "9D4824",
+      Texture = "activityintegration_bg_pic2501"
     },
     {
       Banner = "calendar_banner_01",
@@ -1046,51 +1065,6 @@ Table_ActivityNew_t = {
       Texture = "activityintegration_bg_pic2412c"
     },
     {
-      {
-        {item = 10000167, name = "##1301647"}
-      },
-      {
-        {item = 10000167, name = "##1301647"}
-      },
-      {
-        {item = 10000167, name = "##1301647"}
-      },
-      {
-        {item = 10000167, name = "##1301647"}
-      },
-      {
-        {item = 10000167, name = "##1301647"}
-      },
-      {
-        {item = 10000167, name = "##1301647"}
-      },
-      {
-        {item = 10000167, name = "##1301647"}
-      },
-      {
-        {item = 10000167, name = "##1301647"}
-      },
-      {
-        {item = 10000167, name = "##1301647"}
-      },
-      {
-        {item = 10000167, name = "##1301647"}
-      },
-      {
-        {item = 10000167, name = "##1301647"}
-      },
-      {
-        {item = 10000167, name = "##1301647"}
-      }
-    },
-    {
-      [1] = {
-        {item = 3012461, name = "##42534682"}
-      },
-      ColorTheme = 1,
-      Texture = "openactivity_bg_01"
-    },
-    {
       ActivityIcon = "tab_icon_uncle_2",
       ActivityName = "##45942896",
       ItemBgColor = "FDE38C",
@@ -1099,28 +1073,16 @@ Table_ActivityNew_t = {
       Texture = "activityintegration_bg_pic2501"
     },
     {
-      ActivityIcon = "tab_icon_100",
-      ActivityName = "##117023",
+      ActivityIcon = "tab_icon_shenyuan_1",
+      ActivityName = "##46185284",
       ItemBgColor = "FDE38C",
       ShowType = 6,
       TextColor = "9D4824",
       Texture = "activityintegration_bg_pic2501"
     },
     {
-      ActivityIcon = "tab_icon_100",
-      ActivityName = "##42534972",
-      ItemBgColor = "FF678B",
-      ShowType = 6,
-      TextColor = "FF678B",
-      Texture = "activityintegration_bg_pic2502"
-    },
-    {
-      ActivityIcon = "tab_icon_100",
-      ActivityName = "##42590411",
-      ItemBgColor = "F9DCAC",
-      ShowType = 6,
-      TextColor = "952E05",
-      Texture = "activityintegration_bg_pic15"
+      Banner = "calendar_banner_01",
+      Desc = "##45917793"
     },
     {
       {
@@ -1199,6 +1161,163 @@ Table_ActivityNew_t = {
       }
     },
     {
+      {
+        {item = 3720, name = "##44715678"}
+      }
+    },
+    {
+      ActivityIcon = "tab_icon_100",
+      ActivityName = "##1301829",
+      ItemBgColor = "6E2D16",
+      ShowType = 6,
+      TextColor = "952E05",
+      Texture = "activityintegration_bg_pic15"
+    },
+    {
+      [3] = {
+        {item = 3014023, name = "##44711362"}
+      },
+      [6] = {
+        {item = 3014023, name = "##44711362"}
+      },
+      [9] = {
+        {item = 3014023, name = "##44711362"}
+      },
+      [12] = {
+        {item = 3014023, name = "##44711362"}
+      },
+      ColorTheme = 3,
+      Texture = "openactivity_bg_11"
+    },
+    {
+      ActivityIcon = "tab_icon_shenyuan_1",
+      ActivityName = "##45907808",
+      ItemBgColor = "FDE38C",
+      ShowType = 6,
+      TextColor = "9D4824",
+      Texture = "activityintegration_bg_pic2501"
+    },
+    {
+      [2] = {
+        {item = 3013836, name = "##44707942"}
+      },
+      [5] = {
+        {item = 3013836, name = "##44707942"}
+      },
+      [8] = {
+        {item = 3013836, name = "##44707942"}
+      },
+      [11] = {
+        {item = 3013836, name = "##44707942"}
+      },
+      ColorTheme = 3,
+      Texture = "openactivity_bg_11"
+    },
+    {
+      ActivityIcon = "tab_icon_100",
+      ActivityName = "##1225241",
+      ItemBgColor = "6E2D16",
+      ShowType = 6,
+      TextColor = "952E05",
+      Texture = "activityintegration_bg_pic2504"
+    },
+    {
+      {
+        {item = 10000167, name = "##1301647"}
+      },
+      {
+        {item = 10000167, name = "##1301647"}
+      },
+      {
+        {item = 10000167, name = "##1301647"}
+      },
+      {
+        {item = 10000167, name = "##1301647"}
+      },
+      {
+        {item = 10000167, name = "##1301647"}
+      },
+      {
+        {item = 10000167, name = "##1301647"}
+      },
+      {
+        {item = 10000167, name = "##1301647"}
+      },
+      {
+        {item = 10000167, name = "##1301647"}
+      },
+      {
+        {item = 10000167, name = "##1301647"}
+      },
+      {
+        {item = 10000167, name = "##1301647"}
+      },
+      {
+        {item = 10000167, name = "##1301647"}
+      },
+      {
+        {item = 10000167, name = "##1301647"}
+      }
+    },
+    {
+      [1] = {
+        {item = 3012461, name = "##42534682"}
+      },
+      ColorTheme = 1,
+      Texture = "openactivity_bg_01"
+    },
+    {
+      ActivityIcon = "tab_icon_100",
+      ActivityName = "##42590411",
+      ItemBgColor = "F9DCAC",
+      ShowType = 6,
+      TextColor = "952E05",
+      Texture = "activityintegration_bg_pic15"
+    },
+    {
+      ActivityIcon = "tab_icon_100",
+      ActivityName = "##42534972",
+      ItemBgColor = "FF678B",
+      ShowType = 6,
+      TextColor = "FF678B",
+      Texture = "activityintegration_bg_pic2502"
+    },
+    {
+      ActivityIcon = "tab_icon_100",
+      ActivityName = "##117023",
+      ItemBgColor = "FDE38C",
+      ShowType = 6,
+      TextColor = "9D4824",
+      Texture = "activityintegration_bg_pic2501"
+    },
+    {
+      ActivityIcon = "tab_icon_101",
+      ActivityName = "##46185284",
+      ItemBgColor = "6E2D16",
+      ShowType = 6,
+      TextColor = "952E05",
+      Texture = "activityintegration_bg_pic2412c"
+    },
+    {
+      ActivityIcon = "tab_icon_shenyuan_1",
+      ActivityName = "##46185300",
+      ItemBgColor = "FDE38C",
+      ShowType = 6,
+      TextColor = "9D4824",
+      Texture = "activityintegration_bg_pic2501"
+    },
+    {
+      Banner = "calendar_banner_01"
+    },
+    {
+      ActivityIcon = "tab_icon_101",
+      ActivityName = "##46374669",
+      ItemBgColor = "6E2D16",
+      ShowType = 6,
+      TextColor = "952E05",
+      Texture = "activityintegration_bg_pic2412c"
+    },
+    {
       ActivityIcon = "tab_icon_shenyuan_1",
       ActivityName = "##45926607",
       ItemBgColor = "FDE38C",
@@ -1243,14 +1362,6 @@ Table_ActivityNew_t = {
       {
         {item = 5800, name = "##126654"}
       }
-    },
-    {
-      ActivityIcon = "tab_icon_shenyuan_1",
-      ActivityName = "##45907808",
-      ItemBgColor = "FDE38C",
-      ShowType = 6,
-      TextColor = "9D4824",
-      Texture = "activityintegration_bg_pic2501"
     },
     {
       {
@@ -1314,36 +1425,27 @@ Table_ActivityNew_t = {
     },
     {Desc = "##45987935"},
     {
-      ActivityIcon = "tab_icon_100",
-      ActivityName = "##1301829",
+      GoToMode = 8396,
+      RedTip = 10789,
+      ShowType = 1,
+      Texture = "activityintegration_bg_pic01"
+    },
+    {
+      ActivityIcon = "tab_icon_shenyuan_1",
+      ActivityName = "##45942896",
+      ItemBgColor = "FDE38C",
+      ShowType = 6,
+      TextColor = "9D4824",
+      Texture = "activityintegration_bg_pic2501"
+    },
+    {Desc = "##46385896"},
+    {
+      ActivityIcon = "tab_icon_101",
+      ActivityName = "##46185300",
       ItemBgColor = "6E2D16",
       ShowType = 6,
       TextColor = "952E05",
-      Texture = "activityintegration_bg_pic15"
-    },
-    {
-      [3] = {
-        {item = 3014023, name = "##44711362"}
-      },
-      [6] = {
-        {item = 3014023, name = "##44711362"}
-      },
-      [9] = {
-        {item = 3014023, name = "##44711362"}
-      },
-      [12] = {
-        {item = 3014023, name = "##44711362"}
-      },
-      ColorTheme = 3,
-      Texture = "openactivity_bg_11"
-    },
-    {
-      ActivityIcon = "tab_icon_100",
-      ActivityName = "##1225241",
-      ItemBgColor = "6E2D16",
-      ShowType = 6,
-      TextColor = "952E05",
-      Texture = "activityintegration_bg_pic2504"
+      Texture = "activityintegration_bg_pic2412c"
     },
     {
       Banner = "calendar_banner_01",
@@ -1356,10 +1458,6 @@ Table_ActivityNew_t = {
       ShowType = 6,
       TextColor = "952E05",
       Texture = "activityintegration_bg_pic2412c"
-    },
-    {
-      Banner = "calendar_banner_01",
-      Desc = "##45917793"
     },
     {
       ActivityIcon = "tab_icon_101",
@@ -1464,6 +1562,8 @@ Table_ActivityNew_t = {
     }
   },
   Quests = {
+    {1134850001},
+    {1134840001},
     {1136780001},
     {1134810001},
     {1134860001},
@@ -1478,8 +1578,6 @@ Table_ActivityNew_t = {
     {1137600001},
     {1136880001},
     {1137000001},
-    {1134850001},
-    {1134840001},
     {1134820001},
     {1134830001}
   },
@@ -1496,8 +1594,8 @@ Table_ActivityNew = {
     EndTime = "2026-01-26 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[25],
-    Misc = Table_ActivityNew_t.Misc[14]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[25],
+    Misc = Table_ActivityNew_t.Misc[20]
   },
   [9900] = {
     id = 9900,
@@ -1506,7 +1604,7 @@ Table_ActivityNew = {
     EndTime = "2026-01-11 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[22],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[20],
     Npcs = Table_ActivityNew_t.Npcs[32],
     Quests = Table_ActivityNew_t.Quests[17],
     QuestLevel = 25
@@ -1519,7 +1617,7 @@ Table_ActivityNew = {
     EndTime = "2026-01-29 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
     Npcs = Table_ActivityNew_t.Npcs[33],
     Quests = Table_ActivityNew_t.Quests[17],
     QuestLevel = 90
@@ -1532,8 +1630,8 @@ Table_ActivityNew = {
     EndTime = "2026-02-26 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[29],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[30],
     Npcs = Table_ActivityNew_t.Npcs[34],
     Quests = Table_ActivityNew_t.Quests[18],
     QuestLevel = 25
@@ -1546,8 +1644,8 @@ Table_ActivityNew = {
     EndTime = "2026-02-26 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
-    Misc = Table_ActivityNew_t.Misc[29],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
+    Misc = Table_ActivityNew_t.Misc[30],
     Npcs = Table_ActivityNew_t.Npcs[34],
     Quests = Table_ActivityNew_t.Quests[18],
     QuestLevel = 25
@@ -1559,7 +1657,7 @@ Table_ActivityNew = {
     StartTime = "2025-12-01 5:00:00",
     EndTime = "2026-01-01 4:59:59",
     Cycle = "monthly",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14]
   },
   [10003] = {
     id = 10003,
@@ -1567,7 +1665,7 @@ Table_ActivityNew = {
     Type = "lottery_head",
     EndTime = "2026-02-01 4:59:59",
     Cycle = "monthly",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[9]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[12]
   },
   [50001] = {
     id = 50001,
@@ -1575,16 +1673,16 @@ Table_ActivityNew = {
     Type = "lottery_magic",
     StartTime = "2026-01-16 5:00:00",
     EndTime = "2026-02-16 4:59:59",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[8],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[11],
     Npcs = Table_ActivityNew_t.Npcs[3]
   },
   [50002] = {
     id = 50002,
     IsGlobalActivity = 0,
     Type = "lottery_magic",
-    StartTime = "2026-08-13 5:00:00",
-    EndTime = "2026-09-15 4:59:59",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[9],
+    StartTime = "2026-10-14 05:00:00",
+    EndTime = "2026-11-17 04:59:59",
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[12],
     Npcs = Table_ActivityNew_t.Npcs[4]
   },
   [60001] = {
@@ -1593,8 +1691,8 @@ Table_ActivityNew = {
     Type = "lottery_magic_2",
     StartTime = "2026-01-16 5:00:00",
     EndTime = "2026-02-16 4:59:59",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
-    Npcs = Table_ActivityNew_t.Npcs[5]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Npcs = Table_ActivityNew_t.Npcs[8]
   },
   [60002] = {
     id = 60002,
@@ -1602,8 +1700,8 @@ Table_ActivityNew = {
     Type = "lottery_magic_2",
     StartTime = "2026-09-16 5:00:00",
     EndTime = "2026-10-13 4:59:59",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[9],
-    Npcs = Table_ActivityNew_t.Npcs[6]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[12],
+    Npcs = Table_ActivityNew_t.Npcs[9]
   },
   [60011] = {
     id = 60011,
@@ -1612,8 +1710,8 @@ Table_ActivityNew = {
     StartTime = "2026-05-13 5:00:00",
     EndTime = "2026-06-13 4:59:59",
     TfDayInAdvance = 13,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
-    Npcs = Table_ActivityNew_t.Npcs[7]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Npcs = Table_ActivityNew_t.Npcs[10]
   },
   [60012] = {
     id = 60012,
@@ -1621,8 +1719,8 @@ Table_ActivityNew = {
     Type = "lottery_magic_2",
     StartTime = "2026-05-18 5:00:00",
     EndTime = "2026-06-18 4:59:59",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[15],
-    Npcs = Table_ActivityNew_t.Npcs[7]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[22],
+    Npcs = Table_ActivityNew_t.Npcs[10]
   },
   [60013] = {
     id = 60013,
@@ -1630,8 +1728,8 @@ Table_ActivityNew = {
     Type = "lottery_magic_2",
     StartTime = "2026-05-19 5:00:00",
     EndTime = "2026-06-19 4:59:59",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[16],
-    Npcs = Table_ActivityNew_t.Npcs[7]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[23],
+    Npcs = Table_ActivityNew_t.Npcs[10]
   },
   [60014] = {
     id = 60014,
@@ -1639,8 +1737,8 @@ Table_ActivityNew = {
     Type = "lottery_magic_2",
     StartTime = "2026-05-20 5:00:00",
     EndTime = "2026-06-20 4:59:59",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[17],
-    Npcs = Table_ActivityNew_t.Npcs[7]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[16],
+    Npcs = Table_ActivityNew_t.Npcs[10]
   },
   [60015] = {
     id = 60015,
@@ -1649,9 +1747,9 @@ Table_ActivityNew = {
     StartTime = "2026-08-05 05:00:00",
     EndTime = "2026-09-05 5:00:00",
     TfDayInAdvance = 13,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
-    Npcs = Table_ActivityNew_t.Npcs[8],
-    Quests = Table_ActivityNew_t.Quests[1],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Npcs = Table_ActivityNew_t.Npcs[11],
+    Quests = Table_ActivityNew_t.Quests[3],
     QuestLevel = 25
   },
   [60016] = {
@@ -1660,9 +1758,9 @@ Table_ActivityNew = {
     Type = "lottery_magic_2",
     StartTime = "2026-08-10 05:00:00",
     EndTime = "2026-09-10 5:00:00",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[13],
-    Npcs = Table_ActivityNew_t.Npcs[8],
-    Quests = Table_ActivityNew_t.Quests[1],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[10],
+    Npcs = Table_ActivityNew_t.Npcs[11],
+    Quests = Table_ActivityNew_t.Quests[3],
     QuestLevel = 25
   },
   [60017] = {
@@ -1671,9 +1769,9 @@ Table_ActivityNew = {
     Type = "lottery_magic_2",
     StartTime = "2026-08-11 05:00:00",
     EndTime = "2026-09-11 5:00:00",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[16],
-    Npcs = Table_ActivityNew_t.Npcs[8],
-    Quests = Table_ActivityNew_t.Quests[1],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[23],
+    Npcs = Table_ActivityNew_t.Npcs[11],
+    Quests = Table_ActivityNew_t.Quests[3],
     QuestLevel = 25
   },
   [60018] = {
@@ -1682,9 +1780,9 @@ Table_ActivityNew = {
     Type = "lottery_magic_2",
     StartTime = "2026-08-12 05:00:00",
     EndTime = "2026-09-12 5:00:00",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[17],
-    Npcs = Table_ActivityNew_t.Npcs[8],
-    Quests = Table_ActivityNew_t.Quests[1],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[16],
+    Npcs = Table_ActivityNew_t.Npcs[11],
+    Quests = Table_ActivityNew_t.Quests[3],
     QuestLevel = 25
   },
   [70001] = {
@@ -1694,8 +1792,8 @@ Table_ActivityNew = {
     StartTime = "2026-02-16 5:00:00",
     EndTime = "2026-03-16 4:59:59",
     Cycle = "monthly",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Npcs = Table_ActivityNew_t.Npcs[21]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Npcs = Table_ActivityNew_t.Npcs[24]
   },
   [70002] = {
     id = 70002,
@@ -1712,8 +1810,8 @@ Table_ActivityNew = {
     StartTime = "2026-01-12 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[6]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[16]
   },
   [101308] = {
     id = 101308,
@@ -1722,8 +1820,8 @@ Table_ActivityNew = {
     StartTime = "2026-01-12 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
-    Misc = Table_ActivityNew_t.Misc[6]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
+    Misc = Table_ActivityNew_t.Misc[16]
   },
   [101309] = {
     id = 101309,
@@ -1733,8 +1831,8 @@ Table_ActivityNew = {
     EndTime = "2026-09-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[6]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[16]
   },
   [101310] = {
     id = 101310,
@@ -1744,8 +1842,8 @@ Table_ActivityNew = {
     EndTime = "2026-09-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[3],
-    Misc = Table_ActivityNew_t.Misc[6]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[3],
+    Misc = Table_ActivityNew_t.Misc[16]
   },
   [102147] = {
     id = 102147,
@@ -1755,13 +1853,13 @@ Table_ActivityNew = {
     EndTime = "2026-01-22 5:00:00",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[18],
-    Npcs = Table_ActivityNew_t.Npcs[22],
-    Quests = Table_ActivityNew_t.Quests[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[23],
+    Npcs = Table_ActivityNew_t.Npcs[25],
+    Quests = Table_ActivityNew_t.Quests[4],
     QuestLevel = 25,
     Group = 1,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[28]
+    Params_Inte = Table_ActivityNew_t.Params_Inte[38]
   },
   [105636] = {
     id = 105636,
@@ -1769,13 +1867,13 @@ Table_ActivityNew = {
     Type = "act_bp",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[1],
-    Misc = Table_ActivityNew_t.Misc[4],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[21],
+    Misc = Table_ActivityNew_t.Misc[12],
     ShopType = 20406,
     ShopId = 2,
     Group = 1,
     TabType = 1,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[22],
     TitleName = "##44715678",
     TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06"
@@ -1786,11 +1884,11 @@ Table_ActivityNew = {
     Type = "flip_card",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[21],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[25],
     Group = 1,
     TabType = 5,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[30],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[39],
     TitleName = "##2832980",
     TabDesc = "##2833139",
     BgTextture = "activityintegration_bg_pic05"
@@ -1803,11 +1901,11 @@ Table_ActivityNew = {
     EndTime = "2026-03-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[21],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[25],
     Group = 1,
     TabType = 5,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[31],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[40],
     TitleName = "##2832980",
     TabDesc = "##2833139",
     BgTextture = "activityintegration_bg_pic05"
@@ -1820,11 +1918,11 @@ Table_ActivityNew = {
     EndTime = "2026-04-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[21],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[25],
     Group = 1,
     TabType = 5,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[32],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[41],
     TitleName = "##2832980",
     TabDesc = "##2833139",
     BgTextture = "activityintegration_bg_pic05"
@@ -1837,11 +1935,11 @@ Table_ActivityNew = {
     EndTime = "2026-05-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[21],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[25],
     Group = 1,
     TabType = 5,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[33],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[42],
     TitleName = "##2832980",
     TabDesc = "##2833139",
     BgTextture = "activityintegration_bg_pic05"
@@ -1854,11 +1952,11 @@ Table_ActivityNew = {
     EndTime = "2026-06-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[21],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[25],
     Group = 1,
     TabType = 5,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[34],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[43],
     TitleName = "##2832980",
     TabDesc = "##2833139",
     BgTextture = "activityintegration_bg_pic05"
@@ -1871,11 +1969,11 @@ Table_ActivityNew = {
     EndTime = "2026-07-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[21],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[25],
     Group = 1,
     TabType = 5,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[35],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[44],
     TitleName = "##2832980",
     TabDesc = "##2833139",
     BgTextture = "activityintegration_bg_pic05"
@@ -1888,11 +1986,11 @@ Table_ActivityNew = {
     EndTime = "2026-08-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[21],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[25],
     Group = 1,
     TabType = 5,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[36],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[45],
     TitleName = "##2832980",
     TabDesc = "##2833139",
     BgTextture = "activityintegration_bg_pic05"
@@ -1905,11 +2003,11 @@ Table_ActivityNew = {
     EndTime = "2026-09-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[21],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[25],
     Group = 1,
     TabType = 5,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[37],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[46],
     TitleName = "##2832980",
     TabDesc = "##2833139",
     BgTextture = "activityintegration_bg_pic05"
@@ -1922,11 +2020,11 @@ Table_ActivityNew = {
     EndTime = "2026-10-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[21],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[25],
     Group = 1,
     TabType = 5,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[38],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[47],
     TitleName = "##2832980",
     TabDesc = "##2833139",
     BgTextture = "activityintegration_bg_pic05"
@@ -1939,11 +2037,11 @@ Table_ActivityNew = {
     EndTime = "2026-11-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[21],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[25],
     Group = 1,
     TabType = 5,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[39],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[48],
     TitleName = "##2832980",
     TabDesc = "##2833139",
     BgTextture = "activityintegration_bg_pic05"
@@ -1956,11 +2054,11 @@ Table_ActivityNew = {
     EndTime = "2026-12-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[21],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[25],
     Group = 1,
     TabType = 5,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[40],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[49],
     TitleName = "##2832980",
     TabDesc = "##2833139",
     BgTextture = "activityintegration_bg_pic05"
@@ -1973,11 +2071,11 @@ Table_ActivityNew = {
     EndTime = "2027-01-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[21],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[25],
     Group = 1,
     TabType = 5,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[41],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[50],
     TitleName = "##2832980",
     TabDesc = "##2833139",
     BgTextture = "activityintegration_bg_pic05"
@@ -1991,13 +2089,13 @@ Table_ActivityNew = {
     Cycle = "yearly",
     AbortTime = "2026-02-03 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[4],
-    Misc = Table_ActivityNew_t.Misc[1],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[7],
+    Misc = Table_ActivityNew_t.Misc[4],
     ShopType = 650,
     ShopId = 34,
     Group = 2,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[8],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[12],
     TitleName = "##42634300",
     TabDesc = "##42634301",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2010,12 +2108,12 @@ Table_ActivityNew = {
     EndTime = "2026-02-5th-1 5:00:00",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[5],
-    Misc = Table_ActivityNew_t.Misc[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[8],
+    Misc = Table_ActivityNew_t.Misc[5],
     Npcs = Table_ActivityNew_t.Npcs[2],
     Group = 2,
     TabType = 12,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[9],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[13],
     TitleName = "##42634292",
     TabDesc = "##44721320",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2028,14 +2126,14 @@ Table_ActivityNew = {
     EndTime = "2026-02-5th-1 5:00:00",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
-    Misc = Table_ActivityNew_t.Misc[1],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Misc = Table_ActivityNew_t.Misc[4],
     ShopType = 650,
     ShopId = 35,
     DepositIds = Table_ActivityNew_t.DepositIds[1],
     Group = 2,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[8],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[12],
     TitleName = "##42634300",
     TabDesc = "##42634301",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2045,10 +2143,10 @@ Table_ActivityNew = {
     IsGlobalActivity = 0,
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[5],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[8],
     Group = 2,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[10],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[14],
     TitleName = "##42634292",
     TabDesc = "##44721321",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2062,12 +2160,12 @@ Table_ActivityNew = {
     Cycle = "yearly",
     AbortTime = "2026-02-03 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[4],
-    Misc = Table_ActivityNew_t.Misc[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[7],
+    Misc = Table_ActivityNew_t.Misc[5],
     Npcs = Table_ActivityNew_t.Npcs[2],
     Group = 2,
     TabType = 12,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[9],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[13],
     TitleName = "##42634292",
     TabDesc = "##44721320",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2080,14 +2178,14 @@ Table_ActivityNew = {
     EndTime = "2026-02-5th-1 5:00:00",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[7],
-    Misc = Table_ActivityNew_t.Misc[1],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[9],
+    Misc = Table_ActivityNew_t.Misc[4],
     ShopType = 650,
     ShopId = 35,
     DepositIds = Table_ActivityNew_t.DepositIds[2],
     Group = 2,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[8],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[12],
     TitleName = "##42634300",
     TabDesc = "##42634301",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2100,13 +2198,13 @@ Table_ActivityNew = {
     EndTime = "2026-01-22 5:00:00",
     Cycle = "seasonly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[1],
-    Misc = Table_ActivityNew_t.Misc[7],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[1],
+    Misc = Table_ActivityNew_t.Misc[13],
     ShopType = 20720,
     ShopId = 1,
     Group = 1,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[51],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[60],
     TitleName = "##44703682",
     TabDesc = "##44704272",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2119,13 +2217,13 @@ Table_ActivityNew = {
     EndTime = "2026-03-22 5:00:00",
     Cycle = "seasonly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[1],
-    Misc = Table_ActivityNew_t.Misc[7],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[1],
+    Misc = Table_ActivityNew_t.Misc[13],
     ShopType = 20720,
     ShopId = 3,
     Group = 1,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[44],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[24],
     TitleName = "##44703682",
     TabDesc = "##44704272",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2138,13 +2236,13 @@ Table_ActivityNew = {
     EndTime = "2026-02-22 5:00:00",
     Cycle = "seasonly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[1],
-    Misc = Table_ActivityNew_t.Misc[7],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[1],
+    Misc = Table_ActivityNew_t.Misc[13],
     ShopType = 20720,
     ShopId = 2,
     Group = 1,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[15],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[26],
     TitleName = "##44703682",
     TabDesc = "##44704272",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2157,13 +2255,13 @@ Table_ActivityNew = {
     EndTime = "2026-01-19 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[22],
-    Misc = Table_ActivityNew_t.Misc[23],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[20],
+    Misc = Table_ActivityNew_t.Misc[27],
     ShopType = 650,
     ShopId = 43,
     Group = 1,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[20],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[29],
     TitleName = "##2857092",
     TabDesc = "##788151",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2176,13 +2274,13 @@ Table_ActivityNew = {
     EndTime = "2026-01-19 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
-    Misc = Table_ActivityNew_t.Misc[24],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Misc = Table_ActivityNew_t.Misc[28],
     ShopType = 650,
     ShopId = 43,
     Group = 1,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[20],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[29],
     TitleName = "##2857092",
     TabDesc = "##788151",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2193,10 +2291,10 @@ Table_ActivityNew = {
     StartTime = "2026-04-15 5:00:00",
     EndTime = "2026-05-15 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
     Group = 4,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[29],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[25],
     TitleName = "##45907808",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2208,13 +2306,13 @@ Table_ActivityNew = {
     StartTime = "2026-04-15 5:00:00",
     EndTime = "2026-05-15 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
-    Misc = Table_ActivityNew_t.Misc[20],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Misc = Table_ActivityNew_t.Misc[15],
     ShopType = 650,
     ShopId = 45,
     Group = 4,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45907808",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2225,10 +2323,10 @@ Table_ActivityNew = {
     StartTime = "2026-04-15 5:00:00",
     EndTime = "2026-05-15 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
     Group = 4,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[29],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[25],
     TitleName = "##45907808",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2240,13 +2338,13 @@ Table_ActivityNew = {
     StartTime = "2026-04-15 5:00:00",
     EndTime = "2026-05-15 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
-    Misc = Table_ActivityNew_t.Misc[28],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Misc = Table_ActivityNew_t.Misc[14],
     ShopType = 650,
     ShopId = 44,
     Group = 4,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45907808",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2257,10 +2355,10 @@ Table_ActivityNew = {
     StartTime = "2026-04-21 5:00:00",
     EndTime = "2026-05-21 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[8],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[11],
     Group = 4,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[29],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[25],
     TitleName = "##45907808",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2272,13 +2370,13 @@ Table_ActivityNew = {
     StartTime = "2026-04-21 5:00:00",
     EndTime = "2026-05-21 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[8],
-    Misc = Table_ActivityNew_t.Misc[20],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[11],
+    Misc = Table_ActivityNew_t.Misc[15],
     ShopType = 650,
     ShopId = 45,
     Group = 4,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45907808",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2289,10 +2387,10 @@ Table_ActivityNew = {
     StartTime = "2026-04-16 5:00:00",
     EndTime = "2026-05-16 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
     Group = 4,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[29],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[25],
     TitleName = "##45907808",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2304,13 +2402,13 @@ Table_ActivityNew = {
     StartTime = "2026-04-16 5:00:00",
     EndTime = "2026-05-16 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
-    Misc = Table_ActivityNew_t.Misc[28],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
+    Misc = Table_ActivityNew_t.Misc[14],
     ShopType = 650,
     ShopId = 44,
     Group = 4,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45907808",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2321,10 +2419,10 @@ Table_ActivityNew = {
     StartTime = "2026-05-13 5:00:00",
     EndTime = "2026-05-27 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[50],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[59],
     TitleName = "##45915082",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2336,13 +2434,13 @@ Table_ActivityNew = {
     StartTime = "2026-05-13 5:00:00",
     EndTime = "2026-05-27 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
-    Misc = Table_ActivityNew_t.Misc[30],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Misc = Table_ActivityNew_t.Misc[32],
     ShopType = 650,
     ShopId = 47,
     Group = 6,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45915082",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2353,10 +2451,10 @@ Table_ActivityNew = {
     StartTime = "2026-05-13 5:00:00",
     EndTime = "2026-05-27 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[50],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[59],
     TitleName = "##45915082",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2368,13 +2466,13 @@ Table_ActivityNew = {
     StartTime = "2026-05-13 5:00:00",
     EndTime = "2026-05-27 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
-    Misc = Table_ActivityNew_t.Misc[16],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Misc = Table_ActivityNew_t.Misc[21],
     ShopType = 650,
     ShopId = 48,
     Group = 6,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45915082",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2385,10 +2483,10 @@ Table_ActivityNew = {
     StartTime = "2026-05-19 5:00:00",
     EndTime = "2026-06-02 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[8],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[11],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[50],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[59],
     TitleName = "##45915082",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2400,13 +2498,13 @@ Table_ActivityNew = {
     StartTime = "2026-05-19 5:00:00",
     EndTime = "2026-06-02 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[8],
-    Misc = Table_ActivityNew_t.Misc[30],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[11],
+    Misc = Table_ActivityNew_t.Misc[32],
     ShopType = 650,
     ShopId = 47,
     Group = 6,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45915082",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2417,10 +2515,10 @@ Table_ActivityNew = {
     StartTime = "2026-05-14 5:00:00",
     EndTime = "2026-05-28 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[50],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[59],
     TitleName = "##45915082",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2432,8 +2530,8 @@ Table_ActivityNew = {
     StartTime = "2026-08-12 05:00:00",
     EndTime = "2026-09-05 5:00:00",
     TfDayInAdvance = 13,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
-    Npcs = Table_ActivityNew_t.Npcs[24],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Npcs = Table_ActivityNew_t.Npcs[27],
     Quest2Day = Table_ActivityNew_t.Quest2Day[7],
     QuestLevel = 25
   },
@@ -2444,9 +2542,9 @@ Table_ActivityNew = {
     StartTime = "2026-08-26 05:00:00",
     EndTime = "2026-09-02 5:00:00",
     TfDayInAdvance = 13,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
-    Npcs = Table_ActivityNew_t.Npcs[25],
-    Quests = Table_ActivityNew_t.Quests[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Npcs = Table_ActivityNew_t.Npcs[28],
+    Quests = Table_ActivityNew_t.Quests[14],
     QuestLevel = 25
   },
   [107027] = {
@@ -2456,8 +2554,8 @@ Table_ActivityNew = {
     StartTime = "2026-08-05 05:00:00",
     EndTime = "2026-09-05 5:00:00",
     TfDayInAdvance = 13,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
-    Npcs = Table_ActivityNew_t.Npcs[26]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Npcs = Table_ActivityNew_t.Npcs[29]
   },
   [107028] = {
     id = 107028,
@@ -2466,8 +2564,8 @@ Table_ActivityNew = {
     StartTime = "2026-08-05 05:00:00",
     EndTime = "2026-09-05 5:00:00",
     TfDayInAdvance = 13,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
-    Npcs = Table_ActivityNew_t.Npcs[24],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Npcs = Table_ActivityNew_t.Npcs[27],
     Quest2Day = Table_ActivityNew_t.Quest2Day[8],
     QuestLevel = 25
   },
@@ -2478,9 +2576,9 @@ Table_ActivityNew = {
     StartTime = "2026-08-26 05:00:00",
     EndTime = "2026-09-02 5:00:00",
     TfDayInAdvance = 13,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
-    Npcs = Table_ActivityNew_t.Npcs[25],
-    Quests = Table_ActivityNew_t.Quests[13]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Npcs = Table_ActivityNew_t.Npcs[28],
+    Quests = Table_ActivityNew_t.Quests[15]
   },
   [107030] = {
     id = 107030,
@@ -2489,8 +2587,8 @@ Table_ActivityNew = {
     StartTime = "2026-08-05 05:00:00",
     EndTime = "2026-09-05 5:00:00",
     TfDayInAdvance = 13,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
-    Npcs = Table_ActivityNew_t.Npcs[27]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Npcs = Table_ActivityNew_t.Npcs[30]
   },
   [107031] = {
     id = 107031,
@@ -2499,8 +2597,8 @@ Table_ActivityNew = {
     StartTime = "2026-08-06 05:00:00",
     EndTime = "2026-09-06 5:00:00",
     TfDayInAdvance = 14,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[7],
-    Npcs = Table_ActivityNew_t.Npcs[24],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[9],
+    Npcs = Table_ActivityNew_t.Npcs[27],
     Quest2Day = Table_ActivityNew_t.Quest2Day[8],
     QuestLevel = 25
   },
@@ -2511,9 +2609,9 @@ Table_ActivityNew = {
     StartTime = "2026-08-27 05:00:00",
     EndTime = "2026-09-03 5:00:00",
     TfDayInAdvance = 14,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[7],
-    Npcs = Table_ActivityNew_t.Npcs[25],
-    Quests = Table_ActivityNew_t.Quests[13]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[9],
+    Npcs = Table_ActivityNew_t.Npcs[28],
+    Quests = Table_ActivityNew_t.Quests[15]
   },
   [107033] = {
     id = 107033,
@@ -2522,8 +2620,8 @@ Table_ActivityNew = {
     StartTime = "2026-08-06 05:00:00",
     EndTime = "2026-09-06 5:00:00",
     TfDayInAdvance = 14,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[7],
-    Npcs = Table_ActivityNew_t.Npcs[27]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[9],
+    Npcs = Table_ActivityNew_t.Npcs[30]
   },
   [107034] = {
     id = 107034,
@@ -2531,8 +2629,8 @@ Table_ActivityNew = {
     Type = "base",
     StartTime = "2026-08-17 05:00:00",
     EndTime = "2026-09-10 5:00:00",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[13],
-    Npcs = Table_ActivityNew_t.Npcs[24],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[10],
+    Npcs = Table_ActivityNew_t.Npcs[27],
     Quest2Day = Table_ActivityNew_t.Quest2Day[7],
     QuestLevel = 25
   },
@@ -2542,9 +2640,9 @@ Table_ActivityNew = {
     Type = "base",
     StartTime = "2026-08-31 05:00:00",
     EndTime = "2026-09-07 5:00:00",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[13],
-    Npcs = Table_ActivityNew_t.Npcs[25],
-    Quests = Table_ActivityNew_t.Quests[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[10],
+    Npcs = Table_ActivityNew_t.Npcs[28],
+    Quests = Table_ActivityNew_t.Quests[14],
     QuestLevel = 25
   },
   [107036] = {
@@ -2553,8 +2651,8 @@ Table_ActivityNew = {
     Type = "base",
     StartTime = "2026-08-10 05:00:00",
     EndTime = "2026-09-10 5:00:00",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[13],
-    Npcs = Table_ActivityNew_t.Npcs[26]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[10],
+    Npcs = Table_ActivityNew_t.Npcs[29]
   },
   [107037] = {
     id = 107037,
@@ -2563,10 +2661,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-08 05:00:00",
     EndTime = "2026-07-15 05:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[1],
-    Misc = Table_ActivityNew_t.Misc[27],
-    Npcs = Table_ActivityNew_t.Npcs[28],
-    Quests = Table_ActivityNew_t.Quests[14]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[21],
+    Misc = Table_ActivityNew_t.Misc[29],
+    Npcs = Table_ActivityNew_t.Npcs[31],
+    Quests = Table_ActivityNew_t.Quests[16]
   },
   [107038] = {
     id = 107038,
@@ -2574,8 +2672,8 @@ Table_ActivityNew = {
     Type = "base",
     StartTime = "2026-08-18 05:00:00",
     EndTime = "2026-09-11 5:00:00",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[16],
-    Npcs = Table_ActivityNew_t.Npcs[24],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[23],
+    Npcs = Table_ActivityNew_t.Npcs[27],
     Quest2Day = Table_ActivityNew_t.Quest2Day[7],
     QuestLevel = 25
   },
@@ -2585,9 +2683,9 @@ Table_ActivityNew = {
     Type = "base",
     StartTime = "2026-09-01 05:00:00",
     EndTime = "2026-09-08 5:00:00",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[16],
-    Npcs = Table_ActivityNew_t.Npcs[25],
-    Quests = Table_ActivityNew_t.Quests[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[23],
+    Npcs = Table_ActivityNew_t.Npcs[28],
+    Quests = Table_ActivityNew_t.Quests[14],
     QuestLevel = 25
   },
   [107040] = {
@@ -2596,8 +2694,8 @@ Table_ActivityNew = {
     Type = "base",
     StartTime = "2026-08-11 05:00:00",
     EndTime = "2026-09-11 5:00:00",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[16],
-    Npcs = Table_ActivityNew_t.Npcs[26]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[23],
+    Npcs = Table_ActivityNew_t.Npcs[29]
   },
   [107041] = {
     id = 107041,
@@ -2605,8 +2703,8 @@ Table_ActivityNew = {
     Type = "base",
     StartTime = "2026-08-19 05:00:00",
     EndTime = "2026-09-12 5:00:00",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[17],
-    Npcs = Table_ActivityNew_t.Npcs[24],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[16],
+    Npcs = Table_ActivityNew_t.Npcs[27],
     Quest2Day = Table_ActivityNew_t.Quest2Day[7],
     QuestLevel = 25
   },
@@ -2616,9 +2714,9 @@ Table_ActivityNew = {
     Type = "base",
     StartTime = "2026-09-02 05:00:00",
     EndTime = "2026-09-09 5:00:00",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[17],
-    Npcs = Table_ActivityNew_t.Npcs[25],
-    Quests = Table_ActivityNew_t.Quests[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[16],
+    Npcs = Table_ActivityNew_t.Npcs[28],
+    Quests = Table_ActivityNew_t.Quests[14],
     QuestLevel = 25
   },
   [107043] = {
@@ -2627,8 +2725,8 @@ Table_ActivityNew = {
     Type = "base",
     StartTime = "2026-08-12 05:00:00",
     EndTime = "2026-09-12 5:00:00",
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[17],
-    Npcs = Table_ActivityNew_t.Npcs[26]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[16],
+    Npcs = Table_ActivityNew_t.Npcs[29]
   },
   [107100] = {
     IsGlobalActivity = 0,
@@ -2637,7 +2735,7 @@ Table_ActivityNew = {
     EndTime = "2027-03-01 05:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[1],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[1],
     Npcs = Table_ActivityNew_t.Npcs[1]
   },
   [108001] = {
@@ -2647,13 +2745,13 @@ Table_ActivityNew = {
     StartTime = "2026-05-14 5:00:00",
     EndTime = "2026-05-28 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
-    Misc = Table_ActivityNew_t.Misc[16],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
+    Misc = Table_ActivityNew_t.Misc[21],
     ShopType = 650,
     ShopId = 48,
     Group = 6,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45915082",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2664,10 +2762,10 @@ Table_ActivityNew = {
     StartTime = "2026-06-22 5:00:00",
     EndTime = "2026-07-08 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[27],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[37],
     TitleName = "##45926607",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2679,13 +2777,13 @@ Table_ActivityNew = {
     StartTime = "2026-06-22 5:00:00",
     EndTime = "2026-07-08 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
-    Misc = Table_ActivityNew_t.Misc[17],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Misc = Table_ActivityNew_t.Misc[22],
     ShopType = 650,
     ShopId = 49,
     Group = 6,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45926607",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2696,10 +2794,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-08 5:00:00",
     EndTime = "2026-07-22 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[27],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[37],
     TitleName = "##45926607",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2711,13 +2809,13 @@ Table_ActivityNew = {
     StartTime = "2026-07-08 5:00:00",
     EndTime = "2026-07-22 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
-    Misc = Table_ActivityNew_t.Misc[16],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Misc = Table_ActivityNew_t.Misc[21],
     ShopType = 650,
     ShopId = 50,
     Group = 6,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45926607",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2728,10 +2826,10 @@ Table_ActivityNew = {
     StartTime = "2026-06-30 5:00:00",
     EndTime = "2026-07-14 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[18],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[15],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[27],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[37],
     TitleName = "##45926607",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2743,13 +2841,13 @@ Table_ActivityNew = {
     StartTime = "2026-06-30 5:00:00",
     EndTime = "2026-07-14 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[18],
-    Misc = Table_ActivityNew_t.Misc[17],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[15],
+    Misc = Table_ActivityNew_t.Misc[22],
     ShopType = 650,
     ShopId = 49,
     Group = 6,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45926607",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2760,10 +2858,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-09 5:00:00",
     EndTime = "2026-07-23 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[27],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[37],
     TitleName = "##45926607",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2775,13 +2873,13 @@ Table_ActivityNew = {
     StartTime = "2026-07-09 5:00:00",
     EndTime = "2026-07-23 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
-    Misc = Table_ActivityNew_t.Misc[16],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
+    Misc = Table_ActivityNew_t.Misc[21],
     ShopType = 650,
     ShopId = 50,
     Group = 6,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45926607",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2792,10 +2890,10 @@ Table_ActivityNew = {
     StartTime = "2026-06-22 5:00:00",
     EndTime = "2026-07-22 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
     Group = 5,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[12],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[8],
     TitleName = "##45935392",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2807,13 +2905,13 @@ Table_ActivityNew = {
     StartTime = "2026-06-22 5:00:00",
     EndTime = "2026-07-22 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
-    Misc = Table_ActivityNew_t.Misc[5],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Misc = Table_ActivityNew_t.Misc[1],
     ShopType = 650,
     ShopId = 51,
     Group = 5,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[13],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[9],
     TitleName = "##45935392",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2824,10 +2922,10 @@ Table_ActivityNew = {
     StartTime = "2026-06-22 5:00:00",
     EndTime = "2026-07-22 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
     Group = 5,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[12],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[8],
     TitleName = "##45935392",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2839,13 +2937,13 @@ Table_ActivityNew = {
     StartTime = "2026-06-22 5:00:00",
     EndTime = "2026-07-22 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
-    Misc = Table_ActivityNew_t.Misc[19],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Misc = Table_ActivityNew_t.Misc[24],
     ShopType = 650,
     ShopId = 52,
     Group = 5,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[13],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[9],
     TitleName = "##45935392",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2856,10 +2954,10 @@ Table_ActivityNew = {
     StartTime = "2026-06-30 5:00:00",
     EndTime = "2026-07-30 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[23],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[24],
     Group = 5,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[12],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[8],
     TitleName = "##45935392",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2871,13 +2969,13 @@ Table_ActivityNew = {
     StartTime = "2026-06-30 5:00:00",
     EndTime = "2026-07-30 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[23],
-    Misc = Table_ActivityNew_t.Misc[5],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[24],
+    Misc = Table_ActivityNew_t.Misc[1],
     ShopType = 650,
     ShopId = 51,
     Group = 5,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[13],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[9],
     TitleName = "##45935392",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2888,10 +2986,10 @@ Table_ActivityNew = {
     StartTime = "2026-06-23 5:00:00",
     EndTime = "2026-07-23 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
     Group = 5,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[12],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[8],
     TitleName = "##45935392",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2903,13 +3001,13 @@ Table_ActivityNew = {
     StartTime = "2026-06-23 5:00:00",
     EndTime = "2026-07-23 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
-    Misc = Table_ActivityNew_t.Misc[19],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
+    Misc = Table_ActivityNew_t.Misc[24],
     ShopType = 650,
     ShopId = 52,
     Group = 5,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[13],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[9],
     TitleName = "##45935392",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2920,10 +3018,10 @@ Table_ActivityNew = {
     StartTime = "2026-06-29 5:00:00",
     EndTime = "2026-07-13 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[11],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[5],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[27],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[37],
     TitleName = "##45926607",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2935,13 +3033,13 @@ Table_ActivityNew = {
     StartTime = "2026-06-29 5:00:00",
     EndTime = "2026-07-13 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[11],
-    Misc = Table_ActivityNew_t.Misc[17],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[5],
+    Misc = Table_ActivityNew_t.Misc[22],
     ShopType = 650,
     ShopId = 49,
     Group = 6,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45926607",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2952,10 +3050,10 @@ Table_ActivityNew = {
     StartTime = "2026-06-29 5:00:00",
     EndTime = "2026-07-29 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[11],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[5],
     Group = 5,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[12],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[8],
     TitleName = "##45935392",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2967,13 +3065,13 @@ Table_ActivityNew = {
     StartTime = "2026-06-29 5:00:00",
     EndTime = "2026-07-29 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[11],
-    Misc = Table_ActivityNew_t.Misc[5],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[5],
+    Misc = Table_ActivityNew_t.Misc[1],
     ShopType = 650,
     ShopId = 51,
     Group = 5,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[13],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[9],
     TitleName = "##45935392",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2984,10 +3082,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-22 5:00:00",
     EndTime = "2026-08-19 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
     Group = 4,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[14],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[10],
     TitleName = "##45938923",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -2999,13 +3097,13 @@ Table_ActivityNew = {
     StartTime = "2026-07-22 5:00:00",
     EndTime = "2026-08-19 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
-    Misc = Table_ActivityNew_t.Misc[8],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Misc = Table_ActivityNew_t.Misc[2],
     ShopType = 650,
     ShopId = 54,
     Group = 4,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45938923",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3016,10 +3114,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-22 5:00:00",
     EndTime = "2026-08-19 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
     Group = 4,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[14],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[10],
     TitleName = "##45938923",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3031,13 +3129,13 @@ Table_ActivityNew = {
     StartTime = "2026-07-22 5:00:00",
     EndTime = "2026-08-19 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
-    Misc = Table_ActivityNew_t.Misc[9],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Misc = Table_ActivityNew_t.Misc[3],
     ShopType = 650,
     ShopId = 55,
     Group = 4,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45938923",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3048,10 +3146,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-27 5:00:00",
     EndTime = "2026-08-24 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[13],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[10],
     Group = 4,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[14],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[10],
     TitleName = "##45938923",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3063,13 +3161,13 @@ Table_ActivityNew = {
     StartTime = "2026-07-27 5:00:00",
     EndTime = "2026-08-24 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[13],
-    Misc = Table_ActivityNew_t.Misc[8],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[10],
+    Misc = Table_ActivityNew_t.Misc[2],
     ShopType = 650,
     ShopId = 54,
     Group = 4,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45938923",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3080,10 +3178,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-23 5:00:00",
     EndTime = "2026-08-20 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
     Group = 4,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[14],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[10],
     TitleName = "##45938923",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3095,13 +3193,13 @@ Table_ActivityNew = {
     StartTime = "2026-07-23 5:00:00",
     EndTime = "2026-08-20 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
-    Misc = Table_ActivityNew_t.Misc[9],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
+    Misc = Table_ActivityNew_t.Misc[3],
     ShopType = 650,
     ShopId = 55,
     Group = 4,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45938923",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3112,10 +3210,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-28 5:00:00",
     EndTime = "2026-08-25 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[18],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[15],
     Group = 4,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[14],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[10],
     TitleName = "##45938923",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3127,13 +3225,13 @@ Table_ActivityNew = {
     StartTime = "2026-07-28 5:00:00",
     EndTime = "2026-08-25 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[18],
-    Misc = Table_ActivityNew_t.Misc[8],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[15],
+    Misc = Table_ActivityNew_t.Misc[2],
     ShopType = 650,
     ShopId = 54,
     Group = 4,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45938923",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3144,10 +3242,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-29 5:00:00",
     EndTime = "2026-08-26 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[17],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[16],
     Group = 4,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[14],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[10],
     TitleName = "##45938923",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3159,13 +3257,13 @@ Table_ActivityNew = {
     StartTime = "2026-07-29 5:00:00",
     EndTime = "2026-08-26 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[17],
-    Misc = Table_ActivityNew_t.Misc[8],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[16],
+    Misc = Table_ActivityNew_t.Misc[2],
     ShopType = 650,
     ShopId = 54,
     Group = 4,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
     TitleName = "##45938923",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3178,8 +3276,8 @@ Table_ActivityNew = {
     EndTime = "2026-08-25 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[15],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[8],
     ShopType = 20799,
     ShopId = 1,
     Group = 1,
@@ -3194,10 +3292,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-20 05:00:00",
     EndTime = "2026-08-03 05:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
     Group = 7,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[21],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[17],
     TitleName = "##45942896",
     TabDesc = "##45907810",
     BgTextture = "PayRaid_bg",
@@ -3211,10 +3309,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-20 05:00:00",
     EndTime = "2026-08-03 05:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
     Group = 7,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[42],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[51],
     TitleName = "##45942896",
     BgTextture = "PayRaid_bg",
     HelpID = 32658,
@@ -3228,8 +3326,8 @@ Table_ActivityNew = {
     StartTime = "2026-08-18 05:00:00",
     EndTime = "2026-08-25 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[24],
-    Npcs = Table_ActivityNew_t.Npcs[23],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[1],
+    Npcs = Table_ActivityNew_t.Npcs[26],
     Quest2Day = Table_ActivityNew_t.Quest2Day[6],
     QuestLevel = 25
   },
@@ -3241,13 +3339,13 @@ Table_ActivityNew = {
     EndTime = "2026-09-01 5:00:00",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[21],
-    Misc = Table_ActivityNew_t.Misc[22],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Misc = Table_ActivityNew_t.Misc[26],
     ShopType = 20406,
     ShopId = 2,
     Group = 1,
     TabType = 1,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[22],
     TitleName = "##44715678",
     TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06"
@@ -3258,10 +3356,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-16 5:00:00",
     EndTime = "2026-08-15 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[21],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
     Group = 5,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[12],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[8],
     TitleName = "##45935392",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3273,16 +3371,595 @@ Table_ActivityNew = {
     StartTime = "2026-07-16 5:00:00",
     EndTime = "2026-08-15 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[21],
-    Misc = Table_ActivityNew_t.Misc[19],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Misc = Table_ActivityNew_t.Misc[24],
     ShopType = 650,
     ShopId = 52,
     Group = 5,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[13],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[9],
     TitleName = "##45935392",
     TabDesc = "##45907810",
     BgTextture = "mall_twistedegg_bg_bottom"
+  },
+  [108043] = {
+    id = 108043,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-01 5:00:00",
+    EndTime = "2026-09-14 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Group = 6,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[18],
+    TitleName = "##45907808",
+    TabDesc = "##45907810",
+    BgTextture = "mall_twistedegg_bg_bottom"
+  },
+  [108044] = {
+    id = 108044,
+    IsGlobalActivity = 0,
+    Type = "new_server_challenge",
+    StartTime = "2026-09-01 5:00:00",
+    EndTime = "2026-09-14 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Misc = Table_ActivityNew_t.Misc[14],
+    ShopType = 650,
+    ShopId = 44,
+    Group = 6,
+    TabType = 6,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
+    TitleName = "##45907808",
+    TabDesc = "##45907810",
+    BgTextture = "mall_twistedegg_bg_bottom"
+  },
+  [108045] = {
+    id = 108045,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-01 5:00:00",
+    EndTime = "2026-09-14 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Group = 6,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[18],
+    TitleName = "##45915082",
+    TabDesc = "##45907810",
+    BgTextture = "mall_twistedegg_bg_bottom"
+  },
+  [108046] = {
+    id = 108046,
+    IsGlobalActivity = 0,
+    Type = "new_server_challenge",
+    StartTime = "2026-09-01 5:00:00",
+    EndTime = "2026-09-14 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Misc = Table_ActivityNew_t.Misc[9],
+    ShopType = 650,
+    ShopId = 48,
+    Group = 6,
+    TabType = 6,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
+    TitleName = "##45915082",
+    TabDesc = "##45907810",
+    BgTextture = "mall_twistedegg_bg_bottom"
+  },
+  [108047] = {
+    id = 108047,
+    IsGlobalActivity = 1,
+    Type = "1060",
+    StartTime = "2026-09-01 5:00:00",
+    EndTime = "2026-09-14 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Misc = Table_ActivityNew_t.Misc[7],
+    Group = 6,
+    TabType = 4,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[19],
+    TitleName = "##45915095",
+    TabDesc = "##44721323",
+    BgTextture = "activityintegration_bg_pic08"
+  },
+  [108048] = {
+    id = 108048,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-01 5:00:00",
+    EndTime = "2026-09-14 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Group = 6,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[33],
+    TitleName = "##45915095",
+    TabDesc = "##44721323",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108049] = {
+    id = 108049,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-15 5:00:00",
+    EndTime = "2026-09-29 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Group = 6,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[34],
+    TitleName = "##45938923",
+    TabDesc = "##45907810",
+    BgTextture = "mall_twistedegg_bg_bottom"
+  },
+  [108050] = {
+    id = 108050,
+    IsGlobalActivity = 0,
+    Type = "new_server_challenge",
+    StartTime = "2026-09-15 5:00:00",
+    EndTime = "2026-09-29 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Misc = Table_ActivityNew_t.Misc[3],
+    ShopType = 650,
+    ShopId = 55,
+    Group = 6,
+    TabType = 6,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
+    TitleName = "##45938923",
+    TabDesc = "##45907810",
+    BgTextture = "mall_twistedegg_bg_bottom"
+  },
+  [108051] = {
+    id = 108051,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-15 5:00:00",
+    EndTime = "2026-09-29 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Group = 6,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[34],
+    TitleName = "##45926607",
+    TabDesc = "##45907810",
+    BgTextture = "mall_twistedegg_bg_bottom"
+  },
+  [108052] = {
+    id = 108052,
+    IsGlobalActivity = 0,
+    Type = "new_server_challenge",
+    StartTime = "2026-09-15 5:00:00",
+    EndTime = "2026-09-29 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Misc = Table_ActivityNew_t.Misc[21],
+    ShopType = 650,
+    ShopId = 50,
+    Group = 6,
+    TabType = 6,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[11],
+    TitleName = "##45926607",
+    TabDesc = "##45907810",
+    BgTextture = "mall_twistedegg_bg_bottom"
+  },
+  [108053] = {
+    id = 108053,
+    IsGlobalActivity = 1,
+    Type = "1060",
+    StartTime = "2026-09-15 5:00:00",
+    EndTime = "2026-09-29 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Misc = Table_ActivityNew_t.Misc[7],
+    Group = 6,
+    TabType = 4,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[15],
+    TitleName = "##45926626",
+    TabDesc = "##44721323",
+    BgTextture = "activityintegration_bg_pic08"
+  },
+  [108054] = {
+    id = 108054,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-15 5:00:00",
+    EndTime = "2026-09-29 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Group = 6,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[55],
+    TitleName = "##45926626",
+    TabDesc = "##44721323",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108055] = {
+    id = 108055,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-02 5:00:00",
+    EndTime = "2026-09-16 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Group = 8,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[36],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108056] = {
+    id = 108056,
+    IsGlobalActivity = 1,
+    Type = "1061",
+    StartTime = "2026-09-02 5:00:00",
+    EndTime = "2026-09-16 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Group = 8,
+    TabType = 4,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[35],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic08",
+    HelpID = 32659
+  },
+  [108057] = {
+    id = 108057,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-02 5:00:00",
+    EndTime = "2026-09-16 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Group = 8,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[36],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108058] = {
+    id = 108058,
+    IsGlobalActivity = 1,
+    Type = "1061",
+    StartTime = "2026-09-02 5:00:00",
+    EndTime = "2026-09-16 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Group = 8,
+    TabType = 4,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[35],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic08",
+    HelpID = 32659
+  },
+  [108059] = {
+    id = 108059,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-07 5:00:00",
+    EndTime = "2026-09-21 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[10],
+    Group = 8,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[36],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108060] = {
+    id = 108060,
+    IsGlobalActivity = 1,
+    Type = "1061",
+    StartTime = "2026-09-07 5:00:00",
+    EndTime = "2026-09-21 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[10],
+    Group = 8,
+    TabType = 4,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[35],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic08",
+    HelpID = 32659
+  },
+  [108061] = {
+    id = 108061,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-08 5:00:00",
+    EndTime = "2026-09-22 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[24],
+    Group = 8,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[36],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108062] = {
+    id = 108062,
+    IsGlobalActivity = 1,
+    Type = "1061",
+    StartTime = "2026-09-08 5:00:00",
+    EndTime = "2026-09-22 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[24],
+    Group = 8,
+    TabType = 4,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[35],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic08",
+    HelpID = 32659
+  },
+  [108063] = {
+    id = 108063,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-09 5:00:00",
+    EndTime = "2026-09-23 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[16],
+    Group = 8,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[36],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108064] = {
+    id = 108064,
+    IsGlobalActivity = 1,
+    Type = "1061",
+    StartTime = "2026-09-09 5:00:00",
+    EndTime = "2026-09-23 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[16],
+    Group = 8,
+    TabType = 4,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[35],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic08",
+    HelpID = 32659
+  },
+  [108065] = {
+    id = 108065,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-03 5:00:00",
+    EndTime = "2026-09-17 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
+    Group = 8,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[36],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108066] = {
+    id = 108066,
+    IsGlobalActivity = 1,
+    Type = "1061",
+    StartTime = "2026-09-03 5:00:00",
+    EndTime = "2026-09-17 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
+    Group = 8,
+    TabType = 4,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[35],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic08",
+    HelpID = 32659
+  },
+  [108067] = {
+    id = 108067,
+    IsGlobalActivity = 0,
+    Type = "preview",
+    StartTime = "2026-09-02 5:00:00",
+    EndTime = "2026-09-15 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[25],
+    Group = 8,
+    TabType = 2,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[52],
+    TitleName = "##113974",
+    TabDesc = "##46185283",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108068] = {
+    id = 108068,
+    IsGlobalActivity = 0,
+    Type = "preview",
+    StartTime = "2026-09-03 5:00:00",
+    EndTime = "2026-09-16 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[9],
+    Group = 8,
+    TabType = 2,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[52],
+    TitleName = "##113974",
+    TabDesc = "##46185283",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108069] = {
+    id = 108069,
+    IsGlobalActivity = 0,
+    Type = "preview",
+    StartTime = "2026-09-07 5:00:00",
+    EndTime = "2026-09-20 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[10],
+    Group = 8,
+    TabType = 2,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[52],
+    TitleName = "##113974",
+    TabDesc = "##46185283",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108070] = {
+    id = 108070,
+    IsGlobalActivity = 0,
+    StartTime = "2026-08-24 5:00:00",
+    EndTime = "2026-09-14 05:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Group = 7,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[53],
+    TitleName = "##45942896",
+    TabDesc = "##45907810",
+    BgTextture = "PayRaid_bg",
+    HelpID = 32658,
+    RoleLevel = 100
+  },
+  [108071] = {
+    id = 108071,
+    IsGlobalActivity = 0,
+    Type = "lottery_raid",
+    StartTime = "2026-08-24 5:00:00",
+    EndTime = "2026-09-14 05:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Group = 7,
+    TabType = 6,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[54],
+    TitleName = "##45942896",
+    BgTextture = "PayRaid_bg",
+    HelpID = 32658,
+    RaidEntrance = Table_ActivityNew_t.RaidEntrance[1],
+    RoleLevel = 100
+  },
+  [108072] = {
+    id = 108072,
+    IsGlobalActivity = 0,
+    Type = "preview",
+    StartTime = "2026-09-08 5:00:00",
+    EndTime = "2026-09-21 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[15],
+    Group = 8,
+    TabType = 2,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[52],
+    TitleName = "##113974",
+    TabDesc = "##46185283",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108073] = {
+    id = 108073,
+    IsGlobalActivity = 0,
+    StartTime = "2026-08-26 5:00:00",
+    EndTime = "2026-09-16 05:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
+    Group = 7,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[53],
+    TitleName = "##45942896",
+    TabDesc = "##45907810",
+    BgTextture = "PayRaid_bg",
+    HelpID = 32658,
+    RoleLevel = 100
+  },
+  [108074] = {
+    id = 108074,
+    IsGlobalActivity = 0,
+    Type = "lottery_raid",
+    StartTime = "2026-08-26 5:00:00",
+    EndTime = "2026-09-16 05:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
+    Group = 7,
+    TabType = 6,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[54],
+    TitleName = "##45942896",
+    BgTextture = "PayRaid_bg",
+    HelpID = 32658,
+    RaidEntrance = Table_ActivityNew_t.RaidEntrance[1],
+    RoleLevel = 100
+  },
+  [108075] = {
+    id = 108075,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-08 5:00:00",
+    EndTime = "2026-09-22 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[19],
+    Group = 8,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[36],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108076] = {
+    id = 108076,
+    IsGlobalActivity = 1,
+    Type = "1061",
+    StartTime = "2026-09-08 5:00:00",
+    EndTime = "2026-09-22 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[19],
+    Group = 8,
+    TabType = 4,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[35],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic08",
+    HelpID = 32659
+  },
+  [108077] = {
+    id = 108077,
+    IsGlobalActivity = 0,
+    StartTime = "2026-09-03 5:00:00",
+    EndTime = "2026-09-17 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Group = 8,
+    TabType = 3,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[36],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108078] = {
+    id = 108078,
+    IsGlobalActivity = 1,
+    Type = "1061",
+    StartTime = "2026-09-03 5:00:00",
+    EndTime = "2026-09-17 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[17],
+    Group = 8,
+    TabType = 4,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[35],
+    TitleName = "##46374669",
+    Desc = "##46429456",
+    BgTextture = "activityintegration_bg_pic08",
+    HelpID = 32659
+  },
+  [108085] = {
+    id = 108085,
+    IsGlobalActivity = 0,
+    Type = "preview",
+    StartTime = "2026-09-09 5:00:00",
+    EndTime = "2026-09-22 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[16],
+    Group = 8,
+    TabType = 2,
+    Params_Inte = Table_ActivityNew_t.Params_Inte[52],
+    TitleName = "##113974",
+    TabDesc = "##46185283",
+    BgTextture = "activityintegration_bg_pic04"
+  },
+  [108086] = {
+    id = 108086,
+    IsGlobalActivity = 0,
+    Type = "pet_adventure",
+    StartTime = "2026-09-02 5:00:00",
+    EndTime = "2026-09-15 5:00:00",
+    TfDayInAdvance = 7,
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[26],
+    Misc = Table_ActivityNew_t.Misc[31]
   },
   [110001] = {
     id = 110001,
@@ -3292,13 +3969,13 @@ Table_ActivityNew = {
     EndTime = "2026-01-22 5:00:00",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[3],
-    Misc = Table_ActivityNew_t.Misc[11],
-    Npcs = Table_ActivityNew_t.Npcs[9],
-    Quests = Table_ActivityNew_t.Quests[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[3],
+    Misc = Table_ActivityNew_t.Misc[17],
+    Npcs = Table_ActivityNew_t.Npcs[12],
+    Quests = Table_ActivityNew_t.Quests[4],
     QuestLevel = 25,
     Group = 1,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[19]
+    Params_Inte = Table_ActivityNew_t.Params_Inte[28]
   },
   [110002] = {
     id = 110002,
@@ -3308,9 +3985,9 @@ Table_ActivityNew = {
     EndTime = "2026-03-15 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Npcs = Table_ActivityNew_t.Npcs[10],
-    Quests = Table_ActivityNew_t.Quests[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Npcs = Table_ActivityNew_t.Npcs[13],
+    Quests = Table_ActivityNew_t.Quests[5],
     QuestLevel = 25
   },
   [110003] = {
@@ -3321,9 +3998,9 @@ Table_ActivityNew = {
     EndTime = "2026-03-19 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Npcs = Table_ActivityNew_t.Npcs[10],
-    Quests = Table_ActivityNew_t.Quests[4],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Npcs = Table_ActivityNew_t.Npcs[13],
+    Quests = Table_ActivityNew_t.Quests[6],
     QuestLevel = 25
   },
   [110004] = {
@@ -3334,9 +4011,9 @@ Table_ActivityNew = {
     EndTime = "2026-03-15 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
-    Npcs = Table_ActivityNew_t.Npcs[10],
-    Quests = Table_ActivityNew_t.Quests[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
+    Npcs = Table_ActivityNew_t.Npcs[13],
+    Quests = Table_ActivityNew_t.Quests[5],
     QuestLevel = 25
   },
   [110005] = {
@@ -3347,9 +4024,9 @@ Table_ActivityNew = {
     EndTime = "2026-03-19 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
-    Npcs = Table_ActivityNew_t.Npcs[10],
-    Quests = Table_ActivityNew_t.Quests[4],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
+    Npcs = Table_ActivityNew_t.Npcs[13],
+    Quests = Table_ActivityNew_t.Quests[6],
     QuestLevel = 25
   },
   [110006] = {
@@ -3360,9 +4037,9 @@ Table_ActivityNew = {
     EndTime = "2026-03-11 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[19],
-    Npcs = Table_ActivityNew_t.Npcs[11],
-    Quests = Table_ActivityNew_t.Quests[5],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[19],
+    Npcs = Table_ActivityNew_t.Npcs[14],
+    Quests = Table_ActivityNew_t.Quests[7],
     QuestLevel = 25
   },
   [110007] = {
@@ -3373,9 +4050,9 @@ Table_ActivityNew = {
     EndTime = "2026-03-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[20],
-    Npcs = Table_ActivityNew_t.Npcs[11],
-    Quests = Table_ActivityNew_t.Quests[5],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[18],
+    Npcs = Table_ActivityNew_t.Npcs[14],
+    Quests = Table_ActivityNew_t.Quests[7],
     QuestLevel = 90
   },
   [110008] = {
@@ -3386,13 +4063,13 @@ Table_ActivityNew = {
     EndTime = "2026-03-19 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[19],
-    Misc = Table_ActivityNew_t.Misc[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[19],
+    Misc = Table_ActivityNew_t.Misc[18],
     ShopType = 650,
     ShopId = 43,
     Group = 1,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[20],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[29],
     TitleName = "##2857092",
     TabDesc = "##788151",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3405,13 +4082,13 @@ Table_ActivityNew = {
     EndTime = "2026-02-19 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[20],
-    Misc = Table_ActivityNew_t.Misc[13],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[18],
+    Misc = Table_ActivityNew_t.Misc[19],
     ShopType = 650,
     ShopId = 43,
     Group = 1,
     TabType = 6,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[20],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[29],
     TitleName = "##2857092",
     TabDesc = "##788151",
     BgTextture = "mall_twistedegg_bg_bottom"
@@ -3424,8 +4101,8 @@ Table_ActivityNew = {
     EndTime = "2026-03-30 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[19],
-    Misc = Table_ActivityNew_t.Misc[14]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[19],
+    Misc = Table_ActivityNew_t.Misc[20]
   },
   [110011] = {
     id = 110011,
@@ -3435,8 +4112,8 @@ Table_ActivityNew = {
     EndTime = "2026-02-23 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[20],
-    Misc = Table_ActivityNew_t.Misc[14]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[18],
+    Misc = Table_ActivityNew_t.Misc[20]
   },
   [110012] = {
     id = 110012,
@@ -3445,8 +4122,8 @@ Table_ActivityNew = {
     EndTime = "2026-04-25 05:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[1],
-    Npcs = Table_ActivityNew_t.Npcs[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[21],
+    Npcs = Table_ActivityNew_t.Npcs[15],
     Quest2Day = Table_ActivityNew_t.Quest2Day[1],
     QuestLevel = 25
   },
@@ -3456,9 +4133,9 @@ Table_ActivityNew = {
     StartTime = "2026-05-01 05:00:00",
     EndTime = "2026-05-08 05:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[1],
-    Npcs = Table_ActivityNew_t.Npcs[13],
-    Quests = Table_ActivityNew_t.Quests[6],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[21],
+    Npcs = Table_ActivityNew_t.Npcs[16],
+    Quests = Table_ActivityNew_t.Quests[8],
     QuestLevel = 25
   },
   [110014] = {
@@ -3467,9 +4144,9 @@ Table_ActivityNew = {
     StartTime = "2026-05-11 05:00:00",
     EndTime = "2026-05-18 05:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[1],
-    Npcs = Table_ActivityNew_t.Npcs[14],
-    Quests = Table_ActivityNew_t.Quests[7],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[21],
+    Npcs = Table_ActivityNew_t.Npcs[17],
+    Quests = Table_ActivityNew_t.Quests[9],
     QuestLevel = 25
   },
   [110015] = {
@@ -3478,9 +4155,9 @@ Table_ActivityNew = {
     StartTime = "2026-05-12 05:00:00",
     EndTime = "2026-05-19 05:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[1],
-    Npcs = Table_ActivityNew_t.Npcs[15],
-    Quests = Table_ActivityNew_t.Quests[8],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[21],
+    Npcs = Table_ActivityNew_t.Npcs[18],
+    Quests = Table_ActivityNew_t.Quests[10],
     QuestLevel = 25
   },
   [110016] = {
@@ -3489,8 +4166,8 @@ Table_ActivityNew = {
     StartTime = "2026-05-01 05:00:00",
     EndTime = "2026-06-01 05:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[1],
-    Npcs = Table_ActivityNew_t.Npcs[16],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[21],
+    Npcs = Table_ActivityNew_t.Npcs[19],
     Quest2Day = Table_ActivityNew_t.Quest2Day[2],
     QuestLevel = 25
   },
@@ -3501,8 +4178,8 @@ Table_ActivityNew = {
     EndTime = "2026-07-01 05:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Npcs = Table_ActivityNew_t.Npcs[17],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Npcs = Table_ActivityNew_t.Npcs[20],
     Quest2Day = Table_ActivityNew_t.Quest2Day[3],
     QuestLevel = 25
   },
@@ -3513,9 +4190,9 @@ Table_ActivityNew = {
     EndTime = "2026-07-01 05:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[1],
-    Npcs = Table_ActivityNew_t.Npcs[18],
-    Quests = Table_ActivityNew_t.Quests[9],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[21],
+    Npcs = Table_ActivityNew_t.Npcs[21],
+    Quests = Table_ActivityNew_t.Quests[11],
     Quest2Day = Table_ActivityNew_t.Quest2Day[4],
     QuestLevel = 25
   },
@@ -3525,9 +4202,9 @@ Table_ActivityNew = {
     StartTime = "2026-06-15 05:00:00",
     EndTime = "2026-06-22 05:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Npcs = Table_ActivityNew_t.Npcs[19],
-    Quests = Table_ActivityNew_t.Quests[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Npcs = Table_ActivityNew_t.Npcs[22],
+    Quests = Table_ActivityNew_t.Quests[12],
     QuestLevel = 25
   },
   [110020] = {
@@ -3536,8 +4213,8 @@ Table_ActivityNew = {
     StartTime = "2026-05-04 05:00:00",
     EndTime = "2026-05-30 05:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
-    Npcs = Table_ActivityNew_t.Npcs[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
+    Npcs = Table_ActivityNew_t.Npcs[15],
     Quest2Day = Table_ActivityNew_t.Quest2Day[5],
     QuestLevel = 25
   },
@@ -3547,9 +4224,9 @@ Table_ActivityNew = {
     StartTime = "2026-06-15 05:00:00",
     EndTime = "2026-06-22 05:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
-    Npcs = Table_ActivityNew_t.Npcs[20],
-    Quests = Table_ActivityNew_t.Quests[11],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
+    Npcs = Table_ActivityNew_t.Npcs[23],
+    Quests = Table_ActivityNew_t.Quests[13],
     QuestLevel = 25
   },
   [120001] = {
@@ -3557,10 +4234,10 @@ Table_ActivityNew = {
     IsGlobalActivity = 0,
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[22],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[32],
     TitleName = "##117023",
     TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic05"
@@ -3572,10 +4249,10 @@ Table_ActivityNew = {
     EndTime = "2026-03-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[23],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[31],
     TitleName = "##42534972",
     TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04"
@@ -3587,10 +4264,10 @@ Table_ActivityNew = {
     EndTime = "2026-04-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[24],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[30],
     TitleName = "##42590411",
     TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04"
@@ -3602,10 +4279,10 @@ Table_ActivityNew = {
     EndTime = "2026-05-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[45],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[27],
     TitleName = "##1225241",
     TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04"
@@ -3617,10 +4294,10 @@ Table_ActivityNew = {
     EndTime = "2026-06-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[43],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[23],
     TitleName = "##1301829",
     TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04"
@@ -3632,7 +4309,7 @@ Table_ActivityNew = {
     EndTime = "2026-07-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[1],
@@ -3647,7 +4324,7 @@ Table_ActivityNew = {
     EndTime = "2026-08-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[2],
@@ -3662,7 +4339,7 @@ Table_ActivityNew = {
     EndTime = "2026-09-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[3],
@@ -3677,7 +4354,7 @@ Table_ActivityNew = {
     EndTime = "2026-10-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[4],
@@ -3692,11 +4369,11 @@ Table_ActivityNew = {
     EndTime = "2026-11-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[5],
-    TitleName = "##3489794",
+    TitleName = "##103503",
     TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04"
   },
@@ -3707,7 +4384,7 @@ Table_ActivityNew = {
     EndTime = "2025-12-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[6],
@@ -3722,7 +4399,7 @@ Table_ActivityNew = {
     EndTime = "2026-01-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[7],
@@ -3735,10 +4412,10 @@ Table_ActivityNew = {
     IsGlobalActivity = 0,
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
     Group = 1,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[22],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[32],
     TitleName = "##117023",
     TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic05"
@@ -3750,10 +4427,10 @@ Table_ActivityNew = {
     EndTime = "2026-03-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
     Group = 1,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[23],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[31],
     TitleName = "##42534972",
     TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04"
@@ -3765,10 +4442,10 @@ Table_ActivityNew = {
     EndTime = "2026-04-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
     Group = 1,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[24],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[30],
     TitleName = "##42590411",
     TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04"
@@ -3780,10 +4457,10 @@ Table_ActivityNew = {
     EndTime = "2026-05-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
     Group = 1,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[45],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[27],
     TitleName = "##1225241",
     TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04"
@@ -3795,10 +4472,10 @@ Table_ActivityNew = {
     EndTime = "2026-06-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
     Group = 1,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[43],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[23],
     TitleName = "##1301829",
     TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04"
@@ -3810,7 +4487,7 @@ Table_ActivityNew = {
     EndTime = "2026-07-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[1],
@@ -3825,7 +4502,7 @@ Table_ActivityNew = {
     EndTime = "2026-08-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[2],
@@ -3840,7 +4517,7 @@ Table_ActivityNew = {
     EndTime = "2026-09-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[3],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[3],
@@ -3855,7 +4532,7 @@ Table_ActivityNew = {
     EndTime = "2026-10-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[3],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[4],
@@ -3870,11 +4547,11 @@ Table_ActivityNew = {
     EndTime = "2026-11-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[3],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[5],
-    TitleName = "##3489794",
+    TitleName = "##103503",
     TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04"
   },
@@ -3885,7 +4562,7 @@ Table_ActivityNew = {
     EndTime = "2025-12-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[3],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[6],
@@ -3900,7 +4577,7 @@ Table_ActivityNew = {
     EndTime = "2026-01-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[3],
     Group = 1,
     TabType = 3,
     Params_Inte = Table_ActivityNew_t.Params_Inte[7],
@@ -3915,9 +4592,9 @@ Table_ActivityNew = {
     StartTime = "2026-01-12 5:00:00",
     EndTime = "2026-01-19 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
-    Npcs = Table_ActivityNew_t.Npcs[30],
-    Quests = Table_ActivityNew_t.Quests[16],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
+    Npcs = Table_ActivityNew_t.Npcs[7],
+    Quests = Table_ActivityNew_t.Quests[2],
     QuestLevel = 25
   },
   [120121] = {
@@ -3927,9 +4604,9 @@ Table_ActivityNew = {
     StartTime = "2026-02-16 5:00:00",
     EndTime = "2026-02-23 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
-    Npcs = Table_ActivityNew_t.Npcs[29],
-    Quests = Table_ActivityNew_t.Quests[15],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
+    Npcs = Table_ActivityNew_t.Npcs[6],
+    Quests = Table_ActivityNew_t.Quests[1],
     QuestLevel = 25
   },
   [120130] = {
@@ -3938,8 +4615,8 @@ Table_ActivityNew = {
     Type = "act_bp_shop",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[6],
     ShopType = 20730,
     ShopId = 1,
     Group = 1,
@@ -3956,8 +4633,8 @@ Table_ActivityNew = {
     EndTime = "2026-03-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[6],
     ShopType = 20731,
     ShopId = 1,
     Group = 1,
@@ -3974,8 +4651,8 @@ Table_ActivityNew = {
     EndTime = "2026-04-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[6],
     ShopType = 20732,
     ShopId = 1,
     Group = 1,
@@ -3992,8 +4669,8 @@ Table_ActivityNew = {
     EndTime = "2026-05-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[6],
     ShopType = 20743,
     ShopId = 1,
     Group = 1,
@@ -4010,8 +4687,8 @@ Table_ActivityNew = {
     EndTime = "2026-06-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[6],
     ShopType = 20744,
     ShopId = 1,
     Group = 1,
@@ -4028,8 +4705,8 @@ Table_ActivityNew = {
     EndTime = "2026-07-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[6],
     ShopType = 20745,
     ShopId = 1,
     Group = 1,
@@ -4046,8 +4723,8 @@ Table_ActivityNew = {
     EndTime = "2026-08-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[6],
     ShopType = 20746,
     ShopId = 1,
     Group = 1,
@@ -4064,8 +4741,8 @@ Table_ActivityNew = {
     EndTime = "2026-09-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[6],
     ShopType = 20747,
     ShopId = 1,
     Group = 1,
@@ -4082,8 +4759,8 @@ Table_ActivityNew = {
     EndTime = "2026-10-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[6],
     ShopType = 20748,
     ShopId = 1,
     Group = 1,
@@ -4100,8 +4777,8 @@ Table_ActivityNew = {
     EndTime = "2026-11-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[6],
     ShopType = 20749,
     ShopId = 1,
     Group = 1,
@@ -4118,8 +4795,8 @@ Table_ActivityNew = {
     EndTime = "2026-12-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[6],
     ShopType = 20750,
     ShopId = 1,
     Group = 1,
@@ -4136,8 +4813,8 @@ Table_ActivityNew = {
     EndTime = "2027-01-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[6],
     ShopType = 20751,
     ShopId = 1,
     Group = 1,
@@ -4153,8 +4830,8 @@ Table_ActivityNew = {
     StartTime = "2026-04-06 5:00:00",
     EndTime = "2026-04-20 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[1],
-    Npcs = Table_ActivityNew_t.Npcs[31]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[21],
+    Npcs = Table_ActivityNew_t.Npcs[5]
   },
   [310001] = {
     id = 310001,
@@ -4164,8 +4841,8 @@ Table_ActivityNew = {
     EndTime = "2025-12-20 4:59:59",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[25]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[10]
   },
   [310002] = {
     id = 310002,
@@ -4175,8 +4852,8 @@ Table_ActivityNew = {
     EndTime = "2026-01-01 4:59:59",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
-    Misc = Table_ActivityNew_t.Misc[26]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
+    Misc = Table_ActivityNew_t.Misc[11]
   },
   [310005] = {
     id = 310005,
@@ -4186,8 +4863,8 @@ Table_ActivityNew = {
     EndTime = "",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[9],
-    Misc = Table_ActivityNew_t.Misc[25]
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[12],
+    Misc = Table_ActivityNew_t.Misc[10]
   },
   [320001] = {
     id = 320001,
@@ -4196,17 +4873,17 @@ Table_ActivityNew = {
     StartTime = "",
     EndTime = "",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Npcs = Table_ActivityNew_t.Npcs[35]
   },
   [320002] = {
     id = 320002,
     IsGlobalActivity = 0,
     Type = "lottery_card_activity",
-    StartTime = "2026-08-12 5:00:00",
-    EndTime = "2026-09-09 4:59:59",
+    StartTime = "2026-09-30 05:00:00",
+    EndTime = "2026-11-04 04:59:59",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[9],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[12],
     Npcs = Table_ActivityNew_t.Npcs[36]
   },
   [1043101] = {
@@ -4216,9 +4893,9 @@ Table_ActivityNew = {
     EndTime = "2026-01-15 5:00:00",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[26]
+    Params_Inte = Table_ActivityNew_t.Params_Inte[21]
   },
   [1043102] = {
     id = 1043102,
@@ -4228,7 +4905,7 @@ Table_ActivityNew = {
     EndTime = "2026-01-29 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[22],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[20],
     Group = 1
   },
   [1043103] = {
@@ -4238,9 +4915,9 @@ Table_ActivityNew = {
     EndTime = "2026-01-15 5:00:00",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[3],
     Group = 1,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[25]
+    Params_Inte = Table_ActivityNew_t.Params_Inte[20]
   },
   [1043104] = {
     id = 1043104,
@@ -4249,7 +4926,7 @@ Table_ActivityNew = {
     StartTime = "2026-02-16 5:00:00",
     EndTime = "2026-02-26 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[14],
     Group = 1
   },
   [1043105] = {
@@ -4260,7 +4937,7 @@ Table_ActivityNew = {
     EndTime = "2026-01-29 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
     Group = 1
   },
   [1043106] = {
@@ -4270,7 +4947,7 @@ Table_ActivityNew = {
     StartTime = "2026-02-16 5:00:00",
     EndTime = "2026-02-26 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[2],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[2],
     Group = 1
   },
   [1043107] = {
@@ -4281,7 +4958,7 @@ Table_ActivityNew = {
     EndTime = "2026-03-29 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[19],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[19],
     Group = 1
   },
   [1043108] = {
@@ -4292,7 +4969,7 @@ Table_ActivityNew = {
     EndTime = "2026-03-01 5:00:00",
     Cycle = "yearly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[20],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[18],
     Group = 1
   },
   [1060002] = {
@@ -4303,11 +4980,11 @@ Table_ActivityNew = {
     EndTime = "2026-03-20 5:00:00",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[3],
-    Misc = Table_ActivityNew_t.Misc[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[3],
+    Misc = Table_ActivityNew_t.Misc[7],
     Group = 3,
     TabType = 4,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[46],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[56],
     TitleName = "##44721322",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic08"
@@ -4319,10 +4996,10 @@ Table_ActivityNew = {
     EndTime = "2026-03-20 5:00:00",
     Cycle = "monthly",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[3],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[3],
     Group = 3,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[47],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[57],
     TitleName = "##44721322",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic04"
@@ -4334,11 +5011,11 @@ Table_ActivityNew = {
     StartTime = "2026-05-13 5:00:00",
     EndTime = "2026-05-27 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
-    Misc = Table_ActivityNew_t.Misc[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Misc = Table_ActivityNew_t.Misc[7],
     Group = 6,
     TabType = 4,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[48],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[19],
     TitleName = "##45915095",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic08"
@@ -4349,10 +5026,10 @@ Table_ActivityNew = {
     StartTime = "2026-05-13 5:00:00",
     EndTime = "2026-05-27 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[18],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
     TitleName = "##45915095",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic04"
@@ -4364,11 +5041,11 @@ Table_ActivityNew = {
     StartTime = "2026-05-13 5:00:00",
     EndTime = "2026-05-27 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
-    Misc = Table_ActivityNew_t.Misc[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Misc = Table_ActivityNew_t.Misc[7],
     Group = 6,
     TabType = 4,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[48],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[19],
     TitleName = "##45915095",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic08"
@@ -4379,10 +5056,10 @@ Table_ActivityNew = {
     StartTime = "2026-05-13 5:00:00",
     EndTime = "2026-05-27 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[18],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
     TitleName = "##45915095",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic04"
@@ -4394,11 +5071,11 @@ Table_ActivityNew = {
     StartTime = "2026-05-19 5:00:00",
     EndTime = "2026-06-02 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[8],
-    Misc = Table_ActivityNew_t.Misc[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[11],
+    Misc = Table_ActivityNew_t.Misc[7],
     Group = 6,
     TabType = 4,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[48],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[19],
     TitleName = "##45915095",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic08"
@@ -4409,10 +5086,10 @@ Table_ActivityNew = {
     StartTime = "2026-05-19 5:00:00",
     EndTime = "2026-06-02 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[8],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[11],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[18],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
     TitleName = "##45915095",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic04"
@@ -4424,11 +5101,11 @@ Table_ActivityNew = {
     StartTime = "2026-05-14 5:00:00",
     EndTime = "2026-05-28 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
-    Misc = Table_ActivityNew_t.Misc[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
+    Misc = Table_ActivityNew_t.Misc[7],
     Group = 6,
     TabType = 4,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[48],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[19],
     TitleName = "##45915095",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic08"
@@ -4439,10 +5116,10 @@ Table_ActivityNew = {
     StartTime = "2026-05-14 5:00:00",
     EndTime = "2026-05-28 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[18],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[16],
     TitleName = "##45915095",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic04"
@@ -4454,11 +5131,11 @@ Table_ActivityNew = {
     StartTime = "2026-06-22 5:00:00",
     EndTime = "2026-07-08 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
-    Misc = Table_ActivityNew_t.Misc[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
+    Misc = Table_ActivityNew_t.Misc[7],
     Group = 6,
     TabType = 4,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[17],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[15],
     TitleName = "##45926626",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic08"
@@ -4469,10 +5146,10 @@ Table_ActivityNew = {
     StartTime = "2026-06-22 5:00:00",
     EndTime = "2026-07-08 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[12],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[6],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[49],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[58],
     TitleName = "##45926626",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic04"
@@ -4484,11 +5161,11 @@ Table_ActivityNew = {
     StartTime = "2026-07-08 5:00:00",
     EndTime = "2026-07-22 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
-    Misc = Table_ActivityNew_t.Misc[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
+    Misc = Table_ActivityNew_t.Misc[7],
     Group = 6,
     TabType = 4,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[17],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[15],
     TitleName = "##45926626",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic08"
@@ -4499,10 +5176,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-08 5:00:00",
     EndTime = "2026-07-22 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[6],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[4],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[49],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[58],
     TitleName = "##45926626",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic04"
@@ -4514,11 +5191,11 @@ Table_ActivityNew = {
     StartTime = "2026-06-30 5:00:00",
     EndTime = "2026-07-14 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[18],
-    Misc = Table_ActivityNew_t.Misc[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[15],
+    Misc = Table_ActivityNew_t.Misc[7],
     Group = 6,
     TabType = 4,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[17],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[15],
     TitleName = "##45926626",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic08"
@@ -4529,10 +5206,10 @@ Table_ActivityNew = {
     StartTime = "2026-06-30 5:00:00",
     EndTime = "2026-07-14 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[18],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[15],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[49],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[58],
     TitleName = "##45926626",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic04"
@@ -4544,11 +5221,11 @@ Table_ActivityNew = {
     StartTime = "2026-07-09 5:00:00",
     EndTime = "2026-07-23 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
-    Misc = Table_ActivityNew_t.Misc[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
+    Misc = Table_ActivityNew_t.Misc[7],
     Group = 6,
     TabType = 4,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[17],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[15],
     TitleName = "##45926626",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic08"
@@ -4559,10 +5236,10 @@ Table_ActivityNew = {
     StartTime = "2026-07-09 5:00:00",
     EndTime = "2026-07-23 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[14],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[13],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[49],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[58],
     TitleName = "##45926626",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic04"
@@ -4574,11 +5251,11 @@ Table_ActivityNew = {
     StartTime = "2026-06-29 5:00:00",
     EndTime = "2026-07-13 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[11],
-    Misc = Table_ActivityNew_t.Misc[10],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[5],
+    Misc = Table_ActivityNew_t.Misc[7],
     Group = 6,
     TabType = 4,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[17],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[15],
     TitleName = "##45926626",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic08"
@@ -4589,10 +5266,10 @@ Table_ActivityNew = {
     StartTime = "2026-06-29 5:00:00",
     EndTime = "2026-07-13 5:00:00",
     TfDayInAdvance = 7,
-    AreaAndServer = Table_ActivityNew_t.AreaAndServer[11],
+    AreaSpecCfg = Table_ActivityNew_t.AreaSpecCfg[5],
     Group = 6,
     TabType = 3,
-    Params_Inte = Table_ActivityNew_t.Params_Inte[49],
+    Params_Inte = Table_ActivityNew_t.Params_Inte[58],
     TitleName = "##45926626",
     TabDesc = "##44721323",
     BgTextture = "activityintegration_bg_pic04"
@@ -4601,7 +5278,7 @@ Table_ActivityNew = {
 local cell_mt = {
   __index = {
     AbortTime = "",
-    AreaAndServer = _EmptyTable,
+    AreaSpecCfg = _EmptyTable,
     BgTextture = "",
     Cycle = "",
     DepositIds = _EmptyTable,

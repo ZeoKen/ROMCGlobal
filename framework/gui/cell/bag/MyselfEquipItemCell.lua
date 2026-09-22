@@ -6,6 +6,8 @@ local comBg = "com_icon_bottom3"
 local siteUnlockConfig = GameConfig.ShadowEquip and GameConfig.ShadowEquip.PosUnlock
 autoImport("BaseItemCell")
 MyselfEquipItemCell = class("MyselfEquipItemCell", BaseItemCell)
+local SnowManualItemId = 45563
+local SnowManualRedTipId = SceneTip_pb.EREDSYS_SNOWMANUAL or 10788
 
 function MyselfEquipItemCell:ctor(obj, index, isfashion, viceEquip, fromSaveData)
   self.isViceEquip = viceEquip == true
@@ -175,6 +177,39 @@ function MyselfEquipItemCell:SetData(data)
   self:TrySetEquippedEffectCDCtrl()
   self:_resetViceEquipBg()
   self:_resetViceSiteLockState()
+  self:RefreshSnowManualRedTip()
+end
+
+function MyselfEquipItemCell:SetSnowManualRedTipEnabled(enabled)
+  if self.enableSnowManualRedTip and enabled ~= true then
+    self:UnRegisterSnowManualRedTip()
+  end
+  self.enableSnowManualRedTip = enabled == true
+  self:RefreshSnowManualRedTip()
+end
+
+function MyselfEquipItemCell:UnRegisterSnowManualRedTip()
+  if self.itemBg then
+    RedTipProxy.Instance:UnRegisterUI(SnowManualRedTipId, self.itemBg.gameObject)
+  end
+end
+
+function MyselfEquipItemCell:RefreshSnowManualRedTip()
+  if not self.enableSnowManualRedTip or not self.itemBg then
+    return
+  end
+  local widgetGO = self.itemBg.gameObject
+  self:UnRegisterSnowManualRedTip()
+  if self.data and self.data.staticData and self.data.staticData.id == SnowManualItemId then
+    RedTipProxy.Instance:RegisterUI(SnowManualRedTipId, widgetGO, self.itemBg.depth + 10, {-15, -15})
+  end
+end
+
+function MyselfEquipItemCell:OnCellDestroy()
+  if self.enableSnowManualRedTip then
+    self:UnRegisterSnowManualRedTip()
+  end
+  MyselfEquipItemCell.super.OnCellDestroy(self)
 end
 
 function MyselfEquipItemCell:ShowPureSite(active)
@@ -196,6 +231,7 @@ function MyselfEquipItemCell:ShowPureSite(active)
     end
   end
   self.itemRoot:SetActive(not active)
+  self:RefreshSnowManualRedTip()
 end
 
 function MyselfEquipItemCell:UpdateSiteStrengthenLv(level)

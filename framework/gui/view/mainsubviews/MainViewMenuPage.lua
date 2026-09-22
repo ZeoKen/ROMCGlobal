@@ -37,6 +37,10 @@ end
 local redTip_LotteryActivity = SceneTip_pb.EREDSYS_LOTTERY_ACTIVITY
 local redTip_LotteryFree = SceneTip_pb.EREDSYS_LOTTERY_FREE
 local redTip_DailyReward = SceneTip_pb.EREDSYS_LOTTERY_DAILY_REWARD
+local GetActivityRedTip = function(staticData)
+  local paramsInte = staticData and staticData.Params_Inte
+  return paramsInte and paramsInte.RedTip
+end
 
 function MainViewMenuPage:Init()
   self:InitUI()
@@ -128,6 +132,7 @@ function MainViewMenuPage:InitUI()
   self:RegisterGuideTarget(ClientGuide.TargetType.mainview_bagbutton, self.bagBtn)
   self.bagBtnSprite = self:FindGO("Sprite", self.bagBtn):GetComponent(GradientUISprite)
   self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ASTRAL_NEW_FASHION, self.bagBtn, 42)
+  self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_SNOWMANUAL, self.bagBtn, 42)
   self.autoBattleButton = self:FindGO("AutoBattleButton")
   self.glandStatusButton = self:FindGO("GlandStatusButton")
   self.glandStatusButtonLab = self:FindComponent("Label", UILabel, self.glandStatusButton)
@@ -4763,12 +4768,9 @@ function MainViewMenuPage:_onClickActivityIntegrationBtn(groupid)
   if not groupid then
     return
   end
-  if not ActivityIntegrationProxy.Instance:CheckGroupValid(groupid) then
-    redlog("活动已关闭  强制隐藏图标")
-    if self.actIntegerBtns[groupid] then
-      self.actIntegerBtns[groupid]:SetActive(false)
-      return
-    end
+  if not ActivityIntegrationProxy.Instance:CheckGroupValid(groupid) and self.actIntegerBtns[groupid] then
+    self.actIntegerBtns[groupid]:SetActive(false)
+    return
   end
   self:ToView(PanelConfig.ActivityIntegrationView, {group = groupid})
 end
@@ -4777,6 +4779,8 @@ function MainViewMenuPage:UpdateLoopActIntegrationBtns()
   if not LoopActIntegrationProxy.Instance then
     return
   end
+  local activeConfiguredRedTips = {}
+  self.loopActConfiguredRedTips = self.loopActConfiguredRedTips or {}
   if not self.loopActIntegerBtns then
     self.loopActIntegerBtns = {}
   end
@@ -4785,6 +4789,10 @@ function MainViewMenuPage:UpdateLoopActIntegrationBtns()
   end
   local groupShowInfos = LoopActIntegrationProxy.Instance:GetAllGroupShowInfo()
   if not groupShowInfos or not next(groupShowInfos) then
+    for oldRedTip in pairs(self.configuredDoujinshiRedTips or {}) do
+      self:UnRegisterSingleRedTipCheck(oldRedTip, self.DoujinshiButton)
+    end
+    self.configuredDoujinshiRedTips = {}
     for groupid, btn in pairs(self.loopActIntegerBtns) do
       if btn then
         btn:SetActive(false)
@@ -4840,10 +4848,19 @@ function MainViewMenuPage:UpdateLoopActIntegrationBtns()
           self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_ACT_PAY_SIGN, self.loopActIntegerBtns[groupid])
           self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_TIERED_BUNDLE, self.loopActIntegerBtns[groupid])
           self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_TIERED_BUNDLE_DAY_REWARD, self.loopActIntegerBtns[groupid])
+          local activityRedTips = {}
+          local oldActivityRedTips = self.loopActConfiguredRedTips[groupid] or {}
+          for oldRedTip in pairs(oldActivityRedTips) do
+            self:UnRegisterSingleRedTipCheck(oldRedTip, self.loopActIntegerBtns[groupid])
+          end
           for i = 1, #allActivityIDs do
             local activityID = allActivityIDs[i]
             local staticData = Table_ActivityNew[activityID]
             if staticData then
+              local configuredRedTip = GetActivityRedTip(staticData)
+              if configuredRedTip then
+                activityRedTips[configuredRedTip] = true
+              end
               local subType = LoopActIntegrationProxy.Instance:GetSubType(staticData)
               local activityId = staticData.Params and staticData.Params.ActivityId or staticData.id
               if subType == 1 then
@@ -4879,12 +4896,27 @@ function MainViewMenuPage:UpdateLoopActIntegrationBtns()
               end
             end
           end
+          for configuredRedTip in pairs(activityRedTips) do
+            activeConfiguredRedTips[configuredRedTip] = true
+            self:RegisterRedTipCheck(configuredRedTip, self.loopActIntegerBtns[groupid], 39)
+            self:RegisterRedTipCheck(configuredRedTip, self.DoujinshiButton, 17)
+          end
+          self.loopActConfiguredRedTips[groupid] = activityRedTips
+          if next(activityRedTips) and ServiceScenePetProxy.Instance then
+            ServiceScenePetProxy.Instance:CallQueryPetAdventureListPetCmd()
+          end
         end
       elseif self.loopActIntegerBtns[groupid] then
         self.loopActIntegerBtns[groupid]:SetActive(false)
       end
     end
   end
+  for oldRedTip in pairs(self.configuredDoujinshiRedTips or {}) do
+    if not activeConfiguredRedTips[oldRedTip] then
+      self:UnRegisterSingleRedTipCheck(oldRedTip, self.DoujinshiButton)
+    end
+  end
+  self.configuredDoujinshiRedTips = activeConfiguredRedTips
   for groupid, btn in pairs(self.loopActIntegerBtns) do
     if not groupShowInfos[groupid] and btn then
       btn:SetActive(false)

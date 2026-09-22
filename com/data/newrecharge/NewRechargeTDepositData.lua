@@ -31,7 +31,7 @@ function NewRechargeTDepositData:GetROBItemList(refresh)
     end
     if config.Params.ShopShowType ~= nil then
       for k, v in pairs(Table_ShopShow) do
-        if v.Sort == config.Params.ShopShowType and v.Type == 2 and self.IsDepositItem(v.ShopID) and self.IsDepositItemCanShow(v.ShopID) then
+        if v.Sort == config.Params.ShopShowType and v.Type == 2 and self.IsDepositItem(v.ShopID) and self.IsDepositItemCanShow(v.ShopID) and self.IsDepositItemLimitDataReady(v.ShopID) then
           Table_ShopShow[k].confType = 1
           table.insert(self.ROBItemList, Table_ShopShow[k])
           local info = _NewRechargeProxy:GenerateDepositGoodsInfo(v.ShopID)
@@ -88,6 +88,15 @@ function NewRechargeTDepositData.IsDepositItemCanShow(depositItemId)
   return ShopProxy.Instance:IsThisItemCanBuyNow(depositItemId)
 end
 
+function NewRechargeTDepositData.IsDepositItemLimitDataReady(depositItemId)
+  local cfg = Table_Deposit[depositItemId]
+  if not cfg then
+    return false
+  end
+  local isLimited = cfg.LimitType ~= 6 and cfg.MonthLimit ~= nil and cfg.MonthLimit > 0
+  return not isLimited or NewRechargeDepositItemCtrl.Ins():IsChargeCntQueryFinished()
+end
+
 NewRechargeTDepositData.ZenyItemList = nil
 
 function NewRechargeTDepositData:GetZenyItemList(refresh)
@@ -103,7 +112,7 @@ function NewRechargeTDepositData:GetZenyItemList(refresh)
     end
     if config and config.Params.ShopShowType ~= nil then
       for k, v in pairs(Table_ShopShow) do
-        if v.Sort == config.Params.ShopShowType and v.Type == 2 and self.IsDepositItem(v.ShopID) and self.IsDepositItemCanShow(v.ShopID) then
+        if v.Sort == config.Params.ShopShowType and v.Type == 2 and self.IsDepositItem(v.ShopID) and self.IsDepositItemCanShow(v.ShopID) and self.IsDepositItemLimitDataReady(v.ShopID) then
           Table_ShopShow[k].confType = 1
           table.insert(self.ZenyItemList, Table_ShopShow[k])
           local info = _NewRechargeProxy:GenerateDepositGoodsInfo(v.ShopID)

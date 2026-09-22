@@ -356,7 +356,49 @@ function RecallShopSubView:OnBuyItem(data, buyCount)
   ServiceRecallCCmdProxy.Instance:CallBuyShopGoodRecallCmd(data.id, buyCount)
 end
 
-function RecallShopSubView:OnClickItemUrl(event, url)
+local itemClickUrlTipData = {}
+
+function RecallShopSubView:OnClickItemUrl(id)
+  if not id then
+    return
+  end
+  if not next(itemClickUrlTipData) then
+    itemClickUrlTipData.itemdata = ItemData.new()
+  end
+  itemClickUrlTipData.itemdata:ResetData("itemClickUrl", id)
+  
+  function itemClickUrlTipData.clickItemUrlCallback(tip, itemid)
+    TipManager.Instance:CloseTip()
+    itemClickUrlTipData.itemdata:ResetData("itemClickUrl", itemid)
+    self:ShowClickItemUrlTip(itemClickUrlTipData)
+  end
+  
+  self:ShowClickItemUrlTip(itemClickUrlTipData)
+end
+
+local clickItemUrlTipOffset = {196, 0}
+
+function RecallShopSubView:ShowClickItemUrlTip(data)
+  local tip = self:ShowItemTip(data, self.buyCell.bg, NGUIUtil.AnchorSide.Right, clickItemUrlTipOffset)
+  if tip then
+    tip:AddEventListener(ItemTipEvent.ShowFashionPreview, self.OnTipFashionPreviewShow, self)
+    tip:AddEventListener(FashionPreviewEvent.Close, self.OnTipFashionPreviewClose, self)
+  end
+end
+
+function RecallShopSubView:OnTipFashionPreviewShow(preview)
+  if self.CloseWhenClickOtherPlace then
+    self.CloseWhenClickOtherPlace:AddTarget(preview.gameObject.transform)
+  end
+end
+
+function RecallShopSubView:OnTipFashionPreviewClose()
+  if self.CloseWhenClickOtherPlace then
+    self.CloseWhenClickOtherPlace:ReCalculateBound()
+  end
+end
+
+function RecallShopSubView:OnClickItemUrlLegacy(event, url)
   if url then
     xdlog("RecallShopSubView:OnClickItemUrl", url)
   end

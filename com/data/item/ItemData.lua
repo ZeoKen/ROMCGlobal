@@ -149,6 +149,10 @@ function ItemData:GetCdConfigTime()
   if useItemData == nil then
     return self.configCdTime and self.configCdTime > 0 and self.configCdTime or 0
   end
+  if CDProxy.IsDynamicCDItem(self.staticData.id) then
+    local cdData = CDProxy.Instance:GetItemInCD(self.staticData.id)
+    return cdData and cdData:GetCdMax() or 0
+  end
   if useItemData.PVPCDtime and Game.MapManager:IsPVPMode() then
     return useItemData.PVPCDtime or 0
   end
@@ -172,6 +176,7 @@ function ItemData:SetEquipCards(cards)
       local single = cards[i]
       local equipedCard = ItemData.new(single.guid, single.id)
       equipedCard:SetCardLevel(single.card_info and single.card_info.lv or 0)
+      equipedCard:SetEquipedOwnerItemData(self)
       if single.pos and 0 < single.pos then
         equipedCard.index = single.pos
         self.equipedCardInfo[single.pos] = equipedCard
@@ -187,6 +192,36 @@ function ItemData:HasEquipedCard()
     return false
   end
   return next(self.equipedCardInfo) ~= nil
+end
+
+function ItemData:HasEquipedShadowCard()
+  if self.equipedCardInfo == nil then
+    return false
+  end
+  for _, card in pairs(self.equipedCardInfo) do
+    if card:IsShadowCard() then
+      return true
+    end
+  end
+  return false
+end
+
+function ItemData:IsShadowCard()
+  local isShadow = self.cardInfo and self.cardInfo.IsShadow
+  return isShadow == true or isShadow == 1
+end
+
+function ItemData:SetEquipedOwnerItemData(itemData)
+  self.equipedOwnerItemData = itemData
+end
+
+function ItemData:IsEquipedInShadowEquip()
+  local owner = self.equipedOwnerItemData
+  return owner and owner.IsServerShadowEquip and owner:IsServerShadowEquip()
+end
+
+function ItemData:ShouldShowShadowCard()
+  return self:IsShadowCard() or self:IsEquipedInShadowEquip()
 end
 
 function ItemData:GetEquipedCardNum()

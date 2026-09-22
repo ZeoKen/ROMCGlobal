@@ -795,6 +795,16 @@ Table_UserBackground = {
     Condition = _EmptyTable,
     Background = "Bg_zuduibeijing_28"
   },
+  [85] = {
+    id = 85,
+    ItemID = 676,
+    Name = "##46219211",
+    Icon = "Avatarbox_TW_S8_kuang",
+    Effect = "",
+    GroupEffect = "",
+    Condition = _EmptyTable,
+    Background = "Bg_zuduibeijing_TW_S8"
+  },
   [1001] = {
     id = 1001,
     ItemID = 1501,

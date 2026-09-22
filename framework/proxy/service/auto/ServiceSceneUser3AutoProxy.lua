@@ -225,6 +225,9 @@ function ServiceSceneUser3AutoProxy:onRegister()
   self:Listen(82, 65, function(data)
     self:RecvUserIceSlideStopUserCmd(data)
   end)
+  self:Listen(82, 73, function(data)
+    self:RecvExtractionCardUserCmd(data)
+  end)
 end
 
 function ServiceSceneUser3AutoProxy:CallFirstDepositInfo(end_time, got_gear, accumlated_deposit, first_deposit_rewarded, version)
@@ -3941,6 +3944,81 @@ function ServiceSceneUser3AutoProxy:CallUserIceSlideStopUserCmd(charid, dir, spe
   end
 end
 
+function ServiceSceneUser3AutoProxy:CallExtractionCardUserCmd(oper, gridid, cardguid, pos, data)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.ExtractionCardUserCmd()
+    if oper ~= nil then
+      msg.oper = oper
+    end
+    if gridid ~= nil then
+      msg.gridid = gridid
+    end
+    if cardguid ~= nil then
+      msg.cardguid = cardguid
+    end
+    if pos ~= nil then
+      msg.pos = pos
+    end
+    if data ~= nil and data.gridid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.data == nil then
+        msg.data = {}
+      end
+      msg.data.gridid = data.gridid
+    end
+    if data ~= nil and data.cards ~= nil then
+      if msg.data == nil then
+        msg.data = {}
+      end
+      if msg.data.cards == nil then
+        msg.data.cards = {}
+      end
+      for i = 1, #data.cards do
+        table.insert(msg.data.cards, data.cards[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.ExtractionCardUserCmd.id
+    local msgParam = {}
+    if oper ~= nil then
+      msgParam.oper = oper
+    end
+    if gridid ~= nil then
+      msgParam.gridid = gridid
+    end
+    if cardguid ~= nil then
+      msgParam.cardguid = cardguid
+    end
+    if pos ~= nil then
+      msgParam.pos = pos
+    end
+    if data ~= nil and data.gridid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.data == nil then
+        msgParam.data = {}
+      end
+      msgParam.data.gridid = data.gridid
+    end
+    if data ~= nil and data.cards ~= nil then
+      if msgParam.data == nil then
+        msgParam.data = {}
+      end
+      if msgParam.data.cards == nil then
+        msgParam.data.cards = {}
+      end
+      for i = 1, #data.cards do
+        table.insert(msgParam.data.cards, data.cards[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceSceneUser3AutoProxy:RecvFirstDepositInfo(data)
   self:Notify(ServiceEvent.SceneUser3FirstDepositInfo, data)
 end
@@ -4221,6 +4299,10 @@ function ServiceSceneUser3AutoProxy:RecvUserIceSlideStopUserCmd(data)
   self:Notify(ServiceEvent.SceneUser3UserIceSlideStopUserCmd, data)
 end
 
+function ServiceSceneUser3AutoProxy:RecvExtractionCardUserCmd(data)
+  self:Notify(ServiceEvent.SceneUser3ExtractionCardUserCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.SceneUser3FirstDepositInfo = "ServiceEvent_SceneUser3FirstDepositInfo"
 ServiceEvent.SceneUser3FirstDepositReward = "ServiceEvent_SceneUser3FirstDepositReward"
@@ -4292,3 +4374,4 @@ ServiceEvent.SceneUser3SnakeCoasterLeaveCmd = "ServiceEvent_SceneUser3SnakeCoast
 ServiceEvent.SceneUser3SnakeCoasterQueryRankCmd = "ServiceEvent_SceneUser3SnakeCoasterQueryRankCmd"
 ServiceEvent.SceneUser3SnakeCoasterActionNtf = "ServiceEvent_SceneUser3SnakeCoasterActionNtf"
 ServiceEvent.SceneUser3UserIceSlideStopUserCmd = "ServiceEvent_SceneUser3UserIceSlideStopUserCmd"
+ServiceEvent.SceneUser3ExtractionCardUserCmd = "ServiceEvent_SceneUser3ExtractionCardUserCmd"

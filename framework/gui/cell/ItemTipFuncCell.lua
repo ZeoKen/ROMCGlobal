@@ -1,5 +1,8 @@
 local BaseCell = autoImport("BaseCell")
 ItemTipFuncCell = class("ItemTipFuncCell", BaseCell)
+local SnowManualFuncType = "Train"
+local SnowManualItemId = 45563
+local SnowManualRedTipId = SceneTip_pb.EREDSYS_SNOWMANUAL or 10788
 ItemTipFuncCell.EBtnStyle = {
   Yellow = 1,
   Blue = 2,
@@ -33,6 +36,7 @@ function ItemTipFuncCell:Init()
 end
 
 function ItemTipFuncCell:SetData(data)
+  self:UnRegisterSnowManualRedTip()
   self.data = data
   if data then
     self.gameObject:SetActive(true)
@@ -92,6 +96,24 @@ function ItemTipFuncCell:SetData(data)
     self.gameObject:SetActive(false)
   end
   self:UpdateGuideTarget()
+  self:RegisterSnowManualRedTip()
+end
+
+function ItemTipFuncCell:UnRegisterSnowManualRedTip()
+  if self.bg and RedTipProxy and RedTipProxy.Instance then
+    RedTipProxy.Instance:UnRegisterUI(SnowManualRedTipId, self.bg.gameObject)
+  end
+end
+
+function ItemTipFuncCell:RegisterSnowManualRedTip()
+  if not self.data or self.data.type ~= SnowManualFuncType then
+    return
+  end
+  local itemData = self.data.itemData
+  if not (itemData and itemData.staticData) or itemData.staticData.id ~= SnowManualItemId then
+    return
+  end
+  RedTipProxy.Instance:RegisterUI(SnowManualRedTipId, self.bg.gameObject, self.bg.depth + 10)
 end
 
 function ItemTipFuncCell:AddQuestCallback(note)
@@ -128,6 +150,7 @@ function ItemTipFuncCell:UpdateGuideTarget()
 end
 
 function ItemTipFuncCell:OnCellDestroy()
+  self:UnRegisterSnowManualRedTip()
   ItemTipFuncCell.super.OnCellDestroy(self)
   if self.guideTarget then
     self:UnRegisterGuideTarget(self.guideTarget)

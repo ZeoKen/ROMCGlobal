@@ -35,6 +35,7 @@ function ViceEquipPage:InitEquipCtl()
     local obj = self:LoadPreferb(CELL_PREFAB, self.equipGrid)
     obj.name = "ViewEquipItemCell" .. site
     self.roleEquips[site] = MyselfEquipItemCell.new(obj, site, nil, true)
+    self.roleEquips[site]:SetSnowManualRedTipEnabled(true)
     self.roleEquips[site]:AddEventListener(MouseEvent.MouseClick, self.OnClickEquip, self)
     self.roleEquips[site]:AddEventListener(MouseEvent.DoubleClick, self.OnDoubleClickEquip, self)
   end
@@ -83,6 +84,10 @@ function ViceEquipPage:OnClickEquip(cellCtl)
         callback = callback,
         showButton = "equip"
       }
+      if data:IsExtraction() then
+        sdata.funcConfig = nil
+        sdata.customFuncConfig = self:GetExtractionTipFuncs(data)
+      end
       local itemTip = self:ShowItemTip(sdata, self.normalStick, nil, TipOffset)
       if not cellCtl:IsEffective() then
         itemTip:GetCell(1):SetNoEffectTip(true)
@@ -171,6 +176,30 @@ function ViceEquipPage:SetChoosenSite(cellCtl)
   end
 end
 
+function ViceEquipPage:GetExtractionTipFuncs(data)
+  local funcs = {}
+  if data and data.GetMaxCardSlot and data:GetMaxCardSlot() > 0 then
+    table.insert(funcs, {
+      name = ZhString.ItemTip_CardInsert,
+      callbackParam = data,
+      callback = function(itemData)
+        GameFacade.Instance:sendNotification(UIEvent.ShowUI, {
+          viewname = "EquipIntegrateView",
+          viewdata = {index = 4, itemdata = itemData}
+        })
+      end
+    })
+  end
+  if FunctionItemFunc.Me():CheckFuncState("ExtractionDeactive", data) == ItemFuncState.Active then
+    table.insert(funcs, {
+      name = GameConfig.ItemFunction[75] and GameConfig.ItemFunction[75].name or "取消激活",
+      callbackParam = data,
+      callback = FunctionItemFunc.Me():GetFuncById(75)
+    })
+  end
+  return funcs
+end
+
 function ViceEquipPage:OnDoubleClickEquip(cellCtl)
   if self.container.markingFavoriteMode then
     return
@@ -254,6 +283,7 @@ function ViceEquipPage:AddViewInterest()
   self:AddListenEvt(ServiceEvent.NUserExtractionOperateUserCmd, self._updateExtractionEquip)
   self:AddListenEvt(ServiceEvent.NUserExtractionActiveUserCmd, self._updateExtractionEquip)
   self:AddListenEvt(ServiceEvent.NUserExtractionRemoveUserCmd, self._updateExtractionEquip)
+  self:AddListenEvt(ServiceEvent.SceneUser3ExtractionCardUserCmd, self._updateExtractionEquip)
 end
 
 function ViceEquipPage:CancelChoose()

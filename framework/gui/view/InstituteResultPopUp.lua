@@ -26,6 +26,11 @@ function InstituteResultPopUp:InitView()
   local effectPath = ResourcePathHelper.Effect(ResourcePathHelper.UIEffect("59Instituteresult"))
   local effect = self:LoadPreferb_ByFullPath(effectPath)
   effect.transform.localPosition = LuaGeometry.GetTempVector3(359.3, 106.7, 0)
+  local resultBgTxt = self:FindComponent("result_bg_txt", UISprite, effect)
+  if resultBgTxt then
+    IconManager:SetArtFontIcon("result_bg_txt", resultBgTxt)
+    resultBgTxt:MakePixelPerfect()
+  end
   self:UpdateInfo()
 end
 

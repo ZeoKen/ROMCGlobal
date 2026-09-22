@@ -137,11 +137,13 @@ end
 function PackageFashionPage:UpdateTabRedTips()
   local tabCells = self.itemlist.tabCtl:GetCells()
   local hasSpecialFashion = false
+  local fashionRedTip = RedTipProxy.Instance:GetRedTip(SceneTip_pb.EREDSYS_ASTRAL_NEW_FASHION)
+  local fashionRedTipParams = fashionRedTip and fashionRedTip:GetParams()
   for i = 1, #tabCells do
     local index = tabCells[i].data and tabCells[i].data.index
     if index then
       local cfg = Fashion2AdvFashionTab[index]
-      local subids = {}
+      local unreadSubTipIds = {}
       local _validTypes = {}
       for _itemType, _info in pairs(Table_ItemType) do
         if _info.AdventureLogGroup and _info.AdventureLogGroup == cfg[2] then
@@ -151,11 +153,14 @@ function PackageFashionPage:UpdateTabRedTips()
       if 0 < #_validTypes then
         local spFashionItems = BagProxy.Instance:GetBagItemsByTypes(_validTypes, BagProxy.BagType.SpecialFashion)
         for j = 1, #spFashionItems do
-          table.insert(subids, spFashionItems[j].staticData.id)
+          local itemId = spFashionItems[j].staticData.id
+          if fashionRedTipParams and fashionRedTipParams[itemId] then
+            table.insert(unreadSubTipIds, tostring(itemId))
+          end
           hasSpecialFashion = true
         end
       end
-      if subids and 0 < #subids then
+      if 0 < #unreadSubTipIds then
         self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_ASTRAL_NEW_FASHION, tabCells[i].sp1)
       else
         self:UnRegisterSingleRedTipCheck(SceneTip_pb.EREDSYS_ASTRAL_NEW_FASHION, tabCells[i].sp1)
@@ -245,6 +250,23 @@ function PackageFashionPage:AddViewEvts()
   self:AddListenEvt(ItemEvent.EquipUpdate, self.OnEquipUpdate)
   self:AddListenEvt(MyselfEvent.MyDataChange, self.OnMyDataChange)
   self:AddListenEvt(MyselfEvent.ChangeDress, self.RefreshMyselfModel)
+  self:AddListenEvt(ServiceEvent.SceneTipGameTipCmd, self.HandleFashionRedTipUpdate)
+end
+
+function PackageFashionPage:HandleFashionRedTipUpdate(note)
+  if not self.inited then
+    return
+  end
+  local data = note.body
+  if not data or not data.redtip then
+    return
+  end
+  for i = 1, #data.redtip do
+    if data.redtip[i].redsys == SceneTip_pb.EREDSYS_ASTRAL_NEW_FASHION then
+      self:UpdateTabRedTips()
+      return
+    end
+  end
 end
 
 function PackageFashionPage:AddEvts()

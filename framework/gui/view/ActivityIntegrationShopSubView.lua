@@ -211,6 +211,7 @@ end
 function ActivityIntegrationShopSubView:InitGiftItemCell()
   local go = self:LoadCellPfb("NewRechargeGiftTipCell")
   self.giftCell = NewRechargeGiftTipCell.new(go)
+  self.giftCell:AddEventListener(ItemTipEvent.ClickItemUrl, self.OnClickItemUrl, self)
   self.giftCell.gameObject:SetActive(false)
 end
 

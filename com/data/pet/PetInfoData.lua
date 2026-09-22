@@ -17,8 +17,7 @@ PetInfoData.KeyValue = {
   [ScenePet_pb.EPETDATA_REWARD_COUNT] = "reward_count",
   [ScenePet_pb.EPETDATA_BODY] = "body",
   [ScenePet_pb.EPETDATA_SKILL] = "skills",
-  [ScenePet_pb.EPETDATA_SKILLSWITCH] = "skilloff",
-  [ScenePet_pb.EPETDATA_ACTIVE_SKILL] = "active_skills"
+  [ScenePet_pb.EPETDATA_SKILLSWITCH] = "skilloff"
 }
 local _HeadUpdateKey = {
   [ScenePet_pb.EPETDATA_NAME] = 1,
@@ -137,12 +136,6 @@ function PetInfoData:Server_SetData(serverData)
       end
     end
   end
-  if (self.active_skills == nil or #self.active_skills == 0) and self.skills and 0 < #self.skills then
-    self.active_skills = {}
-    for i = 1, #self.skills do
-      table.insert(self.active_skills, self.skills[i])
-    end
-  end
 end
 
 function PetInfoData:GetDressingWearByEpos(epos)
@@ -168,11 +161,6 @@ function PetInfoData:Server_UpdateData(petMemberDatas)
       self.skills = {}
       for j = 1, #single.values do
         table.insert(self.skills, single.values[j])
-      end
-    elseif single.etype == ScenePet_pb.EPETDATA_ACTIVE_SKILL and single.values then
-      self.active_skills = {}
-      for j = 1, #single.values do
-        table.insert(self.active_skills, single.values[j])
       end
     elseif single.etype == ScenePet_pb.EPETDATA_NAME and single.data then
       self.name = single.data
@@ -477,33 +465,6 @@ function PetInfoData:SetContractSkillLevel(level)
   if not replaced then
     table.insert(self.skills, fullSkillId)
   end
-  if self.active_skills and 0 < #self.active_skills then
-    replaced = false
-    for i = 1, #self.active_skills do
-      if math.floor(self.active_skills[i] / 1000) == baseFloor then
-        self.active_skills[i] = fullSkillId
-        replaced = true
-      end
-    end
-    if not replaced then
-      table.insert(self.active_skills, fullSkillId)
-    end
-  end
-end
-
-function PetInfoData:IsSkillIdActive(skillFullId)
-  if skillFullId == nil then
-    return true
-  end
-  if not self.active_skills or #self.active_skills == 0 then
-    return true
-  end
-  for i = 1, #self.active_skills do
-    if self.active_skills[i] == skillFullId then
-      return true
-    end
-  end
-  return false
 end
 
 local IsPetSkillConfigPerfect = function(skills, skillConfig)
@@ -576,30 +537,43 @@ function PetInfoData:GetSkillDisplayDatasForUI()
     "Skill_2",
     "Skill_5"
   }
+  local contractConfig = GameConfig.Pet.Contract
+  local skillReqLevel = contractConfig and contractConfig.skill_req_level or {}
   for i = 1, #sortedIndex do
     local key = sortedIndex[i]
     local isContract = key == "ContractSkill"
     local skillSlot = tonumber(string.match(key, "^Skill_(%d+)$"))
     local sid = GetSkillByConfig(self.staticData and self.staticData[key], isContract)
     if sid ~= nil then
+      local reqLevel = skillReqLevel[string.lower(key)]
       local one = {
         skillId = sid,
         petid = self.petid,
-        inactive = false,
+        guid = self.guid,
+        inactive = contractBase ~= nil and not isContract and reqLevel ~= nil and curCL < reqLevel,
         isContract = isContract,
         canUpgradeContract = false,
         skillSlot = skillSlot
       }
       if isContract then
         one.level = curCL
+        one.maxLevel = maxCL
         if 0 < maxCL and maxCL > curCL then
           one.canUpgradeContract = true
         end
       end
-      if self.active_skills and 0 < #self.active_skills and not isContract then
-        one.inactive = not self:IsSkillIdActive(sid)
-      end
       table.insert(result, one)
+    end
+  end
+  local relatedSkillIds = {}
+  for i = 1, #result do
+    if type(result[i]) == "table" and result[i].skillId then
+      table.insert(relatedSkillIds, result[i].skillId)
+    end
+  end
+  for i = 1, #result do
+    if type(result[i]) == "table" then
+      result[i].relatedSkillIds = relatedSkillIds
     end
   end
   return result

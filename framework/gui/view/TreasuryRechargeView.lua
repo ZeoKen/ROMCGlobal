@@ -133,6 +133,7 @@ end
 function TreasuryRechargeView:InitDatas()
   self.deltaX = 0
   self.deltaY = 0
+  self.isGettingReward = false
   self.actId = TreasuryRechargeProxy.Instance.actId
 end
 
@@ -289,6 +290,8 @@ function TreasuryRechargeView:handleGetReward(note)
     self:ShowAwardEffect(itemData)
   end
   self:RefreshPage()
+  self.isGettingReward = false
+  self.maskCollider.enabled = false
 end
 
 function TreasuryRechargeView:handleGetFreeReward()
@@ -302,6 +305,9 @@ function TreasuryRechargeView:handleGetFreeReward()
 end
 
 function TreasuryRechargeView:TryDragBox(obj, delta, index)
+  if self.isGettingReward then
+    return
+  end
   self.deltaX = self.deltaX + delta.x
   self.deltaY = self.deltaY + delta.y
   if self.deltaY < -150 then
@@ -311,10 +317,10 @@ function TreasuryRechargeView:TryDragBox(obj, delta, index)
     if TreasuryRechargeProxy.Instance.restKeyCount == 0 then
       return
     end
+    self.isGettingReward = true
     self.maskCollider.enabled = true
     self:TryPlayDropAnimeTween(index)
     TimeTickManager.Me():CreateOnceDelayTick(1000, function(owner, deltaTime)
-      self.maskCollider.enabled = false
       TreasuryRechargeProxy.Instance:CallBoliGoldGetReward(index)
     end, self, 1)
   end
@@ -336,6 +342,9 @@ function TreasuryRechargeView:TryPlayDropAnimeTween(index)
 end
 
 function TreasuryRechargeView:TryShowDragTip(state, obj, index)
+  if self.isGettingReward then
+    return
+  end
   if not obj then
     return
   end
@@ -395,5 +404,7 @@ function TreasuryRechargeView:OnExit()
     end
   end
   TimeTickManager.Me():ClearTick(self)
+  self.isGettingReward = false
+  self.maskCollider.enabled = false
   TreasuryRechargeView.super.OnExit(self)
 end

@@ -31,7 +31,7 @@ function FunctionPhotoStorage:GetGuildIconDownloadUrl(guildID, photoIndex, times
     extension = extension or PhotoFileInfo.PictureFormat.JPG
   end
   local url = orginStringFormat("%s/%s%s/%s.%s", XDCDNInfo.GetFileServerURL(), self:GetPhotoUrlPath(m_photoType), guildID, photoIndex, extension)
-  if not BranchMgr.IsTW() and not BranchMgr.IsJapan() and not BranchMgr.IsNOEN() and not BranchMgr.IsSEA() and not BranchMgr.IsNA() and not BranchMgr.IsEU() and not BranchMgr.IsNO() and not BranchMgr.IsNOTW() and isThumb then
+  if not BranchMgr.IsTW() and not BranchMgr.IsJapan() and not BranchMgr.IsNOEN() and not BranchMgr.IsSEA() and not BranchMgr.IsNA() and not BranchMgr.IsEU() and not BranchMgr.IsNO() and not BranchMgr.IsNOTW() and not BranchMgr.IsNOKR() and isThumb then
     url = url .. "!Percent25"
   end
   return orginStringFormat("%s?t=%s", url, timestamp)

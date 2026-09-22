@@ -2914,6 +2914,18 @@ local Scene_sc_gczc = {
         waitaction = "functional_action10"
       },
       {
+        uniqueID = 829951,
+        ID = 829951,
+        position = {
+          -13.8400001525879,
+          110.01000213623,
+          58.8300018310547
+        },
+        dir = 93.629997253418,
+        xdir = 360,
+        waitaction = "functional_action10"
+      },
+      {
         uniqueID = 201,
         ID = 842000,
         position = {

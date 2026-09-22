@@ -55,6 +55,13 @@ function SubSkillProjectile:Update(time, deltaTime)
     self:_End()
     return
   end
+  if nil ~= self.hitDelayDestroy then
+    self.hitDelayDestroy = self.hitDelayDestroy - deltaTime
+    if self.hitDelayDestroy <= 0 then
+      self:_End()
+    end
+    return
+  end
   local endPosition, refreshed = self:GetEndPosition()
   if nil == endPosition then
     self:_End()
@@ -70,6 +77,9 @@ function SubSkillProjectile:Update(time, deltaTime)
 end
 
 function SubSkillProjectile:GetEndPosition()
+  if nil ~= self.hitEndPosition then
+    return self.hitEndPosition, false
+  end
   local endPosition = self.args[5]
   if nil == endPosition then
     local pos = self:GetHitPosition()
@@ -118,6 +128,9 @@ function SubSkillProjectile:Hit(endPosition)
   end
   mylog("SubSkillProjectile:Hit", UnityFrameCount)
   hitWorker:SetFromPosition(fromPosition)
+  if nil ~= args[2] and nil ~= args[2].hit_delay_destroy then
+    self.hitEndPosition = VectorUtility.TryAsign_3(self.hitEndPosition, endPosition)
+  end
   hitWorker:Work(args[6], args[7], args[4])
 end
 
@@ -155,6 +168,11 @@ function SubSkillProjectile:_End()
     return
   end
   self.args[1].End(self)
+  local delayDestroy = self.args[2] and self.args[2].hit_delay_destroy
+  if nil ~= delayDestroy and 0 < delayDestroy and nil == self.hitDelayDestroy then
+    self.hitDelayDestroy = delayDestroy
+    return
+  end
   self:Destroy()
 end
 
@@ -168,6 +186,8 @@ function SubSkillProjectile:DoConstruct(asArray, args)
   self.args[7] = args[8]
   self.args[12] = args[12]
   local hitWorker = self.args[3]
+  self.hitDelayDestroy = nil
+  self.hitEndPosition = VectorUtility.TryAsign_3(self.hitEndPosition, nil)
   hitWorker:AddRef()
   hitWorker:Delay()
   local creature = FindCreature(hitWorker:GetFromGUID())
@@ -204,5 +224,10 @@ function SubSkillProjectile:DoDeconstruct(asArray)
     args[11]:Destroy()
     args[11] = nil
   end
+  if nil ~= self.hitEndPosition then
+    self.hitEndPosition:Destroy()
+    self.hitEndPosition = nil
+  end
+  self.hitDelayDestroy = nil
   TableUtility.ArrayClearWithCount(args, 11)
 end

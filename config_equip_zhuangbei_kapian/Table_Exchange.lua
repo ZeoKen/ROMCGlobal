@@ -24,7 +24,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = _EmptyTable,
     SellLimit = _EmptyTable
   },
@@ -432,7 +432,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = _EmptyTable,
     SellLimit = _EmptyTable
   },
@@ -694,7 +694,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -1185,7 +1185,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -1206,7 +1206,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -1227,7 +1227,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -1248,7 +1248,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -1269,7 +1269,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -1290,7 +1290,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -1311,7 +1311,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -1332,7 +1332,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -2064,7 +2064,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = _EmptyTable,
     SellLimit = _EmptyTable
   },
@@ -2079,7 +2079,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = _EmptyTable,
     SellLimit = _EmptyTable
   },
@@ -2094,7 +2094,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = _EmptyTable,
     SellLimit = _EmptyTable
   },
@@ -16623,6 +16623,29 @@ Table_Exchange = {
       Param = {count = 2}
     }
   },
+  [23069] = {
+    id = 23069,
+    NameZh = "##2832653",
+    Trade = 1,
+    Overlap = 1,
+    Category = 1016,
+    ShowTime = 7200,
+    TFAuction = 1,
+    Auction = 1,
+    TFTradeTime = "",
+    TFUnTradeTime = "",
+    TradeTime = "",
+    UnTradeTime = "",
+    GuidePrice = 50000000,
+    BuyLimit = {
+      type = "Count",
+      Param = {count = 10}
+    },
+    SellLimit = {
+      type = "Count",
+      Param = {count = 2}
+    }
+  },
   [23070] = {
     id = 23070,
     NameZh = "##2834798",
@@ -16976,7 +16999,6 @@ Table_Exchange = {
     Trade = 1,
     Overlap = 1,
     Category = 1012,
-    FashionType = nil,
     ShowTime = 7200,
     TFTradeTime = "",
     TFUnTradeTime = "",
@@ -17892,6 +17914,26 @@ Table_Exchange = {
   [23467] = {
     id = 23467,
     NameZh = "##44709071",
+    Trade = 1,
+    Overlap = 1,
+    Category = 1012,
+    ShowTime = 7200,
+    TFTradeTime = "",
+    TFUnTradeTime = "",
+    TradeTime = "",
+    UnTradeTime = "",
+    BuyLimit = {
+      type = "Count",
+      Param = {count = 10}
+    },
+    SellLimit = {
+      type = "Count",
+      Param = {count = 2}
+    }
+  },
+  [23473] = {
+    id = 23473,
+    NameZh = "##1275122",
     Trade = 1,
     Overlap = 1,
     Category = 1012,
@@ -35615,7 +35657,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35636,7 +35678,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35657,7 +35699,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35678,7 +35720,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35699,7 +35741,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35720,7 +35762,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35741,7 +35783,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35762,7 +35804,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35783,7 +35825,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35804,7 +35846,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35825,7 +35867,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35846,7 +35888,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35867,7 +35909,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35888,7 +35930,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35909,7 +35951,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35930,7 +35972,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35951,7 +35993,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35972,7 +36014,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -35993,6 +36035,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36013,7 +36056,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36034,7 +36077,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36055,7 +36098,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36076,7 +36119,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36097,7 +36140,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36118,7 +36161,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36139,7 +36182,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36160,7 +36203,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36181,7 +36224,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36202,7 +36245,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36223,7 +36266,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36244,7 +36287,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36265,7 +36308,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36286,7 +36329,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36307,7 +36350,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36328,7 +36371,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36349,7 +36392,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36370,7 +36413,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36391,7 +36434,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36412,7 +36455,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36433,6 +36476,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36453,7 +36497,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36474,7 +36518,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36495,7 +36539,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36516,7 +36560,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36537,7 +36581,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36558,7 +36602,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36579,7 +36623,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36600,7 +36644,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36621,7 +36665,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36642,7 +36686,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36663,7 +36707,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36684,7 +36728,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36705,7 +36749,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36726,7 +36770,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36747,7 +36791,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36768,7 +36812,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36789,7 +36833,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36810,7 +36854,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36831,7 +36875,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36852,7 +36896,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36873,7 +36917,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99999}
@@ -36894,7 +36938,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -36915,7 +36959,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -36936,7 +36980,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -36957,7 +37001,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -36978,7 +37022,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -36999,7 +37043,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37020,7 +37064,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37041,7 +37085,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37062,7 +37106,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37083,7 +37127,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37104,7 +37148,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37125,7 +37169,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37146,7 +37190,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37167,7 +37211,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37188,7 +37232,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37209,7 +37253,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37230,7 +37274,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37251,7 +37295,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37272,7 +37316,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37293,7 +37337,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37314,7 +37358,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37335,7 +37379,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37356,7 +37400,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37377,7 +37421,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37398,7 +37442,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37419,7 +37463,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37440,7 +37484,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37461,7 +37505,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37482,7 +37526,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37503,7 +37547,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37524,7 +37568,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37545,7 +37589,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37566,7 +37610,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37587,7 +37631,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37608,7 +37652,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37629,7 +37673,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37650,7 +37694,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37671,7 +37715,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37692,7 +37736,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37713,7 +37757,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37734,7 +37778,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37755,7 +37799,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37776,7 +37820,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37797,7 +37841,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37818,7 +37862,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37839,7 +37883,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37860,7 +37904,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37881,7 +37925,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37902,7 +37946,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37923,6 +37967,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37943,6 +37988,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37963,6 +38009,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -37983,6 +38030,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -38003,6 +38051,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -38023,7 +38072,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -38044,7 +38093,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -38065,7 +38114,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38086,7 +38135,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38107,7 +38156,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38128,7 +38177,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38149,7 +38198,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38170,7 +38219,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38191,7 +38240,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -38212,7 +38261,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -38233,7 +38282,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -38254,7 +38303,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 499}
@@ -38275,7 +38324,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38296,7 +38345,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38317,7 +38366,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38338,7 +38387,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38359,7 +38408,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38380,7 +38429,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38401,7 +38450,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38422,7 +38471,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38443,7 +38492,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38464,7 +38513,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38485,7 +38534,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38506,7 +38555,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38527,7 +38576,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38548,7 +38597,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38569,7 +38618,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38590,7 +38639,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38611,7 +38660,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38632,7 +38681,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38653,7 +38702,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38674,7 +38723,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 9999}
@@ -38695,7 +38744,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38716,7 +38765,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38737,7 +38786,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38758,7 +38807,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38779,7 +38828,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38800,7 +38849,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38821,7 +38870,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38842,7 +38891,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = _EmptyTable,
     SellLimit = _EmptyTable
   },
@@ -38857,7 +38906,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38878,7 +38927,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38899,7 +38948,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38920,7 +38969,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38941,7 +38990,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38962,7 +39011,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -38983,7 +39032,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39004,7 +39053,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39025,7 +39074,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39046,7 +39095,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39067,7 +39116,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39088,7 +39137,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39109,7 +39158,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39130,7 +39179,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39151,7 +39200,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39172,7 +39221,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39193,7 +39242,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39214,7 +39263,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39235,7 +39284,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39256,7 +39305,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39277,7 +39326,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39298,7 +39347,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39319,7 +39368,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39340,7 +39389,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -39361,7 +39410,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = _EmptyTable,
     SellLimit = _EmptyTable
   },
@@ -39376,7 +39425,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = _EmptyTable,
     SellLimit = _EmptyTable
   },
@@ -39577,7 +39626,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 999}
@@ -58854,7 +58903,7 @@ Table_Exchange = {
     TFUnTradeTime = "",
     TradeTime = "",
     UnTradeTime = "",
-    PreorderMaxNum = 9999,
+    PreorderMaxNum = 99999,
     BuyLimit = {
       type = "Count",
       Param = {count = 99}
@@ -61165,6 +61214,27 @@ Table_Exchange = {
     SellLimit = {
       type = "Count",
       Param = {count = 10}
+    }
+  },
+  [10000721] = {
+    id = 10000721,
+    NameZh = "##46385847",
+    Trade = 1,
+    Overlap = 1,
+    Category = 1002,
+    ShowTime = 3600,
+    TFTradeTime = "",
+    TFUnTradeTime = "",
+    TradeTime = "",
+    UnTradeTime = "",
+    PreorderMaxNum = 9999,
+    BuyLimit = {
+      type = "Count",
+      Param = {count = 20}
+    },
+    SellLimit = {
+      type = "Count",
+      Param = {count = 20}
     }
   }
 }

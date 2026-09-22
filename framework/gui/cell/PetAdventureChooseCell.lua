@@ -57,17 +57,23 @@ function PetAdventureChooseCell:SetData(data)
     local chooseQuestData = PetAdventureProxy.Instance:GetChooseQuestData()
     local limitLv = chooseQuestData.staticData.Level
     local limit_friendly = GameConfig.PetAdventureMinLimit.limit_friendly_lv
-    if lv < limitLv and friendly < limit_friendly then
+    local limitTexts = {}
+    if PetAdventureProxy.Instance:bForbidPetLocked(data) then
+      limitTexts[#limitTexts + 1] = ZhString.PetAdventure_AreaLimited
+    else
+      if PetAdventureProxy.Instance:bContractPetLocked(data) then
+        limitTexts[#limitTexts + 1] = ZhString.PetAdventure_ContractPetLimited
+      end
+      if lv < limitLv then
+        limitTexts[#limitTexts + 1] = format(ZhString.PetAdventure_LevelLimited, limitLv)
+      end
+      if friendly < limit_friendly then
+        limitTexts[#limitTexts + 1] = format(ZhString.PetAdventure_FriendlyLvLimited, limit_friendly)
+      end
+    end
+    if 0 < #limitTexts then
       self:Show(self.limitLab)
-      local l = format(ZhString.PetAdventure_LevelLimited, limitLv)
-      local f = format(ZhString.PetAdventure_FriendlyLvLimited, limit_friendly)
-      self.limitLab.text = format(ZhString.PetAdventure_newline, l, f)
-    elseif lv < limitLv and friendly >= limit_friendly then
-      self:Show(self.limitLab)
-      self.limitLab.text = format(ZhString.PetAdventure_LevelLimited, limitLv)
-    elseif lv >= limitLv and friendly < limit_friendly then
-      self:Show(self.limitLab)
-      self.limitLab.text = format(ZhString.PetAdventure_FriendlyLvLimited, limit_friendly)
+      self.limitLab.text = table.concat(limitTexts, "\n")
     else
       self:Hide(self.limitLab)
     end
@@ -100,7 +106,7 @@ function PetAdventureChooseCell:_updateCondition()
     local staticIcon = conditionData.Icon
     local iconData = {}
     if "PetID" == conType then
-      if self.data.petid == conParam[1] then
+      if TableUtility.ArrayFindIndex(conParam, self.data.petid) > 0 then
         iconData.typeID = "PetID"
         iconData.icon = staticIcon
         self.conditionUnLocked[#self.conditionUnLocked + 1] = iconData
@@ -129,10 +135,24 @@ function PetAdventureChooseCell:_updateCondition()
         iconData.icon = staticIcon
         self.conditionUnLocked[#self.conditionUnLocked + 1] = iconData
       end
-    elseif "Race" == conType and Table_Monster[self.data.petid].Race == conParam[1] then
-      iconData.typeID = "Race"
-      iconData.icon = staticIcon
-      self.conditionUnLocked[#self.conditionUnLocked + 1] = iconData
+    elseif "Race" == conType then
+      if Table_Monster[self.data.petid].Race == conParam[1] then
+        iconData.typeID = "Race"
+        iconData.icon = staticIcon
+        self.conditionUnLocked[#self.conditionUnLocked + 1] = iconData
+      end
+    elseif "PvpPet" == conType then
+      local isPvpPet = self.data:IsPvpPet()
+      if conditionData.id == 6000 then
+        local petStaticData = Table_Pet[self.data.petid]
+        local contractSkill = petStaticData and petStaticData.ContractSkill
+        isPvpPet = contractSkill and next(contractSkill) ~= nil
+      end
+      if isPvpPet then
+        iconData.typeID = "PvpPet"
+        iconData.icon = staticIcon
+        self.conditionUnLocked[#self.conditionUnLocked + 1] = iconData
+      end
     end
   end
   for i = 1, #self.conditionUnLocked do

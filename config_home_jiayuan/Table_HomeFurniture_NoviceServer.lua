@@ -3498,6 +3498,7 @@ Table_HomeFurniture = {
   },
   [30900] = {
     id = 30900,
+    Name = "Normal_02_Carousel",
     NameZh = "木马·蓝光琉璃",
     Row = 13,
     Col = 13,
@@ -8574,7 +8575,6 @@ Table_HomeFurniture = {
   },
   [39005] = {
     id = 39005,
-    Name = "Normal_01_UfoCatcher",
     NameZh = "玩偶蹦蹦机",
     Row = 4,
     Col = 7,
@@ -9440,7 +9440,7 @@ local cell_mt = {
     FurnitureFunction = _EmptyTable,
     HomeScore = 10,
     LoadShowPosition = _EmptyTable,
-    Name = "Normal_02_Carousel",
+    Name = "Normal_01_UfoCatcher",
     NameZh = "南瓜马车",
     NormalType = 1,
     Npc = _EmptyTable,

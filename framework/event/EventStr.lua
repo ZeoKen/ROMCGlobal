@@ -491,7 +491,8 @@ ItemTipEvent = {
   ClickItemUrl = "ItemTipEvent_ClickItemUrl",
   ShowAncientRandom = "ItemTipEvent_ShowAncientRandom",
   ClickBufferUrl = "ItemTipEvent_ClickBufferUrl",
-  ShowGiftDetail = "ItemTipEvent_ShowGiftDetail"
+  ShowGiftDetail = "ItemTipEvent_ShowGiftDetail",
+  ShowPetSkillTip = "ItemTipEvent_ShowPetSkillTip"
 }
 LoadSceneEvent = {
   StartLoad = "LoadSceneEvent_StartLoad",

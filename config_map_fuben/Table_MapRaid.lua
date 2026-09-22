@@ -2204,6 +2204,17 @@ Table_MapRaid = {
     TFServerMergeTime = "2021-12-12 05:00:00",
     SameMapReBoot = 1
   },
+  [7660] = {
+    id = 7660,
+    NameZh = "##44717394",
+    NameEn = "sc_jfmfds_001",
+    Type = 84,
+    CameraAdj = 0,
+    EndWait = 0,
+    Restrict = 2,
+    ShowAllNpc = 1,
+    ForbidAritfact = 1
+  },
   [7661] = {
     id = 7661,
     NameZh = "##44726396",

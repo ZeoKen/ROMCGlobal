@@ -6763,6 +6763,12 @@ ProtoReqInfoList = {
     ack = "Cmd.FashionStarUpItemCmd",
     from = "SceneItem"
   },
+  QuickBuffPackageItemCmd = {
+    id = 60172,
+    req = "Cmd.QuickBuffPackageItemCmd",
+    ack = "Cmd.QuickBuffPackageItemCmd",
+    from = "SceneItem"
+  },
   BuildDataNtfManorCmd = {
     id = 2330001,
     req = "Cmd.BuildDataNtfManorCmd",
@@ -10207,6 +10213,12 @@ ProtoReqInfoList = {
     ack = "Cmd.UserIceSlideStopUserCmd",
     from = "SceneUser3"
   },
+  ExtractionCardUserCmd = {
+    id = 820073,
+    req = "Cmd.ExtractionCardUserCmd",
+    ack = "Cmd.ExtractionCardUserCmd",
+    from = "SceneUser3"
+  },
   QueryAllMail = {
     id = 550001,
     req = "Cmd.QueryAllMail",
@@ -12967,6 +12979,7 @@ ProtoReqInfoList[60168] = ProtoReqInfoList.BalanceModeMemoryUpdateItemCmd
 ProtoReqInfoList[60169] = ProtoReqInfoList.MemoryExcessItemCmd
 ProtoReqInfoList[60170] = ProtoReqInfoList.FashionStarQueryItemCmd
 ProtoReqInfoList[60171] = ProtoReqInfoList.FashionStarUpItemCmd
+ProtoReqInfoList[60172] = ProtoReqInfoList.QuickBuffPackageItemCmd
 ProtoReqInfoList[2330001] = ProtoReqInfoList.BuildDataNtfManorCmd
 ProtoReqInfoList[2330002] = ProtoReqInfoList.BuildQueryManorCmd
 ProtoReqInfoList[2330003] = ProtoReqInfoList.BuildLevelUpManorCmd
@@ -13541,6 +13554,7 @@ ProtoReqInfoList[820071] = ProtoReqInfoList.SnakeCoasterLeaveCmd
 ProtoReqInfoList[820069] = ProtoReqInfoList.SnakeCoasterQueryRankCmd
 ProtoReqInfoList[820072] = ProtoReqInfoList.SnakeCoasterActionNtf
 ProtoReqInfoList[820065] = ProtoReqInfoList.UserIceSlideStopUserCmd
+ProtoReqInfoList[820073] = ProtoReqInfoList.ExtractionCardUserCmd
 ProtoReqInfoList[550001] = ProtoReqInfoList.QueryAllMail
 ProtoReqInfoList[550002] = ProtoReqInfoList.MailUpdate
 ProtoReqInfoList[550003] = ProtoReqInfoList.GetMailAttach

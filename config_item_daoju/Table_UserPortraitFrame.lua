@@ -613,6 +613,12 @@ Table_UserPortraitFrame = {
     Effect = "Eff_S29_Frame_Lv3",
     GroupEffect = "Eff_S29_Frame_Lv3_V12"
   },
+  [91] = {
+    id = 91,
+    ItemID = 675,
+    Name = "##46219209",
+    Icon = "Avatarbox_675"
+  },
   [496] = {
     id = 496,
     ItemID = 496,

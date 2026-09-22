@@ -1213,6 +1213,11 @@ Table_ItemDisplay = {
     id = 10000651,
     Type = 1,
     NoDisplay = _EmptyTable
+  },
+  [10000721] = {
+    id = 10000721,
+    Type = 1,
+    NoDisplay = _EmptyTable
   }
 }
 Table_ItemDisplay_fields = {

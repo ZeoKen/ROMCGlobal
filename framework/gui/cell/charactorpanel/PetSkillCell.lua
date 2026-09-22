@@ -7,6 +7,8 @@ function PetSkillCell:Init()
   self.icon = self:FindComponent("Icon", UISprite)
   self.lockIcon = self:FindGO("LockIcon")
   self.level = self:FindComponent("SkillLevel", UILabel)
+  self.choose = self:FindComponent("Choose", UIMultiSprite)
+  self.choose.gameObject:SetActive(false)
   self.contractBgTexture = self:FindComponent("ContractBg", UITexture)
   if self.contractBgTexture then
     PictureManager.Instance:SetUI(_ContractBg, self.contractBgTexture)
@@ -27,6 +29,7 @@ end
 
 function PetSkillCell:SetData(data)
   self.data = data
+  self:SetSelect(false)
   local sid, skill_sdata
   if type(data) == "number" then
     sid = data
@@ -36,6 +39,8 @@ function PetSkillCell:SetData(data)
       sid = data.skillId
       skill_sdata = Table_Skill[sid]
     elseif data.staticData then
+      skill_sdata = data.staticData
+      self.skillStaticData = skill_sdata
       IconManager:SetSkillIcon(data.staticData.Icon, self.icon)
       self.level.text = data.Level
       if self.upgradeBtn then
@@ -47,6 +52,7 @@ function PetSkillCell:SetData(data)
       return
     end
   end
+  self.skillStaticData = skill_sdata
   if skill_sdata then
     IconManager:SetSkillIcon(skill_sdata.Icon, self.icon)
     if type(data) == "table" and data.level then
@@ -79,6 +85,14 @@ function PetSkillCell:SetData(data)
     else
       self:Hide(self.contractBgTexture)
     end
+  end
+end
+
+function PetSkillCell:SetSelect(state)
+  self.choose.gameObject:SetActive(state == true)
+  if state then
+    local skillType = GameConfig.SkillType[self.skillStaticData.SkillType]
+    self.choose.CurrentState = skillType.isPassive and 1 or 0
   end
 end
 

@@ -108,6 +108,7 @@ Table_HeadwearRepair_t = {
     {3011056, 3012576},
     {3011166, 3012676},
     {3011054, 3012574},
+    {3013074},
     {3013816},
     {3013815},
     {
@@ -137,7 +138,6 @@ Table_HeadwearRepair_t = {
     },
     {3009482},
     {3011345, 3012574},
-    {3013074},
     {3012986},
     {3013055},
     {3013056},
@@ -1471,7 +1471,7 @@ Table_HeadwearRepair = {
     SellTime = "2017-09-01 05:00:00",
     SeriesName = "##2819239",
     Type = 11,
-    BoxID = Table_HeadwearRepair_t.BoxID[69]
+    BoxID = Table_HeadwearRepair_t.BoxID[70]
   },
   [48013] = {
     id = 48013,
@@ -1482,7 +1482,7 @@ Table_HeadwearRepair = {
     SellTime = "2017-12-01 05:00:00",
     SeriesName = "##2819257",
     Type = 11,
-    BoxID = Table_HeadwearRepair_t.BoxID[70]
+    BoxID = Table_HeadwearRepair_t.BoxID[71]
   },
   [48017] = {
     id = 48017,
@@ -1649,7 +1649,7 @@ Table_HeadwearRepair = {
     SellTime = "2018-10-01 05:00:00",
     SeriesName = "##2819293",
     Type = 12,
-    BoxID = Table_HeadwearRepair_t.BoxID[71]
+    BoxID = Table_HeadwearRepair_t.BoxID[72]
   },
   [48050] = {
     id = 48050,
@@ -1777,7 +1777,7 @@ Table_HeadwearRepair = {
     SellTime = "2017-12-01 05:00:00",
     SeriesName = "##2819257",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[76]
+    BoxID = Table_HeadwearRepair_t.BoxID[77]
   },
   [48600] = {
     id = 48600,
@@ -1975,7 +1975,7 @@ Table_HeadwearRepair = {
     SellTime = "2018-10-01 05:00:00",
     SeriesName = "##2819293",
     Type = 12,
-    BoxID = Table_HeadwearRepair_t.BoxID[71]
+    BoxID = Table_HeadwearRepair_t.BoxID[72]
   },
   [48658] = {
     id = 48658,
@@ -1985,7 +1985,7 @@ Table_HeadwearRepair = {
     SellTime = "2018-10-01 05:00:00",
     SeriesName = "##2819293",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[67]
+    BoxID = Table_HeadwearRepair_t.BoxID[68]
   },
   [48664] = {
     id = 48664,
@@ -3206,7 +3206,7 @@ Table_HeadwearRepair = {
     SellTime = "2017-12-01 05:00:00",
     SeriesName = "##2819257",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[76]
+    BoxID = Table_HeadwearRepair_t.BoxID[77]
   },
   [145299] = {
     id = 145299,
@@ -3216,7 +3216,7 @@ Table_HeadwearRepair = {
     SellTime = "2017-12-01 05:00:00",
     SeriesName = "##2819257",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[76]
+    BoxID = Table_HeadwearRepair_t.BoxID[77]
   },
   [145434] = {
     id = 145434,
@@ -3462,7 +3462,7 @@ Table_HeadwearRepair = {
     SellTime = "2018-10-01 05:00:00",
     SeriesName = "##2819293",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[67]
+    BoxID = Table_HeadwearRepair_t.BoxID[68]
   },
   [145907] = {
     id = 145907,
@@ -3472,7 +3472,7 @@ Table_HeadwearRepair = {
     SellTime = "2018-10-01 05:00:00",
     SeriesName = "##2819293",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[67]
+    BoxID = Table_HeadwearRepair_t.BoxID[68]
   },
   [145969] = {
     id = 145969,
@@ -5723,7 +5723,7 @@ Table_HeadwearRepair = {
     SellTime = "2019-10-01 05:00:00",
     SeriesName = "##2819359",
     Type = 12,
-    BoxID = Table_HeadwearRepair_t.BoxID[72]
+    BoxID = Table_HeadwearRepair_t.BoxID[73]
   },
   [3000812] = {
     id = 3000812,
@@ -5734,7 +5734,7 @@ Table_HeadwearRepair = {
     SellTime = "2019-10-01 05:00:00",
     SeriesName = "##2819359",
     Type = 12,
-    BoxID = Table_HeadwearRepair_t.BoxID[72]
+    BoxID = Table_HeadwearRepair_t.BoxID[73]
   },
   [3000813] = {
     id = 3000813,
@@ -5744,7 +5744,7 @@ Table_HeadwearRepair = {
     SellTime = "2019-10-01 05:00:00",
     SeriesName = "##2819359",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[74]
+    BoxID = Table_HeadwearRepair_t.BoxID[75]
   },
   [3000814] = {
     id = 3000814,
@@ -5754,7 +5754,7 @@ Table_HeadwearRepair = {
     SellTime = "2019-10-01 05:00:00",
     SeriesName = "##2819359",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[74]
+    BoxID = Table_HeadwearRepair_t.BoxID[75]
   },
   [3000815] = {
     id = 3000815,
@@ -5764,7 +5764,7 @@ Table_HeadwearRepair = {
     SellTime = "2019-10-01 05:00:00",
     SeriesName = "##2819359",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[74]
+    BoxID = Table_HeadwearRepair_t.BoxID[75]
   },
   [3000890] = {
     id = 3000890,
@@ -6206,7 +6206,7 @@ Table_HeadwearRepair = {
     SellTime = "2019-12-01 05:00:00",
     SeriesName = "##2824729",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[75]
+    BoxID = Table_HeadwearRepair_t.BoxID[76]
   },
   [3001015] = {
     id = 3001015,
@@ -11805,7 +11805,7 @@ Table_HeadwearRepair = {
     SellTime = "2021-10-01 05:00:00",
     SeriesName = "##2819491",
     Type = 12,
-    BoxID = Table_HeadwearRepair_t.BoxID[72]
+    BoxID = Table_HeadwearRepair_t.BoxID[73]
   },
   [3004852] = {
     id = 3004852,
@@ -11816,7 +11816,7 @@ Table_HeadwearRepair = {
     SellTime = "2021-10-01 05:00:00",
     SeriesName = "##2819491",
     Type = 12,
-    BoxID = Table_HeadwearRepair_t.BoxID[72]
+    BoxID = Table_HeadwearRepair_t.BoxID[73]
   },
   [3004853] = {
     id = 3004853,
@@ -11826,7 +11826,7 @@ Table_HeadwearRepair = {
     SellTime = "2021-10-01 05:00:00",
     SeriesName = "##2819491",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[73]
+    BoxID = Table_HeadwearRepair_t.BoxID[74]
   },
   [3004854] = {
     id = 3004854,
@@ -11836,7 +11836,7 @@ Table_HeadwearRepair = {
     SellTime = "2021-10-01 05:00:00",
     SeriesName = "##2819491",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[73]
+    BoxID = Table_HeadwearRepair_t.BoxID[74]
   },
   [3004855] = {
     id = 3004855,
@@ -11846,7 +11846,7 @@ Table_HeadwearRepair = {
     SellTime = "2021-10-01 05:00:00",
     SeriesName = "##2819491",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[73]
+    BoxID = Table_HeadwearRepair_t.BoxID[74]
   },
   [3004860] = {
     id = 3004860,
@@ -12478,7 +12478,7 @@ Table_HeadwearRepair = {
     SellTime = "2022-02-01 05:00:00",
     SeriesName = "##2819515",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[77]
+    BoxID = Table_HeadwearRepair_t.BoxID[78]
   },
   [3005204] = {
     id = 3005204,
@@ -12488,7 +12488,7 @@ Table_HeadwearRepair = {
     SellTime = "2022-02-01 05:00:00",
     SeriesName = "##2819515",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[77]
+    BoxID = Table_HeadwearRepair_t.BoxID[78]
   },
   [3005205] = {
     id = 3005205,
@@ -12498,7 +12498,7 @@ Table_HeadwearRepair = {
     SellTime = "2022-02-01 05:00:00",
     SeriesName = "##2819515",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[77]
+    BoxID = Table_HeadwearRepair_t.BoxID[78]
   },
   [3005250] = {
     id = 3005250,
@@ -14518,7 +14518,7 @@ Table_HeadwearRepair = {
     SellTime = "2022-09-01 05:00:00",
     SeriesName = "##1251725",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[78]
+    BoxID = Table_HeadwearRepair_t.BoxID[65]
   },
   [3006184] = {
     id = 3006184,
@@ -14528,7 +14528,7 @@ Table_HeadwearRepair = {
     SellTime = "2022-09-01 05:00:00",
     SeriesName = "##1251725",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[78]
+    BoxID = Table_HeadwearRepair_t.BoxID[65]
   },
   [3006185] = {
     id = 3006185,
@@ -14538,7 +14538,7 @@ Table_HeadwearRepair = {
     SellTime = "2022-09-01 05:00:00",
     SeriesName = "##1251725",
     Type = 13,
-    BoxID = Table_HeadwearRepair_t.BoxID[78]
+    BoxID = Table_HeadwearRepair_t.BoxID[65]
   },
   [3006240] = {
     id = 3006240,
@@ -15259,7 +15259,7 @@ Table_HeadwearRepair = {
     SellTime = "2022-11-01 05:00:00",
     SeriesName = "##1261864",
     Type = 11,
-    BoxID = Table_HeadwearRepair_t.BoxID[65]
+    BoxID = Table_HeadwearRepair_t.BoxID[66]
   },
   [3006681] = {
     id = 3006681,
@@ -15270,7 +15270,7 @@ Table_HeadwearRepair = {
     SellTime = "2022-11-01 05:00:00",
     SeriesName = "##1261864",
     Type = 12,
-    BoxID = Table_HeadwearRepair_t.BoxID[66]
+    BoxID = Table_HeadwearRepair_t.BoxID[67]
   },
   [3006682] = {
     id = 3006682,
@@ -15281,7 +15281,7 @@ Table_HeadwearRepair = {
     SellTime = "2022-11-01 05:00:00",
     SeriesName = "##1261864",
     Type = 12,
-    BoxID = Table_HeadwearRepair_t.BoxID[66]
+    BoxID = Table_HeadwearRepair_t.BoxID[67]
   },
   [3006683] = {
     id = 3006683,
@@ -19005,7 +19005,7 @@ Table_HeadwearRepair = {
     SellTime = "2024-01-01 05:00:00",
     SeriesName = "##3350886",
     Type = 12,
-    BoxID = Table_HeadwearRepair_t.BoxID[68]
+    BoxID = Table_HeadwearRepair_t.BoxID[69]
   },
   [3009122] = {
     id = 3009122,
@@ -19016,7 +19016,7 @@ Table_HeadwearRepair = {
     SellTime = "2024-01-01 05:00:00",
     SeriesName = "##3350886",
     Type = 12,
-    BoxID = Table_HeadwearRepair_t.BoxID[68]
+    BoxID = Table_HeadwearRepair_t.BoxID[69]
   },
   [3009123] = {
     id = 3009123,
@@ -25237,6 +25237,54 @@ Table_HeadwearRepair = {
     SeriesName = "##46119330",
     Type = 13
   },
+  [3013250] = {
+    id = 3013250,
+    HeadID = 12618,
+    Price = Table_HeadwearRepair_t.Price[2],
+    RefineTransfer = 1,
+    IsHeadwear = 1,
+    SellTime = "2026-10-01 05:00:00",
+    SeriesName = "##46186150",
+    Type = 11
+  },
+  [3013251] = {
+    id = 3013251,
+    HeadID = 12618,
+    Price = Table_HeadwearRepair_t.Price[2],
+    RefineTransfer = 1,
+    IsHeadwear = 1,
+    SellTime = "2026-10-01 05:00:00",
+    SeriesName = "##46186150",
+    Type = 12
+  },
+  [3013252] = {
+    id = 3013252,
+    HeadID = 12618,
+    Price = Table_HeadwearRepair_t.Price[2],
+    RefineTransfer = 1,
+    IsHeadwear = 1,
+    SellTime = "2026-10-01 05:00:00",
+    SeriesName = "##46186150",
+    Type = 12
+  },
+  [3013253] = {
+    id = 3013253,
+    Price = Table_HeadwearRepair_t.Price[2],
+    RefineTransfer = 1,
+    IsHeadwear = 1,
+    SellTime = "2026-10-01 05:00:00",
+    SeriesName = "##46186150",
+    Type = 13
+  },
+  [3013254] = {
+    id = 3013254,
+    Price = Table_HeadwearRepair_t.Price[2],
+    RefineTransfer = 1,
+    IsHeadwear = 1,
+    SellTime = "2026-10-01 05:00:00",
+    SeriesName = "##46186150",
+    Type = 13
+  },
   [3013310] = {
     id = 3013310,
     Price = Table_HeadwearRepair_t.Price[3],
@@ -27025,6 +27073,78 @@ Table_HeadwearRepair = {
     RefineTransfer = 1,
     IsHeadwear = 2
   },
+  [3013595] = {
+    id = 3013595,
+    Price = Table_HeadwearRepair_t.Price[1],
+    RefineTransfer = 1,
+    IsHeadwear = 2,
+    SellTime = "2026-10-16 05:00:00",
+    SeriesName = "##46119515",
+    Type = 2
+  },
+  [3013596] = {
+    id = 3013596,
+    Price = Table_HeadwearRepair_t.Price[1],
+    RefineTransfer = 1,
+    IsHeadwear = 2,
+    SellTime = "2026-10-16 05:00:00",
+    SeriesName = "##46119515",
+    Type = 2
+  },
+  [3013597] = {
+    id = 3013597,
+    Price = Table_HeadwearRepair_t.Price[1],
+    RefineTransfer = 1,
+    IsHeadwear = 2,
+    SellTime = "2026-10-16 05:00:00",
+    SeriesName = "##46119515",
+    Type = 2
+  },
+  [3013598] = {
+    id = 3013598,
+    Price = Table_HeadwearRepair_t.Price[1],
+    RefineTransfer = 1,
+    IsHeadwear = 2,
+    SellTime = "2026-10-16 05:00:00",
+    SeriesName = "##46119515",
+    Type = 2
+  },
+  [3013600] = {
+    id = 3013600,
+    Price = Table_HeadwearRepair_t.Price[1],
+    RefineTransfer = 1,
+    IsHeadwear = 2,
+    SellTime = "2026-10-16 05:00:00",
+    SeriesName = "##46119515",
+    Type = 3
+  },
+  [3013601] = {
+    id = 3013601,
+    Price = Table_HeadwearRepair_t.Price[1],
+    RefineTransfer = 1,
+    IsHeadwear = 2,
+    SellTime = "2026-10-16 05:00:00",
+    SeriesName = "##46119515",
+    Type = 3
+  },
+  [3013602] = {
+    id = 3013602,
+    Price = Table_HeadwearRepair_t.Price[1],
+    RefineTransfer = 1,
+    IsHeadwear = 2,
+    SellTime = "2026-10-16 05:00:00",
+    SeriesName = "##46119515",
+    Type = 3
+  },
+  [3013603] = {
+    id = 3013603,
+    Price = Table_HeadwearRepair_t.Price[1],
+    RefineTransfer = 1,
+    IsHeadwear = 2,
+    SellTime = "2026-10-16 05:00:00",
+    SeriesName = "##46119515",
+    Type = 3
+  },
   [3013606] = {
     id = 3013606,
     Price = Table_HeadwearRepair_t.Price[1],
@@ -27036,6 +27156,15 @@ Table_HeadwearRepair = {
   },
   [3013607] = {
     id = 3013607,
+    Price = Table_HeadwearRepair_t.Price[1],
+    RefineTransfer = 1,
+    IsHeadwear = 2,
+    SellTime = "2026-10-16 05:00:00",
+    SeriesName = "##46119515",
+    Type = 4
+  },
+  [3013608] = {
+    id = 3013608,
     Price = Table_HeadwearRepair_t.Price[1],
     RefineTransfer = 1,
     IsHeadwear = 2,
@@ -27097,6 +27226,21 @@ Table_HeadwearRepair = {
   [3014035] = {id = 3014035, transfer = 0},
   [3014056] = {
     id = 3014056,
+    HeadID = 12618,
+    transfer = 0
+  },
+  [3014155] = {
+    id = 3014155,
+    HeadID = 12618,
+    transfer = 0
+  },
+  [3014156] = {
+    id = 3014156,
+    HeadID = 12618,
+    transfer = 0
+  },
+  [3014157] = {
+    id = 3014157,
     HeadID = 12618,
     transfer = 0
   },

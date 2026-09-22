@@ -1,8 +1,4 @@
 Table_Dialog_Left_16 = {
-  [391131] = "{id=391131,Text='Skill/BloodLust_hit     播放完毕',}",
-  [391132] = "{id=391132,Text='Skill/BloodRiver_atk     播放完毕',}",
-  [391133] = "{id=391133,Text='Skill/BloodRiver_hit     播放完毕',}",
-  [391134] = "{id=391134,Text='Skill/BloodthirstyDesire_buff1     播放完毕',}",
   [391135] = "{id=391135,Text='Skill/BloodthirstyDesire_buff2     播放完毕',}",
   [391136] = "{id=391136,Text='Skill/BloodthirstyDesire_hit     播放完毕',}",
   [391137] = "{id=391137,Text='Skill/BloodThirsty_atk     播放完毕',}",
@@ -1999,6 +1995,10 @@ Table_Dialog_Left_16 = {
   [393129] = "{id=393129,Text='Skill/Pogonip_buff2     播放完毕',}",
   [393130] = "{id=393130,Text='Skill/Pogonip_buff_loop     播放完毕',}",
   [393131] = "{id=393131,Text='Skill/PoisonArrow_attack     播放完毕',}",
-  [393132] = "{id=393132,Text='Skill/PoisonArrow_cast     播放完毕',}"
+  [393132] = "{id=393132,Text='Skill/PoisonArrow_cast     播放完毕',}",
+  [393133] = "{id=393133,Text='Skill/PoisonAttributeHit     播放完毕',}",
+  [393134] = "{id=393134,Text='Skill/PoisonedFlyingKnife     播放完毕',}",
+  [393135] = "{id=393135,Text='Skill/PoisonExplosion     播放完毕',}",
+  [393136] = "{id=393136,Text='Skill/PoisonFog_buff     播放完毕',}"
 }
 Table_Dialog_Left_16.count = 2001

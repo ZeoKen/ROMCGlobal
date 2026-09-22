@@ -1670,6 +1670,60 @@ Table_Pet_Adventure = {
     Baseexp = 4952.66666666667,
     Times = 273,
     DailyAdventureCount = 3
+  },
+  [160] = {
+    id = 160,
+    QuestType = 2,
+    NameZh = "出发！剑士之城！",
+    Quality = 1,
+    Level = 1,
+    ConsumeTime = 1800,
+    PetNum = 1,
+    Cost = {
+      id = 5503,
+      num = {15}
+    },
+    CostFightTime = 0,
+    BigArea = 1,
+    SmallArea = "普隆德拉区域",
+    Desc = "从普隆德拉出发，开启冒险之旅吧你勇敢的宠物已经迫不及待！该地点比较适合派遣[E40D08]喵兵长[-]哦~",
+    TextureName = "Bg_beijing2",
+    Condition = {
+      1005,
+      6000,
+      6001
+    },
+    MonsterReward = {56883},
+    Baseexp = 856695,
+    Times = 273,
+    DailyAdventureCount = 3
+  },
+  [161] = {
+    id = 161,
+    QuestType = 2,
+    NameZh = "光明！魔法之都！",
+    Quality = 1,
+    Level = 1,
+    ConsumeTime = 1800,
+    PetNum = 1,
+    Cost = {
+      id = 5503,
+      num = {15}
+    },
+    CostFightTime = 0,
+    BigArea = 3,
+    SmallArea = "吉芬下级区域",
+    Desc = "目标，吉芬！城外的哥布灵部落，妙勒尼山脉的魔物，在这里等待着你们！该地点比较适合派遣[E40D08]喵神官[-]哦~",
+    TextureName = "Bg_beijing2",
+    Condition = {
+      1005,
+      6000,
+      6002
+    },
+    MonsterReward = {56883},
+    Baseexp = 856695,
+    Times = 273,
+    DailyAdventureCount = 3
   }
 }
 Table_Pet_Adventure_fields = {

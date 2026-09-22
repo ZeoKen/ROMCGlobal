@@ -17,6 +17,7 @@ function ExtractSaveData:ctor(serverdata)
       self.extracts[index]:Update(datas[i])
     end
   end
+  self:UpdateExtractionCardDatas(serverdata.carddatas)
   self.gridCount = math.max(GameConfig.EquipExtraction.GridCountDefault, self.gridCount)
   for i = self.gridCount + 1, self.MaxCount do
     self.extracts[i]:Lock(true)
@@ -38,6 +39,19 @@ function ExtractSaveData:ctor(serverdata)
     end
   end
   self.cacheExtractItemData = {}
+end
+
+function ExtractSaveData:UpdateExtractionCardDatas(carddatas)
+  if not carddatas then
+    return
+  end
+  for i = 1, #carddatas do
+    local cardData = carddatas[i]
+    local gridid = cardData and cardData.gridid
+    if gridid and self.extracts[gridid] then
+      self.extracts[gridid]:SetCards(cardData.cards)
+    end
+  end
 end
 
 function ExtractSaveData:GetActiveItemData(attrType)

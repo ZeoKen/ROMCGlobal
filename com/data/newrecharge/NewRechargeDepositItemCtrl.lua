@@ -10,10 +10,23 @@ end
 function NewRechargeDepositItemCtrl:ctor()
   self.luckyBagPurchaseTimes = {}
   self.luckyBagPurchaseLimits = {}
+  self.chargeCntQueryFinished = false
   self:SetLuckyBagPurchaseTimesZero()
   self:SetLuckyBagPurchaseLimitsZero()
   self:SetLuckyBagBatchInfo()
   self.chargeCntRecords = {}
+end
+
+function NewRechargeDepositItemCtrl:BeginChargeCntQuery()
+  self.chargeCntQueryFinished = false
+end
+
+function NewRechargeDepositItemCtrl:FinishChargeCntQuery()
+  self.chargeCntQueryFinished = true
+end
+
+function NewRechargeDepositItemCtrl:IsChargeCntQueryFinished()
+  return self.chargeCntQueryFinished == true
 end
 
 function NewRechargeDepositItemCtrl:SetLuckyBagPurchaseTimes(lucky_bag_conf_id, times)

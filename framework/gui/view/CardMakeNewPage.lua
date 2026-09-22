@@ -53,6 +53,14 @@ function CardMakeNewPage:FindObjs()
   self.cost = self:FindComponent("cost", UILabel)
   self.costIcon = self:FindGO("CoinIcon"):GetComponent(UISprite)
   IconManager:SetItemIcon(Table_Item[100].Icon, self.costIcon)
+  self.shadowCardTip = self:FindGO("ShadowCardTip")
+  self.shadowCardTipLabel = self.shadowCardTip and self.shadowCardTip:GetComponent(UILabel)
+  if self.shadowCardTipLabel then
+    self.shadowCardTipLabel.text = ZhString.ItemTip_ShadowCardEffectTip
+  end
+  if self.shadowCardTip then
+    self.shadowCardTip:SetActive(false)
+  end
   self.filterBtn = self:FindGO("filterBtn")
   self.filterBtnSp = self.filterBtn:GetComponent(UISprite)
   local container = self:FindGO("CardContainer")
@@ -177,7 +185,17 @@ function CardMakeNewPage:SelectFirst()
   local first = cells[1]
   if first then
     self:HandleClickCell(first)
+  else
+    self:UpdateShadowCardTip()
   end
+end
+
+function CardMakeNewPage:UpdateShadowCardTip(itemData)
+  if not self.shadowCardTip then
+    return
+  end
+  local isShadowCard = itemData and itemData.IsShadowCard and itemData:IsShadowCard() or false
+  self.shadowCardTip:SetActive(isShadowCard)
 end
 
 function CardMakeNewPage:HandleClickCell(cell)
@@ -198,6 +216,7 @@ function CardMakeNewPage:HandleClickCell(cell)
       chooseState = self.targetCardCell.use
     end
     self.targetCardCell:SetData(data.itemData, chooseState)
+    self:UpdateShadowCardTip(data.itemData)
     self:UpdateMaterial(data)
     local composeData = Table_Compose[data.id]
     self.cost.text = StringUtil.NumThousandFormat(composeData.ROB)

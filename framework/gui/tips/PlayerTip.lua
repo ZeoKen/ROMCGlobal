@@ -153,6 +153,7 @@ function PlayerTip:SetData(data)
   self:RemoveExpireTimeCheck()
   self.profileId = nil
   self:HideSocialityPart()
+  self.isPetTip = data and data.ispet and true or false
   if data then
     local playerTipData = data.playerData
     if playerTipData then
@@ -250,14 +251,26 @@ function PlayerTip:SetData(data)
 end
 
 function PlayerTip:UpdateQuickPet()
+  if not self.isPetTip then
+    self:Hide(self.petQuickFightPart)
+    return
+  end
   local petBagData = BagProxy.Instance.petBagData
   local quickPetCtn = petBagData:GetPetEggQuickPackUsedCount()
+  local wasActive = self.petQuickFightPart.activeSelf
   if 0 < quickPetCtn then
     self:Show(self.petQuickFightPart)
     local quickItems = petBagData:GetQuickItems()
     self.quickItemCtrl:ResetDatas(quickItems)
   else
     self:Hide(self.petQuickFightPart)
+  end
+  if wasActive ~= self.petQuickFightPart.activeSelf then
+    self:ResizeBg()
+    local tipsView = TipsView.me
+    if tipsView and tipsView.currentTip == self then
+      tipsView:ConstrainCurrentTip()
+    end
   end
 end
 

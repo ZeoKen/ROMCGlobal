@@ -1,4 +1,9 @@
 local ItemHandleCommand = class("ItemHandleCommand", pm.SimpleCommand)
+local UpdateSnowManualRedTip = function()
+  if SnowCrownProxy and SnowCrownProxy.Instance then
+    SnowCrownProxy.Instance:UpdateSnowManualRedTip()
+  end
+end
 
 function ItemHandleCommand:execute(note)
   if note ~= nil then
@@ -31,12 +36,14 @@ function ItemHandleCommand:ReInit(note)
     self:ForEachInitItems(bagData, PackageItem.data)
     EventManager.Me():PassEvent(ItemEvent.ItemChange, PackageItem.type)
     if PackageItem.type == SceneItem_pb.EPACKTYPE_MAIN then
+      UpdateSnowManualRedTip()
       self.facade:sendNotification(ItemEvent.ItemUpdate, recordMap)
     elseif PackageItem.type == SceneItem_pb.EPACKTYPE_STORE then
       self.facade:sendNotification(ItemEvent.ItemUpdate, recordMap)
     elseif PackageItem.type == SceneItem_pb.EPACKTYPE_PERSONAL_STORE then
       self.facade:sendNotification(ItemEvent.ItemUpdate, recordMap)
     elseif PackageItem.type == SceneItem_pb.EPACKTYPE_EQUIP then
+      UpdateSnowManualRedTip()
       self.facade:sendNotification(ItemEvent.EquipUpdate, recordMap)
     elseif PackageItem.type == SceneItem_pb.EPACKTYPE_SHADOWEQUIP then
       self.facade:sendNotification(ItemEvent.EquipUpdate, recordMap)
@@ -103,6 +110,7 @@ function ItemHandleCommand:Update(note)
     EventManager.Me():PassEvent(ItemEvent.ItemChange, PackageItem.type)
     redlog("PackageItem.type", PackageItem.type)
     if PackageItem.type == SceneItem_pb.EPACKTYPE_MAIN then
+      UpdateSnowManualRedTip()
       self.facade:sendNotification(ItemEvent.ItemUpdate, recordMap)
       EventManager.Me():PassEvent(ItemEvent.ItemUpdate, recordMap)
     elseif PackageItem.type == SceneItem_pb.EPACKTYPE_STORE then
@@ -111,6 +119,7 @@ function ItemHandleCommand:Update(note)
       EventManager.Me():PassEvent(ItemEvent.ItemUpdate, recordMap)
       self.facade:sendNotification(ItemEvent.ItemUpdate, recordMap)
     elseif PackageItem.type == SceneItem_pb.EPACKTYPE_EQUIP then
+      UpdateSnowManualRedTip()
       EventManager.Me():PassEvent(ItemEvent.EquipUpdate, recordMap)
       self.facade:sendNotification(ItemEvent.EquipUpdate, recordMap)
     elseif PackageItem.type == SceneItem_pb.EPACKTYPE_FASHIONEQUIP then
@@ -277,7 +286,7 @@ function ItemHandleCommand:TryRemoveCD(item)
 end
 
 function ItemHandleCommand:TryAddCD(item)
-  if item:GetCdConfigTime() > 0 then
+  if CDProxy.IsDynamicCDItem(item.staticData.id) or item:GetCdConfigTime() > 0 then
     self.cdRefreshcmd:Add(item)
   end
 end

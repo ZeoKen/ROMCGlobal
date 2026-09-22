@@ -60,6 +60,7 @@ end
 
 function MainViewAsyncPvpRaidPage:RefreshView()
   self:ClearTimeTick()
+  self:UpdateScoreRate()
   local totalWave = GameConfig.GeffenMagic and GameConfig.GeffenMagic.TotalWave or 4
   self.waveLabel.text = string.format(ZhString.AsyncPvpRaid_Wave, AsyncPvpRaidProxy.Instance:GetCurWave(), totalWave)
   local startTime = AsyncPvpRaidProxy.Instance:GetStartTime()
@@ -73,8 +74,12 @@ function MainViewAsyncPvpRaidPage:RefreshView()
       self:UpdateTimeStat(timeCount)
       timeCount = timeCount + 1
     end, self)
+    self:UpdateTimeStat(timeCount)
     self:UpdateStatData()
-    self:UpdateScoreRate()
+  else
+    self.timeLabel.text = "--"
+    self.timeScoreLabel.text = 0
+    self:UpdateStatData()
   end
 end
 
@@ -103,7 +108,9 @@ function MainViewAsyncPvpRaidPage:UpdateScoreRate()
   diff = diff ~= 0 and diff or GameConfig.GeffenMagic.DefaultDifficulty or 4
   local config = GameConfig.GeffenMagic and GameConfig.GeffenMagic.Difficulties and GameConfig.GeffenMagic.Difficulties[diff]
   scoreRate = scoreRate + (config and config.Ratio or 0)
-  local scoreRatePercent = NumberUtility.RoundToInt(scoreRate * 100)
+  local minRatio = GameConfig.GeffenMagic and GameConfig.GeffenMagic.ScoreRateMin or 0.01
+  local ratio = math.max(scoreRate, minRatio)
+  local scoreRatePercent = NumberUtility.RoundToInt(ratio * 100)
   self.ratioLabel.text = string.format("x%d%%", scoreRatePercent)
 end
 

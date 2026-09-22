@@ -251,7 +251,7 @@ function BagData:RefreshPetEggQuickPackUsedCount()
   if items then
     for i = 1, #items do
       local egg = items[i].petEggInfo
-      if egg and egg.quick_pack_slot and 0 < egg.quick_pack_slot then
+      if egg and egg:IsQuickPet() then
         n = n + 1
       end
     end
@@ -267,7 +267,7 @@ function BagData:GetQuickItems()
   local quickItems = {}
   for i = 1, #items do
     local egg = items[i].petEggInfo
-    if egg and egg.quick_pack_slot and egg.quick_pack_slot > 0 then
+    if egg and egg:IsQuickPet() then
       table.insert(quickItems, items[i])
     end
   end

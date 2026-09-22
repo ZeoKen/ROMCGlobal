@@ -318,6 +318,7 @@ Table_NpcAchieve = {
     Param1 = 54555,
     TargetNum = 25,
     Title = "摧毁失控炮台Ⅰ",
+    Desc = "累计摧毁失控炮台%s/25次",
     Reward = Table_NpcAchieve_t.Reward[9]
   },
   [17] = {
@@ -493,7 +494,6 @@ Table_NpcAchieve = {
     GroupID = 2,
     Type = 62,
     Param1 = 5,
-    Title = "击败异界MVPⅡ",
     Desc = "累计获得异界MVP的击退奖励 %s/5次",
     Reward = Table_NpcAchieve_t.Reward[14]
   },
@@ -1056,7 +1056,6 @@ Table_NpcAchieve = {
     Type = 32,
     Param1 = 4714,
     Title = "记忆之战Ⅲ",
-    Desc = "通关时之空间勇士难度并获得逆时的银河累计%s/5个",
     Reward = Table_NpcAchieve_t.Reward[31]
   },
   [92] = {
@@ -1185,6 +1184,7 @@ Table_NpcAchieve = {
     Type = 64,
     Param1 = 3,
     TargetNum = 9,
+    Title = "冰封建构III",
     Desc = "制作冰封之城区域家具%s/9件",
     Reward = Table_NpcAchieve_t.Reward[44]
   },
@@ -1212,11 +1212,11 @@ Table_NpcAchieve = {
 local cell_mt = {
   __index = {
     Condition = _EmptyTable,
-    Desc = "累计摧毁失控炮台%s/25次",
+    Desc = "通关时之空间勇士难度并获得逆时的银河累计%s/5个",
     GroupID = 1,
     Reward = _EmptyTable,
     TargetNum = 5,
-    Title = "冰封建构III",
+    Title = "击败异界MVPⅡ",
     Type = 61,
     id = 1
   }

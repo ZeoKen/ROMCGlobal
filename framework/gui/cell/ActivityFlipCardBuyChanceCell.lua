@@ -99,24 +99,31 @@ end
 
 function ActivityFlipCardBuyChanceCell:OnConfirm()
   local totalPrice = tonumber(self.price.text) * self.count
-  MsgManager.DontAgainConfirmMsgByID(43445, function()
-    if self.money == 151 then
-      local myMoney = MyselfProxy.Instance:GetLottery()
-      if myMoney < totalPrice then
-        MsgManager.ConfirmMsgByID(3551, function()
-          FunctionNewRecharge.Instance():OpenUI(PanelConfig.NewRecharge_TDeposit)
-        end)
+  local doPurchase = function()
+    MsgManager.DontAgainConfirmMsgByID(43445, function()
+      if self.money == 151 then
+        local myMoney = MyselfProxy.Instance:GetLottery()
+        if myMoney < totalPrice then
+          MsgManager.ConfirmMsgByID(3551, function()
+            FunctionNewRecharge.Instance():OpenUI(PanelConfig.NewRecharge_TDeposit)
+          end)
+        else
+          FunctionSecurity.Me():NormalOperation(function(price)
+            ServiceActivityCmdProxy.Instance:CallFlipCardBuyChanceCmd(self.activityId, self.count, price)
+          end, totalPrice)
+        end
       else
         FunctionSecurity.Me():NormalOperation(function(price)
           ServiceActivityCmdProxy.Instance:CallFlipCardBuyChanceCmd(self.activityId, self.count, price)
         end, totalPrice)
       end
-    else
-      FunctionSecurity.Me():NormalOperation(function(price)
-        ServiceActivityCmdProxy.Instance:CallFlipCardBuyChanceCmd(self.activityId, self.count, price)
-      end, totalPrice)
-    end
-  end)
+    end)
+  end
+  if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
+    OverseaHostHelper:GachaUseComfirm(totalPrice, doPurchase)
+  else
+    doPurchase()
+  end
   self.gameObject:SetActive(false)
 end
 

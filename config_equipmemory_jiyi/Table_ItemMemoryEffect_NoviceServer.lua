@@ -719,6 +719,7 @@ Table_ItemMemoryEffect = {
     EffectID = 30007,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[19],
     ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[19],
+    PreviewDesc = "诅咒迅疾",
     WaxDesc = "攻击速度达到360%时，物理穿刺＋3%\n（效果可叠加，叠加3层时额外获得效果：攻击速度达到360%时，物理穿刺＋6%）"
   },
   [51] = {
@@ -726,14 +727,16 @@ Table_ItemMemoryEffect = {
     EffectID = 30007,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[20],
-    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[20]
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[20],
+    PreviewDesc = "诅咒迅疾"
   },
   [52] = {
     id = 52,
     EffectID = 30007,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[21],
-    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[21]
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[21],
+    PreviewDesc = "诅咒迅疾"
   },
   [53] = {
     id = 53,
@@ -865,22 +868,19 @@ Table_ItemMemoryEffect = {
     id = 71,
     EffectID = 30106,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[40],
-    PreviewDesc = "元素呵护",
     WaxDesc = "闪避魔法伤害时，恢复自身3%最大生命和最大魔法值(内置冷却时间2秒)\n（效果可叠加，叠加3层时额外获得效果：闪避魔法伤害时，恢复自身6%最大生命和最大魔法值(内置冷却时间2秒)）"
   },
   [72] = {
     id = 72,
     EffectID = 30106,
     Level = 2,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[41],
-    PreviewDesc = "元素呵护"
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[41]
   },
   [73] = {
     id = 73,
     EffectID = 30106,
     Level = 3,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[42],
-    PreviewDesc = "元素呵护"
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[42]
   },
   [74] = {
     id = 74,
@@ -1323,7 +1323,7 @@ local cell_mt = {
     EffectID = 30103,
     ExcessWaxBuffID = _EmptyTable,
     Level = 1,
-    PreviewDesc = "诅咒迅疾",
+    PreviewDesc = "元素呵护",
     UpgradeDesc = "",
     WaxBuffID = _EmptyTable,
     WaxDesc = "",

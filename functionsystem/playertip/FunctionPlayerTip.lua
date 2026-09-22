@@ -1037,6 +1037,19 @@ function FunctionPlayerTip.Pet_Touch(ptdata)
   end
 end
 
+local GetMyFightingPetEggGuid = function(petid)
+  local petBagData = BagProxy.Instance and BagProxy.Instance.petBagData
+  local items = petBagData and petBagData.wholeTab and petBagData.wholeTab:GetItems()
+  if items then
+    for i = 1, #items do
+      local egg = items[i].petEggInfo
+      if egg and egg.petid == petid and egg:IsFightingByMyself() then
+        return items[i].id
+      end
+    end
+  end
+end
+
 function FunctionPlayerTip.Pet_CallBack(ptdata)
   if ptdata.beingid then
     ServiceSceneBeingProxy.Instance:CallBeingOffCmd(ptdata.beingid)
@@ -1046,7 +1059,8 @@ function FunctionPlayerTip.Pet_CallBack(ptdata)
       return
     end
     MsgManager.ConfirmMsgByID(9005, function()
-      ServiceScenePetProxy.Instance:CallEggRestorePetCmd(ptdata.petid)
+      local eggGuid = GetMyFightingPetEggGuid(ptdata.petid)
+      ServiceScenePetProxy.Instance:CallEggRestorePetCmd(nil, eggGuid)
     end, nil, nil)
   else
     helplog("Pet_CallBack Not Find id.")

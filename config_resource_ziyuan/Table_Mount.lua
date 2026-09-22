@@ -992,7 +992,8 @@ Table_Mount = {
     EquipCondition = _EmptyTable,
     ActionPrefix = "elegance_ride",
     TransformStartSE = "",
-    TransformEndSE = ""
+    TransformEndSE = "",
+    IsMountDressing = 1
   },
   [25230] = {
     id = 25230,
@@ -1028,7 +1029,8 @@ Table_Mount = {
     EquipCondition = _EmptyTable,
     ActionPrefix = "",
     TransformStartSE = "",
-    TransformEndSE = ""
+    TransformEndSE = "",
+    IsMountDressing = 1
   },
   [25235] = {
     id = 25235,
@@ -2244,7 +2246,8 @@ Table_Mount = {
     EquipCondition = _EmptyTable,
     ActionPrefix = "",
     TransformStartSE = "",
-    TransformEndSE = ""
+    TransformEndSE = "",
+    IsMountDressing = 1
   },
   [600321] = {
     id = 600321,
@@ -3400,6 +3403,7 @@ Table_Mount_fields = {
   "IsMoto",
   "ActionPrefix",
   "TransformStartSE",
-  "TransformEndSE"
+  "TransformEndSE",
+  "IsMountDressing"
 }
 return Table_Mount

@@ -4,6 +4,8 @@ local _RaidTypeConfig = GameConfig.Pve.RaidType
 local _RedTipProxy, _EntranceRedTipEnum
 local gridCellHeight = 50
 local gridCellHeightOffset = 55
+local _NewSymbolSp = "Novicecopynew_bg_new"
+local _HotSymbolSp = "Novicecopynew_bg_hot"
 PveTypeCell = class("PveTypeCell", baseCell)
 
 function PveTypeCell:Init()
@@ -34,6 +36,7 @@ function PveTypeCell:FindObj()
   self.gridCtl:AddEventListener(MouseEvent.MouseClick, self.OnClickCrackCell, self)
   self.gridCells = self.gridCtl:GetCells()
   self.newObj = self:FindGO("New", self.content)
+  self.newSp = self:FindComponent("New", UISprite, self.content)
   self.nameLab = self:FindComponent("NameLab", UILabel, self.content)
   self.lockRoot = self:FindGO("LockRoot", self.content)
   self.lvLab = self:FindComponent("UnlockLv", UILabel, self.lockRoot)
@@ -241,7 +244,7 @@ function PveTypeCell:SetData(data)
   if self.textureName then
     PictureManager.Instance:SetUI(self.textureName, self.texture)
   end
-  self.newObj:SetActive(entrance_data:IsNew())
+  self:UpdateNewHotSymbol(entrance_data)
   self:UpdateChoose()
   self:UpdateRewardInfo(entrance_data.id)
   self:UpdateRedtip()
@@ -293,6 +296,25 @@ function PveTypeCell:SetData(data)
       end
     end
   end
+end
+
+function PveTypeCell:UpdateNewHotSymbol(entranceData)
+  if not entranceData then
+    self.newObj:SetActive(false)
+    return
+  end
+  if not PveEntranceProxy.Instance:IsOpen(entranceData.id) then
+    self.newObj:SetActive(false)
+    return
+  end
+  local isNewEntrance = _RedTipProxy:IsNew(_EntranceRedTipEnum, entranceData.groupid)
+  local isNewRaid = entranceData:IsNewRaid()
+  local isHot = entranceData:IsHot()
+  local isNew = isNewEntrance or isNewRaid
+  if self.newSp then
+    self.newSp.spriteName = isNew and _NewSymbolSp or _HotSymbolSp
+  end
+  self.newObj:SetActive(isNew or isHot)
 end
 
 function PveTypeCell:GetGridCellById(id)

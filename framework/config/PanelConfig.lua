@@ -6276,6 +6276,13 @@ PanelConfig = {
     prefab = "SkillRecommendPopUp",
     class = "SkillRecommendPopUp"
   },
+  QuickBuffSetPopUp = {
+    id = 5401,
+    tab = nil,
+    name = "快捷增益配置",
+    prefab = "QuickBuffSetPopUp",
+    class = "QuickBuffSetPopUp"
+  },
   GuildAssembleRewardView = {
     id = 5500,
     tab = nil,

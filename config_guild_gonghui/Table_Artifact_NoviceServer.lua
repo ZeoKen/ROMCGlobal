@@ -1248,7 +1248,6 @@ Table_Artifact = {
   },
   [41552] = {
     id = 41552,
-    Name = "雷神之锤II",
     NextLevelID = 41553,
     Level = 2,
     Material = Table_Artifact_t.Material[11]
@@ -1603,6 +1602,7 @@ Table_Artifact = {
   },
   [63403] = {
     id = 63403,
+    Name = "全知魔神书II",
     NextLevelID = 63404,
     Type = 13,
     Level = 2,
@@ -1631,7 +1631,7 @@ local cell_mt = {
     DistributeCount = 999,
     Level = 1,
     Material = _EmptyTable,
-    Name = "全知魔神书II",
+    Name = "雷神之锤II",
     Type = 1,
     id = 47371
   }

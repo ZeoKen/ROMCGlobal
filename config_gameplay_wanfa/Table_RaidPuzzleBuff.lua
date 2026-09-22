@@ -290,6 +290,7 @@ Table_RaidPuzzleBuff = {
     NpcID = 817510,
     Weight = 111.1,
     BuffName = "##530292",
+    BuffDesc = "##743835",
     Icon = "skill_10036001"
   },
   [26] = {
@@ -315,7 +316,6 @@ Table_RaidPuzzleBuff = {
     NpcID = 817510,
     Weight = 111.1,
     BuffName = "##530263",
-    BuffDesc = "##116442",
     Icon = "skill_105180001"
   },
   [29] = {
@@ -369,6 +369,7 @@ Table_RaidPuzzleBuff = {
     NpcID = 817509,
     Weight = 705.9,
     BuffName = "##530292",
+    BuffDesc = "##743835",
     Icon = "skill_1375001"
   },
   [35] = {
@@ -395,7 +396,6 @@ Table_RaidPuzzleBuff = {
     NpcID = 817509,
     Weight = 705.9,
     BuffName = "##530263",
-    BuffDesc = "##116442",
     Icon = "skill_4521001"
   },
   [38] = {
@@ -783,7 +783,6 @@ Table_RaidPuzzleBuff = {
     BuffID = Table_RaidPuzzleBuff_t.BuffID[71],
     NpcID = 817524,
     Weight = 120,
-    BuffName = "##1101123",
     BuffDesc = "##116404",
     Icon = "skill_1183001"
   },
@@ -811,6 +810,7 @@ Table_RaidPuzzleBuff = {
     NpcID = 817524,
     Weight = 120,
     BuffName = "##1101126",
+    BuffDesc = "##743835",
     Icon = "skill_1375001"
   },
   [87] = {
@@ -836,7 +836,7 @@ Table_RaidPuzzleBuff = {
     BuffID = Table_RaidPuzzleBuff_t.BuffID[77],
     NpcID = 817524,
     Weight = 120,
-    BuffDesc = "##116442",
+    BuffName = "##1101129",
     Icon = "skill_4521001"
   },
   [90] = {
@@ -862,7 +862,6 @@ Table_RaidPuzzleBuff = {
     BuffID = Table_RaidPuzzleBuff_t.BuffID[71],
     NpcID = 817523,
     Weight = 779.2,
-    BuffName = "##1101123",
     BuffDesc = "##116404",
     Icon = "skill_1183001"
   },
@@ -890,6 +889,7 @@ Table_RaidPuzzleBuff = {
     NpcID = 817523,
     Weight = 779.2,
     BuffName = "##1101126",
+    BuffDesc = "##743835",
     Icon = "skill_1375001"
   },
   [96] = {
@@ -915,7 +915,7 @@ Table_RaidPuzzleBuff = {
     BuffID = Table_RaidPuzzleBuff_t.BuffID[77],
     NpcID = 817523,
     Weight = 779.2,
-    BuffDesc = "##116442",
+    BuffName = "##1101129",
     Icon = "skill_4521001"
   },
   [99] = {
@@ -1306,7 +1306,6 @@ Table_RaidPuzzleBuff = {
     BuffID = Table_RaidPuzzleBuff_t.BuffID[71],
     NpcID = 817469,
     Weight = 84.1,
-    BuffName = "##1101123",
     BuffDesc = "##116404",
     Icon = "skill_1183001"
   },
@@ -1334,6 +1333,7 @@ Table_RaidPuzzleBuff = {
     NpcID = 817469,
     Weight = 84.1,
     BuffName = "##1101126",
+    BuffDesc = "##743835",
     Icon = "skill_1375001"
   },
   [146] = {
@@ -1359,7 +1359,7 @@ Table_RaidPuzzleBuff = {
     BuffID = Table_RaidPuzzleBuff_t.BuffID[77],
     NpcID = 817469,
     Weight = 84.1,
-    BuffDesc = "##116442",
+    BuffName = "##1101129",
     Icon = "skill_4521001"
   },
   [149] = {
@@ -1394,7 +1394,6 @@ Table_RaidPuzzleBuff = {
     BuffID = Table_RaidPuzzleBuff_t.BuffID[71],
     NpcID = 817470,
     Weight = 779.2,
-    BuffName = "##1101123",
     BuffDesc = "##116404",
     Icon = "skill_1183001"
   },
@@ -1422,6 +1421,7 @@ Table_RaidPuzzleBuff = {
     NpcID = 817470,
     Weight = 779.2,
     BuffName = "##1101126",
+    BuffDesc = "##743835",
     Icon = "skill_1375001"
   },
   [156] = {
@@ -1447,7 +1447,7 @@ Table_RaidPuzzleBuff = {
     BuffID = Table_RaidPuzzleBuff_t.BuffID[77],
     NpcID = 817470,
     Weight = 779.2,
-    BuffDesc = "##116442",
+    BuffName = "##1101129",
     Icon = "skill_4521001"
   },
   [159] = {
@@ -1597,9 +1597,9 @@ Table_RaidPuzzleBuff = {
 }
 local cell_mt = {
   __index = {
-    BuffDesc = "##743835",
+    BuffDesc = "##116442",
     BuffID = _EmptyTable,
-    BuffName = "##1101129",
+    BuffName = "##1101123",
     Icon = "skill_105090001",
     Weight = 375,
     id = 1

@@ -17,6 +17,7 @@ function ExtractionData:Clone()
   data.extractionLv = self.extractionLv
   data.active = self.active
   data.got = self.got
+  data:SetCards(self.cards)
   return data
 end
 
@@ -30,6 +31,17 @@ function ExtractionData:Update(serverdata)
   end
 end
 
+function ExtractionData:SetCards(cards)
+  if cards then
+    self.cards = {}
+    for i = 1, #cards do
+      self.cards[i] = cards[i]
+    end
+  else
+    self.cards = nil
+  end
+end
+
 function ExtractionData:SetActive(b)
   self.active = b
 end
@@ -40,6 +52,7 @@ function ExtractionData:Empty()
   self.itemStaticData = nil
   self.active = false
   self.extractionLv = 0
+  self.cards = nil
 end
 
 function ExtractionData:Lock(b)

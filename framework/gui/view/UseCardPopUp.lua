@@ -32,6 +32,22 @@ function UseCardPopUp:UpdateData()
   if self.carddata and self.carddata.cardInfo then
     local pos = self.carddata.cardInfo.Position
     local filterDatas = self.equipdatas or BagProxy.Instance:FilterEquipedCardItems(pos)
+    if self.carddata.IsShadowCard and self.carddata:IsShadowCard() then
+      local shadowEquipDatas = {}
+      local normalEquipDatas = {}
+      for i = 1, #filterDatas do
+        local equipData = filterDatas[i]
+        if equipData.IsServerShadowEquip and equipData:IsServerShadowEquip() then
+          table.insert(shadowEquipDatas, equipData)
+        else
+          table.insert(normalEquipDatas, equipData)
+        end
+      end
+      for i = 1, #normalEquipDatas do
+        table.insert(shadowEquipDatas, normalEquipDatas[i])
+      end
+      filterDatas = shadowEquipDatas
+    end
     self.itemCtl:ResetDatas(filterDatas)
     self.equipdatas = nil
   end

@@ -2,6 +2,7 @@ autoImport("GeneralHelp")
 local BaseCell = autoImport("BaseCell")
 autoImport("TipLabelNameValuePair")
 autoImport("TipLabelNameValuePair_Memory")
+autoImport("PetSkillCell")
 TipLabelCell = class("TipLabelCell", BaseCell)
 local Line_default_width = {340, 170}
 local defaultLineColor, dottedLineColor = LuaColor.New(0.9019607843137255, 0.9137254901960784, 0.9647058823529412, 1), LuaColor.New(0.5411764705882353, 0.6, 0.7254901960784313, 1)
@@ -17,6 +18,13 @@ function TipLabelCell:Init()
   self.lineTrans = self.line and self.line.transform
   self.table = self.gameObject:GetComponent(UITable)
   self.sliderCell = self:FindGO("TipLabelSliderCell")
+  self.petSkillGrid = self:FindComponent("Grid", UIGrid)
+  if self.petSkillGrid then
+    self.petSkillCtl = UIGridListCtrl.new(self.petSkillGrid, PetSkillCell, "PetSkillCell")
+    self.petSkillCtl:SetAddCellHandler(self.AddPetSkillCellClick, self)
+    self.petSkillCtl:AddEventListener(MouseEvent.MouseClick, self.ClickPetSkill, self)
+    self.petSkillGrid.gameObject:SetActive(false)
+  end
   self.singleBtnGO = self:FindGO("SingleButton")
   if self.singleBtnGO then
     self.singleBtnIcon = self:FindComponent("BtnIcon", UISprite, self.singleBtnGO)
@@ -97,6 +105,7 @@ function TipLabelCell:SetData(data)
       end
     end
     self:SetLabels(labels, data.labelConfig)
+    self:SetPetSkills(data.petSkills)
     if data.locked then
       self:SetLocked(data)
     elseif data.namevaluepair then
@@ -177,8 +186,47 @@ function TipLabelCell:SetData(data)
     end
   else
     self:SetLabels()
+    self:SetPetSkills()
   end
   self:RePosition()
+end
+
+function TipLabelCell:SetPetSkills(skills)
+  if not self.petSkillGrid then
+    return
+  end
+  local hasSkills = skills and 0 < #skills
+  self.petSkillGrid.gameObject:SetActive(hasSkills == true)
+  if hasSkills then
+    self.petSkillCtl:ResetDatas(skills)
+    local title = self.labelMap[1]
+    if title and title.richLabel then
+      local titleTrans = title.richLabel.gameObject.transform
+      title.richLabel.gameObject.name = "F_PetSkillTitle"
+      self.petSkillGrid.transform:SetSiblingIndex(titleTrans:GetSiblingIndex() + 1)
+    end
+  else
+    self.petSkillCtl:ResetDatas(_EmptyTable)
+  end
+end
+
+function TipLabelCell:AddPetSkillCellClick(cell)
+  cell:AddCellClickEvent()
+  local dragScrollView = cell.gameObject:GetComponent(UIDragScrollView)
+  if dragScrollView then
+    dragScrollView.enabled = true
+  end
+end
+
+function TipLabelCell:ClickPetSkill(cell)
+  local callback = self.data and self.data.petSkillClick
+  if callback then
+    callback(cell)
+    local cells = self.petSkillCtl:GetCells()
+    for i = 1, #cells do
+      cells[i]:SetSelect(cells[i] == cell)
+    end
+  end
 end
 
 function TipLabelCell:SetLabels(labels, labelConfig)
@@ -195,6 +243,7 @@ function TipLabelCell:SetLabels(labels, labelConfig)
     self.sliderCell2 = nil
   end
   self:HideExtraDesc()
+  local extraDescDatas = {}
   for i = 1, num do
     local text = labels[i] or ""
     if text:sub(1, 7) == "slider:" then
@@ -220,11 +269,12 @@ function TipLabelCell:SetLabels(labels, labelConfig)
       local mainText = text:sub(11, #text)
       if mainText then
         local suffix = "[ExtraHp]"
-        if string.match(mainText, suffix) then
-          self:SetExtraDesc(mainText:sub(1, #mainText - #suffix), true)
-        else
-          self:SetExtraDesc(mainText)
+        local addHelp = false
+        if string.find(mainText, suffix, 1, true) then
+          mainText = mainText:sub(1, #mainText - #suffix)
+          addHelp = true
         end
+        table.insert(extraDescDatas, {text = mainText, addHelp = addHelp})
       end
     else
       local lab = self.labelMap[i]
@@ -238,6 +288,7 @@ function TipLabelCell:SetLabels(labels, labelConfig)
           lab.iconColorHexStr = iconColorHexStr
         end
       end
+      lab.richLabel.gameObject.name = string.format("Label%02d", i)
       lab:SetText(text)
       lab:SetLabelColor(self.data.color or defaultLabelColor)
       if self.data.txtBgColor then
@@ -259,6 +310,7 @@ function TipLabelCell:SetLabels(labels, labelConfig)
       self:TryHandlePriceIndicatorButton(lab)
     end
   end
+  self:SetExtraDescList(extraDescDatas)
   local cacheNum = #self.labelMap
   for i = cacheNum, 1, -1 do
     if self.labelMap[i] and self.labelMap[i].richLabel and (num < i or self.labelMap[i].needDestroy) then
@@ -350,36 +402,68 @@ function TipLabelCell:SetSlider2(val, maxVal, goName)
 end
 
 function TipLabelCell:SetExtraDesc(text, addHelp)
-  self.extraDescCell = self.extraDescCell or self:LoadPreferb("cell/TipLabelExtraDescCell", self.gameObject)
-  self.extraDescLab = self.extraDescCell:GetComponent(UILabel)
-  self.extraDescLab.text = text
-  self:Show(self.extraDescCell)
-  if nil == addHelp then
-    self:_HideExtraDescHelpButton()
-  elseif addHelp then
-    if nil == self.extraDescHelpButton then
-      self:_InitExtraDescHelpBtn()
+  self:SetExtraDescList({
+    {
+      text = text,
+      addHelp = addHelp == true
+    }
+  })
+end
+
+function TipLabelCell:SetExtraDescList(datas)
+  datas = datas or _EmptyTable
+  self.extraDescCells = self.extraDescCells or {}
+  self.extraDescLabs = self.extraDescLabs or {}
+  self.extraDescHelpButtons = self.extraDescHelpButtons or {}
+  for i, data in ipairs(datas) do
+    local cell = self.extraDescCells[i]
+    if not cell or Slua.IsNull(cell) then
+      cell = self:LoadPreferb("cell/TipLabelExtraDescCell", self.gameObject)
+      self.extraDescCells[i] = cell
+      self.extraDescLabs[i] = cell and cell:GetComponent(UILabel)
     end
-    self:Show(self.extraDescHelpButton)
-  else
-    self:_HideExtraDescHelpButton()
+    if cell and self.extraDescLabs[i] then
+      cell.name = string.format("TipLabelExtraDescCell%02d", i)
+      self.extraDescLabs[i].text = data.text or ""
+      self:Show(cell)
+      if data.addHelp then
+        self:_InitExtraDescHelpBtn(i)
+        if self.extraDescHelpButtons[i] then
+          self:Show(self.extraDescHelpButtons[i])
+        end
+      else
+        self:_HideExtraDescHelpButton(i)
+      end
+    end
+  end
+  for i = #datas + 1, #self.extraDescCells do
+    if self.extraDescCells[i] and not Slua.IsNull(self.extraDescCells[i]) then
+      self:Hide(self.extraDescCells[i])
+    end
+    self:_HideExtraDescHelpButton(i)
   end
   self:RePosition()
 end
 
-function TipLabelCell:_HideExtraDescHelpButton()
-  if not self.extraDescHelpButton then
+function TipLabelCell:_HideExtraDescHelpButton(index)
+  local helpButton = self.extraDescHelpButtons and self.extraDescHelpButtons[index]
+  if not helpButton then
     return
   end
-  self:Hide(self.extraDescHelpButton)
+  self:Hide(helpButton)
   self:_DestroyHelpTip()
 end
 
 function TipLabelCell:HideExtraDesc()
-  if not self.extraDescCell then
+  if not self.extraDescCells then
     return
   end
-  self:Hide(self.extraDescCell)
+  for i, cell in ipairs(self.extraDescCells) do
+    if cell and not Slua.IsNull(cell) then
+      self:Hide(cell)
+    end
+    self:_HideExtraDescHelpButton(i)
+  end
   self:_DestroyHelpTip()
   self:RePosition()
 end
@@ -397,14 +481,24 @@ function TipLabelCell:_DestroyHelpTip()
   end
 end
 
-function TipLabelCell:_InitExtraDescHelpBtn()
-  self.extraDescHelpButton = self:LoadPreferb("cell/HelpButtonCell", self.extraDescCell)
-  self.extraDescHelpButton.transform.localPosition = LuaGeometry.GetTempVector3(155, 0, 0)
-  self.extraDescHelpButton.transform.localScale = LuaGeometry.Const_V3_one
-  self.extraHelpButton = self:FindComponent("HelpButton", UISprite, self.extraDescHelpButton)
-  self.extraHelpButton.depth = self.extraDescLab.depth + 2
-  self:Preprocess_HelpColiderObj(35277, self.extraHelpButton.gameObject)
-  self:AddClickEvent(self.extraHelpButton.gameObject, function(go)
+function TipLabelCell:_InitExtraDescHelpBtn(index)
+  self.extraDescHelpButtons = self.extraDescHelpButtons or {}
+  local cell = self.extraDescCells[index]
+  local lab = self.extraDescLabs[index]
+  if not cell or not lab then
+    return
+  end
+  if self.extraDescHelpButtons[index] and not Slua.IsNull(self.extraDescHelpButtons[index]) then
+    return
+  end
+  local helpButton = self:LoadPreferb("cell/HelpButtonCell", cell)
+  self.extraDescHelpButtons[index] = helpButton
+  helpButton.transform.localPosition = LuaGeometry.GetTempVector3(155, 0, 0)
+  helpButton.transform.localScale = LuaGeometry.Const_V3_one
+  local extraHelpButton = self:FindComponent("HelpButton", UISprite, helpButton)
+  extraHelpButton.depth = lab.depth + 2
+  self:Preprocess_HelpColiderObj(35277, extraHelpButton.gameObject)
+  self:AddClickEvent(extraHelpButton.gameObject, function(go)
     if self.helpTip then
       return
     end
@@ -419,18 +513,27 @@ function TipLabelCell:_InitExtraDescHelpBtn()
 end
 
 function TipLabelCell:_DeInitExtraDescHelpBtn()
-  if self.extraDescHelpButton and not Slua.IsNull(self.extraDescHelpButton) then
-    GameObject.Destroy(self.extraDescHelpButton)
-    self.extraDescHelpButton = nil
-    self.extraHelpButton = nil
+  if not self.extraDescHelpButtons then
+    return
+  end
+  for i, helpButton in ipairs(self.extraDescHelpButtons) do
+    if helpButton and not Slua.IsNull(helpButton) then
+      GameObject.Destroy(helpButton)
+    end
+    self.extraDescHelpButtons[i] = nil
   end
 end
 
 function TipLabelCell:_DeInitExtraDesc()
-  if self.extraDescCell and not Slua.IsNull(self.extraDescCell) then
-    GameObject.Destroy(self.extraDescCell)
-    self.extraDescCell = nil
-    self.extraDescLab = nil
+  if not self.extraDescCells then
+    return
+  end
+  for i, cell in ipairs(self.extraDescCells) do
+    if cell and not Slua.IsNull(cell) then
+      GameObject.Destroy(cell)
+    end
+    self.extraDescCells[i] = nil
+    self.extraDescLabs[i] = nil
   end
 end
 

@@ -139,8 +139,10 @@ function HouseData:GetAllPetEggs()
   local eggs = self:GetFeedingPets()
   local bagEggs = BagProxy.Instance:GetMyPetEggs()
   for i = 1, #bagEggs do
-    bagEggs[i].petEggInfo.isEat = 0
-    eggs[#eggs + 1] = bagEggs[i].petEggInfo
+    if not bagEggs[i].petEggInfo:IsFighting() then
+      bagEggs[i].petEggInfo.isEat = 0
+      eggs[#eggs + 1] = bagEggs[i].petEggInfo
+    end
   end
   return eggs
 end

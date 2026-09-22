@@ -17,6 +17,7 @@ CrownAccessoriesPage.InnerTogglePageMap = {
 }
 local _InnerTabNamePrefix = "CrownAccessoriesPage_TabName_"
 local _EmbedSlotMoveDuration = 0.3
+local _SnowManualRedTipId = SceneTip_pb.EREDSYS_SNOWMANUAL or 10788
 
 function CrownAccessoriesPage:Init()
   CrownAccessoriesPage.super.Init(self)
@@ -78,6 +79,12 @@ function CrownAccessoriesPage:FindAndAddInnerToggle(toggleName, pageName)
   if toggle then
     self.innerToggleMap[pageName] = toggle
   end
+  if toggleName == "EmbedTab" then
+    local embedSprite = toggleGO:GetComponent(UISprite)
+    if embedSprite then
+      self:RegisterRedTipCheck(_SnowManualRedTipId, embedSprite.gameObject, 42)
+    end
+  end
   return toggle
 end
 
@@ -113,64 +120,81 @@ function CrownAccessoriesPage:InitEmbedPage()
   if self.helpBtn then
     self:RegistShowGeneralHelpByHelpID(32655, self.helpBtn)
   end
+  local hasNoOpenSlot = false
   for i = 1, 3 do
     local slotGO = self:FindGO("Slot" .. i, embedPage)
     if slotGO then
-      if not self.embedSlotGridGO and slotGO.transform.parent then
-        local parentGO = slotGO.transform.parent.gameObject
-        if parentGO and parentGO:GetComponent(UIGrid) then
-          self.embedSlotGridGO = parentGO
-          local gridPos = self.embedSlotGridGO.transform.localPosition
-          self.embedSlotGridOriginPos = LuaVector3.New(gridPos.x, gridPos.y, gridPos.z)
-        end
-      end
-      local slotData = {
-        gameObject = slotGO,
-        slotIndex = i,
-        widget = slotGO:GetComponent(UIWidget),
-        equipCell = nil,
-        equipChooseSymbol = nil,
-        gemCells = {},
-        gemChooseSymbols = {}
-      }
-      local equipBG = self:FindGO("EquipBG", slotGO)
-      if equipBG then
-        slotData.equipChooseSymbol = self:FindGO("ChooseSymbol", equipBG)
-        if slotData.equipChooseSymbol then
-          slotData.equipChooseSymbol:SetActive(false)
-        end
-        local bagItemCellGO = self:LoadPreferb("cell/BagItemCell", equipBG)
-        if bagItemCellGO then
-          bagItemCellGO.name = "EquipBagItemCell"
-          local equipCell = BagItemCell.new(bagItemCellGO)
-          slotData.equipCell = equipCell
-          self:AddClickEvent(bagItemCellGO, function()
-            self:OnEquipSlotClick(i)
-          end)
-          self:AddClickEvent(equipBG, function()
-            self:OnEquipSlotClick(i)
-          end)
-        end
-      end
-      for j = 1, 2 do
-        local gemBG = self:FindGO("GemBG" .. j, slotGO)
-        if gemBG then
-          local gemChooseSymbol = self:FindGO("ChooseSymbol", gemBG)
-          if gemChooseSymbol then
-            gemChooseSymbol:SetActive(false)
+      local slotConfig = Table_SnowEquip and Table_SnowEquip[i]
+      local isNoOpen = slotConfig and slotConfig.NoOpen == 1
+      slotGO:SetActive(not isNoOpen)
+      hasNoOpenSlot = hasNoOpenSlot or isNoOpen
+      if not isNoOpen then
+        if not self.embedSlotGridGO and slotGO.transform.parent then
+          local parentGO = slotGO.transform.parent.gameObject
+          if parentGO and parentGO:GetComponent(UIGrid) then
+            self.embedSlotGridGO = parentGO
+            local gridPos = self.embedSlotGridGO.transform.localPosition
+            self.embedSlotGridOriginPos = LuaVector3.New(gridPos.x, gridPos.y, gridPos.z)
           end
-          slotData.gemChooseSymbols[j] = gemChooseSymbol
-          local gemCellGO = self:FindGO("SnowGemActiveCell", gemBG)
-          if gemCellGO then
-            local gemCell = SnowGemActiveCell.new(gemCellGO)
-            slotData.gemCells[j] = gemCell
-            self:AddClickEvent(gemBG, function()
-              self:OnGemSlotClick(i, j)
+        end
+        local slotData = {
+          gameObject = slotGO,
+          slotIndex = i,
+          widget = slotGO:GetComponent(UIWidget),
+          equipBG = nil,
+          equipCell = nil,
+          equipChooseSymbol = nil,
+          gemBGs = {},
+          gemCells = {},
+          gemChooseSymbols = {}
+        }
+        local equipBG = self:FindGO("EquipBG", slotGO)
+        if equipBG then
+          slotData.equipBG = equipBG
+          slotData.equipChooseSymbol = self:FindGO("ChooseSymbol", equipBG)
+          if slotData.equipChooseSymbol then
+            slotData.equipChooseSymbol:SetActive(false)
+          end
+          local bagItemCellGO = self:LoadPreferb("cell/BagItemCell", equipBG)
+          if bagItemCellGO then
+            bagItemCellGO.name = "EquipBagItemCell"
+            local equipCell = BagItemCell.new(bagItemCellGO)
+            slotData.equipCell = equipCell
+            self:AddClickEvent(bagItemCellGO, function()
+              self:OnEquipSlotClick(i)
+            end)
+            self:AddClickEvent(equipBG, function()
+              self:OnEquipSlotClick(i)
             end)
           end
         end
+        for j = 1, 2 do
+          local gemBG = self:FindGO("GemBG" .. j, slotGO)
+          if gemBG then
+            slotData.gemBGs[j] = gemBG
+            local gemChooseSymbol = self:FindGO("ChooseSymbol", gemBG)
+            if gemChooseSymbol then
+              gemChooseSymbol:SetActive(false)
+            end
+            slotData.gemChooseSymbols[j] = gemChooseSymbol
+            local gemCellGO = self:FindGO("SnowGemActiveCell", gemBG)
+            if gemCellGO then
+              local gemCell = SnowGemActiveCell.new(gemCellGO)
+              slotData.gemCells[j] = gemCell
+              self:AddClickEvent(gemBG, function()
+                self:OnGemSlotClick(i, j)
+              end)
+            end
+          end
+        end
+        self.slotList[i] = slotData
       end
-      self.slotList[i] = slotData
+    end
+  end
+  if hasNoOpenSlot and self.embedSlotGridGO then
+    local slotGrid = self.embedSlotGridGO:GetComponent(UIGrid)
+    if slotGrid then
+      slotGrid:Reposition()
     end
   end
 end
@@ -1509,6 +1533,15 @@ function CrownAccessoriesPage:RefreshSlotEquip(slotData, slotIndex)
   if SnowCrownProxy.Instance then
     equipData = SnowCrownProxy.Instance:GetSlotEquipData(slotIndex)
   end
+  if slotData.equipBG then
+    local equipBG = slotData.equipBG
+    if equipBG:GetComponent(UIWidget) then
+      self:UnRegisterSingleRedTipCheck(_SnowManualRedTipId, equipBG)
+    end
+    if not equipData and equipBG:GetComponent(UIWidget) then
+      self:RegisterRedTipCheck(_SnowManualRedTipId, equipBG, 42, nil, nil, slotIndex)
+    end
+  end
   if equipData then
     if slotData.equipCell.gameObject then
       slotData.equipCell.gameObject:SetActive(true)
@@ -1544,6 +1577,16 @@ function CrownAccessoriesPage:RefreshSlotGems(slotData, slotIndex)
       local gemData
       if SnowCrownProxy.Instance then
         gemData = SnowCrownProxy.Instance:GetSlotGemData(slotIndex, j)
+      end
+      local gemBG = slotData.gemBGs and slotData.gemBGs[j]
+      if gemBG then
+        if gemBG:GetComponent(UIWidget) then
+          self:UnRegisterSingleRedTipCheck(_SnowManualRedTipId, gemBG)
+        end
+        if not gemData and gemBG:GetComponent(UIWidget) then
+          local gemParam = SnowCrownProxy.GetSnowManualGemRedTipParam(slotIndex, j)
+          self:RegisterRedTipCheck(_SnowManualRedTipId, gemBG, 42, nil, nil, gemParam)
+        end
       end
       gemCell:SetData(gemData)
       gemCell:SetEquipRefineLv(equipRefineLv, hasEquip)

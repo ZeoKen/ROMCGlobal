@@ -12,6 +12,7 @@ SnowCrownContainerView.ModelPosition = {
 }
 local _TabNamePrefix = "SnowCrownContainer_TabName_"
 local _Single_Tab_Width = 160
+local _SnowManualRedTipId = SceneTip_pb.EREDSYS_SNOWMANUAL or 10788
 local rotVec = LuaVector3.Zero()
 local rotationQuatY = LuaQuaternion.Identity()
 local rotationQuatZ = LuaQuaternion.Identity()
@@ -61,6 +62,11 @@ function SnowCrownContainerView:FindAndAddToggle(toggleName, pageName)
   end
   if toggleName == "AreaAttrTab" then
     self:AddOrRemoveGuideId(toggleGO, 558)
+  elseif toggleName == "CrownAccessoriesTab" then
+    local label1 = self:FindComponent("Label1", UILabel, toggleGO)
+    if label1 then
+      self:RegisterRedTipCheck(_SnowManualRedTipId, label1.gameObject, 42)
+    end
   end
   return toggle
 end

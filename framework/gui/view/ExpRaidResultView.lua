@@ -40,6 +40,11 @@ end
 function ExpRaidResultView:InitView()
   local go = self:LoadPreferb_ByFullPath(ResourcePathHelper.EffectUI("59Instituteresult"), self.background)
   go.transform.localPosition = LuaGeometry.GetTempVector3(359.3, 106.7)
+  local resultBgTxt = self:FindComponent("result_bg_txt", UISprite, go)
+  if resultBgTxt then
+    IconManager:SetArtFontIcon("result_bg_txt", resultBgTxt)
+    resultBgTxt:MakePixelPerfect()
+  end
   self.gameObject.name = self.__cname
   self.tipLabel.text = ZhString.ExpRaid_ResultViewTipLabel
   self.tipNameLabel.text = ZhString.Dojo_Reward

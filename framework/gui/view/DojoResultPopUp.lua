@@ -19,6 +19,11 @@ function DojoResultPopUp:InitView()
   local ePath = ResourcePathHelper.EffectUI("59Instituteresult")
   local go = self:LoadPreferb_ByFullPath(ePath, self:FindGO("Background"))
   go.transform.localPosition = LuaGeometry.GetTempVector3(359.3, 106.7)
+  local resultBgTxt = self:FindComponent("result_bg_txt", UISprite, go)
+  if resultBgTxt then
+    IconManager:SetArtFontIcon("result_bg_txt", resultBgTxt)
+    resultBgTxt:MakePixelPerfect()
+  end
   self.name = self:FindComponent("Name", UILabel)
   self.tipName = self:FindComponent("TipName", UILabel)
   self.countDownLabel = self:FindComponent("CountDownLabel", UILabel)

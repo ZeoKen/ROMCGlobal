@@ -5,6 +5,7 @@ autoImport("Asset_Role_UI")
 local viewPath = ResourcePathHelper.UIView("ActivityIntegrationLotteryRaidShopSubView")
 local scenePath = ResourcePathHelper.UIModel("LotteryRaidShopScene")
 local rightBgTexName = "PayRaid_shop_bg"
+local lotteryRaidActivityType = "lottery_raid"
 local tempVector3 = LuaVector3.Zero()
 local modelCameraFov = 20
 local GetCameraPostProcessing = function(comp)
@@ -46,6 +47,7 @@ function ActivityIntegrationLotteryRaidShopSubView:FindObjs()
       self:RotateModel(go, delta)
     end)
   end
+  self.actEndTex = self:FindComponent("ActEndTex", UITexture, self.gameObject)
   self.shopScrollView = self:FindGO("ShopScrollView", self.gameObject):GetComponent(UIScrollView)
   self.shopGrid = self:FindGO("Grid", self.gameObject):GetComponent(UIGrid)
   self.shopListCtrl = UIGridListCtrl.new(self.shopGrid, ActivityIntegrationLotteryRaidShopGoodsCell, "ActivityIntegrationLotteryRaidShopGoodsCell")
@@ -97,13 +99,44 @@ function ActivityIntegrationLotteryRaidShopSubView:SetActivityID(activityID)
   self.activityID = activityID
 end
 
+function ActivityIntegrationLotteryRaidShopSubView:IsLotteryRaidActivityOpen(staticData)
+  local startTime, endTime = LoopActIntegrationProxy.Instance:GetActivityTime(staticData)
+  local currentTime = ServerTime.CurServerTime() / 1000
+  return startTime and endTime and startTime < currentTime and endTime > currentTime
+end
+
+function ActivityIntegrationLotteryRaidShopSubView:GetActiveLotteryRaidStaticData()
+  local proxy = LoopActIntegrationProxy.Instance
+  if self.staticData then
+    return self:IsLotteryRaidActivityOpen(self.staticData) and self.staticData or nil
+  end
+  for _, staticData in pairs(Table_ActivityNew) do
+    if staticData.Type == lotteryRaidActivityType and proxy:CheckAreaAndServerValid(staticData) and self:IsLotteryRaidActivityOpen(staticData) then
+      return staticData
+    end
+  end
+end
+
 function ActivityIntegrationLotteryRaidShopSubView:InitShopConfig()
-  local config = GameConfig.LotteryRaidShop
+  local defaultConfig = GameConfig.LotteryRaidShop
+  local activeStaticData = self:GetActiveLotteryRaidStaticData()
+  local activityConfig = activeStaticData and activeStaticData.Misc
+  local config = {}
+  for key, value in pairs(defaultConfig or {}) do
+    config[key] = value
+  end
+  for key, value in pairs(activityConfig or {}) do
+    config[key] = value
+  end
+  if activeStaticData and activeStaticData.BgTextture ~= nil then
+    config.BgTexture = activeStaticData.BgTextture
+  end
+  self.isActivityOpen = activeStaticData ~= nil
   self.shopConfig = config
-  self.shopType = config and config.ShopType
-  self.shopId = config and config.ShopId
-  self.shopItemID = config and config.ShopItemID
-  self.modelConfig = config and config.ModelItems
+  self.shopType = config.ShopType
+  self.shopId = config.ShopId
+  self.shopItemID = config.ShopItemID
+  self.modelConfig = config.ModelItems
 end
 
 function ActivityIntegrationLotteryRaidShopSubView:LoadCellPfb(cName)
@@ -166,7 +199,32 @@ function ActivityIntegrationLotteryRaidShopSubView:RefreshPage(id)
   self:RefreshRaidEntryVisible()
   self:UpdateBalance()
   self:UpdateShopInfo()
+  self:RefreshActivityDisplay()
   self:RefreshModel()
+end
+
+function ActivityIntegrationLotteryRaidShopSubView:ClearActEndTexture()
+  if self.actEndTextureName and self.actEndTex then
+    PictureManager.Instance:UnLoadUI(self.actEndTextureName, self.actEndTex)
+  end
+  self.actEndTextureName = nil
+end
+
+function ActivityIntegrationLotteryRaidShopSubView:RefreshActivityDisplay()
+  self:SetParentBgVisible(not self.isActivityOpen)
+  if self.modelTexture then
+    self.modelTexture:SetActive(self.isActivityOpen)
+  end
+  if not self.actEndTex then
+    return
+  end
+  self:ClearActEndTexture()
+  self.actEndTex.gameObject:SetActive(not self.isActivityOpen)
+  local textureName = not self.isActivityOpen and self.shopConfig.ActEndTexture
+  if textureName then
+    self.actEndTextureName = textureName
+    PictureManager.Instance:SetUI(textureName, self.actEndTex)
+  end
 end
 
 function ActivityIntegrationLotteryRaidShopSubView:RefreshRaidEntryDesc()
@@ -581,7 +639,7 @@ function ActivityIntegrationLotteryRaidShopSubView:RestoreCameraPostProcessing()
 end
 
 function ActivityIntegrationLotteryRaidShopSubView:SwitchCameraToModel()
-  if self.isCameraOnModel or self.ltInitCamera or not self.cameraPos then
+  if not self.isActivityOpen or self.isCameraOnModel or self.ltInitCamera or not self.cameraPos then
     return
   end
   if not self.cameraWorld or LuaGameObject.ObjectIsNull(self.cameraWorld) then
@@ -653,6 +711,11 @@ function ActivityIntegrationLotteryRaidShopSubView:SetParentBgVisible(visible)
 end
 
 function ActivityIntegrationLotteryRaidShopSubView:RefreshModel()
+  if not self.isActivityOpen then
+    self:DestroyRoleModel()
+    self:DestroyScene()
+    return
+  end
   self:InitScene()
   if not self.rolePos then
     self:DestroyRoleModel()
@@ -749,8 +812,10 @@ function ActivityIntegrationLotteryRaidShopSubView:ObserverDestroyed(obj)
 end
 
 function ActivityIntegrationLotteryRaidShopSubView:OnShow()
-  self:SetParentBgVisible(false)
-  self:SwitchCameraToModel()
+  self:SetParentBgVisible(not self.isActivityOpen)
+  if self.isActivityOpen then
+    self:SwitchCameraToModel()
+  end
 end
 
 function ActivityIntegrationLotteryRaidShopSubView:OnHide()
@@ -784,7 +849,7 @@ function ActivityIntegrationLotteryRaidShopSubView:OnEnter(id)
     redlog("ActivityIntegrationLotteryRaidShopSubView missing shop config", id, self.shopType, self.shopId)
   end
   self:RefreshPage(id)
-  self:SetParentBgVisible(false)
+  self:SetParentBgVisible(not self.isActivityOpen)
   self:SwitchCameraToModel()
   ActivityIntegrationLotteryRaidShopSubView.super.OnEnter(self)
 end
@@ -795,6 +860,7 @@ function ActivityIntegrationLotteryRaidShopSubView:OnExit()
   self:SetParentBgVisible(true)
   self:DestroyRoleModel()
   self:DestroyScene()
+  self:ClearActEndTexture()
   if self.rightBgTex then
     PictureManager.Instance:UnLoadUI(rightBgTexName, self.rightBgTex)
   end
@@ -806,6 +872,7 @@ function ActivityIntegrationLotteryRaidShopSubView:OnDestroy()
   self:SetParentBgVisible(true)
   self:DestroyRoleModel()
   self:DestroyScene()
+  self:ClearActEndTexture()
   if self.vecCameraPosRecord then
     self.vecCameraPosRecord:Destroy()
     self.vecCameraPosRecord = nil

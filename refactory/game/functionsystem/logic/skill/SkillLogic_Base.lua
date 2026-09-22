@@ -770,7 +770,7 @@ function SkillLogic_Base:CreateHitTargetWorker(creature, phaseData, assetRole, s
   hitWorker:SetForceEffectPath(skillInfo:GetMainHitEffectPath(creature))
   hitWorker:SetHitedTargetGoPos(phaseData:GetHitedTargetPos())
   hitWorker:SetEmitTarget(phaseData:GetEmitTarget())
-  hitWorker:SetServerDamageOnly(phaseData:GetForceServerDamage(creature.data and creature.data.id))
+  hitWorker:SetServerDamageOnly(phaseData:ShouldBlockClientDamage(creature.data and creature.data.id))
   local targetGUID, damageType, damage, shareDamageInfos, damageCount, doubleDamage = phaseData:GetTarget(targetIndex)
   hitWorker:AddTarget(targetGUID, damageType, damage, shareDamageInfos, self:GetComboDamageLabel(targetIndex), damageCount, doubleDamage)
   return hitWorker
@@ -782,7 +782,7 @@ function SkillLogic_Base:CreateHitMultiTargetWorker(creature, phaseData, assetRo
   hitWorker:SetForceEffectPath(skillInfo:GetMainHitEffectPath(creature))
   hitWorker:SetHitedTargetGoPos(phaseData:GetHitedTargetPos())
   hitWorker:SetEmitTarget(phaseData:GetEmitTarget())
-  hitWorker:SetServerDamageOnly(phaseData:GetForceServerDamage(creature.data and creature.data.id))
+  hitWorker:SetServerDamageOnly(phaseData:ShouldBlockClientDamage(creature.data and creature.data.id))
   local targetCount = phaseData:GetTargetCount()
   if 0 < targetCount then
     for i = 1, targetCount do
@@ -896,6 +896,9 @@ function SkillLogic_Base:Fire(creature)
       Emit(self, creature, phaseData, assetRole, skillInfo, fireEP, emitParams)
     else
       local hideDamage = skillInfo:GetHideDamage() or skillInfo:OnlyMainTarget()
+      if hideDamage and not skillInfo:GetHideDamage() and phaseData:IsFromServer() and SkillPhase.Attack == phaseData:GetSkillPhase() then
+        hideDamage = false
+      end
       if not hideDamage then
         local hitWorker = SkillLogic_Base.CreateHitMultiTargetWorker(self, creature, phaseData, assetRole, skillInfo, hideDamage)
         hitWorker:Work(fireIndex, fireCount)

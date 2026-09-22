@@ -576,6 +576,7 @@ function NPlayer:DoDeconstruct(asArray)
   self._changeJobTimeFlag = nil
   self.monokumaStealth = nil
   self.noActionUseSkill = nil
+  self.deadCallSkill = nil
   self.skillOverAction = nil
   self.serverid = nil
   self.handcartID = nil
@@ -755,11 +756,16 @@ function NPlayer:PlayDeadCallSkill(phaseData)
     return
   end
   local deadCanUseSkill = skillInfo:CanCastWhenDead()
-  if not deadCanMove and not deadCanUseSkill then
+  if not deadCanUseSkill then
     return
   end
-  self.skill:SetSkillID(skillID)
+  local deadCallSkill = self.deadCallSkill
+  if nil == deadCallSkill then
+    deadCallSkill = SkillBase.new()
+    self.deadCallSkill = deadCallSkill
+  end
+  deadCallSkill:SetSkillID(skillID)
   if skillInfo.LogicClass then
-    skillInfo.LogicClass.PlayAttackEffect(self.skill, self)
+    skillInfo.LogicClass.PlayAttackEffect(deadCallSkill, self)
   end
 end

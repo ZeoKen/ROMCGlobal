@@ -19,6 +19,7 @@ end
 
 function SkillWaitForUse:SetSkillItemData(skillItemData, pos)
   self.weakHoldData[1] = skillItemData
+  self.skillGUID = skillItemData.guid
   self:SetData(skillItemData.id, skillItemData:GetID(), skillItemData:GetPosInShortCutGroup(ShortCutProxy.ShortCutEnum.ID1))
 end
 
@@ -63,6 +64,7 @@ end
 
 function SkillWaitForUse:Cancel()
   self.skillIDandLevel = nil
+  self.skillGUID = nil
   self.weakHoldData[1] = nil
   self.quickuse = nil
 end
@@ -141,7 +143,7 @@ function SkillClickUseManager:OnSkillUpdateHandler()
   if self._waitForUse:IsNull() then
     return
   end
-  local skillItemData = SkillProxy.Instance:GetEquipedSkillByGuid(self._waitForUse.skillIDandLevel, false)
+  local skillItemData = SkillProxy.Instance:GetEquipedSkillByGuid(self._waitForUse.skillGUID, false)
   if skillItemData then
     if not self._waitForUse:IsEqual(skillItemData) then
       self:_CancelWaitForUse()

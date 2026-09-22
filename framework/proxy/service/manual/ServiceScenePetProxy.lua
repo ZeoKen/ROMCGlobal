@@ -104,8 +104,8 @@ function ServiceScenePetProxy:RecvUnlockNtfPetCmd(data)
   self:Notify(ServiceEvent.ScenePetUnlockNtfPetCmd, data)
 end
 
-function ServiceScenePetProxy:CallEggRestorePetCmd(petid)
-  ServiceScenePetProxy.super.CallEggRestorePetCmd(self, petid)
+function ServiceScenePetProxy:CallEggRestorePetCmd(petid, guid)
+  ServiceScenePetProxy.super.CallEggRestorePetCmd(self, petid, guid)
 end
 
 function ServiceScenePetProxy:CallGetGiftPetCmd(petid)

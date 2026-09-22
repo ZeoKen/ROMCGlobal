@@ -37,7 +37,7 @@ Table_ServerList = {
   },
   [4] = {
     id = 4,
-    name = "##44707934",
+    name = "##47044549",
     type = 2,
     serverid = 60004,
     servertype = "novice",
@@ -81,31 +81,6 @@ Table_ServerList = {
     state = 1,
     serverip = {
       "172.26.31.16"
-    },
-    port = 8888
-  },
-  [8] = {
-    id = 8,
-    name = "##44697017",
-    type = 2,
-    serverid = 60008,
-    servertype = "novice",
-    state = 1,
-    linegroup = 2,
-    serverip = {
-      "172.26.31.17"
-    },
-    port = 8888
-  },
-  [9] = {
-    id = 9,
-    name = "##44724966",
-    type = 2,
-    serverid = 60009,
-    servertype = "novice",
-    state = 1,
-    serverip = {
-      "172.25.135.114"
     },
     port = 8888
   }

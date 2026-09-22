@@ -25,18 +25,94 @@ function LoopActIntegrationProxy:GetAreaAndServerName()
     branchName = "NOCH"
   elseif branchName == "NOTW" then
     branchName = "NO"
-  elseif branchName == "NOEN" then
-    branchName = "NONA"
   end
   return branchName
 end
 
+function LoopActIntegrationProxy:GetCurrentServerID()
+  local curServer = FunctionLogin.Me():getCurServerData()
+  return curServer and curServer.linegroup or 1
+end
+
+function LoopActIntegrationProxy:GetAreaSpecCfg(staticData, branchName)
+  local areaSpecCfg = staticData and staticData.AreaSpecCfg
+  if not areaSpecCfg then
+    return nil
+  end
+  local targetBranchName = branchName or self:GetAreaAndServerName()
+  local areaCfg = areaSpecCfg[targetBranchName]
+  if areaCfg == true then
+    return {}
+  end
+  if areaCfg then
+    return areaCfg
+  end
+  if TableUtility.ArrayFindIndex(areaSpecCfg, targetBranchName) > 0 then
+    return {}
+  end
+  return areaCfg
+end
+
 function LoopActIntegrationProxy:CheckAreaAndServerValid(staticData, branchName)
-  local areaAndServer = staticData and staticData.AreaAndServer
-  if not areaAndServer or #areaAndServer <= 0 then
+  if not staticData then
     return false
   end
-  return 0 < TableUtility.ArrayFindIndex(areaAndServer, branchName or self:GetAreaAndServerName())
+  local areaSpecCfg = staticData.AreaSpecCfg
+  if areaSpecCfg then
+    return self:GetAreaSpecCfg(staticData, branchName) ~= nil
+  end
+  local areaAndServer = staticData.AreaAndServer
+  local targetBranchName = branchName or self:GetAreaAndServerName()
+  if not areaAndServer then
+    return false
+  end
+  if TableUtility.ArrayFindIndex(areaAndServer, targetBranchName) > 0 then
+    return true
+  end
+  return targetBranchName == "NOEN" and 0 < TableUtility.ArrayFindIndex(areaAndServer, "NONA")
+end
+
+function LoopActIntegrationProxy:GetEffectiveTimeConfig(config, branchName)
+  if not config then
+    return nil
+  end
+  local effectiveConfig = config
+  local areaCfg = self:GetAreaSpecCfg(config, branchName)
+  if not areaCfg then
+    return effectiveConfig
+  end
+  local servers = areaCfg.servers
+  local serverMatched = not servers or #servers == 0 or 0 < TableUtility.ArrayFindIndex(servers, self:GetCurrentServerID())
+  if not serverMatched then
+    return effectiveConfig
+  end
+  if areaCfg.start_time or areaCfg.end_time or areaCfg.abort_time or areaCfg.tf_abort_time then
+    effectiveConfig = {}
+    for key, value in pairs(config) do
+      effectiveConfig[key] = value
+    end
+    effectiveConfig.StartTime = areaCfg.start_time or config.StartTime
+    effectiveConfig.EndTime = areaCfg.end_time or config.EndTime
+    effectiveConfig.AbortTime = areaCfg.abort_time or config.AbortTime
+    effectiveConfig.TfAbortTime = areaCfg.tf_abort_time or config.TfAbortTime
+  end
+  return effectiveConfig
+end
+
+function LoopActIntegrationProxy:IsCycleBeforeAbort(config, realStartTime)
+  if not realStartTime then
+    return false
+  end
+  local abortTimeStr = EnvChannel.IsTFBranch() and config.TfAbortTime or config.AbortTime
+  if not abortTimeStr or abortTimeStr == "" then
+    return true
+  end
+  local abortTime = self:ParseDateTime(abortTimeStr)
+  if not abortTime then
+    redlog("循环终止时间格式错误", config.id, abortTimeStr)
+    return false
+  end
+  return realStartTime < abortTime
 end
 
 function LoopActIntegrationProxy:CheckRoleLevelValid(staticData)
@@ -80,7 +156,8 @@ function LoopActIntegrationProxy:GetGroupInfo(groupID)
     local activityID = groupInfo.activityIDs[i]
     local staticData = Table_ActivityNew[activityID]
     if staticData then
-      local tfDayInAdvance = staticData.TfDayInAdvance or 0
+      local effectiveTimeConfig = self:GetEffectiveTimeConfig(staticData, branchName)
+      local tfDayInAdvance = effectiveTimeConfig.TfDayInAdvance or 0
       local currentTimeForBaseCompare = currentTime
       if isTF and 0 < tfDayInAdvance then
         currentTimeForBaseCompare = currentTime + tfDayInAdvance * 86400
@@ -90,7 +167,7 @@ function LoopActIntegrationProxy:GetGroupInfo(groupID)
       if staticData.Type == "banner" and serverValid and roleLevelValid then
         local timeValid, realStartTime, realEndTime = self:CheckTimeValid(staticData)
         if timeValid then
-          local baseStartTime = self:ParseDateTime(staticData.StartTime)
+          local baseStartTime = self:ParseDateTime(effectiveTimeConfig.StartTime)
           local shouldUse = false
           if not bannerActivityID then
             shouldUse = true
@@ -98,7 +175,7 @@ function LoopActIntegrationProxy:GetGroupInfo(groupID)
             local existingBanner = Table_ActivityNew[bannerActivityID]
             if existingBanner then
               local existingValid, existingStartTime, existingEndTime = self:CheckTimeValid(existingBanner)
-              local existingBaseStartTime = self:ParseDateTime(existingBanner.StartTime)
+              local existingBaseStartTime = self:ParseDateTime(self:GetEffectiveTimeConfig(existingBanner, branchName).StartTime)
               if baseStartTime and existingBaseStartTime and realStartTime and realEndTime and existingStartTime and existingEndTime then
                 local currentInPeriod = currentTime >= realStartTime and currentTime <= realEndTime
                 local existingInPeriod = currentTime >= existingStartTime and currentTime <= existingEndTime
@@ -128,16 +205,21 @@ function LoopActIntegrationProxy:GetGroupInfo(groupID)
             bannerActivityID = activityID
           end
         end
+      elseif staticData.Type == "preview" and serverValid and roleLevelValid then
+        local timeValid = self:CheckTimeValid(staticData)
+        if timeValid then
+          table.insert(filteredActivityIDs, activityID)
+        end
       elseif serverValid and roleLevelValid then
         if staticData.Cycle and staticData.Cycle ~= "" then
-          local timeValid, realStartTime, realEndTime = self:CheckTimeValid(staticData)
+          local timeValid, realStartTime, realEndTime, cycleAborted = self:CheckTimeValid(staticData)
           if timeValid then
             table.insert(filteredActivityIDs, activityID)
-          elseif self:CheckActivityValid(activityID) then
+          elseif not cycleAborted and self:CheckActivityValid(activityID) then
             table.insert(filteredActivityIDs, activityID)
           end
         else
-          local startTime = staticData.StartTime
+          local startTime = effectiveTimeConfig.StartTime
           startTime = KFCARCameraProxy.Instance:GetSelfCustomDate(startTime)
           if not startTime or currentTimeForBaseCompare >= startTime then
             table.insert(filteredActivityIDs, activityID)
@@ -190,7 +272,7 @@ function LoopActIntegrationProxy:GetAllGroupShowInfo()
             realEndTime = realEndTime,
             activityName = paramsInte.ActivityName or "循环活动",
             activityIcon = paramsInte.ActivityIcon or "tab_icon_temp",
-            baseStartTime = self:ParseDateTime(_config.StartTime)
+            baseStartTime = self:ParseDateTime(self:GetEffectiveTimeConfig(_config).StartTime)
           })
         end
       end
@@ -293,6 +375,13 @@ function LoopActIntegrationProxy:ConvertToGameDay(timestamp)
 end
 
 function LoopActIntegrationProxy:CheckTimeValid(config)
+  if config and not self:CheckAreaAndServerValid(config) then
+    return false, nil, nil
+  end
+  config = self:GetEffectiveTimeConfig(config)
+  if not config then
+    return false, nil, nil
+  end
   local isTF = EnvChannel.IsTFBranch()
   local startTimeStr = config.StartTime
   local endTimeStr = config.EndTime
@@ -323,6 +412,9 @@ function LoopActIntegrationProxy:CheckTimeValid(config)
   if cycle == "monthly" then
     local realStartTime, realEndTime = self:CalculateMonthlyTime(baseStartDate, baseEndDate, true, config, nil)
     if realStartTime and realEndTime then
+      if not self:IsCycleBeforeAbort(config, realStartTime) then
+        return false, nil, nil, true
+      end
       if currentTime < realStartTime then
         return false, realStartTime, realEndTime
       end
@@ -335,6 +427,9 @@ function LoopActIntegrationProxy:CheckTimeValid(config)
   elseif cycle == "yearly" then
     local realStartTime, realEndTime = self:CalculateYearlyTime(baseStartDate, baseEndDate, true, config, nil)
     if realStartTime and realEndTime then
+      if not self:IsCycleBeforeAbort(config, realStartTime) then
+        return false, nil, nil, true
+      end
       if currentTime < realStartTime then
         return false, realStartTime, realEndTime
       end
@@ -347,6 +442,24 @@ function LoopActIntegrationProxy:CheckTimeValid(config)
   elseif cycle == "seasonly" then
     local realStartTime, realEndTime = self:CalculateSeasonlyTime(baseStartDate, baseEndDate, true, config, nil)
     if realStartTime and realEndTime then
+      if not self:IsCycleBeforeAbort(config, realStartTime) then
+        return false, nil, nil, true
+      end
+      if currentTime < realStartTime then
+        return false, realStartTime, realEndTime
+      end
+      if currentTime >= realStartTime and currentTime <= realEndTime then
+        return true, realStartTime, realEndTime
+      elseif baseStartTime <= realStartTime then
+        return false, realStartTime, realEndTime
+      end
+    end
+  elseif cycle == "multimonthly" then
+    local realStartTime, realEndTime = self:CalculateMultiMonthlyTime(baseStartDate, baseEndDate, true, config, nil)
+    if realStartTime and realEndTime then
+      if not self:IsCycleBeforeAbort(config, realStartTime) then
+        return false, nil, nil, true
+      end
       if currentTime < realStartTime then
         return false, realStartTime, realEndTime
       end
@@ -658,10 +771,11 @@ function LoopActIntegrationProxy:CalculateYearlyTime(baseStartDate, baseEndDate,
   end
 end
 
-function LoopActIntegrationProxy:CalculateSeasonlyTime(baseStartDate, baseEndDate, checkCurrentTime, config, targetDate)
+function LoopActIntegrationProxy:CalculateIntervalMonthlyTime(baseStartDate, baseEndDate, checkCurrentTime, config, targetDate, intervalMonths)
   if checkCurrentTime == nil then
     checkCurrentTime = true
   end
+  intervalMonths = math.max(1, tonumber(intervalMonths) or 1)
   local currentDate = targetDate
   if currentDate == nil then
     local currentTime = ServerTime.CurServerTime() / 1000
@@ -676,7 +790,7 @@ function LoopActIntegrationProxy:CalculateSeasonlyTime(baseStartDate, baseEndDat
   if checkCurrentTime then
     local currentTimestamp = ServerTime.Ori_OsTime(currentDate)
     local bestStartTime, bestEndTime, bestEndYear
-    while testYear < currentDate.year or testYear == currentDate.year and testMonth <= currentDate.month + 3 do
+    while testYear < currentDate.year or testYear == currentDate.year and testMonth <= currentDate.month + intervalMonths do
       local startDay = baseStartDate.day
       local endDay = baseEndDate.day
       local endMonth = testMonth + durationMonths
@@ -730,7 +844,7 @@ function LoopActIntegrationProxy:CalculateSeasonlyTime(baseStartDate, baseEndDat
         bestEndTime = realEndTime
         bestEndYear = endYear
       end
-      testMonth = testMonth + 3
+      testMonth = testMonth + intervalMonths
       if 12 < testMonth then
         testMonth = testMonth - 12
         testYear = testYear + 1
@@ -787,7 +901,7 @@ function LoopActIntegrationProxy:CalculateSeasonlyTime(baseStartDate, baseEndDat
         })
         return realStartTime, realEndTime
       end
-      testMonth = testMonth + 3
+      testMonth = testMonth + intervalMonths
       if 12 < testMonth then
         testMonth = testMonth - 12
         testYear = testYear + 1
@@ -798,6 +912,15 @@ function LoopActIntegrationProxy:CalculateSeasonlyTime(baseStartDate, baseEndDat
     end
     return nil, nil
   end
+end
+
+function LoopActIntegrationProxy:CalculateSeasonlyTime(baseStartDate, baseEndDate, checkCurrentTime, config, targetDate)
+  return self:CalculateIntervalMonthlyTime(baseStartDate, baseEndDate, checkCurrentTime, config, targetDate, 3)
+end
+
+function LoopActIntegrationProxy:CalculateMultiMonthlyTime(baseStartDate, baseEndDate, checkCurrentTime, config, targetDate)
+  local intervalMonths = config and config.CycleIntervalTime or 1
+  return self:CalculateIntervalMonthlyTime(baseStartDate, baseEndDate, checkCurrentTime, config, targetDate, intervalMonths)
 end
 
 function LoopActIntegrationProxy:GetMonthlyShowInfo(groupID)
@@ -821,16 +944,17 @@ function LoopActIntegrationProxy:GetMonthlyShowInfo(groupID)
     if config.Group == groupID and config.Params_Inte then
       local serverValid = self:CheckAreaAndServerValid(config, branchName)
       if serverValid then
-        local cycle = config.Cycle
+        local effectiveTimeConfig = self:GetEffectiveTimeConfig(config, branchName)
+        local cycle = effectiveTimeConfig.Cycle
         if not cycle or cycle == "" then
         else
-          local startTimeStr = config.StartTime
-          local endTimeStr = config.EndTime
+          local startTimeStr = effectiveTimeConfig.StartTime
+          local endTimeStr = effectiveTimeConfig.EndTime
           if startTimeStr and startTimeStr ~= "" and endTimeStr and endTimeStr ~= "" then
             local baseStartTime = self:ParseDateTime(startTimeStr)
             local baseEndTime = self:ParseDateTime(endTimeStr)
             if baseStartTime and baseEndTime then
-              local configTfDayInAdvance = config.TfDayInAdvance or 0
+              local configTfDayInAdvance = effectiveTimeConfig.TfDayInAdvance or 0
               if isTF and 0 < configTfDayInAdvance then
                 baseStartTime = baseStartTime - configTfDayInAdvance * 86400
                 baseEndTime = baseEndTime - configTfDayInAdvance * 86400
@@ -847,13 +971,15 @@ function LoopActIntegrationProxy:GetMonthlyShowInfo(groupID)
               }
               local realStartTime, realEndTime
               if cycle == "monthly" then
-                realStartTime, realEndTime = self:CalculateMonthlyTime(baseStartDate, baseEndDate, false, config, targetMonthFirstDay)
+                realStartTime, realEndTime = self:CalculateMonthlyTime(baseStartDate, baseEndDate, false, effectiveTimeConfig, targetMonthFirstDay)
               elseif cycle == "yearly" then
-                realStartTime, realEndTime = self:CalculateYearlyTime(baseStartDate, baseEndDate, false, config, targetMonthFirstDay)
+                realStartTime, realEndTime = self:CalculateYearlyTime(baseStartDate, baseEndDate, false, effectiveTimeConfig, targetMonthFirstDay)
               elseif cycle == "seasonly" then
-                realStartTime, realEndTime = self:CalculateSeasonlyTime(baseStartDate, baseEndDate, false, config, targetMonthFirstDay)
+                realStartTime, realEndTime = self:CalculateSeasonlyTime(baseStartDate, baseEndDate, false, effectiveTimeConfig, targetMonthFirstDay)
+              elseif cycle == "multimonthly" then
+                realStartTime, realEndTime = self:CalculateMultiMonthlyTime(baseStartDate, baseEndDate, false, effectiveTimeConfig, targetMonthFirstDay)
               end
-              if realStartTime and realEndTime then
+              if realStartTime and realEndTime and self:IsCycleBeforeAbort(effectiveTimeConfig, realStartTime) then
                 local startDate = ServerTime.Ori_OsDate("*t", realStartTime)
                 local endDate = ServerTime.Ori_OsDate("*t", realEndTime)
                 local containsTargetMonth = false
@@ -903,7 +1029,8 @@ local SubTypeMap = {
   flip_card = 3,
   act_bp_shop = 4,
   lottery_raid = 14,
-  boss_scene_season = 12
+  boss_scene_season = 12,
+  preview = "preview"
 }
 
 function LoopActIntegrationProxy:GetSubTypeFromActType(actType)
@@ -924,6 +1051,10 @@ end
 function LoopActIntegrationProxy:GetActivityTime(staticData)
   if not staticData then
     return nil, nil
+  end
+  if staticData.Type == "preview" then
+    local _, realStartTime, realEndTime = self:CheckTimeValid(staticData)
+    return realStartTime, realEndTime
   end
   local isGlobalActivity = staticData.IsGlobalActivity
   local actType = tonumber(staticData.Type)
@@ -970,8 +1101,20 @@ function LoopActIntegrationProxy:CheckActivityValid(activityID)
   if not staticData then
     return false
   end
+  if not self:CheckAreaAndServerValid(staticData) then
+    return false
+  end
   if not self:CheckRoleLevelValid(staticData) then
     return false
+  end
+  if staticData.Cycle and staticData.Cycle ~= "" then
+    local _, _, _, cycleAborted = self:CheckTimeValid(staticData)
+    if cycleAborted then
+      return false
+    end
+  end
+  if staticData.Type == "preview" then
+    return self:CheckTimeValid(staticData)
   end
   if staticData.IsGlobalActivity == 1 then
     local type = staticData.Type
@@ -1012,7 +1155,10 @@ function LoopActIntegrationProxy:GetAllActivityIDsInGroup(groupID)
   end
   local allIDs = {}
   for i = 1, #groupInfo.activityIDs do
-    table.insert(allIDs, groupInfo.activityIDs[i])
+    local activityID = groupInfo.activityIDs[i]
+    if self:CheckAreaAndServerValid(Table_ActivityNew[activityID]) then
+      table.insert(allIDs, activityID)
+    end
   end
   return allIDs
 end

@@ -1261,6 +1261,9 @@ function SkillInfo:SelectLockedTarget(creature)
 end
 
 function SkillInfo:GetVoiceBulletDamageCount(creature)
+  if creature == nil then
+    return 1
+  end
   return CommonFun.GetVoiceBulletCount(creature.data)
 end
 

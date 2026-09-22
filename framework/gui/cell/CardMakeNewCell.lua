@@ -34,8 +34,9 @@ function CardMakeNewCell:SetData(data)
     self.makeableMark:SetActive(data:IsMakeable())
     local advData = AdventureDataProxy.Instance:GetItemByStaticIDFromBag(data.itemData.staticData.id, SceneManual_pb.EMANUALTYPE_CARD)
     if advData then
-      self.inStore:SetActive(advData.store)
-      local isCanStore = not advData.store and AdventureDataProxy.Instance:checkFashionCanStore(advData) and true or false
+      local isStored = advData.store == true
+      self.inStore:SetActive(isStored)
+      local isCanStore = not isStored and AdventureDataProxy.Instance:checkFashionCanStore(advData) and true or false
       self.canStore:SetActive(isCanStore)
     else
       self.inStore:SetActive(false)

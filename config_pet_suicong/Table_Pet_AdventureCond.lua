@@ -502,6 +502,38 @@ Table_Pet_AdventureCond = {
     Param = {501700},
     Icon = "Fur_seal",
     Desc = "##148948"
+  },
+  [6000] = {
+    id = 6000,
+    Type = "##45935867",
+    TypeID = "PvpPet",
+    Param = _EmptyTable,
+    Icon = "PVPpet",
+    Desc = "##46429290"
+  },
+  [6001] = {
+    id = 6001,
+    Type = "##47042161",
+    TypeID = "PetID",
+    Param = {
+      502600,
+      502610,
+      502655
+    },
+    Icon = "n_pvppet_003",
+    Desc = "##47042162"
+  },
+  [6002] = {
+    id = 6002,
+    Type = "##47042163",
+    TypeID = "PetID",
+    Param = {
+      502620,
+      502630,
+      502700
+    },
+    Icon = "n_pvppet_005",
+    Desc = "##47042164"
   }
 }
 Table_Pet_AdventureCond_fields = {

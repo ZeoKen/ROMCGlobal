@@ -330,6 +330,16 @@ Table_ShopShow = {
     Picture = "item_8416",
     IconScale = 1.1,
     IconTip = _EmptyTable
+  },
+  [3135100] = {
+    id = 3135100,
+    Type = 1,
+    ShopID = 3135100,
+    Order = 1,
+    Icon = "",
+    Picture = "",
+    IconTip = _EmptyTable,
+    KeyShow = 1
   }
 }
 Table_ShopShow_fields = {

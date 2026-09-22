@@ -110,6 +110,7 @@ function ItemCell:InitCardSlot()
   self.cardSlotGO = self:FindGO("CardSlot", self.equipGO)
   local slotCpy, cardGO = self:FindGO("CardEquip1", self.cardSlotGO)
   self.cardSlotSymbols = {}
+  self.cardSlotBanSymbols = {}
   for i = 1, 5 do
     if i == 1 then
       cardGO = slotCpy
@@ -123,6 +124,7 @@ function ItemCell:InitCardSlot()
     local cardSp = cardGO:GetComponent(UISprite)
     self.cardSlotSymbols[-i] = cardGO
     self.cardSlotSymbols[i] = cardSp
+    self.cardSlotBanSymbols[i] = self:FindGO("CardBan", cardGO)
   end
 end
 
@@ -774,11 +776,14 @@ function ItemCell:UpdateCardSlot(data, isEquip)
   end
   if isEquip and (0 < slotNum or 0 < replaceCount) then
     self.cardSlotGO:SetActive(true)
-    local cardDatas, symbols, count = data.equipedCardInfo or {}, self.cardSlotSymbols, 0
+    local cardDatas, symbols, banSymbols, count = data.equipedCardInfo or {}, self.cardSlotSymbols, self.cardSlotBanSymbols, 0
+    local isShadowEquip = data.IsServerShadowEquip and data:IsServerShadowEquip() or false
+    local isExtraction = data.IsExtraction and data:IsExtraction() or false
     for i = 1, #symbols do
+      local cardData = cardDatas[i]
       if i <= slotNum then
         symbols[-i]:SetActive(true)
-        local quality = cardDatas[i] and cardDatas[i]:GetCardQuality()
+        local quality = cardData and cardData:GetCardQuality()
         symbols[i].spriteName = quality and string.format("card_icon_%02d", quality) or "card_icon_0"
         count = count + 1
       elseif i <= slotNum + replaceCount then
@@ -787,6 +792,11 @@ function ItemCell:UpdateCardSlot(data, isEquip)
         count = count + 1
       else
         symbols[-i]:SetActive(false)
+      end
+      if banSymbols[i] then
+        local isShadowCard = cardData and cardData.IsShadowCard and cardData:IsShadowCard() or false
+        local isCardForbidden = cardData ~= nil and not isExtraction and isShadowEquip and not isShadowCard
+        banSymbols[i]:SetActive(isCardForbidden)
       end
     end
     for i = 1, count do

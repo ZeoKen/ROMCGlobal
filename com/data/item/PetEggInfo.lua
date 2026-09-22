@@ -24,8 +24,18 @@ function PetEggInfo:Server_SetData(serverdata)
   self.hp = serverdata.hp
   self.restoretime = serverdata.restoretime
   self.cdtime = serverdata.cdtime
-  self.already_hatched = serverdata.already_hatched
-  self.quick_pack_slot = serverdata.quick_pack_slot
+  self.hatched_by_char = serverdata.hatched_by_char or 0
+  self.char_quick_pack_slots = nil
+  if serverdata.char_quick_pack_slots then
+    self.char_quick_pack_slots = {}
+    for i = 1, #serverdata.char_quick_pack_slots do
+      local slotData = serverdata.char_quick_pack_slots[i]
+      self.char_quick_pack_slots[i] = {
+        charid = slotData.charid,
+        slot = slotData.slot
+      }
+    end
+  end
   self.time_happly = serverdata.time_happly
   self.time_excite = serverdata.time_excite
   self.time_happiness = serverdata.time_happiness
@@ -107,11 +117,35 @@ function PetEggInfo:PetMountCanEquip()
 end
 
 function PetEggInfo:IsQuickPet()
-  return self.quick_pack_slot and self.quick_pack_slot > 0
+  return self:GetQuickPackSlot() > 0
 end
 
 function PetEggInfo:IsFighting()
-  return self.already_hatched == true
+  return self.hatched_by_char ~= nil and self.hatched_by_char ~= 0
+end
+
+function PetEggInfo:IsFightingByMyself()
+  local myCharId = Game.Myself and Game.Myself.data and Game.Myself.data.id
+  return myCharId ~= nil and self.hatched_by_char == myCharId
+end
+
+function PetEggInfo:IsFightingByOther()
+  local myCharId = Game.Myself and Game.Myself.data and Game.Myself.data.id
+  return self.hatched_by_char ~= nil and self.hatched_by_char ~= 0 and self.hatched_by_char ~= myCharId
+end
+
+function PetEggInfo:GetQuickPackSlot()
+  local slots = self.char_quick_pack_slots
+  local myCharId = Game.Myself and Game.Myself.data and Game.Myself.data.id
+  if slots and myCharId then
+    for i = 1, #slots do
+      local data = slots[i]
+      if data and data.charid == myCharId then
+        return data.slot or 0
+      end
+    end
+  end
+  return 0
 end
 
 function PetEggInfo:IsPvpPet()
@@ -201,7 +235,7 @@ function PetEggInfo:GetContractSkillLevel()
   if not (cfg and cfg.ContractSkill) or not cfg.ContractSkill[1] then
     return 0
   end
-  if self.already_hatched and PetProxy and PetProxy.Instance then
+  if self:IsFightingByMyself() and PetProxy and PetProxy.Instance then
     local petData = PetProxy.Instance:GetMyPetInfoData(self.petid)
     if petData and petData.GetContractSkillLevel then
       local petLv = petData:GetContractSkillLevel()
@@ -274,6 +308,9 @@ function PetEggInfo:GetSkillDisplayDatasForUI()
   local contractBaseFloor = contractBase and math.floor(contractBase / 1000)
   local contractMaxLv = contractCfg and contractCfg[2] or 0
   local contractLv = self:GetContractSkillLevel()
+  local petProxy = PetProxy and PetProxy.Instance
+  local fightingPetInfo = self:IsFightingByMyself() and petProxy and petProxy:GetMyPetInfoData(self.petid) or nil
+  local fightingPetGuid = fightingPetInfo and fightingPetInfo.guid or nil
   local GetBestSkillId = function(skillCfg, isContract)
     if not skillCfg or not skillCfg[1] then
       return nil, nil
@@ -326,20 +363,27 @@ function PetEggInfo:GetSkillDisplayDatasForUI()
     "Skill_2",
     "Skill_5"
   }
+  local contractConfig = GameConfig.Pet.Contract
+  local skillReqLevel = contractConfig and contractConfig.skill_req_level or {}
   for i = 1, #sortedIndex do
     local key = sortedIndex[i]
     local isContract = key == "ContractSkill"
+    local skillSlot = tonumber(string.match(key, "^Skill_(%d+)$"))
     local skillId, rawIndex = GetBestSkillId(cfg[key], isContract)
     if skillId then
+      local reqLevel = skillReqLevel[string.lower(key)]
       local data = {
         skillId = skillId,
         petid = self.petid,
-        inactive = false,
+        guid = fightingPetGuid,
+        inactive = contractBase ~= nil and not isContract and reqLevel ~= nil and contractLv < reqLevel,
         isContract = isContract,
-        canUpgradeContract = false
+        canUpgradeContract = false,
+        skillSlot = skillSlot
       }
       if isContract then
         data.level = contractLv
+        data.maxLevel = contractMaxLv
       end
       table.insert(result, data)
       usedIndex[rawIndex] = true
@@ -348,6 +392,17 @@ function PetEggInfo:GetSkillDisplayDatasForUI()
   for i = 1, #self.skillids do
     if not usedIndex[i] then
       table.insert(result, self.skillids[i])
+    end
+  end
+  local relatedSkillIds = {}
+  for i = 1, #result do
+    if type(result[i]) == "table" and result[i].skillId then
+      table.insert(relatedSkillIds, result[i].skillId)
+    end
+  end
+  for i = 1, #result do
+    if type(result[i]) == "table" then
+      result[i].relatedSkillIds = relatedSkillIds
     end
   end
   return result
@@ -395,7 +450,7 @@ function PetEggInfo:Clone()
   obj.itemid = self.itemid
   obj.name = self.name
   obj.guid = self.guid
-  obj.petid = self.id
+  obj.petid = self.petid
   obj.lv = self.lv
   obj.exp = self.exp
   obj.friendlv = self.friendlv
@@ -405,6 +460,18 @@ function PetEggInfo:Clone()
   obj.relivetime = self.relivetime
   obj.hp = self.hp
   obj.restoretime = self.restoretime
+  obj.cdtime = self.cdtime
+  obj.hatched_by_char = self.hatched_by_char
+  local slfQuickPackSlots = self.char_quick_pack_slots
+  if slfQuickPackSlots then
+    obj.char_quick_pack_slots = {}
+    for i = 1, #slfQuickPackSlots do
+      obj.char_quick_pack_slots[i] = {
+        charid = slfQuickPackSlots[i].charid,
+        slot = slfQuickPackSlots[i].slot
+      }
+    end
+  end
   obj.time_happly = self.time_happly
   obj.time_excite = self.time_excite
   obj.time_happiness = self.time_happiness

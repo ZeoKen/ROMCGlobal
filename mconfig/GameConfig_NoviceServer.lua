@@ -2174,16 +2174,16 @@ GameConfig.LotteryRaidShop = {
   ModelItems = {
     Fashion = {},
     Parts = {
-      25290,
-      3013516,
-      3013517,
-      3013518,
-      3013519
+      25289,
+      3013546,
+      3013547,
+      3013548,
+      3013549
     },
     ModelScale = 0.8,
     ModelPos = {
-      0,
-      0,
+      0.2,
+      0.01,
       0
     },
     ModelRotation = {
@@ -2192,6 +2192,7 @@ GameConfig.LotteryRaidShop = {
       0
     }
   },
+  ActEndTexture = "PayRaid_hero",
   BgTexture = "PayRaid_bg"
 }
 GameConfig.ManualModelHide = {
@@ -2322,6 +2323,7 @@ GameConfig.Pve = {
     [79] = "星座徽章",
     [81] = "装备记忆",
     [82] = "限时活动",
+    [84] = "限时活动",
     [87] = "雪花装备",
     [88] = "雪花宝石",
     [90] = "雪花装备",
@@ -2345,13 +2347,22 @@ GameConfig.Pve = {
     23
   },
   Catalog = {
-    [0] = "所有副本",
-    [1] = "装备",
-    [2] = "头饰卡片",
-    [3] = "制作材料",
-    [4] = "附魔道具",
-    [5] = "赛季",
-    [6] = "活动"
+    [0] = {
+      name = "所有副本",
+      order = 100
+    },
+    [1] = {name = "装备", order = 100},
+    [2] = {
+      name = "头饰卡片",
+      order = 100
+    },
+    [3] = {
+      name = "制作材料",
+      order = 100
+    },
+    [4] = {name = "其它", order = 100},
+    [5] = {name = "赛季", order = 2},
+    [6] = {name = "活动", order = 1}
   },
   NewRaidInterval = 30,
   InvitePrepareTime = 60,
@@ -2663,6 +2674,13 @@ GameConfig.Pve = {
       typeIcon = "tonghuawangguo",
       detailIcon = "raidbgicon_mvp01",
       openTime = "2025-07-27 05:00:00"
+    },
+    [46] = {
+      modelTexture = "PveModel_hswf_001",
+      sortID = 2900,
+      typeIcon = "jifenmofadasai",
+      detailIcon = "raidbgicon_mvp01",
+      openTime = "2026-01-10 05:00:00"
     },
     [47] = {
       modelTexture = "PveModel_sc_gcfb_001",
@@ -3598,6 +3616,52 @@ GameConfig.QTE = {
 GameConfig.DisneyMusicConfig = {
   [1] = {qte = "990001"},
   [1] = {qte = "990002"}
+}
+GameConfig.QuickBuffPackage = {
+  PackageItemID = 8467,
+  List = {
+    12356,
+    12357,
+    12358,
+    12359,
+    12360,
+    12361,
+    12330,
+    12331,
+    12332,
+    12333,
+    12334,
+    12335,
+    5110,
+    5111,
+    5112,
+    5113,
+    12524,
+    12525,
+    12526,
+    12527,
+    12528,
+    12529,
+    12530,
+    12531,
+    12532,
+    12533,
+    12534,
+    12535,
+    12536,
+    12537,
+    12538,
+    12539,
+    12540,
+    12541,
+    12542,
+    12543,
+    12544,
+    12545,
+    12546,
+    12547
+  },
+  BaseLimit = 5
 }
 GameConfig.RollRaid = {
   roll_coin_itemid = 5690,
@@ -14265,7 +14329,8 @@ GameConfig.PostDelPriority = {
 GameConfig.MiscSetting = {
   tipsUnionEdge = 20,
   EnsembleDoubleReplace = {
-    [1005580] = 1005581
+    [1005580] = 1005581,
+    [118800] = 1005031
   }
 }
 GameConfig.Item2Npc = {
@@ -23089,6 +23154,50 @@ GameConfig.GuildDateBattle = {
     [1] = 10,
     [7] = 10
   }
+}
+GameConfig.GeffenMagic = {
+  TotalWave = 4,
+  DefaultDifficulty = 4,
+  Difficulties = {
+    [1] = {
+      Name = "初心",
+      Ratio = -0.75,
+      Strength = -0.75
+    },
+    [2] = {
+      Name = "简单",
+      Ratio = -0.5,
+      Strength = -0.5
+    },
+    [3] = {
+      Name = "普通",
+      Ratio = -0.2,
+      Strength = -0.3
+    },
+    [4] = {
+      Name = "挑战",
+      Ratio = 0,
+      Strength = -0.1
+    },
+    [5] = {
+      Name = "勇士",
+      Ratio = 0.2,
+      Strength = 0.05
+    }
+  },
+  RankReward = {
+    [5] = 124111,
+    [10] = 124112,
+    [20] = 124113,
+    [50] = 124114,
+    [100] = 124115
+  },
+  Affix = {
+    [13] = {toenemy = 0, ScoreRate = -0.2},
+    [14] = {toenemy = 1, ScoreRate = 0.2},
+    [15] = {toenemy = 0, ScoreRate = 0.2}
+  },
+  ScoreRateMin = 0.01
 }
 GameConfig.Gem = {
   Page = {
@@ -31960,6 +32069,9 @@ GameConfig.Pet = {
     12397,
     12369
   },
+  Contract = {
+    skill_req_level = {skill_3 = 4, skill_4 = 8}
+  },
   contract_reset_skill_confirm_msg = {
     [12394] = 43705,
     [12395] = 43706,
@@ -32667,6 +32779,7 @@ GameConfig.Profession = {
     37,
     41,
     66,
+    84,
     86
   },
   forbidChangeEquipRaidType = {},
@@ -42570,6 +42683,15 @@ GameConfig.SkillInherit = {
   },
   ResetCostItems = {12988, 1}
 }
+GameConfig.BuffSort = {
+  [30000701] = 1000,
+  [30000811] = 1000,
+  [30000941] = 1000,
+  [30001031] = 1000,
+  [30001181] = 1000,
+  [30001461] = 1000,
+  [951] = 1020
+}
 GameConfig.SkillView_SkillCell_GuideId = {
   [422] = 15001,
   [423] = 76001,
@@ -45776,6 +45898,11 @@ GameConfig.ItemFunction = {
     name = "出战",
     type = "PetFight",
     showtype = 1
+  },
+  [91] = {
+    name = "配置",
+    type = "ConfigBuffItem",
+    showtype = 3
   }
 }
 GameConfig.ExtractionItemFuncIds = {74, 75}
@@ -45927,7 +46054,8 @@ GameConfig.SpecialItemFunction = {
   [3042211] = {50},
   [3042346] = {50},
   [10000646] = {50},
-  [10000654] = {50}
+  [10000654] = {50},
+  [8467] = {1, 91}
 }
 GameConfig.ItemsNoUseWhenRoleStates = {
   [4] = {
@@ -48258,7 +48386,11 @@ GameConfig.TwinsAction = {
   }
 }
 GameConfig.OnlyOnceAction = {
-  action_id = {9}
+  action_id = {
+    9,
+    10001,
+    10002
+  }
 }
 GameConfig.UIAudio = {
   Package = "UI/UI_fun_bag",
@@ -55970,6 +56102,33 @@ GameConfig.TeamSeasonTime = {
         beginRank = 17,
         endRank = 32,
         Mail = 50039
+      }
+    },
+    [8] = {
+      {
+        beginRank = 1,
+        endRank = 1,
+        Mail = 50040
+      },
+      {
+        beginRank = 2,
+        endRank = 2,
+        Mail = 50041
+      },
+      {
+        beginRank = 3,
+        endRank = 8,
+        Mail = 50042
+      },
+      {
+        beginRank = 9,
+        endRank = 16,
+        Mail = 50043
+      },
+      {
+        beginRank = 17,
+        endRank = 32,
+        Mail = 50044
       }
     },
     [15] = {
@@ -64556,7 +64715,43 @@ GameConfig.AdventureNoPackage = {
     13174,
     13175,
     13176,
-    13201
+    13201,
+    13202,
+    13203,
+    13204,
+    13205,
+    13206,
+    13207,
+    13208,
+    13209,
+    13210,
+    13214,
+    13211,
+    13212,
+    13215,
+    13216,
+    13217,
+    13218,
+    13219,
+    13220,
+    13221,
+    13222,
+    13223,
+    13224,
+    13225,
+    13226,
+    13267,
+    13268,
+    13269,
+    13270,
+    13271,
+    13272,
+    13273,
+    13274,
+    13275,
+    13276,
+    13277,
+    13278
   }
 }
 GameConfig.AppBundleConfig = {

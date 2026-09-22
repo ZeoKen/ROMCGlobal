@@ -105,6 +105,23 @@ function PveEntranceData:GetMatchRaidId()
   return self.matchRaidId
 end
 
+function PveEntranceData:GetCatalogOrder()
+  if nil ~= self.catalogOrder then
+    return self.catalogOrder
+  end
+  local catalogs = self.staticData and self.staticData.Catalog
+  local order = 100
+  local catalogId = catalogs and catalogs[1]
+  if catalogId then
+    local catalogConfig = GameConfig.Pve.Catalog[catalogId]
+    if type(catalogConfig) == "table" then
+      order = catalogConfig.order or catalogConfig.Order or catalogConfig.sortorder or catalogConfig.sortOrder or 100
+    end
+  end
+  self.catalogOrder = order
+  return self.catalogOrder
+end
+
 function PveEntranceData:IsPveCard()
   return self.raidType == PveRaidType.PveCard
 end
@@ -157,10 +174,22 @@ function PveEntranceData:IsGeffenMagic()
   return self.raidType == PveRaidType.GeffenMagic
 end
 
-function PveEntranceData:IsNew()
-  if self:IsLotteryRaidActive() then
+function PveEntranceData:IsGeffenMagicActive()
+  if not self:IsGeffenMagic() then
+    return false
+  end
+  local passInfo = PveEntranceProxy.Instance and PveEntranceProxy.Instance:GetPassInfo(self.id)
+  return passInfo ~= nil and not passInfo:Forbidden()
+end
+
+function PveEntranceData:IsHot()
+  if self:IsLotteryRaidActive() or self:IsGeffenMagicActive() then
     return true
   end
+  return false
+end
+
+function PveEntranceData:IsNewRaid()
   local openTime = self.groupid and GameConfig.Pve.RaidType[self.groupid] and GameConfig.Pve.RaidType[self.groupid].openTime
   if not openTime then
     return false
@@ -174,6 +203,10 @@ function PveEntranceData:IsNew()
     end
   end
   return false
+end
+
+function PveEntranceData:IsNew()
+  return self:IsNewRaid() or self:IsHot()
 end
 
 function PveEntranceData:IsLotteryRaidActive()

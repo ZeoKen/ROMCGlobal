@@ -51,6 +51,7 @@ end
 
 function HappyShopBuyItemCell:AddEvts()
   HappyShopBuyItemCell.super.AddEvts(self)
+  self:AddEventListener(ItemTipEvent.ShowPetSkillTip, self.ShowPetSkillTip, self)
   if self.helpButton then
     self:AddClickEvent(self.helpButton, function()
       if not self.data then
@@ -76,6 +77,47 @@ function HappyShopBuyItemCell:AddEvts()
         end
       end
     end
+  end
+end
+
+function HappyShopBuyItemCell:RemovePetSkillTipTarget()
+  if self.petSkillTipTarget and self.closeWhenClickOtherPlace and not Slua.IsNull(self.petSkillTipTarget) then
+    self.closeWhenClickOtherPlace:RemoveTarget(self.petSkillTipTarget)
+  end
+  self.petSkillTipTarget = nil
+end
+
+function HappyShopBuyItemCell:ShowPetSkillTip(args)
+  if not args or not args.data then
+    return
+  end
+  local side = NGUIUtil.AnchorSide.Left
+  local offset = {-205, 0}
+  local camera = NGUITools.FindCameraForLayer(self.bg.gameObject.layer)
+  if camera and camera:WorldToViewportPoint(self.bg.transform.position).x < 0.5 then
+    side = NGUIUtil.AnchorSide.Right
+    offset = {205, 0}
+  end
+  self:RemovePetSkillTipTarget()
+  local tip = TipManager.Instance:ShowPetSkillTip(args.data, self.bg, side, offset)
+  if not tip then
+    return
+  end
+  tip:SetCheckClick(function()
+    local click = UICamera.selectedObject
+    return click and args.skillGrid and click.transform:IsChildOf(args.skillGrid) or false
+  end)
+  if self.closeWhenClickOtherPlace then
+    self.petSkillTipTarget = tip.gameObject.transform
+    self.closeWhenClickOtherPlace:AddTarget(self.petSkillTipTarget)
+  end
+  
+  function tip.closecomp.call()
+    if args.skillCell and args.skillCell.gameObject and not Slua.IsNull(args.skillCell.gameObject) then
+      args.skillCell:SetSelect(false)
+    end
+    self:RemovePetSkillTipTarget()
+    tip:CloseSelf()
   end
 end
 

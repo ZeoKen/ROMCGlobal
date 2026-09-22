@@ -6,6 +6,7 @@ local SkatingDefaultFriction = 1
 local SkatingDefaultBrakeFrictionFactor = 3
 local SkatingArriveThreshold = 0.3
 local SkatingRemoteStartArriveDistSq = 1
+local IceSlideStopNotifyThrottle = 0.2
 local SkatingBrakeMinSpeed = 1.0
 local SkatingBrakeCosThreshold = -0.77
 local SkatingBrakeFriction = 5
@@ -51,15 +52,19 @@ function Creature_SkatingMove:ctor(owner)
   self.maxSpeedFactor = 1
   self.velocity = LuaVector3.Zero()
   self.controlledGlide = false
+  self.pendingStopNotify = nil
+  self.lastStopNotifySendTime = nil
   self:Reset()
   SkatingBrakeFriction = GameConfig and GameConfig.IceSlide and GameConfig.IceSlide.BrakeFriction or 5
 end
 
 function Creature_SkatingMove:Reset()
   if self.iceSlideStopSynced == false then
-    self:_NotifyIceSlideStop(true)
+    self:_SendIceSlideStop(true)
   end
   self.iceSlideStopSynced = true
+  self.pendingStopNotify = nil
+  self.lastStopNotifySendTime = nil
   self.active = false
   self.gliding = false
   self.speed = 0
@@ -189,6 +194,21 @@ function Creature_SkatingMove:_NotifyIceSlideStop(stop)
     return
   end
   stop = stop == true
+  if self.iceSlideStopSynced == stop and self.pendingStopNotify == nil then
+    return
+  end
+  if self.pendingStopNotify == stop then
+    return
+  end
+  local now = UnityTime
+  if self.pendingStopNotify == nil and (self.lastStopNotifySendTime == nil or now - self.lastStopNotifySendTime >= IceSlideStopNotifyThrottle) then
+    self:_SendIceSlideStop(stop)
+  else
+    self.pendingStopNotify = stop
+  end
+end
+
+function Creature_SkatingMove:_SendIceSlideStop(stop)
   if self.iceSlideStopSynced == stop then
     return
   end
@@ -197,7 +217,20 @@ function Creature_SkatingMove:_NotifyIceSlideStop(stop)
     return
   end
   self.iceSlideStopSynced = stop
+  self.lastStopNotifySendTime = UnityTime
   ServiceSceneUser3Proxy.Instance:CallUserIceSlideStopUserCmd(pos, dir, speed, stop)
+end
+
+function Creature_SkatingMove:_UpdateStopNotifyThrottle()
+  if self.pendingStopNotify == nil then
+    return
+  end
+  if self.lastStopNotifySendTime ~= nil and UnityTime - self.lastStopNotifySendTime < IceSlideStopNotifyThrottle then
+    return
+  end
+  local stop = self.pendingStopNotify
+  self.pendingStopNotify = nil
+  self:_SendIceSlideStop(stop)
 end
 
 function Creature_SkatingMove:_GetIceSlideSyncSnapshot(stop)
@@ -606,6 +639,9 @@ function Creature_SkatingMove:_HandleControlledInterrupt(owner)
     self:InterruptGlide()
     return true
   end
+  if owner.data:IsAttrCanMove() and not owner.data:DeepFreeze() then
+    return false
+  end
   if not owner.data:NoMove() and not owner.data:Freeze() and not owner.data:NoAct() then
     return false
   end
@@ -694,6 +730,7 @@ function Creature_SkatingMove:Update(time, deltaTime)
   if self.pendingStart ~= nil then
     self:_TryStartPending()
   end
+  self:_UpdateStopNotifyThrottle()
   if not self.active then
     return
   end

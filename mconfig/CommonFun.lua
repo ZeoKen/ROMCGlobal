@@ -5416,6 +5416,9 @@ function CommonFun.calcMagicElement(srcUser, targetUser, params, damageParam, at
   if srcUser:HasBuffID(49210) then
     ElementRate = ElementRate + 0.15
   end
+  if srcUser:HasBuffID(59630) and (srcAtkElement == 3 or srcAtkElement == 4) then
+    ElementRate = ElementRate + 0.1
+  end
   if srcUser:HasBuffID(59960) and srcAtkElement == 4 then
     ElementRate = ElementRate + 0.05
   end
@@ -5474,6 +5477,9 @@ function CommonFun.calcElementRate(srcUser, targetUser, params, damageParam, log
   end
   if srcUser:HasBuffID(49210) then
     ElementRate = ElementRate + 0.15
+  end
+  if srcUser:HasBuffID(59630) and (srcAtkElement == 3 or srcAtkElement == 4) then
+    ElementRate = ElementRate + 0.1
   end
   if srcUser:HasBuffID(59960) and srcAtkElement == 4 then
     ElementRate = ElementRate + 0.05
@@ -6339,6 +6345,9 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
       if targetUser:HasBuffID(29250) or targetUser:HasBuffID(29251) then
         Rate = Rate + (MemoryBufflvlayer + MemoryBufflvlayer50) * 1
       end
+      if targetUser:HasBuffID(90102273) then
+        Rate = Rate - 3
+      end
       if targetUser:HasBuffID(118250) or targetUser:HasBuffID(128100) or targetUser:HasBuffID(128101) or targetUser:HasBuffID(135200) or targetUser:HasBuffID(100038250) or targetUser:HasBuffID(135353) or targetUser:HasBuffID(136011) or targetUser:HasBuffID(1001001) or targetUser:HasBuffID(232030) or targetUser:HasBuffID(234030) then
         local MagicFlee = targetUser:GetProperty("MagicFleeRate")
         Rate = Rate + MagicFlee
@@ -6499,13 +6508,13 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
       return 0, CommonFun.DamageType.Miss
     end
     local buff2MissAtkAttr = {
-      [90005525] = {
+      [90101881] = {
         6,
         7,
         8,
         10
       },
-      [90005545] = {
+      [90101941] = {
         1,
         2,
         3,
@@ -7063,13 +7072,24 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
     Baxie = false
   end
   if bits2[CommonFun.AttrEffect.BaXieZhiZhen] == 1 and CommonFun.RollType.Attack == skillParams.RollType and 0 < damage and skillID ~= 411 and skillID ~= 306 and skillID ~= 3303 and skillID ~= 819 and skillID ~= 6024 and Baxie == true then
-    if targetUser.AddBuffDamage ~= nil then
-      targetUser:AddBuffDamage(damage)
+    local hasSongBaxie = targetUser:HasBuffID(100040280) or targetUser:HasBuffID(100040281) or targetUser:HasBuffID(100040282) or targetUser:HasBuffID(100040283) or targetUser:HasBuffID(100040284) or targetUser:HasBuffID(100040285) or targetUser:HasBuffID(100040286) or targetUser:HasBuffID(100040287) or targetUser:HasBuffID(100040288) or targetUser:HasBuffID(100040289)
+    local hasOtherBaxie = targetUser:HasBuffID(10880) or targetUser:HasBuffID(55692) or targetUser:HasBuffID(95060) or targetUser:HasBuffID(95061) or targetUser:HasBuffID(95062) or targetUser:HasBuffID(95063) or targetUser:HasBuffID(95064) or targetUser:HasBuffID(95065) or targetUser:HasBuffID(95066) or targetUser:HasBuffID(95067) or targetUser:HasBuffID(95068) or targetUser:HasBuffID(95069) or targetUser:HasBuffID(103070) or targetUser:HasBuffID(103071) or targetUser:HasBuffID(103072) or targetUser:HasBuffID(106153) or targetUser:HasBuffID(118651) or targetUser:HasBuffID(121044) or targetUser:HasBuffID(135131) or targetUser:HasBuffID(156360) or targetUser:HasBuffID(156851) or targetUser:HasBuffID(159432) or targetUser:HasBuffID(177783) or targetUser:HasBuffID(1003590) or targetUser:HasBuffID(80001021)
+    if hasSongBaxie and hasOtherBaxie == false and CommonFun.IsInRate(35, targetUser:GetRandom()) == false then
+      if targetUser.SetBaxieBlock ~= nil then
+        targetUser:SetBaxieBlock(false)
+      end
+    else
+      if targetUser.SetBaxieBlock ~= nil then
+        targetUser:SetBaxieBlock(true)
+      end
+      if targetUser.AddBuffDamage ~= nil then
+        targetUser:AddBuffDamage(damage)
+      end
+      if srcUser.isServerCall then
+        srcUser:SetMissStillBuff()
+      end
+      return 0, CommonFun.DamageType.Miss
     end
-    if srcUser.isServerCall then
-      srcUser:SetMissStillBuff()
-    end
-    return 0, CommonFun.DamageType.Miss
   end
   if 0 < damage and (targetUser:GetNpcID() == 56941 or targetUser:GetNpcID() == 56942) and srcUser:GetNpcID() ~= 56941 and srcUser:GetNpcID() ~= 56942 then
     return 1, CommonFun.DamageType.Normal
@@ -7086,10 +7106,10 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
   if 0 < damage and srcUser:GetNpcID() == 300101 and targetUser:HasBuffID(180517) then
     damage = damage * 0.7
   end
-  if (targetUser:HasBuffID(121030) == true or targetUser:HasBuffID(55693) == true or targetUser:HasBuffID(90003955) == true or targetUser:HasBuffID(90005555) == true) and CommonFun.RollType.Magic == skillParams.RollType and 0 < damage and isCanBlock == true then
+  if (targetUser:HasBuffID(121030) == true or targetUser:HasBuffID(55693) == true or targetUser:HasBuffID(90003955) == true or targetUser:HasBuffID(90101971) == true) and CommonFun.RollType.Magic == skillParams.RollType and 0 < damage and isCanBlock == true then
     return 0, CommonFun.DamageType.DefMagic
   end
-  if (targetUser:HasBuffID(90003975) == true or targetUser:HasBuffID(90005405) == true) and CommonFun.RollType.Attack == skillParams.RollType and 0 < damage and isCanBlock == true then
+  if (targetUser:HasBuffID(90003975) == true or targetUser:HasBuffID(90101521) == true) and CommonFun.RollType.Attack == skillParams.RollType and 0 < damage and isCanBlock == true then
     return 0, CommonFun.DamageType.DefPhysics
   end
   if srcUser:IsAttackSkill(params.skillIDAndLevel) == false and targetUser:HasBuffID(107330) and isCanBlock == true and 0 < damage then
@@ -7144,7 +7164,7 @@ function CommonFun.CalcBaseDamage(srcUser, targetUser, params, logger)
   if CommonFun.RollType.Attack == skillParams.RollType and targetUser:HasBuffID(10110) and 0 < damage then
     damage = damage * 0.01
   end
-  if targetUser:HasBuffID(90003554) and 0 < damage then
+  if targetUser:HasBuffID(90103200) and 0 < damage then
     local MaxHp = targetUser:GetProperty("MaxHp")
     local Hp = targetUser:GetProperty("Hp")
     if Hp / MaxHp >= 0.9 then
@@ -8237,8 +8257,8 @@ end
 
 function CommonFun.DoCalcElementDam(srcUser, targetUser, params, damageParam)
   local srcAtkElement = CommonFun.GetUserAtkAttr(srcUser, params, damageParam)
-  if srcUser.SetTempAtkAttr ~= nil then
-    srcUser:SetTempAtkAttr(srcAtkElement)
+  if srcUser.SetSkillAtkAttr ~= nil then
+    srcUser:SetSkillAtkAttr(srcAtkElement)
   end
   if targetUser.SetTempBeAtkAttr ~= nil then
     targetUser:SetTempBeAtkAttr(srcAtkElement)
@@ -8819,6 +8839,15 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
   if srcUser:HasBuffID(702610) and 1 <= NumDebuff then
     Personalartifact = Personalartifact + 0.05
   end
+  local Sealingwax = 0
+  local srcUserNumDebuff = srcUser:GetStatusNum()
+  if srcUser:HasBuffID(29580) and 1 <= srcUserNumDebuff then
+    Sealingwax = Sealingwax + math.min(0.01 * srcUserNumDebuff, 0.02)
+  elseif srcUser:HasBuffID(29581) and 1 <= srcUserNumDebuff then
+    Sealingwax = Sealingwax + math.min(0.02 * srcUserNumDebuff, 0.04)
+  elseif srcUser:HasBuffID(29582) and 1 <= srcUserNumDebuff then
+    Sealingwax = Sealingwax + math.min(0.05 * srcUserNumDebuff, 0.1)
+  end
   local count = params.hitedCount
   local DemonLeader = 0
   if srcUser:HasBuffID(57201) and srcUser:HasBuffID(81002810) then
@@ -8904,24 +8933,7 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
   local CriFinalDamPer = 0
   local Cri = srcUser:GetProperty("Cri")
   local CriRes2 = targetUser:GetProperty("CriRes")
-  local RateFinal = Cri - CriRes2
-  local CriDamPer = srcUser:GetProperty("CriDamPer")
-  local CriDefPer2 = targetUser:GetProperty("CriDefPer")
-  local CriDamPerFinal = math.max(CriDamPer - CriDefPer2, 0)
-  if srcUser:HasBuffID(59950) then
-    CriFinalDamPer = CriFinalDamPer + math.min(CriDamPerFinal * 0.1, 0.1)
-  end
-  if srcUser:HasBuffID(609410) then
-    CriFinalDamPer = CriFinalDamPer + math.min(CriDamPerFinal * 0.1, 0.11)
-  elseif srcUser:HasBuffID(609420) then
-    CriFinalDamPer = CriFinalDamPer + math.min(CriDamPerFinal * 0.1, 0.12)
-  elseif srcUser:HasBuffID(609430) then
-    CriFinalDamPer = CriFinalDamPer + math.min(CriDamPerFinal * 0.1, 0.13)
-  elseif srcUser:HasBuffID(609440) then
-    CriFinalDamPer = CriFinalDamPer + math.min(CriDamPerFinal * 0.1, 0.14)
-  elseif srcUser:HasBuffID(609450) then
-    CriFinalDamPer = CriFinalDamPer + math.min(CriDamPerFinal * 0.1, 0.15)
-  end
+  local RateFinal = math.max(Cri - CriRes2, 0)
   if srcUser:HasBuffID(29420) then
     CriFinalDamPer = CriFinalDamPer + math.min(RateFinal * 0.03 / 100, 0.04)
   elseif srcUser:HasBuffID(29421) then
@@ -8938,6 +8950,31 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
   end
   if srcUser:HasBuffID(79520) then
     CriFinalDamPer = CriFinalDamPer + math.min(RateFinal * 0.1 / 100, 0.1)
+  end
+  local CriDamPer = srcUser:GetProperty("CriDamPer")
+  local CriDefPer2 = targetUser:GetProperty("CriDefPer")
+  local CriDamPerFinal = math.max(CriDamPer - CriDefPer2, 0)
+  local MeteoriteTear = 0
+  if srcUser:HasBuffID(59950) then
+    CriFinalDamPer = CriFinalDamPer + math.min(CriDamPerFinal * 0.1, 0.1)
+  end
+  if srcUser:HasBuffID(609410) then
+    CriFinalDamPer = CriFinalDamPer + math.min(CriDamPerFinal * 0.1, 0.11)
+  elseif srcUser:HasBuffID(609420) then
+    CriFinalDamPer = CriFinalDamPer + math.min(CriDamPerFinal * 0.1, 0.12)
+  elseif srcUser:HasBuffID(609430) then
+    CriFinalDamPer = CriFinalDamPer + math.min(CriDamPerFinal * 0.1, 0.13)
+  elseif srcUser:HasBuffID(609440) then
+    CriFinalDamPer = CriFinalDamPer + math.min(CriDamPerFinal * 0.1, 0.14)
+  elseif srcUser:HasBuffID(609450) then
+    CriFinalDamPer = CriFinalDamPer + math.min(CriDamPerFinal * 0.1, 0.15)
+  end
+  if srcUser:GetBuffActive(90102570) then
+    MeteoriteTear = CriDamPerFinal / 100
+  end
+  local CracklingLight = 0
+  if srcUser:GetBuffActive(90102690) then
+    CracklingLight = RateFinal / 30 / 100
   end
   local Devilballs = 0
   local Dtarget_Hp = targetUser:GetProperty("Hp")
@@ -8988,6 +9025,12 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
   local Wtarget_hpper = WsrcUser_Hp / Wtarget_Hp
   if srcUser:HasBuffID(36150) and 1 < Wtarget_hpper then
     Whale = 0.05
+  end
+  if srcUser:GetBuffActive(90102720) and Wtarget_hpper < 1 then
+    Whale = Whale + 0.025
+  end
+  if srcUser:GetBuffActive(90102720) and 1 < Wtarget_hpper then
+    Whale = Whale + 0.05
   end
   local Ignore = 0
   local IgnoreMDefHS = srcUser:GetProperty("IgnoreMDef")
@@ -9198,6 +9241,9 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
   if MoveSpdS > MoveSpdT and srcUser:HasBuffID(81004980) then
     MoveSpdDamage = MoveSpdDamage + 0.01
   end
+  if MoveSpdS > MoveSpdT and srcUser:HasBuffID(90102390) then
+    MoveSpdDamage = MoveSpdDamage + 0.02
+  end
   local StateEffect = targetUser:GetProperty("StateEffect")
   local bits = CommonFun.getBits(StateEffect)
   local CardNum = srcUser:GetEquipCardNum(7, 23035)
@@ -9379,7 +9425,7 @@ function CommonFun.calcFinalDam(srcUser, targetUser, params, logger)
     zhuangtai = skilllv * 0.005 + 0.05
   end
   local Final = 1 + Damage_Per + shenqi + Godness + Hide + Overlord + dragon + CardDie + tiger + kaimeila + atls + Ball + Whale + queen + kb + gz + sword + Dagger + testbuff + GreatNum + GreatbuffD + tail + Mineral + staff + Devilballs + Personalartifact + robot + Ignore + IgnoreD
-  Final = Final + SunHate + Mvp_blood + zhuangtai + Danatos + Image + GunBlood + Transmission + Handtohand + InkSnake + Thunder + DemonLeader + Burndamage + CriFinalDamPer + TeamDam + ExtraDamage + Frozendamage + Sleepdamage + MoveSpdDamage
+  Final = Final + SunHate + Mvp_blood + zhuangtai + Danatos + Image + GunBlood + Transmission + Handtohand + InkSnake + Thunder + DemonLeader + Burndamage + CriFinalDamPer + MeteoriteTear + CracklingLight + TeamDam + ExtraDamage + Frozendamage + Sleepdamage + MoveSpdDamage + Sealingwax
   local huangjing = 0
   if srcUser:HasBuffID(180005) and targetUser.isRareElite then
     local jingying = srcUser:GetBuffLayer(180005)
@@ -9855,7 +9901,17 @@ function CommonFun.CalcShareDamage(srcUser, tUser, damage, damagetype)
     100040116,
     100040117,
     100040118,
-    100040119
+    100040119,
+    100040270,
+    100040271,
+    100040272,
+    100040273,
+    100040274,
+    100040275,
+    100040276,
+    100040277,
+    100040278,
+    100040279
   }
   if buffs == nil or #buffs == 0 then
     return damage, nil
@@ -15696,12 +15752,12 @@ function CommonFun.calcDamage_2303(srcUser, targetUser, params, damageParam, log
     if targetUser:GetNpcID() ~= 0 then
       A = A * 1.5
     end
-    if CommonFun.IsInRate(RuneRate, srcUser:GetRandom()) then
-      return A * RuneDamage3, CommonFun.DamageType.Crit
-    end
   end
   if A <= 1 then
     return 1
+  end
+  if skillID == 5000 and CommonFun.IsInRate(RuneRate, srcUser:GetRandom()) then
+    return A * RuneDamage3, CommonFun.DamageType.Crit
   end
   return A
 end
@@ -19204,14 +19260,22 @@ function CommonFun.calcDamage_5402(srcUser, targetUser, params, damageParam, log
   local shenghuo = 1
   local huoyan = targetUser:GetBuffLayer(1009221)
   local skilllv_shenghuo = srcUser:GetLernedSkillLevel(5923)
-  if skillID == 5924 and 1 <= huoyan and targetUser:HasBuffID(1009201) then
-    shenghuo = 1 + skilllv_shenghuo * 0.01 * huoyan
+  if skillID == 5924 and 1 <= huoyan and (targetUser:HasBuffID(1009201) or targetUser:HasBuffID(1009230)) then
+    shenghuo = 1 + skilllv_shenghuo * 0.02 * huoyan
   end
   local RangeDam = 0
   if skillID == 5924 or skillID == 1227 and srcUser:GetLernedSkillLevel(1227) >= 11 then
     RangeDam = srcUser:GetProperty("RangeDam")
   end
   local A = ((MAtkFinal * MDefReduc * (1 - MDamReduc2) + MRefine) * (damChangePer + Trial1) * (1 - RefineMDamReduc) * (1 + MDamIncrease) * ElementRate * elementparam2 - Vit2 / 2 * (1 + VitPer2) - Int2 * (1 + IntPer2)) * Trial2 * RuneDamage * GemDam * shenghuo * (1 + RangeDam)
+  if skillID == 5920 then
+    local Hp = targetUser:GetProperty("Hp")
+    local MaxHp = targetUser:GetProperty("MaxHp")
+    local skilllv_huixiang = srcUser:GetLernedSkillLevel(5921)
+    local huixiang = skilllv_huixiang * 0.4
+    local zengshang = math.min(huixiang * (1 - (Hp / MaxHp - 0.3) / 0.7), huixiang)
+    A = A * (1 + zengshang)
+  end
   if A <= 1 then
     return 1
   end
@@ -30937,6 +31001,9 @@ function CommonFun.calcBuff_20(srcUser, targetUser, a, b, c, d, lv)
   if srcUser:HasBuffID(49210) then
     ElementRate = ElementRate + 0.15
   end
+  if srcUser:HasBuffID(59630) and (srcAtkElement == 3 or srcAtkElement == 4) then
+    ElementRate = ElementRate + 0.1
+  end
   if srcUser:HasBuffID(59960) and srcAtkElement == 4 then
     ElementRate = ElementRate + 0.05
   end
@@ -33412,6 +33479,9 @@ function CommonFun.calcBuff_661(srcUser, targetUser, a, b, c, d, lv, damage)
   end
   if srcUser:HasBuffID(49210) then
     ElementRate = ElementRate + 0.15
+  end
+  if srcUser:HasBuffID(59630) and (srcAtkElement == 3 or srcAtkElement == 4) then
+    ElementRate = ElementRate + 0.1
   end
   if srcUser:HasBuffID(59960) and srcAtkElement == 4 then
     ElementRate = ElementRate + 0.05
@@ -37805,6 +37875,9 @@ function CommonFun.calcBuff_3540(srcUser, targetUser, a, b, c, d, lv)
   if srcUser:HasBuffID(49210) then
     ElementRate = ElementRate + 0.15
   end
+  if srcUser:HasBuffID(59630) and (srcAtkElement == 3 or srcAtkElement == 4) then
+    ElementRate = ElementRate + 0.1
+  end
   if srcUser:HasBuffID(59960) and srcAtkElement == 4 then
     ElementRate = ElementRate + 0.05
   end
@@ -37975,6 +38048,9 @@ function CommonFun.calcBuff_3541(srcUser, targetUser, a, b, c, d, lv)
   end
   if srcUser:HasBuffID(49210) then
     ElementRate = ElementRate + 0.15
+  end
+  if srcUser:HasBuffID(59630) and (srcAtkElement == 3 or srcAtkElement == 4) then
+    ElementRate = ElementRate + 0.1
   end
   if srcUser:HasBuffID(59960) and srcAtkElement == 4 then
     ElementRate = ElementRate + 0.05
@@ -41332,6 +41408,18 @@ function CommonFun.calcBuff_5046(srcUser, targetUser, a, b, c, d, lv)
   return A
 end
 
+function CommonFun.calcBuff_5047(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local Hasbuff = 0
+  if srcUser:HasBuffID(c) and targetUser:GetNpcID() == 0 then
+    Hasbuff = 1
+  end
+  local A = a + b * Hasbuff
+  return A
+end
+
 function CommonFun.calcBuff_5050(srcUser, targetUser, a, b, c, d, lv)
   if srcUser == nil or targetUser == nil then
     return 0
@@ -44113,6 +44201,9 @@ function CommonFun.calcBuff_5990(srcUser, targetUser, a, b, c, d, lv)
   if srcUser:HasBuffID(49210) then
     ElementRate = ElementRate + 0.15
   end
+  if srcUser:HasBuffID(59630) and (srcAtkElement == 3 or srcAtkElement == 4) then
+    ElementRate = ElementRate + 0.1
+  end
   if srcUser:HasBuffID(59960) and srcAtkElement == 4 then
     ElementRate = ElementRate + 0.05
   end
@@ -44855,6 +44946,9 @@ function CommonFun.calcBuff_6350(srcUser, targetUser, a, b, c, d, lv, damage)
   end
   if srcUser:HasBuffID(49210) then
     ElementRate = ElementRate + 0.15
+  end
+  if srcUser:HasBuffID(59630) and (srcAtkElement == 3 or srcAtkElement == 4) then
+    ElementRate = ElementRate + 0.1
   end
   if srcUser:HasBuffID(59960) and srcAtkElement == 4 then
     ElementRate = ElementRate + 0.05
@@ -46819,6 +46913,38 @@ function CommonFun.calcBuff_7140(srcUser, targetUser, a, b, c, d, lv)
     A = A + b
   end
   if 119 <= Luk then
+    A = A + b
+  end
+  return A
+end
+
+function CommonFun.calcBuff_7141(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local Str = srcUser:GetProperty("Str")
+  local Int = srcUser:GetProperty("Int")
+  local Dex = srcUser:GetProperty("Dex")
+  local Agi = srcUser:GetProperty("Agi")
+  local Vit = srcUser:GetProperty("Vit")
+  local Luk = srcUser:GetProperty("Luk")
+  local A = a
+  if 159 <= Str then
+    A = A + b
+  end
+  if 159 <= Int then
+    A = A + b
+  end
+  if 159 <= Dex then
+    A = A + b
+  end
+  if 159 <= Agi then
+    A = A + b
+  end
+  if 159 <= Vit then
+    A = A + b
+  end
+  if 159 <= Luk then
     A = A + b
   end
   return A
@@ -49856,6 +49982,24 @@ function CommonFun.calcBuff_7950(srcUser, targetUser, a, b, c, d, lv)
   return A
 end
 
+function CommonFun.calcBuff_7951(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local Attr = srcUser:GetProperty(CommonFun.GetAttrName(c))
+  local A = math.floor(Attr / a * 1000) * b * lv / 1000 + d
+  return A
+end
+
+function CommonFun.calcBuff_7952(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local Attr = srcUser:GetProperty(CommonFun.GetAttrName(c))
+  local A = math.floor(Attr / a) * (b * lv + d)
+  return A
+end
+
 function CommonFun.calcBuff_7960(srcUser, targetUser, a, b, c, d, lv)
   if srcUser == nil or targetUser == nil then
     return 0
@@ -50164,7 +50308,7 @@ function CommonFun.calcBuff_8110(srcUser, targetUser, a, b, c, d, lv)
     return 0
   end
   local A = 0
-  if srcUser:HasBuffID(90003444) then
+  if srcUser:HasBuffID(90102870) then
     A = 100
   end
   return A
@@ -51063,6 +51207,26 @@ function CommonFun.calcBuff_8540(srcUser, targetUser, a, b, c, d, lv, damage)
   return A
 end
 
+function CommonFun.calcBuff_8713(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local FireAtk = srcUser:GetProperty("FireAtk")
+  local WaterAtk = srcUser:GetProperty("WaterAtk")
+  local A = math.min(WaterAtk * 0.3, 0.15)
+  return A
+end
+
+function CommonFun.calcBuff_8714(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local FireAtk = srcUser:GetProperty("FireAtk")
+  local WaterAtk = srcUser:GetProperty("WaterAtk")
+  local A = math.min(FireAtk * 0.3, 0.15)
+  return A
+end
+
 function CommonFun.calcBuff_9160(srcUser, targetUser, a, b, c, d, lv, damage, param)
   if srcUser == nil or targetUser == nil then
     return 0
@@ -51182,6 +51346,9 @@ function CommonFun.calcBuff_9250(srcUser, targetUser, a, b, c, d, lv)
   end
   if srcUser:HasBuffID(49210) then
     ElementRate = ElementRate + 0.15
+  end
+  if srcUser:HasBuffID(59630) and (srcAtkElement == 3 or srcAtkElement == 4) then
+    ElementRate = ElementRate + 0.1
   end
   if srcUser:HasBuffID(59960) and srcAtkElement == 4 then
     ElementRate = ElementRate + 0.05
@@ -51508,6 +51675,208 @@ function CommonFun.calcBuff_9610(srcUser, targetUser, a, b, c, d, lv, damage)
   return A
 end
 
+function CommonFun.calcBuff_9720(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 0
+  local Vit = srcUser:GetProperty("Vit")
+  A = math.floor(Vit * 0.05)
+  return A
+end
+
+function CommonFun.calcBuff_9721(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 0
+  local Vit = targetUser:GetProperty("Vit")
+  A = math.floor(Vit * 0.05)
+  return -A
+end
+
+function CommonFun.calcBuff_9722(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 0
+  local Int = srcUser:GetProperty("Int")
+  A = math.floor(Int * 0.05)
+  return A
+end
+
+function CommonFun.calcBuff_9723(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 0
+  local Int = targetUser:GetProperty("Int")
+  A = math.floor(Int * 0.05)
+  return -A
+end
+
+function CommonFun.calcBuff_9724(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 0
+  local Dex = srcUser:GetProperty("Dex")
+  A = math.floor(Dex * 0.05)
+  return A
+end
+
+function CommonFun.calcBuff_9725(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 0
+  local Dex = targetUser:GetProperty("Dex")
+  A = math.floor(Dex * 0.05)
+  return -A
+end
+
+function CommonFun.calcBuff_9726(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 0
+  local Str = srcUser:GetProperty("Str")
+  A = math.floor(Str * 0.05)
+  return A
+end
+
+function CommonFun.calcBuff_9727(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 0
+  local Str = targetUser:GetProperty("Str")
+  A = math.floor(Str * 0.05)
+  return -A
+end
+
+function CommonFun.calcBuff_9728(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 0
+  local Luk = srcUser:GetProperty("Luk")
+  A = math.floor(Luk * 0.05)
+  return A
+end
+
+function CommonFun.calcBuff_9729(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil or targetUser == nil then
+    return 0
+  end
+  local A = 0
+  local Luk = targetUser:GetProperty("Luk")
+  A = math.floor(Luk * 0.05)
+  return -A
+end
+
+function CommonFun.calcBuff_9730(srcUser, targetUser, a, b, c, d, lv)
+  local Str = srcUser:GetProperty("Str")
+  local Dex = srcUser:GetProperty("Dex")
+  local Luk = srcUser:GetProperty("Luk")
+  local Atk = srcUser:GetProperty("Atk")
+  local AtkPer = srcUser:GetProperty("AtkPer")
+  local DamIncrease = srcUser:GetProperty("DamIncrease")
+  local IgnoreDef = 0
+  local IgnoreDef1 = srcUser:GetProperty("IgnoreDef")
+  local IgnoreDef2 = srcUser:GetProperty("IgnoreEquipDef")
+  if targetUser.boss or targetUser.mini then
+    IgnoreDef = IgnoreDef1
+  else
+    IgnoreDef = IgnoreDef1 + IgnoreDef2
+  end
+  if 1 <= IgnoreDef then
+    IgnoreDef = 1
+  end
+  local Refine = srcUser:GetProperty("Refine")
+  local Def2 = targetUser:GetProperty("Def")
+  local DefPer2 = targetUser:GetProperty("DefPer")
+  local Vit2 = targetUser:GetProperty("Vit")
+  local VitPer2 = targetUser:GetProperty("VitPer")
+  local DamReduc2 = CommonFun.calcDamReDuc(srcUser, targetUser)
+  local RefineDamReduc = CommonFun.calcRefineDamReduc(srcUser, targetUser)
+  local Hp2 = targetUser:GetProperty("Hp")
+  local MaxHp2 = srcUser:GetProperty("MaxHp")
+  local raceparam = 1
+  local srcRace = srcUser.race
+  local targetRace = targetUser.race
+  if targetUser:HasBuffID(139410) then
+    targetRace = 3
+  end
+  if srcUser:HasBuffID(139411) then
+    srcRace = 3
+  end
+  if srcUser:HasBuffID(49320) and srcUser:HasBuffID(49325) then
+  elseif srcUser:HasBuffID(49320) then
+    targetRace = 2
+  end
+  if targetUser:HasBuffID(49320) and targetUser:HasBuffID(49325) then
+  elseif targetUser:HasBuffID(49320) then
+    srcRace = 2
+  end
+  if nil == CommonFun.RaceProps[targetRace] then
+    return 0
+  end
+  if nil == CommonFun.RaceProps[srcRace] then
+    return 0
+  end
+  local raceInc = srcUser:GetProperty(CommonFun.RaceProps[targetRace][1])
+  local raceRed = targetUser:GetProperty(CommonFun.RaceProps[srcRace][2])
+  local raceRedThrough = srcUser:GetProperty(CommonFun.RaceProps[srcRace][3])
+  local raceIncResistance = targetUser:GetProperty(CommonFun.RaceProps[targetRace][4])
+  if nil == raceRedThrough then
+    raceRedThrough = 0
+  end
+  if nil == raceIncResistance then
+    raceIncResistance = 0
+  end
+  if 0 <= raceInc then
+    raceInc = raceInc * math.max(1 - raceIncResistance, 0)
+  end
+  if 0 <= raceRed then
+    raceRed = raceRed * math.max(1 - raceRedThrough, 0)
+  end
+  local raceparam = 1 + raceInc - raceRed
+  if raceparam <= 0.1 then
+    raceparam = 0.1
+  end
+  local srcAtkElement = c
+  local targetDefElement = targetUser:GetProperty("DefAttr")
+  local ElementRate = CommonFun.GetElementRate(srcUser, srcAtkElement, targetUser, targetDefElement)
+  if nil == CommonFun.NatureProps[srcAtkElement] or nil == CommonFun.NatureProps[targetDefElement] or nil == targetDefElement then
+    return 0
+  end
+  local elementInc = srcUser:GetProperty(CommonFun.NatureProps[targetDefElement][1])
+  local elementRed = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][2])
+  local elementAtk = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][3])
+  local elementThrough = srcUser:GetProperty(CommonFun.NatureProps[srcAtkElement][4])
+  local elementResistance = targetUser:GetProperty(CommonFun.NatureProps[srcAtkElement][5])
+  if 0 <= elementRed then
+    elementRed = elementRed * math.max(1 - elementThrough, 0)
+  end
+  if 0 <= elementAtk then
+    elementAtk = elementAtk * math.max(1 - elementResistance, 0)
+  end
+  local elementparam = (1 + elementInc) * ElementRate
+  local elementparam2 = 1 + elementAtk - elementRed
+  if elementparam2 <= 0.1 then
+    elementparam2 = 0.1
+  end
+  local ele = elementparam * elementparam2
+  if targetDefElement == nil or ElementRate == nil or elementInc == nil or elementRed == nil or elementAtk == nil then
+    ele = 1
+  end
+  local AtkFinal = b * Atk * (1 + AtkPer) * CommonFun.ShapeCorrection(srcUser, targetUser) * ele * raceparam
+  local DefReduc = CommonFun.CalcDef(srcUser, targetUser)
+  local A = (AtkFinal * DefReduc * (1 - DamReduc2) + Refine) * (1 - RefineDamReduc) * (1 + DamIncrease) - Vit2 * (1 + VitPer2) + a * MaxHp2
+  return -A
+end
+
 function CommonFun.calcBuff_9750(srcUser, targetUser, a, b, c, d, lv, damage)
   if srcUser == nil or targetUser == nil then
     return 0
@@ -51616,7 +51985,7 @@ function CommonFun.calcBuff_9813(srcUser, targetUser, a, b, c, d, lv)
     return 0
   end
   local Profession = targetUser:GetProfressionID()
-  if Profession == 42 or Profession == 43 or Profession == 44 or Profession == 45 or Profession == 102 or Profession == 103 or Profession == 104 or Profession == 105 or Profession == 112 or Profession == 113 or Profession == 114 or Profession == 115 then
+  if Profession == 102 or Profession == 103 or Profession == 104 or Profession == 105 or Profession == 112 or Profession == 113 or Profession == 114 or Profession == 115 then
     return 0
   end
   local stonelv = srcUser:GetEquipSnowStoneLv(a)
@@ -51626,6 +51995,16 @@ function CommonFun.calcBuff_9813(srcUser, targetUser, a, b, c, d, lv)
   local SkillDam = srcUser:GetProperty("SkillDam")
   local rate = stonelv * b + c
   return SkillDam * rate
+end
+
+function CommonFun.calcBuff_9814(srcUser, targetUser, a, b, c, d, lv)
+  if srcUser == nil then
+    return 0
+  end
+  if b <= srcUser:GetBuffLayer(a) then
+    return 0
+  end
+  return 1
 end
 
 function CommonFun.calcBuff_9981(srcUser, targetUser, a, b, c, d, lv)
@@ -52296,6 +52675,9 @@ function CommonFun.calcBuff_100300(srcUser, targetUser, a, b, c, d, lv)
   if srcUser:HasBuffID(49210) then
     ElementRate = ElementRate + 0.15
   end
+  if srcUser:HasBuffID(59630) and (srcAtkElement == 3 or srcAtkElement == 4) then
+    ElementRate = ElementRate + 0.1
+  end
   if srcUser:HasBuffID(77480) then
     ElementRate = ElementRate + 0.1
   end
@@ -52438,6 +52820,9 @@ function CommonFun.calcBuff_100310(srcUser, targetUser, a, b, c, d, lv)
   end
   if srcUser:HasBuffID(49210) then
     ElementRate = ElementRate + 0.15
+  end
+  if srcUser:HasBuffID(59630) and (srcAtkElement == 3 or srcAtkElement == 4) then
+    ElementRate = ElementRate + 0.1
   end
   if srcUser:HasBuffID(77480) then
     ElementRate = ElementRate + 0.1
@@ -52825,7 +53210,7 @@ function CommonFun.calcBuff_100510(srcUser, targetUser, a, b, c, d, lv)
     return 0
   end
   local A = b
-  if targetUser:HasBuffID(a) then
+  if targetUser:HasBuffID(a) or d ~= nil and d ~= 0 and targetUser:HasBuffID(d) then
     A = c
   end
   return A
@@ -53075,6 +53460,11 @@ CommonFun.CalcDamReduce = {
   [150] = CommonFun.calcDamReduce_150,
   [500] = CommonFun.calcDamReduce_500
 }
+
+function CommonFun.calcBuff_10240(srcUser, targetUser, a, b, c, d, lv)
+  return math.floor((lv or 0) / 2) + 5
+end
+
 CommonFun.CalcBuffFuncs = {
   [6] = CommonFun.calcBuff_6,
   [20] = CommonFun.calcBuff_20,
@@ -53664,6 +54054,7 @@ CommonFun.CalcBuffFuncs = {
   [5044] = CommonFun.calcBuff_5044,
   [5045] = CommonFun.calcBuff_5045,
   [5046] = CommonFun.calcBuff_5046,
+  [5047] = CommonFun.calcBuff_5047,
   [5050] = CommonFun.calcBuff_5050,
   [5060] = CommonFun.calcBuff_5060,
   [5070] = CommonFun.calcBuff_5070,
@@ -53968,6 +54359,7 @@ CommonFun.CalcBuffFuncs = {
   [7120] = CommonFun.calcBuff_7120,
   [7130] = CommonFun.calcBuff_7130,
   [7140] = CommonFun.calcBuff_7140,
+  [7141] = CommonFun.calcBuff_7141,
   [7150] = CommonFun.calcBuff_7150,
   [7160] = CommonFun.calcBuff_7160,
   [7170] = CommonFun.calcBuff_7170,
@@ -54108,6 +54500,8 @@ CommonFun.CalcBuffFuncs = {
   [7930] = CommonFun.calcBuff_7930,
   [7940] = CommonFun.calcBuff_7940,
   [7950] = CommonFun.calcBuff_7950,
+  [7951] = CommonFun.calcBuff_7951,
+  [7952] = CommonFun.calcBuff_7952,
   [7960] = CommonFun.calcBuff_7960,
   [7970] = CommonFun.calcBuff_7970,
   [7980] = CommonFun.calcBuff_7980,
@@ -54197,6 +54591,8 @@ CommonFun.CalcBuffFuncs = {
   [8530] = CommonFun.calcBuff_8530,
   [8531] = CommonFun.calcBuff_8531,
   [8540] = CommonFun.calcBuff_8540,
+  [8713] = CommonFun.calcBuff_8713,
+  [8714] = CommonFun.calcBuff_8714,
   [9160] = CommonFun.calcBuff_9160,
   [9161] = CommonFun.calcBuff_9161,
   [9250] = CommonFun.calcBuff_9250,
@@ -54210,6 +54606,17 @@ CommonFun.CalcBuffFuncs = {
   [9330] = CommonFun.calcBuff_9330,
   [9600] = CommonFun.calcBuff_9600,
   [9610] = CommonFun.calcBuff_9610,
+  [9720] = CommonFun.calcBuff_9720,
+  [9721] = CommonFun.calcBuff_9721,
+  [9722] = CommonFun.calcBuff_9722,
+  [9723] = CommonFun.calcBuff_9723,
+  [9724] = CommonFun.calcBuff_9724,
+  [9725] = CommonFun.calcBuff_9725,
+  [9726] = CommonFun.calcBuff_9726,
+  [9727] = CommonFun.calcBuff_9727,
+  [9728] = CommonFun.calcBuff_9728,
+  [9729] = CommonFun.calcBuff_9729,
+  [9730] = CommonFun.calcBuff_9730,
   [9750] = CommonFun.calcBuff_9750,
   [9770] = CommonFun.calcBuff_9770,
   [9771] = CommonFun.calcBuff_9771,
@@ -54219,12 +54626,13 @@ CommonFun.CalcBuffFuncs = {
   [9811] = CommonFun.calcBuff_9811,
   [9812] = CommonFun.calcBuff_9812,
   [9813] = CommonFun.calcBuff_9813,
-  [9930] = CommonFun.calcBuff_9930,
+  [9814] = CommonFun.calcBuff_9814,
   [9981] = CommonFun.calcBuff_9981,
   [9985] = CommonFun.calcBuff_9985,
   [9986] = CommonFun.calcBuff_9986,
   [9988] = CommonFun.calcBuff_9988,
   [9989] = CommonFun.calcBuff_9989,
+  [9930] = CommonFun.calcBuff_9930,
   [9990] = CommonFun.calcBuff_9990,
   [9995] = CommonFun.calcBuff_9995,
   [9996] = CommonFun.calcBuff_9996,
@@ -54289,7 +54697,8 @@ CommonFun.CalcBuffFuncs = {
   [100540] = CommonFun.calcBuff_100540,
   [100550] = CommonFun.calcBuff_100550,
   [100560] = CommonFun.calcBuff_100560,
-  [100570] = CommonFun.calcBuff_100570
+  [100570] = CommonFun.calcBuff_100570,
+  [10240] = CommonFun.calcBuff_10240
 }
 
 function CommonFun.calcExtraScore(maxApple, rank)
@@ -55935,6 +56344,45 @@ function CommonFun.calcBossSceneRollNum(bossType, count)
     end
   end
   return res
+end
+
+function CommonFun.calcGeffenMagicScoreTakeDamage(value)
+  local score = 0
+  local damage = value
+  if damage <= 1500000 then
+    score = 30
+  else
+    score = math.floor(30 * (1 - value * 0.5 / 15000000))
+  end
+  if 18000000 <= damage then
+    score = 10
+  end
+  return score
+end
+
+function CommonFun.calcGeffenMagicScoreTime(value)
+  local score = 0
+  local time = value
+  if time <= 30 then
+    score = 50
+  else
+    score = math.floor(50 * (30 / time))
+  end
+  if 120 <= time then
+    score = 10
+  end
+  return score
+end
+
+function CommonFun.calcGeffenMagicScoreRelive(value)
+  local score = 0
+  local fuhuo = value
+  if fuhuo == 0 then
+    score = 20
+  else
+    score = math.max(20 - fuhuo * 3, 0)
+  end
+  return score
 end
 
 function CommonFun.calcTradeTax(price)

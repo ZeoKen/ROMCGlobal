@@ -25,6 +25,7 @@ function StepRechargeCell:FindObjs()
   self.buyBtn = self:FindGO("BuyBtn")
   self.receiveBtn = self:FindGO("ReceiveBtn")
   self.disableBtn = self:FindGO("DisableBtn")
+  self.finishSymbol = self:FindGO("FinishSymbol")
   self.lock = self:FindGO("Lock")
   self.saleIcon = self:FindComponent("SaleIcon", UISprite)
   self.bgSprite = self:FindComponent("BgSprite", UISprite)
@@ -317,15 +318,14 @@ function StepRechargeCell:UpdateState()
   local isFreeStage = proxy:IsFreeStage(cfg)
   local showLockedBuy = not unlocked and not finished and isBuyStage and proxy:IsActivityAvailable(actId)
   local showLockedFree = not unlocked and not finished and isFreeStage and proxy:IsActivityAvailable(actId)
-  SetObjActive(self.lock, not unlocked)
-  SetObjActive(self.buyBtn, canBuy or showLockedBuy)
-  SetObjActive(self.receiveBtn, canReceive or showLockedFree)
-  local showDisable = not canBuy and not canReceive and not showLockedBuy and not showLockedFree
+  SetObjActive(self.lock, not unlocked and not finished)
+  SetObjActive(self.buyBtn, not finished and (canBuy or showLockedBuy))
+  SetObjActive(self.receiveBtn, not finished and (canReceive or showLockedFree))
+  local showDisable = not finished and not canBuy and not canReceive and not showLockedBuy and not showLockedFree
   SetObjActive(self.disableBtn, showDisable)
+  SetObjActive(self.finishSymbol, finished)
   if self.disableBtnLabel and showDisable then
-    if finished then
-      self.disableBtnLabel.text = ZhString.Post_HasReceived or ZhString.CollectGroupScoreTip_ReceivedBtn or ""
-    elseif not unlocked then
+    if not unlocked then
       self.disableBtnLabel.text = ZhString.AchievementTitle_Unlock or ""
     elseif proxy:IsFreeStage(cfg) then
       self.disableBtnLabel.text = ZhString.Post_Receive or ZhString.Servant_Recommend_Receive or ""

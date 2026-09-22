@@ -3543,6 +3543,31 @@ Table_EquipGender = {
     id = 731,
     male = 3042103,
     female = 3042231
+  },
+  [708] = {
+    id = 708,
+    male = 3013550,
+    female = 3013554
+  },
+  [709] = {
+    id = 709,
+    male = 3013551,
+    female = 3013555
+  },
+  [710] = {
+    id = 710,
+    male = 3013552,
+    female = 3013556
+  },
+  [711] = {
+    id = 711,
+    male = 3013553,
+    female = 3013557
+  },
+  [712] = {
+    id = 712,
+    male = 3013561,
+    female = 3013562
   }
 }
 Table_EquipGender_fields = {

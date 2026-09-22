@@ -1670,6 +1670,60 @@ Table_Pet_Adventure = {
     Baseexp = 4952.66666666667,
     Times = 273,
     DailyAdventureCount = 3
+  },
+  [160] = {
+    id = 160,
+    QuestType = 2,
+    NameZh = "##148855",
+    Quality = 1,
+    Level = 1,
+    ConsumeTime = 1800,
+    PetNum = 1,
+    Cost = {
+      id = 5503,
+      num = {15}
+    },
+    CostFightTime = 0,
+    BigArea = 1,
+    SmallArea = "##148828",
+    Desc = "##47042165",
+    TextureName = "Bg_beijing2",
+    Condition = {
+      1005,
+      6000,
+      6001
+    },
+    MonsterReward = {56883},
+    Baseexp = 856695,
+    Times = 273,
+    DailyAdventureCount = 3
+  },
+  [161] = {
+    id = 161,
+    QuestType = 2,
+    NameZh = "##148832",
+    Quality = 1,
+    Level = 1,
+    ConsumeTime = 1800,
+    PetNum = 1,
+    Cost = {
+      id = 5503,
+      num = {15}
+    },
+    CostFightTime = 0,
+    BigArea = 3,
+    SmallArea = "##148829",
+    Desc = "##47042166",
+    TextureName = "Bg_beijing2",
+    Condition = {
+      1005,
+      6000,
+      6002
+    },
+    MonsterReward = {56883},
+    Baseexp = 856695,
+    Times = 273,
+    DailyAdventureCount = 3
   }
 }
 Table_Pet_Adventure_fields = {

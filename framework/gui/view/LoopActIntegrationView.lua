@@ -6,6 +6,7 @@ autoImport("ActivityFlipCardView")
 autoImport("ActivityIntegrationTaskSubView")
 autoImport("ActivityIntegrationTaskSubViewType2")
 autoImport("LoopActBannerSubView")
+autoImport("LoopActPreviewSubView")
 autoImport("LoopActIntegrationProxy")
 autoImport("ActivityIntegrationShopSubView")
 autoImport("ActivityIntegrationLotteryRaidShopSubView")
@@ -126,9 +127,9 @@ function LoopActIntegrationView:InitShow()
       if staticData then
         local subType = LoopActIntegrationProxy.Instance:GetSubType(staticData)
         local isValid = LoopActIntegrationProxy.Instance:CheckActivityValid(activityID)
-        redlog("CheckActivityValid", activityID, tostring(isValid))
         if subType and self.subViews[subType] and (isValid or self:CheckIdValid(activityID)) then
-          local redtip = RedTipMap[subType]
+          local configuredRedTip = staticData.Params_Inte and staticData.Params_Inte.RedTip
+          local redtip = configuredRedTip or RedTipMap[subType]
           local subRedtip
           if subType == 1 then
             subRedtip = staticData.id
@@ -231,6 +232,14 @@ function LoopActIntegrationView:InitSubViewLoaders()
     end
     return self.bannerView
   end
+  local loadPreviewView = function(viewdata)
+    if not self.previewView then
+      self.previewView = self:AddSubView("LoopActPreviewSubView", LoopActPreviewSubView, self.subViewContainer, viewdata)
+      self.previewView.parentView = self
+      self.previewView.gameObject:SetActive(false)
+    end
+    return self.previewView
+  end
   local loadBPView = function(viewdata)
     if not self.bpView then
       self.bpView = self:AddSubView("ActivityBattlePassView", ActivityBattlePassView, nil, viewdata)
@@ -306,6 +315,7 @@ function LoopActIntegrationView:InitSubViewLoaders()
     return self.stepRechargeView
   end
   self.subViews.banner = loadBannerView
+  self.subViews.preview = loadPreviewView
   self.subViews[1] = loadBPView
   self.subViews[2] = loadTaskView
   self.subViews[3] = loadFlipCardView

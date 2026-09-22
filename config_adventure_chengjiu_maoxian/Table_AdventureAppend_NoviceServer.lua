@@ -6,7 +6,8 @@ Table_AdventureAppend_t = {
     {10},
     {50},
     {100},
-    {2}
+    {2},
+    {5000}
   },
   PreID = {
     {1},
@@ -687,6 +688,11 @@ Table_AdventureAppend_t = {
     {1362},
     {1365},
     {1366},
+    {2144},
+    {2104},
+    {2020},
+    {2048},
+    {2012},
     {2225},
     {2224},
     {2221},
@@ -730,7 +736,6 @@ Table_AdventureAppend_t = {
     {2149},
     {2148},
     {2145},
-    {2144},
     {2141},
     {2140},
     {2137},
@@ -744,7 +749,6 @@ Table_AdventureAppend_t = {
     {2109},
     {2108},
     {2105},
-    {2104},
     {2101},
     {2100},
     {2097},
@@ -772,18 +776,15 @@ Table_AdventureAppend_t = {
     {2053},
     {2052},
     {2049},
-    {2048},
     {2000},
     {2001},
     {2004},
     {2005},
     {2008},
     {2009},
-    {2012},
     {2013},
     {2016},
     {2017},
-    {2020},
     {2021},
     {2024},
     {2025},
@@ -797,6 +798,22 @@ Table_AdventureAppend_t = {
     {2041},
     {2044},
     {2045}
+  },
+  UnlockItemIds = {
+    {18720},
+    {18694},
+    {17179},
+    {16343},
+    {18662},
+    {18747},
+    {18723},
+    {18722},
+    {18721},
+    {17816},
+    {16344},
+    {17811},
+    {17180},
+    {17810}
   }
 }
 Table_AdventureAppend = {
@@ -3499,14 +3516,12 @@ Table_AdventureAppend = {
   [349] = {
     id = 349,
     targetID = 10088,
-    NameZh = "虎蜥人",
     Params = Table_AdventureAppend_t.Params[1],
     Reward = 1110088
   },
   [350] = {
     id = 350,
     targetID = 10088,
-    NameZh = "虎蜥人",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210088,
     PreID = Table_AdventureAppend_t.PreID[175]
@@ -3514,7 +3529,6 @@ Table_AdventureAppend = {
   [351] = {
     id = 351,
     targetID = 10088,
-    NameZh = "虎蜥人",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310088,
     PreID = Table_AdventureAppend_t.PreID[176]
@@ -3522,7 +3536,6 @@ Table_AdventureAppend = {
   [352] = {
     id = 352,
     targetID = 10088,
-    NameZh = "虎蜥人",
     Content = "selfie",
     Desc = "对[monsterName]拍照解锁魔物详情",
     Reward = 1410088
@@ -4181,12 +4194,14 @@ Table_AdventureAppend = {
   [437] = {
     id = 437,
     targetID = 20008,
+    NameZh = "沙漠之狼",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 1120008
   },
   [438] = {
     id = 438,
     targetID = 20008,
+    NameZh = "沙漠之狼",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 1220008,
     PreID = Table_AdventureAppend_t.PreID[219]
@@ -4194,6 +4209,7 @@ Table_AdventureAppend = {
   [439] = {
     id = 439,
     targetID = 20008,
+    NameZh = "沙漠之狼",
     Params = Table_AdventureAppend_t.Params[6],
     Reward = 1320008,
     PreID = Table_AdventureAppend_t.PreID[220]
@@ -4201,6 +4217,7 @@ Table_AdventureAppend = {
   [440] = {
     id = 440,
     targetID = 20008,
+    NameZh = "沙漠之狼",
     Content = "selfie",
     Desc = "对[monsterName]拍照解锁魔物详情",
     Reward = 1420008
@@ -4310,6 +4327,7 @@ Table_AdventureAppend = {
     targetID = 20012,
     NameZh = "半龙人",
     Params = Table_AdventureAppend_t.Params[5],
+    Reward = 1220012,
     PreID = Table_AdventureAppend_t.PreID[227]
   },
   [455] = {
@@ -9569,12 +9587,14 @@ Table_AdventureAppend = {
   },
   [1137] = {
     id = 1137,
+    targetID = 10258,
     NameZh = "飞马",
     Params = Table_AdventureAppend_t.Params[1],
     Reward = 1110258
   },
   [1138] = {
     id = 1138,
+    targetID = 10258,
     NameZh = "飞马",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210258,
@@ -9582,6 +9602,7 @@ Table_AdventureAppend = {
   },
   [1139] = {
     id = 1139,
+    targetID = 10258,
     NameZh = "飞马",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310258,
@@ -9589,6 +9610,7 @@ Table_AdventureAppend = {
   },
   [1140] = {
     id = 1140,
+    targetID = 10258,
     NameZh = "飞马",
     Content = "selfie",
     Desc = "对[monsterName]拍照解锁魔物详情",
@@ -11312,7 +11334,7 @@ Table_AdventureAppend = {
     NameZh = "暗·赛依连",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 12320220,
-    PreID = Table_AdventureAppend_t.PreID[765]
+    PreID = Table_AdventureAppend_t.PreID[767]
   },
   [2002] = {
     id = 2002,
@@ -11320,7 +11342,7 @@ Table_AdventureAppend = {
     NameZh = "暗·赛依连",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 13320220,
-    PreID = Table_AdventureAppend_t.PreID[766]
+    PreID = Table_AdventureAppend_t.PreID[768]
   },
   [2003] = {
     id = 2003,
@@ -11343,7 +11365,7 @@ Table_AdventureAppend = {
     NameZh = "暗·玛嘉雷特",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 12320230,
-    PreID = Table_AdventureAppend_t.PreID[767]
+    PreID = Table_AdventureAppend_t.PreID[769]
   },
   [2006] = {
     id = 2006,
@@ -11351,7 +11373,7 @@ Table_AdventureAppend = {
     NameZh = "暗·玛嘉雷特",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 13320230,
-    PreID = Table_AdventureAppend_t.PreID[768]
+    PreID = Table_AdventureAppend_t.PreID[770]
   },
   [2007] = {
     id = 2007,
@@ -11374,7 +11396,7 @@ Table_AdventureAppend = {
     NameZh = "墨蛇君追加",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 12320240,
-    PreID = Table_AdventureAppend_t.PreID[769]
+    PreID = Table_AdventureAppend_t.PreID[771]
   },
   [2010] = {
     id = 2010,
@@ -11382,7 +11404,7 @@ Table_AdventureAppend = {
     NameZh = "墨蛇君追加",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 13320240,
-    PreID = Table_AdventureAppend_t.PreID[770]
+    PreID = Table_AdventureAppend_t.PreID[772]
   },
   [2011] = {
     id = 2011,
@@ -11394,30 +11416,26 @@ Table_AdventureAppend = {
   },
   [2012] = {
     id = 2012,
-    targetID = 10357,
     NameZh = "感染的白骑士追加",
     Params = Table_AdventureAppend_t.Params[1],
     Reward = 1110357
   },
   [2013] = {
     id = 2013,
-    targetID = 10357,
     NameZh = "感染的白骑士追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210357,
-    PreID = Table_AdventureAppend_t.PreID[771]
+    PreID = Table_AdventureAppend_t.PreID[683]
   },
   [2014] = {
     id = 2014,
-    targetID = 10357,
     NameZh = "感染的白骑士追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310357,
-    PreID = Table_AdventureAppend_t.PreID[772]
+    PreID = Table_AdventureAppend_t.PreID[773]
   },
   [2015] = {
     id = 2015,
-    targetID = 10357,
     NameZh = "感染的白骑士追加",
     Content = "selfie",
     Desc = "对[monsterName]拍照解锁魔物详情",
@@ -11436,7 +11454,7 @@ Table_AdventureAppend = {
     NameZh = "堕落的白骑士追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210358,
-    PreID = Table_AdventureAppend_t.PreID[773]
+    PreID = Table_AdventureAppend_t.PreID[774]
   },
   [2018] = {
     id = 2018,
@@ -11444,7 +11462,7 @@ Table_AdventureAppend = {
     NameZh = "堕落的白骑士追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310358,
-    PreID = Table_AdventureAppend_t.PreID[774]
+    PreID = Table_AdventureAppend_t.PreID[775]
   },
   [2019] = {
     id = 2019,
@@ -11467,7 +11485,7 @@ Table_AdventureAppend = {
     NameZh = "感染的远古飞龙追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210359,
-    PreID = Table_AdventureAppend_t.PreID[775]
+    PreID = Table_AdventureAppend_t.PreID[681]
   },
   [2022] = {
     id = 2022,
@@ -11560,7 +11578,8 @@ Table_AdventureAppend = {
     NameZh = "感染的远古地龙追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210362,
-    PreID = Table_AdventureAppend_t.PreID[781]
+    PreID = Table_AdventureAppend_t.PreID[781],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[13]
   },
   [2034] = {
     id = 2034,
@@ -11653,7 +11672,8 @@ Table_AdventureAppend = {
     NameZh = "感染的王室卫兵追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210365,
-    PreID = Table_AdventureAppend_t.PreID[787]
+    PreID = Table_AdventureAppend_t.PreID[787],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[14]
   },
   [2046] = {
     id = 2046,
@@ -11684,7 +11704,7 @@ Table_AdventureAppend = {
     NameZh = "感染的宫廷侍卫追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210366,
-    PreID = Table_AdventureAppend_t.PreID[764]
+    PreID = Table_AdventureAppend_t.PreID[682]
   },
   [2050] = {
     id = 2050,
@@ -11692,7 +11712,7 @@ Table_AdventureAppend = {
     NameZh = "感染的宫廷侍卫追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310366,
-    PreID = Table_AdventureAppend_t.PreID[763]
+    PreID = Table_AdventureAppend_t.PreID[766]
   },
   [2051] = {
     id = 2051,
@@ -11715,7 +11735,8 @@ Table_AdventureAppend = {
     NameZh = "感染的皇家近卫追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210367,
-    PreID = Table_AdventureAppend_t.PreID[762]
+    PreID = Table_AdventureAppend_t.PreID[765],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[12]
   },
   [2054] = {
     id = 2054,
@@ -11723,7 +11744,7 @@ Table_AdventureAppend = {
     NameZh = "感染的皇家近卫追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310367,
-    PreID = Table_AdventureAppend_t.PreID[761]
+    PreID = Table_AdventureAppend_t.PreID[764]
   },
   [2055] = {
     id = 2055,
@@ -11746,7 +11767,8 @@ Table_AdventureAppend = {
     NameZh = "感染的宫廷神官追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210368,
-    PreID = Table_AdventureAppend_t.PreID[760]
+    PreID = Table_AdventureAppend_t.PreID[763],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[11]
   },
   [2058] = {
     id = 2058,
@@ -11754,7 +11776,7 @@ Table_AdventureAppend = {
     NameZh = "感染的宫廷神官追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310368,
-    PreID = Table_AdventureAppend_t.PreID[759]
+    PreID = Table_AdventureAppend_t.PreID[762]
   },
   [2059] = {
     id = 2059,
@@ -11777,7 +11799,7 @@ Table_AdventureAppend = {
     NameZh = "腐败的白骑士追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210369,
-    PreID = Table_AdventureAppend_t.PreID[758]
+    PreID = Table_AdventureAppend_t.PreID[761]
   },
   [2062] = {
     id = 2062,
@@ -11785,7 +11807,7 @@ Table_AdventureAppend = {
     NameZh = "腐败的白骑士追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310369,
-    PreID = Table_AdventureAppend_t.PreID[757]
+    PreID = Table_AdventureAppend_t.PreID[760]
   },
   [2063] = {
     id = 2063,
@@ -11808,7 +11830,7 @@ Table_AdventureAppend = {
     NameZh = "腐败的王室卫兵追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210370,
-    PreID = Table_AdventureAppend_t.PreID[756]
+    PreID = Table_AdventureAppend_t.PreID[759]
   },
   [2066] = {
     id = 2066,
@@ -11816,7 +11838,7 @@ Table_AdventureAppend = {
     NameZh = "腐败的王室卫兵追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310370,
-    PreID = Table_AdventureAppend_t.PreID[755]
+    PreID = Table_AdventureAppend_t.PreID[758]
   },
   [2067] = {
     id = 2067,
@@ -11839,7 +11861,7 @@ Table_AdventureAppend = {
     NameZh = "腐败的宫廷侍卫追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210371,
-    PreID = Table_AdventureAppend_t.PreID[754]
+    PreID = Table_AdventureAppend_t.PreID[757]
   },
   [2070] = {
     id = 2070,
@@ -11847,7 +11869,7 @@ Table_AdventureAppend = {
     NameZh = "腐败的宫廷侍卫追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310371,
-    PreID = Table_AdventureAppend_t.PreID[753]
+    PreID = Table_AdventureAppend_t.PreID[756]
   },
   [2071] = {
     id = 2071,
@@ -11870,7 +11892,7 @@ Table_AdventureAppend = {
     NameZh = "腐败的皇家近卫追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210372,
-    PreID = Table_AdventureAppend_t.PreID[752]
+    PreID = Table_AdventureAppend_t.PreID[755]
   },
   [2074] = {
     id = 2074,
@@ -11878,7 +11900,7 @@ Table_AdventureAppend = {
     NameZh = "腐败的皇家近卫追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310372,
-    PreID = Table_AdventureAppend_t.PreID[751]
+    PreID = Table_AdventureAppend_t.PreID[754]
   },
   [2075] = {
     id = 2075,
@@ -11901,7 +11923,7 @@ Table_AdventureAppend = {
     NameZh = "腐败的宫廷神官追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210373,
-    PreID = Table_AdventureAppend_t.PreID[750]
+    PreID = Table_AdventureAppend_t.PreID[753]
   },
   [2078] = {
     id = 2078,
@@ -11909,7 +11931,7 @@ Table_AdventureAppend = {
     NameZh = "腐败的宫廷神官追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310373,
-    PreID = Table_AdventureAppend_t.PreID[749]
+    PreID = Table_AdventureAppend_t.PreID[752]
   },
   [2079] = {
     id = 2079,
@@ -11932,7 +11954,7 @@ Table_AdventureAppend = {
     NameZh = "远古半龙人追加",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 1220054,
-    PreID = Table_AdventureAppend_t.PreID[748]
+    PreID = Table_AdventureAppend_t.PreID[751]
   },
   [2082] = {
     id = 2082,
@@ -11940,7 +11962,7 @@ Table_AdventureAppend = {
     NameZh = "远古半龙人追加",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 1320054,
-    PreID = Table_AdventureAppend_t.PreID[747]
+    PreID = Table_AdventureAppend_t.PreID[750]
   },
   [2083] = {
     id = 2083,
@@ -11963,7 +11985,7 @@ Table_AdventureAppend = {
     NameZh = "堕落之根追加",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 1230069,
-    PreID = Table_AdventureAppend_t.PreID[746]
+    PreID = Table_AdventureAppend_t.PreID[749]
   },
   [2086] = {
     id = 2086,
@@ -11971,7 +11993,7 @@ Table_AdventureAppend = {
     NameZh = "堕落之根追加",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 1330069,
-    PreID = Table_AdventureAppend_t.PreID[745]
+    PreID = Table_AdventureAppend_t.PreID[748]
   },
   [2087] = {
     id = 2087,
@@ -11994,7 +12016,7 @@ Table_AdventureAppend = {
     NameZh = "暗答莱尸追加",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 1230070,
-    PreID = Table_AdventureAppend_t.PreID[744]
+    PreID = Table_AdventureAppend_t.PreID[747]
   },
   [2090] = {
     id = 2090,
@@ -12002,7 +12024,7 @@ Table_AdventureAppend = {
     NameZh = "暗答莱尸追加",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 1330070,
-    PreID = Table_AdventureAppend_t.PreID[743]
+    PreID = Table_AdventureAppend_t.PreID[746]
   },
   [2091] = {
     id = 2091,
@@ -12025,7 +12047,7 @@ Table_AdventureAppend = {
     NameZh = "远古弑神者追加",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 1220055,
-    PreID = Table_AdventureAppend_t.PreID[742]
+    PreID = Table_AdventureAppend_t.PreID[745]
   },
   [2094] = {
     id = 2094,
@@ -12033,7 +12055,7 @@ Table_AdventureAppend = {
     NameZh = "远古弑神者追加",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 1320055,
-    PreID = Table_AdventureAppend_t.PreID[741]
+    PreID = Table_AdventureAppend_t.PreID[744]
   },
   [2095] = {
     id = 2095,
@@ -12056,7 +12078,8 @@ Table_AdventureAppend = {
     NameZh = "裘卡·瑟拉追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210374,
-    PreID = Table_AdventureAppend_t.PreID[740]
+    PreID = Table_AdventureAppend_t.PreID[743],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[10]
   },
   [2098] = {
     id = 2098,
@@ -12064,7 +12087,7 @@ Table_AdventureAppend = {
     NameZh = "裘卡·瑟拉追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310374,
-    PreID = Table_AdventureAppend_t.PreID[739]
+    PreID = Table_AdventureAppend_t.PreID[742]
   },
   [2099] = {
     id = 2099,
@@ -12087,7 +12110,7 @@ Table_AdventureAppend = {
     NameZh = "裘卡·厄娜追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210375,
-    PreID = Table_AdventureAppend_t.PreID[738]
+    PreID = Table_AdventureAppend_t.PreID[741]
   },
   [2102] = {
     id = 2102,
@@ -12095,7 +12118,7 @@ Table_AdventureAppend = {
     NameZh = "裘卡·厄娜追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310375,
-    PreID = Table_AdventureAppend_t.PreID[737]
+    PreID = Table_AdventureAppend_t.PreID[740]
   },
   [2103] = {
     id = 2103,
@@ -12118,7 +12141,7 @@ Table_AdventureAppend = {
     NameZh = "感染的卡利斯格追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210376,
-    PreID = Table_AdventureAppend_t.PreID[736]
+    PreID = Table_AdventureAppend_t.PreID[680]
   },
   [2106] = {
     id = 2106,
@@ -12126,7 +12149,7 @@ Table_AdventureAppend = {
     NameZh = "感染的卡利斯格追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310376,
-    PreID = Table_AdventureAppend_t.PreID[735]
+    PreID = Table_AdventureAppend_t.PreID[739]
   },
   [2107] = {
     id = 2107,
@@ -12149,7 +12172,7 @@ Table_AdventureAppend = {
     NameZh = "腐败的卡利斯格追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210377,
-    PreID = Table_AdventureAppend_t.PreID[734]
+    PreID = Table_AdventureAppend_t.PreID[738]
   },
   [2110] = {
     id = 2110,
@@ -12157,7 +12180,7 @@ Table_AdventureAppend = {
     NameZh = "腐败的卡利斯格追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310377,
-    PreID = Table_AdventureAppend_t.PreID[733]
+    PreID = Table_AdventureAppend_t.PreID[737]
   },
   [2111] = {
     id = 2111,
@@ -12180,7 +12203,7 @@ Table_AdventureAppend = {
     NameZh = "远古巴风特幻影追加",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 1230071,
-    PreID = Table_AdventureAppend_t.PreID[732]
+    PreID = Table_AdventureAppend_t.PreID[736]
   },
   [2114] = {
     id = 2114,
@@ -12188,7 +12211,7 @@ Table_AdventureAppend = {
     NameZh = "远古巴风特幻影追加",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 1330071,
-    PreID = Table_AdventureAppend_t.PreID[731]
+    PreID = Table_AdventureAppend_t.PreID[735]
   },
   [2115] = {
     id = 2115,
@@ -12211,7 +12234,7 @@ Table_AdventureAppend = {
     NameZh = "卡牌屋精灵追加",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 12320250,
-    PreID = Table_AdventureAppend_t.PreID[730]
+    PreID = Table_AdventureAppend_t.PreID[734]
   },
   [2118] = {
     id = 2118,
@@ -12219,7 +12242,7 @@ Table_AdventureAppend = {
     NameZh = "卡牌屋精灵追加",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 13320250,
-    PreID = Table_AdventureAppend_t.PreID[729]
+    PreID = Table_AdventureAppend_t.PreID[733]
   },
   [2119] = {
     id = 2119,
@@ -12242,7 +12265,8 @@ Table_AdventureAppend = {
     NameZh = "黄俄希托斯追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210381,
-    PreID = Table_AdventureAppend_t.PreID[728]
+    PreID = Table_AdventureAppend_t.PreID[732],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[9]
   },
   [2134] = {
     id = 2134,
@@ -12250,7 +12274,7 @@ Table_AdventureAppend = {
     NameZh = "黄俄希托斯追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310381,
-    PreID = Table_AdventureAppend_t.PreID[727]
+    PreID = Table_AdventureAppend_t.PreID[731]
   },
   [2135] = {
     id = 2135,
@@ -12273,7 +12297,7 @@ Table_AdventureAppend = {
     NameZh = "绿俄希托斯追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210382,
-    PreID = Table_AdventureAppend_t.PreID[726]
+    PreID = Table_AdventureAppend_t.PreID[730]
   },
   [2138] = {
     id = 2138,
@@ -12281,7 +12305,7 @@ Table_AdventureAppend = {
     NameZh = "绿俄希托斯追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310382,
-    PreID = Table_AdventureAppend_t.PreID[725]
+    PreID = Table_AdventureAppend_t.PreID[729]
   },
   [2139] = {
     id = 2139,
@@ -12304,7 +12328,7 @@ Table_AdventureAppend = {
     NameZh = "紫俄希托斯追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210383,
-    PreID = Table_AdventureAppend_t.PreID[724]
+    PreID = Table_AdventureAppend_t.PreID[728]
   },
   [2142] = {
     id = 2142,
@@ -12312,7 +12336,7 @@ Table_AdventureAppend = {
     NameZh = "紫俄希托斯追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310383,
-    PreID = Table_AdventureAppend_t.PreID[723]
+    PreID = Table_AdventureAppend_t.PreID[727]
   },
   [2143] = {
     id = 2143,
@@ -12335,7 +12359,7 @@ Table_AdventureAppend = {
     NameZh = "灰俄希托斯追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210384,
-    PreID = Table_AdventureAppend_t.PreID[722]
+    PreID = Table_AdventureAppend_t.PreID[679]
   },
   [2146] = {
     id = 2146,
@@ -12343,7 +12367,7 @@ Table_AdventureAppend = {
     NameZh = "灰俄希托斯追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310384,
-    PreID = Table_AdventureAppend_t.PreID[721]
+    PreID = Table_AdventureAppend_t.PreID[726]
   },
   [2147] = {
     id = 2147,
@@ -12366,7 +12390,7 @@ Table_AdventureAppend = {
     NameZh = "土俄希托斯追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210385,
-    PreID = Table_AdventureAppend_t.PreID[720]
+    PreID = Table_AdventureAppend_t.PreID[725]
   },
   [2150] = {
     id = 2150,
@@ -12374,7 +12398,7 @@ Table_AdventureAppend = {
     NameZh = "土俄希托斯追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310385,
-    PreID = Table_AdventureAppend_t.PreID[719]
+    PreID = Table_AdventureAppend_t.PreID[724]
   },
   [2151] = {
     id = 2151,
@@ -12397,7 +12421,7 @@ Table_AdventureAppend = {
     NameZh = "白俄希托斯追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210386,
-    PreID = Table_AdventureAppend_t.PreID[718]
+    PreID = Table_AdventureAppend_t.PreID[723]
   },
   [2154] = {
     id = 2154,
@@ -12405,7 +12429,7 @@ Table_AdventureAppend = {
     NameZh = "白俄希托斯追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310386,
-    PreID = Table_AdventureAppend_t.PreID[717]
+    PreID = Table_AdventureAppend_t.PreID[722]
   },
   [2155] = {
     id = 2155,
@@ -12428,7 +12452,8 @@ Table_AdventureAppend = {
     NameZh = "红贝勒斯追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210387,
-    PreID = Table_AdventureAppend_t.PreID[716]
+    PreID = Table_AdventureAppend_t.PreID[721],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[8]
   },
   [2158] = {
     id = 2158,
@@ -12436,7 +12461,7 @@ Table_AdventureAppend = {
     NameZh = "红贝勒斯追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310387,
-    PreID = Table_AdventureAppend_t.PreID[715]
+    PreID = Table_AdventureAppend_t.PreID[720]
   },
   [2159] = {
     id = 2159,
@@ -12459,7 +12484,7 @@ Table_AdventureAppend = {
     NameZh = "蓝贝勒斯追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210388,
-    PreID = Table_AdventureAppend_t.PreID[714]
+    PreID = Table_AdventureAppend_t.PreID[719]
   },
   [2162] = {
     id = 2162,
@@ -12467,7 +12492,7 @@ Table_AdventureAppend = {
     NameZh = "蓝贝勒斯追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310388,
-    PreID = Table_AdventureAppend_t.PreID[713]
+    PreID = Table_AdventureAppend_t.PreID[718]
   },
   [2163] = {
     id = 2163,
@@ -12490,7 +12515,8 @@ Table_AdventureAppend = {
     NameZh = "狂暴邪恶箱追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210389,
-    PreID = Table_AdventureAppend_t.PreID[712]
+    PreID = Table_AdventureAppend_t.PreID[717],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[7]
   },
   [2166] = {
     id = 2166,
@@ -12498,7 +12524,7 @@ Table_AdventureAppend = {
     NameZh = "狂暴邪恶箱追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310389,
-    PreID = Table_AdventureAppend_t.PreID[711]
+    PreID = Table_AdventureAppend_t.PreID[716]
   },
   [2167] = {
     id = 2167,
@@ -12521,7 +12547,7 @@ Table_AdventureAppend = {
     NameZh = "萨克莱追加",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 1230072,
-    PreID = Table_AdventureAppend_t.PreID[710]
+    PreID = Table_AdventureAppend_t.PreID[715]
   },
   [2170] = {
     id = 2170,
@@ -12529,7 +12555,7 @@ Table_AdventureAppend = {
     NameZh = "萨克莱追加",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 1330072,
-    PreID = Table_AdventureAppend_t.PreID[709]
+    PreID = Table_AdventureAppend_t.PreID[714]
   },
   [2171] = {
     id = 2171,
@@ -12552,7 +12578,7 @@ Table_AdventureAppend = {
     NameZh = "时空龙追加",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 12276614,
-    PreID = Table_AdventureAppend_t.PreID[708]
+    PreID = Table_AdventureAppend_t.PreID[713]
   },
   [2174] = {
     id = 2174,
@@ -12560,7 +12586,7 @@ Table_AdventureAppend = {
     NameZh = "时空龙追加",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 13276614,
-    PreID = Table_AdventureAppend_t.PreID[707]
+    PreID = Table_AdventureAppend_t.PreID[712]
   },
   [2175] = {
     id = 2175,
@@ -12583,7 +12609,8 @@ Table_AdventureAppend = {
     NameZh = "诺博斯追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210390,
-    PreID = Table_AdventureAppend_t.PreID[706]
+    PreID = Table_AdventureAppend_t.PreID[711],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[6]
   },
   [2178] = {
     id = 2178,
@@ -12591,7 +12618,7 @@ Table_AdventureAppend = {
     NameZh = "诺博斯追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310390,
-    PreID = Table_AdventureAppend_t.PreID[705]
+    PreID = Table_AdventureAppend_t.PreID[710]
   },
   [2179] = {
     id = 2179,
@@ -12614,7 +12641,7 @@ Table_AdventureAppend = {
     NameZh = "黑炎龙·参宿四追加",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 1230073,
-    PreID = Table_AdventureAppend_t.PreID[704]
+    PreID = Table_AdventureAppend_t.PreID[709]
   },
   [2182] = {
     id = 2182,
@@ -12622,7 +12649,7 @@ Table_AdventureAppend = {
     NameZh = "黑炎龙·参宿四追加",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 1330073,
-    PreID = Table_AdventureAppend_t.PreID[703]
+    PreID = Table_AdventureAppend_t.PreID[708]
   },
   [2183] = {
     id = 2183,
@@ -12645,7 +12672,7 @@ Table_AdventureAppend = {
     NameZh = "被污染的低级卢甘族追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210391,
-    PreID = Table_AdventureAppend_t.PreID[702]
+    PreID = Table_AdventureAppend_t.PreID[707]
   },
   [2186] = {
     id = 2186,
@@ -12653,7 +12680,7 @@ Table_AdventureAppend = {
     NameZh = "被污染的低级卢甘族追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310391,
-    PreID = Table_AdventureAppend_t.PreID[701]
+    PreID = Table_AdventureAppend_t.PreID[706]
   },
   [2187] = {
     id = 2187,
@@ -12676,7 +12703,7 @@ Table_AdventureAppend = {
     NameZh = "被改造的卢甘族追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210392,
-    PreID = Table_AdventureAppend_t.PreID[694]
+    PreID = Table_AdventureAppend_t.PreID[699]
   },
   [2190] = {
     id = 2190,
@@ -12684,7 +12711,7 @@ Table_AdventureAppend = {
     NameZh = "被改造的卢甘族追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310392,
-    PreID = Table_AdventureAppend_t.PreID[693]
+    PreID = Table_AdventureAppend_t.PreID[698]
   },
   [2191] = {
     id = 2191,
@@ -12707,7 +12734,7 @@ Table_AdventureAppend = {
     NameZh = "被污染的卢甘族祭司追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210393,
-    PreID = Table_AdventureAppend_t.PreID[700]
+    PreID = Table_AdventureAppend_t.PreID[705]
   },
   [2194] = {
     id = 2194,
@@ -12715,7 +12742,7 @@ Table_AdventureAppend = {
     NameZh = "被污染的卢甘族祭司追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310393,
-    PreID = Table_AdventureAppend_t.PreID[699]
+    PreID = Table_AdventureAppend_t.PreID[704]
   },
   [2195] = {
     id = 2195,
@@ -12738,7 +12765,7 @@ Table_AdventureAppend = {
     NameZh = "卡拉波利追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210394,
-    PreID = Table_AdventureAppend_t.PreID[698]
+    PreID = Table_AdventureAppend_t.PreID[703]
   },
   [2198] = {
     id = 2198,
@@ -12746,7 +12773,7 @@ Table_AdventureAppend = {
     NameZh = "卡拉波利追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310394,
-    PreID = Table_AdventureAppend_t.PreID[697]
+    PreID = Table_AdventureAppend_t.PreID[702]
   },
   [2199] = {
     id = 2199,
@@ -12769,7 +12796,7 @@ Table_AdventureAppend = {
     NameZh = "洞穴卡拉波利追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210395,
-    PreID = Table_AdventureAppend_t.PreID[692]
+    PreID = Table_AdventureAppend_t.PreID[697]
   },
   [2202] = {
     id = 2202,
@@ -12777,7 +12804,7 @@ Table_AdventureAppend = {
     NameZh = "洞穴卡拉波利追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310395,
-    PreID = Table_AdventureAppend_t.PreID[691]
+    PreID = Table_AdventureAppend_t.PreID[696]
   },
   [2203] = {
     id = 2203,
@@ -12800,7 +12827,7 @@ Table_AdventureAppend = {
     NameZh = "邪恶的卡拉波利追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210396,
-    PreID = Table_AdventureAppend_t.PreID[690]
+    PreID = Table_AdventureAppend_t.PreID[695]
   },
   [2206] = {
     id = 2206,
@@ -12808,7 +12835,7 @@ Table_AdventureAppend = {
     NameZh = "邪恶的卡拉波利追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310396,
-    PreID = Table_AdventureAppend_t.PreID[689]
+    PreID = Table_AdventureAppend_t.PreID[694]
   },
   [2207] = {
     id = 2207,
@@ -12831,7 +12858,7 @@ Table_AdventureAppend = {
     NameZh = "超级海蝴蝶追加",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 1230074,
-    PreID = Table_AdventureAppend_t.PreID[696]
+    PreID = Table_AdventureAppend_t.PreID[701]
   },
   [2210] = {
     id = 2210,
@@ -12839,7 +12866,7 @@ Table_AdventureAppend = {
     NameZh = "超级海蝴蝶追加",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 1330074,
-    PreID = Table_AdventureAppend_t.PreID[695]
+    PreID = Table_AdventureAppend_t.PreID[700]
   },
   [2211] = {
     id = 2211,
@@ -12862,7 +12889,7 @@ Table_AdventureAppend = {
     NameZh = "仿真蓉可儿追加",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 1230075,
-    PreID = Table_AdventureAppend_t.PreID[688]
+    PreID = Table_AdventureAppend_t.PreID[693]
   },
   [2214] = {
     id = 2214,
@@ -12870,7 +12897,7 @@ Table_AdventureAppend = {
     NameZh = "仿真蓉可儿追加",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 1330075,
-    PreID = Table_AdventureAppend_t.PreID[687]
+    PreID = Table_AdventureAppend_t.PreID[692]
   },
   [2215] = {
     id = 2215,
@@ -12893,7 +12920,7 @@ Table_AdventureAppend = {
     NameZh = "冰原鳗追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210397,
-    PreID = Table_AdventureAppend_t.PreID[684]
+    PreID = Table_AdventureAppend_t.PreID[689]
   },
   [2218] = {
     id = 2218,
@@ -12901,7 +12928,7 @@ Table_AdventureAppend = {
     NameZh = "冰原鳗追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310397,
-    PreID = Table_AdventureAppend_t.PreID[683]
+    PreID = Table_AdventureAppend_t.PreID[688]
   },
   [2219] = {
     id = 2219,
@@ -12924,7 +12951,7 @@ Table_AdventureAppend = {
     NameZh = "洞穴冰原鳗追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210398,
-    PreID = Table_AdventureAppend_t.PreID[682]
+    PreID = Table_AdventureAppend_t.PreID[687]
   },
   [2222] = {
     id = 2222,
@@ -12932,7 +12959,7 @@ Table_AdventureAppend = {
     NameZh = "洞穴冰原鳗追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310398,
-    PreID = Table_AdventureAppend_t.PreID[681]
+    PreID = Table_AdventureAppend_t.PreID[686]
   },
   [2223] = {
     id = 2223,
@@ -12955,7 +12982,7 @@ Table_AdventureAppend = {
     NameZh = "邪恶的冰原鳗追加",
     Params = Table_AdventureAppend_t.Params[2],
     Reward = 1210399,
-    PreID = Table_AdventureAppend_t.PreID[680]
+    PreID = Table_AdventureAppend_t.PreID[685]
   },
   [2226] = {
     id = 2226,
@@ -12963,7 +12990,7 @@ Table_AdventureAppend = {
     NameZh = "邪恶的冰原鳗追加",
     Params = Table_AdventureAppend_t.Params[3],
     Reward = 1310399,
-    PreID = Table_AdventureAppend_t.PreID[679]
+    PreID = Table_AdventureAppend_t.PreID[684]
   },
   [2227] = {
     id = 2227,
@@ -12986,7 +13013,7 @@ Table_AdventureAppend = {
     NameZh = "冰铸的巴格追加",
     Params = Table_AdventureAppend_t.Params[4],
     Reward = 1230076,
-    PreID = Table_AdventureAppend_t.PreID[686]
+    PreID = Table_AdventureAppend_t.PreID[691]
   },
   [2230] = {
     id = 2230,
@@ -12994,7 +13021,7 @@ Table_AdventureAppend = {
     NameZh = "冰铸的巴格追加",
     Params = Table_AdventureAppend_t.Params[5],
     Reward = 1330076,
-    PreID = Table_AdventureAppend_t.PreID[685]
+    PreID = Table_AdventureAppend_t.PreID[690]
   },
   [2231] = {
     id = 2231,
@@ -13003,6 +13030,45 @@ Table_AdventureAppend = {
     Content = "selfie",
     Desc = "对[monsterName]拍照解锁魔物详情",
     Reward = 1430076
+  },
+  [2232] = {
+    id = 2232,
+    NameZh = "感染的白骑士",
+    Params = Table_AdventureAppend_t.Params[8],
+    PreID = Table_AdventureAppend_t.PreID[683],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[5]
+  },
+  [2233] = {
+    id = 2233,
+    targetID = 10366,
+    NameZh = "感染的宫廷侍卫",
+    Params = Table_AdventureAppend_t.Params[8],
+    PreID = Table_AdventureAppend_t.PreID[682],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[4]
+  },
+  [2234] = {
+    id = 2234,
+    targetID = 10359,
+    NameZh = "感染的远古飞龙",
+    Params = Table_AdventureAppend_t.Params[8],
+    PreID = Table_AdventureAppend_t.PreID[681],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[3]
+  },
+  [2235] = {
+    id = 2235,
+    targetID = 10376,
+    NameZh = "感染的卡利斯格",
+    Params = Table_AdventureAppend_t.Params[8],
+    PreID = Table_AdventureAppend_t.PreID[680],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[2]
+  },
+  [2236] = {
+    id = 2236,
+    targetID = 10384,
+    NameZh = "灰俄希托斯",
+    Params = Table_AdventureAppend_t.Params[8],
+    PreID = Table_AdventureAppend_t.PreID[679],
+    UnlockItemIds = Table_AdventureAppend_t.UnlockItemIds[1]
   },
   [101380] = {
     id = 101380,
@@ -13699,14 +13765,13 @@ local cell_mt = {
   __index = {
     Content = "kill",
     Desc = "击杀[num]只[monsterName]",
-    NameZh = "沙漠之狼",
+    NameZh = "虎蜥人",
     Params = _EmptyTable,
     PreID = _EmptyTable,
-    Reward = 1220012,
     Type = 6,
     UnlockItemIds = _EmptyTable,
     id = 1,
-    targetID = 10258
+    targetID = 10357
   }
 }
 for _, d in pairs(Table_AdventureAppend) do

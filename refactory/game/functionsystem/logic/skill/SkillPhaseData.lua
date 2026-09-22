@@ -117,6 +117,7 @@ function SkillPhaseData:ParseFromServer(msg, force)
   if not data then
     return
   end
+  self.fromServer = true
   self:SetSkillPhase(data.number)
   local pos = data.pos
   self:SetPositionXYZ(S2C_Number(pos.x), S2C_Number(pos.y), S2C_Number(pos.z))
@@ -174,6 +175,7 @@ end
 function SkillPhaseData:Reset(skillID)
   self.data[1] = skillID
   self.data[2] = SkillPhase.None
+  self.fromServer = false
   self:ClearTargets()
   self:ClearGoPos()
   self.data[6] = 0
@@ -223,6 +225,7 @@ function SkillPhaseData:CopyTo(to)
   to:ClearGoPos()
   ArrayShallowCopy(to.gopos, self.gopos)
   to.actionName = self.actionName
+  to.fromServer = self.fromServer
   to:ClearEmitTarget()
   TableShallowCopy(to.emit_targets, self.emit_targets)
   to.use_stiffaction = self.use_stiffaction
@@ -471,6 +474,10 @@ function SkillPhaseData:GetForceServerDamage(sourceCreatureGUID)
   return LogicParam.force_service_damage == 1 or self:IsMonokumaRelatedDamage(sourceCreatureGUID)
 end
 
+function SkillPhaseData:ShouldBlockClientDamage(sourceCreatureGUID)
+  return not self:IsFromServer() and self:GetForceServerDamage(sourceCreatureGUID)
+end
+
 function SkillPhaseData:IsSkipBreak()
   if not self.data[1] then
     return false
@@ -524,6 +531,10 @@ function SkillPhaseData:IsClientUse()
   return self.is_client_use
 end
 
+function SkillPhaseData:IsFromServer()
+  return self.fromServer == true
+end
+
 function SkillPhaseData:DoConstruct(asArray, args)
   self:Reset(args)
 end
@@ -539,5 +550,6 @@ function SkillPhaseData:DoDeconstruct(asArray)
   self.isTrigger = false
   self.isLastHit = false
   self.actionName = nil
+  self.fromServer = false
   self:ClearEmitTarget()
 end

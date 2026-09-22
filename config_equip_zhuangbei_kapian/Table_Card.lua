@@ -6369,6 +6369,32 @@ Table_Card = {
     SelectToForbid = 1,
     ForbidCards = _EmptyTable
   },
+  [23069] = {
+    id = 23069,
+    Name = "##2832653",
+    Quality = 4,
+    Position = 7,
+    CardType = 3,
+    Anchor = _EmptyTable,
+    Picture = "card_23069",
+    monsterID = {31348},
+    BuffEffect = {
+      buff = {57530}
+    },
+    Weight = 0,
+    Type = 20,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable,
+    BookClass = 2,
+    BookWeight = 100,
+    ComposeCardType = 3,
+    MVPCardDecompose = 3,
+    SelectToForbid = 1,
+    ForbidCards = _EmptyTable
+  },
   [23070] = {
     id = 23070,
     Name = "##2834798",
@@ -8293,6 +8319,34 @@ Table_Card = {
     monsterID = {31564},
     BuffEffect = {
       buff = {59560, 59562}
+    },
+    NoShow = 1,
+    Weight = 0,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable,
+    ComposeCardType = 3,
+    MVPCardDecompose = 3,
+    SelectToForbid = 1,
+    ForbidCards = _EmptyTable
+  },
+  [23473] = {
+    id = 23473,
+    Name = "##1275122",
+    Quality = 4,
+    Position = 3,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_23473",
+    monsterID = {31567},
+    BuffEffect = {
+      buff = {
+        59610,
+        59611,
+        59612
+      }
     },
     NoShow = 1,
     Weight = 0,
@@ -12011,7 +12065,7 @@ Table_Card = {
     ForbidCards = {23016}
   }
 }
-Table_Card.MD5 = "--md5:{'primarymd5':'ca660296c10e833d381ac6660ff17231'}"
+Table_Card.MD5 = "--md5:{'primarymd5':'40fd3521b11f5557ff63d640849bd5d1'}"
 Table_Card_fields = {
   "id",
   "Name",

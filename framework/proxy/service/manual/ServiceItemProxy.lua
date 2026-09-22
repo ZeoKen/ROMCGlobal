@@ -32,6 +32,13 @@ function ServiceItemProxy:CallPackageItem(type, reinit)
   ServiceItemProxy.super.CallPackageItem(self, type)
 end
 
+function ServiceItemProxy:RecvQuickBuffPackageItemCmd(data)
+  if BagProxy.Instance ~= nil then
+    BagProxy.Instance:HandleQuickBuffPackageItemCmd(data)
+  end
+  self:Notify(ServiceEvent.ItemQuickBuffPackageItemCmd, data)
+end
+
 function ServiceItemProxy:CallItemUse(item, targetId, count, value, targetItemguids)
   local staticData = item and item.staticData
   if not staticData then

@@ -830,6 +830,19 @@ Table_SpEffect = {
     OnAdd = _EmptyTable,
     CutLine = _EmptyTable
   },
+  [67] = {
+    id = 67,
+    Name = "Line",
+    Type = 1,
+    Perform = {
+      ep1 = 4,
+      ep2 = 6,
+      effect = "Skill/sfx_msg_tpzqty_buff_prf"
+    },
+    Duration = 5,
+    OnAdd = _EmptyTable,
+    CutLine = _EmptyTable
+  },
   [1001] = {
     id = 1001,
     Name = "Line",

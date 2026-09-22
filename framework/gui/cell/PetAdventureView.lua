@@ -90,16 +90,15 @@ function PetAdventureView:FindObjs()
   self.iconImg = self:FindComponent("costIcon", UISprite)
   self.againGoPos = self:FindGO("AgainGoInfo")
   self.againTipLabel = self:FindComponent("AgainTipLabel", UILabel, self.againGoPos)
-  local againUseTicketInfo = self:FindGO("AgainUseTicketInfo", self.againGoPos)
-  local ticketIcon = self:FindComponent("icon", UISprite, againUseTicketInfo)
+  self.againUseTicketInfo = self:FindGO("AgainUseTicketInfo", self.againGoPos)
+  local ticketIcon = self:FindComponent("icon", UISprite, self.againUseTicketInfo)
   IconManager:SetItemIcon(_ticketIconName, ticketIcon)
-  local useLabel = self:FindComponent("useLabel", UILabel, againUseTicketInfo)
+  local useLabel = self:FindComponent("useLabel", UILabel, self.againUseTicketInfo)
   useLabel.text = ZhString.PetAdventure_UseTicket
-  self.againGoTicketNum = self:FindComponent("hasTicketCount", UILabel, againUseTicketInfo)
-  self.againUseTicketToggle = self:FindComponent("AgainUseTicketToggle", UIToggle, againUseTicketInfo)
-  if GameConfig.PetAdventureView and GameConfig.PetAdventureView.PetAdventureVolume and GameConfig.PetAdventureView.PetAdventureVolume == 1 then
-    againUseTicketInfo:SetActive(false)
-  end
+  self.againGoTicketNum = self:FindComponent("hasTicketCount", UILabel, self.againUseTicketInfo)
+  self.againUseTicketToggle = self:FindComponent("AgainUseTicketToggle", UIToggle, self.againUseTicketInfo)
+  self.isAgainUseTicketEnabled = not GameConfig.PetAdventureView or not GameConfig.PetAdventureView.PetAdventureVolume or GameConfig.PetAdventureView.PetAdventureVolume ~= 1
+  self.againUseTicketInfo:SetActive(self.isAgainUseTicketEnabled)
   local againcostPos = self:FindGO("againCostPos")
   self.againCostMoney = self:FindComponent("costMoney", UILabel, againcostPos)
   self.useTicketBar = self:FindGO("useTicket")
@@ -177,7 +176,8 @@ end
 
 function PetAdventureView:UseTicketValid(UIToggle)
   UIToggle = UIToggle or self.useTicketToggle
-  return UIToggle.value == true and self:GetAdvTicketNum() > 0
+  local staticData = self.ChooseQuestData and self.ChooseQuestData.staticData
+  return self:CanUseTicket(staticData) and UIToggle.value == true and self:GetAdvTicketNum() > 0
 end
 
 function PetAdventureView:ShowPetHeadTips(cellctl)
@@ -228,7 +228,9 @@ function PetAdventureView:AddEvts()
       return
     end
     self.againGoPos:SetActive(true)
-    self.againUseTicketToggle.value = 0 < self:GetAdvTicketNum()
+    local canUseTicket = self:CanUseTicket(self.ChooseQuestData.staticData)
+    self.againUseTicketInfo:SetActive(self.isAgainUseTicketEnabled and canUseTicket)
+    self.againUseTicketToggle.value = canUseTicket and 0 < self:GetAdvTicketNum()
     local petCount = #self.ChooseQuestData:GetServerPet()
     if self.ChooseQuestData.staticData.Cost.num then
       self.againCostMoney.text = self.ChooseQuestData.staticData.Cost.num[petCount]
@@ -258,6 +260,10 @@ function PetAdventureView:AddEvts()
     local servicePets = {}
     for i = 1, #self.ChooseQuestData.petEggs do
       if "table" == type(self.ChooseQuestData.petEggs[i]) then
+        if PetAdventureProxy.Instance:bPetlocked(self.ChooseQuestData.petEggs[i]) then
+          MsgManager.ShowMsgByID(8015)
+          return
+        end
         servicePets[#servicePets + 1] = self.ChooseQuestData.petEggs[i].guid
       end
     end
@@ -540,13 +546,17 @@ function PetAdventureView:StartPetAdventure()
   local servicePets = {}
   for i = 1, #matchPet do
     if matchPet[i] and 0 ~= matchPet[i] and matchPet[i].guid then
+      if PetAdventureProxy.Instance:bPetlocked(matchPet[i]) then
+        MsgManager.ShowMsgByID(8015)
+        return
+      end
       servicePets[i] = matchPet[i].guid
     else
       servicePets[i] = "0"
     end
   end
   local cellMonsterID = self:_getMonsterID()
-  local useTicket = 1 ~= chooseData.staticData.QuestType and self.useTicketToggle.value
+  local useTicket = self:CanUseTicket(chooseData.staticData) and self.useTicketToggle.value
   if useTicket == true and 1 > self:GetAdvTicketNum() then
     useTicket = false
     local id = 39016
@@ -586,7 +596,7 @@ function PetAdventureView:_updateInfoByState()
   elseif staticdata.Cost and staticdata.Cost.id then
     self.costPos:SetActive(true)
     local staticNum = staticdata.Cost.num
-    if staticPetNum ~= #staticNum then
+    if staticPetNum > #staticNum then
       helplog("Table_Pet_Adventure cost 配置错误,错误ID: ", staticdata.id)
       return
     end
@@ -696,7 +706,7 @@ function PetAdventureView:_updateInfoByState()
     for i = 1, #chooseData.rareReward do
       local rareRewardCell = chooseData.rareReward[i]
       if status == PetAdventureProxy.QuestPhase.MATCH then
-        local n = rareRewardCell.num / 1000
+        local n = rareRewardCell.num
         if n < 1 then
           helplog("稀有奖励数量发送错误")
         end
@@ -766,13 +776,14 @@ function PetAdventureView:_bConditionLocked(condStaticData, IconSprite, ticketUn
     Skill = false,
     Friendly = false,
     Nature = false,
-    Race = false
+    Race = false,
+    PvpPet = false
   }
   for i = 1, #petData do
     if petData[i] and 0 ~= petData[i] then
       local id = petData[i].petid
       if "PetID" == conType and not conLock.PetID then
-        if id and id == param[1] then
+        if id and 0 < TableUtility.ArrayFindIndex(param, id) then
           self:SetTextureWhite(IconSprite.gameObject)
           conLock.PetID = true
         else
@@ -805,6 +816,19 @@ function PetAdventureView:_bConditionLocked(condStaticData, IconSprite, ticketUn
         if id and Table_Monster[id].Race and Table_Monster[id].Race == param[1] then
           self:SetTextureWhite(IconSprite.gameObject)
           conLock.Race = true
+        else
+          self:SetTextureGrey(IconSprite.gameObject)
+        end
+      elseif "PvpPet" == conType and not conLock.PvpPet then
+        local isPvpPet = petData[i]:IsPvpPet()
+        if condStaticData.id == 6000 then
+          local petStaticData = Table_Pet[id]
+          local contractSkill = petStaticData and petStaticData.ContractSkill
+          isPvpPet = contractSkill and next(contractSkill) ~= nil
+        end
+        if isPvpPet then
+          self:SetTextureWhite(IconSprite.gameObject)
+          conLock.PvpPet = true
         else
           self:SetTextureGrey(IconSprite.gameObject)
         end
@@ -948,7 +972,7 @@ function PetAdventureView:UpdatePetQuestInfo(data)
     self.rewardTitle.text = ZhString.PetAdventure_RewardPreview
     self:Hide(self.getRewardBtn)
     self:Show(self.goBtn)
-    self.useTicketBar:SetActive(not bSpecialQuest)
+    self.useTicketBar:SetActive(self:CanUseTicket(staticdata))
     self.consumeHelpBtn:SetActive(0 ~= fT)
   elseif status == PetAdventureProxy.QuestPhase.FINISHED then
     self.rewardTitle.text = ZhString.PetAdventure_Reward
@@ -975,10 +999,7 @@ function PetAdventureView:UpdatePetQuestInfo(data)
     self:Hide(self.useTicketBar)
     self:Hide(self.consumeHelpBtn)
   end
-  if self.useTicketBar.activeSelf then
-    self.useTicketBar:SetActive(self:IsEnableTicket())
-  end
-  self.useTicketToggle.value = self:IsEnableTicket() and 0 < self:GetAdvTicketNum()
+  self.useTicketToggle.value = self:CanUseTicket(staticdata) and 0 < self:GetAdvTicketNum()
   local textureName = staticdata.TextureName
   UIMultiModelUtil.Instance:ChangeMat(textureName, self.petTexture)
   self:_refreshPetModel(data.petEggs)
@@ -1316,4 +1337,8 @@ end
 
 function PetAdventureView:IsEnableTicket()
   return GameConfig.Pet.pet_adventure_ticket_switch ~= 1
+end
+
+function PetAdventureView:CanUseTicket(staticData)
+  return staticData ~= nil and staticData.QuestType ~= 1 and 0 < (staticData.CostFightTime or 0) and self:IsEnableTicket()
 end

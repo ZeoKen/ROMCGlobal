@@ -32,6 +32,18 @@ local DefaultContractResetSkillSlots = {
   [12397] = {4},
   [12369] = {2, 5}
 }
+local GetMyFightingPetEggGuid = function(petid)
+  local petBagData = BagProxy.Instance and BagProxy.Instance.petBagData
+  local items = petBagData and petBagData.wholeTab and petBagData.wholeTab:GetItems()
+  if items then
+    for i = 1, #items do
+      local egg = items[i].petEggInfo
+      if egg and egg.petid == petid and egg:IsFightingByMyself() then
+        return items[i].id
+      end
+    end
+  end
+end
 
 function PetInfoView:Init()
   self:InitView()
@@ -137,7 +149,14 @@ function PetInfoView:ClickSkill(skillCell)
     sid = skillData.skillId
   end
   if type(sid) == "number" then
-    TipManager.Instance:ShowPetSkillTip(SkillItemData.new(sid), self.skillTipStick, NGUIUtil.AnchorSide.TopLeft, {-185, 0})
+    local tipData = SkillItemData.new(sid)
+    if type(skillData) == "table" then
+      tipData.petSkillData = skillData
+    end
+    if TipsView.me and TipsView.me:IsCurrentTip(PetSkillTip) then
+      TipsView.me:HideCurrent()
+    end
+    TipManager.Instance:ShowPetSkillTip(tipData, self.skillTipStick, NGUIUtil.AnchorSide.TopLeft, {-185, 0})
   end
 end
 
@@ -204,7 +223,8 @@ function PetInfoView:DoPlay()
 end
 
 function PetInfoView:DoRest()
-  ServiceScenePetProxy.Instance:CallEggRestorePetCmd(self.petInfoData.petid)
+  local eggGuid = GetMyFightingPetEggGuid(self.petInfoData.petid)
+  ServiceScenePetProxy.Instance:CallEggRestorePetCmd(nil, eggGuid)
   self:CloseSelf()
 end
 

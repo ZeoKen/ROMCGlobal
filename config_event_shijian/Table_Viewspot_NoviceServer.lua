@@ -3406,7 +3406,6 @@ Table_Viewspot = {
     id = 67,
     MapName = 18,
     MapNum = 3,
-    SpotName = "遗迹·大宫殿",
     Type = 2,
     Coordinate = Table_Viewspot_t.Coordinate[67],
     AdventureSort = 67,
@@ -7272,6 +7271,7 @@ Table_Viewspot = {
     id = 541,
     MapName = 154,
     MapNum = 21,
+    SpotName = "苍白之塔",
     Coordinate = Table_Viewspot_t.Coordinate[535],
     AdventureSort = 541
   },
@@ -7644,7 +7644,7 @@ local cell_mt = {
     Coordinate = _EmptyTable,
     MapName = 149,
     MapNum = 1,
-    SpotName = "苍白之塔",
+    SpotName = "遗迹·大宫殿",
     Type = 1,
     id = 1
   }

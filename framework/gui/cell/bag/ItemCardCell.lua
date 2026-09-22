@@ -23,6 +23,8 @@ function ItemCardCell:FindObj()
   self.cardicon = self:FindComponent("CardIcon", UISpriteEx)
   self.cardLvBg = self:FindGO("CardLvBg")
   self.cardLvLabel = self:FindComponent("CardLv", UILabel)
+  self.shadowCard = self:FindGO("ShadowCard")
+  self.shadowCardSymbol = self:FindGO("ShadowCardSymbol")
 end
 
 function ItemCardCell:SetData(data)
@@ -91,7 +93,11 @@ function ItemCardCell:SetData(data)
     else
       self:ShowCardLv(false)
     end
+    self:ShowShadowCard(data.ShouldShowShadowCard and data:ShouldShowShadowCard())
+    self:ShowShadowCardSymbol(data.IsShadowCard and data:IsShadowCard())
   else
+    self:ShowShadowCard(false)
+    self:ShowShadowCardSymbol(false)
     self.gameObject:SetActive(false)
   end
 end
@@ -136,5 +142,17 @@ end
 function ItemCardCell:ShowCardLv(show)
   if self.cardLvBg then
     self.cardLvBg:SetActive(show)
+  end
+end
+
+function ItemCardCell:ShowShadowCard(show)
+  if self.shadowCard then
+    self.shadowCard:SetActive(show == true)
+  end
+end
+
+function ItemCardCell:ShowShadowCardSymbol(show)
+  if self.shadowCardSymbol then
+    self.shadowCardSymbol:SetActive(show == true)
   end
 end

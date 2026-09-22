@@ -425,7 +425,8 @@ function ActivityIntegrationPreviewSubView:UpdateLeftTime()
   if 0 < leftTime then
     local day, hour, min, sec = ClientTimeUtil.FormatTimeBySec(leftTime)
     if 0 < day then
-      timeText = string.format(ZhString.PlayerTip_ExpireTime, day)
+      local displayDay = self:GetDisplayDay(day, hour, min, sec)
+      timeText = string.format(ZhString.PlayerTip_ExpireTime, displayDay)
       self.timeLabel.text = timeText .. ZhString.PlayerTip_Day
     else
       timeText = string.format("%02d:%02d:%02d", hour, min, sec)
@@ -435,6 +436,10 @@ function ActivityIntegrationPreviewSubView:UpdateLeftTime()
     TimeTickManager.Me():ClearTick(self, 1)
     self.timeLabel.text = ZhString.RememberLoginView_OntimeEnd
   end
+end
+
+function ActivityIntegrationPreviewSubView:GetDisplayDay(day, hour, min, sec)
+  return day
 end
 
 function ActivityIntegrationPreviewSubView.FitBgTextureToOriginalSize(owner, uiTexture, asset)

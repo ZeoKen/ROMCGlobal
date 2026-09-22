@@ -492,6 +492,270 @@ Table_AstralSeason = {
       [5] = {920023, 1}
     },
     FashionEquip = 47417
+  },
+  [24] = {
+    id = 24,
+    StartTime = "2027-03-01 05:00:00",
+    EndTime = "2027-04-01 05:00:00",
+    TfStartTime = "2027-02-01 05:00:00",
+    TfEndTime = "2027-03-01 05:00:00",
+    SingleRaidReward = {
+      [1] = 60006464,
+      [2] = 60006465,
+      [3] = 60006466,
+      [4] = 60006467,
+      [5] = 60006468,
+      [6] = 60006470
+    },
+    PrayRange = {1, 8},
+    ProfessionPrayBuff = {30032000},
+    EffectBuff = {30032100, 30032101},
+    FashionReward = {
+      [5] = {920024, 1}
+    },
+    FashionEquip = 47435
+  },
+  [25] = {
+    id = 25,
+    StartTime = "2027-04-01 05:00:00",
+    EndTime = "2027-05-01 05:00:00",
+    TfStartTime = "2027-03-01 05:00:00",
+    TfEndTime = "2027-04-01 05:00:00",
+    SingleRaidReward = {
+      [1] = 60006464,
+      [2] = 60006465,
+      [3] = 60006466,
+      [4] = 60006467,
+      [5] = 60006468,
+      [6] = 60006470
+    },
+    PrayRange = {1, 8},
+    ProfessionPrayBuff = {30032000},
+    EffectBuff = {30032100, 30032101},
+    FashionReward = {
+      [5] = {920025, 1}
+    },
+    FashionEquip = 47436
+  },
+  [26] = {
+    id = 26,
+    StartTime = "2027-05-01 05:00:00",
+    EndTime = "2027-06-01 05:00:00",
+    TfStartTime = "2027-04-01 05:00:00",
+    TfEndTime = "2027-05-01 05:00:00",
+    SingleRaidReward = {
+      [1] = 60006464,
+      [2] = 60006465,
+      [3] = 60006466,
+      [4] = 60006467,
+      [5] = 60006468,
+      [6] = 60006470
+    },
+    PrayRange = {1, 8},
+    ProfessionPrayBuff = {30032000},
+    EffectBuff = {30032100, 30032101},
+    FashionReward = {
+      [5] = {920026, 1}
+    },
+    FashionEquip = 47437
+  },
+  [27] = {
+    id = 27,
+    StartTime = "2027-06-01 05:00:00",
+    EndTime = "2027-07-01 05:00:00",
+    TfStartTime = "2027-05-01 05:00:00",
+    TfEndTime = "2027-06-01 05:00:00",
+    SingleRaidReward = {
+      [1] = 60006464,
+      [2] = 60006465,
+      [3] = 60006466,
+      [4] = 60006467,
+      [5] = 60006468,
+      [6] = 60006470
+    },
+    PrayRange = {1, 8},
+    ProfessionPrayBuff = {30032000},
+    EffectBuff = {30032100, 30032101},
+    FashionReward = {
+      [5] = {920027, 1}
+    },
+    FashionEquip = 47438
+  },
+  [28] = {
+    id = 28,
+    StartTime = "2027-07-01 05:00:00",
+    EndTime = "2027-08-01 05:00:00",
+    TfStartTime = "2027-06-01 05:00:00",
+    TfEndTime = "2027-07-01 05:00:00",
+    SingleRaidReward = {
+      [1] = 60006464,
+      [2] = 60006465,
+      [3] = 60006466,
+      [4] = 60006467,
+      [5] = 60006468,
+      [6] = 60006470
+    },
+    PrayRange = {1, 8},
+    ProfessionPrayBuff = {30032000},
+    EffectBuff = {30032100, 30032101},
+    FashionReward = {
+      [5] = {920028, 1}
+    },
+    FashionEquip = 47439
+  },
+  [29] = {
+    id = 29,
+    StartTime = "2027-08-01 05:00:00",
+    EndTime = "2027-09-01 05:00:00",
+    TfStartTime = "2027-07-01 05:00:00",
+    TfEndTime = "2027-08-01 05:00:00",
+    SingleRaidReward = {
+      [1] = 60006464,
+      [2] = 60006465,
+      [3] = 60006466,
+      [4] = 60006467,
+      [5] = 60006468,
+      [6] = 60006470
+    },
+    PrayRange = {1, 8},
+    ProfessionPrayBuff = {30032000},
+    EffectBuff = {30032100, 30032101},
+    FashionReward = {
+      [5] = {920029, 1}
+    },
+    FashionEquip = 47440
+  },
+  [30] = {
+    id = 30,
+    StartTime = "2027-09-01 05:00:00",
+    EndTime = "2027-10-01 05:00:00",
+    TfStartTime = "2027-08-01 05:00:00",
+    TfEndTime = "2027-09-01 05:00:00",
+    SingleRaidReward = {
+      [1] = 60006464,
+      [2] = 60006465,
+      [3] = 60006466,
+      [4] = 60006467,
+      [5] = 60006468,
+      [6] = 60006470
+    },
+    PrayRange = {1, 8},
+    ProfessionPrayBuff = {30032000},
+    EffectBuff = {30032100, 30032101},
+    FashionReward = {
+      [5] = {920030, 1}
+    },
+    FashionEquip = 47441
+  },
+  [31] = {
+    id = 31,
+    StartTime = "2027-10-01 05:00:00",
+    EndTime = "2027-11-01 05:00:00",
+    TfStartTime = "2027-09-01 05:00:00",
+    TfEndTime = "2027-10-01 05:00:00",
+    SingleRaidReward = {
+      [1] = 60006464,
+      [2] = 60006465,
+      [3] = 60006466,
+      [4] = 60006467,
+      [5] = 60006468,
+      [6] = 60006470
+    },
+    PrayRange = {1, 8},
+    ProfessionPrayBuff = {30032000},
+    EffectBuff = {30032100, 30032101},
+    FashionReward = {
+      [5] = {920031, 1}
+    },
+    FashionEquip = 47442
+  },
+  [32] = {
+    id = 32,
+    StartTime = "2027-11-01 05:00:00",
+    EndTime = "2027-12-01 05:00:00",
+    TfStartTime = "2027-10-01 05:00:00",
+    TfEndTime = "2027-11-01 05:00:00",
+    SingleRaidReward = {
+      [1] = 60006464,
+      [2] = 60006465,
+      [3] = 60006466,
+      [4] = 60006467,
+      [5] = 60006468,
+      [6] = 60006470
+    },
+    PrayRange = {1, 8},
+    ProfessionPrayBuff = {30032000},
+    EffectBuff = {30032100, 30032101},
+    FashionReward = {
+      [5] = {920032, 1}
+    },
+    FashionEquip = 47443
+  },
+  [33] = {
+    id = 33,
+    StartTime = "2027-12-01 05:00:00",
+    EndTime = "2028-01-01 05:00:00",
+    TfStartTime = "2027-11-01 05:00:00",
+    TfEndTime = "2027-12-01 05:00:00",
+    SingleRaidReward = {
+      [1] = 60006464,
+      [2] = 60006465,
+      [3] = 60006466,
+      [4] = 60006467,
+      [5] = 60006468,
+      [6] = 60006470
+    },
+    PrayRange = {1, 8},
+    ProfessionPrayBuff = {30032000},
+    EffectBuff = {30032100, 30032101},
+    FashionReward = {
+      [5] = {920033, 1}
+    },
+    FashionEquip = 47444
+  },
+  [34] = {
+    id = 34,
+    StartTime = "2028-01-01 05:00:00",
+    EndTime = "2028-02-01 05:00:00",
+    TfStartTime = "2027-12-01 05:00:00",
+    TfEndTime = "2028-01-01 05:00:00",
+    SingleRaidReward = {
+      [1] = 60006464,
+      [2] = 60006465,
+      [3] = 60006466,
+      [4] = 60006467,
+      [5] = 60006468,
+      [6] = 60006470
+    },
+    PrayRange = {1, 8},
+    ProfessionPrayBuff = {30032000},
+    EffectBuff = {30032100, 30032101},
+    FashionReward = {
+      [5] = {920034, 1}
+    },
+    FashionEquip = 47445
+  },
+  [35] = {
+    id = 35,
+    StartTime = "2028-02-01 05:00:00",
+    EndTime = "2028-03-01 05:00:00",
+    TfStartTime = "2028-01-01 05:00:00",
+    TfEndTime = "2028-02-01 05:00:00",
+    SingleRaidReward = {
+      [1] = 60006464,
+      [2] = 60006465,
+      [3] = 60006466,
+      [4] = 60006467,
+      [5] = 60006468,
+      [6] = 60006470
+    },
+    PrayRange = {1, 8},
+    ProfessionPrayBuff = {30032000},
+    EffectBuff = {30032100, 30032101},
+    FashionReward = {
+      [5] = {920035, 1}
+    },
+    FashionEquip = 47446
   }
 }
 Table_AstralSeason_fields = {

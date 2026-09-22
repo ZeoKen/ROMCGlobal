@@ -27,7 +27,7 @@ function PetBagData:RefreshPetEggQuickPackUsedCount()
   if items then
     for i = 1, #items do
       local egg = items[i].petEggInfo
-      if egg and egg.quick_pack_slot and 0 < egg.quick_pack_slot then
+      if egg and egg:IsQuickPet() then
         n = n + 1
       end
     end
@@ -40,7 +40,7 @@ function PetBagData:GetItems(tabType)
   local packItems = {}
   for i = 1, #items do
     local egg = items[i].petEggInfo
-    if not egg or egg.quick_pack_slot and egg.quick_pack_slot == 0 then
+    if not egg or not egg:IsQuickPet() then
       table.insert(packItems, items[i])
     end
   end
@@ -52,7 +52,7 @@ function PetBagData:GetQuickItems()
   local quickItems = {}
   for i = 1, #items do
     local egg = items[i].petEggInfo
-    local slot = egg and egg.quick_pack_slot
+    local slot = egg and egg:GetQuickPackSlot()
     if slot and 0 < slot then
       quickItems[slot] = items[i]
     end
@@ -81,7 +81,7 @@ function PetBagData:RefreshPetEggQuickPackUsedCount()
   if items then
     for i = 1, #items do
       local egg = items[i].petEggInfo
-      if egg and egg.quick_pack_slot and 0 < egg.quick_pack_slot then
+      if egg and egg:IsQuickPet() then
         n = n + 1
       end
     end

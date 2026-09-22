@@ -87,6 +87,11 @@ local _SortFunc = function(l, r)
   if l_lotteryActive ~= r_lotteryActive then
     return l_lotteryActive
   end
+  local l_catalogOrder = l.staticEntranceData:GetCatalogOrder()
+  local r_catalogOrder = r.staticEntranceData:GetCatalogOrder()
+  if l_catalogOrder ~= r_catalogOrder then
+    return l_catalogOrder < r_catalogOrder
+  end
   local l_sortId = l:GetSortId()
   local r_sortId = r:GetSortId()
   local l_configSortId = l.staticEntranceData.configSortID

@@ -1248,6 +1248,126 @@ Table_Compose = {
     },
     Type = 1
   },
+  [130] = {
+    id = 130,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 920024, num = 4}
+    },
+    Product = {id = 913126},
+    Type = 1
+  },
+  [131] = {
+    id = 131,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 920025, num = 4}
+    },
+    Product = {id = 913127},
+    Type = 1
+  },
+  [132] = {
+    id = 132,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 920026, num = 4}
+    },
+    Product = {id = 913128},
+    Type = 1
+  },
+  [133] = {
+    id = 133,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 920027, num = 4}
+    },
+    Product = {id = 913129},
+    Type = 1
+  },
+  [134] = {
+    id = 134,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 920028, num = 4}
+    },
+    Product = {id = 913130},
+    Type = 1
+  },
+  [135] = {
+    id = 135,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 920029, num = 4}
+    },
+    Product = {id = 913131},
+    Type = 1
+  },
+  [136] = {
+    id = 136,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 920030, num = 4}
+    },
+    Product = {id = 913132},
+    Type = 1
+  },
+  [137] = {
+    id = 137,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 920031, num = 4}
+    },
+    Product = {id = 913133},
+    Type = 1
+  },
+  [138] = {
+    id = 138,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 920032, num = 4}
+    },
+    Product = {id = 913134},
+    Type = 1
+  },
+  [139] = {
+    id = 139,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 920033, num = 4}
+    },
+    Product = {id = 913135},
+    Type = 1
+  },
+  [140] = {
+    id = 140,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 920034, num = 4}
+    },
+    Product = {id = 913136},
+    Type = 1
+  },
+  [141] = {
+    id = 141,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 920035, num = 4}
+    },
+    Product = {id = 913137},
+    Type = 1
+  },
   [301] = {
     id = 301,
     Diamond = 0,

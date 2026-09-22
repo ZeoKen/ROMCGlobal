@@ -81,6 +81,7 @@ function PetAdventureProxy:SetQuestData(serviceQuestData, times, finished)
   table.sort(self.questData, function(l, r)
     return self:_sortPetQuest(l, r)
   end)
+  self:UpdateAdventureActRedTip()
 end
 
 function PetAdventureProxy:_sortPet(l, r)
@@ -158,10 +159,15 @@ function PetAdventureProxy:HandleQuestResultData(item, time)
   data:SetData(item)
   for i = 1, #self.questData do
     if self.questData[i].id == data.id then
+      if self.questData[i].statusSortID == PetAdventureProxy.QuestPhase.Activity and data.statusSortID ~= PetAdventureProxy.QuestPhase.Activity then
+        data.activityStartTime = self.questData[i].activityStartTime
+        data.activityEndTime = self.questData[i].activityEndTime
+        data.statusSortID = PetAdventureProxy.QuestPhase.Activity
+      end
       if data.status == PetAdventureProxy.QuestPhase.SUBMIT then
         table.remove(self.questData, i)
         break
-      elseif data.status == PetAdventureProxy.QuestPhase.UNDERWAY then
+      else
         self.questData[i] = data
         break
       end
@@ -170,14 +176,40 @@ function PetAdventureProxy:HandleQuestResultData(item, time)
   table.sort(self.questData, function(l, r)
     return self:_sortPetQuest(l, r)
   end)
+  self:UpdateAdventureActRedTip()
+end
+
+function PetAdventureProxy:UpdateAdventureActRedTip()
+  local redTipId = SceneTip_pb.EREDSYS_PET_ADVENTURE_ACT
+  if self:HasAvailableLimitedAdventure() then
+    RedTipProxy.Instance:UpdateRedTip(redTipId)
+  else
+    RedTipProxy.Instance:RemoveWholeTip(redTipId)
+  end
+end
+
+function PetAdventureProxy:HasAvailableLimitedAdventure()
+  for i = 1, #self.questData do
+    local questData = self.questData[i]
+    local staticData = questData and questData.staticData
+    local dailyCount = staticData and staticData.DailyAdventureCount
+    if dailyCount and 0 < dailyCount then
+      local usedCount = self.questTimes[questData.id] or 0
+      if dailyCount > usedCount then
+        return true
+      end
+    end
+  end
+  return false
 end
 
 function PetAdventureProxy:GetLeftAdventureTime(id)
   local total = Table_Pet_Adventure[id] and Table_Pet_Adventure[id].DailyAdventureCount
-  if total then
-    local times = self.questTimes[id]
-    return times and total - times or total
+  if not total or total == 0 then
+    return nil
   end
+  local times = self.questTimes[id] or 0
+  return total - times
 end
 
 function PetAdventureProxy:SetIllustratedRewardNameData(data)
@@ -198,12 +230,16 @@ end
 
 function PetAdventureProxy:HandleFinished()
   UIMultiModelUtil.Instance:RemoveModels()
+  local result
   for i = 1, #self.questData do
     if self.questData[i].id == self.chooseQuestData.id then
       self.questData[i].status = PetAdventureProxy.QuestPhase.FINISHED
-      return self.questData[i]
+      result = self.questData[i]
+      break
     end
   end
+  self:UpdateAdventureActRedTip()
+  return result
 end
 
 function PetAdventureProxy:SetChooseQuestData(data)
@@ -219,11 +255,15 @@ function PetAdventureProxy:ResetPetClickIndex()
 end
 
 function PetAdventureProxy:bPetlocked(petData)
-  local bLevelLocked = self:bLevelLocked(petData)
-  local bFriendlyLocked = self:bFriendlyLocked(petData)
+  local bConditionLocked = self:bPetAdventureLocked(petData)
   local petState = petData.phase
-  local lock = bLevelLocked or bFriendlyLocked or petState == PetAdventureProxy.PETPHASE.UNDERWAY or petState == PetAdventureProxy.PETPHASE.FIGHTING
+  local bFighting = petState == PetAdventureProxy.PETPHASE.FIGHTING or petData.IsFighting and petData:IsFighting()
+  local lock = bConditionLocked or petState == PetAdventureProxy.PETPHASE.UNDERWAY or bFighting
   return lock
+end
+
+function PetAdventureProxy:bPetAdventureLocked(petData)
+  return self:bLevelLocked(petData) or self:bFriendlyLocked(petData) or self:bContractPetLocked(petData) or self:bForbidPetLocked(petData)
 end
 
 function PetAdventureProxy:bLevelLocked(petData)
@@ -236,34 +276,32 @@ function PetAdventureProxy:bFriendlyLocked(petData)
   return petData.friendlv < GameConfig.PetAdventureMinLimit.limit_friendly_lv
 end
 
+function PetAdventureProxy:bContractPetLocked(petData)
+  local limit = self.chooseQuestData.staticData.Limit
+  if not limit or limit.IsContractPet ~= 1 then
+    return false
+  end
+  local petStaticData = Table_Pet[petData.petid]
+  local contractSkill = petStaticData and petStaticData.ContractSkill
+  return not contractSkill or next(contractSkill) == nil
+end
+
+function PetAdventureProxy:bForbidPetLocked(petData)
+  local limit = self.chooseQuestData.staticData.Limit
+  local forbidPetIDs = limit and limit.ForbidPetID
+  return forbidPetIDs and TableUtility.ArrayFindIndex(forbidPetIDs, petData.petid) > 0
+end
+
 function PetAdventureProxy:GetOwnPetsData()
   local allPets = {}
-  if self.battlePet then
-    for i = 1, #self.battlePet do
-      self.battlePet[i].phase = PetAdventureProxy.PETPHASE.FIGHTING
-      table.insert(allPets, self.battlePet[i])
-    end
-  end
   local bagPet = BagProxy.Instance:GetMyPetEggs()
   if bagPet then
     for i = 1, #bagPet do
       local pet = bagPet[i].petEggInfo
-      pet.phase = PetAdventureProxy.PETPHASE.MATCH
-      pet.guid = bagPet[i].id
-      table.insert(allPets, pet)
-    end
-  end
-  for i = 1, #self.questData do
-    local data = self.questData[i]
-    if data and data.status == PetAdventureProxy.QuestPhase.UNDERWAY or data.status == PetAdventureProxy.QuestPhase.FINISHED then
-      local petEggs = data.petEggs
-      if petEggs then
-        for j = 1, #petEggs do
-          if petEggs[j] and 0 ~= petEggs[j] then
-            petEggs[j].phase = PetAdventureProxy.PETPHASE.UNDERWAY
-            table.insert(allPets, petEggs[j])
-          end
-        end
+      if pet then
+        pet.phase = pet:IsFighting() and PetAdventureProxy.PETPHASE.FIGHTING or PetAdventureProxy.PETPHASE.MATCH
+        pet.guid = bagPet[i].id
+        table.insert(allPets, pet)
       end
     end
   end
@@ -358,7 +396,11 @@ function PetAdventureProxy:GetFightEfficiency()
       local blvdelta = petLv - lvLimit
       local flvdelta = matchPetData[i].friendlv
       local petId = matchPetData[i].petid
-      local param = Table_Pet[petId] and Table_Pet[petId].Area[area]
+      local petStaticData = Table_Pet[petId]
+      local param = petStaticData and petStaticData.Area and petStaticData.Area[area]
+      if nil == param then
+        param = 1
+      end
       local petNum = chooseQuestData.staticData.PetNum
       local petEffData = {}
       local PetFunLv, PetFLv, areaEff

@@ -10027,7 +10027,7 @@ function ServiceNUserAutoProxy:CallPaySignRewardUserCmd(activityid, info, free)
   end
 end
 
-function ServiceNUserAutoProxy:CallExtractionQueryUserCmd(gridcount, activeids, datas)
+function ServiceNUserAutoProxy:CallExtractionQueryUserCmd(gridcount, activeids, datas, carddatas)
   if not NetConfig.PBC then
     local msg = SceneUser2_pb.ExtractionQueryUserCmd()
     if gridcount ~= nil then
@@ -10053,6 +10053,17 @@ function ServiceNUserAutoProxy:CallExtractionQueryUserCmd(gridcount, activeids, 
       end
       for i = 1, #datas do
         table.insert(msg.datas, datas[i])
+      end
+    end
+    if carddatas ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.carddatas == nil then
+        msg.carddatas = {}
+      end
+      for i = 1, #carddatas do
+        table.insert(msg.carddatas, carddatas[i])
       end
     end
     self:SendProto(msg)
@@ -10082,6 +10093,17 @@ function ServiceNUserAutoProxy:CallExtractionQueryUserCmd(gridcount, activeids, 
       end
       for i = 1, #datas do
         table.insert(msgParam.datas, datas[i])
+      end
+    end
+    if carddatas ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.carddatas == nil then
+        msgParam.carddatas = {}
+      end
+      for i = 1, #carddatas do
+        table.insert(msgParam.carddatas, carddatas[i])
       end
     end
     self:SendProto2(msgId, msgParam)

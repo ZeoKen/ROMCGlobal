@@ -81,7 +81,33 @@ function AttrExtractionProxy:RecvExtractionQueryUserCmd(data)
       self.extractionDataMap[index]:SetActive(true)
     end
   end
+  for _, extData in pairs(self.extractionDataMap) do
+    extData:SetCards()
+  end
+  self:UpdateExtractionCardDatas(data.carddatas)
   self.needUpdateItemData = true
+end
+
+function AttrExtractionProxy:UpdateExtractionCardDatas(carddatas)
+  if not self.extractionDataMap or not carddatas then
+    return
+  end
+  for i = 1, #carddatas do
+    local cardData = carddatas[i]
+    local gridid = cardData and cardData.gridid
+    if gridid and self.extractionDataMap[gridid] then
+      self.extractionDataMap[gridid]:SetCards(cardData.cards)
+    end
+  end
+end
+
+function AttrExtractionProxy:RecvExtractionCardUserCmd(data)
+  if data and data.data then
+    self:UpdateExtractionCardDatas({
+      data.data
+    })
+    self.needUpdateItemData = true
+  end
 end
 
 function AttrExtractionProxy:RecvExtractionOperateUserCmd(data)

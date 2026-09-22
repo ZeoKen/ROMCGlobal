@@ -1426,6 +1426,26 @@ function ServiceAuctionCCmdAutoProxy:CallUpdateAuctionInfoCCmd(iteminfo, batchid
       end
       msg.iteminfo.itemdata.egg.quick_pack_slot = iteminfo.itemdata.egg.quick_pack_slot
     end
+    if iteminfo.itemdata.egg ~= nil and iteminfo.itemdata.egg.hatched_by_char ~= nil then
+      if msg.iteminfo.itemdata == nil then
+        msg.iteminfo.itemdata = {}
+      end
+      if msg.iteminfo.itemdata.egg == nil then
+        msg.iteminfo.itemdata.egg = {}
+      end
+      msg.iteminfo.itemdata.egg.hatched_by_char = iteminfo.itemdata.egg.hatched_by_char
+    end
+    if iteminfo ~= nil and iteminfo.itemdata.egg.char_quick_pack_slots ~= nil then
+      if msg.iteminfo.itemdata.egg == nil then
+        msg.iteminfo.itemdata.egg = {}
+      end
+      if msg.iteminfo.itemdata.egg.char_quick_pack_slots == nil then
+        msg.iteminfo.itemdata.egg.char_quick_pack_slots = {}
+      end
+      for i = 1, #iteminfo.itemdata.egg.char_quick_pack_slots do
+        table.insert(msg.iteminfo.itemdata.egg.char_quick_pack_slots, iteminfo.itemdata.egg.char_quick_pack_slots[i])
+      end
+    end
     if iteminfo.itemdata.letter ~= nil and iteminfo.itemdata.letter.sendUserName ~= nil then
       if msg.iteminfo.itemdata == nil then
         msg.iteminfo.itemdata = {}
@@ -3396,6 +3416,26 @@ function ServiceAuctionCCmdAutoProxy:CallUpdateAuctionInfoCCmd(iteminfo, batchid
         msgParam.iteminfo.itemdata.egg = {}
       end
       msgParam.iteminfo.itemdata.egg.quick_pack_slot = iteminfo.itemdata.egg.quick_pack_slot
+    end
+    if iteminfo.itemdata.egg ~= nil and iteminfo.itemdata.egg.hatched_by_char ~= nil then
+      if msgParam.iteminfo.itemdata == nil then
+        msgParam.iteminfo.itemdata = {}
+      end
+      if msgParam.iteminfo.itemdata.egg == nil then
+        msgParam.iteminfo.itemdata.egg = {}
+      end
+      msgParam.iteminfo.itemdata.egg.hatched_by_char = iteminfo.itemdata.egg.hatched_by_char
+    end
+    if iteminfo ~= nil and iteminfo.itemdata.egg.char_quick_pack_slots ~= nil then
+      if msgParam.iteminfo.itemdata.egg == nil then
+        msgParam.iteminfo.itemdata.egg = {}
+      end
+      if msgParam.iteminfo.itemdata.egg.char_quick_pack_slots == nil then
+        msgParam.iteminfo.itemdata.egg.char_quick_pack_slots = {}
+      end
+      for i = 1, #iteminfo.itemdata.egg.char_quick_pack_slots do
+        table.insert(msgParam.iteminfo.itemdata.egg.char_quick_pack_slots, iteminfo.itemdata.egg.char_quick_pack_slots[i])
+      end
     end
     if iteminfo.itemdata.letter ~= nil and iteminfo.itemdata.letter.sendUserName ~= nil then
       if msgParam.iteminfo.itemdata == nil then

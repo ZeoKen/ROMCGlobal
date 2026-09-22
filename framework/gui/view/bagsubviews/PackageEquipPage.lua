@@ -172,6 +172,7 @@ function PackageEquipPage:InitEquipCtl()
       obj = self:LoadPreferb("cell/RoleEquipItemCell", equipGrid)
       obj.name = "RoleEquipItemCell" .. i
       self.roleEquips[i] = MyselfEquipItemCell.new(obj, i)
+      self.roleEquips[i]:SetSnowManualRedTipEnabled(true)
       self.roleEquips[i]:AddEventListener(MouseEvent.MouseClick, self.ClickEquip, self)
       self.roleEquips[i]:AddEventListener(MouseEvent.DoubleClick, self.DoubleClickEquip, self)
     end
@@ -205,6 +206,7 @@ function PackageEquipPage:InitFoldedEquipCtl()
         local equipGO = self:FindGO("RoleEquipItemCell", go)
         if equipGO then
           local roleEquipCell = MyselfEquipItemCell.new(equipGO, v)
+          roleEquipCell:SetSnowManualRedTipEnabled(true)
           roleEquipCell:AddEventListener(MouseEvent.MouseClick, self.ClickEquip, self)
           roleEquipCell:AddEventListener(MouseEvent.DoubleClick, self.DoubleClickEquip, self)
           self.roleEquips[v] = roleEquipCell

@@ -1845,8 +1845,7 @@ Table_PoemStep = {
     id = 16,
     Questid = 600540002,
     name = "月狼传说·故事一",
-    Descrip = Table_PoemStep_t.Descrip[16],
-    TraceInfo = "灾祸的代名词--芬里尔"
+    Descrip = Table_PoemStep_t.Descrip[16]
   },
   [17] = {
     id = 17,
@@ -1867,6 +1866,7 @@ Table_PoemStep = {
   [19] = {
     id = 19,
     Questid = 600550002,
+    name = "默斯曼·岁月·故事一",
     Descrip = Table_PoemStep_t.Descrip[19],
     TraceInfo = "黄金时钟暗处的危机"
   },
@@ -2286,7 +2286,6 @@ Table_PoemStep = {
   [74] = {
     id = 74,
     Questid = 311120021,
-    name = "固特伊·故事一",
     Descrip = Table_PoemStep_t.Descrip[74],
     TraceInfo = "锻造也需要实力"
   },
@@ -2422,7 +2421,8 @@ Table_PoemStep = {
     id = 91,
     name = "拉武雷·故事三",
     step = 7,
-    Descrip = Table_PoemStep_t.Descrip[91]
+    Descrip = Table_PoemStep_t.Descrip[91],
+    TraceInfo = "古魔法--禁·神灵之咒"
   },
   [92] = {
     id = 92,
@@ -2796,9 +2796,9 @@ local cell_mt = {
   __index = {
     Descrip = _EmptyTable,
     Questid = 311150001,
-    TraceInfo = "古魔法--禁·神灵之咒",
+    TraceInfo = "灾祸的代名词--芬里尔",
     id = 1,
-    name = "默斯曼·岁月·故事一",
+    name = "固特伊·故事一",
     step = 0
   }
 }

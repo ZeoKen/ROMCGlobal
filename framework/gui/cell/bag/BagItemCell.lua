@@ -19,6 +19,11 @@ function BagItemCell:Init()
   self.unlock = self:FindGO("Unlock")
   self.emptyTip = self:FindGO("EmptyTip")
   self.petAdvDot = self:FindGO("PetAdvDot")
+  self.petUsing = self:FindGO("PetUsing")
+  self.petUsingLab = self:FindComponent("UsingLab", UILabel, self.petUsing)
+  if self.petUsingLab then
+    self.petUsingLab.text = ZhString.FightPet_UsingByOtherChar
+  end
   self.petFighting = self:FindComponent("PetFighting", UISprite)
   self.petPvp = self:FindComponent("PetPvp", UISprite)
   self.favoriteTip = self:FindGO("FavoriteTip")
@@ -29,6 +34,20 @@ function BagItemCell:Init()
   self.recommend = self:FindGO("Recommend")
   if self.recommend then
     self.recommend:SetActive(false)
+  end
+  self.toggle = self:FindComponent("Toggle", UIToggle)
+  self.toggleGO = self.toggle and self.toggle.gameObject
+  self.showToggle = false
+  if self.toggle then
+    self.toggleGO:SetActive(false)
+    EventDelegate.Set(self.toggle.onChange, function()
+      if self.ignoreToggleEvent then
+        return
+      end
+      if self.toggleChangeCallback then
+        self.toggleChangeCallback(self, self.toggle.value)
+      end
+    end)
   end
   self:AddCellDoubleClickEvt()
 end
@@ -53,6 +72,7 @@ function BagItemCell:SetData(data)
   self:UpdateGuideTarget()
   self:UpdateGetFlag()
   self:UpdateCheckMark()
+  self:UpdateToggle()
 end
 
 function BagItemCell:UpdateGetFlag()
@@ -150,6 +170,7 @@ function BagItemCell:UpdatePetFighting(data)
   if not BagItemCell.CheckData(data) then
     self:Hide(self.petFighting)
     self:Hide(self.petPvp)
+    self:Hide(self.petUsing)
     return
   end
   local eggInfo = data.petEggInfo
@@ -169,6 +190,11 @@ function BagItemCell:UpdatePetFighting(data)
     else
       self.cdCtrl:Remove(self)
     end
+  end
+  if eggInfo and eggInfo:IsFightingByOther() then
+    self:Show(self.petUsing)
+  else
+    self:Hide(self.petUsing)
   end
 end
 
@@ -294,11 +320,25 @@ function BagItemCell:CheckNoviceTechTreeTip()
   return false
 end
 
+local snowManualItemId = 45563
+local snowManualRedTipId = SceneTip_pb.EREDSYS_SNOWMANUAL or 10788
+
+function BagItemCell:CheckSnowManualTip()
+  if not self.petAdvDot then
+    return
+  end
+  local d = self.data
+  if d and d.staticData and d.staticData.id == snowManualItemId then
+    return RedTipProxy.Instance:InRedTip(snowManualRedTipId)
+  end
+  return false
+end
+
 function BagItemCell:CheckRedTip()
   if not self.petAdvDot then
     return
   end
-  if self:CheckSignIn21Tip() or self:CheckPetAdventureTip() or self:CheckManorBookTip() or self:CheckEvidenceBookTip() or self:CheckNoviceTechTreeTip() then
+  if self:CheckSignIn21Tip() or self:CheckPetAdventureTip() or self:CheckManorBookTip() or self:CheckEvidenceBookTip() or self:CheckNoviceTechTreeTip() or self:CheckSnowManualTip() then
     self.petAdvDot:SetActive(true)
   else
     self.petAdvDot:SetActive(false)
@@ -402,4 +442,35 @@ function BagItemCell:GetCheckMarkActive()
     return self.checkMark.activeSelf
   end
   return false
+end
+
+function BagItemCell:SetToggleActive(active)
+  self.showToggle = active == true
+  self:UpdateToggle()
+end
+
+function BagItemCell:SetToggleChangeEvent(callback)
+  self.toggleChangeCallback = callback
+end
+
+function BagItemCell:SetToggleValue(value, silence)
+  if not self.toggle then
+    return
+  end
+  if silence then
+    self.ignoreToggleEvent = true
+  end
+  self.toggle.value = value == true
+  if silence then
+    self.ignoreToggleEvent = false
+  end
+end
+
+function BagItemCell:UpdateToggle()
+  if not self.toggleGO then
+    return
+  end
+  local active = self.showToggle == true and BagItemCell.CheckData(self.data)
+  self.toggleGO:SetActive(active)
+  self:SetToggleValue(active and self.data and self.data.isQuickBuffSelected == true, true)
 end

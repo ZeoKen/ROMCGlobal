@@ -806,13 +806,15 @@ function SpriteLabel:SetRichLabelByLine(text, lineIdx, checkSpace)
       curText = curText .. curChar
       if i == processIcon then
         local iconStr = table.remove(icons, 1)
-        rllog(curText, NGUIText.CalculatePrintedSize(curText).x, self.iconWidth)
-        local d = {}
-        d.info = iconStr
-        d.posX = NGUIText.CalculatePrintedSize(curText).x - self.iconWidth / 2
-        d.posY = self.richLabelLines
-        rllog("显示图片", iconStr, d.posX, d.posY)
-        table.insert(self.icons_info, d)
+        if iconStr then
+          rllog(curText, NGUIText.CalculatePrintedSize(curText).x, self.iconWidth)
+          local d = {}
+          d.info = iconStr
+          d.posX = NGUIText.CalculatePrintedSize(curText).x - self.iconWidth / 2
+          d.posY = self.richLabelLines
+          rllog("显示图片", iconStr, d.posX, d.posY)
+          table.insert(self.icons_info, d)
+        end
       end
     else
       local breakWithinIcon = false
@@ -844,10 +846,22 @@ function SpriteLabel:SetRichLabelByLine(text, lineIdx, checkSpace)
             rllog("空格换行", curText, oneline, lastSpaceIndex)
             curText = utf8sub(curText, lastSpaceIndex + 1, curTextLen - lastSpaceIndex)
           else
-            rllog("空格换行但没找到空格", curText, curWidth)
-            oneline = utf8sub(curText, 1, utf8len(curText) - 1)
-            res = res .. oneline .. "\n"
-            curText = curChar
+            local numberStartIndex = curTextLen
+            if (BranchMgr.IsKorea() or BranchMgr.IsNOKR()) and string.match(curChar, "%d") then
+              while 1 < numberStartIndex and string.match(utf8sub(curText, numberStartIndex - 1, 1), "%d") do
+                numberStartIndex = numberStartIndex - 1
+              end
+            end
+            if 1 < numberStartIndex then
+              oneline = utf8sub(curText, 1, numberStartIndex - 1)
+              res = res .. oneline .. "\n"
+              curText = utf8sub(curText, numberStartIndex, curTextLen - numberStartIndex + 1)
+            else
+              rllog("空格换行但没找到空格", curText, curWidth)
+              oneline = utf8sub(curText, 1, utf8len(curText) - 1)
+              res = res .. oneline .. "\n"
+              curText = curChar
+            end
           end
         else
           rllog("任意换行", curText, curWidth)
@@ -897,6 +911,11 @@ function SpriteLabel:SetRichLabelByLine(text, lineIdx, checkSpace)
 end
 
 function SpriteLabel:AddSprite2(data)
+  local dataType = type(data)
+  local info = dataType == "table" and data.info or nil
+  if dataType ~= "table" or type(info) ~= "string" then
+    return
+  end
   local icon, itemData
   for str, id in string.gmatch(data.info, SpriteLabel.PatternMap.item) do
     icon, itemData = self:CreateSprite(), Table_Item[tonumber(id)]

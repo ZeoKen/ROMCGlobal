@@ -3,6 +3,16 @@ autoImport("ColliderItemCell")
 autoImport("ActivityPaySignView")
 ActivityIntegrationStepRechargeSubView = class("ActivityIntegrationStepRechargeSubView", SubView)
 local Prefab_Path = ResourcePathHelper.UIView("ActivityIntegrationStepRechargeSubView")
+local StageExpandTick = 1062
+local StageExpandDuration = 300
+local StageFadeDuration = 200
+local BaseStageCount = 9
+local StageItemsPerRow = 3
+local StageRowHeight = 210
+local StagePanelPadding = 10
+local StageHiddenAlpha = 0.01
+local StageGroupYStart = -314
+local StageGroupYStep = 200
 
 function ActivityIntegrationStepRechargeSubView:Init()
   if self.inited then
@@ -28,10 +38,9 @@ function ActivityIntegrationStepRechargeSubView:FindObjs()
   self.bgTex = self:FindComponent("BgTexture", UITexture, self.gameObject)
   self.panelGO = self:FindGO("Panel", self.gameObject)
   if self.panelGO then
-    self.scrollView = self:FindComponent("Scroll View", UIScrollView, self.panelGO)
-  else
-    self.scrollView = self:FindComponent("Scroll View", UIScrollView, self.gameObject)
+    self.panelWidget = self.panelGO:GetComponent(UIWidget)
   end
+  self.mainScrollView = self:FindComponent("MainScrollView", UIScrollView, self.gameObject)
   self.freePart = self:FindGO("FreePart", self.gameObject)
   self.getFreeBtn = self:FindGO("GetFreeBtn", self.gameObject)
   self.geted = self:FindGO("Geted", self.gameObject)
@@ -59,8 +68,10 @@ function ActivityIntegrationStepRechargeSubView:FindObjs()
     end)
   end
   self.stageCells = {}
+  self.stageGOs = {}
+  self.stageWidgets = {}
   local holderCount = 0
-  for i = 1, 9 do
+  for i = 1, BaseStageCount do
     local go = self:FindGO(tostring(i), self.gameObject)
     if go then
       holderCount = holderCount + 1
@@ -68,8 +79,15 @@ function ActivityIntegrationStepRechargeSubView:FindObjs()
       cell:AddEventListener(StepRechargeEvent.Buy, self.HandleClickBuy, self)
       cell:AddEventListener(StepRechargeEvent.Receive, self.HandleClickReceive, self)
       self.stageCells[i] = cell
+      self.stageGOs[i] = go
+      self.stageWidgets[i] = go:GetComponent(UIWidget)
+      if self.stageWidgets[i] then
+        self.stageWidgets[i].alpha = StageHiddenAlpha
+      end
+      go:SetActive(false)
     end
   end
+  self.stageNodeCount = holderCount
   if holderCount == 0 then
     local grid
     if self.panelGO then
@@ -144,7 +162,9 @@ end
 
 function ActivityIntegrationStepRechargeSubView:OnEnter(id)
   self:UnRegisterRedTips()
+  self:StopStageExpandAnimation()
   self.activityId = self:ResolveActivityId(id)
+  self.visibleStageCount = nil
   self.staticData = Table_ActivityNew and Table_ActivityNew[self.activityId]
   if not self.staticData and id and Table_ActivityIntegration then
     self.staticData = Table_ActivityIntegration[id]
@@ -169,11 +189,15 @@ end
 
 function ActivityIntegrationStepRechargeSubView:OnHide()
   self:UnRegisterRedTips()
+  self:StopStageExpandAnimation()
+  self:HideAllStages()
   TimeTickManager.Me():ClearTick(self, 1061)
 end
 
 function ActivityIntegrationStepRechargeSubView:OnExit()
   self:UnRegisterRedTips()
+  self:StopStageExpandAnimation()
+  self:HideAllStages()
   if self.bgTexName and self.bgTex then
     PictureManager.Instance:UnloadActivityTexture(self.bgTexName, self.bgTex)
     self.bgTexName = nil
@@ -258,7 +282,7 @@ function ActivityIntegrationStepRechargeSubView:RefreshStageReceiveRedTips()
     return
   end
   if self.stageCells then
-    for i = 1, #self.stageCells do
+    for i = 1, self.stageNodeCount do
       self:RegisterStageReceiveRedTip(self.stageCells[i])
     end
   end
@@ -284,7 +308,7 @@ function ActivityIntegrationStepRechargeSubView:UnRegisterStageReceiveRedTips()
     end
   end
   if self.stageCells then
-    for i = 1, #self.stageCells do
+    for i = 1, self.stageNodeCount do
       local cell = self.stageCells[i]
       if cell and cell.receiveBtn then
         RedTipProxy.Instance:UnRegisterUI(SceneTip_pb.EREDSYS_TIERED_BUNDLE, cell.receiveBtn)
@@ -388,21 +412,213 @@ function ActivityIntegrationStepRechargeSubView:RefreshStages()
       }
     end
     self.stageList:ResetDatas(datas)
-    if self.scrollView then
-      self.scrollView:ResetPosition()
-    end
     return
   end
-  for i = 1, #self.stageCells do
+  self:EnsureStageNodes(#list)
+  local visibleStageCount = self:GetVisibleStageCount(list)
+  self:RefreshStageDisplay(visibleStageCount)
+  for i = 1, self.stageNodeCount do
     local cell = self.stageCells[i]
     if cell then
-      local cfg = list[i]
+      local cfg = i <= visibleStageCount and list[i] or nil
       cell:SetData(cfg and {
         activityId = self.activityId,
         staticData = cfg
       } or nil)
     end
   end
+  self:MoveMainScrollToOperableStage()
+end
+
+function ActivityIntegrationStepRechargeSubView:EnsureStageNodes(count)
+  if count <= self.stageNodeCount then
+    return
+  end
+  for i = self.stageNodeCount + 1, count do
+    local groupIndex = math.ceil(i / StageItemsPerRow)
+    local templateIndex = groupIndex % 2 == 0 and 4 + (i - 1) % StageItemsPerRow or 7 + (i - 1) % StageItemsPerRow
+    local templateGO = self.stageGOs[templateIndex]
+    if not templateGO then
+      redlog("ActivityIntegrationStepRechargeSubView missing stage template", templateIndex)
+      return
+    end
+    local go = self:CopyGameObject(templateGO)
+    go.name = tostring(i)
+    local x, _, z = LuaGameObject.GetLocalPositionGO(templateGO)
+    local y = StageGroupYStart - (groupIndex - 2) * StageGroupYStep
+    LuaGameObject.SetLocalPositionGO(go, x, y, z)
+    local cell = StepRechargeCell.new(go)
+    cell:AddEventListener(StepRechargeEvent.Buy, self.HandleClickBuy, self)
+    cell:AddEventListener(StepRechargeEvent.Receive, self.HandleClickReceive, self)
+    self.stageCells[i] = cell
+    self.stageGOs[i] = go
+    self.stageWidgets[i] = go:GetComponent(UIWidget)
+    if self.stageWidgets[i] then
+      self.stageWidgets[i].alpha = StageHiddenAlpha
+    end
+    go:SetActive(false)
+    self.stageNodeCount = i
+  end
+end
+
+function ActivityIntegrationStepRechargeSubView:MoveMainScrollToOperableStage()
+  local targetGO
+  for i = 1, math.min(self.visibleStageCount or 0, self.stageNodeCount) do
+    local cell = self.stageCells[i]
+    local cfg = cell and cell.staticData
+    if cfg and (ActivityTieredBundleProxy.Instance:CanReceive(self.activityId, cfg) or ActivityTieredBundleProxy.Instance:CanBuy(self.activityId, cfg)) then
+      targetGO = cell.gameObject
+      break
+    end
+  end
+  local panel = self.mainScrollView and self.mainScrollView.panel
+  if not targetGO or not panel then
+    return
+  end
+  local bound = NGUIMath.CalculateRelativeWidgetBounds(panel.cachedTransform, targetGO.transform)
+  local offset = panel:CalculateConstrainOffset(bound.min, bound.max)
+  self.mainScrollView:MoveRelative(Vector3(0, offset.y, 0))
+end
+
+function ActivityIntegrationStepRechargeSubView:GetVisibleStageCount(list)
+  local count = list and #list or 0
+  local allPreviousFinished = true
+  for i = 1, count do
+    local cfg = list[i]
+    if tonumber(cfg.Step) == 1 and not allPreviousFinished then
+      return i - 1
+    end
+    if not ActivityTieredBundleProxy.Instance:IsStageFinished(self.activityId, cfg) then
+      allPreviousFinished = false
+    end
+  end
+  return count
+end
+
+function ActivityIntegrationStepRechargeSubView:RefreshStageDisplay(visibleStageCount)
+  local previousStageCount = self.visibleStageCount
+  self.visibleStageCount = visibleStageCount
+  local activatedFrom
+  for i = 1, self.stageNodeCount do
+    local shouldShow = i <= visibleStageCount
+    if self.stageGOs[i] then
+      if shouldShow and not self.stageGOs[i].activeSelf then
+        activatedFrom = activatedFrom and math.min(activatedFrom, i) or i
+        if self.stageWidgets[i] then
+          self.stageWidgets[i].alpha = StageHiddenAlpha
+        end
+        self.stageGOs[i]:SetActive(true)
+      elseif not shouldShow then
+        self.stageGOs[i]:SetActive(false)
+      end
+    end
+  end
+  local rowCount = math.ceil(visibleStageCount / StageItemsPerRow)
+  local targetHeight = StagePanelPadding + rowCount * StageRowHeight
+  if self.stageAnimatingVisibleCount == visibleStageCount then
+    return
+  end
+  if previousStageCount == nil and 0 < visibleStageCount then
+    if self.panelWidget then
+      self.panelWidget.height = targetHeight
+    end
+    self:StartStageExpandAnimation(targetHeight, 1, visibleStageCount, true)
+    return
+  end
+  if previousStageCount and visibleStageCount > previousStageCount then
+    self:StartStageExpandAnimation(targetHeight, previousStageCount + 1, visibleStageCount)
+    return
+  end
+  if activatedFrom and 0 < visibleStageCount then
+    if self.panelWidget then
+      self.panelWidget.height = targetHeight
+    end
+    self:StartStageExpandAnimation(targetHeight, activatedFrom, visibleStageCount, true)
+    return
+  end
+  self:StopStageExpandAnimation()
+  if self.panelWidget then
+    self.panelWidget.height = targetHeight
+  end
+  self:RefreshStageAlphas()
+end
+
+function ActivityIntegrationStepRechargeSubView:RefreshStageAlphas()
+  for i = 1, self.stageNodeCount do
+    if self.stageWidgets[i] then
+      self.stageWidgets[i].alpha = i <= (self.visibleStageCount or 0) and 1 or StageHiddenAlpha
+    end
+  end
+end
+
+function ActivityIntegrationStepRechargeSubView:HideAllStages()
+  if not self.stageGOs then
+    return
+  end
+  for i = 1, self.stageNodeCount do
+    if self.stageWidgets[i] then
+      self.stageWidgets[i].alpha = StageHiddenAlpha
+    end
+    if self.stageGOs[i] then
+      self.stageGOs[i]:SetActive(false)
+    end
+  end
+end
+
+function ActivityIntegrationStepRechargeSubView:StartStageExpandAnimation(targetHeight, fadeFrom, fadeTo, skipExpand)
+  self:StopStageExpandAnimation()
+  self.stageAnimatingVisibleCount = fadeTo
+  for i = fadeFrom, fadeTo do
+    if self.stageWidgets[i] then
+      self.stageWidgets[i].alpha = StageHiddenAlpha
+    end
+  end
+  self.stageExpandStartHeight = self.panelWidget and self.panelWidget.height or targetHeight
+  self.stageExpandTargetHeight = targetHeight
+  self.stageExpandElapsed = 0
+  self.stageFadeFrom = fadeFrom
+  self.stageFadeTo = fadeTo
+  self.stageAnimationPhase = not (not self.panelWidget or skipExpand) and "expand" or "fade"
+  TimeTickManager.Me():CreateTick(0, 16, self.UpdateStageExpandAnimation, self, StageExpandTick)
+end
+
+function ActivityIntegrationStepRechargeSubView:UpdateStageExpandAnimation(deltaTime)
+  self.stageExpandElapsed = self.stageExpandElapsed + deltaTime
+  if self.stageAnimationPhase == "expand" then
+    local progress = math.min(self.stageExpandElapsed / StageExpandDuration, 1)
+    self.panelWidget.height = math.floor(self.stageExpandStartHeight + (self.stageExpandTargetHeight - self.stageExpandStartHeight) * progress + 0.5)
+    self:MoveMainScrollToOperableStage()
+    if 1 <= progress then
+      self.stageAnimationPhase = "fade"
+      self.stageExpandElapsed = 0
+    end
+    return
+  end
+  local progress = math.min(self.stageExpandElapsed / StageFadeDuration, 1)
+  for i = self.stageFadeFrom, self.stageFadeTo do
+    if self.stageWidgets[i] then
+      self.stageWidgets[i].alpha = math.max(progress, StageHiddenAlpha)
+    end
+  end
+  if 1 <= progress then
+    self:StopStageExpandAnimation()
+  end
+end
+
+function ActivityIntegrationStepRechargeSubView:ClearStageExpandTick()
+  TimeTickManager.Me():ClearTick(self, StageExpandTick)
+  self.stageExpandStartHeight = nil
+  self.stageExpandTargetHeight = nil
+  self.stageExpandElapsed = nil
+  self.stageFadeFrom = nil
+  self.stageFadeTo = nil
+  self.stageAnimationPhase = nil
+end
+
+function ActivityIntegrationStepRechargeSubView:StopStageExpandAnimation()
+  self:ClearStageExpandTick()
+  self.stageAnimatingVisibleCount = nil
+  self:RefreshStageAlphas()
 end
 
 function ActivityIntegrationStepRechargeSubView:UpdateLeftTime()

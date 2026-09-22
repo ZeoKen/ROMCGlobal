@@ -6077,6 +6077,18 @@ Table_Map = {
     TeleportMapType = 4,
     DamReduce = 1
   },
+  [7660] = {
+    id = 7660,
+    NameZh = "##44717394",
+    NameEn = "sc_jfmfds_001",
+    CallZh = "##44717394",
+    MapScale = 80,
+    Camera = 1,
+    MapArea = 1,
+    MapUi = 7,
+    NoCat = 1,
+    TeleportMapType = 4
+  },
   [7661] = {
     id = 7661,
     NameZh = "##44726396",

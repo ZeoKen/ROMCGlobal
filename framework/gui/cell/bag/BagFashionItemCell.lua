@@ -118,18 +118,21 @@ function BagFashionItemCell:TrySetFashionHide(advFashion, isFashionHide)
 end
 
 function BagFashionItemCell:CheckRedTip()
-  if self.isActive then
-    local bagItemCell = self:FindGO("Common_BagItemCell")
-    local itemid = (not self.fashionItemData.isAdventureItemData or not self.fashionItemData.staticId) and self.fashionItemData.staticData and self.fashionItemData.staticData.id
-    if itemid then
-      RedTipProxy.Instance:RegisterUI(SceneTip_pb.EREDSYS_ASTRAL_NEW_FASHION, bagItemCell, 60, nil, nil, itemid)
-    else
-      RedTipProxy.Instance:UnRegisterUI(SceneTip_pb.EREDSYS_ASTRAL_NEW_FASHION, bagItemCell)
-    end
-  else
-    local bagItemCell = self:FindGO("Common_BagItemCell")
-    RedTipProxy.Instance:UnRegisterUI(SceneTip_pb.EREDSYS_ASTRAL_NEW_FASHION, bagItemCell)
+  local bagItemCell = self:FindGO("Common_BagItemCell")
+  local itemid
+  if self.isActive and self.fashionItemData then
+    itemid = self.fashionItemData.isAdventureItemData and self.fashionItemData.staticId or self.fashionItemData.staticData and self.fashionItemData.staticData.id
   end
+  if not itemid then
+    RedTipProxy.Instance:UnRegisterUI(SceneTip_pb.EREDSYS_ASTRAL_NEW_FASHION, bagItemCell)
+    self.redTipItemId = nil
+    return
+  end
+  if self.redTipItemId ~= itemid then
+    RedTipProxy.Instance:UnRegisterUI(SceneTip_pb.EREDSYS_ASTRAL_NEW_FASHION, bagItemCell)
+    self.redTipItemId = itemid
+  end
+  RedTipProxy.Instance:RegisterUI(SceneTip_pb.EREDSYS_ASTRAL_NEW_FASHION, bagItemCell, 60, nil, nil, itemid)
 end
 
 function BagFashionItemCell:HandleBrowseRedtip()

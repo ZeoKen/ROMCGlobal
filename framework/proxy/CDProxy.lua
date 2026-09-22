@@ -3,6 +3,16 @@ CDProxy.Instance = nil
 CDProxy.NAME = "CDProxy"
 CDProxy.CommunalSkillCDID = -1000
 CDProxy.CommunalSkillCDSortID = -1
+CDProxy.DynamicCDItemIDs = {8467}
+local dynamicCDItemMap = {}
+for i = 1, #CDProxy.DynamicCDItemIDs do
+  dynamicCDItemMap[CDProxy.DynamicCDItemIDs[i]] = true
+end
+
+function CDProxy.IsDynamicCDItem(id)
+  return dynamicCDItemMap[id] == true
+end
+
 local ClientSkillErrorCD = 0
 local CDType = {
   Skill = SceneUser2_pb.CD_TYPE_SKILL,
@@ -41,10 +51,17 @@ end
 function CDProxy:AddCD(cdType, id, time)
   local nowtime = ServerTime.CurServerTime()
   local cd = (time - nowtime) / 1000
+  local isDynamicItemCD = cdType == CDType.Item and CDProxy.IsDynamicCDItem(id)
   local map = self:GetCDMapByType(cdType)
   local data = map[id]
   local needRefresh = false
   if data then
+    if isDynamicItemCD then
+      data.cd = cd
+      data.cdMax = cd
+      data:SetTime(time)
+      return data, true
+    end
     if data.cd and data.cd == 0 then
       data.cd = cd
     end
@@ -56,7 +73,11 @@ function CDProxy:AddCD(cdType, id, time)
   else
     local cdMax
     if cdType == CDType.Item then
-      cdMax = DungeonProxy.GetRoguelikeItemCdTime(id) or Table_UseItem[id] and Table_UseItem[id].CDTime
+      if isDynamicItemCD then
+        cdMax = cd
+      else
+        cdMax = DungeonProxy.GetRoguelikeItemCdTime(id) or Table_UseItem[id] and Table_UseItem[id].CDTime
+      end
     end
     data = CdData.new(time, cd, cdMax)
     map[id] = data

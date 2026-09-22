@@ -29,8 +29,15 @@ function PetDropItemCell:SetData(data)
     end
     local chooseData = PetAdventureProxy.Instance:GetChooseQuestData()
     if not data.Locked then
-      if data.rewardCount <= 1 then
-        if 0 == PetAdventureProxy.Instance:GetMatchNum() then
+      local matchNum = PetAdventureProxy.Instance:GetMatchNum()
+      if data.DynamicReward and chooseData.status == PetAdventureProxy.QuestPhase.MATCH then
+        if matchNum == 0 then
+          self:UpdateNumLabel("")
+        else
+          self:UpdateNumLabel("0~" .. math.max(1, data.rewardCount))
+        end
+      elseif 1 >= data.rewardCount then
+        if matchNum == 0 then
           self:UpdateNumLabel("")
         elseif not data.Rare and chooseData.status == PetAdventureProxy.QuestPhase.MATCH then
           self:UpdateNumLabel("0-?")

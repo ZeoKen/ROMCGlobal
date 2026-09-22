@@ -4,6 +4,8 @@ autoImport("EquipChooseBord")
 EquipCardView = class("EquipCardView", ContainerView)
 EquipCardView.BrotherView = EquipIntegrateView
 EquipCardView.ViewType = UIViewType.NormalLayer
+local ExtractionCardOperOn = 1
+local ExtractionCardOperOff = 2
 
 function EquipCardView:Init()
   self:InitView()
@@ -56,6 +58,7 @@ end
 function EquipCardView:MapEvent()
   self:AddListenEvt(ItemEvent.ItemUpdate, self.HandleCardUseSuc)
   self:AddListenEvt(ItemEvent.EquipUpdate, self.HandleCardUseSuc)
+  self:AddListenEvt(ServiceEvent.SceneUser3ExtractionCardUserCmd, self.HandleCardUseSuc)
   self:AddListenEvt(ItemEvent.EquipIntegrate_TrySelectEquip, self.ClickTargetCell)
 end
 
@@ -93,7 +96,7 @@ function EquipCardView:UpdateView(data)
   end
   self.slotSV:SetActive(true)
   self.noneTip:SetActive(false)
-  self.pos = ItemUtil.getEquipPos(data.staticData.id)
+  self.pos = self:GetCardPosByItemData(data)
   xdlog("装备", data.staticData.id, self.pos)
   self.itemCell:SetData(self.itemdata)
   self.itemCell:UpdateNumLabel(1)
@@ -145,20 +148,41 @@ function EquipCardView:UpdateCards()
   for i = 1, #items do
     local item = items[i]
     local cardInfo = item.cardInfo
-    if cardInfo and cardInfo.Position == self.pos and (not curEquipedCardInfo or curEquipedCardInfo.staticData.id ~= cardInfo.id) then
+    if self:CheckCardCanShow(item) and (not curEquipedCardInfo or curEquipedCardInfo.staticData.id ~= cardInfo.id) then
       table.insert(cards, item)
     end
   end
-  table.sort(cards, EquipCardView.CardSortRule)
+  local isShadowEquip = self.itemdata.IsServerShadowEquip and self.itemdata:IsServerShadowEquip() or false
+  table.sort(cards, function(a, b)
+    return EquipCardView.CardSortRule(a, b, isShadowEquip)
+  end)
   self.cardCtrl:ResetDatas(cards)
 end
 
-function EquipCardView.CardSortRule(a, b)
+function EquipCardView:CheckCardPos(cardInfo)
+  if not cardInfo then
+    return false
+  end
+  if self.itemdata and self.itemdata:IsExtraction() then
+    local cardPoses = self.itemdata.GetExtractionCardPoses and self.itemdata:GetExtractionCardPoses()
+    return cardPoses and TableUtility.ArrayFindIndex(cardPoses, cardInfo.Position) > 0
+  end
+  return cardInfo.Position == self.pos
+end
+
+function EquipCardView.CardSortRule(a, b, isShadowEquip)
   if a.used ~= b.used then
     return b.used ~= true
   end
   if a.used and b.used then
     return a.index < b.index
+  end
+  if isShadowEquip then
+    local aIsShadow = a.IsShadowCard and a:IsShadowCard() or false
+    local bIsShadow = b.IsShadowCard and b:IsShadowCard() or false
+    if aIsShadow ~= bIsShadow then
+      return aIsShadow
+    end
   end
   if a.staticData.Quality ~= b.staticData.Quality then
     return a.staticData.Quality > b.staticData.Quality
@@ -171,6 +195,11 @@ function EquipCardView:handleEquipCard(cell)
   local data = cell.data
   if not self.curSlotPos then
     redlog("未选择卡槽差")
+    return
+  end
+  if self.itemdata:IsExtraction() then
+    xdlog("镶嵌萃取装备", self.itemdata:GetGridId(), data.id, self.curSlotPos)
+    ServiceSceneUser3Proxy.Instance:CallExtractionCardUserCmd(ExtractionCardOperOn, self.itemdata:GetGridId(), data.id, self.curSlotPos)
     return
   end
   ServiceItemProxy.Instance:CallEquipCard(SceneItem_pb.ECARDOPER_EQUIPON, data.id, self.itemdata.id, self.curSlotPos)
@@ -186,6 +215,10 @@ function EquipCardView:handleRemoveCard(cell)
     return
   end
   xdlog("移除卡片", self.itemdata.id, self.curSlotPos)
+  if self.itemdata:IsExtraction() then
+    ServiceSceneUser3Proxy.Instance:CallExtractionCardUserCmd(ExtractionCardOperOff, self.itemdata:GetGridId(), cardid, self.curSlotPos)
+    return
+  end
   ServiceItemProxy.Instance:CallEquipCard(SceneItem_pb.ECARDOPER_EQUIPOFF, nil, self.itemdata.id, self.curSlotPos)
 end
 
@@ -238,6 +271,9 @@ function EquipCardView:HandleCardUseSuc(note)
     return
   end
   local item = BagProxy.Instance:GetItemByGuid(self.itemdata.id)
+  if not item and self.itemdata:IsExtraction() then
+    item = AttrExtractionProxy.Instance:GetActiveItemDataByEquipPos(self.itemdata:GetExtractionEquipPos())
+  end
   if item then
     xdlog("找到装备，重新设定")
     self:UpdateView(item)
@@ -283,5 +319,33 @@ function EquipCardView:GetValidEquips()
       end
     end
   end
+  local extractionProxy = AttrExtractionProxy.Instance
+  local extractionItem = extractionProxy:GetActiveOffenseItemData()
+  if extractionItem and extractionItem:GetMaxCardSlot() > 0 then
+    TableUtility.ArrayPushBack(result, extractionItem)
+  end
+  extractionItem = extractionProxy:GetActiveDefenseItemData()
+  if extractionItem and extractionItem:GetMaxCardSlot() > 0 then
+    TableUtility.ArrayPushBack(result, extractionItem)
+  end
   return result
+end
+
+function EquipCardView:GetCardPosByItemData(data)
+  if data and data:IsExtraction() then
+    local cardPoses = data.GetExtractionCardPoses and data:GetExtractionCardPoses()
+    return cardPoses and cardPoses[1]
+  end
+  return data and data.staticData and ItemUtil.getEquipPos(data.staticData.id)
+end
+
+function EquipCardView:CheckCardCanShow(item)
+  local cardInfo = item and item.cardInfo
+  if not self:CheckCardPos(cardInfo) then
+    return false
+  end
+  if self.itemdata and self.itemdata:IsExtraction() then
+    return item:IsShadowCard()
+  end
+  return true
 end

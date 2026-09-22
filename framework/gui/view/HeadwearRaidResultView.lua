@@ -63,6 +63,11 @@ end
 function HeadwearRaidResultView:InitView()
   local go = self.iswin and self:LoadPreferb_ByFullPath(ResourcePathHelper.EffectUI("59Instituteresult"), self.background) or self:LoadPreferb_ByFullPath(ResourcePathHelper.EffectUI("59Instituteresult"), self.background)
   go.transform.localPosition = LuaGeometry.GetTempVector3(359.3, 106.7)
+  local resultBgTxt = self:FindComponent("result_bg_txt", UISprite, go)
+  if resultBgTxt then
+    IconManager:SetArtFontIcon("result_bg_txt", resultBgTxt)
+    resultBgTxt:MakePixelPerfect()
+  end
   if not self.iswin then
     go:SetActive(false)
     self.staticLost:SetActive(true)

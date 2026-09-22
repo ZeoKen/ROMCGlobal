@@ -624,7 +624,7 @@ function SkillTip:_GetSkillParam(originValue, fixFunc, originZhString, floatX)
         local msg = originZhString.buff
         if fixed < 0 and fixed / fact + originValue < 0 then
           msg = originZhString.buff
-          fixed = -originValue
+          fixed = -originValue * fact
         elseif 0 < fixed then
           msg = originZhString.debuff
           signal = "+"
@@ -665,8 +665,13 @@ end
 function SkillTip:_GetMagicCastTime(staticData)
   local leadType = staticData.Lead_Type
   if leadType and leadType.type and leadType.type == SkillCastType.Magic then
-    local castTime = leadType.CCT + leadType.FCT + SkillInfo.Get_Origin_CTChange(self:GetCreature(), staticData)
-    local realCastTime = SkillInfo.GetCastTime(self:GetCreature(), staticData)
+    local creature = self:GetCreature()
+    local castTime = leadType.CCT + leadType.FCT
+    local realCastTime = castTime
+    if creature then
+      castTime = castTime + SkillInfo.Get_Origin_CTChange(creature, staticData)
+      realCastTime = SkillInfo.GetCastTime(creature, staticData)
+    end
     if not self.calPropAffect then
       realCastTime = castTime
     end

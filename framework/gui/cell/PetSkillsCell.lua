@@ -10,6 +10,10 @@ function PetSkillsCell:Init()
 end
 
 function PetSkillsCell:ClickSkill(cell)
+  local cells = self:GetCells()
+  for i = 1, #cells do
+    cells[i]:SetSelect(cells[i] == cell)
+  end
   self:PassEvent(MouseEvent.MouseClick, cell)
 end
 

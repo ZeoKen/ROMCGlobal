@@ -5,6 +5,7 @@ autoImport("ItemTipComCell")
 autoImport("UseWayTip")
 autoImport("FramePreviewTip")
 autoImport("GiftDetailTip")
+autoImport("PetSkillTip")
 local getTempV3 = LuaGeometry.GetTempVector3
 
 function ItemFloatTip:Init()
@@ -58,6 +59,7 @@ function ItemFloatTip:InitCells()
       self.cells[i]:AddEventListener(ItemTipEvent.ShowAncientRandom, self.ShowAncientRandom, self)
       self.cells[i]:AddEventListener(ItemTipEvent.ClickBufferUrl, self.ClickBufferUrl, self)
       self.cells[i]:AddEventListener(ItemTipEvent.ShowGiftDetail, self.ShowGiftDetail, self)
+      self.cells[i]:AddEventListener(ItemTipEvent.ShowPetSkillTip, self.ShowPetSkillTip, self)
     end
   end
   local cellTop = self:FindGO("3_Cell1")
@@ -321,6 +323,7 @@ function ItemFloatTip:CloseSelf()
 end
 
 function ItemFloatTip:SetData(data)
+  self:ClosePetSkillTip()
   self.data = data
   self.context = data and data.context
   self:Refresh()
@@ -504,6 +507,7 @@ function ItemFloatTip:ShowMonsterlvLocker()
 end
 
 function ItemFloatTip:OnExit()
+  self:ClosePetSkillTip()
   for _, cell in pairs(self.cells) do
     cell:Exit()
   end
@@ -515,6 +519,73 @@ function ItemFloatTip:OnExit()
   self.closecomp = nil
   self.context = nil
   return true
+end
+
+function ItemFloatTip:ShowPetSkillTip(args)
+  if not args or not args.data then
+    return
+  end
+  self:ClosePetSkillTip()
+  self.petSkillCell = args.skillCell
+  local tipsView = TipsView.Me()
+  self.petSkillTip = PetSkillTip.new("SkillTip", tipsView.gameObject)
+  self.petSkillTip:SetData({
+    data = args.data
+  })
+  self:ResetPetSkillTipPanelDepth(tipsView)
+  local stick = self.cells[1].bg
+  local side = NGUIUtil.AnchorSide.Left
+  local offset = {-205, 0}
+  local camera = NGUITools.FindCameraForLayer(stick.gameObject.layer)
+  if camera and camera:WorldToViewportPoint(stick.transform.position).x < 0.5 then
+    side = NGUIUtil.AnchorSide.Right
+    offset = {205, 0}
+  end
+  self.petSkillTip:SetPos(NGUIUtil.GetAnchorPoint(self.petSkillTip, stick, side, offset))
+  tipsView.panel:ConstrainTargetToBounds(self.petSkillTip.gameObject.transform, true)
+  
+  function self.petSkillTip.closecomp.call()
+    self:ClosePetSkillTip()
+  end
+  
+  self.petSkillTip:SetCheckClick(function()
+    local click = UICamera.selectedObject
+    return click and args.skillGrid and click.transform:IsChildOf(args.skillGrid) or false
+  end)
+  self.petSkillTip:OnEnter()
+  self:AddIgnoreBounds(self.petSkillTip.gameObject)
+end
+
+function ItemFloatTip:ResetPetSkillTipPanelDepth(tipsView)
+  local depth = tipsView.panel.depth
+  local itemPanels = Game.GameObjectUtil:GetAllComponentsInChildren(self.gameObject, UIPanel, false)
+  for i = 1, #itemPanels do
+    depth = math.max(depth, itemPanels[i].depth)
+  end
+  local panels = Game.GameObjectUtil:GetAllComponentsInChildren(self.petSkillTip.gameObject, UIPanel, false)
+  table.sort(panels, function(a, b)
+    return a.depth < b.depth
+  end)
+  for i = 1, #panels do
+    panels[i].depth = depth + i
+  end
+end
+
+function ItemFloatTip:ClosePetSkillTip()
+  if self.petSkillCell and self.petSkillCell.gameObject and not Slua.IsNull(self.petSkillCell.gameObject) then
+    self.petSkillCell:SetSelect(false)
+  end
+  self.petSkillCell = nil
+  if not self.petSkillTip then
+    return
+  end
+  local tip = self.petSkillTip
+  self.petSkillTip = nil
+  if self.closecomp then
+    self:RemoveIgnoreBounds(tip.gameObject)
+  end
+  tip:OnExit()
+  tip:DestroySelf()
 end
 
 function ItemFloatTip:ActiveFavorite()

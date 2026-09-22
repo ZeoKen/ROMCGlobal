@@ -393,9 +393,9 @@ Table_UserRecall_MvpCard = {
   },
   [23314] = {
     id = 23314,
-    OnlineTime = "2026-03-10 05:00:00",
-    UpBeginTime = "2026-03-10 05:00:00",
-    UpEndTime = "2026-03-25 05:00:00",
+    OnlineTime = "2026-10-10 05:00:00",
+    UpBeginTime = "2026-10-10 05:00:00",
+    UpEndTime = "2026-10-25 05:00:00",
     Weight = 25
   },
   [23074] = {

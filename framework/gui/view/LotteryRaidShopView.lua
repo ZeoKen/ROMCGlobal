@@ -23,7 +23,7 @@ end
 
 function LotteryRaidShopView:OnEnter()
   LotteryRaidShopView.super.OnEnter(self)
-  local config = GameConfig.LotteryRaidShop
+  local config = self.shopView and self.shopView.shopConfig or GameConfig.LotteryRaidShop
   self.bgTextureName = config and config.BgTexture
   if self.bgTextureName then
     PictureManager.Instance:SetUI(self.bgTextureName, self.bgTexture)

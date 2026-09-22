@@ -32,6 +32,7 @@ function FunctionItemFunc:ctor()
   self.funcMap.Dress = FunctionItemFunc.EquipEvt
   self.funcMap.Apply = FunctionItemFunc.ItemUseEvt
   self.funcMap.UseEffectItem = FunctionItemFunc.UseEffectItemEvt
+  self.funcMap.ConfigBuffItem = FunctionItemFunc.ConfigBuffItem
   self.funcMap.Shortcutkey = FunctionItemFunc.ShortcutkeyEvt
   self.funcMap.Sale = FunctionItemFunc.SaleEvt
   self.funcMap.Discharge = FunctionItemFunc.OffEquip_Equip
@@ -97,6 +98,7 @@ function FunctionItemFunc:ctor()
   self.checkMap.Dress = FunctionItemFunc.CheckEquip
   self.checkMap.Apply = FunctionItemFunc.CheckApply
   self.checkMap.UseEffectItem = FunctionItemFunc.CheckUseEffectItem
+  self.checkMap.ConfigBuffItem = FunctionItemFunc.CheckConfigBuffItem
   self.checkMap.GotoUse = FunctionItemFunc.CheckGotoUse
   self.checkMap.Send_WeddingDress = FunctionItemFunc.CheckSend_WeddingDress
   self.checkMap.PutFood = FunctionItemFunc.CheckPutFood
@@ -298,6 +300,12 @@ function FunctionItemFunc.ActiveEvt(data)
 end
 
 function FunctionItemFunc.ItemUseEvt(data, count, cellCtl)
+  if BagProxy.Instance:CheckIsQuickBuffPackageItem(data) then
+    FunctionSecurity.Me():UseItem(function()
+      BagProxy.Instance:UseQuickBuffConfigItems(data)
+    end, {itemData = data})
+    return
+  end
   FunctionSecurity.Me():UseItem(function()
     FunctionItemFunc.TryUseItem(data, nil, count, cellCtl)
   end, {itemData = data})
@@ -311,6 +319,16 @@ function FunctionItemFunc.UseEffectItemEvt(data, count, cellCtl)
       FunctionItemFunc.TryUseItem(data, nil, count, cellCtl)
     end
   end, {itemData = data})
+end
+
+function FunctionItemFunc.ConfigBuffItem(itemdata)
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.QuickBuffSetPopUp
+  })
+end
+
+function FunctionItemFunc.CheckConfigBuffItem(itemdata)
+  return ItemFuncState.Active
 end
 
 function FunctionItemFunc.ShortcutkeyEvt(data)
@@ -1632,7 +1650,7 @@ function FunctionItemFunc.CheckQuickPetPackIn(itemdata)
     return ItemFuncState.InActive
   end
   local egg = itemdata.petEggInfo
-  if egg.quick_pack_slot and egg.quick_pack_slot > 0 then
+  if egg:IsQuickPet() then
     return ItemFuncState.InActive
   end
   local pcfg = Table_Pet[egg.petid]
@@ -1721,7 +1739,7 @@ end
 
 function FunctionItemFunc.PetFight(itemdata)
   local egg = itemdata.petEggInfo
-  if egg and egg.quick_pack_slot and egg.quick_pack_slot == 0 and Game.MapManager:IsPVPMode() then
+  if egg and not egg:IsQuickPet() and Game.MapManager:IsPVPMode() then
     MsgManager.ShowMsgByID(43713)
     return
   end
@@ -1758,8 +1776,7 @@ function FunctionItemFunc.CallbackPet(item_data)
     MsgManager.ShowMsgByID(43465)
     return
   end
-  local eggInfo = item_data.petEggInfo
-  ServiceScenePetProxy.Instance:CallEggRestorePetCmd(eggInfo.petid)
+  ServiceScenePetProxy.Instance:CallEggRestorePetCmd(nil, item_data.id)
 end
 
 function FunctionItemFunc.CheckCallbackPet(item_data)
@@ -2117,6 +2134,9 @@ end
 function FunctionItemFunc.CheckApply(itemdata)
   local sData = itemdata and itemdata.staticData
   if sData then
+    if BagProxy.Instance:CheckIsQuickBuffPackageItem(itemdata) then
+      return ItemFuncState.Active
+    end
     local typeData = Table_ItemType[sData.Type]
     if typeData and typeData.UseNumber then
       return ItemFuncState.Active

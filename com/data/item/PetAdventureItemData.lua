@@ -7,9 +7,13 @@ function PetAdventureItemData:SetData(serviceItemData)
   self.staticData = Table_Pet_Adventure[self.id]
   self.startTime = serviceItemData.starttime
   self.status = serviceItemData.status
-  self.activityStartTime = serviceItemData.limitstart
-  self.activityEndTime = serviceItemData.limitend
-  if self.activityStartTime > 0 and self.activityEndTime > 0 then
+  self.activityStartTime = serviceItemData.limitstart or 0
+  self.activityEndTime = serviceItemData.limitend or 0
+  local isActivity = self.activityStartTime > 0 and 0 < self.activityEndTime
+  if not isActivity and self.staticData then
+    isActivity = self.staticData.DailyAdventureCount and 0 < self.staticData.DailyAdventureCount
+  end
+  if isActivity then
     self.statusSortID = PetAdventureProxy.QuestPhase.Activity
   else
     self.statusSortID = serviceItemData.status
@@ -39,6 +43,7 @@ function PetAdventureItemData:SetData(serviceItemData)
           local count = reward.items[j].base.count
           local dropItemData = PetDropItemData.new(guid, id)
           dropItemData:SetCount(count)
+          dropItemData.DynamicReward = true
           petDropItem[#petDropItem + 1] = dropItemData
         end
         self.rewardMap[monsID] = petDropItem
@@ -52,6 +57,7 @@ function PetAdventureItemData:SetData(serviceItemData)
         local count = servItem[i].base.count
         local dropItemData = PetDropItemData.new(guid, id)
         dropItemData:SetCount(count)
+        dropItemData.DynamicReward = true
         petDropItem[#petDropItem + 1] = dropItemData
       end
       self.rewardMap = petDropItem

@@ -1,6 +1,7 @@
 local BaseCell = autoImport("BaseCell")
 ItemTipBaseCell = class("ItemTipBaseCell", BaseCell)
 autoImport("TipLabelCell")
+autoImport("SkillItemData")
 ItemTipAttriType = {
   MIN_INDEX = -3,
   OwnCount = -2,
@@ -41,12 +42,12 @@ ItemTipAttriType = {
   UnLockInfo = 40,
   NoStorage = 41,
   NoMakeCard = 42,
+  ShadowCardEffectTip = 44,
   EquipCanInfo = 43,
   FoodInfo = 47,
   FoodAdvInfo = 48,
   FoodLvInfo = 49,
   PetEggInfo_Brief = 52,
-  PetEggInfo_Skill = 53,
   PetEggInfo_Equip = 54,
   EquipJobs = 55,
   NoEffectTip = 56,
@@ -54,12 +55,14 @@ ItemTipAttriType = {
   Code = 58,
   UseTime = 59,
   Desc = 60,
-  TradePrice = 61,
-  SellPrice = 62,
-  GetWay = 63,
-  MAX_INDEX = 64
+  PetEggInfo_Skill = 61,
+  TradePrice = 62,
+  SellPrice = 63,
+  GetWay = 64,
+  MAX_INDEX = 65
 }
 local ExtractionItemTipAttrTypes = {
+  ItemTipAttriType.EquipCards,
   ItemTipAttriType.EquipJobs,
   ItemTipAttriType.Code,
   ItemTipAttriType.Desc,
@@ -526,6 +529,7 @@ function ItemTipBaseCell:UpdateAttriContext()
     self:UpdateEquipAttriInfo(self.data)
     self:UpdateComposeInfo(self.data)
     self:UpdateCardAttriInfo(self.data)
+    self:UpdateShadowCardEffectTip(self.data)
     self:UpdateFoodInfo(self.data)
     self:UpdatePetEggInfo(self.data)
     self:UpdateCodeInfo(self.data)
@@ -533,6 +537,15 @@ function ItemTipBaseCell:UpdateAttriContext()
     self:UpdateMemoryAttrInfo(self.data)
   end
   self:ResetAttriDatas()
+end
+
+function ItemTipBaseCell:UpdateShadowCardEffectTip(data)
+  if data and data.IsShadowCard and data:IsShadowCard() then
+    self.contextDatas[ItemTipAttriType.ShadowCardEffectTip] = {
+      label = string.format("ExtraDesc:%s", ZhString.ItemTip_ShadowCardNoStackTip),
+      hideline = true
+    }
+  end
 end
 
 function ItemTipBaseCell:_bHairType(type)
@@ -1225,11 +1238,11 @@ function ItemTipBaseCell:UpdateEquipAttriInfo(data)
       }, data.equipedCardInfo or _EmptyTable
       local isShadowEquip = data:IsShadowEquip()
       local snowStoreMode = data.snowStoreMode
-      local useInactiveColor = isShadowEquip or snowStoreMode
       for i = 1, cardSlotNum do
         local sb = LuaStringBuilder.CreateAsTable()
-        redlog("ItemTipBaseCell:UpdateEquipAttriInfo", i, tostring(equipCards[i]))
         if equipCards[i] then
+          local isShadowCard = equipCards[i].IsShadowCard and equipCards[i]:IsShadowCard() or false
+          local useInactiveColor = snowStoreMode or isShadowEquip and not isShadowCard
           if useInactiveColor then
             table.insert(sb.content, 1, "[c]")
             table.insert(sb.content, 2, ItemTipInactiveColorStr)
@@ -1277,8 +1290,33 @@ function ItemTipBaseCell:UpdateEquipAttriInfo(data)
         end
         table.insert(card.label, str)
       end
+      local hasNormalCardInShadowEquip = false
       if isShadowEquip then
+        for _, equipCard in pairs(equipCards) do
+          if equipCard and equipCard.IsShadowCard and not equipCard:IsShadowCard() then
+            hasNormalCardInShadowEquip = true
+            break
+          end
+        end
+      end
+      if hasNormalCardInShadowEquip then
         local str = string.format("ExtraDesc:%s", ZhString.ItemTip_QuenchCardNoEffect)
+        table.insert(card.label, str)
+      end
+      local hasEquipedShadowCard = false
+      for _, equipCard in pairs(equipCards) do
+        if equipCard and equipCard.IsShadowCard and equipCard:IsShadowCard() then
+          hasEquipedShadowCard = true
+          break
+        end
+      end
+      if hasEquipedShadowCard then
+        local str = string.format("ExtraDesc:%s", ZhString.ItemTip_ShadowCardNoStackTip)
+        table.insert(card.label, str)
+      end
+      local isExtraction = data.IsExtraction and data:IsExtraction()
+      if not isExtraction and hasEquipedShadowCard then
+        local str = string.format("ExtraDesc:%s", ZhString.ItemTip_ShadowCardEffectTip)
         table.insert(card.label, str)
       end
       card.labelConfig = {
@@ -1660,42 +1698,104 @@ function ItemTipBaseCell:UpdateFoodInfo(data)
   end
 end
 
+local GetPetEggSkillsForItemTip = function(petEggInfo, cfg)
+  if petEggInfo then
+    local skills = petEggInfo.GetSkillDisplayDatasForUI and petEggInfo:GetSkillDisplayDatasForUI() or petEggInfo.skillids
+    if skills and 0 < #skills then
+      local petData = petEggInfo:IsFightingByMyself() and PetProxy.Instance:GetMyPetInfoData(petEggInfo.petid) or nil
+      for i = 1, #skills do
+        local skillData = skills[i]
+        if type(skillData) == "table" and skillData.isContract then
+          skillData.canUpgradeContract = petData ~= nil and 0 < skillData.maxLevel and skillData.level < skillData.maxLevel
+        end
+      end
+      return skills, false
+    end
+  end
+  local result = {}
+  if not cfg then
+    return result, false
+  end
+  local petid = petEggInfo and petEggInfo.petid or cfg.id
+  local sortedIndex = {
+    "Skill_1",
+    "ContractSkill",
+    "Skill_3",
+    "Skill_4",
+    "Skill_2",
+    "Skill_5"
+  }
+  local relatedSkillIds = {}
+  for i = 1, #sortedIndex do
+    local key = sortedIndex[i]
+    local skillCfg = cfg[key]
+    if skillCfg and skillCfg[1] and skillCfg[2] then
+      local maxLevel = skillCfg[2]
+      local skillId = skillCfg[1] - skillCfg[1] % 1000 + maxLevel
+      if Table_Skill[skillId] then
+        local isContract = key == "ContractSkill"
+        local skillData = {
+          skillId = skillId,
+          petid = petid,
+          inactive = false,
+          isContract = isContract,
+          canUpgradeContract = false
+        }
+        if isContract then
+          skillData.level = maxLevel
+          skillData.maxLevel = maxLevel
+        end
+        table.insert(result, skillData)
+        table.insert(relatedSkillIds, skillId)
+      end
+    end
+  end
+  for i = 1, #result do
+    result[i].relatedSkillIds = relatedSkillIds
+  end
+  return result, true
+end
+
 function ItemTipBaseCell:UpdatePetEggInfo(data)
   local petEggInfo, colorFormat = data.petEggInfo, "[c][514f7b]%s[-][/c]"
+  local petCfg
   if petEggInfo then
-    local briefInfo = {
-      label = {}
-    }
-    if petEggInfo.petid then
-      local monsterName = Table_Monster[petEggInfo.petid] and Table_Monster[petEggInfo.petid].NameZh or "UnKnown"
-      table.insert(briefInfo.label, string.format(ZhString.ItemTip_PetEgg_MonsterName, string.format(colorFormat, monsterName)))
-    end
-    if petEggInfo.lv then
-      table.insert(briefInfo.label, string.format(ZhString.ItemTip_PetEgg_Level, string.format(colorFormat, petEggInfo.lv)))
-    end
-    if petEggInfo.friendlv then
-      table.insert(briefInfo.label, string.format(ZhString.ItemTip_PetEgg_Friendly, string.format(colorFormat, petEggInfo.friendlv)))
+    petCfg = Table_Pet[petEggInfo.petid]
+  elseif data.staticData then
+    petCfg = Game.Config_EggPet[data.staticData.id]
+  end
+  if petEggInfo or petCfg then
+    local briefInfo
+    if petEggInfo then
+      briefInfo = {
+        label = {}
+      }
+      if petEggInfo.petid then
+        local monsterName = Table_Monster[petEggInfo.petid] and Table_Monster[petEggInfo.petid].NameZh or "UnKnown"
+        table.insert(briefInfo.label, string.format(ZhString.ItemTip_PetEgg_MonsterName, string.format(colorFormat, monsterName)))
+      end
+      if petEggInfo.lv then
+        table.insert(briefInfo.label, string.format(ZhString.ItemTip_PetEgg_Level, string.format(colorFormat, petEggInfo.lv)))
+      end
+      if petEggInfo.friendlv then
+        table.insert(briefInfo.label, string.format(ZhString.ItemTip_PetEgg_Friendly, string.format(colorFormat, petEggInfo.friendlv)))
+      end
     end
     local skillInfo
-    local skillids = petEggInfo.GetSkillDisplayDatasForUI and petEggInfo:GetSkillDisplayDatasForUI() or petEggInfo.skillids
+    local skillids, isMaxLevelPreview = GetPetEggSkillsForItemTip(petEggInfo, petCfg)
     if skillids and 0 < #skillids then
       skillInfo = {
         label = {
-          ZhString.ItemTip_PetEgg_Skill
-        }
-      }
-      for i = 1, #skillids do
-        local skillData = skillids[i]
-        local skillId = type(skillData) == "table" and skillData.skillId or skillData
-        local skillConfig = Table_Skill[skillId]
-        if skillConfig then
-          local skillLv = type(skillData) == "table" and skillData.level or skillConfig.Level
-          table.insert(skillInfo.label, OverSea.LangManager.Instance():GetLangByKey(skillConfig.NameZh) .. "    " .. string.format(colorFormat, "Lv." .. skillLv))
+          isMaxLevelPreview and ZhString.ItemTip_PetEgg_MaxLevelSkillPreview or ZhString.ItemTip_PetEgg_Skill
+        },
+        petSkills = skillids,
+        petSkillClick = function(skillCell)
+          self:ShowPetEggSkillTip(skillCell)
         end
-      end
+      }
     end
     local equipInfo
-    local equips = petEggInfo.equips
+    local equips = petEggInfo and petEggInfo.equips
     if equips and 0 < #equips then
       equipInfo = {
         label = {
@@ -1706,23 +1806,36 @@ function ItemTipBaseCell:UpdatePetEggInfo(data)
         table.insert(equipInfo.label, equips[i].staticData.NameZh)
       end
     end
-    local lastInfo = briefInfo
-    self.contextDatas[ItemTipAttriType.PetEggInfo_Brief] = briefInfo
+    if briefInfo then
+      self.contextDatas[ItemTipAttriType.PetEggInfo_Brief] = briefInfo
+    end
     if skillInfo ~= nil then
-      briefInfo.hideline = true
-      lastInfo = skillInfo
       self.contextDatas[ItemTipAttriType.PetEggInfo_Skill] = skillInfo
     end
     if equipInfo ~= nil then
-      if skillInfo ~= nil then
-        skillInfo.hideline = true
-      elseif briefInfo ~= nil then
+      if briefInfo ~= nil then
         briefInfo.hideline = true
       end
-      lastInfo = equipInfo
       self.contextDatas[ItemTipAttriType.PetEggInfo_Equip] = equipInfo
     end
   end
+end
+
+function ItemTipBaseCell:ShowPetEggSkillTip(skillCell)
+  local skillData = skillCell and skillCell.data
+  local skillId = type(skillData) == "table" and skillData.skillId or skillData
+  if type(skillId) ~= "number" or not Table_Skill[skillId] then
+    return
+  end
+  local tipData = SkillItemData.new(skillId)
+  if type(skillData) == "table" then
+    tipData.petSkillData = skillData
+  end
+  self:PassEvent(ItemTipEvent.ShowPetSkillTip, {
+    data = tipData,
+    skillCell = skillCell,
+    skillGrid = skillCell.gameObject.transform.parent
+  })
 end
 
 function ItemTipBaseCell:UpdateCodeInfo(data)
@@ -2254,6 +2367,18 @@ function ItemTipBaseCell:InitEvent()
   EventManager.Me():AddEventListener(ServiceEvent.ItemGetCountItemCmd, self.UpdateGetLimit, self)
   EventManager.Me():AddEventListener(ServiceEvent.ItemUseCodItemCmd, self.UpdateGetCodItem, self)
   EventManager.Me():AddEventListener(ServiceEvent.SessionShopQueryShopConfigCmd, self.RecvQueryShopConfig, self)
+  EventManager.Me():AddEventListener(ItemEvent.PetUpdate, self.HandlePetItemUpdate, self)
+end
+
+function ItemTipBaseCell:HandlePetItemUpdate(evt)
+  if not self.data or not self.data.petEggInfo then
+    return
+  end
+  local recordMap = evt and evt.data
+  if recordMap and self.data.id and not recordMap[self.data.id] then
+    return
+  end
+  self:UpdateAttriContext()
 end
 
 function ItemTipBaseCell:UpdateTradePrice(evt)
@@ -2371,6 +2496,7 @@ function ItemTipBaseCell:RemoveEvent()
   EventManager.Me():RemoveEventListener(ServiceEvent.ItemGetCountItemCmd, self.UpdateGetLimit, self)
   EventManager.Me():RemoveEventListener(ServiceEvent.ItemUseCodItemCmd, self.UpdateGetCodItem, self)
   EventManager.Me():RemoveEventListener(ServiceEvent.SessionShopQueryShopConfigCmd, self.RecvQueryShopConfig, self)
+  EventManager.Me():RemoveEventListener(ItemEvent.PetUpdate, self.HandlePetItemUpdate, self)
 end
 
 function ItemTipBaseCell:OnDisable()
@@ -4494,6 +4620,12 @@ function ItemTipBaseCell:UpdateItemDisplayDatas()
 end
 
 local goodsNum = 0
+local SortShopItemByOrder = function(l, r)
+  if l.ShopOrder == r.ShopOrder then
+    return l.id < r.id
+  end
+  return l.ShopOrder < r.ShopOrder
+end
 
 function ItemTipBaseCell:GetItemShopData(itemid, limitIDs)
   local usemode = self.data and self.data.staticData and self.data.staticData.UseMode
@@ -4509,6 +4641,7 @@ function ItemTipBaseCell:GetItemShopData(itemid, limitIDs)
   else
     TableUtility.ArrayClear(self.shopItems)
   end
+  local shopItemDatas = {}
   local findflag = false
   if shopData then
     local config = shopData:GetGoods()
@@ -4523,8 +4656,12 @@ function ItemTipBaseCell:GetItemShopData(itemid, limitIDs)
         end
       end
       if not findflag then
-        TableUtility.ArrayPushBack(self.shopItems, v:GetItemData())
+        TableUtility.ArrayPushBack(shopItemDatas, v)
       end
+    end
+    table.sort(shopItemDatas, SortShopItemByOrder)
+    for i = 1, #shopItemDatas do
+      TableUtility.ArrayPushBack(self.shopItems, shopItemDatas[i]:GetItemData())
     end
   else
     ShopProxy.Instance:CallQueryShopConfig(shoptype, shopid)

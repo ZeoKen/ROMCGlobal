@@ -281,11 +281,14 @@ function ServiceScenePetAutoProxy:CallEggHatchPetCmd(name, guid, petid)
   end
 end
 
-function ServiceScenePetAutoProxy:CallEggRestorePetCmd(petid)
+function ServiceScenePetAutoProxy:CallEggRestorePetCmd(petid, guid)
   if not NetConfig.PBC then
     local msg = ScenePet_pb.EggRestorePetCmd()
     if petid ~= nil then
       msg.petid = petid
+    end
+    if guid ~= nil then
+      msg.guid = guid
     end
     self:SendProto(msg)
   else
@@ -293,6 +296,9 @@ function ServiceScenePetAutoProxy:CallEggRestorePetCmd(petid)
     local msgParam = {}
     if petid ~= nil then
       msgParam.petid = petid
+    end
+    if guid ~= nil then
+      msgParam.guid = guid
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -1528,6 +1534,26 @@ function ServiceScenePetAutoProxy:CallEquipUpdatePetCmd(petid, update, del)
         msg.update.egg = {}
       end
       msg.update.egg.quick_pack_slot = update.egg.quick_pack_slot
+    end
+    if update.egg ~= nil and update.egg.hatched_by_char ~= nil then
+      if msg.update == nil then
+        msg.update = {}
+      end
+      if msg.update.egg == nil then
+        msg.update.egg = {}
+      end
+      msg.update.egg.hatched_by_char = update.egg.hatched_by_char
+    end
+    if update ~= nil and update.egg.char_quick_pack_slots ~= nil then
+      if msg.update.egg == nil then
+        msg.update.egg = {}
+      end
+      if msg.update.egg.char_quick_pack_slots == nil then
+        msg.update.egg.char_quick_pack_slots = {}
+      end
+      for i = 1, #update.egg.char_quick_pack_slots do
+        table.insert(msg.update.egg.char_quick_pack_slots, update.egg.char_quick_pack_slots[i])
+      end
     end
     if update.letter ~= nil and update.letter.sendUserName ~= nil then
       if msg.update == nil then
@@ -3394,6 +3420,26 @@ function ServiceScenePetAutoProxy:CallEquipUpdatePetCmd(petid, update, del)
         msgParam.update.egg = {}
       end
       msgParam.update.egg.quick_pack_slot = update.egg.quick_pack_slot
+    end
+    if update.egg ~= nil and update.egg.hatched_by_char ~= nil then
+      if msgParam.update == nil then
+        msgParam.update = {}
+      end
+      if msgParam.update.egg == nil then
+        msgParam.update.egg = {}
+      end
+      msgParam.update.egg.hatched_by_char = update.egg.hatched_by_char
+    end
+    if update ~= nil and update.egg.char_quick_pack_slots ~= nil then
+      if msgParam.update.egg == nil then
+        msgParam.update.egg = {}
+      end
+      if msgParam.update.egg.char_quick_pack_slots == nil then
+        msgParam.update.egg.char_quick_pack_slots = {}
+      end
+      for i = 1, #update.egg.char_quick_pack_slots do
+        table.insert(msgParam.update.egg.char_quick_pack_slots, update.egg.char_quick_pack_slots[i])
+      end
     end
     if update.letter ~= nil and update.letter.sendUserName ~= nil then
       if msgParam.update == nil then

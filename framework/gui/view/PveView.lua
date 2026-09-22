@@ -41,6 +41,12 @@ local GetAddPlayTimeDepositeId = function(groupid)
   local groupConfig = _PveConfig and _PveConfig.AddPlayTimeDepositeIdByGroupId
   return (not (groupConfig and groupid) or not groupConfig[groupid]) and _PveConfig and _PveConfig.AddPlayTimeDepositeId
 end
+local GetPveCatalogName = function(catalogData)
+  if type(catalogData) == "table" then
+    return catalogData.name or catalogData.Name
+  end
+  return catalogData
+end
 local EContentType = {
   RecommendPlayerNum = 1,
   LeftRewardCount = 2,
@@ -1208,14 +1214,14 @@ function PveView:InitFilter()
   for k, v in pairs(_PveConfig.Catalog) do
     if k == 0 or _EntranceProxy:GetCatalogData(k) then
       local data = {}
-      data.Name = v
+      data.Name = GetPveCatalogName(v)
       data.Catalog = k
       table.insert(_PopUpItemConfig, data)
     end
   end
   self.raidTypeTabs:SetData(_PopUpItemConfig)
   local vCatalog = self.viewdata.viewdata and self.viewdata.viewdata.catalog
-  local catalogStr = vCatalog and _PveConfig.Catalog[vCatalog]
+  local catalogStr = vCatalog and GetPveCatalogName(_PveConfig.Catalog[vCatalog])
   if catalogStr then
     self.raidTypeTabs:SetValue(catalogStr)
   end

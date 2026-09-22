@@ -348,6 +348,7 @@ function FunctionBuff:ParseBuffData(buff)
   end
   buffData.quench = _GetQuenchByLayers(buff.layers)
   buffData.activeNextDay = cType == "NextDay"
+  buffData.sortWeight = GameConfig.BuffSort and GameConfig.BuffSort[id] or 0
   self.myBuffs[id] = buffData
 end
 

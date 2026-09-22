@@ -1110,6 +1110,78 @@ Table_DepositProducts = {
     ProductID = "com.gravity.romg.noen.battlepass15_no",
     CurrencyType = "USD",
     Rmb = 23.99
+  },
+  [143] = {
+    id = 143,
+    DepositID = 400130,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_8",
+    CurrencyType = "USD",
+    Rmb = 0.99
+  },
+  [144] = {
+    id = 144,
+    DepositID = 400131,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_9",
+    CurrencyType = "USD",
+    Rmb = 2.99
+  },
+  [145] = {
+    id = 145,
+    DepositID = 400132,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_10",
+    CurrencyType = "USD",
+    Rmb = 4.99
+  },
+  [146] = {
+    id = 146,
+    DepositID = 400133,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_11",
+    CurrencyType = "USD",
+    Rmb = 9.99
+  },
+  [147] = {
+    id = 147,
+    DepositID = 400134,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_12",
+    CurrencyType = "USD",
+    Rmb = 17.99
+  },
+  [148] = {
+    id = 148,
+    DepositID = 400135,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_13",
+    CurrencyType = "USD",
+    Rmb = 45.99
+  },
+  [149] = {
+    id = 149,
+    DepositID = 400136,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_14",
+    CurrencyType = "USD",
+    Rmb = 17.99
+  },
+  [150] = {
+    id = 150,
+    DepositID = 400137,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_15",
+    CurrencyType = "USD",
+    Rmb = 45.99
+  },
+  [151] = {
+    id = 151,
+    DepositID = 400138,
+    region = 2,
+    ProductID = "com.gravity.romg.noen.pvppet_16",
+    CurrencyType = "USD",
+    Rmb = 45.99
   }
 }
 Table_DepositProducts_fields = {

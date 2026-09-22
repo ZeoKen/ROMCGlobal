@@ -412,3 +412,9 @@ function ServiceSceneUser3Proxy:RecvSnakeCoasterFinishCmd(data)
   SnakeCoasterManager.Me():HandleSnakeCoasterFinishCmd(data)
   self:Notify(ServiceEvent.SceneUser3SnakeCoasterFinishCmd, data)
 end
+
+function ServiceSceneUser3Proxy:RecvExtractionCardUserCmd(data)
+  AttrExtractionProxy.Instance:RecvExtractionCardUserCmd(data)
+  self:Notify(ServiceEvent.SceneUser3ExtractionCardUserCmd, data)
+  EventManager.Me():DispatchEvent(ServiceEvent.SceneUser3ExtractionCardUserCmd, data)
+end

@@ -2055,6 +2055,13 @@ Table_MatchRaid = {
     EnterLevel = 90,
     NoviceCanJoin = 1
   },
+  [206700] = {
+    id = 206700,
+    Type = 50,
+    RaidConfigID = 7660,
+    EnterLevel = 110,
+    NoviceCanJoin = 1
+  },
   [206800] = {
     id = 206800,
     Type = 53,

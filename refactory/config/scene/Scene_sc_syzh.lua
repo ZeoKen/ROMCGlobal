@@ -3298,6 +3298,17 @@ local Scene_sc_syzh = {
         waitaction = "pray"
       },
       {
+        uniqueID = 829952,
+        ID = 829952,
+        position = {
+          -264.450012207031,
+          156.729995727539,
+          -235.830001831055
+        },
+        dir = 249.097106933594,
+        xdir = 360
+      },
+      {
         uniqueID = 101,
         ID = 852001,
         position = {

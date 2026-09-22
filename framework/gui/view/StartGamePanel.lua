@@ -343,7 +343,7 @@ function StartGamePanel:updateAgreementPos()
   if BranchMgr.IsJapan() then
     local staticCopyRight = self:FindGO("Copyright", agreetmentCt)
     if staticCopyRight then
-      staticCopyRight.gameObject:SetActive(true)
+      staticCopyRight.gameObject:SetActive(false)
     end
   end
 end

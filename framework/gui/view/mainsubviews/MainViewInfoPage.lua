@@ -617,9 +617,10 @@ function MainViewInfoPage:UpdateJobSlider(note)
 end
 
 function MainViewInfoPage._SortBuffData(a, b)
-  local topBuff = GameConfig.GvgNewConfig.unactive_buffid
-  if a.id == topBuff or b.id == topBuff then
-    return a.id == topBuff
+  local wa = a.sortWeight or 0
+  local wb = b.sortWeight or 0
+  if wa ~= wb then
+    return wa > wb
   end
   if a.endtime and b.endtime then
     if a.endtime and b.endtime then

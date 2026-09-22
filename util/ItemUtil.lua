@@ -1043,15 +1043,17 @@ function ItemUtil.GetValue(num)
 end
 
 local _Separator = "[Quench]"
+local _FullWidthSeparator = "［Quench］"
 local _QuenchViewStrFormat = "[c][38C300]%s[-][/c]"
 
 function ItemUtil.GetBuffDesc(static_desc, quenchper)
   static_desc = static_desc or ""
   static_desc = OverSea.LangManager.Instance():GetLangByKey(static_desc)
-  if string.match(static_desc, _Separator) then
+  local separator = (not string.find(static_desc, _Separator, 1, true) or not _Separator) and string.find(static_desc, _FullWidthSeparator, 1, true) and _FullWidthSeparator
+  if separator then
     quenchper = quenchper or 1
     quenchper = math.clamp(quenchper, 0, 1)
-    local desc = string.split(static_desc, _Separator)
+    local desc = string.split(static_desc, separator)
     local separatorResult = ""
     local _Format = string.format
     local getValue = ItemUtil.GetValue

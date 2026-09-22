@@ -13,6 +13,8 @@ autoImport("RewardEffectView")
 autoImport("PackageWalletPage")
 autoImport("PackageEquipMemoryPage")
 PackageView.ViewType = UIViewType.NormalLayer
+local SnowManualItemId = 45563
+local SnowManualRedTipId = SceneTip_pb.EREDSYS_SNOWMANUAL or 10788
 PackageView.LeftViewState = {
   Default = "PackageView_LeftViewState_Default",
   Fashion = "PackageView_LeftViewState_Fashion",
@@ -76,6 +78,7 @@ end
 function PackageView:OnEnter()
   PackageView.super.OnEnter(self)
   BagProxy.Instance:SetPackageViewOpen(true)
+  self:RefreshSnowManualViceEquipRedTip()
   self:OnEquipTabChange()
   self:UpdateCameraViewPort()
   self.autoClickID = self.viewdata.viewdata and self.viewdata.viewdata.autoClickID
@@ -223,6 +226,7 @@ function PackageView:InitViceEquipSwitch()
   self:AddClickEvent(self.tog2, function()
     BagProxy.Instance:TryResetEquipType(BagEquipType.ViceEquip)
   end)
+  self:RefreshSnowManualViceEquipRedTip()
   self.tog3 = self:FindGO("Tog3", self.switchRoot)
   self.tog3Bg = self:FindGO("SpriteBg", self.tog3)
   self.tog3Icon = self.tog3:GetComponent(UISprite)
@@ -234,6 +238,18 @@ function PackageView:InitViceEquipSwitch()
   self:UpdateEquipSwitch()
   self:AddOrRemoveGuideId(self.tog1, 536)
   self:AddOrRemoveGuideId(self.tog2, 539)
+end
+
+function PackageView:RefreshSnowManualViceEquipRedTip()
+  if not self.tog2Icon then
+    return
+  end
+  local widgetGO = self.tog2Icon.gameObject
+  self:UnRegisterSingleRedTipCheck(SnowManualRedTipId, widgetGO)
+  local snowCrown = BagProxy.Instance:GetItemByStaticID(SnowManualItemId, BagProxy.BagType.RoleEquip)
+  if snowCrown then
+    self:RegisterRedTipCheck(SnowManualRedTipId, widgetGO, self.tog2Icon.depth + 10, {0, 0})
+  end
 end
 
 function PackageView:UpdateEquipSwitch()
@@ -379,6 +395,9 @@ function PackageView:SetLeftViewState(viewState)
     rotation1 = onRotation
   elseif viewState == PackageView.LeftViewState.RoleInfo then
     rotation2 = onRotation
+    if self.mainPage then
+      self.mainPage:HideAllPackageBords()
+    end
     self:GetBaseAttriView():showMySelf()
   elseif viewState == PackageView.LeftViewState.Strength then
   elseif viewState == PackageView.LeftViewState.BarrowBag then
@@ -419,6 +438,7 @@ function PackageView:MapEvent()
   self:AddListenEvt(LoadSceneEvent.SceneAnimEnd, self.HandleSceneAnimEnd)
   self:AddListenEvt(PackageEvent.OpenBarrowBag, self.HandleOpenBarrowBag)
   self:AddListenEvt(MyselfEvent.ChangeDress, self.EventUpdateCameraViewPort)
+  self:AddListenEvt(ItemEvent.EquipUpdate, self.RefreshSnowManualViceEquipRedTip)
 end
 
 function PackageView:SetRefineEquip(equip)

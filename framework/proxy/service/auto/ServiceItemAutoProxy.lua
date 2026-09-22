@@ -492,6 +492,9 @@ function ServiceItemAutoProxy:onRegister()
   self:Listen(6, 171, function(data)
     self:RecvFashionStarUpItemCmd(data)
   end)
+  self:Listen(6, 172, function(data)
+    self:RecvQuickBuffPackageItemCmd(data)
+  end)
 end
 
 function ServiceItemAutoProxy:CallPackageItem(type, data, maxslot)
@@ -8495,6 +8498,51 @@ function ServiceItemAutoProxy:CallFashionStarUpItemCmd(batchid)
   end
 end
 
+function ServiceItemAutoProxy:CallQuickBuffPackageItemCmd(update, selected_items, limit)
+  if not NetConfig.PBC then
+    local msg = SceneItem_pb.QuickBuffPackageItemCmd()
+    if update ~= nil then
+      msg.update = update
+    end
+    if selected_items ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.selected_items == nil then
+        msg.selected_items = {}
+      end
+      for i = 1, #selected_items do
+        table.insert(msg.selected_items, selected_items[i])
+      end
+    end
+    if limit ~= nil then
+      msg.limit = limit
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.QuickBuffPackageItemCmd.id
+    local msgParam = {}
+    if update ~= nil then
+      msgParam.update = update
+    end
+    if selected_items ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.selected_items == nil then
+        msgParam.selected_items = {}
+      end
+      for i = 1, #selected_items do
+        table.insert(msgParam.selected_items, selected_items[i])
+      end
+    end
+    if limit ~= nil then
+      msgParam.limit = limit
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceItemAutoProxy:RecvPackageItem(data)
   self:Notify(ServiceEvent.ItemPackageItem, data)
 end
@@ -9131,6 +9179,10 @@ function ServiceItemAutoProxy:RecvFashionStarUpItemCmd(data)
   self:Notify(ServiceEvent.ItemFashionStarUpItemCmd, data)
 end
 
+function ServiceItemAutoProxy:RecvQuickBuffPackageItemCmd(data)
+  self:Notify(ServiceEvent.ItemQuickBuffPackageItemCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.ItemPackageItem = "ServiceEvent_ItemPackageItem"
 ServiceEvent.ItemPackageUpdate = "ServiceEvent_ItemPackageUpdate"
@@ -9291,3 +9343,4 @@ ServiceEvent.ItemBalanceModeMemoryUpdateItemCmd = "ServiceEvent_ItemBalanceModeM
 ServiceEvent.ItemMemoryExcessItemCmd = "ServiceEvent_ItemMemoryExcessItemCmd"
 ServiceEvent.ItemFashionStarQueryItemCmd = "ServiceEvent_ItemFashionStarQueryItemCmd"
 ServiceEvent.ItemFashionStarUpItemCmd = "ServiceEvent_ItemFashionStarUpItemCmd"
+ServiceEvent.ItemQuickBuffPackageItemCmd = "ServiceEvent_ItemQuickBuffPackageItemCmd"

@@ -12,28 +12,39 @@ function RecommendPetTipCell:SetData(data)
   if self.conditionID then
     local staticData = Table_Pet_AdventureCond[self.conditionID]
     if staticData then
+      local desc = OverSea.LangManager.Instance():GetLangByKey(staticData.Desc or "") or ""
       local typeId = staticData.TypeID
       if "Race" == typeId then
-        self.descLab.text = staticData.Desc
+        self.descLab.text = desc
         IconManager:SetUIIcon(staticData.Icon, self.icon)
       elseif "Nature" == typeId then
-        self.descLab.text = staticData.Desc
+        self.descLab.text = desc
         IconManager:SetUIIcon(staticData.Icon, self.icon)
       elseif "Friendly" == typeId then
         local friendly = staticData.Param[1]
-        self.descLab.text = string.format(staticData.Desc, friendly)
+        self.descLab.text = string.format(desc, friendly)
         IconManager:SetUIIcon(staticData.Icon, self.icon)
       elseif "Skill" == typeId then
         local skillID = staticData.Param[1]
         skillID = skillID * 1000 + 1
         local limit = staticData.Param[2]
         local skillName = Table_Skill[skillID].NameZh
-        self.descLab.text = string.format(staticData.Desc, limit, skillName)
+        self.descLab.text = string.format(desc, limit, skillName)
         IconManager:SetSkillIcon(staticData.Icon, self.icon)
       elseif "PetID" == typeId then
-        local petName = Table_Monster[staticData.Param[1]].NameZh
-        self.descLab.text = string.format(staticData.Desc, petName)
+        if #staticData.Param > 1 then
+          local typeName = OverSea.LangManager.Instance():GetLangByKey(staticData.Type or "") or ""
+          self.descLab.text = string.format(desc, typeName)
+        elseif string.find(desc, "%%s") then
+          local petName = Table_Monster[staticData.Param[1]].NameZh
+          self.descLab.text = string.format(desc, petName)
+        else
+          self.descLab.text = desc
+        end
         IconManager:SetFaceIcon(staticData.Icon, self.icon)
+      elseif "PvpPet" == typeId then
+        self.descLab.text = desc
+        IconManager:SetUIIcon(staticData.Icon, self.icon)
       end
     end
     self.table:Reposition()

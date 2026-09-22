@@ -178,6 +178,7 @@ function NewRechargeProxy:Deposit_UpdateChargeCntInfo(info)
   elseif cl.SetPurchaseInfoToZero then
     cl:SetPurchaseInfoToZero()
   end
+  NewRechargeDepositItemCtrl.Ins():FinishChargeCntQuery()
 end
 
 function NewRechargeProxy:Deposit_SetActivityUsedTimes(purchaseActivityInfo)

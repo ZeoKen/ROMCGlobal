@@ -228,6 +228,169 @@ BagProxy.ActifactSite = {
   [17] = 1,
   [19] = 1
 }
+local QuickBuffFunctionId = 91
+local QuickBuffFunctionId = 91
+local QuickBuffMaxSelectCount = 4
+local GetQuickBuffPackageList = function()
+  local config = GameConfig.QuickBuffPackage
+  return config and config.List
+end
+local HasQuickBuffFunction = function(functions)
+  if functions == nil then
+    return false
+  end
+  for i = 1, #functions do
+    if functions[i] == QuickBuffFunctionId then
+      return true
+    end
+  end
+  return false
+end
+
+function BagProxy:GetQuickBuffMaxSelectCount()
+  return QuickBuffMaxSelectCount
+end
+
+function BagProxy:CheckIsQuickBuffPackageItem(itemData)
+  local staticData = itemData and itemData.staticData
+  if staticData == nil then
+    return false
+  end
+  local specialFunction = GameConfig.SpecialItemFunction and GameConfig.SpecialItemFunction[staticData.id]
+  if HasQuickBuffFunction(specialFunction) then
+    return true
+  end
+  local typeData = Table_ItemType and Table_ItemType[staticData.Type]
+  return typeData ~= nil and HasQuickBuffFunction(typeData.Function)
+end
+
+function BagProxy:IsQuickBuffSelectableItem(itemId)
+  local list = GetQuickBuffPackageList()
+  if list == nil then
+    return false
+  end
+  for i = 1, #list do
+    if list[i] == itemId then
+      return true
+    end
+  end
+  return false
+end
+
+function BagProxy:GetQuickBuffSelectableItemIds()
+  self.quickBuffSelectableItemIds = self.quickBuffSelectableItemIds or {}
+  TableUtility.ArrayClear(self.quickBuffSelectableItemIds)
+  local list = GetQuickBuffPackageList()
+  if list == nil then
+    return self.quickBuffSelectableItemIds
+  end
+  for i = 1, #list do
+    TableUtility.ArrayPushBack(self.quickBuffSelectableItemIds, list[i])
+  end
+  return self.quickBuffSelectableItemIds
+end
+
+function BagProxy:GetQuickBuffConfigMap()
+  self.quickBuffConfigItemMap = self.quickBuffConfigItemMap or {}
+  return self.quickBuffConfigItemMap
+end
+
+function BagProxy:IsQuickBuffConfigItem(itemId)
+  return self:GetQuickBuffConfigMap()[itemId] == true
+end
+
+function BagProxy:GetQuickBuffConfigCount()
+  local count = 0
+  for _ in pairs(self:GetQuickBuffConfigMap()) do
+    count = count + 1
+  end
+  return count
+end
+
+function BagProxy:GetQuickBuffConfigItemIds()
+  self.quickBuffConfigItemIds = self.quickBuffConfigItemIds or {}
+  TableUtility.ArrayClear(self.quickBuffConfigItemIds)
+  for itemId in pairs(self:GetQuickBuffConfigMap()) do
+    TableUtility.ArrayPushBack(self.quickBuffConfigItemIds, itemId)
+  end
+  table.sort(self.quickBuffConfigItemIds)
+  return self.quickBuffConfigItemIds
+end
+
+function BagProxy:RequestQuickBuffConfigItems()
+  ServiceItemProxy.Instance:CallQuickBuffPackageItemCmd(false)
+end
+
+function BagProxy:SyncQuickBuffConfigItemsToServer()
+  ServiceItemProxy.Instance:CallQuickBuffPackageItemCmd(true, self:GetQuickBuffConfigItemIds())
+end
+
+function BagProxy:HandleQuickBuffPackageItemCmd(data)
+  if data == nil then
+    return
+  end
+  if data.limit ~= nil and data.limit > 0 then
+    QuickBuffMaxSelectCount = data.limit
+  end
+  if data.selected_items ~= nil then
+    self:SyncQuickBuffConfigItemsFromServer(data.selected_items)
+  end
+end
+
+function BagProxy:SyncQuickBuffConfigItemsFromServer(itemIds)
+  self:SetQuickBuffConfigItemIds(itemIds, true)
+end
+
+function BagProxy:SetQuickBuffConfigItemIds(itemIds, fromServer)
+  local map = self:GetQuickBuffConfigMap()
+  TableUtility.TableClear(map)
+  local count = 0
+  if itemIds ~= nil then
+    for i = 1, #itemIds do
+      local itemId = itemIds[i]
+      if count < QuickBuffMaxSelectCount and self:IsQuickBuffSelectableItem(itemId) and not map[itemId] then
+        map[itemId] = true
+        count = count + 1
+      end
+    end
+  end
+  if not fromServer then
+    self:SyncQuickBuffConfigItemsToServer()
+  end
+end
+
+function BagProxy:SetQuickBuffConfigItem(itemId, selected)
+  if not self:IsQuickBuffSelectableItem(itemId) then
+    return false
+  end
+  local map = self:GetQuickBuffConfigMap()
+  if selected then
+    if map[itemId] then
+      return true
+    end
+    if self:GetQuickBuffConfigCount() >= QuickBuffMaxSelectCount then
+      return false
+    end
+    map[itemId] = true
+  else
+    map[itemId] = nil
+  end
+  self:SyncQuickBuffConfigItemsToServer()
+  return true
+end
+
+function BagProxy:ResetQuickBuffConfigItems()
+  TableUtility.TableClear(self:GetQuickBuffConfigMap())
+  self:SyncQuickBuffConfigItemsToServer()
+end
+
+function BagProxy:UseQuickBuffConfigItems(triggerItemData)
+  if triggerItemData == nil then
+    return false
+  end
+  FunctionItemFunc.TryUseItem(triggerItemData, nil, 1)
+  return true
+end
 
 function BagProxy:CheckForbiddenByNoviceServer(site)
   if not site then

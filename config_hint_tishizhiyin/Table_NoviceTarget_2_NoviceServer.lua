@@ -1596,6 +1596,7 @@ Table_NoviceTarget_2 = {
     Icon = "Guild",
     Title = "无私奉献·Ⅰ",
     PageType = Table_NoviceTarget_2_t.PageType[7],
+    Description = "参与5次公会捐献",
     Goto = Table_NoviceTarget_2_t.Goto[22]
   },
   [725] = {
@@ -3488,7 +3489,6 @@ Table_NoviceTarget_2 = {
     Icon = "equipupgrade",
     Title = "全力以赴·Ⅱ",
     PageType = Table_NoviceTarget_2_t.PageType[5],
-    Description = "至少穿戴12件装备",
     Goto = Table_NoviceTarget_2_t.Goto[14]
   },
   [866] = {
@@ -5814,7 +5814,7 @@ Table_NoviceTarget_2 = {
 local cell_mt = {
   __index = {
     Day = 10,
-    Description = "参与5次公会捐献",
+    Description = "至少穿戴12件装备",
     GM = _EmptyTable,
     Goto = _EmptyTable,
     Icon = "refine_2",

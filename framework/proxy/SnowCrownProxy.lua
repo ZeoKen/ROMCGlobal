@@ -2,6 +2,79 @@ SnowCrownProxy = class("SnowCrownProxy", pm.Proxy)
 SnowCrownProxy.Instance = nil
 SnowCrownProxy.NAME = "SnowCrownProxy"
 SnowCrownProxy.SNOW_CROWN_ITEM_ID = 45563
+SnowCrownProxy.SNOW_MANUAL_RED_TIP_ID = SceneTip_pb.EREDSYS_SNOWMANUAL or 10788
+
+function SnowCrownProxy.GetSnowManualGemRedTipParam(slotIndex, gemIndex)
+  return 100 + slotIndex * 10 + gemIndex
+end
+
+local IsSnowEquipValidForSlot = function(itemData, slotIndex)
+  local slotConfig = Table_SnowEquip and Table_SnowEquip[slotIndex]
+  if slotConfig and slotConfig.NoOpen == 1 then
+    return false
+  end
+  local validPos = slotConfig and slotConfig.ValidEquipPos
+  if not validPos then
+    return true
+  end
+  local equipType = itemData.equipInfo.GetEquipType and itemData.equipInfo:GetEquipType()
+  local typeConfig = equipType and GameConfig.EquipType and GameConfig.EquipType[equipType]
+  local sites = typeConfig and typeConfig.site
+  if not sites then
+    return false
+  end
+  for _, site in ipairs(sites) do
+    for _, validSite in ipairs(validPos) do
+      if site == validSite then
+        return true
+      end
+    end
+  end
+  return false
+end
+local GetSnowEquipSites = function(itemData)
+  if not itemData or not itemData.equipInfo then
+    return nil
+  end
+  local equipType = itemData.equipInfo.GetEquipType and itemData.equipInfo:GetEquipType()
+  local typeConfig = equipType and GameConfig.EquipType and GameConfig.EquipType[equipType]
+  return typeConfig and typeConfig.site
+end
+local GetRoleSnowEquipSites = function()
+  local occupiedSites = {}
+  local roleEquip = BagProxy.Instance and BagProxy.Instance.roleEquip
+  local items = roleEquip and roleEquip:GetItems()
+  for i = 1, #(items or {}) do
+    local itemData = items[i]
+    if itemData and itemData.equipInfo and itemData.equipInfo:IsSnowEquip() then
+      local sites = GetSnowEquipSites(itemData)
+      for _, site in ipairs(sites or _EmptyTable) do
+        occupiedSites[site] = true
+      end
+    end
+  end
+  return occupiedSites
+end
+local IsSnowEquipSiteOccupied = function(itemData, occupiedSites)
+  local sites = GetSnowEquipSites(itemData)
+  for _, site in ipairs(sites or _EmptyTable) do
+    if occupiedSites[site] then
+      return true
+    end
+  end
+  return false
+end
+local IsSnowGemProfessionValid = function(stoneId)
+  local stoneConfig = Table_SnowStone and Table_SnowStone[stoneId]
+  if not (stoneConfig and stoneConfig.ClassID) or #stoneConfig.ClassID == 0 then
+    return true
+  end
+  local myClass = MyselfProxy.Instance and MyselfProxy.Instance:GetMyProfession() or 0
+  if myClass == 0 then
+    return false
+  end
+  return 0 < TableUtility.ArrayFindIndex(stoneConfig.ClassID, myClass)
+end
 SnowCrownProxy.ModeEnum = {
   Min = 0,
   Atk = 1,
@@ -106,6 +179,113 @@ function SnowCrownProxy:Init()
   }
 end
 
+function SnowCrownProxy:UpdateSnowManualRedTip()
+  local snowCrownItem = BagProxy and BagProxy.Instance and BagProxy.Instance:GetItemByStaticID(SnowCrownProxy.SNOW_CROWN_ITEM_ID, BagProxy.BagType.RoleEquip)
+  snowCrownItem = snowCrownItem or BagProxy and BagProxy.Instance and BagProxy.Instance:GetItemByStaticID(SnowCrownProxy.SNOW_CROWN_ITEM_ID, BagProxy.BagType.MainBag)
+  if not snowCrownItem then
+    if RedTipProxy and RedTipProxy.Instance then
+      RedTipProxy.Instance:RemoveWholeTip(SnowCrownProxy.SNOW_MANUAL_RED_TIP_ID)
+    end
+    return
+  end
+  local hasRedTip = false
+  local redTipParams = {}
+  local redTipParamSet = {}
+  local manualData = self.snowManualData
+  local positions = manualData and manualData.positions or {}
+  local emptyEquipSlots = {}
+  local equippedEquipIds = {}
+  local equippedEquipStaticIds = {}
+  local roleSnowEquipSites = GetRoleSnowEquipSites()
+  for _, posData in pairs(positions) do
+    local equipData = posData and posData.equip
+    if equipData then
+      if equipData.id then
+        equippedEquipIds[equipData.id] = true
+      end
+      if equipData.guid then
+        equippedEquipIds[equipData.guid] = true
+      end
+      local staticData = equipData.staticData
+      if staticData and staticData.id then
+        equippedEquipStaticIds[staticData.id] = true
+      end
+    end
+  end
+  for slotIndex = 1, 3 do
+    local slotConfig = Table_SnowEquip and Table_SnowEquip[slotIndex]
+    local posData = positions[slotIndex]
+    local isNoOpen = slotConfig and slotConfig.NoOpen == 1
+    local isEmpty = not posData or not posData.equip
+    if not isNoOpen and isEmpty then
+      emptyEquipSlots[slotIndex] = true
+    end
+  end
+  if next(emptyEquipSlots) and BagProxy.Instance then
+    local bagTypes = GameConfig.PackageMaterialCheck and GameConfig.PackageMaterialCheck.default
+    if bagTypes then
+      for i = 1, #bagTypes do
+        local bagData = BagProxy.Instance:GetBagByType(bagTypes[i])
+        local items = bagData and bagData:GetItems()
+        for j = 1, #(items or {}) do
+          local itemData = items[j]
+          local staticId = itemData and itemData.staticData and itemData.staticData.id
+          local equipConfig = staticId and Table_Equip and Table_Equip[staticId]
+          local equipId = itemData and (itemData.id or itemData.guid)
+          local isAlreadyEquipped = equipId and equippedEquipIds[equipId] or staticId and equippedEquipStaticIds[staticId]
+          if itemData and itemData.equipInfo and equipConfig and equipConfig.IsNew == 2 and not isAlreadyEquipped and not IsSnowEquipSiteOccupied(itemData, roleSnowEquipSites) then
+            for slotIndex in pairs(emptyEquipSlots) do
+              if IsSnowEquipValidForSlot(itemData, slotIndex) then
+                hasRedTip = true
+                if not redTipParamSet[slotIndex] then
+                  redTipParamSet[slotIndex] = true
+                  table.insert(redTipParams, slotIndex)
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  if manualData and manualData.stoneBook then
+    local equippedStoneIDs = manualData.equippedStoneIDs or {}
+    for slotIndex = 1, 3 do
+      local slotConfig = Table_SnowEquip and Table_SnowEquip[slotIndex]
+      local posData = positions[slotIndex]
+      local isNoOpen = slotConfig and slotConfig.NoOpen == 1
+      local stoneids = posData and posData.stoneids or {}
+      local hasEmptyStoneSlot = not stoneids[1] or stoneids[1] <= 0 or not stoneids[2] or stoneids[2] <= 0
+      if not isNoOpen and hasEmptyStoneSlot then
+        for stoneId in pairs(manualData.stoneBook) do
+          local professionValid = IsSnowGemProfessionValid(stoneId)
+          if not equippedStoneIDs[stoneId] and professionValid then
+            hasRedTip = true
+            for gemIndex = 1, 2 do
+              if not stoneids[gemIndex] or stoneids[gemIndex] <= 0 then
+                local gemParam = SnowCrownProxy.GetSnowManualGemRedTipParam(slotIndex, gemIndex)
+                if not redTipParamSet[gemParam] then
+                  redTipParamSet[gemParam] = true
+                  table.insert(redTipParams, gemParam)
+                end
+              end
+            end
+            break
+          end
+        end
+      end
+    end
+  end
+  if not RedTipProxy or not RedTipProxy.Instance then
+    return
+  end
+  if hasRedTip then
+    RedTipProxy.Instance:UpdateRedTip(SnowCrownProxy.SNOW_MANUAL_RED_TIP_ID, redTipParams)
+  else
+    RedTipProxy.Instance:RemoveWholeTip(SnowCrownProxy.SNOW_MANUAL_RED_TIP_ID)
+  end
+end
+
 function SnowCrownProxy:ParseServerItemData(serverItemData)
   if not serverItemData then
     return nil
@@ -195,6 +375,7 @@ function SnowCrownProxy:RecvQuerySnowManualSnowCmd(data)
       end
     end
   end
+  self:UpdateSnowManualRedTip()
 end
 
 function SnowCrownProxy:RecvSnowManualUpdateSnowCmd(data)
@@ -233,6 +414,7 @@ function SnowCrownProxy:RecvSnowManualUpdateSnowCmd(data)
     self:ShowGemRewardPopup(progressChanges, overflowChanges)
   end
   self:sendNotification(ServiceEvent.SnowCmdSnowManualUpdateSnowCmd)
+  self:UpdateSnowManualRedTip()
 end
 
 function SnowCrownProxy:CompareStoneData(stoneId, oldData, newData)
@@ -316,6 +498,7 @@ function SnowCrownProxy:RecvSnowManualEquipUpdateSnowCmd(data)
   self.snowManualData.positions[pos].equip = self:ParseServerItemData(data.update)
   xdlog("RecvSnowManualEquipUpdateSnowCmd | pos:", pos, "| hasEquip:", data.update ~= nil)
   self:sendNotification(ServiceEvent.SnowCmdSnowManualEquipUpdateSnowCmd, {pos = pos})
+  self:UpdateSnowManualRedTip()
 end
 
 function SnowCrownProxy:RecvSnowManualStoneUpdateSnowCmd(data)
@@ -349,6 +532,7 @@ function SnowCrownProxy:RecvSnowManualStoneUpdateSnowCmd(data)
   end
   stoneids[idx] = stoneId
   xdlog("RecvSnowManualStoneUpdateSnowCmd | equipPos:", equipPos, "| stonePos:", stonePos, "| stoneId:", stoneId)
+  self:UpdateSnowManualRedTip()
 end
 
 function SnowCrownProxy:RequestOperSnowEquip(oper, pos, equipGuid)
