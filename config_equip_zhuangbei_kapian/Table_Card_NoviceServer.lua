@@ -3882,6 +3882,78 @@ Table_Card = {
     ComposeCardType = 1,
     ForbidCards = _EmptyTable
   },
+  [20218] = {
+    id = 20218,
+    Name = "鬼影蝙蝠卡片",
+    Quality = 3,
+    Position = 7,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_20218",
+    monsterID = {10378},
+    BuffEffect = {
+      buff = {58350}
+    },
+    Weight = 20,
+    Type = 1,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable,
+    BookClass = 8,
+    BookWeight = 100,
+    ComposeCardType = 1,
+    ForbidCards = _EmptyTable
+  },
+  [20219] = {
+    id = 20219,
+    Name = "嗜血灵兽卡片",
+    Quality = 3,
+    Position = 3,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_20220",
+    monsterID = {10379},
+    BuffEffect = {
+      buff = {58360, 58361}
+    },
+    Weight = 20,
+    Type = 1,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable,
+    BookClass = 8,
+    BookWeight = 100,
+    ComposeCardType = 1,
+    ForbidCards = _EmptyTable
+  },
+  [20220] = {
+    id = 20220,
+    Name = "幻音恶魔卡片",
+    Quality = 2,
+    Position = 1,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_20219",
+    monsterID = {10380},
+    BuffEffect = {
+      buff = {58370}
+    },
+    Weight = 50,
+    Type = 1,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable,
+    BookClass = 10,
+    BookWeight = 100,
+    ComposeCardType = 1,
+    ForbidCards = _EmptyTable
+  },
   [20221] = {
     id = 20221,
     Name = "黄俄希托斯卡片",
@@ -4094,6 +4166,30 @@ Table_Card = {
     LotteryDate = _EmptyTable,
     ServerID = _EmptyTable,
     BookClass = 8,
+    BookWeight = 100,
+    ComposeCardType = 1,
+    ForbidCards = _EmptyTable
+  },
+  [20230] = {
+    id = 20230,
+    Name = "不冻花卡片",
+    Quality = 2,
+    Position = 7,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_20230",
+    monsterID = {10400},
+    BuffEffect = {
+      buff = {900650}
+    },
+    Weight = 50,
+    Type = 1,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable,
+    BookClass = 10,
     BookWeight = 100,
     ComposeCardType = 1,
     ForbidCards = _EmptyTable
@@ -6589,10 +6685,36 @@ Table_Card = {
     Position = 3,
     CardType = 3,
     Anchor = _EmptyTable,
-    Picture = "card_23077",
+    Picture = "card_23007",
     monsterID = {30074},
     BuffEffect = {
       buff = {59800, 59801}
+    },
+    Weight = 0,
+    Type = 4,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable,
+    BookClass = 2,
+    BookWeight = 100,
+    ComposeCardType = 3,
+    MVPCardDecompose = 3,
+    SelectToForbid = 1,
+    ForbidCards = _EmptyTable
+  },
+  [23082] = {
+    id = 23082,
+    Name = "霜厄猛犸卡片",
+    Quality = 4,
+    Position = 6,
+    CardType = 3,
+    Anchor = _EmptyTable,
+    Picture = "card_23082",
+    monsterID = {30077},
+    BuffEffect = {
+      buff = {900660, 900661}
     },
     Weight = 0,
     Type = 4,
@@ -8141,6 +8263,34 @@ Table_Card = {
     SelectToForbid = 1,
     ForbidCards = _EmptyTable
   },
+  [23371] = {
+    id = 23371,
+    Name = "虚空恐惧骑士卡片",
+    Quality = 4,
+    Position = 1,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_23371",
+    monsterID = {31521},
+    BuffEffect = {
+      buff = {
+        59070,
+        59071,
+        59072
+      }
+    },
+    NoShow = 1,
+    Weight = 0,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable,
+    ComposeCardType = 3,
+    MVPCardDecompose = 3,
+    SelectToForbid = 1,
+    ForbidCards = _EmptyTable
+  },
   [23380] = {
     id = 23380,
     Name = "拉斯格瑞丝·羽落卡片",
@@ -8347,6 +8497,30 @@ Table_Card = {
         59611,
         59612
       }
+    },
+    NoShow = 1,
+    Weight = 0,
+    TFComposeDate = _EmptyTable,
+    TFLotteryDate = _EmptyTable,
+    ComposeDate = _EmptyTable,
+    LotteryDate = _EmptyTable,
+    ServerID = _EmptyTable,
+    ComposeCardType = 3,
+    MVPCardDecompose = 3,
+    SelectToForbid = 1,
+    ForbidCards = _EmptyTable
+  },
+  [23475] = {
+    id = 23475,
+    Name = "丁癸相生卡片",
+    Quality = 4,
+    Position = 6,
+    CardType = 1,
+    Anchor = _EmptyTable,
+    Picture = "card_23475",
+    monsterID = {31569},
+    BuffEffect = {
+      buff = {59630}
     },
     NoShow = 1,
     Weight = 0,
@@ -12065,7 +12239,7 @@ Table_Card = {
     ForbidCards = {23016}
   }
 }
-Table_Card.MD5 = "--md5:{'primarymd5':'40fd3521b11f5557ff63d640849bd5d1'}"
+Table_Card.MD5 = "--md5:{'primarymd5':'2c181e27581dd92c12719570cd392b17'}"
 Table_Card_fields = {
   "id",
   "Name",

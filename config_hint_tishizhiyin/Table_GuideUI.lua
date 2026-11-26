@@ -227,6 +227,40 @@ Table_GuideUI = {
     complete_con = "",
     Params = _EmptyTable
   },
+  [25] = {
+    id = 25,
+    GroupID = 7,
+    MainTitle = "##3502872",
+    Text = "##2857142",
+    Desc = "##2857143",
+    Icon = "DispatchComplete",
+    Shortcutpower = {8345},
+    complete_con = "WorldQuest",
+    Params = {mapid = 151},
+    Sysmsg = 43462
+  },
+  [26] = {
+    id = 26,
+    GroupID = 7,
+    MainTitle = "##3502872",
+    Text = "##3502874",
+    Desc = "##3502875",
+    Icon = "jfzc_01",
+    Shortcutpower = {8345},
+    complete_con = "",
+    Params = _EmptyTable
+  },
+  [27] = {
+    id = 27,
+    GroupID = 7,
+    MainTitle = "##3502872",
+    Text = "##3502877",
+    Desc = "##3502878",
+    Icon = "jfzc_02",
+    Shortcutpower = {8345},
+    complete_con = "",
+    Params = _EmptyTable
+  },
   [28] = {
     id = 28,
     GroupID = 8,

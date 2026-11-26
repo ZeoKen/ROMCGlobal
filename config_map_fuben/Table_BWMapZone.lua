@@ -199,6 +199,16 @@ Table_BWMapZone_t = {
       387.0,
       0.0,
       104.5
+    },
+    {
+      132.0,
+      0.0,
+      82.0
+    },
+    {
+      -41.5,
+      0.0,
+      174.5
     }
   },
   Center = {
@@ -461,6 +471,21 @@ Table_BWMapZone_t = {
       388.5,
       38.92,
       64.07
+    },
+    {
+      0.13,
+      107.3,
+      168.11
+    },
+    {
+      138.46,
+      0.0,
+      128.55
+    },
+    {
+      -88.1,
+      0.0,
+      175.7
     }
   },
   Event = {
@@ -1016,6 +1041,40 @@ Table_BWMapZone_t = {
         1014900001,
         1014920001,
         1016570002
+      }
+    },
+    {
+      MapStep = {
+        286,
+        287,
+        288
+      },
+      Quest = {
+        1016840002,
+        1013030001,
+        1013040001,
+        1013050001,
+        1013080001,
+        1013090001,
+        1013100001,
+        1013110001,
+        1013120001,
+        1013150001,
+        1013160001,
+        1013170001
+      }
+    },
+    {
+      MapStep = {289, 290},
+      Quest = {
+        1016850002,
+        1013060001,
+        1013070001,
+        1013130001,
+        1013140001,
+        1013180001,
+        1013190001,
+        1013200001
       }
     }
   }
@@ -1889,6 +1948,56 @@ Table_BWMapZone = {
     GroupId = 6,
     BGM = "Bgm_188_AtLastlHeard",
     Desc = "##45939760"
+  },
+  [93] = {
+    id = 93,
+    MapId = 155,
+    NameZh = "##45908122",
+    Type = 1,
+    Center = Table_BWMapZone_t.Center[53],
+    BGM = ""
+  },
+  [94] = {
+    id = 94,
+    MapId = 155,
+    NameZh = "##46378241",
+    RegionId = 13,
+    GroupId = 7,
+    Center = Table_BWMapZone_t.Center[54],
+    BlockCenter = Table_BWMapZone_t.BlockCenter[41],
+    Event = Table_BWMapZone_t.Event[41],
+    BGM = "Bgm_189_MyPreciousBaby"
+  },
+  [95] = {
+    id = 95,
+    MapId = 155,
+    NameZh = "##46378241",
+    Type = 3,
+    RegionId = 14,
+    GroupId = 7,
+    BGM = "Bgm_187_WordsFromTheMyths",
+    Desc = "##48057949"
+  },
+  [96] = {
+    id = 96,
+    MapId = 155,
+    NameZh = "##46378238",
+    RegionId = 15,
+    GroupId = 8,
+    Center = Table_BWMapZone_t.Center[55],
+    BlockCenter = Table_BWMapZone_t.BlockCenter[42],
+    Event = Table_BWMapZone_t.Event[42],
+    BGM = "Bgm_189_MyPreciousBaby"
+  },
+  [97] = {
+    id = 97,
+    MapId = 155,
+    NameZh = "##46378238",
+    Type = 3,
+    RegionId = 16,
+    GroupId = 8,
+    BGM = "Bgm_187_WordsFromTheMyths",
+    Desc = "##48057950"
   }
 }
 local cell_mt = {

@@ -18,6 +18,18 @@ function ActivityExchangeView:InitData()
   self.act_id = self.subViewData and self.subViewData.ActivityId or 0
   self.exchangeItems = {}
   self.exchangeMatGetWays = {}
+  local exchangeMatGetWayItemIds = {}
+  local appendExchangeMatGetWays = function(itemId)
+    if not itemId or exchangeMatGetWayItemIds[itemId] then
+      return
+    end
+    exchangeMatGetWayItemIds[itemId] = true
+    local getWayItemData = GainWayItemData.new(itemId)
+    local cellDatas = getWayItemData.datas
+    for k = 1, #cellDatas do
+      self.exchangeMatGetWays[#self.exchangeMatGetWays + 1] = cellDatas[k]
+    end
+  end
   local config = Table_ActPersonalTimer[self.act_id]
   if config then
     self.act_name = config.Name
@@ -28,14 +40,15 @@ function ActivityExchangeView:InitData()
       data.exchangeItem = exchange_items[i]
       data.act_id = self.act_id
       self.exchangeItems[i] = data
-      local cost = exchange_items[i].cost
+      local cost = exchange_items[i].cost or {}
+      local equipCost = exchange_items[i].equip_cost
+      if equipCost then
+        local equipCostId = type(equipCost) == "table" and equipCost[1] or equipCost
+        appendExchangeMatGetWays(equipCostId)
+      end
       for j = 1, #cost do
         local itemId = cost[j][1]
-        local getWayItemData = GainWayItemData.new(itemId)
-        local cellDatas = getWayItemData.datas
-        for k = 1, #cellDatas do
-          self.exchangeMatGetWays[#self.exchangeMatGetWays + 1] = cellDatas[k]
-        end
+        appendExchangeMatGetWays(itemId)
       end
     end
     local isTFBranch = EnvChannel.IsTFBranch()

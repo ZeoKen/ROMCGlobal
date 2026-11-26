@@ -87,7 +87,7 @@ function FunctionTipoff:HandleReportUser(msgid, user_report)
   end
 end
 
-function FunctionTipoff:DoTipoff(id, record_reason, name, str)
+function FunctionTipoff:DoTipoff(id, record_reason, name, str, contentTimestamp)
   if FunctionTipoff.IsForbidden() then
     return
   end
@@ -98,6 +98,7 @@ function FunctionTipoff:DoTipoff(id, record_reason, name, str)
   local tipoffCall = function()
     local temp = ReusableTable.CreateTable()
     temp.charid = id
+    temp.content_timestamp = contentTimestamp
     temp.reasons = {}
     for k, _ in pairs(record_reason) do
       local reason = {}

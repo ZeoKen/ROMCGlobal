@@ -8794,6 +8794,41 @@ function AchieveCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function AchieveCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function AchieveCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function AchieveCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function AchieveCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function AchieveCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function AchieveCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -18477,6 +18512,10 @@ function AchieveCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function AchieveCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function AchieveCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -36689,7 +36728,8 @@ end
 function AchieveCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -39617,6 +39657,16 @@ function AchieveCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function AchieveCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function AchieveCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function AchieveCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -40655,6 +40705,10 @@ function AchieveCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function AchieveCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function AchieveCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -40839,6 +40893,10 @@ function AchieveCmd_pb.AddRelation()
 end
 
 function AchieveCmd_pb.RemoveRelation()
+  return {}
+end
+
+function AchieveCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -52154,6 +52212,41 @@ function ActHitPolly_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function ActHitPolly_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function ActHitPolly_pb.BattleReplayKey()
+  return {}
+end
+
+function ActHitPolly_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function ActHitPolly_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function ActHitPolly_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function ActHitPolly_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -61837,6 +61930,10 @@ function ActHitPolly_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function ActHitPolly_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function ActHitPolly_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -80049,7 +80146,8 @@ end
 function ActHitPolly_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -82977,6 +83075,16 @@ function ActHitPolly_pb.ExtractionCardUserCmd()
   }
 end
 
+function ActHitPolly_pb.KickRequestUserCmd()
+  return {}
+end
+
+function ActHitPolly_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function ActHitPolly_pb.MailMsgParam()
   return {
     params = {}
@@ -84015,6 +84123,10 @@ function ActHitPolly_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function ActHitPolly_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function ActHitPolly_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -84199,6 +84311,10 @@ function ActHitPolly_pb.AddRelation()
 end
 
 function ActHitPolly_pb.RemoveRelation()
+  return {}
+end
+
+function ActHitPolly_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -95514,6 +95630,41 @@ function ActMiniRoCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function ActMiniRoCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function ActMiniRoCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function ActMiniRoCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function ActMiniRoCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function ActMiniRoCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function ActMiniRoCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -105197,6 +105348,10 @@ function ActMiniRoCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function ActMiniRoCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function ActMiniRoCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -123409,7 +123564,8 @@ end
 function ActMiniRoCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -126337,6 +126493,16 @@ function ActMiniRoCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function ActMiniRoCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function ActMiniRoCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function ActMiniRoCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -127375,6 +127541,10 @@ function ActMiniRoCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function ActMiniRoCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function ActMiniRoCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -127559,6 +127729,10 @@ function ActMiniRoCmd_pb.AddRelation()
 end
 
 function ActMiniRoCmd_pb.RemoveRelation()
+  return {}
+end
+
+function ActMiniRoCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -138874,6 +139048,41 @@ function ActivityCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function ActivityCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function ActivityCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function ActivityCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function ActivityCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function ActivityCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function ActivityCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -148557,6 +148766,10 @@ function ActivityCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function ActivityCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function ActivityCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -166769,7 +166982,8 @@ end
 function ActivityCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -169697,6 +169911,16 @@ function ActivityCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function ActivityCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function ActivityCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function ActivityCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -170735,6 +170959,10 @@ function ActivityCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function ActivityCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function ActivityCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -170919,6 +171147,10 @@ function ActivityCmd_pb.AddRelation()
 end
 
 function ActivityCmd_pb.RemoveRelation()
+  return {}
+end
+
+function ActivityCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -182234,6 +182466,41 @@ function ActivityEvent_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function ActivityEvent_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function ActivityEvent_pb.BattleReplayKey()
+  return {}
+end
+
+function ActivityEvent_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function ActivityEvent_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function ActivityEvent_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function ActivityEvent_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -191917,6 +192184,10 @@ function ActivityEvent_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function ActivityEvent_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function ActivityEvent_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -210129,7 +210400,8 @@ end
 function ActivityEvent_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -213057,6 +213329,16 @@ function ActivityEvent_pb.ExtractionCardUserCmd()
   }
 end
 
+function ActivityEvent_pb.KickRequestUserCmd()
+  return {}
+end
+
+function ActivityEvent_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function ActivityEvent_pb.MailMsgParam()
   return {
     params = {}
@@ -214095,6 +214377,10 @@ function ActivityEvent_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function ActivityEvent_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function ActivityEvent_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -214279,6 +214565,10 @@ function ActivityEvent_pb.AddRelation()
 end
 
 function ActivityEvent_pb.RemoveRelation()
+  return {}
+end
+
+function ActivityEvent_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -225594,6 +225884,41 @@ function AstrolabeCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function AstrolabeCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function AstrolabeCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function AstrolabeCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function AstrolabeCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function AstrolabeCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function AstrolabeCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -235277,6 +235602,10 @@ function AstrolabeCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function AstrolabeCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function AstrolabeCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -253489,7 +253818,8 @@ end
 function AstrolabeCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -256417,6 +256747,16 @@ function AstrolabeCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function AstrolabeCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function AstrolabeCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function AstrolabeCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -257455,6 +257795,10 @@ function AstrolabeCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function AstrolabeCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function AstrolabeCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -257639,6 +257983,10 @@ function AstrolabeCmd_pb.AddRelation()
 end
 
 function AstrolabeCmd_pb.RemoveRelation()
+  return {}
+end
+
+function AstrolabeCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -268954,6 +269302,41 @@ function AuctionCCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function AuctionCCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function AuctionCCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function AuctionCCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function AuctionCCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function AuctionCCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function AuctionCCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -278637,6 +279020,10 @@ function AuctionCCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function AuctionCCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function AuctionCCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -296849,7 +297236,8 @@ end
 function AuctionCCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -299777,6 +300165,16 @@ function AuctionCCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function AuctionCCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function AuctionCCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function AuctionCCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -300815,6 +301213,10 @@ function AuctionCCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function AuctionCCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function AuctionCCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -300999,6 +301401,10 @@ function AuctionCCmd_pb.AddRelation()
 end
 
 function AuctionCCmd_pb.RemoveRelation()
+  return {}
+end
+
+function AuctionCCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -312314,6 +312720,41 @@ function Authorize_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function Authorize_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function Authorize_pb.BattleReplayKey()
+  return {}
+end
+
+function Authorize_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function Authorize_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function Authorize_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function Authorize_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -321997,6 +322438,10 @@ function Authorize_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function Authorize_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function Authorize_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -340209,7 +340654,8 @@ end
 function Authorize_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -343137,6 +343583,16 @@ function Authorize_pb.ExtractionCardUserCmd()
   }
 end
 
+function Authorize_pb.KickRequestUserCmd()
+  return {}
+end
+
+function Authorize_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function Authorize_pb.MailMsgParam()
   return {
     params = {}
@@ -344175,6 +344631,10 @@ function Authorize_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function Authorize_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function Authorize_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -344359,6 +344819,10 @@ function Authorize_pb.AddRelation()
 end
 
 function Authorize_pb.RemoveRelation()
+  return {}
+end
+
+function Authorize_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -355674,6 +356138,41 @@ function BattlePass_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function BattlePass_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function BattlePass_pb.BattleReplayKey()
+  return {}
+end
+
+function BattlePass_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function BattlePass_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function BattlePass_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function BattlePass_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -365357,6 +365856,10 @@ function BattlePass_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function BattlePass_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function BattlePass_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -383569,7 +384072,8 @@ end
 function BattlePass_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -386497,6 +387001,16 @@ function BattlePass_pb.ExtractionCardUserCmd()
   }
 end
 
+function BattlePass_pb.KickRequestUserCmd()
+  return {}
+end
+
+function BattlePass_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function BattlePass_pb.MailMsgParam()
   return {
     params = {}
@@ -387535,6 +388049,10 @@ function BattlePass_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function BattlePass_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function BattlePass_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -387719,6 +388237,10 @@ function BattlePass_pb.AddRelation()
 end
 
 function BattlePass_pb.RemoveRelation()
+  return {}
+end
+
+function BattlePass_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -399034,6 +399556,41 @@ function BossCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function BossCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function BossCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function BossCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function BossCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function BossCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function BossCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -408717,6 +409274,10 @@ function BossCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function BossCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function BossCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -426929,7 +427490,8 @@ end
 function BossCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -429857,6 +430419,16 @@ function BossCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function BossCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function BossCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function BossCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -430895,6 +431467,10 @@ function BossCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function BossCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function BossCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -431079,6 +431655,10 @@ function BossCmd_pb.AddRelation()
 end
 
 function BossCmd_pb.RemoveRelation()
+  return {}
+end
+
+function BossCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -442394,6 +442974,41 @@ function CarrierCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function CarrierCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function CarrierCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function CarrierCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function CarrierCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function CarrierCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function CarrierCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -452077,6 +452692,10 @@ function CarrierCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function CarrierCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function CarrierCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -470289,7 +470908,8 @@ end
 function CarrierCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -473217,6 +473837,16 @@ function CarrierCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function CarrierCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function CarrierCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function CarrierCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -474255,6 +474885,10 @@ function CarrierCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function CarrierCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function CarrierCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -474439,6 +475073,10 @@ function CarrierCmd_pb.AddRelation()
 end
 
 function CarrierCmd_pb.RemoveRelation()
+  return {}
+end
+
+function CarrierCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -485754,6 +486392,41 @@ function ChatCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function ChatCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function ChatCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function ChatCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function ChatCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function ChatCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function ChatCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -495437,6 +496110,10 @@ function ChatCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function ChatCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function ChatCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -513649,7 +514326,8 @@ end
 function ChatCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -516577,6 +517255,16 @@ function ChatCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function ChatCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function ChatCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function ChatCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -517615,6 +518303,10 @@ function ChatCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function ChatCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function ChatCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -517799,6 +518491,10 @@ function ChatCmd_pb.AddRelation()
 end
 
 function ChatCmd_pb.RemoveRelation()
+  return {}
+end
+
+function ChatCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -529114,6 +529810,41 @@ function DisneyActivity_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function DisneyActivity_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function DisneyActivity_pb.BattleReplayKey()
+  return {}
+end
+
+function DisneyActivity_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function DisneyActivity_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function DisneyActivity_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function DisneyActivity_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -538797,6 +539528,10 @@ function DisneyActivity_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function DisneyActivity_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function DisneyActivity_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -557009,7 +557744,8 @@ end
 function DisneyActivity_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -559937,6 +560673,16 @@ function DisneyActivity_pb.ExtractionCardUserCmd()
   }
 end
 
+function DisneyActivity_pb.KickRequestUserCmd()
+  return {}
+end
+
+function DisneyActivity_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function DisneyActivity_pb.MailMsgParam()
   return {
     params = {}
@@ -560975,6 +561721,10 @@ function DisneyActivity_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function DisneyActivity_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function DisneyActivity_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -561159,6 +561909,10 @@ function DisneyActivity_pb.AddRelation()
 end
 
 function DisneyActivity_pb.RemoveRelation()
+  return {}
+end
+
+function DisneyActivity_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -572474,6 +573228,41 @@ function Dojo_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function Dojo_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function Dojo_pb.BattleReplayKey()
+  return {}
+end
+
+function Dojo_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function Dojo_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function Dojo_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function Dojo_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -582157,6 +582946,10 @@ function Dojo_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function Dojo_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function Dojo_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -600369,7 +601162,8 @@ end
 function Dojo_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -603297,6 +604091,16 @@ function Dojo_pb.ExtractionCardUserCmd()
   }
 end
 
+function Dojo_pb.KickRequestUserCmd()
+  return {}
+end
+
+function Dojo_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function Dojo_pb.MailMsgParam()
   return {
     params = {}
@@ -604335,6 +605139,10 @@ function Dojo_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function Dojo_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function Dojo_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -604519,6 +605327,10 @@ function Dojo_pb.AddRelation()
 end
 
 function Dojo_pb.RemoveRelation()
+  return {}
+end
+
+function Dojo_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -615834,6 +616646,41 @@ function ErrorUserCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function ErrorUserCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function ErrorUserCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function ErrorUserCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function ErrorUserCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function ErrorUserCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function ErrorUserCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -625517,6 +626364,10 @@ function ErrorUserCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function ErrorUserCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function ErrorUserCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -643729,7 +644580,8 @@ end
 function ErrorUserCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -646657,6 +647509,16 @@ function ErrorUserCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function ErrorUserCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function ErrorUserCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function ErrorUserCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -647695,6 +648557,10 @@ function ErrorUserCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function ErrorUserCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function ErrorUserCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -647879,6 +648745,10 @@ function ErrorUserCmd_pb.AddRelation()
 end
 
 function ErrorUserCmd_pb.RemoveRelation()
+  return {}
+end
+
+function ErrorUserCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -659194,6 +660064,41 @@ function FamilyCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function FamilyCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function FamilyCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function FamilyCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function FamilyCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function FamilyCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function FamilyCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -668877,6 +669782,10 @@ function FamilyCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function FamilyCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function FamilyCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -687089,7 +687998,8 @@ end
 function FamilyCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -690017,6 +690927,16 @@ function FamilyCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function FamilyCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function FamilyCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function FamilyCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -691055,6 +691975,10 @@ function FamilyCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function FamilyCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function FamilyCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -691239,6 +692163,10 @@ function FamilyCmd_pb.AddRelation()
 end
 
 function FamilyCmd_pb.RemoveRelation()
+  return {}
+end
+
+function FamilyCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -702554,6 +703482,41 @@ function FuBenCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function FuBenCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function FuBenCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function FuBenCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function FuBenCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function FuBenCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function FuBenCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -712237,6 +713200,10 @@ function FuBenCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function FuBenCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function FuBenCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -730449,7 +731416,8 @@ end
 function FuBenCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -733377,6 +734345,16 @@ function FuBenCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function FuBenCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function FuBenCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function FuBenCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -734415,6 +735393,10 @@ function FuBenCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function FuBenCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function FuBenCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -734599,6 +735581,10 @@ function FuBenCmd_pb.AddRelation()
 end
 
 function FuBenCmd_pb.RemoveRelation()
+  return {}
+end
+
+function FuBenCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -745914,6 +746900,41 @@ function GuildCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function GuildCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function GuildCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function GuildCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function GuildCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function GuildCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function GuildCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -755597,6 +756618,10 @@ function GuildCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function GuildCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function GuildCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -773809,7 +774834,8 @@ end
 function GuildCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -776737,6 +777763,16 @@ function GuildCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function GuildCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function GuildCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function GuildCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -777775,6 +778811,10 @@ function GuildCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function GuildCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function GuildCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -777959,6 +778999,10 @@ function GuildCmd_pb.AddRelation()
 end
 
 function GuildCmd_pb.RemoveRelation()
+  return {}
+end
+
+function GuildCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -789274,6 +790318,41 @@ function HomeCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function HomeCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function HomeCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function HomeCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function HomeCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function HomeCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function HomeCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -798957,6 +800036,10 @@ function HomeCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function HomeCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function HomeCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -817169,7 +818252,8 @@ end
 function HomeCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -820097,6 +821181,16 @@ function HomeCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function HomeCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function HomeCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function HomeCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -821135,6 +822229,10 @@ function HomeCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function HomeCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function HomeCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -821319,6 +822417,10 @@ function HomeCmd_pb.AddRelation()
 end
 
 function HomeCmd_pb.RemoveRelation()
+  return {}
+end
+
+function HomeCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -832634,6 +833736,41 @@ function InfiniteTower_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function InfiniteTower_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function InfiniteTower_pb.BattleReplayKey()
+  return {}
+end
+
+function InfiniteTower_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function InfiniteTower_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function InfiniteTower_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function InfiniteTower_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -842317,6 +843454,10 @@ function InfiniteTower_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function InfiniteTower_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function InfiniteTower_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -860529,7 +861670,8 @@ end
 function InfiniteTower_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -863457,6 +864599,16 @@ function InfiniteTower_pb.ExtractionCardUserCmd()
   }
 end
 
+function InfiniteTower_pb.KickRequestUserCmd()
+  return {}
+end
+
+function InfiniteTower_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function InfiniteTower_pb.MailMsgParam()
   return {
     params = {}
@@ -864495,6 +865647,10 @@ function InfiniteTower_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function InfiniteTower_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function InfiniteTower_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -864679,6 +865835,10 @@ function InfiniteTower_pb.AddRelation()
 end
 
 function InfiniteTower_pb.RemoveRelation()
+  return {}
+end
+
+function InfiniteTower_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -875994,6 +877154,41 @@ function InteractCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function InteractCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function InteractCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function InteractCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function InteractCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function InteractCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function InteractCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -885677,6 +886872,10 @@ function InteractCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function InteractCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function InteractCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -903889,7 +905088,8 @@ end
 function InteractCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -906817,6 +908017,16 @@ function InteractCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function InteractCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function InteractCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function InteractCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -907855,6 +909065,10 @@ function InteractCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function InteractCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function InteractCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -908039,6 +909253,10 @@ function InteractCmd_pb.AddRelation()
 end
 
 function InteractCmd_pb.RemoveRelation()
+  return {}
+end
+
+function InteractCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -919354,6 +920572,41 @@ function LoginUserCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function LoginUserCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function LoginUserCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function LoginUserCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function LoginUserCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function LoginUserCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function LoginUserCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -929037,6 +930290,10 @@ function LoginUserCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function LoginUserCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function LoginUserCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -947249,7 +948506,8 @@ end
 function LoginUserCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -950177,6 +951435,16 @@ function LoginUserCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function LoginUserCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function LoginUserCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function LoginUserCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -951215,6 +952483,10 @@ function LoginUserCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function LoginUserCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function LoginUserCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -951399,6 +952671,10 @@ function LoginUserCmd_pb.AddRelation()
 end
 
 function LoginUserCmd_pb.RemoveRelation()
+  return {}
+end
+
+function LoginUserCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -962714,6 +963990,41 @@ function MatchCCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function MatchCCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function MatchCCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function MatchCCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function MatchCCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function MatchCCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function MatchCCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -972397,6 +973708,10 @@ function MatchCCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function MatchCCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function MatchCCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -990609,7 +991924,8 @@ end
 function MatchCCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -993537,6 +994853,16 @@ function MatchCCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function MatchCCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function MatchCCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function MatchCCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -994575,6 +995901,10 @@ function MatchCCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function MatchCCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function MatchCCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -994759,6 +996089,10 @@ function MatchCCmd_pb.AddRelation()
 end
 
 function MatchCCmd_pb.RemoveRelation()
+  return {}
+end
+
+function MatchCCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1006074,6 +1007408,41 @@ function MessCCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function MessCCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function MessCCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function MessCCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function MessCCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function MessCCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function MessCCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1015757,6 +1017126,10 @@ function MessCCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function MessCCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function MessCCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1033969,7 +1035342,8 @@ end
 function MessCCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1036897,6 +1038271,16 @@ function MessCCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function MessCCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function MessCCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function MessCCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -1037935,6 +1039319,10 @@ function MessCCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function MessCCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function MessCCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1038119,6 +1039507,10 @@ function MessCCmd_pb.AddRelation()
 end
 
 function MessCCmd_pb.RemoveRelation()
+  return {}
+end
+
+function MessCCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1049434,6 +1050826,41 @@ function MiniGameCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function MiniGameCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function MiniGameCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function MiniGameCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function MiniGameCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function MiniGameCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function MiniGameCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1059117,6 +1060544,10 @@ function MiniGameCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function MiniGameCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function MiniGameCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1077329,7 +1078760,8 @@ end
 function MiniGameCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1080257,6 +1081689,16 @@ function MiniGameCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function MiniGameCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function MiniGameCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function MiniGameCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -1081295,6 +1082737,10 @@ function MiniGameCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function MiniGameCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function MiniGameCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1081479,6 +1082925,10 @@ function MiniGameCmd_pb.AddRelation()
 end
 
 function MiniGameCmd_pb.RemoveRelation()
+  return {}
+end
+
+function MiniGameCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1092794,6 +1094244,41 @@ function NoviceBattlePass_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function NoviceBattlePass_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function NoviceBattlePass_pb.BattleReplayKey()
+  return {}
+end
+
+function NoviceBattlePass_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function NoviceBattlePass_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function NoviceBattlePass_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function NoviceBattlePass_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1102477,6 +1103962,10 @@ function NoviceBattlePass_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function NoviceBattlePass_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function NoviceBattlePass_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1120689,7 +1122178,8 @@ end
 function NoviceBattlePass_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1123617,6 +1125107,16 @@ function NoviceBattlePass_pb.ExtractionCardUserCmd()
   }
 end
 
+function NoviceBattlePass_pb.KickRequestUserCmd()
+  return {}
+end
+
+function NoviceBattlePass_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function NoviceBattlePass_pb.MailMsgParam()
   return {
     params = {}
@@ -1124655,6 +1126155,10 @@ function NoviceBattlePass_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function NoviceBattlePass_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function NoviceBattlePass_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1124839,6 +1126343,10 @@ function NoviceBattlePass_pb.AddRelation()
 end
 
 function NoviceBattlePass_pb.RemoveRelation()
+  return {}
+end
+
+function NoviceBattlePass_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1136154,6 +1137662,41 @@ function NoviceNotebook_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function NoviceNotebook_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function NoviceNotebook_pb.BattleReplayKey()
+  return {}
+end
+
+function NoviceNotebook_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function NoviceNotebook_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function NoviceNotebook_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function NoviceNotebook_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1145837,6 +1147380,10 @@ function NoviceNotebook_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function NoviceNotebook_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function NoviceNotebook_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1164049,7 +1165596,8 @@ end
 function NoviceNotebook_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1166977,6 +1168525,16 @@ function NoviceNotebook_pb.ExtractionCardUserCmd()
   }
 end
 
+function NoviceNotebook_pb.KickRequestUserCmd()
+  return {}
+end
+
+function NoviceNotebook_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function NoviceNotebook_pb.MailMsgParam()
   return {
     params = {}
@@ -1168015,6 +1169573,10 @@ function NoviceNotebook_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function NoviceNotebook_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function NoviceNotebook_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1168199,6 +1169761,10 @@ function NoviceNotebook_pb.AddRelation()
 end
 
 function NoviceNotebook_pb.RemoveRelation()
+  return {}
+end
+
+function NoviceNotebook_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1179514,6 +1181080,41 @@ function OverseasTaiwanCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function OverseasTaiwanCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function OverseasTaiwanCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function OverseasTaiwanCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function OverseasTaiwanCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function OverseasTaiwanCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function OverseasTaiwanCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1189197,6 +1190798,10 @@ function OverseasTaiwanCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function OverseasTaiwanCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function OverseasTaiwanCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1207409,7 +1209014,8 @@ end
 function OverseasTaiwanCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1210337,6 +1211943,16 @@ function OverseasTaiwanCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function OverseasTaiwanCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function OverseasTaiwanCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function OverseasTaiwanCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -1211375,6 +1212991,10 @@ function OverseasTaiwanCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function OverseasTaiwanCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function OverseasTaiwanCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1211559,6 +1213179,10 @@ function OverseasTaiwanCmd_pb.AddRelation()
 end
 
 function OverseasTaiwanCmd_pb.RemoveRelation()
+  return {}
+end
+
+function OverseasTaiwanCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1222874,6 +1224498,41 @@ function PhotoCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function PhotoCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function PhotoCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function PhotoCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function PhotoCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function PhotoCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function PhotoCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1232557,6 +1234216,10 @@ function PhotoCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function PhotoCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function PhotoCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1250769,7 +1252432,8 @@ end
 function PhotoCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1253697,6 +1255361,16 @@ function PhotoCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function PhotoCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function PhotoCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function PhotoCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -1254735,6 +1256409,10 @@ function PhotoCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function PhotoCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function PhotoCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1254919,6 +1256597,10 @@ function PhotoCmd_pb.AddRelation()
 end
 
 function PhotoCmd_pb.RemoveRelation()
+  return {}
+end
+
+function PhotoCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1266234,6 +1267916,41 @@ function ProtoCommon_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function ProtoCommon_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function ProtoCommon_pb.BattleReplayKey()
+  return {}
+end
+
+function ProtoCommon_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function ProtoCommon_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function ProtoCommon_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function ProtoCommon_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1275917,6 +1277634,10 @@ function ProtoCommon_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function ProtoCommon_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function ProtoCommon_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1294129,7 +1295850,8 @@ end
 function ProtoCommon_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1297057,6 +1298779,16 @@ function ProtoCommon_pb.ExtractionCardUserCmd()
   }
 end
 
+function ProtoCommon_pb.KickRequestUserCmd()
+  return {}
+end
+
+function ProtoCommon_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function ProtoCommon_pb.MailMsgParam()
   return {
     params = {}
@@ -1298095,6 +1299827,10 @@ function ProtoCommon_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function ProtoCommon_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function ProtoCommon_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1298279,6 +1300015,10 @@ function ProtoCommon_pb.AddRelation()
 end
 
 function ProtoCommon_pb.RemoveRelation()
+  return {}
+end
+
+function ProtoCommon_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1309594,6 +1311334,41 @@ function PuzzleCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function PuzzleCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function PuzzleCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function PuzzleCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function PuzzleCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function PuzzleCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function PuzzleCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1319277,6 +1321052,10 @@ function PuzzleCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function PuzzleCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function PuzzleCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1337489,7 +1339268,8 @@ end
 function PuzzleCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1340417,6 +1342197,16 @@ function PuzzleCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function PuzzleCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function PuzzleCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function PuzzleCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -1341455,6 +1343245,10 @@ function PuzzleCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function PuzzleCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function PuzzleCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1341639,6 +1343433,10 @@ function PuzzleCmd_pb.AddRelation()
 end
 
 function PuzzleCmd_pb.RemoveRelation()
+  return {}
+end
+
+function PuzzleCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1352954,6 +1354752,41 @@ function PveCard_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function PveCard_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function PveCard_pb.BattleReplayKey()
+  return {}
+end
+
+function PveCard_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function PveCard_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function PveCard_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function PveCard_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1362637,6 +1364470,10 @@ function PveCard_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function PveCard_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function PveCard_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1380849,7 +1382686,8 @@ end
 function PveCard_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1383777,6 +1385615,16 @@ function PveCard_pb.ExtractionCardUserCmd()
   }
 end
 
+function PveCard_pb.KickRequestUserCmd()
+  return {}
+end
+
+function PveCard_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function PveCard_pb.MailMsgParam()
   return {
     params = {}
@@ -1384815,6 +1386663,10 @@ function PveCard_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function PveCard_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function PveCard_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1384999,6 +1386851,10 @@ function PveCard_pb.AddRelation()
 end
 
 function PveCard_pb.RemoveRelation()
+  return {}
+end
+
+function PveCard_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1396314,6 +1398170,41 @@ function QueueEnterCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function QueueEnterCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function QueueEnterCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function QueueEnterCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function QueueEnterCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function QueueEnterCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function QueueEnterCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1405997,6 +1407888,10 @@ function QueueEnterCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function QueueEnterCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function QueueEnterCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1424209,7 +1426104,8 @@ end
 function QueueEnterCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1427137,6 +1429033,16 @@ function QueueEnterCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function QueueEnterCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function QueueEnterCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function QueueEnterCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -1428175,6 +1430081,10 @@ function QueueEnterCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function QueueEnterCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function QueueEnterCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1428359,6 +1430269,10 @@ function QueueEnterCmd_pb.AddRelation()
 end
 
 function QueueEnterCmd_pb.RemoveRelation()
+  return {}
+end
+
+function QueueEnterCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1439674,6 +1441588,41 @@ function RaidCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function RaidCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function RaidCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function RaidCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function RaidCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function RaidCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function RaidCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1449357,6 +1451306,10 @@ function RaidCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function RaidCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function RaidCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1467569,7 +1469522,8 @@ end
 function RaidCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1470497,6 +1472451,16 @@ function RaidCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function RaidCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function RaidCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function RaidCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -1471535,6 +1473499,10 @@ function RaidCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function RaidCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function RaidCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1471719,6 +1473687,10 @@ function RaidCmd_pb.AddRelation()
 end
 
 function RaidCmd_pb.RemoveRelation()
+  return {}
+end
+
+function RaidCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1483034,6 +1485006,41 @@ function RecallCCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function RecallCCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function RecallCCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function RecallCCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function RecallCCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function RecallCCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function RecallCCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1492717,6 +1494724,10 @@ function RecallCCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function RecallCCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function RecallCCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1510929,7 +1512940,8 @@ end
 function RecallCCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1513857,6 +1515869,16 @@ function RecallCCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function RecallCCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function RecallCCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function RecallCCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -1514895,6 +1516917,10 @@ function RecallCCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function RecallCCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function RecallCCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1515079,6 +1517105,10 @@ function RecallCCmd_pb.AddRelation()
 end
 
 function RecallCCmd_pb.RemoveRelation()
+  return {}
+end
+
+function RecallCCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1526394,6 +1528424,41 @@ function RecordTrade_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function RecordTrade_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function RecordTrade_pb.BattleReplayKey()
+  return {}
+end
+
+function RecordTrade_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function RecordTrade_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function RecordTrade_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function RecordTrade_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1536077,6 +1538142,10 @@ function RecordTrade_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function RecordTrade_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function RecordTrade_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1554289,7 +1556358,8 @@ end
 function RecordTrade_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1557217,6 +1559287,16 @@ function RecordTrade_pb.ExtractionCardUserCmd()
   }
 end
 
+function RecordTrade_pb.KickRequestUserCmd()
+  return {}
+end
+
+function RecordTrade_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function RecordTrade_pb.MailMsgParam()
   return {
     params = {}
@@ -1558255,6 +1560335,10 @@ function RecordTrade_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function RecordTrade_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function RecordTrade_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1558439,6 +1560523,10 @@ function RecordTrade_pb.AddRelation()
 end
 
 function RecordTrade_pb.RemoveRelation()
+  return {}
+end
+
+function RecordTrade_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1569754,6 +1571842,41 @@ function RoguelikeCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function RoguelikeCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function RoguelikeCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function RoguelikeCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function RoguelikeCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function RoguelikeCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function RoguelikeCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1579437,6 +1581560,10 @@ function RoguelikeCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function RoguelikeCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function RoguelikeCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1597649,7 +1599776,8 @@ end
 function RoguelikeCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1600577,6 +1602705,16 @@ function RoguelikeCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function RoguelikeCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function RoguelikeCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function RoguelikeCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -1601615,6 +1603753,10 @@ function RoguelikeCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function RoguelikeCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function RoguelikeCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1601799,6 +1603941,10 @@ function RoguelikeCmd_pb.AddRelation()
 end
 
 function RoguelikeCmd_pb.RemoveRelation()
+  return {}
+end
+
+function RoguelikeCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1613114,6 +1615260,41 @@ function SceneAugury_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneAugury_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneAugury_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneAugury_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneAugury_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneAugury_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneAugury_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1622797,6 +1624978,10 @@ function SceneAugury_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneAugury_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneAugury_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1641009,7 +1643194,8 @@ end
 function SceneAugury_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1643937,6 +1646123,16 @@ function SceneAugury_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneAugury_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneAugury_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneAugury_pb.MailMsgParam()
   return {
     params = {}
@@ -1644975,6 +1647171,10 @@ function SceneAugury_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneAugury_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneAugury_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1645159,6 +1647359,10 @@ function SceneAugury_pb.AddRelation()
 end
 
 function SceneAugury_pb.RemoveRelation()
+  return {}
+end
+
+function SceneAugury_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1656474,6 +1658678,41 @@ function SceneBeing_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneBeing_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneBeing_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneBeing_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneBeing_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneBeing_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneBeing_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1666157,6 +1668396,10 @@ function SceneBeing_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneBeing_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneBeing_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1684369,7 +1686612,8 @@ end
 function SceneBeing_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1687297,6 +1689541,16 @@ function SceneBeing_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneBeing_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneBeing_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneBeing_pb.MailMsgParam()
   return {
     params = {}
@@ -1688335,6 +1690589,10 @@ function SceneBeing_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneBeing_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneBeing_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1688519,6 +1690777,10 @@ function SceneBeing_pb.AddRelation()
 end
 
 function SceneBeing_pb.RemoveRelation()
+  return {}
+end
+
+function SceneBeing_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1699834,6 +1702096,41 @@ function SceneChatRoom_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneChatRoom_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneChatRoom_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneChatRoom_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneChatRoom_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneChatRoom_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneChatRoom_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1709517,6 +1711814,10 @@ function SceneChatRoom_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneChatRoom_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneChatRoom_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1727729,7 +1730030,8 @@ end
 function SceneChatRoom_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1730657,6 +1732959,16 @@ function SceneChatRoom_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneChatRoom_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneChatRoom_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneChatRoom_pb.MailMsgParam()
   return {
     params = {}
@@ -1731695,6 +1734007,10 @@ function SceneChatRoom_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneChatRoom_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneChatRoom_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1731879,6 +1734195,10 @@ function SceneChatRoom_pb.AddRelation()
 end
 
 function SceneChatRoom_pb.RemoveRelation()
+  return {}
+end
+
+function SceneChatRoom_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1743194,6 +1745514,41 @@ function SceneFood_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneFood_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneFood_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneFood_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneFood_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneFood_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneFood_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1752877,6 +1755232,10 @@ function SceneFood_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneFood_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneFood_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1771089,7 +1773448,8 @@ end
 function SceneFood_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1774017,6 +1776377,16 @@ function SceneFood_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneFood_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneFood_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneFood_pb.MailMsgParam()
   return {
     params = {}
@@ -1775055,6 +1777425,10 @@ function SceneFood_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneFood_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneFood_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1775239,6 +1777613,10 @@ function SceneFood_pb.AddRelation()
 end
 
 function SceneFood_pb.RemoveRelation()
+  return {}
+end
+
+function SceneFood_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1786554,6 +1788932,41 @@ function SceneInterlocution_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneInterlocution_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneInterlocution_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneInterlocution_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneInterlocution_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneInterlocution_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneInterlocution_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1796237,6 +1798650,10 @@ function SceneInterlocution_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneInterlocution_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneInterlocution_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1814449,7 +1816866,8 @@ end
 function SceneInterlocution_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1817377,6 +1819795,16 @@ function SceneInterlocution_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneInterlocution_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneInterlocution_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneInterlocution_pb.MailMsgParam()
   return {
     params = {}
@@ -1818415,6 +1820843,10 @@ function SceneInterlocution_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneInterlocution_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneInterlocution_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1818599,6 +1821031,10 @@ function SceneInterlocution_pb.AddRelation()
 end
 
 function SceneInterlocution_pb.RemoveRelation()
+  return {}
+end
+
+function SceneInterlocution_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1829914,6 +1832350,41 @@ function SceneItem_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneItem_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneItem_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneItem_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneItem_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneItem_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneItem_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1839597,6 +1842068,10 @@ function SceneItem_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneItem_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneItem_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1857809,7 +1860284,8 @@ end
 function SceneItem_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1860737,6 +1863213,16 @@ function SceneItem_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneItem_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneItem_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneItem_pb.MailMsgParam()
   return {
     params = {}
@@ -1861775,6 +1864261,10 @@ function SceneItem_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneItem_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneItem_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1861959,6 +1864449,10 @@ function SceneItem_pb.AddRelation()
 end
 
 function SceneItem_pb.RemoveRelation()
+  return {}
+end
+
+function SceneItem_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1873274,6 +1875768,41 @@ function SceneManor_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneManor_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneManor_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneManor_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneManor_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneManor_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneManor_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1882957,6 +1885486,10 @@ function SceneManor_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneManor_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneManor_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1901169,7 +1903702,8 @@ end
 function SceneManor_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1904097,6 +1906631,16 @@ function SceneManor_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneManor_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneManor_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneManor_pb.MailMsgParam()
   return {
     params = {}
@@ -1905135,6 +1907679,10 @@ function SceneManor_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneManor_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneManor_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1905319,6 +1907867,10 @@ function SceneManor_pb.AddRelation()
 end
 
 function SceneManor_pb.RemoveRelation()
+  return {}
+end
+
+function SceneManor_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1916634,6 +1919186,41 @@ function SceneManual_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneManual_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneManual_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneManual_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneManual_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneManual_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneManual_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1926317,6 +1928904,10 @@ function SceneManual_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneManual_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneManual_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1944529,7 +1947120,8 @@ end
 function SceneManual_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1947457,6 +1950049,16 @@ function SceneManual_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneManual_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneManual_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneManual_pb.MailMsgParam()
   return {
     params = {}
@@ -1948495,6 +1951097,10 @@ function SceneManual_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneManual_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneManual_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1948679,6 +1951285,10 @@ function SceneManual_pb.AddRelation()
 end
 
 function SceneManual_pb.RemoveRelation()
+  return {}
+end
+
+function SceneManual_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -1959994,6 +1962604,41 @@ function SceneMap_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneMap_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneMap_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneMap_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneMap_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneMap_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneMap_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -1969677,6 +1972322,10 @@ function SceneMap_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneMap_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneMap_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -1987889,7 +1990538,8 @@ end
 function SceneMap_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -1990817,6 +1993467,16 @@ function SceneMap_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneMap_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneMap_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneMap_pb.MailMsgParam()
   return {
     params = {}
@@ -1991855,6 +1994515,10 @@ function SceneMap_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneMap_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneMap_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -1992039,6 +1994703,10 @@ function SceneMap_pb.AddRelation()
 end
 
 function SceneMap_pb.RemoveRelation()
+  return {}
+end
+
+function SceneMap_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2003354,6 +2006022,41 @@ function ScenePet_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function ScenePet_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function ScenePet_pb.BattleReplayKey()
+  return {}
+end
+
+function ScenePet_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function ScenePet_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function ScenePet_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function ScenePet_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2013037,6 +2015740,10 @@ function ScenePet_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function ScenePet_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function ScenePet_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2031249,7 +2033956,8 @@ end
 function ScenePet_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2034177,6 +2036885,16 @@ function ScenePet_pb.ExtractionCardUserCmd()
   }
 end
 
+function ScenePet_pb.KickRequestUserCmd()
+  return {}
+end
+
+function ScenePet_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function ScenePet_pb.MailMsgParam()
   return {
     params = {}
@@ -2035215,6 +2037933,10 @@ function ScenePet_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function ScenePet_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function ScenePet_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2035399,6 +2038121,10 @@ function ScenePet_pb.AddRelation()
 end
 
 function ScenePet_pb.RemoveRelation()
+  return {}
+end
+
+function ScenePet_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2046714,6 +2049440,41 @@ function SceneQuest_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneQuest_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneQuest_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneQuest_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneQuest_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneQuest_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneQuest_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2056397,6 +2059158,10 @@ function SceneQuest_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneQuest_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneQuest_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2074609,7 +2077374,8 @@ end
 function SceneQuest_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2077537,6 +2080303,16 @@ function SceneQuest_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneQuest_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneQuest_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneQuest_pb.MailMsgParam()
   return {
     params = {}
@@ -2078575,6 +2081351,10 @@ function SceneQuest_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneQuest_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneQuest_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2078759,6 +2081539,10 @@ function SceneQuest_pb.AddRelation()
 end
 
 function SceneQuest_pb.RemoveRelation()
+  return {}
+end
+
+function SceneQuest_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2090074,6 +2092858,41 @@ function SceneSeal_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneSeal_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneSeal_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneSeal_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneSeal_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneSeal_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneSeal_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2099757,6 +2102576,10 @@ function SceneSeal_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneSeal_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneSeal_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2117969,7 +2120792,8 @@ end
 function SceneSeal_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2120897,6 +2123721,16 @@ function SceneSeal_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneSeal_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneSeal_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneSeal_pb.MailMsgParam()
   return {
     params = {}
@@ -2121935,6 +2124769,10 @@ function SceneSeal_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneSeal_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneSeal_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2122119,6 +2124957,10 @@ function SceneSeal_pb.AddRelation()
 end
 
 function SceneSeal_pb.RemoveRelation()
+  return {}
+end
+
+function SceneSeal_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2133434,6 +2136276,41 @@ function SceneSkill_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneSkill_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneSkill_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneSkill_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneSkill_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneSkill_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneSkill_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2143117,6 +2145994,10 @@ function SceneSkill_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneSkill_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneSkill_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2161329,7 +2164210,8 @@ end
 function SceneSkill_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2164257,6 +2167139,16 @@ function SceneSkill_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneSkill_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneSkill_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneSkill_pb.MailMsgParam()
   return {
     params = {}
@@ -2165295,6 +2168187,10 @@ function SceneSkill_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneSkill_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneSkill_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2165479,6 +2168375,10 @@ function SceneSkill_pb.AddRelation()
 end
 
 function SceneSkill_pb.RemoveRelation()
+  return {}
+end
+
+function SceneSkill_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2176794,6 +2179694,41 @@ function SceneTip_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneTip_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneTip_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneTip_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneTip_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneTip_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneTip_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2186477,6 +2189412,10 @@ function SceneTip_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneTip_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneTip_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2204689,7 +2207628,8 @@ end
 function SceneTip_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2207617,6 +2210557,16 @@ function SceneTip_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneTip_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneTip_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneTip_pb.MailMsgParam()
   return {
     params = {}
@@ -2208655,6 +2211605,10 @@ function SceneTip_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneTip_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneTip_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2208839,6 +2211793,10 @@ function SceneTip_pb.AddRelation()
 end
 
 function SceneTip_pb.RemoveRelation()
+  return {}
+end
+
+function SceneTip_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2220154,6 +2223112,41 @@ function SceneUser2_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneUser2_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneUser2_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneUser2_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneUser2_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneUser2_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneUser2_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2229837,6 +2232830,10 @@ function SceneUser2_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneUser2_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneUser2_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2248049,7 +2251046,8 @@ end
 function SceneUser2_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2250977,6 +2253975,16 @@ function SceneUser2_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneUser2_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneUser2_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneUser2_pb.MailMsgParam()
   return {
     params = {}
@@ -2252015,6 +2255023,10 @@ function SceneUser2_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneUser2_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneUser2_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2252199,6 +2255211,10 @@ function SceneUser2_pb.AddRelation()
 end
 
 function SceneUser2_pb.RemoveRelation()
+  return {}
+end
+
+function SceneUser2_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2263514,6 +2266530,41 @@ function SceneUser3_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SceneUser3_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SceneUser3_pb.BattleReplayKey()
+  return {}
+end
+
+function SceneUser3_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SceneUser3_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SceneUser3_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SceneUser3_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2273197,6 +2276248,10 @@ function SceneUser3_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SceneUser3_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SceneUser3_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2291409,7 +2294464,8 @@ end
 function SceneUser3_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2294337,6 +2297393,16 @@ function SceneUser3_pb.ExtractionCardUserCmd()
   }
 end
 
+function SceneUser3_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SceneUser3_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SceneUser3_pb.MailMsgParam()
   return {
     params = {}
@@ -2295375,6 +2298441,10 @@ function SceneUser3_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SceneUser3_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SceneUser3_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2295559,6 +2298629,10 @@ function SceneUser3_pb.AddRelation()
 end
 
 function SceneUser3_pb.RemoveRelation()
+  return {}
+end
+
+function SceneUser3_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2306874,6 +2309948,41 @@ function SessionMail_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SessionMail_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SessionMail_pb.BattleReplayKey()
+  return {}
+end
+
+function SessionMail_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SessionMail_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SessionMail_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SessionMail_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2316557,6 +2319666,10 @@ function SessionMail_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SessionMail_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SessionMail_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2334769,7 +2337882,8 @@ end
 function SessionMail_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2337697,6 +2340811,16 @@ function SessionMail_pb.ExtractionCardUserCmd()
   }
 end
 
+function SessionMail_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SessionMail_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SessionMail_pb.MailMsgParam()
   return {
     params = {}
@@ -2338735,6 +2341859,10 @@ function SessionMail_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SessionMail_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SessionMail_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2338919,6 +2342047,10 @@ function SessionMail_pb.AddRelation()
 end
 
 function SessionMail_pb.RemoveRelation()
+  return {}
+end
+
+function SessionMail_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2350234,6 +2353366,41 @@ function SessionShop_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SessionShop_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SessionShop_pb.BattleReplayKey()
+  return {}
+end
+
+function SessionShop_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SessionShop_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SessionShop_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SessionShop_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2359917,6 +2363084,10 @@ function SessionShop_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SessionShop_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SessionShop_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2378129,7 +2381300,8 @@ end
 function SessionShop_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2381057,6 +2384229,16 @@ function SessionShop_pb.ExtractionCardUserCmd()
   }
 end
 
+function SessionShop_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SessionShop_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SessionShop_pb.MailMsgParam()
   return {
     params = {}
@@ -2382095,6 +2385277,10 @@ function SessionShop_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SessionShop_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SessionShop_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2382279,6 +2385465,10 @@ function SessionShop_pb.AddRelation()
 end
 
 function SessionShop_pb.RemoveRelation()
+  return {}
+end
+
+function SessionShop_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2393594,6 +2396784,41 @@ function SessionSociality_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SessionSociality_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SessionSociality_pb.BattleReplayKey()
+  return {}
+end
+
+function SessionSociality_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SessionSociality_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SessionSociality_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SessionSociality_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2403277,6 +2406502,10 @@ function SessionSociality_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SessionSociality_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SessionSociality_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2421489,7 +2424718,8 @@ end
 function SessionSociality_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2424417,6 +2427647,16 @@ function SessionSociality_pb.ExtractionCardUserCmd()
   }
 end
 
+function SessionSociality_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SessionSociality_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SessionSociality_pb.MailMsgParam()
   return {
     params = {}
@@ -2425455,6 +2428695,10 @@ function SessionSociality_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SessionSociality_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SessionSociality_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2425639,6 +2428883,10 @@ function SessionSociality_pb.AddRelation()
 end
 
 function SessionSociality_pb.RemoveRelation()
+  return {}
+end
+
+function SessionSociality_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2436954,6 +2440202,41 @@ function SessionTeam_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SessionTeam_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SessionTeam_pb.BattleReplayKey()
+  return {}
+end
+
+function SessionTeam_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SessionTeam_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SessionTeam_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SessionTeam_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2446637,6 +2449920,10 @@ function SessionTeam_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SessionTeam_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SessionTeam_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2464849,7 +2468136,8 @@ end
 function SessionTeam_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2467777,6 +2471065,16 @@ function SessionTeam_pb.ExtractionCardUserCmd()
   }
 end
 
+function SessionTeam_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SessionTeam_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SessionTeam_pb.MailMsgParam()
   return {
     params = {}
@@ -2468815,6 +2472113,10 @@ function SessionTeam_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SessionTeam_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SessionTeam_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2468999,6 +2472301,10 @@ function SessionTeam_pb.AddRelation()
 end
 
 function SessionTeam_pb.RemoveRelation()
+  return {}
+end
+
+function SessionTeam_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2480314,6 +2483620,41 @@ function SessionWeather_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SessionWeather_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SessionWeather_pb.BattleReplayKey()
+  return {}
+end
+
+function SessionWeather_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SessionWeather_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SessionWeather_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SessionWeather_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2489997,6 +2493338,10 @@ function SessionWeather_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SessionWeather_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SessionWeather_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2508209,7 +2511554,8 @@ end
 function SessionWeather_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2511137,6 +2514483,16 @@ function SessionWeather_pb.ExtractionCardUserCmd()
   }
 end
 
+function SessionWeather_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SessionWeather_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SessionWeather_pb.MailMsgParam()
   return {
     params = {}
@@ -2512175,6 +2515531,10 @@ function SessionWeather_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SessionWeather_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SessionWeather_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2512359,6 +2515719,10 @@ function SessionWeather_pb.AddRelation()
 end
 
 function SessionWeather_pb.RemoveRelation()
+  return {}
+end
+
+function SessionWeather_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2523674,6 +2527038,41 @@ function SnowCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function SnowCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function SnowCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function SnowCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function SnowCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function SnowCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function SnowCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2533357,6 +2536756,10 @@ function SnowCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function SnowCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function SnowCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2551569,7 +2554972,8 @@ end
 function SnowCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2554497,6 +2557901,16 @@ function SnowCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function SnowCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function SnowCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function SnowCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -2555535,6 +2558949,10 @@ function SnowCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function SnowCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function SnowCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2555719,6 +2559137,10 @@ function SnowCmd_pb.AddRelation()
 end
 
 function SnowCmd_pb.RemoveRelation()
+  return {}
+end
+
+function SnowCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2567034,6 +2570456,41 @@ function TeamGroupRaid_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function TeamGroupRaid_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function TeamGroupRaid_pb.BattleReplayKey()
+  return {}
+end
+
+function TeamGroupRaid_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function TeamGroupRaid_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function TeamGroupRaid_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function TeamGroupRaid_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2576717,6 +2580174,10 @@ function TeamGroupRaid_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function TeamGroupRaid_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function TeamGroupRaid_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2594929,7 +2598390,8 @@ end
 function TeamGroupRaid_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2597857,6 +2601319,16 @@ function TeamGroupRaid_pb.ExtractionCardUserCmd()
   }
 end
 
+function TeamGroupRaid_pb.KickRequestUserCmd()
+  return {}
+end
+
+function TeamGroupRaid_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function TeamGroupRaid_pb.MailMsgParam()
   return {
     params = {}
@@ -2598895,6 +2602367,10 @@ function TeamGroupRaid_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function TeamGroupRaid_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function TeamGroupRaid_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2599079,6 +2602555,10 @@ function TeamGroupRaid_pb.AddRelation()
 end
 
 function TeamGroupRaid_pb.RemoveRelation()
+  return {}
+end
+
+function TeamGroupRaid_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2610394,6 +2613874,41 @@ function TeamRaidCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function TeamRaidCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function TeamRaidCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function TeamRaidCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function TeamRaidCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function TeamRaidCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function TeamRaidCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2620077,6 +2623592,10 @@ function TeamRaidCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function TeamRaidCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function TeamRaidCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2638289,7 +2641808,8 @@ end
 function TeamRaidCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2641217,6 +2644737,16 @@ function TeamRaidCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function TeamRaidCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function TeamRaidCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function TeamRaidCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -2642255,6 +2645785,10 @@ function TeamRaidCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function TeamRaidCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function TeamRaidCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2642439,6 +2645973,10 @@ function TeamRaidCmd_pb.AddRelation()
 end
 
 function TeamRaidCmd_pb.RemoveRelation()
+  return {}
+end
+
+function TeamRaidCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2653754,6 +2657292,41 @@ function TechTreeCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function TechTreeCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function TechTreeCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function TechTreeCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function TechTreeCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function TechTreeCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function TechTreeCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2663437,6 +2667010,10 @@ function TechTreeCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function TechTreeCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function TechTreeCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2681649,7 +2685226,8 @@ end
 function TechTreeCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2684577,6 +2688155,16 @@ function TechTreeCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function TechTreeCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function TechTreeCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function TechTreeCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -2685615,6 +2689203,10 @@ function TechTreeCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function TechTreeCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function TechTreeCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2685799,6 +2689391,10 @@ function TechTreeCmd_pb.AddRelation()
 end
 
 function TechTreeCmd_pb.RemoveRelation()
+  return {}
+end
+
+function TechTreeCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2697114,6 +2700710,41 @@ function Tutor_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function Tutor_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function Tutor_pb.BattleReplayKey()
+  return {}
+end
+
+function Tutor_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function Tutor_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function Tutor_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function Tutor_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2706797,6 +2710428,10 @@ function Tutor_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function Tutor_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function Tutor_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2725009,7 +2728644,8 @@ end
 function Tutor_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2727937,6 +2731573,16 @@ function Tutor_pb.ExtractionCardUserCmd()
   }
 end
 
+function Tutor_pb.KickRequestUserCmd()
+  return {}
+end
+
+function Tutor_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function Tutor_pb.MailMsgParam()
   return {
     params = {}
@@ -2728975,6 +2732621,10 @@ function Tutor_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function Tutor_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function Tutor_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2729159,6 +2732809,10 @@ function Tutor_pb.AddRelation()
 end
 
 function Tutor_pb.RemoveRelation()
+  return {}
+end
+
+function Tutor_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2740474,6 +2744128,41 @@ function UserAfkCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function UserAfkCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function UserAfkCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function UserAfkCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function UserAfkCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function UserAfkCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function UserAfkCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2750157,6 +2753846,10 @@ function UserAfkCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function UserAfkCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function UserAfkCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2768369,7 +2772062,8 @@ end
 function UserAfkCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2771297,6 +2774991,16 @@ function UserAfkCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function UserAfkCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function UserAfkCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function UserAfkCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -2772335,6 +2776039,10 @@ function UserAfkCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function UserAfkCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function UserAfkCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2772519,6 +2776227,10 @@ function UserAfkCmd_pb.AddRelation()
 end
 
 function UserAfkCmd_pb.RemoveRelation()
+  return {}
+end
+
+function UserAfkCmd_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2783834,6 +2787546,41 @@ function UserEvent_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function UserEvent_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function UserEvent_pb.BattleReplayKey()
+  return {}
+end
+
+function UserEvent_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function UserEvent_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function UserEvent_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function UserEvent_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2793517,6 +2797264,10 @@ function UserEvent_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function UserEvent_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function UserEvent_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2811729,7 +2815480,8 @@ end
 function UserEvent_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2814657,6 +2818409,16 @@ function UserEvent_pb.ExtractionCardUserCmd()
   }
 end
 
+function UserEvent_pb.KickRequestUserCmd()
+  return {}
+end
+
+function UserEvent_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function UserEvent_pb.MailMsgParam()
   return {
     params = {}
@@ -2815695,6 +2819457,10 @@ function UserEvent_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function UserEvent_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function UserEvent_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2815879,6 +2819645,10 @@ function UserEvent_pb.AddRelation()
 end
 
 function UserEvent_pb.RemoveRelation()
+  return {}
+end
+
+function UserEvent_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2827194,6 +2830964,41 @@ function UserShow_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function UserShow_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function UserShow_pb.BattleReplayKey()
+  return {}
+end
+
+function UserShow_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function UserShow_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function UserShow_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function UserShow_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2836877,6 +2840682,10 @@ function UserShow_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function UserShow_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function UserShow_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2855089,7 +2858898,8 @@ end
 function UserShow_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2858017,6 +2861827,16 @@ function UserShow_pb.ExtractionCardUserCmd()
   }
 end
 
+function UserShow_pb.KickRequestUserCmd()
+  return {}
+end
+
+function UserShow_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function UserShow_pb.MailMsgParam()
   return {
     params = {}
@@ -2859055,6 +2862875,10 @@ function UserShow_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function UserShow_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function UserShow_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2859239,6 +2863063,10 @@ function UserShow_pb.AddRelation()
 end
 
 function UserShow_pb.RemoveRelation()
+  return {}
+end
+
+function UserShow_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2870554,6 +2874382,41 @@ function Var_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function Var_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function Var_pb.BattleReplayKey()
+  return {}
+end
+
+function Var_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function Var_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function Var_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function Var_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2880237,6 +2884100,10 @@ function Var_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function Var_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function Var_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2898449,7 +2902316,8 @@ end
 function Var_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2901377,6 +2905245,16 @@ function Var_pb.ExtractionCardUserCmd()
   }
 end
 
+function Var_pb.KickRequestUserCmd()
+  return {}
+end
+
+function Var_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function Var_pb.MailMsgParam()
   return {
     params = {}
@@ -2902415,6 +2906293,10 @@ function Var_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function Var_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function Var_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2902599,6 +2906481,10 @@ function Var_pb.AddRelation()
 end
 
 function Var_pb.RemoveRelation()
+  return {}
+end
+
+function Var_pb.ModifyFriendRemark()
   return {}
 end
 
@@ -2913914,6 +2917800,41 @@ function WeddingCCmd_pb.TeamPwsStateSyncFubenCmd()
   return {}
 end
 
+function WeddingCCmd_pb.BattleObserveFubenCmd()
+  return {
+    date_battle = {
+      info = {
+        cardids = {}
+      }
+    }
+  }
+end
+
+function WeddingCCmd_pb.BattleReplayKey()
+  return {}
+end
+
+function WeddingCCmd_pb.BattleReplayInfo()
+  return {
+    key = {}
+  }
+end
+
+function WeddingCCmd_pb.QueryBattleReplayFubenCmd()
+  return {
+    keys = {},
+    infos = {
+      key = {}
+    }
+  }
+end
+
+function WeddingCCmd_pb.EnterBattleReplayFubenCmd()
+  return {
+    key = {}
+  }
+end
+
 function WeddingCCmd_pb.ObserverFlashFubenCmd()
   return {}
 end
@@ -2923597,6 +2927518,10 @@ function WeddingCCmd_pb.TwelveSeasonTimeInfoMatchCCmd()
 end
 
 function WeddingCCmd_pb.EnterObservationMatchCCmd()
+  return {}
+end
+
+function WeddingCCmd_pb.EnterObservationWarbandMatchCCmd()
   return {}
 end
 
@@ -2941809,7 +2945734,8 @@ end
 function WeddingCCmd_pb.EffectUserCmd()
   return {
     pos = {},
-    dir3d = {}
+    dir3d = {},
+    scale_xyz = {}
   }
 end
 
@@ -2944737,6 +2948663,16 @@ function WeddingCCmd_pb.ExtractionCardUserCmd()
   }
 end
 
+function WeddingCCmd_pb.KickRequestUserCmd()
+  return {}
+end
+
+function WeddingCCmd_pb.KickNotifyUserCmd()
+  return {
+    current_pos = {}
+  }
+end
+
 function WeddingCCmd_pb.MailMsgParam()
   return {
     params = {}
@@ -2945775,6 +2949711,10 @@ function WeddingCCmd_pb.ResetExchangeShopDataShopCmd()
   }
 end
 
+function WeddingCCmd_pb.FreyExchangeItemInfo()
+  return {}
+end
+
 function WeddingCCmd_pb.FreyExchangeShopCmd()
   return {
     items = {}
@@ -2945959,6 +2949899,10 @@ function WeddingCCmd_pb.AddRelation()
 end
 
 function WeddingCCmd_pb.RemoveRelation()
+  return {}
+end
+
+function WeddingCCmd_pb.ModifyFriendRemark()
   return {}
 end
 

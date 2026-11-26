@@ -29,6 +29,7 @@ function CrownAccessoriesPage:Init()
   self.slotList = {}
   self.embedSlotGridGO = nil
   self.embedSlotGridOriginPos = nil
+  self.embedPanel = nil
   self.currentChooseType = CrownAccessoriesPage.ChoosePanelType.None
   self.currentSlotIndex = nil
   self.currentGemIndex = nil
@@ -133,6 +134,7 @@ function CrownAccessoriesPage:InitEmbedPage()
           local parentGO = slotGO.transform.parent.gameObject
           if parentGO and parentGO:GetComponent(UIGrid) then
             self.embedSlotGridGO = parentGO
+            self.embedPanel = Game.GameObjectUtil:FindCompInParents(self.embedSlotGridGO, UIPanel)
             local gridPos = self.embedSlotGridGO.transform.localPosition
             self.embedSlotGridOriginPos = LuaVector3.New(gridPos.x, gridPos.y, gridPos.z)
           end
@@ -973,6 +975,40 @@ function CrownAccessoriesPage:UpdateSlotsAlpha()
   end
 end
 
+function CrownAccessoriesPage:UpdateEmbedEffectVisibility()
+  if not self.embedPanel or not self.slotList then
+    return
+  end
+  for i = 1, 3 do
+    local slotData = self.slotList[i]
+    if slotData and slotData.gemCells then
+      for j = 1, 2 do
+        local gemCell = slotData.gemCells[j]
+        if gemCell and gemCell.gameObject then
+          local widget = gemCell.gameObject:GetComponent(UIWidget)
+          local visible = widget and self.embedPanel:IsVisible(widget)
+          if not widget then
+            visible = self.embedPanel:IsVisible(gemCell.gameObject.transform.position)
+          end
+          gemCell:SetEffectVisible(visible)
+        end
+      end
+    end
+  end
+end
+
+function CrownAccessoriesPage:StartEmbedEffectVisibilityUpdate(tween)
+  self:UpdateEmbedEffectVisibility()
+  if not tween then
+    return
+  end
+  self:AddMonoUpdateFunction(self.UpdateEmbedEffectVisibility)
+  tween:SetOnFinished(function()
+    self:UpdateEmbedEffectVisibility()
+    self:RemoveMonoUpdateFunction()
+  end)
+end
+
 function CrownAccessoriesPage:UpdateEmbedSlotGridPosition(selectedSlotIndex)
   if not self.embedSlotGridGO or not self.embedSlotGridOriginPos then
     return
@@ -994,6 +1030,7 @@ function CrownAccessoriesPage:UpdateEmbedSlotGridPosition(selectedSlotIndex)
   if tween then
     tween.method = 2
   end
+  self:StartEmbedEffectVisibilityUpdate(tween)
 end
 
 function CrownAccessoriesPage:ResetEmbedSlotGridPosition()
@@ -1005,6 +1042,7 @@ function CrownAccessoriesPage:ResetEmbedSlotGridPosition()
   if tween then
     tween.method = 2
   end
+  self:StartEmbedEffectVisibilityUpdate(tween)
 end
 
 function CrownAccessoriesPage:RefreshChooseList()
@@ -1523,6 +1561,7 @@ function CrownAccessoriesPage:RefreshEmbedPage()
       self:RefreshSlotGems(slotData, i)
     end
   end
+  self:UpdateEmbedEffectVisibility()
 end
 
 function CrownAccessoriesPage:RefreshSlotEquip(slotData, slotIndex)
@@ -1732,6 +1771,7 @@ function CrownAccessoriesPage:InitCollectionPage()
   local setGrid = self:FindComponent("SetGrid", UIGrid, collectionPage)
   if setGrid then
     self.collectionListCtrl = UIGridListCtrl.new(setGrid, SnowGemSetCell, "SnowGemSetCell")
+    self.collectionListCtrl:SetAddCellHandler(self.OnAddCollectionSetCell, self)
     self.collectionGrid = setGrid
   end
   self.showAttrBtn = self:FindGO("ShowAttrBtn", collectionPage)
@@ -1759,19 +1799,64 @@ function CrownAccessoriesPage:InitCollectionPage()
   end)
 end
 
-function CrownAccessoriesPage:RefreshCollectionPage()
+function CrownAccessoriesPage:OnCollectionGemClick(gemCell)
+  local gemData = gemCell and gemCell.data
+  if not gemData or not gemData.id then
+    return
+  end
+  if TipManager.Instance then
+    local stick = gemCell.itemCell and gemCell.itemCell.icon
+    local isClickLeft = UIUtil.isClickLeftScreenArea()
+    local side = isClickLeft and NGUIUtil.AnchorSide.Right or NGUIUtil.AnchorSide.Left
+    local offset = isClickLeft and {200, 0} or {-200, 0}
+    TipManager.Instance:ShowSnowGemUpgradeTip({
+      gemId = gemData.id
+    }, stick, side, offset)
+  end
+end
+
+function CrownAccessoriesPage:OnAddCollectionSetCell(setCell)
+  if setCell and setCell.SetGemClickHandler then
+    setCell:SetGemClickHandler(self.OnCollectionGemClick, self)
+  end
+end
+
+function CrownAccessoriesPage:RefreshCollectionPage(preservePosition)
   if not self.collectionListCtrl then
     return
   end
+  local previousIndex = self.collectionCurrentIndex
+  local collectionPanel = self.collectionScrollView and self.collectionScrollView.panel
+  local savedPanelPosition, savedClipOffset
+  if preservePosition and collectionPanel then
+    local panelPosition = collectionPanel.transform.localPosition
+    savedPanelPosition = LuaVector3.New(panelPosition.x, panelPosition.y, panelPosition.z)
+    local clipOffset = collectionPanel.clipOffset
+    savedClipOffset = LuaVector2.New(clipOffset.x, clipOffset.y)
+  end
   local groupDataList = self:GetAllGroupData()
   self.collectionListCtrl:ResetDatas(groupDataList)
+  if savedPanelPosition and collectionPanel then
+    collectionPanel.transform.localPosition = savedPanelPosition
+    collectionPanel.clipOffset = savedClipOffset
+  end
   self.collectionTotalCount = #groupDataList
-  self.collectionCurrentIndex = 1
-  if self.collectionScrollView then
-    self.collectionScrollView:ResetPosition()
-    TimeTickManager.Me():CreateOnceDelayTick(50, function()
-      self:ScrollToCollectionCell(self.collectionCurrentIndex, true)
-    end, self)
+  if preservePosition then
+    if self.collectionTotalCount > 0 then
+      self.collectionCurrentIndex = math.min(math.max(previousIndex or 1, 1), self.collectionTotalCount)
+    else
+      self.collectionCurrentIndex = 0
+    end
+  else
+    self.collectionCurrentIndex = self.collectionTotalCount > 0 and 1 or 0
+    if self.collectionScrollView then
+      self.collectionScrollView:ResetPosition()
+      if self.collectionCurrentIndex > 0 then
+        TimeTickManager.Me():CreateOnceDelayTick(50, function()
+          self:ScrollToCollectionCell(self.collectionCurrentIndex, true)
+        end, self)
+      end
+    end
   end
   self:UpdateCollectionArrowState()
 end
@@ -2019,6 +2104,8 @@ end
 function CrownAccessoriesPage:HandleStoneBookUpdate(note)
   if self.activeInnerPageName == "CodexPage" then
     self:RefreshCodexPage()
+  elseif self.activeInnerPageName == "CollectionPage" then
+    self:RefreshCollectionPage(true)
   end
 end
 
@@ -2140,14 +2227,19 @@ local _SnowStoreSpecialBuffDisplayConfigs = {
 local _SnowStoreSpecialBuffSiteConfigs = {
   [1] = _SnowStoreSpecialBuffDisplayConfigs.DoubleShadow,
   [7] = _SnowStoreSpecialBuffDisplayConfigs.DoubleShadow,
+  [5] = _SnowStoreSpecialBuffDisplayConfigs.DoubleShadow,
+  [6] = _SnowStoreSpecialBuffDisplayConfigs.DoubleShadow,
   [2] = _SnowStoreSpecialBuffDisplayConfigs.ShadowGuard,
-  [3] = _SnowStoreSpecialBuffDisplayConfigs.ShadowGuard
+  [3] = _SnowStoreSpecialBuffDisplayConfigs.ShadowGuard,
+  [4] = _SnowStoreSpecialBuffDisplayConfigs.ShadowGuard
 }
 local _SnowStoreSpecialBuffEquipTypeConfigs = {
   [1] = _SnowStoreSpecialBuffDisplayConfigs.DoubleShadow,
   [3] = _SnowStoreSpecialBuffDisplayConfigs.DoubleShadow,
+  [6] = _SnowStoreSpecialBuffDisplayConfigs.DoubleShadow,
   [2] = _SnowStoreSpecialBuffDisplayConfigs.ShadowGuard,
-  [4] = _SnowStoreSpecialBuffDisplayConfigs.ShadowGuard
+  [4] = _SnowStoreSpecialBuffDisplayConfigs.ShadowGuard,
+  [5] = _SnowStoreSpecialBuffDisplayConfigs.ShadowGuard
 }
 local GetSnowStoreSpecialBuffConfig = function(buffId, equipConfig)
   local buffData = Table_Buffer and Table_Buffer[buffId]

@@ -8,6 +8,14 @@ local SceneBottomHeadwearRaidTowerInfoCell_Class = SceneUIManager.UseUGUI and NS
 local AddToEmptyGOPool = GOLuaPoolManager.AddToEmptyGOPool
 local GetFromEmptyGOPool = GOLuaPoolManager.GetFromEmptyGOPool
 local IS_RUNON_EDITOR = ApplicationInfo.IsRunOnEditor()
+local GetBottomBarScale = function(creature)
+  local data = creature and creature.data
+  if not (data and data.IsMonster) or not data:IsMonster() then
+    return 1
+  end
+  local params = data.staticData and data.staticData.Params
+  return params and tonumber(params.BarScale) or 1
+end
 
 function Creature_SceneBottomUI:ctor()
   Creature_SceneBottomUI.super.ctor(self)
@@ -122,6 +130,9 @@ function Creature_SceneBottomUI:isHpSpVisible(creature)
   local isHideHp = creature:IsHideHp()
   local isForceShowHp = creature.data:IsForceShowHp()
   if not (not mapVisible or isOb) and (isFarmingNpc or isPlayer or isEBFRobot or isTripleTeamRobot or isForceShowHp) or isSanityNPC then
+    if mask then
+      return false
+    end
     if mapVisible == 0 then
       return false
     elseif mapVisible == 1 then
@@ -226,6 +237,34 @@ function Creature_SceneBottomUI.createHpSpCellFinish(obj, self)
     self.hpSpCell:UpdateSanity(self.savedValue)
     self.savedValue = nil
   end
+  if creature and creature.data then
+    local wall, hit, wallMax, hitMax = creature.data:GetIceBlockCount()
+    if wall ~= nil then
+      self.hpSpCell:SetKickCount(wall, wallMax, hit, hitMax)
+    end
+  end
+  self:RefreshBottomLayout()
+end
+
+function Creature_SceneBottomUI:RefreshBottomLayout()
+  if not self.hpSpCell then
+    return
+  end
+  local layoutInfo = self.hpSpCell:RefreshDynamicLayout()
+  if not layoutInfo then
+    return
+  end
+  if self.nameFactionCell and self.nameFactionCell:IsLayoutVisible() then
+    local nameHeight = self.nameFactionCell:GetLayoutHeight()
+    local nameY = self.hpSpCell:GetDynamicNamePosition(nameHeight)
+    self.nameFactionCell:SetLayoutPosition(nameY)
+    self.hpSpCell:ApplyDynamicNamePosition(nameY, nameHeight)
+  elseif self.nameFactionCell then
+    self.nameFactionCell:ClearLayoutPosition()
+    self.hpSpCell:ApplyDynamicNamePosition(self.nameFactionCell:GetCurrentLayoutY(), self.nameFactionCell:GetLayoutHeight())
+  else
+    self.hpSpCell:ApplyDynamicNamePosition()
+  end
 end
 
 function Creature_SceneBottomUI:GetBottomObjParent(creature)
@@ -240,6 +279,10 @@ function Creature_SceneBottomUI:GetBottomObjParent(creature)
     parent = self:GetSceneUIBottomFollow(SceneUIType.StaticPlayerBottomInfo, creature)
   else
     parent = self:GetSceneUIBottomFollow(SceneUIType.PlayerBottomInfo, creature)
+  end
+  if parent then
+    local scale = GetBottomBarScale(creature)
+    parent.transform.localScale = LuaGeometry.GetTempVector3(scale, scale, scale)
   end
   return parent
 end
@@ -379,6 +422,7 @@ function Creature_SceneBottomUI:HandleSettingMask(creature)
   else
     self:checkCreateNameFaction(creature)
   end
+  self:RefreshBottomLayout()
 end
 
 function Creature_SceneBottomUI:HandlerPlayerFactionChange(creature)
@@ -387,6 +431,7 @@ function Creature_SceneBottomUI:HandlerPlayerFactionChange(creature)
   else
     self:checkCreateNameFaction(creature)
   end
+  self:RefreshBottomLayout()
 end
 
 function Creature_SceneBottomUI:HandleChangeTitle(creature)
@@ -395,6 +440,7 @@ function Creature_SceneBottomUI:HandleChangeTitle(creature)
   else
     self:checkCreateNameFaction(creature)
   end
+  self:RefreshBottomLayout()
 end
 
 function Creature_SceneBottomUI:HandleOB(creature)
@@ -404,6 +450,7 @@ function Creature_SceneBottomUI:HandleOB(creature)
   else
     self:checkCreateNameFaction(creature)
   end
+  self:RefreshBottomLayout()
 end
 
 function Creature_SceneBottomUI:HandlerMemberDataChange(creature)
@@ -413,6 +460,7 @@ function Creature_SceneBottomUI:HandlerMemberDataChange(creature)
   else
     self:checkCreateHpSp(creature)
   end
+  self:RefreshBottomLayout()
 end
 
 function Creature_SceneBottomUI:HandleCampChange(creature)
@@ -430,6 +478,7 @@ function Creature_SceneBottomUI:HandleCampChange(creature)
   else
     self:checkCreateNameFaction(creature)
   end
+  self:RefreshBottomLayout()
 end
 
 function Creature_SceneBottomUI:SetIsSelected(isSelected, creature)
@@ -446,6 +495,7 @@ function Creature_SceneBottomUI:SetIsSelected(isSelected, creature)
   else
     self:checkCreateNameFaction(creature)
   end
+  self:RefreshBottomLayout()
 end
 
 function Creature_SceneBottomUI:SetIsBeHit(isBeHit, creature)
@@ -494,6 +544,7 @@ function Creature_SceneBottomUI:ActiveNameFactionCell(active, creature)
         redlog("error！！！访问被移除creature。看到此报错请联系程序 name:", creature.data:GetName())
       else
         self.nameFactionCell:SetActive(active)
+        self:RefreshBottomLayout()
       end
     else
       self:checkCreateNameFaction(creature)
@@ -503,6 +554,7 @@ function Creature_SceneBottomUI:ActiveNameFactionCell(active, creature)
       redlog("error！！！访问被移除creature。看到此报错请联系程序 name:", creature.data and creature.data:GetName() or "creature data is nil")
     else
       self.nameFactionCell:SetActive(active)
+      self:RefreshBottomLayout()
     end
   end
 end
@@ -537,6 +589,7 @@ function Creature_SceneBottomUI:SetQuestPrefixVisible(creature, isShow)
   if self.nameFactionCell then
     self.nameFactionCell:SetQuestPrefixName(creature, isShow)
   end
+  self:RefreshBottomLayout()
 end
 
 function Creature_SceneBottomUI:BoothStateChange(creature)
@@ -549,7 +602,7 @@ function Creature_SceneBottomUI:BoothStateChange(creature)
   end
   if self.nameFactionCell then
     SetParent(self.nameFactionCell.gameObject, parent)
-    self.nameFactionCell.gameObject.transform.localPosition = LuaGeometry.GetTempVector3(0, creature:GetCreatureType() == Creature_Type.Me and -19 or -10)
+    self.nameFactionCell:ClearLayoutPosition()
     self.nameFactionCell.gameObject.transform.localRotation = LuaGeometry.Const_Qua_identity
     self.nameFactionCell.gameObject.transform.localScale = LuaGeometry.Const_V3_one
   end
@@ -559,6 +612,7 @@ function Creature_SceneBottomUI:BoothStateChange(creature)
     self.hpSpCell.gameObject.transform.localRotation = LuaGeometry.Const_Qua_identity
     self.hpSpCell.gameObject.transform.localScale = LuaGeometry.Const_V3_one
   end
+  self:RefreshBottomLayout()
 end
 
 function Creature_SceneBottomUI:checkCreateHeadwearRaidTowerInfo(creature)
@@ -626,6 +680,7 @@ end
 function Creature_SceneBottomUI:UpdateSanity(ncreature, value)
   if self.hpSpCell then
     self.hpSpCell:UpdateSanity(value)
+    self:RefreshBottomLayout()
   else
     self:checkCreateHpSp(ncreature)
     self.savedValue = value
@@ -648,6 +703,7 @@ end
 function Creature_SceneBottomUI:ClearSanity()
   if self.hpSpCell then
     self.hpSpCell:ClearSanity()
+    self:RefreshBottomLayout()
   end
 end
 
@@ -660,18 +716,14 @@ end
 function Creature_SceneBottomUI:ShowFrenzy(value)
   if self.hpSpCell then
     self.hpSpCell:ShowFrenzy(value)
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(value)
-    end
+    self:RefreshBottomLayout()
   end
 end
 
 function Creature_SceneBottomUI:InitTimeDiskInfo()
   if self.hpSpCell then
     self.hpSpCell:InitTimeDiskInfo()
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(true, -34)
-    end
+    self:RefreshBottomLayout()
   end
 end
 
@@ -684,18 +736,14 @@ end
 function Creature_SceneBottomUI:RemoveTimeDisk()
   if self.hpSpCell then
     self.hpSpCell:RemoveTimeDisk()
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(true)
-    end
+    self:RefreshBottomLayout()
   end
 end
 
 function Creature_SceneBottomUI:InitStarMap()
   if self.hpSpCell then
     self.hpSpCell:InitStarMap()
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(true)
-    end
+    self:RefreshBottomLayout()
   end
 end
 
@@ -708,9 +756,7 @@ end
 function Creature_SceneBottomUI:RemoveStarMap()
   if self.hpSpCell then
     self.hpSpCell:RemoveStarMap()
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(true)
-    end
+    self:RefreshBottomLayout()
   end
 end
 
@@ -723,9 +769,7 @@ end
 function Creature_SceneBottomUI:InitFeatherGrid()
   if self.hpSpCell then
     self.hpSpCell:InitFeatherGrid()
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(true)
-    end
+    self:RefreshBottomLayout()
   end
 end
 
@@ -738,27 +782,66 @@ end
 function Creature_SceneBottomUI:RemoveFeatherGrid()
   if self.hpSpCell then
     self.hpSpCell:RemoveFeatherGrid()
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(true)
-    end
+    self:RefreshBottomLayout()
   end
 end
 
 function Creature_SceneBottomUI:ShowFeather(value)
   if self.hpSpCell then
     self.hpSpCell:ShowFeather(value)
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(value)
-    end
+    self:RefreshBottomLayout()
+  end
+end
+
+function Creature_SceneBottomUI:SetCharge(value, state)
+  if self.hpSpCell then
+    self.hpSpCell:SetChargeState(value, state)
+  end
+end
+
+function Creature_SceneBottomUI:SetChargeState(value, state)
+  if self.hpSpCell then
+    self.hpSpCell:SetChargeState(value, state)
+  end
+end
+
+function Creature_SceneBottomUI:SetChargeSpeed(value, maxValue, speed)
+  if self.hpSpCell then
+    self.hpSpCell:SetChargeSpeed(value, maxValue, speed)
+  end
+end
+
+function Creature_SceneBottomUI:SetChargeVisible(visible)
+  if self.hpSpCell then
+    self.hpSpCell:SetChargeVisible(visible)
+    self:RefreshBottomLayout()
+  end
+end
+
+function Creature_SceneBottomUI:SetKickCount(wallCount, wallMax, hitCount, hitMax)
+  if self.hpSpCell then
+    self.hpSpCell:SetKickCount(wallCount, wallMax, hitCount, hitMax)
+    self:RefreshBottomLayout()
+  end
+end
+
+function Creature_SceneBottomUI:RemoveKickCount()
+  if self.hpSpCell then
+    self.hpSpCell:RemoveKickCount()
+    self:RefreshBottomLayout()
+  end
+end
+
+function Creature_SceneBottomUI:StopCharge()
+  if self.hpSpCell then
+    self.hpSpCell:StopCharge()
   end
 end
 
 function Creature_SceneBottomUI:InitEnergyGrid()
   if self.hpSpCell then
     self.hpSpCell:InitEnergyGrid()
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(true)
-    end
+    self:RefreshBottomLayout()
   end
 end
 
@@ -771,18 +854,14 @@ end
 function Creature_SceneBottomUI:RemoveEnergyGrid()
   if self.hpSpCell then
     self.hpSpCell:RemoveEnergyGrid()
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(true)
-    end
+    self:RefreshBottomLayout()
   end
 end
 
 function Creature_SceneBottomUI:ShowEnergy(value)
   if self.hpSpCell then
     self.hpSpCell:ShowEnergy(value)
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(value)
-    end
+    self:RefreshBottomLayout()
   end
 end
 
@@ -795,9 +874,7 @@ end
 function Creature_SceneBottomUI:RemoveBalance()
   if self.hpSpCell then
     self.hpSpCell:RemoveBalance()
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(true)
-    end
+    self:RefreshBottomLayout()
   end
 end
 
@@ -814,6 +891,9 @@ function Creature_SceneBottomUI:ResetRidePos(reset)
   if self.nameFactionCell then
     self.nameFactionCell:ResetRidePos(reset)
   end
+  if not reset then
+    self:RefreshBottomLayout()
+  end
 end
 
 function Creature_SceneBottomUI:SetPvpCamp()
@@ -825,9 +905,7 @@ end
 function Creature_SceneBottomUI:InitSolarEnergy()
   if self.hpSpCell then
     self.hpSpCell:InitSolarEnergy()
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(true)
-    end
+    self:RefreshBottomLayout()
   end
 end
 
@@ -840,18 +918,14 @@ end
 function Creature_SceneBottomUI:RemoveSolarEnergy()
   if self.hpSpCell then
     self.hpSpCell:RemoveSolarEnergy()
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(true)
-    end
+    self:RefreshBottomLayout()
   end
 end
 
 function Creature_SceneBottomUI:ShowSolarEnergy(value)
   if self.hpSpCell then
     self.hpSpCell:ShowSolarEnergy(value)
-    if self.nameFactionCell then
-      self.nameFactionCell:Reposition(value)
-    end
+    self:RefreshBottomLayout()
   end
 end
 

@@ -641,6 +641,18 @@ Table_HeadImage = {
     id = 56267,
     Picture = "n_icefieldeel_b"
   },
+  [56268] = {
+    id = 56268,
+    Picture = "n_unfrostflower"
+  },
+  [56269] = {
+    id = 56269,
+    Picture = "n_unfrostflower_a"
+  },
+  [56270] = {
+    id = 56270,
+    Picture = "n_unfrostflower_b"
+  },
   [56501] = {id = 56501, Picture = "Smokie"},
   [56502] = {id = 56502, Picture = "Eclipse"},
   [56503] = {id = 56503, Picture = "Rocker"},
@@ -1011,6 +1023,10 @@ Table_HeadImage = {
   [56897] = {
     id = 56897,
     Picture = "ResearcherBagot_ice"
+  },
+  [56898] = {
+    id = 56898,
+    Picture = "mammoth_ice"
   },
   [56901] = {id = 56901, Picture = "Red_Plant"},
   [56902] = {

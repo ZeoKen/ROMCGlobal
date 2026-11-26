@@ -155,6 +155,7 @@ function SnakeCoasterEntranceView:IsEntranceDifficultyVisible(difficulty)
     if config.showInUI ~= nil then
       return config.showInUI == true
     end
+    return true
   end
   return 1 <= difficulty and difficulty <= 3
 end

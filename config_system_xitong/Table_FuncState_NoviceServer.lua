@@ -317,7 +317,7 @@ Table_FuncState = {
     ItemID = _EmptyTable,
     MapID = _EmptyTable,
     MenuID = _EmptyTable,
-    ActivityID = 108071
+    ActivityID = 108095
   },
   [1000] = {
     id = 1000,

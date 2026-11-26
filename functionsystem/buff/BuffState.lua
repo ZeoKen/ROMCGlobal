@@ -169,6 +169,32 @@ function BuffState:_PlayOneShotEffectAt(creature, effectPath, scale, callBack, l
   return creature.assetRole:PlayEffectOneShotAt(effectPath, ep, nil, callBack, nil, scale, nil, lodLevel, priority)
 end
 
+local BuffStateScaleStage = {
+  Start = "scale_start",
+  Normal = "scale_normal",
+  End = "scale_end"
+}
+BuffState.ScaleStage = BuffStateScaleStage
+
+function BuffState:GetBuffStateScaleRatio(creature, stage)
+  if creature == nil or self.staticData == nil then
+    return nil
+  end
+  local map = creature.data:GetBuffTypes(BuffType.BuffStateScale)
+  if not map then
+    return nil
+  end
+  local buffStateID = self.staticData.id
+  for buffID, _ in pairs(map) do
+    local buffInfo = Table_Buffer[buffID]
+    local cfg = buffInfo and buffInfo.BuffEffect and buffInfo.BuffEffect.buffstate_scale
+    if cfg and cfg.stateid == buffStateID then
+      return cfg[stage]
+    end
+  end
+  return nil
+end
+
 function BuffState:_PlayStartEffect(creature, callBack)
   if not creature:IsOrOwnedByMonster() and Game.HandUpManager:IsInHandingUp() then
     if callBack then
@@ -182,8 +208,13 @@ function BuffState:_PlayStartEffect(creature, callBack)
     end
     return
   end
+  local startScaleRatio = self:GetBuffStateScaleRatio(creature, BuffStateScaleStage.Start)
+  local startAtScale = self.staticData.Effect_startScale
+  if startScaleRatio then
+    startAtScale = (startAtScale or 1) * startScaleRatio
+  end
   local path, lodLevel, priority = GetEffectPath(self.config.Effect_startAt, creature)
-  self:_PlayOneShotEffectAt(creature, path, self.staticData.Effect_startScale, nil, lodLevel, priority)
+  self:_PlayOneShotEffectAt(creature, path, startAtScale, nil, lodLevel, priority)
   self:CreateWeakData()
   if nil == self:GetWeakData(1) then
     self:SetWeakData(1, creature)
@@ -198,7 +229,7 @@ function BuffState:_PlayStartEffect(creature, callBack)
     end
   else
     path, lodLevel, priority = GetEffectPath(self.config.Effect_start, creature)
-    local effect = self:_PlayOneShotEffectOn(creature, path, self.staticData.SE_start, self.staticData.Effect_startScale, function(obj, owner, assetEffect)
+    local effect = self:_PlayOneShotEffectOn(creature, path, self.staticData.SE_start, startAtScale, function(obj, owner, assetEffect)
       if callBack then
         callBack(nil ~= assetEffect)
       end
@@ -259,15 +290,20 @@ function BuffState:_PlayEffect(creature)
       tempVector3:Set(cOffset[1], cOffset[2], cOffset[3])
       offset = tempVector3
     end
+    local normalScale = self.staticData.EffectScale
+    local normalScaleRatio = self:GetBuffStateScaleRatio(creature, BuffStateScaleStage.Normal)
+    if normalScaleRatio then
+      normalScale = (normalScale or 1) * normalScaleRatio
+    end
     if self:IsEffectFollow() then
-      self.effect = creature.assetRole:PlayEffectAt(effectPath, ep, offset, OnEffectCreated, self, self.staticData.EffectScale, nil, lodLevel, priority)
+      self.effect = creature.assetRole:PlayEffectAt(effectPath, ep, offset, OnEffectCreated, self, normalScale, nil, lodLevel, priority)
     else
-      self.effect = creature.assetRole:PlayEffectOn(effectPath, ep, offset, OnEffectCreated, self, self.staticData.EffectScale, nil, lodLevel, priority)
+      self.effect = creature.assetRole:PlayEffectOn(effectPath, ep, offset, OnEffectCreated, self, normalScale, nil, lodLevel, priority)
     end
   else
     local cp = self.staticData.CP
     if cp ~= nil then
-      self.effect = creature.assetRole:PlayEffectOn(effectPath, nil, nil, OnEffectCreated, self, self.staticData.EffectScale, cp, lodLevel, priority)
+      self.effect = creature.assetRole:PlayEffectOn(effectPath, nil, nil, OnEffectCreated, self, normalScale, cp, lodLevel, priority)
     end
   end
   if nil ~= self.effect then
@@ -289,6 +325,10 @@ function BuffState:_PlayEndEffect(creature)
   local showScale = self.staticData.Effect_endScale
   if self.endScale then
     showScale = self.endScale * (showScale or 1)
+  end
+  local endScaleRatio = self:GetBuffStateScaleRatio(creature, BuffStateScaleStage.End)
+  if endScaleRatio then
+    showScale = (showScale or 1) * endScaleRatio
   end
   self:_PlayOneShotEffectOn(creature, path, self.staticData.SE_end, showScale, nil, nil, lodLevel, priority, AudioSourceType.BUFF_end)
   if self.staticData.SE_start_Loop ~= "" and self.audioSource then

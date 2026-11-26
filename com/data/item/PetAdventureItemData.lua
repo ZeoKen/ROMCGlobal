@@ -19,48 +19,57 @@ function PetAdventureItemData:SetData(serviceItemData)
     self.statusSortID = serviceItemData.status
   end
   self.rareReward = {}
-  for i = 1, #serviceItemData.raresreward do
-    local guid = serviceItemData.raresreward[i].base.guid
-    local id = serviceItemData.raresreward[i].base.id
-    local count = serviceItemData.raresreward[i].base.count
-    local dropItemData = PetDropItemData.new(guid, id)
-    dropItemData:SetCount(count)
-    self.rareReward[#self.rareReward + 1] = dropItemData
+  local raresreward = serviceItemData.raresreward
+  if raresreward then
+    for i = 1, #raresreward do
+      local rareItem = raresreward[i]
+      local rareBase = rareItem and rareItem.base
+      if rareBase then
+        local dropItemData = PetDropItemData.new(rareBase.guid, rareBase.id)
+        dropItemData:SetCount(rareBase.count)
+        self.rareReward[#self.rareReward + 1] = dropItemData
+      end
+    end
   end
   local rewardinfo = serviceItemData.rewardinfo
-  local isSpecial = self.staticData.QuestType == 1
+  local isSpecial = self.staticData and self.staticData.QuestType == 1
   self.rewardMap = {}
   self.multiMonsterReward = self.status == PetAdventureProxy.QuestPhase.MATCH and not isSpecial
-  if rewardinfo then
+  if rewardinfo and 0 < #rewardinfo then
     if self.multiMonsterReward then
       for i = 1, #rewardinfo do
         local reward = rewardinfo[i]
-        local monsID = reward.monsterid
-        local petDropItem = {}
-        for j = 1, #reward.items do
-          local guid = reward.items[j].base.guid
-          local id = reward.items[j].base.id
-          local count = reward.items[j].base.count
-          local dropItemData = PetDropItemData.new(guid, id)
-          dropItemData:SetCount(count)
-          dropItemData.DynamicReward = true
-          petDropItem[#petDropItem + 1] = dropItemData
+        local items = reward and reward.items
+        if items then
+          local monsID = reward.monsterid
+          local petDropItem = {}
+          for j = 1, #items do
+            local itemBase = items[j] and items[j].base
+            if itemBase then
+              local dropItemData = PetDropItemData.new(itemBase.guid, itemBase.id)
+              dropItemData:SetCount(itemBase.count)
+              dropItemData.DynamicReward = true
+              petDropItem[#petDropItem + 1] = dropItemData
+            end
+          end
+          self.rewardMap[monsID] = petDropItem
         end
-        self.rewardMap[monsID] = petDropItem
       end
     else
-      local servItem = rewardinfo[1].items
-      local petDropItem = {}
-      for i = 1, #servItem do
-        local guid = servItem[i].base.guid
-        local id = servItem[i].base.id
-        local count = servItem[i].base.count
-        local dropItemData = PetDropItemData.new(guid, id)
-        dropItemData:SetCount(count)
-        dropItemData.DynamicReward = true
-        petDropItem[#petDropItem + 1] = dropItemData
+      local servItem = rewardinfo[1] and rewardinfo[1].items
+      if servItem then
+        local petDropItem = {}
+        for i = 1, #servItem do
+          local itemBase = servItem[i] and servItem[i].base
+          if itemBase then
+            local dropItemData = PetDropItemData.new(itemBase.guid, itemBase.id)
+            dropItemData:SetCount(itemBase.count)
+            dropItemData.DynamicReward = true
+            petDropItem[#petDropItem + 1] = dropItemData
+          end
+        end
+        self.rewardMap = petDropItem
       end
-      self.rewardMap = petDropItem
     end
   end
   self.petEggs = {}

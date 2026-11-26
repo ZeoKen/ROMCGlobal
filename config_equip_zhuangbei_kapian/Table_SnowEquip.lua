@@ -16,8 +16,7 @@ Table_SnowEquip = {
       5,
       6
     },
-    EquipStoneCount = 2,
-    NoOpen = 1
+    EquipStoneCount = 2
   }
 }
 Table_SnowEquip_fields = {

@@ -52,6 +52,9 @@ function SetViewServiceKRPage:Init(initParama)
     self.accountCancel:SetActive(false)
   end
   self.notiToggleGO = self:FindGO("noticeTog")
+  if FunctionSDK.E_SDKType.TDSG == FunctionSDK.Instance.CurrentType then
+    self.notiToggleGO:SetActive(false)
+  end
   self.notiToggle = self.notiToggleGO:GetComponent("UIToggle")
   self.oldStatus = OverSeas_TW.OverSeasManager.GetInstance():GetNotificationStatus()
   self.notiToggle.value = self.oldStatus
@@ -107,6 +110,9 @@ function SetViewServiceKRPage:Save()
   if BranchMgr.IsNOKR() then
     return
   end
+  if FunctionSDK.E_SDKType.TDSG == FunctionSDK.Instance.CurrentType then
+    return
+  end
   self.oldStatus = self.notiToggle.value
   OverSeas_TW.OverSeasManager.GetInstance():SetNotification(self.notiToggle.value)
   ServiceOverseasTaiwanCmdProxy.Instance:CallFirebaseNotifyUpdateCmd(self.notiToggle.value)
@@ -122,6 +128,9 @@ end
 
 function SetViewServiceKRPage:IsChanged()
   if BranchMgr.IsNOKR() then
+    return false
+  end
+  if FunctionSDK.E_SDKType.TDSG == FunctionSDK.Instance.CurrentType then
     return false
   end
   return self.oldStatus ~= self.notiToggle.value

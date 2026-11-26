@@ -596,7 +596,9 @@ SkillEvent = {
   LeaveWarehouse = "SkillEvent_LeaveWarehouse",
   BellCharge = "SkillEvent_BellCharge",
   CanBeCarriedAdd = "SkillEvent_CanBeCarriedAdd",
-  CanBeCarriedRemove = "SkillEvent_CanBeCarriedRemove"
+  CanBeCarriedRemove = "SkillEvent_CanBeCarriedRemove",
+  IceBlockKickableAdd = "SkillEvent_IceBlockKickableAdd",
+  IceBlockKickableRemove = "SkillEvent_IceBlockKickableRemove"
 }
 QuestEvent = {
   QuestDelete = "QuestEvent_QuestDelete",

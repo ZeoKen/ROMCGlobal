@@ -147,7 +147,7 @@ function AdventureEquipComposeTip:Init()
         local maxLv = self.curChooseEquipItem.equipInfo:GetUpgradeReplaceLv()
         local curLv = self.curChooseEquipItem.equipInfo.equiplv
         local lvCount = maxLv - curLv
-        ServiceItemProxy.Instance:CallEquipExchangeItemCmd(self.curChooseEquipItem.id, SceneItem_pb.EEXCHANGETYPE_LEVELUP, nil, nil, lvCount)
+        ServiceItemProxy.Instance:CallEquipExchangeItemCmd(self.curChooseEquipItem.id, SceneItem_pb.EEXCHANGETYPE_LEVELUP, nil, lvCount)
       end
     end)
   end)

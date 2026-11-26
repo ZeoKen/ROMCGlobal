@@ -251,6 +251,48 @@ function BagProxy:GetQuickBuffMaxSelectCount()
   return QuickBuffMaxSelectCount
 end
 
+BagProxy.QuickBuffItemCategory = {
+  AttrFood = 1,
+  PvpFood = 2,
+  OtherPotion = 3
+}
+local QuickBuffPvpUseLimitBit = 4
+local IsQuickBuffPvpFood = function(itemId)
+  local useData = Table_UseItem and Table_UseItem[itemId]
+  local useLimit = useData and useData.UseLimit
+  return useLimit ~= nil and 0 < useLimit & QuickBuffPvpUseLimitBit
+end
+local IsQuickBuffAttrFood = function(itemId)
+  local useData = Table_UseItem and Table_UseItem[itemId]
+  local useEffect = useData and useData.UseEffect
+  if useEffect == nil or useEffect.type ~= "multi_gm" then
+    return false
+  end
+  local effect = useEffect.effect
+  if type(effect) ~= "table" then
+    return false
+  end
+  for i = 1, #effect do
+    if effect[i].type == "addbuff" then
+      return true
+    end
+  end
+  return false
+end
+
+function BagProxy:GetQuickBuffItemCategory(itemId)
+  if itemId == nil then
+    return nil
+  end
+  if IsQuickBuffPvpFood(itemId) then
+    return BagProxy.QuickBuffItemCategory.PvpFood
+  end
+  if IsQuickBuffAttrFood(itemId) then
+    return BagProxy.QuickBuffItemCategory.AttrFood
+  end
+  return BagProxy.QuickBuffItemCategory.OtherPotion
+end
+
 function BagProxy:CheckIsQuickBuffPackageItem(itemData)
   local staticData = itemData and itemData.staticData
   if staticData == nil then

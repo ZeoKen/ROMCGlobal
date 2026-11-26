@@ -123,6 +123,7 @@ Table_NpcFunction_t = {
     {GroupId = 47},
     {GroupId = 48},
     {GroupId = 49},
+    {GroupId = 51},
     {menu = 9700, msgID = 33001},
     {menu = 9699, msgID = 33005},
     {menu = 9698, msgID = 33006},
@@ -334,6 +335,30 @@ Table_NpcFunction_t = {
     },
     {
       ItemID = {10000644}
+    },
+    {
+      ItemID = {10001001}
+    },
+    {
+      ItemID = {10001017}
+    },
+    {
+      ItemID = {10001018}
+    },
+    {
+      ItemID = {10001019}
+    },
+    {
+      ItemID = {10001020}
+    },
+    {
+      ItemID = {10001021}
+    },
+    {
+      ItemID = {10001022}
+    },
+    {
+      ItemID = {10001023}
     },
     {
       ItemID = {100},
@@ -594,10 +619,29 @@ Table_NpcFunction_t = {
     {raid = 30001},
     {teamGoal = 10200},
     {
-      ItemID = {3006931}
+      ItemID = {3006707}
     },
     {
-      ItemID = {3007080}
+      ItemID = {3006730}
+    },
+    {
+      ItemID = {3006900}
+    },
+    {
+      ItemID = {3006906},
+      TabCustomIcon = {
+        "shop_icon_2",
+        "shop_icon_shop"
+      }
+    },
+    {
+      ItemID = {3006577}
+    },
+    {
+      ItemID = {3006600}
+    },
+    {
+      ItemID = {3007410, 3007411}
     },
     {
       ItemID = {10000450}
@@ -610,9 +654,6 @@ Table_NpcFunction_t = {
       ItemID = {100, 3006025}
     },
     {
-      ItemID = {10000721}
-    },
-    {
       Desc = "##44707489",
       ItemID = {100, 10000418}
     },
@@ -621,6 +662,9 @@ Table_NpcFunction_t = {
     },
     {
       ItemID = {3009057}
+    },
+    {
+      ItemID = {10000721}
     },
     {
       ItemID = {3006906}
@@ -638,6 +682,12 @@ Table_NpcFunction_t = {
       ItemID = {6952}
     },
     {HideButton = 1},
+    {
+      ItemID = {174, 175}
+    },
+    {Option = 1},
+    {Option = 2},
+    {Option = 3},
     {
       ItemID = {6543}
     },
@@ -1070,9 +1120,8 @@ Table_NpcFunction_t = {
       ItemID = {4839}
     },
     {
-      ItemID = {174, 175}
+      ItemID = {51773}
     },
-    {Option = 1},
     {
       ItemID = {8342}
     },
@@ -1100,8 +1149,7 @@ Table_NpcFunction_t = {
     {
       ItemID = {8345}
     },
-    {Option = 2},
-    {Option = 3},
+    {RaidType = 62},
     {
       ItemID = {8427}
     },
@@ -1117,7 +1165,9 @@ Table_NpcFunction_t = {
     {
       ItemID = {7036}
     },
-    {RaidType = 62},
+    {
+      ItemID = {8471}
+    },
     {
       ItemID = {3008246}
     },
@@ -1163,9 +1213,6 @@ Table_NpcFunction_t = {
       ItemID = {3008450}
     },
     {
-      ItemID = {100, 125}
-    },
-    {
       ItemID = {3008440}
     },
     {
@@ -1179,6 +1226,9 @@ Table_NpcFunction_t = {
     },
     {
       ItemID = {3008290}
+    },
+    {
+      ItemID = {100, 125}
     },
     {
       ItemID = {3007830}
@@ -1257,7 +1307,7 @@ Table_NpcFunction_t = {
       ItemID = {3007430}
     },
     {
-      ItemID = {3007410, 3007411}
+      ItemID = {10001036}
     },
     {
       ItemID = {3007388}
@@ -1311,34 +1361,18 @@ Table_NpcFunction_t = {
     {
       ItemID = {3007085, 3007081}
     },
+    {
+      ItemID = {3007080}
+    },
+    {
+      ItemID = {3006931}
+    },
     {activityID = 107001},
     {activityID = 107002},
     {activityID = 107003},
     {activityID = 107004},
     {activityID = 107005},
     {activityID = 107006},
-    {
-      ItemID = {3006600}
-    },
-    {
-      ItemID = {3006577}
-    },
-    {
-      ItemID = {3006906},
-      TabCustomIcon = {
-        "shop_icon_2",
-        "shop_icon_shop"
-      }
-    },
-    {
-      ItemID = {3006900}
-    },
-    {
-      ItemID = {3006730}
-    },
-    {
-      ItemID = {3006707}
-    },
     {
       ItemID = {3006674}
     },
@@ -1362,6 +1396,24 @@ Table_NpcFunction_t = {
     },
     {
       ItemID = {3003668}
+    },
+    {
+      ItemID = {3003994}
+    },
+    {
+      ItemID = {3003495}
+    },
+    {
+      ItemID = {3004190}
+    },
+    {
+      ItemID = {3004191}
+    },
+    {
+      ItemID = {3004192}
+    },
+    {
+      ItemID = {3004220, 3004221}
     },
     {
       ItemID = {3004304}
@@ -1415,15 +1467,6 @@ Table_NpcFunction_t = {
       ItemID = {6082}
     },
     {
-      ItemID = {6084}
-    },
-    {
-      ItemID = {3004737}
-    },
-    {
-      ItemID = {3004760}
-    },
-    {
       ItemID = {3005750}
     },
     {
@@ -1445,6 +1488,15 @@ Table_NpcFunction_t = {
       ItemID = {3005793}
     },
     {
+      ItemID = {6084}
+    },
+    {
+      ItemID = {3004737}
+    },
+    {
+      ItemID = {3004760}
+    },
+    {
       ItemID = {3004604}
     },
     {
@@ -1452,24 +1504,6 @@ Table_NpcFunction_t = {
     },
     {
       ItemID = {3004781}
-    },
-    {
-      ItemID = {3004536}
-    },
-    {
-      ItemID = {3004560}
-    },
-    {
-      ItemID = {3004897}
-    },
-    {
-      ItemID = {3004920}
-    },
-    {
-      ItemID = {3004941}
-    },
-    {
-      ItemID = {3004942}
     },
     {
       ItemID = {3005456}
@@ -1481,7 +1515,7 @@ Table_NpcFunction_t = {
       ItemID = {3005470}
     },
     {
-      ItemID = {3004717}
+      ItemID = {3004536}
     },
     {
       ItemID = {3005267}
@@ -1538,7 +1572,7 @@ Table_NpcFunction_t = {
       ItemID = {3005090}
     },
     {
-      ItemID = {3004718}
+      ItemID = {3004560}
     },
     {
       ItemID = {3005088}
@@ -1560,6 +1594,28 @@ Table_NpcFunction_t = {
     },
     {
       ItemID = {3005082}
+    },
+    {
+      ItemID = {3005081}
+    },
+    {
+      ItemID = {3005080}
+    },
+    {
+      ItemID = {3004701},
+      TabCustomIcon = {
+        "shop_icon_shop",
+        "shop_icon_2"
+      }
+    },
+    {
+      ItemID = {3004719}
+    },
+    {
+      ItemID = {3004718}
+    },
+    {
+      ItemID = {3004717}
     },
     {
       ItemID = {3000182}
@@ -1614,7 +1670,7 @@ Table_NpcFunction_t = {
       ItemID = {3000710}
     },
     {
-      ItemID = {3005081}
+      ItemID = {3004942}
     },
     {
       ItemID = {3000305}
@@ -1711,7 +1767,7 @@ Table_NpcFunction_t = {
       ItemID = {3001990}
     },
     {
-      ItemID = {3005080}
+      ItemID = {3004941}
     },
     {
       ItemID = {3002145}
@@ -1828,11 +1884,7 @@ Table_NpcFunction_t = {
       url = "http://xd.cn/V2wm1u"
     },
     {
-      ItemID = {3004701},
-      TabCustomIcon = {
-        "shop_icon_shop",
-        "shop_icon_2"
-      }
+      ItemID = {3004920}
     },
     {
       ItemID = {3002753}
@@ -1877,7 +1929,7 @@ Table_NpcFunction_t = {
       ItemID = {3003263}
     },
     {
-      ItemID = {3004719}
+      ItemID = {3004897}
     },
     {
       ItemID = {3003542}
@@ -1951,24 +2003,12 @@ Table_NpcFunction_t = {
     {
       ItemID = {3003995}
     },
-    {
-      ItemID = {3003994}
-    },
-    {
-      ItemID = {3003495}
-    },
-    {
-      ItemID = {3004190}
-    },
-    {
-      ItemID = {3004191}
-    },
-    {
-      ItemID = {3004192}
-    },
-    {
-      ItemID = {3004220, 3004221}
-    },
+    {helpId = 32604},
+    {helpId = 32605},
+    {helpId = 32606},
+    {helpId = 32607},
+    {helpId = 32608},
+    {helpId = 32609},
     {
       ItemID = {3004301}
     },
@@ -2348,19 +2388,19 @@ Table_NpcFunction = {
     id = 102,
     NameZh = "##148690",
     Type = "newwanted",
-    Parama = Table_NpcFunction_t.Parama[54]
+    Parama = Table_NpcFunction_t.Parama[55]
   },
   [103] = {
     id = 103,
     NameZh = "##148678",
     Type = "newwanted",
-    Parama = Table_NpcFunction_t.Parama[55]
+    Parama = Table_NpcFunction_t.Parama[56]
   },
   [104] = {
     id = 104,
     NameZh = "##532119",
     Type = "newwanted",
-    Parama = Table_NpcFunction_t.Parama[56]
+    Parama = Table_NpcFunction_t.Parama[57]
   },
   [200] = {
     id = 200,
@@ -2479,45 +2519,45 @@ Table_NpcFunction = {
     id = 371,
     NameZh = "##1112446",
     NameEn = "EnchantMovement",
-    Parama = Table_NpcFunction_t.Parama[78]
+    Parama = Table_NpcFunction_t.Parama[79]
   },
   [372] = {
     id = 372,
     NameZh = "##1155723",
     NameEn = "EquipRecovery",
-    Parama = Table_NpcFunction_t.Parama[78]
+    Parama = Table_NpcFunction_t.Parama[79]
   },
   [373] = {
     id = 373,
     NameZh = "##1155724",
     NameEn = "EquipRecoveryPlus",
-    Parama = Table_NpcFunction_t.Parama[78]
+    Parama = Table_NpcFunction_t.Parama[79]
   },
   [390] = {
     id = 390,
     NameZh = "##1111835",
     NameEn = "EpicEquipMerchant",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[79]
+    Parama = Table_NpcFunction_t.Parama[80]
   },
   [391] = {
     id = 391,
     NameZh = "##1164942",
     NameEn = "EpicEquipMerchant",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[80]
+    Parama = Table_NpcFunction_t.Parama[81]
   },
   [392] = {
     id = 392,
     NameZh = "##1180711",
-    Parama = Table_NpcFunction_t.Parama[81]
+    Parama = Table_NpcFunction_t.Parama[82]
   },
   [393] = {
     id = 393,
     NameZh = "##1189343",
     NameEn = "EpicEquipMerchant",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[82]
+    Parama = Table_NpcFunction_t.Parama[83]
   },
   [394] = {
     id = 394,
@@ -2546,21 +2586,21 @@ Table_NpcFunction = {
     NameZh = "##2857334",
     NameEn = "AboutGVG",
     Type = "Common_AboutAugury",
-    Parama = Table_NpcFunction_t.Parama[83]
+    Parama = Table_NpcFunction_t.Parama[84]
   },
   [404] = {
     id = 404,
     NameZh = "##2857335",
     NameEn = "AboutGVG",
     Type = "Common_AboutAugury",
-    Parama = Table_NpcFunction_t.Parama[84]
+    Parama = Table_NpcFunction_t.Parama[85]
   },
   [405] = {
     id = 405,
     NameZh = "##2857336",
     NameEn = "AboutGVG",
     Type = "Common_AboutAugury",
-    Parama = Table_NpcFunction_t.Parama[85]
+    Parama = Table_NpcFunction_t.Parama[86]
   },
   [406] = {
     id = 406,
@@ -2578,7 +2618,7 @@ Table_NpcFunction = {
     NameZh = "##146113",
     NameEn = "BlackMarketeer",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[86]
+    Parama = Table_NpcFunction_t.Parama[87]
   },
   [450] = {
     id = 450,
@@ -2602,14 +2642,14 @@ Table_NpcFunction = {
     NameZh = "##148704",
     NameEn = "VarietyShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[134]
+    Parama = Table_NpcFunction_t.Parama[143]
   },
   [605] = {
     id = 605,
     NameZh = "##148640",
     NameEn = "PetShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[135]
+    Parama = Table_NpcFunction_t.Parama[144]
   },
   [610] = {
     id = 610,
@@ -2649,21 +2689,21 @@ Table_NpcFunction = {
     NameZh = "##148596",
     NameEn = "HeadShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [810] = {
     id = 810,
     NameZh = "##148658",
     NameEn = "SuccubaShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[143]
+    Parama = Table_NpcFunction_t.Parama[152]
   },
   [811] = {
     id = 811,
     NameZh = "##285196",
     NameEn = "ValiantShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[144]
+    Parama = Table_NpcFunction_t.Parama[153]
   },
   [812] = {
     id = 812,
@@ -2677,96 +2717,96 @@ Table_NpcFunction = {
     NameZh = "##147910",
     NameEn = "MercenaryCatShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[145]
+    Parama = Table_NpcFunction_t.Parama[154]
   },
   [850] = {
     id = 850,
     NameZh = "##123917",
     NameEn = "FriendshipShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[146]
+    Parama = Table_NpcFunction_t.Parama[155]
   },
   [851] = {
     id = 851,
     NameZh = "##148682",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[147]
+    Parama = Table_NpcFunction_t.Parama[156]
   },
   [852] = {
     id = 852,
     NameZh = "##148590",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[148]
+    Parama = Table_NpcFunction_t.Parama[157]
   },
   [853] = {
     id = 853,
     NameZh = "##148684",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[149]
+    Parama = Table_NpcFunction_t.Parama[158]
   },
   [854] = {
     id = 854,
     NameZh = "##148603",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[150]
+    Parama = Table_NpcFunction_t.Parama[159]
   },
   [855] = {
     id = 855,
     NameZh = "##148555",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[151]
+    Parama = Table_NpcFunction_t.Parama[160]
   },
   [856] = {
     id = 856,
     NameZh = "##148608",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[152]
+    Parama = Table_NpcFunction_t.Parama[161]
   },
   [857] = {
     id = 857,
     NameZh = "##148525",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[153]
+    Parama = Table_NpcFunction_t.Parama[162]
   },
   [858] = {
     id = 858,
     NameZh = "##148571",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[154]
+    Parama = Table_NpcFunction_t.Parama[163]
   },
   [859] = {
     id = 859,
     NameZh = "##148480",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[155]
+    Parama = Table_NpcFunction_t.Parama[164]
   },
   [890] = {
     id = 890,
     NameZh = "##1235691",
     NameEn = "GuildMaterialShop_Leader",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[156]
+    Parama = Table_NpcFunction_t.Parama[165]
   },
   [900] = {
     id = 900,
     NameZh = "##148680",
     NameEn = "LaboratoryShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[157]
+    Parama = Table_NpcFunction_t.Parama[166]
   },
   [901] = {
     id = 901,
     NameZh = "##148715",
     NameEn = "GodShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[158]
+    Parama = Table_NpcFunction_t.Parama[167]
   },
   [902] = {
     id = 902,
     NameZh = "##148465",
     NameEn = "EasterShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[159]
+    Parama = Table_NpcFunction_t.Parama[168]
   },
   [903] = {
     id = 903,
@@ -2780,21 +2820,21 @@ Table_NpcFunction = {
     NameZh = "##148530",
     NameEn = "BadgeShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[160]
+    Parama = Table_NpcFunction_t.Parama[169]
   },
   [905] = {
     id = 905,
     NameZh = "##148577",
     NameEn = "HeadDressShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[161]
+    Parama = Table_NpcFunction_t.Parama[170]
   },
   [906] = {
     id = 906,
     NameZh = "##148539",
     NameEn = "AstrologyShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[162]
+    Parama = Table_NpcFunction_t.Parama[171]
   },
   [907] = {
     id = 907,
@@ -2808,14 +2848,14 @@ Table_NpcFunction = {
     NameZh = "##148563",
     NameEn = "PVPShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[163]
+    Parama = Table_NpcFunction_t.Parama[172]
   },
   [909] = {
     id = 909,
     NameZh = "##148546",
     NameEn = "LoveShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[164]
+    Parama = Table_NpcFunction_t.Parama[173]
   },
   [910] = {
     id = 910,
@@ -2829,21 +2869,21 @@ Table_NpcFunction = {
     NameZh = "##148587",
     NameEn = "TourShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[165]
+    Parama = Table_NpcFunction_t.Parama[174]
   },
   [912] = {
     id = 912,
     NameZh = "##117361",
     NameEn = "TimeShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[166]
+    Parama = Table_NpcFunction_t.Parama[175]
   },
   [913] = {
     id = 913,
     NameZh = "##148650",
     NameEn = "TourShop2",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[167]
+    Parama = Table_NpcFunction_t.Parama[176]
   },
   [914] = {
     id = 914,
@@ -2864,62 +2904,62 @@ Table_NpcFunction = {
     NameZh = "##144467",
     NameEn = "WhiteLoveShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[168]
+    Parama = Table_NpcFunction_t.Parama[177]
   },
   [917] = {
     id = 917,
     NameZh = "##148636",
     NameEn = "KFCShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[169]
+    Parama = Table_NpcFunction_t.Parama[178]
   },
   [918] = {
     id = 918,
     NameZh = "##148633",
     NameEn = "UltramanShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[170]
+    Parama = Table_NpcFunction_t.Parama[179]
   },
   [920] = {
     id = 920,
     NameZh = "##148720",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[171]
+    Parama = Table_NpcFunction_t.Parama[180]
   },
   [921] = {
     id = 921,
     NameZh = "##124159",
     NameEn = "TutorShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[172]
+    Parama = Table_NpcFunction_t.Parama[181]
   },
   [922] = {
     id = 922,
     NameZh = "##148543",
     NameEn = "HeroShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[173]
+    Parama = Table_NpcFunction_t.Parama[182]
   },
   [923] = {
     id = 923,
     NameZh = "##148560",
     NameEn = "GuildStoreCat",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[174]
+    Parama = Table_NpcFunction_t.Parama[183]
   },
   [924] = {
     id = 924,
     NameZh = "##148517",
     NameEn = "GuildStoreAuto",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[175]
+    Parama = Table_NpcFunction_t.Parama[184]
   },
   [925] = {
     id = 925,
     NameZh = "##148499",
     NameEn = "SnowShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[176]
+    Parama = Table_NpcFunction_t.Parama[185]
   },
   [926] = {
     id = 926,
@@ -2931,70 +2971,70 @@ Table_NpcFunction = {
     id = 927,
     NameZh = "##148526",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[177]
+    Parama = Table_NpcFunction_t.Parama[186]
   },
   [928] = {
     id = 928,
     NameZh = "##126278",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[178]
+    Parama = Table_NpcFunction_t.Parama[187]
   },
   [929] = {
     id = 929,
     NameZh = "##148545",
     NameEn = "GVGBattleShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[179]
+    Parama = Table_NpcFunction_t.Parama[188]
   },
   [930] = {
     id = 930,
     NameZh = "##148613",
     NameEn = "VipShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[180]
+    Parama = Table_NpcFunction_t.Parama[189]
   },
   [931] = {
     id = 931,
     NameZh = "##148492",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[181]
+    Parama = Table_NpcFunction_t.Parama[190]
   },
   [932] = {
     id = 932,
     NameZh = "##148671",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[182]
+    Parama = Table_NpcFunction_t.Parama[191]
   },
   [933] = {
     id = 933,
     NameZh = "##148624",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[183]
+    Parama = Table_NpcFunction_t.Parama[192]
   },
   [934] = {
     id = 934,
     NameZh = "##148588",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[184]
+    Parama = Table_NpcFunction_t.Parama[193]
   },
   [935] = {
     id = 935,
     NameZh = "##148457",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[185]
+    Parama = Table_NpcFunction_t.Parama[194]
   },
   [936] = {
     id = 936,
     NameZh = "##148649",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[186]
+    Parama = Table_NpcFunction_t.Parama[195]
   },
   [940] = {
     id = 940,
     NameZh = "##110051",
     NameEn = "AnniversaryShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[187]
+    Parama = Table_NpcFunction_t.Parama[196]
   },
   [941] = {
     id = 941,
@@ -3006,43 +3046,43 @@ Table_NpcFunction = {
     id = 942,
     NameZh = "##148578",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[188]
+    Parama = Table_NpcFunction_t.Parama[197]
   },
   [943] = {
     id = 943,
     NameZh = "##148561",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[189]
+    Parama = Table_NpcFunction_t.Parama[198]
   },
   [944] = {
     id = 944,
     NameZh = "##148655",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[190]
+    Parama = Table_NpcFunction_t.Parama[199]
   },
   [945] = {
     id = 945,
     NameZh = "##148689",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[191]
+    Parama = Table_NpcFunction_t.Parama[200]
   },
   [946] = {
     id = 946,
     NameZh = "##148513",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[192]
+    Parama = Table_NpcFunction_t.Parama[201]
   },
   [947] = {
     id = 947,
     NameZh = "##148598",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[193]
+    Parama = Table_NpcFunction_t.Parama[202]
   },
   [948] = {
     id = 948,
     NameZh = "##148618",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[194]
+    Parama = Table_NpcFunction_t.Parama[203]
   },
   [949] = {
     id = 949,
@@ -3084,50 +3124,50 @@ Table_NpcFunction = {
     id = 972,
     NameZh = "##148473",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[198]
+    Parama = Table_NpcFunction_t.Parama[207]
   },
   [973] = {
     id = 973,
     NameZh = "##148593",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[199]
+    Parama = Table_NpcFunction_t.Parama[208]
   },
   [974] = {
     id = 974,
     NameZh = "##148634",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[200]
+    Parama = Table_NpcFunction_t.Parama[209]
   },
   [975] = {
     id = 975,
     NameZh = "##148482",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[201]
+    Parama = Table_NpcFunction_t.Parama[210]
   },
   [976] = {
     id = 976,
     NameZh = "##148647",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[202]
+    Parama = Table_NpcFunction_t.Parama[211]
   },
   [977] = {
     id = 977,
     NameZh = "##148685",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[203]
+    Parama = Table_NpcFunction_t.Parama[212]
   },
   [978] = {
     id = 978,
     NameZh = "##148706",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[203]
+    Parama = Table_NpcFunction_t.Parama[212]
   },
   [979] = {
     id = 979,
     NameZh = "##148595",
     NameEn = "teampvpShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[173]
+    Parama = Table_NpcFunction_t.Parama[182]
   },
   [980] = {
     id = 980,
@@ -3168,20 +3208,20 @@ Table_NpcFunction = {
     id = 987,
     NameZh = "##148452",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[204]
+    Parama = Table_NpcFunction_t.Parama[213]
   },
   [988] = {
     id = 988,
     NameZh = "##116557",
     NameEn = "GuildMaterialShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[205]
+    Parama = Table_NpcFunction_t.Parama[214]
   },
   [989] = {
     id = 989,
     NameZh = "##148558",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[206]
+    Parama = Table_NpcFunction_t.Parama[215]
   },
   [990] = {
     id = 990,
@@ -3207,34 +3247,34 @@ Table_NpcFunction = {
     id = 994,
     NameZh = "##144109",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[207]
+    Parama = Table_NpcFunction_t.Parama[216]
   },
   [995] = {
     id = 995,
     NameZh = "##148643",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[208]
+    Parama = Table_NpcFunction_t.Parama[217]
   },
   [996] = {
     id = 996,
     NameZh = "##148722",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[209]
+    Parama = Table_NpcFunction_t.Parama[218]
   },
   [997] = {
     id = 997,
     NameZh = "##148455",
-    Parama = Table_NpcFunction_t.Parama[210]
+    Parama = Table_NpcFunction_t.Parama[219]
   },
   [998] = {
     id = 998,
     NameZh = "##148507",
-    Parama = Table_NpcFunction_t.Parama[211]
+    Parama = Table_NpcFunction_t.Parama[220]
   },
   [999] = {
     id = 999,
     NameZh = "##148660",
-    Parama = Table_NpcFunction_t.Parama[212]
+    Parama = Table_NpcFunction_t.Parama[221]
   },
   [1000] = {
     id = 1000,
@@ -3245,7 +3285,7 @@ Table_NpcFunction = {
     id = 1001,
     NameZh = "##118535",
     NameEn = "EndLessTeam",
-    Parama = Table_NpcFunction_t.Parama[213]
+    Parama = Table_NpcFunction_t.Parama[222]
   },
   [1002] = {
     id = 1002,
@@ -3264,13 +3304,13 @@ Table_NpcFunction = {
     id = 1100,
     NameZh = "##148666",
     NameEn = "Laboratory",
-    Parama = Table_NpcFunction_t.Parama[214]
+    Parama = Table_NpcFunction_t.Parama[223]
   },
   [1101] = {
     id = 1101,
     NameZh = "##117977",
     NameEn = "LaboratoryTeam",
-    Parama = Table_NpcFunction_t.Parama[215]
+    Parama = Table_NpcFunction_t.Parama[224]
   },
   [1102] = {
     id = 1102,
@@ -3309,7 +3349,7 @@ Table_NpcFunction = {
     id = 1400,
     NameZh = "##148528",
     NameEn = "AdventureSkill",
-    Parama = Table_NpcFunction_t.Parama[398]
+    Parama = Table_NpcFunction_t.Parama[419]
   },
   [1450] = {
     id = 1450,
@@ -3332,14 +3372,14 @@ Table_NpcFunction = {
     NameZh = "##144566",
     NameEn = "WeaponExteriorShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[473]
+    Parama = Table_NpcFunction_t.Parama[491]
   },
   [1502] = {
     id = 1502,
     NameZh = "##145421",
     NameEn = "SnakeShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[474]
+    Parama = Table_NpcFunction_t.Parama[492]
   },
   [1503] = {
     id = 1503,
@@ -3353,42 +3393,42 @@ Table_NpcFunction = {
     NameZh = "##148472",
     NameEn = "Invitethepersonoflove",
     Type = "Common_InvitethePersonoflove",
-    Parama = Table_NpcFunction_t.Parama[553]
+    Parama = Table_NpcFunction_t.Parama[571]
   },
   [1601] = {
     id = 1601,
     NameZh = "##148676",
     NameEn = "AboutSTARring",
     Type = "Common_AboutDateLand",
-    Parama = Table_NpcFunction_t.Parama[554]
+    Parama = Table_NpcFunction_t.Parama[572]
   },
   [1602] = {
     id = 1602,
     NameZh = "##148472",
     NameEn = "Invitetoflowerland",
     Type = "Common_InvitethePersonoflove",
-    Parama = Table_NpcFunction_t.Parama[555]
+    Parama = Table_NpcFunction_t.Parama[573]
   },
   [1603] = {
     id = 1603,
     NameZh = "##148466",
     NameEn = "Aboutflowerland",
     Type = "Common_AboutDateLand",
-    Parama = Table_NpcFunction_t.Parama[556]
+    Parama = Table_NpcFunction_t.Parama[574]
   },
   [1604] = {
     id = 1604,
     NameZh = "##148472",
     NameEn = "Invitetobigcat",
     Type = "Common_InvitethePersonoflove",
-    Parama = Table_NpcFunction_t.Parama[557]
+    Parama = Table_NpcFunction_t.Parama[575]
   },
   [1605] = {
     id = 1605,
     NameZh = "##148467",
     NameEn = "Aboutbigcat",
     Type = "Common_AboutDateLand",
-    Parama = Table_NpcFunction_t.Parama[558]
+    Parama = Table_NpcFunction_t.Parama[576]
   },
   [1606] = {
     id = 1606,
@@ -3400,14 +3440,14 @@ Table_NpcFunction = {
     NameZh = "##148472",
     NameEn = "Invitetobigcat",
     Type = "Common_InvitethePersonoflove",
-    Parama = Table_NpcFunction_t.Parama[559]
+    Parama = Table_NpcFunction_t.Parama[577]
   },
   [1608] = {
     id = 1608,
     NameZh = "##1243977",
     NameEn = "Aboutbigcat",
     Type = "Common_AboutDateLand",
-    Parama = Table_NpcFunction_t.Parama[560]
+    Parama = Table_NpcFunction_t.Parama[578]
   },
   [1700] = {
     id = 1700,
@@ -3448,7 +3488,7 @@ Table_NpcFunction = {
     id = 1707,
     NameZh = "##45912660",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[623]
+    Parama = Table_NpcFunction_t.Parama[641]
   },
   [1800] = {
     id = 1800,
@@ -3532,28 +3572,28 @@ Table_NpcFunction = {
     NameZh = "##148718",
     NameEn = "LuckyShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [3004] = {
     id = 3004,
     NameZh = "##148498",
     NameEn = "LuckyShop1",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[195]
+    Parama = Table_NpcFunction_t.Parama[204]
   },
   [3005] = {
     id = 3005,
     NameZh = "##148674",
     NameEn = "Pringles1",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[196]
+    Parama = Table_NpcFunction_t.Parama[205]
   },
   [3006] = {
     id = 3006,
     NameZh = "##148694",
     NameEn = "Pringles2",
     Type = "Common_Hyperlink",
-    Parama = Table_NpcFunction_t.Parama[197]
+    Parama = Table_NpcFunction_t.Parama[206]
   },
   [3007] = {
     id = 3007,
@@ -3567,7 +3607,7 @@ Table_NpcFunction = {
     NameZh = "##148552",
     NameEn = "PoringFight",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[786]
+    Parama = Table_NpcFunction_t.Parama[804]
   },
   [3009] = {
     id = 3009,
@@ -3582,35 +3622,35 @@ Table_NpcFunction = {
   [3200] = {
     id = 3200,
     NameZh = "##148723",
-    Parama = Table_NpcFunction_t.Parama[231]
+    Parama = Table_NpcFunction_t.Parama[249]
   },
   [3201] = {
     id = 3201,
     NameZh = "##148691",
-    Parama = Table_NpcFunction_t.Parama[232]
+    Parama = Table_NpcFunction_t.Parama[250]
   },
   [3202] = {
     id = 3202,
     NameZh = "##148489",
-    Parama = Table_NpcFunction_t.Parama[233]
+    Parama = Table_NpcFunction_t.Parama[251]
   },
   [3203] = {
     id = 3203,
     NameZh = "##148631",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[234]
+    Parama = Table_NpcFunction_t.Parama[252]
   },
   [3204] = {
     id = 3204,
     NameZh = "##148554",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[235]
+    Parama = Table_NpcFunction_t.Parama[253]
   },
   [3205] = {
     id = 3205,
     NameZh = "##148672",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[236]
+    Parama = Table_NpcFunction_t.Parama[254]
   },
   [3206] = {
     id = 3206,
@@ -3622,208 +3662,208 @@ Table_NpcFunction = {
     id = 3207,
     NameZh = "##148652",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[237]
+    Parama = Table_NpcFunction_t.Parama[255]
   },
   [3208] = {
     id = 3208,
     NameZh = "##148686",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[238]
+    Parama = Table_NpcFunction_t.Parama[256]
   },
   [3209] = {
     id = 3209,
     NameZh = "##285200",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[239]
+    Parama = Table_NpcFunction_t.Parama[257]
   },
   [3210] = {
     id = 3210,
     NameZh = "##285208",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[240]
+    Parama = Table_NpcFunction_t.Parama[258]
   },
   [3211] = {
     id = 3211,
     NameZh = "##285198",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[241]
+    Parama = Table_NpcFunction_t.Parama[259]
   },
   [3212] = {
     id = 3212,
     NameZh = "##148494",
-    Parama = Table_NpcFunction_t.Parama[242]
+    Parama = Table_NpcFunction_t.Parama[260]
   },
   [3213] = {
     id = 3213,
     NameZh = "##148586",
-    Parama = Table_NpcFunction_t.Parama[243]
+    Parama = Table_NpcFunction_t.Parama[261]
   },
   [3214] = {
     id = 3214,
     NameZh = "##148502",
-    Parama = Table_NpcFunction_t.Parama[244]
+    Parama = Table_NpcFunction_t.Parama[262]
   },
   [3215] = {
     id = 3215,
     NameZh = "##148574",
-    Parama = Table_NpcFunction_t.Parama[245]
+    Parama = Table_NpcFunction_t.Parama[263]
   },
   [3216] = {
     id = 3216,
     NameZh = "##148496",
-    Parama = Table_NpcFunction_t.Parama[246]
+    Parama = Table_NpcFunction_t.Parama[264]
   },
   [3217] = {
     id = 3217,
     NameZh = "##148667",
-    Parama = Table_NpcFunction_t.Parama[247]
+    Parama = Table_NpcFunction_t.Parama[265]
   },
   [3218] = {
     id = 3218,
     NameZh = "##148549",
     NameEn = "GemsShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[248]
+    Parama = Table_NpcFunction_t.Parama[266]
   },
   [3219] = {
     id = 3219,
     NameZh = "##148683",
-    Parama = Table_NpcFunction_t.Parama[249]
+    Parama = Table_NpcFunction_t.Parama[267]
   },
   [3220] = {
     id = 3220,
     NameZh = "##148683",
-    Parama = Table_NpcFunction_t.Parama[250]
+    Parama = Table_NpcFunction_t.Parama[268]
   },
   [3221] = {
     id = 3221,
     NameZh = "##148683",
-    Parama = Table_NpcFunction_t.Parama[251]
+    Parama = Table_NpcFunction_t.Parama[269]
   },
   [3222] = {
     id = 3222,
     NameZh = "##148683",
-    Parama = Table_NpcFunction_t.Parama[252]
+    Parama = Table_NpcFunction_t.Parama[270]
   },
   [3223] = {
     id = 3223,
     NameZh = "##148683",
-    Parama = Table_NpcFunction_t.Parama[253]
+    Parama = Table_NpcFunction_t.Parama[271]
   },
   [3224] = {
     id = 3224,
     NameZh = "##148683",
-    Parama = Table_NpcFunction_t.Parama[254]
+    Parama = Table_NpcFunction_t.Parama[272]
   },
   [3225] = {
     id = 3225,
     NameZh = "##148683",
-    Parama = Table_NpcFunction_t.Parama[251]
+    Parama = Table_NpcFunction_t.Parama[269]
   },
   [3226] = {
     id = 3226,
     NameZh = "##148683",
-    Parama = Table_NpcFunction_t.Parama[255]
+    Parama = Table_NpcFunction_t.Parama[273]
   },
   [3227] = {
     id = 3227,
     NameZh = "##148632",
-    Parama = Table_NpcFunction_t.Parama[256]
+    Parama = Table_NpcFunction_t.Parama[274]
   },
   [3228] = {
     id = 3228,
     NameZh = "##148511",
-    Parama = Table_NpcFunction_t.Parama[257]
+    Parama = Table_NpcFunction_t.Parama[275]
   },
   [3229] = {
     id = 3229,
     NameZh = "##285202",
-    Parama = Table_NpcFunction_t.Parama[258]
+    Parama = Table_NpcFunction_t.Parama[276]
   },
   [3230] = {
     id = 3230,
     NameZh = "##285211",
-    Parama = Table_NpcFunction_t.Parama[259]
+    Parama = Table_NpcFunction_t.Parama[277]
   },
   [3231] = {
     id = 3231,
-    Parama = Table_NpcFunction_t.Parama[260]
+    Parama = Table_NpcFunction_t.Parama[278]
   },
   [3232] = {
     id = 3232,
-    Parama = Table_NpcFunction_t.Parama[261]
+    Parama = Table_NpcFunction_t.Parama[279]
   },
   [3233] = {
     id = 3233,
-    Parama = Table_NpcFunction_t.Parama[262]
+    Parama = Table_NpcFunction_t.Parama[280]
   },
   [3234] = {
     id = 3234,
-    Parama = Table_NpcFunction_t.Parama[263]
+    Parama = Table_NpcFunction_t.Parama[281]
   },
   [3235] = {
     id = 3235,
-    Parama = Table_NpcFunction_t.Parama[264]
+    Parama = Table_NpcFunction_t.Parama[282]
   },
   [3236] = {
     id = 3236,
-    Parama = Table_NpcFunction_t.Parama[265]
+    Parama = Table_NpcFunction_t.Parama[283]
   },
   [3237] = {
     id = 3237,
-    Parama = Table_NpcFunction_t.Parama[266]
+    Parama = Table_NpcFunction_t.Parama[284]
   },
   [3238] = {
     id = 3238,
-    Parama = Table_NpcFunction_t.Parama[267]
+    Parama = Table_NpcFunction_t.Parama[285]
   },
   [3239] = {
     id = 3239,
-    Parama = Table_NpcFunction_t.Parama[268]
+    Parama = Table_NpcFunction_t.Parama[286]
   },
   [3241] = {
     id = 3241,
     NameZh = "##285205",
-    Parama = Table_NpcFunction_t.Parama[269]
+    Parama = Table_NpcFunction_t.Parama[287]
   },
   [3242] = {
     id = 3242,
     NameZh = "##148677",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[270]
+    Parama = Table_NpcFunction_t.Parama[288]
   },
   [3243] = {
     id = 3243,
     NameZh = "##148557",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[271]
+    Parama = Table_NpcFunction_t.Parama[289]
   },
   [3244] = {
     id = 3244,
     NameZh = "##148512",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[272]
+    Parama = Table_NpcFunction_t.Parama[290]
   },
   [3245] = {
     id = 3245,
     NameZh = "##148725",
     NameEn = "Prestige_Shop",
     Type = "Prestige_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [3246] = {
     id = 3246,
     NameZh = "##148699",
     NameEn = "Prestige_Shop",
     Type = "Prestige_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [3247] = {
     id = 3247,
     NameZh = "##148581",
     NameEn = "Prestige_Shop",
     Type = "Prestige_Shop",
-    Parama = Table_NpcFunction_t.Parama[228]
+    Parama = Table_NpcFunction_t.Parama[242]
   },
   [3248] = {
     id = 3248,
@@ -3835,78 +3875,78 @@ Table_NpcFunction = {
     id = 3249,
     NameZh = "##148700",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[273]
+    Parama = Table_NpcFunction_t.Parama[291]
   },
   [3250] = {
     id = 3250,
     NameZh = "##148717",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [3251] = {
     id = 3251,
     NameZh = "##148474",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [3252] = {
     id = 3252,
     NameZh = "##148639",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [3253] = {
     id = 3253,
     NameZh = "##148591",
-    Parama = Table_NpcFunction_t.Parama[274]
+    Parama = Table_NpcFunction_t.Parama[292]
   },
   [3254] = {
     id = 3254,
     NameZh = "##148609",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[275]
+    Parama = Table_NpcFunction_t.Parama[293]
   },
   [3255] = {
     id = 3255,
     NameZh = "##148646",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[276]
+    Parama = Table_NpcFunction_t.Parama[294]
   },
   [3256] = {
     id = 3256,
     NameZh = "##148606",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[277]
+    Parama = Table_NpcFunction_t.Parama[295]
   },
   [3257] = {
     id = 3257,
     NameZh = "##148514",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[278]
+    Parama = Table_NpcFunction_t.Parama[296]
   },
   [3258] = {
     id = 3258,
     NameZh = "##148605",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[279]
+    Parama = Table_NpcFunction_t.Parama[297]
   },
   [3259] = {
     id = 3259,
     NameZh = "##148589",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[280]
+    Parama = Table_NpcFunction_t.Parama[298]
   },
   [3260] = {
     id = 3260,
     NameZh = "##148462",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[281]
+    Parama = Table_NpcFunction_t.Parama[299]
   },
   [3261] = {
     id = 3261,
     NameZh = "##148638",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [3262] = {
     id = 3262,
@@ -3917,61 +3957,61 @@ Table_NpcFunction = {
     id = 3263,
     NameZh = "##148721",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[282]
+    Parama = Table_NpcFunction_t.Parama[300]
   },
   [3264] = {
     id = 3264,
     NameZh = "##148693",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[283]
+    Parama = Table_NpcFunction_t.Parama[301]
   },
   [3265] = {
     id = 3265,
     NameZh = "##148538",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[284]
+    Parama = Table_NpcFunction_t.Parama[302]
   },
   [3266] = {
     id = 3266,
     NameZh = "##148669",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[285]
+    Parama = Table_NpcFunction_t.Parama[303]
   },
   [3267] = {
     id = 3267,
     NameZh = "##147937",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[286]
+    Parama = Table_NpcFunction_t.Parama[304]
   },
   [3268] = {
     id = 3268,
     NameZh = "##148713",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[287]
+    Parama = Table_NpcFunction_t.Parama[305]
   },
   [3269] = {
     id = 3269,
     NameZh = "##148524",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [3271] = {
     id = 3271,
     NameZh = "##148604",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[288]
+    Parama = Table_NpcFunction_t.Parama[306]
   },
   [3272] = {
     id = 3272,
     NameZh = "##148716",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[289]
+    Parama = Table_NpcFunction_t.Parama[307]
   },
   [3273] = {
     id = 3273,
     NameZh = "##148490",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[290]
+    Parama = Table_NpcFunction_t.Parama[308]
   },
   [3274] = {
     id = 3274,
@@ -3997,32 +4037,32 @@ Table_NpcFunction = {
     NameZh = "##147641",
     NameEn = "Prestige_Shop",
     Type = "Prestige_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [3278] = {
     id = 3278,
     NameZh = "##148084",
     NameEn = "Prestige_Shop",
     Type = "Prestige_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [3279] = {
     id = 3279,
     NameZh = "##148562",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[291]
+    Parama = Table_NpcFunction_t.Parama[309]
   },
   [3280] = {
     id = 3280,
     NameZh = "##148662",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[292]
+    Parama = Table_NpcFunction_t.Parama[310]
   },
   [3281] = {
     id = 3281,
     NameZh = "##148629",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[293]
+    Parama = Table_NpcFunction_t.Parama[311]
   },
   [3282] = {
     id = 3282,
@@ -4046,7 +4086,7 @@ Table_NpcFunction = {
     id = 3285,
     NameZh = "##285207",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[294]
+    Parama = Table_NpcFunction_t.Parama[312]
   },
   [3286] = {
     id = 3286,
@@ -4059,25 +4099,25 @@ Table_NpcFunction = {
     NameZh = "##304604",
     NameEn = "TwelvePVPShop",
     Type = "TwelvePVP",
-    Parama = Table_NpcFunction_t.Parama[295]
+    Parama = Table_NpcFunction_t.Parama[313]
   },
   [3288] = {
     id = 3288,
     NameZh = "##304600",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[296]
+    Parama = Table_NpcFunction_t.Parama[314]
   },
   [3289] = {
     id = 3289,
     NameZh = "##304603",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[297]
+    Parama = Table_NpcFunction_t.Parama[315]
   },
   [3290] = {
     id = 3290,
     NameZh = "##304602",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[298]
+    Parama = Table_NpcFunction_t.Parama[316]
   },
   [3291] = {
     id = 3291,
@@ -4089,71 +4129,71 @@ Table_NpcFunction = {
     id = 3292,
     NameZh = "##306597",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[299]
+    Parama = Table_NpcFunction_t.Parama[317]
   },
   [3293] = {
     id = 3293,
     NameZh = "##307406",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[300]
+    Parama = Table_NpcFunction_t.Parama[318]
   },
   [3294] = {
     id = 3294,
     NameZh = "##307933",
-    Parama = Table_NpcFunction_t.Parama[301]
+    Parama = Table_NpcFunction_t.Parama[319]
   },
   [3295] = {
     id = 3295,
     NameZh = "##307932",
-    Parama = Table_NpcFunction_t.Parama[302]
+    Parama = Table_NpcFunction_t.Parama[320]
   },
   [3296] = {
     id = 3296,
     NameZh = "##309768",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[303]
+    Parama = Table_NpcFunction_t.Parama[321]
   },
   [3297] = {
     id = 3297,
     NameZh = "##309767",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[304]
+    Parama = Table_NpcFunction_t.Parama[322]
   },
   [3298] = {
     id = 3298,
     NameZh = "##532113",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[305]
+    Parama = Table_NpcFunction_t.Parama[323]
   },
   [3299] = {
     id = 3299,
     NameZh = "##532122",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[306]
+    Parama = Table_NpcFunction_t.Parama[324]
   },
   [3300] = {
     id = 3300,
     NameZh = "##532112",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[307]
+    Parama = Table_NpcFunction_t.Parama[325]
   },
   [3301] = {
     id = 3301,
     NameZh = "##311577",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[308]
+    Parama = Table_NpcFunction_t.Parama[326]
   },
   [3302] = {
     id = 3302,
     NameZh = "##312418",
-    Parama = Table_NpcFunction_t.Parama[309]
+    Parama = Table_NpcFunction_t.Parama[327]
   },
   [3303] = {
     id = 3303,
     NameZh = "##766062",
     NameEn = "AncientRelicsShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[310]
+    Parama = Table_NpcFunction_t.Parama[328]
   },
   [3304] = {
     id = 3304,
@@ -4171,38 +4211,38 @@ Table_NpcFunction = {
     id = 3306,
     NameZh = "##530887",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[311]
+    Parama = Table_NpcFunction_t.Parama[329]
   },
   [3307] = {
     id = 3307,
     NameZh = "##532123",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[312]
+    Parama = Table_NpcFunction_t.Parama[330]
   },
   [3308] = {
     id = 3308,
     NameZh = "##532121",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[313]
+    Parama = Table_NpcFunction_t.Parama[331]
   },
   [3309] = {
     id = 3309,
     NameZh = "##532116",
     NameEn = "Prestige_Shop",
     Type = "Prestige_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [3310] = {
     id = 3310,
     NameZh = "##530811",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[314]
+    Parama = Table_NpcFunction_t.Parama[332]
   },
   [3311] = {
     id = 3311,
     NameZh = "##532117",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[315]
+    Parama = Table_NpcFunction_t.Parama[333]
   },
   [3312] = {
     id = 3312,
@@ -4219,37 +4259,37 @@ Table_NpcFunction = {
     id = 3314,
     NameZh = "##1101026",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[316]
+    Parama = Table_NpcFunction_t.Parama[334]
   },
   [3315] = {
     id = 3315,
     NameZh = "##530811",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[317]
+    Parama = Table_NpcFunction_t.Parama[335]
   },
   [3316] = {
     id = 3316,
     NameZh = "##1120068",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[318]
+    Parama = Table_NpcFunction_t.Parama[336]
   },
   [3317] = {
     id = 3317,
     NameZh = "##776925",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[319]
+    Parama = Table_NpcFunction_t.Parama[337]
   },
   [3318] = {
     id = 3318,
     NameZh = "##1124120",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[320]
+    Parama = Table_NpcFunction_t.Parama[338]
   },
   [3319] = {
     id = 3319,
     NameZh = "##1127204",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[321]
+    Parama = Table_NpcFunction_t.Parama[339]
   },
   [3320] = {
     id = 3320,
@@ -4260,13 +4300,13 @@ Table_NpcFunction = {
     id = 3321,
     NameZh = "##1131157",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[322]
+    Parama = Table_NpcFunction_t.Parama[340]
   },
   [3322] = {
     id = 3322,
     NameZh = "##1136505",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[323]
+    Parama = Table_NpcFunction_t.Parama[341]
   },
   [3323] = {
     id = 3323,
@@ -4278,31 +4318,31 @@ Table_NpcFunction = {
     id = 3324,
     NameZh = "##1180712",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[324]
+    Parama = Table_NpcFunction_t.Parama[342]
   },
   [3325] = {
     id = 3325,
     NameZh = "##1180646",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[325]
+    Parama = Table_NpcFunction_t.Parama[343]
   },
   [3326] = {
     id = 3326,
     NameZh = "##1189345",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[326]
+    Parama = Table_NpcFunction_t.Parama[344]
   },
   [3327] = {
     id = 3327,
     NameZh = "##1194004",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[327]
+    Parama = Table_NpcFunction_t.Parama[345]
   },
   [3328] = {
     id = 3328,
     NameZh = "##1194005",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[328]
+    Parama = Table_NpcFunction_t.Parama[346]
   },
   [3329] = {
     id = 3329,
@@ -4314,128 +4354,128 @@ Table_NpcFunction = {
     id = 3330,
     NameZh = "##1187444",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[329]
+    Parama = Table_NpcFunction_t.Parama[347]
   },
   [3331] = {
     id = 3331,
     NameZh = "##1208397",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[330]
+    Parama = Table_NpcFunction_t.Parama[348]
   },
   [3332] = {
     id = 3332,
     NameZh = "##1218924",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[331]
+    Parama = Table_NpcFunction_t.Parama[349]
   },
   [3333] = {
     id = 3333,
     NameZh = "##1235692",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[332]
+    Parama = Table_NpcFunction_t.Parama[350]
   },
   [3334] = {
     id = 3334,
     NameZh = "##1235693",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[333]
+    Parama = Table_NpcFunction_t.Parama[351]
   },
   [3335] = {
     id = 3335,
     NameZh = "##1235694",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[334]
+    Parama = Table_NpcFunction_t.Parama[352]
   },
   [3336] = {
     id = 3336,
     NameZh = "##1235695",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[335]
+    Parama = Table_NpcFunction_t.Parama[353]
   },
   [3337] = {
     id = 3337,
     NameZh = "##1243755",
-    Parama = Table_NpcFunction_t.Parama[336]
+    Parama = Table_NpcFunction_t.Parama[354]
   },
   [3338] = {
     id = 3338,
     NameZh = "##1243756",
-    Parama = Table_NpcFunction_t.Parama[337]
+    Parama = Table_NpcFunction_t.Parama[355]
   },
   [3339] = {
     id = 3339,
     NameZh = "##1249942",
-    Parama = Table_NpcFunction_t.Parama[338]
+    Parama = Table_NpcFunction_t.Parama[356]
   },
   [3340] = {
     id = 3340,
     NameZh = "##1249943",
-    Parama = Table_NpcFunction_t.Parama[339]
+    Parama = Table_NpcFunction_t.Parama[357]
   },
   [3341] = {
     id = 3341,
     NameZh = "##1275786",
-    Parama = Table_NpcFunction_t.Parama[340]
+    Parama = Table_NpcFunction_t.Parama[358]
   },
   [3342] = {
     id = 3342,
     NameZh = "##1275787",
-    Parama = Table_NpcFunction_t.Parama[341]
+    Parama = Table_NpcFunction_t.Parama[359]
   },
   [3343] = {
     id = 3343,
     NameZh = "##1275788",
-    Parama = Table_NpcFunction_t.Parama[342]
+    Parama = Table_NpcFunction_t.Parama[360]
   },
   [3344] = {
     id = 3344,
     NameZh = "##1275789",
-    Parama = Table_NpcFunction_t.Parama[343]
+    Parama = Table_NpcFunction_t.Parama[361]
   },
   [3345] = {
     id = 3345,
     NameZh = "##1243757",
-    Parama = Table_NpcFunction_t.Parama[344]
+    Parama = Table_NpcFunction_t.Parama[362]
   },
   [3346] = {
     id = 3346,
     NameZh = "##1243758",
-    Parama = Table_NpcFunction_t.Parama[345]
+    Parama = Table_NpcFunction_t.Parama[363]
   },
   [3347] = {
     id = 3347,
     NameZh = "##1242690",
-    Parama = Table_NpcFunction_t.Parama[229]
+    Parama = Table_NpcFunction_t.Parama[243]
   },
   [3348] = {
     id = 3348,
     NameZh = "##1250100",
-    Parama = Table_NpcFunction_t.Parama[346]
+    Parama = Table_NpcFunction_t.Parama[364]
   },
   [3349] = {
     id = 3349,
     NameZh = "##1254048",
-    Parama = Table_NpcFunction_t.Parama[347]
+    Parama = Table_NpcFunction_t.Parama[365]
   },
   [3350] = {
     id = 3350,
     NameZh = "##1254049",
-    Parama = Table_NpcFunction_t.Parama[347]
+    Parama = Table_NpcFunction_t.Parama[365]
   },
   [3351] = {
     id = 3351,
     NameZh = "##1254050",
-    Parama = Table_NpcFunction_t.Parama[348]
+    Parama = Table_NpcFunction_t.Parama[366]
   },
   [3352] = {
     id = 3352,
     NameZh = "##1254051",
-    Parama = Table_NpcFunction_t.Parama[349]
+    Parama = Table_NpcFunction_t.Parama[367]
   },
   [3353] = {
     id = 3353,
     NameZh = "##1254052",
-    Parama = Table_NpcFunction_t.Parama[350]
+    Parama = Table_NpcFunction_t.Parama[368]
   },
   [3354] = {id = 3354, NameZh = "##1224339"},
   [3355] = {id = 3355, NameZh = "##1224341"},
@@ -4455,12 +4495,12 @@ Table_NpcFunction = {
   [3369] = {
     id = 3369,
     NameZh = "##1276025",
-    Parama = Table_NpcFunction_t.Parama[351]
+    Parama = Table_NpcFunction_t.Parama[369]
   },
   [3370] = {
     id = 3370,
     NameZh = "##1275797",
-    Parama = Table_NpcFunction_t.Parama[352]
+    Parama = Table_NpcFunction_t.Parama[370]
   },
   [3371] = {id = 3371, NameZh = "##1275906"},
   [3372] = {id = 3372, NameZh = "##1275907"},
@@ -4468,176 +4508,188 @@ Table_NpcFunction = {
     id = 3373,
     NameZh = "##2824401",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[353]
+    Parama = Table_NpcFunction_t.Parama[371]
   },
   [3374] = {
     id = 3374,
     NameZh = "##2824402",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[354]
+    Parama = Table_NpcFunction_t.Parama[372]
   },
   [3375] = {
     id = 3375,
     NameZh = "##1298926",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[355]
+    Parama = Table_NpcFunction_t.Parama[373]
   },
   [3376] = {
     id = 3376,
     NameZh = "##2836838",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[356]
+    Parama = Table_NpcFunction_t.Parama[374]
   },
   [3377] = {
     id = 3377,
     NameZh = "##2843842",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [3378] = {
     id = 3378,
     NameZh = "##3446881",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [3379] = {
     id = 3379,
     NameZh = "##3490915",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[357]
+    Parama = Table_NpcFunction_t.Parama[375]
   },
   [3380] = {
     id = 3380,
     NameZh = "##3501268",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[358]
+    Parama = Table_NpcFunction_t.Parama[376]
   },
   [3381] = {
     id = 3381,
     NameZh = "##3501269",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[359]
+    Parama = Table_NpcFunction_t.Parama[377]
   },
   [3382] = {
     id = 3382,
     NameZh = "##3501270",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[360]
+    Parama = Table_NpcFunction_t.Parama[378]
   },
   [3383] = {
     id = 3383,
     NameZh = "##3501271",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[361]
+    Parama = Table_NpcFunction_t.Parama[379]
   },
   [3384] = {
     id = 3384,
     NameZh = "##3501272",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[362]
+    Parama = Table_NpcFunction_t.Parama[380]
   },
   [3385] = {
     id = 3385,
     NameZh = "##3501273",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[363]
+    Parama = Table_NpcFunction_t.Parama[381]
   },
   [3386] = {
     id = 3386,
     NameZh = "##3501268",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[364]
+    Parama = Table_NpcFunction_t.Parama[382]
+  },
+  [3387] = {
+    id = 3387,
+    NameZh = "##3502202",
+    Type = "Common_Shop",
+    Parama = Table_NpcFunction_t.Parama[383]
   },
   [3391] = {
     id = 3391,
     NameZh = "##42636071",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[367]
+    Parama = Table_NpcFunction_t.Parama[384]
   },
   [3392] = {
     id = 3392,
     NameZh = "##42636718",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[368]
+    Parama = Table_NpcFunction_t.Parama[385]
   },
   [3393] = {
     id = 3393,
     NameZh = "##42636719",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[369]
+    Parama = Table_NpcFunction_t.Parama[386]
   },
   [3394] = {
     id = 3394,
     NameZh = "##42637042",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[370]
+    Parama = Table_NpcFunction_t.Parama[387]
   },
   [3395] = {
     id = 3395,
     NameZh = "##42642379",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[371]
+    Parama = Table_NpcFunction_t.Parama[388]
   },
   [3396] = {
     id = 3396,
     NameZh = "##42643331",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[372]
+    Parama = Table_NpcFunction_t.Parama[389]
   },
   [3397] = {
     id = 3397,
     NameZh = "##44696478",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[373]
+    Parama = Table_NpcFunction_t.Parama[390]
   },
   [3398] = {
     id = 3398,
     NameZh = "##44700260",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[374]
+    Parama = Table_NpcFunction_t.Parama[391]
   },
   [3399] = {
     id = 3399,
     NameZh = "##44702920",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[375]
+    Parama = Table_NpcFunction_t.Parama[392]
   },
   [3406] = {
     id = 3406,
     NameZh = "##45908665",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[378]
+    Parama = Table_NpcFunction_t.Parama[394]
   },
   [3407] = {
     id = 3407,
     NameZh = "##45910303",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[379]
+    Parama = Table_NpcFunction_t.Parama[395]
   },
   [3408] = {
     id = 3408,
     NameZh = "##45926606",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[380]
+    Parama = Table_NpcFunction_t.Parama[396]
   },
   [3409] = {
     id = 3409,
     NameZh = "##45940001",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[381]
+    Parama = Table_NpcFunction_t.Parama[397]
   },
   [3410] = {
     id = 3410,
     NameZh = "##46429285",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[382]
+    Parama = Table_NpcFunction_t.Parama[398]
+  },
+  [3411] = {
+    id = 3411,
+    NameZh = "##47259982",
+    Type = "Common_Shop",
+    Parama = Table_NpcFunction_t.Parama[399]
   },
   [4000] = {
     id = 4000,
     NameZh = "##104972",
     NameEn = "CreateGuild",
     Type = "Guild",
-    Parama = Table_NpcFunction_t.Parama[305]
+    Parama = Table_NpcFunction_t.Parama[323]
   },
   [4001] = {
     id = 4001,
@@ -4662,28 +4714,28 @@ Table_NpcFunction = {
     NameZh = "LV40",
     NameEn = "Unlock",
     Type = "Common_GuildRaid",
-    Parama = Table_NpcFunction_t.Parama[742]
+    Parama = Table_NpcFunction_t.Parama[760]
   },
   [4012] = {
     id = 4012,
     NameZh = "LV60",
     NameEn = "Unlock",
     Type = "Common_GuildRaid",
-    Parama = Table_NpcFunction_t.Parama[743]
+    Parama = Table_NpcFunction_t.Parama[761]
   },
   [4013] = {
     id = 4013,
     NameZh = "LV80",
     NameEn = "Unlock",
     Type = "Common_GuildRaid",
-    Parama = Table_NpcFunction_t.Parama[744]
+    Parama = Table_NpcFunction_t.Parama[762]
   },
   [4014] = {
     id = 4014,
     NameZh = "LV100",
     NameEn = "Unlock",
     Type = "Common_GuildRaid",
-    Parama = Table_NpcFunction_t.Parama[745]
+    Parama = Table_NpcFunction_t.Parama[763]
   },
   [4015] = {
     id = 4015,
@@ -4828,7 +4880,7 @@ Table_NpcFunction = {
     id = 4045,
     NameZh = "##44717501",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[748]
+    Parama = Table_NpcFunction_t.Parama[766]
   },
   [4500] = {
     id = 4500,
@@ -4889,14 +4941,14 @@ Table_NpcFunction = {
     NameZh = "##148626",
     NameEn = "PlayingBoli",
     Type = "Common_Hyperlink",
-    Parama = Table_NpcFunction_t.Parama[731]
+    Parama = Table_NpcFunction_t.Parama[749]
   },
   [6004] = {
     id = 6004,
     NameZh = "##148454",
     NameEn = "Valentine",
     Type = "Common_Augury",
-    Parama = Table_NpcFunction_t.Parama[732]
+    Parama = Table_NpcFunction_t.Parama[750]
   },
   [6005] = {
     id = 6005,
@@ -4908,7 +4960,7 @@ Table_NpcFunction = {
     NameZh = "##136166",
     NameEn = "Zhaohang",
     Type = "Common_Hyperlink",
-    Parama = Table_NpcFunction_t.Parama[733]
+    Parama = Table_NpcFunction_t.Parama[751]
   },
   [6007] = {
     id = 6007,
@@ -4939,7 +4991,7 @@ Table_NpcFunction = {
     id = 6014,
     NameZh = "##148622",
     NameEn = "EnterWeddingMap",
-    Parama = Table_NpcFunction_t.Parama[734]
+    Parama = Table_NpcFunction_t.Parama[752]
   },
   [6015] = {
     id = 6015,
@@ -4988,56 +5040,56 @@ Table_NpcFunction = {
     NameZh = "##117324",
     NameEn = "AuguryLove",
     Type = "Common_Augury",
-    Parama = Table_NpcFunction_t.Parama[699]
+    Parama = Table_NpcFunction_t.Parama[717]
   },
   [8006] = {
     id = 8006,
     NameZh = "##117324",
     NameEn = "AuguryStar",
     Type = "Common_Augury",
-    Parama = Table_NpcFunction_t.Parama[700]
+    Parama = Table_NpcFunction_t.Parama[718]
   },
   [8007] = {
     id = 8007,
     NameZh = "##148708",
     NameEn = "Auguryadventure",
     Type = "Common_Augury",
-    Parama = Table_NpcFunction_t.Parama[701]
+    Parama = Table_NpcFunction_t.Parama[719]
   },
   [8008] = {
     id = 8008,
     NameZh = "##148464",
     NameEn = "AboutAuguryStar",
     Type = "Common_AboutAugury",
-    Parama = Table_NpcFunction_t.Parama[702]
+    Parama = Table_NpcFunction_t.Parama[720]
   },
   [8009] = {
     id = 8009,
     NameZh = "##148523",
     NameEn = "AboutAuguryLove",
     Type = "Common_AboutAugury",
-    Parama = Table_NpcFunction_t.Parama[703]
+    Parama = Table_NpcFunction_t.Parama[721]
   },
   [8010] = {
     id = 8010,
     NameZh = "##148569",
     NameEn = "AboutAuguryadventure",
     Type = "Common_AboutAugury",
-    Parama = Table_NpcFunction_t.Parama[704]
+    Parama = Table_NpcFunction_t.Parama[722]
   },
   [8011] = {
     id = 8011,
     NameZh = "##148665",
     NameEn = "Auguryadventure",
     Type = "Common_Augury",
-    Parama = Table_NpcFunction_t.Parama[705]
+    Parama = Table_NpcFunction_t.Parama[723]
   },
   [8012] = {
     id = 8012,
     NameZh = "##148519",
     NameEn = "AboutAuguryactivity",
     Type = "Common_AboutAugury",
-    Parama = Table_NpcFunction_t.Parama[706]
+    Parama = Table_NpcFunction_t.Parama[724]
   },
   [8013] = {
     id = 8013,
@@ -5087,20 +5139,20 @@ Table_NpcFunction = {
   [9000] = {
     id = 9000,
     NameZh = "##148469",
-    Parama = Table_NpcFunction_t.Parama[230]
+    Parama = Table_NpcFunction_t.Parama[244]
   },
   [9001] = {
     id = 9001,
     NameZh = "##148719",
     NameEn = "ExpPreShop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [9002] = {
     id = 9002,
     NameZh = "##285197",
     NameEn = "Prestige_Shop",
     Type = "Prestige_Shop",
-    Parama = Table_NpcFunction_t.Parama[142]
+    Parama = Table_NpcFunction_t.Parama[151]
   },
   [9003] = {id = 9003, NameZh = "##285206"},
   [9100] = {
@@ -5111,7 +5163,7 @@ Table_NpcFunction = {
   [9101] = {
     id = 9101,
     NameZh = "##123955",
-    Parama = Table_NpcFunction_t.Parama[365]
+    Parama = Table_NpcFunction_t.Parama[245]
   },
   [9102] = {
     id = 9102,
@@ -5159,7 +5211,7 @@ Table_NpcFunction = {
     NameZh = "##148520",
     NameEn = "Internet",
     Type = "Common_Hyperlink",
-    Parama = Table_NpcFunction_t.Parama[686]
+    Parama = Table_NpcFunction_t.Parama[704]
   },
   [10008] = {
     id = 10008,
@@ -5176,7 +5228,7 @@ Table_NpcFunction = {
     NameZh = "##148559",
     NameEn = "AboutAltman",
     Type = "Common_AboutAugury",
-    Parama = Table_NpcFunction_t.Parama[687]
+    Parama = Table_NpcFunction_t.Parama[705]
   },
   [10011] = {
     id = 10011,
@@ -5203,7 +5255,7 @@ Table_NpcFunction = {
     NameZh = "##285210",
     NameEn = "AboutValentineRaid",
     Type = "Common_AboutAugury",
-    Parama = Table_NpcFunction_t.Parama[687]
+    Parama = Table_NpcFunction_t.Parama[705]
   },
   [10017] = {
     id = 10017,
@@ -5279,7 +5331,7 @@ Table_NpcFunction = {
     NameZh = "##148594",
     NameEn = "Astrology",
     Type = "Astrology",
-    Parama = Table_NpcFunction_t.Parama[689]
+    Parama = Table_NpcFunction_t.Parama[707]
   },
   [10031] = {
     id = 10031,
@@ -5293,7 +5345,7 @@ Table_NpcFunction = {
     NameZh = "##148471",
     NameEn = "AboutValentineRaid",
     Type = "Common_AboutAugury",
-    Parama = Table_NpcFunction_t.Parama[690]
+    Parama = Table_NpcFunction_t.Parama[708]
   },
   [10033] = {
     id = 10033,
@@ -5349,21 +5401,21 @@ Table_NpcFunction = {
     NameZh = "##148533",
     NameEn = "RoguelikeQuest",
     Type = "Roguelike",
-    Parama = Table_NpcFunction_t.Parama[366]
+    Parama = Table_NpcFunction_t.Parama[246]
   },
   [10102] = {
     id = 10102,
     NameZh = "##148536",
     NameEn = "RoguelikeQuest",
     Type = "Roguelike",
-    Parama = Table_NpcFunction_t.Parama[376]
+    Parama = Table_NpcFunction_t.Parama[247]
   },
   [10103] = {
     id = 10103,
     NameZh = "##148535",
     NameEn = "RoguelikeQuest",
     Type = "Roguelike",
-    Parama = Table_NpcFunction_t.Parama[377]
+    Parama = Table_NpcFunction_t.Parama[248]
   },
   [10104] = {
     id = 10104,
@@ -5448,7 +5500,7 @@ Table_NpcFunction = {
     id = 10119,
     NameZh = "##285157",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[294]
+    Parama = Table_NpcFunction_t.Parama[312]
   },
   [10120] = {
     id = 10120,
@@ -5512,7 +5564,7 @@ Table_NpcFunction = {
   [10132] = {
     id = 10132,
     NameZh = "##781290",
-    Parama = Table_NpcFunction_t.Parama[736]
+    Parama = Table_NpcFunction_t.Parama[754]
   },
   [10133] = {
     id = 10133,
@@ -5544,7 +5596,7 @@ Table_NpcFunction = {
     id = 10141,
     NameZh = "##1187083",
     NameEn = "MultiBossRaid",
-    Parama = Table_NpcFunction_t.Parama[383]
+    Parama = Table_NpcFunction_t.Parama[393]
   },
   [10150] = {
     id = 10150,
@@ -5700,6 +5752,11 @@ Table_NpcFunction = {
     Type = "CrackRaid",
     Parama = Table_NpcFunction_t.Parama[50]
   },
+  [10316] = {
+    id = 10316,
+    NameZh = "##3490923",
+    NameEn = "JoinRoom"
+  },
   [10320] = {
     id = 10320,
     NameZh = "##44724845",
@@ -5720,6 +5777,13 @@ Table_NpcFunction = {
     NameEn = "CrackRaid",
     Type = "CrackRaid",
     Parama = Table_NpcFunction_t.Parama[53]
+  },
+  [10323] = {
+    id = 10323,
+    NameZh = "##47136769",
+    NameEn = "CrackRaid",
+    Type = "CrackRaid",
+    Parama = Table_NpcFunction_t.Parama[54]
   },
   [11001] = {
     id = 11001,
@@ -5785,14 +5849,14 @@ Table_NpcFunction = {
     NameZh = "##1234233",
     NameEn = "CardLottery",
     Type = "CardLottery",
-    Parama = Table_NpcFunction_t.Parama[136]
+    Parama = Table_NpcFunction_t.Parama[145]
   },
   [11017] = {
     id = 11017,
     NameZh = "##1234234",
     NameEn = "CardLottery",
     Type = "CardLottery",
-    Parama = Table_NpcFunction_t.Parama[137]
+    Parama = Table_NpcFunction_t.Parama[146]
   },
   [11018] = {
     id = 11018,
@@ -5813,13 +5877,13 @@ Table_NpcFunction = {
     id = 11021,
     NameZh = "##1298767",
     NameEn = "MountDressing",
-    Parama = Table_NpcFunction_t.Parama[138]
+    Parama = Table_NpcFunction_t.Parama[147]
   },
   [11022] = {
     id = 11022,
     NameZh = "##1298859",
     NameEn = "AierBlacksmith",
-    Parama = Table_NpcFunction_t.Parama[139]
+    Parama = Table_NpcFunction_t.Parama[148]
   },
   [11023] = {
     id = 11023,
@@ -5852,7 +5916,7 @@ Table_NpcFunction = {
     NameZh = "##3351849",
     NameEn = "BatteryCannon",
     Type = "BatteryCannon",
-    Parama = Table_NpcFunction_t.Parama[140]
+    Parama = Table_NpcFunction_t.Parama[149]
   },
   [11029] = {
     id = 11029,
@@ -5871,7 +5935,7 @@ Table_NpcFunction = {
     NameZh = "##3490924",
     NameEn = "CrackRaid",
     Type = "CrackRaid",
-    Parama = Table_NpcFunction_t.Parama[141]
+    Parama = Table_NpcFunction_t.Parama[150]
   },
   [11033] = {
     id = 11033,
@@ -5888,6 +5952,48 @@ Table_NpcFunction = {
     id = 11038,
     NameZh = "##42637047",
     NameEn = "OpenInheritSkillExtendCostPointPopUp"
+  },
+  [12001] = {
+    id = 12001,
+    NameZh = "##3489805",
+    NameEn = "EndlessBattle",
+    Type = "Common_AboutAugury",
+    Parama = Table_NpcFunction_t.Parama[683]
+  },
+  [12002] = {
+    id = 12002,
+    NameZh = "##3502101",
+    NameEn = "EndlessBattle",
+    Type = "Common_AboutAugury",
+    Parama = Table_NpcFunction_t.Parama[684]
+  },
+  [12003] = {
+    id = 12003,
+    NameZh = "##3489807",
+    NameEn = "EndlessBattle",
+    Type = "Common_AboutAugury",
+    Parama = Table_NpcFunction_t.Parama[685]
+  },
+  [12004] = {
+    id = 12004,
+    NameZh = "##3502102",
+    NameEn = "EndlessBattle",
+    Type = "Common_AboutAugury",
+    Parama = Table_NpcFunction_t.Parama[686]
+  },
+  [12005] = {
+    id = 12005,
+    NameZh = "##3489888",
+    NameEn = "EndlessBattle",
+    Type = "Common_AboutAugury",
+    Parama = Table_NpcFunction_t.Parama[687]
+  },
+  [12006] = {
+    id = 12006,
+    NameZh = "##3489890",
+    NameEn = "EndlessBattle",
+    Type = "Common_AboutAugury",
+    Parama = Table_NpcFunction_t.Parama[688]
   },
   [12010] = {
     id = 12010,
@@ -5920,7 +6026,7 @@ Table_NpcFunction = {
     NameZh = "##44703697",
     NameEn = "CrackRaid",
     Type = "CrackRaid",
-    Parama = Table_NpcFunction_t.Parama[675]
+    Parama = Table_NpcFunction_t.Parama[693]
   },
   [12018] = {
     id = 12018,
@@ -5932,7 +6038,7 @@ Table_NpcFunction = {
     id = 12019,
     NameZh = "##44704124",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[67]
+    Parama = Table_NpcFunction_t.Parama[68]
   },
   [12020] = {
     id = 12020,
@@ -5959,19 +6065,19 @@ Table_NpcFunction = {
     id = 12025,
     NameZh = "##44726822",
     NameEn = "OpenAchieveRewardView",
-    Parama = Table_NpcFunction_t.Parama[677]
+    Parama = Table_NpcFunction_t.Parama[695]
   },
   [12026] = {
     id = 12026,
     NameZh = "##44726823",
     NameEn = "OpenAchieveRewardView",
-    Parama = Table_NpcFunction_t.Parama[678]
+    Parama = Table_NpcFunction_t.Parama[696]
   },
   [12027] = {
     id = 12027,
     NameZh = "##44726824",
     NameEn = "OpenAchieveRewardView",
-    Parama = Table_NpcFunction_t.Parama[679]
+    Parama = Table_NpcFunction_t.Parama[697]
   },
   [12028] = {
     id = 12028,
@@ -6020,43 +6126,43 @@ Table_NpcFunction = {
     id = 12036,
     NameZh = "##45911520",
     NameEn = "AddBuffMyself",
-    Parama = Table_NpcFunction_t.Parama[385]
+    Parama = Table_NpcFunction_t.Parama[401]
   },
   [12037] = {
     id = 12037,
     NameZh = "##45911522",
     NameEn = "AddBuffMyself",
-    Parama = Table_NpcFunction_t.Parama[680]
+    Parama = Table_NpcFunction_t.Parama[698]
   },
   [12038] = {
     id = 12038,
     NameZh = "##45911524",
     NameEn = "AddBuffMyself",
-    Parama = Table_NpcFunction_t.Parama[681]
+    Parama = Table_NpcFunction_t.Parama[699]
   },
   [12039] = {
     id = 12039,
     NameZh = "##45911526",
     NameEn = "AddBuffMyself",
-    Parama = Table_NpcFunction_t.Parama[682]
+    Parama = Table_NpcFunction_t.Parama[700]
   },
   [12040] = {
     id = 12040,
     NameZh = "##45911527",
     NameEn = "AddBuffMyself",
-    Parama = Table_NpcFunction_t.Parama[683]
+    Parama = Table_NpcFunction_t.Parama[701]
   },
   [12041] = {
     id = 12041,
     NameZh = "##45911529",
     NameEn = "AddBuffMyself",
-    Parama = Table_NpcFunction_t.Parama[684]
+    Parama = Table_NpcFunction_t.Parama[702]
   },
   [12042] = {
     id = 12042,
     NameZh = "##169580",
     NameEn = "DelBuffMyself",
-    Parama = Table_NpcFunction_t.Parama[685]
+    Parama = Table_NpcFunction_t.Parama[703]
   },
   [12043] = {
     id = 12043,
@@ -6082,111 +6188,111 @@ Table_NpcFunction = {
   [20001] = {
     id = 20001,
     NameZh = "##102993",
-    Parama = Table_NpcFunction_t.Parama[533]
+    Parama = Table_NpcFunction_t.Parama[551]
   },
   [20002] = {
     id = 20002,
     NameZh = "##103012",
-    Parama = Table_NpcFunction_t.Parama[534]
+    Parama = Table_NpcFunction_t.Parama[552]
   },
   [20003] = {
     id = 20003,
     NameZh = "##102992",
-    Parama = Table_NpcFunction_t.Parama[535]
+    Parama = Table_NpcFunction_t.Parama[553]
   },
   [20004] = {
     id = 20004,
     NameZh = "##102963",
-    Parama = Table_NpcFunction_t.Parama[536]
+    Parama = Table_NpcFunction_t.Parama[554]
   },
   [20005] = {
     id = 20005,
     NameZh = "##103009",
-    Parama = Table_NpcFunction_t.Parama[537]
+    Parama = Table_NpcFunction_t.Parama[555]
   },
   [20006] = {
     id = 20006,
     NameZh = "##103004",
-    Parama = Table_NpcFunction_t.Parama[538]
+    Parama = Table_NpcFunction_t.Parama[556]
   },
   [20007] = {
     id = 20007,
     NameZh = "##102974",
     NameEn = "GemsShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[539]
+    Parama = Table_NpcFunction_t.Parama[557]
   },
   [20008] = {
     id = 20008,
     NameZh = "##102983",
-    Parama = Table_NpcFunction_t.Parama[540]
+    Parama = Table_NpcFunction_t.Parama[558]
   },
   [20009] = {
     id = 20009,
     NameZh = "##103005",
-    Parama = Table_NpcFunction_t.Parama[541]
+    Parama = Table_NpcFunction_t.Parama[559]
   },
   [20010] = {
     id = 20010,
     NameZh = "##102997",
-    Parama = Table_NpcFunction_t.Parama[542]
+    Parama = Table_NpcFunction_t.Parama[560]
   },
   [20011] = {
     id = 20011,
     NameZh = "##102971",
-    Parama = Table_NpcFunction_t.Parama[543]
+    Parama = Table_NpcFunction_t.Parama[561]
   },
   [20012] = {id = 20012, NameZh = "##102979"},
   [20013] = {
     id = 20013,
     NameZh = "##103002",
-    Parama = Table_NpcFunction_t.Parama[544]
+    Parama = Table_NpcFunction_t.Parama[562]
   },
   [20014] = {
     id = 20014,
     NameZh = "##102984",
-    Parama = Table_NpcFunction_t.Parama[545]
+    Parama = Table_NpcFunction_t.Parama[563]
   },
   [20015] = {
     id = 20015,
     NameZh = "##103013",
-    Parama = Table_NpcFunction_t.Parama[546]
+    Parama = Table_NpcFunction_t.Parama[564]
   },
   [20016] = {
     id = 20016,
     NameZh = "##102980",
-    Parama = Table_NpcFunction_t.Parama[547]
+    Parama = Table_NpcFunction_t.Parama[565]
   },
   [20017] = {
     id = 20017,
     NameZh = "##102978",
-    Parama = Table_NpcFunction_t.Parama[548]
+    Parama = Table_NpcFunction_t.Parama[566]
   },
   [20018] = {
     id = 20018,
     NameZh = "##103008",
-    Parama = Table_NpcFunction_t.Parama[549]
+    Parama = Table_NpcFunction_t.Parama[567]
   },
   [20019] = {id = 20019, NameZh = "##102968"},
   [20020] = {
     id = 20020,
     NameZh = "##102985",
-    Parama = Table_NpcFunction_t.Parama[550]
+    Parama = Table_NpcFunction_t.Parama[568]
   },
   [20022] = {
     id = 20022,
     NameZh = "##101507",
-    Parama = Table_NpcFunction_t.Parama[552]
+    Parama = Table_NpcFunction_t.Parama[570]
   },
   [20023] = {
     id = 20023,
     NameZh = "##102988",
-    Parama = Table_NpcFunction_t.Parama[415]
+    Parama = Table_NpcFunction_t.Parama[431]
   },
   [20024] = {
     id = 20024,
     NameZh = "##103003",
-    Parama = Table_NpcFunction_t.Parama[416]
+    Parama = Table_NpcFunction_t.Parama[432]
   },
   [20025] = {
     id = 20025,
@@ -6196,12 +6302,12 @@ Table_NpcFunction = {
   [20026] = {
     id = 20026,
     NameZh = "##102971",
-    Parama = Table_NpcFunction_t.Parama[418]
+    Parama = Table_NpcFunction_t.Parama[434]
   },
   [20027] = {
     id = 20027,
     NameZh = "##102999",
-    Parama = Table_NpcFunction_t.Parama[419]
+    Parama = Table_NpcFunction_t.Parama[435]
   },
   [20028] = {id = 20028, NameZh = "##102964"},
   [20029] = {
@@ -6214,32 +6320,32 @@ Table_NpcFunction = {
     NameZh = "##102987",
     NameEn = "GemsShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[423]
+    Parama = Table_NpcFunction_t.Parama[439]
   },
   [20031] = {
     id = 20031,
     NameZh = "##102967",
-    Parama = Table_NpcFunction_t.Parama[428]
+    Parama = Table_NpcFunction_t.Parama[444]
   },
   [20032] = {
     id = 20032,
     NameZh = "##103011",
-    Parama = Table_NpcFunction_t.Parama[561]
+    Parama = Table_NpcFunction_t.Parama[579]
   },
   [20033] = {
     id = 20033,
     NameZh = "##280824",
-    Parama = Table_NpcFunction_t.Parama[562]
+    Parama = Table_NpcFunction_t.Parama[580]
   },
   [20034] = {
     id = 20034,
     NameZh = "##282588",
-    Parama = Table_NpcFunction_t.Parama[563]
+    Parama = Table_NpcFunction_t.Parama[581]
   },
   [20035] = {
     id = 20035,
     NameZh = "##102982",
-    Parama = Table_NpcFunction_t.Parama[564]
+    Parama = Table_NpcFunction_t.Parama[582]
   },
   [20036] = {
     id = 20036,
@@ -6249,7 +6355,7 @@ Table_NpcFunction = {
   [20037] = {
     id = 20037,
     NameZh = "##101780",
-    Parama = Table_NpcFunction_t.Parama[565]
+    Parama = Table_NpcFunction_t.Parama[583]
   },
   [20038] = {
     id = 20038,
@@ -6261,7 +6367,7 @@ Table_NpcFunction = {
     NameZh = "##282590",
     NameEn = "JumpToKFC",
     Type = "Common_Hyperlink",
-    Parama = Table_NpcFunction_t.Parama[566]
+    Parama = Table_NpcFunction_t.Parama[584]
   },
   [20040] = {
     id = 20040,
@@ -6273,23 +6379,23 @@ Table_NpcFunction = {
     id = 20041,
     NameZh = "##102981",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[567]
+    Parama = Table_NpcFunction_t.Parama[585]
   },
   [20042] = {
     id = 20042,
     NameZh = "##102990",
-    Parama = Table_NpcFunction_t.Parama[568]
+    Parama = Table_NpcFunction_t.Parama[586]
   },
   [20043] = {id = 20043, NameZh = "##102973"},
   [20044] = {
     id = 20044,
     NameZh = "##102991",
-    Parama = Table_NpcFunction_t.Parama[569]
+    Parama = Table_NpcFunction_t.Parama[587]
   },
   [20045] = {
     id = 20045,
     NameZh = "##103001",
-    Parama = Table_NpcFunction_t.Parama[570]
+    Parama = Table_NpcFunction_t.Parama[588]
   },
   [20046] = {
     id = 20046,
@@ -6301,7 +6407,7 @@ Table_NpcFunction = {
   [20047] = {
     id = 20047,
     NameZh = "##102977",
-    Parama = Table_NpcFunction_t.Parama[571]
+    Parama = Table_NpcFunction_t.Parama[589]
   },
   [20048] = {
     id = 20048,
@@ -6312,32 +6418,32 @@ Table_NpcFunction = {
   [20050] = {
     id = 20050,
     NameZh = "##102975",
-    Parama = Table_NpcFunction_t.Parama[572]
+    Parama = Table_NpcFunction_t.Parama[590]
   },
   [20051] = {
     id = 20051,
     NameZh = "##102966",
-    Parama = Table_NpcFunction_t.Parama[573]
+    Parama = Table_NpcFunction_t.Parama[591]
   },
   [20052] = {
     id = 20052,
     NameZh = "##102995",
-    Parama = Table_NpcFunction_t.Parama[574]
+    Parama = Table_NpcFunction_t.Parama[592]
   },
   [20053] = {
     id = 20053,
     NameZh = "##102962",
-    Parama = Table_NpcFunction_t.Parama[575]
+    Parama = Table_NpcFunction_t.Parama[593]
   },
   [20054] = {
     id = 20054,
     NameZh = "##103000",
-    Parama = Table_NpcFunction_t.Parama[576]
+    Parama = Table_NpcFunction_t.Parama[594]
   },
   [20055] = {
     id = 20055,
     NameZh = "##102992",
-    Parama = Table_NpcFunction_t.Parama[577]
+    Parama = Table_NpcFunction_t.Parama[595]
   },
   [20056] = {id = 20056, NameZh = "##102989"},
   [20057] = {
@@ -6355,7 +6461,7 @@ Table_NpcFunction = {
   [20059] = {
     id = 20059,
     NameZh = "##103004",
-    Parama = Table_NpcFunction_t.Parama[578]
+    Parama = Table_NpcFunction_t.Parama[596]
   },
   [20060] = {
     id = 20060,
@@ -6367,7 +6473,7 @@ Table_NpcFunction = {
     id = 20061,
     NameZh = "##102066",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[579]
+    Parama = Table_NpcFunction_t.Parama[597]
   },
   [20062] = {
     id = 20062,
@@ -6378,32 +6484,32 @@ Table_NpcFunction = {
   [20063] = {
     id = 20063,
     NameZh = "##282589",
-    Parama = Table_NpcFunction_t.Parama[580]
+    Parama = Table_NpcFunction_t.Parama[598]
   },
   [20064] = {
     id = 20064,
     NameZh = "##282594",
-    Parama = Table_NpcFunction_t.Parama[581]
+    Parama = Table_NpcFunction_t.Parama[599]
   },
   [20065] = {
     id = 20065,
     NameZh = "##101687",
-    Parama = Table_NpcFunction_t.Parama[582]
+    Parama = Table_NpcFunction_t.Parama[600]
   },
   [20066] = {
     id = 20066,
     NameZh = "##101986",
-    Parama = Table_NpcFunction_t.Parama[583]
+    Parama = Table_NpcFunction_t.Parama[601]
   },
   [20067] = {
     id = 20067,
     NameZh = "##102304",
-    Parama = Table_NpcFunction_t.Parama[584]
+    Parama = Table_NpcFunction_t.Parama[602]
   },
   [20068] = {
     id = 20068,
     NameZh = "##102983",
-    Parama = Table_NpcFunction_t.Parama[585]
+    Parama = Table_NpcFunction_t.Parama[603]
   },
   [20069] = {
     id = 20069,
@@ -6413,115 +6519,115 @@ Table_NpcFunction = {
   [20071] = {
     id = 20071,
     NameZh = "##299510",
-    Parama = Table_NpcFunction_t.Parama[587]
+    Parama = Table_NpcFunction_t.Parama[605]
   },
   [20072] = {
     id = 20072,
     NameZh = "##299512",
-    Parama = Table_NpcFunction_t.Parama[588]
+    Parama = Table_NpcFunction_t.Parama[606]
   },
   [20073] = {
     id = 20073,
     NameZh = "##289296",
-    Parama = Table_NpcFunction_t.Parama[589]
+    Parama = Table_NpcFunction_t.Parama[607]
   },
   [20074] = {
     id = 20074,
     NameZh = "##299511",
     NameEn = "BearRaid",
     Type = "BearRaid",
-    Parama = Table_NpcFunction_t.Parama[589]
+    Parama = Table_NpcFunction_t.Parama[607]
   },
   [20075] = {
     id = 20075,
     NameZh = "##299740",
-    Parama = Table_NpcFunction_t.Parama[590]
+    Parama = Table_NpcFunction_t.Parama[608]
   },
   [20076] = {
     id = 20076,
     NameZh = "##102997",
-    Parama = Table_NpcFunction_t.Parama[591]
+    Parama = Table_NpcFunction_t.Parama[609]
   },
   [20077] = {
     id = 20077,
     NameZh = "##304218",
-    Parama = Table_NpcFunction_t.Parama[464]
+    Parama = Table_NpcFunction_t.Parama[476]
   },
   [20078] = {
     id = 20078,
     NameZh = "##303999",
-    Parama = Table_NpcFunction_t.Parama[592]
+    Parama = Table_NpcFunction_t.Parama[610]
   },
   [20079] = {
     id = 20079,
     NameZh = "##293061",
-    Parama = Table_NpcFunction_t.Parama[593]
+    Parama = Table_NpcFunction_t.Parama[611]
   },
   [20080] = {
     id = 20080,
     NameZh = "##304003",
-    Parama = Table_NpcFunction_t.Parama[594]
+    Parama = Table_NpcFunction_t.Parama[612]
   },
   [20081] = {
     id = 20081,
     NameZh = "##304009",
-    Parama = Table_NpcFunction_t.Parama[595]
+    Parama = Table_NpcFunction_t.Parama[613]
   },
   [20082] = {
     id = 20082,
     NameZh = "##304005",
-    Parama = Table_NpcFunction_t.Parama[596]
+    Parama = Table_NpcFunction_t.Parama[614]
   },
   [20083] = {
     id = 20083,
     NameZh = "##304004",
-    Parama = Table_NpcFunction_t.Parama[597]
+    Parama = Table_NpcFunction_t.Parama[615]
   },
   [20084] = {
     id = 20084,
     NameZh = "##304001",
-    Parama = Table_NpcFunction_t.Parama[598]
+    Parama = Table_NpcFunction_t.Parama[616]
   },
   [20085] = {
     id = 20085,
     NameZh = "##304007",
-    Parama = Table_NpcFunction_t.Parama[599]
+    Parama = Table_NpcFunction_t.Parama[617]
   },
   [20086] = {
     id = 20086,
     NameZh = "##304217",
-    Parama = Table_NpcFunction_t.Parama[600]
+    Parama = Table_NpcFunction_t.Parama[618]
   },
   [20087] = {
     id = 20087,
     NameZh = "##304008",
-    Parama = Table_NpcFunction_t.Parama[601]
+    Parama = Table_NpcFunction_t.Parama[619]
   },
   [20088] = {
     id = 20088,
     NameZh = "##304000",
-    Parama = Table_NpcFunction_t.Parama[602]
+    Parama = Table_NpcFunction_t.Parama[620]
   },
   [20089] = {
     id = 20089,
     NameZh = "##304002",
-    Parama = Table_NpcFunction_t.Parama[603]
+    Parama = Table_NpcFunction_t.Parama[621]
   },
   [20090] = {
     id = 20090,
     NameZh = "##304219",
-    Parama = Table_NpcFunction_t.Parama[604]
+    Parama = Table_NpcFunction_t.Parama[622]
   },
   [20091] = {id = 20091, NameZh = "##304216"},
   [20092] = {
     id = 20092,
     NameZh = "##102980",
-    Parama = Table_NpcFunction_t.Parama[605]
+    Parama = Table_NpcFunction_t.Parama[623]
   },
   [20093] = {
     id = 20093,
     NameZh = "##306811",
-    Parama = Table_NpcFunction_t.Parama[606]
+    Parama = Table_NpcFunction_t.Parama[624]
   },
   [20094] = {
     id = 20094,
@@ -6555,27 +6661,27 @@ Table_NpcFunction = {
   [20100] = {
     id = 20100,
     NameZh = "##101738",
-    Parama = Table_NpcFunction_t.Parama[607]
+    Parama = Table_NpcFunction_t.Parama[625]
   },
   [20101] = {
     id = 20101,
     NameZh = "##101179",
-    Parama = Table_NpcFunction_t.Parama[608]
+    Parama = Table_NpcFunction_t.Parama[626]
   },
   [20102] = {
     id = 20102,
     NameZh = "##101238",
-    Parama = Table_NpcFunction_t.Parama[609]
+    Parama = Table_NpcFunction_t.Parama[627]
   },
   [20103] = {
     id = 20103,
     NameZh = "##101044",
-    Parama = Table_NpcFunction_t.Parama[610]
+    Parama = Table_NpcFunction_t.Parama[628]
   },
   [20104] = {
     id = 20104,
     NameZh = "##102552",
-    Parama = Table_NpcFunction_t.Parama[611]
+    Parama = Table_NpcFunction_t.Parama[629]
   },
   [20105] = {
     id = 20105,
@@ -6587,7 +6693,7 @@ Table_NpcFunction = {
     NameZh = "##307543",
     NameEn = "GemsShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[612]
+    Parama = Table_NpcFunction_t.Parama[630]
   },
   [20107] = {
     id = 20107,
@@ -6605,94 +6711,94 @@ Table_NpcFunction = {
     id = 20109,
     NameZh = "##312182",
     NameEn = "Einherjar",
-    Parama = Table_NpcFunction_t.Parama[464]
+    Parama = Table_NpcFunction_t.Parama[476]
   },
   [20110] = {
     id = 20110,
     NameZh = "##304126",
-    Parama = Table_NpcFunction_t.Parama[613]
+    Parama = Table_NpcFunction_t.Parama[631]
   },
   [20111] = {
     id = 20111,
     NameZh = "##307573",
-    Parama = Table_NpcFunction_t.Parama[614]
+    Parama = Table_NpcFunction_t.Parama[632]
   },
   [20112] = {
     id = 20112,
     NameZh = "##307575",
-    Parama = Table_NpcFunction_t.Parama[615]
+    Parama = Table_NpcFunction_t.Parama[633]
   },
   [20113] = {
     id = 20113,
     NameZh = "##102988",
-    Parama = Table_NpcFunction_t.Parama[616]
+    Parama = Table_NpcFunction_t.Parama[634]
   },
   [20114] = {
     id = 20114,
     NameZh = "##102999",
-    Parama = Table_NpcFunction_t.Parama[617]
+    Parama = Table_NpcFunction_t.Parama[635]
   },
   [20115] = {
     id = 20115,
     NameZh = "##307749",
-    Parama = Table_NpcFunction_t.Parama[618]
+    Parama = Table_NpcFunction_t.Parama[636]
   },
   [20116] = {
     id = 20116,
     NameZh = "##307734",
-    Parama = Table_NpcFunction_t.Parama[604]
+    Parama = Table_NpcFunction_t.Parama[622]
   },
   [20117] = {id = 20117, NameZh = "##309605"},
   [20118] = {
     id = 20118,
     NameZh = "##307980",
-    Parama = Table_NpcFunction_t.Parama[619]
+    Parama = Table_NpcFunction_t.Parama[637]
   },
   [20119] = {
     id = 20119,
     NameZh = "##307979",
-    Parama = Table_NpcFunction_t.Parama[619]
+    Parama = Table_NpcFunction_t.Parama[637]
   },
   [20120] = {
     id = 20120,
     NameZh = "##307525",
-    Parama = Table_NpcFunction_t.Parama[620]
+    Parama = Table_NpcFunction_t.Parama[638]
   },
   [20121] = {
     id = 20121,
     NameZh = "##307527",
-    Parama = Table_NpcFunction_t.Parama[621]
+    Parama = Table_NpcFunction_t.Parama[639]
   },
   [20122] = {
     id = 20122,
     NameZh = "##309887",
-    Parama = Table_NpcFunction_t.Parama[622]
+    Parama = Table_NpcFunction_t.Parama[640]
   },
   [20123] = {
     id = 20123,
     NameZh = "##102971",
-    Parama = Table_NpcFunction_t.Parama[460]
+    Parama = Table_NpcFunction_t.Parama[472]
   },
   [20124] = {
     id = 20124,
     NameZh = "##312184",
-    Parama = Table_NpcFunction_t.Parama[461]
+    Parama = Table_NpcFunction_t.Parama[473]
   },
   [20125] = {
     id = 20125,
     NameZh = "##312187",
-    Parama = Table_NpcFunction_t.Parama[462]
+    Parama = Table_NpcFunction_t.Parama[474]
   },
   [20126] = {
     id = 20126,
     NameZh = "##312188",
-    Parama = Table_NpcFunction_t.Parama[463]
+    Parama = Table_NpcFunction_t.Parama[475]
   },
   [20127] = {
     id = 20127,
     NameZh = "##312183",
     NameEn = "Einherjar",
-    Parama = Table_NpcFunction_t.Parama[464]
+    Parama = Table_NpcFunction_t.Parama[476]
   },
   [20128] = {
     id = 20128,
@@ -6703,36 +6809,36 @@ Table_NpcFunction = {
     id = 20129,
     NameZh = "##312185",
     NameEn = "Einherjar",
-    Parama = Table_NpcFunction_t.Parama[464]
+    Parama = Table_NpcFunction_t.Parama[476]
   },
   [20130] = {
     id = 20130,
     NameZh = "##309788",
-    Parama = Table_NpcFunction_t.Parama[465]
+    Parama = Table_NpcFunction_t.Parama[477]
   },
   [20131] = {
     id = 20131,
     NameZh = "##312186",
     NameEn = "BearShop",
     Type = "Common_Hyperlink",
-    Parama = Table_NpcFunction_t.Parama[624]
+    Parama = Table_NpcFunction_t.Parama[642]
   },
   [20133] = {
     id = 20133,
     NameZh = "##529697",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[626]
+    Parama = Table_NpcFunction_t.Parama[644]
   },
   [20134] = {id = 20134, NameZh = "##285199"},
   [20135] = {
     id = 20135,
     NameZh = "##315180",
-    Parama = Table_NpcFunction_t.Parama[627]
+    Parama = Table_NpcFunction_t.Parama[645]
   },
   [20136] = {
     id = 20136,
     NameZh = "##102967",
-    Parama = Table_NpcFunction_t.Parama[628]
+    Parama = Table_NpcFunction_t.Parama[646]
   },
   [20137] = {
     id = 20137,
@@ -6744,34 +6850,34 @@ Table_NpcFunction = {
   [20138] = {
     id = 20138,
     NameZh = "##316059",
-    Parama = Table_NpcFunction_t.Parama[629]
+    Parama = Table_NpcFunction_t.Parama[647]
   },
   [20139] = {
     id = 20139,
     NameZh = "##304206",
     NameEn = "SlayersRaid",
     Type = "SlayersRaid",
-    Parama = Table_NpcFunction_t.Parama[464]
+    Parama = Table_NpcFunction_t.Parama[476]
   },
   [20140] = {
     id = 20140,
     NameZh = "##780815",
-    Parama = Table_NpcFunction_t.Parama[630]
+    Parama = Table_NpcFunction_t.Parama[648]
   },
   [20141] = {
     id = 20141,
     NameZh = "##780819",
-    Parama = Table_NpcFunction_t.Parama[631]
+    Parama = Table_NpcFunction_t.Parama[649]
   },
   [20142] = {
     id = 20142,
     NameZh = "##529700",
-    Parama = Table_NpcFunction_t.Parama[632]
+    Parama = Table_NpcFunction_t.Parama[650]
   },
   [20143] = {
     id = 20143,
     NameZh = "##744461",
-    Parama = Table_NpcFunction_t.Parama[633]
+    Parama = Table_NpcFunction_t.Parama[651]
   },
   [20144] = {
     id = 20144,
@@ -6786,34 +6892,34 @@ Table_NpcFunction = {
   [20146] = {
     id = 20146,
     NameZh = "##126180",
-    Parama = Table_NpcFunction_t.Parama[634]
+    Parama = Table_NpcFunction_t.Parama[652]
   },
   [20147] = {
     id = 20147,
     NameZh = "##776846",
-    Parama = Table_NpcFunction_t.Parama[635]
+    Parama = Table_NpcFunction_t.Parama[653]
   },
   [20148] = {id = 20148, NameZh = "##788184"},
   [20149] = {
     id = 20149,
     NameZh = "##780817",
-    Parama = Table_NpcFunction_t.Parama[636]
+    Parama = Table_NpcFunction_t.Parama[654]
   },
   [20150] = {
     id = 20150,
     NameZh = "##1057086",
-    Parama = Table_NpcFunction_t.Parama[637]
+    Parama = Table_NpcFunction_t.Parama[655]
   },
   [20151] = {
     id = 20151,
     NameZh = "##807839",
-    Parama = Table_NpcFunction_t.Parama[638]
+    Parama = Table_NpcFunction_t.Parama[656]
   },
   [20152] = {id = 20152, NameZh = "##1110809"},
   [20153] = {
     id = 20153,
     NameZh = "##1056154",
-    Parama = Table_NpcFunction_t.Parama[639]
+    Parama = Table_NpcFunction_t.Parama[657]
   },
   [20154] = {id = 20154, NameZh = "##1056153"},
   [20156] = {
@@ -6829,88 +6935,88 @@ Table_NpcFunction = {
   [20158] = {
     id = 20158,
     NameZh = "##1098814",
-    Parama = Table_NpcFunction_t.Parama[641]
+    Parama = Table_NpcFunction_t.Parama[659]
   },
   [20159] = {
     id = 20159,
     NameZh = "##1100898",
-    Parama = Table_NpcFunction_t.Parama[642]
+    Parama = Table_NpcFunction_t.Parama[660]
   },
   [20160] = {
     id = 20160,
     NameZh = "##1100899",
-    Parama = Table_NpcFunction_t.Parama[643]
+    Parama = Table_NpcFunction_t.Parama[661]
   },
   [20161] = {
     id = 20161,
     NameZh = "##131152",
-    Parama = Table_NpcFunction_t.Parama[644]
+    Parama = Table_NpcFunction_t.Parama[662]
   },
   [20162] = {
     id = 20162,
     NameZh = "##1110813",
-    Parama = Table_NpcFunction_t.Parama[645]
+    Parama = Table_NpcFunction_t.Parama[663]
   },
   [20163] = {
     id = 20163,
     NameZh = "##1100874",
-    Parama = Table_NpcFunction_t.Parama[646]
+    Parama = Table_NpcFunction_t.Parama[664]
   },
   [20164] = {
     id = 20164,
     NameZh = "##1100872",
-    Parama = Table_NpcFunction_t.Parama[647]
+    Parama = Table_NpcFunction_t.Parama[665]
   },
   [20165] = {
     id = 20165,
     NameZh = "##1100839",
-    Parama = Table_NpcFunction_t.Parama[648]
+    Parama = Table_NpcFunction_t.Parama[666]
   },
   [20166] = {
     id = 20166,
     NameZh = "##1101039",
-    Parama = Table_NpcFunction_t.Parama[649]
+    Parama = Table_NpcFunction_t.Parama[667]
   },
   [20167] = {
     id = 20167,
     NameZh = "##1101059",
-    Parama = Table_NpcFunction_t.Parama[466]
+    Parama = Table_NpcFunction_t.Parama[478]
   },
   [20168] = {
     id = 20168,
     NameZh = "##1101060",
-    Parama = Table_NpcFunction_t.Parama[650]
+    Parama = Table_NpcFunction_t.Parama[668]
   },
   [20169] = {
     id = 20169,
     NameZh = "##1101061",
-    Parama = Table_NpcFunction_t.Parama[651]
+    Parama = Table_NpcFunction_t.Parama[669]
   },
   [20170] = {
     id = 20170,
     NameZh = "##1101062",
-    Parama = Table_NpcFunction_t.Parama[652]
+    Parama = Table_NpcFunction_t.Parama[670]
   },
   [20171] = {
     id = 20171,
     NameZh = "##1110814",
-    Parama = Table_NpcFunction_t.Parama[652]
+    Parama = Table_NpcFunction_t.Parama[670]
   },
   [20172] = {
     id = 20172,
     NameZh = "##1110783",
-    Parama = Table_NpcFunction_t.Parama[653]
+    Parama = Table_NpcFunction_t.Parama[671]
   },
   [20173] = {
     id = 20173,
     NameZh = "##1110815",
     NameEn = "Oversea_PlayersRecall",
-    Parama = Table_NpcFunction_t.Parama[654]
+    Parama = Table_NpcFunction_t.Parama[672]
   },
   [20174] = {
     id = 20174,
     NameZh = "##1120013",
-    Parama = Table_NpcFunction_t.Parama[655]
+    Parama = Table_NpcFunction_t.Parama[673]
   },
   [20175] = {
     id = 20175,
@@ -6920,7 +7026,7 @@ Table_NpcFunction = {
   [20176] = {
     id = 20176,
     NameZh = "##1120015",
-    Parama = Table_NpcFunction_t.Parama[655]
+    Parama = Table_NpcFunction_t.Parama[673]
   },
   [20177] = {
     id = 20177,
@@ -6930,12 +7036,12 @@ Table_NpcFunction = {
   [20178] = {
     id = 20178,
     NameZh = "##1123255",
-    Parama = Table_NpcFunction_t.Parama[656]
+    Parama = Table_NpcFunction_t.Parama[674]
   },
   [20179] = {
     id = 20179,
     NameZh = "##1123256",
-    Parama = Table_NpcFunction_t.Parama[657]
+    Parama = Table_NpcFunction_t.Parama[675]
   },
   [20180] = {
     id = 20180,
@@ -6947,95 +7053,95 @@ Table_NpcFunction = {
   [20181] = {
     id = 20181,
     NameZh = "##1128890",
-    Parama = Table_NpcFunction_t.Parama[658]
+    Parama = Table_NpcFunction_t.Parama[676]
   },
   [20182] = {
     id = 20182,
     NameZh = "##1128889",
-    Parama = Table_NpcFunction_t.Parama[659]
+    Parama = Table_NpcFunction_t.Parama[677]
   },
   [20183] = {id = 20183, NameZh = "##1132965"},
   [20184] = {
     id = 20184,
     NameZh = "##1111264",
-    Parama = Table_NpcFunction_t.Parama[660]
+    Parama = Table_NpcFunction_t.Parama[678]
   },
   [20185] = {
     id = 20185,
     NameZh = "##1132959",
-    Parama = Table_NpcFunction_t.Parama[661]
+    Parama = Table_NpcFunction_t.Parama[679]
   },
   [20186] = {
     id = 20186,
     NameZh = "##1132960",
-    Parama = Table_NpcFunction_t.Parama[662]
+    Parama = Table_NpcFunction_t.Parama[680]
   },
   [20187] = {
     id = 20187,
     NameZh = "##1132961",
-    Parama = Table_NpcFunction_t.Parama[663]
+    Parama = Table_NpcFunction_t.Parama[681]
   },
   [20188] = {
     id = 20188,
     NameZh = "##1132962",
-    Parama = Table_NpcFunction_t.Parama[664]
+    Parama = Table_NpcFunction_t.Parama[682]
   },
   [20189] = {
     id = 20189,
     NameZh = "##1132963",
-    Parama = Table_NpcFunction_t.Parama[665]
+    Parama = Table_NpcFunction_t.Parama[479]
   },
   [20190] = {
     id = 20190,
     NameZh = "##1132964",
-    Parama = Table_NpcFunction_t.Parama[666]
+    Parama = Table_NpcFunction_t.Parama[480]
   },
   [20191] = {
     id = 20191,
     NameZh = "##1131279",
-    Parama = Table_NpcFunction_t.Parama[667]
+    Parama = Table_NpcFunction_t.Parama[481]
   },
   [20192] = {
     id = 20192,
     NameZh = "##1131281",
-    Parama = Table_NpcFunction_t.Parama[668]
+    Parama = Table_NpcFunction_t.Parama[482]
   },
   [20193] = {
     id = 20193,
     NameZh = "##1131283",
-    Parama = Table_NpcFunction_t.Parama[669]
+    Parama = Table_NpcFunction_t.Parama[483]
   },
   [20194] = {
     id = 20194,
     NameZh = "##1120014",
     NameEn = "GemsShop",
     Type = "Common_Shop",
-    Parama = Table_NpcFunction_t.Parama[670]
+    Parama = Table_NpcFunction_t.Parama[484]
   },
   [20195] = {
     id = 20195,
     NameZh = "##1131398",
-    Parama = Table_NpcFunction_t.Parama[671]
+    Parama = Table_NpcFunction_t.Parama[689]
   },
   [20196] = {
     id = 20196,
     NameZh = "##1131400",
-    Parama = Table_NpcFunction_t.Parama[672]
+    Parama = Table_NpcFunction_t.Parama[690]
   },
   [20197] = {
     id = 20197,
     NameZh = "##1131402",
-    Parama = Table_NpcFunction_t.Parama[673]
+    Parama = Table_NpcFunction_t.Parama[691]
   },
   [20198] = {
     id = 20198,
     NameZh = "##1131404",
-    Parama = Table_NpcFunction_t.Parama[467]
+    Parama = Table_NpcFunction_t.Parama[485]
   },
   [20199] = {
     id = 20199,
     NameZh = "##1131406",
-    Parama = Table_NpcFunction_t.Parama[468]
+    Parama = Table_NpcFunction_t.Parama[486]
   },
   [20200] = {
     id = 20200,
@@ -7045,37 +7151,37 @@ Table_NpcFunction = {
   [20201] = {
     id = 20201,
     NameZh = "##1131408",
-    Parama = Table_NpcFunction_t.Parama[674]
+    Parama = Table_NpcFunction_t.Parama[692]
   },
   [20202] = {
     id = 20202,
     NameZh = "##1131410",
-    Parama = Table_NpcFunction_t.Parama[469]
+    Parama = Table_NpcFunction_t.Parama[487]
   },
   [20203] = {
     id = 20203,
     NameZh = "##1131412",
-    Parama = Table_NpcFunction_t.Parama[470]
+    Parama = Table_NpcFunction_t.Parama[488]
   },
   [20204] = {
     id = 20204,
     NameZh = "##1131414",
-    Parama = Table_NpcFunction_t.Parama[471]
+    Parama = Table_NpcFunction_t.Parama[489]
   },
   [20205] = {
     id = 20205,
     NameZh = "##1131654",
-    Parama = Table_NpcFunction_t.Parama[472]
+    Parama = Table_NpcFunction_t.Parama[490]
   },
   [20206] = {
     id = 20206,
     NameZh = "##1131655",
-    Parama = Table_NpcFunction_t.Parama[475]
+    Parama = Table_NpcFunction_t.Parama[493]
   },
   [20207] = {
     id = 20207,
     NameZh = "TapTap Cafe",
-    Parama = Table_NpcFunction_t.Parama[476]
+    Parama = Table_NpcFunction_t.Parama[494]
   },
   [20208] = {
     id = 20208,
@@ -7085,22 +7191,22 @@ Table_NpcFunction = {
   [20209] = {
     id = 20209,
     NameZh = "##1151317",
-    Parama = Table_NpcFunction_t.Parama[676]
+    Parama = Table_NpcFunction_t.Parama[694]
   },
   [20210] = {
     id = 20210,
     NameZh = "##1153024",
-    Parama = Table_NpcFunction_t.Parama[477]
+    Parama = Table_NpcFunction_t.Parama[495]
   },
   [20211] = {
     id = 20211,
     NameZh = "##1153025",
-    Parama = Table_NpcFunction_t.Parama[478]
+    Parama = Table_NpcFunction_t.Parama[496]
   },
   [20212] = {
     id = 20212,
     NameZh = "##1151318",
-    Parama = Table_NpcFunction_t.Parama[479]
+    Parama = Table_NpcFunction_t.Parama[497]
   },
   [20213] = {
     id = 20213,
@@ -7115,37 +7221,37 @@ Table_NpcFunction = {
   [20215] = {
     id = 20215,
     NameZh = "##1185415",
-    Parama = Table_NpcFunction_t.Parama[480]
+    Parama = Table_NpcFunction_t.Parama[498]
   },
   [20216] = {
     id = 20216,
     NameZh = "##1155366",
-    Parama = Table_NpcFunction_t.Parama[481]
+    Parama = Table_NpcFunction_t.Parama[499]
   },
   [20217] = {
     id = 20217,
     NameZh = "##1155367",
-    Parama = Table_NpcFunction_t.Parama[482]
+    Parama = Table_NpcFunction_t.Parama[500]
   },
   [20218] = {
     id = 20218,
     NameZh = "##126180",
-    Parama = Table_NpcFunction_t.Parama[483]
+    Parama = Table_NpcFunction_t.Parama[501]
   },
   [20219] = {
     id = 20219,
     NameZh = "##126626",
-    Parama = Table_NpcFunction_t.Parama[484]
+    Parama = Table_NpcFunction_t.Parama[509]
   },
   [20220] = {
     id = 20220,
     NameZh = "##1160181",
-    Parama = Table_NpcFunction_t.Parama[485]
+    Parama = Table_NpcFunction_t.Parama[510]
   },
   [20221] = {
     id = 20221,
     NameZh = "##1160182",
-    Parama = Table_NpcFunction_t.Parama[486]
+    Parama = Table_NpcFunction_t.Parama[511]
   },
   [20222] = {
     id = 20222,
@@ -7166,12 +7272,12 @@ Table_NpcFunction = {
   [20225] = {
     id = 20225,
     NameZh = "##1160184",
-    Parama = Table_NpcFunction_t.Parama[494]
+    Parama = Table_NpcFunction_t.Parama[512]
   },
   [20226] = {
     id = 20226,
     NameZh = "##1178111",
-    Parama = Table_NpcFunction_t.Parama[495]
+    Parama = Table_NpcFunction_t.Parama[513]
   },
   [20227] = {
     id = 20227,
@@ -7183,162 +7289,162 @@ Table_NpcFunction = {
   [20228] = {
     id = 20228,
     NameZh = "##1164229",
-    Parama = Table_NpcFunction_t.Parama[496]
+    Parama = Table_NpcFunction_t.Parama[514]
   },
   [20229] = {
     id = 20229,
     NameZh = "##1185830",
-    Parama = Table_NpcFunction_t.Parama[497]
+    Parama = Table_NpcFunction_t.Parama[518]
   },
   [20230] = {
     id = 20230,
     NameZh = "##1185831",
-    Parama = Table_NpcFunction_t.Parama[498]
+    Parama = Table_NpcFunction_t.Parama[537]
   },
   [20231] = {
     id = 20231,
     NameZh = "##1177971",
-    Parama = Table_NpcFunction_t.Parama[499]
+    Parama = Table_NpcFunction_t.Parama[658]
   },
   [20232] = {
     id = 20232,
     NameZh = "##1177972",
-    Parama = Table_NpcFunction_t.Parama[500]
+    Parama = Table_NpcFunction_t.Parama[643]
   },
   [20233] = {
     id = 20233,
     NameZh = "##1172797",
-    Parama = Table_NpcFunction_t.Parama[501]
+    Parama = Table_NpcFunction_t.Parama[604]
   },
   [20234] = {
     id = 20234,
     NameZh = "##1172799",
-    Parama = Table_NpcFunction_t.Parama[502]
+    Parama = Table_NpcFunction_t.Parama[569]
   },
   [20235] = {
     id = 20235,
     NameZh = "##1183526",
-    Parama = Table_NpcFunction_t.Parama[506]
+    Parama = Table_NpcFunction_t.Parama[550]
   },
   [20236] = {
     id = 20236,
     NameZh = "##1183646",
-    Parama = Table_NpcFunction_t.Parama[525]
+    Parama = Table_NpcFunction_t.Parama[549]
   },
   [20237] = {
     id = 20237,
     NameZh = "##1183647",
-    Parama = Table_NpcFunction_t.Parama[640]
+    Parama = Table_NpcFunction_t.Parama[548]
   },
   [20238] = {
     id = 20238,
     NameZh = "##1183648",
-    Parama = Table_NpcFunction_t.Parama[625]
+    Parama = Table_NpcFunction_t.Parama[547]
   },
   [20239] = {
     id = 20239,
     NameZh = "##1183546",
-    Parama = Table_NpcFunction_t.Parama[586]
+    Parama = Table_NpcFunction_t.Parama[546]
   },
   [20240] = {
     id = 20240,
     NameZh = "##1183548",
-    Parama = Table_NpcFunction_t.Parama[551]
+    Parama = Table_NpcFunction_t.Parama[545]
   },
   [20241] = {
     id = 20241,
     NameZh = "##1183550",
-    Parama = Table_NpcFunction_t.Parama[532]
+    Parama = Table_NpcFunction_t.Parama[544]
   },
   [20242] = {
     id = 20242,
     NameZh = "##1183552",
-    Parama = Table_NpcFunction_t.Parama[531]
+    Parama = Table_NpcFunction_t.Parama[543]
   },
   [20243] = {
     id = 20243,
     NameZh = "##1183554",
-    Parama = Table_NpcFunction_t.Parama[530]
+    Parama = Table_NpcFunction_t.Parama[542]
   },
   [20244] = {
     id = 20244,
     NameZh = "##1183556",
-    Parama = Table_NpcFunction_t.Parama[529]
+    Parama = Table_NpcFunction_t.Parama[541]
   },
   [20245] = {
     id = 20245,
     NameZh = "##1183558",
-    Parama = Table_NpcFunction_t.Parama[528]
+    Parama = Table_NpcFunction_t.Parama[540]
   },
   [20246] = {
     id = 20246,
     NameZh = "##1183560",
-    Parama = Table_NpcFunction_t.Parama[527]
+    Parama = Table_NpcFunction_t.Parama[539]
   },
   [20247] = {
     id = 20247,
     NameZh = "##1183562",
-    Parama = Table_NpcFunction_t.Parama[526]
+    Parama = Table_NpcFunction_t.Parama[538]
   },
   [20248] = {
     id = 20248,
     NameZh = "##1183564",
-    Parama = Table_NpcFunction_t.Parama[688]
+    Parama = Table_NpcFunction_t.Parama[706]
   },
   [20249] = {
     id = 20249,
     NameZh = "##1183566",
-    Parama = Table_NpcFunction_t.Parama[524]
+    Parama = Table_NpcFunction_t.Parama[536]
   },
   [20250] = {
     id = 20250,
     NameZh = "##1183568",
-    Parama = Table_NpcFunction_t.Parama[523]
+    Parama = Table_NpcFunction_t.Parama[535]
   },
   [20251] = {
     id = 20251,
     NameZh = "##1183570",
-    Parama = Table_NpcFunction_t.Parama[522]
+    Parama = Table_NpcFunction_t.Parama[534]
   },
   [20252] = {
     id = 20252,
     NameZh = "##1183572",
-    Parama = Table_NpcFunction_t.Parama[521]
+    Parama = Table_NpcFunction_t.Parama[533]
   },
   [20253] = {
     id = 20253,
     NameZh = "##1183574",
-    Parama = Table_NpcFunction_t.Parama[520]
+    Parama = Table_NpcFunction_t.Parama[532]
   },
   [20254] = {
     id = 20254,
     NameZh = "##1183576",
-    Parama = Table_NpcFunction_t.Parama[519]
+    Parama = Table_NpcFunction_t.Parama[531]
   },
   [20255] = {
     id = 20255,
     NameZh = "##1183578",
-    Parama = Table_NpcFunction_t.Parama[518]
+    Parama = Table_NpcFunction_t.Parama[530]
   },
   [20256] = {
     id = 20256,
     NameZh = "##1183580",
-    Parama = Table_NpcFunction_t.Parama[517]
+    Parama = Table_NpcFunction_t.Parama[529]
   },
   [20257] = {
     id = 20257,
     NameZh = "##1183582",
-    Parama = Table_NpcFunction_t.Parama[516]
+    Parama = Table_NpcFunction_t.Parama[528]
   },
   [20258] = {
     id = 20258,
     NameZh = "##1183584",
-    Parama = Table_NpcFunction_t.Parama[515]
+    Parama = Table_NpcFunction_t.Parama[527]
   },
   [20259] = {
     id = 20259,
     NameZh = "##1131412",
-    Parama = Table_NpcFunction_t.Parama[514]
+    Parama = Table_NpcFunction_t.Parama[526]
   },
   [20260] = {
     id = 20260,
@@ -7348,32 +7454,32 @@ Table_NpcFunction = {
   [20261] = {
     id = 20261,
     NameZh = "##1183489",
-    Parama = Table_NpcFunction_t.Parama[513]
+    Parama = Table_NpcFunction_t.Parama[525]
   },
   [20262] = {
     id = 20262,
     NameZh = "##1185832",
-    Parama = Table_NpcFunction_t.Parama[512]
+    Parama = Table_NpcFunction_t.Parama[524]
   },
   [20263] = {
     id = 20263,
     NameZh = "##1180141",
-    Parama = Table_NpcFunction_t.Parama[511]
+    Parama = Table_NpcFunction_t.Parama[523]
   },
   [20264] = {
     id = 20264,
     NameZh = "##1183650",
-    Parama = Table_NpcFunction_t.Parama[510]
+    Parama = Table_NpcFunction_t.Parama[522]
   },
   [20265] = {
     id = 20265,
     NameZh = "##1183651",
-    Parama = Table_NpcFunction_t.Parama[509]
+    Parama = Table_NpcFunction_t.Parama[521]
   },
   [20266] = {
     id = 20266,
     NameZh = "##1185833",
-    Parama = Table_NpcFunction_t.Parama[508]
+    Parama = Table_NpcFunction_t.Parama[520]
   },
   [20267] = {id = 20267, NameZh = "##1185834"},
   [20268] = {
@@ -7391,12 +7497,12 @@ Table_NpcFunction = {
   [20270] = {
     id = 20270,
     NameZh = "##1205817",
-    Parama = Table_NpcFunction_t.Parama[507]
+    Parama = Table_NpcFunction_t.Parama[519]
   },
   [20271] = {
     id = 20271,
     NameZh = "##1205818",
-    Parama = Table_NpcFunction_t.Parama[691]
+    Parama = Table_NpcFunction_t.Parama[709]
   },
   [20272] = {
     id = 20272,
@@ -7413,22 +7519,22 @@ Table_NpcFunction = {
   [20274] = {
     id = 20274,
     NameZh = "##103000",
-    Parama = Table_NpcFunction_t.Parama[505]
+    Parama = Table_NpcFunction_t.Parama[517]
   },
   [20275] = {
     id = 20275,
     NameZh = "##1207716",
-    Parama = Table_NpcFunction_t.Parama[504]
+    Parama = Table_NpcFunction_t.Parama[516]
   },
   [20276] = {
     id = 20276,
     NameZh = "##1207718",
-    Parama = Table_NpcFunction_t.Parama[503]
+    Parama = Table_NpcFunction_t.Parama[515]
   },
   [20277] = {
     id = 20277,
     NameZh = "##1207748",
-    Parama = Table_NpcFunction_t.Parama[692]
+    Parama = Table_NpcFunction_t.Parama[710]
   },
   [20278] = {
     id = 20278,
@@ -7438,32 +7544,32 @@ Table_NpcFunction = {
   [20279] = {
     id = 20279,
     NameZh = "##1206925",
-    Parama = Table_NpcFunction_t.Parama[693]
+    Parama = Table_NpcFunction_t.Parama[711]
   },
   [20280] = {
     id = 20280,
     NameZh = "##1206926",
-    Parama = Table_NpcFunction_t.Parama[694]
+    Parama = Table_NpcFunction_t.Parama[712]
   },
   [20281] = {
     id = 20281,
     NameZh = "##1214553",
-    Parama = Table_NpcFunction_t.Parama[695]
+    Parama = Table_NpcFunction_t.Parama[713]
   },
   [20282] = {
     id = 20282,
     NameZh = "##1214653",
-    Parama = Table_NpcFunction_t.Parama[696]
+    Parama = Table_NpcFunction_t.Parama[714]
   },
   [20283] = {
     id = 20283,
     NameZh = "##1211211",
-    Parama = Table_NpcFunction_t.Parama[697]
+    Parama = Table_NpcFunction_t.Parama[715]
   },
   [20284] = {
     id = 20284,
     NameZh = "##1211212",
-    Parama = Table_NpcFunction_t.Parama[698]
+    Parama = Table_NpcFunction_t.Parama[716]
   },
   [20285] = {
     id = 20285,
@@ -7478,27 +7584,27 @@ Table_NpcFunction = {
   [20287] = {
     id = 20287,
     NameZh = "##1214654",
-    Parama = Table_NpcFunction_t.Parama[493]
+    Parama = Table_NpcFunction_t.Parama[508]
   },
   [20288] = {
     id = 20288,
     NameZh = "##1211659",
-    Parama = Table_NpcFunction_t.Parama[492]
+    Parama = Table_NpcFunction_t.Parama[507]
   },
   [20289] = {
     id = 20289,
     NameZh = "##1214655",
-    Parama = Table_NpcFunction_t.Parama[491]
+    Parama = Table_NpcFunction_t.Parama[506]
   },
   [20290] = {
     id = 20290,
     NameZh = "##1214656",
-    Parama = Table_NpcFunction_t.Parama[490]
+    Parama = Table_NpcFunction_t.Parama[505]
   },
   [20291] = {
     id = 20291,
     NameZh = "##1217102",
-    Parama = Table_NpcFunction_t.Parama[489]
+    Parama = Table_NpcFunction_t.Parama[504]
   },
   [20292] = {
     id = 20292,
@@ -7508,12 +7614,12 @@ Table_NpcFunction = {
   [20293] = {
     id = 20293,
     NameZh = "##1217000",
-    Parama = Table_NpcFunction_t.Parama[488]
+    Parama = Table_NpcFunction_t.Parama[503]
   },
   [20294] = {
     id = 20294,
     NameZh = "##1217001",
-    Parama = Table_NpcFunction_t.Parama[487]
+    Parama = Table_NpcFunction_t.Parama[502]
   },
   [20295] = {
     id = 20295,
@@ -7523,32 +7629,32 @@ Table_NpcFunction = {
   [20296] = {
     id = 20296,
     NameZh = "##1226212",
-    Parama = Table_NpcFunction_t.Parama[707]
+    Parama = Table_NpcFunction_t.Parama[725]
   },
   [20297] = {
     id = 20297,
     NameZh = "##1226213",
-    Parama = Table_NpcFunction_t.Parama[708]
+    Parama = Table_NpcFunction_t.Parama[726]
   },
   [20298] = {
     id = 20298,
     NameZh = "##1234273",
-    Parama = Table_NpcFunction_t.Parama[709]
+    Parama = Table_NpcFunction_t.Parama[727]
   },
   [20299] = {
     id = 20299,
     NameZh = "##1234274",
-    Parama = Table_NpcFunction_t.Parama[710]
+    Parama = Table_NpcFunction_t.Parama[728]
   },
   [20300] = {
     id = 20300,
     NameZh = "##1231888",
-    Parama = Table_NpcFunction_t.Parama[711]
+    Parama = Table_NpcFunction_t.Parama[729]
   },
   [20301] = {
     id = 20301,
     NameZh = "##1231889",
-    Parama = Table_NpcFunction_t.Parama[712]
+    Parama = Table_NpcFunction_t.Parama[730]
   },
   [20302] = {
     id = 20302,
@@ -7563,22 +7669,22 @@ Table_NpcFunction = {
   [20304] = {
     id = 20304,
     NameZh = "##1185832",
-    Parama = Table_NpcFunction_t.Parama[713]
+    Parama = Table_NpcFunction_t.Parama[731]
   },
   [20305] = {
     id = 20305,
     NameZh = "##1229927",
-    Parama = Table_NpcFunction_t.Parama[714]
+    Parama = Table_NpcFunction_t.Parama[732]
   },
   [20306] = {
     id = 20306,
     NameZh = "##1234418",
-    Parama = Table_NpcFunction_t.Parama[715]
+    Parama = Table_NpcFunction_t.Parama[733]
   },
   [20307] = {
     id = 20307,
     NameZh = "##1234400",
-    Parama = Table_NpcFunction_t.Parama[716]
+    Parama = Table_NpcFunction_t.Parama[734]
   },
   [20308] = {
     id = 20308,
@@ -7589,17 +7695,17 @@ Table_NpcFunction = {
   [20310] = {
     id = 20310,
     NameZh = "##1242451",
-    Parama = Table_NpcFunction_t.Parama[717]
+    Parama = Table_NpcFunction_t.Parama[735]
   },
   [20311] = {
     id = 20311,
     NameZh = "##1242454",
-    Parama = Table_NpcFunction_t.Parama[718]
+    Parama = Table_NpcFunction_t.Parama[736]
   },
   [20312] = {
     id = 20312,
     NameZh = "##1242455",
-    Parama = Table_NpcFunction_t.Parama[719]
+    Parama = Table_NpcFunction_t.Parama[737]
   },
   [20313] = {
     id = 20313,
@@ -7617,32 +7723,32 @@ Table_NpcFunction = {
     id = 20315,
     NameZh = "##1242447",
     Type = "Gem_Shop",
-    Parama = Table_NpcFunction_t.Parama[720]
+    Parama = Table_NpcFunction_t.Parama[738]
   },
   [20316] = {
     id = 20316,
     NameZh = "##1242401",
-    Parama = Table_NpcFunction_t.Parama[721]
+    Parama = Table_NpcFunction_t.Parama[739]
   },
   [20317] = {
     id = 20317,
     NameZh = "##1249552",
-    Parama = Table_NpcFunction_t.Parama[722]
+    Parama = Table_NpcFunction_t.Parama[740]
   },
   [20318] = {
     id = 20318,
     NameZh = "##1249553",
-    Parama = Table_NpcFunction_t.Parama[723]
+    Parama = Table_NpcFunction_t.Parama[741]
   },
   [20319] = {
     id = 20319,
     NameZh = "##1249461",
-    Parama = Table_NpcFunction_t.Parama[724]
+    Parama = Table_NpcFunction_t.Parama[742]
   },
   [20320] = {
     id = 20320,
     NameZh = "##1249463",
-    Parama = Table_NpcFunction_t.Parama[725]
+    Parama = Table_NpcFunction_t.Parama[743]
   },
   [20321] = {
     id = 20321,
@@ -7652,12 +7758,12 @@ Table_NpcFunction = {
   [20322] = {
     id = 20322,
     NameZh = "##1249555",
-    Parama = Table_NpcFunction_t.Parama[726]
+    Parama = Table_NpcFunction_t.Parama[744]
   },
   [20323] = {
     id = 20323,
     NameZh = "##1249556",
-    Parama = Table_NpcFunction_t.Parama[727]
+    Parama = Table_NpcFunction_t.Parama[745]
   },
   [20324] = {
     id = 20324,
@@ -7668,22 +7774,22 @@ Table_NpcFunction = {
   [20326] = {
     id = 20326,
     NameZh = "##1252908",
-    Parama = Table_NpcFunction_t.Parama[728]
+    Parama = Table_NpcFunction_t.Parama[746]
   },
   [20327] = {
     id = 20327,
     NameZh = "##1252909",
-    Parama = Table_NpcFunction_t.Parama[729]
+    Parama = Table_NpcFunction_t.Parama[747]
   },
   [20328] = {
     id = 20328,
     NameZh = "##1252910",
-    Parama = Table_NpcFunction_t.Parama[730]
+    Parama = Table_NpcFunction_t.Parama[748]
   },
   [20329] = {
     id = 20329,
     NameZh = "##1249548",
-    Parama = Table_NpcFunction_t.Parama[459]
+    Parama = Table_NpcFunction_t.Parama[471]
   },
   [20330] = {
     id = 20330,
@@ -7700,37 +7806,37 @@ Table_NpcFunction = {
   [20332] = {
     id = 20332,
     NameZh = "##1252911",
-    Parama = Table_NpcFunction_t.Parama[458]
+    Parama = Table_NpcFunction_t.Parama[225]
   },
   [20333] = {
     id = 20333,
     NameZh = "##1252912",
-    Parama = Table_NpcFunction_t.Parama[457]
+    Parama = Table_NpcFunction_t.Parama[226]
   },
   [20334] = {
     id = 20334,
     NameZh = "##1252913",
-    Parama = Table_NpcFunction_t.Parama[456]
+    Parama = Table_NpcFunction_t.Parama[227]
   },
   [20335] = {
     id = 20335,
     NameZh = "##1252809",
-    Parama = Table_NpcFunction_t.Parama[455]
+    Parama = Table_NpcFunction_t.Parama[228]
   },
   [20336] = {
     id = 20336,
     NameZh = "##1258210",
-    Parama = Table_NpcFunction_t.Parama[454]
+    Parama = Table_NpcFunction_t.Parama[229]
   },
   [20337] = {
     id = 20337,
     NameZh = "##1258211",
-    Parama = Table_NpcFunction_t.Parama[453]
+    Parama = Table_NpcFunction_t.Parama[230]
   },
   [20338] = {
     id = 20338,
     NameZh = "##1252900",
-    Parama = Table_NpcFunction_t.Parama[216]
+    Parama = Table_NpcFunction_t.Parama[464]
   },
   [20339] = {id = 20339, NameZh = "##1258212"},
   [20340] = {
@@ -7749,22 +7855,22 @@ Table_NpcFunction = {
   [20343] = {
     id = 20343,
     NameZh = "##1261746",
-    Parama = Table_NpcFunction_t.Parama[217]
+    Parama = Table_NpcFunction_t.Parama[463]
   },
   [20344] = {
     id = 20344,
     NameZh = "##1261747",
-    Parama = Table_NpcFunction_t.Parama[446]
+    Parama = Table_NpcFunction_t.Parama[462]
   },
   [20345] = {
     id = 20345,
     NameZh = "##1261726",
-    Parama = Table_NpcFunction_t.Parama[445]
+    Parama = Table_NpcFunction_t.Parama[461]
   },
   [20346] = {
     id = 20346,
     NameZh = "##1266693",
-    Parama = Table_NpcFunction_t.Parama[444]
+    Parama = Table_NpcFunction_t.Parama[460]
   },
   [20347] = {
     id = 20347,
@@ -7774,62 +7880,62 @@ Table_NpcFunction = {
   [20348] = {
     id = 20348,
     NameZh = "##1263883",
-    Parama = Table_NpcFunction_t.Parama[443]
+    Parama = Table_NpcFunction_t.Parama[459]
   },
   [20349] = {
     id = 20349,
     NameZh = "##1263885",
-    Parama = Table_NpcFunction_t.Parama[442]
+    Parama = Table_NpcFunction_t.Parama[458]
   },
   [20350] = {
     id = 20350,
     NameZh = "##1263887",
-    Parama = Table_NpcFunction_t.Parama[441]
+    Parama = Table_NpcFunction_t.Parama[457]
   },
   [20351] = {
     id = 20351,
     NameZh = "##1263889",
-    Parama = Table_NpcFunction_t.Parama[440]
+    Parama = Table_NpcFunction_t.Parama[456]
   },
   [20352] = {
     id = 20352,
     NameZh = "##1263864",
-    Parama = Table_NpcFunction_t.Parama[439]
+    Parama = Table_NpcFunction_t.Parama[455]
   },
   [20353] = {
     id = 20353,
     NameZh = "##1263862",
-    Parama = Table_NpcFunction_t.Parama[438]
+    Parama = Table_NpcFunction_t.Parama[454]
   },
   [20354] = {
     id = 20354,
     NameZh = "##312370",
-    Parama = Table_NpcFunction_t.Parama[309]
+    Parama = Table_NpcFunction_t.Parama[327]
   },
   [20355] = {
     id = 20355,
     NameZh = "##1261624",
-    Parama = Table_NpcFunction_t.Parama[437]
+    Parama = Table_NpcFunction_t.Parama[453]
   },
   [20356] = {
     id = 20356,
     NameZh = "##1266094",
-    Parama = Table_NpcFunction_t.Parama[436]
+    Parama = Table_NpcFunction_t.Parama[452]
   },
   [20357] = {
     id = 20357,
     NameZh = "##1266095",
-    Parama = Table_NpcFunction_t.Parama[435]
+    Parama = Table_NpcFunction_t.Parama[451]
   },
   [20358] = {
     id = 20358,
     NameZh = "##1264399",
-    Parama = Table_NpcFunction_t.Parama[434]
+    Parama = Table_NpcFunction_t.Parama[450]
   },
   [20359] = {
     id = 20359,
     NameZh = "##1266694",
-    Parama = Table_NpcFunction_t.Parama[433]
+    Parama = Table_NpcFunction_t.Parama[449]
   },
   [20360] = {
     id = 20360,
@@ -7839,7 +7945,7 @@ Table_NpcFunction = {
   [20361] = {
     id = 20361,
     NameZh = "##1264388",
-    Parama = Table_NpcFunction_t.Parama[432]
+    Parama = Table_NpcFunction_t.Parama[448]
   },
   [20362] = {
     id = 20362,
@@ -7849,32 +7955,32 @@ Table_NpcFunction = {
   [20363] = {
     id = 20363,
     NameZh = "##1264605",
-    Parama = Table_NpcFunction_t.Parama[431]
+    Parama = Table_NpcFunction_t.Parama[447]
   },
   [20364] = {
     id = 20364,
     NameZh = "##1266698",
-    Parama = Table_NpcFunction_t.Parama[430]
+    Parama = Table_NpcFunction_t.Parama[231]
   },
   [20365] = {
     id = 20365,
     NameZh = "##1266696",
-    Parama = Table_NpcFunction_t.Parama[429]
+    Parama = Table_NpcFunction_t.Parama[445]
   },
   [20366] = {
     id = 20366,
     NameZh = "##1266697",
-    Parama = Table_NpcFunction_t.Parama[735]
+    Parama = Table_NpcFunction_t.Parama[753]
   },
   [20367] = {
     id = 20367,
     NameZh = "##1268665",
-    Parama = Table_NpcFunction_t.Parama[427]
+    Parama = Table_NpcFunction_t.Parama[443]
   },
   [20368] = {
     id = 20368,
     NameZh = "##1270175",
-    Parama = Table_NpcFunction_t.Parama[426]
+    Parama = Table_NpcFunction_t.Parama[442]
   },
   [20369] = {
     id = 20369,
@@ -7885,17 +7991,17 @@ Table_NpcFunction = {
   [20370] = {
     id = 20370,
     NameZh = "##1270206",
-    Parama = Table_NpcFunction_t.Parama[425]
+    Parama = Table_NpcFunction_t.Parama[441]
   },
   [20371] = {
     id = 20371,
     NameZh = "##1270208",
-    Parama = Table_NpcFunction_t.Parama[424]
+    Parama = Table_NpcFunction_t.Parama[440]
   },
   [20372] = {
     id = 20372,
     NameZh = "##1270177",
-    Parama = Table_NpcFunction_t.Parama[737]
+    Parama = Table_NpcFunction_t.Parama[755]
   },
   [20373] = {
     id = 20373,
@@ -7912,44 +8018,44 @@ Table_NpcFunction = {
   [20375] = {
     id = 20375,
     NameZh = "##1268666",
-    Parama = Table_NpcFunction_t.Parama[422]
+    Parama = Table_NpcFunction_t.Parama[438]
   },
   [20376] = {
     id = 20376,
     NameZh = "##1268667",
-    Parama = Table_NpcFunction_t.Parama[421]
+    Parama = Table_NpcFunction_t.Parama[437]
   },
   [20377] = {id = 20377, NameZh = "##1270217"},
   [20378] = {
     id = 20378,
     NameZh = "##1268670",
-    Parama = Table_NpcFunction_t.Parama[420]
+    Parama = Table_NpcFunction_t.Parama[436]
   },
   [20379] = {
     id = 20379,
     NameZh = "##1268105",
-    Parama = Table_NpcFunction_t.Parama[738]
+    Parama = Table_NpcFunction_t.Parama[756]
   },
   [20380] = {id = 20380, NameZh = "##1268861"},
   [20381] = {
     id = 20381,
     NameZh = "##1268668",
-    Parama = Table_NpcFunction_t.Parama[739]
+    Parama = Table_NpcFunction_t.Parama[757]
   },
   [20382] = {
     id = 20382,
     NameZh = "##1268669",
-    Parama = Table_NpcFunction_t.Parama[417]
+    Parama = Table_NpcFunction_t.Parama[433]
   },
   [20383] = {
     id = 20383,
     NameZh = "##1272745",
-    Parama = Table_NpcFunction_t.Parama[740]
+    Parama = Table_NpcFunction_t.Parama[758]
   },
   [20384] = {
     id = 20384,
     NameZh = "##1272771",
-    Parama = Table_NpcFunction_t.Parama[741]
+    Parama = Table_NpcFunction_t.Parama[759]
   },
   [20385] = {
     id = 20385,
@@ -7960,12 +8066,12 @@ Table_NpcFunction = {
   [20387] = {
     id = 20387,
     NameZh = "##1277984",
-    Parama = Table_NpcFunction_t.Parama[414]
+    Parama = Table_NpcFunction_t.Parama[430]
   },
   [20388] = {
     id = 20388,
     NameZh = "##1279439",
-    Parama = Table_NpcFunction_t.Parama[413]
+    Parama = Table_NpcFunction_t.Parama[429]
   },
   [20389] = {
     id = 20389,
@@ -7975,32 +8081,32 @@ Table_NpcFunction = {
   [20390] = {
     id = 20390,
     NameZh = "##1197115",
-    Parama = Table_NpcFunction_t.Parama[412]
+    Parama = Table_NpcFunction_t.Parama[428]
   },
   [20391] = {
     id = 20391,
     NameZh = "##1282206",
-    Parama = Table_NpcFunction_t.Parama[411]
+    Parama = Table_NpcFunction_t.Parama[427]
   },
   [20392] = {
     id = 20392,
     NameZh = "##1282207",
-    Parama = Table_NpcFunction_t.Parama[410]
+    Parama = Table_NpcFunction_t.Parama[426]
   },
   [20393] = {
     id = 20393,
     NameZh = "##1283745",
-    Parama = Table_NpcFunction_t.Parama[746]
+    Parama = Table_NpcFunction_t.Parama[764]
   },
   [20394] = {
     id = 20394,
     NameZh = "##1283741",
-    Parama = Table_NpcFunction_t.Parama[747]
+    Parama = Table_NpcFunction_t.Parama[765]
   },
   [20395] = {
     id = 20395,
     NameZh = "##1283742",
-    Parama = Table_NpcFunction_t.Parama[409]
+    Parama = Table_NpcFunction_t.Parama[425]
   },
   [20396] = {
     id = 20396,
@@ -8017,22 +8123,22 @@ Table_NpcFunction = {
   [20398] = {
     id = 20398,
     NameZh = "##1283743",
-    Parama = Table_NpcFunction_t.Parama[408]
+    Parama = Table_NpcFunction_t.Parama[424]
   },
   [20399] = {
     id = 20399,
     NameZh = "##1288305",
-    Parama = Table_NpcFunction_t.Parama[407]
+    Parama = Table_NpcFunction_t.Parama[423]
   },
   [20400] = {
     id = 20400,
     NameZh = "##1287379",
-    Parama = Table_NpcFunction_t.Parama[406]
+    Parama = Table_NpcFunction_t.Parama[422]
   },
   [20401] = {
     id = 20401,
     NameZh = "##1287380",
-    Parama = Table_NpcFunction_t.Parama[108]
+    Parama = Table_NpcFunction_t.Parama[109]
   },
   [20402] = {
     id = 20402,
@@ -8042,54 +8148,54 @@ Table_NpcFunction = {
   [20403] = {
     id = 20403,
     NameZh = "##1288873",
-    Parama = Table_NpcFunction_t.Parama[405]
+    Parama = Table_NpcFunction_t.Parama[421]
   },
   [20404] = {
     id = 20404,
     NameZh = "##1288874",
-    Parama = Table_NpcFunction_t.Parama[404]
+    Parama = Table_NpcFunction_t.Parama[420]
   },
   [20405] = {
     id = 20405,
     NameZh = "##1288876",
-    Parama = Table_NpcFunction_t.Parama[403]
+    Parama = Table_NpcFunction_t.Parama[418]
   },
   [20406] = {id = 20406, NameZh = "##1288877"},
   [20407] = {
     id = 20407,
     NameZh = "##1288875",
-    Parama = Table_NpcFunction_t.Parama[402]
+    Parama = Table_NpcFunction_t.Parama[417]
   },
   [20408] = {
     id = 20408,
     NameZh = "##119371",
-    Parama = Table_NpcFunction_t.Parama[401]
+    Parama = Table_NpcFunction_t.Parama[416]
   },
   [20409] = {
     id = 20409,
     NameZh = "##1298227",
-    Parama = Table_NpcFunction_t.Parama[400]
+    Parama = Table_NpcFunction_t.Parama[415]
   },
   [20410] = {
     id = 20410,
     NameZh = "##298786",
-    Parama = Table_NpcFunction_t.Parama[399]
+    Parama = Table_NpcFunction_t.Parama[414]
   },
   [20411] = {
     id = 20411,
     NameZh = "##250749",
-    Parama = Table_NpcFunction_t.Parama[397]
+    Parama = Table_NpcFunction_t.Parama[413]
   },
   [20412] = {id = 20412, NameZh = "##1298104"},
   [20413] = {
     id = 20413,
     NameZh = "##1301538",
-    Parama = Table_NpcFunction_t.Parama[396]
+    Parama = Table_NpcFunction_t.Parama[412]
   },
   [20414] = {
     id = 20414,
     NameZh = "##1301539",
-    Parama = Table_NpcFunction_t.Parama[395]
+    Parama = Table_NpcFunction_t.Parama[411]
   },
   [20415] = {
     id = 20415,
@@ -8099,53 +8205,53 @@ Table_NpcFunction = {
   [20416] = {
     id = 20416,
     NameZh = "##1301326",
-    Parama = Table_NpcFunction_t.Parama[394]
+    Parama = Table_NpcFunction_t.Parama[410]
   },
   [20417] = {
     id = 20417,
     NameZh = "##1301541",
-    Parama = Table_NpcFunction_t.Parama[393]
+    Parama = Table_NpcFunction_t.Parama[409]
   },
   [20418] = {id = 20418, NameZh = "##2807080"},
   [20419] = {
     id = 20419,
     NameZh = "##2807074",
-    Parama = Table_NpcFunction_t.Parama[392]
+    Parama = Table_NpcFunction_t.Parama[408]
   },
   [20420] = {
     id = 20420,
     NameZh = "##2807075",
-    Parama = Table_NpcFunction_t.Parama[391]
+    Parama = Table_NpcFunction_t.Parama[407]
   },
   [20421] = {
     id = 20421,
     NameZh = "##2807076",
-    Parama = Table_NpcFunction_t.Parama[390]
+    Parama = Table_NpcFunction_t.Parama[406]
   },
   [20422] = {
     id = 20422,
     NameZh = "##2807077",
-    Parama = Table_NpcFunction_t.Parama[749]
+    Parama = Table_NpcFunction_t.Parama[767]
   },
   [20423] = {
     id = 20423,
     NameZh = "##2807078",
-    Parama = Table_NpcFunction_t.Parama[389]
+    Parama = Table_NpcFunction_t.Parama[405]
   },
   [20424] = {
     id = 20424,
     NameZh = "##2807079",
-    Parama = Table_NpcFunction_t.Parama[750]
+    Parama = Table_NpcFunction_t.Parama[768]
   },
   [20425] = {
     id = 20425,
     NameZh = "##2807081",
-    Parama = Table_NpcFunction_t.Parama[388]
+    Parama = Table_NpcFunction_t.Parama[404]
   },
   [20426] = {
     id = 20426,
     NameZh = "##2807082",
-    Parama = Table_NpcFunction_t.Parama[387]
+    Parama = Table_NpcFunction_t.Parama[403]
   },
   [20427] = {
     id = 20427,
@@ -8162,22 +8268,22 @@ Table_NpcFunction = {
   [20429] = {
     id = 20429,
     NameZh = "##1131398",
-    Parama = Table_NpcFunction_t.Parama[751]
+    Parama = Table_NpcFunction_t.Parama[769]
   },
   [20430] = {
     id = 20430,
     NameZh = "##307573",
-    Parama = Table_NpcFunction_t.Parama[752]
+    Parama = Table_NpcFunction_t.Parama[770]
   },
   [20431] = {
     id = 20431,
     NameZh = "##2807086",
-    Parama = Table_NpcFunction_t.Parama[753]
+    Parama = Table_NpcFunction_t.Parama[771]
   },
   [20432] = {
     id = 20432,
     NameZh = "##2807085",
-    Parama = Table_NpcFunction_t.Parama[754]
+    Parama = Table_NpcFunction_t.Parama[772]
   },
   [20433] = {
     id = 20433,
@@ -8188,12 +8294,12 @@ Table_NpcFunction = {
   [20434] = {
     id = 20434,
     NameZh = "##2822564",
-    Parama = Table_NpcFunction_t.Parama[755]
+    Parama = Table_NpcFunction_t.Parama[773]
   },
   [20435] = {
     id = 20435,
     NameZh = "##2822565",
-    Parama = Table_NpcFunction_t.Parama[384]
+    Parama = Table_NpcFunction_t.Parama[400]
   },
   [20436] = {
     id = 20436,
@@ -8203,7 +8309,7 @@ Table_NpcFunction = {
   [20437] = {
     id = 20437,
     NameZh = "##2823891",
-    Parama = Table_NpcFunction_t.Parama[756]
+    Parama = Table_NpcFunction_t.Parama[774]
   },
   [20438] = {
     id = 20438,
@@ -8213,92 +8319,92 @@ Table_NpcFunction = {
   [20439] = {
     id = 20439,
     NameZh = "##2826955",
-    Parama = Table_NpcFunction_t.Parama[757]
+    Parama = Table_NpcFunction_t.Parama[775]
   },
   [20440] = {
     id = 20440,
     NameZh = "##2826578",
-    Parama = Table_NpcFunction_t.Parama[758]
+    Parama = Table_NpcFunction_t.Parama[776]
   },
   [20441] = {
     id = 20441,
     NameZh = "##2826579",
-    Parama = Table_NpcFunction_t.Parama[759]
+    Parama = Table_NpcFunction_t.Parama[777]
   },
   [20442] = {
     id = 20442,
     NameZh = "##2826951",
-    Parama = Table_NpcFunction_t.Parama[760]
+    Parama = Table_NpcFunction_t.Parama[778]
   },
   [20443] = {
     id = 20443,
     NameZh = "##2826952",
-    Parama = Table_NpcFunction_t.Parama[761]
+    Parama = Table_NpcFunction_t.Parama[779]
   },
   [20444] = {
     id = 20444,
     NameZh = "##2826901",
-    Parama = Table_NpcFunction_t.Parama[762]
+    Parama = Table_NpcFunction_t.Parama[780]
   },
   [20445] = {
     id = 20445,
     NameZh = "##2826580",
-    Parama = Table_NpcFunction_t.Parama[763]
+    Parama = Table_NpcFunction_t.Parama[781]
   },
   [20446] = {
     id = 20446,
     NameZh = "##2826953",
-    Parama = Table_NpcFunction_t.Parama[764]
+    Parama = Table_NpcFunction_t.Parama[782]
   },
   [20447] = {
     id = 20447,
     NameZh = "##2830941",
-    Parama = Table_NpcFunction_t.Parama[765]
+    Parama = Table_NpcFunction_t.Parama[783]
   },
   [20448] = {
     id = 20448,
     NameZh = "##2831726",
-    Parama = Table_NpcFunction_t.Parama[766]
+    Parama = Table_NpcFunction_t.Parama[784]
   },
   [20449] = {
     id = 20449,
     NameZh = "##2831727",
-    Parama = Table_NpcFunction_t.Parama[767]
+    Parama = Table_NpcFunction_t.Parama[785]
   },
   [20450] = {
     id = 20450,
     NameZh = "##2831728",
-    Parama = Table_NpcFunction_t.Parama[768]
+    Parama = Table_NpcFunction_t.Parama[786]
   },
   [20451] = {
     id = 20451,
     NameZh = "##2832833",
-    Parama = Table_NpcFunction_t.Parama[769]
+    Parama = Table_NpcFunction_t.Parama[787]
   },
   [20452] = {
     id = 20452,
     NameZh = "##2832971",
-    Parama = Table_NpcFunction_t.Parama[770]
+    Parama = Table_NpcFunction_t.Parama[788]
   },
   [20453] = {
     id = 20453,
     NameZh = "##2832972",
-    Parama = Table_NpcFunction_t.Parama[771]
+    Parama = Table_NpcFunction_t.Parama[789]
   },
   [20454] = {
     id = 20454,
     NameZh = "##2832973",
-    Parama = Table_NpcFunction_t.Parama[772]
+    Parama = Table_NpcFunction_t.Parama[790]
   },
   [20455] = {
     id = 20455,
     NameZh = "##2832974",
-    Parama = Table_NpcFunction_t.Parama[773]
+    Parama = Table_NpcFunction_t.Parama[791]
   },
   [20456] = {
     id = 20456,
     NameZh = "##2832975",
-    Parama = Table_NpcFunction_t.Parama[774]
+    Parama = Table_NpcFunction_t.Parama[792]
   },
   [20457] = {
     id = 20457,
@@ -8308,47 +8414,47 @@ Table_NpcFunction = {
   [20458] = {
     id = 20458,
     NameZh = "##2832977",
-    Parama = Table_NpcFunction_t.Parama[775]
+    Parama = Table_NpcFunction_t.Parama[793]
   },
   [20459] = {
     id = 20459,
     NameZh = "##2832978",
-    Parama = Table_NpcFunction_t.Parama[776]
+    Parama = Table_NpcFunction_t.Parama[794]
   },
   [20460] = {
     id = 20460,
     NameZh = "##2832979",
-    Parama = Table_NpcFunction_t.Parama[777]
+    Parama = Table_NpcFunction_t.Parama[795]
   },
   [20461] = {
     id = 20461,
     NameZh = "##2833897",
-    Parama = Table_NpcFunction_t.Parama[778]
+    Parama = Table_NpcFunction_t.Parama[796]
   },
   [20462] = {
     id = 20462,
     NameZh = "##2833910",
-    Parama = Table_NpcFunction_t.Parama[779]
+    Parama = Table_NpcFunction_t.Parama[797]
   },
   [20463] = {
     id = 20463,
     NameZh = "##1207720",
-    Parama = Table_NpcFunction_t.Parama[780]
+    Parama = Table_NpcFunction_t.Parama[798]
   },
   [20464] = {
     id = 20464,
     NameZh = "##2833909",
-    Parama = Table_NpcFunction_t.Parama[781]
+    Parama = Table_NpcFunction_t.Parama[799]
   },
   [20465] = {
     id = 20465,
     NameZh = "##2849796",
-    Parama = Table_NpcFunction_t.Parama[782]
+    Parama = Table_NpcFunction_t.Parama[800]
   },
   [20466] = {
     id = 20466,
     NameZh = "##2849813",
-    Parama = Table_NpcFunction_t.Parama[783]
+    Parama = Table_NpcFunction_t.Parama[801]
   },
   [20467] = {
     id = 20467,
@@ -8359,12 +8465,12 @@ Table_NpcFunction = {
   [20468] = {
     id = 20468,
     NameZh = "##2834437",
-    Parama = Table_NpcFunction_t.Parama[784]
+    Parama = Table_NpcFunction_t.Parama[802]
   },
   [20469] = {
     id = 20469,
     NameZh = "##2834438",
-    Parama = Table_NpcFunction_t.Parama[785]
+    Parama = Table_NpcFunction_t.Parama[803]
   },
   [20470] = {
     id = 20470,
@@ -8374,7 +8480,7 @@ Table_NpcFunction = {
   [20471] = {
     id = 20471,
     NameZh = "##2841675",
-    Parama = Table_NpcFunction_t.Parama[227]
+    Parama = Table_NpcFunction_t.Parama[241]
   },
   [20472] = {id = 20472, NameZh = "##2841677"},
   [20473] = {
@@ -8430,12 +8536,12 @@ Table_NpcFunction = {
   [20483] = {
     id = 20483,
     NameZh = "##2849807",
-    Parama = Table_NpcFunction_t.Parama[226]
+    Parama = Table_NpcFunction_t.Parama[240]
   },
   [20484] = {
     id = 20484,
     NameZh = "##2849808",
-    Parama = Table_NpcFunction_t.Parama[225]
+    Parama = Table_NpcFunction_t.Parama[239]
   },
   [20485] = {id = 20485, NameZh = "##2846402"},
   [20486] = {id = 20486, NameZh = "##2849809"},
@@ -8492,7 +8598,7 @@ Table_NpcFunction = {
   [20501] = {
     id = 20501,
     NameZh = "##3428359",
-    Parama = Table_NpcFunction_t.Parama[224]
+    Parama = Table_NpcFunction_t.Parama[237]
   },
   [20502] = {
     id = 20502,
@@ -8604,7 +8710,7 @@ Table_NpcFunction = {
   [20523] = {
     id = 20523,
     NameZh = "##3442414",
-    Parama = Table_NpcFunction_t.Parama[223]
+    Parama = Table_NpcFunction_t.Parama[236]
   },
   [20524] = {
     id = 20524,
@@ -8633,17 +8739,17 @@ Table_NpcFunction = {
   [20607] = {
     id = 20607,
     NameZh = "##3500314",
-    Parama = Table_NpcFunction_t.Parama[57]
+    Parama = Table_NpcFunction_t.Parama[58]
   },
   [20609] = {
     id = 20609,
     NameZh = "##3489198",
-    Parama = Table_NpcFunction_t.Parama[58]
+    Parama = Table_NpcFunction_t.Parama[59]
   },
   [20640] = {
     id = 20640,
     NameZh = "##42533547",
-    Parama = Table_NpcFunction_t.Parama[59]
+    Parama = Table_NpcFunction_t.Parama[60]
   },
   [20652] = {
     id = 20652,
@@ -8655,12 +8761,12 @@ Table_NpcFunction = {
   [20664] = {
     id = 20664,
     NameZh = "##42621921",
-    Parama = Table_NpcFunction_t.Parama[60]
+    Parama = Table_NpcFunction_t.Parama[61]
   },
   [20665] = {
     id = 20665,
     NameZh = "##42621922",
-    Parama = Table_NpcFunction_t.Parama[61]
+    Parama = Table_NpcFunction_t.Parama[62]
   },
   [20667] = {
     id = 20667,
@@ -8670,47 +8776,47 @@ Table_NpcFunction = {
   [20668] = {
     id = 20668,
     NameZh = "##42628624",
-    Parama = Table_NpcFunction_t.Parama[62]
+    Parama = Table_NpcFunction_t.Parama[63]
   },
   [20677] = {
     id = 20677,
     NameZh = "##42629167",
-    Parama = Table_NpcFunction_t.Parama[63]
+    Parama = Table_NpcFunction_t.Parama[64]
   },
   [20679] = {
     id = 20679,
     NameZh = "##42629623",
-    Parama = Table_NpcFunction_t.Parama[64]
+    Parama = Table_NpcFunction_t.Parama[65]
   },
   [20716] = {
     id = 20716,
     NameZh = "##44699944",
-    Parama = Table_NpcFunction_t.Parama[65]
+    Parama = Table_NpcFunction_t.Parama[66]
   },
   [20717] = {
     id = 20717,
     NameZh = "##44705330",
-    Parama = Table_NpcFunction_t.Parama[66]
+    Parama = Table_NpcFunction_t.Parama[67]
   },
   [20718] = {
     id = 20718,
     NameZh = "##44703679",
-    Parama = Table_NpcFunction_t.Parama[67]
+    Parama = Table_NpcFunction_t.Parama[68]
   },
   [20737] = {
     id = 20737,
     NameZh = "##3361088",
-    Parama = Table_NpcFunction_t.Parama[68]
+    Parama = Table_NpcFunction_t.Parama[69]
   },
   [20756] = {
     id = 20756,
     NameZh = "##44725923",
-    Parama = Table_NpcFunction_t.Parama[69]
+    Parama = Table_NpcFunction_t.Parama[70]
   },
   [20760] = {
     id = 20760,
     NameZh = "##44726246",
-    Parama = Table_NpcFunction_t.Parama[70]
+    Parama = Table_NpcFunction_t.Parama[71]
   },
   [20761] = {
     id = 20761,
@@ -8720,38 +8826,38 @@ Table_NpcFunction = {
   [20784] = {
     id = 20784,
     NameZh = "##45909634",
-    Parama = Table_NpcFunction_t.Parama[71]
+    Parama = Table_NpcFunction_t.Parama[72]
   },
   [20786] = {id = 20786, NameZh = "##45911391"},
   [20791] = {
     id = 20791,
     NameZh = "##45938809",
-    Parama = Table_NpcFunction_t.Parama[72]
+    Parama = Table_NpcFunction_t.Parama[73]
   },
   [20794] = {
     id = 20794,
     NameZh = "##45938810",
-    Parama = Table_NpcFunction_t.Parama[73]
+    Parama = Table_NpcFunction_t.Parama[74]
   },
   [20795] = {
     id = 20795,
     NameZh = "##44703679",
-    Parama = Table_NpcFunction_t.Parama[74]
+    Parama = Table_NpcFunction_t.Parama[75]
   },
   [20796] = {
     id = 20796,
     NameZh = "##45927009",
-    Parama = Table_NpcFunction_t.Parama[75]
+    Parama = Table_NpcFunction_t.Parama[76]
   },
   [20798] = {
     id = 20798,
     NameZh = "##45938788",
-    Parama = Table_NpcFunction_t.Parama[76]
+    Parama = Table_NpcFunction_t.Parama[77]
   },
   [20799] = {
     id = 20799,
     NameZh = "##45937881",
-    Parama = Table_NpcFunction_t.Parama[77]
+    Parama = Table_NpcFunction_t.Parama[78]
   },
   [100000] = {id = 100000, NameZh = "##148476"},
   [300000] = {
@@ -8788,7 +8894,7 @@ Table_NpcFunction = {
     id = 310003,
     NameZh = "##1258689",
     NameEn = "PresidentRule",
-    Parama = Table_NpcFunction_t.Parama[386]
+    Parama = Table_NpcFunction_t.Parama[402]
   },
   [310004] = {
     id = 310004,
@@ -8831,7 +8937,7 @@ Table_NpcFunction = {
   [10000002] = {
     id = 10000002,
     NameZh = "##3500308",
-    Parama = Table_NpcFunction_t.Parama[222]
+    Parama = Table_NpcFunction_t.Parama[235]
   },
   [10000003] = {
     id = 10000003,
@@ -8841,7 +8947,7 @@ Table_NpcFunction = {
   [10000004] = {
     id = 10000004,
     NameZh = "##3500311",
-    Parama = Table_NpcFunction_t.Parama[220]
+    Parama = Table_NpcFunction_t.Parama[234]
   },
   [10000005] = {
     id = 10000005,
@@ -8861,42 +8967,42 @@ Table_NpcFunction = {
   [10000008] = {
     id = 10000008,
     NameZh = "##42621965",
-    Parama = Table_NpcFunction_t.Parama[87]
+    Parama = Table_NpcFunction_t.Parama[88]
   },
   [10000009] = {
     id = 10000009,
     NameZh = "##42629432",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[88]
+    Parama = Table_NpcFunction_t.Parama[89]
   },
   [10000010] = {
     id = 10000010,
     NameZh = "##42628920",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[89]
+    Parama = Table_NpcFunction_t.Parama[90]
   },
   [10000011] = {
     id = 10000011,
     NameZh = "##42629433",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[90]
+    Parama = Table_NpcFunction_t.Parama[91]
   },
   [10000012] = {
     id = 10000012,
     NameZh = "##42634487",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[91]
+    Parama = Table_NpcFunction_t.Parama[92]
   },
   [10000014] = {
     id = 10000014,
     NameZh = "##42626129",
-    Parama = Table_NpcFunction_t.Parama[92]
+    Parama = Table_NpcFunction_t.Parama[93]
   },
   [10000015] = {
     id = 10000015,
     NameZh = "##42639936",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[93]
+    Parama = Table_NpcFunction_t.Parama[94]
   },
   [10000016] = {
     id = 10000016,
@@ -8906,13 +9012,13 @@ Table_NpcFunction = {
   [10000017] = {
     id = 10000017,
     NameZh = "##3460075",
-    Parama = Table_NpcFunction_t.Parama[94]
+    Parama = Table_NpcFunction_t.Parama[95]
   },
   [10000018] = {
     id = 10000018,
     NameZh = "##42634487",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[95]
+    Parama = Table_NpcFunction_t.Parama[96]
   },
   [10000019] = {id = 10000019, NameZh = "##42639937"},
   [10000020] = {
@@ -8923,7 +9029,7 @@ Table_NpcFunction = {
   [10000021] = {
     id = 10000021,
     NameZh = "##42632063",
-    Parama = Table_NpcFunction_t.Parama[96]
+    Parama = Table_NpcFunction_t.Parama[97]
   },
   [10000022] = {
     id = 10000022,
@@ -8933,37 +9039,37 @@ Table_NpcFunction = {
   [10000023] = {
     id = 10000023,
     NameZh = "##42640538",
-    Parama = Table_NpcFunction_t.Parama[97]
+    Parama = Table_NpcFunction_t.Parama[98]
   },
   [10000024] = {
     id = 10000024,
     NameZh = "##42640539",
-    Parama = Table_NpcFunction_t.Parama[98]
+    Parama = Table_NpcFunction_t.Parama[99]
   },
   [10000025] = {
     id = 10000025,
     NameZh = "##42640540",
-    Parama = Table_NpcFunction_t.Parama[99]
+    Parama = Table_NpcFunction_t.Parama[100]
   },
   [10000026] = {
     id = 10000026,
     NameZh = "##42640541",
-    Parama = Table_NpcFunction_t.Parama[100]
+    Parama = Table_NpcFunction_t.Parama[101]
   },
   [10000027] = {
     id = 10000027,
     NameZh = "##42640542",
-    Parama = Table_NpcFunction_t.Parama[101]
+    Parama = Table_NpcFunction_t.Parama[102]
   },
   [10000028] = {
     id = 10000028,
     NameZh = "##42640543",
-    Parama = Table_NpcFunction_t.Parama[102]
+    Parama = Table_NpcFunction_t.Parama[103]
   },
   [10000029] = {
     id = 10000029,
     NameZh = "##42643293",
-    Parama = Table_NpcFunction_t.Parama[103]
+    Parama = Table_NpcFunction_t.Parama[104]
   },
   [10000030] = {
     id = 10000030,
@@ -8978,18 +9084,18 @@ Table_NpcFunction = {
   [10000032] = {
     id = 10000032,
     NameZh = "##42535798",
-    Parama = Table_NpcFunction_t.Parama[104]
+    Parama = Table_NpcFunction_t.Parama[105]
   },
   [10000033] = {
     id = 10000033,
     NameZh = "##3502491",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[105]
+    Parama = Table_NpcFunction_t.Parama[106]
   },
   [10000034] = {
     id = 10000034,
     NameZh = "##3480915",
-    Parama = Table_NpcFunction_t.Parama[106]
+    Parama = Table_NpcFunction_t.Parama[107]
   },
   [10000035] = {
     id = 10000035,
@@ -9000,12 +9106,12 @@ Table_NpcFunction = {
     id = 10000036,
     NameZh = "##44702379",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[107]
+    Parama = Table_NpcFunction_t.Parama[108]
   },
   [10000037] = {
     id = 10000037,
     NameZh = "##1287380",
-    Parama = Table_NpcFunction_t.Parama[108]
+    Parama = Table_NpcFunction_t.Parama[109]
   },
   [10000038] = {
     id = 10000038,
@@ -9016,22 +9122,22 @@ Table_NpcFunction = {
     id = 10000039,
     NameZh = "##44702379",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[109]
+    Parama = Table_NpcFunction_t.Parama[110]
   },
   [10000040] = {
     id = 10000040,
     NameZh = "##44703782",
-    Parama = Table_NpcFunction_t.Parama[110]
+    Parama = Table_NpcFunction_t.Parama[111]
   },
   [10000041] = {
     id = 10000041,
     NameZh = "##44706536",
-    Parama = Table_NpcFunction_t.Parama[111]
+    Parama = Table_NpcFunction_t.Parama[112]
   },
   [10000042] = {
     id = 10000042,
     NameZh = "##3502815",
-    Parama = Table_NpcFunction_t.Parama[112]
+    Parama = Table_NpcFunction_t.Parama[113]
   },
   [10000043] = {
     id = 10000043,
@@ -9041,58 +9147,58 @@ Table_NpcFunction = {
   [10000044] = {
     id = 10000044,
     NameZh = "##44704755",
-    Parama = Table_NpcFunction_t.Parama[113]
+    Parama = Table_NpcFunction_t.Parama[114]
   },
   [10000045] = {
     id = 10000045,
     NameZh = "##44709355",
-    Parama = Table_NpcFunction_t.Parama[219]
+    Parama = Table_NpcFunction_t.Parama[233]
   },
   [10000046] = {
     id = 10000046,
     NameZh = "##44709356",
-    Parama = Table_NpcFunction_t.Parama[218]
+    Parama = Table_NpcFunction_t.Parama[232]
   },
   [10000047] = {
     id = 10000047,
     NameZh = "##44709357",
-    Parama = Table_NpcFunction_t.Parama[114]
+    Parama = Table_NpcFunction_t.Parama[115]
   },
   [10000048] = {
     id = 10000048,
     NameZh = "##44709358",
-    Parama = Table_NpcFunction_t.Parama[115]
+    Parama = Table_NpcFunction_t.Parama[116]
   },
   [10000049] = {
     id = 10000049,
     NameZh = "##44709359",
-    Parama = Table_NpcFunction_t.Parama[116]
+    Parama = Table_NpcFunction_t.Parama[117]
   },
   [10000050] = {
     id = 10000050,
     NameZh = "##44709361",
-    Parama = Table_NpcFunction_t.Parama[117]
+    Parama = Table_NpcFunction_t.Parama[118]
   },
   [10000051] = {
     id = 10000051,
     NameZh = "##44709363",
-    Parama = Table_NpcFunction_t.Parama[118]
+    Parama = Table_NpcFunction_t.Parama[119]
   },
   [10000052] = {
     id = 10000052,
     NameZh = "##44709360",
-    Parama = Table_NpcFunction_t.Parama[119]
+    Parama = Table_NpcFunction_t.Parama[120]
   },
   [10000053] = {
     id = 10000053,
     NameZh = "##44709371",
-    Parama = Table_NpcFunction_t.Parama[119]
+    Parama = Table_NpcFunction_t.Parama[120]
   },
   [10000054] = {
     id = 10000054,
     NameZh = "##42536868",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[120]
+    Parama = Table_NpcFunction_t.Parama[121]
   },
   [10000055] = {
     id = 10000055,
@@ -9102,13 +9208,13 @@ Table_NpcFunction = {
   [10000056] = {
     id = 10000056,
     NameZh = "##44705298",
-    Parama = Table_NpcFunction_t.Parama[121]
+    Parama = Table_NpcFunction_t.Parama[122]
   },
   [10000057] = {
     id = 10000057,
     NameZh = "##42621987",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[122]
+    Parama = Table_NpcFunction_t.Parama[123]
   },
   [10000058] = {
     id = 10000058,
@@ -9118,13 +9224,13 @@ Table_NpcFunction = {
   [10000059] = {
     id = 10000059,
     NameZh = "##44714992",
-    Parama = Table_NpcFunction_t.Parama[123]
+    Parama = Table_NpcFunction_t.Parama[124]
   },
   [10000060] = {
     id = 10000060,
     NameZh = "##44719373",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[124]
+    Parama = Table_NpcFunction_t.Parama[125]
   },
   [10000062] = {
     id = 10000062,
@@ -9139,93 +9245,138 @@ Table_NpcFunction = {
   [10000065] = {
     id = 10000065,
     NameZh = "##44720667",
-    Parama = Table_NpcFunction_t.Parama[125]
+    Parama = Table_NpcFunction_t.Parama[126]
   },
   [10000066] = {
     id = 10000066,
     NameZh = "##42640538",
-    Parama = Table_NpcFunction_t.Parama[126]
+    Parama = Table_NpcFunction_t.Parama[127]
   },
   [10000067] = {
     id = 10000067,
     NameZh = "##42640539",
-    Parama = Table_NpcFunction_t.Parama[127]
+    Parama = Table_NpcFunction_t.Parama[128]
   },
   [10000068] = {
     id = 10000068,
     NameZh = "##42640540",
-    Parama = Table_NpcFunction_t.Parama[128]
+    Parama = Table_NpcFunction_t.Parama[129]
   },
   [10000069] = {
     id = 10000069,
     NameZh = "##42640541",
-    Parama = Table_NpcFunction_t.Parama[129]
+    Parama = Table_NpcFunction_t.Parama[130]
   },
   [10000070] = {
     id = 10000070,
     NameZh = "##42640542",
-    Parama = Table_NpcFunction_t.Parama[130]
+    Parama = Table_NpcFunction_t.Parama[131]
   },
   [10000071] = {
     id = 10000071,
     NameZh = "##42640543",
-    Parama = Table_NpcFunction_t.Parama[131]
+    Parama = Table_NpcFunction_t.Parama[132]
   },
   [10000072] = {
     id = 10000072,
     NameZh = "##45915131",
-    Parama = Table_NpcFunction_t.Parama[131]
+    Parama = Table_NpcFunction_t.Parama[132]
   },
   [10000073] = {
     id = 10000073,
     NameZh = "##45913875",
-    Parama = Table_NpcFunction_t.Parama[132]
+    Parama = Table_NpcFunction_t.Parama[133]
   },
   [10000074] = {
     id = 10000074,
     NameZh = "##45913876",
-    Parama = Table_NpcFunction_t.Parama[133]
+    Parama = Table_NpcFunction_t.Parama[134]
+  },
+  [10000077] = {
+    id = 10000077,
+    NameZh = "##42640543",
+    Parama = Table_NpcFunction_t.Parama[135]
+  },
+  [10000078] = {
+    id = 10000078,
+    NameZh = "##47048225",
+    Parama = Table_NpcFunction_t.Parama[136]
+  },
+  [10000079] = {
+    id = 10000079,
+    NameZh = "##47048226",
+    Parama = Table_NpcFunction_t.Parama[137]
+  },
+  [10000080] = {
+    id = 10000080,
+    NameZh = "##47048227",
+    Parama = Table_NpcFunction_t.Parama[138]
+  },
+  [10000081] = {
+    id = 10000081,
+    NameZh = "##47048211",
+    Parama = Table_NpcFunction_t.Parama[139]
+  },
+  [10000082] = {
+    id = 10000082,
+    NameZh = "##47048228",
+    Parama = Table_NpcFunction_t.Parama[140]
+  },
+  [10000083] = {
+    id = 10000083,
+    NameZh = "##47048229",
+    Parama = Table_NpcFunction_t.Parama[141]
+  },
+  [10000084] = {
+    id = 10000084,
+    NameZh = "##47048230",
+    Parama = Table_NpcFunction_t.Parama[142]
   },
   [10000721] = {
     id = 10000721,
     NameZh = "##46385847",
-    Parama = Table_NpcFunction_t.Parama[221]
+    Parama = Table_NpcFunction_t.Parama[238]
+  },
+  [10001036] = {
+    id = 10001036,
+    NameZh = "##47048998",
+    Parama = Table_NpcFunction_t.Parama[446]
   },
   [11000001] = {
     id = 11000001,
     NameZh = "##1266699",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[447]
+    Parama = Table_NpcFunction_t.Parama[465]
   },
   [11000002] = {
     id = 11000002,
     NameZh = "##3482495",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[448]
+    Parama = Table_NpcFunction_t.Parama[466]
   },
   [11000003] = {
     id = 11000003,
     NameZh = "##3489749",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[449]
+    Parama = Table_NpcFunction_t.Parama[467]
   },
   [11000004] = {
     id = 11000004,
     NameZh = "##42536868",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[450]
+    Parama = Table_NpcFunction_t.Parama[468]
   },
   [11000005] = {
     id = 11000005,
     NameZh = "##42621987",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[451]
+    Parama = Table_NpcFunction_t.Parama[469]
   },
   [11000006] = {
     id = 11000006,
     NameZh = "##42621988",
     NameEn = "ExchangeGift",
-    Parama = Table_NpcFunction_t.Parama[452]
+    Parama = Table_NpcFunction_t.Parama[470]
   }
 }
 local cell_mt = {

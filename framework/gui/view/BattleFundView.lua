@@ -172,23 +172,11 @@ function BattleFundView:OnPurchaseClicked()
       local productD = " [0075BCFF]" .. productCount .. "[-] " .. productName
       if BranchMgr.IsKorea() or BranchMgr.IsNOKR() then
         productD = " [0075BCFF]" .. productDesc .. "[-] "
-        GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
-          view = PanelConfig.ShopConfirmPanel,
-          viewdata = {
-            data = {
-              title = string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FuncZenyShop.FormatMilComma(productPrice)),
-              desc = ZhString.ShopConfirmDes,
-              callback = function()
-                self:Purchase()
-              end
-            }
-          }
-        })
-      else
-        OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FuncZenyShop.FormatMilComma(productPrice)), ZhString.ShopConfirmDes, productName, productPrice, function()
-          self:Purchase()
-        end)
       end
+      local confirmDesc, clickUrlCallback = OverseaHostHelper:GetRechargeShopConfirmDesc()
+      OverseaHostHelper:FeedXDConfirm(string.format("[262626FF]" .. ZhString.ShopConfirmTitle .. "[-]", productD, currencyType, FuncZenyShop.FormatMilComma(productPrice)), confirmDesc, productName, productPrice, function()
+        self:Purchase()
+      end, nil, clickUrlCallback)
     end
   else
     self:Purchase()

@@ -165,6 +165,9 @@ function ServiceMatchCCmdAutoProxy:onRegister()
   self:Listen(61, 51, function(data)
     self:RecvEnterObservationMatchCCmd(data)
   end)
+  self:Listen(61, 76, function(data)
+    self:RecvEnterObservationWarbandMatchCCmd(data)
+  end)
   self:Listen(61, 52, function(data)
     self:RecvObInitInfoFubenCmd(data)
   end)
@@ -3233,7 +3236,30 @@ function ServiceMatchCCmdAutoProxy:CallEnterObservationMatchCCmd(etype, charid)
   end
 end
 
-function ServiceMatchCCmdAutoProxy:CallObInitInfoFubenCmd(infos)
+function ServiceMatchCCmdAutoProxy:CallEnterObservationWarbandMatchCCmd(etype, warbandid)
+  if not NetConfig.PBC then
+    local msg = MatchCCmd_pb.EnterObservationWarbandMatchCCmd()
+    if etype ~= nil then
+      msg.etype = etype
+    end
+    if warbandid ~= nil then
+      msg.warbandid = warbandid
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.EnterObservationWarbandMatchCCmd.id
+    local msgParam = {}
+    if etype ~= nil then
+      msgParam.etype = etype
+    end
+    if warbandid ~= nil then
+      msgParam.warbandid = warbandid
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceMatchCCmdAutoProxy:CallObInitInfoFubenCmd(infos, battle_type, battle_id)
   if not NetConfig.PBC then
     local msg = MatchCCmd_pb.ObInitInfoFubenCmd()
     if infos ~= nil then
@@ -3246,6 +3272,12 @@ function ServiceMatchCCmdAutoProxy:CallObInitInfoFubenCmd(infos)
       for i = 1, #infos do
         table.insert(msg.infos, infos[i])
       end
+    end
+    if battle_type ~= nil then
+      msg.battle_type = battle_type
+    end
+    if battle_id ~= nil then
+      msg.battle_id = battle_id
     end
     self:SendProto(msg)
   else
@@ -3261,6 +3293,12 @@ function ServiceMatchCCmdAutoProxy:CallObInitInfoFubenCmd(infos)
       for i = 1, #infos do
         table.insert(msgParam.infos, infos[i])
       end
+    end
+    if battle_type ~= nil then
+      msgParam.battle_type = battle_type
+    end
+    if battle_id ~= nil then
+      msgParam.battle_id = battle_id
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -5259,6 +5297,10 @@ function ServiceMatchCCmdAutoProxy:RecvEnterObservationMatchCCmd(data)
   self:Notify(ServiceEvent.MatchCCmdEnterObservationMatchCCmd, data)
 end
 
+function ServiceMatchCCmdAutoProxy:RecvEnterObservationWarbandMatchCCmd(data)
+  self:Notify(ServiceEvent.MatchCCmdEnterObservationWarbandMatchCCmd, data)
+end
+
 function ServiceMatchCCmdAutoProxy:RecvObInitInfoFubenCmd(data)
   self:Notify(ServiceEvent.MatchCCmdObInitInfoFubenCmd, data)
 end
@@ -5406,6 +5448,7 @@ ServiceEvent.MatchCCmdQueryTwelveSeasonFinishMatchCCmd = "ServiceEvent_MatchCCmd
 ServiceEvent.MatchCCmdSyncMatchBoardOpenStateMatchCCmd = "ServiceEvent_MatchCCmdSyncMatchBoardOpenStateMatchCCmd"
 ServiceEvent.MatchCCmdTwelveSeasonTimeInfoMatchCCmd = "ServiceEvent_MatchCCmdTwelveSeasonTimeInfoMatchCCmd"
 ServiceEvent.MatchCCmdEnterObservationMatchCCmd = "ServiceEvent_MatchCCmdEnterObservationMatchCCmd"
+ServiceEvent.MatchCCmdEnterObservationWarbandMatchCCmd = "ServiceEvent_MatchCCmdEnterObservationWarbandMatchCCmd"
 ServiceEvent.MatchCCmdObInitInfoFubenCmd = "ServiceEvent_MatchCCmdObInitInfoFubenCmd"
 ServiceEvent.MatchCCmdReserveRoomBuildMatchCCmd = "ServiceEvent_MatchCCmdReserveRoomBuildMatchCCmd"
 ServiceEvent.MatchCCmdReserveRoomInviterMatchCCmd = "ServiceEvent_MatchCCmdReserveRoomInviterMatchCCmd"

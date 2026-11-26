@@ -154,7 +154,7 @@ function GuildDateBattlePreEnterView:SetDatedTime()
     return
   end
   self.dateLab.text = string.format(ZhString.GuildDateBattle_DateFmt, self.data.year, self.data.month, self.data.day)
-  self.timeLab.text = string.format(ZhString.GuildDateBattle_Clock, self.data.hour)
+  self.timeLab.text = string.format(ZhString.GuildDateBattle_ClockMinute, self.data.hour, self.data.minute or 0)
 end
 
 function GuildDateBattlePreEnterView:SetChat()

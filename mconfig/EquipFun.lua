@@ -22,6 +22,15 @@ end
 local _CheckIsEquipCompose = function(id)
   return nil ~= Table_EquipCompose[id]
 end
+local _CheckIsSnowEquip = function(id)
+  local staticEquip = Table_Equip[id]
+  return nil ~= staticEquip and staticEquip.IsNew == 2
+end
+local _CheckOtherAccessoryIsSnowEquip = function(srcUser, pos)
+  local other_pos = pos == EquipPos.EEQUIPPOS_ACCESSORY1 and EquipPos.EEQUIPPOS_ACCESSORY2 or EquipPos.EEQUIPPOS_ACCESSORY1
+  local other_equip = srcUser:getEquip(CommonFun.PackType.EPACKTYPE_EQUIP, other_pos)
+  return other_equip and _CheckIsSnowEquip(other_equip.id)
+end
 
 function EquipFun.Common_CheckPutOnEquip(main_equip_id, srcUser, pos)
   local shadow_equip_id = srcUser:getEquip(CommonFun.PackType.EPACKTYPE_SHADOWEQUIP, pos)
@@ -94,6 +103,9 @@ function EquipFun.GetEquipID(srcUser, package_type, pos)
 end
 
 function EquipFun.CanEquip_Accessory1(id, srcUser, pos)
+  if _CheckIsSnowEquip(id) and _CheckOtherAccessoryIsSnowEquip(srcUser, pos) then
+    return 43734
+  end
   local shadow_equip_Accessory1 = EquipFun.GetEquipID(srcUser, CommonFun.PackType.EPACKTYPE_SHADOWEQUIP, pos)
   if shadow_equip_Accessory1 == 0 then
     return 0
@@ -116,6 +128,9 @@ function EquipFun.CanEquip_Accessory1(id, srcUser, pos)
 end
 
 function EquipFun.CanEquip_Accessory2(id, srcUser, pos)
+  if _CheckIsSnowEquip(id) and _CheckOtherAccessoryIsSnowEquip(srcUser, pos) then
+    return 43734
+  end
   local shadow_equip_Accessory2 = EquipFun.GetEquipID(srcUser, CommonFun.PackType.EPACKTYPE_SHADOWEQUIP, pos)
   if shadow_equip_Accessory2 == 0 then
     return 0

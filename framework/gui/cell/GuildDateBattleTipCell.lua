@@ -39,7 +39,18 @@ function GuildDateBattleTipCell:SetStamp()
 end
 
 function GuildDateBattleTipCell:SetClock()
-  self.content.text = string.format(ZhString.GuildDateBattle_Clock, self.tipData)
+  if type(self.tipData) == "table" and self.tipData.quick then
+    local stamp = self.tipData.stamp
+    if not stamp then
+      self.content.text = ""
+      self.inValid = true
+      return
+    end
+    local date = os.date("*t", stamp)
+    self.content.text = string.format(ZhString.GuildDateBattle_ClockMinute, date.hour, date.min)
+  else
+    self.content.text = string.format(ZhString.GuildDateBattle_Clock, self.tipData)
+  end
   self.inValid = GuildDateBattleProxy.Instance:CheckClockInValid(self.tipData)
 end
 

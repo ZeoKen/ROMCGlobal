@@ -234,6 +234,7 @@ Table_ActivityPuzzle = {
     UnlockID = Table_ActivityPuzzle_t.UnlockID[9],
     RewardID = 70000149,
     GotoMode = Table_ActivityPuzzle_t.GotoMode[4],
+    GoEndTime = "2025-02-21 05:00:00",
     Desc = "完成「英雄进阶Ⅰ」任务",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，Base等级≥25级的冒险者前往普隆德找到「罗洛」参与活动"
   },
@@ -246,6 +247,7 @@ Table_ActivityPuzzle = {
     UnlockID = Table_ActivityPuzzle_t.UnlockID[10],
     UnlockTime = 10,
     RewardID = 70000149,
+    GoEndTime = "2025-02-21 05:00:00",
     Desc = "获得「异界能量」x10",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，Base等级≥25级的冒险者前往普隆德找到「罗洛」完成任务即可获得"
   },
@@ -258,6 +260,7 @@ Table_ActivityPuzzle = {
     UnlockID = Table_ActivityPuzzle_t.UnlockID[11],
     RewardID = 70000149,
     GotoMode = Table_ActivityPuzzle_t.GotoMode[4],
+    GoEndTime = "2025-02-21 05:00:00",
     Desc = "成为普隆德拉C级英雄",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，Base等级≥25级的冒险者前往普隆德找到「罗洛」，每日完成任务可以进阶普隆德拉英雄等级，达到英雄等级后，将可以获得对应等级英雄礼盒"
   },
@@ -270,6 +273,7 @@ Table_ActivityPuzzle = {
     UnlockID = Table_ActivityPuzzle_t.UnlockID[12],
     RewardID = 70000149,
     GotoMode = Table_ActivityPuzzle_t.GotoMode[4],
+    GoEndTime = "2025-02-21 05:00:00",
     Desc = "成为普隆德拉B级英雄",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，Base等级≥25级的冒险者前往普隆德找到「罗洛」，每日完成任务可以进阶普隆德拉英雄等级，达到英雄等级后，将可以获得对应等级英雄礼盒"
   },
@@ -282,6 +286,7 @@ Table_ActivityPuzzle = {
     UnlockID = Table_ActivityPuzzle_t.UnlockID[13],
     RewardID = 70000149,
     GotoMode = Table_ActivityPuzzle_t.GotoMode[4],
+    GoEndTime = "2025-02-21 05:00:00",
     Desc = "成为普隆德拉A级英雄",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，Base等级≥25级的冒险者前往普隆德找到「罗洛」，每日完成任务可以进阶普隆德拉英雄等级，达到英雄等级后，将可以获得对应等级英雄礼盒"
   },
@@ -294,6 +299,7 @@ Table_ActivityPuzzle = {
     UnlockID = Table_ActivityPuzzle_t.UnlockID[14],
     RewardID = 70000149,
     GotoMode = Table_ActivityPuzzle_t.GotoMode[4],
+    GoEndTime = "2025-02-21 05:00:00",
     Desc = "成为普隆德拉S级英雄",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，Base等级≥25级的冒险者前往普隆德找到「罗洛」，每日完成任务可以进阶普隆德拉英雄等级，达到英雄等级后，将可以获得对应等级英雄礼盒"
   },
@@ -305,6 +311,7 @@ Table_ActivityPuzzle = {
     UnlockType = 2,
     UnlockID = Table_ActivityPuzzle_t.UnlockID[15],
     RewardID = 70000149,
+    GoEndTime = "2025-02-21 05:00:00",
     Desc = "获得「音速的索尼克」头饰x1",
     QuestDesc = "[c][fff000]获取途径[-][/c]\n活动期间，参与联动活动获取「异界能量」，使用「异界能量」即可兑换"
   },
@@ -317,6 +324,7 @@ Table_ActivityPuzzle = {
     UnlockID = Table_ActivityPuzzle_t.UnlockID[16],
     RewardID = 70000149,
     GotoMode = Table_ActivityPuzzle_t.GotoMode[4],
+    GoEndTime = "2025-02-21 05:00:00",
     Desc = "获得「超级英雄赠礼」x1",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，Base等级≥25级且达到S级英雄的冒险者前往普隆德找到「罗洛」即可参与活动"
   },
@@ -329,6 +337,7 @@ Table_ActivityPuzzle = {
     UnlockID = Table_ActivityPuzzle_t.UnlockID[17],
     RewardID = 70000149,
     GotoMode = Table_ActivityPuzzle_t.GotoMode[4],
+    GoEndTime = "2025-02-21 05:00:00",
     Desc = "获得「头·趴趴深海王」x1",
     QuestDesc = "[c][fff000]获取途径[-][/c]\n1.活动期间，Base等级≥25级且达到S级英雄的冒险者前往普隆德找到「罗洛」通关副本即可获得「超级英雄赠礼」（第5次打开「超级英雄赠礼」必定获得头饰）\n交易所购买获得"
   },
@@ -341,6 +350,7 @@ Table_ActivityPuzzle = {
     UnlockType = 100,
     UnlockTime = 3,
     RewardID = 70000150,
+    GoEndTime = "2025-02-21 05:00:00",
     Desc = "点亮3个拼图"
   },
   [535] = {
@@ -352,6 +362,7 @@ Table_ActivityPuzzle = {
     UnlockType = 100,
     UnlockTime = 6,
     RewardID = 70000151,
+    GoEndTime = "2025-02-21 05:00:00",
     Desc = "点亮6个拼图"
   },
   [536] = {
@@ -362,7 +373,8 @@ Table_ActivityPuzzle = {
     Icon = "",
     UnlockType = 100,
     UnlockTime = 9,
-    RewardID = 70000152
+    RewardID = 70000152,
+    GoEndTime = "2025-02-21 05:00:00"
   },
   [539] = {
     id = 539,
@@ -373,7 +385,6 @@ Table_ActivityPuzzle = {
     TFGoStartTime = "2025-09-11 05:00:00",
     TFGoEndTime = "2025-10-11 05:00:00",
     GoStartTime = "2025-09-24 05:00:00",
-    GoEndTime = "2025-10-24 05:00:00",
     Desc = "完成「星星的邂逅Ⅰ」任务",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，Base等级≥25级的冒险者前往普隆德找到「杰德」参与活动"
   },
@@ -387,7 +398,6 @@ Table_ActivityPuzzle = {
     TFGoStartTime = "2025-09-14 05:00:00",
     TFGoEndTime = "2025-10-11 05:00:00",
     GoStartTime = "2025-09-27 05:00:00",
-    GoEndTime = "2025-10-24 05:00:00",
     Desc = "完成「星星的邂逅Ⅳ」任务",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，Base等级≥25级的冒险者前往普隆德找到「杰德」参与活动"
   },
@@ -401,7 +411,6 @@ Table_ActivityPuzzle = {
     TFGoStartTime = "2025-09-18 05:00:00",
     TFGoEndTime = "2025-10-11 05:00:00",
     GoStartTime = "2025-10-01 05:00:00",
-    GoEndTime = "2025-10-24 05:00:00",
     Desc = "完成「异界大作战」任务",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，Base等级≥25级的冒险者前往普隆德找到「B格猫星人」参与活动"
   },
@@ -415,7 +424,6 @@ Table_ActivityPuzzle = {
     TFGoStartTime = "2025-09-25 05:00:00",
     TFGoEndTime = "2025-10-11 05:00:00",
     GoStartTime = "2025-10-08 05:00:00",
-    GoEndTime = "2025-10-24 05:00:00",
     Desc = "完成「美丽异世界」任务",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，Base等级≥25级的冒险者前往普隆德找到「B格猫星人」参与活动"
   },
@@ -429,7 +437,6 @@ Table_ActivityPuzzle = {
     TFGoStartTime = "2025-09-11 05:00:00",
     TFGoEndTime = "2025-10-11 05:00:00",
     GoStartTime = "2025-09-24 05:00:00",
-    GoEndTime = "2025-10-24 05:00:00",
     Desc = "完成「联动开启！」任务",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，Base等级≥25级的冒险者前往普隆德找到「B格猫星人」参与活动"
   },
@@ -444,7 +451,6 @@ Table_ActivityPuzzle = {
     TFGoStartTime = "2025-10-02 05:00:00",
     TFGoEndTime = "2025-10-11 05:00:00",
     GoStartTime = "2025-10-15 05:00:00",
-    GoEndTime = "2025-10-24 05:00:00",
     Desc = "获得「贝尔·克朗尼的信物」x1",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，Base等级≥25级的冒险者前往普隆德找到「女武神」完成副本挑战即可获得"
   },
@@ -459,7 +465,6 @@ Table_ActivityPuzzle = {
     TFGoStartTime = "2025-10-02 05:00:00",
     TFGoEndTime = "2025-10-11 05:00:00",
     GoStartTime = "2025-10-15 05:00:00",
-    GoEndTime = "2025-10-24 05:00:00",
     Desc = "获得「Q版贝尔·克朗尼」x1",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n活动期间，通过消耗「贝尔·克朗尼的信物」x5合成获得"
   },
@@ -475,7 +480,6 @@ Table_ActivityPuzzle = {
     TFGoStartTime = "2025-09-11 05:00:00",
     TFGoEndTime = "2025-10-11 05:00:00",
     GoStartTime = "2025-09-24 05:00:00",
-    GoEndTime = "2025-10-24 05:00:00",
     Desc = "获得「魔石」x10",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n参与地城邂逅联动活动均可获得，也可使用Zeny在「B格猫星人」处购买"
   },
@@ -489,7 +493,6 @@ Table_ActivityPuzzle = {
     TFGoStartTime = "2025-09-11 05:00:00",
     TFGoEndTime = "2025-10-11 05:00:00",
     GoStartTime = "2025-09-24 05:00:00",
-    GoEndTime = "2025-10-24 05:00:00",
     Desc = "获得「地城邂逅卡片」x1",
     QuestDesc = "[c][fff000]参与方式[-][/c]\n参与地城邂逅联动活动均可获得「许愿星碎片」，使用「许愿星碎片」可以兑换「地城邂逅卡片」等各类联动奖励"
   },
@@ -505,7 +508,6 @@ Table_ActivityPuzzle = {
     TFGoStartTime = "2025-09-11 05:00:00",
     TFGoEndTime = "2025-10-11 05:00:00",
     GoStartTime = "2025-09-24 05:00:00",
-    GoEndTime = "2025-10-24 05:00:00",
     Desc = "点亮3个拼图"
   },
   [549] = {
@@ -520,7 +522,6 @@ Table_ActivityPuzzle = {
     TFGoStartTime = "2025-09-11 05:00:00",
     TFGoEndTime = "2025-10-11 05:00:00",
     GoStartTime = "2025-09-24 05:00:00",
-    GoEndTime = "2025-10-24 05:00:00",
     Desc = "点亮6个拼图"
   },
   [550] = {
@@ -534,8 +535,7 @@ Table_ActivityPuzzle = {
     RewardID = 61004429,
     TFGoStartTime = "2025-09-11 05:00:00",
     TFGoEndTime = "2025-10-11 05:00:00",
-    GoStartTime = "2025-09-24 05:00:00",
-    GoEndTime = "2025-10-24 05:00:00"
+    GoStartTime = "2025-09-24 05:00:00"
   },
   [551] = {
     id = 551,
@@ -1076,7 +1076,7 @@ local cell_mt = {
     Atlas = "Item",
     Desc = "点亮9个拼图",
     GoCondition = _EmptyTable,
-    GoEndTime = "2025-02-21 05:00:00",
+    GoEndTime = "2025-10-24 05:00:00",
     GoStartTime = "2025-01-22 05:00:00",
     GotoMode = _EmptyTable,
     Icon = "item_3871",

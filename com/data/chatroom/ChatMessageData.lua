@@ -82,6 +82,7 @@ function ChatMessageData:SetData(data)
     self[41] = data.recall_time
     self[42] = data.snowroomid
     self[43] = data.head_fashion
+    self[40] = ServerTime.CurServerTime() / 1000
     if data.print_item and data.print_item.id and data.print_item.id ~= 0 then
       local printItem = {}
       printItem.id = data.print_item.id
@@ -510,6 +511,10 @@ end
 
 function ChatMessageData:GetTime()
   return self[17]
+end
+
+function ChatMessageData:GetTimestamp()
+  return self[40]
 end
 
 function ChatMessageData:GetTargetid()

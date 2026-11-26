@@ -102,7 +102,8 @@ local ReUniteCellData = function(datas, perRowNum)
 end
 
 function ExchangeGoodsTip:SetData(data)
-  self.isNormal = false
+  self.isFrey = type(data) == "number" and ExchangeShopProxy.Instance:IsFreyExchangeShop(data)
+  self.isNormal = type(data) == "number" and not self.isFrey
   local rewardId
   self.data = data
   if not self.data then
@@ -110,8 +111,13 @@ function ExchangeGoodsTip:SetData(data)
   end
   self:Hide(self.limitedLab)
   local goods = {}
-  if "number" == type(data) then
-    self.isNormal = true
+  if self.isFrey then
+    self.id = data
+    rewardId = ExchangeShopProxy.Instance:GetRewardByGoods(self.id)
+    self.contributionPos:SetActive(false)
+    goods = ExchangeShopProxy.Instance:GetFreyGoods(self.id)
+    self.nameLab.text = rewardId and Table_Item[rewardId].NameZh or ""
+  elseif self.isNormal then
     self.id = data
     rewardId = 162
     self.contributionPos:SetActive(false)
@@ -157,8 +163,18 @@ end
 
 function ExchangeGoodsTip:UpdateGoods(chooseid)
   TableUtility.ArrayClear(self.lackItems)
-  local chooseitems = ExchangeShopProxy.Instance:_getChooseItem()
+  local chooseitems = ExchangeShopProxy.Instance:_getChooseItem(self.isFrey)
   self:UpdateExchange()
+  if self.isFrey then
+    local goods = ExchangeShopProxy.Instance:GetFreyGoods(self.id)
+    table.sort(goods, _sortfunction)
+    goods = ReUniteCellData(goods, 5)
+    self.itemWrapHelper:ResetDatas(goods)
+    self.quickBuyBtn:SetActive(false)
+    self.confirmBtn:SetActive(true)
+    self:SetConfirmState(0 < #chooseitems)
+    return
+  end
   for i = 1, #chooseitems do
     local lackNum = chooseitems[i].num - ExchangeShopProxy.GetOwnCount(chooseitems[i].id)
     if 0 < lackNum then
@@ -210,6 +226,17 @@ function ExchangeGoodsTip:OnClickCell(cellCtl)
   if not data then
     return
   end
+  if self.isFrey then
+    if not (not data.freyPlaceholder and data.id) or data.id == "exchange" then
+      return
+    end
+    if (data.num or 0) <= 0 then
+      return
+    end
+    ExchangeShopProxy.Instance:AddChooseItems(data, false)
+    self:UpdateGoods(data.staticData and data.staticData.id)
+    return
+  end
   local ownCount = ExchangeShopProxy.GetOwnCount(data.staticData.id)
   self.islack = not ownCount or 0 == ownCount
   if self.islack and self.isNormal then
@@ -248,6 +275,9 @@ function ExchangeGoodsTip:OnClickCell(cellCtl)
 end
 
 function ExchangeGoodsTip:GetLimitedNum()
+  if self.isFrey then
+    return nil
+  end
   if self.isNormal and self.shopItemData then
     return HappyShopProxy.Instance:GetCanBuyCount(self.shopItemData)
   end
@@ -270,12 +300,20 @@ function ExchangeGoodsTip:OnMinusItem(cellCtl)
   if not data then
     return
   end
-  ExchangeShopProxy.Instance:MinusChooseItem(data.staticData.id)
+  ExchangeShopProxy.Instance:MinusChooseItem(self.isFrey and data or data.staticData.id)
   self:UpdateGoods(data.staticData.id)
 end
 
 function ExchangeGoodsTip:OnClickConfirm()
-  ExchangeShopProxy.Instance:CallExchange(self.id)
+  local id = self.id
+  local doExchange = function()
+    ExchangeShopProxy.Instance:CallExchange(id)
+  end
+  if self.isFrey and ExchangeShopProxy.Instance:HasChosenFreyRefineOrCard() then
+    MsgManager.ConfirmMsgByID(3556, doExchange)
+    return
+  end
+  doExchange()
 end
 
 function ExchangeGoodsTip:OnQuickBuy()

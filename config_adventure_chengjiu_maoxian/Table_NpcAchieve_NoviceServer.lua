@@ -421,7 +421,6 @@ Table_NpcAchieve = {
     Param1 = 4,
     TargetNum = 20,
     Title = "击败异界MiniⅣ",
-    Desc = "累计获得异界Mini的击退奖励 %s/20次",
     Reward = Table_NpcAchieve_t.Reward[14]
   },
   [28] = {
@@ -494,6 +493,7 @@ Table_NpcAchieve = {
     GroupID = 2,
     Type = 62,
     Param1 = 5,
+    Title = "击败异界MVPⅡ",
     Desc = "累计获得异界MVP的击退奖励 %s/5次",
     Reward = Table_NpcAchieve_t.Reward[14]
   },
@@ -960,7 +960,6 @@ Table_NpcAchieve = {
     id = 81,
     GroupID = 5,
     Type = 58,
-    Title = "传承技能Ⅱ",
     Desc = "累计传承被动技能5个",
     Reward = Table_NpcAchieve_t.Reward[15]
   },
@@ -1056,6 +1055,7 @@ Table_NpcAchieve = {
     Type = 32,
     Param1 = 4714,
     Title = "记忆之战Ⅲ",
+    Desc = "通关时之空间勇士难度并获得逆时的银河累计%s/5个",
     Reward = Table_NpcAchieve_t.Reward[31]
   },
   [92] = {
@@ -1212,11 +1212,11 @@ Table_NpcAchieve = {
 local cell_mt = {
   __index = {
     Condition = _EmptyTable,
-    Desc = "通关时之空间勇士难度并获得逆时的银河累计%s/5个",
+    Desc = "累计获得异界Mini的击退奖励 %s/20次",
     GroupID = 1,
     Reward = _EmptyTable,
     TargetNum = 5,
-    Title = "击败异界MVPⅡ",
+    Title = "传承技能Ⅱ",
     Type = 61,
     id = 1
   }

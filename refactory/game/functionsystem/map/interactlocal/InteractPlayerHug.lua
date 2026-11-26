@@ -1,27 +1,5 @@
 InteractPlayerHug = class("InteractPlayerHug")
 local SqrDistanceXZ = VectorUtility.DistanceXZ_Square
-local _IsCreatureDead = function(creature)
-  return creature ~= nil and creature.IsDead ~= nil and creature:IsDead() or false
-end
-local _IsMyselfControlled = function()
-  local myselfData = Game.Myself and Game.Myself.data
-  if not myselfData then
-    return false
-  end
-  if myselfData.Freeze ~= nil and myselfData:Freeze() then
-    return true
-  end
-  if myselfData.NoAct ~= nil and myselfData:NoAct() then
-    return true
-  end
-  if myselfData.NoMove ~= nil and myselfData:NoMove() then
-    return true
-  end
-  if myselfData.FearRun ~= nil and myselfData:FearRun() then
-    return true
-  end
-  return false
-end
 
 function InteractPlayerHug.Create(targetCharid, buffEffect)
   local self = InteractPlayerHug.new()
@@ -41,17 +19,17 @@ function InteractPlayerHug:Update(time, deltaTime)
   if not self.targetCharid or not self.buffEffect then
     return false
   end
-  if _IsCreatureDead(Game.Myself) then
+  if Game.Myself:IsDead() then
     return false
   end
   local target = SceneCreatureProxy.FindCreature(self.targetCharid)
-  if not target or _IsCreatureDead(target) then
+  if not target or target:IsDead() then
     return false
   end
   if self:IsCarryingThisTarget() then
     return true
   end
-  if _IsMyselfControlled() then
+  if Game.Myself.data:IsControlled() then
     return false
   end
   if self:IsCarryingSomeone() then
@@ -74,16 +52,16 @@ function InteractPlayerHug:GetInteractIcon()
 end
 
 function InteractPlayerHug:StartInteract()
-  if _IsCreatureDead(Game.Myself) then
+  if Game.Myself:IsDead() then
     InteractLocalManager.Me():EndInteract()
     return
   end
   local target = SceneCreatureProxy.FindCreature(self.targetCharid)
-  if not self:IsCarryingThisTarget() and (not target or _IsCreatureDead(target)) then
+  if not self:IsCarryingThisTarget() and (not target or target:IsDead()) then
     InteractLocalManager.Me():EndInteract()
     return
   end
-  if not self:IsCarryingThisTarget() and _IsMyselfControlled() then
+  if not self:IsCarryingThisTarget() and Game.Myself.data:IsControlled() then
     InteractLocalManager.Me():EndInteract()
     return
   end

@@ -327,6 +327,24 @@ Table_ActPersonalTimer = {
       }
     }
   },
+  [106106] = {
+    id = 106106,
+    Type = "new_server_challenge",
+    Servers = _EmptyTable,
+    TfStartTime = "2026-11-03 05:00:00",
+    TfEndTime = "2026-11-17 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2026-11-10 05:00:00",
+    EndTime = "2026-11-24 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "##44709074",
+    Misc = {
+      ShopType = 650,
+      ShopId = 58,
+      ShopShowID = 1030
+    }
+  },
   [106201] = {
     id = 106201,
     Type = "mission_reward",
@@ -744,6 +762,41 @@ Table_ActPersonalTimer = {
       DiscountItem = 52838,
       Discount = 1,
       DiscountCount = 1
+    }
+  },
+  [106109] = {
+    id = 106109,
+    Type = "exchange",
+    Servers = _EmptyTable,
+    TfStartTime = "2026-11-03 05:00:00",
+    TfEndTime = "2026-11-17 05:00:00",
+    TfAbortTime = "",
+    StartTime = "2026-11-10 05:00:00",
+    EndTime = "2026-11-24 05:00:00",
+    AbortTime = "",
+    Cycle = "",
+    Name = "##3480628",
+    Misc = {
+      exchange_item = {
+        [1] = {
+          item = {3014156, 1},
+          equip_cost = 3014155,
+          cost = {
+            {3045010, 1}
+          },
+          exchange_count = 1,
+          red_tip = 1
+        },
+        [2] = {
+          item = {3014157, 1},
+          equip_cost = 3014156,
+          cost = {
+            {3045010, 1}
+          },
+          exchange_count = 1,
+          red_tip = 1
+        }
+      }
     }
   },
   [10580001] = {

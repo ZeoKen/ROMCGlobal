@@ -97,9 +97,14 @@ BuffType = {
   BellCharge = "BellCharge",
   AttrCanMove = "AttrCanMove",
   RoseSeedCount = "RoseSeedCount",
+  ChangeComboChain = "ChangeComboChain",
+  TrapRangeAdd = "TrapRangeAdd",
+  BuffStateScale = "BuffStateScale",
   AutoTriggerSkill = "AutoTriggerSkill",
   CanBeCarried = "CanBeCarried",
-  DespairRemnant = "DespairRemnant"
+  DespairRemnant = "DespairRemnant",
+  BeStone = "BeStone",
+  CanBeKicked = "CanBeKicked"
 }
 SkillTargetType = {
   None = 1,

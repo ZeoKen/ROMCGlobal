@@ -53,25 +53,6 @@ Table_ItemMemory = {
     },
     MaxLevel = 40
   },
-  [4753] = {
-    id = 4753,
-    CanEquip = {
-      EquipPos = {
-        5,
-        6,
-        7
-      }
-    },
-    Quality = 5,
-    UpgradeCost = _EmptyTable,
-    RandomAttr = {
-      [10] = {group = 1001},
-      [20] = {group = 2001},
-      [30] = {group = 3001},
-      [999] = {group = 4001}
-    },
-    MaxLevel = 40
-  },
   [4704] = {
     id = 4704,
     CanEquip = {
@@ -126,22 +107,57 @@ Table_ItemMemory = {
     },
     MaxLevel = 40
   },
-  [4756] = {
-    id = 4756,
+  [4707] = {
+    id = 4707,
     CanEquip = {
       EquipPos = {
-        2,
-        3,
-        4
+        8,
+        9,
+        10
       }
     },
-    Quality = 5,
+    Quality = 2,
     UpgradeCost = _EmptyTable,
     RandomAttr = {
-      [10] = {group = 1011},
-      [20] = {group = 2011},
-      [30] = {group = 3011},
-      [999] = {group = 4011}
+      [10] = {group = 1021}
+    },
+    MaxLevel = 30
+  },
+  [4708] = {
+    id = 4708,
+    CanEquip = {
+      EquipPos = {
+        8,
+        9,
+        10
+      }
+    },
+    Quality = 3,
+    UpgradeCost = _EmptyTable,
+    RandomAttr = {
+      [10] = {group = 1021},
+      [20] = {group = 2021}
+    },
+    MaxLevel = 30
+  },
+  [4709] = {
+    id = 4709,
+    UpgradeID = 4759,
+    CanEquip = {
+      EquipPos = {
+        8,
+        9,
+        10
+      }
+    },
+    Quality = 4,
+    UpgradeCost = {
+      {4715, 10}
+    },
+    RandomAttr = {
+      [10] = {group = 1021},
+      [20] = {group = 2021},
+      [30] = {group = 3021}
     },
     MaxLevel = 40
   },
@@ -196,6 +212,63 @@ Table_ItemMemory = {
       [10] = {group = 1031},
       [20] = {group = 2031},
       [30] = {group = 3031}
+    },
+    MaxLevel = 40
+  },
+  [4753] = {
+    id = 4753,
+    CanEquip = {
+      EquipPos = {
+        5,
+        6,
+        7
+      }
+    },
+    Quality = 5,
+    UpgradeCost = _EmptyTable,
+    RandomAttr = {
+      [10] = {group = 1001},
+      [20] = {group = 2001},
+      [30] = {group = 3001},
+      [999] = {group = 4001}
+    },
+    MaxLevel = 40
+  },
+  [4756] = {
+    id = 4756,
+    CanEquip = {
+      EquipPos = {
+        2,
+        3,
+        4
+      }
+    },
+    Quality = 5,
+    UpgradeCost = _EmptyTable,
+    RandomAttr = {
+      [10] = {group = 1011},
+      [20] = {group = 2011},
+      [30] = {group = 3011},
+      [999] = {group = 4011}
+    },
+    MaxLevel = 40
+  },
+  [4759] = {
+    id = 4759,
+    CanEquip = {
+      EquipPos = {
+        8,
+        9,
+        10
+      }
+    },
+    Quality = 5,
+    UpgradeCost = _EmptyTable,
+    RandomAttr = {
+      [10] = {group = 1021},
+      [20] = {group = 2021},
+      [30] = {group = 3021},
+      [999] = {group = 4021}
     },
     MaxLevel = 40
   },

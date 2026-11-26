@@ -214,7 +214,7 @@ function ShopItemData:_SetMenu(shoptype)
     if appendData and appendData:isCompleted() then
       ServiceSceneManualProxy.Instance:CallGetQuestReward(appendData.staticId)
     end
-    if not appendData or not appendData.rewardget then
+    if not appendData or not appendData.finish then
       self.lock = true
     else
       self.lock = false
@@ -300,6 +300,10 @@ function ShopItemData:CheckLimitType(index)
     return self.LimitType & index > 0
   end
   return false
+end
+
+function ShopItemData:GetGoodsCount()
+  return self.goodsCount or 1
 end
 
 function ShopItemData:GetItemData()

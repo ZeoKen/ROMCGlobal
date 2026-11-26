@@ -1365,6 +1365,36 @@ Table_Mount = {
     TransformStartSE = "",
     TransformEndSE = ""
   },
+  [25283] = {
+    id = 25283,
+    EquipCondition = _EmptyTable,
+    IsMoto = 1,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [25284] = {
+    id = 25284,
+    EquipCondition = _EmptyTable,
+    IsMoto = 1,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [25286] = {
+    id = 25286,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [25288] = {
+    id = 25288,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
   [25289] = {
     id = 25289,
     EquipCondition = _EmptyTable,
@@ -1388,6 +1418,13 @@ Table_Mount = {
   },
   [25292] = {
     id = 25292,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [25293] = {
+    id = 25293,
     EquipCondition = _EmptyTable,
     ActionPrefix = "",
     TransformStartSE = "",
@@ -2248,6 +2285,20 @@ Table_Mount = {
     TransformStartSE = "",
     TransformEndSE = "",
     IsMountDressing = 1
+  },
+  [29455] = {
+    id = 29455,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "",
+    TransformStartSE = "",
+    TransformEndSE = ""
+  },
+  [29456] = {
+    id = 29456,
+    EquipCondition = _EmptyTable,
+    ActionPrefix = "elegance_ride",
+    TransformStartSE = "",
+    TransformEndSE = ""
   },
   [600321] = {
     id = 600321,

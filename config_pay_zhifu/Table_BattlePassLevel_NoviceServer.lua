@@ -342,18 +342,6 @@ Table_BattlePassLevel_t = {
         month = 12,
         num = 1,
         year = 2026
-      },
-      {
-        itemid = 3011711,
-        month = 1,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3011752,
-        month = 2,
-        num = 1,
-        year = 2027
       }
     },
     {
@@ -674,28 +662,16 @@ Table_BattlePassLevel_t = {
         year = 2026
       },
       {
-        itemid = 10000509,
+        itemid = 10001027,
         month = 11,
         num = 1,
         year = 2026
       },
       {
-        itemid = 10000510,
+        itemid = 10001034,
         month = 12,
         num = 1,
         year = 2026
-      },
-      {
-        itemid = 10000511,
-        month = 1,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000512,
-        month = 2,
-        num = 1,
-        year = 2027
       }
     },
     {
@@ -1146,28 +1122,16 @@ Table_BattlePassLevel_t = {
         year = 2026
       },
       {
-        itemid = 10000518,
+        itemid = 10001028,
         month = 11,
         num = 1,
         year = 2026
       },
       {
-        itemid = 10000519,
+        itemid = 10001035,
         month = 12,
         num = 1,
         year = 2026
-      },
-      {
-        itemid = 10000520,
-        month = 1,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000521,
-        month = 2,
-        num = 1,
-        year = 2027
       }
     },
     {
@@ -1440,18 +1404,6 @@ Table_BattlePassLevel_t = {
         month = 12,
         num = 1,
         year = 2026
-      },
-      {
-        itemid = 3009221,
-        month = 1,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3011762,
-        month = 2,
-        num = 1,
-        year = 2027
       }
     },
     {

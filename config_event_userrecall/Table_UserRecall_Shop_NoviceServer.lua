@@ -1410,18 +1410,21 @@ Table_UserRecall_Shop = {
   },
   [1137] = {
     id = 1137,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-05-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[4],
     Good = Table_UserRecall_Shop_t.Good[116]
   },
   [1138] = {
     id = 1138,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-05-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[4],
     Good = Table_UserRecall_Shop_t.Good[117]
   },
   [1139] = {
     id = 1139,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-05-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[5],
     Good = Table_UserRecall_Shop_t.Good[118]
@@ -1449,18 +1452,21 @@ Table_UserRecall_Shop = {
   },
   [1143] = {
     id = 1143,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-06-01 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[1],
     Good = Table_UserRecall_Shop_t.Good[122]
   },
   [1144] = {
     id = 1144,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-06-01 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[123]
   },
   [1145] = {
     id = 1145,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-06-01 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[124]
@@ -1474,70 +1480,72 @@ Table_UserRecall_Shop = {
   },
   [1147] = {
     id = 1147,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-05-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[6],
     Good = Table_UserRecall_Shop_t.Good[126]
   },
   [1148] = {
     id = 1148,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-05-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[6],
     Good = Table_UserRecall_Shop_t.Good[127]
   },
   [1149] = {
     id = 1149,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-05-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[1],
     Good = Table_UserRecall_Shop_t.Good[128]
   },
   [1150] = {
     id = 1150,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-05-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[129]
   },
   [1151] = {
     id = 1151,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-05-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[130]
   },
   [1152] = {
     id = 1152,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-05-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[131]
   },
   [1153] = {
     id = 1153,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-05-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[132]
   },
   [1154] = {
     id = 1154,
+    StartTime = "2025-05-01 05:00:00",
     EndTime = "2025-05-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[133]
   },
   [1155] = {
     id = 1155,
-    StartTime = "2025-06-01 05:00:00",
-    EndTime = "2025-06-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[4],
     Good = Table_UserRecall_Shop_t.Good[134]
   },
   [1156] = {
     id = 1156,
-    StartTime = "2025-06-01 05:00:00",
-    EndTime = "2025-06-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[4],
     Good = Table_UserRecall_Shop_t.Good[135]
   },
   [1157] = {
     id = 1157,
-    StartTime = "2025-06-01 05:00:00",
-    EndTime = "2025-06-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[5],
     Good = Table_UserRecall_Shop_t.Good[136]
   },
@@ -1564,21 +1572,18 @@ Table_UserRecall_Shop = {
   },
   [1161] = {
     id = 1161,
-    StartTime = "2025-06-01 05:00:00",
     EndTime = "2025-07-01 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[1],
     Good = Table_UserRecall_Shop_t.Good[140]
   },
   [1162] = {
     id = 1162,
-    StartTime = "2025-06-01 05:00:00",
     EndTime = "2025-07-01 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[141]
   },
   [1163] = {
     id = 1163,
-    StartTime = "2025-06-01 05:00:00",
     EndTime = "2025-07-01 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[142]
@@ -1592,57 +1597,41 @@ Table_UserRecall_Shop = {
   },
   [1165] = {
     id = 1165,
-    StartTime = "2025-06-01 05:00:00",
-    EndTime = "2025-06-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[6],
     Good = Table_UserRecall_Shop_t.Good[144]
   },
   [1166] = {
     id = 1166,
-    StartTime = "2025-06-01 05:00:00",
-    EndTime = "2025-06-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[6],
     Good = Table_UserRecall_Shop_t.Good[145]
   },
   [1167] = {
     id = 1167,
-    StartTime = "2025-06-01 05:00:00",
-    EndTime = "2025-06-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[1],
     Good = Table_UserRecall_Shop_t.Good[146]
   },
   [1168] = {
     id = 1168,
-    StartTime = "2025-06-01 05:00:00",
-    EndTime = "2025-06-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[147]
   },
   [1169] = {
     id = 1169,
-    StartTime = "2025-06-01 05:00:00",
-    EndTime = "2025-06-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[148]
   },
   [1170] = {
     id = 1170,
-    StartTime = "2025-06-01 05:00:00",
-    EndTime = "2025-06-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[149]
   },
   [1171] = {
     id = 1171,
-    StartTime = "2025-06-01 05:00:00",
-    EndTime = "2025-06-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[150]
   },
   [1172] = {
     id = 1172,
-    StartTime = "2025-06-01 05:00:00",
-    EndTime = "2025-06-15 05:00:00",
     Cost = Table_UserRecall_Shop_t.Cost[2],
     Good = Table_UserRecall_Shop_t.Good[151]
   },
@@ -3218,6 +3207,7 @@ Table_UserRecall_Shop = {
     id = 10001,
     BuyLimit = 50,
     StartTime = "",
+    EndTime = "",
     Cost = Table_UserRecall_Shop_t.Cost[7],
     Discount = 50,
     Good = Table_UserRecall_Shop_t.Good[293]
@@ -3226,6 +3216,7 @@ Table_UserRecall_Shop = {
     id = 10002,
     BuyLimit = 2,
     StartTime = "",
+    EndTime = "",
     Cost = Table_UserRecall_Shop_t.Cost[8],
     Discount = 50,
     Good = Table_UserRecall_Shop_t.Good[294]
@@ -3234,6 +3225,7 @@ Table_UserRecall_Shop = {
     id = 10003,
     BuyLimit = 50,
     StartTime = "",
+    EndTime = "",
     Cost = Table_UserRecall_Shop_t.Cost[9],
     Discount = 50,
     Good = Table_UserRecall_Shop_t.Good[295]
@@ -3242,6 +3234,7 @@ Table_UserRecall_Shop = {
     id = 10004,
     BuyLimit = 20,
     StartTime = "",
+    EndTime = "",
     Cost = Table_UserRecall_Shop_t.Cost[8],
     Discount = 50,
     Good = Table_UserRecall_Shop_t.Good[296]
@@ -3250,6 +3243,7 @@ Table_UserRecall_Shop = {
     id = 10005,
     BuyLimit = 100,
     StartTime = "",
+    EndTime = "",
     Cost = Table_UserRecall_Shop_t.Cost[10],
     Discount = 50,
     Good = Table_UserRecall_Shop_t.Good[297]
@@ -3258,6 +3252,7 @@ Table_UserRecall_Shop = {
     id = 10006,
     BuyLimit = 100,
     StartTime = "",
+    EndTime = "",
     Cost = Table_UserRecall_Shop_t.Cost[11],
     Discount = 50,
     Good = Table_UserRecall_Shop_t.Good[298]
@@ -3266,6 +3261,7 @@ Table_UserRecall_Shop = {
     id = 10007,
     BuyLimit = 100,
     StartTime = "",
+    EndTime = "",
     Cost = Table_UserRecall_Shop_t.Cost[12],
     Discount = 50,
     Good = Table_UserRecall_Shop_t.Good[299]
@@ -3274,6 +3270,7 @@ Table_UserRecall_Shop = {
     id = 10008,
     BuyLimit = 100,
     StartTime = "",
+    EndTime = "",
     Cost = Table_UserRecall_Shop_t.Cost[13],
     Discount = 50,
     Good = Table_UserRecall_Shop_t.Good[300]
@@ -3282,6 +3279,7 @@ Table_UserRecall_Shop = {
     id = 10009,
     BuyLimit = 50,
     StartTime = "",
+    EndTime = "",
     Cost = Table_UserRecall_Shop_t.Cost[10],
     Discount = 50,
     Good = Table_UserRecall_Shop_t.Good[301]
@@ -3290,6 +3288,7 @@ Table_UserRecall_Shop = {
     id = 10010,
     BuyLimit = 10,
     StartTime = "",
+    EndTime = "",
     Cost = Table_UserRecall_Shop_t.Cost[14],
     Discount = 50,
     Good = Table_UserRecall_Shop_t.Good[302]
@@ -3298,6 +3297,7 @@ Table_UserRecall_Shop = {
     id = 10011,
     BuyLimit = 20,
     StartTime = "",
+    EndTime = "",
     Cost = Table_UserRecall_Shop_t.Cost[10],
     Discount = 50,
     Good = Table_UserRecall_Shop_t.Good[303]
@@ -3308,9 +3308,9 @@ local cell_mt = {
     BuyLimit = 1,
     Cost = _EmptyTable,
     Discount = 100,
-    EndTime = "",
+    EndTime = "2025-06-15 05:00:00",
     Good = _EmptyTable,
-    StartTime = "2025-05-01 05:00:00",
+    StartTime = "2025-06-01 05:00:00",
     id = 1022
   }
 }

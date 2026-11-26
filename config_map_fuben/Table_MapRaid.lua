@@ -2332,6 +2332,42 @@ Table_MapRaid = {
     ServerMergeTime = "2021-12-29 05:00:00",
     TFServerMergeTime = "2021-12-12 05:00:00"
   },
+  [7691] = {
+    id = 7691,
+    NameZh = "##47152135",
+    NameEn = "sc_jyfb_001",
+    Type = 92,
+    EndWait = 60,
+    Restrict = 2,
+    ShowAllNpc = 1,
+    ForbidAritfact = 1,
+    ServerMergeTime = "2022-01-01 05:00:00",
+    TFServerMergeTime = "2022-01-01 05:00:00"
+  },
+  [7692] = {
+    id = 7692,
+    NameZh = "##47152136",
+    NameEn = "sc_jyfb_001",
+    Type = 92,
+    EndWait = 60,
+    Restrict = 2,
+    ShowAllNpc = 1,
+    ForbidAritfact = 1,
+    ServerMergeTime = "2022-01-01 05:00:00",
+    TFServerMergeTime = "2022-01-01 05:00:00"
+  },
+  [7693] = {
+    id = 7693,
+    NameZh = "##47152137",
+    NameEn = "sc_jyfb_001",
+    Type = 92,
+    EndWait = 60,
+    Restrict = 2,
+    ShowAllNpc = 1,
+    ForbidAritfact = 1,
+    ServerMergeTime = "2022-01-01 05:00:00",
+    TFServerMergeTime = "2022-01-01 05:00:00"
+  },
   [9001] = {
     id = 9001,
     NameZh = "##123662",
@@ -12798,6 +12834,42 @@ Table_MapRaid = {
     ShowAllNpc = 1,
     ServerMergeTime = "2021-12-29 05:00:00",
     TFServerMergeTime = "2021-12-12 05:00:00"
+  },
+  [1000480] = {
+    id = 1000480,
+    NameZh = "##46378238",
+    NameEn = "sc_xhzd",
+    CameraAdj = 0,
+    EndWait = 0,
+    ShowAllNpc = 1
+  },
+  [1000481] = {
+    id = 1000481,
+    NameZh = "##46378239",
+    NameEn = "sc_xhzd",
+    CameraAdj = 0,
+    EndWait = 0,
+    ShowAllNpc = 1
+  },
+  [1000482] = {
+    id = 1000482,
+    NameZh = "##44722391",
+    NameEn = "sc_xhzd",
+    Type = 89,
+    CameraAdj = 0,
+    EndWait = 10,
+    Restrict = 2,
+    ShowAllNpc = 1
+  },
+  [1000483] = {
+    id = 1000483,
+    NameZh = "##44722391",
+    NameEn = "sc_xhzd",
+    Type = 89,
+    CameraAdj = 0,
+    EndWait = 10,
+    Restrict = 2,
+    ShowAllNpc = 1
   },
   [1001000] = {
     id = 1001000,

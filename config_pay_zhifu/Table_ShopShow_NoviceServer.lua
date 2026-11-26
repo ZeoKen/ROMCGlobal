@@ -210,6 +210,102 @@ Table_ShopShow = {
     IconScale = 1.1,
     IconTip = _EmptyTable
   },
+  [1027] = {
+    id = 1027,
+    Type = 1,
+    ShopID = 20001662,
+    Icon = "",
+    Picture = "item_8437",
+    IconScale = 1.1,
+    IconTip = _EmptyTable
+  },
+  [1028] = {
+    id = 1028,
+    Type = 1,
+    ShopID = 20001663,
+    Sort = 8,
+    Order = 12,
+    Icon = "",
+    Picture = "item_12984",
+    IconScale = 1.5,
+    IconTip = _EmptyTable
+  },
+  [1029] = {
+    id = 1029,
+    Type = 1,
+    ShopID = 20001668,
+    Icon = "",
+    Picture = "item_8416",
+    IconScale = 1.1,
+    IconTip = _EmptyTable
+  },
+  [1030] = {
+    id = 1030,
+    Type = 1,
+    ShopID = 3301017,
+    Icon = "",
+    Picture = "libao_5856",
+    IconTip = _EmptyTable
+  },
+  [1031] = {
+    id = 1031,
+    Type = 1,
+    ShopID = 3290086,
+    Icon = "",
+    Picture = "item_8473",
+    IconScale = 1.1,
+    IconTip = _EmptyTable
+  },
+  [1034] = {
+    id = 1034,
+    Type = 1,
+    ShopID = 3290081,
+    Order = 2,
+    Icon = "",
+    Picture = "item_3042405",
+    IconScale = 0.65,
+    IconTip = _EmptyTable
+  },
+  [1035] = {
+    id = 1035,
+    Type = 1,
+    ShopID = 3290082,
+    Order = 2,
+    Icon = "",
+    Picture = "item_3042406",
+    IconScale = 0.65,
+    IconTip = _EmptyTable
+  },
+  [1036] = {
+    id = 1036,
+    Type = 1,
+    ShopID = 3290083,
+    Order = 2,
+    Icon = "",
+    Picture = "item_3042407",
+    IconScale = 0.65,
+    IconTip = _EmptyTable
+  },
+  [1037] = {
+    id = 1037,
+    Type = 1,
+    ShopID = 3290084,
+    Order = 2,
+    Icon = "",
+    Picture = "item_3042408",
+    IconScale = 0.65,
+    IconTip = _EmptyTable
+  },
+  [1038] = {
+    id = 1038,
+    Type = 1,
+    ShopID = 3290085,
+    Order = 2,
+    Icon = "",
+    Picture = "item_3042409",
+    IconScale = 0.65,
+    IconTip = _EmptyTable
+  },
   [2001] = {
     id = 2001,
     Type = 2,
@@ -292,26 +388,6 @@ Table_ShopShow = {
     Picture = "",
     IconTip = _EmptyTable
   },
-  [1027] = {
-    id = 1027,
-    Type = 1,
-    ShopID = 20001662,
-    Icon = "",
-    Picture = "item_8437",
-    IconScale = 1.1,
-    IconTip = _EmptyTable
-  },
-  [1028] = {
-    id = 1028,
-    Type = 1,
-    ShopID = 20001663,
-    Sort = 8,
-    Order = 12,
-    Icon = "",
-    Picture = "item_12984",
-    IconScale = 1.5,
-    IconTip = _EmptyTable
-  },
   [3135001] = {
     id = 3135001,
     Type = 1,
@@ -322,19 +398,20 @@ Table_ShopShow = {
     IconTip = _EmptyTable,
     KeyShow = 1
   },
-  [1029] = {
-    id = 1029,
-    Type = 1,
-    ShopID = 20001668,
-    Icon = "",
-    Picture = "item_8416",
-    IconScale = 1.1,
-    IconTip = _EmptyTable
-  },
   [3135100] = {
     id = 3135100,
     Type = 1,
     ShopID = 3135100,
+    Order = 1,
+    Icon = "",
+    Picture = "",
+    IconTip = _EmptyTable,
+    KeyShow = 1
+  },
+  [3300631] = {
+    id = 3300631,
+    Type = 1,
+    ShopID = 3300631,
     Order = 1,
     Icon = "",
     Picture = "",

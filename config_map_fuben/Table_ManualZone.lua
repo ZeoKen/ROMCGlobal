@@ -457,6 +457,12 @@ Table_ManualZone = {
     GoodReward = 33284,
     PerfectReward = 33326
   },
+  [152] = {
+    id = 152,
+    MonsterNum = 3,
+    GoodReward = 33330,
+    PerfectReward = 33310
+  },
   [154] = {
     id = 154,
     MonsterNum = 9,
@@ -467,7 +473,7 @@ Table_ManualZone = {
   },
   [155] = {
     id = 155,
-    MonsterNum = 10,
+    MonsterNum = 16,
     NpcNum = 4,
     NpcReward = 33269,
     GoodReward = 33290,

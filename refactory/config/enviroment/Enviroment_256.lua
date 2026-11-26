@@ -106,7 +106,7 @@ local Enviroment_256 = {
   volumes = {},
   flare = {flareFadeSpeed = 1, flareStrength = 0.495999991893768},
   customskybox = {
-    texPath = "Enviroment/CustomSkyboxes/sky_pvp_001_d",
+    texPath = "",
     tint = {
       1,
       1,

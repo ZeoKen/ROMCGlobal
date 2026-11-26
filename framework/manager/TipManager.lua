@@ -63,12 +63,14 @@ autoImport("PlayerGuidTip")
 autoImport("FlexibleNormalTip")
 autoImport("SinglePropTypeTip")
 autoImport("NewPropTypeTip")
+autoImport("PetPropTypeTip")
 autoImport("AdventureAppendTip")
 autoImport("BalanceModeSkillTip")
 autoImport("AstralDestinyGraphPointTip")
 autoImport("RoguelikeSkillRemoveTip")
 autoImport("SnowCrownAttrTip")
 autoImport("InheritSkillMaxLevelPreviewTip")
+autoImport("SnowGemUpgradeTip")
 TipManager.Instance = nil
 
 function TipManager:ctor()
@@ -533,6 +535,13 @@ function TipManager:ShowNewPropTypeTip(data, stick, side, offset)
   return titleTip
 end
 
+function TipManager:ShowPetPropTypeTip(data, stick, side, offset)
+  side = side or NGUIUtil.AnchorSide.TopRight
+  offset = offset or {0, 0}
+  TipsView.Me():ShowStickTip(PetPropTypeTip, data, side, stick, offset, "PetPropTypeTip")
+  return TipsView.Me().currentTip
+end
+
 function TipManager:ShowPetAdventureHeadTip(data, stick, side, offset)
   side = side or NGUIUtil.AnchorSide.TopRight
   offset = offset or {0, 0}
@@ -766,5 +775,16 @@ function TipManager:ShowInheritSkillMaxLevelPreviewTip(data, stick, side, offset
   side = side or NGUIUtil.AnchorSide.TopLeft
   offset = offset or {0, 0}
   TipsView.Me():ShowStickTip(InheritSkillMaxLevelPreviewTip, data, side, stick, offset, "InheritSkillMaxLevelPreviewTip")
+  return TipsView.Me().currentTip
+end
+
+function TipManager:ShowSnowGemUpgradeTip(data, stick, side, offset)
+  if stick then
+    side = side or NGUIUtil.AnchorSide.Right
+    offset = offset or {0, 0}
+    TipsView.Me():ShowStickTip(SnowGemUpgradeTip, data, side, stick, offset, "SnowGemUpgradeTip")
+  else
+    TipsView.Me():ShowTip(SnowGemUpgradeTip, data, "SnowGemUpgradeTip")
+  end
   return TipsView.Me().currentTip
 end

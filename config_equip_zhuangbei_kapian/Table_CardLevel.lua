@@ -90,6 +90,7 @@ Table_CardLevel_t = {
     {606740, 606741},
     {606750, 606751},
     {607450, 607451},
+    {610250},
     {606210, 606211},
     {606220, 606221},
     {606230, 606231},
@@ -105,6 +106,10 @@ Table_CardLevel_t = {
     {602750, 602751},
     {607240, 607241},
     {607250, 607251},
+    {610240},
+    {610230},
+    {610220},
+    {610210},
     {608310, 59381},
     {608320, 59381},
     {607110, 607111},
@@ -118,6 +123,11 @@ Table_CardLevel_t = {
     {601630, 601631},
     {601640, 601641},
     {601650, 601651},
+    {
+      608550,
+      59560,
+      59562
+    },
     {
       600910,
       600911,
@@ -143,6 +153,24 @@ Table_CardLevel_t = {
       600951,
       600952
     },
+    {
+      610140,
+      59070,
+      59071,
+      59072
+    },
+    {
+      610130,
+      59070,
+      59071,
+      59072
+    },
+    {
+      610120,
+      59070,
+      59071,
+      59072
+    },
     {609110, 59290},
     {607910, 607911},
     {606010},
@@ -151,6 +179,37 @@ Table_CardLevel_t = {
     {606040},
     {606050},
     {607050, 607051},
+    {
+      610110,
+      59070,
+      59071,
+      59072
+    },
+    {
+      610050,
+      59800,
+      59801
+    },
+    {
+      610040,
+      59800,
+      59801
+    },
+    {
+      610030,
+      59800,
+      59801
+    },
+    {
+      610020,
+      59800,
+      59801
+    },
+    {
+      610010,
+      59800,
+      59801
+    },
     {600460},
     {600470},
     {600480},
@@ -160,6 +219,9 @@ Table_CardLevel_t = {
     {605430},
     {605440},
     {605450},
+    {609950, 59630},
+    {609940, 59630},
+    {609930, 59630},
     {
       604310,
       54911,
@@ -195,6 +257,8 @@ Table_CardLevel_t = {
     {605830},
     {605840},
     {605850},
+    {604130},
+    {604140},
     {609850, 57530},
     {609840, 57530},
     {
@@ -440,9 +504,10 @@ Table_CardLevel_t = {
     {608740, 608711},
     {608750, 608711},
     {
-      608550,
-      59560,
-      59562
+      610150,
+      59070,
+      59071,
+      59072
     },
     {
       608540,
@@ -767,8 +832,8 @@ Table_CardLevel_t = {
     {604620, 52871},
     {604610, 52871},
     {604150},
-    {604140},
-    {604130},
+    {609910, 59630},
+    {609920, 59630},
     {604910, 54760},
     {604920, 54760},
     {604930, 54760},
@@ -937,6 +1002,10 @@ Table_CardLevel_t = {
       {52838, 7}
     },
     {
+      {23076, 1},
+      {52838, 7}
+    },
+    {
       {24621, 1},
       {52838, 6}
     },
@@ -961,6 +1030,10 @@ Table_CardLevel_t = {
       {52838, 7}
     },
     {
+      {23076, 1},
+      {52838, 6}
+    },
+    {
       {24611, 1},
       {52838, 6}
     },
@@ -977,12 +1050,20 @@ Table_CardLevel_t = {
       {52838, 7}
     },
     {
+      {23467, 1},
+      {52838, 7}
+    },
+    {
       {24606, 1},
       {52838, 6}
     },
     {
       {24606, 1},
       {52838, 7}
+    },
+    {
+      {23371, 1},
+      {52838, 6}
     },
     {
       {23022, 1},
@@ -995,6 +1076,14 @@ Table_CardLevel_t = {
     {
       {24601, 1},
       {52838, 7}
+    },
+    {
+      {23077, 1},
+      {52838, 7}
+    },
+    {
+      {23077, 1},
+      {52838, 6}
     },
     {
       {23063, 1},
@@ -1017,6 +1106,14 @@ Table_CardLevel_t = {
       {52838, 7}
     },
     {
+      {23475, 1},
+      {52838, 7}
+    },
+    {
+      {23475, 1},
+      {52838, 6}
+    },
+    {
       {24637, 1},
       {52838, 6}
     },
@@ -1039,6 +1136,10 @@ Table_CardLevel_t = {
     {
       {23053, 1},
       {52838, 7}
+    },
+    {
+      {23029, 1},
+      {52838, 6}
     },
     {
       {23069, 1},
@@ -1241,7 +1342,7 @@ Table_CardLevel_t = {
       {52838, 7}
     },
     {
-      {23467, 1},
+      {23371, 1},
       {52838, 7}
     },
     {
@@ -1505,10 +1606,6 @@ Table_CardLevel_t = {
       {52838, 7}
     },
     {
-      {23029, 1},
-      {52838, 6}
-    },
-    {
       {23056, 1},
       {52838, 6}
     },
@@ -1558,7 +1655,7 @@ Table_CardLevel = {
   [2204701] = {
     id = 2204701,
     CardID = 22047,
-    BuffEffect = Table_CardLevel_t.BuffEffect[225],
+    BuffEffect = Table_CardLevel_t.BuffEffect[245],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##45927233"
@@ -1567,7 +1664,7 @@ Table_CardLevel = {
     id = 2204702,
     CardID = 22047,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[224],
+    BuffEffect = Table_CardLevel_t.BuffEffect[244],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##45927234"
   },
@@ -1575,7 +1672,7 @@ Table_CardLevel = {
     id = 2204703,
     CardID = 22047,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[223],
+    BuffEffect = Table_CardLevel_t.BuffEffect[243],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##45927235"
@@ -1584,8 +1681,8 @@ Table_CardLevel = {
     id = 2204704,
     CardID = 22047,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[222],
-    Cost = Table_CardLevel_t.Cost[99],
+    BuffEffect = Table_CardLevel_t.BuffEffect[242],
+    Cost = Table_CardLevel_t.Cost[108],
     ZenyConvert = 450000000,
     Desc = "##45927236"
   },
@@ -1593,8 +1690,8 @@ Table_CardLevel = {
     id = 2204705,
     CardID = 22047,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[200],
-    Cost = Table_CardLevel_t.Cost[87],
+    BuffEffect = Table_CardLevel_t.BuffEffect[220],
+    Cost = Table_CardLevel_t.Cost[96],
     ZenyConvert = 625000000,
     Desc = "##45927237"
   },
@@ -1644,7 +1741,7 @@ Table_CardLevel = {
   [2300201] = {
     id = 2300201,
     CardID = 23002,
-    BuffEffect = Table_CardLevel_t.BuffEffect[139],
+    BuffEffect = Table_CardLevel_t.BuffEffect[159],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44701978"
@@ -1653,7 +1750,7 @@ Table_CardLevel = {
     id = 2300202,
     CardID = 23002,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[140],
+    BuffEffect = Table_CardLevel_t.BuffEffect[160],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44701979"
   },
@@ -1661,7 +1758,7 @@ Table_CardLevel = {
     id = 2300203,
     CardID = 23002,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[141],
+    BuffEffect = Table_CardLevel_t.BuffEffect[161],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44701980"
@@ -1670,8 +1767,8 @@ Table_CardLevel = {
     id = 2300204,
     CardID = 23002,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[142],
-    Cost = Table_CardLevel_t.Cost[62],
+    BuffEffect = Table_CardLevel_t.BuffEffect[162],
+    Cost = Table_CardLevel_t.Cost[71],
     ZenyConvert = 450000000,
     Desc = "##44701981"
   },
@@ -1679,15 +1776,15 @@ Table_CardLevel = {
     id = 2300205,
     CardID = 23002,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[143],
-    Cost = Table_CardLevel_t.Cost[63],
+    BuffEffect = Table_CardLevel_t.BuffEffect[163],
+    Cost = Table_CardLevel_t.Cost[72],
     ZenyConvert = 625000000,
     Desc = "##44701982"
   },
   [2301401] = {
     id = 2301401,
     CardID = 23014,
-    BuffEffect = Table_CardLevel_t.BuffEffect[317],
+    BuffEffect = Table_CardLevel_t.BuffEffect[337],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44697161"
@@ -1696,7 +1793,7 @@ Table_CardLevel = {
     id = 2301402,
     CardID = 23014,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[318],
+    BuffEffect = Table_CardLevel_t.BuffEffect[338],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44697162"
   },
@@ -1704,7 +1801,7 @@ Table_CardLevel = {
     id = 2301403,
     CardID = 23014,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[319],
+    BuffEffect = Table_CardLevel_t.BuffEffect[339],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44697163"
@@ -1713,8 +1810,8 @@ Table_CardLevel = {
     id = 2301404,
     CardID = 23014,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[320],
-    Cost = Table_CardLevel_t.Cost[137],
+    BuffEffect = Table_CardLevel_t.BuffEffect[340],
+    Cost = Table_CardLevel_t.Cost[146],
     ZenyConvert = 450000000,
     Desc = "##44697164"
   },
@@ -1722,8 +1819,8 @@ Table_CardLevel = {
     id = 2301405,
     CardID = 23014,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[321],
-    Cost = Table_CardLevel_t.Cost[138],
+    BuffEffect = Table_CardLevel_t.BuffEffect[341],
+    Cost = Table_CardLevel_t.Cost[147],
     ZenyConvert = 625000000,
     Desc = "##44182025"
   },
@@ -1739,7 +1836,7 @@ Table_CardLevel = {
     id = 2302102,
     CardID = 23021,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[447],
+    BuffEffect = Table_CardLevel_t.BuffEffect[467],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705783"
   },
@@ -1747,7 +1844,7 @@ Table_CardLevel = {
     id = 2302103,
     CardID = 23021,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[446],
+    BuffEffect = Table_CardLevel_t.BuffEffect[466],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705784"
@@ -1756,8 +1853,8 @@ Table_CardLevel = {
     id = 2302104,
     CardID = 23021,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[439],
-    Cost = Table_CardLevel_t.Cost[182],
+    BuffEffect = Table_CardLevel_t.BuffEffect[459],
+    Cost = Table_CardLevel_t.Cost[190],
     ZenyConvert = 450000000,
     Desc = "##44705785"
   },
@@ -1765,15 +1862,15 @@ Table_CardLevel = {
     id = 2302105,
     CardID = 23021,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[438],
-    Cost = Table_CardLevel_t.Cost[181],
+    BuffEffect = Table_CardLevel_t.BuffEffect[458],
+    Cost = Table_CardLevel_t.Cost[189],
     ZenyConvert = 625000000,
     Desc = "##44705786"
   },
   [2302201] = {
     id = 2302201,
     CardID = 23022,
-    BuffEffect = Table_CardLevel_t.BuffEffect[106],
+    BuffEffect = Table_CardLevel_t.BuffEffect[115],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44712839"
@@ -1782,7 +1879,7 @@ Table_CardLevel = {
     id = 2302202,
     CardID = 23022,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[107],
+    BuffEffect = Table_CardLevel_t.BuffEffect[116],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44712840"
   },
@@ -1790,7 +1887,7 @@ Table_CardLevel = {
     id = 2302203,
     CardID = 23022,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[108],
+    BuffEffect = Table_CardLevel_t.BuffEffect[117],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44712841"
@@ -1799,8 +1896,8 @@ Table_CardLevel = {
     id = 2302204,
     CardID = 23022,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[109],
-    Cost = Table_CardLevel_t.Cost[46],
+    BuffEffect = Table_CardLevel_t.BuffEffect[118],
+    Cost = Table_CardLevel_t.Cost[50],
     ZenyConvert = 450000000,
     Desc = "##44712842"
   },
@@ -1808,15 +1905,15 @@ Table_CardLevel = {
     id = 2302205,
     CardID = 23022,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[110],
-    Cost = Table_CardLevel_t.Cost[47],
+    BuffEffect = Table_CardLevel_t.BuffEffect[119],
+    Cost = Table_CardLevel_t.Cost[51],
     ZenyConvert = 625000000,
     Desc = "##44712843"
   },
   [2302401] = {
     id = 2302401,
     CardID = 23024,
-    BuffEffect = Table_CardLevel_t.BuffEffect[295],
+    BuffEffect = Table_CardLevel_t.BuffEffect[315],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705787"
@@ -1825,7 +1922,7 @@ Table_CardLevel = {
     id = 2302402,
     CardID = 23024,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[437],
+    BuffEffect = Table_CardLevel_t.BuffEffect[457],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705788"
   },
@@ -1833,7 +1930,7 @@ Table_CardLevel = {
     id = 2302403,
     CardID = 23024,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[436],
+    BuffEffect = Table_CardLevel_t.BuffEffect[456],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705789"
@@ -1842,8 +1939,8 @@ Table_CardLevel = {
     id = 2302404,
     CardID = 23024,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[435],
-    Cost = Table_CardLevel_t.Cost[180],
+    BuffEffect = Table_CardLevel_t.BuffEffect[455],
+    Cost = Table_CardLevel_t.Cost[188],
     ZenyConvert = 450000000,
     Desc = "##44705790"
   },
@@ -1851,15 +1948,15 @@ Table_CardLevel = {
     id = 2302405,
     CardID = 23024,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[434],
-    Cost = Table_CardLevel_t.Cost[179],
+    BuffEffect = Table_CardLevel_t.BuffEffect[454],
+    Cost = Table_CardLevel_t.Cost[187],
     ZenyConvert = 625000000,
     Desc = "##44705791"
   },
   [2302801] = {
     id = 2302801,
     CardID = 23028,
-    BuffEffect = Table_CardLevel_t.BuffEffect[184],
+    BuffEffect = Table_CardLevel_t.BuffEffect[204],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705792"
@@ -1868,7 +1965,7 @@ Table_CardLevel = {
     id = 2302802,
     CardID = 23028,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[414],
+    BuffEffect = Table_CardLevel_t.BuffEffect[434],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705793"
   },
@@ -1876,7 +1973,7 @@ Table_CardLevel = {
     id = 2302803,
     CardID = 23028,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[415],
+    BuffEffect = Table_CardLevel_t.BuffEffect[435],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705794"
@@ -1885,8 +1982,8 @@ Table_CardLevel = {
     id = 2302804,
     CardID = 23028,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[201],
-    Cost = Table_CardLevel_t.Cost[88],
+    BuffEffect = Table_CardLevel_t.BuffEffect[221],
+    Cost = Table_CardLevel_t.Cost[97],
     ZenyConvert = 450000000,
     Desc = "##44705795"
   },
@@ -1894,15 +1991,15 @@ Table_CardLevel = {
     id = 2302805,
     CardID = 23028,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[194],
-    Cost = Table_CardLevel_t.Cost[84],
+    BuffEffect = Table_CardLevel_t.BuffEffect[214],
+    Cost = Table_CardLevel_t.Cost[93],
     ZenyConvert = 625000000,
     Desc = "##44705796"
   },
   [2302901] = {
     id = 2302901,
     CardID = 23029,
-    BuffEffect = Table_CardLevel_t.BuffEffect[284],
+    BuffEffect = Table_CardLevel_t.BuffEffect[304],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705797"
@@ -1911,7 +2008,7 @@ Table_CardLevel = {
     id = 2302902,
     CardID = 23029,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[193],
+    BuffEffect = Table_CardLevel_t.BuffEffect[213],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705798"
   },
@@ -1919,7 +2016,7 @@ Table_CardLevel = {
     id = 2302903,
     CardID = 23029,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[428],
+    BuffEffect = Table_CardLevel_t.BuffEffect[154],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705799"
@@ -1928,8 +2025,8 @@ Table_CardLevel = {
     id = 2302904,
     CardID = 23029,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[427],
-    Cost = Table_CardLevel_t.Cost[176],
+    BuffEffect = Table_CardLevel_t.BuffEffect[155],
+    Cost = Table_CardLevel_t.Cost[68],
     ZenyConvert = 450000000,
     Desc = "##44705800"
   },
@@ -1937,15 +2034,15 @@ Table_CardLevel = {
     id = 2302905,
     CardID = 23029,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[426],
-    Cost = Table_CardLevel_t.Cost[175],
+    BuffEffect = Table_CardLevel_t.BuffEffect[446],
+    Cost = Table_CardLevel_t.Cost[184],
     ZenyConvert = 625000000,
     Desc = "##44705801"
   },
   [2303201] = {
     id = 2303201,
     CardID = 23032,
-    BuffEffect = Table_CardLevel_t.BuffEffect[88],
+    BuffEffect = Table_CardLevel_t.BuffEffect[93],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44718973"
@@ -1954,7 +2051,7 @@ Table_CardLevel = {
     id = 2303202,
     CardID = 23032,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[331],
+    BuffEffect = Table_CardLevel_t.BuffEffect[351],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44718974"
   },
@@ -1962,7 +2059,7 @@ Table_CardLevel = {
     id = 2303203,
     CardID = 23032,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[330],
+    BuffEffect = Table_CardLevel_t.BuffEffect[350],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44718975"
@@ -1971,8 +2068,8 @@ Table_CardLevel = {
     id = 2303204,
     CardID = 23032,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[329],
-    Cost = Table_CardLevel_t.Cost[140],
+    BuffEffect = Table_CardLevel_t.BuffEffect[349],
+    Cost = Table_CardLevel_t.Cost[149],
     ZenyConvert = 450000000,
     Desc = "##44718976"
   },
@@ -1980,15 +2077,15 @@ Table_CardLevel = {
     id = 2303205,
     CardID = 23032,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[328],
-    Cost = Table_CardLevel_t.Cost[139],
+    BuffEffect = Table_CardLevel_t.BuffEffect[348],
+    Cost = Table_CardLevel_t.Cost[148],
     ZenyConvert = 625000000,
     Desc = "##44718977"
   },
   [2303501] = {
     id = 2303501,
     CardID = 23035,
-    BuffEffect = Table_CardLevel_t.BuffEffect[373],
+    BuffEffect = Table_CardLevel_t.BuffEffect[393],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705817"
@@ -1997,7 +2094,7 @@ Table_CardLevel = {
     id = 2303502,
     CardID = 23035,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[374],
+    BuffEffect = Table_CardLevel_t.BuffEffect[394],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705818"
   },
@@ -2005,7 +2102,7 @@ Table_CardLevel = {
     id = 2303503,
     CardID = 23035,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[375],
+    BuffEffect = Table_CardLevel_t.BuffEffect[395],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705819"
@@ -2014,8 +2111,8 @@ Table_CardLevel = {
     id = 2303504,
     CardID = 23035,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[376],
-    Cost = Table_CardLevel_t.Cost[157],
+    BuffEffect = Table_CardLevel_t.BuffEffect[396],
+    Cost = Table_CardLevel_t.Cost[166],
     ZenyConvert = 450000000,
     Desc = "##44705820"
   },
@@ -2023,15 +2120,15 @@ Table_CardLevel = {
     id = 2303505,
     CardID = 23035,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[377],
-    Cost = Table_CardLevel_t.Cost[158],
+    BuffEffect = Table_CardLevel_t.BuffEffect[397],
+    Cost = Table_CardLevel_t.Cost[167],
     ZenyConvert = 625000000,
     Desc = "##44705821"
   },
   [2303601] = {
     id = 2303601,
     CardID = 23036,
-    BuffEffect = Table_CardLevel_t.BuffEffect[425],
+    BuffEffect = Table_CardLevel_t.BuffEffect[445],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705822"
@@ -2040,7 +2137,7 @@ Table_CardLevel = {
     id = 2303602,
     CardID = 23036,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[424],
+    BuffEffect = Table_CardLevel_t.BuffEffect[444],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705823"
   },
@@ -2048,7 +2145,7 @@ Table_CardLevel = {
     id = 2303603,
     CardID = 23036,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[423],
+    BuffEffect = Table_CardLevel_t.BuffEffect[443],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705824"
@@ -2074,7 +2171,7 @@ Table_CardLevel = {
   [2303701] = {
     id = 2303701,
     CardID = 23037,
-    BuffEffect = Table_CardLevel_t.BuffEffect[327],
+    BuffEffect = Table_CardLevel_t.BuffEffect[347],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44718978"
@@ -2083,7 +2180,7 @@ Table_CardLevel = {
     id = 2303702,
     CardID = 23037,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[326],
+    BuffEffect = Table_CardLevel_t.BuffEffect[346],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44718979"
   },
@@ -2091,16 +2188,17 @@ Table_CardLevel = {
     id = 2303703,
     CardID = 23037,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[325],
+    BuffEffect = Table_CardLevel_t.BuffEffect[345],
     Cost = Table_CardLevel_t.Cost[5],
-    ZenyConvert = 300000000
+    ZenyConvert = 300000000,
+    Desc = "##44718980"
   },
   [2303704] = {
     id = 2303704,
     CardID = 23037,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[84],
-    Cost = Table_CardLevel_t.Cost[38],
+    BuffEffect = Table_CardLevel_t.BuffEffect[85],
+    Cost = Table_CardLevel_t.Cost[39],
     ZenyConvert = 450000000,
     Desc = "##44718981"
   },
@@ -2108,15 +2206,15 @@ Table_CardLevel = {
     id = 2303705,
     CardID = 23037,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[85],
-    Cost = Table_CardLevel_t.Cost[39],
+    BuffEffect = Table_CardLevel_t.BuffEffect[86],
+    Cost = Table_CardLevel_t.Cost[40],
     ZenyConvert = 625000000,
     Desc = "##44718982"
   },
   [2303801] = {
     id = 2303801,
     CardID = 23038,
-    BuffEffect = Table_CardLevel_t.BuffEffect[162],
+    BuffEffect = Table_CardLevel_t.BuffEffect[182],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44718983"
@@ -2125,7 +2223,7 @@ Table_CardLevel = {
     id = 2303802,
     CardID = 23038,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[163],
+    BuffEffect = Table_CardLevel_t.BuffEffect[183],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44718984"
   },
@@ -2133,7 +2231,7 @@ Table_CardLevel = {
     id = 2303803,
     CardID = 23038,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[164],
+    BuffEffect = Table_CardLevel_t.BuffEffect[184],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44718985"
@@ -2142,8 +2240,8 @@ Table_CardLevel = {
     id = 2303804,
     CardID = 23038,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[165],
-    Cost = Table_CardLevel_t.Cost[72],
+    BuffEffect = Table_CardLevel_t.BuffEffect[185],
+    Cost = Table_CardLevel_t.Cost[81],
     ZenyConvert = 450000000,
     Desc = "##44718986"
   },
@@ -2151,15 +2249,15 @@ Table_CardLevel = {
     id = 2303805,
     CardID = 23038,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[166],
-    Cost = Table_CardLevel_t.Cost[73],
+    BuffEffect = Table_CardLevel_t.BuffEffect[186],
+    Cost = Table_CardLevel_t.Cost[82],
     ZenyConvert = 625000000,
     Desc = "##44718987"
   },
   [2304001] = {
     id = 2304001,
     CardID = 23040,
-    BuffEffect = Table_CardLevel_t.BuffEffect[362],
+    BuffEffect = Table_CardLevel_t.BuffEffect[382],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44712844"
@@ -2168,7 +2266,7 @@ Table_CardLevel = {
     id = 2304002,
     CardID = 23040,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[382],
+    BuffEffect = Table_CardLevel_t.BuffEffect[402],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44712845"
   },
@@ -2176,7 +2274,7 @@ Table_CardLevel = {
     id = 2304003,
     CardID = 23040,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[381],
+    BuffEffect = Table_CardLevel_t.BuffEffect[401],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44712846"
@@ -2185,8 +2283,8 @@ Table_CardLevel = {
     id = 2304004,
     CardID = 23040,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[380],
-    Cost = Table_CardLevel_t.Cost[161],
+    BuffEffect = Table_CardLevel_t.BuffEffect[400],
+    Cost = Table_CardLevel_t.Cost[170],
     ZenyConvert = 450000000,
     Desc = "##44712847"
   },
@@ -2194,8 +2292,8 @@ Table_CardLevel = {
     id = 2304005,
     CardID = 23040,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[379],
-    Cost = Table_CardLevel_t.Cost[160],
+    BuffEffect = Table_CardLevel_t.BuffEffect[399],
+    Cost = Table_CardLevel_t.Cost[169],
     ZenyConvert = 625000000,
     Desc = "##44712848"
   },
@@ -2211,7 +2309,7 @@ Table_CardLevel = {
     id = 2304102,
     CardID = 23041,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[422],
+    BuffEffect = Table_CardLevel_t.BuffEffect[442],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705828"
   },
@@ -2219,7 +2317,7 @@ Table_CardLevel = {
     id = 2304103,
     CardID = 23041,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[421],
+    BuffEffect = Table_CardLevel_t.BuffEffect[441],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705829"
@@ -2228,8 +2326,8 @@ Table_CardLevel = {
     id = 2304104,
     CardID = 23041,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[191],
-    Cost = Table_CardLevel_t.Cost[82],
+    BuffEffect = Table_CardLevel_t.BuffEffect[211],
+    Cost = Table_CardLevel_t.Cost[91],
     ZenyConvert = 450000000,
     Desc = "##44705830"
   },
@@ -2237,15 +2335,15 @@ Table_CardLevel = {
     id = 2304105,
     CardID = 23041,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[192],
-    Cost = Table_CardLevel_t.Cost[83],
+    BuffEffect = Table_CardLevel_t.BuffEffect[212],
+    Cost = Table_CardLevel_t.Cost[92],
     ZenyConvert = 625000000,
     Desc = "##44705831"
   },
   [2304701] = {
     id = 2304701,
     CardID = 23047,
-    BuffEffect = Table_CardLevel_t.BuffEffect[324],
+    BuffEffect = Table_CardLevel_t.BuffEffect[344],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44718988"
@@ -2254,7 +2352,7 @@ Table_CardLevel = {
     id = 2304702,
     CardID = 23047,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[323],
+    BuffEffect = Table_CardLevel_t.BuffEffect[343],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44718989"
   },
@@ -2262,7 +2360,7 @@ Table_CardLevel = {
     id = 2304703,
     CardID = 23047,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[322],
+    BuffEffect = Table_CardLevel_t.BuffEffect[342],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44718990"
@@ -2271,8 +2369,8 @@ Table_CardLevel = {
     id = 2304704,
     CardID = 23047,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[206],
-    Cost = Table_CardLevel_t.Cost[91],
+    BuffEffect = Table_CardLevel_t.BuffEffect[226],
+    Cost = Table_CardLevel_t.Cost[100],
     ZenyConvert = 450000000,
     Desc = "##44718991"
   },
@@ -2288,7 +2386,7 @@ Table_CardLevel = {
   [2304801] = {
     id = 2304801,
     CardID = 23048,
-    BuffEffect = Table_CardLevel_t.BuffEffect[413],
+    BuffEffect = Table_CardLevel_t.BuffEffect[433],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705842"
@@ -2297,7 +2395,7 @@ Table_CardLevel = {
     id = 2304802,
     CardID = 23048,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[412],
+    BuffEffect = Table_CardLevel_t.BuffEffect[432],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705843"
   },
@@ -2305,7 +2403,7 @@ Table_CardLevel = {
     id = 2304803,
     CardID = 23048,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[404],
+    BuffEffect = Table_CardLevel_t.BuffEffect[424],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705844"
@@ -2314,8 +2412,8 @@ Table_CardLevel = {
     id = 2304804,
     CardID = 23048,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[405],
-    Cost = Table_CardLevel_t.Cost[169],
+    BuffEffect = Table_CardLevel_t.BuffEffect[425],
+    Cost = Table_CardLevel_t.Cost[178],
     ZenyConvert = 450000000,
     Desc = "##44705845"
   },
@@ -2323,15 +2421,15 @@ Table_CardLevel = {
     id = 2304805,
     CardID = 23048,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[406],
-    Cost = Table_CardLevel_t.Cost[170],
+    BuffEffect = Table_CardLevel_t.BuffEffect[426],
+    Cost = Table_CardLevel_t.Cost[179],
     ZenyConvert = 625000000,
     Desc = "##44705846"
   },
   [2304901] = {
     id = 2304901,
     CardID = 23049,
-    BuffEffect = Table_CardLevel_t.BuffEffect[240],
+    BuffEffect = Table_CardLevel_t.BuffEffect[260],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44718993"
@@ -2340,7 +2438,7 @@ Table_CardLevel = {
     id = 2304902,
     CardID = 23049,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[315],
+    BuffEffect = Table_CardLevel_t.BuffEffect[335],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44718994"
   },
@@ -2348,7 +2446,7 @@ Table_CardLevel = {
     id = 2304903,
     CardID = 23049,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[314],
+    BuffEffect = Table_CardLevel_t.BuffEffect[334],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44718995"
@@ -2357,8 +2455,8 @@ Table_CardLevel = {
     id = 2304904,
     CardID = 23049,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[313],
-    Cost = Table_CardLevel_t.Cost[136],
+    BuffEffect = Table_CardLevel_t.BuffEffect[333],
+    Cost = Table_CardLevel_t.Cost[145],
     ZenyConvert = 450000000,
     Desc = "##44718996"
   },
@@ -2366,15 +2464,15 @@ Table_CardLevel = {
     id = 2304905,
     CardID = 23049,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[312],
-    Cost = Table_CardLevel_t.Cost[135],
+    BuffEffect = Table_CardLevel_t.BuffEffect[332],
+    Cost = Table_CardLevel_t.Cost[144],
     ZenyConvert = 625000000,
     Desc = "##44718997"
   },
   [2305001] = {
     id = 2305001,
     CardID = 23050,
-    BuffEffect = Table_CardLevel_t.BuffEffect[340],
+    BuffEffect = Table_CardLevel_t.BuffEffect[360],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44718998"
@@ -2383,7 +2481,7 @@ Table_CardLevel = {
     id = 2305002,
     CardID = 23050,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[305],
+    BuffEffect = Table_CardLevel_t.BuffEffect[325],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44718999"
   },
@@ -2391,7 +2489,7 @@ Table_CardLevel = {
     id = 2305003,
     CardID = 23050,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[304],
+    BuffEffect = Table_CardLevel_t.BuffEffect[324],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44719000"
@@ -2400,8 +2498,8 @@ Table_CardLevel = {
     id = 2305004,
     CardID = 23050,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[303],
-    Cost = Table_CardLevel_t.Cost[132],
+    BuffEffect = Table_CardLevel_t.BuffEffect[323],
+    Cost = Table_CardLevel_t.Cost[141],
     ZenyConvert = 450000000,
     Desc = "##44719001"
   },
@@ -2409,15 +2507,15 @@ Table_CardLevel = {
     id = 2305005,
     CardID = 23050,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[302],
-    Cost = Table_CardLevel_t.Cost[131],
+    BuffEffect = Table_CardLevel_t.BuffEffect[322],
+    Cost = Table_CardLevel_t.Cost[140],
     ZenyConvert = 625000000,
     Desc = "##44719002"
   },
   [2305101] = {
     id = 2305101,
     CardID = 23051,
-    BuffEffect = Table_CardLevel_t.BuffEffect[440],
+    BuffEffect = Table_CardLevel_t.BuffEffect[460],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44697783"
@@ -2426,7 +2524,7 @@ Table_CardLevel = {
     id = 2305102,
     CardID = 23051,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[441],
+    BuffEffect = Table_CardLevel_t.BuffEffect[461],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44697784"
   },
@@ -2434,7 +2532,7 @@ Table_CardLevel = {
     id = 2305103,
     CardID = 23051,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[442],
+    BuffEffect = Table_CardLevel_t.BuffEffect[462],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44697785"
@@ -2443,8 +2541,8 @@ Table_CardLevel = {
     id = 2305104,
     CardID = 23051,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[443],
-    Cost = Table_CardLevel_t.Cost[183],
+    BuffEffect = Table_CardLevel_t.BuffEffect[463],
+    Cost = Table_CardLevel_t.Cost[191],
     ZenyConvert = 450000000,
     Desc = "##44697786"
   },
@@ -2452,8 +2550,8 @@ Table_CardLevel = {
     id = 2305105,
     CardID = 23051,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[444],
-    Cost = Table_CardLevel_t.Cost[184],
+    BuffEffect = Table_CardLevel_t.BuffEffect[464],
+    Cost = Table_CardLevel_t.Cost[192],
     ZenyConvert = 625000000,
     Desc = "##44697787"
   },
@@ -2503,7 +2601,7 @@ Table_CardLevel = {
   [2305301] = {
     id = 2305301,
     CardID = 23053,
-    BuffEffect = Table_CardLevel_t.BuffEffect[131],
+    BuffEffect = Table_CardLevel_t.BuffEffect[149],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44712829"
@@ -2512,7 +2610,7 @@ Table_CardLevel = {
     id = 2305302,
     CardID = 23053,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[132],
+    BuffEffect = Table_CardLevel_t.BuffEffect[150],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44712830"
   },
@@ -2520,7 +2618,7 @@ Table_CardLevel = {
     id = 2305303,
     CardID = 23053,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[133],
+    BuffEffect = Table_CardLevel_t.BuffEffect[151],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44712831"
@@ -2529,8 +2627,8 @@ Table_CardLevel = {
     id = 2305304,
     CardID = 23053,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[134],
-    Cost = Table_CardLevel_t.Cost[58],
+    BuffEffect = Table_CardLevel_t.BuffEffect[152],
+    Cost = Table_CardLevel_t.Cost[66],
     ZenyConvert = 450000000,
     Desc = "##44712832"
   },
@@ -2538,15 +2636,15 @@ Table_CardLevel = {
     id = 2305305,
     CardID = 23053,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[135],
-    Cost = Table_CardLevel_t.Cost[59],
+    BuffEffect = Table_CardLevel_t.BuffEffect[153],
+    Cost = Table_CardLevel_t.Cost[67],
     ZenyConvert = 625000000,
     Desc = "##44712833"
   },
   [2305601] = {
     id = 2305601,
     CardID = 23056,
-    BuffEffect = Table_CardLevel_t.BuffEffect[429],
+    BuffEffect = Table_CardLevel_t.BuffEffect[449],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705837"
@@ -2555,7 +2653,7 @@ Table_CardLevel = {
     id = 2305602,
     CardID = 23056,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[430],
+    BuffEffect = Table_CardLevel_t.BuffEffect[450],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705838"
   },
@@ -2563,7 +2661,7 @@ Table_CardLevel = {
     id = 2305603,
     CardID = 23056,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[431],
+    BuffEffect = Table_CardLevel_t.BuffEffect[451],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705839"
@@ -2572,8 +2670,8 @@ Table_CardLevel = {
     id = 2305604,
     CardID = 23056,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[432],
-    Cost = Table_CardLevel_t.Cost[177],
+    BuffEffect = Table_CardLevel_t.BuffEffect[452],
+    Cost = Table_CardLevel_t.Cost[185],
     ZenyConvert = 450000000,
     Desc = "##44705840"
   },
@@ -2581,8 +2679,8 @@ Table_CardLevel = {
     id = 2305605,
     CardID = 23056,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[433],
-    Cost = Table_CardLevel_t.Cost[178],
+    BuffEffect = Table_CardLevel_t.BuffEffect[453],
+    Cost = Table_CardLevel_t.Cost[186],
     ZenyConvert = 625000000,
     Desc = "##44705841"
   },
@@ -2598,7 +2696,7 @@ Table_CardLevel = {
     id = 2305702,
     CardID = 23057,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[361],
+    BuffEffect = Table_CardLevel_t.BuffEffect[381],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44712860"
   },
@@ -2606,7 +2704,7 @@ Table_CardLevel = {
     id = 2305703,
     CardID = 23057,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[360],
+    BuffEffect = Table_CardLevel_t.BuffEffect[380],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44712861"
@@ -2615,8 +2713,8 @@ Table_CardLevel = {
     id = 2305704,
     CardID = 23057,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[359],
-    Cost = Table_CardLevel_t.Cost[152],
+    BuffEffect = Table_CardLevel_t.BuffEffect[379],
+    Cost = Table_CardLevel_t.Cost[161],
     ZenyConvert = 450000000,
     Desc = "##44712862"
   },
@@ -2624,15 +2722,15 @@ Table_CardLevel = {
     id = 2305705,
     CardID = 23057,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[358],
-    Cost = Table_CardLevel_t.Cost[151],
+    BuffEffect = Table_CardLevel_t.BuffEffect[378],
+    Cost = Table_CardLevel_t.Cost[160],
     ZenyConvert = 625000000,
     Desc = "##44712863"
   },
   [2306301] = {
     id = 2306301,
     CardID = 23063,
-    BuffEffect = Table_CardLevel_t.BuffEffect[112],
+    BuffEffect = Table_CardLevel_t.BuffEffect[127],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44697773"
@@ -2641,7 +2739,7 @@ Table_CardLevel = {
     id = 2306302,
     CardID = 23063,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[113],
+    BuffEffect = Table_CardLevel_t.BuffEffect[128],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44697774"
   },
@@ -2649,7 +2747,7 @@ Table_CardLevel = {
     id = 2306303,
     CardID = 23063,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[114],
+    BuffEffect = Table_CardLevel_t.BuffEffect[129],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44697775"
@@ -2658,8 +2756,8 @@ Table_CardLevel = {
     id = 2306304,
     CardID = 23063,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[115],
-    Cost = Table_CardLevel_t.Cost[49],
+    BuffEffect = Table_CardLevel_t.BuffEffect[130],
+    Cost = Table_CardLevel_t.Cost[55],
     ZenyConvert = 450000000,
     Desc = "##44697776"
   },
@@ -2667,15 +2765,15 @@ Table_CardLevel = {
     id = 2306305,
     CardID = 23063,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[116],
-    Cost = Table_CardLevel_t.Cost[50],
+    BuffEffect = Table_CardLevel_t.BuffEffect[131],
+    Cost = Table_CardLevel_t.Cost[56],
     ZenyConvert = 625000000,
     Desc = "##44697777"
   },
   [2306401] = {
     id = 2306401,
     CardID = 23064,
-    BuffEffect = Table_CardLevel_t.BuffEffect[207],
+    BuffEffect = Table_CardLevel_t.BuffEffect[227],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44703833"
@@ -2684,7 +2782,7 @@ Table_CardLevel = {
     id = 2306402,
     CardID = 23064,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[208],
+    BuffEffect = Table_CardLevel_t.BuffEffect[228],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44703834"
   },
@@ -2692,7 +2790,7 @@ Table_CardLevel = {
     id = 2306403,
     CardID = 23064,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[209],
+    BuffEffect = Table_CardLevel_t.BuffEffect[229],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44703835"
@@ -2701,8 +2799,8 @@ Table_CardLevel = {
     id = 2306404,
     CardID = 23064,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[210],
-    Cost = Table_CardLevel_t.Cost[92],
+    BuffEffect = Table_CardLevel_t.BuffEffect[230],
+    Cost = Table_CardLevel_t.Cost[101],
     ZenyConvert = 450000000,
     Desc = "##44703836"
   },
@@ -2710,15 +2808,15 @@ Table_CardLevel = {
     id = 2306405,
     CardID = 23064,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[211],
-    Cost = Table_CardLevel_t.Cost[93],
+    BuffEffect = Table_CardLevel_t.BuffEffect[231],
+    Cost = Table_CardLevel_t.Cost[102],
     ZenyConvert = 625000000,
     Desc = "##44703837"
   },
   [2306501] = {
     id = 2306501,
     CardID = 23065,
-    BuffEffect = Table_CardLevel_t.BuffEffect[307],
+    BuffEffect = Table_CardLevel_t.BuffEffect[327],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44703853"
@@ -2727,7 +2825,7 @@ Table_CardLevel = {
     id = 2306502,
     CardID = 23065,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[308],
+    BuffEffect = Table_CardLevel_t.BuffEffect[328],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44703854"
   },
@@ -2735,7 +2833,7 @@ Table_CardLevel = {
     id = 2306503,
     CardID = 23065,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[309],
+    BuffEffect = Table_CardLevel_t.BuffEffect[329],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44703855"
@@ -2744,8 +2842,8 @@ Table_CardLevel = {
     id = 2306504,
     CardID = 23065,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[310],
-    Cost = Table_CardLevel_t.Cost[133],
+    BuffEffect = Table_CardLevel_t.BuffEffect[330],
+    Cost = Table_CardLevel_t.Cost[142],
     ZenyConvert = 450000000,
     Desc = "##44703856"
   },
@@ -2753,15 +2851,15 @@ Table_CardLevel = {
     id = 2306505,
     CardID = 23065,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[311],
-    Cost = Table_CardLevel_t.Cost[134],
+    BuffEffect = Table_CardLevel_t.BuffEffect[331],
+    Cost = Table_CardLevel_t.Cost[143],
     ZenyConvert = 625000000,
     Desc = "##44703857"
   },
   [2306601] = {
     id = 2306601,
     CardID = 23066,
-    BuffEffect = Table_CardLevel_t.BuffEffect[407],
+    BuffEffect = Table_CardLevel_t.BuffEffect[427],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705847"
@@ -2770,7 +2868,7 @@ Table_CardLevel = {
     id = 2306602,
     CardID = 23066,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[408],
+    BuffEffect = Table_CardLevel_t.BuffEffect[428],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705848"
   },
@@ -2778,7 +2876,7 @@ Table_CardLevel = {
     id = 2306603,
     CardID = 23066,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[409],
+    BuffEffect = Table_CardLevel_t.BuffEffect[429],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705849"
@@ -2787,8 +2885,8 @@ Table_CardLevel = {
     id = 2306604,
     CardID = 23066,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[410],
-    Cost = Table_CardLevel_t.Cost[171],
+    BuffEffect = Table_CardLevel_t.BuffEffect[430],
+    Cost = Table_CardLevel_t.Cost[180],
     ZenyConvert = 450000000,
     Desc = "##44705850"
   },
@@ -2796,15 +2894,15 @@ Table_CardLevel = {
     id = 2306605,
     CardID = 23066,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[411],
-    Cost = Table_CardLevel_t.Cost[172],
+    BuffEffect = Table_CardLevel_t.BuffEffect[431],
+    Cost = Table_CardLevel_t.Cost[181],
     ZenyConvert = 625000000,
     Desc = "##44705851"
   },
   [2306701] = {
     id = 2306701,
     CardID = 23067,
-    BuffEffect = Table_CardLevel_t.BuffEffect[306],
+    BuffEffect = Table_CardLevel_t.BuffEffect[326],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44712854"
@@ -2813,7 +2911,7 @@ Table_CardLevel = {
     id = 2306702,
     CardID = 23067,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[349],
+    BuffEffect = Table_CardLevel_t.BuffEffect[369],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44712855"
   },
@@ -2821,7 +2919,7 @@ Table_CardLevel = {
     id = 2306703,
     CardID = 23067,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[350],
+    BuffEffect = Table_CardLevel_t.BuffEffect[370],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44712856"
@@ -2830,8 +2928,8 @@ Table_CardLevel = {
     id = 2306704,
     CardID = 23067,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[351],
-    Cost = Table_CardLevel_t.Cost[147],
+    BuffEffect = Table_CardLevel_t.BuffEffect[371],
+    Cost = Table_CardLevel_t.Cost[156],
     ZenyConvert = 450000000,
     Desc = "##44712857"
   },
@@ -2839,15 +2937,15 @@ Table_CardLevel = {
     id = 2306705,
     CardID = 23067,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[352],
-    Cost = Table_CardLevel_t.Cost[148],
+    BuffEffect = Table_CardLevel_t.BuffEffect[372],
+    Cost = Table_CardLevel_t.Cost[157],
     ZenyConvert = 625000000,
     Desc = "##44712858"
   },
   [2306901] = {
     id = 2306901,
     CardID = 23069,
-    BuffEffect = Table_CardLevel_t.BuffEffect[148],
+    BuffEffect = Table_CardLevel_t.BuffEffect[168],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##47022596"
@@ -2856,7 +2954,7 @@ Table_CardLevel = {
     id = 2306902,
     CardID = 23069,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[147],
+    BuffEffect = Table_CardLevel_t.BuffEffect[167],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##47022597"
   },
@@ -2864,7 +2962,7 @@ Table_CardLevel = {
     id = 2306903,
     CardID = 23069,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[146],
+    BuffEffect = Table_CardLevel_t.BuffEffect[166],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##47022598"
@@ -2873,8 +2971,8 @@ Table_CardLevel = {
     id = 2306904,
     CardID = 23069,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[137],
-    Cost = Table_CardLevel_t.Cost[61],
+    BuffEffect = Table_CardLevel_t.BuffEffect[157],
+    Cost = Table_CardLevel_t.Cost[70],
     ZenyConvert = 450000000,
     Desc = "##47022599"
   },
@@ -2882,15 +2980,15 @@ Table_CardLevel = {
     id = 2306905,
     CardID = 23069,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[136],
-    Cost = Table_CardLevel_t.Cost[60],
+    BuffEffect = Table_CardLevel_t.BuffEffect[156],
+    Cost = Table_CardLevel_t.Cost[69],
     ZenyConvert = 625000000,
     Desc = "##47022600"
   },
   [2307001] = {
     id = 2307001,
     CardID = 23070,
-    BuffEffect = Table_CardLevel_t.BuffEffect[235],
+    BuffEffect = Table_CardLevel_t.BuffEffect[255],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##45913955"
@@ -2899,7 +2997,7 @@ Table_CardLevel = {
     id = 2307002,
     CardID = 23070,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[236],
+    BuffEffect = Table_CardLevel_t.BuffEffect[256],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##45913956"
   },
@@ -2907,7 +3005,7 @@ Table_CardLevel = {
     id = 2307003,
     CardID = 23070,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[237],
+    BuffEffect = Table_CardLevel_t.BuffEffect[257],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##45913957"
@@ -2916,8 +3014,8 @@ Table_CardLevel = {
     id = 2307004,
     CardID = 23070,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[238],
-    Cost = Table_CardLevel_t.Cost[104],
+    BuffEffect = Table_CardLevel_t.BuffEffect[258],
+    Cost = Table_CardLevel_t.Cost[113],
     ZenyConvert = 450000000,
     Desc = "##45913958"
   },
@@ -2925,15 +3023,15 @@ Table_CardLevel = {
     id = 2307005,
     CardID = 23070,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[239],
-    Cost = Table_CardLevel_t.Cost[105],
+    BuffEffect = Table_CardLevel_t.BuffEffect[259],
+    Cost = Table_CardLevel_t.Cost[114],
     ZenyConvert = 625000000,
     Desc = "##45913959"
   },
   [2307101] = {
     id = 2307101,
     CardID = 23071,
-    BuffEffect = Table_CardLevel_t.BuffEffect[179],
+    BuffEffect = Table_CardLevel_t.BuffEffect[199],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##46118970"
@@ -2942,7 +3040,7 @@ Table_CardLevel = {
     id = 2307102,
     CardID = 23071,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[173],
+    BuffEffect = Table_CardLevel_t.BuffEffect[193],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##46118971"
   },
@@ -2950,7 +3048,7 @@ Table_CardLevel = {
     id = 2307103,
     CardID = 23071,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[167],
+    BuffEffect = Table_CardLevel_t.BuffEffect[187],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##46118972"
@@ -2959,8 +3057,8 @@ Table_CardLevel = {
     id = 2307104,
     CardID = 23071,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[160],
-    Cost = Table_CardLevel_t.Cost[71],
+    BuffEffect = Table_CardLevel_t.BuffEffect[180],
+    Cost = Table_CardLevel_t.Cost[80],
     ZenyConvert = 450000000,
     Desc = "##46118973"
   },
@@ -2968,15 +3066,15 @@ Table_CardLevel = {
     id = 2307105,
     CardID = 23071,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[159],
-    Cost = Table_CardLevel_t.Cost[70],
+    BuffEffect = Table_CardLevel_t.BuffEffect[179],
+    Cost = Table_CardLevel_t.Cost[79],
     ZenyConvert = 625000000,
     Desc = "##46118974"
   },
   [2307201] = {
     id = 2307201,
     CardID = 23072,
-    BuffEffect = Table_CardLevel_t.BuffEffect[217],
+    BuffEffect = Table_CardLevel_t.BuffEffect[237],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##45987212"
@@ -2985,7 +3083,7 @@ Table_CardLevel = {
     id = 2307202,
     CardID = 23072,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[216],
+    BuffEffect = Table_CardLevel_t.BuffEffect[236],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##45987213"
   },
@@ -2993,7 +3091,7 @@ Table_CardLevel = {
     id = 2307203,
     CardID = 23072,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[215],
+    BuffEffect = Table_CardLevel_t.BuffEffect[235],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##45987214"
@@ -3002,8 +3100,8 @@ Table_CardLevel = {
     id = 2307204,
     CardID = 23072,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[214],
-    Cost = Table_CardLevel_t.Cost[96],
+    BuffEffect = Table_CardLevel_t.BuffEffect[234],
+    Cost = Table_CardLevel_t.Cost[105],
     ZenyConvert = 450000000,
     Desc = "##45987215"
   },
@@ -3011,15 +3109,15 @@ Table_CardLevel = {
     id = 2307205,
     CardID = 23072,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[213],
-    Cost = Table_CardLevel_t.Cost[95],
+    BuffEffect = Table_CardLevel_t.BuffEffect[233],
+    Cost = Table_CardLevel_t.Cost[104],
     ZenyConvert = 625000000,
     Desc = "##45987216"
   },
   [2307301] = {
     id = 2307301,
     CardID = 23073,
-    BuffEffect = Table_CardLevel_t.BuffEffect[393],
+    BuffEffect = Table_CardLevel_t.BuffEffect[413],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44712824"
@@ -3028,7 +3126,7 @@ Table_CardLevel = {
     id = 2307302,
     CardID = 23073,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[392],
+    BuffEffect = Table_CardLevel_t.BuffEffect[412],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44712825"
   },
@@ -3036,7 +3134,7 @@ Table_CardLevel = {
     id = 2307303,
     CardID = 23073,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[391],
+    BuffEffect = Table_CardLevel_t.BuffEffect[411],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44712826"
@@ -3045,8 +3143,8 @@ Table_CardLevel = {
     id = 2307304,
     CardID = 23073,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[390],
-    Cost = Table_CardLevel_t.Cost[166],
+    BuffEffect = Table_CardLevel_t.BuffEffect[410],
+    Cost = Table_CardLevel_t.Cost[175],
     ZenyConvert = 450000000,
     Desc = "##44712827"
   },
@@ -3054,15 +3152,15 @@ Table_CardLevel = {
     id = 2307305,
     CardID = 23073,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[384],
-    Cost = Table_CardLevel_t.Cost[163],
+    BuffEffect = Table_CardLevel_t.BuffEffect[404],
+    Cost = Table_CardLevel_t.Cost[172],
     ZenyConvert = 625000000,
     Desc = "##44712828"
   },
   [2307401] = {
     id = 2307401,
     CardID = 23074,
-    BuffEffect = Table_CardLevel_t.BuffEffect[267],
+    BuffEffect = Table_CardLevel_t.BuffEffect[287],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##45920079"
@@ -3071,7 +3169,7 @@ Table_CardLevel = {
     id = 2307402,
     CardID = 23074,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[266],
+    BuffEffect = Table_CardLevel_t.BuffEffect[286],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44725873"
   },
@@ -3079,7 +3177,7 @@ Table_CardLevel = {
     id = 2307403,
     CardID = 23074,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[265],
+    BuffEffect = Table_CardLevel_t.BuffEffect[285],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44725874"
@@ -3088,8 +3186,8 @@ Table_CardLevel = {
     id = 2307404,
     CardID = 23074,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[264],
-    Cost = Table_CardLevel_t.Cost[117],
+    BuffEffect = Table_CardLevel_t.BuffEffect[284],
+    Cost = Table_CardLevel_t.Cost[126],
     ZenyConvert = 450000000,
     Desc = "##44725875"
   },
@@ -3097,15 +3195,15 @@ Table_CardLevel = {
     id = 2307405,
     CardID = 23074,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[263],
-    Cost = Table_CardLevel_t.Cost[116],
+    BuffEffect = Table_CardLevel_t.BuffEffect[283],
+    Cost = Table_CardLevel_t.Cost[125],
     ZenyConvert = 625000000,
     Desc = "##44725876"
   },
   [2307501] = {
     id = 2307501,
     CardID = 23075,
-    BuffEffect = Table_CardLevel_t.BuffEffect[259],
+    BuffEffect = Table_CardLevel_t.BuffEffect[279],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44725882"
@@ -3114,7 +3212,7 @@ Table_CardLevel = {
     id = 2307502,
     CardID = 23075,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[258],
+    BuffEffect = Table_CardLevel_t.BuffEffect[278],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44725883"
   },
@@ -3122,7 +3220,7 @@ Table_CardLevel = {
     id = 2307503,
     CardID = 23075,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[257],
+    BuffEffect = Table_CardLevel_t.BuffEffect[277],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44725884"
@@ -3131,8 +3229,8 @@ Table_CardLevel = {
     id = 2307504,
     CardID = 23075,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[256],
-    Cost = Table_CardLevel_t.Cost[113],
+    BuffEffect = Table_CardLevel_t.BuffEffect[276],
+    Cost = Table_CardLevel_t.Cost[122],
     ZenyConvert = 450000000,
     Desc = "##44725885"
   },
@@ -3140,15 +3238,100 @@ Table_CardLevel = {
     id = 2307505,
     CardID = 23075,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[255],
-    Cost = Table_CardLevel_t.Cost[112],
+    BuffEffect = Table_CardLevel_t.BuffEffect[275],
+    Cost = Table_CardLevel_t.Cost[121],
     ZenyConvert = 625000000,
     Desc = "##44725886"
+  },
+  [2307601] = {
+    id = 2307601,
+    CardID = 23076,
+    BuffEffect = Table_CardLevel_t.BuffEffect[90],
+    Cost = Table_CardLevel_t.Cost[3],
+    ZenyConvert = 75000000,
+    Desc = "##47051208"
+  },
+  [2307602] = {
+    id = 2307602,
+    CardID = 23076,
+    Level = 2,
+    BuffEffect = Table_CardLevel_t.BuffEffect[89],
+    Cost = Table_CardLevel_t.Cost[4],
+    Desc = "##47051209"
+  },
+  [2307603] = {
+    id = 2307603,
+    CardID = 23076,
+    Level = 3,
+    BuffEffect = Table_CardLevel_t.BuffEffect[88],
+    Cost = Table_CardLevel_t.Cost[5],
+    ZenyConvert = 300000000,
+    Desc = "##47051210"
+  },
+  [2307604] = {
+    id = 2307604,
+    CardID = 23076,
+    Level = 4,
+    BuffEffect = Table_CardLevel_t.BuffEffect[87],
+    Cost = Table_CardLevel_t.Cost[41],
+    ZenyConvert = 450000000,
+    Desc = "##47051211"
+  },
+  [2307605] = {
+    id = 2307605,
+    CardID = 23076,
+    Level = 5,
+    BuffEffect = Table_CardLevel_t.BuffEffect[71],
+    Cost = Table_CardLevel_t.Cost[34],
+    ZenyConvert = 625000000,
+    Desc = "##47051212"
+  },
+  [2307701] = {
+    id = 2307701,
+    CardID = 23077,
+    BuffEffect = Table_CardLevel_t.BuffEffect[126],
+    Cost = Table_CardLevel_t.Cost[3],
+    ZenyConvert = 75000000,
+    Desc = "##47047894"
+  },
+  [2307702] = {
+    id = 2307702,
+    CardID = 23077,
+    Level = 2,
+    BuffEffect = Table_CardLevel_t.BuffEffect[125],
+    Cost = Table_CardLevel_t.Cost[4],
+    Desc = "##47047895"
+  },
+  [2307703] = {
+    id = 2307703,
+    CardID = 23077,
+    Level = 3,
+    BuffEffect = Table_CardLevel_t.BuffEffect[124],
+    Cost = Table_CardLevel_t.Cost[5],
+    ZenyConvert = 300000000,
+    Desc = "##47047896"
+  },
+  [2307704] = {
+    id = 2307704,
+    CardID = 23077,
+    Level = 4,
+    BuffEffect = Table_CardLevel_t.BuffEffect[123],
+    Cost = Table_CardLevel_t.Cost[54],
+    ZenyConvert = 450000000
+  },
+  [2307705] = {
+    id = 2307705,
+    CardID = 23077,
+    Level = 5,
+    BuffEffect = Table_CardLevel_t.BuffEffect[122],
+    Cost = Table_CardLevel_t.Cost[53],
+    ZenyConvert = 625000000,
+    Desc = "##47047898"
   },
   [2327201] = {
     id = 2327201,
     CardID = 23272,
-    BuffEffect = Table_CardLevel_t.BuffEffect[75],
+    BuffEffect = Table_CardLevel_t.BuffEffect[76],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44712819"
@@ -3157,7 +3340,7 @@ Table_CardLevel = {
     id = 2327202,
     CardID = 23272,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[76],
+    BuffEffect = Table_CardLevel_t.BuffEffect[77],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44712820"
   },
@@ -3165,7 +3348,7 @@ Table_CardLevel = {
     id = 2327203,
     CardID = 23272,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[77],
+    BuffEffect = Table_CardLevel_t.BuffEffect[78],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44712821"
@@ -3174,8 +3357,8 @@ Table_CardLevel = {
     id = 2327204,
     CardID = 23272,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[78],
-    Cost = Table_CardLevel_t.Cost[35],
+    BuffEffect = Table_CardLevel_t.BuffEffect[79],
+    Cost = Table_CardLevel_t.Cost[36],
     ZenyConvert = 450000000,
     Desc = "##44712822"
   },
@@ -3183,15 +3366,15 @@ Table_CardLevel = {
     id = 2327205,
     CardID = 23272,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[272],
-    Cost = Table_CardLevel_t.Cost[120],
+    BuffEffect = Table_CardLevel_t.BuffEffect[292],
+    Cost = Table_CardLevel_t.Cost[129],
     ZenyConvert = 625000000,
     Desc = "##44712823"
   },
   [2328000] = {
     id = 2328000,
     CardID = 23280,
-    BuffEffect = Table_CardLevel_t.BuffEffect[403],
+    BuffEffect = Table_CardLevel_t.BuffEffect[423],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44709381"
@@ -3200,7 +3383,7 @@ Table_CardLevel = {
     id = 2328001,
     CardID = 23280,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[402],
+    BuffEffect = Table_CardLevel_t.BuffEffect[422],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44709382"
   },
@@ -3208,7 +3391,7 @@ Table_CardLevel = {
     id = 2328002,
     CardID = 23280,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[346],
+    BuffEffect = Table_CardLevel_t.BuffEffect[366],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44709383"
@@ -3217,8 +3400,8 @@ Table_CardLevel = {
     id = 2328003,
     CardID = 23280,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[347],
-    Cost = Table_CardLevel_t.Cost[145],
+    BuffEffect = Table_CardLevel_t.BuffEffect[367],
+    Cost = Table_CardLevel_t.Cost[154],
     ZenyConvert = 450000000,
     Desc = "##44709384"
   },
@@ -3226,8 +3409,8 @@ Table_CardLevel = {
     id = 2328004,
     CardID = 23280,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[348],
-    Cost = Table_CardLevel_t.Cost[146],
+    BuffEffect = Table_CardLevel_t.BuffEffect[368],
+    Cost = Table_CardLevel_t.Cost[155],
     ZenyConvert = 625000000,
     Desc = "##44709385"
   },
@@ -3277,7 +3460,7 @@ Table_CardLevel = {
   [2329300] = {
     id = 2329300,
     CardID = 23293,
-    BuffEffect = Table_CardLevel_t.BuffEffect[401],
+    BuffEffect = Table_CardLevel_t.BuffEffect[421],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44709391"
@@ -3286,7 +3469,7 @@ Table_CardLevel = {
     id = 2329301,
     CardID = 23293,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[271],
+    BuffEffect = Table_CardLevel_t.BuffEffect[291],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44709392"
   },
@@ -3294,7 +3477,7 @@ Table_CardLevel = {
     id = 2329302,
     CardID = 23293,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[118],
+    BuffEffect = Table_CardLevel_t.BuffEffect[133],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44709393"
@@ -3303,8 +3486,8 @@ Table_CardLevel = {
     id = 2329303,
     CardID = 23293,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[119],
-    Cost = Table_CardLevel_t.Cost[52],
+    BuffEffect = Table_CardLevel_t.BuffEffect[134],
+    Cost = Table_CardLevel_t.Cost[58],
     ZenyConvert = 450000000,
     Desc = "##44709394"
   },
@@ -3312,8 +3495,8 @@ Table_CardLevel = {
     id = 2329304,
     CardID = 23293,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[120],
-    Cost = Table_CardLevel_t.Cost[53],
+    BuffEffect = Table_CardLevel_t.BuffEffect[135],
+    Cost = Table_CardLevel_t.Cost[59],
     ZenyConvert = 625000000,
     Desc = "##44709395"
   },
@@ -3406,7 +3589,7 @@ Table_CardLevel = {
   [2330801] = {
     id = 2330801,
     CardID = 23308,
-    BuffEffect = Table_CardLevel_t.BuffEffect[94],
+    BuffEffect = Table_CardLevel_t.BuffEffect[99],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44697803"
@@ -3415,7 +3598,7 @@ Table_CardLevel = {
     id = 2330802,
     CardID = 23308,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[95],
+    BuffEffect = Table_CardLevel_t.BuffEffect[100],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44697804"
   },
@@ -3423,7 +3606,7 @@ Table_CardLevel = {
     id = 2330803,
     CardID = 23308,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[96],
+    BuffEffect = Table_CardLevel_t.BuffEffect[101],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44697805"
@@ -3432,8 +3615,8 @@ Table_CardLevel = {
     id = 2330804,
     CardID = 23308,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[97],
-    Cost = Table_CardLevel_t.Cost[42],
+    BuffEffect = Table_CardLevel_t.BuffEffect[102],
+    Cost = Table_CardLevel_t.Cost[44],
     ZenyConvert = 450000000,
     Desc = "##44697806"
   },
@@ -3441,8 +3624,8 @@ Table_CardLevel = {
     id = 2330805,
     CardID = 23308,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[98],
-    Cost = Table_CardLevel_t.Cost[43],
+    BuffEffect = Table_CardLevel_t.BuffEffect[103],
+    Cost = Table_CardLevel_t.Cost[45],
     ZenyConvert = 625000000,
     Desc = "##44697807"
   },
@@ -3492,7 +3675,7 @@ Table_CardLevel = {
   [2331401] = {
     id = 2331401,
     CardID = 23314,
-    BuffEffect = Table_CardLevel_t.BuffEffect[168],
+    BuffEffect = Table_CardLevel_t.BuffEffect[188],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44722620"
@@ -3501,7 +3684,7 @@ Table_CardLevel = {
     id = 2331402,
     CardID = 23314,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[169],
+    BuffEffect = Table_CardLevel_t.BuffEffect[189],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44722621"
   },
@@ -3509,7 +3692,7 @@ Table_CardLevel = {
     id = 2331403,
     CardID = 23314,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[170],
+    BuffEffect = Table_CardLevel_t.BuffEffect[190],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44722622"
@@ -3518,8 +3701,8 @@ Table_CardLevel = {
     id = 2331404,
     CardID = 23314,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[171],
-    Cost = Table_CardLevel_t.Cost[74],
+    BuffEffect = Table_CardLevel_t.BuffEffect[191],
+    Cost = Table_CardLevel_t.Cost[83],
     ZenyConvert = 450000000,
     Desc = "##44722623"
   },
@@ -3527,15 +3710,15 @@ Table_CardLevel = {
     id = 2331405,
     CardID = 23314,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[172],
-    Cost = Table_CardLevel_t.Cost[75],
+    BuffEffect = Table_CardLevel_t.BuffEffect[192],
+    Cost = Table_CardLevel_t.Cost[84],
     ZenyConvert = 625000000,
     Desc = "##44722624"
   },
   [2331601] = {
     id = 2331601,
     CardID = 23316,
-    BuffEffect = Table_CardLevel_t.BuffEffect[368],
+    BuffEffect = Table_CardLevel_t.BuffEffect[388],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44718948"
@@ -3544,7 +3727,7 @@ Table_CardLevel = {
     id = 2331602,
     CardID = 23316,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[369],
+    BuffEffect = Table_CardLevel_t.BuffEffect[389],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44718949"
   },
@@ -3552,7 +3735,7 @@ Table_CardLevel = {
     id = 2331603,
     CardID = 23316,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[370],
+    BuffEffect = Table_CardLevel_t.BuffEffect[390],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44718950"
@@ -3561,8 +3744,8 @@ Table_CardLevel = {
     id = 2331604,
     CardID = 23316,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[371],
-    Cost = Table_CardLevel_t.Cost[155],
+    BuffEffect = Table_CardLevel_t.BuffEffect[391],
+    Cost = Table_CardLevel_t.Cost[164],
     ZenyConvert = 450000000,
     Desc = "##44718951"
   },
@@ -3570,8 +3753,8 @@ Table_CardLevel = {
     id = 2331605,
     CardID = 23316,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[372],
-    Cost = Table_CardLevel_t.Cost[156],
+    BuffEffect = Table_CardLevel_t.BuffEffect[392],
+    Cost = Table_CardLevel_t.Cost[165],
     ZenyConvert = 625000000,
     Desc = "##44718952"
   },
@@ -3621,7 +3804,7 @@ Table_CardLevel = {
   [2332201] = {
     id = 2332201,
     CardID = 23322,
-    BuffEffect = Table_CardLevel_t.BuffEffect[457],
+    BuffEffect = Table_CardLevel_t.BuffEffect[477],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44720546"
@@ -3630,7 +3813,7 @@ Table_CardLevel = {
     id = 2332202,
     CardID = 23322,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[458],
+    BuffEffect = Table_CardLevel_t.BuffEffect[478],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44720547"
   },
@@ -3638,7 +3821,7 @@ Table_CardLevel = {
     id = 2332203,
     CardID = 23322,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[459],
+    BuffEffect = Table_CardLevel_t.BuffEffect[479],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44720548"
@@ -3663,7 +3846,7 @@ Table_CardLevel = {
   [2332501] = {
     id = 2332501,
     CardID = 23325,
-    BuffEffect = Table_CardLevel_t.BuffEffect[246],
+    BuffEffect = Table_CardLevel_t.BuffEffect[266],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##45913960"
@@ -3672,7 +3855,7 @@ Table_CardLevel = {
     id = 2332502,
     CardID = 23325,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[247],
+    BuffEffect = Table_CardLevel_t.BuffEffect[267],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##45913961"
   },
@@ -3680,7 +3863,7 @@ Table_CardLevel = {
     id = 2332503,
     CardID = 23325,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[248],
+    BuffEffect = Table_CardLevel_t.BuffEffect[268],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##45913962"
@@ -3689,8 +3872,8 @@ Table_CardLevel = {
     id = 2332504,
     CardID = 23325,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[249],
-    Cost = Table_CardLevel_t.Cost[108],
+    BuffEffect = Table_CardLevel_t.BuffEffect[269],
+    Cost = Table_CardLevel_t.Cost[117],
     ZenyConvert = 450000000,
     Desc = "##45913963"
   },
@@ -3698,15 +3881,15 @@ Table_CardLevel = {
     id = 2332505,
     CardID = 23325,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[250],
-    Cost = Table_CardLevel_t.Cost[109],
+    BuffEffect = Table_CardLevel_t.BuffEffect[270],
+    Cost = Table_CardLevel_t.Cost[118],
     ZenyConvert = 625000000,
     Desc = "##45913964"
   },
   [2333401] = {
     id = 2333401,
     CardID = 23334,
-    BuffEffect = Table_CardLevel_t.BuffEffect[126],
+    BuffEffect = Table_CardLevel_t.BuffEffect[144],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705737"
@@ -3715,7 +3898,7 @@ Table_CardLevel = {
     id = 2333402,
     CardID = 23334,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[127],
+    BuffEffect = Table_CardLevel_t.BuffEffect[145],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705738"
   },
@@ -3723,7 +3906,7 @@ Table_CardLevel = {
     id = 2333403,
     CardID = 23334,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[128],
+    BuffEffect = Table_CardLevel_t.BuffEffect[146],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705739"
@@ -3732,8 +3915,8 @@ Table_CardLevel = {
     id = 2333404,
     CardID = 23334,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[129],
-    Cost = Table_CardLevel_t.Cost[56],
+    BuffEffect = Table_CardLevel_t.BuffEffect[147],
+    Cost = Table_CardLevel_t.Cost[64],
     ZenyConvert = 450000000,
     Desc = "##44705740"
   },
@@ -3741,15 +3924,15 @@ Table_CardLevel = {
     id = 2333405,
     CardID = 23334,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[130],
-    Cost = Table_CardLevel_t.Cost[57],
+    BuffEffect = Table_CardLevel_t.BuffEffect[148],
+    Cost = Table_CardLevel_t.Cost[65],
     ZenyConvert = 625000000,
     Desc = "##44705741"
   },
   [2336301] = {
     id = 2336301,
     CardID = 23363,
-    BuffEffect = Table_CardLevel_t.BuffEffect[357],
+    BuffEffect = Table_CardLevel_t.BuffEffect[377],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44718943"
@@ -3758,7 +3941,7 @@ Table_CardLevel = {
     id = 2336302,
     CardID = 23363,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[356],
+    BuffEffect = Table_CardLevel_t.BuffEffect[376],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44718944"
   },
@@ -3766,7 +3949,7 @@ Table_CardLevel = {
     id = 2336303,
     CardID = 23363,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[355],
+    BuffEffect = Table_CardLevel_t.BuffEffect[375],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44718945"
@@ -3775,8 +3958,8 @@ Table_CardLevel = {
     id = 2336304,
     CardID = 23363,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[354],
-    Cost = Table_CardLevel_t.Cost[150],
+    BuffEffect = Table_CardLevel_t.BuffEffect[374],
+    Cost = Table_CardLevel_t.Cost[159],
     ZenyConvert = 450000000,
     Desc = "##44718946"
   },
@@ -3784,15 +3967,15 @@ Table_CardLevel = {
     id = 2336305,
     CardID = 23363,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[353],
-    Cost = Table_CardLevel_t.Cost[149],
+    BuffEffect = Table_CardLevel_t.BuffEffect[373],
+    Cost = Table_CardLevel_t.Cost[158],
     ZenyConvert = 625000000,
     Desc = "##44718947"
   },
   [2336401] = {
     id = 2336401,
     CardID = 23364,
-    BuffEffect = Table_CardLevel_t.BuffEffect[150],
+    BuffEffect = Table_CardLevel_t.BuffEffect[170],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##45927228"
@@ -3801,7 +3984,7 @@ Table_CardLevel = {
     id = 2336402,
     CardID = 23364,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[151],
+    BuffEffect = Table_CardLevel_t.BuffEffect[171],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##45927229"
   },
@@ -3809,7 +3992,7 @@ Table_CardLevel = {
     id = 2336403,
     CardID = 23364,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[157],
+    BuffEffect = Table_CardLevel_t.BuffEffect[177],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##45927230"
@@ -3818,8 +4001,8 @@ Table_CardLevel = {
     id = 2336404,
     CardID = 23364,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[158],
-    Cost = Table_CardLevel_t.Cost[69],
+    BuffEffect = Table_CardLevel_t.BuffEffect[178],
+    Cost = Table_CardLevel_t.Cost[78],
     ZenyConvert = 450000000,
     Desc = "##45927231"
   },
@@ -3827,15 +4010,53 @@ Table_CardLevel = {
     id = 2336405,
     CardID = 23364,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[226],
-    Cost = Table_CardLevel_t.Cost[100],
+    BuffEffect = Table_CardLevel_t.BuffEffect[246],
+    Cost = Table_CardLevel_t.Cost[109],
     ZenyConvert = 625000000,
     Desc = "##45927232"
+  },
+  [2337101] = {
+    id = 2337101,
+    BuffEffect = Table_CardLevel_t.BuffEffect[121],
+    Cost = Table_CardLevel_t.Cost[3],
+    ZenyConvert = 75000000,
+    Desc = "##47051203"
+  },
+  [2337102] = {
+    id = 2337102,
+    Level = 2,
+    BuffEffect = Table_CardLevel_t.BuffEffect[112],
+    Cost = Table_CardLevel_t.Cost[4],
+    Desc = "##47051204"
+  },
+  [2337103] = {
+    id = 2337103,
+    Level = 3,
+    BuffEffect = Table_CardLevel_t.BuffEffect[111],
+    Cost = Table_CardLevel_t.Cost[5],
+    ZenyConvert = 300000000,
+    Desc = "##47051205"
+  },
+  [2337104] = {
+    id = 2337104,
+    Level = 4,
+    BuffEffect = Table_CardLevel_t.BuffEffect[110],
+    Cost = Table_CardLevel_t.Cost[49],
+    ZenyConvert = 450000000,
+    Desc = "##47051206"
+  },
+  [2337105] = {
+    id = 2337105,
+    Level = 5,
+    BuffEffect = Table_CardLevel_t.BuffEffect[271],
+    Cost = Table_CardLevel_t.Cost[119],
+    ZenyConvert = 625000000,
+    Desc = "##47051207"
   },
   [2341901] = {
     id = 2341901,
     CardID = 23419,
-    BuffEffect = Table_CardLevel_t.BuffEffect[448],
+    BuffEffect = Table_CardLevel_t.BuffEffect[468],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44720541"
@@ -3844,7 +4065,7 @@ Table_CardLevel = {
     id = 2341902,
     CardID = 23419,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[449],
+    BuffEffect = Table_CardLevel_t.BuffEffect[469],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44720542"
   },
@@ -3852,7 +4073,7 @@ Table_CardLevel = {
     id = 2341903,
     CardID = 23419,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[450],
+    BuffEffect = Table_CardLevel_t.BuffEffect[470],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44720543"
@@ -3861,8 +4082,8 @@ Table_CardLevel = {
     id = 2341904,
     CardID = 23419,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[451],
-    Cost = Table_CardLevel_t.Cost[186],
+    BuffEffect = Table_CardLevel_t.BuffEffect[471],
+    Cost = Table_CardLevel_t.Cost[194],
     ZenyConvert = 450000000,
     Desc = "##44720544"
   },
@@ -3870,15 +4091,15 @@ Table_CardLevel = {
     id = 2341905,
     CardID = 23419,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[452],
-    Cost = Table_CardLevel_t.Cost[187],
+    BuffEffect = Table_CardLevel_t.BuffEffect[472],
+    Cost = Table_CardLevel_t.Cost[195],
     ZenyConvert = 625000000,
     Desc = "##44720545"
   },
   [2344101] = {
     id = 2344101,
     CardID = 23441,
-    BuffEffect = Table_CardLevel_t.BuffEffect[104],
+    BuffEffect = Table_CardLevel_t.BuffEffect[113],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##45987207"
@@ -3887,7 +4108,7 @@ Table_CardLevel = {
     id = 2344102,
     CardID = 23441,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[221],
+    BuffEffect = Table_CardLevel_t.BuffEffect[241],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##45987208"
   },
@@ -3895,7 +4116,7 @@ Table_CardLevel = {
     id = 2344103,
     CardID = 23441,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[220],
+    BuffEffect = Table_CardLevel_t.BuffEffect[240],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##45987209"
@@ -3904,8 +4125,8 @@ Table_CardLevel = {
     id = 2344104,
     CardID = 23441,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[219],
-    Cost = Table_CardLevel_t.Cost[98],
+    BuffEffect = Table_CardLevel_t.BuffEffect[239],
+    Cost = Table_CardLevel_t.Cost[107],
     ZenyConvert = 450000000,
     Desc = "##45987210"
   },
@@ -3913,15 +4134,15 @@ Table_CardLevel = {
     id = 2344105,
     CardID = 23441,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[218],
-    Cost = Table_CardLevel_t.Cost[97],
+    BuffEffect = Table_CardLevel_t.BuffEffect[238],
+    Cost = Table_CardLevel_t.Cost[106],
     ZenyConvert = 625000000,
     Desc = "##45987211"
   },
   [2345101] = {
     id = 2345101,
     CardID = 23451,
-    BuffEffect = Table_CardLevel_t.BuffEffect[86],
+    BuffEffect = Table_CardLevel_t.BuffEffect[91],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44725877"
@@ -3930,7 +4151,7 @@ Table_CardLevel = {
     id = 2345102,
     CardID = 23451,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[87],
+    BuffEffect = Table_CardLevel_t.BuffEffect[92],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44725878"
   },
@@ -3938,7 +4159,7 @@ Table_CardLevel = {
     id = 2345103,
     CardID = 23451,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[262],
+    BuffEffect = Table_CardLevel_t.BuffEffect[282],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44725879"
@@ -3947,8 +4168,8 @@ Table_CardLevel = {
     id = 2345104,
     CardID = 23451,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[261],
-    Cost = Table_CardLevel_t.Cost[115],
+    BuffEffect = Table_CardLevel_t.BuffEffect[281],
+    Cost = Table_CardLevel_t.Cost[124],
     ZenyConvert = 450000000,
     Desc = "##44725880"
   },
@@ -3956,15 +4177,15 @@ Table_CardLevel = {
     id = 2345105,
     CardID = 23451,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[260],
-    Cost = Table_CardLevel_t.Cost[114],
+    BuffEffect = Table_CardLevel_t.BuffEffect[280],
+    Cost = Table_CardLevel_t.Cost[123],
     ZenyConvert = 625000000,
     Desc = "##44725881"
   },
   [2345501] = {
     id = 2345501,
     CardID = 23455,
-    BuffEffect = Table_CardLevel_t.BuffEffect[456],
+    BuffEffect = Table_CardLevel_t.BuffEffect[476],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705722",
@@ -3975,7 +4196,7 @@ Table_CardLevel = {
     id = 2345502,
     CardID = 23455,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[455],
+    BuffEffect = Table_CardLevel_t.BuffEffect[475],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705723",
     TFValidDate = "2025-11-10 05:00:00",
@@ -4017,7 +4238,7 @@ Table_CardLevel = {
   [2345601] = {
     id = 2345601,
     CardID = 23456,
-    BuffEffect = Table_CardLevel_t.BuffEffect[79],
+    BuffEffect = Table_CardLevel_t.BuffEffect[80],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705727",
@@ -4028,7 +4249,7 @@ Table_CardLevel = {
     id = 2345602,
     CardID = 23456,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[80],
+    BuffEffect = Table_CardLevel_t.BuffEffect[81],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705728",
     TFValidDate = "2025-11-10 05:00:00",
@@ -4038,7 +4259,7 @@ Table_CardLevel = {
     id = 2345603,
     CardID = 23456,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[81],
+    BuffEffect = Table_CardLevel_t.BuffEffect[82],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705729",
@@ -4049,8 +4270,8 @@ Table_CardLevel = {
     id = 2345604,
     CardID = 23456,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[82],
-    Cost = Table_CardLevel_t.Cost[36],
+    BuffEffect = Table_CardLevel_t.BuffEffect[83],
+    Cost = Table_CardLevel_t.Cost[37],
     ZenyConvert = 450000000,
     Desc = "##44705730",
     TFValidDate = "2025-11-10 05:00:00",
@@ -4060,8 +4281,8 @@ Table_CardLevel = {
     id = 2345605,
     CardID = 23456,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[83],
-    Cost = Table_CardLevel_t.Cost[37],
+    BuffEffect = Table_CardLevel_t.BuffEffect[84],
+    Cost = Table_CardLevel_t.Cost[38],
     ZenyConvert = 625000000,
     Desc = "##44705731",
     TFValidDate = "2025-11-10 05:00:00",
@@ -4070,7 +4291,7 @@ Table_CardLevel = {
   [2346701] = {
     id = 2346701,
     CardID = 23467,
-    BuffEffect = Table_CardLevel_t.BuffEffect[138],
+    BuffEffect = Table_CardLevel_t.BuffEffect[158],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##45913950"
@@ -4079,7 +4300,7 @@ Table_CardLevel = {
     id = 2346702,
     CardID = 23467,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[254],
+    BuffEffect = Table_CardLevel_t.BuffEffect[274],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##45913951"
   },
@@ -4087,7 +4308,7 @@ Table_CardLevel = {
     id = 2346703,
     CardID = 23467,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[253],
+    BuffEffect = Table_CardLevel_t.BuffEffect[273],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##45913952"
@@ -4096,8 +4317,8 @@ Table_CardLevel = {
     id = 2346704,
     CardID = 23467,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[252],
-    Cost = Table_CardLevel_t.Cost[111],
+    BuffEffect = Table_CardLevel_t.BuffEffect[272],
+    Cost = Table_CardLevel_t.Cost[120],
     ZenyConvert = 450000000,
     Desc = "##45913953"
   },
@@ -4105,15 +4326,15 @@ Table_CardLevel = {
     id = 2346705,
     CardID = 23467,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[251],
-    Cost = Table_CardLevel_t.Cost[110],
+    BuffEffect = Table_CardLevel_t.BuffEffect[104],
+    Cost = Table_CardLevel_t.Cost[46],
     ZenyConvert = 625000000,
     Desc = "##45913954"
   },
   [2347301] = {
     id = 2347301,
     CardID = 23473,
-    BuffEffect = Table_CardLevel_t.BuffEffect[227],
+    BuffEffect = Table_CardLevel_t.BuffEffect[247],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##47022591"
@@ -4122,7 +4343,7 @@ Table_CardLevel = {
     id = 2347302,
     CardID = 23473,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[228],
+    BuffEffect = Table_CardLevel_t.BuffEffect[248],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##47022592"
   },
@@ -4130,7 +4351,7 @@ Table_CardLevel = {
     id = 2347303,
     CardID = 23473,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[229],
+    BuffEffect = Table_CardLevel_t.BuffEffect[249],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##47022593"
@@ -4139,8 +4360,8 @@ Table_CardLevel = {
     id = 2347304,
     CardID = 23473,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[230],
-    Cost = Table_CardLevel_t.Cost[101],
+    BuffEffect = Table_CardLevel_t.BuffEffect[250],
+    Cost = Table_CardLevel_t.Cost[110],
     ZenyConvert = 450000000,
     Desc = "##47022594"
   },
@@ -4148,15 +4369,58 @@ Table_CardLevel = {
     id = 2347305,
     CardID = 23473,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[231],
-    Cost = Table_CardLevel_t.Cost[102],
+    BuffEffect = Table_CardLevel_t.BuffEffect[251],
+    Cost = Table_CardLevel_t.Cost[111],
     ZenyConvert = 625000000,
     Desc = "##47022595"
+  },
+  [2347501] = {
+    id = 2347501,
+    CardID = 23475,
+    BuffEffect = Table_CardLevel_t.BuffEffect[447],
+    Cost = Table_CardLevel_t.Cost[3],
+    ZenyConvert = 75000000,
+    Desc = "##47047889"
+  },
+  [2347502] = {
+    id = 2347502,
+    CardID = 23475,
+    Level = 2,
+    BuffEffect = Table_CardLevel_t.BuffEffect[448],
+    Cost = Table_CardLevel_t.Cost[4],
+    Desc = "##47047890"
+  },
+  [2347503] = {
+    id = 2347503,
+    CardID = 23475,
+    Level = 3,
+    BuffEffect = Table_CardLevel_t.BuffEffect[138],
+    Cost = Table_CardLevel_t.Cost[5],
+    ZenyConvert = 300000000,
+    Desc = "##47047891"
+  },
+  [2347504] = {
+    id = 2347504,
+    CardID = 23475,
+    Level = 4,
+    BuffEffect = Table_CardLevel_t.BuffEffect[137],
+    Cost = Table_CardLevel_t.Cost[61],
+    ZenyConvert = 450000000,
+    Desc = "##47047892"
+  },
+  [2347505] = {
+    id = 2347505,
+    CardID = 23475,
+    Level = 5,
+    BuffEffect = Table_CardLevel_t.BuffEffect[136],
+    Cost = Table_CardLevel_t.Cost[60],
+    ZenyConvert = 625000000,
+    Desc = "##47047893"
   },
   [2347901] = {
     id = 2347901,
     CardID = 23479,
-    BuffEffect = Table_CardLevel_t.BuffEffect[316],
+    BuffEffect = Table_CardLevel_t.BuffEffect[336],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##46117880"
@@ -4165,7 +4429,7 @@ Table_CardLevel = {
     id = 2347902,
     CardID = 23479,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[205],
+    BuffEffect = Table_CardLevel_t.BuffEffect[225],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##46117881"
   },
@@ -4173,7 +4437,7 @@ Table_CardLevel = {
     id = 2347903,
     CardID = 23479,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[204],
+    BuffEffect = Table_CardLevel_t.BuffEffect[224],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##46117882"
@@ -4182,8 +4446,8 @@ Table_CardLevel = {
     id = 2347904,
     CardID = 23479,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[203],
-    Cost = Table_CardLevel_t.Cost[90],
+    BuffEffect = Table_CardLevel_t.BuffEffect[223],
+    Cost = Table_CardLevel_t.Cost[99],
     ZenyConvert = 450000000,
     Desc = "##46117883"
   },
@@ -4191,15 +4455,15 @@ Table_CardLevel = {
     id = 2347905,
     CardID = 23479,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[202],
-    Cost = Table_CardLevel_t.Cost[89],
+    BuffEffect = Table_CardLevel_t.BuffEffect[222],
+    Cost = Table_CardLevel_t.Cost[98],
     ZenyConvert = 625000000,
     Desc = "##46117884"
   },
   [2348001] = {
     id = 2348001,
     CardID = 23480,
-    BuffEffect = Table_CardLevel_t.BuffEffect[416],
+    BuffEffect = Table_CardLevel_t.BuffEffect[436],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##46117885"
@@ -4208,7 +4472,7 @@ Table_CardLevel = {
     id = 2348002,
     CardID = 23480,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[417],
+    BuffEffect = Table_CardLevel_t.BuffEffect[437],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##46117886"
   },
@@ -4216,7 +4480,7 @@ Table_CardLevel = {
     id = 2348003,
     CardID = 23480,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[418],
+    BuffEffect = Table_CardLevel_t.BuffEffect[438],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##46117887"
@@ -4225,8 +4489,8 @@ Table_CardLevel = {
     id = 2348004,
     CardID = 23480,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[419],
-    Cost = Table_CardLevel_t.Cost[173],
+    BuffEffect = Table_CardLevel_t.BuffEffect[439],
+    Cost = Table_CardLevel_t.Cost[182],
     ZenyConvert = 450000000,
     Desc = "##46117888"
   },
@@ -4234,15 +4498,15 @@ Table_CardLevel = {
     id = 2348005,
     CardID = 23480,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[420],
-    Cost = Table_CardLevel_t.Cost[174],
+    BuffEffect = Table_CardLevel_t.BuffEffect[440],
+    Cost = Table_CardLevel_t.Cost[183],
     ZenyConvert = 625000000,
     Desc = "##46117889"
   },
   [2348701] = {
     id = 2348701,
     CardID = 23487,
-    BuffEffect = Table_CardLevel_t.BuffEffect[105],
+    BuffEffect = Table_CardLevel_t.BuffEffect[114],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44722615"
@@ -4251,7 +4515,7 @@ Table_CardLevel = {
     id = 2348702,
     CardID = 23487,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[281],
+    BuffEffect = Table_CardLevel_t.BuffEffect[301],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44722616"
   },
@@ -4259,7 +4523,7 @@ Table_CardLevel = {
     id = 2348703,
     CardID = 23487,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[280],
+    BuffEffect = Table_CardLevel_t.BuffEffect[300],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44722617"
@@ -4268,8 +4532,8 @@ Table_CardLevel = {
     id = 2348704,
     CardID = 23487,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[279],
-    Cost = Table_CardLevel_t.Cost[124],
+    BuffEffect = Table_CardLevel_t.BuffEffect[299],
+    Cost = Table_CardLevel_t.Cost[133],
     ZenyConvert = 450000000,
     Desc = "##44722618"
   },
@@ -4277,15 +4541,15 @@ Table_CardLevel = {
     id = 2348705,
     CardID = 23487,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[273],
-    Cost = Table_CardLevel_t.Cost[121],
+    BuffEffect = Table_CardLevel_t.BuffEffect[293],
+    Cost = Table_CardLevel_t.Cost[130],
     ZenyConvert = 625000000,
     Desc = "##44722619"
   },
   [2349001] = {
     id = 2349001,
     CardID = 23490,
-    BuffEffect = Table_CardLevel_t.BuffEffect[394],
+    BuffEffect = Table_CardLevel_t.BuffEffect[414],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44725867"
@@ -4294,7 +4558,7 @@ Table_CardLevel = {
     id = 2349002,
     CardID = 23490,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[395],
+    BuffEffect = Table_CardLevel_t.BuffEffect[415],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44725868"
   },
@@ -4302,7 +4566,7 @@ Table_CardLevel = {
     id = 2349003,
     CardID = 23490,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[270],
+    BuffEffect = Table_CardLevel_t.BuffEffect[290],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44725869"
@@ -4311,8 +4575,8 @@ Table_CardLevel = {
     id = 2349004,
     CardID = 23490,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[269],
-    Cost = Table_CardLevel_t.Cost[119],
+    BuffEffect = Table_CardLevel_t.BuffEffect[289],
+    Cost = Table_CardLevel_t.Cost[128],
     ZenyConvert = 450000000,
     Desc = "##44725870"
   },
@@ -4320,15 +4584,15 @@ Table_CardLevel = {
     id = 2349005,
     CardID = 23490,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[268],
-    Cost = Table_CardLevel_t.Cost[118],
+    BuffEffect = Table_CardLevel_t.BuffEffect[288],
+    Cost = Table_CardLevel_t.Cost[127],
     ZenyConvert = 625000000,
     Desc = "##44725871"
   },
   [2349301] = {
     id = 2349301,
     CardID = 23493,
-    BuffEffect = Table_CardLevel_t.BuffEffect[183],
+    BuffEffect = Table_CardLevel_t.BuffEffect[203],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##45913965"
@@ -4337,7 +4601,7 @@ Table_CardLevel = {
     id = 2349302,
     CardID = 23493,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[234],
+    BuffEffect = Table_CardLevel_t.BuffEffect[254],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##45913966"
   },
@@ -4345,7 +4609,7 @@ Table_CardLevel = {
     id = 2349303,
     CardID = 23493,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[233],
+    BuffEffect = Table_CardLevel_t.BuffEffect[253],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##45913967"
@@ -4354,8 +4618,8 @@ Table_CardLevel = {
     id = 2349304,
     CardID = 23493,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[232],
-    Cost = Table_CardLevel_t.Cost[103],
+    BuffEffect = Table_CardLevel_t.BuffEffect[252],
+    Cost = Table_CardLevel_t.Cost[112],
     ZenyConvert = 450000000,
     Desc = "##45913968"
   },
@@ -4363,15 +4627,15 @@ Table_CardLevel = {
     id = 2349305,
     CardID = 23493,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[149],
-    Cost = Table_CardLevel_t.Cost[66],
+    BuffEffect = Table_CardLevel_t.BuffEffect[169],
+    Cost = Table_CardLevel_t.Cost[75],
     ZenyConvert = 625000000,
     Desc = "##45913969"
   },
   [2350301] = {
     id = 2350301,
     CardID = 23503,
-    BuffEffect = Table_CardLevel_t.BuffEffect[161],
+    BuffEffect = Table_CardLevel_t.BuffEffect[181],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##46118965"
@@ -4380,7 +4644,7 @@ Table_CardLevel = {
     id = 2350302,
     CardID = 23503,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[190],
+    BuffEffect = Table_CardLevel_t.BuffEffect[210],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##46118966"
   },
@@ -4388,7 +4652,7 @@ Table_CardLevel = {
     id = 2350303,
     CardID = 23503,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[182],
+    BuffEffect = Table_CardLevel_t.BuffEffect[202],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##46118967"
@@ -4397,8 +4661,8 @@ Table_CardLevel = {
     id = 2350304,
     CardID = 23503,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[181],
-    Cost = Table_CardLevel_t.Cost[79],
+    BuffEffect = Table_CardLevel_t.BuffEffect[201],
+    Cost = Table_CardLevel_t.Cost[88],
     ZenyConvert = 450000000,
     Desc = "##46118968"
   },
@@ -4406,8 +4670,8 @@ Table_CardLevel = {
     id = 2350305,
     CardID = 23503,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[180],
-    Cost = Table_CardLevel_t.Cost[78],
+    BuffEffect = Table_CardLevel_t.BuffEffect[200],
+    Cost = Table_CardLevel_t.Cost[87],
     ZenyConvert = 625000000,
     Desc = "##46118969"
   },
@@ -4457,7 +4721,7 @@ Table_CardLevel = {
   [2460101] = {
     id = 2460101,
     CardID = 24601,
-    BuffEffect = Table_CardLevel_t.BuffEffect[335],
+    BuffEffect = Table_CardLevel_t.BuffEffect[355],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44718968"
@@ -4466,7 +4730,7 @@ Table_CardLevel = {
     id = 2460102,
     CardID = 24601,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[334],
+    BuffEffect = Table_CardLevel_t.BuffEffect[354],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44718969"
   },
@@ -4474,7 +4738,7 @@ Table_CardLevel = {
     id = 2460103,
     CardID = 24601,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[333],
+    BuffEffect = Table_CardLevel_t.BuffEffect[353],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44718970"
@@ -4483,8 +4747,8 @@ Table_CardLevel = {
     id = 2460104,
     CardID = 24601,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[332],
-    Cost = Table_CardLevel_t.Cost[141],
+    BuffEffect = Table_CardLevel_t.BuffEffect[352],
+    Cost = Table_CardLevel_t.Cost[150],
     ZenyConvert = 450000000,
     Desc = "##44718971"
   },
@@ -4492,15 +4756,15 @@ Table_CardLevel = {
     id = 2460105,
     CardID = 24601,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[111],
-    Cost = Table_CardLevel_t.Cost[48],
+    BuffEffect = Table_CardLevel_t.BuffEffect[120],
+    Cost = Table_CardLevel_t.Cost[52],
     ZenyConvert = 625000000,
     Desc = "##44718972"
   },
   [2460200] = {
     id = 2460200,
     CardID = 24602,
-    BuffEffect = Table_CardLevel_t.BuffEffect[195],
+    BuffEffect = Table_CardLevel_t.BuffEffect[215],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44709396"
@@ -4509,7 +4773,7 @@ Table_CardLevel = {
     id = 2460201,
     CardID = 24602,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[196],
+    BuffEffect = Table_CardLevel_t.BuffEffect[216],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44709397"
   },
@@ -4517,7 +4781,7 @@ Table_CardLevel = {
     id = 2460202,
     CardID = 24602,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[197],
+    BuffEffect = Table_CardLevel_t.BuffEffect[217],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44709398"
@@ -4526,8 +4790,8 @@ Table_CardLevel = {
     id = 2460203,
     CardID = 24602,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[198],
-    Cost = Table_CardLevel_t.Cost[85],
+    BuffEffect = Table_CardLevel_t.BuffEffect[218],
+    Cost = Table_CardLevel_t.Cost[94],
     ZenyConvert = 450000000,
     Desc = "##44709399"
   },
@@ -4535,15 +4799,15 @@ Table_CardLevel = {
     id = 2460204,
     CardID = 24602,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[199],
-    Cost = Table_CardLevel_t.Cost[86],
+    BuffEffect = Table_CardLevel_t.BuffEffect[219],
+    Cost = Table_CardLevel_t.Cost[95],
     ZenyConvert = 625000000,
     Desc = "##44709400"
   },
   [2460301] = {
     id = 2460301,
     CardID = 24603,
-    BuffEffect = Table_CardLevel_t.BuffEffect[296],
+    BuffEffect = Table_CardLevel_t.BuffEffect[316],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705747"
@@ -4552,7 +4816,7 @@ Table_CardLevel = {
     id = 2460302,
     CardID = 24603,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[297],
+    BuffEffect = Table_CardLevel_t.BuffEffect[317],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705748"
   },
@@ -4560,7 +4824,7 @@ Table_CardLevel = {
     id = 2460303,
     CardID = 24603,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[298],
+    BuffEffect = Table_CardLevel_t.BuffEffect[318],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705749"
@@ -4569,8 +4833,8 @@ Table_CardLevel = {
     id = 2460304,
     CardID = 24603,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[299],
-    Cost = Table_CardLevel_t.Cost[128],
+    BuffEffect = Table_CardLevel_t.BuffEffect[319],
+    Cost = Table_CardLevel_t.Cost[137],
     ZenyConvert = 450000000,
     Desc = "##44705750"
   },
@@ -4578,15 +4842,15 @@ Table_CardLevel = {
     id = 2460305,
     CardID = 24603,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[300],
-    Cost = Table_CardLevel_t.Cost[129],
+    BuffEffect = Table_CardLevel_t.BuffEffect[320],
+    Cost = Table_CardLevel_t.Cost[138],
     ZenyConvert = 625000000,
     Desc = "##44705751"
   },
   [2460401] = {
     id = 2460401,
     CardID = 24604,
-    BuffEffect = Table_CardLevel_t.BuffEffect[396],
+    BuffEffect = Table_CardLevel_t.BuffEffect[416],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705742"
@@ -4595,7 +4859,7 @@ Table_CardLevel = {
     id = 2460402,
     CardID = 24604,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[397],
+    BuffEffect = Table_CardLevel_t.BuffEffect[417],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705743"
   },
@@ -4603,7 +4867,7 @@ Table_CardLevel = {
     id = 2460403,
     CardID = 24604,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[398],
+    BuffEffect = Table_CardLevel_t.BuffEffect[418],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705744"
@@ -4612,8 +4876,8 @@ Table_CardLevel = {
     id = 2460404,
     CardID = 24604,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[399],
-    Cost = Table_CardLevel_t.Cost[167],
+    BuffEffect = Table_CardLevel_t.BuffEffect[419],
+    Cost = Table_CardLevel_t.Cost[176],
     ZenyConvert = 450000000,
     Desc = "##44705745"
   },
@@ -4621,8 +4885,8 @@ Table_CardLevel = {
     id = 2460405,
     CardID = 24604,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[400],
-    Cost = Table_CardLevel_t.Cost[168],
+    BuffEffect = Table_CardLevel_t.BuffEffect[420],
+    Cost = Table_CardLevel_t.Cost[177],
     ZenyConvert = 625000000,
     Desc = "##44705746"
   },
@@ -4672,7 +4936,7 @@ Table_CardLevel = {
   [2460601] = {
     id = 2460601,
     CardID = 24606,
-    BuffEffect = Table_CardLevel_t.BuffEffect[99],
+    BuffEffect = Table_CardLevel_t.BuffEffect[105],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44697165"
@@ -4681,7 +4945,7 @@ Table_CardLevel = {
     id = 2460602,
     CardID = 24606,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[100],
+    BuffEffect = Table_CardLevel_t.BuffEffect[106],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44697166"
   },
@@ -4689,7 +4953,7 @@ Table_CardLevel = {
     id = 2460603,
     CardID = 24606,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[101],
+    BuffEffect = Table_CardLevel_t.BuffEffect[107],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44697167"
@@ -4698,8 +4962,8 @@ Table_CardLevel = {
     id = 2460604,
     CardID = 24606,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[102],
-    Cost = Table_CardLevel_t.Cost[44],
+    BuffEffect = Table_CardLevel_t.BuffEffect[108],
+    Cost = Table_CardLevel_t.Cost[47],
     ZenyConvert = 450000000,
     Desc = "##44697168"
   },
@@ -4707,15 +4971,15 @@ Table_CardLevel = {
     id = 2460605,
     CardID = 24606,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[103],
-    Cost = Table_CardLevel_t.Cost[45],
+    BuffEffect = Table_CardLevel_t.BuffEffect[109],
+    Cost = Table_CardLevel_t.Cost[48],
     ZenyConvert = 625000000,
     Desc = "##44696444"
   },
   [2460701] = {
     id = 2460701,
     CardID = 24607,
-    BuffEffect = Table_CardLevel_t.BuffEffect[185],
+    BuffEffect = Table_CardLevel_t.BuffEffect[205],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44697793"
@@ -4724,7 +4988,7 @@ Table_CardLevel = {
     id = 2460702,
     CardID = 24607,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[186],
+    BuffEffect = Table_CardLevel_t.BuffEffect[206],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44697794"
   },
@@ -4732,7 +4996,7 @@ Table_CardLevel = {
     id = 2460703,
     CardID = 24607,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[187],
+    BuffEffect = Table_CardLevel_t.BuffEffect[207],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44697795"
@@ -4741,8 +5005,8 @@ Table_CardLevel = {
     id = 2460704,
     CardID = 24607,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[188],
-    Cost = Table_CardLevel_t.Cost[80],
+    BuffEffect = Table_CardLevel_t.BuffEffect[208],
+    Cost = Table_CardLevel_t.Cost[89],
     ZenyConvert = 450000000,
     Desc = "##44697796"
   },
@@ -4750,15 +5014,15 @@ Table_CardLevel = {
     id = 2460705,
     CardID = 24607,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[189],
-    Cost = Table_CardLevel_t.Cost[81],
+    BuffEffect = Table_CardLevel_t.BuffEffect[209],
+    Cost = Table_CardLevel_t.Cost[90],
     ZenyConvert = 625000000,
     Desc = "##44697797"
   },
   [2460801] = {
     id = 2460801,
     CardID = 24608,
-    BuffEffect = Table_CardLevel_t.BuffEffect[285],
+    BuffEffect = Table_CardLevel_t.BuffEffect[305],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44697788"
@@ -4767,7 +5031,7 @@ Table_CardLevel = {
     id = 2460802,
     CardID = 24608,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[286],
+    BuffEffect = Table_CardLevel_t.BuffEffect[306],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44697789"
   },
@@ -4775,7 +5039,7 @@ Table_CardLevel = {
     id = 2460803,
     CardID = 24608,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[287],
+    BuffEffect = Table_CardLevel_t.BuffEffect[307],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44697790"
@@ -4784,8 +5048,8 @@ Table_CardLevel = {
     id = 2460804,
     CardID = 24608,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[288],
-    Cost = Table_CardLevel_t.Cost[125],
+    BuffEffect = Table_CardLevel_t.BuffEffect[308],
+    Cost = Table_CardLevel_t.Cost[134],
     ZenyConvert = 450000000,
     Desc = "##44697791"
   },
@@ -4793,15 +5057,15 @@ Table_CardLevel = {
     id = 2460805,
     CardID = 24608,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[289],
-    Cost = Table_CardLevel_t.Cost[126],
+    BuffEffect = Table_CardLevel_t.BuffEffect[309],
+    Cost = Table_CardLevel_t.Cost[135],
     ZenyConvert = 625000000,
     Desc = "##44697792"
   },
   [2460901] = {
     id = 2460901,
     CardID = 24609,
-    BuffEffect = Table_CardLevel_t.BuffEffect[385],
+    BuffEffect = Table_CardLevel_t.BuffEffect[405],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705767"
@@ -4810,7 +5074,7 @@ Table_CardLevel = {
     id = 2460902,
     CardID = 24609,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[386],
+    BuffEffect = Table_CardLevel_t.BuffEffect[406],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705768"
   },
@@ -4818,7 +5082,7 @@ Table_CardLevel = {
     id = 2460903,
     CardID = 24609,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[387],
+    BuffEffect = Table_CardLevel_t.BuffEffect[407],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705769"
@@ -4827,8 +5091,8 @@ Table_CardLevel = {
     id = 2460904,
     CardID = 24609,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[388],
-    Cost = Table_CardLevel_t.Cost[164],
+    BuffEffect = Table_CardLevel_t.BuffEffect[408],
+    Cost = Table_CardLevel_t.Cost[173],
     ZenyConvert = 450000000,
     Desc = "##44705770"
   },
@@ -4836,8 +5100,8 @@ Table_CardLevel = {
     id = 2460905,
     CardID = 24609,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[389],
-    Cost = Table_CardLevel_t.Cost[165],
+    BuffEffect = Table_CardLevel_t.BuffEffect[409],
+    Cost = Table_CardLevel_t.Cost[174],
     ZenyConvert = 625000000,
     Desc = "##44705771"
   },
@@ -4879,15 +5143,15 @@ Table_CardLevel = {
     id = 2461005,
     CardID = 24610,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[383],
-    Cost = Table_CardLevel_t.Cost[162],
+    BuffEffect = Table_CardLevel_t.BuffEffect[403],
+    Cost = Table_CardLevel_t.Cost[171],
     ZenyConvert = 625000000,
     Desc = "##44712838"
   },
   [2461101] = {
     id = 2461101,
     CardID = 24611,
-    BuffEffect = Table_CardLevel_t.BuffEffect[89],
+    BuffEffect = Table_CardLevel_t.BuffEffect[94],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705762"
@@ -4896,7 +5160,7 @@ Table_CardLevel = {
     id = 2461102,
     CardID = 24611,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[90],
+    BuffEffect = Table_CardLevel_t.BuffEffect[95],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705763"
   },
@@ -4904,7 +5168,7 @@ Table_CardLevel = {
     id = 2461103,
     CardID = 24611,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[91],
+    BuffEffect = Table_CardLevel_t.BuffEffect[96],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705764"
@@ -4913,8 +5177,8 @@ Table_CardLevel = {
     id = 2461104,
     CardID = 24611,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[92],
-    Cost = Table_CardLevel_t.Cost[40],
+    BuffEffect = Table_CardLevel_t.BuffEffect[97],
+    Cost = Table_CardLevel_t.Cost[42],
     ZenyConvert = 450000000,
     Desc = "##44705765"
   },
@@ -4922,15 +5186,15 @@ Table_CardLevel = {
     id = 2461105,
     CardID = 24611,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[93],
-    Cost = Table_CardLevel_t.Cost[41],
+    BuffEffect = Table_CardLevel_t.BuffEffect[98],
+    Cost = Table_CardLevel_t.Cost[43],
     ZenyConvert = 625000000,
     Desc = "##44705766"
   },
   [2461201] = {
     id = 2461201,
     CardID = 24612,
-    BuffEffect = Table_CardLevel_t.BuffEffect[174],
+    BuffEffect = Table_CardLevel_t.BuffEffect[194],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44718963"
@@ -4939,7 +5203,7 @@ Table_CardLevel = {
     id = 2461202,
     CardID = 24612,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[175],
+    BuffEffect = Table_CardLevel_t.BuffEffect[195],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44718964"
   },
@@ -4947,7 +5211,7 @@ Table_CardLevel = {
     id = 2461203,
     CardID = 24612,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[176],
+    BuffEffect = Table_CardLevel_t.BuffEffect[196],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44718965"
@@ -4956,8 +5220,8 @@ Table_CardLevel = {
     id = 2461204,
     CardID = 24612,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[177],
-    Cost = Table_CardLevel_t.Cost[76],
+    BuffEffect = Table_CardLevel_t.BuffEffect[197],
+    Cost = Table_CardLevel_t.Cost[85],
     ZenyConvert = 450000000,
     Desc = "##44718966"
   },
@@ -4965,15 +5229,15 @@ Table_CardLevel = {
     id = 2461205,
     CardID = 24612,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[178],
-    Cost = Table_CardLevel_t.Cost[77],
+    BuffEffect = Table_CardLevel_t.BuffEffect[198],
+    Cost = Table_CardLevel_t.Cost[86],
     ZenyConvert = 625000000,
     Desc = "##44718967"
   },
   [2461301] = {
     id = 2461301,
     CardID = 24613,
-    BuffEffect = Table_CardLevel_t.BuffEffect[274],
+    BuffEffect = Table_CardLevel_t.BuffEffect[294],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705802"
@@ -4982,7 +5246,7 @@ Table_CardLevel = {
     id = 2461302,
     CardID = 24613,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[275],
+    BuffEffect = Table_CardLevel_t.BuffEffect[295],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705803"
   },
@@ -4990,7 +5254,7 @@ Table_CardLevel = {
     id = 2461303,
     CardID = 24613,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[276],
+    BuffEffect = Table_CardLevel_t.BuffEffect[296],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705804"
@@ -4999,8 +5263,8 @@ Table_CardLevel = {
     id = 2461304,
     CardID = 24613,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[277],
-    Cost = Table_CardLevel_t.Cost[122],
+    BuffEffect = Table_CardLevel_t.BuffEffect[297],
+    Cost = Table_CardLevel_t.Cost[131],
     ZenyConvert = 450000000,
     Desc = "##44705805"
   },
@@ -5008,15 +5272,15 @@ Table_CardLevel = {
     id = 2461305,
     CardID = 24613,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[278],
-    Cost = Table_CardLevel_t.Cost[123],
+    BuffEffect = Table_CardLevel_t.BuffEffect[298],
+    Cost = Table_CardLevel_t.Cost[132],
     ZenyConvert = 625000000,
     Desc = "##44705806"
   },
   [2461901] = {
     id = 2461901,
     CardID = 24619,
-    BuffEffect = Table_CardLevel_t.BuffEffect[363],
+    BuffEffect = Table_CardLevel_t.BuffEffect[383],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44703848"
@@ -5025,7 +5289,7 @@ Table_CardLevel = {
     id = 2461902,
     CardID = 24619,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[364],
+    BuffEffect = Table_CardLevel_t.BuffEffect[384],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44703849"
   },
@@ -5033,7 +5297,7 @@ Table_CardLevel = {
     id = 2461903,
     CardID = 24619,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[365],
+    BuffEffect = Table_CardLevel_t.BuffEffect[385],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44703850"
@@ -5042,8 +5306,8 @@ Table_CardLevel = {
     id = 2461904,
     CardID = 24619,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[366],
-    Cost = Table_CardLevel_t.Cost[153],
+    BuffEffect = Table_CardLevel_t.BuffEffect[386],
+    Cost = Table_CardLevel_t.Cost[162],
     ZenyConvert = 450000000,
     Desc = "##44703851"
   },
@@ -5051,8 +5315,8 @@ Table_CardLevel = {
     id = 2461905,
     CardID = 24619,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[367],
-    Cost = Table_CardLevel_t.Cost[154],
+    BuffEffect = Table_CardLevel_t.BuffEffect[387],
+    Cost = Table_CardLevel_t.Cost[163],
     ZenyConvert = 625000000,
     Desc = "##44703852"
   },
@@ -5102,7 +5366,7 @@ Table_CardLevel = {
   [2462101] = {
     id = 2462101,
     CardID = 24621,
-    BuffEffect = Table_CardLevel_t.BuffEffect[71],
+    BuffEffect = Table_CardLevel_t.BuffEffect[72],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44712849"
@@ -5111,7 +5375,7 @@ Table_CardLevel = {
     id = 2462102,
     CardID = 24621,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[72],
+    BuffEffect = Table_CardLevel_t.BuffEffect[73],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44712850"
   },
@@ -5119,7 +5383,7 @@ Table_CardLevel = {
     id = 2462103,
     CardID = 24621,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[73],
+    BuffEffect = Table_CardLevel_t.BuffEffect[74],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44712851"
@@ -5128,8 +5392,8 @@ Table_CardLevel = {
     id = 2462104,
     CardID = 24621,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[74],
-    Cost = Table_CardLevel_t.Cost[34],
+    BuffEffect = Table_CardLevel_t.BuffEffect[75],
+    Cost = Table_CardLevel_t.Cost[35],
     ZenyConvert = 450000000,
     Desc = "##44712852"
   },
@@ -5137,15 +5401,15 @@ Table_CardLevel = {
     id = 2462105,
     CardID = 24621,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[378],
-    Cost = Table_CardLevel_t.Cost[159],
+    BuffEffect = Table_CardLevel_t.BuffEffect[398],
+    Cost = Table_CardLevel_t.Cost[168],
     ZenyConvert = 625000000,
     Desc = "##44712853"
   },
   [2462201] = {
     id = 2462201,
     CardID = 24622,
-    BuffEffect = Table_CardLevel_t.BuffEffect[152],
+    BuffEffect = Table_CardLevel_t.BuffEffect[172],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705832"
@@ -5154,7 +5418,7 @@ Table_CardLevel = {
     id = 2462202,
     CardID = 24622,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[153],
+    BuffEffect = Table_CardLevel_t.BuffEffect[173],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705833"
   },
@@ -5162,7 +5426,7 @@ Table_CardLevel = {
     id = 2462203,
     CardID = 24622,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[154],
+    BuffEffect = Table_CardLevel_t.BuffEffect[174],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705834"
@@ -5171,8 +5435,8 @@ Table_CardLevel = {
     id = 2462204,
     CardID = 24622,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[155],
-    Cost = Table_CardLevel_t.Cost[67],
+    BuffEffect = Table_CardLevel_t.BuffEffect[175],
+    Cost = Table_CardLevel_t.Cost[76],
     ZenyConvert = 450000000,
     Desc = "##44705835"
   },
@@ -5180,15 +5444,15 @@ Table_CardLevel = {
     id = 2462205,
     CardID = 24622,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[156],
-    Cost = Table_CardLevel_t.Cost[68],
+    BuffEffect = Table_CardLevel_t.BuffEffect[176],
+    Cost = Table_CardLevel_t.Cost[77],
     ZenyConvert = 625000000,
     Desc = "##44705836"
   },
   [2462701] = {
     id = 2462701,
     CardID = 24627,
-    BuffEffect = Table_CardLevel_t.BuffEffect[454],
+    BuffEffect = Table_CardLevel_t.BuffEffect[474],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705757"
@@ -5197,7 +5461,7 @@ Table_CardLevel = {
     id = 2462702,
     CardID = 24627,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[453],
+    BuffEffect = Table_CardLevel_t.BuffEffect[473],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705758"
   },
@@ -5205,7 +5469,7 @@ Table_CardLevel = {
     id = 2462703,
     CardID = 24627,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[291],
+    BuffEffect = Table_CardLevel_t.BuffEffect[311],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705759"
@@ -5214,8 +5478,8 @@ Table_CardLevel = {
     id = 2462704,
     CardID = 24627,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[144],
-    Cost = Table_CardLevel_t.Cost[64],
+    BuffEffect = Table_CardLevel_t.BuffEffect[164],
+    Cost = Table_CardLevel_t.Cost[73],
     ZenyConvert = 450000000,
     Desc = "##44705760"
   },
@@ -5223,15 +5487,15 @@ Table_CardLevel = {
     id = 2462705,
     CardID = 24627,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[145],
-    Cost = Table_CardLevel_t.Cost[65],
+    BuffEffect = Table_CardLevel_t.BuffEffect[165],
+    Cost = Table_CardLevel_t.Cost[74],
     ZenyConvert = 625000000,
     Desc = "##44705761"
   },
   [2462801] = {
     id = 2462801,
     CardID = 24628,
-    BuffEffect = Table_CardLevel_t.BuffEffect[241],
+    BuffEffect = Table_CardLevel_t.BuffEffect[261],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44703843"
@@ -5240,7 +5504,7 @@ Table_CardLevel = {
     id = 2462802,
     CardID = 24628,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[242],
+    BuffEffect = Table_CardLevel_t.BuffEffect[262],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44703844"
   },
@@ -5248,7 +5512,7 @@ Table_CardLevel = {
     id = 2462803,
     CardID = 24628,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[243],
+    BuffEffect = Table_CardLevel_t.BuffEffect[263],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44703845"
@@ -5257,8 +5521,8 @@ Table_CardLevel = {
     id = 2462804,
     CardID = 24628,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[244],
-    Cost = Table_CardLevel_t.Cost[106],
+    BuffEffect = Table_CardLevel_t.BuffEffect[264],
+    Cost = Table_CardLevel_t.Cost[115],
     ZenyConvert = 450000000,
     Desc = "##44703846"
   },
@@ -5266,15 +5530,15 @@ Table_CardLevel = {
     id = 2462805,
     CardID = 24628,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[245],
-    Cost = Table_CardLevel_t.Cost[107],
+    BuffEffect = Table_CardLevel_t.BuffEffect[265],
+    Cost = Table_CardLevel_t.Cost[116],
     ZenyConvert = 625000000,
     Desc = "##44703847"
   },
   [2462901] = {
     id = 2462901,
     CardID = 24629,
-    BuffEffect = Table_CardLevel_t.BuffEffect[341],
+    BuffEffect = Table_CardLevel_t.BuffEffect[361],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44697813"
@@ -5283,7 +5547,7 @@ Table_CardLevel = {
     id = 2462902,
     CardID = 24629,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[342],
+    BuffEffect = Table_CardLevel_t.BuffEffect[362],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44697814"
   },
@@ -5291,7 +5555,7 @@ Table_CardLevel = {
     id = 2462903,
     CardID = 24629,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[343],
+    BuffEffect = Table_CardLevel_t.BuffEffect[363],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44697815"
@@ -5300,8 +5564,8 @@ Table_CardLevel = {
     id = 2462904,
     CardID = 24629,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[344],
-    Cost = Table_CardLevel_t.Cost[143],
+    BuffEffect = Table_CardLevel_t.BuffEffect[364],
+    Cost = Table_CardLevel_t.Cost[152],
     ZenyConvert = 450000000,
     Desc = "##44697816"
   },
@@ -5309,15 +5573,15 @@ Table_CardLevel = {
     id = 2462905,
     CardID = 24629,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[345],
-    Cost = Table_CardLevel_t.Cost[144],
+    BuffEffect = Table_CardLevel_t.BuffEffect[365],
+    Cost = Table_CardLevel_t.Cost[153],
     ZenyConvert = 625000000,
     Desc = "##44697817"
   },
   [2463001] = {
     id = 2463001,
     CardID = 24630,
-    BuffEffect = Table_CardLevel_t.BuffEffect[292],
+    BuffEffect = Table_CardLevel_t.BuffEffect[312],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705777"
@@ -5326,7 +5590,7 @@ Table_CardLevel = {
     id = 2463002,
     CardID = 24630,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[293],
+    BuffEffect = Table_CardLevel_t.BuffEffect[313],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705778"
   },
@@ -5334,7 +5598,7 @@ Table_CardLevel = {
     id = 2463003,
     CardID = 24630,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[294],
+    BuffEffect = Table_CardLevel_t.BuffEffect[314],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705779"
@@ -5343,8 +5607,8 @@ Table_CardLevel = {
     id = 2463004,
     CardID = 24630,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[301],
-    Cost = Table_CardLevel_t.Cost[130],
+    BuffEffect = Table_CardLevel_t.BuffEffect[321],
+    Cost = Table_CardLevel_t.Cost[139],
     ZenyConvert = 450000000,
     Desc = "##44705780"
   },
@@ -5352,8 +5616,8 @@ Table_CardLevel = {
     id = 2463005,
     CardID = 24630,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[445],
-    Cost = Table_CardLevel_t.Cost[185],
+    BuffEffect = Table_CardLevel_t.BuffEffect[465],
+    Cost = Table_CardLevel_t.Cost[193],
     ZenyConvert = 625000000,
     Desc = "##44705781"
   },
@@ -5403,7 +5667,7 @@ Table_CardLevel = {
   [2463701] = {
     id = 2463701,
     CardID = 24637,
-    BuffEffect = Table_CardLevel_t.BuffEffect[121],
+    BuffEffect = Table_CardLevel_t.BuffEffect[139],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44705807"
@@ -5412,7 +5676,7 @@ Table_CardLevel = {
     id = 2463702,
     CardID = 24637,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[122],
+    BuffEffect = Table_CardLevel_t.BuffEffect[140],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44705808"
   },
@@ -5420,7 +5684,7 @@ Table_CardLevel = {
     id = 2463703,
     CardID = 24637,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[123],
+    BuffEffect = Table_CardLevel_t.BuffEffect[141],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44705809"
@@ -5429,8 +5693,8 @@ Table_CardLevel = {
     id = 2463704,
     CardID = 24637,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[124],
-    Cost = Table_CardLevel_t.Cost[54],
+    BuffEffect = Table_CardLevel_t.BuffEffect[142],
+    Cost = Table_CardLevel_t.Cost[62],
     ZenyConvert = 450000000,
     Desc = "##44705810"
   },
@@ -5438,53 +5702,58 @@ Table_CardLevel = {
     id = 2463705,
     CardID = 24637,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[125],
-    Cost = Table_CardLevel_t.Cost[55],
+    BuffEffect = Table_CardLevel_t.BuffEffect[143],
+    Cost = Table_CardLevel_t.Cost[63],
     ZenyConvert = 625000000,
     Desc = "##44705811"
   },
   [2464201] = {
     id = 2464201,
-    BuffEffect = Table_CardLevel_t.BuffEffect[460],
+    CardID = 24642,
+    BuffEffect = Table_CardLevel_t.BuffEffect[480],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44697808"
   },
   [2464202] = {
     id = 2464202,
+    CardID = 24642,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[282],
+    BuffEffect = Table_CardLevel_t.BuffEffect[302],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44697809"
   },
   [2464203] = {
     id = 2464203,
+    CardID = 24642,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[283],
+    BuffEffect = Table_CardLevel_t.BuffEffect[303],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44697810"
   },
   [2464204] = {
     id = 2464204,
+    CardID = 24642,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[290],
-    Cost = Table_CardLevel_t.Cost[127],
+    BuffEffect = Table_CardLevel_t.BuffEffect[310],
+    Cost = Table_CardLevel_t.Cost[136],
     ZenyConvert = 450000000,
     Desc = "##44697811"
   },
   [2464205] = {
     id = 2464205,
+    CardID = 24642,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[117],
-    Cost = Table_CardLevel_t.Cost[51],
+    BuffEffect = Table_CardLevel_t.BuffEffect[132],
+    Cost = Table_CardLevel_t.Cost[57],
     ZenyConvert = 625000000,
     Desc = "##44697812"
   },
   [2464301] = {
     id = 2464301,
     CardID = 24643,
-    BuffEffect = Table_CardLevel_t.BuffEffect[339],
+    BuffEffect = Table_CardLevel_t.BuffEffect[359],
     Cost = Table_CardLevel_t.Cost[3],
     ZenyConvert = 75000000,
     Desc = "##44718958"
@@ -5493,7 +5762,7 @@ Table_CardLevel = {
     id = 2464302,
     CardID = 24643,
     Level = 2,
-    BuffEffect = Table_CardLevel_t.BuffEffect[338],
+    BuffEffect = Table_CardLevel_t.BuffEffect[358],
     Cost = Table_CardLevel_t.Cost[4],
     Desc = "##44718959"
   },
@@ -5501,7 +5770,7 @@ Table_CardLevel = {
     id = 2464303,
     CardID = 24643,
     Level = 3,
-    BuffEffect = Table_CardLevel_t.BuffEffect[337],
+    BuffEffect = Table_CardLevel_t.BuffEffect[357],
     Cost = Table_CardLevel_t.Cost[5],
     ZenyConvert = 300000000,
     Desc = "##44718960"
@@ -5510,8 +5779,8 @@ Table_CardLevel = {
     id = 2464304,
     CardID = 24643,
     Level = 4,
-    BuffEffect = Table_CardLevel_t.BuffEffect[336],
-    Cost = Table_CardLevel_t.Cost[142],
+    BuffEffect = Table_CardLevel_t.BuffEffect[356],
+    Cost = Table_CardLevel_t.Cost[151],
     ZenyConvert = 450000000,
     Desc = "##44718961"
   },
@@ -5519,8 +5788,8 @@ Table_CardLevel = {
     id = 2464305,
     CardID = 24643,
     Level = 5,
-    BuffEffect = Table_CardLevel_t.BuffEffect[212],
-    Cost = Table_CardLevel_t.Cost[94],
+    BuffEffect = Table_CardLevel_t.BuffEffect[232],
+    Cost = Table_CardLevel_t.Cost[103],
     ZenyConvert = 625000000,
     Desc = "##44718962"
   }
@@ -5528,9 +5797,9 @@ Table_CardLevel = {
 local cell_mt = {
   __index = {
     BuffEffect = _EmptyTable,
-    CardID = 24642,
+    CardID = 23371,
     Cost = _EmptyTable,
-    Desc = "##44718980",
+    Desc = "##47047897",
     Level = 1,
     TFValidDate = "",
     ValidDate = "",

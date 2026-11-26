@@ -73,6 +73,7 @@ function PerformanceManager:Shutdown()
   end
   self:Reset()
   FunctionPerformanceSetting.ExitMapSetting()
+  FunctionPerformanceSetting.ExitBigWorldConfig()
 end
 
 function PerformanceManager:CloseBloom()

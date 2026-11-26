@@ -342,7 +342,8 @@ UIAtlasConfig.IconAtlas = {
     [21] = "GUI/atlas/preferb/face_21",
     [22] = "GUI/atlas/preferb/face_22",
     [23] = "GUI/atlas/preferb/face_23",
-    [24] = "GUI/atlas/preferb/face_24"
+    [24] = "GUI/atlas/preferb/face_24",
+    [25] = "GUI/atlas/preferb/face_25"
   },
   HeadAccessoryFront = {
     [1] = "GUI/atlas/preferb/Assesories_Front_1",
@@ -366,7 +367,8 @@ UIAtlasConfig.IconAtlas = {
     [19] = "GUI/atlas/preferb/Assesories_Front_19",
     [20] = "GUI/atlas/preferb/Assesories_Front_20",
     [21] = "GUI/atlas/preferb/Assesories_Front_21",
-    [22] = "GUI/atlas/preferb/Assesories_Front_os1"
+    [22] = "GUI/atlas/preferb/Assesories_Front_os1",
+    [23] = "GUI/atlas/preferb/Assesories_Front_22"
   },
   HeadAccessoryBack = {
     [1] = "GUI/atlas/preferb/Assesories_Back_1",

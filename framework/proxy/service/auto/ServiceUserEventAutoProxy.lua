@@ -3124,6 +3124,15 @@ function ServiceUserEventAutoProxy:CallUserReportUserEvent(report, msgid)
         table.insert(msg.report.reasons, report.reasons[i])
       end
     end
+    if report ~= nil and report.content_timestamp ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.report == nil then
+        msg.report = {}
+      end
+      msg.report.content_timestamp = report.content_timestamp
+    end
     if msgid ~= nil then
       msg.msgid = msgid
     end
@@ -3159,6 +3168,15 @@ function ServiceUserEventAutoProxy:CallUserReportUserEvent(report, msgid)
       for i = 1, #report.reasons do
         table.insert(msgParam.report.reasons, report.reasons[i])
       end
+    end
+    if report ~= nil and report.content_timestamp ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.report == nil then
+        msgParam.report = {}
+      end
+      msgParam.report.content_timestamp = report.content_timestamp
     end
     if msgid ~= nil then
       msgParam.msgid = msgid

@@ -275,6 +275,33 @@ Table_QuestVersion = {
     },
     VersionBG = "Missiontracking_bottom_xuehua",
     MapID = {155}
+  },
+  [14] = {
+    id = 14,
+    version = "15.0",
+    name = "##3490439",
+    icon = "taskmanual_btn_GCZL",
+    PuzzleUnder = "taskmanual_bg_jigsaw",
+    VersionStory = "##3492182",
+    StoryName = "##3490439",
+    VersionPic = "",
+    FirstMainQuest = 211550001,
+    Tab = 2,
+    sortid = 22,
+    KeyReward = {
+      male = {
+        {51770, 1}
+      },
+      female = {
+        {51771, 1}
+      }
+    },
+    VersionBG = "Missiontracking_bottom_jfzc",
+    MapID = {
+      13,
+      1004220,
+      24
+    }
   }
 }
 Table_QuestVersion_fields = {

@@ -50,6 +50,10 @@ function ComodoBuildingProxy:InitStaticData()
 end
 
 function ComodoBuildingProxy:InitMaxResProduceVelocity()
+  if not Table_AssetEffect then
+    self.buildingMaxResProduceVelocityMap = self.buildingMaxResProduceVelocityMap or {}
+    return
+  end
   self.buildingMaxResProduceVelocityMap = {}
   local maxResProduce, minResInterval
   for buildingId, _ in pairs(globalCfg.ManorResource) do
@@ -643,7 +647,7 @@ end
 local paramArr = {}
 
 function ComodoBuildingProxy.SelectParamsFromAssetEffectIdsByPredicate(effectIds, predicate, args)
-  if not effectIds then
+  if not effectIds or not Table_AssetEffect then
     return _EmptyTable
   end
   tableClear(paramArr)

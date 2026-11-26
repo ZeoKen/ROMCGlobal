@@ -176,7 +176,10 @@ Table_PveMonsterIntroduction = {
   [175] = {id = 175, Content = "##45913085"},
   [176] = {id = 176, Content = "##45939791"},
   [177] = {id = 177, Content = "##45939793"},
-  [178] = {id = 178, Content = "##45939803"}
+  [178] = {id = 178, Content = "##45939803"},
+  [179] = {id = 179, Content = "##47237268"},
+  [180] = {id = 180, Content = "##48066601"},
+  [181] = {id = 181, Content = "##47237270"}
 }
 Table_PveMonsterIntroduction_fields = {"id", "Content"}
 return Table_PveMonsterIntroduction

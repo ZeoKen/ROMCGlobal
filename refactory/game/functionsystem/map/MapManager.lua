@@ -472,6 +472,10 @@ function MapManager:IsPVEMode_MultiBossRaid()
   return self.dungeonManager:IsPVEMode_MultiBossRaid()
 end
 
+function MapManager:IsPVEMode_NoSelfReviveRaid()
+  return self.dungeonManager:IsPVEMode_NoSelfReviveRaid()
+end
+
 function MapManager:IsPVEMode_HeartLockRaid()
   return self.dungeonManager:IsPVEMode_HeartLockRaid()
 end
@@ -490,10 +494,6 @@ end
 
 function MapManager:IsPVEMode_DestroyAirShip()
   return self.dungeonManager:IsPVEMode_DestroyAirShip()
-end
-
-function MapManager:IsPVEMode_BageLab()
-  return self.dungeonManager:IsPVEMode_BageLab()
 end
 
 function MapManager:IsPVPMode_3Teams()

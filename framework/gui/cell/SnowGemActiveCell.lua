@@ -2,6 +2,7 @@ SnowGemActiveCell = class("SnowGemActiveCell", BaseCell)
 
 function SnowGemActiveCell:Init()
   SnowGemActiveCell.super.Init(self)
+  self.effectVisible = true
   self:FindObjs()
 end
 
@@ -102,6 +103,16 @@ function SnowGemActiveCell:SetEquipRefineLv(refineLv, isActive)
     return
   end
   self.slotEffect = self:PlayUIEffect(EffectMap.UI.SnowGem_SlotGrade2, self.effectContainer)
+  if self.slotEffect then
+    self.slotEffect:SetActive(self.effectVisible ~= false)
+  end
+end
+
+function SnowGemActiveCell:SetEffectVisible(visible)
+  self.effectVisible = visible == true
+  if self.slotEffect and self.slotEffect:Alive() then
+    self.slotEffect:SetActive(self.effectVisible)
+  end
 end
 
 function SnowGemActiveCell:ClearEffect()

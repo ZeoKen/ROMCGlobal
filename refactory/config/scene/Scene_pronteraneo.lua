@@ -4837,6 +4837,18 @@ local Scene_pronteraneo = {
         dir = 313.117004394531,
         xdir = 360,
         waitaction = "suspend_wait"
+      },
+      {
+        uniqueID = 843343,
+        ID = 843343,
+        position = {
+          44.9296417236328,
+          -0.618701934814453,
+          22.549934387207
+        },
+        dir = 181.081558227539,
+        xdir = 360,
+        waitaction = "suspend_wait"
       }
     }
   },

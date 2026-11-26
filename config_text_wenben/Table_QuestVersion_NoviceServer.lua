@@ -275,6 +275,33 @@ Table_QuestVersion = {
     },
     VersionBG = "Missiontracking_bottom_xuehua",
     MapID = {155}
+  },
+  [14] = {
+    id = 14,
+    version = "15.0",
+    name = "吉芬城与暗影梦境",
+    icon = "taskmanual_btn_GCZL",
+    PuzzleUnder = "taskmanual_bg_jigsaw",
+    VersionStory = "任何时候人们对战争都是恐惧的，也不愿意用任何辞藻修饰战争，因为那一切都被鲜血笼罩，在人们的心中战争是无法驶向彼岸的无尽远航。因此，人们渴望和平。\n在那个混乱的时代，被女神怜悯的土地获得了这样的和平，那片土地叫作吉芬尼亚。原本人类和吸血鬼族的战争似乎在一夜之间平息，但也因此进入极夜，吸血鬼族也随着极夜消失，只剩下人类安居乐业，他们逐渐忘记战争带给自己的伤痛，也忘记如何使用武器，俯瞰整个时间线的奥斯卡却在这个蒙昧尘埃的大地之上看到了阴谋的痕迹，他再次转动命运的齿轮，等待你追寻召唤而来，去那里看看吧！维持历史应有的样子，也去看看尘埃之下是怎样的阴谋……",
+    StoryName = "吉芬城与暗影梦境",
+    VersionPic = "",
+    FirstMainQuest = 211550001,
+    Tab = 2,
+    sortid = 22,
+    KeyReward = {
+      male = {
+        {51770, 1}
+      },
+      female = {
+        {51771, 1}
+      }
+    },
+    VersionBG = "Missiontracking_bottom_jfzc",
+    MapID = {
+      13,
+      1004220,
+      24
+    }
   }
 }
 Table_QuestVersion_fields = {

@@ -1558,6 +1558,21 @@ Table_FinishTraceInfo = {
     id = 1135060008,
     QuestKey = 128,
     FinishTraceInfo = "##45939768"
+  },
+  [211660011] = {
+    id = 211660011,
+    QuestKey = 129,
+    FinishTraceInfo = "##47222450"
+  },
+  [211660012] = {
+    id = 211660012,
+    QuestKey = 129,
+    FinishTraceInfo = "##47222451"
+  },
+  [211660013] = {
+    id = 211660013,
+    QuestKey = 129,
+    FinishTraceInfo = "##47222452"
   }
 }
 Table_FinishTraceInfo_fields = {

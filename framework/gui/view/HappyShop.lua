@@ -463,9 +463,7 @@ function HappyShop:HandleClickItem(cellctl)
 end
 
 function HappyShop:HandleClickItemExchange(cellctl)
-  local serverFlag = MyselfProxy.Instance:GetServerId()
-  local FRAY_EXCHANGE = GameConfig.Shop and GameConfig.Shop.frey_coin_exchange and GameConfig.Shop.frey_coin_exchange[serverFlag]
-  if FRAY_EXCHANGE[cellctl.data] then
+  if ExchangeShopProxy.Instance:IsFreyExchangeShop(cellctl.data) then
     ExchangeShopProxy.Instance:ResetChoose()
     TipManager.Instance:ShowExchangeGoodsTip(cellctl.data, self.tipStick, NGUIUtil.AnchorSide.Center, {-40, 0})
   end

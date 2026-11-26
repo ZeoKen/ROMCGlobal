@@ -22,7 +22,7 @@ AI_CMD_Myself_Skill_Run = {}
 function AI_CMD_Myself_Skill_Run:Start(time, deltaTime, creature, targetCreature, targetPosition, noLimit, ignoreCast, isAttackSkill, autoInterrupt)
   local skillCanUse
   local skill = creature.skill
-  if not noLimit and creature.data:NoAttack() and not isAttackSkil then
+  if not noLimit and creature.data:NoAttack() and not isAttackSkill then
     skillCanUse = creature:Logic_CheckSkillCanUseByID(skill:GetSkillID())
     if not skillCanUse then
       return false

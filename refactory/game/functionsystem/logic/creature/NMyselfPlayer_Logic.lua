@@ -4,14 +4,14 @@ local CannotUseSkillProp = {
   NoSkill = 1,
   FearRun = 1,
   Freeze = 1,
-  NoMagicSkill = 1,
-  NoPhySkill = 1,
   DeepFreeze = 1
 }
 local CheckCanUseSkillProp = {
   StateEffect = 1,
   NoNormalAttack = 1,
-  AtkAttr = 1
+  AtkAttr = 1,
+  NoMagicSkill = 1,
+  NoPhySkill = 1
 }
 
 function NMyselfPlayer:Logic_SamplePosition(time)
@@ -196,8 +196,6 @@ function NMyselfPlayer:Logic_CheckSkillCanUseByID(skillID)
   return self:Logic_CheckSkillCanUseBySkillInfo(Game.LogicManager_Skill:GetSkillInfo(skillID))
 end
 
-local magiclimit, phylimit = 0, 0
-
 function NMyselfPlayer:Logic_CheckSkillCanUseBySkillInfo(skillInfo)
   local superUse
   if skillInfo then
@@ -208,23 +206,15 @@ function NMyselfPlayer:Logic_CheckSkillCanUseBySkillInfo(skillInfo)
   else
     return false
   end
-  if superUse == nil then
-    if self.data:NoMagicSkill() then
-      magiclimit = not skillInfo:IsMagicType() and 1 or -2
-    else
-      magiclimit = 0
-    end
-    if self.data:NoPhySkill() then
-      phylimit = not skillInfo:IsPhyType() and 1 or -2
-    else
-      phylimit = 0
-    end
-    magiclimit = magiclimit + phylimit
-    if magiclimit < 0 then
+  if skillInfo:IsAttackTypeSkill() then
+    if self.data:NoMagicSkill() and skillInfo:IsMagicType() then
       return false
-    elseif 0 < magiclimit then
-      return true
     end
+    if self.data:NoPhySkill() and skillInfo:IsPhyType() then
+      return false
+    end
+  end
+  if superUse == nil then
     if self:Logic_CanUseSkill() then
       if self.data:HasLimitSkill() and self.data:GetLimitSkillTarget(skillInfo:GetSkillID() or 0) == nil then
         return false

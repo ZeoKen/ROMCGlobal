@@ -117,17 +117,31 @@ function ActivityIntegrationLotteryRaidShopSubView:GetActiveLotteryRaidStaticDat
   end
 end
 
+local IsArrayTable = function(t)
+  return t[1] ~= nil
+end
+
+local function MergeShopConfig(dst, src)
+  for key, value in pairs(src) do
+    local oldValue = dst[key]
+    if type(value) == "table" and type(oldValue) == "table" and not IsArrayTable(value) and not IsArrayTable(oldValue) then
+      local merged = {}
+      MergeShopConfig(merged, oldValue)
+      MergeShopConfig(merged, value)
+      dst[key] = merged
+    else
+      dst[key] = value
+    end
+  end
+end
+
 function ActivityIntegrationLotteryRaidShopSubView:InitShopConfig()
   local defaultConfig = GameConfig.LotteryRaidShop
   local activeStaticData = self:GetActiveLotteryRaidStaticData()
   local activityConfig = activeStaticData and activeStaticData.Misc
   local config = {}
-  for key, value in pairs(defaultConfig or {}) do
-    config[key] = value
-  end
-  for key, value in pairs(activityConfig or {}) do
-    config[key] = value
-  end
+  MergeShopConfig(config, defaultConfig or {})
+  MergeShopConfig(config, activityConfig or {})
   if activeStaticData and activeStaticData.BgTextture ~= nil then
     config.BgTexture = activeStaticData.BgTextture
   end

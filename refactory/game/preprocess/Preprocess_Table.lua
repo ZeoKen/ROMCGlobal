@@ -55,6 +55,19 @@ function Game.Preprocess_Table()
   Game.Preprocess_Table_ActPaySign()
   Game.Preprocess_Table_SnowCrown()
   Game.Preprocess_Table_HomeBuff()
+  Game.Preprocess_Table_AssetEffect()
+end
+
+function Game.Preprocess_Table_AssetEffect()
+  if not Table_AssetEffect then
+    return
+  end
+  if ComodoBuildingProxy and ComodoBuildingProxy.Instance then
+    ComodoBuildingProxy.Instance:InitMaxResProduceVelocity()
+  end
+  if AierBlacksmithProxy and AierBlacksmithProxy.Instance then
+    AierBlacksmithProxy.Instance:PreprocessConfigData()
+  end
 end
 
 function Game.Preprocess_TableByTime()
@@ -1751,17 +1764,20 @@ function Game.Preprocess_Table_SnowCrown()
   local groupMaxLevel = {}
   for id, v in pairs(Table_SnowCrown) do
     local groupId = id // 100
-    if not t[v.Batch] then
-      t[v.Batch] = {}
-    end
-    if not groupMap[groupId] then
-      table.insert(t[v.Batch], groupId)
-      groupMap[groupId] = true
-    end
     if not groupMaxLevel[groupId] then
       groupMaxLevel[groupId] = v.Level
     else
       groupMaxLevel[groupId] = math.max(groupMaxLevel[groupId], v.Level)
+    end
+    local isGlobal = v.Tab == 2 and v.Circle ~= nil and v.Slot ~= nil
+    if not isGlobal then
+      if not t[v.Batch] then
+        t[v.Batch] = {}
+      end
+      if not groupMap[groupId] then
+        table.insert(t[v.Batch], groupId)
+        groupMap[groupId] = true
+      end
     end
   end
   Game.SnowCrown = t

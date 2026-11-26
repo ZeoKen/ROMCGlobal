@@ -70,6 +70,10 @@ function ServiceSessionSocialityProxy:RecvSocialDataUpdate(data)
   self:Notify(ServiceEvent.SessionSocialitySocialDataUpdate, data)
 end
 
+function ServiceSessionSocialityProxy:RecvModifyFriendRemark(data)
+  self:Notify(ServiceEvent.SessionSocialityModifyFriendRemark, data)
+end
+
 function ServiceSessionSocialityProxy:CallOperateTakeSocialCmd(type, state, subkey)
   helplog("Call-->OperateTakeSocialCmd", type, subkey)
   ServiceSessionSocialityProxy.super.CallOperateTakeSocialCmd(self, type, state, subkey)

@@ -1394,16 +1394,6 @@ function Creature_SnakeCoaster:_OnFinish()
   self.active = false
   self:_StopDirMove()
   SnakeCoasterManager.Me():OnLocalCoasterFinish(self:GetScore())
-  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
-    view = PanelConfig.UIVictoryView,
-    viewdata = {
-      result = 1,
-      simply = true,
-      closeCallback = function()
-        SnakeCoasterManager.Me():QuitCoasterGame()
-      end
-    }
-  })
 end
 
 function Creature_SnakeCoaster:GetCurrentSegment()

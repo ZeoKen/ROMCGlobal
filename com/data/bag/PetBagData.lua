@@ -44,6 +44,14 @@ function PetBagData:GetItems(tabType)
       table.insert(packItems, items[i])
     end
   end
+  table.sort(packItems, function(left, right)
+    local leftFavorite = left.isFavorite == true
+    local rightFavorite = right.isFavorite == true
+    if leftFavorite ~= rightFavorite then
+      return leftFavorite
+    end
+    return (left.index or 0) > (right.index or 0)
+  end)
   return packItems
 end
 

@@ -27,6 +27,10 @@ function SnowGemCell:CreateItemCell()
   local itemCellGO = self:CreateObj(ResourcePathHelper.UICell("ItemCell"), self.itemContainer)
   if itemCellGO then
     self.itemCell = ItemCell.new(itemCellGO)
+    local itemCellCollider = itemCellGO:GetComponent(BoxCollider)
+    if itemCellCollider then
+      itemCellCollider.enabled = false
+    end
   end
 end
 

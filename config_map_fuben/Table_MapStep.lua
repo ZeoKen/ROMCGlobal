@@ -21684,6 +21684,1518 @@ Table_MapStep_t = {
       group_ids = {1}
     },
     {
+      boss_type = 1,
+      dead_disp_time = 20,
+      dir = 300,
+      group_id = 1,
+      id = 30077,
+      pos = {
+        21.3,
+        95.01,
+        275.83
+      },
+      pursue = 15,
+      search = 0,
+      territory = 5
+    },
+    {
+      client_mapshow = 1,
+      dir = 9,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        215.52,
+        38.75,
+        84.43
+      }
+    },
+    {
+      ai_groupid = 73,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 9,
+      group_id = 1,
+      id = 601168,
+      pos = {
+        216.46,
+        38.75,
+        88.99
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 73,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 9,
+      group_id = 1,
+      id = 19220,
+      pos = {
+        218.61,
+        38.75,
+        85.93
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 73,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 9,
+      group_id = 1,
+      id = 19220,
+      pos = {
+        213.27,
+        38.75,
+        86.91
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_day_box_reward_id = 8561,
+      acc_forever_box_reward_id = 8511,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = 2,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        81.73,
+        56.95,
+        2.41
+      }
+    },
+    {
+      ai_groupid = 74,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 2,
+      group_id = 1,
+      id = 601169,
+      pos = {
+        82.02,
+        56.95,
+        5.75
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 74,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 2,
+      group_id = 1,
+      id = 19221,
+      pos = {
+        84.47,
+        56.95,
+        5.06
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 74,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 2,
+      group_id = 1,
+      id = 19221,
+      pos = {
+        79.56,
+        56.95,
+        4.98
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_day_box_reward_id = 8562,
+      acc_forever_box_reward_id = 8512,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = -105,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        132.18,
+        76.5,
+        232.1
+      }
+    },
+    {
+      ai_groupid = 75,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -105,
+      group_id = 1,
+      id = 601170,
+      pos = {
+        128.61,
+        76.45,
+        231.19
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 75,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -105,
+      group_id = 1,
+      id = 19221,
+      pos = {
+        130.8,
+        76.46,
+        234.36
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 75,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -105,
+      group_id = 1,
+      id = 19221,
+      pos = {
+        131.29,
+        76.42,
+        229.4
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 75,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -105,
+      group_id = 1,
+      id = 19220,
+      pos = {
+        128.04,
+        76.46,
+        233.89
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 75,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -105,
+      group_id = 1,
+      id = 19220,
+      pos = {
+        129.08,
+        76.46,
+        228.51
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_day_box_reward_id = 8563,
+      acc_forever_box_reward_id = 8513,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = -175,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        66.82,
+        101.12,
+        337.85
+      }
+    },
+    {
+      ai_groupid = 76,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -175,
+      group_id = 1,
+      id = 601171,
+      pos = {
+        67.18,
+        100.98,
+        334.63
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 76,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -175,
+      group_id = 1,
+      id = 19225,
+      pos = {
+        63.3,
+        101.16,
+        336.6
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 76,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -175,
+      group_id = 1,
+      id = 19225,
+      pos = {
+        71.89,
+        100.89,
+        333.45
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 76,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -175,
+      group_id = 1,
+      id = 19225,
+      pos = {
+        65.28,
+        100.75,
+        328.4
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 76,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = -175,
+      group_id = 1,
+      id = 19225,
+      pos = {
+        71.81,
+        100.88,
+        329.45
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_day_box_reward_id = 8564,
+      acc_forever_box_reward_id = 8514,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      client_mapshow = 1,
+      dir = 210,
+      group_id = 2,
+      id = 842089,
+      no_clear = 1,
+      pos = {
+        -103.43,
+        141.29,
+        242.23
+      }
+    },
+    {
+      ai_groupid = 77,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 160,
+      group_id = 1,
+      id = 601172,
+      pos = {
+        -106.84,
+        142.46,
+        241.07
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 77,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 244,
+      group_id = 1,
+      id = 19225,
+      pos = {
+        -102.44,
+        141.75,
+        238.77
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 77,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 95,
+      group_id = 1,
+      id = 19225,
+      pos = {
+        -108.25,
+        141.69,
+        238.14
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      ai_groupid = 77,
+      client_mapshow = 1,
+      dead_disp_time = 10,
+      dir = 333,
+      group_id = 1,
+      id = 19222,
+      pos = {
+        -104.1,
+        141.26,
+        235.81
+      },
+      pursue = 15,
+      search = 0,
+      territory = 0
+    },
+    {
+      acc_day_box_reward_id = 8565,
+      acc_forever_box_reward_id = 8515,
+      box_clear_delay = 60,
+      box_group_id = 1,
+      box_mapstep_group = 2,
+      forever_box_reward_id = 5664,
+      group_ids = {1}
+    },
+    {
+      dir = 153.47,
+      group_id = 1,
+      id = 855025,
+      pos = {
+        253.12,
+        38.7,
+        111.27
+      },
+      uniqueid = 855025101
+    },
+    {
+      check = {
+        {1}
+      },
+      distance = 30,
+      keepOnSuccess = 1,
+      member_effect = "Eff_InfiniteStars_buff_2",
+      member_uids = {
+        854001229,
+        854001230,
+        854001231,
+        854001232,
+        854001233,
+        854001234,
+        854001235,
+        854001236
+      },
+      members = {
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001
+      },
+      pos = {
+        {
+          238.3,
+          38.71,
+          109.86
+        },
+        {
+          251.53,
+          38.57,
+          121.31
+        },
+        {
+          224.94,
+          39,
+          110.51
+        },
+        {
+          243.91,
+          38.07,
+          89.71
+        },
+        {
+          230.06,
+          38.28,
+          83.81
+        },
+        {
+          209.76,
+          38.75,
+          97.54
+        },
+        {
+          217.96,
+          39.31,
+          111.63
+        },
+        {
+          208.93,
+          39.67,
+          111.83
+        }
+      },
+      random_num = 5,
+      slots = {
+        {
+          253.12,
+          111.27,
+          0
+        }
+      },
+      times = 5,
+      type = "placeto_snowman",
+      uid = 17
+    },
+    {
+      effect = "Skill/Magic_Gear_attack1",
+      pos = {
+        253.12,
+        38.7,
+        111.27
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/Firework_Kafra1",
+      pos = {
+        253.12,
+        38.7,
+        111.27
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/sfx_snowman_smoke_prf",
+      index = 1,
+      opt = "add",
+      pos = {
+        253.12,
+        38.7,
+        111.27
+      },
+      times = 0,
+      type = "effect"
+    },
+    {
+      dir = 153.47,
+      group_id = 2,
+      id = 2060018,
+      pos = {
+        253.12,
+        38.7,
+        111.27
+      }
+    },
+    {
+      dir = -105.28,
+      group_id = 1,
+      id = 855026,
+      pos = {
+        246.98,
+        38.93,
+        222.33
+      },
+      uniqueid = 855026101
+    },
+    {
+      check = {
+        {1}
+      },
+      distance = 30,
+      keepOnSuccess = 1,
+      member_effect = "Eff_InfiniteStars_buff_2",
+      member_uids = {
+        854001237,
+        854001238,
+        854001239,
+        854001240,
+        854001241,
+        854001242,
+        854001243,
+        854001244
+      },
+      members = {
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001
+      },
+      pos = {
+        {
+          253.9,
+          40.03,
+          206.98
+        },
+        {
+          258.62,
+          40.7,
+          212.7
+        },
+        {
+          224.76,
+          38.15,
+          246.39
+        },
+        {
+          232.32,
+          38.28,
+          250.94
+        },
+        {
+          240.26,
+          38.14,
+          195.59
+        },
+        {
+          244.77,
+          38.47,
+          204.315
+        },
+        {
+          214.31,
+          38.13,
+          233.04
+        },
+        {
+          250.05,
+          38.311,
+          236.89
+        }
+      },
+      random_num = 5,
+      slots = {
+        {
+          246.98,
+          222.33,
+          0
+        }
+      },
+      times = 5,
+      type = "placeto_snowman",
+      uid = 18
+    },
+    {
+      effect = "Skill/Magic_Gear_attack1",
+      pos = {
+        246.98,
+        38.93,
+        222.33
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/Firework_Kafra1",
+      pos = {
+        246.98,
+        38.93,
+        222.33
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/sfx_snowman_smoke_prf",
+      index = 1,
+      opt = "add",
+      pos = {
+        246.98,
+        38.93,
+        222.33
+      },
+      times = 0,
+      type = "effect"
+    },
+    {
+      dir = -105.28,
+      group_id = 2,
+      id = 2060019,
+      pos = {
+        246.98,
+        38.93,
+        222.33
+      }
+    },
+    {
+      dir = 23.47,
+      group_id = 1,
+      id = 855027,
+      pos = {
+        101.33,
+        52.68,
+        80.22
+      },
+      uniqueid = 855027101
+    },
+    {
+      check = {
+        {1}
+      },
+      distance = 30,
+      keepOnSuccess = 1,
+      member_effect = "Eff_InfiniteStars_buff_2",
+      member_uids = {
+        854001245,
+        854001246,
+        854001247,
+        854001248,
+        854001249,
+        854001250,
+        854001251,
+        854001252
+      },
+      members = {
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001
+      },
+      pos = {
+        {
+          118.03,
+          51.7,
+          87.79
+        },
+        {
+          105.35,
+          53.124,
+          69.47
+        },
+        {
+          88.785,
+          52.332,
+          98.342
+        },
+        {
+          109.324,
+          51.174,
+          108.95
+        },
+        {
+          109.394,
+          50.961,
+          91.869
+        },
+        {
+          94.95,
+          53.08,
+          108.91
+        },
+        {
+          116.41,
+          52.85,
+          81.86
+        },
+        {
+          103.139,
+          51.22,
+          105.94
+        }
+      },
+      random_num = 5,
+      slots = {
+        {
+          101.33,
+          80.22,
+          0
+        }
+      },
+      times = 5,
+      type = "placeto_snowman",
+      uid = 19
+    },
+    {
+      effect = "Skill/Magic_Gear_attack1",
+      pos = {
+        101.33,
+        52.68,
+        80.22
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/Firework_Kafra1",
+      pos = {
+        101.33,
+        52.68,
+        80.22
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/sfx_snowman_smoke_prf",
+      index = 1,
+      opt = "add",
+      pos = {
+        101.33,
+        52.68,
+        80.22
+      },
+      times = 0,
+      type = "effect"
+    },
+    {
+      dir = 23.47,
+      group_id = 2,
+      id = 2060020,
+      pos = {
+        101.33,
+        52.68,
+        80.22
+      }
+    },
+    {
+      dir = 61.67,
+      group_id = 1,
+      id = 855028,
+      pos = {
+        114.35,
+        73.45,
+        172.2
+      },
+      uniqueid = 855028101
+    },
+    {
+      check = {
+        {1}
+      },
+      distance = 30,
+      keepOnSuccess = 1,
+      member_effect = "Eff_InfiniteStars_buff_2",
+      member_uids = {
+        854001253,
+        854001254,
+        854001255,
+        854001256,
+        854001257,
+        854001258,
+        854001259,
+        854001260
+      },
+      members = {
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001
+      },
+      pos = {
+        {
+          117.75,
+          72.84,
+          159.29
+        },
+        {
+          110.75,
+          74.07,
+          152.48
+        },
+        {
+          99.21,
+          75.92,
+          144.85
+        },
+        {
+          87.98,
+          78,
+          139.96
+        },
+        {
+          87.48,
+          78.79,
+          159.52
+        },
+        {
+          93.57,
+          79,
+          172.68
+        },
+        {
+          109.68,
+          75.56,
+          185.83
+        },
+        {
+          99.06,
+          80.13,
+          189.34
+        }
+      },
+      random_num = 5,
+      slots = {
+        {
+          114.35,
+          172.2,
+          0
+        }
+      },
+      times = 5,
+      type = "placeto_snowman",
+      uid = 20
+    },
+    {
+      effect = "Skill/Magic_Gear_attack1",
+      pos = {
+        114.35,
+        73.45,
+        172.2
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/Firework_Kafra1",
+      pos = {
+        114.35,
+        73.45,
+        172.2
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/sfx_snowman_smoke_prf",
+      index = 1,
+      opt = "add",
+      pos = {
+        114.35,
+        73.45,
+        172.2
+      },
+      times = 0,
+      type = "effect"
+    },
+    {
+      dir = 61.67,
+      group_id = 2,
+      id = 2060021,
+      pos = {
+        114.35,
+        73.45,
+        172.2
+      }
+    },
+    {
+      dir = -103.47,
+      group_id = 1,
+      id = 855029,
+      pos = {
+        168.66,
+        74.62,
+        297.16
+      },
+      uniqueid = 855029101
+    },
+    {
+      check = {
+        {1}
+      },
+      distance = 30,
+      keepOnSuccess = 1,
+      member_effect = "Eff_InfiniteStars_buff_2",
+      member_uids = {
+        854001261,
+        854001262,
+        854001263,
+        854001264,
+        854001265,
+        854001266,
+        854001267,
+        854001268
+      },
+      members = {
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001
+      },
+      pos = {
+        {
+          168.25,
+          74.61,
+          305.77
+        },
+        {
+          157.39,
+          74.63,
+          308.4
+        },
+        {
+          169.05,
+          74.749,
+          287.51
+        },
+        {
+          163.13,
+          74.475,
+          285.18
+        },
+        {
+          152.54,
+          74.58,
+          288.92
+        },
+        {
+          148.71,
+          74.51,
+          302.47
+        },
+        {
+          149.78,
+          74.41,
+          285.73
+        },
+        {
+          167.71,
+          74.63,
+          279.47
+        }
+      },
+      random_num = 5,
+      slots = {
+        {
+          168.66,
+          297.16,
+          0
+        }
+      },
+      times = 5,
+      type = "placeto_snowman",
+      uid = 21
+    },
+    {
+      effect = "Skill/Magic_Gear_attack1",
+      pos = {
+        168.66,
+        74.62,
+        297.16
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/Firework_Kafra1",
+      pos = {
+        168.66,
+        74.62,
+        297.16
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/sfx_snowman_smoke_prf",
+      index = 1,
+      opt = "add",
+      pos = {
+        168.66,
+        74.62,
+        297.16
+      },
+      times = 0,
+      type = "effect"
+    },
+    {
+      dir = -103.47,
+      group_id = 2,
+      id = 2060022,
+      pos = {
+        168.66,
+        74.62,
+        297.16
+      }
+    },
+    {
+      dir = -66.73,
+      group_id = 1,
+      id = 855030,
+      pos = {
+        50.41,
+        95.76,
+        270.96
+      },
+      uniqueid = 855030101
+    },
+    {
+      check = {
+        {1}
+      },
+      distance = 30,
+      keepOnSuccess = 1,
+      member_effect = "Eff_InfiniteStars_buff_2",
+      member_uids = {
+        854001269,
+        854001270,
+        854001271,
+        854001272,
+        854001273,
+        854001274,
+        854001275,
+        854001276
+      },
+      members = {
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001
+      },
+      pos = {
+        {
+          56.02,
+          97.13,
+          285.48
+        },
+        {
+          63.49,
+          99.15,
+          284.52
+        },
+        {
+          44.74,
+          95.39,
+          260.04
+        },
+        {
+          40.6,
+          96.447,
+          303.05
+        },
+        {
+          59.93,
+          97.523,
+          296.47
+        },
+        {
+          42.3,
+          95.51,
+          249.58
+        },
+        {
+          43.221,
+          95.439,
+          252.802
+        },
+        {
+          69.68,
+          100.09,
+          281.62
+        }
+      },
+      random_num = 5,
+      slots = {
+        {
+          50.41,
+          270.96,
+          0
+        }
+      },
+      times = 5,
+      type = "placeto_snowman",
+      uid = 22
+    },
+    {
+      effect = "Skill/Magic_Gear_attack1",
+      pos = {
+        50.41,
+        95.76,
+        270.96
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/Firework_Kafra1",
+      pos = {
+        50.41,
+        95.76,
+        270.96
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/sfx_snowman_smoke_prf",
+      index = 1,
+      opt = "add",
+      pos = {
+        50.41,
+        95.76,
+        270.96
+      },
+      times = 0,
+      type = "effect"
+    },
+    {
+      dir = -66.73,
+      group_id = 2,
+      id = 2060023,
+      pos = {
+        50.41,
+        95.76,
+        270.96
+      }
+    },
+    {
+      dir = 161.93,
+      group_id = 1,
+      id = 855031,
+      pos = {
+        29.45,
+        107.95,
+        135.85
+      },
+      uniqueid = 855031101
+    },
+    {
+      check = {
+        {1}
+      },
+      distance = 30,
+      keepOnSuccess = 1,
+      member_effect = "Eff_InfiniteStars_buff_2",
+      member_uids = {
+        854001277,
+        854001278,
+        854001279,
+        854001280,
+        854001281,
+        854001282,
+        854001283,
+        854001284
+      },
+      members = {
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001
+      },
+      pos = {
+        {
+          39.21,
+          102.08,
+          153.55
+        },
+        {
+          51.25,
+          102.32,
+          141.21
+        },
+        {
+          48.62,
+          104.34,
+          129.19
+        },
+        {
+          41.51,
+          103.922,
+          138.738
+        },
+        {
+          20.97,
+          108.32,
+          146.98
+        },
+        {
+          28.392,
+          108.142,
+          120.215
+        },
+        {
+          32.581,
+          107.896,
+          125.772
+        },
+        {
+          16.213,
+          108.194,
+          134.616
+        }
+      },
+      random_num = 5,
+      slots = {
+        {
+          29.45,
+          135.85,
+          0
+        }
+      },
+      times = 5,
+      type = "placeto_snowman",
+      uid = 23
+    },
+    {
+      effect = "Skill/Magic_Gear_attack1",
+      pos = {
+        29.45,
+        107.95,
+        135.85
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/Firework_Kafra1",
+      pos = {
+        29.45,
+        107.95,
+        135.85
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/sfx_snowman_smoke_prf",
+      index = 1,
+      opt = "add",
+      pos = {
+        29.45,
+        107.95,
+        135.85
+      },
+      times = 0,
+      type = "effect"
+    },
+    {
+      dir = 161.93,
+      group_id = 2,
+      id = 2060024,
+      pos = {
+        29.45,
+        107.95,
+        135.85
+      }
+    },
+    {
+      dir = -47.77,
+      group_id = 1,
+      id = 855032,
+      pos = {
+        -88.61,
+        141.82,
+        181.72
+      },
+      uniqueid = 855032101
+    },
+    {
+      check = {
+        {1}
+      },
+      distance = 30,
+      keepOnSuccess = 1,
+      member_effect = "Eff_InfiniteStars_buff_2",
+      member_uids = {
+        854001285,
+        854001286,
+        854001287,
+        854001288,
+        854001289,
+        854001290,
+        854001291,
+        854001292
+      },
+      members = {
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001,
+        854001
+      },
+      pos = {
+        {
+          -85.47,
+          141.55,
+          195.01
+        },
+        {
+          -86.806,
+          140.402,
+          200.325
+        },
+        {
+          -102.435,
+          141.316,
+          170.292
+        },
+        {
+          -120.36,
+          141.17,
+          192.2
+        },
+        {
+          -112.13,
+          141.02,
+          202.3
+        },
+        {
+          -122.79,
+          141.968,
+          204.5
+        },
+        {
+          -110.23,
+          141.657,
+          217.37
+        },
+        {
+          -93.48,
+          139.592,
+          203.95
+        }
+      },
+      random_num = 5,
+      slots = {
+        {
+          -88.61,
+          181.72,
+          0
+        }
+      },
+      times = 5,
+      type = "placeto_snowman",
+      uid = 24
+    },
+    {
+      effect = "Skill/Magic_Gear_attack1",
+      pos = {
+        -88.61,
+        141.82,
+        181.72
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/Firework_Kafra1",
+      pos = {
+        -88.61,
+        141.82,
+        181.72
+      },
+      sync = 1,
+      type = "effect"
+    },
+    {
+      effect = "Common/sfx_snowman_smoke_prf",
+      index = 1,
+      opt = "add",
+      pos = {
+        -88.61,
+        141.82,
+        181.72
+      },
+      times = 0,
+      type = "effect"
+    },
+    {
+      dir = -47.77,
+      group_id = 2,
+      id = 2060025,
+      pos = {
+        -88.61,
+        141.82,
+        181.72
+      }
+    },
+    {
       ids = {40040}
     },
     {
@@ -37988,23 +39500,900 @@ Table_MapStep = {
     Params = Table_MapStep_t.Params[784],
     MapID = 155
   },
+  [3012] = {
+    id = 3012,
+    Params = Table_MapStep_t.Params[1681],
+    MapID = 155
+  },
+  [3013] = {
+    id = 3013,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3014] = {
+    id = 3014,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[190],
+    MapID = 155
+  },
+  [3015] = {
+    id = 3015,
+    Params = Table_MapStep_t.Params[1682],
+    MapID = 155
+  },
+  [3016] = {
+    id = 3016,
+    Params = Table_MapStep_t.Params[1683],
+    MapID = 155
+  },
+  [3017] = {
+    id = 3017,
+    Params = Table_MapStep_t.Params[1684],
+    MapID = 155
+  },
+  [3018] = {
+    id = 3018,
+    Params = Table_MapStep_t.Params[1685],
+    MapID = 155
+  },
+  [3019] = {
+    id = 3019,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1686],
+    MapID = 155
+  },
+  [3020] = {
+    id = 3020,
+    Content = "stop_other",
+    MapID = 155
+  },
+  [3021] = {
+    id = 3021,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179],
+    MapID = 155
+  },
+  [3022] = {
+    id = 3022,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808],
+    MapID = 155
+  },
+  [3023] = {
+    id = 3023,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3024] = {
+    id = 3024,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784],
+    MapID = 155
+  },
+  [3025] = {
+    id = 3025,
+    Params = Table_MapStep_t.Params[1687],
+    MapID = 155
+  },
+  [3026] = {
+    id = 3026,
+    Params = Table_MapStep_t.Params[1688],
+    MapID = 155
+  },
+  [3027] = {
+    id = 3027,
+    Params = Table_MapStep_t.Params[1689],
+    MapID = 155
+  },
+  [3028] = {
+    id = 3028,
+    Params = Table_MapStep_t.Params[1690],
+    MapID = 155
+  },
+  [3029] = {
+    id = 3029,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1691],
+    MapID = 155
+  },
+  [3030] = {
+    id = 3030,
+    Content = "stop_other",
+    MapID = 155
+  },
+  [3031] = {
+    id = 3031,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179],
+    MapID = 155
+  },
+  [3032] = {
+    id = 3032,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808],
+    MapID = 155
+  },
+  [3033] = {
+    id = 3033,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3034] = {
+    id = 3034,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784],
+    MapID = 155
+  },
+  [3035] = {
+    id = 3035,
+    Params = Table_MapStep_t.Params[1692],
+    MapID = 155
+  },
+  [3036] = {
+    id = 3036,
+    Params = Table_MapStep_t.Params[1693],
+    MapID = 155
+  },
+  [3037] = {
+    id = 3037,
+    Params = Table_MapStep_t.Params[1694],
+    MapID = 155
+  },
+  [3038] = {
+    id = 3038,
+    Params = Table_MapStep_t.Params[1695],
+    MapID = 155
+  },
+  [3039] = {
+    id = 3039,
+    Params = Table_MapStep_t.Params[1696],
+    MapID = 155
+  },
+  [3040] = {
+    id = 3040,
+    Params = Table_MapStep_t.Params[1697],
+    MapID = 155
+  },
+  [3041] = {
+    id = 3041,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1698],
+    MapID = 155
+  },
+  [3042] = {
+    id = 3042,
+    Content = "stop_other",
+    MapID = 155
+  },
+  [3043] = {
+    id = 3043,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179],
+    MapID = 155
+  },
+  [3044] = {
+    id = 3044,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808],
+    MapID = 155
+  },
+  [3045] = {
+    id = 3045,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3046] = {
+    id = 3046,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784],
+    MapID = 155
+  },
+  [3047] = {
+    id = 3047,
+    Params = Table_MapStep_t.Params[1699],
+    MapID = 155
+  },
+  [3048] = {
+    id = 3048,
+    Params = Table_MapStep_t.Params[1700],
+    MapID = 155
+  },
+  [3049] = {
+    id = 3049,
+    Params = Table_MapStep_t.Params[1701],
+    MapID = 155
+  },
+  [3050] = {
+    id = 3050,
+    Params = Table_MapStep_t.Params[1702],
+    MapID = 155
+  },
+  [3051] = {
+    id = 3051,
+    Params = Table_MapStep_t.Params[1703],
+    MapID = 155
+  },
+  [3052] = {
+    id = 3052,
+    Params = Table_MapStep_t.Params[1704],
+    MapID = 155
+  },
+  [3053] = {
+    id = 3053,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1705],
+    MapID = 155
+  },
+  [3054] = {
+    id = 3054,
+    Content = "stop_other",
+    MapID = 155
+  },
+  [3055] = {
+    id = 3055,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179],
+    MapID = 155
+  },
+  [3056] = {
+    id = 3056,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808],
+    MapID = 155
+  },
+  [3057] = {
+    id = 3057,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3058] = {
+    id = 3058,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784],
+    MapID = 155
+  },
+  [3059] = {
+    id = 3059,
+    Params = Table_MapStep_t.Params[1706],
+    MapID = 155
+  },
+  [3060] = {
+    id = 3060,
+    Params = Table_MapStep_t.Params[1707],
+    MapID = 155
+  },
+  [3061] = {
+    id = 3061,
+    Params = Table_MapStep_t.Params[1708],
+    MapID = 155
+  },
+  [3062] = {
+    id = 3062,
+    Params = Table_MapStep_t.Params[1709],
+    MapID = 155
+  },
+  [3063] = {
+    id = 3063,
+    Params = Table_MapStep_t.Params[1710],
+    MapID = 155
+  },
+  [3064] = {
+    id = 3064,
+    Content = "killall",
+    Params = Table_MapStep_t.Params[1711],
+    MapID = 155
+  },
+  [3065] = {
+    id = 3065,
+    Content = "stop_other",
+    MapID = 155
+  },
+  [3066] = {
+    id = 3066,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[1179],
+    MapID = 155
+  },
+  [3067] = {
+    id = 3067,
+    Content = "check_off_fire",
+    Params = Table_MapStep_t.Params[808],
+    MapID = 155
+  },
+  [3068] = {
+    id = 3068,
+    Content = "reset_monster",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3069] = {
+    id = 3069,
+    Content = "random_jump",
+    Params = Table_MapStep_t.Params[784],
+    MapID = 155
+  },
+  [3070] = {
+    id = 3070,
+    Params = Table_MapStep_t.Params[1712],
+    MapID = 155
+  },
+  [3071] = {
+    id = 3071,
+    Content = "add_local_interact",
+    Params = Table_MapStep_t.Params[1713],
+    MapID = 155
+  },
+  [3072] = {
+    id = 3072,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1714],
+    MapID = 155
+  },
+  [3073] = {
+    id = 3073,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3074] = {
+    id = 3074,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1715],
+    MapID = 155
+  },
+  [3075] = {
+    id = 3075,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3076] = {
+    id = 3076,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1716],
+    MapID = 155
+  },
+  [3077] = {
+    id = 3077,
+    Params = Table_MapStep_t.Params[1717],
+    MapID = 155
+  },
+  [3078] = {
+    id = 3078,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[1557],
+    MapID = 155
+  },
+  [3079] = {
+    id = 3079,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16],
+    MapID = 155
+  },
+  [3080] = {
+    id = 3080,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1558],
+    MapID = 155
+  },
+  [3081] = {
+    id = 3081,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3082] = {
+    id = 3082,
+    Params = Table_MapStep_t.Params[1718],
+    MapID = 155
+  },
+  [3083] = {
+    id = 3083,
+    Content = "add_local_interact",
+    Params = Table_MapStep_t.Params[1719],
+    MapID = 155
+  },
+  [3084] = {
+    id = 3084,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1720],
+    MapID = 155
+  },
+  [3085] = {
+    id = 3085,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3086] = {
+    id = 3086,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1721],
+    MapID = 155
+  },
+  [3087] = {
+    id = 3087,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3088] = {
+    id = 3088,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1722],
+    MapID = 155
+  },
+  [3089] = {
+    id = 3089,
+    Params = Table_MapStep_t.Params[1723],
+    MapID = 155
+  },
+  [3090] = {
+    id = 3090,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[1557],
+    MapID = 155
+  },
+  [3091] = {
+    id = 3091,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16],
+    MapID = 155
+  },
+  [3092] = {
+    id = 3092,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1558],
+    MapID = 155
+  },
+  [3093] = {
+    id = 3093,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3094] = {
+    id = 3094,
+    Params = Table_MapStep_t.Params[1724],
+    MapID = 155
+  },
+  [3095] = {
+    id = 3095,
+    Content = "add_local_interact",
+    Params = Table_MapStep_t.Params[1725],
+    MapID = 155
+  },
+  [3096] = {
+    id = 3096,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1726],
+    MapID = 155
+  },
+  [3097] = {
+    id = 3097,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3098] = {
+    id = 3098,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1727],
+    MapID = 155
+  },
+  [3099] = {
+    id = 3099,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3100] = {
+    id = 3100,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1728],
+    MapID = 155
+  },
+  [3101] = {
+    id = 3101,
+    Params = Table_MapStep_t.Params[1729],
+    MapID = 155
+  },
+  [3102] = {
+    id = 3102,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[1557],
+    MapID = 155
+  },
+  [3103] = {
+    id = 3103,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16],
+    MapID = 155
+  },
+  [3104] = {
+    id = 3104,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1558],
+    MapID = 155
+  },
+  [3105] = {
+    id = 3105,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3106] = {
+    id = 3106,
+    Params = Table_MapStep_t.Params[1730],
+    MapID = 155
+  },
+  [3107] = {
+    id = 3107,
+    Content = "add_local_interact",
+    Params = Table_MapStep_t.Params[1731],
+    MapID = 155
+  },
+  [3108] = {
+    id = 3108,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1732],
+    MapID = 155
+  },
+  [3109] = {
+    id = 3109,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3110] = {
+    id = 3110,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1733],
+    MapID = 155
+  },
+  [3111] = {
+    id = 3111,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3112] = {
+    id = 3112,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1734],
+    MapID = 155
+  },
+  [3113] = {
+    id = 3113,
+    Params = Table_MapStep_t.Params[1735],
+    MapID = 155
+  },
+  [3114] = {
+    id = 3114,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[1557],
+    MapID = 155
+  },
+  [3115] = {
+    id = 3115,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16],
+    MapID = 155
+  },
+  [3116] = {
+    id = 3116,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1558],
+    MapID = 155
+  },
+  [3117] = {
+    id = 3117,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3118] = {
+    id = 3118,
+    Params = Table_MapStep_t.Params[1736],
+    MapID = 155
+  },
+  [3119] = {
+    id = 3119,
+    Content = "add_local_interact",
+    Params = Table_MapStep_t.Params[1737],
+    MapID = 155
+  },
+  [3120] = {
+    id = 3120,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1738],
+    MapID = 155
+  },
+  [3121] = {
+    id = 3121,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3122] = {
+    id = 3122,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1739],
+    MapID = 155
+  },
+  [3123] = {
+    id = 3123,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3124] = {
+    id = 3124,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1740],
+    MapID = 155
+  },
+  [3125] = {
+    id = 3125,
+    Params = Table_MapStep_t.Params[1741],
+    MapID = 155
+  },
+  [3126] = {
+    id = 3126,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[1557],
+    MapID = 155
+  },
+  [3127] = {
+    id = 3127,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16],
+    MapID = 155
+  },
+  [3128] = {
+    id = 3128,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1558],
+    MapID = 155
+  },
+  [3129] = {
+    id = 3129,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3130] = {
+    id = 3130,
+    Params = Table_MapStep_t.Params[1742],
+    MapID = 155
+  },
+  [3131] = {
+    id = 3131,
+    Content = "add_local_interact",
+    Params = Table_MapStep_t.Params[1743],
+    MapID = 155
+  },
+  [3132] = {
+    id = 3132,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1744],
+    MapID = 155
+  },
+  [3133] = {
+    id = 3133,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3134] = {
+    id = 3134,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1745],
+    MapID = 155
+  },
+  [3135] = {
+    id = 3135,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3136] = {
+    id = 3136,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1746],
+    MapID = 155
+  },
+  [3137] = {
+    id = 3137,
+    Params = Table_MapStep_t.Params[1747],
+    MapID = 155
+  },
+  [3138] = {
+    id = 3138,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[1557],
+    MapID = 155
+  },
+  [3139] = {
+    id = 3139,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16],
+    MapID = 155
+  },
+  [3140] = {
+    id = 3140,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1558],
+    MapID = 155
+  },
+  [3141] = {
+    id = 3141,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3142] = {
+    id = 3142,
+    Params = Table_MapStep_t.Params[1748],
+    MapID = 155
+  },
+  [3143] = {
+    id = 3143,
+    Content = "add_local_interact",
+    Params = Table_MapStep_t.Params[1749],
+    MapID = 155
+  },
+  [3144] = {
+    id = 3144,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1750],
+    MapID = 155
+  },
+  [3145] = {
+    id = 3145,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3146] = {
+    id = 3146,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1751],
+    MapID = 155
+  },
+  [3147] = {
+    id = 3147,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3148] = {
+    id = 3148,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1752],
+    MapID = 155
+  },
+  [3149] = {
+    id = 3149,
+    Params = Table_MapStep_t.Params[1753],
+    MapID = 155
+  },
+  [3150] = {
+    id = 3150,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[1557],
+    MapID = 155
+  },
+  [3151] = {
+    id = 3151,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16],
+    MapID = 155
+  },
+  [3152] = {
+    id = 3152,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1558],
+    MapID = 155
+  },
+  [3153] = {
+    id = 3153,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3154] = {
+    id = 3154,
+    Params = Table_MapStep_t.Params[1754],
+    MapID = 155
+  },
+  [3155] = {
+    id = 3155,
+    Content = "add_local_interact",
+    Params = Table_MapStep_t.Params[1755],
+    MapID = 155
+  },
+  [3156] = {
+    id = 3156,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1756],
+    MapID = 155
+  },
+  [3157] = {
+    id = 3157,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
+  [3158] = {
+    id = 3158,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1757],
+    MapID = 155
+  },
+  [3159] = {
+    id = 3159,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[5],
+    MapID = 155
+  },
+  [3160] = {
+    id = 3160,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1758],
+    MapID = 155
+  },
+  [3161] = {
+    id = 3161,
+    Params = Table_MapStep_t.Params[1759],
+    MapID = 155
+  },
+  [3162] = {
+    id = 3162,
+    Content = "wait",
+    Params = Table_MapStep_t.Params[1557],
+    MapID = 155
+  },
+  [3163] = {
+    id = 3163,
+    Content = "clearnpc",
+    Params = Table_MapStep_t.Params[16],
+    MapID = 155
+  },
+  [3164] = {
+    id = 3164,
+    Content = "multigm",
+    Params = Table_MapStep_t.Params[1558],
+    MapID = 155
+  },
+  [3165] = {
+    id = 3165,
+    Content = "wait_refresh",
+    Params = Table_MapStep_t.Params[34],
+    MapID = 155
+  },
   [10001] = {
     id = 10001,
     Content = "broadcast_msg",
-    Params = Table_MapStep_t.Params[1749],
+    Params = Table_MapStep_t.Params[1828],
     MapID = 62,
     StartCondition = Table_MapStep_t.StartCondition[7]
   },
   [10002] = {
     id = 10002,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1748],
+    Params = Table_MapStep_t.Params[1827],
     MapID = 62
   },
   [10003] = {
     id = 10003,
     Content = "broadcast_msg",
-    Params = Table_MapStep_t.Params[1747],
+    Params = Table_MapStep_t.Params[1826],
     MapID = 62
   },
   [10004] = {
@@ -38015,48 +40404,48 @@ Table_MapStep = {
   },
   [10005] = {
     id = 10005,
-    Params = Table_MapStep_t.Params[1746],
+    Params = Table_MapStep_t.Params[1825],
     MapID = 62
   },
   [10006] = {
     id = 10006,
-    Params = Table_MapStep_t.Params[1745],
+    Params = Table_MapStep_t.Params[1824],
     MapID = 62
   },
   [10007] = {
     id = 10007,
-    Params = Table_MapStep_t.Params[1744],
+    Params = Table_MapStep_t.Params[1823],
     MapID = 62
   },
   [10008] = {
     id = 10008,
-    Params = Table_MapStep_t.Params[1743],
+    Params = Table_MapStep_t.Params[1822],
     MapID = 62
   },
   [10009] = {
     id = 10009,
-    Params = Table_MapStep_t.Params[1742],
+    Params = Table_MapStep_t.Params[1821],
     MapID = 62
   },
   [10010] = {
     id = 10010,
-    Params = Table_MapStep_t.Params[1741],
+    Params = Table_MapStep_t.Params[1820],
     MapID = 62
   },
   [10011] = {
     id = 10011,
-    Params = Table_MapStep_t.Params[1740],
+    Params = Table_MapStep_t.Params[1819],
     MapID = 62
   },
   [10012] = {
     id = 10012,
-    Params = Table_MapStep_t.Params[1739],
+    Params = Table_MapStep_t.Params[1818],
     MapID = 62
   },
   [10013] = {
     id = 10013,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1738],
+    Params = Table_MapStep_t.Params[1817],
     MapID = 62
   },
   [10014] = {
@@ -38068,13 +40457,13 @@ Table_MapStep = {
   [10015] = {
     id = 10015,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1737],
+    Params = Table_MapStep_t.Params[1816],
     MapID = 62
   },
   [10016] = {
     id = 10016,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1736],
+    Params = Table_MapStep_t.Params[1815],
     MapID = 62
   },
   [10017] = {
@@ -38086,7 +40475,7 @@ Table_MapStep = {
   [10018] = {
     id = 10018,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1735],
+    Params = Table_MapStep_t.Params[1814],
     MapID = 62
   },
   [10019] = {
@@ -38098,7 +40487,7 @@ Table_MapStep = {
   [10020] = {
     id = 10020,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1734],
+    Params = Table_MapStep_t.Params[1813],
     MapID = 62
   },
   [10021] = {
@@ -38110,7 +40499,7 @@ Table_MapStep = {
   [10022] = {
     id = 10022,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1733],
+    Params = Table_MapStep_t.Params[1812],
     MapID = 62
   },
   [10023] = {
@@ -38122,27 +40511,27 @@ Table_MapStep = {
   [10024] = {
     id = 10024,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1732],
+    Params = Table_MapStep_t.Params[1811],
     MapID = 62
   },
   [10025] = {
     id = 10025,
-    Params = Table_MapStep_t.Params[1731],
+    Params = Table_MapStep_t.Params[1810],
     MapID = 62
   },
   [10026] = {
     id = 10026,
-    Params = Table_MapStep_t.Params[1730],
+    Params = Table_MapStep_t.Params[1809],
     MapID = 62
   },
   [10027] = {
     id = 10027,
-    Params = Table_MapStep_t.Params[1729],
+    Params = Table_MapStep_t.Params[1808],
     MapID = 62
   },
   [10028] = {
     id = 10028,
-    Params = Table_MapStep_t.Params[1728],
+    Params = Table_MapStep_t.Params[1807],
     MapID = 62
   },
   [10029] = {
@@ -38154,25 +40543,25 @@ Table_MapStep = {
   [10030] = {
     id = 10030,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1712],
+    Params = Table_MapStep_t.Params[1791],
     MapID = 62
   },
   [10031] = {
     id = 10031,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1727],
+    Params = Table_MapStep_t.Params[1806],
     MapID = 62
   },
   [10032] = {
     id = 10032,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1710],
+    Params = Table_MapStep_t.Params[1789],
     MapID = 62
   },
   [10033] = {
     id = 10033,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1726],
+    Params = Table_MapStep_t.Params[1805],
     MapID = 62
   },
   [10034] = {
@@ -38184,37 +40573,37 @@ Table_MapStep = {
   [10035] = {
     id = 10035,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1725],
+    Params = Table_MapStep_t.Params[1804],
     MapID = 62
   },
   [10036] = {
     id = 10036,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1724],
+    Params = Table_MapStep_t.Params[1803],
     MapID = 62
   },
   [10037] = {
     id = 10037,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1712],
+    Params = Table_MapStep_t.Params[1791],
     MapID = 62
   },
   [10038] = {
     id = 10038,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1723],
+    Params = Table_MapStep_t.Params[1802],
     MapID = 62
   },
   [10039] = {
     id = 10039,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1710],
+    Params = Table_MapStep_t.Params[1789],
     MapID = 62
   },
   [10040] = {
     id = 10040,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1722],
+    Params = Table_MapStep_t.Params[1801],
     MapID = 62
   },
   [10041] = {
@@ -38232,31 +40621,31 @@ Table_MapStep = {
   [10043] = {
     id = 10043,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1712],
+    Params = Table_MapStep_t.Params[1791],
     MapID = 62
   },
   [10044] = {
     id = 10044,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1721],
+    Params = Table_MapStep_t.Params[1800],
     MapID = 62
   },
   [10045] = {
     id = 10045,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1710],
+    Params = Table_MapStep_t.Params[1789],
     MapID = 62
   },
   [10046] = {
     id = 10046,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1720],
+    Params = Table_MapStep_t.Params[1799],
     MapID = 62
   },
   [10047] = {
     id = 10047,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1719],
+    Params = Table_MapStep_t.Params[1798],
     MapID = 62
   },
   [10048] = {
@@ -38267,51 +40656,51 @@ Table_MapStep = {
   },
   [10049] = {
     id = 10049,
-    Params = Table_MapStep_t.Params[1718],
+    Params = Table_MapStep_t.Params[1797],
     MapID = 62
   },
   [10050] = {
     id = 10050,
-    Params = Table_MapStep_t.Params[1717],
+    Params = Table_MapStep_t.Params[1796],
     MapID = 62
   },
   [10051] = {
     id = 10051,
-    Params = Table_MapStep_t.Params[1716],
+    Params = Table_MapStep_t.Params[1795],
     MapID = 62
   },
   [10052] = {
     id = 10052,
-    Params = Table_MapStep_t.Params[1715],
+    Params = Table_MapStep_t.Params[1794],
     MapID = 62
   },
   [10053] = {
     id = 10053,
-    Params = Table_MapStep_t.Params[1714],
+    Params = Table_MapStep_t.Params[1793],
     MapID = 62
   },
   [10054] = {
     id = 10054,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1713],
+    Params = Table_MapStep_t.Params[1792],
     MapID = 62
   },
   [10055] = {
     id = 10055,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1712],
+    Params = Table_MapStep_t.Params[1791],
     MapID = 62
   },
   [10056] = {
     id = 10056,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1711],
+    Params = Table_MapStep_t.Params[1790],
     MapID = 62
   },
   [10057] = {
     id = 10057,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1710],
+    Params = Table_MapStep_t.Params[1789],
     MapID = 62
   },
   [10058] = {
@@ -38323,19 +40712,19 @@ Table_MapStep = {
   [10059] = {
     id = 10059,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1709],
+    Params = Table_MapStep_t.Params[1788],
     MapID = 62
   },
   [10060] = {
     id = 10060,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1705],
+    Params = Table_MapStep_t.Params[1784],
     MapID = 62
   },
   [10061] = {
     id = 10061,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1687],
+    Params = Table_MapStep_t.Params[1766],
     MapID = 62
   },
   [10062] = {
@@ -38347,13 +40736,13 @@ Table_MapStep = {
   [10063] = {
     id = 10063,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1708],
+    Params = Table_MapStep_t.Params[1787],
     MapID = 62
   },
   [10064] = {
     id = 10064,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1704],
+    Params = Table_MapStep_t.Params[1783],
     MapID = 62
   },
   [10065] = {
@@ -38365,7 +40754,7 @@ Table_MapStep = {
   [10066] = {
     id = 10066,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1707],
+    Params = Table_MapStep_t.Params[1786],
     MapID = 62
   },
   [10067] = {
@@ -38377,7 +40766,7 @@ Table_MapStep = {
   [10068] = {
     id = 10068,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1706],
+    Params = Table_MapStep_t.Params[1785],
     MapID = 62
   },
   [10069] = {
@@ -38389,7 +40778,7 @@ Table_MapStep = {
   [10070] = {
     id = 10070,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1705],
+    Params = Table_MapStep_t.Params[1784],
     MapID = 62
   },
   [10071] = {
@@ -38401,7 +40790,7 @@ Table_MapStep = {
   [10072] = {
     id = 10072,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1704],
+    Params = Table_MapStep_t.Params[1783],
     MapID = 62
   },
   [10073] = {
@@ -38413,25 +40802,25 @@ Table_MapStep = {
   [10074] = {
     id = 10074,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1703],
+    Params = Table_MapStep_t.Params[1782],
     MapID = 62
   },
   [10075] = {
     id = 10075,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1702],
+    Params = Table_MapStep_t.Params[1781],
     MapID = 62
   },
   [10076] = {
     id = 10076,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1701],
+    Params = Table_MapStep_t.Params[1780],
     MapID = 62
   },
   [10077] = {
     id = 10077,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1700],
+    Params = Table_MapStep_t.Params[1779],
     MapID = 62
   },
   [10078] = {
@@ -38443,19 +40832,19 @@ Table_MapStep = {
   [10079] = {
     id = 10079,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1699],
+    Params = Table_MapStep_t.Params[1778],
     MapID = 62
   },
   [10080] = {
     id = 10080,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1698],
+    Params = Table_MapStep_t.Params[1777],
     MapID = 62
   },
   [10081] = {
     id = 10081,
     Content = "cutscene",
-    Params = Table_MapStep_t.Params[1697],
+    Params = Table_MapStep_t.Params[1776],
     MapID = 62,
     Auto = 1
   },
@@ -38467,30 +40856,30 @@ Table_MapStep = {
   },
   [10083] = {
     id = 10083,
-    Params = Table_MapStep_t.Params[1696],
+    Params = Table_MapStep_t.Params[1775],
     MapID = 62
   },
   [10084] = {
     id = 10084,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1695],
+    Params = Table_MapStep_t.Params[1774],
     MapID = 62
   },
   [10085] = {
     id = 10085,
-    Params = Table_MapStep_t.Params[1694],
+    Params = Table_MapStep_t.Params[1773],
     MapID = 62
   },
   [10086] = {
     id = 10086,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1693],
+    Params = Table_MapStep_t.Params[1772],
     MapID = 62
   },
   [10087] = {
     id = 10087,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1692],
+    Params = Table_MapStep_t.Params[1771],
     MapID = 62
   },
   [10088] = {
@@ -38502,19 +40891,19 @@ Table_MapStep = {
   [10089] = {
     id = 10089,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1691],
+    Params = Table_MapStep_t.Params[1770],
     MapID = 62
   },
   [10090] = {
     id = 10090,
     Content = "wait",
-    Params = Table_MapStep_t.Params[1690],
+    Params = Table_MapStep_t.Params[1769],
     MapID = 62
   },
   [10091] = {
     id = 10091,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1689],
+    Params = Table_MapStep_t.Params[1768],
     MapID = 62
   },
   [10092] = {
@@ -38526,19 +40915,19 @@ Table_MapStep = {
   [10093] = {
     id = 10093,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1688],
+    Params = Table_MapStep_t.Params[1767],
     MapID = 62
   },
   [10094] = {
     id = 10094,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1687],
+    Params = Table_MapStep_t.Params[1766],
     MapID = 62
   },
   [10095] = {
     id = 10095,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1686],
+    Params = Table_MapStep_t.Params[1765],
     MapID = 62
   },
   [10096] = {
@@ -38550,13 +40939,13 @@ Table_MapStep = {
   [10097] = {
     id = 10097,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1685],
+    Params = Table_MapStep_t.Params[1764],
     MapID = 62
   },
   [10098] = {
     id = 10098,
     Content = "killmonster",
-    Params = Table_MapStep_t.Params[1684],
+    Params = Table_MapStep_t.Params[1763],
     MapID = 62
   },
   [10099] = {
@@ -38567,7 +40956,7 @@ Table_MapStep = {
   [10100] = {
     id = 10100,
     Content = "multigm",
-    Params = Table_MapStep_t.Params[1683],
+    Params = Table_MapStep_t.Params[1762],
     MapID = 62
   },
   [10101] = {
@@ -38579,13 +40968,13 @@ Table_MapStep = {
   [10102] = {
     id = 10102,
     Content = "clearnpc",
-    Params = Table_MapStep_t.Params[1682],
+    Params = Table_MapStep_t.Params[1761],
     MapID = 62
   },
   [10103] = {
     id = 10103,
     Content = "cutscene",
-    Params = Table_MapStep_t.Params[1681],
+    Params = Table_MapStep_t.Params[1760],
     MapID = 62,
     Auto = 1
   },

@@ -1746,6 +1746,50 @@ Table_TeamGoals = {
     RaidID = 7683,
     GoalGroup = 2,
     Difficulty = Table_TeamGoals_t.Difficulty[17]
+  },
+  [92700] = {
+    id = 92700,
+    NameZh = "##47136769",
+    type = 92700,
+    Filter = 60,
+    Level = 110,
+    GoalGroup = 2
+  },
+  [92701] = {
+    id = 92701,
+    NameZh = "##47152135",
+    type = 92700,
+    Filter = 60,
+    Level = 110,
+    RaidType = 206904,
+    RaidID = 7691,
+    NoServerMerge = 0,
+    GoalGroup = 2,
+    Difficulty = Table_TeamGoals_t.Difficulty[15]
+  },
+  [92702] = {
+    id = 92702,
+    NameZh = "##47152136",
+    type = 92700,
+    Filter = 60,
+    Level = 110,
+    RaidType = 206905,
+    RaidID = 7692,
+    NoServerMerge = 0,
+    GoalGroup = 2,
+    Difficulty = Table_TeamGoals_t.Difficulty[16]
+  },
+  [92703] = {
+    id = 92703,
+    NameZh = "##47152137",
+    type = 92700,
+    Filter = 60,
+    Level = 110,
+    RaidType = 206906,
+    RaidID = 7693,
+    NoServerMerge = 0,
+    GoalGroup = 2,
+    Difficulty = Table_TeamGoals_t.Difficulty[17]
   }
 }
 local cell_mt = {

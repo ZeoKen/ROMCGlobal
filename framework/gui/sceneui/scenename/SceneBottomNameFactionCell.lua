@@ -28,16 +28,8 @@ function SceneBottomNameFactionCell:DoConstruct(asArray, args)
   local creature = args[2]
   self.gameObject = gameObject
   self.transform = self.gameObject.transform
-  if creature:GetCreatureType() == Creature_Type.Me then
-    LuaVector3.Better_Set(tempVector3, 0, -19, 0)
-  elseif creature.data and creature.data.staticData and creature.data.staticData.ResistanceBar then
-    LuaVector3.Better_Set(tempVector3, 0, -19, 0)
-  elseif creature.data and creature.data.staticData and creature.data.staticData.BalanceBar then
-    LuaVector3.Better_Set(tempVector3, 0, -19, 0)
-  else
-    LuaVector3.Better_Set(tempVector3, 0, -10, 0)
-  end
-  self.transform.localPosition = tempVector3
+  self.defaultLayoutY = self.transform.localPosition.y
+  self.layoutPositionY = nil
   self.transform.localRotation = LuaGeometry.Const_Qua_identity
   LuaVector3.Better_Set(tempVector3, 1, 1, 1)
   self.transform.localScale = tempVector3
@@ -54,16 +46,8 @@ end
 
 function SceneBottomNameFactionCell:refreshData(_parent, _creature)
   SetParent(self.gameObject, _parent.transform)
-  if _creature:GetCreatureType() == Creature_Type.Me then
-    LuaVector3.Better_Set(tempVector3, 0, -19, 0)
-  elseif _creature.data and _creature.data.staticData and _creature.data.staticData.ResistanceBar then
-    LuaVector3.Better_Set(tempVector3, 0, -19, 0)
-  elseif _creature.data and _creature.data.staticData and _creature.data.staticData.BalanceBar then
-    LuaVector3.Better_Set(tempVector3, 0, -19, 0)
-  else
-    LuaVector3.Better_Set(tempVector3, 0, -10, 0)
-  end
-  self.transform.localPosition = tempVector3
+  self:ClearLayoutPosition()
+  self.layoutPositionY = nil
   self.transform.localRotation = LuaGeometry.Const_Qua_identity
   self.transform.localScale = LuaGeometry.Const_V3_one
   self:initData(_creature)
@@ -107,6 +91,8 @@ function SceneBottomNameFactionCell:Deconstruct(asArray)
   self.campIcon = nil
   self.gameObject = nil
   self.transform = nil
+  self.defaultLayoutY = nil
+  self.layoutPositionY = nil
   self.factionInfoRectTrans = nil
   self.isVisible = nil
   self._alive = false
@@ -497,15 +483,54 @@ function SceneBottomNameFactionCell:Alive()
 end
 
 function SceneBottomNameFactionCell:Reposition(rePos, delta)
-  if rePos then
+  if self.layoutPositionY then
+    self.transform.localPosition = LuaGeometry.GetTempVector3(0, self.layoutPositionY, 0)
+    return
   end
-  self.transform.localPosition = LuaGeometry.GetTempVector3(0, delta or -32 or -19, 0)
+  self:ClearLayoutPosition()
+end
+
+function SceneBottomNameFactionCell:GetLayoutHeight()
+  return 13
+end
+
+function SceneBottomNameFactionCell:IsLayoutVisible()
+  return self.isVisible ~= false
+end
+
+function SceneBottomNameFactionCell:GetCurrentLayoutY()
+  if self.layoutPositionY then
+    return self.layoutPositionY
+  end
+  if self.defaultLayoutY then
+    return self.defaultLayoutY
+  end
+  if self.transform then
+    return self.transform.localPosition.y
+  end
+  return -10
+end
+
+function SceneBottomNameFactionCell:SetLayoutPosition(y)
+  if not self.transform then
+    return
+  end
+  self.layoutPositionY = y
+  self.transform.localPosition = LuaGeometry.GetTempVector3(0, y, 0)
+end
+
+function SceneBottomNameFactionCell:ClearLayoutPosition()
+  self.layoutPositionY = nil
+  if self.defaultLayoutY and self.transform then
+    self.transform.localPosition = LuaGeometry.GetTempVector3(0, self.defaultLayoutY, 0)
+  end
 end
 
 function SceneBottomNameFactionCell:ResetRidePos(rePos)
   if rePos then
     self.transform.localPosition = LuaGeometry.GetTempVector3(-80, 81, 0)
   else
-    self.transform.localPosition = LuaGeometry.GetTempVector3(0, -19, 0)
+    self.layoutPositionY = nil
+    self:ClearLayoutPosition()
   end
 end

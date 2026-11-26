@@ -69,6 +69,9 @@ function ExchangeItemCell:SetData(data)
   self:Show(self.itemgo)
   self:Show(self.pos)
   ExchangeItemCell.super.SetData(self, data)
+  if data.freyExchange and self.numLab then
+    self.numLab.text = ""
+  end
   if data.id == "FeedPet" then
     self:SetFeedData()
     self:UpdateChoose()
@@ -119,8 +122,8 @@ function ExchangeItemCell:UpdateOwn()
     return
   end
   local staticId = self.data.staticData.id
-  local own = ExchangeShopProxy.GetOwnCount(staticId)
-  local previewNum = ExchangeShopProxy.Instance.chooseMap[staticId] or 0
+  local own = self.data.freyExchange and (self.data.num or 0) or ExchangeShopProxy.GetOwnCount(staticId)
+  local previewNum = ExchangeShopProxy.Instance:GetSelectedCount(self.data)
   self.minus:SetActive(0 < previewNum)
   if previewNum <= 0 and self.subtractTick then
     self.subtractTick:Destroy()

@@ -42,6 +42,7 @@ function PvePassInfo:ctor(id)
   self.serverMonsters = {}
   self.monsterList = {}
   self.serverRewards = {}
+  self.serverRewardDatas = {}
   self.staticRewardList = {}
   self.allRewards = {}
   self.commonFunReward = {}
@@ -138,7 +139,7 @@ end
 function PvePassInfo:HasRedTip()
   local _redProxy = RedTipProxy.Instance
   local groupid = self.staticEntranceData.groupid
-  return _redProxy:IsNew(SceneTip_pb.EREDSYS_PVERAID_ENTRANCE, groupid) or _redProxy:IsNew(SceneTip_pb.EREDSYS_PVERAID_ACHIEVE, groupid) or _redProxy:InRedTip(SceneTip_pb.EREDSYS_GEFFEN_MAGIC_REWARD)
+  return not _redProxy:IsNew(SceneTip_pb.EREDSYS_PVERAID_ENTRANCE, groupid) and not _redProxy:IsNew(SceneTip_pb.EREDSYS_PVERAID_ACHIEVE, groupid) and _redProxy:InRedTip(SceneTip_pb.EREDSYS_GEFFEN_MAGIC_REWARD) and self.staticEntranceData:IsGeffenMagic()
 end
 
 function PvePassInfo:SetServerData(serverdata)
@@ -512,9 +513,11 @@ end
 function PvePassInfo:_resetServerRewards(showrewards)
   if showrewards then
     _ArrayClear(self.serverRewards)
+    _ArrayClear(self.serverRewardDatas)
     self.rewardDirty = true
     for i = 1, #showrewards do
       local serverRewardData = PveServerRewardData.new(showrewards[i])
+      _ArrayPushBack(self.serverRewardDatas, serverRewardData)
       local rewards = serverRewardData:GetRewards()
       for i = 1, #rewards do
         _ArrayPushBack(self.serverRewards, rewards[i])
@@ -669,6 +672,19 @@ function PvePassInfo:GetGuaranteeRewardData(bossid)
     return _GetGuaranteeRewardData(bossRewards)
   end
   return _GetGuaranteeRewardData(self:_getRewards())
+end
+
+function PvePassInfo:GetGuaranteeRemainCount(bossid)
+  if not self.isBoss then
+    for i = 1, #self.serverRewardDatas do
+      local remain = self.serverRewardDatas[i]:GetGuaranteeRemainCount()
+      if remain then
+        return remain
+      end
+    end
+  end
+  local guaranteeRewardData = self:GetGuaranteeRewardData(bossid)
+  return guaranteeRewardData and guaranteeRewardData:GetGuaranteeRemainCount()
 end
 
 function PvePassInfo:HasBossInfo(bossid)

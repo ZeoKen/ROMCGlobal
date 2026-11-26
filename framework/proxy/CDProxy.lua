@@ -189,7 +189,7 @@ function CDProxy:Client_AddSkillCD(id, time, cd, cdMax)
   local sortID = id // 1000
   local skillData = SkillProxy.Instance:GetLearnedSkillBySortID(sortID)
   local maxTimes = skillData and skillData:GetMaxCDTimes(Game.Myself)
-  if maxTimes and 1 < maxTimes then
+  if maxTimes and 1 <= maxTimes then
     local leftTimes = skillData:GetLeftCDTimes() or 0
     local cdCount = math.max(maxTimes - leftTimes, 0)
     local cdData = self:GetSkillInCD(sortID)

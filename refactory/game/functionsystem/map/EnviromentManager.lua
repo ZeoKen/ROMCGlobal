@@ -934,7 +934,7 @@ function EnviromentManager:mSetBloomEffect(bloomParam)
     PostprocessManager.Instance:UnSetDefaultBloom()
     redlog("[PPEffect] 设置Bloom效果:False")
   end
-  local fxaa = FunctionPerformanceSetting.Me():GetFxaa()
+  local fxaa = FunctionPerformanceSetting.Me():GetRuntimeFxaa()
   self:SwitchFxaa(fxaa)
 end
 

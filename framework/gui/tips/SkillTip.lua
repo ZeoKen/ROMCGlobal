@@ -732,6 +732,7 @@ function SkillTip:OnExit()
   local _EventManager = EventManager.Me()
   _EventManager:RemoveEventListener(ServiceEvent.SkillMultiSkillOptionUpdateSkillCmd, self.HandleSkillOptionUpdate, self)
   _EventManager:RemoveEventListener(SkillEvent.SkillUpdate, self.HandleSkillUpdate, self)
+  _EventManager:RemoveEventListener(PVPEvent.OnFreeFireStateChanged, self.HandleFreeFireStateChanged, self)
   return true
 end
 

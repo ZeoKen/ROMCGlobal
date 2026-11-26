@@ -43,6 +43,9 @@ function OverseaHostHelper:CheckFirstFirebaseCallServer()
   if not BranchMgr.IsKorea() and not BranchMgr.IsNOKR() then
     return
   end
+  if FunctionSDK.E_SDKType.TDSG == FunctionSDK.Instance.CurrentType then
+    return
+  end
   local firebasestatus = OverSeas_TW.OverSeasManager.GetInstance():GetNotificationStatus()
   if OverseaHostHelper:GetIsFireBaseFirst() then
     ServiceOverseasTaiwanCmdProxy.Instance:CallFirebaseNotifyUpdateCmd(firebasestatus)

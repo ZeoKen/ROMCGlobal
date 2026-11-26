@@ -281,6 +281,12 @@ function UIModelZenyShop:SetFPRFlag2(productID)
   self.fprFlagProduct2[productID] = 0
 end
 
+function UIModelZenyShop:RemoveFPRFlag2(productID)
+  if self.fprFlagProduct2 ~= nil and self.fprFlagProduct2[productID] ~= nil then
+    self.fprFlagProduct2[productID] = nil
+  end
+end
+
 UIModelZenyShop.DailyOneZenyGoodsID = 201300
 
 function UIModelZenyShop:UpdateOneZenyGoodsBuyInfo()

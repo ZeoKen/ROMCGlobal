@@ -1744,7 +1744,6 @@ Table_PoemStep = {
   [3] = {
     id = 3,
     Questid = 600100004,
-    name = "黑暗降临·故事三",
     Descrip = Table_PoemStep_t.Descrip[3],
     TraceInfo = "危机--黑暗之王"
   },
@@ -1845,7 +1844,8 @@ Table_PoemStep = {
     id = 16,
     Questid = 600540002,
     name = "月狼传说·故事一",
-    Descrip = Table_PoemStep_t.Descrip[16]
+    Descrip = Table_PoemStep_t.Descrip[16],
+    TraceInfo = "灾祸的代名词--芬里尔"
   },
   [17] = {
     id = 17,
@@ -2241,8 +2241,7 @@ Table_PoemStep = {
     id = 68,
     Questid = 311120001,
     name = "莱伊娜丝·故事一",
-    Descrip = Table_PoemStep_t.Descrip[68],
-    TraceInfo = "白玉般纯洁的少女"
+    Descrip = Table_PoemStep_t.Descrip[68]
   },
   [69] = {
     id = 69,
@@ -2286,6 +2285,7 @@ Table_PoemStep = {
   [74] = {
     id = 74,
     Questid = 311120021,
+    name = "固特伊·故事一",
     Descrip = Table_PoemStep_t.Descrip[74],
     TraceInfo = "锻造也需要实力"
   },
@@ -2796,9 +2796,9 @@ local cell_mt = {
   __index = {
     Descrip = _EmptyTable,
     Questid = 311150001,
-    TraceInfo = "灾祸的代名词--芬里尔",
+    TraceInfo = "白玉般纯洁的少女",
     id = 1,
-    name = "固特伊·故事一",
+    name = "黑暗降临·故事三",
     step = 0
   }
 }

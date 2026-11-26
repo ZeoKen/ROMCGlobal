@@ -84,6 +84,7 @@ function StaticHurtNum:FindObjects(effectGO)
     end
     self.crit = FindComponent("Crit", CanvasGroup, effectGO)
     self.magicCrit = FindComponent("MagicCrit", CanvasGroup, effectGO)
+    self.luckyCrit = FindComponent("LuckyCrit", CanvasGroup, effectGO)
   end
 end
 
@@ -111,6 +112,9 @@ function StaticHurtNum:RefreshInfo()
   end
   if self.magicCrit then
     self.magicCrit.alpha = self.critType == HurtNum_CritType.MAtk and 1 or 0
+  end
+  if self.luckyCrit then
+    self.luckyCrit.alpha = self.critType == HurtNum_CritType.Lucky and 1 or 0
   end
   self:SetLifeEndTime(HurtNumAliveTime.Static)
   self:PlayAni(self.type)
@@ -171,6 +175,7 @@ function StaticHurtNum:DoDeconstruct(asArray)
   self.canvasGroup = nil
   self.crit = nil
   self.magicCrit = nil
+  self.luckyCrit = nil
   self.pos = nil
   self.critType = nil
 end

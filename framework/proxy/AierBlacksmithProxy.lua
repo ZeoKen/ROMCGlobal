@@ -30,9 +30,9 @@ function AierBlacksmithProxy:PreprocessConfigData()
       for i = 1, #v.Effect do
         local eff = v.Effect[i]
         eff = Table_AssetEffect and Table_AssetEffect[eff]
-        if eff.Type and eff.Type == "SmithQuestCount" then
+        if eff and eff.Type == "SmithQuestCount" then
           self.configData.SmithQuestCountGap[k] = eff.Params.count
-        elseif eff.Type and eff.Type == "UnlockSmithPartner" then
+        elseif eff and eff.Type == "UnlockSmithPartner" then
           self.configData.UnlockSmithPartnerGap[k] = eff.Params.npcid
         end
       end

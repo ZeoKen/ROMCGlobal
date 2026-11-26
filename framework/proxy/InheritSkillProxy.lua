@@ -172,6 +172,10 @@ function InheritSkillProxy:HasInheritedConditionSkill(familyId)
   return false
 end
 
+function InheritSkillProxy.IsInheritSkill(sortID)
+  return Table_SkillInherit[sortID] ~= nil
+end
+
 function InheritSkillProxy.GetSkillProfess(familyId)
   local config = Table_SkillInherit[familyId]
   if config then

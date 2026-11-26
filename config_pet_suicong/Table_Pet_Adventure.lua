@@ -220,6 +220,40 @@ Table_Pet_Adventure = {
     MonsterReward = _EmptyTable,
     UnlockArea = 14
   },
+  [14] = {
+    id = 14,
+    QuestType = 1,
+    NameZh = "##532126",
+    Quality = 1,
+    Level = 110,
+    ConsumeTime = 19800,
+    PetNum = 3,
+    Cost = _EmptyTable,
+    BigArea = 14,
+    SmallArea = "##148854",
+    Desc = "##532128",
+    TextureName = "Bg_beijing19",
+    Condition = _EmptyTable,
+    MonsterReward = _EmptyTable,
+    UnlockArea = 15
+  },
+  [15] = {
+    id = 15,
+    QuestType = 1,
+    NameZh = "##47043981",
+    Quality = 1,
+    Level = 110,
+    ConsumeTime = 21600,
+    PetNum = 3,
+    Cost = _EmptyTable,
+    BigArea = 15,
+    SmallArea = "##148854",
+    Desc = "##47043982",
+    TextureName = "Bg_beijing24",
+    Condition = _EmptyTable,
+    MonsterReward = _EmptyTable,
+    UnlockArea = 16
+  },
   [100] = {
     id = 100,
     QuestType = 2,
@@ -1724,6 +1758,110 @@ Table_Pet_Adventure = {
     Baseexp = 856695,
     Times = 273,
     DailyAdventureCount = 3
+  },
+  [162] = {
+    id = 162,
+    QuestType = 2,
+    NameZh = "##531318",
+    Quality = 1,
+    Level = 110,
+    ConsumeTime = 1800,
+    PetNum = 3,
+    Cost = {
+      id = 5503,
+      num = {
+        5,
+        10,
+        15
+      }
+    },
+    CostFightTime = 1800,
+    BigArea = 15,
+    SmallArea = "##532125",
+    Desc = "##532129",
+    TextureName = "Bg_beijing19",
+    Condition = {
+      5029,
+      1009,
+      2001
+    },
+    MonsterReward = {
+      10260,
+      10262,
+      10264
+    },
+    Baseexp = 803152,
+    Times = 273
+  },
+  [163] = {
+    id = 163,
+    QuestType = 2,
+    NameZh = "##531278",
+    Quality = 1,
+    Level = 110,
+    ConsumeTime = 1800,
+    PetNum = 3,
+    Cost = {
+      id = 5503,
+      num = {
+        5,
+        10,
+        15
+      }
+    },
+    CostFightTime = 1800,
+    BigArea = 15,
+    SmallArea = "##532125",
+    Desc = "##532127",
+    TextureName = "Bg_beijing19",
+    Condition = {
+      3007,
+      1008,
+      5030
+    },
+    MonsterReward = {
+      10261,
+      10263,
+      10267
+    },
+    Baseexp = 803152,
+    Times = 273
+  },
+  [164] = {
+    id = 164,
+    QuestType = 2,
+    NameZh = "##42635503",
+    Quality = 1,
+    Level = 110,
+    ConsumeTime = 1800,
+    PetNum = 3,
+    Cost = {
+      id = 5503,
+      num = {
+        5,
+        10,
+        15
+      }
+    },
+    CostFightTime = 1800,
+    BigArea = 16,
+    SmallArea = "##47043990",
+    Desc = "##47043991",
+    TextureName = "Bg_beijing24",
+    Condition = {
+      1007,
+      2002,
+      3009
+    },
+    MonsterReward = {
+      10381,
+      10384,
+      10387,
+      10389,
+      10390
+    },
+    Baseexp = 803152,
+    Times = 273
   }
 }
 Table_Pet_Adventure_fields = {

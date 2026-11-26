@@ -1049,6 +1049,14 @@ PanelConfig = {
     prefab = "TutorGraduationView",
     class = "TutorGraduationView"
   },
+  FriendRemarkPopUp = {
+    id = 489,
+    tab = nil,
+    name = "好友备注",
+    desc = "",
+    prefab = "FriendRemarkPopUp",
+    class = "FriendRemarkPopUp"
+  },
   PicMakeView = {
     id = 490,
     tab = nil,
@@ -4601,6 +4609,14 @@ PanelConfig = {
     desc = "",
     prefab = "MiniGameRankPopUp",
     class = "SnakeCoasterRankPopUp"
+  },
+  SnakeCoasterResultView = {
+    id = 2057,
+    tab = nil,
+    name = "巨蛇过山车结算",
+    desc = "",
+    prefab = "SnakeCoasterResultView",
+    class = "SnakeCoasterResultView"
   },
   QuestMiniGame1Panel = {
     id = 2060,

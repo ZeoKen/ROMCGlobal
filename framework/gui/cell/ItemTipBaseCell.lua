@@ -341,6 +341,9 @@ function ItemTipBaseCell:DoMinusUseCount()
 end
 
 function ItemTipBaseCell:SetChooseCount(count)
+  if count == nil then
+    count = 1
+  end
   self.chooseCount = count
   if self.countChooseBord == nil then
     return
@@ -371,17 +374,21 @@ function ItemTipBaseCell:UpdateCountChooseBordButton(showMultipleMsg)
   else
     useMax = self.countChoose_maxCount
   end
+  local itemNum = self.data.num
+  if itemNum == nil then
+    itemNum = 1
+  end
   if useMax ~= nil then
     if not self.countChooseIgnoreItemNumLimit then
-      useMax = math.min(self.data.num, useMax)
+      useMax = math.min(itemNum, useMax)
     end
   else
-    useMax = self.data.num
+    useMax = itemNum
   end
   if showMultipleMsg and self.countChoose_maxCount and self.chooseCount == self.countChoose_maxCount then
     MsgManager.ShowMsgByIDTable(1281)
   end
-  if useMax < self.chooseCount or self.chooseCount < 1 then
+  if useMax < self.chooseCount or 1 > self.chooseCount then
     self.chooseCount = math.clamp(self.chooseCount, 1, useMax)
     self.countChoose_CountInput.value = self.chooseCount
   end
@@ -389,7 +396,7 @@ function ItemTipBaseCell:UpdateCountChooseBordButton(showMultipleMsg)
     self.itemcell:UpdateNumLabel(self.chooseCount)
   end
   self:_helpActiveButton(useMax > self.chooseCount, self.countChoose_AddButton_Sp, self.countChoose_AddButton_Collider)
-  self:_helpActiveButton(self.chooseCount > 1, self.countChoose_MinusButton_Sp, self.countChoose_MinusButton_Collider)
+  self:_helpActiveButton(1 < self.chooseCount, self.countChoose_MinusButton_Sp, self.countChoose_MinusButton_Collider)
 end
 
 function ItemTipBaseCell:QuickMinusAddUseCount(open)
@@ -936,6 +943,9 @@ function ItemTipBaseCell:UpdateNormalItemInfo(data)
         unlockManualStr = AdventureDataProxy.Instance:getUnlockRewardStr(Table_Item[picToId], ZhString.ItemTip_ChAnd)
         inManual = AdventureDataProxy.Instance:IsFashionStored(picToId)
         unlockManual = AdventureDataProxy.Instance:IsFashionUnlock(picToId)
+        local advData = AdventureDataProxy.Instance:GetItemByStaticIDFromBag(picToId, SceneManual_pb.EMANUALTYPE_FASHION)
+        local savedItem = advData and advData.savedItemDatas and advData.savedItemDatas[1]
+        inManualRefineStrs = AdventureDataProxy.Instance:getIntoPackageRefineRewardStr(psData, ZhString.ItemTip_ChAnd, inManual, savedItem and savedItem.equipInfo.refinelv)
       end
     end
   elseif data:IsHomePic() then
@@ -989,7 +999,7 @@ function ItemTipBaseCell:UpdateNormalItemInfo(data)
     else
       table.insert(manual.label, self:ActiveText(ZhString.ItemTip_ManualInTip .. inManualStr, inManual))
     end
-    if data:IsFashion() and inManualRefineStrs then
+    if (data:IsFashion() or data:IsPic()) and inManualRefineStrs then
       for i = 1, #inManualRefineStrs do
         table.insert(manual.label, inManualRefineStrs[i])
       end

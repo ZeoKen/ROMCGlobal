@@ -254,6 +254,22 @@ Table_BusCarrier = {
     ModelDir = "Assets/Art/Model/Role/Body/NPC/bus_whale_R",
     ModelName = "bus_whale_R",
     Texture = "bus_whale_R"
+  },
+  [33] = {
+    id = 33,
+    NameZh = "##47122475",
+    NameEn = "Mount_SnowWing",
+    ModelDir = "Assets/Art/Model/Role/Body/Mount/Mount_SnowWing",
+    ModelName = "Mount_SnowWing",
+    Texture = "Mount_SnowWing"
+  },
+  [34] = {
+    id = 34,
+    NameZh = "##283899",
+    NameEn = "bus_xuanhzuanmuma_002_sm",
+    ModelDir = "Assets/Art/role/bus/bus_xuanhzuanmuma_002_sm",
+    ModelName = "bus_xuanhzuanmuma_002_sm",
+    Texture = "bus_xuanhzuanmuma_001c01_m"
   }
 }
 Table_BusCarrier_fields = {

@@ -74,9 +74,20 @@ function ActivityExchangeProxy:CheckItemCanExchange(act_id, index)
         hasExchangeCount = exchangedCount < data.exchange_count
       end
       if hasExchangeCount then
-        local cost = data.cost
+        local cost = data.cost or {}
         local isCostEnough = true
         local checkPackage = GameConfig.PackageMaterialCheck.exchange_shop
+        if data.equip_cost then
+          local equipCostId = data.equip_cost
+          local equipCostNum = 1
+          if type(data.equip_cost) == "table" then
+            equipCostId = data.equip_cost[1]
+            equipCostNum = data.equip_cost[2] or 1
+          end
+          if equipCostId and equipCostNum > BagProxy.Instance:GetItemNumByStaticID(equipCostId, checkPackage) then
+            isCostEnough = false
+          end
+        end
         for j = 1, #cost do
           local id = cost[j][1]
           local num = cost[j][2]

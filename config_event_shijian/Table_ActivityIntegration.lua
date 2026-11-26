@@ -5,10 +5,6 @@ Table_ActivityIntegration_t = {
       "2026-06-22 05:00:00"
     },
     {
-      "2025-12-01 05:00:00",
-      "2026-01-01 05:00:00"
-    },
-    {
       "2025-08-01 05:00:00",
       "2025-09-01 05:00:00"
     },
@@ -31,6 +27,18 @@ Table_ActivityIntegration_t = {
     {
       "2025-09-29 05:00:00",
       "2025-10-13 05:00:00"
+    },
+    {
+      "2025-04-01 05:00:00",
+      "2025-05-01 05:00:00"
+    },
+    {
+      "2023-12-01 05:00:00",
+      "2029-12-01 05:00:00"
+    },
+    {
+      "2026-11-10 05:00:00",
+      "2026-11-24 05:00:00"
     },
     {
       "2025-09-11 05:00:00",
@@ -65,6 +73,10 @@ Table_ActivityIntegration_t = {
       "2025-11-03 05:00:00"
     },
     {
+      "2025-11-10 05:00:00",
+      "2025-11-24 05:00:00"
+    },
+    {
       "2025-12-22 05:00:00",
       "2025-12-29 05:00:00"
     },
@@ -93,20 +105,12 @@ Table_ActivityIntegration_t = {
       "2024-07-01 05:00:00"
     },
     {
-      "2025-09-15 05:00:00",
-      "2025-09-29 05:00:00"
-    },
-    {
-      "2025-04-01 05:00:00",
-      "2025-05-01 05:00:00"
-    },
-    {
-      "2023-12-01 05:00:00",
-      "2029-12-01 05:00:00"
-    },
-    {
       "2025-11-01 05:00:00",
       "2025-12-01 05:00:00"
+    },
+    {
+      "2025-09-15 05:00:00",
+      "2025-09-29 05:00:00"
     },
     {
       "2025-02-01 05:00:00",
@@ -127,10 +131,6 @@ Table_ActivityIntegration_t = {
     {
       "2026-07-08 05:00:00",
       "2026-07-15 05:00:00"
-    },
-    {
-      "2025-11-10 05:00:00",
-      "2025-11-24 05:00:00"
     },
     {
       "2025-06-01 05:00:00",
@@ -198,7 +198,6 @@ Table_ActivityIntegration_t = {
       ActivityId = 106105,
       Variant = "ActivityExchangeView_Snow"
     },
-    {ActivityId = 105634},
     {
       ItemBgColor = "6E2D16",
       ShortCut = {
@@ -376,6 +375,19 @@ Table_ActivityIntegration_t = {
       ActivityId = 105834,
       ColorTheme = 3,
       Texture = "openactivity_bg_08"
+    },
+    {
+      GoToMode = 10000020,
+      Texture = "activityintegration_bg_os2504"
+    },
+    {
+      ActivityId = 10580001,
+      ColorTheme = 3,
+      Texture = "openactivity_bg_07"
+    },
+    {
+      ActivityId = 106109,
+      Variant = "ActivityExchangeView_Snow"
     },
     {
       GoToMode = 30056,
@@ -566,6 +578,11 @@ Table_ActivityIntegration_t = {
       ShopType = 10000023
     },
     {
+      ShopId = 1,
+      ShopItemID = 10001017,
+      ShopType = 10000078
+    },
+    {
       GoToMode = 10000022,
       Item = 23312,
       Texture = "activityintegration_bg_yijie"
@@ -574,6 +591,16 @@ Table_ActivityIntegration_t = {
       ActivityId = 105833,
       ColorTheme = 1,
       Texture = "openactivity_bg_11"
+    },
+    {
+      ActivityId = 105836,
+      ColorTheme = 1,
+      Texture = "openactivity_bg_11"
+    },
+    {
+      ShopId = 1,
+      ShopItemID = 10001020,
+      ShopType = 10000081
     },
     {
       ShopId = 1,
@@ -701,6 +728,31 @@ Table_ActivityIntegration_t = {
       Texture = "openactivity_bg_03"
     },
     {
+      ShopId = 1,
+      ShopItemID = 10001019,
+      ShopType = 10000080
+    },
+    {
+      GoToMode = 10000020,
+      ItemBgColor = "FFC48A",
+      ItemIDs = {
+        10000158,
+        10000159,
+        10000160,
+        47036,
+        47089,
+        3001010,
+        3002152,
+        3002771,
+        3001900,
+        47082
+      },
+      ShowType = 8,
+      TextBgColor = "EB7536",
+      TextColor = "FFFFFF",
+      Texture = "activityintegration_bg_os2511"
+    },
+    {
       GoToMode = 10000022,
       Item = 23064,
       Texture = "activityintegration_bg_yijie"
@@ -711,13 +763,19 @@ Table_ActivityIntegration_t = {
       Texture = "openactivity_bg_11"
     },
     {
-      GoToMode = 10000020,
-      Texture = "activityintegration_bg_os2504"
+      ShopId = 1,
+      ShopItemID = 10001001,
+      ShopType = 10000077
     },
     {
-      ActivityId = 10580001,
-      ColorTheme = 3,
-      Texture = "openactivity_bg_07"
+      ActivityId = 106106,
+      ColorTheme = 2,
+      Texture = "openactivity_bg_11"
+    },
+    {
+      ActivityId = 1058002,
+      ColorTheme = 2,
+      Texture = "openactivity_bg_02"
     },
     {
       ItemBgColor = "FD90A0",
@@ -904,9 +962,8 @@ Table_ActivityIntegration_t = {
       Texture = "openactivity_bg_05"
     },
     {
-      ActivityId = 1058002,
-      ColorTheme = 2,
-      Texture = "openactivity_bg_02"
+      GoToMode = 10000085,
+      Texture = "activityintegration_bg_pic18"
     },
     {
       GoToMode = 10000022,
@@ -919,24 +976,9 @@ Table_ActivityIntegration_t = {
       Texture = "openactivity_bg_11"
     },
     {
-      GoToMode = 10000020,
-      ItemBgColor = "FFC48A",
-      ItemIDs = {
-        10000158,
-        10000159,
-        10000160,
-        47036,
-        47089,
-        3001010,
-        3002152,
-        3002771,
-        3001900,
-        47082
-      },
-      ShowType = 8,
-      TextBgColor = "EB7536",
-      TextColor = "FFFFFF",
-      Texture = "activityintegration_bg_os2511"
+      ShopId = 1,
+      ShopItemID = 10001021,
+      ShopType = 10000082
     },
     {
       ShopId = 1,
@@ -944,9 +986,9 @@ Table_ActivityIntegration_t = {
       ShopType = 20795
     },
     {
-      ActivityId = 105836,
-      ColorTheme = 1,
-      Texture = "openactivity_bg_11"
+      ShopId = 1,
+      ShopItemID = 10001018,
+      ShopType = 10000079
     },
     {
       ItemBgColor = "F9DCAC",
@@ -1599,10 +1641,6 @@ Table_ActivityIntegration_t = {
       "2026-06-15 05:00:00"
     },
     {
-      "2025-11-24 05:00:00",
-      "2025-12-25 05:00:00"
-    },
-    {
       "2025-07-25 05:00:00",
       "2025-08-25 05:00:00"
     },
@@ -1625,6 +1663,18 @@ Table_ActivityIntegration_t = {
     {
       "2025-09-29 05:00:00",
       "2025-10-13 05:00:00"
+    },
+    {
+      "2025-04-01 05:00:00",
+      "2025-05-01 05:00:00"
+    },
+    {
+      "2023-12-01 05:00:00",
+      "2029-12-01 05:00:00"
+    },
+    {
+      "2026-11-03 05:00:00",
+      "2026-11-17 05:00:00"
     },
     {
       "2025-08-28 05:00:00",
@@ -1659,6 +1709,10 @@ Table_ActivityIntegration_t = {
       "2025-10-27 05:00:00"
     },
     {
+      "2025-11-03 05:00:00",
+      "2025-11-17 05:00:00"
+    },
+    {
       "2025-12-15 05:00:00",
       "2025-12-22 05:00:00"
     },
@@ -1687,20 +1741,12 @@ Table_ActivityIntegration_t = {
       "2024-07-01 05:00:00"
     },
     {
-      "2025-09-08 05:00:00",
-      "2025-09-22 05:00:00"
-    },
-    {
-      "2025-04-01 05:00:00",
-      "2025-05-01 05:00:00"
-    },
-    {
-      "2023-12-01 05:00:00",
-      "2029-12-01 05:00:00"
-    },
-    {
       "2025-10-25 05:00:00",
       "2025-11-24 05:00:00"
+    },
+    {
+      "2025-09-08 05:00:00",
+      "2025-09-22 05:00:00"
     },
     {
       "2025-01-25 05:00:00",
@@ -1721,10 +1767,6 @@ Table_ActivityIntegration_t = {
     {
       "2026-07-01 05:00:00",
       "2026-07-08 05:00:00"
-    },
-    {
-      "2025-11-03 05:00:00",
-      "2025-11-17 05:00:00"
     },
     {
       "2025-05-25 05:00:00",
@@ -1800,93 +1842,92 @@ Table_ActivityIntegration = {
   [29001] = {
     id = 29001,
     Group = 29,
-    Params = Table_ActivityIntegration_t.Params[27],
+    Params = Table_ActivityIntegration_t.Params[32],
     TitleName = "##1231907",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[20],
-    Duration = Table_ActivityIntegration_t.Duration[20]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[23],
+    Duration = Table_ActivityIntegration_t.Duration[23]
   },
   [29002] = {
     id = 29002,
     Group = 29,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[28],
+    Params = Table_ActivityIntegration_t.Params[33],
     TitleName = "##3467367",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[20],
-    Duration = Table_ActivityIntegration_t.Duration[20]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[23],
+    Duration = Table_ActivityIntegration_t.Duration[23]
   },
   [29003] = {
     id = 29003,
     Group = 29,
-    Params = Table_ActivityIntegration_t.Params[16],
+    Params = Table_ActivityIntegration_t.Params[18],
     TitleName = "##1301836",
     TabDesc = "##1301837",
     Desc = "##2806892",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[21],
-    Duration = Table_ActivityIntegration_t.Duration[21]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[24],
+    Duration = Table_ActivityIntegration_t.Duration[24]
   },
   [29004] = {
     id = 29004,
     Group = 29,
-    Params = Table_ActivityIntegration_t.Params[17],
+    Params = Table_ActivityIntegration_t.Params[19],
     TitleName = "##245387",
     TabDesc = "##2806508",
     Desc = "##2806509",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[22],
-    Duration = Table_ActivityIntegration_t.Duration[22]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[25],
+    Duration = Table_ActivityIntegration_t.Duration[25]
   },
   [31001] = {
     id = 31001,
     Group = 31,
-    Params = Table_ActivityIntegration_t.Params[6],
+    Params = Table_ActivityIntegration_t.Params[5],
     TitleName = "##2824453",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic07",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[5],
-    Duration = Table_ActivityIntegration_t.Duration[5]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[4],
+    Duration = Table_ActivityIntegration_t.Duration[4]
   },
   [31002] = {
     id = 31002,
     Group = 31,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[7],
+    Params = Table_ActivityIntegration_t.Params[6],
     TitleName = "##2823929",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic07",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[5],
-    Duration = Table_ActivityIntegration_t.Duration[5]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[4],
+    Duration = Table_ActivityIntegration_t.Duration[4]
   },
   [31003] = {
     id = 31003,
     Group = 31,
-    Params = Table_ActivityIntegration_t.Params[8],
+    Params = Table_ActivityIntegration_t.Params[7],
     TitleName = "##1289531",
     TabDesc = "##1289532",
     Desc = "##1289533",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[6],
-    Duration = Table_ActivityIntegration_t.Duration[6]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[5],
+    Duration = Table_ActivityIntegration_t.Duration[5]
   },
   [31004] = {
     id = 31004,
     Group = 31,
-    Params = Table_ActivityIntegration_t.Params[9],
+    Params = Table_ActivityIntegration_t.Params[8],
     TitleName = "##1289534",
     TabDesc = "##1289535",
     Desc = "##1289536",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[7],
-    Duration = Table_ActivityIntegration_t.Duration[7]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[6],
+    Duration = Table_ActivityIntegration_t.Duration[6]
   },
   [33001] = {
     id = 33001,
     Group = 33,
-    Params = Table_ActivityIntegration_t.Params[81],
+    Params = Table_ActivityIntegration_t.Params[89],
     TitleName = "##3482550",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04",
     TFDuration = Table_ActivityIntegration_t.TFDuration[46],
     Duration = Table_ActivityIntegration_t.Duration[45]
@@ -1895,8 +1936,9 @@ Table_ActivityIntegration = {
     id = 33002,
     Group = 33,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[82],
+    Params = Table_ActivityIntegration_t.Params[90],
     TitleName = "##3482551",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06",
     TFDuration = Table_ActivityIntegration_t.TFDuration[46],
     Duration = Table_ActivityIntegration_t.Duration[45]
@@ -1904,7 +1946,7 @@ Table_ActivityIntegration = {
   [33003] = {
     id = 33003,
     Group = 33,
-    Params = Table_ActivityIntegration_t.Params[16],
+    Params = Table_ActivityIntegration_t.Params[18],
     TitleName = "##1301836",
     TabDesc = "##1301837",
     Desc = "##2806892",
@@ -1915,7 +1957,7 @@ Table_ActivityIntegration = {
   [33004] = {
     id = 33004,
     Group = 33,
-    Params = Table_ActivityIntegration_t.Params[17],
+    Params = Table_ActivityIntegration_t.Params[19],
     TitleName = "##245387",
     TabDesc = "##2806508",
     Desc = "##2806509",
@@ -1926,9 +1968,8 @@ Table_ActivityIntegration = {
   [35001] = {
     id = 35001,
     Group = 35,
-    Params = Table_ActivityIntegration_t.Params[51],
+    Params = Table_ActivityIntegration_t.Params[59],
     TitleName = "##3489794",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04",
     TFDuration = Table_ActivityIntegration_t.TFDuration[36],
     Duration = Table_ActivityIntegration_t.Duration[36]
@@ -1937,8 +1978,9 @@ Table_ActivityIntegration = {
     id = 35002,
     Group = 35,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[52],
+    Params = Table_ActivityIntegration_t.Params[60],
     TitleName = "##3489185",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06",
     TFDuration = Table_ActivityIntegration_t.TFDuration[36],
     Duration = Table_ActivityIntegration_t.Duration[36]
@@ -1946,82 +1988,81 @@ Table_ActivityIntegration = {
   [38001] = {
     id = 38001,
     Group = 38,
-    Params = Table_ActivityIntegration_t.Params[14],
+    Params = Table_ActivityIntegration_t.Params[16],
     TitleName = "##1263905",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic05",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
-    Duration = Table_ActivityIntegration_t.Duration[12]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[14],
+    Duration = Table_ActivityIntegration_t.Duration[14]
   },
   [38002] = {
     id = 38002,
     Group = 38,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[15],
+    Params = Table_ActivityIntegration_t.Params[17],
     TitleName = "##2832993",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic02",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
-    Duration = Table_ActivityIntegration_t.Duration[12]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[14],
+    Duration = Table_ActivityIntegration_t.Duration[14]
   },
   [38003] = {
     id = 38003,
     Group = 38,
-    Params = Table_ActivityIntegration_t.Params[16],
+    Params = Table_ActivityIntegration_t.Params[18],
     TitleName = "##1301836",
     TabDesc = "##1301837",
     Desc = "##2806892",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[13],
-    Duration = Table_ActivityIntegration_t.Duration[13]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[15],
+    Duration = Table_ActivityIntegration_t.Duration[15]
   },
   [38004] = {
     id = 38004,
     Group = 38,
-    Params = Table_ActivityIntegration_t.Params[17],
+    Params = Table_ActivityIntegration_t.Params[19],
     TitleName = "##245387",
     TabDesc = "##2806508",
     Desc = "##2806509",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[14],
-    Duration = Table_ActivityIntegration_t.Duration[14]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[16],
+    Duration = Table_ActivityIntegration_t.Duration[16]
   },
   [38005] = {
     id = 38005,
     Group = 38,
-    Params = Table_ActivityIntegration_t.Params[18],
+    Params = Table_ActivityIntegration_t.Params[20],
     TitleName = "##2833152",
     TabDesc = "##2833153",
     Desc = "##2833154",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[15],
-    Duration = Table_ActivityIntegration_t.Duration[15]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[17],
+    Duration = Table_ActivityIntegration_t.Duration[17]
   },
   [39001] = {
     id = 39001,
     Group = 39,
-    Params = Table_ActivityIntegration_t.Params[5],
+    Params = Table_ActivityIntegration_t.Params[4],
     TitleName = "##42529407",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[4],
-    Duration = Table_ActivityIntegration_t.Duration[4]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[3],
+    Duration = Table_ActivityIntegration_t.Duration[3]
   },
   [39002] = {
     id = 39002,
     Group = 39,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[98],
+    Params = Table_ActivityIntegration_t.Params[106],
     TitleName = "##2846375",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[4],
-    Duration = Table_ActivityIntegration_t.Duration[4]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[3],
+    Duration = Table_ActivityIntegration_t.Duration[3]
   },
   [43001] = {
     id = 43001,
     Group = 43,
-    Params = Table_ActivityIntegration_t.Params[50],
+    Params = Table_ActivityIntegration_t.Params[58],
     TitleName = "##117023",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic05",
     TFDuration = Table_ActivityIntegration_t.TFDuration[35],
     Duration = Table_ActivityIntegration_t.Duration[35]
@@ -2030,7 +2071,7 @@ Table_ActivityIntegration = {
     id = 43002,
     Group = 43,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[62],
+    Params = Table_ActivityIntegration_t.Params[70],
     TitleName = "##1288985",
     TabDesc = "##42622168",
     BgTextture = "activityintegration_bg_pic02",
@@ -2041,7 +2082,7 @@ Table_ActivityIntegration = {
     id = 43003,
     Group = 43,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[65],
+    Params = Table_ActivityIntegration_t.Params[73],
     TitleName = "##3347964",
     TabDesc = "##42622169",
     BgTextture = "activityintegration_bg_pic06",
@@ -2051,7 +2092,7 @@ Table_ActivityIntegration = {
   [43004] = {
     id = 43004,
     Group = 43,
-    Params = Table_ActivityIntegration_t.Params[16],
+    Params = Table_ActivityIntegration_t.Params[18],
     TitleName = "##1301836",
     TabDesc = "##1301837",
     Desc = "##2833801",
@@ -2062,7 +2103,7 @@ Table_ActivityIntegration = {
   [43005] = {
     id = 43005,
     Group = 43,
-    Params = Table_ActivityIntegration_t.Params[17],
+    Params = Table_ActivityIntegration_t.Params[19],
     TitleName = "##245387",
     TabDesc = "##2806508",
     Desc = "##2806509",
@@ -2073,91 +2114,90 @@ Table_ActivityIntegration = {
   [44001] = {
     id = 44001,
     Group = 44,
-    Params = Table_ActivityIntegration_t.Params[36],
+    Params = Table_ActivityIntegration_t.Params[44],
     TitleName = "##42534972",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[28],
-    Duration = Table_ActivityIntegration_t.Duration[28]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[29],
+    Duration = Table_ActivityIntegration_t.Duration[29]
   },
   [44002] = {
     id = 44002,
     Group = 44,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[37],
+    Params = Table_ActivityIntegration_t.Params[45],
     TitleName = "##42534973",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[28],
-    Duration = Table_ActivityIntegration_t.Duration[28]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[29],
+    Duration = Table_ActivityIntegration_t.Duration[29]
   },
   [45001] = {
     id = 45001,
     Group = 45,
     Type = 2,
-    Params = Table_ActivityIntegration_t.Params[25],
+    Params = Table_ActivityIntegration_t.Params[30],
     TitleName = "##293934",
     TabDesc = "##3441292",
     BgTextture = "activityintegration_bg_pic08",
     HelpID = 35288,
-    TFDuration = Table_ActivityIntegration_t.TFDuration[19],
-    Duration = Table_ActivityIntegration_t.Duration[19]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[22],
+    Duration = Table_ActivityIntegration_t.Duration[22]
   },
   [46001] = {
     id = 46001,
     Group = 46,
-    Params = Table_ActivityIntegration_t.Params[13],
+    Params = Table_ActivityIntegration_t.Params[15],
     TitleName = "##42590411",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
-    Duration = Table_ActivityIntegration_t.Duration[11]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[13],
+    Duration = Table_ActivityIntegration_t.Duration[13]
   },
   [46002] = {
     id = 46002,
     Group = 46,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[66],
+    Params = Table_ActivityIntegration_t.Params[74],
     TitleName = "##42590412",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
-    Duration = Table_ActivityIntegration_t.Duration[11]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[13],
+    Duration = Table_ActivityIntegration_t.Duration[13]
   },
   [48001] = {
     id = 48001,
     Group = 48,
-    Params = Table_ActivityIntegration_t.Params[93],
+    Params = Table_ActivityIntegration_t.Params[101],
     TitleName = "##1225241",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04",
     TFDuration = Table_ActivityIntegration_t.TFDuration[50],
-    Duration = Table_ActivityIntegration_t.Duration[25]
+    Duration = Table_ActivityIntegration_t.Duration[8]
   },
   [48002] = {
     id = 48002,
     Group = 48,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[94],
+    Params = Table_ActivityIntegration_t.Params[102],
     TitleName = "##3445981",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06",
     TFDuration = Table_ActivityIntegration_t.TFDuration[50],
-    Duration = Table_ActivityIntegration_t.Duration[25]
+    Duration = Table_ActivityIntegration_t.Duration[8]
   },
   [48003] = {
     id = 48003,
     Group = 48,
-    Params = Table_ActivityIntegration_t.Params[32],
+    Params = Table_ActivityIntegration_t.Params[10],
     TitleName = "##3500318",
     TabDesc = "##3503597",
     BgTextture = "activityintegration_bg_pic05",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[25],
-    Duration = Table_ActivityIntegration_t.Duration[25]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[8],
+    Duration = Table_ActivityIntegration_t.Duration[8]
   },
   [49001] = {
     id = 49001,
     Group = 49,
-    Params = Table_ActivityIntegration_t.Params[79],
+    Params = Table_ActivityIntegration_t.Params[87],
     TitleName = "##1128764",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04",
     TFDuration = Table_ActivityIntegration_t.TFDuration[43],
     Duration = Table_ActivityIntegration_t.Duration[43]
@@ -2166,8 +2206,9 @@ Table_ActivityIntegration = {
     id = 49002,
     Group = 49,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[80],
+    Params = Table_ActivityIntegration_t.Params[88],
     TitleName = "##42634484",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06",
     TFDuration = Table_ActivityIntegration_t.TFDuration[43],
     Duration = Table_ActivityIntegration_t.Duration[43]
@@ -2175,7 +2216,7 @@ Table_ActivityIntegration = {
   [49003] = {
     id = 49003,
     Group = 49,
-    Params = Table_ActivityIntegration_t.Params[69],
+    Params = Table_ActivityIntegration_t.Params[77],
     TitleName = "##3500318",
     TabDesc = "##3503597",
     BgTextture = "activityintegration_bg_pic06",
@@ -2186,8 +2227,7 @@ Table_ActivityIntegration = {
     id = 50001,
     Group = 50,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[63],
-    TitleName = "##42634292",
+    Params = Table_ActivityIntegration_t.Params[71],
     TabDesc = "##42634298",
     Desc = "##42635054",
     TFDuration = Table_ActivityIntegration_t.TFDuration[42],
@@ -2197,7 +2237,8 @@ Table_ActivityIntegration = {
     id = 50002,
     Group = 50,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[64],
+    Params = Table_ActivityIntegration_t.Params[72],
+    TitleName = "##42634300",
     TabDesc = "##42634301",
     TFDuration = Table_ActivityIntegration_t.TFDuration[42],
     Duration = Table_ActivityIntegration_t.Duration[42]
@@ -2205,9 +2246,8 @@ Table_ActivityIntegration = {
   [51001] = {
     id = 51001,
     Group = 51,
-    Params = Table_ActivityIntegration_t.Params[49],
+    Params = Table_ActivityIntegration_t.Params[57],
     TitleName = "##42640019",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04",
     TFDuration = Table_ActivityIntegration_t.TFDuration[34],
     Duration = Table_ActivityIntegration_t.Duration[34]
@@ -2216,8 +2256,9 @@ Table_ActivityIntegration = {
     id = 51002,
     Group = 51,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[70],
+    Params = Table_ActivityIntegration_t.Params[78],
     TitleName = "##42639929",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06",
     TFDuration = Table_ActivityIntegration_t.TFDuration[34],
     Duration = Table_ActivityIntegration_t.Duration[34]
@@ -2225,7 +2266,7 @@ Table_ActivityIntegration = {
   [51003] = {
     id = 51003,
     Group = 51,
-    Params = Table_ActivityIntegration_t.Params[71],
+    Params = Table_ActivityIntegration_t.Params[79],
     TitleName = "##3500318",
     TabDesc = "##3503597",
     BgTextture = "activityintegration_bg_pic06",
@@ -2235,161 +2276,160 @@ Table_ActivityIntegration = {
   [53001] = {
     id = 53001,
     Group = 53,
-    Params = Table_ActivityIntegration_t.Params[24],
+    Params = Table_ActivityIntegration_t.Params[29],
     TitleName = "##1231907",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[18],
-    Duration = Table_ActivityIntegration_t.Duration[18]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[21],
+    Duration = Table_ActivityIntegration_t.Duration[21]
   },
   [53002] = {
     id = 53002,
     Group = 53,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[89],
+    Params = Table_ActivityIntegration_t.Params[97],
     TitleName = "##3467367",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[18],
-    Duration = Table_ActivityIntegration_t.Duration[18]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[21],
+    Duration = Table_ActivityIntegration_t.Duration[21]
   },
   [53003] = {
     id = 53003,
     Group = 53,
-    Params = Table_ActivityIntegration_t.Params[26],
+    Params = Table_ActivityIntegration_t.Params[31],
     TitleName = "##44181932",
     TabDesc = "##44181933",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[18],
-    Duration = Table_ActivityIntegration_t.Duration[18]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[21],
+    Duration = Table_ActivityIntegration_t.Duration[21]
   },
   [54001] = {
     id = 54001,
     Group = 54,
-    Params = Table_ActivityIntegration_t.Params[12],
+    Params = Table_ActivityIntegration_t.Params[14],
     TitleName = "##42532765",
     TabDesc = "##42532767",
     Desc = "##44709814",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
+    Duration = Table_ActivityIntegration_t.Duration[12]
   },
   [54002] = {
     id = 54002,
     Group = 54,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[53],
+    Params = Table_ActivityIntegration_t.Params[61],
     TitleName = "##3459490",
     TabDesc = "##3359223",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
+    Duration = Table_ActivityIntegration_t.Duration[12]
   },
   [54003] = {
     id = 54003,
     Group = 54,
     Type = 11,
-    Params = Table_ActivityIntegration_t.Params[54],
+    Params = Table_ActivityIntegration_t.Params[62],
     TitleName = "##3480628",
     TabDesc = "##42532769",
     BgTextture = "risingstar_bg_bottom_01",
     HelpID = 32612,
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
+    Duration = Table_ActivityIntegration_t.Duration[12]
   },
   [54004] = {
     id = 54004,
     Group = 54,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[41],
+    Params = Table_ActivityIntegration_t.Params[49],
     TitleName = "##3436950",
     TabDesc = "##42532767",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
+    Duration = Table_ActivityIntegration_t.Duration[12]
   },
   [54005] = {
     id = 54005,
     Group = 54,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[85],
+    Params = Table_ActivityIntegration_t.Params[93],
     TitleName = "##42640893",
     TabDesc = "##42640894",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
+    Duration = Table_ActivityIntegration_t.Duration[12]
   },
   [54006] = {
     id = 54006,
     Group = 54,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[84],
+    Params = Table_ActivityIntegration_t.Params[92],
     TitleName = "##42640895",
     TabDesc = "##42640896",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
+    Duration = Table_ActivityIntegration_t.Duration[12]
   },
   [54007] = {
     id = 54007,
     Group = 54,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[83],
+    Params = Table_ActivityIntegration_t.Params[91],
     TitleName = "##42640897",
     TabDesc = "##42640898",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
+    Duration = Table_ActivityIntegration_t.Duration[12]
   },
   [54008] = {
     id = 54008,
     Group = 54,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[19],
+    Params = Table_ActivityIntegration_t.Params[21],
     TitleName = "##150287",
     TabDesc = "##42640899",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
+    Duration = Table_ActivityIntegration_t.Duration[12]
   },
   [54009] = {
     id = 54009,
     Group = 54,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[20],
+    Params = Table_ActivityIntegration_t.Params[22],
     TitleName = "##150154",
     TabDesc = "##42640900",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
+    Duration = Table_ActivityIntegration_t.Duration[12]
   },
   [55001] = {
     id = 55001,
     Group = 55,
-    Params = Table_ActivityIntegration_t.Params[3],
+    Params = Table_ActivityIntegration_t.Params[2],
     TitleName = "##2824453",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic07",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[3],
-    Duration = Table_ActivityIntegration_t.Duration[3]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
+    Duration = Table_ActivityIntegration_t.Duration[2]
   },
   [55002] = {
     id = 55002,
     Group = 55,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[4],
+    Params = Table_ActivityIntegration_t.Params[3],
     TitleName = "##2823929",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic07",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[3],
-    Duration = Table_ActivityIntegration_t.Duration[3]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
+    Duration = Table_ActivityIntegration_t.Duration[2]
   },
   [55003] = {
     id = 55003,
     Group = 55,
-    Params = Table_ActivityIntegration_t.Params[60],
+    Params = Table_ActivityIntegration_t.Params[68],
     TitleName = "##44181932",
     TabDesc = "##44181933",
     BgTextture = "activityintegration_bg_pic04",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[3],
-    Duration = Table_ActivityIntegration_t.Duration[3]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
+    Duration = Table_ActivityIntegration_t.Duration[2]
   },
   [57001] = {
     id = 57001,
     Group = 57,
-    Params = Table_ActivityIntegration_t.Params[78],
+    Params = Table_ActivityIntegration_t.Params[86],
     TitleName = "##3489794",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04",
     TFDuration = Table_ActivityIntegration_t.TFDuration[41],
     Duration = Table_ActivityIntegration_t.Duration[41]
@@ -2398,8 +2438,9 @@ Table_ActivityIntegration = {
     id = 57002,
     Group = 57,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[61],
+    Params = Table_ActivityIntegration_t.Params[69],
     TitleName = "##3489185",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06",
     TFDuration = Table_ActivityIntegration_t.TFDuration[41],
     Duration = Table_ActivityIntegration_t.Duration[41]
@@ -2407,7 +2448,7 @@ Table_ActivityIntegration = {
   [57003] = {
     id = 57003,
     Group = 57,
-    Params = Table_ActivityIntegration_t.Params[75],
+    Params = Table_ActivityIntegration_t.Params[83],
     TitleName = "##44181932",
     TabDesc = "##44181933",
     BgTextture = "activityintegration_bg_pic04",
@@ -2417,9 +2458,8 @@ Table_ActivityIntegration = {
   [60001] = {
     id = 60001,
     Group = 60,
-    Params = Table_ActivityIntegration_t.Params[34],
+    Params = Table_ActivityIntegration_t.Params[42],
     TitleName = "##1263905",
-    TabDesc = "##2806507",
     BgTextture = "activityintegration_bg_pic04",
     TFDuration = Table_ActivityIntegration_t.TFDuration[27],
     Duration = Table_ActivityIntegration_t.Duration[27]
@@ -2428,8 +2468,9 @@ Table_ActivityIntegration = {
     id = 60002,
     Group = 60,
     Type = 1,
-    Params = Table_ActivityIntegration_t.Params[35],
+    Params = Table_ActivityIntegration_t.Params[43],
     TitleName = "##2832993",
+    TabDesc = "##1289529",
     BgTextture = "activityintegration_bg_pic06",
     TFDuration = Table_ActivityIntegration_t.TFDuration[27],
     Duration = Table_ActivityIntegration_t.Duration[27]
@@ -2437,7 +2478,7 @@ Table_ActivityIntegration = {
   [60003] = {
     id = 60003,
     Group = 60,
-    Params = Table_ActivityIntegration_t.Params[46],
+    Params = Table_ActivityIntegration_t.Params[36],
     TitleName = "##44181932",
     TabDesc = "##44181933",
     BgTextture = "activityintegration_bg_pic04",
@@ -2448,76 +2489,66 @@ Table_ActivityIntegration = {
     id = 60004,
     Group = 60,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[48],
+    Params = Table_ActivityIntegration_t.Params[26],
     TitleName = "##44703682",
     TabDesc = "##44709813",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[33],
-    Duration = Table_ActivityIntegration_t.Duration[33]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[19],
+    Duration = Table_ActivityIntegration_t.Duration[19]
   },
   [60009] = {
     id = 60009,
     Group = 60,
-    Params = Table_ActivityIntegration_t.Params[18],
+    Params = Table_ActivityIntegration_t.Params[20],
     TitleName = "##2833152",
     TabDesc = "##2833153",
     Desc = "##2833154",
     BgTextture = "activityintegration_bg_pic08",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[30],
-    Duration = Table_ActivityIntegration_t.Duration[30]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[31],
+    Duration = Table_ActivityIntegration_t.Duration[31]
   },
   [62001] = {
     id = 62001,
     Group = 62,
-    Params = Table_ActivityIntegration_t.Params[11],
+    Params = Table_ActivityIntegration_t.Params[13],
     TitleName = "##44703697",
     TabDesc = "##44703698",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[9],
-    Duration = Table_ActivityIntegration_t.Duration[9]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
+    Duration = Table_ActivityIntegration_t.Duration[11]
   },
   [62002] = {
     id = 62002,
     Group = 62,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[39],
+    Params = Table_ActivityIntegration_t.Params[47],
     TitleName = "##44703679",
     TabDesc = "##44703699",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[9],
-    Duration = Table_ActivityIntegration_t.Duration[9]
-  },
-  [63001] = {
-    id = 63001,
-    Group = 63,
-    Type = 1,
-    Params = Table_ActivityIntegration_t.Params[2],
-    TitleName = "##2846375",
-    BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[2],
-    Duration = Table_ActivityIntegration_t.Duration[2]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[11],
+    Duration = Table_ActivityIntegration_t.Duration[11]
   },
   [69001] = {
     id = 69001,
     Group = 69,
-    Params = Table_ActivityIntegration_t.Params[11],
+    Params = Table_ActivityIntegration_t.Params[13],
     TitleName = "##44703697",
     TabDesc = "##44713431",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[17],
-    Duration = Table_ActivityIntegration_t.Duration[17]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[20],
+    Duration = Table_ActivityIntegration_t.Duration[20]
   },
   [69002] = {
     id = 69002,
     Group = 69,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[23],
+    Params = Table_ActivityIntegration_t.Params[28],
     TitleName = "##3361088",
     TabDesc = "##44703699",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[17],
-    Duration = Table_ActivityIntegration_t.Duration[17]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[20],
+    Duration = Table_ActivityIntegration_t.Duration[20]
   },
   [72001] = {
     id = 72001,
-    Params = Table_ActivityIntegration_t.Params[90],
+    Params = Table_ActivityIntegration_t.Params[98],
     TitleName = "##42640425",
     TabDesc = "##42532767",
     Desc = "##42640426",
@@ -2527,7 +2558,7 @@ Table_ActivityIntegration = {
   [72002] = {
     id = 72002,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[91],
+    Params = Table_ActivityIntegration_t.Params[99],
     TitleName = "##3459490",
     TabDesc = "##3359223",
     TFDuration = Table_ActivityIntegration_t.TFDuration[1],
@@ -2536,7 +2567,7 @@ Table_ActivityIntegration = {
   [72003] = {
     id = 72003,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[92],
+    Params = Table_ActivityIntegration_t.Params[100],
     TitleName = "##3436950",
     TabDesc = "##42532767",
     TFDuration = Table_ActivityIntegration_t.TFDuration[1],
@@ -2545,7 +2576,7 @@ Table_ActivityIntegration = {
   [72004] = {
     id = 72004,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[68],
+    Params = Table_ActivityIntegration_t.Params[76],
     TitleName = "##42640893",
     TabDesc = "##42640894",
     TFDuration = Table_ActivityIntegration_t.TFDuration[1],
@@ -2554,7 +2585,7 @@ Table_ActivityIntegration = {
   [72005] = {
     id = 72005,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[67],
+    Params = Table_ActivityIntegration_t.Params[75],
     TitleName = "##42640895",
     TabDesc = "##42640896",
     TFDuration = Table_ActivityIntegration_t.TFDuration[1],
@@ -2563,7 +2594,7 @@ Table_ActivityIntegration = {
   [72006] = {
     id = 72006,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[95],
+    Params = Table_ActivityIntegration_t.Params[103],
     TitleName = "##42640897",
     TabDesc = "##42640898",
     TFDuration = Table_ActivityIntegration_t.TFDuration[1],
@@ -2572,7 +2603,7 @@ Table_ActivityIntegration = {
   [72007] = {
     id = 72007,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[96],
+    Params = Table_ActivityIntegration_t.Params[104],
     TitleName = "##150287",
     TabDesc = "##42640899",
     TFDuration = Table_ActivityIntegration_t.TFDuration[1],
@@ -2581,7 +2612,7 @@ Table_ActivityIntegration = {
   [72008] = {
     id = 72008,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[97],
+    Params = Table_ActivityIntegration_t.Params[105],
     TitleName = "##150154",
     TabDesc = "##42640900",
     TFDuration = Table_ActivityIntegration_t.TFDuration[1],
@@ -2600,99 +2631,99 @@ Table_ActivityIntegration = {
   [75001] = {
     id = 75001,
     Group = 75,
-    Params = Table_ActivityIntegration_t.Params[11],
+    Params = Table_ActivityIntegration_t.Params[13],
     TitleName = "##44703697",
     TabDesc = "##45927428",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[32],
-    Duration = Table_ActivityIntegration_t.Duration[32]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[33],
+    Duration = Table_ActivityIntegration_t.Duration[33]
   },
   [75002] = {
     id = 75002,
     Group = 75,
     Type = 4,
-    Params = Table_ActivityIntegration_t.Params[47],
+    Params = Table_ActivityIntegration_t.Params[55],
     TitleName = "##45927429",
     TabDesc = "##44703699",
     BgTextture = "activityintegration_bg_pic06",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[32],
-    Duration = Table_ActivityIntegration_t.Duration[32]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[33],
+    Duration = Table_ActivityIntegration_t.Duration[33]
   },
   [1000101] = {
     id = 1000101,
     Group = 10001,
     Type = 9,
-    Params = Table_ActivityIntegration_t.Params[76],
+    Params = Table_ActivityIntegration_t.Params[84],
     TitleName = "##3489788",
     TabDesc = "##3489789",
     HelpID = 500001,
-    TFDuration = Table_ActivityIntegration_t.TFDuration[26],
-    Duration = Table_ActivityIntegration_t.Duration[26]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[9],
+    Duration = Table_ActivityIntegration_t.Duration[9]
   },
   [1000102] = {
     id = 1000102,
     Group = 10001,
     Type = 10,
-    Params = Table_ActivityIntegration_t.Params[77],
+    Params = Table_ActivityIntegration_t.Params[85],
     TitleName = "##3462229",
     TabDesc = "##3489790",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[26],
-    Duration = Table_ActivityIntegration_t.Duration[26]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[9],
+    Duration = Table_ActivityIntegration_t.Duration[9]
   },
   [1000103] = {
     id = 1000103,
     Group = 10001,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[59],
+    Params = Table_ActivityIntegration_t.Params[67],
     TitleName = "##3489784",
     TabDesc = "##2857080",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[26],
-    Duration = Table_ActivityIntegration_t.Duration[26]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[9],
+    Duration = Table_ActivityIntegration_t.Duration[9]
   },
   [1000104] = {
     id = 1000104,
     Group = 10001,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[43],
+    Params = Table_ActivityIntegration_t.Params[41],
     TitleName = "##3489786",
     TabDesc = "##3489793",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[26],
-    Duration = Table_ActivityIntegration_t.Duration[26]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[9],
+    Duration = Table_ActivityIntegration_t.Duration[9]
   },
   [1000105] = {
     id = 1000105,
     Group = 10001,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[42],
+    Params = Table_ActivityIntegration_t.Params[50],
     TitleName = "##3500988",
     TabDesc = "##3500993",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[26],
-    Duration = Table_ActivityIntegration_t.Duration[26]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[9],
+    Duration = Table_ActivityIntegration_t.Duration[9]
   },
   [1000106] = {
     id = 1000106,
     Group = 10001,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[56],
+    Params = Table_ActivityIntegration_t.Params[64],
     TitleName = "##3500990",
     TabDesc = "##3500995",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[26],
-    Duration = Table_ActivityIntegration_t.Duration[26]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[9],
+    Duration = Table_ActivityIntegration_t.Duration[9]
   },
   [1000107] = {
     id = 1000107,
     Group = 10001,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[33],
+    Params = Table_ActivityIntegration_t.Params[11],
     TitleName = "##1107497",
     TabDesc = "##42629708",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[26],
-    Duration = Table_ActivityIntegration_t.Duration[26]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[9],
+    Duration = Table_ActivityIntegration_t.Duration[9]
   },
   [1000201] = {
     id = 1000201,
     Group = 10002,
     Type = 2,
-    Params = Table_ActivityIntegration_t.Params[55],
+    Params = Table_ActivityIntegration_t.Params[63],
     TitleName = "##3500996",
     TabDesc = "##3500997",
     BgTextture = "activityintegration_bg_pic08",
@@ -2704,19 +2735,18 @@ Table_ActivityIntegration = {
     id = 1000301,
     Group = 10003,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[29],
+    Params = Table_ActivityIntegration_t.Params[34],
     TitleName = "##3500998",
     TabDesc = "##3500999",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[23],
-    Duration = Table_ActivityIntegration_t.Duration[23],
+    TFDuration = Table_ActivityIntegration_t.TFDuration[26],
+    Duration = Table_ActivityIntegration_t.Duration[26],
     ServerID = Table_ActivityIntegration_t.ServerID[1]
   },
   [2001001] = {
     id = 2001001,
     Group = 2001,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[87],
-    TitleName = "##42634292",
+    Params = Table_ActivityIntegration_t.Params[95],
     TabDesc = "##42640357",
     Desc = "##42640358",
     TFDuration = Table_ActivityIntegration_t.TFDuration[49],
@@ -2726,7 +2756,8 @@ Table_ActivityIntegration = {
     id = 2001002,
     Group = 2001,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[88],
+    Params = Table_ActivityIntegration_t.Params[96],
+    TitleName = "##42634300",
     TabDesc = "##42634301",
     TFDuration = Table_ActivityIntegration_t.TFDuration[49],
     Duration = Table_ActivityIntegration_t.Duration[48]
@@ -2735,8 +2766,7 @@ Table_ActivityIntegration = {
     id = 2002001,
     Group = 2002,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[73],
-    TitleName = "##42634292",
+    Params = Table_ActivityIntegration_t.Params[81],
     TabDesc = "##42641315",
     Desc = "##42641316",
     TFDuration = Table_ActivityIntegration_t.TFDuration[45],
@@ -2746,7 +2776,8 @@ Table_ActivityIntegration = {
     id = 2002002,
     Group = 2002,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[74],
+    Params = Table_ActivityIntegration_t.Params[82],
+    TitleName = "##42634300",
     TabDesc = "##42634301",
     TFDuration = Table_ActivityIntegration_t.TFDuration[45],
     Duration = Table_ActivityIntegration_t.Duration[44]
@@ -2755,8 +2786,7 @@ Table_ActivityIntegration = {
     id = 2003001,
     Group = 2003,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[57],
-    TitleName = "##42634292",
+    Params = Table_ActivityIntegration_t.Params[65],
     TabDesc = "##44696015",
     Desc = "##44696016",
     TFDuration = Table_ActivityIntegration_t.TFDuration[40],
@@ -2766,7 +2796,8 @@ Table_ActivityIntegration = {
     id = 2003002,
     Group = 2003,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[58],
+    Params = Table_ActivityIntegration_t.Params[66],
+    TitleName = "##42634300",
     TabDesc = "##42634301",
     TFDuration = Table_ActivityIntegration_t.TFDuration[40],
     Duration = Table_ActivityIntegration_t.Duration[40]
@@ -2775,111 +2806,203 @@ Table_ActivityIntegration = {
     id = 2004001,
     Group = 2004,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[44],
-    TitleName = "##42634292",
+    Params = Table_ActivityIntegration_t.Params[52],
     TabDesc = "##44701983",
     Desc = "##44702244",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[31],
-    Duration = Table_ActivityIntegration_t.Duration[31]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[32],
+    Duration = Table_ActivityIntegration_t.Duration[32]
   },
   [2004002] = {
     id = 2004002,
     Group = 2004,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[45],
+    Params = Table_ActivityIntegration_t.Params[53],
+    TitleName = "##42634300",
     TabDesc = "##42634301",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[31],
-    Duration = Table_ActivityIntegration_t.Duration[31]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[32],
+    Duration = Table_ActivityIntegration_t.Duration[32]
   },
   [2005001] = {
     id = 2005001,
     Group = 2005,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[30],
-    TitleName = "##42634292",
+    Params = Table_ActivityIntegration_t.Params[37],
     TabDesc = "##44703858",
     Desc = "##44703859",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[24],
-    Duration = Table_ActivityIntegration_t.Duration[24]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[28],
+    Duration = Table_ActivityIntegration_t.Duration[28]
   },
   [2005002] = {
     id = 2005002,
     Group = 2005,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[31],
+    Params = Table_ActivityIntegration_t.Params[38],
+    TitleName = "##42634300",
     TabDesc = "##42634301",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[24],
-    Duration = Table_ActivityIntegration_t.Duration[24]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[28],
+    Duration = Table_ActivityIntegration_t.Duration[28]
   },
   [2006001] = {
     id = 2006001,
     Group = 2006,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[21],
-    TitleName = "##42634292",
+    Params = Table_ActivityIntegration_t.Params[24],
     TabDesc = "##44707868",
     Desc = "##44707869",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[16],
-    Duration = Table_ActivityIntegration_t.Duration[16]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[18],
+    Duration = Table_ActivityIntegration_t.Duration[18]
   },
   [2006002] = {
     id = 2006002,
     Group = 2006,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[22],
+    Params = Table_ActivityIntegration_t.Params[25],
+    TitleName = "##42634300",
     TabDesc = "##42634301",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[16],
-    Duration = Table_ActivityIntegration_t.Duration[16]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[18],
+    Duration = Table_ActivityIntegration_t.Duration[18]
   },
   [2007001] = {
     id = 2007001,
     Group = 2007,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[10],
+    Params = Table_ActivityIntegration_t.Params[9],
     TitleName = "##44703682",
     TabDesc = "##44704272",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[8],
-    Duration = Table_ActivityIntegration_t.Duration[8]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[7],
+    Duration = Table_ActivityIntegration_t.Duration[7]
   },
   [2009001] = {
     id = 2009001,
     Group = 2009,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[86],
-    TitleName = "##42634292",
+    Params = Table_ActivityIntegration_t.Params[94],
     TabDesc = "##44710672",
     Desc = "##44711370",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
+    Duration = Table_ActivityIntegration_t.Duration[12]
   },
   [2009002] = {
     id = 2009002,
     Group = 2009,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[40],
+    Params = Table_ActivityIntegration_t.Params[48],
+    TitleName = "##42634300",
     TabDesc = "##42634301",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
-    Duration = Table_ActivityIntegration_t.Duration[10]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[12],
+    Duration = Table_ActivityIntegration_t.Duration[12]
   },
   [2010001] = {
     id = 2010001,
     Group = 2010,
     Type = 12,
-    Params = Table_ActivityIntegration_t.Params[72],
-    TitleName = "##42634292",
+    Params = Table_ActivityIntegration_t.Params[80],
     TabDesc = "##44713421",
     Desc = "##44713422",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[29],
-    Duration = Table_ActivityIntegration_t.Duration[29]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[30],
+    Duration = Table_ActivityIntegration_t.Duration[30]
   },
   [2010002] = {
     id = 2010002,
     Group = 2010,
     Type = 6,
-    Params = Table_ActivityIntegration_t.Params[38],
+    Params = Table_ActivityIntegration_t.Params[46],
+    TitleName = "##42634300",
     TabDesc = "##42634301",
-    TFDuration = Table_ActivityIntegration_t.TFDuration[29],
-    Duration = Table_ActivityIntegration_t.Duration[29]
+    TFDuration = Table_ActivityIntegration_t.TFDuration[30],
+    Duration = Table_ActivityIntegration_t.Duration[30]
+  },
+  [2012001] = {
+    id = 2012001,
+    Group = 2012,
+    Params = Table_ActivityIntegration_t.Params[51],
+    TitleName = "##42532765",
+    TabDesc = "##42532767",
+    Desc = "##44709802",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
+    Duration = Table_ActivityIntegration_t.Duration[10]
+  },
+  [2012002] = {
+    id = 2012002,
+    Group = 2012,
+    Type = 6,
+    Params = Table_ActivityIntegration_t.Params[40],
+    TitleName = "##44709074",
+    TabDesc = "##3359223",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
+    Duration = Table_ActivityIntegration_t.Duration[10]
+  },
+  [2012003] = {
+    id = 2012003,
+    Group = 2012,
+    Type = 4,
+    Params = Table_ActivityIntegration_t.Params[39],
+    TitleName = "##3436950",
+    TabDesc = "##42532767",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
+    Duration = Table_ActivityIntegration_t.Duration[10]
+  },
+  [2012004] = {
+    id = 2012004,
+    Group = 2012,
+    Type = 4,
+    Params = Table_ActivityIntegration_t.Params[54],
+    TitleName = "##42640893",
+    TabDesc = "##42640894",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
+    Duration = Table_ActivityIntegration_t.Duration[10]
+  },
+  [2012005] = {
+    id = 2012005,
+    Group = 2012,
+    Type = 4,
+    Params = Table_ActivityIntegration_t.Params[35],
+    TitleName = "##42640895",
+    TabDesc = "##42640896",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
+    Duration = Table_ActivityIntegration_t.Duration[10]
+  },
+  [2012006] = {
+    id = 2012006,
+    Group = 2012,
+    Type = 4,
+    Params = Table_ActivityIntegration_t.Params[27],
+    TitleName = "##42640897",
+    TabDesc = "##42640898",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
+    Duration = Table_ActivityIntegration_t.Duration[10]
+  },
+  [2012007] = {
+    id = 2012007,
+    Group = 2012,
+    Type = 4,
+    Params = Table_ActivityIntegration_t.Params[56],
+    TitleName = "##150287",
+    TabDesc = "##42640899",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
+    Duration = Table_ActivityIntegration_t.Duration[10]
+  },
+  [2012008] = {
+    id = 2012008,
+    Group = 2012,
+    Type = 4,
+    Params = Table_ActivityIntegration_t.Params[23],
+    TitleName = "##150154",
+    TabDesc = "##42640900",
+    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
+    Duration = Table_ActivityIntegration_t.Duration[10]
+  },
+  [2012009] = {
+    id = 2012009,
+    Group = 2012,
+    Type = 11,
+    Params = Table_ActivityIntegration_t.Params[12],
+    TitleName = "##3480628",
+    TabDesc = "##47047743",
+    BgTextture = "chibang_bg_bottom_01",
+    HelpID = 32612,
+    TFDuration = Table_ActivityIntegration_t.TFDuration[10],
+    Duration = Table_ActivityIntegration_t.Duration[10]
   }
 }
 local cell_mt = {
@@ -2891,8 +3014,8 @@ local cell_mt = {
     Params = _EmptyTable,
     ServerID = _EmptyTable,
     TFDuration = _EmptyTable,
-    TabDesc = "##1289529",
-    TitleName = "##42634300",
+    TabDesc = "##2806507",
+    TitleName = "##42634292",
     Type = 3,
     id = 72009
   }

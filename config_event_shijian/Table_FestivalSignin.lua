@@ -77,6 +77,43 @@ Table_FestivalSignin_t = {
     {
       {
         {100, 150000},
+        {8211, 50},
+        {7300, 10}
+      },
+      {
+        {100, 150000},
+        {8211, 50},
+        {3773, 1}
+      },
+      {
+        {100, 150000},
+        {8211, 50},
+        {3005490, 1}
+      },
+      {
+        {100, 150000},
+        {8211, 40},
+        {3005491, 1}
+      },
+      {
+        {100, 150000},
+        {8211, 50},
+        {3013977, 5}
+      },
+      {
+        {3013978, 3},
+        {8211, 40},
+        {3013986, 2}
+      },
+      {
+        {3042445, 1},
+        {3013985, 2},
+        {3013974, 1}
+      }
+    },
+    {
+      {
+        {100, 150000},
         {3041438, 1},
         {7300, 10}
       },
@@ -150,40 +187,6 @@ Table_FestivalSignin_t = {
     },
     {
       {
-        {110, 500},
-        {10000483, 1}
-      },
-      {
-        {110, 500},
-        {52902, 2},
-        {3720, 2}
-      },
-      {
-        {110, 500},
-        {10000484, 1}
-      },
-      {
-        {110, 500},
-        {10000485, 1},
-        {3720, 2}
-      },
-      {
-        {110, 500},
-        {52836, 188}
-      },
-      {
-        {110, 500},
-        {3007042, 1},
-        {3720, 3}
-      },
-      {
-        {110, 500},
-        {3007041, 1},
-        {3006025, 1}
-      }
-    },
-    {
-      {
         {100, 150000},
         {3011496, 5},
         {7300, 10}
@@ -217,6 +220,77 @@ Table_FestivalSignin_t = {
         {6996, 1},
         {52901, 10},
         {10000478, 1}
+      }
+    },
+    {
+      {
+        {100, 150000},
+        {3011496, 5},
+        {7300, 10}
+      },
+      {
+        {100, 150000},
+        {3011496, 5},
+        {4625, 1}
+      },
+      {
+        {100, 150000},
+        {3011496, 5},
+        {3007202, 1}
+      },
+      {
+        {100, 150000},
+        {3011496, 5},
+        {3007252, 1}
+      },
+      {
+        {100, 150000},
+        {3011496, 5},
+        {3720, 5}
+      },
+      {
+        {100, 150000},
+        {3011496, 5},
+        {12572, 20}
+      },
+      {
+        {6996, 1},
+        {52901, 10},
+        {10000478, 1}
+      }
+    },
+    {
+      {
+        {110, 500},
+        {10000483, 1}
+      },
+      {
+        {110, 500},
+        {52902, 2},
+        {3720, 2}
+      },
+      {
+        {110, 500},
+        {10000484, 1}
+      },
+      {
+        {110, 500},
+        {10000485, 1},
+        {3720, 2}
+      },
+      {
+        {110, 500},
+        {52836, 188}
+      },
+      {
+        {110, 500},
+        {3007042, 1},
+        {3720, 3}
+      },
+      {
+        {110, 500},
+        {3007041, 1},
+        {3006025, 1}
       }
     },
     {
@@ -337,7 +411,7 @@ Table_FestivalSignin = {
     id = 104310101,
     Month = 1,
     ActivityName = "##44716152",
-    SigninReward = Table_FestivalSignin_t.SigninReward[9]
+    SigninReward = Table_FestivalSignin_t.SigninReward[11]
   },
   [104310102] = {
     id = 104310102,
@@ -348,6 +422,7 @@ Table_FestivalSignin = {
   [104310103] = {
     id = 104310103,
     Month = 3,
+    ActivityName = "##44716154",
     SigninReward = Table_FestivalSignin_t.SigninReward[1]
   },
   [104310104] = {
@@ -375,7 +450,6 @@ Table_FestivalSignin = {
     SigninReward = Table_FestivalSignin_t.SigninReward[1]
   },
   [104310108] = {
-    id = 104310108,
     Month = 8,
     ActivityName = "##44716159",
     SigninReward = Table_FestivalSignin_t.SigninReward[1]
@@ -409,7 +483,7 @@ Table_FestivalSignin = {
     ActID = 1043102,
     Month = 1,
     ActivityName = "##44719598",
-    SigninReward = Table_FestivalSignin_t.SigninReward[4]
+    SigninReward = Table_FestivalSignin_t.SigninReward[5]
   },
   [104310202] = {
     id = 104310202,
@@ -506,6 +580,7 @@ Table_FestivalSignin = {
     id = 104310303,
     ActID = 1043103,
     Month = 3,
+    ActivityName = "##44716154",
     SigninReward = Table_FestivalSignin_t.SigninReward[2]
   },
   [104310304] = {
@@ -575,7 +650,7 @@ Table_FestivalSignin = {
     id = 104310401,
     ActID = 1043104,
     ActivityName = "##1221036",
-    SigninReward = Table_FestivalSignin_t.SigninReward[7],
+    SigninReward = Table_FestivalSignin_t.SigninReward[9],
     ActivityIcon = "tab_icon_101"
   },
   [104310501] = {
@@ -583,37 +658,63 @@ Table_FestivalSignin = {
     ActID = 1043105,
     Month = 1,
     ActivityName = "##44719598",
-    SigninReward = Table_FestivalSignin_t.SigninReward[8]
+    SigninReward = Table_FestivalSignin_t.SigninReward[10]
   },
   [104310601] = {
     id = 104310601,
     ActID = 1043106,
     ActivityName = "##1221036",
-    SigninReward = Table_FestivalSignin_t.SigninReward[5],
+    SigninReward = Table_FestivalSignin_t.SigninReward[8],
     ActivityIcon = "tab_icon_101"
   },
   [104310701] = {
     id = 104310701,
     ActID = 1043107,
     Month = 3,
-    ActivityName = "##44721327",
-    SigninReward = Table_FestivalSignin_t.SigninReward[3]
+    SigninReward = Table_FestivalSignin_t.SigninReward[4]
   },
   [104310801] = {
+    id = 104310801,
     ActID = 1043108,
     Month = 2,
-    ActivityName = "##44721327",
     SigninReward = Table_FestivalSignin_t.SigninReward[6]
+  },
+  [104310802] = {
+    id = 104310802,
+    ActID = 1043108,
+    Month = 11,
+    SigninReward = Table_FestivalSignin_t.SigninReward[6]
+  },
+  [104310901] = {
+    id = 104310901,
+    ActID = 1043109,
+    Month = 9,
+    SigninReward = Table_FestivalSignin_t.SigninReward[7]
+  },
+  [104311001] = {
+    id = 104311001,
+    ActID = 1043110,
+    SigninReward = Table_FestivalSignin_t.SigninReward[3]
+  },
+  [104311101] = {
+    id = 104311101,
+    ActID = 1043111,
+    SigninReward = Table_FestivalSignin_t.SigninReward[3]
+  },
+  [104311201] = {
+    id = 104311201,
+    ActID = 1043112,
+    SigninReward = Table_FestivalSignin_t.SigninReward[3]
   }
 }
 local cell_mt = {
   __index = {
     ActID = 1043101,
     ActivityIcon = "tab_icon_124",
-    ActivityName = "##44716154",
+    ActivityName = "##44721327",
     HelpID = 35209,
     SigninReward = _EmptyTable,
-    id = 104310801
+    id = 104310108
   }
 }
 for _, d in pairs(Table_FestivalSignin) do

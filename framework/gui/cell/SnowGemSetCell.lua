@@ -24,6 +24,7 @@ function SnowGemSetCell:FindObjs()
     local grid = self:FindComponent("Grid", UIGrid, scrollView)
     if grid then
       self.gemListCtrl = UIGridListCtrl.new(grid, SnowGemCell, "SnowGemCell")
+      self.gemListCtrl:AddEventListener(MouseEvent.MouseClick, self.OnGemCellClick, self)
     end
   end
   self.setBG = self:FindGO("SetBG")
@@ -96,6 +97,17 @@ function SnowGemSetCell:SetData(data)
       self.allGetLabel.text = ""
     end
   end
+end
+
+function SnowGemSetCell:OnGemCellClick(gemCell)
+  if gemCell and gemCell.data and self.gemClickHandler then
+    self.gemClickHandler(self.gemClickHandlerOwner, gemCell)
+  end
+end
+
+function SnowGemSetCell:SetGemClickHandler(handler, handlerOwner)
+  self.gemClickHandler = handler
+  self.gemClickHandlerOwner = handlerOwner
 end
 
 function SnowGemSetCell:CheckAllGemsUnlocked(gemIds)

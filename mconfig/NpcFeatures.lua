@@ -82,7 +82,7 @@ NpcFeatures.Endure = {Cd = 6, skill = 14}
 NpcFeatures.Servant = {keep_distance = 4}
 NpcFeatures.GoBack = {
   buff = {},
-  noattacked = 160200,
+  noattacked = {160200, 151037},
   noattack = 151190
 }
 NpcFeatures.AIParams = {run_away_time = 2, crowd_check_range = 0.1}

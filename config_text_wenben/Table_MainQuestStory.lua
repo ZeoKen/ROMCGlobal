@@ -370,6 +370,42 @@ Table_MainQuestStory = {
   },
   [46] = {
     id = 46,
+    version = "15.0",
+    index = 1,
+    QuestName = "##3489558",
+    Mstory = {664135},
+    PuzzleReward = _EmptyTable,
+    LvRange = {110}
+  },
+  [47] = {
+    id = 47,
+    version = "15.0",
+    index = 2,
+    QuestName = "##3489560",
+    Mstory = {664152},
+    PuzzleReward = _EmptyTable,
+    LvRange = {110}
+  },
+  [48] = {
+    id = 48,
+    version = "15.0",
+    index = 3,
+    QuestName = "##3489562",
+    Mstory = {664153},
+    PuzzleReward = _EmptyTable,
+    LvRange = {110}
+  },
+  [49] = {
+    id = 49,
+    version = "15.0",
+    index = 4,
+    QuestName = "##3489564",
+    Mstory = {664154},
+    PuzzleReward = _EmptyTable,
+    LvRange = {110}
+  },
+  [50] = {
+    id = 50,
     version = "17.0",
     index = 1,
     QuestName = "##42637471",
@@ -377,8 +413,8 @@ Table_MainQuestStory = {
     PuzzleReward = _EmptyTable,
     LvRange = {110}
   },
-  [47] = {
-    id = 47,
+  [51] = {
+    id = 51,
     version = "17.0",
     index = 2,
     QuestName = "##42637472",
@@ -386,8 +422,8 @@ Table_MainQuestStory = {
     PuzzleReward = _EmptyTable,
     LvRange = {110}
   },
-  [48] = {
-    id = 48,
+  [52] = {
+    id = 52,
     version = "17.0",
     index = 3,
     QuestName = "##44697921",
@@ -395,8 +431,8 @@ Table_MainQuestStory = {
     PuzzleReward = _EmptyTable,
     LvRange = {110}
   },
-  [49] = {
-    id = 49,
+  [53] = {
+    id = 53,
     version = "17.0",
     index = 4,
     QuestName = "##42637474",
@@ -404,8 +440,8 @@ Table_MainQuestStory = {
     PuzzleReward = _EmptyTable,
     LvRange = {110}
   },
-  [50] = {
-    id = 50,
+  [54] = {
+    id = 54,
     version = "17.0",
     index = 5,
     QuestName = "##44722262",
@@ -413,8 +449,8 @@ Table_MainQuestStory = {
     PuzzleReward = _EmptyTable,
     LvRange = {110}
   },
-  [51] = {
-    id = 51,
+  [55] = {
+    id = 55,
     version = "18.0",
     index = 1,
     QuestName = "##44728105",
@@ -422,8 +458,8 @@ Table_MainQuestStory = {
     PuzzleReward = _EmptyTable,
     LvRange = {110}
   },
-  [52] = {
-    id = 52,
+  [56] = {
+    id = 56,
     version = "18.0",
     index = 2,
     QuestName = "##45569296",
@@ -431,8 +467,8 @@ Table_MainQuestStory = {
     PuzzleReward = _EmptyTable,
     LvRange = {110}
   },
-  [53] = {
-    id = 53,
+  [57] = {
+    id = 57,
     version = "18.0",
     index = 3,
     QuestName = "##1106993",

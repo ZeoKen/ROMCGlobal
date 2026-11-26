@@ -284,10 +284,13 @@ function PetAdventureView:UpdateQuestByArea(data)
 end
 
 function PetAdventureView:InitQuestData()
+  self.rewardRequesting = false
   self.petQuestData = PetAdventureProxy.Instance:GetQuestData()
   self.petQuestlist:UpdateInfo(self.petQuestData)
   self.petQuestlist:ResetPosition()
-  self:_ShowFirstQuestData()
+  if not self:RefreshCurrentQuestInfo() then
+    self:_ShowFirstQuestData()
+  end
   self:SetProcessLab()
   if not self.itemTabs then
     self.itemTabs = PopupGridList.new(self:FindGO("ItemTabs"), function(self, data)
@@ -314,10 +317,51 @@ function PetAdventureView:InitAreaFilter()
 end
 
 function PetAdventureView:_ShowFirstQuestData()
-  local questData = self.petQuestlist:GetCellCtls()
-  local firstData = questData[1]
+  local datas = self.petQuestlist:GetDatas()
+  local firstData = datas and datas[1]
   if firstData then
-    self:ClickPetQuestCell(firstData)
+    self:UpdatePetQuestInfo(firstData)
+    self:SelectQuestCell(firstData.id)
+  else
+    self:ClearRewardRequestState()
+  end
+end
+
+function PetAdventureView:SelectQuestCell(questId)
+  self.chooseQuestID = questId
+  local cells = self.petQuestlist:GetCellCtls()
+  for _, cell in pairs(cells) do
+    cell:SetChoose(questId)
+    cell:SetChooseSpecial()
+  end
+end
+
+function PetAdventureView:RefreshCurrentQuestInfo()
+  local questId = self.chooseQuestID
+  if not questId or questId == 0 then
+    return false
+  end
+  local questData = self.petQuestData or PetAdventureProxy.Instance:GetQuestData()
+  if questData then
+    for i = 1, #questData do
+      if questData[i].id == questId then
+        self:UpdatePetQuestInfo(questData[i])
+        self:SelectQuestCell(questId)
+        return true
+      end
+    end
+  end
+  self:ClearRewardRequestState()
+  return false
+end
+
+function PetAdventureView:ClearRewardRequestState()
+  self.rewardRequesting = false
+  self.chooseQuestID = nil
+  self.ChooseQuestData = nil
+  self:Hide(self.getRewardBtn)
+  if self.againGoBtn then
+    self.againGoBtn:SetActive(false)
   end
 end
 
@@ -471,6 +515,7 @@ end
 
 function PetAdventureView:HandlePetAdventureResult(note)
   local serData = note.body.item
+  self.rewardRequesting = false
   self.petQuestData = PetAdventureProxy.Instance:GetQuestData()
   self.petQuestlist:UpdateInfo(self.petQuestData)
   self.petQuestlist:ResetPosition()
@@ -479,9 +524,14 @@ function PetAdventureView:HandlePetAdventureResult(note)
     self:_ShowFirstQuestData()
     return
   end
+  if self:RefreshCurrentQuestInfo() then
+    return
+  end
   for k, v in pairs(self.petQuestData) do
-    if v.id == serData.id and serData.status == PetAdventureProxy.QuestPhase.UNDERWAY then
+    if v.id == serData.id then
       self:UpdatePetQuestInfo(v)
+      self:SelectQuestCell(v.id)
+      break
     end
   end
 end
@@ -574,9 +624,19 @@ function PetAdventureView:StartPetAdventure()
 end
 
 function PetAdventureView:ClickGetRewardBtn()
-  if self.chooseQuestID and 0 ~= self.chooseQuestID then
-    ServiceScenePetProxy.Instance:CallGetAdventureRewardPetCmd(self.chooseQuestID)
+  if self.rewardRequesting then
+    return
   end
+  local chooseData = self.ChooseQuestData
+  if not (chooseData and self.chooseQuestID) or 0 == self.chooseQuestID then
+    return
+  end
+  if chooseData.status ~= PetAdventureProxy.QuestPhase.FINISHED then
+    return
+  end
+  self.rewardRequesting = true
+  self:Hide(self.getRewardBtn)
+  ServiceScenePetProxy.Instance:CallGetAdventureRewardPetCmd(self.chooseQuestID)
 end
 
 function PetAdventureView:_showVictoryEffect()
@@ -851,15 +911,11 @@ end
 function PetAdventureView:ClickPetQuestCell(cellctl)
   local data = cellctl and cellctl.data
   if data then
+    self.rewardRequesting = false
     self:UpdatePetQuestInfo(data)
     local clickQuestId = data.id
     if self.chooseQuestID ~= clickQuestId then
-      self.chooseQuestID = clickQuestId
-      local questData = self.petQuestlist:GetCellCtls()
-      for _, cell in pairs(questData) do
-        cell:SetChoose(clickQuestId)
-        cell:SetChooseSpecial()
-      end
+      self:SelectQuestCell(clickQuestId)
     end
   end
 end
@@ -897,9 +953,13 @@ function PetAdventureView:_refreshPetModel(petData)
 end
 
 function PetAdventureView:UpdatePetQuestInfo(data)
+  if not data or not data.staticData then
+    return
+  end
+  self.rewardRequesting = false
   PetAdventureProxy.Instance:SetChooseQuestData(data)
   self.ChooseQuestData = data
-  local bSpecialQuest = data.staticData and 1 == data.staticData.QuestType
+  local bSpecialQuest = 1 == data.staticData.QuestType
   local staticdata = data.staticData
   local staticPetNum = staticdata.PetNum
   local petChooseBtn1 = self:FindGO("ChooseBtn1")
@@ -1031,6 +1091,9 @@ function PetAdventureView:_setAdventureName(id)
 end
 
 function PetAdventureView:_updateDropItem(rewardData)
+  if not (rewardData and self.ChooseQuestData) or not self.ChooseQuestData.staticData then
+    return
+  end
   local efficiency = 0
   local phase = self.ChooseQuestData.status
   local bSpecialQuest = 1 == self.ChooseQuestData.staticData.QuestType
@@ -1048,8 +1111,8 @@ function PetAdventureView:_updateDropItem(rewardData)
   end
   if not bSpecialQuest then
     table.sort(rewardData, function(l, r)
-      local lid = l.staticData.id
-      local rid = r.staticData.id
+      local lid = l.staticData and l.staticData.id or 0
+      local rid = r.staticData and r.staticData.id or 0
       if l.Rare or r.Rare then
         return l.Rare and not r.Rare
       end
@@ -1302,6 +1365,7 @@ end
 
 function PetAdventureView:OnEnter()
   self.super.OnEnter(self)
+  self.rewardRequesting = false
   BattleTimeDataProxy.QueryBattleTimelenUserCmd()
   ServiceScenePetProxy.Instance:CallQueryPetAdventureListPetCmd()
   ServiceScenePetProxy.Instance:CallQueryBattlePetCmd()
@@ -1319,6 +1383,7 @@ function PetAdventureView:_ClearTickEff()
 end
 
 function PetAdventureView:OnExit()
+  self.rewardRequesting = false
   RedTipProxy.Instance:SeenNew(SceneTip_pb.EREDSYS_PET_ADVENTURE)
   self:_ClearTickEff()
   TipManager.Instance:HidePetEffTip()

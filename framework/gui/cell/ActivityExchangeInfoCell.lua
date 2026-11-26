@@ -37,12 +37,36 @@ function ActivityExchangeInfoCell:FindObjs()
   self.check = self:FindGO("Check")
 end
 
+function ActivityExchangeInfoCell:GetExchangeMaterialCosts(exchangeItemData)
+  local materials = {}
+  if not exchangeItemData then
+    return materials
+  end
+  local equipCost = exchangeItemData.equip_cost
+  if equipCost then
+    local itemId = equipCost
+    local num = 1
+    if type(equipCost) == "table" then
+      itemId = equipCost[1]
+      num = equipCost[2] or 1
+    end
+    if itemId then
+      materials[#materials + 1] = {itemId, num}
+    end
+  end
+  local cost = exchangeItemData.cost or {}
+  for i = 1, #cost do
+    materials[#materials + 1] = cost[i]
+  end
+  return materials
+end
+
 function ActivityExchangeInfoCell:SetData(data)
   self.data = data
   if data then
     local exchangeItemData = data.exchangeItem
     local datas = ReusableTable.CreateArray()
-    local materials = exchangeItemData.cost
+    local materials = self:GetExchangeMaterialCosts(exchangeItemData)
     local matNum = #materials
     for i = 1, matNum do
       local mat = materials[i]
@@ -97,7 +121,7 @@ end
 
 function ActivityExchangeInfoCell:OnExchangeBtnClick()
   if self.data then
-    local materials = self.data.exchangeItem.cost
+    local materials = self:GetExchangeMaterialCosts(self.data.exchangeItem)
     local matNum = #materials
     local params = {matNum}
     for i = 1, matNum do

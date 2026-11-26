@@ -21,6 +21,14 @@ function GuildDateBattleOverviewResultCell:Init()
   self.offServerIDLab = self:FindComponent("OffServerId", UILabel)
   self.offMask = self:FindGO("OffMask")
   self.modeLab = self:FindComponent("Mode", UILabel)
+  self.observeBtnGO = self:FindGO("ObserveBtn")
+  if self.observeBtnGO then
+    self.observeBtn = self.observeBtnGO:GetComponent(UISprite)
+    self.observeLab = self:FindComponent("Label", UILabel, self.observeBtnGO)
+    self:SetEvent(self.observeBtnGO, function()
+      self:OnClickObserve()
+    end)
+  end
 end
 
 function GuildDateBattleOverviewResultCell:SetData(data)
@@ -54,6 +62,30 @@ function GuildDateBattleOverviewResultCell:SetData(data)
     self.offMask:SetActive(false)
     self.defWinGo:SetActive(false)
     self.defMask:SetActive(false)
+  end
+  if self.observeBtnGO then
+    local isGoing = data:IsGoing()
+    self.observeBtnGO:SetActive(isGoing)
+    if isGoing and self.observeBtn then
+      self.observeBtn.spriteName = data:IsOnMatch() and "com_btn_1s" or "com_btn_13s"
+    end
+  end
+end
+
+function GuildDateBattleOverviewResultCell:OnClickObserve()
+  if not self.data then
+    return
+  end
+  if Game.MapManager:IsGVG_Date() then
+    MsgManager.ShowMsgByID(2245)
+    return
+  end
+  local targetGuildId = self.data.defGuildid or self.data.atkGuildid
+  if targetGuildId and targetGuildId ~= 0 then
+    GuildDateBattleProxy.Instance:ClearObserveBattleInfo()
+    ServiceFuBenCmdProxy.Instance:CallBattleObserveFubenCmd(FuBenCmd_pb.EBATTLE_OBSERVE_TYPE_DATE_BATTLE, targetGuildId, nil, {
+      info = {}
+    })
   end
 end
 

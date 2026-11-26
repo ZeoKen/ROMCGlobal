@@ -962,7 +962,57 @@ function FunctionLoginBase:resetRetryTime()
   self.delayTime = 1
 end
 
+local IsPrivateLoginHost = function(authority)
+  local host = string.match(authority, "^[^:]*")
+  if host == "localhost" then
+    return true
+  end
+  local a, b = string.match(host, "^(%d+)%.(%d+)%.%d+%.%d+$")
+  a, b = tonumber(a), tonumber(b)
+  if not a then
+    return false
+  end
+  return a == 10 or a == 127 or a == 192 and b == 168 or a == 172 and 16 <= b and b <= 31
+end
+local IsFilledLoginHost = function(host)
+  local sdk = FunctionSDK.Instance
+  if not (not BranchMgr.IsChina() and sdk) or sdk.CurrentType ~= FunctionSDK.E_SDKType.XD then
+    return false
+  end
+  local hosts = NetConfig.NewAccessTokenAuthHost
+  if type(host) ~= "string" or type(hosts) ~= "table" then
+    return false
+  end
+  for i = 1, #hosts do
+    if hosts[i] == host then
+      return true
+    end
+  end
+  return false
+end
+
+function FunctionLoginBase.NormalizeFilledLoginBase(raw)
+  local text = string.match(raw, "^%s*(.-)%s*$")
+  local scheme, authority = string.match(text, "^(%a[%w+.-]*)://(.*)$")
+  if not scheme then
+    authority = text
+  end
+  authority = string.lower(string.match(authority, "^[^/?#]*"))
+  if scheme then
+    scheme = string.lower(scheme)
+  elseif IsPrivateLoginHost(authority) then
+    scheme = "http"
+  else
+    scheme = "https"
+  end
+  return scheme .. "://" .. authority
+end
+
 function FunctionLoginBase:HandleUrl(url, host)
+  if IsFilledLoginHost(host) and string.sub(url, 1, #host) == host then
+    local rest = string.gsub(string.sub(url, #host + 1), "^:%d+", "", 1)
+    return FunctionLoginBase.NormalizeFilledLoginBase(host) .. rest
+  end
   if not string.find(url, "http") then
     if string.find(host, "172.2") then
       url = string.format("http://%s", url)

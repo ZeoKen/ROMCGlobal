@@ -108,6 +108,7 @@ function ActivityIntegrationTaskSubView:AddEvts()
   self:AddListenEvt(ServiceEvent.SessionShopShopDataUpdateCmd, self.RecvQueryShopConfig)
   self:AddListenEvt(ServiceEvent.SessionShopUpdateShopConfigCmd, self.RecvQueryShopConfig)
   self:AddListenEvt(ServiceEvent.SessionShopQueryShopConfigCmd, self.RefreshPage)
+  self:AddListenEvt(ServiceEvent.NUserUpdateShopGotItem, self.RecvQueryShopConfig)
   self:AddListenEvt(ServiceEvent.UserEventQueryChargeCnt, self.RefreshPage)
 end
 

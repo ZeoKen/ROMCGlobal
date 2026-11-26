@@ -166,7 +166,9 @@ function SnowCrownContainerView:UpdateBGEffectVisibility()
   if not self.bgEffectAsset then
     return
   end
-  local shouldShow = self.activePageName == "CrownCustomPage" and self.currentModelPosition == SnowCrownContainerView.ModelPosition.Default
+  local pageMap = SnowCrownContainerView.TogglePageNameMap
+  local isBGEffectPage = self.activePageName == pageMap.CrownCustomTab or self.activePageName == pageMap.AreaAttrTab
+  local shouldShow = isBGEffectPage and self.currentModelPosition == SnowCrownContainerView.ModelPosition.Default
   self.bgEffectAsset:SetActive(shouldShow)
 end
 

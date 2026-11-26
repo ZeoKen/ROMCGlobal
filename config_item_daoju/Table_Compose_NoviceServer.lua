@@ -9107,6 +9107,36 @@ Table_Compose = {
     Type = 1,
     Category = 10
   },
+  [16362] = {
+    id = 16362,
+    ROB = 102000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 16362, num = 1},
+      {id = 52220, num = 1320},
+      {id = 52332, num = 4},
+      {id = 52310, num = 4},
+      {id = 52424, num = 96}
+    },
+    Product = {id = 47362},
+    Type = 1,
+    Category = 10
+  },
+  [16365] = {
+    id = 16365,
+    ROB = 102000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 16365, num = 1},
+      {id = 52220, num = 747},
+      {id = 52338, num = 4},
+      {id = 52317, num = 4},
+      {id = 52424, num = 48}
+    },
+    Product = {id = 47365},
+    Type = 1,
+    Category = 10
+  },
   [16383] = {
     id = 16383,
     ROB = 203000,
@@ -9783,6 +9813,36 @@ Table_Compose = {
       {id = 52536, num = 35}
     },
     Product = {id = 48181},
+    Type = 1,
+    Category = 10
+  },
+  [17195] = {
+    id = 17195,
+    ROB = 102000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 17195, num = 1},
+      {id = 52220, num = 1200},
+      {id = 52337, num = 6},
+      {id = 12110, num = 5},
+      {id = 52424, num = 96}
+    },
+    Product = {id = 48195},
+    Type = 1,
+    Category = 10
+  },
+  [17196] = {
+    id = 17196,
+    ROB = 102000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 17196, num = 1},
+      {id = 52220, num = 1200},
+      {id = 52329, num = 6},
+      {id = 12109, num = 25},
+      {id = 52424, num = 96}
+    },
+    Product = {id = 48196},
     Type = 1,
     Category = 10
   },
@@ -11448,6 +11508,20 @@ Table_Compose = {
     Type = 1,
     Category = 10
   },
+  [17820] = {
+    id = 17820,
+    ROB = 51000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 17820, num = 1},
+      {id = 52220, num = 912},
+      {id = 52311, num = 2},
+      {id = 52424, num = 48}
+    },
+    Product = {id = 48820},
+    Type = 1,
+    Category = 10
+  },
   [17828] = {
     id = 17828,
     ROB = 51000,
@@ -12532,6 +12606,51 @@ Table_Compose = {
     Type = 1,
     Category = 10
   },
+  [18711] = {
+    id = 18711,
+    ROB = 102000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 18711, num = 1},
+      {id = 52220, num = 1500},
+      {id = 52305, num = 6},
+      {id = 52341, num = 4},
+      {id = 52424, num = 96}
+    },
+    Product = {id = 49711},
+    Type = 1,
+    Category = 10
+  },
+  [18712] = {
+    id = 18712,
+    ROB = 102000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 18712, num = 1},
+      {id = 52220, num = 1500},
+      {id = 52336, num = 6},
+      {id = 52315, num = 4},
+      {id = 52424, num = 96}
+    },
+    Product = {id = 49712},
+    Type = 1,
+    Category = 10
+  },
+  [18719] = {
+    id = 18719,
+    ROB = 102000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 18719, num = 1},
+      {id = 52220, num = 814},
+      {id = 52338, num = 4},
+      {id = 52314, num = 4},
+      {id = 52424, num = 48}
+    },
+    Product = {id = 149719},
+    Type = 1,
+    Category = 10
+  },
   [18720] = {
     id = 18720,
     ROB = 51000,
@@ -12680,6 +12799,21 @@ Table_Compose = {
     Type = 1,
     Category = 10
   },
+  [18771] = {
+    id = 18771,
+    ROB = 203000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 18771, num = 1},
+      {id = 52171, num = 2744},
+      {id = 52323, num = 18},
+      {id = 52359, num = 18},
+      {id = 52539, num = 35}
+    },
+    Product = {id = 149771},
+    Type = 1,
+    Category = 10
+  },
   [18772] = {
     id = 18772,
     ROB = 203000,
@@ -12706,6 +12840,21 @@ Table_Compose = {
       {id = 52426, num = 46}
     },
     Product = {id = 149773},
+    Type = 1,
+    Category = 10
+  },
+  [18779] = {
+    id = 18779,
+    ROB = 102000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 18779, num = 1},
+      {id = 52121, num = 792},
+      {id = 52316, num = 4},
+      {id = 52359, num = 4},
+      {id = 52426, num = 46}
+    },
+    Product = {id = 149779},
     Type = 1,
     Category = 10
   },
@@ -16111,6 +16260,64 @@ Table_Compose = {
       {id = 52314, num = 1}
     },
     Product = {id = 32106},
+    Type = 1,
+    Category = 10
+  },
+  [132114] = {
+    id = 132114,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 132114, num = 1},
+      {id = 5662, num = 10},
+      {id = 52220, num = 120},
+      {id = 52305, num = 1}
+    },
+    Product = {id = 32114},
+    Type = 1,
+    Category = 10
+  },
+  [132115] = {
+    id = 132115,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 132115, num = 1},
+      {id = 5662, num = 75},
+      {id = 5663, num = 10},
+      {id = 52220, num = 1530},
+      {id = 52204, num = 1695},
+      {id = 52307, num = 9}
+    },
+    Product = {id = 32115},
+    Type = 1,
+    Category = 10
+  },
+  [132116] = {
+    id = 132116,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 132116, num = 1},
+      {id = 5662, num = 15},
+      {id = 5663, num = 5},
+      {id = 52220, num = 500},
+      {id = 52203, num = 500},
+      {id = 52325, num = 2}
+    },
+    Product = {id = 32116},
+    Type = 1,
+    Category = 10
+  },
+  [132117] = {
+    id = 132117,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 132117, num = 1},
+      {id = 5662, num = 15},
+      {id = 5663, num = 5},
+      {id = 52220, num = 507},
+      {id = 52203, num = 517},
+      {id = 52325, num = 2}
+    },
+    Product = {id = 32117},
     Type = 1,
     Category = 10
   },
@@ -27257,6 +27464,86 @@ Table_Compose = {
     Product = {id = 143640},
     Category = 6
   },
+  [436422] = {
+    id = 436422,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 143642},
+    Category = 6
+  },
+  [436432] = {
+    id = 436432,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 143643},
+    Category = 6
+  },
+  [436442] = {
+    id = 436442,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 143644},
+    Category = 6
+  },
+  [436452] = {
+    id = 436452,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 143645},
+    Category = 6
+  },
+  [436462] = {
+    id = 436462,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 143646},
+    Category = 6
+  },
+  [436472] = {
+    id = 436472,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 143647},
+    Category = 6
+  },
+  [436482] = {
+    id = 436482,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 143648},
+    Category = 6
+  },
+  [436492] = {
+    id = 436492,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 143649},
+    Category = 6
+  },
   [440012] = {
     id = 440012,
     ROB = 50000,
@@ -28673,6 +28960,86 @@ Table_Compose = {
       {id = 44064, num = 10}
     },
     Product = {id = 144167},
+    Category = 6
+  },
+  [441682] = {
+    id = 441682,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 144168},
+    Category = 6
+  },
+  [441692] = {
+    id = 441692,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 144169},
+    Category = 6
+  },
+  [441702] = {
+    id = 441702,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 144170},
+    Category = 6
+  },
+  [441712] = {
+    id = 441712,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 144171},
+    Category = 6
+  },
+  [441722] = {
+    id = 441722,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 144172},
+    Category = 6
+  },
+  [441732] = {
+    id = 441732,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 144173},
+    Category = 6
+  },
+  [441742] = {
+    id = 441742,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 144174},
+    Category = 6
+  },
+  [441752] = {
+    id = 441752,
+    ROB = 150000,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 8425, num = 5}
+    },
+    Product = {id = 144175},
     Category = 6
   },
   [446492] = {
@@ -36013,6 +36380,21 @@ Table_Compose = {
     },
     Type = 1,
     MultiCompose = 1
+  },
+  [10000007] = {
+    id = 10000007,
+    ROB = 0,
+    Diamond = 0,
+    BeCostItem = {
+      {id = 10001024, num = 5}
+    },
+    RandomProduct = {
+      {id = 10001023, weight = 100}
+    },
+    FemaleRandomProduct = {
+      {id = 10001023, weight = 100}
+    },
+    Type = 1
   }
 }
 local cell_mt = {

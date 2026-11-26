@@ -512,7 +512,7 @@ function FunctionChangeScene:UpdateGCStrategy()
   local mapManager = Game.MapManager
   if Game.ActiveTimingGC and mapManager then
     local isTimingGCEnabled = true
-    if mapManager:IsPveMode_Arena() or mapManager:IsPVPMode_TeamPws() or mapManager:IsPvPMode_TeamTwelve() or mapManager:IsPVEMode_ComodoRaid() or mapManager:IsPVEMode_MultiBossRaid() or mapManager:IsPveMode_Thanatos() or mapManager:IsPVEMode_DestroyAirShip() or mapManager:IsPVEMode_BageLab() then
+    if mapManager:IsPveMode_Arena() or mapManager:IsPVPMode_TeamPws() or mapManager:IsPvPMode_TeamTwelve() or mapManager:IsPVEMode_ComodoRaid() or mapManager:IsPVEMode_MultiBossRaid() or mapManager:IsPveMode_Thanatos() or mapManager:IsPVEMode_DestroyAirShip() then
       isTimingGCEnabled = false
     end
     Game.ActiveTimingGC(isTimingGCEnabled)

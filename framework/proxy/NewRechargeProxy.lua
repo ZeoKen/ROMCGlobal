@@ -290,6 +290,11 @@ function NewRechargeProxy:Deposit_SetFPRInfo(rawData)
     cl:RemoveFPRFlag(rawData.del)
   else
     cl:SetFPRFlag(rawData.datas)
+    if rawData.datas then
+      for i = 1, #rawData.datas do
+        cl:RemoveFPRFlag2(rawData.datas[i])
+      end
+    end
   end
 end
 

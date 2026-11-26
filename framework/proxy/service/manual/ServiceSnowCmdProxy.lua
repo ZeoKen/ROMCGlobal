@@ -51,6 +51,7 @@ function ServiceSnowCmdProxy:RecvSnowManualUpdateSnowCmd(data)
     SnowCrownProxy.Instance:RecvSnowManualUpdateSnowCmd(data)
   end
   self:Notify(ServiceEvent.SnowCmdSnowManualUpdateSnowCmd, data)
+  EventManager.Me():DispatchEvent(ServiceEvent.SnowCmdSnowManualUpdateSnowCmd, data)
 end
 
 function ServiceSnowCmdProxy:RecvSnowManualEquipUpdateSnowCmd(data)

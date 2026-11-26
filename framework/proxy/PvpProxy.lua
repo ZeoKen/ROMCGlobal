@@ -2088,6 +2088,7 @@ function PvpProxy:UpdateFreeFire(b)
   end
   self.freefire = b
   EventManager.Me():PassEvent(PVPEvent.OnFreeFireStateChanged, b)
+  EventManager.Me():PassEvent(MyselfEvent.EnableUseSkillStateChange)
 end
 
 function PvpProxy:IsFreeFire()

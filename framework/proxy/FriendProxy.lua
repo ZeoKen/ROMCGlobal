@@ -86,6 +86,10 @@ function FriendProxy:GetPresentMode()
 end
 
 function FriendProxy:RemoveFriend(guid)
+  local data = self:GetFriendById(guid)
+  if data then
+    data.remark = ""
+  end
   self:_RemoveData(self.FriendData, guid)
 end
 
@@ -168,6 +172,15 @@ function FriendProxy:GetFriendById(guid)
       return data
     end
   end
+end
+
+function FriendProxy:SetFriendRemark(guid, remark)
+  local data = self:GetFriendById(guid)
+  if data == nil then
+    return false
+  end
+  ServiceSessionSocialityProxy.Instance:CallModifyFriendRemark(guid, remark)
+  return true
 end
 
 function FriendProxy:SortData(data, relation)

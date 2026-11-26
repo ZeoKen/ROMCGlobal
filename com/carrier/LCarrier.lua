@@ -6,6 +6,54 @@ LCarrier.Status = {
   Arrived = 2
 }
 LCarrier.MasterSeat = -1
+LCarrier.SOLO_CARRIER_ID = 34
+
+function LCarrier.GetHiddenRoot(carrierID)
+  local go = LCarrier._hiddenRoot
+  if go and not Slua.IsNull(go) then
+    return go.transform
+  end
+  local x, y, z = 0, -7000, 0
+  local bus = carrierID and BusManager.Instance and BusManager.Instance:GetBus(carrierID)
+  if bus and not Slua.IsNull(bus) then
+    local px, py, pz = LuaGameObject.GetPosition(bus.transform)
+    x, y, z = px, py - 7000, pz
+  end
+  go = GameObject("RO_HiddenCarrierRoot")
+  go.transform.position = LuaGeometry.GetTempVector3(x, y, z)
+  go:SetActive(false)
+  LCarrier._hiddenRoot = go
+  return go.transform
+end
+
+function LCarrier.HideOtherRiders(carrierID)
+  local proxy = SceneCarrierProxy.Instance
+  if not proxy or not proxy.carrierMap then
+    return
+  end
+  local myID = Game.Myself.data.id
+  for _, carrier in pairs(proxy.carrierMap) do
+    if carrier.carrierID == carrierID then
+      for memberID, _ in pairs(carrier.member) do
+        if memberID ~= myID then
+          local creature = SceneCreatureProxy.FindCreature(memberID)
+          if creature then
+            creature:SetParent(LCarrier.GetHiddenRoot(carrierID))
+            creature:SetVisible(false, LayerChangeReason.CarrierWaiting)
+          end
+        end
+      end
+    end
+  end
+end
+
+function LCarrier.SetSceneBusActive(carrierID, active)
+  local bus = BusManager.Instance and BusManager.Instance:GetBus(carrierID)
+  if bus and not Slua.IsNull(bus.gameObject) then
+    bus.gameObject:SetActive(active)
+  end
+end
+
 local tmpPos = LuaVector3.Zero()
 
 function LCarrier:ctor()
@@ -65,6 +113,10 @@ function LCarrier:Visible(value)
     end
   end
   self.visiblity = value
+  if self.carrierID == LCarrier.SOLO_CARRIER_ID then
+    LCarrier.HideOtherRiders(self.carrierID)
+    return
+  end
   local passenger
   for k, v in pairs(self.member) do
     passenger = SceneCreatureProxy.FindCreature(k)
@@ -93,10 +145,17 @@ function LCarrier:SetIAmMaster(value)
   end
 end
 
-function LCarrier:CreateBus()
+function LCarrier:CreateBus(force)
   TableUtility.TableClear(self.objRenderers)
   if self.carrier == nil and self.carrierID > 0 then
+    if self.carrierID == LCarrier.SOLO_CARRIER_ID and not force and self.masterID ~= self.myselfID then
+      LCarrier.HideOtherRiders(self.carrierID)
+      return
+    end
     self.carrier = BusManager.Instance:CloneBus(self.carrierID)
+    if self.carrierID == LCarrier.SOLO_CARRIER_ID then
+      LCarrier.SetSceneBusActive(self.carrierID, false)
+    end
     if self.carrier and self.carrier.gameObject then
       local renderers = self.carrier.gameObject:GetComponentsInChildren(Renderer, true)
       if renderers then
@@ -111,6 +170,7 @@ end
 
 function LCarrier:DestroyCarrier(pos)
   self.destroyed = true
+  local hadBus = self.carrier ~= nil
   TableUtility.TableClear(self.objRenderers)
   if self.carrier then
     local passenger
@@ -121,6 +181,14 @@ function LCarrier:DestroyCarrier(pos)
       GameObject.Destroy(self.carrier.gameObject)
     end
     self.carrier = nil
+  elseif self.carrierID == LCarrier.SOLO_CARRIER_ID then
+    local passenger
+    for k, v in pairs(self.member) do
+      self:GetOff(k, pos)
+    end
+  end
+  if self.carrierID == LCarrier.SOLO_CARRIER_ID and hadBus then
+    LCarrier.SetSceneBusActive(self.carrierID, true)
   end
   if not self.isMine then
     self:Destroy()
@@ -143,6 +211,9 @@ function LCarrier:Reset(masterID, carrierID)
 end
 
 function LCarrier:StartMove()
+  if not self.carrier then
+    return false
+  end
   if self.status ~= LCarrier.Status.Moving then
     self.status = LCarrier.Status.Moving
     self:Visible(true)
@@ -161,6 +232,9 @@ end
 
 function LCarrier:GetOn(memberID, index, needAnim)
   local oldIndex = self.member[memberID]
+  if memberID == self.myselfID and self.carrierID == LCarrier.SOLO_CARRIER_ID and self.carrier == nil then
+    self:CreateBus(true)
+  end
   if memberID == self.myselfID then
     self:SetIsMine(true)
   end
@@ -175,6 +249,9 @@ function LCarrier:GetOn(memberID, index, needAnim)
       Game.Myself:SetOnCarrier(true)
       FunctionBus.Me():Launch(self.carrier, self.carrierID, index, needAnim)
     end
+  end
+  if self.carrierID == LCarrier.SOLO_CARRIER_ID then
+    LCarrier.HideOtherRiders(self.carrierID)
   end
 end
 
@@ -210,6 +287,32 @@ function LCarrier:GetOff(memberID, pos)
   end
   self.member[memberID] = nil
   SceneCarrierProxy.Instance:SetInCarrier(memberID, nil)
+  if self.carrierID == LCarrier.SOLO_CARRIER_ID then
+    if memberID == self.myselfID then
+      local me = SceneCreatureProxy.FindCreature(memberID)
+      if me then
+        me:SetOnCarrier(false)
+        me:SetParent(nil)
+        me:Client_PlaceXYZTo(tmpPos[1], tmpPos[2], tmpPos[3])
+        me.assetRole:SetShadowEnable(true)
+        self:_VisiblePlayer(me, true)
+      end
+      Game.Myself:SetOnCarrier(false)
+      self:SetIsMine(false)
+      self:Visible(false)
+      FunctionBus.Me():SetBusNil()
+      FunctionBus.Me():ClosePhotographUI()
+      FunctionBus.Me():Reset()
+      Game.AreaTriggerManager:SetIgnore(false)
+    else
+      local passenger = SceneCreatureProxy.FindCreature(memberID)
+      if passenger then
+        self:_GetOff(passenger, tmpPos)
+      end
+    end
+    LCarrier.HideOtherRiders(self.carrierID)
+    return
+  end
   if self.carrier then
     if memberID == self.myselfID then
       if self.myselfID ~= self.masterID and not self.destroyed then
@@ -233,6 +336,10 @@ end
 
 function LCarrier:_GetOn(creature, seatID)
   if creature then
+    if self.carrierID == LCarrier.SOLO_CARRIER_ID and (not creature.data or creature.data.id ~= Game.Myself.data.id) then
+      LCarrier.HideOtherRiders(self.carrierID)
+      return
+    end
     local seat = self.carrier:GetSeat(seatID)
     if seat then
       creature:SetOnCarrier(true)

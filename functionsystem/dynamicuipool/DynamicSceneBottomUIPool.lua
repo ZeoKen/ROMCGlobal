@@ -39,6 +39,7 @@ function DynamicSceneBottomUIPool:create(_id, _parent, _creature)
       luaIObj:SetQuestPrefixName(_creature, true)
     end
     luaIObj:refreshData(_parent, _creature)
+    newUI:RefreshBottomLayout()
     table.remove(self.m_cacheList, 1)
     table.insert(self.m_showList, luaIObj)
   end
@@ -76,6 +77,7 @@ function DynamicSceneBottomUIPool.loadNameFactionFinish(obj, param)
       if showPre and FunctionQuest.Me():checkShowMonsterNamePre(creature) then
         bottomUI.nameFactionCell:SetQuestPrefixName(creature, true)
       end
+      bottomUI:RefreshBottomLayout()
       table.insert(DynamicSceneBottomUIPool.Me().m_showList, luaObj)
     end
   end

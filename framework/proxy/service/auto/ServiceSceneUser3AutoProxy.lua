@@ -228,6 +228,12 @@ function ServiceSceneUser3AutoProxy:onRegister()
   self:Listen(82, 73, function(data)
     self:RecvExtractionCardUserCmd(data)
   end)
+  self:Listen(82, 74, function(data)
+    self:RecvKickRequestUserCmd(data)
+  end)
+  self:Listen(82, 75, function(data)
+    self:RecvKickNotifyUserCmd(data)
+  end)
 end
 
 function ServiceSceneUser3AutoProxy:CallFirstDepositInfo(end_time, got_gear, accumlated_deposit, first_deposit_rewarded, version)
@@ -4019,6 +4025,184 @@ function ServiceSceneUser3AutoProxy:CallExtractionCardUserCmd(oper, gridid, card
   end
 end
 
+function ServiceSceneUser3AutoProxy:CallKickRequestUserCmd(target_guid, map_id, area_id, kick_start_dir_x, kick_start_dir_z)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.KickRequestUserCmd()
+    if target_guid ~= nil then
+      msg.target_guid = target_guid
+    end
+    if map_id ~= nil then
+      msg.map_id = map_id
+    end
+    if area_id ~= nil then
+      msg.area_id = area_id
+    end
+    if kick_start_dir_x ~= nil then
+      msg.kick_start_dir_x = kick_start_dir_x
+    end
+    if kick_start_dir_z ~= nil then
+      msg.kick_start_dir_z = kick_start_dir_z
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.KickRequestUserCmd.id
+    local msgParam = {}
+    if target_guid ~= nil then
+      msgParam.target_guid = target_guid
+    end
+    if map_id ~= nil then
+      msgParam.map_id = map_id
+    end
+    if area_id ~= nil then
+      msgParam.area_id = area_id
+    end
+    if kick_start_dir_x ~= nil then
+      msgParam.kick_start_dir_x = kick_start_dir_x
+    end
+    if kick_start_dir_z ~= nil then
+      msgParam.kick_start_dir_z = kick_start_dir_z
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSceneUser3AutoProxy:CallKickNotifyUserCmd(action, target_guid, map_id, area_id, kick_start_dir_x, kick_start_dir_z, move_dir_x, move_dir_z, current_pos, wall_bounce_count, entity_bounce_count, collision_type, stop_reason)
+  if not NetConfig.PBC then
+    local msg = SceneUser3_pb.KickNotifyUserCmd()
+    if action ~= nil then
+      msg.action = action
+    end
+    if target_guid ~= nil then
+      msg.target_guid = target_guid
+    end
+    if map_id ~= nil then
+      msg.map_id = map_id
+    end
+    if area_id ~= nil then
+      msg.area_id = area_id
+    end
+    if kick_start_dir_x ~= nil then
+      msg.kick_start_dir_x = kick_start_dir_x
+    end
+    if kick_start_dir_z ~= nil then
+      msg.kick_start_dir_z = kick_start_dir_z
+    end
+    if move_dir_x ~= nil then
+      msg.move_dir_x = move_dir_x
+    end
+    if move_dir_z ~= nil then
+      msg.move_dir_z = move_dir_z
+    end
+    if current_pos ~= nil and current_pos.x ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.current_pos == nil then
+        msg.current_pos = {}
+      end
+      msg.current_pos.x = current_pos.x
+    end
+    if current_pos ~= nil and current_pos.y ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.current_pos == nil then
+        msg.current_pos = {}
+      end
+      msg.current_pos.y = current_pos.y
+    end
+    if current_pos ~= nil and current_pos.z ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.current_pos == nil then
+        msg.current_pos = {}
+      end
+      msg.current_pos.z = current_pos.z
+    end
+    if wall_bounce_count ~= nil then
+      msg.wall_bounce_count = wall_bounce_count
+    end
+    if entity_bounce_count ~= nil then
+      msg.entity_bounce_count = entity_bounce_count
+    end
+    if collision_type ~= nil then
+      msg.collision_type = collision_type
+    end
+    if stop_reason ~= nil then
+      msg.stop_reason = stop_reason
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.KickNotifyUserCmd.id
+    local msgParam = {}
+    if action ~= nil then
+      msgParam.action = action
+    end
+    if target_guid ~= nil then
+      msgParam.target_guid = target_guid
+    end
+    if map_id ~= nil then
+      msgParam.map_id = map_id
+    end
+    if area_id ~= nil then
+      msgParam.area_id = area_id
+    end
+    if kick_start_dir_x ~= nil then
+      msgParam.kick_start_dir_x = kick_start_dir_x
+    end
+    if kick_start_dir_z ~= nil then
+      msgParam.kick_start_dir_z = kick_start_dir_z
+    end
+    if move_dir_x ~= nil then
+      msgParam.move_dir_x = move_dir_x
+    end
+    if move_dir_z ~= nil then
+      msgParam.move_dir_z = move_dir_z
+    end
+    if current_pos ~= nil and current_pos.x ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.current_pos == nil then
+        msgParam.current_pos = {}
+      end
+      msgParam.current_pos.x = current_pos.x
+    end
+    if current_pos ~= nil and current_pos.y ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.current_pos == nil then
+        msgParam.current_pos = {}
+      end
+      msgParam.current_pos.y = current_pos.y
+    end
+    if current_pos ~= nil and current_pos.z ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.current_pos == nil then
+        msgParam.current_pos = {}
+      end
+      msgParam.current_pos.z = current_pos.z
+    end
+    if wall_bounce_count ~= nil then
+      msgParam.wall_bounce_count = wall_bounce_count
+    end
+    if entity_bounce_count ~= nil then
+      msgParam.entity_bounce_count = entity_bounce_count
+    end
+    if collision_type ~= nil then
+      msgParam.collision_type = collision_type
+    end
+    if stop_reason ~= nil then
+      msgParam.stop_reason = stop_reason
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceSceneUser3AutoProxy:RecvFirstDepositInfo(data)
   self:Notify(ServiceEvent.SceneUser3FirstDepositInfo, data)
 end
@@ -4303,6 +4487,14 @@ function ServiceSceneUser3AutoProxy:RecvExtractionCardUserCmd(data)
   self:Notify(ServiceEvent.SceneUser3ExtractionCardUserCmd, data)
 end
 
+function ServiceSceneUser3AutoProxy:RecvKickRequestUserCmd(data)
+  self:Notify(ServiceEvent.SceneUser3KickRequestUserCmd, data)
+end
+
+function ServiceSceneUser3AutoProxy:RecvKickNotifyUserCmd(data)
+  self:Notify(ServiceEvent.SceneUser3KickNotifyUserCmd, data)
+end
+
 ServiceEvent = _G.ServiceEvent or {}
 ServiceEvent.SceneUser3FirstDepositInfo = "ServiceEvent_SceneUser3FirstDepositInfo"
 ServiceEvent.SceneUser3FirstDepositReward = "ServiceEvent_SceneUser3FirstDepositReward"
@@ -4375,3 +4567,5 @@ ServiceEvent.SceneUser3SnakeCoasterQueryRankCmd = "ServiceEvent_SceneUser3SnakeC
 ServiceEvent.SceneUser3SnakeCoasterActionNtf = "ServiceEvent_SceneUser3SnakeCoasterActionNtf"
 ServiceEvent.SceneUser3UserIceSlideStopUserCmd = "ServiceEvent_SceneUser3UserIceSlideStopUserCmd"
 ServiceEvent.SceneUser3ExtractionCardUserCmd = "ServiceEvent_SceneUser3ExtractionCardUserCmd"
+ServiceEvent.SceneUser3KickRequestUserCmd = "ServiceEvent_SceneUser3KickRequestUserCmd"
+ServiceEvent.SceneUser3KickNotifyUserCmd = "ServiceEvent_SceneUser3KickNotifyUserCmd"

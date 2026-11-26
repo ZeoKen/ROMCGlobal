@@ -3,7 +3,15 @@ autoImport("InteractLocalHug")
 autoImport("InteractLocalVisit")
 autoImport("InteractLocalCollect")
 autoImport("InteractPlayerHug")
+autoImport("InteractPlayerKick")
 InteractLocalManager = class("InteractLocalManager")
+InteractLocalManager.InteractKind = {
+  None = 0,
+  Kick = 1,
+  Carry = 2,
+  LocalNpc = 3
+}
+local InteractKind = InteractLocalManager.InteractKind
 local GameFacade = GameFacade.Instance
 local ArrayPushBack = TableUtility.ArrayPushBack
 local ArrayRemove = TableUtility.ArrayRemove
@@ -21,6 +29,8 @@ function InteractLocalManager:ctor()
   self.isInTrigger = false
   self.interactPlayerMap = {}
   self.interactPlayerCount = 0
+  self.interactKickMap = {}
+  self.interactKickCount = 0
 end
 
 function InteractLocalManager.Me()
@@ -30,12 +40,68 @@ function InteractLocalManager.Me()
   return InteractLocalManager.Instance
 end
 
+function InteractLocalManager:_ClearKickArrows(keepCharid)
+  for charid, interact in pairs(self.interactKickMap) do
+    if charid ~= keepCharid then
+      interact:DestroyArrow()
+    end
+  end
+end
+
+function InteractLocalManager:_UpdateKick(time, deltaTime)
+  self.lockKickCharid = nil
+  local isInTrigger, triggerPrompt, triggerIcon = false
+  if self.interactKickCount > 0 and not self:IsMyselfDuringInteract() and not Game.InteractNpcManager:IsInteractBusy() then
+    if self.last_lockKickCharid and self.interactKickMap[self.last_lockKickCharid] then
+      local interact = self.interactKickMap[self.last_lockKickCharid]
+      if interact:Update(time, deltaTime) then
+        isInTrigger = true
+        triggerPrompt = interact:GetInteractPrompt()
+        triggerIcon = interact:GetInteractIcon()
+        self.lockKickCharid = self.last_lockKickCharid
+      else
+        self.last_lockKickCharid = nil
+      end
+    end
+    if not self.lockKickCharid then
+      for charid, interact in pairs(self.interactKickMap) do
+        if charid ~= self.last_lockKickCharid and interact:Update(time, deltaTime) then
+          isInTrigger = true
+          triggerPrompt = interact:GetInteractPrompt()
+          triggerIcon = interact:GetInteractIcon()
+          self.lockKickCharid = charid
+          self.last_lockKickCharid = charid
+          break
+        end
+      end
+    end
+    self:_ClearKickArrows(self.lockKickCharid)
+  else
+    self.last_lockKickCharid = nil
+    self:_ClearKickArrows(nil)
+  end
+  if self.kickIsInTrigger ~= isInTrigger or self.kickLastPrompt ~= triggerPrompt or self.kickLastIcon ~= triggerIcon then
+    self:_TrySendMyselfTriggerChange(isInTrigger, triggerPrompt, triggerIcon, InteractKind.Kick)
+  end
+  self.kickIsInTrigger = isInTrigger
+  self.kickLastPrompt = triggerPrompt
+  self.kickLastIcon = triggerIcon
+  return isInTrigger
+end
+
 function InteractLocalManager:Update(time, deltaTime)
   if not self.running then
     return
   end
+  local kickIsInTrigger = self:_UpdateKick(time, deltaTime)
+  if kickIsInTrigger then
+    self.lockPlayerCharid = nil
+    self.playerIsInTrigger = false
+    self.playerLastPrompt = nil
+    self.isInTrigger = false
+  end
   self.lockNpcGuid = nil
-  if self.interactNpcCount > 0 then
+  if self.interactNpcCount > 0 and not kickIsInTrigger then
     local isInTrigger, triggerPrompt, triggerIcon = false
     local interactNpcBlock = Game.InteractNpcManager:IsInteractBusy()
     if not self:IsMyselfDuringInteract() and not interactNpcBlock then
@@ -58,12 +124,12 @@ function InteractLocalManager:Update(time, deltaTime)
       end
     end
     if self.isInTrigger ~= isInTrigger then
-      self:_TrySendMyselfTriggerChange(isInTrigger, triggerPrompt, triggerIcon)
+      self:_TrySendMyselfTriggerChange(isInTrigger, triggerPrompt, triggerIcon, InteractKind.LocalNpc)
       self.isInTrigger = isInTrigger
     end
   end
   self.lockPlayerCharid = nil
-  if 0 < self.interactPlayerCount and not self:IsMyselfDuringInteract() and not Game.InteractNpcManager:IsInteractBusy() then
+  if not kickIsInTrigger and 0 < self.interactPlayerCount and not self:IsMyselfDuringInteract() and not Game.InteractNpcManager:IsInteractBusy() then
     local pIsInTrigger, pPrompt, pIcon = false
     if self.last_lockPlayerCharid and self.interactPlayerMap[self.last_lockPlayerCharid] then
       local interact = self.interactPlayerMap[self.last_lockPlayerCharid]
@@ -87,11 +153,11 @@ function InteractLocalManager:Update(time, deltaTime)
       end
     end
     if self.playerIsInTrigger ~= pIsInTrigger or self.playerLastPrompt ~= pPrompt then
-      self:_TrySendMyselfTriggerChange(pIsInTrigger, pPrompt, pIcon)
+      self:_TrySendMyselfTriggerChange(pIsInTrigger, pPrompt, pIcon, InteractKind.Carry)
       self.playerIsInTrigger = pIsInTrigger
       self.playerLastPrompt = pPrompt
     end
-  elseif self.playerIsInTrigger then
+  elseif not kickIsInTrigger and self.playerIsInTrigger then
     self:_TrySendMyselfTriggerChange(false, nil, nil)
     self.playerIsInTrigger = false
     self.playerLastPrompt = nil
@@ -118,6 +184,8 @@ function InteractLocalManager:Launch()
   EventManager.Me():AddEventListener(SkillEvent.CanBeCarriedAdd, self.OnCanBeCarriedAdd, self)
   EventManager.Me():AddEventListener(SkillEvent.CanBeCarriedRemove, self.OnCanBeCarriedRemove, self)
   EventManager.Me():AddEventListener(MyselfEvent.CarryDownCharidUpdate, self.OnCarryDownChange, self)
+  EventManager.Me():AddEventListener(SkillEvent.IceBlockKickableAdd, self.OnIceBlockKickableAdd, self)
+  EventManager.Me():AddEventListener(SkillEvent.IceBlockKickableRemove, self.OnIceBlockKickableRemove, self)
 end
 
 function InteractLocalManager:Shutdown()
@@ -139,6 +207,8 @@ function InteractLocalManager:Shutdown()
   EventManager.Me():RemoveEventListener(SkillEvent.CanBeCarriedAdd, self.OnCanBeCarriedAdd, self)
   EventManager.Me():RemoveEventListener(SkillEvent.CanBeCarriedRemove, self.OnCanBeCarriedRemove, self)
   EventManager.Me():RemoveEventListener(MyselfEvent.CarryDownCharidUpdate, self.OnCarryDownChange, self)
+  EventManager.Me():RemoveEventListener(SkillEvent.IceBlockKickableAdd, self.OnIceBlockKickableAdd, self)
+  EventManager.Me():RemoveEventListener(SkillEvent.IceBlockKickableRemove, self.OnIceBlockKickableRemove, self)
   self:OnLeaveScene()
   self:Clear()
 end
@@ -164,6 +234,20 @@ function InteractLocalManager:Clear()
   self.interactPlayerCount = 0
   self.lockPlayerCharid = nil
   self.playerIsInTrigger = false
+  if self.interactKickMap then
+    for _, interact in pairs(self.interactKickMap) do
+      if interact and interact.Destroy then
+        interact:Destroy()
+      end
+    end
+  end
+  self.interactKickMap = {}
+  self.interactKickCount = 0
+  self.lockKickCharid = nil
+  self.last_lockKickCharid = nil
+  self.kickIsInTrigger = false
+  self.kickLastPrompt = nil
+  self.kickLastIcon = nil
   if self.myselfDuringInteractGuid then
     self.myselfDuringInteractGuid = nil
     GameFacade:sendNotification(InteractLocalEvent.MyselfInteractChange, false)
@@ -205,6 +289,44 @@ function InteractLocalManager:OnCanBeCarriedRemove(note)
   self:_RemoveCarryablePlayer(note.charid)
 end
 
+function InteractLocalManager:OnIceBlockKickableAdd(note)
+  if not note or not note.charid then
+    return
+  end
+  if note.charid == (Game.Myself and Game.Myself.data and Game.Myself.data.id) then
+    return
+  end
+  if self.interactKickMap[note.charid] then
+    return
+  end
+  self.interactKickMap[note.charid] = InteractPlayerKick.Create(note.charid)
+  self.interactKickCount = self.interactKickCount + 1
+end
+
+function InteractLocalManager:_RemoveKickTarget(charid)
+  if not charid then
+    return
+  end
+  local interact = self.interactKickMap[charid]
+  if not interact then
+    return
+  end
+  self.interactKickMap[charid] = nil
+  self.interactKickCount = self.interactKickCount - 1
+  interact:Destroy()
+  if self.lockKickCharid == charid then
+    self.lockKickCharid = nil
+    self.last_lockKickCharid = nil
+  end
+end
+
+function InteractLocalManager:OnIceBlockKickableRemove(note)
+  if not note then
+    return
+  end
+  self:_RemoveKickTarget(note.charid)
+end
+
 function InteractLocalManager:OnCarryDownChange(note)
   if not note or not note.charid then
     return
@@ -231,6 +353,7 @@ function InteractLocalManager:OnOtherPlayerOut(playerId)
     return
   end
   self:_RemoveCarryablePlayer(playerId)
+  self:_RemoveKickTarget(playerId)
 end
 
 function InteractLocalManager:_AddCarryablePlayer(charid, buffEffect)
@@ -374,6 +497,13 @@ function InteractLocalManager:MyselfManualClick()
 end
 
 function InteractLocalManager:TryStartInteract(id)
+  if not self:IsMyselfDuringInteract() and self.lockKickCharid then
+    local interactKick = self.interactKickMap and self.interactKickMap[self.lockKickCharid]
+    if interactKick and interactKick.StartInteract then
+      interactKick:StartInteract()
+      return true
+    end
+  end
   id = id or self.lockNpcGuid
   if id ~= nil and not self:IsMyselfDuringInteract() and self.lockNpcGuid ~= nil then
     local interactNpc = self.interactNpcMap[self.lockNpcGuid]
@@ -458,14 +588,15 @@ function InteractLocalManager:RemoveInteractObject(id)
   self:UnregisterInteractNpc(id)
 end
 
-function InteractLocalManager:_TrySendMyselfTriggerChange(isInTrigger, triggerPrompt, triggerIcon)
+function InteractLocalManager:_TrySendMyselfTriggerChange(isInTrigger, triggerPrompt, triggerIcon, kind)
   if isInTrigger and self.myselfOnNpcStaticID ~= nil then
     isInTrigger = InteractLocalManager.CheckMyselfInNpcInteractArea(self.myselfOnNpcStaticID)
   end
   GameFacade:sendNotification(InteractLocalEvent.MyselfTriggerChange, {
     trigger = isInTrigger,
     prompt = triggerPrompt,
-    icon = triggerIcon
+    icon = triggerIcon,
+    kind = kind or InteractKind.None
   })
 end
 

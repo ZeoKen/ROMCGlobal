@@ -1311,7 +1311,7 @@ function PveView:UpdateViewData(data)
     return
   end
   self.curData = data
-  TipsView.Me():TryShowGeneralHelpByHelpId(self.curData.staticEntranceData.staticData.HelpID, self.raidHelpBtn)
+  self:UpdateRaidHelp()
   self.curIsOpen = _EntranceProxy:IsOpen(data.id)
   local isBoss = data.staticEntranceData:IsBoss()
   if not isBoss then
@@ -1341,6 +1341,29 @@ function PveView:UpdateViewData(data)
   else
     self:SwitchSubView(raidType)
   end
+end
+
+function PveView:GetGuaranteeRemainCount()
+  if not self.curData then
+    return
+  end
+  return self.curData:GetGuaranteeRemainCount(self.curBossId)
+end
+
+function PveView:UpdateRaidHelp()
+  local helpId = self.curData and self.curData.staticEntranceData and self.curData.staticEntranceData.staticData.HelpID
+  if not self.curData or not self.curData.staticEntranceData:IsLotteryRaid() then
+    TipsView.Me():TryShowGeneralHelpByHelpId(helpId, self.raidHelpBtn)
+    return
+  end
+  local staticData = self:Preprocess_HelpColiderObj(helpId, self.raidHelpBtn)
+  if not staticData then
+    return
+  end
+  self:AddClickEvent(self.raidHelpBtn, function()
+    local desc = string.format(staticData.Desc, self:GetGuaranteeRemainCount() or 0)
+    TipsView.Me():ShowGeneralHelp(desc, staticData.Title)
+  end)
 end
 
 function PveView:HideCurrentSubView()
@@ -1471,8 +1494,10 @@ end
 function PveView:_SetContent_DailyTokenLimit(param, label)
   label.color = _NewBlackColor
   local dailyToken = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_FAIRY_TALE_DAILY_COIN) or 0
-  label.text = string.format(ZhString.FairyTaleRaid_DailyTokenLimit, dailyToken, param)
-  if param <= dailyToken then
+  local activityCoin = MyselfProxy.Instance:GetAccVarValueByType(Var_pb.EACCVARTYPE_FAIRY_TALE_ACTIVITY_COIN) or 0
+  local activityCoinMax = GameConfig.FairyTaleRaid and GameConfig.FairyTaleRaid.CoinActivityMax or param
+  label.text = string.format(ZhString.FairyTaleRaid_DailyTokenLimit, dailyToken, param, activityCoin, activityCoinMax)
+  if param <= dailyToken or activityCoin >= activityCoinMax then
     label.color = _ChallengeRedColor
   end
   self.pveCard_addMaxCountBtn.gameObject:SetActive(false)
@@ -2323,6 +2348,6 @@ function PveView:UpdateLotteryRaid()
   if guaranteeRewardData then
     self.guaranteeItemCell:UpdateNumLabel(guaranteeRewardData:GetNumDesc())
   end
-  local remainCount = guaranteeRewardData and guaranteeRewardData:GetGuaranteeRemainCount()
+  local remainCount = self:GetGuaranteeRemainCount()
   self.lotteryRemainNumLabel.text = string.format(ZhString.Pve_Lottery_GuaranteedRemainNum, remainCount and tostring(remainCount) or "")
 end

@@ -2809,6 +2809,36 @@ Table_Viewspot_t = {
       267.04,
       38.0,
       100.2
+    },
+    {
+      214.81,
+      38.13,
+      218.63
+    },
+    {
+      -123.47,
+      143.91,
+      162.57
+    },
+    {
+      -8.03,
+      95.88,
+      276.17
+    },
+    {
+      140.81,
+      74.61,
+      273.32
+    },
+    {
+      53.27,
+      55.42,
+      49.38
+    },
+    {
+      -118.05,
+      298.78,
+      109.44
     }
   }
 }
@@ -4319,6 +4349,7 @@ Table_Viewspot = {
     id = 169,
     MapName = 48,
     MapNum = 7,
+    SpotName = "##114090",
     Coordinate = Table_Viewspot_t.Coordinate[169],
     AdventureSort = 169
   },
@@ -5675,7 +5706,6 @@ Table_Viewspot = {
     id = 335,
     MapName = 99,
     MapNum = 4,
-    SpotName = "##114119",
     Coordinate = Table_Viewspot_t.Coordinate[329],
     AdventureSort = 335
   },
@@ -6824,12 +6854,14 @@ Table_Viewspot = {
   },
   [480] = {
     id = 480,
+    MapName = 149,
     SpotName = "##103868",
     Coordinate = Table_Viewspot_t.Coordinate[474],
     AdventureSort = 480
   },
   [481] = {
     id = 481,
+    MapName = 149,
     MapNum = 2,
     SpotName = "##2836840",
     Coordinate = Table_Viewspot_t.Coordinate[475],
@@ -6837,6 +6869,7 @@ Table_Viewspot = {
   },
   [482] = {
     id = 482,
+    MapName = 149,
     MapNum = 3,
     SpotName = "##2836841",
     Coordinate = Table_Viewspot_t.Coordinate[476],
@@ -6844,6 +6877,7 @@ Table_Viewspot = {
   },
   [483] = {
     id = 483,
+    MapName = 149,
     MapNum = 4,
     SpotName = "##2836842",
     Coordinate = Table_Viewspot_t.Coordinate[477],
@@ -6851,6 +6885,7 @@ Table_Viewspot = {
   },
   [484] = {
     id = 484,
+    MapName = 149,
     MapNum = 5,
     SpotName = "##2836843",
     Coordinate = Table_Viewspot_t.Coordinate[478],
@@ -6858,6 +6893,7 @@ Table_Viewspot = {
   },
   [485] = {
     id = 485,
+    MapName = 149,
     MapNum = 6,
     SpotName = "##2836844",
     Coordinate = Table_Viewspot_t.Coordinate[479],
@@ -6865,6 +6901,7 @@ Table_Viewspot = {
   },
   [486] = {
     id = 486,
+    MapName = 149,
     MapNum = 7,
     SpotName = "##2836845",
     Coordinate = Table_Viewspot_t.Coordinate[480],
@@ -6872,6 +6909,7 @@ Table_Viewspot = {
   },
   [487] = {
     id = 487,
+    MapName = 149,
     MapNum = 8,
     SpotName = "##1188301",
     Coordinate = Table_Viewspot_t.Coordinate[481],
@@ -6879,6 +6917,7 @@ Table_Viewspot = {
   },
   [488] = {
     id = 488,
+    MapName = 149,
     MapNum = 9,
     SpotName = "##2836846",
     Coordinate = Table_Viewspot_t.Coordinate[482],
@@ -6886,6 +6925,7 @@ Table_Viewspot = {
   },
   [489] = {
     id = 489,
+    MapName = 149,
     MapNum = 10,
     SpotName = "##2836847",
     Coordinate = Table_Viewspot_t.Coordinate[483],
@@ -6893,6 +6933,7 @@ Table_Viewspot = {
   },
   [490] = {
     id = 490,
+    MapName = 149,
     MapNum = 11,
     SpotName = "##2836848",
     Coordinate = Table_Viewspot_t.Coordinate[484],
@@ -6900,6 +6941,7 @@ Table_Viewspot = {
   },
   [491] = {
     id = 491,
+    MapName = 149,
     MapNum = 12,
     SpotName = "##2836849",
     Coordinate = Table_Viewspot_t.Coordinate[485],
@@ -6907,6 +6949,7 @@ Table_Viewspot = {
   },
   [492] = {
     id = 492,
+    MapName = 149,
     MapNum = 13,
     SpotName = "##2836850",
     Coordinate = Table_Viewspot_t.Coordinate[486],
@@ -6914,6 +6957,7 @@ Table_Viewspot = {
   },
   [493] = {
     id = 493,
+    MapName = 149,
     MapNum = 14,
     SpotName = "##2836851",
     Coordinate = Table_Viewspot_t.Coordinate[487],
@@ -6921,6 +6965,7 @@ Table_Viewspot = {
   },
   [494] = {
     id = 494,
+    MapName = 149,
     MapNum = 15,
     SpotName = "##2836852",
     Coordinate = Table_Viewspot_t.Coordinate[488],
@@ -6928,6 +6973,7 @@ Table_Viewspot = {
   },
   [495] = {
     id = 495,
+    MapName = 149,
     MapNum = 16,
     SpotName = "##2836853",
     Coordinate = Table_Viewspot_t.Coordinate[489],
@@ -6935,6 +6981,7 @@ Table_Viewspot = {
   },
   [496] = {
     id = 496,
+    MapName = 149,
     MapNum = 17,
     SpotName = "##2836854",
     Coordinate = Table_Viewspot_t.Coordinate[490],
@@ -6942,6 +6989,7 @@ Table_Viewspot = {
   },
   [497] = {
     id = 497,
+    MapName = 149,
     MapNum = 18,
     SpotName = "##2836855",
     Coordinate = Table_Viewspot_t.Coordinate[491],
@@ -6949,6 +6997,7 @@ Table_Viewspot = {
   },
   [498] = {
     id = 498,
+    MapName = 149,
     MapNum = 19,
     SpotName = "##3359105",
     Coordinate = Table_Viewspot_t.Coordinate[492],
@@ -6956,6 +7005,7 @@ Table_Viewspot = {
   },
   [499] = {
     id = 499,
+    MapName = 149,
     MapNum = 20,
     SpotName = "##3361165",
     Coordinate = Table_Viewspot_t.Coordinate[493],
@@ -6963,6 +7013,7 @@ Table_Viewspot = {
   },
   [500] = {
     id = 500,
+    MapName = 149,
     MapNum = 21,
     SpotName = "##3361166",
     Coordinate = Table_Viewspot_t.Coordinate[494],
@@ -6970,6 +7021,7 @@ Table_Viewspot = {
   },
   [501] = {
     id = 501,
+    MapName = 149,
     MapNum = 22,
     SpotName = "##3361167",
     Coordinate = Table_Viewspot_t.Coordinate[495],
@@ -6977,6 +7029,7 @@ Table_Viewspot = {
   },
   [502] = {
     id = 502,
+    MapName = 149,
     MapNum = 23,
     SpotName = "##3361168",
     Coordinate = Table_Viewspot_t.Coordinate[496],
@@ -6984,6 +7037,7 @@ Table_Viewspot = {
   },
   [503] = {
     id = 503,
+    MapName = 149,
     MapNum = 24,
     SpotName = "##3361169",
     Coordinate = Table_Viewspot_t.Coordinate[497],
@@ -6991,6 +7045,7 @@ Table_Viewspot = {
   },
   [504] = {
     id = 504,
+    MapName = 149,
     MapNum = 25,
     SpotName = "##3359111",
     Coordinate = Table_Viewspot_t.Coordinate[498],
@@ -6998,6 +7053,7 @@ Table_Viewspot = {
   },
   [505] = {
     id = 505,
+    MapName = 149,
     MapNum = 26,
     SpotName = "##3361170",
     Coordinate = Table_Viewspot_t.Coordinate[499],
@@ -7005,6 +7061,7 @@ Table_Viewspot = {
   },
   [506] = {
     id = 506,
+    MapName = 149,
     MapNum = 27,
     SpotName = "##3361171",
     Coordinate = Table_Viewspot_t.Coordinate[500],
@@ -7012,6 +7069,7 @@ Table_Viewspot = {
   },
   [507] = {
     id = 507,
+    MapName = 149,
     MapNum = 28,
     SpotName = "##3460085",
     Coordinate = Table_Viewspot_t.Coordinate[501],
@@ -7019,6 +7077,7 @@ Table_Viewspot = {
   },
   [508] = {
     id = 508,
+    MapName = 149,
     MapNum = 29,
     SpotName = "##3449465",
     Coordinate = Table_Viewspot_t.Coordinate[502],
@@ -7026,6 +7085,7 @@ Table_Viewspot = {
   },
   [509] = {
     id = 509,
+    MapName = 149,
     MapNum = 30,
     SpotName = "##3460086",
     Coordinate = Table_Viewspot_t.Coordinate[503],
@@ -7033,6 +7093,7 @@ Table_Viewspot = {
   },
   [510] = {
     id = 510,
+    MapName = 149,
     MapNum = 31,
     SpotName = "##3460087",
     Coordinate = Table_Viewspot_t.Coordinate[504],
@@ -7040,6 +7101,7 @@ Table_Viewspot = {
   },
   [511] = {
     id = 511,
+    MapName = 149,
     MapNum = 32,
     SpotName = "##3460088",
     Coordinate = Table_Viewspot_t.Coordinate[505],
@@ -7047,6 +7109,7 @@ Table_Viewspot = {
   },
   [512] = {
     id = 512,
+    MapName = 149,
     MapNum = 33,
     SpotName = "##3460089",
     Coordinate = Table_Viewspot_t.Coordinate[506],
@@ -7054,6 +7117,7 @@ Table_Viewspot = {
   },
   [513] = {
     id = 513,
+    MapName = 149,
     MapNum = 34,
     SpotName = "##3449469",
     Coordinate = Table_Viewspot_t.Coordinate[507],
@@ -7061,6 +7125,7 @@ Table_Viewspot = {
   },
   [514] = {
     id = 514,
+    MapName = 149,
     MapNum = 35,
     SpotName = "##3449472",
     Coordinate = Table_Viewspot_t.Coordinate[508],
@@ -7068,6 +7133,7 @@ Table_Viewspot = {
   },
   [515] = {
     id = 515,
+    MapName = 149,
     MapNum = 36,
     SpotName = "##3460090",
     Coordinate = Table_Viewspot_t.Coordinate[509],
@@ -7075,6 +7141,7 @@ Table_Viewspot = {
   },
   [516] = {
     id = 516,
+    MapName = 149,
     MapNum = 37,
     SpotName = "##3460091",
     Coordinate = Table_Viewspot_t.Coordinate[510],
@@ -7082,6 +7149,7 @@ Table_Viewspot = {
   },
   [517] = {
     id = 517,
+    MapName = 149,
     MapNum = 38,
     SpotName = "##3449478",
     Coordinate = Table_Viewspot_t.Coordinate[511],
@@ -7089,6 +7157,7 @@ Table_Viewspot = {
   },
   [518] = {
     id = 518,
+    MapName = 149,
     MapNum = 39,
     SpotName = "##3460092",
     Coordinate = Table_Viewspot_t.Coordinate[512],
@@ -7096,6 +7165,7 @@ Table_Viewspot = {
   },
   [519] = {
     id = 519,
+    MapName = 149,
     MapNum = 40,
     SpotName = "##3460093",
     Coordinate = Table_Viewspot_t.Coordinate[513],
@@ -7103,6 +7173,7 @@ Table_Viewspot = {
   },
   [520] = {
     id = 520,
+    MapName = 149,
     MapNum = 41,
     SpotName = "##3460094",
     Coordinate = Table_Viewspot_t.Coordinate[514],
@@ -7357,14 +7428,12 @@ Table_Viewspot = {
   },
   [552] = {
     id = 552,
-    MapName = 155,
     SpotName = "##44724699",
     Coordinate = Table_Viewspot_t.Coordinate[546],
     AdventureSort = 552
   },
   [553] = {
     id = 553,
-    MapName = 155,
     MapNum = 2,
     SpotName = "##44724700",
     Coordinate = Table_Viewspot_t.Coordinate[547],
@@ -7372,7 +7441,6 @@ Table_Viewspot = {
   },
   [554] = {
     id = 554,
-    MapName = 155,
     MapNum = 3,
     SpotName = "##44724701",
     Coordinate = Table_Viewspot_t.Coordinate[548],
@@ -7380,7 +7448,6 @@ Table_Viewspot = {
   },
   [555] = {
     id = 555,
-    MapName = 155,
     MapNum = 4,
     SpotName = "##44724702",
     Coordinate = Table_Viewspot_t.Coordinate[549],
@@ -7388,7 +7455,6 @@ Table_Viewspot = {
   },
   [556] = {
     id = 556,
-    MapName = 155,
     MapNum = 5,
     SpotName = "##44724703",
     Coordinate = Table_Viewspot_t.Coordinate[550],
@@ -7396,7 +7462,6 @@ Table_Viewspot = {
   },
   [557] = {
     id = 557,
-    MapName = 155,
     MapNum = 6,
     SpotName = "##44724704",
     Coordinate = Table_Viewspot_t.Coordinate[551],
@@ -7404,7 +7469,6 @@ Table_Viewspot = {
   },
   [558] = {
     id = 558,
-    MapName = 155,
     MapNum = 7,
     SpotName = "##44724705",
     Coordinate = Table_Viewspot_t.Coordinate[552],
@@ -7412,7 +7476,6 @@ Table_Viewspot = {
   },
   [559] = {
     id = 559,
-    MapName = 155,
     MapNum = 8,
     SpotName = "##44724706",
     Coordinate = Table_Viewspot_t.Coordinate[553],
@@ -7420,7 +7483,6 @@ Table_Viewspot = {
   },
   [560] = {
     id = 560,
-    MapName = 155,
     MapNum = 9,
     SpotName = "##44724707",
     Coordinate = Table_Viewspot_t.Coordinate[554],
@@ -7428,7 +7490,6 @@ Table_Viewspot = {
   },
   [561] = {
     id = 561,
-    MapName = 155,
     MapNum = 10,
     SpotName = "##44724708",
     Coordinate = Table_Viewspot_t.Coordinate[555],
@@ -7436,7 +7497,6 @@ Table_Viewspot = {
   },
   [562] = {
     id = 562,
-    MapName = 155,
     MapNum = 11,
     SpotName = "##283899",
     Coordinate = Table_Viewspot_t.Coordinate[556],
@@ -7444,7 +7504,6 @@ Table_Viewspot = {
   },
   [563] = {
     id = 563,
-    MapName = 155,
     MapNum = 12,
     SpotName = "##44724709",
     Type = 6,
@@ -7453,7 +7512,6 @@ Table_Viewspot = {
   },
   [564] = {
     id = 564,
-    MapName = 155,
     MapNum = 13,
     SpotName = "##44724710",
     Type = 6,
@@ -7462,7 +7520,6 @@ Table_Viewspot = {
   },
   [565] = {
     id = 565,
-    MapName = 155,
     MapNum = 14,
     SpotName = "##44724711",
     Type = 6,
@@ -7471,7 +7528,6 @@ Table_Viewspot = {
   },
   [566] = {
     id = 566,
-    MapName = 155,
     MapNum = 15,
     SpotName = "##44724712",
     Type = 6,
@@ -7480,7 +7536,6 @@ Table_Viewspot = {
   },
   [567] = {
     id = 567,
-    MapName = 155,
     MapNum = 16,
     SpotName = "##44724713",
     Type = 6,
@@ -7489,7 +7544,6 @@ Table_Viewspot = {
   },
   [568] = {
     id = 568,
-    MapName = 155,
     MapNum = 17,
     SpotName = "##44724714",
     Type = 6,
@@ -7498,7 +7552,6 @@ Table_Viewspot = {
   },
   [569] = {
     id = 569,
-    MapName = 155,
     MapNum = 18,
     SpotName = "##44724715",
     Type = 6,
@@ -7507,7 +7560,6 @@ Table_Viewspot = {
   },
   [570] = {
     id = 570,
-    MapName = 155,
     MapNum = 19,
     SpotName = "##44724716",
     Type = 6,
@@ -7516,7 +7568,6 @@ Table_Viewspot = {
   },
   [571] = {
     id = 571,
-    MapName = 155,
     MapNum = 20,
     SpotName = "##45912059",
     Coordinate = Table_Viewspot_t.Coordinate[557],
@@ -7524,7 +7575,6 @@ Table_Viewspot = {
   },
   [572] = {
     id = 572,
-    MapName = 155,
     MapNum = 21,
     SpotName = "##45918458",
     Coordinate = Table_Viewspot_t.Coordinate[558],
@@ -7532,7 +7582,6 @@ Table_Viewspot = {
   },
   [573] = {
     id = 573,
-    MapName = 155,
     MapNum = 22,
     SpotName = "##45918459",
     Coordinate = Table_Viewspot_t.Coordinate[559],
@@ -7540,7 +7589,6 @@ Table_Viewspot = {
   },
   [574] = {
     id = 574,
-    MapName = 155,
     MapNum = 23,
     SpotName = "##45918460",
     Coordinate = Table_Viewspot_t.Coordinate[560],
@@ -7548,7 +7596,6 @@ Table_Viewspot = {
   },
   [575] = {
     id = 575,
-    MapName = 155,
     MapNum = 24,
     SpotName = "##45918461",
     Coordinate = Table_Viewspot_t.Coordinate[561],
@@ -7556,7 +7603,6 @@ Table_Viewspot = {
   },
   [576] = {
     id = 576,
-    MapName = 155,
     MapNum = 25,
     SpotName = "##45918462",
     Coordinate = Table_Viewspot_t.Coordinate[562],
@@ -7564,7 +7610,6 @@ Table_Viewspot = {
   },
   [577] = {
     id = 577,
-    MapName = 155,
     MapNum = 26,
     SpotName = "##45939834",
     Type = 6,
@@ -7573,7 +7618,6 @@ Table_Viewspot = {
   },
   [578] = {
     id = 578,
-    MapName = 155,
     MapNum = 27,
     SpotName = "##45939835",
     Type = 6,
@@ -7582,7 +7626,6 @@ Table_Viewspot = {
   },
   [579] = {
     id = 579,
-    MapName = 155,
     MapNum = 28,
     SpotName = "##45939836",
     Type = 6,
@@ -7591,7 +7634,6 @@ Table_Viewspot = {
   },
   [580] = {
     id = 580,
-    MapName = 155,
     MapNum = 29,
     SpotName = "##45939837",
     Type = 6,
@@ -7600,7 +7642,6 @@ Table_Viewspot = {
   },
   [581] = {
     id = 581,
-    MapName = 155,
     MapNum = 30,
     SpotName = "##45939838",
     Type = 6,
@@ -7609,7 +7650,6 @@ Table_Viewspot = {
   },
   [582] = {
     id = 582,
-    MapName = 155,
     MapNum = 31,
     SpotName = "##45939839",
     Type = 6,
@@ -7618,7 +7658,6 @@ Table_Viewspot = {
   },
   [583] = {
     id = 583,
-    MapName = 155,
     MapNum = 32,
     SpotName = "##45939840",
     Type = 6,
@@ -7627,12 +7666,117 @@ Table_Viewspot = {
   },
   [584] = {
     id = 584,
-    MapName = 155,
     MapNum = 33,
     SpotName = "##45939841",
     Type = 6,
     AdventureSort = 584,
     AdventureValue = 1
+  },
+  [585] = {
+    id = 585,
+    MapNum = 34,
+    SpotName = "##46378237",
+    Coordinate = Table_Viewspot_t.Coordinate[563],
+    AdventureSort = 585
+  },
+  [586] = {
+    id = 586,
+    MapNum = 35,
+    SpotName = "##46378238",
+    Coordinate = Table_Viewspot_t.Coordinate[564],
+    AdventureSort = 586
+  },
+  [587] = {
+    id = 587,
+    MapNum = 36,
+    SpotName = "##46378239",
+    Coordinate = Table_Viewspot_t.Coordinate[565],
+    AdventureSort = 587
+  },
+  [588] = {
+    id = 588,
+    MapNum = 37,
+    SpotName = "##46301389",
+    Coordinate = Table_Viewspot_t.Coordinate[566],
+    AdventureSort = 588
+  },
+  [589] = {
+    id = 589,
+    MapNum = 38,
+    SpotName = "##46378241",
+    Coordinate = Table_Viewspot_t.Coordinate[567],
+    AdventureSort = 589
+  },
+  [590] = {
+    id = 590,
+    MapNum = 39,
+    SpotName = "##47239456",
+    Type = 6,
+    AdventureSort = 590,
+    AdventureValue = 1
+  },
+  [591] = {
+    id = 591,
+    MapNum = 40,
+    SpotName = "##47239457",
+    Type = 6,
+    AdventureSort = 591,
+    AdventureValue = 1
+  },
+  [592] = {
+    id = 592,
+    MapNum = 41,
+    SpotName = "##47239458",
+    Type = 6,
+    AdventureSort = 592,
+    AdventureValue = 1
+  },
+  [593] = {
+    id = 593,
+    MapNum = 42,
+    SpotName = "##47239459",
+    Type = 6,
+    AdventureSort = 593,
+    AdventureValue = 1
+  },
+  [594] = {
+    id = 594,
+    MapNum = 43,
+    SpotName = "##47239460",
+    Type = 6,
+    AdventureSort = 594,
+    AdventureValue = 1
+  },
+  [595] = {
+    id = 595,
+    MapNum = 44,
+    SpotName = "##47239461",
+    Type = 6,
+    AdventureSort = 595,
+    AdventureValue = 1
+  },
+  [596] = {
+    id = 596,
+    MapNum = 45,
+    SpotName = "##47239462",
+    Type = 6,
+    AdventureSort = 596,
+    AdventureValue = 1
+  },
+  [597] = {
+    id = 597,
+    MapNum = 46,
+    SpotName = "##47239463",
+    Type = 6,
+    AdventureSort = 597,
+    AdventureValue = 1
+  },
+  [598] = {
+    id = 598,
+    MapNum = 47,
+    SpotName = "##47126202",
+    Coordinate = Table_Viewspot_t.Coordinate[568],
+    AdventureSort = 598
   }
 }
 local cell_mt = {
@@ -7642,9 +7786,9 @@ local cell_mt = {
     AdventureValue = 120,
     Condition = 6,
     Coordinate = _EmptyTable,
-    MapName = 149,
+    MapName = 155,
     MapNum = 1,
-    SpotName = "##114090",
+    SpotName = "##114119",
     Type = 1,
     id = 1
   }

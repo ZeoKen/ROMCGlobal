@@ -83,6 +83,7 @@ function TipoffView:OnEnter()
   self.charName = self.playerData.name
   self.charLv = self.playerData.level
   self.str = self.playerData.str
+  self.contentTimestamp = self.playerData.contentTimestamp
   self:UpdateView()
 end
 
@@ -124,11 +125,12 @@ function TipoffView:DoTipoff()
   if nil == next(self.select_reason) then
     return
   end
-  _FunctionTipoff:DoTipoff(self.charId, self.select_reason, self.charName, self.str)
+  _FunctionTipoff:DoTipoff(self.charId, self.select_reason, self.charName, self.str, self.contentTimestamp)
 end
 
 function TipoffView:OnExit()
   _FunctionTipoff:SetCurPlayer(nil)
+  self.contentTimestamp = nil
   self.faceCell:RemoveIconEvent()
   TipoffView.super.OnExit(self)
 end

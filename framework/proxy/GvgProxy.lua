@@ -230,7 +230,9 @@ function GvgProxy:SetCurrentPointID(id)
   local myself = Game.Myself
   if myself and myself.data and not myself.data:InGvgZone() and not self.showDiffGvgZoneMsg then
     self.showDiffGvgZoneMsg = true
-    MsgManager.ShowMsgByID(2224)
+    if not PvpObserveProxy.Instance:IsRunning() then
+      MsgManager.ShowMsgByID(2224)
+    end
   end
   local pointData = self.pointInfoMap[id]
   if pointData then

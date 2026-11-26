@@ -424,6 +424,7 @@ Table_EquipUpgrade_t = {
     {90102540, 90102541},
     {90102570},
     {90000979},
+    {90103290, 90103291},
     {90000969},
     {90000939},
     {90101370},
@@ -448,6 +449,18 @@ Table_EquipUpgrade_t = {
     {90000949},
     {90001229},
     {90001279},
+    {90102810},
+    {90102840},
+    {90102870},
+    {90102900},
+    {90102930},
+    {90102960},
+    {90102990},
+    {90103020},
+    {90103170},
+    {90103200},
+    {90103230},
+    {90103260, 90103262},
     {90000919},
     {90000929},
     {90101580},
@@ -471,6 +484,17 @@ Table_EquipUpgrade_t = {
     {90102240, 90102241},
     {90102210, 90102211},
     {90101400, 90101401},
+    {90103470},
+    {90103440},
+    {90103410},
+    {90103380},
+    {90103350},
+    {90103320},
+    {90103140},
+    {90103110},
+    {90103080},
+    {90103050},
+    {90102780},
     {90101940},
     {90101910},
     {90101880},
@@ -2250,6 +2274,7 @@ Table_EquipUpgrade_t = {
     {90100256},
     {90100286},
     {90100526},
+    {90103286},
     {90000966},
     {90000936},
     {90001926},
@@ -2322,10 +2347,22 @@ Table_EquipUpgrade_t = {
     {90001376},
     {90001806},
     {90002156},
+    {90102806},
+    {90102836},
+    {90102866},
+    {90102896},
+    {90102926},
+    {90102956},
+    {90102986},
+    {90103016},
     {90100826},
     {90100886},
     {90100916},
     {90100856},
+    {90103166},
+    {90103196},
+    {90103226},
+    {90103256},
     {90001126},
     {90001306},
     {90002206},
@@ -2391,6 +2428,12 @@ Table_EquipUpgrade_t = {
     {90101396},
     {90002396},
     {90001936},
+    {90103466},
+    {90103436},
+    {90103406},
+    {90103376},
+    {90103346},
+    {90103316},
     {90100676},
     {90100706},
     {90100736},
@@ -2399,6 +2442,11 @@ Table_EquipUpgrade_t = {
     {90001586},
     {90001216},
     {90103886},
+    {90103136},
+    {90103106},
+    {90103076},
+    {90103046},
+    {90102776},
     {90101936},
     {90101906},
     {90101876},
@@ -2442,6 +2490,7 @@ Table_EquipUpgrade_t = {
     {90100257},
     {90100287},
     {90100527},
+    {90103287},
     {90000967},
     {90000937},
     {90001927},
@@ -2513,10 +2562,22 @@ Table_EquipUpgrade_t = {
     {90001377},
     {90001807},
     {90002157},
+    {90102807},
+    {90102837},
+    {90102867},
+    {90102897},
+    {90102927},
+    {90102957},
+    {90102987},
+    {90103017},
     {90100827},
     {90100887},
     {90100917},
     {90100857},
+    {90103167},
+    {90103197},
+    {90103227},
+    {90103257},
     {90001127},
     {90001307},
     {90002207},
@@ -2582,6 +2643,12 @@ Table_EquipUpgrade_t = {
     {90101397},
     {90002397},
     {90001937},
+    {90103467},
+    {90103437},
+    {90103407},
+    {90103377},
+    {90103347},
+    {90103317},
     {90100677},
     {90100707},
     {90100737},
@@ -2590,6 +2657,11 @@ Table_EquipUpgrade_t = {
     {90001587},
     {90001217},
     {90103887},
+    {90103137},
+    {90103107},
+    {90103077},
+    {90103047},
+    {90102777},
     {90101937},
     {90101907},
     {90101877},
@@ -2622,6 +2694,7 @@ Table_EquipUpgrade_t = {
     {90100258},
     {90100288},
     {90100528},
+    {90103288},
     {90000968},
     {90000938},
     {90100648},
@@ -2661,10 +2734,22 @@ Table_EquipUpgrade_t = {
     {90001278},
     {90100228},
     {90100318},
+    {90102808},
+    {90102838},
+    {90102868},
+    {90102898},
+    {90102928},
+    {90102958},
+    {90102988},
+    {90103018},
     {90100828},
     {90100888},
     {90100918},
     {90100858},
+    {90103168},
+    {90103198},
+    {90103228},
+    {90103258},
     {90000918},
     {90101068},
     {90103828},
@@ -2705,11 +2790,22 @@ Table_EquipUpgrade_t = {
     {90100438},
     {90103858},
     {90101398},
+    {90103468},
+    {90103438},
+    {90103408},
+    {90103378},
+    {90103348},
+    {90103318},
     {90100678},
     {90100708},
     {90100738},
     {90100768},
     {90103888},
+    {90103138},
+    {90103108},
+    {90103078},
+    {90103048},
+    {90102778},
     {90101938},
     {90101908},
     {90101878},
@@ -4519,6 +4615,14 @@ Table_EquipUpgrade_t = {
       {id = 100, num = 50000}
     },
     {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 43058, num = 1}
+    },
+    {
       {id = 42037, num = 1},
       {id = 52325, num = 3},
       {id = 52821, num = 9},
@@ -4711,6 +4815,102 @@ Table_EquipUpgrade_t = {
       {id = 100, num = 50000}
     },
     {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42580, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42581, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42582, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42583, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42584, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42585, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42586, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42587, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42592, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42593, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42594, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42595, num = 1}
+    },
+    {
       {id = 40310, num = 1},
       {id = 52325, num = 3},
       {id = 52821, num = 9},
@@ -4861,6 +5061,94 @@ Table_EquipUpgrade_t = {
       {id = 52121, num = 1000},
       {id = 100, num = 200000},
       {id = 42087, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 43064, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 43063, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 43062, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 43061, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 43060, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 43059, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42591, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42590, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42589, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42588, num = 1}
+    },
+    {
+      {id = 52121, num = 1000},
+      {id = 52426, num = 200},
+      {id = 52359, num = 20},
+      {id = 52539, num = 60},
+      {id = 100, num = 200000},
+      {id = 42579, num = 1}
     },
     {
       {id = 52359, num = 20},
@@ -11659,8 +11947,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 6},
       {id = 52162, num = 900},
       {id = 52416, num = 80},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 44004, num = 1},
@@ -11668,8 +11955,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 12},
       {id = 52158, num = 800},
       {id = 52412, num = 110},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 44005, num = 1},
@@ -11677,8 +11963,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 11},
       {id = 52107, num = 1000},
       {id = 52413, num = 80},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 44006, num = 1},
@@ -11686,8 +11971,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 10},
       {id = 52108, num = 700},
       {id = 52412, num = 90},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 52522, num = 25},
@@ -11695,8 +11979,7 @@ Table_EquipUpgrade_t = {
       {id = 52329, num = 3},
       {id = 52111, num = 700},
       {id = 52523, num = 8},
-      {id = 100, num = 25000},
-      {id = 100, num = 200000}
+      {id = 100, num = 25000}
     },
     {
       {id = 44008, num = 1},
@@ -11704,8 +11987,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 8},
       {id = 52159, num = 700},
       {id = 52413, num = 80},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 52522, num = 25},
@@ -11720,8 +12002,7 @@ Table_EquipUpgrade_t = {
       {id = 52333, num = 3},
       {id = 52416, num = 80},
       {id = 52212, num = 350},
-      {id = 100, num = 35000},
-      {id = 100, num = 200000}
+      {id = 100, num = 35000}
     },
     {
       {id = 52331, num = 7},
@@ -11737,8 +12018,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 12},
       {id = 52158, num = 800},
       {id = 52412, num = 100},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 43005, num = 1},
@@ -11753,16 +12033,14 @@ Table_EquipUpgrade_t = {
       {id = 52334, num = 3},
       {id = 52416, num = 80},
       {id = 52212, num = 350},
-      {id = 100, num = 35000},
-      {id = 100, num = 200000}
+      {id = 100, num = 35000}
     },
     {
       {id = 52524, num = 40},
       {id = 52334, num = 3},
       {id = 52416, num = 80},
       {id = 52162, num = 350},
-      {id = 100, num = 35000},
-      {id = 100, num = 200000}
+      {id = 100, num = 35000}
     },
     {
       {id = 41221, num = 1},
@@ -11800,8 +12078,7 @@ Table_EquipUpgrade_t = {
       {id = 52413, num = 75},
       {id = 52324, num = 3},
       {id = 52109, num = 820},
-      {id = 100, num = 25000},
-      {id = 100, num = 200000}
+      {id = 100, num = 25000}
     },
     {
       {id = 52530, num = 35},
@@ -11816,8 +12093,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 10},
       {id = 52109, num = 600},
       {id = 52413, num = 90},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 52310, num = 7},
@@ -11833,8 +12109,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 10},
       {id = 52158, num = 700},
       {id = 52412, num = 90},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 52518, num = 35},
@@ -11845,13 +12120,20 @@ Table_EquipUpgrade_t = {
       {id = 100, num = 25000}
     },
     {
+      {id = 52104, num = 1000},
+      {id = 52404, num = 200},
+      {id = 52313, num = 7},
+      {id = 52314, num = 8},
+      {id = 52504, num = 40},
+      {id = 100, num = 200000}
+    },
+    {
       {id = 42037, num = 1},
       {id = 52321, num = 3},
       {id = 52821, num = 8},
       {id = 52158, num = 1000},
       {id = 52411, num = 90},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 42038, num = 1},
@@ -11859,8 +12141,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 8},
       {id = 52158, num = 1000},
       {id = 52412, num = 90},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 42039, num = 1},
@@ -11883,8 +12164,7 @@ Table_EquipUpgrade_t = {
       {id = 52413, num = 75},
       {id = 52324, num = 3},
       {id = 52109, num = 800},
-      {id = 100, num = 25000},
-      {id = 100, num = 200000}
+      {id = 100, num = 25000}
     },
     {
       {id = 52518, num = 35},
@@ -11892,16 +12172,14 @@ Table_EquipUpgrade_t = {
       {id = 52324, num = 3},
       {id = 52109, num = 820},
       {id = 12521, num = 55},
-      {id = 100, num = 25000},
-      {id = 100, num = 200000}
+      {id = 100, num = 25000}
     },
     {
       {id = 52520, num = 50},
       {id = 52414, num = 95},
       {id = 52326, num = 4},
       {id = 52160, num = 950},
-      {id = 100, num = 35000},
-      {id = 100, num = 200000}
+      {id = 100, num = 35000}
     },
     {
       {id = 52522, num = 40},
@@ -11915,16 +12193,14 @@ Table_EquipUpgrade_t = {
       {id = 52414, num = 95},
       {id = 52327, num = 4},
       {id = 52110, num = 950},
-      {id = 100, num = 35000},
-      {id = 100, num = 200000}
+      {id = 100, num = 35000}
     },
     {
       {id = 52522, num = 40},
       {id = 52329, num = 4},
       {id = 52415, num = 90},
       {id = 52111, num = 1000},
-      {id = 100, num = 40000},
-      {id = 100, num = 200000}
+      {id = 100, num = 40000}
     },
     {
       {id = 61506, num = 1},
@@ -11939,16 +12215,14 @@ Table_EquipUpgrade_t = {
       {id = 52414, num = 95},
       {id = 52326, num = 4},
       {id = 52110, num = 950},
-      {id = 100, num = 30000},
-      {id = 100, num = 200000}
+      {id = 100, num = 30000}
     },
     {
       {id = 52522, num = 45},
       {id = 52415, num = 100},
       {id = 52331, num = 4},
       {id = 52161, num = 1000},
-      {id = 100, num = 20000},
-      {id = 100, num = 200000}
+      {id = 100, num = 20000}
     },
     {
       {id = 52520, num = 45},
@@ -11978,8 +12252,7 @@ Table_EquipUpgrade_t = {
       {id = 52324, num = 3},
       {id = 52109, num = 820},
       {id = 5001, num = 3},
-      {id = 100, num = 30000},
-      {id = 100, num = 200000}
+      {id = 100, num = 30000}
     },
     {
       {id = 43525, num = 1},
@@ -12091,13 +12364,6 @@ Table_EquipUpgrade_t = {
       {id = 100, num = 30000}
     },
     {
-      {id = 52520, num = 50},
-      {id = 52414, num = 95},
-      {id = 52327, num = 4},
-      {id = 52110, num = 950},
-      {id = 100, num = 35000}
-    },
-    {
       {id = 52528, num = 40},
       {id = 52418, num = 100},
       {id = 52336, num = 4},
@@ -12111,6 +12377,14 @@ Table_EquipUpgrade_t = {
       {id = 52323, num = 3},
       {id = 52158, num = 820},
       {id = 100, num = 30000}
+    },
+    {
+      {id = 52109, num = 1000},
+      {id = 52419, num = 200},
+      {id = 52331, num = 7},
+      {id = 52334, num = 8},
+      {id = 52519, num = 40},
+      {id = 100, num = 200000}
     },
     {
       {id = 52528, num = 35},
@@ -12139,8 +12413,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 8},
       {id = 52158, num = 1000},
       {id = 52412, num = 90},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 40607, num = 1},
@@ -12218,13 +12491,6 @@ Table_EquipUpgrade_t = {
       {id = 100, num = 50000}
     },
     {
-      {id = 52518, num = 35},
-      {id = 52413, num = 75},
-      {id = 52324, num = 3},
-      {id = 52109, num = 820},
-      {id = 100, num = 25000}
-    },
-    {
       {id = 52530, num = 35},
       {id = 52419, num = 90},
       {id = 52340, num = 4},
@@ -12251,8 +12517,7 @@ Table_EquipUpgrade_t = {
       {id = 52332, num = 3},
       {id = 52416, num = 80},
       {id = 52162, num = 350},
-      {id = 100, num = 35000},
-      {id = 100, num = 200000}
+      {id = 100, num = 35000}
     },
     {
       {id = 52518, num = 35},
@@ -12260,8 +12525,7 @@ Table_EquipUpgrade_t = {
       {id = 52324, num = 3},
       {id = 52109, num = 820},
       {id = 5001, num = 3},
-      {id = 100, num = 25000},
-      {id = 100, num = 200000}
+      {id = 100, num = 25000}
     },
     {
       {id = 52518, num = 30},
@@ -12321,8 +12585,7 @@ Table_EquipUpgrade_t = {
       {id = 52414, num = 95},
       {id = 52326, num = 4},
       {id = 52110, num = 950},
-      {id = 100, num = 40000},
-      {id = 100, num = 200000}
+      {id = 100, num = 40000}
     },
     {
       {id = 40715, num = 1},
@@ -12356,8 +12619,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 6},
       {id = 52112, num = 1000},
       {id = 52416, num = 90},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 44004, num = 1},
@@ -12365,8 +12627,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 11},
       {id = 52209, num = 1000},
       {id = 52413, num = 110},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 44005, num = 1},
@@ -12374,8 +12635,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 11},
       {id = 52207, num = 1100},
       {id = 52414, num = 80},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 44006, num = 1},
@@ -12383,16 +12643,14 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 10},
       {id = 52108, num = 700},
       {id = 52412, num = 90},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 52524, num = 40},
       {id = 52416, num = 50},
       {id = 52332, num = 4},
       {id = 52162, num = 750},
-      {id = 100, num = 25000},
-      {id = 100, num = 200000}
+      {id = 100, num = 25000}
     },
     {
       {id = 44008, num = 1},
@@ -12400,8 +12658,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 9},
       {id = 52209, num = 800},
       {id = 52413, num = 90},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 52524, num = 40},
@@ -12415,8 +12672,7 @@ Table_EquipUpgrade_t = {
       {id = 52334, num = 4},
       {id = 52416, num = 80},
       {id = 52162, num = 400},
-      {id = 100, num = 35000},
-      {id = 100, num = 200000}
+      {id = 100, num = 35000}
     },
     {
       {id = 52332, num = 7},
@@ -12432,8 +12688,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 11},
       {id = 52159, num = 1000},
       {id = 52413, num = 110},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 43005, num = 1},
@@ -12448,16 +12703,14 @@ Table_EquipUpgrade_t = {
       {id = 52332, num = 4},
       {id = 52416, num = 80},
       {id = 52112, num = 400},
-      {id = 100, num = 35000},
-      {id = 100, num = 200000}
+      {id = 100, num = 35000}
     },
     {
       {id = 52524, num = 40},
       {id = 52333, num = 4},
       {id = 52416, num = 80},
       {id = 52112, num = 400},
-      {id = 100, num = 35000},
-      {id = 100, num = 200000}
+      {id = 100, num = 35000}
     },
     {
       {id = 41221, num = 1},
@@ -12495,8 +12748,7 @@ Table_EquipUpgrade_t = {
       {id = 52413, num = 80},
       {id = 52325, num = 3},
       {id = 52209, num = 820},
-      {id = 100, num = 25000},
-      {id = 100, num = 200000}
+      {id = 100, num = 25000}
     },
     {
       {id = 52530, num = 40},
@@ -12511,8 +12763,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 11},
       {id = 52110, num = 650},
       {id = 52414, num = 90},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 52326, num = 7},
@@ -12528,8 +12779,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 11},
       {id = 52159, num = 900},
       {id = 52413, num = 80},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 52518, num = 30},
@@ -12540,13 +12790,20 @@ Table_EquipUpgrade_t = {
       {id = 100, num = 25000}
     },
     {
+      {id = 52106, num = 1000},
+      {id = 52405, num = 200},
+      {id = 52315, num = 7},
+      {id = 52316, num = 8},
+      {id = 52506, num = 40},
+      {id = 100, num = 200000}
+    },
+    {
       {id = 42037, num = 1},
       {id = 52320, num = 3},
       {id = 52821, num = 8},
       {id = 52108, num = 500},
       {id = 52412, num = 80},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 42038, num = 1},
@@ -12554,8 +12811,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 8},
       {id = 52108, num = 500},
       {id = 52412, num = 80},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 42039, num = 1},
@@ -12578,8 +12834,7 @@ Table_EquipUpgrade_t = {
       {id = 52413, num = 80},
       {id = 52325, num = 3},
       {id = 52209, num = 800},
-      {id = 100, num = 25000},
-      {id = 100, num = 200000}
+      {id = 100, num = 25000}
     },
     {
       {id = 52518, num = 40},
@@ -12587,16 +12842,14 @@ Table_EquipUpgrade_t = {
       {id = 52325, num = 3},
       {id = 52209, num = 820},
       {id = 12521, num = 65},
-      {id = 100, num = 25000},
-      {id = 100, num = 200000}
+      {id = 100, num = 25000}
     },
     {
       {id = 52520, num = 55},
       {id = 52414, num = 100},
       {id = 52328, num = 4},
       {id = 52210, num = 1000},
-      {id = 100, num = 35000},
-      {id = 100, num = 200000}
+      {id = 100, num = 35000}
     },
     {
       {id = 52522, num = 45},
@@ -12610,16 +12863,14 @@ Table_EquipUpgrade_t = {
       {id = 52414, num = 100},
       {id = 52328, num = 4},
       {id = 52160, num = 1000},
-      {id = 100, num = 35000},
-      {id = 100, num = 200000}
+      {id = 100, num = 35000}
     },
     {
       {id = 52522, num = 40},
       {id = 52330, num = 5},
       {id = 52415, num = 90},
       {id = 52161, num = 1000},
-      {id = 100, num = 40000},
-      {id = 100, num = 200000}
+      {id = 100, num = 40000}
     },
     {
       {id = 61506, num = 1},
@@ -12634,16 +12885,14 @@ Table_EquipUpgrade_t = {
       {id = 52414, num = 100},
       {id = 52327, num = 4},
       {id = 52160, num = 1000},
-      {id = 100, num = 30000},
-      {id = 100, num = 200000}
+      {id = 100, num = 30000}
     },
     {
       {id = 52522, num = 50},
       {id = 52415, num = 120},
       {id = 52329, num = 5},
       {id = 52211, num = 1050},
-      {id = 100, num = 20000},
-      {id = 100, num = 200000}
+      {id = 100, num = 20000}
     },
     {
       {id = 52324, num = 7},
@@ -12673,8 +12922,7 @@ Table_EquipUpgrade_t = {
       {id = 52325, num = 3},
       {id = 52209, num = 820},
       {id = 5001, num = 4},
-      {id = 100, num = 30000},
-      {id = 100, num = 200000}
+      {id = 100, num = 30000}
     },
     {
       {id = 43525, num = 1},
@@ -12786,13 +13034,6 @@ Table_EquipUpgrade_t = {
       {id = 100, num = 30000}
     },
     {
-      {id = 52520, num = 55},
-      {id = 52414, num = 100},
-      {id = 52328, num = 4},
-      {id = 52160, num = 1000},
-      {id = 100, num = 35000}
-    },
-    {
       {id = 52528, num = 45},
       {id = 52418, num = 110},
       {id = 52338, num = 5},
@@ -12806,6 +13047,14 @@ Table_EquipUpgrade_t = {
       {id = 52324, num = 4},
       {id = 52109, num = 820},
       {id = 100, num = 30000}
+    },
+    {
+      {id = 52160, num = 1000},
+      {id = 52416, num = 200},
+      {id = 52332, num = 7},
+      {id = 52329, num = 8},
+      {id = 52522, num = 40},
+      {id = 100, num = 200000}
     },
     {
       {id = 52528, num = 40},
@@ -12841,8 +13090,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 8},
       {id = 52108, num = 500},
       {id = 52412, num = 80},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 40607, num = 1},
@@ -12953,8 +13201,7 @@ Table_EquipUpgrade_t = {
       {id = 52334, num = 4},
       {id = 52416, num = 80},
       {id = 52212, num = 400},
-      {id = 100, num = 35000},
-      {id = 100, num = 200000}
+      {id = 100, num = 35000}
     },
     {
       {id = 52518, num = 40},
@@ -12962,8 +13209,7 @@ Table_EquipUpgrade_t = {
       {id = 52325, num = 3},
       {id = 52209, num = 820},
       {id = 5001, num = 4},
-      {id = 100, num = 25000},
-      {id = 100, num = 200000}
+      {id = 100, num = 25000}
     },
     {
       {id = 52518, num = 30},
@@ -13030,8 +13276,7 @@ Table_EquipUpgrade_t = {
       {id = 52414, num = 100},
       {id = 52327, num = 4},
       {id = 52160, num = 1000},
-      {id = 100, num = 40000},
-      {id = 100, num = 200000}
+      {id = 100, num = 40000}
     },
     {
       {id = 40715, num = 1},
@@ -13060,16 +13305,12 @@ Table_EquipUpgrade_t = {
   },
   Material_9 = {
     {
-      {id = 100, num = 200000}
-    },
-    {
       {id = 44004, num = 1},
       {id = 52326, num = 4},
       {id = 52821, num = 12},
       {id = 52110, num = 1100},
       {id = 52414, num = 120},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 44005, num = 1},
@@ -13077,8 +13318,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 12},
       {id = 52107, num = 1300},
       {id = 52414, num = 90},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 44006, num = 1},
@@ -13086,16 +13326,14 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 10},
       {id = 52108, num = 700},
       {id = 52412, num = 90},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 52524, num = 40},
       {id = 52416, num = 55},
       {id = 52333, num = 4},
       {id = 52112, num = 800},
-      {id = 100, num = 25000},
-      {id = 100, num = 200000}
+      {id = 100, num = 25000}
     },
     {
       {id = 52524, num = 40},
@@ -13117,8 +13355,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 12},
       {id = 52160, num = 1100},
       {id = 52414, num = 110},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 43005, num = 1},
@@ -13150,8 +13387,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 12},
       {id = 52161, num = 700},
       {id = 52415, num = 100},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 52330, num = 20},
@@ -13166,7 +13402,13 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 11},
       {id = 52160, num = 1100},
       {id = 52414, num = 80},
-      {id = 100, num = 50000},
+      {id = 100, num = 50000}
+    },
+    {
+      {id = 52102, num = 1000},
+      {id = 52403, num = 200},
+      {id = 52317, num = 20},
+      {id = 52508, num = 60},
       {id = 100, num = 200000}
     },
     {
@@ -13175,8 +13417,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 8},
       {id = 52109, num = 550},
       {id = 52413, num = 80},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 42038, num = 1},
@@ -13184,8 +13425,7 @@ Table_EquipUpgrade_t = {
       {id = 52821, num = 8},
       {id = 52109, num = 550},
       {id = 52413, num = 80},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 52331, num = 20},
@@ -13227,13 +13467,19 @@ Table_EquipUpgrade_t = {
       {id = 100, num = 50000}
     },
     {
+      {id = 52110, num = 1000},
+      {id = 52418, num = 200},
+      {id = 52336, num = 20},
+      {id = 52528, num = 60},
+      {id = 100, num = 200000}
+    },
+    {
       {id = 40310, num = 1},
       {id = 52324, num = 3},
       {id = 52821, num = 8},
       {id = 52109, num = 550},
       {id = 52413, num = 80},
-      {id = 100, num = 50000},
-      {id = 100, num = 200000}
+      {id = 100, num = 50000}
     },
     {
       {id = 40610, num = 1},
@@ -13379,8 +13625,8 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[58],
     Material_6 = Table_EquipUpgrade_t.Material_6[44],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[53],
-    Material_7 = Table_EquipUpgrade_t.Material_7[37],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[47],
+    Material_7 = Table_EquipUpgrade_t.Material_7[38],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[48],
     NpcId = 6953,
     ShortcutID = 719
   },
@@ -13448,11 +13694,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[68],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[62],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[63],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[61],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[35]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[62],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[36]
   },
   [40057] = {
     id = 40057,
@@ -13469,11 +13715,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[70],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[64],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[65],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[63],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[37]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[64],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[38]
   },
   [40058] = {
     id = 40058,
@@ -13490,11 +13736,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[71],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[65],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[66],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[64],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[38]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[65],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[39]
   },
   [40059] = {
     id = 40059,
@@ -13511,11 +13757,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[72],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[66],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[67],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[65],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[39]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[66],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[40]
   },
   [40066] = {
     id = 40066,
@@ -13532,11 +13778,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[78],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[71],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[72],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[70],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[43]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[71],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[44]
   },
   [40087] = {
     id = 40087,
@@ -13597,14 +13843,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[152],
     Material_6 = Table_EquipUpgrade_t.Material_6[72],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[143],
-    Material_7 = Table_EquipUpgrade_t.Material_7[61],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[110],
-    Material_8 = Table_EquipUpgrade_t.Material_8[62],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[109],
-    Material_9 = Table_EquipUpgrade_t.Material_9[22],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[62],
-    Material_10 = Table_EquipUpgrade_t.Material_10[35],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[35],
+    Material_7 = Table_EquipUpgrade_t.Material_7[62],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[123],
+    Material_8 = Table_EquipUpgrade_t.Material_8[63],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[122],
+    Material_9 = Table_EquipUpgrade_t.Material_9[23],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[75],
+    Material_10 = Table_EquipUpgrade_t.Material_10[48],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[48],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -13677,11 +13923,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[85],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[77],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[78],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[76],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[49]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[77],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[50]
   },
   [40360] = {
     id = 40360,
@@ -13698,11 +13944,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[86],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[78],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[79],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[77],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[50]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[78],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[51]
   },
   [40361] = {
     id = 40361,
@@ -13719,11 +13965,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[87],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[79],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[80],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[78],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[51]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[79],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[52]
   },
   [40401] = {
     id = 40401,
@@ -13771,10 +14017,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[155],
     Material_6 = Table_EquipUpgrade_t.Material_6[73],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[146],
-    Material_7 = Table_EquipUpgrade_t.Material_7[62],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[113],
-    Material_8 = Table_EquipUpgrade_t.Material_8[63],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[112],
+    Material_7 = Table_EquipUpgrade_t.Material_7[63],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[126],
+    Material_8 = Table_EquipUpgrade_t.Material_8[64],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[125],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -13792,14 +14038,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[157],
     Material_6 = Table_EquipUpgrade_t.Material_6[74],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[148],
-    Material_7 = Table_EquipUpgrade_t.Material_7[63],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[114],
-    Material_8 = Table_EquipUpgrade_t.Material_8[64],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[113],
-    Material_9 = Table_EquipUpgrade_t.Material_9[23],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[65],
-    Material_10 = Table_EquipUpgrade_t.Material_10[36],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[36],
+    Material_7 = Table_EquipUpgrade_t.Material_7[64],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[127],
+    Material_8 = Table_EquipUpgrade_t.Material_8[65],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[126],
+    Material_9 = Table_EquipUpgrade_t.Material_9[24],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[78],
+    Material_10 = Table_EquipUpgrade_t.Material_10[49],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[49],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -13845,10 +14091,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[158],
     Material_6 = Table_EquipUpgrade_t.Material_6[75],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[149],
-    Material_7 = Table_EquipUpgrade_t.Material_7[64],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[115],
-    Material_8 = Table_EquipUpgrade_t.Material_8[65],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[114],
+    Material_7 = Table_EquipUpgrade_t.Material_7[65],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[128],
+    Material_8 = Table_EquipUpgrade_t.Material_8[66],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[127],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -13915,11 +14161,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[162],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[127],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[140],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[126],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[74]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[139],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[87]
   },
   [40661] = {
     id = 40661,
@@ -13936,11 +14182,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[163],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[128],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[141],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[127],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[75]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[140],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[88]
   },
   [40662] = {
     id = 40662,
@@ -13957,11 +14203,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[164],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[129],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[142],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[128],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[76]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[141],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[89]
   },
   [40663] = {
     id = 40663,
@@ -13978,11 +14224,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[165],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[130],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[143],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[129],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[77]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[142],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[90]
   },
   [40664] = {
     id = 40664,
@@ -13999,9 +14245,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[67],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[166],
     Material_7 = Table_EquipUpgrade_t.Material_7[57],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[131],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[144],
     Material_8 = Table_EquipUpgrade_t.Material_8[57],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[130],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[143],
     NpcId = 4535,
     ShortcutID = 715
   },
@@ -14020,11 +14266,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[168],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[132],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[145],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[131],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[78]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[144],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[91]
   },
   [40676] = {
     id = 40676,
@@ -14041,11 +14287,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[172],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[136],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[149],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[135],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[80]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[148],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[93]
   },
   [40698] = {
     id = 40698,
@@ -14093,9 +14339,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[102],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[243],
     Material_7 = Table_EquipUpgrade_t.Material_7[86],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[188],
-    Material_8 = Table_EquipUpgrade_t.Material_8[88],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[187],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[212],
+    Material_8 = Table_EquipUpgrade_t.Material_8[89],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[211],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -14113,10 +14359,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[183],
     Material_6 = Table_EquipUpgrade_t.Material_6[80],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[171],
-    Material_7 = Table_EquipUpgrade_t.Material_7[68],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[135],
-    Material_8 = Table_EquipUpgrade_t.Material_8[70],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[134],
+    Material_7 = Table_EquipUpgrade_t.Material_7[69],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[148],
+    Material_8 = Table_EquipUpgrade_t.Material_8[71],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[147],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -14240,9 +14486,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[103],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[244],
     Material_7 = Table_EquipUpgrade_t.Material_7[87],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[189],
-    Material_8 = Table_EquipUpgrade_t.Material_8[89],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[188],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[213],
+    Material_8 = Table_EquipUpgrade_t.Material_8[90],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[212],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -14276,11 +14522,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[202],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[164],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[177],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[163],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[99]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[176],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[112]
   },
   [40767] = {
     id = 40767,
@@ -14297,11 +14543,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[200],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[163],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[176],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[162],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[98]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[175],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[111]
   },
   [40797] = {
     id = 40797,
@@ -14336,11 +14582,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[242],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[187],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[211],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[186],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[113]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[210],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[137]
   },
   [40804] = {
     id = 40804,
@@ -14357,11 +14603,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[203],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[165],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[178],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[164],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[100]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[177],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[113]
   },
   [40805] = {
     id = 40805,
@@ -14378,11 +14624,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[225],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[178],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[197],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[177],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[106]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[196],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[125]
   },
   [40904] = {
     id = 40904,
@@ -14413,11 +14659,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[98],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[234],
     Material_7 = Table_EquipUpgrade_t.Material_7[82],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[182],
-    Material_8 = Table_EquipUpgrade_t.Material_8[84],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[181],
-    Material_9 = Table_EquipUpgrade_t.Material_9[26],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[110],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[206],
+    Material_8 = Table_EquipUpgrade_t.Material_8[85],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[205],
+    Material_9 = Table_EquipUpgrade_t.Material_9[27],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[134],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -14453,11 +14699,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[99],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[237],
     Material_7 = Table_EquipUpgrade_t.Material_7[83],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[184],
-    Material_8 = Table_EquipUpgrade_t.Material_8[85],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[183],
-    Material_9 = Table_EquipUpgrade_t.Material_9[27],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[112],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[208],
+    Material_8 = Table_EquipUpgrade_t.Material_8[86],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[207],
+    Material_9 = Table_EquipUpgrade_t.Material_9[28],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[136],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -14492,7 +14738,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[9],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[9],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[6]
   },
   [40945] = {
@@ -14513,7 +14759,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[10],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[10],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[7]
   },
   [40972] = {
@@ -14603,11 +14849,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[98],
     Material_6 = Table_EquipUpgrade_t.Material_6[48],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[90],
-    Material_7 = Table_EquipUpgrade_t.Material_7[40],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[82],
-    Material_8 = Table_EquipUpgrade_t.Material_8[40],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[81],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[41],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[83],
+    Material_8 = Table_EquipUpgrade_t.Material_8[41],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[82],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -14629,7 +14874,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[15],
     Material_8 = Table_EquipUpgrade_t.Material_8[14],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[15],
-    Material_9 = Table_EquipUpgrade_t.Material_9[10],
+    Material_9 = Table_EquipUpgrade_t.Material_9[9],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[10],
     Material_10 = Table_EquipUpgrade_t.Material_10[5],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[5],
@@ -14740,11 +14985,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[108],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[97],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[98],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[96],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[56]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[97],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[57]
   },
   [41255] = {
     id = 41255,
@@ -14764,7 +15009,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[27],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[27],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[16]
   },
   [41256] = {
@@ -14785,7 +15030,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[28],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[28],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[17]
   },
   [41257] = {
@@ -14803,11 +15048,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[109],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[98],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[99],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[97],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[57]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[98],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[58]
   },
   [41258] = {
     id = 41258,
@@ -14827,7 +15072,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[29],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[29],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[18]
   },
   [41287] = {
@@ -14876,10 +15121,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[116],
     Material_6 = Table_EquipUpgrade_t.Material_6[65],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[107],
-    Material_7 = Table_EquipUpgrade_t.Material_7[54],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[96],
-    Material_8 = Table_EquipUpgrade_t.Material_8[54],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[95],
+    Material_7 = Table_EquipUpgrade_t.Material_7[55],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[97],
+    Material_8 = Table_EquipUpgrade_t.Material_8[55],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[96],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -14897,12 +15142,12 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[187],
     Material_6 = Table_EquipUpgrade_t.Material_6[83],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[175],
-    Material_7 = Table_EquipUpgrade_t.Material_7[71],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[139],
-    Material_8 = Table_EquipUpgrade_t.Material_8[73],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[138],
-    Material_9 = Table_EquipUpgrade_t.Material_9[25],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[81],
+    Material_7 = Table_EquipUpgrade_t.Material_7[72],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[152],
+    Material_8 = Table_EquipUpgrade_t.Material_8[74],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[151],
+    Material_9 = Table_EquipUpgrade_t.Material_9[26],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[94],
     NpcId = 6953,
     ShortcutID = 719
   },
@@ -14921,9 +15166,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[86],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[194],
     Material_7 = Table_EquipUpgrade_t.Material_7[74],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[158],
-    Material_8 = Table_EquipUpgrade_t.Material_8[75],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[157],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[171],
+    Material_8 = Table_EquipUpgrade_t.Material_8[76],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[170],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -15039,11 +15284,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[131],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[102],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[111],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[101],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[58]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[110],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[67]
   },
   [41566] = {
     id = 41566,
@@ -15060,11 +15305,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[132],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[103],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[112],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[102],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[59]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[111],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[68]
   },
   [41567] = {
     id = 41567,
@@ -15081,11 +15326,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[133],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[104],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[113],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[103],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[60]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[112],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[69]
   },
   [41568] = {
     id = 41568,
@@ -15102,11 +15347,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[134],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[105],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[114],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[104],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[61]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[113],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[70]
   },
   [41597] = {
     id = 41597,
@@ -15141,11 +15386,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[145],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[112],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[125],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[111],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[64]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[124],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[77]
   },
   [41805] = {
     id = 41805,
@@ -15260,13 +15505,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[104],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[245],
     Material_7 = Table_EquipUpgrade_t.Material_7[88],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[190],
-    Material_8 = Table_EquipUpgrade_t.Material_8[90],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[189],
-    Material_9 = Table_EquipUpgrade_t.Material_9[28],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[114],
-    Material_10 = Table_EquipUpgrade_t.Material_10[58],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[214],
+    Material_8 = Table_EquipUpgrade_t.Material_8[91],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[213],
+    Material_9 = Table_EquipUpgrade_t.Material_9[29],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[138],
+    Material_10 = Table_EquipUpgrade_t.Material_10[82],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[82],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -15285,10 +15530,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[91],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[204],
     Material_7 = Table_EquipUpgrade_t.Material_7[77],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[166],
-    Material_8 = Table_EquipUpgrade_t.Material_8[78],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[165],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[179],
+    Material_8 = Table_EquipUpgrade_t.Material_8[79],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[178],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -15307,9 +15551,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[92],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[205],
     Material_7 = Table_EquipUpgrade_t.Material_7[78],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[167],
-    Material_8 = Table_EquipUpgrade_t.Material_8[79],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[166],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[180],
+    Material_8 = Table_EquipUpgrade_t.Material_8[80],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[179],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -15368,9 +15612,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[96],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[222],
     Material_7 = Table_EquipUpgrade_t.Material_7[81],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[176],
-    Material_8 = Table_EquipUpgrade_t.Material_8[83],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[175],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[195],
+    Material_8 = Table_EquipUpgrade_t.Material_8[84],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[194],
     NpcId = 6953,
     ShortcutID = 719
   },
@@ -15389,11 +15633,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[217],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[171],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[190],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[170],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[102]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[189],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[121]
   },
   [41868] = {
     id = 41868,
@@ -15410,11 +15654,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[218],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[172],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[191],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[171],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[103]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[190],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[122]
   },
   [41869] = {
     id = 41869,
@@ -15431,11 +15675,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[219],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[173],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[192],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[172],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[104]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[191],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[123]
   },
   [41870] = {
     id = 41870,
@@ -15452,11 +15696,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[220],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[174],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[193],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[173],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[105]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[192],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[124]
   },
   [41871] = {
     id = 41871,
@@ -15473,11 +15717,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[180],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[144],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[157],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[143],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[86]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[156],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[99]
   },
   [41899] = {
     id = 41899,
@@ -15572,7 +15816,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[19],
     Material_8 = Table_EquipUpgrade_t.Material_8[18],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[19],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -15594,7 +15837,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[21],
     Material_8 = Table_EquipUpgrade_t.Material_8[20],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[21],
-    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    Material_9 = Table_EquipUpgrade_t.Material_9[11],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[12],
     Material_10 = Table_EquipUpgrade_t.Material_10[7],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[7],
@@ -15734,7 +15977,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[24],
     Material_8 = Table_EquipUpgrade_t.Material_8[22],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[24],
-    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    Material_9 = Table_EquipUpgrade_t.Material_9[13],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[15],
     Material_10 = Table_EquipUpgrade_t.Material_10[10],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[10],
@@ -15759,7 +16002,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[25],
     Material_8 = Table_EquipUpgrade_t.Material_8[18],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[25],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -15829,14 +16071,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[39],
     Material_6 = Table_EquipUpgrade_t.Material_6[28],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[34],
-    Material_7 = Table_EquipUpgrade_t.Material_7[24],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[30],
-    Material_8 = Table_EquipUpgrade_t.Material_8[24],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[30],
+    Material_7 = Table_EquipUpgrade_t.Material_7[25],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[31],
+    Material_8 = Table_EquipUpgrade_t.Material_8[25],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[31],
     Material_9 = Table_EquipUpgrade_t.Material_9[15],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[19],
-    Material_10 = Table_EquipUpgrade_t.Material_10[11],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[11],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[20],
+    Material_10 = Table_EquipUpgrade_t.Material_10[12],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[12],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -15854,14 +16096,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[40],
     Material_6 = Table_EquipUpgrade_t.Material_6[29],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[35],
-    Material_7 = Table_EquipUpgrade_t.Material_7[25],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[31],
-    Material_8 = Table_EquipUpgrade_t.Material_8[25],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[31],
+    Material_7 = Table_EquipUpgrade_t.Material_7[26],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[32],
+    Material_8 = Table_EquipUpgrade_t.Material_8[26],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[32],
     Material_9 = Table_EquipUpgrade_t.Material_9[16],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[20],
-    Material_10 = Table_EquipUpgrade_t.Material_10[12],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[21],
+    Material_10 = Table_EquipUpgrade_t.Material_10[13],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[13],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -15879,10 +16121,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[41],
     Material_6 = Table_EquipUpgrade_t.Material_6[30],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[36],
-    Material_7 = Table_EquipUpgrade_t.Material_7[26],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[32],
-    Material_8 = Table_EquipUpgrade_t.Material_8[26],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[32],
+    Material_7 = Table_EquipUpgrade_t.Material_7[27],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[33],
+    Material_8 = Table_EquipUpgrade_t.Material_8[27],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[33],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -15934,10 +16176,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[44],
     Material_6 = Table_EquipUpgrade_t.Material_6[33],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[39],
-    Material_7 = Table_EquipUpgrade_t.Material_7[27],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[33],
-    Material_8 = Table_EquipUpgrade_t.Material_8[27],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[33],
+    Material_7 = Table_EquipUpgrade_t.Material_7[28],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[34],
+    Material_8 = Table_EquipUpgrade_t.Material_8[28],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[34],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -15955,11 +16197,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[45],
     Material_6 = Table_EquipUpgrade_t.Material_6[34],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[40],
-    Material_7 = Table_EquipUpgrade_t.Material_7[28],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[34],
-    Material_8 = Table_EquipUpgrade_t.Material_8[28],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[34],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[29],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[35],
+    Material_8 = Table_EquipUpgrade_t.Material_8[29],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[35],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -15978,10 +16219,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[35],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[41],
     Material_7 = Table_EquipUpgrade_t.Material_7[18],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[35],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[36],
     Material_8 = Table_EquipUpgrade_t.Material_8[18],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[35],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[36],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -15999,11 +16239,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[47],
     Material_6 = Table_EquipUpgrade_t.Material_6[36],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[42],
-    Material_7 = Table_EquipUpgrade_t.Material_7[29],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[36],
-    Material_8 = Table_EquipUpgrade_t.Material_8[29],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[36],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[30],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[37],
+    Material_8 = Table_EquipUpgrade_t.Material_8[30],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[37],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -16022,10 +16261,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[19],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[43],
     Material_7 = Table_EquipUpgrade_t.Material_7[18],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[37],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[38],
     Material_8 = Table_EquipUpgrade_t.Material_8[18],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[37],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[38],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -16043,11 +16281,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[49],
     Material_6 = Table_EquipUpgrade_t.Material_6[37],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[44],
-    Material_7 = Table_EquipUpgrade_t.Material_7[30],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[38],
-    Material_8 = Table_EquipUpgrade_t.Material_8[30],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[38],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[31],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[39],
+    Material_8 = Table_EquipUpgrade_t.Material_8[31],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[39],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -16065,10 +16302,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[50],
     Material_6 = Table_EquipUpgrade_t.Material_6[38],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[45],
-    Material_7 = Table_EquipUpgrade_t.Material_7[31],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[39],
-    Material_8 = Table_EquipUpgrade_t.Material_8[31],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[39],
+    Material_7 = Table_EquipUpgrade_t.Material_7[32],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[40],
+    Material_8 = Table_EquipUpgrade_t.Material_8[32],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[40],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -16087,10 +16324,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[101],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[241],
     Material_7 = Table_EquipUpgrade_t.Material_7[85],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[186],
-    Material_8 = Table_EquipUpgrade_t.Material_8[87],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[185],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[210],
+    Material_8 = Table_EquipUpgrade_t.Material_8[88],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[209],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -16137,10 +16373,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[19],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[46],
     Material_7 = Table_EquipUpgrade_t.Material_7[18],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[40],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[41],
     Material_8 = Table_EquipUpgrade_t.Material_8[18],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[40],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[41],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -16158,11 +16393,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[52],
     Material_6 = Table_EquipUpgrade_t.Material_6[39],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[47],
-    Material_7 = Table_EquipUpgrade_t.Material_7[32],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[41],
-    Material_8 = Table_EquipUpgrade_t.Material_8[32],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[41],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[33],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[42],
+    Material_8 = Table_EquipUpgrade_t.Material_8[33],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[42],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -16181,9 +16415,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[100],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[239],
     Material_7 = Table_EquipUpgrade_t.Material_7[84],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[185],
-    Material_8 = Table_EquipUpgrade_t.Material_8[86],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[184],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[209],
+    Material_8 = Table_EquipUpgrade_t.Material_8[87],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[208],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -16201,11 +16435,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[53],
     Material_6 = Table_EquipUpgrade_t.Material_6[37],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[48],
-    Material_7 = Table_EquipUpgrade_t.Material_7[32],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[42],
-    Material_8 = Table_EquipUpgrade_t.Material_8[32],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[42],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[33],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[43],
+    Material_8 = Table_EquipUpgrade_t.Material_8[33],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[43],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -16237,11 +16470,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[54],
     Material_6 = Table_EquipUpgrade_t.Material_6[40],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[49],
-    Material_7 = Table_EquipUpgrade_t.Material_7[33],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[43],
-    Material_8 = Table_EquipUpgrade_t.Material_8[33],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[43],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[34],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[44],
+    Material_8 = Table_EquipUpgrade_t.Material_8[34],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[44],
     NpcId = 4967,
     ShortcutID = 724
   },
@@ -16259,11 +16491,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[56],
     Material_6 = Table_EquipUpgrade_t.Material_6[42],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[51],
-    Material_7 = Table_EquipUpgrade_t.Material_7[35],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[45],
-    Material_8 = Table_EquipUpgrade_t.Material_8[35],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[45],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[36],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[46],
+    Material_8 = Table_EquipUpgrade_t.Material_8[36],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[46],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -16295,11 +16526,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[57],
     Material_6 = Table_EquipUpgrade_t.Material_6[43],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[52],
-    Material_7 = Table_EquipUpgrade_t.Material_7[36],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[46],
-    Material_8 = Table_EquipUpgrade_t.Material_8[36],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[46],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[37],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[47],
+    Material_8 = Table_EquipUpgrade_t.Material_8[37],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[47],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -16382,14 +16612,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[60],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[55],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[49],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[48],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[50],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[49],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[22],
-    Material_10 = Table_EquipUpgrade_t.Material_10[13],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[13]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[23],
+    Material_10 = Table_EquipUpgrade_t.Material_10[14],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[14]
   },
   [42087] = {
     id = 42087,
@@ -16405,14 +16635,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[220],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[206],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[168],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[167],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[181],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[180],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[101],
-    Material_10 = Table_EquipUpgrade_t.Material_10[53],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[53]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[114],
+    Material_10 = Table_EquipUpgrade_t.Material_10[66],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[66]
   },
   [42088] = {
     id = 42088,
@@ -16428,14 +16658,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[61],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[56],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[50],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[49],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[51],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[50],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[23],
-    Material_10 = Table_EquipUpgrade_t.Material_10[14],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[14]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[24],
+    Material_10 = Table_EquipUpgrade_t.Material_10[15],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[15]
   },
   [42089] = {
     id = 42089,
@@ -16451,14 +16681,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[62],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[57],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[51],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[50],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[52],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[51],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[24],
-    Material_10 = Table_EquipUpgrade_t.Material_10[15],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[15]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[25],
+    Material_10 = Table_EquipUpgrade_t.Material_10[16],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[16]
   },
   [42090] = {
     id = 42090,
@@ -16474,14 +16704,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[63],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[58],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[52],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[51],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[53],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[52],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[25],
-    Material_10 = Table_EquipUpgrade_t.Material_10[16],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[16]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[26],
+    Material_10 = Table_EquipUpgrade_t.Material_10[17],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[17]
   },
   [42091] = {
     id = 42091,
@@ -16497,14 +16727,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[64],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[59],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[53],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[52],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[54],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[53],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[26],
-    Material_10 = Table_EquipUpgrade_t.Material_10[17],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[17]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[27],
+    Material_10 = Table_EquipUpgrade_t.Material_10[18],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[18]
   },
   [42092] = {
     id = 42092,
@@ -16520,14 +16750,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[65],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[60],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[54],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[53],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[55],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[54],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[27],
-    Material_10 = Table_EquipUpgrade_t.Material_10[18],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[18]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[28],
+    Material_10 = Table_EquipUpgrade_t.Material_10[19],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[19]
   },
   [42093] = {
     id = 42093,
@@ -16543,14 +16773,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[163],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[154],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[120],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[119],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[133],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[132],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[70],
-    Material_10 = Table_EquipUpgrade_t.Material_10[37],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[37]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[83],
+    Material_10 = Table_EquipUpgrade_t.Material_10[50],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[50]
   },
   [42094] = {
     id = 42094,
@@ -16566,14 +16796,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[66],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[61],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[55],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[54],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[56],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[55],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[28],
-    Material_10 = Table_EquipUpgrade_t.Material_10[19],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[19]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[29],
+    Material_10 = Table_EquipUpgrade_t.Material_10[20],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[20]
   },
   [42095] = {
     id = 42095,
@@ -16589,14 +16819,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[67],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[62],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[56],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[55],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[57],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[56],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[29],
-    Material_10 = Table_EquipUpgrade_t.Material_10[20],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[20]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[30],
+    Material_10 = Table_EquipUpgrade_t.Material_10[21],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[21]
   },
   [42096] = {
     id = 42096,
@@ -16612,14 +16842,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[68],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[63],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[57],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[56],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[58],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[57],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[30],
-    Material_10 = Table_EquipUpgrade_t.Material_10[21],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[21]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[31],
+    Material_10 = Table_EquipUpgrade_t.Material_10[22],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[22]
   },
   [42097] = {
     id = 42097,
@@ -16635,14 +16865,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[69],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[64],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[58],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[57],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[59],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[58],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[31],
-    Material_10 = Table_EquipUpgrade_t.Material_10[22],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[22]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[32],
+    Material_10 = Table_EquipUpgrade_t.Material_10[23],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[23]
   },
   [42098] = {
     id = 42098,
@@ -16658,14 +16888,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[70],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[65],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[59],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[58],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[60],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[59],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[32],
-    Material_10 = Table_EquipUpgrade_t.Material_10[23],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[23]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[33],
+    Material_10 = Table_EquipUpgrade_t.Material_10[24],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[24]
   },
   [42099] = {
     id = 42099,
@@ -16681,14 +16911,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[71],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[66],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[60],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[59],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[61],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[60],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[33],
-    Material_10 = Table_EquipUpgrade_t.Material_10[24],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[24]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[34],
+    Material_10 = Table_EquipUpgrade_t.Material_10[25],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[25]
   },
   [42100] = {
     id = 42100,
@@ -16704,14 +16934,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[72],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[67],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[61],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[60],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[62],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[61],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[34],
-    Material_10 = Table_EquipUpgrade_t.Material_10[25],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[25]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[35],
+    Material_10 = Table_EquipUpgrade_t.Material_10[26],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[26]
   },
   [42101] = {
     id = 42101,
@@ -16727,14 +16957,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[256],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[235],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[183],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[182],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[207],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[206],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[111],
-    Material_10 = Table_EquipUpgrade_t.Material_10[57],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[57]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[135],
+    Material_10 = Table_EquipUpgrade_t.Material_10[81],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[81]
   },
   [42102] = {
     id = 42102,
@@ -16750,14 +16980,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[74],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[69],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[63],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[62],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[64],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[63],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[36],
-    Material_10 = Table_EquipUpgrade_t.Material_10[26],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[26]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[37],
+    Material_10 = Table_EquipUpgrade_t.Material_10[27],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[27]
   },
   [42103] = {
     id = 42103,
@@ -16773,14 +17003,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[254],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[233],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[181],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[180],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[205],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[204],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[109],
-    Material_10 = Table_EquipUpgrade_t.Material_10[56],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[56]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[133],
+    Material_10 = Table_EquipUpgrade_t.Material_10[80],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[80]
   },
   [42104] = {
     id = 42104,
@@ -16796,14 +17026,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[253],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[232],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[180],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[179],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[204],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[203],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[108],
-    Material_10 = Table_EquipUpgrade_t.Material_10[55],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[55]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[132],
+    Material_10 = Table_EquipUpgrade_t.Material_10[79],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[79]
   },
   [42105] = {
     id = 42105,
@@ -16819,14 +17049,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[252],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[231],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[179],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[178],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[203],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[202],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[107],
-    Material_10 = Table_EquipUpgrade_t.Material_10[54],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[54]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[131],
+    Material_10 = Table_EquipUpgrade_t.Material_10[78],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[78]
   },
   [42106] = {
     id = 42106,
@@ -16842,14 +17072,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[78],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[73],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[67],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[66],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[68],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[67],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[40],
-    Material_10 = Table_EquipUpgrade_t.Material_10[27],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[27]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[41],
+    Material_10 = Table_EquipUpgrade_t.Material_10[28],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[28]
   },
   [42107] = {
     id = 42107,
@@ -16865,14 +17095,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[79],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[74],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[68],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[67],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[69],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[68],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[41],
-    Material_10 = Table_EquipUpgrade_t.Material_10[28],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[28]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[42],
+    Material_10 = Table_EquipUpgrade_t.Material_10[29],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[29]
   },
   [42126] = {
     id = 42126,
@@ -16888,14 +17118,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[87],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[82],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[75],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[74],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[76],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[75],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[47],
-    Material_10 = Table_EquipUpgrade_t.Material_10[31],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[31]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[48],
+    Material_10 = Table_EquipUpgrade_t.Material_10[32],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[32]
   },
   [42506] = {
     id = 42506,
@@ -16911,10 +17141,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[101],
     Material_6 = Table_EquipUpgrade_t.Material_6[50],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[92],
-    Material_7 = Table_EquipUpgrade_t.Material_7[42],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[84],
-    Material_8 = Table_EquipUpgrade_t.Material_8[42],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[83],
+    Material_7 = Table_EquipUpgrade_t.Material_7[43],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[85],
+    Material_8 = Table_EquipUpgrade_t.Material_8[43],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[84],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -16932,10 +17162,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[102],
     Material_6 = Table_EquipUpgrade_t.Material_6[51],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[93],
-    Material_7 = Table_EquipUpgrade_t.Material_7[43],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[85],
-    Material_8 = Table_EquipUpgrade_t.Material_8[43],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[84],
+    Material_7 = Table_EquipUpgrade_t.Material_7[44],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[86],
+    Material_8 = Table_EquipUpgrade_t.Material_8[44],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[85],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -16953,10 +17183,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[103],
     Material_6 = Table_EquipUpgrade_t.Material_6[52],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[94],
-    Material_7 = Table_EquipUpgrade_t.Material_7[44],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[86],
-    Material_8 = Table_EquipUpgrade_t.Material_8[44],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[85],
+    Material_7 = Table_EquipUpgrade_t.Material_7[45],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[87],
+    Material_8 = Table_EquipUpgrade_t.Material_8[45],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[86],
     NpcId = 4967,
     ShortcutID = 724
   },
@@ -16988,14 +17218,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[107],
     Material_6 = Table_EquipUpgrade_t.Material_6[56],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[98],
-    Material_7 = Table_EquipUpgrade_t.Material_7[46],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[88],
-    Material_8 = Table_EquipUpgrade_t.Material_8[46],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[87],
+    Material_7 = Table_EquipUpgrade_t.Material_7[47],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[89],
+    Material_8 = Table_EquipUpgrade_t.Material_8[47],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[88],
     Material_9 = Table_EquipUpgrade_t.Material_9[20],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[54],
-    Material_10 = Table_EquipUpgrade_t.Material_10[33],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[33],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[55],
+    Material_10 = Table_EquipUpgrade_t.Material_10[34],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[34],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -17027,10 +17257,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[110],
     Material_6 = Table_EquipUpgrade_t.Material_6[59],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[101],
-    Material_7 = Table_EquipUpgrade_t.Material_7[48],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[90],
-    Material_8 = Table_EquipUpgrade_t.Material_8[48],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[89],
+    Material_7 = Table_EquipUpgrade_t.Material_7[49],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[91],
+    Material_8 = Table_EquipUpgrade_t.Material_8[49],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[90],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -17062,10 +17292,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[111],
     Material_6 = Table_EquipUpgrade_t.Material_6[60],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[102],
-    Material_7 = Table_EquipUpgrade_t.Material_7[49],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[91],
-    Material_8 = Table_EquipUpgrade_t.Material_8[49],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[90],
+    Material_7 = Table_EquipUpgrade_t.Material_7[50],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[92],
+    Material_8 = Table_EquipUpgrade_t.Material_8[50],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[91],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -17083,10 +17313,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[113],
     Material_6 = Table_EquipUpgrade_t.Material_6[62],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[104],
-    Material_7 = Table_EquipUpgrade_t.Material_7[51],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[93],
-    Material_8 = Table_EquipUpgrade_t.Material_8[51],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[92],
+    Material_7 = Table_EquipUpgrade_t.Material_7[52],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[94],
+    Material_8 = Table_EquipUpgrade_t.Material_8[52],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[93],
     NpcId = 4967,
     ShortcutID = 724
   },
@@ -17104,14 +17334,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[114],
     Material_6 = Table_EquipUpgrade_t.Material_6[63],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[105],
-    Material_7 = Table_EquipUpgrade_t.Material_7[52],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[94],
-    Material_8 = Table_EquipUpgrade_t.Material_8[52],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[93],
+    Material_7 = Table_EquipUpgrade_t.Material_7[53],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[95],
+    Material_8 = Table_EquipUpgrade_t.Material_8[53],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[94],
     Material_9 = Table_EquipUpgrade_t.Material_9[21],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[55],
-    Material_10 = Table_EquipUpgrade_t.Material_10[34],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[34],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[56],
+    Material_10 = Table_EquipUpgrade_t.Material_10[35],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[35],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -17130,9 +17360,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[87],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[195],
     Material_7 = Table_EquipUpgrade_t.Material_7[75],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[159],
-    Material_8 = Table_EquipUpgrade_t.Material_8[76],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[158],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[172],
+    Material_8 = Table_EquipUpgrade_t.Material_8[77],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[171],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -17150,10 +17380,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[208],
     Material_6 = Table_EquipUpgrade_t.Material_6[88],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[196],
-    Material_7 = Table_EquipUpgrade_t.Material_7[55],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[160],
-    Material_8 = Table_EquipUpgrade_t.Material_8[55],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[159],
+    Material_7 = Table_EquipUpgrade_t.Material_7[33],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[173],
+    Material_8 = Table_EquipUpgrade_t.Material_8[33],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[172],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -17171,10 +17401,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[119],
     Material_6 = Table_EquipUpgrade_t.Material_6[37],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[110],
-    Material_7 = Table_EquipUpgrade_t.Material_7[55],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[99],
-    Material_8 = Table_EquipUpgrade_t.Material_8[55],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[98],
+    Material_7 = Table_EquipUpgrade_t.Material_7[33],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[100],
+    Material_8 = Table_EquipUpgrade_t.Material_8[33],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[99],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -17193,9 +17423,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[66],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[111],
     Material_7 = Table_EquipUpgrade_t.Material_7[56],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[100],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[101],
     Material_8 = Table_EquipUpgrade_t.Material_8[56],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[99],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[100],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -17227,9 +17457,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[67],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[116],
     Material_7 = Table_EquipUpgrade_t.Material_7[57],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[101],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[102],
     Material_8 = Table_EquipUpgrade_t.Material_8[57],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[100],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[101],
     NpcId = 4536,
     ShortcutID = 716
   },
@@ -17268,7 +17498,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[251],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[230]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[230],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[202],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[201],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[130],
+    Material_10 = Table_EquipUpgrade_t.Material_10[77],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[77]
   },
   [42580] = {
     id = 42580,
@@ -17283,7 +17521,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[132],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[123]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[123],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[103],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[102],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[59],
+    Material_10 = Table_EquipUpgrade_t.Material_10[36],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[36]
   },
   [42581] = {
     id = 42581,
@@ -17298,7 +17544,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[133],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[124]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[124],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[104],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[103],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[60],
+    Material_10 = Table_EquipUpgrade_t.Material_10[37],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[37]
   },
   [42582] = {
     id = 42582,
@@ -17313,7 +17567,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[134],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[125]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[125],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[105],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[104],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[61],
+    Material_10 = Table_EquipUpgrade_t.Material_10[38],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[38]
   },
   [42583] = {
     id = 42583,
@@ -17328,7 +17590,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[135],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[126]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[126],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[106],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[105],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[62],
+    Material_10 = Table_EquipUpgrade_t.Material_10[39],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[39]
   },
   [42584] = {
     id = 42584,
@@ -17343,7 +17613,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[136],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[127]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[127],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[107],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[106],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[63],
+    Material_10 = Table_EquipUpgrade_t.Material_10[40],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[40]
   },
   [42585] = {
     id = 42585,
@@ -17358,7 +17636,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[137],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[128]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[128],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[108],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[107],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[64],
+    Material_10 = Table_EquipUpgrade_t.Material_10[41],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[41]
   },
   [42586] = {
     id = 42586,
@@ -17373,7 +17659,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[138],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[129]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[129],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[109],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[108],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[65],
+    Material_10 = Table_EquipUpgrade_t.Material_10[42],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[42]
   },
   [42587] = {
     id = 42587,
@@ -17388,7 +17682,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[139],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[130]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[130],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[110],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[109],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[66],
+    Material_10 = Table_EquipUpgrade_t.Material_10[43],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[43]
   },
   [42588] = {
     id = 42588,
@@ -17403,7 +17705,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[250],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[229]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[229],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[201],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[200],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[129],
+    Material_10 = Table_EquipUpgrade_t.Material_10[76],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[76]
   },
   [42589] = {
     id = 42589,
@@ -17418,7 +17728,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[249],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[228]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[228],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[200],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[199],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[128],
+    Material_10 = Table_EquipUpgrade_t.Material_10[75],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[75]
   },
   [42590] = {
     id = 42590,
@@ -17433,7 +17751,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[248],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[227]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[227],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[199],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[198],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[127],
+    Material_10 = Table_EquipUpgrade_t.Material_10[74],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[74]
   },
   [42591] = {
     id = 42591,
@@ -17448,7 +17774,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[247],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[226]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[226],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[198],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[197],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[126],
+    Material_10 = Table_EquipUpgrade_t.Material_10[73],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[73]
   },
   [42592] = {
     id = 42592,
@@ -17463,7 +17797,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[144],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[135]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[135],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[115],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[114],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[71],
+    Material_10 = Table_EquipUpgrade_t.Material_10[44],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[44]
   },
   [42593] = {
     id = 42593,
@@ -17478,7 +17820,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[145],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[136]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[136],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[116],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[115],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[72],
+    Material_10 = Table_EquipUpgrade_t.Material_10[45],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[45]
   },
   [42594] = {
     id = 42594,
@@ -17493,7 +17843,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[146],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[137]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[137],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[117],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[116],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[73],
+    Material_10 = Table_EquipUpgrade_t.Material_10[46],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[46]
   },
   [42595] = {
     id = 42595,
@@ -17508,7 +17866,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[147],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[138]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[138],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[118],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[117],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[74],
+    Material_10 = Table_EquipUpgrade_t.Material_10[47],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[47]
   },
   [43003] = {
     id = 43003,
@@ -17556,7 +17922,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[12],
     Material_8 = Table_EquipUpgrade_t.Material_8[11],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[12],
-    Material_9 = Table_EquipUpgrade_t.Material_9[9],
+    Material_9 = Table_EquipUpgrade_t.Material_9[8],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[9],
     Material_10 = Table_EquipUpgrade_t.Material_10[4],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[4],
@@ -17677,7 +18043,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[18],
     Material_8 = Table_EquipUpgrade_t.Material_8[17],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[18],
-    Material_9 = Table_EquipUpgrade_t.Material_9[11],
+    Material_9 = Table_EquipUpgrade_t.Material_9[10],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[11],
     Material_10 = Table_EquipUpgrade_t.Material_10[6],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[6],
@@ -17754,10 +18120,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[243],
     Material_6 = Table_EquipUpgrade_t.Material_6[58],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[223],
-    Material_7 = Table_EquipUpgrade_t.Material_7[47],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[177],
-    Material_8 = Table_EquipUpgrade_t.Material_8[82],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[176],
+    Material_7 = Table_EquipUpgrade_t.Material_7[48],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[196],
+    Material_8 = Table_EquipUpgrade_t.Material_8[83],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[195],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -17797,9 +18163,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[95],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[221],
     Material_7 = Table_EquipUpgrade_t.Material_7[80],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[175],
-    Material_8 = Table_EquipUpgrade_t.Material_8[82],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[174],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[194],
+    Material_8 = Table_EquipUpgrade_t.Material_8[83],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[193],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -17894,7 +18260,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[37],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[32]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[32],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[30],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[30],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[19],
+    Material_10 = Table_EquipUpgrade_t.Material_10[11],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[11]
   },
   [43059] = {
     id = 43059,
@@ -17909,7 +18283,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[230],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[216]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[216],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[189],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[188],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[120],
+    Material_10 = Table_EquipUpgrade_t.Material_10[72],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[72]
   },
   [43060] = {
     id = 43060,
@@ -17924,7 +18306,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[229],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[215]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[215],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[188],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[187],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[119],
+    Material_10 = Table_EquipUpgrade_t.Material_10[71],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[71]
   },
   [43061] = {
     id = 43061,
@@ -17939,7 +18329,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[228],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[214]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[214],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[187],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[186],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[118],
+    Material_10 = Table_EquipUpgrade_t.Material_10[70],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[70]
   },
   [43062] = {
     id = 43062,
@@ -17954,7 +18352,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[227],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[213]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[213],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[186],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[185],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[117],
+    Material_10 = Table_EquipUpgrade_t.Material_10[69],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[69]
   },
   [43063] = {
     id = 43063,
@@ -17969,7 +18375,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[226],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[212]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[212],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[185],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[184],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[116],
+    Material_10 = Table_EquipUpgrade_t.Material_10[68],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[68]
   },
   [43064] = {
     id = 43064,
@@ -17984,7 +18398,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[225],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[211]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[211],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[184],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[183],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[115],
+    Material_10 = Table_EquipUpgrade_t.Material_10[67],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[67]
   },
   [43503] = {
     id = 43503,
@@ -18043,9 +18465,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[20],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[88],
     Material_7 = Table_EquipUpgrade_t.Material_7[19],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[80],
-    Material_8 = Table_EquipUpgrade_t.Material_8[39],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[79],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[81],
+    Material_8 = Table_EquipUpgrade_t.Material_8[40],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[80],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -18077,9 +18499,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[47],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[89],
     Material_7 = Table_EquipUpgrade_t.Material_7[19],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[81],
-    Material_8 = Table_EquipUpgrade_t.Material_8[39],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[80],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[82],
+    Material_8 = Table_EquipUpgrade_t.Material_8[40],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[81],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -18097,10 +18519,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[193],
     Material_6 = Table_EquipUpgrade_t.Material_6[84],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[181],
-    Material_7 = Table_EquipUpgrade_t.Material_7[72],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[145],
-    Material_8 = Table_EquipUpgrade_t.Material_8[74],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[144],
+    Material_7 = Table_EquipUpgrade_t.Material_7[18],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[158],
+    Material_8 = Table_EquipUpgrade_t.Material_8[75],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[157],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -18118,14 +18540,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[99],
     Material_6 = Table_EquipUpgrade_t.Material_6[49],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[91],
-    Material_7 = Table_EquipUpgrade_t.Material_7[41],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[83],
-    Material_8 = Table_EquipUpgrade_t.Material_8[41],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[82],
+    Material_7 = Table_EquipUpgrade_t.Material_7[42],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[84],
+    Material_8 = Table_EquipUpgrade_t.Material_8[42],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[83],
     Material_9 = Table_EquipUpgrade_t.Material_9[18],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[52],
-    Material_10 = Table_EquipUpgrade_t.Material_10[32],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[32],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[53],
+    Material_10 = Table_EquipUpgrade_t.Material_10[33],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[33],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -18157,12 +18579,12 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[106],
     Material_6 = Table_EquipUpgrade_t.Material_6[55],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[97],
-    Material_7 = Table_EquipUpgrade_t.Material_7[45],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[87],
-    Material_8 = Table_EquipUpgrade_t.Material_8[45],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[86],
+    Material_7 = Table_EquipUpgrade_t.Material_7[46],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[88],
+    Material_8 = Table_EquipUpgrade_t.Material_8[46],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[87],
     Material_9 = Table_EquipUpgrade_t.Material_9[19],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[53],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[54],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -18209,9 +18631,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[94],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[210],
     Material_7 = Table_EquipUpgrade_t.Material_7[79],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[170],
-    Material_8 = Table_EquipUpgrade_t.Material_8[81],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[169],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[183],
+    Material_8 = Table_EquipUpgrade_t.Material_8[82],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[182],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -18243,10 +18665,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[109],
     Material_6 = Table_EquipUpgrade_t.Material_6[58],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[100],
-    Material_7 = Table_EquipUpgrade_t.Material_7[47],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[89],
-    Material_8 = Table_EquipUpgrade_t.Material_8[47],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[88],
+    Material_7 = Table_EquipUpgrade_t.Material_7[48],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[90],
+    Material_8 = Table_EquipUpgrade_t.Material_8[48],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[89],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -18265,9 +18687,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[93],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[209],
     Material_7 = Table_EquipUpgrade_t.Material_7[19],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[169],
-    Material_8 = Table_EquipUpgrade_t.Material_8[80],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[168],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[182],
+    Material_8 = Table_EquipUpgrade_t.Material_8[81],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[181],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -18298,10 +18720,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[112],
     Material_6 = Table_EquipUpgrade_t.Material_6[61],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[103],
-    Material_7 = Table_EquipUpgrade_t.Material_7[50],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[92],
-    Material_8 = Table_EquipUpgrade_t.Material_8[50],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[91],
+    Material_7 = Table_EquipUpgrade_t.Material_7[51],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[93],
+    Material_8 = Table_EquipUpgrade_t.Material_8[51],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[92],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -18320,9 +18742,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[85],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[192],
     Material_7 = Table_EquipUpgrade_t.Material_7[73],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[156],
-    Material_8 = Table_EquipUpgrade_t.Material_8[39],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[155],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[169],
+    Material_8 = Table_EquipUpgrade_t.Material_8[40],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[168],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -18340,10 +18762,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[115],
     Material_6 = Table_EquipUpgrade_t.Material_6[64],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[106],
-    Material_7 = Table_EquipUpgrade_t.Material_7[53],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[95],
-    Material_8 = Table_EquipUpgrade_t.Material_8[53],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[94],
+    Material_7 = Table_EquipUpgrade_t.Material_7[54],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[96],
+    Material_8 = Table_EquipUpgrade_t.Material_8[54],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[95],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -18636,7 +19058,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[1],
     Material_8 = Table_EquipUpgrade_t.Material_8[1],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[1],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -18658,7 +19079,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[2],
     Material_8 = Table_EquipUpgrade_t.Material_8[2],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[2],
-    Material_9 = Table_EquipUpgrade_t.Material_9[2],
+    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[1],
     Material_10 = Table_EquipUpgrade_t.Material_10[1],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[1],
@@ -18683,7 +19104,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[3],
     Material_8 = Table_EquipUpgrade_t.Material_8[3],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[3],
-    Material_9 = Table_EquipUpgrade_t.Material_9[3],
+    Material_9 = Table_EquipUpgrade_t.Material_9[2],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[2],
     NpcId = 4616,
     ShortcutID = 717
@@ -18706,7 +19127,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[4],
     Material_8 = Table_EquipUpgrade_t.Material_8[4],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[4],
-    Material_9 = Table_EquipUpgrade_t.Material_9[4],
+    Material_9 = Table_EquipUpgrade_t.Material_9[3],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[3],
     Material_10 = Table_EquipUpgrade_t.Material_10[2],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[2],
@@ -18731,7 +19152,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[5],
     Material_8 = Table_EquipUpgrade_t.Material_8[5],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[5],
-    Material_9 = Table_EquipUpgrade_t.Material_9[5],
+    Material_9 = Table_EquipUpgrade_t.Material_9[4],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[4],
     NpcId = 6953,
     ShortcutID = 719
@@ -18754,7 +19175,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[6],
     Material_8 = Table_EquipUpgrade_t.Material_8[6],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[6],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -18776,7 +19196,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[7],
     Material_8 = Table_EquipUpgrade_t.Material_8[7],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[7],
-    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    Material_9 = Table_EquipUpgrade_t.Material_9[5],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[5],
     NpcId = 6953,
     ShortcutID = 719
@@ -18799,7 +19219,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[8],
     Material_8 = Table_EquipUpgrade_t.Material_8[8],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[8],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -18892,7 +19311,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[11],
     Material_8 = Table_EquipUpgrade_t.Material_8[10],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[11],
-    Material_9 = Table_EquipUpgrade_t.Material_9[8],
+    Material_9 = Table_EquipUpgrade_t.Material_9[7],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[8],
     Material_10 = Table_EquipUpgrade_t.Material_10[3],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[3],
@@ -18964,7 +19383,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[13],
     Material_8 = Table_EquipUpgrade_t.Material_8[12],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[13],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -18983,10 +19401,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[89],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[198],
     Material_7 = Table_EquipUpgrade_t.Material_7[13],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[162],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[175],
     Material_8 = Table_EquipUpgrade_t.Material_8[13],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[161],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[174],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -19008,7 +19425,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[14],
     Material_8 = Table_EquipUpgrade_t.Material_8[13],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[14],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -19027,10 +19443,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[8],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[197],
     Material_7 = Table_EquipUpgrade_t.Material_7[76],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[161],
-    Material_8 = Table_EquipUpgrade_t.Material_8[77],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[160],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[174],
+    Material_8 = Table_EquipUpgrade_t.Material_8[78],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[173],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -19101,13 +19516,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[193],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[157],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[170],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[156],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[97],
-    Material_10 = Table_EquipUpgrade_t.Material_10[52],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[52]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[169],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[110],
+    Material_10 = Table_EquipUpgrade_t.Material_10[65],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[65]
   },
   [44048] = {
     id = 44048,
@@ -19124,13 +19539,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[191],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[155],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[168],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[154],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[96],
-    Material_10 = Table_EquipUpgrade_t.Material_10[51],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[51]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[167],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[109],
+    Material_10 = Table_EquipUpgrade_t.Material_10[64],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[64]
   },
   [44049] = {
     id = 44049,
@@ -19147,13 +19562,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[190],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[154],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[167],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[153],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[95],
-    Material_10 = Table_EquipUpgrade_t.Material_10[50],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[50]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[166],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[108],
+    Material_10 = Table_EquipUpgrade_t.Material_10[63],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[63]
   },
   [44050] = {
     id = 44050,
@@ -19170,13 +19585,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[189],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[153],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[166],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[152],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[94],
-    Material_10 = Table_EquipUpgrade_t.Material_10[49],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[49]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[165],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[107],
+    Material_10 = Table_EquipUpgrade_t.Material_10[62],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[62]
   },
   [44051] = {
     id = 44051,
@@ -19193,13 +19608,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[188],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[152],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[165],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[151],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[93],
-    Material_10 = Table_EquipUpgrade_t.Material_10[48],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[48]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[164],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[106],
+    Material_10 = Table_EquipUpgrade_t.Material_10[61],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[61]
   },
   [44052] = {
     id = 44052,
@@ -19216,13 +19631,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[187],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[151],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[164],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[150],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[92],
-    Material_10 = Table_EquipUpgrade_t.Material_10[47],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[47]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[163],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[105],
+    Material_10 = Table_EquipUpgrade_t.Material_10[60],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[60]
   },
   [44053] = {
     id = 44053,
@@ -19239,13 +19654,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[186],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[150],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[163],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[149],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[91],
-    Material_10 = Table_EquipUpgrade_t.Material_10[46],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[46]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[162],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[104],
+    Material_10 = Table_EquipUpgrade_t.Material_10[59],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[59]
   },
   [44054] = {
     id = 44054,
@@ -19262,13 +19677,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[185],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[149],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[162],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[148],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[90],
-    Material_10 = Table_EquipUpgrade_t.Material_10[45],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[45]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[161],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[103],
+    Material_10 = Table_EquipUpgrade_t.Material_10[58],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[58]
   },
   [44055] = {
     id = 44055,
@@ -19285,13 +19700,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[184],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[148],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[161],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[147],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[89],
-    Material_10 = Table_EquipUpgrade_t.Material_10[44],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[44]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[160],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[102],
+    Material_10 = Table_EquipUpgrade_t.Material_10[57],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[57]
   },
   [44056] = {
     id = 44056,
@@ -19308,13 +19723,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[183],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[147],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[160],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[146],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[88],
-    Material_10 = Table_EquipUpgrade_t.Material_10[43],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[43]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[159],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[101],
+    Material_10 = Table_EquipUpgrade_t.Material_10[56],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[56]
   },
   [44057] = {
     id = 44057,
@@ -19331,13 +19746,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[182],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[146],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[159],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[145],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[87],
-    Material_10 = Table_EquipUpgrade_t.Material_10[42],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[42]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[158],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[100],
+    Material_10 = Table_EquipUpgrade_t.Material_10[55],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[55]
   },
   [44058] = {
     id = 44058,
@@ -19357,7 +19772,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[22],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[22],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[13],
     Material_10 = Table_EquipUpgrade_t.Material_10[8],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[8]
@@ -19380,7 +19795,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[23],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[23],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[14],
     Material_10 = Table_EquipUpgrade_t.Material_10[9],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[9]
@@ -19400,13 +19815,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[179],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[143],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[156],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[142],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[85],
-    Material_10 = Table_EquipUpgrade_t.Material_10[41],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[41]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[155],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[98],
+    Material_10 = Table_EquipUpgrade_t.Material_10[54],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[54]
   },
   [44061] = {
     id = 44061,
@@ -19423,13 +19838,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[178],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[142],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[155],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[141],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[84],
-    Material_10 = Table_EquipUpgrade_t.Material_10[40],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[40]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[154],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[97],
+    Material_10 = Table_EquipUpgrade_t.Material_10[53],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[53]
   },
   [44062] = {
     id = 44062,
@@ -19446,13 +19861,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[177],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[141],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[154],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[140],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[83],
-    Material_10 = Table_EquipUpgrade_t.Material_10[39],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[39]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[153],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[96],
+    Material_10 = Table_EquipUpgrade_t.Material_10[52],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[52]
   },
   [44063] = {
     id = 44063,
@@ -19469,13 +19884,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[176],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[140],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[153],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[139],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[82],
-    Material_10 = Table_EquipUpgrade_t.Material_10[38],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[38]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[152],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[95],
+    Material_10 = Table_EquipUpgrade_t.Material_10[51],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[51]
   },
   [44064] = {
     id = 44064,
@@ -19516,13 +19931,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[80],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[73],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[74],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[72],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[45],
-    Material_10 = Table_EquipUpgrade_t.Material_10[29],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[29]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[73],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[46],
+    Material_10 = Table_EquipUpgrade_t.Material_10[30],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[30]
   },
   [44167] = {
     id = 44167,
@@ -19539,13 +19954,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[81],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[74],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[75],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[73],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[46],
-    Material_10 = Table_EquipUpgrade_t.Material_10[30],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[30]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[74],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[47],
+    Material_10 = Table_EquipUpgrade_t.Material_10[31],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[31]
   },
   [47280] = {
     id = 47280,
@@ -19770,10 +20185,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[186],
     Material_6 = Table_EquipUpgrade_t.Material_6[82],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[174],
-    Material_7 = Table_EquipUpgrade_t.Material_7[70],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[138],
-    Material_8 = Table_EquipUpgrade_t.Material_8[72],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[137],
+    Material_7 = Table_EquipUpgrade_t.Material_7[71],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[151],
+    Material_8 = Table_EquipUpgrade_t.Material_8[73],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[150],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -19805,10 +20220,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[185],
     Material_6 = Table_EquipUpgrade_t.Material_6[81],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[173],
-    Material_7 = Table_EquipUpgrade_t.Material_7[69],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[137],
-    Material_8 = Table_EquipUpgrade_t.Material_8[71],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[136],
+    Material_7 = Table_EquipUpgrade_t.Material_7[70],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[150],
+    Material_8 = Table_EquipUpgrade_t.Material_8[72],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[149],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -19854,10 +20269,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[148],
     Material_6 = Table_EquipUpgrade_t.Material_6[68],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[139],
-    Material_7 = Table_EquipUpgrade_t.Material_7[58],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[106],
-    Material_8 = Table_EquipUpgrade_t.Material_8[58],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[105],
+    Material_7 = Table_EquipUpgrade_t.Material_7[59],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[119],
+    Material_8 = Table_EquipUpgrade_t.Material_8[59],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[118],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -19875,10 +20290,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[149],
     Material_6 = Table_EquipUpgrade_t.Material_6[69],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[140],
-    Material_7 = Table_EquipUpgrade_t.Material_7[59],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[107],
-    Material_8 = Table_EquipUpgrade_t.Material_8[59],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[106],
+    Material_7 = Table_EquipUpgrade_t.Material_7[60],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[120],
+    Material_8 = Table_EquipUpgrade_t.Material_8[60],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[119],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -19896,10 +20311,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[150],
     Material_6 = Table_EquipUpgrade_t.Material_6[70],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[141],
-    Material_7 = Table_EquipUpgrade_t.Material_7[60],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[108],
-    Material_8 = Table_EquipUpgrade_t.Material_8[60],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[107],
+    Material_7 = Table_EquipUpgrade_t.Material_7[61],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[121],
+    Material_8 = Table_EquipUpgrade_t.Material_8[61],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[120],
     NpcId = 4967,
     ShortcutID = 724
   },
@@ -19931,10 +20346,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[55],
     Material_6 = Table_EquipUpgrade_t.Material_6[41],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[50],
-    Material_7 = Table_EquipUpgrade_t.Material_7[34],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[44],
-    Material_8 = Table_EquipUpgrade_t.Material_8[34],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[44],
+    Material_7 = Table_EquipUpgrade_t.Material_7[35],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[45],
+    Material_8 = Table_EquipUpgrade_t.Material_8[35],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[45],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -19966,12 +20381,12 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[182],
     Material_6 = Table_EquipUpgrade_t.Material_6[79],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[170],
-    Material_7 = Table_EquipUpgrade_t.Material_7[67],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[134],
-    Material_8 = Table_EquipUpgrade_t.Material_8[69],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[133],
-    Material_9 = Table_EquipUpgrade_t.Material_9[24],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[79],
+    Material_7 = Table_EquipUpgrade_t.Material_7[68],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[147],
+    Material_8 = Table_EquipUpgrade_t.Material_8[70],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[146],
+    Material_9 = Table_EquipUpgrade_t.Material_9[25],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[92],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -19989,10 +20404,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[181],
     Material_6 = Table_EquipUpgrade_t.Material_6[78],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[169],
-    Material_7 = Table_EquipUpgrade_t.Material_7[66],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[133],
-    Material_8 = Table_EquipUpgrade_t.Material_8[68],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[132],
+    Material_7 = Table_EquipUpgrade_t.Material_7[67],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[146],
+    Material_8 = Table_EquipUpgrade_t.Material_8[69],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[145],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -20117,11 +20532,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[161],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[126],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[139],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[125],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[73]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[138],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[86]
   },
   [62541] = {
     id = 62541,
@@ -20138,11 +20553,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[160],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[125],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[138],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[124],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[72]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[137],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[85]
   },
   [62542] = {
     id = 62542,
@@ -20159,11 +20574,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[54],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[48],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[49],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[47],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[21]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[48],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[22]
   },
   [62551] = {
     id = 62551,
@@ -20180,11 +20595,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[158],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[124],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[137],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[123],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[71]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[136],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[84]
   },
   [62568] = {
     id = 62568,
@@ -20218,10 +20633,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[81],
     Material_6 = Table_EquipUpgrade_t.Material_6[46],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[76],
-    Material_7 = Table_EquipUpgrade_t.Material_7[39],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[69],
-    Material_8 = Table_EquipUpgrade_t.Material_8[38],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[68]
+    Material_7 = Table_EquipUpgrade_t.Material_7[40],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[70],
+    Material_8 = Table_EquipUpgrade_t.Material_8[39],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[69]
   },
   [62571] = {
     id = 62571,
@@ -20238,11 +20653,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[77],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[70],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[71],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[69],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[42]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[70],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[43]
   },
   [62572] = {
     id = 62572,
@@ -20258,10 +20673,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[169],
     Material_6 = Table_EquipUpgrade_t.Material_6[76],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[157],
-    Material_7 = Table_EquipUpgrade_t.Material_7[65],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[123],
-    Material_8 = Table_EquipUpgrade_t.Material_8[67],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[122]
+    Material_7 = Table_EquipUpgrade_t.Material_7[66],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[136],
+    Material_8 = Table_EquipUpgrade_t.Material_8[68],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[135]
   },
   [62573] = {
     id = 62573,
@@ -20278,11 +20693,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[79],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[72],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[73],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[71],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[44]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[72],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[45]
   },
   [62809] = {
     id = 62809,
@@ -20299,9 +20714,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[71],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[142],
     Material_7 = Table_EquipUpgrade_t.Material_7[57],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[109],
-    Material_8 = Table_EquipUpgrade_t.Material_8[61],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[108],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[122],
+    Material_8 = Table_EquipUpgrade_t.Material_8[62],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[121],
     NpcId = 4535,
     ShortcutID = 715
   },
@@ -20329,11 +20744,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[144],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[111],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[124],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[110],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[63]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[123],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[76]
   },
   [62844] = {
     id = 62844,
@@ -20350,11 +20765,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[83],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[76],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[77],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[75],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[48]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[76],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[49]
   },
   [62861] = {
     id = 62861,
@@ -20398,9 +20813,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[67],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[156],
     Material_7 = Table_EquipUpgrade_t.Material_7[57],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[122],
-    Material_8 = Table_EquipUpgrade_t.Material_8[66],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[121],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[135],
+    Material_8 = Table_EquipUpgrade_t.Material_8[67],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[134],
     NpcId = 4535,
     ShortcutID = 715
   },
@@ -20419,11 +20834,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[150],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[116],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[129],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[115],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[66]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[128],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[79]
   },
   [63144] = {
     id = 63144,
@@ -20440,11 +20855,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[152],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[118],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[131],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[117],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[68]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[130],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[81]
   },
   [63163] = {
     id = 63163,
@@ -20479,9 +20894,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[71],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[155],
     Material_7 = Table_EquipUpgrade_t.Material_7[57],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[121],
-    Material_8 = Table_EquipUpgrade_t.Material_8[61],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[120],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[134],
+    Material_8 = Table_EquipUpgrade_t.Material_8[62],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[133],
     NpcId = 4535,
     ShortcutID = 715
   },
@@ -20509,11 +20924,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[153],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[119],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[132],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[118],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[69]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[131],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[82]
   },
   [63444] = {
     id = 63444,
@@ -20530,11 +20945,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[151],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[117],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[130],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[116],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[67]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[129],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[80]
   },
   [63484] = {
     id = 63484,
@@ -20648,8 +21063,8 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[58],
     Material_6 = Table_EquipUpgrade_t.Material_6[44],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[53],
-    Material_7 = Table_EquipUpgrade_t.Material_7[37],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[47],
+    Material_7 = Table_EquipUpgrade_t.Material_7[38],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[48],
     NpcId = 6953,
     ShortcutID = 719
   },
@@ -20717,11 +21132,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[68],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[62],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[63],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[61],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[35]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[62],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[36]
   },
   [140057] = {
     id = 140057,
@@ -20738,11 +21153,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[70],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[64],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[65],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[63],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[37]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[64],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[38]
   },
   [140058] = {
     id = 140058,
@@ -20759,11 +21174,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[71],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[65],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[66],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[64],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[38]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[65],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[39]
   },
   [140059] = {
     id = 140059,
@@ -20780,11 +21195,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[72],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[66],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[67],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[65],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[39]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[66],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[40]
   },
   [140066] = {
     id = 140066,
@@ -20801,11 +21216,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[78],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[71],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[72],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[70],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[43]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[71],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[44]
   },
   [140306] = {
     id = 140306,
@@ -20848,14 +21263,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[152],
     Material_6 = Table_EquipUpgrade_t.Material_6[72],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[143],
-    Material_7 = Table_EquipUpgrade_t.Material_7[61],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[110],
-    Material_8 = Table_EquipUpgrade_t.Material_8[62],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[109],
-    Material_9 = Table_EquipUpgrade_t.Material_9[22],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[62],
-    Material_10 = Table_EquipUpgrade_t.Material_10[35],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[35],
+    Material_7 = Table_EquipUpgrade_t.Material_7[62],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[123],
+    Material_8 = Table_EquipUpgrade_t.Material_8[63],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[122],
+    Material_9 = Table_EquipUpgrade_t.Material_9[23],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[75],
+    Material_10 = Table_EquipUpgrade_t.Material_10[48],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[48],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -20928,11 +21343,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[85],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[77],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[78],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[76],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[49]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[77],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[50]
   },
   [140360] = {
     id = 140360,
@@ -20949,11 +21364,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[86],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[78],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[79],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[77],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[50]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[78],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[51]
   },
   [140361] = {
     id = 140361,
@@ -20970,11 +21385,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[87],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[79],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[80],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[78],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[51]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[79],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[52]
   },
   [140606] = {
     id = 140606,
@@ -21004,10 +21419,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[155],
     Material_6 = Table_EquipUpgrade_t.Material_6[73],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[146],
-    Material_7 = Table_EquipUpgrade_t.Material_7[62],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[113],
-    Material_8 = Table_EquipUpgrade_t.Material_8[63],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[112],
+    Material_7 = Table_EquipUpgrade_t.Material_7[63],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[126],
+    Material_8 = Table_EquipUpgrade_t.Material_8[64],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[125],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -21025,14 +21440,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[157],
     Material_6 = Table_EquipUpgrade_t.Material_6[74],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[148],
-    Material_7 = Table_EquipUpgrade_t.Material_7[63],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[114],
-    Material_8 = Table_EquipUpgrade_t.Material_8[64],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[113],
-    Material_9 = Table_EquipUpgrade_t.Material_9[23],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[65],
-    Material_10 = Table_EquipUpgrade_t.Material_10[36],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[36],
+    Material_7 = Table_EquipUpgrade_t.Material_7[64],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[127],
+    Material_8 = Table_EquipUpgrade_t.Material_8[65],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[126],
+    Material_9 = Table_EquipUpgrade_t.Material_9[24],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[78],
+    Material_10 = Table_EquipUpgrade_t.Material_10[49],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[49],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -21078,10 +21493,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[158],
     Material_6 = Table_EquipUpgrade_t.Material_6[75],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[149],
-    Material_7 = Table_EquipUpgrade_t.Material_7[64],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[115],
-    Material_8 = Table_EquipUpgrade_t.Material_8[65],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[114],
+    Material_7 = Table_EquipUpgrade_t.Material_7[65],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[128],
+    Material_8 = Table_EquipUpgrade_t.Material_8[66],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[127],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -21148,11 +21563,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[162],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[127],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[140],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[126],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[74]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[139],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[87]
   },
   [140661] = {
     id = 140661,
@@ -21169,11 +21584,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[163],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[128],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[141],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[127],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[75]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[140],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[88]
   },
   [140662] = {
     id = 140662,
@@ -21190,11 +21605,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[164],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[129],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[142],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[128],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[76]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[141],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[89]
   },
   [140663] = {
     id = 140663,
@@ -21211,11 +21626,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[165],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[130],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[143],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[129],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[77]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[142],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[90]
   },
   [140664] = {
     id = 140664,
@@ -21232,9 +21647,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[67],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[166],
     Material_7 = Table_EquipUpgrade_t.Material_7[57],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[131],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[144],
     Material_8 = Table_EquipUpgrade_t.Material_8[57],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[130],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[143],
     NpcId = 4535,
     ShortcutID = 715
   },
@@ -21253,11 +21668,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[168],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[132],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[145],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[131],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[78]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[144],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[91]
   },
   [140676] = {
     id = 140676,
@@ -21274,11 +21689,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[172],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[136],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[149],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[135],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[80]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[148],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[93]
   },
   [140711] = {
     id = 140711,
@@ -21308,9 +21723,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[102],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[243],
     Material_7 = Table_EquipUpgrade_t.Material_7[86],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[188],
-    Material_8 = Table_EquipUpgrade_t.Material_8[88],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[187],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[212],
+    Material_8 = Table_EquipUpgrade_t.Material_8[89],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[211],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -21328,10 +21743,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[183],
     Material_6 = Table_EquipUpgrade_t.Material_6[80],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[171],
-    Material_7 = Table_EquipUpgrade_t.Material_7[68],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[135],
-    Material_8 = Table_EquipUpgrade_t.Material_8[70],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[134],
+    Material_7 = Table_EquipUpgrade_t.Material_7[69],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[148],
+    Material_8 = Table_EquipUpgrade_t.Material_8[71],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[147],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -21455,9 +21870,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[103],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[244],
     Material_7 = Table_EquipUpgrade_t.Material_7[87],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[189],
-    Material_8 = Table_EquipUpgrade_t.Material_8[89],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[188],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[213],
+    Material_8 = Table_EquipUpgrade_t.Material_8[90],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[212],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -21491,11 +21906,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[202],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[164],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[177],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[163],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[99]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[176],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[112]
   },
   [140767] = {
     id = 140767,
@@ -21512,11 +21927,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[200],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[163],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[176],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[162],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[98]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[175],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[111]
   },
   [140803] = {
     id = 140803,
@@ -21533,11 +21948,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[242],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[187],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[211],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[186],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[113]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[210],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[137]
   },
   [140804] = {
     id = 140804,
@@ -21554,11 +21969,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[203],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[165],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[178],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[164],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[100]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[177],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[113]
   },
   [140805] = {
     id = 140805,
@@ -21575,11 +21990,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[225],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[178],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[197],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[177],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[106]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[196],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[125]
   },
   [140904] = {
     id = 140904,
@@ -21610,11 +22025,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[98],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[234],
     Material_7 = Table_EquipUpgrade_t.Material_7[82],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[182],
-    Material_8 = Table_EquipUpgrade_t.Material_8[84],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[181],
-    Material_9 = Table_EquipUpgrade_t.Material_9[26],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[110],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[206],
+    Material_8 = Table_EquipUpgrade_t.Material_8[85],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[205],
+    Material_9 = Table_EquipUpgrade_t.Material_9[27],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[134],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -21650,11 +22065,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[99],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[237],
     Material_7 = Table_EquipUpgrade_t.Material_7[83],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[184],
-    Material_8 = Table_EquipUpgrade_t.Material_8[85],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[183],
-    Material_9 = Table_EquipUpgrade_t.Material_9[27],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[112],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[208],
+    Material_8 = Table_EquipUpgrade_t.Material_8[86],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[207],
+    Material_9 = Table_EquipUpgrade_t.Material_9[28],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[136],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -21690,7 +22105,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[9],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[9],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[6]
   },
   [140945] = {
@@ -21711,7 +22126,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[10],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[10],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[7]
   },
   [141205] = {
@@ -21783,11 +22198,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[98],
     Material_6 = Table_EquipUpgrade_t.Material_6[48],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[90],
-    Material_7 = Table_EquipUpgrade_t.Material_7[40],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[82],
-    Material_8 = Table_EquipUpgrade_t.Material_8[40],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[81],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[41],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[83],
+    Material_8 = Table_EquipUpgrade_t.Material_8[41],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[82],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -21809,7 +22223,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[15],
     Material_8 = Table_EquipUpgrade_t.Material_8[14],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[15],
-    Material_9 = Table_EquipUpgrade_t.Material_9[10],
+    Material_9 = Table_EquipUpgrade_t.Material_9[9],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[10],
     Material_10 = Table_EquipUpgrade_t.Material_10[5],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[5],
@@ -21920,11 +22334,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[108],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[97],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[98],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[96],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[56]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[97],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[57]
   },
   [141255] = {
     id = 141255,
@@ -21944,7 +22358,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[27],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[27],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[16]
   },
   [141256] = {
@@ -21965,7 +22379,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[28],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[28],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[17]
   },
   [141257] = {
@@ -21983,11 +22397,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[109],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[98],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[99],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[97],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[57]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[98],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[58]
   },
   [141258] = {
     id = 141258,
@@ -22007,7 +22421,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[29],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[29],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[18]
   },
   [141504] = {
@@ -22038,10 +22452,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[116],
     Material_6 = Table_EquipUpgrade_t.Material_6[65],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[107],
-    Material_7 = Table_EquipUpgrade_t.Material_7[54],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[96],
-    Material_8 = Table_EquipUpgrade_t.Material_8[54],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[95],
+    Material_7 = Table_EquipUpgrade_t.Material_7[55],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[97],
+    Material_8 = Table_EquipUpgrade_t.Material_8[55],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[96],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -22059,12 +22473,12 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[187],
     Material_6 = Table_EquipUpgrade_t.Material_6[83],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[175],
-    Material_7 = Table_EquipUpgrade_t.Material_7[71],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[139],
-    Material_8 = Table_EquipUpgrade_t.Material_8[73],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[138],
-    Material_9 = Table_EquipUpgrade_t.Material_9[25],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[81],
+    Material_7 = Table_EquipUpgrade_t.Material_7[72],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[152],
+    Material_8 = Table_EquipUpgrade_t.Material_8[74],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[151],
+    Material_9 = Table_EquipUpgrade_t.Material_9[26],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[94],
     NpcId = 6953,
     ShortcutID = 719
   },
@@ -22083,9 +22497,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[86],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[194],
     Material_7 = Table_EquipUpgrade_t.Material_7[74],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[158],
-    Material_8 = Table_EquipUpgrade_t.Material_8[75],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[157],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[171],
+    Material_8 = Table_EquipUpgrade_t.Material_8[76],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[170],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -22201,11 +22615,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[131],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[102],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[111],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[101],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[58]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[110],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[67]
   },
   [141566] = {
     id = 141566,
@@ -22222,11 +22636,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[132],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[103],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[112],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[102],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[59]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[111],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[68]
   },
   [141567] = {
     id = 141567,
@@ -22243,11 +22657,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[133],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[104],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[113],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[103],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[60]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[112],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[69]
   },
   [141568] = {
     id = 141568,
@@ -22264,11 +22678,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[134],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[105],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[114],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[104],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[61]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[113],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[70]
   },
   [141617] = {
     id = 141617,
@@ -22285,11 +22699,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[145],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[112],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[125],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[111],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[64]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[124],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[77]
   },
   [141805] = {
     id = 141805,
@@ -22404,13 +22818,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[104],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[245],
     Material_7 = Table_EquipUpgrade_t.Material_7[88],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[190],
-    Material_8 = Table_EquipUpgrade_t.Material_8[90],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[189],
-    Material_9 = Table_EquipUpgrade_t.Material_9[28],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[114],
-    Material_10 = Table_EquipUpgrade_t.Material_10[58],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[214],
+    Material_8 = Table_EquipUpgrade_t.Material_8[91],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[213],
+    Material_9 = Table_EquipUpgrade_t.Material_9[29],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[138],
+    Material_10 = Table_EquipUpgrade_t.Material_10[82],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[82],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -22429,10 +22843,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[91],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[204],
     Material_7 = Table_EquipUpgrade_t.Material_7[77],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[166],
-    Material_8 = Table_EquipUpgrade_t.Material_8[78],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[165],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[179],
+    Material_8 = Table_EquipUpgrade_t.Material_8[79],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[178],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -22451,9 +22864,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[92],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[205],
     Material_7 = Table_EquipUpgrade_t.Material_7[78],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[167],
-    Material_8 = Table_EquipUpgrade_t.Material_8[79],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[166],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[180],
+    Material_8 = Table_EquipUpgrade_t.Material_8[80],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[179],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -22512,9 +22925,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[96],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[222],
     Material_7 = Table_EquipUpgrade_t.Material_7[81],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[176],
-    Material_8 = Table_EquipUpgrade_t.Material_8[83],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[175],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[195],
+    Material_8 = Table_EquipUpgrade_t.Material_8[84],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[194],
     NpcId = 6953,
     ShortcutID = 719
   },
@@ -22533,11 +22946,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[217],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[171],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[190],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[170],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[102]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[189],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[121]
   },
   [141868] = {
     id = 141868,
@@ -22554,11 +22967,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[218],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[172],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[191],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[171],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[103]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[190],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[122]
   },
   [141869] = {
     id = 141869,
@@ -22575,11 +22988,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[219],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[173],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[192],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[172],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[104]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[191],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[123]
   },
   [141870] = {
     id = 141870,
@@ -22596,11 +23009,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[220],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[174],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[193],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[173],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[105]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[192],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[124]
   },
   [141871] = {
     id = 141871,
@@ -22617,11 +23030,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[180],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[144],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[157],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[143],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[86]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[156],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[99]
   },
   [142003] = {
     id = 142003,
@@ -22698,7 +23111,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[19],
     Material_8 = Table_EquipUpgrade_t.Material_8[18],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[19],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -22720,7 +23132,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[21],
     Material_8 = Table_EquipUpgrade_t.Material_8[20],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[21],
-    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    Material_9 = Table_EquipUpgrade_t.Material_9[11],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[12],
     Material_10 = Table_EquipUpgrade_t.Material_10[7],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[7],
@@ -22860,7 +23272,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[24],
     Material_8 = Table_EquipUpgrade_t.Material_8[22],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[24],
-    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    Material_9 = Table_EquipUpgrade_t.Material_9[13],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[15],
     Material_10 = Table_EquipUpgrade_t.Material_10[10],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[10],
@@ -22885,7 +23297,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[25],
     Material_8 = Table_EquipUpgrade_t.Material_8[18],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[25],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -22955,14 +23366,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[39],
     Material_6 = Table_EquipUpgrade_t.Material_6[28],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[34],
-    Material_7 = Table_EquipUpgrade_t.Material_7[24],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[30],
-    Material_8 = Table_EquipUpgrade_t.Material_8[24],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[30],
+    Material_7 = Table_EquipUpgrade_t.Material_7[25],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[31],
+    Material_8 = Table_EquipUpgrade_t.Material_8[25],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[31],
     Material_9 = Table_EquipUpgrade_t.Material_9[15],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[19],
-    Material_10 = Table_EquipUpgrade_t.Material_10[11],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[11],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[20],
+    Material_10 = Table_EquipUpgrade_t.Material_10[12],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[12],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -22980,14 +23391,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[40],
     Material_6 = Table_EquipUpgrade_t.Material_6[29],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[35],
-    Material_7 = Table_EquipUpgrade_t.Material_7[25],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[31],
-    Material_8 = Table_EquipUpgrade_t.Material_8[25],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[31],
+    Material_7 = Table_EquipUpgrade_t.Material_7[26],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[32],
+    Material_8 = Table_EquipUpgrade_t.Material_8[26],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[32],
     Material_9 = Table_EquipUpgrade_t.Material_9[16],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[20],
-    Material_10 = Table_EquipUpgrade_t.Material_10[12],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[21],
+    Material_10 = Table_EquipUpgrade_t.Material_10[13],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[13],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -23005,10 +23416,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[41],
     Material_6 = Table_EquipUpgrade_t.Material_6[30],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[36],
-    Material_7 = Table_EquipUpgrade_t.Material_7[26],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[32],
-    Material_8 = Table_EquipUpgrade_t.Material_8[26],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[32],
+    Material_7 = Table_EquipUpgrade_t.Material_7[27],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[33],
+    Material_8 = Table_EquipUpgrade_t.Material_8[27],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[33],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -23060,10 +23471,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[44],
     Material_6 = Table_EquipUpgrade_t.Material_6[33],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[39],
-    Material_7 = Table_EquipUpgrade_t.Material_7[27],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[33],
-    Material_8 = Table_EquipUpgrade_t.Material_8[27],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[33],
+    Material_7 = Table_EquipUpgrade_t.Material_7[28],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[34],
+    Material_8 = Table_EquipUpgrade_t.Material_8[28],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[34],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -23081,11 +23492,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[45],
     Material_6 = Table_EquipUpgrade_t.Material_6[34],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[40],
-    Material_7 = Table_EquipUpgrade_t.Material_7[28],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[34],
-    Material_8 = Table_EquipUpgrade_t.Material_8[28],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[34],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[29],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[35],
+    Material_8 = Table_EquipUpgrade_t.Material_8[29],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[35],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -23104,10 +23514,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[35],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[41],
     Material_7 = Table_EquipUpgrade_t.Material_7[18],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[35],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[36],
     Material_8 = Table_EquipUpgrade_t.Material_8[18],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[35],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[36],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -23125,11 +23534,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[47],
     Material_6 = Table_EquipUpgrade_t.Material_6[36],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[42],
-    Material_7 = Table_EquipUpgrade_t.Material_7[29],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[36],
-    Material_8 = Table_EquipUpgrade_t.Material_8[29],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[36],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[30],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[37],
+    Material_8 = Table_EquipUpgrade_t.Material_8[30],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[37],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -23148,10 +23556,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[19],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[43],
     Material_7 = Table_EquipUpgrade_t.Material_7[18],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[37],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[38],
     Material_8 = Table_EquipUpgrade_t.Material_8[18],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[37],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[38],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -23169,11 +23576,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[49],
     Material_6 = Table_EquipUpgrade_t.Material_6[37],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[44],
-    Material_7 = Table_EquipUpgrade_t.Material_7[30],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[38],
-    Material_8 = Table_EquipUpgrade_t.Material_8[30],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[38],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[31],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[39],
+    Material_8 = Table_EquipUpgrade_t.Material_8[31],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[39],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -23191,10 +23597,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[50],
     Material_6 = Table_EquipUpgrade_t.Material_6[38],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[45],
-    Material_7 = Table_EquipUpgrade_t.Material_7[31],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[39],
-    Material_8 = Table_EquipUpgrade_t.Material_8[31],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[39],
+    Material_7 = Table_EquipUpgrade_t.Material_7[32],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[40],
+    Material_8 = Table_EquipUpgrade_t.Material_8[32],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[40],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -23213,10 +23619,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[101],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[241],
     Material_7 = Table_EquipUpgrade_t.Material_7[85],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[186],
-    Material_8 = Table_EquipUpgrade_t.Material_8[87],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[185],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[210],
+    Material_8 = Table_EquipUpgrade_t.Material_8[88],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[209],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -23263,10 +23668,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[19],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[46],
     Material_7 = Table_EquipUpgrade_t.Material_7[18],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[40],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[41],
     Material_8 = Table_EquipUpgrade_t.Material_8[18],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[40],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[41],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -23284,11 +23688,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[52],
     Material_6 = Table_EquipUpgrade_t.Material_6[39],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[47],
-    Material_7 = Table_EquipUpgrade_t.Material_7[32],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[41],
-    Material_8 = Table_EquipUpgrade_t.Material_8[32],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[41],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[33],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[42],
+    Material_8 = Table_EquipUpgrade_t.Material_8[33],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[42],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -23307,9 +23710,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[100],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[239],
     Material_7 = Table_EquipUpgrade_t.Material_7[84],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[185],
-    Material_8 = Table_EquipUpgrade_t.Material_8[86],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[184],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[209],
+    Material_8 = Table_EquipUpgrade_t.Material_8[87],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[208],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -23327,11 +23730,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[53],
     Material_6 = Table_EquipUpgrade_t.Material_6[37],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[48],
-    Material_7 = Table_EquipUpgrade_t.Material_7[32],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[42],
-    Material_8 = Table_EquipUpgrade_t.Material_8[32],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[42],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[33],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[43],
+    Material_8 = Table_EquipUpgrade_t.Material_8[33],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[43],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -23363,11 +23765,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[54],
     Material_6 = Table_EquipUpgrade_t.Material_6[40],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[49],
-    Material_7 = Table_EquipUpgrade_t.Material_7[33],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[43],
-    Material_8 = Table_EquipUpgrade_t.Material_8[33],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[43],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[34],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[44],
+    Material_8 = Table_EquipUpgrade_t.Material_8[34],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[44],
     NpcId = 4967,
     ShortcutID = 724
   },
@@ -23385,11 +23786,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[56],
     Material_6 = Table_EquipUpgrade_t.Material_6[42],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[51],
-    Material_7 = Table_EquipUpgrade_t.Material_7[35],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[45],
-    Material_8 = Table_EquipUpgrade_t.Material_8[35],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[45],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[36],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[46],
+    Material_8 = Table_EquipUpgrade_t.Material_8[36],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[46],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -23421,11 +23821,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[57],
     Material_6 = Table_EquipUpgrade_t.Material_6[43],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[52],
-    Material_7 = Table_EquipUpgrade_t.Material_7[36],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[46],
-    Material_8 = Table_EquipUpgrade_t.Material_8[36],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[46],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    Material_7 = Table_EquipUpgrade_t.Material_7[37],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[47],
+    Material_8 = Table_EquipUpgrade_t.Material_8[37],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[47],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -23508,14 +23907,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[60],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[55],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[49],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[48],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[50],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[49],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[22],
-    Material_10 = Table_EquipUpgrade_t.Material_10[13],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[13]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[23],
+    Material_10 = Table_EquipUpgrade_t.Material_10[14],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[14]
   },
   [142087] = {
     id = 142087,
@@ -23531,14 +23930,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[220],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[206],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[168],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[167],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[181],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[180],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[101],
-    Material_10 = Table_EquipUpgrade_t.Material_10[53],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[53]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[114],
+    Material_10 = Table_EquipUpgrade_t.Material_10[66],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[66]
   },
   [142088] = {
     id = 142088,
@@ -23554,14 +23953,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[61],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[56],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[50],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[49],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[51],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[50],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[23],
-    Material_10 = Table_EquipUpgrade_t.Material_10[14],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[14]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[24],
+    Material_10 = Table_EquipUpgrade_t.Material_10[15],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[15]
   },
   [142089] = {
     id = 142089,
@@ -23577,14 +23976,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[62],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[57],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[51],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[50],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[52],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[51],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[24],
-    Material_10 = Table_EquipUpgrade_t.Material_10[15],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[15]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[25],
+    Material_10 = Table_EquipUpgrade_t.Material_10[16],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[16]
   },
   [142090] = {
     id = 142090,
@@ -23600,14 +23999,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[63],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[58],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[52],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[51],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[53],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[52],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[25],
-    Material_10 = Table_EquipUpgrade_t.Material_10[16],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[16]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[26],
+    Material_10 = Table_EquipUpgrade_t.Material_10[17],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[17]
   },
   [142091] = {
     id = 142091,
@@ -23623,14 +24022,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[64],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[59],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[53],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[52],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[54],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[53],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[26],
-    Material_10 = Table_EquipUpgrade_t.Material_10[17],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[17]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[27],
+    Material_10 = Table_EquipUpgrade_t.Material_10[18],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[18]
   },
   [142092] = {
     id = 142092,
@@ -23646,14 +24045,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[65],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[60],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[54],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[53],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[55],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[54],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[27],
-    Material_10 = Table_EquipUpgrade_t.Material_10[18],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[18]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[28],
+    Material_10 = Table_EquipUpgrade_t.Material_10[19],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[19]
   },
   [142093] = {
     id = 142093,
@@ -23669,14 +24068,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[163],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[154],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[120],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[119],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[133],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[132],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[70],
-    Material_10 = Table_EquipUpgrade_t.Material_10[37],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[37]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[83],
+    Material_10 = Table_EquipUpgrade_t.Material_10[50],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[50]
   },
   [142094] = {
     id = 142094,
@@ -23692,14 +24091,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[66],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[61],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[55],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[54],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[56],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[55],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[28],
-    Material_10 = Table_EquipUpgrade_t.Material_10[19],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[19]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[29],
+    Material_10 = Table_EquipUpgrade_t.Material_10[20],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[20]
   },
   [142095] = {
     id = 142095,
@@ -23715,14 +24114,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[67],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[62],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[56],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[55],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[57],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[56],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[29],
-    Material_10 = Table_EquipUpgrade_t.Material_10[20],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[20]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[30],
+    Material_10 = Table_EquipUpgrade_t.Material_10[21],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[21]
   },
   [142096] = {
     id = 142096,
@@ -23738,14 +24137,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[68],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[63],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[57],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[56],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[58],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[57],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[30],
-    Material_10 = Table_EquipUpgrade_t.Material_10[21],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[21]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[31],
+    Material_10 = Table_EquipUpgrade_t.Material_10[22],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[22]
   },
   [142097] = {
     id = 142097,
@@ -23761,14 +24160,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[69],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[64],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[58],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[57],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[59],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[58],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[31],
-    Material_10 = Table_EquipUpgrade_t.Material_10[22],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[22]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[32],
+    Material_10 = Table_EquipUpgrade_t.Material_10[23],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[23]
   },
   [142098] = {
     id = 142098,
@@ -23784,14 +24183,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[70],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[65],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[59],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[58],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[60],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[59],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[32],
-    Material_10 = Table_EquipUpgrade_t.Material_10[23],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[23]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[33],
+    Material_10 = Table_EquipUpgrade_t.Material_10[24],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[24]
   },
   [142099] = {
     id = 142099,
@@ -23807,14 +24206,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[71],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[66],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[60],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[59],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[61],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[60],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[33],
-    Material_10 = Table_EquipUpgrade_t.Material_10[24],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[24]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[34],
+    Material_10 = Table_EquipUpgrade_t.Material_10[25],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[25]
   },
   [142100] = {
     id = 142100,
@@ -23830,14 +24229,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[72],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[67],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[61],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[60],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[62],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[61],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[34],
-    Material_10 = Table_EquipUpgrade_t.Material_10[25],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[25]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[35],
+    Material_10 = Table_EquipUpgrade_t.Material_10[26],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[26]
   },
   [142101] = {
     id = 142101,
@@ -23853,14 +24252,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[256],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[235],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[183],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[182],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[207],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[206],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[111],
-    Material_10 = Table_EquipUpgrade_t.Material_10[57],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[57]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[135],
+    Material_10 = Table_EquipUpgrade_t.Material_10[81],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[81]
   },
   [142102] = {
     id = 142102,
@@ -23876,14 +24275,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[74],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[69],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[63],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[62],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[64],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[63],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[36],
-    Material_10 = Table_EquipUpgrade_t.Material_10[26],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[26]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[37],
+    Material_10 = Table_EquipUpgrade_t.Material_10[27],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[27]
   },
   [142103] = {
     id = 142103,
@@ -23899,14 +24298,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[254],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[233],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[181],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[180],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[205],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[204],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[109],
-    Material_10 = Table_EquipUpgrade_t.Material_10[56],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[56]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[133],
+    Material_10 = Table_EquipUpgrade_t.Material_10[80],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[80]
   },
   [142104] = {
     id = 142104,
@@ -23922,14 +24321,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[253],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[232],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[180],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[179],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[204],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[203],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[108],
-    Material_10 = Table_EquipUpgrade_t.Material_10[55],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[55]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[132],
+    Material_10 = Table_EquipUpgrade_t.Material_10[79],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[79]
   },
   [142105] = {
     id = 142105,
@@ -23945,14 +24344,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[252],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[231],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[179],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[178],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[203],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[202],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[107],
-    Material_10 = Table_EquipUpgrade_t.Material_10[54],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[54]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[131],
+    Material_10 = Table_EquipUpgrade_t.Material_10[78],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[78]
   },
   [142106] = {
     id = 142106,
@@ -23968,14 +24367,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[78],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[73],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[67],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[66],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[68],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[67],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[40],
-    Material_10 = Table_EquipUpgrade_t.Material_10[27],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[27]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[41],
+    Material_10 = Table_EquipUpgrade_t.Material_10[28],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[28]
   },
   [142107] = {
     id = 142107,
@@ -23991,14 +24390,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[79],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[74],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[68],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[67],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[69],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[68],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[41],
-    Material_10 = Table_EquipUpgrade_t.Material_10[28],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[28]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[42],
+    Material_10 = Table_EquipUpgrade_t.Material_10[29],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[29]
   },
   [142126] = {
     id = 142126,
@@ -24014,14 +24413,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[87],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[82],
-    Material_7 = Table_EquipUpgrade_t.Material_7[38],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[75],
-    Material_8 = Table_EquipUpgrade_t.Material_8[37],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[74],
+    Material_7 = Table_EquipUpgrade_t.Material_7[39],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[76],
+    Material_8 = Table_EquipUpgrade_t.Material_8[38],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[75],
     Material_9 = Table_EquipUpgrade_t.Material_9[17],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[47],
-    Material_10 = Table_EquipUpgrade_t.Material_10[31],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[31]
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[48],
+    Material_10 = Table_EquipUpgrade_t.Material_10[32],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[32]
   },
   [142506] = {
     id = 142506,
@@ -24037,10 +24436,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[101],
     Material_6 = Table_EquipUpgrade_t.Material_6[50],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[92],
-    Material_7 = Table_EquipUpgrade_t.Material_7[42],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[84],
-    Material_8 = Table_EquipUpgrade_t.Material_8[42],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[83],
+    Material_7 = Table_EquipUpgrade_t.Material_7[43],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[85],
+    Material_8 = Table_EquipUpgrade_t.Material_8[43],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[84],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -24058,10 +24457,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[102],
     Material_6 = Table_EquipUpgrade_t.Material_6[51],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[93],
-    Material_7 = Table_EquipUpgrade_t.Material_7[43],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[85],
-    Material_8 = Table_EquipUpgrade_t.Material_8[43],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[84],
+    Material_7 = Table_EquipUpgrade_t.Material_7[44],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[86],
+    Material_8 = Table_EquipUpgrade_t.Material_8[44],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[85],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -24079,10 +24478,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[103],
     Material_6 = Table_EquipUpgrade_t.Material_6[52],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[94],
-    Material_7 = Table_EquipUpgrade_t.Material_7[44],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[86],
-    Material_8 = Table_EquipUpgrade_t.Material_8[44],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[85],
+    Material_7 = Table_EquipUpgrade_t.Material_7[45],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[87],
+    Material_8 = Table_EquipUpgrade_t.Material_8[45],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[86],
     NpcId = 4967,
     ShortcutID = 724
   },
@@ -24114,14 +24513,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[107],
     Material_6 = Table_EquipUpgrade_t.Material_6[56],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[98],
-    Material_7 = Table_EquipUpgrade_t.Material_7[46],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[88],
-    Material_8 = Table_EquipUpgrade_t.Material_8[46],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[87],
+    Material_7 = Table_EquipUpgrade_t.Material_7[47],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[89],
+    Material_8 = Table_EquipUpgrade_t.Material_8[47],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[88],
     Material_9 = Table_EquipUpgrade_t.Material_9[20],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[54],
-    Material_10 = Table_EquipUpgrade_t.Material_10[33],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[33],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[55],
+    Material_10 = Table_EquipUpgrade_t.Material_10[34],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[34],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -24153,10 +24552,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[110],
     Material_6 = Table_EquipUpgrade_t.Material_6[59],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[101],
-    Material_7 = Table_EquipUpgrade_t.Material_7[48],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[90],
-    Material_8 = Table_EquipUpgrade_t.Material_8[48],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[89],
+    Material_7 = Table_EquipUpgrade_t.Material_7[49],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[91],
+    Material_8 = Table_EquipUpgrade_t.Material_8[49],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[90],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -24188,10 +24587,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[111],
     Material_6 = Table_EquipUpgrade_t.Material_6[60],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[102],
-    Material_7 = Table_EquipUpgrade_t.Material_7[49],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[91],
-    Material_8 = Table_EquipUpgrade_t.Material_8[49],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[90],
+    Material_7 = Table_EquipUpgrade_t.Material_7[50],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[92],
+    Material_8 = Table_EquipUpgrade_t.Material_8[50],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[91],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -24209,10 +24608,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[113],
     Material_6 = Table_EquipUpgrade_t.Material_6[62],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[104],
-    Material_7 = Table_EquipUpgrade_t.Material_7[51],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[93],
-    Material_8 = Table_EquipUpgrade_t.Material_8[51],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[92],
+    Material_7 = Table_EquipUpgrade_t.Material_7[52],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[94],
+    Material_8 = Table_EquipUpgrade_t.Material_8[52],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[93],
     NpcId = 4967,
     ShortcutID = 724
   },
@@ -24230,14 +24629,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[114],
     Material_6 = Table_EquipUpgrade_t.Material_6[63],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[105],
-    Material_7 = Table_EquipUpgrade_t.Material_7[52],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[94],
-    Material_8 = Table_EquipUpgrade_t.Material_8[52],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[93],
+    Material_7 = Table_EquipUpgrade_t.Material_7[53],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[95],
+    Material_8 = Table_EquipUpgrade_t.Material_8[53],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[94],
     Material_9 = Table_EquipUpgrade_t.Material_9[21],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[55],
-    Material_10 = Table_EquipUpgrade_t.Material_10[34],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[34],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[56],
+    Material_10 = Table_EquipUpgrade_t.Material_10[35],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[35],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -24256,9 +24655,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[87],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[195],
     Material_7 = Table_EquipUpgrade_t.Material_7[75],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[159],
-    Material_8 = Table_EquipUpgrade_t.Material_8[76],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[158],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[172],
+    Material_8 = Table_EquipUpgrade_t.Material_8[77],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[171],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -24276,10 +24675,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[208],
     Material_6 = Table_EquipUpgrade_t.Material_6[88],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[196],
-    Material_7 = Table_EquipUpgrade_t.Material_7[55],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[160],
-    Material_8 = Table_EquipUpgrade_t.Material_8[55],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[159],
+    Material_7 = Table_EquipUpgrade_t.Material_7[33],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[173],
+    Material_8 = Table_EquipUpgrade_t.Material_8[33],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[172],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -24297,10 +24696,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[119],
     Material_6 = Table_EquipUpgrade_t.Material_6[37],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[110],
-    Material_7 = Table_EquipUpgrade_t.Material_7[55],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[99],
-    Material_8 = Table_EquipUpgrade_t.Material_8[55],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[98],
+    Material_7 = Table_EquipUpgrade_t.Material_7[33],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[100],
+    Material_8 = Table_EquipUpgrade_t.Material_8[33],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[99],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -24319,9 +24718,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[66],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[111],
     Material_7 = Table_EquipUpgrade_t.Material_7[56],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[100],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[101],
     Material_8 = Table_EquipUpgrade_t.Material_8[56],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[99],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[100],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -24353,9 +24752,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[67],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[116],
     Material_7 = Table_EquipUpgrade_t.Material_7[57],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[101],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[102],
     Material_8 = Table_EquipUpgrade_t.Material_8[57],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[100],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[101],
     NpcId = 4536,
     ShortcutID = 716
   },
@@ -24394,7 +24793,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[251],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[230]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[230],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[202],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[201],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[130],
+    Material_10 = Table_EquipUpgrade_t.Material_10[77],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[77]
   },
   [142580] = {
     id = 142580,
@@ -24409,7 +24816,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[132],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[123]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[123],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[103],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[102],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[59],
+    Material_10 = Table_EquipUpgrade_t.Material_10[36],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[36]
   },
   [142581] = {
     id = 142581,
@@ -24424,7 +24839,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[133],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[124]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[124],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[104],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[103],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[60],
+    Material_10 = Table_EquipUpgrade_t.Material_10[37],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[37]
   },
   [142582] = {
     id = 142582,
@@ -24439,7 +24862,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[134],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[125]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[125],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[105],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[104],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[61],
+    Material_10 = Table_EquipUpgrade_t.Material_10[38],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[38]
   },
   [142583] = {
     id = 142583,
@@ -24454,7 +24885,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[135],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[126]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[126],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[106],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[105],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[62],
+    Material_10 = Table_EquipUpgrade_t.Material_10[39],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[39]
   },
   [142584] = {
     id = 142584,
@@ -24469,7 +24908,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[136],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[127]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[127],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[107],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[106],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[63],
+    Material_10 = Table_EquipUpgrade_t.Material_10[40],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[40]
   },
   [142585] = {
     id = 142585,
@@ -24484,7 +24931,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[137],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[128]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[128],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[108],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[107],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[64],
+    Material_10 = Table_EquipUpgrade_t.Material_10[41],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[41]
   },
   [142586] = {
     id = 142586,
@@ -24499,7 +24954,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[138],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[129]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[129],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[109],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[108],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[65],
+    Material_10 = Table_EquipUpgrade_t.Material_10[42],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[42]
   },
   [142587] = {
     id = 142587,
@@ -24514,7 +24977,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[139],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[130]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[130],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[110],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[109],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[66],
+    Material_10 = Table_EquipUpgrade_t.Material_10[43],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[43]
   },
   [142588] = {
     id = 142588,
@@ -24529,7 +25000,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[250],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[229]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[229],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[201],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[200],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[129],
+    Material_10 = Table_EquipUpgrade_t.Material_10[76],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[76]
   },
   [142589] = {
     id = 142589,
@@ -24544,7 +25023,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[249],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[228]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[228],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[200],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[199],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[128],
+    Material_10 = Table_EquipUpgrade_t.Material_10[75],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[75]
   },
   [142590] = {
     id = 142590,
@@ -24559,7 +25046,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[248],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[227]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[227],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[199],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[198],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[127],
+    Material_10 = Table_EquipUpgrade_t.Material_10[74],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[74]
   },
   [142591] = {
     id = 142591,
@@ -24574,7 +25069,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[247],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[226]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[226],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[198],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[197],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[126],
+    Material_10 = Table_EquipUpgrade_t.Material_10[73],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[73]
   },
   [142592] = {
     id = 142592,
@@ -24589,7 +25092,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[144],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[135]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[135],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[115],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[114],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[71],
+    Material_10 = Table_EquipUpgrade_t.Material_10[44],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[44]
   },
   [142593] = {
     id = 142593,
@@ -24604,7 +25115,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[145],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[136]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[136],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[116],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[115],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[72],
+    Material_10 = Table_EquipUpgrade_t.Material_10[45],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[45]
   },
   [142594] = {
     id = 142594,
@@ -24619,7 +25138,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[146],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[137]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[137],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[117],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[116],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[73],
+    Material_10 = Table_EquipUpgrade_t.Material_10[46],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[46]
   },
   [142595] = {
     id = 142595,
@@ -24634,7 +25161,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[76],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[147],
     Material_6 = Table_EquipUpgrade_t.Material_6[45],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[138]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[138],
+    Material_7 = Table_EquipUpgrade_t.Material_7[58],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[118],
+    Material_8 = Table_EquipUpgrade_t.Material_8[58],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[117],
+    Material_9 = Table_EquipUpgrade_t.Material_9[22],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[74],
+    Material_10 = Table_EquipUpgrade_t.Material_10[47],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[47]
   },
   [143003] = {
     id = 143003,
@@ -24682,7 +25217,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[12],
     Material_8 = Table_EquipUpgrade_t.Material_8[11],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[12],
-    Material_9 = Table_EquipUpgrade_t.Material_9[9],
+    Material_9 = Table_EquipUpgrade_t.Material_9[8],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[9],
     Material_10 = Table_EquipUpgrade_t.Material_10[4],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[4],
@@ -24803,7 +25338,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[18],
     Material_8 = Table_EquipUpgrade_t.Material_8[17],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[18],
-    Material_9 = Table_EquipUpgrade_t.Material_9[11],
+    Material_9 = Table_EquipUpgrade_t.Material_9[10],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[11],
     Material_10 = Table_EquipUpgrade_t.Material_10[6],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[6],
@@ -24880,10 +25415,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[243],
     Material_6 = Table_EquipUpgrade_t.Material_6[58],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[223],
-    Material_7 = Table_EquipUpgrade_t.Material_7[47],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[177],
-    Material_8 = Table_EquipUpgrade_t.Material_8[82],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[176],
+    Material_7 = Table_EquipUpgrade_t.Material_7[48],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[196],
+    Material_8 = Table_EquipUpgrade_t.Material_8[83],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[195],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -24923,9 +25458,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[95],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[221],
     Material_7 = Table_EquipUpgrade_t.Material_7[80],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[175],
-    Material_8 = Table_EquipUpgrade_t.Material_8[82],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[174],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[194],
+    Material_8 = Table_EquipUpgrade_t.Material_8[83],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[193],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -25020,7 +25555,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[37],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[32]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[32],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[30],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[30],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[19],
+    Material_10 = Table_EquipUpgrade_t.Material_10[11],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[11]
   },
   [143059] = {
     id = 143059,
@@ -25035,7 +25578,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[230],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[216]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[216],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[189],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[188],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[120],
+    Material_10 = Table_EquipUpgrade_t.Material_10[72],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[72]
   },
   [143060] = {
     id = 143060,
@@ -25050,7 +25601,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[229],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[215]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[215],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[188],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[187],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[119],
+    Material_10 = Table_EquipUpgrade_t.Material_10[71],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[71]
   },
   [143061] = {
     id = 143061,
@@ -25065,7 +25624,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[228],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[214]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[214],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[187],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[186],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[118],
+    Material_10 = Table_EquipUpgrade_t.Material_10[70],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[70]
   },
   [143062] = {
     id = 143062,
@@ -25080,7 +25647,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[227],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[213]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[213],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[186],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[185],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[117],
+    Material_10 = Table_EquipUpgrade_t.Material_10[69],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[69]
   },
   [143063] = {
     id = 143063,
@@ -25095,7 +25670,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[226],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[212]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[212],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[185],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[184],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[116],
+    Material_10 = Table_EquipUpgrade_t.Material_10[68],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[68]
   },
   [143064] = {
     id = 143064,
@@ -25110,7 +25693,15 @@ Table_EquipUpgrade = {
     Material_5 = Table_EquipUpgrade_t.Material_5[30],
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[225],
     Material_6 = Table_EquipUpgrade_t.Material_6[26],
-    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[211]
+    BuffID_6 = Table_EquipUpgrade_t.BuffID_6[211],
+    Material_7 = Table_EquipUpgrade_t.Material_7[24],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[184],
+    Material_8 = Table_EquipUpgrade_t.Material_8[24],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[183],
+    Material_9 = Table_EquipUpgrade_t.Material_9[14],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[115],
+    Material_10 = Table_EquipUpgrade_t.Material_10[67],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[67]
   },
   [143503] = {
     id = 143503,
@@ -25169,9 +25760,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[20],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[88],
     Material_7 = Table_EquipUpgrade_t.Material_7[19],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[80],
-    Material_8 = Table_EquipUpgrade_t.Material_8[39],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[79],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[81],
+    Material_8 = Table_EquipUpgrade_t.Material_8[40],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[80],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -25203,9 +25794,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[47],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[89],
     Material_7 = Table_EquipUpgrade_t.Material_7[19],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[81],
-    Material_8 = Table_EquipUpgrade_t.Material_8[39],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[80],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[82],
+    Material_8 = Table_EquipUpgrade_t.Material_8[40],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[81],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -25223,10 +25814,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[193],
     Material_6 = Table_EquipUpgrade_t.Material_6[84],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[181],
-    Material_7 = Table_EquipUpgrade_t.Material_7[72],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[145],
-    Material_8 = Table_EquipUpgrade_t.Material_8[74],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[144],
+    Material_7 = Table_EquipUpgrade_t.Material_7[18],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[158],
+    Material_8 = Table_EquipUpgrade_t.Material_8[75],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[157],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -25244,14 +25835,14 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[99],
     Material_6 = Table_EquipUpgrade_t.Material_6[49],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[91],
-    Material_7 = Table_EquipUpgrade_t.Material_7[41],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[83],
-    Material_8 = Table_EquipUpgrade_t.Material_8[41],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[82],
+    Material_7 = Table_EquipUpgrade_t.Material_7[42],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[84],
+    Material_8 = Table_EquipUpgrade_t.Material_8[42],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[83],
     Material_9 = Table_EquipUpgrade_t.Material_9[18],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[52],
-    Material_10 = Table_EquipUpgrade_t.Material_10[32],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[32],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[53],
+    Material_10 = Table_EquipUpgrade_t.Material_10[33],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[33],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -25283,12 +25874,12 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[106],
     Material_6 = Table_EquipUpgrade_t.Material_6[55],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[97],
-    Material_7 = Table_EquipUpgrade_t.Material_7[45],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[87],
-    Material_8 = Table_EquipUpgrade_t.Material_8[45],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[86],
+    Material_7 = Table_EquipUpgrade_t.Material_7[46],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[88],
+    Material_8 = Table_EquipUpgrade_t.Material_8[46],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[87],
     Material_9 = Table_EquipUpgrade_t.Material_9[19],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[53],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[54],
     NpcId = 4617,
     ShortcutID = 718
   },
@@ -25335,9 +25926,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[94],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[210],
     Material_7 = Table_EquipUpgrade_t.Material_7[79],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[170],
-    Material_8 = Table_EquipUpgrade_t.Material_8[81],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[169],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[183],
+    Material_8 = Table_EquipUpgrade_t.Material_8[82],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[182],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -25369,10 +25960,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[109],
     Material_6 = Table_EquipUpgrade_t.Material_6[58],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[100],
-    Material_7 = Table_EquipUpgrade_t.Material_7[47],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[89],
-    Material_8 = Table_EquipUpgrade_t.Material_8[47],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[88],
+    Material_7 = Table_EquipUpgrade_t.Material_7[48],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[90],
+    Material_8 = Table_EquipUpgrade_t.Material_8[48],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[89],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -25391,9 +25982,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[93],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[209],
     Material_7 = Table_EquipUpgrade_t.Material_7[19],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[169],
-    Material_8 = Table_EquipUpgrade_t.Material_8[80],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[168],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[182],
+    Material_8 = Table_EquipUpgrade_t.Material_8[81],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[181],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -25424,10 +26015,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[112],
     Material_6 = Table_EquipUpgrade_t.Material_6[61],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[103],
-    Material_7 = Table_EquipUpgrade_t.Material_7[50],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[92],
-    Material_8 = Table_EquipUpgrade_t.Material_8[50],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[91],
+    Material_7 = Table_EquipUpgrade_t.Material_7[51],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[93],
+    Material_8 = Table_EquipUpgrade_t.Material_8[51],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[92],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -25446,9 +26037,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[85],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[192],
     Material_7 = Table_EquipUpgrade_t.Material_7[73],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[156],
-    Material_8 = Table_EquipUpgrade_t.Material_8[39],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[155],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[169],
+    Material_8 = Table_EquipUpgrade_t.Material_8[40],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[168],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -25466,10 +26057,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[115],
     Material_6 = Table_EquipUpgrade_t.Material_6[64],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[106],
-    Material_7 = Table_EquipUpgrade_t.Material_7[53],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[95],
-    Material_8 = Table_EquipUpgrade_t.Material_8[53],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[94],
+    Material_7 = Table_EquipUpgrade_t.Material_7[54],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[96],
+    Material_8 = Table_EquipUpgrade_t.Material_8[54],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[95],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -25762,7 +26353,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[1],
     Material_8 = Table_EquipUpgrade_t.Material_8[1],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[1],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -25784,7 +26374,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[2],
     Material_8 = Table_EquipUpgrade_t.Material_8[2],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[2],
-    Material_9 = Table_EquipUpgrade_t.Material_9[2],
+    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[1],
     Material_10 = Table_EquipUpgrade_t.Material_10[1],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[1],
@@ -25809,7 +26399,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[3],
     Material_8 = Table_EquipUpgrade_t.Material_8[3],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[3],
-    Material_9 = Table_EquipUpgrade_t.Material_9[3],
+    Material_9 = Table_EquipUpgrade_t.Material_9[2],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[2],
     NpcId = 4616,
     ShortcutID = 717
@@ -25832,7 +26422,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[4],
     Material_8 = Table_EquipUpgrade_t.Material_8[4],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[4],
-    Material_9 = Table_EquipUpgrade_t.Material_9[4],
+    Material_9 = Table_EquipUpgrade_t.Material_9[3],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[3],
     Material_10 = Table_EquipUpgrade_t.Material_10[2],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[2],
@@ -25857,7 +26447,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[5],
     Material_8 = Table_EquipUpgrade_t.Material_8[5],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[5],
-    Material_9 = Table_EquipUpgrade_t.Material_9[5],
+    Material_9 = Table_EquipUpgrade_t.Material_9[4],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[4],
     NpcId = 6953,
     ShortcutID = 719
@@ -25880,7 +26470,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[6],
     Material_8 = Table_EquipUpgrade_t.Material_8[6],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[6],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 4616,
     ShortcutID = 717
   },
@@ -25902,7 +26491,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[7],
     Material_8 = Table_EquipUpgrade_t.Material_8[7],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[7],
-    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    Material_9 = Table_EquipUpgrade_t.Material_9[5],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[5],
     NpcId = 6953,
     ShortcutID = 719
@@ -25925,7 +26514,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[8],
     Material_8 = Table_EquipUpgrade_t.Material_8[8],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[8],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -26018,7 +26606,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[11],
     Material_8 = Table_EquipUpgrade_t.Material_8[10],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[11],
-    Material_9 = Table_EquipUpgrade_t.Material_9[8],
+    Material_9 = Table_EquipUpgrade_t.Material_9[7],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[8],
     Material_10 = Table_EquipUpgrade_t.Material_10[3],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[3],
@@ -26090,7 +26678,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[13],
     Material_8 = Table_EquipUpgrade_t.Material_8[12],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[13],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -26109,10 +26696,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[89],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[198],
     Material_7 = Table_EquipUpgrade_t.Material_7[13],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[162],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[175],
     Material_8 = Table_EquipUpgrade_t.Material_8[13],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[161],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[174],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -26134,7 +26720,6 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[14],
     Material_8 = Table_EquipUpgrade_t.Material_8[13],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[14],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -26153,10 +26738,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[8],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[197],
     Material_7 = Table_EquipUpgrade_t.Material_7[76],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[161],
-    Material_8 = Table_EquipUpgrade_t.Material_8[77],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[160],
-    Material_9 = Table_EquipUpgrade_t.Material_9[1],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[174],
+    Material_8 = Table_EquipUpgrade_t.Material_8[78],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[173],
     NpcId = 5969,
     ShortcutID = 721
   },
@@ -26227,13 +26811,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[193],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[157],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[170],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[156],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[97],
-    Material_10 = Table_EquipUpgrade_t.Material_10[52],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[52]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[169],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[110],
+    Material_10 = Table_EquipUpgrade_t.Material_10[65],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[65]
   },
   [144048] = {
     id = 144048,
@@ -26250,13 +26834,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[191],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[155],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[168],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[154],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[96],
-    Material_10 = Table_EquipUpgrade_t.Material_10[51],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[51]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[167],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[109],
+    Material_10 = Table_EquipUpgrade_t.Material_10[64],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[64]
   },
   [144049] = {
     id = 144049,
@@ -26273,13 +26857,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[190],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[154],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[167],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[153],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[95],
-    Material_10 = Table_EquipUpgrade_t.Material_10[50],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[50]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[166],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[108],
+    Material_10 = Table_EquipUpgrade_t.Material_10[63],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[63]
   },
   [144050] = {
     id = 144050,
@@ -26296,13 +26880,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[189],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[153],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[166],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[152],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[94],
-    Material_10 = Table_EquipUpgrade_t.Material_10[49],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[49]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[165],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[107],
+    Material_10 = Table_EquipUpgrade_t.Material_10[62],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[62]
   },
   [144051] = {
     id = 144051,
@@ -26319,13 +26903,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[188],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[152],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[165],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[151],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[93],
-    Material_10 = Table_EquipUpgrade_t.Material_10[48],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[48]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[164],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[106],
+    Material_10 = Table_EquipUpgrade_t.Material_10[61],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[61]
   },
   [144052] = {
     id = 144052,
@@ -26342,13 +26926,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[187],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[151],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[164],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[150],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[92],
-    Material_10 = Table_EquipUpgrade_t.Material_10[47],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[47]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[163],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[105],
+    Material_10 = Table_EquipUpgrade_t.Material_10[60],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[60]
   },
   [144053] = {
     id = 144053,
@@ -26365,13 +26949,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[186],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[150],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[163],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[149],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[91],
-    Material_10 = Table_EquipUpgrade_t.Material_10[46],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[46]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[162],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[104],
+    Material_10 = Table_EquipUpgrade_t.Material_10[59],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[59]
   },
   [144054] = {
     id = 144054,
@@ -26388,13 +26972,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[185],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[149],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[162],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[148],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[90],
-    Material_10 = Table_EquipUpgrade_t.Material_10[45],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[45]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[161],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[103],
+    Material_10 = Table_EquipUpgrade_t.Material_10[58],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[58]
   },
   [144055] = {
     id = 144055,
@@ -26411,13 +26995,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[184],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[148],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[161],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[147],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[89],
-    Material_10 = Table_EquipUpgrade_t.Material_10[44],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[44]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[160],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[102],
+    Material_10 = Table_EquipUpgrade_t.Material_10[57],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[57]
   },
   [144056] = {
     id = 144056,
@@ -26434,13 +27018,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[183],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[147],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[160],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[146],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[88],
-    Material_10 = Table_EquipUpgrade_t.Material_10[43],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[43]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[159],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[101],
+    Material_10 = Table_EquipUpgrade_t.Material_10[56],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[56]
   },
   [144057] = {
     id = 144057,
@@ -26457,13 +27041,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[182],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[146],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[159],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[145],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[87],
-    Material_10 = Table_EquipUpgrade_t.Material_10[42],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[42]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[158],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[100],
+    Material_10 = Table_EquipUpgrade_t.Material_10[55],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[55]
   },
   [144058] = {
     id = 144058,
@@ -26483,7 +27067,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[22],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[22],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[13],
     Material_10 = Table_EquipUpgrade_t.Material_10[8],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[8]
@@ -26506,7 +27090,7 @@ Table_EquipUpgrade = {
     BuffID_7 = Table_EquipUpgrade_t.BuffID_7[23],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
     BuffID_8 = Table_EquipUpgrade_t.BuffID_8[23],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
     BuffID_9 = Table_EquipUpgrade_t.BuffID_9[14],
     Material_10 = Table_EquipUpgrade_t.Material_10[9],
     BuffID_10 = Table_EquipUpgrade_t.BuffID_10[9]
@@ -26526,13 +27110,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[179],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[143],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[156],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[142],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[85],
-    Material_10 = Table_EquipUpgrade_t.Material_10[41],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[41]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[155],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[98],
+    Material_10 = Table_EquipUpgrade_t.Material_10[54],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[54]
   },
   [144061] = {
     id = 144061,
@@ -26549,13 +27133,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[178],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[142],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[155],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[141],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[84],
-    Material_10 = Table_EquipUpgrade_t.Material_10[40],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[40]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[154],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[97],
+    Material_10 = Table_EquipUpgrade_t.Material_10[53],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[53]
   },
   [144062] = {
     id = 144062,
@@ -26572,13 +27156,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[177],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[141],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[154],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[140],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[83],
-    Material_10 = Table_EquipUpgrade_t.Material_10[39],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[39]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[153],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[96],
+    Material_10 = Table_EquipUpgrade_t.Material_10[52],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[52]
   },
   [144063] = {
     id = 144063,
@@ -26595,13 +27179,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[176],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[140],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[153],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[139],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[82],
-    Material_10 = Table_EquipUpgrade_t.Material_10[38],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[38]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[152],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[95],
+    Material_10 = Table_EquipUpgrade_t.Material_10[51],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[51]
   },
   [144064] = {
     id = 144064,
@@ -26642,13 +27226,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[80],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[73],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[74],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[72],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[45],
-    Material_10 = Table_EquipUpgrade_t.Material_10[29],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[29]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[73],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[46],
+    Material_10 = Table_EquipUpgrade_t.Material_10[30],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[30]
   },
   [144167] = {
     id = 144167,
@@ -26665,13 +27249,13 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[22],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[81],
     Material_7 = Table_EquipUpgrade_t.Material_7[21],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[74],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[75],
     Material_8 = Table_EquipUpgrade_t.Material_8[21],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[73],
-    Material_9 = Table_EquipUpgrade_t.Material_9[13],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[46],
-    Material_10 = Table_EquipUpgrade_t.Material_10[30],
-    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[30]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[74],
+    Material_9 = Table_EquipUpgrade_t.Material_9[12],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[47],
+    Material_10 = Table_EquipUpgrade_t.Material_10[31],
+    BuffID_10 = Table_EquipUpgrade_t.BuffID_10[31]
   },
   [160503] = {
     id = 160503,
@@ -26701,10 +27285,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[186],
     Material_6 = Table_EquipUpgrade_t.Material_6[82],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[174],
-    Material_7 = Table_EquipUpgrade_t.Material_7[70],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[138],
-    Material_8 = Table_EquipUpgrade_t.Material_8[72],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[137],
+    Material_7 = Table_EquipUpgrade_t.Material_7[71],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[151],
+    Material_8 = Table_EquipUpgrade_t.Material_8[73],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[150],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -26736,10 +27320,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[185],
     Material_6 = Table_EquipUpgrade_t.Material_6[81],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[173],
-    Material_7 = Table_EquipUpgrade_t.Material_7[69],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[137],
-    Material_8 = Table_EquipUpgrade_t.Material_8[71],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[136],
+    Material_7 = Table_EquipUpgrade_t.Material_7[70],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[150],
+    Material_8 = Table_EquipUpgrade_t.Material_8[72],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[149],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -26785,10 +27369,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[148],
     Material_6 = Table_EquipUpgrade_t.Material_6[68],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[139],
-    Material_7 = Table_EquipUpgrade_t.Material_7[58],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[106],
-    Material_8 = Table_EquipUpgrade_t.Material_8[58],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[105],
+    Material_7 = Table_EquipUpgrade_t.Material_7[59],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[119],
+    Material_8 = Table_EquipUpgrade_t.Material_8[59],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[118],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -26806,10 +27390,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[149],
     Material_6 = Table_EquipUpgrade_t.Material_6[69],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[140],
-    Material_7 = Table_EquipUpgrade_t.Material_7[59],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[107],
-    Material_8 = Table_EquipUpgrade_t.Material_8[59],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[106],
+    Material_7 = Table_EquipUpgrade_t.Material_7[60],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[120],
+    Material_8 = Table_EquipUpgrade_t.Material_8[60],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[119],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -26827,10 +27411,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[150],
     Material_6 = Table_EquipUpgrade_t.Material_6[70],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[141],
-    Material_7 = Table_EquipUpgrade_t.Material_7[60],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[108],
-    Material_8 = Table_EquipUpgrade_t.Material_8[60],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[107],
+    Material_7 = Table_EquipUpgrade_t.Material_7[61],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[121],
+    Material_8 = Table_EquipUpgrade_t.Material_8[61],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[120],
     NpcId = 4967,
     ShortcutID = 724
   },
@@ -26862,10 +27446,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[55],
     Material_6 = Table_EquipUpgrade_t.Material_6[41],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[50],
-    Material_7 = Table_EquipUpgrade_t.Material_7[34],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[44],
-    Material_8 = Table_EquipUpgrade_t.Material_8[34],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[44],
+    Material_7 = Table_EquipUpgrade_t.Material_7[35],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[45],
+    Material_8 = Table_EquipUpgrade_t.Material_8[35],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[45],
     NpcId = 5970,
     ShortcutID = 722
   },
@@ -26897,12 +27481,12 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[182],
     Material_6 = Table_EquipUpgrade_t.Material_6[79],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[170],
-    Material_7 = Table_EquipUpgrade_t.Material_7[67],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[134],
-    Material_8 = Table_EquipUpgrade_t.Material_8[69],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[133],
-    Material_9 = Table_EquipUpgrade_t.Material_9[24],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[79],
+    Material_7 = Table_EquipUpgrade_t.Material_7[68],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[147],
+    Material_8 = Table_EquipUpgrade_t.Material_8[70],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[146],
+    Material_9 = Table_EquipUpgrade_t.Material_9[25],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[92],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -26920,10 +27504,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[181],
     Material_6 = Table_EquipUpgrade_t.Material_6[78],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[169],
-    Material_7 = Table_EquipUpgrade_t.Material_7[66],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[133],
-    Material_8 = Table_EquipUpgrade_t.Material_8[68],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[132],
+    Material_7 = Table_EquipUpgrade_t.Material_7[67],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[146],
+    Material_8 = Table_EquipUpgrade_t.Material_8[69],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[145],
     NpcId = 6954,
     ShortcutID = 720
   },
@@ -27048,11 +27632,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[161],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[126],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[139],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[125],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[73]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[138],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[86]
   },
   [162541] = {
     id = 162541,
@@ -27069,11 +27653,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[160],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[125],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[138],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[124],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[72]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[137],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[85]
   },
   [162542] = {
     id = 162542,
@@ -27090,11 +27674,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[54],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[48],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[49],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[47],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[21]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[48],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[22]
   },
   [162551] = {
     id = 162551,
@@ -27111,11 +27695,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[158],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[124],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[137],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[123],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[71]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[136],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[84]
   },
   [162570] = {
     id = 162570,
@@ -27131,10 +27715,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[81],
     Material_6 = Table_EquipUpgrade_t.Material_6[46],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[76],
-    Material_7 = Table_EquipUpgrade_t.Material_7[39],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[69],
-    Material_8 = Table_EquipUpgrade_t.Material_8[38],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[68]
+    Material_7 = Table_EquipUpgrade_t.Material_7[40],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[70],
+    Material_8 = Table_EquipUpgrade_t.Material_8[39],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[69]
   },
   [162571] = {
     id = 162571,
@@ -27151,11 +27735,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[77],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[70],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[71],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[69],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[42]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[70],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[43]
   },
   [162572] = {
     id = 162572,
@@ -27171,10 +27755,10 @@ Table_EquipUpgrade = {
     BuffID_5 = Table_EquipUpgrade_t.BuffID_5[169],
     Material_6 = Table_EquipUpgrade_t.Material_6[76],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[157],
-    Material_7 = Table_EquipUpgrade_t.Material_7[65],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[123],
-    Material_8 = Table_EquipUpgrade_t.Material_8[67],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[122]
+    Material_7 = Table_EquipUpgrade_t.Material_7[66],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[136],
+    Material_8 = Table_EquipUpgrade_t.Material_8[68],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[135]
   },
   [162573] = {
     id = 162573,
@@ -27191,11 +27775,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[79],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[72],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[73],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[71],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[44]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[72],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[45]
   },
   [162809] = {
     id = 162809,
@@ -27212,9 +27796,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[71],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[142],
     Material_7 = Table_EquipUpgrade_t.Material_7[57],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[109],
-    Material_8 = Table_EquipUpgrade_t.Material_8[61],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[108],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[122],
+    Material_8 = Table_EquipUpgrade_t.Material_8[62],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[121],
     NpcId = 4535,
     ShortcutID = 715
   },
@@ -27242,11 +27826,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[144],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[111],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[124],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[110],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[63]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[123],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[76]
   },
   [162844] = {
     id = 162844,
@@ -27263,11 +27847,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[83],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[76],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[77],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[75],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[48]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[76],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[49]
   },
   [163109] = {
     id = 163109,
@@ -27293,9 +27877,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[67],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[156],
     Material_7 = Table_EquipUpgrade_t.Material_7[57],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[122],
-    Material_8 = Table_EquipUpgrade_t.Material_8[66],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[121],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[135],
+    Material_8 = Table_EquipUpgrade_t.Material_8[67],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[134],
     NpcId = 4535,
     ShortcutID = 715
   },
@@ -27314,11 +27898,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[150],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[116],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[129],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[115],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[66]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[128],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[79]
   },
   [163144] = {
     id = 163144,
@@ -27335,11 +27919,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[152],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[118],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[131],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[117],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[68]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[130],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[81]
   },
   [163417] = {
     id = 163417,
@@ -27356,9 +27940,9 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[71],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[155],
     Material_7 = Table_EquipUpgrade_t.Material_7[57],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[121],
-    Material_8 = Table_EquipUpgrade_t.Material_8[61],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[120],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[134],
+    Material_8 = Table_EquipUpgrade_t.Material_8[62],
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[133],
     NpcId = 4535,
     ShortcutID = 715
   },
@@ -27386,11 +27970,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[153],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[119],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[132],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[118],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[69]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[131],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[82]
   },
   [163444] = {
     id = 163444,
@@ -27407,11 +27991,11 @@ Table_EquipUpgrade = {
     Material_6 = Table_EquipUpgrade_t.Material_6[9],
     BuffID_6 = Table_EquipUpgrade_t.BuffID_6[151],
     Material_7 = Table_EquipUpgrade_t.Material_7[9],
-    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[117],
+    BuffID_7 = Table_EquipUpgrade_t.BuffID_7[130],
     Material_8 = Table_EquipUpgrade_t.Material_8[9],
-    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[116],
-    Material_9 = Table_EquipUpgrade_t.Material_9[7],
-    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[67]
+    BuffID_8 = Table_EquipUpgrade_t.BuffID_8[129],
+    Material_9 = Table_EquipUpgrade_t.Material_9[6],
+    BuffID_9 = Table_EquipUpgrade_t.BuffID_9[80]
   }
 }
 local cell_mt = {

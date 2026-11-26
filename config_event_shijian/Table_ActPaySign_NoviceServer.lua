@@ -27,7 +27,12 @@ Table_ActPaySign_t = {
       SuperTitle = "进阶奖励"
     },
     {DepositID = 400084, SuperDepositID = 365},
-    {381},
+    {
+      DepositID = 400084,
+      ProTitle = "特惠奖励",
+      SuperDepositID = 365,
+      SuperTitle = "进阶奖励"
+    },
     {387},
     {DepositID = 400085, SuperDepositID = 366},
     {
@@ -36,12 +41,14 @@ Table_ActPaySign_t = {
       SuperDepositID = 366,
       SuperTitle = "进阶奖励"
     },
+    {DepositID = 20000, SuperDepositID = 20001},
     {
-      DepositID = 400084,
+      DepositID = 20000,
       ProTitle = "特惠奖励",
-      SuperDepositID = 365,
+      SuperDepositID = 20001,
       SuperTitle = "进阶奖励"
-    }
+    },
+    {381}
   },
   ProRewardItems = {
     {
@@ -63,19 +70,25 @@ Table_ActPaySign_t = {
       {100, 5600000}
     },
     {
+      {8437, 20}
+    },
+    {
       {8439, 2}
     },
     {
       {8437, 30}
     },
     {
-      {8439, 3}
+      {100, 1800000}
+    },
+    {
+      {8473, 2}
     },
     {
       {3042358, 1}
     },
     {
-      {8437, 20}
+      {8439, 3}
     }
   },
   RewardItems = {
@@ -108,6 +121,9 @@ Table_ActPaySign_t = {
     },
     {
       {8437, 2}
+    },
+    {
+      {8473, 1}
     }
   },
   SuperRewardItems = {
@@ -119,6 +135,15 @@ Table_ActPaySign_t = {
     },
     {
       {3720, 10}
+    },
+    {
+      {100, 5000000}
+    },
+    {
+      {8474, 1}
+    },
+    {
+      {8473, 2}
     }
   }
 }
@@ -804,111 +829,30 @@ Table_ActPaySign = {
     ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
     SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[3],
     Important = 1,
-    Params = Table_ActPaySign_t.Params[17]
-  },
-  [82] = {
-    id = 82,
-    BatchID = 20261201,
-    RewardItems = Table_ActPaySign_t.RewardItems[1],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[4],
-    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[1],
-    Params = Table_ActPaySign_t.Params[15]
-  },
-  [83] = {
-    id = 83,
-    BatchID = 20261201,
-    Day = 2,
-    RewardItems = Table_ActPaySign_t.RewardItems[2],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
-    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
-    Params = Table_ActPaySign_t.Params[15]
-  },
-  [84] = {
-    id = 84,
-    BatchID = 20261201,
-    Day = 3,
-    RewardItems = Table_ActPaySign_t.RewardItems[3],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
-    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
-    Params = Table_ActPaySign_t.Params[15]
-  },
-  [85] = {
-    id = 85,
-    BatchID = 20261201,
-    Day = 4,
-    RewardItems = Table_ActPaySign_t.RewardItems[4],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
-    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
-    Params = Table_ActPaySign_t.Params[15]
-  },
-  [86] = {
-    id = 86,
-    BatchID = 20261201,
-    Day = 5,
-    RewardItems = Table_ActPaySign_t.RewardItems[5],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
-    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
-    Params = Table_ActPaySign_t.Params[15]
-  },
-  [87] = {
-    id = 87,
-    BatchID = 20261201,
-    Day = 6,
-    RewardItems = Table_ActPaySign_t.RewardItems[6],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
-    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
-    Params = Table_ActPaySign_t.Params[15]
-  },
-  [88] = {
-    id = 88,
-    BatchID = 20261201,
-    Day = 7,
-    RewardItems = Table_ActPaySign_t.RewardItems[7],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
-    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
-    Params = Table_ActPaySign_t.Params[15]
-  },
-  [89] = {
-    id = 89,
-    BatchID = 20261201,
-    Day = 8,
-    RewardItems = Table_ActPaySign_t.RewardItems[8],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
-    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
-    Params = Table_ActPaySign_t.Params[15]
-  },
-  [90] = {
-    id = 90,
-    BatchID = 20261201,
-    Day = 9,
-    RewardItems = Table_ActPaySign_t.RewardItems[9],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
-    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[3],
-    Important = 1,
-    Params = Table_ActPaySign_t.Params[16]
+    Params = Table_ActPaySign_t.Params[13]
   },
   [201] = {
     id = 201,
     ActID = 1060006,
     RewardItems = Table_ActPaySign_t.RewardItems[10],
     ProRewardItems = Table_ActPaySign_t.ProRewardItems[6],
-    Params = Table_ActPaySign_t.Params[13]
+    Params = Table_ActPaySign_t.Params[19]
   },
   [202] = {
     id = 202,
     ActID = 1060006,
     Day = 2,
     RewardItems = Table_ActPaySign_t.RewardItems[10],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[7],
-    Params = Table_ActPaySign_t.Params[13]
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[8],
+    Params = Table_ActPaySign_t.Params[19]
   },
   [203] = {
     id = 203,
     ActID = 1060006,
     Day = 3,
     RewardItems = Table_ActPaySign_t.RewardItems[10],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[8],
-    Params = Table_ActPaySign_t.Params[13]
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[9],
+    Params = Table_ActPaySign_t.Params[19]
   },
   [204] = {
     id = 204,
@@ -916,15 +860,15 @@ Table_ActPaySign = {
     Day = 4,
     RewardItems = Table_ActPaySign_t.RewardItems[10],
     ProRewardItems = Table_ActPaySign_t.ProRewardItems[6],
-    Params = Table_ActPaySign_t.Params[13]
+    Params = Table_ActPaySign_t.Params[19]
   },
   [205] = {
     id = 205,
     ActID = 1060006,
     Day = 5,
     RewardItems = Table_ActPaySign_t.RewardItems[10],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[9],
-    Params = Table_ActPaySign_t.Params[13]
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[13],
+    Params = Table_ActPaySign_t.Params[19]
   },
   [206] = {
     id = 206,
@@ -932,22 +876,22 @@ Table_ActPaySign = {
     Day = 6,
     RewardItems = Table_ActPaySign_t.RewardItems[10],
     ProRewardItems = Table_ActPaySign_t.ProRewardItems[6],
-    Params = Table_ActPaySign_t.Params[13]
+    Params = Table_ActPaySign_t.Params[19]
   },
   [207] = {
     id = 207,
     ActID = 1060006,
     Day = 7,
     RewardItems = Table_ActPaySign_t.RewardItems[10],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[9],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[13],
     Important = 1,
-    Params = Table_ActPaySign_t.Params[13]
+    Params = Table_ActPaySign_t.Params[19]
   },
   [208] = {
     id = 208,
     ActID = 1060014,
     RewardItems = Table_ActPaySign_t.RewardItems[10],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[10],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[12],
     Params = Table_ActPaySign_t.Params[14]
   },
   [209] = {
@@ -963,7 +907,7 @@ Table_ActPaySign = {
     ActID = 1060014,
     Day = 3,
     RewardItems = Table_ActPaySign_t.RewardItems[10],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[11],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[7],
     Params = Table_ActPaySign_t.Params[14]
   },
   [211] = {
@@ -979,7 +923,7 @@ Table_ActPaySign = {
     ActID = 1060014,
     Day = 5,
     RewardItems = Table_ActPaySign_t.RewardItems[10],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[7],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[8],
     Params = Table_ActPaySign_t.Params[14]
   },
   [213] = {
@@ -995,7 +939,7 @@ Table_ActPaySign = {
     ActID = 1060014,
     Day = 7,
     RewardItems = Table_ActPaySign_t.RewardItems[10],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[8],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[9],
     Params = Table_ActPaySign_t.Params[14]
   },
   [215] = {
@@ -1003,9 +947,171 @@ Table_ActPaySign = {
     ActID = 1060014,
     Day = 8,
     RewardItems = Table_ActPaySign_t.RewardItems[10],
-    ProRewardItems = Table_ActPaySign_t.ProRewardItems[7],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[8],
     Important = 1,
     Params = Table_ActPaySign_t.Params[14]
+  },
+  [216] = {
+    id = 216,
+    BatchID = 20261201,
+    RewardItems = Table_ActPaySign_t.RewardItems[1],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[4],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[1],
+    Params = Table_ActPaySign_t.Params[15]
+  },
+  [217] = {
+    id = 217,
+    BatchID = 20261201,
+    Day = 2,
+    RewardItems = Table_ActPaySign_t.RewardItems[2],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
+    Params = Table_ActPaySign_t.Params[15]
+  },
+  [218] = {
+    id = 218,
+    BatchID = 20261201,
+    Day = 3,
+    RewardItems = Table_ActPaySign_t.RewardItems[3],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
+    Params = Table_ActPaySign_t.Params[15]
+  },
+  [219] = {
+    id = 219,
+    BatchID = 20261201,
+    Day = 4,
+    RewardItems = Table_ActPaySign_t.RewardItems[4],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
+    Params = Table_ActPaySign_t.Params[15]
+  },
+  [220] = {
+    id = 220,
+    BatchID = 20261201,
+    Day = 5,
+    RewardItems = Table_ActPaySign_t.RewardItems[5],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
+    Params = Table_ActPaySign_t.Params[15]
+  },
+  [221] = {
+    id = 221,
+    BatchID = 20261201,
+    Day = 6,
+    RewardItems = Table_ActPaySign_t.RewardItems[6],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
+    Params = Table_ActPaySign_t.Params[15]
+  },
+  [222] = {
+    id = 222,
+    BatchID = 20261201,
+    Day = 7,
+    RewardItems = Table_ActPaySign_t.RewardItems[7],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
+    Params = Table_ActPaySign_t.Params[15]
+  },
+  [223] = {
+    id = 223,
+    BatchID = 20261201,
+    Day = 8,
+    RewardItems = Table_ActPaySign_t.RewardItems[8],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[2],
+    Params = Table_ActPaySign_t.Params[15]
+  },
+  [224] = {
+    id = 224,
+    BatchID = 20261201,
+    Day = 9,
+    RewardItems = Table_ActPaySign_t.RewardItems[9],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[5],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[3],
+    Important = 1,
+    Params = Table_ActPaySign_t.Params[16]
+  },
+  [225] = {
+    id = 225,
+    ActID = 1060023,
+    RewardItems = Table_ActPaySign_t.RewardItems[11],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[10],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[4],
+    Params = Table_ActPaySign_t.Params[17]
+  },
+  [226] = {
+    id = 226,
+    ActID = 1060023,
+    Day = 2,
+    RewardItems = Table_ActPaySign_t.RewardItems[11],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[11],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[5],
+    Params = Table_ActPaySign_t.Params[17]
+  },
+  [227] = {
+    id = 227,
+    ActID = 1060023,
+    Day = 3,
+    RewardItems = Table_ActPaySign_t.RewardItems[11],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[11],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[6],
+    Params = Table_ActPaySign_t.Params[17]
+  },
+  [228] = {
+    id = 228,
+    ActID = 1060023,
+    Day = 4,
+    RewardItems = Table_ActPaySign_t.RewardItems[11],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[11],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[6],
+    Params = Table_ActPaySign_t.Params[17]
+  },
+  [229] = {
+    id = 229,
+    ActID = 1060023,
+    Day = 5,
+    RewardItems = Table_ActPaySign_t.RewardItems[11],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[11],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[6],
+    Params = Table_ActPaySign_t.Params[17]
+  },
+  [230] = {
+    id = 230,
+    ActID = 1060023,
+    Day = 6,
+    RewardItems = Table_ActPaySign_t.RewardItems[11],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[11],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[6],
+    Params = Table_ActPaySign_t.Params[17]
+  },
+  [231] = {
+    id = 231,
+    ActID = 1060023,
+    Day = 7,
+    RewardItems = Table_ActPaySign_t.RewardItems[11],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[11],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[6],
+    Params = Table_ActPaySign_t.Params[17]
+  },
+  [232] = {
+    id = 232,
+    ActID = 1060023,
+    Day = 8,
+    RewardItems = Table_ActPaySign_t.RewardItems[11],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[11],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[6],
+    Params = Table_ActPaySign_t.Params[17]
+  },
+  [233] = {
+    id = 233,
+    ActID = 1060023,
+    Day = 9,
+    RewardItems = Table_ActPaySign_t.RewardItems[11],
+    ProRewardItems = Table_ActPaySign_t.ProRewardItems[11],
+    SuperRewardItems = Table_ActPaySign_t.SuperRewardItems[6],
+    Important = 1,
+    Params = Table_ActPaySign_t.Params[18]
   }
 }
 local cell_mt = {

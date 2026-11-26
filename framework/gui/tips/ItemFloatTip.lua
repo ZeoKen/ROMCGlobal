@@ -594,7 +594,13 @@ function ItemFloatTip:ActiveFavorite()
   end
 end
 
-function ItemFloatTip:UpdateFavorite()
+function ItemFloatTip:UpdateFavorite(itemdata)
+  if itemdata and self.data then
+    self.data.itemdata = itemdata
+    if self.cells[1] then
+      self.cells[1].data = itemdata
+    end
+  end
   for _, cell in pairs(self.cells) do
     cell:UpdateFavorite()
   end

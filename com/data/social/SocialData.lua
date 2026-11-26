@@ -20,6 +20,7 @@ function SocialData:SetData(data)
     self.profession = data.profession
     self.gender = data.gender
     self.name = data.name
+    self.remark = data.remark or ""
     self.guildname = data.guildname
     self.guildportrait = data.guildportrait
     self.adventureLv = data.adventurelv
@@ -228,6 +229,7 @@ function SocialData:Clear()
   self.profession = nil
   self.gender = nil
   self.name = nil
+  self.remark = nil
   self.guildname = nil
   self.guildportrait = nil
   self.adventureLv = nil

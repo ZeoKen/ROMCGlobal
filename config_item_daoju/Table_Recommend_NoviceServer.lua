@@ -704,6 +704,22 @@ Table_Recommend = {
     CardExtraReward = 70000026,
     InDoublePool = 1
   },
+  [123] = {
+    id = 123,
+    Icon = "jfzc_01",
+    Name = "猎鬼决战",
+    Title = "参与吉芬战场/吉芬尼亚[猎鬼决战]1次",
+    PageType = {5, 6},
+    Favorability = 120,
+    Recycle = 2,
+    Progress = "%s/1",
+    Finish = "ebf_join_statue",
+    Del = "prestige_system_level",
+    Del_Params = {2, 25},
+    GotoMode = {8345},
+    ServerID = _EmptyTable,
+    InDoublePool = 1
+  },
   [124] = {
     id = 124,
     Icon = "SnowParty",

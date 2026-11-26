@@ -2,6 +2,13 @@ autoImport("BagItemCell")
 PetBagItemCell = class("PetBagItemCell", BagItemCell)
 local CDTextTickId = 1001
 
+function PetBagItemCell:Init()
+  PetBagItemCell.super.Init(self)
+  if self.favoriteTip then
+    self.favoriteTip.transform.localPosition = LuaGeometry.GetTempVector3(38, -36, 0)
+  end
+end
+
 function PetBagItemCell:SetData(data)
   self:StopCDTextTick()
   PetBagItemCell.super.SetData(self, data)

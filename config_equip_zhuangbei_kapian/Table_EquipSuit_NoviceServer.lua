@@ -2279,7 +2279,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[68],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[4],
     SameTeam = 2,
-    EquipSuitDsc = "[大猫的祝福][魔磨长靴][背德皇帝的斗篷]",
     EffectDesc = "体质＋5、HP恢复＋10%、SP恢复＋10%"
   },
   [111] = {
@@ -2287,7 +2286,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[69],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[4],
     SameTeam = 2,
-    EquipSuitDsc = "[大猫的祝福][魔磨长靴][背德皇帝的斗篷]",
     EffectDesc = "体质＋5、HP恢复＋10%、SP恢复＋10%"
   },
   [112] = {
@@ -2295,7 +2293,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[70],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[4],
     SameTeam = 2,
-    EquipSuitDsc = "[大猫的祝福][魔磨长靴][背德皇帝的斗篷]",
     EffectDesc = "体质＋5、HP恢复＋10%、SP恢复＋10%"
   },
   [113] = {
@@ -2303,7 +2300,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[71],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[4],
     SameTeam = 2,
-    EquipSuitDsc = "[大猫的祝福][魔磨长靴][背德皇帝的斗篷]",
     EffectDesc = "体质＋5、HP恢复＋10%、SP恢复＋10%"
   },
   [114] = {
@@ -2311,7 +2307,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[72],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[4],
     SameTeam = 2,
-    EquipSuitDsc = "[大猫的祝福][魔磨长靴][背德皇帝的斗篷]",
     EffectDesc = "体质＋5、HP恢复＋10%、SP恢复＋10%"
   },
   [115] = {
@@ -2319,7 +2314,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[73],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[4],
     SameTeam = 2,
-    EquipSuitDsc = "[大猫的祝福][魔磨长靴][背德皇帝的斗篷]",
     EffectDesc = "体质＋5、HP恢复＋10%、SP恢复＋10%"
   },
   [116] = {
@@ -2327,7 +2321,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[74],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[4],
     SameTeam = 2,
-    EquipSuitDsc = "[大猫的祝福][魔磨长靴][背德皇帝的斗篷]",
     EffectDesc = "体质＋5、HP恢复＋10%、SP恢复＋10%"
   },
   [117] = {
@@ -2335,7 +2328,6 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[75],
     SuitThreeAdd = Table_EquipSuit_t.SuitThreeAdd[4],
     SameTeam = 2,
-    EquipSuitDsc = "[大猫的祝福][魔磨长靴][背德皇帝的斗篷]",
     EffectDesc = "体质＋5、HP恢复＋10%、SP恢复＋10%"
   },
   [120] = {
@@ -5262,6 +5254,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[5],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1031] = {
@@ -5269,6 +5262,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[6],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1032] = {
@@ -5276,6 +5270,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[7],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1033] = {
@@ -5283,6 +5278,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[8],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1034] = {
@@ -5290,6 +5286,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[9],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1035] = {
@@ -5297,6 +5294,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[10],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1036] = {
@@ -5304,6 +5302,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[11],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1037] = {
@@ -5311,6 +5310,7 @@ Table_EquipSuit = {
     Suitid = Table_EquipSuit_t.Suitid[12],
     SuitFourAdd = Table_EquipSuit_t.SuitFourAdd[1],
     SameTeam = 94,
+    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
     EffectDesc = "体质＋5、生命上限＋15%、魔法上限＋5%、受到毒属性、圣属性、暗属性、念属性伤害－15%"
   },
   [1040] = {
@@ -8885,7 +8885,7 @@ Table_EquipSuit = {
 local cell_mt = {
   __index = {
     EffectDesc = "【赞歌】伤害＋10%",
-    EquipSuitDsc = "[哥夫内的铠甲★][哥夫内军靴][哥夫内肩饰][哥夫内的头具]",
+    EquipSuitDsc = "[大猫的祝福][魔磨长靴][背德皇帝的斗篷]",
     RefineBuff = _EmptyTable,
     SameTeam = 1,
     SuitFiveAdd = _EmptyTable,

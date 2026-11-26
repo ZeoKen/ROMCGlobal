@@ -537,13 +537,6 @@ Table_StrateText_t = {
       78952001
     },
     {78953001},
-    {72820001},
-    {78955001, 78956001},
-    {78958001},
-    {78959001},
-    {78960001},
-    {23614001},
-    {23613001},
     {
       72770001,
       72780001,
@@ -551,10 +544,24 @@ Table_StrateText_t = {
       73050001
     },
     {
+      73310001,
+      72750001,
+      72760001
+    },
+    {78955001, 78956001},
+    {78958001},
+    {78959001},
+    {78960001},
+    {23614001},
+    {23613001},
+    {72780001, 72800001},
+    {72820001},
+    {
       78961001,
       78962001,
       78963001
     },
+    {72890001},
     {
       78964001,
       78965001,
@@ -625,19 +632,12 @@ Table_StrateText_t = {
       79530001,
       79540001
     },
-    {72780001, 72800001},
     {
-      73310001,
-      72750001,
-      72760001
+      72710001,
+      72720001,
+      72730001
     },
     {71800001},
-    {
-      15076001,
-      15078001,
-      15079001,
-      15081001
-    },
     {
       79880001,
       79881001,
@@ -652,11 +652,11 @@ Table_StrateText_t = {
       72480001
     },
     {
-      72040001,
-      72050001,
-      72490001
+      72060001,
+      72070001,
+      72080001,
+      72090001
     },
-    {72500001},
     {
       72100001,
       72110001,
@@ -679,11 +679,6 @@ Table_StrateText_t = {
       72520001
     },
     {
-      73200001,
-      73210001,
-      73220001
-    },
-    {
       79960001,
       79964001,
       79965001
@@ -694,11 +689,6 @@ Table_StrateText_t = {
       79067001,
       78983003
     },
-    {
-      79888001,
-      79889001,
-      79890001
-    },
     {77920001},
     {
       77850001,
@@ -706,6 +696,11 @@ Table_StrateText_t = {
       77870001,
       77880001,
       77890001
+    },
+    {
+      79888001,
+      79889001,
+      79890001
     },
     {
       73520000,
@@ -719,13 +714,13 @@ Table_StrateText_t = {
     {73560001, 73660001},
     {73550001},
     {73540001},
-    {79892001, 79893001},
     {
       73480001,
       73490001,
       73500002,
       73510001
     },
+    {79892001, 79893001},
     {73280001},
     {73300001},
     {
@@ -740,16 +735,21 @@ Table_StrateText_t = {
       73300001
     },
     {
+      73200001,
+      73210001,
+      73220001
+    },
+    {
       79952001,
       79958001,
       79959005
     },
     {79955001, 79956001},
+    {72500001},
     {
-      72060001,
-      72070001,
-      72080001,
-      72090001
+      72040001,
+      72050001,
+      72490001
     },
     {
       21012002,
@@ -773,6 +773,19 @@ Table_StrateText_t = {
       25815001,
       25816001,
       25817001
+    },
+    {
+      25799001,
+      25800001,
+      25801001,
+      25802001,
+      25803001,
+      25804001,
+      25805001,
+      25806001,
+      25807001,
+      25808001,
+      25809001
     },
     {
       22000003,
@@ -814,11 +827,6 @@ Table_StrateText_t = {
       23032001,
       23033001,
       23059001
-    },
-    {
-      72710001,
-      72720001,
-      72730001
     },
     {
       79988001,
@@ -929,7 +937,6 @@ Table_StrateText_t = {
       80051001,
       80052001
     },
-    {72890001},
     {
       71850001,
       71880001,
@@ -970,6 +977,12 @@ Table_StrateText_t = {
       80070001,
       80071001,
       80072001
+    },
+    {
+      15076001,
+      15078001,
+      15079001,
+      15081001
     },
     {
       71930001,
@@ -1287,38 +1300,38 @@ Table_StrateText = {
     Type = 2,
     Stage = Table_StrateText_t.Stage[14],
     StageIntroduce = "拉斯格瑞丝通过守护者大厅内的【能量水晶】获得护盾。该护盾免疫一切物理和魔法攻击，不会因为冒险者的攻击而削减。",
-    SkillID = Table_StrateText_t.SkillID[168]
+    SkillID = Table_StrateText_t.SkillID[169]
   },
   [1016] = {
     id = 1016,
     Type = 2,
     Stage = Table_StrateText_t.Stage[15],
     StageIntroduce = "失去护盾后，拉斯格瑞丝开始认真起来，使出全力攻击冒险者。",
-    SkillID = Table_StrateText_t.SkillID[169]
+    SkillID = Table_StrateText_t.SkillID[170]
   },
   [1017] = {
     id = 1017,
     Type = 3,
     ServantID = 250050,
-    SkillID = Table_StrateText_t.SkillID[170]
+    SkillID = Table_StrateText_t.SkillID[171]
   },
   [1018] = {
     id = 1018,
     Type = 3,
     ServantID = 250060,
-    SkillID = Table_StrateText_t.SkillID[171]
+    SkillID = Table_StrateText_t.SkillID[172]
   },
   [1019] = {
     id = 1019,
     Type = 3,
     ServantID = 250070,
-    SkillID = Table_StrateText_t.SkillID[172]
+    SkillID = Table_StrateText_t.SkillID[173]
   },
   [1020] = {
     id = 1020,
     Type = 3,
     ServantID = 250150,
-    SkillID = Table_StrateText_t.SkillID[173]
+    SkillID = Table_StrateText_t.SkillID[174]
   },
   [1021] = {
     id = 1021,
@@ -1529,7 +1542,7 @@ Table_StrateText = {
   [2011] = {
     id = 2011,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[163]
+    SkillID = Table_StrateText_t.SkillID[164]
   },
   [2020] = {
     id = 2020,
@@ -1539,13 +1552,13 @@ Table_StrateText = {
   [2021] = {
     id = 2021,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[164]
+    SkillID = Table_StrateText_t.SkillID[165]
   },
   [2022] = {
     id = 2022,
     Type = 2,
     ServantID = 209019,
-    SkillID = Table_StrateText_t.SkillID[160]
+    SkillID = Table_StrateText_t.SkillID[161]
   },
   [2030] = {
     id = 2030,
@@ -1555,18 +1568,18 @@ Table_StrateText = {
   [2031] = {
     id = 2031,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[165]
+    SkillID = Table_StrateText_t.SkillID[166]
   },
   [2032] = {
     id = 2032,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[166]
+    SkillID = Table_StrateText_t.SkillID[167]
   },
   [2033] = {
     id = 2033,
     Type = 2,
     ServantID = 215060,
-    SkillID = Table_StrateText_t.SkillID[167]
+    SkillID = Table_StrateText_t.SkillID[168]
   },
   [2040] = {
     id = 2040,
@@ -1576,7 +1589,7 @@ Table_StrateText = {
   [2041] = {
     id = 2041,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[80]
+    SkillID = Table_StrateText_t.SkillID[83]
   },
   [2050] = {
     id = 2050,
@@ -1586,13 +1599,13 @@ Table_StrateText = {
   [2051] = {
     id = 2051,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[82]
+    SkillID = Table_StrateText_t.SkillID[85]
   },
   [2052] = {
     id = 2052,
     Type = 2,
     ServantID = 209016,
-    SkillID = Table_StrateText_t.SkillID[78]
+    SkillID = Table_StrateText_t.SkillID[81]
   },
   [2053] = {
     id = 2053,
@@ -1617,13 +1630,13 @@ Table_StrateText = {
   [2061] = {
     id = 2061,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[76]
+    SkillID = Table_StrateText_t.SkillID[79]
   },
   [2062] = {
     id = 2062,
     Type = 2,
     ServantID = 350050,
-    SkillID = Table_StrateText_t.SkillID[146]
+    SkillID = Table_StrateText_t.SkillID[76]
   },
   [2070] = {
     id = 2070,
@@ -1633,13 +1646,13 @@ Table_StrateText = {
   [2071] = {
     id = 2071,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[130]
+    SkillID = Table_StrateText_t.SkillID[92]
   },
   [2072] = {
     id = 2072,
     Type = 2,
     ServantID = 350010,
-    SkillID = Table_StrateText_t.SkillID[90]
+    SkillID = Table_StrateText_t.SkillID[66]
   },
   [2080] = {
     id = 2080,
@@ -1649,19 +1662,19 @@ Table_StrateText = {
   [2081] = {
     id = 2081,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[72]
+    SkillID = Table_StrateText_t.SkillID[65]
   },
   [2082] = {
     id = 2082,
     Type = 2,
     ServantID = 350030,
-    SkillID = Table_StrateText_t.SkillID[65]
+    SkillID = Table_StrateText_t.SkillID[74]
   },
   [2083] = {
     id = 2083,
     Type = 2,
     ServantID = 350020,
-    SkillID = Table_StrateText_t.SkillID[89]
+    SkillID = Table_StrateText_t.SkillID[73]
   },
   [2090] = {
     id = 2090,
@@ -1851,22 +1864,22 @@ Table_StrateText = {
   },
   [2211] = {
     id = 2211,
-    SkillID = Table_StrateText_t.SkillID[66]
+    SkillID = Table_StrateText_t.SkillID[67]
   },
   [2212] = {
     id = 2212,
     ServantID = 350350,
-    SkillID = Table_StrateText_t.SkillID[67]
+    SkillID = Table_StrateText_t.SkillID[68]
   },
   [2213] = {
     id = 2213,
     ServantID = 350360,
-    SkillID = Table_StrateText_t.SkillID[68]
+    SkillID = Table_StrateText_t.SkillID[69]
   },
   [2214] = {
     id = 2214,
     ServantID = 350370,
-    SkillID = Table_StrateText_t.SkillID[69]
+    SkillID = Table_StrateText_t.SkillID[70]
   },
   [2220] = {
     id = 2220,
@@ -1875,7 +1888,7 @@ Table_StrateText = {
   },
   [2221] = {
     id = 2221,
-    SkillID = Table_StrateText_t.SkillID[73]
+    SkillID = Table_StrateText_t.SkillID[75]
   },
   [2230] = {
     id = 2230,
@@ -1884,12 +1897,12 @@ Table_StrateText = {
   },
   [2231] = {
     id = 2231,
-    SkillID = Table_StrateText_t.SkillID[74]
+    SkillID = Table_StrateText_t.SkillID[77]
   },
   [2232] = {
     id = 2232,
     ServantID = 350400,
-    SkillID = Table_StrateText_t.SkillID[75]
+    SkillID = Table_StrateText_t.SkillID[78]
   },
   [2240] = {
     id = 2240,
@@ -1898,7 +1911,7 @@ Table_StrateText = {
   },
   [2241] = {
     id = 2241,
-    SkillID = Table_StrateText_t.SkillID[77]
+    SkillID = Table_StrateText_t.SkillID[80]
   },
   [2250] = {
     id = 2250,
@@ -1907,13 +1920,13 @@ Table_StrateText = {
   },
   [2251] = {
     id = 2251,
-    SkillID = Table_StrateText_t.SkillID[79]
+    SkillID = Table_StrateText_t.SkillID[82]
   },
   [2253] = {id = 2253, ServantID = 350540},
   [2254] = {
     id = 2254,
     ServantID = 350550,
-    SkillID = Table_StrateText_t.SkillID[81]
+    SkillID = Table_StrateText_t.SkillID[84]
   },
   [2260] = {
     id = 2260,
@@ -1922,12 +1935,12 @@ Table_StrateText = {
   },
   [2261] = {
     id = 2261,
-    SkillID = Table_StrateText_t.SkillID[83]
+    SkillID = Table_StrateText_t.SkillID[86]
   },
   [2262] = {
     id = 2262,
     ServantID = 350530,
-    SkillID = Table_StrateText_t.SkillID[84]
+    SkillID = Table_StrateText_t.SkillID[87]
   },
   [2270] = {
     id = 2270,
@@ -1936,7 +1949,7 @@ Table_StrateText = {
   },
   [2271] = {
     id = 2271,
-    SkillID = Table_StrateText_t.SkillID[87]
+    SkillID = Table_StrateText_t.SkillID[90]
   },
   [2280] = {
     id = 2280,
@@ -1945,7 +1958,7 @@ Table_StrateText = {
   },
   [2281] = {
     id = 2281,
-    SkillID = Table_StrateText_t.SkillID[88]
+    SkillID = Table_StrateText_t.SkillID[91]
   },
   [2290] = {
     id = 2290,
@@ -1954,12 +1967,12 @@ Table_StrateText = {
   },
   [2291] = {
     id = 2291,
-    SkillID = Table_StrateText_t.SkillID[93]
+    SkillID = Table_StrateText_t.SkillID[94]
   },
   [2292] = {
     id = 2292,
     ServantID = 350620,
-    SkillID = Table_StrateText_t.SkillID[94]
+    SkillID = Table_StrateText_t.SkillID[95]
   },
   [2300] = {
     id = 2300,
@@ -1977,7 +1990,7 @@ Table_StrateText = {
   },
   [2311] = {
     id = 2311,
-    SkillID = Table_StrateText_t.SkillID[104]
+    SkillID = Table_StrateText_t.SkillID[105]
   },
   [2320] = {
     id = 2320,
@@ -2016,7 +2029,7 @@ Table_StrateText = {
   },
   [2351] = {
     id = 2351,
-    SkillID = Table_StrateText_t.SkillID[121]
+    SkillID = Table_StrateText_t.SkillID[122]
   },
   [2360] = {
     id = 2360,
@@ -2025,7 +2038,7 @@ Table_StrateText = {
   },
   [2361] = {
     id = 2361,
-    SkillID = Table_StrateText_t.SkillID[125]
+    SkillID = Table_StrateText_t.SkillID[127]
   },
   [2362] = {id = 2362, ServantID = 320161},
   [2370] = {
@@ -2035,12 +2048,12 @@ Table_StrateText = {
   },
   [2371] = {
     id = 2371,
-    SkillID = Table_StrateText_t.SkillID[126]
+    SkillID = Table_StrateText_t.SkillID[128]
   },
   [2372] = {
     id = 2372,
     ServantID = 320182,
-    SkillID = Table_StrateText_t.SkillID[127]
+    SkillID = Table_StrateText_t.SkillID[129]
   },
   [2380] = {
     id = 2380,
@@ -2049,13 +2062,13 @@ Table_StrateText = {
   },
   [2381] = {
     id = 2381,
-    SkillID = Table_StrateText_t.SkillID[131]
+    SkillID = Table_StrateText_t.SkillID[132]
   },
   [2382] = {id = 2382, ServantID = 320191},
   [2383] = {
     id = 2383,
     ServantID = 320196,
-    SkillID = Table_StrateText_t.SkillID[132]
+    SkillID = Table_StrateText_t.SkillID[133]
   },
   [2390] = {
     id = 2390,
@@ -2064,7 +2077,7 @@ Table_StrateText = {
   },
   [2391] = {
     id = 2391,
-    SkillID = Table_StrateText_t.SkillID[133]
+    SkillID = Table_StrateText_t.SkillID[134]
   },
   [2400] = {
     id = 2400,
@@ -2077,12 +2090,12 @@ Table_StrateText = {
   },
   [2402] = {
     id = 2402,
-    SkillID = Table_StrateText_t.SkillID[134]
+    SkillID = Table_StrateText_t.SkillID[135]
   },
   [2403] = {
     id = 2403,
     ServantID = 350690,
-    SkillID = Table_StrateText_t.SkillID[135]
+    SkillID = Table_StrateText_t.SkillID[136]
   },
   [2404] = {id = 2404, ServantID = 350691},
   [2410] = {
@@ -2092,7 +2105,7 @@ Table_StrateText = {
   },
   [2411] = {
     id = 2411,
-    SkillID = Table_StrateText_t.SkillID[136]
+    SkillID = Table_StrateText_t.SkillID[137]
   },
   [2412] = {id = 2412, ServantID = 320203},
   [2413] = {id = 2413, ServantID = 320204},
@@ -2103,7 +2116,7 @@ Table_StrateText = {
   },
   [2421] = {
     id = 2421,
-    SkillID = Table_StrateText_t.SkillID[137]
+    SkillID = Table_StrateText_t.SkillID[138]
   },
   [2430] = {
     id = 2430,
@@ -2112,7 +2125,7 @@ Table_StrateText = {
   },
   [2431] = {
     id = 2431,
-    SkillID = Table_StrateText_t.SkillID[138]
+    SkillID = Table_StrateText_t.SkillID[139]
   },
   [2440] = {
     id = 2440,
@@ -2121,7 +2134,7 @@ Table_StrateText = {
   },
   [2441] = {
     id = 2441,
-    SkillID = Table_StrateText_t.SkillID[139]
+    SkillID = Table_StrateText_t.SkillID[140]
   },
   [2442] = {id = 2442, ServantID = 320243},
   [2443] = {id = 2443, ServantID = 320244},
@@ -2137,7 +2150,7 @@ Table_StrateText = {
   },
   [2452] = {
     id = 2452,
-    SkillID = Table_StrateText_t.SkillID[142]
+    SkillID = Table_StrateText_t.SkillID[143]
   },
   [2453] = {id = 2453, ServantID = 350694},
   [2454] = {
@@ -2155,7 +2168,7 @@ Table_StrateText = {
   },
   [2462] = {
     id = 2462,
-    SkillID = Table_StrateText_t.SkillID[145]
+    SkillID = Table_StrateText_t.SkillID[146]
   },
   [2463] = {
     id = 2463,
@@ -2202,7 +2215,7 @@ Table_StrateText = {
   },
   [2491] = {
     id = 2491,
-    SkillID = Table_StrateText_t.SkillID[156]
+    SkillID = Table_StrateText_t.SkillID[157]
   },
   [2492] = {
     id = 2492,
@@ -2215,7 +2228,7 @@ Table_StrateText = {
   },
   [2501] = {
     id = 2501,
-    SkillID = Table_StrateText_t.SkillID[161]
+    SkillID = Table_StrateText_t.SkillID[162]
   },
   [2510] = {
     id = 2510,
@@ -2224,7 +2237,7 @@ Table_StrateText = {
   },
   [2511] = {
     id = 2511,
-    SkillID = Table_StrateText_t.SkillID[162]
+    SkillID = Table_StrateText_t.SkillID[163]
   },
   [2512] = {id = 2512, ServantID = 209056},
   [2520] = {
@@ -2234,7 +2247,7 @@ Table_StrateText = {
   },
   [2521] = {
     id = 2521,
-    SkillID = Table_StrateText_t.SkillID[92]
+    SkillID = Table_StrateText_t.SkillID[154]
   },
   [2530] = {
     id = 2530,
@@ -2243,7 +2256,7 @@ Table_StrateText = {
   },
   [2531] = {
     id = 2531,
-    SkillID = Table_StrateText_t.SkillID[159]
+    SkillID = Table_StrateText_t.SkillID[160]
   },
   [2532] = {id = 2532, ServantID = 350700},
   [2540] = {
@@ -2253,7 +2266,7 @@ Table_StrateText = {
   },
   [2541] = {
     id = 2541,
-    SkillID = Table_StrateText_t.SkillID[157]
+    SkillID = Table_StrateText_t.SkillID[158]
   },
   [2542] = {id = 2542, ServantID = 277009},
   [2550] = {
@@ -2263,12 +2276,21 @@ Table_StrateText = {
   },
   [2551] = {
     id = 2551,
-    SkillID = Table_StrateText_t.SkillID[155]
+    SkillID = Table_StrateText_t.SkillID[156]
   },
   [2552] = {
     id = 2552,
     ServantID = 277022,
-    SkillID = Table_StrateText_t.SkillID[122]
+    SkillID = Table_StrateText_t.SkillID[123]
+  },
+  [2553] = {
+    id = 2553,
+    Type = 5,
+    MonsterID = 30077
+  },
+  [2554] = {
+    id = 2554,
+    SkillID = Table_StrateText_t.SkillID[124]
   },
   [3010] = {
     id = 3010,
@@ -2751,7 +2773,7 @@ Table_StrateText = {
   [5001] = {
     id = 5001,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[140]
+    SkillID = Table_StrateText_t.SkillID[141]
   },
   [5010] = {
     id = 5010,
@@ -2761,7 +2783,7 @@ Table_StrateText = {
   [5011] = {
     id = 5011,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[143]
+    SkillID = Table_StrateText_t.SkillID[144]
   },
   [5020] = {
     id = 5020,
@@ -2793,7 +2815,7 @@ Table_StrateText = {
     id = 5032,
     Type = 2,
     ServantID = 209007,
-    SkillID = Table_StrateText_t.SkillID[91]
+    SkillID = Table_StrateText_t.SkillID[93]
   },
   [5040] = {
     id = 5040,
@@ -2803,7 +2825,7 @@ Table_StrateText = {
   [5041] = {
     id = 5041,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[154]
+    SkillID = Table_StrateText_t.SkillID[155]
   },
   [5042] = {
     id = 5042,
@@ -2818,7 +2840,7 @@ Table_StrateText = {
   [5051] = {
     id = 5051,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[158]
+    SkillID = Table_StrateText_t.SkillID[159]
   },
   [5060] = {
     id = 5060,
@@ -2828,7 +2850,7 @@ Table_StrateText = {
   [5061] = {
     id = 5061,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[95]
+    SkillID = Table_StrateText_t.SkillID[96]
   },
   [5070] = {
     id = 5070,
@@ -2838,13 +2860,13 @@ Table_StrateText = {
   [5071] = {
     id = 5071,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[96]
+    SkillID = Table_StrateText_t.SkillID[120]
   },
   [5072] = {
     id = 5072,
     Type = 2,
     ServantID = 209010,
-    SkillID = Table_StrateText_t.SkillID[97]
+    SkillID = Table_StrateText_t.SkillID[119]
   },
   [5080] = {
     id = 5080,
@@ -2854,7 +2876,7 @@ Table_StrateText = {
   [5081] = {
     id = 5081,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[119]
+    SkillID = Table_StrateText_t.SkillID[97]
   },
   [5090] = {
     id = 5090,
@@ -2884,13 +2906,13 @@ Table_StrateText = {
   [5111] = {
     id = 5111,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[101]
+    SkillID = Table_StrateText_t.SkillID[116]
   },
   [5112] = {
     id = 5112,
     Type = 2,
     ServantID = 209021,
-    SkillID = Table_StrateText_t.SkillID[116]
+    SkillID = Table_StrateText_t.SkillID[115]
   },
   [5120] = {
     id = 5120,
@@ -2900,25 +2922,25 @@ Table_StrateText = {
   [5121] = {
     id = 5121,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[115]
+    SkillID = Table_StrateText_t.SkillID[114]
   },
   [5122] = {
     id = 5122,
     Type = 2,
     ServantID = 209023,
-    SkillID = Table_StrateText_t.SkillID[114]
+    SkillID = Table_StrateText_t.SkillID[113]
   },
   [5123] = {
     id = 5123,
     Type = 2,
     ServantID = 209024,
-    SkillID = Table_StrateText_t.SkillID[113]
+    SkillID = Table_StrateText_t.SkillID[112]
   },
   [5124] = {
     id = 5124,
     Type = 2,
     ServantID = 209025,
-    SkillID = Table_StrateText_t.SkillID[78]
+    SkillID = Table_StrateText_t.SkillID[81]
   },
   [5130] = {
     id = 5130,
@@ -2928,25 +2950,25 @@ Table_StrateText = {
   [5131] = {
     id = 5131,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[112]
+    SkillID = Table_StrateText_t.SkillID[110]
   },
   [5132] = {
     id = 5132,
     Type = 2,
     ServantID = 209026,
-    SkillID = Table_StrateText_t.SkillID[110]
+    SkillID = Table_StrateText_t.SkillID[109]
   },
   [5133] = {
     id = 5133,
     Type = 2,
     ServantID = 209027,
-    SkillID = Table_StrateText_t.SkillID[109]
+    SkillID = Table_StrateText_t.SkillID[108]
   },
   [5134] = {
     id = 5134,
     Type = 2,
     ServantID = 209028,
-    SkillID = Table_StrateText_t.SkillID[108]
+    SkillID = Table_StrateText_t.SkillID[107]
   },
   [5140] = {
     id = 5140,
@@ -2956,7 +2978,7 @@ Table_StrateText = {
   [5141] = {
     id = 5141,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[107]
+    SkillID = Table_StrateText_t.SkillID[106]
   },
   [5150] = {
     id = 5150,
@@ -2966,13 +2988,13 @@ Table_StrateText = {
   [5151] = {
     id = 5151,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[106]
+    SkillID = Table_StrateText_t.SkillID[104]
   },
   [5152] = {
     id = 5152,
     Type = 2,
     ServantID = 209037,
-    SkillID = Table_StrateText_t.SkillID[105]
+    SkillID = Table_StrateText_t.SkillID[103]
   },
   [5153] = {
     id = 5153,
@@ -3111,7 +3133,7 @@ Table_StrateText = {
     id = 5206,
     Type = 2,
     ServantID = 280603,
-    SkillID = Table_StrateText_t.SkillID[103]
+    SkillID = Table_StrateText_t.SkillID[102]
   },
   [5207] = {
     id = 5207,
@@ -3195,7 +3217,7 @@ Table_StrateText = {
   [5251] = {
     id = 5251,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[102]
+    SkillID = Table_StrateText_t.SkillID[101]
   },
   [5252] = {
     id = 5252,
@@ -3272,7 +3294,7 @@ Table_StrateText = {
     id = 10013,
     Type = 2,
     StageIntroduce = "幻龙加利厄隆坦会灵活运用火、毒两种属性来迎敌。当幻龙身上冒出红色的火焰或者蓝绿色的毒焰时，它的技能将会为受到伤害的敌人附加对应的火或者毒之印记。受到火/毒印记的敌人，会每2秒受到火/毒属性的伤害，同时每隔数秒会额外叠加一层相同的印记，当同一种印记叠加到10层后，将陷入长时间的石化状态，不可驱散和主动解除，只有被幻龙的巨龙冲撞接触后方可解除。两种属性的印记不会同时存在，当附带火之印记的冒险者受到毒属性技能影响后，会清除自身的火之印记同时开始叠加毒之印记，反之亦然。当冒险者触发自身的印记属性切换时，会触发范围爆炸伤害。（英灵难度下火/毒印记伤害不受对应的火/毒属性减伤影响）",
-    SkillID = Table_StrateText_t.SkillID[120]
+    SkillID = Table_StrateText_t.SkillID[121]
   },
   [10014] = {
     id = 10014,
@@ -3309,13 +3331,13 @@ Table_StrateText = {
     id = 10023,
     Type = 2,
     StageIntroduce = "国王雕像在战斗时会使用自己的亲卫队棋子来对冒险者进行干扰。准确判断棋子的移动路径将会是战胜国王的关键。每隔一段时间，国王会命令棋子进行移动，移动结束后国王将颁布随机一条法令",
-    SkillID = Table_StrateText_t.SkillID[123]
+    SkillID = Table_StrateText_t.SkillID[125]
   },
   [10024] = {
     id = 10024,
     Type = 3,
     ServantID = 270604,
-    SkillID = Table_StrateText_t.SkillID[124]
+    SkillID = Table_StrateText_t.SkillID[126]
   },
   [10025] = {
     id = 10025,
@@ -3378,28 +3400,28 @@ Table_StrateText = {
     Type = 2,
     Stage = Table_StrateText_t.Stage[11],
     StageIntroduce = "祖尔作为战团的前锋熟练掌握了骑士与猎人的技能，小心他的弓箭与陷阱。身为骑士，他会响应冒险者的嘲讽技能。（英灵难度下祖尔获得被动技能：每隔一段时间为自己添加霸邪之阵的效果，同时阵亡时会为击杀者施加持续一段时间的负面效果：生命值上限降低）",
-    SkillID = Table_StrateText_t.SkillID[86]
+    SkillID = Table_StrateText_t.SkillID[89]
   },
   [10037] = {
     id = 10037,
     Type = 2,
     Stage = Table_StrateText_t.Stage[10],
     StageIntroduce = "珀卡拉尼作为战团的辅助熟练掌握了牧师与贤者的技能，小心她的领域与驱散，不可被嘲讽。（英灵难度下珀卡拉尼获得被动技能：为自己添加永久的暗之障壁的效果，同时阵亡时会为击杀者施加持续一段时间的负面效果：无法添加增益效果）",
-    SkillID = Table_StrateText_t.SkillID[85]
+    SkillID = Table_StrateText_t.SkillID[88]
   },
   [10038] = {
     id = 10038,
     Type = 2,
     Stage = Table_StrateText_t.Stage[12],
     StageIntroduce = "努卡作为战团的近战输出手，兼具武僧与流氓的技能，小心他的阿修罗霸凰拳，不可被嘲讽。（英灵难度下努卡获得被动技能：为自己添加永久的光之障壁的效果，同时阵亡时会为击杀者施加持续一段时间的负面效果：被缴械）",
-    SkillID = Table_StrateText_t.SkillID[128]
+    SkillID = Table_StrateText_t.SkillID[130]
   },
   [10039] = {
     id = 10039,
     Type = 2,
     Stage = Table_StrateText_t.Stage[13],
     StageIntroduce = "卡摩拉作为战团的魔法攻手，兼具法师与炼金术师的技能，小心她的地狱植物与陨石术，不可被嘲讽。（英灵难度下卡摩拉获得被动技能：阵亡时会为击杀者施加持续一段时间的负面效果：sp归零且无法恢复sp）",
-    SkillID = Table_StrateText_t.SkillID[129]
+    SkillID = Table_StrateText_t.SkillID[131]
   },
   [10040] = {
     id = 10040,
@@ -3469,7 +3491,7 @@ Table_StrateText = {
   [10113] = {
     id = 10113,
     Type = 2,
-    SkillID = Table_StrateText_t.SkillID[141]
+    SkillID = Table_StrateText_t.SkillID[142]
   },
   [10114] = {
     id = 10114,
@@ -3511,7 +3533,7 @@ Table_StrateText = {
     id = 10123,
     Type = 2,
     StageIntroduce = "海灵会激活不同的力量印记来释放不同的技能，同时海灵在释放印记技能时会使用随机的祭祀动作。海灵的祭祀动作有三种，分别是顺时针旋转、逆时针旋转与颠倒旋转。当冒险者被海灵视线变身为小图腾之后，也可以从这三种祭祀动作中选择一种进行表演。在进行“成分分析”时，海灵会记忆在此之前释放不同印记技能时使用的祭祀动作，只有正确表演了祭祀动作的冒险者才能解除海灵施加的死亡诅咒。",
-    SkillID = Table_StrateText_t.SkillID[144]
+    SkillID = Table_StrateText_t.SkillID[145]
   },
   [10124] = {
     id = 10124,
@@ -3570,13 +3592,13 @@ Table_StrateText = {
     id = 10135,
     Type = 3,
     ServantID = 273311,
-    SkillID = Table_StrateText_t.SkillID[71]
+    SkillID = Table_StrateText_t.SkillID[72]
   },
   [10136] = {
     id = 10136,
     Type = 3,
     ServantID = 273312,
-    SkillID = Table_StrateText_t.SkillID[70]
+    SkillID = Table_StrateText_t.SkillID[71]
   },
   [10137] = {
     id = 10137,

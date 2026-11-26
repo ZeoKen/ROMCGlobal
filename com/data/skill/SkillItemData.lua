@@ -305,6 +305,10 @@ function SkillItemData:IsPhyType()
   return self.staticData.RollType == 1
 end
 
+function SkillItemData:IsAttackTypeSkill()
+  return self.staticData.SkillType == "Attack" and self.staticData.Camps == "Enemy"
+end
+
 function SkillItemData:IsAutoShortCutLocked()
   local _ShortCutProxy = ShortCutProxy
   local currentAuto = _ShortCutProxy.Instance:GetCurrentAuto()

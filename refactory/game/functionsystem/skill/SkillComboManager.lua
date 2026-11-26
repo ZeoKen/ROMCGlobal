@@ -32,6 +32,13 @@ local SkillAutoReplaceID = {
     2734
   }
 }
+local SkillComboChainGroups = {
+  [2010] = {2011, 2012}
+}
+local GetComboChainGroupContent = function(groupID)
+  local groups = GameConfig.SkillComboChainGroups or SkillComboChainGroups
+  return groups[groupID] or (GameConfig.SkillAutoReplaceID or SkillAutoReplaceID)[groupID]
+end
 local KickSkillReplaceID = 2400
 local ThanatosComboID = 2503
 local ThanatosComboID2 = 2523
@@ -131,7 +138,7 @@ end
 
 function SkillComboManager:InitAutoReplaceSkill()
   local autoReplaceSkill = {}
-  for k, v in pairs(SkillAutoReplaceID) do
+  for k, v in pairs(GameConfig.SkillAutoReplaceID or SkillAutoReplaceID) do
     autoReplaceSkill[k] = k
     for i = #v, 1, -1 do
       autoReplaceSkill[v[i]] = k
@@ -181,13 +188,30 @@ function SkillComboManager:SetReplaceSkill(sortid, replaceskillid)
   return replaceskillid
 end
 
+function SkillComboManager:GetComboChainConfig(parentid)
+  local map = Game.Myself.data:GetBuffTypes(BuffType.ChangeComboChain)
+  if map then
+    for buffID, _ in pairs(map) do
+      local buffInfo = Table_Buffer[buffID]
+      local changeConfig = buffInfo and buffInfo.BuffEffect and buffInfo.BuffEffect.combo_change
+      if changeConfig and changeConfig.ori == parentid then
+        local overrideContent = GetComboChainGroupContent(changeConfig.override)
+        if overrideContent then
+          return overrideContent
+        end
+      end
+    end
+  end
+  return (GameConfig.SkillAutoReplaceID or SkillAutoReplaceID)[parentid]
+end
+
 function SkillComboManager:GetReplaceSkillID(skillid)
   local sortid = self:GetSortID(skillid)
   local parentid = self.autoReplaceSkill[sortid]
   if not parentid then
     return nil
   end
-  local config = SkillAutoReplaceID[parentid]
+  local config = self:GetComboChainConfig(parentid)
   if KickSkillReplaceID == parentid then
     return self:GetSkillID(KickSkillReplaceID)
   end
@@ -201,7 +225,11 @@ function SkillComboManager:GetReplaceSkillID(skillid)
       return self:GetSkillID(currentID and currentID // 1000 or config[1])
     end
   end
-  local index = TableUtility.ArrayFindIndex(config, sortid) + 1
+  local rawIndex = TableUtility.ArrayFindIndex(config, sortid)
+  if rawIndex == 0 then
+    return self:GetSkillID(parentid)
+  end
+  local index = rawIndex + 1
   if index > #config then
     return self:GetSkillID(parentid)
   end

@@ -142,6 +142,78 @@ Table_SnowRealmDailyQuest = {
     Area = 2,
     Reward = {8752, 8750},
     HelpReward = 8751
+  },
+  [1016860001] = {
+    id = 1016860001,
+    Area = 3,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016870001] = {
+    id = 1016870001,
+    Area = 3,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016880001] = {
+    id = 1016880001,
+    Area = 3,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016890001] = {
+    id = 1016890001,
+    Area = 3,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016900001] = {
+    id = 1016900001,
+    Area = 3,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016910001] = {
+    id = 1016910001,
+    Area = 3,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016920001] = {
+    id = 1016920001,
+    Area = 3,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016930001] = {
+    id = 1016930001,
+    Area = 3,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016940001] = {
+    id = 1016940001,
+    Area = 3,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016950001] = {
+    id = 1016950001,
+    Area = 3,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016960001] = {
+    id = 1016960001,
+    Area = 3,
+    Reward = {8752, 8750},
+    HelpReward = 8751
+  },
+  [1016970001] = {
+    id = 1016970001,
+    Area = 3,
+    Reward = {8752, 8750},
+    HelpReward = 8751
   }
 }
 Table_SnowRealmDailyQuest_fields = {

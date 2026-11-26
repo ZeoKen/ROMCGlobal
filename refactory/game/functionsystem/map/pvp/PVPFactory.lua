@@ -376,9 +376,13 @@ function GuildMetalGVG:Launch()
   EventManager.Me():AddEventListener(SceneUserEvent.SceneAddPets, self.HandleAddPets, self)
   EventManager.Me():AddEventListener(ServiceEvent.GuildCmdEnterGuildGuildCmd, self.HandleSomeGuildChange, self)
   EventManager.Me():AddEventListener(ServiceEvent.GuildCmdExitGuildGuildCmd, self.HandleSomeGuildChange, self)
+  if PvpObserveProxy.Instance:IsRunning() then
+    self:ApplyObserverMoveSpeed(true)
+  end
 end
 
 function GuildMetalGVG:Shutdown()
+  self:ApplyObserverMoveSpeed(false)
   local ins = GvgProxy.Instance
   ins:ClearFightInfo()
   ins:ClearQuestInfo()
@@ -391,6 +395,24 @@ function GuildMetalGVG:Shutdown()
   EventManager.Me():RemoveEventListener(SceneUserEvent.SceneAddPets, self.HandleAddPets, self)
   EventManager.Me():RemoveEventListener(ServiceEvent.GuildCmdEnterGuildGuildCmd, self.HandleSomeGuildChange, self)
   EventManager.Me():RemoveEventListener(ServiceEvent.GuildCmdExitGuildGuildCmd, self.HandleSomeGuildChange, self)
+end
+
+function GuildMetalGVG:ApplyObserverMoveSpeed(on)
+  local myself = Game.Myself
+  if not myself or not myself.logicTransform then
+    return
+  end
+  if on then
+    local ratio = GameConfig.GvgNewConfig and GameConfig.GvgNewConfig.observer_speed_ratio or 3
+    if ratio and ratio ~= 1 then
+      myself:Client_SetMoveSpeed(myself:Client_GetMoveSpeed() * ratio)
+    end
+  else
+    local moveSpdProp = myself.data.props and myself.data.props:GetPropByName("MoveSpd")
+    if moveSpdProp then
+      myself:Server_SetMoveSpeed(moveSpdProp:GetValue())
+    end
+  end
 end
 
 function GuildMetalGVG:InitPointAreaTrigger()

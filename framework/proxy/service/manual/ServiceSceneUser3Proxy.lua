@@ -54,6 +54,42 @@ function ServiceSceneUser3Proxy:RecvUserIceSlideStopUserCmd(data)
   end
 end
 
+function ServiceSceneUser3Proxy:RecvKickNotifyUserCmd(data)
+  local evt = ServiceEvent.SceneUser3KickNotifyUserCmd
+  if evt ~= nil then
+    self:Notify(evt, data)
+  end
+  local guid = data and data.target_guid
+  if guid == nil then
+    return
+  end
+  local target = SceneCreatureProxy.FindCreature(guid)
+  if target == nil or target.ApplyStoneKickNotify == nil then
+    return
+  end
+  local pos = data.current_pos
+  local msg = {
+    action = data.action,
+    target_guid = guid,
+    map_id = data.map_id,
+    area_id = data.area_id,
+    kick_start_dir_x = data.kick_start_dir_x,
+    kick_start_dir_z = data.kick_start_dir_z,
+    move_dir_x = data.move_dir_x,
+    move_dir_z = data.move_dir_z,
+    wall_bounce_count = data.wall_bounce_count,
+    entity_bounce_count = data.entity_bounce_count,
+    collision_type = data.collision_type,
+    stop_reason = data.stop_reason,
+    current_pos = pos ~= nil and {
+      x = self:ToFloat(pos.x or 0),
+      y = self:ToFloat(pos.y or 0),
+      z = self:ToFloat(pos.z or 0)
+    } or nil
+  }
+  target:ApplyStoneKickNotify(msg)
+end
+
 function ServiceSceneUser3Proxy:RecvFirstDepositInfo(data)
   NoviceShopProxy.Instance:RecvFirstDepositInfo(data)
   self:Notify(ServiceEvent.SceneUser3FirstDepositInfo, data)

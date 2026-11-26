@@ -139,7 +139,7 @@ function SmilingLadyShop:AddViewEvts()
   self:AddListenEvt(ServiceEvent.SessionShopServerLimitSellCountCmd, self.UpdateShopItems)
   self:AddListenEvt(ServiceEvent.SessionShopQueryShopSoldCountCmd, self.HandleShopSoldCountCmd)
   self:AddListenEvt(ServiceEvent.SessionShopUpdateShopConfigCmd, self.RecvUpdateShopConfig)
-  self:AddListenEvt(ServiceEvent.SceneManualManualUpdate, self.OnManualUpdated)
+  self:AddListenEvt(AdventureDataEvent.SceneManualManualUpdate, self.OnManualUpdated)
   self:AddListenEvt(LoadSceneEvent.FinishLoad, self.CloseSelf)
   self:AddListenEvt(XDEUIEvent.CloseHappyShopView, self.OverseaAndroidBack)
 end
@@ -162,7 +162,7 @@ function SmilingLadyShop:HandleShopSoldCountCmd(note)
 end
 
 function SmilingLadyShop:OnManualUpdated()
-  self:UpdateView()
+  self:UpdateView(true)
 end
 
 function SmilingLadyShop:RecvQueryShopConfig()

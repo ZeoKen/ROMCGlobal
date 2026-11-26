@@ -475,9 +475,16 @@ function SnakeCoasterManager:HandleSnakeCoasterFinishCmd(note)
   end
   self.serverFinishData = data
   self.gameState = SnakeCoasterState.ESNAKECOASTER_STATE_FINISH
+  self.currentDifficulty = data.difficulty or self.currentDifficulty
   if data.record ~= nil then
     self.serverRecord = data.record
   end
+  self:ClearCoasterGame()
+  ServiceSceneUser3Proxy.Instance:CallSnakeCoasterLeaveCmd()
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.SnakeCoasterResultView,
+    viewdata = data
+  })
 end
 
 function SnakeCoasterManager:ClearCoasterGame()

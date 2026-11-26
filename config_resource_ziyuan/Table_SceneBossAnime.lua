@@ -3490,6 +3490,18 @@ Table_SceneBossAnime = {
     ObjID = 8,
     Name = "mfx_frostsnow_jg_state1001",
     DescInfo = "##45940274"
+  },
+  [676] = {
+    id = 676,
+    ObjID = 9,
+    Name = "state2002",
+    DescInfo = "##47277165"
+  },
+  [678] = {
+    id = 678,
+    ObjID = 10,
+    Name = "state2002",
+    DescInfo = "##47277167"
   }
 }
 Table_SceneBossAnime_fields = {

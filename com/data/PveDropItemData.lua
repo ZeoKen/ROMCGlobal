@@ -81,14 +81,14 @@ function PveDropItemData:SetGuaranteeInfo(guaranteed, showcount)
 end
 
 function PveDropItemData:HasGuaranteeInfo()
-  return nil ~= self.guaranteed and nil ~= self.showcount
+  return 0 < (self.guaranteed or 0)
 end
 
 function PveDropItemData:GetGuaranteeRemainCount()
   if not self:HasGuaranteeInfo() then
     return nil
   end
-  local remain = self.guaranteed - self.showcount
+  local remain = self.guaranteed - (self.showcount or 0)
   return 0 < remain and remain or 0
 end
 

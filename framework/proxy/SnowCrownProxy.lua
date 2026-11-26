@@ -172,6 +172,10 @@ end
 function SnowCrownProxy:Init()
   self.snowData = nil
   self.currentGuid = nil
+  self.globalSlotListCache = nil
+  self.globalCircle = nil
+  self.globalFirstEnterHandled = false
+  self.innerTab = nil
   self.snowManualData = {
     positions = {},
     stoneBook = {},
@@ -927,6 +931,168 @@ function SnowCrownProxy:RequestQuery()
   if ServiceSnowCmdProxy.Instance then
     ServiceSnowCmdProxy.Instance:CallSnowHeadQuerySnowCmd()
   end
+end
+
+SnowCrownProxy.GlobalTab = 2
+
+function SnowCrownProxy:IsGlobalRow(v)
+  return v ~= nil and v.Tab == SnowCrownProxy.GlobalTab and v.Circle ~= nil and v.Slot ~= nil
+end
+
+function SnowCrownProxy:GetGlobalSlotList(circle)
+  if not circle or not Table_SnowCrown then
+    return {}
+  end
+  self.globalSlotListCache = self.globalSlotListCache or {}
+  if self.globalSlotListCache[circle] then
+    return self.globalSlotListCache[circle]
+  end
+  local slots = {}
+  local slotMap = {}
+  for id, v in pairs(Table_SnowCrown) do
+    if v.Tab == SnowCrownProxy.GlobalTab and v.Circle == circle and v.Slot then
+      local isLock = v.IsLock == 1
+      local batch = v.Batch or 1
+      local info = slotMap[v.Slot]
+      if not info then
+        info = {
+          slot = v.Slot,
+          groupId = id // 100,
+          maxLevel = v.Level or 1,
+          isLock = isLock,
+          batch = batch
+        }
+        slotMap[v.Slot] = info
+        slots[#slots + 1] = info
+      else
+        if (v.Level or 0) > info.maxLevel then
+          info.maxLevel = v.Level
+        end
+        if isLock then
+          info.isLock = true
+        end
+        if batch < info.batch then
+          info.batch = batch
+        end
+      end
+    end
+  end
+  table.sort(slots, function(a, b)
+    return a.slot < b.slot
+  end)
+  self.globalSlotListCache[circle] = slots
+  return slots
+end
+
+function SnowCrownProxy:IsGlobalCircleUnlocked(circle)
+  local slots = self:GetGlobalSlotList(circle)
+  if #slots == 0 then
+    return false
+  end
+  local circleBatch = slots[1].batch
+  for i = 2, #slots do
+    if slots[i].batch and circleBatch > slots[i].batch then
+      circleBatch = slots[i].batch
+    end
+  end
+  if not circleBatch then
+    return false
+  end
+  return circleBatch <= self:GetCurrentBatch()
+end
+
+function SnowCrownProxy:GetGlobalSlotInfo(circle, slot)
+  local slots = self:GetGlobalSlotList(circle)
+  for i = 1, #slots do
+    if slots[i].slot == slot then
+      return slots[i]
+    end
+  end
+  return nil
+end
+
+function SnowCrownProxy:GetGlobalSlotLevel(circle, slot)
+  local info = self:GetGlobalSlotInfo(circle, slot)
+  if not info then
+    return 0
+  end
+  local id = self:GetCrownIdByGroupId(info.groupId)
+  return id % 100
+end
+
+function SnowCrownProxy:GetGlobalSlotData(circle, slot)
+  local info = self:GetGlobalSlotInfo(circle, slot)
+  if not info then
+    return nil
+  end
+  local level = self:GetGlobalSlotLevel(circle, slot)
+  local id = info.groupId * 100 + level
+  local staticData = Table_SnowCrown[id]
+  if not staticData then
+    level = 0
+    staticData = Table_SnowCrown[info.groupId * 100 + 1]
+  end
+  return {
+    id = id,
+    level = level,
+    staticData = staticData,
+    isLock = info.isLock,
+    isGrey = level <= 0,
+    tab = SnowCrownProxy.GlobalTab,
+    circle = circle,
+    slot = slot
+  }
+end
+
+function SnowCrownProxy:RequestGlobalActive(id)
+  if not id then
+    return
+  end
+  if ServiceSnowCmdProxy.Instance then
+    ServiceSnowCmdProxy.Instance:CallSnowCrownActiveSnowCmd(id, false)
+  end
+end
+
+function SnowCrownProxy:GetGlobalCircle()
+  return self.globalCircle
+end
+
+function SnowCrownProxy:SetGlobalCircle(circle)
+  self.globalCircle = circle
+end
+
+function SnowCrownProxy:IsGlobalFirstEnterHandled()
+  return self.globalFirstEnterHandled == true
+end
+
+function SnowCrownProxy:MarkGlobalFirstEnterHandled()
+  self.globalFirstEnterHandled = true
+end
+
+function SnowCrownProxy:GetInnerTab()
+  return self.innerTab
+end
+
+function SnowCrownProxy:SetInnerTab(index)
+  self.innerTab = index
+end
+
+function SnowCrownProxy:IsGlobalCircleMaxed(circle)
+  local slots = self:GetGlobalSlotList(circle)
+  if #slots == 0 then
+    return false
+  end
+  for i = 1, #slots do
+    local info = slots[i]
+    if self:GetGlobalSlotLevel(circle, info.slot) < (info.maxLevel or 0) then
+      return false
+    end
+  end
+  return true
+end
+
+function SnowCrownProxy:ClearGlobalSlotCache()
+  self.globalSlotListCache = nil
 end
 
 SnowCrownProxy.TestData = {

@@ -227,6 +227,40 @@ Table_GuideUI = {
     complete_con = "",
     Params = _EmptyTable
   },
+  [25] = {
+    id = 25,
+    GroupID = 7,
+    MainTitle = "获取光明使者声望，提升逐光者勋级",
+    Text = "每日冒险",
+    Desc = "每日完成地图上4个冒险任务{mapicon=main_icon_World-mission}可获取大量声望",
+    Icon = "DispatchComplete",
+    Shortcutpower = {8345},
+    complete_con = "WorldQuest",
+    Params = {mapid = 151},
+    Sysmsg = 43462
+  },
+  [26] = {
+    id = 26,
+    GroupID = 7,
+    MainTitle = "获取光明使者声望，提升逐光者勋级",
+    Text = "决战获胜",
+    Desc = "获得事件[猎鬼决战]的胜利，可获取大量声望",
+    Icon = "jfzc_01",
+    Shortcutpower = {8345},
+    complete_con = "",
+    Params = _EmptyTable
+  },
+  [27] = {
+    id = 27,
+    GroupID = 7,
+    MainTitle = "获取光明使者声望，提升逐光者勋级",
+    Text = "参与事件",
+    Desc = "参与战场地图事件，可获取少量声望",
+    Icon = "jfzc_02",
+    Shortcutpower = {8345},
+    complete_con = "",
+    Params = _EmptyTable
+  },
   [28] = {
     id = 28,
     GroupID = 8,

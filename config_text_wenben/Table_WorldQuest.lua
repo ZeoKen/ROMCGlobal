@@ -1,4 +1,49 @@
 Table_WorldQuest = {
+  [1012570001] = {
+    id = 1012570001,
+    Type = 2010,
+    Describe = "##3495139",
+    Name = "##3503040",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Version = 8
+  },
+  [1012580001] = {
+    id = 1012580001,
+    Type = 2010,
+    Describe = "##3503041",
+    Name = "##3503042",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Version = 8
+  },
+  [1012590001] = {
+    id = 1012590001,
+    Type = 2010,
+    Describe = "##3503043",
+    Name = "##3503044",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Version = 8
+  },
+  [1012600001] = {
+    id = 1012600001,
+    Type = 2010,
+    Describe = "##3503045",
+    Name = "##3489890",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Version = 8
+  },
+  [1012610001] = {
+    id = 1012610001,
+    Type = 2020,
+    Describe = "##3503046",
+    Name = "##3503047",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Version = 8
+  },
   [1015100001] = {
     id = 1015100001,
     Type = 150,
@@ -749,6 +794,126 @@ Table_WorldQuest = {
     Map = 155,
     Version = 10
   },
+  [1016410001] = {
+    id = 1016410001,
+    Type = 151,
+    Describe = "##47342234",
+    Name = "##45919135",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016420001] = {
+    id = 1016420001,
+    Type = 151,
+    Describe = "##47342236",
+    Name = "##45919139",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016430001] = {
+    id = 1016430001,
+    Type = 151,
+    Describe = "##47342238",
+    Name = "##45919143",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016440001] = {
+    id = 1016440001,
+    Type = 151,
+    Describe = "##47342240",
+    Name = "##45919147",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016450001] = {
+    id = 1016450001,
+    Type = 151,
+    Describe = "##47342242",
+    Name = "##45919150",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016460001] = {
+    id = 1016460001,
+    Type = 151,
+    Describe = "##47342244",
+    Name = "##45919165",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016470001] = {
+    id = 1016470001,
+    Type = 151,
+    Describe = "##47342246",
+    Name = "##45919180",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016480001] = {
+    id = 1016480001,
+    Type = 151,
+    Describe = "##47342248",
+    Name = "##45919195",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016490001] = {
+    id = 1016490001,
+    Type = 151,
+    Describe = "##47342250",
+    Name = "##47342251",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016500001] = {
+    id = 1016500001,
+    Type = 151,
+    Describe = "##47342252",
+    Name = "##45919209",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016510001] = {
+    id = 1016510001,
+    Type = 151,
+    Describe = "##47342254",
+    Name = "##45919224",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016520001] = {
+    id = 1016520001,
+    Type = 151,
+    Describe = "##47342256",
+    Name = "##47342257",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
   [1016530001] = {
     id = 1016530001,
     Type = 2020,
@@ -757,6 +922,126 @@ Table_WorldQuest = {
     Weight = 100,
     StartCondition = _EmptyTable,
     Version = 8
+  },
+  [1016860001] = {
+    id = 1016860001,
+    Type = 151,
+    Describe = "##47342258",
+    Name = "##47342259",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016870001] = {
+    id = 1016870001,
+    Type = 151,
+    Describe = "##47342260",
+    Name = "##47342261",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016880001] = {
+    id = 1016880001,
+    Type = 151,
+    Describe = "##47342262",
+    Name = "##47342263",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016890001] = {
+    id = 1016890001,
+    Type = 151,
+    Describe = "##47342264",
+    Name = "##45919147",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016900001] = {
+    id = 1016900001,
+    Type = 151,
+    Describe = "##47342266",
+    Name = "##47342267",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016910001] = {
+    id = 1016910001,
+    Type = 151,
+    Describe = "##47342268",
+    Name = "##47342269",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016920001] = {
+    id = 1016920001,
+    Type = 151,
+    Describe = "##47342270",
+    Name = "##47342271",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016930001] = {
+    id = 1016930001,
+    Type = 151,
+    Describe = "##47342272",
+    Name = "##47342273",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016940001] = {
+    id = 1016940001,
+    Type = 151,
+    Describe = "##47342274",
+    Name = "##47342275",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016950001] = {
+    id = 1016950001,
+    Type = 151,
+    Describe = "##47342276",
+    Name = "##47342277",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016960001] = {
+    id = 1016960001,
+    Type = 151,
+    Describe = "##47342278",
+    Name = "##47342279",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016970001] = {
+    id = 1016970001,
+    Type = 151,
+    Describe = "##47342280",
+    Name = "##47342281",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
   }
 }
 Table_WorldQuest_fields = {

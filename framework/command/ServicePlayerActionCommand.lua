@@ -7,17 +7,18 @@ function ServicePlayerActionCommand:execute(note)
     local value = data.value
     local delay = data.delay and tonumber(data.delay)
     local once = data.once
+    local faceid = data.faceid
     if delay and 0 < delay then
       TimeTickManager.Me():CreateOnceDelayTick(delay, function(owner, deltaTime)
-        self:DoServerPlayerBeheavior(data.charid, type, value, once, data.box_opened)
+        self:DoServerPlayerBeheavior(data.charid, type, value, once, data.box_opened, faceid)
       end, self)
     else
-      self:DoServerPlayerBeheavior(data.charid, type, value, once, data.box_opened)
+      self:DoServerPlayerBeheavior(data.charid, type, value, once, data.box_opened, faceid)
     end
   end
 end
 
-function ServicePlayerActionCommand:DoServerPlayerBeheavior(playerid, type, value, once, boxOpened)
+function ServicePlayerActionCommand:DoServerPlayerBeheavior(playerid, type, value, once, boxOpened, faceid)
   local player
   if 0 == playerid then
     player = Game.Myself
@@ -79,13 +80,13 @@ function ServicePlayerActionCommand:DoServerPlayerBeheavior(playerid, type, valu
     local actionid = tonumber(value)
     if actionid and Table_ActionAnime[actionid] then
       local actionName = Table_ActionAnime[actionid].Name
-      player:Server_PlayActionCmd(actionName, nil, not once)
+      player:Server_PlayActionCmd(actionName, nil, not once, nil, nil, nil, nil, ServicePlayerActionCommand.GetPlayActionFaceId(faceid))
     end
   elseif type == SceneUser2_pb.EUSERACTIONTYPE_NORMALMOTION then
     local actionid = tonumber(value)
     if actionid and Table_ActionAnime[actionid] then
       local actionName = Table_ActionAnime[actionid].Name
-      player:Server_PlayActionCmd(actionName, nil, false)
+      player:Server_PlayActionCmd(actionName, nil, false, nil, nil, nil, nil, ServicePlayerActionCommand.GetPlayActionFaceId(faceid))
     end
   elseif type == SceneUser2_pb.EUSERACTIONTYPE_GEAR_ACTION then
     local actionid = tonumber(value)
@@ -113,4 +114,12 @@ function ServicePlayerActionCommand:DoServerPlayerBeheavior(playerid, type, valu
       xdlog("变更默认移动动画", actionName)
     end
   end
+end
+
+function ServicePlayerActionCommand.GetPlayActionFaceId(faceid)
+  faceid = tonumber(faceid)
+  if not faceid or faceid <= 0 then
+    return nil
+  end
+  return faceid
 end

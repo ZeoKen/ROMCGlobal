@@ -98,7 +98,7 @@ function PaySignRewardCell:Init()
       tipdata.itemdata = ItemData.new("Reward", itemID)
     elseif self.shopItemData then
       local itemData = ItemData.new("Reward", self.shopItemData.goodsID)
-      itemData:SetItemNum(self.shopItemData.goodsCount)
+      itemData:SetItemNum(self.shopItemData:GetGoodsCount())
       tipdata.itemdata = itemData
     else
       tipdata.itemdata = self.data
@@ -203,10 +203,11 @@ function PaySignRewardCell:SetData(data)
         IconManager:SetItemIcon(moneyItem.Icon, self.buyBtn_Icon)
       end
       local itemData = ItemData.new("Reward", self.shopItemData.goodsID)
-      itemData:SetItemNum(self.shopItemData.goodsCount)
+      local goodsCount = self.shopItemData:GetGoodsCount()
+      itemData:SetItemNum(goodsCount)
       self:SetIcon(itemData)
-      self:UpdateNumLabel(self.shopItemData.goodsCount)
-      self.customNum.text = "x" .. self.shopItemData.goodsCount
+      self:UpdateNumLabel(goodsCount)
+      self.customNum.text = "x" .. goodsCount
       self.index.text = itemData.staticData and itemData.staticData.NameZh
       self:SetFinishFlag(isSoldOut)
       if isSoldOut then

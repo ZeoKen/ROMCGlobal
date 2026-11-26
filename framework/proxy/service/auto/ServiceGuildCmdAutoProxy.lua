@@ -6440,6 +6440,15 @@ function ServiceGuildCmdAutoProxy:CallDateBattleInviteGuildCmd(guildid, starttim
         table.insert(msg.info.cardids, info.cardids[i])
       end
     end
+    if info ~= nil and info.actual_starttime ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.info == nil then
+        msg.info = {}
+      end
+      msg.info.actual_starttime = info.actual_starttime
+    end
     self:SendProto(msg)
   else
     local msgId = ProtoReqInfoList.DateBattleInviteGuildCmd.id
@@ -6492,6 +6501,15 @@ function ServiceGuildCmdAutoProxy:CallDateBattleInviteGuildCmd(guildid, starttim
       for i = 1, #info.cardids do
         table.insert(msgParam.info.cardids, info.cardids[i])
       end
+    end
+    if info ~= nil and info.actual_starttime ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.info == nil then
+        msgParam.info = {}
+      end
+      msgParam.info.actual_starttime = info.actual_starttime
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -6721,6 +6739,15 @@ function ServiceGuildCmdAutoProxy:CallDateBattleOpenGuildCmd(state, data)
         table.insert(msg.data.info.cardids, data.info.cardids[i])
       end
     end
+    if data.info ~= nil and data.info.actual_starttime ~= nil then
+      if msg.data == nil then
+        msg.data = {}
+      end
+      if msg.data.info == nil then
+        msg.data.info = {}
+      end
+      msg.data.info.actual_starttime = data.info.actual_starttime
+    end
     self:SendProto(msg)
   else
     local msgId = ProtoReqInfoList.DateBattleOpenGuildCmd.id
@@ -6900,6 +6927,15 @@ function ServiceGuildCmdAutoProxy:CallDateBattleOpenGuildCmd(state, data)
       for i = 1, #data.info.cardids do
         table.insert(msgParam.data.info.cardids, data.info.cardids[i])
       end
+    end
+    if data.info ~= nil and data.info.actual_starttime ~= nil then
+      if msgParam.data == nil then
+        msgParam.data = {}
+      end
+      if msgParam.data.info == nil then
+        msgParam.data.info = {}
+      end
+      msgParam.data.info.actual_starttime = data.info.actual_starttime
     end
     self:SendProto2(msgId, msgParam)
   end

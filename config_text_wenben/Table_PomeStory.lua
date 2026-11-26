@@ -1989,6 +1989,7 @@ Table_PomeStory = {
     id = 34,
     QuestID = Table_PomeStory_t.QuestID[34],
     version = Table_PomeStory_t.version[6],
+    QuestName = "##114925",
     Npcid = 1226,
     Pstory = Table_PomeStory_t.Pstory[34]
   },
@@ -2047,7 +2048,6 @@ Table_PomeStory = {
     id = 41,
     QuestID = Table_PomeStory_t.QuestID[41],
     version = Table_PomeStory_t.version[7],
-    QuestName = "##152762",
     Npcid = 802076,
     Pstory = Table_PomeStory_t.Pstory[41],
     NpcSpace = 8
@@ -2119,7 +2119,7 @@ local cell_mt = {
     Npcid = 1595,
     Pstory = _EmptyTable,
     QuestID = _EmptyTable,
-    QuestName = "##114925",
+    QuestName = "##152762",
     id = 1,
     version = _EmptyTable
   }

@@ -18,7 +18,11 @@ Table_EndlessBattleFieldEvent = {
       1,
       2,
       3,
-      4
+      4,
+      5,
+      6,
+      7,
+      8
     },
     ShowScore = 1
   },
@@ -41,7 +45,11 @@ Table_EndlessBattleFieldEvent = {
       1,
       2,
       3,
-      4
+      4,
+      5,
+      6,
+      7,
+      8
     }
   },
   [3] = {
@@ -166,7 +174,11 @@ Table_EndlessBattleFieldEvent = {
       1,
       2,
       3,
-      4
+      4,
+      5,
+      6,
+      7,
+      8
     }
   },
   [4] = {
@@ -188,7 +200,11 @@ Table_EndlessBattleFieldEvent = {
       1,
       2,
       3,
-      4
+      4,
+      5,
+      6,
+      7,
+      8
     }
   },
   [5] = {
@@ -226,7 +242,11 @@ Table_EndlessBattleFieldEvent = {
       1,
       2,
       3,
-      4
+      4,
+      5,
+      6,
+      7,
+      8
     },
     ShowScore = 1
   },
@@ -265,7 +285,11 @@ Table_EndlessBattleFieldEvent = {
       1,
       2,
       3,
-      4
+      4,
+      5,
+      6,
+      7,
+      8
     },
     ShowScore = 1
   },
@@ -311,7 +335,11 @@ Table_EndlessBattleFieldEvent = {
       1,
       2,
       3,
-      4
+      4,
+      5,
+      6,
+      7,
+      8
     }
   },
   [8] = {
@@ -349,7 +377,11 @@ Table_EndlessBattleFieldEvent = {
       1,
       2,
       3,
-      4
+      4,
+      5,
+      6,
+      7,
+      8
     },
     ShowScore = 1
   },
@@ -388,7 +420,11 @@ Table_EndlessBattleFieldEvent = {
       1,
       2,
       3,
-      4
+      4,
+      5,
+      6,
+      7,
+      8
     },
     ShowScore = 1
   }

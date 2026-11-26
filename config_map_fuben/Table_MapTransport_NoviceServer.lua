@@ -192,6 +192,15 @@ Table_MapTransport = {
     id = 18,
     ZoneName = "伊斯加尔特",
     MapID = {155}
+  },
+  [19] = {
+    id = 19,
+    ZoneName = "吉芬尼亚区域",
+    MapID = {
+      151,
+      152,
+      1004220
+    }
   }
 }
 Table_MapTransport_fields = {

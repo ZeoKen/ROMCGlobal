@@ -21,7 +21,7 @@ function ActivityExchangeInfoCell_Snow:SetData(data)
   if data then
     local exchangeItemData = data.exchangeItem
     local datas = ReusableTable.CreateArray()
-    local materials = exchangeItemData.cost
+    local materials = self:GetExchangeMaterialCosts(exchangeItemData)
     local matNum = #materials
     for i = 1, matNum do
       local mat = materials[i]

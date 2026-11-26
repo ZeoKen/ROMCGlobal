@@ -56,7 +56,12 @@ function NCreature:Logic_PlayAction_Simple(name, defaultName, speed)
   if nil == defaultName then
     defaultName = self:GetIdleAction()
   end
-  self.assetRole:PlayAction_Simple(name, defaultName, speed)
+  local params = Asset_Role.GetPlayActionParams(name, defaultName, speed)
+  local data = self.data
+  if data and data.faceid and data.faceid > 0 and name == data.idleAction then
+    params[12] = data.faceid
+  end
+  self.assetRole:PlayAction(params)
   self:CheckPassengerAction(PassengerAnim.Wait)
   if name == self:GetIdleAction() then
     local pippi = self:GetPippi()
@@ -232,6 +237,13 @@ function NCreature:Logic_DeepFreeze(on)
   else
     self.assetRole:SetActionSpeed(1)
   end
+end
+
+function NCreature:Logic_PlayIdleForce()
+  if self.assetRole == nil then
+    return
+  end
+  self.assetRole:PlayAction_Simple(self:GetIdleAction())
 end
 
 function NCreature:Logic_NoAct(on)

@@ -55,3 +55,15 @@ end
 function PveServerRewardData:GetRewards()
   return self.rewards
 end
+
+function PveServerRewardData:HasGuaranteeInfo()
+  return 0 < (self.guaranteed or 0)
+end
+
+function PveServerRewardData:GetGuaranteeRemainCount()
+  if not self:HasGuaranteeInfo() then
+    return nil
+  end
+  local remain = self.guaranteed - (self.showcount or 0)
+  return 0 < remain and remain or 0
+end

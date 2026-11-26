@@ -123,6 +123,9 @@ function PetAdventureProxy:_sortPetQuest(l, r)
   if l == nil or r == nil then
     return false
   end
+  if l.staticData == nil or r.staticData == nil then
+    return (l.id or 0) > (r.id or 0)
+  end
   local lState = l.statusSortID
   local rState = r.statusSortID
   local lType = l.staticData.QuestType

@@ -824,6 +824,9 @@ Table_Dialog_NpcTalk = {
   [785659] = "{id=785659,Text='##1299695',Speaker=827811,}",
   [785660] = "{id=785660,Text='##1299696',Speaker=827812,}",
   [785661] = "{id=785661,Text='##1299697',Speaker=827808,}",
-  [785673] = "{id=785673,Text='##1299707',Speaker=827807,}"
+  [785673] = "{id=785673,Text='##1299707',Speaker=827807,}",
+  [862535] = "{id=862535,Text='##45913106',Speaker=842658,}",
+  [862536] = "{id=862536,Text='##45913107',Speaker=842659,}",
+  [862537] = "{id=862537,Text='##45913108',Speaker=842660,}"
 }
-Table_Dialog_NpcTalk.count = 826
+Table_Dialog_NpcTalk.count = 829

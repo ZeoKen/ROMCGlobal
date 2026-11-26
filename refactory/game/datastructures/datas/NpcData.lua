@@ -128,6 +128,7 @@ function NpcData.CreateClientData(npcPoint)
     clientData.dir = npcPoint.dir * 1000
   end
   clientData.idleAction = npcPoint.waitaction
+  clientData.faceid = npcPoint.faceid
   clientData.pos = getTable()
   clientData.pos.x = npcPoint.position[1] * 1000
   clientData.pos.y = npcPoint.position[2] * 1000
@@ -1202,6 +1203,7 @@ function NpcData:InitByClient(clientData)
   self.uniqueid = clientData.uniqueid
   self.name = self.staticData.NameZh
   self.idleAction = clientData.idleAction
+  self.faceid = clientData.faceid and clientData.faceid > 0 and clientData.faceid or nil
   self.teamid = nil
   self.groupid = nil
   self.followTargetOffset = nil
@@ -1235,7 +1237,7 @@ function NpcData:InitByClient(clientData)
     end
   end
   self.campHandler = nil
-  self.isSkada = GameConfig.Home.SkadaNpcIDs and TableUtility.ArrayFindIndex(GameConfig.Home.SkadaNpcIDs, self.staticData.id) > 0
+  self.isSkada = GameConfig.Home.SkadaNpcIDs and 0 < TableUtility.ArrayFindIndex(GameConfig.Home.SkadaNpcIDs, self.staticData.id)
   local comodoconfig = GameConfig.ComodoRaid
   self.isSanityNPC = (comodoconfig and comodoconfig.SanityNpc) == self.staticData.id
   self.hasSkadaFurnitureCombatAttrs = nil
@@ -1271,10 +1273,11 @@ function NpcData:InitByServerData(serverData)
   if serverData.waitaction == "" then
   end
   self.idleAction = serverData.waitaction
+  self.faceid = serverData.faceid and serverData.faceid > 0 and serverData.faceid or nil
   self.teamid = serverData.teamid
   self.groupid = serverData.groupid
   self.followTargetOffset = serverData.followTargetOffset
-  if serverData.character and #serverData.character > 0 then
+  if serverData.character and 0 < #serverData.character then
     TableUtility.ArrayShallowCopy(self.charactors, serverData.character)
   end
   if serverData.affix and 0 < #serverData.affix then
@@ -1434,6 +1437,7 @@ function NpcData:DoDeconstruct(asArray)
   self.postcard = nil
   self.serverBossType = nil
   self.followData = nil
+  self.faceid = nil
   self.hasSkadaFurnitureCombatAttrs = nil
   self:ClearClientData()
 end

@@ -1395,7 +1395,7 @@ function ServiceNUserAutoProxy:CallUserNineSyncCmd(guid, datas, attrs)
   end
 end
 
-function ServiceNUserAutoProxy:CallUserActionNtf(charid, value, type, delay, once, box_opened)
+function ServiceNUserAutoProxy:CallUserActionNtf(charid, value, type, delay, once, box_opened, faceid)
   if not NetConfig.PBC then
     local msg = SceneUser2_pb.UserActionNtf()
     if charid ~= nil then
@@ -1415,6 +1415,9 @@ function ServiceNUserAutoProxy:CallUserActionNtf(charid, value, type, delay, onc
     end
     if box_opened ~= nil then
       msg.box_opened = box_opened
+    end
+    if faceid ~= nil then
+      msg.faceid = faceid
     end
     self:SendProto(msg)
   else
@@ -1437,6 +1440,9 @@ function ServiceNUserAutoProxy:CallUserActionNtf(charid, value, type, delay, onc
     end
     if box_opened ~= nil then
       msgParam.box_opened = box_opened
+    end
+    if faceid ~= nil then
+      msgParam.faceid = faceid
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -1732,7 +1738,7 @@ function ServiceNUserAutoProxy:CallServerTime(time)
   end
 end
 
-function ServiceNUserAutoProxy:CallEffectUserCmd(effecttype, charid, effectpos, pos, effect, msec, times, index, opt, posbind, epbind, delay, id, dir, skillid, ignorenavmesh, filterid, scale, dir3d, source, ownerid)
+function ServiceNUserAutoProxy:CallEffectUserCmd(effecttype, charid, effectpos, pos, effect, msec, times, index, opt, posbind, epbind, delay, id, dir, skillid, ignorenavmesh, filterid, scale, dir3d, source, ownerid, scale_xyz)
   if not NetConfig.PBC then
     local msg = SceneUser2_pb.EffectUserCmd()
     if effecttype ~= nil then
@@ -1845,6 +1851,33 @@ function ServiceNUserAutoProxy:CallEffectUserCmd(effecttype, charid, effectpos, 
     end
     if ownerid ~= nil then
       msg.ownerid = ownerid
+    end
+    if scale_xyz ~= nil and scale_xyz.x ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.scale_xyz == nil then
+        msg.scale_xyz = {}
+      end
+      msg.scale_xyz.x = scale_xyz.x
+    end
+    if scale_xyz ~= nil and scale_xyz.y ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.scale_xyz == nil then
+        msg.scale_xyz = {}
+      end
+      msg.scale_xyz.y = scale_xyz.y
+    end
+    if scale_xyz ~= nil and scale_xyz.z ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.scale_xyz == nil then
+        msg.scale_xyz = {}
+      end
+      msg.scale_xyz.z = scale_xyz.z
     end
     self:SendProto(msg)
   else
@@ -1960,6 +1993,33 @@ function ServiceNUserAutoProxy:CallEffectUserCmd(effecttype, charid, effectpos, 
     end
     if ownerid ~= nil then
       msgParam.ownerid = ownerid
+    end
+    if scale_xyz ~= nil and scale_xyz.x ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.scale_xyz == nil then
+        msgParam.scale_xyz = {}
+      end
+      msgParam.scale_xyz.x = scale_xyz.x
+    end
+    if scale_xyz ~= nil and scale_xyz.y ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.scale_xyz == nil then
+        msgParam.scale_xyz = {}
+      end
+      msgParam.scale_xyz.y = scale_xyz.y
+    end
+    if scale_xyz ~= nil and scale_xyz.z ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.scale_xyz == nil then
+        msgParam.scale_xyz = {}
+      end
+      msgParam.scale_xyz.z = scale_xyz.z
     end
     self:SendProto2(msgId, msgParam)
   end

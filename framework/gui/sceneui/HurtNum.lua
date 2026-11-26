@@ -32,7 +32,8 @@ HurtNumColorMap = {
 HurtNum_CritType = {
   None = 0,
   PAtk = 1,
-  MAtk = 2
+  MAtk = 2,
+  Lucky = 3
 }
 HurtNumLimit = {
   [1] = 20,

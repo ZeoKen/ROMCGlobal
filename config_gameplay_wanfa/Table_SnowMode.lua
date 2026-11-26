@@ -273,136 +273,136 @@ Table_SnowMode = {
     id = 31,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {Atk = 10},
+    Name = "##116913",
     Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Desc = "##155970"
   },
   [32] = {
     id = 32,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {Atk = 10},
+    Name = "##116913",
     Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Desc = "##155970"
   },
   [33] = {
     id = 33,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {Atk = 10},
+    Name = "##116913",
     Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Desc = "##155970"
   },
   [34] = {
     id = 34,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {Atk = 10},
+    Name = "##116913",
     Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Desc = "##155970"
   },
   [35] = {
     id = 35,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {Atk = 10},
+    Name = "##116913",
     Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Desc = "##155970"
   },
   [36] = {
     id = 36,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {Atk = 10},
+    Name = "##116913",
     Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Desc = "##155970"
   },
   [37] = {
     id = 37,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {Atk = 10},
+    Name = "##116913",
     Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Desc = "##155970"
   },
   [38] = {
     id = 38,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {Atk = 10},
+    Name = "##116913",
     Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Desc = "##155970"
   },
   [39] = {
     id = 39,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {Atk = 10},
+    Name = "##116913",
     Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Desc = "##155970"
   },
   [40] = {
     id = 40,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Attr = {IgnoreDef = 0.01, CriDamPer = 0.01},
+    Name = "##44726358",
+    Icon = "snowflake_icon_red_02",
+    Desc = "##44726359"
   },
   [41] = {
     id = 41,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Attr = {IgnoreDef = 0.01, CriDamPer = 0.01},
+    Name = "##44726358",
+    Icon = "snowflake_icon_red_02",
+    Desc = "##44726359"
   },
   [42] = {
     id = 42,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Attr = {DemiHumanDamPer = 0.01},
+    Name = "##297008",
+    Icon = "snowflake_icon_red_02",
+    Desc = "##161270"
   },
   [43] = {
     id = 43,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Attr = {DemiHumanDamPer = 0.01},
+    Name = "##297008",
+    Icon = "snowflake_icon_red_02",
+    Desc = "##161270"
   },
   [44] = {
     id = 44,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Attr = {DamIncrease = 0.01},
+    Name = "##1253250",
+    Icon = "snowflake_icon_red_03",
+    Desc = "##161303"
   },
   [45] = {
     id = 45,
     Mode = 1,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_red_01",
-    Desc = "##45908286"
+    Attr = {DamSpike = 0.01},
+    Name = "##116916",
+    Icon = "snowflake_icon_red_03",
+    Desc = "##42590761"
   },
   [46] = {
     id = 46,
@@ -678,136 +678,136 @@ Table_SnowMode = {
     id = 76,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {Def = 10, MDef = 10},
+    Name = "##44726362",
     Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Desc = "##44726363"
   },
   [77] = {
     id = 77,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {Def = 10, MDef = 10},
+    Name = "##44726362",
     Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Desc = "##44726363"
   },
   [78] = {
     id = 78,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {Def = 10, MDef = 10},
+    Name = "##44726362",
     Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Desc = "##44726363"
   },
   [79] = {
     id = 79,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {Def = 10, MDef = 10},
+    Name = "##44726362",
     Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Desc = "##44726363"
   },
   [80] = {
     id = 80,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Attr = {BaseHp = 1000},
+    Name = "##1279501",
+    Icon = "snowflake_icon_blue_02",
+    Desc = "##47131553"
   },
   [81] = {
     id = 81,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Attr = {BaseHp = 1000},
+    Name = "##1279501",
+    Icon = "snowflake_icon_blue_02",
+    Desc = "##47131553"
   },
   [82] = {
     id = 82,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Attr = {BaseHp = 1000},
+    Name = "##1279501",
+    Icon = "snowflake_icon_blue_02",
+    Desc = "##47131553"
   },
   [83] = {
     id = 83,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Attr = {BaseHp = 1000},
+    Name = "##1279501",
+    Icon = "snowflake_icon_blue_02",
+    Desc = "##47131553"
   },
   [84] = {
     id = 84,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Attr = {MaxHpPer = 0.01},
+    Name = "##116342",
+    Icon = "snowflake_icon_blue_02",
+    Desc = "##161609"
   },
   [85] = {
     id = 85,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {DefPer = 0.02},
+    Name = "##116917",
     Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Desc = "##161301"
   },
   [86] = {
     id = 86,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {MDefPer = 0.02},
+    Name = "##116927",
     Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Desc = "##161216"
   },
   [87] = {
     id = 87,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Attr = {DemiHumanResPer = 0.01},
+    Name = "##296978",
+    Icon = "snowflake_icon_blue_02",
+    Desc = "##1262218"
   },
   [88] = {
     id = 88,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Attr = {DemiHumanResPer = 0.01},
+    Name = "##296978",
+    Icon = "snowflake_icon_blue_02",
+    Desc = "##1262218"
   },
   [89] = {
     id = 89,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Attr = {DamReduc = 0.01},
+    Name = "##116925",
+    Icon = "snowflake_icon_blue_03",
+    Desc = "##1288184"
   },
   [90] = {
     id = 90,
     Mode = 2,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_blue_01",
-    Desc = "##45908286"
+    Attr = {MDamReduc = 0.01},
+    Name = "##116914",
+    Icon = "snowflake_icon_blue_03",
+    Desc = "##1288180"
   },
   [91] = {
     id = 91,
@@ -1083,136 +1083,136 @@ Table_SnowMode = {
     id = 121,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {MAtk = 10},
+    Name = "##116928",
     Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Desc = "##155110"
   },
   [122] = {
     id = 122,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {MAtk = 10},
+    Name = "##116928",
     Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Desc = "##155110"
   },
   [123] = {
     id = 123,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {MAtk = 10},
+    Name = "##116928",
     Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Desc = "##155110"
   },
   [124] = {
     id = 124,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {MAtk = 10},
+    Name = "##116928",
     Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Desc = "##155110"
   },
   [125] = {
     id = 125,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {MAtk = 10},
+    Name = "##116928",
     Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Desc = "##155110"
   },
   [126] = {
     id = 126,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {MAtk = 10},
+    Name = "##116928",
     Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Desc = "##155110"
   },
   [127] = {
     id = 127,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {MAtk = 10},
+    Name = "##116928",
     Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Desc = "##155110"
   },
   [128] = {
     id = 128,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {MAtk = 10},
+    Name = "##116928",
     Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Desc = "##155110"
   },
   [129] = {
     id = 129,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
+    Attr = {MAtk = 10},
+    Name = "##116928",
     Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Desc = "##155110"
   },
   [130] = {
     id = 130,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Attr = {IgnoreMDef = 0.01},
+    Name = "##116920",
+    Icon = "snowflake_icon_yellow_02",
+    Desc = "##162284"
   },
   [131] = {
     id = 131,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Attr = {IgnoreMDef = 0.01},
+    Name = "##116920",
+    Icon = "snowflake_icon_yellow_02",
+    Desc = "##162284"
   },
   [132] = {
     id = 132,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Attr = {DemiHumanDamPer = 0.01},
+    Name = "##297008",
+    Icon = "snowflake_icon_yellow_02",
+    Desc = "##161270"
   },
   [133] = {
     id = 133,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Attr = {DemiHumanDamPer = 0.01},
+    Name = "##297008",
+    Icon = "snowflake_icon_yellow_02",
+    Desc = "##161270"
   },
   [134] = {
     id = 134,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Attr = {MDamIncrease = 0.01},
+    Name = "##1253251",
+    Icon = "snowflake_icon_yellow_03",
+    Desc = "##42590764"
   },
   [135] = {
     id = 135,
     Mode = 3,
     Batch = 3,
-    Attr = _EmptyTable,
-    Name = "##1105843",
-    Icon = "snowflake_icon_yellow_01",
-    Desc = "##45908286"
+    Attr = {MDamSpike = 0.01},
+    Name = "##116921",
+    Icon = "snowflake_icon_yellow_03",
+    Desc = "##42590767"
   }
 }
 Table_SnowMode_fields = {

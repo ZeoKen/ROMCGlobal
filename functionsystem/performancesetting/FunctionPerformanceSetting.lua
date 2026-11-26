@@ -16,6 +16,8 @@ local ScreenCountPCSetting = {
   [EScreenCountLevel.High] = 200
 }
 local mapRecommandConfig = {}
+local bigWorldRecommandConfig = {}
+local bigWorldLodBiasDirty = false
 
 function FunctionPerformanceSetting.Me()
   if nil == FunctionPerformanceSetting.me then
@@ -321,36 +323,39 @@ end
 function FunctionPerformanceSetting.AdjustBigWorldConfig()
   local deviceRate = ROSystemInfo.DeviceRate
   local isEmulator = ApplicationInfo.IsEmulator()
+  TableUtility.TableClear(bigWorldRecommandConfig)
+  bigWorldLodBiasDirty = false
   if deviceRate < 5 and not isEmulator then
-    FunctionPerformanceSetting.Me().setting.targetFrameRate = 1
+    bigWorldRecommandConfig.targetFrameRate = 1
     if isEmulator then
-      FunctionPerformanceSetting.Me().setting.targetFrameRate = 3
+      bigWorldRecommandConfig.targetFrameRate = 3
     end
   end
   if 3 < deviceRate then
     if deviceRate <= 4 then
       QualitySettings.lodBias = 1.5
+      bigWorldLodBiasDirty = true
     end
   else
-    FunctionPerformanceSetting.Me().setting.showBloom = false
-    FunctionPerformanceSetting.Me().setting.shadowRate = 0
-    FunctionPerformanceSetting.Me():SetFxaa(false)
-    FunctionPerformanceSetting.Me():SetAnti(1)
+    bigWorldRecommandConfig.showBloom = false
+    bigWorldRecommandConfig.shadowRate = 0
+    bigWorldRecommandConfig.fxaa = false
+    bigWorldRecommandConfig.antiRate = 1
     if isEmulator then
       QualitySettings.lodBias = 3
     else
       QualitySettings.lodBias = 1
     end
-    FunctionPerformanceSetting.Me().setting.qualityLevel = 0
+    bigWorldLodBiasDirty = true
   end
   if ApplicationInfo.GetSystemMemorySize() < 2800 then
-    FunctionPerformanceSetting.Me().setting.showBloom = false
-    FunctionPerformanceSetting.Me().setting.shadowRate = 0
-    FunctionPerformanceSetting.Me().setting.screenCount = FunctionPerformanceSetting.Me():GetScreenCountByLevel(EScreenCountLevel.Low)
-    FunctionPerformanceSetting.Me():SetFxaa(false)
-    FunctionPerformanceSetting.Me():SetAnti(1)
+    bigWorldRecommandConfig.showBloom = false
+    bigWorldRecommandConfig.shadowRate = 0
+    bigWorldRecommandConfig.screenCount = FunctionPerformanceSetting.Me():GetScreenCountByLevel(EScreenCountLevel.Low)
+    bigWorldRecommandConfig.fxaa = false
+    bigWorldRecommandConfig.antiRate = 1
   end
-  FunctionPerformanceSetting.Me():Apply()
+  FunctionPerformanceSetting.Me():Apply(bigWorldRecommandConfig)
 end
 
 function FunctionPerformanceSetting:InitByDeviceRate()
@@ -443,6 +448,7 @@ function FunctionPerformanceSetting:Load()
     end
   end)
   self:CheckOverSeaIsNeed3DCamera()
+  TableUtility.TableClear(bigWorldRecommandConfig)
   self:Apply()
   checkVoiceLanguageValid(self)
   helplog("force set ace=0")
@@ -1035,7 +1041,10 @@ function FunctionPerformanceSetting:ApplyWalkAround(b)
 end
 
 function FunctionPerformanceSetting:ApplyFxaa(fxaa)
-  Game.EnviromentManager:SwitchFxaa(fxaa or self:GetFxaa())
+  if nil == fxaa then
+    fxaa = self:GetRuntimeFxaa()
+  end
+  Game.EnviromentManager:SwitchFxaa(fxaa)
 end
 
 function FunctionPerformanceSetting:ApplyShadow(shadowRate)
@@ -1174,6 +1183,9 @@ function FunctionPerformanceSetting:GetAutoLockMode()
 end
 
 function FunctionPerformanceSetting:GetScreenCount()
+  if nil ~= bigWorldRecommandConfig.screenCount then
+    return bigWorldRecommandConfig.screenCount
+  end
   return self.setting.screenCount
 end
 
@@ -1275,6 +1287,16 @@ function FunctionPerformanceSetting:GetFxaa()
   return self.setting.fxaa and self.setting.showBloom and ROSystemInfo.DeviceRate > 2
 end
 
+function FunctionPerformanceSetting:GetRuntimeFxaa()
+  if nil ~= bigWorldRecommandConfig.fxaa then
+    return bigWorldRecommandConfig.fxaa
+  end
+  if nil ~= mapRecommandConfig.fxaa then
+    return mapRecommandConfig.fxaa
+  end
+  return self:GetFxaa()
+end
+
 function FunctionPerformanceSetting:GetOtherPlayerExterior()
   return self.setting.otherPlayerExterior
 end
@@ -1372,6 +1394,28 @@ function FunctionPerformanceSetting.ExitMapSetting()
   end
   FunctionPerformanceSetting.Me():Apply(mapRecommandConfig)
   TableUtility.TableClear(mapRecommandConfig)
+end
+
+function FunctionPerformanceSetting.ExitBigWorldConfig()
+  local needRestoreLodBias = bigWorldLodBiasDirty
+  bigWorldLodBiasDirty = false
+  if not next(bigWorldRecommandConfig) then
+    if needRestoreLodBias then
+      FunctionPerformanceSetting.AdjustLodBiasByDevice()
+    end
+    return
+  end
+  local settingMe = FunctionPerformanceSetting.Me()
+  local cacheSetting = settingMe:GetSetting()
+  local restoreSetting = {}
+  for k, v in pairs(bigWorldRecommandConfig) do
+    if k ~= "fxaa" then
+      restoreSetting[k] = cacheSetting[k]
+    end
+  end
+  TableUtility.TableClear(bigWorldRecommandConfig)
+  settingMe:Apply(restoreSetting)
+  FunctionPerformanceSetting.AdjustLodBiasByDevice()
 end
 
 function FunctionPerformanceSetting:EnterPhotoMode()

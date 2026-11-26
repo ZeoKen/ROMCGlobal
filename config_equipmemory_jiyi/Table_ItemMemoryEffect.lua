@@ -319,7 +319,31 @@ Table_ItemMemoryEffect_t = {
     {29702},
     {29710, 29713},
     {29711, 29714},
-    {29712, 29715}
+    {29712, 29715},
+    {29560, 29563},
+    {29561, 29564},
+    {29562, 29565},
+    {29570, 29573},
+    {29571, 29574},
+    {29572, 29575},
+    {29580},
+    {29581},
+    {29582},
+    {29590, 29593},
+    {29591, 29594},
+    {29592, 29595},
+    {29600},
+    {29601},
+    {29602},
+    {29610},
+    {29611},
+    {29612},
+    {29620},
+    {29621},
+    {29622},
+    {29630},
+    {29631},
+    {29632}
   }
 }
 Table_ItemMemoryEffect = {
@@ -623,6 +647,7 @@ Table_ItemMemoryEffect = {
     EffectID = 30003,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[7],
     ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[7],
+    PreviewDesc = "##3502623",
     WaxDesc = "##3501738"
   },
   [39] = {
@@ -630,14 +655,16 @@ Table_ItemMemoryEffect = {
     EffectID = 30003,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[8],
-    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[8]
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[8],
+    PreviewDesc = "##3502623"
   },
   [40] = {
     id = 40,
     EffectID = 30003,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[9],
-    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[9]
+    ExcessWaxBuffID = Table_ItemMemoryEffect_t.ExcessWaxBuffID[9],
+    PreviewDesc = "##3502623"
   },
   [41] = {
     id = 41,
@@ -761,21 +788,18 @@ Table_ItemMemoryEffect = {
   },
   [56] = {
     id = 56,
-    EffectID = 30101,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[25],
     PreviewDesc = "##3491276",
     WaxDesc = "##42535864"
   },
   [57] = {
     id = 57,
-    EffectID = 30101,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[26],
     PreviewDesc = "##3491276"
   },
   [58] = {
     id = 58,
-    EffectID = 30101,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[27],
     PreviewDesc = "##3491276"
@@ -803,18 +827,21 @@ Table_ItemMemoryEffect = {
   },
   [62] = {
     id = 62,
+    EffectID = 30103,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[31],
     PreviewDesc = "##3491280",
     WaxDesc = "##42535866"
   },
   [63] = {
     id = 63,
+    EffectID = 30103,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[32],
     PreviewDesc = "##3491280"
   },
   [64] = {
     id = 64,
+    EffectID = 30103,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[33],
     PreviewDesc = "##3491280"
@@ -1092,6 +1119,171 @@ Table_ItemMemoryEffect = {
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[72],
     PreviewDesc = "##42628609"
   },
+  [104] = {
+    id = 104,
+    EffectID = 30201,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[73],
+    PreviewDesc = "##42535872",
+    WaxDesc = "##42535873"
+  },
+  [105] = {
+    id = 105,
+    EffectID = 30201,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[74],
+    PreviewDesc = "##42535872"
+  },
+  [106] = {
+    id = 106,
+    EffectID = 30201,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[75],
+    PreviewDesc = "##42535872"
+  },
+  [107] = {
+    id = 107,
+    EffectID = 30202,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[76],
+    PreviewDesc = "##42535876",
+    WaxDesc = "##42535877"
+  },
+  [108] = {
+    id = 108,
+    EffectID = 30202,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[77],
+    PreviewDesc = "##42535876"
+  },
+  [109] = {
+    id = 109,
+    EffectID = 30202,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[78],
+    PreviewDesc = "##42535876"
+  },
+  [110] = {
+    id = 110,
+    EffectID = 30203,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[79],
+    PreviewDesc = "##42535880",
+    WaxDesc = "##42535881"
+  },
+  [111] = {
+    id = 111,
+    EffectID = 30203,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[80],
+    PreviewDesc = "##42535880"
+  },
+  [112] = {
+    id = 112,
+    EffectID = 30203,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[81],
+    PreviewDesc = "##42535880"
+  },
+  [113] = {
+    id = 113,
+    EffectID = 30204,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[82],
+    PreviewDesc = "##42535884",
+    WaxDesc = "##42535885"
+  },
+  [114] = {
+    id = 114,
+    EffectID = 30204,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[83],
+    PreviewDesc = "##42535884"
+  },
+  [115] = {
+    id = 115,
+    EffectID = 30204,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[84],
+    PreviewDesc = "##42535884"
+  },
+  [116] = {
+    id = 116,
+    EffectID = 30205,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[85],
+    PreviewDesc = "##42535888",
+    WaxDesc = "##42535889"
+  },
+  [117] = {
+    id = 117,
+    EffectID = 30205,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[86],
+    PreviewDesc = "##42535888"
+  },
+  [118] = {
+    id = 118,
+    EffectID = 30205,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[87],
+    PreviewDesc = "##42535888"
+  },
+  [119] = {
+    id = 119,
+    EffectID = 30206,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[88],
+    PreviewDesc = "##42535892",
+    WaxDesc = "##42535893"
+  },
+  [120] = {
+    id = 120,
+    EffectID = 30206,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[89],
+    PreviewDesc = "##42535892"
+  },
+  [121] = {
+    id = 121,
+    EffectID = 30206,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[90],
+    PreviewDesc = "##42535892"
+  },
+  [122] = {
+    id = 122,
+    EffectID = 30207,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[91],
+    PreviewDesc = "##42535896",
+    WaxDesc = "##42535897"
+  },
+  [123] = {
+    id = 123,
+    EffectID = 30207,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[92],
+    PreviewDesc = "##42535896"
+  },
+  [124] = {
+    id = 124,
+    EffectID = 30207,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[93],
+    PreviewDesc = "##42535896"
+  },
+  [125] = {
+    id = 125,
+    EffectID = 30208,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[94],
+    WaxDesc = "##42535901"
+  },
+  [126] = {
+    id = 126,
+    EffectID = 30208,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[95]
+  },
+  [127] = {
+    id = 127,
+    EffectID = 30208,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[96]
+  },
   [128] = {
     id = 128,
     EffectID = 40001,
@@ -1320,10 +1512,10 @@ Table_ItemMemoryEffect = {
 local cell_mt = {
   __index = {
     BuffID = _EmptyTable,
-    EffectID = 30103,
+    EffectID = 30101,
     ExcessWaxBuffID = _EmptyTable,
     Level = 1,
-    PreviewDesc = "##3502623",
+    PreviewDesc = "##42535900",
     UpgradeDesc = "",
     WaxBuffID = _EmptyTable,
     WaxDesc = "",

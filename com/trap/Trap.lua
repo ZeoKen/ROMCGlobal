@@ -29,7 +29,8 @@ function Trap:Init(guid, skillID, masterID, pos, dir, entertime)
   end
   self:_SpawnCullingID()
   local path, lodLevel, priority, effectType = skillinfo:GetTrapEffectPath(masterCreature)
-  self:_CreateEffect(path, self.pos, lodLevel, priority, effectType, nil, skillinfo:IsOneShotTrap())
+  local trapScale = skillinfo:GetTrapEffectScale(masterCreature)
+  self:_CreateEffect(path, self.pos, lodLevel, priority, effectType, nil, skillinfo:IsOneShotTrap(), trapScale)
   self:_InitRangeGrow(skillinfo)
 end
 
@@ -147,7 +148,7 @@ local OnEffectCreated = function(effectHandler, trap, assetEffect)
   end
 end
 
-function Trap:_CreateEffect(path, pos, lodLevel, priority, effectType, callBack, isOneShot)
+function Trap:_CreateEffect(path, pos, lodLevel, priority, effectType, callBack, isOneShot, scale)
   if not path then
     return
   end
@@ -155,10 +156,10 @@ function Trap:_CreateEffect(path, pos, lodLevel, priority, effectType, callBack,
     if not self.active then
       return
     end
-    Asset_Effect.PlayOneShotAt(path, pos, OnEffectCreated, self, nil, lodLevel, priority, effectType)
+    Asset_Effect.PlayOneShotAt(path, pos, OnEffectCreated, self, scale, lodLevel, priority, effectType)
     return
   end
-  self.effect = Asset_Effect.PlayAt(path, pos, OnEffectCreated, self)
+  self.effect = Asset_Effect.PlayAt(path, pos, OnEffectCreated, self, scale, lodLevel, priority, effectType)
   self.effect:SetActive(self.active)
 end
 

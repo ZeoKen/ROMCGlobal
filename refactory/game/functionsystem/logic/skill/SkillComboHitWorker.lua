@@ -131,7 +131,9 @@ function SkillComboHitWorker:DoConstruct(asArray, args)
   if args[14] then
     if nil == self.args[10] then
       self.args[18] = HurtNum_CritType.None
-      if DamageType.Crit == args[2] then
+      if DamageType.LuckyCrit == args[2] then
+        self.args[18] = HurtNum_CritType.Lucky
+      elseif DamageType.Crit == args[2] then
         if args[13] ~= nil and args[13]:ShowMagicCrit(targetCreature) then
           self.args[18] = HurtNum_CritType.MAtk
         else

@@ -139,14 +139,7 @@ function FunctionLogin:StartActive(cdKey, callback)
 end
 
 function FunctionLogin:HandleUrl(url, host)
-  if not string.find(url, "http") then
-    if string.find(host, "172.2") then
-      url = string.format("http://%s", url)
-    else
-      url = string.format("https://%s", url)
-    end
-  end
-  return url
+  return FunctionLoginBase.HandleUrl(self, url, host)
 end
 
 function FunctionLogin:requestGetUrlHost(url, callback, host, privateMode)

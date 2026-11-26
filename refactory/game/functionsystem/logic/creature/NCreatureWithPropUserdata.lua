@@ -1,5 +1,6 @@
 NCreatureWithPropUserdata = class("NCreatureWithPropUserdata", NCreature)
 autoImport("NCreatureWithPropUserdata_Client")
+autoImport("Creature_StoneKickMove")
 local _Table_Buffer
 local GetTable_Buffer = function(ID)
   if not _Table_Buffer then
@@ -200,6 +201,28 @@ function NCreatureWithPropUserdata:Update(time, deltaTime)
   if self.data.campChanged then
     self:HandleCampChange()
   end
+  if self.stoneKickMove ~= nil then
+    self.stoneKickMove:Update(time, deltaTime)
+  end
+end
+
+function NCreatureWithPropUserdata:_EnsureStoneKickMove()
+  if self.stoneKickMove == nil then
+    self.stoneKickMove = Creature_StoneKickMove.new(self)
+  end
+  return self.stoneKickMove
+end
+
+function NCreatureWithPropUserdata:ApplyStoneKickUserData(bytes)
+  self:_EnsureStoneKickMove():ApplyUserData(bytes)
+end
+
+function NCreatureWithPropUserdata:ApplyStoneKickNotify(msg)
+  self:_EnsureStoneKickMove():ApplyNotify(msg)
+end
+
+function NCreatureWithPropUserdata:IsStoneKickMoving()
+  return self.stoneKickMove ~= nil and self.stoneKickMove:IsMoving()
 end
 
 function NCreatureWithPropUserdata:HandleCampChange()
@@ -350,8 +373,27 @@ function NCreatureWithPropUserdata:AddBuff(buffID, init, needhit, fromID, layer,
       charid = self.data and self.data.id or nil,
       buffEffect = buffeffect
     })
+  elseif buffeffect.type == BuffType.BeStone or buffeffect.type == BuffType.CanBeKicked then
+    self:_EnsureStoneKickMove():OnBuffChanged(buffeffect.type)
   end
   return buff
+end
+
+function NCreatureWithPropUserdata:ClearIceBlockCountUI()
+  self.data:ClearIceBlockCount()
+  local sceneUI = self:GetSceneUI()
+  if sceneUI and sceneUI.roleBottomUI then
+    sceneUI.roleBottomUI:RemoveKickCount()
+  end
+end
+
+function NCreatureWithPropUserdata:UpdateIceBlockCount(wallCount, hitCount, wallMaxCount, hitMaxCount)
+  self.data:SetIceBlockCount(wallCount, hitCount, wallMaxCount, hitMaxCount)
+  local wall, hit, wallMax, hitMax = self.data:GetIceBlockCount()
+  local sceneUI = self:GetSceneUI()
+  if sceneUI and sceneUI.roleBottomUI then
+    sceneUI.roleBottomUI:SetKickCount(wall, wallMax, hit, hitMax)
+  end
 end
 
 function NCreatureWithPropUserdata:GetBuffStateID(staticData, stateid, layer, fromID, active)
@@ -598,6 +640,8 @@ function NCreatureWithPropUserdata:RemoveBuff(buffID)
     EventManager.Me():PassEvent(SkillEvent.CanBeCarriedRemove, {
       charid = self.data and self.data.id or nil
     })
+  elseif (buffeffect.type == BuffType.BeStone or buffeffect.type == BuffType.CanBeKicked) and self.stoneKickMove ~= nil then
+    self.stoneKickMove:OnBuffChanged(buffeffect.type)
   end
 end
 
@@ -1118,6 +1162,9 @@ end
 function NCreatureWithPropUserdata:DoDeconstruct(asArray)
   if self.data then
     self.data:ClearClientForceDressParts()
+  end
+  if self.stoneKickMove ~= nil then
+    self.stoneKickMove:Reset()
   end
   Game.SkillDynamicManager:Clear(self.data.id)
   NCreatureWithPropUserdata.super.DoDeconstruct(self, asArray)

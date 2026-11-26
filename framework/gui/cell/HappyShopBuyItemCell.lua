@@ -52,6 +52,7 @@ end
 function HappyShopBuyItemCell:AddEvts()
   HappyShopBuyItemCell.super.AddEvts(self)
   self:AddEventListener(ItemTipEvent.ShowPetSkillTip, self.ShowPetSkillTip, self)
+  self:AddEventListener(ItemTipEvent.ClickBufferUrl, self.ClickBufferUrl, self)
   if self.helpButton then
     self:AddClickEvent(self.helpButton, function()
       if not self.data then
@@ -118,6 +119,24 @@ function HappyShopBuyItemCell:ShowPetSkillTip(args)
     end
     self:RemovePetSkillTipTarget()
     tip:CloseSelf()
+  end
+end
+
+function HappyShopBuyItemCell:ClickBufferUrl(id)
+  GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+    view = PanelConfig.EnchantInfoPopup,
+    viewdata = {attriMenuType = 4, advCostID = id}
+  })
+  if not self.closeWhenClickOtherPlace then
+    return
+  end
+  local layer = UIManagerProxy.Instance:GetLayerByType(UIViewType.Lv4PopUpLayer)
+  if not layer then
+    return
+  end
+  local panelCtrl = layer:FindNodeByName("EnchantInfoPopup")
+  if panelCtrl then
+    self.closeWhenClickOtherPlace:AddTarget(panelCtrl.gameObject.transform)
   end
 end
 

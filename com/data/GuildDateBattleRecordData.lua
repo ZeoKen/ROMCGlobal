@@ -110,6 +110,8 @@ local GetStateDesc = function(state)
 end
 local Date_format = "%04d-%02d-%02d %02d:%02d"
 local IsEmpty = StringUtil.IsEmpty
+local QuickStartOffset = 600
+local QuickStartBoundaryTolerance = 10
 
 function GuildDateBattleRecordData:ctor(srv_data, target_guild_id)
   self.id = srv_data.id
@@ -217,6 +219,7 @@ end
 
 function GuildDateBattleRecordData:SetStamp(battle_starttime)
   self.stamp = battle_starttime
+  self.stampStr = nil
   if not self.stamp then
     return
   end
@@ -224,12 +227,13 @@ function GuildDateBattleRecordData:SetStamp(battle_starttime)
   self.month = tonumber(os.date("%m", self.stamp))
   self.day = tonumber(os.date("%d", self.stamp))
   self.hour = tonumber(os.date("%H", self.stamp))
+  self.minute = tonumber(os.date("%M", self.stamp))
   self.osStamp = os.time({
     year = self.year,
     month = self.month,
     day = self.day,
     hour = self.hour,
-    min = 0,
+    min = self.minute,
     sec = 0
   })
 end
@@ -315,7 +319,17 @@ function GuildDateBattleRecordData:SetStaticData()
 end
 
 function GuildDateBattleRecordData:GetAutoRefuseTime()
-  return math.min(self.lastApprovalStamp, self.longestApprovalStamp)
+  local lastApprovalStamp = self:IsQuickStart() and self.stamp or self.lastApprovalStamp
+  return math.min(lastApprovalStamp, self.longestApprovalStamp)
+end
+
+function GuildDateBattleRecordData:IsQuickStart()
+  if not self.stamp or not self.inviteTime then
+    return false
+  end
+  local minuteStart = self.inviteTime - self.inviteTime % 60
+  local expectedStart = minuteStart + QuickStartOffset
+  return self.stamp == expectedStart or self.inviteTime % 60 <= QuickStartBoundaryTolerance and self.stamp + 60 == expectedStart
 end
 
 function GuildDateBattleRecordData:GetDefGuildName()

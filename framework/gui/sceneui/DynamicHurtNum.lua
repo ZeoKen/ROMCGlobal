@@ -65,6 +65,7 @@ function DynamicHurtNum:FindObjects(effectGO)
     self.labelComp = FindComponent("Label", Text, effectGO)
     self.crit = FindComponent("Crit", CanvasGroup, effectGO)
     self.magicCrit = FindComponent("MagicCrit", CanvasGroup, effectGO)
+    self.luckyCrit = FindComponent("LuckyCrit", CanvasGroup, effectGO)
     self.posSetHelper = effectGO:GetComponent(StayOriginalPosition)
     if not self.canvasGroup then
       self.canvasGroup = effectGO:GetComponent(CanvasGroup)
@@ -96,6 +97,9 @@ function DynamicHurtNum:RefreshInfo()
   if self.magicCrit then
     self.magicCrit.alpha = self.critType == HurtNum_CritType.MAtk and 1 or 0
   end
+  if self.luckyCrit then
+    self.luckyCrit.alpha = self.critType == HurtNum_CritType.Lucky and 1 or 0
+  end
   self:SetLifeEndTime(HurtNumAliveTime.Normal)
   self:PlayAni(self.type)
 end
@@ -117,6 +121,7 @@ function DynamicHurtNum:DoDeconstruct(asArray)
   self.labelComp = nil
   self.crit = nil
   self.magicCrit = nil
+  self.luckyCrit = nil
   self.posSetHelper = nil
   self.canvasGroup = nil
   self.num = nil

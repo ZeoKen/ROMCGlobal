@@ -2,6 +2,42 @@ autoImport("FriendBaseCell")
 autoImport("TeamInvitee")
 FriendInfoCell = class("FriendInfoCell", FriendBaseCell)
 local BlueColor = Color(0.12156862745098039, 0.4549019607843137, 0.7490196078431373, 1)
+local CanShowName = function(label, text)
+  local canWrap = label:Wrap(text, nil, label.height)
+  return canWrap
+end
+local GetEllipsisText = function(label, text)
+  local length = StringUtil.getTextLen(text)
+  for i = length - 1, 1, -1 do
+    local result = StringUtil.getTextByIndex(text, 1, i) .. "..."
+    if CanShowName(label, result) then
+      return result
+    end
+  end
+  return "..."
+end
+local SetFriendName = function(label, data)
+  if data.remark == nil or data.remark == "" then
+    label.text = data.name
+    UIUtil.WrapLabel(label)
+    return
+  end
+  local displayName = string.format(ZhString.Friend_RemarkDisplay, data.remark, data.name)
+  if CanShowName(label, displayName) then
+    label.text = displayName
+    return
+  end
+  local nameLength = StringUtil.getTextLen(data.name)
+  for i = nameLength - 1, 0, -1 do
+    local originalName = 0 < i and StringUtil.getTextByIndex(data.name, 1, i) .. "..." or "..."
+    displayName = string.format(ZhString.Friend_RemarkDisplay, data.remark, originalName)
+    if CanShowName(label, displayName) then
+      label.text = displayName
+      return
+    end
+  end
+  label.text = GetEllipsisText(label, data.remark)
+end
 
 function FriendInfoCell:Init()
   self.invitee = TeamInvitee.new()
@@ -71,6 +107,7 @@ function FriendInfoCell:SetData(data)
     self.guid = data.guid
     self.invitee:SetId(self.guid, nil)
     FriendInfoCell.super.SetData(self, data)
+    SetFriendName(self.name, data)
     if self.maskSP then
       self.maskSP.enabled = false
     end

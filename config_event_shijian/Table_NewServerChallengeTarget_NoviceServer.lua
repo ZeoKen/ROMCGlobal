@@ -130,6 +130,15 @@ Table_NewServerChallengeTarget_t = {
       {3720, 1}
     },
     {
+      {8474, 1}
+    },
+    {
+      {8473, 6}
+    },
+    {
+      {8473, 2}
+    },
+    {
       {900139, 1}
     },
     {
@@ -148,7 +157,22 @@ Table_NewServerChallengeTarget_t = {
       {51471, 1}
     },
     {
+      {10001033, 1}
+    },
+    {
+      {10001032, 1}
+    },
+    {
+      {10001031, 1}
+    },
+    {
+      {10001030, 1}
+    },
+    {
       {10000293, 1}
+    },
+    {
+      {3042443, 1}
     },
     {
       {6048, 1}
@@ -351,6 +375,15 @@ Table_NewServerChallengeTarget_t = {
       {3720, 1}
     },
     {
+      {8474, 1}
+    },
+    {
+      {8473, 6}
+    },
+    {
+      {8473, 2}
+    },
+    {
       {900139, 1}
     },
     {
@@ -369,7 +402,22 @@ Table_NewServerChallengeTarget_t = {
       {51470, 1}
     },
     {
+      {10001033, 1}
+    },
+    {
+      {10001032, 1}
+    },
+    {
+      {10001031, 1}
+    },
+    {
+      {10001030, 1}
+    },
+    {
       {10000293, 1}
+    },
+    {
+      {3042443, 1}
     },
     {
       {6048, 1}
@@ -524,6 +572,14 @@ Table_NewServerChallengeTarget_t = {
     {raid_type = 36},
     {raid_type = 38},
     {raid_type = 40},
+    {item_id = 8474, sourceid = 420},
+    {item_id = 8473, sourceid = 420},
+    {
+      boss_index = 1,
+      min_difficulty = 1,
+      raid_type = 88
+    },
+    {raid_type = 80},
     {
       poses = {
         1,
@@ -540,11 +596,6 @@ Table_NewServerChallengeTarget_t = {
       boss_index = 1,
       min_difficulty = 1,
       raid_type = 87
-    },
-    {
-      boss_index = 1,
-      min_difficulty = 1,
-      raid_type = 88
     },
     {
       max_difficulty = 99999,
@@ -629,6 +680,10 @@ Table_NewServerChallengeTarget_t = {
     {DepositID = 400057},
     {DepositID = 400058},
     {DepositID = 400023},
+    {ShopItemID = 3290085},
+    {ShopItemID = 3290084},
+    {ShopItemID = 3290083},
+    {ShopItemID = 3290082},
     {DepositID = 400101},
     {DepositID = 400102},
     {DepositID = 400103},
@@ -641,6 +696,13 @@ Table_NewServerChallengeTarget_t = {
     {DepositID = 400073, Discount = 26},
     {DepositID = 400074, Discount = 35},
     {DepositID = 400075, Discount = 35},
+    {ShopItemID = 3290081},
+    {DepositID = 400155},
+    {DepositID = 400154},
+    {DepositID = 400153},
+    {DepositID = 400152},
+    {DepositID = 400151},
+    {DepositID = 400150},
     {DepositID = 400120},
     {DepositID = 400121},
     {DepositID = 400122},
@@ -676,8 +738,8 @@ Table_NewServerChallengeTarget = {
     ActID = 1058001,
     TargetType = "base_lv",
     TargetNum = 7,
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[44],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[44],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[47],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[47],
     Title = "Base等级达到%s级"
   },
   [105800102] = {
@@ -685,8 +747,8 @@ Table_NewServerChallengeTarget = {
     ActID = 1058001,
     TargetType = "base_lv",
     TargetNum = 30,
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[45],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[45],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[48],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[48],
     Title = "Base等级达到%s级"
   },
   [105800103] = {
@@ -694,8 +756,8 @@ Table_NewServerChallengeTarget = {
     ActID = 1058001,
     TargetType = "base_lv",
     TargetNum = 50,
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[46],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[46],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[49],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[49],
     Title = "Base等级达到%s级"
   },
   [105800104] = {
@@ -703,8 +765,8 @@ Table_NewServerChallengeTarget = {
     ActID = 1058001,
     TargetType = "base_lv",
     TargetNum = 70,
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[47],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[47],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[50],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[50],
     Title = "Base等级达到%s级"
   },
   [105800105] = {
@@ -712,8 +774,8 @@ Table_NewServerChallengeTarget = {
     ActID = 1058001,
     TargetType = "base_lv",
     TargetNum = 90,
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[48],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[48],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[51],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[51],
     Title = "Base等级达到%s级"
   },
   [105800106] = {
@@ -721,16 +783,16 @@ Table_NewServerChallengeTarget = {
     ActID = 1058001,
     TargetType = "base_lv",
     TargetNum = 100,
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[49],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[49],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[52],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[52],
     Title = "Base等级达到%s级"
   },
   [105800201] = {
     id = 105800201,
     ActID = 1058002,
     Param = Table_NewServerChallengeTarget_t.Param[24],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[58],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[58],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[66],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[66],
     Title = "通关蛋糕保卫战"
   },
   [105800202] = {
@@ -739,8 +801,8 @@ Table_NewServerChallengeTarget = {
     TargetType = "unlock_manual",
     TargetNum = 10,
     Param = Table_NewServerChallengeTarget_t.Param[23],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[59],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[59],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[67],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[67],
     Title = "冒险手册头饰解锁%s个"
   },
   [105800203] = {
@@ -749,8 +811,8 @@ Table_NewServerChallengeTarget = {
     TargetType = "unlock_manual",
     TargetNum = 20,
     Param = Table_NewServerChallengeTarget_t.Param[23],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[60],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[60],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[68],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[68],
     Title = "冒险手册头饰解锁%s个"
   },
   [105800204] = {
@@ -759,8 +821,8 @@ Table_NewServerChallengeTarget = {
     TargetType = "unlock_manual",
     TargetNum = 30,
     Param = Table_NewServerChallengeTarget_t.Param[23],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[61],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[61],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[69],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[69],
     Title = "冒险手册头饰解锁%s个"
   },
   [105800205] = {
@@ -779,16 +841,16 @@ Table_NewServerChallengeTarget = {
     TargetType = "unlock_manual",
     TargetNum = 50,
     Param = Table_NewServerChallengeTarget_t.Param[23],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[62],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[62],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[70],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[70],
     Title = "冒险手册头饰解锁%s个"
   },
   [105800207] = {
     id = 105800207,
     ActID = 1058002,
     TargetType = "compose_headwear",
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[59],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[59],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[67],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[67],
     Title = "活动期间制作%s个头饰"
   },
   [105800301] = {
@@ -862,7 +924,7 @@ Table_NewServerChallengeTarget = {
     ActID = 1058004,
     TargetType = "refine",
     TargetNum = 42,
-    Param = Table_NewServerChallengeTarget_t.Param[39],
+    Param = Table_NewServerChallengeTarget_t.Param[43],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[6],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[6],
     Title = "全身精炼达到%s级"
@@ -872,9 +934,9 @@ Table_NewServerChallengeTarget = {
     ActID = 1058004,
     TargetType = "refine",
     TargetNum = 56,
-    Param = Table_NewServerChallengeTarget_t.Param[39],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[51],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[51],
+    Param = Table_NewServerChallengeTarget_t.Param[43],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[59],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[59],
     Title = "全身精炼达到%s级"
   },
   [105800403] = {
@@ -882,7 +944,7 @@ Table_NewServerChallengeTarget = {
     ActID = 1058004,
     TargetType = "refine",
     TargetNum = 70,
-    Param = Table_NewServerChallengeTarget_t.Param[39],
+    Param = Table_NewServerChallengeTarget_t.Param[43],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[33],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[33],
     Title = "全身精炼达到%s级"
@@ -892,9 +954,9 @@ Table_NewServerChallengeTarget = {
     ActID = 1058004,
     TargetType = "refine",
     TargetNum = 84,
-    Param = Table_NewServerChallengeTarget_t.Param[39],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[52],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[52],
+    Param = Table_NewServerChallengeTarget_t.Param[43],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[60],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[60],
     Title = "全身精炼达到%s级"
   },
   [105800405] = {
@@ -902,9 +964,9 @@ Table_NewServerChallengeTarget = {
     ActID = 1058004,
     TargetType = "refine",
     TargetNum = 90,
-    Param = Table_NewServerChallengeTarget_t.Param[39],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[53],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[53],
+    Param = Table_NewServerChallengeTarget_t.Param[43],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[61],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[61],
     Title = "全身精炼达到%s级"
   },
   [105800501] = {
@@ -912,7 +974,7 @@ Table_NewServerChallengeTarget = {
     ActID = 1058005,
     TargetType = "refine",
     TargetNum = 30,
-    Param = Table_NewServerChallengeTarget_t.Param[39],
+    Param = Table_NewServerChallengeTarget_t.Param[43],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[6],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[6],
     Title = "全身精炼达到%s级"
@@ -922,9 +984,9 @@ Table_NewServerChallengeTarget = {
     ActID = 1058005,
     TargetType = "refine",
     TargetNum = 40,
-    Param = Table_NewServerChallengeTarget_t.Param[39],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[69],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[69],
+    Param = Table_NewServerChallengeTarget_t.Param[43],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[77],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[77],
     Title = "全身精炼达到%s级"
   },
   [105800503] = {
@@ -932,7 +994,7 @@ Table_NewServerChallengeTarget = {
     ActID = 1058005,
     TargetType = "refine",
     TargetNum = 50,
-    Param = Table_NewServerChallengeTarget_t.Param[39],
+    Param = Table_NewServerChallengeTarget_t.Param[43],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[33],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[33],
     Title = "全身精炼达到%s级"
@@ -942,9 +1004,9 @@ Table_NewServerChallengeTarget = {
     ActID = 1058005,
     TargetType = "refine",
     TargetNum = 60,
-    Param = Table_NewServerChallengeTarget_t.Param[39],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[70],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[70],
+    Param = Table_NewServerChallengeTarget_t.Param[43],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[78],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[78],
     Title = "全身精炼达到%s级"
   },
   [105826001] = {
@@ -1045,8 +1107,8 @@ Table_NewServerChallengeTarget = {
     id = 105828001,
     ActID = 105828,
     Param = Table_NewServerChallengeTarget_t.Param[29],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[50],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[50],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[57],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[57],
     Title = "通关神谕副本精英任意难度",
     Shop = Table_NewServerChallengeTarget_t.Shop[22]
   },
@@ -1054,8 +1116,8 @@ Table_NewServerChallengeTarget = {
     id = 105828002,
     ActID = 105828,
     Param = Table_NewServerChallengeTarget_t.Param[30],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[50],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[50],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[57],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[57],
     Title = "通关神谕副本精英难度5",
     Shop = Table_NewServerChallengeTarget_t.Shop[23]
   },
@@ -1063,8 +1125,8 @@ Table_NewServerChallengeTarget = {
     id = 105828003,
     ActID = 105828,
     Param = Table_NewServerChallengeTarget_t.Param[31],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[63],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[63],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[71],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[71],
     Title = "通关神谕副本精英难度6",
     Shop = Table_NewServerChallengeTarget_t.Shop[24]
   },
@@ -1072,8 +1134,8 @@ Table_NewServerChallengeTarget = {
     id = 105828004,
     ActID = 105828,
     Param = Table_NewServerChallengeTarget_t.Param[32],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[64],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[64],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[72],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[72],
     Title = "通关神谕副本精英难度8",
     Shop = Table_NewServerChallengeTarget_t.Shop[25]
   },
@@ -1081,8 +1143,8 @@ Table_NewServerChallengeTarget = {
     id = 105828005,
     ActID = 105828,
     Param = Table_NewServerChallengeTarget_t.Param[34],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[65],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[65],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[73],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[73],
     Title = "通关神谕副本精英难度10",
     Shop = Table_NewServerChallengeTarget_t.Shop[26]
   },
@@ -1651,7 +1713,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[7],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[7],
     Title = "通关混沌入侵·异界3次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[51]
+    Shop = Table_NewServerChallengeTarget_t.Shop[62]
   },
   [105844004] = {
     id = 105844004,
@@ -1661,7 +1723,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[1],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[1],
     Title = "通关混沌入侵·异界5次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[52]
+    Shop = Table_NewServerChallengeTarget_t.Shop[63]
   },
   [105844005] = {
     id = 105844005,
@@ -1671,7 +1733,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[1],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[1],
     Title = "通关混沌入侵·异界10次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[53]
+    Shop = Table_NewServerChallengeTarget_t.Shop[64]
   },
   [105900001] = {
     id = 105900001,
@@ -1708,49 +1770,49 @@ Table_NewServerChallengeTarget = {
   [105902001] = {
     id = 105902001,
     ActID = 105902,
-    Param = Table_NewServerChallengeTarget_t.Param[50],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[71],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[71],
+    Param = Table_NewServerChallengeTarget_t.Param[53],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[79],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[79],
     Title = "通关英灵难度·迷踪岛1号区域"
   },
   [105902002] = {
     id = 105902002,
     ActID = 105902,
-    Param = Table_NewServerChallengeTarget_t.Param[51],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[72],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[72],
+    Param = Table_NewServerChallengeTarget_t.Param[54],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[80],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[80],
     Title = "通关英灵难度·迷踪岛2号区域"
   },
   [105902003] = {
     id = 105902003,
     ActID = 105902,
-    Param = Table_NewServerChallengeTarget_t.Param[52],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[73],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[73],
+    Param = Table_NewServerChallengeTarget_t.Param[55],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[81],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[81],
     Title = "通关英灵难度·迷踪岛3号区域"
   },
   [105903001] = {
     id = 105903001,
     ActID = 105903,
-    Param = Table_NewServerChallengeTarget_t.Param[47],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[66],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[66],
+    Param = Table_NewServerChallengeTarget_t.Param[50],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[74],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[74],
     Title = "通关英灵难度·博物岛1号区域"
   },
   [105903002] = {
     id = 105903002,
     ActID = 105903,
-    Param = Table_NewServerChallengeTarget_t.Param[48],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[67],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[67],
+    Param = Table_NewServerChallengeTarget_t.Param[51],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[75],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[75],
     Title = "通关英灵难度·博物岛2号区域"
   },
   [105903003] = {
     id = 105903003,
     ActID = 105903,
-    Param = Table_NewServerChallengeTarget_t.Param[49],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[68],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[68],
+    Param = Table_NewServerChallengeTarget_t.Param[52],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[76],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[76],
     Title = "通关英灵难度·博物岛3号区域"
   },
   [106001001] = {
@@ -1793,24 +1855,78 @@ Table_NewServerChallengeTarget = {
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[34],
     Title = "冒险手册头饰解锁%s个"
   },
+  [106106001] = {
+    id = 106106001,
+    ActID = 106106,
+    Param = Table_NewServerChallengeTarget_t.Param[24],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[56],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[56],
+    Title = "通关蛋糕保卫战1次",
+    Shop = Table_NewServerChallengeTarget_t.Shop[56]
+  },
+  [106106002] = {
+    id = 106106002,
+    ActID = 106106,
+    Param = Table_NewServerChallengeTarget_t.Param[25],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[56],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[56],
+    Title = "通关恩德勒斯塔1次",
+    Shop = Table_NewServerChallengeTarget_t.Shop[55]
+  },
+  [106106003] = {
+    id = 106106003,
+    ActID = 106106,
+    Param = Table_NewServerChallengeTarget_t.Param[26],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[55],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[55],
+    Title = "通关任意难度博物岛1次",
+    Shop = Table_NewServerChallengeTarget_t.Shop[54]
+  },
+  [106106004] = {
+    id = 106106004,
+    ActID = 106106,
+    Param = Table_NewServerChallengeTarget_t.Param[27],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[54],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[54],
+    Title = "通关任意难度迷踪岛1次",
+    Shop = Table_NewServerChallengeTarget_t.Shop[53]
+  },
+  [106106005] = {
+    id = 106106005,
+    ActID = 106106,
+    Param = Table_NewServerChallengeTarget_t.Param[28],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[53],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[53],
+    Title = "通关任意难度神谕副本1次",
+    Shop = Table_NewServerChallengeTarget_t.Shop[52]
+  },
+  [106106006] = {
+    id = 106106006,
+    ActID = 106106,
+    Param = Table_NewServerChallengeTarget_t.Param[42],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[53],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[53],
+    Title = "通关任意难度幽灵皇宫1次",
+    Shop = Table_NewServerChallengeTarget_t.Shop[51]
+  },
   [107004001] = {
     id = 107004001,
     ActID = 107004,
-    Param = Table_NewServerChallengeTarget_t.Param[41],
+    Param = Table_NewServerChallengeTarget_t.Param[45],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[26],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[26],
     Title = "通关任意难度破坏飞空艇作战1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[72]
+    Shop = Table_NewServerChallengeTarget_t.Shop[83]
   },
   [107004002] = {
     id = 107004002,
     ActID = 107004,
     TargetType = "get_item",
-    Param = Table_NewServerChallengeTarget_t.Param[40],
+    Param = Table_NewServerChallengeTarget_t.Param[44],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[27],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[27],
     Title = "获得雪藏宝箱（副手、披风）1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[71]
+    Shop = Table_NewServerChallengeTarget_t.Shop[82]
   },
   [107004003] = {
     id = 107004003,
@@ -1820,7 +1936,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[28],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[28],
     Title = "获得冰霜之力1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[70]
+    Shop = Table_NewServerChallengeTarget_t.Shop[81]
   },
   [107004004] = {
     id = 107004004,
@@ -1831,36 +1947,36 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[29],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[29],
     Title = "击杀被污染的低级卢甘族x5",
-    Shop = Table_NewServerChallengeTarget_t.Shop[69]
+    Shop = Table_NewServerChallengeTarget_t.Shop[80]
   },
   [107004005] = {
     id = 107004005,
     ActID = 107004,
     TargetType = "finish_quest",
-    Param = Table_NewServerChallengeTarget_t.Param[46],
+    Param = Table_NewServerChallengeTarget_t.Param[49],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[30],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[30],
     Title = "完成营地扫荡：融雪1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[68]
+    Shop = Table_NewServerChallengeTarget_t.Shop[79]
   },
   [107008001] = {
     id = 107008001,
     ActID = 107008,
-    Param = Table_NewServerChallengeTarget_t.Param[41],
+    Param = Table_NewServerChallengeTarget_t.Param[45],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[26],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[26],
     Title = "通关任意难度破坏飞空艇作战1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[56]
+    Shop = Table_NewServerChallengeTarget_t.Shop[67]
   },
   [107008002] = {
     id = 107008002,
     ActID = 107008,
     TargetType = "get_item",
-    Param = Table_NewServerChallengeTarget_t.Param[40],
+    Param = Table_NewServerChallengeTarget_t.Param[44],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[27],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[27],
     Title = "获得雪藏宝箱（副手、披风）1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[55]
+    Shop = Table_NewServerChallengeTarget_t.Shop[66]
   },
   [107008003] = {
     id = 107008003,
@@ -1870,7 +1986,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[28],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[28],
     Title = "获得冰霜之力1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[54]
+    Shop = Table_NewServerChallengeTarget_t.Shop[65]
   },
   [107008004] = {
     id = 107008004,
@@ -1881,17 +1997,17 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[29],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[29],
     Title = "击杀被污染的低级卢甘族5次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[67]
+    Shop = Table_NewServerChallengeTarget_t.Shop[78]
   },
   [107008005] = {
     id = 107008005,
     ActID = 107008,
     TargetType = "finish_quest",
-    Param = Table_NewServerChallengeTarget_t.Param[46],
+    Param = Table_NewServerChallengeTarget_t.Param[49],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[30],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[30],
     Title = "完成营地扫荡：融雪1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[66]
+    Shop = Table_NewServerChallengeTarget_t.Shop[77]
   },
   [107008006] = {
     id = 107008006,
@@ -1950,92 +2066,92 @@ Table_NewServerChallengeTarget = {
   [107012001] = {
     id = 107012001,
     ActID = 107012,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[54],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[54],
+    Param = Table_NewServerChallengeTarget_t.Param[41],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[62],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[62],
     Title = "通关【巴格的实验室】初心难度以上1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[62]
+    Shop = Table_NewServerChallengeTarget_t.Shop[73]
   },
   [107012002] = {
     id = 107012002,
     ActID = 107012,
-    Param = Table_NewServerChallengeTarget_t.Param[43],
+    Param = Table_NewServerChallengeTarget_t.Param[46],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[3],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[3],
     Title = "获得【巴格的实验室】副本奖励1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[57]
+    Shop = Table_NewServerChallengeTarget_t.Shop[68]
   },
   [107012003] = {
     id = 107012003,
     ActID = 107012,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[55],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[55],
+    Param = Table_NewServerChallengeTarget_t.Param[41],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[63],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[63],
     Title = "击败【巴格的实验室】BOSS1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[63]
+    Shop = Table_NewServerChallengeTarget_t.Shop[74]
   },
   [107012004] = {
     id = 107012004,
     ActID = 107012,
-    Param = Table_NewServerChallengeTarget_t.Param[44],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[56],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[56],
+    Param = Table_NewServerChallengeTarget_t.Param[47],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[64],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[64],
     Title = "通关【巴格的实验室】勇士难度以上1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[64]
+    Shop = Table_NewServerChallengeTarget_t.Shop[75]
   },
   [107012005] = {
     id = 107012005,
     ActID = 107012,
-    Param = Table_NewServerChallengeTarget_t.Param[45],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[57],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[57],
+    Param = Table_NewServerChallengeTarget_t.Param[48],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[65],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[65],
     Title = "通关【巴格的实验室】英灵难度以上1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[65]
+    Shop = Table_NewServerChallengeTarget_t.Shop[76]
   },
   [107016001] = {
     id = 107016001,
     ActID = 108001,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[54],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[54],
+    Param = Table_NewServerChallengeTarget_t.Param[41],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[62],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[62],
     Title = "通关【巴格的实验室】初心难度以上1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[57]
+    Shop = Table_NewServerChallengeTarget_t.Shop[68]
   },
   [107016002] = {
     id = 107016002,
     ActID = 108001,
-    Param = Table_NewServerChallengeTarget_t.Param[43],
+    Param = Table_NewServerChallengeTarget_t.Param[46],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[3],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[3],
     Title = "获得【巴格的实验室】副本奖励1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[58]
+    Shop = Table_NewServerChallengeTarget_t.Shop[69]
   },
   [107016003] = {
     id = 107016003,
     ActID = 108001,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[55],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[55],
+    Param = Table_NewServerChallengeTarget_t.Param[41],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[63],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[63],
     Title = "击败【巴格的实验室】BOSS1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[59]
+    Shop = Table_NewServerChallengeTarget_t.Shop[70]
   },
   [107016004] = {
     id = 107016004,
     ActID = 108001,
-    Param = Table_NewServerChallengeTarget_t.Param[44],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[56],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[56],
+    Param = Table_NewServerChallengeTarget_t.Param[47],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[64],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[64],
     Title = "通关【巴格的实验室】勇士难度以上1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[60]
+    Shop = Table_NewServerChallengeTarget_t.Shop[71]
   },
   [107016005] = {
     id = 107016005,
     ActID = 108001,
-    Param = Table_NewServerChallengeTarget_t.Param[45],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[57],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[57],
+    Param = Table_NewServerChallengeTarget_t.Param[48],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[65],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[65],
     Title = "通关【巴格的实验室】英灵难度以上1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[61]
+    Shop = Table_NewServerChallengeTarget_t.Shop[72]
   },
   [108005001] = {
     id = 108005001,
@@ -2095,7 +2211,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[2],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[2],
     Title = "获得一颗无垢凛魄晶核",
-    Shop = Table_NewServerChallengeTarget_t.Shop[34]
+    Shop = Table_NewServerChallengeTarget_t.Shop[38]
   },
   [108009002] = {
     id = 108009002,
@@ -2105,7 +2221,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[3],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[3],
     Title = "获得一颗传承凛魄晶核",
-    Shop = Table_NewServerChallengeTarget_t.Shop[35]
+    Shop = Table_NewServerChallengeTarget_t.Shop[39]
   },
   [108009003] = {
     id = 108009003,
@@ -2115,7 +2231,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[4],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[4],
     Title = "获得道具【冰霜之力】1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[36]
+    Shop = Table_NewServerChallengeTarget_t.Shop[40]
   },
   [108009004] = {
     id = 108009004,
@@ -2125,7 +2241,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[3],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[3],
     Title = "将任意一颗传承凛魄晶核升级到5级",
-    Shop = Table_NewServerChallengeTarget_t.Shop[37]
+    Shop = Table_NewServerChallengeTarget_t.Shop[41]
   },
   [108009005] = {
     id = 108009005,
@@ -2135,7 +2251,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[4],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[4],
     Title = "将任意一颗传承凛魄晶核升星到2星",
-    Shop = Table_NewServerChallengeTarget_t.Shop[38]
+    Shop = Table_NewServerChallengeTarget_t.Shop[42]
   },
   [108013001] = {
     id = 108013001,
@@ -2143,7 +2259,7 @@ Table_NewServerChallengeTarget = {
     TargetType = "base_lv",
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[8],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[8],
-    Shop = Table_NewServerChallengeTarget_t.Shop[39]
+    Shop = Table_NewServerChallengeTarget_t.Shop[43]
   },
   [108013002] = {
     id = 108013002,
@@ -2153,7 +2269,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[9],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[9],
     Title = "获得一只紫色契约宠物",
-    Shop = Table_NewServerChallengeTarget_t.Shop[40]
+    Shop = Table_NewServerChallengeTarget_t.Shop[44]
   },
   [108013003] = {
     id = 108013003,
@@ -2163,7 +2279,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[9],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[9],
     Title = "将一只宠物的契约技能升级到2级以上一次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[41]
+    Shop = Table_NewServerChallengeTarget_t.Shop[45]
   },
   [108013004] = {
     id = 108013004,
@@ -2173,7 +2289,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[10],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[10],
     Title = "使用一次全家福罐头",
-    Shop = Table_NewServerChallengeTarget_t.Shop[42]
+    Shop = Table_NewServerChallengeTarget_t.Shop[46]
   },
   [108013005] = {
     id = 108013005,
@@ -2183,7 +2299,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[11],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[11],
     Title = "公会战获得1000点荣誉值",
-    Shop = Table_NewServerChallengeTarget_t.Shop[43]
+    Shop = Table_NewServerChallengeTarget_t.Shop[47]
   },
   [108013006] = {
     id = 108013006,
@@ -2193,7 +2309,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[12],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[12],
     Title = "将一只宠物的契约技能升级到3级以上一次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[44]
+    Shop = Table_NewServerChallengeTarget_t.Shop[48]
   },
   [108013007] = {
     id = 108013007,
@@ -2203,7 +2319,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[13],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[13],
     Title = "将一只宠物的契约技能升级到4级以上一次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[45]
+    Shop = Table_NewServerChallengeTarget_t.Shop[49]
   },
   [108017001] = {
     id = 108017001,
@@ -2330,7 +2446,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[26],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[26],
     Title = "通关任意难度【霜厄研究室】1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[46]
+    Shop = Table_NewServerChallengeTarget_t.Shop[57]
   },
   [108029002] = {
     id = 108029002,
@@ -2340,7 +2456,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[27],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[27],
     Title = "获得【雪藏宝箱(武器、盔甲)】1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[47]
+    Shop = Table_NewServerChallengeTarget_t.Shop[58]
   },
   [108029003] = {
     id = 108029003,
@@ -2350,7 +2466,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[28],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[28],
     Title = "获得道具【冰霜之力】1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[48]
+    Shop = Table_NewServerChallengeTarget_t.Shop[59]
   },
   [108029004] = {
     id = 108029004,
@@ -2361,7 +2477,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[29],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[29],
     Title = "击杀怪物【被污染的低级卢甘族】x5",
-    Shop = Table_NewServerChallengeTarget_t.Shop[49]
+    Shop = Table_NewServerChallengeTarget_t.Shop[60]
   },
   [108029005] = {
     id = 108029005,
@@ -2371,7 +2487,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[30],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[30],
     Title = "完成【营地扫荡：霜原】1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[50]
+    Shop = Table_NewServerChallengeTarget_t.Shop[61]
   },
   [108041001] = {
     id = 108041001,
@@ -2444,21 +2560,21 @@ Table_NewServerChallengeTarget = {
   [108044001] = {
     id = 108044001,
     ActID = 108044,
-    Param = Table_NewServerChallengeTarget_t.Param[41],
+    Param = Table_NewServerChallengeTarget_t.Param[45],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[26],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[26],
     Title = "通关任意难度破坏飞空艇作战1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[56]
+    Shop = Table_NewServerChallengeTarget_t.Shop[67]
   },
   [108044002] = {
     id = 108044002,
     ActID = 108044,
     TargetType = "get_item",
-    Param = Table_NewServerChallengeTarget_t.Param[40],
+    Param = Table_NewServerChallengeTarget_t.Param[44],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[27],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[27],
     Title = "获得雪藏宝箱（副手、披风）1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[55]
+    Shop = Table_NewServerChallengeTarget_t.Shop[66]
   },
   [108044003] = {
     id = 108044003,
@@ -2468,7 +2584,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[28],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[28],
     Title = "获得冰霜之力1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[54]
+    Shop = Table_NewServerChallengeTarget_t.Shop[65]
   },
   [108044004] = {
     id = 108044004,
@@ -2479,62 +2595,62 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[29],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[29],
     Title = "击杀被污染的低级卢甘族x5",
-    Shop = Table_NewServerChallengeTarget_t.Shop[67]
+    Shop = Table_NewServerChallengeTarget_t.Shop[78]
   },
   [108044005] = {
     id = 108044005,
     ActID = 108044,
     TargetType = "finish_quest",
-    Param = Table_NewServerChallengeTarget_t.Param[46],
+    Param = Table_NewServerChallengeTarget_t.Param[49],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[30],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[30],
     Title = "完成营地扫荡：融雪1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[66]
+    Shop = Table_NewServerChallengeTarget_t.Shop[77]
   },
   [108046001] = {
     id = 108046001,
     ActID = 108046,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[54],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[54],
+    Param = Table_NewServerChallengeTarget_t.Param[41],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[62],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[62],
     Title = "通关【巴格的实验室】初心难度以上1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[57]
+    Shop = Table_NewServerChallengeTarget_t.Shop[68]
   },
   [108046002] = {
     id = 108046002,
     ActID = 108046,
-    Param = Table_NewServerChallengeTarget_t.Param[43],
+    Param = Table_NewServerChallengeTarget_t.Param[46],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[3],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[3],
     Title = "获得【巴格的实验室】副本奖励1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[58]
+    Shop = Table_NewServerChallengeTarget_t.Shop[69]
   },
   [108046003] = {
     id = 108046003,
     ActID = 108046,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[55],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[55],
+    Param = Table_NewServerChallengeTarget_t.Param[41],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[63],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[63],
     Title = "击败【巴格的实验室】BOSS1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[59]
+    Shop = Table_NewServerChallengeTarget_t.Shop[70]
   },
   [108046004] = {
     id = 108046004,
     ActID = 108046,
-    Param = Table_NewServerChallengeTarget_t.Param[44],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[56],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[56],
+    Param = Table_NewServerChallengeTarget_t.Param[47],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[64],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[64],
     Title = "通关【巴格的实验室】勇士难度以上1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[60]
+    Shop = Table_NewServerChallengeTarget_t.Shop[71]
   },
   [108046005] = {
     id = 108046005,
     ActID = 108046,
-    Param = Table_NewServerChallengeTarget_t.Param[45],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[57],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[57],
+    Param = Table_NewServerChallengeTarget_t.Param[48],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[65],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[65],
     Title = "通关【巴格的实验室】英灵难度以上1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[61]
+    Shop = Table_NewServerChallengeTarget_t.Shop[72]
   },
   [108050001] = {
     id = 108050001,
@@ -2543,7 +2659,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[26],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[26],
     Title = "通关任意难度【霜厄研究室】1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[46]
+    Shop = Table_NewServerChallengeTarget_t.Shop[57]
   },
   [108050002] = {
     id = 108050002,
@@ -2553,7 +2669,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[27],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[27],
     Title = "获得【雪藏宝箱(武器、盔甲)】1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[47]
+    Shop = Table_NewServerChallengeTarget_t.Shop[58]
   },
   [108050003] = {
     id = 108050003,
@@ -2563,7 +2679,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[28],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[28],
     Title = "获得道具【冰霜之力】1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[48]
+    Shop = Table_NewServerChallengeTarget_t.Shop[59]
   },
   [108050004] = {
     id = 108050004,
@@ -2574,7 +2690,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[29],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[29],
     Title = "击杀怪物【被污染的低级卢甘族】x5",
-    Shop = Table_NewServerChallengeTarget_t.Shop[49]
+    Shop = Table_NewServerChallengeTarget_t.Shop[60]
   },
   [108050005] = {
     id = 108050005,
@@ -2584,7 +2700,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[30],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[30],
     Title = "完成【营地扫荡：霜原】1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[50]
+    Shop = Table_NewServerChallengeTarget_t.Shop[61]
   },
   [108052001] = {
     id = 108052001,
@@ -2594,7 +2710,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[2],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[2],
     Title = "获得一颗无垢凛魄晶核",
-    Shop = Table_NewServerChallengeTarget_t.Shop[34]
+    Shop = Table_NewServerChallengeTarget_t.Shop[38]
   },
   [108052002] = {
     id = 108052002,
@@ -2604,7 +2720,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[3],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[3],
     Title = "获得一颗传承凛魄晶核",
-    Shop = Table_NewServerChallengeTarget_t.Shop[35]
+    Shop = Table_NewServerChallengeTarget_t.Shop[39]
   },
   [108052003] = {
     id = 108052003,
@@ -2614,7 +2730,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[4],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[4],
     Title = "获得道具【冰霜之力】1次",
-    Shop = Table_NewServerChallengeTarget_t.Shop[36]
+    Shop = Table_NewServerChallengeTarget_t.Shop[40]
   },
   [108052004] = {
     id = 108052004,
@@ -2624,7 +2740,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[3],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[3],
     Title = "将任意一颗传承凛魄晶核升级到5级",
-    Shop = Table_NewServerChallengeTarget_t.Shop[37]
+    Shop = Table_NewServerChallengeTarget_t.Shop[41]
   },
   [108052005] = {
     id = 108052005,
@@ -2634,7 +2750,60 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[4],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[4],
     Title = "将任意一颗传承凛魄晶核升星到2星",
-    Shop = Table_NewServerChallengeTarget_t.Shop[38]
+    Shop = Table_NewServerChallengeTarget_t.Shop[42]
+  },
+  [108131001] = {
+    id = 108131001,
+    ActID = 108131,
+    Param = Table_NewServerChallengeTarget_t.Param[41],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[46],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[46],
+    Title = "巴格的实验室·通关任意难度1次",
+    Shop = Table_NewServerChallengeTarget_t.Shop[50]
+  },
+  [108131002] = {
+    id = 108131002,
+    ActID = 108131,
+    TargetType = "consume_item",
+    TargetNum = 6,
+    Param = Table_NewServerChallengeTarget_t.Param[40],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[46],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[46],
+    Title = "雪花之冠·全域属性消耗6个星辉碎晶",
+    Shop = Table_NewServerChallengeTarget_t.Shop[37]
+  },
+  [108131003] = {
+    id = 108131003,
+    ActID = 108131,
+    TargetType = "consume_item",
+    TargetNum = 12,
+    Param = Table_NewServerChallengeTarget_t.Param[40],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[45],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[45],
+    Title = "雪花之冠·全域属性消耗12个星辉碎晶",
+    Shop = Table_NewServerChallengeTarget_t.Shop[36]
+  },
+  [108131004] = {
+    id = 108131004,
+    ActID = 108131,
+    TargetType = "consume_item",
+    TargetNum = 24,
+    Param = Table_NewServerChallengeTarget_t.Param[40],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[45],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[45],
+    Title = "雪花之冠·全域属性消耗24个星辉碎晶",
+    Shop = Table_NewServerChallengeTarget_t.Shop[35]
+  },
+  [108131005] = {
+    id = 108131005,
+    ActID = 108131,
+    TargetType = "consume_item",
+    TargetNum = 2,
+    Param = Table_NewServerChallengeTarget_t.Param[39],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[44],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[44],
+    Title = "雪花之冠·全域属性消耗2个星辉结晶",
+    Shop = Table_NewServerChallengeTarget_t.Shop[34]
   },
   [110009001] = {
     id = 110009001,
@@ -2672,8 +2841,8 @@ Table_NewServerChallengeTarget = {
     TargetType = "unlock_manual",
     TargetNum = 300,
     Param = Table_NewServerChallengeTarget_t.Param[23],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[34],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[34],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[58],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[58],
     Title = "冒险手册头饰解锁%s个"
   },
   [9000006001] = {

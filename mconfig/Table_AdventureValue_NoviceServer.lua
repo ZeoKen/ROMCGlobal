@@ -1,16 +1,16 @@
 Table_AdventureValue = {
-  npc = {count = 276, adventureValues = 10170},
+  viewSpot = {adventureValues = 77385, count = 598},
   item = {
-    ride = {count = 147, adventureValues = 3061},
-    fashionClothes = {count = 2558, adventureValues = 118839},
-    card = {count = 706, adventureValues = 35134}
+    fashionClothes = {adventureValues = 120045, count = 2579},
+    ride = {adventureValues = 3062, count = 148},
+    card = {adventureValues = 35506, count = 713}
   },
-  viewSpot = {count = 584, adventureValues = 76657},
+  monthlyVIP = {adventureValues = 56908, count = 607},
   monster = {
-    mvp = {count = 98, adventureValues = 12153},
-    monster = {count = 259, adventureValues = 9652},
-    mini = {count = 45, adventureValues = 3409}
+    monster = {adventureValues = 9968, count = 265},
+    mvp = {adventureValues = 12313, count = 99},
+    mini = {adventureValues = 3409, count = 45}
   },
-  map = 0,
-  monthlyVIP = {count = 605, adventureValues = 56708}
+  npc = {adventureValues = 10260, count = 278},
+  map = 0
 }

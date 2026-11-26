@@ -286,6 +286,59 @@ function CreatureData:GetClassID()
   return 0
 end
 
+CreatureData.MorrocIllusionBossEnergyBarType = 1
+
+function CreatureData:GetChargeBarConfig()
+  local bars = self.staticData and self.staticData.Params and self.staticData.Params.Bar
+  if type(bars) ~= "table" then
+    return nil
+  end
+  local energyBarType = CreatureData.MorrocIllusionBossEnergyBarType
+  for i = 1, #bars do
+    local bar = bars[i]
+    if bar and tonumber(bar.type) == energyBarType then
+      local maxValue = bar.max
+      local interval = bar.interval
+      local segment = bar.segment or 1
+      if maxValue and 0 < maxValue and interval and 0 < interval then
+        return {
+          MaxValue = maxValue,
+          Interval = interval,
+          Segment = segment
+        }
+      end
+      return nil
+    end
+  end
+  return nil
+end
+
+function CreatureData:HasChargeBar()
+  return self:GetChargeBarConfig() ~= nil
+end
+
+function CreatureData:SetIceBlockCount(wallCount, hitCount, wallMaxCount, hitMaxCount)
+  self.iceWallCount = wallCount
+  self.iceHitCount = hitCount
+  if wallMaxCount ~= nil then
+    self.iceWallMaxCount = wallMaxCount
+  end
+  if hitMaxCount ~= nil then
+    self.iceHitMaxCount = hitMaxCount
+  end
+end
+
+function CreatureData:GetIceBlockCount()
+  return self.iceWallCount, self.iceHitCount, self.iceWallMaxCount, self.iceHitMaxCount
+end
+
+function CreatureData:ClearIceBlockCount()
+  self.iceWallCount = nil
+  self.iceHitCount = nil
+  self.iceWallMaxCount = nil
+  self.iceHitMaxCount = nil
+end
+
 function CreatureData:IsOb()
   return false
 end
@@ -337,6 +390,7 @@ function CreatureData:DoDeconstruct(asArray)
   end
   self:HandleRotateNpcsOwnerRemoved()
   self:ClearCullingID()
+  self:ClearIceBlockCount()
 end
 
 CreatureDataWithPropUserdata = class("CreatureDataWithPropUserdata", CreatureData)
@@ -462,6 +516,10 @@ function CreatureDataWithPropUserdata:GetProfressionID()
   return nil ~= self.userdata and self.userdata:Get(UDEnum.PROFESSION) or 0
 end
 
+function CreatureDataWithPropUserdata:HasTeamProfession(jobId)
+  return false
+end
+
 function CreatureDataWithPropUserdata:IsMonokuma()
   return self:GetProfressionID() == ProfessionProxy.Monokuma
 end
@@ -508,6 +566,10 @@ end
 
 function CreatureDataWithPropUserdata:IsAttackSkill(id)
   return self.normalAtkID == id or ExtraAttackSkill[id] == 1 or self:IsTriggerKickSkill(id) == true
+end
+
+function CreatureDataWithPropUserdata:GetTriggerSkillID()
+  return 0
 end
 
 function CreatureDataWithPropUserdata:IsExtraNormalSkill(skillid)
@@ -716,6 +778,10 @@ function CreatureDataWithPropUserdata:FearRun()
   return 0 < self.props:GetPropByName("FearRun"):GetValue()
 end
 
+function CreatureDataWithPropUserdata:IsControlled()
+  return self:Freeze() or self:NoAct() or self:NoMove() or self:FearRun()
+end
+
 function CreatureDataWithPropUserdata:FreeCast()
   return self.props:GetPropByName("MoveChant"):GetValue() > 0
 end
@@ -775,6 +841,21 @@ function CreatureDataWithPropUserdata:HasBuffID(buffID)
     return false
   end
   return self.buffIDs[buffID] ~= nil
+end
+
+function CreatureDataWithPropUserdata:GetBuffNumByStateEffect(stateEffect)
+  if stateEffect == nil or self.buffIDs == nil then
+    return 0
+  end
+  local count = 0
+  for buffID, _ in pairs(self.buffIDs) do
+    local buffInfo = Table_Buffer[buffID]
+    local buffeffect = buffInfo and buffInfo.BuffEffect
+    if buffeffect and buffeffect.StateEffect == stateEffect then
+      count = count + 1
+    end
+  end
+  return count
 end
 
 function CreatureDataWithPropUserdata:GetBuffTypes(type)
@@ -1999,6 +2080,44 @@ function CreatureDataWithPropUserdata:GetBalanceConfig()
   return balanceID and BalanceBar and BalanceBar[balanceID]
 end
 
+function CreatureDataWithPropUserdata:UpdateChargeBar(bytes)
+  if (bytes == nil or bytes == "") and self.userdata then
+    bytes = self.userdata:GetBytes(UDEnum.MORROC_ILLUSION_BOSS_ENERGY_BAR)
+  end
+  if bytes == nil or bytes == "" then
+    return
+  end
+  local parts = string.split(bytes, ",")
+  local value = tonumber(parts[1])
+  local delta = tonumber(parts[2])
+  local flag = tonumber(parts[3]) or 0
+  if value == nil then
+    return
+  end
+  self.charge_updatetime = UnityTime
+  self.chargeValue = value
+  self.charge_delta = delta
+  self.charge_visible = flag ~= 0
+end
+
+function CreatureDataWithPropUserdata:GetChargeBar()
+  if not self.charge_updatetime then
+    return nil, nil
+  end
+  return self.chargeValue, self.charge_delta or 0
+end
+
+function CreatureDataWithPropUserdata:IsChargeBarVisible()
+  return self.charge_visible == true
+end
+
+function CreatureDataWithPropUserdata:ResetChargeBar()
+  self.charge_updatetime = nil
+  self.chargeValue = nil
+  self.charge_delta = nil
+  self.charge_visible = nil
+end
+
 function CreatureDataWithPropUserdata:GetPrestigeLevel()
   local prestigeLevel = self.userdata:Get(UDEnum.PRESTIGE_LEVEL) or 0
   return prestigeLevel
@@ -2228,6 +2347,7 @@ function CreatureDataWithPropUserdata:DoDeconstruct(asArray)
   self:DestroyMercenaryGuildData()
   self:ResetResistanceValue()
   self:ResetAttributeValue()
+  self:ResetChargeBar()
   self.noEnemyLocked = false
   self.hasNoattackedBuff = false
   self.ignoreNoEnemyLocked = false

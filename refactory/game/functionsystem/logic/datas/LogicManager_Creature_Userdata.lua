@@ -40,6 +40,8 @@ function LogicManager_Creature_Userdata:ctor()
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_RESISTANCE_VALUE, self.RefreshResistance)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_RESISTANCE_SPEED, self.RefreshResistance)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_BALANCE_VALUE, self.RefreshBalance)
+  self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_MORROC_ILLUSION_BOSS_ENERGY_BAR, self.RefreshMorrocIllusionBossEnergyBar)
+  self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_KICK_STATE, self.RefreshKickState)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_SHIELD, self.RefreshNormalShield)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_UP_CHARID, self.UpdatePlayerRider_Up)
   self:AddSetCall(ProtoCommon_pb.EUSERDATATYPE_DOWN_CHARID, self.UpdatePlayerRider_Down)
@@ -69,6 +71,8 @@ function LogicManager_Creature_Userdata:ctor()
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_ATTRIBUTE_SPEED, self.RefreshAttributeChange)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_PVP_CAMP, self.UpdatePvpCamp)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_BALANCE_VALUE, self.RefreshBalance)
+  self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_MORROC_ILLUSION_BOSS_ENERGY_BAR, self.RefreshMorrocIllusionBossEnergyBar)
+  self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_KICK_STATE, self.RefreshKickState)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_SHIELD, self.RefreshNormalShield)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_UP_CHARID, self.UpdatePlayerRider_Up)
   self:AddUpdateCall(ProtoCommon_pb.EUSERDATATYPE_DOWN_CHARID, self.UpdatePlayerRider_Down)
@@ -405,6 +409,37 @@ function LogicManager_Creature_Userdata:RefreshNormalShield(ncreature, userDataI
   if sceneUI then
     sceneUI.roleBottomUI:SetNormalShield(newValue, maxhp)
   end
+end
+
+function LogicManager_Creature_Userdata:RefreshMorrocIllusionBossEnergyBar(ncreature, userDataID, oldValue, newValue, bytes)
+  if not ncreature or not ncreature.data then
+    return
+  end
+  ncreature.data:UpdateChargeBar(bytes)
+  local value, delta = ncreature.data:GetChargeBar()
+  local visible = ncreature.data:IsChargeBarVisible()
+  local sceneUI = ncreature:GetSceneUI()
+  if value == nil then
+    return
+  end
+  if sceneUI and sceneUI.roleBottomUI then
+    sceneUI.roleBottomUI:SetChargeVisible(visible)
+    sceneUI.roleBottomUI:SetChargeSpeed(value, nil, delta)
+  end
+end
+
+function LogicManager_Creature_Userdata:RefreshKickState(ncreature, userDataID, oldValue, newValue, bytes)
+  if not ncreature or ncreature.ApplyStoneKickUserData == nil then
+    return
+  end
+  if bytes == nil or bytes == "" then
+    local ud = ncreature.data and ncreature.data.userdata
+    bytes = ud and ud:GetBytes(UDEnum.KICK_STATE) or nil
+  end
+  if bytes == nil or bytes == "" then
+    return
+  end
+  ncreature:ApplyStoneKickUserData(bytes)
 end
 
 function LogicManager_Creature_Userdata:UpdatePlayerRider_Up(ncreature, userDataID, oldValue, newValue)

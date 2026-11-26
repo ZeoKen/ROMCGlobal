@@ -64,6 +64,10 @@ PlayerTipFuncConfig = {
     name = ZhString.FunctionPlayerTip_DeleteFriend,
     pushBackInArray = 1
   },
+  FriendRemark = {
+    name = ZhString.FunctionPlayerTip_FriendRemark,
+    pushBackInArray = 1
+  },
   ApplyEnterGuild = {
     name = ZhString.FunctionPlayerTip_ApplyEnterGuild
   },
@@ -287,6 +291,7 @@ function FunctionPlayerTip:ctor()
   self.funcMap.GuildRecruit = FunctionPlayerTip.GuildRecruit
   self.funcMap.GiveGift = FunctionPlayerTip.GiveGift
   self.funcMap.DeleteFriend = FunctionPlayerTip.DeleteFriend
+  self.funcMap.FriendRemark = FunctionPlayerTip.FriendRemark
   self.funcMap.ApplyEnterGuild = FunctionPlayerTip.ApplyEnterGuild
   self.funcMap.InviteEnterGuild = FunctionPlayerTip.InviteEnterGuild
   self.funcMap.VoteOut = FunctionPlayerTip.VoteOut
@@ -364,6 +369,7 @@ function FunctionPlayerTip:ctor()
   self.checkMap.FollowMember = FunctionPlayerTip.CheckCrossZone
   self.checkMap.ChangeCat = FunctionPlayerTip.CheckChangeCat
   self.checkMap.EnterHomeRoom = FunctionPlayerTip.CheckEnterHomeRoom
+  self.checkMap.FriendRemark = FunctionPlayerTip.CheckFriendRemark
   self.checkMap.Boki_Follow = FunctionPlayerTip.CheckBoki_Follow
   self.checkMap.Boki_CancelFollow = FunctionPlayerTip.CheckBoki_CancelFollow
   self.checkMap.Boki_ResetPos = FunctionPlayerTip.CheckBoki_ResetPos
@@ -581,6 +587,27 @@ function FunctionPlayerTip.DeleteFriend(ptdata)
       end, ptdata.id)
     end, nil, nil, "Lv." .. ptdata.level .. " " .. ptdata.name)
   end
+end
+
+function FunctionPlayerTip.FriendRemark(ptdata)
+  if ptdata then
+    local friendData = FriendProxy.Instance:GetFriendById(ptdata.id)
+    if friendData then
+      GameFacade.Instance:sendNotification(UIEvent.JumpPanel, {
+        view = PanelConfig.FriendRemarkPopUp,
+        viewdata = friendData
+      })
+    end
+  end
+end
+
+function FunctionPlayerTip.CheckFriendRemark(ptdata)
+  local friendData = ptdata and FriendProxy.Instance:GetFriendById(ptdata.id)
+  if friendData == nil then
+    return PlayerTipFuncState.InActive
+  end
+  local name = friendData.remark and friendData.remark ~= "" and ZhString.Friend_RemarkModify or ZhString.Friend_RemarkAdd
+  return PlayerTipFuncState.Active, name
 end
 
 function FunctionPlayerTip.ShowDetail(ptdata)

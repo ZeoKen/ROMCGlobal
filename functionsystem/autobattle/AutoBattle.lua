@@ -118,9 +118,6 @@ function AutoBattle:Attack(creature, targetCreature, skillFilter, onlyNoTargetAu
   if nil == creaturePosition then
     return false
   end
-  if creature.data:NoAttack() then
-    return false
-  end
   local ret, skillIDAndLevel, noTarget, forceLockCreature, skillInfo = self:Attack_Step1(creature, skillFilter, onlyNoTargetAutoCast)
   if not ret then
     return false
@@ -226,6 +223,69 @@ function AutoBattle:SelectSkill(creature, filter, onlyNoTargetAutoCast)
     end
   end
   return nil
+end
+
+local AutoBattleHardControlFields = {
+  "Freeze",
+  "FearRun",
+  "NoAttack",
+  "NoNormalAttack",
+  "NoAct",
+  "NoSkill",
+  "NoMagicSkill",
+  "NoPhySkill"
+}
+local AutoBattleHardControlStateEffects = {
+  [CommonFun.StateEffect.Dizzy] = true,
+  [CommonFun.StateEffect.Freeze] = true,
+  [CommonFun.StateEffect.Stone] = true,
+  [CommonFun.StateEffect.Sleep] = true,
+  [CommonFun.StateEffect.Fear] = true,
+  [CommonFun.StateEffect.Silence] = true
+}
+local AutoBattleSoftControlStateEffect = CommonFun.StateEffect.NoMove
+local IsAutoBattleControlBuffEffect = function(effect)
+  if nil == effect then
+    return false
+  end
+  for i = 1, #AutoBattleHardControlFields do
+    if 1 == effect[AutoBattleHardControlFields[i]] then
+      return true
+    end
+  end
+  if 1 == effect.NoMove then
+    return true
+  end
+  local stateEffect = effect.StateEffect
+  if nil ~= stateEffect and (true == AutoBattleHardControlStateEffects[stateEffect] or AutoBattleSoftControlStateEffect == stateEffect) then
+    return true
+  end
+  return false
+end
+
+function AutoBattle.HasType16StateEffect(targetCreature)
+  if nil == targetCreature or nil == targetCreature.data then
+    return false
+  end
+  local data = targetCreature.data
+  if nil ~= data.props then
+    local stateEffect = data.props:GetPropByName("StateEffect"):GetValue()
+    if nil ~= stateEffect and 0 ~= stateEffect then
+      return true
+    end
+  end
+  local buffIDActives = data.buffIDActives
+  if nil ~= buffIDActives then
+    for buffID, active in pairs(buffIDActives) do
+      if active then
+        local buff = Table_Buffer[buffID]
+        if nil ~= buff and IsAutoBattleControlBuffEffect(buff.BuffEffect) then
+          return true
+        end
+      end
+    end
+  end
+  return false
 end
 
 function AutoBattle:IsSkillAutoBattleValid(creature, skillIDAndLevel, autoBattleParams, skillInfo)
@@ -502,6 +562,26 @@ function AutoBattle:IsSkillAutoBattleValid(creature, skillIDAndLevel, autoBattle
           return false
         end
       end
+    elseif 16 == autoBattleParams.type then
+      local limitBuffID = autoBattleParams.limit_buff_id
+      if limitBuffID and not creature:HasBuff(limitBuffID) then
+        return true
+      end
+      local downID = Game.Myself.data:GetDownID()
+      local downCreature
+      if downID and downID ~= 0 then
+        downCreature = SceneCreatureProxy.FindCreature(downID)
+        if nil == downCreature or downCreature:IsDead() then
+          return false
+        end
+      end
+      if downCreature and AutoBattle.HasType16StateEffect(downCreature) then
+        forceLockCreature = downCreature
+      elseif AutoBattle.HasType16StateEffect(Game.Myself) then
+        forceLockCreature = Game.Myself
+      else
+        return false
+      end
     end
   end
   return true, forceLockCreature
@@ -516,6 +596,9 @@ function AutoBattle:IsSkillItemValid(creature, skillItem, filter, onlyNoTargetAu
     return false
   end
   local skillInfo = Game.LogicManager_Skill:GetSkillInfo(skillIDAndLevel)
+  if creature.data:NoAttack() and not skillInfo:IsAllSuperUse() then
+    return false
+  end
   local nowSkillInfo = creature.skill.info
   if nowSkillInfo and nowSkillInfo:GetChant_can_use_skill(Game.Myself) and creature.skill:IsCastSkill(creature.skill.phaseData:GetSkillPhase()) then
     local nowPhaseData = creature.skill.phaseData
@@ -588,7 +671,7 @@ function AutoBattle:LoopGetValidSkill(creature, skillItems, startIndex, filter, 
         local valid, noTarget, forceLockCreature, priority = self:IsSkillItemValid(creature, skillItem, filter, onlyNoTargetAutoCast)
         if valid then
           if attackSkillIDAndLevel ~= skillID then
-            if not creature.data:NoSkill() and not creature:Logic_IsFreeCast() and selectedPriority < priority then
+            if (not creature.data:NoSkill() or skillItem:IsAllSuperUse()) and not creature:Logic_IsFreeCast() and selectedPriority < priority then
               selectedSkillItem = skillItem
               selectedIndex = i
               selectedNoTarget = noTarget
@@ -612,7 +695,7 @@ function AutoBattle:LoopGetValidSkill(creature, skillItems, startIndex, filter, 
         local valid, noTarget, forceLockCreature, priority = self:IsSkillItemValid(creature, skillItem, filter, onlyNoTargetAutoCast)
         if valid then
           if attackSkillIDAndLevel ~= skillID then
-            if not creature.data:NoSkill() and not creature:Logic_IsFreeCast() and selectedPriority < priority then
+            if (not creature.data:NoSkill() or skillItem:IsAllSuperUse()) and not creature:Logic_IsFreeCast() and selectedPriority < priority then
               selectedSkillItem = skillItem
               selectedIndex = i
               selectedNoTarget = noTarget

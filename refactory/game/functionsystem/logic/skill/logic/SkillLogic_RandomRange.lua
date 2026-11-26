@@ -5,7 +5,12 @@ setmetatable(SelfClass, {
 local SuperClass = SkillLogic_TargetPoint
 
 function SelfClass.GetPointEffectSize(skillInfo, creature)
-  return skillInfo:GetTargetRange(creature) * 2
+  local size = skillInfo:GetBaseTargetRange() * 2
+  local scale = skillInfo:GetTrapEffectScale(creature)
+  if scale ~= 1 then
+    size = size * scale
+  end
+  return size
 end
 
 function SelfClass:Client_DoDeterminTargets(creature, creatureArray, maxCount)

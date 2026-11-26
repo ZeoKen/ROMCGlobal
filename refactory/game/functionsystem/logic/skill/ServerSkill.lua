@@ -100,6 +100,10 @@ function ServerSkill:_TryBeAutoLocked(phaseData, creature)
     if RoleDefines_Camp.ENEMY == creature.data:GetCamp() then
       if creature.data.GetNoAutoLock and creature.data:GetNoAutoLock() then
       elseif nil == Game.Myself:GetLockTarget() then
+        local staticData = creature.data.staticData
+        if staticData and NpcMonsterUtility.IsPetByData(staticData) then
+          return
+        end
         local myselfID = Game.Myself.data.id
         for i = 1, targetCount do
           local targetID = phaseData:GetTarget(i)

@@ -64,9 +64,6 @@ function IdleAI_AutoBattle:Update(idleElapsed, time, deltaTime, creature)
   end
   self.nextUpdateTime = time + UpdateInterval
   if next(self.lockIDs) then
-    if creature.data:NoAttack() then
-      return true
-    end
     local ret, skillIDAndLevel, noTarget, forceLockCreature, skillInfo = self.autoBattle:Attack_Step1(creature)
     if not ret then
       return true

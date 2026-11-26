@@ -101,6 +101,9 @@ function DeathPopView:initView()
       self:Hide(self.ReliveInSituBtnCt)
     end
   end
+  if self.mapMng:IsPVEMode_NoSelfReviveRaid() then
+    self:Hide(self.ReliveInRelivePointBtnCt)
+  end
   if self:CanHideReliveInSavePoint() then
     self:Hide(ReliveInSavePointBtnCt)
   end
@@ -448,5 +451,5 @@ end
 
 function DeathPopView:CanHideReliveInSavePoint()
   local MapManager = Game.MapManager
-  return MapManager:IsGvgMode_Droiyan() or MapManager:IsPVPMode_TeamPws() or MapManager:IsPveMode_Thanatos() or MapManager:IsPVEMode_Roguelike() or MapManager:IsPvPMode_TeamTwelve() or MapManager:IsPVEMode_DeadBoss() or self.isTransferFight or MapManager:IsRaidPuzzle() or MapManager:IsPVEMode_ComodoRaid() or MapManager:IsPVEMode_MultiBossRaid() or MapManager:IsPVEMode_Element() or MapManager:IsPvpMode_DesertWolf() or MapManager:IsPVEMode_StarArk() or MapManager:IsPVPMode_3Teams() or MapManager:IsPVPMode_EndlessBattleField() or MapManager:IsPVEMode_AbyssDragon() or MapManager:IsPVPMode_AsyncPvpRaid() or MapManager:IsPVEMode_DestroyAirShip() or MapManager:IsPVEMode_BageLab() or MapManager:IsInSnowRealmHouseRaid()
+  return MapManager:IsGvgMode_Droiyan() or MapManager:IsPVPMode_TeamPws() or MapManager:IsPveMode_Thanatos() or MapManager:IsPVEMode_Roguelike() or MapManager:IsPvPMode_TeamTwelve() or MapManager:IsPVEMode_DeadBoss() or self.isTransferFight or MapManager:IsRaidPuzzle() or MapManager:IsPVEMode_ComodoRaid() or MapManager:IsPVEMode_MultiBossRaid() or MapManager:IsPVEMode_Element() or MapManager:IsPvpMode_DesertWolf() or MapManager:IsPVEMode_StarArk() or MapManager:IsPVPMode_3Teams() or MapManager:IsPVPMode_EndlessBattleField() or MapManager:IsPVEMode_AbyssDragon() or MapManager:IsPVPMode_AsyncPvpRaid() or MapManager:IsPVEMode_DestroyAirShip() or MapManager:IsInSnowRealmHouseRaid()
 end

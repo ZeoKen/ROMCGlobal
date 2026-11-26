@@ -231,6 +231,7 @@ function MainView:MapViewListener()
   self:AddListenEvt(PVPEvent.TeamTwelve_Launch, self.HandleTwelveLaunch)
   self:AddListenEvt(PVPEvent.TeamTwelve_ShutDown, self.HandleTwelveShutdown)
   self:AddListenEvt(ServiceEvent.MatchCCmdObInitInfoFubenCmd, self.HandleOBPlayer)
+  self:AddListenEvt(MyselfEvent.ObservationModeEnd, self.HandleOBPlayerEnd)
   self:AddListenEvt(PlotStoryViewEvent.MainUIFadeIn, self.HandleUIFadeIn)
   EventManager.Me():AddEventListener(MainViewEvent.AddSubView, self.HandleAddSubView, self)
   EventManager.Me():AddEventListener(MainViewEvent.RemoveSubView, self.HandleRemoveSubView, self)
@@ -414,7 +415,16 @@ function MainView:HandleOBPlayer()
     FunctionPlayerUI.Me():MaskAllUI(Game.Myself, PUIVisibleReason.OB)
     Game.Myself:SetVisible(false, LayerChangeReason.GmObserver)
     FunctionPvpObserver.Me():ResetViewPort()
+    self.mainviewHeadRoot:SetActive(false)
+    self.chatMsgPage:HandlePoringFightBegin()
   end
+end
+
+function MainView:HandleOBPlayerEnd()
+  Game.Myself:SetVisible(true, LayerChangeReason.GmObserver)
+  FunctionPlayerUI.Me():UnMaskAllUI(Game.Myself, PUIVisibleReason.OB)
+  self.mainviewHeadRoot:SetActive(true)
+  self.chatMsgPage:HandlePoringFightEnd()
 end
 
 function MainView:HandleTwelveShutdown()

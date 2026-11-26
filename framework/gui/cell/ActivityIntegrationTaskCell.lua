@@ -69,17 +69,33 @@ function ActivityIntegrationTaskCell:SetData(data)
   elseif self:UpdateDeposit() then
     return
   end
+  self:RefreshTaskStateDisplay()
+end
+
+function ActivityIntegrationTaskCell:RefreshTaskStateDisplay()
+  local config = Table_NewServerChallengeTarget[self.id]
+  if not config then
+    return
+  end
+  self.canBuy = false
+  self:Set_DiscountMark(false)
+  self.buyBtn:SetActive(false)
+  self.buyBtn_LimitLabel.gameObject:SetActive(false)
+  self.receiveBtn:SetActive(false)
+  self.receiveUnlock:SetActive(false)
   local targetNum = config.TargetNum
   local descStr = OverSea.LangManager.Instance():GetLangByKey(config.Title)
   if self.state == 1 then
+    self.finishSymbol:SetActive(false)
     self.receiveBtn:SetActive(true)
     self.descLabel.text = string.format(descStr, targetNum)
   elseif self.state == 2 then
     self.finishSymbol:SetActive(true)
     self.descLabel.text = string.format(descStr, targetNum)
   else
+    self.finishSymbol:SetActive(false)
     self.receiveUnlock:SetActive(true)
-    local processStr = data.process .. "/" .. targetNum
+    local processStr = (self.process or 0) .. "/" .. targetNum
     self.descLabel.text = string.format(descStr, processStr)
   end
   local mySex = MyselfProxy.Instance:GetMySex()
@@ -167,6 +183,7 @@ function ActivityIntegrationTaskCell:UpdateShopItemData()
     local maxLimit = self.shopItemData.LimitNum
     if canBuyCount == 0 then
       xdlog("售罄")
+      self:RefreshTaskStateDisplay()
       return false
     end
     if canBuyCount ~= nil then
@@ -197,7 +214,7 @@ function ActivityIntegrationTaskCell:UpdateShopItemData()
     local staticData = Table_Item[goodsID]
     self.descLabel.text = staticData.NameZh
     local itemData = ItemData.new("Reward", staticData.id)
-    itemData:SetItemNum(self.shopItemData.goodsCount)
+    itemData:SetItemNum(self.shopItemData:GetGoodsCount())
     self.rewardCell:SetData(itemData)
     self.canBuy = true
     self:RefreshLabelTable()
@@ -224,6 +241,7 @@ function ActivityIntegrationTaskCell:UpdateDeposit()
     else
       if purchasedTimes == purchaseLimitTimes then
         xdlog("deposit 售罄")
+        self:RefreshTaskStateDisplay()
         return false
       end
       self.buyBtn_LimitLabel.gameObject:SetActive(true)
@@ -247,10 +265,12 @@ function ActivityIntegrationTaskCell:UpdateDeposit()
       self.buyBtn_Price.text = info.productConf.priceStr or priceCurrencyPrefix .. FunctionNewRecharge.FormatMilComma(curPrice)
     end
     local _itemData = ItemData.new("Reward", itemData.id)
-    _itemData:SetItemNum(info.productConf.Count)
+    _itemData:SetItemNum(info.productConf.Count or 1)
     self.rewardCell:SetData(_itemData)
     self.canBuy = true
     self:RefreshLabelTable()
     return true
   end
+  self:RefreshTaskStateDisplay()
+  return false
 end

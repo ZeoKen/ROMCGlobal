@@ -451,7 +451,7 @@ function EquipMemoryAdvanceView:UpdateEquipMemoryInfo()
     end
   end
   local effectList = {}
-  local attrs = memoryInfo.memoryAttrs
+  local attrs = memoryInfo.memoryAttrs or {}
   local randomAttr = memoryStaticData.RandomAttr
   local tempLvs = {}
   for _level, info in pairs(randomAttr) do
@@ -464,34 +464,23 @@ function EquipMemoryAdvanceView:UpdateEquipMemoryInfo()
   for i = 1, #tempLvs do
     unlockLvs[i] = tempLvs[i]
   end
-  local passExcessForSlot = {}
-  do
-    local curExcess = memoryInfo.excess_lv or 0
-    local excessCfg = GameConfig and GameConfig.EquipMemory and GameConfig.EquipMemory.Excess and GameConfig.EquipMemory.Excess.LvIndexUnlock
-    if type(excessCfg) == "table" and curExcess and 0 < curExcess then
-      for stageKey, mappedKey in pairs(excessCfg) do
-        local slotIndex = type(mappedKey) == "number" and math.floor(mappedKey / 10) or nil
-        if slotIndex and stageKey <= curExcess then
-          passExcessForSlot[slotIndex] = curExcess
-        end
-      end
-    end
-  end
   local maxAttrCount = memoryInfo.maxAttrCount or 1
   for i = 1, maxAttrCount do
-    if attrs[i] and attrs[i].previewid ~= nil and 0 < #attrs[i].previewid then
+    local attrData = attrs[i]
+    local curExcessLevel = attrData and (attrData.excess_level or 0) or 0
+    if attrData and attrData.previewid ~= nil and 0 < #attrData.previewid then
       local _tempData = {
-        id = attrs[i].id,
-        excess_lv = passExcessForSlot[i],
+        id = attrData.id,
+        excess_lv = curExcessLevel,
         text = ZhString.EquipMemory_NotChosen,
-        canUnlock = attrs[i].id == 0 and true or false,
+        canUnlock = attrData.id == 0 and true or false,
         isFourth = i == maxAttrCount
       }
       table.insert(effectList, _tempData)
     else
       local _tempData = {
         id = 0,
-        excess_lv = passExcessForSlot[i],
+        excess_lv = curExcessLevel,
         unlockLv = unlockLvs[i],
         canUnlock = false
       }

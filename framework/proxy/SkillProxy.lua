@@ -297,6 +297,7 @@ function SkillProxy:_InnerStartCD(skillItemData, skillCD, skillDelayCD)
       end
       if buff.self ~= nil then
         local buffConfig, cdTime, buffcd
+        local myselfData = Game.Myself and Game.Myself.data
         for i = 1, #buff.self do
           buffConfig = Table_Buffer[buff.self[i]]
           if buffConfig and buffConfig.BuffEffect and buffConfig.BuffEffect.type and buffConfig.BuffEffect.type == "AddSkillCD" then
@@ -304,7 +305,14 @@ function SkillProxy:_InnerStartCD(skillItemData, skillCD, skillDelayCD)
             if buffcd then
               for j = 1, #buffcd do
                 cdTime = buffcd[j].time
-                if 0 < cdTime then
+                if type(cdTime) == "table" then
+                  if cdTime.type then
+                    cdTime = CommonFun.calcBuffValue(myselfData, myselfData, cdTime.type, cdTime.a, cdTime.b, cdTime.c, cdTime.d, 0, 0)
+                  else
+                    cdTime = nil
+                  end
+                end
+                if cdTime and 0 < cdTime then
                   CDProxy.Instance:AddSkillCD(buffcd[j].id, 0, cdTime, cdTime)
                 end
               end
@@ -1598,7 +1606,7 @@ function SkillProxy:CanMagicSkillUse(skillItem)
   if skillItem:IsAllSuperUse() then
     return true
   end
-  if skillItem:IsMagicType() and Game.Myself.data:NoMagicSkill() then
+  if skillItem:IsAttackTypeSkill() and skillItem:IsMagicType() and Game.Myself.data:NoMagicSkill() then
     return false
   end
   return true
@@ -1611,7 +1619,7 @@ function SkillProxy:CanPhySkillUse(skillItem)
   if skillItem:IsAllSuperUse() then
     return true
   end
-  if skillItem:IsPhyType() and Game.Myself.data:NoPhySkill() then
+  if skillItem:IsAttackTypeSkill() and skillItem:IsPhyType() and Game.Myself.data:NoPhySkill() then
     return false
   end
   return true
@@ -1825,8 +1833,11 @@ function SkillProxy:InitSkillLeftCD(sortID, time)
 end
 
 function SkillProxy:UpdateSkillLeftCD(sortID, time, force)
-  if not self.skillLeftCD_DirtyMap[sortID] and not force then
-    return
+  if not force and not self.skillLeftCD_DirtyMap[sortID] then
+    local localTimes = self.skillLeftCDMap[sortID] or 0
+    if 0 < localTimes or localTimes >= (time or 0) then
+      return
+    end
   end
   self.skillLeftCD_DirtyMap[sortID] = nil
   self.skillLeftCDMap[sortID] = time

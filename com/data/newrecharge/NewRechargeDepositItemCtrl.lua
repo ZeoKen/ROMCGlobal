@@ -276,6 +276,12 @@ function NewRechargeDepositItemCtrl:SetFPRFlag2(productID)
   self.fprFlagProduct2[productID] = 0
 end
 
+function NewRechargeDepositItemCtrl:RemoveFPRFlag2(productID)
+  if self.fprFlagProduct2 ~= nil and self.fprFlagProduct2[productID] ~= nil then
+    self.fprFlagProduct2[productID] = nil
+  end
+end
+
 function NewRechargeDepositItemCtrl:SetChargeCnt(data)
   if not data or not data.depositId then
     return

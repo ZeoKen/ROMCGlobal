@@ -127,7 +127,10 @@ function GuildDateBattlefieldReport:OnSortBtnClicked(i)
 end
 
 function GuildDateBattlefieldReport:UpdateWinOrLose()
-  if _DateProxy:IsReportOver() then
+  if _DateProxy:IsObserveReport() then
+    self:Hide(self.winTexture)
+    self:Hide(self.loseTexture)
+  elseif _DateProxy:IsReportOver() then
     local isWin = _DateProxy:IsReportWin()
     self.winTexture.gameObject:SetActive(isWin)
     self.loseTexture.gameObject:SetActive(not isWin)
@@ -143,7 +146,16 @@ function GuildDateBattlefieldReport:OnClickSwitchBtn()
 end
 
 function GuildDateBattlefieldReport:UpdateTitle()
-  if self.isMyGuild then
+  if _DateProxy:IsObserveReport() then
+    local guildName = _DateProxy:GetReportGuildName(self.isMyGuild)
+    if not StringUtil.IsEmpty(guildName) then
+      self.titleLab.text = guildName
+    elseif self.isMyGuild then
+      self.titleLab.text = ZhString.GuildDateBattle_Report_Title_Def
+    else
+      self.titleLab.text = ZhString.GuildDateBattle_Report_Title_Atk
+    end
+  elseif self.isMyGuild then
     self.titleLab.text = ZhString.GuildDateBattle_Report_Title_Self
   else
     self.titleLab.text = ZhString.GuildDateBattle_Report_Title_Enemy

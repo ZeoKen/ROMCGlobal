@@ -982,6 +982,7 @@ function SkillTip:_SubSkillFunc()
       local _EventManager = EventManager.Me()
       _EventManager:AddEventListener(ServiceEvent.SkillMultiSkillOptionUpdateSkillCmd, self.HandleSkillOptionUpdate, self)
       _EventManager:AddEventListener(SkillEvent.SkillUpdate, self.HandleSkillUpdate, self)
+      _EventManager:AddEventListener(PVPEvent.OnFreeFireStateChanged, self.HandleFreeFireStateChanged, self)
     elseif self.subSkillList.cellCtrl ~= cellCtrl then
       self.subSkillList:ResetDatas(_EmptyTable, true)
       self.subSkillList.cellCtrl = cellCtrl
@@ -1171,6 +1172,10 @@ end
 function SkillTip:HandleSkillOptionUpdate()
   self:UpdateSubSkill()
   self:UpdateSelectSubSkill()
+end
+
+function SkillTip:HandleFreeFireStateChanged()
+  self:UpdateSubSkill()
 end
 
 function SkillTip:GetSubSkillCount()

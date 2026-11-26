@@ -319,7 +319,31 @@ Table_ItemMemoryEffect_t = {
     {29702},
     {29710, 29713},
     {29711, 29714},
-    {29712, 29715}
+    {29712, 29715},
+    {29560, 29563},
+    {29561, 29564},
+    {29562, 29565},
+    {29570, 29573},
+    {29571, 29574},
+    {29572, 29575},
+    {29580},
+    {29581},
+    {29582},
+    {29590, 29593},
+    {29591, 29594},
+    {29592, 29595},
+    {29600},
+    {29601},
+    {29602},
+    {29610},
+    {29611},
+    {29612},
+    {29620},
+    {29621},
+    {29622},
+    {29630},
+    {29631},
+    {29632}
   }
 }
 Table_ItemMemoryEffect = {
@@ -764,21 +788,18 @@ Table_ItemMemoryEffect = {
   },
   [56] = {
     id = 56,
-    EffectID = 30101,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[25],
     PreviewDesc = "诅咒铁壁",
     WaxDesc = "受到物理伤害时，获得1个6%生命上限的物理护盾(抵消物理伤害)，持续2秒(内置冷却时间4秒)\n（效果可叠加，叠加3层时额外获得效果：受到物理伤害时，获得1个12%生命上限的物理护盾(抵消物理伤害)，持续2秒(内置冷却时间4秒)）"
   },
   [57] = {
     id = 57,
-    EffectID = 30101,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[26],
     PreviewDesc = "诅咒铁壁"
   },
   [58] = {
     id = 58,
-    EffectID = 30101,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[27],
     PreviewDesc = "诅咒铁壁"
@@ -806,18 +827,21 @@ Table_ItemMemoryEffect = {
   },
   [62] = {
     id = 62,
+    EffectID = 30103,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[31],
     PreviewDesc = "诅咒回生",
     WaxDesc = "受到普攻伤害时，将2%受到的实际伤害转为治疗周围5米范围内的队友(包括自己)（目标1秒内只能受到一次该治疗效果）\n（效果可叠加，叠加3层时额外获得效果：受到普攻伤害时，将4%受到的实际伤害转为治疗周围5米范围内的队友(包括自己)（目标1秒内只能受到一次该治疗效果））"
   },
   [63] = {
     id = 63,
+    EffectID = 30103,
     Level = 2,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[32],
     PreviewDesc = "诅咒回生"
   },
   [64] = {
     id = 64,
+    EffectID = 30103,
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[33],
     PreviewDesc = "诅咒回生"
@@ -868,19 +892,22 @@ Table_ItemMemoryEffect = {
     id = 71,
     EffectID = 30106,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[40],
+    PreviewDesc = "元素呵护",
     WaxDesc = "闪避魔法伤害时，恢复自身3%最大生命和最大魔法值(内置冷却时间2秒)\n（效果可叠加，叠加3层时额外获得效果：闪避魔法伤害时，恢复自身6%最大生命和最大魔法值(内置冷却时间2秒)）"
   },
   [72] = {
     id = 72,
     EffectID = 30106,
     Level = 2,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[41]
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[41],
+    PreviewDesc = "元素呵护"
   },
   [73] = {
     id = 73,
     EffectID = 30106,
     Level = 3,
-    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[42]
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[42],
+    PreviewDesc = "元素呵护"
   },
   [74] = {
     id = 74,
@@ -1091,6 +1118,171 @@ Table_ItemMemoryEffect = {
     Level = 3,
     WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[72],
     PreviewDesc = "时间回溯"
+  },
+  [104] = {
+    id = 104,
+    EffectID = 30201,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[73],
+    WaxDesc = "所有异常状态抵抗＋2%、强制状态抵抗＋2%；异常状态下，物伤减免和魔伤减免＋2%；\n（效果可叠加，叠加3层时额外获得效果：所有异常状态抵抗＋4%、强制状态抵抗＋4%；异常状态下，物伤减免和魔伤减免＋4%）"
+  },
+  [105] = {
+    id = 105,
+    EffectID = 30201,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[74]
+  },
+  [106] = {
+    id = 106,
+    EffectID = 30201,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[75]
+  },
+  [107] = {
+    id = 107,
+    EffectID = 30202,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[76],
+    PreviewDesc = "破境之击",
+    WaxDesc = "所有异常状态攻击＋2%；攻击处于异常状态的目标时，自身物理、魔法伤害＋2%，持续5秒\n（效果可叠加，叠加3层时额外获得效果：所有异常状态攻击＋4%；攻击处于异常状态的目标时，自身物理、魔法伤害＋4%，持续5秒）"
+  },
+  [108] = {
+    id = 108,
+    EffectID = 30202,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[77],
+    PreviewDesc = "破境之击"
+  },
+  [109] = {
+    id = 109,
+    EffectID = 30202,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[78],
+    PreviewDesc = "破境之击"
+  },
+  [110] = {
+    id = 110,
+    EffectID = 30203,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[79],
+    PreviewDesc = "逆境之愈",
+    WaxDesc = "每受到一次异常状态，恢复2%最大生命（内置冷却时间3秒）；自身每有一个异常状态，伤害提升1%，最多提升2%\n（效果可叠加，叠加3层时额外获得效果：每受到一次异常状态，恢复4%最大生命（内置冷却时间3秒）；自身每有一个异常状态，伤害提升2%，最多提升4%）"
+  },
+  [111] = {
+    id = 111,
+    EffectID = 30203,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[80],
+    PreviewDesc = "逆境之愈"
+  },
+  [112] = {
+    id = 112,
+    EffectID = 30203,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[81],
+    PreviewDesc = "逆境之愈"
+  },
+  [113] = {
+    id = 113,
+    EffectID = 30204,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[82],
+    PreviewDesc = "无畏战意",
+    WaxDesc = "装备被卸除概率降低3%；装备被卸除时，物伤减免和魔伤减免＋4%，持续10秒\n（效果可叠加，叠加3层时额外获得效果：装备被卸除概率降低6%；装备被卸除时，物伤减免和魔伤减免＋8%，持续10秒）"
+  },
+  [114] = {
+    id = 114,
+    EffectID = 30204,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[83],
+    PreviewDesc = "无畏战意"
+  },
+  [115] = {
+    id = 115,
+    EffectID = 30204,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[84],
+    PreviewDesc = "无畏战意"
+  },
+  [116] = {
+    id = 116,
+    EffectID = 30205,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[85],
+    PreviewDesc = "浴血冲锋",
+    WaxDesc = "单次受到超过20%生命上限的物理伤害（不包含生命流失）时，接下来0.5秒内免疫物理伤害（内置冷却时间5秒）\n（效果可叠加，叠加3层时额外获得效果：单次受到超过20%生命上限的物理伤害（不包含生命流失）时，免疫物理伤害时间增加1秒（内置冷却时间5秒））"
+  },
+  [117] = {
+    id = 117,
+    EffectID = 30205,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[86],
+    PreviewDesc = "浴血冲锋"
+  },
+  [118] = {
+    id = 118,
+    EffectID = 30205,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[87],
+    PreviewDesc = "浴血冲锋"
+  },
+  [119] = {
+    id = 119,
+    EffectID = 30206,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[88],
+    PreviewDesc = "绝境回避",
+    WaxDesc = "单次受到超过20%生命上限的魔法伤害（不包含生命流失）时，接下来0.5秒内免疫魔法伤害（内置冷却时间5秒）\n（效果可叠加，叠加3层时额外获得效果：单次受到超过20%生命上限的魔法伤害（不包含生命流失）时，免疫魔法伤害时间增加1秒（内置冷却时间5秒））"
+  },
+  [120] = {
+    id = 120,
+    EffectID = 30206,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[89],
+    PreviewDesc = "绝境回避"
+  },
+  [121] = {
+    id = 121,
+    EffectID = 30206,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[90],
+    PreviewDesc = "绝境回避"
+  },
+  [122] = {
+    id = 122,
+    EffectID = 30207,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[91],
+    PreviewDesc = "精准磨砺",
+    WaxDesc = "攻击MISS时，自身增加1%命中，持续10秒，最多可叠加10层\n（效果可叠加，叠加3层时额外获得效果：攻击MISS时，自身增加2%命中，持续10秒，最多可叠加10层）"
+  },
+  [123] = {
+    id = 123,
+    EffectID = 30207,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[92],
+    PreviewDesc = "精准磨砺"
+  },
+  [124] = {
+    id = 124,
+    EffectID = 30207,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[93],
+    PreviewDesc = "精准磨砺"
+  },
+  [125] = {
+    id = 125,
+    EffectID = 30208,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[94],
+    PreviewDesc = "引路星光",
+    WaxDesc = "每隔30秒照亮天空，让自身周围8米内的敌方解除隐匿状态，穿戴30秒后生效\n（效果可叠加，叠加3层时额外获得效果：照亮天空，让自身周围8米内的敌方解除隐匿状态的间隔缩短10秒）"
+  },
+  [126] = {
+    id = 126,
+    EffectID = 30208,
+    Level = 2,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[95],
+    PreviewDesc = "引路星光"
+  },
+  [127] = {
+    id = 127,
+    EffectID = 30208,
+    Level = 3,
+    WaxBuffID = Table_ItemMemoryEffect_t.WaxBuffID[96],
+    PreviewDesc = "引路星光"
   },
   [128] = {
     id = 128,
@@ -1320,10 +1512,10 @@ Table_ItemMemoryEffect = {
 local cell_mt = {
   __index = {
     BuffID = _EmptyTable,
-    EffectID = 30103,
+    EffectID = 30101,
     ExcessWaxBuffID = _EmptyTable,
     Level = 1,
-    PreviewDesc = "元素呵护",
+    PreviewDesc = "不屈灵魂",
     UpgradeDesc = "",
     WaxBuffID = _EmptyTable,
     WaxDesc = "",

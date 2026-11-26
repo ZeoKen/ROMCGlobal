@@ -1249,6 +1249,14 @@ function MyselfData:IsOb()
   return PvpObserveProxy.Instance:IsRunning()
 end
 
+function MyselfData:HasTeamProfession(jobId)
+  local _TeamProxy = TeamProxy.Instance
+  if _TeamProxy:IHaveTeam() then
+    return _TeamProxy.myTeam:HasTeamProfession(jobId)
+  end
+  return self:GetProfressionID() == jobId
+end
+
 function MyselfData:GetTypeBranchNumInTeam(branchs)
   local num = 0
   local _TeamProxy = TeamProxy.Instance

@@ -2047,6 +2047,24 @@ ProtoReqInfoList = {
     ack = "Cmd.TeamPwsStateSyncFubenCmd",
     from = "FuBenCmd"
   },
+  BattleObserveFubenCmd = {
+    id = 110194,
+    req = "Cmd.BattleObserveFubenCmd",
+    ack = "Cmd.BattleObserveFubenCmd",
+    from = "FuBenCmd"
+  },
+  QueryBattleReplayFubenCmd = {
+    id = 110195,
+    req = "Cmd.QueryBattleReplayFubenCmd",
+    ack = "Cmd.QueryBattleReplayFubenCmd",
+    from = "FuBenCmd"
+  },
+  EnterBattleReplayFubenCmd = {
+    id = 110196,
+    req = "Cmd.EnterBattleReplayFubenCmd",
+    ack = "Cmd.EnterBattleReplayFubenCmd",
+    from = "FuBenCmd"
+  },
   ObserverFlashFubenCmd = {
     id = 110100,
     req = "Cmd.ObserverFlashFubenCmd",
@@ -3977,6 +3995,12 @@ ProtoReqInfoList = {
     id = 610051,
     req = "Cmd.EnterObservationMatchCCmd",
     ack = "Cmd.EnterObservationMatchCCmd",
+    from = "MatchCCmd"
+  },
+  EnterObservationWarbandMatchCCmd = {
+    id = 610076,
+    req = "Cmd.EnterObservationWarbandMatchCCmd",
+    ack = "Cmd.EnterObservationWarbandMatchCCmd",
     from = "MatchCCmd"
   },
   ObInitInfoFubenCmd = {
@@ -10219,6 +10243,18 @@ ProtoReqInfoList = {
     ack = "Cmd.ExtractionCardUserCmd",
     from = "SceneUser3"
   },
+  KickRequestUserCmd = {
+    id = 820074,
+    req = "Cmd.KickRequestUserCmd",
+    ack = "Cmd.KickRequestUserCmd",
+    from = "SceneUser3"
+  },
+  KickNotifyUserCmd = {
+    id = 820075,
+    req = "Cmd.KickNotifyUserCmd",
+    ack = "Cmd.KickNotifyUserCmd",
+    from = "SceneUser3"
+  },
   QueryAllMail = {
     id = 550001,
     req = "Cmd.QueryAllMail",
@@ -10439,6 +10475,12 @@ ProtoReqInfoList = {
     id = 560012,
     req = "Cmd.RemoveRelation",
     ack = "Cmd.RemoveRelation",
+    from = "SessionSociality"
+  },
+  ModifyFriendRemark = {
+    id = 560019,
+    req = "Cmd.ModifyFriendRemark",
+    ack = "Cmd.ModifyFriendRemark",
     from = "SessionSociality"
   },
   QueryRecallListSocialCmd = {
@@ -12193,6 +12235,9 @@ ProtoReqInfoList[110093] = ProtoReqInfoList.ResultSyncFubenCmd
 ProtoReqInfoList[110097] = ProtoReqInfoList.ComodoPhaseFubenCmd
 ProtoReqInfoList[110098] = ProtoReqInfoList.QueryComodoTeamRaidStat
 ProtoReqInfoList[110099] = ProtoReqInfoList.TeamPwsStateSyncFubenCmd
+ProtoReqInfoList[110194] = ProtoReqInfoList.BattleObserveFubenCmd
+ProtoReqInfoList[110195] = ProtoReqInfoList.QueryBattleReplayFubenCmd
+ProtoReqInfoList[110196] = ProtoReqInfoList.EnterBattleReplayFubenCmd
 ProtoReqInfoList[110100] = ProtoReqInfoList.ObserverFlashFubenCmd
 ProtoReqInfoList[110101] = ProtoReqInfoList.ObserverAttachFubenCmd
 ProtoReqInfoList[110102] = ProtoReqInfoList.ObserverSelectFubenCmd
@@ -12515,6 +12560,7 @@ ProtoReqInfoList[610048] = ProtoReqInfoList.QueryTwelveSeasonFinishMatchCCmd
 ProtoReqInfoList[610049] = ProtoReqInfoList.SyncMatchBoardOpenStateMatchCCmd
 ProtoReqInfoList[610050] = ProtoReqInfoList.TwelveSeasonTimeInfoMatchCCmd
 ProtoReqInfoList[610051] = ProtoReqInfoList.EnterObservationMatchCCmd
+ProtoReqInfoList[610076] = ProtoReqInfoList.EnterObservationWarbandMatchCCmd
 ProtoReqInfoList[610052] = ProtoReqInfoList.ObInitInfoFubenCmd
 ProtoReqInfoList[610053] = ProtoReqInfoList.ReserveRoomBuildMatchCCmd
 ProtoReqInfoList[610054] = ProtoReqInfoList.ReserveRoomInviterMatchCCmd
@@ -13555,6 +13601,8 @@ ProtoReqInfoList[820069] = ProtoReqInfoList.SnakeCoasterQueryRankCmd
 ProtoReqInfoList[820072] = ProtoReqInfoList.SnakeCoasterActionNtf
 ProtoReqInfoList[820065] = ProtoReqInfoList.UserIceSlideStopUserCmd
 ProtoReqInfoList[820073] = ProtoReqInfoList.ExtractionCardUserCmd
+ProtoReqInfoList[820074] = ProtoReqInfoList.KickRequestUserCmd
+ProtoReqInfoList[820075] = ProtoReqInfoList.KickNotifyUserCmd
 ProtoReqInfoList[550001] = ProtoReqInfoList.QueryAllMail
 ProtoReqInfoList[550002] = ProtoReqInfoList.MailUpdate
 ProtoReqInfoList[550003] = ProtoReqInfoList.GetMailAttach
@@ -13592,6 +13640,7 @@ ProtoReqInfoList[560009] = ProtoReqInfoList.QueryDataNtfSocialCmd
 ProtoReqInfoList[560010] = ProtoReqInfoList.OperActivityNtfSocialCmd
 ProtoReqInfoList[560011] = ProtoReqInfoList.AddRelation
 ProtoReqInfoList[560012] = ProtoReqInfoList.RemoveRelation
+ProtoReqInfoList[560019] = ProtoReqInfoList.ModifyFriendRemark
 ProtoReqInfoList[560013] = ProtoReqInfoList.QueryRecallListSocialCmd
 ProtoReqInfoList[560014] = ProtoReqInfoList.RecallFriendSocialCmd
 ProtoReqInfoList[560015] = ProtoReqInfoList.AddRelationResultSocialCmd

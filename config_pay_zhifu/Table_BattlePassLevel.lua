@@ -342,78 +342,6 @@ Table_BattlePassLevel_t = {
         month = 12,
         num = 1,
         year = 2026
-      },
-      {
-        itemid = 3006181,
-        month = 1,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3007211,
-        month = 2,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3007182,
-        month = 3,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3009152,
-        month = 4,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3009181,
-        month = 5,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3009191,
-        month = 6,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3009201,
-        month = 7,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3009222,
-        month = 8,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3011662,
-        month = 9,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3011671,
-        month = 10,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3011711,
-        month = 11,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3011752,
-        month = 12,
-        num = 1,
-        year = 2027
       }
     },
     {
@@ -860,28 +788,16 @@ Table_BattlePassLevel_t = {
         year = 2026
       },
       {
-        itemid = 10000509,
+        itemid = 10001027,
         month = 11,
         num = 1,
         year = 2026
       },
       {
-        itemid = 10000510,
+        itemid = 10001034,
         month = 12,
         num = 1,
         year = 2026
-      },
-      {
-        itemid = 10000511,
-        month = 1,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000512,
-        month = 2,
-        num = 1,
-        year = 2027
       }
     },
     {
@@ -1348,78 +1264,6 @@ Table_BattlePassLevel_t = {
         month = 12,
         num = 1,
         year = 2026
-      },
-      {
-        itemid = 10000389,
-        month = 1,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000390,
-        month = 2,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000391,
-        month = 3,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000513,
-        month = 4,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000514,
-        month = 5,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000515,
-        month = 6,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000516,
-        month = 7,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000517,
-        month = 8,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000518,
-        month = 9,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000519,
-        month = 10,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000520,
-        month = 11,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 10000521,
-        month = 12,
-        num = 1,
-        year = 2027
       }
     },
     {
@@ -1818,78 +1662,6 @@ Table_BattlePassLevel_t = {
         month = 12,
         num = 1,
         year = 2026
-      },
-      {
-        itemid = 3007192,
-        month = 1,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3006941,
-        month = 2,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3007241,
-        month = 3,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3009121,
-        month = 4,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3009122,
-        month = 5,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3009141,
-        month = 6,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3009151,
-        month = 7,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3009161,
-        month = 8,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3009171,
-        month = 9,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3009212,
-        month = 10,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3009221,
-        month = 11,
-        num = 1,
-        year = 2027
-      },
-      {
-        itemid = 3011762,
-        month = 12,
-        num = 1,
-        year = 2027
       }
     },
     {

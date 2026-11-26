@@ -422,7 +422,9 @@ function SkillHitWorker:_Hit(creature, targetCreature, damageType, damage, combo
       else
         LuaVector3.Better_Set(labelPosition, targetCreature.assetRole:GetEPOrRootPosition(RoleDefines_EP.Top))
         local crit
-        if damageType == CommonFun.DamageType.Crit then
+        if damageType == DamageType.LuckyCrit then
+          crit = HurtNum_CritType.Lucky
+        elseif damageType == DamageType.Crit then
           if skillInfo and skillInfo:ShowMagicCrit(targetCreature) then
             crit = HurtNum_CritType.MAtk
           else

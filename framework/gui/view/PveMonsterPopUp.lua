@@ -186,6 +186,7 @@ function PveMonsterPopUp:SetModelTexture()
       UIModelUtil.Instance:SetCellTransparent(self.modelTexture)
     end
   end)
+  UIModelUtil.Instance:SetCellTransparent(self.modelTexture)
 end
 
 function PveMonsterPopUp:ClearMonster()

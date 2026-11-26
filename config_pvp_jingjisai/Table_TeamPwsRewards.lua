@@ -413,22 +413,28 @@ Table_TeamPwsRewards_t = {
     {
       900225,
       523,
-      524
+      524,
+      3720,
+      3006025
     },
     {
       900224,
       521,
-      522
+      522,
+      3720,
+      3006025
     },
     {
       900223,
       519,
-      520
+      520,
+      3720,
+      3006025
     },
     {48099},
-    {149511},
-    {900226},
     {47218},
+    {900226},
+    {149511},
     {
       900217,
       517,
@@ -650,6 +656,8 @@ Table_TeamPwsRewards = {
   },
   [7] = {
     id = 7,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[7],
     Season = 23
   },
@@ -662,8 +670,6 @@ Table_TeamPwsRewards = {
   },
   [9] = {
     id = 9,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[9],
     Season = 23
   },
@@ -716,6 +722,8 @@ Table_TeamPwsRewards = {
   },
   [16] = {
     id = 16,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[16],
     Season = 22
   },
@@ -728,8 +736,6 @@ Table_TeamPwsRewards = {
   },
   [18] = {
     id = 18,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[18],
     Season = 22
   },
@@ -782,6 +788,8 @@ Table_TeamPwsRewards = {
   },
   [25] = {
     id = 25,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[25],
     Season = 21
   },
@@ -794,8 +802,6 @@ Table_TeamPwsRewards = {
   },
   [27] = {
     id = 27,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[27],
     Season = 21
   },
@@ -848,6 +854,8 @@ Table_TeamPwsRewards = {
   },
   [34] = {
     id = 34,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[34],
     Season = 20
   },
@@ -860,8 +868,6 @@ Table_TeamPwsRewards = {
   },
   [36] = {
     id = 36,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[36],
     Season = 20
   },
@@ -914,6 +920,8 @@ Table_TeamPwsRewards = {
   },
   [43] = {
     id = 43,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[43],
     Season = 19
   },
@@ -926,8 +934,6 @@ Table_TeamPwsRewards = {
   },
   [45] = {
     id = 45,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[45],
     Season = 19
   },
@@ -980,6 +986,8 @@ Table_TeamPwsRewards = {
   },
   [52] = {
     id = 52,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[52],
     Season = 18
   },
@@ -992,8 +1000,6 @@ Table_TeamPwsRewards = {
   },
   [54] = {
     id = 54,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[54],
     Season = 18
   },
@@ -1046,6 +1052,8 @@ Table_TeamPwsRewards = {
   },
   [61] = {
     id = 61,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[61],
     Season = 17
   },
@@ -1058,8 +1066,6 @@ Table_TeamPwsRewards = {
   },
   [63] = {
     id = 63,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[63],
     Season = 17
   },
@@ -1112,6 +1118,8 @@ Table_TeamPwsRewards = {
   },
   [70] = {
     id = 70,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[70],
     Season = 16
   },
@@ -1124,8 +1132,6 @@ Table_TeamPwsRewards = {
   },
   [72] = {
     id = 72,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[72],
     Season = 16
   },
@@ -1178,6 +1184,8 @@ Table_TeamPwsRewards = {
   },
   [79] = {
     id = 79,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[79],
     Season = 15
   },
@@ -1190,8 +1198,6 @@ Table_TeamPwsRewards = {
   },
   [81] = {
     id = 81,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[81],
     Season = 15
   },
@@ -1228,6 +1234,8 @@ Table_TeamPwsRewards = {
   },
   [86] = {
     id = 86,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[86],
     Season = 14
   },
@@ -1240,8 +1248,6 @@ Table_TeamPwsRewards = {
   },
   [88] = {
     id = 88,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[88],
     Season = 14
   },
@@ -1278,6 +1284,8 @@ Table_TeamPwsRewards = {
   },
   [93] = {
     id = 93,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[93],
     Season = 13
   },
@@ -1290,8 +1298,6 @@ Table_TeamPwsRewards = {
   },
   [95] = {
     id = 95,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[95],
     Season = 13
   },
@@ -1328,6 +1334,8 @@ Table_TeamPwsRewards = {
   },
   [100] = {
     id = 100,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[100],
     Season = 12
   },
@@ -1340,8 +1348,6 @@ Table_TeamPwsRewards = {
   },
   [102] = {
     id = 102,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[102],
     Season = 12
   },
@@ -1378,6 +1384,8 @@ Table_TeamPwsRewards = {
   },
   [107] = {
     id = 107,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[107],
     Season = 11
   },
@@ -1390,8 +1398,6 @@ Table_TeamPwsRewards = {
   },
   [109] = {
     id = 109,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[109],
     Season = 11
   },
@@ -1428,6 +1434,8 @@ Table_TeamPwsRewards = {
   },
   [114] = {
     id = 114,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[114],
     Season = 10
   },
@@ -1440,587 +1448,601 @@ Table_TeamPwsRewards = {
   },
   [116] = {
     id = 116,
-    NameZh = "##149599",
-    Desc = "##149601",
     Items = Table_TeamPwsRewards_t.Items[116],
     Season = 10
   },
   [117] = {
     id = 117,
-    NameZh = "##149609",
-    Desc = "##149600",
+    NameZh = "##1194031",
+    Desc = "##1224555",
     Icon = "successes_03",
     Items = Table_TeamPwsRewards_t.Items[117],
     Season = 9
   },
   [118] = {
     id = 118,
-    NameZh = "##149607",
-    Desc = "##149604",
+    NameZh = "##1194033",
+    Desc = "##1224556",
     Icon = "successes_02",
-    Items = Table_TeamPwsRewards_t.Items[118],
+    Items = Table_TeamPwsRewards_t.Items[117],
     Season = 9
   },
   [119] = {
     id = 119,
-    NameZh = "##289613",
-    Desc = "##289614",
+    NameZh = "##1244005",
+    Desc = "##1224557",
     Icon = "successes_01",
-    Items = Table_TeamPwsRewards_t.Items[119],
+    Items = Table_TeamPwsRewards_t.Items[117],
     Season = 9
   },
   [120] = {
     id = 120,
+    NameZh = "##1242278",
+    Desc = "##1224558",
+    Icon = "successes_01",
+    Items = Table_TeamPwsRewards_t.Items[118],
+    Season = 9
+  },
+  [121] = {
+    id = 121,
+    NameZh = "##1242279",
+    Desc = "##1224559",
+    Icon = "successes_01",
+    Items = Table_TeamPwsRewards_t.Items[119],
+    Season = 9
+  },
+  [122] = {
+    id = 122,
     NameZh = "##149602",
     Desc = "##149598",
     Items = Table_TeamPwsRewards_t.Items[120],
     Season = 9
   },
-  [121] = {
-    id = 121,
+  [123] = {
+    id = 123,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[121],
     Season = 9
   },
-  [122] = {
-    id = 122,
+  [124] = {
+    id = 124,
     NameZh = "##149608",
     Desc = "##149611",
     Items = Table_TeamPwsRewards_t.Items[122],
     Season = 9
   },
-  [123] = {
-    id = 123,
-    NameZh = "##149599",
-    Desc = "##149601",
+  [125] = {
+    id = 125,
     Items = Table_TeamPwsRewards_t.Items[123],
     Season = 9
   },
-  [124] = {
-    id = 124,
+  [126] = {
+    id = 126,
     NameZh = "##1194031",
     Desc = "##1224555",
     Icon = "successes_03",
     Items = Table_TeamPwsRewards_t.Items[124],
     Season = 8
   },
-  [125] = {
-    id = 125,
+  [127] = {
+    id = 127,
     NameZh = "##1194033",
     Desc = "##1224556",
     Icon = "successes_02",
     Items = Table_TeamPwsRewards_t.Items[124],
     Season = 8
   },
-  [126] = {
-    id = 126,
+  [128] = {
+    id = 128,
     NameZh = "##1244005",
     Desc = "##1224557",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[124],
     Season = 8
   },
-  [127] = {
-    id = 127,
+  [129] = {
+    id = 129,
     NameZh = "##1242278",
     Desc = "##1224558",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[125],
     Season = 8
   },
-  [128] = {
-    id = 128,
+  [130] = {
+    id = 130,
     NameZh = "##1242279",
     Desc = "##1224559",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[126],
     Season = 8
   },
-  [129] = {
-    id = 129,
+  [131] = {
+    id = 131,
     NameZh = "##149602",
     Desc = "##149598",
     Items = Table_TeamPwsRewards_t.Items[127],
     Season = 8
   },
-  [130] = {
-    id = 130,
+  [132] = {
+    id = 132,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[128],
     Season = 8
   },
-  [131] = {
-    id = 131,
+  [133] = {
+    id = 133,
     NameZh = "##149608",
     Desc = "##149611",
     Items = Table_TeamPwsRewards_t.Items[129],
     Season = 8
   },
-  [132] = {
-    id = 132,
-    NameZh = "##149599",
-    Desc = "##149601",
+  [134] = {
+    id = 134,
     Items = Table_TeamPwsRewards_t.Items[130],
     Season = 8
   },
-  [133] = {
-    id = 133,
+  [135] = {
+    id = 135,
     NameZh = "##1194031",
     Desc = "##1224555",
     Icon = "successes_03",
     Items = Table_TeamPwsRewards_t.Items[131],
     Season = 7
   },
-  [134] = {
-    id = 134,
+  [136] = {
+    id = 136,
     NameZh = "##1194033",
     Desc = "##1224556",
     Icon = "successes_02",
     Items = Table_TeamPwsRewards_t.Items[131],
     Season = 7
   },
-  [135] = {
-    id = 135,
+  [137] = {
+    id = 137,
     NameZh = "##1244005",
     Desc = "##1224557",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[131],
     Season = 7
   },
-  [136] = {
-    id = 136,
+  [138] = {
+    id = 138,
     NameZh = "##1242278",
     Desc = "##1224558",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[132],
     Season = 7
   },
-  [137] = {
-    id = 137,
+  [139] = {
+    id = 139,
     NameZh = "##1242279",
     Desc = "##1224559",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[133],
     Season = 7
   },
-  [138] = {
-    id = 138,
+  [140] = {
+    id = 140,
     NameZh = "##149602",
     Desc = "##149598",
     Items = Table_TeamPwsRewards_t.Items[134],
     Season = 7
   },
-  [139] = {
-    id = 139,
+  [141] = {
+    id = 141,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[135],
     Season = 7
   },
-  [140] = {
-    id = 140,
+  [142] = {
+    id = 142,
     NameZh = "##149608",
     Desc = "##149611",
     Items = Table_TeamPwsRewards_t.Items[136],
     Season = 7
   },
-  [141] = {
-    id = 141,
-    NameZh = "##149599",
-    Desc = "##149601",
+  [143] = {
+    id = 143,
     Items = Table_TeamPwsRewards_t.Items[137],
     Season = 7
   },
-  [142] = {
-    id = 142,
+  [144] = {
+    id = 144,
     NameZh = "##1194031",
     Desc = "##1224555",
     Icon = "successes_03",
     Items = Table_TeamPwsRewards_t.Items[138],
     Season = 6
   },
-  [143] = {
-    id = 143,
+  [145] = {
+    id = 145,
     NameZh = "##1194033",
     Desc = "##1224556",
     Icon = "successes_02",
     Items = Table_TeamPwsRewards_t.Items[138],
     Season = 6
   },
-  [144] = {
-    id = 144,
+  [146] = {
+    id = 146,
     NameZh = "##1244005",
     Desc = "##1224557",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[138],
     Season = 6
   },
-  [145] = {
-    id = 145,
+  [147] = {
+    id = 147,
     NameZh = "##1242278",
     Desc = "##1224558",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[139],
     Season = 6
   },
-  [146] = {
-    id = 146,
+  [148] = {
+    id = 148,
     NameZh = "##1242279",
     Desc = "##1224559",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[140],
     Season = 6
   },
-  [147] = {
-    id = 147,
+  [149] = {
+    id = 149,
     NameZh = "##149602",
     Desc = "##149598",
     Items = Table_TeamPwsRewards_t.Items[141],
     Season = 6
   },
-  [148] = {
-    id = 148,
+  [150] = {
+    id = 150,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[142],
     Season = 6
   },
-  [149] = {
-    id = 149,
+  [151] = {
+    id = 151,
     NameZh = "##149608",
     Desc = "##149611",
     Items = Table_TeamPwsRewards_t.Items[143],
     Season = 6
   },
-  [150] = {
-    id = 150,
-    NameZh = "##149599",
-    Desc = "##149601",
+  [152] = {
+    id = 152,
     Items = Table_TeamPwsRewards_t.Items[144],
     Season = 6
   },
-  [151] = {
-    id = 151,
+  [153] = {
+    id = 153,
     NameZh = "##1194031",
     Desc = "##1224555",
     Icon = "successes_03",
     Items = Table_TeamPwsRewards_t.Items[145],
     Season = 5
   },
-  [152] = {
-    id = 152,
+  [154] = {
+    id = 154,
     NameZh = "##1194033",
     Desc = "##1224556",
     Icon = "successes_02",
     Items = Table_TeamPwsRewards_t.Items[145],
     Season = 5
   },
-  [153] = {
-    id = 153,
+  [155] = {
+    id = 155,
     NameZh = "##1244005",
     Desc = "##1224557",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[145],
     Season = 5
   },
-  [154] = {
-    id = 154,
+  [156] = {
+    id = 156,
     NameZh = "##1242278",
     Desc = "##1224558",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[146],
     Season = 5
   },
-  [155] = {
-    id = 155,
+  [157] = {
+    id = 157,
     NameZh = "##1242279",
     Desc = "##1224559",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[147],
     Season = 5
   },
-  [156] = {
-    id = 156,
+  [158] = {
+    id = 158,
     NameZh = "##149602",
     Desc = "##149598",
     Items = Table_TeamPwsRewards_t.Items[148],
     Season = 5
   },
-  [157] = {
-    id = 157,
+  [159] = {
+    id = 159,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[149],
     Season = 5
   },
-  [158] = {
-    id = 158,
+  [160] = {
+    id = 160,
     NameZh = "##149608",
     Desc = "##149611",
     Items = Table_TeamPwsRewards_t.Items[150],
     Season = 5
   },
-  [159] = {
-    id = 159,
-    NameZh = "##149599",
-    Desc = "##149601",
+  [161] = {
+    id = 161,
     Items = Table_TeamPwsRewards_t.Items[151],
     Season = 5
   },
-  [160] = {
-    id = 160,
+  [162] = {
+    id = 162,
     NameZh = "##1194031",
     Desc = "##1224555",
     Icon = "successes_03",
     Items = Table_TeamPwsRewards_t.Items[152],
     Season = 4
   },
-  [161] = {
-    id = 161,
+  [163] = {
+    id = 163,
     NameZh = "##1194033",
     Desc = "##1224556",
     Icon = "successes_02",
     Items = Table_TeamPwsRewards_t.Items[152],
     Season = 4
   },
-  [162] = {
-    id = 162,
+  [164] = {
+    id = 164,
     NameZh = "##1244005",
     Desc = "##1224557",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[152],
     Season = 4
   },
-  [163] = {
-    id = 163,
+  [165] = {
+    id = 165,
     NameZh = "##1242278",
     Desc = "##1224558",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[153],
     Season = 4
   },
-  [164] = {
-    id = 164,
+  [166] = {
+    id = 166,
     NameZh = "##1242279",
     Desc = "##1224559",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[154],
     Season = 4
   },
-  [165] = {
-    id = 165,
+  [167] = {
+    id = 167,
     NameZh = "##149602",
     Desc = "##149598",
     Items = Table_TeamPwsRewards_t.Items[155],
     Season = 4
   },
-  [166] = {
-    id = 166,
+  [168] = {
+    id = 168,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[156],
     Season = 4
   },
-  [167] = {
-    id = 167,
+  [169] = {
+    id = 169,
     NameZh = "##149608",
     Desc = "##149611",
     Items = Table_TeamPwsRewards_t.Items[157],
     Season = 4
   },
-  [168] = {
-    id = 168,
-    NameZh = "##149599",
-    Desc = "##149601",
+  [170] = {
+    id = 170,
     Items = Table_TeamPwsRewards_t.Items[158],
     Season = 4
   },
-  [169] = {
-    id = 169,
+  [171] = {
+    id = 171,
     NameZh = "##1194031",
     Desc = "##1224555",
     Icon = "successes_03",
     Items = Table_TeamPwsRewards_t.Items[159],
     Season = 3
   },
-  [170] = {
-    id = 170,
+  [172] = {
+    id = 172,
     NameZh = "##1194033",
     Desc = "##1224556",
     Icon = "successes_02",
     Items = Table_TeamPwsRewards_t.Items[159],
     Season = 3
   },
-  [171] = {
-    id = 171,
+  [173] = {
+    id = 173,
     NameZh = "##1244005",
     Desc = "##1224557",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[159],
     Season = 3
   },
-  [172] = {
-    id = 172,
+  [174] = {
+    id = 174,
     NameZh = "##1242278",
     Desc = "##1224558",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[160],
     Season = 3
   },
-  [173] = {
-    id = 173,
+  [175] = {
+    id = 175,
     NameZh = "##1242279",
     Desc = "##1224559",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[161],
     Season = 3
   },
-  [174] = {
-    id = 174,
+  [176] = {
+    id = 176,
     NameZh = "##149602",
     Desc = "##149598",
     Items = Table_TeamPwsRewards_t.Items[162],
     Season = 3
   },
-  [175] = {
-    id = 175,
+  [177] = {
+    id = 177,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[163],
     Season = 3
   },
-  [176] = {
-    id = 176,
+  [178] = {
+    id = 178,
     NameZh = "##149608",
     Desc = "##149611",
     Items = Table_TeamPwsRewards_t.Items[164],
     Season = 3
   },
-  [177] = {
-    id = 177,
-    NameZh = "##149599",
-    Desc = "##149601",
+  [179] = {
+    id = 179,
     Items = Table_TeamPwsRewards_t.Items[165],
     Season = 3
   },
-  [178] = {
-    id = 178,
+  [180] = {
+    id = 180,
     NameZh = "##1194031",
     Desc = "##1224555",
     Icon = "successes_03",
     Items = Table_TeamPwsRewards_t.Items[166],
     Season = 2
   },
-  [179] = {
-    id = 179,
+  [181] = {
+    id = 181,
     NameZh = "##1194033",
     Desc = "##1224556",
     Icon = "successes_02",
     Items = Table_TeamPwsRewards_t.Items[166],
     Season = 2
   },
-  [180] = {
-    id = 180,
+  [182] = {
+    id = 182,
     NameZh = "##1244005",
     Desc = "##1224557",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[166],
     Season = 2
   },
-  [181] = {
-    id = 181,
+  [183] = {
+    id = 183,
     NameZh = "##1242278",
     Desc = "##1224558",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[167],
     Season = 2
   },
-  [182] = {
-    id = 182,
+  [184] = {
+    id = 184,
     NameZh = "##1242279",
     Desc = "##1224559",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[168],
     Season = 2
   },
-  [183] = {
-    id = 183,
+  [185] = {
+    id = 185,
     NameZh = "##149602",
     Desc = "##149598",
     Items = Table_TeamPwsRewards_t.Items[169],
     Season = 2
   },
-  [184] = {
-    id = 184,
+  [186] = {
+    id = 186,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[170],
     Season = 2
   },
-  [185] = {
-    id = 185,
+  [187] = {
+    id = 187,
     NameZh = "##149608",
     Desc = "##149611",
     Items = Table_TeamPwsRewards_t.Items[171],
     Season = 2
   },
-  [186] = {
-    id = 186,
-    NameZh = "##149599",
-    Desc = "##149601",
+  [188] = {
+    id = 188,
     Items = Table_TeamPwsRewards_t.Items[172],
     Season = 2
   },
-  [187] = {
-    id = 187,
+  [189] = {
+    id = 189,
     NameZh = "##1194031",
     Desc = "##1224555",
     Icon = "successes_03",
     Items = Table_TeamPwsRewards_t.Items[173]
   },
-  [188] = {
-    id = 188,
+  [190] = {
+    id = 190,
     NameZh = "##1194033",
     Desc = "##1224556",
     Icon = "successes_02",
     Items = Table_TeamPwsRewards_t.Items[173]
   },
-  [189] = {
-    id = 189,
+  [191] = {
+    id = 191,
     NameZh = "##1244005",
     Desc = "##1224557",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[173]
   },
-  [190] = {
-    id = 190,
+  [192] = {
+    id = 192,
     NameZh = "##1242278",
     Desc = "##1224558",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[174]
   },
-  [191] = {
-    id = 191,
+  [193] = {
+    id = 193,
     NameZh = "##1242279",
     Desc = "##1224559",
     Icon = "successes_01",
     Items = Table_TeamPwsRewards_t.Items[175]
   },
-  [192] = {
-    id = 192,
+  [194] = {
+    id = 194,
     NameZh = "##149602",
     Desc = "##149598",
     Items = Table_TeamPwsRewards_t.Items[176]
   },
-  [193] = {
-    id = 193,
+  [195] = {
+    id = 195,
+    NameZh = "##149610",
+    Desc = "##149606",
     Items = Table_TeamPwsRewards_t.Items[177]
   },
-  [194] = {
-    id = 194,
+  [196] = {
+    id = 196,
     NameZh = "##149608",
     Desc = "##149611",
     Items = Table_TeamPwsRewards_t.Items[178]
   },
-  [195] = {
-    id = 195,
-    NameZh = "##149599",
-    Desc = "##149601",
+  [197] = {
+    id = 197,
     Items = Table_TeamPwsRewards_t.Items[179]
   }
 }
 local cell_mt = {
   __index = {
-    Desc = "##149606",
+    Desc = "##149601",
     Icon = "successes_04",
     Items = _EmptyTable,
-    NameZh = "##149610",
+    NameZh = "##149599",
     Season = 1,
     id = 1
   }

@@ -199,7 +199,33 @@ end
 function AI_Myself:_Idle(time, deltaTime, creature)
   self.move = false
   self:_NotifyAngleY(time, deltaTime, creature)
-  return AI_Myself.super._Idle(self, time, deltaTime, creature)
+  local ret = AI_Myself.super._Idle(self, time, deltaTime, creature)
+  if not ret then
+    self:_UpdateAutoBattleWhenControlled(time, deltaTime, creature)
+  end
+  return ret
+end
+
+function AI_Myself:_UpdateAutoBattleWhenControlled(time, deltaTime, creature)
+  local autoAI_Battle = self.autoAI_Battle
+  if nil == autoAI_Battle then
+    return
+  end
+  local idleAIManager = self.idleAIManager
+  if idleAIManager:IsPausing(creature) then
+    return
+  end
+  local idleElapsed = self.idleElapsed
+  local ais = idleAIManager.ais
+  for i = 1, #ais do
+    local ai = ais[i]
+    if ai:Prepare(idleElapsed, time, deltaTime, creature) then
+      if ai == autoAI_Battle then
+        autoAI_Battle:Update(idleElapsed, time, deltaTime, creature)
+      end
+      return
+    end
+  end
 end
 
 function AI_Myself:_Move(time, deltaTime, creature)

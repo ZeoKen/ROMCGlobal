@@ -54,7 +54,8 @@ function FriendView:InitShow()
     "Tutor_InviteBeTutor",
     "Tutor_InviteBeStudent",
     "EnterHomeRoom",
-    "ApplyEnterGuild"
+    "ApplyEnterGuild",
+    "FriendRemark"
   }
   self.funkeyOffline = {
     "AddFriend",
@@ -64,7 +65,8 @@ function FriendView:InitShow()
     "AddBlacklist",
     "InviteEnterGuild",
     "EnterHomeRoom",
-    "ApplyEnterGuild"
+    "ApplyEnterGuild",
+    "FriendRemark"
   }
   self.tipData = {}
   self:RegisterRedTipCheck(SceneTip_pb.EREDSYS_SOCIAL_FRIEND_APPLY, self.RequestInfoBtn, 4, {-5, -5})

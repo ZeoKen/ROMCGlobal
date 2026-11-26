@@ -51,6 +51,9 @@ function ServiceSessionSocialityAutoProxy:onRegister()
   self:Listen(56, 12, function(data)
     self:RecvRemoveRelation(data)
   end)
+  self:Listen(56, 19, function(data)
+    self:RecvModifyFriendRemark(data)
+  end)
   self:Listen(56, 13, function(data)
     self:RecvQueryRecallListSocialCmd(data)
   end)
@@ -498,6 +501,35 @@ function ServiceSessionSocialityAutoProxy:CallRemoveRelation(charid, relation)
     end
     if relation ~= nil then
       msgParam.relation = relation
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceSessionSocialityAutoProxy:CallModifyFriendRemark(charid, remark, success)
+  if not NetConfig.PBC then
+    local msg = SessionSociality_pb.ModifyFriendRemark()
+    if charid ~= nil then
+      msg.charid = charid
+    end
+    if remark ~= nil then
+      msg.remark = remark
+    end
+    if success ~= nil then
+      msg.success = success
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.ModifyFriendRemark.id
+    local msgParam = {}
+    if charid ~= nil then
+      msgParam.charid = charid
+    end
+    if remark ~= nil then
+      msgParam.remark = remark
+    end
+    if success ~= nil then
+      msgParam.success = success
     end
     self:SendProto2(msgId, msgParam)
   end
@@ -1041,6 +1073,15 @@ function ServiceSessionSocialityAutoProxy:CallQueryUserInfoCmd(charid, data, pro
       end
       msg.data.head_fashion = data.head_fashion
     end
+    if data ~= nil and data.remark ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.data == nil then
+        msg.data = {}
+      end
+      msg.data.remark = data.remark
+    end
     if profiledata ~= nil and profiledata.birthmonth ~= nil then
       if msg == nil then
         msg = {}
@@ -1538,6 +1579,15 @@ function ServiceSessionSocialityAutoProxy:CallQueryUserInfoCmd(charid, data, pro
       end
       msgParam.data.head_fashion = data.head_fashion
     end
+    if data ~= nil and data.remark ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.data == nil then
+        msgParam.data = {}
+      end
+      msgParam.data.remark = data.remark
+    end
     if profiledata ~= nil and profiledata.birthmonth ~= nil then
       if msgParam == nil then
         msgParam = {}
@@ -1683,6 +1733,10 @@ function ServiceSessionSocialityAutoProxy:RecvRemoveRelation(data)
   self:Notify(ServiceEvent.SessionSocialityRemoveRelation, data)
 end
 
+function ServiceSessionSocialityAutoProxy:RecvModifyFriendRemark(data)
+  self:Notify(ServiceEvent.SessionSocialityModifyFriendRemark, data)
+end
+
 function ServiceSessionSocialityAutoProxy:RecvQueryRecallListSocialCmd(data)
   self:Notify(ServiceEvent.SessionSocialityQueryRecallListSocialCmd, data)
 end
@@ -1720,6 +1774,7 @@ ServiceEvent.SessionSocialityQueryDataNtfSocialCmd = "ServiceEvent_SessionSocial
 ServiceEvent.SessionSocialityOperActivityNtfSocialCmd = "ServiceEvent_SessionSocialityOperActivityNtfSocialCmd"
 ServiceEvent.SessionSocialityAddRelation = "ServiceEvent_SessionSocialityAddRelation"
 ServiceEvent.SessionSocialityRemoveRelation = "ServiceEvent_SessionSocialityRemoveRelation"
+ServiceEvent.SessionSocialityModifyFriendRemark = "ServiceEvent_SessionSocialityModifyFriendRemark"
 ServiceEvent.SessionSocialityQueryRecallListSocialCmd = "ServiceEvent_SessionSocialityQueryRecallListSocialCmd"
 ServiceEvent.SessionSocialityRecallFriendSocialCmd = "ServiceEvent_SessionSocialityRecallFriendSocialCmd"
 ServiceEvent.SessionSocialityAddRelationResultSocialCmd = "ServiceEvent_SessionSocialityAddRelationResultSocialCmd"

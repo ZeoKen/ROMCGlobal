@@ -444,6 +444,10 @@ function GuildDateBattleInviteView:OnClickChatBtn(guid, name)
 end
 
 function GuildDateBattleInviteView:OnClickInviteBtn()
+  self:SubmitInvite(false)
+end
+
+function GuildDateBattleInviteView:SubmitInvite(confirmed)
   if not self.data then
     return
   end
@@ -455,22 +459,27 @@ function GuildDateBattleInviteView:OnClickInviteBtn()
   if not def_guild_id then
     return
   end
-  local y, m, d, h = _DateProxy:GetDate()
-  if not y or not h then
+  local mode = self.data.mode
+  local stamp
+  if _DateProxy:IsQuickStart() then
+    stamp = GuildDateBattleProxy.GetQuickStartStamp()
+    self:RefreshQuickStartUI(stamp)
+  else
+    stamp = _DateProxy:GetSelectedStartStamp()
+  end
+  if not stamp then
     return
   end
-  if self:CheckDateExipire() then
+  if self:CheckDateExipire(stamp) or _DateProxy:CheckStartTimeInvalid(stamp, mode) then
     MsgManager.ShowMsgByID(43548)
     return
   end
-  local stamp = os.time({
-    year = y,
-    month = m,
-    day = d,
-    hour = h,
-    min = 0,
-    sec = 0
-  })
+  if not confirmed and _DateProxy:HasApproveData(stamp, mode) then
+    MsgManager.ConfirmMsgByID(43551, function()
+      self:SubmitInvite(true)
+    end, nil, nil)
+    return
+  end
   self.data.stamp = math.floor(stamp)
   local ban_cards = self:CombineBanCards()
   local target_count = 0
@@ -479,7 +488,7 @@ function GuildDateBattleInviteView:OnClickInviteBtn()
   elseif self.currentSelectedMode == GuildCmd_pb.EGUILDDATEBATTLETYPE_BLOOD then
     target_count = self.filterBloodCount
   end
-  _DateProxy:CallInvite(def_guild_id, ban_cards, self.currentSelectedMode, target_count)
+  _DateProxy:CallInvite(def_guild_id, ban_cards, self.currentSelectedMode, target_count, stamp)
 end
 
 function GuildDateBattleInviteView:OnClickAgreeBtn()
@@ -515,6 +524,10 @@ function GuildDateBattleInviteView:SetDate(note)
     return
   end
   if self.chooseDate ~= date then
+    if _DateProxy:IsQuickStart() then
+      _DateProxy:ClearCurClock()
+      self.timeLab.text = ZhString.GuildDateBattle_Empty
+    end
     _DateProxy:SetCurDate(date)
     self.chooseDate = date
     local curDate = os.date("*t", date)
@@ -536,14 +549,14 @@ function GuildDateBattleInviteView:SetDatedTime()
   end
   self.dateLab.text = string.format(ZhString.GuildDateBattle_DateFmt, self.data.year, self.data.month, self.data.day)
   self.dateLab.color = self.determinedColor
-  self.timeLab.text = string.format(ZhString.GuildDateBattle_Clock, self.data.hour)
+  self.timeLab.text = string.format(ZhString.GuildDateBattle_ClockMinute, self.data.hour, self.data.minute or 0)
   self.timeLab.color = self.determinedColor
 end
 
 function GuildDateBattleInviteView:TrySetInviteBtnGray()
-  local y, m, d, h = _DateProxy:GetDate()
+  local stamp = _DateProxy:GetSelectedStartStamp()
   local isLeader = GuildProxy.Instance:ImGuildChairman()
-  if not (y and h) or not isLeader then
+  if not stamp or not isLeader then
     self:GrayInviteBtn(true)
   elseif self:CheckDateExipire() then
     self:GrayInviteBtn(true)
@@ -552,22 +565,17 @@ function GuildDateBattleInviteView:TrySetInviteBtnGray()
   end
 end
 
-function GuildDateBattleInviteView:CheckDateExipire()
-  local y, m, d, h = _DateProxy:GetDate()
-  if not y or not h then
+function GuildDateBattleInviteView:CheckDateExipire(stamp)
+  stamp = stamp or _DateProxy:GetSelectedStartStamp()
+  if not stamp then
     return
   end
-  local stamp = os.time({
-    year = y,
-    month = m,
-    day = d,
-    hour = h,
-    min = 0,
-    sec = 0
-  })
   local curServerTime = ServerTime.CurServerTime() / 1000
   if stamp <= curServerTime then
     return true
+  end
+  if _DateProxy:IsQuickStart() then
+    return false
   end
   local last_approval_time = GameConfig.GuildDateBattle and GameConfig.GuildDateBattle.last_approval_time or 600
   if last_approval_time > stamp - curServerTime then
@@ -581,11 +589,31 @@ function GuildDateBattleInviteView:SetClockTime(note)
   if not clock then
     return
   end
-  _DateProxy:SetCurClock(clock)
-  self.timeLab.text = string.format(ZhString.GuildDateBattle_Clock, clock)
+  if type(clock) == "table" and clock.quick then
+    self:RefreshQuickStartUI(clock.stamp)
+  else
+    _DateProxy:SetCurClock(clock)
+    self.timeLab.text = string.format(ZhString.GuildDateBattle_Clock, clock)
+  end
   self.timeLab.color = self.determinedColor
   self:PlayRevertTween(self.clockPlayTweens)
   self:TrySetInviteBtnGray()
+end
+
+function GuildDateBattleInviteView:RefreshQuickStartUI(stamp)
+  stamp = _DateProxy:SetQuickStart(stamp)
+  local date = os.date("*t", stamp)
+  self.chooseDate = os.time({
+    year = date.year,
+    month = date.month,
+    day = date.day,
+    hour = 0,
+    min = 0,
+    sec = 0
+  })
+  self.dateLab.text = string.format(ZhString.GuildDateBattle_DateFmt, date.year, date.month, date.day)
+  self.dateLab.color = self.determinedColor
+  self.timeLab.text = string.format(ZhString.GuildDateBattle_ClockMinute, date.hour, date.min)
 end
 
 function GuildDateBattleInviteView:SetMode(note)

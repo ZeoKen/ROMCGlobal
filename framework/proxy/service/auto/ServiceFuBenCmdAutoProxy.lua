@@ -300,6 +300,15 @@ function ServiceFuBenCmdAutoProxy:onRegister()
   self:Listen(11, 99, function(data)
     self:RecvTeamPwsStateSyncFubenCmd(data)
   end)
+  self:Listen(11, 194, function(data)
+    self:RecvBattleObserveFubenCmd(data)
+  end)
+  self:Listen(11, 195, function(data)
+    self:RecvQueryBattleReplayFubenCmd(data)
+  end)
+  self:Listen(11, 196, function(data)
+    self:RecvEnterBattleReplayFubenCmd(data)
+  end)
   self:Listen(11, 100, function(data)
     self:RecvObserverFlashFubenCmd(data)
   end)
@@ -4870,6 +4879,513 @@ function ServiceFuBenCmdAutoProxy:CallTeamPwsStateSyncFubenCmd(fire)
   end
 end
 
+function ServiceFuBenCmdAutoProxy:CallBattleObserveFubenCmd(battle_type, id, result, date_battle)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.BattleObserveFubenCmd()
+    if battle_type ~= nil then
+      msg.battle_type = battle_type
+    end
+    if id ~= nil then
+      msg.id = id
+    end
+    if result ~= nil then
+      msg.result = result
+    end
+    if date_battle ~= nil and date_battle.id ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.id = date_battle.id
+    end
+    if date_battle ~= nil and date_battle.atk_guildid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.atk_guildid = date_battle.atk_guildid
+    end
+    if date_battle ~= nil and date_battle.atk_guildname ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.atk_guildname = date_battle.atk_guildname
+    end
+    if date_battle ~= nil and date_battle.atk_guildportrait ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.atk_guildportrait = date_battle.atk_guildportrait
+    end
+    if date_battle ~= nil and date_battle.atk_serverid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.atk_serverid = date_battle.atk_serverid
+    end
+    if date_battle ~= nil and date_battle.atk_chairmanid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.atk_chairmanid = date_battle.atk_chairmanid
+    end
+    if date_battle ~= nil and date_battle.def_guildid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.def_guildid = date_battle.def_guildid
+    end
+    if date_battle ~= nil and date_battle.def_guildname ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.def_guildname = date_battle.def_guildname
+    end
+    if date_battle ~= nil and date_battle.def_guildportrait ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.def_guildportrait = date_battle.def_guildportrait
+    end
+    if date_battle ~= nil and date_battle.def_serverid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.def_serverid = date_battle.def_serverid
+    end
+    if date_battle ~= nil and date_battle.def_chairmanid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.def_chairmanid = date_battle.def_chairmanid
+    end
+    if date_battle ~= nil and date_battle.battle_starttime ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.battle_starttime = date_battle.battle_starttime
+    end
+    if date_battle ~= nil and date_battle.invite_time ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.invite_time = date_battle.invite_time
+    end
+    if date_battle ~= nil and date_battle.mode ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.mode = date_battle.mode
+    end
+    if date_battle ~= nil and date_battle.state ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.state = date_battle.state
+    end
+    if date_battle ~= nil and date_battle.winner_guildid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      msg.date_battle.winner_guildid = date_battle.winner_guildid
+    end
+    if date_battle.info ~= nil and date_battle.info.type ~= nil then
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      if msg.date_battle.info == nil then
+        msg.date_battle.info = {}
+      end
+      msg.date_battle.info.type = date_battle.info.type
+    end
+    if date_battle.info ~= nil and date_battle.info.target_num ~= nil then
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      if msg.date_battle.info == nil then
+        msg.date_battle.info = {}
+      end
+      msg.date_battle.info.target_num = date_battle.info.target_num
+    end
+    if date_battle ~= nil and date_battle.info.cardids ~= nil then
+      if msg.date_battle.info == nil then
+        msg.date_battle.info = {}
+      end
+      if msg.date_battle.info.cardids == nil then
+        msg.date_battle.info.cardids = {}
+      end
+      for i = 1, #date_battle.info.cardids do
+        table.insert(msg.date_battle.info.cardids, date_battle.info.cardids[i])
+      end
+    end
+    if date_battle.info ~= nil and date_battle.info.actual_starttime ~= nil then
+      if msg.date_battle == nil then
+        msg.date_battle = {}
+      end
+      if msg.date_battle.info == nil then
+        msg.date_battle.info = {}
+      end
+      msg.date_battle.info.actual_starttime = date_battle.info.actual_starttime
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.BattleObserveFubenCmd.id
+    local msgParam = {}
+    if battle_type ~= nil then
+      msgParam.battle_type = battle_type
+    end
+    if id ~= nil then
+      msgParam.id = id
+    end
+    if result ~= nil then
+      msgParam.result = result
+    end
+    if date_battle ~= nil and date_battle.id ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.id = date_battle.id
+    end
+    if date_battle ~= nil and date_battle.atk_guildid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.atk_guildid = date_battle.atk_guildid
+    end
+    if date_battle ~= nil and date_battle.atk_guildname ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.atk_guildname = date_battle.atk_guildname
+    end
+    if date_battle ~= nil and date_battle.atk_guildportrait ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.atk_guildportrait = date_battle.atk_guildportrait
+    end
+    if date_battle ~= nil and date_battle.atk_serverid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.atk_serverid = date_battle.atk_serverid
+    end
+    if date_battle ~= nil and date_battle.atk_chairmanid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.atk_chairmanid = date_battle.atk_chairmanid
+    end
+    if date_battle ~= nil and date_battle.def_guildid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.def_guildid = date_battle.def_guildid
+    end
+    if date_battle ~= nil and date_battle.def_guildname ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.def_guildname = date_battle.def_guildname
+    end
+    if date_battle ~= nil and date_battle.def_guildportrait ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.def_guildportrait = date_battle.def_guildportrait
+    end
+    if date_battle ~= nil and date_battle.def_serverid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.def_serverid = date_battle.def_serverid
+    end
+    if date_battle ~= nil and date_battle.def_chairmanid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.def_chairmanid = date_battle.def_chairmanid
+    end
+    if date_battle ~= nil and date_battle.battle_starttime ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.battle_starttime = date_battle.battle_starttime
+    end
+    if date_battle ~= nil and date_battle.invite_time ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.invite_time = date_battle.invite_time
+    end
+    if date_battle ~= nil and date_battle.mode ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.mode = date_battle.mode
+    end
+    if date_battle ~= nil and date_battle.state ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.state = date_battle.state
+    end
+    if date_battle ~= nil and date_battle.winner_guildid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      msgParam.date_battle.winner_guildid = date_battle.winner_guildid
+    end
+    if date_battle.info ~= nil and date_battle.info.type ~= nil then
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      if msgParam.date_battle.info == nil then
+        msgParam.date_battle.info = {}
+      end
+      msgParam.date_battle.info.type = date_battle.info.type
+    end
+    if date_battle.info ~= nil and date_battle.info.target_num ~= nil then
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      if msgParam.date_battle.info == nil then
+        msgParam.date_battle.info = {}
+      end
+      msgParam.date_battle.info.target_num = date_battle.info.target_num
+    end
+    if date_battle ~= nil and date_battle.info.cardids ~= nil then
+      if msgParam.date_battle.info == nil then
+        msgParam.date_battle.info = {}
+      end
+      if msgParam.date_battle.info.cardids == nil then
+        msgParam.date_battle.info.cardids = {}
+      end
+      for i = 1, #date_battle.info.cardids do
+        table.insert(msgParam.date_battle.info.cardids, date_battle.info.cardids[i])
+      end
+    end
+    if date_battle.info ~= nil and date_battle.info.actual_starttime ~= nil then
+      if msgParam.date_battle == nil then
+        msgParam.date_battle = {}
+      end
+      if msgParam.date_battle.info == nil then
+        msgParam.date_battle.info = {}
+      end
+      msgParam.date_battle.info.actual_starttime = date_battle.info.actual_starttime
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceFuBenCmdAutoProxy:CallQueryBattleReplayFubenCmd(request_id, keys, infos)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.QueryBattleReplayFubenCmd()
+    if request_id ~= nil then
+      msg.request_id = request_id
+    end
+    if keys ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.keys == nil then
+        msg.keys = {}
+      end
+      for i = 1, #keys do
+        table.insert(msg.keys, keys[i])
+      end
+    end
+    if infos ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.infos == nil then
+        msg.infos = {}
+      end
+      for i = 1, #infos do
+        table.insert(msg.infos, infos[i])
+      end
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.QueryBattleReplayFubenCmd.id
+    local msgParam = {}
+    if request_id ~= nil then
+      msgParam.request_id = request_id
+    end
+    if keys ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.keys == nil then
+        msgParam.keys = {}
+      end
+      for i = 1, #keys do
+        table.insert(msgParam.keys, keys[i])
+      end
+    end
+    if infos ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.infos == nil then
+        msgParam.infos = {}
+      end
+      for i = 1, #infos do
+        table.insert(msgParam.infos, infos[i])
+      end
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
+function ServiceFuBenCmdAutoProxy:CallEnterBattleReplayFubenCmd(key, result)
+  if not NetConfig.PBC then
+    local msg = FuBenCmd_pb.EnterBattleReplayFubenCmd()
+    if key ~= nil and key.type ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.key == nil then
+        msg.key = {}
+      end
+      msg.key.type = key.type
+    end
+    if key ~= nil and key.roomid ~= nil then
+      if msg == nil then
+        msg = {}
+      end
+      if msg.key == nil then
+        msg.key = {}
+      end
+      msg.key.roomid = key.roomid
+    end
+    if result ~= nil then
+      msg.result = result
+    end
+    self:SendProto(msg)
+  else
+    local msgId = ProtoReqInfoList.EnterBattleReplayFubenCmd.id
+    local msgParam = {}
+    if key ~= nil and key.type ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.key == nil then
+        msgParam.key = {}
+      end
+      msgParam.key.type = key.type
+    end
+    if key ~= nil and key.roomid ~= nil then
+      if msgParam == nil then
+        msgParam = {}
+      end
+      if msgParam.key == nil then
+        msgParam.key = {}
+      end
+      msgParam.key.roomid = key.roomid
+    end
+    if result ~= nil then
+      msgParam.result = result
+    end
+    self:SendProto2(msgId, msgParam)
+  end
+end
+
 function ServiceFuBenCmdAutoProxy:CallObserverFlashFubenCmd(x, y, z)
   if not NetConfig.PBC then
     local msg = FuBenCmd_pb.ObserverFlashFubenCmd()
@@ -9295,6 +9811,18 @@ function ServiceFuBenCmdAutoProxy:RecvTeamPwsStateSyncFubenCmd(data)
   self:Notify(ServiceEvent.FuBenCmdTeamPwsStateSyncFubenCmd, data)
 end
 
+function ServiceFuBenCmdAutoProxy:RecvBattleObserveFubenCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdBattleObserveFubenCmd, data)
+end
+
+function ServiceFuBenCmdAutoProxy:RecvQueryBattleReplayFubenCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdQueryBattleReplayFubenCmd, data)
+end
+
+function ServiceFuBenCmdAutoProxy:RecvEnterBattleReplayFubenCmd(data)
+  self:Notify(ServiceEvent.FuBenCmdEnterBattleReplayFubenCmd, data)
+end
+
 function ServiceFuBenCmdAutoProxy:RecvObserverFlashFubenCmd(data)
   self:Notify(ServiceEvent.FuBenCmdObserverFlashFubenCmd, data)
 end
@@ -9707,6 +10235,9 @@ ServiceEvent.FuBenCmdResultSyncFubenCmd = "ServiceEvent_FuBenCmdResultSyncFubenC
 ServiceEvent.FuBenCmdComodoPhaseFubenCmd = "ServiceEvent_FuBenCmdComodoPhaseFubenCmd"
 ServiceEvent.FuBenCmdQueryComodoTeamRaidStat = "ServiceEvent_FuBenCmdQueryComodoTeamRaidStat"
 ServiceEvent.FuBenCmdTeamPwsStateSyncFubenCmd = "ServiceEvent_FuBenCmdTeamPwsStateSyncFubenCmd"
+ServiceEvent.FuBenCmdBattleObserveFubenCmd = "ServiceEvent_FuBenCmdBattleObserveFubenCmd"
+ServiceEvent.FuBenCmdQueryBattleReplayFubenCmd = "ServiceEvent_FuBenCmdQueryBattleReplayFubenCmd"
+ServiceEvent.FuBenCmdEnterBattleReplayFubenCmd = "ServiceEvent_FuBenCmdEnterBattleReplayFubenCmd"
 ServiceEvent.FuBenCmdObserverFlashFubenCmd = "ServiceEvent_FuBenCmdObserverFlashFubenCmd"
 ServiceEvent.FuBenCmdObserverAttachFubenCmd = "ServiceEvent_FuBenCmdObserverAttachFubenCmd"
 ServiceEvent.FuBenCmdObserverSelectFubenCmd = "ServiceEvent_FuBenCmdObserverSelectFubenCmd"

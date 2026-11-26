@@ -38,6 +38,9 @@ function SetViewServicePage:Init(initParama)
     OverseaHostHelper:OpenWebView("https://ragnarokm.gungho.jp/member/credit")
   end)
   self.notiToggle = self:FindGO("noticeTog"):GetComponent("UIToggle")
+  if FunctionSDK.E_SDKType.TDSG == FunctionSDK.Instance.CurrentType then
+    self:FindGO("noticeTog"):SetActive(false)
+  end
   self.oldStatus = OverSeas_TW.OverSeasManager.GetInstance():GetNotificationStatus()
   self.notiToggle.value = self.oldStatus
   EventDelegate.Add(self.notiToggle.onChange, function()

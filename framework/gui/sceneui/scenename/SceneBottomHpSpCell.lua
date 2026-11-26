@@ -6,13 +6,58 @@ autoImport("SceneFeatherGrid")
 autoImport("SceneEnergyGrid")
 autoImport("SceneBalanceBar")
 autoImport("SceneSolarEnergy")
+autoImport("SceneChargeBar")
+autoImport("SceneKickCountBar")
+autoImport("SceneBottomBloodBar")
 SceneBottomHpSpCell.resId = ResourcePathHelper.UIPrefab_Cell("SceneBottomHpSpCell")
 local tempVector3 = LuaVector3.Zero()
 SceneBottomHpSpCell.PoolSize = 30
 local TwelvePvpConfig = GameConfig.TwelvePvp.HpShow
-local ColorRed = LuaColor.New(1, 0.4627450980392157, 0.7176470588235294, 1)
-local ColorGreen = LuaColor.New(0.6627450980392157, 0.9411764705882353, 0.3058823529411765, 1)
-local maxHpGridCount = 20
+local sliderLength = 115
+local DynamicLayoutMetrics = {
+  Resistance = {height = 10, move = 29},
+  BloodDetail = {height = 10, move = 13},
+  Blood = {height = 10, move = 10},
+  ExtraBar = {height = 10, move = 12},
+  Balance = {height = 10, move = 12},
+  Charge = {height = 10, move = 12},
+  ResistanceBar = {height = 10, move = 12},
+  Sp = {height = 10, move = 12},
+  Frenzy = {height = 10, move = 12},
+  Energy = {height = 10, move = 12},
+  TimeDisk = {height = 10, move = 12},
+  StarMap = {height = 10, move = 12},
+  Feather = {height = 10, move = 12},
+  KickCount = {height = 10, move = 12},
+  Name = {height = 13, move = 13},
+  Sanity = {height = 10, move = 10}
+}
+local DynamicLayoutBarHeight = DynamicLayoutMetrics.ExtraBar.height
+local DynamicLayoutTextHeight = DynamicLayoutMetrics.Name.height
+local DynamicLayoutNameGap = DynamicLayoutMetrics.ExtraBar.move - DynamicLayoutMetrics.ExtraBar.height + 2
+local DynamicLayoutDefaultBloodY = -10
+local DynamicLayoutGetMetricHeight = function(metric, fallback)
+  local config = DynamicLayoutMetrics[metric]
+  return config and config.height or fallback or DynamicLayoutBarHeight
+end
+local DynamicLayoutGetMetricMove = function(metric)
+  local config = DynamicLayoutMetrics[metric]
+  return config and config.move or DynamicLayoutMetrics.ExtraBar.move
+end
+local DynamicLayoutIsValidGO = function(go)
+  return go and not LuaGameObject.ObjectIsNull(go)
+end
+local DynamicLayoutSetY = function(go, y)
+  if not DynamicLayoutIsValidGO(go) then
+    return
+  end
+  local rect = go:GetComponent(RectTransform)
+  if not rect then
+    return
+  end
+  local pos = rect.anchoredPosition
+  rect.anchoredPosition = LuaGeometry.GetTempVector2(pos.x, y)
+end
 
 function SceneBottomHpSpCell:Construct(asArray, args)
   self:DoConstruct(asArray, args)
@@ -65,9 +110,32 @@ function SceneBottomHpSpCell:DoConstruct(asArray, args)
     self.scaleTween.to = LuaGeometry.GetTempVector3(1, 1, 1)
   end
   self:InitExecutePart()
+  self:InitDynamicLayout()
+  self:RefreshDynamicLayout()
 end
 
 function SceneBottomHpSpCell:Deconstruct(asArray)
+  self:ResetDynamicLayoutPositions()
+  self:_RemoveKickCountBar(SceneKickCountBar.Kind.Wall)
+  self:_RemoveKickCountBar(SceneKickCountBar.Kind.Entity)
+  self.kickCountRowCount = 0
+  self.kickCountRowHeight = nil
+  self.kickCountBars = nil
+  if self.bossBloodBar then
+    self.bossBloodBar:Destroy()
+    self.bossBloodBar = nil
+  end
+  if self.bossBloodBarGO then
+    LuaGameObject.DestroyObject(self.bossBloodBarGO)
+    self.bossBloodBarGO = nil
+  end
+  if self.bloodBar then
+    self.bloodBar:SetVisible(true)
+    self.bloodBar:Destroy()
+    self.bloodBar = nil
+  end
+  self.isBossBloodBarActive = false
+  self.buffHpGridCount = nil
   if not LuaGameObject.ObjectIsNull(self.gameObject) then
     if self.spSliderObj and not LuaGameObject.ObjectIsNull(self.spSliderObj) then
       LeanTween.cancel(self.spSliderObj)
@@ -88,6 +156,7 @@ function SceneBottomHpSpCell:Deconstruct(asArray)
     self.uiWuDi = nil
   end
   self.tweenbloodslider = nil
+  self.tweenbloodslider = nil
   self.bloodDetailContainer = nil
   self.bloodVolume = nil
   self.spContainer = nil
@@ -107,7 +176,7 @@ function SceneBottomHpSpCell:Deconstruct(asArray)
   self.sanityPercent = nil
   self.forebg = nil
   self.scaleTween = nil
-  if self.exMaxHp and self.exMaxHp > 0 then
+  if self.exMaxHp and 0 < self.exMaxHp then
     self.exMaxHp = nil
     if not Slua.IsNull(self.hpGrid) then
       self.hpGrid:SetActive(false)
@@ -128,12 +197,32 @@ function SceneBottomHpSpCell:Deconstruct(asArray)
   self.bulletsContainer = nil
   self.bulletsPrefab = nil
   self.bulletsNum = nil
+  if self.sceneSolarEnergy then
+    self.sceneSolarEnergy:Destroy()
+    self.sceneSolarEnergy = nil
+  end
+  self:RemoveFrenzy()
   self.frenzyContainer = nil
+  self.hasFrenzy = nil
+  self.hasSolarEnergy = nil
+  self.hasEnergy = nil
+  self.hasFeather = nil
   self.frenzyCanvasGroup = nil
   self.myFrenzySlider = nil
   self.frenzyLayer = nil
   self.timeDiskContainer = nil
   self.starMapContainer = nil
+  self.extraBgContainer = nil
+  self.extraBgPrefab = nil
+  self.extraBgRect = nil
+  self.extraContainer = nil
+  self.resistanceContainer = nil
+  self.dynamicLayoutRows = nil
+  self.dynamicLayoutBottomCursor = nil
+  self.dynamicLayoutTopCursor = nil
+  self.dynamicLayoutBloodY = nil
+  self.dynamicLayoutInitialized = nil
+  self.dynamicLayoutDefaultRows = nil
   self:RemoveTimeDisk()
   self:RemoveStarMap()
   self.executePart = nil
@@ -144,11 +233,12 @@ function SceneBottomHpSpCell:Deconstruct(asArray)
   self.executeBg = nil
   self.hpGridLayerout = nil
   self.balanceContainer = nil
+  self.chargeContainer = nil
   self:RemoveFeatherGrid()
   self:ResetShieldHp()
-  self:ResetResistance()
-  self:RemoveBalance()
+  self:RemoveExtraBars()
   self:RemoveShield()
+  self.chargeConfig = nil
   self.campIcon = nil
   self:RemoveBlackMuck()
 end
@@ -168,28 +258,26 @@ function SceneBottomHpSpCell:initData(creature)
   self.isFirstSpInit = true
   self.isFirstHpInit = true
   self.isBeHi = false
+  self.hasFrenzy = false
+  self.hasSolarEnergy = false
+  self.hasEnergy = false
+  self.hasFeather = false
   self.bosstype = creature:GetBossType()
   self.staticID = creature.data.staticData and creature.data.staticData.id
   self.resistanceBar = creature.data.staticData and creature.data.staticData.ResistanceBar or nil
   self.showBalance = creature.data.staticData and creature.data.staticData.BalanceBar
+  self.chargeConfig = creature.data:HasChargeBar() and self:CreateChargeConfig(creature) or nil
   self.creature = creature
 end
 
 function SceneBottomHpSpCell:initHpView()
   self.uibloodcontainer = self:FindGO("BloodContainer")
-  self.uibloodslider = self:FindGO("BloodSlider"):GetComponent(Slider)
-  self.uibloodGO = self:FindGO("Blood", self.uibloodcontainer)
-  self.uiblood = self.uibloodGO:GetComponent(Image)
-  self.tweenbloodslider = self:FindGO("TweenBloodSlider"):GetComponent(Slider)
-  self.campIcon = self:FindComponent("PvpCamp", Image)
-  self:initCreateBg()
+  self.bloodBar = SceneBottomBloodBar.new(self:FindGO("BloodBar", self.uibloodcontainer), self)
+  self.isBossBloodBarActive = false
+  self.bloodBar:SetVisible(true)
+  self.bloodBar:RefreshCampBg()
   self:initDecorate()
   self:initHpValueLabel()
-  self:InitHpGrid()
-  self:InitCamp()
-  self:InitShield()
-  self:SetPvpCamp()
-  self:InitBlackMuck()
 end
 
 function SceneBottomHpSpCell:initHpValueLabel()
@@ -230,6 +318,362 @@ function SceneBottomHpSpCell:SetActive(canvasGroup, visible, isRoot)
   canvasGroup.alpha = visible and 1 or 0
 end
 
+function SceneBottomHpSpCell:InitDynamicLayout()
+  if self.dynamicLayoutInitialized then
+    return
+  end
+  self.dynamicLayoutInitialized = true
+  self.extraBgContainer = self:FindGO("ExtraBgContainer")
+  self.extraContainer = self:FindGO("ExtraContainer")
+  self.resistanceContainer = self:FindGO("ResistanceContainer")
+  self.dynamicLayoutDefaultRows = {}
+  local addDefaultContainer = function(go)
+    if DynamicLayoutIsValidGO(go) then
+      local rect = go:GetComponent(RectTransform)
+      if rect then
+        table.insert(self.dynamicLayoutDefaultRows, {
+          go = go,
+          y = rect.anchoredPosition.y
+        })
+      end
+    end
+  end
+  addDefaultContainer(self.resistanceContainer)
+  addDefaultContainer(self.bloodDetailContainer)
+  addDefaultContainer(self.uibloodcontainer)
+  addDefaultContainer(self.extraContainer)
+  addDefaultContainer(self.spContainer or self:FindGO("SpContainer"))
+  addDefaultContainer(self.frenzyContainer or self:FindGO("FrenzyContainer"))
+  addDefaultContainer(self.energyContainer or self:FindGO("EnergyContainer"))
+  addDefaultContainer(self.timeDiskContainer or self:FindGO("TimeDiskContainer"))
+  addDefaultContainer(self.starMapContainer or self:FindGO("StarMapContainer"))
+  addDefaultContainer(self.featherContainer or self:FindGO("FeatherContainer"))
+  self.kickCountContainer = self:FindGO("KickCountContainer")
+  addDefaultContainer(self.kickCountContainer)
+  addDefaultContainer(self.sanityContainer or self:FindGO("SanityContainer"))
+  addDefaultContainer(self.extraBgContainer)
+  if DynamicLayoutIsValidGO(self.extraBgContainer) then
+    self.extraBgPrefab = self:FindGO("SceneBottomHpSpCell_ExtraBg", self.extraBgContainer)
+    if self.extraBgPrefab then
+      self.extraBgRect = self.extraBgPrefab:GetComponent(RectTransform)
+    end
+  end
+  self.dynamicLayoutBloodY = DynamicLayoutDefaultBloodY
+  local extraRect = self.extraContainer and self.extraContainer:GetComponent(RectTransform)
+  self.dynamicLayoutExtraY = extraRect and extraRect.anchoredPosition.y or 0
+end
+
+function SceneBottomHpSpCell:ResetDynamicLayoutPositions()
+  if not self.dynamicLayoutDefaultRows then
+    return
+  end
+  for i = 1, #self.dynamicLayoutDefaultRows do
+    local row = self.dynamicLayoutDefaultRows[i]
+    DynamicLayoutSetY(row.go, row.y)
+  end
+end
+
+function SceneBottomHpSpCell:IsDynamicContainerVisible(go, canvasGroup)
+  if not DynamicLayoutIsValidGO(go) then
+    return false
+  end
+  if canvasGroup then
+    return canvasGroup.alpha > 0.001
+  end
+  return go.activeSelf
+end
+
+function SceneBottomHpSpCell:GetLeftBossBgChainOffset(leftBossBg)
+  if not DynamicLayoutIsValidGO(leftBossBg) then
+    return 0
+  end
+  local container = self.uibloodcontainer
+  local node = leftBossBg.transform.parent
+  local offset = 0
+  while node ~= nil and (not DynamicLayoutIsValidGO(container) or node.gameObject ~= container) do
+    offset = offset + node.localPosition.y
+    node = node.parent
+  end
+  return offset
+end
+
+function SceneBottomHpSpCell:AlignLeftBossBgToExtraBg(coreTop, coreBottom)
+  local bar = self:GetActiveBloodBar()
+  local leftBossBg = bar and bar.leftBossBg
+  if not DynamicLayoutIsValidGO(leftBossBg) then
+    return
+  end
+  local rect = leftBossBg.rectTransform
+  if rect == nil then
+    return
+  end
+  local y
+  if coreTop ~= nil and coreBottom ~= nil then
+    local container = self.uibloodcontainer
+    if not DynamicLayoutIsValidGO(container) then
+      return
+    end
+    local containerRect = container:GetComponent(RectTransform)
+    local containerY = containerRect and containerRect.anchoredPosition.y or 0
+    y = (coreTop + coreBottom) / 2 - containerY - self:GetLeftBossBgChainOffset(leftBossBg)
+  else
+    y = bar.leftBossBgBaseY
+  end
+  if y == nil then
+    return
+  end
+  local pos = rect.anchoredPosition
+  rect.anchoredPosition = LuaGeometry.GetTempVector2(pos.x, y)
+end
+
+function SceneBottomHpSpCell:GetDynamicExtraHeight()
+  if not DynamicLayoutIsValidGO(self.extraContainer) then
+    return 0, 0
+  end
+  if not self.extraContainer.activeSelf then
+    return 0, 0
+  end
+  local height = 0
+  local count = 0
+  for i = 0, self.extraContainer.transform.childCount - 1 do
+    local child = self.extraContainer.transform:GetChild(i).gameObject
+    if DynamicLayoutIsValidGO(child) and child.activeSelf then
+      local childHeight = DynamicLayoutGetMetricHeight("ExtraBar")
+      height = height + childHeight
+      count = count + 1
+    end
+  end
+  if 1 < count then
+    height = height + (count - 1) * (DynamicLayoutMetrics.ExtraBar.move - DynamicLayoutMetrics.ExtraBar.height)
+  end
+  return height, count
+end
+
+function SceneBottomHpSpCell:UpdateDynamicExtraChildren(extraHeight, centerY)
+  if not DynamicLayoutIsValidGO(self.extraContainer) then
+    return
+  end
+  local activeRows = {}
+  for i = 0, self.extraContainer.transform.childCount - 1 do
+    local child = self.extraContainer.transform:GetChild(i).gameObject
+    if DynamicLayoutIsValidGO(child) and child.activeSelf then
+      table.insert(activeRows, {
+        go = child,
+        height = DynamicLayoutGetMetricHeight("ExtraBar"),
+        move = DynamicLayoutGetMetricMove("ExtraBar")
+      })
+    end
+  end
+  local cursor = (extraHeight or 0) / 2
+  centerY = centerY or self.dynamicLayoutExtraY or 0
+  for i = 1, #activeRows do
+    local row = activeRows[i]
+    local y = centerY + cursor - row.height / 2
+    DynamicLayoutSetY(row.go, y)
+    cursor = cursor - row.move
+  end
+end
+
+function SceneBottomHpSpCell:UpdateDynamicExtraBackground(extraHeight, extraCount, coreTop, coreBottom)
+  if not DynamicLayoutIsValidGO(self.extraBgContainer) then
+    return
+  end
+  if extraCount <= 0 then
+    if self.extraBgPrefab then
+      self.extraBgPrefab:SetActive(false)
+    end
+    return
+  end
+  if not self.extraBgPrefab then
+    self.extraBgPrefab = self:LoadPreferb("part/SceneBottomHpSpCell_ExtraBg", self.extraBgContainer)
+    if self.extraBgPrefab then
+      self.extraBgRect = self.extraBgPrefab:GetComponent(RectTransform)
+    end
+  end
+  if self.extraBgPrefab then
+    self.extraBgPrefab:SetActive(true)
+    local coreHeight = math.max(0, (coreTop or 0) - (coreBottom or 0))
+    local coreCenter = ((coreTop or 0) + (coreBottom or 0)) / 2
+    DynamicLayoutSetY(self.extraBgContainer, coreCenter)
+    local bg = self:FindGO("Bg", self.extraBgPrefab)
+    local bgRect = bg and bg:GetComponent(RectTransform)
+    if bgRect then
+      local size = bgRect.sizeDelta
+      bgRect.sizeDelta = LuaGeometry.GetTempVector2(size.x, coreHeight + (DynamicLayoutMetrics.ExtraBar.move - DynamicLayoutMetrics.ExtraBar.height) * 2)
+    end
+  end
+end
+
+function SceneBottomHpSpCell:AddDynamicLayoutRow(rows, go, height)
+  if DynamicLayoutIsValidGO(go) then
+    table.insert(rows, {
+      go = go,
+      height = height,
+      move = height
+    })
+  end
+end
+
+function SceneBottomHpSpCell:AddDynamicLayoutMetricRow(rows, go, metric)
+  if DynamicLayoutIsValidGO(go) then
+    local config = DynamicLayoutMetrics[metric] or DynamicLayoutMetrics.ExtraBar
+    table.insert(rows, {
+      go = go,
+      height = config.height,
+      move = config.move
+    })
+  end
+end
+
+function SceneBottomHpSpCell:IsDynamicExtraChild(go)
+  if not DynamicLayoutIsValidGO(go) or not DynamicLayoutIsValidGO(self.extraContainer) then
+    return false
+  end
+  local parent = go.transform.parent
+  return parent and parent.gameObject == self.extraContainer
+end
+
+function SceneBottomHpSpCell:RefreshDynamicLayout()
+  if not DynamicLayoutIsValidGO(self.gameObject) then
+    return
+  end
+  if not self.dynamicLayoutInitialized then
+    self:InitDynamicLayout()
+  end
+  local bloodContainer = self.uibloodcontainer or self:FindGO("BloodContainer")
+  local bloodHeight = DynamicLayoutGetMetricHeight("Blood")
+  local bloodBaseY = self.dynamicLayoutBloodY or DynamicLayoutDefaultBloodY
+  local aboveRows = {}
+  local belowRows = {}
+  if self:IsDynamicContainerVisible(self.uiWuDi) then
+    self:AddDynamicLayoutMetricRow(aboveRows, self.resistanceContainer, "Resistance")
+  end
+  if self:IsDynamicContainerVisible(self.bloodDetailContainer, self.bloodDetailCanvasGroup) then
+    self:AddDynamicLayoutMetricRow(aboveRows, self.bloodDetailContainer, "BloodDetail")
+  end
+  local extraHeight, extraCount = self:GetDynamicExtraHeight()
+  local activeBar = self:GetActiveBloodBar()
+  if activeBar ~= nil and activeBar.rightBossBgCanvas ~= nil and activeBar.rightBossBgDefaultActive ~= nil then
+    self:SetActive(activeBar.rightBossBgCanvas, activeBar.rightBossBgDefaultActive and extraCount <= 0)
+  end
+  local spVisible = self:IsDynamicContainerVisible(self.spContainer, self.spCanvasGroup)
+  local frenzyVisible = self.hasFrenzy or self.hasSolarEnergy
+  local coreBarCount = 1 + extraCount
+  if spVisible then
+    coreBarCount = coreBarCount + 1
+  end
+  if frenzyVisible then
+    coreBarCount = coreBarCount + 1
+  end
+  local globalOffset = math.max(0, coreBarCount - 2) * DynamicLayoutGetMetricMove("ExtraBar") / 2
+  local bloodY = bloodBaseY + globalOffset
+  if 0 < extraCount then
+    local extraRect = self.extraContainer:GetComponent(RectTransform)
+    if extraRect then
+      local size = extraRect.sizeDelta
+      extraRect.sizeDelta = LuaGeometry.GetTempVector2(size.x, extraHeight)
+    end
+    table.insert(belowRows, {
+      go = self.extraContainer,
+      height = extraHeight,
+      move = extraHeight + (DynamicLayoutMetrics.ExtraBar.move - DynamicLayoutMetrics.ExtraBar.height)
+    })
+  end
+  if spVisible then
+    self:AddDynamicLayoutMetricRow(belowRows, self.spContainer, "Sp")
+  end
+  if frenzyVisible then
+    self:AddDynamicLayoutMetricRow(belowRows, self.frenzyContainer, "Frenzy")
+  end
+  if self.hasEnergy then
+    self:AddDynamicLayoutMetricRow(belowRows, self.energyContainer, "Energy")
+  end
+  if self.sceneTimeDisk then
+    self:AddDynamicLayoutMetricRow(belowRows, self.timeDiskContainer, "TimeDisk")
+  end
+  if self.sceneStarMap then
+    self:AddDynamicLayoutMetricRow(belowRows, self.starMapContainer, "StarMap")
+  end
+  if self.hasFeather then
+    self:AddDynamicLayoutMetricRow(belowRows, self.featherContainer, "Feather")
+  end
+  local kickRows = self.kickCountRowCount or 0
+  local cursor = bloodY - bloodHeight / 2
+  local extraCenterY = self.dynamicLayoutExtraY or 0
+  for i = 1, #belowRows do
+    local row = belowRows[i]
+    local y = cursor - row.move + row.height / 2
+    if row.go == self.extraContainer then
+      extraCenterY = y
+    else
+      DynamicLayoutSetY(row.go, y)
+    end
+    cursor = cursor - row.move
+  end
+  self.dynamicLayoutBottomCursor = cursor
+  if 0 < kickRows then
+    self:UpdateDynamicKickCountChildren(kickRows)
+  end
+  if 0 < extraCount then
+    self:UpdateDynamicExtraChildren(extraHeight, extraCenterY)
+    local extraY = extraCenterY
+    local coreTop = bloodY + bloodHeight / 2
+    local coreBottom = extraY - extraHeight / 2
+    self:UpdateDynamicExtraBackground(extraHeight, extraCount, coreTop, coreBottom)
+    self:AlignLeftBossBgToExtraBg(coreTop, coreBottom)
+  else
+    self:UpdateDynamicExtraBackground(0, 0)
+    self:AlignLeftBossBgToExtraBg()
+  end
+  cursor = bloodY + bloodHeight / 2
+  for i = #aboveRows, 1, -1 do
+    local row = aboveRows[i]
+    local y = cursor + row.move - row.height / 2
+    DynamicLayoutSetY(row.go, y)
+    cursor = cursor + row.move
+  end
+  self.dynamicLayoutTopCursor = cursor
+  DynamicLayoutSetY(bloodContainer, bloodY)
+  self.dynamicLayoutRows = #aboveRows + #belowRows + 1
+  return {
+    top = self.dynamicLayoutTopCursor,
+    bottom = self.dynamicLayoutBottomCursor,
+    height = self.dynamicLayoutTopCursor - self.dynamicLayoutBottomCursor,
+    coreBarCount = coreBarCount,
+    globalOffset = globalOffset,
+    hasDynamicRows = 0 < #aboveRows + #belowRows,
+    hasBottomRows = 0 < #belowRows
+  }
+end
+
+function SceneBottomHpSpCell:GetDynamicNamePosition(nameHeight)
+  local bottom = self.dynamicLayoutBottomCursor or 0
+  return bottom - DynamicLayoutNameGap
+end
+
+function SceneBottomHpSpCell:ApplyDynamicNamePosition(nameY, nameHeight)
+  local anchorY = nameY or self.dynamicLayoutBottomCursor or 0
+  local anchorHeight = nameHeight or DynamicLayoutTextHeight
+  local cursor = anchorY - anchorHeight / 2
+  local kickRows = self.kickCountRowCount or 0
+  if 0 < kickRows and DynamicLayoutIsValidGO(self.kickCountContainer) then
+    self:UpdateDynamicKickCountChildren(kickRows)
+    local kickHeight = self.kickCountRowHeight or DynamicLayoutGetMetricHeight("KickCount")
+    local kickMove = DynamicLayoutGetMetricMove("KickCount")
+    if kickHeight > kickMove then
+      kickMove = kickHeight
+    end
+    local kickY = cursor - kickMove + kickHeight / 2
+    DynamicLayoutSetY(self.kickCountContainer, kickY)
+    cursor = cursor - kickMove * kickRows
+  end
+  local sanityHeight = DynamicLayoutGetMetricHeight("Sanity")
+  if self:IsDynamicContainerVisible(self.sanityContainer, self.sanityCanvasGroup) then
+    local sanityY = cursor - DynamicLayoutGetMetricMove("Sanity") + sanityHeight / 2
+    DynamicLayoutSetY(self.sanityContainer, sanityY)
+  end
+end
+
 function SceneBottomHpSpCell:setHpSpVisible(visible, isSelect)
   local objNull = self:ObjIsNil(self.gameObject)
   if objNull then
@@ -260,7 +704,11 @@ function SceneBottomHpSpCell:SetHp(hp, maxhp)
     LogUtility.Warning("Trying to set maxhp = 0!!")
     return
   end
-  self:tweenHpSlider(hp, maxhp)
+  local bar = self:GetActiveBloodBar()
+  if bar == nil then
+    return
+  end
+  bar:SetHpValue(hp, maxhp)
   local isLowBlood
   if hp / maxhp <= 0.2 and hp ~= 0 then
     isLowBlood = true
@@ -275,22 +723,20 @@ function SceneBottomHpSpCell:SetHp(hp, maxhp)
     LowBloodBlinkView.closeBloodBlink()
   end
   self:SetHpLabel(hp)
-  self:UpdateExecutePart()
-  self:UpdateShieldPos()
+  bar:UpdateHpGrid(maxhp)
+  bar:UpdateExecutePart()
+  bar:UpdateShieldPos()
   if self.creature then
     local userdata = self.creature.data.userdata
     local shieldHp = userdata:Get(UDEnum.SHIELD_HP)
     local shieldMaxHp = userdata:Get(UDEnum.SHIELD_MAXHP)
     if shieldMaxHp and 0 < shieldMaxHp then
-      self:SetShieldHp(shieldHp, shieldMaxHp)
+      bar:SetShieldHp(shieldHp, shieldMaxHp)
     end
-    if self.creature then
-      local userdata = self.creature.data.userdata
-      local MaxHp = self.creature.data.props:GetPropByName("MaxHp"):GetValue()
-      local blackMuck = userdata:Get(UDEnum.BLACK_MUCK)
-      if blackMuck and 0 < blackMuck then
-        self:UpdateBlackMuck(blackMuck, MaxHp)
-      end
+    local MaxHp = self.creature.data.props:GetPropByName("MaxHp"):GetValue()
+    local blackMuck = userdata:Get(UDEnum.BLACK_MUCK)
+    if blackMuck and 0 < blackMuck then
+      bar:UpdateBlackMuck(blackMuck, MaxHp)
     end
   end
 end
@@ -313,41 +759,6 @@ function SceneBottomHpSpCell:SetSp(sp, maxSp, spTrans)
       self.spSlider.value = sp / maxSp
       self.isFirstSpInit = false
     end
-  end
-end
-
-function SceneBottomHpSpCell:tweenHpSlider(hp, maxhp)
-  local objNull = self:ObjIsNil(self.uibloodcontainer)
-  if objNull then
-    return
-  end
-  TimeTickManager.Me():ClearTick(self, 1)
-  if self.uibloodcontainer.activeSelf then
-    local curHp = self.uibloodslider.value * maxhp
-    if not self.isFirstHpInit then
-      self:setHpValueAndColor(hp / maxhp, hp)
-      if hp < curHp then
-        local time = 500 / (curHp / maxhp / (hp / maxhp))
-        if time < 33 then
-          self:SetTweenHpValueAndColor(hp / maxhp)
-        else
-          TimeTickManager.Me():CreateTickFromTo(0, curHp, hp, time, function(owner, deltaTime, curValue)
-            self:SetTweenHpValueAndColor(curValue / maxhp)
-          end, self, 1)
-        end
-      else
-        self:SetTweenHpValueAndColor(hp / maxhp)
-      end
-    else
-      local value = hp / maxhp
-      self:setHpValueAndColor(value, hp)
-      self:SetTweenHpValueAndColor(value)
-      self.isFirstHpInit = false
-    end
-  else
-    local value = hp == 0 and 0 or hp / maxhp
-    self:setHpValueAndColor(value, hp)
-    self:SetTweenHpValueAndColor(value)
   end
 end
 
@@ -436,144 +847,70 @@ function SceneBottomHpSpCell:ActiveWD(b, reason)
   for k, v in pairs(self.wdReasons) do
     if v then
       self.uiWuDi:SetActive(true)
+      if self.dynamicLayoutInitialized then
+        self:RefreshDynamicLayout()
+      end
       return
     end
   end
   self.uiWuDi:SetActive(false)
+  if self.dynamicLayoutInitialized then
+    self:RefreshDynamicLayout()
+  end
 end
 
 function SceneBottomHpSpCell:UpdateBuffHpGrid(hpGridCount)
-  if not self.hpGrid then
-    return
+  self.buffHpGridCount = hpGridCount
+  self:RefreshBossBloodBar()
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:UpdateBuffHpGrid(hpGridCount)
   end
-  if hpGridCount then
-    self.hpGrid:SetActive(true)
-    self:UpdateHpGrid(hpGridCount)
-  elseif self.exMaxHp and self.exMaxHp ~= 0 then
-    if not self.defaultHpGridCount then
-      self.hpGrid:SetActive(false)
-    else
-      self:UpdateHpGrid(self.defaultHpGridCount)
-    end
-  else
-    self.hpGrid:SetActive(false)
+  if self.dynamicLayoutInitialized then
+    self:RefreshDynamicLayout()
   end
 end
 
-function SceneBottomHpSpCell:SetBuffHpBg(go)
-  if go then
-    self.forceBgName = "com_bg_hp_3s"
-    self.lastHpBg = self.hpbg
-    self:SetHpBg(self.forceBgName)
-  else
-    self.forceBgName = nil
-    self:SetHpBg(self.lastHpBg or "com_bg_hp_s")
-    self.lastHpBg = nil
+function SceneBottomHpSpCell:SetBuffHpBg(on)
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:SetBuffHpBg(on)
   end
 end
 
 function SceneBottomHpSpCell:setHpValueAndColor(value, finalHp)
-  local sliderlen = self.creature and self.creature.data.sliderlen
-  sliderlen = sliderlen or 0.2
-  if self.uiShieldHp then
-    local shieldVal = self.uiShieldHp.value
-    if 1 < value + shieldVal * sliderlen then
-      value = 1 - shieldVal * sliderlen - 0.01
-    end
-  end
-  self.nowHpValue = value
-  self.uibloodslider.value = value
-  if self.deadSlideAnim then
-    self:SetTweenHpValueAndColor(0)
-  end
-  finalHp = math.floor(finalHp + 0.5)
-  if value <= 0 and finalHp <= 0 then
-    self.deadSlideAnim = false
-    self:setHpSpVisible(false)
-    if self.shieldbg then
-      self.shieldbg:SetActive(false)
-    end
-    if self.shieldFrame then
-      self.shieldFrame:SetActive(false)
-    end
-    if self.shield then
-      self.shield:SetActive(false)
-    end
-    if self.frame then
-      self.frame:SetActive(false)
-    end
-    return
-  end
-  if 0.2 >= self.uibloodslider.value and self.uibloodslider.value > 0 then
-    if self.camp == RoleDefines_Camp.ENEMY then
-      if Game.MapManager:IsPvPMode_TeamTwelve() and self:isMvpOrMini() then
-        self:SetHpBg("com_bg_mp3")
-      elseif "com_bg_hp_3s" ~= self.hpbg then
-        self:SetHpBg("com_bg_hp_3s")
-      end
-    else
-      self:SetHpBg("com_bg_hp_2s")
-    end
-  elseif self.camp == RoleDefines_Camp.ENEMY then
-    if Game.MapManager:IsPvPMode_TeamTwelve() and self:isMvpOrMini() then
-      self:SetHpBg("com_bg_mp2")
-    else
-      self:SetHpBg("com_bg_hp_4s")
-    end
-  else
-    self:SetHpBg("com_bg_hp_s")
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:SetHpValueAndColor(value, finalHp)
   end
 end
 
 function SceneBottomHpSpCell:SetTweenHpValueAndColor(value)
-  self.tweenbloodslider.value = value
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:SetTweenHpValueAndColor(value)
+  end
 end
 
 function SceneBottomHpSpCell:SetHpBg(bgName)
-  if self.forceBgName then
-    bgName = self.forceBgName
-  end
-  if bgName ~= self.hpbg then
-    self.hpbg = bgName
-    SpriteManager.SetUISprite("sceneuicom", bgName, self.uiblood)
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:SetHpBg(bgName)
   end
 end
 
 function SceneBottomHpSpCell:SetShieldHp(hp, maxhp)
-  if Slua.IsNull(self.shieldPrefab) then
-    self.shieldPrefab = self:LoadPreferb("part/SceneBottomHpSpCell_Shield", self.uibloodGO)
-    self.shieldRect = self.shieldPrefab:GetComponent(RectTransform)
-    self.shieldRect.anchoredPosition = LuaGeometry.Const_V3_zero
-    self.uiShieldHp = self.shieldPrefab:GetComponent(Slider)
-  end
-  local sliderlen = self.creature and self.creature.data.sliderlen
-  local multiShieldLevel = self.creature and self.creature.data.multiShieldLevel
-  sliderlen = sliderlen or 0.2
-  sliderlen = multiShieldLevel or sliderlen
-  self.shieldRect.sizeDelta = LuaGeometry.GetTempVector2(sliderlen / 0.2 * 24, 10.8)
-  hp = hp or 0
-  maxhp = maxhp or 1
-  local val = math.clamp(hp / maxhp, 0, 1)
-  if self.nowHpValue and 1 < self.nowHpValue + val * sliderlen then
-    self.uibloodslider.value = 1 - val * sliderlen - 0.01
-  end
-  if 0 < hp then
-    self.uiShieldHp.value = val
-  else
-    self:ResetShieldHp()
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:SetShieldHp(hp, maxhp)
   end
 end
 
 function SceneBottomHpSpCell:ResetShieldHp()
-  if not self.shieldPrefab then
-    return
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:ResetShieldHp()
   end
-  if self.nowHpValue and self.uibloodslider then
-    self.uibloodslider.value = self.nowHpValue
-  end
-  LuaGameObject.DestroyObject(self.shieldPrefab)
-  self.shieldPrefab = nil
-  self.uiShieldHp = nil
 end
 
 function SceneBottomHpSpCell:isMvpOrMini()
@@ -626,56 +963,6 @@ function SceneBottomHpSpCell:IsTwelveBuildNPC()
 end
 
 function SceneBottomHpSpCell:initDecorate()
-  local decoratorCanvas = self:FindGO("Decorate"):GetComponent(CanvasGroup)
-  local rightBossBgGO = self:FindGO("rightBossBg")
-  local rightBossBgCanvas = rightBossBgGO:GetComponent(CanvasGroup)
-  local rightBossBg = rightBossBgGO:GetComponent(Image)
-  local leftBossBg = self:FindGO("leftBossBg"):GetComponent(Image)
-  if self:isMvpOrMini() then
-    if self.detailedType == NpcData.NpcDetailedType.MINI then
-      SpriteManager.SetUISprite("sceneuicom", "ui_head2_2_3", rightBossBg)
-      SpriteManager.SetUISprite("sceneuicom", "ui_head2_2_1", leftBossBg)
-    elseif self.detailedType == NpcData.NpcDetailedType.MVP then
-      SpriteManager.SetUISprite("sceneuicom", "ui_head2_1_3", rightBossBg)
-      SpriteManager.SetUISprite("sceneuicom", "ui_head2_1", leftBossBg)
-    elseif self.detailedType == NpcData.NpcDetailedType.WorldBoss then
-      SpriteManager.SetUISprite("sceneuicom", "ui_head2_1_3", rightBossBg)
-      SpriteManager.SetUISprite("sceneuicom", "map_worldboss", leftBossBg)
-    end
-    if self.bosstype and self.bosstype == 3 then
-      SpriteManager.SetUISprite("sceneuicom", "Boss_head1", rightBossBg)
-      SpriteManager.SetUISprite("sceneuicom", "ui_mvp_dead11_JM", leftBossBg)
-    end
-    self:SetActive(rightBossBgCanvas, true)
-    self:SetActive(decoratorCanvas, true)
-  elseif self:isRareElite() then
-    SpriteManager.SetUISprite("sceneuicom", "ui_head2_2_3", rightBossBg)
-    SpriteManager.SetUISprite("sceneuicom", "map_jingying", leftBossBg)
-    self:SetActive(rightBossBgCanvas, true)
-    self:SetActive(decoratorCanvas, true)
-  elseif Game.MapManager:IsPvPMode_TeamTwelve() then
-    if self.staticID and TwelvePvpConfig[self.staticID] then
-      SpriteManager.SetUISprite("sceneuicom", "main_icon_boss", leftBossBg)
-      self:SetActive(rightBossBgCanvas, false)
-      self:SetActive(decoratorCanvas, true)
-    elseif self:IsTwelveBuildNPC() then
-      SpriteManager.SetUISprite("sceneuicom", "main_icon_build", leftBossBg)
-      self:SetActive(rightBossBgCanvas, false)
-      self:SetActive(decoratorCanvas, true)
-    else
-      self:SetActive(decoratorCanvas, false)
-    end
-  else
-    self:SetActive(decoratorCanvas, false)
-  end
-  local uibloodBg = self:FindComponent("BossBloodBG", Image)
-  if uibloodBg then
-    if self:isMvpOrMini() then
-      uibloodBg.color = LuaGeometry.Const_Col_white
-    else
-      uibloodBg.color = LuaGeometry.Const_Col_whiteClear
-    end
-  end
   local resistActive = false
   if self.resistanceBar then
     self.uiWuDi = self:FindGO("WD")
@@ -687,58 +974,34 @@ function SceneBottomHpSpCell:initDecorate()
     end
     if self.resistanceBar == 2 then
       resistActive = true
-      self.resistanceGO = self:LoadPreferb("part/SceneBottomHpSpCell_Resistance", self:FindGO("ResistanceContainer"))
-      self.uiSliderResistance = self:FindComponent("ResistanceSlider", Slider, self.resistanceGO)
+      self.resistanceGO = self:LoadPreferb("part/ExtraBar", self:FindGO("ExtraContainer"))
+      if self.resistanceGO then
+        self.resistanceGO.name = "ExtraBar_Resistance"
+      end
+      self.uiSliderResistance = self:FindComponent("ExtraSlider", Slider, self.resistanceGO)
       self.uiSliderFg = self:FindComponent("Sp", Image, self.resistanceGO)
       self.uiSliderFgBlink = self:FindGO("SpBlink", self.resistanceGO)
       self.uiResistanceHandle = self:FindGO("Handle", self.resistanceGO)
-    else
-      leftBossBg.rectTransform.sizeDelta = LuaGeometry.GetTempVector2(32, 32)
-      leftBossBg.rectTransform.anchoredPosition = LuaGeometry.GetTempVector2(-67, 0)
     end
     self:SetResistance(self.creature)
   end
-  if resistActive then
-    leftBossBg.rectTransform.sizeDelta = LuaGeometry.GetTempVector2(38, 38)
-    leftBossBg.rectTransform.anchoredPosition = LuaGeometry.GetTempVector2(-67, -3)
-    if uibloodBg then
-      uibloodBg.color = LuaGeometry.Const_Col_whiteClear
-    end
-    self:SetActive(rightBossBgCanvas, false)
-  else
-    leftBossBg.rectTransform.sizeDelta = LuaGeometry.GetTempVector2(32, 32)
-    leftBossBg.rectTransform.anchoredPosition = LuaGeometry.GetTempVector2(-67, 0)
+  if self.chargeConfig then
+    self:InitChargeBar()
   end
   if self.showBalance then
-    leftBossBg.rectTransform.sizeDelta = LuaGeometry.GetTempVector2(38, 38)
-    leftBossBg.rectTransform.anchoredPosition = LuaGeometry.GetTempVector2(-67, -3)
     self:InitBalanceBar()
-    if uibloodBg then
-      uibloodBg.color = LuaGeometry.Const_Col_whiteClear
-    end
-    self:SetActive(rightBossBgCanvas, false)
     self:SetBalance(self.creature)
-  else
-    leftBossBg.rectTransform.sizeDelta = LuaGeometry.GetTempVector2(32, 32)
-    leftBossBg.rectTransform.anchoredPosition = LuaGeometry.GetTempVector2(-67, 0)
+  end
+  self:RefreshBloodBarDecor(resistActive)
+  if self.bossBloodBar then
+    self:RefreshBloodBarDecor(nil, self.bossBloodBar)
   end
 end
 
 function SceneBottomHpSpCell:InitHpGrid()
-  self.hpGrid = self:FindGO("hpGrid")
-  if not self.hpGrid then
-    return
-  end
-  if Game.MapManager:IsPvPMode_TeamTwelve() then
-    if self.ismyself or self:isPlayer() or self:isMvpOrMini() or self.staticID and TwelvePvpConfig[self.staticID] then
-      self.hpGrid:SetActive(true)
-      self.defaultHpGridCount = 4
-      self:UpdateHpGrid(4)
-    else
-      self.hpGrid:SetActive(false)
-    end
-  else
-    self.hpGrid:SetActive(false)
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:InitHpGrid()
   end
 end
 
@@ -770,7 +1033,10 @@ function SceneBottomHpSpCell:InitSpGrid()
 end
 
 function SceneBottomHpSpCell:SetHpGridMode(mode)
-  self.hpGrid:SetActive(mode ~= SceneBottomHpSpCell.HpSpGridMode.None)
+  local bar = self:GetActiveBloodBar()
+  if bar and bar.hpGrid then
+    bar.hpGrid:SetActive(mode ~= SceneBottomHpSpCell.HpSpGridMode.None)
+  end
   self.hpGridMode = mode
 end
 
@@ -804,49 +1070,10 @@ local updateGrid = function(mode, max, elements)
 end
 
 function SceneBottomHpSpCell:UpdateHpGrid(maxCount)
-  maxCount = maxCount or self.defaultHpGridCount
-  if not maxCount or maxCount == 0 then
-    return
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:UpdateHpGrid(maxCount)
   end
-  maxCount = math.min(maxCount, maxHpGridCount)
-  if self.exMaxHp == maxCount then
-    return
-  end
-  self.exMaxHp = maxCount
-  if not self.hpGrid then
-    return
-  end
-  if not self.hpGridElements then
-    self.hpGridElements = {}
-    self.hpSplitTemplate = self:FindGO("hpSplit", self.hpGrid)
-    self.hpGridLayerout = self.hpGrid:GetComponent(HorizontalLayoutGroup)
-  end
-  if self.hpSplitTemplate then
-    for i = #self.hpGridElements + 1, maxCount - 1 do
-      local clone = GameObject.Instantiate(self.hpSplitTemplate)
-      clone.transform:SetParent(self.hpGrid.transform, false)
-      clone.transform:SetAsLastSibling()
-      self.hpGridElements[i] = clone
-    end
-  elseif #self.hpGridElements == 0 then
-    local i = 1
-    while 2 do
-      local go = self:FindGO(i, self.hpGrid)
-      if not go then
-        break
-      end
-      self.hpGridElements[i] = go
-      i = i + 1
-    end
-  end
-  local dis = (115 - maxCount * 2) / maxCount
-  for i = 1, #self.hpGridElements do
-    self.hpGridElements[i]:SetActive(maxCount > i)
-  end
-  local padding = self.hpGridLayerout.padding
-  padding.left = math.ceil(dis)
-  self.hpGridLayerout.padding = padding
-  self.hpGridLayerout.spacing = dis
 end
 
 function SceneBottomHpSpCell:UpdateSpGrid(max)
@@ -861,25 +1088,9 @@ function SceneBottomHpSpCell:UpdateSpGrid(max)
 end
 
 function SceneBottomHpSpCell:InitCamp()
-  local Camp = self:FindGO("Camp")
-  if not Camp then
-    return
-  end
-  local campBg = self:FindGO("campBg"):GetComponent(Image)
-  if not Game.MapManager:IsPvPMode_TeamTwelve() then
-    Camp:SetActive(false)
-    return
-  end
-  if self.ismyself or self:isPlayer() then
-    SpriteManager.SetUISprite("sceneuicom", "com_mask", campBg)
-    if self.camp == RoleDefines_Camp.ENEMY then
-      campBg.color = ColorRed
-    else
-      campBg.color = ColorGreen
-    end
-    Camp:SetActive(true)
-  else
-    Camp:SetActive(false)
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:InitCamp()
   end
 end
 
@@ -890,15 +1101,9 @@ function SceneBottomHpSpCell:setCamp(camp)
 end
 
 function SceneBottomHpSpCell:initCreateBg()
-  local camp = self.camp
-  if camp == RoleDefines_Camp.ENEMY then
-    if "com_bg_hp_4s" ~= self.hpbg then
-      SpriteManager.SetUISprite("sceneuicom", "com_bg_hp_4s", self.uiblood)
-      self.hpbg = "com_bg_hp_4s"
-    end
-  elseif "com_bg_hp_s" ~= self.hpbg then
-    SpriteManager.SetUISprite("sceneuicom", "com_bg_hp_s", self.uiblood)
-    self.hpbg = "com_bg_hp_s"
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:RefreshCampBg()
   end
 end
 
@@ -932,6 +1137,7 @@ function SceneBottomHpSpCell:UpdateSanity(value)
   end
   if not value or value == 0 then
     self:SetActive(self.sanityCanvasGroup, false)
+    self:RefreshDynamicLayout()
     return
   else
     self:SetActive(self.sanityCanvasGroup, true)
@@ -944,19 +1150,11 @@ function SceneBottomHpSpCell:UpdateSanity(value)
   end
   self.mySanity.value = value
   self.sanityPercent.text = string.format("%d%%", value * 100)
+  self:RefreshDynamicLayout()
 end
 
 function SceneBottomHpSpCell:UpdateSanityPostion(needReposition)
-  if self:ObjIsNil(self.mySanity) then
-    return
-  end
-  if not self.spContainer or not self.spContainer.activeSelf then
-    self.sanityContainer.transform.localPosition = LuaGeometry.GetTempVector3(0, -44, 0)
-  elseif not self.hasFrenzy then
-    self.sanityContainer.transform.localPosition = LuaGeometry.GetTempVector3(0, needReposition and -74 or -52, 0)
-  else
-    self.sanityContainer.transform.localPosition = LuaGeometry.GetTempVector3(0, needReposition and -84 or -62, 0)
-  end
+  self:RefreshDynamicLayout()
 end
 
 function SceneBottomHpSpCell:ClearSanity()
@@ -965,6 +1163,8 @@ function SceneBottomHpSpCell:ClearSanity()
     self.isFirstInitSanity = false
     self.mySanity = nil
   end
+  self:SetActive(self.sanityCanvasGroup, false)
+  self:RefreshDynamicLayout()
 end
 
 function SceneBottomHpSpCell:isPushMinion()
@@ -977,34 +1177,9 @@ end
 
 function SceneBottomHpSpCell:UpdateHpColor(camp)
   self.camp = camp
-  if self.uibloodslider.value <= 0.2 and self.uibloodslider.value > 0 then
-    if self.camp == RoleDefines_Camp.ENEMY then
-      if Game.MapManager:IsPvPMode_TeamTwelve() and self:isMvpOrMini() then
-        if "com_bg_mp3" ~= self.hpbg then
-          SpriteManager.SetUISprite("sceneuicom", "com_bg_mp3", self.uiblood)
-          self.hpbg = "com_bg_mp3"
-        end
-      elseif "com_bg_hp_3s" ~= self.hpbg then
-        SpriteManager.SetUISprite("sceneuicom", "com_bg_hp_3s", self.uiblood)
-        self.hpbg = "com_bg_hp_3s"
-      end
-    elseif "com_bg_hp_2s" ~= self.hpbg then
-      SpriteManager.SetUISprite("sceneuicom", "com_bg_hp_2s", self.uiblood)
-      self.hpbg = "com_bg_hp_2s"
-    end
-  elseif self.camp == RoleDefines_Camp.ENEMY then
-    if Game.MapManager:IsPvPMode_TeamTwelve() and self:isMvpOrMini() then
-      if "com_bg_mp2" ~= self.hpbg then
-        SpriteManager.SetUISprite("sceneuicom", "com_bg_mp2", self.uiblood)
-        self.hpbg = "com_bg_mp2"
-      end
-    elseif "com_bg_hp_4s" ~= self.hpbg then
-      SpriteManager.SetUISprite("sceneuicom", "com_bg_hp_4s", self.uiblood)
-      self.hpbg = "com_bg_hp_4s"
-    end
-  elseif "com_bg_hp_s" ~= self.hpbg then
-    SpriteManager.SetUISprite("sceneuicom", "com_bg_hp_s", self.uiblood)
-    self.hpbg = "com_bg_hp_s"
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:RefreshHpBgByValue()
   end
 end
 
@@ -1046,7 +1221,12 @@ function SceneBottomHpSpCell:ShowBullets(value)
 end
 
 function SceneBottomHpSpCell:InitFrenzy()
-  self.frenzyContainer = self:FindGO("FrenzyContainer")
+  if self.frenzyLayer and not self:ObjIsNil(self.frenzyLayer) then
+    return
+  end
+  if not self.frenzyContainer or self:ObjIsNil(self.frenzyContainer) then
+    self.frenzyContainer = self:FindGO("FrenzyContainer")
+  end
   if not self.frenzyContainer or self:ObjIsNil(self.frenzyContainer) then
     return
   end
@@ -1055,33 +1235,86 @@ function SceneBottomHpSpCell:InitFrenzy()
   end
   local prefab = self:LoadPreferb("part/FrenzyBar", self.frenzyContainer)
   if prefab then
-    self.myFrenzySlider = self:FindGO("FrenzySlider", prefab):GetComponent(Slider)
-    self.frenzyLayer = self:FindGO("FrenzyLayer", prefab):GetComponent(Text)
-    self.frenzyLayer.text = layer or 0
-    self.myFrenzySlider.value = 0
+    self.frenzyBarGO = prefab
+    self:_ClearLoadedFrenzyParts(prefab)
+    local sliderGO = self:FindGO("FrenzySlider", prefab)
+    if sliderGO then
+      self.myFrenzySlider = sliderGO:GetComponent(Slider)
+    end
+    local layerGO = self:FindGO("FrenzyLayer", prefab)
+    if layerGO then
+      self.frenzyLayer = layerGO:GetComponent(Text)
+      self.frenzyLayer.text = 0
+    end
+    if self.myFrenzySlider then
+      self.myFrenzySlider.value = 0
+    end
   end
 end
 
 function SceneBottomHpSpCell:UpdateFrenzyLayer(layer, maxLayer)
-  if not self.frenzyContainer then
+  if not self.frenzyLayer or self:ObjIsNil(self.frenzyLayer) then
     self:InitFrenzy()
+  end
+  if not (self.frenzyLayer and not self:ObjIsNil(self.frenzyLayer) and self.myFrenzySlider) or self:ObjIsNil(self.myFrenzySlider) then
+    return
   end
   self.frenzyLayer.text = layer or 0
   self.myFrenzySlider.value = (layer or 0) / (maxLayer ~= 0 and maxLayer or 1)
   self:ShowFrenzy(true)
 end
 
+function SceneBottomHpSpCell:UpdateFrenzyContainerVisible()
+  if self.frenzyContainer and not self:ObjIsNil(self.frenzyContainer) then
+    self.frenzyContainer:SetActive(self.hasFrenzy or self.hasSolarEnergy)
+  end
+end
+
 function SceneBottomHpSpCell:ShowFrenzy(value)
-  if self.frenzyContainer then
-    if value and not self.frenzyContainer.activeSelf then
-      self.frenzyContainer:SetActive(true)
-    elseif false == value and self.frenzyContainer.activeSelf then
-      self.frenzyContainer:SetActive(false)
-    end
-  else
+  if value and (not self.frenzyLayer or self:ObjIsNil(self.frenzyLayer)) then
     self:InitFrenzy()
   end
-  self.hasFrenzy = value
+  self.hasFrenzy = value == true
+  self:UpdateFrenzyContainerVisible()
+  self:RefreshDynamicLayout()
+end
+
+function SceneBottomHpSpCell:RemoveFrenzy()
+  if self.frenzyBarGO and not LuaGameObject.ObjectIsNull(self.frenzyBarGO) then
+    LuaGameObject.DestroyObject(self.frenzyBarGO)
+  end
+  self.frenzyBarGO = nil
+  self.myFrenzySlider = nil
+  self.frenzyLayer = nil
+  self.hasFrenzy = false
+end
+
+function SceneBottomHpSpCell:_ClearLoadedFrenzyParts(keepGO)
+  local container = self.frenzyContainer
+  if not container or self:ObjIsNil(container) then
+    return
+  end
+  local t = container.transform
+  for i = t.childCount - 1, 0, -1 do
+    local child = t:GetChild(i).gameObject
+    if child ~= keepGO then
+      local n = child.name or ""
+      if string.find(n, "SolarEnergyBar", 1, true) then
+        if self.sceneSolarEnergy and self.sceneSolarEnergy.gameObject == child then
+          self.sceneSolarEnergy:Destroy()
+          self.sceneSolarEnergy = nil
+        else
+          LuaGameObject.DestroyObject(child)
+        end
+      elseif string.find(n, "FrenzyBar", 1, true) then
+        if self.frenzyBarGO == child then
+          self:RemoveFrenzy()
+        else
+          LuaGameObject.DestroyObject(child)
+        end
+      end
+    end
+  end
 end
 
 function SceneBottomHpSpCell:InitTimeDiskInfo()
@@ -1097,6 +1330,7 @@ function SceneBottomHpSpCell:InitTimeDiskInfo()
     args[3] = self
     self.sceneTimeDisk = SceneTimeDiskInfo.CreateAsArray(args)
     ReusableTable.DestroyAndClearArray(args)
+    self:RefreshDynamicLayout()
   end
 end
 
@@ -1112,6 +1346,7 @@ function SceneBottomHpSpCell:RemoveTimeDisk()
     self.sceneTimeDisk:Destroy()
     self.sceneTimeDisk = nil
   end
+  self:RefreshDynamicLayout()
 end
 
 function SceneBottomHpSpCell:InitStarMap()
@@ -1125,6 +1360,7 @@ function SceneBottomHpSpCell:InitStarMap()
     args[1] = self.starMapContainer
     self.sceneStarMap = SceneStarMap.CreateAsArray(args)
     ReusableTable.DestroyAndClearArray(args)
+    self:RefreshDynamicLayout()
   end
 end
 
@@ -1140,63 +1376,20 @@ function SceneBottomHpSpCell:RemoveStarMap()
     self.sceneStarMap:Destroy()
     self.sceneStarMap = nil
   end
+  self:RefreshDynamicLayout()
 end
-
-local PropertyProgress = GameConfig.PropertyProgress
 
 function SceneBottomHpSpCell:InitExecutePart()
-  self.executePart = self:FindGO("ExecuteLineSlider")
-  if not self.executePart or self:ObjIsNil(self.executePart) then
-    return
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:InitExecutePart()
   end
-  if not self.executeCanvasGroup then
-    self.executeCanvasGroup = self.executePart:GetComponent(CanvasGroup)
-  end
-  self.executeLine = self.executePart:GetComponent(Slider)
-  self.executeLine.value = 0
-  self.executeIcon = self:FindGO("executeIcon", self.executePart):GetComponent(Image)
-  SpriteManager.SetUISprite("sceneuicom", "main_icon_purple", self.executeIcon)
-  self.executeBg = self:FindGO("executeBg", self.executePart)
-  self.progressList = {}
-  for value, icon in pairs(PropertyProgress) do
-    table.insert(self.progressList, {value = value, icon = icon})
-  end
-  table.sort(self.progressList, function(l, r)
-    return l.value < r.value
-  end)
-  self.initExecute = true
-  self:UpdateExecutePart()
 end
 
-local creatureid
-
 function SceneBottomHpSpCell:UpdateExecutePart()
-  if not self.initExecute then
-    self:InitExecutePart()
-  end
-  if self.camp == RoleDefines_Camp.ENEMY and self:isPlayer() then
-    if not self.executePart or self:ObjIsNil(self.executePart) then
-      return
-    end
-    creatureid = self.creature and self.creature.data.id or 0
-    local value = MyselfProxy.Instance:GetTarInterferenceValue(creatureid)
-    self:SetActive(self.executeCanvasGroup, 0 < value)
-    local killline, isKill = CommonFun.calcKillLine(self.creature, self.creature.data)
-    self.executeLine.value = killline / 100
-    local setIcon = false
-    for i = 1, #self.progressList do
-      if value < self.progressList[i].value then
-        setIcon = true
-        SpriteManager.SetUISprite("sceneuicom", self.progressList[i].icon, self.executeIcon)
-        break
-      end
-    end
-    if not setIcon then
-      SpriteManager.SetUISprite("sceneuicom", self.progressList[#self.progressList].icon, self.executeIcon)
-    end
-    self.executeBg:SetActive(isKill == 1)
-  else
-    self:SetActive(self.executeCanvasGroup, false)
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:UpdateExecutePart()
   end
 end
 
@@ -1226,9 +1419,12 @@ function SceneBottomHpSpCell:RemoveFeatherGrid()
     self.sceneFeatherGrid:Destroy()
     self.sceneFeatherGrid = nil
   end
+  self.hasFeather = false
+  self:RefreshDynamicLayout()
 end
 
 function SceneBottomHpSpCell:ShowFeather(value)
+  self.hasFeather = value == true
   if self.featherContainer then
     if value and not self.featherContainer.activeSelf then
       self.featherContainer:SetActive(true)
@@ -1237,6 +1433,294 @@ function SceneBottomHpSpCell:ShowFeather(value)
     end
   else
     self:InitFeatherGrid()
+  end
+  self:RefreshDynamicLayout()
+end
+
+function SceneBottomHpSpCell:InitBalanceBar()
+  if not self.sceneBalanceBar then
+    self.balanceContainer = self:FindGO("ExtraContainer")
+    if not self.balanceContainer or self:ObjIsNil(self.balanceContainer) then
+      return
+    end
+    local info = SkillProxy.Instance:GetTimeDiskInfo()
+    local args = ReusableTable.CreateArray()
+    args[1] = self.balanceContainer
+    self.sceneBalanceBar = SceneBalanceBar.CreateAsArray(args)
+    ReusableTable.DestroyAndClearArray(args)
+  end
+end
+
+function SceneBottomHpSpCell:SetBalance(value)
+  if not self.sceneBalanceBar then
+    self:InitBalanceBar()
+  end
+  if not self.sceneBalanceBar then
+    return
+  end
+  self.sceneBalanceBar:SetBalance(value)
+end
+
+function SceneBottomHpSpCell:RemoveBalance()
+  if self.sceneBalanceBar then
+    self.sceneBalanceBar:Destroy()
+    self.sceneBalanceBar = nil
+  end
+end
+
+function SceneBottomHpSpCell:SetResistanceVisible(visible)
+  if DynamicLayoutIsValidGO(self.resistanceGO) then
+    self.resistanceGO:SetActive(visible ~= false)
+  end
+end
+
+function SceneBottomHpSpCell:IsResistanceVisible()
+  return DynamicLayoutIsValidGO(self.resistanceGO) and self.resistanceGO.activeSelf
+end
+
+function SceneBottomHpSpCell:SetBalanceVisible(visible)
+  local bar = self.sceneBalanceBar
+  if bar == nil then
+    if visible == false then
+      return
+    end
+    self:InitBalanceBar()
+    bar = self.sceneBalanceBar
+  end
+  if bar then
+    bar:SetVisible(visible)
+  end
+end
+
+function SceneBottomHpSpCell:IsBalanceVisible()
+  local bar = self.sceneBalanceBar
+  return bar ~= nil and bar:IsVisible()
+end
+
+function SceneBottomHpSpCell:IsChargeVisible()
+  local bar = self.sceneChargeBar
+  return bar ~= nil and bar:IsVisible()
+end
+
+function SceneBottomHpSpCell:RemoveExtraBars()
+  self:RemoveCharge()
+  self:RemoveBalance()
+  self:ResetResistance()
+end
+
+function SceneBottomHpSpCell:CreateChargeConfig(creature)
+  local data = creature and creature.data
+  return data and data:GetChargeBarConfig() or nil
+end
+
+function SceneBottomHpSpCell:GetChargeConfig()
+  return self.chargeConfig
+end
+
+function SceneBottomHpSpCell:InitChargeBar()
+  if not self.chargeConfig then
+    return
+  end
+  if not self.sceneChargeBar then
+    self.chargeContainer = self.extraContainer or self:FindGO("ExtraContainer")
+    if not self.chargeContainer or self:ObjIsNil(self.chargeContainer) then
+      return
+    end
+    local args = ReusableTable.CreateArray()
+    args[1] = self.chargeContainer
+    args[2] = self.chargeConfig
+    self.sceneChargeBar = SceneChargeBar.CreateAsArray(args)
+    ReusableTable.DestroyAndClearArray(args)
+    local data = self.creature and self.creature.data
+    if data then
+      self.sceneChargeBar:SetVisible(data:IsChargeBarVisible())
+      local value, delta = data:GetChargeBar()
+      if value ~= nil then
+        self.sceneChargeBar:SetChargeSpeed(value, nil, delta)
+      end
+    end
+    self:RefreshBossBloodBar()
+  end
+end
+
+function SceneBottomHpSpCell:SetCharge(value, maxValue)
+  if not self.sceneChargeBar then
+    self:InitChargeBar()
+  end
+  if self.sceneChargeBar then
+    self.sceneChargeBar:SetCharge(value, maxValue)
+  end
+end
+
+function SceneBottomHpSpCell:SetChargeSpeed(value, maxValue, speed)
+  if not self.sceneChargeBar then
+    self:InitChargeBar()
+  end
+  if self.sceneChargeBar then
+    self.sceneChargeBar:SetChargeSpeed(value, maxValue, speed)
+  end
+end
+
+function SceneBottomHpSpCell:SetChargeVisible(visible)
+  if not self.sceneChargeBar then
+    self:InitChargeBar()
+  end
+  if self.sceneChargeBar then
+    self.sceneChargeBar:SetVisible(visible)
+    self:RefreshBossBloodBar()
+    self:RefreshDynamicLayout()
+  end
+end
+
+function SceneBottomHpSpCell:SetChargeState(value, state)
+  if not self:GetChargeConfig() then
+    return
+  end
+  if not self.sceneChargeBar then
+    self:InitChargeBar()
+  end
+  if self.sceneChargeBar then
+    self.sceneChargeBar:SetChargeState(value, nil, state)
+  end
+end
+
+function SceneBottomHpSpCell:StopCharge()
+  if self.sceneChargeBar then
+    self.sceneChargeBar:StopCharge()
+  end
+end
+
+function SceneBottomHpSpCell:SetChargeBlinkActive(active)
+  if self.sceneChargeBar then
+    self.sceneChargeBar:SetBlinkActive(active)
+  end
+end
+
+function SceneBottomHpSpCell:RemoveCharge()
+  if self.sceneChargeBar then
+    self.sceneChargeBar:Destroy()
+    self.sceneChargeBar = nil
+  end
+end
+
+function SceneBottomHpSpCell:_EnsureKickCountBar(kind)
+  if self.kickCountBars == nil then
+    self.kickCountBars = {}
+  end
+  local bar = self.kickCountBars[kind]
+  if bar ~= nil then
+    return bar
+  end
+  if not DynamicLayoutIsValidGO(self.kickCountContainer) then
+    return nil
+  end
+  local go = self:LoadPreferb("part/KickCountBar", self.kickCountContainer)
+  if go == nil then
+    return nil
+  end
+  bar = SceneKickCountBar:Create(go)
+  bar:SetType(kind)
+  self.kickCountBars[kind] = bar
+  return bar
+end
+
+function SceneBottomHpSpCell:_RemoveKickCountBar(kind)
+  if self.kickCountBars == nil then
+    return
+  end
+  local bar = self.kickCountBars[kind]
+  if bar == nil then
+    return
+  end
+  self.kickCountBars[kind] = nil
+  local go = bar.gameObject
+  bar:Destroy()
+  if go ~= nil and not LuaGameObject.ObjectIsNull(go) then
+    LuaGameObject.DestroyObject(go)
+  end
+end
+
+local KICK_COUNT_BAR_VISIBLE = false
+
+function SceneBottomHpSpCell:SetKickCount(wallCount, wallMax, hitCount, hitMax)
+  if not KICK_COUNT_BAR_VISIBLE then
+    self:RemoveKickCount()
+    return
+  end
+  local _ShouldShow = function(cur, maxCount)
+    return (tonumber(maxCount) or 0) > 1 and 0 < (tonumber(cur) or 0)
+  end
+  local showWall = _ShouldShow(wallCount, wallMax)
+  local showEntity = _ShouldShow(hitCount, hitMax)
+  if showWall then
+    local bar = self:_EnsureKickCountBar(SceneKickCountBar.Kind.Wall)
+    if bar then
+      bar:SetCount(wallCount, wallMax)
+    end
+  else
+    self:_RemoveKickCountBar(SceneKickCountBar.Kind.Wall)
+  end
+  if showEntity then
+    local bar = self:_EnsureKickCountBar(SceneKickCountBar.Kind.Entity)
+    if bar then
+      bar:SetCount(hitCount, hitMax)
+    end
+  else
+    self:_RemoveKickCountBar(SceneKickCountBar.Kind.Entity)
+  end
+  self:_ReorderKickCountBars()
+  self.kickCountRowCount = (showWall and 1 or 0) + (showEntity and 1 or 0)
+  self:RefreshDynamicLayout()
+end
+
+function SceneBottomHpSpCell:RemoveKickCount()
+  self:_RemoveKickCountBar(SceneKickCountBar.Kind.Wall)
+  self:_RemoveKickCountBar(SceneKickCountBar.Kind.Entity)
+  self.kickCountRowCount = 0
+  self:RefreshDynamicLayout()
+end
+
+function SceneBottomHpSpCell:_ReorderKickCountBars()
+  if self.kickCountBars == nil then
+    return
+  end
+  local _SetIndex = function(bar, index)
+    if bar ~= nil and DynamicLayoutIsValidGO(bar.gameObject) then
+      bar.gameObject.transform:SetSiblingIndex(index)
+    end
+  end
+  _SetIndex(self.kickCountBars[SceneKickCountBar.Kind.Wall], 0)
+  _SetIndex(self.kickCountBars[SceneKickCountBar.Kind.Entity], 1)
+end
+
+function SceneBottomHpSpCell:UpdateDynamicKickCountChildren(rowCount)
+  if not DynamicLayoutIsValidGO(self.kickCountContainer) or (rowCount or 0) <= 0 then
+    return
+  end
+  local move = DynamicLayoutGetMetricMove("KickCount")
+  local measure = 0
+  for i = 0, self.kickCountContainer.transform.childCount - 1 do
+    local child = self.kickCountContainer.transform:GetChild(i).gameObject
+    if DynamicLayoutIsValidGO(child) then
+      local r = child:GetComponent(RectTransform)
+      local h = r and r.rect.height or 0
+      if measure < h then
+        measure = h
+      end
+    end
+  end
+  if move < measure then
+    move = measure
+  end
+  self.kickCountRowHeight = move
+  local contRect = self.kickCountContainer:GetComponent(RectTransform)
+  local y = 0
+  for i = 0, self.kickCountContainer.transform.childCount - 1 do
+    local child = self.kickCountContainer.transform:GetChild(i).gameObject
+    if DynamicLayoutIsValidGO(child) then
+      DynamicLayoutSetY(child, y)
+      y = y - move
+    end
   end
 end
 
@@ -1266,9 +1750,12 @@ function SceneBottomHpSpCell:RemoveEnergyGrid()
     self.sceneEnergyGrid:Destroy()
     self.sceneEnergyGrid = nil
   end
+  self.hasEnergy = false
+  self:RefreshDynamicLayout()
 end
 
 function SceneBottomHpSpCell:ShowEnergy(value)
+  self.hasEnergy = value == true
   if self.energyContainer then
     if value and not self.energyContainer.activeSelf then
       self.energyContainer:SetActive(true)
@@ -1278,105 +1765,48 @@ function SceneBottomHpSpCell:ShowEnergy(value)
   else
     self:InitEnergyGrid()
   end
+  self:RefreshDynamicLayout()
 end
-
-function SceneBottomHpSpCell:InitBalanceBar()
-  if not self.sceneBalanceBar then
-    self.balanceContainer = self:FindGO("BalanceContainer")
-    if not self.balanceContainer or self:ObjIsNil(self.balanceContainer) then
-      return
-    end
-    local info = SkillProxy.Instance:GetTimeDiskInfo()
-    local args = ReusableTable.CreateArray()
-    args[1] = self.balanceContainer
-    self.sceneBalanceBar = SceneBalanceBar.CreateAsArray(args)
-    ReusableTable.DestroyAndClearArray(args)
-  end
-end
-
-function SceneBottomHpSpCell:SetBalance(value)
-  if not self.sceneBalanceBar then
-    self:InitBalanceBar()
-  end
-  self.sceneBalanceBar:SetBalance(value)
-end
-
-function SceneBottomHpSpCell:RemoveBalance()
-  if self.sceneBalanceBar then
-    self.sceneBalanceBar:Destroy()
-    self.sceneBalanceBar = nil
-  end
-end
-
-local tempV3 = LuaVector3.Zero()
-local Slider_Length = 113
-local showShield, sliderValue
 
 function SceneBottomHpSpCell:SetNormalShield(shield, maxhp)
-  if not self.shieldSlider then
-    return
-  end
-  shield = shield or 0
-  showShield = shield ~= 0 and maxhp ~= 0
-  self.shieldbg:SetActive(showShield)
-  self.shieldFrame:SetActive(showShield)
-  if shield == 0 or maxhp == 0 then
-    return
-  end
-  sliderValue = shield / (shield + maxhp)
-  self.shieldSlider.value = sliderValue
-  self.frameSlider.value = sliderValue
-  if 0 < shield then
-    self:UpdateShieldPos()
-    self.shield:SetActive(true)
-    self.frame:SetActive(true)
-  else
-    self.shield:SetActive(false)
-    self.frame:SetActive(false)
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:SetNormalShield(shield, maxhp)
   end
 end
 
 function SceneBottomHpSpCell:UpdateShieldPos()
-  if self.shieldSlider and self.shieldSlider.value > 0 then
-    tempV3[1] = Slider_Length * (self.uibloodslider.value or 0)
-    if tempV3[1] + Slider_Length * self.shieldSlider.value > Slider_Length then
-      tempV3[1] = Slider_Length - Slider_Length * self.shieldSlider.value
-    end
-    self.shieldbg.transform.localPosition = tempV3
-    self.shieldFrame.transform.localPosition = tempV3
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:UpdateShieldPos()
   end
 end
 
 function SceneBottomHpSpCell:ResetNormalShield()
-  if not self.shieldPrefab then
-    return
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:ResetNormalShield()
   end
-  if self.nowHpValue and self.uibloodslider then
-    self.uibloodslider.value = self.nowHpValue
-  end
-  LuaGameObject.DestroyObject(self.shieldPrefab)
-  self.shieldPrefab = nil
-  self.uiShieldHp = nil
 end
 
 function SceneBottomHpSpCell:InitShield()
-  self.shieldbg = self:FindGO("shieldBG")
-  self.shield = self:FindGO("shield")
-  self.shieldSlider = self.shieldbg:GetComponent(Slider)
-  self.shieldFrame = self:FindGO("shieldFrame")
-  self.frame = self:FindGO("frame")
-  self.frameSlider = self.shieldFrame:GetComponent(Slider)
-  self.shieldSlider.value = 0
-  self.frameSlider.value = 0
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:InitShield()
+  end
 end
 
 function SceneBottomHpSpCell:RemoveShield()
-  self.shieldbg = nil
-  self.shield = nil
-  self.shieldSlider = nil
-  self.shieldFrame = nil
-  self.frame = nil
-  self.frameSlider = nil
+  if self.bloodBar then
+    self.bloodBar:RemoveShield()
+  end
+end
+
+function SceneBottomHpSpCell:SetPvpCamp()
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:SetPvpCamp()
+  end
 end
 
 function SceneBottomHpSpCell:ResetRidePos(reset)
@@ -1384,24 +1814,6 @@ function SceneBottomHpSpCell:ResetRidePos(reset)
     self.transform.localPosition = LuaGeometry.GetTempVector3(-80, 100, 0)
   else
     self.transform.localPosition = LuaGeometry.Const_V3_zero
-  end
-end
-
-function SceneBottomHpSpCell:SetPvpCamp()
-  self.campIcon.gameObject:SetActive(false)
-  if Game.MapManager:IsPVPMode_EndlessBattleField() then
-    local camp = self.creatureType == Creature_Type.Pet and self.creature.master_pvp_camp or self.creature.data:GetNormalPVPCamp()
-    local config = GameConfig.EndlessBattleField and GameConfig.EndlessBattleField.CampPosition
-    redlog("camp", tostring(self.creature.data.name), camp)
-    if config then
-      local spriteName = config[camp] and config[camp].mapSymbol
-      if spriteName then
-        local result = SpriteManager.SetUISprite("sceneui", spriteName, self.campIcon)
-        if result then
-          self.campIcon.gameObject:SetActive(true)
-        end
-      end
-    end
   end
 end
 
@@ -1415,6 +1827,7 @@ function SceneBottomHpSpCell:InitSolarEnergy()
     args[1] = self.frenzyContainer
     self.sceneSolarEnergy = SceneSolarEnergy.CreateAsArray(args)
     ReusableTable.DestroyAndClearArray(args)
+    self:_ClearLoadedFrenzyParts(self.sceneSolarEnergy and self.sceneSolarEnergy.gameObject)
   end
 end
 
@@ -1422,7 +1835,13 @@ function SceneBottomHpSpCell:UpdateSolarEnergy(bufflayer, maxLayer)
   if not self.sceneSolarEnergy then
     self:InitSolarEnergy()
   end
+  if not self.sceneSolarEnergy then
+    return
+  end
   self.sceneSolarEnergy:UpdateSolarEnergy(bufflayer, maxLayer)
+  self.hasSolarEnergy = true
+  self:UpdateFrenzyContainerVisible()
+  self:RefreshDynamicLayout()
 end
 
 function SceneBottomHpSpCell:RemoveSolarEnergy()
@@ -1430,37 +1849,119 @@ function SceneBottomHpSpCell:RemoveSolarEnergy()
     self.sceneSolarEnergy:Destroy()
     self.sceneSolarEnergy = nil
   end
+  self.hasSolarEnergy = false
+  self:RefreshDynamicLayout()
 end
 
 function SceneBottomHpSpCell:ShowSolarEnergy(value)
-  if self.frenzyContainer then
-    if value and not self.frenzyContainer.activeSelf then
-      self.frenzyContainer:SetActive(true)
-    elseif false == value and self.frenzyContainer.activeSelf then
-      self.frenzyContainer:SetActive(false)
-    end
-  else
+  self.hasSolarEnergy = value == true
+  if not self.frenzyContainer then
     self:InitSolarEnergy()
   end
+  self:UpdateFrenzyContainerVisible()
+  self:RefreshDynamicLayout()
 end
 
 function SceneBottomHpSpCell:InitBlackMuck()
-  if not self.blackMuck then
-    self.blackMuck = self:FindGO("BlackM"):GetComponent(Slider)
-    self.blackMuck.value = 0
-    self.blackMuck.gameObject:SetActive(false)
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:InitBlackMuck()
   end
 end
 
 function SceneBottomHpSpCell:UpdateBlackMuck(muck, maxhp)
-  if muck == 0 or maxhp == 0 then
-    self.blackMuck.gameObject:SetActive(false)
-  else
-    self.blackMuck.gameObject:SetActive(true)
-    self.blackMuck.value = muck / maxhp
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:UpdateBlackMuck(muck, maxhp)
   end
 end
 
 function SceneBottomHpSpCell:RemoveBlackMuck()
-  self.blackMuck = nil
+  local bar = self:GetActiveBloodBar()
+  if bar then
+    bar:RemoveBlackMuck()
+  end
+end
+
+function SceneBottomHpSpCell:RefreshBloodBarHp()
+  local creature = self.creature
+  if creature == nil then
+    return
+  end
+  local buffhp, buffmaxhp = creature.data:GetBuffHpVals()
+  if buffhp then
+    self:SetHp(buffhp, buffmaxhp or 1)
+  else
+    local maxHp = creature.data.props:GetPropByName("MaxHp"):GetValue()
+    self:SetHp(creature.data:GetHP(), maxHp)
+  end
+end
+
+function SceneBottomHpSpCell:GetActiveBloodBar()
+  if self.isBossBloodBarActive and self.bossBloodBar then
+    return self.bossBloodBar
+  end
+  return self.bloodBar
+end
+
+function SceneBottomHpSpCell:RefreshBloodBarDecor(resistActive, bar)
+  bar = bar or self.bloodBar
+  if bar == nil then
+    return
+  end
+  if resistActive ~= nil then
+    self.resistActive = resistActive
+  end
+  bar:RefreshBossDecor({
+    detailedType = self.detailedType,
+    bosstype = self.bosstype,
+    isMvpOrMini = self:isMvpOrMini(),
+    isRareElite = self:isRareElite(),
+    twelvePvp = Game.MapManager:IsPvPMode_TeamTwelve(),
+    twelveBoss = self.staticID ~= nil and TwelvePvpConfig[self.staticID] ~= nil,
+    twelveBuildNpc = self:IsTwelveBuildNPC(),
+    resistActive = self.resistActive,
+    showBalance = self.showBalance
+  })
+end
+
+function SceneBottomHpSpCell:IsMultiLayerBoss()
+  if self:IsChargeVisible() then
+    return true
+  end
+  return (tonumber(self.buffHpGridCount) or 0) > 1
+end
+
+function SceneBottomHpSpCell:RefreshBossBloodBar()
+  local multi = self:IsMultiLayerBoss()
+  if multi == self.isBossBloodBarActive then
+    return
+  end
+  if multi then
+    if self.bossBloodBar == nil then
+      local go = self:LoadPreferb("part/BossBloodBar", self.uibloodcontainer)
+      if go == nil then
+        return
+      end
+      self.bossBloodBarGO = go
+      self.bossBloodBar = SceneBottomBloodBar.new(go, self)
+      self.bossBloodBar:RefreshCampBg()
+    end
+    self.isBossBloodBarActive = true
+    if self.bloodBar then
+      self.bloodBar:SetVisible(false)
+    end
+    self.bossBloodBar:SetVisible(true)
+    self:RefreshBloodBarDecor(nil, self.bossBloodBar)
+    self:RefreshBloodBarHp()
+  else
+    self.isBossBloodBarActive = false
+    if self.bloodBar then
+      self.bloodBar:SetVisible(true)
+    end
+    if self.bossBloodBar then
+      self.bossBloodBar:SetVisible(false)
+    end
+    self:RefreshBloodBarHp()
+  end
 end

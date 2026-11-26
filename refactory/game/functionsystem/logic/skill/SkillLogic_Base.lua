@@ -333,7 +333,7 @@ function SkillLogic_Base.ShowDamage_Single(damageType, damage, position, labelTy
   doubleDamage = SkillLogic_Base.ResolveDoubleDamage(targetCreature, doubleDamage)
   local damageStr
   local crit = HurtNum_CritType.None
-  if DamageType.Miss == damageType or CommonFun.DamageType.Barrier == damageType then
+  if DamageType.Miss == damageType or DamageType.Barrier == damageType then
     damageStr = "Miss"
   elseif DamageType.Treatment == damageType then
     if damage <= 0 then
@@ -349,6 +349,13 @@ function SkillLogic_Base.ShowDamage_Single(damageType, damage, position, labelTy
     labelType = HurtNumType.HealNum
     labelColorType = HurtNumColorType.Treatment_Sp
     damageStr = tostring(damage)
+  elseif DamageType.LuckyCrit == damageType then
+    if damage <= 0 then
+      return
+    end
+    labelColorType = HurtNumColorType.Combo
+    damageStr = tostring(damage)
+    crit = HurtNum_CritType.Lucky
   elseif DamageType.Crit == damageType then
     if damage <= 0 then
       return
@@ -896,7 +903,7 @@ function SkillLogic_Base:Fire(creature)
       Emit(self, creature, phaseData, assetRole, skillInfo, fireEP, emitParams)
     else
       local hideDamage = skillInfo:GetHideDamage() or skillInfo:OnlyMainTarget()
-      if hideDamage and not skillInfo:GetHideDamage() and phaseData:IsFromServer() and SkillPhase.Attack == phaseData:GetSkillPhase() then
+      if hideDamage and phaseData:IsFromServer() and SkillPhase.Attack == phaseData:GetSkillPhase() then
         hideDamage = false
       end
       if not hideDamage then

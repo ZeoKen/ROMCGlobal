@@ -1,6 +1,6 @@
 SceneBalanceBar = reusableClass("SceneBalanceBar")
 SceneBalanceBar.PoolSize = 2
-local PATH_PFB = "part/SceneBottomHpSpCell_Resistance"
+local PATH_PFB = "part/ExtraBar"
 local _gameUtilInstance = GameObjectUtil.Instance
 local func_deepFind = _gameUtilInstance.DeepFind
 
@@ -8,12 +8,34 @@ function SceneBalanceBar:DoConstruct(asArray, args)
   local parent = args[1]
   if not LuaGameObject.ObjectIsNull(parent) then
     self.gameObject = Game.AssetManager_UI:CreateAsset(ResourcePathHelper.UIV1(PATH_PFB), parent.transform)
-    self.uiSliderResistance = func_deepFind(_gameUtilInstance, self.gameObject, "ResistanceSlider"):GetComponent(Slider)
-    self.uiSliderFg = func_deepFind(_gameUtilInstance, self.gameObject, "Sp"):GetComponent(Image)
+    if LuaGameObject.ObjectIsNull(self.gameObject) then
+      return
+    end
+    self.gameObject.name = "ExtraBar_Balance"
+    local sliderGO = func_deepFind(_gameUtilInstance, self.gameObject, "ExtraSlider")
+    local fgGO = func_deepFind(_gameUtilInstance, self.gameObject, "Sp")
+    self.uiSliderResistance = sliderGO and sliderGO:GetComponent(Slider)
+    self.uiSliderFg = fgGO and fgGO:GetComponent(Image)
     self.uiSliderFgBlink = func_deepFind(_gameUtilInstance, self.gameObject, "SpBlink")
     self.uiResistanceHandle = func_deepFind(_gameUtilInstance, self.gameObject, "Handle")
-    self.uiSliderResistance.value = 0
+    if self.uiSliderResistance then
+      self.uiSliderResistance.value = 0
+    end
   end
+end
+
+function SceneBalanceBar:SetVisible(visible)
+  if LuaGameObject.ObjectIsNull(self.gameObject) then
+    return
+  end
+  self.gameObject:SetActive(visible ~= false)
+end
+
+function SceneBalanceBar:IsVisible()
+  if LuaGameObject.ObjectIsNull(self.gameObject) then
+    return false
+  end
+  return self.gameObject.activeSelf
 end
 
 function SceneBalanceBar:ClearBalanceTick()
@@ -81,14 +103,11 @@ function SceneBalanceBar:ResetBalance()
   if not LuaGameObject.ObjectIsNull(self.gameObject) then
     Game.GOLuaPoolManager:AddToSceneUIPool(PATH_PFB, self.gameObject)
   end
-  if self.gameObject then
-    LuaGameObject.DestroyObject(self.gameObject)
-    self.gameObject = nil
-    self.uiSliderResistance = nil
-    self.uiSliderFg = nil
-    self.uiSliderFgBlink = nil
-    self.uiResistanceHandle = nil
-  end
+  self.gameObject = nil
+  self.uiSliderResistance = nil
+  self.uiSliderFg = nil
+  self.uiSliderFgBlink = nil
+  self.uiResistanceHandle = nil
   self.MaxResistanceVal = nil
   self.BalanceConfig = nil
 end

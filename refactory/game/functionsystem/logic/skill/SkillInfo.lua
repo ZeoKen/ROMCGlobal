@@ -389,6 +389,10 @@ function SkillInfo:IsPhyType()
   return self.staticData.RollType == 1
 end
 
+function SkillInfo:IsAttackTypeSkill()
+  return self.staticData.SkillType == "Attack" and self.staticData.Camps == "Enemy"
+end
+
 function SkillInfo:GetLeadType()
   return self.staticData and self.staticData.Lead_Type
 end
@@ -739,7 +743,7 @@ function SkillInfo:GetDefaultHitEffectPath(creature, damageType, targetCreature)
   if creature == nil then
     return nil
   end
-  if DamageType.Crit == damageType then
+  if DamageType.Crit == damageType or DamageType.LuckyCrit == damageType then
     return self:GetEffectPath(creature, EffectMap.Maps.CriticalHit, Asset_Effect.EffectTypes.Hit, targetCreature)
   end
   return self:GetEffectPath(creature, EffectMap.Maps.NormalHit, Asset_Effect.EffectTypes.Hit, targetCreature)
@@ -919,7 +923,7 @@ end
 local tempCalcDamageParams = {}
 
 function SkillInfo:GetHitSEPath(creature, weaponID, damageType, element)
-  if damageType == DamageType.Crit then
+  if damageType == DamageType.Crit or damageType == DamageType.LuckyCrit then
     return LimitSEPerFrame(creature, AudioMap.Maps.CriticalHit)
   end
   local path = self:_GetSEPath(creature, 4)
@@ -1676,12 +1680,43 @@ function SkillInfo:GetWarnRingSize(creature, inputSize)
       inputSize.x = self.logicParam.width or 0
       inputSize.y = self.logicParam.distance or 0
     else
-      local range = self:GetTargetRange(creature)
+      local range = self:GetBaseTargetRange()
       inputSize.x = range * 2
       inputSize.y = range * 2
     end
+    local scale = self:GetTrapEffectScale(creature)
+    if scale ~= 1 then
+      inputSize.x = inputSize.x * scale
+      inputSize.y = inputSize.y * scale
+    end
   end
   return inputSize
+end
+
+function SkillInfo:GetBaseTargetRange()
+  return self.logicParam.range or self.logicParam.max_range or self.logicParam.multi_range and self.logicParam.multi_range[1] or 0
+end
+
+function SkillInfo:GetTrapEffectScale(creature)
+  if creature == nil then
+    return 1
+  end
+  local baseRange = self:GetBaseTargetRange()
+  if not baseRange or baseRange <= 0 then
+    return 1
+  end
+  local map = creature.data:GetBuffTypes(BuffType.TrapRangeAdd)
+  if map then
+    local sortID = self.staticData.id // 1000
+    for buffID, _ in pairs(map) do
+      local buffInfo = _Table_Buffer(buffID)
+      local cfg = buffInfo and buffInfo.BuffEffect and buffInfo.BuffEffect.trap_range_add
+      if cfg and cfg.sortId == sortID and cfg.add and cfg.add ~= 0 then
+        return (baseRange + cfg.add) / baseRange
+      end
+    end
+  end
+  return 1
 end
 
 function SkillInfo:AllowAttackInterrupted()

@@ -14,6 +14,7 @@ function BigWorldData:SetServerData(serverdata)
   self.cellIndex = BigWorld.BigWorldManager.ConvertPositionToMonsterCellIndex(self.position)
   self.dir = serverdata.dir / 1000
   self.waitaction = serverdata.waitaction
+  self.faceid = serverdata.faceid
 end
 
 function BigWorldData:SetSceneInfo(sceneinfo)
@@ -24,6 +25,7 @@ function BigWorldData:SetSceneInfo(sceneinfo)
   self.cellIndex = BigWorld.BigWorldManager.ConvertPositionToMonsterCellIndex(self.position)
   self.dir = sceneinfo.dir
   self.waitaction = sceneinfo.waitaction
+  self.faceid = sceneinfo.faceid
 end
 
 function BigWorldData:DoConstruct(asArray)
@@ -37,5 +39,6 @@ function BigWorldData:DoDeconstruct(asArray)
   self.cellIndex = nil
   self.dir = nil
   self.waitaction = nil
+  self.faceid = nil
   BigWorldData.super.DoDeconstruct(self, asArray)
 end

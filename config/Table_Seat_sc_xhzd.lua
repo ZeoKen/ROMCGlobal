@@ -779,6 +779,641 @@ Table_Seat_sc_xhzd_t = {
       382.26,
       41.68,
       27.09
+    },
+    {
+      -113.77,
+      149.32,
+      154.61
+    },
+    {
+      -114.45,
+      149.33,
+      152.64
+    },
+    {
+      -114.23,
+      152.27,
+      156.37
+    },
+    {
+      -111.04,
+      152.27,
+      154.71
+    },
+    {
+      -111.71,
+      150.28,
+      157.35
+    },
+    {
+      -132.73,
+      149.26,
+      164.2
+    },
+    {
+      -133.84,
+      149.31,
+      162.82
+    },
+    {
+      -130.96,
+      152.27,
+      165.09
+    },
+    {
+      -134.2,
+      152.27,
+      166.71
+    },
+    {
+      -131.69,
+      150.28,
+      167.7
+    },
+    {
+      -108.69,
+      141.8,
+      208.85
+    },
+    {
+      -108.34,
+      141.8,
+      208.65
+    },
+    {
+      -124.44,
+      307.05,
+      121.39
+    },
+    {
+      -137.28,
+      305.5,
+      123.85
+    },
+    {
+      -117.09,
+      305.98,
+      131.43
+    },
+    {
+      -112.78,
+      286.25,
+      93.25
+    },
+    {
+      -111.9,
+      286.25,
+      93.49
+    },
+    {
+      -113.08,
+      146.27,
+      151.96
+    },
+    {
+      -112.78,
+      146.27,
+      152.49
+    },
+    {
+      -112.47,
+      146.27,
+      153.09
+    },
+    {
+      -112.16,
+      146.27,
+      153.57
+    },
+    {
+      -111.88,
+      146.27,
+      154.23
+    },
+    {
+      -111.62,
+      146.27,
+      154.81
+    },
+    {
+      -111.7,
+      146.27,
+      155.53
+    },
+    {
+      -112.41,
+      146.27,
+      155.81
+    },
+    {
+      -113.25,
+      146.27,
+      156.15
+    },
+    {
+      -112.7,
+      148.2,
+      150.98
+    },
+    {
+      -111.57,
+      148.2,
+      150.41
+    },
+    {
+      -110.37,
+      148.2,
+      149.71
+    },
+    {
+      -109.33,
+      148.2,
+      149.19
+    },
+    {
+      -107.72,
+      148.2,
+      148.52
+    },
+    {
+      -106.78,
+      148.2,
+      148.03
+    },
+    {
+      -105.75,
+      148.2,
+      147.49
+    },
+    {
+      -104.27,
+      148.2,
+      146.63
+    },
+    {
+      -103.28,
+      148.2,
+      146.17
+    },
+    {
+      -102.03,
+      148.2,
+      145.58
+    },
+    {
+      -100.9,
+      148.2,
+      144.85
+    },
+    {
+      -99.79,
+      148.2,
+      144.31
+    },
+    {
+      -136.36,
+      148.2,
+      163.23
+    },
+    {
+      -137.53,
+      148.2,
+      163.89
+    },
+    {
+      -138.7,
+      148.2,
+      164.46
+    },
+    {
+      -139.62,
+      148.2,
+      164.91
+    },
+    {
+      -141.06,
+      148.2,
+      165.65
+    },
+    {
+      -142.14,
+      148.2,
+      166.23
+    },
+    {
+      -143.35,
+      148.2,
+      166.86
+    },
+    {
+      -144.9,
+      148.2,
+      167.7
+    },
+    {
+      -145.73,
+      148.2,
+      168.16
+    },
+    {
+      -146.86,
+      148.2,
+      168.73
+    },
+    {
+      -148.15,
+      148.2,
+      169.34
+    },
+    {
+      -149.5,
+      148.2,
+      170.08
+    },
+    {
+      -134.72,
+      146.18,
+      163.98
+    },
+    {
+      -134.47,
+      146.18,
+      164.48
+    },
+    {
+      -134.04,
+      146.18,
+      165.16
+    },
+    {
+      -133.78,
+      146.18,
+      166.09
+    },
+    {
+      -133.41,
+      146.18,
+      166.46
+    },
+    {
+      -28.56,
+      131.9,
+      202.23
+    },
+    {
+      -29.01,
+      132.25,
+      201.18
+    },
+    {
+      -30.25,
+      132.85,
+      199.72
+    },
+    {
+      -30.8,
+      133.78,
+      197.8
+    },
+    {
+      -31.94,
+      134.66,
+      195.5
+    },
+    {
+      -32.4,
+      134.7,
+      194.05
+    },
+    {
+      -33.48,
+      134.59,
+      192.75
+    },
+    {
+      -34.83,
+      134.04,
+      191.2
+    },
+    {
+      -35.74,
+      133.49,
+      190.3
+    },
+    {
+      -24.05,
+      131.54,
+      186.06
+    },
+    {
+      -24.97,
+      131.54,
+      184.58
+    },
+    {
+      -26.57,
+      131.54,
+      183.57
+    },
+    {
+      -22.18,
+      131.54,
+      188.98
+    },
+    {
+      15.11,
+      108.38,
+      153.44
+    },
+    {
+      14.58,
+      108.44,
+      152.94
+    },
+    {
+      15.45,
+      109.23,
+      154.48
+    },
+    {
+      22.42,
+      108.95,
+      146.58
+    },
+    {
+      19.95,
+      108.95,
+      148.11
+    },
+    {
+      -1.39,
+      109.38,
+      134.28
+    },
+    {
+      -3.16,
+      109.41,
+      136.31
+    },
+    {
+      15.2,
+      108.49,
+      114.87
+    },
+    {
+      14.35,
+      108.49,
+      114.11
+    },
+    {
+      13.6,
+      108.49,
+      114.79
+    },
+    {
+      14.16,
+      108.49,
+      115.65
+    },
+    {
+      8.51,
+      108.88,
+      126.15
+    },
+    {
+      9.59,
+      108.88,
+      125.5
+    },
+    {
+      -0.33,
+      108.46,
+      118.37
+    },
+    {
+      0.72,
+      108.46,
+      118.43
+    },
+    {
+      4.92,
+      112.78,
+      104.96
+    },
+    {
+      6.96,
+      112.96,
+      104.95
+    },
+    {
+      5.83,
+      112.83,
+      104.07
+    },
+    {
+      11.12,
+      112.83,
+      101.01
+    },
+    {
+      12.35,
+      112.15,
+      102.17
+    },
+    {
+      8.31,
+      112.83,
+      102.77
+    },
+    {
+      3.51,
+      112.83,
+      103.26
+    },
+    {
+      -0.49,
+      112.39,
+      102.7
+    },
+    {
+      -0.64,
+      111.68,
+      104.63
+    },
+    {
+      17.29,
+      109.33,
+      128.09
+    },
+    {
+      19.71,
+      109.33,
+      125.57
+    },
+    {
+      107.05,
+      109.67,
+      317.12
+    },
+    {
+      108.64,
+      109.39,
+      314.85
+    },
+    {
+      70.9,
+      104.2,
+      345.56
+    },
+    {
+      60.66,
+      98.99,
+      298.4
+    },
+    {
+      148.0,
+      77.6,
+      287.76
+    },
+    {
+      147.24,
+      77.6,
+      288.22
+    },
+    {
+      146.83,
+      77.59,
+      288.91
+    },
+    {
+      148.85,
+      77.61,
+      287.54
+    },
+    {
+      149.51,
+      77.74,
+      287.45
+    },
+    {
+      108.78,
+      90.68,
+      199.19
+    },
+    {
+      104.61,
+      87.68,
+      201.76
+    },
+    {
+      104.01,
+      87.68,
+      202.16
+    },
+    {
+      48.05,
+      57.58,
+      44.92
+    },
+    {
+      48.78,
+      57.58,
+      44.32
+    },
+    {
+      48.97,
+      57.58,
+      43.45
+    },
+    {
+      49.38,
+      57.58,
+      42.44
+    },
+    {
+      47.4,
+      57.58,
+      45.66
+    },
+    {
+      46.63,
+      57.58,
+      46.34
+    },
+    {
+      102.65,
+      67.8,
+      33.65
+    },
+    {
+      102.06,
+      67.8,
+      33.85
+    },
+    {
+      101.33,
+      67.8,
+      34.07
+    },
+    {
+      100.89,
+      67.8,
+      34.18
+    },
+    {
+      100.25,
+      67.8,
+      34.38
+    },
+    {
+      99.61,
+      67.8,
+      34.58
+    },
+    {
+      103.0,
+      67.8,
+      33.55
+    },
+    {
+      103.46,
+      67.8,
+      33.42
+    },
+    {
+      104.12,
+      67.8,
+      33.21
+    },
+    {
+      251.03,
+      44.37,
+      247.26
+    },
+    {
+      251.47,
+      44.37,
+      246.56
+    },
+    {
+      252.08,
+      44.37,
+      245.49
+    },
+    {
+      249.72,
+      43.09,
+      235.42
+    },
+    {
+      251.64,
+      42.88,
+      235.97
+    },
+    {
+      250.54,
+      42.95,
+      233.74
     }
   },
   StandPot = {
@@ -1146,6 +1781,156 @@ Table_Seat_sc_xhzd_t = {
       385.22,
       40.84,
       22.35
+    },
+    {
+      -115.47,
+      147.45,
+      151.91
+    },
+    {
+      -130.51,
+      146.59,
+      162.72
+    },
+    {
+      -107.51,
+      141.8,
+      208.19
+    },
+    {
+      -124.19,
+      298.96,
+      121.38
+    },
+    {
+      -112.58,
+      144.2,
+      152.31
+    },
+    {
+      -110.53,
+      144.2,
+      155.21
+    },
+    {
+      -109.65,
+      144.2,
+      150.66
+    },
+    {
+      -102.15,
+      144.2,
+      146.95
+    },
+    {
+      -141.65,
+      144.2,
+      166.69
+    },
+    {
+      -134.7,
+      144.2,
+      165.01
+    },
+    {
+      -35.18,
+      120.26,
+      200.0
+    },
+    {
+      -23.96,
+      114.42,
+      186.9
+    },
+    {
+      12.64,
+      106.56,
+      154.2
+    },
+    {
+      20.07,
+      108.26,
+      146.2
+    },
+    {
+      -1.02,
+      108.54,
+      134.89
+    },
+    {
+      -2.49,
+      108.65,
+      136.46
+    },
+    {
+      12.52,
+      107.8,
+      115.96
+    },
+    {
+      9.34,
+      108.88,
+      126.94
+    },
+    {
+      0.37,
+      108.88,
+      120.27
+    },
+    {
+      6.67,
+      108.25,
+      112.71
+    },
+    {
+      17.96,
+      108.59,
+      126.57
+    },
+    {
+      106.8,
+      105.68,
+      314.86
+    },
+    {
+      70.18,
+      101.67,
+      344.89
+    },
+    {
+      59.93,
+      97.57,
+      297.94
+    },
+    {
+      146.76,
+      74.48,
+      285.75
+    },
+    {
+      104.5,
+      82.41,
+      202.22
+    },
+    {
+      53.34,
+      55.38,
+      48.72
+    },
+    {
+      102.12,
+      59.1,
+      32.55
+    },
+    {
+      246.23,
+      38.13,
+      243.63
+    },
+    {
+      249.46,
+      38.38,
+      234.05
     }
   }
 }
@@ -1656,17 +2441,20 @@ Table_Seat_sc_xhzd = {
   [85] = {
     id = 85,
     StandPot = Table_Seat_sc_xhzd_t.StandPot[46],
-    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[85]
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[85],
+    Dir = 266.7
   },
   [86] = {
     id = 86,
     StandPot = Table_Seat_sc_xhzd_t.StandPot[46],
-    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[86]
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[86],
+    Dir = 266.7
   },
   [87] = {
     id = 87,
     StandPot = Table_Seat_sc_xhzd_t.StandPot[46],
-    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[87]
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[87],
+    Dir = 266.7
   },
   [88] = {
     id = 88,
@@ -1683,17 +2471,20 @@ Table_Seat_sc_xhzd = {
   [90] = {
     id = 90,
     StandPot = Table_Seat_sc_xhzd_t.StandPot[46],
-    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[85]
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[85],
+    Dir = 266.7
   },
   [91] = {
     id = 91,
     StandPot = Table_Seat_sc_xhzd_t.StandPot[46],
-    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[86]
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[86],
+    Dir = 266.7
   },
   [92] = {
     id = 92,
     StandPot = Table_Seat_sc_xhzd_t.StandPot[46],
-    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[87]
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[87],
+    Dir = 266.7
   },
   [93] = {
     id = 93,
@@ -2108,11 +2899,749 @@ Table_Seat_sc_xhzd = {
     StandPot = Table_Seat_sc_xhzd_t.StandPot[73],
     SeatPot = Table_Seat_sc_xhzd_t.SeatPot[156],
     Dir = 79
+  },
+  [162] = {
+    id = 162,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[74],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[157],
+    Dir = 296.71
+  },
+  [163] = {
+    id = 163,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[74],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[158],
+    Dir = 296.71
+  },
+  [164] = {
+    id = 164,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[74],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[159],
+    Dir = 33.07
+  },
+  [165] = {
+    id = 165,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[74],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[160],
+    Dir = 33.07
+  },
+  [166] = {
+    id = 166,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[74],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[161],
+    Dir = 33.07
+  },
+  [167] = {
+    id = 167,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[75],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[162],
+    Dir = 103
+  },
+  [168] = {
+    id = 168,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[75],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[163],
+    Dir = 121.7
+  },
+  [169] = {
+    id = 169,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[75],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[164],
+    Dir = 33.07
+  },
+  [170] = {
+    id = 170,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[75],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[165],
+    Dir = 33.07
+  },
+  [171] = {
+    id = 171,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[75],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[166],
+    Dir = 33.07
+  },
+  [172] = {
+    id = 172,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[76],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[167],
+    Dir = 36.69
+  },
+  [173] = {
+    id = 173,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[76],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[168],
+    Dir = 29.56
+  },
+  [174] = {
+    id = 174,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[77],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[169],
+    Dir = 81.72
+  },
+  [175] = {
+    id = 175,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[77],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[170],
+    Dir = 42.059
+  },
+  [176] = {
+    id = 176,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[77],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[171],
+    Dir = 42.059
+  },
+  [177] = {
+    id = 177,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[77],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[172],
+    Dir = 155.97
+  },
+  [178] = {
+    id = 178,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[77],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[173],
+    Dir = 155.97
+  },
+  [179] = {
+    id = 179,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[78],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[174],
+    Dir = 121.56
+  },
+  [180] = {
+    id = 180,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[78],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[175],
+    Dir = 121.56
+  },
+  [181] = {
+    id = 181,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[78],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[176],
+    Dir = 121.56
+  },
+  [182] = {
+    id = 182,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[78],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[177],
+    Dir = 121.56
+  },
+  [183] = {
+    id = 183,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[79],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[178],
+    Dir = 121.56
+  },
+  [184] = {
+    id = 184,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[79],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[179],
+    Dir = 121.56
+  },
+  [185] = {
+    id = 185,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[79],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[180],
+    Dir = 38.11
+  },
+  [186] = {
+    id = 186,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[79],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[181],
+    Dir = 38.11
+  },
+  [187] = {
+    id = 187,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[79],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[182],
+    Dir = 38.11
+  },
+  [188] = {
+    id = 188,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[80],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[183]
+  },
+  [189] = {
+    id = 189,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[80],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[184]
+  },
+  [190] = {
+    id = 190,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[80],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[185]
+  },
+  [191] = {
+    id = 191,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[80],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[186]
+  },
+  [192] = {
+    id = 192,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[80],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[187]
+  },
+  [193] = {
+    id = 193,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[81],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[188]
+  },
+  [194] = {
+    id = 194,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[81],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[189]
+  },
+  [195] = {
+    id = 195,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[81],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[190]
+  },
+  [196] = {
+    id = 196,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[81],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[191]
+  },
+  [197] = {
+    id = 197,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[81],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[192]
+  },
+  [198] = {
+    id = 198,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[81],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[193]
+  },
+  [199] = {
+    id = 199,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[81],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[194]
+  },
+  [200] = {
+    id = 200,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[82],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[195]
+  },
+  [201] = {
+    id = 201,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[82],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[196]
+  },
+  [202] = {
+    id = 202,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[82],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[197]
+  },
+  [203] = {
+    id = 203,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[82],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[198]
+  },
+  [204] = {
+    id = 204,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[82],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[199]
+  },
+  [205] = {
+    id = 205,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[82],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[200]
+  },
+  [206] = {
+    id = 206,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[82],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[201]
+  },
+  [207] = {
+    id = 207,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[82],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[202]
+  },
+  [208] = {
+    id = 208,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[82],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[203]
+  },
+  [209] = {
+    id = 209,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[82],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[204]
+  },
+  [210] = {
+    id = 210,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[82],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[205]
+  },
+  [211] = {
+    id = 211,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[82],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[206]
+  },
+  [212] = {
+    id = 212,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[83],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[207],
+    Dir = 304.94
+  },
+  [213] = {
+    id = 213,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[83],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[208],
+    Dir = 304.94
+  },
+  [214] = {
+    id = 214,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[83],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[209],
+    Dir = 304.94
+  },
+  [215] = {
+    id = 215,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[83],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[210],
+    Dir = 304.94
+  },
+  [216] = {
+    id = 216,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[83],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[211],
+    Dir = 334.23
+  },
+  [217] = {
+    id = 217,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[84],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[212],
+    Dir = 303.804
+  },
+  [218] = {
+    id = 218,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[84],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[213],
+    Dir = 298.91
+  },
+  [219] = {
+    id = 219,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[84],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[214],
+    Dir = 298.91
+  },
+  [220] = {
+    id = 220,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[84],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[215],
+    Dir = 298.91
+  },
+  [221] = {
+    id = 221,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[84],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[216],
+    Dir = 313.21
+  },
+  [222] = {
+    id = 222,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[84],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[217],
+    Dir = 313.21
+  },
+  [223] = {
+    id = 223,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[84],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[218],
+    Dir = 313.21
+  },
+  [224] = {
+    id = 224,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[84],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[219],
+    Dir = 313.21
+  },
+  [225] = {
+    id = 225,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[84],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[220],
+    Dir = 313.21
+  },
+  [226] = {
+    id = 226,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[85],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[221],
+    Dir = 135.48
+  },
+  [227] = {
+    id = 227,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[85],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[222],
+    Dir = 129.49
+  },
+  [228] = {
+    id = 228,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[85],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[223],
+    Dir = 129.49
+  },
+  [229] = {
+    id = 229,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[85],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[224],
+    Dir = 129.49
+  },
+  [230] = {
+    id = 230,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[86],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[225],
+    Dir = 321.19
+  },
+  [231] = {
+    id = 231,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[86],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[226],
+    Dir = 321.19
+  },
+  [232] = {
+    id = 232,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[86],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[227],
+    Dir = 295.55
+  },
+  [233] = {
+    id = 233,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[87],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[228],
+    Dir = 244.9
+  },
+  [234] = {
+    id = 234,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[87],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[229],
+    Dir = 170.42
+  },
+  [235] = {
+    id = 235,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[88],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[230],
+    Dir = 41.43
+  },
+  [236] = {
+    id = 236,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[89],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[231],
+    Dir = 73.73
+  },
+  [237] = {
+    id = 237,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[90],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[232],
+    Dir = 273.95
+  },
+  [238] = {
+    id = 238,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[90],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[233],
+    Dir = 10.81
+  },
+  [239] = {
+    id = 239,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[90],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[234],
+    Dir = 83.06
+  },
+  [240] = {
+    id = 240,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[90],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[235],
+    Dir = 149.65
+  },
+  [241] = {
+    id = 241,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[91],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[236],
+    Dir = 134.41
+  },
+  [242] = {
+    id = 242,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[91],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[237],
+    Dir = 284.37
+  },
+  [243] = {
+    id = 243,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[92],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[238],
+    Dir = 43.93
+  },
+  [244] = {
+    id = 244,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[92],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[239],
+    Dir = 302.47
+  },
+  [245] = {
+    id = 245,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[93],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[240],
+    Dir = 41.64
+  },
+  [246] = {
+    id = 246,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[93],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[241],
+    Dir = 326.83
+  },
+  [247] = {
+    id = 247,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[93],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[242],
+    Dir = 6.95
+  },
+  [248] = {
+    id = 248,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[93],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[243],
+    Dir = 334.61
+  },
+  [249] = {
+    id = 249,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[93],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[244],
+    Dir = 334.61
+  },
+  [250] = {
+    id = 250,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[93],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[245],
+    Dir = 12.66
+  },
+  [251] = {
+    id = 251,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[93],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[246],
+    Dir = 12.66
+  },
+  [252] = {
+    id = 252,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[93],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[247],
+    Dir = 40.52
+  },
+  [253] = {
+    id = 253,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[93],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[248],
+    Dir = 69.8
+  },
+  [254] = {
+    id = 254,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[94],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[249],
+    Dir = 200
+  },
+  [255] = {
+    id = 255,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[94],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[250],
+    Dir = 281.9
+  },
+  [256] = {
+    id = 256,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[95],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[251],
+    Dir = 271.14
+  },
+  [257] = {
+    id = 257,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[95],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[252],
+    Dir = 216.73
+  },
+  [258] = {
+    id = 258,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[96],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[253],
+    Dir = 167.61
+  },
+  [259] = {
+    id = 259,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[97],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[254],
+    Dir = 250.21
+  },
+  [260] = {
+    id = 260,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[98],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[255],
+    Dir = 213.43
+  },
+  [261] = {
+    id = 261,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[98],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[256],
+    Dir = 241.82
+  },
+  [262] = {
+    id = 262,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[98],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[257],
+    Dir = 263.55
+  },
+  [263] = {
+    id = 263,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[98],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[258],
+    Dir = 201.79
+  },
+  [264] = {
+    id = 264,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[98],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[259],
+    Dir = 201.79
+  },
+  [265] = {
+    id = 265,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[99],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[260],
+    Dir = 96.42
+  },
+  [266] = {
+    id = 266,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[99],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[261],
+    Dir = 44.39
+  },
+  [267] = {
+    id = 267,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[99],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[262],
+    Dir = 44.39
+  },
+  [268] = {
+    id = 268,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[100],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[263],
+    Dir = 44.86
+  },
+  [269] = {
+    id = 269,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[100],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[264],
+    Dir = 53.69
+  },
+  [270] = {
+    id = 270,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[100],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[265],
+    Dir = 80.32
+  },
+  [271] = {
+    id = 271,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[100],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[266],
+    Dir = 69.19
+  },
+  [272] = {
+    id = 272,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[100],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[267],
+    Dir = 43.72
+  },
+  [273] = {
+    id = 273,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[100],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[268],
+    Dir = 38.95
+  },
+  [274] = {
+    id = 274,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[101],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[269],
+    Dir = 200.45
+  },
+  [275] = {
+    id = 275,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[101],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[270],
+    Dir = 200.45
+  },
+  [276] = {
+    id = 276,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[101],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[271],
+    Dir = 200.45
+  },
+  [277] = {
+    id = 277,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[101],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[272],
+    Dir = 200.45
+  },
+  [278] = {
+    id = 278,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[101],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[273],
+    Dir = 200.45
+  },
+  [279] = {
+    id = 279,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[101],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[274],
+    Dir = 200.45
+  },
+  [280] = {
+    id = 280,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[101],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[275],
+    Dir = 200.45
+  },
+  [281] = {
+    id = 281,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[101],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[276],
+    Dir = 200.45
+  },
+  [282] = {
+    id = 282,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[101],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[277],
+    Dir = 200.45
+  },
+  [283] = {
+    id = 283,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[102],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[278],
+    Dir = 238.67
+  },
+  [284] = {
+    id = 284,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[102],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[279],
+    Dir = 238.67
+  },
+  [285] = {
+    id = 285,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[102],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[280],
+    Dir = 249.91
+  },
+  [286] = {
+    id = 286,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[103],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[281],
+    Dir = 292.52
+  },
+  [287] = {
+    id = 287,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[103],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[282],
+    Dir = 335.65
+  },
+  [288] = {
+    id = 288,
+    StandPot = Table_Seat_sc_xhzd_t.StandPot[103],
+    SeatPot = Table_Seat_sc_xhzd_t.SeatPot[283],
+    Dir = 242.56
   }
 }
 local cell_mt = {
   __index = {
-    Dir = 266.7,
+    Dir = 28.58,
     SeatPot = _EmptyTable,
     StandPot = _EmptyTable,
     id = 1

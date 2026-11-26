@@ -139,6 +139,16 @@ Table_Bus = {
     id = 31,
     NameZh = "##1242681",
     Camera = 3
+  },
+  [33] = {
+    id = 33,
+    NameZh = "##47122475",
+    Camera = 3
+  },
+  [34] = {
+    id = 34,
+    NameZh = "##283899",
+    Camera = 3
   }
 }
 Table_Bus_fields = {

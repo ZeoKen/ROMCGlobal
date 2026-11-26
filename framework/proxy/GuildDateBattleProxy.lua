@@ -83,6 +83,17 @@ function GuildDateBattleProxy.GetModeConfig()
   return GuildDateBattleProxy.modeConfig
 end
 
+function GuildDateBattleProxy.GetModeDuration(mode)
+  local mode_config = GuildDateBattleProxy.GetModeConfig()
+  return mode_config and mode_config[mode] and mode_config[mode].duration or 0
+end
+
+function GuildDateBattleProxy.IsDateBattleTimeOverlap(stamp1, mode1, stamp2, mode2)
+  local duration1 = GuildDateBattleProxy.GetModeDuration(mode1)
+  local duration2 = GuildDateBattleProxy.GetModeDuration(mode2)
+  return stamp1 < stamp2 + duration2 and stamp2 < stamp1 + duration1
+end
+
 function GuildDateBattleProxy:GetMiniMapTextureName(mode)
   self.miniMapTextureName = self.miniMapTextureName or {}
   local texture_name = self.miniMapTextureName[mode]
@@ -128,6 +139,7 @@ function GuildDateBattleProxy:InitProxy()
   }
   self.currentDateCount = 0
   self.flagMap = {}
+  self.observeBattleInfo = nil
 end
 
 function GuildDateBattleProxy:ClearMyRecords()
@@ -179,9 +191,9 @@ function GuildDateBattleProxy:SetRecord(server_data)
     record:Update(server_data)
   end
   if record:IsInvalidStamp() then
-    self.myGuildInvalidDateMap[record.stamp] = 1
+    self.myGuildInvalidDateMap[record.id] = record
   else
-    self.myGuildInvalidDateMap[record.stamp] = nil
+    self.myGuildInvalidDateMap[record.id] = nil
   end
   return record
 end
@@ -203,6 +215,37 @@ end
 
 function GuildDateBattleProxy:SetCurClock(h)
   self.curHour = h
+  self.curMinute = 0
+  self.quickStart = false
+end
+
+function GuildDateBattleProxy:ClearCurClock()
+  self.curHour = nil
+  self.curMinute = nil
+  self.quickStart = false
+end
+
+local QuickStartOffset = 600
+
+function GuildDateBattleProxy.GetQuickStartStamp(curServerTime)
+  curServerTime = math.floor(curServerTime or ServerTime.CurServerTime() / 1000)
+  return curServerTime - curServerTime % 60 + QuickStartOffset
+end
+
+function GuildDateBattleProxy:SetQuickStart(stamp)
+  stamp = stamp or GuildDateBattleProxy.GetQuickStartStamp()
+  local date = os.date("*t", stamp)
+  self.curYear = date.year
+  self.curMonth = date.month
+  self.curDay = date.day
+  self.curHour = date.hour
+  self.curMinute = date.min
+  self.quickStart = true
+  return stamp
+end
+
+function GuildDateBattleProxy:IsQuickStart()
+  return self.quickStart == true
 end
 
 function GuildDateBattleProxy:SetCurMode(m)
@@ -214,14 +257,37 @@ function GuildDateBattleProxy:ClearCacheDate()
   self.curMonth = nil
   self.curDay = nil
   self.curHour = nil
+  self.curMinute = nil
+  self.quickStart = false
   self.curMode = nil
 end
 
 function GuildDateBattleProxy:GetDate()
-  return self.curYear, self.curMonth, self.curDay, self.curHour
+  return self.curYear, self.curMonth, self.curDay, self.curHour, self.curMinute or 0, self.quickStart == true
+end
+
+function GuildDateBattleProxy:GetSelectedStartStamp()
+  if not self.curYear or not self.curHour then
+    return
+  end
+  return os.time({
+    year = self.curYear,
+    month = self.curMonth,
+    day = self.curDay,
+    hour = self.curHour,
+    min = self.curMinute or 0,
+    sec = 0
+  })
 end
 
 function GuildDateBattleProxy:CheckClockInValid(clock)
+  if type(clock) == "table" and clock.quick then
+    local stamp = clock.stamp or GuildDateBattleProxy.GetQuickStartStamp()
+    if stamp <= ServerTime.CurServerTime() / 1000 then
+      return true
+    end
+    return self:_checkTargetGuildDateInvalid(stamp) or self:_checkMyGuildDateInvalid(stamp)
+  end
   if nil == self.curYear then
     local date_clock_num = 0
     for id, record in pairs(self.myRecordMap) do
@@ -264,9 +330,22 @@ function GuildDateBattleProxy.CheckStampExpire(stamp)
   end
 end
 
+function GuildDateBattleProxy:CheckStartTimeInvalid(stamp, mode)
+  if not stamp or stamp <= ServerTime.CurServerTime() / 1000 then
+    return true
+  end
+  if self:_checkTargetGuildDateInvalid(stamp, mode) then
+    return true
+  end
+  if self:_checkMyGuildDateInvalid(stamp, mode) then
+    return true
+  end
+  return false
+end
+
 function GuildDateBattleProxy:CheckDateInvalid(date)
   if nil ~= self.curHour then
-    local stamp = date + self.curHour * 3600
+    local stamp = date + self.curHour * 3600 + (self.curMinute or 0) * 60
     if GuildDateBattleProxy.CheckStampExpire(stamp) then
       return true
     end
@@ -326,9 +405,10 @@ function GuildDateBattleProxy:GetRecordByData(match_data)
   end
 end
 
-function GuildDateBattleProxy:HasApproveData(stamp)
-  for k, v in pairs(self.myRecordMap) do
-    if v.osStamp == stamp and v:IsUnderApproval_Me() then
+function GuildDateBattleProxy:HasApproveData(stamp, mode, ignore_id)
+  mode = mode or self.curMode or _DefaultMode
+  for id, v in pairs(self.myRecordMap) do
+    if id ~= ignore_id and v:IsUnderApproval_Me() and GuildDateBattleProxy.IsDateBattleTimeOverlap(stamp, mode, v.stamp, v.mode) then
       return true
     end
   end
@@ -343,26 +423,32 @@ function GuildDateBattleProxy:ClearTargetInvalidDateMap()
   _TableClear(self.invalidDateCache)
 end
 
-function GuildDateBattleProxy:_checkMyGuildDateInvalid(stamp)
+function GuildDateBattleProxy:_checkMyGuildDateInvalid(stamp, mode)
   local curServerTime = ServerTime.CurServerTime() / 1000
   if stamp < curServerTime then
     return true
   end
-  if nil == next(self.myGuildInvalidDateMap) then
-    return false
+  mode = mode or self.curMode or _DefaultMode
+  for _, record in pairs(self.myGuildInvalidDateMap) do
+    if GuildDateBattleProxy.IsDateBattleTimeOverlap(stamp, mode, record.stamp, record.mode) then
+      return true
+    end
   end
-  return nil ~= self.myGuildInvalidDateMap[stamp]
+  return false
 end
 
-function GuildDateBattleProxy:_checkTargetGuildDateInvalid(stamp)
+function GuildDateBattleProxy:_checkTargetGuildDateInvalid(stamp, mode)
   local curServerTime = ServerTime.CurServerTime() / 1000
   if stamp < curServerTime then
     return true
   end
-  if nil == next(self.invalidDateCache) then
-    return false
+  mode = mode or self.curMode or _DefaultMode
+  for _, record in pairs(self.invalidDateCache) do
+    if GuildDateBattleProxy.IsDateBattleTimeOverlap(stamp, mode, record.stamp, record.mode) then
+      return true
+    end
   end
-  return nil ~= self.invalidDateCache[stamp]
+  return false
 end
 
 function GuildDateBattleProxy:QueryBattleInfo(id)
@@ -380,16 +466,64 @@ function GuildDateBattleProxy:HandleTargetGuildDateData(guild_id, datas)
   for i = 1, #datas do
     local record = GuildDateBattleRecordData.new(datas[i], guild_id)
     if record and record:IsInvalidStamp() then
-      local stamp = record:GetStamp()
-      self.invalidDateCache[stamp] = 1
+      self.invalidDateCache[record.id] = record
     end
   end
+end
+
+function GuildDateBattleProxy:SetObserveBattleInfo(date_battle)
+  if not date_battle then
+    return
+  end
+  self.observeBattleInfo = {
+    defGuildId = date_battle.def_guildid,
+    defGuildName = date_battle.def_guildname,
+    atkGuildId = date_battle.atk_guildid,
+    atkGuildName = date_battle.atk_guildname
+  }
+  self:Debug("[公会约战] 观战场次公会 def|atk ", date_battle.def_guildid, date_battle.atk_guildid)
+end
+
+function GuildDateBattleProxy:ClearObserveBattleInfo()
+  self.observeBattleInfo = nil
+end
+
+function GuildDateBattleProxy:GetObserveBattleInfo()
+  local info = self.observeBattleInfo
+  if not info then
+    return nil
+  end
+  if not info.defGuildId or info.defGuildId == 0 then
+    return nil
+  end
+  local my_guild = GuildProxy.Instance:GetOwnGuildID()
+  if my_guild and (my_guild == info.defGuildId or my_guild == info.atkGuildId) then
+    return nil
+  end
+  return info
+end
+
+function GuildDateBattleProxy:IsObserveReport()
+  return self.gameReport.isObserve == true
+end
+
+function GuildDateBattleProxy:GetReportGuildName(isMyGuild)
+  local info = self:GetObserveBattleInfo()
+  if not info then
+    return nil
+  end
+  if isMyGuild then
+    return info.defGuildName
+  end
+  return info.atkGuildName
 end
 
 function GuildDateBattleProxy:HandleGuildDateReportDetail(serverData)
   self:Debug("DateBattleDetailGuildCmd")
   GuildDateBattleProxyDebug(serverData)
-  local my_guild = GuildProxy.Instance:GetOwnGuildID()
+  local observeInfo = self:GetObserveBattleInfo()
+  local my_guild = observeInfo and observeInfo.defGuildId or GuildProxy.Instance:GetOwnGuildID()
+  self.gameReport.isObserve = observeInfo ~= nil
   self.gameReport.win = serverData.winner_guildid == my_guild
   self.gameReport.isOver = serverData.isover
   _ArrayClear(self.gameReport.detail)
@@ -567,28 +701,15 @@ function GuildDateBattleProxy:GetFlagData(map_id, guid)
   end
 end
 
-function GuildDateBattleProxy:CallInvite(guild_id, ban_cards, game_mode, target_num)
+function GuildDateBattleProxy:CallInvite(guild_id, ban_cards, game_mode, target_num, start_stamp)
   if not GuildProxy.Instance:ImGuildChairman() then
     return
   end
-  if not self.curYear or not self.curHour then
+  local stamp = start_stamp
+  if not stamp then
     return
   end
-  local stamp = os.time({
-    year = self.curYear,
-    month = self.curMonth,
-    day = self.curDay,
-    hour = self.curHour,
-    min = 0,
-    sec = 0
-  })
-  if not self:HasApproveData(stamp) then
-    self:CallDateInvite(guild_id, stamp, self.curMode, game_mode, target_num, ban_cards)
-  else
-    MsgManager.ConfirmMsgByID(43551, function()
-      self:CallDateInvite(guild_id, stamp, self.curMode, game_mode, target_num, ban_cards)
-    end, nil, nil)
-  end
+  self:CallDateInvite(guild_id, stamp, self.curMode, game_mode, target_num, ban_cards)
 end
 
 function GuildDateBattleProxy:CallDateInvite(guild_id, stamp, mode, game_mode, target_num, ban_cards)
@@ -608,7 +729,11 @@ function GuildDateBattleProxy:CallAgreeInvite(id)
   if not GuildProxy.Instance:ImGuildChairman() then
     return
   end
-  if not self:HasApproveData(stamp) then
+  local record = self:GetRecordById(id)
+  if not record then
+    return
+  end
+  if not self:HasApproveData(record.stamp, record.mode, id) then
     ServiceGuildCmdProxy.Instance:CallDateBattleReplyGuildCmd(id, true)
   else
     MsgManager.ConfirmMsgByID(43549, function()
@@ -771,7 +896,19 @@ function GuildDateBattleProxy.GetStaticSchedule()
       })
     end
   end
-  return GuildDateBattleProxy.static_schedule
+  GuildDateBattleProxy.schedule_with_quick = GuildDateBattleProxy.schedule_with_quick or {}
+  _ArrayClear(GuildDateBattleProxy.schedule_with_quick)
+  _ArrayPushBack(GuildDateBattleProxy.schedule_with_quick, {
+    [1] = EGuildDateBattleTip.Clock,
+    [2] = {
+      quick = true,
+      stamp = GuildDateBattleProxy.GetQuickStartStamp()
+    }
+  })
+  for i = 1, #GuildDateBattleProxy.static_schedule do
+    _ArrayPushBack(GuildDateBattleProxy.schedule_with_quick, GuildDateBattleProxy.static_schedule[i])
+  end
+  return GuildDateBattleProxy.schedule_with_quick
 end
 
 local day_sec = 86400

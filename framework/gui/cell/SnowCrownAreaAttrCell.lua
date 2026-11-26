@@ -10,6 +10,7 @@ function SnowCrownAreaAttrCell:FindObjs()
   self.level = self:FindComponent("Level", UILabel)
   self.lock = self:FindGO("Lock")
   self.select = self:FindGO("Select")
+  self.grey = self:FindGO("Grey")
   self:AddCellClickEvent()
 end
 
@@ -18,6 +19,7 @@ function SnowCrownAreaAttrCell:SetData(data, index)
   self.data = data
   if data and data.staticData then
     self.icon.spriteName = data.staticData.Icon
+    self.icon:MakePixelPerfect()
     if data.level > 0 then
       local maxLevel = Game.SnowCrownGroupMaxLevel[data.id // 100]
       self.level.text = maxLevel ~= nil and maxLevel <= data.level and ZhString.SnowCrown_MaxLevel or "Lv." .. data.level
@@ -25,6 +27,9 @@ function SnowCrownAreaAttrCell:SetData(data, index)
       self.level.text = ""
     end
     self.lock:SetActive(data.isLock or false)
+  end
+  if self.grey then
+    self.grey:SetActive(data ~= nil and data.isGrey == true and not data.isLock)
   end
 end
 

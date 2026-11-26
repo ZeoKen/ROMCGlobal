@@ -47,6 +47,7 @@ end
 function EquipUpgradeView:OnExit()
   EquipUpgradeView.super.OnExit(self)
   TimeTickManager.Me():ClearTick(self)
+  self.upgradeRequestGuid = nil
   self.particleSystems = nil
   self:CameraReset()
 end
@@ -59,6 +60,7 @@ function EquipUpgradeView:Init()
   end
   self.costEquips = {}
   self.priorChooseList = {}
+  self.upgradeRequestGuid = nil
   self:FindObjs()
   self:AddEvts()
   self:AddViewEvts()
@@ -258,6 +260,9 @@ function EquipUpgradeView:AddEvts()
   self:TryOpenHelpViewById(34, nil, self.helpBtn)
   self.upgradeBtn = self:FindGO("UpgradeBtn")
   self:AddClickEvent(self.upgradeBtn, function()
+    if self.upgradeRequestGuid then
+      return
+    end
     if self.funcValidTime and ServerTime.CurServerTime() / 1000 < self.funcValidTime then
       return
     end
@@ -283,6 +288,7 @@ function EquipUpgradeView:AddMapEvts()
   self:AddListenEvt(MyselfEvent.MyDataChange, self.UpdateCoins)
   self:AddListenEvt(ItemEvent.EquipUpdate, self.handleItemUpdate)
   self:AddListenEvt(ItemEvent.EquipIntegrate_TrySelectEquip, self.ClickTargetCell)
+  self:AddListenEvt(ServiceEvent.ItemEquipExchangeItemCmd, self.HandleEquipExchangeResult)
 end
 
 function EquipUpgradeView:AddViewEvts()
@@ -766,7 +772,7 @@ function EquipUpgradeView:UpdateUpgradeInfo()
   end
   self:UpdateDesc(buffDesc, true)
   local canUpgrade, lv = equipInfo:CanUpgrade_ByClassDepth(classDepth, curEquipLv + 1)
-  self.upgradeBtn_BoxCollider.enabled = canUpgrade
+  self.upgradeBtn_BoxCollider.enabled = canUpgrade and not self.upgradeRequestGuid
   if not canUpgrade then
     self:SetTextureGrey(self.upgradeBtn)
   else
@@ -1149,6 +1155,9 @@ function EquipUpgradeView:DoUpgrade()
 end
 
 function EquipUpgradeView:_DoUpgrade()
+  if self.upgradeRequestGuid then
+    return
+  end
   local chooseMat = {}
   local needCheckAgain = false
   for i = 1, #self.costEquips do
@@ -1164,7 +1173,16 @@ function EquipUpgradeView:_DoUpgrade()
     end
   end
   local func = function()
-    ServiceItemProxy.Instance:CallEquipExchangeItemCmd(self.nowdata.id, SceneItem_pb.EEXCHANGETYPE_LEVELUP, chooseMat, nil, 1, self.checkBtn.value)
+    self.upgradeRequestGuid = self.nowdata.id
+    ServiceItemProxy.Instance:CallEquipExchangeItemCmd(self.nowdata.id, SceneItem_pb.EEXCHANGETYPE_LEVELUP, chooseMat, 1, self.checkBtn.value)
+    TimeTickManager.Me():ClearTick(self, 5)
+    TimeTickManager.Me():CreateOnceDelayTick(5000, function()
+      if self.upgradeRequestGuid then
+        redlog("装备升级请求超时，解除请求锁", self.upgradeRequestGuid)
+        self.upgradeRequestGuid = nil
+        self:UpdateUpgradeInfo()
+      end
+    end, self, 5)
     self.rotateSelf.rotateSpeed = 100
     TimeTickManager.Me():ClearTick(self, 2)
     TimeTickManager.Me():ClearTick(self, 4)
@@ -1176,16 +1194,21 @@ function EquipUpgradeView:_DoUpgrade()
       self.rotateSelf.rotateSpeed = 70
     end, self, 2)
     self.upgradeBtn_BoxCollider.enabled = false
-    TimeTickManager.Me():ClearTick(self, 3)
-    TimeTickManager.Me():CreateOnceDelayTick(500, function()
-      self.upgradeBtn_BoxCollider.enabled = true
-    end, self, 3)
     self:PlayUIEffect(EffectMap.UI.EquipUpgrade_Success, self.targetBtn, true)
   end
   if needCheckAgain then
     MsgManager.DontAgainConfirmMsgByID(544, func)
   else
     func()
+  end
+end
+
+function EquipUpgradeView:HandleEquipExchangeResult(note)
+  local data = note and note.body or note
+  if data and data.type == SceneItem_pb.EEXCHANGETYPE_LEVELUP and data.guid == self.upgradeRequestGuid then
+    TimeTickManager.Me():ClearTick(self, 5)
+    self.upgradeRequestGuid = nil
+    self:UpdateUpgradeInfo()
   end
 end
 

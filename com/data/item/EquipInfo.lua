@@ -850,7 +850,10 @@ function EquipInfo:CheckCanUpgradeSuccess(isMyEquip, item_guid)
   if self.upgradeData == nil then
     return false
   end
-  if not self:CanUpgrade() then
+  local equiplv = self.equiplv
+  local equipComposeData = ISNoviceServerType and EquipComposeProxy.Instance:GetComposeDataByMainMatID(self.equipData.id)
+  local isEquipCompose = equipComposeData and equipComposeData.lv == equiplv
+  if not isEquipCompose and not self:CanUpgrade() then
     return false
   end
   if self.upgrade_checkdirty == false then
@@ -858,13 +861,28 @@ function EquipInfo:CheckCanUpgradeSuccess(isMyEquip, item_guid)
   end
   self.upgrade_checkdirty = false
   self.canUpgrade_success = false
-  local equiplv = self.equiplv
   if isMyEquip then
     local myClass = Game.Myself.data.userdata:Get(UDEnum.PROFESSION)
     local classDepth = ProfessionProxy.Instance:GetDepthByClassId(myClass)
     if not self:CanUpgrade_ByClassDepth(classDepth, equiplv + 1) then
       return false
     end
+  end
+  if isEquipCompose then
+    local composeConfig = Table_EquipCompose[equipComposeData.composeID]
+    if not composeConfig or MyselfProxy.Instance:GetROB() < (composeConfig.Cost or 0) then
+      return false
+    end
+    local composeCheckTypes = GameConfig.PackageMaterialCheck.equipcompose
+    local materialCost = composeConfig.MaterialCost or _EmptyTable
+    for i = 1, #materialCost do
+      local material = materialCost[i]
+      if BagProxy.Instance:GetItemNumByStaticID(material.id, composeCheckTypes) < material.num then
+        return false
+      end
+    end
+    self.canUpgrade_success = true
+    return true
   end
   local materialsKey = "Material_" .. equiplv + 1
   local cost = self.upgradeData[materialsKey]

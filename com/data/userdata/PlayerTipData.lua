@@ -37,6 +37,7 @@ end
 function PlayerTipData:SetByFriendData(frienddata)
   self.id = frienddata.guid
   self.name = frienddata.name
+  self.remark = frienddata.remark
   self.level = frienddata.level
   self.guildname = frienddata.guildname
   self.zoneid = frienddata.zoneid
@@ -119,6 +120,7 @@ function PlayerTipData:SetByChatMessageData(chatMessageData)
   self.headData = HeadImageData.new()
   self.headData:TransByChatMessageData(chatMessageData)
   self.str = chatMessageData:GetStr()
+  self.contentTimestamp = chatMessageData:GetTimestamp()
 end
 
 function PlayerTipData:SetByChatZoneMemberData(chatZoneMember)

@@ -559,6 +559,286 @@ Table_ItemMemoryLibrary = {
     EffectID = 30108,
     Type = "special"
   },
+  [81] = {
+    id = 81,
+    GroupID = 1021,
+    Weight = 100,
+    EffectID = 10001,
+    Type = "attack"
+  },
+  [82] = {
+    id = 82,
+    GroupID = 1021,
+    Weight = 100,
+    EffectID = 10002,
+    Type = "attack"
+  },
+  [83] = {
+    id = 83,
+    GroupID = 1021,
+    Weight = 100,
+    EffectID = 10004,
+    Type = "attack"
+  },
+  [84] = {
+    id = 84,
+    GroupID = 1021,
+    Weight = 100,
+    EffectID = 10005,
+    Type = "attack"
+  },
+  [85] = {
+    id = 85,
+    GroupID = 1021,
+    Weight = 100,
+    EffectID = 10009,
+    Type = "attack"
+  },
+  [86] = {
+    id = 86,
+    GroupID = 1021,
+    Weight = 100,
+    EffectID = 10010,
+    Type = "attack"
+  },
+  [87] = {
+    id = 87,
+    GroupID = 1021,
+    Weight = 100,
+    EffectID = 10011,
+    Type = "attack"
+  },
+  [88] = {
+    id = 88,
+    GroupID = 1021,
+    Weight = 100,
+    EffectID = 10012,
+    Type = "attack"
+  },
+  [89] = {
+    id = 89,
+    GroupID = 2021,
+    Weight = 100,
+    EffectID = 20001,
+    Type = "defence"
+  },
+  [90] = {
+    id = 90,
+    GroupID = 2021,
+    Weight = 100,
+    EffectID = 20002,
+    Type = "defence"
+  },
+  [91] = {
+    id = 91,
+    GroupID = 2021,
+    Weight = 100,
+    EffectID = 20003,
+    Type = "defence"
+  },
+  [92] = {
+    id = 92,
+    GroupID = 2021,
+    Weight = 100,
+    EffectID = 20009,
+    Type = "defence"
+  },
+  [93] = {
+    id = 93,
+    GroupID = 2021,
+    Weight = 100,
+    EffectID = 20011,
+    Type = "defence"
+  },
+  [94] = {
+    id = 94,
+    GroupID = 2021,
+    Weight = 100,
+    EffectID = 20012,
+    Type = "defence"
+  },
+  [95] = {
+    id = 95,
+    GroupID = 2021,
+    Weight = 100,
+    EffectID = 20013,
+    Type = "defence"
+  },
+  [96] = {
+    id = 96,
+    GroupID = 2021,
+    Weight = 100,
+    EffectID = 20014,
+    Type = "defence"
+  },
+  [97] = {
+    id = 97,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 10001,
+    Type = "attack"
+  },
+  [98] = {
+    id = 98,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 10002,
+    Type = "attack"
+  },
+  [99] = {
+    id = 99,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 10004,
+    Type = "attack"
+  },
+  [100] = {
+    id = 100,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 10005,
+    Type = "attack"
+  },
+  [101] = {
+    id = 101,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 10009,
+    Type = "attack"
+  },
+  [102] = {
+    id = 102,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 10010,
+    Type = "attack"
+  },
+  [103] = {
+    id = 103,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 10011,
+    Type = "attack"
+  },
+  [104] = {
+    id = 104,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 10012,
+    Type = "attack"
+  },
+  [105] = {
+    id = 105,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 20001,
+    Type = "defence"
+  },
+  [106] = {
+    id = 106,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 20002,
+    Type = "defence"
+  },
+  [107] = {
+    id = 107,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 20003,
+    Type = "defence"
+  },
+  [108] = {
+    id = 108,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 20009,
+    Type = "defence"
+  },
+  [109] = {
+    id = 109,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 20011,
+    Type = "defence"
+  },
+  [110] = {
+    id = 110,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 20012,
+    Type = "defence"
+  },
+  [111] = {
+    id = 111,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 20013,
+    Type = "defence"
+  },
+  [112] = {
+    id = 112,
+    GroupID = 3021,
+    Weight = 100,
+    EffectID = 20014,
+    Type = "defence"
+  },
+  [113] = {
+    id = 113,
+    GroupID = 3021,
+    Weight = 50,
+    EffectID = 30201,
+    Type = "special"
+  },
+  [114] = {
+    id = 114,
+    GroupID = 3021,
+    Weight = 50,
+    EffectID = 30202,
+    Type = "special"
+  },
+  [115] = {
+    id = 115,
+    GroupID = 3021,
+    Weight = 50,
+    EffectID = 30203,
+    Type = "special"
+  },
+  [116] = {
+    id = 116,
+    GroupID = 3021,
+    Weight = 50,
+    EffectID = 30204,
+    Type = "special"
+  },
+  [117] = {
+    id = 117,
+    GroupID = 3021,
+    Weight = 50,
+    EffectID = 30205,
+    Type = "special"
+  },
+  [118] = {
+    id = 118,
+    GroupID = 3021,
+    Weight = 50,
+    EffectID = 30206,
+    Type = "special"
+  },
+  [119] = {
+    id = 119,
+    GroupID = 3021,
+    Weight = 50,
+    EffectID = 30207,
+    Type = "special"
+  },
+  [120] = {
+    id = 120,
+    GroupID = 3021,
+    Weight = 50,
+    EffectID = 30208,
+    Type = "special"
+  },
   [121] = {
     id = 121,
     GroupID = 1031,
@@ -949,6 +1229,62 @@ Table_ItemMemoryLibrary = {
     GroupID = 4011,
     Weight = 100,
     EffectID = 40108,
+    Type = "defence"
+  },
+  [177] = {
+    id = 177,
+    GroupID = 4021,
+    Weight = 100,
+    EffectID = 40201,
+    Type = "defence"
+  },
+  [178] = {
+    id = 178,
+    GroupID = 4021,
+    Weight = 100,
+    EffectID = 40202,
+    Type = "defence"
+  },
+  [179] = {
+    id = 179,
+    GroupID = 4021,
+    Weight = 100,
+    EffectID = 40203,
+    Type = "defence"
+  },
+  [180] = {
+    id = 180,
+    GroupID = 4021,
+    Weight = 100,
+    EffectID = 40204,
+    Type = "defence"
+  },
+  [181] = {
+    id = 181,
+    GroupID = 4021,
+    Weight = 100,
+    EffectID = 40205,
+    Type = "defence"
+  },
+  [182] = {
+    id = 182,
+    GroupID = 4021,
+    Weight = 100,
+    EffectID = 40206,
+    Type = "defence"
+  },
+  [183] = {
+    id = 183,
+    GroupID = 4021,
+    Weight = 100,
+    EffectID = 40207,
+    Type = "defence"
+  },
+  [184] = {
+    id = 184,
+    GroupID = 4021,
+    Weight = 100,
+    EffectID = 40208,
     Type = "defence"
   },
   [185] = {

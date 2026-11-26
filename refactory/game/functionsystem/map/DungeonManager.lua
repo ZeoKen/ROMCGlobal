@@ -107,7 +107,7 @@ local PVERaidConfig = {
   },
   PVE_BageLab = {
     Type = FuBenCmd_pb.ERAIDTYPE_BAGE_LAB,
-    DungeonSpawner = PVEFactory.GetBageLab
+    DungeonSpawner = PVEFactory.GetSevenRoyals
   },
   PVE_LotteryRaid = {
     Type = FuBenCmd_pb.ERAIDTYPE_LOTTERY_RAID,
@@ -145,6 +145,10 @@ local PVERaidConfig = {
     Type = FuBenCmd_pb.ERAIDTYPE_ICE_LAB,
     DungeonSpawner = PVEFactory.GetSevenRoyals
   },
+  PVE_MorrocIllusion = {
+    Type = FuBenCmd_pb.ERAIDTYPE_MORROC_ILLUSION,
+    DungeonSpawner = PVEFactory.GetSevenRoyals
+  },
   PVE_HeroJourney = {
     Type = FuBenCmd_pb.ERAIDTYPE_HERO_JOURNEY,
     DungeonSpawner = PVEFactory.GetHeroJourney
@@ -161,6 +165,10 @@ local PVERaidConfig = {
     Type = FuBenCmd_pb.ERAIDTYPE_FAIRY_TALE,
     DungeonSpawner = PVEFactory.GetFairyTaleRaid
   }
+}
+local NoSelfReviveRaidTypes = {
+  [FuBenCmd_pb.ERAIDTYPE_BAGE_LAB] = true,
+  [FuBenCmd_pb.ERAIDTYPE_MORROC_ILLUSION] = true
 }
 local PVPRaidConfig = {
   PVP_ChaosFight = {
@@ -473,12 +481,13 @@ function DungeonManager:IsPVEMode_DestroyAirShip()
   return self.currentDungeon ~= nil and self.currentDungeon.isDestroyAirShipRaid or false
 end
 
-function DungeonManager:IsPVEMode_BageLab()
-  return self.currentDungeon ~= nil and self.currentDungeon.isBageLabRaid or false
-end
-
 function DungeonManager:IsPVEMode_MultiBossRaid()
   return self.currentDungeon ~= nil and self.currentDungeon.isMultiBossRaid or false
+end
+
+function DungeonManager:IsPVEMode_NoSelfReviveRaid()
+  local raidType = self:GetRaidType()
+  return raidType ~= nil and NoSelfReviveRaidTypes[raidType] == true
 end
 
 function DungeonManager:IsPVEMode_HeartLockRaid()
@@ -544,6 +553,10 @@ function DungeonManager:SetRaidID(raidID)
   redlog("DungeonManager:SetRaidID raidType: ", raidType)
   self.currentDungeon = self.dungeons[raidType]
   self.isPVPRaid = self.pvpType[raidType] and true or false
+  local mapData = Table_Map[raidID]
+  if self.isPVPRaid and mapData ~= nil and mapData.PVPmap == 0 then
+    self.isPVPRaid = false
+  end
   self.isFromNewPveEntrance = PveEntranceProxy.Instance:IsNewEntrancePveByRaidType(raidType)
   self.isEndlessTower = raidType == FuBenCmd_pb.ERAIDTYPE_TOWER
   self.isHeadwearRaid = raidType == FuBenCmd_pb.ERAIDTYPE_HEADWEAR or raidType == FuBenCmd_pb.ERAIDTYPE_HEADWEARACTIVITY

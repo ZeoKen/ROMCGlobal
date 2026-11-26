@@ -282,6 +282,55 @@ function StartGamePanel:initView()
   end
 end
 
+function StartGamePanel:IsBgVideoSizeValid(videoWidth, videoHeight)
+  return videoWidth ~= nil and videoHeight ~= nil and 2 <= videoWidth and 2 <= videoHeight
+end
+
+function StartGamePanel:ApplyBgVideoSize()
+  if not self.bgVideoPlayer then
+    return false
+  end
+  local videoWidth = self.bgVideoPlayer.width
+  local videoHeight = self.bgVideoPlayer.height
+  local sizeValid = self:IsBgVideoSizeValid(videoWidth, videoHeight)
+  local ratio = sizeValid and videoWidth / videoHeight or 1.7777777777777777
+  if not sizeValid then
+    redlog(string.format("ROOS-31786: invalid video size %s x %s, fallback 16:9", tostring(videoWidth), tostring(videoHeight)))
+  end
+  self.bgVideoPlayer:SetTextureSize(720 * ratio, 720)
+  return sizeValid
+end
+
+function StartGamePanel:RestoreStaticBg()
+  if not self.bgTexture then
+    return
+  end
+  if self.staticBGName then
+    PictureManager.Instance:SetUI(self.staticBGName, self.bgTexture)
+  end
+  self.bgTexture.gameObject:SetActive(true)
+  TweenColor.Begin(self.bgTexture.gameObject, 0.3, LuaGeometry.GetTempVector4(1, 1, 1, 1))
+end
+
+function StartGamePanel:ScheduleBgVideoSizeRetry()
+  if self.bgVideoSizeRetryScheduled then
+    return
+  end
+  self.bgVideoSizeRetryScheduled = true
+  TimeTickManager.Me():CreateOnceDelayTick(500, function()
+    self.bgVideoSizeRetryScheduled = false
+    if not self.bgVideoPlayer then
+      return
+    end
+    if self:ApplyBgVideoSize() and self.pendingHideStaticBg and self.bgTexture then
+      self.pendingHideStaticBg = false
+      self.bgTexture.gameObject:SetActive(false)
+    elseif not self:IsBgVideoSizeValid(self.bgVideoPlayer.width, self.bgVideoPlayer.height) then
+      self:RestoreStaticBg()
+    end
+  end, self)
+end
+
 function StartGamePanel:InitBg()
   local serverState = self.serverData and self.serverData.servertype
   local isNovice = serverState == "novice"
@@ -308,8 +357,14 @@ function StartGamePanel:InitBg()
       if not self.bgVideoPlayer then
         return
       end
-      local ratio = self.bgVideoPlayer.width / self.bgVideoPlayer.height
-      self.bgVideoPlayer:SetTextureSize(720 * ratio, 720)
+      local sizeValid = self:ApplyBgVideoSize()
+      if sizeValid and self.pendingHideStaticBg and self.bgTexture then
+        self.pendingHideStaticBg = false
+        self.bgTexture.gameObject:SetActive(false)
+      elseif not sizeValid then
+        self:RestoreStaticBg()
+        self:ScheduleBgVideoSizeRetry()
+      end
       TweenColor.Begin(self.videoBG.gameObject, 1, LuaGeometry.GetTempVector4(1, 1, 1, 1))
       local isPlayerExist = self.bgVideoPlayer.isPlayerExist
       local isPaused = self.bgVideoPlayer.isPaused
@@ -1120,12 +1175,14 @@ function StartGamePanel:SwitchLoginBg(isNoviceServer)
     return
   end
   if self.videoBG and self.bgVideoPlayer then
-    self.bgTexture.gameObject:SetActive(false)
-    PictureManager.Instance:UnLoadUI(self.staticBGName, self.bgTexture)
+    self.pendingHideStaticBg = true
     TweenColor.Begin(self.bgTexture.gameObject, 1, LuaGeometry.GetTempVector4(0, 0, 0, 1))
     TweenColor.Begin(self.videoBG.gameObject, 1, LuaGeometry.GetTempVector4(0, 0, 0, 1)):SetOnFinished(function()
       local path
       if self.serverState == targetState then
+        if not self:IsBgVideoSizeValid(self.bgVideoPlayer and self.bgVideoPlayer.width, self.bgVideoPlayer and self.bgVideoPlayer.height) then
+          self:RestoreStaticBg()
+        end
         return
       end
       self:TryPlayBgVideo(isNoviceServer)
@@ -1133,12 +1190,15 @@ function StartGamePanel:SwitchLoginBg(isNoviceServer)
       self:UpdateStartBtnName()
       PictureManager.Instance:SetUI(self.startBtnTexName, self.startBtnTex)
       self.startBtnTex:MakePixelPerfect()
+      PictureManager.Instance:UnLoadUI(self.staticBGName, self.bgTexture)
       if isNoviceServer then
         self.staticBGName = StartGamePanel.BgTextureName_Novice
       else
         self.staticBGName = StartGamePanel.BgTextureName
       end
       PictureManager.Instance:SetUI(self.staticBGName, self.bgTexture)
+      self.bgTexture.gameObject:SetActive(true)
+      TweenColor.Begin(self.bgTexture.gameObject, 0.3, LuaGeometry.GetTempVector4(1, 1, 1, 1))
     end)
   else
     xdlog("静态背景样式 -> 切换")

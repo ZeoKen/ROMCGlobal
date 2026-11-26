@@ -151,6 +151,27 @@ Table_NewServerChallengeTarget_t = {
       {51471, 1}
     },
     {
+      {8474, 1}
+    },
+    {
+      {8473, 6}
+    },
+    {
+      {8473, 2}
+    },
+    {
+      {10001033, 1}
+    },
+    {
+      {10001032, 1}
+    },
+    {
+      {10001031, 1}
+    },
+    {
+      {10001030, 1}
+    },
+    {
       {6048, 1}
     },
     {
@@ -158,6 +179,9 @@ Table_NewServerChallengeTarget_t = {
     },
     {
       {25193, 1}
+    },
+    {
+      {3042443, 1}
     },
     {
       {10000293, 1}
@@ -372,6 +396,27 @@ Table_NewServerChallengeTarget_t = {
       {51470, 1}
     },
     {
+      {8474, 1}
+    },
+    {
+      {8473, 6}
+    },
+    {
+      {8473, 2}
+    },
+    {
+      {10001033, 1}
+    },
+    {
+      {10001032, 1}
+    },
+    {
+      {10001031, 1}
+    },
+    {
+      {10001030, 1}
+    },
+    {
       {6048, 1}
     },
     {
@@ -379,6 +424,9 @@ Table_NewServerChallengeTarget_t = {
     },
     {
       {25193, 1}
+    },
+    {
+      {3042443, 1}
     },
     {
       {10000293, 1}
@@ -533,6 +581,14 @@ Table_NewServerChallengeTarget_t = {
     {raid_type = 36},
     {raid_type = 38},
     {raid_type = 40},
+    {item_id = 8474, sourceid = 420},
+    {item_id = 8473, sourceid = 420},
+    {
+      boss_index = 1,
+      min_difficulty = 1,
+      raid_type = 88
+    },
+    {raid_type = 80},
     {
       poses = {
         1,
@@ -543,11 +599,6 @@ Table_NewServerChallengeTarget_t = {
         6,
         7
       }
-    },
-    {
-      boss_index = 1,
-      min_difficulty = 1,
-      raid_type = 88
     },
     {
       max_difficulty = 99999,
@@ -657,6 +708,17 @@ Table_NewServerChallengeTarget_t = {
     {DepositID = 400073, Discount = 26},
     {DepositID = 400074, Discount = 35},
     {DepositID = 400075, Discount = 35},
+    {ShopItemID = 3290085},
+    {ShopItemID = 3290084},
+    {ShopItemID = 3290083},
+    {ShopItemID = 3290082},
+    {ShopItemID = 3290081},
+    {DepositID = 400155},
+    {DepositID = 400154},
+    {DepositID = 400153},
+    {DepositID = 400152},
+    {DepositID = 400151},
+    {DepositID = 400150},
     {DepositID = 400120},
     {DepositID = 400121},
     {DepositID = 400122},
@@ -748,8 +810,8 @@ Table_NewServerChallengeTarget = {
     id = 105800201,
     ActID = 1058002,
     Param = Table_NewServerChallengeTarget_t.Param[3],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[59],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[59],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[67],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[67],
     Title = "##3489827"
   },
   [105800202] = {
@@ -758,8 +820,8 @@ Table_NewServerChallengeTarget = {
     TargetType = "unlock_manual",
     TargetNum = 10,
     Param = Table_NewServerChallengeTarget_t.Param[28],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[60],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[60],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[68],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[68],
     Title = "##2849093"
   },
   [105800203] = {
@@ -778,8 +840,8 @@ Table_NewServerChallengeTarget = {
     TargetType = "unlock_manual",
     TargetNum = 30,
     Param = Table_NewServerChallengeTarget_t.Param[28],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[61],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[61],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[69],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[69],
     Title = "##2849093"
   },
   [105800205] = {
@@ -798,16 +860,16 @@ Table_NewServerChallengeTarget = {
     TargetType = "unlock_manual",
     TargetNum = 50,
     Param = Table_NewServerChallengeTarget_t.Param[28],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[62],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[62],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[70],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[70],
     Title = "##2849093"
   },
   [105800207] = {
     id = 105800207,
     ActID = 1058002,
     TargetType = "compose_headwear",
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[60],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[60],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[68],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[68],
     Title = "##3489828"
   },
   [105800301] = {
@@ -886,62 +948,62 @@ Table_NewServerChallengeTarget = {
     ActID = 1058004,
     TargetType = "refine",
     TargetNum = 42,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
+    Param = Table_NewServerChallengeTarget_t.Param[46],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[11],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[11],
     Title = "##2849088",
-    Shop = Table_NewServerChallengeTarget_t.Shop[67]
+    Shop = Table_NewServerChallengeTarget_t.Shop[78]
   },
   [105800402] = {
     id = 105800402,
     ActID = 1058004,
     TargetType = "refine",
     TargetNum = 56,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[51],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[51],
+    Param = Table_NewServerChallengeTarget_t.Param[46],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[58],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[58],
     Title = "##2849088",
-    Shop = Table_NewServerChallengeTarget_t.Shop[68]
+    Shop = Table_NewServerChallengeTarget_t.Shop[79]
   },
   [105800403] = {
     id = 105800403,
     ActID = 1058004,
     TargetType = "refine",
     TargetNum = 70,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
+    Param = Table_NewServerChallengeTarget_t.Param[46],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[38],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[38],
     Title = "##2849088",
-    Shop = Table_NewServerChallengeTarget_t.Shop[69]
+    Shop = Table_NewServerChallengeTarget_t.Shop[80]
   },
   [105800404] = {
     id = 105800404,
     ActID = 1058004,
     TargetType = "refine",
     TargetNum = 84,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[52],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[52],
+    Param = Table_NewServerChallengeTarget_t.Param[46],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[59],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[59],
     Title = "##2849088",
-    Shop = Table_NewServerChallengeTarget_t.Shop[70]
+    Shop = Table_NewServerChallengeTarget_t.Shop[81]
   },
   [105800405] = {
     id = 105800405,
     ActID = 1058004,
     TargetType = "refine",
     TargetNum = 90,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[53],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[53],
+    Param = Table_NewServerChallengeTarget_t.Param[46],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[60],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[60],
     Title = "##2849088",
-    Shop = Table_NewServerChallengeTarget_t.Shop[71]
+    Shop = Table_NewServerChallengeTarget_t.Shop[82]
   },
   [105800501] = {
     id = 105800501,
     ActID = 1058005,
     TargetType = "refine",
     TargetNum = 30,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
+    Param = Table_NewServerChallengeTarget_t.Param[46],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[11],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[11],
     Title = "##2849088"
@@ -951,9 +1013,9 @@ Table_NewServerChallengeTarget = {
     ActID = 1058005,
     TargetType = "refine",
     TargetNum = 40,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[69],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[69],
+    Param = Table_NewServerChallengeTarget_t.Param[46],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[77],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[77],
     Title = "##2849088"
   },
   [105800503] = {
@@ -961,7 +1023,7 @@ Table_NewServerChallengeTarget = {
     ActID = 1058005,
     TargetType = "refine",
     TargetNum = 50,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
+    Param = Table_NewServerChallengeTarget_t.Param[46],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[38],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[38],
     Title = "##2849088"
@@ -971,9 +1033,9 @@ Table_NewServerChallengeTarget = {
     ActID = 1058005,
     TargetType = "refine",
     TargetNum = 60,
-    Param = Table_NewServerChallengeTarget_t.Param[42],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[70],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[70],
+    Param = Table_NewServerChallengeTarget_t.Param[46],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[78],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[78],
     Title = "##2849088"
   },
   [105826001] = {
@@ -1074,46 +1136,46 @@ Table_NewServerChallengeTarget = {
     id = 105828001,
     ActID = 105828,
     Param = Table_NewServerChallengeTarget_t.Param[32],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[54],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[54],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[62],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[62],
     Title = "##42640901",
-    Shop = Table_NewServerChallengeTarget_t.Shop[85]
+    Shop = Table_NewServerChallengeTarget_t.Shop[96]
   },
   [105828002] = {
     id = 105828002,
     ActID = 105828,
     Param = Table_NewServerChallengeTarget_t.Param[33],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[54],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[54],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[62],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[62],
     Title = "##1273202",
-    Shop = Table_NewServerChallengeTarget_t.Shop[72]
+    Shop = Table_NewServerChallengeTarget_t.Shop[83]
   },
   [105828003] = {
     id = 105828003,
     ActID = 105828,
     Param = Table_NewServerChallengeTarget_t.Param[34],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[63],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[63],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[71],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[71],
     Title = "##1273205",
-    Shop = Table_NewServerChallengeTarget_t.Shop[82]
+    Shop = Table_NewServerChallengeTarget_t.Shop[93]
   },
   [105828004] = {
     id = 105828004,
     ActID = 105828,
     Param = Table_NewServerChallengeTarget_t.Param[35],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[64],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[64],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[72],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[72],
     Title = "##1273211",
-    Shop = Table_NewServerChallengeTarget_t.Shop[83]
+    Shop = Table_NewServerChallengeTarget_t.Shop[94]
   },
   [105828005] = {
     id = 105828005,
     ActID = 105828,
     Param = Table_NewServerChallengeTarget_t.Param[37],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[65],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[65],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[73],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[73],
     Title = "##1273217",
-    Shop = Table_NewServerChallengeTarget_t.Shop[84]
+    Shop = Table_NewServerChallengeTarget_t.Shop[95]
   },
   [105829001] = {
     id = 105829001,
@@ -1692,49 +1754,49 @@ Table_NewServerChallengeTarget = {
   [105902001] = {
     id = 105902001,
     ActID = 105902,
-    Param = Table_NewServerChallengeTarget_t.Param[50],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[71],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[71],
+    Param = Table_NewServerChallengeTarget_t.Param[53],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[79],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[79],
     Title = "##44716213"
   },
   [105902002] = {
     id = 105902002,
     ActID = 105902,
-    Param = Table_NewServerChallengeTarget_t.Param[51],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[72],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[72],
+    Param = Table_NewServerChallengeTarget_t.Param[54],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[80],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[80],
     Title = "##44716214"
   },
   [105902003] = {
     id = 105902003,
     ActID = 105902,
-    Param = Table_NewServerChallengeTarget_t.Param[52],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[73],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[73],
+    Param = Table_NewServerChallengeTarget_t.Param[55],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[81],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[81],
     Title = "##44716215"
   },
   [105903001] = {
     id = 105903001,
     ActID = 105903,
-    Param = Table_NewServerChallengeTarget_t.Param[47],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[66],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[66],
+    Param = Table_NewServerChallengeTarget_t.Param[50],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[74],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[74],
     Title = "##44716210"
   },
   [105903002] = {
     id = 105903002,
     ActID = 105903,
-    Param = Table_NewServerChallengeTarget_t.Param[48],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[67],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[67],
+    Param = Table_NewServerChallengeTarget_t.Param[51],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[75],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[75],
     Title = "##44716211"
   },
   [105903003] = {
     id = 105903003,
     ActID = 105903,
-    Param = Table_NewServerChallengeTarget_t.Param[49],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[68],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[68],
+    Param = Table_NewServerChallengeTarget_t.Param[52],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[76],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[76],
     Title = "##44716212"
   },
   [106001001] = {
@@ -1777,6 +1839,60 @@ Table_NewServerChallengeTarget = {
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[39],
     Title = "##2849093"
   },
+  [106106001] = {
+    id = 106106001,
+    ActID = 106106,
+    Param = Table_NewServerChallengeTarget_t.Param[3],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[57],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[57],
+    Title = "##1235587",
+    Shop = Table_NewServerChallengeTarget_t.Shop[72]
+  },
+  [106106002] = {
+    id = 106106002,
+    ActID = 106106,
+    Param = Table_NewServerChallengeTarget_t.Param[2],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[57],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[57],
+    Title = "##42629709",
+    Shop = Table_NewServerChallengeTarget_t.Shop[71]
+  },
+  [106106003] = {
+    id = 106106003,
+    ActID = 106106,
+    Param = Table_NewServerChallengeTarget_t.Param[5],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[56],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[56],
+    Title = "##42629711",
+    Shop = Table_NewServerChallengeTarget_t.Shop[70]
+  },
+  [106106004] = {
+    id = 106106004,
+    ActID = 106106,
+    Param = Table_NewServerChallengeTarget_t.Param[6],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[55],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[55],
+    Title = "##42629712",
+    Shop = Table_NewServerChallengeTarget_t.Shop[69]
+  },
+  [106106005] = {
+    id = 106106005,
+    ActID = 106106,
+    Param = Table_NewServerChallengeTarget_t.Param[4],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[54],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[54],
+    Title = "##42629710",
+    Shop = Table_NewServerChallengeTarget_t.Shop[68]
+  },
+  [106106006] = {
+    id = 106106006,
+    ActID = 106106,
+    Param = Table_NewServerChallengeTarget_t.Param[45],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[54],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[54],
+    Title = "##47048391",
+    Shop = Table_NewServerChallengeTarget_t.Shop[67]
+  },
   [107004001] = {
     id = 107004001,
     ActID = 107004,
@@ -1784,7 +1900,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[31],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[31],
     Title = "##45907828",
-    Shop = Table_NewServerChallengeTarget_t.Shop[85]
+    Shop = Table_NewServerChallengeTarget_t.Shop[96]
   },
   [107004002] = {
     id = 107004002,
@@ -1794,7 +1910,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[32],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[32],
     Title = "##45907829",
-    Shop = Table_NewServerChallengeTarget_t.Shop[72]
+    Shop = Table_NewServerChallengeTarget_t.Shop[83]
   },
   [107004003] = {
     id = 107004003,
@@ -1804,7 +1920,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[33],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[33],
     Title = "##45907830",
-    Shop = Table_NewServerChallengeTarget_t.Shop[82]
+    Shop = Table_NewServerChallengeTarget_t.Shop[93]
   },
   [107004004] = {
     id = 107004004,
@@ -1815,7 +1931,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[34],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[34],
     Title = "##45907831",
-    Shop = Table_NewServerChallengeTarget_t.Shop[83]
+    Shop = Table_NewServerChallengeTarget_t.Shop[94]
   },
   [107004005] = {
     id = 107004005,
@@ -1825,7 +1941,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[35],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[35],
     Title = "##45907832",
-    Shop = Table_NewServerChallengeTarget_t.Shop[84]
+    Shop = Table_NewServerChallengeTarget_t.Shop[95]
   },
   [107008001] = {
     id = 107008001,
@@ -1934,92 +2050,92 @@ Table_NewServerChallengeTarget = {
   [107012001] = {
     id = 107012001,
     ActID = 107012,
-    Param = Table_NewServerChallengeTarget_t.Param[43],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[55],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[55],
+    Param = Table_NewServerChallengeTarget_t.Param[44],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[63],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[63],
     Title = "##45915110",
-    Shop = Table_NewServerChallengeTarget_t.Shop[81]
+    Shop = Table_NewServerChallengeTarget_t.Shop[92]
   },
   [107012002] = {
     id = 107012002,
     ActID = 107012,
-    Param = Table_NewServerChallengeTarget_t.Param[44],
+    Param = Table_NewServerChallengeTarget_t.Param[47],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[8],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[8],
     Title = "##45917374",
-    Shop = Table_NewServerChallengeTarget_t.Shop[73]
+    Shop = Table_NewServerChallengeTarget_t.Shop[84]
   },
   [107012003] = {
     id = 107012003,
     ActID = 107012,
-    Param = Table_NewServerChallengeTarget_t.Param[43],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[56],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[56],
+    Param = Table_NewServerChallengeTarget_t.Param[44],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[64],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[64],
     Title = "##45917718",
-    Shop = Table_NewServerChallengeTarget_t.Shop[80]
+    Shop = Table_NewServerChallengeTarget_t.Shop[91]
   },
   [107012004] = {
     id = 107012004,
     ActID = 107012,
-    Param = Table_NewServerChallengeTarget_t.Param[45],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[57],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[57],
+    Param = Table_NewServerChallengeTarget_t.Param[48],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[65],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[65],
     Title = "##45915113",
-    Shop = Table_NewServerChallengeTarget_t.Shop[79]
+    Shop = Table_NewServerChallengeTarget_t.Shop[90]
   },
   [107012005] = {
     id = 107012005,
     ActID = 107012,
-    Param = Table_NewServerChallengeTarget_t.Param[46],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[58],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[58],
+    Param = Table_NewServerChallengeTarget_t.Param[49],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[66],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[66],
     Title = "##45915114",
-    Shop = Table_NewServerChallengeTarget_t.Shop[78]
+    Shop = Table_NewServerChallengeTarget_t.Shop[89]
   },
   [107016001] = {
     id = 107016001,
     ActID = 108001,
-    Param = Table_NewServerChallengeTarget_t.Param[43],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[55],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[55],
+    Param = Table_NewServerChallengeTarget_t.Param[44],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[63],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[63],
     Title = "##45915110",
-    Shop = Table_NewServerChallengeTarget_t.Shop[73]
+    Shop = Table_NewServerChallengeTarget_t.Shop[84]
   },
   [107016002] = {
     id = 107016002,
     ActID = 108001,
-    Param = Table_NewServerChallengeTarget_t.Param[44],
+    Param = Table_NewServerChallengeTarget_t.Param[47],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[8],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[8],
     Title = "##45917374",
-    Shop = Table_NewServerChallengeTarget_t.Shop[74]
+    Shop = Table_NewServerChallengeTarget_t.Shop[85]
   },
   [107016003] = {
     id = 107016003,
     ActID = 108001,
-    Param = Table_NewServerChallengeTarget_t.Param[43],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[56],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[56],
+    Param = Table_NewServerChallengeTarget_t.Param[44],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[64],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[64],
     Title = "##45917718",
-    Shop = Table_NewServerChallengeTarget_t.Shop[75]
+    Shop = Table_NewServerChallengeTarget_t.Shop[86]
   },
   [107016004] = {
     id = 107016004,
     ActID = 108001,
-    Param = Table_NewServerChallengeTarget_t.Param[45],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[57],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[57],
+    Param = Table_NewServerChallengeTarget_t.Param[48],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[65],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[65],
     Title = "##45915113",
-    Shop = Table_NewServerChallengeTarget_t.Shop[76]
+    Shop = Table_NewServerChallengeTarget_t.Shop[87]
   },
   [107016005] = {
     id = 107016005,
     ActID = 108001,
-    Param = Table_NewServerChallengeTarget_t.Param[46],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[58],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[58],
+    Param = Table_NewServerChallengeTarget_t.Param[49],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[66],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[66],
     Title = "##45915114",
-    Shop = Table_NewServerChallengeTarget_t.Shop[77]
+    Shop = Table_NewServerChallengeTarget_t.Shop[88]
   },
   [108005001] = {
     id = 108005001,
@@ -2314,7 +2430,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[31],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[31],
     Title = "##45938942",
-    Shop = Table_NewServerChallengeTarget_t.Shop[62]
+    Shop = Table_NewServerChallengeTarget_t.Shop[73]
   },
   [108029002] = {
     id = 108029002,
@@ -2324,7 +2440,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[32],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[32],
     Title = "##45986856",
-    Shop = Table_NewServerChallengeTarget_t.Shop[63]
+    Shop = Table_NewServerChallengeTarget_t.Shop[74]
   },
   [108029003] = {
     id = 108029003,
@@ -2334,7 +2450,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[33],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[33],
     Title = "##45986297",
-    Shop = Table_NewServerChallengeTarget_t.Shop[64]
+    Shop = Table_NewServerChallengeTarget_t.Shop[75]
   },
   [108029004] = {
     id = 108029004,
@@ -2345,7 +2461,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[34],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[34],
     Title = "##45908263",
-    Shop = Table_NewServerChallengeTarget_t.Shop[65]
+    Shop = Table_NewServerChallengeTarget_t.Shop[76]
   },
   [108029005] = {
     id = 108029005,
@@ -2355,7 +2471,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[35],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[35],
     Title = "##45986857",
-    Shop = Table_NewServerChallengeTarget_t.Shop[66]
+    Shop = Table_NewServerChallengeTarget_t.Shop[77]
   },
   [108041001] = {
     id = 108041001,
@@ -2478,47 +2594,47 @@ Table_NewServerChallengeTarget = {
   [108046001] = {
     id = 108046001,
     ActID = 108046,
-    Param = Table_NewServerChallengeTarget_t.Param[43],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[55],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[55],
+    Param = Table_NewServerChallengeTarget_t.Param[44],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[63],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[63],
     Title = "##45915110",
-    Shop = Table_NewServerChallengeTarget_t.Shop[73]
+    Shop = Table_NewServerChallengeTarget_t.Shop[84]
   },
   [108046002] = {
     id = 108046002,
     ActID = 108046,
-    Param = Table_NewServerChallengeTarget_t.Param[44],
+    Param = Table_NewServerChallengeTarget_t.Param[47],
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[8],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[8],
     Title = "##45917374",
-    Shop = Table_NewServerChallengeTarget_t.Shop[74]
+    Shop = Table_NewServerChallengeTarget_t.Shop[85]
   },
   [108046003] = {
     id = 108046003,
     ActID = 108046,
-    Param = Table_NewServerChallengeTarget_t.Param[43],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[56],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[56],
+    Param = Table_NewServerChallengeTarget_t.Param[44],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[64],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[64],
     Title = "##45917718",
-    Shop = Table_NewServerChallengeTarget_t.Shop[75]
+    Shop = Table_NewServerChallengeTarget_t.Shop[86]
   },
   [108046004] = {
     id = 108046004,
     ActID = 108046,
-    Param = Table_NewServerChallengeTarget_t.Param[45],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[57],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[57],
+    Param = Table_NewServerChallengeTarget_t.Param[48],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[65],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[65],
     Title = "##45915113",
-    Shop = Table_NewServerChallengeTarget_t.Shop[76]
+    Shop = Table_NewServerChallengeTarget_t.Shop[87]
   },
   [108046005] = {
     id = 108046005,
     ActID = 108046,
-    Param = Table_NewServerChallengeTarget_t.Param[46],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[58],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[58],
+    Param = Table_NewServerChallengeTarget_t.Param[49],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[66],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[66],
     Title = "##45915114",
-    Shop = Table_NewServerChallengeTarget_t.Shop[77]
+    Shop = Table_NewServerChallengeTarget_t.Shop[88]
   },
   [108050001] = {
     id = 108050001,
@@ -2527,7 +2643,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[31],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[31],
     Title = "##45938942",
-    Shop = Table_NewServerChallengeTarget_t.Shop[62]
+    Shop = Table_NewServerChallengeTarget_t.Shop[73]
   },
   [108050002] = {
     id = 108050002,
@@ -2537,7 +2653,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[32],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[32],
     Title = "##45986856",
-    Shop = Table_NewServerChallengeTarget_t.Shop[63]
+    Shop = Table_NewServerChallengeTarget_t.Shop[74]
   },
   [108050003] = {
     id = 108050003,
@@ -2547,7 +2663,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[33],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[33],
     Title = "##45986297",
-    Shop = Table_NewServerChallengeTarget_t.Shop[64]
+    Shop = Table_NewServerChallengeTarget_t.Shop[75]
   },
   [108050004] = {
     id = 108050004,
@@ -2558,7 +2674,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[34],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[34],
     Title = "##45908263",
-    Shop = Table_NewServerChallengeTarget_t.Shop[65]
+    Shop = Table_NewServerChallengeTarget_t.Shop[76]
   },
   [108050005] = {
     id = 108050005,
@@ -2568,7 +2684,7 @@ Table_NewServerChallengeTarget = {
     MaleReward = Table_NewServerChallengeTarget_t.MaleReward[35],
     FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[35],
     Title = "##45986857",
-    Shop = Table_NewServerChallengeTarget_t.Shop[66]
+    Shop = Table_NewServerChallengeTarget_t.Shop[77]
   },
   [108052001] = {
     id = 108052001,
@@ -2620,6 +2736,59 @@ Table_NewServerChallengeTarget = {
     Title = "##45927149",
     Shop = Table_NewServerChallengeTarget_t.Shop[48]
   },
+  [108131001] = {
+    id = 108131001,
+    ActID = 108131,
+    Param = Table_NewServerChallengeTarget_t.Param[44],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[53],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[53],
+    Title = "##48064902",
+    Shop = Table_NewServerChallengeTarget_t.Shop[66]
+  },
+  [108131002] = {
+    id = 108131002,
+    ActID = 108131,
+    TargetType = "consume_item",
+    TargetNum = 6,
+    Param = Table_NewServerChallengeTarget_t.Param[43],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[53],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[53],
+    Title = "##48064903",
+    Shop = Table_NewServerChallengeTarget_t.Shop[65]
+  },
+  [108131003] = {
+    id = 108131003,
+    ActID = 108131,
+    TargetType = "consume_item",
+    TargetNum = 12,
+    Param = Table_NewServerChallengeTarget_t.Param[43],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[52],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[52],
+    Title = "##48064904",
+    Shop = Table_NewServerChallengeTarget_t.Shop[64]
+  },
+  [108131004] = {
+    id = 108131004,
+    ActID = 108131,
+    TargetType = "consume_item",
+    TargetNum = 24,
+    Param = Table_NewServerChallengeTarget_t.Param[43],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[52],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[52],
+    Title = "##48064905",
+    Shop = Table_NewServerChallengeTarget_t.Shop[63]
+  },
+  [108131005] = {
+    id = 108131005,
+    ActID = 108131,
+    TargetType = "consume_item",
+    TargetNum = 2,
+    Param = Table_NewServerChallengeTarget_t.Param[42],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[51],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[51],
+    Title = "##48064906",
+    Shop = Table_NewServerChallengeTarget_t.Shop[62]
+  },
   [110009001] = {
     id = 110009001,
     ActID = 110009,
@@ -2656,8 +2825,8 @@ Table_NewServerChallengeTarget = {
     TargetType = "unlock_manual",
     TargetNum = 300,
     Param = Table_NewServerChallengeTarget_t.Param[28],
-    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[39],
-    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[39],
+    MaleReward = Table_NewServerChallengeTarget_t.MaleReward[61],
+    FemaleReward = Table_NewServerChallengeTarget_t.FemaleReward[61],
     Title = "##2849093"
   },
   [1058000101] = {

@@ -188,7 +188,7 @@ function ActivityBattlePassLevelRewardCell:UpdateBuyInfo()
     if self.advItemCell then
       local proRewardItem = {
         itemid = shopItemData.goodsID,
-        num = shopItemData.goodsCount
+        num = shopItemData:GetGoodsCount()
       }
       local data = self.advItemCell.data
       data:ResetData(proRewardItem.itemid, proRewardItem.itemid)
@@ -198,7 +198,7 @@ function ActivityBattlePassLevelRewardCell:UpdateBuyInfo()
     else
       local proRewardItem = {
         itemid = shopItemData.goodsID,
-        num = shopItemData.goodsCount
+        num = shopItemData:GetGoodsCount()
       }
       local data = self.basicItemCell.data
       data:ResetData(proRewardItem.itemid, proRewardItem.itemid)

@@ -42,6 +42,9 @@ function SetViewServiceEUPage:Init(initParama)
     end
   end)
   self.notiToggle = self:FindGO("noticeTog"):GetComponent("UIToggle")
+  if FunctionSDK.E_SDKType.TDSG == FunctionSDK.Instance.CurrentType then
+    self:FindGO("noticeTog"):SetActive(false)
+  end
   self.notiToggle.value = OverSeas_TW.OverSeasManager.GetInstance():GetNotificationStatus()
   self.accountCancel = self:FindGO("accountCancel")
   if GameConfig.Logout_MenuId == 1 then

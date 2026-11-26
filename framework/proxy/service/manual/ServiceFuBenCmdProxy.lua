@@ -10,6 +10,33 @@ local _observeDebug = function(...)
   local _observeProxy = PvpObserveProxy.Instance
   _observeProxy:Debug(...)
 end
+local BattleObserveResultTextKey = {
+  [FuBenCmd_pb.EBATTLE_OBSERVE_RESULT_TYPE_NOT_SUPPORT] = "BattleObserve_TypeNotSupport",
+  [FuBenCmd_pb.EBATTLE_OBSERVE_RESULT_INVALID_ID] = "BattleObserve_InvalidID",
+  [FuBenCmd_pb.EBATTLE_OBSERVE_RESULT_BATTLE_NOT_FOUND] = "BattleObserve_BattleNotFound",
+  [FuBenCmd_pb.EBATTLE_OBSERVE_RESULT_RAID_NOT_CREATED] = "BattleObserve_RaidNotCreated",
+  [FuBenCmd_pb.EBATTLE_OBSERVE_RESULT_USER_STATE_INVALID] = "BattleObserve_UserStateInvalid",
+  [FuBenCmd_pb.EBATTLE_OBSERVE_RESULT_ENTER_FAILED] = "BattleObserve_EnterFailed",
+  [FuBenCmd_pb.EBATTLE_OBSERVE_RESULT_BATTLE_NOT_STARTED] = "BattleObserve_BattleNotStarted",
+  [FuBenCmd_pb.EBATTLE_OBSERVE_RESULT_BATTLE_ENDED] = "BattleObserve_BattleEnded"
+}
+
+function ServiceFuBenCmdProxy:RecvBattleObserveFubenCmd(data)
+  if data.result then
+    local textKey
+    if data.result == FuBenCmd_pb.EBATTLE_OBSERVE_RESULT_SUCCESS then
+      textKey = "BattleObserve_RequestEntering"
+      if data.date_battle then
+        GuildDateBattleProxy.Instance:SetObserveBattleInfo(data.date_battle)
+      end
+    else
+      textKey = BattleObserveResultTextKey[data.result] or "BattleObserve_EnterFailed"
+    end
+    local text = ZhString[textKey]
+    MsgManager.FloatMsg(nil, text)
+  end
+  self:Notify(ServiceEvent.FuBenCmdBattleObserveFubenCmd, data)
+end
 
 function ServiceFuBenCmdProxy:ctor(proxyName)
   if ServiceFuBenCmdProxy.Instance == nil then

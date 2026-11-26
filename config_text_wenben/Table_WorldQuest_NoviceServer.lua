@@ -1,4 +1,49 @@
 Table_WorldQuest = {
+  [1012570001] = {
+    id = 1012570001,
+    Type = 2010,
+    Describe = "进入进行中的事件区域",
+    Name = "暮色寻路",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Version = 8
+  },
+  [1012580001] = {
+    id = 1012580001,
+    Type = 2010,
+    Describe = "参与任意1场事件",
+    Name = "噩梦降临",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Version = 8
+  },
+  [1012590001] = {
+    id = 1012590001,
+    Type = 2010,
+    Describe = "在任意1场事件中取胜",
+    Name = "胜者荣耀",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Version = 8
+  },
+  [1012600001] = {
+    id = 1012600001,
+    Type = 2010,
+    Describe = "参与[猎鬼决战]事件",
+    Name = "猎鬼决战",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Version = 8
+  },
+  [1012610001] = {
+    id = 1012610001,
+    Type = 2020,
+    Describe = "累计参与3场事件",
+    Name = "险途之梦",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Version = 8
+  },
   [1015100001] = {
     id = 1015100001,
     Type = 150,
@@ -749,6 +794,126 @@ Table_WorldQuest = {
     Map = 155,
     Version = 10
   },
+  [1016410001] = {
+    id = 1016410001,
+    Type = 151,
+    Describe = "冰川之地的冰原鳗频繁从冰缝中钻出活动，它们身上附着的“黏黏冰原”是可用于治疗与保暖的珍贵物资。请击退冰原鳗并及时回收这些材料。",
+    Name = "回收黏黏冰原",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016420001] = {
+    id = 1016420001,
+    Type = 151,
+    Describe = "冰封鳞桥前方聚集了大量冰封卢甘族，严重阻碍了白鹰护卫队继续前进。请尽快清理这些拦路者，恢复道路通行。",
+    Name = "击退拦路者",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016430001] = {
+    id = 1016430001,
+    Type = 151,
+    Describe = "洞穴卡拉波利潜入雪糖原野，偷走了大量用于储备与御寒的糖霜。若不及时夺回，白鹰族的日常补给将受到影响。",
+    Name = "夺回糖霜",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016440001] = {
+    id = 1016440001,
+    Type = 151,
+    Describe = "巴格进一步强化了怪物营地中的魔物，使其变得更加危险，也让营地周边的威胁持续加剧。",
+    Name = "围剿营地",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016450001] = {
+    id = 1016450001,
+    Type = 151,
+    Describe = "冰原鳗时常啃咬秋千的绳索与支架，已经导致多名白鹰族游玩时摔落受伤。需尽快驱逐这些破坏设施的魔物。",
+    Name = "驱逐秋千破坏者",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016460001] = {
+    id = 1016460001,
+    Type = 151,
+    Describe = "雷电云来袭，炸裂后散落的大量雷蚀碎片仍残留在地表。这些碎片会持续释放不稳定能量，对周围环境造成损伤，需尽快回收处理。",
+    Name = "回收雷蚀碎片",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016470001] = {
+    id = 1016470001,
+    Type = 151,
+    Describe = "部分海蝴蝶受到异常力量影响，陷入了无法苏醒的梦魇状态。它们会在霜雪之原中持续游荡，扰乱周围环境，需尽快追击并制止。",
+    Name = "追击梦魇海蝴蝶",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016480001] = {
+    id = 1016480001,
+    Type = 151,
+    Describe = "朝圣之地风雪渐盛，不少前来祈福的朝圣者在返程途中迷失了方向，其中一位更被周边魔物围困，情况危急，需尽快前往救援。",
+    Name = "救回迷路的朝圣者",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016490001] = {
+    id = 1016490001,
+    Type = 151,
+    Describe = "洞穴卡拉波利近期盘踞在幻雪温泉周边，它们携带的大量泥灰影响了温泉区域的清洁。回收它们身上的脏脏泥，恢复温泉环境。",
+    Name = "回收洞穴卡拉波利的脏脏泥",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016500001] = {
+    id = 1016500001,
+    Type = 151,
+    Describe = "近期大量冰封卢甘族聚集，阻碍了通行。它们被击败后会残留大量冰晶，若不及时清理，前路将进一步结堵，影响后续前进。",
+    Name = "疏通冰封鳞桥",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016510001] = {
+    id = 1016510001,
+    Type = 151,
+    Describe = "极光之地已进入极光最活跃的时刻，瑰丽的光幕将短暂划过夜空。前往记录这份稍纵即逝的景象，为霜雪之原留下今日的见证。",
+    Name = "邂逅极光",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016520001] = {
+    id = 1016520001,
+    Type = 151,
+    Describe = "巴格将卢甘族改造成冰铸的状态，目前我方对其外观特征与行动状态掌握有限，急需清晰影像作为后续研究与分析的依据。",
+    Name = "获取冰铸巴格的信息",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
   [1016530001] = {
     id = 1016530001,
     Type = 2020,
@@ -757,6 +922,126 @@ Table_WorldQuest = {
     Weight = 100,
     StartCondition = _EmptyTable,
     Version = 8
+  },
+  [1016860001] = {
+    id = 1016860001,
+    Type = 151,
+    Describe = "不冻花钻进冰封城堡暗道，叼走了白鹰暗哨用来传递情报的冰鳞信标。若信标无法回收，潜伏小队将无法确认集合与撤离路线。",
+    Name = "夺回冰鳞信标",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016870001] = {
+    id = 1016870001,
+    Type = 151,
+    Describe = "冰窟鳗频繁从城堡地下冰缝钻出，堵住了白鹰护卫队的隐蔽通道。若不及时清理，潜伏人员将难以转移。",
+    Name = "击败潜伏路线附近的冰窟鳗",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016880001] = {
+    id = 1016880001,
+    Type = 151,
+    Describe = "冰海鳗身上的冰鳗黏液可用于遮掩气味、降低体温痕迹，是白鹰护卫队潜伏行动的重要伪装材料。请击退冰海鳗并回收黏液。",
+    Name = "回收冰鳗黏液",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016890001] = {
+    id = 1016890001,
+    Type = 151,
+    Describe = "一名白鹰暗哨侵入怪物营地后失去联络。那里有大量魔物活动，请确认暗哨状态，并帮他清理附近威胁。",
+    Name = "围剿营地",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016900001] = {
+    id = 1016900001,
+    Type = 151,
+    Describe = "冰窟鳗在冰面下方钻行时，会顶裂道路，留下大量尖锐的冰面裂缝。白鹰护卫队经过这些区域时，不仅容易受伤，也会被迫绕路，影响潜伏路线。",
+    Name = "修复冰面上的裂缝",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016910001] = {
+    id = 1016910001,
+    Type = 151,
+    Describe = "冰封花园中的寒花会产出特殊花蜜，喝下后可以抗寒噢。白鹰护卫队需要喝点寒花花蜜继续隐藏行动。",
+    Name = "采集寒花花蜜",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016920001] = {
+    id = 1016920001,
+    Type = 151,
+    Describe = "冰海鳗钻入波波池底部，导致多名游客游玩时被吓到。乐园工作人员已暂时封锁入口，请尽快驱逐鳗群，恢复设施安全。",
+    Name = "驱逐波波池鳗群",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016930001] = {
+    id = 1016930001,
+    Type = 151,
+    Describe = "数名游客在暴雪中迷失了方向，随身物品也被魔物抢走，请击退魔物，帮助游客脱离险境。",
+    Name = "救回被困游客",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016940001] = {
+    id = 1016940001,
+    Type = 151,
+    Describe = "冰封花园中部分花类被巴格改造后失控，已经影响游客通行。请清理失控花丛，回收它们的碎片。",
+    Name = "回收食人花碎片",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016950001] = {
+    id = 1016950001,
+    Type = 151,
+    Describe = "不霜花偷走了波波池中的彩色波波，若彩色波波缺失过多，波波池将无法继续开放。",
+    Name = "夺回彩色波波",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016960001] = {
+    id = 1016960001,
+    Type = 151,
+    Describe = "仿真卫兵的巡逻路线出现变化，白鹰护卫队需要重新确认安全路线。请前往指定观察点记录巡逻情况。",
+    Name = "拍下仿真卫兵巡逻点",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
+  },
+  [1016970001] = {
+    id = 1016970001,
+    Type = 151,
+    Describe = "冰封城堡的仿真花车巡游吸引了大量游客。。请拍下拉斯甘德花车巡游的清晰影像，为后续判断侵入时机提供情报。",
+    Name = "拍下花车照片",
+    Weight = 100,
+    StartCondition = _EmptyTable,
+    Map = 155,
+    Version = 10
   }
 }
 Table_WorldQuest_fields = {

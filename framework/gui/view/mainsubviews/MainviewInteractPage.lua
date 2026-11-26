@@ -1,11 +1,16 @@
 autoImport("InteractMountKickBtnCell")
 autoImport("NpcVisitCell")
+autoImport("InteractLocalManager")
 MainviewInteractPage = class("MainviewInteractPage", SubView)
 local ForbidShowReason = {
   Trigger = 1,
   AutoBattle = 2,
   Booth = 3,
   NoAct = 4
+}
+local InteractKind = InteractLocalManager.InteractKind
+local InteractKindAutoBattleAllow = {
+  [InteractKind.Kick] = true
 }
 local InteractMountBtn_Status = {
   Sit = 0,
@@ -125,6 +130,7 @@ end
 function MainviewInteractPage:InitShow()
   self.reasonMap = {}
   self.reasonMap_Nonmount = {}
+  self.nonmountKind = InteractKind.None
 end
 
 function MainviewInteractPage:HandleTriggerChange(note)
@@ -132,7 +138,9 @@ function MainviewInteractPage:HandleTriggerChange(note)
 end
 
 function MainviewInteractPage:HandleTriggerChange_Nonmount(note)
-  self:UpdateReason_Nonmount(ForbidShowReason.Trigger, not note.body.trigger and 1 or 0, note.body.prompt, note.body.icon)
+  local body = note and note.body or {}
+  self.nonmountKind = body.kind or InteractKind.None
+  self:UpdateReason_Nonmount(ForbidShowReason.Trigger, not body.trigger and 1 or 0, body.prompt, body.icon)
 end
 
 function MainviewInteractPage:HandleInteractChange_Nonmount(note)
@@ -204,7 +212,8 @@ function MainviewInteractPage:ShowInteractBtn_Nonmount(prompt, icon)
     return
   end
   for k, v in pairs(self.reasonMap_Nonmount) do
-    if v == 1 then
+    if k == ForbidShowReason.AutoBattle and InteractKindAutoBattleAllow[self.nonmountKind] then
+    elseif v == 1 then
       if self.interactNonmountBtnGO.activeSelf then
         self.interactNonmountBtnGO:SetActive(false)
         self.interactBtnGrid:Reposition()

@@ -4,7 +4,21 @@ autoImport("QuickBuffItemCell")
 autoImport("WrapListCtrl")
 QuickBuffSetPopUp = class("QuickBuffSetPopUp", ContainerView)
 QuickBuffSetPopUp.ViewType = UIViewType.PopUpLayer
-local FilterType = {All = 1, Owned = 2}
+local FilterType = {
+  All = 1,
+  Owned = 2,
+  AttrFood = 3,
+  PvpFood = 4,
+  OtherPotion = 5
+}
+local BuildFilterCategoryMap = function()
+  local category = BagProxy.QuickBuffItemCategory
+  return {
+    [FilterType.AttrFood] = category.AttrFood,
+    [FilterType.PvpFood] = category.PvpFood,
+    [FilterType.OtherPotion] = category.OtherPotion
+  }
+end
 
 function QuickBuffSetPopUp:Init()
   self:FindObjs()
@@ -51,6 +65,10 @@ function QuickBuffSetPopUp:InitFilter()
   self.filterPop:Clear()
   self.filterPop:AddItem(ZhString.QuickBuffSetPopUp_FilterAll, FilterType.All)
   self.filterPop:AddItem(ZhString.QuickBuffSetPopUp_FilterOwned, FilterType.Owned)
+  self.filterCategoryMap = BuildFilterCategoryMap()
+  self.filterPop:AddItem(ZhString.QuickBuffSetPopUp_FilterAttrFood, FilterType.AttrFood)
+  self.filterPop:AddItem(ZhString.QuickBuffSetPopUp_FilterPvpFood, FilterType.PvpFood)
+  self.filterPop:AddItem(ZhString.QuickBuffSetPopUp_FilterOtherPotion, FilterType.OtherPotion)
   self.filterPop.value = ZhString.QuickBuffSetPopUp_FilterAll
   self.filterType = FilterType.All
   EventDelegate.Add(self.filterPop.onChange, function()
@@ -118,12 +136,20 @@ function QuickBuffSetPopUp:GetQuickBuffItems()
   self.itemDatas = self.itemDatas or {}
   TableUtility.ArrayClear(self.itemDatas)
   local itemIds = BagProxy.Instance:GetQuickBuffSelectableItemIds()
+  local filterType = self.filterType or FilterType.All
+  local filterCategory = self.filterCategoryMap and self.filterCategoryMap[filterType]
   for i = 1, #itemIds do
     local itemId = itemIds[i]
     local itemData = ItemData.new("QuickBuff_" .. itemId, itemId)
     itemData.num = BagProxy.Instance:GetItemNumByStaticID(itemId) or 0
     itemData.isMark = self.selectedItems[itemId] == true
-    if self.filterType ~= FilterType.Owned or itemData.num > 0 then
+    local show = true
+    if filterCategory ~= nil then
+      show = BagProxy.Instance:GetQuickBuffItemCategory(itemId) == filterCategory
+    elseif filterType == FilterType.Owned then
+      show = itemData.num > 0
+    end
+    if show then
       TableUtility.ArrayPushBack(self.itemDatas, itemData)
     end
   end

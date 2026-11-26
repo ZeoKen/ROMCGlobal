@@ -202,6 +202,8 @@ function SocialManager:UpdateData(serverData)
         socialData.zoneid = item.value
       elseif item.type == SessionSociality_pb.ESOCIALDATA_NAME then
         socialData.name = item.data
+      elseif item.type == SessionSociality_pb.ESOCIALDATA_REMARK then
+        socialData.remark = item.data
       elseif item.type == SessionSociality_pb.ESOCIALDATA_CREATETIME then
         socialData:SetCreatetime(item.data)
       elseif item.type == SessionSociality_pb.ESOCIALDATA_HEAD then
